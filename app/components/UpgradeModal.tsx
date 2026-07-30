@@ -1,5 +1,23 @@
 // @ts-nocheck
+"use client";
+
+import { useState } from "react";
+
 export function UpgradeModal({ isOpen, onClose, feature }: { isOpen: boolean; onClose: () => void; feature: string }) {
+  const [loading, setLoading] = useState(false);
+
+  const handleUpgrade = async () => {
+    setLoading(true);
+    try {
+      // For now, redirect to pricing page
+      // In production, this would create a Stripe checkout session
+      window.location.href = "/pricing";
+    } catch (error) {
+      console.error("Upgrade error:", error);
+      setLoading(false);
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -33,12 +51,11 @@ export function UpgradeModal({ isOpen, onClose, feature }: { isOpen: boolean; on
 
         <div className="space-y-3">
           <button
-            onClick={() => {
-              // TODO: Redirect to checkout
-            }}
-            className="w-full py-2 rounded-lg bg-coral text-white font-semibold hover:bg-coral-press transition-colors"
+            onClick={handleUpgrade}
+            disabled={loading}
+            className="w-full py-2 rounded-lg bg-coral text-white font-semibold hover:bg-coral-press transition-colors disabled:bg-gray-400"
           >
-            Upgrade to Pro
+            {loading ? "Redirecting..." : "Upgrade to Pro"}
           </button>
           <button
             onClick={onClose}
