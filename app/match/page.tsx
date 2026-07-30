@@ -8,18 +8,44 @@ import Footer from "@/app/components/Footer";
 
 const exampleSearches = [
   "RL.2.1",
-  "text evidence with 2nd graders",
+  "determine main idea",
   "RI.4.2",
-  "inferencing",
+  "context clues",
 ];
 
 export default function MatchPage() {
   const [query, setQuery] = useState("");
+  const [results, setResults] = useState<any[]>([]);
+  const [searching, setSearching] = useState(false);
   const router = useRouter();
 
-  const handleSearch = (searchTerm: string) => {
+  const handleSearch = async (searchTerm: string) => {
     if (!searchTerm.trim()) return;
-    router.push(`/match/${encodeURIComponent(searchTerm)}`);
+
+    // First, try direct code match
+    if (searchTerm.match(/^[A-Z]{1,2}\.\d\.\d+$/i)) {
+      router.push(`/match/${encodeURIComponent(searchTerm.toUpperCase())}`);
+      return;
+    }
+
+    // Otherwise, search by description/skills
+    setSearching(true);
+    try {
+      const response = await fetch(
+        `/api/search-standards?q=${encodeURIComponent(searchTerm)}`
+      );
+      const data = await response.json();
+      setResults(data.results || []);
+
+      // If exactly one result, go directly to it
+      if (data.results && data.results.length === 1) {
+        router.push(`/match/${data.results[0].code}`);
+      }
+    } catch (error) {
+      console.error("Search failed:", error);
+    } finally {
+      setSearching(false);
+    }
   };
 
   return (
@@ -79,20 +105,55 @@ export default function MatchPage() {
           </div>
 
           {/* Example chips */}
-          <div className="text-center">
-            <p className="text-sm text-text-muted mb-3">Try:</p>
-            <div className="flex flex-wrap gap-2 justify-center">
-              {exampleSearches.map((example) => (
-                <button
-                  key={example}
-                  onClick={() => handleSearch(example)}
-                  className="px-4 py-2 rounded-full text-sm font-medium border border-border-strong hover:bg-gray-050 transition-colors"
-                >
-                  {example}
-                </button>
-              ))}
+          {results.length === 0 && (
+            <div className="text-center">
+              <p className="text-sm text-text-muted mb-3">Try:</p>
+              <div className="flex flex-wrap gap-2 justify-center">
+                {exampleSearches.map((example) => (
+                  <button
+                    key={example}
+                    onClick={() => handleSearch(example)}
+                    className="px-4 py-2 rounded-full text-sm font-medium border border-border-strong hover:bg-gray-050 transition-colors"
+                  >
+                    {example}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
+
+          {/* Search results */}
+          {results.length > 0 && (
+            <div className="mt-8">
+              <p className="text-sm text-text-muted mb-4">
+                Found {results.length} standard{results.length !== 1 ? "s" : ""}:
+              </p>
+              <div className="space-y-3">
+                {results.map((result) => (
+                  <button
+                    key={result.code}
+                    onClick={() => router.push(`/match/${result.code}`)}
+                    className="w-full text-left border border-border rounded-lg p-4 hover:bg-gray-050 transition-colors"
+                  >
+                    <div className="font-bold text-charcoal mb-1">{result.code}</div>
+                    <p className="text-sm text-text-body">{result.name}</p>
+                    {result.skills && result.skills.length > 0 && (
+                      <div className="flex flex-wrap gap-1 mt-2">
+                        {result.skills.map((skill) => (
+                          <span
+                            key={skill}
+                            className="text-xs bg-gray-100 text-text-faint px-2 py-1 rounded"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Stats */}
           <div className="grid grid-cols-4 gap-1 mt-16 border border-hairline rounded-[14px] overflow-hidden">
