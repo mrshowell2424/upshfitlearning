@@ -1,7 +1,7 @@
 // @ts-nocheck
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-import { MatchDetailClient } from "./client";
+import { MatchDetailClient } from "./client.js";
 import { db } from "@/lib/db";
 import { standards, standard_unpacks, lesson_blueprints } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
