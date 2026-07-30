@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "upshift",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "export PATH=\"$HOME/.bun/bin:$PATH\" && bun run dev"],
+      "port": 3000
+    }
+  ]
+}
