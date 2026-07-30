@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone *)",
+      "Read(//Users/stephanie/.claude/skills/gstack/**)",
+      "Bash(./setup)"
+    ]
+  }
+}
