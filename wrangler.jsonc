@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "upshfitlearning",
+  "compatibility_date": "2026-07-30",
+  "observability": {
+    "enabled": true
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "env": {
+    "production": {
+      "routes": [
+        {
+          "pattern": "hub.upshiftlearning.org",
+          "zone_name": "upshiftlearning.org"
+        }
+      ]
+    }
+  }
+}
