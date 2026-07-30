@@ -1,6 +1,4 @@
-import { Config } from '@opennextjs/cloudflare'
-
-const config: Config = {
+export default {
   default: {
     override: {
       wrapper: 'cloudflare-node-compat',
@@ -8,5 +6,3 @@ const config: Config = {
     },
   },
 }
-
-export default config
