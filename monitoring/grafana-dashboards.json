@@ -1,0 +1,574 @@
+{
+  "dashboards": [
+    {
+      "id": 1,
+      "title": "Application Health Overview",
+      "tags": ["production", "critical", "overview"],
+      "timezone": "UTC",
+      "panels": [
+        {
+          "id": 1,
+          "title": "Error Rate",
+          "type": "gauge",
+          "targets": [
+            {
+              "expr": "rate(upshift_errors_total[5m]) * 100",
+              "legendFormat": "Error Rate (%)"
+            }
+          ],
+          "thresholds": [
+            {
+              "value": 1,
+              "color": "red"
+            },
+            {
+              "value": 0.1,
+              "color": "yellow"
+            },
+            {
+              "value": 0,
+              "color": "green"
+            }
+          ],
+          "unit": "percent"
+        },
+        {
+          "id": 2,
+          "title": "API Response Time (P95)",
+          "type": "graph",
+          "targets": [
+            {
+              "expr": "histogram_quantile(0.95, rate(upshift_api_duration_ms_bucket[5m]))",
+              "legendFormat": "P95"
+            }
+          ],
+          "unit": "ms",
+          "alert": {
+            "condition": "P95 > 1000",
+            "message": "API response time P95 exceeded 1 second"
+          }
+        },
+        {
+          "id": 3,
+          "title": "Active Users (Last 24h)",
+          "type": "stat",
+          "targets": [
+            {
+              "expr": "count(distinct upshift_user_id) or vector(0)",
+              "legendFormat": "Active Users"
+            }
+          ],
+          "unit": "short"
+        },
+        {
+          "id": 4,
+          "title": "Uptime Status",
+          "type": "stat",
+          "targets": [
+            {
+              "expr": "upshift_uptime_percent",
+              "legendFormat": "Uptime"
+            }
+          ],
+          "unit": "percent",
+          "thresholds": [
+            {
+              "value": 99.9,
+              "color": "green"
+            },
+            {
+              "value": 99,
+              "color": "yellow"
+            },
+            {
+              "value": 0,
+              "color": "red"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "title": "5xx Errors (Last Hour)",
+          "type": "stat",
+          "targets": [
+            {
+              "expr": "increase(upshift_http_5xx_total[1h])",
+              "legendFormat": "5xx Errors"
+            }
+          ],
+          "unit": "short",
+          "alert": {
+            "condition": "5xx Errors > 10",
+            "severity": "critical"
+          }
+        },
+        {
+          "id": 6,
+          "title": "Payment Success Rate",
+          "type": "gauge",
+          "targets": [
+            {
+              "expr": "(upshift_payments_successful_total / (upshift_payments_successful_total + upshift_payments_failed_total)) * 100 or vector(100)",
+              "legendFormat": "Success Rate"
+            }
+          ],
+          "unit": "percent",
+          "thresholds": [
+            {
+              "value": 95,
+              "color": "green"
+            },
+            {
+              "value": 90,
+              "color": "yellow"
+            },
+            {
+              "value": 0,
+              "color": "red"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "title": "Database Query Time (P99)",
+          "type": "graph",
+          "targets": [
+            {
+              "expr": "histogram_quantile(0.99, rate(upshift_db_query_duration_ms_bucket[5m]))",
+              "legendFormat": "P99"
+            }
+          ],
+          "unit": "ms",
+          "alert": {
+            "condition": "P99 > 500",
+            "message": "Database query time P99 exceeded 500ms"
+          }
+        },
+        {
+          "id": 8,
+          "title": "Lessons Generated (24h)",
+          "type": "stat",
+          "targets": [
+            {
+              "expr": "increase(upshift_lessons_generated_total[24h])",
+              "legendFormat": "Lessons"
+            }
+          ],
+          "unit": "short"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Business Metrics Dashboard",
+      "tags": ["business", "kpi"],
+      "timezone": "UTC",
+      "panels": [
+        {
+          "id": 1,
+          "title": "Daily Active Users Trend",
+          "type": "graph",
+          "targets": [
+            {
+              "expr": "upshift_daily_active_users",
+              "legendFormat": "DAU"
+            }
+          ],
+          "unit": "short"
+        },
+        {
+          "id": 2,
+          "title": "Monthly Active Users",
+          "type": "stat",
+          "targets": [
+            {
+              "expr": "upshift_monthly_active_users",
+              "legendFormat": "MAU"
+            }
+          ],
+          "unit": "short"
+        },
+        {
+          "id": 3,
+          "title": "Paid Users Count",
+          "type": "stat",
+          "targets": [
+            {
+              "expr": "upshift_paid_users_total",
+              "legendFormat": "Paid Users"
+            }
+          ],
+          "unit": "short"
+        },
+        {
+          "id": 4,
+          "title": "Free to Paid Conversion",
+          "type": "gauge",
+          "targets": [
+            {
+              "expr": "(upshift_paid_users_total / (upshift_free_users_total + upshift_paid_users_total)) * 100 or vector(0)",
+              "legendFormat": "Conversion %"
+            }
+          ],
+          "unit": "percent"
+        },
+        {
+          "id": 5,
+          "title": "Revenue (Last 30 days)",
+          "type": "stat",
+          "targets": [
+            {
+              "expr": "increase(upshift_revenue_usd_total[30d])",
+              "legendFormat": "Revenue"
+            }
+          ],
+          "unit": "currencyUSD"
+        },
+        {
+          "id": 6,
+          "title": "Average Revenue Per User",
+          "type": "stat",
+          "targets": [
+            {
+              "expr": "upshift_revenue_usd_total / upshift_user_count or vector(0)",
+              "legendFormat": "ARPU"
+            }
+          ],
+          "unit": "currencyUSD"
+        },
+        {
+          "id": 7,
+          "title": "Resource Saves (24h)",
+          "type": "stat",
+          "targets": [
+            {
+              "expr": "increase(upshift_resources_saved_total[24h])",
+              "legendFormat": "Saves"
+            }
+          ],
+          "unit": "short"
+        },
+        {
+          "id": 8,
+          "title": "Lesson Generation Rate",
+          "type": "graph",
+          "targets": [
+            {
+              "expr": "rate(upshift_lessons_generated_total[1h])",
+              "legendFormat": "Lessons/hour"
+            }
+          ],
+          "unit": "short"
+        },
+        {
+          "id": 9,
+          "title": "Churn Rate (Monthly)",
+          "type": "gauge",
+          "targets": [
+            {
+              "expr": "(upshift_subscriptions_cancelled_total / upshift_subscriptions_total) * 100 or vector(0)",
+              "legendFormat": "Churn %"
+            }
+          ],
+          "unit": "percent"
+        },
+        {
+          "id": 10,
+          "title": "Customer Satisfaction Score",
+          "type": "gauge",
+          "targets": [
+            {
+              "expr": "upshift_nps_score",
+              "legendFormat": "NPS"
+            }
+          ],
+          "unit": "short",
+          "min": -100,
+          "max": 100
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Infrastructure & Resources",
+      "tags": ["infrastructure", "resources"],
+      "timezone": "UTC",
+      "panels": [
+        {
+          "id": 1,
+          "title": "CPU Usage",
+          "type": "graph",
+          "targets": [
+            {
+              "expr": "rate(upshift_cpu_seconds_total[5m]) * 100",
+              "legendFormat": "{{ instance }}"
+            }
+          ],
+          "unit": "percent",
+          "alert": {
+            "condition": "CPU > 80",
+            "severity": "warning"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Memory Usage",
+          "type": "graph",
+          "targets": [
+            {
+              "expr": "upshift_memory_usage_bytes / 1024 / 1024 / 1024",
+              "legendFormat": "{{ instance }}"
+            }
+          ],
+          "unit": "GB",
+          "alert": {
+            "condition": "Memory > 85% of max",
+            "severity": "warning"
+          }
+        },
+        {
+          "id": 3,
+          "title": "Database Connections",
+          "type": "graph",
+          "targets": [
+            {
+              "expr": "upshift_database_connections_active",
+              "legendFormat": "Active Connections"
+            }
+          ],
+          "unit": "short",
+          "alert": {
+            "condition": "Connections > 50",
+            "severity": "warning"
+          }
+        },
+        {
+          "id": 4,
+          "title": "Connection Pool Utilization",
+          "type": "gauge",
+          "targets": [
+            {
+              "expr": "(upshift_database_connections_active / upshift_database_connections_max) * 100",
+              "legendFormat": "Usage"
+            }
+          ],
+          "unit": "percent"
+        },
+        {
+          "id": 5,
+          "title": "Disk Space Usage",
+          "type": "graph",
+          "targets": [
+            {
+              "expr": "upshift_disk_usage_percent",
+              "legendFormat": "{{ mount_point }}"
+            }
+          ],
+          "unit": "percent",
+          "alert": {
+            "condition": "Disk > 90",
+            "severity": "critical"
+          }
+        },
+        {
+          "id": 6,
+          "title": "Network I/O",
+          "type": "graph",
+          "targets": [
+            {
+              "expr": "rate(upshift_network_bytes_total[5m])",
+              "legendFormat": "{{ direction }}"
+            }
+          ],
+          "unit": "Bps"
+        },
+        {
+          "id": 7,
+          "title": "API Request Queue Depth",
+          "type": "graph",
+          "targets": [
+            {
+              "expr": "upshift_api_queue_depth",
+              "legendFormat": "Queue"
+            }
+          ],
+          "unit": "short",
+          "alert": {
+            "condition": "Queue > 100",
+            "severity": "warning"
+          }
+        },
+        {
+          "id": 8,
+          "title": "Container Restarts (24h)",
+          "type": "stat",
+          "targets": [
+            {
+              "expr": "increase(upshift_container_restarts_total[24h])",
+              "legendFormat": "Restarts"
+            }
+          ],
+          "unit": "short"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Integration Health",
+      "tags": ["integrations", "external"],
+      "timezone": "UTC",
+      "panels": [
+        {
+          "id": 1,
+          "title": "Google Sheets Sync Status",
+          "type": "graph",
+          "targets": [
+            {
+              "expr": "upshift_google_sheets_sync_success_total",
+              "legendFormat": "Successful Syncs"
+            }
+          ],
+          "unit": "short"
+        },
+        {
+          "id": 2,
+          "title": "Google Sheets Sync Failures",
+          "type": "graph",
+          "targets": [
+            {
+              "expr": "upshift_google_sheets_sync_failures_total",
+              "legendFormat": "Failed Syncs"
+            }
+          ],
+          "unit": "short",
+          "alert": {
+            "condition": "Failures > 0",
+            "severity": "warning"
+          }
+        },
+        {
+          "id": 3,
+          "title": "Substack Article Ingestion",
+          "type": "graph",
+          "targets": [
+            {
+              "expr": "rate(upshift_substack_articles_ingested_total[24h])",
+              "legendFormat": "Articles/day"
+            }
+          ],
+          "unit": "short"
+        },
+        {
+          "id": 4,
+          "title": "Claude Generation Success Rate",
+          "type": "gauge",
+          "targets": [
+            {
+              "expr": "(upshift_claude_generations_successful_total / (upshift_claude_generations_successful_total + upshift_claude_generations_failed_total)) * 100 or vector(100)",
+              "legendFormat": "Success %"
+            }
+          ],
+          "unit": "percent"
+        },
+        {
+          "id": 5,
+          "title": "Stripe Webhook Processing",
+          "type": "graph",
+          "targets": [
+            {
+              "expr": "rate(upshift_stripe_webhooks_processed_total[1h])",
+              "legendFormat": "Webhooks/hour"
+            }
+          ],
+          "unit": "short"
+        },
+        {
+          "id": 6,
+          "title": "External API Response Times",
+          "type": "graph",
+          "targets": [
+            {
+              "expr": "upshift_external_api_response_time_ms",
+              "legendFormat": "{{ service }}"
+            }
+          ],
+          "unit": "ms"
+        },
+        {
+          "id": 7,
+          "title": "Webhook Retries (24h)",
+          "type": "stat",
+          "targets": [
+            {
+              "expr": "increase(upshift_webhook_retries_total[24h])",
+              "legendFormat": "Retries"
+            }
+          ],
+          "unit": "short"
+        }
+      ]
+    }
+  ],
+  "templating": {
+    "variables": [
+      {
+        "name": "environment",
+        "type": "query",
+        "datasource": "Prometheus",
+        "query": "label_values(upshift_errors_total, env)",
+        "sort": "alphabetical"
+      },
+      {
+        "name": "service",
+        "type": "query",
+        "datasource": "Prometheus",
+        "query": "label_values(upshift_errors_total, service)",
+        "sort": "alphabetical"
+      },
+      {
+        "name": "instance",
+        "type": "query",
+        "datasource": "Prometheus",
+        "query": "label_values(upshift_errors_total, instance)",
+        "sort": "alphabetical"
+      }
+    ]
+  },
+  "alerts": [
+    {
+      "name": "HighErrorRate",
+      "condition": "upshift_errors_rate > 5",
+      "duration": "5m",
+      "severity": "critical",
+      "notification_channels": ["slack-critical", "pagerduty"]
+    },
+    {
+      "name": "SlowApiResponse",
+      "condition": "histogram_quantile(0.95, upshift_api_duration_ms_bucket) > 1000",
+      "duration": "10m",
+      "severity": "warning",
+      "notification_channels": ["slack-warnings"]
+    },
+    {
+      "name": "DatabaseDown",
+      "condition": "up{job='postgres'} == 0",
+      "duration": "1m",
+      "severity": "critical",
+      "notification_channels": ["slack-critical", "pagerduty", "email"]
+    },
+    {
+      "name": "HighMemoryUsage",
+      "condition": "upshift_memory_usage_percent > 85",
+      "duration": "10m",
+      "severity": "warning",
+      "notification_channels": ["slack-warnings"]
+    },
+    {
+      "name": "PaymentFailures",
+      "condition": "increase(upshift_payments_failed_total[1h]) > 10",
+      "duration": "5m",
+      "severity": "critical",
+      "notification_channels": ["slack-critical", "email"]
+    }
+  ]
+}
