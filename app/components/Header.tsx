@@ -1,24 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 const navItems = [
-  "Home",
-  "Resources",
-  "Standard match",
-  "My planner",
-  "Videos",
-  "Teacher's Lounge",
-  "Plans",
+  { label: "Home", href: "/" },
+  { label: "Resources", href: "/resources" },
+  { label: "Standard match", href: "/match" },
+  { label: "My planner", href: "/" },
+  { label: "Videos", href: "/" },
+  { label: "Teacher's Lounge", href: "/" },
+  { label: "Plans", href: "/" },
 ];
 
 export default function Header() {
-  const [activeNav, setActiveNav] = useState("Home");
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const getActiveNav = () => {
+    if (pathname === "/") return "Home";
+    if (pathname.startsWith("/resources")) return "Resources";
+    if (pathname.startsWith("/match")) return "Standard match";
+    return null;
+  };
+
+  const activeNav = getActiveNav();
 
   return (
     <header className="sticky top-0 z-50 h-[72px] bg-white/95 backdrop-blur-[10px] border-b border-hairline flex items-center px-8 gap-9">
       {/* Logo */}
-      <div className="flex items-center gap-2 cursor-pointer flex-shrink-0">
+      <div
+        className="flex items-center gap-2 cursor-pointer flex-shrink-0"
+        onClick={() => router.push("/")}
+      >
         <img
           src="/brand/chevron-coral-512.png"
           alt="Upshift"
@@ -38,15 +51,15 @@ export default function Header() {
       <nav className="flex-1 flex items-center h-full gap-0">
         {navItems.map((item) => (
           <button
-            key={item}
-            onClick={() => setActiveNav(item)}
+            key={item.label}
+            onClick={() => router.push(item.href)}
             className="h-full px-[15px] text-[11.5px] font-semibold uppercase tracking-[0.1em] relative transition-colors"
             style={{
-              color: activeNav === item ? "#111111" : "#6A6A6A",
+              color: activeNav === item.label ? "#111111" : "#6A6A6A",
             }}
           >
-            {item}
-            {activeNav === item && (
+            {item.label}
+            {activeNav === item.label && (
               <div
                 className="absolute bottom-0 left-[11px] right-[11px] h-[3px] bg-coral rounded-t-[3px]"
                 style={{ backgroundColor: "var(--color-coral)" }}
