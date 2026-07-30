@@ -1,0 +1,2151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; background: #FFFFFF; font-family: Poppins, sans-serif; color: #111111; }
+  input, button, textarea, select, aside, span, div { font-family: Poppins, sans-serif; }
+  * { box-sizing: border-box; }
+  a { color: #FF6A5B; text-decoration: none; }
+  a:hover { color: #E24F41; text-decoration: underline; }
+  input { font-family: inherit; }
+  ::placeholder { color: #9A9A9A; }
+  @keyframes upRise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  @keyframes upPulse { 0%, 100% { opacity: .3; } 50% { opacity: 1; } }
+</style>
+<script src="./image-slot.js"></script>
+<script src="./resources.js"></script>
+</helmet>
+
+<div style="min-height: 100vh; font-family: Poppins, sans-serif; color: #111111; background: #FFFFFF; -webkit-font-smoothing: antialiased">
+
+  <header style="position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,.95); backdrop-filter: blur(10px); border-bottom: 1px solid #ECECEC">
+    <div style="max-width: 1400px; margin: 0 auto; padding: 0 32px; height: 72px; display: flex; align-items: center; gap: 36px">
+      <div onClick="{{ goHome }}" style="display: flex; align-items: center; gap: 11px; cursor: pointer; flex: 0 0 auto">
+        <img src="uploads/upshift_logo.png" alt="Upshift Learning" style="height: 34px; width: auto; display: block" />
+        <span style="font-size: 8.5px; font-weight: 600; letter-spacing: .26em; color: #8A8A8A; border-left: 1px solid #DDDDDD; padding-left: 11px; text-transform: uppercase">Hub</span>
+      </div>
+
+      <nav style="display: flex; align-items: stretch; gap: 2px; flex: 1">
+        <sc-for list="{{ nav }}" as="n" hint-placeholder-count="5">
+          <button onClick="{{ n.go }}" style="border: 0; background: none; padding: 0 15px; height: 72px; display: flex; align-items: center; cursor: pointer; position: relative" style-hover="background: #FAFAFA">
+            <span style="font-size: 11.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: {{ n.color }}">{{ n.label }}</span>
+            <span style="position: absolute; left: 11px; right: 11px; bottom: 0; height: 3px; border-radius: 3px 3px 0 0; background: {{ n.bar }}"></span>
+          </button>
+        </sc-for>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 12px; flex: 0 0 auto">
+        <button onClick="{{ toggleTier }}" style="border: 1px solid #E4E4E4; background: #FFFFFF; border-radius: 999px; padding: 8px 14px; display: flex; align-items: center; gap: 8px; cursor: pointer" style-hover="border-color: #111111">
+          <span style="width: 7px; height: 7px; border-radius: 50%; background: {{ tierDot }}"></span>
+          <span style="font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase">{{ tierLabel }}</span>
+        </button>
+        <div style="width: 36px; height: 36px; border-radius: 50%; background: #B87DFF; color: #FFFFFF; display: grid; place-items: center; font-size: 12.5px; font-weight: 600">SH</div>
+      </div>
+    </div>
+  </header>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main>
+    <section style="background-image: url('uploads/Background.png'); background-size: cover; background-position: center; border-bottom: 1px solid #ECECEC">
+      <div style="background: rgba(255,255,255,.45)">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 74px 32px 66px">
+          <div style="max-width: 800px">
+            <span style="display: inline-block; background: #111111; color: #FFFFFF; font-size: 10.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; padding: 7px 12px; border-radius: 4px">Science of learning first</span>
+            <h1 style="font-size: 54px; line-height: 1.04; font-weight: 700; letter-spacing: -.03em; margin: 22px 0 16px; text-wrap: pretty">Tell us what you're teaching.<br />We'll hand you the lesson.</h1>
+            <p style="font-size: 18px; line-height: 1.55; color: #333333; margin: 0 0 30px; max-width: 620px; text-wrap: pretty">Type a standard or just say it in your own words. Every match comes with slides, a video, and a plan you can use tomorrow morning.</p>
+            <div style="background: #FFFFFF; border: 1px solid #E4E4E4; border-radius: 14px; padding: 10px 10px 10px 18px; display: flex; align-items: center; gap: 12px; box-shadow: 0 12px 34px rgba(17,17,17,.09)">
+              <span style="font-size: 16px; color: #FF6A5B; font-weight: 700">✳</span>
+              <input value="{{ query }}" onChange="{{ onQuery }}" onKeyDown="{{ onQueryKey }}" placeholder="RL.2.1 — or “text evidence with 2nd graders”" style="flex: 1; border: 0; outline: none; font-size: 16px; padding: 12px 0; background: transparent; color: #111111" />
+              <button onClick="{{ runMatch }}" style="border: 0; background: #FF6A5B; color: #FFFFFF; font-size: 13.5px; font-weight: 600; padding: 14px 24px; border-radius: 10px; cursor: pointer; white-space: nowrap" style-hover="background: #E24F41">Match my standard</button>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; align-items: center">
+              <span style="font-size: 12px; color: #5A5A5A; margin-right: 4px">Try:</span>
+              <sc-for list="{{ examples }}" as="ex" hint-placeholder-count="4">
+                <button onClick="{{ ex.go }}" style="border: 1px solid rgba(17,17,17,.16); background: rgba(255,255,255,.8); border-radius: 999px; padding: 7px 13px; font-size: 12.5px; font-weight: 500; cursor: pointer; color: #111111" style-hover="border-color: #111111; background: #FFFFFF">{{ ex.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width: 1400px; margin: 0 auto; padding: 54px 32px 0">
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: #ECECEC; border: 1px solid #ECECEC; border-radius: 14px; overflow: hidden">
+        <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+          <div style="background: #FFFFFF; padding: 26px 24px">
+            <div style="font-size: 30px; font-weight: 700; letter-spacing: -.025em; color: {{ s.color }}">{{ s.value }}</div>
+            <div style="font-size: 12.5px; font-weight: 500; color: #6A6A6A; margin-top: 4px">{{ s.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="max-width: 1400px; margin: 0 auto; padding: 54px 32px 0">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px">
+        <h2 style="font-size: 26px; font-weight: 700; letter-spacing: -.02em; margin: 0">Start here</h2>
+        <span style="font-size: 13px; color: #6A6A6A">Three ways in, depending on your week</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px">
+        <sc-for list="{{ paths }}" as="p" hint-placeholder-count="3">
+          <button onClick="{{ p.go }}" style="text-align: left; border: 1px solid #E9E9E9; background: #FFFFFF; border-radius: 16px; padding: 0; overflow: hidden; cursor: pointer; display: flex; flex-direction: column" style-hover="border-color: #111111">
+            <span style="height: 8px; background: {{ p.color }}"></span>
+            <span style="padding: 26px 26px 28px; display: block">
+              <span style="display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: {{ p.color }}">{{ p.kicker }}</span>
+              <span style="display: block; font-size: 21px; font-weight: 600; letter-spacing: -.015em; margin: 10px 0 8px">{{ p.title }}</span>
+              <span style="display: block; font-size: 14px; line-height: 1.6; color: #555555; text-wrap: pretty">{{ p.body }}</span>
+              <span style="display: block; font-size: 13px; font-weight: 600; color: #111111; margin-top: 18px">{{ p.cta }} →</span>
+            </span>
+          </button>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="max-width: 1400px; margin: 0 auto; padding: 54px 32px 0">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px">
+        <h2 style="font-size: 26px; font-weight: 700; letter-spacing: -.02em; margin: 0">Fresh this week</h2>
+        <button onClick="{{ goLibrary }}" style="border: 0; background: none; padding: 0; font-size: 13px; font-weight: 600; color: #FF6A5B; cursor: pointer">See the whole library →</button>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px">
+        <sc-for list="{{ fresh }}" as="r" hint-placeholder-count="4">
+          <div onClick="{{ r.open }}" style="border: 1px solid #E9E9E9; border-radius: 14px; overflow: hidden; cursor: pointer; background: #FFFFFF; display: flex; flex-direction: column" style-hover="border-color: #111111">
+            <div style="aspect-ratio: 16/9; position: relative; background: {{ r.tint }}">
+              <img src="{{ r.thumb }}" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block" />
+              <sc-if value="{{ r.locked }}" hint-placeholder-val="{{ false }}">
+                <div style="position: absolute; inset: 0; background: rgba(255,255,255,.55); backdrop-filter: blur(6px); display: grid; place-items: center">
+                  <span style="background: #111111; color: #FFFFFF; font-size: 9.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 6px 11px; border-radius: 999px">All-Access</span>
+                </div>
+              </sc-if>
+            </div>
+            <div style="padding: 15px 16px 17px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+              <div style="font-size: 15.5px; font-weight: 600; letter-spacing: -.015em; line-height: 1.28">{{ r.title }}</div>
+              <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #8A8A8A">{{ r.purpose }}</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 4px">
+                <span style="background: #F4E9FF; color: #6B2FB5; font-size: 10.5px; font-weight: 600; padding: 4px 8px; border-radius: 5px">{{ r.grades }}</span>
+                <span style="background: #E6F8F6; color: #00756C; font-size: 10.5px; font-weight: 600; padding: 4px 8px; border-radius: 5px">{{ r.skill }}</span>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="max-width: 1400px; margin: 0 auto; padding: 62px 32px 90px">
+      <div style="border: 1px solid #E9E9E9; border-radius: 20px; overflow: hidden; display: grid; grid-template-columns: 1.15fr 1fr">
+        <div style="padding: 46px 48px; background: #111111; color: #FFFFFF">
+          <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #FF7DAE">{{ gateKicker }}</div>
+          <h3 style="font-size: 31px; font-weight: 700; letter-spacing: -.025em; line-height: 1.15; margin: 14px 0 12px; text-wrap: pretty">{{ gateHeadline }}</h3>
+          <p style="font-size: 15px; line-height: 1.6; color: #C9C9C9; margin: 0 0 26px; max-width: 460px; text-wrap: pretty">{{ gateBody }}</p>
+          <div style="display: flex; gap: 14px; align-items: center">
+            <button onClick="{{ goPricing }}" style="border: 0; background: #FF6A5B; color: #FFFFFF; font-size: 14px; font-weight: 600; padding: 15px 26px; border-radius: 10px; cursor: pointer" style-hover="background: #E24F41">{{ gateCta }}</button>
+            <span style="font-size: 13px; color: #9A9A9A">From $10/month</span>
+          </div>
+        </div>
+        <div style="padding: 40px 44px; background: #FAFAFA; display: flex; flex-direction: column; gap: 15px; justify-content: center">
+          <sc-for list="{{ perks }}" as="k" hint-placeholder-count="4">
+            <div style="display: flex; gap: 12px; align-items: flex-start">
+              <span style="color: #00B4A6; font-size: 14px; font-weight: 700; line-height: 1.5">✓</span>
+              <span style="font-size: 14.5px; line-height: 1.5; color: #222222">{{ k }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isLibrary }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1400px; margin: 0 auto; padding: 40px 32px 90px">
+    <h1 style="font-size: 34px; font-weight: 700; letter-spacing: -.03em; margin: 0 0 6px">Resource library</h1>
+    <p style="font-size: 15px; color: #6A6A6A; margin: 0 0 26px">Every resource ships with editable Google Slides and a matching video.</p>
+
+    <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 26px">
+      <div style="flex: 1; border: 1px solid #E4E4E4; border-radius: 11px; display: flex; align-items: center; gap: 10px; padding: 0 16px; background: #FFFFFF">
+        <span style="color: #9A9A9A; font-size: 15px">⌕</span>
+        <input value="{{ libQuery }}" onChange="{{ onLibQuery }}" placeholder="Search titles, skills, purposes…" style="flex: 1; border: 0; outline: none; font-size: 15px; padding: 15px 0; background: transparent" />
+      </div>
+      <button onClick="{{ clearFilters }}" style="border: 1px solid #E4E4E4; background: #FFFFFF; border-radius: 11px; padding: 15px 18px; font-size: 13px; font-weight: 600; cursor: pointer; color: #111111" style-hover="border-color: #111111">Clear filters</button>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 272px 1fr; gap: 32px; align-items: start">
+      <aside style="border: 1px solid #E9E9E9; border-radius: 16px; position: sticky; top: 96px; max-height: calc(100vh - 128px); overflow-y: auto">
+        <sc-for list="{{ filterGroups }}" as="g" hint-placeholder-count="3">
+          <div style="padding: 18px 20px; border-bottom: 1px solid #F2F2F2">
+            <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px">{{ g.name }}</div>
+            <sc-for list="{{ g.toggle }}" as="t" hint-placeholder-count="0">
+              <button onClick="{{ t.go }}" style="border: 0; background: none; padding: 0; margin-bottom: 10px; font-size: 12px; font-weight: 600; color: #FF6A5B; cursor: pointer" style-hover="color: #E24F41">{{ t.label }}</button>
+            </sc-for>
+            <div style="display: flex; flex-direction: column; gap: 9px">
+              <sc-for list="{{ g.options }}" as="o" hint-placeholder-count="6">
+                <button onClick="{{ o.toggle }}" style="border: 0; background: none; padding: 0; display: flex; align-items: center; gap: 10px; cursor: pointer; text-align: left; width: 100%">
+                  <span style="width: 17px; height: 17px; border-radius: 5px; border: 1.5px solid; flex: 0 0 auto; display: grid; place-items: center; font-size: 10px; font-weight: 700; color: #FFFFFF; background: {{ o.bg }}; border-color: {{ o.bc }}">{{ o.tick }}</span>
+                  <span style="font-size: 13.5px; flex: 1; color: #2A2A2A">{{ o.label }}</span>
+                  <span style="font-size: 11.5px; color: #9A9A9A">{{ o.count }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </aside>
+
+      <div>
+        <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 18px; gap: 20px; flex-wrap: wrap">
+          <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap">
+            <span style="font-size: 13.5px; font-weight: 600; color: #6A6A6A">{{ resultCount }}</span>
+            <sc-for list="{{ matcherNudge }}" as="m" hint-placeholder-count="0">
+              <button onClick="{{ m.go }}" style="border: 0; background: none; padding: 0; font-size: 13px; font-weight: 600; color: #FF6A5B; cursor: pointer" style-hover="color: #E24F41">{{ m.label }}</button>
+            </sc-for>
+          </div>
+          <div style="display: flex; gap: 6px">
+            <sc-for list="{{ sorts }}" as="s" hint-placeholder-count="3">
+              <button onClick="{{ s.go }}" style="border: 1px solid; border-radius: 999px; padding: 7px 14px; font-size: 12px; font-weight: 600; cursor: pointer; background: {{ s.bg }}; color: {{ s.fg }}; border-color: {{ s.bc }}">{{ s.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+
+        <sc-for list="{{ fallbackNote }}" as="n" hint-placeholder-count="0">
+          <div style="border: 1px solid #FFD9D2; background: #FFF6F4; border-radius: 14px; padding: 18px 22px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap">
+            <span style="display: flex; flex-direction: column; gap: 4px">
+              <span style="font-size: 14.5px; font-weight: 600; color: #111111">{{ n.title }}</span>
+              <span style="font-size: 13.5px; color: #6A6A6A">{{ n.body }}</span>
+            </span>
+            <button onClick="{{ n.go }}" style="border: 0; background: #FF6A5B; color: #FFFFFF; font-size: 12.5px; font-weight: 600; padding: 11px 18px; border-radius: 9px; cursor: pointer; white-space: nowrap" style-hover="background: #E24F41">Open the matcher</button>
+          </div>
+        </sc-for>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px">
+          <sc-for list="{{ results }}" as="r" hint-placeholder-count="9">
+            <div onClick="{{ r.open }}" style="border: 1px solid #E9E9E9; border-radius: 14px; overflow: hidden; cursor: pointer; background: #FFFFFF; display: flex; flex-direction: column" style-hover="border-color: #111111">
+              <div style="aspect-ratio: 16/9; position: relative; background: {{ r.tint }}">
+                <img src="{{ r.thumb }}" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block" />
+                <span style="position: absolute; top: 10px; left: 10px; background: rgba(255,255,255,.94); font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 8px; border-radius: 4px">{{ r.type }}</span>
+                <span style="position: absolute; top: 10px; right: 10px; background: rgba(17,17,17,.78); color: #FFFFFF; font-size: 9.5px; font-weight: 600; padding: 5px 8px; border-radius: 4px">{{ r.dateLabel }}</span>
+                <sc-if value="{{ r.locked }}" hint-placeholder-val="{{ false }}">
+                  <div style="position: absolute; inset: 0; background: rgba(255,255,255,.55); backdrop-filter: blur(6px); display: grid; place-items: center">
+                    <span style="background: #111111; color: #FFFFFF; font-size: 9.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 6px 11px; border-radius: 999px">All-Access</span>
+                  </div>
+                </sc-if>
+              </div>
+              <div style="padding: 15px 16px 17px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+                <div style="font-size: 15.5px; font-weight: 600; letter-spacing: -.015em; line-height: 1.28">{{ r.title }}</div>
+                <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #8A8A8A">{{ r.purpose }}</div>
+                <div style="font-size: 13px; line-height: 1.5; color: #555555; text-wrap: pretty">{{ r.summary }}</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 4px">
+                  <span style="background: #F4E9FF; color: #6B2FB5; font-size: 10.5px; font-weight: 600; padding: 4px 8px; border-radius: 5px">{{ r.grades }}</span>
+                  <span style="background: #E6F8F6; color: #00756C; font-size: 10.5px; font-weight: 600; padding: 4px 8px; border-radius: 5px">{{ r.skill }}</span>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <sc-for list="{{ more }}" as="m" hint-placeholder-count="0">
+          <div style="display: flex; justify-content: center; margin-top: 30px">
+            <button onClick="{{ m.go }}" style="border: 1px solid #E4E4E4; background: #FFFFFF; color: #111111; font-size: 13.5px; font-weight: 600; padding: 14px 26px; border-radius: 11px; cursor: pointer" style-hover="border-color: #111111">{{ m.label }}</button>
+          </div>
+        </sc-for>
+
+        <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+          <div style="border: 1px dashed #DDDDDD; border-radius: 16px; padding: 54px 30px; text-align: center">
+            <div style="font-size: 19px; font-weight: 600; margin-bottom: 8px">No exact title match{{ handoffFor }}</div>
+            <div style="font-size: 14.5px; line-height: 1.6; color: #555555; max-width: 460px; margin: 0 auto; text-wrap: pretty">Plain search only looks at titles and skills. The standard matcher reads what you're teaching and pulls resources plus the moves to make with each one.</div>
+            <button onClick="{{ handoffToMatch }}" style="margin-top: 22px; border: 0; background: #FF6A5B; color: #FFFFFF; font-size: 13.5px; font-weight: 600; padding: 14px 24px; border-radius: 10px; cursor: pointer" style-hover="background: #E24F41">{{ handoffLabel }}</button>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isMatch }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1120px; margin: 0 auto; padding: 44px 32px 90px">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto 32px">
+      <span style="display: inline-block; background: #E6F8F6; color: #00756C; font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 7px 12px; border-radius: 4px">Standard matcher</span>
+      <h1 style="font-size: 38px; font-weight: 700; letter-spacing: -.03em; line-height: 1.1; margin: 18px 0 12px; text-wrap: pretty">What are you teaching?</h1>
+      <p style="font-size: 16px; line-height: 1.55; color: #555555; margin: 0; text-wrap: pretty">Standard code, skill, or plain English. You'll get resources plus how to use each one for that exact standard.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #E4E4E4; border-radius: 14px; padding: 10px 10px 10px 18px; display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 30px rgba(17,17,17,.07); max-width: 820px; margin: 0 auto">
+      <span style="font-size: 16px; color: #FF6A5B; font-weight: 700">✳</span>
+      <input value="{{ query }}" onChange="{{ onQuery }}" onKeyDown="{{ onQueryKey }}" placeholder="e.g. RL.2.1 — asking and answering questions about a story" style="flex: 1; border: 0; outline: none; font-size: 16px; padding: 12px 0; background: transparent" />
+      <button onClick="{{ runMatch }}" style="border: 0; background: #FF6A5B; color: #FFFFFF; font-size: 13.5px; font-weight: 600; padding: 14px 24px; border-radius: 10px; cursor: pointer; white-space: nowrap" style-hover="background: #E24F41">Find resources</button>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 16px auto 0; max-width: 820px">
+      <sc-for list="{{ examples }}" as="ex" hint-placeholder-count="4">
+        <button onClick="{{ ex.go }}" style="border: 1px solid #E4E4E4; background: #FFFFFF; border-radius: 999px; padding: 7px 13px; font-size: 12.5px; font-weight: 500; cursor: pointer; color: #111111" style-hover="border-color: #111111">{{ ex.label }}</button>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ matching }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top: 52px; display: flex; flex-direction: column; gap: 14px; align-items: center">
+        <div style="display: flex; gap: 6px">
+          <span style="width: 9px; height: 9px; border-radius: 50%; background: #FF6A5B; animation: upPulse 1.1s infinite"></span>
+          <span style="width: 9px; height: 9px; border-radius: 50%; background: #FF7DAE; animation: upPulse 1.1s infinite .15s"></span>
+          <span style="width: 9px; height: 9px; border-radius: 50%; background: #B87DFF; animation: upPulse 1.1s infinite .3s"></span>
+          <span style="width: 9px; height: 9px; border-radius: 50%; background: #00B4A6; animation: upPulse 1.1s infinite .45s"></span>
+        </div>
+        <div style="font-size: 14px; color: #6A6A6A">Reading the standard, then searching 2,762 resources…</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ hasMatch }}" hint-placeholder-val="{{ false }}">
+    <div style="margin-top: 44px; animation: upRise .35s ease both">
+      <div style="border: 1px solid #E9E9E9; border-radius: 18px; overflow: hidden; margin-bottom: 30px">
+        <div style="padding: 26px 30px; background: #FAFAFA; border-bottom: 1px solid #ECECEC">
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap">
+            <span style="background: #111111; color: #FFFFFF; font-size: 12px; font-weight: 700; letter-spacing: .06em; padding: 6px 11px; border-radius: 5px">{{ match.code }}</span>
+            <span style="font-size: 15px; font-weight: 600">{{ match.name }}</span>
+          </div>
+          <p style="font-size: 14.5px; line-height: 1.6; color: #444444; margin: 12px 0 0; max-width: 800px; text-wrap: pretty">{{ match.reading }}</p>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #ECECEC">
+          <div style="background: #FFFFFF; padding: 24px 30px">
+            <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #B87DFF; margin-bottom: 12px">Learning target</div>
+            <div style="font-size: 15px; line-height: 1.6; color: #222222; text-wrap: pretty">{{ match.target }}</div>
+          </div>
+          <div style="background: #FFFFFF; padding: 24px 30px">
+            <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #00B4A6; margin-bottom: 12px">Learning science at work</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 7px">
+              <sc-for list="{{ match.science }}" as="s" hint-placeholder-count="4">
+                <span style="background: #E6F8F6; color: #00756C; font-size: 11.5px; font-weight: 600; padding: 6px 10px; border-radius: 999px">{{ s }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 7px; margin-bottom: 26px; flex-wrap: wrap">
+        <sc-for list="{{ matchTabs }}" as="t" hint-placeholder-count="3">
+          <button onClick="{{ t.go }}" style="border: 1px solid; border-radius: 999px; padding: 10px 18px; font-size: 13px; font-weight: 600; cursor: pointer; background: {{ t.bg }}; color: {{ t.fg }}; border-color: {{ t.bc }}">{{ t.label }}</button>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ showBlueprint }}" hint-placeholder-val="{{ false }}">
+      <sc-for list="{{ bp }}" as="b" hint-placeholder-count="0">
+        <div style="border: 1px solid #E9E9E9; border-radius: 18px; overflow: hidden; background: #FFFFFF">
+          <div style="background: #16213E; color: #FFFFFF; padding: 24px 30px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap">
+            <span style="display: flex; flex-direction: column; gap: 5px">
+              <span style="font-size: 24px; font-weight: 700; letter-spacing: -.02em; text-transform: uppercase">{{ b.title }}</span>
+              <span style="font-size: 15px; font-weight: 500; color: #7FE3DA">Science of Learning First</span>
+            </span>
+            <span style="background: #00B4A6; color: #FFFFFF; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 9px 14px; border-radius: 8px; text-align: center; line-height: 1.35">{{ b.badge }}</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; padding: 20px 20px 6px">
+            <div style="border: 1px solid #ECECEC; border-radius: 12px; padding: 16px 18px">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #6B2FB5; margin-bottom: 10px">Standard</div>
+              <div style="font-size: 13.5px; font-weight: 700; margin-bottom: 5px">{{ b.code }}</div>
+              <div style="font-size: 13px; line-height: 1.5; color: #444444; text-wrap: pretty">{{ b.standardText }}</div>
+            </div>
+            <div style="border: 1px solid #ECECEC; border-radius: 12px; padding: 16px 18px">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #C0432F; margin-bottom: 10px">Learning target</div>
+              <div style="font-size: 13px; line-height: 1.5; color: #444444; text-wrap: pretty">{{ b.target }}</div>
+            </div>
+            <div style="border: 1px solid #ECECEC; border-radius: 12px; padding: 16px 18px">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #00756C; margin-bottom: 10px">Success criteria</div>
+              <div style="display: flex; flex-direction: column; gap: 7px">
+                <sc-for list="{{ b.criteria }}" as="c" hint-placeholder-count="3">
+                  <div style="display: flex; gap: 8px; align-items: flex-start">
+                    <span style="color: #00B4A6; font-size: 12px; font-weight: 700; line-height: 1.45">☑</span>
+                    <span style="font-size: 13px; line-height: 1.45; color: #333333">{{ c }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+            <div style="border: 1px solid #ECECEC; border-radius: 12px; padding: 16px 18px">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #2F6FD0; margin-bottom: 10px">Learning science</div>
+              <div style="display: flex; flex-direction: column; gap: 5px">
+                <sc-for list="{{ b.science }}" as="s" hint-placeholder-count="4">
+                  <div style="font-size: 12.5px; line-height: 1.4; color: #333333">· {{ s }}</div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin: 14px 20px; border: 1px solid #ECECEC; border-radius: 12px; padding: 18px 20px; display: grid; grid-template-columns: 220px 1fr; gap: 20px; align-items: center">
+            <div>
+              <div style="font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #111111; margin-bottom: 6px">Instructional route</div>
+              <div style="font-size: 13px; font-weight: 600; color: #00756C; margin-bottom: 6px">{{ b.routeName }}</div>
+              <div style="font-size: 12.5px; line-height: 1.45; color: #6A6A6A; text-wrap: pretty">{{ b.routeLine }}</div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px">
+              <sc-for list="{{ b.route }}" as="r" hint-placeholder-count="5">
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 7px; text-align: center">
+                  <span style="width: 42px; height: 42px; border-radius: 50%; background: {{ r.color }}"></span>
+                  <span style="font-size: 11.5px; font-weight: 700; letter-spacing: .04em">{{ r.name }}</span>
+                  <span style="font-size: 11px; line-height: 1.35; color: #7A7A7A">{{ r.sub }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="padding: 6px 20px 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px">
+            <sc-for list="{{ b.steps }}" as="s" hint-placeholder-count="8">
+              <div style="border: 1px solid #ECECEC; border-radius: 12px; padding: 15px 16px 17px; display: flex; flex-direction: column; gap: 8px">
+                <div style="display: flex; align-items: center; gap: 8px">
+                  <span style="width: 21px; height: 21px; border-radius: 50%; background: #6B2FB5; color: #FFFFFF; font-size: 11px; font-weight: 700; display: grid; place-items: center; flex: 0 0 auto">{{ s.n }}</span>
+                  <span style="font-size: 12.5px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; line-height: 1.25">{{ s.name }}</span>
+                </div>
+                <div style="font-size: 11px; font-weight: 600; color: #8A8A8A">{{ s.mins }}</div>
+                <div style="font-size: 12.5px; line-height: 1.5; color: #333333; text-wrap: pretty">{{ s.body }}</div>
+                <sc-for list="{{ s.hasTag }}" as="g" hint-placeholder-count="0">
+                  <span style="font-size: 11px; font-weight: 600; color: #6B2FB5; margin-top: auto">({{ g.t }})</span>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="padding: 14px 20px 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px">
+            <div style="border: 1px solid #ECECEC; border-radius: 12px; padding: 16px 18px">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #2F6FD0; margin-bottom: 10px">Technology</div>
+              <div style="font-size: 12.5px; line-height: 1.5; color: #333333; text-wrap: pretty">{{ b.tech }}</div>
+              <div style="font-size: 11.5px; color: #6B2FB5; margin-top: 8px">Purpose: {{ b.techPurpose }}</div>
+            </div>
+            <div style="border: 1px solid #ECECEC; border-radius: 12px; padding: 16px 18px">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #00756C; margin-bottom: 10px">AI extension</div>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <sc-for list="{{ b.ai }}" as="a" hint-placeholder-count="2">
+                  <div style="font-size: 12.5px; line-height: 1.45; color: #333333; text-wrap: pretty">· {{ a }}</div>
+                </sc-for>
+              </div>
+              <div style="font-size: 11.5px; font-weight: 600; color: #C0432F; margin-top: 10px">AI = thinking partner, not an answer machine.</div>
+            </div>
+            <div style="border: 1px solid #ECECEC; border-radius: 12px; padding: 16px 18px">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #C0432F; margin-bottom: 10px">Assessment</div>
+              <div style="display: flex; flex-direction: column; gap: 7px">
+                <sc-for list="{{ b.assess }}" as="a" hint-placeholder-count="4">
+                  <div style="display: flex; gap: 8px; align-items: flex-start">
+                    <span style="color: #FF6A5B; font-size: 12px; font-weight: 700; line-height: 1.45">☑</span>
+                    <span style="font-size: 12.5px; line-height: 1.45; color: #333333">{{ a }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+            <div style="border: 1px solid #ECECEC; border-radius: 12px; padding: 16px 18px">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #B3336E; margin-bottom: 10px">Why this lesson works</div>
+              <div style="display: flex; flex-direction: column; gap: 5px">
+                <sc-for list="{{ b.why }}" as="w" hint-placeholder-count="6">
+                  <div style="font-size: 12.5px; line-height: 1.4; color: #333333">· {{ w }}</div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+
+          <div style="padding: 14px 20px 0">
+            <div style="border: 1px solid #ECECEC; border-radius: 12px; padding: 16px 18px">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #6B2FB5; margin-bottom: 10px">Executive function supports</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <sc-for list="{{ b.ef }}" as="e" hint-placeholder-count="6">
+                  <span style="background: #F0FBF4; border: 1px solid #CDEBDA; color: #1F6B45; font-size: 12px; font-weight: 500; padding: 6px 11px; border-radius: 7px">☑ {{ e }}</span>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin: 18px 20px 22px; background: #FAFAFA; border-radius: 12px; padding: 20px 22px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; justify-content: space-between">
+            <span style="font-size: 13.5px; line-height: 1.5; color: #222222; max-width: 460px; text-wrap: pretty"><strong>The big idea:</strong> we don't just teach the standard. We design the learning so students can actually learn.</span>
+            <span style="display: flex; align-items: center; gap: 10px">
+              <span style="background: #16213E; color: #FFFFFF; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 9px 14px; border-radius: 7px">Standard</span>
+              <span style="color: #8A8A8A">→</span>
+              <span style="background: #00B4A6; color: #FFFFFF; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 9px 14px; border-radius: 7px">Learning science</span>
+              <span style="color: #8A8A8A">→</span>
+              <span style="background: #6B2FB5; color: #FFFFFF; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 9px 14px; border-radius: 7px">Meaningful learning</span>
+            </span>
+          </div>
+        </div>
+        <div style="display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap">
+          <button onClick="{{ goRemixTab }}" style="border: 0; background: #111111; color: #FFFFFF; font-size: 13px; font-weight: 600; padding: 13px 20px; border-radius: 10px; cursor: pointer" style-hover="background: #333333">Pull resources to remix</button>
+          <button onClick="{{ goAiTab }}" style="border: 1px solid #E4E4E4; background: #FFFFFF; color: #111111; font-size: 13px; font-weight: 600; padding: 13px 20px; border-radius: 10px; cursor: pointer" style-hover="border-color: #111111">Make a student version with AI</button>
+        </div>
+      </sc-for>
+      <sc-for list="{{ noBp }}" as="n" hint-placeholder-count="0">
+        <div style="border: 1px dashed #DDDDDD; border-radius: 16px; padding: 50px 30px; text-align: center">
+          <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px">No blueprint built for {{ n.code }} yet</div>
+          <div style="font-size: 14px; line-height: 1.6; color: #6A6A6A; max-width: 440px; margin: 0 auto">Blueprints exist for RL.2.1, RI.4.2, L.5.4, and RL.6.3 so far. The resources below still fit the skill.</div>
+          <button onClick="{{ goRemixTab }}" style="margin-top: 20px; border: 0; background: #FF6A5B; color: #FFFFFF; font-size: 13.5px; font-weight: 600; padding: 13px 22px; border-radius: 10px; cursor: pointer">See the resources</button>
+        </div>
+      </sc-for>
+      </sc-if>
+
+      <sc-if value="{{ showUnpack }}" hint-placeholder-val="{{ false }}">
+      <sc-for list="{{ unpack }}" as="u" hint-placeholder-count="0">
+        <div style="display: flex; flex-direction: column; gap: 20px">
+          <div style="border: 1px solid #E9E9E9; border-radius: 18px; overflow: hidden">
+            <div style="padding: 22px 28px; background: #16213E; color: #FFFFFF">
+              <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #7FE3DA; margin-bottom: 8px">Deconstructed</div>
+              <div style="font-size: 20px; font-weight: 700; letter-spacing: -.02em; text-wrap: pretty">{{ u.code }} — {{ u.name }}</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1.25fr 1fr; gap: 1px; background: #ECECEC">
+              <div style="background: #FFFFFF; padding: 24px 28px">
+                <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #C0432F; margin-bottom: 14px">What students DO (the verbs)</div>
+                <div style="display: flex; flex-direction: column; gap: 12px">
+                  <sc-for list="{{ u.verbs }}" as="v" hint-placeholder-count="3">
+                    <div style="display: flex; gap: 12px; align-items: baseline">
+                      <span style="background: #FFF0EC; color: #C0432F; font-size: 13px; font-weight: 700; padding: 6px 11px; border-radius: 6px; white-space: nowrap">{{ v.word }}</span>
+                      <span style="font-size: 14px; line-height: 1.5; color: #333333; text-wrap: pretty">{{ v.gloss }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="background: #FFFFFF; padding: 24px 28px">
+                <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #6B2FB5; margin-bottom: 14px">What they do it TO (the concepts)</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                  <sc-for list="{{ u.concepts }}" as="c" hint-placeholder-count="3">
+                    <span style="background: #F4E9FF; color: #6B2FB5; font-size: 13px; font-weight: 600; padding: 7px 12px; border-radius: 7px">{{ c }}</span>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="border: 1px solid #E9E9E9; border-radius: 18px; padding: 26px 28px">
+            <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #00756C; margin-bottom: 6px">The skill ladder</div>
+            <div style="font-size: 13.5px; color: #6A6A6A; margin-bottom: 22px">Nobody jumps straight to the standard. This is the climb.</div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px">
+              <sc-for list="{{ u.ladder }}" as="l" hint-placeholder-count="4">
+                <div style="border: 1px solid #ECECEC; border-radius: 12px; padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 9px">
+                  <div style="display: flex; align-items: center; gap: 9px">
+                    <span style="width: 22px; height: 22px; border-radius: 50%; background: #00B4A6; color: #FFFFFF; font-size: 11px; font-weight: 700; display: grid; place-items: center">{{ l.n }}</span>
+                    <span style="font-size: 14px; font-weight: 700; letter-spacing: -.01em">{{ l.name }}</span>
+                  </div>
+                  <div style="font-size: 13px; line-height: 1.5; color: #444444; text-wrap: pretty">{{ l.body }}</div>
+                  <div style="height: 4px; border-radius: 2px; background: #F2F2F2; margin-top: auto">
+                    <div style="height: 4px; border-radius: 2px; background: #00B4A6; width: {{ l.pct }}"></div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="border: 1px solid #E9E9E9; border-radius: 18px; padding: 26px 28px">
+            <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 6px">
+              <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #B45C00">Vocabulary students need</div>
+              <div style="font-size: 12.5px; color: #9A9A9A">Kid-friendly definitions — front-load these before the lesson</div>
+            </div>
+            <div style="font-size: 13.5px; color: #6A6A6A; margin-bottom: 20px">Students can't master a standard whose words they don't own.</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px">
+              <sc-for list="{{ u.vocab }}" as="w" hint-placeholder-count="5">
+                <div style="border: 1px solid #FFE7C7; background: #FFF9F0; border-radius: 12px; padding: 15px 16px 16px; display: flex; flex-direction: column; gap: 6px">
+                  <span style="font-size: 15px; font-weight: 700; letter-spacing: -.01em; color: #111111">{{ w.word }}</span>
+                  <span style="font-size: 13px; line-height: 1.5; color: #5A4630; text-wrap: pretty">{{ w.kidDef }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="border: 1px solid #E9E9E9; border-radius: 18px; padding: 26px 28px">
+            <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #B3336E; margin-bottom: 6px">Common misconceptions &amp; challenges</div>
+            <div style="font-size: 13.5px; color: #6A6A6A; margin-bottom: 20px">What you'll see in the room, and the move that fixes it.</div>
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <sc-for list="{{ u.challenges }}" as="c" hint-placeholder-count="4">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #ECECEC; border: 1px solid #ECECEC; border-radius: 12px; overflow: hidden">
+                  <div style="background: #FFF5F9; padding: 15px 18px; display: flex; gap: 11px; align-items: flex-start">
+                    <span style="color: #FF7DAE; font-size: 13px; font-weight: 700; line-height: 1.5">✕</span>
+                    <span style="display: flex; flex-direction: column; gap: 3px">
+                      <span style="font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #B3336E">You'll see</span>
+                      <span style="font-size: 14px; line-height: 1.5; color: #333333; text-wrap: pretty">{{ c.problem }}</span>
+                    </span>
+                  </div>
+                  <div style="background: #F2FCFA; padding: 15px 18px; display: flex; gap: 11px; align-items: flex-start">
+                    <span style="color: #00B4A6; font-size: 13px; font-weight: 700; line-height: 1.5">✓</span>
+                    <span style="display: flex; flex-direction: column; gap: 3px">
+                      <span style="font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #00756C">Try this</span>
+                      <span style="font-size: 14px; line-height: 1.5; color: #333333; text-wrap: pretty">{{ c.fix }}</span>
+                    </span>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+            <div style="border: 1px solid #E9E9E9; border-radius: 18px; padding: 26px 28px">
+              <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #2F6FD0; margin-bottom: 6px">Prior knowledge</div>
+              <div style="font-size: 13px; color: #6A6A6A; margin-bottom: 18px">Where this skill came from</div>
+              <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px">
+                <sc-for list="{{ u.priorStd }}" as="p" hint-placeholder-count="2">
+                  <div style="display: flex; gap: 11px; align-items: flex-start">
+                    <span style="background: #EAF2FF; color: #2F6FD0; font-size: 11.5px; font-weight: 700; padding: 5px 9px; border-radius: 5px; white-space: nowrap">{{ p.code }}</span>
+                    <span style="font-size: 13.5px; line-height: 1.5; color: #333333; text-wrap: pretty">{{ p.text }}</span>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #8A8A8A; margin-bottom: 10px">They also need to be able to</div>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <sc-for list="{{ u.prior }}" as="p" hint-placeholder-count="3">
+                  <div style="display: flex; gap: 9px; align-items: flex-start">
+                    <span style="color: #2F6FD0; font-size: 12px; font-weight: 700; line-height: 1.5">→</span>
+                    <span style="font-size: 13.5px; line-height: 1.5; color: #444444; text-wrap: pretty">{{ p }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+            <div style="border: 1px solid #E9E9E9; border-radius: 18px; padding: 26px 28px">
+              <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #6B2FB5; margin-bottom: 6px">Future learning</div>
+              <div style="font-size: 13px; color: #6A6A6A; margin-bottom: 18px">What this is building toward</div>
+              <div style="display: flex; flex-direction: column; gap: 12px">
+                <sc-for list="{{ u.futureStd }}" as="f" hint-placeholder-count="2">
+                  <div style="display: flex; gap: 11px; align-items: flex-start">
+                    <span style="background: #F4E9FF; color: #6B2FB5; font-size: 11.5px; font-weight: 700; padding: 5px 9px; border-radius: 5px; white-space: nowrap">{{ f.code }}</span>
+                    <span style="font-size: 13.5px; line-height: 1.5; color: #333333; text-wrap: pretty">{{ f.text }}</span>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="margin-top: 20px; padding-top: 18px; border-top: 1px solid #F2F2F2; font-size: 13px; line-height: 1.55; color: #6A6A6A; text-wrap: pretty">If students leave this year shaky here, that's what shows up two grades later.</div>
+            </div>
+          </div>
+
+          <div style="border: 1.5px solid #111111; border-radius: 18px; padding: 28px 30px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; justify-content: space-between">
+            <span style="display: flex; flex-direction: column; gap: 7px; max-width: 620px">
+              <span style="font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #8A8A8A">You've got it when…</span>
+              <span style="font-size: 19px; font-weight: 600; line-height: 1.4; letter-spacing: -.015em; text-wrap: pretty">{{ u.mastery }}</span>
+            </span>
+            <button onClick="{{ goRemixTab }}" style="border: 0; background: #FF6A5B; color: #FFFFFF; font-size: 13.5px; font-weight: 600; padding: 14px 22px; border-radius: 10px; cursor: pointer; white-space: nowrap" style-hover="background: #E24F41">Find resources for this →</button>
+          </div>
+        </div>
+      </sc-for>
+      <sc-for list="{{ noUnpack }}" as="n" hint-placeholder-count="0">
+        <div style="border: 1px dashed #DDDDDD; border-radius: 16px; padding: 50px 30px; text-align: center">
+          <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px">No breakdown built for {{ n.code }} yet</div>
+          <div style="font-size: 14px; line-height: 1.6; color: #6A6A6A; max-width: 440px; margin: 0 auto">Deconstructions exist for RL.2.1, RI.4.2, L.5.4, and RL.6.3 so far.</div>
+        </div>
+      </sc-for>
+      </sc-if>
+
+      <sc-if value="{{ showAI }}" hint-placeholder-val="{{ false }}">
+      <div style="display: grid; grid-template-columns: 340px 1fr; gap: 26px; align-items: start">
+        <div style="border: 1px solid #E9E9E9; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 20px">
+          <div>
+            <div style="font-size: 18px; font-weight: 700; letter-spacing: -.02em; margin-bottom: 6px">Make it for your learners</div>
+            <div style="font-size: 13.5px; line-height: 1.55; color: #6A6A6A; text-wrap: pretty">{{ aiSourceLine }}</div>
+          </div>
+          <div>
+            <div style="font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 12px">What should it make?</div>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <sc-for list="{{ aiFormats }}" as="f" hint-placeholder-count="6">
+                <button onClick="{{ f.go }}" style="border: 1px solid; border-radius: 12px; padding: 0; overflow: hidden; cursor: pointer; text-align: left; display: flex; background: {{ f.bg }}; border-color: {{ f.bc }}">
+                  <span style="width: 5px; flex: 0 0 auto; background: {{ f.bar }}"></span>
+                  <span style="padding: 13px 15px 14px; display: flex; flex-direction: column; gap: 3px">
+                    <span style="font-size: 13.5px; font-weight: 600; color: {{ f.fg }}">{{ f.label }}</span>
+                    <span style="font-size: 12px; line-height: 1.45; color: {{ f.sub }}; text-wrap: pretty">{{ f.desc }}</span>
+                  </span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px">Grade</div>
+            <input value="{{ aiGrade }}" onChange="{{ onAiGrade }}" style="width: 100%; border: 1px solid #E4E4E4; border-radius: 10px; padding: 12px 14px; font-size: 14px; outline: none" />
+          </div>
+          <div>
+            <div style="font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px">Anything about your class?</div>
+            <input value="{{ aiNeed }}" onChange="{{ onAiNeed }}" style="width: 100%; border: 1px solid #E4E4E4; border-radius: 10px; padding: 12px 14px; font-size: 14px; outline: none" />
+          </div>
+          <button onClick="{{ runAI }}" style="border: 0; background: #FF6A5B; color: #FFFFFF; font-size: 14px; font-weight: 600; padding: 15px; border-radius: 10px; cursor: pointer" style-hover="background: #E24F41">{{ aiRunLabel }}</button>
+        </div>
+
+        <div style="border: 1px solid #E9E9E9; border-radius: 16px; min-height: 420px; padding: 30px 34px">
+          <sc-if value="{{ aiBusy }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; gap: 6px; align-items: center">
+              <span style="width: 9px; height: 9px; border-radius: 50%; background: #FF6A5B; animation: upPulse 1.1s infinite"></span>
+              <span style="width: 9px; height: 9px; border-radius: 50%; background: #FF7DAE; animation: upPulse 1.1s infinite .15s"></span>
+              <span style="width: 9px; height: 9px; border-radius: 50%; background: #B87DFF; animation: upPulse 1.1s infinite .3s"></span>
+              <span style="font-size: 14px; color: #6A6A6A; margin-left: 8px">Writing it for your kids…</span>
+            </div>
+          </sc-if>
+          <sc-for list="{{ aiDeckTitle }}" as="d" hint-placeholder-count="0">
+            <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 22px">
+              <span style="display: flex; flex-direction: column; gap: 4px">
+                <span style="font-size: 22px; font-weight: 700; letter-spacing: -.025em">{{ d.t }}</span>
+                <span style="font-size: 12.5px; color: #8A8A8A">{{ d.n }} · your brand, ready to copy into Slides</span>
+              </span>
+              <span style="display: flex; gap: 9px">
+                <button onClick="{{ runAI }}" style="border: 1px solid #E4E4E4; background: #FFFFFF; color: #111111; font-size: 12.5px; font-weight: 600; padding: 10px 16px; border-radius: 9px; cursor: pointer" style-hover="border-color: #111111">Try again</button>
+                <button onClick="{{ d.send }}" style="border: 0; background: #111111; color: #FFFFFF; font-size: 12.5px; font-weight: 600; padding: 10px 16px; border-radius: 9px; cursor: pointer" style-hover="background: #333333">{{ d.sendLabel }}</button>
+              </span>
+            </div>
+          </sc-for>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px">
+            <sc-for list="{{ aiItems }}" as="s" hint-placeholder-count="0">
+              <div style="border: 1px solid #E4E4E4; border-radius: 12px; overflow: hidden">
+                <div style="aspect-ratio: 16/9; padding: 24px 26px; display: flex; flex-direction: column; gap: 12px; position: relative; background: {{ s.bg }}; color: {{ s.fg }}">
+                  <img src="{{ s.mark }}" alt="" loading="lazy" style="position: absolute; top: 18px; right: 20px; width: 26px; height: 26px; opacity: .5" />
+                  <span style="font-weight: 700; letter-spacing: -.02em; line-height: 1.14; text-wrap: pretty; font-size: {{ s.headSize }}">{{ s.label }}</span>
+                  <span style="display: flex; flex-direction: column; gap: 8px; margin-top: 2px">
+                    <sc-for list="{{ s.lines }}" as="l" hint-placeholder-count="3">
+                      <span style="display: flex; gap: 9px; align-items: flex-start">
+                        <span style="width: 7px; height: 7px; border-radius: 2px; margin-top: 7px; flex: 0 0 auto; background: {{ s.accent }}"></span>
+                        <span style="font-size: 15px; line-height: 1.45; text-wrap: pretty">{{ l.t }}</span>
+                      </span>
+                    </sc-for>
+                  </span>
+                  <span style="position: absolute; bottom: 14px; right: 20px; font-size: 10.5px; font-weight: 600; opacity: .45">{{ s.n }}</span>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <sc-for list="{{ aiOut }}" as="o" hint-placeholder-count="0">
+            <div style="border: 1px solid #ECECEC; border-radius: 12px; padding: 26px 28px; background: #FAFAFA">
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #8A8A8A; margin-bottom: 14px">Draft</div>
+              <div style="white-space: pre-wrap; font-size: 15px; line-height: 1.7; color: #1A1A1A">{{ o.text }}</div>
+              <button onClick="{{ runAI }}" style="margin-top: 20px; border: 1px solid #E4E4E4; background: #FFFFFF; color: #111111; font-size: 12.5px; font-weight: 600; padding: 10px 16px; border-radius: 9px; cursor: pointer" style-hover="border-color: #111111">Rebuild as slides</button>
+            </div>
+          </sc-for>
+          <sc-for list="{{ aiErr }}" as="e" hint-placeholder-count="0">
+            <div style="font-size: 14px; color: #C0432F">{{ e.text }}</div>
+          </sc-for>
+          <sc-if value="{{ aiEmpty }}" hint-placeholder-val="{{ true }}">
+            <div style="display: flex; flex-direction: column; gap: 10px; max-width: 460px">
+              <div style="font-size: 17px; font-weight: 600">Nothing generated yet</div>
+              <div style="font-size: 14.5px; line-height: 1.65; color: #6A6A6A; text-wrap: pretty">Pick what you need, tell it about your class, and it builds student-facing slides in your brand — tied to this standard and the resource you're remixing.</div>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ showRemix }}" hint-placeholder-val="{{ true }}">
+      <h2 style="font-size: 22px; font-weight: 700; letter-spacing: -.02em; margin: 0 0 6px">{{ match.count }}</h2>
+      <p style="font-size: 14px; color: #6A6A6A; margin: 0 0 22px">Each card shows the move to make in class, not just the file.</p>
+
+      <div style="display: flex; flex-direction: column; gap: 18px">
+        <sc-for list="{{ matchResults }}" as="r" hint-placeholder-count="3">
+          <div style="border: 1px solid #E9E9E9; border-radius: 16px; overflow: hidden; display: grid; grid-template-columns: 210px 1fr">
+            <div onClick="{{ r.open }}" style="position: relative; cursor: pointer; background: {{ r.tint }}">
+              <img src="{{ r.thumb }}" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0" />
+              <sc-if value="{{ r.locked }}" hint-placeholder-val="{{ false }}">
+                <div style="position: absolute; inset: 0; background: rgba(255,255,255,.55); backdrop-filter: blur(6px); display: grid; place-items: center">
+                  <span style="background: #111111; color: #FFFFFF; font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 6px 10px; border-radius: 999px">All-Access</span>
+                </div>
+              </sc-if>
+            </div>
+            <div style="padding: 22px 26px 24px">
+              <div style="font-size: 19px; font-weight: 600; letter-spacing: -.02em; margin-bottom: 10px">{{ r.title }}</div>
+              <div style="display: flex; align-items: center; gap: 9px; flex-wrap: wrap; margin-bottom: 14px">
+                <span style="font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #8A8A8A">{{ r.purpose }}</span>
+                <span style="background: #F4E9FF; color: #6B2FB5; font-size: 10.5px; font-weight: 600; padding: 4px 8px; border-radius: 5px">{{ r.grades }}</span>
+                <span style="background: #FFF0EC; color: #C0432F; font-size: 10.5px; font-weight: 700; padding: 4px 8px; border-radius: 5px">{{ r.fit }} fit</span>
+              </div>
+              <div style="font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 11px">{{ r.moveHeading }}</div>
+              <div style="display: flex; flex-direction: column; gap: 9px">
+                <sc-for list="{{ r.moves }}" as="m" hint-placeholder-count="3">
+                  <div style="display: flex; gap: 11px; align-items: flex-start">
+                    <span style="width: 20px; height: 20px; border-radius: 6px; background: #111111; color: #FFFFFF; font-size: 11px; font-weight: 700; display: grid; place-items: center; flex: 0 0 auto; margin-top: 1px">{{ m.n }}</span>
+                    <span style="font-size: 14px; line-height: 1.55; color: #2A2A2A; text-wrap: pretty">{{ m.text }}</span>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap">
+                <button onClick="{{ r.open }}" style="border: 0; background: #111111; color: #FFFFFF; font-size: 12.5px; font-weight: 600; padding: 11px 18px; border-radius: 9px; cursor: pointer" style-hover="background: #333333">Open resource</button>
+                <button onClick="{{ r.save }}" style="border: 1px solid #E4E4E4; background: #FFFFFF; font-size: 12.5px; font-weight: 600; padding: 11px 18px; border-radius: 9px; cursor: pointer; color: #111111" style-hover="border-color: #111111">{{ r.saveLabel }}</button>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      </sc-if>
+    </div>
+    </sc-if>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1200px; margin: 0 auto; padding: 28px 32px 90px">
+    <button onClick="{{ goBack }}" style="border: 0; background: none; padding: 0; font-size: 13px; font-weight: 600; color: #6A6A6A; cursor: pointer; margin-bottom: 22px" style-hover="color: #111111">← Back to {{ backLabel }}</button>
+
+    <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: start">
+      <div>
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px">
+          <span style="font-size: 10.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #8A8A8A">{{ detail.purpose }}</span>
+          <span style="background: #F4E9FF; color: #6B2FB5; font-size: 10.5px; font-weight: 600; padding: 4px 8px; border-radius: 5px">{{ detail.grades }}</span>
+          <span style="background: #E6F8F6; color: #00756C; font-size: 10.5px; font-weight: 600; padding: 4px 8px; border-radius: 5px">{{ detail.skill }}</span>
+        </div>
+        <h1 style="font-size: 40px; font-weight: 700; letter-spacing: -.035em; line-height: 1.08; margin: 0 0 14px; text-wrap: pretty">{{ detail.title }}</h1>
+        <p style="font-size: 17px; line-height: 1.6; color: #444444; margin: 0 0 28px; max-width: 640px; text-wrap: pretty">{{ detail.summary }}</p>
+
+        <div style="border: 1px solid #E9E9E9; border-radius: 16px; overflow: hidden; margin-bottom: 26px">
+          <div style="aspect-ratio: 16/9; position: relative; background: #111111">
+            <sc-for list="{{ detail.embed }}" as="e" hint-placeholder-count="0">
+              <iframe src="{{ e.url }}" title="Resource walkthrough" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block"></iframe>
+            </sc-for>
+            <sc-for list="{{ detail.heroImg }}" as="im" hint-placeholder-count="0">
+              <button onClick="{{ playDetail }}" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0; padding: 0; background: none; cursor: pointer; display: grid; place-items: center">
+                <img src="{{ im.url }}" alt="" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; opacity: .85" />
+                <span style="position: relative; width: 66px; height: 66px; border-radius: 50%; background: #FF6A5B; display: grid; place-items: center; box-shadow: 0 8px 26px rgba(0,0,0,.35)" style-hover="background: #E24F41">
+                  <span style="display: block; width: 0; height: 0; border-left: 18px solid #FFFFFF; border-top: 12px solid transparent; border-bottom: 12px solid transparent; margin-left: 5px"></span>
+                </span>
+                <span style="position: absolute; bottom: 0; left: 0; right: 0; padding: 26px 16px 13px; background: linear-gradient(transparent, rgba(0,0,0,.72)); font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #FFFFFF; text-align: left">Watch here · {{ detail.videoLength }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #E9E9E9; border-radius: 16px; padding: 26px 28px; margin-bottom: 26px">
+          <h2 style="font-size: 18px; font-weight: 700; letter-spacing: -.015em; margin: 0 0 16px">Teaching moves</h2>
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <sc-for list="{{ detail.moves }}" as="m" hint-placeholder-count="4">
+              <div style="display: flex; gap: 12px; align-items: flex-start">
+                <span style="width: 21px; height: 21px; border-radius: 6px; background: #F2F2F2; font-size: 11px; font-weight: 700; display: grid; place-items: center; flex: 0 0 auto; margin-top: 2px">{{ m.n }}</span>
+                <span style="font-size: 15px; line-height: 1.6; color: #222222; text-wrap: pretty">{{ m.text }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #E9E9E9; border-radius: 16px; padding: 26px 28px">
+          <h2 style="font-size: 18px; font-weight: 700; letter-spacing: -.015em; margin: 0 0 8px">Why this works</h2>
+          <p style="font-size: 15px; line-height: 1.65; color: #444444; margin: 0 0 16px; text-wrap: pretty">{{ detail.why }}</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 7px">
+            <sc-for list="{{ detail.science }}" as="s" hint-placeholder-count="3">
+              <span style="background: #E6F8F6; color: #00756C; font-size: 11.5px; font-weight: 600; padding: 6px 10px; border-radius: 999px">{{ s }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <aside style="position: sticky; top: 96px; display: flex; flex-direction: column; gap: 16px">
+        <div style="border: 1px solid #E9E9E9; border-radius: 16px; overflow: hidden">
+          <div style="aspect-ratio: 16/9; background: {{ detail.tint }}">
+            <sc-for list="{{ detail.sideImg }}" as="im" hint-placeholder-count="0">
+              <img src="{{ im.url }}" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block" />
+            </sc-for>
+          </div>
+          <div style="padding: 20px">
+            <sc-if value="{{ detail.locked }}" hint-placeholder-val="{{ false }}">
+              <div style="background: #111111; border-radius: 12px; padding: 20px; color: #FFFFFF; margin-bottom: 12px">
+                <div style="font-size: 14px; font-weight: 600; margin-bottom: 6px">Behind All-Access</div>
+                <div style="font-size: 13px; line-height: 1.5; color: #C9C9C9; margin-bottom: 14px">Unlock the slides, the video, and every other resource in the library.</div>
+                <button onClick="{{ goPricing }}" style="width: 100%; border: 0; background: #FF6A5B; color: #FFFFFF; font-size: 13.5px; font-weight: 600; padding: 13px; border-radius: 9px; cursor: pointer" style-hover="background: #E24F41">Upgrade to All-Access</button>
+              </div>
+            </sc-if>
+            <sc-if value="{{ detail.unlocked }}" hint-placeholder-val="{{ true }}">
+              <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px">
+                <a href="{{ detail.slidesUrl }}" target="_blank" rel="noreferrer" style="background: #FF6A5B; color: #FFFFFF; font-size: 13.5px; font-weight: 600; padding: 14px 16px; border-radius: 9px; display: flex; justify-content: space-between; align-items: center; text-decoration: none" style-hover="background: #E24F41; color: #FFFFFF; text-decoration: none">
+                  <span>Open Google Slides</span><span>↗</span>
+                </a>
+                <a href="{{ detail.videoUrl }}" target="_blank" rel="noreferrer" style="border: 1px solid #E4E4E4; color: #111111; font-size: 13.5px; font-weight: 600; padding: 14px 16px; border-radius: 9px; display: flex; justify-content: space-between; align-items: center; text-decoration: none" style-hover="border-color: #111111; color: #111111; text-decoration: none">
+                  <span>Watch on YouTube</span><span>↗</span>
+                </a>
+              </div>
+            </sc-if>
+            <button onClick="{{ saveDetail }}" style="width: 100%; border: 1px solid #E4E4E4; background: #FFFFFF; color: #111111; font-size: 13px; font-weight: 600; padding: 12px; border-radius: 9px; cursor: pointer" style-hover="border-color: #111111">{{ detailSaveLabel }}</button>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #E9E9E9; border-radius: 16px; padding: 22px 24px">
+          <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px">At a glance</div>
+          <div style="display: flex; flex-direction: column; gap: 11px">
+            <sc-for list="{{ detail.facts }}" as="f" hint-placeholder-count="4">
+              <div style="display: flex; justify-content: space-between; gap: 14px; font-size: 13.5px">
+                <span style="color: #7A7A7A">{{ f.k }}</span>
+                <span style="font-weight: 600; text-align: right">{{ f.v }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #E9E9E9; border-radius: 16px; padding: 22px 24px">
+          <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px">Pairs well with</div>
+          <div style="display: flex; flex-direction: column; gap: 13px">
+            <sc-for list="{{ related }}" as="r" hint-placeholder-count="3">
+              <button onClick="{{ r.open }}" style="border: 0; background: none; padding: 0; display: flex; gap: 12px; align-items: center; cursor: pointer; text-align: left; width: 100%">
+                <img src="{{ r.thumb }}" alt="" loading="lazy" style="width: 62px; height: 40px; border-radius: 8px; flex: 0 0 auto; object-fit: cover; display: block; background: {{ r.tint }}" />
+                <span style="display: flex; flex-direction: column; gap: 2px">
+                  <span style="font-size: 13.5px; font-weight: 600; line-height: 1.3">{{ r.title }}</span>
+                  <span style="font-size: 11.5px; color: #8A8A8A">{{ r.purpose }}</span>
+                </span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isVideos }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1400px; margin: 0 auto; padding: 40px 32px 90px">
+    <h1 style="font-size: 34px; font-weight: 700; letter-spacing: -.03em; margin: 0 0 6px">Video courses</h1>
+    <p style="font-size: 15px; color: #6A6A6A; margin: 0 0 28px">Short tracks on the instructional strategies behind the resources.</p>
+
+    <div style="display: flex; margin-bottom: 28px; border-bottom: 1px solid #ECECEC">
+      <sc-for list="{{ videoTabs }}" as="t" hint-placeholder-count="3">
+        <button onClick="{{ t.go }}" style="border: 0; background: none; padding: 0 2px 14px; margin-right: 26px; cursor: pointer; position: relative; font-size: 14px; font-weight: 600; color: {{ t.fg }}">
+          {{ t.label }}
+          <span style="position: absolute; left: 0; right: 0; bottom: -1px; height: 2.5px; border-radius: 2px; background: {{ t.bar }}"></span>
+        </button>
+      </sc-for>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px">
+      <sc-for list="{{ courses }}" as="c" hint-placeholder-count="6">
+        <div style="border: 1px solid #E9E9E9; border-radius: 16px; overflow: hidden; cursor: pointer; display: flex; flex-direction: column" style-hover="border-color: #111111">
+          <div style="aspect-ratio: 16/9; position: relative; background: {{ c.tint }}">
+            <image-slot id="{{ c.slotId }}" shape="rect" fit="cover" placeholder="Drop course cover art"></image-slot>
+            <span style="position: absolute; bottom: 10px; right: 10px; background: rgba(17,17,17,.85); color: #FFFFFF; font-size: 10.5px; font-weight: 600; padding: 4px 8px; border-radius: 4px; pointer-events: none">{{ c.length }}</span>
+            <sc-if value="{{ c.locked }}" hint-placeholder-val="{{ false }}">
+              <div style="position: absolute; inset: 0; background: rgba(255,255,255,.6); backdrop-filter: blur(5px); display: grid; place-items: center">
+                <span style="background: #111111; color: #FFFFFF; font-size: 9.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 6px 11px; border-radius: 999px">All-Access</span>
+              </div>
+            </sc-if>
+          </div>
+          <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 9px; flex: 1">
+            <div style="font-size: 17px; font-weight: 600; letter-spacing: -.02em; line-height: 1.24">{{ c.title }}</div>
+            <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #8A8A8A">{{ c.meta }}</div>
+            <div style="font-size: 13.5px; line-height: 1.55; color: #555555; text-wrap: pretty">{{ c.blurb }}</div>
+            <div style="margin-top: auto; padding-top: 8px">
+              <div style="height: 5px; border-radius: 3px; background: #F2F2F2; overflow: hidden">
+                <div style="height: 5px; border-radius: 3px; background: #00B4A6; width: {{ c.progressWidth }}"></div>
+              </div>
+              <div style="font-size: 11.5px; color: #8A8A8A; margin-top: 7px">{{ c.progressLabel }}</div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isPlanner }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1400px; margin: 0 auto; padding: 40px 32px 90px">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; flex-wrap: wrap; margin-bottom: 30px">
+      <div>
+        <h1 style="font-size: 34px; font-weight: 700; letter-spacing: -.03em; margin: 0 0 6px">My planner</h1>
+        <sc-for list="{{ plannerCount }}" as="p" hint-placeholder-count="0">
+          <p style="font-size: 15px; color: #6A6A6A; margin: 0">{{ p.n }} · dropped into this week so you can see the shape of it.</p>
+        </sc-for>
+      </div>
+      <sc-for list="{{ plannerCount }}" as="p" hint-placeholder-count="0">
+        <button onClick="{{ clearPlanner }}" style="border: 1px solid #E4E4E4; background: #FFFFFF; color: #111111; font-size: 13px; font-weight: 600; padding: 13px 20px; border-radius: 10px; cursor: pointer" style-hover="border-color: #111111">Clear the week</button>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ plannerEmpty }}" hint-placeholder-val="{{ true }}">
+      <div style="border: 1px dashed #DDDDDD; border-radius: 18px; padding: 76px 30px; text-align: center">
+        <img src="uploads/01_chevron_thick_coral_512.png" alt="" style="width: 52px; height: 52px; margin: 0 auto 20px; display: block; opacity: .55" />
+        <div style="font-size: 21px; font-weight: 600; margin-bottom: 10px">Nothing saved yet</div>
+        <div style="font-size: 15px; line-height: 1.6; color: #6A6A6A; max-width: 440px; margin: 0 auto; text-wrap: pretty">Hit “Save to planner” on any resource and it lands here, sorted into the week. Nothing to set up.</div>
+        <div style="display: flex; gap: 10px; justify-content: center; margin-top: 24px; flex-wrap: wrap">
+          <button onClick="{{ goLibrary }}" style="border: 0; background: #FF6A5B; color: #FFFFFF; font-size: 13.5px; font-weight: 600; padding: 14px 24px; border-radius: 10px; cursor: pointer" style-hover="background: #E24F41">Browse resources</button>
+          <button onClick="{{ goMatch }}" style="border: 1px solid #E4E4E4; background: #FFFFFF; color: #111111; font-size: 13.5px; font-weight: 600; padding: 14px 24px; border-radius: 10px; cursor: pointer" style-hover="border-color: #111111">Match a standard</button>
+        </div>
+      </div>
+    </sc-if>
+
+    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; align-items: start">
+      <sc-for list="{{ plannerDays }}" as="d" hint-placeholder-count="0">
+        <div style="border: 1px solid #E9E9E9; border-radius: 16px; overflow: hidden">
+          <div style="padding: 14px 16px; border-bottom: 1px solid #F2F2F2; display: flex; align-items: center; gap: 9px">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: {{ d.accent }}"></span>
+            <span style="font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase">{{ d.day }}</span>
+          </div>
+          <div style="padding: 14px; display: flex; flex-direction: column; gap: 12px; min-height: 130px">
+            <sc-for list="{{ d.items }}" as="i" hint-placeholder-count="0">
+              <div style="border: 1px solid #ECECEC; border-radius: 11px; overflow: hidden">
+                <div onClick="{{ i.open }}" style="cursor: pointer; aspect-ratio: 16/9; background: {{ i.tint }}">
+                  <img src="{{ i.thumb }}" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block" />
+                </div>
+                <div style="padding: 11px 12px 12px; display: flex; flex-direction: column; gap: 7px">
+                  <div onClick="{{ i.open }}" style="font-size: 13px; font-weight: 600; line-height: 1.3; cursor: pointer; text-wrap: pretty">{{ i.title }}</div>
+                  <div style="font-size: 10.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #9A9A9A">{{ i.skill }}</div>
+                  <button onClick="{{ i.remove }}" style="border: 0; background: none; padding: 0; font-size: 11.5px; font-weight: 600; color: #9A9A9A; cursor: pointer; text-align: left" style-hover="color: #C0432F">Remove</button>
+                </div>
+              </div>
+            </sc-for>
+            <sc-if value="{{ d.empty }}" hint-placeholder-val="{{ false }}">
+              <div style="border: 1px dashed #E4E4E4; border-radius: 10px; padding: 20px 12px; text-align: center; font-size: 12px; color: #B0B0B0">Open</div>
+            </sc-if>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isReads }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1400px; margin: 0 auto; padding: 40px 32px 90px">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; flex-wrap: wrap; margin-bottom: 30px">
+      <div style="max-width: 640px">
+        <h1 style="font-size: 38px; font-weight: 700; letter-spacing: -.035em; margin: 0 0 8px">The Teacher's Lounge</h1>
+        <p style="font-size: 16px; line-height: 1.55; color: #555555; margin: 0; text-wrap: pretty">Short reads for the ten minutes you actually get. Straight from the newsletter, no lesson prep required.</p>
+      </div>
+      <a href="https://mrshowell24.substack.com" target="_blank" rel="noreferrer" style="background: #111111; color: #FFFFFF; font-size: 13.5px; font-weight: 600; padding: 14px 22px; border-radius: 10px; text-decoration: none; white-space: nowrap" style-hover="background: #333333; color: #FFFFFF; text-decoration: none">Subscribe free ↗</a>
+    </div>
+
+    <sc-for list="{{ readsHero }}" as="h" hint-placeholder-count="1">
+      <a href="{{ h.url }}" target="_blank" rel="noreferrer" style="display: grid; grid-template-columns: 1.1fr 1fr; border: 1px solid #E9E9E9; border-radius: 20px; overflow: hidden; margin-bottom: 34px; text-decoration: none; color: #111111" style-hover="border-color: #111111; color: #111111; text-decoration: none">
+        <span style="padding: 44px 46px 46px; display: flex; flex-direction: column; gap: 14px">
+          <span style="display: flex; align-items: center; gap: 9px">
+            <span style="font-size: 9.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 5px 9px; border-radius: 4px; background: {{ h.catBg }}; color: {{ h.catFg }}">{{ h.cat }}</span>
+            <span style="font-size: 9.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #8A8A8A">This week</span>
+          </span>
+          <span style="font-size: 34px; font-weight: 700; letter-spacing: -.03em; line-height: 1.12; text-wrap: pretty">{{ h.title }}</span>
+          <span style="font-size: 16px; line-height: 1.6; color: #444444; text-wrap: pretty">{{ h.blurb }}</span>
+          <span style="font-size: 13.5px; font-weight: 600; color: #FF6A5B; margin-top: auto; padding-top: 14px">Read it on Substack ↗</span>
+        </span>
+        <span style="position: relative; display: block; min-height: 280px; background-image: url('uploads/Background.png'); background-size: cover; background-position: center">
+          <image-slot id="lounge-featured" src="{{ h.cover }}" shape="rect" fit="cover" placeholder="Drop this post's Substack image"></image-slot>
+        </span>
+      </a>
+    </sc-for>
+
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 20px">
+      <span style="font-size: 13.5px; font-weight: 600; color: #6A6A6A">{{ readsCount }}</span>
+      <div style="display: flex; gap: 6px; flex-wrap: wrap">
+        <sc-for list="{{ readsFilters }}" as="f" hint-placeholder-count="5">
+          <button onClick="{{ f.go }}" style="border: 1px solid; border-radius: 999px; padding: 7px 14px; font-size: 12px; font-weight: 600; cursor: pointer; background: {{ f.bg }}; color: {{ f.fg }}; border-color: {{ f.bc }}">{{ f.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px">
+      <sc-for list="{{ reads }}" as="a" hint-placeholder-count="9">
+        <a href="{{ a.url }}" target="_blank" rel="noreferrer" style="border: 1px solid #E9E9E9; border-radius: 16px; padding: 0; overflow: hidden; text-decoration: none; color: #111111; display: flex; flex-direction: column" style-hover="border-color: #111111; color: #111111; text-decoration: none">
+          <span style="position: relative; display: block; aspect-ratio: 16/9; background: #F2F2F2">
+            <image-slot id="{{ a.slotId }}" src="{{ a.cover }}" shape="rect" fit="cover" placeholder="Drop this post's image"></image-slot>
+          </span>
+          <span style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 11px; flex: 1">
+            <span style="font-size: 9.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 5px 9px; border-radius: 4px; align-self: flex-start; background: {{ a.catBg }}; color: {{ a.catFg }}">{{ a.cat }}</span>
+            <span style="font-size: 19px; font-weight: 600; letter-spacing: -.02em; line-height: 1.24; text-wrap: pretty">{{ a.title }}</span>
+            <span style="font-size: 14px; line-height: 1.6; color: #555555; text-wrap: pretty">{{ a.blurb }}</span>
+            <span style="font-size: 12.5px; font-weight: 600; color: #FF6A5B; margin-top: auto; padding-top: 10px">Read it ↗</span>
+          </span>
+        </a>
+      </sc-for>
+    </div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isPricing }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1180px; margin: 0 auto; padding: 52px 32px 90px">
+    <div style="text-align: center; max-width: 640px; margin: 0 auto 42px">
+      <h1 style="font-size: 40px; font-weight: 700; letter-spacing: -.035em; line-height: 1.08; margin: 0 0 14px; text-wrap: pretty">Pick the plan that fits your year</h1>
+      <p style="font-size: 16.5px; line-height: 1.55; color: #555555; margin: 0">Start free. Upgrade when you're ready for the whole library.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: start">
+      <sc-for list="{{ plans }}" as="p" hint-placeholder-count="3">
+        <div style="border: 1.5px solid; border-radius: 20px; overflow: hidden; background: {{ p.cardBg }}; color: {{ p.cardFg }}; border-color: {{ p.border }}">
+          <div style="padding: 30px 30px 26px">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px; min-height: 20px">
+              <span style="font-size: 11.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase">{{ p.name }}</span>
+              <sc-if value="{{ p.featured }}" hint-placeholder-val="{{ false }}">
+                <span style="background: #FF6A5B; color: #FFFFFF; font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 4px 8px; border-radius: 999px">Most picked</span>
+              </sc-if>
+            </div>
+            <div style="display: flex; align-items: baseline; gap: 6px">
+              <span style="font-size: 46px; font-weight: 700; letter-spacing: -.04em">{{ p.price }}</span>
+              <span style="font-size: 14px; opacity: .65">{{ p.per }}</span>
+            </div>
+            <div style="font-size: 14px; line-height: 1.55; opacity: .82; margin-top: 10px; min-height: 44px; text-wrap: pretty">{{ p.who }}</div>
+            <button onClick="{{ p.act }}" style="width: 100%; margin-top: 20px; border: 0; font-size: 14px; font-weight: 600; padding: 15px; border-radius: 11px; cursor: pointer; background: {{ p.btnBg }}; color: {{ p.btnFg }}">{{ p.cta }}</button>
+          </div>
+          <div style="padding: 24px 30px 30px; border-top: 1px solid; border-color: {{ p.divider }}; display: flex; flex-direction: column; gap: 12px">
+            <sc-for list="{{ p.features }}" as="f" hint-placeholder-count="5">
+              <div style="display: flex; gap: 11px; align-items: flex-start">
+                <span style="font-size: 13px; font-weight: 700; line-height: 1.5; color: {{ p.check }}">✓</span>
+                <span style="font-size: 14px; line-height: 1.5">{{ f }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="margin-top: 44px; border: 1px solid #E9E9E9; border-radius: 18px; padding: 34px 38px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="4">
+        <div>
+          <div style="font-size: 15.5px; font-weight: 600; margin-bottom: 7px">{{ f.q }}</div>
+          <div style="font-size: 14px; line-height: 1.6; color: #555555; text-wrap: pretty">{{ f.a }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </main>
+  </sc-if>
+
+  <footer style="border-top: 1px solid #ECECEC; background: #FAFAFA">
+    <div style="max-width: 1400px; margin: 0 auto; padding: 34px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+      <div style="display: flex; align-items: center; gap: 10px">
+        <img src="uploads/upshift_logo.png" alt="Upshift Learning" style="height: 24px; width: auto; display: block" />
+        <span style="font-size: 12.5px; color: #6A6A6A">2,688 resources, every one with a video</span>
+      </div>
+      <div style="display: flex; gap: 24px; font-size: 12.5px; color: #6A6A6A">
+        <span>Help</span>
+        <span>Terms</span>
+        <span>Privacy</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;tier&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;free&quot;,&quot;pro&quot;],&quot;default&quot;:&quot;free&quot;,&quot;tsType&quot;:&quot;'free' | 'pro'&quot;,&quot;section&quot;:&quot;Access&quot;}}">
+const RAW = [
+  ["Behavior Bingo","Classroom Management","ctkvqH4EcqM","1Rj_vwsLOjRnwRtHUplMc6vbijq5JdR-XEEQnU1-yNuA","K-8","Routines","Slides"],
+  ["Make It Real","Instructional Strategies","i0Zbj8bphaE","1rGPfQ6jc4q3jAE0W8_ZMMhDyxCPtF_BKC8ygdmkQyiU","5-8","Application","Slides"],
+  ["Apple Pie Directions","Classroom Management","KaY6lqsEFPA","1t4U8sXNUcTezcQ4HdLiAiC9HY2cZu88qk_4jbkZ0OGw","K-5","Routines","Slides"],
+  ["ST Math Game","Game Based Learning","HlG5oAIT3F0","1WRaobZhtDPZqNlZVPl3NXdJGh8RqRmASkCYPETrY_xw","3-8","Math Practice","Slides"],
+  ["Tracking Missing Work","Organization","jpV2WDoT2rY","","5-8","Routines","Tracker"],
+  ["Podcast Walk & Listen","Instructional Strategies","Sf9Tqu0TaV4","","5-8","Listening","Doc"],
+  ["Missing Work Autocrat","Classroom Management","BIl7TXJveag","","5-8","Routines","Tracker"],
+  ["Feedback Ideas","Feedback","poTDZSlSWkM","1kyiTAuN16iUua1DencCuc-wiKpKj_D3YHQpGoyHvEjQ","K-8","Feedback","Slides"],
+  ["Check In Items","SEL","LypnW6bWqBo","","K-8","Belonging","Sheet"],
+  ["Growth Mindset","SEL","V9ULuhDOvFs","","K-8","Belonging","Slides"],
+  ["Multiple Intelligence","SEL","reqrp1edJ6Q","","5-8","Belonging","Survey"],
+  ["Scavenger Hunt","Game Based Learning","W4EKj2uykn0","","3-8","Retrieval","Slides"],
+  ["Elevator Pitch","Instructional Strategies","6wauutSgK9A","","5-8","Speaking","Slides"],
+  ["One Word Thin Slides","EduProtocols","CXnkwtx8bqw","1bRcu8XsPeyTHWblNwZq0WYd2I1Fnc2jq18tnWl_JeYE","5-8","Summarizing","Slides"],
+  ["The Great American Race","EduProtocols","r9eCVP7I69Y","","5-8","Application","Slides"],
+  ["Student Progress","Classroom Management","OVTbAbQUj48","","K-8","Goal Setting","Tracker"],
+  ["Achievement Magazine","Instructional Strategies","UTidD_9Rb2s","","5-8","Application","Slides"],
+  ["Number Mania","EduProtocols","70B35Kff3xI","","3-8","Math Practice","Slides"],
+  ["Theme GIFs","ELA Instructional Strategies","YoCX3PbbLdI","","3-8","Theme","Slides"],
+  ["You Do You","Blended Learning","-SixOzc9K4w","1PXWyZow1lllIec1P-TWRukbZ4DVRMLzAsGIZ9ajqbRc","5-8","Choice","Doc"],
+  ["Speed Dating","Instructional Strategies","yFfTTToh8Zc","","5-8","Discussion","Slides"],
+  ["Attendance Streak","Classroom Management","GtoLNXeDwW8","","5-8","Routines","Sheet"],
+  ["Stop Motion","Instructional Strategies","62zpIIGAN84","1iwZrTftI6evdTObrJXq2M3GPiUVJC2kXTlsrYfCC5vs","3-8","Application","Slides"],
+  ["3 Ways to Process","Blended Learning","JYsiaNK707Y","1-cabTqsgKJ2X5WKwas5sbPeda5YD3kx3S0vwXCd6r4c","5-8","Choice","Slides"],
+  ["Sound On Sound Off","Instructional Strategies","j19jQWENVns","1BbgJviRhd1qFZpiEZqc1AuW3nWALnW_1qt5xZ1Jk8l8","3-8","Listening","Slides"],
+  ["5 & 2","Instructional Strategies","1c5v0BHOFkI","1mG8qcRXFXxhu4Ouibbk7b8FsjVMyt869j0zqItN8wRQ","3-8","Discussion","Slides"],
+  ["Hanging Hashtags","Instructional Strategies","99JuIOFkt0w","1rMwf8QVzu7NYxdqi-YYnf5SD7d0w3UGDGagFsqL_e6g","3-8","Summarizing","Slides"],
+  ["Snippet","Instructional Strategies","VL-XlVGRlu4","1beHFkh-lHm7YK0T1e39GkIpo1X4J97YX9O4ynYPvEPg","3-8","Textual Evidence","Slides"],
+  ["Starbucks Grading","Instructional Strategies","ECCk0XcvJ7o","1-LMJFV-cnPcVzQi-Z1RO7JjS7JL9VgnqqRbBcHs8qdo","5-8","Feedback","Slides"],
+  ["CER","Instructional Strategies","GkKY8lDnW3M","","5-8","Textual Evidence","Slides"],
+  ["Station Rotation","Blended Learning","QKc3tOq6JCc","1jX9VTUNfw64bVgt2H-To7WuodUeuoLXiUnyXZAdDNSk","K-8","Small Groups","Slides"],
+  ["Stop Think Retell","Retrieval","k6_olOW9TPg","","K-5","Retelling","Slides"],
+  ["Tracking Sheet","Blended Learning","AQMU7cuFT3w","","5-8","Goal Setting","Sheet"],
+  ["Career Study","SEL","qgaIkBP-iwQ","1X0pSRqvf2bP1E3bt_KOZ5ssZxRpxA2FugWT1LCwJuS0","5-8","Belonging","Doc"],
+  ["Internal Conversations","Instructional Strategies","VEiD4Whh0Zk","1BVqpyxkcFdZuOA_sOGf_4LD1OYu3RiinRVk9DOua-Qo","5-8","Inferences","Slides"],
+  ["Pile of Words","Vocabulary","o0ps1KnM1N4","1IFU_n7dI0g_HXJQwacS8C0OLdFb5DGfYgFrVpBl6yAM","3-8","Vocabulary","Slides"],
+  ["Leaderboard","Classroom Management","XSa0PgBfrgI","","5-8","Goal Setting","Slides"],
+  ["Vocabulary Choice Board","Vocabulary","osKTvj4OTVE","","3-8","Vocabulary","Slides"],
+  ["Annotating the Text","Instructional Strategies","8uSgcLqQZyk","","3-8","Textual Evidence","Slides"],
+  ["Vindictive","Game Based Learning","JdiM7tLVzro","1yxSgziBiw7A6UD7iR7gG56AELNN3QGg9FtCOVyUC3Us","5-8","Retrieval","Slides"],
+  ["Teaching Inferences with Selfies","ELA Instructional Strategies","Mu7Uey-jSBE","149rORmGWiSsvmktjhWNB_Zk10aIdFHYCDlX6xYqT5hc","2-6","Inferences","Slides"],
+  ["Bookmarks","ELA Instructional Strategies","bH-BFP5sUX4","1wMSbaV65HJH6Pq8y0IYH2U-DDK8VlBhKx6nFFUpnNeg","K-5","Textual Evidence","Slides"],
+  ["PechaKucha","EduProtocols","1VHaZEDM10k","","5-8","Speaking","Slides"],
+  ["Guess The Vocabulary Word","Vocabulary","qx-w5FTULxo","","3-8","Vocabulary","Slides"],
+  ["The Masked Book","ELA Instructional Strategies","gRI-sQGL1A8","","3-8","Inferences","Slides"],
+  ["GIF Vocabulary","Vocabulary","Z2VBBiihXOo","","3-8","Vocabulary","Slides"],
+  ["Paper Slides","Instructional Strategies","J2eEWaDtsRo","","3-8","Speaking","Slides"],
+  ["Think Puzzle Explore","Reflection","u5clWA3L2AM","1y80YQnAh31jUvcOb3e8YqLAifK7BOePAuI43l1fWsaQ","3-8","Questioning","Slides"],
+  ["Mad Libs","Game Based Learning","Hce40zmh8Xg","","3-8","Grammar","Slides"],
+  ["Classroom Library","Organization","2woiC1lXANY","","K-8","Routines","Slides"],
+  ["Million Dollar Project","Math Instructional Strategies","4OhO1lyKHzk","","5-8","Math Practice","Slides"],
+  ["Would You Rather Choice Board","Blended Learning","rukwzT3zzso","","3-8","Choice","Slides"],
+  ["Mini Groups","Blended Learning","OT9fl_oBPBI","","K-8","Small Groups","Slides"],
+  ["Goal Setting","Blended Learning","mUnNLfK61bQ","","K-8","Goal Setting","Slides"],
+  ["Mote Bingo","Game Based Learning","dyd12cbnxig","1Tocz9roDbgon_vmqzwESrMIz7ZptQwLE2f5atT0jy60","3-8","Retrieval","Slides"],
+  ["Before & After","SEL","OaOu_eURD04","19M3JlJx5KesUCB0o6XsYuUo9YzFrLSM-O_6S7wWkfcs","K-8","Belonging","Slides"],
+  ["Step by Step","Instructional Strategies","s8k1usbrVQM","1dyjWkRNLdjdAl0mDhYiRE9jFTgmRxOYvHeoP_BO9EgQ","3-8","Math Practice","Slides"],
+  ["Think Puzzle Explore Kami","Reflection","u5clWA3L2AM","","3-8","Questioning","Slides"],
+  ["Stop Motion Vocab Review","Vocabulary","nT9TzP48eoM","","3-8","Vocabulary","Slides"],
+  ["Guess The Vocab Word Round 2","Vocabulary","qx-w5FTULxo","","2-6","Vocabulary","Slides"]
+];
+
+const SCIENCE = {
+  "Retrieval": ["Retrieval Practice", "Spaced Practice"],
+  "Retelling": ["Retrieval Practice", "Elaboration"],
+  "Textual Evidence": ["Elaboration", "Dual Coding"],
+  "Inferences": ["Elaboration", "Dual Coding"],
+  "Vocabulary": ["Dual Coding", "Spaced Practice"],
+  "Theme": ["Elaboration", "Concrete Examples"],
+  "Summarizing": ["Elaboration", "Retrieval Practice"],
+  "Questioning": ["Elaboration", "Metacognition"],
+  "Discussion": ["Collaborative Learning", "Elaboration"],
+  "Speaking": ["Collaborative Learning", "Elaboration"],
+  "Listening": ["Dual Coding", "Interleaving"],
+  "Feedback": ["Immediate Feedback", "Metacognition"],
+  "Goal Setting": ["Metacognition", "Immediate Feedback"],
+  "Routines": ["Cognitive Load Support", "Immediate Feedback"],
+  "Belonging": ["Belonging Cues", "Metacognition"],
+  "Choice": ["Autonomy", "Cognitive Load Support"],
+  "Small Groups": ["Collaborative Learning", "Targeted Practice"],
+  "Application": ["Concrete Examples", "Elaboration"],
+  "Math Practice": ["Worked Examples", "Spaced Practice"],
+  "Grammar": ["Interleaving", "Concrete Examples"]
+};
+
+const TINTS = ["#FFE3DD", "#FFE7F1", "#F1E5FF", "#DDF5F2", "#F3F3F3", "#FFEFE4"];
+
+const STANDARDS = [
+  { keys: ["rl21", "r21", "textevidence", "textualevidence", "askingandanswering", "askandanswer", "questionsaboutastory", "evidence"],
+    code: "RL.2.1", name: "Ask and answer questions about key details in a text",
+    reading: "This standard is really two habits stacked: students have to hold the story in their head, then point to the exact line that answers a question. Anything that slows the reading down and makes them mark evidence will move the needle.",
+    target: "I can ask and answer questions about a story using evidence I find in the text.",
+    science: ["Retrieval Practice", "Dual Coding", "Elaboration", "Immediate Feedback"],
+    skills: ["Textual Evidence", "Inferences", "Questioning", "Retelling", "Retrieval"] },
+  { keys: ["ri42", "r42", "mainidea", "centralidea", "summar"],
+    code: "RI.4.2", name: "Determine the main idea and explain how details support it",
+    reading: "Main idea falls apart when students summarize everything instead of choosing. They need practice cutting a text down to one sentence and defending the cut.",
+    target: "I can name the main idea and show the details that support it.",
+    science: ["Elaboration", "Retrieval Practice", "Cognitive Load Support"],
+    skills: ["Summarizing", "Textual Evidence", "Theme"] },
+  { keys: ["l54", "vocab", "wordmeaning", "contextclues", "wordstudy"],
+    code: "L.5.4", name: "Determine the meaning of unknown words using context",
+    reading: "Word learning sticks when students meet a word more than once, in more than one form. Pair one quick game with one visual so the word gets encoded twice.",
+    target: "I can figure out what a new word means using clues around it.",
+    science: ["Dual Coding", "Spaced Practice", "Interleaving"],
+    skills: ["Vocabulary", "Textual Evidence"] },
+  { keys: ["rl63", "r63", "storyelement", "character", "plot", "theme"],
+    code: "RL.6.3", name: "Describe how a story's plot and characters develop",
+    reading: "Students can retell a plot long before they can explain change over time. Sequencing tools and discussion structures are what get them to the second part.",
+    target: "I can explain how a character or plot changes across a story.",
+    science: ["Elaboration", "Collaborative Learning", "Concrete Examples"],
+    skills: ["Theme", "Retelling", "Discussion", "Inferences"] }
+];
+
+const MOVES = {
+  "Textual Evidence": ["Model it first: read one short passage aloud and mark the line that answers the question while thinking out loud.", "Students do the same with a partner, highlighting the exact evidence instead of paraphrasing.", "Close by having three students read their line and say why it answers the question."],
+  "Inferences": ["Open with the image or clue set and ask what students notice before any reading happens.", "Push for the why: every guess has to name the detail it came from.", "Move to the text and run the same two questions on a real passage."],
+  "Retrieval": ["Run it cold at the start of class, no notes, so the recall does the work.", "Keep the round to five minutes and score out loud for immediate feedback.", "Note the two items most students missed and reteach those tomorrow."],
+  "Retelling": ["Pause the read aloud at the halfway point and have students retell to a partner.", "Ask for one detail they left out, then let them fix the retell.", "Finish with a written retell so you can see who's holding the sequence."],
+  "Vocabulary": ["Introduce three words, no more, and show each one visually.", "Students build their own version so the word gets encoded a second way.", "Circle back to the same words on Thursday and next week."],
+  "Summarizing": ["Give students the whole text but only one sentence of space.", "Make them defend what they cut to a partner.", "Compare two summaries as a class and name what made one stronger."],
+  "Questioning": ["Students generate questions before they read, not after.", "Sort the questions into ones the text answers and ones it doesn't.", "Answer three of them together, pointing to evidence each time."],
+  "Theme": ["Anchor with a concrete example before naming the abstract theme.", "Students match evidence to the theme they picked.", "Have two students argue for different themes using the same text."],
+  "Discussion": ["Set the structure and the time limit before students talk.", "Every student speaks once before anyone speaks twice.", "Close with one sentence each on what changed in their thinking."],
+  "Speaking": ["Give the frame and the time cap up front so the prep is the thinking.", "Run a low-stakes practice round with a partner first.", "Share out to the room and name one specific strength for each."],
+  "Small Groups": ["Pull the group around one skill, not one worksheet.", "Keep it to eight minutes and end with a check.", "Regroup next time based on that check, not on last month's data."],
+  "Goal Setting": ["Students name one goal in their own words, not yours.", "Track it somewhere they can see daily.", "Revisit weekly and let them adjust the goal."],
+  "Feedback": ["Give feedback on one thing, not everything.", "Students act on it in class before the day ends.", "Check the revision, not the original."]
+};
+
+const DEFAULT_MOVES = ["Model the move once with the whole class before students try it.", "Give students five minutes to run it with a partner.", "Close with a quick check so you know who needs a second pass tomorrow."];
+
+const COURSES = [
+  ["Retrieval Practice in 10 Minutes", "Learning Science", 6, "48 min", "The quickest research-backed way to make yesterday's lesson stick, with four routines you can run tomorrow.", 0.6, "#FFE3DD"],
+  ["Vocabulary That Sticks", "ELA", 5, "41 min", "Why word lists fail and what to do instead. Built around dual coding and spaced practice.", 0.2, "#F1E5FF"],
+  ["Stations That Actually Work", "Blended Learning", 7, "1 hr 2 min", "Setup, timing, and the small-group moves that keep four stations from turning into chaos.", 0, "#DDF5F2"],
+  ["Classroom Management Reset", "Management", 4, "32 min", "A mid-year reset plan: routines first, consequences last. Use it in January or any Monday.", 0, "#FFE7F1"],
+  ["EduProtocols Starter Kit", "Instructional Strategies", 8, "1 hr 14 min", "Six protocols you can reuse all year so students learn the container and focus on the content.", 0, "#FFEFE4"],
+  ["Feedback Without the Weekend", "Assessment", 5, "38 min", "Faster feedback that students actually act on, and how to stop grading everything.", 0, "#F3F3F3"]
+];
+
+const ARTICLES = [
+  ["The First 20 Minutes","the-first-20-minutes","Most of us teach the way we feel, not the way we plan. The first 20 minutes of your day shape all of it.","Teacher brain",1],
+  ["Why Your Brain Feels Fried by Wednesday","why-your-brain-feels-fried-by-wednesday","Wednesday-wiped? You're not lazy. Your brain is fried. Pre-load boring choices, take real breaks, close your loops.","Teacher brain",1],
+  ["The 3-Second Pause That Changes Everything","the-3-second-pause-that-changes-everything","Wait time is the smallest classroom move with the biggest payoff. Three seconds is all it takes.","Classroom moves",1],
+  ["Designing for Real Kids, Not Just “The Class”","designing-for-real-kids-not-just","Lesson plans for the class miss the actual kids in front of you. Here's how to design for real students.","Classroom moves",1],
+  ["Stop Waiting for Motivation","stop-waiting-for-motivation","Motivation is a liar. It shows up after you start, not before. Here's the small move that gets me going.","Teacher brain",1],
+  ["5 Quick Retrieval Practice Moves You Can Use Tomorrow","5-quick-retrieval-practice-moves","Five retrieval practice moves you can use tomorrow. No prep, no extra tools, just better learning.","Classroom moves",0],
+  ["3 Checks for Understanding","3-checks-for-understanding","Three checks for understanding that actually work in a real classroom. Quick, simple, kid-friendly.","Classroom moves",0],
+  ["The Snippet","the-snippet","Hook your students before the lesson starts. The Snippet is my go-to opener and it lands every time.","Classroom moves",0],
+  ["Anchor Charts","anchor-charts","Anchor charts help your class own their ideas and keep coming back to them all year. This is the move.","Classroom moves",0],
+  ["Turn and Talk","turn-and-talk","Want every voice heard? Partner chats boost engagement and give shy students space to share.","Classroom moves",0],
+  ["Choice Boards","choice-boards","Choice boards let learners pick their path, boosting engagement and meeting every student where they are.","Classroom moves",0],
+  ["Brain Breaks","brain-breaks","Your students need brain breaks, and you do too. Try two minutes every twenty-five.","Classroom moves",0],
+  ["Get Students Moving While They Learn","get-students-moving-while-they-learn","Students learn better when they move. Podcast Walk and Listen keeps them engaged while walking.","Classroom moves",0],
+  ["The Elevator Pitch","the-elevator-pitch","The elevator pitch move helps students own their learning. Quick to set up, big payoff.","Classroom moves",0],
+  ["Behavior Bingo","behavior-bingo","Behavior Bingo is a fun way to build class culture and the kids actually love it.","Classroom moves",0],
+  ["You Don't Need a New Curriculum","you-dont-need-a-new-curriculum","Your best book is already on your shelf. Dig deep into what you have instead of hunting for new stuff.","Classroom moves",0],
+  ["Four Colors, Four Moves","four-colors-four-moves","Want to reach every learner today? Four colors, four moves. It's quick and it works.","Classroom moves",0],
+  ["The “Three Versions” Trick","the-three-versions-trick","Tired of printing three reading group packets? Build one Space with three reading levels and let kids pick.","AI in class",0],
+  ["Three Reading Levels, One Space","three-reading-levels-one-schoolai","When a lesson misses half the class, it's a reading level thing. Three levels, no extra prep.","AI in class",0],
+  ["The Best AI Prompt I've Seen All Year","the-best-ai-prompt-ive-seen-all-year","The best AI prompt I've seen all year came from a 5th grader. Yep, really. Here's why it's so good.","AI in class",0],
+  ["Hand the Mic Over","hand-the-mic-over","Want to see kids light up around AI? Stop driving and let them steer.","AI in class",0],
+  ["The 10-Minute Rule","the-10-minute-rule","Busy teachers can test AI without the stress. Try the 10-minute rule and see how it lands.","AI in class",0],
+  ["Let Students Steer","let-students-steer","One small shift changes a lot. Let students steer and watch what happens next.","AI in class",0],
+  ["The “Show Me Your Prompt” Move","the-show-me-your-prompt-move","Stuck coaching a teacher past AI fear? Try the show me your prompt move. It's simple and it works.","Coaching",0],
+  ["Three Coaching Moves When a Teacher Says “AI Won't Work for My Kids”","three-coaching-moves-when-a-teacher","When a teacher says AI won't work for their kids, don't argue. Try one of these three moves instead.","Coaching",0],
+  ["Three Questions That Make AI Coaching Stick","three-questions-that-make-ai-coaching","Coaching teachers on AI and it feels slow? You're not alone. These three questions help it stick.","Coaching",0],
+  ["How to Get Teachers to Actually Use AI Tools","how-to-get-teachers-to-actually-use","PD nodding is not PD using. Here's how to get teachers to actually use the tools.","Coaching",0],
+  ["When Teachers Are Spent, Skip the Fix","when-teachers-are-spent-skip-the","When a teacher's totally spent and the fix won't work, there's a better move. Here's the one I lean on.","Coaching",0],
+  ["You're Already a Learning Designer","youre-already-a-learning-designer","ISTE Coaches Standard 4.4 calls you a learning designer. Spoiler: you already are one.","Coaching",0],
+  ["When Teachers Become Data Detectives","when-teachers-become-data-detectives","ISTE Educator Standard 2.7 calls you an analyst. Translation: data detective. Here's how to start.","Coaching",0],
+  ["The Notice Trap","the-notice-trap","Tuned-in teachers see it all, and that's exactly why your brain feels fried by Friday.","Teacher brain",0],
+  ["The Awareness Trap That's Wearing You Down","the-awareness-trap-thats-wearing","Caring teachers notice everything, and that gift is also where the burnout hides.","Teacher brain",0],
+  ["When Your Students Push Your Buttons","when-your-students-push-your-buttons","When your students push your buttons, it's actually about you. Here's the shift that helps me reset.","Teacher brain",0],
+  ["Your Triggers Are Trying to Tell You Something","your-triggers-are-trying-to-tell","Your triggers are not the enemy. They're a message. Here's how to read them in real time.","Teacher brain",0],
+  ["Protect Your Peace Without Pushing Anyone Away","protect-your-peace-without-pushing","Small boundary moves that help you stay kind, clear, and connected this week. No drama needed.","Teacher brain",0],
+  ["You're Not Lazy","youre-not-lazy","You're not lazy. You're stuck in identity lag. Here's what's really going on.","Teacher brain",0],
+  ["Your Morning Is Programming You","your-morning-is-programming-you","Your morning is programming you. Here's how to take it back without flipping your whole life.","Teacher brain",0],
+  ["When the School Year Falls Apart","when-the-school-year-falls-apart","When the school year falls apart, you don't need a fix-it list. You need a reset.","Teacher brain",0],
+  ["What If This Year Really Works Out","what-if-this-year-really-works-out","What if this year actually works out, and not the way fear keeps showing you?","Teacher brain",0],
+  ["Spectrum Thinking","spectrum-thinking","Spectrum thinking is the mindset shift every educator needs right now. Quick read, big payoff.","Teacher brain",0],
+  ["What If It All Works Out?","what-if-it-all-works-out","Some days my brain plans for things to fall apart. Asking what if it all works out flips the whole vibe.","Teacher brain",0],
+  ["The Question I Keep Asking Myself Lately","the-question-i-keep-asking-myself","I keep asking myself one question this week and it's quietly changing how I show up.","Teacher brain",0],
+  ["Your Brain Would Rather Worry Than Wait","your-brain-would-rather-worry-than","Why does your brain pick worry over waiting every time? Once I learned this, the spiral stopped.","Teacher brain",0],
+  ["Your Brain Is Sabotaging Your Growth","your-brain-is-sabotaging-your-growth","Your brain is sabotaging your growth, and it's doing it on purpose. Here's how to spot the trap.","Teacher brain",0],
+  ["Post the Plan Before You Press Play","post-the-plan-before-you-press-play","A daily move that lands for every learner and works just as well in a leadership room.","Classroom moves",0],
+  ["Cold Calling","class-discussions-socratic-seminars","Build anchor charts with students, not for them. Discussion structures that get every voice in.","Classroom moves",0],
+  ["Make It Real","make-it-real","The strategy that gets students actually excited to learn. Make it real and watch them lean in.","Classroom moves",0],
+  ["Make It Real: From Caring to Doing","make-it-real-91c","Care is great. Action is better. A simple way to turn caring into something kids can feel.","Classroom moves",0],
+  ["Meeting Every Kid Where They Are","meeting-every-kid-where-they-are","Meeting every kid where they are sounds huge until you see the small moves that actually do it.","Classroom moves",0],
+  ["Empowering Leader","empowering-leader","How do you build a place teachers actually want to try new things? Small leader moves, every day.","Coaching",0],
+  ["How to Help Teachers Actually Start Using AI","how-to-help-teachers-actually-start","Most schools treat AI like a launch. The win is in a slow shift. Here's how to help teachers start.","Coaching",0],
+  ["5 Ways to Coach Educators Through Their First AI Win","5-ways-to-coach-educators-through","You don't need a big plan to help teachers get started with AI. Five small ways to coach the first win.","Coaching",0],
+  ["ISTE 2.5 Designer","iste-25-designer","Redesign that doesn't eat your weekend? The ISTE 2.5 Designer is making the work feel doable.","Coaching",0]
+];
+
+const COVER_POS = ["0% 0%", "100% 0%", "50% 50%", "0% 100%", "100% 100%", "25% 75%", "75% 25%", "50% 0%"];
+
+// Real Substack post images. Filenames are Substack UUIDs with no slug, so these are
+// assigned in order — drop a different image on any cover to correct it.
+const SUB_COVERS = (function () {
+  const list = [];
+  for (let i = 1; i <= 49; i++) list.push("covers/sub/" + String(i).padStart(2, "0") + ".webp");
+  list.push("covers/sub/50.png");
+  return list;
+})();
+
+const CATS = {
+  "Classroom moves": { fg: "#C0432F", bg: "#FFF0EC", dot: "#FF6A5B", cover: "covers/cover-classroom.png" },
+  "Teacher brain": { fg: "#6B2FB5", bg: "#F4E9FF", dot: "#B87DFF", cover: "covers/cover-brain.png" },
+  "Coaching": { fg: "#00756C", bg: "#E6F8F6", dot: "#00B4A6", cover: "covers/cover-coaching.png" },
+  "AI in class": { fg: "#B3336E", bg: "#FFECF3", dot: "#FF7DAE", cover: "covers/cover-ai.png" }
+};
+
+const ROUTE = [
+  ["RETRIEVE", "Activate prior knowledge", "#FF7DAE"],
+  ["LEARN", "Model & think aloud", "#FFB13F"],
+  ["PRACTICE", "Guided & collaborative", "#00B4A6"],
+  ["APPLY", "Independent practice", "#4C9AFF"],
+  ["REFLECT", "Metacognition & reflection", "#B87DFF"]
+];
+
+const EF_BASE = ["Sentence stems", "Visual checklist", "Chunked directions", "Timers"];
+
+const BLUEPRINTS = {
+  "RL.2.1": {
+    title: "2nd Grade ELA Lesson: Reading Detectives",
+    badge: "Good readers find evidence!",
+    routeName: "Inquiry + Discussion Route",
+    routeLine: "Students become “reading detectives” who gather evidence.",
+    criteria: ["I ask questions while I read.", "I find evidence in the story.", "I explain my thinking."],
+    steps: [
+      ["Retrieval Warm-Up", 5, "“What are 3 things good readers do?” Students write on whiteboards, share out, and build the anchor chart together.", "Retrieval Practice"],
+      ["Hook", 5, "What does a detective do? Turn & Talk. Today we're going to become Reading Detectives.", ""],
+      ["Explicit Modeling", 10, "Teacher thinks aloud and models finding evidence: Question → Evidence → Answer.", "Worked Example"],
+      ["Guided Practice", 10, "Students answer questions on whiteboards throughout the reading. Immediate feedback and coaching.", "Opportunities to Respond"],
+      ["Collaborative Evidence Hunt", 15, "Pairs get question cards. Read, highlight evidence, discuss, prepare explanations. Teacher circulates with probing questions.", "Collaborative Learning"],
+      ["Discussion", 10, "Students share and defend answers with evidence. Class agrees, disagrees, or adds on.", "Elaboration"],
+      ["Independent Application", 15, "Students complete their Detective Notebook: Question, Evidence, Answer, Reasoning.", ""],
+      ["Reflection", 5, "Today I learned… One question I asked… The best evidence I found… One strategy that helped me…", "Metacognition"]
+    ],
+    ef: ["Question-word bookmark", "Color-coded evidence highlighters"],
+    tech: "Students record a 1-minute video explaining: my question was… my evidence was… this is how I knew.",
+    techPurpose: "Share thinking and build confidence.",
+    ai: ["Help me think of three “why” questions about this story (without giving me answers).", "Pretend you're one of the characters and answer my interview questions using details from the story."],
+    assess: ["Asked a meaningful question", "Located text evidence", "Explained reasoning", "Participated respectfully"],
+    why: ["Activate prior knowledge", "Model thinking before doing", "Many opportunities to respond", "Collaborate and justify thinking", "Immediate feedback", "Reflect on learning"]
+  },
+  "RI.4.2": {
+    title: "4th Grade ELA Lesson: Main Idea Investigators",
+    badge: "One sentence, defended!",
+    routeName: "Summarize + Defend Route",
+    routeLine: "Students cut a whole text down to one sentence and defend the cut.",
+    criteria: ["I name the main idea in one sentence.", "I pick details that support it.", "I explain what I left out and why."],
+    steps: [
+      ["Retrieval Warm-Up", 5, "“What's the difference between a topic and a main idea?” Whiteboards, then share.", "Retrieval Practice"],
+      ["Hook", 5, "Show a headline with the article hidden. What do you think this is mostly about?", ""],
+      ["Explicit Modeling", 10, "Teacher models cutting a short paragraph to one sentence, naming what got cut and why.", "Worked Example"],
+      ["Guided Practice", 10, "Students draft a one-sentence main idea on whiteboards. Teacher coaches in real time.", "Opportunities to Respond"],
+      ["Detail Sort", 15, "Pairs sort detail cards into supports the main idea vs. interesting but not the point.", "Collaborative Learning"],
+      ["Discussion", 10, "Two students defend different main ideas from the same text. Class weighs the evidence.", "Elaboration"],
+      ["Independent Application", 15, "Students write a main idea plus three supporting details in their own words.", ""],
+      ["Reflection", 5, "The hardest detail to cut was… I know my main idea is right because…", "Metacognition"]
+    ],
+    ef: ["One-sentence frame strip", "Detail sorting mat"],
+    tech: "Students post their one-sentence main idea to a shared board and read three classmates' versions.",
+    techPurpose: "Compare choices and revise.",
+    ai: ["Give me three possible main ideas for this paragraph and let me pick the best one.", "Ask me questions until I can say the main idea in one sentence."],
+    assess: ["Stated a main idea in one sentence", "Chose supporting details", "Explained a cut", "Revised after feedback"],
+    why: ["Retrieval before new learning", "Modeled decision-making", "Forced choice builds precision", "Peer defense deepens reasoning", "Immediate coaching", "Reflection names the strategy"]
+  },
+  "L.5.4": {
+    title: "5th Grade ELA Lesson: Word Detectives",
+    badge: "Clues before dictionaries!",
+    routeName: "Context + Dual Coding Route",
+    routeLine: "Students meet each word twice, in two different forms.",
+    criteria: ["I use clues around a word to guess its meaning.", "I show the word a second way.", "I use the word in my own sentence."],
+    steps: [
+      ["Retrieval Warm-Up", 5, "Bring back last week's three words. No notes. Whiteboards up.", "Spaced Practice"],
+      ["Hook", 5, "Show one sentence with a nonsense word. What could it mean? How do you know?", ""],
+      ["Explicit Modeling", 10, "Teacher thinks aloud through one word: clue → guess → check → confirm.", "Worked Example"],
+      ["Guided Practice", 10, "Three new words, no more. Students guess from context before any definition is given.", "Opportunities to Respond"],
+      ["Dual Coding Build", 15, "Students build a visual for each word: sketch, GIF, or gesture. The word gets encoded twice.", "Dual Coding"],
+      ["Word Talk", 10, "Partners use each word in a sentence about their own life. Class votes on the clearest use.", "Elaboration"],
+      ["Independent Application", 15, "Students complete a word map: meaning, visual, example, non-example.", ""],
+      ["Reflection", 5, "Which clue helped most? Which word will I actually use this week?", "Metacognition"]
+    ],
+    ef: ["Context clue bookmark", "Word map template"],
+    tech: "Students record a 20-second clip using the word correctly in a real sentence.",
+    techPurpose: "Rehearsal plus a record to revisit.",
+    ai: ["Use this word in five different sentences so I can see how it changes.", "Quiz me on last week's words without telling me the answers."],
+    assess: ["Used context before asking", "Built a visual", "Used the word in speech", "Recalled prior words"],
+    why: ["Spaced review of old words", "Only three new words at a time", "Two encodings per word", "Talk before writing", "Immediate feedback", "Student picks a word to keep"]
+  },
+  "RL.6.3": {
+    title: "6th Grade ELA Lesson: Character Trackers",
+    badge: "Track the change!",
+    routeName: "Sequence + Discussion Route",
+    routeLine: "Students move past retelling and explain change over time.",
+    criteria: ["I track what a character does across the story.", "I name what changed.", "I use evidence to explain why."],
+    steps: [
+      ["Retrieval Warm-Up", 5, "Retell yesterday's chapter in three sentences. No notes.", "Retrieval Practice"],
+      ["Hook", 5, "Show two photos of the same person years apart. What changed? How can you tell?", ""],
+      ["Explicit Modeling", 10, "Teacher plots one character on a change line and marks the turning point.", "Worked Example"],
+      ["Guided Practice", 10, "Students place events on their own change line while reading. Teacher checks placements.", "Opportunities to Respond"],
+      ["Evidence Trade", 15, "Groups trade one piece of evidence and argue where it belongs on the line.", "Collaborative Learning"],
+      ["Discussion", 10, "What caused the change: a person, an event, or a choice? Students defend with text.", "Elaboration"],
+      ["Independent Application", 15, "Students write a paragraph: before, turning point, after, evidence.", ""],
+      ["Reflection", 5, "The moment that changed everything was… I noticed it because…", "Metacognition"]
+    ],
+    ef: ["Change-line graphic organizer", "Character trait word bank"],
+    tech: "Students build a three-frame visual timeline of the character's change.",
+    techPurpose: "Make abstract change concrete.",
+    ai: ["Ask me questions about how this character changed without telling me the answer.", "Play the character and let me interview them about their biggest choice."],
+    assess: ["Tracked events in order", "Named a specific change", "Cited evidence", "Explained cause"],
+    why: ["Retrieval anchors the story", "Concrete before abstract", "Visual sequencing lowers load", "Argument builds reasoning", "Immediate correction", "Reflection names the turning point"]
+  }
+};
+
+const UNPACK = {
+  "RL.2.1": {
+    verbs: [["Ask", "generate questions before and during reading"], ["Answer", "respond using details, not memory"], ["Demonstrate understanding", "explain the thinking behind the answer"]],
+    concepts: ["Key details", "Who / what / where / when / why / how", "Evidence in a text"],
+    prior: ["Retell a story in order", "Find one detail when asked", "Take turns in a conversation"],
+    priorStd: [["RL.K.1", "With prompting, ask and answer questions about key details"], ["RL.1.1", "Ask and answer questions about key details in a text"]],
+    futureStd: [["RL.3.1", "Ask and answer questions, referring explicitly to the text"], ["RL.4.1", "Refer to details and examples when explaining a text"]],
+    challenges: [
+      ["Answers from memory instead of the page", "Require a finger on the line before any answer counts."],
+      ["Retells the whole story instead of answering", "Give one question at a time and cap the answer at one sentence."],
+      ["Assumes every question has one right answer", "Model two different correct answers with different evidence."],
+      ["Copies a random sentence as “evidence”", "Ask “how does that line answer it?” every single time."]
+    ],
+    vocab: [["evidence", "the part of the text that proves your answer"], ["detail", "a small piece of information in the story"], ["question word", "who, what, where, when, why, how"], ["explain", "tell how you know"], ["text", "the words on the page"]],
+    mastery: "A student points to a line, reads it out loud, and says why it answers the question.",
+    ladder: [["Locate", "Find a stated detail the teacher names"], ["Match", "Pair a question word with the detail that answers it"], ["Justify", "Explain why that detail answers the question"], ["Generate", "Write their own question and answer it with evidence"]]
+  },
+  "RI.4.2": {
+    verbs: [["Determine", "decide what the text is mostly about"], ["Explain", "show how details support the idea"]],
+    concepts: ["Main idea vs. topic", "Supporting detail", "Summary"],
+    prior: ["Identify the topic of a paragraph", "Tell important from interesting", "Write a complete sentence"],
+    priorStd: [["RI.2.2", "Identify the main topic of a multiparagraph text"], ["RI.3.2", "Determine the main idea and recount key details"]],
+    futureStd: [["RI.5.2", "Determine two or more main ideas and explain their support"], ["RI.6.2", "Determine a central idea and give an objective summary"]],
+    challenges: [
+      ["Names the topic and calls it the main idea", "Make them finish the sentence: “This text says that ___ about ___.”"],
+      ["Summarizes every single sentence", "Give one line of writing space. No more."],
+      ["Picks the most exciting detail, not the most supportive", "Sort details into supports vs. interesting out loud, together."],
+      ["Can't explain why a detail was cut", "Require one sentence defending a cut before turning it in."]
+    ],
+    vocab: [["main idea", "what the whole text is mostly about"], ["topic", "the one thing the text is about, in a word"], ["supporting detail", "a fact that backs up the main idea"], ["summarize", "say the important parts in fewer words"], ["relevant", "actually related to the point"]],
+    mastery: "A student states the main idea in one sentence and names a detail they cut and why.",
+    ladder: [["Topic", "Name what the text is about in a word"], ["Idea", "Say what the text says about that topic"], ["Support", "Choose three details that back it"], ["Defend", "Explain a detail they left out"]]
+  },
+  "L.5.4": {
+    verbs: [["Determine", "work out a meaning from clues"], ["Verify", "check the guess against the sentence"]],
+    concepts: ["Context clues", "Word parts", "Multiple meanings"],
+    prior: ["Read the sentence fluently enough to notice the word", "Know common prefixes and roots", "Use a glossary"],
+    priorStd: [["L.3.4", "Determine the meaning of unknown words using context"], ["L.4.4", "Use context, roots, and reference materials for word meaning"]],
+    futureStd: [["L.6.4", "Use context and reference materials to clarify meaning"], ["L.7.4", "Use context and word parts flexibly across texts"]],
+    challenges: [
+      ["Skips the unknown word entirely", "Have students flag words with a sticky before guessing anything."],
+      ["Grabs a dictionary before trying clues", "Dictionaries stay closed until a guess is on paper."],
+      ["Assumes a word has only one meaning", "Show the same word in two sentences with two meanings."],
+      ["Guesses but never checks", "Always reread the sentence with the guess swapped in."]
+    ],
+    vocab: [["context", "the words and sentences around a word"], ["clue", "a hint that helps you figure it out"], ["root", "the base part of a word that carries meaning"], ["prefix", "a word part added to the front"], ["multiple meaning", "a word that means more than one thing"]],
+    mastery: "A student names the clue they used, gives a meaning, and checks it back in the sentence.",
+    ladder: [["Notice", "Flag the unknown word instead of skipping"], ["Guess", "Offer a meaning from surrounding words"], ["Check", "Reread to test the guess"], ["Use", "Put the word in their own sentence"]]
+  },
+  "RL.6.3": {
+    verbs: [["Describe", "trace what happens across the story"], ["Explain", "account for why the change happened"]],
+    concepts: ["Plot development", "Character response", "Turning point"],
+    prior: ["Sequence events accurately", "Name character traits", "Cite a line of text"],
+    priorStd: [["RL.4.3", "Describe a character in depth using specific details"], ["RL.5.3", "Compare and contrast two characters or events"]],
+    futureStd: [["RL.7.3", "Analyze how story elements interact"], ["RL.8.3", "Analyze how dialogue and incidents drive the action"]],
+    challenges: [
+      ["Retells the plot instead of naming a change", "Ask “what is different at the end?” before anything else."],
+      ["Treats the climax as the only turning point", "Have students mark two candidates and argue for one."],
+      ["Describes traits with no evidence", "Every trait needs a quote taped next to it."],
+      ["Can't explain the cause of the change", "Force the sentence: “___ changed because ___.”"]
+    ],
+    vocab: [["plot", "the events that happen in a story"], ["turning point", "the moment something important changes"], ["trait", "a word that describes what a character is like"], ["motivation", "the reason a character does something"], ["respond", "how a character reacts to what happens"]],
+    mastery: "A student marks a turning point on a timeline and explains what caused the change with a quote.",
+    ladder: [["Sequence", "Put events in order"], ["Notice", "Spot a moment something shifts"], ["Connect", "Tie the shift to a cause in the text"], ["Argue", "Defend the turning point against another reading"]]
+  }
+};
+
+const FORMATS = [
+  { key: "deck", label: "Slides for the board", desc: "Looks like your Google Slides resources.",
+    layout: "slides", unit: "slide", count: "4 to 6", accent: "#FF6A5B",
+    shape: 'Each item is one slide: "label" is the slide heading students read, "lines" are the 2 to 3 lines on that slide.' },
+  { key: "anchor", label: "Anchor chart", desc: "One poster the class builds and keeps up all week.",
+    layout: "anchor", unit: "section", count: "4", accent: "#00B4A6",
+    shape: 'Each item is one block of an anchor chart: "label" is the block heading in 2 to 4 words, "lines" are the short phrases or examples written under it.' },
+  { key: "cards", label: "Cut-apart task cards", desc: "Print, cut, hand out. One task per card.",
+    layout: "cards", unit: "card", count: "6", accent: "#B87DFF",
+    shape: 'Each item is one task card: "label" is the task in a few words, "lines" are the 2 to 3 directions a student follows alone. Do not number them.' },
+  { key: "notebook", label: "Student notebook page", desc: "A page students glue in and write on.",
+    layout: "notebook", unit: "section", count: "4", accent: "#FF7DAE",
+    shape: 'Each item is one section of a notebook page: "label" is the direction ("Write your question here"), "lines" are the prompts or frames students complete.' }
+];
+const LEVELS = ["Just right", "Make it simpler", "Make it harder"];
+
+class Component extends DCLogic {
+  state = {
+    view: "home",
+    query: "",
+    libQuery: "",
+    filters: {},
+    sort: "Newest",
+    matching: false,
+    match: null,
+    detailId: null,
+    from: "home",
+    saved: {},
+    videoTab: "Teacher courses",
+    readsCat: "All",
+    shown: 30,
+    openGroups: {},
+    tier: null,
+    matchTab: "Lesson blueprint",
+    aiKind: "Student slide deck",
+    aiFormat: "deck",
+    aiGrade: "2nd grade",
+    aiNeed: "Two students read a year below grade level",
+    aiBusy: false,
+    aiOut: "",
+    aiDeck: null,
+    aiErr: "",
+    playing: null
+  };
+
+  async sendToSlides() {
+    const d = this.state.aiDeck;
+    if (!d) return;
+    const fmt = FORMATS.filter(f => f.key === this.state.aiFormat)[0] || FORMATS[0];
+    const text = [d.title || fmt.label, ""]
+      .concat((d.items || []).map((s, i) =>
+        [fmt.unit.charAt(0).toUpperCase() + fmt.unit.slice(1) + " " + (i + 1) + " — " + (s.label || "")]
+          .concat((s.lines || []).map(l => "• " + l)).join("\n")
+      )).join("\n\n");
+    try { await navigator.clipboard.writeText(text); } catch (e) {}
+    this.setState({ copied: true });
+    window.open("https://slides.new", "_blank", "noopener");
+    clearTimeout(this._c);
+    this._c = setTimeout(() => this.setState({ copied: false }), 4000);
+  }
+
+  async makeWithAI(std, bp, resourceTitle) {
+    if (this.state.aiBusy) return;
+    this.setState({ aiBusy: true, aiOut: "", aiErr: "" });
+    const fmt = FORMATS.filter(f => f.key === this.state.aiFormat)[0] || FORMATS[0];
+    const prompt = [
+      "You build classroom-ready materials for elementary teachers.",
+      "",
+      "Standard: " + std.code + " — " + std.name,
+      "Learning target: " + std.target,
+      "Grade: " + this.state.aiGrade,
+      "Lesson frame: " + (bp ? bp.title : "science-of-learning lesson"),
+      "Hub resource being remixed: " + (resourceTitle || "none chosen"),
+      "Class needs: " + this.state.aiNeed,
+      "",
+      "BUILD: " + fmt.label + " — " + fmt.desc,
+      fmt.shape,
+      "",
+      "Return ONLY valid JSON, no prose, no code fence:",
+      '{"title":"short title","items":[{"label":"short label","lines":["short line","short line"]}]}',
+      "",
+      "Rules: exactly " + fmt.count + " items. Max 14 words per line.",
+      "Use words a " + this.state.aiGrade + " reader knows. No emoji, no markdown.",
+      fmt.key === "letter" ? "Write to caregivers." : "Write straight to the student."
+    ].join("\n");
+    try {
+      const out = await window.claude.complete({ messages: [{ role: "user", content: prompt }], max_tokens: 1400 });
+      const raw = (out || "").trim().replace(/^```(?:json)?/i, "").replace(/```$/, "").trim();
+      let deck = null;
+      try { deck = JSON.parse(raw.slice(raw.indexOf("{"), raw.lastIndexOf("}") + 1)); } catch (e) { deck = null; }
+      if (deck && deck.items && deck.items.length) this.setState({ aiBusy: false, aiDeck: deck, aiOut: "" });
+      else this.setState({ aiBusy: false, aiOut: raw, aiDeck: null });
+    } catch (e) {
+      this.setState({ aiBusy: false, aiErr: "Couldn't reach the model just now. Try again in a moment." });
+    }
+  }
+
+  get tier() { return this.state.tier || this.props.tier || "free"; }
+
+  data() {
+    if (this._data) return this._data;
+    const full = (typeof window !== "undefined" && window.UPSHIFT_RESOURCES) || null;
+    if (full) {
+      this._data = full.map((r, i) => {
+        const [title, purpose, yt, link, sum, skill, grades, type, ts, dateLabel] = r;
+        return {
+          id: i, title, purpose, grades, skill, type, yt, ts: ts || 0, dateLabel: dateLabel || "",
+          videoUrl: "https://www.youtube.com/watch?v=" + yt,
+          embedUrl: "https://www.youtube-nocookie.com/embed/" + yt + "?autoplay=1&rel=0&modestbranding=1",
+          thumb: "https://i.ytimg.com/vi/" + yt + "/mqdefault.jpg",
+          thumbBig: "https://i.ytimg.com/vi/" + yt + "/maxresdefault.jpg",
+          slidesUrl: link || ("https://www.youtube.com/watch?v=" + yt),
+          tint: TINTS[i % TINTS.length],
+          science: SCIENCE[skill] || ["Elaboration", "Retrieval Practice"],
+          moves: MOVES[skill] || DEFAULT_MOVES,
+          free: i % 5 === 0,
+          summary: sum || this.blurb(title, skill, purpose),
+          videoLength: (2 + (i % 7)) + ":" + String(10 + (i * 7) % 50),
+          time: (i % 3 === 0 ? "15 min" : i % 3 === 1 ? "1 class" : "Time varies")
+        };
+      });
+      return this._data;
+    }
+    this._data = RAW.map((r, i) => {
+      const [title, purpose, yt, slides, grades, skill, type] = r;
+      return {
+        id: i,
+        title, purpose, grades, skill, type,
+        yt: yt,
+        videoUrl: "https://www.youtube.com/watch?v=" + yt,
+        embedUrl: "https://www.youtube-nocookie.com/embed/" + yt + "?autoplay=1&rel=0&modestbranding=1",
+        thumb: "https://i.ytimg.com/vi/" + yt + "/mqdefault.jpg",
+        thumbBig: "https://i.ytimg.com/vi/" + yt + "/maxresdefault.jpg",
+        slidesUrl: slides ? "https://docs.google.com/presentation/d/" + slides + "/edit" : "https://www.youtube.com/watch?v=" + yt,
+        tint: TINTS[i % TINTS.length],
+        science: SCIENCE[skill] || ["Elaboration", "Retrieval Practice"],
+        moves: MOVES[skill] || DEFAULT_MOVES,
+        free: i % 5 === 0,
+        summary: this.blurb(title, skill, purpose),
+        videoLength: (2 + (i % 7)) + ":" + String(10 + (i * 7) % 50),
+        time: (i % 3 === 0 ? "15 min" : i % 3 === 1 ? "1 class" : "Time varies")
+      };
+    });
+    return this._data;
+  }
+
+  blurb(title, skill, purpose) {
+    const map = {
+      "Textual Evidence": "Slows the reading down so students mark the line that proves their answer.",
+      "Inferences": "Turns everyday images into thinking prompts before students touch the text.",
+      "Retrieval": "A fast recall round that pulls yesterday's learning back to the surface.",
+      "Retelling": "Three short beats that lock a story in after any read aloud.",
+      "Vocabulary": "Word study students ask to keep playing, with the visual built in.",
+      "Summarizing": "Forces a real choice: one sentence, defended out loud.",
+      "Questioning": "Students write the questions first, then hunt for the answers.",
+      "Theme": "Starts concrete, ends abstract, so theme finally clicks.",
+      "Discussion": "A tight structure that gets every voice in the room once.",
+      "Speaking": "Short, framed, and low stakes, so the prep does the teaching.",
+      "Listening": "Movement plus audio to reset focus mid-block.",
+      "Feedback": "Feedback students act on before they leave the room.",
+      "Goal Setting": "Goals in students' own words, tracked where they can see them.",
+      "Routines": "One routine that quietly saves you an hour a week.",
+      "Belonging": "A two-minute move that makes a quiet kid feel seen.",
+      "Choice": "Real choice without losing the standard underneath.",
+      "Small Groups": "Eight focused minutes on one skill, then a check.",
+      "Application": "Students show what they know in a form worth sharing.",
+      "Math Practice": "Practice with the steps visible, so nobody guesses.",
+      "Grammar": "Grammar terms hidden inside a game kids beg to replay."
+    };
+    return map[skill] || ("A low-prep " + purpose.toLowerCase() + " move you can run this week.");
+  }
+
+  go(view, extra) { this.setState(Object.assign({ view: view }, extra || {})); window.scrollTo(0, 0); }
+
+  distinct(field) {
+    this._dis = this._dis || {};
+    if (this._dis[field]) return this._dis[field];
+    const counts = {};
+    this.data().forEach(r => { counts[r[field]] = (counts[r[field]] || 0) + 1; });
+    this._dis[field] = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+    return this._dis[field];
+  }
+
+  sorted(list) {
+    if (this.state.sort === "A–Z") return list.slice().sort((a, b) => a.title.localeCompare(b.title));
+    if (this.state.sort === "Oldest first") return list.slice().sort((a, b) => (a.ts || 0) - (b.ts || 0));
+    return list.slice().sort((a, b) => (b.ts || 0) - (a.ts || 0));
+  }
+
+  // Never returns an empty grid: falls back from exact → loose → related → everything.
+  search() {
+    const raw = this.state.libQuery.trim();
+    const q = raw.toLowerCase();
+    const f = this.state.filters;
+    const active = k => Object.keys(f).some(x => f[x] && x.indexOf(k + "::") === 0);
+    const on = (k, v) => f[k + "::" + v];
+    const base = this.data().filter(r => {
+      if (active("Purpose") && !on("Purpose", r.purpose)) return false;
+      if (active("Grades") && !on("Grades", r.grades)) return false;
+      if (active("Skill") && !on("Skill", r.skill)) return false;
+      if (active("Access") && !on("Access", r.free ? "Free" : "All-Access")) return false;
+      return true;
+    });
+    const hay = r => (r.title + " " + r.purpose + " " + r.skill + " " + r.summary).toLowerCase();
+
+    if (!q) return { list: this.sorted(base), mode: "exact", total: base.length };
+
+    const exact = base.filter(r => hay(r).indexOf(q) >= 0);
+    if (exact.length) return { list: this.sorted(exact), mode: "exact", total: base.length };
+
+    const words = q.split(/[^a-z0-9]+/).filter(w => w.length > 2);
+    const loose = base.filter(r => words.some(w => hay(r).indexOf(w) >= 0));
+    if (loose.length) return { list: this.sorted(loose), mode: "loose", total: base.length };
+
+    // No word matched — read it as a standard and show that skill's resources.
+    const norm = q.replace(/[^a-z0-9]/g, "");
+    const std = STANDARDS.find(s => s.keys.some(k => norm.indexOf(k) >= 0));
+    if (std) {
+      const bySkill = base.filter(r => std.skills.indexOf(r.skill) >= 0);
+      if (bySkill.length) return { list: this.sorted(bySkill), mode: "standard", code: std.code, total: base.length };
+    }
+    return { list: this.sorted(base), mode: "all", total: base.length };
+  }
+
+  card(r) {
+    return Object.assign({}, r, {
+      locked: !r.free && this.tier === "free",
+      open: () => this.go("detail", { detailId: r.id, from: this.state.view })
+    });
+  }
+
+  groupOpts(name, values) {
+    const f = this.state.filters;
+    const counts = {};
+    this.data().forEach(r => {
+      const v = name === "Purpose" ? r.purpose : name === "Grades" ? r.grades : name === "Skill" ? r.skill : (r.free ? "Free" : "All-Access");
+      counts[v] = (counts[v] || 0) + 1;
+    });
+    return values.map(v => {
+      const key = name + "::" + v;
+      const isOn = !!f[key];
+      return {
+        label: v, count: counts[v] || 0, tick: isOn ? "✓" : "",
+        bg: isOn ? "#FF6A5B" : "#FFFFFF", bc: isOn ? "#FF6A5B" : "#D8D8D8",
+        toggle: () => this.setState(s => {
+          const n = Object.assign({}, s.filters);
+          if (n[key]) delete n[key]; else n[key] = true;
+          return { filters: n };
+        })
+      };
+    });
+  }
+
+  doMatch(text) {
+    if (text != null) this.setState({ query: text });
+    const raw = (text != null ? text : this.state.query).trim();
+    const q = raw.toLowerCase().replace(/[^a-z0-9]/g, "");
+    if (!q) return;
+    this.setState({ view: "match", matching: true, match: null });
+    window.scrollTo(0, 0);
+    clearTimeout(this._t);
+    this._t = setTimeout(() => {
+      let std = STANDARDS.find(s => s.keys.some(k => q.indexOf(k) >= 0));
+      if (!std) {
+        const words = raw.toLowerCase().split(/[^a-z0-9]+/).filter(w => w.length > 2);
+        const hit = this.data().find(r => {
+          const hay = (r.title + " " + r.skill + " " + r.purpose).toLowerCase();
+          return words.some(w => hay.indexOf(w) >= 0);
+        });
+        std = {
+          code: "Best guess",
+          name: raw,
+          reading: "No exact standard code in there, so we matched on skill language instead. Add a code like RL.2.1 or RI.4.2 and we'll tighten the plan.",
+          target: "I can teach " + raw.toLowerCase() + ".",
+          science: ["Retrieval Practice", "Elaboration"],
+          skills: hit ? [hit.skill] : ["Retrieval", "Textual Evidence"]
+        };
+      }
+      this.setState({ matching: false, match: std });
+    }, 900);
+  }
+
+  renderVals() {
+    const v = this.state.view;
+    const tier = this.tier;
+    const savedIds = Object.keys(this.state.saved).filter(k => this.state.saved[k]).map(Number);
+    const navItems = [["Home", "home"], ["Resources", "library"], ["Standard match", "match"], ["My planner", "planner"], ["Videos", "videos"], ["Teacher's Lounge", "reads"], ["Plans", "pricing"]];
+    const data = this.data();
+    const detail = this.state.detailId != null ? data[this.state.detailId] : data[0];
+    const detailLocked = !detail.free && tier === "free";
+    const std = this.state.match;
+    const bp = std ? BLUEPRINTS[std.code] : null;
+    const aiFmt = FORMATS.filter(f => f.key === (this.state.aiFormat || "deck"))[0] || FORMATS[0];
+    const search = this.search();
+
+    let matchResults = [];
+    if (std) {
+      const skills = std.skills;
+      let pool = data.filter(r => skills.indexOf(r.skill) >= 0);
+      if (!pool.length) pool = data; // never show an empty match
+      matchResults = pool
+        .slice(0, 4)
+        .map((r, i) => Object.assign(this.card(r), {
+          fit: i === 0 ? "Strong" : i === 1 ? "Strong" : "Good",
+          moveHeading: "Use it for " + std.code + " like this",
+          moves: r.moves.map((t, n) => ({ n: n + 1, text: t })),
+          saveLabel: this.state.saved[r.id] ? "Saved ✓" : "Save to planner",
+          save: () => this.setState(s => {
+            const n = Object.assign({}, s.saved); n[r.id] = !n[r.id]; return { saved: n };
+          })
+        }));
+    }
+
+    const lockedCourse = i => i > 1 && tier === "free";
+
+    return {
+      isHome: v === "home", isLibrary: v === "library", isMatch: v === "match",
+      isDetail: v === "detail", isVideos: v === "videos", isPricing: v === "pricing",
+      isReads: v === "reads",
+      isPlanner: v === "planner",
+      plannerCount: savedIds.length ? [{
+        n: savedIds.length + (savedIds.length === 1 ? " resource saved" : " resources saved"),
+        sub: "Drag nothing, sort nothing. This is just what you flagged."
+      }] : [],
+      plannerEmpty: savedIds.length === 0,
+      plannerDays: savedIds.length ? ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map((day, di) => ({
+        day,
+        accent: ["#FF6A5B", "#FF7DAE", "#B87DFF", "#00B4A6", "#FFB13F"][di],
+        items: savedIds.filter((_, i) => i % 5 === di).map(id => {
+          const r = data[id];
+          return {
+            title: r.title, purpose: r.purpose, skill: r.skill, thumb: r.thumb, tint: r.tint,
+            open: () => this.go("detail", { detailId: r.id, from: "planner" }),
+            remove: () => this.setState(s => { const n = Object.assign({}, s.saved); delete n[r.id]; return { saved: n }; })
+          };
+        }),
+        empty: savedIds.filter((_, i) => i % 5 === di).length === 0
+      })) : [],
+      plannerNavSaved: savedIds.length ? [{ n: String(savedIds.length) }] : [],
+      clearPlanner: () => this.setState({ saved: {} }),
+      readsFilters: ["All", "Classroom moves", "Teacher brain", "Coaching", "AI in class"].map(label => ({
+        label,
+        bg: this.state.readsCat === label ? "#111111" : "#FFFFFF",
+        fg: this.state.readsCat === label ? "#FFFFFF" : "#555555",
+        bc: this.state.readsCat === label ? "#111111" : "#E4E4E4",
+        go: () => this.setState({ readsCat: label })
+      })),
+      readsHero: ARTICLES.filter(a => a[4])[0] ? [{
+        title: ARTICLES.filter(a => a[4])[0][0],
+        blurb: ARTICLES.filter(a => a[4])[0][2],
+        cat: ARTICLES.filter(a => a[4])[0][3],
+        catBg: CATS[ARTICLES.filter(a => a[4])[0][3]].bg,
+        catFg: CATS[ARTICLES.filter(a => a[4])[0][3]].fg,
+        url: "https://mrshowell24.substack.com/p/" + ARTICLES.filter(a => a[4])[0][1],
+        cover: SUB_COVERS[0]
+      }] : [],
+      reads: ARTICLES.slice(1)
+        .filter(a => (this.state.readsCat || "All") === "All" || a[3] === this.state.readsCat)
+        .map((a, i) => ({
+          title: a[0], blurb: a[2], cat: a[3],
+          catBg: CATS[a[3]].bg, catFg: CATS[a[3]].fg, dot: CATS[a[3]].dot,
+          cover: SUB_COVERS[(i + 1) % SUB_COVERS.length] || CATS[a[3]].cover,
+          slotId: "post-" + a[1],
+          url: "https://mrshowell24.substack.com/p/" + a[1],
+          badge: a[4] ? "Editor's pick" : ""
+        })),
+      readsCount: ARTICLES.length + " posts in the lounge",
+      readsNote: "Cover art is generated from your brand palette — drop a post's real Substack image onto any cover to replace it.",
+
+      nav: navItems.map(([label, key]) => ({
+        label,
+        color: v === key ? "#111111" : "#6A6A6A",
+        bar: v === key ? "#FF6A5B" : "transparent",
+        go: () => this.go(key)
+      })),
+      tierLabel: tier === "free" ? "Free plan" : "All-Access",
+      tierDot: tier === "free" ? "#FF7DAE" : "#00B4A6",
+      toggleTier: () => this.setState({ tier: tier === "free" ? "pro" : "free" }),
+      goHome: () => this.go("home"),
+      goLibrary: () => this.go("library"),
+      goMatch: () => this.go("match"),
+      goPricing: () => this.go("pricing"),
+      goBack: () => this.go(this.state.from || "library"),
+      backLabel: this.state.from === "match" ? "matches" : this.state.from === "home" ? "home" : this.state.from === "planner" ? "planner" : "library",
+
+      query: this.state.query,
+      onQuery: e => this.setState({ query: e.target.value }),
+      onQueryKey: e => { if (e.key === "Enter") this.doMatch(); },
+      runMatch: () => this.doMatch(),
+      examples: ["RL.2.1", "RI.4.2 main idea", "vocabulary in context", "story elements, 6th grade"].map(label => ({
+        label, go: () => { this.setState({ query: label }); setTimeout(() => this.doMatch(), 0); }
+      })),
+
+      stats: [
+        { value: "2,762", label: "Resources, each with slides + a video", color: "#FF6A5B" },
+        { value: "93", label: "Video courses for teachers", color: "#B87DFF" },
+        { value: "K–8", label: "Grade bands covered", color: "#00B4A6" },
+        { value: "12", label: "Learning science principles tagged", color: "#FF7DAE" }
+      ],
+      paths: [
+        { kicker: "Fastest", title: "Match a standard", body: "Type the standard you're teaching and get resources plus the moves to make with each one.", cta: "Open the matcher", color: "#FF6A5B", go: () => this.go("match") },
+        { kicker: "Browse", title: "Search the library", body: "Filter 2,762 resources by grade, skill, and purpose when you already know what you want.", cta: "Browse resources", color: "#B87DFF", go: () => this.go("library") },
+        { kicker: "Go deeper", title: "Take a course", body: "Short video tracks on the instructional strategies underneath the resources.", cta: "See courses", color: "#00B4A6", go: () => this.go("videos") }
+      ],
+      fresh: data.slice(0, 4).map(r => this.card(r)),
+
+      gateKicker: tier === "free" ? "You're on the free plan" : "All-Access is on",
+      gateHeadline: tier === "free" ? "You've opened 3 of your 5 free resources this month." : "Everything's unlocked. Go build your week.",
+      gateBody: tier === "free"
+        ? "All-Access opens every resource, every video course, and unlimited standard matching. Cancel any time."
+        : "Every resource, every course, unlimited matching. Your planner saves across devices.",
+      gateCta: tier === "free" ? "See plans" : "Manage plan",
+      perks: ["All 2,762 resources, slides included", "93 teacher video courses", "Unlimited standard matching", "Save resources to a weekly planner"],
+
+      libQuery: this.state.libQuery,
+      onLibQuery: e => this.setState({ libQuery: e.target.value, shown: 30 }),
+      clearFilters: () => this.setState({ filters: {}, libQuery: "", shown: 30 }),
+      filterGroups: [
+        { key: "Access", name: "Access", all: ["Free", "All-Access"] },
+        { key: "Grades", name: "Grade levels", all: this.distinct("grades") },
+        { key: "Purpose", name: "Purpose", all: this.distinct("purpose") },
+        { key: "Skill", name: "Skill", all: this.distinct("skill") }
+      ].map(g => {
+        const open = !!this.state.openGroups[g.key];
+        const cap = 8;
+        const list = open ? g.all : g.all.slice(0, cap);
+        return {
+          name: g.name,
+          options: this.groupOpts(g.key, list),
+          toggle: g.all.length > cap ? [{
+            label: open ? "Show fewer" : "Show all " + g.all.length,
+            go: () => this.setState(s => {
+              const n = Object.assign({}, s.openGroups); n[g.key] = !n[g.key]; return { openGroups: n };
+            })
+          }] : []
+        };
+      }),
+      results: search.list.slice(0, this.state.shown || 30).map(r => this.card(r)),
+      resultCount: Math.min(this.state.shown || 30, search.list.length).toLocaleString() + " of " + search.list.length.toLocaleString() + " matching · " + data.length.toLocaleString() + " in the library",
+      more: search.list.length > (this.state.shown || 30)
+        ? [{ label: "Show 30 more", go: () => this.setState(s => ({ shown: (s.shown || 30) + 30 })) }]
+        : [],
+      noResults: false,
+      fallbackNote: search.mode === "exact" ? [] : [{
+        title: search.mode === "standard"
+          ? "Read that as " + search.code + " — here's what fits the skill"
+          : search.mode === "loose"
+            ? "No exact title match for “" + this.state.libQuery.trim() + "” — showing the closest fits"
+            : "Nothing lined up with “" + this.state.libQuery.trim() + "” — showing everything instead",
+        body: "Want the teaching moves too? Run it through the standard matcher.",
+        go: () => this.doMatch(this.state.libQuery.trim())
+      }],
+      matcherNudge: this.state.libQuery.trim()
+        ? [{ label: "Or match it to a standard →", go: () => this.doMatch(this.state.libQuery.trim()) }]
+        : [],
+      handoffFor: this.state.libQuery.trim() ? " for “" + this.state.libQuery.trim() + "”" : "",
+      handoffLabel: this.state.libQuery.trim() ? "Run “" + this.state.libQuery.trim() + "” through the matcher" : "Try standard matching",
+      handoffToMatch: () => {
+        const t = this.state.libQuery.trim();
+        if (t) this.doMatch(t); else this.go("match");
+      },
+      sorts: ["Newest", "Oldest first", "A–Z"].map(label => ({
+        label,
+        bg: this.state.sort === label ? "#111111" : "#FFFFFF",
+        fg: this.state.sort === label ? "#FFFFFF" : "#555555",
+        bc: this.state.sort === label ? "#111111" : "#E4E4E4",
+        go: () => this.setState({ sort: label })
+      })),
+
+      matching: this.state.matching,
+      hasMatch: !!std && !this.state.matching,
+      showUnpack: !!std && !this.state.matching && this.state.matchTab === "Unpack the standard",
+      unpack: (std && UNPACK[std.code]) ? [{
+        code: std.code,
+        name: std.name,
+        verbs: UNPACK[std.code].verbs.map(v => ({ word: v[0], gloss: v[1] })),
+        concepts: UNPACK[std.code].concepts,
+        prior: UNPACK[std.code].prior,
+        challenges: (UNPACK[std.code].challenges || []).map((c, i) => ({ n: i + 1, problem: c[0], fix: c[1] })),
+        priorStd: (UNPACK[std.code].priorStd || []).map(p => ({ code: p[0], text: p[1] })),
+        futureStd: (UNPACK[std.code].futureStd || []).map(p => ({ code: p[0], text: p[1] })),
+        mastery: UNPACK[std.code].mastery,
+        vocab: (UNPACK[std.code].vocab || []).map(w => ({ word: w[0], kidDef: w[1] })),
+        ladder: UNPACK[std.code].ladder.map((l, i) => ({ n: i + 1, name: l[0], body: l[1], pct: Math.round(((i + 1) / UNPACK[std.code].ladder.length) * 100) + "%" }))
+      }] : [],
+      noUnpack: (std && !UNPACK[std.code] && !this.state.matching) ? [{ code: std.code }] : [],
+      matchTabs: ["Lesson blueprint", "Unpack the standard", "Resources to remix", "Make it for my learners"].map(label => ({
+        label,
+        bg: this.state.matchTab === label ? "#111111" : "#FFFFFF",
+        fg: this.state.matchTab === label ? "#FFFFFF" : "#555555",
+        bc: this.state.matchTab === label ? "#111111" : "#E4E4E4",
+        go: () => this.setState({ matchTab: label })
+      })),
+      showBlueprint: !!std && !this.state.matching && this.state.matchTab === "Lesson blueprint",
+      showRemix: !!std && !this.state.matching && this.state.matchTab === "Resources to remix",
+      showAI: !!std && !this.state.matching && this.state.matchTab === "Make it for my learners",
+      aiEmpty: !this.state.aiBusy && !this.state.aiOut && !this.state.aiErr && !this.state.aiDeck,
+      aiDeckTitle: this.state.aiDeck ? [{
+        t: this.state.aiDeck.deckTitle || "Your deck",
+        n: this.state.aiDeck.slides.length + " slides",
+        sendLabel: this.state.copied ? "Copied — paste into Slides" : "Send to Google Slides",
+        send: () => this.sendToSlides()
+      }] : [],
+      aiSlides: this.state.aiDeck ? this.state.aiDeck.slides.map((s, i) => {
+        const k = s.kind || "teach";
+        const skin = k === "title"
+          ? { bg: "#16213E", fg: "#FFFFFF", accent: "#7FE3DA", chip: "#00B4A6", mark: "uploads/01_chevron_thick_coral_512.png" }
+          : k === "practice"
+            ? { bg: "#FFF0EC", fg: "#111111", accent: "#C0432F", chip: "#FF6A5B", mark: "uploads/01_chevron_thick_charcoal_512.png" }
+            : k === "reflect"
+              ? { bg: "#F4E9FF", fg: "#111111", accent: "#6B2FB5", chip: "#B87DFF", mark: "uploads/01_chevron_thick_charcoal_512.png" }
+              : { bg: "#FFFFFF", fg: "#111111", accent: "#00756C", chip: "#00B4A6", mark: "uploads/01_chevron_thick_charcoal_512.png" };
+        return {
+          n: i + 1,
+          kind: k.toUpperCase(),
+          heading: s.heading || "",
+          lines: (s.lines || []).map(l => ({ t: l })),
+          bg: skin.bg, fg: skin.fg, accent: skin.accent, chip: skin.chip, mark: skin.mark,
+          headSize: k === "title" ? "34px" : "26px"
+        };
+      }) : [],
+      goRemixTab: () => this.setState({ matchTab: "Resources to remix" }),
+      goAiTab: () => this.setState({ matchTab: "Make it for my learners" }),
+      bp: bp ? [{
+        title: bp.title,
+        badge: bp.badge,
+        code: std.code,
+        standardText: std.name,
+        target: std.target,
+        criteria: bp.criteria,
+        science: std.science,
+        routeName: bp.routeName,
+        routeLine: bp.routeLine,
+        route: ROUTE.map(r => ({ name: r[0], sub: r[1], color: r[2] })),
+        steps: bp.steps.map((s, i) => ({ n: i + 1, name: s[0], mins: s[1] + " minutes", body: s[2], tag: s[3], hasTag: s[3] ? [{ t: s[3] }] : [] })),
+        ef: bp.ef.concat(EF_BASE),
+        tech: bp.tech,
+        techPurpose: bp.techPurpose,
+        ai: bp.ai,
+        assess: bp.assess,
+        why: bp.why,
+        total: bp.steps.reduce((a, s) => a + s[1], 0) + " minutes"
+      }] : [],
+      noBp: !bp && !!std && !this.state.matching ? [{ code: std.code }] : [],
+      aiHeadNote: aiFmt.label + " · " + aiFmt.count + " " + aiFmt.unit + "s",
+      aiFormats: FORMATS.map(f => {
+        const on = (this.state.aiFormat || "deck") === f.key;
+        return {
+          label: f.label, desc: f.desc,
+          bg: on ? "#111111" : "#FFFFFF",
+          fg: on ? "#FFFFFF" : "#111111",
+          sub: on ? "#B9B9B9" : "#7A7A7A",
+          bc: on ? "#111111" : "#E4E4E4",
+          bar: on ? f.accent : "transparent",
+          go: () => this.setState({ aiFormat: f.key, aiDeck: null, aiOut: "" })
+        };
+      }),
+      aiFmtLabel: (FORMATS.filter(f => f.key === (this.state.aiFormat || "deck"))[0] || FORMATS[0]).label,
+      aiRunCta: "Make my " + (FORMATS.filter(f => f.key === (this.state.aiFormat || "deck"))[0] || FORMATS[0]).unit + "s",
+      aiLayoutSlides: aiFmt.layout === "slides",
+      aiLayoutGrid: aiFmt.layout === "grid",
+      aiLayoutSheet: aiFmt.layout === "sheet",
+      aiItems: this.state.aiDeck ? (this.state.aiDeck.items || []).map((s, i) => ({
+        n: i + 1,
+        label: s.label || "",
+        lines: (s.lines || []).map(l => ({ t: l })),
+        accent: aiFmt.accent,
+        bg: aiFmt.layout === "slides" ? (i === 0 ? "#16213E" : i % 3 === 2 ? "#F4E9FF" : "#FFFFFF") : "#FFFFFF",
+        fg: aiFmt.layout === "slides" && i === 0 ? "#FFFFFF" : "#111111",
+        headSize: aiFmt.layout === "slides" ? (i === 0 ? "30px" : "24px") : "17px",
+        mark: aiFmt.layout === "slides" && i === 0 ? "uploads/01_chevron_thick_coral_512.png" : "uploads/01_chevron_thick_charcoal_512.png"
+      })) : [],
+      aiKindGroupsUnused: [
+        { name: "Slides for class", options: ["Student slide deck", "Anchor chart slide", "Warm-up slide", "Choice board", "Station rotation cards"] },
+        { name: "Practice + check", options: ["Guided practice slides", "Question cards", "Exit ticket", "Quick retrieval quiz", "Graphic organizer"] },
+        { name: "Support + scaffolds", options: ["Three reading levels", "Sentence stems", "Vocabulary preview", "Word bank", "Step-by-step directions"] },
+        { name: "Beyond the lesson", options: ["Reflection prompts", "Family note home", "Student self-check rubric", "Sub plan version"] }
+      ].map(g => ({
+        name: g.name,
+        options: g.options.map(label => ({
+          label,
+          bg: this.state.aiKind === label ? "#111111" : "#FFFFFF",
+          fg: this.state.aiKind === label ? "#FFFFFF" : "#555555",
+          bc: this.state.aiKind === label ? "#111111" : "#E4E4E4",
+          go: () => this.setState({ aiKind: label })
+        }))
+      })),
+      aiGrade: this.state.aiGrade,
+      onAiGrade: e => this.setState({ aiGrade: e.target.value }),
+      aiNeed: this.state.aiNeed,
+      onAiNeed: e => this.setState({ aiNeed: e.target.value }),
+      aiBusy: this.state.aiBusy,
+      aiRunLabel: this.state.aiBusy ? "Writing it…" : "Make it",
+      runAI: () => this.makeWithAI(std, bp, matchResults[0] ? matchResults[0].title : ""),
+      aiOut: this.state.aiOut ? [{ text: this.state.aiOut }] : [],
+      aiErr: this.state.aiErr ? [{ text: this.state.aiErr }] : [],
+      aiSourceLine: !std ? "" : (matchResults[0] ? "Remixing “" + matchResults[0].title + "” for " + std.code : "Built from " + std.code),
+      match: std ? Object.assign({}, std, { count: matchResults.length + " resources fit this standard" }) : { science: [] },
+      matchResults,
+
+      detail: Object.assign({}, detail, {
+        locked: detailLocked,
+        unlocked: !detailLocked,
+        heroImg: v === "detail" && this.state.playing !== detail.id ? [{ url: detail.thumbBig }] : [],
+        embed: v === "detail" && this.state.playing === detail.id ? [{ url: detail.embedUrl }] : [],
+        sideImg: v === "detail" ? [{ url: detail.thumb }] : [],
+        moves: detail.moves.map((t, n) => ({ n: n + 1, text: t })),
+        why: "This one leans on " + detail.science.join(" and ").toLowerCase() + ". Students don't just see the content again, they have to pull it back out and do something with it, which is what makes it stick past Friday.",
+        facts: [
+          { k: "Purpose", v: detail.purpose },
+          { k: "Grades", v: detail.grades },
+          { k: "Skill", v: detail.skill },
+          { k: "Format", v: detail.type },
+          { k: "Added", v: detail.dateLabel || "—" },
+          { k: "Prep time", v: detail.time },
+          { k: "Access", v: detail.free ? "Free" : "All-Access" }
+        ]
+      }),
+      playDetail: () => this.setState({ playing: detail.id }),
+      detailSaveLabel: this.state.saved[detail.id] ? "Saved to planner ✓" : "Save to planner",
+      saveDetail: () => this.setState(s => {
+        const n = Object.assign({}, s.saved); n[detail.id] = !n[detail.id]; return { saved: n };
+      }),
+      related: data.filter(r => r.skill === detail.skill && r.id !== detail.id).slice(0, 3).map(r => this.card(r)),
+
+      videoTabs: ["Teacher courses", "Student videos", "Saved"].map(label => ({
+        label,
+        fg: this.state.videoTab === label ? "#111111" : "#8A8A8A",
+        bar: this.state.videoTab === label ? "#FF6A5B" : "transparent",
+        go: () => this.setState({ videoTab: label })
+      })),
+      courses: COURSES.map((c, i) => {
+        const [title, track, lessons, length, blurb, prog, tint] = c;
+        return {
+          title, length, blurb, tint,
+          slotId: "course-" + i,
+          meta: lessons + " lessons · " + track,
+          locked: lockedCourse(i),
+          progressWidth: Math.round(prog * 100) + "%",
+          progressLabel: prog === 0 ? "Not started" : Math.round(prog * lessons) + " of " + lessons + " lessons done"
+        };
+      }),
+
+      plans: [
+        { name: "Free", price: "$0", per: "forever", who: "Try the hub with a rotating set of free resources.", cta: "You're on this plan",
+          features: ["550 free resources", "5 resource opens a month", "3 standard matches a month", "2 sample video courses"],
+          cardBg: "#FFFFFF", cardFg: "#111111", border: "#E9E9E9", btnBg: "#F2F2F2", btnFg: "#111111", divider: "#F2F2F2", check: "#00B4A6",
+          featured: false, act: () => this.setState({ tier: "free" }) },
+        { name: "All-Access", price: "$10", per: "/ month", who: "Everything, for the teacher who plans on Sunday night.", cta: "Start All-Access", featured: true,
+          features: ["All 2,762 resources with slides", "Unlimited standard matching", "All 93 video courses", "Weekly planner with saved resources", "New resources every week"],
+          cardBg: "#111111", cardFg: "#FFFFFF", border: "#111111", btnBg: "#FF6A5B", btnFg: "#FFFFFF", divider: "#2A2A2A", check: "#00B4A6",
+          act: () => this.setState({ tier: "pro", view: "home" }) },
+        { name: "School", price: "$7", per: "/ teacher / mo", who: "For teams and buildings, billed once with a PO.", cta: "Talk to us", featured: false,
+          features: ["Everything in All-Access", "Shared team planners", "Onboarding session for your staff", "PO and invoice billing", "Usage reporting for admins"],
+          cardBg: "#FFFFFF", cardFg: "#111111", border: "#E9E9E9", btnBg: "#111111", btnFg: "#FFFFFF", divider: "#F2F2F2", check: "#00B4A6",
+          act: () => this.setState({ tier: "pro", view: "home" }) }
+      ],
+      faqs: [
+        { q: "Can I edit the slides?", a: "Yes. Every resource is a Google Slides file you copy to your own Drive, so change anything you want." },
+        { q: "What happens if I cancel?", a: "You keep any copies already in your Drive. You just lose access to new resources and the matcher." },
+        { q: "Does the matcher work with my state standards?", a: "It reads the skill behind the code, so it works with Common Core codes and most state variations." },
+        { q: "Is there a school option?", a: "Yes, and it's billed once with a PO. Reach out and we'll size it to your building." }
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>
