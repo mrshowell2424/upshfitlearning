@@ -128,13 +128,22 @@ export const generated_materials = pgTable("generated_materials", {
   created_at: timestamp("created_at").defaultNow(),
 });
 
+export const users = pgTable("users", {
+  id: text("id").primaryKey(), // UUID from Supabase Auth
+  email: text("email").unique().notNull(),
+  name: text("name"),
+  avatar_url: text("avatar_url"),
+  created_at: timestamp("created_at").defaultNow(),
+  updated_at: timestamp("updated_at").defaultNow(),
+});
+
 export const subscriptions = pgTable("subscriptions", {
   id: uuid("id").primaryKey().defaultRandom(),
   user_id: text("user_id").unique().notNull(),
-  tier: varchar("tier", { length: 20 }).notNull(), // free, pro, school
+  tier: varchar("tier", { length: 20 }).notNull().default("free"), // free, pro, school
   stripe_customer_id: text("stripe_customer_id"),
   stripe_subscription_id: text("stripe_subscription_id"),
-  status: varchar("status", { length: 20 }).notNull(), // active, canceled, past_due
+  status: varchar("status", { length: 20 }).notNull().default("active"), // active, canceled, past_due
   current_period_start: timestamp("current_period_start"),
   current_period_end: timestamp("current_period_end"),
   created_at: timestamp("created_at").defaultNow(),

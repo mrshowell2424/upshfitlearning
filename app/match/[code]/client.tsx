@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import { UpgradeModal } from "@/app/components/UpgradeModal";
 
 const tabs = [
   { id: "blueprint", label: "Lesson blueprint" },
@@ -10,7 +11,7 @@ const tabs = [
   { id: "generate", label: "Make it for my learners" },
 ];
 
-export function MatchDetailClient({ standard_code, blueprint, unpack, resources }) {
+export function MatchDetailClient({ standard_code, blueprint, unpack, resources, userTier = "free" }) {
   const [activeTab, setActiveTab] = useState("blueprint");
 
   return (
@@ -38,7 +39,7 @@ export function MatchDetailClient({ standard_code, blueprint, unpack, resources 
         {activeTab === "unpack" && <UnpackTab unpack={unpack} />}
         {activeTab === "resources" && <ResourcesTab resources={resources} />}
         {activeTab === "generate" && (
-          <GenerateTab standard_code={standard_code} blueprint={blueprint} unpack={unpack} />
+          <GenerateTab standard_code={standard_code} blueprint={blueprint} unpack={unpack} userTier={userTier} />
         )}
       </div>
     </div>
@@ -228,12 +229,14 @@ function ResourcesTab({ resources }) {
   );
 }
 
-function GenerateTab({ standard_code, blueprint, unpack }) {
+function GenerateTab({ standard_code, blueprint, unpack, userTier = "free" }) {
   const [selectedFormat, setSelectedFormat] = useState("presentation");
   const [studentNeeds, setStudentNeeds] = useState<string[]>([]);
   const [generating, setGenerating] = useState(false);
   const [generated, setGenerated] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
+  const [showUpgrade, setShowUpgrade] = useState(false);
+  const isFree = userTier === "free";
 
   const toggleNeed = (id: string) => {
     setStudentNeeds((prev) =>
@@ -242,6 +245,11 @@ function GenerateTab({ standard_code, blueprint, unpack }) {
   };
 
   const handleGenerate = async () => {
+    if (isFree) {
+      setShowUpgrade(true);
+      return;
+    }
+
     setGenerating(true);
     setError(null);
     try {
@@ -271,10 +279,12 @@ function GenerateTab({ standard_code, blueprint, unpack }) {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      {/* Control panel */}
-      <div className="lg:sticky lg:top-24 h-fit">
-        <div className="border border-border rounded-lg p-6 bg-white">
+    <>
+      <UpgradeModal isOpen={showUpgrade} onClose={() => setShowUpgrade(false)} feature="Lesson generation" />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Control panel */}
+        <div className="lg:sticky lg:top-24 h-fit">
+          <div className="border border-border rounded-lg p-6 bg-white">
           <p className="text-sm font-bold uppercase tracking-[0.16em] text-text-faint mb-4">
             Output format
           </p>
@@ -427,5 +437,6 @@ function GenerateTab({ standard_code, blueprint, unpack }) {
         )}
       </div>
     </div>
+    </>
   );
 }

@@ -71,8 +71,27 @@ export default function Header() {
 
       {/* Right */}
       <div className="flex items-center gap-3 flex-shrink-0">
-        {/* Tier pill */}
-        <div className="flex items-center gap-2 px-3 py-1 border border-border-strong rounded-full text-[12px] font-semibold">
+        {/* Auth buttons - shown when not logged in */}
+        <a
+          href="/auth/login"
+          className="px-4 py-1 text-sm font-semibold text-charcoal hover:text-text-muted transition-colors"
+        >
+          Sign in
+        </a>
+        <a
+          href="/auth/signup"
+          className="px-4 py-1.5 text-sm font-semibold text-white rounded-lg transition-colors"
+          style={{
+            backgroundColor: "var(--color-coral)",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--color-coral-press)")}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--color-coral)")}
+        >
+          Get started
+        </a>
+
+        {/* Tier pill & Avatar - shown when logged in (TODO: add conditional) */}
+        {/* <div className="flex items-center gap-2 px-3 py-1 border border-border-strong rounded-full text-[12px] font-semibold">
           <div
             className="w-2 h-2 rounded-full"
             style={{ backgroundColor: "var(--color-pink)" }}
@@ -80,13 +99,12 @@ export default function Header() {
           FREE PLAN
         </div>
 
-        {/* Avatar */}
         <div
           className="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-semibold"
           style={{ backgroundColor: "var(--color-lavender)" }}
         >
           SH
-        </div>
+        </div> */}
       </div>
     </header>
   );

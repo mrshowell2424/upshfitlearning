@@ -1,7 +1,7 @@
 // @ts-nocheck
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-import { MatchDetailClient } from "./client.js";
+import { MatchDetailClient } from "./client";
 import { db } from "@/lib/db";
 import { standards, standard_unpacks, lesson_blueprints } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
@@ -145,6 +145,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
               blueprint={blueprint}
               unpack={unpack}
               resources={matchingResources}
+              userTier="free"
             />
           ) : (
             <div className="text-center py-8">
