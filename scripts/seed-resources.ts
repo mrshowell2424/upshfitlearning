@@ -124,14 +124,15 @@ async function seedResources() {
 
     const title = row[2]?.trim();
     const purpose = row[3]?.trim();
-    const url = row[5]?.trim();
+    const youtube_url = row[4]?.trim(); // YouTube URL is in column 4
+    const link_url = row[5]?.trim(); // Google Slides/Doc URL is in column 5
     const summary_raw = row[6]?.trim();
 
     // Skip if no title
     if (!title) continue;
 
-    // Extract YouTube ID
-    const youtube_id = extractYoutubeId(url);
+    // Extract YouTube ID from YouTube URL
+    const youtube_id = extractYoutubeId(youtube_url);
 
     // Skip if no YouTube ID (we're prioritizing video resources)
     if (!youtube_id) continue;
@@ -144,7 +145,7 @@ async function seedResources() {
     const summary = cleanSummary(summary_raw);
     const { skill, inferred: skill_inferred } = inferSkill(title, summary);
     const { band: grade_band, inferred: grade_inferred } = inferGradeBand(title, purpose, summary);
-    const format = getFormat(url);
+    const format = getFormat(link_url);
 
     // Parse date (col 1, M/D/YY format)
     const date_str = row[1]?.trim();
@@ -158,21 +159,32 @@ async function seedResources() {
       title,
       purpose,
       youtube_id,
-      link_url: url,
+      link_url,
       summary,
       skill,
       skill_is_inferred: skill_inferred,
       grade_band,
       grade_band_is_inferred: grade_inferred,
       format,
-      published_at: published_at,
+      published_at: published_at ? new Date(published_at).toISOString().split('T')[0] : null,
       is_free: false, // Will update manually
     });
   }
 
   console.log(`✨ Inserting ${toInsert.length} resources...`);
   if (toInsert.length > 0) {
-    await db.insert(resources).values(toInsert);
+    const batchSize = 10;
+    for (let i = 0; i < toInsert.length; i += batchSize) {
+      const batch = toInsert.slice(i, i + batchSize);
+      try {
+        await db.insert(resources).values(batch);
+      } catch (e) {
+        console.error(`Batch ${i}-${i + batchSize} failed:`, (e as any).message?.substring(0, 200));
+        throw e;
+      }
+      const progress = Math.min(i + batchSize, toInsert.length);
+      console.log(`  ${progress}/${toInsert.length}`);
+    }
   }
 
   const count = (await db.select().from(resources)).length;
@@ -231,7 +243,11 @@ async function seedArticles() {
 
   console.log(`✨ Inserting ${toInsert.length} articles...`);
   if (toInsert.length > 0) {
-    await db.insert(articles).values(toInsert);
+    const batchSize = 50;
+    for (let i = 0; i < toInsert.length; i += batchSize) {
+      const batch = toInsert.slice(i, i + batchSize);
+      await db.insert(articles).values(batch);
+    }
   }
 
   const count = (await db.select().from(articles)).length;
