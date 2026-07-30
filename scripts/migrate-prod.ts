@@ -17,7 +17,7 @@ if (!databaseUrl) {
 
 async function main() {
   console.log("🚀 Starting production database migration...");
-  console.log(`📊 Database: ${databaseUrl.split("@")[1]?.split("/")[0] || "unknown"}`);
+  console.log(`📊 Database: ${databaseUrl!.split("@")[1]?.split("/")[0] || "unknown"}`);
 
   try {
     // Create connection
