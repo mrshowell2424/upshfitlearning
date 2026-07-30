@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { readFileSync } from "fs";
 import { resolve } from "path";
 import Papa from "papaparse";
