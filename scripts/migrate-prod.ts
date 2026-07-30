@@ -21,7 +21,7 @@ async function main() {
 
   try {
     // Create connection
-    const client = postgres(databaseUrl);
+    const client = postgres(databaseUrl!);
     const db = drizzle(client);
 
     console.log("\n1️⃣  Creating database schema...");
