@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/wrangler.json",
+  "name": "upshfitlearning",
+  "type": "javascript",
+  "account_id": "",
+  "workers_dev": true,
+  "routes": [],
+  "build": {
+    "command": "bun run build",
+    "cwd": "./",
+    "watch_paths": ["src/**/*.ts", "src/**/*.tsx"]
+  },
+  "env": {
+    "production": {
+      "routes": [
+        {
+          "pattern": "hub.upshiftlearning.org",
+          "zone_name": "upshiftlearning.org"
+        }
+      ]
+    }
+  },
+  "observability": {
+    "enabled": true
+  },
+  "compatibility_date": "2026-07-30",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
