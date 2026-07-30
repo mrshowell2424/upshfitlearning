@@ -3,22 +3,22 @@
  * Core analytics infrastructure for events, cohorts, funnels, and reporting
  */
 
-import { db } from '@/lib/db';
-import {
-  analytics_events,
-  analytics_cohorts,
-  analytics_funnels,
-  analytics_reports,
-  analytics_insights,
-  users,
-  subscriptions,
-  generated_materials,
-  saved_resources,
-} from '@/lib/db/schema';
-import { sql } from 'drizzle-orm';
-import { Anthropic } from '@anthropic-sdk/sdk';
+// import { db } from '@/lib/db';
+// import {
+//   analytics_events,
+//   analytics_cohorts,
+//   analytics_funnels,
+//   analytics_reports,
+//   analytics_insights,
+//   users,
+//   subscriptions,
+//   generated_materials,
+//   saved_resources,
+// } from '@/lib/db/schema';
+// import { sql } from 'drizzle-orm';
+import { Anthropic } from '@anthropic-ai/sdk';
 
-const anthropic = new Anthropic();
+// const anthropic = new Anthropic();
 
 export enum EventType {
   PAGE_VIEW = 'page_view',
