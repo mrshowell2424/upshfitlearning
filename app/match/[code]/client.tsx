@@ -10,7 +10,7 @@ const tabs = [
   { id: "generate", label: "Make it for my learners" },
 ];
 
-export function MatchDetailClient({ blueprint, unpack, resources }) {
+export function MatchDetailClient({ standard_code, blueprint, unpack, resources }) {
   const [activeTab, setActiveTab] = useState("blueprint");
 
   return (
@@ -37,7 +37,9 @@ export function MatchDetailClient({ blueprint, unpack, resources }) {
         {activeTab === "blueprint" && <BlueprintTab blueprint={blueprint} />}
         {activeTab === "unpack" && <UnpackTab unpack={unpack} />}
         {activeTab === "resources" && <ResourcesTab resources={resources} />}
-        {activeTab === "generate" && <GenerateTab />}
+        {activeTab === "generate" && (
+          <GenerateTab standard_code={standard_code} blueprint={blueprint} unpack={unpack} />
+        )}
       </div>
     </div>
   );
@@ -226,8 +228,47 @@ function ResourcesTab({ resources }) {
   );
 }
 
-function GenerateTab() {
+function GenerateTab({ standard_code, blueprint, unpack }) {
   const [selectedFormat, setSelectedFormat] = useState("presentation");
+  const [studentNeeds, setStudentNeeds] = useState<string[]>([]);
+  const [generating, setGenerating] = useState(false);
+  const [generated, setGenerated] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const toggleNeed = (id: string) => {
+    setStudentNeeds((prev) =>
+      prev.includes(id) ? prev.filter((n) => n !== id) : [...prev, id]
+    );
+  };
+
+  const handleGenerate = async () => {
+    setGenerating(true);
+    setError(null);
+    try {
+      const response = await fetch("/api/generate-lesson", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          standard_code,
+          format: selectedFormat,
+          student_needs: studentNeeds,
+          blueprint,
+          unpack,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Generation failed");
+      }
+
+      const data = await response.json();
+      setGenerated(data);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Generation failed");
+    } finally {
+      setGenerating(false);
+    }
+  };
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -252,6 +293,7 @@ function GenerateTab() {
                   checked={selectedFormat === format.id}
                   onChange={(e) => setSelectedFormat(e.target.value)}
                   className="w-4 h-4 mt-0.5"
+                  disabled={generating}
                 />
                 <span className="text-sm font-medium">{format.label}</span>
               </label>
@@ -270,32 +312,119 @@ function GenerateTab() {
                 { id: "ext", label: "Extension activities" },
               ].map((option) => (
                 <label key={option.id} className="flex gap-2 cursor-pointer">
-                  <input type="checkbox" className="w-4 h-4 mt-0.5" />
+                  <input
+                    type="checkbox"
+                    checked={studentNeeds.includes(option.id)}
+                    onChange={() => toggleNeed(option.id)}
+                    className="w-4 h-4 mt-0.5"
+                    disabled={generating}
+                  />
                   <span className="text-sm font-medium">{option.label}</span>
                 </label>
               ))}
             </div>
           </div>
 
+          {error && (
+            <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700">
+              {error}
+            </div>
+          )}
+
           <button
-            className="w-full mt-6 py-3 rounded-lg bg-coral text-white font-semibold hover:bg-coral-press transition-colors"
-            onClick={() => alert("Generate: " + selectedFormat)}
+            className={`w-full mt-6 py-3 rounded-lg font-semibold text-white transition-colors ${
+              generating
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-coral hover:bg-coral-press"
+            }`}
+            onClick={handleGenerate}
+            disabled={generating}
           >
-            Generate for my learners
+            {generating ? "Generating..." : "Generate for my learners"}
           </button>
         </div>
       </div>
 
       {/* Output preview */}
       <div>
-        <div className="bg-gray-050 rounded-lg p-8 aspect-square flex items-center justify-center border-2 border-dashed border-hairline">
-          <div className="text-center">
-            <p className="text-text-muted mb-2">Generated content will appear here</p>
-            <p className="text-xs text-text-faint">
-              Select options and click "Generate for my learners"
-            </p>
+        {!generated ? (
+          <div className="bg-gray-050 rounded-lg p-8 aspect-square flex items-center justify-center border-2 border-dashed border-hairline">
+            <div className="text-center">
+              <p className="text-text-muted mb-2">Generated content will appear here</p>
+              <p className="text-xs text-text-faint">
+                Select options and click "Generate for my learners"
+              </p>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="bg-white rounded-lg p-6 border border-border max-h-96 overflow-y-auto">
+            <h3 className="font-bold text-lg mb-4">{generated.content?.title}</h3>
+
+            {selectedFormat === "presentation" && generated.content?.slides && (
+              <div className="space-y-4">
+                {generated.content.slides.slice(0, 3).map((slide: any) => (
+                  <div key={slide.number} className="border-l-4 border-coral pl-4 py-2">
+                    <p className="font-semibold">{slide.title}</p>
+                    {slide.bullets && (
+                      <ul className="text-sm text-text-muted mt-1 space-y-1">
+                        {slide.bullets.slice(0, 2).map((b: string, i: number) => (
+                          <li key={i}>• {b}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ))}
+                <p className="text-xs text-text-faint mt-4">
+                  ... {generated.content.slides.length} slides total
+                </p>
+              </div>
+            )}
+
+            {selectedFormat === "document" && generated.content?.sections && (
+              <div className="space-y-3">
+                {generated.content.sections.slice(0, 3).map((section: any) => (
+                  <div key={section.heading}>
+                    <p className="font-semibold text-sm">{section.heading}</p>
+                    <p className="text-xs text-text-muted mt-1">
+                      {section.content?.substring(0, 100) || section.bullets?.[0]}
+                    </p>
+                  </div>
+                ))}
+                <p className="text-xs text-text-faint mt-4">
+                  ... Full lesson plan with {generated.content.sections.length} sections
+                </p>
+              </div>
+            )}
+
+            {selectedFormat === "worksheet" && (
+              <div>
+                <p className="text-sm mb-3">{generated.content?.instructions}</p>
+                {generated.content?.sections?.slice(0, 2).map((section: any) => (
+                  <div key={section.heading} className="mb-3">
+                    <p className="font-semibold text-sm">{section.heading}</p>
+                    <p className="text-xs text-text-muted mt-1">{section.content?.substring(0, 80)}</p>
+                  </div>
+                ))}
+                <p className="text-xs text-text-faint mt-4">Ready to print or export</p>
+              </div>
+            )}
+
+            {selectedFormat === "assessment" && (
+              <div className="space-y-3">
+                <p className="text-sm mb-3">{generated.content?.description}</p>
+                {generated.content?.criteria?.slice(0, 2).map((criterion: any) => (
+                  <div key={criterion.skill}>
+                    <p className="font-semibold text-sm">{criterion.skill}</p>
+                    <p className="text-xs text-text-muted">
+                      {criterion.proficiency_levels?.length} proficiency levels
+                    </p>
+                  </div>
+                ))}
+                <p className="text-xs text-text-faint mt-4">Rubric ready to download</p>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

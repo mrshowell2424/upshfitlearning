@@ -141,6 +141,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
         <div className="max-w-4xl mx-auto">
           {blueprint && unpack ? (
             <MatchDetailClient
+              standard_code={decodedCode}
               blueprint={blueprint}
               unpack={unpack}
               resources={matchingResources}
