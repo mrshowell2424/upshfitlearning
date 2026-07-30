@@ -2,6 +2,10 @@
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import { MatchDetailClient } from "./client";
+import { db } from "@/lib/db";
+import { standards, standard_unpacks, lesson_blueprints } from "@/lib/db/schema";
+import { eq } from "drizzle-orm";
+import { notFound } from "next/navigation";
 
 interface PageProps {
   params: Promise<{ code: string }>;
@@ -11,90 +15,77 @@ export default async function MatchDetailPage({ params }: PageProps) {
   const { code } = await params;
   const decodedCode = decodeURIComponent(code);
 
-  // TODO: Fetch actual standard and blueprint from DB
-  // For now, use placeholder data
+  // Fetch actual standard from DB
+  const standardRows = await db
+    .select()
+    .from(standards)
+    .where(eq(standards.code, decodedCode))
+    .limit(1);
+
+  const standardRow = standardRows[0];
+  if (!standardRow) {
+    notFound();
+  }
+
   const standard = {
-    code: "RL.2.1",
-    grade: "2",
-    text: "Ask and answer such questions as who, what, where, when, why, and how to demonstrate understanding of key details in a text.",
+    code: standardRow.code,
+    grade: standardRow.code.split(".")[1],
+    text: standardRow.plain_reading,
   };
 
-  const blueprint = {
-    context: "Students explore how asking questions helps them understand stories better.",
-    instructionalRoute: "Explicit modeling → Guided practice → Independent application",
-    steps: [
-      {
-        step: 1,
-        title: "Activate prior knowledge",
-        moves: ["Ask students about books they like", "Discuss why they like them"],
-      },
-      {
-        step: 2,
-        title: "Define key details",
-        moves: ["Show examples of questions that ask about key details", "Model asking questions"],
-      },
-      {
-        step: 3,
-        title: "Model questioning",
-        moves: ["Read aloud from a grade-2 text", "Think aloud about questions"],
-      },
-      {
-        step: 4,
-        title: "Guided practice",
-        moves: ["Read a short excerpt together", "Ask who/what/where questions"],
-      },
-      {
-        step: 5,
-        title: "Partner practice",
-        moves: ["Pair students with a partner", "Each pair asks and answers questions"],
-      },
-      {
-        step: 6,
-        title: "Independent reading",
-        moves: ["Students read independently", "Track questions on a graphic organizer"],
-      },
-      {
-        step: 7,
-        title: "Share and reflect",
-        moves: ["Discuss questions with the group", "Reflect on what they learned"],
-      },
-      {
-        step: 8,
-        title: "Apply to new text",
-        moves: ["Practice with a new story", "Use questions to show understanding"],
-      },
-    ],
-    supports: [
-      "Multi-sensory input",
-      "Clear models",
-      "Predictable routines",
-      "Peer collaboration",
-    ],
-  };
+  // Fetch blueprint from DB
+  const blueprintRows = await db
+    .select()
+    .from(lesson_blueprints)
+    .where(eq(lesson_blueprints.standard_code, decodedCode))
+    .limit(1);
 
-  const unpack = {
-    learningVerbs: ["Ask", "Answer", "Demonstrate", "Understand"],
-    concepts: ["Key details", "Text comprehension", "Questioning strategies"],
-    vocabulary: ["Key details", "Understanding", "Questions"],
-    misconceptions: [
-      "Students may think all questions are equally important",
-      "Students may focus on minor details instead of key details",
-    ],
-    priorLearning:
-      "Students should understand basic story elements (character, setting, events)",
-    futureLearning: "RL.3.1: Ask and answer questions to demonstrate understanding of a text",
-    masteryCriteria: [
-      "Student asks at least 3 questions about a text",
-      "Student answers questions accurately",
-      "Questions focus on key details, not minor details",
-    ],
-    learningLadder: [
-      "I can identify characters in a story",
-      "I can ask simple questions about a story",
-      "I can ask who, what, where, when, why, and how questions",
-      "I can answer my questions using details from the text",
-    ],
-  };
+  const blueprintRow = blueprintRows[0];
+
+  const blueprint = blueprintRow
+    ? {
+        context:
+          blueprintRow.steps && blueprintRow.steps.length > 0
+            ? blueprintRow.steps[0].body
+            : "Context loading...",
+        instructionalRoute: blueprintRow.route_line || "Instructional route",
+        steps:
+          blueprintRow.steps?.map((s, idx) => ({
+            step: idx + 1,
+            title: s.name,
+            moves: (s.body || "").split("\n").filter((l) => l.trim().length > 0),
+          })) || [],
+        supports: blueprintRow.ef_supports || [],
+      }
+    : null;
+
+  // Fetch unpack from DB
+  const unpackRows = await db
+    .select()
+    .from(standard_unpacks)
+    .where(eq(standard_unpacks.standard_code, decodedCode))
+    .limit(1);
+
+  const unpackRow = unpackRows[0];
+
+  const unpack = unpackRow
+    ? {
+        learningVerbs: unpackRow.verbs?.map((v) => v.word) || [],
+        concepts: unpackRow.concepts || [],
+        vocabulary: unpackRow.vocabulary || [],
+        misconceptions:
+          unpackRow.challenges?.map((c) => c.problem) || [],
+        priorLearning:
+          unpackRow.prior_skills?.join(", ") ||
+          "Prior learning information loading...",
+        futureLearning:
+          unpackRow.future_standards?.[0]?.text ||
+          "Future learning information loading...",
+        masteryCriteria: [unpackRow.mastery_statement || "Mastery criteria loading..."],
+        learningLadder:
+          unpackRow.ladder?.map((l) => l.name) || [],
+      }
+    : null;
 
   const matchingResources = [
     {
@@ -148,11 +139,17 @@ export default async function MatchDetailPage({ params }: PageProps) {
 
         {/* Tabs */}
         <div className="max-w-4xl mx-auto">
-          <MatchDetailClient
-            blueprint={blueprint}
-            unpack={unpack}
-            resources={matchingResources}
-          />
+          {blueprint && unpack ? (
+            <MatchDetailClient
+              blueprint={blueprint}
+              unpack={unpack}
+              resources={matchingResources}
+            />
+          ) : (
+            <div className="text-center py-8">
+              <p className="text-text-muted">Loading standard details...</p>
+            </div>
+          )}
         </div>
       </main>
 

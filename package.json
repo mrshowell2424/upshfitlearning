@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "db:seed": "bun run scripts/seed-resources.ts",
+    "db:seed:standards": "bun run scripts/seed-standards.ts",
     "db:push": "drizzle-kit push"
   },
   "dependencies": {
