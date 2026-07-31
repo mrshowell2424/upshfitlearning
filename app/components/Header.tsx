@@ -68,7 +68,7 @@ export default function Header() {
       <div className="flex items-center gap-3 flex-shrink-0">
         {/* Auth buttons - shown when not logged in */}
         <a
-          href="/auth/login"
+          href="/auth/signin"
           className="px-4 py-1 text-sm font-semibold text-charcoal hover:text-text-muted transition-colors"
         >
           Sign in
