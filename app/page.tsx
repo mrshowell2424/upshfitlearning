@@ -1,10 +1,34 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
 export default function Home() {
+  const [searchInput, setSearchInput] = useState('')
+  const router = useRouter()
+
+  const handleSearch = (query: string) => {
+    if (query.trim()) {
+      router.push(`/match?q=${encodeURIComponent(query)}`)
+    }
+  }
+
+  const examples = [
+    { code: 'RL.2.1', subject: 'ELA' },
+    { code: 'RI.4.2', subject: 'ELA' },
+    { code: 'L.5.4', subject: 'ELA' },
+    { code: 'RL.6.3', subject: 'ELA' },
+    { code: '2.NBT.B.5', subject: 'Math' },
+    { code: '3.MD.A.1', subject: 'Math' },
+    { code: '5.LS1.A', subject: 'Science' },
+    { code: 'K.PS2.A', subject: 'Science' },
+    { code: '3.5.C', subject: 'Social Studies' },
+    { code: '4.4.B', subject: 'Social Studies' },
+  ]
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -19,14 +43,14 @@ export default function Home() {
 
             {/* Hero Headline */}
             <h1 className="text-5xl font-bold text-charcoal mb-4 max-w-2xl leading-tight">
-              Tell us what you're teaching.
+              Describe what you're teaching.
               <br />
               We'll hand you the lesson.
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg text-text-muted mb-8 max-w-xl">
-              Search by standard code or describe what you're teaching. Get a lesson blueprint, resources, and AI-generated materials.
+              Search by standard code or describe what you're teaching. Get a lesson blueprint, resources, and materials.
             </p>
 
             {/* Search Bar */}
@@ -37,8 +61,14 @@ export default function Home() {
                   type="text"
                   placeholder='RL.2.1 — or "text evidence with 2nd graders"'
                   className="flex-1 outline-none text-sm placeholder:text-text-muted"
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                  onKeyPress={(e) => e.key === 'Enter' && handleSearch(searchInput)}
                 />
-                <button className="bg-coral hover:bg-coral-press text-white px-6 py-2 rounded-xl text-sm font-semibold transition-colors">
+                <button
+                  onClick={() => handleSearch(searchInput)}
+                  className="bg-coral hover:bg-coral-press text-white px-6 py-2 rounded-xl text-sm font-semibold transition-colors"
+                >
                   Match my standard
                 </button>
               </div>
@@ -47,12 +77,17 @@ export default function Home() {
             {/* Example Chips */}
             <div className="flex items-center gap-3 mb-12 flex-wrap">
               <span className="text-sm text-text-muted">Try:</span>
-              {['RL.2.1', 'RI.4.2', 'L.5.4', 'RL.6.3'].map((example) => (
+              {examples.map((example) => (
                 <button
-                  key={example}
-                  className="px-4 py-2 bg-gray-100 hover:bg-gray-100 text-charcoal rounded-full text-sm font-medium border border-border transition-colors"
+                  key={example.code}
+                  onClick={() => {
+                    setSearchInput(example.code)
+                    handleSearch(example.code)
+                  }}
+                  className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-charcoal rounded-full text-sm font-medium border border-border transition-colors"
+                  title={example.subject}
                 >
-                  {example}
+                  {example.code}
                 </button>
               ))}
             </div>
@@ -68,7 +103,7 @@ export default function Home() {
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Standards</div>
               </div>
               <div className="bg-white p-6 text-center">
-                <div className="text-4xl font-bold text-teal mb-1">K–8</div>
+                <div className="text-4xl font-bold text-teal mb-1">K–12</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Grade Span</div>
               </div>
               <div className="bg-white p-6 text-center">
@@ -132,10 +167,10 @@ export default function Home() {
               <div className="bg-charcoal text-white p-8 rounded-3xl">
                 <div className="text-xs font-bold tracking-wider text-pink uppercase mb-3">Unlock more</div>
                 <h3 className="text-3xl font-bold mb-3">
-                  Free tier includes 550 resources
+                  Free tier includes 2,688 resources
                 </h3>
                 <p className="text-sm text-gray-200 mb-6 leading-relaxed">
-                  Upgrade to All-Access to generate lesson materials with AI in 4 formats: slides, documents, worksheets, and assessments.
+                  Upgrade to All Access to receive lesson materials in 4 formats: slides, documents, worksheets, and assessments.
                 </p>
                 <Link
                   href="/plans"
@@ -152,7 +187,7 @@ export default function Home() {
                   <div className="flex items-start gap-3">
                     <span className="text-teal text-lg">✓</span>
                     <div>
-                      <div className="font-semibold text-charcoal">AI Lesson Generation</div>
+                      <div className="font-semibold text-charcoal">Science of Learning Resources</div>
                       <div className="text-xs text-text-muted">Create slides, docs, worksheets, and assessments</div>
                     </div>
                   </div>

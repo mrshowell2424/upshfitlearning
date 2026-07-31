@@ -6,10 +6,10 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "Resources", href: "/resources" },
   { label: "Standard match", href: "/match" },
-  { label: "My planner", href: "/" },
-  { label: "Videos", href: "/" },
-  { label: "Teacher's Lounge", href: "/" },
-  { label: "Plans", href: "/" },
+  { label: "My planner", href: "/planner" },
+  { label: "Videos", href: "/videos" },
+  { label: "Teacher's Lounge", href: "/lounge" },
+  { label: "Plans", href: "/pricing" },
 ];
 
 export default function Header() {
@@ -32,17 +32,12 @@ export default function Header() {
         className="flex items-center gap-2 cursor-pointer flex-shrink-0"
         onClick={() => router.push("/")}
       >
-        <img
-          src="/brand/chevron-coral-512.png"
-          alt="Upshift"
-          className="w-[30px] h-[30px]"
-        />
-        <div className="flex flex-col">
-          <div className="text-[15px] font-bold leading-tight tracking-[0.14em]">
+        <div className="flex flex-col gap-0.5">
+          <div className="text-[16px] font-bold leading-tight text-charcoal">
             UPSHIFT
           </div>
-          <div className="text-[8.5px] font-medium text-text-faint leading-tight tracking-[0.28em] mt-[3px]">
-            LEARNING HUB
+          <div className="text-[13px] font-normal text-charcoal leading-tight">
+            Learning
           </div>
         </div>
       </div>
