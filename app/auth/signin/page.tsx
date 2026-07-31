@@ -7,38 +7,28 @@ import { supabase } from '@/lib/auth'
 import Header from '@/app/components/Header'
 import Footer from '@/app/components/Footer'
 
-export default function SignUpPage() {
+export default function SignInPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [fullName, setFullName] = useState('')
   const [error, setError] = useState('')
-  const [success, setSuccess] = useState(false)
   const [loading, setLoading] = useState(false)
   const router = useRouter()
 
-  const handleSignUp = async (e: React.FormEvent) => {
+  const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
     setLoading(true)
 
     try {
-      const { error } = await supabase.auth.signUp({
+      const { error } = await supabase.auth.signInWithPassword({
         email,
         password,
-        options: {
-          data: {
-            full_name: fullName,
-          },
-        },
       })
 
       if (error) {
         setError(error.message)
       } else {
-        setSuccess(true)
-        setTimeout(() => {
-          router.push('/auth/signin')
-        }, 2000)
+        router.push('/')
       }
     } catch (err) {
       setError('An error occurred. Please try again.')
@@ -47,7 +37,7 @@ export default function SignUpPage() {
     }
   }
 
-  const handleGoogleSignUp = async () => {
+  const handleGoogleSignIn = async () => {
     setError('')
     setLoading(true)
 
@@ -69,38 +59,15 @@ export default function SignUpPage() {
     }
   }
 
-  if (success) {
-    return (
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-1 flex items-center justify-center px-8 py-24 bg-gray-050">
-          <div className="w-full max-w-md">
-            <div className="bg-white rounded-3xl p-8 border border-hairline text-center">
-              <div className="text-5xl mb-4">✓</div>
-              <h1 className="text-3xl font-bold text-charcoal mb-2">Check your email</h1>
-              <p className="text-sm text-text-muted mb-8">
-                We sent a confirmation link to <strong>{email}</strong>. Click it to verify your account.
-              </p>
-              <p className="text-xs text-text-muted">
-                Redirecting to sign in...
-              </p>
-            </div>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    )
-  }
-
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1 flex items-center justify-center px-8 py-24 bg-gray-050">
         <div className="w-full max-w-md">
           <div className="bg-white rounded-3xl p-8 border border-hairline">
-            <h1 className="text-3xl font-bold text-charcoal mb-2">Create account</h1>
+            <h1 className="text-3xl font-bold text-charcoal mb-2">Sign in</h1>
             <p className="text-sm text-text-muted mb-8">
-              Join Upshift Learning and access resources
+              Sign in to your Upshift Learning account
             </p>
 
             {error && (
@@ -109,12 +76,20 @@ export default function SignUpPage() {
               </div>
             )}
 
+            {/* Google Sign In */}
             <button
-              onClick={handleGoogleSignUp}
+              onClick={handleGoogleSignIn}
               disabled={loading}
               className="w-full mb-6 bg-white border-2 border-border hover:bg-gray-50 text-charcoal px-6 py-3 rounded-xl font-semibold transition-colors disabled:opacity-50"
             >
-              {loading ? 'Signing up...' : 'Continue with Google'}
+              <div className="flex items-center justify-center gap-2">
+                <svg className="w-5 h-5" viewBox="0 0 24 24">
+                  <text x="0" y="24" fontSize="24">
+                    🔵
+                  </text>
+                </svg>
+                {loading ? 'Signing in...' : 'Continue with Google'}
+              </div>
             </button>
 
             <div className="relative mb-6">
@@ -126,22 +101,8 @@ export default function SignUpPage() {
               </div>
             </div>
 
-            <form onSubmit={handleSignUp} className="space-y-4">
-              <div>
-                <label className="block text-sm font-semibold text-charcoal mb-2">
-                  Full name
-                </label>
-                <input
-                  type="text"
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                  placeholder="Your name"
-                  disabled={loading}
-                  className="w-full px-4 py-3 border border-border rounded-xl outline-none focus:border-charcoal disabled:bg-gray-50"
-                  required
-                />
-              </div>
-
+            {/* Email/Password Sign In */}
+            <form onSubmit={handleSignIn} className="space-y-4">
               <div>
                 <label className="block text-sm font-semibold text-charcoal mb-2">
                   Email
@@ -177,18 +138,18 @@ export default function SignUpPage() {
                 disabled={loading}
                 className="w-full bg-coral hover:bg-coral-press text-white px-6 py-3 rounded-xl font-semibold transition-colors disabled:opacity-50"
               >
-                {loading ? 'Creating account...' : 'Create account'}
+                {loading ? 'Signing in...' : 'Sign in'}
               </button>
             </form>
 
             <div className="mt-8 pt-8 border-t border-hairline">
               <p className="text-sm text-text-muted text-center">
-                Already have an account?{' '}
+                Don't have an account?{' '}
                 <Link
-                  href="/auth/signin"
+                  href="/auth/signup"
                   className="text-coral font-semibold hover:text-coral-press"
                 >
-                  Sign in
+                  Sign up
                 </Link>
               </p>
             </div>
