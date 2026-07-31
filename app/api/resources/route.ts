@@ -1,109 +1,93 @@
 import { NextRequest, NextResponse } from 'next/server'
+import Papa from 'papaparse'
 
-// Sample resources data structure
-// In production, this would fetch from Google Sheets API
-const SAMPLE_RESOURCES = [
-  {
-    id: '1',
-    title: 'Text Evidence Anchor Chart',
-    purpose: 'Understand how to find and cite text evidence',
-    format: 'Anchor Chart',
-    grade_band: 'K-2',
-    skill: 'Reading Comprehension',
-    is_free: true,
-    published_at: new Date('2024-01-15')
-  },
-  {
-    id: '2',
-    title: 'RL.2.1 Lesson Plan Bundle',
-    purpose: 'Teach students to ask and answer questions about key details',
-    format: 'Lesson Plan',
-    grade_band: '1-3',
-    skill: 'Literature',
-    is_free: true,
-    published_at: new Date('2024-01-10')
-  },
-  {
-    id: '3',
-    title: 'Inferencing Strategy Guide',
-    purpose: 'Help students make inferences from text',
-    format: 'Guide',
-    grade_band: '3-5',
-    skill: 'Reading Comprehension',
-    is_free: true,
-    published_at: new Date('2024-01-05')
-  },
-  {
-    id: '4',
-    title: 'Math Word Problems Grade 3',
-    purpose: 'Practice solving multi-step word problems',
-    format: 'Worksheet',
-    grade_band: '2-4',
-    skill: 'Math',
-    is_free: true,
-    published_at: new Date('2024-01-08')
-  },
-  {
-    id: '5',
-    title: 'Science Observation Journal',
-    purpose: 'Record and analyze scientific observations',
-    format: 'Template',
-    grade_band: '3-6',
-    skill: 'Science',
-    is_free: true,
-    published_at: new Date('2024-01-12')
-  },
-  {
-    id: '6',
-    title: 'Social Studies Timeline Activity',
-    purpose: 'Create timelines of historical events',
-    format: 'Activity',
-    grade_band: '4-8',
-    skill: 'Social Studies',
-    is_free: false,
-    published_at: new Date('2024-01-20')
-  },
-  {
-    id: '7',
-    title: 'Phonics Intervention Program',
-    purpose: 'Support struggling readers with phonetic instruction',
-    format: 'Program',
-    grade_band: 'K-2',
-    skill: 'Phonics',
-    is_free: false,
-    published_at: new Date('2024-01-18')
-  },
-  {
-    id: '8',
-    title: 'Multiplication Fact Fluency Games',
-    purpose: 'Build speed and accuracy with multiplication facts',
-    format: 'Game',
-    grade_band: '2-4',
-    skill: 'Math',
-    is_free: true,
-    published_at: new Date('2024-01-14')
-  },
-  {
-    id: '9',
-    title: 'Fraction Concepts Visual Guide',
-    purpose: 'Understand fractions through visual models',
-    format: 'Video',
-    grade_band: '3-5',
-    skill: 'Math',
-    is_free: true,
-    published_at: new Date('2024-01-11')
-  },
-  {
-    id: '10',
-    title: 'Earth Systems Unit Plan',
-    purpose: 'Comprehensive unit on earth systems and weather',
-    format: 'Unit Plan',
-    grade_band: '5-8',
-    skill: 'Science',
-    is_free: false,
-    published_at: new Date('2024-01-19')
+const GOOGLE_SHEETS_ID = '1dVlowQJxditueoFpI42NOnZrlJ1sArKPRqfPQwFAqrc'
+const SHEET_GID = '0' // First sheet (gid=0)
+
+interface SheetResource {
+  id: string
+  title: string
+  purpose: string
+  format: string
+  grade_band: string
+  skill: string
+  is_free: boolean
+  published_at: string | Date
+}
+
+async function fetchGoogleSheetResources(): Promise<SheetResource[]> {
+  try {
+    // Export sheet as CSV via public URL
+    const csvUrl = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEETS_ID}/export?format=csv&gid=${SHEET_GID}`
+
+    const response = await fetch(csvUrl)
+
+    if (!response.ok) {
+      console.error('Google Sheets export error:', response.statusText)
+      return []
+    }
+
+    const csv = await response.text()
+
+    // Parse CSV
+    const lines = csv.split('\n').filter(line => line.trim())
+
+    if (lines.length < 2) {
+      console.warn('Google Sheet is empty or inaccessible')
+      return []
+    }
+
+    const headers = lines[0].split(',').map(h => h.trim().toLowerCase())
+    const resources: SheetResource[] = []
+
+    for (let i = 1; i < lines.length; i++) {
+      const values = lines[i].split(',').map(v => v.trim())
+
+      if (!values[0]) continue // Skip empty rows
+
+      const resource: SheetResource = {
+        id: String(i),
+        title: values[0] || '',
+        purpose: values[1] || '',
+        format: values[2] || 'Link',
+        grade_band: values[3] || 'K-12',
+        skill: values[4] || 'General',
+        is_free: values[5]?.toLowerCase() === 'true' || values[5]?.toLowerCase() === 'yes',
+        published_at: values[6] || new Date().toISOString(),
+      }
+
+      if (resource.title) {
+        resources.push(resource)
+      }
+    }
+
+    return resources
+  } catch (error) {
+    console.error('Error fetching Google Sheets:', error)
+    return []
   }
-]
+}
+
+// Cache resources in memory to avoid repeated API calls
+let cachedResources: SheetResource[] | null = null
+let cacheTime = 0
+const CACHE_DURATION = 5 * 60 * 1000 // 5 minutes
+
+async function getResources(): Promise<SheetResource[]> {
+  const now = Date.now()
+
+  // Return cached resources if still valid
+  if (cachedResources && (now - cacheTime) < CACHE_DURATION) {
+    return cachedResources
+  }
+
+  // Fetch fresh data
+  const resources = await fetchGoogleSheetResources()
+  cachedResources = resources
+  cacheTime = now
+
+  return resources
+}
 
 export async function GET(request: NextRequest) {
   try {
@@ -112,11 +96,27 @@ export async function GET(request: NextRequest) {
     const search = searchParams.get('search') || ''
     const pageSize = 30
 
+    // Get resources from Google Sheets (or cache)
+    let resources = await getResources()
+
+    // If no resources from sheet, show helpful message
+    if (!resources.length) {
+      console.warn('No resources loaded from Google Sheets. Check sheet sharing and format.')
+      return NextResponse.json({
+        items: [],
+        total: 0,
+        page,
+        pageSize,
+        totalPages: 0,
+        message: 'Resources not yet loaded. Please check Google Sheets integration.'
+      })
+    }
+
     // Filter resources based on search
-    let filtered = SAMPLE_RESOURCES
+    let filtered = resources
     if (search) {
       const searchLower = search.toLowerCase()
-      filtered = SAMPLE_RESOURCES.filter(
+      filtered = resources.filter(
         r =>
           r.title.toLowerCase().includes(searchLower) ||
           r.purpose.toLowerCase().includes(searchLower) ||
