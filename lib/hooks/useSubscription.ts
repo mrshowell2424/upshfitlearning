@@ -11,7 +11,7 @@ export function useSubscription() {
   const canAccessPlanner = isPremium
 
   const resourceLimit = {
-    free: 500,
+    free: 200,
     pro: null, // unlimited
     school: null, // unlimited
   }
