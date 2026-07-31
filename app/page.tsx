@@ -188,11 +188,12 @@ export default function Home() {
 
               {/* Right: Benefits */}
               <div className="bg-white p-8 rounded-3xl flex flex-col justify-center">
+                <h4 className="text-lg font-bold text-charcoal mb-6">What you unlock</h4>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <span className="text-teal text-lg">✓</span>
                     <div>
-                      <div className="font-semibold text-charcoal">Science of Learning Resources</div>
+                      <div className="font-semibold text-charcoal">Generate Lesson Materials</div>
                       <div className="text-xs text-text-muted">Create slides, docs, worksheets, and assessments</div>
                     </div>
                   </div>
