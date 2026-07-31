@@ -8,6 +8,7 @@ export default function TeachersLounge() {
   const articles = [
     {
       id: 1,
+      slug: 'spaced-repetition',
       title: 'The Science of Spaced Repetition',
       description: 'Learn how spacing out your study sessions can dramatically improve long-term retention and understanding.',
       category: 'Learning Science',
@@ -16,6 +17,7 @@ export default function TeachersLounge() {
     },
     {
       id: 2,
+      slug: 'active-retrieval',
       title: 'Active Retrieval Practice in the Classroom',
       description: 'Discover evidence-based strategies for helping students retrieve and reinforce their knowledge.',
       category: 'Teaching Strategy',
@@ -24,6 +26,7 @@ export default function TeachersLounge() {
     },
     {
       id: 3,
+      slug: 'metacognition',
       title: 'Building Metacognitive Skills',
       description: 'Help students understand their own learning processes and become more effective learners.',
       category: 'Student Development',
@@ -32,6 +35,7 @@ export default function TeachersLounge() {
     },
     {
       id: 4,
+      slug: 'interleaving',
       title: 'Interleaving: Mix It Up for Better Learning',
       description: 'Explore how mixing up different topics and problem types enhances student understanding.',
       category: 'Learning Science',
@@ -40,6 +44,7 @@ export default function TeachersLounge() {
     },
     {
       id: 5,
+      slug: 'elaboration',
       title: 'The Role of Elaboration in Learning',
       description: 'Learn how asking "why" and "how" questions deepens student comprehension.',
       category: 'Teaching Strategy',
@@ -48,6 +53,7 @@ export default function TeachersLounge() {
     },
     {
       id: 6,
+      slug: 'growth-mindset',
       title: 'Creating a Growth Mindset Culture',
       description: 'Build a classroom environment where students embrace challenges and learn from mistakes.',
       category: 'Student Development',
@@ -102,9 +108,9 @@ export default function TeachersLounge() {
                     <p className="text-sm text-text-body mb-4 flex-1">
                       {article.description}
                     </p>
-                    <button className="inline-flex items-center gap-2 text-teal font-semibold hover:text-teal-600 transition-colors">
+                    <Link href={`/lounge/${article.slug}`} className="inline-flex items-center gap-2 text-teal font-semibold hover:text-teal-600 transition-colors">
                       Read article →
-                    </button>
+                    </Link>
                   </div>
                 </article>
               ))}
