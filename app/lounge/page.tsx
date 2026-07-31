@@ -1,13 +1,43 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Header from '@/app/components/Header'
 import Footer from '@/app/components/Footer'
 
+interface Article {
+  id: string
+  slug: string
+  title: string
+  description: string
+  category: string
+  readTime: string
+  image: string
+}
+
 export default function TeachersLounge() {
-  const articles = [
+  const [articles, setArticles] = useState<Article[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await fetch('/api/lounge/articles')
+        const data = await response.json()
+        setArticles(data.articles || [])
+      } catch (error) {
+        console.error('Failed to fetch articles:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchArticles()
+  }, [])
+
+  const defaultArticles: Article[] = [
     {
-      id: 1,
+      id: '1',
       slug: 'spaced-repetition',
       title: 'The Science of Spaced Repetition',
       description: 'Learn how spacing out your study sessions can dramatically improve long-term retention and understanding.',
@@ -16,7 +46,7 @@ export default function TeachersLounge() {
       image: '📚'
     },
     {
-      id: 2,
+      id: '2',
       slug: 'active-retrieval',
       title: 'Active Retrieval Practice in the Classroom',
       description: 'Discover evidence-based strategies for helping students retrieve and reinforce their knowledge.',
@@ -25,7 +55,7 @@ export default function TeachersLounge() {
       image: '🎯'
     },
     {
-      id: 3,
+      id: '3',
       slug: 'metacognition',
       title: 'Building Metacognitive Skills',
       description: 'Help students understand their own learning processes and become more effective learners.',
@@ -34,7 +64,7 @@ export default function TeachersLounge() {
       image: '🧠'
     },
     {
-      id: 4,
+      id: '4',
       slug: 'interleaving',
       title: 'Interleaving: Mix It Up for Better Learning',
       description: 'Explore how mixing up different topics and problem types enhances student understanding.',
@@ -43,7 +73,7 @@ export default function TeachersLounge() {
       image: '🔀'
     },
     {
-      id: 5,
+      id: '5',
       slug: 'elaboration',
       title: 'The Role of Elaboration in Learning',
       description: 'Learn how asking "why" and "how" questions deepens student comprehension.',
@@ -52,7 +82,7 @@ export default function TeachersLounge() {
       image: '💡'
     },
     {
-      id: 6,
+      id: '6',
       slug: 'growth-mindset',
       title: 'Creating a Growth Mindset Culture',
       description: 'Build a classroom environment where students embrace challenges and learn from mistakes.',
@@ -61,6 +91,8 @@ export default function TeachersLounge() {
       image: '🌱'
     }
   ]
+
+  const displayArticles = articles.length > 0 ? articles : defaultArticles
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -85,36 +117,42 @@ export default function TeachersLounge() {
         {/* Articles Grid */}
         <section className="py-16 px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {articles.map((article) => (
-                <article
-                  key={article.id}
-                  className="border border-hairline rounded-2xl overflow-hidden hover:border-charcoal hover:shadow-lg transition-all duration-200 flex flex-col"
-                >
-                  <div className="bg-gray-50 p-8 flex items-center justify-center text-4xl border-b border-hairline">
-                    {article.image}
-                  </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-xs font-bold tracking-wider text-teal uppercase">
-                        {article.category}
-                      </span>
-                      <span className="text-xs text-text-muted">•</span>
-                      <span className="text-xs text-text-muted">{article.readTime}</span>
+            {loading ? (
+              <div className="text-center py-12">
+                <p className="text-text-muted">Loading articles...</p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {displayArticles.map((article) => (
+                  <article
+                    key={article.id}
+                    className="border border-hairline rounded-2xl overflow-hidden hover:border-charcoal hover:shadow-lg transition-all duration-200 flex flex-col"
+                  >
+                    <div className="bg-gray-50 p-8 flex items-center justify-center text-4xl border-b border-hairline">
+                      {article.image}
                     </div>
-                    <h3 className="text-xl font-bold text-charcoal mb-2 leading-tight">
-                      {article.title}
-                    </h3>
-                    <p className="text-sm text-text-body mb-4 flex-1">
-                      {article.description}
-                    </p>
-                    <Link href={`/lounge/${article.slug}`} className="inline-flex items-center gap-2 text-teal font-semibold hover:text-teal-600 transition-colors">
-                      Read article →
-                    </Link>
-                  </div>
-                </article>
-              ))}
-            </div>
+                    <div className="p-6 flex flex-col flex-1">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xs font-bold tracking-wider text-teal uppercase">
+                          {article.category}
+                        </span>
+                        <span className="text-xs text-text-muted">•</span>
+                        <span className="text-xs text-text-muted">{article.readTime}</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-charcoal mb-2 leading-tight">
+                        {article.title}
+                      </h3>
+                      <p className="text-sm text-text-body mb-4 flex-1">
+                        {article.description}
+                      </p>
+                      <Link href={`/lounge/${article.slug}`} className="inline-flex items-center gap-2 text-teal font-semibold hover:text-teal-600 transition-colors">
+                        Read article →
+                      </Link>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
