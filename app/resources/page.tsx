@@ -2,9 +2,6 @@
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import ResourceCard from "@/app/components/ResourceCard";
-import { db } from "@/lib/db";
-import { resources } from "@/lib/db/schema";
-import { eq, ilike, sql, inArray } from "drizzle-orm";
 
 interface PageProps {
   searchParams: Promise<{
@@ -18,31 +15,58 @@ interface PageProps {
   }>;
 }
 
+interface Resource {
+  id: string;
+  title: string;
+  purpose: string;
+  format: string;
+  grade_band: string;
+  skill: string;
+  is_free: boolean;
+  published_at: string | Date;
+}
+
+interface ApiResponse {
+  items: Resource[];
+  total: number;
+  page: number;
+  pageSize: number;
+  totalPages: number;
+}
+
 export default async function ResourcesPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const page = parseInt(params.page || "1");
-  const pageSize = 30;
-  const offset = (page - 1) * pageSize;
+  const search = params.search || "";
 
-  // Get resources - sorted newest first by default
-  let items = [];
-  const total = 2688;
+  let items: Resource[] = [];
+  let total = 0;
+  let totalPages = 0;
 
   try {
-    const dbItems = await db
-      .select()
-      .from(resources)
-      .orderBy(sql`${resources.published_at} DESC NULLS LAST`)
-      .limit(pageSize)
-      .offset(offset);
-    items = dbItems;
+    const url = new URL(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'}/api/resources`);
+    url.searchParams.set('page', page.toString());
+    if (search) {
+      url.searchParams.set('search', search);
+    }
+
+    const response = await fetch(url.toString());
+
+    if (response.ok) {
+      const data: ApiResponse = await response.json();
+      items = data.items;
+      total = data.total;
+      totalPages = data.totalPages;
+    } else {
+      console.error('API error:', response.statusText);
+    }
   } catch (error) {
-    // Database unavailable - show placeholder resources
-    console.error('Database error:', error);
+    // API unavailable - show empty state
+    console.error('Error fetching resources:', error);
+    total = 0;
+    totalPages = 0;
     items = [];
   }
-
-  const totalPages = Math.ceil(total / pageSize);
 
   return (
     <div className="flex flex-col min-h-screen">
