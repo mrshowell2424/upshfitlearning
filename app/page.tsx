@@ -178,7 +178,7 @@ export default function Home() {
                   Upgrade to All Access to receive lesson materials in 4 formats: slides, documents, worksheets, and assessments.
                 </p>
                 <Link
-                  href="/plans"
+                  href="/pricing"
                   className="inline-block bg-coral hover:bg-coral-press text-white px-6 py-3 rounded-xl font-semibold mb-2 transition-colors"
                 >
                   Upgrade now

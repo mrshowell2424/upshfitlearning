@@ -1,178 +1,177 @@
-// @ts-nocheck
-"use client";
+'use client'
 
-import { useState } from "react";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
-
-const plans = [
-  {
-    name: "Free",
-    price: "$0",
-    billing: "Forever free",
-    description: "Get started with Upshift",
-    features: [
-      "Browse 2,688+ resources",
-      "View lesson blueprints",
-      "Search 4 standards",
-      "Understand standard unpacks",
-    ],
-    cta: "Get started",
-    ctaHref: "/auth/signup",
-    highlighted: false,
-  },
-  {
-    name: "Pro",
-    price: "$9",
-    billing: "/month or $79/year",
-    description: "Everything you need to teach",
-    features: [
-      "Everything in Free, plus:",
-      "🤖 AI lesson generation",
-      "📊 4 output formats (slides, docs, worksheets, rubrics)",
-      "📌 Save & organize lessons",
-      "🎯 Access lesson planner",
-      "⚡ Priority support",
-    ],
-    cta: "Start free trial",
-    ctaHref: "/auth/signup?plan=pro",
-    highlighted: true,
-  },
-  {
-    name: "School",
-    price: "Custom",
-    billing: "Contact us",
-    description: "For schools & districts",
-    features: [
-      "Everything in Pro, plus:",
-      "📈 Team collaboration",
-      "👥 Multi-teacher licenses",
-      "🔐 SSO & admin controls",
-      "📱 Custom integrations",
-      "🎓 Dedicated support",
-    ],
-    cta: "Contact sales",
-    ctaHref: "mailto:sales@upshiftlearning.org",
-    highlighted: false,
-  },
-];
+import Link from 'next/link'
+import Header from '@/app/components/Header'
+import Footer from '@/app/components/Footer'
 
 export default function PricingPage() {
+  const plans = [
+    {
+      name: 'Free',
+      price: '$0',
+      description: 'Perfect for exploring',
+      features: [
+        '200 curated resources',
+        'Read-only access',
+        "Teacher's Lounge articles",
+        'Basic standard matching',
+      ],
+      cta: 'Get Started',
+      ctaHref: '/auth/signup',
+      highlighted: false,
+    },
+    {
+      name: 'Pro',
+      price: '$10',
+      period: '/month or $100/year',
+      description: 'For active teachers',
+      features: [
+        'All 2,688+ resources',
+        'Generate lessons in 4 formats',
+        'Save & organize resources',
+        'Advanced search & filtering',
+        'Priority support',
+      ],
+      cta: 'Upgrade to Pro',
+      ctaHref: '/auth/signin',
+      highlighted: true,
+    },
+    {
+      name: 'School',
+      price: 'Custom',
+      description: 'For teams & districts',
+      features: [
+        'Everything in Pro',
+        'Team collaboration',
+        'Admin dashboard',
+        'Bulk resource management',
+        'Dedicated support',
+      ],
+      cta: 'Contact Sales',
+      ctaHref: 'mailto:sales@upshiftlearning.org',
+      highlighted: false,
+    },
+  ]
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-
-      <main className="flex-1 px-8 py-16">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-[48px] font-bold mb-4">Simple, transparent pricing</h1>
-          <p className="text-[18px] text-text-muted max-w-2xl mx-auto">
-            Start free. Upgrade anytime. No credit card required.
-          </p>
-        </div>
-
-        {/* Plans grid */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={`rounded-lg border p-8 transition-all ${
-                plan.highlighted
-                  ? "border-coral bg-gradient-to-br from-coral/5 to-transparent ring-2 ring-coral/20 md:scale-105"
-                  : "border-border bg-white hover:border-charcoal"
-              }`}
-            >
-              {plan.highlighted && (
-                <div className="mb-4">
-                  <span
-                    className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full text-white"
-                    style={{ backgroundColor: "var(--color-coral)" }}
-                  >
-                    Most popular
-                  </span>
-                </div>
-              )}
-
-              <h3 className="text-[24px] font-bold mb-2">{plan.name}</h3>
-              <div className="mb-1">
-                <span className="text-[36px] font-bold">{plan.price}</span>
-                {plan.price !== "Custom" && (
-                  <span className="text-text-muted ml-2">{plan.billing}</span>
-                )}
-              </div>
-              {plan.price === "Custom" && (
-                <p className="text-text-muted text-sm mb-4">{plan.billing}</p>
-              )}
-
-              <p className="text-text-muted text-sm mb-6">{plan.description}</p>
-
-              <a
-                href={plan.ctaHref}
-                className={`block text-center py-3 rounded-lg font-semibold mb-8 transition-colors ${
-                  plan.highlighted
-                    ? "bg-coral text-white hover:bg-coral-press"
-                    : "border border-border text-charcoal hover:bg-gray-050"
-                }`}
-              >
-                {plan.cta}
-              </a>
-
-              <ul className="space-y-3">
-                {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex gap-3 text-sm">
-                    {feature.includes("Everything") || feature.includes("plus") ? (
-                      <span className="text-text-muted font-semibold">{feature}</span>
-                    ) : (
-                      <>
-                        <span
-                          className="text-lg flex-shrink-0"
-                          style={{ color: "var(--color-coral)" }}
-                        >
-                          ✓
-                        </span>
-                        <span className="text-text-body">{feature}</span>
-                      </>
-                    )}
-                  </li>
-                ))}
-              </ul>
+      <main className="flex-1">
+        {/* Hero */}
+        <section className="py-24 px-8 bg-gradient-to-br from-gray-050 to-white border-b border-hairline">
+          <div className="max-w-7xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-opacity-10 rounded-full" style={{backgroundColor: 'rgba(255, 106, 91, 0.1)'}}>
+              <span className="text-xs font-bold tracking-wide text-coral uppercase">Transparent Pricing</span>
             </div>
-          ))}
-        </div>
+            <h1 className="text-5xl font-bold text-charcoal mb-4">
+              Simple, fair pricing
+            </h1>
+            <p className="text-lg text-text-muted max-w-2xl mx-auto">
+              Choose the plan that works for you. All plans include access to our full learning science library.
+            </p>
+          </div>
+        </section>
+
+        {/* Pricing Cards */}
+        <section className="py-24 px-8 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {plans.map((plan) => (
+                <div
+                  key={plan.name}
+                  className={`rounded-3xl p-8 border-2 transition-all ${
+                    plan.highlighted
+                      ? 'border-coral bg-white shadow-xl scale-105'
+                      : 'border-hairline bg-gray-050 hover:border-charcoal'
+                  }`}
+                >
+                  {plan.highlighted && (
+                    <div className="inline-block mb-4 px-3 py-1 bg-coral text-white text-xs font-bold rounded-full">
+                      Most Popular
+                    </div>
+                  )}
+
+                  <h3 className="text-2xl font-bold text-charcoal mb-2">
+                    {plan.name}
+                  </h3>
+                  <p className="text-sm text-text-muted mb-6">
+                    {plan.description}
+                  </p>
+
+                  <div className="mb-8">
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-4xl font-bold text-charcoal">
+                        {plan.price}
+                      </span>
+                      {plan.period && (
+                        <span className="text-sm text-text-muted">
+                          {plan.period}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  <Link
+                    href={plan.ctaHref}
+                    className={`block w-full text-center px-6 py-3 rounded-xl font-semibold mb-8 transition-colors ${
+                      plan.highlighted
+                        ? 'bg-coral hover:bg-coral-press text-white'
+                        : 'bg-white border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white'
+                    }`}
+                  >
+                    {plan.cta}
+                  </Link>
+
+                  <ul className="space-y-4">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-3">
+                        <span className="text-teal text-lg flex-shrink-0">✓</span>
+                        <span className="text-sm text-text-body">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* FAQ */}
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-[32px] font-bold text-center mb-8">FAQ</h2>
+        <section className="py-24 px-8 bg-gray-050">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-charcoal mb-12 text-center">
+              Frequently asked questions
+            </h2>
 
-          <div className="space-y-6">
-            {[
-              {
-                q: "Can I cancel anytime?",
-                a: "Yes! Cancel your Pro subscription anytime. No questions asked.",
-              },
-              {
-                q: "Is there a free trial?",
-                a: "Free accounts get full access to the library and lesson blueprints. Upgrade to Pro to unlock AI generation.",
-              },
-              {
-                q: "Do you offer refunds?",
-                a: "We offer a 7-day money-back guarantee on annual subscriptions.",
-              },
-              {
-                q: "What about schools?",
-                a: "Schools get volume pricing, SSO, team features, and dedicated support. Contact sales@upshiftlearning.org.",
-              },
-            ].map((item, idx) => (
-              <div key={idx}>
-                <h3 className="font-semibold mb-2">{item.q}</h3>
-                <p className="text-text-muted">{item.a}</p>
-              </div>
-            ))}
+            <div className="space-y-6">
+              {[
+                {
+                  q: 'Can I change plans anytime?',
+                  a: 'Yes! Upgrade or downgrade your plan at any time. Changes take effect immediately.',
+                },
+                {
+                  q: 'Is there a free trial?',
+                  a: 'Our free plan gives you access to 200 resources permanently. Upgrade to Pro anytime to unlock everything.',
+                },
+                {
+                  q: 'How do school licenses work?',
+                  a: 'School plans are customized based on your district size and needs. Contact sales@upshiftlearning.org for pricing.',
+                },
+                {
+                  q: 'Do you offer refunds?',
+                  a: 'Yes, we offer a 30-day money-back guarantee if you\'re not satisfied.',
+                },
+              ].map((item, idx) => (
+                <div key={idx} className="bg-white p-6 rounded-2xl border border-hairline">
+                  <h3 className="font-semibold text-charcoal mb-2">{item.q}</h3>
+                  <p className="text-sm text-text-body">{item.a}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
       </main>
-
       <Footer />
     </div>
-  );
+  )
 }
