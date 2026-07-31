@@ -167,7 +167,7 @@ export default function Home() {
               <div className="bg-charcoal text-white p-8 rounded-3xl">
                 <div className="text-xs font-bold tracking-wider text-pink uppercase mb-3">Unlock more</div>
                 <h3 className="text-3xl font-bold mb-3">
-                  Free tier includes 2,688 resources
+                  Free tier includes 500 resources
                 </h3>
                 <p className="text-sm text-gray-200 mb-6 leading-relaxed">
                   Upgrade to All Access to receive lesson materials in 4 formats: slides, documents, worksheets, and assessments.
