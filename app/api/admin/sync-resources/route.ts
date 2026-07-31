@@ -45,19 +45,21 @@ async function fetchGoogleSheetResources(): Promise<SheetResource[]> {
     for (let i = 1; i < lines.length; i++) {
       const row = parseCSVLine(lines[i])
 
-      if (!row[0]?.trim()) continue
+      // Columns: A=checkbox, B=Date, C=Title, D=Purpose, E=Description, F=URL, G=Summary, H=Free or Paid
+      const title = row[2]?.trim()
+      if (!title) continue
 
       const resource: SheetResource = {
         id: String(i),
-        title: row[0]?.trim() || '',
-        purpose: row[1]?.trim() || '',
-        format: row[2]?.trim() || 'Link',
-        grade_band: row[3]?.trim() || 'K-12',
+        title: title,
+        purpose: row[3]?.trim() || '',
+        format: 'Video',
+        grade_band: 'K-12',
         skill: row[4]?.trim() || 'General',
         is_free:
-          row[5]?.toString().toLowerCase() === 'true' ||
-          row[5]?.toString().toLowerCase() === 'yes',
-        published_at: row[6]?.trim() || new Date().toISOString(),
+          row[7]?.toString().toLowerCase().includes('free') ||
+          row[7]?.toString().toLowerCase() === 'true',
+        published_at: row[1]?.trim() || new Date().toISOString(),
       }
 
       if (resource.title) {
