@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Header from './components/Header'
@@ -8,11 +8,36 @@ import Footer from './components/Footer'
 
 export default function Home() {
   const [searchInput, setSearchInput] = useState('')
+  const [isPremium, setIsPremium] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const router = useRouter()
+
+  useEffect(() => {
+    // Check if user has premium subscription
+    const checkPremium = async () => {
+      try {
+        // This would check the user's subscription status
+        // For now, we'll check localStorage or a session token
+        const userPlan = localStorage.getItem('userPlan')
+        setIsPremium(userPlan === 'premium' || userPlan === 'all-access')
+      } catch (error) {
+        console.error('Error checking premium status:', error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    checkPremium()
+  }, [])
 
   const handleSearch = (query: string) => {
     if (query.trim()) {
-      router.push(`/match?q=${encodeURIComponent(query)}`)
+      // If premium, go to resources; otherwise go to match page
+      if (isPremium) {
+        router.push(`/resources?search=${encodeURIComponent(query)}`)
+      } else {
+        router.push(`/match?q=${encodeURIComponent(query)}`)
+      }
     }
   }
 
