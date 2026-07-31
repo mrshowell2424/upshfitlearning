@@ -142,7 +142,7 @@ export default function Home() {
                 <div className="text-xs font-bold tracking-wider text-lavender uppercase mb-2">Discover Resources</div>
                 <h3 className="text-xl font-bold text-charcoal mb-3">Resource library</h3>
                 <p className="text-sm text-text-body mb-4">
-                  Browse 2,688 curated resources. Save them to your planner. Filter by grade, skill, and format.
+                  Free tier: 200 resources. Upgrade for access to all 2,688+ curated resources. Save them to your planner. Filter by grade, skill, and format.
                 </p>
                 <Link href="/resources" className="inline-flex items-center gap-2 text-coral font-semibold hover:text-coral-press transition-colors">
                   Browse resources →
