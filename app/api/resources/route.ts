@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import Papa from 'papaparse'
 
 const GOOGLE_SHEETS_ID = '1dVlowQJxditueoFpI42NOnZrlJ1sArKPRqfPQwFAqrc'
-const SHEET_GID = '0' // First sheet (gid=0)
 
 interface SheetResource {
   id: string
@@ -17,43 +15,55 @@ interface SheetResource {
 
 async function fetchGoogleSheetResources(): Promise<SheetResource[]> {
   try {
-    // Export sheet as CSV via public URL
-    const csvUrl = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEETS_ID}/export?format=csv&gid=${SHEET_GID}`
+    // Export sheet as CSV from public Google Sheet
+    // The sheet must be shared with "Anyone with the link" or "Public" access
+    const csvUrl = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEETS_ID}/export?format=csv`
 
-    const response = await fetch(csvUrl)
+    const response = await fetch(csvUrl, {
+      method: 'GET',
+      redirect: 'follow',
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; UpshiftLearningBot/1.0)',
+      },
+    })
 
     if (!response.ok) {
-      console.error('Google Sheets export error:', response.statusText)
+      console.error('Google Sheets CSV export error:', response.status, response.statusText)
       return []
     }
 
     const csv = await response.text()
 
     // Parse CSV
-    const lines = csv.split('\n').filter(line => line.trim())
+    const lines = csv
+      .split('\n')
+      .map(line => line.trim())
+      .filter(line => line.length > 0)
 
     if (lines.length < 2) {
-      console.warn('Google Sheet is empty or inaccessible')
+      console.warn('Google Sheet is empty or inaccessible. Make sure the sheet is publicly shared.')
       return []
     }
 
-    const headers = lines[0].split(',').map(h => h.trim().toLowerCase())
     const resources: SheetResource[] = []
 
     for (let i = 1; i < lines.length; i++) {
-      const values = lines[i].split(',').map(v => v.trim())
+      // Simple CSV parsing - handle quoted fields
+      const row = parseCSVLine(lines[i])
 
-      if (!values[0]) continue // Skip empty rows
+      if (!row[0] || !row[0].trim()) continue
 
       const resource: SheetResource = {
         id: String(i),
-        title: values[0] || '',
-        purpose: values[1] || '',
-        format: values[2] || 'Link',
-        grade_band: values[3] || 'K-12',
-        skill: values[4] || 'General',
-        is_free: values[5]?.toLowerCase() === 'true' || values[5]?.toLowerCase() === 'yes',
-        published_at: values[6] || new Date().toISOString(),
+        title: row[0]?.trim() || '',
+        purpose: row[1]?.trim() || '',
+        format: row[2]?.trim() || 'Link',
+        grade_band: row[3]?.trim() || 'K-12',
+        skill: row[4]?.trim() || 'General',
+        is_free:
+          row[5]?.toString().toLowerCase() === 'true' ||
+          row[5]?.toString().toLowerCase() === 'yes',
+        published_at: row[6]?.trim() || new Date().toISOString(),
       }
 
       if (resource.title) {
@@ -61,11 +71,34 @@ async function fetchGoogleSheetResources(): Promise<SheetResource[]> {
       }
     }
 
+    console.log(`✓ Loaded ${resources.length} resources from Google Sheets`)
     return resources
   } catch (error) {
     console.error('Error fetching Google Sheets:', error)
     return []
   }
+}
+
+function parseCSVLine(line: string): string[] {
+  const fields: string[] = []
+  let currentField = ''
+  let inQuotes = false
+
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i]
+
+    if (char === '"') {
+      inQuotes = !inQuotes
+    } else if (char === ',' && !inQuotes) {
+      fields.push(currentField.replace(/^"+|"+$/g, ''))
+      currentField = ''
+    } else {
+      currentField += char
+    }
+  }
+
+  fields.push(currentField.replace(/^"+|"+$/g, ''))
+  return fields
 }
 
 // Cache resources in memory to avoid repeated API calls
