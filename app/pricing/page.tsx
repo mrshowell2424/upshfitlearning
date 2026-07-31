@@ -22,8 +22,8 @@ export default function PricingPage() {
     },
     {
       name: 'Pro',
-      price: '$10',
-      period: '/month or $100/year',
+      price: '$15',
+      period: '/month or $120/year',
       description: 'For active teachers',
       features: [
         'All 2,688+ resources',

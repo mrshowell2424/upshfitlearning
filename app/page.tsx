@@ -183,7 +183,7 @@ export default function Home() {
                 >
                   Upgrade now
                 </Link>
-                <div className="text-xs text-gray-300">From $10/month or $100/year</div>
+                <div className="text-xs text-gray-300">$15/month or $120/year</div>
               </div>
 
               {/* Right: Benefits */}
