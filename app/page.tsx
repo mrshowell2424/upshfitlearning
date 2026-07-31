@@ -49,7 +49,7 @@ export default function Home() {
             </div>
 
             {/* Hero Headline */}
-            <h1 className="text-5xl font-bold text-charcoal mb-4 max-w-4xl leading-tight">
+            <h1 className="text-5xl font-bold text-charcoal mb-4 leading-tight">
               Describe what you're teaching. We'll hand you the lesson.
             </h1>
 
