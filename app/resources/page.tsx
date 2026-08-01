@@ -118,7 +118,7 @@ export default function ResourcesPage() {
                     format={item.format || "Link"}
                     grade_band={item.grade_band || "3-8"}
                     skill={item.skill || "General"}
-                    published_at={item.published_at}
+                    published_at={typeof item.published_at === 'string' ? item.published_at : item.published_at?.toISOString()}
                     is_free={item.is_free}
                   />
                 ))}
