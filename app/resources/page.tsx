@@ -44,7 +44,8 @@ export default async function ResourcesPage({ searchParams }: PageProps) {
   let totalPages = 0;
 
   try {
-    const url = new URL(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'}/api/resources`);
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://hub.upshiftlearning.com';
+    const url = new URL('/api/resources', baseUrl);
     url.searchParams.set('page', page.toString());
     if (search) {
       url.searchParams.set('search', search);
