@@ -32,7 +32,15 @@ export default function ResourcesPage() {
   useEffect(() => {
     const fetchResources = async () => {
       try {
-        const response = await fetch('/api/resources?page=' + page + (search ? '&search=' + encodeURIComponent(search) : ''));
+        const url = new URL('/api/resources', typeof window !== 'undefined' ? window.location.origin : 'https://hub.upshiftlearning.com');
+        url.searchParams.set('page', page.toString());
+        if (search) {
+          url.searchParams.set('search', search);
+        }
+        const response = await fetch(url.toString());
+        if (!response.ok) {
+          throw new Error(`API error: ${response.status}`);
+        }
         const data = await response.json();
         setItems(data.items || []);
         setTotal(data.total || 0);
