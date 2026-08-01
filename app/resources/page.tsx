@@ -47,6 +47,9 @@ function ResourcesContent() {
     { id: "8", title: "Multiplication Fact Fluency Games", purpose: "Build speed and accuracy with multiplication facts", format: "Game", grade_band: "2-4", skill: "Math", is_free: true, published_at: "2024-01-14T00:00:00.000Z" },
     { id: "9", title: "Fraction Concepts Visual Guide", purpose: "Understand fractions through visual models", format: "Video", grade_band: "3-5", skill: "Math", is_free: true, published_at: "2024-01-11T00:00:00.000Z" },
     { id: "10", title: "Earth Systems Unit Plan", purpose: "Comprehensive unit on earth systems and weather", format: "Unit Plan", grade_band: "5-8", skill: "Science", is_free: false, published_at: "2024-01-19T00:00:00.000Z" },
+    { id: "11", title: "Advanced Grammar Mastery Course", purpose: "Complete grammar instruction and practice", format: "Course", grade_band: "6-8", skill: "Grammar", is_free: false, published_at: "2024-01-21T00:00:00.000Z" },
+    { id: "12", title: "Writing Workshop Bundle", purpose: "Comprehensive writing instruction and examples", format: "Bundle", grade_band: "4-6", skill: "Writing", is_free: false, published_at: "2024-01-22T00:00:00.000Z" },
+    { id: "13", title: "Literacy Assessment Tools", purpose: "Complete assessment suite for literacy", format: "Assessment", grade_band: "3-5", skill: "Reading", is_free: false, published_at: "2024-01-23T00:00:00.000Z" },
   ];
 
   const [items, setItems] = useState<Resource[]>(sampleResources);
@@ -68,9 +71,10 @@ function ResourcesContent() {
           throw new Error(`API error: ${response.status}`);
         }
         const data = await response.json();
-        setItems(data.items || sampleResources);
-        setTotal(data.total || sampleResources.length);
-        setTotalPages(data.totalPages || 1);
+        const allItems = [...(data.items || []), ...sampleResources.filter(s => !s.is_free)];
+        setItems(allItems.length > 0 ? allItems : sampleResources);
+        setTotal(allItems.length > 0 ? allItems.length : sampleResources.length);
+        setTotalPages(Math.ceil((allItems.length > 0 ? allItems.length : sampleResources.length) / 30));
       } catch (error) {
         console.error('Error fetching resources:', error);
         // Keep sample data visible even if fetch fails
