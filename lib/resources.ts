@@ -9,6 +9,7 @@ export interface Resource {
   skill: string
   is_free: boolean
   published_at: string | Date
+  thumbnail_url?: string
 }
 
 async function fetchGoogleSheetResources(): Promise<Resource[]> {
@@ -55,8 +56,8 @@ async function fetchGoogleSheetResources(): Promise<Resource[]> {
         grade_band: 'K-12',
         skill: row[4]?.trim() || 'General',
         is_free:
-          row[7]?.toString().toLowerCase().includes('free') ||
-          row[7]?.toString().toLowerCase() === 'true',
+          !row[7]?.toString().toLowerCase().includes('paid') &&
+          row[7]?.toString().toLowerCase() !== 'false',
         published_at: row[1]?.trim() || new Date().toISOString(),
       }
 

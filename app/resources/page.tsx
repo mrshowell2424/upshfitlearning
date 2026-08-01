@@ -157,6 +157,7 @@ function ResourcesContent() {
                     youtube_id=""
                     published_at={typeof item.published_at === 'string' ? item.published_at : item.published_at?.toISOString()}
                     is_free={item.is_free}
+                    thumbnail_url={item.thumbnail_url}
                   />
                 ))}
               </div>

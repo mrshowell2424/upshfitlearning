@@ -10,6 +10,7 @@ interface ResourceCardProps {
   youtube_id: string;
   published_at?: string;
   is_free: boolean;
+  thumbnail_url?: string;
 }
 
 export default function ResourceCard({
@@ -22,8 +23,9 @@ export default function ResourceCard({
   youtube_id,
   published_at,
   is_free,
+  thumbnail_url,
 }: ResourceCardProps) {
-  const thumbnailUrl = `https://i.ytimg.com/vi/${youtube_id}/mqdefault.jpg`;
+  const thumbnailUrl = thumbnail_url || (youtube_id ? `https://i.ytimg.com/vi/${youtube_id}/mqdefault.jpg` : '/placeholder-thumbnail.jpg');
   const formatColors: Record<string, string> = {
     Slides: "bg-blue-50 text-blue-700",
     Doc: "bg-amber-50 text-amber-700",
