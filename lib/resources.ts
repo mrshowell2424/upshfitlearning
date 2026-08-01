@@ -57,7 +57,7 @@ async function fetchGoogleSheetResources(): Promise<Resource[]> {
         purpose: row[3]?.trim() || '',
         format: 'Video',
         grade_band: 'K-12',
-        skill: row[4]?.trim() || 'General',
+        skill: 'Teaching Strategies',
         is_free:
           !row[7]?.toString().toLowerCase().includes('paid') &&
           row[7]?.toString().toLowerCase() !== 'false',

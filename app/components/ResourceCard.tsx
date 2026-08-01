@@ -70,7 +70,6 @@ export default function ResourceCard({
             alt={title}
             className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
             onError={(e) => {
-              // If image fails to load, hide it and show colored background
               (e.target as HTMLImageElement).style.display = 'none'
             }}
           />
@@ -79,8 +78,6 @@ export default function ResourceCard({
             {format.charAt(0)}
           </div>
         )}
-
-
 
         {/* Lock overlay for non-free */}
         {!is_free && (
