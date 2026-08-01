@@ -48,15 +48,8 @@ async function fetchGoogleSheetResources(): Promise<Resource[]> {
       const title = row[2]?.trim()
       if (!title) continue
 
-      // Look for YouTube URL in various columns (commonly in column 5 or 6)
-      let youtubeId: string | undefined
-      for (let j = 5; j < Math.min(row.length, 10); j++) {
-        const youtubeUrl = row[j]?.trim()
-        if (youtubeUrl && youtubeUrl.includes('youtube') || youtubeUrl?.includes('youtu.be')) {
-          youtubeId = extractYoutubeId(youtubeUrl)
-          if (youtubeId) break
-        }
-      }
+      // Extract YouTube ID from column E (index 4)
+      const youtubeId = extractYoutubeId(row[4]?.trim())
 
       const resource: Resource = {
         id: String(i),
