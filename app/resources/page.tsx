@@ -73,7 +73,7 @@ function ResourcesContent() {
     fetchResources();
   }, [page, search]);
 
-  const sortParam = searchParams.get('sort') || 'newest';
+  const sortParam = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('sort') || 'newest' : 'newest';
 
   return (
     <div className="flex flex-col min-h-screen">
