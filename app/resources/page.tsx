@@ -15,6 +15,7 @@ interface Resource {
   skill: string;
   is_free: boolean;
   published_at: string | Date;
+  thumbnail_url?: string;
 }
 
 function ResourcesContent() {
