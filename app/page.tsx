@@ -55,7 +55,7 @@ export default function Home() {
 
             {/* Subheadline */}
             <p className="text-lg text-text-muted mb-8 whitespace-nowrap">
-              Search by standard code or describe what you're teaching. Get a lesson blueprint, resources, and materials.
+              Search by standard or describe what you're teaching. Get a lesson blueprint, resources, and materials.
             </p>
 
             {/* Search Bar */}
