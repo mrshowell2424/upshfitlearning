@@ -52,18 +52,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     loadAuth()
 
     // Listen for auth changes
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange(async (event: string, session: Session | null) => {
-      setUser(session?.user || null)
+    let subscription: any = null
+    try {
+      if (supabase?.auth?.onAuthStateChange) {
+        const {
+          data: { subscription: sub },
+        } = supabase.auth.onAuthStateChange(async (event: string, session: Session | null) => {
+          setUser(session?.user || null)
 
-      if (session?.user) {
-        const sub = await getSubscription(session.user.id)
-        setSubscription(sub as Subscription)
-      } else {
-        setSubscription(null)
+          if (session?.user) {
+            const sub = await getSubscription(session.user.id)
+            setSubscription(sub as Subscription)
+          } else {
+            setSubscription(null)
+          }
+        })
+        subscription = sub
       }
-    })
+    } catch (error) {
+      console.error('Auth state change listener error:', error)
+    }
 
     return () => {
       subscription?.unsubscribe()
