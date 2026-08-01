@@ -114,7 +114,7 @@ function ResourcesContent() {
             {["newest", "oldest", "a-z", "popular"].map((sort) => (
               <a
                 key={sort}
-                href={`/resources?sort=${sort}${filterType !== 'all' ? `&filter=${filterType}` : ''}${gradeBand !== 'all' ? `&grade=${gradeBand}` : ''}`}
+                href={`/resources?sort=${sort}${filterType !== 'all' ? `&filter=${filterType}` : ''}${purpose !== 'all' ? `&purpose=${purpose}` : ''}`}
                 className={`px-3 py-1 rounded-full text-sm font-semibold transition-colors ${
                   sortParam === sort
                     ? "bg-charcoal text-white"
@@ -129,7 +129,7 @@ function ResourcesContent() {
             {["all", "free", "paid"].map((filter) => (
               <a
                 key={filter}
-                href={`/resources?filter=${filter}${gradeBand !== 'all' ? `&grade=${gradeBand}` : ''}`}
+                href={`/resources?filter=${filter}${purpose !== 'all' ? `&purpose=${purpose}` : ''}`}
                 className={`px-3 py-1 rounded-full text-sm font-semibold transition-colors ${
                   filterType === filter
                     ? "bg-coral text-white"
