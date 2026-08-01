@@ -4,6 +4,7 @@ import Header from '@/app/components/Header'
 import Footer from '@/app/components/Footer'
 
 export default function VideosPage() {
+  // Learning videos library
   const videos = [
     {
       id: 1,
