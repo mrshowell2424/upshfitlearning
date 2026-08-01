@@ -222,7 +222,7 @@ function ResourcesContent() {
 
 export default function ResourcesPage() {
   return (
-    <Suspense fallback={<div className="flex flex-col min-h-screen"><Header /><main className="flex-1 px-8 py-8"><div className="h-64 bg-gray-100 rounded-lg animate-pulse"></div></main><Footer /></div>}>
+    <Suspense fallback={<div className="flex flex-col min-h-screen"><div className="flex-1 px-8 py-8"><div className="h-64 bg-gray-100 rounded-lg animate-pulse"></div></div></div>}>
       <ResourcesContent />
     </Suspense>
   );
