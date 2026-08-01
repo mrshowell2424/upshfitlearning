@@ -1,7 +1,7 @@
 'use client'
 
 // @ts-nocheck
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
@@ -24,13 +24,13 @@ function ResourcesContent() {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [filterType, setFilterType] = useState("all");
-  const [gradeBand, setGradeBand] = useState("all");
+  const [purpose, setPurpose] = useState("all");
 
   useEffect(() => {
     setPage(parseInt(searchParams.get('page') || "1"));
     setSearch(searchParams.get('search') || "");
     setFilterType(searchParams.get('filter') || "all");
-    setGradeBand(searchParams.get('grade') || "all");
+    setPurpose(searchParams.get('purpose') || "all");
   }, [searchParams]);
 
   const sampleResources: Resource[] = [
@@ -79,7 +79,10 @@ function ResourcesContent() {
 
   const sortParam = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('sort') || 'newest' : 'newest';
 
-  // Filter items based on filter type and grade band
+  // Get unique purposes for filter
+  const uniquePurposes = Array.from(new Set(items.map(item => item.purpose).filter(Boolean))).sort();
+
+  // Filter items based on filter type and purpose
   let filteredItems = items;
   if (filterType === 'free') {
     filteredItems = items.filter(item => item.is_free);
@@ -87,8 +90,8 @@ function ResourcesContent() {
     filteredItems = items.filter(item => !item.is_free);
   }
 
-  if (gradeBand !== 'all') {
-    filteredItems = filteredItems.filter(item => item.grade_band === gradeBand);
+  if (purpose !== 'all') {
+    filteredItems = filteredItems.filter(item => item.purpose === purpose);
   }
 
   return (
@@ -137,18 +140,18 @@ function ResourcesContent() {
               </a>
             ))}
 
-            {/* Grade Band filter */}
-            {["all", "K-2", "3-5", "6-8", "9-12"].map((grade) => (
+            {/* Purpose filter */}
+            {["all", ...uniquePurposes].map((p) => (
               <a
-                key={grade}
-                href={`/resources?grade=${grade}${filterType !== 'all' ? `&filter=${filterType}` : ''}`}
+                key={p}
+                href={`/resources?purpose=${p}${filterType !== 'all' ? `&filter=${filterType}` : ''}`}
                 className={`px-3 py-1 rounded-full text-sm font-semibold transition-colors ${
-                  gradeBand === grade
+                  purpose === p
                     ? "bg-teal text-white"
                     : "bg-gray-100 text-charcoal hover:bg-gray-200"
                 }`}
               >
-                {grade === "all" ? "All grades" : `Grade ${grade}`}
+                {p === "all" ? "All purposes" : p}
               </a>
             ))}
           </div>
@@ -217,5 +220,9 @@ function ResourcesContent() {
 }
 
 export default function ResourcesPage() {
-  return <ResourcesContent />;
+  return (
+    <Suspense fallback={<div className="flex flex-col min-h-screen"><Header /><main className="flex-1 px-8 py-8"><div className="h-64 bg-gray-100 rounded-lg animate-pulse"></div></main><Footer /></div>}>
+      <ResourcesContent />
+    </Suspense>
+  );
 }
