@@ -101,40 +101,36 @@ function ResourcesContent() {
           </div>
 
           {/* Sort and Filter controls */}
-          <div className="flex flex-col gap-4 mb-6">
+          <div className="flex gap-2 mb-6 flex-wrap">
             {/* Sort controls */}
-            <div className="flex gap-2">
-              {["newest", "oldest", "a-z"].map((sort) => (
-                <a
-                  key={sort}
-                  href={`/resources?sort=${sort}${filterType !== 'all' ? `&filter=${filterType}` : ''}`}
-                  className={`px-3 py-1 rounded-full text-sm font-semibold transition-colors ${
-                    sortParam === sort
-                      ? "bg-charcoal text-white"
-                      : "bg-gray-100 text-charcoal hover:bg-gray-200"
-                  }`}
-                >
-                  {sort === "newest" ? "Newest" : sort === "oldest" ? "Oldest" : "A–Z"}
-                </a>
-              ))}
-            </div>
+            {["newest", "oldest", "a-z"].map((sort) => (
+              <a
+                key={sort}
+                href={`/resources?sort=${sort}${filterType !== 'all' ? `&filter=${filterType}` : ''}`}
+                className={`px-3 py-1 rounded-full text-sm font-semibold transition-colors ${
+                  sortParam === sort
+                    ? "bg-charcoal text-white"
+                    : "bg-gray-100 text-charcoal hover:bg-gray-200"
+                }`}
+              >
+                {sort === "newest" ? "Newest" : sort === "oldest" ? "Oldest" : "A–Z"}
+              </a>
+            ))}
 
             {/* Filter controls */}
-            <div className="flex gap-2">
-              {["all", "free", "paid"].map((filter) => (
-                <a
-                  key={filter}
-                  href={`/resources?filter=${filter}`}
-                  className={`px-3 py-1 rounded-full text-sm font-semibold transition-colors ${
-                    filterType === filter
-                      ? "bg-coral text-white"
-                      : "bg-gray-100 text-charcoal hover:bg-gray-200"
-                  }`}
-                >
-                  {filter === "all" ? "All resources" : filter === "free" ? "Free" : "Paid"}
-                </a>
-              ))}
-            </div>
+            {["all", "free", "paid"].map((filter) => (
+              <a
+                key={filter}
+                href={`/resources?filter=${filter}`}
+                className={`px-3 py-1 rounded-full text-sm font-semibold transition-colors ${
+                  filterType === filter
+                    ? "bg-coral text-white"
+                    : "bg-gray-100 text-charcoal hover:bg-gray-200"
+                }`}
+              >
+                {filter === "all" ? "All resources" : filter === "free" ? "Free" : "Paid"}
+              </a>
+            ))}
           </div>
 
           {/* Grid */}
