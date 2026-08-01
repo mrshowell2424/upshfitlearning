@@ -1,7 +1,7 @@
 'use client'
 
 // @ts-nocheck
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import ResourceCard from "@/app/components/ResourceCard";
@@ -18,7 +18,7 @@ interface Resource {
   published_at: string | Date;
 }
 
-export default function ResourcesPage() {
+function ResourcesContent() {
   const searchParams = useSearchParams()
   const page = parseInt(searchParams.get('page') || "1");
   const search = searchParams.get('search') || "";
@@ -159,5 +159,13 @@ export default function ResourcesPage() {
 
       <Footer />
     </div>
+  );
+}
+
+export default function ResourcesPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ResourcesContent />
+    </Suspense>
   );
 }
