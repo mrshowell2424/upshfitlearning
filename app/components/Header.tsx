@@ -32,6 +32,12 @@ export default function Header() {
         className="flex items-center gap-2 cursor-pointer flex-shrink-0"
         onClick={() => router.push("/")}
       >
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 24L16 16L8 8" stroke="#FF6A5B" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+          <path d="M8 20L16 12L8 4" stroke="#E559A8" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+          <path d="M14 26L22 18L14 10" stroke="#B695D8" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+          <path d="M14 22L22 14L14 6" stroke="#6BA7D9" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+        </svg>
         <div className="flex flex-col gap-0.5">
           <div className="text-[16px] font-bold leading-tight text-charcoal">
             UPSHIFT
