@@ -88,15 +88,6 @@ export default function ResourceCard({
           {format}
         </div>
 
-        {/* Date badge */}
-        {date && (
-          <div
-            className="absolute top-3 right-3 px-2 py-1 rounded-md text-[9.5px] font-semibold text-white"
-            style={{ backgroundColor: "rgba(17,17,17,0.78)" }}
-          >
-            {date}
-          </div>
-        )}
 
         {/* Lock overlay for non-free */}
         {!is_free && (
