@@ -26,6 +26,8 @@ function ResourcesContent() {
   const [filterType, setFilterType] = useState("all");
   const [purpose, setPurpose] = useState("all");
   const [purposeDropdownOpen, setPurposeDropdownOpen] = useState(false);
+  const [filterDropdownOpen, setFilterDropdownOpen] = useState(false);
+  const [sortDropdownOpen, setSortDropdownOpen] = useState(false);
 
   useEffect(() => {
     setPage(parseInt(searchParams.get('page') || "1"));
@@ -111,35 +113,88 @@ function ResourcesContent() {
 
           {/* Sort and Filter controls */}
           <div className="flex gap-2 mb-6 flex-wrap">
-            {/* Sort controls */}
-            {["newest", "oldest", "a-z", "popular"].map((sort) => (
-              <a
-                key={sort}
-                href={`/resources?sort=${sort}${filterType !== 'all' ? `&filter=${filterType}` : ''}${purpose !== 'all' ? `&purpose=${purpose}` : ''}`}
-                className={`px-3 py-1 rounded-full text-sm font-semibold transition-colors ${
-                  sortParam === sort
-                    ? "bg-charcoal text-white"
-                    : "bg-gray-100 text-charcoal hover:bg-gray-200"
-                }`}
+            {/* Sort dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setSortDropdownOpen(!sortDropdownOpen)}
+                className="px-3 py-1 rounded-full text-sm font-semibold bg-charcoal text-white border border-border cursor-pointer hover:bg-charcoal/90 flex items-center gap-2"
               >
-                {sort === "newest" ? "Newest" : sort === "oldest" ? "Oldest" : sort === "a-z" ? "A–Z" : "Popular"}
-              </a>
-            ))}
+                {sortParam === "newest" ? "Newest" : sortParam === "oldest" ? "Oldest" : sortParam === "a-z" ? "A–Z" : "Popular"}
+                <svg className={`w-4 h-4 transition-transform ${sortDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </button>
+              {sortDropdownOpen && (
+                <div className="absolute top-full mt-2 left-0 bg-white border border-border rounded-lg shadow-lg z-10 min-w-max">
+                  <a
+                    href={`/resources?sort=newest${filterType !== 'all' ? `&filter=${filterType}` : ''}${purpose !== 'all' ? `&purpose=${purpose}` : ''}`}
+                    onClick={() => setSortDropdownOpen(false)}
+                    className={`block px-4 py-2 text-sm hover:bg-gray-100 ${sortParam === 'newest' ? 'bg-gray-50 font-semibold' : ''}`}
+                  >
+                    Newest
+                  </a>
+                  <a
+                    href={`/resources?sort=oldest${filterType !== 'all' ? `&filter=${filterType}` : ''}${purpose !== 'all' ? `&purpose=${purpose}` : ''}`}
+                    onClick={() => setSortDropdownOpen(false)}
+                    className={`block px-4 py-2 text-sm hover:bg-gray-100 ${sortParam === 'oldest' ? 'bg-gray-50 font-semibold' : ''}`}
+                  >
+                    Oldest
+                  </a>
+                  <a
+                    href={`/resources?sort=a-z${filterType !== 'all' ? `&filter=${filterType}` : ''}${purpose !== 'all' ? `&purpose=${purpose}` : ''}`}
+                    onClick={() => setSortDropdownOpen(false)}
+                    className={`block px-4 py-2 text-sm hover:bg-gray-100 ${sortParam === 'a-z' ? 'bg-gray-50 font-semibold' : ''}`}
+                  >
+                    A–Z
+                  </a>
+                  <a
+                    href={`/resources?sort=popular${filterType !== 'all' ? `&filter=${filterType}` : ''}${purpose !== 'all' ? `&purpose=${purpose}` : ''}`}
+                    onClick={() => setSortDropdownOpen(false)}
+                    className={`block px-4 py-2 text-sm hover:bg-gray-100 ${sortParam === 'popular' ? 'bg-gray-50 font-semibold' : ''}`}
+                  >
+                    Popular
+                  </a>
+                </div>
+              )}
+            </div>
 
-            {/* Free/Paid filter */}
-            {["all", "free", "paid"].map((filter) => (
-              <a
-                key={filter}
-                href={`/resources?filter=${filter}${purpose !== 'all' ? `&purpose=${purpose}` : ''}`}
-                className={`px-3 py-1 rounded-full text-sm font-semibold transition-colors ${
-                  filterType === filter
-                    ? "bg-coral text-white"
-                    : "bg-gray-100 text-charcoal hover:bg-gray-200"
-                }`}
+            {/* Free/Paid filter dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setFilterDropdownOpen(!filterDropdownOpen)}
+                className="px-3 py-1 rounded-full text-sm font-semibold bg-gray-100 text-charcoal border border-border cursor-pointer hover:bg-gray-200 flex items-center gap-2"
               >
-                {filter === "all" ? "All resources" : filter === "free" ? "Free" : "Paid"}
-              </a>
-            ))}
+                {filterType === "all" ? "All resources" : filterType === "free" ? "Free" : "Paid"}
+                <svg className={`w-4 h-4 transition-transform ${filterDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </button>
+              {filterDropdownOpen && (
+                <div className="absolute top-full mt-2 left-0 bg-white border border-border rounded-lg shadow-lg z-10 min-w-max">
+                  <a
+                    href={`/resources?filter=all${purpose !== 'all' ? `&purpose=${purpose}` : ''}`}
+                    onClick={() => setFilterDropdownOpen(false)}
+                    className={`block px-4 py-2 text-sm hover:bg-gray-100 ${filterType === 'all' ? 'bg-gray-50 font-semibold' : ''}`}
+                  >
+                    All resources
+                  </a>
+                  <a
+                    href={`/resources?filter=free${purpose !== 'all' ? `&purpose=${purpose}` : ''}`}
+                    onClick={() => setFilterDropdownOpen(false)}
+                    className={`block px-4 py-2 text-sm hover:bg-gray-100 ${filterType === 'free' ? 'bg-gray-50 font-semibold' : ''}`}
+                  >
+                    Free
+                  </a>
+                  <a
+                    href={`/resources?filter=paid${purpose !== 'all' ? `&purpose=${purpose}` : ''}`}
+                    onClick={() => setFilterDropdownOpen(false)}
+                    className={`block px-4 py-2 text-sm hover:bg-gray-100 ${filterType === 'paid' ? 'bg-gray-50 font-semibold' : ''}`}
+                  >
+                    Paid
+                  </a>
+                </div>
+              )}
+            </div>
 
             {/* Purpose filter dropdown */}
             <div className="relative">
