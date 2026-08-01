@@ -49,12 +49,12 @@ export default function Home() {
             </div>
 
             {/* Hero Headline */}
-            <h1 className="text-5xl font-bold text-charcoal mb-4 leading-tight whitespace-nowrap overflow-x-auto">
-              Describe what you're teaching. We'll hand you the lesson.
+            <h1 className="text-5xl font-bold text-charcoal mb-4 leading-tight">
+              Describe what you're teaching.<br />We'll hand you the lesson.
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg text-text-muted mb-8 max-w-xl">
+            <p className="text-lg text-text-muted mb-8 whitespace-nowrap">
               Search by standard code or describe what you're teaching. Get a lesson blueprint, resources, and materials.
             </p>
 
@@ -126,7 +126,7 @@ export default function Home() {
 
             <div className="grid grid-cols-3 gap-6">
               {/* Card 1 */}
-              <div className="border-l-4 border-coral rounded-2xl bg-white p-6 border border-hairline hover:border-charcoal transition-colors">
+              <div className="border-2 border-coral rounded-2xl bg-white p-6 hover:border-charcoal transition-colors">
                 <div className="text-xs font-bold tracking-wider text-coral uppercase mb-2">Find Standards</div>
                 <h3 className="text-xl font-bold text-charcoal mb-3">Standard matcher</h3>
                 <p className="text-sm text-text-body mb-4">

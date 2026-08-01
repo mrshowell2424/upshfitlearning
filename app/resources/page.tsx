@@ -20,12 +20,14 @@ interface Resource {
 function ResourcesContent() {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
+  const [filterType, setFilterType] = useState("all");
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       setPage(parseInt(params.get('page') || "1"));
       setSearch(params.get('search') || "");
+      setFilterType(params.get('filter') || "all");
     }
   }, []);
 
@@ -75,6 +77,14 @@ function ResourcesContent() {
 
   const sortParam = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('sort') || 'newest' : 'newest';
 
+  // Filter items based on filter type
+  let filteredItems = items;
+  if (filterType === 'free') {
+    filteredItems = items.filter(item => item.is_free);
+  } else if (filterType === 'paid') {
+    filteredItems = items.filter(item => !item.is_free);
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -85,25 +95,45 @@ function ResourcesContent() {
           <div className="mb-6">
             <h1 className="text-[34px] font-bold mb-2">Resource library</h1>
             <p className="text-text-muted">
-              {total} of {total} resources
+              {filteredItems.length} of {total} resources
             </p>
           </div>
 
-          {/* Sort controls */}
-          <div className="flex gap-2 mb-6">
-            {["newest", "oldest", "a-z"].map((sort) => (
-              <a
-                key={sort}
-                href={`/resources?sort=${sort}`}
-                className={`px-3 py-1 rounded-full text-sm font-semibold transition-colors ${
-                  sortParam === sort
-                    ? "bg-charcoal text-white"
-                    : "bg-gray-100 text-charcoal hover:bg-gray-200"
-                }`}
-              >
-                {sort === "newest" ? "Newest" : sort === "oldest" ? "Oldest" : "A–Z"}
-              </a>
-            ))}
+          {/* Sort and Filter controls */}
+          <div className="flex flex-col gap-4 mb-6">
+            {/* Sort controls */}
+            <div className="flex gap-2">
+              {["newest", "oldest", "a-z"].map((sort) => (
+                <a
+                  key={sort}
+                  href={`/resources?sort=${sort}${filterType !== 'all' ? `&filter=${filterType}` : ''}`}
+                  className={`px-3 py-1 rounded-full text-sm font-semibold transition-colors ${
+                    sortParam === sort
+                      ? "bg-charcoal text-white"
+                      : "bg-gray-100 text-charcoal hover:bg-gray-200"
+                  }`}
+                >
+                  {sort === "newest" ? "Newest" : sort === "oldest" ? "Oldest" : "A–Z"}
+                </a>
+              ))}
+            </div>
+
+            {/* Filter controls */}
+            <div className="flex gap-2">
+              {["all", "free", "paid"].map((filter) => (
+                <a
+                  key={filter}
+                  href={`/resources?filter=${filter}`}
+                  className={`px-3 py-1 rounded-full text-sm font-semibold transition-colors ${
+                    filterType === filter
+                      ? "bg-coral text-white"
+                      : "bg-gray-100 text-charcoal hover:bg-gray-200"
+                  }`}
+                >
+                  {filter === "all" ? "All resources" : filter === "free" ? "Free" : "Paid"}
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Grid */}
@@ -112,10 +142,10 @@ function ResourcesContent() {
               <p className="text-text-muted mb-4">Loading resources...</p>
               <p className="text-sm text-text-muted">Fetching your resources from the library...</p>
             </div>
-          ) : items.length > 0 ? (
+          ) : filteredItems.length > 0 ? (
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
-                {items.map((item) => (
+                {filteredItems.map((item) => (
                   <ResourceCard
                     key={item.id}
                     id={item.id}

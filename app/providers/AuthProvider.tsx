@@ -32,15 +32,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const loadAuth = async () => {
       try {
         // Get current user
-        const {
-          data: { user },
-        } = await supabase.auth.getUser()
-        setUser(user)
+        if (supabase?.auth?.getUser) {
+          const {
+            data: { user },
+          } = await supabase.auth.getUser()
+          setUser(user)
 
-        // If user exists, fetch their subscription
-        if (user) {
-          const sub = await getSubscription(user.id)
-          setSubscription(sub as Subscription)
+          // If user exists, fetch their subscription
+          if (user) {
+            const sub = await getSubscription(user.id)
+            setSubscription(sub as Subscription)
+          }
         }
       } catch (error) {
         console.error('Auth initialization error:', error)
