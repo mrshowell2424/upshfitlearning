@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/auth'
+// Force rebuild
 
 interface Resource {
   id: string
