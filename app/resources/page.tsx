@@ -2,6 +2,7 @@
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import ResourceCard from "@/app/components/ResourceCard";
+import { getResources, type Resource } from "@/lib/resources";
 
 interface PageProps {
   searchParams: Promise<{
@@ -15,25 +16,6 @@ interface PageProps {
   }>;
 }
 
-interface Resource {
-  id: string;
-  title: string;
-  purpose: string;
-  format: string;
-  grade_band: string;
-  skill: string;
-  is_free: boolean;
-  published_at: string | Date;
-}
-
-interface ApiResponse {
-  items: Resource[];
-  total: number;
-  page: number;
-  pageSize: number;
-  totalPages: number;
-}
-
 export default async function ResourcesPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const page = parseInt(params.page || "1");
@@ -42,27 +24,27 @@ export default async function ResourcesPage({ searchParams }: PageProps) {
   let items: Resource[] = [];
   let total = 0;
   let totalPages = 0;
+  const pageSize = 30;
 
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://hub.upshiftlearning.com';
-    const url = new URL('/api/resources', baseUrl);
-    url.searchParams.set('page', page.toString());
+    const allResources = await getResources();
+
+    let filtered = allResources;
     if (search) {
-      url.searchParams.set('search', search);
+      const searchLower = search.toLowerCase();
+      filtered = allResources.filter(
+        r =>
+          r.title.toLowerCase().includes(searchLower) ||
+          r.purpose.toLowerCase().includes(searchLower) ||
+          r.skill.toLowerCase().includes(searchLower)
+      );
     }
 
-    const response = await fetch(url.toString());
-
-    if (response.ok) {
-      const data: ApiResponse = await response.json();
-      items = data.items;
-      total = data.total;
-      totalPages = data.totalPages;
-    } else {
-      console.error('API error:', response.statusText);
-    }
+    total = filtered.length;
+    totalPages = Math.ceil(total / pageSize);
+    const offset = (page - 1) * pageSize;
+    items = filtered.slice(offset, offset + pageSize);
   } catch (error) {
-    // API unavailable - show empty state
     console.error('Error fetching resources:', error);
     total = 0;
     totalPages = 0;
