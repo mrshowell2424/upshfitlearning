@@ -80,13 +80,6 @@ export default function ResourceCard({
           </div>
         )}
 
-        {/* Format badge */}
-        <div
-          className={`absolute top-3 left-3 px-2 py-1 rounded-md text-[9px] font-bold uppercase tracking-[0.1em] ${formatColor}`}
-          style={{ backgroundColor: "rgba(255,255,255,0.94)" }}
-        >
-          {format}
-        </div>
 
 
         {/* Lock overlay for non-free */}

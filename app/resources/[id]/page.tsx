@@ -13,13 +13,19 @@ interface PageProps {
 export default async function ResourceDetailPage({ params }: PageProps) {
   const { id } = await params;
 
-  const items = await db
-    .select()
-    .from(resources)
-    .where(eq(resources.id, id))
-    .limit(1);
+  let resource;
+  try {
+    const items = await db
+      .select()
+      .from(resources)
+      .where(eq(resources.id, id))
+      .limit(1);
 
-  const resource = items[0];
+    resource = items[0];
+  } catch (error) {
+    console.error("Database error fetching resource:", error);
+    notFound();
+  }
 
   if (!resource) {
     notFound();
