@@ -15,14 +15,21 @@ export default async function MatchDetailPage({ params }: PageProps) {
   const { code } = await params;
   const decodedCode = decodeURIComponent(code);
 
-  // Fetch actual standard from DB
-  const standardRows = await db
-    .select()
-    .from(standards)
-    .where(eq(standards.code, decodedCode))
-    .limit(1);
+  let standardRow;
+  try {
+    // Fetch actual standard from DB
+    const standardRows = await db
+      .select()
+      .from(standards)
+      .where(eq(standards.code, decodedCode))
+      .limit(1);
 
-  const standardRow = standardRows[0];
+    standardRow = standardRows[0];
+  } catch (error) {
+    console.error("Database error fetching standard:", error);
+    notFound();
+  }
+
   if (!standardRow) {
     notFound();
   }
@@ -34,13 +41,19 @@ export default async function MatchDetailPage({ params }: PageProps) {
   };
 
   // Fetch blueprint from DB
-  const blueprintRows = await db
-    .select()
-    .from(lesson_blueprints)
-    .where(eq(lesson_blueprints.standard_code, decodedCode))
-    .limit(1);
+  let blueprintRow;
+  try {
+    const blueprintRows = await db
+      .select()
+      .from(lesson_blueprints)
+      .where(eq(lesson_blueprints.standard_code, decodedCode))
+      .limit(1);
 
-  const blueprintRow = blueprintRows[0];
+    blueprintRow = blueprintRows[0];
+  } catch (error) {
+    console.error("Database error fetching blueprint:", error);
+    blueprintRow = null;
+  }
 
   const blueprint = blueprintRow
     ? {
@@ -60,13 +73,19 @@ export default async function MatchDetailPage({ params }: PageProps) {
     : null;
 
   // Fetch unpack from DB
-  const unpackRows = await db
-    .select()
-    .from(standard_unpacks)
-    .where(eq(standard_unpacks.standard_code, decodedCode))
-    .limit(1);
+  let unpackRow;
+  try {
+    const unpackRows = await db
+      .select()
+      .from(standard_unpacks)
+      .where(eq(standard_unpacks.standard_code, decodedCode))
+      .limit(1);
 
-  const unpackRow = unpackRows[0];
+    unpackRow = unpackRows[0];
+  } catch (error) {
+    console.error("Database error fetching unpack:", error);
+    unpackRow = null;
+  }
 
   const unpack = unpackRow
     ? {
