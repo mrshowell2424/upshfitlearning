@@ -22,6 +22,7 @@ function ResourcesContent() {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [filterType, setFilterType] = useState("all");
+  const [gradeBand, setGradeBand] = useState("all");
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -29,6 +30,7 @@ function ResourcesContent() {
       setPage(parseInt(params.get('page') || "1"));
       setSearch(params.get('search') || "");
       setFilterType(params.get('filter') || "all");
+      setGradeBand(params.get('grade') || "all");
     }
   }, []);
 
@@ -78,12 +80,16 @@ function ResourcesContent() {
 
   const sortParam = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('sort') || 'newest' : 'newest';
 
-  // Filter items based on filter type
+  // Filter items based on filter type and grade band
   let filteredItems = items;
   if (filterType === 'free') {
     filteredItems = items.filter(item => item.is_free);
   } else if (filterType === 'paid') {
     filteredItems = items.filter(item => !item.is_free);
+  }
+
+  if (gradeBand !== 'all') {
+    filteredItems = filteredItems.filter(item => item.grade_band === gradeBand);
   }
 
   return (
@@ -103,25 +109,25 @@ function ResourcesContent() {
           {/* Sort and Filter controls */}
           <div className="flex gap-2 mb-6 flex-wrap">
             {/* Sort controls */}
-            {["newest", "oldest", "a-z"].map((sort) => (
+            {["newest", "oldest", "a-z", "popular"].map((sort) => (
               <a
                 key={sort}
-                href={`/resources?sort=${sort}${filterType !== 'all' ? `&filter=${filterType}` : ''}`}
+                href={`/resources?sort=${sort}${filterType !== 'all' ? `&filter=${filterType}` : ''}${gradeBand !== 'all' ? `&grade=${gradeBand}` : ''}`}
                 className={`px-3 py-1 rounded-full text-sm font-semibold transition-colors ${
                   sortParam === sort
                     ? "bg-charcoal text-white"
                     : "bg-gray-100 text-charcoal hover:bg-gray-200"
                 }`}
               >
-                {sort === "newest" ? "Newest" : sort === "oldest" ? "Oldest" : "A–Z"}
+                {sort === "newest" ? "Newest" : sort === "oldest" ? "Oldest" : sort === "a-z" ? "A–Z" : "Popular"}
               </a>
             ))}
 
-            {/* Filter controls */}
+            {/* Free/Paid filter */}
             {["all", "free", "paid"].map((filter) => (
               <a
                 key={filter}
-                href={`/resources?filter=${filter}`}
+                href={`/resources?filter=${filter}${gradeBand !== 'all' ? `&grade=${gradeBand}` : ''}`}
                 className={`px-3 py-1 rounded-full text-sm font-semibold transition-colors ${
                   filterType === filter
                     ? "bg-coral text-white"
@@ -129,6 +135,21 @@ function ResourcesContent() {
                 }`}
               >
                 {filter === "all" ? "All resources" : filter === "free" ? "Free" : "Paid"}
+              </a>
+            ))}
+
+            {/* Grade Band filter */}
+            {["all", "K-2", "3-5", "6-8", "9-12"].map((grade) => (
+              <a
+                key={grade}
+                href={`/resources?grade=${grade}${filterType !== 'all' ? `&filter=${filterType}` : ''}`}
+                className={`px-3 py-1 rounded-full text-sm font-semibold transition-colors ${
+                  gradeBand === grade
+                    ? "bg-teal text-white"
+                    : "bg-gray-100 text-charcoal hover:bg-gray-200"
+                }`}
+              >
+                {grade === "all" ? "All grades" : `Grade ${grade}`}
               </a>
             ))}
           </div>
