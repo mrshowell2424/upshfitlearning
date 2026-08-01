@@ -1,11 +1,10 @@
 'use client'
 
 // @ts-nocheck
-import { useState, useEffect, Suspense } from 'react'
+import { useState, useEffect } from 'react'
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import ResourceCard from "@/app/components/ResourceCard";
-import { useSearchParams } from 'next/navigation'
 
 interface Resource {
   id: string;
@@ -19,9 +18,16 @@ interface Resource {
 }
 
 function ResourcesContent() {
-  const searchParams = useSearchParams()
-  const page = parseInt(searchParams.get('page') || "1");
-  const search = searchParams.get('search') || "";
+  const [page, setPage] = useState(1);
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      setPage(parseInt(params.get('page') || "1"));
+      setSearch(params.get('search') || "");
+    }
+  }, []);
 
   const sampleResources: Resource[] = [
     { id: "1", title: "Text Evidence Anchor Chart", purpose: "Understand how to find and cite text evidence", format: "Anchor Chart", grade_band: "K-2", skill: "Reading Comprehension", is_free: true, published_at: "2024-01-15T00:00:00.000Z" },
@@ -163,9 +169,5 @@ function ResourcesContent() {
 }
 
 export default function ResourcesPage() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <ResourcesContent />
-    </Suspense>
-  );
+  return <ResourcesContent />;
 }
