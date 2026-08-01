@@ -1,62 +1,62 @@
+'use client'
+
 // @ts-nocheck
+import { useState, useEffect } from 'react'
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import ResourceCard from "@/app/components/ResourceCard";
-import { getResources, type Resource } from "@/lib/resources";
+import { useSearchParams } from 'next/navigation'
 
-interface PageProps {
-  searchParams: Promise<{
-    search?: string;
-    skill?: string;
-    purpose?: string;
-    grade?: string;
-    access?: string;
-    sort?: string;
-    page?: string;
-  }>;
+interface Resource {
+  id: string;
+  title: string;
+  purpose: string;
+  format: string;
+  grade_band: string;
+  skill: string;
+  is_free: boolean;
+  published_at: string | Date;
 }
 
-export default async function ResourcesPage({ searchParams }: PageProps) {
-  const params = await searchParams;
-  const page = parseInt(params.page || "1");
-  const search = params.search || "";
+export default function ResourcesPage() {
+  const searchParams = useSearchParams()
+  const page = parseInt(searchParams.get('page') || "1");
+  const search = searchParams.get('search') || "";
 
-  let items: Resource[] = [];
-  let total = 0;
-  let totalPages = 0;
+  const [items, setItems] = useState<Resource[]>([]);
+  const [total, setTotal] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
+  const [loading, setLoading] = useState(true);
   const pageSize = 30;
 
-  try {
-    const allResources = await getResources();
+  useEffect(() => {
+    const fetchResources = async () => {
+      try {
+        const response = await fetch('/api/resources?page=' + page + (search ? '&search=' + encodeURIComponent(search) : ''));
+        const data = await response.json();
+        setItems(data.items || []);
+        setTotal(data.total || 0);
+        setTotalPages(data.totalPages || 0);
+      } catch (error) {
+        console.error('Error fetching resources:', error);
+        setItems([]);
+        setTotal(0);
+        setTotalPages(0);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    let filtered = allResources;
-    if (search) {
-      const searchLower = search.toLowerCase();
-      filtered = allResources.filter(
-        r =>
-          r.title.toLowerCase().includes(searchLower) ||
-          r.purpose.toLowerCase().includes(searchLower) ||
-          r.skill.toLowerCase().includes(searchLower)
-      );
-    }
+    fetchResources();
+  }, [page, search]);
 
-    total = filtered.length;
-    totalPages = Math.ceil(total / pageSize);
-    const offset = (page - 1) * pageSize;
-    items = filtered.slice(offset, offset + pageSize);
-  } catch (error) {
-    console.error('Error fetching resources:', error);
-    total = 0;
-    totalPages = 0;
-    items = [];
-  }
+  const sortParam = searchParams.get('sort') || 'newest';
 
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
 
       <div className="flex-1 flex">
-
         {/* Main content */}
         <main className="flex-1 px-8 py-8">
           <div className="mb-6">
@@ -73,7 +73,7 @@ export default async function ResourcesPage({ searchParams }: PageProps) {
                 key={sort}
                 href={`/resources?sort=${sort}`}
                 className={`px-3 py-1 rounded-full text-sm font-semibold transition-colors ${
-                  params.sort === sort || (sort === "newest" && !params.sort)
+                  sortParam === sort
                     ? "bg-charcoal text-white"
                     : "bg-gray-100 text-charcoal hover:bg-gray-200"
                 }`}
@@ -84,7 +84,12 @@ export default async function ResourcesPage({ searchParams }: PageProps) {
           </div>
 
           {/* Grid */}
-          {items.length > 0 ? (
+          {loading ? (
+            <div className="text-center py-16 border-2 border-dashed border-hairline rounded-[16px]">
+              <p className="text-text-muted mb-4">Loading resources...</p>
+              <p className="text-sm text-text-muted">Fetching your resources from the library...</p>
+            </div>
+          ) : items.length > 0 ? (
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
                 {items.map((item) => (
@@ -128,8 +133,8 @@ export default async function ResourcesPage({ searchParams }: PageProps) {
             </>
           ) : (
             <div className="text-center py-16 border-2 border-dashed border-hairline rounded-[16px]">
-              <p className="text-text-muted mb-4">Loading resources...</p>
-              <p className="text-sm text-text-muted">Our library of {total} curated resources is being prepared. Check back soon!</p>
+              <p className="text-text-muted mb-4">No resources found</p>
+              <p className="text-sm text-text-muted">Try adjusting your search or filters</p>
             </div>
           )}
         </main>
