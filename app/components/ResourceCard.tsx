@@ -25,7 +25,20 @@ export default function ResourceCard({
   is_free,
   thumbnail_url,
 }: ResourceCardProps) {
-  const thumbnailUrl = thumbnail_url || (youtube_id ? `https://i.ytimg.com/vi/${youtube_id}/mqdefault.jpg` : '/placeholder-thumbnail.jpg');
+  // Try to get a meaningful thumbnail - use the format type for color coding
+  const getThumbnailColor = () => {
+    const colors: Record<string, string> = {
+      'Video': '#FFB3AF',
+      'Slides': '#B3D9FF',
+      'Doc': '#FFE5B3',
+      'Worksheet': '#B3FFB3',
+      'Guide': '#E5B3FF',
+      'Link': '#D9D9D9',
+    }
+    return colors[format] || '#E0E0E0'
+  }
+
+  const thumbnailUrl = youtube_id ? `https://i.ytimg.com/vi/${youtube_id}/mqdefault.jpg` : undefined;
   const formatColors: Record<string, string> = {
     Slides: "bg-blue-50 text-blue-700",
     Doc: "bg-amber-50 text-amber-700",
@@ -50,12 +63,22 @@ export default function ResourceCard({
       className="group rounded-[14px] overflow-hidden bg-white border border-border hover:border-charcoal transition-colors"
     >
       {/* Thumbnail */}
-      <div className="relative w-full aspect-video bg-gray-100 overflow-hidden">
-        <img
-          src={thumbnailUrl}
-          alt={title}
-          className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
-        />
+      <div className="relative w-full aspect-video bg-gray-100 overflow-hidden" style={thumbnailUrl ? {} : { backgroundColor: getThumbnailColor() }}>
+        {thumbnailUrl ? (
+          <img
+            src={thumbnailUrl}
+            alt={title}
+            className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
+            onError={(e) => {
+              // If image fails to load, hide it and show colored background
+              (e.target as HTMLImageElement).style.display = 'none'
+            }}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-white text-3xl font-bold opacity-20">
+            {format.charAt(0)}
+          </div>
+        )}
 
         {/* Format badge */}
         <div
