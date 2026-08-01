@@ -38,7 +38,7 @@ export default function ResourceCard({
     return colors[format] || '#E0E0E0'
   }
 
-  const thumbnailUrl = youtube_id ? `https://i.ytimg.com/vi/${youtube_id}/mqdefault.jpg` : undefined;
+  const thumbnailUrl = thumbnail_url || (youtube_id ? `https://i.ytimg.com/vi/${youtube_id}/mqdefault.jpg` : undefined);
   const formatColors: Record<string, string> = {
     Slides: "bg-blue-50 text-blue-700",
     Doc: "bg-amber-50 text-amber-700",

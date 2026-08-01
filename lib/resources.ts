@@ -48,6 +48,16 @@ async function fetchGoogleSheetResources(): Promise<Resource[]> {
       const title = row[2]?.trim()
       if (!title) continue
 
+      // Look for YouTube URL in various columns (commonly in column 5 or 6)
+      let youtubeId: string | undefined
+      for (let j = 5; j < Math.min(row.length, 10); j++) {
+        const youtubeUrl = row[j]?.trim()
+        if (youtubeUrl && youtubeUrl.includes('youtube') || youtubeUrl?.includes('youtu.be')) {
+          youtubeId = extractYoutubeId(youtubeUrl)
+          if (youtubeId) break
+        }
+      }
+
       const resource: Resource = {
         id: String(i),
         title: title,
@@ -59,6 +69,7 @@ async function fetchGoogleSheetResources(): Promise<Resource[]> {
           !row[7]?.toString().toLowerCase().includes('paid') &&
           row[7]?.toString().toLowerCase() !== 'false',
         published_at: row[1]?.trim() || new Date().toISOString(),
+        thumbnail_url: youtubeId ? `https://i.ytimg.com/vi/${youtubeId}/mqdefault.jpg` : undefined,
       }
 
       if (resource.title) {
@@ -72,6 +83,25 @@ async function fetchGoogleSheetResources(): Promise<Resource[]> {
     console.error('Error fetching Google Sheets:', error)
     return []
   }
+}
+
+function extractYoutubeId(url?: string): string | undefined {
+  if (!url) return undefined
+  try {
+    // Handle youtube.com/watch?v=ID
+    if (url.includes('youtube.com/watch')) {
+      const match = url.match(/[?&]v=([^&]+)/)
+      return match ? match[1] : undefined
+    }
+    // Handle youtu.be/ID
+    if (url.includes('youtu.be/')) {
+      const match = url.match(/youtu\.be\/([^?&]+)/)
+      return match ? match[1] : undefined
+    }
+  } catch (e) {
+    console.error('Error extracting YouTube ID:', e)
+  }
+  return undefined
 }
 
 function parseCSVLine(line: string): string[] {
