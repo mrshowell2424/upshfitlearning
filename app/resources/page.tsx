@@ -140,20 +140,21 @@ function ResourcesContent() {
               </a>
             ))}
 
-            {/* Purpose filter */}
-            {["all", ...uniquePurposes].map((p) => (
-              <a
-                key={p}
-                href={`/resources?purpose=${p}${filterType !== 'all' ? `&filter=${filterType}` : ''}`}
-                className={`px-3 py-1 rounded-full text-sm font-semibold transition-colors ${
-                  purpose === p
-                    ? "bg-teal text-white"
-                    : "bg-gray-100 text-charcoal hover:bg-gray-200"
-                }`}
-              >
-                {p === "all" ? "All purposes" : p}
-              </a>
-            ))}
+            {/* Purpose filter dropdown */}
+            <select
+              value={purpose}
+              onChange={(e) => {
+                const newPurpose = e.target.value;
+                const url = `/resources?purpose=${newPurpose}${filterType !== 'all' ? `&filter=${filterType}` : ''}`;
+                window.location.href = url;
+              }}
+              className="px-3 py-1 rounded-full text-sm font-semibold bg-gray-100 text-charcoal border border-border cursor-pointer hover:bg-gray-200"
+            >
+              <option value="all">All purposes</option>
+              {uniquePurposes.map((p) => (
+                <option key={p} value={p}>{p}</option>
+              ))}
+            </select>
           </div>
 
           {/* Grid */}
