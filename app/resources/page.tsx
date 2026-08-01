@@ -25,6 +25,7 @@ function ResourcesContent() {
   const [search, setSearch] = useState("");
   const [filterType, setFilterType] = useState("all");
   const [purpose, setPurpose] = useState("all");
+  const [purposeDropdownOpen, setPurposeDropdownOpen] = useState(false);
 
   useEffect(() => {
     setPage(parseInt(searchParams.get('page') || "1"));
@@ -141,20 +142,38 @@ function ResourcesContent() {
             ))}
 
             {/* Purpose filter dropdown */}
-            <select
-              value={purpose}
-              onChange={(e) => {
-                const newPurpose = e.target.value;
-                const url = `/resources?purpose=${newPurpose}${filterType !== 'all' ? `&filter=${filterType}` : ''}`;
-                window.location.href = url;
-              }}
-              className="px-3 py-1 rounded-full text-sm font-semibold bg-gray-100 text-charcoal border border-border cursor-pointer hover:bg-gray-200"
-            >
-              <option value="all">All purposes</option>
-              {uniquePurposes.map((p) => (
-                <option key={p} value={p}>{p}</option>
-              ))}
-            </select>
+            <div className="relative">
+              <button
+                onClick={() => setPurposeDropdownOpen(!purposeDropdownOpen)}
+                className="px-3 py-1 rounded-full text-sm font-semibold bg-gray-100 text-charcoal border border-border cursor-pointer hover:bg-gray-200 flex items-center gap-2"
+              >
+                {purpose === "all" ? "All purposes" : purpose}
+                <svg className={`w-4 h-4 transition-transform ${purposeDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </button>
+              {purposeDropdownOpen && (
+                <div className="absolute top-full mt-2 left-0 bg-white border border-border rounded-lg shadow-lg z-10 min-w-max">
+                  <a
+                    href={`/resources?purpose=all${filterType !== 'all' ? `&filter=${filterType}` : ''}`}
+                    onClick={() => setPurposeDropdownOpen(false)}
+                    className={`block px-4 py-2 text-sm hover:bg-gray-100 ${purpose === 'all' ? 'bg-gray-50 font-semibold' : ''}`}
+                  >
+                    All purposes
+                  </a>
+                  {uniquePurposes.map((p) => (
+                    <a
+                      key={p}
+                      href={`/resources?purpose=${p}${filterType !== 'all' ? `&filter=${filterType}` : ''}`}
+                      onClick={() => setPurposeDropdownOpen(false)}
+                      className={`block px-4 py-2 text-sm hover:bg-gray-100 ${purpose === p ? 'bg-gray-50 font-semibold' : ''}`}
+                    >
+                      {p}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Grid */}
