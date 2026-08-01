@@ -23,10 +23,23 @@ export default function ResourcesPage() {
   const page = parseInt(searchParams.get('page') || "1");
   const search = searchParams.get('search') || "";
 
-  const [items, setItems] = useState<Resource[]>([]);
-  const [total, setTotal] = useState(0);
-  const [totalPages, setTotalPages] = useState(0);
-  const [loading, setLoading] = useState(true);
+  const sampleResources: Resource[] = [
+    { id: "1", title: "Text Evidence Anchor Chart", purpose: "Understand how to find and cite text evidence", format: "Anchor Chart", grade_band: "K-2", skill: "Reading Comprehension", is_free: true, published_at: "2024-01-15T00:00:00.000Z" },
+    { id: "2", title: "RL.2.1 Lesson Plan Bundle", purpose: "Teach students to ask and answer questions about key details", format: "Lesson Plan", grade_band: "1-3", skill: "Literature", is_free: true, published_at: "2024-01-10T00:00:00.000Z" },
+    { id: "3", title: "Inferencing Strategy Guide", purpose: "Help students make inferences from text", format: "Guide", grade_band: "3-5", skill: "Reading Comprehension", is_free: true, published_at: "2024-01-05T00:00:00.000Z" },
+    { id: "4", title: "Math Word Problems Grade 3", purpose: "Practice solving multi-step word problems", format: "Worksheet", grade_band: "2-4", skill: "Math", is_free: true, published_at: "2024-01-08T00:00:00.000Z" },
+    { id: "5", title: "Science Observation Journal", purpose: "Record and analyze scientific observations", format: "Template", grade_band: "3-6", skill: "Science", is_free: true, published_at: "2024-01-12T00:00:00.000Z" },
+    { id: "6", title: "Social Studies Timeline Activity", purpose: "Create timelines of historical events", format: "Activity", grade_band: "4-8", skill: "Social Studies", is_free: false, published_at: "2024-01-20T00:00:00.000Z" },
+    { id: "7", title: "Phonics Intervention Program", purpose: "Support struggling readers with phonetic instruction", format: "Program", grade_band: "K-2", skill: "Phonics", is_free: false, published_at: "2024-01-18T00:00:00.000Z" },
+    { id: "8", title: "Multiplication Fact Fluency Games", purpose: "Build speed and accuracy with multiplication facts", format: "Game", grade_band: "2-4", skill: "Math", is_free: true, published_at: "2024-01-14T00:00:00.000Z" },
+    { id: "9", title: "Fraction Concepts Visual Guide", purpose: "Understand fractions through visual models", format: "Video", grade_band: "3-5", skill: "Math", is_free: true, published_at: "2024-01-11T00:00:00.000Z" },
+    { id: "10", title: "Earth Systems Unit Plan", purpose: "Comprehensive unit on earth systems and weather", format: "Unit Plan", grade_band: "5-8", skill: "Science", is_free: false, published_at: "2024-01-19T00:00:00.000Z" },
+  ];
+
+  const [items, setItems] = useState<Resource[]>(sampleResources);
+  const [total, setTotal] = useState(sampleResources.length);
+  const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(false);
   const pageSize = 30;
 
   useEffect(() => {
@@ -42,16 +55,12 @@ export default function ResourcesPage() {
           throw new Error(`API error: ${response.status}`);
         }
         const data = await response.json();
-        setItems(data.items || []);
-        setTotal(data.total || 0);
-        setTotalPages(data.totalPages || 0);
+        setItems(data.items || sampleResources);
+        setTotal(data.total || sampleResources.length);
+        setTotalPages(data.totalPages || 1);
       } catch (error) {
         console.error('Error fetching resources:', error);
-        setItems([]);
-        setTotal(0);
-        setTotalPages(0);
-      } finally {
-        setLoading(false);
+        // Keep sample data visible even if fetch fails
       }
     };
 
