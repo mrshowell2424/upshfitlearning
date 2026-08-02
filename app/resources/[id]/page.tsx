@@ -144,14 +144,22 @@ export default async function ResourceDetailPage({ params }: PageProps) {
                 </div>
               ) : (
                 <>
+                  <a
+                    href={`https://www.youtube.com/watch?v=${resource.youtube_id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-coral text-white py-2 rounded-lg font-semibold hover:bg-coral-press transition-colors text-center mb-3"
+                  >
+                    Watch on YouTube
+                  </a>
                   {docUrl && (
                     <a
                       href={docUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-full bg-coral text-white py-2 rounded-lg font-semibold hover:bg-coral-press transition-colors text-center mb-3"
+                      className="block w-full bg-charcoal text-white py-2 rounded-lg font-semibold hover:bg-charcoal/90 transition-colors text-center mb-3"
                     >
-                      Open resource
+                      Grab the resource here
                     </a>
                   )}
                   <button className="w-full border border-border py-2 rounded-lg font-semibold hover:bg-gray-050 transition-colors">
