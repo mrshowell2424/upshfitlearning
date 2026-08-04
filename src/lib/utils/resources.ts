@@ -10,9 +10,17 @@ const COL = {
   title: 2,
   purpose: 3,
   youtubeUrl: 4,
+  resourceUrl: 5,
   summary: 6,
   access: 7,
+  createdBy: 13,
 } as const
+
+/**
+ * Upshift's own YouTube handle, including the misspellings that appear in the
+ * sheet's "Created By" column (@mrshowel24, @rshowell24, @mrhsowell24).
+ */
+const OWN_CHANNEL_PATTERN = /mr\s*h?showell|mrshowell|mrhsowell|mrshowel|rshowell/i
 
 export interface Resource {
   id: string
@@ -24,6 +32,25 @@ export interface Resource {
   is_free: boolean
   published_at: string | Date
   thumbnail_url?: string
+  youtube_id?: string
+  youtube_url?: string
+  resource_url?: string
+  summary?: string
+  created_by?: string
+}
+
+/**
+ * True when the resource is one of Upshift's own videos: it has a YouTube video
+ * and its "Created By" credit is either Upshift's handle or blank. Rows credited
+ * solely to someone else (a guest, or the Gold Community) are excluded.
+ */
+export function isOwnVideo(resource: Resource): boolean {
+  if (!resource.youtube_id) return false
+
+  const credit = resource.created_by?.trim()
+  if (!credit) return true // unattributed rows in her own sheet are hers
+
+  return OWN_CHANNEL_PATTERN.test(credit)
 }
 
 async function fetchGoogleSheetResources(): Promise<Resource[]> {
@@ -67,7 +94,8 @@ async function fetchGoogleSheetResources(): Promise<Resource[]> {
       const title = row[COL.title]?.trim()
       if (!title) continue
 
-      const youtubeId = extractYoutubeId(row[COL.youtubeUrl]?.trim())
+      const youtubeUrl = row[COL.youtubeUrl]?.trim()
+      const youtubeId = extractYoutubeId(youtubeUrl)
       const access = row[COL.access]?.trim().toLowerCase() ?? ''
 
       resources.push({
@@ -80,6 +108,11 @@ async function fetchGoogleSheetResources(): Promise<Resource[]> {
         is_free: !access.includes('paid') && access !== 'false',
         published_at: row[COL.date]?.trim() || new Date().toISOString(),
         thumbnail_url: youtubeId ? `https://i.ytimg.com/vi/${youtubeId}/mqdefault.jpg` : undefined,
+        youtube_id: youtubeId,
+        youtube_url: youtubeId ? `https://www.youtube.com/watch?v=${youtubeId}` : undefined,
+        resource_url: row[COL.resourceUrl]?.trim() || undefined,
+        summary: row[COL.summary]?.trim() || undefined,
+        created_by: row[COL.createdBy]?.trim() || undefined,
       })
     }
 
@@ -113,6 +146,28 @@ function extractYoutubeId(url?: string): string | undefined {
 let cachedResources: Resource[] | null = null
 let cacheTime = 0
 const CACHE_DURATION = 5 * 60 * 1000
+
+export async function getResourceById(id: string): Promise<Resource | null> {
+  const all = await getResources()
+  return all.find(r => r.id === id) ?? null
+}
+
+/**
+ * Other resources worth pairing with this one: Upshift's own videos, preferring
+ * the same purpose, never the resource itself.
+ */
+export async function getRelatedOwnVideos(resource: Resource, limit = 3): Promise<Resource[]> {
+  const all = await getResources()
+  const candidates = all.filter(r => r.id !== resource.id && isOwnVideo(r))
+
+  const samePurpose = resource.purpose
+    ? candidates.filter(r => r.purpose === resource.purpose)
+    : []
+
+  // Top up with any other own video so the rail is never half-empty
+  const rest = candidates.filter(r => !samePurpose.includes(r))
+  return [...samePurpose, ...rest].slice(0, limit)
+}
 
 export async function getResources(): Promise<Resource[]> {
   const now = Date.now()

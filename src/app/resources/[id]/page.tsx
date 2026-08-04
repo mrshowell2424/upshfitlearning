@@ -2,10 +2,10 @@
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import ResourceCard from "@/components/shared/ResourceCard";
-import { db } from "@/lib/db";
-import { resources } from "@/lib/db/schema";
-import { eq } from "drizzle-orm";
+import { getResourceById, getRelatedOwnVideos } from "@/lib/utils/resources";
 import { notFound } from "next/navigation";
+import { ResourceActions } from "./actions";
+import { VideoThumbnail } from "./thumbnail";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -14,50 +14,14 @@ interface PageProps {
 export default async function ResourceDetailPage({ params }: PageProps) {
   const { id } = await params;
 
-  // Sample resource for fallback
-  const sampleResource = {
-    id: id,
-    title: "Behavior Bingo",
-    purpose: "Classroom management",
-    grade_band: "K-12",
-    skill: "Behavior",
-    format: "Video",
-    summary: "An engaging classroom management tool that uses bingo to reinforce positive behaviors and increase engagement.",
-    youtube_id: "ctkvqH4EcqM",
-    link_url: "https://docs.google.com/presentation/d/1example/edit",
-    published_at: new Date("2024-01-15"),
-    is_free: true,
-    prep_time: "15 min",
-    access: "Free",
-    why_this_works: "Research shows that gamified classroom management increases student engagement by up to 40%. Bingo taps into students' natural love of games while reinforcing positive behaviors.",
-    why_tags: ["Gamification", "Engagement", "Behavior"],
-    teaching_moves: [
-      "Display the bingo board with 25 behavior squares for all to see",
-      "Call out behaviors as you observe them and mark the board",
-      "First student to get 5 in a row wins the round",
-      "Use real-time positive reinforcement and celebrate wins",
-    ],
-    video_duration: "2:10",
-  };
+  // The public library is keyed by Google Sheet row, which is also what the
+  // resource cards link to — so resolve against the sheet, not the uuid table.
+  const resource = await getResourceById(id);
+  if (!resource) notFound();
 
-  let resource = sampleResource;
-  try {
-    const items = await db
-      .select()
-      .from(resources)
-      .where(eq(resources.id, id))
-      .limit(1);
+  const related = await getRelatedOwnVideos(resource, 3);
 
-    if (items[0]) {
-      resource = items[0];
-    }
-  } catch (error) {
-    console.error("Database error fetching resource:", error);
-    // Use sample resource as fallback
-  }
-
-  const coverUrl = `https://i.ytimg.com/vi/${resource.youtube_id}/maxresdefault.jpg`;
-  const docUrl = resource.link_url;
+  const docUrl = resource.resource_url;
 
   const date = resource.published_at
     ? new Date(resource.published_at).toLocaleDateString("en-US", {
@@ -102,13 +66,21 @@ export default async function ResourceDetailPage({ params }: PageProps) {
             </p>
 
             {/* Video player */}
-            <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden mb-8 group">
+            {resource.youtube_url && (
+            <a
+              href={resource.youtube_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block aspect-video bg-gray-100 rounded-lg overflow-hidden mb-8 group"
+            >
               <div className="relative w-full h-full cursor-pointer bg-black">
-                <img
-                  src={coverUrl}
-                  alt={resource.title}
-                  className="w-full h-full object-cover group-hover:opacity-75 transition-opacity"
-                />
+                {resource.youtube_id && (
+                  <VideoThumbnail
+                    youtubeId={resource.youtube_id}
+                    alt={resource.title}
+                    className="w-full h-full object-cover group-hover:opacity-75 transition-opacity"
+                  />
+                )}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-16 h-16 bg-coral rounded-full flex items-center justify-center hover:bg-coral-press transition-colors">
                     <svg
@@ -121,13 +93,14 @@ export default async function ResourceDetailPage({ params }: PageProps) {
                   </div>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent h-20 flex items-end pb-4 pl-4">
-                  <span className="text-white text-sm font-semibold">WATCH HERE • {resource.video_duration || "2:10"}</span>
+                  <span className="text-white text-sm font-semibold">WATCH ON YOUTUBE</span>
                 </div>
               </div>
-            </div>
+            </a>
+            )}
 
             {/* Teaching moves */}
-            <div className="mb-12">
+            <div className={`mb-12 ${resource.teaching_moves?.length ? "" : "hidden"}`}>
               <h2 className="text-[26px] font-bold mb-4">Teaching moves</h2>
               <div className="space-y-3">
                 {(resource.teaching_moves || []).map((move, idx) => (
@@ -179,29 +152,11 @@ export default async function ResourceDetailPage({ params }: PageProps) {
                   </button>
                 </div>
               ) : (
-                <>
-                  {docUrl && (
-                    <a
-                      href={docUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full bg-coral text-white py-2 rounded-lg font-semibold hover:bg-coral-press transition-colors text-center mb-3"
-                    >
-                      Open Google Slides
-                    </a>
-                  )}
-                  <a
-                    href={`https://www.youtube.com/watch?v=${resource.youtube_id}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full text-coral py-2 rounded-lg font-semibold hover:text-coral-press transition-colors text-center mb-3"
-                  >
-                    Watch on YouTube
-                  </a>
-                  <button className="w-full border border-border py-2 rounded-lg font-semibold hover:bg-gray-050 transition-colors">
-                    Save to planner
-                  </button>
-                </>
+                <ResourceActions
+                  docUrl={docUrl}
+                  youtubeUrl={resource.youtube_url}
+                  youtubeId={resource.youtube_id}
+                />
               )}
             </div>
 
@@ -240,51 +195,37 @@ export default async function ResourceDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            {/* Pairs well with */}
-            <div>
-              <h3 className="text-sm font-bold uppercase tracking-[0.1em] mb-4">Pairs well with</h3>
-              <div className="space-y-4">
-                <a href="/resources/2" className="block border border-border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
-                  <div className="aspect-video bg-gray-100 overflow-hidden">
-                    <img
-                      src="https://i.ytimg.com/vi/dQw4w9WgXcQ/mqdefault.jpg"
-                      alt="Related resource"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-3">
-                    <p className="font-semibold text-sm text-charcoal line-clamp-2">Student Engagement Strategies</p>
-                    <p className="text-xs text-text-muted mt-1">Instructional Strategies</p>
-                  </div>
-                </a>
-                <a href="/resources/3" className="block border border-border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
-                  <div className="aspect-video bg-gray-100 overflow-hidden">
-                    <img
-                      src="https://i.ytimg.com/vi/9bZkp7q19f0/mqdefault.jpg"
-                      alt="Related resource"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-3">
-                    <p className="font-semibold text-sm text-charcoal line-clamp-2">Positive Reinforcement Techniques</p>
-                    <p className="text-xs text-text-muted mt-1">Classroom Management</p>
-                  </div>
-                </a>
-                <a href="/resources/4" className="block border border-border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
-                  <div className="aspect-video bg-gray-100 overflow-hidden">
-                    <img
-                      src="https://i.ytimg.com/vi/jNQXAC9IVRw/mqdefault.jpg"
-                      alt="Related resource"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-3">
-                    <p className="font-semibold text-sm text-charcoal line-clamp-2">Behavior Tracking Systems</p>
-                    <p className="text-xs text-text-muted mt-1">Assessment</p>
-                  </div>
-                </a>
+            {/* Pairs well with — Upshift's own videos only */}
+            {related.length > 0 && (
+              <div>
+                <h3 className="text-sm font-bold uppercase tracking-[0.1em] mb-4">Pairs well with</h3>
+                <div className="space-y-4">
+                  {related.map((item) => (
+                    <a
+                      key={item.id}
+                      href={`/resources/${item.id}`}
+                      className="block border border-border rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                    >
+                      <div className="aspect-video bg-gray-100 overflow-hidden">
+                        {item.thumbnail_url && (
+                          <img
+                            src={item.thumbnail_url}
+                            alt={item.title}
+                            className="w-full h-full object-cover"
+                          />
+                        )}
+                      </div>
+                      <div className="p-3">
+                        <p className="font-semibold text-sm text-charcoal line-clamp-2">{item.title}</p>
+                        {item.purpose && (
+                          <p className="text-xs text-text-muted mt-1">{item.purpose}</p>
+                        )}
+                      </div>
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </main>
