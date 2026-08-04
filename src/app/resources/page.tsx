@@ -52,69 +52,63 @@ function ResourcesContent() {
     { id: "13", title: "Literacy Assessment Tools", purpose: "Complete assessment suite for literacy", format: "Assessment", grade_band: "3-5", skill: "Reading", is_free: false, published_at: "2024-01-23T00:00:00.000Z" },
   ];
 
-  const [items, setItems] = useState<Resource[]>(sampleResources);
-  const [total, setTotal] = useState(sampleResources.length);
-  const [totalPages, setTotalPages] = useState(1);
-  const [loading, setLoading] = useState(false);
+  const [items, setItems] = useState<Resource[]>([]);
+  const [total, setTotal] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [purposes, setPurposes] = useState<{ value: string; count: number }[]>([]);
+  const [accessCounts, setAccessCounts] = useState({ free: 0, paid: 0 });
+  const [showAllPurposes, setShowAllPurposes] = useState(false);
   const pageSize = 30;
 
   useEffect(() => {
     const fetchResources = async () => {
+      setLoading(true);
       try {
         const url = new URL('/api/resources', typeof window !== 'undefined' ? window.location.origin : 'https://hub.upshiftlearning.com');
         url.searchParams.set('page', page.toString());
         if (search) {
           url.searchParams.set('search', search);
         }
+        // Filtering happens server-side against the whole sheet — filtering the
+        // 30-item page client-side would only ever search the current page.
+        if (purpose !== 'all') {
+          url.searchParams.set('purpose', purpose);
+        }
+        if (filterType !== 'all') {
+          url.searchParams.set('access', filterType);
+        }
         const response = await fetch(url.toString());
         if (!response.ok) {
           throw new Error(`API error: ${response.status}`);
         }
         const data = await response.json();
-        const allItems = [...(data.items || []), ...sampleResources.filter(s => !s.is_free)];
-        setItems(allItems.length > 0 ? allItems : sampleResources);
-        setTotal(allItems.length > 0 ? allItems.length : sampleResources.length);
-        setTotalPages(Math.ceil((allItems.length > 0 ? allItems.length : sampleResources.length) / 30));
+        setItems(data.items || []);
+        setTotal(data.total ?? 0);
+        setTotalPages(data.totalPages ?? 0);
+        setPurposes(data.purposes || []);
+        setAccessCounts(data.accessCounts || { free: 0, paid: 0 });
       } catch (error) {
         console.error('Error fetching resources:', error);
-        // Keep sample data visible even if fetch fails
+        // Fall back to sample data so the page still renders something
+        setItems(sampleResources);
+        setTotal(sampleResources.length);
+        setTotalPages(1);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchResources();
-  }, [page, search]);
+  }, [page, search, purpose, filterType]);
 
   const sortParam = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('sort') || 'newest' : 'newest';
 
-  // Get unique purposes for filter
-  const uniquePurposes = Array.from(new Set(items.map(item => item.purpose).filter(Boolean))).sort();
-  const uniqueGradeBands = Array.from(new Set(items.map(item => item.grade_band).filter(Boolean))).sort();
+  // The API already applied the access and purpose filters across the whole
+  // library, so `items` is the current page of results as-is.
+  const filteredItems = items;
 
-  // Filter items based on filter type and purpose
-  let filteredItems = items;
-  if (filterType === 'free') {
-    filteredItems = items.filter(item => item.is_free);
-  } else if (filterType === 'paid') {
-    filteredItems = items.filter(item => !item.is_free);
-  }
-
-  if (purpose !== 'all') {
-    filteredItems = filteredItems.filter(item => item.purpose === purpose);
-  }
-
-  // Helper function to get count for filter
-  const getFilterCount = (type: string, value: string) => {
-    let count = items.length;
-    if (type === 'access') {
-      if (value === 'free') count = items.filter(i => i.is_free).length;
-      else if (value === 'all-access') count = items.filter(i => !i.is_free).length;
-    } else if (type === 'purpose' && value !== 'all') {
-      count = items.filter(i => i.purpose === value).length;
-    } else if (type === 'grade' && value !== 'all') {
-      count = items.filter(i => i.grade_band === value).length;
-    }
-    return count;
-  };
+  const visiblePurposes = showAllPurposes ? purposes : purposes.slice(0, 5);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -132,36 +126,28 @@ function ResourcesContent() {
                   <input
                     type="checkbox"
                     checked={filterType === 'free'}
-                    onChange={() => setFilterType(filterType === 'free' ? 'all' : 'free')}
+                    onChange={() => {
+                      setFilterType(filterType === 'free' ? 'all' : 'free');
+                      setPage(1);
+                    }}
                     className="w-4 h-4"
                   />
                   <span className="text-sm text-charcoal">Free</span>
-                  <span className="text-xs text-text-muted ml-auto">{getFilterCount('access', 'free')}</span>
+                  <span className="text-xs text-text-muted ml-auto">{accessCounts.free}</span>
                 </label>
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={filterType === 'paid'}
-                    onChange={() => setFilterType(filterType === 'paid' ? 'all' : 'paid')}
+                    onChange={() => {
+                      setFilterType(filterType === 'paid' ? 'all' : 'paid');
+                      setPage(1);
+                    }}
                     className="w-4 h-4"
                   />
                   <span className="text-sm text-charcoal">All-Access</span>
-                  <span className="text-xs text-text-muted ml-auto">{getFilterCount('access', 'all-access')}</span>
+                  <span className="text-xs text-text-muted ml-auto">{accessCounts.paid}</span>
                 </label>
-              </div>
-            </div>
-
-            {/* Grade Levels filter */}
-            <div>
-              <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-charcoal mb-3">Grade levels</h3>
-              <div className="space-y-2">
-                {uniqueGradeBands.map((grade) => (
-                  <label key={grade} className="flex items-center gap-2 cursor-pointer">
-                    <input type="checkbox" className="w-4 h-4" />
-                    <span className="text-sm text-charcoal">{grade}</span>
-                    <span className="text-xs text-text-muted ml-auto">{getFilterCount('grade', grade)}</span>
-                  </label>
-                ))}
               </div>
             </div>
 
@@ -169,21 +155,27 @@ function ResourcesContent() {
             <div>
               <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-charcoal mb-3">Purpose</h3>
               <div className="space-y-2 max-h-64 overflow-y-auto">
-                {uniquePurposes.slice(0, 5).map((p) => (
-                  <label key={p} className="flex items-center gap-2 cursor-pointer">
+                {visiblePurposes.map((p) => (
+                  <label key={p.value} className="flex items-center gap-2 cursor-pointer">
                     <input
                       type="checkbox"
-                      checked={purpose === p}
-                      onChange={() => setPurpose(purpose === p ? 'all' : p)}
+                      checked={purpose === p.value}
+                      onChange={() => {
+                        setPurpose(purpose === p.value ? 'all' : p.value);
+                        setPage(1);
+                      }}
                       className="w-4 h-4"
                     />
-                    <span className="text-sm text-charcoal">{p}</span>
-                    <span className="text-xs text-text-muted ml-auto">{getFilterCount('purpose', p)}</span>
+                    <span className="text-sm text-charcoal">{p.value}</span>
+                    <span className="text-xs text-text-muted ml-auto">{p.count}</span>
                   </label>
                 ))}
-                {uniquePurposes.length > 5 && (
-                  <button className="text-coral font-semibold text-sm hover:text-coral-press">
-                    Show all {uniquePurposes.length}
+                {purposes.length > 5 && (
+                  <button
+                    onClick={() => setShowAllPurposes(!showAllPurposes)}
+                    className="text-coral font-semibold text-sm hover:text-coral-press"
+                  >
+                    {showAllPurposes ? 'Show fewer' : `Show all ${purposes.length}`}
                   </button>
                 )}
               </div>

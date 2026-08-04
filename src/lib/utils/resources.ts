@@ -1,4 +1,18 @@
+import Papa from 'papaparse'
+
 const GOOGLE_SHEETS_ID = '1dVlowQJxditueoFpI42NOnZrlJ1sArKPRqfPQwFAqrc'
+
+// Column positions in the published sheet. The header labels are misleading:
+// column 4 is labeled "Description" but holds the YouTube URL, and column 5
+// labeled "URL" holds the resource link (Slides, Docs, etc).
+const COL = {
+  date: 1,
+  title: 2,
+  purpose: 3,
+  youtubeUrl: 4,
+  summary: 6,
+  access: 7,
+} as const
 
 export interface Resource {
   id: string
@@ -30,44 +44,43 @@ async function fetchGoogleSheetResources(): Promise<Resource[]> {
     }
 
     const csv = await response.text()
-    const lines = csv
-      .split('\n')
-      .map(line => line.trim())
-      .filter(line => line.length > 0)
 
-    if (lines.length < 2) {
+    // Purpose, Summary and Description cells contain commas, quotes and hard
+    // line breaks, so the CSV must be parsed properly — splitting on '\n'
+    // shreds every multi-line row and misaligns the columns after it.
+    const { data: rows, errors } = Papa.parse<string[]>(csv, { skipEmptyLines: true })
+
+    if (errors.length) {
+      console.warn(`Google Sheet CSV parsed with ${errors.length} warning(s); first:`, errors[0]?.message)
+    }
+
+    if (rows.length < 2) {
       console.warn('Google Sheet is empty or inaccessible')
       return []
     }
 
     const resources: Resource[] = []
 
-    for (let i = 1; i < lines.length; i++) {
-      const row = parseCSVLine(lines[i])
+    for (let i = 1; i < rows.length; i++) {
+      const row = rows[i]
 
-      const title = row[2]?.trim()
+      const title = row[COL.title]?.trim()
       if (!title) continue
 
-      // Extract YouTube ID from column E (index 4)
-      const youtubeId = extractYoutubeId(row[4]?.trim())
+      const youtubeId = extractYoutubeId(row[COL.youtubeUrl]?.trim())
+      const access = row[COL.access]?.trim().toLowerCase() ?? ''
 
-      const resource: Resource = {
+      resources.push({
         id: String(i),
-        title: title,
-        purpose: row[3]?.trim() || '',
+        title,
+        purpose: row[COL.purpose]?.trim() || '',
         format: 'Video',
         grade_band: 'K-12',
         skill: 'Teaching Strategies',
-        is_free:
-          !row[7]?.toString().toLowerCase().includes('paid') &&
-          row[7]?.toString().toLowerCase() !== 'false',
-        published_at: row[1]?.trim() || new Date().toISOString(),
+        is_free: !access.includes('paid') && access !== 'false',
+        published_at: row[COL.date]?.trim() || new Date().toISOString(),
         thumbnail_url: youtubeId ? `https://i.ytimg.com/vi/${youtubeId}/mqdefault.jpg` : undefined,
-      }
-
-      if (resource.title) {
-        resources.push(resource)
-      }
+      })
     }
 
     console.log(`✓ Loaded ${resources.length} resources from Google Sheets`)
@@ -95,28 +108,6 @@ function extractYoutubeId(url?: string): string | undefined {
     console.error('Error extracting YouTube ID:', e)
   }
   return undefined
-}
-
-function parseCSVLine(line: string): string[] {
-  const fields: string[] = []
-  let currentField = ''
-  let inQuotes = false
-
-  for (let i = 0; i < line.length; i++) {
-    const char = line[i]
-
-    if (char === '"') {
-      inQuotes = !inQuotes
-    } else if (char === ',' && !inQuotes) {
-      fields.push(currentField.replace(/^"+|"+$/g, ''))
-      currentField = ''
-    } else {
-      currentField += char
-    }
-  }
-
-  fields.push(currentField.replace(/^"+|"+$/g, ''))
-  return fields
 }
 
 let cachedResources: Resource[] | null = null
