@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import { useAuth } from '@/providers/AuthProvider'
 import Header from '@/components/shared/Header'
 import Footer from '@/components/shared/Footer'
+import { isStandardCode, standardHref } from '@/lib/utils/standards'
 
 export default function Home() {
   const [searchInput, setSearchInput] = useState('')
@@ -13,13 +14,22 @@ export default function Home() {
   const { isPremium, isLoading } = useAuth()
 
   const handleSearch = (query: string) => {
-    if (query.trim()) {
-      // If premium, go to resources; otherwise go to match page
-      if (isPremium) {
-        router.push(`/resources?search=${encodeURIComponent(query)}`)
-      } else {
-        router.push(`/match?q=${encodeURIComponent(query)}`)
-      }
+    const trimmed = query.trim()
+    if (!trimmed) return
+
+    // A standard code goes straight to that standard's detail page, so the
+    // deconstruction, blueprint, resources and generator are all right there.
+    if (isStandardCode(trimmed)) {
+      router.push(standardHref(trimmed))
+      return
+    }
+
+    // Plain-language search: premium users get the resource library, everyone
+    // else gets the standard matcher.
+    if (isPremium) {
+      router.push(`/resources?search=${encodeURIComponent(trimmed)}`)
+    } else {
+      router.push(`/match?q=${encodeURIComponent(trimmed)}`)
     }
   }
 
@@ -83,17 +93,14 @@ export default function Home() {
             <div className="flex items-center gap-3 mb-12 flex-wrap">
               <span className="text-sm text-text-muted">Try:</span>
               {examples.map((example) => (
-                <button
+                <Link
                   key={example.code}
-                  onClick={() => {
-                    setSearchInput(example.code)
-                    handleSearch(example.code)
-                  }}
+                  href={standardHref(example.code)}
                   className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-charcoal rounded-full text-sm font-medium border border-border transition-colors"
-                  title={example.subject}
+                  title={`${example.subject} — open ${example.code}`}
                 >
                   {example.code}
-                </button>
+                </Link>
               ))}
             </div>
 

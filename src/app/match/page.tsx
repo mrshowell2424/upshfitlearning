@@ -1,10 +1,11 @@
 // @ts-nocheck
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useEffect, useCallback, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
+import { isStandardCode, standardHref } from "@/lib/utils/standards";
 
 const exampleSearches = [
   "RL.2.1",
@@ -13,40 +14,54 @@ const exampleSearches = [
   "context clues",
 ];
 
-export default function MatchPage() {
+function MatchPageContent() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<any[]>([]);
   const [searching, setSearching] = useState(false);
   const router = useRouter();
+  const searchParams = useSearchParams();
 
-  const handleSearch = async (searchTerm: string) => {
-    if (!searchTerm.trim()) return;
+  const handleSearch = useCallback(
+    async (searchTerm: string) => {
+      const trimmed = searchTerm.trim();
+      if (!trimmed) return;
 
-    // First, try direct code match
-    if (searchTerm.match(/^[A-Z]{1,2}\.\d\.\d+$/i)) {
-      router.push(`/match/${encodeURIComponent(searchTerm.toUpperCase())}`);
-      return;
-    }
-
-    // Otherwise, search by description/skills
-    setSearching(true);
-    try {
-      const response = await fetch(
-        `/api/search-standards?q=${encodeURIComponent(searchTerm)}`
-      );
-      const data = await response.json();
-      setResults(data.results || []);
-
-      // If exactly one result, go directly to it
-      if (data.results && data.results.length === 1) {
-        router.push(`/match/${data.results[0].code}`);
+      // Anything shaped like a code goes straight to the standard detail page
+      if (isStandardCode(trimmed)) {
+        router.push(standardHref(trimmed));
+        return;
       }
-    } catch (error) {
-      console.error("Search failed:", error);
-    } finally {
-      setSearching(false);
+
+      // Otherwise, search by description/skills
+      setSearching(true);
+      try {
+        const response = await fetch(
+          `/api/search-standards?q=${encodeURIComponent(trimmed)}`
+        );
+        const data = await response.json();
+        setResults(data.results || []);
+
+        // If exactly one result, go directly to it
+        if (data.results && data.results.length === 1) {
+          router.push(standardHref(data.results[0].code));
+        }
+      } catch (error) {
+        console.error("Search failed:", error);
+      } finally {
+        setSearching(false);
+      }
+    },
+    [router]
+  );
+
+  // Honour ?q= so links into this page (e.g. from the home page) actually search
+  useEffect(() => {
+    const q = searchParams.get("q");
+    if (q) {
+      setQuery(q);
+      handleSearch(q);
     }
-  };
+  }, [searchParams, handleSearch]);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -132,7 +147,7 @@ export default function MatchPage() {
                 {results.map((result) => (
                   <button
                     key={result.code}
-                    onClick={() => router.push(`/match/${result.code}`)}
+                    onClick={() => router.push(standardHref(result.code))}
                     className="w-full text-left border border-border rounded-lg p-4 hover:bg-gray-050 transition-colors"
                   >
                     <div className="font-bold text-charcoal mb-1">{result.code}</div>
@@ -207,5 +222,21 @@ export default function MatchPage() {
 
       <Footer />
     </div>
+  );
+}
+
+export default function MatchPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex flex-col min-h-screen">
+          <div className="flex-1 px-8 py-16">
+            <div className="max-w-2xl mx-auto h-64 bg-gray-100 rounded-lg animate-pulse" />
+          </div>
+        </div>
+      }
+    >
+      <MatchPageContent />
+    </Suspense>
   );
 }

@@ -15,13 +15,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
   const { code } = await params;
   const decodedCode = decodeURIComponent(code);
 
-  // Sample standard for fallback
-  const sampleStandard = {
-    code: decodedCode,
-    plain_reading: "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking.",
-  };
-
-  let standardRow = sampleStandard;
+  let standardRow = null;
   try {
     // Fetch actual standard from DB
     const standardRows = await db
@@ -30,18 +24,20 @@ export default async function MatchDetailPage({ params }: PageProps) {
       .where(eq(standards.code, decodedCode))
       .limit(1);
 
-    if (standardRows[0]) {
-      standardRow = standardRows[0];
-    }
+    standardRow = standardRows[0] ?? null;
   } catch (error) {
     console.error("Database error fetching standard:", error);
-    // Use sample standard as fallback
   }
 
+  // Grade lives in a different position per subject — RL.2.1, 2.NBT.B.5,
+  // K.PS2.A — so take the first segment that is a grade rather than index 1.
+  const gradeOf = (code: string) =>
+    code.split(".").find((part) => /^(K|\d{1,2})$/i.test(part)) ?? null;
+
   const standard = {
-    code: standardRow.code,
-    grade: standardRow.code.split(".")[1],
-    text: standardRow.plain_reading,
+    code: decodedCode,
+    grade: gradeOf(decodedCode),
+    text: standardRow?.plain_reading ?? null,
   };
 
   // Fetch blueprint from DB
@@ -153,28 +149,31 @@ export default async function MatchDetailPage({ params }: PageProps) {
         <div className="max-w-4xl mx-auto mb-8">
           <div className="flex items-baseline gap-3 mb-2">
             <h1 className="text-[48px] font-bold">{standard.code}</h1>
-            <span className="text-sm font-bold uppercase px-3 py-1 bg-gray-100 rounded-md">
-              Grade {standard.grade}
-            </span>
+            {standard.grade && (
+              <span className="text-sm font-bold uppercase px-3 py-1 bg-gray-100 rounded-md">
+                Grade {standard.grade}
+              </span>
+            )}
           </div>
-          <p className="text-[18px] text-text-body">{standard.text}</p>
+          {standard.text ? (
+            <p className="text-[18px] text-text-body">{standard.text}</p>
+          ) : (
+            <p className="text-[18px] text-text-muted italic">
+              We don&apos;t have this standard written up yet.
+            </p>
+          )}
         </div>
 
-        {/* Tabs */}
+        {/* Tabs — always rendered so every section is reachable, each with its
+            own empty state when that standard has not been authored yet. */}
         <div className="max-w-4xl mx-auto">
-          {blueprint && unpack ? (
-            <MatchDetailClient
-              standard_code={decodedCode}
-              blueprint={blueprint}
-              unpack={unpack}
-              resources={matchingResources}
-              userTier="free"
-            />
-          ) : (
-            <div className="text-center py-8">
-              <p className="text-text-muted">Loading standard details...</p>
-            </div>
-          )}
+          <MatchDetailClient
+            standard_code={decodedCode}
+            blueprint={blueprint}
+            unpack={unpack}
+            resources={matchingResources}
+            userTier="free"
+          />
         </div>
       </main>
 

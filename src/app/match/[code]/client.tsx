@@ -2,17 +2,28 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { useAuth } from "@/providers/AuthProvider";
 import { UpgradeModal } from "@/components/shared/UpgradeModal";
 
+// The lesson blueprint is the free taste; the other three are All-Access.
 const tabs = [
-  { id: "blueprint", label: "Lesson blueprint" },
-  { id: "unpack", label: "Unpack the standard" },
-  { id: "resources", label: "Resources to remix" },
-  { id: "generate", label: "Make it for my learners" },
+  { id: "blueprint", label: "Lesson blueprint", premium: false },
+  { id: "unpack", label: "Unpack the standard", premium: true },
+  { id: "resources", label: "Resources to remix", premium: true },
+  { id: "generate", label: "Make it for my learners", premium: true },
 ];
 
 export function MatchDetailClient({ standard_code, blueprint, unpack, resources, userTier = "free" }) {
   const [activeTab, setActiveTab] = useState("blueprint");
+  const { isPremium, isLoading } = useAuth();
+
+  // Trust the live session over the server-rendered default
+  const hasAllAccess = isPremium || userTier === "pro" || userTier === "school";
+
+  const current = tabs.find((t) => t.id === activeTab);
+  // Don't flash a paywall while the session is still resolving
+  const locked = !isLoading && !hasAllAccess && !!current?.premium;
 
   return (
     <div>
@@ -22,31 +33,121 @@ export function MatchDetailClient({ standard_code, blueprint, unpack, resources,
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`px-4 py-3 font-semibold text-sm transition-colors whitespace-nowrap border-b-2 ${
+            className={`px-4 py-3 font-semibold text-sm transition-colors whitespace-nowrap border-b-2 flex items-center gap-1.5 ${
               activeTab === tab.id
                 ? "text-charcoal border-charcoal"
                 : "text-text-muted border-transparent hover:text-charcoal"
             }`}
           >
             {tab.label}
+            {!isLoading && !hasAllAccess && tab.premium && (
+              <LockIcon className="w-3 h-3 opacity-60" />
+            )}
           </button>
         ))}
       </div>
 
       {/* Tab content */}
-      <div>
+      <LockedOverlay locked={locked} feature={current?.label ?? ""}>
         {activeTab === "blueprint" && <BlueprintTab blueprint={blueprint} />}
         {activeTab === "unpack" && <UnpackTab unpack={unpack} />}
         {activeTab === "resources" && <ResourcesTab resources={resources} standard_code={standard_code} />}
         {activeTab === "generate" && (
           <GenerateTab standard_code={standard_code} blueprint={blueprint} unpack={unpack} userTier={userTier} />
         )}
+      </LockedOverlay>
+    </div>
+  );
+}
+
+function LockIcon({ className = "" }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+      <rect x="4" y="11" width="16" height="10" rx="2" />
+      <path d="M8 11V7a4 4 0 018 0v4" />
+    </svg>
+  );
+}
+
+/**
+ * Renders the real content behind a blur with an All-Access card on top. The
+ * content stays in the DOM (blurred) so free users can see there is something
+ * substantial there, which is the point of the teaser.
+ */
+function LockedOverlay({ locked, feature, children }) {
+  if (!locked) return <div>{children}</div>;
+
+  return (
+    <div className="relative">
+      <div
+        className="blur-[6px] select-none pointer-events-none opacity-60 max-h-[520px] overflow-hidden"
+        aria-hidden="true"
+      >
+        {children}
+      </div>
+
+      {/* Fade so the blurred content dissolves rather than being cut off */}
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-white" />
+
+      <div className="absolute inset-0 flex items-start justify-center pt-16">
+        <div className="bg-white border border-border rounded-2xl shadow-lg p-8 max-w-md text-center">
+          <div className="w-12 h-12 rounded-full bg-coral/10 flex items-center justify-center mx-auto mb-4">
+            <LockIcon className="w-5 h-5 text-coral" />
+          </div>
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-coral mb-2">
+            All Access
+          </p>
+          <h3 className="text-[22px] font-bold text-charcoal mb-3">
+            {feature} is part of All Access
+          </h3>
+          <p className="text-[15px] text-text-muted mb-6">
+            The lesson blueprint is free. Unlock the deconstruction, remixable
+            resources and the generator to build the whole lesson for your
+            learners.
+          </p>
+          <div className="flex flex-col gap-2">
+            <Link
+              href="/pricing"
+              className="px-6 py-3 rounded-[10px] font-semibold text-white bg-coral hover:bg-coral-press transition-colors"
+            >
+              Get All Access
+            </Link>
+            <Link
+              href="/auth/signup"
+              className="text-sm font-semibold text-charcoal hover:text-coral transition-colors"
+            >
+              Create a free account
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
+function NotAuthoredYet({ what }) {
+  return (
+    <div className="border border-dashed border-border rounded-2xl p-10 text-center">
+      <p className="text-[17px] font-semibold text-charcoal mb-2">
+        No {what} for this standard yet
+      </p>
+      <p className="text-[15px] text-text-muted mb-6 max-w-md mx-auto">
+        We build these by hand, standard by standard. This one is still on the
+        list.
+      </p>
+      <Link
+        href="/match"
+        className="text-coral font-semibold hover:text-coral-press transition-colors"
+      >
+        Try another standard →
+      </Link>
+    </div>
+  );
+}
+
 function BlueprintTab({ blueprint }) {
+  if (!blueprint) return <NotAuthoredYet what="lesson blueprint" />;
+
   return (
     <div>
       {/* Context row */}
@@ -111,6 +212,8 @@ function BlueprintTab({ blueprint }) {
 }
 
 function UnpackTab({ unpack }) {
+  if (!unpack) return <NotAuthoredYet what="deconstruction" />;
+
   return (
     <div className="space-y-6">
       <Section title="Learning verbs" items={unpack.learningVerbs} />
@@ -185,6 +288,10 @@ function Section({ title, items }) {
 }
 
 function ResourcesTab({ resources, standard_code }) {
+  if (!resources || resources.length === 0) {
+    return <NotAuthoredYet what="matched resources" />;
+  }
+
   return (
     <div className="space-y-8">
       <div>
