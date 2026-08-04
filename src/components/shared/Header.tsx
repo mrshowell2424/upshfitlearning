@@ -32,11 +32,27 @@ export default function Header() {
         className="flex items-center gap-2 cursor-pointer flex-shrink-0"
         onClick={() => router.push("/")}
       >
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8 24L16 8L24 24" stroke="#FF6A5B" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-          <path d="M12 20L16 8L20 20" stroke="#E559A8" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-          <path d="M2 26L10 10L18 26" stroke="#B695D8" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-          <path d="M6 22L10 10L14 22" stroke="#6BA7D9" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+        {/* Four chevrons pointing up, evenly stacked on a shared centre line */}
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Upshift Learning"
+        >
+          <g
+            fill="none"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M7 10L16 5L25 10" stroke="#FF6A5B" />
+            <path d="M7 16L16 11L25 16" stroke="#E559A8" />
+            <path d="M7 22L16 17L25 22" stroke="#B695D8" />
+            <path d="M7 28L16 23L25 28" stroke="#6BA7D9" />
+          </g>
         </svg>
         <div className="flex flex-col gap-0.5">
           <div className="text-[16px] font-bold leading-tight text-charcoal">
