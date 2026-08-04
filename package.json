@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "typecheck:tests": "tsc --noEmit -p tests/tsconfig.json",
     "db:seed": "bun run scripts/seed-resources.ts",
     "db:seed:standards": "bun run scripts/seed-standards.ts",
     "db:push": "drizzle-kit push",

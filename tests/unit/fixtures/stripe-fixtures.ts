@@ -102,7 +102,6 @@ export const stripeFixtures = {
             lookup_key: null,
             metadata: {},
             nickname: null,
-            object: "price",
             product: "prod_pro",
             recurring: {
               aggregate_usage: null,

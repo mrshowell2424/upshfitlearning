@@ -127,7 +127,7 @@ describe("Google Sheets Sync Integration", () => {
 
     it("handles special characters in cells", () => {
       const row: GoogleSheetsRow = {
-        title: "L.3.2 - "Analyze & Synthesize" Reading",
+        title: 'L.3.2 - "Analyze & Synthesize" Reading',
         summary: 'Students will ask "why?" and "how?"',
         link_url: "https://example.com/resource?id=123&type=pdf",
         youtube_id: null,
