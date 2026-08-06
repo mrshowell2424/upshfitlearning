@@ -115,20 +115,11 @@ export default async function ResourceDetailPage({ params }: PageProps) {
           <div className="lg:sticky lg:top-24 h-fit">
             {/* Action card */}
             <div className="border border-border rounded-[14px] p-6 mb-6 bg-white">
-              {!resource.is_free ? (
-                <div className="text-center">
-                  <p className="text-text-muted text-sm mb-3">This resource requires an upgrade</p>
-                  <button className="w-full bg-charcoal text-white py-2 rounded-lg font-semibold hover:bg-charcoal/90">
-                    Upgrade to All-Access
-                  </button>
-                </div>
-              ) : (
-                <ResourceActions
-                  docUrl={docUrl}
-                  youtubeUrl={resource.youtube_url}
-                  youtubeId={resource.youtube_id}
-                />
-              )}
+              <ResourceActions
+                docUrl={docUrl}
+                youtubeUrl={resource.youtube_url}
+                isFree={resource.is_free}
+              />
             </div>
 
             {/* At a glance */}

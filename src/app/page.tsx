@@ -51,7 +51,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative py-12 md:py-14 md:py-24 px-5 md:px-5 md:px-8 bg-gradient-to-br from-gray-050 to-white">
+        <section className="relative py-12 md:py-24 px-5 md:px-8 bg-gradient-to-br from-gray-050 to-white">
           <div className="relative max-w-7xl mx-auto">
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-opacity-10 rounded-full" style={{backgroundColor: 'rgba(255, 106, 91, 0.1)'}}>
@@ -152,7 +152,7 @@ export default function Home() {
                 <div className="text-xs font-bold tracking-wider text-lavender uppercase mb-2">Discover Resources</div>
                 <h3 className="text-xl font-bold text-charcoal mb-3">Resource library</h3>
                 <p className="text-sm text-text-body mb-4">
-                  Free tier: 200 resources. Upgrade for access to all 2,688+ curated resources. Save them to your planner. Filter by grade, skill, and format.
+                  Free tier: 200 resources. Upgrade for access to all 2,688+ curated resources. Filter by grade, skill, and format.
                 </p>
                 <Link href="/resources" className="inline-flex items-center gap-2 text-coral font-semibold hover:text-coral-press transition-colors">
                   Browse resources →
@@ -212,13 +212,6 @@ export default function Home() {
                     <div>
                       <div className="font-semibold text-charcoal">Full Resource Library</div>
                       <div className="text-xs text-text-muted">Access all 2,688+ curated resources</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-teal text-lg">✓</span>
-                    <div>
-                      <div className="font-semibold text-charcoal">Save to Your Planner</div>
-                      <div className="text-xs text-text-muted">Organize resources by standard or topic</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">

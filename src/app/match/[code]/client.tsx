@@ -352,9 +352,6 @@ function ResourcesTab({ resources, standard_code }) {
                   <button className="px-4 py-2 bg-charcoal text-white rounded-lg font-semibold text-sm hover:bg-charcoal/90 transition-colors">
                     Open resource
                   </button>
-                  <button className="px-4 py-2 border border-border rounded-lg font-semibold text-sm hover:bg-gray-050 transition-colors">
-                    Save to planner
-                  </button>
                 </div>
               </div>
 

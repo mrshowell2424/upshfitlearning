@@ -40,10 +40,6 @@ export function UpgradeModal({ isOpen, onClose, feature }: { isOpen: boolean; on
             </div>
             <div className="flex gap-2">
               <span className="text-coral font-bold">✓</span>
-              <span className="text-sm">Access to lesson planner</span>
-            </div>
-            <div className="flex gap-2">
-              <span className="text-coral font-bold">✓</span>
               <span className="text-sm">Priority support</span>
             </div>
           </div>

@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import PreviewTierToggle from "./PreviewTierToggle";
 
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Resources", href: "/resources" },
   { label: "Standard match", href: "/match" },
-  { label: "My planner", href: "/planner" },
   { label: "Videos", href: "/videos" },
   { label: "Teacher's Lounge", href: "/lounge" },
   { label: "Plans", href: "/pricing" },
@@ -27,7 +27,6 @@ export default function Header() {
     if (pathname === "/") return "Home";
     if (pathname.startsWith("/resources")) return "Resources";
     if (pathname.startsWith("/match")) return "Standard match";
-    if (pathname.startsWith("/planner")) return "My planner";
     if (pathname.startsWith("/videos")) return "Videos";
     if (pathname.startsWith("/lounge")) return "Teacher's Lounge";
     if (pathname.startsWith("/pricing")) return "Plans";
@@ -99,6 +98,11 @@ export default function Header() {
 
       {/* Right */}
       <div className="flex items-center gap-2 lg:gap-3 flex-shrink-0 ml-auto lg:ml-0">
+        {/* Preview tier switch (dev/staging only) */}
+        <div className="hidden lg:block">
+          <PreviewTierToggle />
+        </div>
+
         {/* Auth buttons - shown when not logged in */}
         <a
           href="/auth/signin"
@@ -182,9 +186,13 @@ export default function Header() {
               </button>
             ))}
 
+            <div className="lg:hidden flex items-center px-5 py-3 border-t border-hairline mt-2">
+              <PreviewTierToggle />
+            </div>
+
             <a
               href="/auth/signin"
-              className="sm:hidden flex items-center min-h-[52px] px-5 text-[15px] font-semibold text-charcoal border-t border-hairline mt-2 hover:bg-gray-050 transition-colors"
+              className="sm:hidden flex items-center min-h-[52px] px-5 text-[15px] font-semibold text-charcoal hover:bg-gray-050 transition-colors"
             >
               Sign in
             </a>
