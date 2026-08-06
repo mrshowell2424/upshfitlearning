@@ -3,7 +3,7 @@ import { getResources } from '@/lib/utils/resources'
 
 // Purpose values present in the sheet but deliberately kept out of the filter
 // sidebar. Compared case-insensitively.
-const HIDDEN_PURPOSES = ['eduprotocols']
+const HIDDEN_PURPOSES = ['eduprotocols', 'ckla', 'indiana']
 
 export async function GET(request: NextRequest) {
   try {
