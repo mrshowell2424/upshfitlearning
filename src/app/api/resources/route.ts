@@ -1,16 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getResources } from '@/lib/utils/resources'
-
-// Purpose values present in the sheet but deliberately kept out of the filter
-// sidebar. Compared case-insensitively.
-const HIDDEN_PURPOSES = ['eduprotocols', 'ckla', 'indiana']
+import { getResources, RESOURCE_CATEGORIES } from '@/lib/utils/resources'
 
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams
     const page = parseInt(searchParams.get('page') || '1')
     const search = searchParams.get('search') || ''
-    const purpose = searchParams.get('purpose') || 'all'
+    const category = searchParams.get('category') || 'all'
     const access = searchParams.get('access') || 'all'
     const pageSize = 30
 
@@ -25,23 +21,23 @@ export async function GET(request: NextRequest) {
         page,
         pageSize,
         totalPages: 0,
-        purposes: [],
+        categories: [],
         accessCounts: { free: 0, paid: 0 },
         message: 'Resources not yet loaded. Please check Google Sheets integration.'
       })
     }
 
-    // Every distinct Purpose in the sheet, with counts — sent so the filter
-    // sidebar reflects the whole library rather than just the current page.
-    const purposeCounts = new Map<string, number>()
+    // The five categories with counts, sent so the sidebar reflects the whole
+    // library rather than just the current page. Every resource lands in exactly
+    // one, so these counts sum to the full total.
+    const categoryCounts = new Map<string, number>()
     for (const r of resources) {
-      if (!r.purpose) continue
-      if (HIDDEN_PURPOSES.includes(r.purpose.toLowerCase())) continue
-      purposeCounts.set(r.purpose, (purposeCounts.get(r.purpose) ?? 0) + 1)
+      categoryCounts.set(r.category, (categoryCounts.get(r.category) ?? 0) + 1)
     }
-    const purposes = [...purposeCounts.entries()]
-      .map(([value, count]) => ({ value, count }))
-      .sort((a, b) => b.count - a.count || a.value.localeCompare(b.value))
+    const categories = RESOURCE_CATEGORIES.map(value => ({
+      value,
+      count: categoryCounts.get(value) ?? 0,
+    })).filter(entry => entry.count > 0)
 
     const accessCounts = {
       free: resources.filter(r => r.is_free).length,
@@ -61,8 +57,8 @@ export async function GET(request: NextRequest) {
       )
     }
 
-    if (purpose !== 'all') {
-      filtered = filtered.filter(r => r.purpose === purpose)
+    if (category !== 'all') {
+      filtered = filtered.filter(r => r.category === category)
     }
 
     if (access === 'free') {
@@ -81,7 +77,7 @@ export async function GET(request: NextRequest) {
       page,
       pageSize,
       totalPages: Math.ceil(total / pageSize),
-      purposes,
+      categories,
       accessCounts,
     })
   } catch (error) {

@@ -111,81 +111,111 @@ export default function TeachersLounge() {
           </section>
         )}
 
-        {/* Posts Count and Filters */}
-        <section className="px-5 md:px-8 py-8 bg-white border-t border-hairline">
-          <div className="max-w-7xl mx-auto">
-            <p className="text-text-muted mb-6">
-              {filteredArticles.length} posts in the lounge
-            </p>
-            <div className="flex gap-2 flex-wrap">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category.toLowerCase() === 'all' ? 'all' : category.toLowerCase())}
-                  className={`inline-flex items-center min-h-[44px] px-4 rounded-full font-semibold text-sm transition-colors ${
-                    (selectedCategory === 'all' && category === 'All') ||
-                    (selectedCategory === category.toLowerCase() && category !== 'All')
-                      ? 'bg-charcoal text-white'
-                      : 'bg-gray-100 text-charcoal hover:bg-gray-200'
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
+        {/* Filters + article grid */}
+        <section className="bg-white border-t border-hairline">
+          <div className="flex flex-col lg:flex-row">
+            {/* Sidebar filters, matching the resource library */}
+            <aside className="lg:w-80 lg:flex-shrink-0 px-5 md:px-8 py-8 border-b lg:border-b-0 lg:border-r border-border bg-white">
+              <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-charcoal mb-3">
+                Category
+              </h3>
+              <div className="space-y-1">
+                <label className="flex items-center gap-2 cursor-pointer min-h-[36px] rounded-md px-1 -mx-1 hover:bg-gray-050">
+                  <input
+                    type="checkbox"
+                    checked={selectedCategory === 'all'}
+                    onChange={() => setSelectedCategory('all')}
+                    className="w-4 h-4 cursor-pointer"
+                  />
+                  <span className="text-sm text-charcoal">All posts</span>
+                  <span className="text-xs text-text-muted ml-auto">{displayArticles.length}</span>
+                </label>
+
+                {categories
+                  .filter((c) => c !== 'All')
+                  .map((category) => {
+                    const key = category.toLowerCase()
+                    const count = displayArticles.filter(
+                      (a) => a.tag.toLowerCase() === key
+                    ).length
+                    if (count === 0) return null
+                    return (
+                      <label
+                        key={category}
+                        className="flex items-center gap-2 cursor-pointer min-h-[36px] rounded-md px-1 -mx-1 hover:bg-gray-050"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={selectedCategory === key}
+                          onChange={() =>
+                            setSelectedCategory(selectedCategory === key ? 'all' : key)
+                          }
+                          className="w-4 h-4 cursor-pointer"
+                        />
+                        <span className="text-sm text-charcoal">{category}</span>
+                        <span className="text-xs text-text-muted ml-auto">{count}</span>
+                      </label>
+                    )
+                  })}
+              </div>
+            </aside>
+
+            {/* Articles */}
+            <div className="flex-1 min-w-0 px-5 md:px-8 py-8">
+              <p className="text-sm text-text-muted mb-6">
+                {filteredArticles.length} post{filteredArticles.length !== 1 ? 's' : ''}
+                {selectedCategory !== 'all' ? ' in this category' : ' in the lounge'}
+              </p>
+
+              {loading ? (
+                <div className="text-center py-12">
+                  <p className="text-text-muted">Loading articles...</p>
+                </div>
+              ) : filteredArticles.length > 0 ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {filteredArticles.map((article) => (
+                    <article
+                      key={article.id}
+                      className="border border-border rounded-lg overflow-hidden hover:shadow-md transition-shadow flex flex-col"
+                    >
+                      <a href={article.url} target="_blank" rel="noopener noreferrer" className="block bg-gray-100 aspect-video overflow-hidden border-b border-border">
+                        {article.image ? (
+                          <img src={article.image} alt={article.title} className="w-full h-full object-cover" loading="lazy" />
+                        ) : (
+                          <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200" />
+                        )}
+                      </a>
+                      <div className="p-4 flex flex-col flex-1">
+                        <p className="text-xs font-bold uppercase text-text-faint mb-2">
+                          {article.tag}
+                        </p>
+                        <h3 className="text-[16px] font-bold text-charcoal mb-2 leading-tight">
+                          {article.title}
+                        </h3>
+                        <p className="text-sm text-text-body mb-4 flex-1">
+                          {article.description}
+                        </p>
+                        <a
+                          href={article.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 min-h-[44px] text-coral font-semibold text-sm hover:text-coral-press transition-colors"
+                        >
+                          Read it →
+                        </a>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-12">
+                  <p className="text-text-muted">No articles in this category.</p>
+                </div>
+              )}
             </div>
           </div>
         </section>
 
-        {/* Articles Grid */}
-        <section className="py-12 px-5 md:px-8 bg-white">
-          <div className="max-w-7xl mx-auto">
-            {loading ? (
-              <div className="text-center py-12">
-                <p className="text-text-muted">Loading articles...</p>
-              </div>
-            ) : filteredArticles.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredArticles.slice(1).map((article) => (
-                  <article
-                    key={article.id}
-                    className="border border-border rounded-lg overflow-hidden hover:shadow-md transition-shadow flex flex-col"
-                  >
-                    <a href={article.url} target="_blank" rel="noopener noreferrer" className="block bg-gray-100 aspect-video overflow-hidden border-b border-border">
-                      {article.image ? (
-                        <img src={article.image} alt={article.title} className="w-full h-full object-cover" loading="lazy" />
-                      ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200" />
-                      )}
-                    </a>
-                    <div className="p-4 flex flex-col flex-1">
-                      <p className="text-xs font-bold uppercase text-text-faint mb-2">
-                        {article.tag}
-                      </p>
-                      <h3 className="text-[16px] font-bold text-charcoal mb-2 leading-tight">
-                        {article.title}
-                      </h3>
-                      <p className="text-sm text-text-body mb-4 flex-1">
-                        {article.description}
-                      </p>
-                      <a
-                        href={article.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 min-h-[44px] text-coral font-semibold text-sm hover:text-coral-press transition-colors"
-                      >
-                        Read it →
-                      </a>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-12">
-                <p className="text-text-muted">No articles in this category.</p>
-              </div>
-            )}
-          </div>
-        </section>
       </main>
 
       <Footer />

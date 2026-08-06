@@ -64,10 +64,89 @@ export function cleanSummary(raw?: string): string | undefined {
   return cleaned || undefined
 }
 
+/**
+ * The five browsing categories. The sheet's Purpose column has grown to 37
+ * distinct values, which is far too many to filter by, so each one folds into
+ * exactly one of these.
+ */
+export const RESOURCE_CATEGORIES = [
+  'Instructional Strategies',
+  'Classroom Management',
+  'Leadership & Coaching',
+  'Technology & Blended Learning',
+  'Assessment & Feedback',
+] as const
+
+export type ResourceCategory = (typeof RESOURCE_CATEGORIES)[number]
+
+/**
+ * Every Purpose in the sheet, mapped to its category. Keys are lower-cased
+ * because the sheet's capitalisation is inconsistent ("Science Instructional
+ * strategies"). Anything unrecognised falls back to Instructional Strategies,
+ * so a newly-typed Purpose still shows up rather than vanishing.
+ */
+const PURPOSE_TO_CATEGORY: Record<string, ResourceCategory> = {
+  // Instructional Strategies — subject strategies, curricula and thinking routines
+  'instructional strategies': 'Instructional Strategies',
+  'ela instructional strategies': 'Instructional Strategies',
+  'math instructional strategies': 'Instructional Strategies',
+  'science instructional strategies': 'Instructional Strategies',
+  'social studies instructional strategies': 'Instructional Strategies',
+  'basic reading instructional strategies': 'Instructional Strategies',
+  ckla: 'Instructional Strategies',
+  'project zero': 'Instructional Strategies',
+  eduprotocols: 'Instructional Strategies',
+  'd school': 'Instructional Strategies',
+  vocabulary: 'Instructional Strategies',
+  discussion: 'Instructional Strategies',
+  retrieval: 'Instructional Strategies',
+  'group work': 'Instructional Strategies',
+  'depth and complexity': 'Instructional Strategies',
+  cte: 'Instructional Strategies',
+
+  // Classroom Management — routines, culture, the calendar and families
+  'classroom management': 'Classroom Management',
+  organization: 'Classroom Management',
+  'bell work': 'Classroom Management',
+  mtss: 'Classroom Management',
+  sel: 'Classroom Management',
+  'back to school': 'Classroom Management',
+  'end of the year': 'Classroom Management',
+  holiday: 'Classroom Management',
+  parent: 'Classroom Management',
+
+  // Leadership & Coaching — adult learning and PD
+  coaching: 'Leadership & Coaching',
+  session: 'Leadership & Coaching',
+  'make and take': 'Leadership & Coaching',
+  data: 'Leadership & Coaching',
+  indiana: 'Leadership & Coaching',
+
+  // Technology & Blended Learning
+  'blended learning': 'Technology & Blended Learning',
+  'game based learning': 'Technology & Blended Learning',
+  'technology instructional strategies': 'Technology & Blended Learning',
+
+  // Assessment & Feedback
+  reflection: 'Assessment & Feedback',
+  feedback: 'Assessment & Feedback',
+  'formative assessment': 'Assessment & Feedback',
+  goal: 'Assessment & Feedback',
+}
+
+export function categoryForPurpose(purpose?: string): ResourceCategory {
+  const key = purpose?.trim().toLowerCase()
+  if (!key) return 'Instructional Strategies'
+  return PURPOSE_TO_CATEGORY[key] ?? 'Instructional Strategies'
+}
+
 export interface Resource {
   id: string
   title: string
+  /** The raw Purpose from the sheet, kept for search and the detail page. */
   purpose: string
+  /** One of the five browsing categories, derived from purpose. */
+  category: ResourceCategory
   format: string
   grade_band: string
   skill: string
@@ -144,6 +223,7 @@ async function fetchGoogleSheetResources(): Promise<Resource[]> {
         id: String(i),
         title,
         purpose: row[COL.purpose]?.trim() || '',
+        category: categoryForPurpose(row[COL.purpose]),
         format: 'Video',
         grade_band: 'K-12',
         skill: 'Teaching Strategies',

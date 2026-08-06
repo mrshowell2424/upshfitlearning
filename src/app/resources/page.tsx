@@ -24,8 +24,8 @@ function ResourcesContent() {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [filterType, setFilterType] = useState("all");
-  const [purpose, setPurpose] = useState("all");
-  const [purposeDropdownOpen, setPurposeDropdownOpen] = useState(false);
+  const [category, setCategory] = useState("all");
+  
   const [filterDropdownOpen, setFilterDropdownOpen] = useState(false);
   const [sortDropdownOpen, setSortDropdownOpen] = useState(false);
 
@@ -33,7 +33,7 @@ function ResourcesContent() {
     setPage(parseInt(searchParams.get('page') || "1"));
     setSearch(searchParams.get('search') || "");
     setFilterType(searchParams.get('filter') || "all");
-    setPurpose(searchParams.get('purpose') || "all");
+    setCategory(searchParams.get('category') || "all");
   }, [searchParams]);
 
   const sampleResources: Resource[] = [
@@ -56,9 +56,9 @@ function ResourcesContent() {
   const [total, setTotal] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [purposes, setPurposes] = useState<{ value: string; count: number }[]>([]);
+  const [categories, setCategories] = useState<{ value: string; count: number }[]>([]);
   const [accessCounts, setAccessCounts] = useState({ free: 0, paid: 0 });
-  const [showAllPurposes, setShowAllPurposes] = useState(false);
+  
   const pageSize = 30;
 
   useEffect(() => {
@@ -72,8 +72,8 @@ function ResourcesContent() {
         }
         // Filtering happens server-side against the whole sheet — filtering the
         // 30-item page client-side would only ever search the current page.
-        if (purpose !== 'all') {
-          url.searchParams.set('purpose', purpose);
+        if (category !== 'all') {
+          url.searchParams.set('category', category);
         }
         if (filterType !== 'all') {
           url.searchParams.set('access', filterType);
@@ -86,7 +86,7 @@ function ResourcesContent() {
         setItems(data.items || []);
         setTotal(data.total ?? 0);
         setTotalPages(data.totalPages ?? 0);
-        setPurposes(data.purposes || []);
+        setCategories(data.categories || []);
         setAccessCounts(data.accessCounts || { free: 0, paid: 0 });
       } catch (error) {
         console.error('Error fetching resources:', error);
@@ -100,15 +100,15 @@ function ResourcesContent() {
     };
 
     fetchResources();
-  }, [page, search, purpose, filterType]);
+  }, [page, search, category, filterType]);
 
   const sortParam = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('sort') || 'newest' : 'newest';
 
-  // The API already applied the access and purpose filters across the whole
+  // The API already applied the access and category filters across the whole
   // library, so `items` is the current page of results as-is.
   const filteredItems = items;
 
-  const visiblePurposes = showAllPurposes ? purposes : purposes.slice(0, 5);
+  
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -151,33 +151,28 @@ function ResourcesContent() {
               </div>
             </div>
 
-            {/* Purpose filter */}
+            {/* Category filter — five buckets covering the whole library */}
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-charcoal mb-3">Purpose</h3>
-              <div className="space-y-2 max-h-64 overflow-y-auto">
-                {visiblePurposes.map((p) => (
-                  <label key={p.value} className="flex items-center gap-2 cursor-pointer">
+              <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-charcoal mb-3">Category</h3>
+              <div className="space-y-1">
+                {categories.map((c) => (
+                  <label
+                    key={c.value}
+                    className="flex items-center gap-2 cursor-pointer min-h-[36px] rounded-md px-1 -mx-1 hover:bg-gray-050"
+                  >
                     <input
                       type="checkbox"
-                      checked={purpose === p.value}
+                      checked={category === c.value}
                       onChange={() => {
-                        setPurpose(purpose === p.value ? 'all' : p.value);
+                        setCategory(category === c.value ? 'all' : c.value);
                         setPage(1);
                       }}
-                      className="w-4 h-4"
+                      className="w-4 h-4 cursor-pointer"
                     />
-                    <span className="text-sm text-charcoal">{p.value}</span>
-                    <span className="text-xs text-text-muted ml-auto">{p.count}</span>
+                    <span className="text-sm text-charcoal">{c.value}</span>
+                    <span className="text-xs text-text-muted ml-auto">{c.count}</span>
                   </label>
                 ))}
-                {purposes.length > 5 && (
-                  <button
-                    onClick={() => setShowAllPurposes(!showAllPurposes)}
-                    className="inline-flex items-center min-h-[44px] text-coral font-semibold text-sm hover:text-coral-press"
-                  >
-                    {showAllPurposes ? 'Show fewer' : `Show all ${purposes.length}`}
-                  </button>
-                )}
               </div>
             </div>
           </div>
@@ -200,7 +195,7 @@ function ResourcesContent() {
           {/* Sort controls */}
           <div className="flex gap-2 mb-6">
             <a
-              href={`/resources?sort=newest${filterType !== 'all' ? `&filter=${filterType}` : ''}${purpose !== 'all' ? `&purpose=${purpose}` : ''}`}
+              href={`/resources?sort=newest${filterType !== 'all' ? `&filter=${filterType}` : ''}${category !== 'all' ? `&category=${category}` : ''}`}
               className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
                 sortParam === 'newest'
                   ? 'bg-charcoal text-white'
@@ -210,7 +205,7 @@ function ResourcesContent() {
               Newest
             </a>
             <a
-              href={`/resources?sort=oldest${filterType !== 'all' ? `&filter=${filterType}` : ''}${purpose !== 'all' ? `&purpose=${purpose}` : ''}`}
+              href={`/resources?sort=oldest${filterType !== 'all' ? `&filter=${filterType}` : ''}${category !== 'all' ? `&category=${category}` : ''}`}
               className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
                 sortParam === 'oldest'
                   ? 'bg-charcoal text-white'
@@ -220,7 +215,7 @@ function ResourcesContent() {
               Oldest first
             </a>
             <a
-              href={`/resources?sort=a-z${filterType !== 'all' ? `&filter=${filterType}` : ''}${purpose !== 'all' ? `&purpose=${purpose}` : ''}`}
+              href={`/resources?sort=a-z${filterType !== 'all' ? `&filter=${filterType}` : ''}${category !== 'all' ? `&category=${category}` : ''}`}
               className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
                 sortParam === 'a-z'
                   ? 'bg-charcoal text-white'

@@ -222,12 +222,12 @@ export function AnnouncedCourses() {
                   )}
                 </div>
 
-                <h2 className="text-[20px] font-bold text-charcoal mb-4 leading-tight">
+                <h2 className="text-[19px] font-bold text-charcoal mb-4 leading-snug min-h-[160px]">
                   {course.title}
                 </h2>
 
                 {/* Stacked inside a column card, so the panels stay readable */}
-                <div className="mt-auto grid grid-cols-1 gap-4">
+                <div className="grid grid-cols-1 gap-4">
                   {/* All-Access — members only */}
                   <div className="rounded-xl border border-hairline p-5">
                     <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-charcoal mb-2">
@@ -241,7 +241,7 @@ export function AnnouncedCourses() {
                   </div>
 
                   {/* Graduate credit — open to anyone, no membership needed */}
-                  <div className="rounded-xl border border-hairline p-5">
+                  <div className="rounded-xl border border-hairline p-5 min-h-[208px]">
                     <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-charcoal mb-2">
                       For graduate credit
                     </h3>
