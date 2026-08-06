@@ -41,6 +41,26 @@ const COURSES: AnnouncedCourse[] = [
     classroomUrl: 'https://classroom.google.com/c/NDY1MDI2NDk4MDE4?cjc=vn23vdd',
     gradCredit: false,
   },
+  {
+    title: 'EduProtocols: Pick Your Own Adventure',
+    classroomUrl: 'https://classroom.google.com/c/NTM2Nzc0OTQ5MzM0?cjc=pz3nlto',
+    gradCredit: false,
+  },
+  {
+    title: 'Flipping Your Classroom With Technology and Depth of Knowledge',
+    classroomUrl: 'https://classroom.google.com/c/NDk2OTU0NjYzMDAx?cjc=jq2o2co',
+    gradCredit: false,
+  },
+  {
+    title: 'Positive Perks',
+    classroomUrl: 'https://classroom.google.com/c/NTM2MDg0NjU0MTUw?cjc=icyvhvd',
+    gradCredit: false,
+  },
+  {
+    title: 'Lesson Fixer Upper',
+    classroomUrl: 'https://classroom.google.com/c/NDk2OTUzODQzMDQ4?cjc=kd4rexh',
+    gradCredit: false,
+  },
 ]
 
 const BUTTON =
