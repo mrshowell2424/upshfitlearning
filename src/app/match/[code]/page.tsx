@@ -7,6 +7,7 @@ import { db } from "@/lib/db";
 import { standards, standard_unpacks, lesson_blueprints } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { getResourcesForStandard } from "@/lib/utils/resources";
+import HeaderSearch from "@/components/shared/HeaderSearch";
 import { gradeSubjectLabel, scienceLabel, standardHref } from "@/lib/utils/standards";
 
 interface PageProps {
@@ -143,11 +144,15 @@ export default async function MatchDetailPage({ params }: PageProps) {
 
       <main className="flex-1 px-5 md:px-8 py-8">
         <div className="max-w-7xl mx-auto">
-          {/* Back link */}
-          <div className="mb-5">
+          {/* Back link + search, so another standard is one keystroke away */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
             <Link href="/match" className="text-link-blue hover:underline text-sm font-semibold">
               ← Back to search
             </Link>
+            <HeaderSearch
+              searches="standards"
+              placeholder="Search another standard"
+            />
           </div>
 
           {/* Quick switch between standards */}
