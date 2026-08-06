@@ -48,7 +48,7 @@ export default function PricingPage() {
         'Dedicated support',
       ],
       cta: 'Contact Sales',
-      ctaHref: 'mailto:sales@upshiftlearning.org',
+      ctaHref: 'mailto:hello@upshiftlearning.org',
       highlighted: false,
     },
   ]
@@ -155,7 +155,7 @@ export default function PricingPage() {
                 },
                 {
                   q: 'How do school licenses work?',
-                  a: 'School plans are customized based on your district size and needs. Contact sales@upshiftlearning.org for pricing.',
+                  a: 'School plans are customized based on your district size and needs. Contact hello@upshiftlearning.org for pricing.',
                 },
                 {
                   q: 'Do you offer refunds?',
