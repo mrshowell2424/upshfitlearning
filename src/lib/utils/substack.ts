@@ -121,25 +121,90 @@ async function fetchRssImages(): Promise<Map<string, string>> {
   return images
 }
 
-/** Scrape one article's og:image. Used only for posts older than the feed. */
-async function fetchOgImage(url: string): Promise<string | undefined> {
+/**
+ * Pick the sketchnote out of a post's body images.
+ *
+ * Substack encodes the original dimensions into the filename
+ * (`…_1024x559.jpeg`), which is enough to tell the artwork apart from the page
+ * furniture without downloading anything:
+ *
+ *   1500x498  the publication banner — on every post, far too wide (aspect 3.0)
+ *   400x400   the avatar — on every post, square
+ *   750x752   a contributor headshot — square
+ *   1024x559  the sketchnote we want (aspect 1.8)
+ *
+ * So: keep landscape-but-not-a-banner images and take the biggest.
+ */
+function pickBodyImage(html: string): string | undefined {
+  const pattern =
+    /substack-post-media\.s3\.amazonaws\.com%2Fpublic%2Fimages%2F([a-zA-Z0-9._%-]+?_(\d+)x(\d+)\.(?:png|jpe?g|webp))/g
+
+  let best: { url: string; area: number } | undefined
+
+  for (const match of html.matchAll(pattern)) {
+    const [, filename, rawWidth, rawHeight] = match
+    const width = Number(rawWidth)
+    const height = Number(rawHeight)
+    if (!width || !height) continue
+
+    const aspect = width / height
+    if (width < 800) continue // avatars and inline icons
+    if (aspect < 1.2 || aspect > 2.4) continue // squares and the wide banner
+
+    const area = width * height
+    if (!best || area > best.area) {
+      best = {
+        url: `https://substack-post-media.s3.amazonaws.com/public/images/${decodeURIComponent(filename)}`,
+        area,
+      }
+    }
+  }
+
+  return best ? cdnResized(best.url) : undefined
+}
+
+/**
+ * Serve covers through Substack's image CDN rather than straight from S3. The
+ * originals are full-resolution sketchnotes — one is 2 MB — which is far too
+ * heavy for a grid of 65 cards.
+ */
+function cdnResized(originalUrl: string, width = 728): string {
+  return `https://substackcdn.com/image/fetch/w_${width},c_limit,f_auto,q_auto:good/${encodeURIComponent(originalUrl)}`
+}
+
+interface ArticleAssets {
+  /** False when the article URL is dead, so the caller can drop it. */
+  ok: boolean
+  image?: string
+}
+
+/**
+ * Fetch one article and work out its cover. The body sketchnote is preferred
+ * over og:image: some posts (Behavior Bingo, for one) advertise the YouTube
+ * thumbnail instead of the artwork, which looks wrong beside the others.
+ */
+async function fetchArticleAssets(url: string): Promise<ArticleAssets> {
   try {
     const response = await fetch(url, {
       headers: { 'User-Agent': BROWSER_UA },
       next: { revalidate: 86400 },
     })
-    if (!response.ok) return undefined
+
+    // 404 means the URL in the sheet is wrong — don't surface a dead card
+    if (!response.ok) return { ok: false }
 
     const html = await response.text()
 
     // Substack emits <meta data-rh="true" property="og:image" content="…">, and
     // the attribute order isn't consistent, so don't assume adjacency.
-    return (
+    const ogImage =
       /<meta[^>]+property=["']og:image["'][^>]*content=["']([^"']+)["']/.exec(html)?.[1] ??
       /<meta[^>]+content=["']([^"']+)["'][^>]*property=["']og:image["']/.exec(html)?.[1]
-    )
+
+    return { ok: true, image: pickBodyImage(html) ?? ogImage }
   } catch {
-    return undefined
+    // A network blip shouldn't delete an article, so treat it as reachable
+    return { ok: true }
   }
 }
 
@@ -199,19 +264,29 @@ async function fetchSubstackArticles(): Promise<SubstackArticle[]> {
     })
   })
 
-  // Cheap images first, then fill the gaps from the article pages
-  const rssImages = await fetchRssImages()
-  for (const article of articles) {
-    article.image = rssImages.get(article.slug)
-  }
+  // Visit each article for its artwork, and to find out whether it still exists
+  const assets = await mapWithLimit(articles, 6, article =>
+    fetchArticleAssets(article.url)
+  )
 
-  const missing = articles.filter(article => !article.image)
-  const scraped = await mapWithLimit(missing, 6, article => fetchOgImage(article.url))
-  missing.forEach((article, index) => {
-    article.image = scraped[index]
+  // RSS covers the recent posts and needs no extra request, so it backs up any
+  // page whose body image we couldn't identify
+  const rssImages = await fetchRssImages()
+
+  const live: SubstackArticle[] = []
+
+  articles.forEach((article, index) => {
+    const { ok, image } = assets[index]
+    if (!ok) {
+      console.warn(`Substack article URL is dead, skipping: ${article.url}`)
+      return
+    }
+
+    article.image = image ?? rssImages.get(article.slug)
+    live.push(article)
   })
 
-  return articles
+  return live
 }
 
 let cached: SubstackArticle[] | null = null
