@@ -211,78 +211,188 @@ function BlueprintTab({ blueprint }) {
   );
 }
 
-function UnpackTab({ unpack }) {
-  if (!unpack) return <NotAuthoredYet what="deconstruction" />;
+/** A labelled group of chips, tinted so each kind of information reads distinctly. */
+function ChipGroup({ title, items, accent, tint, hint }) {
+  if (!items?.length) return null;
 
   return (
-    <div className="space-y-6">
-      <Section title="Learning verbs" items={unpack.learningVerbs} />
-      <Section title="Concepts" items={unpack.concepts} />
-      <Section title="Vocabulary" items={unpack.vocabulary} />
-      <Section title="Misconceptions" items={unpack.misconceptions} />
-
-      <div>
-        <p className="text-sm font-bold uppercase tracking-[0.16em] text-text-faint mb-2">
-          Prior learning
-        </p>
-        <p className="text-[17px] text-text-body">{unpack.priorLearning}</p>
+    <div className="rounded-xl border border-hairline p-5 bg-white">
+      <div className="flex items-center gap-2">
+        <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: accent }} />
+        <h3 className="text-[13px] font-bold uppercase tracking-[0.12em] text-charcoal">
+          {title}
+        </h3>
       </div>
-
-      <div>
-        <p className="text-sm font-bold uppercase tracking-[0.16em] text-text-faint mb-2">
-          Future learning
-        </p>
-        <p className="text-[17px] text-text-body">{unpack.futureLearning}</p>
-      </div>
-
-      <div>
-        <p className="text-sm font-bold uppercase tracking-[0.16em] text-text-faint mb-3">
-          Mastery criteria
-        </p>
-        <ul className="space-y-2">
-          {unpack.masteryCriteria.map((criteria, idx) => (
-            <li key={idx} className="flex gap-2 text-[17px] text-text-body">
-              <span className="font-bold">✓</span> {criteria}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div>
-        <p className="text-sm font-bold uppercase tracking-[0.16em] text-text-faint mb-3">
-          Learning ladder
-        </p>
-        <div className="space-y-2">
-          {unpack.learningLadder.map((rung, idx) => (
-            <div key={idx} className="flex gap-3">
-              <div className="w-6 h-6 rounded-sm flex items-center justify-center bg-charcoal text-white text-xs font-bold flex-shrink-0">
-                {idx + 1}
-              </div>
-              <p className="text-text-body">{rung}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Section({ title, items }) {
-  return (
-    <div>
-      <p className="text-sm font-bold uppercase tracking-[0.16em] text-text-faint mb-3">
-        {title}
-      </p>
-      <div className="flex flex-wrap gap-2">
+      {hint && <p className="text-xs text-text-muted ml-4">{hint}</p>}
+      <div className="flex flex-wrap gap-2 mt-3">
         {items.map((item, idx) => (
           <span
             key={idx}
-            className="px-3 py-1 bg-gray-100 rounded-full text-sm font-medium text-charcoal"
+            className="px-3 py-1.5 rounded-full text-sm font-medium text-charcoal"
+            style={{ backgroundColor: tint }}
           >
             {item}
           </span>
         ))}
       </div>
+    </div>
+  );
+}
+
+function UnpackTab({ unpack }) {
+  if (!unpack) return <NotAuthoredYet what="deconstruction" />;
+
+  const hasLadder = unpack.learningLadder?.length > 0;
+  const hasMastery = unpack.masteryCriteria?.length > 0;
+  const hasMisconceptions = unpack.misconceptions?.length > 0;
+
+  return (
+    <div className="space-y-8">
+      {/* What the standard asks of students */}
+      <div>
+        <h2 className="text-[20px] font-bold text-charcoal mb-1">
+          What students actually do
+        </h2>
+        <p className="text-sm text-text-muted mb-4">
+          The moves, ideas and words behind the standard.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <ChipGroup
+            title="Learning verbs"
+            hint="The thinking"
+            items={unpack.learningVerbs}
+            accent="var(--color-coral)"
+            tint="rgba(255, 106, 91, 0.12)"
+          />
+          <ChipGroup
+            title="Concepts"
+            hint="The ideas"
+            items={unpack.concepts}
+            accent="var(--color-lavender)"
+            tint="rgba(184, 125, 255, 0.14)"
+          />
+          <ChipGroup
+            title="Vocabulary"
+            hint="The words"
+            items={unpack.vocabulary}
+            accent="var(--color-teal)"
+            tint="rgba(0, 180, 166, 0.14)"
+          />
+        </div>
+      </div>
+
+      {/* Misconceptions read as a warning, not another list */}
+      {hasMisconceptions && (
+        <div
+          className="rounded-xl border p-5"
+          style={{
+            borderColor: 'rgba(255, 177, 63, 0.5)',
+            backgroundColor: 'rgba(255, 177, 63, 0.08)',
+          }}
+        >
+          <div className="flex items-center gap-2 mb-3">
+            <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none"
+              stroke="var(--color-amber)" strokeWidth="2.2" strokeLinecap="round">
+              <path d="M12 9v4" />
+              <path d="M12 17h.01" />
+              <path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
+            </svg>
+            <h2 className="text-[15px] font-bold uppercase tracking-[0.1em] text-charcoal">
+              Watch out for
+            </h2>
+          </div>
+          <ul className="space-y-2">
+            {unpack.misconceptions.map((item, idx) => (
+              <li key={idx} className="flex gap-3 text-[16px] text-text-body leading-relaxed">
+                <span className="text-text-faint flex-shrink-0">&mdash;</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* Where this sits in the sequence */}
+      <div>
+        <h2 className="text-[20px] font-bold text-charcoal mb-4">Where this sits</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="rounded-xl border border-hairline p-5 bg-gray-050">
+            <h3 className="text-[12px] font-bold uppercase tracking-[0.12em] text-text-faint mb-2">
+              They arrive knowing
+            </h3>
+            <p className="text-[16px] text-text-body leading-relaxed">
+              {unpack.priorLearning}
+            </p>
+          </div>
+          <div className="rounded-xl border border-hairline p-5 bg-gray-050">
+            <h3 className="text-[12px] font-bold uppercase tracking-[0.12em] text-text-faint mb-2">
+              This leads to
+            </h3>
+            <p className="text-[16px] text-text-body leading-relaxed">
+              {unpack.futureLearning}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* How you know they've got it */}
+      {hasMastery && (
+        <div>
+          <h2 className="text-[20px] font-bold text-charcoal mb-4">
+            How you'll know they've got it
+          </h2>
+          <ul className="space-y-3">
+            {unpack.masteryCriteria.map((criteria, idx) => (
+              <li
+                key={idx}
+                className="flex gap-3 rounded-xl border border-hairline p-4 bg-white"
+              >
+                <span
+                  className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs font-bold"
+                  style={{ backgroundColor: 'var(--color-teal)' }}
+                >
+                  &#10003;
+                </span>
+                <span className="text-[16px] text-text-body leading-relaxed">{criteria}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* The progression, drawn as steps rather than a flat list */}
+      {hasLadder && (
+        <div>
+          <h2 className="text-[20px] font-bold text-charcoal mb-1">Learning ladder</h2>
+          <p className="text-sm text-text-muted mb-4">
+            Build in this order &mdash; each rung assumes the one below it.
+          </p>
+
+          <ol className="relative">
+            {unpack.learningLadder.map((rung, idx) => {
+              const isLast = idx === unpack.learningLadder.length - 1;
+              return (
+                <li key={idx} className="relative flex gap-4 pb-4 last:pb-0">
+                  {!isLast && (
+                    <span
+                      className="absolute left-[15px] top-8 bottom-0 w-[2px] bg-hairline"
+                      aria-hidden="true"
+                    />
+                  )}
+                  <span
+                    className="relative z-10 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold"
+                    style={{ backgroundColor: 'var(--color-charcoal)' }}
+                  >
+                    {idx + 1}
+                  </span>
+                  <p className="text-[16px] text-text-body leading-relaxed pt-1.5">{rung}</p>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+      )}
     </div>
   );
 }
