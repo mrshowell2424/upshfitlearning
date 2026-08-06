@@ -53,7 +53,7 @@ export function MatchDetailClient({ standard_code, blueprint, unpack, resources,
         {activeTab === "unpack" && <UnpackTab unpack={unpack} />}
         {activeTab === "resources" && <ResourcesTab resources={resources} standard_code={standard_code} />}
         {activeTab === "generate" && (
-          <GenerateTab standard_code={standard_code} blueprint={blueprint} unpack={unpack} userTier={userTier} />
+          <GenerateTab standard_code={standard_code} blueprint={blueprint} unpack={unpack} />
         )}
       </LockedOverlay>
     </div>
@@ -306,14 +306,22 @@ function ResourcesTab({ resources, standard_code }) {
             className="border border-border rounded-lg overflow-hidden hover:shadow-md transition-shadow bg-white"
           >
             <div className="flex gap-6 p-6">
-              {/* Thumbnail */}
-              <div className="flex-shrink-0 w-40 h-32 bg-gray-200 rounded-lg overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                  <svg className="w-8 h-8 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                </div>
-              </div>
+              {/* Thumbnail — the resource's own video still */}
+              <a
+                href={`/resources/${resource.id}`}
+                className="flex-shrink-0 w-40 h-32 bg-gray-100 rounded-lg overflow-hidden block"
+              >
+                {resource.thumbnail_url ? (
+                  <img
+                    src={resource.thumbnail_url}
+                    alt={resource.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300" />
+                )}
+              </a>
 
               {/* Content */}
               <div className="flex-1">
@@ -324,7 +332,7 @@ function ResourcesTab({ resources, standard_code }) {
                       {resource.purpose}
                     </span>
                     <span className="text-xs font-bold uppercase px-2 py-1 bg-blue-50 text-blue-700 rounded">
-                      {resource.grade}
+                      {resource.grade_band}
                     </span>
                     <span className="text-xs font-bold uppercase px-2 py-1 bg-red-50 text-red-700 rounded">
                       Strong fit
@@ -348,10 +356,23 @@ function ResourcesTab({ resources, standard_code }) {
                   </ul>
                 </div>
 
-                <div className="flex gap-3">
-                  <button className="px-4 py-2 bg-charcoal text-white rounded-lg font-semibold text-sm hover:bg-charcoal/90 transition-colors">
+                <div className="flex gap-3 flex-wrap">
+                  <a
+                    href={`/resources/${resource.id}`}
+                    className="inline-flex items-center min-h-[40px] px-4 bg-charcoal text-white rounded-lg font-semibold text-sm hover:bg-charcoal/90 transition-colors"
+                  >
                     Open resource
-                  </button>
+                  </a>
+                  {resource.youtube_url && (
+                    <a
+                      href={resource.youtube_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center min-h-[40px] px-4 border border-border rounded-lg font-semibold text-sm hover:bg-gray-050 transition-colors"
+                    >
+                      Watch
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -371,14 +392,15 @@ function ResourcesTab({ resources, standard_code }) {
   );
 }
 
-function GenerateTab({ standard_code, blueprint, unpack, userTier = "free" }) {
+function GenerateTab({ standard_code, blueprint, unpack }) {
   const [selectedFormat, setSelectedFormat] = useState("presentation");
   const [studentNeeds, setStudentNeeds] = useState<string[]>([]);
   const [generating, setGenerating] = useState(false);
   const [generated, setGenerated] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [showUpgrade, setShowUpgrade] = useState(false);
-  const isFree = userTier === "free";
+  const { isPremium } = useAuth();
+  const isFree = !isPremium;
 
   const toggleNeed = (id: string) => {
     setStudentNeeds((prev) =>
@@ -408,7 +430,9 @@ function GenerateTab({ standard_code, blueprint, unpack, userTier = "free" }) {
       });
 
       if (!response.ok) {
-        throw new Error("Generation failed");
+        // Surface the server's reason instead of a bare "Generation failed"
+        const detail = await response.json().catch(() => null);
+        throw new Error(detail?.error || `Generation failed (${response.status})`);
       }
 
       const data = await response.json();

@@ -6,6 +6,7 @@ import { db } from "@/lib/db";
 import { standards, standard_unpacks, lesson_blueprints } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { notFound } from "next/navigation";
+import { getResourcesForStandard } from "@/lib/utils/resources";
 
 interface PageProps {
   params: Promise<{ code: string }>;
@@ -106,32 +107,11 @@ export default async function MatchDetailPage({ params }: PageProps) {
       }
     : null;
 
-  const matchingResources = [
-    {
-      id: 1,
-      title: "Question Stems for Reading Comprehension",
-      purpose: "Strategy practice",
-      skill: "Textual Evidence",
-      format: "Slides",
-      grade: "2-3",
-      teaching_moves: [
-        "Display stems for students to see",
-        "Have students use stems to ask questions",
-      ],
-    },
-    {
-      id: 2,
-      title: "Story Comprehension with Who, What, Where, When, Why",
-      purpose: "Guided practice",
-      skill: "Comprehension",
-      format: "Video",
-      grade: "2",
-      teaching_moves: [
-        "Show the video modeling question asking",
-        "Pause and have students ask questions",
-      ],
-    },
-  ];
+  // Her own videos, scored against this standard's skills and match keys
+  const matchingResources = await getResourcesForStandard([
+    ...(standardRow?.skills ?? []),
+    ...(standardRow?.match_keys ?? []),
+  ])
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -172,7 +152,6 @@ export default async function MatchDetailPage({ params }: PageProps) {
             blueprint={blueprint}
             unpack={unpack}
             resources={matchingResources}
-            userTier="free"
           />
         </div>
       </main>

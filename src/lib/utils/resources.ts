@@ -269,6 +269,56 @@ let cachedResources: Resource[] | null = null
 let cacheTime = 0
 const CACHE_DURATION = 5 * 60 * 1000
 
+/**
+ * Her own videos that best fit a standard, scored against the standard's skills
+ * and match_keys. Used by the "Resources to remix" tab, which previously showed
+ * two hardcoded placeholders.
+ */
+export async function getResourcesForStandard(
+  terms: string[],
+  limit = 6
+): Promise<Resource[]> {
+  const all = (await getResources()).filter(isOwnVideo)
+  const needles = terms
+    .map(term => term.trim().toLowerCase())
+    .filter(term => term.length > 2)
+
+  if (!needles.length) return all.slice(0, limit)
+
+  const scored = all.map(resource => {
+    const haystack = [resource.title, resource.purpose, resource.summary]
+      .filter(Boolean)
+      .join(' ')
+      .toLowerCase()
+
+    let score = 0
+    for (const needle of needles) {
+      if (haystack.includes(needle)) score += 10
+      // also credit individual words, so "Textual Evidence" reaches "evidence"
+      for (const word of needle.split(/\s+/)) {
+        if (word.length > 3 && haystack.includes(word)) score += 2
+      }
+    }
+    return { resource, score }
+  })
+
+  const hits = scored
+    .filter(entry => entry.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map(entry => entry.resource)
+
+  // Never leave the tab empty — top up with recent own videos
+  if (hits.length < limit) {
+    for (const resource of all) {
+      if (hits.length >= limit) break
+      if (!hits.includes(resource)) hits.push(resource)
+    }
+  }
+
+  return hits
+}
+
 export async function getResourceById(id: string): Promise<Resource | null> {
   const all = await getResources()
   return all.find(r => r.id === id) ?? null

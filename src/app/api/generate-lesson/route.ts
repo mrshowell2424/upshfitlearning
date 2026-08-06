@@ -14,6 +14,15 @@ export async function POST(request: Request) {
       );
     }
 
+    // Say so plainly rather than failing as a generic error
+    if (!process.env.ANTHROPIC_API_KEY) {
+      console.error("ANTHROPIC_API_KEY is not set; cannot generate");
+      return Response.json(
+        { error: "Lesson generation isn't configured on this environment yet." },
+        { status: 503 }
+      );
+    }
+
     const prompt = buildPrompt(standard_code, format, student_needs, blueprint, unpack);
 
     const message = await client.messages.create({
