@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { isStandardCode, standardHref, standardTheme } from "@/lib/utils/standards";
+import { COURSE_COUNT } from "@/app/courses/announced";
 
 const exampleSearches = [
   "RL.2.1",
@@ -204,10 +205,10 @@ function MatchPageContent() {
                 className="text-[30px] font-bold"
                 style={{ color: "var(--color-lavender)" }}
               >
-                93
+                {COURSE_COUNT}
               </p>
               <p className="text-[10.5px] font-bold uppercase tracking-[0.16em] text-text-faint">
-                Video Courses
+                Courses
               </p>
             </div>
             <div className="bg-gray-050 p-4 text-center border-r border-hairline">

@@ -211,6 +211,20 @@ function NotAuthoredYet({ what }) {
   );
 }
 
+/**
+ * A step's directions arrive as one run-on paragraph. Split it into the separate
+ * moves a teacher makes, so they can be followed one at a time mid-lesson.
+ * Splits only where a sentence ends and the next clearly begins, which keeps
+ * "(2-3 minutes)." and "who, what, where, when, why, how" intact.
+ */
+function directionsFrom(body?: string): string[] {
+  if (!body) return [];
+  return body
+    .split(/(?<=[.!?])\s+(?=[A-Z])/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+}
+
 /** A checked list item — used for success criteria and assessment evidence. */
 function CheckItem({ children, color }) {
   return (
@@ -361,7 +375,16 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
                 {step.minutes ? (
                   <p className="text-[13px] text-text-muted mb-2">{step.minutes} minutes</p>
                 ) : null}
-                <p className="text-[15px] text-text-body leading-snug">{step.body}</p>
+                <ol className="text-[15px] text-text-body leading-snug flex flex-col gap-1.5">
+                  {directionsFrom(step.body).map((direction, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className="font-semibold text-text-faint flex-shrink-0 tabular-nums">
+                        {i + 1}.
+                      </span>
+                      <span>{direction}</span>
+                    </li>
+                  ))}
+                </ol>
                 {step.scienceTag && (
                   <p
                     className="text-[14px] font-semibold mt-3"
@@ -464,10 +487,12 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
 
           {/* The thesis of the whole product */}
           <div className="rounded-2xl bg-gray-050 border border-hairline p-6 flex flex-wrap items-center justify-between gap-5">
-            <p className="text-[16px] text-text-body max-w-lg leading-snug">
+            <p className="text-[16px] text-text-body max-w-xl leading-snug">
               <strong className="text-charcoal">The big idea:</strong>{" "}
-              we don&apos;t just teach the standard. We design the learning so students
-              can actually learn.
+              we don&apos;t just teach the standard.{" "}
+              <span className="lg:whitespace-nowrap">
+                We design the learning so students can actually learn.
+              </span>
             </p>
             <div className="flex items-center gap-3 flex-wrap">
               {[

@@ -109,6 +109,9 @@ const COURSES: AnnouncedCourse[] = [
   },
 ]
 
+/** The real number of courses, so stats elsewhere can't drift out of date. */
+export const COURSE_COUNT = COURSES.length
+
 const BUTTON =
   'inline-flex w-full items-center justify-center gap-2 rounded-lg px-5 min-h-[44px] font-semibold transition-colors text-center'
 

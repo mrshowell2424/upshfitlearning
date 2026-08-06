@@ -144,26 +144,27 @@ export default async function MatchDetailPage({ params }: PageProps) {
 
       <main className="flex-1 px-5 md:px-8 py-8">
         <div className="max-w-7xl mx-auto">
-          {/* Back link + search, so another standard is one keystroke away */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
-            <Link href="/match" className="text-link-blue hover:underline text-sm font-semibold">
+          {/* Back link on the left; search with the quick picks tucked beneath it */}
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-6">
+            <Link href="/match" className="text-link-blue hover:underline text-sm font-semibold shrink-0 pt-1">
               ← Back to search
             </Link>
-            <HeaderSearch
-              searches="standards"
-              placeholder="Search another standard"
-            />
-          </div>
 
-          {/* Quick switch between standards */}
-          <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-col gap-2 w-full sm:w-auto sm:items-end">
+              <HeaderSearch
+                searches="standards"
+                placeholder="Search another standard"
+              />
+
+              {/* Quick switch between standards */}
+              <div className="flex flex-wrap gap-1.5 sm:justify-end">
             {QUICK_STANDARDS.map((quick) => {
               const isCurrent = quick.code.toUpperCase() === decodedCode.toUpperCase();
               return (
                 <Link
                   key={quick.code}
                   href={standardHref(quick.code)}
-                  className={`inline-flex items-center min-h-[44px] px-4 rounded-full text-sm font-medium border transition-colors ${
+                  className={`inline-flex items-center min-h-[30px] px-2.5 rounded-full text-[12px] font-medium border transition-colors ${
                     isCurrent
                       ? "border-2 font-semibold"
                       : "border-border-strong hover:bg-gray-050"
@@ -173,8 +174,10 @@ export default async function MatchDetailPage({ params }: PageProps) {
                 >
                   {quick.label}
                 </Link>
-              );
-            })}
+                  );
+                })}
+              </div>
+            </div>
           </div>
 
           {/* The standard itself — code, plain reading, target and the science */}
