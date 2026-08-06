@@ -124,24 +124,6 @@ function MatchPageContent() {
             </button>
           </div>
 
-          {/* Example chips */}
-          {results.length === 0 && (
-            <div className="text-center">
-              <p className="text-sm text-text-muted mb-3">Try:</p>
-              <div className="flex flex-wrap gap-2 justify-center">
-                {exampleSearches.map((example) => (
-                  <button
-                    key={example}
-                    onClick={() => handleSearch(example)}
-                    className="inline-flex items-center min-h-[44px] px-4 rounded-full text-sm font-medium border border-border-strong hover:bg-gray-050 transition-colors"
-                  >
-                    {example}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
           {/* Search results */}
           {results.length > 0 && (
             <div className="mt-8">
@@ -187,6 +169,24 @@ function MatchPageContent() {
                     </button>
                   );
                 })}
+              </div>
+            </div>
+          )}
+
+          {/* Example chips */}
+          {results.length === 0 && (
+            <div className="text-center">
+              <p className="text-sm text-text-muted mb-3">Try:</p>
+              <div className="flex flex-wrap gap-2 justify-center">
+                {exampleSearches.map((example) => (
+                  <button
+                    key={example}
+                    onClick={() => handleSearch(example)}
+                    className="inline-flex items-center min-h-[44px] px-4 rounded-full text-sm font-medium border border-border-strong hover:bg-gray-050 transition-colors"
+                  >
+                    {example}
+                  </button>
+                ))}
               </div>
             </div>
           )}

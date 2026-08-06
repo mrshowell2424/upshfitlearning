@@ -95,7 +95,7 @@ export default function Home() {
             {/* Example Chips */}
             <div className="flex items-center gap-2 md:gap-3 mb-12 flex-wrap">
               <span className="text-sm text-text-muted">Try:</span>
-              {examples.map((example) => (
+              {examples.slice(0, 7).map((example) => (
                 <Link
                   key={example.code}
                   href={standardHref(example.code)}
@@ -109,18 +109,18 @@ export default function Home() {
 
             {/* Stat Strip */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-hairline rounded-2xl overflow-hidden">
-              <div className="bg-white p-4 md:p-6 text-center">
-                <div className="text-3xl md:text-4xl font-bold text-coral mb-1">2,688</div>
+              <Link href="/resources" className="bg-white p-4 md:p-6 text-center hover:bg-gray-050 transition-colors">
+                <div className="text-3xl md:text-4xl font-bold text-coral mb-1">2,760</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Resources</div>
-              </div>
-              <div className="bg-white p-4 md:p-6 text-center">
+              </Link>
+              <Link href="/match" className="bg-white p-4 md:p-6 text-center hover:bg-gray-050 transition-colors">
                 <div className="text-3xl md:text-4xl font-bold text-lavender mb-1">150+</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Standards</div>
-              </div>
-              <div className="bg-white p-4 md:p-6 text-center">
+              </Link>
+              <Link href="/match/random" className="bg-white p-4 md:p-6 text-center hover:bg-gray-050 transition-colors">
                 <div className="text-3xl md:text-4xl font-bold text-teal mb-1">K–12</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Grade Span</div>
-              </div>
+              </Link>
               <div className="bg-white p-4 md:p-6 text-center">
                 <div className="text-3xl md:text-4xl font-bold text-pink mb-1">12+</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Learning Science Principles</div>
