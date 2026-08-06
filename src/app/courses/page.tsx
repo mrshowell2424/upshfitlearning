@@ -2,6 +2,7 @@ import Header from '@/components/shared/Header'
 import Footer from '@/components/shared/Footer'
 import { db } from '@/lib/db'
 import { courses } from '@/lib/db/schema'
+import { ClassroomJoinLink } from './join'
 
 interface Course {
   id: string
@@ -50,15 +51,16 @@ export default async function CoursesPage() {
                 Effective Instructions: Helping Students Understand and Follow Through
               </h2>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 items-start">
                 <div className="rounded-xl border border-hairline p-5">
                   <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-charcoal mb-2">
                     With All-Access
                   </h3>
-                  <p className="text-sm text-text-body">
+                  <p className="text-sm text-text-body mb-4">
                     The full course is included at no extra cost, delivered through
                     Google Classroom.
                   </p>
+                  <ClassroomJoinLink />
                 </div>
 
                 <div className="rounded-xl border border-hairline p-5">
