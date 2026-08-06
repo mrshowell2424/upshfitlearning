@@ -15,6 +15,53 @@ export function standardHref(code: string): string {
   return `/match/${encodeURIComponent(code.trim().toUpperCase())}`
 }
 
+/**
+ * Steps carry a learning-science slug; teachers read the principle by name.
+ * Anything not listed falls back to title case, so a new slug still renders.
+ */
+const SCIENCE_LABELS: Record<string, string> = {
+  retrieval: 'Retrieval Practice',
+  'retrieval-practice': 'Retrieval Practice',
+  'dual-coding': 'Dual Coding',
+  elaboration: 'Elaboration',
+  interleaving: 'Interleaving',
+  collaborative: 'Collaborative Learning',
+  'collaborative-learning': 'Collaborative Learning',
+  spaced: 'Spaced Practice',
+  'spaced-practice': 'Spaced Practice',
+  metacognition: 'Metacognition',
+  'worked-example': 'Worked Example',
+  'cognitive-load': 'Cognitive Load Support',
+  otr: 'Opportunities to Respond',
+  modeling: 'Explicit Modeling',
+  feedback: 'Immediate Feedback',
+}
+
+export function scienceLabel(tag: string): string {
+  if (!tag) return ''
+  const key = tag.trim().toLowerCase()
+  if (SCIENCE_LABELS[key]) return SCIENCE_LABELS[key]
+
+  return key
+    .split(/[-_\s]+/)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+}
+
+/** "4th grade ELA" — the line that tells a teacher whose lesson this is. */
+export function gradeSubjectLabel(code: string, grade: string | null): string {
+  const subject = standardSubject(code)
+  const subjectName = subject === 'Other' ? '' : subject
+
+  if (!grade) return subjectName
+  const ordinal =
+    grade.toUpperCase() === 'K'
+      ? 'Kindergarten'
+      : `${grade}${['th', 'st', 'nd', 'rd'][Number(grade) % 10 > 3 || Math.floor(Number(grade) % 100 / 10) === 1 ? 0 : Number(grade) % 10]} grade`
+
+  return [ordinal, subjectName].filter(Boolean).join(' ')
+}
+
 export type StandardSubject = 'ELA' | 'Math' | 'Science' | 'Social Studies' | 'Other'
 
 /**

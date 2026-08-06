@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/providers/AuthProvider";
 import { UpgradeModal } from "@/components/shared/UpgradeModal";
+import { scienceLabel, standardHref } from "@/lib/utils/standards";
 
 // The lesson blueprint is the free taste; the other three are All-Access.
 const tabs = [
@@ -14,7 +15,39 @@ const tabs = [
   { id: "generate", label: "Make it for my learners", premium: true },
 ];
 
-export function MatchDetailClient({ standard_code, blueprint, unpack, resources, userTier = "free" }) {
+/**
+ * Section-label colours. Each kind of information keeps the same hue everywhere
+ * it appears, so a teacher learns the page once — coral is what students do,
+ * violet is the standard's own machinery, teal is learning science.
+ */
+const LABEL = {
+  violet: "#7C3AED",
+  indigo: "#4338CA",
+  teal: "#0E9384",
+  coral: "var(--color-coral)",
+  crimson: "#B4245C",
+  blue: "var(--color-link-blue)",
+  rust: "#B4482C",
+  amber: "#B76E00",
+};
+
+// The route every blueprint runs, named so the eight steps below read as a shape.
+const ROUTE_PHASES = [
+  { name: "Retrieve", caption: "Activate prior knowledge", color: "var(--color-pink)" },
+  { name: "Learn", caption: "Model & think aloud", color: "var(--color-amber)" },
+  { name: "Practice", caption: "Guided & collaborative", color: "var(--color-teal)" },
+  { name: "Apply", caption: "Independent practice", color: "var(--color-blue)" },
+  { name: "Reflect", caption: "Metacognition & reflection", color: "var(--color-lavender)" },
+];
+
+export function MatchDetailClient({
+  standard,
+  standard_code,
+  blueprint,
+  unpack,
+  resources,
+  userTier = "free",
+}) {
   const [activeTab, setActiveTab] = useState("blueprint");
   const { isPremium, isLoading } = useAuth();
 
@@ -27,31 +60,44 @@ export function MatchDetailClient({ standard_code, blueprint, unpack, resources,
 
   return (
     <div>
-      {/* Tab navigation */}
-      <div className="flex gap-1 border-b border-border mb-8 overflow-x-auto">
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`px-4 py-3 font-semibold text-sm transition-colors whitespace-nowrap border-b-2 flex items-center gap-1.5 ${
-              activeTab === tab.id
-                ? "text-charcoal border-charcoal"
-                : "text-text-muted border-transparent hover:text-charcoal"
-            }`}
-          >
-            {tab.label}
-            {!isLoading && !hasAllAccess && tab.premium && (
-              <LockIcon className="w-3 h-3 opacity-60" />
-            )}
-          </button>
-        ))}
+      {/* Tab navigation — pills, so the four views read as equal choices */}
+      <div className="flex flex-wrap gap-3 mb-8">
+        {tabs.map((tab) => {
+          const isActive = activeTab === tab.id;
+          return (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`inline-flex items-center gap-2 min-h-[48px] px-6 rounded-full font-semibold text-[15px] border transition-colors ${
+                isActive
+                  ? "bg-charcoal text-white border-charcoal"
+                  : "bg-white text-charcoal border-border-strong hover:bg-gray-050"
+              }`}
+            >
+              {tab.label}
+              {!isLoading && !hasAllAccess && tab.premium && (
+                <LockIcon className="w-3 h-3 opacity-60" />
+              )}
+            </button>
+          );
+        })}
       </div>
 
       {/* Tab content */}
       <LockedOverlay locked={locked} feature={current?.label ?? ""}>
-        {activeTab === "blueprint" && <BlueprintTab blueprint={blueprint} />}
-        {activeTab === "unpack" && <UnpackTab unpack={unpack} />}
-        {activeTab === "resources" && <ResourcesTab resources={resources} standard_code={standard_code} />}
+        {activeTab === "blueprint" && (
+          <BlueprintTab
+            blueprint={blueprint}
+            standard={standard}
+            onOpenTab={setActiveTab}
+          />
+        )}
+        {activeTab === "unpack" && (
+          <UnpackTab unpack={unpack} standard={standard} onOpenTab={setActiveTab} />
+        )}
+        {activeTab === "resources" && (
+          <ResourcesTab resources={resources} standard_code={standard_code} />
+        )}
         {activeTab === "generate" && (
           <GenerateTab standard_code={standard_code} blueprint={blueprint} unpack={unpack} />
         )}
@@ -66,6 +112,26 @@ function LockIcon({ className = "" }) {
       <rect x="4" y="11" width="16" height="10" rx="2" />
       <path d="M8 11V7a4 4 0 018 0v4" />
     </svg>
+  );
+}
+
+/** Small wide-tracked caps label that opens every panel on this page. */
+function SectionLabel({ children, color, className = "" }) {
+  return (
+    <p
+      className={`text-[11px] font-bold uppercase tracking-[0.14em] ${className}`}
+      style={{ color }}
+    >
+      {children}
+    </p>
+  );
+}
+
+function Card({ children, className = "" }) {
+  return (
+    <div className={`rounded-2xl border border-hairline bg-white p-6 ${className}`}>
+      {children}
+    </div>
   );
 }
 
@@ -145,252 +211,621 @@ function NotAuthoredYet({ what }) {
   );
 }
 
-function BlueprintTab({ blueprint }) {
+/** A checked list item — used for success criteria and assessment evidence. */
+function CheckItem({ children, color }) {
+  return (
+    <li className="flex gap-2 text-[15px] text-text-body leading-snug">
+      <span className="flex-shrink-0 mt-[3px]" style={{ color }} aria-hidden="true">
+        ☑
+      </span>
+      <span>{children}</span>
+    </li>
+  );
+}
+
+function BlueprintTab({ blueprint, standard, onOpenTab }) {
   if (!blueprint) return <NotAuthoredYet what="lesson blueprint" />;
+
+  const steps = blueprint.steps ?? [];
 
   return (
     <div>
-      {/* Context row */}
-      <div className="bg-gray-050 rounded-lg p-6 mb-8 border border-hairline">
-        <p className="text-sm font-bold uppercase tracking-[0.16em] text-text-faint mb-2">
-          Context
-        </p>
-        <p className="text-[17px] text-text-body">{blueprint.context}</p>
-      </div>
-
-      {/* Instructional route */}
-      <div className="mb-8">
-        <p className="text-sm font-bold uppercase tracking-[0.16em] text-text-faint mb-3">
-          Instructional route
-        </p>
-        <p className="text-[16px] text-text-body">{blueprint.instructionalRoute}</p>
-      </div>
-
-      {/* Steps */}
-      <div className="mb-8">
-        <p className="text-sm font-bold uppercase tracking-[0.16em] text-text-faint mb-4">
-          8-step lesson path
-        </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {blueprint.steps.map((step, idx) => (
-            <div
-              key={idx}
-              className="bg-gray-050 rounded-lg p-4 border border-hairline hover:bg-gray-100 transition-colors"
+      <div className="rounded-2xl border border-hairline overflow-hidden bg-white">
+        {/* Header — the lesson announces itself */}
+        <div
+          className="px-8 py-7 flex flex-wrap items-start justify-between gap-4"
+          style={{ backgroundColor: "var(--color-navy)" }}
+        >
+          <div>
+            <h2 className="text-[26px] md:text-[30px] font-bold uppercase text-white leading-tight">
+              {blueprint.title}
+            </h2>
+            <p
+              className="text-[17px] font-semibold mt-1"
+              style={{ color: "var(--color-teal)" }}
             >
-              <div className="w-8 h-8 rounded-sm flex items-center justify-center bg-charcoal text-white text-sm font-bold mb-3">
-                {step.step}
-              </div>
-              <p className="font-semibold text-sm mb-2">{step.title}</p>
-              <ul className="text-xs text-text-muted space-y-1">
-                {step.moves.map((move, i) => (
-                  <li key={i}>• {move}</li>
+              {[standard.gradeLabel && `${standard.gradeLabel} lesson`, "Science of Learning First"]
+                .filter(Boolean)
+                .join(" · ")}
+            </p>
+          </div>
+          {blueprint.badge && (
+            <span
+              className="inline-block px-5 py-2 rounded-full text-[13px] font-bold uppercase tracking-[0.08em] text-white flex-shrink-0"
+              style={{ backgroundColor: "var(--color-teal)" }}
+            >
+              {blueprint.badge}
+            </span>
+          )}
+        </div>
+
+        <div className="p-5 md:p-6 space-y-5">
+          {/* What it teaches, what success looks like, and why */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+            <Card>
+              <SectionLabel color={LABEL.violet} className="mb-3">
+                Standard
+              </SectionLabel>
+              <p className="text-[16px] font-bold text-charcoal mb-1">{standard.code}</p>
+              <p className="text-[15px] text-text-body leading-snug">{standard.name}</p>
+            </Card>
+
+            <Card>
+              <SectionLabel color={LABEL.coral} className="mb-3">
+                Learning target
+              </SectionLabel>
+              <p className="text-[15px] text-text-body leading-snug">
+                {standard.learningTarget || "Learning target coming soon."}
+              </p>
+            </Card>
+
+            <Card>
+              <SectionLabel color={LABEL.teal} className="mb-3">
+                Success criteria
+              </SectionLabel>
+              <ul className="space-y-2">
+                {(blueprint.successCriteria ?? []).map((criteria, idx) => (
+                  <CheckItem key={idx} color="var(--color-teal)">
+                    {criteria}
+                  </CheckItem>
                 ))}
               </ul>
-            </div>
-          ))}
-        </div>
-      </div>
+            </Card>
 
-      {/* Support row */}
-      <div className="bg-gray-050 rounded-lg p-6 border border-hairline">
-        <p className="text-sm font-bold uppercase tracking-[0.16em] text-text-faint mb-3">
-          Evidence-based frameworks
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {blueprint.supports.map((support, idx) => (
-            <span
-              key={idx}
-              className="px-3 py-1 bg-white border border-border rounded-full text-sm font-medium"
-            >
-              {support}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/** A labelled group of chips, tinted so each kind of information reads distinctly. */
-function ChipGroup({ title, items, accent, tint, hint }) {
-  if (!items?.length) return null;
-
-  return (
-    <div className="rounded-xl border border-hairline p-5 bg-white">
-      <div className="flex items-center gap-2">
-        <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: accent }} />
-        <h3 className="text-[13px] font-bold uppercase tracking-[0.12em] text-charcoal">
-          {title}
-        </h3>
-      </div>
-      {hint && <p className="text-xs text-text-muted ml-4">{hint}</p>}
-      <div className="flex flex-wrap gap-2 mt-3">
-        {items.map((item, idx) => (
-          <span
-            key={idx}
-            className="px-3 py-1.5 rounded-full text-sm font-medium text-charcoal"
-            style={{ backgroundColor: tint }}
-          >
-            {item}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function UnpackTab({ unpack }) {
-  if (!unpack) return <NotAuthoredYet what="deconstruction" />;
-
-  const hasLadder = unpack.learningLadder?.length > 0;
-  const hasMastery = unpack.masteryCriteria?.length > 0;
-  const hasMisconceptions = unpack.misconceptions?.length > 0;
-
-  return (
-    <div className="space-y-8">
-      {/* What the standard asks of students */}
-      <div>
-        <h2 className="text-[20px] font-bold text-charcoal mb-1">
-          What students actually do
-        </h2>
-        <p className="text-sm text-text-muted mb-4">
-          The moves, ideas and words behind the standard.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <ChipGroup
-            title="Learning verbs"
-            hint="The thinking"
-            items={unpack.learningVerbs}
-            accent="var(--color-coral)"
-            tint="rgba(255, 106, 91, 0.12)"
-          />
-          <ChipGroup
-            title="Concepts"
-            hint="The ideas"
-            items={unpack.concepts}
-            accent="var(--color-lavender)"
-            tint="rgba(184, 125, 255, 0.14)"
-          />
-          <ChipGroup
-            title="Vocabulary"
-            hint="The words"
-            items={unpack.vocabulary}
-            accent="var(--color-teal)"
-            tint="rgba(0, 180, 166, 0.14)"
-          />
-        </div>
-      </div>
-
-      {/* Misconceptions read as a warning, not another list */}
-      {hasMisconceptions && (
-        <div
-          className="rounded-xl border p-5"
-          style={{
-            borderColor: 'rgba(255, 177, 63, 0.5)',
-            backgroundColor: 'rgba(255, 177, 63, 0.08)',
-          }}
-        >
-          <div className="flex items-center gap-2 mb-3">
-            <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none"
-              stroke="var(--color-amber)" strokeWidth="2.2" strokeLinecap="round">
-              <path d="M12 9v4" />
-              <path d="M12 17h.01" />
-              <path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
-            </svg>
-            <h2 className="text-[15px] font-bold uppercase tracking-[0.1em] text-charcoal">
-              Watch out for
-            </h2>
+            <Card>
+              <SectionLabel color={LABEL.indigo} className="mb-3">
+                Learning science
+              </SectionLabel>
+              <ul className="space-y-1.5">
+                {(standard.scienceTags ?? []).map((tag) => (
+                  <li key={tag} className="text-[15px] text-text-body leading-snug">
+                    · {tag}
+                  </li>
+                ))}
+              </ul>
+            </Card>
           </div>
-          <ul className="space-y-2">
-            {unpack.misconceptions.map((item, idx) => (
-              <li key={idx} className="flex gap-3 text-[16px] text-text-body leading-relaxed">
-                <span className="text-text-faint flex-shrink-0">&mdash;</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
 
-      {/* Where this sits in the sequence */}
-      <div>
-        <h2 className="text-[20px] font-bold text-charcoal mb-4">Where this sits</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="rounded-xl border border-hairline p-5 bg-gray-050">
-            <h3 className="text-[12px] font-bold uppercase tracking-[0.12em] text-text-faint mb-2">
-              They arrive knowing
-            </h3>
-            <p className="text-[16px] text-text-body leading-relaxed">
-              {unpack.priorLearning}
-            </p>
-          </div>
-          <div className="rounded-xl border border-hairline p-5 bg-gray-050">
-            <h3 className="text-[12px] font-bold uppercase tracking-[0.12em] text-text-faint mb-2">
-              This leads to
-            </h3>
-            <p className="text-[16px] text-text-body leading-relaxed">
-              {unpack.futureLearning}
-            </p>
-          </div>
-        </div>
-      </div>
+          {/* The route, named and drawn */}
+          <Card>
+            <div className="grid grid-cols-1 lg:grid-cols-[minmax(200px,260px)_1fr] gap-6 items-center">
+              <div>
+                <p className="text-[13px] font-bold uppercase tracking-[0.12em] text-charcoal mb-1">
+                  Instructional route
+                </p>
+                {blueprint.routeName && (
+                  <p className="text-[16px] font-bold mb-1" style={{ color: LABEL.teal }}>
+                    {blueprint.routeName}
+                  </p>
+                )}
+                <p className="text-[14px] text-text-muted leading-snug">
+                  {blueprint.routeLine}
+                </p>
+              </div>
 
-      {/* How you know they've got it */}
-      {hasMastery && (
-        <div>
-          <h2 className="text-[20px] font-bold text-charcoal mb-4">
-            How you'll know they've got it
-          </h2>
-          <ul className="space-y-3">
-            {unpack.masteryCriteria.map((criteria, idx) => (
-              <li
-                key={idx}
-                className="flex gap-3 rounded-xl border border-hairline p-4 bg-white"
-              >
-                <span
-                  className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs font-bold"
-                  style={{ backgroundColor: 'var(--color-teal)' }}
-                >
-                  &#10003;
-                </span>
-                <span className="text-[16px] text-text-body leading-relaxed">{criteria}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {/* The progression, drawn as steps rather than a flat list */}
-      {hasLadder && (
-        <div>
-          <h2 className="text-[20px] font-bold text-charcoal mb-1">Learning ladder</h2>
-          <p className="text-sm text-text-muted mb-4">
-            Build in this order &mdash; each rung assumes the one below it.
-          </p>
-
-          <ol className="relative">
-            {unpack.learningLadder.map((rung, idx) => {
-              const isLast = idx === unpack.learningLadder.length - 1;
-              return (
-                <li key={idx} className="relative flex gap-4 pb-4 last:pb-0">
-                  {!isLast && (
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                {ROUTE_PHASES.map((phase) => (
+                  <div key={phase.name} className="text-center">
                     <span
-                      className="absolute left-[15px] top-8 bottom-0 w-[2px] bg-hairline"
+                      className="block w-12 h-12 rounded-full mx-auto mb-3"
+                      style={{ backgroundColor: phase.color }}
                       aria-hidden="true"
                     />
-                  )}
+                    <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-charcoal">
+                      {phase.name}
+                    </p>
+                    <p className="text-[12px] text-text-muted leading-snug mt-1">
+                      {phase.caption}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Card>
+
+          {/* The lesson itself, step by step */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+            {steps.map((step, idx) => (
+              <Card key={idx}>
+                <div className="flex items-center gap-2 mb-2">
                   <span
-                    className="relative z-10 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold"
-                    style={{ backgroundColor: 'var(--color-charcoal)' }}
+                    className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-white text-[12px] font-bold"
+                    style={{ backgroundColor: LABEL.violet }}
                   >
                     {idx + 1}
                   </span>
-                  <p className="text-[16px] text-text-body leading-relaxed pt-1.5">{rung}</p>
-                </li>
-              );
-            })}
-          </ol>
+                  <p className="text-[13px] font-bold uppercase tracking-[0.06em] text-charcoal">
+                    {step.title}
+                  </p>
+                </div>
+                {step.minutes ? (
+                  <p className="text-[13px] text-text-muted mb-2">{step.minutes} minutes</p>
+                ) : null}
+                <p className="text-[15px] text-text-body leading-snug">{step.body}</p>
+                {step.scienceTag && (
+                  <p
+                    className="text-[14px] font-semibold mt-3"
+                    style={{ color: LABEL.violet }}
+                  >
+                    ({scienceLabel(step.scienceTag)})
+                  </p>
+                )}
+              </Card>
+            ))}
+          </div>
+
+          {/* The supporting decisions around the lesson */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+            <Card>
+              <SectionLabel color={LABEL.blue} className="mb-3">
+                Technology
+              </SectionLabel>
+              <p className="text-[15px] text-text-body leading-snug">
+                {blueprint.tech || "No tech required."}
+              </p>
+              {blueprint.techPurpose && (
+                <p className="text-[14px] mt-3" style={{ color: LABEL.coral }}>
+                  Purpose: {blueprint.techPurpose}
+                </p>
+              )}
+            </Card>
+
+            <Card>
+              <SectionLabel color={LABEL.teal} className="mb-3">
+                AI extension
+              </SectionLabel>
+              <ul className="space-y-2">
+                {(blueprint.aiPrompts ?? []).map((prompt, idx) => (
+                  <li key={idx} className="text-[15px] text-text-body leading-snug">
+                    · {prompt}
+                  </li>
+                ))}
+              </ul>
+              <p
+                className="text-[14px] font-bold mt-3 leading-snug"
+                style={{ color: LABEL.coral }}
+              >
+                AI = thinking partner, not an answer machine.
+              </p>
+            </Card>
+
+            <Card>
+              <SectionLabel color={LABEL.coral} className="mb-3">
+                Assessment
+              </SectionLabel>
+              <ul className="space-y-2">
+                {(blueprint.assessment ?? []).map((item, idx) => (
+                  <CheckItem key={idx} color="var(--color-coral)">
+                    {item}
+                  </CheckItem>
+                ))}
+              </ul>
+            </Card>
+
+            <Card>
+              <SectionLabel color={LABEL.rust} className="mb-3">
+                Why this lesson works
+              </SectionLabel>
+              <ul className="space-y-1.5">
+                {(blueprint.whyItWorks ?? []).map((reason, idx) => (
+                  <li key={idx} className="text-[15px] text-text-body leading-snug">
+                    · {reason}
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          </div>
+
+          {/* Executive function supports */}
+          {blueprint.efSupports?.length > 0 && (
+            <Card>
+              <SectionLabel color={LABEL.violet} className="mb-3">
+                Executive function supports
+              </SectionLabel>
+              <div className="flex flex-wrap gap-2">
+                {blueprint.efSupports.map((support, idx) => (
+                  <span
+                    key={idx}
+                    className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-[15px] text-charcoal"
+                    style={{
+                      backgroundColor: "rgba(0, 180, 166, 0.08)",
+                      border: "1px solid rgba(0, 180, 166, 0.28)",
+                    }}
+                  >
+                    <span style={{ color: "var(--color-teal)" }} aria-hidden="true">
+                      ☑
+                    </span>
+                    {support}
+                  </span>
+                ))}
+              </div>
+            </Card>
+          )}
+
+          {/* The thesis of the whole product */}
+          <div className="rounded-2xl bg-gray-050 border border-hairline p-6 flex flex-wrap items-center justify-between gap-5">
+            <p className="text-[16px] text-text-body max-w-lg leading-snug">
+              <strong className="text-charcoal">The big idea:</strong> we don&apos;t just
+              teach the standard. We design the learning so students can actually learn.
+            </p>
+            <div className="flex items-center gap-3 flex-wrap">
+              {[
+                { label: "Standard", color: "var(--color-navy)" },
+                { label: "Learning science", color: "var(--color-teal)" },
+                { label: "Meaningful learning", color: LABEL.violet },
+              ].map((chip, idx) => (
+                <div key={chip.label} className="flex items-center gap-3">
+                  {idx > 0 && <span className="text-text-faint" aria-hidden="true">→</span>}
+                  <span
+                    className="inline-block px-4 py-2.5 rounded-lg text-[13px] font-bold uppercase tracking-[0.08em] text-white"
+                    style={{ backgroundColor: chip.color }}
+                  >
+                    {chip.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Where a teacher goes next */}
+      <div className="flex flex-wrap gap-3 mt-6">
+        <button
+          onClick={() => onOpenTab("resources")}
+          className="inline-flex items-center min-h-[52px] px-6 rounded-xl font-semibold text-[15px] bg-charcoal text-white hover:bg-charcoal/90 transition-colors"
+        >
+          Pull resources to remix
+        </button>
+        <button
+          onClick={() => onOpenTab("generate")}
+          className="inline-flex items-center min-h-[52px] px-6 rounded-xl font-semibold text-[15px] border border-border-strong text-charcoal hover:bg-gray-050 transition-colors"
+        >
+          Make a student version with AI
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Vocabulary is authored either as a plain term or as a term with a kid-friendly
+ * definition. Accept both, and treat an em-dashed string as term + definition.
+ */
+function vocabEntry(item) {
+  if (item && typeof item === "object") {
+    return {
+      term: item.term ?? item.word ?? "",
+      definition: item.definition ?? item.gloss ?? null,
+    };
+  }
+
+  const [term, ...rest] = String(item).split(/\s+[—–-]\s+/);
+  return { term, definition: rest.join(" — ") || null };
+}
+
+function UnpackTab({ unpack, standard, onOpenTab }) {
+  if (!unpack) return <NotAuthoredYet what="deconstruction" />;
+
+  const ladder = unpack.ladder ?? [];
+  const vocabulary = (unpack.vocabulary ?? []).map(vocabEntry);
+  const challenges = unpack.challenges ?? [];
+  const priorStandards = unpack.priorStandards ?? [];
+  const futureStandards = unpack.futureStandards ?? [];
+
+  return (
+    <div className="space-y-5">
+      {/* What the standard actually asks for */}
+      <div className="rounded-2xl border border-hairline overflow-hidden bg-white">
+        <div className="px-8 py-7" style={{ backgroundColor: "var(--color-navy)" }}>
+          <SectionLabel color="var(--color-teal)" className="mb-2">
+            Deconstructed
+          </SectionLabel>
+          <h2 className="text-[22px] md:text-[26px] font-bold text-white leading-tight">
+            {standard.code} — {standard.name}
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-hairline">
+          <div className="p-6">
+            <SectionLabel color={LABEL.crimson} className="mb-4">
+              What students do (the verbs)
+            </SectionLabel>
+            <div className="space-y-3">
+              {(unpack.verbs ?? []).map((verb, idx) => (
+                <div key={idx} className="flex flex-wrap items-baseline gap-3">
+                  <span
+                    className="px-3 py-1.5 rounded-lg text-[15px] font-bold"
+                    style={{
+                      backgroundColor: "rgba(255, 106, 91, 0.12)",
+                      color: LABEL.crimson,
+                    }}
+                  >
+                    {verb.word}
+                  </span>
+                  {verb.gloss && (
+                    <span className="text-[15px] text-text-body">{verb.gloss}</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="p-6">
+            <SectionLabel color={LABEL.violet} className="mb-4">
+              What they do it to (the concepts)
+            </SectionLabel>
+            <div className="flex flex-wrap gap-2">
+              {(unpack.concepts ?? []).map((concept, idx) => (
+                <span
+                  key={idx}
+                  className="px-3 py-1.5 rounded-lg text-[15px] font-bold"
+                  style={{
+                    backgroundColor: "rgba(184, 125, 255, 0.14)",
+                    color: LABEL.violet,
+                  }}
+                >
+                  {concept}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* The climb */}
+      {ladder.length > 0 && (
+        <Card>
+          <SectionLabel color={LABEL.teal} className="mb-1">
+            The skill ladder
+          </SectionLabel>
+          <p className="text-[15px] text-text-muted mb-5">
+            Nobody jumps straight to the standard. This is the climb.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+            {ladder.map((rung, idx) => (
+              <div key={idx} className="rounded-xl border border-hairline p-5">
+                <div className="flex items-center gap-2 mb-2">
+                  <span
+                    className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-white text-[12px] font-bold"
+                    style={{ backgroundColor: "var(--color-teal)" }}
+                  >
+                    {idx + 1}
+                  </span>
+                  <p className="text-[15px] font-bold text-charcoal">{rung.name}</p>
+                </div>
+                {rung.descriptor && (
+                  <p className="text-[15px] text-text-body leading-snug mb-4">
+                    {rung.descriptor}
+                  </p>
+                )}
+                {/* Fill grows with the rung, so the climb is visible at a glance */}
+                <div className="h-1.5 rounded-full bg-gray-100 overflow-hidden">
+                  <div
+                    className="h-full rounded-full"
+                    style={{
+                      width: `${((idx + 1) / ladder.length) * 100}%`,
+                      backgroundColor: "var(--color-teal)",
+                    }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
+
+      {/* The words that gate the standard */}
+      {vocabulary.length > 0 && (
+        <Card>
+          <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+            <SectionLabel color={LABEL.amber}>Vocabulary students need</SectionLabel>
+            <p className="text-[14px] text-text-faint">
+              Kid-friendly definitions — front-load these before the lesson
+            </p>
+          </div>
+          <p className="text-[15px] text-text-muted mb-5">
+            Students can&apos;t master a standard whose words they don&apos;t own.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+            {vocabulary.map((entry, idx) => (
+              <div
+                key={idx}
+                className="rounded-xl p-5"
+                style={{ backgroundColor: "rgba(255, 177, 63, 0.09)" }}
+              >
+                <p className="text-[16px] font-bold text-charcoal mb-1">{entry.term}</p>
+                {entry.definition && (
+                  <p className="text-[15px] text-text-body leading-snug">
+                    {entry.definition}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
+
+      {/* What goes wrong, and the move that fixes it */}
+      {challenges.length > 0 && (
+        <Card>
+          <SectionLabel color={LABEL.crimson} className="mb-1">
+            Common misconceptions &amp; challenges
+          </SectionLabel>
+          <p className="text-[15px] text-text-muted mb-5">
+            What you&apos;ll see in the room, and the move that fixes it.
+          </p>
+          <div className="space-y-3">
+            {challenges.map((challenge, idx) => (
+              <div
+                key={idx}
+                className="grid grid-cols-1 md:grid-cols-2 rounded-xl overflow-hidden"
+              >
+                <div
+                  className="p-5 flex gap-3"
+                  style={{ backgroundColor: "rgba(255, 125, 174, 0.08)" }}
+                >
+                  <span
+                    className="flex-shrink-0 font-bold"
+                    style={{ color: LABEL.crimson }}
+                    aria-hidden="true"
+                  >
+                    ✕
+                  </span>
+                  <div>
+                    <SectionLabel color={LABEL.crimson} className="mb-1">
+                      You&apos;ll see
+                    </SectionLabel>
+                    <p className="text-[16px] text-text-body leading-snug">
+                      {challenge.problem}
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className="p-5 flex gap-3"
+                  style={{ backgroundColor: "rgba(0, 180, 166, 0.07)" }}
+                >
+                  <span
+                    className="flex-shrink-0 font-bold"
+                    style={{ color: LABEL.teal }}
+                    aria-hidden="true"
+                  >
+                    ✓
+                  </span>
+                  <div>
+                    <SectionLabel color={LABEL.teal} className="mb-1">
+                      Try this
+                    </SectionLabel>
+                    <p className="text-[16px] text-text-body leading-snug">
+                      {challenge.fix}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
+
+      {/* Where this sits in the sequence */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Card>
+          <SectionLabel color={LABEL.violet} className="mb-1">
+            Prior knowledge
+          </SectionLabel>
+          <p className="text-[15px] text-text-muted mb-4">Where this skill came from</p>
+
+          <div className="space-y-3">
+            {priorStandards.map((prior) => (
+              <div key={prior.code} className="flex flex-wrap items-baseline gap-3">
+                <Link
+                  href={standardHref(prior.code)}
+                  className="px-2.5 py-1 rounded-md text-[13px] font-bold hover:opacity-80 transition-opacity"
+                  style={{
+                    backgroundColor: "rgba(184, 125, 255, 0.16)",
+                    color: LABEL.violet,
+                  }}
+                >
+                  {prior.code}
+                </Link>
+                <span className="text-[16px] text-text-body leading-snug">
+                  {prior.text}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {unpack.priorSkills?.length > 0 && (
+            <div className="mt-5">
+              <SectionLabel color="var(--color-text-faint)" className="mb-2">
+                They also need to be able to
+              </SectionLabel>
+              <ul className="space-y-1.5">
+                {unpack.priorSkills.map((skill, idx) => (
+                  <li key={idx} className="flex gap-2 text-[16px] text-text-body">
+                    <span style={{ color: LABEL.violet }} aria-hidden="true">
+                      →
+                    </span>
+                    <span>{skill}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </Card>
+
+        <Card>
+          <SectionLabel color={LABEL.indigo} className="mb-1">
+            Future learning
+          </SectionLabel>
+          <p className="text-[15px] text-text-muted mb-4">What this is building toward</p>
+
+          <div className="space-y-3">
+            {futureStandards.map((future) => (
+              <div key={future.code} className="flex flex-wrap items-baseline gap-3">
+                <Link
+                  href={standardHref(future.code)}
+                  className="px-2.5 py-1 rounded-md text-[13px] font-bold hover:opacity-80 transition-opacity"
+                  style={{
+                    backgroundColor: "rgba(67, 56, 202, 0.12)",
+                    color: LABEL.indigo,
+                  }}
+                >
+                  {future.code}
+                </Link>
+                <span className="text-[16px] text-text-body leading-snug">
+                  {future.text}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-5 pt-5 border-t border-hairline">
+            <p className="text-[15px] text-text-muted leading-snug">
+              If students leave this year shaky here, that&apos;s what shows up two
+              grades later.
+            </p>
+          </div>
+        </Card>
+      </div>
+
+      {/* The finish line */}
+      {unpack.masteryStatement && (
+        <div className="rounded-2xl border-2 border-charcoal bg-white p-7 flex flex-wrap items-center justify-between gap-5">
+          <div className="max-w-xl">
+            <SectionLabel color="var(--color-text-faint)" className="mb-2">
+              You&apos;ve got it when…
+            </SectionLabel>
+            <p className="text-[20px] font-bold text-charcoal leading-snug">
+              {unpack.masteryStatement}
+            </p>
+          </div>
+          <button
+            onClick={() => onOpenTab("resources")}
+            className="inline-flex items-center min-h-[52px] px-6 rounded-xl font-semibold text-[15px] text-white bg-coral hover:bg-coral-press transition-colors flex-shrink-0"
+          >
+            Find resources for this →
+          </button>
         </div>
       )}
     </div>
