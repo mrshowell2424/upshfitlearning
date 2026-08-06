@@ -27,6 +27,8 @@ export interface SubstackArticle {
   description: string
   tag: ArticleTag
   image?: string
+  /** ISO timestamp; absent for the handful of pages that don't expose one. */
+  publishedAt?: string
 }
 
 /**
@@ -176,6 +178,8 @@ interface ArticleAssets {
   /** False when the article URL is dead, so the caller can drop it. */
   ok: boolean
   image?: string
+  /** ISO timestamp from the page, used to put the newest post first. */
+  publishedAt?: string
 }
 
 /**
@@ -201,7 +205,12 @@ async function fetchArticleAssets(url: string): Promise<ArticleAssets> {
       /<meta[^>]+property=["']og:image["'][^>]*content=["']([^"']+)["']/.exec(html)?.[1] ??
       /<meta[^>]+content=["']([^"']+)["'][^>]*property=["']og:image["']/.exec(html)?.[1]
 
-    return { ok: true, image: pickBodyImage(html) ?? ogImage }
+    // Substack embeds the publish date in its JSON-LD
+    const publishedAt =
+      /"datePublished"\s*:\s*"([^"]+)"/.exec(html)?.[1] ??
+      /<meta[^>]+property=["']article:published_time["'][^>]*content=["']([^"']+)["']/.exec(html)?.[1]
+
+    return { ok: true, image: pickBodyImage(html) ?? ogImage, publishedAt }
   } catch {
     // A network blip shouldn't delete an article, so treat it as reachable
     return { ok: true }
@@ -276,14 +285,23 @@ async function fetchSubstackArticles(): Promise<SubstackArticle[]> {
   const live: SubstackArticle[] = []
 
   articles.forEach((article, index) => {
-    const { ok, image } = assets[index]
+    const { ok, image, publishedAt } = assets[index]
     if (!ok) {
       console.warn(`Substack article URL is dead, skipping: ${article.url}`)
       return
     }
 
     article.image = image ?? rssImages.get(article.slug)
+    article.publishedAt = publishedAt
     live.push(article)
+  })
+
+  // Newest first, so the lounge reorders itself as posts go out. Anything
+  // without a date sinks to the bottom rather than jumping to the top.
+  live.sort((a, b) => {
+    const left = a.publishedAt ? Date.parse(a.publishedAt) : 0
+    const right = b.publishedAt ? Date.parse(b.publishedAt) : 0
+    return right - left
   })
 
   return live
