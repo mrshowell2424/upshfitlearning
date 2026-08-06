@@ -36,21 +36,16 @@ export function ClassroomJoinLink() {
   }
 
   return (
-    <div>
-      <a
-        href={CLASSROOM_JOIN_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`${BUTTON} bg-coral text-white hover:bg-coral-press`}
-      >
-        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M12 3L2 8l10 5 10-5-10-5zM2 13.5V17c0 .6 4.5 3 10 3s10-2.4 10-3v-3.5l-10 5-10-5z" />
-        </svg>
-        Join in Google Classroom
-      </a>
-      <p className="mt-2 text-xs text-text-muted">
-        Opens Google Classroom. You'll join with your Google account.
-      </p>
-    </div>
+    <a
+      href={CLASSROOM_JOIN_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${BUTTON} bg-coral text-white hover:bg-coral-press`}
+    >
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 3L2 8l10 5 10-5-10-5zM2 13.5V17c0 .6 4.5 3 10 3s10-2.4 10-3v-3.5l-10 5-10-5z" />
+      </svg>
+      Join in Google Classroom
+    </a>
   )
 }

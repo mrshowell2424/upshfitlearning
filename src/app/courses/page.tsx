@@ -3,6 +3,7 @@ import Footer from '@/components/shared/Footer'
 import { db } from '@/lib/db'
 import { courses } from '@/lib/db/schema'
 import { ClassroomJoinLink } from './join'
+import { CoursesGate } from './gate'
 
 interface Course {
   id: string
@@ -39,6 +40,7 @@ export default async function CoursesPage() {
           </div>
         </section>
 
+        <CoursesGate>
         {/* Announced course — not yet in the courses table */}
         <section className="py-12 md:py-16 px-5 md:px-8 bg-white">
           <div className="max-w-4xl mx-auto">
@@ -145,6 +147,7 @@ export default async function CoursesPage() {
             )}
           </div>
         </section>
+        </CoursesGate>
       </main>
       <Footer />
     </div>
