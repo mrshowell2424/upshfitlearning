@@ -9,6 +9,16 @@ interface ScoredStandard {
   score: number
 }
 
+/** Only the fields the search reads. */
+interface StandardRow {
+  code: string
+  name: string
+  plain_reading: string | null
+  learning_target: string | null
+  skills: string[] | null
+  match_keys: string[] | null
+}
+
 const normalize = (value: string) => value.toLowerCase().trim()
 
 /** Words too common to be worth matching on their own. */
@@ -24,7 +34,7 @@ const STOP_WORDS = new Set([
  * then the prose fields.
  */
 function scoreStandard(
-  standard: typeof standards.$inferSelect,
+  standard: StandardRow,
   query: string,
   terms: string[]
 ): number {
@@ -68,17 +78,17 @@ export async function GET(request: NextRequest) {
       .split(/[^a-z0-9]+/)
       .filter(term => term.length > 2 && !STOP_WORDS.has(term))
 
-    const all = await db.select().from(standards)
+    const all = (await db.select().from(standards)) as StandardRow[]
 
     const results: ScoredStandard[] = all
-      .map(standard => ({
+      .map((standard: StandardRow): ScoredStandard => ({
         code: standard.code,
         name: standard.name,
         skills: standard.skills ?? [],
         score: scoreStandard(standard, query, terms),
       }))
-      .filter(result => result.score > 0)
-      .sort((a, b) => b.score - a.score || a.code.localeCompare(b.code))
+      .filter((result: ScoredStandard) => result.score > 0)
+      .sort((a: ScoredStandard, b: ScoredStandard) => b.score - a.score || a.code.localeCompare(b.code))
       .slice(0, 12)
 
     return NextResponse.json({ results })
