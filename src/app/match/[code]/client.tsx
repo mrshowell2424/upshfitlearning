@@ -401,7 +401,9 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
           </div>
 
           {/* The supporting decisions around the lesson */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+          <hr className="border-0 border-t border-hairline mt-8 mb-6" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Card>
               <SectionLabel color={LABEL.blue} className="mb-3">
                 Technology
@@ -434,7 +436,11 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
                 AI = thinking partner, not an answer machine.
               </p>
             </Card>
+          </div>
 
+          <hr className="border-0 border-t border-hairline mt-8 mb-6" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Card>
               <SectionLabel color={LABEL.coral} className="mb-3">
                 Assessment

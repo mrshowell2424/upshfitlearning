@@ -160,27 +160,31 @@ export default async function ResourceDetailPage({ params }: PageProps) {
             {/* Pairs well with — Upshift's own videos only */}
             {related.length > 0 && (
               <div>
-                <h3 className="text-sm font-bold uppercase tracking-[0.1em] mb-4">Pairs well with</h3>
-                <div className="space-y-4">
+                <h3 className="text-sm font-bold uppercase tracking-[0.1em] mb-3">Pairs well with</h3>
+                {/* Compact rows — a suggestion rail, not competing with the resource itself */}
+                <div className="flex flex-col divide-y divide-hairline border-y border-hairline">
                   {related.map((item) => (
                     <a
                       key={item.id}
                       href={`/resources/${item.id}`}
-                      className="block border border-border rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                      className="flex items-center gap-3 py-2.5 group"
                     >
-                      <div className="aspect-video bg-gray-100 overflow-hidden">
+                      <div className="w-[72px] h-[42px] flex-shrink-0 bg-gray-100 rounded overflow-hidden">
                         {item.thumbnail_url && (
                           <img
                             src={item.thumbnail_url}
                             alt={item.title}
                             className="w-full h-full object-cover"
+                            loading="lazy"
                           />
                         )}
                       </div>
-                      <div className="p-3">
-                        <p className="font-semibold text-sm text-charcoal line-clamp-2">{item.title}</p>
+                      <div className="min-w-0">
+                        <p className="text-[13px] font-semibold text-charcoal leading-snug line-clamp-2 group-hover:text-coral transition-colors">
+                          {item.title}
+                        </p>
                         {item.purpose && (
-                          <p className="text-xs text-text-muted mt-1">{item.purpose}</p>
+                          <p className="text-[11px] text-text-muted truncate">{item.purpose}</p>
                         )}
                       </div>
                     </a>

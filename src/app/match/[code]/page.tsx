@@ -19,7 +19,6 @@ const QUICK_STANDARDS = [
   { code: "RL.2.1", label: "RL.2.1" },
   { code: "RI.4.2", label: "RI.4.2 main idea" },
   { code: "L.5.4", label: "vocabulary in context" },
-  { code: "RL.6.3", label: "story elements, 6th grade" },
 ];
 
 export default async function MatchDetailPage({ params }: PageProps) {

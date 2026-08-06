@@ -8,6 +8,9 @@ import Footer from "@/components/shared/Footer";
 import { isStandardCode, standardHref, standardTheme } from "@/lib/utils/standards";
 import { COURSE_COUNT } from "@/app/courses/announced";
 
+/** Kept here so the stat can't silently drift from the library again. */
+const RESOURCE_TOTAL = 2760;
+
 const exampleSearches = [
   "RL.2.1",
   "determine main idea",
@@ -194,7 +197,7 @@ function MatchPageContent() {
                 className="text-[30px] font-bold"
                 style={{ color: "var(--color-coral)" }}
               >
-                2,688
+                {RESOURCE_TOTAL.toLocaleString()}
               </p>
               <p className="text-[10.5px] font-bold uppercase tracking-[0.16em] text-text-faint">
                 Resources
@@ -216,7 +219,7 @@ function MatchPageContent() {
                 className="text-[30px] font-bold"
                 style={{ color: "var(--color-teal)" }}
               >
-                K–8
+                K–12
               </p>
               <p className="text-[10.5px] font-bold uppercase tracking-[0.16em] text-text-faint">
                 Grade Range

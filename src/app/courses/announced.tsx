@@ -42,7 +42,6 @@ const COURSES: AnnouncedCourse[] = [
   {
     title:
       'Control the Chaos: What It Takes to Create Order in the Classroom and Teach Executive Functioning Skills',
-    status: 'Book study with the authors',
     category: 'Book Studies',
     classroomUrl: 'https://classroom.google.com/c/NDk2OTUzNDk5NTkz?cjc=hkzerua',
     gradCredit: false,
