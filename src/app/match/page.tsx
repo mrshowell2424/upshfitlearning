@@ -5,7 +5,7 @@ import { useState, useEffect, useCallback, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
-import { isStandardCode, standardHref } from "@/lib/utils/standards";
+import { isStandardCode, standardHref, standardTheme } from "@/lib/utils/standards";
 
 const exampleSearches = [
   "RL.2.1",
@@ -80,17 +80,17 @@ function MatchPageContent() {
           </div>
 
           {/* Heading */}
-          <h1 className="text-[54px] font-bold text-center mb-4 leading-[1.04]">
+          <h1 className="text-[34px] sm:text-[44px] md:text-[54px] font-bold text-center mb-4 leading-[1.06] md:leading-[1.04]">
             What are you teaching?
           </h1>
 
           {/* Subheading */}
-          <p className="text-center text-[18px] text-text-muted mb-8">
+          <p className="text-center text-base md:text-[18px] text-text-muted mb-8">
             Enter a standard code or describe what you're teaching
           </p>
 
           {/* Search bar */}
-          <div className="flex gap-2 mb-6">
+          <div className="flex flex-col sm:flex-row gap-2 mb-6">
             <input
               type="text"
               value={query}
@@ -104,7 +104,7 @@ function MatchPageContent() {
             />
             <button
               onClick={() => handleSearch(query)}
-              className="px-6 py-3 rounded-[10px] font-semibold text-white transition-colors"
+              className="px-6 min-h-[48px] rounded-[10px] font-semibold text-white transition-colors flex-shrink-0"
               style={{
                 backgroundColor: "var(--color-coral)",
               }}
@@ -144,28 +144,44 @@ function MatchPageContent() {
                 Found {results.length} standard{results.length !== 1 ? "s" : ""}:
               </p>
               <div className="space-y-3">
-                {results.map((result) => (
-                  <button
-                    key={result.code}
-                    onClick={() => router.push(standardHref(result.code))}
-                    className="w-full text-left border border-border rounded-lg p-4 hover:bg-gray-050 transition-colors"
-                  >
-                    <div className="font-bold text-charcoal mb-1">{result.code}</div>
-                    <p className="text-sm text-text-body">{result.name}</p>
-                    {result.skills && result.skills.length > 0 && (
-                      <div className="flex flex-wrap gap-1 mt-2">
-                        {result.skills.map((skill) => (
-                          <span
-                            key={skill}
-                            className="text-xs bg-gray-100 text-text-faint px-2 py-1 rounded"
-                          >
-                            {skill}
-                          </span>
-                        ))}
+                {results.map((result) => {
+                  const theme = standardTheme(result.code);
+                  return (
+                    <button
+                      key={result.code}
+                      onClick={() => router.push(standardHref(result.code))}
+                      className="w-full text-left border border-border rounded-lg p-4 pl-5 border-l-4 hover:shadow-md transition-shadow"
+                      style={{
+                        borderLeftColor: theme.accent,
+                        backgroundColor: theme.tint,
+                      }}
+                    >
+                      <div className="flex items-center gap-2 mb-1 flex-wrap">
+                        <span className="font-bold text-charcoal">{result.code}</span>
+                        <span
+                          className="text-[10px] font-bold uppercase tracking-[0.14em] px-2 py-0.5 rounded-full"
+                          style={{ backgroundColor: theme.chip, color: theme.accent }}
+                        >
+                          {theme.label}
+                        </span>
                       </div>
-                    )}
-                  </button>
-                ))}
+                      <p className="text-sm text-text-body">{result.name}</p>
+                      {result.skills && result.skills.length > 0 && (
+                        <div className="flex flex-wrap gap-1 mt-2">
+                          {result.skills.map((skill) => (
+                            <span
+                              key={skill}
+                              className="text-xs px-2 py-1 rounded text-charcoal"
+                              style={{ backgroundColor: theme.chip }}
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           )}
