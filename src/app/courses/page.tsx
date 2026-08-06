@@ -36,10 +36,7 @@ export default async function CoursesPage() {
         {/* Hero */}
         <section className="py-12 md:py-16 px-5 md:px-8 bg-gradient-to-br from-teal-50 to-white border-b border-hairline">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-[30px] md:text-4xl font-bold text-charcoal mb-4">Courses</h1>
-            <p className="text-base md:text-lg text-text-muted xl:whitespace-nowrap">
-              Longer-form learning, taught in sequence — grounded in the science of how students actually learn.
-            </p>
+            <h1 className="text-[30px] md:text-4xl font-bold text-charcoal">Courses</h1>
           </div>
         </section>
 
