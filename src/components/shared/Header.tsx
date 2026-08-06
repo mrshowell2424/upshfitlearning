@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import PreviewTierToggle from "./PreviewTierToggle";
+import UserMenu from "./UserMenu";
+import { useAuth } from "@/providers/AuthProvider";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -17,6 +19,7 @@ export default function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { user, isLoading } = useAuth();
 
   // Never leave the panel hanging open over the new page
   useEffect(() => {
@@ -103,24 +106,35 @@ export default function Header() {
           <PreviewTierToggle />
         </div>
 
-        {/* Auth buttons - shown when not logged in */}
-        <a
-          href="/auth/signin"
-          className="hidden sm:inline-flex items-center min-h-[44px] px-4 text-sm font-semibold text-charcoal hover:text-text-muted transition-colors"
-        >
-          Sign in
-        </a>
-        <a
-          href="/auth/signup"
-          className="inline-flex items-center min-h-[44px] px-4 text-sm font-semibold text-white rounded-lg transition-colors"
-          style={{
-            backgroundColor: "var(--color-coral)",
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--color-coral-press)")}
-          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--color-coral)")}
-        >
-          Get started
-        </a>
+        {/* Signed out: sign in + get started. Signed in: the account menu. */}
+        {isLoading ? (
+          <span
+            className="w-24 h-9 rounded-lg bg-gray-100 animate-pulse"
+            aria-hidden="true"
+          />
+        ) : user ? (
+          <UserMenu />
+        ) : (
+          <>
+            <a
+              href="/auth/signin"
+              className="hidden sm:inline-flex items-center min-h-[44px] px-4 text-sm font-semibold text-charcoal hover:text-text-muted transition-colors"
+            >
+              Sign in
+            </a>
+            <a
+              href="/auth/signup"
+              className="inline-flex items-center min-h-[44px] px-4 text-sm font-semibold text-white rounded-lg transition-colors"
+              style={{
+                backgroundColor: "var(--color-coral)",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--color-coral-press)")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--color-coral)")}
+            >
+              Get started
+            </a>
+          </>
+        )}
 
         {/* Menu toggle — phone and tablet only */}
         <button
@@ -147,21 +161,6 @@ export default function Header() {
           </svg>
         </button>
 
-        {/* Tier pill & Avatar - shown when logged in (TODO: add conditional) */}
-        {/* <div className="flex items-center gap-2 px-3 py-1 border border-border-strong rounded-full text-[12px] font-semibold">
-          <div
-            className="w-2 h-2 rounded-full"
-            style={{ backgroundColor: "var(--color-pink)" }}
-          />
-          FREE PLAN
-        </div>
-
-        <div
-          className="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-semibold"
-          style={{ backgroundColor: "var(--color-lavender)" }}
-        >
-          SH
-        </div> */}
       </div>
 
       {/* Mobile nav panel */}
@@ -190,12 +189,14 @@ export default function Header() {
               <PreviewTierToggle />
             </div>
 
-            <a
-              href="/auth/signin"
-              className="sm:hidden flex items-center min-h-[52px] px-5 text-[15px] font-semibold text-charcoal hover:bg-gray-050 transition-colors"
-            >
-              Sign in
-            </a>
+            {!isLoading && !user && (
+              <a
+                href="/auth/signin"
+                className="sm:hidden flex items-center min-h-[52px] px-5 text-[15px] font-semibold text-charcoal hover:bg-gray-050 transition-colors"
+              >
+                Sign in
+              </a>
+            )}
           </nav>
         </div>
       )}

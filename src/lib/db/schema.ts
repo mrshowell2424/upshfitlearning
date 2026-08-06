@@ -45,7 +45,10 @@ export const standard_unpacks = pgTable("standard_unpacks", {
   standard_code: varchar("standard_code", { length: 20 }).notNull(),
   verbs: jsonb("verbs").$type<Array<{ word: string; gloss: string }>>(),
   concepts: jsonb("concepts").$type<string[]>(),
-  vocabulary: jsonb("vocabulary").$type<string[]>(),
+  // Terms carry a kid-friendly definition; bare strings from older rows still render.
+  vocabulary: jsonb("vocabulary").$type<
+    Array<string | { term: string; definition: string }>
+  >(),
   prior_skills: jsonb("prior_skills").$type<string[]>(),
   prior_standards: jsonb("prior_standards").$type<
     Array<{ code: string; text: string }>

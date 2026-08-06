@@ -50,7 +50,12 @@ const unpacksData = [
       { word: "Demonstrate", gloss: "show evidence of understanding" },
     ],
     concepts: ["Key details", "Text comprehension", "Questioning strategies"],
-    vocabulary: ["Key details", "Questions", "Understanding", "Evidence"],
+    vocabulary: [
+      { term: "key detail", definition: "an important piece of information in the story" },
+      { term: "question", definition: "something you ask when you want to know more" },
+      { term: "evidence", definition: "the part of the text that proves your answer" },
+      { term: "retell", definition: "say what happened in your own words" },
+    ],
     prior_skills: ["Identify characters", "Identify settings", "Retell stories"],
     prior_standards: [{ code: "RL.K.1", text: "Ask and answer questions about key details" }],
     future_standards: [
@@ -79,7 +84,13 @@ const unpacksData = [
       { word: "Summarize", gloss: "give a brief statement of the main points" },
     ],
     concepts: ["Main idea", "Supporting details", "Text structure", "Summarization"],
-    vocabulary: ["Main idea", "Supporting details", "Summary", "Topic", "Central message"],
+    vocabulary: [
+      { term: "main idea", definition: "what the whole text is mostly about" },
+      { term: "topic", definition: "the one thing the text is about, in a word" },
+      { term: "supporting detail", definition: "a fact that backs up the main idea" },
+      { term: "summarize", definition: "say the important parts in fewer words" },
+      { term: "relevant", definition: "actually related to the point" },
+    ],
     prior_skills: ["Identify topics", "Identify facts", "Answer literal questions"],
     prior_standards: [{ code: "RI.3.2", text: "Determine the main idea and retell key details" }],
     future_standards: [
@@ -105,7 +116,13 @@ const unpacksData = [
       { word: "Choose flexibly", gloss: "select strategically from various options" },
     ],
     concepts: ["Context clues", "Word relationships", "Vocabulary strategies", "Multiple meanings"],
-    vocabulary: ["Context", "Clues", "Synonym", "Antonym", "Word relationships", "Multiple meaning"],
+    vocabulary: [
+      { term: "context", definition: "the words and sentences around a word" },
+      { term: "clue", definition: "a hint that helps you work out the meaning" },
+      { term: "synonym", definition: "a word that means almost the same thing" },
+      { term: "antonym", definition: "a word that means the opposite" },
+      { term: "multiple meaning", definition: "a word with more than one meaning" },
+    ],
     prior_skills: ["Use picture clues", "Use sentence context", "Know basic word parts"],
     prior_standards: [
       { code: "L.4.4", text: "Determine word meanings using context, word parts, and reference materials" },
@@ -135,7 +152,13 @@ const unpacksData = [
       { word: "Unfolds", gloss: "develops or progresses" },
     ],
     concepts: ["Character development", "Plot structure", "Episodes/scenes", "Change over time"],
-    vocabulary: ["Character", "Plot", "Episodes", "Scene", "Motivation", "Change"],
+    vocabulary: [
+      { term: "character", definition: "a person or animal in the story" },
+      { term: "plot", definition: "the events that happen, in order" },
+      { term: "episode", definition: "one chunk of the story where something happens" },
+      { term: "motivation", definition: "the reason a character does what they do" },
+      { term: "change", definition: "how a character is different by the end" },
+    ],
     prior_skills: ["Identify character traits", "Sequence events", "Understand cause and effect"],
     prior_standards: [
       { code: "RL.5.3", text: "Compare characters and describe changes in their feelings or actions" },

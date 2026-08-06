@@ -112,7 +112,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [])
 
   const signOut = async () => {
-    await supabase.auth.signOut()
+    // supabase is a stub when the env vars are absent
+    if (supabase?.auth?.signOut) await supabase.auth.signOut()
     setUser(null)
     setSubscription(null)
   }

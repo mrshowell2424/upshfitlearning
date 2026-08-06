@@ -465,8 +465,9 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
           {/* The thesis of the whole product */}
           <div className="rounded-2xl bg-gray-050 border border-hairline p-6 flex flex-wrap items-center justify-between gap-5">
             <p className="text-[16px] text-text-body max-w-lg leading-snug">
-              <strong className="text-charcoal">The big idea:</strong> we don&apos;t just
-              teach the standard. We design the learning so students can actually learn.
+              <strong className="text-charcoal">The big idea:</strong>{" "}
+              we don&apos;t just teach the standard. We design the learning so students
+              can actually learn.
             </p>
             <div className="flex items-center gap-3 flex-wrap">
               {[

@@ -77,16 +77,37 @@ function buildPrompt(
     .filter(Boolean)
     .join(" ");
 
+  // Flatten the authored blueprint/unpack into prompt-ready lines once, so each
+  // format below reads the same facts.
+  const verbs = (unpack?.verbs ?? []).map((v: any) => v.word ?? v).join(", ");
+  const concepts = (unpack?.concepts ?? []).join(", ");
+  const vocabulary = (unpack?.vocabulary ?? [])
+    .map((v: any) => (typeof v === "string" ? v : v.term ?? v.word))
+    .filter(Boolean)
+    .join(", ");
+  const mastery = unpack?.masteryStatement || "Master the standard";
+  const ladder = (unpack?.ladder ?? []).map((r: any) => r.name ?? r).join(" → ");
+
+  const lessonTitle = blueprint?.title ?? "Lesson";
+  const route = [blueprint?.routeName, blueprint?.routeLine].filter(Boolean).join(" — ");
+  const stepList = (blueprint?.steps ?? [])
+    .map((s: any) => s.title)
+    .filter(Boolean)
+    .join(" → ");
+  const efSupportList = (blueprint?.efSupports ?? []).join(", ");
+  const successCriteria = (blueprint?.successCriteria ?? []).join("; ");
+
   if (format === "presentation") {
     return `Generate a Google Slides presentation outline for teaching ${standard_code}.
 
-Standard: ${unpack.learningVerbs?.join(", ")} - understand ${unpack.concepts?.join(", ")}
+Standard: ${verbs} - understand ${concepts}
 
 Lesson Blueprint:
-- Context: ${blueprint.context}
-- Instructional Route: ${blueprint.instructionalRoute}
-- Steps: ${blueprint.steps?.map((s: any) => s.title).join(" → ")}
-- Supports: ${blueprint.supports?.join(", ")}
+- Lesson: ${lessonTitle}
+- Success criteria: ${successCriteria}
+- Instructional Route: ${route}
+- Steps: ${stepList}
+- Supports: ${efSupportList}
 
 Student Customizations: ${supports}
 
@@ -109,13 +130,14 @@ Create 8-10 slides that follow the lesson blueprint. Make slides visually engagi
   if (format === "document") {
     return `Generate a detailed lesson plan document outline for ${standard_code}.
 
-Standard Learning: ${unpack.learningVerbs?.join(", ")}
-Key Concepts: ${unpack.concepts?.join(", ")}
+Standard Learning: ${verbs}
+Key Concepts: ${concepts}
 
 Blueprint:
-- Context: ${blueprint.context}
-- Route: ${blueprint.instructionalRoute}
-- EF Supports: ${blueprint.supports?.join(", ")}
+- Lesson: ${lessonTitle}
+- Success criteria: ${successCriteria}
+- Route: ${route}
+- EF Supports: ${efSupportList}
 
 Student Needs: ${supports}
 
@@ -159,9 +181,9 @@ Create a comprehensive, grade-appropriate lesson plan.`;
   if (format === "worksheet") {
     return `Generate a student worksheet for practicing ${standard_code}.
 
-Learning Goal: ${unpack.masteryCriteria?.[0] || "Master the standard"}
-Concepts: ${unpack.concepts?.join(", ")}
-Vocabulary: ${unpack.vocabulary?.join(", ")}
+Learning Goal: ${mastery}
+Concepts: ${concepts}
+Vocabulary: ${vocabulary}
 
 ${supports}
 
@@ -185,9 +207,9 @@ Create an engaging, grade-appropriate worksheet with 3-4 activities that build s
   if (format === "assessment") {
     return `Generate an assessment rubric for evaluating student mastery of ${standard_code}.
 
-Standard: ${unpack.learningVerbs?.join(", ")} - understand ${unpack.concepts?.join(", ")}
-Mastery Criteria: ${unpack.masteryCriteria?.join("; ")}
-Learning Ladder: ${unpack.learningLadder?.join(" → ")}
+Standard: ${verbs} - understand ${concepts}
+Mastery Criteria: ${mastery}
+Learning Ladder: ${ladder}
 
 Generate a JSON response with this exact structure (no markdown, just JSON):
 {
