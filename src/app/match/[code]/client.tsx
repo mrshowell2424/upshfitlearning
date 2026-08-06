@@ -365,7 +365,7 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
                 {step.scienceTag && (
                   <p
                     className="text-[14px] font-semibold mt-3"
-                    style={{ color: LABEL.violet }}
+                    style={{ color: LABEL.teal }}
                   >
                     ({scienceLabel(step.scienceTag)})
                   </p>
