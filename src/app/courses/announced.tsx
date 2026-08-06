@@ -71,6 +71,11 @@ const COURSES: AnnouncedCourse[] = [
     classroomUrl: 'https://classroom.google.com/c/NDk1Nzg3MjkyOTUy?cjc=ono2kkw',
     gradCredit: false,
   },
+  {
+    title: 'Control the Chaos With Top Blended Learning Tips',
+    classroomUrl: 'https://classroom.google.com/c/NDY1MDI2NDk3Mjgz?cjc=7r764vx',
+    gradCredit: false,
+  },
 ]
 
 const BUTTON =
