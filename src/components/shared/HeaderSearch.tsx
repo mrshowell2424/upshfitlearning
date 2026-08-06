@@ -45,7 +45,7 @@ export default function HeaderSearch({
       className={
         isPanel
           ? "flex items-center gap-2 w-full rounded-lg border border-border-strong bg-white px-3"
-          : "flex items-center gap-2 w-full max-w-[22rem] rounded-full border border-border-strong bg-white px-3 focus-within:border-charcoal transition-colors"
+          : "flex items-center gap-2 w-full rounded-full border border-border-strong bg-white px-3 focus-within:border-charcoal transition-colors"
       }
     >
       <svg

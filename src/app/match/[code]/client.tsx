@@ -60,6 +60,36 @@ export function MatchDetailClient({
 
   return (
     <div>
+      {/* The lesson names itself before anything else, and stays put across tabs */}
+      {blueprint?.title && (
+        <div
+          className="rounded-2xl overflow-hidden mb-6 px-6 md:px-8 py-6 md:py-7 flex flex-wrap items-start justify-between gap-4"
+          style={{ backgroundColor: "var(--color-navy)" }}
+        >
+          <div>
+            <h2 className="text-[24px] md:text-[30px] font-bold uppercase text-white leading-tight">
+              {blueprint.title}
+            </h2>
+            <p
+              className="text-[16px] md:text-[17px] font-semibold mt-1"
+              style={{ color: "var(--color-teal)" }}
+            >
+              {[standard?.gradeLabel && `${standard.gradeLabel} lesson`, "Science of Learning First"]
+                .filter(Boolean)
+                .join(" · ")}
+            </p>
+          </div>
+          {blueprint.badge && (
+            <span
+              className="inline-block px-5 py-2 rounded-full text-[13px] font-bold uppercase tracking-[0.08em] text-white flex-shrink-0"
+              style={{ backgroundColor: "var(--color-teal)" }}
+            >
+              {blueprint.badge}
+            </span>
+          )}
+        </div>
+      )}
+
       {/* Tab navigation — pills, so the four views read as equal choices */}
       <div className="flex flex-wrap gap-3 mb-8">
         {tabs.map((tab) => {
@@ -245,33 +275,6 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
   return (
     <div>
       <div className="rounded-2xl border border-hairline overflow-hidden bg-white">
-        {/* Header — the lesson announces itself */}
-        <div
-          className="px-8 py-7 flex flex-wrap items-start justify-between gap-4"
-          style={{ backgroundColor: "var(--color-navy)" }}
-        >
-          <div>
-            <h2 className="text-[26px] md:text-[30px] font-bold uppercase text-white leading-tight">
-              {blueprint.title}
-            </h2>
-            <p
-              className="text-[17px] font-semibold mt-1"
-              style={{ color: "var(--color-teal)" }}
-            >
-              {[standard.gradeLabel && `${standard.gradeLabel} lesson`, "Science of Learning First"]
-                .filter(Boolean)
-                .join(" · ")}
-            </p>
-          </div>
-          {blueprint.badge && (
-            <span
-              className="inline-block px-5 py-2 rounded-full text-[13px] font-bold uppercase tracking-[0.08em] text-white flex-shrink-0"
-              style={{ backgroundColor: "var(--color-teal)" }}
-            >
-              {blueprint.badge}
-            </span>
-          )}
-        </div>
 
         <div className="p-5 md:p-6 space-y-5">
           {/* What it teaches, what success looks like, and why */}

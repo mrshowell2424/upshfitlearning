@@ -150,14 +150,14 @@ export default async function MatchDetailPage({ params }: PageProps) {
               ← Back to search
             </Link>
 
-            <div className="flex flex-col gap-2 w-full sm:w-auto sm:items-end">
+            <div className="flex flex-col gap-2 w-full sm:w-[26rem] shrink-0">
               <HeaderSearch
                 searches="standards"
                 placeholder="Search another standard"
               />
 
               {/* Quick switch between standards */}
-              <div className="flex flex-wrap gap-1.5 sm:justify-end">
+              <div className="flex flex-wrap gap-1.5">
             {QUICK_STANDARDS.map((quick) => {
               const isCurrent = quick.code.toUpperCase() === decodedCode.toUpperCase();
               return (
