@@ -137,7 +137,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-1 px-8 py-8">
+      <main className="flex-1 px-5 md:px-8 py-8">
         {/* Back link */}
         <div className="max-w-4xl mx-auto mb-6">
           <a href="/match" className="text-link-blue hover:underline text-sm font-semibold">

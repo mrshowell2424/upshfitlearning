@@ -107,7 +107,7 @@ export default function TeachersLounge() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-12 px-8 bg-white border-b border-hairline">
+        <section className="py-12 px-5 md:px-8 bg-white border-b border-hairline">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-start justify-between mb-8">
               <div>
@@ -122,7 +122,7 @@ export default function TeachersLounge() {
                 href="https://substack.com/upshiftlearning"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-charcoal text-white rounded-lg font-semibold hover:bg-charcoal/90 transition-colors whitespace-nowrap"
+                className="inline-flex items-center justify-center min-h-[44px] px-4 bg-charcoal text-white rounded-lg font-semibold hover:bg-charcoal/90 transition-colors whitespace-nowrap"
               >
                 Subscribe free →
               </a>
@@ -132,7 +132,7 @@ export default function TeachersLounge() {
 
         {/* Featured Article */}
         {!loading && featuredArticle && (
-          <section className="px-8 py-12 bg-white">
+          <section className="px-5 md:px-8 py-12 bg-white">
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2">
@@ -162,7 +162,7 @@ export default function TeachersLounge() {
         )}
 
         {/* Posts Count and Filters */}
-        <section className="px-8 py-8 bg-white border-t border-hairline">
+        <section className="px-5 md:px-8 py-8 bg-white border-t border-hairline">
           <div className="max-w-7xl mx-auto">
             <p className="text-text-muted mb-6">
               {filteredArticles.length} posts in the lounge
@@ -172,7 +172,7 @@ export default function TeachersLounge() {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category.toLowerCase() === 'all' ? 'all' : category.toLowerCase())}
-                  className={`px-4 py-2 rounded-full font-semibold text-sm transition-colors ${
+                  className={`inline-flex items-center min-h-[44px] px-4 rounded-full font-semibold text-sm transition-colors ${
                     (selectedCategory === 'all' && category === 'All') ||
                     (selectedCategory === category.toLowerCase() && category !== 'All')
                       ? 'bg-charcoal text-white'
@@ -187,7 +187,7 @@ export default function TeachersLounge() {
         </section>
 
         {/* Articles Grid */}
-        <section className="py-12 px-8 bg-white">
+        <section className="py-12 px-5 md:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             {loading ? (
               <div className="text-center py-12">

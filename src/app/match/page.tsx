@@ -67,7 +67,7 @@ function MatchPageContent() {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-1 flex items-center justify-center px-8 py-16">
+      <main className="flex-1 flex items-center justify-center px-5 md:px-8 py-16">
         <div className="w-full max-w-2xl">
           {/* Eyebrow */}
           <div className="text-center mb-6">
@@ -128,7 +128,7 @@ function MatchPageContent() {
                   <button
                     key={example}
                     onClick={() => handleSearch(example)}
-                    className="px-4 py-2 rounded-full text-sm font-medium border border-border-strong hover:bg-gray-050 transition-colors"
+                    className="inline-flex items-center min-h-[44px] px-4 rounded-full text-sm font-medium border border-border-strong hover:bg-gray-050 transition-colors"
                   >
                     {example}
                   </button>
@@ -171,7 +171,7 @@ function MatchPageContent() {
           )}
 
           {/* Stats */}
-          <div className="grid grid-cols-4 gap-1 mt-16 border border-hairline rounded-[14px] overflow-hidden">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-1 mt-10 md:mt-16 border border-hairline rounded-[14px] overflow-hidden">
             <div className="bg-gray-050 p-4 text-center border-r border-hairline">
               <p
                 className="text-[30px] font-bold"
@@ -230,7 +230,7 @@ export default function MatchPage() {
     <Suspense
       fallback={
         <div className="flex flex-col min-h-screen">
-          <div className="flex-1 px-8 py-16">
+          <div className="flex-1 px-5 md:px-8 py-16">
             <div className="max-w-2xl mx-auto h-64 bg-gray-100 rounded-lg animate-pulse" />
           </div>
         </div>

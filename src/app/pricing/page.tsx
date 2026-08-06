@@ -58,7 +58,7 @@ export default function PricingPage() {
       <Header />
       <main className="flex-1">
         {/* Hero */}
-        <section className="py-24 px-8 bg-gradient-to-br from-gray-050 to-white border-b border-hairline">
+        <section className="py-14 md:py-24 px-5 md:px-8 bg-gradient-to-br from-gray-050 to-white border-b border-hairline">
           <div className="max-w-7xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-opacity-10 rounded-full" style={{backgroundColor: 'rgba(255, 106, 91, 0.1)'}}>
               <span className="text-xs font-bold tracking-wide text-coral uppercase">Transparent Pricing</span>
@@ -73,7 +73,7 @@ export default function PricingPage() {
         </section>
 
         {/* Pricing Cards */}
-        <section className="py-24 px-8 bg-white">
+        <section className="py-14 md:py-24 px-5 md:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {plans.map((plan) => (
@@ -137,7 +137,7 @@ export default function PricingPage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-24 px-8 bg-gray-050">
+        <section className="py-14 md:py-24 px-5 md:px-8 bg-gray-050">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-charcoal mb-12 text-center">
               Frequently asked questions

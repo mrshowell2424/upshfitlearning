@@ -7,6 +7,12 @@ import { supabase } from '@/lib/auth'
 import Header from '@/components/shared/Header'
 import Footer from '@/components/shared/Footer'
 
+// supabase is a stub object when the Supabase env vars are absent, so calling
+// .auth.* throws a bare TypeError. Check before using it and say so plainly.
+const authReady = Boolean(supabase?.auth?.signInWithOAuth)
+const NOT_CONFIGURED =
+  'Sign-up is not available on this environment yet — the Supabase keys are missing.'
+
 export default function SignUpPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -19,6 +25,12 @@ export default function SignUpPage() {
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
+
+    if (!authReady) {
+      setError(NOT_CONFIGURED)
+      return
+    }
+
     setLoading(true)
 
     try {
@@ -49,6 +61,12 @@ export default function SignUpPage() {
 
   const handleGoogleSignUp = async () => {
     setError('')
+
+    if (!authReady) {
+      setError(NOT_CONFIGURED)
+      return
+    }
+
     setLoading(true)
 
     try {
@@ -63,7 +81,8 @@ export default function SignUpPage() {
         setError(error.message)
       }
     } catch (err) {
-      setError('An error occurred. Please try again.')
+      console.error('Google sign-up error:', err)
+      setError('We could not reach Google sign-in. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -73,7 +92,7 @@ export default function SignUpPage() {
     return (
       <div className="flex flex-col min-h-screen">
         <Header />
-        <main className="flex-1 flex items-center justify-center px-8 py-24 bg-gray-050">
+        <main className="flex-1 flex items-center justify-center px-5 md:px-8 py-14 md:py-24 bg-gray-050">
           <div className="w-full max-w-md">
             <div className="bg-white rounded-3xl p-8 border border-hairline text-center">
               <div className="text-5xl mb-4">✓</div>
@@ -95,7 +114,7 @@ export default function SignUpPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1 flex items-center justify-center px-8 py-24 bg-gray-050">
+      <main className="flex-1 flex items-center justify-center px-5 md:px-8 py-14 md:py-24 bg-gray-050">
         <div className="w-full max-w-md">
           <div className="bg-white rounded-3xl p-8 border border-hairline">
             <h1 className="text-3xl font-bold text-charcoal mb-2">Create account</h1>

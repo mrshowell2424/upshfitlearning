@@ -127,7 +127,7 @@ export default function ArticlePage() {
     return (
       <div className="flex flex-col min-h-screen">
         <Header />
-        <main className="flex-1 flex items-center justify-center px-8 py-24 bg-gray-050">
+        <main className="flex-1 flex items-center justify-center px-5 md:px-8 py-14 md:py-24 bg-gray-050">
           <div className="text-center">
             <h1 className="text-3xl font-bold text-charcoal mb-4">Article not found</h1>
             <Link href="/lounge" className="text-teal font-semibold hover:text-teal-600">
@@ -144,7 +144,7 @@ export default function ArticlePage() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
-        <article className="py-16 px-8 max-w-3xl mx-auto">
+        <article className="py-16 px-5 md:px-8 max-w-3xl mx-auto">
           <div className="mb-8">
             <div className="flex items-center gap-2 mb-4">
               <span className="text-xs font-bold text-teal uppercase">{article.category}</span>

@@ -51,7 +51,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative py-24 px-8 bg-gradient-to-br from-gray-050 to-white">
+        <section className="relative py-12 md:py-14 md:py-24 px-5 md:px-5 md:px-8 bg-gradient-to-br from-gray-050 to-white">
           <div className="relative max-w-7xl mx-auto">
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-opacity-10 rounded-full" style={{backgroundColor: 'rgba(255, 106, 91, 0.1)'}}>
@@ -59,30 +59,33 @@ export default function Home() {
             </div>
 
             {/* Hero Headline */}
-            <h1 className="text-5xl font-bold text-charcoal mb-4 leading-tight">
-              Describe what you're teaching.<br />We'll hand you the lesson.
+            <h1 className="text-[32px] sm:text-4xl md:text-5xl font-bold text-charcoal mb-4 leading-[1.15] md:leading-tight">
+              Describe what you're teaching.<br className="hidden sm:inline" />{" "}
+              We'll hand you the lesson.
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg text-text-muted mb-8 whitespace-nowrap">
+            <p className="text-base md:text-lg text-text-muted mb-8 max-w-2xl">
               Search by standard or describe what you're teaching. Get a lesson blueprint, resources, and materials.
             </p>
 
             {/* Search Bar */}
             <div className="mb-6 max-w-2xl">
-              <div className="flex items-center gap-2 bg-white rounded-2xl p-3 border border-border" style={{boxShadow: '0 12px 34px rgba(17,17,17,.09)'}}>
-                <span className="text-coral text-xl">✳</span>
-                <input
-                  type="text"
-                  placeholder='RL.2.1 — or "text evidence with 2nd graders"'
-                  className="flex-1 outline-none text-sm placeholder:text-text-muted"
-                  value={searchInput}
-                  onChange={(e) => setSearchInput(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleSearch(searchInput)}
-                />
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 bg-white rounded-2xl p-3 border border-border" style={{boxShadow: '0 12px 34px rgba(17,17,17,.09)'}}>
+                <div className="flex items-center gap-2 flex-1 min-w-0">
+                  <span className="text-coral text-xl flex-shrink-0">✳</span>
+                  <input
+                    type="text"
+                    placeholder='RL.2.1 — or "text evidence"'
+                    className="flex-1 min-w-0 outline-none text-base sm:text-sm placeholder:text-text-muted py-2 sm:py-0"
+                    value={searchInput}
+                    onChange={(e) => setSearchInput(e.target.value)}
+                    onKeyPress={(e) => e.key === 'Enter' && handleSearch(searchInput)}
+                  />
+                </div>
                 <button
                   onClick={() => handleSearch(searchInput)}
-                  className="bg-coral hover:bg-coral-press text-white px-6 py-2 rounded-xl text-sm font-semibold transition-colors"
+                  className="bg-coral hover:bg-coral-press text-white px-6 min-h-[44px] rounded-xl text-sm font-semibold transition-colors flex-shrink-0"
                 >
                   Match my standard
                 </button>
@@ -90,13 +93,13 @@ export default function Home() {
             </div>
 
             {/* Example Chips */}
-            <div className="flex items-center gap-3 mb-12 flex-wrap">
+            <div className="flex items-center gap-2 md:gap-3 mb-12 flex-wrap">
               <span className="text-sm text-text-muted">Try:</span>
               {examples.map((example) => (
                 <Link
                   key={example.code}
                   href={standardHref(example.code)}
-                  className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-charcoal rounded-full text-sm font-medium border border-border transition-colors"
+                  className="inline-flex items-center min-h-[44px] px-4 bg-gray-100 hover:bg-gray-200 text-charcoal rounded-full text-sm font-medium border border-border transition-colors"
                   title={`${example.subject} — open ${example.code}`}
                 >
                   {example.code}
@@ -105,21 +108,21 @@ export default function Home() {
             </div>
 
             {/* Stat Strip */}
-            <div className="grid grid-cols-4 gap-px bg-hairline rounded-2xl overflow-hidden">
-              <div className="bg-white p-6 text-center">
-                <div className="text-4xl font-bold text-coral mb-1">2,688</div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-hairline rounded-2xl overflow-hidden">
+              <div className="bg-white p-4 md:p-6 text-center">
+                <div className="text-3xl md:text-4xl font-bold text-coral mb-1">2,688</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Resources</div>
               </div>
-              <div className="bg-white p-6 text-center">
-                <div className="text-4xl font-bold text-lavender mb-1">150+</div>
+              <div className="bg-white p-4 md:p-6 text-center">
+                <div className="text-3xl md:text-4xl font-bold text-lavender mb-1">150+</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Standards</div>
               </div>
-              <div className="bg-white p-6 text-center">
-                <div className="text-4xl font-bold text-teal mb-1">K–12</div>
+              <div className="bg-white p-4 md:p-6 text-center">
+                <div className="text-3xl md:text-4xl font-bold text-teal mb-1">K–12</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Grade Span</div>
               </div>
-              <div className="bg-white p-6 text-center">
-                <div className="text-4xl font-bold text-pink mb-1">12+</div>
+              <div className="bg-white p-4 md:p-6 text-center">
+                <div className="text-3xl md:text-4xl font-bold text-pink mb-1">12+</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Learning Science Principles</div>
               </div>
             </div>
@@ -127,11 +130,11 @@ export default function Home() {
         </section>
 
         {/* Start Here Section */}
-        <section className="py-24 px-8 bg-white">
+        <section className="py-14 md:py-24 px-5 md:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold text-charcoal mb-8">Start here</h2>
 
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Card 1 */}
               <div className="border-2 border-coral rounded-2xl bg-white p-6 hover:border-charcoal transition-colors">
                 <div className="text-xs font-bold tracking-wider text-coral uppercase mb-2">Find Standards</div>
@@ -172,9 +175,9 @@ export default function Home() {
         </section>
 
         {/* Upgrade Band */}
-        <section className="py-24 px-8 bg-gray-050">
+        <section className="py-14 md:py-24 px-5 md:px-8 bg-gray-050">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-2 gap-8 rounded-3xl overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 rounded-3xl overflow-hidden">
               {/* Left: Upgrade CTA */}
               <div className="bg-charcoal text-white p-8 rounded-3xl">
                 <div className="text-xs font-bold tracking-wider text-pink uppercase mb-3">Unlock more</div>

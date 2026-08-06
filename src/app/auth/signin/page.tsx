@@ -1,22 +1,36 @@
 'use client'
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { Suspense, useState } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { supabase } from '@/lib/auth'
 import Header from '@/components/shared/Header'
 import Footer from '@/components/shared/Footer'
 
-export default function SignInPage() {
+// supabase is a stub object when the Supabase env vars are absent, so calling
+// .auth.* throws a bare TypeError. Check before using it and say so plainly.
+const authReady = Boolean(supabase?.auth?.signInWithOAuth)
+const NOT_CONFIGURED =
+  'Sign-in is not available on this environment yet — the Supabase keys are missing.'
+
+function SignInForm() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const next = searchParams.get('next') || '/'
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
+
+    if (!authReady) {
+      setError(NOT_CONFIGURED)
+      return
+    }
+
     setLoading(true)
 
     try {
@@ -28,7 +42,7 @@ export default function SignInPage() {
       if (error) {
         setError(error.message)
       } else {
-        router.push('/')
+        router.push(next)
       }
     } catch (err) {
       setError('An error occurred. Please try again.')
@@ -39,13 +53,23 @@ export default function SignInPage() {
 
   const handleGoogleSignIn = async () => {
     setError('')
+
+    if (!authReady) {
+      setError(NOT_CONFIGURED)
+      return
+    }
+
     setLoading(true)
 
     try {
+      // Carry the return path through the round trip
+      const callback = new URL('/auth/callback', window.location.origin)
+      if (next !== '/') callback.searchParams.set('next', next)
+
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: `${window.location.origin}/auth/callback`,
+          redirectTo: callback.toString(),
         },
       })
 
@@ -53,7 +77,8 @@ export default function SignInPage() {
         setError(error.message)
       }
     } catch (err) {
-      setError('An error occurred. Please try again.')
+      console.error('Google sign-in error:', err)
+      setError('We could not reach Google sign-in. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -62,7 +87,7 @@ export default function SignInPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1 flex items-center justify-center px-8 py-24 bg-gray-050">
+      <main className="flex-1 flex items-center justify-center px-5 md:px-8 py-14 md:py-24 bg-gray-050">
         <div className="w-full max-w-md">
           <div className="bg-white rounded-3xl p-8 border border-hairline">
             <h1 className="text-3xl font-bold text-charcoal mb-2">Sign in</h1>
@@ -158,5 +183,14 @@ export default function SignInPage() {
       </main>
       <Footer />
     </div>
+  )
+}
+
+export default function SignInPage() {
+  // useSearchParams (for the ?next= return path) needs a Suspense boundary
+  return (
+    <Suspense fallback={null}>
+      <SignInForm />
+    </Suspense>
   )
 }

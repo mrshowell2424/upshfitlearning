@@ -5,7 +5,7 @@ import ResourceCard from "@/components/shared/ResourceCard";
 import { getResourceById, getRelatedOwnVideos } from "@/lib/utils/resources";
 import { notFound } from "next/navigation";
 import { ResourceActions } from "./actions";
-import { VideoThumbnail } from "./thumbnail";
+import { VideoPlayer } from "./thumbnail";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -35,7 +35,7 @@ export default async function ResourceDetailPage({ params }: PageProps) {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-1 px-8 py-8 max-w-6xl mx-auto w-full">
+      <main className="flex-1 px-5 md:px-8 py-8 max-w-6xl mx-auto w-full">
         {/* Back link */}
         <a href="/resources" className="text-link-blue hover:underline text-sm font-semibold mb-6 inline-block">
           ← Back to library
@@ -58,45 +58,16 @@ export default async function ResourceDetailPage({ params }: PageProps) {
             </div>
 
             {/* Title */}
-            <h1 className="text-[40px] font-bold mb-4 text-charcoal">{resource.title}</h1>
+            <h1 className="text-[28px] md:text-[40px] font-bold mb-4 text-charcoal">{resource.title}</h1>
 
             {/* Summary */}
-            <p className="text-[17px] text-text-body leading-relaxed mb-6">
+            <p className="text-base md:text-[17px] text-text-body leading-relaxed mb-6 whitespace-pre-line">
               {resource.summary}
             </p>
 
-            {/* Video player */}
-            {resource.youtube_url && (
-            <a
-              href={resource.youtube_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block aspect-video bg-gray-100 rounded-lg overflow-hidden mb-8 group"
-            >
-              <div className="relative w-full h-full cursor-pointer bg-black">
-                {resource.youtube_id && (
-                  <VideoThumbnail
-                    youtubeId={resource.youtube_id}
-                    alt={resource.title}
-                    className="w-full h-full object-cover group-hover:opacity-75 transition-opacity"
-                  />
-                )}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-coral rounded-full flex items-center justify-center hover:bg-coral-press transition-colors">
-                    <svg
-                      className="w-8 h-8 text-white ml-1"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent h-20 flex items-end pb-4 pl-4">
-                  <span className="text-white text-sm font-semibold">WATCH ON YOUTUBE</span>
-                </div>
-              </div>
-            </a>
+            {/* Video player — plays in place rather than sending them to YouTube */}
+            {resource.youtube_id && (
+              <VideoPlayer youtubeId={resource.youtube_id} title={resource.title} />
             )}
 
             {/* Teaching moves */}

@@ -116,7 +116,7 @@ function ResourcesContent() {
 
       <div className="flex-1 flex">
         {/* Sidebar with filters */}
-        <aside className="w-80 px-8 py-8 border-r border-border bg-white">
+        <aside className="w-80 px-5 md:px-8 py-8 border-r border-border bg-white">
           <div className="space-y-8">
             {/* Access filter */}
             <div>
@@ -173,7 +173,7 @@ function ResourcesContent() {
                 {purposes.length > 5 && (
                   <button
                     onClick={() => setShowAllPurposes(!showAllPurposes)}
-                    className="text-coral font-semibold text-sm hover:text-coral-press"
+                    className="inline-flex items-center min-h-[44px] text-coral font-semibold text-sm hover:text-coral-press"
                   >
                     {showAllPurposes ? 'Show fewer' : `Show all ${purposes.length}`}
                   </button>
@@ -184,7 +184,7 @@ function ResourcesContent() {
         </aside>
 
         {/* Main content */}
-        <main className="flex-1 px-8 py-8">
+        <main className="flex-1 px-5 md:px-8 py-8">
           <div className="mb-6 flex items-center justify-between">
             <div>
               <h1 className="text-[34px] font-bold mb-2">Resource library</h1>
@@ -296,7 +296,7 @@ function ResourcesContent() {
 
 export default function ResourcesPage() {
   return (
-    <Suspense fallback={<div className="flex flex-col min-h-screen"><div className="flex-1 px-8 py-8"><div className="h-64 bg-gray-100 rounded-lg animate-pulse"></div></div></div>}>
+    <Suspense fallback={<div className="flex flex-col min-h-screen"><div className="flex-1 px-5 md:px-8 py-8"><div className="h-64 bg-gray-100 rounded-lg animate-pulse"></div></div></div>}>
       <ResourcesContent />
     </Suspense>
   );

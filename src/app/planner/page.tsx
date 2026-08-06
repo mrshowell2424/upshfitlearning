@@ -7,7 +7,7 @@ export default function PlannerPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1 px-8 py-24 bg-gray-050">
+      <main className="flex-1 px-5 md:px-8 py-14 md:py-24 bg-gray-050">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl font-bold text-charcoal mb-4">My Planner</h1>
           <p className="text-lg text-text-muted mb-12">
@@ -22,7 +22,7 @@ export default function PlannerPage() {
             </p>
             <a
               href="/resources"
-              className="inline-block bg-coral hover:bg-coral-press text-white px-8 py-3 rounded-xl font-semibold transition-colors"
+              className="inline-block bg-coral hover:bg-coral-press text-white px-5 md:px-8 py-3 rounded-xl font-semibold transition-colors"
             >
               Browse Resources
             </a>

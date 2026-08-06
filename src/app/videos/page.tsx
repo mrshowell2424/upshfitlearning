@@ -34,7 +34,7 @@ export default function VideosPage() {
       <Header />
       <main className="flex-1">
         {/* Hero */}
-        <section className="py-16 px-8 bg-gradient-to-br from-teal-50 to-white border-b border-hairline">
+        <section className="py-16 px-5 md:px-8 bg-gradient-to-br from-teal-50 to-white border-b border-hairline">
           <div className="max-w-7xl mx-auto">
             <h1 className="text-4xl font-bold text-charcoal mb-4">Learning Videos</h1>
             <p className="text-lg text-text-muted">
@@ -44,7 +44,7 @@ export default function VideosPage() {
         </section>
 
         {/* Videos Grid */}
-        <section className="py-24 px-8 bg-white">
+        <section className="py-14 md:py-24 px-5 md:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {videos.map((video) => (
