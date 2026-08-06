@@ -221,17 +221,20 @@ function MatchPageContent() {
                 Courses
               </p>
             </Link>
-            <div className="bg-gray-050 p-4 text-center border-r border-hairline">
+            <Link
+              href="/match/random"
+              className="bg-gray-050 p-4 text-center border-r border-hairline hover:bg-gray-100 transition-colors group"
+            >
               <p
                 className="text-[30px] font-bold"
                 style={{ color: "var(--color-teal)" }}
               >
                 K–12
               </p>
-              <p className="text-[10.5px] font-bold uppercase tracking-[0.16em] text-text-faint">
+              <p className="text-[10.5px] font-bold uppercase tracking-[0.16em] text-text-faint group-hover:text-charcoal transition-colors">
                 Grade Range
               </p>
-            </div>
+            </Link>
             <div className="bg-gray-050 p-4 text-center">
               <p
                 className="text-[30px] font-bold"
