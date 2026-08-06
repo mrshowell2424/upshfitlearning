@@ -23,14 +23,24 @@ const COL = {
 const OWN_CHANNEL_PATTERN = /mr\s*h?showell|mrshowell|mrhsowell|mrshowel|rshowell/i
 
 /**
- * Summaries in the sheet are the original social captions, so they carry emoji
- * and a trailing share link (buff.ly or the YouTube URL). Strip both so the
- * description reads as site copy, and tidy the whitespace that's left behind.
+ * A line that is nothing but a "watch this" call to action — "Watch:",
+ * "Watch the demo!", "Watch it here:". These pointed at the share link that
+ * gets stripped below, so on the site they'd dangle with nothing after them.
+ * Anchored and length-capped so genuine prose survives ("Watch kids race to
+ * guess", "watch the chaos calm down").
+ */
+const WATCH_CTA_LINE = /^watch\b[^.?]{0,70}[:!]?$/i
+
+/**
+ * Summaries in the sheet are the original social captions, so they carry emoji,
+ * hashtags, a "Watch:" prompt and a trailing share link (buff.ly or the YouTube
+ * URL). Strip all of it so the description reads as site copy, and tidy the
+ * whitespace left behind.
  */
 export function cleanSummary(raw?: string): string | undefined {
   if (!raw) return undefined
 
-  const cleaned = raw
+  const withoutNoise = raw
     // share/tracking links and the YouTube URL
     .replace(/https?:\/\/\S+/g, '')
     // emoji, pictographs, dingbats and their variation selectors
@@ -38,13 +48,17 @@ export function cleanSummary(raw?: string): string | undefined {
       /[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}\u{200D}\u{20E3}]/gu,
       ''
     )
-    // collapse runs of spaces the removals left mid-sentence
-    .replace(/[ \t]{2,}/g, ' ')
+    // hashtags — letter-led so "#1" and similar survive
+    .replace(/#[A-Za-z]\w*/g, '')
+
+  const cleaned = withoutNoise
+    .split('\n')
+    .map(line => line.replace(/[ \t]{2,}/g, ' ').trim())
+    // drop the orphaned watch prompts, keeping real sentences
+    .filter(line => !WATCH_CTA_LINE.test(line))
+    .join('\n')
     // no more than one blank line between paragraphs
     .replace(/\n{3,}/g, '\n\n')
-    .split('\n')
-    .map(line => line.trim())
-    .join('\n')
     .trim()
 
   return cleaned || undefined
