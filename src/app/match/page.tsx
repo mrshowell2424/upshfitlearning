@@ -54,7 +54,7 @@ function MatchPageContent() {
     [router]
   );
 
-  // Honour ?q= so links into this page (e.g. from the home page) actually search
+  // Honor ?q= so links into this page (e.g. from the home page) actually search
   useEffect(() => {
     const q = searchParams.get("q");
     if (q) {

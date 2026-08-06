@@ -15,10 +15,10 @@ interface Course {
 }
 
 export default async function CoursesPage() {
-  let catalogue: Course[] = []
+  let courseList: Course[] = []
 
   try {
-    catalogue = (await db.select().from(courses)) as Course[]
+    courseList = (await db.select().from(courses)) as Course[]
   } catch (error) {
     console.error('Error loading courses:', error)
   }
@@ -38,7 +38,7 @@ export default async function CoursesPage() {
           </div>
         </section>
 
-        {/* Announced course — not yet in the catalogue table */}
+        {/* Announced course — not yet in the courses table */}
         <section className="py-12 md:py-16 px-5 md:px-8 bg-white">
           <div className="max-w-4xl mx-auto">
             <div className="border-2 border-teal rounded-2xl p-6 md:p-8 bg-white">
@@ -73,7 +73,7 @@ export default async function CoursesPage() {
                     >
                       hello@upshiftlearning.org
                     </a>{' '}
-                    to enrol.
+                    to enroll.
                   </p>
                 </div>
               </div>
@@ -83,9 +83,9 @@ export default async function CoursesPage() {
 
         <section className="pb-14 md:pb-24 px-5 md:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            {catalogue.length === 0 ? null : (
+            {courseList.length === 0 ? null : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {catalogue.map(course => (
+                {courseList.map(course => (
                   <article
                     key={course.id}
                     className="border border-hairline rounded-2xl overflow-hidden hover:border-charcoal hover:shadow-lg transition-all flex flex-col"

@@ -42,7 +42,7 @@ export default function Header() {
         className="flex items-center gap-2 cursor-pointer flex-shrink-0"
         onClick={() => router.push("/")}
       >
-        {/* Four chevrons pointing up, evenly stacked on a shared centre line */}
+        {/* Four chevrons pointing up, evenly stacked on a shared center line */}
         <svg
           width="32"
           height="32"
