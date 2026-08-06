@@ -61,6 +61,16 @@ const COURSES: AnnouncedCourse[] = [
     classroomUrl: 'https://classroom.google.com/c/NDk2OTUzODQzMDQ4?cjc=kd4rexh',
     gradCredit: false,
   },
+  {
+    title: 'Unit Zero: Setting Up Your Personalized Learning Classroom',
+    classroomUrl: 'https://classroom.google.com/c/NDk2MDQ1MTc4OTk0?cjc=gvumhic',
+    gradCredit: false,
+  },
+  {
+    title: 'Behavior Reboot & Reset',
+    classroomUrl: 'https://classroom.google.com/c/NDk1Nzg3MjkyOTUy?cjc=ono2kkw',
+    gradCredit: false,
+  },
 ]
 
 const BUTTON =
