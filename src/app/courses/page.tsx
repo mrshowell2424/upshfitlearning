@@ -2,8 +2,7 @@ import Header from '@/components/shared/Header'
 import Footer from '@/components/shared/Footer'
 import { db } from '@/lib/db'
 import { courses } from '@/lib/db/schema'
-import { ClassroomJoinLink } from './join'
-import { CoursesGate } from './gate'
+import { AnnouncedCourses } from './announced'
 
 interface Course {
   id: string
@@ -16,6 +15,11 @@ interface Course {
   is_free: boolean | null
 }
 
+/**
+ * The page itself is public: graduate credit is open to anyone, so the courses
+ * need to be visible without an account. Only the Google Classroom link is
+ * member-only, gated inside AnnouncedCourses.
+ */
 export default async function CoursesPage() {
   let courseList: Course[] = []
 
@@ -40,54 +44,12 @@ export default async function CoursesPage() {
           </div>
         </section>
 
-        <CoursesGate>
-        {/* Announced course — not yet in the courses table */}
-        <section className="py-12 md:py-16 px-5 md:px-8 bg-white">
-          <div className="max-w-4xl mx-auto">
-            <div className="border-2 border-teal rounded-2xl p-6 md:p-8 bg-white">
-              <span className="inline-flex items-center rounded-full bg-teal-50 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-teal mb-4">
-                Coming spring semester
-              </span>
+        <AnnouncedCourses />
 
-              <h2 className="text-[24px] md:text-[30px] font-bold text-charcoal mb-3 leading-tight">
-                Effective Instructions: Helping Students Understand and Follow Through
-              </h2>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 items-start">
-                <div className="rounded-xl border border-hairline p-5">
-                  <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-charcoal mb-2">
-                    With All-Access
-                  </h3>
-                  <p className="text-sm text-text-body mb-4">
-                    The full course is included at no extra cost, delivered through
-                    Google Classroom.
-                  </p>
-                  <ClassroomJoinLink />
-                </div>
-
-                <div className="rounded-xl border border-hairline p-5">
-                  <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-charcoal mb-2">
-                    For graduate credit
-                  </h3>
-                  <p className="text-sm text-text-body">
-                    Graduate credit is available through Malone University. Email{' '}
-                    <a
-                      href="mailto:hello@upshiftlearning.org"
-                      className="text-link-blue font-semibold hover:underline"
-                    >
-                      hello@upshiftlearning.org
-                    </a>{' '}
-                    to enroll.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="pb-14 md:pb-24 px-5 md:px-8 bg-white">
-          <div className="max-w-7xl mx-auto">
-            {courseList.length === 0 ? null : (
+        {/* Anything added to the courses table publishes here too */}
+        {courseList.length > 0 && (
+          <section className="pb-14 md:pb-24 px-5 md:px-8 bg-white">
+            <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {courseList.map(course => (
                   <article
@@ -144,10 +106,9 @@ export default async function CoursesPage() {
                   </article>
                 ))}
               </div>
-            )}
-          </div>
-        </section>
-        </CoursesGate>
+            </div>
+          </section>
+        )}
       </main>
       <Footer />
     </div>
