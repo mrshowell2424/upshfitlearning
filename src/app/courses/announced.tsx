@@ -24,6 +24,23 @@ const COURSES: AnnouncedCourse[] = [
     classroomUrl: 'https://classroom.google.com/c/ODQ4NjA0MTAxMTA5?cjc=ypanrx3v',
     gradCredit: false,
   },
+  {
+    title:
+      'Control the Chaos: What It Takes to Create Order in the Classroom and Teach Executive Functioning Skills',
+    status: 'Book study with the authors',
+    classroomUrl: 'https://classroom.google.com/c/NDk2OTUzNDk5NTkz?cjc=hkzerua',
+    gradCredit: false,
+  },
+  {
+    title: 'EDU Minute Clinic',
+    classroomUrl: 'https://classroom.google.com/c/NDk3MjAxMzU4OTYy?cjc=4riwocf',
+    gradCredit: false,
+  },
+  {
+    title: 'Control the Chaos With Executive Functioning',
+    classroomUrl: 'https://classroom.google.com/c/NDY1MDI2NDk4MDE4?cjc=vn23vdd',
+    gradCredit: false,
+  },
 ]
 
 const BUTTON =
@@ -66,23 +83,27 @@ function ClassroomAccess({ url }: { url: string }) {
 export function AnnouncedCourses() {
   return (
     <section className="py-12 md:py-16 px-5 md:px-8 bg-white">
-      <div className="max-w-4xl mx-auto space-y-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {COURSES.map(course => (
           <div
             key={course.title}
-            className="border-2 border-teal rounded-2xl p-6 md:p-8 bg-white"
+            className="flex flex-col border-2 border-teal rounded-2xl p-6 bg-white"
           >
-            {course.status && (
-              <span className="inline-flex items-center rounded-full bg-teal-50 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-teal mb-4">
-                {course.status}
-              </span>
-            )}
+            {/* Fixed slot, so titles line up whether or not there's a badge */}
+            <div className="min-h-[28px] mb-3">
+              {course.status && (
+                <span className="inline-flex w-fit items-center rounded-full bg-teal-50 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-teal">
+                  {course.status}
+                </span>
+              )}
+            </div>
 
-            <h2 className="text-[22px] md:text-[28px] font-bold text-charcoal mb-3 leading-tight">
+            <h2 className="text-[20px] font-bold text-charcoal mb-4 leading-tight">
               {course.title}
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 items-start">
+            {/* Stacked inside a column card, so the panels stay readable */}
+            <div className="mt-auto grid grid-cols-1 gap-4">
               {/* All-Access — members only */}
               <div className="rounded-xl border border-hairline p-5">
                 <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-charcoal mb-2">
@@ -115,8 +136,16 @@ export function AnnouncedCourses() {
                     </a>
                   </>
                 ) : (
-                  <p className="text-sm text-text-muted">
-                    Graduate credit isn't offered for this book study.
+                  <p className="text-sm text-text-body">
+                    Graduate credit isn't offered for this course yet. If you
+                    think it would make a great graduate credit course, email{' '}
+                    <a
+                      href="mailto:hello@upshiftlearning.org"
+                      className="text-link-blue font-semibold hover:underline"
+                    >
+                      hello@upshiftlearning.org
+                    </a>
+                    .
                   </p>
                 )}
               </div>
