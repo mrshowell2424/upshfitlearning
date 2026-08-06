@@ -3,6 +3,7 @@
 
 import { useState, useEffect, useCallback, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import Link from "next/link";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { isStandardCode, standardHref, standardTheme } from "@/lib/utils/standards";
@@ -192,7 +193,10 @@ function MatchPageContent() {
 
           {/* Stats */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-1 mt-10 md:mt-16 border border-hairline rounded-[14px] overflow-hidden">
-            <div className="bg-gray-050 p-4 text-center border-r border-hairline">
+            <Link
+              href="/resources"
+              className="bg-gray-050 p-4 text-center border-r border-hairline hover:bg-gray-100 transition-colors"
+            >
               <p
                 className="text-[30px] font-bold"
                 style={{ color: "var(--color-coral)" }}
@@ -202,8 +206,11 @@ function MatchPageContent() {
               <p className="text-[10.5px] font-bold uppercase tracking-[0.16em] text-text-faint">
                 Resources
               </p>
-            </div>
-            <div className="bg-gray-050 p-4 text-center border-r border-hairline">
+            </Link>
+            <Link
+              href="/courses"
+              className="bg-gray-050 p-4 text-center border-r border-hairline hover:bg-gray-100 transition-colors"
+            >
               <p
                 className="text-[30px] font-bold"
                 style={{ color: "var(--color-lavender)" }}
@@ -213,7 +220,7 @@ function MatchPageContent() {
               <p className="text-[10.5px] font-bold uppercase tracking-[0.16em] text-text-faint">
                 Courses
               </p>
-            </div>
+            </Link>
             <div className="bg-gray-050 p-4 text-center border-r border-hairline">
               <p
                 className="text-[30px] font-bold"

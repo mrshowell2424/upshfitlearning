@@ -179,6 +179,36 @@ export default async function MatchDetailPage({ params }: PageProps) {
             </div>
           </div>
 
+          {/* The lesson banner leads the page — it's what the teacher came for */}
+          {blueprint?.title && (
+            <div
+              className="rounded-2xl overflow-hidden mb-6 px-6 md:px-8 py-6 md:py-7 flex flex-wrap items-start justify-between gap-4"
+              style={{ backgroundColor: "var(--color-navy)" }}
+            >
+              <div>
+                <h1 className="text-[24px] md:text-[30px] font-bold uppercase text-white leading-tight">
+                  {blueprint.title}
+                </h1>
+                <p
+                  className="text-[16px] md:text-[17px] font-semibold mt-1"
+                  style={{ color: "var(--color-teal)" }}
+                >
+                  {[standard?.gradeLabel && `${standard.gradeLabel} lesson`, "Science of Learning First"]
+                    .filter(Boolean)
+                    .join(" · ")}
+                </p>
+              </div>
+              {blueprint.badge && (
+                <span
+                  className="inline-block px-5 py-2 rounded-full text-[13px] font-bold uppercase tracking-[0.08em] text-white flex-shrink-0"
+                  style={{ backgroundColor: "var(--color-teal)" }}
+                >
+                  {blueprint.badge}
+                </span>
+              )}
+            </div>
+          )}
+
           {/* The standard itself — code, plain reading, target and the science */}
           <div className="rounded-2xl border border-hairline bg-white overflow-hidden mb-7">
             <div className="p-7 bg-gray-050">
@@ -187,9 +217,9 @@ export default async function MatchDetailPage({ params }: PageProps) {
                   {standard.code}
                 </span>
                 {standard.name && (
-                  <h1 className="text-[20px] md:text-[24px] font-bold text-charcoal leading-tight">
+                  <h2 className="text-[20px] md:text-[24px] font-bold text-charcoal leading-tight">
                     {standard.name}
-                  </h1>
+                  </h2>
                 )}
               </div>
               {standard.text ? (
