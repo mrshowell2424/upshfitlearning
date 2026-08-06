@@ -76,6 +76,11 @@ const COURSES: AnnouncedCourse[] = [
     classroomUrl: 'https://classroom.google.com/c/NDY1MDI2NDk3Mjgz?cjc=7r764vx',
     gradCredit: false,
   },
+  {
+    title: 'Control the Chaos With SOPs',
+    classroomUrl: 'https://classroom.google.com/c/NDgyODk4MDc0ODk3?cjc=y4i7ck3',
+    gradCredit: false,
+  },
 ]
 
 const BUTTON =
