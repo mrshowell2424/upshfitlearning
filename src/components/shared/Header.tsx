@@ -8,7 +8,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "Resources", href: "/resources" },
   { label: "Standard match", href: "/match" },
-  { label: "Videos", href: "/videos" },
+  { label: "Courses", href: "/courses" },
   { label: "Teacher's Lounge", href: "/lounge" },
   { label: "Plans", href: "/pricing" },
 ];
@@ -27,7 +27,7 @@ export default function Header() {
     if (pathname === "/") return "Home";
     if (pathname.startsWith("/resources")) return "Resources";
     if (pathname.startsWith("/match")) return "Standard match";
-    if (pathname.startsWith("/videos")) return "Videos";
+    if (pathname.startsWith("/courses")) return "Courses";
     if (pathname.startsWith("/lounge")) return "Teacher's Lounge";
     if (pathname.startsWith("/pricing")) return "Plans";
     return null;
