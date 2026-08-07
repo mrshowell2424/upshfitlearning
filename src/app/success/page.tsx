@@ -69,7 +69,7 @@ export default function SuccessPage() {
                 <span className="font-bold text-charcoal shrink-0">3.</span>
                 <span className="text-[15px] text-text-body">
                   Every standard opens up — the full deconstruction, matched
-                  resources, and the generator.
+                  resources, and so much more!
                 </span>
               </li>
             </ol>
