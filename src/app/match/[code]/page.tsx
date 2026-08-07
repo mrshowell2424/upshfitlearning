@@ -28,6 +28,12 @@ export default async function MatchDetailPage({ params }: PageProps) {
   const { code } = await params;
   const decodedCode = decodeURIComponent(code);
 
+  // Whether a read actually failed, as opposed to finding nothing. Without
+  // this the page says "not written up yet" for both, which is how a database
+  // that had never connected in production went unnoticed — the empty state
+  // and the outage were the same sentence.
+  let dataError = false;
+
   let standardRow = null;
   try {
     // Fetch actual standard from DB
@@ -40,6 +46,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
     standardRow = standardRows[0] ?? null;
   } catch (error) {
     console.error("Database error fetching standard:", error);
+    dataError = true;
   }
 
   // Grade lives in a different position per subject — RL.2.1, 2.NBT.B.5,
@@ -62,6 +69,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
   } catch (error) {
     console.error("Database error fetching blueprint:", error);
     blueprintRow = null;
+    dataError = true;
   }
 
   const blueprint = blueprintRow
@@ -100,6 +108,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
   } catch (error) {
     console.error("Database error fetching unpack:", error);
     unpackRow = null;
+    dataError = true;
   }
 
   const unpack = unpackRow
@@ -223,6 +232,11 @@ export default async function MatchDetailPage({ params }: PageProps) {
               {standard.text ? (
                 <p className="text-[17px] text-text-body leading-relaxed max-w-3xl">
                   {standard.text}
+                </p>
+              ) : dataError ? (
+                <p className="text-[17px] italic" style={{ color: "var(--color-coral)" }}>
+                  We could not load this standard just now. This is a problem at
+                  our end, not a gap in the library — please try again shortly.
                 </p>
               ) : (
                 <p className="text-[17px] text-text-muted italic">
