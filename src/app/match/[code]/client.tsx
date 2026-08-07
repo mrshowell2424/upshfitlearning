@@ -544,33 +544,6 @@ function UnpackTab({ unpack, standard, onOpenTab }) {
     <div className="space-y-5">
       {/* What the standard actually asks for */}
       <div className="rounded-2xl border border-hairline overflow-hidden bg-white">
-        <div className="px-8 py-7" style={{ backgroundColor: "var(--color-navy)" }}>
-          <SectionLabel color="var(--color-teal)" className="mb-2">
-            Deconstructed
-          </SectionLabel>
-          <div className="flex flex-wrap items-start justify-between gap-3">
-            <h2 className="text-[22px] md:text-[26px] font-bold text-white leading-tight">
-              {standard.code} — {standard.name}
-            </h2>
-
-            {/* Depth of Knowledge, read from the standard's own verbs */}
-            {unpack.dok && (
-              <div
-                className="flex-shrink-0 rounded-xl px-4 py-2 text-right"
-                style={{ backgroundColor: "rgba(255,255,255,0.10)" }}
-                title={DOK_DESCRIPTIONS[unpack.dok].blurb}
-              >
-                <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-white/60">
-                  Depth of Knowledge
-                </p>
-                <p className="text-[15px] font-bold text-white leading-tight">
-                  DOK {unpack.dok} · {DOK_DESCRIPTIONS[unpack.dok].name}
-                </p>
-              </div>
-            )}
-          </div>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-hairline">
           <div className="p-6">
             <SectionLabel color={LABEL.crimson} className="mb-4">

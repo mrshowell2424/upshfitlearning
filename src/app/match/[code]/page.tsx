@@ -184,7 +184,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
           </div>
 
           <MatchTabProvider>
-          <LessonBanner blueprint={blueprint} standard={standard} />
+          <LessonBanner blueprint={blueprint} standard={standard} unpack={unpack} />
 
           {/* The standard itself — code, plain reading, target and the science */}
           <div className="rounded-2xl border border-hairline bg-white overflow-hidden mb-7">
