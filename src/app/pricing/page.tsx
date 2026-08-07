@@ -1,34 +1,26 @@
-'use client'
-
 import Link from 'next/link'
 import Header from '@/components/shared/Header'
 import Footer from '@/components/shared/Footer'
 import { CheckoutButtons } from './checkout-buttons'
 
 /**
- * Where the Pro button sends people.
+ * Rendered per request so the checkout links are read at runtime.
  *
- * A Stripe Payment Link, set as a build variable. Deliberately not the
- * half-built checkout API: a hosted link needs no keys, no webhook and no
- * success page, and access is granted by hand afterwards with
- * scripts/grant-access.ts. That is the right amount of machinery for the first
- * handful of customers, and it can be swapped for real checkout later without
- * touching this page.
+ * NEXT_PUBLIC_* values are normally inlined during the build, which means a
+ * link set in the hosting dashboard only takes effect on the next rebuild —
+ * and silently falls back to sign-up until then. Reading them here, in a server
+ * component that renders per request, makes a Payment Link change take effect
+ * as soon as it is saved, with no build and no stale page in between.
  *
- * Unset — as in local development — the button falls back to sign-up, so the
- * page is never broken by a missing variable.
+ * The buttons themselves stay a client component, because they need the
+ * session to prefill the payment email.
  */
-const CHECKOUT_URL = process.env.NEXT_PUBLIC_CHECKOUT_URL
-
-/**
- * The annual price is a second Payment Link, because a link is tied to exactly
- * one price in Stripe. Set it and the Pro card offers both; leave it unset and
- * the card shows monthly alone, so half-finished setup never puts a dead button
- * in front of a teacher.
- */
-const CHECKOUT_URL_ANNUAL = process.env.NEXT_PUBLIC_CHECKOUT_URL_ANNUAL
+export const dynamic = 'force-dynamic'
 
 export default function PricingPage() {
+  const CHECKOUT_URL = process.env.NEXT_PUBLIC_CHECKOUT_URL
+  const CHECKOUT_URL_ANNUAL = process.env.NEXT_PUBLIC_CHECKOUT_URL_ANNUAL
+
   const plans = [
     {
       name: 'Free',
