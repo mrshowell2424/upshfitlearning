@@ -67,7 +67,7 @@ export default function PricingPage() {
         `Unpack any of ${STANDARD_TOTAL} standards — verbs, vocabulary, the learning ladder`,
         `All ${RESOURCE_TOTAL.toLocaleString()} resources, matched to the standard you are teaching`,
         `All ${COURSE_COUNT} courses, delivered through Google Classroom`,
-        'Turn a blueprint into materials for your own class',
+        'Common misconceptions, and what to do about each one',
         'Save what you find, so you are not searching twice',
       ],
       // Rendered by CheckoutButtons, which needs the session to prefill the

@@ -319,9 +319,8 @@ function LockedOverlay({ locked, feature, summary, children }) {
             {feature} is part of All Access
           </h3>
           <p className="text-[15px] text-text-muted mb-6">
-            The lesson blueprint is free. Unlock the deconstruction, remixable
-            resources and the generator to build the whole lesson for your
-            learners.
+            The lesson blueprint is free. Unlock the deconstruction and the
+            resources matched to this standard.
           </p>
           <div className="flex flex-col gap-2">
             <Link
@@ -379,8 +378,7 @@ function LockedPreview({ feature, summary }) {
         </ul>
       ) : (
         <p className="text-[15px] text-text-muted max-w-md">
-          The full deconstruction, the resources that fit it, and the generator
-          that turns it into materials for your class.
+          The full deconstruction, and the resources that fit this standard.
         </p>
       )}
     </div>

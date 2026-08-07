@@ -68,8 +68,8 @@ export default function SuccessPage() {
               <li className="flex gap-3">
                 <span className="font-bold text-charcoal shrink-0">3.</span>
                 <span className="text-[15px] text-text-body">
-                  Every standard opens up — the full deconstruction, matched
-                  resources, and the generator.
+                  Every standard opens up — the full deconstruction and the
+                  resources matched to it.
                 </span>
               </li>
             </ol>
