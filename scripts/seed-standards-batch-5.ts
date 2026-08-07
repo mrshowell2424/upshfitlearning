@@ -44,11 +44,11 @@ const standardsData = [
   },
   {
     code: "W.3.1",
-    name: "Write an opinion piece with organised reasons",
+    name: "Write an opinion piece with organized reasons",
     plain_reading:
-      "Write opinion pieces on topics or texts, supporting a point of view with reasons, introducing the topic, stating an opinion, and creating an organisational structure that lists reasons.",
-    learning_target: "I can state what I think and organise my reasons so they build.",
-    skills: ["Opinion Writing", "Organisation", "Reasons"],
+      "Write opinion pieces on topics or texts, supporting a point of view with reasons, introducing the topic, stating an opinion, and creating an organizational structure that lists reasons.",
+    learning_target: "I can state what I think and organize my reasons so they build.",
+    skills: ["Opinion Writing", "Organization", "Reasons"],
     science_tags: ["elaboration", "spaced"],
     match_keys: ["opinion writing", "point of view", "reasons", "organizational structure", "linking words"],
   },
@@ -84,7 +84,7 @@ const standardsData = [
   },
   {
     code: "RL.6.4",
-    name: "Analyse word choice and tone",
+    name: "Analyze word choice and tone",
     plain_reading:
       "Determine the meaning of words and phrases as they are used in a text, including figurative and connotative meanings, and analyze the impact of a specific word choice on meaning and tone.",
     learning_target: "I can explain why a writer chose one word rather than a similar one.",
@@ -108,7 +108,7 @@ const standardsData = [
     plain_reading:
       "Write arguments to support claims with clear reasons and relevant evidence, acknowledging alternate or opposing claims and organising the reasons and evidence logically.",
     learning_target: "I can argue a claim with evidence and deal with the opposing view.",
-    skills: ["Argument Writing", "Counterclaim", "Logical Organisation"],
+    skills: ["Argument Writing", "Counterclaim", "Logical Organization"],
     science_tags: ["elaboration", "interleaving"],
     match_keys: ["argument writing", "claim", "opposing claims", "evidence", "logical organization"],
   },
@@ -148,7 +148,7 @@ const standardsData = [
     code: "3.G.A.1",
     name: "Sort shapes by what they have in common",
     plain_reading:
-      "Understand that shapes in different categories may share attributes, that shared attributes can define a larger category, and recognise rhombuses, rectangles and squares as examples of quadrilaterals.",
+      "Understand that shapes in different categories may share attributes, that shared attributes can define a larger category, and recognize rhombuses, rectangles and squares as examples of quadrilaterals.",
     learning_target: "I can group shapes by what they share, not just what they look like.",
     skills: ["Classification", "Attributes", "Quadrilaterals"],
     science_tags: ["dual-coding", "elaboration"],
@@ -308,9 +308,9 @@ const unpacksData = [
     verbs: [
       { word: "Support", gloss: "back your view with reasons" },
       { word: "Introduce", gloss: "tell the reader what this is about" },
-      { word: "Organise", gloss: "put reasons in a sensible order" },
+      { word: "Organize", gloss: "put reasons in a sensible order" },
     ],
-    concepts: ["Point of view", "Organisational structure", "Linking words"],
+    concepts: ["Point of view", "Organizational structure", "Linking words"],
     vocabulary: [
       { term: "opinion", definition: "what you think about something" },
       { term: "reason", definition: "why you think it" },
@@ -402,7 +402,7 @@ const unpacksData = [
       { term: "pace", definition: "how fast you speak" },
       { term: "relevant", definition: "actually connected to the point" },
     ],
-    prior_skills: ["Speak audibly to a group", "Organise ideas in writing", "Select supporting details"],
+    prior_skills: ["Speak audibly to a group", "Organize ideas in writing", "Select supporting details"],
     prior_standards: [{ code: "SL.4.4", text: "Report on a topic with appropriate facts and details" }],
     future_standards: [{ code: "SL.6.4", text: "Present claims and findings with pertinent descriptions and examples" }],
     challenges: [
@@ -421,7 +421,7 @@ const unpacksData = [
     standard_code: "RL.6.4",
     verbs: [
       { word: "Determine", gloss: "work out what a word means here" },
-      { word: "Analyse", gloss: "examine the effect of the choice" },
+      { word: "Analyze", gloss: "examine the effect of the choice" },
     ],
     concepts: ["Connotation", "Tone", "Word choice"],
     vocabulary: [
@@ -432,12 +432,12 @@ const unpacksData = [
     ],
     prior_skills: ["Use context clues", "Identify figurative language", "Distinguish shades of meaning"],
     prior_standards: [{ code: "RL.5.4", text: "Determine the meaning of words and phrases, including figurative language" }],
-    future_standards: [{ code: "RL.7.4", text: "Analyse the impact of rhymes and repetitions of sound" }],
+    future_standards: [{ code: "RL.7.4", text: "Analyze the impact of rhymes and repetitions of sound" }],
     challenges: [
       { problem: "Word choice is described as 'good' with no reason", fix: "Swap in a synonym and name what changes" },
       { problem: "Tone is confused with mood", fix: "Ask whose feeling it is — writer's or reader's" },
     ],
-    mastery_statement: "Student can explain a word's meaning in context and analyse how the choice shapes tone.",
+    mastery_statement: "Student can explain a word's meaning in context and analyze how the choice shapes tone.",
     ladder: [
       { name: "I can work out the meaning in context", descriptor: "Uses surrounding text" },
       { name: "I can spot figurative use", descriptor: "Identifies non-literal meaning" },
@@ -449,7 +449,7 @@ const unpacksData = [
     standard_code: "RI.7.6",
     verbs: [
       { word: "Determine", gloss: "work out the author's position" },
-      { word: "Analyse", gloss: "examine how they set it apart" },
+      { word: "Analyze", gloss: "examine how they set it apart" },
       { word: "Distinguish", gloss: "separate their view from others" },
     ],
     concepts: ["Author's purpose", "Position", "Acknowledging other views"],
@@ -461,9 +461,9 @@ const unpacksData = [
     ],
     prior_skills: ["Identify author's purpose", "Trace an argument", "Distinguish fact from opinion"],
     prior_standards: [{ code: "RI.6.6", text: "Determine an author's point of view and explain how it is conveyed" }],
-    future_standards: [{ code: "RI.8.6", text: "Analyse how an author responds to conflicting evidence" }],
+    future_standards: [{ code: "RI.8.6", text: "Analyze how an author responds to conflicting evidence" }],
     challenges: [
-      { problem: "Author's view is assumed to be the reader's", fix: "Analyse a text the class disagrees with" },
+      { problem: "Author's view is assumed to be the reader's", fix: "Analyze a text the class disagrees with" },
       { problem: "Purpose is given as 'to inform' regardless", fix: "Require a purpose specific enough to be arguable" },
     ],
     mastery_statement: "Student can identify an author's position and explain how the text distinguishes it from other views.",
@@ -471,7 +471,7 @@ const unpacksData = [
       { name: "I can say what the text is about", descriptor: "Identifies subject" },
       { name: "I can say what the author thinks", descriptor: "Identifies position" },
       { name: "I can find where other views appear", descriptor: "Locates opposing positions" },
-      { name: "I can explain how they are set apart", descriptor: "Analyses the distinction" },
+      { name: "I can explain how they are set apart", descriptor: "Analyzes the distinction" },
     ],
   },
   {
@@ -479,7 +479,7 @@ const unpacksData = [
     verbs: [
       { word: "Support", gloss: "back the claim with evidence" },
       { word: "Acknowledge", gloss: "admit other claims exist" },
-      { word: "Organise", gloss: "order reasons so they build" },
+      { word: "Organize", gloss: "order reasons so they build" },
     ],
     concepts: ["Claim", "Alternate claims", "Logical order"],
     vocabulary: [
@@ -495,7 +495,7 @@ const unpacksData = [
       { problem: "The other side is mentioned and ignored", fix: "Require a response, not just an acknowledgement" },
       { problem: "Reasons are listed rather than ordered", fix: "Test whether swapping two changes anything — if not, they are not ordered" },
     ],
-    mastery_statement: "Student can argue a claim with relevant evidence, acknowledge alternate claims, and organise reasons logically.",
+    mastery_statement: "Student can argue a claim with relevant evidence, acknowledge alternate claims, and organize reasons logically.",
     ladder: [
       { name: "I can state a claim", descriptor: "Writes an arguable position" },
       { name: "I can support it with evidence", descriptor: "Supplies relevant support" },
@@ -516,7 +516,7 @@ const unpacksData = [
       { term: "some more", definition: "the extra ones after the ten" },
       { term: "equation", definition: "a number sentence with an equals sign" },
     ],
-    prior_skills: ["Count to 20", "Count objects accurately", "Recognise numerals to 19"],
+    prior_skills: ["Count to 20", "Count objects accurately", "Recognize numerals to 19"],
     prior_standards: [{ code: "K.CC.B.4", text: "Connect counting to cardinality" }],
     future_standards: [{ code: "1.NBT.B.2", text: "Understand two-digit place value" }],
     challenges: [
@@ -592,7 +592,7 @@ const unpacksData = [
     standard_code: "3.G.A.1",
     verbs: [
       { word: "Understand", gloss: "see how categories overlap" },
-      { word: "Recognise", gloss: "identify examples of a category" },
+      { word: "Recognize", gloss: "identify examples of a category" },
       { word: "Classify", gloss: "sort by shared attributes" },
     ],
     concepts: ["Attributes", "Nested categories", "Quadrilaterals"],
@@ -603,13 +603,13 @@ const unpacksData = [
       { term: "category", definition: "a group of things sharing something" },
     ],
     prior_skills: ["Name common shapes", "Count sides and corners", "Sort shapes by one attribute"],
-    prior_standards: [{ code: "2.G.A.1", text: "Recognise and draw shapes with specified attributes" }],
+    prior_standards: [{ code: "2.G.A.1", text: "Recognize and draw shapes with specified attributes" }],
     future_standards: [{ code: "4.G.A.2", text: "Classify two-dimensional figures by properties of their lines and angles" }],
     challenges: [
       { problem: "A square is not accepted as a rectangle", fix: "Check the definition attribute by attribute rather than by look" },
       { problem: "Shapes are sorted by appearance, not attributes", fix: "Sort with the shapes face down, using written attributes only" },
     ],
-    mastery_statement: "Student can classify shapes by shared attributes and recognise that categories can contain one another.",
+    mastery_statement: "Student can classify shapes by shared attributes and recognize that categories can contain one another.",
     ladder: [
       { name: "I can name shapes", descriptor: "Uses correct vocabulary" },
       { name: "I can list a shape's attributes", descriptor: "Counts sides and angles" },
@@ -735,7 +735,7 @@ const unpacksData = [
   {
     standard_code: "8.NS.A.1",
     verbs: [
-      { word: "Know", gloss: "recognise which numbers are irrational" },
+      { word: "Know", gloss: "recognize which numbers are irrational" },
       { word: "Convert", gloss: "turn a repeating decimal into a fraction" },
     ],
     concepts: ["Rational numbers", "Irrational numbers", "Decimal expansion"],
@@ -773,8 +773,8 @@ const unpacksData = [
       { term: "outlier", definition: "a point far from the rest" },
       { term: "cluster", definition: "a group of points bunched together" },
     ],
-    prior_skills: ["Plot on a coordinate plane", "Summarise a data set", "Interpret a line graph"],
-    prior_standards: [{ code: "6.SP.B.5", text: "Summarise numerical data sets in relation to their context" }],
+    prior_skills: ["Plot on a coordinate plane", "Summarize a data set", "Interpret a line graph"],
+    prior_standards: [{ code: "6.SP.B.5", text: "Summarize numerical data sets in relation to their context" }],
     future_standards: [{ code: "8.SP.A.2", text: "Fit a straight line to a scatter plot and assess the fit" }],
     challenges: [
       { problem: "Points are joined up like a line graph", fix: "Say aloud that each point is a separate thing measured twice" },
@@ -911,7 +911,7 @@ const blueprintsData = [
     title: "Grammar in Your Own Writing",
     badge: "Grade 4",
     route_name: "Explicit Instruction",
-    route_line: "Notice it → Practise it → Fix your own draft",
+    route_line: "Notice it → Practice it → Fix your own draft",
     success_criteria: ["Keeps verb tense consistent", "Uses relative pronouns to add detail", "Finds and fixes errors in their own writing"],
     steps: [
       { name: "Retrieve Parts of Speech", minutes: 5, body: "Sort words into nouns, verbs, adjectives. The categories before the conventions.", science_tag: "retrieval" },
@@ -972,7 +972,7 @@ const blueprintsData = [
     tech: "Printed passage with wide margins",
     tech_purpose: "Room to write synonyms above the author's words",
     ai_prompts: ["Generate synonym sets varying in connotation", "Write passages with a consistent identifiable tone"],
-    assessment: ["Check the swap test is actually performed", "Confirm tone is described as the writer's attitude", "Read analyses for what was lost"],
+    assessment: ["Check the swap test is actually performed", "Confirm tone is described as the writer's attitude", "Read analyzes for what was lost"],
     why_it_works: ["The swap test turns a vague question into a concrete comparison", "Ranking synonyms makes connotation measurable", "Tone versus mood is the confusion that muddles this standard", "Tracking across a passage shows tone as cumulative"],
   },
   {
@@ -985,18 +985,18 @@ const blueprintsData = [
     steps: [
       { name: "Retrieve Fact and Opinion", minutes: 5, body: "Sort statements. The base distinction before analysing position.", science_tag: "retrieval" },
       { name: "Purpose Specific Enough to Argue With", minutes: 10, body: "'To inform' says nothing. Push for a purpose someone could disagree with.", science_tag: "elaboration" },
-      { name: "Whose Voice Is This?", minutes: 12, body: "Highlight the author's own claims one colour, reported views of others another. The page shows the structure.", science_tag: "dual-coding" },
+      { name: "Whose Voice Is This?", minutes: 12, body: "Highlight the author's own claims one color, reported views of others another. The page shows the structure.", science_tag: "dual-coding" },
       { name: "How the Separation Works", minutes: 12, body: "Words like 'some argue' and 'however' mark the boundary. Collect the signals.", science_tag: "elaboration" },
-      { name: "Agree But Analyse", minutes: 10, body: "A text students agree with. Identifying position is separate from sharing it — the harder discipline.", science_tag: "interleaving" },
+      { name: "Agree But Analyze", minutes: 10, body: "A text students agree with. Identifying position is separate from sharing it — the harder discipline.", science_tag: "interleaving" },
       { name: "Write the Analysis", minutes: 8, body: "The author's position, one other view in the text, and how the author sets them apart.", science_tag: "collaborative" },
       { name: "Compare Two Readings", minutes: 3, body: "Two students state the author's position. Discuss any difference.", science_tag: "spaced" },
     ],
-    ef_supports: ["Two-colour highlighting for voices", "Signal phrase collection", "Purpose specificity test", "Numbered paragraphs"],
+    ef_supports: ["Two-color highlighting for voices", "Signal phrase collection", "Purpose specificity test", "Numbered paragraphs"],
     tech: "Printed opinion text with numbered paragraphs",
-    tech_purpose: "Two-colour highlighting needs a markable copy",
+    tech_purpose: "Two-color highlighting needs a markable copy",
     ai_prompts: ["Write a grade 7 opinion piece that reports and rebuts other views", "Generate vague and specific purpose statements for comparison"],
-    assessment: ["Check purposes are specific enough to dispute", "Confirm voices are distinguished in highlighting", "Read analyses for the separation mechanism"],
-    why_it_works: ["Demanding an arguable purpose kills the 'to inform' default", "Colour-coding voices makes an invisible structure visible", "Signal phrases are concrete evidence of the separation", "Analysing an agreeable text separates identifying from endorsing"],
+    assessment: ["Check purposes are specific enough to dispute", "Confirm voices are distinguished in highlighting", "Read analyzes for the separation mechanism"],
+    why_it_works: ["Demanding an arguable purpose kills the 'to inform' default", "Color-coding voices makes an invisible structure visible", "Signal phrases are concrete evidence of the separation", "Analysing an agreeable text separates identifying from endorsing"],
   },
   {
     standard_code: "W.7.1",
@@ -1009,13 +1009,13 @@ const blueprintsData = [
       { name: "Retrieve Claim and Evidence", minutes: 5, body: "Given a claim, supply evidence. The base before the counterclaim work.", science_tag: "retrieval" },
       { name: "Arguable or Not", minutes: 8, body: "Sort statements into arguable and merely true. A claim nobody disputes is not a claim.", science_tag: "elaboration" },
       { name: "Relevant to the Claim", minutes: 10, body: "Evidence relevant to the topic but not the claim. Students spot the gap.", science_tag: "elaboration" },
-      { name: "Write the Other Side", minutes: 12, body: "State the opposing view as its holders would. Not a caricature — a version they would recognise.", science_tag: "elaboration" },
+      { name: "Write the Other Side", minutes: 12, body: "State the opposing view as its holders would. Not a caricature — a version they would recognize.", science_tag: "elaboration" },
       { name: "Acknowledge Then Respond", minutes: 12, body: "Mentioning the other side is not enough. Model concede-then-counter with a sentence frame.", science_tag: "dual-coding" },
       { name: "Order the Reasons", minutes: 10, body: "Rearrange so each sets up the next. Test by swapping two — if nothing changes, they were not ordered.", science_tag: "interleaving" },
       { name: "Swap and Attack", minutes: 3, body: "Partners try to break each other's argument. Note which parts held.", science_tag: "spaced" },
     ],
-    ef_supports: ["Claim/evidence/counterclaim organiser", "Concede-then-counter frames", "Arguable-or-not sorting", "Reason slips for reordering"],
-    tech: "Printed organisers",
+    ef_supports: ["Claim/evidence/counterclaim organizer", "Concede-then-counter frames", "Arguable-or-not sorting", "Reason slips for reordering"],
+    tech: "Printed organizers",
     tech_purpose: "Keeping the four moves distinct while drafting",
     ai_prompts: ["Generate arguable and non-arguable statements for sorting", "Write strong opposing arguments for common grade 7 claims"],
     assessment: ["Check claims are genuinely arguable", "Confirm the counterclaim is fair not caricatured", "Verify a response follows the acknowledgement"],
@@ -1037,12 +1037,12 @@ const blueprintsData = [
       { name: "Write the Equation", minutes: 8, body: "14 = 10 + 4, matching what is built. Symbols attached to something physical.", science_tag: "dual-coding" },
       { name: "Build and Say", minutes: 3, body: "One teen number built and described as ten and some more.", science_tag: "spaced" },
     ],
-    ef_supports: ["Ten-frames", "Counters in two colours", "Count-on routine", "Equation frame matching the build"],
+    ef_supports: ["Ten-frames", "Counters in two colors", "Count-on routine", "Equation frame matching the build"],
     tech: "Ten-frames and counters",
     tech_purpose: "A full frame makes ten a single unit",
     ai_prompts: ["Generate teen number building tasks", "Create equation frames for 11 to 19"],
     assessment: ["Watch for recounting the full frame", "Check the spoken description uses ten and some more", "Individual build and say"],
-    why_it_works: ["A full ten-frame makes ten one thing rather than ten things", "Counting on from ten is the behaviour that shows unitising", "Teen number naming genuinely misleads, so address it directly", "Equations recorded against a build stay meaningful"],
+    why_it_works: ["A full ten-frame makes ten one thing rather than ten things", "Counting on from ten is the behavior that shows unitising", "Teen number naming genuinely misleads, so address it directly", "Equations recorded against a build stay meaningful"],
   },
   {
     standard_code: "1.OA.B.3",
@@ -1141,7 +1141,7 @@ const blueprintsData = [
     title: "Why Multiplying Can Make It Smaller",
     badge: "Grade 5",
     route_name: "Concrete-Representational-Abstract",
-    route_line: "Fold to find a fraction of a fraction → Model the area → Generalise",
+    route_line: "Fold to find a fraction of a fraction → Model the area → Generalize",
     success_criteria: ["Models a fraction times a fraction", "Computes the product correctly", "Explains why the product can be smaller than both factors"],
     steps: [
       { name: "Retrieve Fraction Meaning", minutes: 5, body: "What does 3/4 mean? Three one-fourths. The foundation for scaling.", science_tag: "retrieval" },

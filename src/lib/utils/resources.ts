@@ -82,7 +82,7 @@ export type ResourceCategory = (typeof RESOURCE_CATEGORIES)[number]
 /**
  * Every Purpose in the sheet, mapped to its category. Keys are lower-cased
  * because the sheet's capitalisation is inconsistent ("Science Instructional
- * strategies"). Anything unrecognised falls back to Instructional Strategies,
+ * strategies"). Anything unrecognized falls back to Instructional Strategies,
  * so a newly-typed Purpose still shows up rather than vanishing.
  */
 const PURPOSE_TO_CATEGORY: Record<string, ResourceCategory> = {

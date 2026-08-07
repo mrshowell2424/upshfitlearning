@@ -7,10 +7,8 @@ import Link from "next/link";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { isStandardCode, standardHref, standardTheme } from "@/lib/utils/standards";
-import { COURSE_COUNT } from "@/app/courses/announced";
-
-/** Kept here so the stat can't silently drift from the library again. */
-const RESOURCE_TOTAL = 2760;
+import { COURSE_COUNT } from "@/app/courses/courses-data";
+import { RESOURCE_TOTAL } from "@/lib/constants/totals";
 
 const exampleSearches = [
   "RL.2.1",
@@ -173,21 +171,20 @@ function MatchPageContent() {
             </div>
           )}
 
-          {/* Example chips */}
+          {/* Example chips. "Try:" sits on the chip row rather than above it,
+              so the label reads as part of the same line as the examples. */}
           {results.length === 0 && (
-            <div className="text-center">
-              <p className="text-sm text-text-muted mb-3">Try:</p>
-              <div className="flex flex-wrap gap-2 justify-center">
-                {exampleSearches.map((example) => (
-                  <button
-                    key={example}
-                    onClick={() => handleSearch(example)}
-                    className="inline-flex items-center min-h-[44px] px-4 rounded-full text-sm font-medium border border-border-strong hover:bg-gray-050 transition-colors"
-                  >
-                    {example}
-                  </button>
-                ))}
-              </div>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <p className="text-sm text-text-muted">Try:</p>
+              {exampleSearches.map((example) => (
+                <button
+                  key={example}
+                  onClick={() => handleSearch(example)}
+                  className="inline-flex items-center min-h-[44px] px-4 rounded-full text-sm font-medium border border-border-strong hover:bg-gray-050 transition-colors"
+                >
+                  {example}
+                </button>
+              ))}
             </div>
           )}
 

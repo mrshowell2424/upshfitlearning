@@ -58,8 +58,8 @@ const standardsData = [
     name: "Describe the structure of a text",
     plain_reading:
       "Describe the overall structure (chronology, comparison, cause/effect, problem/solution) of events, ideas, concepts, or information in a text or part of a text.",
-    learning_target: "I can name how a text is organised and show what gave it away.",
-    skills: ["Text Structure", "Organisational Patterns", "Nonfiction Analysis"],
+    learning_target: "I can name how a text is organized and show what gave it away.",
+    skills: ["Text Structure", "Organizational Patterns", "Nonfiction Analysis"],
     science_tags: ["dual-coding", "interleaving"],
     match_keys: ["text structure", "cause and effect", "compare contrast", "problem solution", "chronology"],
   },
@@ -75,7 +75,7 @@ const standardsData = [
   },
   {
     code: "RI.6.5",
-    name: "Analyse how a part fits the whole text",
+    name: "Analyze how a part fits the whole text",
     plain_reading:
       "Analyze how a particular sentence, paragraph, chapter, or section fits into the overall structure of a text and contributes to the development of the ideas.",
     learning_target: "I can explain what a paragraph is doing for the text as a whole.",
@@ -89,13 +89,13 @@ const standardsData = [
     plain_reading:
       "Write informative/explanatory texts to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content.",
     learning_target: "I can explain a topic clearly by choosing and organising the right information.",
-    skills: ["Informative Writing", "Organisation", "Source Selection"],
+    skills: ["Informative Writing", "Organization", "Source Selection"],
     science_tags: ["elaboration", "spaced"],
-    match_keys: ["informative writing", "explanatory", "expository", "organise information", "research writing"],
+    match_keys: ["informative writing", "explanatory", "expository", "organize information", "research writing"],
   },
   {
     code: "RL.8.3",
-    name: "Analyse how dialogue and incidents drive a story",
+    name: "Analyze how dialogue and incidents drive a story",
     plain_reading:
       "Analyze how particular lines of dialogue or incidents in a story or drama propel the action, reveal aspects of a character, or provoke a decision.",
     learning_target: "I can explain what a single moment does to the story or the character.",
@@ -187,7 +187,7 @@ const standardsData = [
   },
   {
     code: "7.RP.A.2",
-    name: "Recognise and represent proportional relationships",
+    name: "Recognize and represent proportional relationships",
     plain_reading:
       "Recognize and represent proportional relationships between quantities, identifying the constant of proportionality in tables, graphs, equations, diagrams, and verbal descriptions.",
     learning_target: "I can tell whether a relationship is proportional and find its constant.",
@@ -222,7 +222,7 @@ const unpacksData = [
     standard_code: "RF.K.1",
     verbs: [
       { word: "Demonstrate", gloss: "show that you know how print works" },
-      { word: "Recognise", gloss: "know a letter or word when you see it" },
+      { word: "Recognize", gloss: "know a letter or word when you see it" },
       { word: "Follow", gloss: "track the words in the right order" },
     ],
     concepts: ["Directionality", "Word boundaries", "Letter vs word"],
@@ -232,9 +232,9 @@ const unpacksData = [
       { term: "sentence", definition: "a group of words that tells a whole idea" },
       { term: "space", definition: "the gap that shows where a word ends" },
     ],
-    prior_skills: ["Hold a book the right way up", "Turn pages one at a time", "Recognise own name in print"],
+    prior_skills: ["Hold a book the right way up", "Turn pages one at a time", "Recognize own name in print"],
     prior_standards: [{ code: "PK.RF.1", text: "Show interest in books and handle them correctly" }],
-    future_standards: [{ code: "RF.1.1", text: "Recognise the distinguishing features of a sentence" }],
+    future_standards: [{ code: "RF.1.1", text: "Recognize the distinguishing features of a sentence" }],
     challenges: [
       { problem: "Letter and word are used interchangeably", fix: "Frame one, then the other, with a finger window" },
       { problem: "Tracking drifts away from the words being read", fix: "Use a pointer and read slowly enough to match" },
@@ -278,7 +278,7 @@ const unpacksData = [
   {
     standard_code: "RI.2.5",
     verbs: [
-      { word: "Know", gloss: "recognise each text feature and its job" },
+      { word: "Know", gloss: "recognize each text feature and its job" },
       { word: "Use", gloss: "actually go to it to find information" },
       { word: "Locate", gloss: "find a fact quickly" },
     ],
@@ -289,7 +289,7 @@ const unpacksData = [
       { term: "glossary", definition: "a list at the back that tells you what words mean" },
       { term: "index", definition: "a list at the back that tells you what page things are on" },
     ],
-    prior_skills: ["Identify a title", "Read a picture", "Recognise bold print"],
+    prior_skills: ["Identify a title", "Read a picture", "Recognize bold print"],
     prior_standards: [{ code: "RI.1.5", text: "Know and use text features to locate key facts" }],
     future_standards: [{ code: "RI.3.5", text: "Use text features and search tools to locate information efficiently" }],
     challenges: [
@@ -336,13 +336,13 @@ const unpacksData = [
   {
     standard_code: "RI.4.5",
     verbs: [
-      { word: "Describe", gloss: "name the organisational pattern" },
+      { word: "Describe", gloss: "name the organizational pattern" },
       { word: "Identify", gloss: "spot the signal words that reveal it" },
     ],
-    concepts: ["Text structure", "Signal words", "Author's organisation"],
+    concepts: ["Text structure", "Signal words", "Author's organization"],
     vocabulary: [
-      { term: "structure", definition: "the way a text is organised" },
-      { term: "signal word", definition: "a word that hints at how the text is organised" },
+      { term: "structure", definition: "the way a text is organized" },
+      { term: "signal word", definition: "a word that hints at how the text is organized" },
       { term: "cause and effect", definition: "one thing makes another thing happen" },
       { term: "chronology", definition: "events told in time order" },
     ],
@@ -351,9 +351,9 @@ const unpacksData = [
     future_standards: [{ code: "RI.5.5", text: "Compare the overall structure of two or more texts" }],
     challenges: [
       { problem: "Structure is guessed from the topic", fix: "Require two signal words as evidence" },
-      { problem: "Texts using two structures cause paralysis", fix: "Analyse by section rather than whole text" },
+      { problem: "Texts using two structures cause paralysis", fix: "Analyze by section rather than whole text" },
     ],
-    mastery_statement: "Student can name a text's organisational structure and cite the signal words that reveal it.",
+    mastery_statement: "Student can name a text's organizational structure and cite the signal words that reveal it.",
     ladder: [
       { name: "I can name the structures", descriptor: "Lists the four common patterns" },
       { name: "I can spot signal words", descriptor: "Identifies because, however, first" },
@@ -375,9 +375,9 @@ const unpacksData = [
       { term: "idiom", definition: "a phrase that means something other than its words" },
       { term: "nuance", definition: "a small difference in meaning between similar words" },
     ],
-    prior_skills: ["Identify a simile", "Use context clues", "Recognise multiple-meaning words"],
+    prior_skills: ["Identify a simile", "Use context clues", "Recognize multiple-meaning words"],
     prior_standards: [{ code: "L.4.5", text: "Demonstrate understanding of figurative language and nuances" }],
-    future_standards: [{ code: "L.6.5", text: "Interpret figures of speech and analyse word relationships" }],
+    future_standards: [{ code: "L.6.5", text: "Interpret figures of speech and analyze word relationships" }],
     challenges: [
       { problem: "Idioms are read literally", fix: "Collect idioms and draw both meanings side by side" },
       { problem: "Simile and metaphor get swapped", fix: "Sort by whether 'like' or 'as' appears" },
@@ -393,7 +393,7 @@ const unpacksData = [
   {
     standard_code: "RI.6.5",
     verbs: [
-      { word: "Analyse", gloss: "work out what a part is doing" },
+      { word: "Analyze", gloss: "work out what a part is doing" },
       { word: "Explain", gloss: "say how it develops the ideas" },
     ],
     concepts: ["Part-to-whole structure", "Paragraph function", "Idea development"],
@@ -403,16 +403,16 @@ const unpacksData = [
       { term: "development", definition: "how an idea is built up across a text" },
       { term: "transition", definition: "a sentence that moves from one idea to the next" },
     ],
-    prior_skills: ["Identify text structure", "Find a main idea", "Summarise a section"],
+    prior_skills: ["Identify text structure", "Find a main idea", "Summarize a section"],
     prior_standards: [{ code: "RI.5.5", text: "Compare the overall structure of two or more texts" }],
-    future_standards: [{ code: "RI.7.5", text: "Analyse the structure an author uses to organise a text" }],
+    future_standards: [{ code: "RI.7.5", text: "Analyze the structure an author uses to organize a text" }],
     challenges: [
-      { problem: "Students summarise the paragraph instead of naming its job", fix: "Ban content words from the answer — describe the function only" },
+      { problem: "Students summarize the paragraph instead of naming its job", fix: "Ban content words from the answer — describe the function only" },
       { problem: "Every paragraph is called 'supporting detail'", fix: "Build a menu of functions to choose from" },
     ],
     mastery_statement: "Student can explain the function of a specific paragraph and how it contributes to the text's ideas.",
     ladder: [
-      { name: "I can summarise a paragraph", descriptor: "States what it says" },
+      { name: "I can summarize a paragraph", descriptor: "States what it says" },
       { name: "I can name the text's structure", descriptor: "Identifies the overall pattern" },
       { name: "I can say what a paragraph is doing", descriptor: "Names its function" },
       { name: "I can explain how it develops the idea", descriptor: "Links part to whole" },
@@ -423,9 +423,9 @@ const unpacksData = [
     verbs: [
       { word: "Examine", gloss: "look closely at a topic" },
       { word: "Select", gloss: "choose the information that matters" },
-      { word: "Organise", gloss: "group information so it makes sense" },
+      { word: "Organize", gloss: "group information so it makes sense" },
     ],
-    concepts: ["Information selection", "Organisation", "Explanation vs opinion"],
+    concepts: ["Information selection", "Organization", "Explanation vs opinion"],
     vocabulary: [
       { term: "informative", definition: "writing that explains rather than argues" },
       { term: "relevant", definition: "actually connected to the point you are making" },
@@ -434,23 +434,23 @@ const unpacksData = [
     ],
     prior_skills: ["Write a paragraph with a topic sentence", "Take notes from a source", "Group related facts"],
     prior_standards: [{ code: "W.5.2", text: "Write informative texts to examine a topic" }],
-    future_standards: [{ code: "W.7.2", text: "Write informative texts with well-organised analysis" }],
+    future_standards: [{ code: "W.7.2", text: "Write informative texts with well-organized analysis" }],
     challenges: [
       { problem: "Everything found gets included", fix: "Force a cut — half the notes must go before drafting" },
       { problem: "Opinion creeps into explanation", fix: "Highlight evaluative words and remove them" },
     ],
-    mastery_statement: "Student can write an informative text that selects relevant information and organises it coherently.",
+    mastery_statement: "Student can write an informative text that selects relevant information and organizes it coherently.",
     ladder: [
       { name: "I can gather facts on a topic", descriptor: "Collects information" },
       { name: "I can choose which facts matter", descriptor: "Cuts irrelevant material" },
-      { name: "I can group facts into sections", descriptor: "Organises logically" },
+      { name: "I can group facts into sections", descriptor: "Organizes logically" },
       { name: "I can connect sections with transitions", descriptor: "Produces a coherent whole" },
     ],
   },
   {
     standard_code: "RL.8.3",
     verbs: [
-      { word: "Analyse", gloss: "examine what a moment does" },
+      { word: "Analyze", gloss: "examine what a moment does" },
       { word: "Propel", gloss: "push the action forward" },
       { word: "Reveal", gloss: "show something about a character" },
     ],
@@ -462,13 +462,13 @@ const unpacksData = [
       { term: "provoke", definition: "cause someone to act or decide" },
     ],
     prior_skills: ["Track character change", "Identify plot events", "Cite textual evidence"],
-    prior_standards: [{ code: "RL.7.3", text: "Analyse how story elements interact" }],
-    future_standards: [{ code: "RL.9-10.3", text: "Analyse how complex characters develop and advance the plot" }],
+    prior_standards: [{ code: "RL.7.3", text: "Analyze how story elements interact" }],
+    future_standards: [{ code: "RL.9-10.3", text: "Analyze how complex characters develop and advance the plot" }],
     challenges: [
-      { problem: "Students retell the moment rather than analyse it", fix: "Require the answer to start with 'this moment causes…'" },
+      { problem: "Students retell the moment rather than analyze it", fix: "Require the answer to start with 'this moment causes…'" },
       { problem: "Any moment is claimed as a turning point", fix: "Test by asking what changes because of it" },
     ],
-    mastery_statement: "Student can analyse how a specific line or incident advances the plot, reveals character, or forces a decision.",
+    mastery_statement: "Student can analyze how a specific line or incident advances the plot, reveals character, or forces a decision.",
     ladder: [
       { name: "I can find an important moment", descriptor: "Selects a significant incident" },
       { name: "I can say what happens because of it", descriptor: "Identifies consequence" },
@@ -518,7 +518,7 @@ const unpacksData = [
       { term: "altogether", definition: "how many when you put them together" },
       { term: "equation", definition: "a number sentence with an equals sign" },
     ],
-    prior_skills: ["Count objects accurately", "Compare two groups", "Recognise numerals"],
+    prior_skills: ["Count objects accurately", "Compare two groups", "Recognize numerals"],
     prior_standards: [{ code: "PK.OA.1", text: "Explore adding and subtracting with objects" }],
     future_standards: [{ code: "1.OA.A.1", text: "Solve addition and subtraction word problems within 20" }],
     challenges: [
@@ -546,7 +546,7 @@ const unpacksData = [
       { term: "digit", definition: "one of the symbols 0 to 9" },
       { term: "bundle", definition: "a group put together and counted as one" },
     ],
-    prior_skills: ["Count to 100", "Count groups of ten", "Recognise two-digit numerals"],
+    prior_skills: ["Count to 100", "Count groups of ten", "Recognize two-digit numerals"],
     prior_standards: [{ code: "K.NBT.A.1", text: "Compose and decompose numbers 11 to 19 into tens and ones" }],
     future_standards: [{ code: "2.NBT.A.1", text: "Understand three-digit place value" }],
     challenges: [
@@ -651,7 +651,7 @@ const unpacksData = [
   {
     standard_code: "5.NBT.A.1",
     verbs: [
-      { word: "Recognise", gloss: "see the ten-times pattern between places" },
+      { word: "Recognize", gloss: "see the ten-times pattern between places" },
       { word: "Explain", gloss: "say why each place relates to its neighbours" },
     ],
     concepts: ["Place value relationships", "Decimals", "Powers of ten"],
@@ -662,7 +662,7 @@ const unpacksData = [
       { term: "decimal point", definition: "the dot separating whole numbers from parts" },
     ],
     prior_skills: ["Understand whole-number place value", "Multiply and divide by 10", "Read decimals to hundredths"],
-    prior_standards: [{ code: "4.NBT.A.1", text: "Recognise that a digit represents ten times the place to its right" }],
+    prior_standards: [{ code: "4.NBT.A.1", text: "Recognize that a digit represents ten times the place to its right" }],
     future_standards: [{ code: "5.NBT.A.2", text: "Explain patterns when multiplying and dividing by powers of ten" }],
     challenges: [
       { problem: "The pattern is learned only left to right", fix: "Ask the one-tenth question as often as the ten-times one" },
@@ -708,7 +708,7 @@ const unpacksData = [
   {
     standard_code: "7.RP.A.2",
     verbs: [
-      { word: "Recognise", gloss: "tell whether a relationship is proportional" },
+      { word: "Recognize", gloss: "tell whether a relationship is proportional" },
       { word: "Represent", gloss: "show it as a table, graph or equation" },
       { word: "Identify", gloss: "find the constant of proportionality" },
     ],
@@ -783,7 +783,7 @@ const unpacksData = [
       { problem: "A leg is treated as the hypotenuse", fix: "Mark the right angle and its opposite side before substituting" },
       { problem: "The theorem is applied to non-right triangles", fix: "Include non-right triangles in practice sets" },
     ],
-    mastery_statement: "Student can find an unknown side of a right triangle and recognise when the theorem does not apply.",
+    mastery_statement: "Student can find an unknown side of a right triangle and recognize when the theorem does not apply.",
     ladder: [
       { name: "I can find squares and square roots", descriptor: "Computes accurately" },
       { name: "I can identify the hypotenuse", descriptor: "Locates the side opposite the right angle" },
@@ -895,19 +895,19 @@ const blueprintsData = [
     success_criteria: ["Names the four common structures", "Finds signal words in a passage", "Names a text's structure and cites two signals as proof"],
     steps: [
       { name: "Retrieve Text Features", minutes: 5, body: "Quick recall of nonfiction features. Structure is the next layer up, so confirm the layer below.", science_tag: "retrieval" },
-      { name: "Four Patterns", minutes: 10, body: "Chronology, compare/contrast, cause/effect, problem/solution. One graphic organiser shape per pattern — the shape is the memory hook.", science_tag: "dual-coding" },
+      { name: "Four Patterns", minutes: 10, body: "Chronology, compare/contrast, cause/effect, problem/solution. One graphic organizer shape per pattern — the shape is the memory hook.", science_tag: "dual-coding" },
       { name: "Signal Word Hunt", minutes: 10, body: "Sort signal words by pattern. Because, however, first, as a result. Students build the reference they will use next.", science_tag: "elaboration" },
       { name: "Name That Structure", minutes: 12, body: "Four short passages. Students name the structure and underline two signals. Two signals, not one — one can be coincidence.", science_tag: "interleaving" },
-      { name: "The Mixed Passage", minutes: 10, body: "A text using two structures. Students analyse by section rather than forcing one label. This is what real texts do.", science_tag: "elaboration" },
-      { name: "Map It", minutes: 10, body: "Students fill the matching graphic organiser for one passage. The organiser only fits if the structure was named right.", science_tag: "dual-coding" },
+      { name: "The Mixed Passage", minutes: 10, body: "A text using two structures. Students analyze by section rather than forcing one label. This is what real texts do.", science_tag: "elaboration" },
+      { name: "Map It", minutes: 10, body: "Students fill the matching graphic organizer for one passage. The organizer only fits if the structure was named right.", science_tag: "dual-coding" },
       { name: "Defend a Label", minutes: 5, body: "One student names a structure and cites signals. Class checks the evidence holds.", science_tag: "spaced" },
     ],
-    ef_supports: ["Graphic organiser per structure", "Signal word reference chart", "Passages short enough to analyse whole", "Section-by-section option for mixed texts"],
-    tech: "Printed passages and organisers",
-    tech_purpose: "The organiser shape makes structure visible",
-    ai_prompts: ["Write four short passages, one per text structure", "Generate a signal word sort by organisational pattern"],
-    assessment: ["Require two signal words per label", "Check organiser fits the named structure", "Listen to the defence for evidence-based reasoning"],
-    why_it_works: ["A distinct organiser shape per pattern gives structure a visual identity", "Requiring two signals stops topic-based guessing", "The mixed passage prevents a false one-label-per-text rule", "Filling the organiser self-checks the label"],
+    ef_supports: ["Graphic organizer per structure", "Signal word reference chart", "Passages short enough to analyze whole", "Section-by-section option for mixed texts"],
+    tech: "Printed passages and organizers",
+    tech_purpose: "The organizer shape makes structure visible",
+    ai_prompts: ["Write four short passages, one per text structure", "Generate a signal word sort by organizational pattern"],
+    assessment: ["Require two signal words per label", "Check organizer fits the named structure", "Listen to the defence for evidence-based reasoning"],
+    why_it_works: ["A distinct organizer shape per pattern gives structure a visual identity", "Requiring two signals stops topic-based guessing", "The mixed passage prevents a false one-label-per-text rule", "Filling the organizer self-checks the label"],
   },
   {
     standard_code: "L.5.5",
@@ -940,7 +940,7 @@ const blueprintsData = [
     route_line: "Map the whole → Name each part's job → Explain the contribution",
     success_criteria: ["Maps the overall structure of a text", "Names a paragraph's function rather than summarising it", "Explains how the part develops the whole"],
     steps: [
-      { name: "Retrieve Text Structures", minutes: 5, body: "Name the organisational patterns from memory. This standard sits on top of them.", science_tag: "retrieval" },
+      { name: "Retrieve Text Structures", minutes: 5, body: "Name the organizational patterns from memory. This standard sits on top of them.", science_tag: "retrieval" },
       { name: "Summary Is Not Function", minutes: 10, body: "Show a paragraph. Give a summary answer and a function answer side by side. Students name the difference. This distinction is the whole lesson.", science_tag: "elaboration" },
       { name: "Build a Function Menu", minutes: 10, body: "Introduces, gives evidence, counters, transitions, concludes. Chart it. A menu makes 'what is it doing' answerable.", science_tag: "dual-coding" },
       { name: "Map the Text", minutes: 12, body: "One box per paragraph. Students write the function only — content words banned. The ban forces the shift.", science_tag: "dual-coding" },
@@ -952,7 +952,7 @@ const blueprintsData = [
     tech: "Printed article with numbered paragraphs",
     tech_purpose: "Paragraph-level reference for mapping",
     ai_prompts: ["Write a grade 6 article with clearly distinct paragraph functions", "Generate summary and function answers for the same paragraph"],
-    assessment: ["Check maps contain functions, not summaries", "Review the removal reasoning", "Read written analyses for part-to-whole linking"],
+    assessment: ["Check maps contain functions, not summaries", "Review the removal reasoning", "Read written analyzes for part-to-whole linking"],
     why_it_works: ["Banning content words is what forces function over summary", "The removal test makes contribution concrete", "A function menu turns an open question into a choice", "Disagreements between maps are where the analysis deepens"],
   },
   {
@@ -960,7 +960,7 @@ const blueprintsData = [
     title: "Explaining Without Arguing",
     badge: "Grade 6",
     route_name: "Writing Workshop",
-    route_line: "Gather → Cut hard → Organise and connect",
+    route_line: "Gather → Cut hard → Organize and connect",
     success_criteria: ["Selects information relevant to the focus", "Groups related information into sections", "Explains without slipping into opinion"],
     steps: [
       { name: "Retrieve Paragraph Structure", minutes: 5, body: "Topic sentence, supporting detail, closing. Quick recall before scaling up to a whole piece.", science_tag: "retrieval" },
@@ -983,7 +983,7 @@ const blueprintsData = [
     title: "The Moment That Changes Everything",
     badge: "Grade 8",
     route_name: "Analytical Reading",
-    route_line: "Find the moment → Test its consequence → Analyse what it reveals",
+    route_line: "Find the moment → Test its consequence → Analyze what it reveals",
     success_criteria: ["Selects a genuinely pivotal moment", "Names what changes because of it", "Explains what it reveals about a character"],
     steps: [
       { name: "Retrieve Character Analysis", minutes: 5, body: "How do we learn about characters? Collect: what they say, do, and what others say. Ground the lesson.", science_tag: "retrieval" },
@@ -998,7 +998,7 @@ const blueprintsData = [
     tech: "Printed excerpt with line numbers",
     tech_purpose: "Line-level citation for dialogue analysis",
     ai_prompts: ["Write a dialogue exchange that reveals character and forces a decision", "Generate retell and analysis answers for the same moment"],
-    assessment: ["Check moments pass the consequence test", "Confirm writing analyses rather than retells", "Listen to defences for causal reasoning"],
+    assessment: ["Check moments pass the consequence test", "Confirm writing analyzes rather than retells", "Listen to defences for causal reasoning"],
     why_it_works: ["The consequence test makes 'pivotal' testable rather than felt", "Line-by-line dialogue annotation is where subtext becomes visible", "Retell is the default failure mode, so contrast it explicitly", "Defending a choice forces the causal chain into the open"],
   },
   {
@@ -1017,8 +1017,8 @@ const blueprintsData = [
       { name: "Assemble the Argument", minutes: 10, body: "Claim, evidence, counterclaim, rebuttal in order. One full pass, not a polished draft.", science_tag: "collaborative" },
       { name: "Swap and Challenge", minutes: 6, body: "Partners read and try to break the argument. Note which parts held.", science_tag: "spaced" },
     ],
-    ef_supports: ["Claim/evidence/counterclaim/rebuttal organiser", "Concede-then-counter sentence frames", "Counterclaim ranking sheet", "Steelman requirement in writing"],
-    tech: "Printed organisers",
+    ef_supports: ["Claim/evidence/counterclaim/rebuttal organizer", "Concede-then-counter sentence frames", "Counterclaim ranking sheet", "Steelman requirement in writing"],
+    tech: "Printed organizers",
     tech_purpose: "Keep the four moves distinct while drafting",
     ai_prompts: ["Generate debatable grade 8 claims with strong opposing arguments", "Write evidence that is topic-relevant but claim-irrelevant"],
     assessment: ["Check counterclaims are genuine, not straw men", "Confirm evidence supports the claim specifically", "Partner challenge finds the weak joints"],
@@ -1224,8 +1224,8 @@ const blueprintsData = [
       { name: "Beyond Integers", minutes: 10, body: "Negative fractions and decimals. Same moves, harder numbers. The standard says rational, not integer.", science_tag: "interleaving" },
       { name: "Explain a Double Negative", minutes: 3, body: "One student explains why subtracting a negative adds.", science_tag: "spaced" },
     ],
-    ef_supports: ["Large floor or wall number line", "Two-colour counters for zero pairs", "Rewrite-as-addition checklist", "Negative fraction examples"],
-    tech: "Number lines and two-colour counters",
+    ef_supports: ["Large floor or wall number line", "Two-color counters for zero pairs", "Rewrite-as-addition checklist", "Negative fraction examples"],
+    tech: "Number lines and two-color counters",
     tech_purpose: "Make sign changes movements rather than rules",
     ai_prompts: ["Generate rational number problems including negative fractions", "Create double-negative problems with number line models"],
     assessment: ["Check every subtraction is rewritten", "Confirm number line models match the computation", "Individual explanation of subtracting a negative"],
@@ -1237,7 +1237,7 @@ const blueprintsData = [
     badge: "Grade 8",
     route_name: "Strategy Instruction",
     route_line: "Identify the hypotenuse → Substitute carefully → Solve and check",
-    success_criteria: ["Identifies the hypotenuse before substituting", "Finds a missing hypotenuse or leg correctly", "Recognises when the theorem does not apply"],
+    success_criteria: ["Identifies the hypotenuse before substituting", "Finds a missing hypotenuse or leg correctly", "Recognizes when the theorem does not apply"],
     steps: [
       { name: "Retrieve Squares and Roots", minutes: 5, body: "Perfect squares and their roots. Weak recall here slows everything downstream.", science_tag: "retrieval" },
       { name: "Mark the Right Angle First", minutes: 10, body: "Before any algebra, mark the right angle and the side opposite it. Make this the non-negotiable first move.", science_tag: "dual-coding" },

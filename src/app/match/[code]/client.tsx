@@ -19,7 +19,7 @@ const tabs = [
 ];
 
 /**
- * Section-label colours. Each kind of information keeps the same hue everywhere
+ * Section-label colors. Each kind of information keeps the same hue everywhere
  * it appears, so a teacher learns the page once — coral is what students do,
  * violet is the standard's own machinery, teal is learning science.
  */

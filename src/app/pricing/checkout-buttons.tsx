@@ -43,7 +43,7 @@ export function CheckoutButtons({
           href="/auth/signup"
           className="block w-full text-center px-6 py-3 rounded-xl font-semibold bg-coral hover:bg-coral-press text-white transition-colors"
         >
-          Upgrade to Pro
+          Get All-Access
         </Link>
       </div>
     )
@@ -80,7 +80,7 @@ export function CheckoutButtons({
         href={withEmail(monthlyUrl)}
         className="block w-full text-center px-6 py-3 rounded-xl font-semibold bg-coral hover:bg-coral-press text-white transition-colors"
       >
-        {annualUrl ? 'Subscribe monthly' : 'Upgrade to Pro'}
+        {annualUrl ? 'Subscribe monthly' : 'Get All-Access'}
       </a>
 
       {annualUrl && (

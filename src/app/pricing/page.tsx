@@ -2,6 +2,8 @@ import Link from 'next/link'
 import Header from '@/components/shared/Header'
 import Footer from '@/components/shared/Footer'
 import { CheckoutButtons } from './checkout-buttons'
+import { COURSE_COUNT } from '@/app/courses/courses-data'
+import { RESOURCE_TOTAL, STANDARD_TOTAL } from '@/lib/constants/totals'
 
 /**
  * Rendered per request so the checkout links are read at runtime.
@@ -45,28 +47,28 @@ export default function PricingPage() {
     {
       name: 'Free',
       price: '$0',
-      description: 'Perfect for exploring',
+      description: 'Have a proper look around',
       features: [
-        '200 curated resources',
-        'Read-only access',
+        `Every one of ${STANDARD_TOTAL} standards, with its lesson blueprint`,
+        'Search the full resource library',
         "Teacher's Lounge articles",
-        'Basic standard matching',
+        'No card, no trial period, no expiry',
       ],
       cta: 'Get Started',
       ctaHref: '/auth/signup',
       highlighted: false,
     },
     {
-      name: 'Pro',
+      name: 'All-Access',
       price: '$15',
       period: '/month or $120/year',
-      description: 'For active teachers',
+      description: 'For the teacher who plans on Sunday night',
       features: [
-        'All 2,688+ resources',
-        'Generate lessons in 4 formats',
-        'Save & organize resources',
-        'Advanced search & filtering',
-        'Priority support',
+        `Unpack any of ${STANDARD_TOTAL} standards — verbs, vocabulary, the learning ladder`,
+        `All ${RESOURCE_TOTAL.toLocaleString()} resources, matched to the standard you are teaching`,
+        `All ${COURSE_COUNT} courses, delivered through Google Classroom`,
+        'Turn a blueprint into materials for your own class',
+        'Save what you find, so you are not searching twice',
       ],
       // Rendered by CheckoutButtons, which needs the session to prefill the
       // payment email and to avoid selling to somebody who already has access.
@@ -76,13 +78,13 @@ export default function PricingPage() {
     {
       name: 'School',
       price: 'Custom',
-      description: 'For teams & districts',
+      description: 'For a team teaching the same standards',
       features: [
-        'Everything in Pro',
-        'Team collaboration',
-        'Admin dashboard',
-        'Bulk resource management',
-        'Dedicated support',
+        'Everything in All-Access, for everyone',
+        'One invoice instead of twenty',
+        'Shared planning across a grade level or department',
+        'Onboarding for your staff',
+        'A person to email, not a form',
       ],
       cta: 'Contact Sales',
       ctaHref: 'mailto:hello@upshiftlearning.org',
@@ -104,7 +106,9 @@ export default function PricingPage() {
               Simple, fair pricing
             </h1>
             <p className="text-lg text-text-muted max-w-2xl mx-auto">
-              Choose the plan that works for you. All plans include access to our full learning science library.
+              The lesson blueprint for every standard is free, and always will be.
+              All-Access opens the deconstruction, the matched resources and the
+              courses.
             </p>
           </div>
         </section>
@@ -190,16 +194,16 @@ export default function PricingPage() {
             <div className="space-y-6">
               {[
                 {
-                  q: 'Can I change plans anytime?',
-                  a: 'Yes! Upgrade or downgrade your plan at any time. Changes take effect immediately.',
+                  q: 'How soon do I get access after paying?',
+                  a: 'Within a day, usually much sooner. We switch All-Access on by hand at the moment, so sign in with the same email address you paid with — that is how we connect the two.',
                 },
                 {
                   q: 'Is there a free trial?',
-                  a: 'Our free plan gives you access to 200 resources permanently. Upgrade to Pro anytime to unlock everything.',
+                  a: `There is no trial, because there is no need for one. The lesson blueprint for all ${STANDARD_TOTAL} standards is free permanently, no card required. Upgrade whenever the rest becomes worth it to you.`,
                 },
                 {
-                  q: 'How do school licenses work?',
-                  a: 'School plans are customized based on your district size and needs. Contact hello@upshiftlearning.org for pricing.',
+                  q: 'How do school licences work?',
+                  a: 'School plans are priced on how many teachers you have and what you need. Email hello@upshiftlearning.org and you will get a person, not a quote form.',
                 },
                 {
                   q: 'Do you offer refunds?',

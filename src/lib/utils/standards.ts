@@ -65,7 +65,7 @@ export function gradeSubjectLabel(code: string, grade: string | null): string {
 export type StandardSubject = 'ELA' | 'Math' | 'Science' | 'Social Studies' | 'Other'
 
 /**
- * Work out the subject from the shape of the code, so cards can be colour-coded
+ * Work out the subject from the shape of the code, so cards can be color-coded
  * without the standards table needing a subject column.
  *
  *   RL.2.1, L.5.4      → ELA            (ELA strands are letter-led)
