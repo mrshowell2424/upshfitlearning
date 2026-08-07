@@ -7,6 +7,7 @@ import { useAuth } from '@/providers/AuthProvider'
 import Header from '@/components/shared/Header'
 import Footer from '@/components/shared/Footer'
 import { isStandardCode, standardHref } from '@/lib/utils/standards'
+import { RESOURCE_TOTAL, STANDARD_TOTAL } from '@/lib/constants/totals'
 
 export default function Home() {
   const [searchInput, setSearchInput] = useState('')
@@ -110,11 +111,11 @@ export default function Home() {
             {/* Stat Strip */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-hairline rounded-2xl overflow-hidden">
               <Link href="/resources" className="bg-white p-4 md:p-6 text-center hover:bg-gray-050 transition-colors">
-                <div className="text-3xl md:text-4xl font-bold text-coral mb-1">2,760</div>
+                <div className="text-3xl md:text-4xl font-bold text-coral mb-1">{RESOURCE_TOTAL.toLocaleString()}</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Resources</div>
               </Link>
               <Link href="/match" className="bg-white p-4 md:p-6 text-center hover:bg-gray-050 transition-colors">
-                <div className="text-3xl md:text-4xl font-bold text-lavender mb-1">150+</div>
+                <div className="text-3xl md:text-4xl font-bold text-lavender mb-1">{STANDARD_TOTAL}</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Standards</div>
               </Link>
               <Link href="/match/random" className="bg-white p-4 md:p-6 text-center hover:bg-gray-050 transition-colors">
