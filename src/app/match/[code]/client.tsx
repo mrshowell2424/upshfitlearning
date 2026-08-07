@@ -127,9 +127,14 @@ function SectionLabel({ children, color, className = "" }) {
   );
 }
 
-function Card({ children, className = "" }) {
+function Card({ children, className = "", accent }) {
   return (
-    <div className={`rounded-2xl border border-hairline bg-white p-6 ${className}`}>
+    <div
+      className={`rounded-2xl border border-hairline bg-white p-6 ${
+        accent ? "border-l-4" : ""
+      } ${className}`}
+      style={accent ? { borderLeftColor: accent } : undefined}
+    >
       {children}
     </div>
   );
@@ -374,7 +379,7 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
           <hr className="border-0 border-t-2 mt-10 mb-7" style={{ borderColor: "#D9D6D2" }} />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card>
+            <Card accent={LABEL.blue}>
               <SectionLabel color={LABEL.blue} className="mb-3">
                 Technology
               </SectionLabel>
@@ -388,7 +393,7 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
               )}
             </Card>
 
-            <Card>
+            <Card accent={LABEL.teal}>
               <SectionLabel color={LABEL.teal} className="mb-3">
                 AI extension
               </SectionLabel>
@@ -411,7 +416,7 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
           <hr className="border-0 border-t-2 mt-10 mb-7" style={{ borderColor: "#D9D6D2" }} />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card>
+            <Card accent={LABEL.coral}>
               <SectionLabel color={LABEL.coral} className="mb-3">
                 Assessment
               </SectionLabel>
@@ -424,7 +429,7 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
               </ul>
             </Card>
 
-            <Card>
+            <Card accent={LABEL.rust}>
               <SectionLabel color={LABEL.rust} className="mb-3">
                 Why this lesson works
               </SectionLabel>
@@ -466,12 +471,9 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
 
           {/* The thesis of the whole product */}
           <div className="rounded-2xl bg-gray-050 border border-hairline p-6 flex flex-wrap items-center justify-between gap-5">
-            <p className="text-[16px] text-text-body max-w-xl leading-snug">
+            <p className="text-[16px] text-text-body leading-snug xl:whitespace-nowrap">
               <strong className="text-charcoal">The big idea:</strong>{" "}
-              we don&apos;t just teach the standard.{" "}
-              <span className="lg:whitespace-nowrap">
-                We design the learning so students can actually learn.
-              </span>
+              we don&apos;t just teach the standard. We design the learning so students can actually learn.
             </p>
             <div className="flex items-center gap-3 flex-wrap">
               {[
