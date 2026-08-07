@@ -1,9 +1,10 @@
 // @ts-nocheck
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/providers/AuthProvider";
+import { supabase } from "@/lib/auth";
 import { useMatchTab } from "./tab-context";
 import { kidDefinition, DOK_DESCRIPTIONS } from "@/lib/utils/unpack";
 import { UpgradeModal } from "@/components/shared/UpgradeModal";
@@ -46,8 +47,7 @@ export function MatchDetailClient({
   standard,
   standard_code,
   blueprint,
-  unpack,
-  resources,
+  premiumSummary,
   userTier = "free",
 }) {
   const { activeTab, setActiveTab } = useMatchTab();
@@ -59,6 +59,56 @@ export function MatchDetailClient({
   const current = tabs.find((t) => t.id === activeTab);
   // Don't flash a paywall while the session is still resolving
   const locked = !isLoading && !hasAllAccess && !!current?.premium;
+
+  /**
+   * The unpack and resources are no longer rendered by the server — they would
+   * be readable by anyone in the page source. They are fetched here instead,
+   * with the session's access token, and the route decides entitlement afresh.
+   * Sending a token we do not think is entitled would only ever be refused, so
+   * the request waits until the session says otherwise.
+   */
+  const [premium, setPremium] = useState(null);
+  const [premiumState, setPremiumState] = useState("idle");
+
+  useEffect(() => {
+    if (isLoading || !hasAllAccess || premiumState !== "idle") return;
+
+    let cancelled = false;
+    setPremiumState("loading");
+
+    const load = async () => {
+      try {
+        const { data } = await supabase.auth.getSession();
+        const token = data?.session?.access_token;
+        if (!token) throw new Error("no session");
+
+        const response = await fetch(
+          `/api/match/${encodeURIComponent(standard_code)}/premium`,
+          { headers: { Authorization: `Bearer ${token}` } }
+        );
+        if (!response.ok) throw new Error(`premium request failed: ${response.status}`);
+
+        const payload = await response.json();
+        if (!cancelled) {
+          setPremium(payload);
+          setPremiumState("ready");
+        }
+      } catch (error) {
+        console.error("Could not load All-Access content:", error);
+        if (!cancelled) setPremiumState("error");
+      }
+    };
+
+    load();
+    return () => {
+      cancelled = true;
+    };
+  }, [isLoading, hasAllAccess, premiumState, standard_code]);
+
+  const unpack = premium?.unpack ?? null;
+  const resources = premium?.resources ?? null;
+  // Entitled, but the payload is still in flight
+  const awaitingPremium = hasAllAccess && !!current?.premium && premiumState !== "ready";
 
   return (
     <div>
@@ -86,7 +136,7 @@ export function MatchDetailClient({
       </div>
 
       {/* Tab content */}
-      <LockedOverlay locked={locked} feature={current?.label ?? ""}>
+      <LockedOverlay locked={locked} feature={current?.label ?? ""} summary={premiumSummary}>
         {activeTab === "blueprint" && (
           <BlueprintTab
             blueprint={blueprint}
@@ -94,14 +144,20 @@ export function MatchDetailClient({
             onOpenTab={setActiveTab}
           />
         )}
-        {activeTab === "unpack" && (
-          <UnpackTab unpack={unpack} standard={standard} onOpenTab={setActiveTab} />
-        )}
-        {activeTab === "resources" && (
-          <ResourcesTab resources={resources} standard_code={standard_code} />
-        )}
-        {activeTab === "generate" && (
-          <GenerateTab standard_code={standard_code} blueprint={blueprint} unpack={unpack} />
+        {awaitingPremium ? (
+          <PremiumLoading state={premiumState} />
+        ) : (
+          <>
+            {activeTab === "unpack" && (
+              <UnpackTab unpack={unpack} standard={standard} onOpenTab={setActiveTab} />
+            )}
+            {activeTab === "resources" && (
+              <ResourcesTab resources={resources} standard_code={standard_code} />
+            )}
+            {activeTab === "generate" && (
+              <GenerateTab standard_code={standard_code} blueprint={blueprint} unpack={unpack} />
+            )}
+          </>
         )}
       </LockedOverlay>
     </div>
@@ -142,24 +198,44 @@ function Card({ children, className = "", accent }) {
   );
 }
 
+/** Shown to an entitled teacher while the All-Access payload is on its way. */
+function PremiumLoading({ state }) {
+  if (state === "error") {
+    return (
+      <div className="rounded-2xl border border-hairline bg-white p-8 text-center">
+        <p className="text-[15px] text-text-muted">
+          We could not load this section. Please refresh and try again.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="rounded-2xl border border-hairline bg-white p-8 text-center">
+      <p className="text-[15px] text-text-muted">Loading…</p>
+    </div>
+  );
+}
+
 /**
- * Renders the real content behind a blur with an All-Access card on top. The
- * content stays in the DOM (blurred) so free users can see there is something
- * substantial there, which is the point of the teaser.
+ * The All-Access wall.
+ *
+ * This used to render the real content behind a CSS blur, which meant the paid
+ * material was delivered to every browser and one devtools edit away from being
+ * read. The server no longer sends it at all, so there is nothing to blur —
+ * instead the teaser is a count of what the section holds. It still shows a
+ * teacher that something substantial is there, without being the thing itself.
  */
-function LockedOverlay({ locked, feature, children }) {
+function LockedOverlay({ locked, feature, summary, children }) {
   if (!locked) return <div>{children}</div>;
 
   return (
     <div className="relative">
-      <div
-        className="blur-[6px] select-none pointer-events-none opacity-60 max-h-[520px] overflow-hidden"
-        aria-hidden="true"
-      >
-        {children}
+      <div className="pointer-events-none select-none" aria-hidden="true">
+        <LockedPreview feature={feature} summary={summary} />
       </div>
 
-      {/* Fade so the blurred content dissolves rather than being cut off */}
+      {/* Fade so the preview dissolves rather than being cut off */}
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-white" />
 
       <div className="absolute inset-0 flex items-start justify-center pt-16">
@@ -194,6 +270,50 @@ function LockedOverlay({ locked, feature, children }) {
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+/**
+ * What sits behind the wall, described rather than shown. Counts come from the
+ * server, so they are accurate for this standard rather than generic marketing.
+ */
+function LockedPreview({ feature, summary }) {
+  const rows = [
+    { label: "Vocabulary in kid-friendly language", count: summary?.vocabulary },
+    { label: "Rungs on the learning ladder", count: summary?.ladder },
+    { label: "Common challenges, with fixes", count: summary?.challenges },
+    { label: "Verbs the standard actually asks for", count: summary?.verbs },
+    { label: "Resources matched to this standard", count: summary?.resources },
+  ].filter((row) => typeof row.count === "number" && row.count > 0);
+
+  return (
+    <div className="rounded-2xl border border-hairline bg-white p-8 min-h-[420px]">
+      <SectionLabel color={LABEL.violet}>{feature}</SectionLabel>
+      <p className="text-[19px] font-bold text-charcoal mt-2 mb-6">
+        Built for this standard, ready to teach
+      </p>
+
+      {rows.length > 0 ? (
+        <ul className="space-y-3 max-w-md">
+          {rows.map((row) => (
+            <li key={row.label} className="flex items-baseline gap-3">
+              <span
+                className="text-[22px] font-bold tabular-nums w-10 shrink-0 text-right"
+                style={{ color: "var(--color-teal)" }}
+              >
+                {row.count}
+              </span>
+              <span className="text-[15px] text-text-body">{row.label}</span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="text-[15px] text-text-muted max-w-md">
+          The full deconstruction, the resources that fit it, and the generator
+          that turns it into materials for your class.
+        </p>
+      )}
     </div>
   );
 }

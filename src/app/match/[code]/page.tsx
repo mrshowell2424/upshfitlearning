@@ -135,11 +135,31 @@ export default async function MatchDetailPage({ params }: PageProps) {
     scienceTags,
   };
 
-  // Her own videos, scored against this standard's skills and match keys
+  // Her own videos, scored against this standard's skills and match keys.
+  // Only the count travels to the browser; the resources themselves are
+  // All-Access and are served from the premium route instead.
   const matchingResources = await getResourcesForStandard([
     ...(standardRow?.skills ?? []),
     ...(standardRow?.match_keys ?? []),
   ])
+
+  /**
+   * What a teacher without All-Access is told about the locked half: how much
+   * is behind it, never any of it. Enough to show the tabs hold something
+   * substantial, which is what the blurred preview used to convey before the
+   * content stopped being sent at all.
+   */
+  const premiumSummary = {
+    hasUnpack: Boolean(unpack),
+    verbs: unpack?.verbs?.length ?? 0,
+    concepts: unpack?.concepts?.length ?? 0,
+    vocabulary: unpack?.vocabulary?.length ?? 0,
+    ladder: unpack?.ladder?.length ?? 0,
+    challenges: unpack?.challenges?.length ?? 0,
+    priorStandards: unpack?.priorStandards?.length ?? 0,
+    futureStandards: unpack?.futureStandards?.length ?? 0,
+    resources: matchingResources?.length ?? 0,
+  }
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -184,7 +204,8 @@ export default async function MatchDetailPage({ params }: PageProps) {
           </div>
 
           <MatchTabProvider>
-          <LessonBanner blueprint={blueprint} standard={standard} unpack={unpack} />
+          {/* Only the DOK level, not the unpack it was derived from */}
+          <LessonBanner blueprint={blueprint} standard={standard} unpack={{ dok: unpack?.dok }} />
 
           {/* The standard itself — code, plain reading, target and the science */}
           <div className="rounded-2xl border border-hairline bg-white overflow-hidden mb-7">
@@ -256,12 +277,18 @@ export default async function MatchDetailPage({ params }: PageProps) {
 
           {/* Tabs — always rendered so every section is reachable, each with its
               own empty state when that standard has not been authored yet. */}
+          {/*
+            The unpack and the matching resources are All-Access, so they are
+            deliberately not passed here — anything handed to a client component
+            is serialised into the HTML and readable by anyone, entitled or not.
+            The client asks /api/match/[code]/premium for them once it has a
+            session to prove entitlement with. Only the summary travels freely.
+          */}
           <MatchDetailClient
             standard={standard}
             standard_code={decodedCode}
             blueprint={blueprint}
-            unpack={unpack}
-            resources={matchingResources}
+            premiumSummary={premiumSummary}
           />
           </MatchTabProvider>
         </div>
