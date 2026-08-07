@@ -3,22 +3,26 @@ import postgres from "postgres";
 import * as schema from "./schema";
 
 /**
- * The connection is built on first use, not when this module is evaluated.
+ * A connection is built per query, and never shared between requests.
  *
- * That matters on Cloudflare Workers: bindings and secrets are only exposed
- * per request, so anything read at module scope sees an empty process.env.
- * Reading DATABASE_URL at import time therefore always came back undefined in
- * production, the client was never created, and every query threw — silently,
- * because the call sites catch and fall back to an empty state. Locally under
- * Bun the variable is present at import time, so the same code worked fine.
+ * Two Cloudflare Workers constraints shape this:
  *
- * Building lazily means the read happens inside a request, where the value
- * actually exists. The instance is cached afterwards, so an isolate still only
- * ever opens one pool.
+ *  1. Bindings and secrets only exist during a request, so DATABASE_URL cannot
+ *     be read at module scope — it comes back undefined at isolate startup.
+ *  2. A socket opened while handling one request cannot be used by another.
+ *     Caching a client at module scope therefore works exactly once per
+ *     isolate and throws for every request after it, which surfaces as an
+ *     uncaught Worker exception rather than anything a call site can catch.
+ *
+ * So the client is created on each access to `db` and left to close itself
+ * through idle_timeout. That costs a connection setup per query, which is the
+ * price of the platform; Supavisor in transaction mode is built to absorb
+ * exactly this pattern. If the added latency ever matters, Cloudflare
+ * Hyperdrive is the way to pool without violating the second rule.
+ *
+ * Locally under Bun neither constraint applies, and this behaves the same.
  */
 type Database = ReturnType<typeof drizzle<typeof schema>>;
-
-let cached: Database | null = null;
 
 function createDb(): Database {
   const connectionString = process.env.DATABASE_URL;
@@ -29,22 +33,21 @@ function createDb(): Database {
   }
 
   const client = postgres(connectionString, {
-    // Supavisor in transaction mode (port 6543) hands a different backend
-    // connection to each statement, so prepared statements cannot be reused.
+    // Supavisor in transaction mode hands a different backend connection to
+    // each statement, so prepared statements cannot be reused across them.
     prepare: false,
+    // One socket per query, closing itself shortly after the query resolves.
+    max: 1,
+    idle_timeout: 5,
+    max_lifetime: 30,
   });
 
-  cached = drizzle(client, { schema });
-  return cached;
-}
-
-function getDb(): Database {
-  return cached ?? createDb();
+  return drizzle(client, { schema });
 }
 
 export const db = new Proxy({} as Database, {
   get(_target, property) {
-    const instance = getDb() as unknown as Record<string | symbol, unknown>;
+    const instance = createDb() as unknown as Record<string | symbol, unknown>;
     const value = instance[property];
     return typeof value === "function" ? value.bind(instance) : value;
   },
