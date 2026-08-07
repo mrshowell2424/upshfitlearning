@@ -371,7 +371,7 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
           </div>
 
           {/* The supporting decisions around the lesson */}
-          <hr className="border-0 border-t border-hairline mt-8 mb-6" />
+          <hr className="border-0 border-t-2 mt-10 mb-7" style={{ borderColor: "#D9D6D2" }} />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Card>
@@ -408,7 +408,7 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
             </Card>
           </div>
 
-          <hr className="border-0 border-t border-hairline mt-8 mb-6" />
+          <hr className="border-0 border-t-2 mt-10 mb-7" style={{ borderColor: "#D9D6D2" }} />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Card>
