@@ -16,6 +16,14 @@ interface Course {
 }
 
 /**
+ * Rendered per request rather than prerendered. The course list comes from the
+ * database, which is not reachable at build time, so a static page would bake
+ * in an empty grid and never recover — the query throws, the catch below
+ * swallows it, and the result is cached as though the table were empty.
+ */
+export const dynamic = 'force-dynamic'
+
+/**
  * The page itself is public: graduate credit is open to anyone, so the courses
  * need to be visible without an account. Only the Google Classroom link is
  * member-only, gated inside AnnouncedCourses.
