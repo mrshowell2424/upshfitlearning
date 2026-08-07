@@ -8,6 +8,7 @@ import Header from '@/components/shared/Header'
 import Footer from '@/components/shared/Footer'
 import { isStandardCode, standardHref } from '@/lib/utils/standards'
 import { RESOURCE_TOTAL, STANDARD_TOTAL } from '@/lib/constants/totals'
+import { PRINCIPLES } from '@/lib/constants/learning-science'
 
 export default function Home() {
   const [searchInput, setSearchInput] = useState('')
@@ -123,7 +124,7 @@ export default function Home() {
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Grade Span</div>
               </Link>
               <Link href="/learning-science" className="bg-white p-4 md:p-6 text-center hover:bg-gray-050 transition-colors">
-                <div className="text-3xl md:text-4xl font-bold text-pink mb-1">12+</div>
+                <div className="text-3xl md:text-4xl font-bold text-pink mb-1">{PRINCIPLES.length}</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Learning Science Principles</div>
               </Link>
             </div>
