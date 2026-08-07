@@ -30,6 +30,15 @@ const PREVIEW_STORAGE_KEY = 'upshift:preview-tier'
 
 interface AuthContextType {
   user: User | null
+  /**
+   * The live session, so anything needing an access token takes it from here.
+   *
+   * Components used to call supabase.auth.getSession() themselves, which meant
+   * two independent reads of the same session that could disagree — the header
+   * showed a signed-in teacher while the match page reported an expired
+   * session and refused to load the All-Access content.
+   */
+  session: Session | null
   subscription: Subscription | null
   isPremium: boolean
   isLoading: boolean
@@ -45,6 +54,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
+  const [session, setSession] = useState<Session | null>(null)
   const [subscription, setSubscription] = useState<Subscription | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [previewTier, setPreviewTierState] = useState<PreviewTier>(null)
@@ -67,6 +77,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       try {
         // Get current user
         if (supabase?.auth?.getUser) {
+          // getSession reads storage; getUser verifies with the auth server.
+          // Both are taken here so the token and the user always agree.
+          if (supabase.auth.getSession) {
+            const {
+              data: { session: current },
+            } = await supabase.auth.getSession()
+            if (current) setSession(current)
+          }
+
           const {
             data: { user },
           } = await supabase.auth.getUser()
@@ -94,6 +113,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const {
           data: { subscription: sub },
         } = supabase.auth.onAuthStateChange(async (event: string, session: Session | null) => {
+          setSession(session)
           setUser(session?.user || null)
 
           if (session?.user) {
@@ -118,6 +138,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // supabase is a stub when the env vars are absent
     if (supabase?.auth?.signOut) await supabase.auth.signOut()
     setUser(null)
+    setSession(null)
     setSubscription(null)
   }
 
@@ -129,6 +150,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     <AuthContext.Provider
       value={{
         user,
+        session,
         subscription,
         isPremium: effectiveIsPremium,
         isLoading,

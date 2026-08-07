@@ -4,7 +4,6 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/providers/AuthProvider";
-import { supabase } from "@/lib/auth";
 import { useMatchTab } from "./tab-context";
 import { kidDefinition, DOK_DESCRIPTIONS } from "@/lib/utils/unpack";
 import { UpgradeModal } from "@/components/shared/UpgradeModal";
@@ -64,7 +63,7 @@ export function MatchDetailClient({
   userTier = "free",
 }) {
   const { activeTab, setActiveTab } = useMatchTab();
-  const { isPremium, isLoading } = useAuth();
+  const { isPremium, isLoading, session } = useAuth();
 
   // Trust the live session over the server-rendered default
   const hasAllAccess = isPremium || userTier === "pro" || userTier === "school";
@@ -106,8 +105,13 @@ export function MatchDetailClient({
 
   useEffect(() => {
     if (isLoading || !hasAllAccess) return;
-    if (requestedFor.current === standard_code) return;
-    requestedFor.current = standard_code;
+    // Wait for the token rather than failing without one — it arrives a moment
+    // after entitlement does.
+    if (!session?.access_token) return;
+
+    const key = `${standard_code}:${session.access_token.slice(-12)}`;
+    if (requestedFor.current === key) return;
+    requestedFor.current = key;
 
     setPremiumState("loading");
     setPremiumError(null);
@@ -119,9 +123,15 @@ export function MatchDetailClient({
       const timer = setTimeout(() => abort.abort(), 15000);
 
       try {
-        const { data } = await supabase.auth.getSession();
-        const token = data?.session?.access_token;
-        if (!token) throw new Error("Your session has expired — please sign in again.");
+        // Taken from AuthProvider rather than read again here. A second,
+        // independent read of the session is what caused this to report an
+        // expired session while the header showed a signed-in teacher.
+        const token = session?.access_token;
+        if (!token) {
+          throw new Error(
+            "We could not read your sign-in. Try signing out and back in."
+          );
+        }
 
         const response = await fetch(
           `/api/match/${encodeURIComponent(standard_code)}/premium`,
@@ -151,7 +161,7 @@ export function MatchDetailClient({
     };
 
     load();
-  }, [isLoading, hasAllAccess, standard_code, attempt]);
+  }, [isLoading, hasAllAccess, standard_code, attempt, session?.access_token]);
 
   const unpack = premium?.unpack ?? null;
   const resources = premium?.resources ?? null;
