@@ -19,6 +19,14 @@ import Footer from '@/components/shared/Footer'
  */
 const CHECKOUT_URL = process.env.NEXT_PUBLIC_CHECKOUT_URL
 
+/**
+ * The annual price is a second Payment Link, because a link is tied to exactly
+ * one price in Stripe. Set it and the Pro card offers both; leave it unset and
+ * the card shows monthly alone, so half-finished setup never puts a dead button
+ * in front of a teacher.
+ */
+const CHECKOUT_URL_ANNUAL = process.env.NEXT_PUBLIC_CHECKOUT_URL_ANNUAL
+
 export default function PricingPage() {
   const plans = [
     {
@@ -47,8 +55,11 @@ export default function PricingPage() {
         'Advanced search & filtering',
         'Priority support',
       ],
-      cta: 'Upgrade to Pro',
+      cta: CHECKOUT_URL_ANNUAL ? 'Subscribe monthly' : 'Upgrade to Pro',
       ctaHref: CHECKOUT_URL || '/auth/signup',
+      // Only shown once an annual link exists
+      secondaryCta: CHECKOUT_URL_ANNUAL ? 'Or pay yearly — save $60' : null,
+      secondaryCtaHref: CHECKOUT_URL_ANNUAL,
       highlighted: true,
     },
     {
@@ -128,7 +139,7 @@ export default function PricingPage() {
 
                   <Link
                     href={plan.ctaHref}
-                    className={`block w-full text-center px-6 py-3 rounded-xl font-semibold mb-8 transition-colors ${
+                    className={`block w-full text-center px-6 py-3 rounded-xl font-semibold transition-colors ${
                       plan.highlighted
                         ? 'bg-coral hover:bg-coral-press text-white'
                         : 'bg-white border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white'
@@ -136,6 +147,17 @@ export default function PricingPage() {
                   >
                     {plan.cta}
                   </Link>
+
+                  {plan.secondaryCta && plan.secondaryCtaHref && (
+                    <Link
+                      href={plan.secondaryCtaHref}
+                      className="block w-full text-center px-6 py-3 mt-2 rounded-xl font-semibold text-sm text-charcoal border border-border-strong hover:bg-gray-050 transition-colors"
+                    >
+                      {plan.secondaryCta}
+                    </Link>
+                  )}
+
+                  <div className="mb-8" />
 
                   <ul className="space-y-4">
                     {plan.features.map((feature) => (
