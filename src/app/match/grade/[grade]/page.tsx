@@ -4,7 +4,7 @@ import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { db } from "@/lib/db";
 import { standards } from "@/lib/db/schema";
-import { standardHref, standardSubject, standardTheme } from "@/lib/utils/standards";
+import { gradeLabel, standardGrade, standardHref, standardSubject, standardTheme } from "@/lib/utils/standards";
 
 /**
  * Everything written up for one grade.
@@ -16,16 +16,18 @@ import { standardHref, standardSubject, standardTheme } from "@/lib/utils/standa
  */
 export const dynamic = "force-dynamic";
 
+/** K first, then grades in order, then the high school bands, then HS. */
+function gradeRank(grade: string): number {
+  if (grade === "K") return -1;
+  if (grade === "HS") return 99;
+  const first = Number(grade.split("-")[0]);
+  return Number.isFinite(first) ? first : 98;
+}
+
 interface PageProps {
   params: Promise<{ grade: string }>;
 }
 
-/** Same rule the standard page uses: the first segment that looks like a grade. */
-const gradeOf = (code: string) =>
-  code.split(".").find((part) => /^(K|\d{1,2})$/i.test(part)) ?? null;
-
-const gradeLabel = (grade: string) =>
-  grade.toUpperCase() === "K" ? "Kindergarten" : `Grade ${grade}`;
 
 export async function generateMetadata({ params }: PageProps) {
   const { grade } = await params;
@@ -47,7 +49,7 @@ export default async function GradeStandardsPage({ params }: PageProps) {
   }
 
   const forGrade = rows
-    .filter((row) => (gradeOf(row.code) ?? "").toUpperCase() === decoded)
+    .filter((row) => (standardGrade(row.code) ?? "").toUpperCase() === decoded)
     .sort((a, b) => a.code.localeCompare(b.code, undefined, { numeric: true }));
 
   // Grouped by subject so a teacher scans one column rather than a mixed list
@@ -59,9 +61,9 @@ export default async function GradeStandardsPage({ params }: PageProps) {
   }
 
   // Which other grades have anything, so this page can hand off to them
-  const otherGrades = [...new Set(rows.map((r) => gradeOf(r.code)).filter(Boolean))]
+  const otherGrades = [...new Set(rows.map((r) => standardGrade(r.code)).filter(Boolean))]
     .map((g) => g.toUpperCase())
-    .sort((a, b) => (a === "K" ? -1 : b === "K" ? 1 : Number(a) - Number(b)));
+    .sort((a, b) => gradeRank(a) - gradeRank(b));
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -108,7 +110,7 @@ export default async function GradeStandardsPage({ params }: PageProps) {
                         : "bg-white text-charcoal border-border-strong hover:bg-gray-050"
                     }`}
                   >
-                    {g === "K" ? "K" : g}
+                    {g === "HS" ? "HS" : g}
                   </Link>
                 );
               })}

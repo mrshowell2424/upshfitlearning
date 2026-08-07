@@ -11,7 +11,7 @@ import HeaderSearch from "@/components/shared/HeaderSearch";
 import { MatchTabProvider } from "./tab-context";
 import { LessonBanner } from "./banner";
 import { dokFromVerbs } from "@/lib/utils/unpack";
-import { gradeSubjectLabel, scienceLabel, standardHref } from "@/lib/utils/standards";
+import { gradeSubjectLabel, gradeLabel, scienceLabel, standardGrade, standardHref } from "@/lib/utils/standards";
 
 interface PageProps {
   params: Promise<{ code: string }>;
@@ -49,12 +49,9 @@ export default async function MatchDetailPage({ params }: PageProps) {
     dataError = true;
   }
 
-  // Grade lives in a different position per subject — RL.2.1, 2.NBT.B.5,
-  // K.PS2.A — so take the first segment that is a grade rather than index 1.
-  const gradeOf = (code: string) =>
-    code.split(".").find((part) => /^(K|\d{1,2})$/i.test(part)) ?? null;
-
-  const grade = gradeOf(decodedCode);
+  // Shared with the grade listing, so a high school band cannot be read as a
+  // single grade in one place and a band in the other.
+  const grade = standardGrade(decodedCode);
 
   // Fetch blueprint from DB
   let blueprintRow;
@@ -231,7 +228,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
                     href={`/match/grade/${grade.toUpperCase()}`}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-border-strong text-[13px] font-semibold text-charcoal hover:bg-gray-050 transition-colors"
                   >
-                    {grade.toUpperCase() === "K" ? "Kindergarten" : `Grade ${grade}`}
+                    {gradeLabel(grade)}
                     <span aria-hidden="true">→</span>
                   </Link>
                 )}

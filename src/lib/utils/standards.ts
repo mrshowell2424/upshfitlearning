@@ -49,15 +49,60 @@ export function scienceLabel(tag: string): string {
 }
 
 /** "4th grade ELA" — the line that tells a teacher whose lesson this is. */
+/**
+ * The grade a code belongs to: "K", "1".."8", a band like "9-10", or "HS".
+ *
+ * Order matters. Scanning for the first grade-shaped segment looks tempting but
+ * misfiles high school: RL.9-10.1 would match the trailing "1" and land in
+ * first grade, and N-RN.2 would land in second. So the leading segment is
+ * checked first, then the high school conceptual categories, and only then the
+ * segment after the strand.
+ *
+ *   K.CC.A.1     → K       leading segment is the grade
+ *   2.NBT.A.1    → 2
+ *   RL.2.1       → 2       grade follows the strand
+ *   RL.9-10.1    → 9-10    a band, not two grades
+ *   N-RN.2       → HS      high school categories carry no grade at all
+ */
+const HS_CATEGORY = /^[NAFGS]-[A-Z]{2,4}$/
+const GRADE_SEGMENT = /^(K|1[0-2]|[1-9])$/i
+const GRADE_BAND = /^\d{1,2}-\d{1,2}$/
+
+export function standardGrade(code: string): string | null {
+  const parts = code.trim().toUpperCase().split('.')
+
+  if (GRADE_SEGMENT.test(parts[0])) return parts[0]
+  if (HS_CATEGORY.test(parts[0])) return 'HS'
+  if (parts[1] && GRADE_BAND.test(parts[1])) return parts[1]
+  if (parts[1] && GRADE_SEGMENT.test(parts[1])) return parts[1]
+
+  return null
+}
+
+/** How a grade reads to a teacher. */
+export function gradeLabel(grade: string): string {
+  const g = grade.toUpperCase()
+  if (g === 'K') return 'Kindergarten'
+  if (g === 'HS') return 'High school'
+  if (GRADE_BAND.test(g)) return `Grades ${g.replace('-', '\u2013')}`
+  return `Grade ${g}`
+}
+
 export function gradeSubjectLabel(code: string, grade: string | null): string {
   const subject = standardSubject(code)
   const subjectName = subject === 'Other' ? '' : subject
 
   if (!grade) return subjectName
+
+  const upper = grade.toUpperCase()
   const ordinal =
-    grade.toUpperCase() === 'K'
+    upper === 'K'
       ? 'Kindergarten'
-      : `${grade}${['th', 'st', 'nd', 'rd'][Number(grade) % 10 > 3 || Math.floor(Number(grade) % 100 / 10) === 1 ? 0 : Number(grade) % 10]} grade`
+      : upper === 'HS'
+        ? 'High school'
+        : GRADE_BAND.test(upper)
+          ? `Grades ${upper.replace('-', '\u2013')}`
+          : `${grade}${['th', 'st', 'nd', 'rd'][Number(grade) % 10 > 3 || Math.floor(Number(grade) % 100 / 10) === 1 ? 0 : Number(grade) % 10]} grade`
 
   return [ordinal, subjectName].filter(Boolean).join(' ')
 }
@@ -80,6 +125,8 @@ export function standardSubject(code: string): StandardSubject {
   const parts = normalized.split('.')
 
   if (/^(RL|RI|RF|L|W|SL)$/.test(parts[0])) return 'ELA'
+  // High school maths: N-RN, A-SSE, F-IF, G-SRT, S-ID and friends
+  if (/^[NAFGS]-[A-Z]{2,4}$/.test(parts[0])) return 'Math'
   if (parts[1] && /^(LS|PS|ESS|ETS)\d/.test(parts[1])) return 'Science'
   if (parts[1] && /^[A-Z]+$/.test(parts[1])) return 'Math'
   if (/^\d+\.\d+/.test(normalized)) return 'Social Studies'
