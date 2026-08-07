@@ -69,6 +69,36 @@ export function isPremium(tier: string): boolean {
   return tier === "pro" || tier === "school";
 }
 
+/**
+ * Whether a comp is currently running.
+ *
+ * Comped access is deliberately separate from `tier`: Stripe owns tier and
+ * status, so a webhook writing "free" on cancellation would otherwise wipe out
+ * a comp granted by hand. Keeping them in different columns lets someone hold
+ * both — a lapsed subscriber on a goodwill extension, say — without either
+ * grant clobbering the other.
+ */
+export function hasActiveComp(subscription?: {
+  comped_until?: string | Date | null;
+} | null): boolean {
+  if (!subscription?.comped_until) return false;
+  const until = new Date(subscription.comped_until);
+  return !Number.isNaN(until.getTime()) && until.getTime() > Date.now();
+}
+
+/** All-Access from either route: a paid subscription, or a comp still running. */
+export function hasAllAccess(subscription?: {
+  tier?: string | null;
+  status?: string | null;
+  comped_until?: string | Date | null;
+} | null): boolean {
+  if (!subscription) return false;
+  if (hasActiveComp(subscription)) return true;
+  const paidTier = isPremium(subscription.tier ?? "");
+  const usable = subscription.status !== "canceled" && subscription.status !== "expired";
+  return paidTier && usable;
+}
+
 export function canGenerateLessons(tier: string): boolean {
   return isPremium(tier);
 }

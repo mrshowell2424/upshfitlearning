@@ -149,6 +149,15 @@ export const subscriptions = pgTable("subscriptions", {
   status: varchar("status", { length: 20 }).notNull().default("active"), // active, canceled, past_due
   current_period_start: timestamp("current_period_start"),
   current_period_end: timestamp("current_period_end"),
+  /**
+   * Access granted by hand rather than bought — a comp, a pilot school, a
+   * conference giveaway. Kept separate from `tier` so the two grant paths do
+   * not overwrite each other: Stripe owns tier and status, this column is
+   * owned by us, and either one being live means All-Access.
+   */
+  comped_until: timestamp("comped_until"),
+  /** Why the comp was given, so a row is explicable months later. */
+  comp_note: text("comp_note"),
   created_at: timestamp("created_at").defaultNow(),
   updated_at: timestamp("updated_at").defaultNow(),
 });

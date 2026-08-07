@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from 'react'
 import { User, Session } from '@supabase/supabase-js'
-import { supabase, getSubscription, isPremium } from '@/lib/auth'
+import { supabase, getSubscription, hasAllAccess } from '@/lib/auth'
 
 interface Subscription {
   id: string
@@ -11,6 +11,9 @@ interface Subscription {
   status: 'active' | 'cancelled' | 'expired'
   created_at: string
   current_period_end?: string
+  /** Hand-granted access, independent of anything Stripe wrote. */
+  comped_until?: string | null
+  comp_note?: string | null
 }
 
 /** What the preview toggle is currently forcing, if anything. */
@@ -118,7 +121,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setSubscription(null)
   }
 
-  const realIsPremium = subscription ? isPremium(subscription.tier) : false
+  const realIsPremium = hasAllAccess(subscription)
   const effectiveIsPremium =
     PREVIEW_ENABLED && previewTier ? previewTier === 'pro' : realIsPremium
 
