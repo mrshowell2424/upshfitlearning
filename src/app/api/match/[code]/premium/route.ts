@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { NextRequest, NextResponse } from "next/server";
-import { db } from "@/lib/db";
+import { withDb } from "@/lib/db";
 import { standards, standard_unpacks } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { getResourcesForStandard } from "@/lib/utils/resources";
@@ -30,17 +30,23 @@ export async function GET(request: NextRequest, context: { params: Promise<{ cod
   }
 
   try {
-    const [unpackRow] = await db
-      .select()
-      .from(standard_unpacks)
-      .where(eq(standard_unpacks.standard_code, decodedCode))
-      .limit(1);
+    // Both reads share one connection — each costs a TLS handshake otherwise,
+    // and this route was spending seconds connecting rather than querying.
+    const { unpackRow, standardRow } = await withDb(async (tx) => {
+      const [unpackRow] = await tx
+        .select()
+        .from(standard_unpacks)
+        .where(eq(standard_unpacks.standard_code, decodedCode))
+        .limit(1);
 
-    const [standardRow] = await db
-      .select()
-      .from(standards)
-      .where(eq(standards.code, decodedCode))
-      .limit(1);
+      const [standardRow] = await tx
+        .select()
+        .from(standards)
+        .where(eq(standards.code, decodedCode))
+        .limit(1);
+
+      return { unpackRow, standardRow };
+    });
 
     const unpack = unpackRow
       ? {

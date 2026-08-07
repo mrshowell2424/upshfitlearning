@@ -74,23 +74,32 @@ export function MatchDetailClient({
   const locked = !isLoading && !hasAllAccess && !!current?.premium;
 
   /**
-   * The unpack and resources are no longer rendered by the server — they would
-   * be readable by anyone in the page source. They are fetched here instead,
-   * with the session's access token, and the route decides entitlement afresh.
-   * Sending a token we do not think is entitled would only ever be refused, so
-   * the request waits until the session says otherwise.
+   * The unpack and resources are not rendered by the server — they would be
+   * readable by anyone in the page source. They are fetched here instead, with
+   * the session's access token, and the route decides entitlement afresh.
+   *
+   * There is deliberately no "cancelled" flag. A previous version had one, and
+   * combined with the de-duplication guard below it produced a request that
+   * could never finish: React runs an effect twice in development, so the first
+   * run started the fetch and its cleanup cancelled it, while the second run
+   * hit the guard and started nothing. The response arrived, saw the flag, and
+   * dropped the payload. The tab loaded forever.
+   *
+   * The guard alone is enough — only one request is ever in flight per
+   * standard, and a late response setting state after unmount is harmless in
+   * React 18 and later.
    */
   const [premium, setPremium] = useState(null);
   const [premiumState, setPremiumState] = useState("idle");
+  const [premiumError, setPremiumError] = useState(null);
 
-  // Which standard we have already asked for. A ref rather than state, because
-  // premiumState must not be a dependency below: setting it would re-run the
-  // effect, and the re-run's cleanup would cancel the request still in flight.
+  /** Which standard we have already asked for, so a re-render cannot re-ask. */
   const requestedFor = useRef(null);
   const [attempt, setAttempt] = useState(0);
 
   const retryPremium = () => {
     requestedFor.current = null;
+    setPremiumError(null);
     setPremiumState("idle");
     setAttempt((n) => n + 1);
   };
@@ -100,36 +109,48 @@ export function MatchDetailClient({
     if (requestedFor.current === standard_code) return;
     requestedFor.current = standard_code;
 
-    let cancelled = false;
     setPremiumState("loading");
+    setPremiumError(null);
 
     const load = async () => {
+      // Never hang: a request with no answer is worse than a clear failure,
+      // because the page has nothing to say and no way out of saying it.
+      const abort = new AbortController();
+      const timer = setTimeout(() => abort.abort(), 15000);
+
       try {
         const { data } = await supabase.auth.getSession();
         const token = data?.session?.access_token;
-        if (!token) throw new Error("no session");
+        if (!token) throw new Error("Your session has expired — please sign in again.");
 
         const response = await fetch(
           `/api/match/${encodeURIComponent(standard_code)}/premium`,
-          { headers: { Authorization: `Bearer ${token}` } }
+          { headers: { Authorization: `Bearer ${token}` }, signal: abort.signal }
         );
-        if (!response.ok) throw new Error(`premium request failed: ${response.status}`);
 
-        const payload = await response.json();
-        if (!cancelled) {
-          setPremium(payload);
-          setPremiumState("ready");
+        if (response.status === 403) {
+          throw new Error("This account does not have All-Access.");
         }
+        if (!response.ok) {
+          throw new Error(`The server returned ${response.status}.`);
+        }
+
+        setPremium(await response.json());
+        setPremiumState("ready");
       } catch (error) {
+        const message =
+          error?.name === "AbortError"
+            ? "That took too long to load."
+            : error?.message || "Something went wrong.";
         console.error("Could not load All-Access content:", error);
-        if (!cancelled) setPremiumState("error");
+        setPremiumError(message);
+        setPremiumState("error");
+      } finally {
+        clearTimeout(timer);
       }
     };
 
     load();
-    return () => {
-      cancelled = true;
-    };
   }, [isLoading, hasAllAccess, standard_code, attempt]);
 
   const unpack = premium?.unpack ?? null;
@@ -172,7 +193,7 @@ export function MatchDetailClient({
           />
         )}
         {awaitingPremium ? (
-          <PremiumLoading state={premiumState} onRetry={retryPremium} />
+          <PremiumLoading state={premiumState} detail={premiumError} onRetry={retryPremium} />
         ) : (
           <>
             {activeTab === "unpack" && (
@@ -226,15 +247,16 @@ function Card({ children, className = "", accent }) {
 }
 
 /** Shown to an entitled teacher while the All-Access payload is on its way. */
-function PremiumLoading({ state, onRetry }) {
+function PremiumLoading({ state, detail, onRetry }) {
   if (state === "error") {
     return (
       <div className="rounded-2xl border border-hairline bg-white p-10 text-center">
         <p className="text-[17px] font-semibold text-charcoal mb-2">
           We could not load this section
         </p>
+        {/* The specific reason, so a report says something useful */}
         <p className="text-[15px] text-text-muted mb-6">
-          Your access is fine — the content just did not arrive.
+          {detail || "The content did not arrive."}
         </p>
         <button
           type="button"

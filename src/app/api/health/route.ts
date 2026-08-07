@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { NextResponse } from "next/server";
-import { db } from "@/lib/db";
+import { withDb } from "@/lib/db";
 import { standards, standard_unpacks, lesson_blueprints } from "@/lib/db/schema";
 import { sql } from "drizzle-orm";
 import { getResources } from "@/lib/utils/resources";
@@ -58,15 +58,14 @@ async function checkDatabase(): Promise<Omit<Check, "name" | "ms">> {
     };
   }
 
-  const [standardCount] = await db
-    .select({ n: sql<number>`count(*)::int` })
-    .from(standards);
-  const [unpackCount] = await db
-    .select({ n: sql<number>`count(*)::int` })
-    .from(standard_unpacks);
-  const [blueprintCount] = await db
-    .select({ n: sql<number>`count(*)::int` })
-    .from(lesson_blueprints);
+  const { standardCount, unpackCount, blueprintCount } = await withDb(async (tx) => {
+    const [standardCount] = await tx.select({ n: sql<number>`count(*)::int` }).from(standards);
+    const [unpackCount] = await tx.select({ n: sql<number>`count(*)::int` }).from(standard_unpacks);
+    const [blueprintCount] = await tx
+      .select({ n: sql<number>`count(*)::int` })
+      .from(lesson_blueprints);
+    return { standardCount, unpackCount, blueprintCount };
+  });
 
   const metrics = {
     standards: standardCount?.n ?? 0,

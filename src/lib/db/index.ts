@@ -52,3 +52,35 @@ export const db = new Proxy({} as Database, {
     return typeof value === "function" ? value.bind(instance) : value;
   },
 });
+
+/**
+ * Run several queries over one connection.
+ *
+ * `db` opens a connection per query, which is correct on Workers but costs a
+ * TCP and TLS handshake each time — around two seconds. A route doing three
+ * reads therefore spent six seconds connecting and almost none querying, which
+ * reads to a teacher as a page that will not load.
+ *
+ * This keeps the per-request rule that Workers require while paying the setup
+ * cost once. Use it anywhere a handler makes more than one read:
+ *
+ *   const { rows } = await withDb(async (tx) => ({ rows: await tx.select()... }))
+ *
+ * The connection is closed inside the request that opened it, so nothing is
+ * left for a later request to trip over.
+ */
+export async function withDb<T>(fn: (database: Database) => Promise<T>): Promise<T> {
+  const connectionString = process.env.DATABASE_URL;
+
+  if (!connectionString) {
+    throw new Error("DATABASE_URL environment variable is required");
+  }
+
+  const client = postgres(connectionString, { prepare: false, max: 1, idle_timeout: 5 });
+
+  try {
+    return await fn(drizzle(client, { schema }));
+  } finally {
+    await client.end({ timeout: 5 }).catch(() => {});
+  }
+}
