@@ -32,10 +32,10 @@ export function LessonBanner({ blueprint, standard, unpack }: { blueprint?: any;
 
   return (
     <div
-      className="rounded-2xl overflow-hidden mb-6 px-6 md:px-8 py-6 md:py-7 flex flex-wrap items-start justify-between gap-4"
+      className="rounded-2xl overflow-hidden mb-6 px-6 md:px-8 py-6 md:py-7 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4"
       style={{ backgroundColor: 'var(--color-navy)' }}
     >
-      <div>
+      <div className="min-w-0">
         <h1 className="text-[24px] md:text-[30px] font-bold uppercase text-white leading-tight">
           {view.heading}
         </h1>
