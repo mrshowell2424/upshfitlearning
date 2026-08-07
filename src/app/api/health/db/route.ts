@@ -32,6 +32,12 @@ export async function GET() {
     databaseUrlVisible: Boolean(url),
     target: describeTarget(url),
     connected: false,
+    // Checkout links are public URLs, so reporting them costs nothing and
+    // saves guessing whether a dashboard change actually reached the Worker.
+    checkout: {
+      monthly: process.env.NEXT_PUBLIC_CHECKOUT_URL || null,
+      annual: process.env.NEXT_PUBLIC_CHECKOUT_URL_ANNUAL || null,
+    },
   };
 
   if (!url) {
