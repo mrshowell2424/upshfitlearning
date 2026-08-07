@@ -30,14 +30,18 @@ function CompleteSignIn() {
         return
       }
 
-      // supabase-js also auto-detects the session in the URL; getSession() picks
-      // that up when the exchange has already happened.
+      // supabase-js has detectSessionInUrl on by default, so it spots the ?code=
+      // and runs the PKCE exchange itself while this component is mounting. That
+      // consumes the code verifier and clears it from storage, so the explicit
+      // call below then fails with "PKCE code verifier not found" — even though
+      // the sign-in has already succeeded. Whichever call wins the race, the
+      // session is the only thing worth trusting, so record the error and keep
+      // going rather than reporting failure on the strength of the loser.
+      let exchangeMessage: string | null = null
+
       if (code) {
         const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code)
-        if (exchangeError) {
-          setError(exchangeError.message)
-          return
-        }
+        if (exchangeError) exchangeMessage = exchangeError.message
       }
 
       const {
@@ -45,7 +49,9 @@ function CompleteSignIn() {
       } = await supabase.auth.getSession()
 
       if (!session) {
-        setError('We could not complete your sign-in. Please try again.')
+        // No session, so the exchange failure was real — show its message, which
+        // says more than the generic one.
+        setError(exchangeMessage ?? 'We could not complete your sign-in. Please try again.')
         return
       }
 
