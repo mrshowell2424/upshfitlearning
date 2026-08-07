@@ -689,12 +689,6 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
         >
           Pull resources to remix
         </button>
-        <button
-          onClick={() => onOpenTab("generate")}
-          className="inline-flex items-center min-h-[52px] px-6 rounded-xl font-semibold text-[15px] border border-border-strong text-charcoal hover:bg-gray-050 transition-colors"
-        >
-          Make a student version with AI
-        </button>
       </div>
     </div>
   );

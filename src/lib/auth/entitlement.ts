@@ -3,6 +3,7 @@ import { db } from "@/lib/db";
 import { subscriptions } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { hasAllAccess } from "@/lib/auth";
+import { claimPendingGrants } from "@/lib/access";
 
 /**
  * Server-side entitlement, decided from a bearer token.
@@ -42,6 +43,7 @@ export async function entitlementFromToken(token: string | null): Promise<Entitl
   if (!token) return DENIED;
 
   let userId: string;
+  let email: string | null = null;
 
   try {
     // Verifies the token with Supabase rather than trusting its contents.
@@ -49,6 +51,7 @@ export async function entitlementFromToken(token: string | null): Promise<Entitl
     const { data, error } = await client.auth.getUser(token);
     if (error || !data?.user) return DENIED;
     userId = data.user.id;
+    email = data.user.email ?? null;
   } catch {
     return DENIED;
   }
@@ -60,7 +63,13 @@ export async function entitlementFromToken(token: string | null): Promise<Entitl
       .where(eq(subscriptions.user_id, userId))
       .limit(1);
 
-    return { userId, allAccess: hasAllAccess(rows[0] ?? null) };
+    if (hasAllAccess(rows[0] ?? null)) return { userId, allAccess: true };
+
+    // No access on file — but they may have paid before this account existed,
+    // in which case the payment is waiting on their email. Claiming here means
+    // it lands the moment they arrive rather than when somebody notices.
+    const claimed = await claimPendingGrants(userId, email);
+    return { userId, allAccess: Boolean(claimed && claimed.getTime() > Date.now()) };
   } catch (error) {
     // A database failure must not hand out access it cannot verify.
     console.error("Entitlement lookup failed:", error);

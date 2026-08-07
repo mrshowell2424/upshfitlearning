@@ -161,3 +161,19 @@ export const subscriptions = pgTable("subscriptions", {
   created_at: timestamp("created_at").defaultNow(),
   updated_at: timestamp("updated_at").defaultNow(),
 });
+
+/**
+ * Access paid for before an account existed — claimed on first sign-in.
+ * Written by the Stripe webhook, read by server code only.
+ */
+export const pending_grants = pgTable("pending_grants", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  email: text("email").notNull(),
+  access_until: timestamp("access_until").notNull(),
+  note: text("note"),
+  stripe_customer_id: text("stripe_customer_id"),
+  stripe_subscription_id: text("stripe_subscription_id"),
+  claimed_at: timestamp("claimed_at"),
+  claimed_by: text("claimed_by"),
+  created_at: timestamp("created_at").defaultNow(),
+});

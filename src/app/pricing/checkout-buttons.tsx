@@ -66,8 +66,20 @@ export function CheckoutButtons({
     )
   }
 
-  const withEmail = (url: string) =>
-    user?.email ? `${url}?prefilled_email=${encodeURIComponent(user.email)}` : url
+  /**
+   * Carries the account into Stripe: the email so the payment is made with the
+   * address they signed in under, and client_reference_id so the webhook can
+   * grant access without matching on email at all. Without the id a payment
+   * arrives with nothing but an address, and has to wait for that person to
+   * sign in before it can be honoured.
+   */
+  const withAccount = (url: string) => {
+    const params = new URLSearchParams()
+    if (user?.email) params.set('prefilled_email', user.email)
+    if (user?.id) params.set('client_reference_id', user.id)
+    const query = params.toString()
+    return query ? `${url}?${query}` : url
+  }
 
   // Stripe test links contain "/test_" and take no money. Saying so on the page
   // means a test link can never quietly stand in for a live one — the failure
@@ -77,7 +89,7 @@ export function CheckoutButtons({
   return (
     <div className="mb-8">
       <a
-        href={withEmail(monthlyUrl)}
+        href={withAccount(monthlyUrl)}
         className="block w-full text-center px-6 py-3 rounded-xl font-semibold bg-coral hover:bg-coral-press text-white transition-colors"
       >
         {annualUrl ? 'Subscribe monthly' : 'Get All-Access'}
@@ -85,7 +97,7 @@ export function CheckoutButtons({
 
       {annualUrl && (
         <a
-          href={withEmail(annualUrl)}
+          href={withAccount(annualUrl)}
           className="block w-full text-center px-6 py-3 mt-2 rounded-xl font-semibold text-sm text-charcoal border border-border-strong hover:bg-gray-050 transition-colors"
         >
           Or pay yearly — save $60
