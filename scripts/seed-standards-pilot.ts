@@ -13,9 +13,7 @@
  *
  *   bun run scripts/seed-standards-pilot.ts
  */
-import { db } from "@/lib/db";
-import { standards, standard_unpacks, lesson_blueprints } from "@/lib/db/schema";
-import { inArray } from "drizzle-orm";
+import { seedStandardsBatch } from "./lib/seed-standards-batch";
 
 const standardsData = [
   // ─── ELA ────────────────────────────────────────────────────────────────
@@ -1348,73 +1346,9 @@ const blueprintsData = [
   },
 ];
 
-const pilotCodes = standardsData.map((s) => s.code);
-
-async function seedStandards() {
-  console.log("📚 Standards");
-  for (const standard of standardsData) {
-    try {
-      await db
-        .insert(standards)
-        .values(standard)
-        .onConflictDoUpdate({
-          target: standards.code,
-          set: {
-            name: standard.name,
-            plain_reading: standard.plain_reading,
-            learning_target: standard.learning_target,
-            skills: standard.skills,
-            science_tags: standard.science_tags,
-            match_keys: standard.match_keys,
-          },
-        });
-      console.log(`  ✓ ${standard.code}`);
-    } catch (e) {
-      console.log(`  ✗ ${standard.code}: ${(e as any).message?.substring(0, 120)}`);
-    }
-  }
-}
-
-async function seedUnpacks() {
-  console.log("\n📖 Unpacks");
-  // No unique constraint on standard_code, so clear this batch before reinserting
-  // to keep the script idempotent rather than piling up duplicate rows.
-  await db.delete(standard_unpacks).where(inArray(standard_unpacks.standard_code, pilotCodes));
-  for (const unpack of unpacksData) {
-    try {
-      await db.insert(standard_unpacks).values(unpack);
-      console.log(`  ✓ ${unpack.standard_code}`);
-    } catch (e) {
-      console.log(`  ✗ ${unpack.standard_code}: ${(e as any).message?.substring(0, 120)}`);
-    }
-  }
-}
-
-async function seedBlueprints() {
-  console.log("\n🎨 Blueprints");
-  await db.delete(lesson_blueprints).where(inArray(lesson_blueprints.standard_code, pilotCodes));
-  for (const blueprint of blueprintsData) {
-    try {
-      await db.insert(lesson_blueprints).values(blueprint);
-      console.log(`  ✓ ${blueprint.standard_code}`);
-    } catch (e) {
-      console.log(`  ✗ ${blueprint.standard_code}: ${(e as any).message?.substring(0, 120)}`);
-    }
-  }
-}
-
-async function main() {
-  console.log(`🚀 Seeding ${standardsData.length} pilot standards\n`);
-  try {
-    await seedStandards();
-    await seedUnpacks();
-    await seedBlueprints();
-    console.log("\n✨ Pilot seed complete");
-    process.exit(0);
-  } catch (error) {
-    console.error("❌ Seed failed:", error);
-    process.exit(1);
-  }
-}
-
-main();
+await seedStandardsBatch({
+  label: "Pilot batch",
+  standardsData,
+  unpacksData,
+  blueprintsData,
+});
