@@ -69,6 +69,11 @@ export function CheckoutButtons({
   const withEmail = (url: string) =>
     user?.email ? `${url}?prefilled_email=${encodeURIComponent(user.email)}` : url
 
+  // Stripe test links contain "/test_" and take no money. Saying so on the page
+  // means a test link can never quietly stand in for a live one — the failure
+  // would otherwise be invisible until someone noticed no payments arriving.
+  const isTestMode = monthlyUrl.includes('/test_')
+
   return (
     <div className="mb-8">
       <a
@@ -85,6 +90,12 @@ export function CheckoutButtons({
         >
           Or pay yearly — save $60
         </a>
+      )}
+
+      {isTestMode && (
+        <p className="text-[12px] font-semibold text-center mt-3" style={{ color: 'var(--color-amber)' }}>
+          Test mode — no payment will be taken
+        </p>
       )}
     </div>
   )

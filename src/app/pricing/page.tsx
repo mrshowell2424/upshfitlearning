@@ -17,9 +17,29 @@ import { CheckoutButtons } from './checkout-buttons'
  */
 export const dynamic = 'force-dynamic'
 
+/**
+ * Fallback checkout links.
+ *
+ * These live here because NEXT_PUBLIC_CHECKOUT_URL has repeatedly failed to
+ * reach the deployed Worker, and a missing link fails silently — the button
+ * still renders, it just sends people to sign-up instead of to Stripe. The same
+ * thing happened with the Supabase keys, and the same answer applies: a
+ * publicly visible value belongs somewhere reliable.
+ *
+ * Payment Links are public URLs by design — anyone clicking Upgrade sees them —
+ * so there is nothing here that was not already going to the browser.
+ *
+ * Setting the environment variables still wins, and is the better home once
+ * they work. A link containing "/test_" is labelled as test mode wherever it is
+ * shown, so a test URL can never quietly stand in for a live one.
+ */
+const CHECKOUT_URL_FALLBACK = 'https://buy.stripe.com/test_fZucMZ2t5bAG5Oi3x4f3a01'
+const CHECKOUT_URL_ANNUAL_FALLBACK = undefined
+
 export default function PricingPage() {
-  const CHECKOUT_URL = process.env.NEXT_PUBLIC_CHECKOUT_URL
-  const CHECKOUT_URL_ANNUAL = process.env.NEXT_PUBLIC_CHECKOUT_URL_ANNUAL
+  const CHECKOUT_URL = process.env.NEXT_PUBLIC_CHECKOUT_URL || CHECKOUT_URL_FALLBACK
+  const CHECKOUT_URL_ANNUAL =
+    process.env.NEXT_PUBLIC_CHECKOUT_URL_ANNUAL || CHECKOUT_URL_ANNUAL_FALLBACK
 
   const plans = [
     {
