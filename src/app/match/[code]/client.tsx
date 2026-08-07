@@ -1,7 +1,7 @@
 // @ts-nocheck
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/providers/AuthProvider";
 import { supabase } from "@/lib/auth";
@@ -70,8 +70,22 @@ export function MatchDetailClient({
   const [premium, setPremium] = useState(null);
   const [premiumState, setPremiumState] = useState("idle");
 
+  // Which standard we have already asked for. A ref rather than state, because
+  // premiumState must not be a dependency below: setting it would re-run the
+  // effect, and the re-run's cleanup would cancel the request still in flight.
+  const requestedFor = useRef(null);
+  const [attempt, setAttempt] = useState(0);
+
+  const retryPremium = () => {
+    requestedFor.current = null;
+    setPremiumState("idle");
+    setAttempt((n) => n + 1);
+  };
+
   useEffect(() => {
-    if (isLoading || !hasAllAccess || premiumState !== "idle") return;
+    if (isLoading || !hasAllAccess) return;
+    if (requestedFor.current === standard_code) return;
+    requestedFor.current = standard_code;
 
     let cancelled = false;
     setPremiumState("loading");
@@ -103,7 +117,7 @@ export function MatchDetailClient({
     return () => {
       cancelled = true;
     };
-  }, [isLoading, hasAllAccess, premiumState, standard_code]);
+  }, [isLoading, hasAllAccess, standard_code, attempt]);
 
   const unpack = premium?.unpack ?? null;
   const resources = premium?.resources ?? null;
@@ -145,7 +159,7 @@ export function MatchDetailClient({
           />
         )}
         {awaitingPremium ? (
-          <PremiumLoading state={premiumState} />
+          <PremiumLoading state={premiumState} onRetry={retryPremium} />
         ) : (
           <>
             {activeTab === "unpack" && (
@@ -199,19 +213,29 @@ function Card({ children, className = "", accent }) {
 }
 
 /** Shown to an entitled teacher while the All-Access payload is on its way. */
-function PremiumLoading({ state }) {
+function PremiumLoading({ state, onRetry }) {
   if (state === "error") {
     return (
-      <div className="rounded-2xl border border-hairline bg-white p-8 text-center">
-        <p className="text-[15px] text-text-muted">
-          We could not load this section. Please refresh and try again.
+      <div className="rounded-2xl border border-hairline bg-white p-10 text-center">
+        <p className="text-[17px] font-semibold text-charcoal mb-2">
+          We could not load this section
         </p>
+        <p className="text-[15px] text-text-muted mb-6">
+          Your access is fine — the content just did not arrive.
+        </p>
+        <button
+          type="button"
+          onClick={onRetry}
+          className="px-5 py-3 rounded-[10px] font-semibold text-white bg-coral hover:bg-coral-press transition-colors"
+        >
+          Try again
+        </button>
       </div>
     );
   }
 
   return (
-    <div className="rounded-2xl border border-hairline bg-white p-8 text-center">
+    <div className="rounded-2xl border border-hairline bg-white p-10 text-center">
       <p className="text-[15px] text-text-muted">Loading…</p>
     </div>
   );
