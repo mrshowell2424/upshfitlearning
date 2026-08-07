@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Header from '@/components/shared/Header'
 import Footer from '@/components/shared/Footer'
+import { CheckoutButtons } from './checkout-buttons'
 
 /**
  * Where the Pro button sends people.
@@ -55,11 +56,9 @@ export default function PricingPage() {
         'Advanced search & filtering',
         'Priority support',
       ],
-      cta: CHECKOUT_URL_ANNUAL ? 'Subscribe monthly' : 'Upgrade to Pro',
-      ctaHref: CHECKOUT_URL || '/auth/signup',
-      // Only shown once an annual link exists
-      secondaryCta: CHECKOUT_URL_ANNUAL ? 'Or pay yearly — save $60' : null,
-      secondaryCtaHref: CHECKOUT_URL_ANNUAL,
+      // Rendered by CheckoutButtons, which needs the session to prefill the
+      // payment email and to avoid selling to somebody who already has access.
+      checkout: true,
       highlighted: true,
     },
     {
@@ -137,27 +136,23 @@ export default function PricingPage() {
                     </div>
                   </div>
 
-                  <Link
-                    href={plan.ctaHref}
-                    className={`block w-full text-center px-6 py-3 rounded-xl font-semibold transition-colors ${
-                      plan.highlighted
-                        ? 'bg-coral hover:bg-coral-press text-white'
-                        : 'bg-white border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white'
-                    }`}
-                  >
-                    {plan.cta}
-                  </Link>
-
-                  {plan.secondaryCta && plan.secondaryCtaHref && (
+                  {plan.checkout ? (
+                    <CheckoutButtons
+                      monthlyUrl={CHECKOUT_URL}
+                      annualUrl={CHECKOUT_URL_ANNUAL}
+                    />
+                  ) : (
                     <Link
-                      href={plan.secondaryCtaHref}
-                      className="block w-full text-center px-6 py-3 mt-2 rounded-xl font-semibold text-sm text-charcoal border border-border-strong hover:bg-gray-050 transition-colors"
+                      href={plan.ctaHref ?? '/auth/signup'}
+                      className={`block w-full text-center px-6 py-3 rounded-xl font-semibold mb-8 transition-colors ${
+                        plan.highlighted
+                          ? 'bg-coral hover:bg-coral-press text-white'
+                          : 'bg-white border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white'
+                      }`}
                     >
-                      {plan.secondaryCta}
+                      {plan.cta}
                     </Link>
                   )}
-
-                  <div className="mb-8" />
 
                   <ul className="space-y-4">
                     {plan.features.map((feature) => (
