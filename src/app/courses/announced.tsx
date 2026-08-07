@@ -23,6 +23,14 @@ interface AnnouncedCourse {
   classroomUrl: string
   /** Whether graduate credit is offered through Malone University. */
   gradCredit: boolean
+  /**
+   * One line on what the course actually covers. Optional, and currently unset
+   * for every course — a title alone does not tell a teacher whether "Unit Zero"
+   * or "Positive Perks" is worth their evening. Adding one sentence each is the
+   * single biggest improvement available to this page, and it has to come from
+   * whoever wrote the courses rather than be invented here.
+   */
+  blurb?: string
 }
 
 const COURSES: AnnouncedCourse[] = [
@@ -127,7 +135,7 @@ function ClassroomAccess({ url }: { url: string }) {
 
   if (!isPremium) {
     return (
-      <a href="/pricing" className={`${BUTTON} bg-charcoal text-white hover:bg-charcoal/90`}>
+      <a href="/pricing" className={`${BUTTON} border border-border-strong text-charcoal hover:bg-gray-050`}>
         Get All-Access to join
       </a>
     )
@@ -148,6 +156,51 @@ function ClassroomAccess({ url }: { url: string }) {
   )
 }
 
+/**
+ * Said once, above the grid.
+ *
+ * This used to sit inside every card — two panels of heading, paragraph and
+ * button, repeated for all thirteen courses. The terms are identical for every
+ * course, so repeating them buried the one thing that differs: which course it
+ * actually is.
+ */
+function HowItWorks() {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+      <div className="rounded-2xl border border-hairline bg-gray-050 p-5">
+        <h3 className="text-[11px] font-bold uppercase tracking-[0.12em] text-charcoal mb-1.5">
+          With All-Access
+        </h3>
+        <p className="text-sm text-text-body">
+          Every course is included at no extra cost, delivered through Google
+          Classroom. Join any of them whenever you like.
+        </p>
+      </div>
+
+      <div className="rounded-2xl border border-hairline bg-gray-050 p-5">
+        <h3 className="text-[11px] font-bold uppercase tracking-[0.12em] text-charcoal mb-1.5">
+          For graduate credit
+        </h3>
+        <p className="text-sm text-text-body">
+          Courses marked{' '}
+          <span className="inline-flex items-center rounded-full bg-teal-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-teal align-middle">
+            Grad credit
+          </span>{' '}
+          carry credit through Malone University — open to anyone, no membership
+          needed. Email{' '}
+          <a
+            href="mailto:hello@upshiftlearning.org"
+            className="text-link-blue font-semibold hover:underline"
+          >
+            hello@upshiftlearning.org
+          </a>{' '}
+          to enrol.
+        </p>
+      </div>
+    </div>
+  )
+}
+
 export function AnnouncedCourses() {
   const [active, setActive] = useState<CourseCategory | 'All'>('All')
 
@@ -161,124 +214,80 @@ export function AnnouncedCourses() {
   const visible =
     active === 'All' ? COURSES : COURSES.filter(course => course.category === active)
 
+  /**
+   * Pills rather than a sidebar of checkboxes. Only one category applies at a
+   * time, so checkboxes promised a choice the page could not honour — and the
+   * sidebar spent 320px on six items that fit comfortably in a row, squeezing
+   * the cards into what was left.
+   */
+  const pill = (label: string, count: number, isActive: boolean, onClick: () => void) => (
+    <button
+      key={label}
+      type="button"
+      onClick={onClick}
+      aria-pressed={isActive}
+      className={`inline-flex items-center gap-2 min-h-[38px] px-4 rounded-full text-sm font-semibold border transition-colors ${
+        isActive
+          ? 'bg-charcoal text-white border-charcoal'
+          : 'bg-white text-charcoal border-border-strong hover:bg-gray-050'
+      }`}
+    >
+      {label}
+      <span className={isActive ? 'text-white/60' : 'text-text-faint'}>{count}</span>
+    </button>
+  )
+
   return (
-    <section className="bg-white">
-      <div className="flex flex-col lg:flex-row">
-        {/* Sidebar filters, matching the resource library */}
-        <aside className="lg:w-80 lg:flex-shrink-0 px-5 md:px-8 py-8 border-b lg:border-b-0 lg:border-r border-border bg-white">
-          <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-charcoal mb-3">
-            Category
-          </h3>
-          <div className="space-y-1">
-            <label className="flex items-center gap-2 cursor-pointer min-h-[36px] rounded-md px-1 -mx-1 hover:bg-gray-050">
-              <input
-                type="checkbox"
-                checked={active === 'All'}
-                onChange={() => setActive('All')}
-                className="w-4 h-4 cursor-pointer"
-              />
-              <span className="text-sm text-charcoal">All courses</span>
-              <span className="text-xs text-text-muted ml-auto">{COURSES.length}</span>
-            </label>
+    <section className="bg-white px-5 md:px-8 py-8">
+      <div className="max-w-7xl mx-auto">
+        <HowItWorks />
 
-            {available.map(category => (
-              <label
-                key={category}
-                className="flex items-center gap-2 cursor-pointer min-h-[36px] rounded-md px-1 -mx-1 hover:bg-gray-050"
-              >
-                <input
-                  type="checkbox"
-                  checked={active === category}
-                  onChange={() => setActive(active === category ? 'All' : category)}
-                  className="w-4 h-4 cursor-pointer"
-                />
-                <span className="text-sm text-charcoal">{category}</span>
-                <span className="text-xs text-text-muted ml-auto">{countFor(category)}</span>
-              </label>
-            ))}
-          </div>
-        </aside>
+        <div className="flex flex-wrap gap-2 mb-6">
+          {pill('All courses', COURSES.length, active === 'All', () => setActive('All'))}
+          {available.map(category =>
+            pill(category, countFor(category), active === category, () =>
+              setActive(active === category ? 'All' : category)
+            )
+          )}
+        </div>
 
-        {/* Course grid */}
-        <div className="flex-1 min-w-0 px-5 md:px-8 py-8">
-          <p className="text-sm text-text-muted mb-6">
-            {visible.length} course{visible.length !== 1 ? 's' : ''}
-            {active !== 'All' ? ` in ${active}` : ''}
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-            {visible.map(course => (
-              <div
-                key={course.title}
-                className="flex flex-col border-2 border-teal rounded-2xl p-6 bg-white"
-              >
-                {/* Fixed slot, so titles line up whether or not there's a status badge */}
-                <div className="min-h-[56px] mb-2 flex flex-wrap items-start content-start gap-2">
-                  <span className="inline-flex w-fit items-center rounded-full bg-gray-100 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-text-faint">
-                    {course.category}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+          {visible.map(course => (
+            <article
+              key={course.title}
+              className="flex flex-col rounded-2xl border border-hairline bg-white p-6 transition-colors hover:border-charcoal"
+            >
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-text-faint">
+                  {course.category}
+                </span>
+                {course.gradCredit && (
+                  <span className="inline-flex items-center rounded-full bg-teal-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-teal">
+                    Grad credit
                   </span>
-                  {course.status && (
-                    <span className="inline-flex w-fit items-center rounded-full bg-teal-50 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-teal">
-                      {course.status}
-                    </span>
-                  )}
-                </div>
-
-                <h2 className="text-[19px] font-bold text-charcoal mb-4 leading-snug min-h-[160px]">
-                  {course.title}
-                </h2>
-
-                {/* Stacked inside a column card, so the panels stay readable */}
-                <div className="grid grid-cols-1 gap-4">
-                  {/* All-Access — members only */}
-                  <div className="rounded-xl border border-hairline p-5">
-                    <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-charcoal mb-2">
-                      With All-Access
-                    </h3>
-                    <p className="text-sm text-text-body mb-4">
-                      The full course is included at no extra cost, delivered through
-                      Google Classroom.
-                    </p>
-                    <ClassroomAccess url={course.classroomUrl} />
-                  </div>
-
-                  {/* Graduate credit — open to anyone, no membership needed */}
-                  <div className="rounded-xl border border-hairline p-5 min-h-[208px]">
-                    <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-charcoal mb-2">
-                      For graduate credit
-                    </h3>
-
-                    {course.gradCredit ? (
-                      <>
-                        <p className="text-sm text-text-body mb-4">
-                          Open to everyone — no membership needed. Graduate credit is
-                          available through Malone University.
-                        </p>
-                        <a
-                          href="mailto:hello@upshiftlearning.org"
-                          className={`${BUTTON} border border-border-strong text-charcoal hover:bg-gray-050`}
-                        >
-                          Email to enroll
-                        </a>
-                      </>
-                    ) : (
-                      <p className="text-sm text-text-body">
-                        Graduate credit isn't offered for this course yet. If you
-                        think it would make a great graduate credit course, email{' '}
-                        <a
-                          href="mailto:hello@upshiftlearning.org"
-                          className="text-link-blue font-semibold hover:underline"
-                        >
-                          hello@upshiftlearning.org
-                        </a>
-                        .
-                      </p>
-                    )}
-                  </div>
-                </div>
+                )}
+                {course.status && (
+                  <span className="inline-flex items-center rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white" style={{ backgroundColor: 'var(--color-amber)' }}>
+                    {course.status}
+                  </span>
+                )}
               </div>
-            ))}
-          </div>
+
+              {/* Titles grow to their natural height; the button is pinned by mt-auto
+                  so cards still line up without padding short titles out to a fixed box. */}
+              <h2 className="text-[18px] font-bold text-charcoal leading-snug mb-2">
+                {course.title}
+              </h2>
+
+              {course.blurb && (
+                <p className="text-sm text-text-body leading-relaxed mb-4">{course.blurb}</p>
+              )}
+
+              <div className="mt-auto pt-4">
+                <ClassroomAccess url={course.classroomUrl} />
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
