@@ -28,9 +28,19 @@ const supabaseAnonKey =
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || SUPABASE_PUBLISHABLE_KEY_FALLBACK;
 
 // This will only be called at runtime when the variables are available
+/**
+ * PKCE rather than supabase-js's default implicit flow. Implicit returns the
+ * access token AND the long-lived refresh token in the URL fragment, so they
+ * land in the address bar and browser history. PKCE returns a single-use code
+ * instead and keeps the tokens in the exchange response.
+ *
+ * The callback route and /auth/complete were already written for PKCE — they
+ * call exchangeCodeForSession() on a `code` query param — so this makes the
+ * client match what the rest of the sign-in path expects.
+ */
 export const supabase =
   supabaseUrl && supabaseAnonKey
-    ? createClient(supabaseUrl, supabaseAnonKey)
+    ? createClient(supabaseUrl, supabaseAnonKey, { auth: { flowType: "pkce" } })
     : ({} as any);
 
 export async function getCurrentUser() {
