@@ -4,6 +4,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/providers/AuthProvider";
+import { useMatchTab } from "./tab-context";
+import { kidDefinition, DOK_DESCRIPTIONS } from "@/lib/utils/unpack";
 import { UpgradeModal } from "@/components/shared/UpgradeModal";
 import { scienceLabel, standardHref } from "@/lib/utils/standards";
 
@@ -48,7 +50,7 @@ export function MatchDetailClient({
   resources,
   userTier = "free",
 }) {
-  const [activeTab, setActiveTab] = useState("blueprint");
+  const { activeTab, setActiveTab } = useMatchTab();
   const { isPremium, isLoading } = useAuth();
 
   // Trust the live session over the server-rendered default
@@ -524,7 +526,9 @@ function vocabEntry(item) {
   }
 
   const [term, ...rest] = String(item).split(/\s+[—–-]\s+/);
-  return { term, definition: rest.join(" — ") || null };
+  // Most vocabulary is authored as a bare term, so fall back to the shared
+  // kid-friendly dictionary rather than showing a word with no meaning.
+  return { term, definition: rest.join(" — ") || kidDefinition(term) || null };
 }
 
 function UnpackTab({ unpack, standard, onOpenTab }) {
@@ -544,9 +548,27 @@ function UnpackTab({ unpack, standard, onOpenTab }) {
           <SectionLabel color="var(--color-teal)" className="mb-2">
             Deconstructed
           </SectionLabel>
-          <h2 className="text-[22px] md:text-[26px] font-bold text-white leading-tight">
-            {standard.code} — {standard.name}
-          </h2>
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <h2 className="text-[22px] md:text-[26px] font-bold text-white leading-tight">
+              {standard.code} — {standard.name}
+            </h2>
+
+            {/* Depth of Knowledge, read from the standard's own verbs */}
+            {unpack.dok && (
+              <div
+                className="flex-shrink-0 rounded-xl px-4 py-2 text-right"
+                style={{ backgroundColor: "rgba(255,255,255,0.10)" }}
+                title={DOK_DESCRIPTIONS[unpack.dok].blurb}
+              >
+                <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-white/60">
+                  Depth of Knowledge
+                </p>
+                <p className="text-[15px] font-bold text-white leading-tight">
+                  DOK {unpack.dok} · {DOK_DESCRIPTIONS[unpack.dok].name}
+                </p>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-hairline">

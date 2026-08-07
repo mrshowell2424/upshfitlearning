@@ -8,6 +8,9 @@ import { standards, standard_unpacks, lesson_blueprints } from "@/lib/db/schema"
 import { eq } from "drizzle-orm";
 import { getResourcesForStandard } from "@/lib/utils/resources";
 import HeaderSearch from "@/components/shared/HeaderSearch";
+import { MatchTabProvider } from "./tab-context";
+import { LessonBanner } from "./banner";
+import { dokFromVerbs } from "@/lib/utils/unpack";
 import { gradeSubjectLabel, scienceLabel, standardHref } from "@/lib/utils/standards";
 
 interface PageProps {
@@ -110,6 +113,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
         challenges: unpackRow.challenges ?? [],
         masteryStatement: unpackRow.mastery_statement,
         ladder: unpackRow.ladder ?? [],
+        dok: dokFromVerbs(unpackRow.verbs),
       }
     : null;
 
@@ -179,35 +183,8 @@ export default async function MatchDetailPage({ params }: PageProps) {
             </div>
           </div>
 
-          {/* The lesson banner leads the page — it's what the teacher came for */}
-          {blueprint?.title && (
-            <div
-              className="rounded-2xl overflow-hidden mb-6 px-6 md:px-8 py-6 md:py-7 flex flex-wrap items-start justify-between gap-4"
-              style={{ backgroundColor: "var(--color-navy)" }}
-            >
-              <div>
-                <h1 className="text-[24px] md:text-[30px] font-bold uppercase text-white leading-tight">
-                  {blueprint.title}
-                </h1>
-                <p
-                  className="text-[16px] md:text-[17px] font-semibold mt-1"
-                  style={{ color: "var(--color-teal)" }}
-                >
-                  {[standard?.gradeLabel && `${standard.gradeLabel} lesson`, "Science of Learning First"]
-                    .filter(Boolean)
-                    .join(" · ")}
-                </p>
-              </div>
-              {blueprint.badge && (
-                <span
-                  className="inline-block px-5 py-2 rounded-full text-[13px] font-bold uppercase tracking-[0.08em] text-white flex-shrink-0"
-                  style={{ backgroundColor: "var(--color-teal)" }}
-                >
-                  {blueprint.badge}
-                </span>
-              )}
-            </div>
-          )}
+          <MatchTabProvider>
+          <LessonBanner blueprint={blueprint} standard={standard} />
 
           {/* The standard itself — code, plain reading, target and the science */}
           <div className="rounded-2xl border border-hairline bg-white overflow-hidden mb-7">
@@ -286,6 +263,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
             unpack={unpack}
             resources={matchingResources}
           />
+          </MatchTabProvider>
         </div>
       </main>
 
