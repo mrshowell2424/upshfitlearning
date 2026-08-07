@@ -62,7 +62,7 @@ export default function PricingPage() {
       name: 'All-Access',
       price: '$15',
       period: '/month or $120/year',
-      description: 'For the teacher who plans on Sunday night',
+      description: 'Everything, for one teacher',
       features: [
         `Unpack any of ${STANDARD_TOTAL} standards — verbs, vocabulary, the learning ladder`,
         `All ${RESOURCE_TOTAL.toLocaleString()} resources, matched to the standard you are teaching`,

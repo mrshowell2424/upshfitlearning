@@ -10,12 +10,25 @@ import { kidDefinition, DOK_DESCRIPTIONS } from "@/lib/utils/unpack";
 import { UpgradeModal } from "@/components/shared/UpgradeModal";
 import { scienceLabel, standardHref } from "@/lib/utils/standards";
 
-// The lesson blueprint is the free taste; the other three are All-Access.
+/**
+ * The generator is built and works, but it is switched off here until three
+ * things are true: an ANTHROPIC_API_KEY exists, the route checks entitlement
+ * (it currently accepts any caller, so a key would be a bill anyone could
+ * run up), and it is pointed at a current model. Showing a tab that returns
+ * "not configured on this environment" is worse than not showing it.
+ *
+ * Flip this to true once /api/generate-lesson is keyed and gated.
+ */
+const GENERATOR_ENABLED = false;
+
+// The lesson blueprint is the free taste; the others are All-Access.
 const tabs = [
   { id: "blueprint", label: "Lesson blueprint", premium: false },
   { id: "unpack", label: "Unpack the standard", premium: true },
   { id: "resources", label: "Resources to remix", premium: true },
-  { id: "generate", label: "Make it for my learners", premium: true },
+  ...(GENERATOR_ENABLED
+    ? [{ id: "generate", label: "Make it for my learners", premium: true }]
+    : []),
 ];
 
 /**

@@ -223,6 +223,18 @@ export default async function MatchDetailPage({ params }: PageProps) {
                 <span className="inline-block px-3 py-1.5 rounded-md bg-charcoal text-white text-[15px] font-bold">
                   {standard.code}
                 </span>
+                {/* A teacher on RL.2.1 is usually teaching second grade, not
+                    that one standard — so the grade is a way through to the
+                    rest of it rather than a label. */}
+                {grade && (
+                  <Link
+                    href={`/match/grade/${grade.toUpperCase()}`}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-border-strong text-[13px] font-semibold text-charcoal hover:bg-gray-050 transition-colors"
+                  >
+                    {grade.toUpperCase() === "K" ? "Kindergarten" : `Grade ${grade}`}
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                )}
                 {standard.name && (
                   <h2 className="text-[20px] md:text-[24px] font-bold text-charcoal leading-tight">
                     {standard.name}

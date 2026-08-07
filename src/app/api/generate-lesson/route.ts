@@ -1,10 +1,19 @@
 // @ts-nocheck
 import { Anthropic } from "@anthropic-ai/sdk";
+import { entitlementFromRequest } from "@/lib/auth/entitlement";
 
 const client = new Anthropic();
 
 export async function POST(request: Request) {
   try {
+    // This route spends money per call and had no check at all, so the moment
+    // an API key existed anyone could have run up the bill. Generation is an
+    // All-Access feature, so it is gated the same way the premium content is.
+    const { allAccess } = await entitlementFromRequest(request);
+    if (!allAccess) {
+      return Response.json({ error: "All-Access required" }, { status: 403 });
+    }
+
     const { standard_code, format, student_needs, blueprint, unpack } = await request.json();
 
     if (!standard_code || !format) {
@@ -26,7 +35,7 @@ export async function POST(request: Request) {
     const prompt = buildPrompt(standard_code, format, student_needs, blueprint, unpack);
 
     const message = await client.messages.create({
-      model: "claude-3-5-sonnet-20241022",
+      model: "claude-sonnet-5",
       max_tokens: 4096,
       messages: [
         {
