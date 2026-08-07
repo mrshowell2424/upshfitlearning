@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useAuth } from "@/providers/AuthProvider";
 
 interface ResourceCardProps {
   id: string;
@@ -25,6 +28,7 @@ export default function ResourceCard({
   is_free,
   thumbnail_url,
 }: ResourceCardProps) {
+  const { isPremium } = useAuth();
   // Try to get a meaningful thumbnail - use the format type for color coding
   const getThumbnailColor = () => {
     const colors: Record<string, string> = {
@@ -79,17 +83,30 @@ export default function ResourceCard({
           </div>
         )}
 
-        {/* Lock overlay for non-free */}
-        {!is_free && (
-          <div
-            className="absolute inset-0 backdrop-blur-sm flex items-center justify-center"
-            style={{ backgroundColor: "rgba(255,255,255,0.55)" }}
-          >
-            <div className="bg-charcoal text-white px-4 py-2 rounded-full text-[12px] font-bold">
+        {/*
+          Locked only for a teacher who cannot open it. This used to blur every
+          paid thumbnail regardless of who was looking, so an All-Access member
+          saw their own library behind frosted glass with a badge telling them
+          to buy what they had already bought.
+
+          Entitled members still get the badge — it says which tier the resource
+          belongs to — but tucked in the corner rather than over the image.
+        */}
+        {!is_free &&
+          (isPremium ? (
+            <div className="absolute top-2 right-2 bg-charcoal/85 text-white px-2.5 py-1 rounded-full text-[10px] font-bold tracking-[0.08em]">
               ALL-ACCESS
             </div>
-          </div>
-        )}
+          ) : (
+            <div
+              className="absolute inset-0 backdrop-blur-sm flex items-center justify-center"
+              style={{ backgroundColor: "rgba(255,255,255,0.55)" }}
+            >
+              <div className="bg-charcoal text-white px-4 py-2 rounded-full text-[12px] font-bold">
+                ALL-ACCESS
+              </div>
+            </div>
+          ))}
       </div>
 
       {/* Content */}
