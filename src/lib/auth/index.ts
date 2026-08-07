@@ -1,6 +1,19 @@
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+/**
+ * The project URL is not a secret — it's the host every Supabase request goes to,
+ * so it's visible in the browser's network tab regardless. Falling back to it
+ * keeps sign-in working if the build environment is missing the variable, which
+ * is otherwise a silent failure: the client below only initializes when both
+ * values are present, so a missing URL alone disables auth entirely.
+ *
+ * The key has no fallback on purpose. It's publishable and safe in a browser,
+ * but it should still come from configuration, and rotating it must not require
+ * a code change.
+ */
+const SUPABASE_URL_FALLBACK = "https://qiupwcnjwxirnnmizgvd.supabase.co";
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || SUPABASE_URL_FALLBACK;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 // This will only be called at runtime when the variables are available
