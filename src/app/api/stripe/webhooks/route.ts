@@ -104,9 +104,19 @@ async function userIdForCustomer(customerId?: string | null) {
 }
 
 export async function POST(request: NextRequest) {
-  if (!webhookSecret) {
-    console.error("STRIPE_WEBHOOK_SECRET is not set; refusing to trust events");
-    return NextResponse.json({ error: "Webhook not configured" }, { status: 503 });
+  // Named individually, so a misconfiguration says which half is missing
+  // instead of failing as a generic signature error.
+  const missing = [
+    !process.env.STRIPE_SECRET_KEY && "STRIPE_SECRET_KEY",
+    !webhookSecret && "STRIPE_WEBHOOK_SECRET",
+  ].filter(Boolean);
+
+  if (missing.length) {
+    console.error(`Stripe webhook not configured; missing ${missing.join(" and ")}`);
+    return NextResponse.json(
+      { error: "Webhook not configured", missing },
+      { status: 503 }
+    );
   }
 
   const body = await request.text();
