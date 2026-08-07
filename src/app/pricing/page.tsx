@@ -68,7 +68,6 @@ export default function PricingPage() {
         `All ${RESOURCE_TOTAL.toLocaleString()} resources, matched to the standard you are teaching`,
         `All ${COURSE_COUNT} courses, delivered through Google Classroom`,
         'Common misconceptions, and what to do about each one',
-        'Save what you find, so you are not searching twice',
       ],
       // Rendered by CheckoutButtons, which needs the session to prefill the
       // payment email and to avoid selling to somebody who already has access.
