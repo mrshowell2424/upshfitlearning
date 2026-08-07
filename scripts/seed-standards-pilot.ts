@@ -1,0 +1,1420 @@
+// @ts-nocheck
+/**
+ * Pilot batch: 20 drafted standards spanning K-8, ELA and math.
+ *
+ * The four originals in seed-standards.ts are hand-authored demo content. This
+ * is the first slice of real coverage — a representative spread across grade
+ * bands and strands (RF, RL, RI, L, W, SL; CC, OA, NBT, NF, RP, EE) picked so
+ * the quality can be judged before generating the full Common Core set.
+ *
+ * Unlike seed-standards.ts this script is idempotent: standards upsert on code,
+ * and each unpack/blueprint is cleared for its code before reinsert. Re-running
+ * refreshes the draft rather than erroring or duplicating.
+ *
+ *   bun run scripts/seed-standards-pilot.ts
+ */
+import { db } from "@/lib/db";
+import { standards, standard_unpacks, lesson_blueprints } from "@/lib/db/schema";
+import { inArray } from "drizzle-orm";
+
+const standardsData = [
+  // ─── ELA ────────────────────────────────────────────────────────────────
+  {
+    code: "RF.1.2",
+    name: "Blend and segment the sounds in spoken words",
+    plain_reading:
+      "Demonstrate understanding of spoken words, syllables, and sounds (phonemes), including blending and segmenting single-syllable words.",
+    learning_target: "I can break words into sounds and push the sounds back together.",
+    skills: ["Phonemic Awareness", "Blending", "Segmenting"],
+    science_tags: ["retrieval", "dual-coding"],
+    match_keys: ["phonemic awareness", "blending", "segmenting", "phonemes", "sounds in words"],
+  },
+  {
+    code: "RF.2.3",
+    name: "Use phonics to decode words",
+    plain_reading:
+      "Know and apply grade-level phonics and word analysis skills in decoding words, including long and short vowels, vowel teams, and common prefixes and suffixes.",
+    learning_target: "I can use what I know about letters and sounds to read new words.",
+    skills: ["Phonics", "Decoding", "Word Analysis"],
+    science_tags: ["retrieval", "interleaving"],
+    match_keys: ["phonics", "decoding", "vowel teams", "prefixes", "suffixes", "word attack"],
+  },
+  {
+    code: "RL.3.1",
+    name: "Ask and answer questions, referring explicitly to the text",
+    plain_reading:
+      "Ask and answer questions to demonstrate understanding of a text, referring explicitly to the text as the basis for the answers.",
+    learning_target: "I can answer questions about a story and point to the words that prove it.",
+    skills: ["Textual Evidence", "Comprehension", "Close Reading"],
+    science_tags: ["elaboration", "retrieval"],
+    match_keys: ["text evidence", "refer explicitly", "answer questions", "prove your answer"],
+  },
+  {
+    code: "L.3.4",
+    name: "Work out what unfamiliar words mean",
+    plain_reading:
+      "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 3 reading and content, choosing flexibly from a range of strategies.",
+    learning_target: "I can figure out a new word using the sentence around it and its word parts.",
+    skills: ["Vocabulary", "Context Clues", "Morphology"],
+    science_tags: ["elaboration", "interleaving"],
+    match_keys: ["context clues", "unknown words", "multiple meaning", "affixes", "root words"],
+  },
+  {
+    code: "RL.4.1",
+    name: "Refer to details and examples when explaining a text",
+    plain_reading:
+      "Refer to details and examples in a text when explaining what the text says explicitly and when drawing inferences from the text.",
+    learning_target: "I can explain what a text says and back it up with details, including things it only hints at.",
+    skills: ["Inference", "Textual Evidence", "Close Reading"],
+    science_tags: ["elaboration", "retrieval"],
+    match_keys: ["inference", "details and examples", "explicitly", "draw inferences", "evidence"],
+  },
+  {
+    code: "W.4.1",
+    name: "Write an opinion piece with reasons and evidence",
+    plain_reading:
+      "Write opinion pieces on topics or texts, supporting a point of view with reasons and information.",
+    learning_target: "I can state what I think and give organised reasons that support it.",
+    skills: ["Opinion Writing", "Argumentation", "Organisation"],
+    science_tags: ["elaboration", "spaced"],
+    match_keys: ["opinion writing", "point of view", "reasons", "persuasive", "support a claim"],
+  },
+  {
+    code: "SL.5.1",
+    name: "Take part in collaborative discussions",
+    plain_reading:
+      "Engage effectively in a range of collaborative discussions with diverse partners on grade 5 topics and texts, building on others' ideas and expressing their own clearly.",
+    learning_target: "I can build on what other people say and add my own idea clearly.",
+    skills: ["Discussion", "Active Listening", "Academic Talk"],
+    science_tags: ["collaborative", "elaboration"],
+    match_keys: ["discussion", "collaborative", "build on ideas", "accountable talk", "listening"],
+  },
+  {
+    code: "RI.5.2",
+    name: "Determine two or more main ideas and summarise",
+    plain_reading:
+      "Determine two or more main ideas of a text and explain how they are supported by key details; summarize the text.",
+    learning_target: "I can find more than one big idea in a text and sum it up without retelling everything.",
+    skills: ["Main Idea", "Summarising", "Supporting Details"],
+    science_tags: ["dual-coding", "elaboration"],
+    match_keys: ["main ideas", "summarize", "key details", "informational text", "central idea"],
+  },
+  {
+    code: "RL.7.2",
+    name: "Determine a theme and track its development",
+    plain_reading:
+      "Determine a theme or central idea of a text and analyze its development over the course of the text; provide an objective summary of the text.",
+    learning_target: "I can name a theme and trace how the author builds it across a whole text.",
+    skills: ["Theme", "Textual Analysis", "Objective Summary"],
+    science_tags: ["elaboration", "spaced"],
+    match_keys: ["theme", "central idea", "development", "objective summary", "analyze"],
+  },
+  {
+    code: "RI.8.1",
+    name: "Cite evidence that most strongly supports an analysis",
+    plain_reading:
+      "Cite the textual evidence that most strongly supports an analysis of what the text says explicitly as well as inferences drawn from the text.",
+    learning_target: "I can pick the strongest evidence for my point, not just any evidence that fits.",
+    skills: ["Textual Evidence", "Analysis", "Inference"],
+    science_tags: ["elaboration", "interleaving"],
+    match_keys: ["cite evidence", "strongest support", "analysis", "inference", "textual evidence"],
+  },
+
+  // ─── Mathematics ────────────────────────────────────────────────────────
+  {
+    code: "K.CC.A.1",
+    name: "Count to 100 by ones and by tens",
+    plain_reading: "Count to 100 by ones and by tens.",
+    learning_target: "I can count all the way to 100, one at a time and ten at a time.",
+    skills: ["Rote Counting", "Number Sequence", "Skip Counting"],
+    science_tags: ["retrieval", "spaced"],
+    match_keys: ["count to 100", "counting by tens", "rote counting", "number sequence"],
+  },
+  {
+    code: "1.OA.A.1",
+    name: "Solve addition and subtraction word problems within 20",
+    plain_reading:
+      "Use addition and subtraction within 20 to solve word problems involving situations of adding to, taking from, putting together, taking apart, and comparing.",
+    learning_target: "I can work out a word problem by deciding whether to join amounts or take them apart.",
+    skills: ["Word Problems", "Addition", "Subtraction"],
+    science_tags: ["dual-coding", "interleaving"],
+    match_keys: ["word problems", "addition within 20", "subtraction", "compare", "put together"],
+  },
+  {
+    code: "2.NBT.A.1",
+    name: "Understand three-digit place value",
+    plain_reading:
+      "Understand that the three digits of a three-digit number represent amounts of hundreds, tens, and ones.",
+    learning_target: "I can say what each digit in a three-digit number is worth.",
+    skills: ["Place Value", "Number Sense", "Composing Numbers"],
+    science_tags: ["dual-coding", "retrieval"],
+    match_keys: ["place value", "hundreds tens ones", "three digit", "expanded form", "bundling"],
+  },
+  {
+    code: "3.OA.A.1",
+    name: "Interpret products of whole numbers",
+    plain_reading:
+      "Interpret products of whole numbers, e.g., interpret 5 × 7 as the total number of objects in 5 groups of 7 objects each.",
+    learning_target: "I can explain what a multiplication expression means using equal groups.",
+    skills: ["Multiplication", "Equal Groups", "Mathematical Reasoning"],
+    science_tags: ["dual-coding", "elaboration"],
+    match_keys: ["multiplication", "equal groups", "products", "arrays", "repeated addition"],
+  },
+  {
+    code: "3.NF.A.1",
+    name: "Understand a fraction as parts of a whole",
+    plain_reading:
+      "Understand a fraction 1/b as the quantity formed by 1 part when a whole is partitioned into b equal parts; understand a fraction a/b as the quantity formed by a parts of size 1/b.",
+    learning_target: "I can explain what the top and bottom numbers of a fraction each tell me.",
+    skills: ["Fractions", "Partitioning", "Unit Fractions"],
+    science_tags: ["dual-coding", "elaboration"],
+    match_keys: ["fractions", "unit fraction", "equal parts", "numerator", "denominator", "partition"],
+  },
+  {
+    code: "4.NBT.B.5",
+    name: "Multiply multi-digit whole numbers",
+    plain_reading:
+      "Multiply a whole number of up to four digits by a one-digit whole number, and multiply two two-digit numbers, using strategies based on place value and the properties of operations.",
+    learning_target: "I can multiply bigger numbers by breaking them apart by place value.",
+    skills: ["Multiplication", "Place Value Strategies", "Area Model"],
+    science_tags: ["interleaving", "retrieval"],
+    match_keys: ["multi-digit multiplication", "area model", "partial products", "two by two digit"],
+  },
+  {
+    code: "5.NF.A.1",
+    name: "Add and subtract fractions with unlike denominators",
+    plain_reading:
+      "Add and subtract fractions with unlike denominators (including mixed numbers) by replacing given fractions with equivalent fractions to produce a like denominator.",
+    learning_target: "I can rename fractions so they share a denominator, then add or subtract them.",
+    skills: ["Fractions", "Equivalent Fractions", "Common Denominators"],
+    science_tags: ["interleaving", "elaboration"],
+    match_keys: ["unlike denominators", "add fractions", "subtract fractions", "equivalent", "common denominator"],
+  },
+  {
+    code: "6.RP.A.3",
+    name: "Use ratio reasoning to solve problems",
+    plain_reading:
+      "Use ratio and rate reasoning to solve real-world and mathematical problems, e.g., by reasoning about tables of equivalent ratios, tape diagrams, double number line diagrams, or equations.",
+    learning_target: "I can solve ratio problems using a table, a diagram, or an equation.",
+    skills: ["Ratios", "Unit Rate", "Proportional Reasoning"],
+    science_tags: ["dual-coding", "interleaving"],
+    match_keys: ["ratio", "unit rate", "double number line", "tape diagram", "equivalent ratios"],
+  },
+  {
+    code: "7.EE.B.4",
+    name: "Solve equations and inequalities from real problems",
+    plain_reading:
+      "Use variables to represent quantities in a real-world or mathematical problem, and construct simple equations and inequalities to solve problems by reasoning about the quantities.",
+    learning_target: "I can turn a word problem into an equation and solve it.",
+    skills: ["Equations", "Inequalities", "Algebraic Modelling"],
+    science_tags: ["elaboration", "interleaving"],
+    match_keys: ["equations", "inequalities", "variables", "solve for x", "algebraic reasoning"],
+  },
+  {
+    code: "8.EE.C.7",
+    name: "Solve linear equations in one variable",
+    plain_reading:
+      "Solve linear equations in one variable, including equations with rational number coefficients and equations whose solutions require expanding expressions using the distributive property and collecting like terms.",
+    learning_target: "I can solve a linear equation and say whether it has one, none, or infinite solutions.",
+    skills: ["Linear Equations", "Distributive Property", "Like Terms"],
+    science_tags: ["interleaving", "retrieval"],
+    match_keys: ["linear equations", "one variable", "distributive property", "like terms", "infinite solutions"],
+  },
+];
+
+const unpacksData = [
+  {
+    standard_code: "RF.1.2",
+    verbs: [
+      { word: "Blend", gloss: "push separate sounds together into a word" },
+      { word: "Segment", gloss: "break a word into its separate sounds" },
+      { word: "Demonstrate", gloss: "show you can do it out loud" },
+    ],
+    concepts: ["Phonemes", "Syllables", "Onset and rime"],
+    vocabulary: [
+      { term: "sound", definition: "the smallest bit of a word you can hear" },
+      { term: "blend", definition: "push sounds together to make a word" },
+      { term: "segment", definition: "break a word apart into its sounds" },
+      { term: "syllable", definition: "a beat in a word" },
+    ],
+    prior_skills: ["Hear rhyming words", "Clap syllables", "Identify a first sound"],
+    prior_standards: [{ code: "RF.K.2", text: "Recognise and produce rhyming words and initial sounds" }],
+    future_standards: [{ code: "RF.2.3", text: "Apply phonics skills to decode words" }],
+    challenges: [
+      { problem: "Students say letter names instead of sounds", fix: "Model with sounds only; hold the letter card face down" },
+      { problem: "Blending stalls between sounds", fix: "Stretch continuous sounds rather than clipping them" },
+    ],
+    mastery_statement: "Student can blend and segment the individual sounds in spoken single-syllable words.",
+    ladder: [
+      { name: "I can hear the first sound in a word", descriptor: "Isolates the initial phoneme" },
+      { name: "I can clap the syllables in a word", descriptor: "Counts beats accurately" },
+      { name: "I can blend sounds into a word", descriptor: "Pushes 3 sounds together" },
+      { name: "I can segment a word into all its sounds", descriptor: "Taps each phoneme in order" },
+    ],
+  },
+  {
+    standard_code: "RF.2.3",
+    verbs: [
+      { word: "Know", gloss: "hold the letter-sound patterns in memory" },
+      { word: "Apply", gloss: "use those patterns to read a new word" },
+      { word: "Decode", gloss: "turn written letters into a spoken word" },
+    ],
+    concepts: ["Letter-sound correspondence", "Vowel patterns", "Morphology"],
+    vocabulary: [
+      { term: "decode", definition: "use letters and sounds to read a word" },
+      { term: "vowel team", definition: "two vowels working together to make one sound" },
+      { term: "prefix", definition: "a word part added to the front that changes the meaning" },
+      { term: "suffix", definition: "a word part added to the end that changes the meaning" },
+    ],
+    prior_skills: ["Blend and segment sounds", "Know short vowel sounds", "Read CVC words"],
+    prior_standards: [{ code: "RF.1.3", text: "Know and apply grade 1 phonics and word analysis skills" }],
+    future_standards: [{ code: "RF.3.3", text: "Decode multisyllable words and known affixes" }],
+    challenges: [
+      { problem: "Students guess from the first letter and the picture", fix: "Cover the picture; require a full left-to-right sweep" },
+      { problem: "Long and short vowels get confused", fix: "Sort words by pattern before reading them in text" },
+    ],
+    mastery_statement: "Student can decode unfamiliar grade-level words by applying known vowel patterns and affixes.",
+    ladder: [
+      { name: "I can read short vowel words", descriptor: "Decodes CVC words reliably" },
+      { name: "I can read words with long vowels", descriptor: "Applies silent-e and vowel teams" },
+      { name: "I can read words with prefixes and suffixes", descriptor: "Peels off affixes to find the base" },
+      { name: "I can decode a new word on my own", descriptor: "Self-corrects without prompting" },
+    ],
+  },
+  {
+    standard_code: "RL.3.1",
+    verbs: [
+      { word: "Ask", gloss: "pose a question about the text" },
+      { word: "Answer", gloss: "respond using what the text says" },
+      { word: "Refer", gloss: "point back to the exact words" },
+    ],
+    concepts: ["Text evidence", "Explicit meaning", "Question types"],
+    vocabulary: [
+      { term: "evidence", definition: "the words in the text that prove your answer" },
+      { term: "explicitly", definition: "stated right there in the words" },
+      { term: "refer", definition: "point back to where you found it" },
+      { term: "detail", definition: "a small piece of information the author gives" },
+    ],
+    prior_skills: ["Ask who/what/where questions", "Retell a story in order", "Locate a detail on a page"],
+    prior_standards: [{ code: "RL.2.1", text: "Ask and answer questions about key details" }],
+    future_standards: [{ code: "RL.4.1", text: "Refer to details and examples, including inferences" }],
+    challenges: [
+      { problem: "Answers come from memory rather than the page", fix: "Require a page or paragraph number with every answer" },
+      { problem: "Students copy whole paragraphs as evidence", fix: "Cap the quote at one sentence" },
+    ],
+    mastery_statement: "Student can answer questions about a text and cite the specific words that support the answer.",
+    ladder: [
+      { name: "I can answer a question about the story", descriptor: "Gives an accurate answer" },
+      { name: "I can find where the answer is in the text", descriptor: "Locates the supporting line" },
+      { name: "I can quote the words that prove it", descriptor: "Selects a precise quote" },
+      { name: "I can explain how the quote proves my answer", descriptor: "Links evidence to claim" },
+    ],
+  },
+  {
+    standard_code: "L.3.4",
+    verbs: [
+      { word: "Determine", gloss: "work out what a word means" },
+      { word: "Clarify", gloss: "make a fuzzy meaning sharper" },
+      { word: "Choose", gloss: "pick the strategy that fits" },
+    ],
+    concepts: ["Context clues", "Word parts", "Multiple meanings"],
+    vocabulary: [
+      { term: "context", definition: "the words around a word that give you hints" },
+      { term: "root", definition: "the main part of a word that carries the meaning" },
+      { term: "affix", definition: "a word part added to the start or end" },
+      { term: "multiple-meaning word", definition: "a word that means different things in different sentences" },
+    ],
+    prior_skills: ["Use a picture to guess meaning", "Recognise common prefixes", "Ask about unknown words"],
+    prior_standards: [{ code: "L.2.4", text: "Determine the meaning of unknown words using grade 2 strategies" }],
+    future_standards: [{ code: "L.4.4", text: "Determine meanings using context, affixes, and reference materials" }],
+    challenges: [
+      { problem: "Students skip unfamiliar words entirely", fix: "Teach a stop-and-jot signal for unknown words" },
+      { problem: "The first meaning is assumed to be the right one", fix: "Test the meaning back in the sentence" },
+    ],
+    mastery_statement: "Student can work out an unfamiliar word's meaning using context and word parts, then verify it fits.",
+    ladder: [
+      { name: "I can notice a word I do not know", descriptor: "Flags unfamiliar vocabulary" },
+      { name: "I can look for clues in the sentence", descriptor: "Uses surrounding context" },
+      { name: "I can use word parts to help", descriptor: "Identifies root and affix" },
+      { name: "I can check my meaning fits the sentence", descriptor: "Substitutes and verifies" },
+    ],
+  },
+  {
+    standard_code: "RL.4.1",
+    verbs: [
+      { word: "Refer", gloss: "point to specific details" },
+      { word: "Explain", gloss: "say what the text means and why" },
+      { word: "Infer", gloss: "work out what the text implies but does not say" },
+    ],
+    concepts: ["Explicit vs implicit meaning", "Inference", "Supporting detail"],
+    vocabulary: [
+      { term: "inference", definition: "a smart guess built from clues in the text" },
+      { term: "explicit", definition: "said directly in the words" },
+      { term: "implicit", definition: "hinted at but not said outright" },
+      { term: "example", definition: "a specific case the author gives to show something" },
+    ],
+    prior_skills: ["Cite a detail from the text", "Answer literal questions", "Retell key events"],
+    prior_standards: [{ code: "RL.3.1", text: "Ask and answer questions, referring explicitly to the text" }],
+    future_standards: [{ code: "RL.5.1", text: "Quote accurately when explaining and inferring" }],
+    challenges: [
+      { problem: "Inferences drift into pure opinion", fix: "Require the clue plus the reasoning, not just the conclusion" },
+      { problem: "Students treat every detail as equally important", fix: "Ask which detail matters most and why" },
+    ],
+    mastery_statement: "Student can explain both stated and implied meaning, anchoring each to details from the text.",
+    ladder: [
+      { name: "I can find a detail in the text", descriptor: "Locates explicit information" },
+      { name: "I can explain what the text says", descriptor: "Paraphrases accurately" },
+      { name: "I can make an inference from clues", descriptor: "Combines two or more details" },
+      { name: "I can show the clues behind my inference", descriptor: "Cites evidence for implied meaning" },
+    ],
+  },
+  {
+    standard_code: "W.4.1",
+    verbs: [
+      { word: "Write", gloss: "produce a structured piece" },
+      { word: "Support", gloss: "back a view with reasons" },
+      { word: "Organise", gloss: "group related ideas together" },
+    ],
+    concepts: ["Point of view", "Reasons and evidence", "Structure"],
+    vocabulary: [
+      { term: "opinion", definition: "what you think about something" },
+      { term: "reason", definition: "why you think it" },
+      { term: "evidence", definition: "a fact or example that backs up your reason" },
+      { term: "linking word", definition: "a word like 'because' that joins ideas" },
+    ],
+    prior_skills: ["State a preference", "Give one reason", "Write a complete paragraph"],
+    prior_standards: [{ code: "W.3.1", text: "Write opinion pieces supporting a point of view with reasons" }],
+    future_standards: [{ code: "W.5.1", text: "Write opinion pieces with logically ordered reasons" }],
+    challenges: [
+      { problem: "Reasons restate the opinion in new words", fix: "Test each reason with 'because' — it must add new information" },
+      { problem: "Evidence is missing entirely", fix: "Require one concrete example per reason before drafting" },
+    ],
+    mastery_statement: "Student can state an opinion and support it with organised reasons backed by specific information.",
+    ladder: [
+      { name: "I can state my opinion clearly", descriptor: "Writes a clear position statement" },
+      { name: "I can give reasons for my opinion", descriptor: "Supplies two or more distinct reasons" },
+      { name: "I can support each reason with evidence", descriptor: "Adds facts or examples" },
+      { name: "I can organise it so it flows", descriptor: "Groups ideas and links them" },
+    ],
+  },
+  {
+    standard_code: "SL.5.1",
+    verbs: [
+      { word: "Engage", gloss: "take an active part" },
+      { word: "Build", gloss: "add to somebody else's idea" },
+      { word: "Express", gloss: "say your own idea clearly" },
+    ],
+    concepts: ["Accountable talk", "Active listening", "Discussion norms"],
+    vocabulary: [
+      { term: "build on", definition: "add something to an idea someone else shared" },
+      { term: "clarify", definition: "ask for or give more detail so it is clear" },
+      { term: "norm", definition: "an agreement about how the group will talk" },
+      { term: "paraphrase", definition: "say someone's idea back in your own words" },
+    ],
+    prior_skills: ["Take turns speaking", "Listen without interrupting", "Ask a question"],
+    prior_standards: [{ code: "SL.4.1", text: "Engage effectively in collaborative discussions" }],
+    future_standards: [{ code: "SL.6.1", text: "Engage in collaborative discussions, posing and responding to questions" }],
+    challenges: [
+      { problem: "Students take turns but never connect ideas", fix: "Require a sentence stem that references the previous speaker" },
+      { problem: "A few voices dominate", fix: "Use talk tokens so airtime is visible" },
+    ],
+    mastery_statement: "Student can contribute to a discussion by building explicitly on others' ideas and expressing their own clearly.",
+    ladder: [
+      { name: "I can share my idea in a group", descriptor: "Contributes at least once" },
+      { name: "I can listen and repeat what others said", descriptor: "Paraphrases a peer accurately" },
+      { name: "I can build on someone else's idea", descriptor: "Extends rather than restarts" },
+      { name: "I can move the discussion forward", descriptor: "Poses questions that deepen it" },
+    ],
+  },
+  {
+    standard_code: "RI.5.2",
+    verbs: [
+      { word: "Determine", gloss: "work out the big ideas" },
+      { word: "Explain", gloss: "show how details hold the idea up" },
+      { word: "Summarise", gloss: "capture the whole in a short form" },
+    ],
+    concepts: ["Main idea", "Supporting detail", "Summary vs retell"],
+    vocabulary: [
+      { term: "main idea", definition: "the most important point of a section" },
+      { term: "summary", definition: "a short version that keeps only what matters" },
+      { term: "supporting detail", definition: "a fact that holds up the main idea" },
+      { term: "central idea", definition: "the big idea running through the whole text" },
+    ],
+    prior_skills: ["Find one main idea", "Identify supporting details", "Retell a text in order"],
+    prior_standards: [{ code: "RI.4.2", text: "Determine the main idea and explain supporting details" }],
+    future_standards: [{ code: "RI.6.2", text: "Determine a central idea and analyse its development" }],
+    challenges: [
+      { problem: "Summaries become full retells", fix: "Set a hard word limit so students must choose" },
+      { problem: "Only one main idea is found", fix: "Split the text into sections and name an idea per section" },
+    ],
+    mastery_statement: "Student can identify two or more main ideas, tie them to key details, and summarise the text objectively.",
+    ladder: [
+      { name: "I can find one main idea", descriptor: "Names the point of a section" },
+      { name: "I can find the details that support it", descriptor: "Matches details to the idea" },
+      { name: "I can find two or more main ideas", descriptor: "Handles a multi-idea text" },
+      { name: "I can summarise without retelling everything", descriptor: "Writes a concise objective summary" },
+    ],
+  },
+  {
+    standard_code: "RL.7.2",
+    verbs: [
+      { word: "Determine", gloss: "identify the theme" },
+      { word: "Analyse", gloss: "examine how it is built up" },
+      { word: "Summarise", gloss: "restate objectively, without opinion" },
+    ],
+    concepts: ["Theme vs topic", "Development across a text", "Objectivity"],
+    vocabulary: [
+      { term: "theme", definition: "the message about life a story explores" },
+      { term: "topic", definition: "what the story is about on the surface" },
+      { term: "development", definition: "how an idea grows across the text" },
+      { term: "objective", definition: "sticking to the text without adding your opinion" },
+    ],
+    prior_skills: ["Identify a theme with support", "Summarise a text", "Track character change"],
+    prior_standards: [{ code: "RL.6.2", text: "Determine a theme and how it is conveyed through details" }],
+    future_standards: [{ code: "RL.8.2", text: "Analyse theme development and its relationship to characters and setting" }],
+    challenges: [
+      { problem: "Theme is stated as a one-word topic", fix: "Require a full sentence that makes a claim about life" },
+      { problem: "Summaries smuggle in opinion", fix: "Ban evaluative words from the summary draft" },
+    ],
+    mastery_statement: "Student can state a theme as a claim and trace the specific moments across the text that develop it.",
+    ladder: [
+      { name: "I can tell the topic from the theme", descriptor: "Distinguishes subject from message" },
+      { name: "I can state a theme as a sentence", descriptor: "Makes a claim about life" },
+      { name: "I can trace the theme across the text", descriptor: "Cites moments from beginning, middle, end" },
+      { name: "I can write an objective summary", descriptor: "Excludes personal judgement" },
+    ],
+  },
+  {
+    standard_code: "RI.8.1",
+    verbs: [
+      { word: "Cite", gloss: "quote the exact words" },
+      { word: "Analyse", gloss: "break down what the text is doing" },
+      { word: "Support", gloss: "make the evidence carry the claim" },
+    ],
+    concepts: ["Strength of evidence", "Explicit and inferential claims", "Citation"],
+    vocabulary: [
+      { term: "cite", definition: "quote the exact words and say where they came from" },
+      { term: "strongest evidence", definition: "the quote that proves the point most directly" },
+      { term: "analysis", definition: "explaining how and why, not just what" },
+      { term: "inference", definition: "a conclusion drawn from clues in the text" },
+    ],
+    prior_skills: ["Cite textual evidence", "Draw an inference", "Distinguish claim from evidence"],
+    prior_standards: [{ code: "RI.7.1", text: "Cite several pieces of evidence to support analysis" }],
+    future_standards: [{ code: "RI.9-10.1", text: "Cite strong and thorough textual evidence" }],
+    challenges: [
+      { problem: "Any relevant quote is treated as strong", fix: "Compare two candidate quotes and argue which is stronger" },
+      { problem: "Quotes are dropped in without explanation", fix: "Require a sentence of analysis after every quote" },
+    ],
+    mastery_statement: "Student can select and explain the evidence that most strongly supports a stated analysis.",
+    ladder: [
+      { name: "I can find evidence in the text", descriptor: "Locates a relevant quote" },
+      { name: "I can cite it accurately", descriptor: "Quotes and attributes correctly" },
+      { name: "I can choose the strongest evidence", descriptor: "Compares and justifies the choice" },
+      { name: "I can explain how it supports my analysis", descriptor: "Links evidence to reasoning" },
+    ],
+  },
+  {
+    standard_code: "K.CC.A.1",
+    verbs: [{ word: "Count", gloss: "say the numbers in the right order" }],
+    concepts: ["Number sequence", "Decade patterns", "Skip counting by ten"],
+    vocabulary: [
+      { term: "count", definition: "say numbers in order" },
+      { term: "number", definition: "a word and symbol that tells how many" },
+      { term: "ten", definition: "a group of ten ones" },
+      { term: "pattern", definition: "something that repeats in the same way" },
+    ],
+    prior_skills: ["Count to 20", "Say number words in order", "Recognise numerals to 10"],
+    prior_standards: [{ code: "PK.CC.1", text: "Count to 20 by ones" }],
+    future_standards: [{ code: "1.NBT.A.1", text: "Count to 120 starting at any number" }],
+    challenges: [
+      { problem: "Counting breaks down at each decade change", fix: "Drill the transitions (29→30, 39→40) in isolation" },
+      { problem: "Teen numbers get reversed", fix: "Pair the spoken word with a ten-frame every time" },
+    ],
+    mastery_statement: "Student can count to 100 by ones and by tens without support.",
+    ladder: [
+      { name: "I can count to 20", descriptor: "Accurate rote sequence to 20" },
+      { name: "I can count to 50", descriptor: "Crosses two decade changes" },
+      { name: "I can count to 100 by ones", descriptor: "Complete sequence unaided" },
+      { name: "I can count to 100 by tens", descriptor: "Says 10, 20, 30 … 100" },
+    ],
+  },
+  {
+    standard_code: "1.OA.A.1",
+    verbs: [
+      { word: "Solve", gloss: "work out the answer" },
+      { word: "Represent", gloss: "show the problem with objects or a drawing" },
+      { word: "Compare", gloss: "find how much more or less" },
+    ],
+    concepts: ["Problem types", "Part-part-whole", "Comparison"],
+    vocabulary: [
+      { term: "altogether", definition: "how many when you put groups together" },
+      { term: "difference", definition: "how much more one amount is than another" },
+      { term: "equation", definition: "a number sentence with an equals sign" },
+      { term: "unknown", definition: "the part you do not know yet" },
+    ],
+    prior_skills: ["Count on from a number", "Add within 10", "Model with counters"],
+    prior_standards: [{ code: "K.OA.A.2", text: "Solve addition and subtraction word problems within 10" }],
+    future_standards: [{ code: "2.OA.A.1", text: "Solve one- and two-step word problems within 100" }],
+    challenges: [
+      { problem: "Students key on words like 'more' and always add", fix: "Include compare problems where 'more' requires subtraction" },
+      { problem: "The unknown in the start position confuses students", fix: "Model with a bar diagram before writing the equation" },
+    ],
+    mastery_statement: "Student can solve add-to, take-from, put-together and compare problems within 20 and justify the operation.",
+    ladder: [
+      { name: "I can act out a word problem", descriptor: "Models with counters" },
+      { name: "I can draw the problem", descriptor: "Represents parts and whole" },
+      { name: "I can write an equation for it", descriptor: "Matches equation to situation" },
+      { name: "I can explain why I added or subtracted", descriptor: "Justifies the operation choice" },
+    ],
+  },
+  {
+    standard_code: "2.NBT.A.1",
+    verbs: [
+      { word: "Understand", gloss: "know what each digit is worth" },
+      { word: "Compose", gloss: "bundle ten of something into the next unit" },
+      { word: "Decompose", gloss: "break a unit into ten smaller ones" },
+    ],
+    concepts: ["Place value", "Bundling", "Expanded form"],
+    vocabulary: [
+      { term: "digit", definition: "one of the number symbols 0 to 9" },
+      { term: "place value", definition: "what a digit is worth because of where it sits" },
+      { term: "bundle", definition: "a group of ten put together as one" },
+      { term: "expanded form", definition: "a number written out as its parts added up" },
+    ],
+    prior_skills: ["Count to 100", "Group objects in tens", "Read two-digit numbers"],
+    prior_standards: [{ code: "1.NBT.B.2", text: "Understand that two digits represent tens and ones" }],
+    future_standards: [{ code: "3.NBT.A.1", text: "Round whole numbers using place value understanding" }],
+    challenges: [
+      { problem: "347 is read as three separate digits", fix: "Build it with base-ten blocks before writing it" },
+      { problem: "Zero as a placeholder is dropped", fix: "Contrast 307 and 37 side by side" },
+    ],
+    mastery_statement: "Student can state the value of each digit in a three-digit number and compose or decompose it flexibly.",
+    ladder: [
+      { name: "I can count groups of ten", descriptor: "Skip counts by tens" },
+      { name: "I can say what each digit means", descriptor: "Names hundreds, tens, ones" },
+      { name: "I can write a number in expanded form", descriptor: "300 + 40 + 7" },
+      { name: "I can regroup a number more than one way", descriptor: "Sees 347 as 34 tens and 7 ones" },
+    ],
+  },
+  {
+    standard_code: "3.OA.A.1",
+    verbs: [
+      { word: "Interpret", gloss: "say what a multiplication expression means" },
+      { word: "Represent", gloss: "show it as groups or an array" },
+    ],
+    concepts: ["Equal groups", "Arrays", "Factors and products"],
+    vocabulary: [
+      { term: "factor", definition: "a number being multiplied" },
+      { term: "product", definition: "the answer when you multiply" },
+      { term: "array", definition: "objects arranged in equal rows and columns" },
+      { term: "equal groups", definition: "groups that all have the same amount" },
+    ],
+    prior_skills: ["Skip count by 2s, 5s and 10s", "Add repeated groups", "Build equal groups"],
+    prior_standards: [{ code: "2.OA.C.4", text: "Use addition to find the total in a rectangular array" }],
+    future_standards: [{ code: "3.OA.A.3", text: "Use multiplication and division within 100 to solve problems" }],
+    challenges: [
+      { problem: "5 × 7 and 7 × 5 are assumed to mean the same situation", fix: "Draw both; discuss why the product matches but the story differs" },
+      { problem: "Multiplication is memorised without meaning", fix: "Require a drawing before the answer" },
+    ],
+    mastery_statement: "Student can explain a product as a number of equal groups and represent it with an array or drawing.",
+    ladder: [
+      { name: "I can make equal groups", descriptor: "Builds groups of the same size" },
+      { name: "I can skip count to find a total", descriptor: "Counts by the group size" },
+      { name: "I can write a multiplication sentence", descriptor: "Matches expression to groups" },
+      { name: "I can explain what each factor means", descriptor: "Names groups and group size" },
+    ],
+  },
+  {
+    standard_code: "3.NF.A.1",
+    verbs: [
+      { word: "Understand", gloss: "know what the parts of a fraction mean" },
+      { word: "Partition", gloss: "split a whole into equal pieces" },
+    ],
+    concepts: ["Unit fractions", "Equal partitioning", "The whole"],
+    vocabulary: [
+      { term: "numerator", definition: "the top number — how many parts you have" },
+      { term: "denominator", definition: "the bottom number — how many equal parts the whole was split into" },
+      { term: "unit fraction", definition: "a fraction with 1 on top" },
+      { term: "partition", definition: "split something into equal parts" },
+    ],
+    prior_skills: ["Split a shape in half", "Recognise equal parts", "Count parts of a whole"],
+    prior_standards: [{ code: "2.G.A.3", text: "Partition circles and rectangles into equal shares" }],
+    future_standards: [{ code: "3.NF.A.3", text: "Explain equivalence of fractions and compare fractions" }],
+    challenges: [
+      { problem: "Parts are counted without checking they are equal", fix: "Compare an equal and unequal split of the same shape" },
+      { problem: "The denominator is read as 'how many left'", fix: "Say the denominator aloud as the size of the piece" },
+    ],
+    mastery_statement: "Student can explain a fraction as a count of equal-sized parts of a defined whole.",
+    ladder: [
+      { name: "I can split a shape into equal parts", descriptor: "Partitions accurately" },
+      { name: "I can name a unit fraction", descriptor: "Identifies 1/4 of a whole" },
+      { name: "I can name any fraction of a whole", descriptor: "Reads 3/4 correctly" },
+      { name: "I can explain what each number means", descriptor: "Distinguishes numerator and denominator" },
+    ],
+  },
+  {
+    standard_code: "4.NBT.B.5",
+    verbs: [
+      { word: "Multiply", gloss: "find the product" },
+      { word: "Illustrate", gloss: "show the strategy with a model" },
+      { word: "Explain", gloss: "justify why the strategy works" },
+    ],
+    concepts: ["Place value decomposition", "Area model", "Partial products"],
+    vocabulary: [
+      { term: "partial product", definition: "one piece of the answer before you add them all" },
+      { term: "area model", definition: "a rectangle split up to show multiplication" },
+      { term: "decompose", definition: "break a number into its place value parts" },
+      { term: "distributive property", definition: "multiplying a sum by multiplying each part" },
+    ],
+    prior_skills: ["Multiply within 100", "Understand place value to 1000", "Use arrays"],
+    prior_standards: [{ code: "3.OA.C.7", text: "Fluently multiply and divide within 100" }],
+    future_standards: [{ code: "5.NBT.B.5", text: "Fluently multiply multi-digit whole numbers" }],
+    challenges: [
+      { problem: "Partial products get lost or misaligned", fix: "Use the area model grid so each piece has a home" },
+      { problem: "The algorithm is copied without understanding", fix: "Require the area model alongside the algorithm" },
+    ],
+    mastery_statement: "Student can multiply multi-digit numbers using place value strategies and explain why they work.",
+    ladder: [
+      { name: "I can multiply by a one-digit number", descriptor: "Handles 4-digit × 1-digit" },
+      { name: "I can break a number apart by place value", descriptor: "Decomposes 34 into 30 + 4" },
+      { name: "I can use an area model", descriptor: "Finds and sums partial products" },
+      { name: "I can explain why the strategy works", descriptor: "References the distributive property" },
+    ],
+  },
+  {
+    standard_code: "5.NF.A.1",
+    verbs: [
+      { word: "Add", gloss: "combine two fractions" },
+      { word: "Subtract", gloss: "find the difference between fractions" },
+      { word: "Replace", gloss: "swap in an equivalent fraction" },
+    ],
+    concepts: ["Equivalent fractions", "Common denominators", "Mixed numbers"],
+    vocabulary: [
+      { term: "equivalent", definition: "the same amount written a different way" },
+      { term: "common denominator", definition: "a bottom number two fractions can share" },
+      { term: "mixed number", definition: "a whole number with a fraction attached" },
+      { term: "unlike denominators", definition: "bottom numbers that are different" },
+    ],
+    prior_skills: ["Generate equivalent fractions", "Add fractions with like denominators", "Multiply fractions by 1"],
+    prior_standards: [{ code: "4.NF.B.3", text: "Add and subtract fractions with like denominators" }],
+    future_standards: [{ code: "6.NS.A.1", text: "Divide fractions by fractions" }],
+    challenges: [
+      { problem: "Numerators and denominators are both added", fix: "Model with fraction strips so the error is visible" },
+      { problem: "Regrouping mixed numbers stalls subtraction", fix: "Convert to improper fractions first, then convert back" },
+    ],
+    mastery_statement: "Student can add and subtract fractions with unlike denominators by generating equivalent fractions.",
+    ladder: [
+      { name: "I can add fractions with the same denominator", descriptor: "Adds numerators only" },
+      { name: "I can find equivalent fractions", descriptor: "Scales a fraction correctly" },
+      { name: "I can find a common denominator", descriptor: "Renames both fractions" },
+      { name: "I can add and subtract mixed numbers", descriptor: "Handles regrouping" },
+    ],
+  },
+  {
+    standard_code: "6.RP.A.3",
+    verbs: [
+      { word: "Use", gloss: "apply ratio reasoning" },
+      { word: "Reason", gloss: "think through the relationship" },
+      { word: "Solve", gloss: "answer a real problem" },
+    ],
+    concepts: ["Equivalent ratios", "Unit rate", "Multiple representations"],
+    vocabulary: [
+      { term: "ratio", definition: "a comparison of two amounts" },
+      { term: "unit rate", definition: "how much for exactly one" },
+      { term: "equivalent ratios", definition: "ratios that describe the same relationship" },
+      { term: "double number line", definition: "two number lines lined up to compare two quantities" },
+    ],
+    prior_skills: ["Multiply and divide fluently", "Find equivalent fractions", "Read a table"],
+    prior_standards: [{ code: "6.RP.A.2", text: "Understand the concept of a unit rate" }],
+    future_standards: [{ code: "7.RP.A.2", text: "Recognise and represent proportional relationships" }],
+    challenges: [
+      { problem: "Ratios are treated additively (3:4 becomes 4:5)", fix: "Build a table and look for the multiplicative pattern" },
+      { problem: "The unit rate is inverted", fix: "Label units on every step" },
+    ],
+    mastery_statement: "Student can solve ratio and rate problems using tables, diagrams, or equations and explain the choice.",
+    ladder: [
+      { name: "I can write a ratio", descriptor: "Compares two quantities" },
+      { name: "I can build a table of equivalent ratios", descriptor: "Scales consistently" },
+      { name: "I can find the unit rate", descriptor: "Divides to get per-one" },
+      { name: "I can solve with the representation that fits", descriptor: "Chooses table, diagram, or equation" },
+    ],
+  },
+  {
+    standard_code: "7.EE.B.4",
+    verbs: [
+      { word: "Represent", gloss: "use a variable for an unknown quantity" },
+      { word: "Construct", gloss: "build an equation or inequality" },
+      { word: "Solve", gloss: "find the value that makes it true" },
+    ],
+    concepts: ["Variables", "Equation modelling", "Inequality solutions"],
+    vocabulary: [
+      { term: "variable", definition: "a letter standing in for a number you do not know" },
+      { term: "inequality", definition: "a statement that one side is bigger or smaller" },
+      { term: "coefficient", definition: "the number multiplying a variable" },
+      { term: "solution", definition: "the value that makes the statement true" },
+    ],
+    prior_skills: ["Solve one-step equations", "Operate with rational numbers", "Translate phrases to expressions"],
+    prior_standards: [{ code: "6.EE.B.7", text: "Solve real-world problems by writing equations" }],
+    future_standards: [{ code: "8.EE.C.7", text: "Solve linear equations in one variable" }],
+    challenges: [
+      { problem: "The equation is built backwards from the story", fix: "Underline the quantities and label them before writing" },
+      { problem: "Inequality signs flip incorrectly", fix: "Test the solution back in the original inequality" },
+    ],
+    mastery_statement: "Student can model a real situation with an equation or inequality and solve it, interpreting the result in context.",
+    ladder: [
+      { name: "I can name the unknown", descriptor: "Assigns a variable with units" },
+      { name: "I can write an equation from a story", descriptor: "Matches structure to situation" },
+      { name: "I can solve it", descriptor: "Isolates the variable correctly" },
+      { name: "I can say what the answer means", descriptor: "Interprets in context" },
+    ],
+  },
+  {
+    standard_code: "8.EE.C.7",
+    verbs: [
+      { word: "Solve", gloss: "find the value that makes it true" },
+      { word: "Expand", gloss: "multiply out the brackets" },
+      { word: "Collect", gloss: "combine like terms" },
+    ],
+    concepts: ["Distributive property", "Like terms", "Number of solutions"],
+    vocabulary: [
+      { term: "like terms", definition: "terms with the same variable part" },
+      { term: "distributive property", definition: "multiply what is outside the bracket by everything inside" },
+      { term: "no solution", definition: "an equation no value can make true" },
+      { term: "infinitely many solutions", definition: "an equation every value makes true" },
+    ],
+    prior_skills: ["Solve two-step equations", "Apply the distributive property", "Combine like terms"],
+    prior_standards: [{ code: "7.EE.B.4", text: "Construct and solve simple equations and inequalities" }],
+    future_standards: [{ code: "A-REI.3", text: "Solve linear equations and inequalities in one variable" }],
+    challenges: [
+      { problem: "The negative sign is not distributed across the bracket", fix: "Rewrite subtraction as adding a negative first" },
+      { problem: "0 = 0 is read as 'no solution'", fix: "Sort worked examples into one / none / infinite" },
+    ],
+    mastery_statement: "Student can solve linear equations requiring expansion and collection, and classify the number of solutions.",
+    ladder: [
+      { name: "I can solve a two-step equation", descriptor: "Isolates the variable" },
+      { name: "I can collect like terms first", descriptor: "Simplifies each side" },
+      { name: "I can expand brackets and solve", descriptor: "Applies the distributive property" },
+      { name: "I can tell how many solutions there are", descriptor: "Identifies one, none, or infinite" },
+    ],
+  },
+];
+
+/**
+ * Blueprints follow the house shape: a named route, success criteria a teacher
+ * could tick off from the back of the room, and steps that total roughly one
+ * period. Each step carries a science tag so the matcher can surface the
+ * learning-science rationale alongside the lesson.
+ */
+const blueprintsData = [
+  {
+    standard_code: "RF.1.2",
+    title: "Sound by Sound: Blending and Segmenting",
+    badge: "Grade 1",
+    route_name: "Explicit Instruction",
+    route_line: "Model the move → Practise aloud together → Apply to new words",
+    success_criteria: [
+      "Blends three spoken sounds into a word",
+      "Segments a single-syllable word into every sound",
+      "Uses sounds, not letter names, throughout",
+    ],
+    steps: [
+      { name: "Warm Up the Ear", minutes: 5, body: "Play a quick rhyme and first-sound game. No letters on show — this is purely listening. Keep the pace brisk so every child answers several times.", science_tag: "retrieval" },
+      { name: "Model Blending", minutes: 8, body: "Say three sounds slowly, then push them together into the word. Do five words, thinking aloud each time. Stretch continuous sounds rather than clipping them.", science_tag: "dual-coding" },
+      { name: "Blend Together", minutes: 10, body: "Say the sounds, class blends chorally. Move to partners: one says sounds, the other blends. Circulate and listen for letter names creeping in.", science_tag: "collaborative" },
+      { name: "Model Segmenting", minutes: 8, body: "Reverse the move. Say a whole word, then tap each sound on your fingers. Show that segmenting is blending run backwards.", science_tag: "elaboration" },
+      { name: "Segment with Manipulatives", minutes: 12, body: "Students push a counter into a sound box for each sound they hear. Start with two-sound words, build to four. Watch whose counters match their voice.", science_tag: "dual-coding" },
+      { name: "Mixed Practice", minutes: 10, body: "Alternate unpredictably between blend and segment prompts so students must listen for the task, not run on autopilot.", science_tag: "interleaving" },
+      { name: "Quick Check and Close", minutes: 7, body: "Individually, each student blends one word and segments one word for you at the door. Note who needed a second try.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Sound boxes with counters", "Hand motions for blend and segment", "Two-sound words before three", "Choral response before solo"],
+    tech: "Printed sound boxes",
+    tech_purpose: "Give every sound a visible place to live",
+    ai_prompts: ["Generate 20 single-syllable words sorted by sound count", "Make a sound-box template for two, three and four phonemes"],
+    assessment: ["Listen during partner work for letter names instead of sounds", "One blend plus one segment per child at the door", "Note which students need continuous sounds stretched"],
+    why_it_works: ["Phonemic awareness is oral first — letters would split attention", "Sound boxes make an invisible skill visible", "Mixing blend and segment prevents autopilot", "Choral practice before solo lowers the risk of answering"],
+  },
+  {
+    standard_code: "RF.2.3",
+    title: "Cracking New Words: Phonics in Action",
+    badge: "Grade 2",
+    route_name: "Explicit Instruction",
+    route_line: "Teach the pattern → Sort and read → Meet it in real text",
+    success_criteria: [
+      "Reads words with the target vowel pattern accurately",
+      "Peels off a prefix or suffix to find the base word",
+      "Sweeps left to right rather than guessing from the first letter",
+    ],
+    steps: [
+      { name: "Retrieve Known Patterns", minutes: 5, body: "Flash six words from previous weeks. Students read chorally. This is retrieval, not review — keep it fast and do not reteach.", science_tag: "retrieval" },
+      { name: "Introduce the Pattern", minutes: 8, body: "Show the target pattern (say, vowel teams ai/ay). Say the sound, show three example words, name where in a word each spelling tends to appear.", science_tag: "dual-coding" },
+      { name: "Word Sort", minutes: 12, body: "Students sort a stack of words by pattern before reading any of them aloud. Sorting forces attention to the spelling rather than the guess.", science_tag: "elaboration" },
+      { name: "Read the Sort", minutes: 8, body: "Now read each column aloud together. Discuss any word that landed in the wrong column and why it fooled them.", science_tag: "collaborative" },
+      { name: "Peel Off Affixes", minutes: 10, body: "Take longer words built on the same bases. Model covering the prefix and suffix to find the base, reading the base, then adding parts back.", science_tag: "elaboration" },
+      { name: "Read Connected Text", minutes: 12, body: "Students read a short passage seeded with the pattern. Cover any pictures. When a word stalls, prompt with 'what pattern do you see?' rather than supplying it.", science_tag: "interleaving" },
+      { name: "Exit Words", minutes: 5, body: "Five words on cards, including two never taught but built from the pattern. Students read them to you individually.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Word sort mats", "Cover cards for peeling affixes", "Pattern anchor chart in view", "Passage chunked into short sections"],
+    tech: "Printed word cards and passage",
+    tech_purpose: "Let students physically move words while sorting",
+    ai_prompts: ["Generate a word sort for two vowel patterns with 12 words each", "Write a 150-word grade 2 passage loaded with vowel team words"],
+    assessment: ["Check sort accuracy before reading begins", "Listen for first-letter guessing during connected text", "Exit words including untaught transfer words"],
+    why_it_works: ["Sorting before reading forces attention to spelling patterns", "Untaught transfer words test the pattern, not memory", "Covering pictures removes the guessing crutch", "Connected text is where phonics has to actually pay off"],
+  },
+  {
+    standard_code: "RL.3.1",
+    title: "Prove It: Answering with Text Evidence",
+    badge: "Grade 3",
+    route_name: "Explicit Instruction",
+    route_line: "Model the proof → Practise finding it → Defend an answer",
+    success_criteria: [
+      "Answers the question accurately",
+      "Points to the specific line that supports the answer",
+      "Quotes one sentence, not a whole paragraph",
+    ],
+    steps: [
+      { name: "Retrieve Yesterday's Story", minutes: 5, body: "Two quick questions about the previous text, answered from memory. Then ask: could you prove it? Set up the day's move.", science_tag: "retrieval" },
+      { name: "Model Proving an Answer", minutes: 10, body: "Read a short passage aloud. Answer a question, then think aloud as you hunt for the line that proves it. Underline it. Say the paragraph number.", science_tag: "elaboration" },
+      { name: "Find the Proof Together", minutes: 10, body: "Pose a question. Students find and underline the proving line in their copy. Compare choices — often several lines work, and that is worth discussing.", science_tag: "collaborative" },
+      { name: "Trim the Quote", minutes: 8, body: "Show a bloated quote and a precise one. Practise cutting evidence down to the sentence that does the work.", science_tag: "dual-coding" },
+      { name: "Partner Question Swap", minutes: 12, body: "Partners write a question each, swap, and answer with a quote plus paragraph number. The question writer judges whether the proof holds.", science_tag: "collaborative" },
+      { name: "Independent Practice", minutes: 10, body: "New short text, three questions. Every answer needs a quote and a location. Circulate for students answering from memory.", science_tag: "interleaving" },
+      { name: "Share the Strongest Proof", minutes: 5, body: "Two students share an answer and its evidence. Class votes on whether the quote proves it. Name why.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Highlighters for underlining evidence", "Sentence stem: 'I know because on page ___ it says…'", "Numbered paragraphs", "Text chunked into short sections"],
+    tech: "Printed text with numbered paragraphs",
+    tech_purpose: "Make locations citable",
+    ai_prompts: ["Write a 250-word grade 3 story with numbered paragraphs", "Generate 6 questions with clear textual answers for a passage"],
+    assessment: ["Check every answer carries a location", "Listen during partner swap for unproven answers", "Review independent work for quote precision"],
+    why_it_works: ["Requiring a location stops memory-based answering", "Peer judging makes the standard visible to students", "Trimming quotes teaches selection, not just retrieval", "Comparing valid quotes shows evidence is a choice"],
+  },
+  {
+    standard_code: "L.3.4",
+    title: "Word Detective: Cracking Unknown Words",
+    badge: "Grade 3",
+    route_name: "Strategy Instruction",
+    route_line: "Name the strategies → Try each one → Choose what fits",
+    success_criteria: [
+      "Flags an unfamiliar word rather than skipping it",
+      "Uses context or word parts to propose a meaning",
+      "Checks the proposed meaning back in the sentence",
+    ],
+    steps: [
+      { name: "Retrieve Known Word Parts", minutes: 5, body: "Rapid-fire: what does un- mean? -ful? re-? Pure retrieval of previously taught affixes.", science_tag: "retrieval" },
+      { name: "Model Getting Stuck", minutes: 8, body: "Read a sentence with a hard word. Stop visibly. Narrate the choice: context clue, word part, or ask. Show that stopping is what good readers do.", science_tag: "elaboration" },
+      { name: "Strategy One — Context", minutes: 10, body: "Sentences where surrounding words give it away. Students propose meanings and name the clue words that helped.", science_tag: "dual-coding" },
+      { name: "Strategy Two — Word Parts", minutes: 10, body: "Words built from known roots and affixes. Students break them apart on paper, then reassemble a meaning.", science_tag: "elaboration" },
+      { name: "Choose Your Strategy", minutes: 12, body: "Mixed set — some yield to context, some to word parts, some need both. Students pick and record which they used. The choosing is the skill.", science_tag: "interleaving" },
+      { name: "Substitute and Check", minutes: 8, body: "Teach the verification move: put your meaning back into the sentence. Does it still make sense? Practise on two meanings that nearly work.", science_tag: "elaboration" },
+      { name: "Detective Exit", minutes: 7, body: "One unfamiliar word in context. Students write their meaning, their strategy, and their check.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Strategy anchor chart", "Word-part reference card", "Stop-and-jot signal for unknown words", "Sentence frames for proposing a meaning"],
+    tech: "Slides with sentences one at a time",
+    tech_purpose: "Control the pace so students cannot read ahead",
+    ai_prompts: ["Generate 10 sentences where context reveals a grade 3 word", "List grade 3 words built from common roots and affixes"],
+    assessment: ["Check whether students flag unknown words at all", "Review the strategy each student recorded", "Exit ticket requires meaning, strategy and check"],
+    why_it_works: ["Naming the strategy makes an invisible process teachable", "Mixed practice forces strategy selection rather than drilling one", "The substitution check catches plausible-but-wrong meanings", "Modelling getting stuck normalises the pause"],
+  },
+  {
+    standard_code: "RL.4.1",
+    title: "Said and Unsaid: Explaining with Evidence",
+    badge: "Grade 4",
+    route_name: "Explicit Instruction",
+    route_line: "Separate stated from implied → Build inferences from clues → Cite both",
+    success_criteria: [
+      "Distinguishes what the text states from what it implies",
+      "Supports an inference with two or more clues",
+      "Explains the reasoning, not just the conclusion",
+    ],
+    steps: [
+      { name: "Retrieve the Evidence Habit", minutes: 5, body: "Quick question on a familiar text; students answer with a quote. Re-establish the baseline before adding inference on top.", science_tag: "retrieval" },
+      { name: "Stated vs Implied", minutes: 10, body: "Sort statements about a short passage into 'the text says this' and 'the text hints at this'. Discuss the borderline cases — those are the interesting ones.", science_tag: "dual-coding" },
+      { name: "Model an Inference", minutes: 10, body: "Think aloud: here is clue one, here is clue two, so I conclude this. Show the reasoning explicitly, and show a conclusion you reject for lack of clues.", science_tag: "elaboration" },
+      { name: "Build Inferences Together", minutes: 12, body: "Students collect clues in one column and write the inference in another. Require at least two clues before any conclusion goes down.", science_tag: "collaborative" },
+      { name: "Challenge a Weak Inference", minutes: 8, body: "Present an inference with thin support. Students argue whether the clues carry it. This is where opinion gets separated from inference.", science_tag: "interleaving" },
+      { name: "Independent Application", minutes: 12, body: "New passage, two explicit questions and two inference questions. Every answer needs its details.", science_tag: "retrieval" },
+      { name: "Share the Reasoning", minutes: 5, body: "Two students share an inference and their clue trail. Class checks the chain holds.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Two-column clue/inference organiser", "Sentence stem: 'The text says ___ and ___, so I think ___'", "Numbered paragraphs", "Colour coding for stated vs implied"],
+    tech: "Printed passage plus organiser",
+    tech_purpose: "Keep clues and conclusions physically separate",
+    ai_prompts: ["Write a grade 4 passage with rich inference opportunities", "Generate statements to sort as explicit or implicit for a passage"],
+    assessment: ["Check the clue column is filled before the inference column", "Listen during the weak-inference debate", "Independent work must show reasoning, not just answers"],
+    why_it_works: ["Separating clues from conclusions makes reasoning visible", "Requiring two clues blocks opinion masquerading as inference", "Rejecting a conclusion aloud models intellectual honesty", "The sort surfaces the explicit/implicit line concretely"],
+  },
+  {
+    standard_code: "W.4.1",
+    title: "Because I Said So: Building an Opinion Piece",
+    badge: "Grade 4",
+    route_name: "Writing Workshop",
+    route_line: "Take a position → Build reasons and evidence → Organise and draft",
+    success_criteria: [
+      "States a clear opinion in one sentence",
+      "Gives two or more reasons that add new information",
+      "Supports each reason with a specific fact or example",
+    ],
+    steps: [
+      { name: "Retrieve Opinion vs Fact", minutes: 5, body: "Sort six statements into opinion and fact. Fast. This is the ground the whole lesson stands on.", science_tag: "retrieval" },
+      { name: "Model a Weak Opinion Piece", minutes: 8, body: "Show a piece where every reason restates the opinion. Ask what is missing. Students usually spot the circularity themselves.", science_tag: "elaboration" },
+      { name: "The Because Test", minutes: 10, body: "Teach the test: write your opinion, add 'because', and see whether what follows is new information. Practise on three examples together.", science_tag: "dual-coding" },
+      { name: "Generate Reasons", minutes: 12, body: "Students pick a position and list three candidate reasons. Apply the because test to each. Cross out any that fail.", science_tag: "collaborative" },
+      { name: "Attach Evidence", minutes: 12, body: "Each surviving reason needs a fact or example beneath it. No evidence, no reason — it gets cut. This is where most drafts thin out honestly.", science_tag: "elaboration" },
+      { name: "Order and Link", minutes: 10, body: "Arrange reasons strongest last. Add linking words between them. Model two orderings and discuss which lands better.", science_tag: "interleaving" },
+      { name: "Draft the Opening", minutes: 8, body: "Write the opinion statement and first reason in full. The rest becomes tomorrow's work. Share two openings aloud.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Opinion/reason/evidence organiser", "Linking word bank", "The because test as an anchor chart", "One paragraph drafted, not the whole piece"],
+    tech: "Printed organiser",
+    tech_purpose: "Hold structure while ideas are still moving",
+    ai_prompts: ["Generate 10 grade 4 opinion prompts with two defensible sides", "Write a weak opinion paragraph with circular reasoning for critique"],
+    assessment: ["Check each reason passes the because test", "Confirm every reason carries evidence", "Read the drafted opening for a clear position"],
+    why_it_works: ["The because test gives students a self-check they can run alone", "Critiquing a weak model is easier than producing a strong one cold", "Cutting unsupported reasons teaches that evidence comes first", "Drafting one paragraph well beats rushing a whole piece"],
+  },
+  {
+    standard_code: "SL.5.1",
+    title: "Building On: Discussion That Goes Somewhere",
+    badge: "Grade 5",
+    route_name: "Structured Discussion",
+    route_line: "Set the norms → Practise the moves → Run a real discussion",
+    success_criteria: [
+      "References the previous speaker before adding an idea",
+      "Contributes at least twice without dominating",
+      "Asks a question that moves the discussion forward",
+    ],
+    steps: [
+      { name: "Retrieve the Norms", minutes: 5, body: "Students recall the discussion norms from memory before you display them. Retrieval, then confirmation.", science_tag: "retrieval" },
+      { name: "Name the Talk Moves", minutes: 8, body: "Introduce four moves: build on, respectfully disagree, ask for evidence, clarify. Give a stem for each. Keep the chart visible all lesson.", science_tag: "dual-coding" },
+      { name: "Fishbowl a Bad Discussion", minutes: 8, body: "Stage a discussion where everyone talks but nobody connects. Students name what is missing. The contrast teaches faster than a rule.", science_tag: "elaboration" },
+      { name: "Practise One Move", minutes: 10, body: "Triads. Every contribution must start with the build-on stem. Awkward at first — that is the point of isolating it.", science_tag: "collaborative" },
+      { name: "Add the Other Moves", minutes: 12, body: "Open up to all four moves. Students track which they used on a tally sheet. Mixing them is harder than any one alone.", science_tag: "interleaving" },
+      { name: "Full Discussion", minutes: 12, body: "Whole group on a text-based question. Use talk tokens so airtime is visible. Stay out of it — let silences sit.", science_tag: "collaborative" },
+      { name: "Reflect on the Talk", minutes: 5, body: "Students name one move they used and one they want to try next time. Collect the tallies.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Talk move anchor chart with stems", "Talk tokens to make airtime visible", "Tally sheet for self-monitoring", "Triads before whole group"],
+    tech: "Printed tally sheets",
+    tech_purpose: "Let students see their own participation",
+    ai_prompts: ["Generate 8 discussable questions for a grade 5 text", "Write a scripted example of disconnected discussion for critique"],
+    assessment: ["Collect talk move tallies", "Note who spoke and who did not via tokens", "Listen for build-on stems used naturally by the end"],
+    why_it_works: ["Isolating one move before combining prevents overload", "Talk tokens surface participation imbalance without shaming", "Critiquing a bad model defines the target concretely", "Teacher silence is what creates student talk"],
+  },
+  {
+    standard_code: "RI.5.2",
+    title: "More Than One Big Idea",
+    badge: "Grade 5",
+    route_name: "Explicit Instruction",
+    route_line: "Section the text → Name an idea per section → Summarise the whole",
+    success_criteria: [
+      "Identifies two or more main ideas in one text",
+      "Matches supporting details to the right idea",
+      "Writes a summary under the word limit without retelling",
+    ],
+    steps: [
+      { name: "Retrieve Main Idea", minutes: 5, body: "One short paragraph, one main idea, said aloud. Confirm the foundation before complicating it.", science_tag: "retrieval" },
+      { name: "Why One Idea Is Not Enough", minutes: 8, body: "Show a text with two clear ideas. Ask for the main idea. Watch the disagreement. Reveal that both are right — the text carries two.", science_tag: "elaboration" },
+      { name: "Section the Text", minutes: 10, body: "Model dividing a text by where the idea shifts. Students mark their own boundaries. Compare — the boundaries themselves are worth arguing about.", science_tag: "dual-coding" },
+      { name: "Name an Idea Per Section", minutes: 12, body: "One sentence per section. Then sort the supporting details underneath the idea they serve.", science_tag: "collaborative" },
+      { name: "Summary vs Retell", minutes: 8, body: "Show a retell and a summary of the same text side by side. Students name every difference. Introduce the word limit.", science_tag: "interleaving" },
+      { name: "Write the Summary", minutes: 12, body: "Both main ideas, under 60 words. The limit forces selection. Students count and cut.", science_tag: "elaboration" },
+      { name: "Trade and Trim", minutes: 5, body: "Partners swap summaries and each cut five words without losing meaning. Share one trimmed version.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Section markers for the text", "Idea/detail sorting organiser", "Visible word counter", "Side-by-side retell and summary model"],
+    tech: "Printed text with wide margins",
+    tech_purpose: "Room to mark section boundaries",
+    ai_prompts: ["Write a grade 5 informational text carrying two distinct main ideas", "Produce a retell and a summary of the same passage for comparison"],
+    assessment: ["Check section boundaries are justified", "Confirm details are sorted under the right idea", "Summaries must be under the word limit and cover both ideas"],
+    why_it_works: ["Manufactured disagreement makes the two-idea structure obvious", "Sectioning gives a procedure rather than a vague instruction", "The word limit is what forces summarising over retelling", "Trimming a peer's work sharpens judgement about what matters"],
+  },
+  {
+    standard_code: "RL.7.2",
+    title: "Tracing a Theme Across a Text",
+    badge: "Grade 7",
+    route_name: "Analytical Reading",
+    route_line: "Separate topic from theme → Track development → Summarise objectively",
+    success_criteria: [
+      "States a theme as a full claim about life, not a topic word",
+      "Cites moments from across the text that develop it",
+      "Writes a summary free of personal judgement",
+    ],
+    steps: [
+      { name: "Retrieve Theme vs Topic", minutes: 5, body: "Give five words and five sentences; students sort them into topic and theme. The distinction should be automatic before analysis starts.", science_tag: "retrieval" },
+      { name: "Reject a Topic Answer", minutes: 8, body: "Offer 'friendship' as a theme. Push: what about friendship? Build the claim together until it says something.", science_tag: "elaboration" },
+      { name: "Model Tracking", minutes: 10, body: "Take a theme claim through three moments — early, middle, late. Show how the author's treatment shifts. Development is the word doing the work here.", science_tag: "dual-coding" },
+      { name: "Collect the Moments", minutes: 14, body: "Students choose a theme claim and find three supporting moments spread across the text, not clustered in one chapter.", science_tag: "collaborative" },
+      { name: "Test the Claim", minutes: 10, body: "Partners challenge each other: does the evidence actually support that claim, or a different one? Revise claims that do not survive.", science_tag: "interleaving" },
+      { name: "Draft the Objective Summary", minutes: 10, body: "Summarise with evaluative language banned. Students circle any word that sneaks opinion in and replace it.", science_tag: "elaboration" },
+      { name: "Share and Compare Claims", minutes: 5, body: "Two different theme claims for the same text, both defensible. Discuss why a text can carry more than one.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Theme claim sentence frame", "Timeline organiser for tracking moments", "Banned-word list for objective summary", "Topic/theme sort as a reference"],
+    tech: "Printed text plus timeline organiser",
+    tech_purpose: "Show development as movement across the text",
+    ai_prompts: ["Generate theme claims and topic words for a short story to sort", "List evaluative words students should avoid in objective summaries"],
+    assessment: ["Check theme is a claim, not a topic", "Confirm moments are spread across the text", "Scan summaries for evaluative language"],
+    why_it_works: ["Pushing past a topic word is where theme instruction usually stops short", "Spreading evidence across the text is what makes it development", "Peer challenge forces claims to earn their evidence", "Banning evaluative words makes objectivity concrete"],
+  },
+  {
+    standard_code: "RI.8.1",
+    title: "Strongest Evidence Wins",
+    badge: "Grade 8",
+    route_name: "Analytical Reading",
+    route_line: "Gather candidates → Compare their strength → Analyse, do not just quote",
+    success_criteria: [
+      "Selects the quote that most directly supports the claim",
+      "Justifies why it beats the alternatives",
+      "Follows every quote with analysis, not restatement",
+    ],
+    steps: [
+      { name: "Retrieve Claim and Evidence", minutes: 5, body: "Given a claim, students find any supporting quote. Establish the floor before raising it.", science_tag: "retrieval" },
+      { name: "Two Quotes, One Claim", minutes: 10, body: "Present a claim with two quotes that both fit. Ask which is stronger and why. The argument is the lesson.", science_tag: "elaboration" },
+      { name: "Build Strength Criteria", minutes: 10, body: "From the debate, draw out what made one stronger: directness, specificity, absence of qualifiers. Chart it.", science_tag: "dual-coding" },
+      { name: "Rank the Candidates", minutes: 12, body: "Students find three quotes for a claim and rank them against the criteria. Ranking beats selecting for making the reasoning visible.", science_tag: "collaborative" },
+      { name: "Quote Sandwich", minutes: 10, body: "Teach the structure: set up the quote, give the quote, analyse it. Show a version where the analysis merely restates the quote and fix it together.", science_tag: "interleaving" },
+      { name: "Write the Analysis", minutes: 12, body: "Students write claim, strongest quote, and analysis. The analysis must explain how the evidence works, not repeat it.", science_tag: "elaboration" },
+      { name: "Defend a Choice", minutes: 6, body: "Two students defend why their quote was strongest. Class probes. Revise if the defence does not hold.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Evidence strength criteria chart", "Ranking organiser for three quotes", "Quote sandwich frame", "Annotated example with weak analysis marked"],
+    tech: "Printed article with line numbers",
+    tech_purpose: "Make precise citation possible",
+    ai_prompts: ["Generate a claim with three quotes of varying strength", "Write a paragraph where the analysis restates rather than analyses"],
+    assessment: ["Check rankings carry justifications", "Confirm analysis goes beyond restatement", "Listen to the defences for criteria-based reasoning"],
+    why_it_works: ["Ranking surfaces reasoning that selection hides", "Student-built criteria stick better than a given rubric", "The restatement trap is the single most common analysis failure", "Public defence raises the standard of the written work"],
+  },
+  {
+    standard_code: "K.CC.A.1",
+    title: "All the Way to 100",
+    badge: "Kindergarten",
+    route_name: "Routine and Practice",
+    route_line: "Daily count → Attack the hard spots → Count by tens",
+    success_criteria: [
+      "Counts to 100 by ones without support",
+      "Crosses each decade change without stalling",
+      "Counts to 100 by tens",
+    ],
+    steps: [
+      { name: "Daily Count Routine", minutes: 5, body: "Whole class counts from 1 as far as accuracy holds. Note where it wobbles. This runs every day, not just today.", science_tag: "spaced" },
+      { name: "Attack the Decade Changes", minutes: 10, body: "Isolate the transitions: 29 to 30, 39 to 40, and so on. Chant just the crossings. This is where nearly every breakdown happens.", science_tag: "retrieval" },
+      { name: "Count on the Hundred Chart", minutes: 10, body: "Point to each number while counting. The visual makes the decade pattern jump out — every new row starts a new ten.", science_tag: "dual-coding" },
+      { name: "Count with a Partner", minutes: 8, body: "Partners alternate numbers. Alternating means neither can coast on the other's voice.", science_tag: "collaborative" },
+      { name: "Start From Anywhere", minutes: 10, body: "Give a starting number and count on. Removes reliance on running up from one, which hides gaps.", science_tag: "interleaving" },
+      { name: "Count by Tens", minutes: 10, body: "Ten, twenty, thirty. Show the column on the hundred chart. Connect it to bundles of ten objects.", science_tag: "dual-coding" },
+      { name: "Individual Check", minutes: 7, body: "One at a time while others work: count from a given number, and count by tens. Log where each child stops.", science_tag: "retrieval" },
+    ],
+    ef_supports: ["Hundred chart at every desk", "Decade transition cards", "Partner alternation to maintain attention", "Ten-frames for bundling"],
+    tech: "Printed hundred charts",
+    tech_purpose: "Make the base-ten pattern visible",
+    ai_prompts: ["Generate counting-on starting numbers focused on decade boundaries", "Make a hundred chart with the tens column highlighted"],
+    assessment: ["Note where the whole-class count wobbles", "Individual count from a given number", "Log each child's stopping point over time"],
+    why_it_works: ["Decade transitions are the actual failure point, so drill them directly", "Starting from anywhere exposes gaps the rote run hides", "The hundred chart makes base ten a visual pattern", "Daily repetition is what builds the sequence"],
+  },
+  {
+    standard_code: "1.OA.A.1",
+    title: "What Is the Story Asking?",
+    badge: "Grade 1",
+    route_name: "Concrete-Representational-Abstract",
+    route_line: "Act it out → Draw it → Write the equation",
+    success_criteria: [
+      "Models the problem with objects or a drawing",
+      "Writes an equation that matches the situation",
+      "Explains why the operation fits, not just what the answer is",
+    ],
+    steps: [
+      { name: "Retrieve Facts Within 10", minutes: 5, body: "Rapid facts to free up working memory for the problem-solving itself.", science_tag: "retrieval" },
+      { name: "Act Out a Problem", minutes: 10, body: "Read a word problem. Students physically act it out with counters. No equation yet — the situation comes first.", science_tag: "dual-coding" },
+      { name: "Draw the Structure", minutes: 10, body: "Model a bar diagram: two parts and a whole. Show where the unknown sits. Same diagram, different unknown positions.", science_tag: "dual-coding" },
+      { name: "Trap the Keyword Habit", minutes: 10, body: "Give a compare problem containing 'more' that needs subtraction. Let the keyword strategy fail publicly, then discuss why it is unreliable.", science_tag: "elaboration" },
+      { name: "Match Equations to Stories", minutes: 12, body: "Students match story cards to equation cards. Some equations fit two stories — that is worth noticing.", science_tag: "interleaving" },
+      { name: "Solve and Justify", minutes: 10, body: "Three problems of different types. Every answer needs a drawing and a sentence explaining the operation choice.", science_tag: "collaborative" },
+      { name: "Share a Tricky One", minutes: 5, body: "Take the compare problem. Two students explain their reasoning. Reinforce that the story, not the word, decides.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Counters for acting out", "Bar diagram template", "Story and equation matching cards", "Sentence frame for justifying the operation"],
+    tech: "Printed problem cards",
+    tech_purpose: "Let students sort and match physically",
+    ai_prompts: ["Generate word problems across all four types within 20", "Write compare problems where the keyword misleads"],
+    assessment: ["Check drawings match the situation", "Look for keyword-driven answers on the compare problem", "Require a justification sentence with each answer"],
+    why_it_works: ["Acting out builds the situation before the symbols", "Letting the keyword strategy fail is more convincing than banning it", "Bar diagrams handle unknowns in any position", "Matching tasks reveal structure without demanding computation"],
+  },
+  {
+    standard_code: "2.NBT.A.1",
+    title: "What Each Digit Is Worth",
+    badge: "Grade 2",
+    route_name: "Concrete-Representational-Abstract",
+    route_line: "Build it → Draw it → Write it",
+    success_criteria: [
+      "States the value of each digit in a three-digit number",
+      "Writes a number in expanded form",
+      "Explains what a zero placeholder is doing",
+    ],
+    steps: [
+      { name: "Retrieve Tens and Ones", minutes: 5, body: "Two-digit numbers: what is each digit worth? Confirm the foundation before adding hundreds.", science_tag: "retrieval" },
+      { name: "Build with Base Ten", minutes: 12, body: "Students build three-digit numbers with blocks. Say the number, build it, say what each part is worth. Physical first.", science_tag: "dual-coding" },
+      { name: "Draw the Blocks", minutes: 10, body: "Move from blocks to quick sketches — squares, sticks, dots. The drawing carries the structure without the manipulative.", science_tag: "dual-coding" },
+      { name: "Write Expanded Form", minutes: 10, body: "347 becomes 300 + 40 + 7. Connect each addend back to the drawing. The link between the two is the point.", science_tag: "elaboration" },
+      { name: "The Zero Problem", minutes: 10, body: "Compare 307 and 37. Build both. Discuss what the zero is holding open. This is where place value either lands or does not.", science_tag: "interleaving" },
+      { name: "Regroup Flexibly", minutes: 10, body: "Show 347 as 34 tens and 7 ones. Students find another way to make the same number. Flexibility beats a single reading.", science_tag: "elaboration" },
+      { name: "Exit Check", minutes: 5, body: "One number: state each digit's value and write expanded form.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Base ten blocks", "Place value mat with labelled columns", "Quick-draw key for blocks", "Side-by-side comparison of 307 and 37"],
+    tech: "Base ten blocks and place value mats",
+    tech_purpose: "Make abstract value physically countable",
+    ai_prompts: ["Generate three-digit numbers including zero placeholders", "Create a place value mat template for hundreds, tens and ones"],
+    assessment: ["Watch builds for correct place assignment", "Check expanded form matches the drawing", "Exit ticket on digit values"],
+    why_it_works: ["Concrete before abstract is what makes place value stick", "The zero comparison targets the most common misconception directly", "Flexible regrouping prevents a rigid single reading", "Quick sketches bridge blocks and symbols"],
+  },
+  {
+    standard_code: "3.OA.A.1",
+    title: "Groups of: Making Sense of Multiplication",
+    badge: "Grade 3",
+    route_name: "Concrete-Representational-Abstract",
+    route_line: "Build equal groups → Draw arrays → Write and read expressions",
+    success_criteria: [
+      "Builds a model matching a multiplication expression",
+      "Explains what each factor represents",
+      "Distinguishes 5 × 7 from 7 × 5 as situations",
+    ],
+    steps: [
+      { name: "Retrieve Skip Counting", minutes: 5, body: "Skip count by 2s, 5s and 10s. Fast. This is the bridge into multiplication.", science_tag: "retrieval" },
+      { name: "Build Equal Groups", minutes: 10, body: "Five groups of seven counters. Students build it, count it, then hear the expression 5 × 7 named against what they built.", science_tag: "dual-coding" },
+      { name: "Turn Groups into Arrays", minutes: 10, body: "Rearrange the same counters into rows and columns. Same total, tidier structure. Introduce rows-by-columns language.", science_tag: "dual-coding" },
+      { name: "Two Stories, One Product", minutes: 12, body: "Draw 5 × 7 and 7 × 5. Same answer, different situations. Students write a story for each. The distinction matters and gets skipped often.", science_tag: "elaboration" },
+      { name: "Match Expressions to Models", minutes: 10, body: "Cards with models and cards with expressions. Students match, then justify. Mismatched pairs are the useful ones.", science_tag: "interleaving" },
+      { name: "Draw Before Answering", minutes: 10, body: "Four expressions. Students draw the model first, then find the product. Drawing is required, not optional.", science_tag: "collaborative" },
+      { name: "Explain a Factor", minutes: 5, body: "Point at an expression: what does this number tell us? What does that one? Two students explain.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Counters for building groups", "Grid paper for arrays", "Model and expression matching cards", "Sentence frame: '___ groups of ___'"],
+    tech: "Counters and grid paper",
+    tech_purpose: "Make equal groups physical before symbolic",
+    ai_prompts: ["Generate story pairs distinguishing 5 × 7 from 7 × 5", "Create model cards and expression cards for matching"],
+    assessment: ["Check models match expressions", "Read the two stories for situational difference", "Ask individuals what each factor represents"],
+    why_it_works: ["Equal groups is the meaning; memorised facts without it collapse later", "The commutativity discussion prevents a shallow reading", "Requiring a drawing blocks answer-first guessing", "Arrays connect multiplication to area work ahead"],
+  },
+  {
+    standard_code: "3.NF.A.1",
+    title: "Equal Parts of a Whole",
+    badge: "Grade 3",
+    route_name: "Concrete-Representational-Abstract",
+    route_line: "Fold and cut → Name unit fractions → Build any fraction",
+    success_criteria: [
+      "Partitions a whole into equal parts",
+      "Names a unit fraction correctly",
+      "Explains what the numerator and denominator each tell you",
+    ],
+    steps: [
+      { name: "Retrieve Halves and Quarters", minutes: 5, body: "Fold paper in half, then quarters. Name them. Ground the lesson in what students already do.", science_tag: "retrieval" },
+      { name: "Equal or Not", minutes: 10, body: "Show shapes split into equal and unequal parts. Sort them. Unequal parts are not fractions — establish this hard and early.", science_tag: "dual-coding" },
+      { name: "Build Unit Fractions", minutes: 12, body: "Fold strips into thirds, fourths, sixths. Shade one part. Name it. The denominator is the size of the piece, said aloud every time.", science_tag: "elaboration" },
+      { name: "From Unit to Any Fraction", minutes: 10, body: "Shade three of four parts. Three copies of one-fourth. Build a/b from repeated 1/b rather than as a new idea.", science_tag: "elaboration" },
+      { name: "The Denominator Trap", minutes: 10, body: "Ask what the 4 in 3/4 means. Catch the 'how many left' answer. Return to the strips to resolve it.", science_tag: "interleaving" },
+      { name: "Match Fractions to Models", minutes: 10, body: "Cards with shaded models and cards with fractions. Include unequal-part distractors that should not match anything.", science_tag: "collaborative" },
+      { name: "Explain the Two Numbers", minutes: 5, body: "One fraction on the board. Two students explain top and bottom in their own words.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Fraction strips to fold", "Equal/unequal sorting cards", "Sentence frame: '___ parts out of ___ equal parts'", "Distractor cards with unequal parts"],
+    tech: "Paper strips and fraction cards",
+    tech_purpose: "Let students create the partitions themselves",
+    ai_prompts: ["Generate shapes with equal and unequal partitions for sorting", "Create fraction model cards including unequal distractors"],
+    assessment: ["Check partitions are genuinely equal", "Listen for 'how many left' when asked about the denominator", "Individual explanation of numerator and denominator"],
+    why_it_works: ["Folding makes equal partitioning a physical act, not a rule", "Building a/b from 1/b keeps unit fractions foundational", "Distractor cards test the equal-parts requirement", "Naming the denominator as piece size heads off the classic error"],
+  },
+  {
+    standard_code: "4.NBT.B.5",
+    title: "Breaking Numbers Apart to Multiply",
+    badge: "Grade 4",
+    route_name: "Strategy Instruction",
+    route_line: "Decompose by place value → Model the area → Sum the parts",
+    success_criteria: [
+      "Decomposes each factor by place value",
+      "Finds every partial product in an area model",
+      "Explains why breaking numbers apart is legitimate",
+    ],
+    steps: [
+      { name: "Retrieve Multiplication Facts", minutes: 5, body: "Facts within 100, fast. Weak recall here will sink the whole strategy.", science_tag: "retrieval" },
+      { name: "Decompose by Place Value", minutes: 8, body: "34 becomes 30 + 4. Practise splitting several numbers before multiplying anything.", science_tag: "dual-coding" },
+      { name: "Build the Area Model", minutes: 12, body: "Draw a rectangle for 34 × 26. Split both sides. Four regions, four partial products. Every piece has a home in the grid.", science_tag: "dual-coding" },
+      { name: "Why This Works", minutes: 8, body: "Connect the four regions to the distributive property. Students see the whole rectangle is the sum of its parts — that is the justification.", science_tag: "elaboration" },
+      { name: "Practise the Model", minutes: 12, body: "Three problems using the area model. Neatness matters here — misaligned partial products are the main error source.", science_tag: "collaborative" },
+      { name: "Model Beside Algorithm", minutes: 10, body: "Same problem both ways, side by side. Students find each partial product in the algorithm. The algorithm becomes readable rather than magic.", science_tag: "interleaving" },
+      { name: "Exit Problem", minutes: 5, body: "One two-by-two problem with the area model shown.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Grid paper for area models", "Place value decomposition practice", "Colour coding for each partial product", "Side-by-side model and algorithm template"],
+    tech: "Grid paper",
+    tech_purpose: "Keep partial products aligned",
+    ai_prompts: ["Generate two-digit by two-digit problems with clean decompositions", "Create a side-by-side area model and algorithm template"],
+    assessment: ["Check all four partial products appear", "Confirm students can point to each in the algorithm", "Exit problem must show the model"],
+    why_it_works: ["The area model makes the distributive property visible rather than asserted", "Every partial product having a grid cell prevents dropped terms", "Linking model to algorithm stops the algorithm being memorised blindly", "Fact fluency first frees attention for the strategy"],
+  },
+  {
+    standard_code: "5.NF.A.1",
+    title: "Renaming Fractions So They Can Be Added",
+    badge: "Grade 5",
+    route_name: "Strategy Instruction",
+    route_line: "See why it fails → Rename to a common denominator → Add and subtract",
+    success_criteria: [
+      "Explains why numerators cannot simply be added across unlike denominators",
+      "Generates a common denominator and renames both fractions",
+      "Handles mixed numbers including regrouping",
+    ],
+    steps: [
+      { name: "Retrieve Equivalent Fractions", minutes: 5, body: "Give a fraction, students produce two equivalents. This is the engine of the whole lesson.", science_tag: "retrieval" },
+      { name: "Watch the Error Fail", minutes: 10, body: "Add 1/2 + 1/3 as 2/5 with fraction strips. The strips show 2/5 is smaller than 1/2 — impossible. Let the contradiction land.", science_tag: "dual-coding" },
+      { name: "Find a Common Unit", minutes: 12, body: "With strips, find a piece size that measures both halves and thirds. Sixths. Common denominators as a shared unit, not a rule.", science_tag: "elaboration" },
+      { name: "Rename and Add", minutes: 12, body: "Rename both fractions to sixths, then add. Connect every symbolic step back to the strips.", science_tag: "elaboration" },
+      { name: "Subtract Too", minutes: 10, body: "Same renaming, subtraction. Include one that needs regrouping from a mixed number.", science_tag: "interleaving" },
+      { name: "Mixed Practice", minutes: 12, body: "Add and subtract problems shuffled, some with mixed numbers. Shuffling forces reading the problem rather than repeating a procedure.", science_tag: "interleaving" },
+      { name: "Explain the Why", minutes: 5, body: "One student explains to the class why you cannot add across unlike denominators. In their own words.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Fraction strips", "Common denominator finding chart", "Worked example with each step labelled", "Mixed number to improper conversion reference"],
+    tech: "Fraction strips or circles",
+    tech_purpose: "Make the impossibility of the common error visible",
+    ai_prompts: ["Generate unlike-denominator problems with accessible common denominators", "Create problems requiring regrouping with mixed numbers"],
+    assessment: ["Check renaming is correct before the addition", "Watch for numerator-and-denominator adding", "Ask individuals to justify the common denominator step"],
+    why_it_works: ["Seeing the error produce an impossible result is more persuasive than a rule", "Common denominators as a shared unit connects to measurement thinking", "Shuffled practice prevents procedural autopilot", "Strips anchor every symbolic move to a quantity"],
+  },
+  {
+    standard_code: "6.RP.A.3",
+    title: "Ratios in the Real World",
+    badge: "Grade 6",
+    route_name: "Multiple Representations",
+    route_line: "Build a table → Draw the relationship → Solve with what fits",
+    success_criteria: [
+      "Builds a table of equivalent ratios that scales correctly",
+      "Finds and labels a unit rate with its units",
+      "Chooses a representation and justifies the choice",
+    ],
+    steps: [
+      { name: "Retrieve Equivalent Fractions", minutes: 5, body: "Quick equivalence practice. Ratios scale the same way, and that link is worth making explicit.", science_tag: "retrieval" },
+      { name: "The Additive Trap", minutes: 10, body: "Ask whether 3:4 and 4:5 are equivalent. Many will say yes. Build both as tables and let the mismatch show.", science_tag: "elaboration" },
+      { name: "Build Ratio Tables", minutes: 12, body: "From one ratio, scale up and down. Students find the multiplicative pattern between rows and between columns.", science_tag: "dual-coding" },
+      { name: "Double Number Lines", minutes: 10, body: "Same relationship, second representation. Useful when the question asks for a value between table rows.", science_tag: "dual-coding" },
+      { name: "Unit Rate with Units", minutes: 10, body: "Divide to get per-one. Label units at every step — inverted unit rates come from dropped labels.", science_tag: "elaboration" },
+      { name: "Choose Your Tool", minutes: 12, body: "Mixed problems where different representations are most efficient. Students pick and justify. The choosing is the skill.", science_tag: "interleaving" },
+      { name: "Compare Approaches", minutes: 5, body: "One problem solved two ways on the board. Discuss which was faster and why.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Ratio table template", "Double number line template", "Unit labels required at every step", "Worked example of each representation"],
+    tech: "Printed templates for tables and number lines",
+    tech_purpose: "Lower the setup cost of each representation",
+    ai_prompts: ["Generate real-world ratio problems suited to different representations", "Create additive-trap questions where 3:4 and 4:5 are compared"],
+    assessment: ["Check tables scale multiplicatively", "Confirm unit rates carry correct units", "Ask for justification of the representation chosen"],
+    why_it_works: ["The additive trap is the dominant ratio misconception, so confront it head on", "Multiple representations build flexibility rather than one procedure", "Unit labelling prevents inverted rates", "Justifying the choice is what separates reasoning from recipe-following"],
+  },
+  {
+    standard_code: "7.EE.B.4",
+    title: "From Story to Equation",
+    badge: "Grade 7",
+    route_name: "Mathematical Modelling",
+    route_line: "Name the unknown → Build the equation → Solve and interpret",
+    success_criteria: [
+      "Defines a variable with its units",
+      "Writes an equation whose structure matches the situation",
+      "Interprets the solution back in context",
+    ],
+    steps: [
+      { name: "Retrieve Solving Moves", minutes: 5, body: "Two-step equations, quickly. Solving must be automatic before modelling can get attention.", science_tag: "retrieval" },
+      { name: "Name the Unknown", minutes: 8, body: "Read a problem. Before anything else, write 'let x = ' with units attached. Most modelling errors start with a vague variable.", science_tag: "elaboration" },
+      { name: "Match Structure to Story", minutes: 12, body: "Story cards and equation cards. Match them. Some stories fit more than one form — discuss why.", science_tag: "dual-coding" },
+      { name: "Build Equations Together", minutes: 12, body: "New problems. Underline the quantities, label them, then write the equation. The labelling step is not optional.", science_tag: "collaborative" },
+      { name: "Inequalities Too", minutes: 10, body: "Shift to 'at least' and 'no more than'. Students write and solve, then test the solution back in the original statement.", science_tag: "interleaving" },
+      { name: "Interpret the Answer", minutes: 10, body: "x = 7.5 buses means 8 buses. Practise problems where the mathematical answer needs contextual judgement.", science_tag: "elaboration" },
+      { name: "Share a Model", minutes: 5, body: "Two students share how they set up the same problem differently. Both can be right.", science_tag: "spaced" },
+    ],
+    ef_supports: ["'Let x = ' sentence starter with units", "Story and equation matching cards", "Underline-and-label routine", "Checking frame for testing solutions"],
+    tech: "Printed matching cards",
+    tech_purpose: "Separate modelling from computation",
+    ai_prompts: ["Generate real-world problems modelled by two-step equations", "Write problems where the answer needs rounding in context"],
+    assessment: ["Check variables are defined with units", "Confirm equation structure matches the story", "Require an interpretation sentence with every answer"],
+    why_it_works: ["Defining the variable precisely is where most modelling errors are prevented", "Matching separates the modelling skill from the solving skill", "Testing solutions back catches inequality sign errors", "Contextual interpretation is what makes it modelling rather than algebra"],
+  },
+  {
+    standard_code: "8.EE.C.7",
+    title: "One, None, or Infinitely Many",
+    badge: "Grade 8",
+    route_name: "Strategy Instruction",
+    route_line: "Simplify each side → Solve → Classify the solution",
+    success_criteria: [
+      "Distributes correctly, including across a negative",
+      "Collects like terms before solving",
+      "Classifies an equation as having one, no, or infinitely many solutions",
+    ],
+    steps: [
+      { name: "Retrieve Like Terms", minutes: 5, body: "Simplify four expressions. Collecting like terms must be automatic before equations get complicated.", science_tag: "retrieval" },
+      { name: "The Negative Distribution Trap", minutes: 10, body: "Work 5 - 2(x + 3) with and without distributing the negative. Compare results. Teach rewriting subtraction as adding a negative.", science_tag: "elaboration" },
+      { name: "Simplify Then Solve", minutes: 12, body: "Establish the order: expand, collect, then solve. Three problems following the sequence explicitly.", science_tag: "dual-coding" },
+      { name: "Meet 0 = 0 and 3 = 5", minutes: 12, body: "Two equations that collapse. Students solve and hit a statement with no variable. Discuss what each collapse means.", science_tag: "elaboration" },
+      { name: "Sort by Solution Type", minutes: 12, body: "A stack of equations sorted into one solution, no solution, infinitely many. Sorting forces the classification to be reasoned.", science_tag: "interleaving" },
+      { name: "Mixed Practice", minutes: 10, body: "Shuffled equations of all three types. Students solve and classify. Shuffling stops students expecting a type.", science_tag: "interleaving" },
+      { name: "Explain a Collapse", minutes: 5, body: "One student explains why 0 = 0 means infinitely many solutions, not none. The most persistent confusion in this standard.", science_tag: "spaced" },
+    ],
+    ef_supports: ["Order-of-operations checklist for solving", "Rewrite-subtraction-as-adding reference", "Sorting mats for the three solution types", "Worked examples of each collapse"],
+    tech: "Printed equation cards for sorting",
+    tech_purpose: "Make classification a physical decision",
+    ai_prompts: ["Generate equations of all three solution types with distribution required", "Create problems where the negative must be distributed"],
+    assessment: ["Check negative distribution on every problem", "Confirm classifications are justified", "Ask for an explanation of 0 = 0 versus 3 = 5"],
+    why_it_works: ["Negative distribution is the highest-frequency error, so target it directly", "Sorting demands classification rather than procedural solving", "Shuffled types prevent pattern-matching to an expected answer", "The 0 = 0 confusion needs explicit airtime or it persists"],
+  },
+];
+
+const pilotCodes = standardsData.map((s) => s.code);
+
+async function seedStandards() {
+  console.log("📚 Standards");
+  for (const standard of standardsData) {
+    try {
+      await db
+        .insert(standards)
+        .values(standard)
+        .onConflictDoUpdate({
+          target: standards.code,
+          set: {
+            name: standard.name,
+            plain_reading: standard.plain_reading,
+            learning_target: standard.learning_target,
+            skills: standard.skills,
+            science_tags: standard.science_tags,
+            match_keys: standard.match_keys,
+          },
+        });
+      console.log(`  ✓ ${standard.code}`);
+    } catch (e) {
+      console.log(`  ✗ ${standard.code}: ${(e as any).message?.substring(0, 120)}`);
+    }
+  }
+}
+
+async function seedUnpacks() {
+  console.log("\n📖 Unpacks");
+  // No unique constraint on standard_code, so clear this batch before reinserting
+  // to keep the script idempotent rather than piling up duplicate rows.
+  await db.delete(standard_unpacks).where(inArray(standard_unpacks.standard_code, pilotCodes));
+  for (const unpack of unpacksData) {
+    try {
+      await db.insert(standard_unpacks).values(unpack);
+      console.log(`  ✓ ${unpack.standard_code}`);
+    } catch (e) {
+      console.log(`  ✗ ${unpack.standard_code}: ${(e as any).message?.substring(0, 120)}`);
+    }
+  }
+}
+
+async function seedBlueprints() {
+  console.log("\n🎨 Blueprints");
+  await db.delete(lesson_blueprints).where(inArray(lesson_blueprints.standard_code, pilotCodes));
+  for (const blueprint of blueprintsData) {
+    try {
+      await db.insert(lesson_blueprints).values(blueprint);
+      console.log(`  ✓ ${blueprint.standard_code}`);
+    } catch (e) {
+      console.log(`  ✗ ${blueprint.standard_code}: ${(e as any).message?.substring(0, 120)}`);
+    }
+  }
+}
+
+async function main() {
+  console.log(`🚀 Seeding ${standardsData.length} pilot standards\n`);
+  try {
+    await seedStandards();
+    await seedUnpacks();
+    await seedBlueprints();
+    console.log("\n✨ Pilot seed complete");
+    process.exit(0);
+  } catch (error) {
+    console.error("❌ Seed failed:", error);
+    process.exit(1);
+  }
+}
+
+main();
