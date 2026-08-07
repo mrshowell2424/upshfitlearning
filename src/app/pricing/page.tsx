@@ -4,6 +4,21 @@ import Link from 'next/link'
 import Header from '@/components/shared/Header'
 import Footer from '@/components/shared/Footer'
 
+/**
+ * Where the Pro button sends people.
+ *
+ * A Stripe Payment Link, set as a build variable. Deliberately not the
+ * half-built checkout API: a hosted link needs no keys, no webhook and no
+ * success page, and access is granted by hand afterwards with
+ * scripts/grant-access.ts. That is the right amount of machinery for the first
+ * handful of customers, and it can be swapped for real checkout later without
+ * touching this page.
+ *
+ * Unset — as in local development — the button falls back to sign-up, so the
+ * page is never broken by a missing variable.
+ */
+const CHECKOUT_URL = process.env.NEXT_PUBLIC_CHECKOUT_URL
+
 export default function PricingPage() {
   const plans = [
     {
@@ -33,7 +48,7 @@ export default function PricingPage() {
         'Priority support',
       ],
       cta: 'Upgrade to Pro',
-      ctaHref: '/auth/signin',
+      ctaHref: CHECKOUT_URL || '/auth/signup',
       highlighted: true,
     },
     {
