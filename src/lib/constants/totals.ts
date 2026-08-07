@@ -17,4 +17,4 @@
 export const RESOURCE_TOTAL = 2760
 
 /** Standards carrying a full unpack and lesson blueprint. */
-export const STANDARD_TOTAL = 144
+export const STANDARD_TOTAL = 163

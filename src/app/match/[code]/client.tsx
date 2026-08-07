@@ -661,19 +661,32 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
               we don&apos;t just teach the standard. We design the learning so students can actually learn.
             </p>
             <div className="flex items-center gap-3 flex-wrap">
+              {/* The first two chips are the two halves of the thesis, so each
+                  leads to the thing it names: the standards themselves, and the
+                  science the steps are built on. */}
               {[
-                { label: "Standard", color: "var(--color-navy)" },
-                { label: "Learning science", color: "var(--color-teal)" },
-                { label: "Meaningful learning", color: LABEL.violet },
+                { label: "Standard", color: "var(--color-navy)", href: "/match" },
+                { label: "Learning science", color: "var(--color-teal)", href: "/learning-science" },
+                { label: "Meaningful learning", color: LABEL.violet, href: null },
               ].map((chip, idx) => (
                 <div key={chip.label} className="flex items-center gap-3">
                   {idx > 0 && <span className="text-text-faint" aria-hidden="true">→</span>}
-                  <span
-                    className="inline-block px-4 py-2.5 rounded-lg text-[13px] font-bold uppercase tracking-[0.08em] text-white"
-                    style={{ backgroundColor: chip.color }}
-                  >
-                    {chip.label}
-                  </span>
+                  {chip.href ? (
+                    <Link
+                      href={chip.href}
+                      className="inline-block px-4 py-2.5 rounded-lg text-[13px] font-bold uppercase tracking-[0.08em] text-white hover:opacity-85 transition-opacity"
+                      style={{ backgroundColor: chip.color }}
+                    >
+                      {chip.label}
+                    </Link>
+                  ) : (
+                    <span
+                      className="inline-block px-4 py-2.5 rounded-lg text-[13px] font-bold uppercase tracking-[0.08em] text-white"
+                      style={{ backgroundColor: chip.color }}
+                    >
+                      {chip.label}
+                    </span>
+                  )}
                 </div>
               ))}
             </div>

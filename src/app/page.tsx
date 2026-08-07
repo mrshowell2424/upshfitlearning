@@ -122,10 +122,10 @@ export default function Home() {
                 <div className="text-3xl md:text-4xl font-bold text-teal mb-1">K–12</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Grade Span</div>
               </Link>
-              <div className="bg-white p-4 md:p-6 text-center">
+              <Link href="/learning-science" className="bg-white p-4 md:p-6 text-center hover:bg-gray-050 transition-colors">
                 <div className="text-3xl md:text-4xl font-bold text-pink mb-1">12+</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Learning Science Principles</div>
-              </div>
+              </Link>
             </div>
           </div>
         </section>
