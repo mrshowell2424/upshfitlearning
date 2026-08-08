@@ -144,12 +144,79 @@ async function checkCheckout(): Promise<Omit<Check, "name" | "ms">> {
   return { status: "ok" };
 }
 
+/**
+ * Whether a payment can actually become access.
+ *
+ * The failure this is built for: a live API key set alongside a sandbox
+ * payment link. The signature verifies, so Stripe is satisfied, and then the
+ * handler asks a live key to read a sandbox subscription and throws. From
+ * outside, a teacher pays successfully and simply never gets access — the
+ * money is real and nothing anywhere says the grant failed.
+ *
+ * Only the mode of each key is reported, never any part of the key itself.
+ */
+async function checkStripe(): Promise<Omit<Check, "name" | "ms">> {
+  const key = process.env.STRIPE_SECRET_KEY;
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+
+  const missing = [
+    !key && "STRIPE_SECRET_KEY",
+    !webhookSecret && "STRIPE_WEBHOOK_SECRET",
+  ].filter(Boolean);
+
+  if (missing.length) {
+    return {
+      status: "failing",
+      detail: `${missing.join(" and ")} not readable at request time — payments cannot grant access`,
+    };
+  }
+
+  const modeOf = (value: string) =>
+    /_live_/.test(value) ? "live" : /_test_/.test(value) ? "test" : "unknown";
+
+  const keyMode = modeOf(key);
+  // The pricing page falls back to a link in the source, so read the same
+  // default rather than reporting "no link" when there plainly is one.
+  const checkoutUrl =
+    process.env.NEXT_PUBLIC_CHECKOUT_URL ||
+    "https://buy.stripe.com/test_fZucMZ2t5bAG5Oi3x4f3a01";
+  const linkMode = checkoutUrl.includes("/test_") ? "test" : "live";
+
+  // Does the key work at all? A 401 here means it was revoked or mistyped.
+  const response = await fetch("https://api.stripe.com/v1/subscriptions?limit=1", {
+    headers: { Authorization: `Bearer ${key}` },
+  });
+
+  if (!response.ok) {
+    return {
+      status: "failing",
+      detail: `Stripe rejected the API key with ${response.status}`,
+      metrics: { keyIsLive: keyMode === "live" ? 1 : 0 },
+    };
+  }
+
+  if (keyMode !== linkMode) {
+    return {
+      status: "failing",
+      detail:
+        `The API key is ${keyMode} mode but checkout sends people to a ${linkMode} payment link. ` +
+        `Signatures will verify and the grant will then fail — payments succeed and access never arrives.`,
+    };
+  }
+
+  return {
+    status: "ok",
+    detail: `${keyMode} mode, key and checkout link agree`,
+  };
+}
+
 export async function GET() {
   const checks = await Promise.all([
     check("database", checkDatabase),
     check("resource-library", checkResourceLibrary),
     check("auth", checkAuth),
     check("checkout", checkCheckout),
+    check("stripe", checkStripe),
   ]);
 
   const failing = checks.filter((c) => c.status === "failing");
