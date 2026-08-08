@@ -9,6 +9,7 @@ import Footer from "@/components/shared/Footer";
 import { isStandardCode, standardHref, standardTheme } from "@/lib/utils/standards";
 import { COURSE_COUNT } from "@/app/courses/courses-data";
 import { RESOURCE_TOTAL } from "@/lib/constants/totals";
+import { PRINCIPLES } from "@/lib/constants/learning-science";
 
 const exampleSearches = [
   "RL.2.1",
@@ -232,17 +233,23 @@ function MatchPageContent() {
                 Grade Range
               </p>
             </Link>
-            <div className="bg-gray-050 p-4 text-center">
+            {/* Counted from the principles themselves, and a way through to
+                what they mean — the number was hardcoded at 12 when there are
+                seven, on a tile that led nowhere. */}
+            <Link
+              href="/learning-science"
+              className="bg-gray-050 p-4 text-center hover:bg-gray-100 transition-colors group"
+            >
               <p
                 className="text-[30px] font-bold"
                 style={{ color: "var(--color-pink)" }}
               >
-                12
+                {PRINCIPLES.length}
               </p>
-              <p className="text-[10.5px] font-bold uppercase tracking-[0.16em] text-text-faint">
+              <p className="text-[10.5px] font-bold uppercase tracking-[0.16em] text-text-faint group-hover:text-charcoal transition-colors">
                 Learning Principles
               </p>
-            </div>
+            </Link>
           </div>
         </div>
       </main>
