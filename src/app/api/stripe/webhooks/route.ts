@@ -25,8 +25,6 @@ import { grantAccessUntil, recordPendingGrant } from "@/lib/access";
  */
 export const dynamic = "force-dynamic";
 
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || "";
-
 function stripeClient() {
   const key = process.env.STRIPE_SECRET_KEY;
   if (!key) throw new Error("STRIPE_SECRET_KEY is not set");
@@ -104,6 +102,13 @@ async function userIdForCustomer(customerId?: string | null) {
 }
 
 export async function POST(request: NextRequest) {
+  // Read per request, not at module scope. On Workers the environment is bound
+  // to the request, so a module-scope read caches whatever happened to be set
+  // when the isolate first evaluated this file — which is how a rotated secret
+  // can keep failing signatures until something forces a cold start. This is
+  // the same fault that kept the database from ever connecting.
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || "";
+
   // Named individually, so a misconfiguration says which half is missing
   // instead of failing as a generic signature error.
   const missing = [
