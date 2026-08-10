@@ -6,6 +6,7 @@ import { useSearchParams } from 'next/navigation'
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import ResourceCard from "@/components/shared/ResourceCard";
+import { RESOURCE_TOTAL } from "@/lib/constants/totals";
 
 interface Resource {
   id: string;
@@ -29,12 +30,30 @@ function ResourcesContent() {
   const [filterDropdownOpen, setFilterDropdownOpen] = useState(false);
   const [sortDropdownOpen, setSortDropdownOpen] = useState(false);
 
+  // What is in the box, as against what has been searched for. Kept apart
+  // because `search` triggers a fetch, and firing one per keystroke would
+  // search the library thirteen times for "multiplication".
+  const [searchInput, setSearchInput] = useState("");
+
   useEffect(() => {
     setPage(parseInt(searchParams.get('page') || "1"));
     setSearch(searchParams.get('search') || "");
+    setSearchInput(searchParams.get('search') || "");
     setFilterType(searchParams.get('filter') || "all");
     setCategory(searchParams.get('category') || "all");
   }, [searchParams]);
+
+  // Settle for a moment before searching, so results arrive as you stop typing.
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSearch((current) => {
+        if (current === searchInput) return current;
+        setPage(1);
+        return searchInput;
+      });
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [searchInput]);
 
   const sampleResources: Resource[] = [
     { id: "1", title: "Text Evidence Anchor Chart", purpose: "Understand how to find and cite text evidence", format: "Anchor Chart", grade_band: "K-2", skill: "Reading Comprehension", is_free: true, published_at: "2024-01-15T00:00:00.000Z" },
@@ -180,16 +199,51 @@ function ResourcesContent() {
 
         {/* Main content */}
         <main className="flex-1 px-5 md:px-8 py-8">
-          <div className="mb-6 flex items-center justify-between">
-            <div>
-              <h1 className="text-[34px] font-bold mb-2">Resource library</h1>
-              <p className="text-text-muted">
-                {filteredItems.length} of {total} matching • {total} in the library
-              </p>
+          <div className="mb-6">
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <h1 className="text-[34px] font-bold mb-2">Resource library</h1>
+                <p className="text-text-muted">
+                  {search || filterType !== 'all' || category !== 'all'
+                    ? `${total.toLocaleString()} matching • ${RESOURCE_TOTAL.toLocaleString()} in the library`
+                    : `${total.toLocaleString()} in the library`}
+                </p>
+              </div>
+              {/* Only offered when there is something to clear — the button was
+                  previously always shown and wired to nothing at all. */}
+              {(search || filterType !== 'all' || category !== 'all') && (
+                <button
+                  onClick={() => {
+                    setSearchInput('');
+                    setSearch('');
+                    setFilterType('all');
+                    setCategory('all');
+                    setPage(1);
+                  }}
+                  className="shrink-0 text-sm font-semibold text-charcoal border border-border px-3 py-1.5 rounded-lg hover:bg-gray-050"
+                >
+                  Clear filters
+                </button>
+              )}
             </div>
-            <button className="text-sm font-semibold text-charcoal border border-border px-3 py-1 rounded-lg hover:bg-gray-050">
-              Clear filters
-            </button>
+
+            {/* Searches the whole library server-side, not the page on screen */}
+            <div className="relative mt-5">
+              <span
+                aria-hidden="true"
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-text-faint"
+              >
+                ⌕
+              </span>
+              <input
+                type="search"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+                placeholder="Search by title, skill or purpose — try “fractions” or “phonics”"
+                aria-label="Search the resource library"
+                className="w-full min-h-[48px] pl-10 pr-4 rounded-xl border border-border-strong bg-white text-[15px] text-charcoal placeholder:text-text-faint focus:outline-none focus:border-charcoal transition-colors"
+              />
+            </div>
           </div>
 
           {/* Sort controls */}

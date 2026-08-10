@@ -25,10 +25,28 @@ import { grantAccessUntil, recordPendingGrant } from "@/lib/access";
  */
 export const dynamic = "force-dynamic";
 
+/**
+ * The Stripe client, built for Workers rather than for Node.
+ *
+ * The SDK defaults to Node's http module. On Workers that is a shim which
+ * accepts the request and never answers, so every call that reached Stripe's
+ * API hung until the platform killed the request — signature verification
+ * passed, the database was fine, and the subscription lookup simply never
+ * returned. Stripe gave up after ten seconds and recorded a failed delivery,
+ * which is the only place the failure was visible.
+ *
+ * createFetchHttpClient puts it on the platform's own fetch. The timeout is
+ * belt and braces: if Stripe is slow we want a 500 that Stripe will retry,
+ * not a hang that looks like success to nobody.
+ */
 function stripeClient() {
   const key = process.env.STRIPE_SECRET_KEY;
   if (!key) throw new Error("STRIPE_SECRET_KEY is not set");
-  return new Stripe(key);
+  return new Stripe(key, {
+    httpClient: Stripe.createFetchHttpClient(),
+    timeout: 8000,
+    maxNetworkRetries: 1,
+  });
 }
 
 /** Stripe sends seconds; everything downstream wants a Date. */

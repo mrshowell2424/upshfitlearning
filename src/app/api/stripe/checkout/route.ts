@@ -2,9 +2,22 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
-  apiVersion: "2024-04-10",
-});
+/**
+ * Built per request, on fetch rather than Node's http module — the same two
+ * faults that stopped the webhook granting access after a real payment. The
+ * key must be read inside the handler because on Workers the environment is
+ * bound to the request, and the SDK must be put on fetch because its default
+ * transport never returns here.
+ */
+function stripeClient() {
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) throw new Error("STRIPE_SECRET_KEY is not set");
+  return new Stripe(key, {
+    httpClient: Stripe.createFetchHttpClient(),
+    timeout: 8000,
+    maxNetworkRetries: 1,
+  });
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,6 +26,8 @@ export async function POST(request: NextRequest) {
     if (!priceId || !userId || !email) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
+
+    const stripe = stripeClient();
 
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
