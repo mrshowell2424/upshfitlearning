@@ -44,7 +44,7 @@ const CHECKOUT_URL_FALLBACK = 'https://buy.stripe.com/test_fZucMZ2t5bAG5Oi3x4f3a
 //
 // The live yearly link is https://buy.stripe.com/6oU5kx5GSdjE0n56W6afS02 —
 // swap both to live together, never one at a time.
-const CHECKOUT_URL_ANNUAL_FALLBACK = 'https://buy.stripe.com/test_bJebIV5FhfQW7Wq2t0f3a02'
+const CHECKOUT_URL_ANNUAL_FALLBACK = 'https://buy.stripe.com/test_14AdR3aZB0W26Smc3Af3a00'
 
 export default function PricingPage() {
   const CHECKOUT_URL = process.env.NEXT_PUBLIC_CHECKOUT_URL || CHECKOUT_URL_FALLBACK
