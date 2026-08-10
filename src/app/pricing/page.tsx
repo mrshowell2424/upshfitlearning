@@ -36,7 +36,13 @@ export const dynamic = 'force-dynamic'
  * shown, so a test URL can never quietly stand in for a live one.
  */
 const CHECKOUT_URL_FALLBACK = 'https://buy.stripe.com/test_fZucMZ2t5bAG5Oi3x4f3a01'
-const CHECKOUT_URL_ANNUAL_FALLBACK = undefined
+
+// The yearly link, which is live while the monthly one above is still a
+// sandbox link. CheckoutButtons withholds a yearly link that does not match
+// the monthly one's environment, so this stays hidden until both agree —
+// selling a $120 subscription the sandbox webhook cannot hear about would take
+// the money and grant nothing. Making the monthly link live turns it on.
+const CHECKOUT_URL_ANNUAL_FALLBACK = 'https://buy.stripe.com/6oU5kx5GSdjE0n56W6afS02'
 
 export default function PricingPage() {
   const CHECKOUT_URL = process.env.NEXT_PUBLIC_CHECKOUT_URL || CHECKOUT_URL_FALLBACK

@@ -204,9 +204,30 @@ async function checkStripe(): Promise<Omit<Check, "name" | "ms">> {
     };
   }
 
+  /**
+   * The monthly and yearly links must be in the same environment as each other
+   * too. The pricing page hides a mismatched yearly link rather than selling a
+   * subscription the webhook cannot hear about, so this is not an outage — but
+   * it does mean an advertised price is unbuyable, which is worth saying out
+   * loud rather than leaving to be noticed.
+   */
+  const annualUrl =
+    process.env.NEXT_PUBLIC_CHECKOUT_URL_ANNUAL ||
+    "https://buy.stripe.com/6oU5kx5GSdjE0n56W6afS02";
+  const annualMode = annualUrl.includes("/test_") ? "test" : "live";
+
+  if (annualMode !== linkMode) {
+    return {
+      status: "not-configured",
+      detail:
+        `Monthly checkout is ${linkMode} mode but the yearly link is ${annualMode} mode, ` +
+        `so the yearly button is withheld. The pricing page still names a yearly price.`,
+    };
+  }
+
   return {
     status: "ok",
-    detail: `${keyMode} mode, key and checkout link agree`,
+    detail: `${keyMode} mode, key and both checkout links agree`,
   };
 }
 

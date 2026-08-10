@@ -84,7 +84,22 @@ export function CheckoutButtons({
   // Stripe test links contain "/test_" and take no money. Saying so on the page
   // means a test link can never quietly stand in for a live one — the failure
   // would otherwise be invisible until someone noticed no payments arriving.
-  const isTestMode = monthlyUrl.includes('/test_')
+  const modeOf = (url: string) => (url.includes('/test_') ? 'sandbox' : 'live')
+  const isTestMode = modeOf(monthlyUrl) === 'sandbox'
+
+  /**
+   * A yearly link in the other Stripe environment is worse than no yearly link
+   * at all, so it is withheld rather than shown.
+   *
+   * The webhook that turns a payment into access is registered against one
+   * environment. A payment made in the other succeeds, takes the money, and
+   * fires events nothing is listening for — the teacher is charged and stays
+   * locked out. Mixing them also makes the notice below lie: it is decided by
+   * the monthly link, so a sandbox monthly beside a live yearly would promise
+   * "no payment will be taken" above a button charging $120.
+   */
+  const yearlyUrl =
+    annualUrl && modeOf(annualUrl) === modeOf(monthlyUrl) ? annualUrl : undefined
 
   return (
     <div className="mb-8">
@@ -92,12 +107,12 @@ export function CheckoutButtons({
         href={withAccount(monthlyUrl)}
         className="block w-full text-center px-6 py-3 rounded-xl font-semibold bg-coral hover:bg-coral-press text-white transition-colors"
       >
-        {annualUrl ? 'Subscribe monthly' : 'Get All-Access'}
+        {yearlyUrl ? 'Subscribe monthly' : 'Get All-Access'}
       </a>
 
-      {annualUrl && (
+      {yearlyUrl && (
         <a
-          href={withAccount(annualUrl)}
+          href={withAccount(yearlyUrl)}
           className="block w-full text-center px-6 py-3 mt-2 rounded-xl font-semibold text-sm text-charcoal border border-border-strong hover:bg-gray-050 transition-colors"
         >
           Or pay yearly — save $60
