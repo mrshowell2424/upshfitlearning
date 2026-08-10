@@ -8,6 +8,7 @@ export async function GET(request: NextRequest) {
     const search = searchParams.get('search') || ''
     const category = searchParams.get('category') || 'all'
     const access = searchParams.get('access') || 'all'
+    const sort = searchParams.get('sort') || 'newest'
     const pageSize = 30
 
     const resources = await getResources()
@@ -66,6 +67,38 @@ export async function GET(request: NextRequest) {
     } else if (access === 'paid') {
       filtered = filtered.filter(r => !r.is_free)
     }
+
+    /**
+     * Sorting happens here, across everything that survived the filters, and
+     * before the page is cut. The page component used to read `sort` from the
+     * URL only to decide which pill looked selected — nothing ever ordered the
+     * results, so all three buttons returned the same list in sheet order.
+     *
+     * Sorting the 30 items already on screen would have been worse than not
+     * sorting at all: "A–Z" would alphabetise one page of an otherwise
+     * arbitrary slice, which looks like it works until you turn the page.
+     */
+    const publishedTime = (value: unknown) => {
+      const time = new Date(value as string).getTime()
+      return Number.isNaN(time) ? null : time
+    }
+
+    filtered = [...filtered].sort((a, b) => {
+      if (sort === 'a-z') {
+        return a.title.localeCompare(b.title, undefined, { sensitivity: 'base' })
+      }
+
+      const aTime = publishedTime(a.published_at)
+      const bTime = publishedTime(b.published_at)
+
+      // Undated resources sink to the bottom either way, rather than counting
+      // as the beginning of time and filling the first page of "Oldest".
+      if (aTime === null && bTime === null) return 0
+      if (aTime === null) return 1
+      if (bTime === null) return -1
+
+      return sort === 'oldest' ? aTime - bTime : bTime - aTime
+    })
 
     const total = filtered.length
     const offset = (page - 1) * pageSize

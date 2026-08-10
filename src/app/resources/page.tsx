@@ -35,12 +35,15 @@ function ResourcesContent() {
   // search the library thirteen times for "multiplication".
   const [searchInput, setSearchInput] = useState("");
 
+  const [sort, setSort] = useState("newest");
+
   useEffect(() => {
     setPage(parseInt(searchParams.get('page') || "1"));
     setSearch(searchParams.get('search') || "");
     setSearchInput(searchParams.get('search') || "");
     setFilterType(searchParams.get('filter') || "all");
     setCategory(searchParams.get('category') || "all");
+    setSort(searchParams.get('sort') || "newest");
   }, [searchParams]);
 
   // Settle for a moment before searching, so results arrive as you stop typing.
@@ -97,6 +100,9 @@ function ResourcesContent() {
         if (filterType !== 'all') {
           url.searchParams.set('access', filterType);
         }
+        // Ordering is the API's job too, for the same reason: it has the whole
+        // library, and this page only ever holds thirty rows of it.
+        url.searchParams.set('sort', sort);
         const response = await fetch(url.toString());
         if (!response.ok) {
           throw new Error(`API error: ${response.status}`);
@@ -119,9 +125,7 @@ function ResourcesContent() {
     };
 
     fetchResources();
-  }, [page, search, category, filterType]);
-
-  const sortParam = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('sort') || 'newest' : 'newest';
+  }, [page, search, category, filterType, sort]);
 
   // The API already applied the access and category filters across the whole
   // library, so `items` is the current page of results as-is.
@@ -246,38 +250,34 @@ function ResourcesContent() {
             </div>
           </div>
 
-          {/* Sort controls */}
-          <div className="flex gap-2 mb-6">
-            <a
-              href={`/resources?sort=newest${filterType !== 'all' ? `&filter=${filterType}` : ''}${category !== 'all' ? `&category=${category}` : ''}`}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
-                sortParam === 'newest'
-                  ? 'bg-charcoal text-white'
-                  : 'bg-gray-100 text-charcoal hover:bg-gray-200'
-              }`}
-            >
-              Newest
-            </a>
-            <a
-              href={`/resources?sort=oldest${filterType !== 'all' ? `&filter=${filterType}` : ''}${category !== 'all' ? `&category=${category}` : ''}`}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
-                sortParam === 'oldest'
-                  ? 'bg-charcoal text-white'
-                  : 'bg-gray-100 text-charcoal hover:bg-gray-200'
-              }`}
-            >
-              Oldest first
-            </a>
-            <a
-              href={`/resources?sort=a-z${filterType !== 'all' ? `&filter=${filterType}` : ''}${category !== 'all' ? `&category=${category}` : ''}`}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
-                sortParam === 'a-z'
-                  ? 'bg-charcoal text-white'
-                  : 'bg-gray-100 text-charcoal hover:bg-gray-200'
-              }`}
-            >
-              A–Z
-            </a>
+          {/*
+            Buttons rather than links. As links each one navigated to a URL it
+            rebuilt from the filters alone, so choosing a sort order silently
+            discarded whatever had been typed into search — and reloaded the
+            whole page to do it. These behave like the sidebar checkboxes.
+          */}
+          <div className="flex gap-2 mb-6" role="group" aria-label="Sort resources">
+            {[
+              { value: 'newest', label: 'Newest' },
+              { value: 'oldest', label: 'Oldest first' },
+              { value: 'a-z', label: 'A–Z' },
+            ].map((option) => (
+              <button
+                key={option.value}
+                onClick={() => {
+                  setSort(option.value);
+                  setPage(1);
+                }}
+                aria-pressed={sort === option.value}
+                className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
+                  sort === option.value
+                    ? 'bg-charcoal text-white'
+                    : 'bg-gray-100 text-charcoal hover:bg-gray-200'
+                }`}
+              >
+                {option.label}
+              </button>
+            ))}
           </div>
 
           {/* Grid */}
