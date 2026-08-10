@@ -213,7 +213,7 @@ async function checkStripe(): Promise<Omit<Check, "name" | "ms">> {
    */
   const annualUrl =
     process.env.NEXT_PUBLIC_CHECKOUT_URL_ANNUAL ||
-    "https://buy.stripe.com/6oU5kx5GSdjE0n56W6afS02";
+    "https://buy.stripe.com/test_bJebIV5FhfQW7Wq2t0f3a02";
   const annualMode = annualUrl.includes("/test_") ? "test" : "live";
 
   if (annualMode !== linkMode) {

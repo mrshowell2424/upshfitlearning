@@ -37,12 +37,14 @@ export const dynamic = 'force-dynamic'
  */
 const CHECKOUT_URL_FALLBACK = 'https://buy.stripe.com/test_fZucMZ2t5bAG5Oi3x4f3a01'
 
-// The yearly link, which is live while the monthly one above is still a
-// sandbox link. CheckoutButtons withholds a yearly link that does not match
-// the monthly one's environment, so this stays hidden until both agree —
-// selling a $120 subscription the sandbox webhook cannot hear about would take
-// the money and grant nothing. Making the monthly link live turns it on.
-const CHECKOUT_URL_ANNUAL_FALLBACK = 'https://buy.stripe.com/6oU5kx5GSdjE0n56W6afS02'
+// The yearly link. CheckoutButtons withholds a yearly link whose environment
+// does not match the monthly one above, because selling a $120 subscription
+// through an environment the webhook is not listening to would take the money
+// and grant nothing. Both are sandbox links, so the yearly button shows.
+//
+// The live yearly link is https://buy.stripe.com/6oU5kx5GSdjE0n56W6afS02 —
+// swap both to live together, never one at a time.
+const CHECKOUT_URL_ANNUAL_FALLBACK = 'https://buy.stripe.com/test_bJebIV5FhfQW7Wq2t0f3a02'
 
 export default function PricingPage() {
   const CHECKOUT_URL = process.env.NEXT_PUBLIC_CHECKOUT_URL || CHECKOUT_URL_FALLBACK
