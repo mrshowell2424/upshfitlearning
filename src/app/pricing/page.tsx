@@ -37,14 +37,25 @@ export const dynamic = 'force-dynamic'
  */
 const CHECKOUT_URL_FALLBACK = 'https://buy.stripe.com/test_fZucMZ2t5bAG5Oi3x4f3a01'
 
-// The yearly link. CheckoutButtons withholds a yearly link whose environment
-// does not match the monthly one above, because selling a $120 subscription
-// through an environment the webhook is not listening to would take the money
-// and grant nothing. Both are sandbox links, so the yearly button shows.
-//
-// The live yearly link is https://buy.stripe.com/6oU5kx5GSdjE0n56W6afS02 —
-// swap both to live together, never one at a time.
-const CHECKOUT_URL_ANNUAL_FALLBACK = 'https://buy.stripe.com/test_14AdR3aZB0W26Smc3Af3a00'
+/**
+ * Yearly is off. Monthly is the only thing we sell.
+ *
+ * The yearly link never worked: the first one was built on the $15 monthly
+ * price so the yearly button charged monthly, and its replacement failed to
+ * load at Stripe's end. Monthly, by contrast, is proven end to end — a real
+ * payment granted access through the webhook. Rather than keep an untested
+ * second path in front of teachers, there is one button that works.
+ *
+ * Setting one of these back turns the yearly button on again, and the guard in
+ * CheckoutButtons still refuses a link from the other Stripe environment:
+ *
+ *   sandbox  https://buy.stripe.com/test_14AdR3aZB0W26Smc3Af3a00  (fails to load)
+ *   live     https://buy.stripe.com/6oU5kx5GSdjE0n56W6afS02
+ *
+ * Whichever comes back needs checking first: that it charges $120 *yearly*,
+ * and that After payment redirects to /success.
+ */
+const CHECKOUT_URL_ANNUAL_FALLBACK = undefined
 
 export default function PricingPage() {
   const CHECKOUT_URL = process.env.NEXT_PUBLIC_CHECKOUT_URL || CHECKOUT_URL_FALLBACK
