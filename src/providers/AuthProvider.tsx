@@ -3,6 +3,7 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import { User, Session } from '@supabase/supabase-js'
 import { supabase, getSubscription, hasAllAccess } from '@/lib/auth'
+import { PAYMENTS_ENABLED } from '@/lib/constants/access'
 
 interface Subscription {
   id: string
@@ -142,7 +143,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setSubscription(null)
   }
 
-  const realIsPremium = hasAllAccess(subscription)
+  // While payments are off, an account is all it takes. The subscription is
+  // still read and still honoured, so turning charging back on restores the
+  // real distinction without anything else changing.
+  const realIsPremium = PAYMENTS_ENABLED
+    ? hasAllAccess(subscription)
+    : Boolean(user)
   const effectiveIsPremium =
     PREVIEW_ENABLED && previewTier ? previewTier === 'pro' : realIsPremium
 

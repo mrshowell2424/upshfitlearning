@@ -24,13 +24,13 @@ export function ResourceActions({
     return (
       <div className="text-center">
         <p className="text-text-muted text-sm mb-3">
-          This resource is part of All-Access
+          Free with an account
         </p>
         <a
-          href="/pricing"
+          href="/auth/signup"
           className={`${BUTTON_BASE} bg-charcoal text-white hover:bg-charcoal/90`}
         >
-          See plans
+          Create a free account
         </a>
       </div>
     );

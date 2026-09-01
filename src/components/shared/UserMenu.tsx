@@ -118,14 +118,7 @@ export default function UserMenu() {
             </span>
           </div>
 
-          {!isPremium && (
-            <a
-              href="/pricing"
-              className="block px-4 py-3 text-sm font-semibold text-coral hover:bg-gray-050 transition-colors"
-            >
-              Get All-Access
-            </a>
-          )}
+          {/* Nothing to upgrade to while everything is free. */}
 
           <button
             type="button"

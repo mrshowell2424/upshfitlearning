@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
+import { PAYMENTS_ENABLED } from '@/lib/constants/access'
 import Header from '@/components/shared/Header'
 import Footer from '@/components/shared/Footer'
 import { CheckoutButtons } from './checkout-buttons'
@@ -58,6 +60,14 @@ const CHECKOUT_URL_FALLBACK = 'https://buy.stripe.com/test_fZucMZ2t5bAG5Oi3x4f3a
 const CHECKOUT_URL_ANNUAL_FALLBACK = undefined
 
 export default function PricingPage() {
+  /**
+   * Nothing is for sale at the moment, so this page is unlinked and anyone
+   * arriving on the URL is sent home rather than shown prices they cannot pay.
+   * The page itself is left intact — flipping PAYMENTS_ENABLED brings it and
+   * its checkout buttons straight back.
+   */
+  if (!PAYMENTS_ENABLED) redirect('/')
+
   const CHECKOUT_URL = process.env.NEXT_PUBLIC_CHECKOUT_URL || CHECKOUT_URL_FALLBACK
   const CHECKOUT_URL_ANNUAL =
     process.env.NEXT_PUBLIC_CHECKOUT_URL_ANNUAL || CHECKOUT_URL_ANNUAL_FALLBACK

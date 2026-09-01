@@ -9,9 +9,9 @@ export function UpgradeModal({ isOpen, onClose, feature }: { isOpen: boolean; on
   const handleUpgrade = async () => {
     setLoading(true);
     try {
-      // For now, redirect to pricing page
-      // In production, this would create a Stripe checkout session
-      window.location.href = "/pricing";
+      // Nothing is sold at the moment, so the only thing standing between
+      // this teacher and the feature is an account.
+      window.location.href = "/auth/signup";
     } catch (error) {
       console.error("Upgrade error:", error);
       setLoading(false);

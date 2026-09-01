@@ -20,8 +20,8 @@ function ClassroomAccess({ url }: { url: string }) {
 
   if (!isPremium) {
     return (
-      <a href="/pricing" className={`${BUTTON} border border-border-strong text-charcoal hover:bg-gray-050`}>
-        Get All-Access to join
+      <a href="/auth/signup" className={`${BUTTON} border border-border-strong text-charcoal hover:bg-gray-050`}>
+        Create a free account to join
       </a>
     )
   }

@@ -4,6 +4,7 @@ import { subscriptions } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { hasAllAccess } from "@/lib/auth";
 import { claimPendingGrants } from "@/lib/access";
+import { PAYMENTS_ENABLED } from "@/lib/constants/access";
 
 /**
  * Server-side entitlement, decided from a bearer token.
@@ -55,6 +56,11 @@ export async function entitlementFromToken(token: string | null): Promise<Entitl
   } catch {
     return DENIED;
   }
+
+  // Nothing is being sold, so a verified account is entitlement enough. The
+  // token is still verified above, so this grants access to signed-in people
+  // rather than to anyone who asks.
+  if (!PAYMENTS_ENABLED) return { userId, allAccess: true };
 
   try {
     const rows = await db

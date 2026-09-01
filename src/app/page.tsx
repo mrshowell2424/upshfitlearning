@@ -187,15 +187,15 @@ export default function Home() {
                   Free tier includes 200 resources
                 </h3>
                 <p className="text-sm text-gray-200 mb-6 leading-relaxed">
-                  Upgrade to All Access to receive lesson materials in 4 formats: slides, documents, worksheets, and assessments.
+                  Create a free account to receive lesson materials in 4 formats: slides, documents, worksheets, and assessments.
                 </p>
                 <Link
-                  href="/pricing"
+                  href="/auth/signup"
                   className="inline-block bg-coral hover:bg-coral-press text-white px-6 py-3 rounded-xl font-semibold mb-2 transition-colors"
                 >
-                  Upgrade now
+                  Create a free account
                 </Link>
-                <div className="text-xs text-gray-300">$15/month or $120/year</div>
+                <div className="text-xs text-gray-300">Free — no card, no trial period</div>
               </div>
 
               {/* Right: Benefits */}

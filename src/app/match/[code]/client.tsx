@@ -316,24 +316,24 @@ function LockedOverlay({ locked, feature, summary, children }) {
             All Access
           </p>
           <h3 className="text-[22px] font-bold text-charcoal mb-3">
-            {feature} is part of All Access
+            {feature} needs a free account
           </h3>
           <p className="text-[15px] text-text-muted mb-6">
-            The lesson blueprint is free. Unlock the deconstruction and the
-            resources matched to this standard.
+            The lesson blueprint is open to everyone. The deconstruction and the
+            matched resources need an account — free, and no card.
           </p>
           <div className="flex flex-col gap-2">
             <Link
-              href="/pricing"
+              href="/auth/signup"
               className="px-6 py-3 rounded-[10px] font-semibold text-white bg-coral hover:bg-coral-press transition-colors"
             >
-              Get All Access
+              Create a free account
             </Link>
             <Link
-              href="/auth/signup"
+              href="/auth/signin"
               className="text-sm font-semibold text-charcoal hover:text-coral transition-colors"
             >
-              Create a free account
+              Already have one? Sign in
             </Link>
           </div>
         </div>
