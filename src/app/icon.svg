@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Upshift Learning">
+  <!--
+    The four-chevron mark, drawn rather than traced, so it stays sharp at 16px
+    and weighs about a kilobyte.
+    Each chevron is two separate translucent strokes rather than one polyline.
+    That is deliberate: where the arms meet they double up, which is what
+    produces the darker patch at every apex in the artwork. A single polyline
+    with a round join would render the apex flat.
+  -->
+  <g fill="none" stroke-width="58" stroke-linecap="round" opacity="0.78">
+    <g stroke="#E4664B"><path d="M146 173 L256 85"/><path d="M256 85 L366 173"/></g>
+    <g stroke="#C4507C"><path d="M146 258 L256 170"/><path d="M256 170 L366 258"/></g>
+    <g stroke="#7A5EC0"><path d="M146 343 L256 255"/><path d="M256 255 L366 343"/></g>
+    <g stroke="#4F9DB5"><path d="M146 428 L256 340"/><path d="M256 340 L366 428"/></g>
+  </g>
+</svg>
