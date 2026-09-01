@@ -14,7 +14,7 @@
  */
 
 /** Resources in the library, from the Google Sheet. */
-export const RESOURCE_TOTAL = 2760
+export const RESOURCE_TOTAL = 2786
 
 /** Standards carrying a full unpack and lesson blueprint. */
-export const STANDARD_TOTAL = 163
+export const STANDARD_TOTAL = 187
