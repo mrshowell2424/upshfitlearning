@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
+import { SignInGate } from "@/components/shared/SignInGate";
 import { isStandardCode, standardHref, standardTheme } from "@/lib/utils/standards";
 import { COURSE_COUNT } from "@/app/courses/courses-data";
 import { RESOURCE_TOTAL } from "@/lib/constants/totals";
@@ -72,6 +73,10 @@ function MatchPageContent() {
       <Header />
 
       <main className="flex-1 flex items-center justify-center px-5 md:px-8 py-16">
+        <SignInGate
+          title="Every standard, unpacked"
+          blurb="Search 335 standards and open the lesson blueprint for any of them. Free — an account is all it takes."
+        >
         <div className="w-full max-w-2xl">
           {/* Eyebrow */}
           <div className="text-center mb-6">
@@ -252,6 +257,7 @@ function MatchPageContent() {
             </Link>
           </div>
         </div>
+        </SignInGate>
       </main>
 
       <Footer />

@@ -1,6 +1,7 @@
 'use client'
 
 import { useAuth } from '@/providers/AuthProvider'
+import { PAYMENTS_ENABLED } from '@/lib/constants/access'
 
 /**
  * Switches the whole site between the free and All-Access view without needing a
@@ -9,6 +10,10 @@ import { useAuth } from '@/providers/AuthProvider'
  */
 export default function PreviewTierToggle({ compact = false }: { compact?: boolean }) {
   const { previewEnabled, previewTier, setPreviewTier, subscription } = useAuth()
+
+  // Nothing to preview while everything is free — the two sides of this
+  // toggle currently show the same site, so it only invites confusion.
+  if (!PAYMENTS_ENABLED) return null
 
   if (!previewEnabled) return null
 

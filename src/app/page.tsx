@@ -154,7 +154,7 @@ export default function Home() {
                 <div className="text-xs font-bold tracking-wider text-lavender uppercase mb-2">Discover Resources</div>
                 <h3 className="text-xl font-bold text-charcoal mb-3">Resource library</h3>
                 <p className="text-sm text-text-body mb-4">
-                  Free tier: 200 resources. Upgrade for access to all 2,688+ curated resources. Filter by grade, skill, and format.
+                  All {RESOURCE_TOTAL.toLocaleString()} curated resources, free with an account. Filter by grade, skill, and format.
                 </p>
                 <Link href="/resources" className="inline-flex items-center gap-2 text-coral font-semibold hover:text-coral-press transition-colors">
                   Browse resources →
@@ -176,58 +176,15 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Upgrade Band */}
-        <section className="py-14 md:py-24 px-5 md:px-8 bg-gray-050">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 rounded-3xl overflow-hidden">
-              {/* Left: Upgrade CTA */}
-              <div className="bg-charcoal text-white p-8 rounded-3xl">
-                <div className="text-xs font-bold tracking-wider text-pink uppercase mb-3">Unlock more</div>
-                <h3 className="text-3xl font-bold mb-3">
-                  Free tier includes 200 resources
-                </h3>
-                <p className="text-sm text-gray-200 mb-6 leading-relaxed">
-                  Create a free account to receive lesson materials in 4 formats: slides, documents, worksheets, and assessments.
-                </p>
-                <Link
-                  href="/auth/signup"
-                  className="inline-block bg-coral hover:bg-coral-press text-white px-6 py-3 rounded-xl font-semibold mb-2 transition-colors"
-                >
-                  Create a free account
-                </Link>
-                <div className="text-xs text-gray-300">Free — no card, no trial period</div>
-              </div>
-
-              {/* Right: Benefits */}
-              <div className="bg-white p-8 rounded-3xl flex flex-col justify-center">
-                <h4 className="text-lg font-bold text-charcoal mb-6">What you unlock</h4>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <span className="text-teal text-lg">✓</span>
-                    <div>
-                      <div className="font-semibold text-charcoal">Generate Lesson Materials</div>
-                      <div className="text-xs text-text-muted">Create slides, docs, worksheets, and assessments</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-teal text-lg">✓</span>
-                    <div>
-                      <div className="font-semibold text-charcoal">Full Resource Library</div>
-                      <div className="text-xs text-text-muted">Access all 2,688+ curated resources</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-teal text-lg">✓</span>
-                    <div>
-                      <div className="font-semibold text-charcoal">Team Collaboration</div>
-                      <div className="text-xs text-text-muted">Share lessons and resources with colleagues</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/*
+          The upgrade band is gone. It sold a tier split that no longer exists:
+          it advertised a free tier of 200 resources against a paid library of
+          2,688, and both halves of that sentence are now wrong — everything is
+          free with an account, and the library holds 2,786. A panel explaining
+          the difference between two things that are the same is worse than no
+          panel. The sign-up prompt now sits where it is actually needed, on the
+          gated Resources and Standard match pages.
+        */}
       </main>
       <Footer />
     </div>

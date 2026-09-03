@@ -7,6 +7,8 @@ import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import ResourceCard from "@/components/shared/ResourceCard";
 import { RESOURCE_TOTAL } from "@/lib/constants/totals";
+import { SignInGate } from "@/components/shared/SignInGate";
+import { PAYMENTS_ENABLED } from "@/lib/constants/access";
 
 interface Resource {
   id: string;
@@ -137,10 +139,23 @@ function ResourcesContent() {
     <div className="flex flex-col min-h-screen">
       <Header />
 
+      <SignInGate
+        title="The whole resource library"
+        blurb={`All ${RESOURCE_TOTAL.toLocaleString()} resources, searchable and matched to the standard you are teaching. Free — an account is all it takes.`}
+      >
       <div className="flex-1 flex">
         {/* Sidebar with filters */}
         <aside className="w-80 px-5 md:px-8 py-8 border-r border-border bg-white">
           <div className="space-y-8">
+            {/*
+              The Access filter is hidden while everything is free. Free and
+              All-Access were a real distinction when one of them cost money;
+              offering it now sorts the library by a difference the visitor
+              cannot act on. The state and the API parameter are left intact,
+              so turning payments back on restores the filter with one change.
+            */}
+            {PAYMENTS_ENABLED && (
+            <>
             {/* Access filter */}
             <div>
               <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-charcoal mb-3">Access</h3>
@@ -173,6 +188,8 @@ function ResourcesContent() {
                 </label>
               </div>
             </div>
+            </>
+            )}
 
             {/* Category filter — five buckets covering the whole library */}
             <div>
@@ -337,6 +354,7 @@ function ResourcesContent() {
           )}
         </main>
       </div>
+      </SignInGate>
 
       <Footer />
     </div>
