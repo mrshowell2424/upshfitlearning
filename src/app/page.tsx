@@ -176,15 +176,75 @@ export default function Home() {
           </div>
         </section>
 
-        {/*
-          The upgrade band is gone. It sold a tier split that no longer exists:
-          it advertised a free tier of 200 resources against a paid library of
-          2,688, and both halves of that sentence are now wrong — everything is
-          free with an account, and the library holds 2,786. A panel explaining
-          the difference between two things that are the same is worse than no
-          panel. The sign-up prompt now sits where it is actually needed, on the
-          gated Resources and Standard match pages.
-        */}
+        {/* Sign-up band */}
+        <section className="py-14 md:py-24 px-5 md:px-8 bg-gray-050">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 rounded-3xl overflow-hidden">
+              {/* Left: the ask */}
+              <div className="bg-charcoal text-white p-8 rounded-3xl">
+                <div className="text-xs font-bold tracking-wider text-pink uppercase mb-3">
+                  Free with an account
+                </div>
+                <h3 className="text-3xl font-bold mb-3">
+                  Everything here is free
+                </h3>
+                <p className="text-sm text-gray-200 mb-6 leading-relaxed">
+                  All {RESOURCE_TOTAL.toLocaleString()} resources and all {STANDARD_TOTAL} standards,
+                  open the moment you have an account. Nothing is held back for a paid tier.
+                </p>
+                <Link
+                  href="/auth/signup"
+                  className="inline-block bg-coral hover:bg-coral-press text-white px-6 py-3 rounded-xl font-semibold mb-2 transition-colors"
+                >
+                  Create a free account
+                </Link>
+                <div className="text-xs text-gray-300">No card, no trial period, no expiry</div>
+              </div>
+
+              {/* Right: what the account opens */}
+              <div className="bg-white p-8 rounded-3xl flex flex-col justify-center">
+                <h4 className="text-lg font-bold text-charcoal mb-6">What an account opens</h4>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <span className="text-teal text-lg">&#10003;</span>
+                    <div>
+                      <div className="font-semibold text-charcoal">Every standard, unpacked</div>
+                      <div className="text-xs text-text-muted">
+                        {STANDARD_TOTAL} standards with verbs, vocabulary, the learning ladder and the
+                        misconception to watch for
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-teal text-lg">&#10003;</span>
+                    <div>
+                      <div className="font-semibold text-charcoal">A lesson blueprint for each one</div>
+                      <div className="text-xs text-text-muted">
+                        Seven steps with timings, each tagged to the learning science behind it
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-teal text-lg">&#10003;</span>
+                    <div>
+                      <div className="font-semibold text-charcoal">The whole resource library</div>
+                      <div className="text-xs text-text-muted">
+                        All {RESOURCE_TOTAL.toLocaleString()} resources, matched to the standard you are teaching
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-teal text-lg">&#10003;</span>
+                    <div>
+                      <div className="font-semibold text-charcoal">Courses through Google Classroom</div>
+                      <div className="text-xs text-text-muted">Delivered where you already teach</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

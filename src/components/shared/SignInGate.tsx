@@ -31,9 +31,15 @@ export function SignInGate({
   title: string;
   blurb: string;
 }) {
-  const { user, isLoading } = useAuth();
+  const { user, isLoading, previewEnabled, previewTier } = useAuth();
 
-  if (isLoading || user) return <>{children}</>;
+  // The preview toggle wins where it is turned on, so the gate can be checked
+  // without signing out. Everywhere else it is simply whether there is an
+  // account.
+  const signedIn =
+    previewEnabled && previewTier ? previewTier === "pro" : Boolean(user);
+
+  if (isLoading || signedIn) return <>{children}</>;
 
   return (
     <div className="relative">
