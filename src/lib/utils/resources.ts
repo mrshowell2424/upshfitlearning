@@ -80,6 +80,37 @@ export const RESOURCE_CATEGORIES = [
 export type ResourceCategory = (typeof RESOURCE_CATEGORIES)[number]
 
 /**
+ * Categories travel through URLs as slugs, never as their display names.
+ *
+ * Three of the five contain an ampersand, and the deployed Worker decodes the
+ * query string twice: a properly encoded %26 arrives as a literal &, which
+ * splits the parameter in half. "Leadership & Coaching" became
+ * "category=Leadership " plus a junk parameter, so those three categories
+ * returned nothing while the two without ampersands worked. It was reported
+ * by a tester, not caught here, because it only happens once deployed.
+ *
+ * A slug removes the hazard rather than escaping around it, and gives a
+ * shareable URL as a side effect.
+ */
+export function categorySlug(category: string): string {
+  return category
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
+/** Resolve a slug back to its category. Display names still work, so any link
+ *  shared before this change keeps working. */
+export function categoryFromSlug(value?: string | null): ResourceCategory | null {
+  if (!value) return null
+  const exact = RESOURCE_CATEGORIES.find(c => c === value)
+  if (exact) return exact
+  const slug = categorySlug(value)
+  return RESOURCE_CATEGORIES.find(c => categorySlug(c) === slug) ?? null
+}
+
+/**
  * Every Purpose in the sheet, mapped to its category. Keys are lower-cased
  * because the sheet's capitalisation is inconsistent ("Science Instructional
  * strategies"). Anything unrecognized falls back to Instructional Strategies,

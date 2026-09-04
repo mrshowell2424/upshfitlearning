@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getResources, RESOURCE_CATEGORIES } from '@/lib/utils/resources'
+import { getResources, RESOURCE_CATEGORIES, categorySlug, categoryFromSlug } from '@/lib/utils/resources'
 
 export async function GET(request: NextRequest) {
   try {
@@ -37,6 +37,7 @@ export async function GET(request: NextRequest) {
     }
     const categories = RESOURCE_CATEGORIES.map(value => ({
       value,
+      slug: categorySlug(value),
       count: categoryCounts.get(value) ?? 0,
     })).filter(entry => entry.count > 0)
 
@@ -58,8 +59,11 @@ export async function GET(request: NextRequest) {
       )
     }
 
-    if (category !== 'all') {
-      filtered = filtered.filter(r => r.category === category)
+    // Accepts a slug or a display name, so links shared before categories
+    // moved to slugs still resolve.
+    const wanted = category === 'all' ? null : categoryFromSlug(category)
+    if (wanted) {
+      filtered = filtered.filter(r => r.category === wanted)
     }
 
     if (access === 'free') {

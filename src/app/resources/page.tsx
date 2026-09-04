@@ -9,6 +9,7 @@ import ResourceCard from "@/components/shared/ResourceCard";
 import { RESOURCE_TOTAL } from "@/lib/constants/totals";
 import { SignInGate } from "@/components/shared/SignInGate";
 import { PAYMENTS_ENABLED } from "@/lib/constants/access";
+import { categorySlug } from "@/lib/utils/resources";
 
 interface Resource {
   id: string;
@@ -80,7 +81,7 @@ function ResourcesContent() {
   const [total, setTotal] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [categories, setCategories] = useState<{ value: string; count: number }[]>([]);
+  const [categories, setCategories] = useState<{ value: string; slug: string; count: number }[]>([]);
   const [accessCounts, setAccessCounts] = useState({ free: 0, paid: 0 });
   
   const pageSize = 30;
@@ -202,9 +203,10 @@ function ResourcesContent() {
                   >
                     <input
                       type="checkbox"
-                      checked={category === c.value}
+                      checked={category === (c.slug ?? categorySlug(c.value))}
                       onChange={() => {
-                        setCategory(category === c.value ? 'all' : c.value);
+                        const slug = c.slug ?? categorySlug(c.value);
+                        setCategory(category === slug ? 'all' : slug);
                         setPage(1);
                       }}
                       className="w-4 h-4 cursor-pointer"
