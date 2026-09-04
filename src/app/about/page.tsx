@@ -1,5 +1,6 @@
 // @ts-nocheck
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { RESOURCE_TOTAL, STANDARD_TOTAL } from "@/lib/constants/totals";
@@ -34,24 +35,51 @@ export default function AboutPage() {
       <main className="flex-1">
         {/* Hero */}
         <section className="px-5 md:px-8 py-14 md:py-20 border-b border-hairline bg-gradient-to-br from-gray-050 to-white">
-          <div className="max-w-4xl mx-auto">
-            <p
-              className="text-[13px] font-bold uppercase tracking-[0.16em] mb-4"
-              style={{ color: "var(--color-teal)" }}
-            >
-              The person behind Upshift
-            </p>
-            <h1 className="text-[34px] md:text-[46px] font-bold text-charcoal leading-[1.08] mb-5">
-              Stephanie Howell
-            </h1>
-            <p className="text-[17px] md:text-[19px] text-text-body leading-relaxed max-w-3xl">
-              Intervention Specialist at Lancaster City Schools, instructional coach,
-              educational consultant and international speaker.
-            </p>
-            <p className="text-[19px] md:text-[21px] text-charcoal font-semibold leading-snug max-w-3xl mt-6">
-              The best learning starts with curiosity, strong relationships, and the
-              courage to try something new.
-            </p>
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_300px] gap-10 md:gap-12 items-center">
+            <div className="order-2 md:order-1">
+              <p
+                className="text-[13px] font-bold uppercase tracking-[0.16em] mb-4"
+                style={{ color: "var(--color-teal)" }}
+              >
+                The person behind Upshift
+              </p>
+              <h1 className="text-[34px] md:text-[46px] font-bold text-charcoal leading-[1.08] mb-4">
+                Stephanie Howell
+              </h1>
+              <p className="text-[17px] md:text-[19px] text-text-body leading-relaxed">
+                Intervention Specialist at Lancaster City Schools, instructional coach,
+                educational consultant and international speaker.
+              </p>
+              <p className="text-[19px] md:text-[21px] text-charcoal font-semibold leading-snug mt-6">
+                The best learning starts with curiosity, strong relationships, and the
+                courage to try something new.
+              </p>
+            </div>
+
+            {/*
+              The cut-out sits on the brand palette rather than the gradient it
+              arrived on, so the backdrop echoing the four-chevron mark reads as
+              deliberate instead of coincidental. Priority, because it is the
+              largest thing above the fold on this page.
+            */}
+            <div className="order-1 md:order-2 justify-self-center">
+              <div
+                className="relative w-[240px] h-[240px] md:w-[300px] md:h-[300px] rounded-full overflow-hidden"
+                style={{
+                  background:
+                    "linear-gradient(150deg, rgba(228,102,75,0.22) 0%, rgba(196,80,124,0.20) 35%, rgba(122,94,192,0.20) 68%, rgba(79,157,181,0.22) 100%)",
+                }}
+              >
+                <Image
+                  src="/brand/stephanie-howell.png"
+                  alt="Stephanie Howell"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 240px, 300px"
+                  className="object-cover object-top scale-[1.08]"
+                />
+              </div>
+            </div>
           </div>
         </section>
 
