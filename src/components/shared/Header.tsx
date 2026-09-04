@@ -12,6 +12,7 @@ const navItems = [
   { label: "Standard match", href: "/match" },
   { label: "Courses", href: "/courses" },
   { label: "Teacher's Lounge", href: "/lounge" },
+  { label: "About", href: "/about" },
 ];
 
 export default function Header() {
