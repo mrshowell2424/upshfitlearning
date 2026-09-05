@@ -8,23 +8,17 @@ import { SignInGate } from "@/components/shared/SignInGate";
 import { LESSONS, SECTIONS, SKILL_TOTAL, SKILLS_WITH_MATERIALS } from "./lessons-data";
 
 /**
- * Whether the lesson materials are actually on this site yet.
+ * The lesson materials live under public/reading/materials/, laid out with the
+ * same relative paths that lessons-data.ts records, so a chip's href is just
+ * that path under /reading/materials/. Each .dc.html page loads support.js and
+ * deck-stage.js as siblings, which is why those runtime files are copied into
+ * every directory that holds pages.
  *
- * They are not. The hrefs in lessons-data.ts are the design canvas's own
- * .dc.html paths, and none of those files have been uploaded here — turning the
- * chips into links today would give a teacher 133 dead lessons, 133 dead answer
- * keys and 210 dead workbooks. So the chips render as labels instead: a teacher
- * still sees which materials exist for a skill, and nothing lies about being
- * one click away.
- *
- * The page is fully useful in the meantime, because the part teachers need most
- * — the scope and sequence, filterable, with what they have taught marked off —
- * does not depend on the files at all.
- *
- * To switch the links on: put the files under public/reading/materials/ keeping
- * the paths in lessons-data.ts, then set this to true.
+ * Note that public/ is served to anyone with the URL — the sign-in gate is on
+ * this page, not on the files behind it.
  */
-const MATERIALS_READY = false;
+
+
 
 const STORAGE_KEY = "basicReading.taught.v1";
 
@@ -50,25 +44,12 @@ const LINK_STYLE: Record<string, [string, string]> = {
   "Workbook key": ["#EDE7DC", INK],
 };
 
-/** Hex to rgba, for tinting a material colour down to an inert state. */
-function tint(hex: string, alpha: number) {
-  const h = hex.replace("#", "");
-  const n = parseInt(h.length === 3 ? h.split("").map((c) => c + c).join("") : h, 16);
-  return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${alpha})`;
-}
-
 const LEVELS = ["all", 1, 2, 3, 4] as const;
-const STATUSES = [
-  ["all", "All"],
-  ["taught", "Taught"],
-  ["not", "Not taught"],
-] as const;
 
 function ReadingFiler() {
   const [taught, setTaught] = useState<Record<string, boolean>>({});
   const [level, setLevel] = useState<"all" | number>("all");
   const [section, setSection] = useState("all");
-  const [status, setStatus] = useState("all");
   const [query, setQuery] = useState("");
 
   // Marks live in the browser, so they survive a refresh without an account.
@@ -100,8 +81,6 @@ function ReadingFiler() {
     return LESSONS.filter((r) => {
       if (level !== "all" && r.level !== level) return false;
       if (section !== "all" && r.section !== section) return false;
-      if (status === "taught" && !taught[r.id]) return false;
-      if (status === "not" && taught[r.id]) return false;
       if (
         q &&
         !r.skill.toLowerCase().includes(q) &&
@@ -110,7 +89,7 @@ function ReadingFiler() {
         return false;
       return true;
     });
-  }, [level, section, status, query, taught]);
+  }, [level, section, query]);
 
   // Grouped by walking the filtered rows, so sections stay in teaching order.
   const groups = useMemo(() => {
@@ -123,8 +102,6 @@ function ReadingFiler() {
     }
     return out;
   }, [rows]);
-
-  const taughtCount = Object.keys(taught).length;
 
   const chip = (label: string, active: boolean, onClick: () => void) => (
     <button
@@ -187,22 +164,9 @@ function ReadingFiler() {
                 SHOWING
               </div>
             </div>
-            <div
-              style={{
-                background: "#fff",
-                border: `3px solid ${RULE}`,
-                borderRadius: 12,
-                padding: "12px 18px",
-                minWidth: 98,
-              }}
-            >
-              <div style={{ fontSize: 26, fontWeight: 800, lineHeight: 1 }}>{taughtCount}</div>
-              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", color: MUTED }}>
-                TAUGHT
-              </div>
-            </div>
           </div>
         </div>
+
 
         {/* Search and section */}
         <div style={{ display: "flex", flexWrap: "wrap", gap: 14, alignItems: "center", marginTop: 22 }}>
@@ -249,7 +213,7 @@ function ReadingFiler() {
           </select>
         </div>
 
-        {/* Level and status */}
+        {/* Level */}
         <div style={{ display: "flex", flexWrap: "wrap", gap: 26, marginTop: 18 }}>
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", color: MUTED, marginBottom: 8 }}>
@@ -261,41 +225,7 @@ function ReadingFiler() {
               )}
             </div>
           </div>
-          <div>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", color: MUTED, marginBottom: 8 }}>
-              STATUS
-            </div>
-            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-              {STATUSES.map(([value, label]) =>
-                chip(label, status === value, () => setStatus(value))
-              )}
-            </div>
-          </div>
         </div>
-
-        {/* Says it once, up front, rather than leaving it to be found by
-            clicking a chip that does nothing. */}
-        {!MATERIALS_READY && (
-          <div
-            style={{
-              marginTop: 22,
-              background: "#FFFFFF",
-              border: `3px solid ${RULE}`,
-              borderLeft: `8px solid ${GOLD}`,
-              borderRadius: 12,
-              padding: "14px 18px",
-              fontSize: 14,
-              fontWeight: 500,
-              color: INK,
-              lineHeight: 1.5,
-            }}
-          >
-            <strong style={{ fontWeight: 700 }}>The materials are not on the site yet.</strong>{" "}
-            Each skill lists what has been written for it, but the lessons, keys and workbooks
-            still live in the design canvas, so those tags do not open anything. The road map
-            itself works — filter it, and mark off what you have taught.
-          </div>
-        )}
 
         {/* Nothing matched */}
         {rows.length === 0 && (
@@ -397,36 +327,13 @@ function ReadingFiler() {
                       {item.links.map((link) => {
                         const [bg, fg] = LINK_STYLE[link.label] ?? [BLUE, INK];
 
-                        // A solid pill reads as a button, so it only gets to
-                        // look like one when it actually opens something. Until
-                        // then it keeps its colour, at a tint, behind a dashed
-                        // edge — you can still tell a Lesson from a Workbook,
-                        // and it plainly is not asking to be clicked.
-                        if (!MATERIALS_READY) {
-                          return (
-                            <span
-                              key={link.label}
-                              title="Written, but not uploaded to the site yet"
-                              style={{
-                                fontSize: 12,
-                                fontWeight: 700,
-                                padding: "5px 11px",
-                                borderRadius: 999,
-                                background: tint(bg, 0.14),
-                                border: `2px dashed ${tint(bg, 0.55)}`,
-                                color: MUTED,
-                                cursor: "default",
-                              }}
-                            >
-                              {link.label}
-                            </span>
-                          );
-                        }
-
                         return (
                           <a
                             key={link.label}
                             href={`/reading/materials/${link.href}`}
+                            target="_blank"
+                            rel="noopener"
+                            title={`${link.label} — ${item.skill}`}
                             style={{
                               fontSize: 12,
                               fontWeight: 700,
@@ -478,10 +385,10 @@ function ReadingFiler() {
           }}
         >
           <span>
-            {SKILL_TOTAL} skills · Levels 1–4 · {SKILLS_WITH_MATERIALS} with materials written
+            {SKILL_TOTAL} skills · Levels 1–4 · {SKILLS_WITH_MATERIALS} with materials you can open
           </span>
           <span>Taught marks save in this browser.</span>
-          {!MATERIALS_READY && <span>Materials are written but not yet uploaded to the site.</span>}
+          <span>Materials open in a new tab.</span>
         </div>
       </div>
     </div>
@@ -495,7 +402,7 @@ export default function ReadingPage() {
       <main className="flex-1">
         <SignInGate
           title="The Basic Reading road map"
-          blurb={`All ${SKILL_TOTAL} skills in the scope and sequence, in teaching order, with what you have taught marked off. Free — an account is all it takes.`}
+          blurb={`All ${SKILL_TOTAL} skills in the scope and sequence, in teaching order, with the lessons, keys and workbooks a click away and what you have taught marked off. Free — an account is all it takes.`}
         >
           <ReadingFiler />
         </SignInGate>

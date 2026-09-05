@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Canvas source for the Basic Reading materials. The files the site actually
+# serves are copied into public/reading/materials/, so tracking these too would
+# put the same 20MB in the repo twice.
+/Science of Reading/
+/drive-download-*/
