@@ -5,7 +5,7 @@ import { useState, useEffect, useMemo } from "react";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
-import { LESSONS, SECTIONS, SKILL_TOTAL, SKILLS_WITH_MATERIALS } from "./lessons-data";
+import { LESSONS, SECTIONS, SKILL_TOTAL } from "./lessons-data";
 
 /**
  * The lesson materials live under public/reading/materials/, laid out with the
@@ -43,6 +43,19 @@ const LINK_STYLE: Record<string, [string, string]> = {
   Workbook: [GREEN, "#FFFFFF"],
   "Workbook key": ["#EDE7DC", INK],
 };
+
+/**
+ * The material types a card offers. The lessons, answer keys, slides and maze
+ * packets are still on the site and still in lessons-data.ts — they are simply
+ * not on show, so putting a label back here is all it takes to return one.
+ */
+const SHOWN_MATERIALS = ["Workbook", "Workbook key"];
+
+const shown = <T extends { label: string }>(links: T[]) =>
+  links.filter((l) => SHOWN_MATERIALS.includes(l.label));
+
+/** Counted off what is on show, so the footer cannot promise more than it gives. */
+const SKILLS_ON_SHOW = LESSONS.filter((l) => shown(l.links).length > 0).length;
 
 const LEVELS = ["all", 1, 2, 3, 4] as const;
 
@@ -324,7 +337,7 @@ function ReadingFiler() {
                       </div>
                     </div>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 7, marginTop: "auto" }}>
-                      {item.links.map((link) => {
+                      {shown(item.links).map((link) => {
                         const [bg, fg] = LINK_STYLE[link.label] ?? [BLUE, INK];
 
                         return (
@@ -348,7 +361,7 @@ function ReadingFiler() {
                           </a>
                         );
                       })}
-                      {item.links.length === 0 && (
+                      {shown(item.links).length === 0 && (
                         <span
                           style={{
                             fontSize: 12,
@@ -360,7 +373,7 @@ function ReadingFiler() {
                             border: `2px solid ${RULE}`,
                           }}
                         >
-                          Not built yet
+                          No workbook yet
                         </span>
                       )}
                     </div>
@@ -385,10 +398,10 @@ function ReadingFiler() {
           }}
         >
           <span>
-            {SKILL_TOTAL} skills · Levels 1–4 · {SKILLS_WITH_MATERIALS} with materials you can open
+            {SKILL_TOTAL} skills · Levels 1–4 · {SKILLS_ON_SHOW} with a workbook
           </span>
           <span>Taught marks save in this browser.</span>
-          <span>Materials open in a new tab.</span>
+          <span>Workbooks open in a new tab.</span>
         </div>
       </div>
     </div>
@@ -402,7 +415,7 @@ export default function ReadingPage() {
       <main className="flex-1">
         <SignInGate
           title="The Basic Reading road map"
-          blurb={`All ${SKILL_TOTAL} skills in the scope and sequence, in teaching order, with the lessons, keys and workbooks a click away and what you have taught marked off. Free — an account is all it takes.`}
+          blurb={`All ${SKILL_TOTAL} skills in the scope and sequence, in teaching order, with ${SKILLS_ON_SHOW} workbooks and answer keys a click away. Free — an account is all it takes.`}
         >
           <ReadingFiler />
         </SignInGate>
