@@ -6,6 +6,54 @@ import { useAuth } from "@/providers/AuthProvider";
 const BUTTON_BASE =
   "flex w-full items-center justify-center gap-2 rounded-lg py-2 font-semibold transition-colors text-center";
 
+/** Where the slides are shared from, and the walkthrough for joining. */
+const GOLD_GROUP_URL = "https://bit.ly/GoldHello";
+const GOLD_HELP_VIDEO = "https://www.youtube.com/watch?v=ADkUZD7skQE";
+
+/**
+ * Answers the "request access" screen before a teacher meets it.
+ *
+ * The slides are shared with the Gold Edu Google group, so anyone outside it
+ * lands on Google's request-access page — and Google's own wording gives no
+ * hint that joining a group is what unlocks it. A teacher who requests access
+ * then waits for a reply that only tells them the same thing.
+ *
+ * It sits under the button rather than above it because it is a contingency,
+ * not a precondition: most teachers are already in the group and should not be
+ * made to read an instruction that does not apply to them.
+ */
+function AccessNote() {
+  return (
+    <div className="mt-3 rounded-lg border border-border bg-gray-050 p-3 text-xs leading-relaxed text-text-muted">
+      <p>
+        <span className="font-semibold text-charcoal">
+          Asked to request access?
+        </span>{" "}
+        These slides are shared through the Gold EDU Google group. Join once and
+        the material opens for you — there is no need to send a request.
+      </p>
+      <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1">
+        <a
+          href={GOLD_GROUP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-coral hover:underline"
+        >
+          Join the group
+        </a>
+        <a
+          href={GOLD_HELP_VIDEO}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-charcoal hover:underline"
+        >
+          Watch how
+        </a>
+      </p>
+    </div>
+  );
+}
+
 export function ResourceActions({
   docUrl,
   youtubeUrl,
@@ -62,6 +110,10 @@ export function ResourceActions({
           Watch on YouTube
         </a>
       )}
+
+      {/* Below both, so the buttons keep reading as a set. Only where there
+          are slides to be locked out of. */}
+      {docUrl && <AccessNote />}
     </>
   );
 }
