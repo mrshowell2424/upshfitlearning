@@ -50,6 +50,13 @@ const LINK_STYLE: Record<string, [string, string]> = {
   "Workbook key": ["#EDE7DC", INK],
 };
 
+/** Hex to rgba, for tinting a material colour down to an inert state. */
+function tint(hex: string, alpha: number) {
+  const h = hex.replace("#", "");
+  const n = parseInt(h.length === 3 ? h.split("").map((c) => c + c).join("") : h, 16);
+  return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${alpha})`;
+}
+
 const LEVELS = ["all", 1, 2, 3, 4] as const;
 const STATUSES = [
   ["all", "All"],
@@ -266,6 +273,30 @@ function ReadingFiler() {
           </div>
         </div>
 
+        {/* Says it once, up front, rather than leaving it to be found by
+            clicking a chip that does nothing. */}
+        {!MATERIALS_READY && (
+          <div
+            style={{
+              marginTop: 22,
+              background: "#FFFFFF",
+              border: `3px solid ${RULE}`,
+              borderLeft: `8px solid ${GOLD}`,
+              borderRadius: 12,
+              padding: "14px 18px",
+              fontSize: 14,
+              fontWeight: 500,
+              color: INK,
+              lineHeight: 1.5,
+            }}
+          >
+            <strong style={{ fontWeight: 700 }}>The materials are not on the site yet.</strong>{" "}
+            Each skill lists what has been written for it, but the lessons, keys and workbooks
+            still live in the design canvas, so those tags do not open anything. The road map
+            itself works — filter it, and mark off what you have taught.
+          </div>
+        )}
+
         {/* Nothing matched */}
         {rows.length === 0 && (
           <div
@@ -365,28 +396,49 @@ function ReadingFiler() {
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 7, marginTop: "auto" }}>
                       {item.links.map((link) => {
                         const [bg, fg] = LINK_STYLE[link.label] ?? [BLUE, INK];
-                        const style = {
-                          fontSize: 12,
-                          fontWeight: 700,
-                          padding: "6px 12px",
-                          borderRadius: 999,
-                          background: bg,
-                          color: fg,
-                        } as const;
-                        // Until the files are uploaded these are labels, not
-                        // links — see MATERIALS_READY above.
-                        return MATERIALS_READY ? (
+
+                        // A solid pill reads as a button, so it only gets to
+                        // look like one when it actually opens something. Until
+                        // then it keeps its colour, at a tint, behind a dashed
+                        // edge — you can still tell a Lesson from a Workbook,
+                        // and it plainly is not asking to be clicked.
+                        if (!MATERIALS_READY) {
+                          return (
+                            <span
+                              key={link.label}
+                              title="Written, but not uploaded to the site yet"
+                              style={{
+                                fontSize: 12,
+                                fontWeight: 700,
+                                padding: "5px 11px",
+                                borderRadius: 999,
+                                background: tint(bg, 0.14),
+                                border: `2px dashed ${tint(bg, 0.55)}`,
+                                color: MUTED,
+                                cursor: "default",
+                              }}
+                            >
+                              {link.label}
+                            </span>
+                          );
+                        }
+
+                        return (
                           <a
                             key={link.label}
                             href={`/reading/materials/${link.href}`}
-                            style={{ ...style, textDecoration: "none" }}
+                            style={{
+                              fontSize: 12,
+                              fontWeight: 700,
+                              padding: "6px 12px",
+                              borderRadius: 999,
+                              background: bg,
+                              color: fg,
+                              textDecoration: "none",
+                            }}
                           >
                             {link.label}
                           </a>
-                        ) : (
-                          <span key={link.label} style={style} title="Written — not uploaded to the site yet">
-                            {link.label}
-                          </span>
                         );
                       })}
                       {item.links.length === 0 && (
