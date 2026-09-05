@@ -45,3 +45,6 @@ next-env.d.ts
 # put the same 20MB in the repo twice.
 /Science of Reading/
 /drive-download-*/
+
+# Finder duplicates, e.g. "Basic Reading Lesson Filer copy.html"
+*\ copy.html
