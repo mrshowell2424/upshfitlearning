@@ -177,3 +177,29 @@ export const pending_grants = pgTable("pending_grants", {
   claimed_by: text("claimed_by"),
   created_at: timestamp("created_at").defaultNow(),
 });
+
+/**
+ * The Basic Reading workbooks, stored as rows rather than files.
+ *
+ * The site runs on Cloudflare Workers, where the deployed bundle is a single
+ * worker.js and there is no filesystem behind it — a probe of the running
+ * worker reported cwd as /bundle containing exactly one entry. Reading the
+ * pages off disk therefore cannot work in production however they are traced
+ * into the build, which is why every workbook came back 404 to a signed-in
+ * teacher while the sign-in check itself passed.
+ *
+ * Postgres is the one store this app can already reach from a Worker, so the
+ * pages live here. `path` is the same relative path the road map records, so a
+ * request path maps straight to a row.
+ *
+ * Seeded from content-reading-materials/ by scripts/seed-reading-materials.ts,
+ * which stays the source of truth and the thing to re-run after a canvas
+ * re-export.
+ */
+export const reading_materials = pgTable("reading_materials", {
+  path: text("path").primaryKey(),
+  content: text("content").notNull(),
+  content_type: text("content_type").notNull(),
+  bytes: integer("bytes").notNull(),
+  updated_at: timestamp("updated_at").defaultNow(),
+});
