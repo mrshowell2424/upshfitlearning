@@ -6,15 +6,15 @@ import { useAuth } from "@/providers/AuthProvider";
 const BUTTON_BASE =
   "flex w-full items-center justify-center gap-2 rounded-lg py-2 font-semibold transition-colors text-center";
 
-/** Where the slides are shared from, and the walkthrough for joining. */
+/** Where the resources are shared from, and the walkthrough for joining. */
 const GOLD_GROUP_URL = "https://bit.ly/GoldHello";
 const GOLD_HELP_VIDEO = "https://www.youtube.com/watch?v=ADkUZD7skQE";
 
 /**
  * Answers the "request access" screen before a teacher meets it.
  *
- * The slides are shared with the Gold Edu Google group, so anyone outside it
- * lands on Google's request-access page — and Google's own wording gives no
+ * The linked file is shared with the Gold EDU Google group, so anyone outside
+ * it lands on Google's request-access page — and Google's own wording gives no
  * hint that joining a group is what unlocks it. A teacher who requests access
  * then waits for a reply that only tells them the same thing.
  *
@@ -29,7 +29,7 @@ function AccessNote() {
         <span className="font-semibold text-charcoal">
           Asked to request access?
         </span>{" "}
-        These slides are shared through the Gold EDU Google group. Join once and
+        This resource is shared through the Gold EDU Google group. Join once and
         the material opens for you — there is no need to send a request.
       </p>
       <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1">
@@ -93,7 +93,7 @@ export function ResourceActions({
           rel="noopener noreferrer"
           className={`${BUTTON_BASE} bg-coral text-white hover:bg-coral-press mb-3`}
         >
-          Open Google Slides
+          Open Resource
         </a>
       )}
 
@@ -112,7 +112,7 @@ export function ResourceActions({
       )}
 
       {/* Below both, so the buttons keep reading as a set. Only where there
-          are slides to be locked out of. */}
+          is a linked file to be locked out of. */}
       {docUrl && <AccessNote />}
     </>
   );
