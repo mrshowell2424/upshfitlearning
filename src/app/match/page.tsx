@@ -128,6 +128,23 @@ function MatchPageContent() {
             </button>
           </div>
 
+          {/* Which standards these actually are.
+              Most states that wrote their own version kept the substance and
+              changed the shape of it — merging the literature and informational
+              strands, or starting a grade or two earlier — so the codes are the
+              part that will not line up. Naming Common Core here is enough for
+              a teacher in one of those states to know to search the skill
+              instead, which is the one route that works everywhere. */}
+          <p className="text-center text-sm text-text-muted mb-8 leading-relaxed">
+            These are the{" "}
+            <span className="font-semibold text-text-body">Common Core</span>{" "}
+            standards. If your state adopted its own version, it covers much the
+            same ground but numbers it differently — some merge literature and
+            informational text into one strand, and some begin below kindergarten.
+            Search the skill rather than the code and you will land in the right
+            place.
+          </p>
+
           {/* Search results */}
           {results.length > 0 && (
             <div className="mt-8">
