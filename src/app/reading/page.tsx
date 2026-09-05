@@ -342,17 +342,6 @@ function ReadingFiler() {
                         <div style={{ fontSize: 19, fontWeight: 700, lineHeight: 1.25, textWrap: "pretty" }}>
                           {item.skill}
                         </div>
-                        <div
-                          style={{
-                            fontSize: 11,
-                            fontWeight: 700,
-                            letterSpacing: "0.1em",
-                            color: on ? GREEN : "#9AA3AD",
-                            marginTop: 4,
-                          }}
-                        >
-                          {on ? "TAUGHT" : "NOT TAUGHT"}
-                        </div>
                       </div>
                     </div>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 7, marginTop: "auto" }}>
