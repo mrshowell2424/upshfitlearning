@@ -7,6 +7,7 @@ import Link from "next/link";
 const links = [
   { label: "About", href: "/about" },
   { label: "Standard match", href: "/match" },
+  { label: "Basic Reading", href: "/reading" },
   { label: "Resources", href: "/resources" },
   { label: "Learning science", href: "/learning-science" },
 ];

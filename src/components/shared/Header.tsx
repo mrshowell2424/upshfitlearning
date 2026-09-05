@@ -10,6 +10,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "Resources", href: "/resources" },
   { label: "Standard match", href: "/match" },
+  { label: "Basic Reading", href: "/reading" },
   { label: "Courses", href: "/courses" },
   { label: "Teacher's Lounge", href: "/lounge" },
   { label: "About", href: "/about" },
