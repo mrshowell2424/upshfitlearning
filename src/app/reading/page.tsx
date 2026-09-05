@@ -5,6 +5,7 @@ import { useState, useEffect, useMemo } from "react";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
+import { useAuth } from "@/providers/AuthProvider";
 import { LESSONS, SECTIONS, SKILL_TOTAL } from "./lessons-data";
 
 /**
@@ -60,6 +61,7 @@ const SKILLS_ON_SHOW = LESSONS.filter((l) => shown(l.links).length > 0).length;
 const LEVELS = ["all", 1, 2, 3, 4] as const;
 
 function ReadingFiler() {
+  const { session } = useAuth();
   const [taught, setTaught] = useState<Record<string, boolean>>({});
   const [level, setLevel] = useState<"all" | number>("all");
   const [section, setSection] = useState("all");
@@ -74,6 +76,23 @@ function ReadingFiler() {
       /* no stored marks, start clean */
     }
   }, []);
+
+  /**
+   * Workbooks are opened by clicking a link, and a link carries cookies rather
+   * than an Authorization header — so the token is traded for a scoped,
+   * HttpOnly cookie once, here, and the chips are then plain links. See
+   * lib/auth/reading-pass.ts.
+   */
+  useEffect(() => {
+    const token = session?.access_token;
+    if (!token) return;
+    fetch("/api/reading/unlock", {
+      method: "POST",
+      headers: { authorization: `Bearer ${token}` },
+    }).catch(() => {
+      /* the chips will 401 and the teacher can reload — nothing to say here */
+    });
+  }, [session?.access_token]);
 
   const toggle = (id: number) => {
     setTaught((current) => {
@@ -343,7 +362,7 @@ function ReadingFiler() {
                         return (
                           <a
                             key={link.label}
-                            href={`/reading/materials/${link.href}`}
+                            href={`/api/reading/materials/${link.href}`}
                             target="_blank"
                             rel="noopener"
                             title={`${link.label} — ${item.skill}`}
