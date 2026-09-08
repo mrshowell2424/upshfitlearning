@@ -1,53 +1,20 @@
+import type { DesignGrade, GradeYear } from "./constants"
+
 /**
- * The Design Thinking road map: 36 weeks a year, for each of 13 grades.
- *
- * Extracted from the Design Thinking canvas rather than retyped, so the week
- * order, the driving questions and the audiences are exactly what was authored
- * there. Only what the index needs is here — a week's five daily activities,
- * the guest-invite wording and the extension task stay in the canvas's own
- * year-data files, which the slide and workbook pages read directly.
+ * Every week of every grade, extracted from the Design Thinking canvas rather
+ * than retyped, so the week order, the driving questions and the audiences are
+ * exactly what was authored there. Only what the index shows is here — a
+ * week's five daily activities, its guest-invite wording and its extension
+ * task stay in the canvas's own year-data files, which the slide and workbook
+ * pages read directly.
  *
  * Quarter headings are per grade rather than shared: the arc is the same
  * everywhere (class, grade, school, community) but each grade words it for its
  * own students.
+ *
+ * SERVER ONLY. Imported by /api/design-thinking/year and nothing else — see
+ * the note in constants.ts.
  */
-
-export interface DesignWeek {
-  /** 1-36, and the number the material pages take as ?week= */
-  n: number
-  tag: string
-  title: string
-  /** The driving question, always phrased "How might we ..." */
-  hmw: string
-  /** Who the week's work is tested on. */
-  audience: string
-}
-
-export interface Quarter {
-  name: string
-  meta: string
-  blurb: string
-}
-
-export interface GradeYear {
-  quarters: Quarter[]
-  weeks: DesignWeek[]
-}
-
-/** K first, then 1-12, which is the order the picker shows. */
-export const DESIGN_GRADES = ["K", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"] as const
-
-export type DesignGrade = (typeof DESIGN_GRADES)[number]
-
-/** The five days, in the order a week runs. Colours are the canvas's own. */
-export const PHASES = [
-  { letter: "M", day: "Monday", phase: "Empathize", color: "#F26D5B" },
-  { letter: "T", day: "Tuesday", phase: "Define", color: "#F2A93B" },
-  { letter: "W", day: "Wednesday", phase: "Ideate", color: "#2FA39B" },
-  { letter: "T", day: "Thursday", phase: "Prototype", color: "#5B5BD6" },
-  { letter: "F", day: "Friday", phase: "Test", color: "#8B3E8F" },
-] as const
-
 export const DESIGN_YEARS: Record<DesignGrade, GradeYear> = {
   "K": {
     quarters: [
@@ -648,9 +615,3 @@ export const DESIGN_YEARS: Record<DesignGrade, GradeYear> = {
     ],
   },
 }
-
-/** 36 a year across 13 grades — the number the page puts on the masthead. */
-export const DESIGN_WEEK_TOTAL = DESIGN_GRADES.length * 36
-
-/** Five a week, every week. */
-export const DESIGN_ACTIVITY_TOTAL = DESIGN_WEEK_TOTAL * PHASES.length

@@ -6,23 +6,27 @@ import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
 import { useAuth } from "@/providers/AuthProvider";
 import {
-  DESIGN_YEARS,
   DESIGN_GRADES,
   DESIGN_WEEK_TOTAL,
   PHASES,
   type DesignGrade,
-} from "./weeks-data";
+  type GradeYear,
+} from "./constants";
 
 /**
  * Design Thinking: a design challenge for every week of the year,
  * in every grade from K to 12.
  *
- * The week list comes from weeks-data.ts, extracted from the canvas. The three
- * things a teacher actually opens — the teacher slides, the student workbook
- * and the answer key — are canvas pages stored under design-thinking/ in the
- * materials table and served through /api/materials, which refuses anyone
- * without an account. Each takes ?week= and &grade=, so one template renders
- * any of the 468 weeks.
+ * The weeks are fetched from /api/design-thinking/year rather than imported,
+ * so a signed-out visitor receives no week titles, no driving questions and no
+ * material links — not even in the page source. Importing them would have put
+ * all 468 into the client bundle regardless of what this rendered.
+ *
+ * The three things a teacher actually opens — the teacher slides, the student
+ * workbook and the answer key — are canvas pages stored under design-thinking/
+ * in the materials table and served through /api/materials, which refuses
+ * anyone without an account. Each takes ?week= and &grade=, so one template
+ * renders any of the 468 weeks.
  *
  * Grade lives in the URL rather than in state alone, so a teacher can bookmark
  * their own grade and send it to a colleague.
@@ -43,6 +47,8 @@ function DesignThinkingRoadMap() {
   const { session } = useAuth();
   const [grade, setGrade] = useState<DesignGrade>("3");
   const [openWeek, setOpenWeek] = useState<number | null>(null);
+  const [year, setYear] = useState<GradeYear | null>(null);
+  const [failed, setFailed] = useState(false);
 
   // Grade comes off the URL on arrival so a bookmarked grade opens on it.
   useEffect(() => {
@@ -60,29 +66,50 @@ function DesignThinkingRoadMap() {
   };
 
   /**
-   * Materials open by clicking a link, and a link carries cookies rather than
-   * an Authorization header — so the token is traded for a scoped, HttpOnly
-   * cookie once, here. See lib/auth/materials-pass.ts.
+   * Trade the token for the cookie that opens materials, then fetch the year.
+   *
+   * The cookie exists because a material is opened by clicking a link, and a
+   * link carries cookies rather than an Authorization header — see
+   * lib/auth/materials-pass.ts. Unlocking first means the week links work the
+   * moment they appear.
    */
   useEffect(() => {
     const token = session?.access_token;
-    if (!token) return;
-    fetch("/api/materials/unlock", {
-      method: "POST",
-      headers: { authorization: `Bearer ${token}` },
-    }).catch(() => {
-      /* the links will 401 and a reload fixes it — nothing useful to say */
-    });
-  }, [session?.access_token]);
-
-  const year = DESIGN_YEARS[grade];
+    if (!token) {
+      setYear(null);
+      return;
+    }
+    let live = true;
+    setFailed(false);
+    (async () => {
+      await fetch("/api/materials/unlock", {
+        method: "POST",
+        headers: { authorization: `Bearer ${token}` },
+      }).catch(() => {
+        /* the links will 401 and a reload fixes it */
+      });
+      try {
+        const res = await fetch(`/api/design-thinking/year?grade=${grade}`, {
+          headers: { authorization: `Bearer ${token}` },
+        });
+        if (!res.ok) throw new Error(String(res.status));
+        const data = await res.json();
+        if (live) setYear(data);
+      } catch {
+        if (live) setFailed(true);
+      }
+    })();
+    return () => {
+      live = false;
+    };
+  }, [session?.access_token, grade]);
 
   // Nine weeks to a quarter, walked in teaching order.
   const quarters = useMemo(
     () =>
-      year.quarters.map((q, i) => ({
+      (year?.quarters ?? []).map((q, i) => ({
         ...q,
-        weeks: year.weeks.slice(i * 9, i * 9 + 9),
+        weeks: (year?.weeks ?? []).slice(i * 9, i * 9 + 9),
       })),
     [year]
   );
@@ -219,6 +246,31 @@ function DesignThinkingRoadMap() {
             ))}
           </div>
         </div>
+
+        {/* A signed-in teacher waiting on the fetch, or one whose fetch failed.
+            Signed out there is nothing to say here — the gate is already
+            saying it, and the weeks were never sent. */}
+        {session && !year && !failed && (
+          <div style={{ marginTop: 40, fontSize: 15, color: MUTED }}>Loading the year…</div>
+        )}
+        {session && failed && (
+          <div
+            style={{
+              marginTop: 40,
+              padding: "22px 24px",
+              background: "#FFFFFF",
+              border: `1px solid ${RULE}`,
+              borderLeft: `5px solid ${CORAL}`,
+              borderRadius: 4,
+            }}
+          >
+            <div style={{ fontSize: 16, fontWeight: 600 }}>The year would not load.</div>
+            <div style={{ fontSize: 14, color: MUTED, marginTop: 6 }}>
+              Reload the page. If it keeps happening, your session may have expired — sign in
+              again.
+            </div>
+          </div>
+        )}
 
         {/* The year */}
         {quarters.map((q) => (
