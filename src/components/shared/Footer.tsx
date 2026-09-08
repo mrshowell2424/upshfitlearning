@@ -8,6 +8,7 @@ const links = [
   { label: "About", href: "/about" },
   { label: "Standard match", href: "/match" },
   { label: "Basic Reading", href: "/reading" },
+  { label: "Design Thinking", href: "/design-thinking" },
   { label: "Resources", href: "/resources" },
   { label: "Learning science", href: "/learning-science" },
 ];

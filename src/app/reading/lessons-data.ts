@@ -9,7 +9,7 @@
  * Every skill now carries a workbook and a workbook key; 133 also have a
  * lesson and answer key, and five have slides and a maze packet. The hrefs are
  * the canvas's own relative paths, and the files sit under the same paths in
- * content-reading-materials/, served through /api/reading/materials so they
+ * content-reading-materials/, served through /api/materials so they
  * are readable only by someone with an account.
  *
  * The canvas lists five skills twice over, with identical links each time — ey,

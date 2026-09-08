@@ -9,14 +9,10 @@ import { useAuth } from "@/providers/AuthProvider";
 import { LESSONS, SECTIONS, SKILL_TOTAL } from "./lessons-data";
 
 /**
- * The lesson materials live under public/reading/materials/, laid out with the
- * same relative paths that lessons-data.ts records, so a chip's href is just
- * that path under /reading/materials/. Each .dc.html page loads support.js and
- * deck-stage.js as siblings, which is why those runtime files are copied into
- * every directory that holds pages.
- *
- * Note that public/ is served to anyone with the URL — the sign-in gate is on
- * this page, not on the files behind it.
+ * The workbooks are served from Postgres through /api/materials, which refuses
+ * anyone it cannot tie to an account. content-reading-materials/ holds the
+ * source of truth and seeds that table; a chip's href is the same relative
+ * path lessons-data.ts records.
  */
 
 
@@ -81,12 +77,12 @@ function ReadingFiler() {
    * Workbooks are opened by clicking a link, and a link carries cookies rather
    * than an Authorization header — so the token is traded for a scoped,
    * HttpOnly cookie once, here, and the chips are then plain links. See
-   * lib/auth/reading-pass.ts.
+   * lib/auth/materials-pass.ts.
    */
   useEffect(() => {
     const token = session?.access_token;
     if (!token) return;
-    fetch("/api/reading/unlock", {
+    fetch("/api/materials/unlock", {
       method: "POST",
       headers: { authorization: `Bearer ${token}` },
     }).catch(() => {
@@ -351,7 +347,7 @@ function ReadingFiler() {
                         return (
                           <a
                             key={link.label}
-                            href={`/api/reading/materials/${link.href}`}
+                            href={`/api/materials/${link.href}`}
                             target="_blank"
                             rel="noopener"
                             title={`${link.label} — ${item.skill}`}

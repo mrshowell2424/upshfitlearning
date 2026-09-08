@@ -11,6 +11,7 @@ const navItems = [
   { label: "Resources", href: "/resources" },
   { label: "Standard match", href: "/match" },
   { label: "Basic Reading", href: "/reading" },
+  { label: "Design Thinking", href: "/design-thinking" },
   { label: "Courses", href: "/courses" },
   { label: "Teacher's Lounge", href: "/lounge" },
   { label: "About", href: "/about" },

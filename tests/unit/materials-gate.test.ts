@@ -24,14 +24,14 @@ vi.mock("@/lib/db", () => ({
   withDb: vi.fn(),
 }));
 
-const { GET } = await import("@/app/api/reading/materials/[...path]/route");
-const { readingPassFromCookies, READING_PASS } = await import("@/lib/auth/reading-pass");
+const { GET } = await import("@/app/api/materials/[...path]/route");
+const { materialsPassFromCookies, MATERIALS_PASS } = await import("@/lib/auth/materials-pass");
 
 const signedIn = () =>
   getUser.mockResolvedValue({ data: { user: { id: "u1", email: "t@e.com" } }, error: null });
 
 function req(cookie?: string, headers: Record<string, string> = {}) {
-  return new Request("http://localhost/api/reading/materials/x", {
+  return new Request("http://localhost/api/materials/x", {
     headers: { ...(cookie ? { cookie } : {}), ...headers },
   }) as never;
 }
@@ -45,21 +45,21 @@ const page = {
   bytes: 28,
 };
 
-describe("reading pass cookie", () => {
+describe("materials pass cookie", () => {
   it("finds the pass among other cookies", () => {
-    expect(readingPassFromCookies(req(`a=1; ${READING_PASS}=abc; b=2`))).toBe("abc");
+    expect(materialsPassFromCookies(req(`a=1; ${MATERIALS_PASS}=abc; b=2`))).toBe("abc");
   });
 
   it("is null when no cookie header is sent", () => {
-    expect(readingPassFromCookies(req())).toBeNull();
+    expect(materialsPassFromCookies(req())).toBeNull();
   });
 
   it("does not match a lookalike cookie name", () => {
-    expect(readingPassFromCookies(req(`not_${READING_PASS}=abc`))).toBeNull();
+    expect(materialsPassFromCookies(req(`not_${MATERIALS_PASS}=abc`))).toBeNull();
   });
 });
 
-describe("GET /api/reading/materials", () => {
+describe("GET /api/materials", () => {
   beforeEach(() => {
     getUser.mockReset();
     limit.mockReset();
@@ -71,7 +71,7 @@ describe("GET /api/reading/materials", () => {
 
   it("refuses a pass Supabase does not recognise", async () => {
     getUser.mockResolvedValue({ data: null, error: { message: "bad token" } });
-    expect((await GET(req(`${READING_PASS}=forged`), params(WB))).status).toBe(401);
+    expect((await GET(req(`${MATERIALS_PASS}=forged`), params(WB))).status).toBe(401);
   });
 
   it("does not reach the database before checking the credential", async () => {
@@ -82,7 +82,7 @@ describe("GET /api/reading/materials", () => {
   it("serves the workbook to a verified pass", async () => {
     signedIn();
     limit.mockResolvedValue([page]);
-    const res = await GET(req(`${READING_PASS}=good`), params(WB));
+    const res = await GET(req(`${MATERIALS_PASS}=good`), params(WB));
     expect(res.status).toBe(200);
     expect(res.headers.get("content-type")).toContain("text/html");
     expect(await res.text()).toContain("i says");
@@ -99,7 +99,7 @@ describe("GET /api/reading/materials", () => {
     signedIn();
     limit.mockResolvedValue([{ ...page, content: "runtime" }]);
     const res = await GET(
-      req(`${READING_PASS}=good`),
+      req(`${MATERIALS_PASS}=good`),
       params("uploads", "Short vowels teaching roadmap", "support.js")
     );
     expect(res.status).toBe(200);
@@ -108,13 +108,13 @@ describe("GET /api/reading/materials", () => {
   it("404s only when the workbook genuinely is not there", async () => {
     signedIn();
     limit.mockResolvedValue([]);
-    expect((await GET(req(`${READING_PASS}=good`), params("nope.dc.html"))).status).toBe(404);
+    expect((await GET(req(`${MATERIALS_PASS}=good`), params("nope.dc.html"))).status).toBe(404);
   });
 
   it("reports a database failure as unavailable, not as not-found", async () => {
     signedIn();
     limit.mockRejectedValue(new Error("connection refused"));
-    const res = await GET(req(`${READING_PASS}=good`), params(WB));
+    const res = await GET(req(`${MATERIALS_PASS}=good`), params(WB));
     expect(res.status).toBe(503);
     expect(await res.text()).not.toContain("Not found");
   });
@@ -122,7 +122,7 @@ describe("GET /api/reading/materials", () => {
   it("keeps gated pages out of shared caches", async () => {
     signedIn();
     limit.mockResolvedValue([page]);
-    const res = await GET(req(`${READING_PASS}=good`), params(WB));
+    const res = await GET(req(`${MATERIALS_PASS}=good`), params(WB));
     expect(res.headers.get("cache-control")).toContain("private");
   });
 });

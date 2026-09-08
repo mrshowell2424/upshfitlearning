@@ -2,10 +2,13 @@ import { NextRequest, NextResponse } from "next/server";
 import { eq } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { reading_materials } from "@/lib/db/schema";
-import { mayReadMaterials } from "@/lib/auth/reading-pass";
+import { mayReadMaterials } from "@/lib/auth/materials-pass";
 
 /**
- * Serves a Basic Reading workbook to a signed-in teacher, and nobody else.
+ * Serves a gated teaching material to a signed-in teacher, and nobody else.
+ *
+ * Both road maps come through here — Basic Reading workbooks at the root of the
+ * store, Design Thinking slides and workbooks under design-thinking/.
  *
  * The pages come from Postgres rather than from disk. This is not a
  * preference: production runs on Cloudflare Workers, where the deployed bundle
