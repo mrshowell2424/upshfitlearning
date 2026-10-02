@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#1c1917}a{color:#2F7A8C}a:hover{color:#1F2E2A}</style>
+<script src="og-concepts.js"></script>
+<script src="og-pack-data.js"></script>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="816" height="1056" hint-size="100%,100%">
+<sc-for list="{{ maps }}" as="m" hint-placeholder-count="2">
+<section data-label="Roadmap" data-screen-label="Roadmap" style="background:#F3F6EC;font-family:'Poppins',sans-serif;color:#1F2E2A;box-sizing:border-box;padding:30px 36px;display:flex;flex-direction:column;gap:10px">
+  <div>
+    <div style="font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#2F7A8C">{{ m.kicker }}</div>
+    <div style="font-weight:800;font-size:30px;line-height:1.05">{{ m.title }}</div>
+  </div>
+  <div style="background:#fff;border:3px solid #1F2E2A;border-radius:12px;box-shadow:0 4px 0 #1F2E2A;padding:8px 14px">
+    <div style="font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#C0504D">My goal · I can</div>
+    <div style="font-size:14.5px;font-weight:700;line-height:1.3">{{ m.ican }}</div>
+    <div style="font-size:12px;font-weight:600;color:#4B6049;margin-top:3px">My rule: {{ m.rule }}</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:8px">
+    <div style="font-weight:800;font-size:14px;background:#D9A441;border:3px solid #1F2E2A;border-radius:999px;padding:3px 18px;box-shadow:0 3px 0 #1F2E2A">START</div>
+    <div style="font-size:18px;color:#A9B89F;font-weight:700">↓</div>
+  </div>
+  <div style="flex:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;gap:10px;min-height:0">
+    <sc-for list="{{ m.stops }}" as="s" hint-placeholder-count="6">
+      <div style="background:#fff;border:3px solid #1F2E2A;border-radius:14px;box-shadow:0 4px 0 #1F2E2A;padding:7px 11px;display:flex;flex-direction:column;gap:3px;min-height:0;overflow:hidden">
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="{{ s.numStyle }}">{{ s.n }}</div>
+          <div style="font-weight:800;font-size:15px;line-height:1.1;flex:1">{{ s.title }}</div>
+          <div style="flex:none;width:18px;height:18px;border-radius:5px;border:2.5px solid #1F2E2A;background:#F3F6EC"></div>
+        </div>
+        <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="3">
+          <div style="display:block;font-size:11px;line-height:1.25;flex:0 0 auto;padding-left:10px;text-indent:-10px">
+            <span style="font-weight:800;color:#4B6049">• </span><b>{{ it.t }}</b> {{ it.d }}
+          </div>
+        </sc-for>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:10px">
+    <div style="background:#fff;border:3px solid #1F2E2A;border-radius:12px;box-shadow:0 4px 0 #1F2E2A;padding:7px 12px;display:flex;flex-direction:column;gap:2px">
+      <div style="font-size:12.5px;font-weight:800">My steps this week</div>
+      <sc-for list="{{ steps }}" as="d" hint-placeholder-count="5">
+        <div style="display:flex;gap:8px;font-size:11.5px;line-height:1.35;border-bottom:1px dashed #C9D3C4"><b style="width:78px;flex:none">{{ d.day }}</b><span>{{ d.boxes }}</span></div>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="flex:1;background:#fff;border:3px solid #1F2E2A;border-radius:12px;box-shadow:0 4px 0 #1F2E2A;padding:7px 12px;display:flex;flex-direction:column;gap:2px">
+        <div style="font-size:12.5px;font-weight:800">Check my own work</div>
+        <sc-for list="{{ m.checks }}" as="c" hint-placeholder-count="3">
+          <div style="font-size:11.5px;font-weight:600">☐ {{ c }}</div>
+        </sc-for>
+      </div>
+      <div style="background:#4B6049;color:#fff;border:3px solid #1F2E2A;border-radius:12px;box-shadow:0 4px 0 #1F2E2A;padding:6px 14px">
+        <div style="font-size:15px;font-weight:800">FINISH · Exit Ticket</div>
+        <div style="font-size:11px;font-weight:600">{{ m.exit }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+<sc-for list="{{ m.acts }}" as="a" hint-placeholder-count="0">
+<section data-label="Activity" data-screen-label="Activity" style="background:#F3F6EC;font-family:'Poppins',sans-serif;color:#1F2E2A;box-sizing:border-box;padding:30px 36px;display:flex;flex-direction:column;gap:10px">
+  <div style="display:flex;align-items:center;gap:12px">
+    <div style="{{ a.numStyle }}">{{ a.n }}</div>
+    <div style="flex:1">
+      <div style="font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:10.5px;color:#2F7A8C">{{ a.kicker }}</div>
+      <div style="font-weight:800;font-size:34px;line-height:1.05">{{ a.title }}</div>
+    </div>
+    <div style="font-size:16px;font-weight:700;white-space:nowrap">Name ______________</div>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;gap:10px;min-height:0">
+    <sc-for list="{{ a.blocks }}" as="b" hint-placeholder-count="3">
+      <div style="background:#fff;border:3px solid #1F2E2A;border-radius:14px;box-shadow:0 4px 0 #1F2E2A;padding:12px 16px;display:flex;flex-direction:column;justify-content:space-evenly;gap:10px;flex:1 0 auto">
+        <div style="display:flex;flex-direction:column;gap:4px;flex-shrink:0">
+          <div style="font-weight:800;font-size:20px;line-height:1.2">{{ b.label }}</div>
+          <div style="font-size:15px;color:#44403c;line-height:1.35">{{ b.dir }}</div>
+        </div>
+        <sc-if value="{{ b.isWords }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <sc-for list="{{ b.items }}" as="w" hint-placeholder-count="6">
+              <div style="{{ b.chip }}">{{ w }}</div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isBoxes }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px">
+            <sc-for list="{{ b.boxes }}" as="x" hint-placeholder-count="3">
+              <div style="border:3px solid #9FB39A;border-radius:12px;background:#F3F6EC;display:flex;flex-direction:column;padding:6px 10px;gap:4px;min-height:84px">
+                <div style="display:flex;align-items:center;gap:8px;font-size:15px;font-weight:800"><span style="flex:none;width:22px;height:22px;border:2.5px solid #1F2E2A;border-radius:4px;background:#fff"></span>{{ x }}</div>
+                <div style="flex:1;border-bottom:2.5px solid #1F2E2A;background:#fff;border-radius:6px 6px 0 0"></div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isHow }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:5px">
+            <sc-for list="{{ b.ways }}" as="w" hint-placeholder-count="3">
+              <div style="display:flex;gap:10px;align-items:center;border:2px solid #9FB39A;border-radius:10px;background:#F3F6EC;padding:5px 10px">
+                <div style="flex:none;width:24px;height:24px;border:2.5px solid #1F2E2A;border-radius:50%;background:#fff"></div>
+                <div style="flex:none;font-size:26px;line-height:1">{{ w.icon }}</div>
+                <div style="display:flex;flex-direction:column;gap:1px">
+                  <div style="font-size:15px;font-weight:800">{{ w.name }} <span style="font-size:12px;font-weight:600;color:#57534e">{{ w.time }}</span></div>
+                  <div style="font-size:13px;line-height:1.3">{{ w.d }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isRhyme }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:12px;flex:1;justify-content:space-evenly">
+            <sc-for list="{{ b.items }}" as="w" hint-placeholder-count="6">
+              <div style="display:grid;grid-template-columns:150px minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:end;flex:1">
+                <div style="background:#E3EEF2;border:3px solid #1F2E2A;border-radius:12px;text-align:center;font-size:30px;font-weight:800;padding:6px">{{ w }}</div>
+                <div style="height:52px;border-bottom:2.5px solid #1F2E2A;background:#FFF7D6;border-radius:4px 4px 0 0"></div>
+                <div style="height:52px;border-bottom:2.5px solid #1F2E2A;background:#FFF7D6;border-radius:4px 4px 0 0"></div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isFix }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;background:#fff;border:3px solid #1F2E2A;border-radius:14px;padding:20px 24px;font-size:26px;font-weight:600;line-height:2.7;display:flex;align-items:center">{{ b.story }}</div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:22px;font-weight:800">I found <span style="width:70px;height:44px;border-bottom:2.5px solid #1F2E2A;background:#FFF7D6;border-radius:4px 4px 0 0"></span> / 5 words.</div>
+        </sc-if>
+        <sc-if value="{{ b.isSpeed }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;flex:1">
+            <sc-for list="{{ b.words }}" as="w" hint-placeholder-count="10">
+              <div style="border:3px solid #1F2E2A;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:800;min-height:68px">{{ w }}</div>
+            </sc-for>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px">
+            <sc-for list="{{ b.reads }}" as="r" hint-placeholder-count="3">
+              <div style="border:3px solid #1F2E2A;border-radius:12px;background:#FFF7D6;display:flex;flex-direction:column;align-items:center;padding:8px;gap:2px"><span style="font-size:58px;line-height:1">☆</span><span style="font-size:18px;font-weight:800">{{ r }}</span></div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isComic }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:8px;border:2.5px dashed #1F2E2A;border-radius:12px;padding:10px 14px;background:#fff">
+              <b style="font-size:18px">Word bank:</b>
+              <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px"><sc-for list="{{ b.bank }}" as="w" hint-placeholder-count="5"><div style="background:#F3F6EC;border:2px solid #9FB39A;border-radius:10px;padding:3px 10px;font-size:24px;font-weight:700;text-align:center">{{ w }}</div></sc-for></div>
+            </div>
+          <div style="display:flex;flex-direction:column;gap:10px;flex:1 1 0;min-height:0">
+            <sc-for list="{{ b.panels }}" as="pn" hint-placeholder-count="3">
+              <div style="flex:1 1 0;min-height:0;display:grid;grid-template-columns:190px minmax(0,1fr);gap:14px;border:3px solid #1F2E2A;border-radius:14px;background:#fff;padding:10px">
+                <div style="border:2.5px solid #1F2E2A;border-radius:10px;position:relative;background:#FBF9F5">
+                  <div style="position:absolute;top:6px;left:6px;width:30px;height:30px;border-radius:50%;background:#2F7A8C;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center">{{ pn }}</div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:6px;min-height:0">
+                  <div style="font-size:15px;font-weight:700;color:#57534e">What happens?</div>
+                  <div style="flex:1 1 0;min-height:0;border-bottom:2.5px solid #1F2E2A;background:#FFF7D6;border-radius:4px 4px 0 0"></div>
+                  <div style="flex:1 1 0;min-height:0;border-bottom:2.5px solid #1F2E2A;background:#FFF7D6;border-radius:4px 4px 0 0"></div>
+                  <div style="flex:1 1 0;min-height:0;border-bottom:2.5px solid #1F2E2A;background:#FFF7D6;border-radius:4px 4px 0 0"></div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isDraw }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);gap:16px;flex:1;min-height:520px">
+            <sc-for list="{{ b.cells }}" as="w" hint-placeholder-count="4">
+              <div style="border:3px solid #1F2E2A;border-radius:14px;background:#fff;display:flex;flex-direction:column;overflow:hidden">
+                <div style="background:#E3EEF2;border-bottom:2.5px solid #1F2E2A;text-align:center;font-size:32px;font-weight:800;padding:6px">{{ w }}</div>
+                <div style="flex:1"></div>
+                <div style="margin:0 14px 12px;border-bottom:2.5px solid #1F2E2A;height:40px;background:#FFF7D6"></div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isRR }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;border:3px solid #1F2E2A;border-radius:12px;overflow:hidden;background:#fff;flex:1">
+            <sc-for list="{{ b.rows }}" as="r" hint-placeholder-count="6">
+              <div style="display:grid;grid-template-columns:64px minmax(0,1fr) 110px;border-bottom:2px solid #1F2E2A;flex:1;min-height:66px">
+                <div style="display:flex;align-items:center;justify-content:center;background:#E3EEF2;border-right:2px solid #1F2E2A;font-size:44px;line-height:1">{{ r.die }}</div>
+                <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-around;padding:4px 8px;gap:4px 10px;min-width:0">
+                  <sc-for list="{{ r.words }}" as="w" hint-placeholder-count="5"><span style="font-size:19px;font-weight:700;white-space:nowrap">{{ w }}</span></sc-for>
+                </div>
+                <div style="border-left:2px solid #1F2E2A;background:#FFF7D6;display:flex;align-items:flex-start;padding:4px 8px;font-size:11px;font-weight:700;color:#57534e">TALLY</div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex;align-items:flex-end;gap:12px;font-size:20px;font-weight:800">My favorite word: <span style="flex:1;border-bottom:2.5px solid #1F2E2A;height:40px;background:#FFF7D6"></span></div>
+        </sc-if>
+        <sc-if value="{{ b.isTTT }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:16px;flex:1">
+            <sc-for list="{{ b.games }}" as="g" hint-placeholder-count="2">
+              <div style="display:flex;flex-direction:column;gap:6px;flex:1">
+                <div style="font-size:20px;font-weight:800">{{ g.name }}</div>
+                <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,minmax(84px,1fr));flex:1;border:4px solid #1F2E2A;border-radius:12px;overflow:hidden;background:#fff">
+                  <sc-for list="{{ g.cells }}" as="w" hint-placeholder-count="9">
+                    <div style="border:2px solid #1F2E2A;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;text-align:center;padding:4px">{{ w }}</div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isWrite }}" hint-placeholder-val="{{ false }}">
+          <sc-if value="{{ b.hasBank }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:8px;border:2.5px dashed #1F2E2A;border-radius:12px;padding:10px 14px;background:#fff">
+              <b style="font-size:18px">Word bank:</b>
+              <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px"><sc-for list="{{ b.bank }}" as="w" hint-placeholder-count="6"><div style="background:#F3F6EC;border:2px solid #9FB39A;border-radius:10px;padding:3px 10px;font-size:24px;font-weight:700;text-align:center">{{ w }}</div></sc-for></div>
+            </div>
+          </sc-if>
+          <div style="display:flex;flex-direction:column;gap:18px;flex:1">
+            <sc-for list="{{ b.prompts }}" as="q" hint-placeholder-count="2">
+              <div style="display:flex;flex-direction:column;gap:10px;flex:1">
+                <div style="font-size:22px;font-weight:800">{{ q }}</div>
+                <div style="flex:1;min-height:60px;border-bottom:2.5px solid #1F2E2A;background:#FFF7D6;border-radius:4px 4px 0 0"></div>
+                <div style="flex:1;min-height:60px;border-bottom:2.5px solid #1F2E2A;background:#FFF7D6;border-radius:4px 4px 0 0"></div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isRid }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:8px;border:2.5px dashed #1F2E2A;border-radius:12px;padding:10px 14px;background:#fff">
+              <b style="font-size:18px">Word bank:</b>
+              <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px"><sc-for list="{{ b.bank }}" as="w" hint-placeholder-count="6"><div style="background:#F3F6EC;border:2px solid #9FB39A;border-radius:10px;padding:3px 10px;font-size:24px;font-weight:700;text-align:center">{{ w }}</div></sc-for></div>
+            </div>
+          <div style="display:flex;flex-direction:column;gap:10px;flex:1;justify-content:space-evenly">
+            <sc-for list="{{ b.items }}" as="q" hint-placeholder-count="6">
+              <div style="display:flex;align-items:flex-end;gap:14px;flex:1">
+                <div style="flex:1;font-size:20px;font-weight:600;line-height:1.3">{{ q }}</div>
+                <div style="flex:none;width:200px;height:46px;border-bottom:2.5px solid #1F2E2A;background:#FFF7D6;border-radius:4px 4px 0 0"></div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isCode }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:repeat(13,minmax(0,1fr));border:2.5px solid #1F2E2A;border-radius:10px;overflow:hidden;background:#fff">
+            <sc-for list="{{ b.abc }}" as="k" hint-placeholder-count="26">
+              <div style="display:flex;flex-direction:column;align-items:center;border-right:1px solid #C9D3C4;border-bottom:1px solid #C9D3C4;padding:3px 0"><span style="font-size:20px;font-weight:800">{{ k.l }}</span><span style="font-size:14px;font-weight:600;color:#2F7A8C">{{ k.n }}</span></div>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;flex:1;justify-content:space-evenly">
+            <sc-for list="{{ b.codes }}" as="c" hint-placeholder-count="4">
+              <div style="display:flex;gap:12px;align-items:flex-end">
+                <sc-for list="{{ c.boxes }}" as="n" hint-placeholder-count="4">
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="width:70px;height:70px;border:3px solid #1F2E2A;border-radius:10px;background:#FFF7D6"></div><span style="font-size:20px;font-weight:800">{{ n }}</span></div>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isSS }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:16px;flex:1;justify-content:space-evenly">
+            <sc-for list="{{ b.rows }}" as="r" hint-placeholder-count="4">
+              <div style="display:flex;flex-direction:column;gap:8px;flex:1">
+                <div style="display:flex;flex-wrap:wrap;gap:10px">
+                  <sc-for list="{{ r.tiles }}" as="w" hint-placeholder-count="5">
+                    <div style="background:#F3F6EC;border:2.5px solid #1F2E2A;border-radius:10px;padding:4px 16px;font-size:26px;font-weight:700">{{ w }}</div>
+                  </sc-for>
+                </div>
+                <div style="flex:1;min-height:52px;border-bottom:2.5px solid #1F2E2A;background:#FFF7D6;border-radius:4px 4px 0 0"></div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isRM }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;gap:22px;font-size:19px;font-weight:800"><span>◯ = real word</span><span>✕ = made-up word</span></div>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);gap:14px;flex:1;min-height:420px">
+            <sc-for list="{{ b.items }}" as="w" hint-placeholder-count="12">
+              <div style="border:3px solid #1F2E2A;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:800">{{ w }}</div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isHL }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+            <div style="display:flex;align-items:center;gap:12px;border:3px solid #1F2E2A;border-radius:12px;padding:10px 14px;background:#fff"><span style="flex:none;width:44px;height:30px;border:3px solid #1F2E2A;border-radius:6px"></span><span style="font-size:19px;font-weight:800">{{ b.c1 }}</span></div>
+            <div style="display:flex;align-items:center;gap:12px;border:3px solid #1F2E2A;border-radius:12px;padding:10px 14px;background:#fff"><span style="flex:none;width:44px;height:30px;border:3px solid #1F2E2A;border-radius:6px"></span><span style="font-size:19px;font-weight:800">{{ b.c2 }}</span></div>
+          </div>
+          <div style="font-size:13px;font-weight:600;color:#57534e">Color in each box above to make your key.</div>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);gap:14px;flex:1;min-height:420px">
+            <sc-for list="{{ b.items }}" as="w" hint-placeholder-count="12">
+              <div style="border:3px solid #1F2E2A;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:800">{{ w }}</div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isLadder }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column-reverse;gap:0;border-left:8px solid #8B5E34;border-right:8px solid #8B5E34;padding:0 14px;flex:1;justify-content:space-evenly">
+            <sc-for list="{{ b.rungs }}" as="r" hint-placeholder-count="7">
+              <div style="display:flex;align-items:center;gap:14px;border-bottom:5px solid #8B5E34;padding:8px 0;flex:1">
+                <div style="flex:none;width:40px;height:40px;border-radius:50%;background:#2F7A8C;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center">{{ r.n }}</div>
+                <div style="flex:1;font-size:16px;font-weight:600;line-height:1.3">{{ r.clue }}</div>
+                <div style="{{ r.box }}">{{ r.word }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="font-size:13px;font-weight:700;color:#57534e">Start at the bottom. Change one thing on each step to climb to the top! 🏝️</div>
+        </sc-if>
+        <sc-if value="{{ b.isMaze }}" hint-placeholder-val="{{ false }}">
+          <div style="font-size:28px;line-height:2.6;font-weight:500;flex:1;display:block;padding:6px 4px"><sc-for list="{{ b.segs }}" as="g" hint-placeholder-count="10"><sc-if value="{{ g.isChoice }}" hint-placeholder-val="{{ false }}"><span style="display:inline-flex;gap:6px;border:3px solid #111111;border-radius:10px;padding:0 8px;margin:0 4px;line-height:1.5;vertical-align:middle;background:#FFFDF6"><sc-for list="{{ g.opts }}" as="o" hint-placeholder-count="3"><span style="padding:0 4px;font-weight:700">{{ o }}</span></sc-for></span></sc-if><sc-if value="{{ g.isText }}" hint-placeholder-val="{{ true }}"><span>{{ g.text }}</span></sc-if></sc-for></div>
+        </sc-if>
+        <sc-if value="{{ b.isGrid }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px">
+            <sc-for list="{{ b.items }}" as="w" hint-placeholder-count="6">
+              <div style="background:#F3F6EC;border:2px solid #9FB39A;border-radius:10px;padding:4px 2px;font-size:20px;font-weight:700;text-align:center">{{ w }}</div>
+            </sc-for>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px">
+            <sc-for list="{{ b.items2 }}" as="w" hint-placeholder-count="6">
+              <div style="background:#FDF6E7;border:2px solid #D9A441;border-radius:10px;padding:4px 2px;font-size:17px;font-weight:700;text-align:center">{{ w }}</div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isCut }}" hint-placeholder-val="{{ false }}">
+          <div style="font-size:12px;font-weight:700;color:#57534e">✂ - - - cut on the dashed lines - - -</div>
+          <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:2px dashed #111;border-left:2px dashed #111;flex:1;min-height:150px">
+            <sc-for list="{{ b.items }}" as="w" hint-placeholder-count="10">
+              <div style="border-right:2px dashed #111;border-bottom:2px dashed #111;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;padding:14px 4px">{{ w }}</div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isText }}" hint-placeholder-val="{{ false }}">
+          <div style="{{ b.text }}">{{ b.body }}</div>
+        </sc-if>
+        <sc-if value="{{ b.isLines }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:10px;flex:1">
+            <sc-for list="{{ b.items }}" as="l" hint-placeholder-count="3">
+              <div style="display:flex;flex-direction:column;gap:4px;flex:1 0 auto">
+                <div style="font-size:17px;font-weight:700;line-height:1.25">{{ l }}</div>
+                <div style="{{ b.line }}"></div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isAgree }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:10px;flex:1;justify-content:space-evenly">
+            <sc-for list="{{ b.items }}" as="r" hint-placeholder-count="4">
+              <div style="display:grid;grid-template-columns:minmax(0,1fr) 110px 110px 150px;gap:10px;align-items:center;border-top:1.5px dashed #C9D3C4;padding-top:10px;flex-shrink:0">
+                <div style="font-size:17px;font-weight:600;line-height:1.3">{{ r }}</div>
+                <div style="font-size:14px;text-align:center"><b>BEFORE</b><br>Agree / Disagree</div>
+                <div style="font-size:14px;text-align:center"><b>AFTER</b><br>Agree / Disagree</div>
+                <div style="font-size:12px;font-weight:700;border-bottom:2.5px solid #1F2E2A;height:48px;display:flex;align-items:flex-start">PROOF WORD</div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isSort }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <sc-for list="{{ b.bank }}" as="w" hint-placeholder-count="0">
+              <div style="background:#F3F6EC;border:2px solid #9FB39A;border-radius:10px;padding:2px 12px;font-size:20px;font-weight:700">{{ w }}</div>
+            </sc-for>
+          </div>
+          <div style="display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:10px;flex:1;min-height:{{ b.sortH }}">
+            <sc-for list="{{ b.heads }}" as="h" hint-placeholder-count="2">
+              <div style="border:2.5px solid #1F2E2A;border-radius:10px;overflow:hidden">
+                <div style="background:#4B6049;color:#fff;font-size:18px;font-weight:800;text-align:center;padding:3px">{{ h }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:flex;gap:8px 22px;flex-wrap:wrap;align-items:center;font-size:16px;font-weight:600;background:#fff;border:3px solid #1F2E2A;border-radius:12px;box-shadow:0 4px 0 #1F2E2A;padding:10px 14px;flex-shrink:0">
+    <b style="white-space:nowrap;flex-shrink:0;color:#4B6049">✓ I did it right if…</b>
+    <div style="flex:1;min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 18px"><sc-for list="{{ a.checks }}" as="c" hint-placeholder-count="3"><span>☐ {{ c }}</span></sc-for></div>
+  </div>
+</section>
+<sc-if value="{{ a.hasMaze }}" hint-placeholder-val="{{ false }}">
+<section data-label="Maze" data-screen-label="Read Aloud Maze" style="background:#F3F6EC;font-family:'Poppins',sans-serif;color:#1F2E2A;box-sizing:border-box;padding:30px 36px;display:flex;flex-direction:column;gap:14px">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+    <div>
+      <div style="font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:11px;color:#2F7A8C">{{ m.grade }} · {{ m.dec.find }} · Box 3</div>
+      <div style="font-weight:800;font-size:34px;line-height:1.05">Read Aloud Maze</div>
+    </div>
+    <div style="font-size:16px;font-weight:700;white-space:nowrap">Name ______________</div>
+  </div>
+  <div style="font-size:16px;font-weight:600;color:#44403c">Read the story. In each box, circle the word that makes sense and has the {{ m.dec.find }} pattern.</div>
+  <div style="flex:1;background:#fff;border:3px solid #1F2E2A;border-radius:14px;box-shadow:0 4px 0 #1F2E2A;padding:22px 24px;font-size:21px;line-height:2.5;font-weight:500">
+    <sc-for list="{{ a.maze }}" as="g" hint-placeholder-count="12"><sc-if value="{{ g.isChoice }}" hint-placeholder-val="{{ false }}"><span style="display:inline-flex;gap:6px;border:3px solid #111111;border-radius:10px;padding:0 8px;margin:0 4px;line-height:1.5;vertical-align:middle;background:#FFFDF6"><sc-for list="{{ g.opts }}" as="o" hint-placeholder-count="3"><span style="padding:0 4px;font-weight:700">{{ o }}</span></sc-for></span></sc-if><sc-if value="{{ g.isText }}" hint-placeholder-val="{{ true }}"><span>{{ g.text }}</span></sc-if></sc-for>
+  </div>
+  <div style="display:flex;gap:22px;flex-wrap:wrap;font-size:16px;font-weight:600;background:#fff;border:3px solid #1F2E2A;border-radius:12px;box-shadow:0 4px 0 #1F2E2A;padding:9px 14px">
+    <b style="white-space:nowrap;color:#4B6049">✓ I did it right if…</b><div style="flex:1;min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 18px"><span>☐ I circled one word in every box.</span><span>☐ Each word I circled has the {{ m.dec.find }} pattern.</span><span>☐ I reread and the story makes sense.</span></div>
+  </div>
+</section>
+</sc-if>
+</sc-for>
+<section data-label="Power-ups" data-screen-label="Power-Up Cards" style="background:#fff;font-family:'Poppins',sans-serif;color:#1F2E2A;box-sizing:border-box;padding:30px 36px;display:flex;flex-direction:column;gap:12px">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+    <div>
+      <div style="font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:11px;color:#2F7A8C">{{ m.grade }} · Survival Island</div>
+      <div style="font-weight:800;font-size:34px;line-height:1.05">⚡ Power-Up Cards</div>
+    </div>
+    <div style="font-size:13px;font-weight:700;color:#57534e;white-space:nowrap">✂ Cut on the dashed lines</div>
+  </div>
+  <div style="font-size:15px;font-weight:600;color:#44403c">Finish a ⚠ chest and check your work? Draw a Power-Up card! Use it any time, then put it back in the pile.</div>
+  <div style="flex:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr));border-top:2.5px dashed #111;border-left:2.5px dashed #111">
+    <sc-for list="{{ powerups }}" as="pu" hint-placeholder-count="8">
+      <div style="border-right:2.5px dashed #111;border-bottom:2.5px dashed #111;padding:12px">
+        <div style="height:100%;box-sizing:border-box;border:3px solid #1F2E2A;border-radius:14px;background:#FDF6E7;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:10px">
+          <div style="font-size:50px;line-height:1">{{ pu.icon }}</div>
+          <div style="font-size:26px;font-weight:800;color:#7A5410">{{ pu.t }}</div>
+          <div style="font-size:16px;font-weight:600;line-height:1.3">{{ pu.d }}</div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+<section data-label="Decodable" data-screen-label="Decodable" style="background:#F3F6EC;font-family:'Poppins',sans-serif;color:#1F2E2A;box-sizing:border-box;padding:30px 36px;display:flex;flex-direction:column;gap:12px">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+    <div>
+      <div style="font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:10.5px;color:#2F7A8C">{{ m.grade }} · {{ m.dec.find }} · Decodable</div>
+      <div style="font-weight:800;font-size:34px;line-height:1.05">{{ m.dec.title }}</div>
+    </div>
+    <div style="font-size:16px;font-weight:700;white-space:nowrap">Name ______________</div>
+  </div>
+  <div style="font-size:15px;font-weight:600;color:#44403c">Read the story 2 times. Circle every {{ m.dec.find }} word.</div>
+  <div style="background:#fff;border:3px solid #1F2E2A;border-radius:14px;box-shadow:0 4px 0 #1F2E2A;padding:16px 20px;display:flex;flex-direction:column;gap:12px">
+    <sc-for list="{{ m.dec.paras }}" as="p" hint-placeholder-count="4">
+      <div style="font-size:19px;line-height:1.75;font-weight:500;text-wrap:pretty">{{ p }}</div>
+    </sc-for>
+  </div>
+  <div style="flex:1;background:#fff;border:3px solid #1F2E2A;border-radius:14px;box-shadow:0 4px 0 #1F2E2A;padding:12px 18px;display:flex;flex-direction:column;gap:8px">
+    <div style="font-weight:800;font-size:19px">Think about it</div>
+    <sc-for list="{{ m.dec.qs }}" as="q" hint-placeholder-count="4">
+      <div style="display:flex;flex-direction:column;gap:3px;flex:1">
+        <div style="font-size:15.5px;font-weight:700">{{ q }}</div>
+        <div style="flex:1;min-height:26px;border-bottom:2.5px solid #1F2E2A;background:#FFF7D6;border-radius:4px 4px 0 0"></div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:flex;gap:22px;flex-wrap:wrap;font-size:16px;font-weight:600;background:#fff;border:3px solid #1F2E2A;border-radius:12px;box-shadow:0 4px 0 #1F2E2A;padding:9px 14px">
+    <b style="white-space:nowrap">Read it 2 times</b><span style="white-space:nowrap">☐ Read 1</span><span style="white-space:nowrap">☐ Read 2</span><span style="white-space:nowrap">☐ I circled the {{ m.dec.find }} words.</span>
+  </div>
+</section>
+<section data-label="Reading lists" data-screen-label="Reading lists" style="background:#F3F6EC;font-family:'Poppins',sans-serif;color:#1F2E2A;box-sizing:border-box;padding:30px 36px;display:flex;flex-direction:column;gap:12px">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+    <div>
+      <div style="font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:11px;color:#2F7A8C">{{ m.grade }} · {{ m.dec.find }} · Exit ticket</div>
+      <div style="font-weight:800;font-size:30px;line-height:1.05">Daily Reading Lists</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
+      <div style="font-size:15px;font-weight:700;white-space:nowrap">Name ______________</div>
+      <div style="font-size:11px;font-weight:700;color:#4B6049;white-space:nowrap">✓ = read correctly</div>
+    </div>
+  </div>
+  <sc-for list="{{ m.lists }}" as="d" hint-placeholder-count="5">
+    <div style="flex:1;display:flex;gap:14px;align-items:center;background:#fff;border:3px solid #1F2E2A;border-radius:14px;box-shadow:0 4px 0 #1F2E2A;padding:10px 12px;min-height:0">
+      <div style="{{ d.badge }}">
+        <div style="font-size:14px;font-weight:800">{{ d.day }}</div>
+        <div style="font-size:12px;font-weight:800;margin-top:8px">___ / 10</div>
+      </div>
+      <div style="flex:1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px 10px">
+        <sc-for list="{{ d.words }}" as="w" hint-placeholder-count="10">
+          <div style="display:flex;align-items:center;gap:8px;border-bottom:2px solid #C9D3C4;padding:2px 2px 4px">
+            <span style="flex:none;width:15px;height:15px;border:2px solid #1F2E2A;border-radius:4px;box-sizing:border-box"></span>
+            <span style="font-size:19px;font-weight:700">{{ w }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-for>
+</section>
+<section data-label="My Growth" data-screen-label="My Growth" style="background:#F3F6EC;font-family:'Poppins',sans-serif;color:#1F2E2A;box-sizing:border-box;padding:30px 36px;display:flex;flex-direction:column;gap:12px">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+    <div>
+      <div style="font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:11px;color:#2F7A8C">{{ m.grade }} · {{ m.dec.find }}</div>
+      <div style="font-weight:800;font-size:34px;line-height:1.05">📈 My Growth</div>
+    </div>
+    <div style="font-size:16px;font-weight:700;white-space:nowrap">Name ______________</div>
+  </div>
+  <div style="font-size:15px;font-weight:600;color:#44403c">After my exit ticket, I color one box for each word I read right. My goal is the red line: 8 out of 10!</div>
+  <div style="background:#fff;border:3px solid #1F2E2A;border-radius:14px;box-shadow:0 4px 0 #1F2E2A;padding:14px 16px;display:grid;grid-template-columns:44px repeat(5,minmax(0,1fr));gap:0 12px;flex:1;min-height:0">
+    <div style="display:grid;grid-template-rows:repeat(10,minmax(0,1fr)) 30px">
+      <sc-for list="{{ ticks }}" as="n" hint-placeholder-count="10"><div style="font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:flex-end;padding-right:4px">{{ n }}</div></sc-for>
+      <div></div>
+    </div>
+    <sc-for list="{{ graphDays }}" as="d" hint-placeholder-count="5">
+      <div style="display:grid;grid-template-rows:repeat(10,minmax(0,1fr)) 30px">
+        <sc-for list="{{ d.cells }}" as="c" hint-placeholder-count="10"><div style="{{ c.s }}"></div></sc-for>
+        <div style="font-size:16px;font-weight:800;text-align:center;align-self:end">{{ d.name }}</div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="background:#fff;border:3px solid #1F2E2A;border-radius:14px;box-shadow:0 4px 0 #1F2E2A;padding:12px 16px;display:flex;flex-direction:column;gap:8px">
+    <div style="font-size:19px;font-weight:800">🚀 What's next for me?</div>
+    <div style="font-size:14px;font-weight:600;color:#44403c">On Friday, look at your graph. Circle one.</div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
+      <sc-for list="{{ nexts }}" as="x" hint-placeholder-count="3">
+        <div style="border:2.5px solid #1F2E2A;border-radius:12px;padding:8px 10px;background:#FBF9F5;display:flex;flex-direction:column;gap:4px;align-items:center;text-align:center"><div style="font-size:28px;line-height:1">{{ x.icon }}</div><div style="font-size:14px;font-weight:800;line-height:1.25">{{ x.t }}</div></div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+<section data-label="Reflect and partner check" data-screen-label="Reflect + Partner Check" style="background:#F3F6EC;font-family:'Poppins',sans-serif;color:#1F2E2A;box-sizing:border-box;padding:30px 36px;display:flex;flex-direction:column;gap:12px">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+    <div>
+      <div style="font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:11px;color:#2F7A8C">{{ m.grade }} · {{ m.dec.find }}</div>
+      <div style="font-weight:800;font-size:34px;line-height:1.05">💭 Reflect + Partner Check</div>
+    </div>
+    <div style="font-size:16px;font-weight:700;white-space:nowrap">Name ______________</div>
+  </div>
+  <div style="background:#fff;border:3px solid #1F2E2A;border-radius:14px;box-shadow:0 4px 0 #1F2E2A;padding:12px 16px;display:flex;flex-direction:column;gap:8px;flex:1.3;min-height:0">
+    <div style="font-size:19px;font-weight:800">My daily reflection</div>
+    <div style="font-size:14px;font-weight:600;color:#44403c">Finish the sentence: "The strategy that helped me today was…"</div>
+    <sc-for list="{{ graphDays }}" as="d" hint-placeholder-count="5">
+      <div style="display:grid;grid-template-columns:70px minmax(0,1fr);gap:10px;align-items:end;flex:1;min-height:0">
+        <div style="font-size:16px;font-weight:800">{{ d.name }}</div>
+        <div style="height:100%;min-height:30px;border-bottom:2.5px solid #1F2E2A;background:#FFF7D6;border-radius:4px 4px 0 0"></div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="background:#fff;border:3px solid #1F2E2A;border-radius:14px;box-shadow:0 4px 0 #1F2E2A;padding:12px 16px;display:flex;flex-direction:column;gap:8px;flex:1;min-height:0">
+    <div style="font-size:19px;font-weight:800">🤝 Partner check</div>
+    <div style="font-size:14px;font-weight:600;color:#44403c">Trade your Chest 4 sentences with a partner. Read their work, then fill this in for them.</div>
+    <div style="font-size:15px;font-weight:700">Partner's name: <span style="display:inline-block;width:220px;border-bottom:2.5px solid #1F2E2A;background:#FFF7D6;border-radius:4px 4px 0 0;height:26px;vertical-align:bottom"></span></div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;font-size:14px;font-weight:600">
+      <span>☐ It makes sense.</span><span>☐ Capital and end mark.</span><span>☐ Pattern word spelled right.</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;flex:1;min-height:0">
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="font-size:15px;font-weight:800">⭐ Glow: one thing you did well</div><div style="flex:1;min-height:40px;border-bottom:2.5px solid #1F2E2A;background:#FFF7D6;border-radius:4px 4px 0 0"></div><div style="flex:1;min-height:40px;border-bottom:2.5px solid #1F2E2A;background:#FFF7D6;border-radius:4px 4px 0 0"></div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="font-size:15px;font-weight:800">🌱 Grow: one thing to fix</div><div style="flex:1;min-height:40px;border-bottom:2.5px solid #1F2E2A;background:#FFF7D6;border-radius:4px 4px 0 0"></div><div style="flex:1;min-height:40px;border-bottom:2.5px solid #1F2E2A;background:#FFF7D6;border-radius:4px 4px 0 0"></div></div>
+    </div>
+  </div>
+</section>
+<section data-label="Answer key" data-screen-label="Answer key" style="background:#fff;font-family:'Poppins',sans-serif;color:#1F2E2A;box-sizing:border-box;padding:30px 36px;display:flex;flex-direction:column;gap:12px">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px;border-bottom:3px solid #4B6049;padding-bottom:8px">
+    <div>
+      <div style="font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:10.5px;color:#C0504D">Teacher only · {{ m.grade }} · {{ m.dec.find }}</div>
+      <div style="font-weight:800;font-size:30px;line-height:1.05">Answer Key</div>
+    </div>
+  </div>
+  <div style="flex:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;align-content:start">
+    <sc-for list="{{ m.key }}" as="k" hint-placeholder-count="8">
+      <div style="border:2px solid #9FB39A;border-radius:10px;padding:5px 10px;display:flex;flex-direction:column;gap:2px;background:#F6F8F4">
+        <div style="font-size:13px;font-weight:800;color:#4B6049">{{ k.h }}</div>
+        <sc-for list="{{ k.a }}" as="x" hint-placeholder-count="3">
+          <div style="font-size:10px;line-height:1.25">{{ x }}</div>
+        </sc-for>
+      </div>
+    </sc-for>
+  </div>
+</section>
+<section data-label="Teacher directions" data-screen-label="Teacher directions" style="background:#fff;font-family:'Poppins',sans-serif;color:#1F2E2A;box-sizing:border-box;padding:30px 36px;display:flex;flex-direction:column;gap:12px">
+  <div style="border-bottom:3px solid #4B6049;padding-bottom:8px">
+    <div style="font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:10.5px;color:#C0504D">Teacher only · {{ m.grade }} · {{ m.dec.find }}</div>
+    <div style="font-weight:800;font-size:30px;line-height:1.05">Teacher Directions</div>
+  </div>
+  <sc-for list="{{ m.teach }}" as="a" hint-placeholder-count="6">
+    <div style="border:2px solid #9FB39A;border-radius:10px;padding:7px 12px;background:#F6F8F4;display:flex;gap:12px;align-items:flex-start">
+      <div style="{{ a.numStyle }}">{{ a.n }}</div>
+      <div style="display:flex;flex-direction:column;gap:3px">
+        <div style="font-size:15px;font-weight:800">{{ a.title }}</div>
+        <div style="font-size:12.5px;line-height:1.4">{{ a.teacher }}</div>
+      </div>
+    </div>
+  </sc-for>
+</section>
+</sc-for>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { tick: 0 };
+  componentDidMount() { if (!window.OG_PACKS) { const t = setInterval(() => { if (window.OG_PACKS) { clearInterval(t); this.setState({ tick: 1 }); } }, 100); } }
+  renderVals() {
+    const COLORS = ['#4B6049', '#D9A441', '#2F7A8C', '#C0504D', '#4B6049', '#D9A441'];
+    let id = '1-08'; try { id = new URLSearchParams(location.search).get('c') || localStorage.getItem('og-packs:last') || '1-08'; } catch (e) {}
+    const PACKS = window.OG_PACKS || {};
+    const D = PACKS[id] || PACKS['1-08'];
+    if (!D) return { maps: [], steps: [], powerups: [], ticks: [], graphDays: [], nexts: [] };
+    const p = D.find;
+    const mk = (stops) => stops.map(([title, items], i) => ({ n: i + 1, title, items: items.map(([a, b]) => ({ t: a, d: b })),
+      numStyle: { flex: 'none', width: 24, height: 24, borderRadius: 7, background: COLORS[i], border: '2.5px solid #1F2E2A', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 13, color: COLORS[i] === '#D9A441' ? '#1F2E2A' : '#fff' } }));
+    const tp = D.tips;
+    const m = { title: D.title || 'My Roadmap', kicker: D.kicker, grade: D.grade, ican: D.ican, rule: D.rule, checks: ['I read every word.', 'I checked my work.', 'I spelled the pattern right.'], exit: 'Read my 10 words to my teacher.',
+      stops: mk([
+        ['Warm up', [['Phonological awareness:', tp.pa], ['Phoneme drill:', tp.drill], ['Blending:', tp.blend], ['Review:', tp.review]]],
+        ['Anticipation Stations', [['Agree / Disagree:', 'mark Before, read the words, mark After.'], ['Match it:', tp.cut], ['Proof word:', 'write the word that proves it.']]],
+        ['Learn the pattern', [['Read words:', 'read my ' + p + ' words.'], ['Spelling:', tp.spell], ['Read Aloud:', 'listen, then read the ' + p + ' words in the story.']]],
+        ['Survival Island', [['Solve:', 'do each chest on my own.'], ['Check:', 'my teacher checks my cards.'], ['Roll:', 'roll for blocks and build the tallest torch tower!']]],
+        ['Write it', [['Listen:', 'my teacher says a sentence.'], ['Say it back:', 'repeat it out loud.'], ['Write it:', 'write the sentence on the line.'], ['Check:', 'capital, end mark, pattern.']]],
+        ['Teach it · Project', [['Pick:', 'make a video, a podcast, or a video game.'], ['Plan:', 'my rule, 3 example words, and 1 tricky word.'], ['Make it:', 'teach the ' + p + ' rule to someone else.'], ['Share:', 'my learner reads 3 words to show they got it.']]],
+      ]),
+      dec: { ...D.dec, find: p } };
+    const DAYS = [['Mon', '#D9A441', '#1F2E2A'], ['Tue', '#2F7A8C', '#fff'], ['Wed', '#C0504D', '#fff'], ['Thu', '#7A4E6B', '#fff'], ['Fri', '#4B6049', '#fff']];
+    m.lists = D.lists.map((w, i) => ({ day: DAYS[i][0], tag: '', words: w.split(' '),
+      badge: { flex: 'none', width: 104, alignSelf: 'stretch', background: DAYS[i][1], color: DAYS[i][2], border: '2.5px solid #1F2E2A', borderRadius: 10, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' } }));
+    const segs = (s) => s.split(/(\[[^\]]+\])/).filter(Boolean).map((x) => x[0] === '[' ? { isChoice: true, isText: false, opts: x.slice(1, -1).split('|') } : { isChoice: false, isText: true, text: x });
+    m.key = D.key.map(([h, ...a]) => ({ h, a }));
+    const W = (label, dir, items) => ({ label, dir, items, isWords: true });
+    const Ln = (label, dir, items) => ({ label, dir, items, isLines: true });
+    const Tx = (label, dir, body) => ({ label, dir, body, isText: true });
+    const ABC = 'abcdefghijklmnopqrstuvwxyz'.split('').map((l, i) => ({ l, n: i + 1 }));
+    const DIE = ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'];
+    const chests = [
+      { label: '🧰 Chest 1 · Highlight', dir: 'Read each word. Highlight it with the right color.', isHL: true, c1: D.hl.c1, c2: D.hl.c2, items: D.hl.items },
+      { label: '🧰 Chest 2 · Word ladder', dir: 'Climb the ladder to escape the island! Read each clue and write the new word.', isLadder: true,
+        rungs: [{ clue: 'Start here', word: D.ladder.start }, ...D.ladder.clues.map((c) => ({ clue: c, word: '' }))].map((r, i) => ({ ...r, n: i + 1,
+          box: { flex: 'none', width: 170, height: 44, border: '3px solid #1F2E2A', borderRadius: 10, background: i ? '#FFF7D6' : '#E3EEF2', fontSize: 24, fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center' } })) },
+      { label: '🧰 Chest 3 ⚠ · Story maze', dir: 'Read the story. In each box, circle the word that makes sense.', isMaze: true, segs: segs(D.maze) },
+      { label: '🧰 Chest 4 · Sentence scramble', dir: 'Put the words in order to make a sentence. Write it on the line.', isSS: true, rows: D.scramble.map((r) => ({ tiles: r.split(' ') })) },
+      Ln('🧰 Chest 5 ⚠ · Unscramble', 'Put the letters in order to make a ' + p + ' word.', D.unscramble),
+      Ln('🧰 Chest 6 · Multisyllabic words', 'Join the two parts. Write the multisyllabic word.', D.multi),
+      { label: '🧰 Chest 7 · My sentences', dir: 'Pick 2 words from the word bank. Use both words in one sentence.', isWrite: true, bank: D.bank, prompts: ['Sentence 1', 'Sentence 2'] },
+      { label: '🧰 Chest 8 · Real or made-up?', dir: 'Read each word. Circle it if it is a real word. Put an X on it if it is made-up.', isRM: true, items: D.real },
+      { label: '🧰 Chest 9 · Riddles', dir: 'Read each riddle. Write the answer from the word bank.', isRid: true, bank: D.riddles.bank, items: D.riddles.items },
+      { label: '🧰 Chest 10 · Tic-tac-toe', dir: 'Read a word out loud, then mark it with X. Get 3 in a row! Game 2 has multisyllabic words.', isTTT: true, games: D.ttt.map((g, i) => ({ name: 'Game ' + (i + 1), cells: g })) },
+      { label: '🧰 Chest 11 · Roll and read', dir: 'Roll the die. Read every word in that row. Make a tally mark each time. Roll 10 times!', isRR: true, rows: D.roll.map((r, i) => ({ die: DIE[i], n: i + 1, words: r.split(' ') })) },
+      { label: '🧰 Chest 12 · Draw it', dir: 'Read each word. Draw a picture of it in the box. Then write the word on the line.', isDraw: true, cells: D.draw },
+      { label: '🧰 Chest 13 · Rhyme time', dir: 'Read each word. Write 2 words that rhyme with it. Keep the same pattern!', isRhyme: true, items: D.rhyme },
+      { label: '🧰 Chest 14 · Fix the story', dir: 'Five words are spelled wrong. Cross each one out. Write the right word above it.', isFix: true, story: D.fix },
+      { label: '🧰 Chest 15 · Speed read', dir: 'Read all 10 words. Then read them again faster! Color a star each time you read them all.', isSpeed: true, words: D.speed, reads: ['Read 1', 'Read 2', 'Read 3'] },
+      { label: '🧰 Chest 16 · Comic strip', dir: 'Tell a 3-part mini story. Draw a picture in each box. Write what happens, using a word from the bank.', isComic: true, bank: D.comic, panels: ['1', '2', '3'] },
+    ];
+    const ACTS = [
+      ['Teacher says each word. Students say it back with the new sound. Then drill, blend, and review.', ['I said every sound.', 'I blended the word.', 'I read my review words.'], [
+        W('Phonological awareness', D.b1.paDir, D.b1.pa), W('Phoneme drill', 'Point and say each sound.', D.b1.drill),
+        W('Blending', 'Listen to the sounds. Blend them into a word.', D.b1.blend), W(D.b1.review.label, D.b1.review.dir, D.b1.review.items)]],
+      ['Silent rotation. Students mark Before without talking, read the station words, then mark After and write a proof word.', ['I marked Before and After.', 'I wrote a proof word.', 'I worked silently.'], [
+        { label: 'Agree or Disagree?', dir: 'Circle one Before. Read, then circle again.', items: D.agree, isAgree: true },
+        { label: 'Match it', dir: D.cut.dir, items: D.cut.items, isCut: true }]],
+      ['Model 3 words with the keyword card. Students read the words, spell the 5 you say, then follow along with the read aloud.', ['I read every word.', 'I spelled the pattern right.', 'I circled the pattern words.'], [
+        { label: 'Read words', dir: 'Read each word to a partner or your teacher.', items: D.read, items2: D.read2, isGrid: true },
+        Ln('Spelling', 'Write each word your teacher says.', ['1.', '2.', '3.', '4.', '5.']),
+        Tx('Read Aloud', 'Listen, then circle every ' + p + ' word.', D.aloud)]],
+      ['Students do as many chests as they can on their own in 15 minutes. There are 16, so not everyone will finish them all. Extra chests make good fast-finisher envelopes. Each finished chest = roll for blocks. ⚠ chests are traps: check your work before you roll. Cut each chest apart and put it in its own envelope.', ['I did every chest on my own.', 'I checked my work first.', 'I built my tower.'], chests],
+      ['Say each sentence. Students repeat it, write it, then check capital, end mark, and pattern.', ['Capital letter', 'End mark', 'Pattern spelled right'], [
+        Ln('Dictation', 'Listen. Say it back. Write it.', ['1.', '2.', '3.']), Ln('My own sentence', 'Write a sentence with 2 ' + p + ' words.', ['4.'])]],
+      ['Students teach the ' + p + ' rule to a buddy, a younger student, or someone at home. They pick a format, plan on this page, make it on Thursday, and share Friday. Learner reads 3 words as proof.', ['I explained the rule.', 'I used 3 example words.', 'My learner read the words.'], [
+        { label: 'Pick how I\u2019ll teach', dir: 'Circle one. Then follow its steps.', isHow: true, ways: [
+          { icon: '🎬', name: 'Video', time: '1 minute', d: 'Show the rule with tiles or a whiteboard, then read your 3 words.' },
+          { icon: '🎙️', name: 'Podcast', time: '1 minute', d: 'Say the rule, give an example like ' + D.teach.ex + ', then quiz your listener.' },
+          { icon: '🎮', name: 'Video game', time: '', d: D.teach.game }] },
+        Ln('My teaching plan', 'Fill in each line before you start.', ['My rule in my own words:', '3 example words:', 'A tricky word to watch for:', 'Who I will teach:']),
+        { label: 'Did they learn it?', dir: 'Write 3 words for your learner to read. Check the box if they read it right.', isBoxes: true, boxes: ['Word 1', 'Word 2', 'Word 3'] }]],
+    ];
+    const maze = segs(D.aloudMaze);
+    const score = (bs) => bs.reduce((s, b) => s + 1.4 + (b.isLines ? b.items.length * 1.1 : 0) + (b.isWords ? Math.ceil(b.items.length / 5) : 0) + (b.isText ? 3.5 : 0) + (b.isAgree ? b.items.length * 1.5 : 0) + (b.isSort ? 3 : 0) + (b.isCut ? 3 : 0) + (b.isGrid ? 2.5 : 0) + (b.isMaze ? 5 : 0) + (b.isHow ? 4 : 0) + (b.isBoxes ? 2.5 : 0) + (b.isLadder ? 9 : 0), 0);
+    const crit = (blocks) => { const out = []; const add = (s) => { if (!out.includes(s)) out.push(s); };
+      blocks.forEach((b) => { const Lb = (b.label || '').toLowerCase();
+        if (b.isLadder) { add('Each new word changes just one letter.'); add('Every word on my ladder is a real word.'); }
+        else if (b.isMaze) { add('I circled one word in every box.'); add('I reread and the story makes sense.'); }
+        else if (b.isAgree) { add('I circled Agree or Disagree before and after.'); add('I wrote a proof word for each one.'); }
+        else if (b.isCut) { add('I matched every pair.'); add('I read each pair out loud.'); }
+        else if (b.isGrid) add('I read all 12 words, even the multisyllabic words.');
+        else if (b.isText) add('I circled every ' + p + ' word.');
+        else if (b.isBoxes) add('My learner read 3 words correctly.');
+        else if (b.isRhyme) { add('Each word I wrote rhymes.'); add('My words use the same ' + p + ' pattern.'); add('All of my words are real words.'); }
+        else if (b.isFix) { add('I crossed out all 5 wrong words.'); add('I wrote each word the right way above it.'); add('I reread and the story makes sense.'); }
+        else if (b.isSpeed) { add('I read all 10 words each time.'); add('I read faster each time.'); add('I colored a star for each read.'); }
+        else if (b.isComic) { add('My comic has 3 parts that tell a story.'); add('I used a bank word in each part.'); add('My sentences start with a capital and end with a mark.'); }
+        else if (b.isDraw) { add('I read each word before I drew it.'); add('My picture matches the word.'); add('I wrote the word on the line.'); }
+        else if (b.isRR) { add('I rolled 10 times.'); add('I read every word in the row I rolled.'); add('I made a tally mark each time.'); }
+        else if (b.isTTT) { add('I read each word out loud before I marked it.'); add('I got 3 in a row on both games.'); }
+        else if (b.isWrite) { add('I used 2 words from the bank in each sentence.'); add('Each sentence starts with a capital and ends with a period.'); add('I wrote neat and big on the lines.'); }
+        else if (b.isRid) { add('My answer fits every clue in the riddle.'); add('I used each word in the bank one time.'); }
+        else if (b.isSS) { add('I used every word one time.'); add('My sentence starts with a capital and ends with a period.'); add('I read my sentence and it makes sense.'); }
+        else if (b.isRM) { add('I circled every real word.'); add('I put an X on every made-up word.'); add('I read each word out loud first.'); }
+        else if (b.isHL) add('I used color 1 and color 2 the right way.');
+        else if (Lb.includes('phonolog')) add('I changed only the sound I was asked to.');
+        else if (Lb.includes('blend')) add('I said each sound, then blended the word.');
+        else if (Lb.includes('spell')) add('Each word is spelled with the ' + p + ' pattern.');
+        else if (Lb.includes('unscramble')) add('I used every letter one time.');
+        else if (Lb.includes('multisyllabic')) add('I joined both parts and read the multisyllabic word.');
+        else if (b.isLines) add('My sentence has a capital, an end mark, and a ' + p + ' word.');
+        else if (b.isWords) add('I read every word the right way.');
+      });
+      return out.slice(0, 3); };
+    const DEF = { hasBank: false, isWords: false, isLines: false, isText: false, isAgree: false, isSort: false, isCut: false, isGrid: false, isMaze: false, segs: [], isLadder: false, rungs: [], isHL: false, c1: '', c2: '', isRM: false, isSS: false, rows: [], isRid: false, isCode: false, isWrite: false, isTTT: false, games: [], isRR: false, isDraw: false, cells: [], isHow: false, ways: [], isBoxes: false, boxes: [], isRhyme: false, isFix: false, story: '', isSpeed: false, reads: [], isComic: false, panels: [], bank: [], prompts: [], dir: '', sortH: '200px', items: [], items2: [] };
+    m.acts = ACTS.map(([teacher, checks, blocks], i) => {
+      const dense = i !== 3 && score(blocks) > 13;
+      const chip = { background: '#F3F6EC', border: '2px solid #9FB39A', borderRadius: 10, padding: dense ? '3px 13px' : '5px 16px', fontSize: dense ? 21 : 26, fontWeight: 700 };
+      const text = { fontSize: dense ? 16.5 : 22, lineHeight: dense ? 1.55 : 1.8, fontWeight: 500, textWrap: 'pretty' };
+      const line = { borderBottom: '2.5px solid #1F2E2A', minHeight: dense ? 30 : 44, flex: '1 0 auto', background: '#FFF7D6', borderRadius: '4px 4px 0 0' };
+      const bl = blocks.map((b) => ({ ...DEF, ...b, hasBank: !!(b.bank && b.bank.length && (b.isWrite || b.isComic || b.isRid)), chip, text, line }));
+      const c = crit(bl);
+      return { hasMaze: i === 2, maze: i === 2 ? maze : [], n: i + 1, title: m.stops[i].title, kicker: m.kicker + ' · Box ' + (i + 1), teacher, checks: c.length ? c : checks, blocks: bl,
+        numStyle: { ...m.stops[i].numStyle, width: 44, height: 44, borderRadius: 12, fontSize: 22, borderWidth: 3 } };
+    });
+    m.teach = m.acts.slice();
+    const sv = m.acts[3];
+    m.acts.splice(3, 1, ...sv.blocks.map((b, gi) => ({ ...sv, title: sv.title + ' · Chest ' + (gi + 1), blocks: [b], checks: crit([b]).length ? crit([b]) : sv.checks, hasMaze: false, maze: [] })));
+    const steps = [{ day: 'Monday', boxes: 'Box 1' }, { day: 'Tuesday', boxes: 'Box 2' }, { day: 'Wednesday', boxes: 'Box 3 + 4' }, { day: 'Thursday', boxes: 'Box 5' }, { day: '⭐ Friday', boxes: 'Box 5, Exit Ticket, and Grade Check' }];
+    const powerups = [
+      { icon: '🛡️', t: 'Shield', d: 'Skip one ⚠ trap chest.' }, { icon: '🎲', t: 'Double Roll', d: 'Roll 2 times for your next chest.' },
+      { icon: '🪵', t: 'Steal a Block', d: 'Take 1 block from any tower.' }, { icon: '🎲', t: 'Double Roll', d: 'Roll 2 times for your next chest.' },
+      { icon: '⏸️', t: 'Freeze', d: 'A rival stops for 30 seconds.' }, { icon: '🏃', t: 'Run in Place', d: 'A rival runs in place for 15 seconds.' },
+      { icon: '🔥', t: 'Bonus Flame', d: 'Add 1 free block right now.' }, { icon: '🤝', t: 'Team Up', d: 'Ask a friend to help with one word.' }];
+    const ticks = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+    const graphDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].map((name) => ({ name, cells: ticks.map((n) => ({ s: { border: '1.5px solid #1F2E2A', borderTop: n === 8 ? '4px solid #C0504D' : '1.5px solid #1F2E2A', marginTop: -1.5, background: n >= 8 ? '#FDF6E7' : '#fff' } })) }));
+    const nexts = [{ icon: '🏆', t: 'I hit 8/10! I\u2019m ready for the next concept.' }, { icon: '🔁', t: 'I\u2019m close. I want one more week of practice.' }, { icon: '🧩', t: 'I need help with: ________' }];
+    return { maps: [m], steps, powerups, ticks, graphDays, nexts };
+  }
+}
+</script>
+</body>
+</html>
