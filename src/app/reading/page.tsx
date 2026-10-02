@@ -7,7 +7,8 @@ import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
 import { useAuth } from "@/providers/AuthProvider";
 import { LESSONS, SECTIONS, SKILL_TOTAL } from "./lessons-data";
-import { OG_PACK_BY_LESSON, ogPackHref } from "./og-pack-map";
+import { OG_PACK_BY_LESSON } from "./og-pack-map";
+import { OG_LEVELS, OG_CONCEPTS, ogPackHref } from "./og-packs-data";
 
 /**
  * The workbooks are served from Postgres through /api/materials, which refuses
@@ -31,6 +32,7 @@ const MUTED = "#6B7480";
 const RULE = "#E4DED4";
 const BRASS = "#B08A2E";
 const GREEN = "#4E7A44";
+const OG_TEAL = "#2F7A8C";
 
 /** Each material type gets its own colour, so the mix is readable at a glance. */
 const LINK_STYLE: Record<string, [string, string]> = {
@@ -40,7 +42,6 @@ const LINK_STYLE: Record<string, [string, string]> = {
   Maze: [PINK, INK],
   Workbook: [GREEN, "#FFFFFF"],
   "Workbook key": ["#EDE7DC", INK],
-  "OG Pack": ["#2F7A8C", "#FFFFFF"],
 };
 
 /**
@@ -48,34 +49,38 @@ const LINK_STYLE: Record<string, [string, string]> = {
  * packets are still on the site and still in lessons-data.ts — they are simply
  * not on show, so putting a label back here is all it takes to return one.
  */
-const SHOWN_MATERIALS = ["Workbook", "Workbook key", "OG Pack"];
+const SHOWN_MATERIALS = ["Workbook", "Workbook key"];
 
 const shown = <T extends { label: string }>(links: T[]) =>
   links.filter((l) => SHOWN_MATERIALS.includes(l.label));
 
-/**
- * The road map plus the OG concept pack that goes with each skill.
- *
- * The packs are a separate body of work — a roadmap, activities, Survival
- * Island chests, a decodable, reading lists and an answer key per concept — so
- * they are matched to skills by id in og-pack-map.ts rather than carried in
- * lessons-data.ts, which stays a faithful copy of the canvas. A skill with no
- * matching concept simply gets no chip.
- */
-const LESSONS_WITH_OG = LESSONS.map((l) => {
-  const code = OG_PACK_BY_LESSON[l.id];
-  return code
-    ? { ...l, links: [...l.links, { label: "OG Pack", href: ogPackHref(code) }] }
-    : l;
-});
-
 /** Counted off what is on show, so the footer cannot promise more than it gives. */
-const SKILLS_ON_SHOW = LESSONS_WITH_OG.filter((l) => shown(l.links).length > 0).length;
+const SKILLS_ON_SHOW = LESSONS.filter((l) => shown(l.links).length > 0).length;
 
-/** How many skills gained a pack, for the footer. */
-const SKILLS_WITH_OG = LESSONS_WITH_OG.filter((l) =>
-  l.links.some((k) => k.label === "OG Pack")
-).length;
+/**
+ * The OG packs, each listed once with the skills it covers.
+ *
+ * A pack teaches a family rather than a single skill — the consonants pack
+ * carries eighteen of them, silent e seven — so putting a chip on every card
+ * drew 147 of them for 46 packs and said nothing about what a pack actually
+ * spans. Inverting the map instead gives one row per pack and makes the family
+ * the point.
+ *
+ * Packs with no matching skill in this road map are still listed: they are
+ * built, and a teacher reviewing a concept should be able to reach them.
+ */
+const SKILL_NAME = new Map(LESSONS.map((l) => [l.id, l.skill]));
+
+const PACK_SKILLS = new Map<string, string[]>();
+for (const [id, code] of Object.entries(OG_PACK_BY_LESSON)) {
+  const name = SKILL_NAME.get(Number(id));
+  if (!name) continue;
+  const list = PACK_SKILLS.get(code) ?? [];
+  list.push(name);
+  PACK_SKILLS.set(code, list);
+}
+
+const PACK_TOTAL = OG_CONCEPTS.length;
 
 const LEVELS = ["all", 1, 2, 3, 4] as const;
 
@@ -129,7 +134,7 @@ function ReadingFiler() {
 
   const rows = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return LESSONS_WITH_OG.filter((r) => {
+    return LESSONS.filter((r) => {
       if (level !== "all" && r.level !== level) return false;
       if (section !== "all" && r.section !== section) return false;
       if (
@@ -411,6 +416,91 @@ function ReadingFiler() {
           </div>
         ))}
 
+        {/* Review: the OG packs, by level, each listed once. Below the skills
+            because the scope and sequence is what a teacher comes here for;
+            this is what they reach for when a skill needs going over again. */}
+        <div style={{ marginTop: 56 }}>
+          <div style={{ display: "flex", alignItems: "baseline", gap: 12, flexWrap: "wrap" }}>
+            <h2 style={{ margin: 0, fontSize: 23, fontWeight: 800 }}>Review · OG concept packs</h2>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: BRASS }}>
+              {PACK_TOTAL} PACKS
+            </div>
+          </div>
+          <p style={{ fontSize: 14, fontWeight: 500, color: MUTED, margin: "8px 0 0", maxWidth: "70ch" }}>
+            Each pack takes one concept across a whole family of skills — a roadmap, activities,
+            Survival Island chests, a decodable, reading lists and an answer key. Open one to
+            review a concept rather than a single week.
+          </p>
+
+          {OG_LEVELS.map((lvl) => {
+            const packs = OG_CONCEPTS.filter((c) => c.level === lvl.level);
+            if (packs.length === 0) return null;
+            return (
+              <div key={lvl.level} style={{ marginTop: 26 }}>
+                <div style={{ display: "flex", alignItems: "baseline", gap: 10, flexWrap: "wrap" }}>
+                  <h3 style={{ margin: 0, fontSize: 17, fontWeight: 800 }}>{lvl.title}</h3>
+                  <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: MUTED }}>
+                    {lvl.grades.toUpperCase()} · {packs.length} PACKS
+                  </span>
+                </div>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+                    gap: 12,
+                    marginTop: 12,
+                  }}
+                >
+                  {packs.map((c) => {
+                    const skills = PACK_SKILLS.get(c.id) ?? [];
+                    return (
+                      <a
+                        key={c.id}
+                        href={`/api/materials/${ogPackHref(c.id)}`}
+                        target="_blank"
+                        rel="noopener"
+                        style={{
+                          display: "block",
+                          background: "#FFFFFF",
+                          border: `3px solid ${RULE}`,
+                          borderLeft: `8px solid ${OG_TEAL}`,
+                          borderRadius: 14,
+                          padding: "14px 16px",
+                          textDecoration: "none",
+                          color: INK,
+                        }}
+                      >
+                        <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: OG_TEAL }}>
+                          {c.id}
+                        </div>
+                        <div style={{ fontSize: 17, fontWeight: 700, lineHeight: 1.25, marginTop: 3, textWrap: "pretty" }}>
+                          {c.name}
+                        </div>
+                        <div style={{ fontSize: 13, fontWeight: 500, color: MUTED, marginTop: 5 }}>
+                          {c.patterns}
+                        </div>
+                        {skills.length > 0 ? (
+                          <div style={{ fontSize: 12, fontWeight: 500, color: MUTED, marginTop: 9, lineHeight: 1.5 }}>
+                            <span style={{ fontWeight: 700, color: INK }}>
+                              {skills.length} {skills.length === 1 ? "skill" : "skills"}:
+                            </span>{" "}
+                            {skills.join(" · ")}
+                          </div>
+                        ) : (
+                          // Built, but nothing in this road map teaches it yet.
+                          <div style={{ fontSize: 12, fontWeight: 500, color: "#9AA3AD", marginTop: 9 }}>
+                            Not in the road map yet
+                          </div>
+                        )}
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
         <div
           style={{
             marginTop: 44,
@@ -425,7 +515,7 @@ function ReadingFiler() {
           }}
         >
           <span>
-            {SKILL_TOTAL} skills · Levels 1–4 · {SKILLS_ON_SHOW} with a workbook · {SKILLS_WITH_OG} with an OG pack
+            {SKILL_TOTAL} skills · Levels 1–4 · {SKILLS_ON_SHOW} with a workbook · {PACK_TOTAL} OG concept packs
           </span>
           <span>Taught marks save in this browser.</span>
           <span>Workbooks open in a new tab.</span>
