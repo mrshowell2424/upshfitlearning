@@ -20,6 +20,23 @@ export const metadata = {
     "Stephanie Howell is an Intervention Specialist, instructional coach, educational consultant and international speaker, and the person behind Upshift Learning.",
 };
 
+/**
+ * Her book. The title is Amazon's own, not a paraphrase — the story copy used
+ * to carry a tidied-up version of the subtitle that does not appear on the
+ * cover or the listing.
+ *
+ * The Amazon link is the plain /dp/<ASIN> form rather than the search URL it
+ * arrived as: that one carried a session id, a search-term trail and a
+ * referrer tag, none of which belong in a page served to other people.
+ */
+const BOOK = {
+  title: "Control the Chaos",
+  subtitle:
+    "What it takes to create order in the classroom and teach executive functioning skills",
+  authors: "Stephanie Howell and Tara Ruckman",
+  href: "https://www.amazon.com/dp/B0B92V9L2Y",
+};
+
 const CREDENTIALS = [
   { label: "ISTE 20 to Watch", detail: "Recognized for work in educational technology" },
   { label: "Google Innovator", detail: "Google for Education Certified Innovator" },
@@ -96,8 +113,7 @@ export default function AboutPage() {
               Over the past decade she has served as a teacher, instructional coach,
               technology coordinator, district leader and education strategist. She is the
               co-founder of Gold EDU and co-author of the best-selling book{" "}
-              <em>Control the Chaos: Creating Order in the Classroom and Teaching
-              Executive Functioning Skills</em>.
+              <em>Control the Chaos</em>.
             </p>
             <p>
               What drives her most is not the latest technology or the newest trend. It is
@@ -112,6 +128,36 @@ export default function AboutPage() {
               project, spending time with her family, or chatting with other educators
               about ideas that can make tomorrow&apos;s classrooms just a little bit better.
             </p>
+          </div>
+        </section>
+
+        {/* The book */}
+        <section className="px-5 md:px-8 pb-12 md:pb-16">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-[11px] font-bold uppercase tracking-[0.14em] text-text-faint mb-5">
+              The book
+            </h2>
+            <div className="rounded-2xl border border-hairline bg-white p-6 md:p-8 border-l-4"
+                 style={{ borderLeftColor: "var(--color-coral)" }}>
+              <p className="text-[24px] md:text-[28px] font-bold text-charcoal leading-tight">
+                {BOOK.title}
+              </p>
+              <p className="text-[17px] text-text-body leading-snug mt-2">{BOOK.subtitle}</p>
+              <p className="text-[14px] text-text-muted mt-3">By {BOOK.authors}</p>
+              <p className="text-[15px] text-text-body leading-relaxed mt-5 max-w-[58ch]">
+                The executive functioning work behind a lot of what is on this site —
+                routines, structures and the habits that let a classroom run without
+                being run at.
+              </p>
+              <a
+                href={BOOK.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-xl bg-charcoal px-6 py-3 font-semibold text-white hover:bg-charcoal/90 transition-colors mt-6"
+              >
+                Find it on Amazon
+              </a>
+            </div>
           </div>
         </section>
 
