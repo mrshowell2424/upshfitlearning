@@ -96,31 +96,82 @@ function slugFromUrl(url: string, fallback: string): string {
     .replace(/^-|-$/g, '')
 }
 
-/** Cover images for the ~20 most recent posts, from one RSS request. */
-async function fetchRssImages(): Promise<Map<string, string>> {
-  const images = new Map<string, string>()
+/** One post as the feed describes it. */
+interface RssItem {
+  slug: string
+  url: string
+  title: string
+  image?: string
+  publishedAt?: string
+  description: string
+}
+
+/** Strip tags and entities out of a feed field. */
+function plainText(html: string): string {
+  return html
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&#(\d+);/g, (_, d) => String.fromCharCode(Number(d)))
+    .replace(/&[a-z]+;/gi, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+/**
+ * The ~20 most recent posts, from one RSS request.
+ *
+ * This used to return cover images alone, and the sheet decided on its own
+ * which articles existed. That meant a post was invisible here until somebody
+ * added a row by hand, and two months of writing sat unpublished on the site
+ * while the feed had carried it all along. The feed is now read for the posts
+ * themselves as well as their artwork.
+ */
+async function fetchRssItems(): Promise<RssItem[]> {
+  const items: RssItem[] = []
 
   try {
     const response = await fetch(RSS_URL, {
       headers: { 'User-Agent': BROWSER_UA },
       next: { revalidate: 3600 },
     })
-    if (!response.ok) return images
+    if (!response.ok) return items
 
     const xml = await response.text()
     const itemPattern = /<item>([\s\S]*?)<\/item>/g
-    let item: RegExpExecArray | null
+    const field = (block: string, tag: string) => {
+      const m = new RegExp(
+        `<${tag}>(?:<!\\[CDATA\\[)?([\\s\\S]*?)(?:\\]\\]>)?<\\/${tag}>`
+      ).exec(block)
+      return m ? m[1].trim() : ''
+    }
 
-    while ((item = itemPattern.exec(xml)) !== null) {
-      const link = /<link>(.*?)<\/link>/.exec(item[1])?.[1]?.trim()
-      const image = /<enclosure[^>]*url="([^"]+)"/.exec(item[1])?.[1]
-      if (link && image) images.set(slugFromUrl(link, ''), image)
+    let match: RegExpExecArray | null
+    while ((match = itemPattern.exec(xml)) !== null) {
+      const block = match[1]
+      const url = field(block, 'link')
+      const title = plainText(field(block, 'title'))
+      if (!url || !title) continue
+
+      const pubDate = field(block, 'pubDate')
+      const parsed = pubDate ? Date.parse(pubDate) : NaN
+
+      items.push({
+        slug: slugFromUrl(url, title),
+        url,
+        title,
+        image: /<enclosure[^>]*url="([^"]+)"/.exec(block)?.[1],
+        publishedAt: Number.isNaN(parsed) ? undefined : new Date(parsed).toISOString(),
+        description: plainText(field(block, 'description')),
+      })
     }
   } catch (error) {
     console.error('Substack RSS fetch failed:', error)
   }
 
-  return images
+  return items
 }
 
 /**
@@ -273,14 +324,38 @@ async function fetchSubstackArticles(): Promise<SubstackArticle[]> {
     })
   })
 
+  const rss = await fetchRssItems()
+
   // Visit each article for its artwork, and to find out whether it still exists
   const assets = await mapWithLimit(articles, 6, article =>
     fetchArticleAssets(article.url)
   )
 
-  // RSS covers the recent posts and needs no extra request, so it backs up any
-  // page whose body image we couldn't identify
-  const rssImages = await fetchRssImages()
+  /*
+   * RSS backs up both the artwork and — the reason this matters — the date.
+   *
+   * Scraping a post page for its date works locally and frequently does not in
+   * production, which left 33 of 79 articles undated on the live site. Undated
+   * articles sink to the bottom of the sort, so the newest writing was landing
+   * underneath posts from March. The feed carries a pubDate for the twenty most
+   * recent posts, which is exactly the window where getting the order right
+   * matters.
+   *
+   * Keyed by title as well as slug because the sheet sometimes records a post
+   * as substack.com/home/post/p-<id>, which yields a different slug from the
+   * /p/<slug> the feed gives for the same article.
+   */
+  const norm = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '')
+  const rssImages = new Map<string, string>()
+  const rssDates = new Map<string, string>()
+  for (const item of rss) {
+    for (const key of [item.slug, norm(item.title)]) {
+      if (item.image && !rssImages.has(key)) rssImages.set(key, item.image)
+      if (item.publishedAt && !rssDates.has(key)) rssDates.set(key, item.publishedAt)
+    }
+  }
+  const fromRss = (m: Map<string, string>, a: SubstackArticle) =>
+    m.get(a.slug) ?? m.get(norm(a.title))
 
   const live: SubstackArticle[] = []
 
@@ -291,8 +366,8 @@ async function fetchSubstackArticles(): Promise<SubstackArticle[]> {
       return
     }
 
-    article.image = image ?? rssImages.get(article.slug)
-    article.publishedAt = publishedAt
+    article.image = image ?? fromRss(rssImages, article)
+    article.publishedAt = publishedAt ?? fromRss(rssDates, article)
     live.push(article)
   })
 
