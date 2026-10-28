@@ -265,6 +265,95 @@ const ADAPTATIONS: Adaptation[] = [
           "return 'Showing ' + n + ' lesson step' + (n === 1 ? '' : 's'); })() : ''"
       ),
   },
+  {
+    // One arrow revealed the student pages and the answer key together, which
+    // is the wrong shape for the job: a teacher prints the workbook for the
+    // class and opens the key on their own screen. Two bars, each with its
+    // own arrow and its own print button, keep those apart.
+    //
+    // The page markup is shared rather than rewritten — the same block is
+    // rendered twice over two filtered lists, so the key keeps looking
+    // exactly like the workbook it answers.
+    name: "give the answer key its own section",
+    apply: (html) => {
+      let out = html;
+
+      // One list becomes two, filtered on the kicker the pages already carry.
+      const pages = /wbPages: ([\s\S]*?), wbReal: real,/;
+      if (!pages.test(out)) return html;
+      out = out.replace(
+        pages,
+        (_m, expr) =>
+          "...(() => { const wbp = " + expr + "; " +
+          "const isK = (p) => String(p.kicker || '').startsWith('ANSWER'); " +
+          "return { wbPages: wbp, wbPagesStudent: wbp.filter((p) => !isK(p)), " +
+          "wbPagesKey: wbp.filter(isK) }; })(), wbReal: real,"
+      );
+
+      // The student wrap stops answering for the key, and the key gets its
+      // own open state. Printing everything still opens both.
+      const wrap =
+        "wbWrap: { display: (this.state && this.state.wbOpen) || part === 'wb' || part === 'key' || part === 'all' ? 'flex' : 'none', flexDirection: 'column', gap: 22 },";
+      if (!out.includes(wrap)) return html;
+      out = out.replace(
+        wrap,
+        "wbWrap: { display: (this.state && this.state.wbOpen) || part === 'wb' || part === 'all' ? 'flex' : 'none', flexDirection: 'column', gap: 22 },\n" +
+          "      keyWrap: { display: (this.state && this.state.keyOpen) || part === 'key' || part === 'all' ? 'flex' : 'none', flexDirection: 'column', gap: 22 },\n" +
+          "      keyBtn: (this.state && this.state.keyOpen) ? 'Hide answer key ▲' : 'Show answer key ▼',\n" +
+          "      toggleKey: () => this.setState({ keyOpen: !(this.state && this.state.keyOpen) }),"
+      );
+
+      // Bar one is the workbook alone now: it loses the key's print button,
+      // and the sentence about the key, which bar two says for itself.
+      out = out.replace("\u{1F4D8} Student workbook + answer key", "\u{1F4D8} Student workbook");
+      out = out.replace(" The key adds a quick check for the group.", "");
+      const keyPrint =
+        /<button type="button" onClick="\{\{ printKey \}\}"[^>]*>[^<]*<\/button>/;
+      if (!keyPrint.test(out)) return html;
+      const keyPrintHtml = out.match(keyPrint)[0];
+      out = out.replace(keyPrint, "");
+      out = out.replace('<button type="button" onClick="{{ toggleWb }}"', '<button type="button" onClick="{{ toggleWb }}"');
+
+      // Bar two, and a second copy of the page block beneath it.
+      const open = '<div style="{{ wbWrap }}">';
+      const at = out.indexOf(open);
+      if (at === -1) return html;
+      const tags = /<div\b|<\/div>/gi;
+      tags.lastIndex = at;
+      let depth = 0;
+      let end = -1;
+      for (let m = tags.exec(out); m; m = tags.exec(out)) {
+        if (m[0][1] === "/") {
+          if (--depth === 0) { end = m.index + m[0].length; break; }
+        } else depth++;
+      }
+      if (end === -1) return html;
+
+      const block = out.slice(at, end);
+      if (!block.includes('<sc-for list="{{ wbPages }}"')) return html;
+
+      const studentBlock = block.replace('list="{{ wbPages }}"', 'list="{{ wbPagesStudent }}"');
+      const keyBlock = block
+        .replace('style="{{ wbWrap }}"', 'style="{{ keyWrap }}"')
+        .replace('list="{{ wbPages }}"', 'list="{{ wbPagesKey }}"');
+
+      const keyBar =
+        '\n  <div data-noprint="true" style="display:flex;align-items:center;' +
+        'justify-content:space-between;gap:12px;flex-wrap:wrap;background:#fff;' +
+        'border:1.5px solid #C9D3C4;border-radius:12px;padding:12px 16px">\n' +
+        '    <div style="display:flex;flex-direction:column;gap:2px">' +
+        '<b style="font-size:16px;color:#2F3E2E">\u{1F511} Answer key</b>' +
+        '<span style="font-size:13px;color:#57534e">The same pages with the answers filled in, ' +
+        'and a quick check for the group.</span></div>\n' +
+        '    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">' +
+        '<button type="button" onClick="{{ toggleKey }}" style="font-family:Outfit,sans-serif;' +
+        'font-size:14px;font-weight:700;border:1.5px solid #4B6049;background:#EEF3EC;' +
+        'color:#4B6049;padding:8px 14px;border-radius:8px;cursor:pointer;white-space:nowrap">' +
+        "{{ keyBtn }}</button>" + keyPrintHtml + "</div>\n  </div>\n";
+
+      return out.slice(0, at) + studentBlock + keyBar + keyBlock + out.slice(end);
+    },
+  },
 ];
 
 function adapt(rel: string, html: string): string {
