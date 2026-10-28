@@ -10,7 +10,6 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "Resources", href: "/resources" },
   { label: "Standard match", href: "/match" },
-  { label: "Basic Reading", href: "/reading" },
   { label: "Science of Reading", href: "/science-of-reading" },
   { label: "Design Thinking", href: "/design-thinking" },
   { label: "Courses", href: "/courses" },

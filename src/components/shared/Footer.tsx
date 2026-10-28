@@ -7,7 +7,6 @@ import Link from "next/link";
 const links = [
   { label: "About", href: "/about" },
   { label: "Standard match", href: "/match" },
-  { label: "Basic Reading", href: "/reading" },
   { label: "Science of Reading", href: "/science-of-reading" },
   { label: "Design Thinking", href: "/design-thinking" },
   { label: "Resources", href: "/resources" },
