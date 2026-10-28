@@ -146,19 +146,26 @@ const ADAPTATIONS: Adaptation[] = [
     //
     // The options are lifted from the select rather than retyped, so a
     // re-export that changes the steps changes the chips with it.
-    name: "turn the lesson-step select into chips",
+    //
+    // Several can be lit at once — a teacher planning Monday wants blending
+    // and spelling together, not one and then the other. The chosen keys are
+    // kept comma-joined in the same `step` field, so everything that only
+    // asks whether a filter is set keeps working.
+    name: "turn the lesson-step select into chips, several at a time",
     apply: (html) => {
       const line = /^[ \t]*OPT\('All lesson steps', 'step', (\[.*\])\),[ \t]*\r?\n/m;
       const found = html.match(line);
       if (!found) return html;
 
       const chips =
-        "      stepChips: " + found[1] + ".map(([v, t]) => ({ label: t, " +
-        "pick: () => setF('step', FS.step === v ? '' : v), " +
+        "      stepChips: " + found[1] + ".map(([v, t]) => { " +
+        "const on = String(FS.step || '').split(',').filter(Boolean); " +
+        "return { label: t, " +
+        "pick: () => setF('step', (on.includes(v) ? on.filter((x) => x !== v) : on.concat(v)).join(',')), " +
         "style: \"font-family:Poppins,sans-serif;font-size:12.5px;font-weight:700;" +
         "cursor:pointer;border-radius:999px;padding:4px 11px;white-space:nowrap;" +
-        "border:1.5px solid #4B6049;\" + (FS.step === v " +
-        "? 'background:#4B6049;color:#fff' : 'background:#fff;color:#4B6049') })),\n";
+        "border:1.5px solid #4B6049;\" + (on.includes(v) " +
+        "? 'background:#4B6049;color:#fff' : 'background:#fff;color:#4B6049') }; }),\n";
 
       const anchor = "      toggleHeart: () => setF('heart', !FS.heart),";
       if (!html.includes(anchor)) return html;
@@ -228,6 +235,35 @@ const ADAPTATIONS: Adaptation[] = [
     // instruction at all.
     name: "drop the stale print instruction from the workbook blurb",
     apply: (html) => html.replace(" Use Print workbook or Print key to print.", ""),
+  },
+  {
+    // The step filter read one key and mapped it to lesson numbers through a
+    // chain of ternaries, which cannot answer "blending and spelling". A
+    // lookup over the comma-joined keys can, and says the same thing far more
+    // plainly. Heart words still win outright, as before.
+    name: "let the preview follow several lesson steps",
+    apply: (html) => {
+      const line = /const stepsF = FS\.heart \? steps\.filter\(\(s\) => s\.n === 8\) : FS\.step \?[\s\S]*?: steps;/;
+      if (!line.test(html)) return html;
+      return html.replace(
+        line,
+        "const STEP_LINES = { pa: [1], drill: [2, 3], blend: [4], read: [5, 6, 7], " +
+          "spell: [9, 10], dec: [11, 12], write: [13] };\n" +
+          "    const wantLines = String(FS.step || '').split(',').filter(Boolean)" +
+          ".flatMap((k) => STEP_LINES[k] || []);\n" +
+          "    const stepsF = FS.heart ? steps.filter((s) => s.n === 8) " +
+          ": wantLines.length ? steps.filter((s) => wantLines.includes(s.n)) : steps;"
+      );
+    },
+  },
+  {
+    name: "count the chosen steps in the filter note",
+    apply: (html) =>
+      html.replace(
+        "FS.step ? 'Showing one lesson step' : ''",
+        "FS.step ? (() => { const n = String(FS.step).split(',').filter(Boolean).length; " +
+          "return 'Showing ' + n + ' lesson step' + (n === 1 ? '' : 's'); })() : ''"
+      ),
   },
 ];
 
