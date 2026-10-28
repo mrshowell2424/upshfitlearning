@@ -138,6 +138,15 @@ const ADAPTATIONS: Adaptation[] = [
     apply: (html) => html.replace(/^[ \t]*OPT\('All students',.*\r?\n/m, ""),
   },
   {
+    // A second row of skill chips, holding the advanced skills whose names
+    // mention syllables. Every one of them is already in the skill dropdown
+    // and the search beside it, so the row is a third way to reach the same
+    // twenty skills, sitting under a heading that reads like a filter and
+    // filters nothing.
+    name: "remove the MULTISYLLABIC skill row",
+    apply: (html) => cutAround(html, ">MULTISYLLABIC</span>", "div") ?? html,
+  },
+  {
     // A dropdown hides its options; the lesson steps are the spine of the
     // lesson and are worth showing all at once, the way the multisyllabic
     // patterns already are. The chips drive the same `step` filter the select
@@ -187,16 +196,19 @@ const ADAPTATIONS: Adaptation[] = [
     },
   },
   {
-    // Printing belongs beside the thing being printed. These three sat in a
-    // row of twelve buttons at the top, far from the workbook they produce,
-    // and three ways to print one lesson is two more decisions than the job
-    // needs.
-    name: "take the lesson/workbook/key print buttons out of the top row",
+    // Printing belongs beside the thing being printed. All of these sat in a
+    // row of twelve buttons at the top, far from the pages they produce, and
+    // a dozen ways to print one lesson is eleven more decisions than the job
+    // needs. Everything named here either moves to the workbook bar below or,
+    // in the 5-lesson check's case, goes for good.
+    name: "empty the print buttons out of the top row",
     apply: (html) =>
-      html.replace(
-        /\s*<button\b[^>]*onClick="\{\{ (?:printLesson|printWorkbook|printKey|printAll) \}\}"[^>]*>[^<]*<\/button>/g,
-        ""
-      ),
+      html
+        .replace(
+          /\s*<button\b[^>]*onClick="\{\{ (?:printLesson|printWorkbook|printKey|printAll|printSpl2|printSpl3|printCheck|toggleGames|printGames|printGamesKey) \}\}"[^>]*>[^<]*<\/button>/g,
+          ""
+        )
+        .replace(/\s*<a\b[^>]*href="Syllable%20Types%20Poster\.dc\.html"[^>]*>[^<]*<\/a>/g, ""),
   },
   {
     // Where they land: the workbook bar, which already names the workbook and
@@ -219,9 +231,24 @@ const ADAPTATIONS: Adaptation[] = [
           '<button type="button" onClick="{{ printWorkbook }}" style="' +
           btn("#fff", "1.5px solid #4B6049", "#4B6049") +
           '">\u{1F5A8} Print workbook</button>' +
+          '<button type="button" onClick="{{ printSpl2 }}" style="' +
+          btn("#fff", "1.5px solid #4B6049", "#4B6049") +
+          '">\u{1F5A8} Spelling \u00b7 2nd</button>' +
+          '<button type="button" onClick="{{ printSpl3 }}" style="' +
+          btn("#fff", "1.5px solid #4B6049", "#4B6049") +
+          '">\u{1F5A8} Spelling \u00b7 3rd</button>' +
           '<button type="button" onClick="{{ printKey }}" style="' +
           btn("#fff", "1.5px solid #4B6049", "#4B6049") +
           '">\u{1F5A8} Print answer key</button>' +
+          '<button type="button" onClick="{{ toggleGames }}" style="' +
+          btn("#fff", "1.5px solid #4B6049", "#4B6049") +
+          '">{{ gamesBtn }}</button>' +
+          '<button type="button" onClick="{{ printGames }}" style="' +
+          btn("#fff", "1.5px solid #4B6049", "#4B6049") +
+          '">\u{1F5A8} Print games</button>' +
+          '<a href="Syllable%20Types%20Poster.dc.html" style="' +
+          btn("#fff", "1.5px solid #4B6049", "#4B6049") +
+          ';text-decoration:none">\u2702\ufe0f Syllable types poster</a>' +
           '<button type="button" onClick="{{ printAll }}" style="' +
           btn("#4B6049", "0", "#fff") +
           '">\u{1F5A8} Print all</button>' +
@@ -349,7 +376,12 @@ const ADAPTATIONS: Adaptation[] = [
         '<button type="button" onClick="{{ toggleKey }}" style="font-family:Outfit,sans-serif;' +
         'font-size:14px;font-weight:700;border:1.5px solid #4B6049;background:#EEF3EC;' +
         'color:#4B6049;padding:8px 14px;border-radius:8px;cursor:pointer;white-space:nowrap">' +
-        "{{ keyBtn }}</button>" + keyPrintHtml + "</div>\n  </div>\n";
+        "{{ keyBtn }}</button>" + keyPrintHtml +
+        '<button type="button" onClick="{{ printGamesKey }}" ' +
+        'style="font-family:Outfit,sans-serif;font-size:14px;font-weight:700;' +
+        'border:1.5px solid #4B6049;background:#fff;color:#4B6049;padding:8px 14px;' +
+        'border-radius:8px;cursor:pointer;white-space:nowrap">\u{1F5A8} Games key</button>' +
+        "</div>\n  </div>\n";
 
       return out.slice(0, at) + studentBlock + keyBar + keyBlock + out.slice(end);
     },
