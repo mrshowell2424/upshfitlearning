@@ -132,6 +132,9 @@ function Hub() {
               blurb: `All ${SKILL_TOTAL} skills in the scope and sequence, in teaching order, each with its workbook and answer key.`,
               preview: "/previews/workbook.png",
               shape: [751, 1000] as const,
+              // Past the name and date lines and clear of the rule banner,
+              // onto the words a child actually reads.
+              focus: "38%",
               alt: "A workbook page: the rule for short i, three columns of words to read, silly words, and spaces for spelling and dictation.",
             },
             {
@@ -142,6 +145,8 @@ function Hub() {
               blurb: `${OG_CONCEPTS.length} packs, each taking one concept across the whole family of skills it covers.`,
               preview: "/previews/og-pack.png",
               shape: [774, 1000] as const,
+              // The roadmap reads from its title down, so start at the top.
+              focus: "0%",
               alt: "A concept pack roadmap for the digraphs sh, ch, th and wh: six numbered boxes from Warm up to Teach it, with a week plan.",
             },
           ].map((card) => (
@@ -163,22 +168,36 @@ function Hub() {
                   shrunk to fit, a printable page is unreadable and tells a
                   teacher nothing. Cropped, the masthead and first exercise
                   stay legible. */}
+              {/* A ratio, not a fixed height. With object-fit the slice of the
+                  page on show is windowHeight ÷ (cardWidth ÷ pageAspect), so a
+                  fixed height means a narrow card reveals more of the page
+                  than a wide one — on a phone that dragged the rule banner
+                  back into frame. Tying height to width keeps that fraction
+                  constant, and `focus` then means the same thing everywhere. */}
               <div
                 style={{
                   position: "relative",
-                  height: 150,
+                  aspectRatio: "20 / 7",
                   overflow: "hidden",
                   borderRadius: 10,
                   border: `2px solid ${RULE}`,
                   marginBottom: 14,
                 }}
               >
+                {/* cover with a percentage rather than a pixel offset, so the
+                    band stays put as the card changes width. */}
                 <Image
                   src={card.preview}
                   alt={card.alt}
                   width={card.shape[0]}
                   height={card.shape[1]}
-                  style={{ width: "100%", height: "auto", display: "block" }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "block",
+                    objectFit: "cover",
+                    objectPosition: `center ${card.focus}`,
+                  }}
                 />
                 {/* The page is taller than the window, so the crop lands
                     wherever it lands — often mid-sentence. Fading the last
@@ -191,7 +210,7 @@ function Hub() {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    height: 54,
+                    height: "36%",
                     background: "linear-gradient(to bottom, rgba(255,255,255,0), #FFFFFF)",
                   }}
                 />
