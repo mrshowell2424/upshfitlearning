@@ -1,5 +1,3 @@
-import { entitlementFromToken, bearerToken } from "@/lib/auth/entitlement";
-
 /**
  * The credential that lets a browser open a gated teaching material.
  *
@@ -19,6 +17,12 @@ import { entitlementFromToken, bearerToken } from "@/lib/auth/entitlement";
  *
  * HttpOnly keeps it away from page scripts, and the path scope keeps it off
  * every other request the site makes.
+ *
+ * This module stays free of imports so the browser can read it too —
+ * components/shared/MaterialsPass.tsx needs the lifetime to know when to
+ * refresh. The check that verifies a pass lives in materials-gate.ts,
+ * because it reaches Supabase and the database and must never be bundled
+ * into a page.
  */
 export const MATERIALS_PASS = "upshift_materials_pass";
 
@@ -43,19 +47,4 @@ export function materialsPassFromCookies(request: Request): string | null {
     return decodeURIComponent(part.slice(eq + 1).trim()) || null;
   }
   return null;
-}
-
-/**
- * Whether this request may read a material.
- *
- * Accepts the cookie a link navigation carries, or a bearer token for anything
- * calling the route directly. Both end at the same verification.
- */
-export async function mayReadMaterials(request: Request): Promise<boolean> {
-  const token = materialsPassFromCookies(request) ?? bearerToken(request);
-  if (!token) return false;
-  const { userId } = await entitlementFromToken(token);
-  // An account is the bar here, not a paid tier — the road maps are free, they
-  // simply are not anonymous.
-  return Boolean(userId);
 }

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
+import { MaterialsPass } from "@/components/shared/MaterialsPass";
 import { LESSONS } from "@/app/reading/lessons-data";
 import { OG_PACK_BY_LESSON } from "@/app/reading/og-pack-map";
 import { OG_LEVELS, OG_CONCEPTS, ogPackHref } from "@/app/reading/og-packs-data";
@@ -163,6 +164,8 @@ export default function OgPacksPage() {
           title="OG concept packs"
           blurb="Fifty-eight Orton-Gillingham concept packs — roadmap, activities, decodable and answer key for each. Free — an account is all it takes."
         >
+          {/* Every pack is a link into /api/materials — see MaterialsPass. */}
+          <MaterialsPass />
           <Packs />
         </SignInGate>
       </main>

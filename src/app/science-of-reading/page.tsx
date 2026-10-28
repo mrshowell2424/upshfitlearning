@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
+import { MaterialsPass } from "@/components/shared/MaterialsPass";
 import { SKILL_TOTAL } from "@/app/reading/lessons-data";
 import { OG_CONCEPTS } from "@/app/reading/og-packs-data";
 
@@ -12,6 +14,11 @@ import { OG_CONCEPTS } from "@/app/reading/og-packs-data";
  * this page instead, so the toolbar names one reading destination rather than
  * three. Each is still a real page with its own URL — hidden from the menu,
  * not from the site.
+ *
+ * Each card carries a picture of what it opens. These are screenshots of the
+ * real pages, taken by rendering them in a browser — a teacher deciding
+ * between three links should be able to see a workbook page and a concept
+ * pack rather than infer them from a sentence.
  *
  * The lesson builder is the canvas export, served through /api/materials like
  * the workbooks. It is a self-contained application — pick a skill, filter,
@@ -68,18 +75,44 @@ function Hub() {
             color: INK,
           }}
         >
-          <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: TEAL }}>
-            BUILD A LESSON
+          {/* auto-fit rather than a breakpoint: the preview sits beside the
+              words on a laptop and drops below them on a phone, with no media
+              query to keep in step with the column width. */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))",
+              gap: 22,
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: TEAL }}>
+                BUILD A LESSON
+              </div>
+              <div style={{ fontSize: 27, fontWeight: 800, lineHeight: 1.15, marginTop: 6 }}>
+                Lesson builder
+              </div>
+              <p style={{ fontSize: 15, fontWeight: 500, color: MUTED, margin: "8px 0 0", lineHeight: 1.55 }}>
+                Pick a skill and filter by grade, student, word length or lesson step. It writes
+                the lesson for you — the rule, three differentiated word lists, and the steps with
+                their timings — then prints the workbook, the key, spelling lists, spiral review,
+                the five-lesson check or the word games.
+              </p>
+            </div>
+            <Image
+              src="/previews/lesson-builder.png"
+              alt="The builder with Silent e chosen: filter rows, print buttons, the rule, and easier, on-level and harder word lists."
+              width={1200}
+              height={618}
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: 10,
+                border: `2px solid ${RULE}`,
+              }}
+            />
           </div>
-          <div style={{ fontSize: 27, fontWeight: 800, lineHeight: 1.15, marginTop: 6 }}>
-            Lesson builder
-          </div>
-          <p style={{ fontSize: 15, fontWeight: 500, color: MUTED, margin: "8px 0 0", maxWidth: "68ch", lineHeight: 1.55 }}>
-            Pick a skill and filter by grade, student, word length or lesson step. It writes the
-            lesson for you — the rule, three differentiated word lists, and the steps with their
-            timings — then prints the workbook, the key, spelling lists, spiral review, the
-            five-lesson check or the word games.
-          </p>
         </a>
 
         <div
@@ -97,6 +130,9 @@ function Hub() {
               title: "Basic Reading workbooks",
               accent: NAVY,
               blurb: `All ${SKILL_TOTAL} skills in the scope and sequence, in teaching order, each with its workbook and answer key.`,
+              preview: "/previews/workbook.png",
+              shape: [751, 1000] as const,
+              alt: "A workbook page: the rule for short i, three columns of words to read, silly words, and spaces for spelling and dictation.",
             },
             {
               href: "/og-packs",
@@ -104,6 +140,9 @@ function Hub() {
               title: "OG concept packs",
               accent: GREEN,
               blurb: `${OG_CONCEPTS.length} packs, each taking one concept across the whole family of skills it covers.`,
+              preview: "/previews/og-pack.png",
+              shape: [774, 1000] as const,
+              alt: "A concept pack roadmap for the digraphs sh, ch, th and wh: six numbered boxes from Warm up to Teach it, with a week plan.",
             },
           ].map((card) => (
             <Link
@@ -120,6 +159,43 @@ function Hub() {
                 color: INK,
               }}
             >
+              {/* A band off the top of the page rather than the whole sheet —
+                  shrunk to fit, a printable page is unreadable and tells a
+                  teacher nothing. Cropped, the masthead and first exercise
+                  stay legible. */}
+              <div
+                style={{
+                  position: "relative",
+                  height: 150,
+                  overflow: "hidden",
+                  borderRadius: 10,
+                  border: `2px solid ${RULE}`,
+                  marginBottom: 14,
+                }}
+              >
+                <Image
+                  src={card.preview}
+                  alt={card.alt}
+                  width={card.shape[0]}
+                  height={card.shape[1]}
+                  style={{ width: "100%", height: "auto", display: "block" }}
+                />
+                {/* The page is taller than the window, so the crop lands
+                    wherever it lands — often mid-sentence. Fading the last
+                    stretch into the card makes that a deliberate edge rather
+                    than a picture that looks badly cut. */}
+                <div
+                  aria-hidden="true"
+                  style={{
+                    position: "absolute",
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    height: 54,
+                    background: "linear-gradient(to bottom, rgba(255,255,255,0), #FFFFFF)",
+                  }}
+                />
+              </div>
               <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: card.accent }}>
                 {card.eyebrow}
               </div>
@@ -159,6 +235,9 @@ export default function ScienceOfReadingPage() {
           title="Science of Reading"
           blurb="Build a lesson from any skill, open the Basic Reading workbooks, or review an OG concept pack. Free — an account is all it takes."
         >
+          {/* The builder is a link into /api/materials, so the pass has to be
+              traded before it is clicked. */}
+          <MaterialsPass />
           <Hub />
         </SignInGate>
       </main>

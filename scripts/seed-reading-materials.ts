@@ -14,7 +14,7 @@
  * Idempotent — rows upsert on path, and anything no longer on disk is removed
  * so a renamed page does not linger as a row nothing links to.
  */
-import { readdir, readFile, stat } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import { db } from "@/lib/db";
 import { reading_materials } from "@/lib/db/schema";
@@ -28,6 +28,42 @@ const TYPES: Record<string, string> = {
   ".css": "text/css; charset=utf-8",
   ".json": "application/json; charset=utf-8",
 };
+
+/**
+ * Stops a canvas page re-parsing itself once it is served over HTTP.
+ *
+ * dc-runtime's boot() does `if (!window.__resources) fetch(location.href)` and
+ * re-parses the response as the page's template — a fallback for when the HTML
+ * parser has mangled the markup. parseDcText() takes everything between the
+ * first `<x-dc>` and the last `</x-dc>`, and in an export that inlines the
+ * runtime the first match lands inside the runtime's own source, in the error
+ * string `has no <x-dc> block`. So the whole runtime gets compiled as template:
+ * the compiler's encodeCamelAttrs() rewrites ` rootName =` to
+ * ` sc-camel-root-name =`, and the page renders its own source as text.
+ *
+ * It never bites on file:// because the browser blocks that fetch. It bites
+ * every time on the site. Defining __resources skips the re-fetch; an empty
+ * object is what a bundled export carries, and every other reader of it falls
+ * back to the plain URL on a miss.
+ *
+ * Applied here rather than on disk so content-reading-materials/ stays the
+ * untouched canvas export and a re-export cannot quietly reintroduce this.
+ */
+const RESOURCES_GUARD =
+  "<script>/* skips dc-runtime's self-re-parse when served over HTTP */" +
+  "window.__resources = window.__resources || {};</script>\n";
+
+function guardInlinedRuntime(rel: string, html: string): string {
+  if (!html.includes("GENERATED from dc-runtime")) return html;
+  if (/window\.__resources\s*=/.test(html)) return html;
+  const head = html.indexOf("<head>");
+  if (head === -1) {
+    console.log(`  ! ${rel} inlines the runtime but has no <head> to guard`);
+    return html;
+  }
+  console.log(`  🛡 guarded ${rel}`);
+  return html.slice(0, head + 6) + "\n" + RESOURCES_GUARD + html.slice(head + 6);
+}
 
 async function walk(dir: string): Promise<string[]> {
   const out: string[] = [];
@@ -51,12 +87,13 @@ for (const full of files) {
     console.log(`  – skipped (not a text type): ${rel}`);
     continue;
   }
-  const content = await readFile(full, "utf8");
+  const raw = await readFile(full, "utf8");
+  const content = ext === ".html" ? guardInlinedRuntime(rel, raw) : raw;
   rows.push({
     path: rel,
     content,
     content_type: type,
-    bytes: (await stat(full)).size,
+    bytes: Buffer.byteLength(content, "utf8"),
   });
 }
 

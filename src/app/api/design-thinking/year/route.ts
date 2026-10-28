@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { mayReadMaterials } from "@/lib/auth/materials-pass";
+import { mayReadMaterials } from "@/lib/auth/materials-gate";
 import { DESIGN_GRADES } from "@/app/design-thinking/constants";
 import { DESIGN_YEARS } from "@/app/design-thinking/weeks-data";
 

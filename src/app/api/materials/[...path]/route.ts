@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { eq } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { reading_materials } from "@/lib/db/schema";
-import { mayReadMaterials } from "@/lib/auth/materials-pass";
+import { mayReadMaterials } from "@/lib/auth/materials-gate";
 
 /**
  * Serves a gated teaching material to a signed-in teacher, and nobody else.
@@ -29,14 +29,54 @@ import { mayReadMaterials } from "@/lib/auth/materials-pass";
  */
 export const dynamic = "force-dynamic";
 
+/**
+ * What a teacher sees instead of {"error":"Sign in required"}.
+ *
+ * Plain inline HTML because this is served by the route, not rendered by the
+ * app — there is no layout, no Tailwind, and no client bundle here.
+ */
+const LOCKED_PAGE = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in to open this</title>
+<style>
+  body{margin:0;min-height:100vh;display:grid;place-items:center;background:#FAF7F2;
+    color:#24303D;font:500 16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;padding:24px}
+  main{max-width:30rem;background:#fff;border:3px solid #E4DED4;border-left:10px solid #2F7A8C;
+    border-radius:16px;padding:28px 30px}
+  h1{margin:6px 0 10px;font-size:25px;font-weight:800;line-height:1.15}
+  p{margin:0 0 10px;color:#6B7480}
+  .eyebrow{font-size:11px;font-weight:800;letter-spacing:.12em;color:#2F7A8C}
+  a{display:inline-block;margin-top:12px;background:#24303D;color:#fff;text-decoration:none;
+    font-weight:700;padding:11px 20px;border-radius:11px}
+</style></head>
+<body><main>
+  <div class="eyebrow">SIGN IN REQUIRED</div>
+  <h1>This one is for signed-in teachers</h1>
+  <p>Materials are free, but not anonymous — an account is all it takes.</p>
+  <p>If you are already signed in, your pass has expired. Go back to the page
+     you came from, reload it, and the link will open.</p>
+  <a href="/science-of-reading">Back to Science of Reading</a>
+</main></body></html>`;
+
 export async function GET(
   request: NextRequest,
   context: { params: Promise<{ path: string[] }> }
 ) {
   if (!(await mayReadMaterials(request))) {
-    // No body worth inspecting — the point is that a signed-out caller gets
-    // nothing, not that they get a nicer error.
-    return NextResponse.json({ error: "Sign in required" }, { status: 401 });
+    // A material is opened by clicking a link, so a refused request usually
+    // lands in a fresh tab in front of a teacher — who, more often than not,
+    // is signed in and has simply arrived with no pass, or with an expired
+    // one. Handing them raw JSON tells them nothing and reads like a broken
+    // site. Anything not asking for a page still gets the bare 401.
+    const wantsPage = (request.headers.get("accept") || "").includes("text/html");
+    if (!wantsPage) {
+      return NextResponse.json({ error: "Sign in required" }, { status: 401 });
+    }
+    return new NextResponse(LOCKED_PAGE, {
+      status: 401,
+      headers: { "content-type": "text/html; charset=utf-8" },
+    });
   }
 
   const { path: segments } = await context.params;
