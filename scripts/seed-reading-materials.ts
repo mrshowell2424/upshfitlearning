@@ -137,6 +137,98 @@ const ADAPTATIONS: Adaptation[] = [
     name: "remove the student filter",
     apply: (html) => html.replace(/^[ \t]*OPT\('All students',.*\r?\n/m, ""),
   },
+  {
+    // A dropdown hides its options; the lesson steps are the spine of the
+    // lesson and are worth showing all at once, the way the multisyllabic
+    // patterns already are. The chips drive the same `step` filter the select
+    // drove, so the preview below narrows to the chosen step with no new
+    // wiring — clicking the active chip clears it again.
+    //
+    // The options are lifted from the select rather than retyped, so a
+    // re-export that changes the steps changes the chips with it.
+    name: "turn the lesson-step select into chips",
+    apply: (html) => {
+      const line = /^[ \t]*OPT\('All lesson steps', 'step', (\[.*\])\),[ \t]*\r?\n/m;
+      const found = html.match(line);
+      if (!found) return html;
+
+      const chips =
+        "      stepChips: " + found[1] + ".map(([v, t]) => ({ label: t, " +
+        "pick: () => setF('step', FS.step === v ? '' : v), " +
+        "style: \"font-family:Poppins,sans-serif;font-size:12.5px;font-weight:700;" +
+        "cursor:pointer;border-radius:999px;padding:4px 11px;white-space:nowrap;" +
+        "border:1.5px solid #4B6049;\" + (FS.step === v " +
+        "? 'background:#4B6049;color:#fff' : 'background:#fff;color:#4B6049') })),\n";
+
+      const anchor = "      toggleHeart: () => setF('heart', !FS.heart),";
+      if (!html.includes(anchor)) return html;
+
+      const row =
+        '      <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;width:100%">\n' +
+        '        <span style="font-family:Outfit,sans-serif;font-size:12px;font-weight:800;' +
+        'letter-spacing:.1em;color:#4B6049;white-space:nowrap">LESSON STEP</span>\n' +
+        '        <sc-for list="{{ stepChips }}" as="h" hint-placeholder-count="7">' +
+        '<button type="button" onClick="{{ h.pick }}" style="{{ h.style }}">{{ h.label }}</button></sc-for>\n' +
+        "      </div>\n";
+      const rowAnchor = '      <sc-if value="{{ hasFiltered }}"';
+      if (!html.includes(rowAnchor)) return html;
+
+      return html
+        .replace(line, "")
+        .replace(anchor, chips + anchor)
+        .replace(rowAnchor, row + rowAnchor);
+    },
+  },
+  {
+    // Printing belongs beside the thing being printed. These three sat in a
+    // row of twelve buttons at the top, far from the workbook they produce,
+    // and three ways to print one lesson is two more decisions than the job
+    // needs.
+    name: "take the lesson/workbook/key print buttons out of the top row",
+    apply: (html) =>
+      html.replace(
+        /\s*<button\b[^>]*onClick="\{\{ (?:printLesson|printWorkbook|printKey|printAll) \}\}"[^>]*>[^<]*<\/button>/g,
+        ""
+      ),
+  },
+  {
+    // Where they land: the workbook bar, which already names the workbook and
+    // its key. Each follows whatever is filtered above it. The workbook and
+    // the key print separately because they go to different people, and
+    // Print all is the one-press option for a whole lesson.
+    name: "put the print buttons on the workbook bar",
+    apply: (html) => {
+      const toggle =
+        /<button type="button" onClick="\{\{ toggleWb \}\}"([^>]*)>\{\{ wbBtn \}\}<\/button>/;
+      if (!toggle.test(html)) return html;
+      const btn = (fill: string, border: string, color: string) =>
+        'font-family:Outfit,sans-serif;font-size:14px;font-weight:700;border:' + border +
+        ';background:' + fill + ';color:' + color +
+        ';padding:8px 14px;border-radius:8px;cursor:pointer;white-space:nowrap';
+      return html.replace(
+        toggle,
+        '<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">' +
+          '<button type="button" onClick="{{ toggleWb }}"$1>{{ wbBtn }}</button>' +
+          '<button type="button" onClick="{{ printWorkbook }}" style="' +
+          btn("#fff", "1.5px solid #4B6049", "#4B6049") +
+          '">\u{1F5A8} Print workbook</button>' +
+          '<button type="button" onClick="{{ printKey }}" style="' +
+          btn("#fff", "1.5px solid #4B6049", "#4B6049") +
+          '">\u{1F5A8} Print answer key</button>' +
+          '<button type="button" onClick="{{ printAll }}" style="' +
+          btn("#4B6049", "0", "#fff") +
+          '">\u{1F5A8} Print all</button>' +
+          "</div>"
+      );
+    },
+  },
+  {
+    // The blurb told teachers to use two buttons that no longer exist. The
+    // ones that replaced them sit directly beneath it, so it needs no
+    // instruction at all.
+    name: "drop the stale print instruction from the workbook blurb",
+    apply: (html) => html.replace(" Use Print workbook or Print key to print.", ""),
+  },
 ];
 
 function adapt(rel: string, html: string): string {
