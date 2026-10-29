@@ -636,6 +636,7 @@ const ADAPTATIONS: Adaptation[] = [
         [
           "const show = (k) => !part || part === 'all' || part === k;",
           "const PICKED = String(part).split(',').filter(Boolean);\n" +
+            "    const POFF = (this.state && this.state.poff) || [];\n" +
             "    const has = (k) => part === 'all' || PICKED.includes(k);\n" +
             "    const show = (k) => !part || has(k);",
         ],
@@ -666,7 +667,7 @@ const ADAPTATIONS: Adaptation[] = [
         "      ...(() => {\n" +
         "        const PCH = [['wb', '\u{1F4DD} Workbook'], ['spl2', '\u270F\uFE0F Spelling \u00b7 2nd'], " +
         "['spl3', '\u{1F58A}\uFE0F Spelling \u00b7 3rd'], ['games', '\u{1F3B2} Word games']];\n" +
-        "        const off = (this.state && this.state.poff) || [];\n" +
+        "        const off = POFF;\n" +
         "        const picked = PCH.map(([k]) => k).filter((k) => !off.includes(k));\n" +
         "        return { printChips: PCH.map(([k, t]) => ({ label: t,\n" +
         "          pick: () => this.setState({ poff: off.includes(k) " +
@@ -717,6 +718,155 @@ const ADAPTATIONS: Adaptation[] = [
           'white-space:nowrap;flex:0 0 auto;margin-left:4px">\u{1F5A8} Print</button>' +
           "</div></div>"
       );
+    },
+  },
+  {
+    // The spelling tests were a <dc-import name="Spelling Test"> that the
+    // export never shipped: the page fetches ./Spelling Test.dc.html, gets a
+    // 404, and both buttons have always printed a blank sheet. The two sheets
+    // are rebuilt here from the 2nd- and 3rd-grade PDFs.
+    //
+    // They differ, which is why one component could not have served both. 2nd
+    // grade is one sheet with a spelling, language and handwriting score, a
+    // marking legend, and ruled lines for the dictation sentence. 3rd grade is
+    // two half-sheets on one page — cut down the middle — scored out of ten
+    // and as a percentage, with no dictation and a self-check instead.
+    //
+    // They also now appear in the preview, not only at the printer: a sheet
+    // shows whenever its chip is lit and the workbook is open, so a teacher
+    // can see what they are about to print.
+    name: "rebuild the 2nd and 3rd grade spelling tests",
+    apply: (html) => {
+      const old =
+        "splTests: ['g2', 'g3'].filter((g) => has('spl' + g.slice(1))).map((g) => ({ on: true, g, words: real.slice(0, 10),";
+      if (!html.includes(old)) return html;
+      let out = html.replace(
+        old,
+        "splTests: ['g2', 'g3'].filter((g) => has('spl' + g.slice(1))\n" +
+          "        || (!part && (this.state && this.state.wbOpen) && !POFF.includes('spl' + g.slice(1))))\n" +
+          "        .map((g) => ({ on: true, g, isG2: g === 'g2', isG3: g === 'g3',\n" +
+          "          grade: g === 'g2' ? '2nd' : '3rd', slots: real.slice(0, 10).map((w, i) => ({ n: i + 1 })),\n" +
+          "          // The sheet reads 1-5 down the left and 6-10 down the right, so the\n" +
+          "          // grid is fed in the order the eye takes them, not 1 2 / 3 4.\n" +
+          "          slotsCol: [0, 5, 1, 6, 2, 7, 3, 8, 4, 9].map((i) => ({ n: i + 1 })),\n" +
+          "          script: real.slice(0, 10).map((w, i) => ({ n: i + 1, w,\n" +
+          "            say: w + ' · ' + (((dict || []).find((d) => new RegExp('\\\\b' + w + '\\\\b', 'i').test(d))\n" +
+          "              || ('Use “' + w + '” in a sentence.')) + ' · ' + w) })),\n" +
+          "          box: { display: 'flex', flexDirection: 'column', background: '#fff',\n" +
+          "            border: '1.5px solid #C9D3C4', borderRadius: 14, padding: '26px 30px',\n" +
+          "            breakBefore: 'page', pageBreakBefore: 'always', minHeight: '9.6in',\n" +
+          "            boxSizing: 'border-box', maxWidth: '7.7in', width: '100%', alignSelf: 'center' },\n" +
+          "          patUpper: String(label).toUpperCase(),\n" +
+          "          words: real.slice(0, 10),"
+      );
+
+      const tag =
+        /<dc-import name="Spelling Test"[^>]*><\/dc-import>/;
+      if (!tag.test(out)) return html;
+
+      // A primary writing slot: a dashed midline over a solid baseline.
+      const SLOT =
+        '<div style="flex:1;min-width:0;height:32px;border-bottom:1.5px solid #111;' +
+        'display:flex;align-items:center"><div style="width:100%;border-top:1px dashed #9ca3af">' +
+        "</div></div>";
+      const NUM = (sz: string) =>
+        '<span style="flex:none;width:28px;font-size:' + sz + ';font-weight:800;color:#111">{{ s.n }}.</span>';
+      const ROW = '<div style="display:flex;align-items:flex-end;gap:8px">';
+      const SCORE =
+        '<span style="border:1.5px solid #111;border-radius:7px;padding:3px 9px;' +
+        'font-size:13px;font-weight:700;white-space:nowrap">';
+
+      // The teacher script, identical for both grades but for its kicker.
+      const teacher =
+        '      <div data-wb="true" style="{{ t.box }}">\n' +
+        '        <div style="border-bottom:2.5px solid #111;padding-bottom:6px">\n' +
+        '          <div style="font-family:Outfit,sans-serif;font-size:11px;font-weight:800;' +
+        'letter-spacing:.22em;color:#111">{{ t.grade }} GRADE · {{ t.patUpper }}</div>\n' +
+        '          <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px">' +
+        '<div style="font-size:23px;font-weight:800;color:#111">Spelling Test · Teacher Script + Key</div>' +
+        '<div style="font-size:13px;font-weight:700">Pattern: {{ t.pattern }}</div></div>\n' +
+        "        </div>\n" +
+        '        <div style="font-size:12.5px;font-weight:600;color:#44403c;margin:7px 0 4px">' +
+        "Say the word, read the sentence, say the word again. 1 point per word. % = score × 10.</div>\n" +
+        '        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 26px">\n' +
+        '          <sc-for list="{{ t.script }}" as="s" hint-placeholder-count="10">\n' +
+        '            <div style="border-bottom:1px solid #d6d3d1;padding:9px 0;display:flex;' +
+        'align-items:baseline;gap:10px">' +
+        '<span style="flex:none;width:26px;font-size:12px;font-weight:800">{{ s.n }}.</span>' +
+        '<span style="flex:none;min-width:86px;font-size:20px;font-weight:800">{{ s.w }}</span>' +
+        '<span style="flex:1;min-width:0;font-size:11.5px;font-weight:600;color:#44403c;' +
+        'overflow-wrap:anywhere">{{ s.say }}</span></div>\n' +
+        "          </sc-for>\n" +
+        "        </div>\n" +
+        '        <sc-if value="{{ t.isG2 }}" hint-placeholder-val="{{ true }}">\n' +
+        '          <div style="border:2px solid #111;border-radius:12px;padding:9px 14px;margin-top:10px;' +
+        'font-size:12.5px;line-height:1.5"><b>Dictation sentence (say 2 times):</b> {{ t.sent }}<br>' +
+        "Language: 1 capital · 1 end mark · 1 spacing between words = 3 points.</div>\n" +
+        "        </sc-if>\n" +
+        "      </div>\n";
+
+      // 2nd grade: one sheet, three scores, a marking legend, dictation lines.
+      const g2 =
+        '      <sc-if value="{{ t.isG2 }}" hint-placeholder-val="{{ true }}">\n' +
+        '      <div data-wb="true" style="{{ t.box }}">\n' +
+        '        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">\n' +
+        '          <div style="display:flex;align-items:flex-end;gap:14px;flex:1;font-size:21px">' +
+        '<span style="white-space:nowrap">Name:</span>' +
+        '<span style="flex:1;border-bottom:1.5px solid #111;height:27px"></span>' +
+        '<span style="white-space:nowrap">Date:</span>' +
+        '<span style="flex:.6;border-bottom:1.5px solid #111;height:27px"></span></div>\n' +
+        '          <div style="border:1.5px solid #111;border-radius:7px;padding:6px 11px;font-size:12.5px;' +
+        'line-height:1.75;white-space:nowrap">Spelling: _____ /10<br>Language: _____ /3<br>' +
+        "Handwriting: _____ /1</div>\n" +
+        "        </div>\n" +
+        '        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 34px;margin-top:16px">\n' +
+        '          <sc-for list="{{ t.slotsCol }}" as="s" hint-placeholder-count="10">\n' +
+        "            " + ROW + NUM("20px") + SLOT + "</div>\n" +
+        "          </sc-for>\n" +
+        "        </div>\n" +
+        '        <div style="display:flex;gap:26px;align-items:flex-start;margin-top:18px">\n' +
+        '          <div style="flex:none;width:33%;border:1.5px solid #111;border-radius:7px;padding:8px 11px;' +
+        'font-size:10.5px;line-height:1.45"><b>Language grade</b> 3 points per sentence:<br>' +
+        "Circle = missed point<br>1 capital letter<br>1 punctuation<br>1 spacing between words<br>" +
+        "<b>SPELLING GRADE</b><br>Check mark = graded word spelled correctly<br>" +
+        "UNDERLINE = graded word spelled incorrectly</div>\n" +
+        '          <div style="flex:1;min-width:0;display:flex;align-items:flex-start;gap:8px">' +
+        '<span style="flex:none;width:28px;font-size:20px;font-weight:800">1.</span>' +
+        '<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:13px">' +
+        SLOT.replace("flex:1;min-width:0;", "") +
+        SLOT.replace("flex:1;min-width:0;", "") +
+        SLOT.replace("flex:1;min-width:0;", "") +
+        "</div></div>\n" +
+        "        </div>\n" +
+        "      </div></sc-if>\n";
+
+      // 3rd grade: two half-sheets on one page, cut down the middle.
+      const half =
+        '<div style="flex:1;min-width:0;display:flex;flex-direction:column">' +
+        '<div style="display:flex;align-items:flex-end;gap:8px;font-size:13px">' +
+        "<span>Name:</span>" +
+        '<span style="flex:1;border-bottom:1.2px solid #111;height:18px"></span>' +
+        "<span>Date:</span>" +
+        '<span style="flex:.55;border-bottom:1.2px solid #111;height:18px"></span></div>' +
+        '<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:8px;margin-top:5px">' +
+        '<div><div style="font-size:26px;font-weight:800;line-height:1.05">Spelling</div>' +
+        '<div style="font-size:11.5px;font-weight:700">Pattern: {{ t.pattern }}</div></div>' +
+        '<div style="display:flex;gap:7px">' + SCORE + "___ /10</span>" + SCORE + "___ %</span></div></div>" +
+        '<div style="display:flex;flex-direction:column;gap:9px;margin-top:9px">' +
+        '<sc-for list="{{ t.slots }}" as="s" hint-placeholder-count="10">' +
+        ROW + NUM("15px").replace("width:28px", "width:24px") + SLOT.replace("height:32px", "height:27px") +
+        "</div></sc-for></div>" +
+        '<div style="display:flex;gap:16px;font-size:11.5px;font-weight:700;margin-top:9px">' +
+        "<span>☐ I checked my spelling.</span><span>☐ I wrote neatly.</span></div></div>";
+
+      const g3 =
+        '      <sc-if value="{{ t.isG3 }}" hint-placeholder-val="{{ false }}">\n' +
+        '      <div data-wb="true" style="{{ t.box }}">\n' +
+        '        <div style="display:flex;gap:26px;align-items:stretch">' + half +
+        '<div style="flex:none;width:0;border-left:1.5px dashed #9ca3af"></div>' + half + "</div>\n" +
+        "      </div></sc-if>\n";
+
+      return out.replace(tag, "\n" + g2 + g3 + teacher + "    ");
     },
   },
   {

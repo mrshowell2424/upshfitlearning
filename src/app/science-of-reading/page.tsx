@@ -230,6 +230,48 @@ function Hub() {
           ))}
         </div>
 
+        {/* The scope and sequence is the map behind the three cards above —
+            a reference a teacher checks now and then, not a place they work,
+            so it is a line rather than a fourth card.
+
+            /preview, not the /edit link it was sent as: this page is open to
+            every signed-in teacher, and an edit link hands the deck itself to
+            anyone who already has edit rights on it. */}
+        <a
+          href="https://docs.google.com/presentation/d/1Pog54goUa9qgtQ4Y16vDKBPYM428Oi-Bv2ETLcuGdQc/preview"
+          target="_blank"
+          rel="noopener"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 14,
+            marginTop: 14,
+            background: "#FFFFFF",
+            border: `3px solid ${RULE}`,
+            borderLeft: `10px solid ${BRASS}`,
+            borderRadius: 16,
+            padding: "16px 22px",
+            textDecoration: "none",
+            color: INK,
+          }}
+        >
+          <div>
+            <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: BRASS }}>
+              THE WHOLE MAP
+            </div>
+            <div style={{ fontSize: 18, fontWeight: 800, lineHeight: 1.2, marginTop: 4 }}>
+              Basic Reading scope and sequence
+            </div>
+            <p style={{ fontSize: 14, fontWeight: 500, color: MUTED, margin: "5px 0 0", lineHeight: 1.5 }}>
+              Every skill in teaching order, by level — what comes before a skill and what it sets up.
+            </p>
+          </div>
+          <span style={{ fontSize: 15, fontWeight: 700, color: BRASS, whiteSpace: "nowrap" }}>
+            Open ↗
+          </span>
+        </a>
+
         <div
           style={{
             marginTop: 40,
@@ -240,7 +282,7 @@ function Hub() {
             color: MUTED,
           }}
         >
-          The lesson builder opens in a new tab.
+          The lesson builder and the scope and sequence open in a new tab.
         </div>
       </div>
     </div>
