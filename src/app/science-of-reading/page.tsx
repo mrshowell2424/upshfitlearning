@@ -132,11 +132,12 @@ function Hub() {
               blurb: `All ${SKILL_TOTAL} skills in the scope and sequence, in teaching order, each with its workbook and answer key.`,
               preview: "/previews/workbook.png",
               shape: [751, 1000] as const,
-              // Past the name and date lines and clear of the rule banner,
-              // onto the words a child reads and the silly-words exercise
-              // under them — the part of the page that shows what the
-              // workbook asks a child to do.
-              focus: "52%",
+              // Starts on the READ THE WORDS heading, just past the name and
+              // date lines and the rule banner, and holds the three word
+              // columns whole — headings, pattern labels and every word. Any
+              // lower and the columns lose their labels off the top; any
+              // higher and a strip of the rule banner comes back.
+              focus: "34%",
               alt: "A workbook page: the rule for short i, three columns of words to read, silly words, and spaces for spelling and dictation.",
             },
             {
