@@ -188,6 +188,55 @@ const ADAPTATIONS: Adaptation[] = [
     },
   },
   {
+    // Twelve voices sat in step 12 as twelve chips, which is a wall of
+    // emoji in a card the width of a column, and nothing a teacher could
+    // act on — the chips only listed what the die might land on.
+    //
+    // They become a dropdown the teacher picks from, and the pick is kept,
+    // so the choice reads back during the lesson. The phrases and the word
+    // sprint stay as chips, because those are what gets read.
+    //
+    // The list is lifted out of the step rather than retyped, and the step
+    // is wrapped the way the export wrapped step 11 for its notebook link.
+    name: "turn the fluency voices into a dropdown",
+    apply: (html) => {
+      const voices = html.match(
+        /\n        (\['\u{1F92B} Whisper',[^\n]*\])\n          \.concat\(dict\.map/u
+      );
+      if (!voices) return html;
+      const tail = ".concat(['Sprint: ' + real.slice(0, 6).join(' \u00b7 ')]), true),";
+      if (!html.includes(tail)) return html;
+      const card = '            <sc-if value="{{ s.hasLegend }}"';
+      if (!html.includes(card)) return html;
+
+      return html
+        .replace("      mk(12, 'Fluency", "      Object.assign(mk(12, 'Fluency")
+        .replace(voices[1], "[]")
+        .replace(
+          tail,
+          tail.slice(0, -1) +
+            ", {\n" +
+            "        hasVoices: true,\n" +
+            "        voice: (this.state && this.state.voice) || '',\n" +
+            "        pickVoice: (e) => this.setState({ voice: e.target.value }),\n" +
+            "        voiceOpts: [{ v: '', t: 'Pick a voice\u2026' }].concat(" +
+            voices[1] + ".map((t) => ({ v: t, t }))),\n" +
+            "      }),"
+        )
+        .replace(
+          card,
+          '            <sc-if value="{{ s.hasVoices }}" hint-placeholder-val="{{ false }}">' +
+            '<select value="{{ s.voice }}" onChange="{{ s.pickVoice }}" ' +
+            "style=\"font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;" +
+            'padding:6px 9px;border:1.5px solid #C9D3C4;border-radius:8px;background:#fff;' +
+            'color:#1c1917;width:100%">' +
+            '<sc-for list="{{ s.voiceOpts }}" as="v" hint-placeholder-count="13">' +
+            '<option value="{{ v.v }}">{{ v.t }}</option></sc-for></select></sc-if>\n' +
+            card
+        );
+    },
+  },
+  {
     // Lesson step 11 carried an "Open Level 1 notebook" link to one more
     // unshared Drive file — the same dead end as the Open Drive folder button
     // above, reached from inside the lesson instead of the toolbar. Dropping
@@ -229,8 +278,15 @@ const ADAPTATIONS: Adaptation[] = [
       const found = html.match(line);
       if (!found) return html;
 
+      // Heart words are lesson step 8 and belong in this row, between the
+      // reading steps and the spelling ones, rather than in a red button of
+      // their own above it. Inserted into the captured options so a re-export
+      // that renames a step still carries it.
+      const opts = found[1].replace("['spell',", "['heart', 'Heart words'], ['spell',");
+      if (opts === found[1]) return html;
+
       const chips =
-        "      stepChips: " + found[1] + ".map(([v, t]) => { " +
+        "      stepChips: " + opts + ".map(([v, t]) => { " +
         "const on = String(FS.step || '').split(',').filter(Boolean); " +
         "return { label: t, " +
         "pick: () => setF('step', (on.includes(v) ? on.filter((x) => x !== v) : on.concat(v)).join(',')), " +
@@ -262,6 +318,10 @@ const ADAPTATIONS: Adaptation[] = [
 
       return html
         .replace(line, "")
+        .replace(
+          /\s*<button\b[^>]*onClick="\{\{ toggleHeart \}\}"[^>]*>[^<]*<\/button>/,
+          ""
+        )
         .replace(anchor, chips + anchor)
         .replace(rowAnchor, row + rowAnchor);
     },
@@ -402,11 +462,11 @@ const ADAPTATIONS: Adaptation[] = [
       return html.replace(
         line,
         "const STEP_LINES = { pa: [1], drill: [2, 3], blend: [4], read: [5, 6, 7], " +
-          "spell: [9, 10], dec: [11, 12], write: [13] };\n" +
+          "heart: [8], spell: [9, 10], dec: [11, 12], write: [13] };\n" +
           "    const wantLines = String(FS.step || '').split(',').filter(Boolean)" +
           ".flatMap((k) => STEP_LINES[k] || []);\n" +
-          "    const stepsF = FS.heart ? steps.filter((s) => s.n === 8) " +
-          ": wantLines.length ? steps.filter((s) => wantLines.includes(s.n)) : steps;"
+          "    const stepsF = wantLines.length " +
+          "? steps.filter((s) => wantLines.includes(s.n)) : steps;"
       );
     },
   },
