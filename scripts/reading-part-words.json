@@ -713,6 +713,2211 @@
    "unkind"
   ]
  },
+ "og2-06|ild": {
+  "fake": [
+   "bild",
+   "nild",
+   "vild",
+   "sild",
+   "trild"
+  ],
+  "real": [
+   "child",
+   "wild",
+   "mild",
+   "childish",
+   "wildcat",
+   "wildlife",
+   "mildly",
+   "childhood",
+   "grandchild",
+   "wildfire"
+  ]
+ },
+ "og2-06|ind": {
+  "fake": [
+   "vind",
+   "nind",
+   "prind",
+   "shind",
+   "glind"
+  ],
+  "real": [
+   "find",
+   "kind",
+   "mind",
+   "behind",
+   "blind",
+   "grind",
+   "remind",
+   "rewind",
+   "unkind",
+   "mankind"
+  ]
+ },
+ "og2-06|old": {
+  "fake": [
+   "vold",
+   "nold",
+   "prold",
+   "shold",
+   "grold"
+  ],
+  "real": [
+   "old",
+   "cold",
+   "gold",
+   "hold",
+   "told",
+   "fold",
+   "bold",
+   "sold",
+   "scold",
+   "golden"
+  ]
+ },
+ "og2-06|oll": {
+  "fake": [
+   "voll",
+   "noll",
+   "proll",
+   "sholl",
+   "gloll"
+  ],
+  "real": [
+   "roll",
+   "toll",
+   "poll",
+   "stroll",
+   "scroll",
+   "troll",
+   "enroll",
+   "rolling",
+   "strolling",
+   "payroll"
+  ]
+ },
+ "og2-06|olt": {
+  "fake": [
+   "nolt",
+   "prolt",
+   "sholt",
+   "glolt",
+   "zolt"
+  ],
+  "real": [
+   "bolt",
+   "colt",
+   "jolt",
+   "volt",
+   "molt",
+   "revolt",
+   "unbolt",
+   "thunderbolt",
+   "bolted",
+   "jolted"
+  ]
+ },
+ "og2-06|ost": {
+  "fake": [
+   "vost",
+   "nost",
+   "prost",
+   "shost",
+   "grost"
+  ],
+  "real": [
+   "most",
+   "post",
+   "host",
+   "ghost",
+   "almost",
+   "postcard",
+   "hostess",
+   "posted",
+   "hosting",
+   "mostly"
+  ]
+ },
+ "og2-07|gh": {
+  "fake": [
+   "dight",
+   "vight",
+   "moght",
+   "raght",
+   "bligh"
+  ],
+  "real": [
+   "night",
+   "light",
+   "right",
+   "sight",
+   "high",
+   "bright",
+   "fight",
+   "might",
+   "tight",
+   "sigh"
+  ]
+ },
+ "og2-07|kn": {
+  "fake": [
+   "knad",
+   "knep",
+   "knib",
+   "knug",
+   "knol"
+  ],
+  "real": [
+   "knee",
+   "knot",
+   "know",
+   "knife",
+   "knock",
+   "knit",
+   "knight",
+   "kneel",
+   "knob",
+   "knuckle"
+  ]
+ },
+ "og2-07|wr": {
+  "fake": [
+   "wrad",
+   "wrep",
+   "wrib",
+   "wrug",
+   "wrol"
+  ],
+  "real": [
+   "write",
+   "wrap",
+   "wrist",
+   "wrong",
+   "wreck",
+   "wrench",
+   "wring",
+   "wrinkle",
+   "wreath",
+   "writer"
+  ]
+ },
+ "og2-08|oo": {
+  "fake": [
+   "voon",
+   "doop",
+   "mook",
+   "floon",
+   "grood"
+  ],
+  "real": [
+   "moon",
+   "book",
+   "food",
+   "look",
+   "soon",
+   "took",
+   "room",
+   "good",
+   "spoon",
+   "foot"
+  ]
+ },
+ "og2-08|ou": {
+  "fake": [
+   "voud",
+   "noust",
+   "dound",
+   "flound",
+   "chout"
+  ],
+  "real": [
+   "out",
+   "cloud",
+   "loud",
+   "found",
+   "round",
+   "sound",
+   "mouse",
+   "house",
+   "about",
+   "shout"
+  ]
+ },
+ "og2-08|ow": {
+  "fake": [
+   "nowd",
+   "dowt",
+   "vrow",
+   "blowt",
+   "glowt"
+  ],
+  "real": [
+   "cow",
+   "town",
+   "now",
+   "down",
+   "how",
+   "brown",
+   "crowd",
+   "flower",
+   "power",
+   "owl"
+  ]
+ },
+ "og2-11|-ful": {
+  "fake": [
+   "zimful",
+   "vopeful",
+   "nadful",
+   "plimful",
+   "dreshful"
+  ],
+  "real": [
+   "helpful",
+   "careful",
+   "playful",
+   "thankful",
+   "useful",
+   "joyful",
+   "painful",
+   "hopeful",
+   "peaceful",
+   "colorful"
+  ]
+ },
+ "og2-11|-less": {
+  "fake": [
+   "zimless",
+   "vopeless",
+   "nadless",
+   "plimless",
+   "dreshless"
+  ],
+  "real": [
+   "hopeless",
+   "useless",
+   "careless",
+   "endless",
+   "fearless",
+   "painless",
+   "restless",
+   "spotless",
+   "homeless",
+   "timeless"
+  ]
+ },
+ "og2-11|-ly": {
+  "fake": [
+   "zimly",
+   "vopely",
+   "nadly",
+   "plimly",
+   "dreshly"
+  ],
+  "real": [
+   "sadly",
+   "quickly",
+   "slowly",
+   "softly",
+   "kindly",
+   "badly",
+   "gladly",
+   "loudly",
+   "neatly",
+   "bravely"
+  ]
+ },
+ "og2-11|-ment": {
+  "fake": [
+   "zimment",
+   "vopement",
+   "nadment",
+   "plimment",
+   "dreshment"
+  ],
+  "real": [
+   "payment",
+   "movement",
+   "moment",
+   "treatment",
+   "shipment",
+   "basement",
+   "statement",
+   "agreement",
+   "equipment",
+   "argument"
+  ]
+ },
+ "og2-11|-ness": {
+  "fake": [
+   "zimness",
+   "vopeness",
+   "nadness",
+   "plimness",
+   "dreshness"
+  ],
+  "real": [
+   "kindness",
+   "darkness",
+   "sadness",
+   "illness",
+   "sickness",
+   "weakness",
+   "softness",
+   "fitness",
+   "brightness",
+   "happiness"
+  ]
+ },
+ "og2-12|-ed": {
+  "fake": [
+   "zimmed",
+   "voped",
+   "nadded",
+   "plimmed",
+   "dreshed"
+  ],
+  "real": [
+   "jumped",
+   "landed",
+   "played",
+   "rested",
+   "picked",
+   "walked",
+   "wanted",
+   "helped",
+   "planted",
+   "asked"
+  ]
+ },
+ "og2-12|-en": {
+  "fake": [
+   "zimmen",
+   "vopen",
+   "nadden",
+   "plimmen",
+   "dreshen"
+  ],
+  "real": [
+   "broken",
+   "frozen",
+   "golden",
+   "wooden",
+   "sharpen",
+   "hidden",
+   "chosen",
+   "fallen",
+   "soften",
+   "darken"
+  ]
+ },
+ "og2-12|-es": {
+  "fake": [
+   "zixes",
+   "voshes",
+   "nadches",
+   "plisses",
+   "dreshes"
+  ],
+  "real": [
+   "boxes",
+   "dishes",
+   "wishes",
+   "benches",
+   "foxes",
+   "buses",
+   "glasses",
+   "classes",
+   "brushes",
+   "matches"
+  ]
+ },
+ "og2-12|-est": {
+  "fake": [
+   "zimmest",
+   "vopest",
+   "naddest",
+   "plimmest",
+   "dreshest"
+  ],
+  "real": [
+   "fastest",
+   "biggest",
+   "longest",
+   "tallest",
+   "smallest",
+   "hardest",
+   "softest",
+   "quickest",
+   "oldest",
+   "coldest"
+  ]
+ },
+ "og2-12|-ing": {
+  "fake": [
+   "zimming",
+   "voping",
+   "nadding",
+   "plimming",
+   "dreshing"
+  ],
+  "real": [
+   "resting",
+   "jumping",
+   "playing",
+   "running",
+   "singing",
+   "reading",
+   "helping",
+   "landing",
+   "picking",
+   "walking"
+  ]
+ },
+ "og2-12|-y": {
+  "fake": [
+   "zimmy",
+   "vopy",
+   "naddy",
+   "plimmy",
+   "dreshy"
+  ],
+  "real": [
+   "dusty",
+   "windy",
+   "sunny",
+   "rainy",
+   "funny",
+   "lucky",
+   "sleepy",
+   "hungry",
+   "cloudy",
+   "messy"
+  ]
+ },
+ "og2-13|mis-": {
+  "fake": [
+   "misfan",
+   "mislod",
+   "misnep",
+   "misvut",
+   "misdrig"
+  ],
+  "real": [
+   "misspell",
+   "mistake",
+   "misstep",
+   "misplace",
+   "misread",
+   "misprint",
+   "misjudge",
+   "mislead",
+   "mismatch",
+   "misuse"
+  ]
+ },
+ "og2-13|post-": {
+  "fake": [
+   "postfan",
+   "postlod",
+   "postnep",
+   "postvut",
+   "postdrig"
+  ],
+  "real": [
+   "postgame",
+   "postpone",
+   "postcard",
+   "postscript",
+   "postwar",
+   "postdate",
+   "posttest",
+   "postmark",
+   "postseason",
+   "postnatal"
+  ]
+ },
+ "og2-13|sub-": {
+  "fake": [
+   "subfan",
+   "sublod",
+   "subnep",
+   "subvut",
+   "subdrig"
+  ],
+  "real": [
+   "subway",
+   "submit",
+   "subtract",
+   "subset",
+   "subsoil",
+   "subzero",
+   "submarine",
+   "subject",
+   "subfloor",
+   "subtitle"
+  ]
+ },
+ "og3-04|au": {
+  "fake": [
+   "vaul",
+   "naud",
+   "plaust",
+   "draum",
+   "shauk"
+  ],
+  "real": [
+   "author",
+   "autumn",
+   "August",
+   "because",
+   "sauce",
+   "haul",
+   "launch",
+   "fault",
+   "applaud",
+   "pause"
+  ]
+ },
+ "og3-04|aw": {
+  "fake": [
+   "vaw",
+   "nawd",
+   "plawt",
+   "shawk",
+   "glawm"
+  ],
+  "real": [
+   "saw",
+   "claw",
+   "draw",
+   "lawn",
+   "yawn",
+   "crawl",
+   "hawk",
+   "straw",
+   "dawn",
+   "shawl"
+  ]
+ },
+ "og3-04|oi": {
+  "fake": [
+   "voin",
+   "noid",
+   "ploik",
+   "droise",
+   "shoim"
+  ],
+  "real": [
+   "coin",
+   "boil",
+   "soil",
+   "join",
+   "point",
+   "voice",
+   "spoil",
+   "choice",
+   "noise",
+   "avoid"
+  ]
+ },
+ "og3-04|oy": {
+  "fake": [
+   "voy",
+   "noy",
+   "droyt",
+   "shoym",
+   "gloyn"
+  ],
+  "real": [
+   "boy",
+   "toy",
+   "joy",
+   "enjoy",
+   "royal",
+   "loyal",
+   "destroy",
+   "annoy",
+   "employ",
+   "voyage"
+  ]
+ },
+ "og3-08|-ble": {
+  "fake": [
+   "vable",
+   "nible",
+   "plobble",
+   "drumble",
+   "gramble"
+  ],
+  "real": [
+   "table",
+   "bubble",
+   "marble",
+   "humble",
+   "tumble",
+   "stable",
+   "pebble",
+   "nibble",
+   "scramble",
+   "terrible"
+  ]
+ },
+ "og3-08|-cle": {
+  "fake": [
+   "vacle",
+   "nicle",
+   "plocle",
+   "drucle",
+   "shicle"
+  ],
+  "real": [
+   "circle",
+   "bicycle",
+   "uncle",
+   "muscle",
+   "article",
+   "obstacle",
+   "miracle",
+   "particle",
+   "vehicle",
+   "icicle"
+  ]
+ },
+ "og3-08|-dle": {
+  "fake": [
+   "vadle",
+   "nidle",
+   "plodle",
+   "drudle",
+   "shedle"
+  ],
+  "real": [
+   "candle",
+   "handle",
+   "middle",
+   "puddle",
+   "saddle",
+   "bundle",
+   "needle",
+   "riddle",
+   "cradle",
+   "paddle"
+  ]
+ },
+ "og3-08|-gle": {
+  "fake": [
+   "vagle",
+   "nigle",
+   "plogle",
+   "drugle",
+   "shegle"
+  ],
+  "real": [
+   "jungle",
+   "eagle",
+   "single",
+   "giggle",
+   "wiggle",
+   "struggle",
+   "bugle",
+   "tangle",
+   "juggle",
+   "mingle"
+  ]
+ },
+ "og3-08|-ple": {
+  "fake": [
+   "vaple",
+   "niple",
+   "plople",
+   "druple",
+   "sheple"
+  ],
+  "real": [
+   "apple",
+   "purple",
+   "simple",
+   "people",
+   "couple",
+   "maple",
+   "sample",
+   "staple",
+   "triple",
+   "ripple"
+  ]
+ },
+ "og3-08|-tle": {
+  "fake": [
+   "vatle",
+   "nitle",
+   "plotle",
+   "drutle",
+   "shetle"
+  ],
+  "real": [
+   "turtle",
+   "little",
+   "bottle",
+   "gentle",
+   "cattle",
+   "title",
+   "rattle",
+   "settle",
+   "whistle",
+   "castle"
+  ]
+ },
+ "og3-10|'ll": {
+  "fake": [
+   "zim'll",
+   "vop'll",
+   "nad'll",
+   "plim'll",
+   "dresh'll"
+  ],
+  "real": [
+   "we'll",
+   "I'll",
+   "he'll",
+   "she'll",
+   "they'll",
+   "it'll",
+   "you'll",
+   "that'll",
+   "there'll",
+   "who'll"
+  ]
+ },
+ "og3-10|'s": {
+  "fake": [
+   "zim's",
+   "vop's",
+   "nad's",
+   "plim's",
+   "dresh's"
+  ],
+  "real": [
+   "it's",
+   "he's",
+   "she's",
+   "that's",
+   "what's",
+   "there's",
+   "let's",
+   "who's",
+   "here's",
+   "everyone's"
+  ]
+ },
+ "og3-10|'ve": {
+  "fake": [
+   "zim've",
+   "vop've",
+   "nad've",
+   "plim've",
+   "dresh've"
+  ],
+  "real": [
+   "I've",
+   "you've",
+   "we've",
+   "they've",
+   "who've",
+   "should've",
+   "could've",
+   "would've",
+   "might've",
+   "must've"
+  ]
+ },
+ "og3-10|n't": {
+  "fake": [
+   "ban't",
+   "mon't",
+   "lisn't",
+   "zan't",
+   "vun't"
+  ],
+  "real": [
+   "can't",
+   "don't",
+   "isn't",
+   "won't",
+   "didn't",
+   "wasn't",
+   "aren't",
+   "doesn't",
+   "couldn't",
+   "shouldn't"
+  ]
+ },
+ "og3-11|-sion": {
+  "fake": [
+   "vasion",
+   "nision",
+   "drusion",
+   "shesion",
+   "glomsion"
+  ],
+  "real": [
+   "vision",
+   "mansion",
+   "tension",
+   "mission",
+   "session",
+   "version",
+   "passion",
+   "division",
+   "decision",
+   "explosion"
+  ]
+ },
+ "og3-11|-tion": {
+  "fake": [
+   "vation",
+   "nition",
+   "plotion",
+   "drution",
+   "shetion"
+  ],
+  "real": [
+   "action",
+   "station",
+   "motion",
+   "nation",
+   "fiction",
+   "caution",
+   "mention",
+   "section",
+   "question",
+   "direction"
+  ]
+ },
+ "og3-12|-able": {
+  "fake": [
+   "vamable",
+   "nodable",
+   "plimable",
+   "drushable",
+   "shegable"
+  ],
+  "real": [
+   "washable",
+   "fixable",
+   "readable",
+   "lovable",
+   "usable",
+   "breakable",
+   "comfortable",
+   "reasonable",
+   "valuable",
+   "enjoyable"
+  ]
+ },
+ "og3-12|-ible": {
+  "fake": [
+   "vamible",
+   "nodible",
+   "plimible",
+   "drushible",
+   "shegible"
+  ],
+  "real": [
+   "visible",
+   "possible",
+   "terrible",
+   "horrible",
+   "sensible",
+   "flexible",
+   "invisible",
+   "incredible",
+   "responsible",
+   "edible"
+  ]
+ },
+ "og3-12|-ist": {
+  "fake": [
+   "vamist",
+   "nodist",
+   "plimist",
+   "drushist",
+   "shegist"
+  ],
+  "real": [
+   "artist",
+   "dentist",
+   "cyclist",
+   "tourist",
+   "pianist",
+   "florist",
+   "scientist",
+   "novelist",
+   "journalist",
+   "violinist"
+  ]
+ },
+ "og3-12|-ive": {
+  "fake": [
+   "vamive",
+   "nodive",
+   "plimive",
+   "drushive",
+   "shegive"
+  ],
+  "real": [
+   "active",
+   "native",
+   "creative",
+   "positive",
+   "massive",
+   "festive",
+   "expensive",
+   "attractive",
+   "sensitive",
+   "detective"
+  ]
+ },
+ "og3-13|de-": {
+  "fake": [
+   "defan",
+   "delod",
+   "denep",
+   "devut",
+   "dedrig"
+  ],
+  "real": [
+   "defrost",
+   "decode",
+   "defend",
+   "depart",
+   "describe",
+   "detect",
+   "delete",
+   "deliver",
+   "decline",
+   "deduct"
+  ]
+ },
+ "og3-13|pre-": {
+  "fake": [
+   "prefan",
+   "prelod",
+   "prenep",
+   "prevut",
+   "predrig"
+  ],
+  "real": [
+   "preview",
+   "preheat",
+   "prepaid",
+   "prevent",
+   "predict",
+   "prepare",
+   "preschool",
+   "pretest",
+   "precook",
+   "prefix"
+  ]
+ },
+ "og3-13|pro-": {
+  "fake": [
+   "profan",
+   "prolod",
+   "pronep",
+   "provut",
+   "prodrig"
+  ],
+  "real": [
+   "protect",
+   "produce",
+   "program",
+   "progress",
+   "promote",
+   "propose",
+   "provide",
+   "project",
+   "protest",
+   "profile"
+  ]
+ },
+ "og3-13|re-": {
+  "fake": [
+   "refan",
+   "relod",
+   "renep",
+   "revut",
+   "redrig"
+  ],
+  "real": [
+   "redo",
+   "replay",
+   "return",
+   "rewrite",
+   "recycle",
+   "remove",
+   "repeat",
+   "review",
+   "reheat",
+   "rebuild"
+  ]
+ },
+ "og4-01|form": {
+  "fake": [
+   "zoform",
+   "voform",
+   "naform",
+   "pliform",
+   "dreform"
+  ],
+  "real": [
+   "form",
+   "inform",
+   "reform",
+   "transform",
+   "uniform",
+   "formal",
+   "format",
+   "formula",
+   "performer",
+   "deformed"
+  ]
+ },
+ "og4-01|port": {
+  "fake": [
+   "zoport",
+   "voport",
+   "naport",
+   "pliport",
+   "dreport"
+  ],
+  "real": [
+   "transport",
+   "report",
+   "export",
+   "import",
+   "support",
+   "portable",
+   "porter",
+   "passport",
+   "airport",
+   "deport"
+  ]
+ },
+ "og4-01|rupt": {
+  "fake": [
+   "zorupt",
+   "vorupt",
+   "narupt",
+   "plirupt",
+   "drerupt"
+  ],
+  "real": [
+   "erupt",
+   "abrupt",
+   "disrupt",
+   "corrupt",
+   "rupture",
+   "eruption",
+   "interrupt",
+   "bankrupt",
+   "disruption",
+   "abruptly"
+  ]
+ },
+ "og4-01|scrib/script": {
+  "fake": [
+   "zoscribe",
+   "voscript",
+   "nascribe",
+   "pliscript",
+   "drescribe"
+  ],
+  "real": [
+   "describe",
+   "script",
+   "prescribe",
+   "subscribe",
+   "inscribe",
+   "manuscript",
+   "scripture",
+   "transcript",
+   "description",
+   "scribble"
+  ]
+ },
+ "og4-01|tract": {
+  "fake": [
+   "zotract",
+   "votract",
+   "natract",
+   "plitract",
+   "dretract"
+  ],
+  "real": [
+   "tractor",
+   "attract",
+   "subtract",
+   "extract",
+   "contract",
+   "traction",
+   "distract",
+   "retract",
+   "tractable",
+   "protract"
+  ]
+ },
+ "og4-02|flect/flex": {
+  "fake": [
+   "zoflect",
+   "voflex",
+   "naflect",
+   "pliflex",
+   "dreflect"
+  ],
+  "real": [
+   "reflect",
+   "deflect",
+   "flexible",
+   "reflection",
+   "inflect",
+   "flexed",
+   "reflex",
+   "inflexible",
+   "deflection",
+   "flexibility"
+  ]
+ },
+ "og4-02|ject": {
+  "fake": [
+   "zoject",
+   "voject",
+   "naject",
+   "pliject",
+   "dreject"
+  ],
+  "real": [
+   "project",
+   "reject",
+   "inject",
+   "eject",
+   "object",
+   "subject",
+   "injection",
+   "projector",
+   "rejection",
+   "objection"
+  ]
+ },
+ "og4-02|mit/miss": {
+  "fake": [
+   "zomit",
+   "vomiss",
+   "namit",
+   "plimiss",
+   "dremit"
+  ],
+  "real": [
+   "mission",
+   "submit",
+   "permit",
+   "transmit",
+   "admit",
+   "missile",
+   "dismiss",
+   "permission",
+   "admission",
+   "omit"
+  ]
+ },
+ "og4-02|spec/spect": {
+  "fake": [
+   "zospect",
+   "vospect",
+   "naspect",
+   "plispect",
+   "drespect"
+  ],
+  "real": [
+   "inspect",
+   "respect",
+   "suspect",
+   "spectator",
+   "inspector",
+   "spectacle",
+   "aspect",
+   "prospect",
+   "specimen",
+   "spectrum"
+  ]
+ },
+ "og4-02|struct": {
+  "fake": [
+   "zostruct",
+   "vostruct",
+   "nastruct",
+   "plistruct",
+   "drestruct"
+  ],
+  "real": [
+   "construct",
+   "instruct",
+   "structure",
+   "destruct",
+   "instructor",
+   "obstruct",
+   "construction",
+   "structural",
+   "destructive",
+   "restructure"
+  ]
+ },
+ "og4-03|aud": {
+  "fake": [
+   "audim",
+   "audop",
+   "zaudel",
+   "vaudit",
+   "naudor"
+  ],
+  "real": [
+   "audio",
+   "audience",
+   "auditor",
+   "audible",
+   "audition",
+   "auditorium",
+   "inaudible",
+   "audiobook",
+   "auditory",
+   "audiovisual"
+  ]
+ },
+ "og4-03|cur/curs": {
+  "fake": [
+   "zocur",
+   "vocurs",
+   "nacur",
+   "plicurs",
+   "drecur"
+  ],
+  "real": [
+   "cursive",
+   "current",
+   "occur",
+   "recur",
+   "cursor",
+   "excursion",
+   "currency",
+   "recurring",
+   "precursor",
+   "concur"
+  ]
+ },
+ "og4-03|duc/duct": {
+  "fake": [
+   "zoduct",
+   "voduce",
+   "naduct",
+   "pliduce",
+   "dreduct"
+  ],
+  "real": [
+   "produce",
+   "conduct",
+   "reduce",
+   "introduce",
+   "product",
+   "conductor",
+   "deduct",
+   "induce",
+   "production",
+   "aqueduct"
+  ]
+ },
+ "og4-03|grad/gress": {
+  "fake": [
+   "zogress",
+   "vograde",
+   "nagress",
+   "pligrade",
+   "dregress"
+  ],
+  "real": [
+   "progress",
+   "graduate",
+   "gradual",
+   "congress",
+   "regress",
+   "grade",
+   "upgrade",
+   "degrade",
+   "aggressive",
+   "progression"
+  ]
+ },
+ "og4-03|vert/vers": {
+  "fake": [
+   "zovert",
+   "navers",
+   "plivert",
+   "drevers",
+   "shevert"
+  ],
+  "real": [
+   "invert",
+   "convert",
+   "reverse",
+   "version",
+   "universe",
+   "divert",
+   "advertise",
+   "reversible",
+   "conversation",
+   "anniversary"
+  ]
+ },
+ "og4-03|vid/vis": {
+  "fake": [
+   "zovid",
+   "vovis",
+   "navid",
+   "plivis",
+   "drevid"
+  ],
+  "real": [
+   "video",
+   "visible",
+   "vision",
+   "provide",
+   "visit",
+   "evidence",
+   "revise",
+   "supervise",
+   "invisible",
+   "advise"
+  ]
+ },
+ "og4-04|-ar": {
+  "fake": [
+   "vamar",
+   "nodar",
+   "plimar",
+   "drushar",
+   "shegar"
+  ],
+  "real": [
+   "solar",
+   "similar",
+   "popular",
+   "regular",
+   "dollar",
+   "collar",
+   "calendar",
+   "particular",
+   "muscular",
+   "familiar"
+  ]
+ },
+ "og4-04|-ic": {
+  "fake": [
+   "vamic",
+   "nodic",
+   "plimic",
+   "drushic",
+   "shegic"
+  ],
+  "real": [
+   "magic",
+   "music",
+   "plastic",
+   "traffic",
+   "electric",
+   "fantastic",
+   "athletic",
+   "magnetic",
+   "historic",
+   "specific"
+  ]
+ },
+ "og4-04|-ous": {
+  "fake": [
+   "vamous",
+   "nodous",
+   "plimous",
+   "drushous",
+   "shegous"
+  ],
+  "real": [
+   "famous",
+   "nervous",
+   "jealous",
+   "dangerous",
+   "enormous",
+   "curious",
+   "serious",
+   "generous",
+   "delicious",
+   "marvelous"
+  ]
+ },
+ "og4-04|-ure": {
+  "fake": [
+   "vamure",
+   "nodure",
+   "plimure",
+   "drushure",
+   "shegure"
+  ],
+  "real": [
+   "picture",
+   "nature",
+   "future",
+   "capture",
+   "mixture",
+   "adventure",
+   "furniture",
+   "temperature",
+   "creature",
+   "culture"
+  ]
+ },
+ "og4-04|inter-": {
+  "fake": [
+   "interfan",
+   "interlod",
+   "internep",
+   "intervut",
+   "interdrig"
+  ],
+  "real": [
+   "interstate",
+   "interact",
+   "internet",
+   "interview",
+   "interrupt",
+   "international",
+   "interval",
+   "intersection",
+   "interfere",
+   "interpret"
+  ]
+ },
+ "og4-04|trans-": {
+  "fake": [
+   "transfan",
+   "translod",
+   "transnep",
+   "transvut",
+   "transdrig"
+  ],
+  "real": [
+   "transport",
+   "transfer",
+   "translate",
+   "transform",
+   "transmit",
+   "transparent",
+   "transit",
+   "transplant",
+   "transaction",
+   "transcribe"
+  ]
+ },
+ "og4-06|ei": {
+  "fake": [
+   "zeiling",
+   "veive",
+   "zeither",
+   "pleize",
+   "dreiving"
+  ],
+  "real": [
+   "ceiling",
+   "receive",
+   "either",
+   "neither",
+   "protein",
+   "seize",
+   "weird",
+   "leisure",
+   "caffeine",
+   "receipt"
+  ]
+ },
+ "og4-06|eigh": {
+  "fake": [
+   "zeigh",
+   "veigh",
+   "pleigh",
+   "dreigh",
+   "sheigh"
+  ],
+  "real": [
+   "eight",
+   "weigh",
+   "neighbor",
+   "sleigh",
+   "weight",
+   "eighteen",
+   "freight",
+   "eighty",
+   "neigh",
+   "height"
+  ]
+ },
+ "og4-06|ew": {
+  "fake": [
+   "vew",
+   "nrew",
+   "plew",
+   "zew",
+   "blewk"
+  ],
+  "real": [
+   "few",
+   "new",
+   "grew",
+   "blew",
+   "threw",
+   "crew",
+   "chew",
+   "screw",
+   "knew",
+   "stew"
+  ]
+ },
+ "og4-06|ue": {
+  "fake": [
+   "zue",
+   "vrue",
+   "nalue",
+   "plisue",
+   "dregue"
+  ],
+  "real": [
+   "blue",
+   "glue",
+   "true",
+   "clue",
+   "rescue",
+   "value",
+   "argue",
+   "statue",
+   "continue",
+   "avenue"
+  ]
+ },
+ "og4-06|ui": {
+  "fake": [
+   "zuit",
+   "vuice",
+   "nuild",
+   "pluise",
+   "druit"
+  ],
+  "real": [
+   "fruit",
+   "suit",
+   "juice",
+   "build",
+   "guide",
+   "guilt",
+   "cruise",
+   "bruise",
+   "recruit",
+   "biscuit"
+  ]
+ },
+ "og4-07|con-/com-": {
+  "fake": [
+   "confan",
+   "comlod",
+   "connep",
+   "comvut",
+   "condrig"
+  ],
+  "real": [
+   "connect",
+   "compare",
+   "combine",
+   "complete",
+   "construct",
+   "command",
+   "compete",
+   "confirm",
+   "contain",
+   "comfort"
+  ]
+ },
+ "og4-07|il-": {
+  "fake": [
+   "ilfan",
+   "illod",
+   "ilnep",
+   "ilvut",
+   "ildrig"
+  ],
+  "real": [
+   "illegal",
+   "illegible",
+   "illiterate",
+   "illogical",
+   "illicit",
+   "illiberal",
+   "illimitable",
+   "illegality",
+   "illegally",
+   "illogically"
+  ]
+ },
+ "og4-07|im-": {
+  "fake": [
+   "imfan",
+   "imlod",
+   "imnep",
+   "imvut",
+   "imdrig"
+  ],
+  "real": [
+   "impossible",
+   "impolite",
+   "immature",
+   "imperfect",
+   "immobile",
+   "impatient",
+   "improper",
+   "immortal",
+   "impure",
+   "immodest"
+  ]
+ },
+ "og4-07|ir-": {
+  "fake": [
+   "irfan",
+   "irlod",
+   "irnep",
+   "irvut",
+   "irdrig"
+  ],
+  "real": [
+   "irregular",
+   "irresponsible",
+   "irrational",
+   "irreversible",
+   "irrelevant",
+   "irresistible",
+   "irreplaceable",
+   "irreverent",
+   "irregularity",
+   "irrationally"
+  ]
+ },
+ "og4-08|-cial": {
+  "fake": [
+   "vamcial",
+   "nodcial",
+   "plimcial",
+   "drushcial",
+   "shegcial"
+  ],
+  "real": [
+   "special",
+   "social",
+   "official",
+   "crucial",
+   "facial",
+   "racial",
+   "commercial",
+   "financial",
+   "beneficial",
+   "artificial"
+  ]
+ },
+ "og4-08|-cian": {
+  "fake": [
+   "vamcian",
+   "nodcian",
+   "plimcian",
+   "drushcian",
+   "shegcian"
+  ],
+  "real": [
+   "musician",
+   "magician",
+   "physician",
+   "electrician",
+   "technician",
+   "politician",
+   "optician",
+   "beautician",
+   "mathematician",
+   "pediatrician"
+  ]
+ },
+ "og4-08|-cious": {
+  "fake": [
+   "vamcious",
+   "nodcious",
+   "plimcious",
+   "drushcious",
+   "shegcious"
+  ],
+  "real": [
+   "delicious",
+   "precious",
+   "gracious",
+   "spacious",
+   "suspicious",
+   "vicious",
+   "conscious",
+   "ferocious",
+   "atrocious",
+   "malicious"
+  ]
+ },
+ "og4-08|-tial": {
+  "fake": [
+   "vamtial",
+   "nodtial",
+   "plimtial",
+   "drushtial",
+   "shegtial"
+  ],
+  "real": [
+   "partial",
+   "essential",
+   "initial",
+   "potential",
+   "confidential",
+   "martial",
+   "substantial",
+   "influential",
+   "residential",
+   "spatial"
+  ]
+ },
+ "og4-08|-tious": {
+  "fake": [
+   "vamtious",
+   "nodtious",
+   "plimtious",
+   "drushtious",
+   "shegtious"
+  ],
+  "real": [
+   "cautious",
+   "ambitious",
+   "nutritious",
+   "fictitious",
+   "infectious",
+   "conscientious",
+   "superstitious",
+   "contentious",
+   "pretentious",
+   "scrumptious"
+  ]
+ },
+ "og5-01|ch": {
+  "fake": [
+   "chast",
+   "chemp",
+   "chorb",
+   "chule",
+   "chisk"
+  ],
+  "real": [
+   "school",
+   "chorus",
+   "echo",
+   "stomach",
+   "character",
+   "chemistry",
+   "ache",
+   "anchor",
+   "mechanic",
+   "orchestra"
+  ]
+ },
+ "og5-01|ph": {
+  "fake": [
+   "phad",
+   "pheb",
+   "phum",
+   "phisk",
+   "phont"
+  ],
+  "real": [
+   "phone",
+   "graph",
+   "photo",
+   "dolphin",
+   "alphabet",
+   "elephant",
+   "phrase",
+   "physical",
+   "trophy",
+   "orphan"
+  ]
+ },
+ "og5-03|mn": {
+  "fake": [
+   "zemn",
+   "vamn",
+   "nomn",
+   "plimn",
+   "dremn"
+  ],
+  "real": [
+   "autumn",
+   "column",
+   "hymn",
+   "solemn",
+   "condemn",
+   "damn",
+   "limn",
+   "alumni",
+   "mnemonic",
+   "columnist"
+  ]
+ },
+ "og5-03|ps": {
+  "fake": [
+   "psad",
+   "pseb",
+   "psum",
+   "psisk",
+   "psont"
+  ],
+  "real": [
+   "psychic",
+   "psalm",
+   "psychology",
+   "pseudonym",
+   "psyche",
+   "psychiatrist",
+   "psoriasis",
+   "psychotic",
+   "psychedelic",
+   "pseudo"
+  ]
+ },
+ "og5-03|rh": {
+  "fake": [
+   "rhad",
+   "rheb",
+   "rhum",
+   "rhisk",
+   "rhont"
+  ],
+  "real": [
+   "rhyme",
+   "rhino",
+   "rhythm",
+   "rhubarb",
+   "rhetoric",
+   "rhombus",
+   "rheumatic",
+   "rhapsody",
+   "rhinoceros",
+   "rhododendron"
+  ]
+ },
+ "og5-04|bio": {
+  "fake": [
+   "biod",
+   "zobio",
+   "vobio",
+   "nabio",
+   "plibio"
+  ],
+  "real": [
+   "biology",
+   "biography",
+   "biosphere",
+   "biopsy",
+   "biologist",
+   "biodegradable",
+   "biochemistry",
+   "biodiversity",
+   "bionic",
+   "biome"
+  ]
+ },
+ "og5-04|graph": {
+  "fake": [
+   "graphad",
+   "zograph",
+   "vograph",
+   "nagraph",
+   "pligraph"
+  ],
+  "real": [
+   "graph",
+   "paragraph",
+   "autograph",
+   "photograph",
+   "telegraph",
+   "graphic",
+   "biography",
+   "calligraphy",
+   "geography",
+   "graphite"
+  ]
+ },
+ "og5-04|ology": {
+  "fake": [
+   "zology",
+   "vology",
+   "nology",
+   "pliology",
+   "dreology"
+  ],
+  "real": [
+   "biology",
+   "geology",
+   "zoology",
+   "technology",
+   "psychology",
+   "archaeology",
+   "meteorology",
+   "mythology",
+   "sociology",
+   "ecology"
+  ]
+ },
+ "og5-04|phon": {
+  "fake": [
+   "phonad",
+   "zophon",
+   "vophon",
+   "naphon",
+   "pliphon"
+  ],
+  "real": [
+   "telephone",
+   "phonics",
+   "symphony",
+   "microphone",
+   "headphone",
+   "megaphone",
+   "phoneme",
+   "saxophone",
+   "xylophone",
+   "homophone"
+  ]
+ },
+ "og5-04|photo": {
+  "fake": [
+   "photog",
+   "zophoto",
+   "vophoto",
+   "naphoto",
+   "pliphoto"
+  ],
+  "real": [
+   "photo",
+   "photograph",
+   "photocopy",
+   "photosynthesis",
+   "photographer",
+   "photogenic",
+   "photon",
+   "photoshoot",
+   "photocell",
+   "photometer"
+  ]
+ },
+ "og5-04|tele": {
+  "fake": [
+   "telenk",
+   "zotele",
+   "votele",
+   "natele",
+   "plitele"
+  ],
+  "real": [
+   "telephone",
+   "telescope",
+   "television",
+   "telegraph",
+   "telepathy",
+   "telecast",
+   "telegram",
+   "telework",
+   "telemetry",
+   "teleport"
+  ]
+ },
+ "og5-05|ch": {
+  "fake": [
+   "chast",
+   "chorb",
+   "chule",
+   "chisk",
+   "chemp"
+  ],
+  "real": [
+   "chef",
+   "machine",
+   "parachute",
+   "brochure",
+   "chandelier",
+   "mustache",
+   "chalet",
+   "charade",
+   "chic",
+   "quiche"
+  ]
+ },
+ "og5-05|ou": {
+  "fake": [
+   "zoup",
+   "voup",
+   "noup",
+   "ploup",
+   "droup"
+  ],
+  "real": [
+   "soup",
+   "group",
+   "you",
+   "youth",
+   "routine",
+   "souvenir",
+   "boutique",
+   "coupon",
+   "silhouette",
+   "bouquet"
+  ]
+ },
+ "og5-08|-age": {
+  "fake": [
+   "vamage",
+   "plimage",
+   "drushage",
+   "shegage",
+   "zunage"
+  ],
+  "real": [
+   "package",
+   "garbage",
+   "village",
+   "message",
+   "courage",
+   "storage",
+   "baggage",
+   "passage",
+   "average",
+   "language"
+  ]
+ },
+ "og5-08|-al": {
+  "fake": [
+   "vamal",
+   "plimal",
+   "drushal",
+   "shegal",
+   "zunal"
+  ],
+  "real": [
+   "final",
+   "natural",
+   "normal",
+   "total",
+   "local",
+   "animal",
+   "personal",
+   "musical",
+   "several",
+   "original"
+  ]
+ },
+ "og5-08|-ance": {
+  "fake": [
+   "vamance",
+   "plimance",
+   "drushance",
+   "shegance",
+   "zunance"
+  ],
+  "real": [
+   "distance",
+   "balance",
+   "entrance",
+   "importance",
+   "appearance",
+   "performance",
+   "assistance",
+   "insurance",
+   "romance",
+   "guidance"
+  ]
+ },
+ "og5-08|-ence": {
+  "fake": [
+   "vamence",
+   "plimence",
+   "drushence",
+   "shegence",
+   "zunence"
+  ],
+  "real": [
+   "sentence",
+   "science",
+   "silence",
+   "difference",
+   "experience",
+   "confidence",
+   "evidence",
+   "presence",
+   "patience",
+   "absence"
+  ]
+ },
+ "og5-09|aught": {
+  "fake": [
+   "zaught",
+   "vaught",
+   "plaught",
+   "shaught",
+   "graught"
+  ],
+  "real": [
+   "caught",
+   "taught",
+   "daughter",
+   "naughty",
+   "slaughter",
+   "distraught",
+   "aught",
+   "fraught",
+   "haughty",
+   "onslaught"
+  ]
+ },
+ "og5-09|ought": {
+  "fake": [
+   "zought",
+   "vought",
+   "plought",
+   "shought",
+   "grought"
+  ],
+  "real": [
+   "bought",
+   "thought",
+   "brought",
+   "fought",
+   "ought",
+   "sought",
+   "nought",
+   "drought",
+   "wrought",
+   "thoughtful"
+  ]
+ },
  "vccvce|a_e": {
   "fake": [
    "tanlake",
