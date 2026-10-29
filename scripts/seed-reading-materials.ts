@@ -19,6 +19,7 @@ import path from "node:path";
 import WRITING from "./reading-writing-passages.json" with { type: "json" };
 import SPLITS from "./reading-skill-splits.json" with { type: "json" };
 import PARTW from "./reading-part-words.json" with { type: "json" };
+import SENT3 from "./reading-third-sentences.json" with { type: "json" };
 import { db } from "@/lib/db";
 import { reading_materials } from "@/lib/db/schema";
 import { inArray, sql } from "drizzle-orm";
@@ -215,7 +216,16 @@ const ADAPTATIONS: Adaptation[] = [
     // child hunting for proof had nothing to anchor on.
     name: "name the reading pages and stop dictation happening twice",
     apply: (html) => {
-      let out = cutAround(html, "5. Dictation. Write the words and the sentence", "div");
+      // The whole section, not just its heading: the needle's nearest opening
+      // tag is the heading div, so cutting from there left the four blanks and
+      // the ruled sentence behind with nothing above them.
+      let out = cutAround(
+        html,
+        '<div style="display:flex;flex-direction:column;gap:6px;flex:1">\n' +
+          '        <div style="font-size:15px;font-weight:800;color:#2F3E2E">' +
+          "5. Dictation. Write the words and the sentence",
+        "div"
+      );
       if (out === null) return html;
 
       const steps: [string, string][] = [
@@ -294,13 +304,52 @@ const ADAPTATIONS: Adaptation[] = [
           "Draw a ♥ over the part that does not play fair."
       );
 
-      // Three sentences for the partner read, not two.
+      // Three sentences for the partner read, not two. On a single part the
+      // sentences that carry that part come first, and the skill's others
+      // make the count up — a part has at most three sentences to draw on, so
+      // filtering alone would leave a child with one line to read.
       const sent = 'wbHeart: heart, wbSent: dict,';
       if (!out.includes(sent)) return html;
-      out = out.replace(sent, "wbHeart: heart, wbSent: dict.slice(0, 3),");
+      out = out.replace(
+        sent,
+        "wbHeart: heart, wbSent: dict.concat(dictAll.filter((q) => " +
+          "dict.indexOf(q) === -1)).slice(0, 3),"
+      );
       const forEach = '<sc-for list="{{ wbSent }}" as="s" hint-placeholder-count="2">';
       if (!out.includes(forEach)) return html;
       return out.replace(forEach, '<sc-for list="{{ wbSent }}" as="s" hint-placeholder-count="3">');
+    },
+  },
+  {
+    // Three sentences for the partner read needs three sentences to exist.
+    // Every skill shipped with exactly two, so slicing to three changed
+    // nothing on the page.
+    //
+    // The 47 skills built from the OG packs take theirs from the decodable
+    // story, which has plenty — the cut was simply set at two, and every one
+    // of the 47 has a third that passes the same 4-to-12-word filter.
+    //
+    // The 15 hand-written skills have no story to draw on, so their third
+    // sentence is written: the skill's own pattern, its heart words where one
+    // fits, and nothing from a pattern the child has not met yet.
+    name: "give the partner read a third sentence",
+    apply: (html) => {
+      const cut = "return n >= 4 && n <= 12; }).slice(0, 2);";
+      if (!html.includes(cut)) return html;
+      let out = html.replace(cut, "return n >= 4 && n <= 12; }).slice(0, 3);");
+
+      const anchor = "    const byId = Object.fromEntries(SK.map((s) => [s[0], s]));";
+      if (!out.includes(anchor)) return html;
+      return out.replace(
+        anchor,
+        anchor +
+          "\n    const SENT3 = " +
+          JSON.stringify(SENT3) +
+          ";\n    Object.keys(SENT3).forEach((k) => {\n" +
+          "      const r = byId[k];\n" +
+          "      if (r && Array.isArray(r[9]) && r[9].length < 3) r[9].push(SENT3[k]);\n" +
+          "    });"
+      );
     },
   },
   {
