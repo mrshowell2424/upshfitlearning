@@ -201,6 +201,137 @@ const ADAPTATIONS: Adaptation[] = [
     },
   },
   {
+    // Three of the lesson's steps were spoken only. Step 1 changes a sound
+    // and says the new word, step 3 says which letters spell a sound, and
+    // spelling was four dictation blanks on page 2. A child left no record of
+    // any of it, so nothing could be looked at afterwards.
+    //
+    // This adds one page that holds all of it in writing: the sound change
+    // with the word before and after, the letters that spell each sound, ten
+    // spelling words, and dictation as its own section rather than a corner
+    // of page 2. Real or made-up goes from eight words to ten at the same
+    // time, which is what every other list on the page has.
+    name: "give the spoken steps a place to write",
+    apply: (html) => {
+      // 1. Real or made-up: eight to ten.
+      const rm =
+        "const rmWords = [real[0], nonsense[0], real[1], nonsense[1], real[2], " +
+        "nonsense[2] || real[8], real[3], nonsense[3] || real[9]];";
+      if (!html.includes(rm)) return html;
+      let out = html.replace(
+        rm,
+        "const rmWords = [real[0], nonsense[0], real[1], nonsense[1], real[2], " +
+          "nonsense[2] || real[8], real[3], nonsense[3] || real[9], " +
+          "real[4], nonsense[4] || real[5]].filter(Boolean);"
+      );
+
+      // 2. The page's data, built beside the decodable and fluency pages.
+      const anchor =
+        "        return { ...p, hasFl: p.hasDec, flBox: { ...p.decBox }, flTitle: p.dec.title, flParas, flTotal: String(run),";
+      if (!out.includes(anchor)) return html;
+      out = out.replace(
+        anchor,
+        "        const encOn = show(isKey ? 'key' : 'wb');\n" +
+          "        const paItems = ((paA && paA[2]) || []).slice(0, 6).map((t, i) => {\n" +
+          "          const parts = String(t).split(/\\s*\\(|\\)\\s*$/).filter(Boolean);\n" +
+          "          return { n: i + 1, t: parts[0].trim(), ans: isKey ? (parts[1] || '').trim() : '' }; });\n" +
+          "        const wsItems = whatSays.slice(0, 6).map((t, i) => {\n" +
+          "          const m = String(t).match(/^(.*?)\\s*\\(([^)]*)\\)\\s*$/);\n" +
+          "          return { n: i + 1, t: (m ? m[1] : t).trim(), ans: isKey && m ? m[2] : '' }; });\n" +
+          anchor
+      );
+      const tail = "          sbBox: { ...p.decBox, display: sbRows.length && show(isKey ? 'key' : 'wb') ? 'flex' : 'none' }, sbRows }; })";
+      if (!out.includes(tail)) return html;
+      out = out.replace(
+        tail,
+        "          encBox: { ...p.decBox, display: encOn ? 'flex' : 'none' },\n" +
+          "          paItems, hasPa: paItems.length > 0, paDir: (paA && paA[1]) || '',\n" +
+          "          wsItems, hasWs: wsItems.length > 0,\n" +
+          "          spellWords: real.slice(0, 10).map((w, i) => ({ n: i + 1, ans: isKey ? w : '' })),\n" +
+          "          dictSents: dict.slice(0, 2).map((t, i) => ({ n: i + 1, ans: isKey ? t : '' })),\n" +
+          tail
+      );
+
+      // 3. The page itself, in front of the writing page.
+      const mark = "{{ p.kicker }} · WRITING";
+      const at = out.indexOf(mark);
+      if (at === -1) return html;
+      const open = out.lastIndexOf('<div data-wb="true"', at);
+      if (open === -1) return html;
+
+      const H = (n: string, t: string) =>
+        '<div style="font-size:15px;font-weight:800;color:#2F3E2E">' + n + ". " + t + "</div>";
+      const LINE = '<span style="flex:1;min-width:0;border-bottom:1.5px solid #333;' +
+        'min-height:34px;font-size:17px;color:#B42318;display:flex;align-items:flex-end;' +
+        'justify-content:center;overflow-wrap:anywhere;padding-bottom:2px">';
+      const ROW = '<div style="display:flex;align-items:flex-end;gap:8px;font-size:17px;font-weight:700;min-width:0">';
+
+      const page =
+        '    <div data-wb="true" style="{{ p.encBox }}">\n' +
+        '      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;' +
+        'border-bottom:3px solid #2F5E7A;padding-bottom:8px">\n' +
+        '        <div><div style="font-family:Outfit,sans-serif;font-size:12px;font-weight:700;' +
+        'letter-spacing:.16em;color:#2F5E7A">{{ p.kicker }} · SPELLING</div>' +
+        '<div style="font-size:26px;font-weight:800;color:#2F3E2E;line-height:1.1">' +
+        '✍️ Say it, then write it</div></div>\n' +
+        '        <div style="font-size:14px;font-weight:600;white-space:nowrap">Name ____________</div>\n' +
+        "      </div>\n" +
+        // Phonological awareness, written down
+        '      <sc-if value="{{ p.hasPa }}" hint-placeholder-val="{{ true }}">\n' +
+        '      <div style="display:flex;flex-direction:column;gap:8px;break-inside:avoid;page-break-inside:avoid">\n' +
+        "        " + H("1", "Change the sound. Write the word you started with, then the new word.") + "\n" +
+        '        <div style="font-size:12.5px;font-weight:600;color:#57534e">{{ p.paDir }}</div>\n' +
+        '        <sc-for list="{{ p.paItems }}" as="x" hint-placeholder-count="5">\n' +
+        '          <div style="display:flex;align-items:flex-end;gap:10px;font-size:16px;font-weight:700">' +
+        '<span style="flex:none;width:18px">{{ x.n }}.</span>' +
+        '<span style="flex:1.4;min-width:0;font-size:15px;font-weight:600;color:#111;' +
+        'overflow-wrap:anywhere">{{ x.t }}</span>' +
+        '<div style="flex:1;min-width:0;display:flex;align-items:flex-end;gap:8px">' +
+        '<span style="flex:none;font-size:12px;font-weight:700;color:#57534e">new word</span>' +
+        LINE + "{{ x.ans }}</span></div></div>\n" +
+        "        </sc-for>\n" +
+        "      </div></sc-if>\n" +
+        // What says?
+        '      <sc-if value="{{ p.hasWs }}" hint-placeholder-val="{{ true }}">\n' +
+        '      <div style="display:flex;flex-direction:column;gap:8px;break-inside:avoid;page-break-inside:avoid">\n' +
+        "        " + H("2", "What says? Write the letters that spell the sound you hear.") + "\n" +
+        '        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 20px">\n' +
+        '          <sc-for list="{{ p.wsItems }}" as="x" hint-placeholder-count="4">\n' +
+        "            " + ROW + '<span style="flex:none;width:18px">{{ x.n }}.</span>' +
+        '<span style="flex:1.3;min-width:0;font-size:15px;font-weight:600;overflow-wrap:anywhere">' +
+        "{{ x.t }}</span>" + LINE + "{{ x.ans }}</span></div>\n" +
+        "          </sc-for>\n" +
+        "        </div>\n" +
+        "      </div></sc-if>\n" +
+        // Spelling: ten words
+        '      <div style="display:flex;flex-direction:column;gap:8px;break-inside:avoid;page-break-inside:avoid">\n' +
+        "        " + H("3", "Spelling (encoding). Say the word, tap each sound, then write it.") + "\n" +
+        '        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 22px">\n' +
+        '          <sc-for list="{{ p.spellWords }}" as="d" hint-placeholder-count="10">\n' +
+        "            " + ROW + '<span style="flex:none;width:18px">{{ d.n }}.</span>' +
+        LINE + "{{ d.ans }}</span></div>\n" +
+        "          </sc-for>\n" +
+        "        </div>\n" +
+        "      </div>\n" +
+        // Dictation: its own section
+        '      <div style="display:flex;flex-direction:column;gap:8px;flex:1;break-inside:avoid;page-break-inside:avoid">\n' +
+        "        " + H("4", "Dictation. Write the whole sentence your teacher says.") + "\n" +
+        '        <sc-for list="{{ p.dictSents }}" as="d" hint-placeholder-count="2">\n' +
+        '          <div style="display:flex;align-items:flex-start;gap:8px;font-size:17px;font-weight:700">' +
+        '<span style="flex:none;padding-top:18px">{{ d.n }}.</span>' +
+        '<div style="flex:1;min-width:0;min-height:92px;background-image:' +
+        "repeating-linear-gradient(to bottom,transparent 0,transparent 44.5px,#333 44.5px,#333 46px);" +
+        'background-size:100% 46px">' +
+        '<div style="font-size:17px;line-height:46px;color:#B42318;overflow-wrap:anywhere">' +
+        "{{ d.ans }}</div></div></div>\n" +
+        "        </sc-for>\n" +
+        "      </div>\n" +
+        "    </div>\n";
+
+      return out.slice(0, open) + page + out.slice(open);
+    },
+  },
+  {
     // Many skills teach several things at once — "Vowel teams ai, ay",
     // "Prefixes mis-, sub-, post-" — and they are taught one at a time before
     // they are practised together. The dropdown only ever offered the pair.
