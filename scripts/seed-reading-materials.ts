@@ -171,18 +171,26 @@ const ADAPTATIONS: Adaptation[] = [
         "const on = String(FS.step || '').split(',').filter(Boolean); " +
         "return { label: t, " +
         "pick: () => setF('step', (on.includes(v) ? on.filter((x) => x !== v) : on.concat(v)).join(',')), " +
-        "style: \"font-family:Poppins,sans-serif;font-size:12.5px;font-weight:700;" +
-        "cursor:pointer;border-radius:999px;padding:4px 11px;white-space:nowrap;" +
+        "style: \"font-family:Poppins,sans-serif;font-size:12px;font-weight:700;" +
+        "cursor:pointer;border-radius:999px;padding:4px 9px;white-space:nowrap;flex:0 0 auto;" +
         "border:1.5px solid #4B6049;\" + (on.includes(v) " +
         "? 'background:#4B6049;color:#fff' : 'background:#fff;color:#4B6049') }; }),\n";
 
       const anchor = "      toggleHeart: () => setF('heart', !FS.heart),";
       if (!html.includes(anchor)) return html;
 
+      // One line, always. Seven steps at the old size needed 1043px and the
+      // card is 1140px wide, so it fit on a desktop and broke in two on
+      // anything narrower. Tightened they need about 965px, which holds down
+      // to a 1050px window; below that the row scrolls sideways rather than
+      // wrapping, because a lesson has an order and reading it as 5 + 2 loses
+      // that. flex:0 0 auto on both the caption and the chips stops nowrap
+      // from squeezing them instead.
       const row =
-        '      <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;width:100%">\n' +
+        '      <div style="display:flex;flex-wrap:nowrap;overflow-x:auto;gap:5px;' +
+        'align-items:center;width:100%">\n' +
         '        <span style="font-family:Outfit,sans-serif;font-size:12px;font-weight:800;' +
-        'letter-spacing:.1em;color:#4B6049;white-space:nowrap">LESSON STEP</span>\n' +
+        'letter-spacing:.1em;color:#4B6049;white-space:nowrap;flex:0 0 auto">LESSON STEP</span>\n' +
         '        <sc-for list="{{ stepChips }}" as="h" hint-placeholder-count="7">' +
         '<button type="button" onClick="{{ h.pick }}" style="{{ h.style }}">{{ h.label }}</button></sc-for>\n' +
         "      </div>\n";
@@ -211,48 +219,104 @@ const ADAPTATIONS: Adaptation[] = [
         .replace(/\s*<a\b[^>]*href="Syllable%20Types%20Poster\.dc\.html"[^>]*>[^<]*<\/a>/g, ""),
   },
   {
-    // Where they land: the workbook bar, which already names the workbook and
-    // its key. Each follows whatever is filtered above it. The workbook and
-    // the key print separately because they go to different people, and
-    // Print all is the one-press option for a whole lesson.
-    name: "put the print buttons on the workbook bar",
+    // Printing was one-piece-at-a-time: state.print held a single key and
+    // every section asked `part === 'wb'`. A teacher printing a workbook, two
+    // spelling lists and the games had to go to the printer four times.
+    //
+    // The key becomes a comma-joined set and every comparison becomes
+    // membership, which is the same question asked of a list. Nothing else
+    // changes: show('lesson') still answers the way it did.
+    //
+    // The chips above the Print button are lit by default, because the common
+    // case is wanting the lot — a teacher switches one off, rather than
+    // building the pile up from nothing.
+    name: "let one print run cover several pieces",
+    apply: (html) => {
+      let out = html;
+      const steps: [string, string][] = [
+        [
+          "const show = (k) => !part || part === 'all' || part === k;",
+          "const PICKED = String(part).split(',').filter(Boolean);\n" +
+            "    const has = (k) => part === 'all' || PICKED.includes(k);\n" +
+            "    const show = (k) => !part || has(k);",
+        ],
+        [
+          "const box = (k) => ({ display: part === k ? 'flex' : 'none'",
+          "const box = (k) => ({ display: has(k) ? 'flex' : 'none'",
+        ],
+        [
+          "if (part === 'games' || part === 'all' || (!part && open)) modes.push(false); " +
+            "if (part === 'gkey' || part === 'all' || (!part && open)) modes.push(true);",
+          "if (has('games') || (!part && open)) modes.push(false); " +
+            "if (has('gkey') || (!part && open)) modes.push(true);",
+        ],
+        [
+          "['g2', 'g3'].filter((g) => part === 'all' || part === 'spl' + g.slice(1))",
+          "['g2', 'g3'].filter((g) => has('spl' + g.slice(1)))",
+        ],
+      ];
+      for (const [from, to] of steps) {
+        if (!out.includes(from)) return html;
+        out = out.replace(from, to);
+      }
+
+      const anchor =
+        "      printWorkbook: doPrint('wb'), printKey: doPrint('key'), printAll: doPrint('all'),";
+      if (!out.includes(anchor)) return html;
+      const chips =
+        "      ...(() => {\n" +
+        "        const PCH = [['wb', '\u{1F4DD} Workbook'], ['spl2', '\u270F\uFE0F Spelling \u00b7 2nd'], " +
+        "['spl3', '\u{1F58A}\uFE0F Spelling \u00b7 3rd'], ['games', '\u{1F3B2} Word games']];\n" +
+        "        const off = (this.state && this.state.poff) || [];\n" +
+        "        const picked = PCH.map(([k]) => k).filter((k) => !off.includes(k));\n" +
+        "        return { printChips: PCH.map(([k, t]) => ({ label: t,\n" +
+        "          pick: () => this.setState({ poff: off.includes(k) " +
+        "? off.filter((x) => x !== k) : off.concat(k) }),\n" +
+        "          style: 'font-family:Poppins,sans-serif;font-size:12px;font-weight:700;" +
+        "cursor:pointer;border-radius:999px;padding:4px 9px;white-space:nowrap;flex:0 0 auto;" +
+        "border:1.5px solid #4B6049;' + (off.includes(k) " +
+        "? 'background:#fff;color:#4B6049' : 'background:#4B6049;color:#fff') })),\n" +
+        "          printPicked: picked.length ? doPrint(picked.join(',')) : () => {} }; })(),\n";
+      return out.replace(anchor, anchor + "\n" + chips);
+    },
+  },
+  {
+    // Where they land: the workbook bar, which already names the workbook.
+    // Two rows — what to look at on screen, then what to send to the printer.
+    //
+    // The print row is the same shape as the lesson steps above it: every
+    // piece lit, click to drop one, one button to print what is left. That
+    // replaces six separate print buttons, and the old Print all, which the
+    // chips say better by simply being on.
+    name: "put the print chooser on the workbook bar",
     apply: (html) => {
       const toggle =
         /<button type="button" onClick="\{\{ toggleWb \}\}"([^>]*)>\{\{ wbBtn \}\}<\/button>/;
       if (!toggle.test(html)) return html;
-      const btn = (fill: string, border: string, color: string) =>
-        'font-family:Outfit,sans-serif;font-size:14px;font-weight:700;border:' + border +
-        ';background:' + fill + ';color:' + color +
-        ';padding:8px 14px;border-radius:8px;cursor:pointer;white-space:nowrap';
+      const bare =
+        "font-family:Outfit,sans-serif;font-size:14px;font-weight:700;border:1.5px solid #4B6049;" +
+        "background:#fff;color:#4B6049;padding:8px 14px;border-radius:8px;cursor:pointer;" +
+        "white-space:nowrap";
       return html.replace(
         toggle,
-        '<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">' +
+        '<div style="display:flex;flex-direction:column;gap:9px;width:100%">' +
+          '<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">' +
           '<button type="button" onClick="{{ toggleWb }}"$1>{{ wbBtn }}</button>' +
-          '<button type="button" onClick="{{ printWorkbook }}" style="' +
-          btn("#fff", "1.5px solid #4B6049", "#4B6049") +
-          '">\u{1F5A8} Print workbook</button>' +
-          '<button type="button" onClick="{{ printSpl2 }}" style="' +
-          btn("#fff", "1.5px solid #4B6049", "#4B6049") +
-          '">\u{1F5A8} Spelling \u00b7 2nd</button>' +
-          '<button type="button" onClick="{{ printSpl3 }}" style="' +
-          btn("#fff", "1.5px solid #4B6049", "#4B6049") +
-          '">\u{1F5A8} Spelling \u00b7 3rd</button>' +
-          '<button type="button" onClick="{{ printKey }}" style="' +
-          btn("#fff", "1.5px solid #4B6049", "#4B6049") +
-          '">\u{1F5A8} Print answer key</button>' +
-          '<button type="button" onClick="{{ toggleGames }}" style="' +
-          btn("#fff", "1.5px solid #4B6049", "#4B6049") +
-          '">{{ gamesBtn }}</button>' +
-          '<button type="button" onClick="{{ printGames }}" style="' +
-          btn("#fff", "1.5px solid #4B6049", "#4B6049") +
-          '">\u{1F5A8} Print games</button>' +
-          '<a href="Syllable%20Types%20Poster.dc.html" style="' +
-          btn("#fff", "1.5px solid #4B6049", "#4B6049") +
-          ';text-decoration:none">\u2702\ufe0f Syllable types poster</a>' +
-          '<button type="button" onClick="{{ printAll }}" style="' +
-          btn("#4B6049", "0", "#fff") +
-          '">\u{1F5A8} Print all</button>' +
-          "</div>"
+          '<button type="button" onClick="{{ toggleGames }}" style="' + bare + '">' +
+          "{{ gamesBtn }}</button>" +
+          "</div>" +
+          '<div style="display:flex;flex-wrap:nowrap;overflow-x:auto;gap:5px;' +
+          'align-items:center;width:100%">' +
+          '<span style="font-family:Outfit,sans-serif;font-size:12px;font-weight:800;' +
+          'letter-spacing:.1em;color:#4B6049;white-space:nowrap;flex:0 0 auto">PRINT</span>' +
+          '<sc-for list="{{ printChips }}" as="pc" hint-placeholder-count="4">' +
+          '<button type="button" onClick="{{ pc.pick }}" style="{{ pc.style }}">' +
+          "{{ pc.label }}</button></sc-for>" +
+          '<button type="button" onClick="{{ printPicked }}" style="' +
+          "font-family:Outfit,sans-serif;font-size:14px;font-weight:700;border:0;" +
+          "background:#4B6049;color:#fff;padding:8px 14px;border-radius:8px;cursor:pointer;" +
+          'white-space:nowrap;flex:0 0 auto;margin-left:4px">\u{1F5A8} Print</button>' +
+          "</div></div>"
       );
     },
   },
@@ -324,8 +388,8 @@ const ADAPTATIONS: Adaptation[] = [
       if (!out.includes(wrap)) return html;
       out = out.replace(
         wrap,
-        "wbWrap: { display: (this.state && this.state.wbOpen) || part === 'wb' || part === 'all' ? 'flex' : 'none', flexDirection: 'column', gap: 22 },\n" +
-          "      keyWrap: { display: (this.state && this.state.keyOpen) || part === 'key' || part === 'all' ? 'flex' : 'none', flexDirection: 'column', gap: 22 },\n" +
+        "wbWrap: { display: (this.state && this.state.wbOpen) || has('wb') ? 'flex' : 'none', flexDirection: 'column', gap: 22 },\n" +
+          "      keyWrap: { display: (this.state && this.state.keyOpen) || has('key') ? 'flex' : 'none', flexDirection: 'column', gap: 22 },\n" +
           "      keyBtn: (this.state && this.state.keyOpen) ? 'Hide answer key ▲' : 'Show answer key ▼',\n" +
           "      toggleKey: () => this.setState({ keyOpen: !(this.state && this.state.keyOpen) }),"
       );
@@ -334,12 +398,16 @@ const ADAPTATIONS: Adaptation[] = [
       // and the sentence about the key, which bar two says for itself.
       out = out.replace("\u{1F4D8} Student workbook + answer key", "\u{1F4D8} Student workbook");
       out = out.replace(" The key adds a quick check for the group.", "");
-      const keyPrint =
-        /<button type="button" onClick="\{\{ printKey \}\}"[^>]*>[^<]*<\/button>/;
-      if (!keyPrint.test(out)) return html;
-      const keyPrintHtml = out.match(keyPrint)[0];
-      out = out.replace(keyPrint, "");
-      out = out.replace('<button type="button" onClick="{{ toggleWb }}"', '<button type="button" onClick="{{ toggleWb }}"');
+      // The key's own two buttons. They are built here rather than lifted
+      // off the workbook bar, which no longer has any: the student side is a
+      // chip row now, and the key is not one of its chips on purpose.
+      const keyBtnStyle =
+        "font-family:Outfit,sans-serif;font-size:14px;font-weight:700;" +
+        "border:1.5px solid #4B6049;background:#fff;color:#4B6049;padding:8px 14px;" +
+        "border-radius:8px;cursor:pointer;white-space:nowrap";
+      const keyPrintHtml =
+        '<button type="button" onClick="{{ printKey }}" style="' + keyBtnStyle +
+        '">\u{1F5A8} Print answer key</button>';
 
       // Bar two, and a second copy of the page block beneath it.
       const open = '<div style="{{ wbWrap }}">';
@@ -377,10 +445,8 @@ const ADAPTATIONS: Adaptation[] = [
         'font-size:14px;font-weight:700;border:1.5px solid #4B6049;background:#EEF3EC;' +
         'color:#4B6049;padding:8px 14px;border-radius:8px;cursor:pointer;white-space:nowrap">' +
         "{{ keyBtn }}</button>" + keyPrintHtml +
-        '<button type="button" onClick="{{ printGamesKey }}" ' +
-        'style="font-family:Outfit,sans-serif;font-size:14px;font-weight:700;' +
-        'border:1.5px solid #4B6049;background:#fff;color:#4B6049;padding:8px 14px;' +
-        'border-radius:8px;cursor:pointer;white-space:nowrap">\u{1F5A8} Games key</button>' +
+        '<button type="button" onClick="{{ printGamesKey }}" style="' + keyBtnStyle +
+        '">\u{1F5A8} Games key</button>' +
         "</div>\n  </div>\n";
 
       return out.slice(0, at) + studentBlock + keyBar + keyBlock + out.slice(end);
