@@ -345,9 +345,6 @@ const ADAPTATIONS: Adaptation[] = [
           "          const from = cut.length > 1 ? cut[0].trim() : '';\n" +
           "          return { n: i + 1, from, hasFrom: !!from, t: cut.slice(1).join(' ').trim() || lead,\n" +
           "            ans: isKey ? (parts[1] || '').trim() : '' }; });\n" +
-          "        const wsItems = Array.from({ length: 5 }, (_, i) => {\n" +
-          "          const m = String(whatSays[i] || '').match(/^(.*?)\\s*\\(([^)]*)\\)\\s*$/);\n" +
-          "          return { n: i + 1, ans: isKey && m ? m[2] : '' }; });\n" +
           anchor
       );
       const tail = "          sbBox: { ...p.decBox, display: sbRows.length && show(isKey ? 'key' : 'wb') ? 'flex' : 'none' }, sbRows }; })";
@@ -356,7 +353,6 @@ const ADAPTATIONS: Adaptation[] = [
         tail,
         "          encBox: { ...p.decBox, display: encOn ? 'flex' : 'none' },\n" +
           "          paItems, hasPa: paItems.length > 0, paDir: (paA && paA[1]) || '',\n" +
-          "          wsItems, hasWs: wsItems.length > 0,\n" +
           "          spellWords: Array.from({ length: 10 }, (_, i) => " +
           "({ n: i + 1, ans: isKey ? (real[i] || '') : '' })),\n" +
           "          dictSents: Array.from({ length: 2 }, (_, i) => " +
@@ -402,20 +398,9 @@ const ADAPTATIONS: Adaptation[] = [
         LINE.replace("min-height:34px", "min-height:40px") + "{{ x.ans }}</span></div>\n" +
         "        </sc-for>\n" +
         "      </div></sc-if>\n" +
-        // What says?
-        '      <sc-if value="{{ p.hasWs }}" hint-placeholder-val="{{ true }}">\n' +
-        '      <div style="display:flex;flex-direction:column;gap:8px;break-inside:avoid;page-break-inside:avoid">\n' +
-        "        " + H("2", "What says? Your teacher says a sound. Write the letters that spell it.") + "\n" +
-        '        <div style="display:flex;flex-direction:column;gap:11px">\n' +
-        '          <sc-for list="{{ p.wsItems }}" as="x" hint-placeholder-count="5">\n' +
-        "            " + ROW + '<span style="flex:none;width:18px">{{ x.n }}.</span>' +
-        LINE.replace("min-height:34px", "min-height:40px") + "{{ x.ans }}</span></div>\n" +
-        "          </sc-for>\n" +
-        "        </div>\n" +
-        "      </div></sc-if>\n" +
         // Spelling: ten words
         '      <div style="display:flex;flex-direction:column;gap:8px;break-inside:avoid;page-break-inside:avoid">\n' +
-        "        " + H("3", "Spelling (encoding). Say the word, tap each sound, then write it.") + "\n" +
+        "        " + H("2", "Spelling (encoding). Say the word, tap each sound, then write it.") + "\n" +
         '        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 22px">\n' +
         '          <sc-for list="{{ p.spellWords }}" as="d" hint-placeholder-count="10">\n' +
         "            " + ROW + '<span style="flex:none;width:18px">{{ d.n }}.</span>' +
@@ -426,7 +411,7 @@ const ADAPTATIONS: Adaptation[] = [
         // Dictation: its own section
         '      <div style="display:flex;flex-direction:column;gap:8px;flex:1;break-inside:avoid;' +
         'page-break-inside:avoid;border:2px solid #2F5E7A;border-radius:12px;padding:12px 16px">\n' +
-        "        " + H("4", "Dictation. Write the whole sentence your teacher says. Two sentences.") + "\n" +
+        "        " + H("3", "Dictation. Write the whole sentence your teacher says. Two sentences.") + "\n" +
         '        <sc-for list="{{ p.dictSents }}" as="d" hint-placeholder-count="2">\n' +
         '          <div style="display:flex;align-items:flex-start;gap:8px;font-size:17px;font-weight:700">' +
         '<span style="flex:none;padding-top:18px">{{ d.n }}.</span>' +
