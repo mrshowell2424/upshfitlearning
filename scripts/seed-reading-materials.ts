@@ -254,6 +254,56 @@ const ADAPTATIONS: Adaptation[] = [
     },
   },
   {
+    // Writing a heart word out twice is copying, and copying is the one thing
+    // a heart word does not need: the child already cannot sound it out, so
+    // tracing it twice teaches the hand, not the eye.
+    //
+    // The space becomes sound mapping, which is what heart words are for. Say
+    // it, tap the sounds, write one sound to a box, then draw a heart over
+    // the part that does not play fair. Five boxes, because the child decides
+    // how many sounds there are — that decision is the work.
+    //
+    // Fluency gets three sentences rather than two. A partner read wants
+    // enough to build a rhythm.
+    name: "map the heart words instead of copying them",
+    apply: (html) => {
+      const box =
+        '<div style="border:1.5px solid #C0504D;border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:14px">\n' +
+        '              <div style="font-size:26px;font-weight:800">♥ {{ h }}</div>\n' +
+        '              <div style="border-bottom:1.5px solid #333;height:34px"></div>\n' +
+        '              <div style="border-bottom:1.5px solid #333;height:34px"></div>\n' +
+        "            </div>";
+      if (!html.includes(box)) return html;
+      const cell =
+        '<div style="flex:1;min-width:0;aspect-ratio:1;border:1.5px solid #111;border-radius:6px"></div>';
+      const mapped =
+        '<div style="border:1.5px solid #C0504D;border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:9px">\n' +
+        '              <div style="font-size:24px;font-weight:800">♥ {{ h }}</div>\n' +
+        '              <div style="display:flex;gap:5px">' + cell.repeat(5) + "</div>\n" +
+        '              <div style="display:flex;align-items:flex-end;gap:6px">' +
+        '<span style="flex:none;font-size:11px;font-weight:700;color:#57534e">in a sentence</span>' +
+        '<span style="flex:1;min-width:0;border-bottom:1.5px solid #333;height:26px"></span></div>\n' +
+        "            </div>";
+      let out = html.replace(box, mapped);
+
+      const title = "4. Heart words. Read it, then write it 2 times.";
+      if (!out.includes(title)) return html;
+      out = out.replace(
+        title,
+        "4. Heart words. Say it. Tap the sounds. Write one sound in each box. " +
+          "Draw a ♥ over the part that does not play fair."
+      );
+
+      // Three sentences for the partner read, not two.
+      const sent = 'wbHeart: heart, wbSent: dict,';
+      if (!out.includes(sent)) return html;
+      out = out.replace(sent, "wbHeart: heart, wbSent: dict.slice(0, 3),");
+      const forEach = '<sc-for list="{{ wbSent }}" as="s" hint-placeholder-count="2">';
+      if (!out.includes(forEach)) return html;
+      return out.replace(forEach, '<sc-for list="{{ wbSent }}" as="s" hint-placeholder-count="3">');
+    },
+  },
+  {
     // Three of the lesson's steps were spoken only. Step 1 changes a sound
     // and says the new word, step 3 says which letters spell a sound, and
     // spelling was four dictation blanks on page 2. A child left no record of
