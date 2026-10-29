@@ -58,5 +58,193 @@
   "ar-or": {
     "prompt": "Which is the best place to go: a farm, a park, or a fort?",
     "passage": "At the farm we saw a horse and fed the pigs corn. We got to pet a baby goat and pick a jar of fresh apples. “A farm teaches kids where their food comes from,” said Farmer Mark.\nAt the park we played on the swings and ran in the yard. There was a big field for sports. Lori said, “The park has more room to run and play.” The park is close to our street, and it costs nothing.\nAt the fort we saw a dark tower and a short wall made of stone. A guard in a uniform told us the story of the war. We got to sort the old carts and tools in the barn. The fort is the best place to learn how people lived long ago."
+  },
+  "og1-02": {
+    "prompt": "What is the best way to go to school: by bus, by bike, or on foot?",
+    "passage": "Most of us go by bus. The bus can hold so many kids that no one has to wait for a ride. On the bus we get to be with our pals and talk. If it is wet, we stay dry the whole way.\nJo likes to go by bike. “I get to be in the fresh air,” she said. A bike is fast, and we do not have to pay a fare. We move our legs, so we are awake by the time we get to class.\nTy goes on foot. “I can go slow and see the birds,” he said. No gas is used, so it is clean. He can stop to say hi to a pal on the way, and he is never late."
+  },
+  "og1-03": {
+    "prompt": "Which is the best job to have: a vet, a cop, or a cook?",
+    "passage": "Pam is a vet. She can fix the leg of a pup or a pig. A vet gets to pet a lot of cats and dogs in one day. Kids bring in a sick pet, and the vet sends it home well.\nRob is a cop. He keeps the kids safe when they cross at the top of the hill. A cop can help if a van is stuck or a bag is lost. “I like that no day is the same,” said Rob.\nDeb is a cook. She can mix and bake all day, and the hot buns smell good. A cook gets to feed a lot of kids at one job. “I get to make a mess and no one is mad,” said Deb."
+  },
+  "og1-04": {
+    "prompt": "What is the best thing to pack in a kit: a cup, a sock, or a snack?",
+    "passage": "Nick packs a cup. A cup can hold milk, and you can use it again and again. A cup takes up little space at the back of the pack. If you pick a cup with a lid, it will not tip.\nKim packs a sock. If one sock gets wet, a dry sock keeps her feet from cracking. A sock is small and light, so it fits in any pack. A sock can keep a cup from a crack, too.\nJack packs a snack. A snack gives back your pep when you get tired. You can pick a snack that will not melt, like a cracker. “If a pal did not pack lunch, I can split my snack,” said Jack."
+  },
+  "og1-06": {
+    "prompt": "What should the class do at the end of the day: a quiz, a mix of games, or a quick read?",
+    "passage": "Max likes a quiz. A quiz lets you fix what you did not get yet. Six quick questions take only a bit of time. “A quiz shows me that I did learn it,” said Max.\nRex likes a mix of games. In a game you can not quit, so you keep at it. A mix lets each kid pick the one they like. “Games make the class buzz,” said Rex.\nLiz likes a quick read. The book box has a text for each kid, so no one waits. A quick read is calm after a long day. “I can fix my own pace,” said Liz."
+  },
+  "og1-10": {
+    "prompt": "What does the class need most: more pens, more books, or more plants?",
+    "passage": "Some kids ask for pens. Pens run out fast when kids write each day. With pens, kids can take notes and make maps. “When each kid has a pen, no one waits,” said Ms. Banks.\nSome kids want books. Books let kids read at their own pace. A shelf of books means a kid can pick a text they like. Books last for years, so one box helps many classes.\nOther kids want plants. Plants make the room feel calm and fresh. Kids take turns to give the plants drinks. Plants help the class learn how roots and stems grow."
+  },
+  "og1-11": {
+    "prompt": "Whose plan should the class use for the party: Sam’s, Kim’s, or Ben’s?",
+    "passage": "Sam’s plan is a game day. Each kid picks a game, so no one is left out. Sam’s mom said she can bring the nets and the balls. Sam’s plan costs nothing at all.\nKim’s plan is a snack swap. Each kid brings one dish from their family. Kim’s dad said the class will taste food from ten homes. Kim’s list means no kid eats a thing they can not have.\nBen’s plan is a craft fair. Kids make a thing and set it on a desk for the class to see. Ben’s teacher said the crafts can go on the hall wall after. Ben’s plan lets a shy kid join in with no talking."
+  },
+  "og1-13": {
+    "prompt": "Which job should the class do first: unpack the boxes, unlock the shed, or unplug the old lamps?",
+    "passage": "The boxes sit in the hall. If we unpack them, the class can use the new books at once. To unpack is a job the whole class can do at the same time. It will undo the mess by the door.\nThe shed is locked. If we unlock it, we can get the nets and bats for recess. To unlock the shed takes one kid and one key, so it is quick. Then every class can get in all week.\nThe old lamps are still plugged in. If we unplug them, the room will not get so hot. To unplug is the safest job to begin with. It will cut the cost for the school each month."
+  },
+  "og2-06": {
+    "prompt": "What should the class do on the coldest day: stay inside, go to the gym, or go out in the snow?",
+    "passage": "Most kids would stay inside. A child who did not bring a cold-weather coat will not be left out. Inside, the class can find a quiet game and talk. The teacher can hold a story by the window.\nSome kids want the gym. In the gym a child can run, roll, and climb. It is wild and warm at the same time. Kids who sit still all morning find it hard to be still after lunch, too.\nOther kids want to go out. Cold air wakes up a mind that has gone cold. A short time in the snow is kind to the kids who love it. They can roll a ball of snow and be back before the bell."
+  },
+  "og2-07": {
+    "prompt": "What is the best way to say thank you: write a note, knock on the door, or wrap a small gift?",
+    "passage": "You can write a note. A note can be read again and again, so the thank you lasts. When you write, you get to say just what you mean. A note can go in the mail, so it works even if you are far away.\nYou can knock on the door and say it out loud. The one who hears it can see your face and know you mean it. A knock takes no time at all. You can do it the same night, while it is still fresh.\nYou can wrap a small gift. A gift shows you thought about what they like. You can wrap it and tie the knot yourself. A gift gets used, so they will think of you each time they reach for it."
+  },
+  "og2-08": {
+    "prompt": "Where is the best place to read: in your room, out in the yard, or in town at the library?",
+    "passage": "Your room is quiet. No sound can drown out the book. You can read as long as you want, even by the light of the moon. You can keep your food and a cool drink beside the bed.\nThe yard is fresh. You can look up at a cloud when you stop to think. The light is good, so your eyes will not get sore. You can hear a cow or a bird in the next field and still read on.\nIn town, the library has rooms full of books. If you do not like one book, you can go and get a new one. You can meet a group that reads the same book. The staff will help you find out about a new one."
+  },
+  "og2-09": {
+    "prompt": "What should the class store sell: berry snacks, more books, or care kits?",
+    "passage": "A berry snack sells fast. Kids are hungry here at ten, and a berry is good for them. The store can carry berries from the farm up the road. Each one costs a dime, so every kid can buy one.\nMore books would help. A kid can carry a book home and bring it back the next day. Books do not go bad the way a berry does. The store can sell a used book for less and still care for the shelf.\nCare kits hold a bandage, a comb, and a spare sock. A kid who falls on the stone square can get one here. The kits sit by the fire door, so the staff can grab one fast. One kit can care for ten kids."
+  },
+  "og2-10": {
+    "prompt": "What should the class pick for the fall party: a pumpkin hunt, a monster play, or a hamster visit?",
+    "passage": "A pumpkin hunt is simple. A hundred small pumpkins can hide in the yard. Children of any age can join and still win. Each child takes a pumpkin home at the end.\nA monster play lets children act. Each child gets a part, so no one sits out. The class can make the masks in art first. Parents can come and watch the children on the stage.\nA hamster visit brings a real animal into the room. Children get to hold the hamster and feed it. The class can learn how a hamster stores food in its cheeks. A visit costs nothing if a child brings their own pet."
+  },
+  "og2-11": {
+    "prompt": "What makes the best class helper: being helpful, being careful, or showing kindness?",
+    "passage": "A helpful kid hands out the sheets and clears the sink. The class gets more done, so there is time to play. A helpful kid notices a job before the teacher asks for it.\nA careful kid checks that the lids are shut and the mats are flat. Nothing gets broken, so nothing is useless by the end of the week. A careful kid reads the whole page before starting.\nKindness means you see the kid who is sad. A kid who shows kindness will sit with them at lunch. The payment for kindness is a friend. Kindness makes a room where no one feels hopeless."
+  },
+  "og2-12": {
+    "prompt": "What is the best thing to do at recess: play a game, rest, or help clean up?",
+    "passage": "Kids who played a game come back happy. They jumped and ran, so they are not restless in class. The fastest kids and the slowest kids all get a turn.\nKids who are resting get their breath back. A kid who played hard all morning is tired by noon. Resting on the grass is calm, and you can talk with a friend while you sit.\nSome kids picked up the dusty balls and the bats. The yard looks better, so the next class finds it clean. A kid who landed a job like this learns to see what needs doing."
+  },
+  "og2-13": {
+    "prompt": "What should the team do if it rains on game day: postpone it, play in the rain, or move it to the gym?",
+    "passage": "If we postpone the game, no one gets hurt on a wet field. The team can submit a new date to the league. The postgame party can still be held when the sun is out.\nIf we play in the rain, no date is lost. The team has trained for weeks, and a misstep in the mud is part of the fun. The fans are here, and some came a long way on the subway.\nIf we move the game to the gym, it starts on time and stays dry. The floor is flat, so a misstep is less likely. The gym has seats, so more fans can watch than at the field."
+  },
+  "og2-14": {
+    "prompt": "What is the best thing to do on the hottest day: go swimming, stay in and read, or go running early?",
+    "passage": "Swimming keeps you cool while you move. The pool is bigger than the splash pad, so more kids fit at once. A sitter can watch the little ones from the shade.\nStaying in is the safest plan. You are not running in the heat, so you will not get sick. Inside, the fan is on and the room stays cool all day long.\nRunning early beats the heat. At six the air is still cool and the path is not crowded. When you have stopped, the whole day is still ahead of you."
+  },
+  "og3-01": {
+    "prompt": "Where should the class trip go: the city, the ice rink, or the gem mine?",
+    "passage": "In the city you can see a giant building up close. The class can take a bus and visit a museum for free. In the city there is always a place to eat a bowl of rice or a slice of pizza.\nAt the ice rink every kid skates at once. The ice is cold, so the class stays cool even in June. A coach can teach a kid to glide in a single hour.\nAt the gem mine each kid digs in a cage of sand and finds a gem. They take the gem home in a nice box. A guide can name each gem and say where it came from."
+  },
+  "og3-02": {
+    "prompt": "What should the class make for the fair: fudge, a huge bridge, or badges?",
+    "passage": "Fudge sells out fast at a fair. The class can make a huge pan of fudge in one morning. Each page of the recipe is simple, so every kid can help.\nA huge bridge made of card would show what the class learned. Kids can judge which bridge holds the most weight. The bridge can stay on the edge of the hall after the fair is over.\nBadges are cheap to make and every kid gets one. A badge can be worn all year, so the fair is not over when it ends. Kids can design a badge in art class first."
+  },
+  "og3-03": {
+    "prompt": "What should the class build: a robot, a paper tiger, or a music machine?",
+    "passage": "A robot can be made from a motor and an open box. The class can program it to go left and right. A robot would show the school what the class learned about power.\nA paper tiger is huge and cheap. Every kid can paint a part of the tiger. It can hang over the stage at the open house for all the families to see.\nA music machine makes a tune when you pull a lever. Kids who like music get to tune it. A visitor can play it, so the table is never quiet."
+  },
+  "og3-04": {
+    "prompt": "What should the class do with the coins they saved: buy a toy, haul in soil for a garden, or paint a mural?",
+    "passage": "A new toy would be used every day at indoor recess. A boy or girl who finishes early has something to do. The toy costs few coins, so some are left over.\nIf we haul in soil, the class can grow food. The garden will last for years, not weeks. Kids can boil the beans they grow and taste them.\nA mural can be drawn on the back wall. Each kid draws a part, so it is joint work. Paint costs fewer coins than a toy, and the whole school will see it."
+  },
+  "og3-05": {
+    "prompt": "What is the best way to spend a free hour: baking, riding a bike, or making art?",
+    "passage": "Baking fills the house with a smell that makes everyone smile. You are making a thing that others can share. Hoping the cake rises teaches you to wait.\nRiding a bike takes you out of the house. You get stronger each time you ride up the hill. The wind on a shiny day is the best part of it.\nMaking art needs no one else, so you can start right away. You can keep trying until the line looks right. The art is yours to hang, and it lasts."
+  },
+  "og3-06": {
+    "prompt": "What makes a day happier: playing with puppies, telling the funniest joke, or trying a new thing?",
+    "passage": "Puppies make people happier the moment they walk in. A kid who cried will stop when a puppy licks their hand. Families with puppies go outside more.\nThe funniest joke spreads. One kid laughs, then the whole table. A kid who tried to cheer up a friend with a joke is often the first one they look for.\nTrying a new thing feels hard, then good. Kids who tried out for a team said they were happier after, even when they did not make it. Each try makes the next one easier."
+  },
+  "og3-07": {
+    "prompt": "What should the class study this unit: the robin, the camel, or the river?",
+    "passage": "The robin lives right outside the cabin window. Kids can watch a robin build a nest without leaving the room. A robin comes back each spring, so the study can go on for years.\nThe camel is new to every kid in the class. A camel can go a week with no water, which solves a hard problem. The class can visit the camel at the zoo in one trip.\nThe river runs past the school. Kids can take a wagon of jars down and test the water. A river study links to the robin and the camel, since every animal needs water."
+  },
+  "og3-08": {
+    "prompt": "What should the class keep on the quiet table: a puzzle, a turtle, or a shelf of jungle books?",
+    "passage": "A puzzle lets two kids work at the table with no talking. A puzzle has one answer, so a kid knows when they are done. The same puzzle can be done again by the next group.\nA turtle is alive, so kids learn to care for it. Watching a turtle swim is as calm as a candle. Kids can feed the turtle a bit of apple each day.\nA shelf of jungle books lets each kid pick their own. A book costs little and does not need to be fed. A kid who is tired can read a simple one and still take part."
+  },
+  "og3-09": {
+    "prompt": "What should the school sell at the game: soda, bananas, or panda stickers?",
+    "passage": "Soda sells the fastest on a hot day. One crate of soda brings in about ten dollars. The stand can store soda away for the next game, since it keeps.\nA banana is better for a player than soda. Bananas cost about the same and come in a case. A fan can eat a banana and come back to the stand later.\nPanda stickers last. A fan can put one on a water bottle and it stays all season. Stickers do not spoil, so none is thrown away. A sheet costs about a dollar."
+  },
+  "og3-10": {
+    "prompt": "What should the class do when a game is not fair: stop it, change the rules, or let it go?",
+    "passage": "If it isn’t fair, stop it. They’re all upset, and no one can play well when they’re angry. We’ll come back to it after lunch when heads are cool. Nobody gets hurt if the game ends early.\nChange the rules instead. I’ve seen a game fixed by one new rule. If we don’t change it, the same thing will happen again next week. The kids who made the rule will stick to it.\nSometimes it’s best to let it go. We can’t fix every game, and the bell is close. They’re still friends, and the next game starts fresh. Not every problem is worth a long talk."
+  },
+  "og3-11": {
+    "prompt": "What should the class build for the fair: a weather station, a motion machine, or a model mansion?",
+    "passage": "A weather station takes one action each day: read it and write it down. Stations like it are used across the nation, so the class is doing real work. The station can stay up after the fair.\nA motion machine shows a chain of action. Each part sets the next one in motion. Kids can test it again and again until the motion is smooth.\nA model mansion shows a vision of how people once lived. Kids can build each room and label it. The mansion is the kind of thing a crowd stops to look at."
+  },
+  "og3-12": {
+    "prompt": "Which job should the class learn about: an artist, a dentist, or a cyclist?",
+    "passage": "An artist shows how an idea is made visible. The class could paint with washable paint and see the steps. An artist can come in for an hour and leave work on the wall.\nA dentist keeps the class healthy. Kids learn a habit they will use every day of their lives. A dentist can show which problems are fixable and which are not.\nA cyclist stays active and shows how the body works. The class could time a short ride and chart it. A cyclist can teach how to fix a flat, which every kid will need one day."
+  },
+  "og3-13": {
+    "prompt": "What helps most before a test: a preview, a replay of last week, or time to redo the hard parts?",
+    "passage": "A preview shows what is coming. Kids can decode the new words before they meet them in the test. A preview takes ten minutes and protects a kid from a surprise.\nA replay of last week brings back what was taught. Kids who missed a day get to hear it again. A replay shows which parts the class has kept and which have gone.\nTime to redo the hard parts fixes what is broken. A kid who got it wrong gets to try again. A redo is work the kid does, so the teacher sees what they can do on their own."
+  },
+  "og4-01": {
+    "prompt": "Which should the class report on: transport, volcanoes, or writing systems?",
+    "passage": "Transport touches every day. The class can describe how a tractor, a train and a truck each move a load. Transport links to export, so the report can reach beyond our own nation.\nA volcano can erupt with little warning. The class can construct a model that erupts and film it. A report on volcanoes links to rock, heat and the shape of the land.\nA script is how people record what they know. The class can describe how one script changed over time. Each student can design a script of their own and write a line in it."
+  },
+  "og4-02": {
+    "prompt": "How should the class pick its project: inspect past projects, construct something new, or reflect on what they want to learn?",
+    "passage": "If we inspect past projects, we can see what worked. The class can reject the ideas that failed before. It takes one lesson, so the mission starts quickly.\nIf we construct something new, we learn by doing. Students respect work they built with their own hands. A project made from scratch belongs to the class and to no one else.\nIf we reflect first, each student names what they want to learn. The project then matches the class, not the teacher. Reflecting makes it easier to inspect the work at the end."
+  },
+  "og4-03": {
+    "prompt": "How should the class show its progress: a video, an audio recording, or a written report?",
+    "passage": "A video makes progress visible. Families can watch it at home at any hour. The class can produce one in an afternoon with a single phone.\nAn audio recording is quick and cheap. A shy student can speak without being seen. Audio can be played in the hall, so the whole school hears it.\nA written report lasts. Students practise cursive and plan their words. A reader can go back and check a line, which you cannot do with a video that runs on."
+  },
+  "og4-04": {
+    "prompt": "Who should the class invite to speak: an actor, a solar engineer, or a famous athlete?",
+    "passage": "An actor can show how the picture of a person is built. Students get to act out a scene in the lesson itself. An actor knows how to make a room pay attention.\nA solar engineer works on real problems. The class could see how a panel turns light into power. The work is growing, so students learn what the job really involves.\nA famous athlete draws the whole school. They can speak about practice and failure, which is the reality behind the fame. Students remember the day for years."
+  },
+  "og4-05": {
+    "prompt": "What should the class perform at the show: a duet, a poem, or a radio play?",
+    "passage": "A duet needs only two students, so practice is easy to plan. Two voices sound bigger than one. A duet can be learned in a week.\nA poem can be written by the class. Each student says a line, so everyone is on stage. A poem needs no music, so no one is left out who cannot sing.\nA radio play uses sound alone. Students make the noises, so the giant and the lion are both real. No costumes are needed, which keeps the cost near zero."
+  },
+  "og4-06": {
+    "prompt": "What should the class grow in the garden: fruit, blue flowers, or vegetables for the kitchen?",
+    "passage": "Fruit can be eaten right there in the garden. A few trees will give fruit for eight years or more. Students who grew it are more likely to try it.\nBlue flowers rescue a dull yard. They draw the bees that the whole garden needs. Flowers take less water than fruit trees do.\nVegetables go straight to the kitchen. The cook can use them the same week they are picked. A crop can be grown and picked inside one term, so every student sees the end."
+  },
+  "og4-07": {
+    "prompt": "How should the class settle a rule dispute: collect the facts, compare with another class, or suppose how each side feels?",
+    "passage": "Collect the facts first. It is impossible to judge a dispute without them. Facts stop the loudest voice from winning the argument. A written record also means no one can claim later that it was all irregular.\nCompare with another class. If their rule works, ours can change. Comparing shows which part of our rule is irregular and which part is sound. It costs nothing but a short conversation.\nSuppose how each side feels. A rule can be perfectly legal and still be impolite. Students who imagine the other side argue less. It is the only step that asks both sides to collect something from each other."
+  },
+  "og4-08": {
+    "prompt": "Who should headline the school social: a musician, a magician, or a chef?",
+    "passage": "A musician gets the room moving. Music plays while people talk, so it is never silent. A musician can play through the whole event, not just one slot.\nA magician makes the night special. Everyone stops and watches the same thing at the same moment. A magician can work a small crowd or a large one.\nA chef makes something delicious that everyone shares. Food gives a cautious guest a reason to stay. The chef can cook in front of the crowd, which is a show of its own."
+  },
+  "og4-09": {
+    "prompt": "What is the best way to start a new unit: a visit, a question, or a story?",
+    "passage": "A visit at the beginning gives the class something real. Students who went are not forgetting it a month later. A visitor can answer what a textbook omitted.\nA question at the beginning makes students think before they are told. A student who has admitted they do not know is ready to learn. The question can be returned to at the end.\nA story at the beginning gives the unit a shape. Students who preferred reading are hooked at once. A story can be opened again whenever the class gets lost."
+  },
+  "og5-01": {
+    "prompt": "How should the school share its news: a photo board, a phone app, or the chorus assembly?",
+    "passage": "A photo board in the hall is seen by everyone who passes it. A photograph tells a story with no reading at all. The board costs almost nothing and can be changed each week.\nA phone app reaches families at home. A graph in the app can show how the school is doing. Parents get the news the moment it breaks, with no echo of last month.\nThe chorus assembly brings the whole school into one room. Students hear the news together and can ask about it on the spot. The echo of a good assembly lasts all week."
+  },
+  "og5-02": {
+    "prompt": "What should the class study next: myths, cyber safety, or the symbol system in maths?",
+    "passage": "A myth carries what a people believed. Students can type a myth of their own in the same style. Myths explain words we are still using today.\nCyber safety is used the same day it is taught. Every student has a device in their hand. The class can build a system of rules they all agree to.\nThe symbol system in maths unlocks every later topic. A student who reads symbols well works faster. Symbols appear in science and music too, so one lesson pays off three times."
+  },
+  "og5-03": {
+    "prompt": "What should the class write for the autumn show: a rhyme, a hymn, or a rhythm piece?",
+    "passage": "A rhyme is easy to remember. The audience can join in on the last word of each line. A rhyme can be written by a student who does not read music.\nA hymn is sung together, so the whole class has one voice. A hymn suits the autumn mood. The music teacher already has the parts in the cupboard.\nA rhythm piece needs no words at all. Students who do not want to sing can still take part. The rhythm can be clapped, so no instrument has to be bought."
+  },
+  "og5-04": {
+    "prompt": "Which instrument should the science room buy: a telescope, a microscope, or a set of thermometers?",
+    "passage": "A telescope reaches the furthest. The class could photograph the moon and measure it. One telescope serves a whole group at once.\nA microscope opens biology. Every leaf and drop of water becomes a lesson. Each student can have a turn at the eyepiece within one period.\nA set of thermometers lets every student take a reading at the same time. The data can be plotted in geometry. Thermometers are the cheapest of the three, so there is money left for slides."
+  },
+  "og5-05": {
+    "prompt": "What should the group do for culture night: cook soup with a chef, show an antique machine, or perform a ballet?",
+    "passage": "A chef can make soup for the whole group at once. Everyone eats together, which starts the talking. The recipe is unique to one family, so it carries a story with it.\nAn antique machine shows how work was done before. The group can take turns to run it. A machine draws a crowd that would walk straight past a poster.\nA ballet is a unique thing to watch. The group rehearses for weeks, so the piece is their own. A short ballet fits in the middle of the night and holds the room."
+  },
+  "og5-06": {
+    "prompt": "What should the class cook this month: bread in the oven, soup on the stove, or something cold?",
+    "passage": "Bread in the oven fills the room with a smell everyone loves. Some students have never seen dough rise. One batch feeds the whole class.\nSoup on the stove uses up whatever is left in the kitchen. Each student can add one thing to the pot. Soup is done in under an hour, so it fits in one lesson.\nA cold dish needs no oven and no oven glove. It is the safest thing to make with a young class. It can be made ahead and eaten the next month at the fair."
+  },
+  "og5-07": {
+    "prompt": "What is worth the most in a group project: hard work, the right word, or knowing the world outside?",
+    "passage": "Hard work gets the job done. A group that works will finish even when the plan is poor. Work shows up in what the class can see on the day.\nThe right word saves a group from its worst arguments. One clear sentence can settle a dispute. A group that can name the problem can solve it.\nKnowing the world outside gives the project a point. A group that knows who will use their work makes better choices. It turns a school task into something worth doing."
+  },
+  "og5-08": {
+    "prompt": "What should the class improve first: the rubbish system, the distance between classes, or the final assembly?",
+    "passage": "The rubbish system is the easiest to fix. One package of bins would sort the garbage. The natural result is a cleaner yard within a week.\nThe distance students walk between classes wastes time. A change to the timetable would give back ten minutes a day. Over a year that distance adds up to whole days of learning.\nThe final assembly is what families remember. It takes courage to stand in front of the school, and that is worth practising. One good sentence can set the tone for the term."
+  },
+  "og5-09": {
+    "prompt": "What ought the class do with the raffle money: buy books, fund a trip, or save it?",
+    "passage": "Books bought now are used all year. Every student is taught from them. A book brought home reaches the family as well.\nA trip is a day no one forgets. Students who thought they hated history change their minds on a trip. The class fought hard for the money, so they ought to enjoy it.\nSaving means a bigger thing next year. The money caught this year could be doubled. A class that has saved is taught patience, which is worth something too."
   }
 }

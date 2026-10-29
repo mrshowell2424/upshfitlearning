@@ -173,18 +173,29 @@ const ADAPTATIONS: Adaptation[] = [
       const map =
         "{ " + titles.map(([, k, t]) => k + ": '" + t + "'").join(", ") + " }";
 
+      // Step 11 hands the reader each text as its own chip.
+      const step11 = "[story], true)";
+      if (!html.includes(step11)) return html;
+
       return html
         .replace(decl, decl.replace(", story,", ", story0,"))
+        .replace(step11, "STORIES, true)")
         .replace(
           xt,
           xt +
             "\n    // The story this lesson's workbook actually prints. Resolved the\n" +
             "    // same way the decodable page resolves it, so the two agree. The\n" +
-            "    // skills with no printable story keep the book reference.\n" +
+            "    // skills with no printable story keep the book reference, minus\n" +
+            "    // its page number: a page in a book the site does not ship tells\n" +
+            "    // a teacher nothing, and the title is what they search for.\n" +
+            "    // A lesson that uses two texts keeps them apart, so step 11 can\n" +
+            "    // give each one its own box rather than one long run-on.\n" +
             "    const DTITLE = " + map + ";\n" +
-            "    const story = DTITLE[id] || ((XT.DEC || {})[id] || [])[0]\n" +
+            "    const STORIES = String(DTITLE[id] || ((XT.DEC || {})[id] || [])[0]\n" +
             "      || (OGD[id] && OGD[id].p && OGD[id].p.dec ? OGD[id].p.dec.title : '')\n" +
-            "      || story0;"
+            "      || story0).split(' \u00b7 ')\n" +
+            "      .map((t) => t.replace(/\\s*\\(p\\.\\s*\\d+\\)/g, '').trim()).filter(Boolean);\n" +
+            "    const story = STORIES.join(' \u00b7 ');"
         );
     },
   },
@@ -300,7 +311,7 @@ const ADAPTATIONS: Adaptation[] = [
     name: "remove the Open Level notebook link from lesson step 11",
     apply: (html) =>
       html.replace(
-        /Object\.assign\((mk\(11,[\s\S]*?\[story\], true\)),\s*\{ href: level === 'Level 2'[\s\S]*?' \}\),/,
+        /Object\.assign\((mk\(11,[\s\S]*?STORIES, true\)),\s*\{ href: level === 'Level 2'[\s\S]*?' \}\),/,
         "$1,"
       ),
   },
