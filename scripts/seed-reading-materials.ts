@@ -229,6 +229,19 @@ const ADAPTATIONS: Adaptation[] = [
       if (out === null) return html;
 
       const steps: [string, string][] = [
+        // The cut section carried flex:1, and the page spreads what is left
+        // over with space-between. Without it the slack fell into the gap
+        // under the header and pushed the heart words a third of the way
+        // down the page. The partner read takes the flex instead, so the
+        // heart words sit up under the rule and the page still fills.
+        [
+          '<div style="display:flex;flex-direction:column;gap:8px;break-inside:avoid;' +
+            'page-break-inside:avoid">\n        <div style="font-size:15px;font-weight:800;' +
+            'color:#2F3E2E">6. Read the sentences to a partner.',
+          '<div style="display:flex;flex-direction:column;gap:8px;flex:1;break-inside:avoid;' +
+            'page-break-inside:avoid">\n        <div style="font-size:15px;font-weight:800;' +
+            'color:#2F3E2E">6. Read the sentences to a partner.',
+        ],
         ["6. Read the sentences to a partner.", "5. Read the sentences to a partner."],
         ["7. Voice fun! Read the sentences 3 times.", "6. Voice fun! Read the sentences 3 times."],
         ["8. Writing. Read the passage.", "7. Writing. Read the passage."],
