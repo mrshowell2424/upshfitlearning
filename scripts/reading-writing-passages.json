@@ -1,0 +1,62 @@
+{
+  "cvc-a": {
+    "prompt": "Which is the best pet: a cat, a rat, or a pup?",
+    "passage": "Sam has a cat named Tab. Tab naps on a mat and purrs on his lap. A cat can stay home all day and does not need a walk. The vet said a cat can live for 15 years, so it will be with you a long time.\nMax is a rat. Max is fast and can run up an arm. Max can learn to grab a snack when Sam taps a can. A rat is small, so it fits in a pen that sits on a desk.\nPat has a pup. The pup can run and play in the yard, so Pat gets to run too. A pup can sit and come when you call its name. At night the pup will nap by the bed and keep Pat safe."
+  },
+  "cvc-mix": {
+    "prompt": "Which is the best pet to pick: a bug, a pig, or a hen?",
+    "passage": "Ben has a bug in a box. The bug is small and can sit on his hand. A bug does not cost much, and it eats just a bit of leaf. A bug can go with you on a trip.\nMom has a pig on the farm. The pig likes to dig in the mud, and Ben can hug its back. Mom said, “A pig can learn its name and come when you call.” One pig can eat the scraps left from lunch, so less food is lost.\nJan has a hen in a pen. The hen can lay an egg each day, so the family gets eggs for free. The hen pecks up bugs in the grass and keeps the yard clean. A hen will sit on your lap if you stay still."
+  },
+  "dig": {
+    "prompt": "Who should pick what is for lunch: the kids, Ms. Shaw, or the two of them as a team?",
+    "passage": "Beth wished she could pick her own lunch. “Then I would get chicken, and I would eat it all,” she said. Kids who pick their lunch eat more food and throw less in the trash. Picking helps a kid think about what is good for them.\nMs. Shaw is the lunch boss. She shops for fresh food each week and checks that each dish has a fruit with it. She can make the line go fast, so no kid is late to class. She knows which lunch will fill up a kid who did not eat at home.\nChad thinks the kids and Ms. Shaw should pick as a team. The kids could show Ms. Shaw which dish they wish for. Then Ms. Shaw could check that the lunch is still good for them. “When we both pick, we both get what we want,” said Chad."
+  },
+  "floss": {
+    "prompt": "Which is the best spot to live: on a hill, by a lake, or in the woods?",
+    "passage": "Bess lives on a hill. From the top of the hill she can see the whole town. She can sled down the hill when it snows. A hill gets a lot of wind, so a kite will fly all day.\nJeff lives by a lake. He can fish and swim in the still water. He gets to see ducks and frogs from his steps. Jeff said, “The lake is calm, and I can hear the frogs at night.”\nRuss lives in the woods. Tall trees give him shade on the hottest days. He can spot a fox or an elk before class. He can pull logs off the hill for the fire, so the house will not get a chill."
+  },
+  "blends": {
+    "prompt": "Which is the best class pet: a frog, a fish, or a crab?",
+    "passage": "Our class has a frog. The frog can jump and swim in its tank. Kids like to watch it snap up crickets. Mr. Grant said, “The frog helps us learn how frogs grow.”\nWe also have a fish. The fish swims fast and blends in with the plants. A fish just needs a pinch of flakes and clean water. Fish do not make a sound, so the class stays calm.\nLast spring we had a crab. The crab slept under a flat rock and crept out at dusk. A crab can drop a claw and grow a new one, which the class thought was the best trick of all. A crab can live in a small tank with sand and a dish of salt water."
+  },
+  "vce": {
+    "prompt": "Which is the best recess game: tag, hide and seek, or the slide?",
+    "passage": "At recess, Kate likes to play tag by the gate. In tag you run the whole time, so you come back to class wide awake. Kate said, “Tag makes me smile, and I can play with lots of friends at once.”\nJane likes to make a game of hide and seek by the big pine tree. In hide and seek you must think of a safe place and stay quite still. Jane said the game is fun even on a hot day, since you do not have to race.\nMike likes to ride the slide and hide in the tube. He said the slide is fun because you take turns and no one gets left out. A kid who is new can join the line at the slide and play right away."
+  },
+  "vccv": {
+    "prompt": "Which is the most fun: a picnic, a party, or a contest?",
+    "passage": "Last summer we had a picnic in the park. We had muffins and a basket of fruit, and we sat on a blanket in the sun. “A picnic is calm, and you can rest and talk,” said my mom.\nThen my sister had a party in our kitchen. There was a magic trick and music, and kids danced until it was dark. My sister said, “A party has more to do, and it is never boring.” A party can be held in any weather.\nIn April our class had a contest. Each kid had a problem to solve, and the winner got a basket of candy. Victor said a contest makes you try your very best. Even the kids who did not win said the contest was the best part of the unit."
+  },
+  "vccvce": {
+    "prompt": "Which is the best treat: a pancake, a cupcake, or a milkshake?",
+    "passage": "On Sunday, Mom made pancakes. They were hot and fluffy inside. “A pancake fills you up, so you have energy all morning,” said Mom. We put fruit on top of ours.\nOn my birthday we had cupcakes with sunshine-yellow icing. Each kid got their own cupcake with a candle in it. A cupcake is a sweet surprise, and it is easy to take to a party.\nAt the lake we made a milkshake. A milkshake is cold, so it is the best treat on a hot day. You can mix in any fruit you like. A milkshake takes one minute to make, and it is big enough to share with a friend."
+  },
+  "ng-nk": {
+    "prompt": "Which is the best way to make music in class: sing a song, ring the bells, or bang a drum?",
+    "passage": "Hank likes to sing. “When I sing, I feel strong and brave,” said Hank. Kids who sing in a group learn to listen and take turns. A song can stick in your head all day, so you can sing it at home.\nSome kids ring the bells. A bell will ring even if you think you cannot sing, so no kid is left out. The bells help the class think about long sounds and short sounds. A bell is light enough to hold in one hand.\nOther kids bang the drum. A drum sets the beat, so the whole class can stay in time. You can bang a drum soft or strong, and both sound good. The drum is the best way to end a song with a bang."
+  },
+  "ck-tch": {
+    "prompt": "Which is the best farm animal: a duck, a chick, or a goat?",
+    "passage": "The duck swims in the pond and quacks. The duck can catch bugs in the water, which keeps the pond clean. It has webbed feet that help it swim fast.\nThe chick sits in a nest and pecks at seeds. It is soft and small, so kids can hold it and feel its fluffy feathers. A chick will grow into a hen, and a hen can lay an egg each day.\nThe goat munches grass and will not kick. A goat can snatch the weeds at the back of the lot, so the farmer does not have to cut them. Kids can hitch a small cart to a goat and take a ride."
+  },
+  "y": {
+    "prompt": "Which is the best thing to be: happy, funny, or friendly?",
+    "passage": "Molly is happy when she plays with her puppy. Being happy helps her feel calm and ready to learn. “When I am happy, I can do my best work,” said Molly.\nMolly’s brother Billy is funny. He tells jokes that make his family laugh. A funny kid can help a sad friend feel better. Billy said, “Making someone laugh is the best feeling.”\nSally is friendly. She is the first to say hi to a new kid in the hall. When Sally is on a team, every kid gets a turn. Sally said, “It only takes a second to make a kid feel lucky to be here.”"
+  },
+  "ai-ay": {
+    "prompt": "Which is the best day to have: a rainy day, a sunny day, or a windy day?",
+    "passage": "On a rainy day we stay inside and play games. We paint pictures and bake bread. “Rainy days are cozy, and we get to spend time together,” said Dad. Rain helps the plants grow, too.\nOn a sunny day we play outside and ride our bikes. We can stay at the park all day and get fresh air. Jay said, “Sunny days are the best because I can play ball.”\nOn a windy day we take our kites to the bay. The wind lifts a kite high into the gray sky. A windy day is the best day to sail, and it blows the rain clouds away. May said the wind keeps you cool while you run."
+  },
+  "ee-ea": {
+    "prompt": "Which is the best way to end the day: read a book, meet a friend, or sleep?",
+    "passage": "Lee reads before bed. He said reading helps him feel calm and fall asleep. When Lee reads, he can travel to new places in his mind. Kids who read each day learn more new words.\nJean likes to meet a friend at the creek. When she meets a friend, she gets to speak about her day and hear about theirs. Kids who meet up after school get to run and breathe fresh air.\nDean thinks it is best to sleep. A kid who sleeps nine hours can keep up in class the next day. Sleep heals the body after a week of work. “When I sleep, I dream, and the day starts clean,” said Dean."
+  },
+  "oa-ow": {
+    "prompt": "Which is the most fun: a boat ride, a snow day, or a show?",
+    "passage": "Last week we rode a boat on the lake. We saw a goat on the shore and fish below us. “A boat ride lets you see things you cannot see from land,” said our guide.\nThen it snowed, and school was closed. We made a snowman and drank hot cocoa. My brother said, “A snow day is a surprise, and you get the whole day off!”\nIn May we went to a show. The whole class rode a bus and sat in a row. A show tells a story, so you get to know how it will close. We got to go up on the stage and meet the cast when the show was over."
+  },
+  "ar-or": {
+    "prompt": "Which is the best place to go: a farm, a park, or a fort?",
+    "passage": "At the farm we saw a horse and fed the pigs corn. We got to pet a baby goat and pick a jar of fresh apples. “A farm teaches kids where their food comes from,” said Farmer Mark.\nAt the park we played on the swings and ran in the yard. There was a big field for sports. Lori said, “The park has more room to run and play.” The park is close to our street, and it costs nothing.\nAt the fort we saw a dark tower and a short wall made of stone. A guard in a uniform told us the story of the war. We got to sort the old carts and tools in the barn. The fort is the best place to learn how people lived long ago."
+  }
+}

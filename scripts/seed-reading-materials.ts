@@ -16,6 +16,7 @@
  */
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
+import WRITING from "./reading-writing-passages.json" with { type: "json" };
 import { db } from "@/lib/db";
 import { reading_materials } from "@/lib/db/schema";
 import { inArray, sql } from "drizzle-orm";
@@ -185,6 +186,60 @@ const ADAPTATIONS: Adaptation[] = [
             "      || (OGD[id] && OGD[id].p && OGD[id].p.dec ? OGD[id].p.dec.title : '')\n" +
             "      || story0;"
         );
+    },
+  },
+  {
+    // The writing page asks a child to pick a side and prove it from the
+    // passage. The prompts offered two options and the passages did not hold
+    // the two up evenly: a closing paragraph named a drawback for each, and an
+    // authority — a vet, a coach, a teacher — usually landed on one. Three of
+    // the fifteen were not even two-sided ("Should kids read every day?"), so
+    // there was one defensible answer and a child picking the other had
+    // nothing to underline.
+    //
+    // Each prompt now names three options and each passage gives one
+    // paragraph per option, with two to three sentences a child can quote. No
+    // paragraph argues against another, so the work is choosing the strongest
+    // proof rather than finding the answer the text prefers.
+    //
+    // The text lives in reading-writing-passages.json beside this script,
+    // because it is content and does not belong inside a regex. It is content
+    // the canvas should own; it sits here only because the canvas cannot be
+    // edited from this repo.
+    name: "give every writing prompt three options the passage supports",
+    apply: (html) => {
+      const table = (name: string, pick: (v: { prompt: string; passage: string }) => string) => {
+        const at = html.indexOf("const " + name + " = {");
+        if (at === -1) return null;
+        const end = html.indexOf("\n    };", at);
+        if (end === -1) return null;
+        const body = Object.entries(WRITING as Record<string, { prompt: string; passage: string }>)
+          .map(([k, v]) => "      " + JSON.stringify(k) + ": " + JSON.stringify(pick(v)) + ",")
+          .join("\n");
+        return { at, end: end + "\n    };".length, text: "const " + name + " = {\n" + body + "\n    };" };
+      };
+
+      const ebp = table("EBP", (v) => v.prompt);
+      const ebt = table("EBT", (v) => v.passage);
+      if (!ebp || !ebt || ebt.at < ebp.at) return html;
+
+      let out =
+        html.slice(0, ebp.at) + ebp.text + html.slice(ebp.end, ebt.at) + ebt.text + html.slice(ebt.end);
+
+      // Two words that still said there were two sides.
+      const hunt = "\u{1F50E} Proof hunt: pick your side, then underline 2 sentences in the passage that prove it.";
+      if (!out.includes(hunt)) return html;
+      out = out.replace(
+        hunt,
+        "\u{1F50E} Proof hunt: pick one, then underline 2 sentences in the passage that prove it."
+      );
+
+      // "For example" invites an opinion; naming the text asks for the quote.
+      // The lesson card already made this swap on its own copy of the frames;
+      // doing it at the source means the workbook says it too.
+      const frame = "'\u{1F50E} My Proof: For example, ______.'";
+      if (!out.includes(frame)) return html;
+      return out.replace(frame, "'\u{1F50E} My Proof: The text says, \"______.\"'");
     },
   },
   {
