@@ -18,6 +18,7 @@ import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import WRITING from "./reading-writing-passages.json" with { type: "json" };
 import SPLITS from "./reading-skill-splits.json" with { type: "json" };
+import PARTW from "./reading-part-words.json" with { type: "json" };
 import { db } from "@/lib/db";
 import { reading_materials } from "@/lib/db/schema";
 import { inArray, sql } from "drizzle-orm";
@@ -288,18 +289,15 @@ const ADAPTATIONS: Adaptation[] = [
         // Phonological awareness, written down
         '      <sc-if value="{{ p.hasPa }}" hint-placeholder-val="{{ true }}">\n' +
         '      <div style="display:flex;flex-direction:column;gap:8px;break-inside:avoid;page-break-inside:avoid">\n' +
-        "        " + H("1", "Change the sound. Write the word you started with, then the new word.") + "\n" +
-        '        <div style="font-size:12.5px;font-weight:600;color:#57534e">{{ p.paDir }}</div>\n' +
+        "        " + H("1", "Change the sound. Write the word you hear, then the new word.") + "\n" +
+        '        <div style="font-size:12.5px;font-weight:600;color:#57534e">Your teacher says the word and the change to make.</div>\n' +
         '        <sc-for list="{{ p.paItems }}" as="x" hint-placeholder-count="5">\n' +
         '          <div style="display:flex;align-items:flex-end;gap:10px;font-size:16px;font-weight:700">' +
         '<span style="flex:none;width:18px">{{ x.n }}.</span>' +
-        '<sc-if value="{{ x.hasFrom }}" hint-placeholder-val="{{ true }}">' +
-        '<span style="flex:none;min-width:76px;font-size:20px;font-weight:800;color:#111">' +
-        "{{ x.from }}</span></sc-if>" +
-        '<span style="flex:none;max-width:40%;font-size:13px;font-weight:600;color:#57534e;' +
-        'overflow-wrap:anywhere">{{ x.t }}</span>' +
-        '<div style="flex:1;min-width:0;display:flex;align-items:flex-end;gap:8px">' +
-        LINE.replace("min-height:34px", "min-height:40px") + "{{ x.ans }}</span></div></div>\n" +
+        LINE.replace("min-height:34px", "min-height:40px") + "</span>" +
+        '<span style="flex:none;font-size:13px;font-weight:700;color:#57534e;padding:0 4px">' +
+        "change</span>" +
+        LINE.replace("min-height:34px", "min-height:40px") + "{{ x.ans }}</span></div>\n" +
         "        </sc-for>\n" +
         "      </div></sc-if>\n" +
         // What says?
@@ -401,15 +399,19 @@ const ADAPTATIONS: Adaptation[] = [
             .replace(", dict]", ", dictAll]") +
             "\n    const subSibs = (SPLITS[id] || []).filter((x) => x !== subPat &&\n" +
             "      subAlts(subPat).some((a) => subAlts(x).some((b) => b.length > a.length && b.includes(a))));\n" +
-            "    // The part's own words first, then the rest of the skill's list.\n" +
-            "    // 'ost' has one word in a ten-word skill; a sheet that asks for ten\n" +
-            "    // needs ten, and every word here is already decodable at this level.\n" +
-            "    const narrow = (list) => { if (!subPat) return list;\n" +
+            "    // A part is one focus, so its lists hold that pattern and nothing\n" +
+            "    // else: an i_e lesson must not read a_e words. Ten of each come\n" +
+            "    // from the bank; a part with no bank yet shows only its own words\n" +
+            "    // from the skill list, short rather than off-pattern.\n" +
+            "    const PARTW = " + JSON.stringify(PARTW) + ";\n" +
+            "    const narrow = (list, kind) => { if (!subPat) return list;\n" +
+            "      const bank = PARTW[id + '|' + subPat];\n" +
+            "      if (bank && kind && bank[kind] && bank[kind].length) return bank[kind].slice();\n" +
             "      const hit = (list || []).filter((w) => subHits(subPat, w) &&\n" +
             "        !subSibs.some((L) => subHits(L, w)));\n" +
-            "      return hit.concat((list || []).filter((w) => !hit.includes(w))); };\n" +
-            "    const real0 = narrow(realAll);\n" +
-            "    const nonsense = narrow(nonsenseAll);\n" +
+            "      return hit.length ? hit : list; };\n" +
+            "    const real0 = narrow(realAll, 'real');\n" +
+            "    const nonsense = narrow(nonsenseAll, 'fake');\n" +
             "    const dict = narrow(dictAll);\n" +
             "    const label = subPat ? subName(cur, subPat) : label0;"
         )
@@ -754,6 +756,23 @@ const ADAPTATIONS: Adaptation[] = [
       const old =
         "splTests: ['g2', 'g3'].filter((g) => has('spl' + g.slice(1))).map((g) => ({ on: true, g, words: real.slice(0, 10),";
       if (!html.includes(old)) return html;
+      const head = html.indexOf("<head>");
+      if (head === -1) return html;
+      // The 2nd grade sheet prints landscape: ten writing slots and three
+      // dictation lines need the width more than the height. A named page
+      // carries the orientation, and the print fit leaves these alone rather
+      // than squeezing them back to a portrait column.
+      html =
+        html.slice(0, head + 6) +
+        "\n<style>@page land { size: letter landscape; margin: .45in }" +
+        " .dc-land { page: land }</style>\n" +
+        html.slice(head + 6);
+      const fit1 = "document.querySelectorAll('[data-wb]')].filter((e) =>";
+      const fit2 = "document.querySelectorAll('[data-wb]').forEach((e) => { e.style.zoom = ''";
+      if (!html.includes(fit1) || !html.includes(fit2)) return html;
+      html = html
+        .replace(fit1, "document.querySelectorAll('[data-wb]:not([data-land])')].filter((e) =>")
+        .replace(fit2, "document.querySelectorAll('[data-wb]:not([data-land])').forEach((e) => { e.style.zoom = ''");
       let out = html.replace(
         old,
         "splTests: ['g2', 'g3'].filter((g) => has('spl' + g.slice(1))\n" +
@@ -770,6 +789,10 @@ const ADAPTATIONS: Adaptation[] = [
           "            border: '1.5px solid #C9D3C4', borderRadius: 14, padding: '26px 30px',\n" +
           "            breakBefore: 'page', pageBreakBefore: 'always', minHeight: '9.6in',\n" +
           "            boxSizing: 'border-box', maxWidth: '7.7in', width: '100%', alignSelf: 'center' },\n" +
+          "          landBox: { display: 'flex', flexDirection: 'column', background: '#fff',\n" +
+          "            border: '1.5px solid #C9D3C4', borderRadius: 14, padding: '24px 30px',\n" +
+          "            breakBefore: 'page', pageBreakBefore: 'always', minHeight: '7.1in',\n" +
+          "            boxSizing: 'border-box', maxWidth: '10in', width: '100%', alignSelf: 'center' },\n" +
           "          patUpper: String(label).toUpperCase(),\n" +
           "          words: real.slice(0, 10),"
       );
@@ -822,7 +845,7 @@ const ADAPTATIONS: Adaptation[] = [
       // 2nd grade: one sheet, three scores, a marking legend, dictation lines.
       const g2 =
         '      <sc-if value="{{ t.isG2 }}" hint-placeholder-val="{{ true }}">\n' +
-        '      <div data-wb="true" style="{{ t.box }}">\n' +
+        '      <div data-wb="true" data-land="true" class="dc-land" style="{{ t.landBox }}">\n' +
         '        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">\n' +
         '          <div style="display:flex;align-items:flex-end;gap:14px;flex:1;font-size:21px">' +
         '<span style="white-space:nowrap">Name:</span>' +
@@ -833,7 +856,7 @@ const ADAPTATIONS: Adaptation[] = [
         'line-height:1.75;white-space:nowrap">Spelling: _____ /10<br>Language: _____ /3<br>' +
         "Handwriting: _____ /1</div>\n" +
         "        </div>\n" +
-        '        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 34px;margin-top:22px;flex:1;align-content:space-between">\n' +
+        '        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 46px;margin-top:20px;flex:1;align-content:space-between">\n' +
         '          <sc-for list="{{ t.slotsCol }}" as="s" hint-placeholder-count="10">\n' +
         "            " + ROW + NUM("22px") + SLOT.replace("height:32px", "height:52px") + "</div>\n" +
         "          </sc-for>\n" +
@@ -866,9 +889,9 @@ const ADAPTATIONS: Adaptation[] = [
         '<div><div style="font-size:26px;font-weight:800;line-height:1.05">Spelling</div>' +
         '<div style="font-size:11.5px;font-weight:700">Pattern: {{ t.pattern }}</div></div>' +
         '<div style="display:flex;gap:7px">' + SCORE + "___ /10</span>" + SCORE + "___ %</span></div></div>" +
-        '<div style="flex:1;display:flex;flex-direction:column;gap:14px;margin-top:14px;justify-content:space-between">' +
+        '<div style="flex:1;display:flex;flex-direction:column;gap:20px;margin-top:18px;justify-content:space-between">' +
         '<sc-for list="{{ t.slots }}" as="s" hint-placeholder-count="10">' +
-        ROW + NUM("16px").replace("width:28px", "width:24px") + SLOT.replace("height:32px", "height:46px") +
+        ROW + NUM("16px").replace("width:28px", "width:24px") + SLOT.replace("height:32px", "height:54px") +
         "</div></sc-for></div>" +
         '<div style="display:flex;gap:16px;font-size:11.5px;font-weight:700;margin-top:9px">' +
         "<span>☐ I checked my spelling.</span><span>☐ I wrote neatly.</span></div></div>";

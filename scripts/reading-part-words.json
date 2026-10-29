@@ -1,0 +1,947 @@
+{
+ "ai-ay|ai": {
+  "fake": [
+   "naim",
+   "drail",
+   "vaint",
+   "graim",
+   "shail"
+  ],
+  "real": [
+   "rain",
+   "train",
+   "paint",
+   "mail",
+   "wait",
+   "chain",
+   "brain",
+   "trail",
+   "afraid",
+   "explain"
+  ]
+ },
+ "ai-ay|ay": {
+  "fake": [
+   "vay",
+   "blay",
+   "zay",
+   "thay",
+   "smay"
+  ],
+  "real": [
+   "play",
+   "stay",
+   "day",
+   "tray",
+   "gray",
+   "say",
+   "way",
+   "clay",
+   "spray",
+   "today"
+  ]
+ },
+ "ar-or|ar": {
+  "fake": [
+   "var",
+   "nar",
+   "plarm",
+   "drark",
+   "sharb"
+  ],
+  "real": [
+   "car",
+   "star",
+   "farm",
+   "hard",
+   "park",
+   "yard",
+   "dark",
+   "sharp",
+   "start",
+   "barn"
+  ]
+ },
+ "ar-or|or": {
+  "fake": [
+   "vorn",
+   "norg",
+   "plort",
+   "shorb",
+   "gorst"
+  ],
+  "real": [
+   "corn",
+   "fork",
+   "horn",
+   "born",
+   "short",
+   "storm",
+   "north",
+   "sport",
+   "horse",
+   "forty"
+  ]
+ },
+ "blends|cl": {
+  "fake": [
+   "clid",
+   "clem",
+   "clup",
+   "clost",
+   "clang"
+  ],
+  "real": [
+   "clap",
+   "club",
+   "clip",
+   "class",
+   "clock",
+   "cliff",
+   "climb",
+   "clean",
+   "close",
+   "cloud"
+  ]
+ },
+ "blends|fl": {
+  "fake": [
+   "flig",
+   "flem",
+   "flud",
+   "flost",
+   "flape"
+  ],
+  "real": [
+   "flag",
+   "flat",
+   "flip",
+   "flop",
+   "floss",
+   "flash",
+   "float",
+   "flute",
+   "flame",
+   "floor"
+  ]
+ },
+ "blends|st": {
+  "fake": [
+   "stug",
+   "stem",
+   "stip",
+   "stosh",
+   "stull"
+  ],
+  "real": [
+   "stop",
+   "step",
+   "stick",
+   "star",
+   "stand",
+   "stamp",
+   "still",
+   "storm",
+   "stone",
+   "street"
+  ]
+ },
+ "ck-tch|ck": {
+  "fake": [
+   "vick",
+   "nuck",
+   "pleck",
+   "grock",
+   "dack"
+  ],
+  "real": [
+   "duck",
+   "back",
+   "sock",
+   "neck",
+   "rock",
+   "kick",
+   "lock",
+   "stick",
+   "truck",
+   "black"
+  ]
+ },
+ "ck-tch|tch": {
+  "fake": [
+   "vatch",
+   "nutch",
+   "pletch",
+   "grotch",
+   "dritch"
+  ],
+  "real": [
+   "catch",
+   "match",
+   "watch",
+   "pitch",
+   "witch",
+   "fetch",
+   "stretch",
+   "ditch",
+   "hatch",
+   "scratch"
+  ]
+ },
+ "cvc-mix|e": {
+  "fake": [
+   "fep",
+   "ned",
+   "lem",
+   "zeb",
+   "dep"
+  ],
+  "real": [
+   "bed",
+   "net",
+   "hen",
+   "leg",
+   "pet",
+   "wet",
+   "men",
+   "ten",
+   "jet",
+   "red"
+  ]
+ },
+ "cvc-mix|i": {
+  "fake": [
+   "zin",
+   "fip",
+   "lig",
+   "mib",
+   "vit"
+  ],
+  "real": [
+   "pig",
+   "fin",
+   "lip",
+   "zip",
+   "hit",
+   "bit",
+   "win",
+   "dig",
+   "rib",
+   "mix"
+  ]
+ },
+ "cvc-mix|o": {
+  "fake": [
+   "lod",
+   "pog",
+   "vot",
+   "mog",
+   "nop"
+  ],
+  "real": [
+   "hop",
+   "dot",
+   "mop",
+   "log",
+   "cot",
+   "job",
+   "nod",
+   "rob",
+   "top",
+   "fog"
+  ]
+ },
+ "cvc-mix|u": {
+  "fake": [
+   "rup",
+   "dut",
+   "vug",
+   "mub",
+   "nup"
+  ],
+  "real": [
+   "bug",
+   "cub",
+   "mud",
+   "run",
+   "cup",
+   "sun",
+   "hug",
+   "tub",
+   "nut",
+   "gum"
+  ]
+ },
+ "dig|ch": {
+  "fake": [
+   "chen",
+   "chud",
+   "mich",
+   "chab",
+   "lech"
+  ],
+  "real": [
+   "chin",
+   "chat",
+   "chop",
+   "much",
+   "such",
+   "chip",
+   "rich",
+   "lunch",
+   "bench",
+   "chest"
+  ]
+ },
+ "dig|sh": {
+  "fake": [
+   "shap",
+   "shim",
+   "vish",
+   "mish",
+   "shup"
+  ],
+  "real": [
+   "ship",
+   "shop",
+   "fish",
+   "dish",
+   "shut",
+   "wish",
+   "cash",
+   "rush",
+   "shed",
+   "shell"
+  ]
+ },
+ "dig|th": {
+  "fake": [
+   "thib",
+   "thup",
+   "nath",
+   "thog",
+   "vith"
+  ],
+  "real": [
+   "thin",
+   "path",
+   "bath",
+   "math",
+   "with",
+   "moth",
+   "that",
+   "them",
+   "this",
+   "thud"
+  ]
+ },
+ "dig|wh": {
+  "fake": [
+   "whup",
+   "whad",
+   "whod",
+   "whib",
+   "whem"
+  ],
+  "real": [
+   "when",
+   "what",
+   "whip",
+   "white",
+   "whale",
+   "wheel",
+   "which",
+   "while",
+   "whisk",
+   "whiff"
+  ]
+ },
+ "ee-ea|ea": {
+  "fake": [
+   "veap",
+   "neam",
+   "dreab",
+   "pleash",
+   "treab"
+  ],
+  "real": [
+   "eat",
+   "read",
+   "team",
+   "beach",
+   "dream",
+   "clean",
+   "leaf",
+   "speak",
+   "teach",
+   "peach"
+  ]
+ },
+ "ee-ea|ee": {
+  "fake": [
+   "veet",
+   "neep",
+   "dree",
+   "bleeg",
+   "treep"
+  ],
+  "real": [
+   "feet",
+   "tree",
+   "green",
+   "sleep",
+   "three",
+   "week",
+   "sweet",
+   "queen",
+   "street",
+   "sheep"
+  ]
+ },
+ "floss|ff": {
+  "fake": [
+   "taff",
+   "giff",
+   "moff",
+   "deff",
+   "zaff"
+  ],
+  "real": [
+   "off",
+   "puff",
+   "cuff",
+   "stuff",
+   "sniff",
+   "cliff",
+   "staff",
+   "huff",
+   "stiff",
+   "fluff"
+  ]
+ },
+ "floss|ll": {
+  "fake": [
+   "nell",
+   "zill",
+   "dall",
+   "vell",
+   "tull"
+  ],
+  "real": [
+   "bell",
+   "tell",
+   "fell",
+   "hill",
+   "will",
+   "doll",
+   "pull",
+   "shell",
+   "spell",
+   "small"
+  ]
+ },
+ "floss|ss": {
+  "fake": [
+   "nass",
+   "viss",
+   "duss",
+   "hess",
+   "tiss"
+  ],
+  "real": [
+   "miss",
+   "kiss",
+   "mess",
+   "less",
+   "pass",
+   "glass",
+   "class",
+   "dress",
+   "grass",
+   "press"
+  ]
+ },
+ "floss|zz": {
+  "fake": [
+   "mazz",
+   "nuzz",
+   "tizz",
+   "gazz",
+   "lezz"
+  ],
+  "real": [
+   "buzz",
+   "fizz",
+   "jazz",
+   "fuzz",
+   "frizz",
+   "whizz",
+   "razz",
+   "fizzy",
+   "fuzzy",
+   "dizzy"
+  ]
+ },
+ "ng-nk|ng": {
+  "fake": [
+   "ving",
+   "nang",
+   "plong",
+   "grung",
+   "dreng"
+  ],
+  "real": [
+   "sing",
+   "ring",
+   "long",
+   "king",
+   "song",
+   "bring",
+   "wing",
+   "string",
+   "strong",
+   "thing"
+  ]
+ },
+ "ng-nk|nk": {
+  "fake": [
+   "vank",
+   "nunk",
+   "drenk",
+   "shonk",
+   "blunk"
+  ],
+  "real": [
+   "bank",
+   "pink",
+   "sink",
+   "think",
+   "drink",
+   "thank",
+   "trunk",
+   "blank",
+   "skunk",
+   "wink"
+  ]
+ },
+ "oa-ow|oa": {
+  "fake": [
+   "voat",
+   "noad",
+   "droap",
+   "bloak",
+   "groast"
+  ],
+  "real": [
+   "boat",
+   "coat",
+   "road",
+   "soap",
+   "goat",
+   "toast",
+   "float",
+   "coast",
+   "throat",
+   "roast"
+  ]
+ },
+ "oa-ow|ow": {
+  "fake": [
+   "vrow",
+   "nowl",
+   "drow",
+   "shrow",
+   "twow"
+  ],
+  "real": [
+   "snow",
+   "show",
+   "grow",
+   "slow",
+   "blow",
+   "throw",
+   "yellow",
+   "window",
+   "pillow",
+   "follow"
+  ]
+ },
+ "og1-04|c": {
+  "fake": [
+   "cug",
+   "cim",
+   "cep",
+   "caz",
+   "cum"
+  ],
+  "real": [
+   "cat",
+   "cup",
+   "can",
+   "cot",
+   "cut",
+   "cap",
+   "cob",
+   "cab",
+   "camp",
+   "cast"
+  ]
+ },
+ "og1-04|ck": {
+  "fake": [
+   "vick",
+   "nuck",
+   "zock",
+   "geck",
+   "dack"
+  ],
+  "real": [
+   "duck",
+   "back",
+   "sock",
+   "neck",
+   "rock",
+   "kick",
+   "lock",
+   "pick",
+   "luck",
+   "deck"
+  ]
+ },
+ "og1-04|k": {
+  "fake": [
+   "kib",
+   "kem",
+   "kug",
+   "kad",
+   "kez"
+  ],
+  "real": [
+   "kit",
+   "kid",
+   "kin",
+   "kept",
+   "keg",
+   "kelp",
+   "kilt",
+   "kiss",
+   "kind",
+   "kitten"
+  ]
+ },
+ "og1-06|qu": {
+  "fake": [
+   "quib",
+   "quem",
+   "quof",
+   "quez",
+   "quun"
+  ],
+  "real": [
+   "quit",
+   "quiz",
+   "quack",
+   "queen",
+   "quick",
+   "quilt",
+   "quail",
+   "quiet",
+   "quote",
+   "square"
+  ]
+ },
+ "og1-06|x": {
+  "fake": [
+   "vix",
+   "nax",
+   "zox",
+   "lexp",
+   "dox"
+  ],
+  "real": [
+   "fox",
+   "six",
+   "box",
+   "mix",
+   "fix",
+   "wax",
+   "tax",
+   "ox",
+   "exit",
+   "next"
+  ]
+ },
+ "og1-13|non-": {
+  "fake": [
+   "nonlad",
+   "nonmig",
+   "nonbet",
+   "nonsup",
+   "nonrick"
+  ],
+  "real": [
+   "nonstop",
+   "nonfat",
+   "nonsense",
+   "nonfiction",
+   "nonstick",
+   "nonliving",
+   "nonprofit",
+   "nonverbal",
+   "nonzero",
+   "nonmetal"
+  ]
+ },
+ "og1-13|un-": {
+  "fake": [
+   "unsip",
+   "unlad",
+   "unmog",
+   "unbet",
+   "unrick"
+  ],
+  "real": [
+   "unlock",
+   "unzip",
+   "undo",
+   "unfit",
+   "unpack",
+   "unplug",
+   "unsafe",
+   "untie",
+   "unwrap",
+   "unkind"
+  ]
+ },
+ "vccvce|a_e": {
+  "fake": [
+   "tanlake",
+   "bindate",
+   "vupcake",
+   "nascape",
+   "mandake"
+  ],
+  "real": [
+   "pancake",
+   "mistake",
+   "cupcake",
+   "escape",
+   "inflate",
+   "cascade",
+   "handmade",
+   "backstage",
+   "landscape",
+   "milkshake"
+  ]
+ },
+ "vccvce|i_e": {
+  "fake": [
+   "nimvide",
+   "vunshine",
+   "pindite",
+   "lastine",
+   "sumfite"
+  ],
+  "real": [
+   "inside",
+   "invite",
+   "sunshine",
+   "combine",
+   "confine",
+   "decline",
+   "admire",
+   "campfire",
+   "sublime",
+   "pastime"
+  ]
+ },
+ "vccvce|o_e": {
+  "fake": [
+   "vunlode",
+   "nimstone",
+   "plemvote",
+   "tarbone",
+   "dosnole"
+  ],
+  "real": [
+   "explode",
+   "trombone",
+   "implode",
+   "postpone",
+   "milestone",
+   "backbone",
+   "limestone",
+   "headphone",
+   "wishbone",
+   "cellphone"
+  ]
+ },
+ "vccv|a": {
+  "fake": [
+   "bampet",
+   "lannit",
+   "vaskin",
+   "maldat",
+   "tabbin"
+  ],
+  "real": [
+   "rabbit",
+   "napkin",
+   "magnet",
+   "basket",
+   "happen",
+   "carpet",
+   "cactus",
+   "tablet",
+   "canyon",
+   "pattern"
+  ]
+ },
+ "vccv|e": {
+  "fake": [
+   "nessit",
+   "vemtul",
+   "pellin",
+   "dentel",
+   "memdin"
+  ],
+  "real": [
+   "pencil",
+   "helmet",
+   "velvet",
+   "tennis",
+   "lesson",
+   "letter",
+   "member",
+   "temper",
+   "center",
+   "seldom"
+  ]
+ },
+ "vccv|i": {
+  "fake": [
+   "mippin",
+   "vintel",
+   "dimnit",
+   "ficsin",
+   "tilber"
+  ],
+  "real": [
+   "picnic",
+   "mitten",
+   "winter",
+   "kitten",
+   "sister",
+   "finger",
+   "dinner",
+   "ribbon",
+   "silver",
+   "window"
+  ]
+ },
+ "vccv|u": {
+  "fake": [
+   "nuppin",
+   "vuldum",
+   "suttel",
+   "mumdin",
+   "gunnet"
+  ],
+  "real": [
+   "muffin",
+   "sunset",
+   "button",
+   "summer",
+   "number",
+   "puppet",
+   "supper",
+   "hunter",
+   "tunnel",
+   "subject"
+  ]
+ },
+ "vce|a_e": {
+  "fake": [
+   "dake",
+   "vame",
+   "nade",
+   "zate",
+   "fape"
+  ],
+  "real": [
+   "cake",
+   "make",
+   "late",
+   "game",
+   "name",
+   "gate",
+   "plane",
+   "grape",
+   "shade",
+   "snake"
+  ]
+ },
+ "vce|i_e": {
+  "fake": [
+   "mipe",
+   "fike",
+   "vide",
+   "lise",
+   "zime"
+  ],
+  "real": [
+   "bike",
+   "time",
+   "like",
+   "ride",
+   "kite",
+   "smile",
+   "mine",
+   "side",
+   "white",
+   "shine"
+  ]
+ },
+ "vce|o_e": {
+  "fake": [
+   "pome",
+   "vode",
+   "nole",
+   "jome",
+   "kote"
+  ],
+  "real": [
+   "home",
+   "rope",
+   "note",
+   "hope",
+   "stone",
+   "nose",
+   "bone",
+   "code",
+   "those",
+   "woke"
+  ]
+ },
+ "vce|u_e": {
+  "fake": [
+   "fute",
+   "dule",
+   "vube",
+   "mune",
+   "gute"
+  ],
+  "real": [
+   "cute",
+   "mule",
+   "tube",
+   "cube",
+   "rule",
+   "June",
+   "flute",
+   "huge",
+   "tune",
+   "use"
+  ]
+ }
+}
