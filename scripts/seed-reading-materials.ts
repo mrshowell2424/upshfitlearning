@@ -138,6 +138,56 @@ const ADAPTATIONS: Adaptation[] = [
     apply: (html) => html.replace(/^[ \t]*OPT\('All students',.*\r?\n/m, ""),
   },
   {
+    // "Decodable story: The Same Game (p. 43)" names a page in a decodable
+    // reader the site does not ship, and the workbook prints a different story
+    // under its own title. Both the header and lesson step 11 showed the book
+    // reference, so a teacher was pointed at a page they cannot open while the
+    // story they are about to hand out went unnamed.
+    //
+    // `story` is resolved the same way the decodable page resolves it, so the
+    // two always agree. The titles of the two stories held inline are lifted
+    // out of that table rather than retyped, so a re-export carries its own
+    // renames; the rest come from sor-extra.js or the OG pack data at runtime.
+    //
+    // 49 of the 62 skills have a story in the printable. The other 13 — short
+    // a, the short vowel review, digraphs, FLOSS, blends, VC/CV, glued sounds,
+    // y as a vowel, -ck/-tch, ar/or and the three vowel-team pairs — have none
+    // at all, and for them the book reference is the only pointer there is, so
+    // they keep it.
+    name: "name the story the workbook prints, not a page in a book",
+    apply: (html) => {
+      const at = html.indexOf("const D = {");
+      if (at === -1) return html;
+      const end = html.indexOf("\n        };", at);
+      if (end === -1) return html;
+      const titles = [...html.slice(at, end).matchAll(/\n          ([a-z0-9_]+): \['((?:[^'\\]|\\.)*)'/g)];
+      if (!titles.length) return html;
+
+      const decl =
+        "const [id, label, level, story, rule, build, real0, nonsense, heart0, dict] = cur;";
+      if (!html.includes(decl)) return html;
+      const xt = "    const XT = (this.state && this.state.xt) || {};";
+      if (!html.includes(xt)) return html;
+
+      const map =
+        "{ " + titles.map(([, k, t]) => k + ": '" + t + "'").join(", ") + " }";
+
+      return html
+        .replace(decl, decl.replace(", story,", ", story0,"))
+        .replace(
+          xt,
+          xt +
+            "\n    // The story this lesson's workbook actually prints. Resolved the\n" +
+            "    // same way the decodable page resolves it, so the two agree. The\n" +
+            "    // skills with no printable story keep the book reference.\n" +
+            "    const DTITLE = " + map + ";\n" +
+            "    const story = DTITLE[id] || ((XT.DEC || {})[id] || [])[0]\n" +
+            "      || (OGD[id] && OGD[id].p && OGD[id].p.dec ? OGD[id].p.dec.title : '')\n" +
+            "      || story0;"
+        );
+    },
+  },
+  {
     // Lesson step 11 carried an "Open Level 1 notebook" link to one more
     // unshared Drive file — the same dead end as the Open Drive folder button
     // above, reached from inside the lesson instead of the toolbar. Dropping
