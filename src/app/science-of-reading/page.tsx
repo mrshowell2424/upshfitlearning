@@ -133,8 +133,10 @@ function Hub() {
               preview: "/previews/workbook.png",
               shape: [751, 1000] as const,
               // Past the name and date lines and clear of the rule banner,
-              // onto the words a child actually reads.
-              focus: "44%",
+              // onto the words a child reads and the silly-words exercise
+              // under them — the part of the page that shows what the
+              // workbook asks a child to do.
+              focus: "52%",
               alt: "A workbook page: the rule for short i, three columns of words to read, silly words, and spaces for spelling and dictation.",
             },
             {
