@@ -138,6 +138,19 @@ const ADAPTATIONS: Adaptation[] = [
     apply: (html) => html.replace(/^[ \t]*OPT\('All students',.*\r?\n/m, ""),
   },
   {
+    // Lesson step 11 carried an "Open Level 1 notebook" link to one more
+    // unshared Drive file — the same dead end as the Open Drive folder button
+    // above, reached from inside the lesson instead of the toolbar. Dropping
+    // the Object.assign leaves the step as every other step is built, with the
+    // empty hrefLabel they all default to, so the renderer needs no change.
+    name: "remove the Open Level notebook link from lesson step 11",
+    apply: (html) =>
+      html.replace(
+        /Object\.assign\((mk\(11,[\s\S]*?\[story\], true\)),\s*\{ href: level === 'Level 2'[\s\S]*?' \}\),/,
+        "$1,"
+      ),
+  },
+  {
     // A second row of skill chips, holding the advanced skills whose names
     // mention syllables. Every one of them is already in the skill dropdown
     // and the search beside it, so the row is a third way to reach the same
