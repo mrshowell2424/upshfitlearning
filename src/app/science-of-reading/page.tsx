@@ -132,12 +132,11 @@ function Hub() {
               blurb: `All ${SKILL_TOTAL} skills in the scope and sequence, in teaching order, each with its workbook and answer key.`,
               preview: "/previews/workbook.png",
               shape: [751, 1000] as const,
-              // Starts on the READ THE WORDS heading, just past the name and
-              // date lines and the rule banner, and holds the three word
-              // columns whole — headings, pattern labels and every word. Any
-              // lower and the columns lose their labels off the top; any
-              // higher and a strip of the rule banner comes back.
-              focus: "34%",
+              // Opens on the rule itself, then the READ THE WORDS heading and
+              // the word columns with their pattern labels. 29–31% cuts the
+              // rule banner into a sliver that reads as a mistake, so this
+              // clears it in one step and shows the whole sentence.
+              focus: "27%",
               alt: "A workbook page: the rule for short i, three columns of words to read, silly words, and spaces for spelling and dictation.",
             },
             {
