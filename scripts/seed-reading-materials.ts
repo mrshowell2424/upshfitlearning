@@ -220,9 +220,10 @@ const ADAPTATIONS: Adaptation[] = [
       if (!html.includes(rm)) return html;
       let out = html.replace(
         rm,
-        "const rmWords = [real[0], nonsense[0], real[1], nonsense[1], real[2], " +
-          "nonsense[2] || real[8], real[3], nonsense[3] || real[9], " +
-          "real[4], nonsense[4] || real[5]].filter(Boolean);"
+        "const rmWords = (() => { const R = real.slice(0, 5); " +
+          "const M = nonsense.slice(0, 5); const out = []; " +
+          "for (let i = 0; i < 5; i++) { if (R[i]) out.push(R[i]); if (M[i]) out.push(M[i]); } " +
+          "return out.concat(real.slice(5)).slice(0, 10); })();"
       );
 
       // 2. The page's data, built beside the decodable and fluency pages.
@@ -232,12 +233,18 @@ const ADAPTATIONS: Adaptation[] = [
       out = out.replace(
         anchor,
         "        const encOn = show(isKey ? 'key' : 'wb');\n" +
-          "        const paItems = ((paA && paA[2]) || []).slice(0, 6).map((t, i) => {\n" +
+          "        const paItems = ((paA && paA[2]) || []).slice(0, 5).map((t, i) => {\n" +
           "          const parts = String(t).split(/\\s*\\(|\\)\\s*$/).filter(Boolean);\n" +
-          "          return { n: i + 1, t: parts[0].trim(), ans: isKey ? (parts[1] || '').trim() : '' }; });\n" +
-          "        const wsItems = whatSays.slice(0, 6).map((t, i) => {\n" +
-          "          const m = String(t).match(/^(.*?)\\s*\\(([^)]*)\\)\\s*$/);\n" +
-          "          return { n: i + 1, t: (m ? m[1] : t).trim(), ans: isKey && m ? m[2] : '' }; });\n" +
+          "          const lead = parts[0].trim();\n" +
+          "          // 'cap \u2192 change /\u0103/ to /\u0101/' gives the word they start from and\n" +
+          "          // the change to make; the child writes the new word on the line.\n" +
+          "          const cut = lead.split(/\\s*(?:\u2192|\u2014|->|:)\\s*/);\n" +
+          "          const from = cut.length > 1 ? cut[0].trim() : '';\n" +
+          "          return { n: i + 1, from, hasFrom: !!from, t: cut.slice(1).join(' ').trim() || lead,\n" +
+          "            ans: isKey ? (parts[1] || '').trim() : '' }; });\n" +
+          "        const wsItems = Array.from({ length: 5 }, (_, i) => {\n" +
+          "          const m = String(whatSays[i] || '').match(/^(.*?)\\s*\\(([^)]*)\\)\\s*$/);\n" +
+          "          return { n: i + 1, ans: isKey && m ? m[2] : '' }; });\n" +
           anchor
       );
       const tail = "          sbBox: { ...p.decBox, display: sbRows.length && show(isKey ? 'key' : 'wb') ? 'flex' : 'none' }, sbRows }; })";
@@ -247,8 +254,10 @@ const ADAPTATIONS: Adaptation[] = [
         "          encBox: { ...p.decBox, display: encOn ? 'flex' : 'none' },\n" +
           "          paItems, hasPa: paItems.length > 0, paDir: (paA && paA[1]) || '',\n" +
           "          wsItems, hasWs: wsItems.length > 0,\n" +
-          "          spellWords: real.slice(0, 10).map((w, i) => ({ n: i + 1, ans: isKey ? w : '' })),\n" +
-          "          dictSents: dict.slice(0, 2).map((t, i) => ({ n: i + 1, ans: isKey ? t : '' })),\n" +
+          "          spellWords: Array.from({ length: 10 }, (_, i) => " +
+          "({ n: i + 1, ans: isKey ? (real[i] || '') : '' })),\n" +
+          "          dictSents: Array.from({ length: 2 }, (_, i) => " +
+          "({ n: i + 1, ans: isKey ? (dict[i] || '') : '' })),\n" +
           tail
       );
 
@@ -284,22 +293,23 @@ const ADAPTATIONS: Adaptation[] = [
         '        <sc-for list="{{ p.paItems }}" as="x" hint-placeholder-count="5">\n' +
         '          <div style="display:flex;align-items:flex-end;gap:10px;font-size:16px;font-weight:700">' +
         '<span style="flex:none;width:18px">{{ x.n }}.</span>' +
-        '<span style="flex:1.4;min-width:0;font-size:15px;font-weight:600;color:#111;' +
+        '<sc-if value="{{ x.hasFrom }}" hint-placeholder-val="{{ true }}">' +
+        '<span style="flex:none;min-width:76px;font-size:20px;font-weight:800;color:#111">' +
+        "{{ x.from }}</span></sc-if>" +
+        '<span style="flex:none;max-width:40%;font-size:13px;font-weight:600;color:#57534e;' +
         'overflow-wrap:anywhere">{{ x.t }}</span>' +
         '<div style="flex:1;min-width:0;display:flex;align-items:flex-end;gap:8px">' +
-        '<span style="flex:none;font-size:12px;font-weight:700;color:#57534e">new word</span>' +
-        LINE + "{{ x.ans }}</span></div></div>\n" +
+        LINE.replace("min-height:34px", "min-height:40px") + "{{ x.ans }}</span></div></div>\n" +
         "        </sc-for>\n" +
         "      </div></sc-if>\n" +
         // What says?
         '      <sc-if value="{{ p.hasWs }}" hint-placeholder-val="{{ true }}">\n' +
         '      <div style="display:flex;flex-direction:column;gap:8px;break-inside:avoid;page-break-inside:avoid">\n' +
-        "        " + H("2", "What says? Write the letters that spell the sound you hear.") + "\n" +
-        '        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 20px">\n' +
-        '          <sc-for list="{{ p.wsItems }}" as="x" hint-placeholder-count="4">\n' +
+        "        " + H("2", "What says? Your teacher says a sound. Write the letters that spell it.") + "\n" +
+        '        <div style="display:flex;flex-direction:column;gap:11px">\n' +
+        '          <sc-for list="{{ p.wsItems }}" as="x" hint-placeholder-count="5">\n' +
         "            " + ROW + '<span style="flex:none;width:18px">{{ x.n }}.</span>' +
-        '<span style="flex:1.3;min-width:0;font-size:15px;font-weight:600;overflow-wrap:anywhere">' +
-        "{{ x.t }}</span>" + LINE + "{{ x.ans }}</span></div>\n" +
+        LINE.replace("min-height:34px", "min-height:40px") + "{{ x.ans }}</span></div>\n" +
         "          </sc-for>\n" +
         "        </div>\n" +
         "      </div></sc-if>\n" +
@@ -314,8 +324,9 @@ const ADAPTATIONS: Adaptation[] = [
         "        </div>\n" +
         "      </div>\n" +
         // Dictation: its own section
-        '      <div style="display:flex;flex-direction:column;gap:8px;flex:1;break-inside:avoid;page-break-inside:avoid">\n' +
-        "        " + H("4", "Dictation. Write the whole sentence your teacher says.") + "\n" +
+        '      <div style="display:flex;flex-direction:column;gap:8px;flex:1;break-inside:avoid;' +
+        'page-break-inside:avoid;border:2px solid #2F5E7A;border-radius:12px;padding:12px 16px">\n' +
+        "        " + H("4", "Dictation. Write the whole sentence your teacher says. Two sentences.") + "\n" +
         '        <sc-for list="{{ p.dictSents }}" as="d" hint-placeholder-count="2">\n' +
         '          <div style="display:flex;align-items:flex-start;gap:8px;font-size:17px;font-weight:700">' +
         '<span style="flex:none;padding-top:18px">{{ d.n }}.</span>' +
@@ -390,10 +401,13 @@ const ADAPTATIONS: Adaptation[] = [
             .replace(", dict]", ", dictAll]") +
             "\n    const subSibs = (SPLITS[id] || []).filter((x) => x !== subPat &&\n" +
             "      subAlts(subPat).some((a) => subAlts(x).some((b) => b.length > a.length && b.includes(a))));\n" +
+            "    // The part's own words first, then the rest of the skill's list.\n" +
+            "    // 'ost' has one word in a ten-word skill; a sheet that asks for ten\n" +
+            "    // needs ten, and every word here is already decodable at this level.\n" +
             "    const narrow = (list) => { if (!subPat) return list;\n" +
             "      const hit = (list || []).filter((w) => subHits(subPat, w) &&\n" +
             "        !subSibs.some((L) => subHits(L, w)));\n" +
-            "      return hit.length ? hit : list; };\n" +
+            "      return hit.concat((list || []).filter((w) => !hit.includes(w))); };\n" +
             "    const real0 = narrow(realAll);\n" +
             "    const nonsense = narrow(nonsenseAll);\n" +
             "    const dict = narrow(dictAll);\n" +
@@ -819,9 +833,9 @@ const ADAPTATIONS: Adaptation[] = [
         'line-height:1.75;white-space:nowrap">Spelling: _____ /10<br>Language: _____ /3<br>' +
         "Handwriting: _____ /1</div>\n" +
         "        </div>\n" +
-        '        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 34px;margin-top:16px">\n' +
+        '        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 34px;margin-top:22px;flex:1;align-content:space-between">\n' +
         '          <sc-for list="{{ t.slotsCol }}" as="s" hint-placeholder-count="10">\n' +
-        "            " + ROW + NUM("20px") + SLOT + "</div>\n" +
+        "            " + ROW + NUM("22px") + SLOT.replace("height:32px", "height:52px") + "</div>\n" +
         "          </sc-for>\n" +
         "        </div>\n" +
         '        <div style="display:flex;gap:26px;align-items:flex-start;margin-top:18px">\n' +
@@ -832,10 +846,10 @@ const ADAPTATIONS: Adaptation[] = [
         "UNDERLINE = graded word spelled incorrectly</div>\n" +
         '          <div style="flex:1;min-width:0;display:flex;align-items:flex-start;gap:8px">' +
         '<span style="flex:none;width:28px;font-size:20px;font-weight:800">1.</span>' +
-        '<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:13px">' +
-        SLOT.replace("flex:1;min-width:0;", "") +
-        SLOT.replace("flex:1;min-width:0;", "") +
-        SLOT.replace("flex:1;min-width:0;", "") +
+        '<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:22px">' +
+        SLOT.replace("flex:1;min-width:0;", "").replace("height:32px", "height:50px") +
+        SLOT.replace("flex:1;min-width:0;", "").replace("height:32px", "height:50px") +
+        SLOT.replace("flex:1;min-width:0;", "").replace("height:32px", "height:50px") +
         "</div></div>\n" +
         "        </div>\n" +
         "      </div></sc-if>\n";
@@ -852,9 +866,9 @@ const ADAPTATIONS: Adaptation[] = [
         '<div><div style="font-size:26px;font-weight:800;line-height:1.05">Spelling</div>' +
         '<div style="font-size:11.5px;font-weight:700">Pattern: {{ t.pattern }}</div></div>' +
         '<div style="display:flex;gap:7px">' + SCORE + "___ /10</span>" + SCORE + "___ %</span></div></div>" +
-        '<div style="display:flex;flex-direction:column;gap:9px;margin-top:9px">' +
+        '<div style="flex:1;display:flex;flex-direction:column;gap:14px;margin-top:14px;justify-content:space-between">' +
         '<sc-for list="{{ t.slots }}" as="s" hint-placeholder-count="10">' +
-        ROW + NUM("15px").replace("width:28px", "width:24px") + SLOT.replace("height:32px", "height:27px") +
+        ROW + NUM("16px").replace("width:28px", "width:24px") + SLOT.replace("height:32px", "height:46px") +
         "</div></sc-for></div>" +
         '<div style="display:flex;gap:16px;font-size:11.5px;font-weight:700;margin-top:9px">' +
         "<span>☐ I checked my spelling.</span><span>☐ I wrote neatly.</span></div></div>";
