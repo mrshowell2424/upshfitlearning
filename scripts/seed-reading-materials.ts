@@ -202,6 +202,58 @@ const ADAPTATIONS: Adaptation[] = [
     },
   },
   {
+    // Dictation lives on the Say It page now, with two full sentences and
+    // ruled lines. Page 2 still carried the old four blanks and one sentence
+    // under the same name, so a child met it twice.
+    //
+    // The two reading pages take a name of their own, the way the Say It page
+    // and the writing page already do, and the sections renumber so nothing
+    // skips.
+    //
+    // The passage paragraphs are indented and spaced. They were one block of
+    // pre-line text, so the three sides of the argument ran together and a
+    // child hunting for proof had nothing to anchor on.
+    name: "name the reading pages and stop dictation happening twice",
+    apply: (html) => {
+      let out = cutAround(html, "5. Dictation. Write the words and the sentence", "div");
+      if (out === null) return html;
+
+      const steps: [string, string][] = [
+        ["6. Read the sentences to a partner.", "5. Read the sentences to a partner."],
+        ["7. Voice fun! Read the sentences 3 times.", "6. Voice fun! Read the sentences 3 times."],
+        ["8. Writing. Read the passage.", "7. Writing. Read the passage."],
+        // Both reading pages get the name.
+        [
+          '<div style="font-family:Outfit,sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;color:#618459">{{ p.kicker }}</div>\n          <div style="font-size:26px;font-weight:800;color:#2F3E2E;line-height:1.1">{{ sk.label }}</div>',
+          '<div style="font-family:Outfit,sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;color:#618459">{{ p.kicker }} · READ IT</div>\n          <div style="font-size:26px;font-weight:800;color:#2F3E2E;line-height:1.1">📖 Read It — {{ sk.label }}</div>',
+        ],
+        [
+          "{{ p.kicker }} · PAGE 2",
+          "{{ p.kicker }} · READ IT · PAGE 2",
+        ],
+        // Paragraphs, not one run-on block.
+        [
+          '<sc-if value="{{ hasEbText }}" hint-placeholder-val="{{ true }}"><div style="border:2px solid #111;border-radius:10px;padding:10px 14px;font-size:15.5px;line-height:1.55;color:#111;text-wrap:pretty;white-space:pre-line">📖 {{ ebText }}</div></sc-if>',
+          '<sc-if value="{{ hasEbText }}" hint-placeholder-val="{{ true }}">' +
+            '<div style="border:2px solid #111;border-radius:10px;padding:12px 16px;font-size:15.5px;' +
+            'line-height:1.6;color:#111;text-wrap:pretty;display:flex;flex-direction:column;gap:11px">' +
+            '<sc-for list="{{ ebParas }}" as="q" hint-placeholder-count="3">' +
+            '<div style="text-indent:1.6em">{{ q.t }}</div></sc-for></div></sc-if>',
+        ],
+        [
+          "ebPrompt, ebText, hasEbText: !!ebText,",
+          "ebPrompt, ebText, hasEbText: !!ebText,\n      ebParas: String(ebText || '').split('\\n')" +
+            ".map((t) => t.trim()).filter(Boolean).map((t) => ({ t })),",
+        ],
+      ];
+      for (const [from, to] of steps) {
+        if (!out.includes(from)) return html;
+        out = out.replace(from, to);
+      }
+      return out;
+    },
+  },
+  {
     // Three of the lesson's steps were spoken only. Step 1 changes a sound
     // and says the new word, step 3 says which letters spell a sound, and
     // spelling was four dictation blanks on page 2. A child left no record of
