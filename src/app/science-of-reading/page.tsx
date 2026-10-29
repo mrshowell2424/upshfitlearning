@@ -134,7 +134,7 @@ function Hub() {
               shape: [751, 1000] as const,
               // Past the name and date lines and clear of the rule banner,
               // onto the words a child actually reads.
-              focus: "38%",
+              focus: "44%",
               alt: "A workbook page: the rule for short i, three columns of words to read, silly words, and spaces for spelling and dictation.",
             },
             {

@@ -1,0 +1,235 @@
+{
+  "cvc-mix": [
+    "i",
+    "o",
+    "u",
+    "e"
+  ],
+  "dig": [
+    "sh",
+    "ch",
+    "th",
+    "wh"
+  ],
+  "floss": [
+    "ff",
+    "ll",
+    "ss",
+    "zz"
+  ],
+  "blends": [
+    "cl",
+    "fl",
+    "st"
+  ],
+  "vce": [
+    "a_e",
+    "i_e",
+    "o_e",
+    "u_e"
+  ],
+  "vccv": [
+    "a",
+    "e",
+    "i",
+    "u"
+  ],
+  "vccvce": [
+    "a_e",
+    "i_e",
+    "o_e"
+  ],
+  "ng-nk": [
+    "ng",
+    "nk"
+  ],
+  "ck-tch": [
+    "ck",
+    "tch"
+  ],
+  "ai-ay": [
+    "ai",
+    "ay"
+  ],
+  "ee-ea": [
+    "ee",
+    "ea"
+  ],
+  "oa-ow": [
+    "oa",
+    "ow"
+  ],
+  "ar-or": [
+    "ar",
+    "or"
+  ],
+  "og1-04": [
+    "c",
+    "k",
+    "ck"
+  ],
+  "og1-06": [
+    "x",
+    "qu"
+  ],
+  "og1-13": [
+    "un-",
+    "non-"
+  ],
+  "og2-06": [
+    "ild",
+    "old",
+    "ost",
+    "ind",
+    "oll",
+    "olt"
+  ],
+  "og2-07": [
+    "kn",
+    "wr",
+    "gh"
+  ],
+  "og2-08": [
+    "oo",
+    "ou",
+    "ow"
+  ],
+  "og2-11": [
+    "-ful",
+    "-less",
+    "-ness",
+    "-ment",
+    "-ly"
+  ],
+  "og2-12": [
+    "-ed",
+    "-ing",
+    "-est",
+    "-y",
+    "-en",
+    "-es"
+  ],
+  "og2-13": [
+    "mis-",
+    "sub-",
+    "post-"
+  ],
+  "og3-04": [
+    "oi",
+    "oy",
+    "au",
+    "aw"
+  ],
+  "og3-08": [
+    "-ble",
+    "-cle",
+    "-dle",
+    "-gle",
+    "-ple",
+    "-tle"
+  ],
+  "og3-10": [
+    "n't",
+    "'s",
+    "'ll",
+    "'re",
+    "'ve"
+  ],
+  "og3-11": [
+    "-tion",
+    "-sion"
+  ],
+  "og3-12": [
+    "-ist",
+    "-able",
+    "-ible",
+    "-ive"
+  ],
+  "og3-13": [
+    "re-",
+    "pre-",
+    "pro-",
+    "de-"
+  ],
+  "og4-01": [
+    "form",
+    "port",
+    "tract",
+    "rupt",
+    "scrib/script"
+  ],
+  "og4-02": [
+    "spec/spect",
+    "struct",
+    "flect/flex",
+    "mit/miss",
+    "ject"
+  ],
+  "og4-03": [
+    "duc/duct",
+    "grad/gress",
+    "cur/curs",
+    "vid/vis",
+    "aud",
+    "vert/vers"
+  ],
+  "og4-04": [
+    "trans-",
+    "inter-",
+    "-ure",
+    "-ous",
+    "-ic",
+    "-ar"
+  ],
+  "og4-06": [
+    "ue",
+    "ei",
+    "ew",
+    "eigh",
+    "ui"
+  ],
+  "og4-07": [
+    "im-",
+    "il-",
+    "ir-",
+    "con-/com-"
+  ],
+  "og4-08": [
+    "-tial",
+    "-tious",
+    "-cian",
+    "-cial",
+    "-cious"
+  ],
+  "og5-01": [
+    "ph",
+    "ch"
+  ],
+  "og5-03": [
+    "rh",
+    "mn",
+    "ps"
+  ],
+  "og5-04": [
+    "phon",
+    "tele",
+    "photo",
+    "bio",
+    "graph",
+    "ology"
+  ],
+  "og5-05": [
+    "ch",
+    "ou"
+  ],
+  "og5-08": [
+    "-al",
+    "-age",
+    "-ance",
+    "-ence"
+  ],
+  "og5-09": [
+    "aught",
+    "ought"
+  ]
+}

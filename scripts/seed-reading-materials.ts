@@ -17,6 +17,7 @@
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import WRITING from "./reading-writing-passages.json" with { type: "json" };
+import SPLITS from "./reading-skill-splits.json" with { type: "json" };
 import { db } from "@/lib/db";
 import { reading_materials } from "@/lib/db/schema";
 import { inArray, sql } from "drizzle-orm";
@@ -197,6 +198,84 @@ const ADAPTATIONS: Adaptation[] = [
             "      .map((t) => t.replace(/\\s*\\(p\\.\\s*\\d+\\)/g, '').trim()).filter(Boolean);\n" +
             "    const story = STORIES.join(' \u00b7 ');"
         );
+    },
+  },
+  {
+    // Many skills teach several things at once — "Vowel teams ai, ay",
+    // "Prefixes mis-, sub-, post-" — and they are taught one at a time before
+    // they are practised together. The dropdown only ever offered the pair.
+    //
+    // Each of those skills now lists its parts first and the whole last, so
+    // ai, then ay, then "ai, ay \u00b7 all together". Picking a part keeps the
+    // same lesson, rule, story and writing passage, and narrows the word
+    // lists, made-up words and dictation to the words that show that part.
+    //
+    // The selection carries the part after a pipe — "ai-ay|ay" — so `id` is
+    // still the parent everywhere, and the fifty-odd lookups keyed on it
+    // (the decodable, the maze, the multisyllabic list, the OG pack) need to
+    // know nothing about any of this.
+    //
+    // A sibling only overrides a part when it contains it: ck covers the c in
+    // duck, so duck is not a c word, but biology is both a bio word and an
+    // ology word. Parts whose skill holds no example are left out of
+    // reading-skill-splits.json rather than offered and left empty.
+    name: "teach each part of a multi-part skill on its own",
+    apply: (html) => {
+      const byId = "const byId = Object.fromEntries(SK.map((s) => [s[0], s]));";
+      const cur = "const cur = byId[this.state && this.state.skill] || byId.vce;";
+      if (!html.includes(byId) || !html.includes(cur)) return html;
+
+      const decl =
+        "const [id, label, level, story0, rule, build, real0, nonsense, heart0, dict] = cur;";
+      if (!html.includes(decl)) return html;
+
+      const opts = "skillOpts: SK.map((s) => ({ id: s[0], label: s[2] + ' \u00b7 ' + s[1] })),";
+      if (!html.includes(opts)) return html;
+      if (!html.includes("skillId: id,")) return html;
+
+      return html
+        .replace(
+          cur,
+          "const SPLITS = " + JSON.stringify(SPLITS) + ";\n" +
+            "    // 'ai-ay|ay' picks the skill and, after the pipe, the one part of it.\n" +
+            "    const SEL = String((this.state && this.state.skill) || '');\n" +
+            "    const subPat = SEL.split('|')[1] || '';\n" +
+            "    const cur = byId[SEL.split('|')[0]] || byId.vce;\n" +
+            "    // A part may be written as alternatives — spec/spect — and _ stands\n" +
+            "    // for the letter a silent e jumps over, as in a_e.\n" +
+            "    const subAlts = (q) => String(q).split('/')" +
+            ".map((a) => a.replace(/[^a-zA-Z_']/g, '')).filter(Boolean);\n" +
+            "    const subHits = (q, w) => subAlts(q)" +
+            ".some((a) => new RegExp(a.replace(/_/g, '[a-z]'), 'i').test(w));\n" +
+            "    const subName = (s, q) => { const all = (SPLITS[s[0]] || []).join(', ');\n" +
+            "      return all && s[1].includes(all) ? s[1].replace(all, q) : s[1] + ' \u00b7 ' + q; };"
+        )
+        .replace(
+          decl,
+          decl
+            .replace(", label,", ", label0,")
+            .replace(", real0,", ", realAll,")
+            .replace(", nonsense,", ", nonsenseAll,")
+            .replace(", dict]", ", dictAll]") +
+            "\n    const subSibs = (SPLITS[id] || []).filter((x) => x !== subPat &&\n" +
+            "      subAlts(subPat).some((a) => subAlts(x).some((b) => b.length > a.length && b.includes(a))));\n" +
+            "    const narrow = (list) => { if (!subPat) return list;\n" +
+            "      const hit = (list || []).filter((w) => subHits(subPat, w) &&\n" +
+            "        !subSibs.some((L) => subHits(L, w)));\n" +
+            "      return hit.length ? hit : list; };\n" +
+            "    const real0 = narrow(realAll);\n" +
+            "    const nonsense = narrow(nonsenseAll);\n" +
+            "    const dict = narrow(dictAll);\n" +
+            "    const label = subPat ? subName(cur, subPat) : label0;"
+        )
+        .replace(
+          opts,
+          "skillOpts: SK.flatMap((s) => { const subs = SPLITS[s[0]] || [];\n" +
+            "        return subs.map((q) => ({ id: s[0] + '|' + q, label: s[2] + ' \u00b7 ' + subName(s, q) }))\n" +
+            "          .concat([{ id: s[0], label: s[2] + ' \u00b7 ' + s[1] +" +
+            " (subs.length ? ' \u00b7 all together' : '') }]); }),"
+        )
+        .replace("skillId: id,", "skillId: subPat ? id + '|' + subPat : id,");
     },
   },
   {
