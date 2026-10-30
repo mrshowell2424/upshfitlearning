@@ -278,18 +278,12 @@ const ADAPTATIONS: Adaptation[] = [
     },
   },
   {
-    // Writing a heart word out twice is copying, and copying is the one thing
-    // a heart word does not need: the child already cannot sound it out, so
-    // tracing it twice teaches the hand, not the eye.
-    //
-    // The space becomes sound mapping, which is what heart words are for. Say
-    // it, tap the sounds, write one sound to a box, then draw a heart over
-    // the part that does not play fair. Five boxes, because the child decides
-    // how many sounds there are — that decision is the work.
+    // Two write-it lines per word is copying twice over. One is enough: say
+    // the word, then write it once from the page.
     //
     // Fluency gets three sentences rather than two. A partner read wants
     // enough to build a rhythm.
-    name: "map the heart words instead of copying them",
+    name: "say the heart word, then write it once",
     apply: (html) => {
       const box =
         '<div style="border:1.5px solid #C0504D;border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:14px">\n' +
@@ -298,25 +292,16 @@ const ADAPTATIONS: Adaptation[] = [
         '              <div style="border-bottom:1.5px solid #333;height:34px"></div>\n' +
         "            </div>";
       if (!html.includes(box)) return html;
-      const cell =
-        '<div style="flex:1;min-width:0;aspect-ratio:1;border:1.5px solid #111;border-radius:6px"></div>';
       const mapped =
-        '<div style="border:1.5px solid #C0504D;border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:9px">\n' +
-        '              <div style="font-size:24px;font-weight:800">♥ {{ h }}</div>\n' +
-        '              <div style="display:flex;gap:5px">' + cell.repeat(5) + "</div>\n" +
-        '              <div style="display:flex;align-items:flex-end;gap:6px">' +
-        '<span style="flex:none;font-size:11px;font-weight:700;color:#57534e">in a sentence</span>' +
-        '<span style="flex:1;min-width:0;border-bottom:1.5px solid #333;height:26px"></span></div>\n' +
+        '<div style="border:1.5px solid #C0504D;border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:12px">\n' +
+        '              <div style="font-size:26px;font-weight:800">♥ {{ h }}</div>\n' +
+        '              <div style="border-bottom:1.5px solid #333;height:36px"></div>\n' +
         "            </div>";
       let out = html.replace(box, mapped);
 
       const title = "4. Heart words. Read it, then write it 2 times.";
       if (!out.includes(title)) return html;
-      out = out.replace(
-        title,
-        "4. Heart words. Say it. Tap the sounds. Write one sound in each box. " +
-          "Draw a ♥ over the part that does not play fair."
-      );
+      out = out.replace(title, "4. Heart words. Say it. Write the word.");
 
       // Three sentences for the partner read, not two. On a single part the
       // sentences that carry that part come first, and the skill's others
@@ -1094,22 +1079,30 @@ const ADAPTATIONS: Adaptation[] = [
   },
   {
     // Page two sets a 10in minimum and spreads what is left over with
-    // space-between. The partner read alone carried the flex, so all of the
-    // slack pooled into one hole beneath it. Sharing the flex with the heart
-    // words splits it into two ordinary gaps, and the heart boxes still sit
-    // up under the rule.
-    name: "share page two's leftover height between its two work areas",
+    // space-between, so the slack has to be given a home or it opens as a
+    // hole. The heart words are short now and stay packed at the top; the
+    // partner read already holds the flex, and its three lines spread down
+    // through the rest of the page. That fills the sheet, puts real space
+    // between the sentences a child is reading aloud, and brings the whole
+    // section up under the heart words.
+    //
+    // The lines spread inside their own box rather than the section's, so
+    // the heading stays with them instead of being stranded at the top,
+    // and space-between rather than space-evenly keeps the first line
+    // tucked under the heading instead of floating off it.
+    name: "spread the partner read down the rest of page two",
     apply: (html) => {
       const from =
-        '<div style="display:flex;flex-direction:column;gap:8px;break-inside:avoid;' +
-        'page-break-inside:avoid">\n        <div style="font-size:15px;font-weight:800;' +
-        'color:#2F3E2E">4. Heart words.';
+        '<sc-for list="{{ wbSent }}" as="s" hint-placeholder-count="3">\n' +
+        '          <div style="font-size:21px;font-weight:600;line-height:1.5">' +
+        "\u2610 {{ s }}</div>\n        </sc-for>";
       if (!html.includes(from)) return html;
       return html.replace(
         from,
-        '<div style="display:flex;flex-direction:column;gap:8px;flex:1;break-inside:avoid;' +
-          'page-break-inside:avoid">\n        <div style="font-size:15px;font-weight:800;' +
-          'color:#2F3E2E">4. Heart words.'
+        '<div style="display:flex;flex-direction:column;flex:1;' +
+          'justify-content:space-between;gap:12px">\n          ' +
+          from +
+          "\n        </div>"
       );
     },
   },
