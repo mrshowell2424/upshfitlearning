@@ -1107,6 +1107,74 @@ const ADAPTATIONS: Adaptation[] = [
     },
   },
   {
+    // The three sentences are read aloud, one at a time, and the space
+    // between them is what stops a child's eye sliding to the next line.
+    // Page two is a fixed ten inches, so that space can only come out of the
+    // two blocks either side of it: the heart words tighten, and voice fun
+    // loses the padding it was carrying rather than any of its choices.
+    //
+    // A little of it goes back as a pad under the last sentence, which was
+    // otherwise touching the voice fun heading.
+    name: "buy the partner read more space between its lines",
+    apply: (html) => {
+      const edits: [string, string][] = [
+        // Heart words: same word, same line, less air around them.
+        [
+          '<div style="border:1.5px solid #C0504D;border-radius:10px;padding:12px 14px;' +
+            'display:flex;flex-direction:column;gap:12px">\n' +
+            '              <div style="font-size:26px;font-weight:800">♥ {{ h }}</div>\n' +
+            '              <div style="border-bottom:1.5px solid #333;height:36px"></div>',
+          '<div style="border:1.5px solid #C0504D;border-radius:10px;padding:8px 12px;' +
+            'display:flex;flex-direction:column;gap:7px">\n' +
+            '              <div style="font-size:23px;font-weight:800">♥ {{ h }}</div>\n' +
+            '              <div style="border-bottom:1.5px solid #333;height:30px"></div>',
+        ],
+        // Voice fun: eight chips and three boxes, tighter.
+        [
+          '<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px">\n' +
+            '          <sc-for list="{{ voices }}"',
+          '<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px">\n' +
+            '          <sc-for list="{{ voices }}"',
+        ],
+        [
+          '<div style="border:2px solid #111;border-radius:10px;padding:9px 6px;' +
+            'text-align:center;font-size:18px;font-weight:700;color:#111">{{ v }}</div>',
+          '<div style="border:2px solid #111;border-radius:10px;padding:5px 6px;' +
+            'text-align:center;font-size:16px;font-weight:700;color:#111">{{ v }}</div>',
+        ],
+        [
+          '<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;' +
+            'font-size:16px;font-weight:700;color:#111">',
+          '<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;' +
+            'font-size:14.5px;font-weight:700;color:#111">',
+        ],
+        [
+          '<div style="border:2px solid #111;border-radius:10px;padding:9px 10px">Read 1',
+          '<div style="border:2px solid #111;border-radius:10px;padding:6px 10px">Read 1',
+        ],
+        [
+          '<div style="border:2px solid #111;border-radius:10px;padding:9px 10px">Read 2',
+          '<div style="border:2px solid #111;border-radius:10px;padding:6px 10px">Read 2',
+        ],
+        [
+          '<div style="border:2px solid #111;border-radius:10px;padding:9px 10px">Read 3',
+          '<div style="border:2px solid #111;border-radius:10px;padding:6px 10px">Read 3',
+        ],
+        // The reclaimed height lands here, less a pad off the bottom.
+        [
+          'justify-content:space-between;gap:12px">',
+          'justify-content:space-between;gap:12px;padding-bottom:14px">',
+        ],
+      ];
+      let out = html;
+      for (const [from, to] of edits) {
+        if (!out.includes(from)) return html;
+        out = out.replace(from, to);
+      }
+      return out;
+    },
+  },
+  {
     // Build the Sentence held three rows and finished half way down the page.
     // It drew on the dictation sentences plus one line lifted from the second
     // paragraph of the decodable; the rest of the story sat there unused.
