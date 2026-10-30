@@ -1092,6 +1092,67 @@ const ADAPTATIONS: Adaptation[] = [
       ),
   },
   {
+    // Page two sets a 10in minimum and spreads what is left over with
+    // space-between. The partner read alone carried the flex, so all of the
+    // slack pooled into one hole beneath it. Sharing the flex with the heart
+    // words splits it into two ordinary gaps, and the heart boxes still sit
+    // up under the rule.
+    name: "share page two's leftover height between its two work areas",
+    apply: (html) => {
+      const from =
+        '<div style="display:flex;flex-direction:column;gap:8px;break-inside:avoid;' +
+        'page-break-inside:avoid">\n        <div style="font-size:15px;font-weight:800;' +
+        'color:#2F3E2E">4. Heart words.';
+      if (!html.includes(from)) return html;
+      return html.replace(
+        from,
+        '<div style="display:flex;flex-direction:column;gap:8px;flex:1;break-inside:avoid;' +
+          'page-break-inside:avoid">\n        <div style="font-size:15px;font-weight:800;' +
+          'color:#2F3E2E">4. Heart words.'
+      );
+    },
+  },
+  {
+    // Build the Sentence held three rows and finished half way down the page.
+    // It drew on the dictation sentences plus one line lifted from the second
+    // paragraph of the decodable; the rest of the story sat there unused.
+    // Five rows, drawn from the whole story, fill the sheet.
+    //
+    // The thirteen skills with no decodable fall back to the writing
+    // passage, which every skill has, rather than printing a half page.
+    //
+    // Capped at ten words: past that the word cards wrap to a third line
+    // and the row stops looking like a sentence to cut up. The fallback
+    // gets twelve, because prose written to be read is longer than a
+    // decodable line and the cap would otherwise leave the page short.
+    name: "give Build the Sentence five sentences",
+    apply: (html) => {
+      const from =
+        "const extra = ((p.dec.paras || [])[1] || '').match(/[^.!?]+[.!?]/); " +
+        "const sents = dict.concat(extra ? [extra[0].trim()] : [])" +
+        ".filter((x) => x.split(' ').length >= 4).slice(0, 3);";
+      if (!html.includes(from)) return html;
+      let out = html.replace(
+        from,
+        "const fromDec = ((p.dec.paras || []).join(' ').match(/[^.!?]+[.!?]/g) || [])" +
+          ".map((x) => x.trim());\n" +
+          "        const fromEb = (String(ebText || '').replace(/\\n/g, ' ')" +
+          ".match(/[^.!?]+[.!?]/g) || []).map((x) => x.trim());\n" +
+          "        const fit = (x, max) => { const n = x.split(' ').length; " +
+          "return n >= 4 && n <= max; };\n" +
+          "        const sents = [...new Set(dict.concat(fromDec).filter((x) => fit(x, 10))" +
+          ".concat(fromEb.filter((x) => fit(x, 12))))].slice(0, 5);"
+      );
+
+      const forEach = '<sc-for list="{{ p.sbRows }}" as="r" hint-placeholder-count="3">';
+      if (!out.includes(forEach)) return html;
+      return out.replace(
+        forEach,
+        '<sc-for list="{{ p.sbRows }}" as="r" hint-placeholder-count="5">'
+      );
+    },
+  },
+  {
     // One arrow revealed the student pages and the answer key together, which
     // is the wrong shape for the job: a teacher prints the workbook for the
     // class and opens the key on their own screen. Two bars, each with its
