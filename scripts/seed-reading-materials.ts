@@ -1081,11 +1081,10 @@ const ADAPTATIONS: Adaptation[] = [
     // Page two sets a 10in minimum, so the height left over after three
     // short sentences has to be given a job or it opens as a hole.
     //
-    // The three lines sit together under the heading with a half inch
-    // between them — enough that a child reading aloud does not slide to
-    // the next line — and everything below the last one becomes a space to
-    // write or draw about what they read. That fills the sheet with
-    // something to do rather than with air.
+    // The three lines sit close together under the heading, and everything
+    // below the last one becomes a space to write or draw about what they
+    // read. Keeping the reading tight buys the drawing most of the page,
+    // which is the half a child spends longest on.
     name: "pack the partner read and open a space to write or draw",
     apply: (html) => {
       const from =
@@ -1095,7 +1094,7 @@ const ADAPTATIONS: Adaptation[] = [
       if (!html.includes(from)) return html;
       return html.replace(
         from,
-        '<div style="display:flex;flex-direction:column;gap:46px">\n          ' +
+        '<div style="display:flex;flex-direction:column;gap:18px">\n          ' +
           from +
           "\n        </div>\n" +
           '        <div style="flex:1;min-height:110px;border:1.5px dashed #9BAE97;' +
