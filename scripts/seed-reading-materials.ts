@@ -1078,19 +1078,15 @@ const ADAPTATIONS: Adaptation[] = [
       ),
   },
   {
-    // Page two sets a 10in minimum and spreads what is left over with
-    // space-between, so the slack has to be given a home or it opens as a
-    // hole. The heart words are short now and stay packed at the top; the
-    // partner read already holds the flex, and its three lines spread down
-    // through the rest of the page. That fills the sheet, puts real space
-    // between the sentences a child is reading aloud, and brings the whole
-    // section up under the heart words.
+    // Page two sets a 10in minimum, so the height left over after three
+    // short sentences has to be given a job or it opens as a hole.
     //
-    // The lines spread inside their own box rather than the section's, so
-    // the heading stays with them instead of being stranded at the top,
-    // and space-between rather than space-evenly keeps the first line
-    // tucked under the heading instead of floating off it.
-    name: "spread the partner read down the rest of page two",
+    // The three lines sit together under the heading with a half inch
+    // between them — enough that a child reading aloud does not slide to
+    // the next line — and everything below the last one becomes a space to
+    // write or draw about what they read. That fills the sheet with
+    // something to do rather than with air.
+    name: "pack the partner read and open a space to write or draw",
     apply: (html) => {
       const from =
         '<sc-for list="{{ wbSent }}" as="s" hint-placeholder-count="3">\n' +
@@ -1099,10 +1095,15 @@ const ADAPTATIONS: Adaptation[] = [
       if (!html.includes(from)) return html;
       return html.replace(
         from,
-        '<div style="display:flex;flex-direction:column;flex:1;' +
-          'justify-content:space-between;gap:12px">\n          ' +
+        '<div style="display:flex;flex-direction:column;gap:46px">\n          ' +
           from +
-          "\n        </div>"
+          "\n        </div>\n" +
+          '        <div style="flex:1;min-height:110px;border:1.5px dashed #9BAE97;' +
+          "border-radius:10px;padding:8px 12px;margin-top:6px;display:flex;" +
+          'flex-direction:column">\n' +
+          '          <div style="font-size:12px;font-weight:700;color:#57534e">' +
+          "\u270F\uFE0F Draw or write about one of the sentences.</div>\n" +
+          "        </div>"
       );
     },
   },
@@ -1160,11 +1161,7 @@ const ADAPTATIONS: Adaptation[] = [
           '<div style="border:2px solid #111;border-radius:10px;padding:9px 10px">Read 3',
           '<div style="border:2px solid #111;border-radius:10px;padding:6px 10px">Read 3',
         ],
-        // The reclaimed height lands here, less a pad off the bottom.
-        [
-          'justify-content:space-between;gap:12px">',
-          'justify-content:space-between;gap:12px;padding-bottom:14px">',
-        ],
+
       ];
       let out = html;
       for (const [from, to] of edits) {
