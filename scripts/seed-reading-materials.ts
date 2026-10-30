@@ -20,6 +20,7 @@ import WRITING from "./reading-writing-passages.json" with { type: "json" };
 import SPLITS from "./reading-skill-splits.json" with { type: "json" };
 import PARTW from "./reading-part-words.json" with { type: "json" };
 import SENT3 from "./reading-third-sentences.json" with { type: "json" };
+import AICOACH from "./reading-ai-writing-coach.json" with { type: "json" };
 import { db } from "@/lib/db";
 import { reading_materials } from "@/lib/db/schema";
 import { inArray, sql } from "drizzle-orm";
@@ -1149,6 +1150,95 @@ const ADAPTATIONS: Adaptation[] = [
       return out.replace(
         forEach,
         '<sc-for list="{{ p.sbRows }}" as="r" hint-placeholder-count="5">'
+      );
+    },
+  },
+  {
+    // Lesson step 13 is the writing step, and it is the one step a teacher
+    // cannot be in two places for: every child wants a reader for their
+    // sentence at the same moment. This hands them a prompt to paste into a
+    // student-safe AI space, built to the four-part shape in the SchoolAI
+    // prompting guide — role, task, instructions, requirements.
+    //
+    // The prompt carries this skill's own passage and question, so the coach
+    // is talking about the text in front of the child rather than writing in
+    // general. Its whole job is to ask and respond: it is told, more than
+    // once and in the requirements as well as the instructions, never to
+    // produce a sentence the child could hand in.
+    //
+    // It is a copy button rather than a link. There is no account here, no
+    // way to know which platform a school has bought, and nothing a child
+    // types in that space should come back through this page.
+    name: "give the writing step an AI coach prompt to paste",
+    apply: (html) => {
+      const tpl = AICOACH.lines.join("\n");
+
+      // 1. Build the prompt beside the writing frames it describes.
+      const frames = "    const ebFrames = ['\u{1F4E3} My Answer: I think ______.'";
+      if (!html.includes(frames)) return html;
+      let out = html.replace(
+        frames,
+        "    const AI_TPL = " + JSON.stringify(tpl) + ";\n" +
+          "    const aiGrades = ((OGL.find((l) => 'Level ' + l.level === level) || {}).grades)" +
+          " || '1st-3rd';\n" +
+          "    const aiPrompt = AI_TPL.replace(/\\{GRADES\\}/g, aiGrades)" +
+          ".replace(/\\{SKILL\\}/g, label)" +
+          ".replace('{PASSAGE}', String(ebText || '').trim())" +
+          ".replace('{QUESTION}', ebPrompt);\n" +
+          frames
+      );
+
+      // 2. Hang it off step 13 with its copy and reveal controls.
+      const step13 = "{ hasPassage: !!ebText, passage: ebText, question: ebPrompt }),";
+      if (!out.includes(step13)) return html;
+      out = out.replace(
+        step13,
+        "{ hasPassage: !!ebText, passage: ebText, question: ebPrompt,\n" +
+          "          hasAi: !!ebText, aiPrompt,\n" +
+          "          aiOpen: !!(this.state && this.state.aiOpen),\n" +
+          "          aiBtn: (this.state && this.state.aiOpen) ? 'Hide prompt \u25B2'" +
+          " : 'Show prompt \u25BC',\n" +
+          "          toggleAi: () => this.setState({ aiOpen: !(this.state && this.state.aiOpen) }),\n" +
+          "          copyAiLabel: (this.state && this.state.aiCopied) ? '\u2713 Copied'" +
+          " : '\u{1F4CB} Copy prompt',\n" +
+          "          copyAi: () => { const ok = () => this.setState({ aiCopied: true });\n" +
+          "            const no = () => this.setState({ aiOpen: true });\n" +
+          "            try { const r = navigator.clipboard.writeText(aiPrompt);\n" +
+          "              if (r && r.then) r.then(ok, no); else ok(); } catch (e) { no(); } } }),"
+      );
+
+      // 3. The block itself, under the passage it coaches.
+      const afterPassage =
+        '                <div style="font-size:14px;font-weight:800;color:#2F3E2E">' +
+        "\u2753 {{ s.question }}</div>\n              </div>\n            </sc-if>";
+      if (!out.includes(afterPassage)) return html;
+      const btn =
+        "font-family:Outfit,sans-serif;font-size:12.5px;font-weight:700;" +
+        "border:1.5px solid #2F7A8C;background:#fff;color:#2F7A8C;padding:6px 12px;" +
+        "border-radius:8px;cursor:pointer;white-space:nowrap";
+      return out.replace(
+        afterPassage,
+        afterPassage +
+          '\n            <sc-if value="{{ s.hasAi }}" hint-placeholder-val="{{ false }}">\n' +
+          '              <div data-noprint="true" style="border:1.5px solid #2F7A8C;' +
+          "border-radius:10px;padding:10px 12px;background:#F3F8F9;display:flex;" +
+          'flex-direction:column;gap:7px">\n' +
+          '                <div style="font-family:Outfit,sans-serif;font-size:11px;' +
+          'font-weight:700;letter-spacing:.14em;color:#2F7A8C">\u{1F916} AI WRITING COACH</div>\n' +
+          '                <div style="font-size:12.5px;line-height:1.45;color:#44403c">' +
+          "Paste into a student-safe AI space. It coaches the five parts and gives feedback " +
+          "on what the child writes \u2014 it never writes the answer.</div>\n" +
+          '                <div style="display:flex;gap:7px;flex-wrap:wrap">' +
+          '<button type="button" onClick="{{ s.copyAi }}" style="' + btn + '">' +
+          "{{ s.copyAiLabel }}</button>" +
+          '<button type="button" onClick="{{ s.toggleAi }}" style="' + btn + '">' +
+          "{{ s.aiBtn }}</button></div>\n" +
+          '                <sc-if value="{{ s.aiOpen }}" hint-placeholder-val="{{ false }}">' +
+          '<div style="white-space:pre-wrap;font-family:ui-monospace,Menlo,monospace;' +
+          "font-size:11.5px;line-height:1.5;color:#1c1917;background:#fff;" +
+          "border:1px solid #C9D3C4;border-radius:8px;padding:9px 10px;max-height:320px;" +
+          'overflow:auto">{{ s.aiPrompt }}</div></sc-if>\n' +
+          "              </div>\n            </sc-if>"
       );
     },
   },
