@@ -111,7 +111,9 @@ body.board .prob { font-size: 17px; }
 .sheet-foot { margin-top: auto; padding-top: 8px; font-size: 11px; color: var(--muted); text-align: right; }
 .wb-note-line { font-size: 13px; color: var(--muted); }
 .wb-row { display: flex; flex-direction: column; gap: 6px; padding: 8px 0; border-bottom: 1px solid var(--line); }
-.wb-q { font-size: 15px; line-height: 1.45; color: var(--ink); overflow-wrap: anywhere; }
+/* The line box has to hold a two-line fraction, and the fraction has to be
+   small enough to sit inside one; at 1.45 and 0.9em it stood proud of it. */
+.wb-q { font-size: 15px; line-height: 1.8; color: var(--ink); overflow-wrap: anywhere; }
 .wb-work { border: 1px solid var(--line); border-radius: 8px; min-height: 96px; padding: 8px;
   font-size: 13px; color: var(--muted); }
 .wb-write { display: flex; flex-direction: column; gap: 9px; flex: 1; }
@@ -157,6 +159,13 @@ body.board .prob { font-size: 17px; }
   .printable .wb-key { color: #000; }
 }
 .blank { display: inline-block; width: 46px; border-bottom: 1.5px solid currentColor; vertical-align: baseline; }
+/* A fraction, set as one: numerator over denominator with a rule between. */
+.frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle;
+  margin: 0 3px 0 2px; line-height: 1.0; font-size: 0.82em; }
+.frac-n { padding: 0 4px; border-bottom: 1.5px solid currentColor; }
+.frac-d { padding: 0 4px; }
+.frac .blank { width: 24px; border-bottom-width: 1px; }
+.frac-n .blank { border-bottom: 0; }
 .rev-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .rev-sel { min-width: 130px; max-width: 100%; }
 .rev-prac { display: grid; gap: 8px; margin-top: 10px; }
@@ -357,7 +366,7 @@ body.board .prob { font-size: 17px; }
         var d = document.createElement("div"); d.className = "prob";
         var q = document.createElement("div"); fillText(q, item[0]);
         var hint = document.createElement("div"); hint.style.color = "var(--muted)"; hint.style.fontSize = "13px"; hint.textContent = item[2];
-        var a = document.createElement("div"); a.className = "ans"; a.textContent = "Answer: " + item[1];
+        var a = document.createElement("div"); a.className = "ans"; fillText(a, "Answer: " + item[1]);
         var b = document.createElement("button"); b.type = "button"; b.textContent = "Show answer";
         b.addEventListener("click", function () {
           var on = d.classList.toggle("show"); b.textContent = on ? "Hide answer" : "Show answer";
@@ -420,20 +429,35 @@ body.board .prob { font-size: 17px; }
       return body;
     }
 
+    // A heading is held back until something follows it, then the two are
+    // placed together. Measured one at a time, a heading that happened to
+    // land last sat alone at the foot of the page with its problems overleaf.
+    var pending = null;
+
     /** Put a block on the page, or on the next one if it will not fit here. */
     function add(node) {
+      var h = pending;
+      pending = null;
+      var first = h ? h : node;
+      if (h) body.appendChild(h);
       body.appendChild(node);
-      if (cur.scrollHeight > PAGE && body.children.length > 1) {
+      var floor = h ? 2 : 1;
+      if (cur.scrollHeight > PAGE && body.children.length > floor) {
+        if (h) body.removeChild(h);
         body.removeChild(node);
         sheet(base, true);
+        if (h) body.appendChild(h);
         body.appendChild(node);
       }
+      void first;
       return node;
     }
 
     function head(t) {
+      if (pending) body.appendChild(pending);   // two headings in a row
       var h = document.createElement("div"); h.className = "wb-head"; h.textContent = t;
-      return add(h);
+      pending = h;
+      return h;
     }
     /** A question, a space to work, and the answer the key reveals. */
     function line(text, answer) {
@@ -442,7 +466,7 @@ body.board .prob { font-size: 17px; }
       var work = document.createElement("div"); work.className = "wb-work";
       work.textContent = "Show your work.";
       var k = document.createElement("div"); k.className = "wb-key";
-      k.textContent = "Answer: " + answer;
+      fillText(k, "Answer: " + answer);
       r.appendChild(q); r.appendChild(work); r.appendChild(k);
       return add(r);
     }
@@ -469,13 +493,18 @@ body.board .prob { font-size: 17px; }
     } else if (reviewAuto) {
       note("Review of the earlier standards this one is built on. Swap them in step 1 of the lesson.");
     }
+    // Three problems a standard is right for three standards and too much
+    // paper for four. The review is capped at nine problems however many
+    // standards it spans, so adding a fourth broadens the review rather than
+    // lengthening the print job.
+    var per = picked.length >= 4 ? 2 : 3;
     picked.forEach(function (rc) {
       var rp = PRAC[rc];
       if (!rp) return;
-      head("Review · " + rc + " · " + domainLabel(rc));
+      head("Review · " + standardLabel(rc));
       line(rp.c[0], rp.ac[0]);
       line(rp.c[1], rp.ac[1]);
-      line(rp.w[0], rp.aw[0]);
+      if (per > 2) line(rp.w[0], rp.aw[0]);
     });
 
     // Steps 2, 4 and 5: the warm-up, the drills, and reinforcement.
@@ -505,7 +534,7 @@ body.board .prob { font-size: 17px; }
           var row2 = document.createElement("div"); row2.className = "tile-q";
           var txt = document.createElement("span"); txt.className = "wb-q"; fillText(txt, ln);
           var box = document.createElement("span"); box.className = "ansbox";
-          var k = document.createElement("span"); k.className = "wb-key"; k.textContent = String(t.ans[qi][j]);
+          var k = document.createElement("span"); k.className = "wb-key"; fillText(k, String(t.ans[qi][j]));
           box.appendChild(k);
           row2.appendChild(txt); row2.appendChild(box); qbox.appendChild(row2);
         });
@@ -532,7 +561,7 @@ body.board .prob { font-size: 17px; }
       // f[2] is the right answer, not the student's working. It belongs
       // behind the key with the explanation, never on the student's sheet.
       var k = document.createElement("div"); k.className = "wb-key";
-      k.textContent = "Error: " + f[1] + (f[2] ? "  Correct: " + f[2] : "");
+      fillText(k, "Error: " + f[1] + (f[2] ? "  Correct: " + f[2] : ""));
       r.appendChild(w1); r.appendChild(w2); r.appendChild(k);
       add(r);
     });
@@ -570,13 +599,15 @@ body.board .prob { font-size: 17px; }
     for (var ln2 = 0; ln2 < 6; ln2++) ruled.appendChild(document.createElement("div"));
     add(ruled);
     var kk = document.createElement("div"); kk.className = "wb-key";
-    kk.textContent = "Answer: " + p.aw[1];
+    fillText(kk, "Answer: " + p.aw[1]);
     add(kk);
 
     // Step 9: the exit ticket, done alone and handed in.
     sheet("Step 9 · Recap and exit ticket");
     note("Solve this on your own and hand it in.");
     line(p.c[0], p.ac[0]);
+
+    if (pending) { body.appendChild(pending); pending = null; }
 
     // Measuring is over, so the sheets can stand at their full height again.
     [].forEach.call(wb.querySelectorAll(".sheet"), function (s2) { s2.style.minHeight = ""; });
@@ -641,13 +672,39 @@ body.board .prob { font-size: 17px; }
     update();
   });
 
+  // A fraction written 3/4 reads as a division in running text, and a child
+  // learning fractions is being asked to see a part of a whole. It is set
+  // the way it is set in a book: numerator over denominator, with a rule
+  // between. Either half may be a blank, so "1/2 = 2/___" still works.
+  var FRACTION = /(\d+|_{2,})\s*\/\s*(\d+|_{2,})/g;
+
+  function blankOrText(el, part) {
+    if (part.charAt(0) === "_") {
+      var b = document.createElement("span"); b.className = "blank"; el.appendChild(b);
+    } else {
+      el.appendChild(document.createTextNode(part));
+    }
+  }
+  function plainInto(el, text) {
+    String(text).split(/(_{2,})/).forEach(function (part) {
+      if (part) blankOrText(el, part);
+    });
+  }
   function fillText(el, text) {
     el.textContent = "";
-    String(text).split(/(_{2,})/).forEach(function (part) {
-      if (!part) return;
-      if (part.charAt(0) === "_") { var b = document.createElement("span"); b.className = "blank"; el.appendChild(b); }
-      else el.appendChild(document.createTextNode(part));
-    });
+    var str = String(text), at = 0, m;
+    FRACTION.lastIndex = 0;
+    while ((m = FRACTION.exec(str)) !== null) {
+      if (m.index > at) plainInto(el, str.slice(at, m.index));
+      var f = document.createElement("span"); f.className = "frac";
+      var n = document.createElement("span"); n.className = "frac-n";
+      var d = document.createElement("span"); d.className = "frac-d";
+      blankOrText(n, m[1]); blankOrText(d, m[2]);
+      f.appendChild(n); f.appendChild(d);
+      el.appendChild(f);
+      at = m.index + m[0].length;
+    }
+    if (at < str.length) plainInto(el, str.slice(at));
   }
 
   // Math review: dropdowns list earlier standards (same grade or lower), like the reading review menus.
@@ -732,6 +789,16 @@ body.board .prob { font-size: 17px; }
     var d = domainOf(code);
     return DOMAIN_NAMES[d] || d;
   }
+  /** The grade a standard belongs to, named. */
+  function gradeOf(code) {
+    var r = row(code);
+    return r ? r[0] : "";
+  }
+  /** "Grade 3 · 3.NBT.1 — Number and Operations in Base Ten" */
+  function standardLabel(code) {
+    var g = gradeOf(code);
+    return (g ? g + " \u00B7 " : "") + code + " \u2014 " + domainLabel(code);
+  }
 
   /**
    * Review candidates for a standard, in the order a teacher would reach for
@@ -774,7 +841,33 @@ body.board .prob { font-size: 17px; }
   function fillReview() {
     var g = gradeSel.value, code = stdSel.value;
     var groups = code ? reviewGroups(code, g) : [];
-    var suggested = (groups[0] ? groups[0].rows : []).slice(0, 3).map(function (r) { return r[1]; });
+    var gi = grades.indexOf(g);
+    function rowsFor(label) {
+      for (var i = 0; i < groups.length; i++) {
+        if (groups[i].label.indexOf(label) === 0) return groups[i].rows;
+      }
+      return [];
+    }
+    function codes(rows, n) { return rows.slice(0, n).map(function (r) { return r[1]; }); }
+    // Three from the standard's own strand, then one from the strand that
+    // feeds it. Four slots of the same line of work is a narrower review
+    // than a teacher would set by hand; this spans the progression and the
+    // thing it rests on.
+    //
+    // The feeding pick stays within two years. Operations is fed by Counting
+    // and Cardinality, which only exists in kindergarten, so an unbounded
+    // reach put K.CC.7 in front of a grade 4 class. Where nothing recent
+    // feeds in, the standard's own strand takes the slot back.
+    var strand = rowsFor("Builds on");
+    var near = rowsFor("Feeds into").filter(function (r) {
+      return gi - grades.indexOf(r[0]) <= 2;
+    });
+    var suggested = codes(strand, 3);
+    suggested = suggested.concat(codes(near, 4 - suggested.length));
+    if (suggested.length < 4) suggested = suggested.concat(codes(strand.slice(suggested.length), 4 - suggested.length));
+    if (suggested.length < 4) suggested = suggested.concat(codes(rowsFor("Feeds into"), 4 - suggested.length));
+    suggested = suggested.filter(function (c, i, a) { return a.indexOf(c) === i; }).slice(0, 4);
+    if (!suggested.length) suggested = (groups[0] ? groups[0].rows : []).slice(0, 3).map(function (r) { return r[1]; });
     reviewAuto = true;
     [1, 2, 3, 4].forEach(function (n, idx) {
       var sel = document.getElementById("rev" + n);
@@ -785,13 +878,12 @@ body.board .prob { font-size: 17px; }
         var og = document.createElement("optgroup"); og.label = grp.label;
         grp.rows.forEach(function (r) {
           var o = document.createElement("option"); o.value = r[1];
-          o.textContent = (r[0] === g ? "" : r[0] + " · ") + r[1] + " — " + domainLabel(r[1]);
+          o.textContent = standardLabel(r[1]);
           og.appendChild(o);
         });
         sel.appendChild(og);
       });
-      // The first slots open on the strand this standard stands on, so step 1
-      // is a lesson before anyone touches it. The last stays free.
+      // Step 1 is a lesson before anyone touches it.
       sel.value = suggested[idx] || "";
     });
     renderReview();
@@ -804,12 +896,20 @@ body.board .prob { font-size: 17px; }
       var p = PRAC[code];
       if (!p) return;
       var d = document.createElement("div"); d.className = "prob";
-      var h = document.createElement("div"); h.style.color = "var(--muted)"; h.style.fontSize = "13px"; h.textContent = "Review: " + code;
-      var q = document.createElement("div"); fillText(q, p.c[0]);
-      var a = document.createElement("div"); a.className = "ans"; a.textContent = "Answer: " + p.ac[0];
-      var b = document.createElement("button"); b.type = "button"; b.textContent = "Show answer";
-      b.addEventListener("click", function () { var on = d.classList.toggle("show"); b.textContent = on ? "Hide answer" : "Show answer"; });
-      d.appendChild(h); d.appendChild(q); d.appendChild(a); d.appendChild(b);
+      var h = document.createElement("div"); h.style.color = "var(--muted)"; h.style.fontSize = "13px";
+      h.textContent = "Review \u00B7 " + standardLabel(code);
+      d.appendChild(h);
+      // Two problems, not one. A single question is a reminder that the
+      // standard exists; two is a warm-up a teacher can actually run.
+      [0, 1].forEach(function (i) {
+        if (!p.c[i]) return;
+        var q = document.createElement("div"); fillText(q, p.c[i]);
+        var a = document.createElement("div"); a.className = "ans"; fillText(a, "Answer: " + p.ac[i]);
+        d.appendChild(q); d.appendChild(a);
+      });
+      var b = document.createElement("button"); b.type = "button"; b.textContent = "Show answers";
+      b.addEventListener("click", function () { var on = d.classList.toggle("show"); b.textContent = on ? "Hide answers" : "Show answers"; });
+      d.appendChild(b);
       box.appendChild(d);
     });
     renderReviewPractice();
@@ -864,7 +964,7 @@ body.board .prob { font-size: 17px; }
     (FTE[code] || []).forEach(function (t) {
       var d = document.createElement("div"); d.className = "prob";
       var q = document.createElement("div"); q.textContent = t[0];
-      var a = document.createElement("div"); a.className = "ans"; a.textContent = "What went wrong: " + t[1] + " Correct: " + t[2];
+      var a = document.createElement("div"); a.className = "ans"; fillText(a, "What went wrong: " + t[1] + " Correct: " + t[2]);
       var b = document.createElement("button"); b.type = "button"; b.textContent = "Show the error";
       b.addEventListener("click", function () { var on = d.classList.toggle("show"); b.textContent = on ? "Hide the error" : "Show the error"; });
       d.appendChild(q); d.appendChild(a); d.appendChild(b);

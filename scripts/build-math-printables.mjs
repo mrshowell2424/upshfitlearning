@@ -56,9 +56,23 @@ const esc = (s) =>
 /**
  * Runs of two or more underscores stand for a space to write, the same as they
  * do in the hub. Left as literal underscores they look like a typo.
+ *
+ * And a fraction is set as a fraction, numerator over denominator, the way it
+ * is set in a book — "3/4" in running text reads as a division. Either half
+ * may be a blank, so "1/2 = 2/___" still works.
  */
+const slot = (part) =>
+  part.charAt(0) === "_" ? '<span class="blank"></span>' : esc(part);
+
 const blanks = (s) =>
-  esc(s).replace(/_{2,}/g, '<span class="blank"></span>');
+  String(s)
+    .split(/(\d+\s*\/\s*\d+|\d+\s*\/\s*_{2,}|_{2,}\s*\/\s*\d+)/)
+    .map((part, i) => {
+      if (i % 2 === 0) return esc(part).replace(/_{2,}/g, '<span class="blank"></span>');
+      const [n, d] = part.split("/").map((x) => x.trim());
+      return `<span class="frac"><span class="frac-n">${slot(n)}</span><span class="frac-d">${slot(d)}</span></span>`;
+    })
+    .join("");
 
 const CSS = `
   @page { size: letter portrait; margin: 0.5in; }
@@ -78,7 +92,10 @@ const CSS = `
   .rule { flex: 1; border-bottom: 1px solid #2F3E2E; height: 14px; }
   .dir { font-size: 13px; color: #5B6B59; }
   .body { display: flex; flex-direction: column; gap: 11px; flex: 1; }
-  .q { font-size: 15px; line-height: 1.45; overflow-wrap: anywhere; }
+  /* A stacked fraction is two lines tall. The line box has to hold it, and
+     the fraction has to be small enough to sit inside one: at 1.45 and 0.9em
+     it hung two pixels below and printed through the text under it. */
+  .q { font-size: 15px; line-height: 1.8; overflow-wrap: anywhere; }
   .q .n { font-weight: 700; }
   .work { border: 1px solid #2F3E2E; border-radius: 8px; padding: 8px; font-size: 12px;
     color: #5B6B59; min-height: 96px; }
@@ -90,17 +107,31 @@ const CSS = `
      and hoping. A long grade 12 prompt eats into the boxes; it never runs off
      the page. */
   .fte .body { gap: 12px; }
-  .fte .grow { flex: 1 1 0; display: flex; flex-direction: column; gap: 6px; min-height: 1.1in; }
+  /* basis auto, not 0: with a zero basis a long grade 12 prompt was squeezed
+     by the boxes below it and printed through its own line box. The question
+     takes the height it needs and the answer boxes divide what is left. */
+  .fte .grow { flex: 1 1 auto; display: flex; flex-direction: column; gap: 6px; min-height: 1.1in; }
   .fte .grow.solve { flex-grow: 1.4; }
-  .fte .grow .work { flex: 1; min-height: 0; }
+  .fte .grow .work { flex: 1 1 auto; min-height: 0.9in; }
+  .sheet .q { flex: none; }
   /* Question left, answer box hard right. Wrapping the box onto its own line
      whenever the question ran long left the sheet looking ragged. */
-  .short { display: flex; gap: 14px; align-items: center; }
-  .short .q { flex: 1; }
-  .shortbox { flex: 0 0 1.5in; height: 0.42in; border: 1px solid #2F3E2E; border-radius: 6px;
-    display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; }
+  .short { display: flex; gap: 14px; align-items: stretch; }
+  .short .q { flex: 1; align-self: center; }
+  /* The box grows down for a written-out answer. Fixed at a line and a half,
+     "four and fifty-six hundredths" printed straight through its border. */
+  .shortbox { flex: 0 0 1.6in; min-height: 0.42in; border: 1px solid #2F3E2E; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    padding: 4px 7px; font-weight: 700; font-size: 14px; line-height: 1.25;
+    overflow-wrap: anywhere; }
   .head { font-size: 15px; font-weight: 800; margin-top: 4px; }
   .blank { display: inline-block; width: 52px; border-bottom: 1.5px solid currentColor; }
+  .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle;
+    margin: 0 3px 0 2px; line-height: 1.0; font-size: 0.82em; }
+  .frac-n { padding: 0 4px; border-bottom: 1.5px solid currentColor; }
+  .frac-d { padding: 0 4px; }
+  .frac .blank { width: 26px; }
+  .frac-n .blank { border-bottom: 0; }
   .ans { font-size: 13px; font-weight: 700; color: #1F7A5C; }
   .ans .lbl { color: #5B6B59; font-weight: 600; }
   .foot { margin-top: auto; padding-top: 8px; font-size: 10px; color: #5B6B59;
@@ -137,8 +168,8 @@ function findTheError(grade, codes, key) {
             `<div class="row grow solve"><div class="q"><span class="n">2.</span> Solve the problem correctly. Show all of your work.</div>` +
             `<div class="work"></div></div>` +
             (key
-              ? `<div class="ans"><span class="lbl">The error:</span> ${esc(why)}</div>` +
-                (correct ? `<div class="ans"><span class="lbl">Correct answer:</span> ${esc(correct)}</div>` : "")
+              ? `<div class="ans"><span class="lbl">The error:</span> ${blanks(why)}</div>` +
+                (correct ? `<div class="ans"><span class="lbl">Correct answer:</span> ${blanks(correct)}</div>` : "")
               : ""),
           foot: `${code} · task ${i + 1}${key ? " · ANSWER KEY" : ""}`,
         })
@@ -158,7 +189,7 @@ function practice(grade, codes, key) {
       .map(
         (q, i) =>
           `<div class="row"><div class="short"><span class="q"><span class="n">${i + 1}.</span> ${blanks(q)}</span>` +
-          `<span class="shortbox">${key ? esc(p.ac[i] ?? "") : ""}</span></div></div>`
+          `<span class="shortbox">${key ? blanks(p.ac[i] ?? "") : ""}</span></div></div>`
       )
       .join("");
     const word = (p.w || [])
@@ -166,7 +197,7 @@ function practice(grade, codes, key) {
         (q, i) =>
           `<div class="row"><div class="q"><span class="n">${(p.c || []).length + i + 1}.</span> ${blanks(q)}</div>` +
           `<div class="work" style="min-height:1.25in">Show your work and answer.</div>` +
-          (key ? `<div class="ans"><span class="lbl">Answer:</span> ${esc(p.aw[i] ?? "")}</div>` : "") +
+          (key ? `<div class="ans"><span class="lbl">Answer:</span> ${blanks(p.aw[i] ?? "")}</div>` : "") +
           `</div>`
       )
       .join("");
@@ -197,6 +228,7 @@ const page1 = await browser.newPage();
 
 let wrote = 0;
 let shrunk = 0;
+const spills = [];
 for (const [grade, codes] of byGrade) {
   const k = gradeKey(grade);
   for (const [name, build] of [
@@ -216,6 +248,16 @@ for (const [grade, codes] of byGrade) {
         all.forEach((s, i) => {
           s.querySelector(".pageno").textContent = `${i + 1} of ${all.length}`;
         });
+        // Anything whose text is taller or wider than the box drawn round it.
+        // A sheet can be the right height and still have an answer printing
+        // through its own border.
+        // 3px, not 1: a stacked fraction is an inline-flex, and its rounded
+        // height reads a pixel or two past the line box it sits inside with
+        // nothing visibly wrong. A real spill — an answer printing through
+        // its own border — was thirty.
+        window.__spill = [...document.querySelectorAll(".shortbox, .q, .work, .head")]
+          .filter((e) => e.scrollHeight > e.clientHeight + 3 || e.scrollWidth > e.clientWidth + 3)
+          .map((e) => `${e.className} (${e.scrollHeight}>${e.clientHeight}px) ${e.textContent.slice(0, 50)}`);
         const max = 9.6 * 96;
         // Measured with the floor removed: a sheet is 9.6in tall whether or
         // not it has the content to fill it, so measuring it as-is reports
@@ -233,6 +275,10 @@ for (const [grade, codes] of byGrade) {
         return n;
       });
       shrunk += over;
+      const spill = await page1.evaluate(() => window.__spill || []);
+      if (spill.length) {
+        spill.forEach((x) => spills.push(`${name}_${key ? "key" : "student"} :: ${x}`));
+      }
       await page1.pdf({
         path: path.join(OUT, `${name}_${key ? "key" : "student"}.pdf`),
         format: "Letter",
@@ -245,4 +291,10 @@ for (const [grade, codes] of byGrade) {
   }
 }
 console.log(`\n✅ rebuilt ${wrote} printables${shrunk ? `, ${shrunk} sheets scaled to fit` : ", none needed scaling"}`);
+if (spills.length) {
+  console.log(`⚠️  ${spills.length} file(s) with text overflowing its box:`);
+  spills.slice(0, 10).forEach((s) => console.log("   " + s));
+} else {
+  console.log("   no text overflows its box");
+}
 await browser.close();

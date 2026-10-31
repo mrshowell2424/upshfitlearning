@@ -127,6 +127,18 @@ export async function GET(
 
   if (!row) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
+  // An hour of browser cache meant an edited workbook did not reach the
+  // teacher who had already opened it that morning — they kept the old one
+  // and had no way to know. The row carries its own size and write time, so
+  // the browser can ask every time and be told "unchanged" for nothing.
+  const tag = `W/"${row.bytes}-${row.updated_at ? new Date(row.updated_at).getTime() : 0}"`;
+  if (request.headers.get("if-none-match") === tag) {
+    return new NextResponse(null, {
+      status: 304,
+      headers: { etag: tag, "cache-control": "private, no-cache" },
+    });
+  }
+
   const body = BINARY_TYPES.has(row.content_type)
     ? decodeBase64(row.content)
     : row.content;
@@ -134,9 +146,10 @@ export async function GET(
   return new NextResponse(body, {
     headers: {
       "content-type": row.content_type,
-      // Gated content must not sit in a shared cache. The browser may keep it
-      // for the length of a lesson; nothing in between may keep it at all.
-      "cache-control": "private, max-age=3600",
+      // Gated content must never sit in a shared cache. The browser may keep
+      // a copy, but has to check it is still current before using it.
+      "cache-control": "private, no-cache",
+      etag: tag,
       "x-content-type-options": "nosniff",
     },
   });
