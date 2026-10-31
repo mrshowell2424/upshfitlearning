@@ -1423,7 +1423,6 @@ const MATH_ADAPTATIONS: Adaptation[] = [
       const edits: [string, string][] = [
         ["<title>OG Math Hub</title>", "<title>Math Hub</title>"],
         ["<h1>OG Math Hub</h1>", "<h1>Math Hub</h1>"],
-        ["run the five OG steps in order", "run the five steps in order"],
       ];
       let out = html;
       for (const [from, to] of edits) {

@@ -68,11 +68,6 @@ select:focus-visible, input:focus-visible, button:focus-visible, a:focus-visible
 .step ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
 .step .focus-line { color: var(--ink); font-weight: 600; font-size: 14px; }
 .std-title { font-size: 13px; color: var(--accent); font-weight: 600; }
-.extras-head { margin-top: 44px; }
-.extras-head p { color: var(--muted); margin: 8px 0 0; max-width: 64ch; }
-.extras { display: grid; gap: 14px; margin-top: 18px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-.extra { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
-.extra p { margin: 0; color: var(--muted); font-size: 14px; }
 .btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: auto; }
 .btn {
   display: block; text-align: center; text-decoration: none; font-size: 14px; font-weight: 600;
@@ -82,7 +77,7 @@ select:focus-visible, input:focus-visible, button:focus-visible, a:focus-visible
 .note { font-size: 13px; color: var(--muted); margin: 0; }
 /* Board mode: larger type, short cards, no body copy, for a projector. */
 body.board { font-size: 18px; }
-body.board .step p, body.board .step ul, body.board .std-title, body.board .extras-head p { display: none; }
+body.board .step p, body.board .step ul, body.board .std-title { display: none; }
 body.board .step { padding: 26px; }
 body.board h3 { font-size: 26px; }
 body.board .step-num { width: 48px; height: 48px; font-size: 22px; }
@@ -181,7 +176,7 @@ body.board .prob { font-size: 17px; }
 <main class="wrap">
   <p class="eyebrow">Intervention &middot; Structured math</p>
   <h1>OG Math Hub</h1>
-  <p class="lede">Pick a grade and standard, then run the five OG steps in order. Extra resources sit beside the lesson, not inside it.</p>
+  <p class="lede">Pick a grade and standard, then run the nine lesson steps in order.</p>
 
   <section class="builder" aria-label="Lesson builder">
     <div class="row">
@@ -285,22 +280,6 @@ body.board .prob { font-size: 17px; }
     </article>
   </div>
 
-  <div class="extras-head">
-    <h2>Extra resources</h2>
-    <p class="std-title" id="extras-std"></p>
-    <p>Not part of the lesson steps. Use this to extend knowledge for early finishers or small groups.</p>
-  </div>
-
-  <div class="extras">
-    <article class="extra">
-      <h3>Daily practice</h3>
-      <p id="practice-note">Four computation problems and two word problems for each standard.</p>
-      <div class="btns">
-        <a class="btn" data-kind="practice-student" href="#">Student pages</a>
-        <a class="btn" data-kind="practice-key" href="#">Answer key</a>
-      </div>
-    </article>
-  </div>
 </main>
 
   <section class="builder printable" id="printable" aria-label="Student workbook" style="margin-top:24px">
@@ -785,19 +764,16 @@ body.board .prob { font-size: 17px; }
     var g = gradeSel.value, code = stdSel.value, r = row(code);
     document.querySelectorAll("[data-std-label]").forEach(function (el) { el.textContent = code ? g + " · " + code : ""; });
     var has = !!r;
-    var tileOk = has && r[3] === 1, pracOk = has && r[4] === 1;
+    var tileOk = has && r[3] === 1;
     document.getElementById("fte-note").textContent = has
       ? "This standard has " + r[2] + " Find the Error tasks. Students spot and fix the mistake in each one."
       : "Pick a standard to see its tasks.";
     document.getElementById("tile-note").textContent = tileOk
       ? "Students cut out number tiles and fill this standard's answer boxes."
       : "No tile task for this standard. Digits can't fill the boxes here.";
-    document.getElementById("practice-note").textContent = pracOk
-      ? "Four computation problems and two word problems for this standard."
-      : "No daily practice set for this standard yet.";
     document.querySelectorAll("a[data-kind]").forEach(function (a) {
       var kind = a.getAttribute("data-kind");
-      var needs = kind.indexOf("tile") === 0 ? tileOk : kind.indexOf("practice") === 0 ? pracOk : has;
+      var needs = kind.indexOf("tile") === 0 ? tileOk : has;
       a.href = fileFor(kind, g);
       a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener");
       a.setAttribute("aria-disabled", needs ? "false" : "true");
@@ -807,7 +783,6 @@ body.board .prob { font-size: 17px; }
     renderFTE(code);
     fillReview();
     fillWbStd();
-    document.getElementById("extras-std").textContent = has ? "For " + g + ", standard " + code : "";
     status.textContent = has ? "Showing " + g + ", standard " + code + "." : "";
     try { sessionStorage.setItem("ogmath-grade", g); sessionStorage.setItem("ogmath-std", code); } catch (e) {}
   }
