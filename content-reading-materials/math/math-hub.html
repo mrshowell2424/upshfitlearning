@@ -164,6 +164,10 @@ body.board .prob { font-size: 17px; }
 .blank { display: inline-block; width: 46px; border-bottom: 1.5px solid currentColor; vertical-align: baseline; }
 .rev-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .rev-sel { min-width: 130px; max-width: 100%; }
+.rev-prac { display: grid; gap: 8px; margin-top: 10px; }
+.rev-prac .prac-grade { display: flex; flex-direction: column; align-items: stretch; gap: 6px; }
+.rev-prac .prac-label { font-size: 13px; font-weight: 600; color: var(--muted); }
+.rev-prac .prac-links { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .tilebank { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 12px; }
 .tile { width: 40px; height: 40px; border: 2px solid var(--ink); border-radius: 8px; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 18px; color: var(--ink); }
 .ansbox { display: inline-block; width: 44px; height: 26px; border: 1.5px solid var(--ink); border-radius: 4px; vertical-align: middle; margin-left: 6px; position: relative; }
@@ -211,6 +215,7 @@ body.board .prob { font-size: 17px; }
         <label class="label" for="rev4">Review 4</label><select id="rev4" class="rev-sel"></select>
       </div>
       <div class="ex" id="rev-ex"></div>
+      <div class="rev-prac" id="rev-prac"></div>
     </article>
     <article class="step" id="s1" data-step="1">
       <div class="step-top"><div class="step-num">2</div><span class="time">5&ndash;10 min</span></div>
@@ -304,8 +309,8 @@ body.board .prob { font-size: 17px; }
       <label class="label" for="wb-std">Standard</label>
       <select id="wb-std" aria-label="Workbook standard"></select>
       <button type="button" id="wb-toggle" aria-pressed="false">Show answer key</button>
+      <button type="button" id="wb-print">Print workbook</button>
       <span class="note" id="wb-note"></span>
-      <span class="note">To print, use your browser's print command (Ctrl+P or Cmd+P). Only this workbook prints.</span>
     </div>
     <div id="wb"></div>
   </section>
@@ -627,6 +632,12 @@ body.board .prob { font-size: 17px; }
       e.style.zoom = ""; e.style.minHeight = "";
     });
   }
+  // The print button only opens the browser's own dialogue — the stylesheet
+  // already limits what goes on the paper to the workbook — but a teacher
+  // should not have to be told a keyboard shortcut to get a worksheet out.
+  var printBtn = document.getElementById("wb-print");
+  if (printBtn) printBtn.addEventListener("click", function () { window.print(); });
+
   window.addEventListener("beforeprint", fitSheets);
   window.addEventListener("afterprint", unfitSheets);
 
@@ -699,6 +710,43 @@ body.board .prob { font-size: 17px; }
       b.addEventListener("click", function () { var on = d.classList.toggle("show"); b.textContent = on ? "Hide answer" : "Show answer"; });
       d.appendChild(h); d.appendChild(q); d.appendChild(a); d.appendChild(b);
       box.appendChild(d);
+    });
+    renderReviewPractice();
+  }
+
+  // Daily practice, in the review step rather than only at the foot of the
+  // page. It is review work, so this is where a teacher is standing when they
+  // want it. The sheets are per grade, and a review concept is often from an
+  // earlier one, so the links follow the grade the chosen standards came from
+  // rather than the grade being taught.
+  function renderReviewPractice() {
+    var box = document.getElementById("rev-prac");
+    if (!box) return;
+    box.innerHTML = "";
+    var want = [];
+    [1, 2, 3, 4].forEach(function (n) {
+      var el = document.getElementById("rev" + n);
+      var r = el && el.value ? row(el.value) : null;
+      if (r && want.indexOf(r[0]) === -1) want.push(r[0]);
+    });
+    if (!want.length) want = [gradeSel.value];
+    want.forEach(function (gr) {
+      var has = DATA.some(function (r) { return r[0] === gr && r[4] === 1; });
+      var line = document.createElement("div"); line.className = "prac-grade";
+      var lab = document.createElement("span"); lab.className = "prac-label";
+      lab.textContent = "Daily practice \u00B7 " + gr;
+      line.appendChild(lab);
+      var links = document.createElement("div"); links.className = "prac-links";
+      [["practice-student", "Student pages"], ["practice-key", "Answer key"]].forEach(function (pair) {
+        var a = document.createElement("a");
+        a.className = "btn"; a.textContent = pair[1];
+        a.href = fileFor(pair[0], gr);
+        a.target = "_blank"; a.rel = "noopener";
+        a.setAttribute("aria-disabled", has ? "false" : "true");
+        links.appendChild(a);
+      });
+      line.appendChild(links);
+      box.appendChild(line);
     });
   }
   [1, 2, 3, 4].forEach(function (n) {
