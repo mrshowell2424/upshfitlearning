@@ -149,7 +149,10 @@ body.board .prob { font-size: 17px; }
   .printable .wb-q, .printable .wb-head, .printable .wb-work,
   .printable .frame-chip, .printable .sheet-title, .printable .rdw-label { color: #000 !important; }
   .printable .sheet-meta, .printable .sheet-foot, .printable .wb-note-line, .printable .rdw-hint { color: #444 !important; }
-  .printable .wb-work, .printable .rdw-cell, .printable .tile-work { border: 1px solid #000; }
+  .printable .wb-work, .printable .rdw-cell, .printable .tile-work,
+  .printable .cra-cell { border: 1px solid #000; }
+  /* the tags are the one thing on the sheet that must keep its colour */
+  .printable .cra-tag { color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .printable .ruled div { border-bottom: 1px solid #000; }
   .printable .sheet-top { border-bottom: 2px solid #000; }
   .printable .nd-rule { border-bottom: 1px solid #000; }
@@ -190,6 +193,21 @@ body.board .prob { font-size: 17px; }
 .tile-item .ansbox { margin-left: 0; justify-self: end; }
 .tile-work { grid-column: 1 / -1; border: 1px solid var(--line); border-radius: 8px;
   min-height: 72px; padding: 7px 9px; font-size: 12px; color: var(--muted); }
+/* Concrete, Representational, Abstract: one problem, three spaces, in order.
+   The tags carry the poster's colours so the page and the wall agree. */
+.cra-cell { border: 1px solid var(--line); border-radius: 10px; padding: 9px 11px;
+  display: flex; flex-direction: column; gap: 7px; flex: 1 1 auto;
+  break-inside: avoid; page-break-inside: avoid; }
+.cra-top { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
+.cra-tag { font-family: var(--display); font-size: 11px; font-weight: 800; letter-spacing: .09em;
+  text-transform: uppercase; color: #fff; border-radius: 999px; padding: 3px 9px; white-space: nowrap; }
+.cra-tag.concrete { background: #C0504D; }
+.cra-tag.representational { background: #2F7A8C; }
+.cra-tag.abstract { background: #1F7A5C; }
+.cra-hint { font-size: 12px; color: var(--muted); }
+.cra-space { flex: 1; min-height: 112px; }
+.cra-line { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; margin-top: 7px; }
+#wb.big .cra-space { min-height: 150px; }
 #wb.big .tile, #wb.big .ansbox { width: 68px; height: 68px; font-size: 32px; }
 #wb.big .ansbox .wb-key { font-size: 32px; }
 #wb.big .tile-work { min-height: 96px; }
@@ -364,6 +382,64 @@ body.board .prob { font-size: 17px; }
 
 
   // Example problems per step, from the standard's daily practice set.
+  // Concrete, Representational, Abstract — the three ways through one
+  // problem, from the CRA poster: hands-on objects, then a drawing of the
+  // numbers, then symbols.
+  //
+  // What counts as a manipulative changes with the grade. Counters and
+  // blocks are right for "Ruby has 6 stickers" and absurd for "write the
+  // square root of minus sixteen", so each band names its own.
+  var CRA_BANDS = [
+    { upto: "Grade 2",
+      objects: "counters, blocks, cubes, or fingers",
+      drawings: "dots, tally marks, or a picture of each thing" },
+    { upto: "Grade 5",
+      objects: "counters, tiles, base-ten blocks, or fraction strips",
+      drawings: "equal groups, an array, a bar model, or a number line" },
+    { upto: "Grade 8",
+      objects: "algebra tiles, a number line, or a double number line",
+      drawings: "a table, a bar or double number line, or a graph" },
+    { upto: null,
+      objects: "algebra tiles, a physical or graphing model",
+      drawings: "a graph, a table, or a labelled diagram" }
+  ];
+  function craBand(g) {
+    var gi = grades.indexOf(g);
+    for (var i = 0; i < CRA_BANDS.length; i++) {
+      var b = CRA_BANDS[i];
+      if (!b.upto) return b;
+      var at = grades.indexOf(b.upto);
+      if (at === -1 || gi <= at) return b;
+    }
+    return CRA_BANDS[CRA_BANDS.length - 1];
+  }
+
+  /**
+   * The three ways through one problem: what to ask of a student, and what a
+   * right answer looks like.
+   *
+   * Abstract is the problem's own answer, so it is exact. Concrete and
+   * Representational describe what to accept — grounded in the problem's own
+   * numbers where it states any — because what makes those two correct is the
+   * method, not a single string a teacher could mark against.
+   */
+  function craWays(g, problem, answer) {
+    var band = craBand(g);
+    var nums = (String(problem).match(/\d+(?:\.\d+)?/g) || []).slice(0, 3);
+    var withNums = nums.length >= 2 ? " Set out " + nums.slice(0, 2).join(" and ") + ", then act the problem out." : " Model the situation, then act it out.";
+    return [
+      { label: "Concrete",
+        hint: "Solve it with objects you can move: " + band.objects + ".",
+        key: "Build it with " + band.objects + "." + withNums },
+      { label: "Representational",
+        hint: "Solve it by drawing: " + band.drawings + ".",
+        key: "Draw it as " + band.drawings + ", labelling what each part stands for." },
+      { label: "Abstract",
+        hint: "Solve it with numbers, symbols, or an equation.",
+        key: String(answer) }
+    ];
+  }
+
   function renderExamples(code) {
     var p = PRAC[code];
     document.querySelectorAll(".ex").forEach(function (box) { box.innerHTML = ""; });
@@ -372,7 +448,7 @@ body.board .prob { font-size: 17px; }
       1: [[p.c[0], p.ac[0], "Solve in your head, then write the answer."]],
       2: [[p.c[1], p.ac[1], "Say the answer together."], [p.c[2], p.ac[2], "Say the answer together."]],
       3: [[p.c[3], p.ac[3], "Mixed review: solve, then check with a partner."]],
-      4: [[p.w[0], p.aw[0], "Concrete: model it with counters. Representational: draw it. Abstract: write the number sentence."]],
+      4: [[p.w[0], p.aw[0], "", "cra"]],
       5: [[p.c[0], p.ac[0], "Exit ticket: students solve alone and hand it in."]],
       6: [[p.w[1], p.aw[1], "Word problem: solve it, then explain your answer in one sentence."]]
     };
@@ -381,13 +457,28 @@ body.board .prob { font-size: 17px; }
       plan[step].forEach(function (item) {
         var d = document.createElement("div"); d.className = "prob";
         var q = document.createElement("div"); fillText(q, item[0]);
-        var hint = document.createElement("div"); hint.style.color = "var(--muted)"; hint.style.fontSize = "13px"; hint.textContent = item[2];
-        var a = document.createElement("div"); a.className = "ans"; fillText(a, "Answer: " + item[1]);
+        d.appendChild(q);
+        if (item[3] === "cra") {
+          // The same problem three ways, and a key that shows each of them.
+          craWays(gradeSel.value, item[0], item[1]).forEach(function (w) {
+            var r = document.createElement("div"); r.className = "cra-line";
+            var lab = document.createElement("span"); lab.className = "cra-tag " + w.label.toLowerCase();
+            lab.textContent = w.label;
+            var txt = document.createElement("span"); txt.className = "cra-hint"; txt.textContent = w.hint;
+            r.appendChild(lab); r.appendChild(txt);
+            var k = document.createElement("div"); k.className = "ans"; fillText(k, w.label + ": " + w.key);
+            d.appendChild(r); d.appendChild(k);
+          });
+        } else {
+          var hint = document.createElement("div"); hint.style.color = "var(--muted)"; hint.style.fontSize = "13px"; hint.textContent = item[2];
+          var a = document.createElement("div"); a.className = "ans"; fillText(a, "Answer: " + item[1]);
+          d.appendChild(hint); d.appendChild(a);
+        }
         var b = document.createElement("button"); b.type = "button"; b.textContent = "Show answer";
         b.addEventListener("click", function () {
           var on = d.classList.toggle("show"); b.textContent = on ? "Hide answer" : "Show answer";
         });
-        d.appendChild(q); d.appendChild(hint); d.appendChild(a); d.appendChild(b);
+        d.appendChild(b);
         box.appendChild(d);
       });
     });
@@ -568,9 +659,28 @@ body.board .prob { font-size: 17px; }
     }
 
     // Step 6: new information, worked concrete to abstract.
+    //
+    // One problem, solved three ways, each with its own space — the point of
+    // CRA is that a student does all three, and a single "show your work"
+    // box quietly let them skip to the symbols.
     sheet("Step 6 · New information");
-    note("Concrete, then representational, then abstract.");
-    line(p.w[0], p.aw[0]);
+    note("Solve the same problem three ways. Do them in order: concrete, then representational, then abstract.");
+    var craQ = document.createElement("div"); craQ.className = "wb-q";
+    fillText(craQ, p.w[0]);
+    add(craQ);
+    craWays(g, p.w[0], p.aw[0]).forEach(function (w) {
+      var cell = document.createElement("div"); cell.className = "cra-cell";
+      var top = document.createElement("div"); top.className = "cra-top";
+      var lab = document.createElement("span"); lab.className = "cra-tag " + w.label.toLowerCase();
+      lab.textContent = w.label;
+      var hint = document.createElement("span"); hint.className = "cra-hint"; hint.textContent = w.hint;
+      top.appendChild(lab); top.appendChild(hint);
+      var space = document.createElement("div"); space.className = "cra-space";
+      var k = document.createElement("div"); k.className = "wb-key";
+      fillText(k, w.label + ": " + w.key);
+      cell.appendChild(top); cell.appendChild(space); cell.appendChild(k);
+      add(cell);
+    });
 
     // Step 7: Find the Error, one task per box.
     sheet("Step 7 · Find the Error");
