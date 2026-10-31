@@ -96,31 +96,69 @@ body.board .builder .label, body.board .note { display: none; }
 body.board .prob { font-size: 17px; }
 .frames { display: flex; flex-wrap: wrap; gap: 6px; }
 .frame-chip { font-size: 12px; font-weight: 600; color: var(--ink); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; background: var(--bg); }
-.wb-row { display: grid; grid-template-columns: 28px 1fr; gap: 8px; align-items: start; padding: 10px 0; border-bottom: 1px solid var(--line); }
-.wb-box { width: 18px; height: 18px; border: 2px solid var(--ink); border-radius: 3px; margin-top: 3px; }
-.wb-q { font-size: 15px; color: var(--ink); }
-.wb-work { margin-top: 6px; border: 1px solid var(--line); border-radius: 8px; min-height: 110px; padding: 8px; font-size: 13px; color: var(--muted); }
-.wb-write textarea { width: 100%; min-height: 180px; font: inherit; font-size: 14px; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 10px; margin-top: 8px; }
-#wb.big .wb-work { min-height: 170px; font-size: 16px; }
-#wb.big .wb-q { font-size: 20px; }
-#wb.big .wb-write textarea { min-height: 260px; }
-.wb-key { display: none; color: var(--accent); font-weight: 600; margin-left: 6px; }
-#wb.show-key .wb-key { display: inline; }
-.wb-head { font-family: var(--display); font-size: 15px; font-weight: 700; margin: 14px 0 4px; color: var(--ink); }
+/* The student workbook is drawn as the sheets it prints as: one letter page
+   per step group, same shape as the Science of Reading workbook. Screen and
+   paper show the same thing, so nothing moves when a teacher hits print. */
+#wb { display: flex; flex-direction: column; align-items: center; gap: 18px; margin-top: 14px; }
+.sheet { background: #fff; border: 1.5px solid #C9D3C4; border-radius: 14px; padding: 20px 28px 14px;
+  box-sizing: border-box; width: 100%; max-width: 7.7in; min-height: 10in;
+  display: flex; flex-direction: column; gap: 10px; }
+.sheet-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  border-bottom: 2px solid var(--ink); padding-bottom: 7px; }
+.sheet-title { font-family: var(--display); font-size: 19px; font-weight: 800; color: var(--ink); }
+.sheet-meta { font-size: 12px; font-weight: 700; letter-spacing: .04em; color: var(--muted); white-space: nowrap; }
+.sheet-name { display: flex; gap: 18px; align-items: baseline; font-size: 14px; color: var(--ink); }
+.nd-field { display: flex; gap: 6px; align-items: baseline; flex: 1 1 auto; }
+.nd-field.nd-date { flex: 0 0 34%; }
+.nd-label { white-space: nowrap; }
+.nd-rule { flex: 1; border-bottom: 1px solid var(--ink); height: 14px; }
+.sheet-body { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.sheet-foot { margin-top: auto; padding-top: 8px; font-size: 11px; color: var(--muted); text-align: right; }
+.wb-note-line { font-size: 13px; color: var(--muted); }
+.wb-row { display: flex; flex-direction: column; gap: 6px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.wb-q { font-size: 15px; line-height: 1.45; color: var(--ink); overflow-wrap: anywhere; }
+.wb-work { border: 1px solid var(--line); border-radius: 8px; min-height: 96px; padding: 8px;
+  font-size: 13px; color: var(--muted); }
+.wb-write { display: flex; flex-direction: column; gap: 9px; flex: 1; }
+/* Read, Draw, Write: the order the work goes in, each with its own space. */
+.rdw { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.rdw-cell { border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; min-height: 152px;
+  display: flex; flex-direction: column; gap: 3px; }
+.rdw-cell:nth-child(2) { grid-row: span 2; min-height: 318px; }
+.rdw-label { font-family: var(--display); font-size: 14px; font-weight: 800; color: var(--ink); }
+.rdw-hint { font-size: 12px; color: var(--muted); }
+.ruled { display: flex; flex-direction: column; justify-content: space-between; gap: 20px;
+  padding-top: 6px; flex: 1; min-height: 140px; }
+.ruled div { border-bottom: 1px solid var(--line); height: 0; }
+.tile-block { break-inside: avoid; page-break-inside: avoid; }
+#wb.big .wb-work { min-height: 150px; }
+#wb.big .wb-q { font-size: 19px; }
+#wb.big .rdw-cell { min-height: 170px; }
+#wb.big .rdw-cell:nth-child(2) { min-height: 350px; }
+.wb-key { display: none; color: var(--accent); font-weight: 600; font-size: 14px; }
+#wb.show-key .wb-key { display: block; }
+.wb-head { font-family: var(--display); font-size: 15px; font-weight: 700; margin: 6px 0 0; color: var(--ink); }
 @media print {
+  @page { size: letter portrait; margin: 0.3in; }
   body * { visibility: hidden; }
   .printable, .printable * { visibility: visible; }
   .printable { position: absolute; left: 0; top: 0; width: 100%; margin: 0; border: 0; padding: 0; background: #fff; }
   .printable button, .printable select, .printable .row .label, .printable .row .note { display: none !important; }
-  .printable .wb-row, .printable .wb-write { break-inside: avoid; }
-  .printable input[type="checkbox"] { accent-color: #000; }
-  .printable .wb-q, .printable .wb-head, .printable .wb-work, .printable .wb-write textarea, .printable .frame-chip { color: #000 !important; }
-  .printable .wb-work { border: 1px solid #000; }
-  .printable .wb-work { min-height: 120px; }
+  #wb { gap: 0; }
+  /* One sheet, one page. The sheet is the break, so nothing has to guess. */
+  .sheet { border: 0; border-radius: 0; padding: 0 0 6px; margin: 0; width: 7.7in; max-width: 7.7in;
+    break-after: page; page-break-after: always; break-inside: avoid; page-break-inside: avoid; }
+  .sheet:last-child { break-after: auto; page-break-after: auto; }
+  .printable .wb-q, .printable .wb-head, .printable .wb-work,
+  .printable .frame-chip, .printable .sheet-title, .printable .rdw-label { color: #000 !important; }
+  .printable .sheet-meta, .printable .sheet-foot, .printable .wb-note-line, .printable .rdw-hint { color: #444 !important; }
+  .printable .wb-work, .printable .rdw-cell { border: 1px solid #000; }
+  .printable .ruled div { border-bottom: 1px solid #000; }
+  .printable .sheet-top { border-bottom: 2px solid #000; }
+  .printable .nd-rule { border-bottom: 1px solid #000; }
+  .printable .wb-row { border-bottom: 1px solid #999; break-inside: avoid; page-break-inside: avoid; }
   .printable .tile, .printable .ansbox { border-color: #000; }
-  .printable .pb { break-before: page; }
   .printable .frame-chip { background: #fff; border-color: #000; }
-  .printable .wb-write textarea { border-color: #000; background: #fff; min-height: 120px; }
   .printable .wb-key { color: #000; }
 }
 .blank { display: inline-block; width: 46px; border-bottom: 1.5px solid currentColor; vertical-align: baseline; }
@@ -347,7 +385,17 @@ body.board .prob { font-size: 17px; }
   }
 
 
-  // Student workbook page for the chosen standard: checkboxes, answer lines, and a 5-part writing task.
+  // Student workbook for the chosen standard, drawn as the sheets it prints as.
+  //
+  // Each step gets a letter page with the same shape as the Science of Reading
+  // workbook — white sheet, hairline border, name and date at the top, page
+  // number at the foot — so a teacher who prints one recognises the other.
+  // What is on screen is what leaves the printer.
+  //
+  // Content is measured onto the page as it is added rather than poured into
+  // a fixed set of sheets: a grade 12 question runs four times the length of a
+  // kindergarten one, and the old printables cut those off at the paper's
+  // edge. When a block will not fit, it starts the next sheet instead.
   function renderWorkbook(code) {
     var wb = document.getElementById("wb");
     wb.innerHTML = "";
@@ -355,117 +403,232 @@ body.board .prob { font-size: 17px; }
     var g = gradeSel.value;
     if (!p) { document.getElementById("wb-note").textContent = ""; return; }
 
-    function head(t, cls) { var h = document.createElement("div"); h.className = "wb-head" + (cls ? " " + cls : ""); h.textContent = t; wb.appendChild(h); return h; }
-    function line(text, answer, boxId) {
+    var PAGE = 10 * 96;              // a letter sheet, in CSS pixels
+    var count = 0, cur = null, body = null, base = "";
+
+    function sheet(title, continued) {
+      count++;
+      if (!continued) base = title;
+      var s = document.createElement("section");
+      s.className = "sheet"; s.setAttribute("data-wb", "true");
+      s.style.minHeight = "0";       // cleared once the page is full; see below
+      var top = document.createElement("div"); top.className = "sheet-top";
+      var h = document.createElement("div"); h.className = "sheet-title";
+      h.textContent = continued ? base + " (continued)" : title;
+      var m = document.createElement("div"); m.className = "sheet-meta";
+      m.textContent = g + " · " + code;
+      top.appendChild(h); top.appendChild(m); s.appendChild(top);
+      if (count === 1) {
+        var nd = document.createElement("div"); nd.className = "sheet-name";
+        ["Name", "Date"].forEach(function (w) {
+          var f = document.createElement("span"); f.className = "nd-field" + (w === "Date" ? " nd-date" : "");
+          var l = document.createElement("span"); l.className = "nd-label"; l.textContent = w + ":";
+          var r = document.createElement("span"); r.className = "nd-rule";
+          f.appendChild(l); f.appendChild(r); nd.appendChild(f);
+        });
+        s.appendChild(nd);
+      }
+      body = document.createElement("div"); body.className = "sheet-body"; s.appendChild(body);
+      var f2 = document.createElement("div"); f2.className = "sheet-foot";
+      f2.textContent = "Page " + count; s.appendChild(f2);
+      wb.appendChild(s);
+      cur = s;
+      return body;
+    }
+
+    /** Put a block on the page, or on the next one if it will not fit here. */
+    function add(node) {
+      body.appendChild(node);
+      if (cur.scrollHeight > PAGE && body.children.length > 1) {
+        body.removeChild(node);
+        sheet(base, true);
+        body.appendChild(node);
+      }
+      return node;
+    }
+
+    function head(t) {
+      var h = document.createElement("div"); h.className = "wb-head"; h.textContent = t;
+      return add(h);
+    }
+    /** A question, a space to work, and the answer the key reveals. */
+    function line(text, answer) {
       var r = document.createElement("div"); r.className = "wb-row";
-      var box = document.createElement("span"); box.className = "wb-box"; box.setAttribute("aria-hidden", "true");
-      var body = document.createElement("div");
       var q = document.createElement("div"); q.className = "wb-q"; fillText(q, text);
-      var work = document.createElement("div"); work.className = "wb-work"; work.textContent = "Show your work.";
-      var cb = document.createElement("label"); cb.style.fontSize = "13px"; cb.style.color = "var(--muted)";
-      var input = document.createElement("input"); input.type = "checkbox"; input.id = boxId; cb.appendChild(input);
-      cb.appendChild(document.createTextNode(" Checked when correct "));
-      var k = document.createElement("span"); k.className = "wb-key"; k.textContent = "Answer: " + answer; cb.appendChild(k);
-      body.appendChild(q); body.appendChild(work); body.appendChild(cb);
-      r.appendChild(box); r.appendChild(body); wb.appendChild(r);
+      var work = document.createElement("div"); work.className = "wb-work";
+      work.textContent = "Show your work.";
+      var k = document.createElement("div"); k.className = "wb-key";
+      k.textContent = "Answer: " + answer;
+      r.appendChild(q); r.appendChild(work); r.appendChild(k);
+      return add(r);
+    }
+    function note(text) {
+      var d = document.createElement("div"); d.className = "wb-note-line"; d.textContent = text;
+      return add(d);
     }
 
     wb.classList.toggle("big", g === "Kindergarten");
-    var hdr = document.createElement("div"); hdr.className = "wb-head";
-    hdr.textContent = "Student Workbook: " + g + " · " + code; wb.appendChild(hdr);
-    var nd = document.createElement("div"); nd.className = "wb-q";
-    fillText(nd, "Name: ______________________________   Date: ______________"); wb.appendChild(nd);
 
-    // Step 1: Math review (from the four review choices)
-    head("Step 1: Math review");
-    var revs = [1, 2, 3, 4].map(function (n) { return document.getElementById("rev" + n).value; }).filter(Boolean);
-    if (!revs.length) {
-      var none = document.createElement("div"); none.className = "wb-q"; none.style.color = "var(--muted)";
-      none.textContent = "Pick review concepts in step 1 of the lesson to add review problems here.";
-      wb.appendChild(none);
+    // Step 1: Math review.
+    //
+    // The teacher's four review dropdowns drive this, but an untouched lesson
+    // used to print the step as an empty apology. It falls back to the
+    // standards immediately before this one, which is what a teacher picking
+    // by hand would have chosen anyway, and each standard brings a word
+    // problem as well as computation so the review is worth its page.
+    sheet("Step 1 · Math review");
+    var picked = [1, 2, 3, 4]
+      .map(function (n) { var el = document.getElementById("rev" + n); return el ? el.value : ""; })
+      .filter(Boolean);
+    var chosen = picked.length > 0;
+    if (!chosen) {
+      var here = DATA.indexOf(row(code));
+      var earlier = DATA.filter(function (r, i) {
+        return i < here && grades.indexOf(r[0]) <= grades.indexOf(g) && PRAC[r[1]];
+      });
+      picked = earlier.slice(-3).map(function (r) { return r[1]; });
     }
-    revs.forEach(function (rc) {
+    if (!picked.length) {
+      note("Pick review concepts in step 1 of the lesson to add review problems here.");
+    } else if (!chosen) {
+      note("Spiral review of the standards just before this one. Pick your own in step 1 of the lesson.");
+    }
+    picked.forEach(function (rc) {
       var rp = PRAC[rc];
       if (!rp) return;
-      line("Review " + rc + ": " + rp.c[0], rp.ac[0], "wb-r" + rc + "a");
-      line("Review " + rc + ": " + rp.c[1], rp.ac[1], "wb-r" + rc + "b");
+      head("Review · " + rc);
+      line(rp.c[0], rp.ac[0]);
+      line(rp.c[1], rp.ac[1]);
+      line(rp.w[0], rp.aw[0]);
     });
 
-    // Step 2: Problem of the Day (warm-up)
-    head("Step 2: Problem of the Day", "pb");
-    line(p.c[0], p.ac[0], "wb-warm");
+    // Steps 2, 4 and 5: the warm-up, the drills, and reinforcement.
+    sheet("Step 2 · Problem of the Day");
+    line(p.c[0], p.ac[0]);
+    head("Step 4 · Visual and auditory drills");
+    line(p.c[1], p.ac[1]);
+    line(p.c[2], p.ac[2]);
+    head("Step 5 · Review and reinforcement");
+    line(p.c[3], p.ac[3]);
 
-    // Step 3: Tile task
+    // Step 3: the tile task.
     var t = TILE[code];
-    head("Step 3: Tile task. Cut out the digits and place one in each box");
+    sheet("Step 3 · Tile task");
+    note("Cut out the digits and place one in each box.");
     if (!t) {
-      var nt = document.createElement("div"); nt.className = "wb-q"; nt.style.color = "var(--muted)";
-      nt.textContent = "No tile task for this standard.";
-      wb.appendChild(nt);
+      note("No tile task for this standard.");
     } else {
       var bank = document.createElement("div"); bank.className = "tilebank";
-      for (var d = 0; d <= 9; d++) { var tl = document.createElement("span"); tl.className = "tile"; tl.textContent = d; bank.appendChild(tl); }
-      wb.appendChild(bank);
+      for (var d = 0; d <= 9; d++) {
+        var tl = document.createElement("span"); tl.className = "tile"; tl.textContent = d; bank.appendChild(tl);
+      }
+      add(bank);
       t.items.forEach(function (block, qi) {
-        var qbox = document.createElement("div");
+        var qbox = document.createElement("div"); qbox.className = "tile-block";
         block.split("\n").forEach(function (ln, j) {
-          var row = document.createElement("div"); row.className = "tile-q";
+          var row2 = document.createElement("div"); row2.className = "tile-q";
           var txt = document.createElement("span"); txt.className = "wb-q"; fillText(txt, ln);
           var box = document.createElement("span"); box.className = "ansbox";
           var k = document.createElement("span"); k.className = "wb-key"; k.textContent = String(t.ans[qi][j]);
           box.appendChild(k);
-          row.appendChild(txt); row.appendChild(box); qbox.appendChild(row);
+          row2.appendChild(txt); row2.appendChild(box); qbox.appendChild(row2);
         });
-        wb.appendChild(qbox);
+        add(qbox);
       });
     }
 
-    // Step 4: Visual and auditory drills
-    head("Step 4: Visual and auditory drills", "pb");
-    line(p.c[1], p.ac[1], "wb-d1");
-    line(p.c[2], p.ac[2], "wb-d2");
+    // Step 6: new information, worked concrete to abstract.
+    sheet("Step 6 · New information");
+    note("Concrete, then representational, then abstract.");
+    line(p.w[0], p.aw[0]);
 
-    // Step 5: Review and reinforcement
-    head("Step 5: Review and reinforcement");
-    line(p.c[3], p.ac[3], "wb-rev");
-
-    // Step 6: New information (CRA)
-    head("Step 6: New information (CRA). Concrete, then representational, then abstract", "pb");
-    line(p.w[0], p.aw[0], "wb-cra");
-
-    // Step 7: Find the Error
-    head("Step 7: Find the Error. Find the mistake, then solve it correctly");
+    // Step 7: Find the Error, one task per box.
+    sheet("Step 7 · Find the Error");
+    note("Find the mistake, then solve it correctly.");
     (FTE[code] || []).slice(0, 2).forEach(function (f) {
       var r = document.createElement("div"); r.className = "wb-row";
-      var box = document.createElement("span"); box.className = "wb-box"; box.setAttribute("aria-hidden", "true");
-      var body = document.createElement("div");
       var q = document.createElement("div"); q.className = "wb-q"; fillText(q, f[0]);
-      var w1 = document.createElement("div"); w1.className = "wb-work"; w1.textContent = "What did the student do wrong?";
-      var w2 = document.createElement("div"); w2.className = "wb-work"; w2.textContent = "Solve the problem correctly.";
-      var k = document.createElement("div"); k.className = "wb-key"; k.style.display = "";
-      k.textContent = "Error: " + f[1] + "  Correct: " + f[2];
-      body.appendChild(q); body.appendChild(w1); body.appendChild(w2); body.appendChild(k);
-      r.appendChild(box); r.appendChild(body); wb.appendChild(r);
+      r.appendChild(q);
+      var w1 = document.createElement("div"); w1.className = "wb-work";
+      w1.textContent = "What did the student do wrong?";
+      var w2 = document.createElement("div"); w2.className = "wb-work";
+      w2.textContent = "Solve the problem correctly.";
+      // f[2] is the right answer, not the student's working. It belongs
+      // behind the key with the explanation, never on the student's sheet.
+      var k = document.createElement("div"); k.className = "wb-key";
+      k.textContent = "Error: " + f[1] + (f[2] ? "  Correct: " + f[2] : "");
+      r.appendChild(w1); r.appendChild(w2); r.appendChild(k);
+      add(r);
     });
 
-    // Step 8: Word problem, with the five-part writing frame
-    head("Step 8: Word problem. Solve it, then explain in five parts", "pb");
-    var wrap = document.createElement("div"); wrap.className = "wb-write";
-    var prompt = document.createElement("div"); prompt.className = "wb-q"; fillText(prompt, p.w[1]);
-    var frames = document.createElement("div"); frames.className = "frames"; frames.style.marginTop = "8px";
-    ["My Answer: I think ___.", "My Reason: First, ___.", "My Proof: The work shows ___.", "Explain It: This shows ___.", "Wrap It Up: That is why ___."].forEach(function (f) {
-      var s = document.createElement("span"); s.className = "frame-chip"; fillText(s, f); frames.appendChild(s);
+    // Step 8: the word problem — read it, draw it, write it.
+    //
+    // Read, Draw, Write is the order the work actually goes in, so it gets
+    // three labelled spaces rather than one blank box. Students who draw the
+    // problem before reaching for an operation make fewer of the errors
+    // step 7 is about.
+    sheet("Step 8 · Word problem");
+    var prompt = document.createElement("div"); prompt.className = "wb-q";
+    fillText(prompt, p.w[1]);
+    add(prompt);
+    var rdw = document.createElement("div"); rdw.className = "rdw";
+    [
+      ["Read", "Read it twice. Underline the question. What is it asking?"],
+      ["Draw", "Draw the problem. Label what each part stands for."],
+      ["Write", "Write the equation, then the answer in a full sentence."]
+    ].forEach(function (pair) {
+      var cell = document.createElement("div"); cell.className = "rdw-cell";
+      var lab = document.createElement("div"); lab.className = "rdw-label"; lab.textContent = pair[0];
+      var hint = document.createElement("div"); hint.className = "rdw-hint"; hint.textContent = pair[1];
+      cell.appendChild(lab); cell.appendChild(hint); rdw.appendChild(cell);
     });
-    var ta = document.createElement("textarea"); ta.id = "wb-write"; ta.setAttribute("aria-label", "Writing response");
-    var kk = document.createElement("div"); kk.className = "wb-key"; kk.textContent = "Answer: " + p.aw[1];
-    wrap.appendChild(prompt); wrap.appendChild(frames); wrap.appendChild(ta); wrap.appendChild(kk); wb.appendChild(wrap);
+    add(rdw);
+    head("Explain it in five parts");
+    var frames = document.createElement("div"); frames.className = "frames";
+    ["My Answer: I think ___.", "My Reason: First, ___.", "My Proof: The work shows ___.",
+     "Explain It: This shows ___.", "Wrap It Up: That is why ___."].forEach(function (f) {
+      var sp = document.createElement("span"); sp.className = "frame-chip"; fillText(sp, f); frames.appendChild(sp);
+    });
+    add(frames);
+    var ruled = document.createElement("div"); ruled.className = "ruled";
+    for (var ln2 = 0; ln2 < 6; ln2++) ruled.appendChild(document.createElement("div"));
+    add(ruled);
+    var kk = document.createElement("div"); kk.className = "wb-key";
+    kk.textContent = "Answer: " + p.aw[1];
+    add(kk);
 
-    // Step 9: Recap and exit ticket
-    head("Step 9: Recap and exit ticket. Solve alone and hand it in", "pb");
-    line(p.c[0], p.ac[0], "wb-exit");
+    // Step 9: the exit ticket, done alone and handed in.
+    sheet("Step 9 · Recap and exit ticket");
+    note("Solve this on your own and hand it in.");
+    line(p.c[0], p.ac[0]);
 
-    document.getElementById("wb-note").textContent = code + ": all nine lesson steps.";
+    // Measuring is over, so the sheets can stand at their full height again.
+    [].forEach.call(wb.querySelectorAll(".sheet"), function (s2) { s2.style.minHeight = ""; });
+    document.getElementById("wb-note").textContent =
+      code + ": all nine lesson steps, " + count + (count === 1 ? " page." : " pages.");
   }
+
+  // A sheet that runs long is shrunk to the page rather than spilling a stray
+  // line onto a sheet of its own. Same trick the reading workbook uses: write
+  // every page's styles, then read every height, then write the zooms, so the
+  // browser lays the workbook out once instead of once per page.
+  function fitSheets() {
+    var pages = [].slice.call(document.querySelectorAll(".sheet"));
+    pages.forEach(function (e) { e.style.zoom = ""; e.style.minHeight = "0"; });
+    var max = 9.95 * 96;
+    var hs = pages.map(function (e) { return e.scrollHeight; });
+    pages.forEach(function (e, i) {
+      if (hs[i] > max) e.style.zoom = String(Math.max(0.55, max / hs[i] - 0.005));
+      else e.style.minHeight = "";
+    });
+  }
+  function unfitSheets() {
+    [].forEach.call(document.querySelectorAll(".sheet"), function (e) {
+      e.style.zoom = ""; e.style.minHeight = "";
+    });
+  }
+  window.addEventListener("beforeprint", fitSheets);
+  window.addEventListener("afterprint", unfitSheets);
 
   document.getElementById("wb-toggle").addEventListener("click", function () {
     var wb = document.getElementById("wb");
