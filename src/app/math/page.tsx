@@ -19,7 +19,7 @@ import { MaterialsPass } from "@/components/shared/MaterialsPass";
 export const metadata = {
   title: "Math — Upshift Learning",
   description:
-    "Pick a grade and standard, then run the OG maths lesson steps in order.",
+    "Pick a grade and standard, then run the maths lesson steps in order.",
 };
 
 const CREAM = "#FAF7F2";
@@ -93,7 +93,7 @@ function Hub() {
                 BUILD A LESSON
               </div>
               <div style={{ fontSize: 27, fontWeight: 800, lineHeight: 1.15, marginTop: 6 }}>
-                OG Math Hub
+                Math Hub
               </div>
               <p style={{ fontSize: 15, fontWeight: 500, color: MUTED, margin: "8px 0 0", lineHeight: 1.55 }}>
                 305 standards across Kindergarten to Grade 12. Pick a grade and a standard and it
@@ -104,7 +104,7 @@ function Hub() {
             </div>
             <Image
               src="/previews/math-hub.png"
-              alt="The OG Math Hub with a grade and standard chosen: the filter row, the lesson step chips, and the first lesson cards."
+              alt="The Math Hub with a grade and standard chosen: the filter row, the lesson step chips, and the first lesson cards."
               width={1280}
               height={660}
               style={{
@@ -187,7 +187,7 @@ export default function MathPage() {
       <main className="flex-1">
         <SignInGate
           title="Math"
-          blurb="Pick a grade and standard, then run the OG maths lesson steps in order. Free — an account is all it takes."
+          blurb="Pick a grade and standard, then run the maths lesson steps in order. Free — an account is all it takes."
         >
           {/* The hub is a link into /api/materials, so the pass has to be
               traded before it is clicked. */}

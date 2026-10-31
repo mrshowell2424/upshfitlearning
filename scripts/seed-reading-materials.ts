@@ -1397,11 +1397,37 @@ const ADAPTATIONS: Adaptation[] = [
   },
 ];
 
-function adapt(rel: string, html: string): string {
-  if (!html.includes("GENERATED from dc-runtime")) return html;
+/**
+ * The maths hub is a plain HTML export rather than a canvas one, so it has
+ * no dc-runtime marker and takes its own short list of rules.
+ */
+const MATH_HUB = "math/math-hub.html";
+
+const MATH_ADAPTATIONS: Adaptation[] = [
+  {
+    // Teachers know this one as the Math Hub. Orton-Gillingham is the method
+    // behind it, not its name, and the tab it hangs off already says Math.
+    name: "call it the Math Hub",
+    apply: (html) => {
+      const edits: [string, string][] = [
+        ["<title>OG Math Hub</title>", "<title>Math Hub</title>"],
+        ["<h1>OG Math Hub</h1>", "<h1>Math Hub</h1>"],
+        ["run the five OG steps in order", "run the five steps in order"],
+      ];
+      let out = html;
+      for (const [from, to] of edits) {
+        if (!out.includes(from)) return html;
+        out = out.replace(from, to);
+      }
+      return out;
+    },
+  },
+];
+
+function run(rel: string, html: string, rules: Adaptation[]): string {
   let out = html;
   const missed: string[] = [];
-  for (const rule of ADAPTATIONS) {
+  for (const rule of rules) {
     const next = rule.apply(out);
     if (next === out) missed.push(rule.name);
     out = next;
@@ -1412,8 +1438,14 @@ function adapt(rel: string, html: string): string {
     console.error("   Nothing was written. Fix the rule in this script, or the export.\n");
     process.exit(1);
   }
-  console.log(`  \u2713 adapted ${rel} (${ADAPTATIONS.length} rules)`);
+  console.log(`  \u2713 adapted ${rel} (${rules.length} rules)`);
   return out;
+}
+
+function adapt(rel: string, html: string): string {
+  if (rel === MATH_HUB) return run(rel, html, MATH_ADAPTATIONS);
+  if (!html.includes("GENERATED from dc-runtime")) return html;
+  return run(rel, html, ADAPTATIONS);
 }
 
 async function walk(dir: string): Promise<string[]> {
