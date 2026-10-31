@@ -298,7 +298,7 @@ body.board .prob { font-size: 17px; }
       <div class="step-top"><div class="step-num">7</div><span class="time">About 5 min</span></div>
       <h3>Find the Error</h3>
       <p class="std-title" data-std-label></p>
-      <p id="fte-note">Students spot and fix the mistake in each worked problem.</p>
+      <p id="fte-note">Students judge each worked problem, then fix the ones that are wrong.</p>
       <div class="ex" id="fte-ex"></div>
       <div class="btns">
         <a class="btn" data-kind="fte-student" href="#">Student pages</a>
@@ -684,13 +684,13 @@ body.board .prob { font-size: 17px; }
 
     // Step 7: Find the Error, one task per box.
     sheet("Step 7 · Find the Error");
-    note("Find the mistake, then solve it correctly.");
+    note("Check the student's work first. If it is wrong, find the error and solve it correctly.");
     (FTE[code] || []).slice(0, 2).forEach(function (f) {
       var r = document.createElement("div"); r.className = "wb-row";
       var q = document.createElement("div"); q.className = "wb-q"; fillText(q, f[0]);
       r.appendChild(q);
       var w1 = document.createElement("div"); w1.className = "wb-work";
-      w1.textContent = "What did the student do wrong?";
+      w1.textContent = "Did the student get it correct or incorrect? If they did it incorrectly, what did they do wrong?";
       var w2 = document.createElement("div"); w2.className = "wb-work";
       w2.textContent = "Solve the problem correctly.";
       // f[2] is the right answer, not the student's working. It belongs
@@ -1126,7 +1126,7 @@ body.board .prob { font-size: 17px; }
     var has = !!r;
     var tileOk = has && r[3] === 1;
     document.getElementById("fte-note").textContent = has
-      ? "This standard has " + r[2] + " Find the Error tasks. Students spot and fix the mistake in each one."
+      ? "This standard has " + r[2] + " Find the Error tasks. Students judge each one, then fix the ones that are wrong."
       : "Pick a standard to see its tasks.";
     document.getElementById("tile-note").textContent = tileOk
       ? "Students cut out number tiles and fill this standard's answer boxes."

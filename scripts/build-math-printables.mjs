@@ -159,11 +159,11 @@ function findTheError(grade, codes, key) {
           title: "Find the Error",
           meta: `${grade} · ${code}`,
           withName: true,
-          dir: "Analyze the student's work below. Identify the error, then solve the problem correctly.",
+          dir: "Look at the student's work below. Decide whether it is right. If it is wrong, find the error and solve the problem correctly.",
           cls: "fte",
           bodyHtml:
             `<div class="q">${blanks(prompt)}</div>` +
-            `<div class="row grow"><div class="q"><span class="n">1.</span> What did the student do wrong? Why do you think they made this error?</div>` +
+            `<div class="row grow"><div class="q"><span class="n">1.</span> Did the student get it correct or incorrect? If they did it incorrectly, what did they do wrong?</div>` +
             `<div class="work"></div></div>` +
             `<div class="row grow solve"><div class="q"><span class="n">2.</span> Solve the problem correctly. Show all of your work.</div>` +
             `<div class="work"></div></div>` +
