@@ -149,7 +149,7 @@ body.board .prob { font-size: 17px; }
   .printable .wb-q, .printable .wb-head, .printable .wb-work,
   .printable .frame-chip, .printable .sheet-title, .printable .rdw-label { color: #000 !important; }
   .printable .sheet-meta, .printable .sheet-foot, .printable .wb-note-line, .printable .rdw-hint { color: #444 !important; }
-  .printable .wb-work, .printable .rdw-cell { border: 1px solid #000; }
+  .printable .wb-work, .printable .rdw-cell, .printable .tile-work { border: 1px solid #000; }
   .printable .ruled div { border-bottom: 1px solid #000; }
   .printable .sheet-top { border-bottom: 2px solid #000; }
   .printable .nd-rule { border-bottom: 1px solid #000; }
@@ -173,26 +173,26 @@ body.board .prob { font-size: 17px; }
 .rev-prac .prac-grade { display: flex; flex-direction: column; align-items: stretch; gap: 6px; }
 .rev-prac .prac-label { font-size: 13px; font-weight: 600; color: var(--muted); }
 .rev-prac .prac-links { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.tilebank { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0 16px; }
-.tile { width: 44px; height: 44px; border: 2px solid var(--ink); border-radius: 8px; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 20px; color: var(--ink); }
+.tilebank { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0 18px; }
+.tile { width: 56px; height: 56px; border: 2px solid var(--ink); border-radius: 9px; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 28px; color: var(--ink); }
 /* The slot is the tile's size, because a tile is cut out and laid in it. At
    44 by 26 against a 44 square tile, the thing in the child's hand did not
    fit the space on the page. Dashed, so it still reads as somewhere to put
    one rather than another tile. */
-.ansbox { display: inline-block; width: 44px; height: 44px; border: 2px dashed var(--ink); border-radius: 8px; vertical-align: middle; margin-left: 8px; position: relative; }
-.ansbox .wb-key { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; color: var(--accent); font-size: 20px; }
-/* Question left, slot in a column of its own. Following the end of each
-   question put every box at a different place on the page. */
-.tile-q { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 16px;
-  align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
-.tile-q .ansbox { margin-left: 0; justify-self: end; }
-/* The tile task is short on words and long on handling. The blocks take the
-   page between them so there is room to put a tile down without covering the
-   next question. */
-.tile-block { display: flex; flex-direction: column; justify-content: space-evenly; flex: 1 1 auto; }
-#wb.big .tile, #wb.big .ansbox { width: 58px; height: 58px; font-size: 25px; }
-#wb.big .ansbox .wb-key { font-size: 25px; }
-#wb.big .tile-q { padding: 14px 0; }
+.ansbox { display: inline-block; width: 56px; height: 56px; border: 2px dashed var(--ink); border-radius: 8px; vertical-align: middle; margin-left: 8px; position: relative; }
+.ansbox .wb-key { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; color: var(--accent); font-size: 28px; }
+/* Question left, slot in a column of its own, working space across the foot
+   of both. Following the end of each question put every box at a different
+   place on the page. */
+.tile-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 16px;
+  align-items: center; padding: 10px 0 12px; border-bottom: 1px solid var(--line);
+  break-inside: avoid; page-break-inside: avoid; }
+.tile-item .ansbox { margin-left: 0; justify-self: end; }
+.tile-work { grid-column: 1 / -1; border: 1px solid var(--line); border-radius: 8px;
+  min-height: 72px; padding: 7px 9px; font-size: 12px; color: var(--muted); }
+#wb.big .tile, #wb.big .ansbox { width: 68px; height: 68px; font-size: 32px; }
+#wb.big .ansbox .wb-key { font-size: 32px; }
+#wb.big .tile-work { min-height: 96px; }
 .pb { break-before: page; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 @media (max-width: 480px) { .btns { grid-template-columns: 1fr; } }
@@ -535,7 +535,7 @@ body.board .prob { font-size: 17px; }
     // Step 3: the tile task.
     var t = TILE[code];
     sheet("Step 3 · Tile task");
-    note("Cut out the digits and place one in each box.");
+    note("Cut out the digits and place one in each box. Show your work under each one.");
     if (!t) {
       note("No tile task for this standard.");
     } else {
@@ -544,17 +544,26 @@ body.board .prob { font-size: 17px; }
         var tl = document.createElement("span"); tl.className = "tile"; tl.textContent = d; bank.appendChild(tl);
       }
       add(bank);
+      // The data arrives as three blocks of a), b), c), which restarted the
+      // lettering three times down one page. It is one list of nine to the
+      // student, so it is numbered as one, and each gets a space to work in
+      // directly under the question it belongs to.
+      var num = 0;
       t.items.forEach(function (block, qi) {
-        var qbox = document.createElement("div"); qbox.className = "tile-block";
         block.split("\n").forEach(function (ln, j) {
-          var row2 = document.createElement("div"); row2.className = "tile-q";
-          var txt = document.createElement("span"); txt.className = "wb-q"; fillText(txt, ln);
+          num++;
+          var item = document.createElement("div"); item.className = "tile-item";
+          var txt = document.createElement("span"); txt.className = "wb-q";
+          fillText(txt, num + ". " + ln.replace(/^[a-z]\)\s*/i, ""));
           var box = document.createElement("span"); box.className = "ansbox";
-          var k = document.createElement("span"); k.className = "wb-key"; fillText(k, String(t.ans[qi][j]));
+          var k = document.createElement("span"); k.className = "wb-key";
+          fillText(k, String(t.ans[qi][j]));
           box.appendChild(k);
-          row2.appendChild(txt); row2.appendChild(box); qbox.appendChild(row2);
+          var work = document.createElement("div"); work.className = "tile-work";
+          work.textContent = "Show your work.";
+          item.appendChild(txt); item.appendChild(box); item.appendChild(work);
+          add(item);
         });
-        add(qbox);
       });
     }
 
