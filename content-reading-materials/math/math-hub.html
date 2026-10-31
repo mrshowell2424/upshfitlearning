@@ -255,6 +255,10 @@ body.board .prob { font-size: 17px; }
 .mb-b10 .lab { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
 .mb-b10 .ones { display: grid; grid-template-columns: repeat(2, auto); gap: 4px; }
 body.mb-on { overflow: hidden; }
+/* Opened in its own tab, the board is the page: the lesson stays on the
+   teacher's screen while this goes on the projector. */
+body.mb-only > *:not(.mb) { display: none !important; }
+body.mb-only .mb { position: static; height: 100vh; }
 @media (max-width: 620px) {
   .mb-item { --mb-size: 38px; }
 }
@@ -663,7 +667,7 @@ body.mb-on { overflow: hidden; }
       mbEls["mb-icon"].appendChild(o);
     });
     mbEls["mb-close"].addEventListener("click", mbClose);
-    mbEls["mb-reset"].addEventListener("click", function () { mbOpen(mbState.text); });
+    mbEls["mb-reset"].addEventListener("click", function () { mbShow(mbState.text); });
     mbEls["mb-mode"].addEventListener("change", function () {
       if (this.value === "b10") mbState.value = mbTotalOf(mbState.mode);
       mbState.mode = this.value;
@@ -701,7 +705,28 @@ body.mb-on { overflow: hidden; }
     });
   }
 
+  /**
+   * Opens the board in a tab of its own.
+   *
+   * A teacher running this has the lesson on one screen and the projector on
+   * the other, and an overlay can only be on one of them. The problem travels
+   * in the URL, so the tab survives a reload and can be dragged to the other
+   * display. If the browser blocks the window — a popup blocker, an embedded
+   * view — it falls back to opening over the lesson rather than doing nothing.
+   */
   function mbOpen(text) {
+    var url = location.pathname + "?board=" + encodeURIComponent(text || "");
+    var w = null;
+    // Not window.open(..., "noopener"): that returns null whether it opened a
+    // tab or was blocked, so there is no way to tell, and the fallback fired
+    // every time — leaving the board over the lesson as well as in its tab.
+    // The handle is taken and the link cut by hand instead.
+    try { w = window.open(url, "_blank"); } catch (e) { w = null; }
+    if (w) { try { w.opener = null; } catch (e) {} return; }
+    mbShow(text);
+  }
+
+  function mbShow(text) {
     if (!mbEls.mboard) return;
     var r = mbRead(text);
     mbState = { text: text, noun: r.noun, icon: r.icon, mode: r.mode, g: r.g, per: r.per,
@@ -725,6 +750,7 @@ body.mb-on { overflow: hidden; }
   }
   function mbClose() {
     if (!mbEls.mboard) return;
+    if (document.body.classList.contains("mb-only")) { window.close(); return; }
     mbEls.mboard.hidden = true;
     document.body.classList.remove("mb-on");
   }
@@ -831,6 +857,18 @@ body.mb-on { overflow: hidden; }
   }
 
   mbInit();
+
+  // Arriving with ?board=... means this tab is the board.
+  (function () {
+    var m = /[?&]board=([^&]*)/.exec(location.search);
+    if (!m || !mbEls.mboard) return;
+    var text = "";
+    try { text = decodeURIComponent(m[1].replace(/\+/g, " ")); } catch (e) { text = m[1]; }
+    document.body.classList.add("mb-only");
+    document.title = "Concrete board";
+    mbShow(text);
+    mbEls["mb-close"].textContent = "Close this tab";
+  })();
 
   function renderExamples(code) {
     var p = PRAC[code];
