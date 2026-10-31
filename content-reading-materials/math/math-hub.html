@@ -154,7 +154,8 @@ body.board .prob { font-size: 17px; }
   .printable .sheet-top { border-bottom: 2px solid #000; }
   .printable .nd-rule { border-bottom: 1px solid #000; }
   .printable .wb-row { border-bottom: 1px solid #999; break-inside: avoid; page-break-inside: avoid; }
-  .printable .tile, .printable .ansbox { border-color: #000; }
+  .printable .tile { border: 2px solid #000; }
+  .printable .ansbox { border: 2px dashed #000; }
   .printable .frame-chip { background: #fff; border-color: #000; }
   .printable .wb-key { color: #000; }
 }
@@ -172,11 +173,26 @@ body.board .prob { font-size: 17px; }
 .rev-prac .prac-grade { display: flex; flex-direction: column; align-items: stretch; gap: 6px; }
 .rev-prac .prac-label { font-size: 13px; font-weight: 600; color: var(--muted); }
 .rev-prac .prac-links { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.tilebank { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 12px; }
-.tile { width: 40px; height: 40px; border: 2px solid var(--ink); border-radius: 8px; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 18px; color: var(--ink); }
-.ansbox { display: inline-block; width: 44px; height: 26px; border: 1.5px solid var(--ink); border-radius: 4px; vertical-align: middle; margin-left: 6px; position: relative; }
-.ansbox .wb-key { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; color: var(--accent); }
-.tile-q { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.tilebank { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0 16px; }
+.tile { width: 44px; height: 44px; border: 2px solid var(--ink); border-radius: 8px; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 20px; color: var(--ink); }
+/* The slot is the tile's size, because a tile is cut out and laid in it. At
+   44 by 26 against a 44 square tile, the thing in the child's hand did not
+   fit the space on the page. Dashed, so it still reads as somewhere to put
+   one rather than another tile. */
+.ansbox { display: inline-block; width: 44px; height: 44px; border: 2px dashed var(--ink); border-radius: 8px; vertical-align: middle; margin-left: 8px; position: relative; }
+.ansbox .wb-key { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; color: var(--accent); font-size: 20px; }
+/* Question left, slot in a column of its own. Following the end of each
+   question put every box at a different place on the page. */
+.tile-q { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 16px;
+  align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.tile-q .ansbox { margin-left: 0; justify-self: end; }
+/* The tile task is short on words and long on handling. The blocks take the
+   page between them so there is room to put a tile down without covering the
+   next question. */
+.tile-block { display: flex; flex-direction: column; justify-content: space-evenly; flex: 1 1 auto; }
+#wb.big .tile, #wb.big .ansbox { width: 58px; height: 58px; font-size: 25px; }
+#wb.big .ansbox .wb-key { font-size: 25px; }
+#wb.big .tile-q { padding: 14px 0; }
 .pb { break-before: page; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 @media (max-width: 480px) { .btns { grid-template-columns: 1fr; } }
