@@ -202,7 +202,7 @@ body.board .prob { font-size: 17px; }
       <div class="step-top"><div class="step-num">1</div><span class="time">5 min</span></div>
       <h3>Math review</h3>
       <p class="std-title" data-std-label></p>
-      <p>Pick up to four earlier concepts to review before today's lesson.</p>
+      <p>Filled with the earlier standards this one is built on. Swap any of them, or add a fourth.</p>
       <div class="rev-row">
         <label class="label" for="rev1">Review 1</label><select id="rev1" class="rev-sel"></select>
         <label class="label" for="rev2">Review 2</label><select id="rev2" class="rev-sel"></select>
@@ -464,23 +464,15 @@ body.board .prob { font-size: 17px; }
     var picked = [1, 2, 3, 4]
       .map(function (n) { var el = document.getElementById("rev" + n); return el ? el.value : ""; })
       .filter(Boolean);
-    var chosen = picked.length > 0;
-    if (!chosen) {
-      var here = DATA.indexOf(row(code));
-      var earlier = DATA.filter(function (r, i) {
-        return i < here && grades.indexOf(r[0]) <= grades.indexOf(g) && PRAC[r[1]];
-      });
-      picked = earlier.slice(-3).map(function (r) { return r[1]; });
-    }
     if (!picked.length) {
       note("Pick review concepts in step 1 of the lesson to add review problems here.");
-    } else if (!chosen) {
-      note("Spiral review of the standards just before this one. Pick your own in step 1 of the lesson.");
+    } else if (reviewAuto) {
+      note("Review of the earlier standards this one is built on. Swap them in step 1 of the lesson.");
     }
     picked.forEach(function (rc) {
       var rp = PRAC[rc];
       if (!rp) return;
-      head("Review · " + rc);
+      head("Review · " + rc + " · " + domainLabel(rc));
       line(rp.c[0], rp.ac[0]);
       line(rp.c[1], rp.ac[1]);
       line(rp.w[0], rp.aw[0]);
@@ -659,18 +651,148 @@ body.board .prob { font-size: 17px; }
   }
 
   // Math review: dropdowns list earlier standards (same grade or lower), like the reading review menus.
+  // What a standard is built on.
+  //
+  // A standard's code carries its strand: the middle token of 3.OA.1 is
+  // Operations and Algebraic Thinking, and that strand runs K to 5. So the
+  // review a teacher actually wants — the earlier work today's lesson stands
+  // on — can be read off the codes rather than guessed at, and the four
+  // dropdowns stop being a flat list of every standard below this grade.
+  var DOMAIN_NAMES = {
+    CC: "Counting and Cardinality",
+    OA: "Operations and Algebraic Thinking",
+    NBT: "Number and Operations in Base Ten",
+    NF: "Number and Operations — Fractions",
+    MD: "Measurement and Data",
+    G: "Geometry",
+    RP: "Ratios and Proportional Relationships",
+    NS: "The Number System",
+    EE: "Expressions and Equations",
+    SP: "Statistics and Probability",
+    F: "Functions",
+    SSE: "Seeing Structure in Expressions",
+    APR: "Arithmetic with Polynomials and Rational Expressions",
+    CED: "Creating Equations",
+    REI: "Reasoning with Equations and Inequalities",
+    IF: "Interpreting Functions",
+    BF: "Building Functions",
+    LE: "Linear, Quadratic and Exponential Models",
+    CO: "Congruence",
+    SRT: "Similarity, Right Triangles and Trigonometry",
+    C: "Circles",
+    GPE: "Expressing Geometric Properties with Equations",
+    GMD: "Geometric Measurement and Dimension",
+    MG: "Modeling with Geometry",
+    CN: "The Complex Number System",
+    TF: "Trigonometric Functions",
+    ID: "Interpreting Categorical and Quantitative Data",
+    IC: "Making Inferences and Justifying Conclusions",
+    CP: "Conditional Probability and the Rules of Probability"
+  };
+
+  // Which strands feed which. Within a strand the codes give the order for
+  // free; across strands they do not, so this is the one part that has to be
+  // written down. Read it as "fractions rest on base ten and on operations".
+  var FEEDS = {
+    OA: ["CC"],
+    NBT: ["CC", "OA"],
+    NF: ["NBT", "OA"],
+    MD: ["NBT", "OA"],
+    G: [],
+    RP: ["NF", "OA"],
+    NS: ["NF", "NBT", "RP"],
+    EE: ["OA", "NBT", "NS"],
+    SP: ["MD", "NF"],
+    F: ["EE", "RP"],
+    SSE: ["EE"],
+    APR: ["EE", "SSE"],
+    CED: ["EE"],
+    REI: ["EE", "CED"],
+    IF: ["F", "EE"],
+    BF: ["F", "IF"],
+    LE: ["F", "EE"],
+    CO: ["G"],
+    SRT: ["G", "CO"],
+    C: ["G", "CO"],
+    GPE: ["G", "EE"],
+    GMD: ["G", "MD"],
+    MG: ["G", "MD"],
+    CN: ["NS", "REI"],
+    TF: ["F", "SRT"],
+    ID: ["SP", "MD"],
+    IC: ["ID", "SP"],
+    CP: ["SP", "ID"]
+  };
+
+  function domainOf(code) {
+    var parts = String(code).split(".");
+    return parts.length >= 3 ? parts[parts.length - 2] : parts[0];
+  }
+  function domainLabel(code) {
+    var d = domainOf(code);
+    return DOMAIN_NAMES[d] || d;
+  }
+
+  /**
+   * Review candidates for a standard, in the order a teacher would reach for
+   * them: the same strand lower down, then the same strand earlier this year,
+   * then the strands that feed it, then everything else behind it.
+   */
+  function reviewGroups(code, g) {
+    var gi = grades.indexOf(g);
+    var here = DATA.indexOf(row(code));
+    var dom = domainOf(code);
+    var feeds = FEEDS[dom] || [];
+    var behind = DATA.filter(function (r, i) {
+      return grades.indexOf(r[0]) <= gi && r[1] !== code && (grades.indexOf(r[0]) < gi || i < here);
+    });
+    var used = {};
+    function take(test) {
+      var out = [];
+      behind.forEach(function (r) {
+        if (used[r[1]] || !test(r)) return;
+        used[r[1]] = 1; out.push(r);
+      });
+      return out;
+    }
+    // Closest first: the strand's last stop before here is the best review.
+    var strandBelow = take(function (r) { return domainOf(r[1]) === dom && r[0] !== g; }).reverse();
+    var strandHere = take(function (r) { return domainOf(r[1]) === dom; }).reverse();
+    var feeding = take(function (r) { return feeds.indexOf(domainOf(r[1])) !== -1; }).reverse();
+    var rest = take(function () { return true; }).reverse();
+    return [
+      { label: "Builds on · " + (DOMAIN_NAMES[dom] || dom), rows: strandHere.concat(strandBelow) },
+      { label: "Feeds into this strand", rows: feeding },
+      { label: "Everything earlier", rows: rest }
+    ].filter(function (grp) { return grp.rows.length; });
+  }
+
+  // True while the four slots hold the hub's suggestion rather than a
+  // teacher's choice. The workbook says so on the page when it is.
+  var reviewAuto = true;
+
   function fillReview() {
     var g = gradeSel.value, code = stdSel.value;
-    var gi = grades.indexOf(g);
-    var choices = DATA.filter(function (r) { return grades.indexOf(r[0]) <= gi && r[1] !== code; });
-    [1, 2, 3, 4].forEach(function (n) {
+    var groups = code ? reviewGroups(code, g) : [];
+    var suggested = (groups[0] ? groups[0].rows : []).slice(0, 3).map(function (r) { return r[1]; });
+    reviewAuto = true;
+    [1, 2, 3, 4].forEach(function (n, idx) {
       var sel = document.getElementById("rev" + n);
       sel.innerHTML = "";
-      var none = document.createElement("option"); none.value = ""; none.textContent = "None"; sel.appendChild(none);
-      choices.forEach(function (r) {
-        var o = document.createElement("option"); o.value = r[1];
-        o.textContent = (r[0] === g ? "" : r[0] + " · ") + r[1]; sel.appendChild(o);
+      var none = document.createElement("option"); none.value = ""; none.textContent = "None";
+      sel.appendChild(none);
+      groups.forEach(function (grp) {
+        var og = document.createElement("optgroup"); og.label = grp.label;
+        grp.rows.forEach(function (r) {
+          var o = document.createElement("option"); o.value = r[1];
+          o.textContent = (r[0] === g ? "" : r[0] + " · ") + r[1] + " — " + domainLabel(r[1]);
+          og.appendChild(o);
+        });
+        sel.appendChild(og);
       });
+      // The first slots open on the strand this standard stands on, so step 1
+      // is a lesson before anyone touches it. The last stays free.
+      sel.value = suggested[idx] || "";
     });
     renderReview();
   }
@@ -729,7 +851,10 @@ body.board .prob { font-size: 17px; }
     });
   }
   [1, 2, 3, 4].forEach(function (n) {
-    document.getElementById("rev" + n).addEventListener("change", function () { renderReview(); renderWorkbook(stdSel.value); });
+    document.getElementById("rev" + n).addEventListener("change", function () {
+      reviewAuto = false;
+      renderReview(); renderWorkbook(stdSel.value);
+    });
   });
 
   // Find the Error: first three worked problems for the standard, with the error revealed on request.
@@ -779,9 +904,11 @@ body.board .prob { font-size: 17px; }
       a.setAttribute("aria-disabled", needs ? "false" : "true");
     });
     renderExamples(code);
-    renderWorkbook(code);
     renderFTE(code);
+    // Before the workbook, not after: the workbook reads the review slots,
+    // and filling them second left it drawing the previous standard's review.
     fillReview();
+    renderWorkbook(code);
     fillWbStd();
     status.textContent = has ? "Showing " + g + ", standard " + code + "." : "";
     try { sessionStorage.setItem("ogmath-grade", g); sessionStorage.setItem("ogmath-std", code); } catch (e) {}
