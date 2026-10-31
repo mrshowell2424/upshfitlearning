@@ -30,6 +30,24 @@ import { mayReadMaterials } from "@/lib/auth/materials-gate";
 export const dynamic = "force-dynamic";
 
 /**
+ * Types stored base64-encoded, because the content column is text.
+ *
+ * The Math Hub's printables are the reason: its buttons link to sibling PDFs,
+ * and a PDF cannot survive a text column as itself. The seed encodes them;
+ * this decodes them back. Keep this in step with BINARY in
+ * scripts/seed-reading-materials.ts.
+ */
+const BINARY_TYPES = new Set(["application/pdf"]);
+
+/** base64 text back to the bytes it stands for. */
+function decodeBase64(text: string): ArrayBuffer {
+  const bin = atob(text);
+  const out = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+  return out.buffer;
+}
+
+/**
  * What a teacher sees instead of {"error":"Sign in required"}.
  *
  * Plain inline HTML because this is served by the route, not rendered by the
@@ -109,7 +127,11 @@ export async function GET(
 
   if (!row) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
-  return new NextResponse(row.content, {
+  const body = BINARY_TYPES.has(row.content_type)
+    ? decodeBase64(row.content)
+    : row.content;
+
+  return new NextResponse(body, {
     headers: {
       "content-type": row.content_type,
       // Gated content must not sit in a shared cache. The browser may keep it

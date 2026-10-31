@@ -32,7 +32,18 @@ const TYPES: Record<string, string> = {
   ".js": "text/javascript; charset=utf-8",
   ".css": "text/css; charset=utf-8",
   ".json": "application/json; charset=utf-8",
+  ".pdf": "application/pdf",
 };
+
+/**
+ * Types whose files are bytes, not characters.
+ *
+ * The content column is text, so these go in base64-encoded and the materials
+ * route decodes them on the way out. The Math Hub's printables are the reason:
+ * its buttons link to sibling PDFs, and a PDF read as UTF-8 comes back
+ * corrupt. Keep this in step with BINARY_TYPES in the route.
+ */
+const BINARY = new Set([".pdf"]);
 
 /**
  * What the canvas exports is not quite what the site should serve.
@@ -1470,6 +1481,16 @@ for (const full of files) {
     console.log(`  – skipped (not a text type): ${rel}`);
     continue;
   }
+  if (BINARY.has(ext)) {
+    const buf = await readFile(full);
+    rows.push({
+      path: rel,
+      content: buf.toString("base64"),
+      content_type: type,
+      bytes: buf.byteLength,
+    });
+    continue;
+  }
   const raw = await readFile(full, "utf8");
   const content = ext === ".html" ? adapt(rel, raw) : raw;
   rows.push({
@@ -1481,11 +1502,21 @@ for (const full of files) {
 }
 
 // Chunked because a single statement carrying every workbook exceeds what the
-// driver will send in one go.
+// driver will send in one go. Counted by payload rather than by row: the
+// base64 printables are two hundred times the size of a support.js, so a flat
+// row count would send either tiny statements or ones too big to go at all.
 const CHUNK = 25;
+const CHUNK_BYTES = 4_000_000;
 let written = 0;
-for (let i = 0; i < rows.length; i += CHUNK) {
-  const batch = rows.slice(i, i + CHUNK);
+for (let i = 0; i < rows.length; ) {
+  let n = 0;
+  let size = 0;
+  while (i + n < rows.length && n < CHUNK && (n === 0 || size < CHUNK_BYTES)) {
+    size += rows[i + n].content.length;
+    n++;
+  }
+  const batch = rows.slice(i, i + n);
+  i += n;
   await db
     .insert(reading_materials)
     .values(batch)
