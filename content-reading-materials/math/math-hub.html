@@ -212,6 +212,52 @@ body.board .prob { font-size: 17px; }
 #wb.big .ansbox .wb-key { font-size: 32px; }
 #wb.big .tile-work { min-height: 96px; }
 .pb { break-before: page; }
+/* ---- Concrete board -------------------------------------------------------
+   A manipulative a teacher can put on the projector. It reads the problem it
+   was opened from and lays the counters out that way, using whatever the
+   problem is about — stickers, apples, pencils — so the model on the wall is
+   the model in the words. Everything it guesses can be changed in a click,
+   because a parser reading English will sometimes be wrong. */
+.mb-open { margin-top: 8px; }
+.mb { position: fixed; inset: 0; z-index: 60; background: var(--bg); display: flex; flex-direction: column; }
+.mb[hidden] { display: none; }
+.mb-head { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px 12px; border-bottom: 2px solid var(--line); }
+.mb-head h2 { margin: 0; font-family: var(--display); font-size: 22px; font-weight: 800; color: var(--ink); }
+.mb-prob { margin: 4px 0 0; font-size: 15px; color: var(--muted); max-width: 70ch; }
+.mb-close { margin-left: auto; }
+.mb-bar { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; padding: 12px 20px; border-bottom: 1px solid var(--line); }
+.mb-grp { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--muted); }
+.mb-grp button { min-width: 34px; font-size: 17px; line-height: 1; padding: 5px 9px; }
+.mb-grp output { font-family: var(--display); font-size: 19px; font-weight: 800; color: var(--ink); min-width: 2.2ch; text-align: center; }
+.mb-stage { flex: 1; overflow: auto; padding: 20px 22px 28px; display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+.mb-sets { width: 100%; }
+.mb-set { min-width: 0; }
+.mb-sets { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+.mb-set { border: 2px dashed var(--line); border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 8px; background: var(--surface); }
+.mb-set-label { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.mb-items { display: grid; gap: 7px; }
+.mb-item { width: var(--mb-size, 46px); height: var(--mb-size, 46px); display: grid; place-items: center;
+  font-size: calc(var(--mb-size, 46px) * 0.64); line-height: 1;
+  border-radius: 10px; background: #fff; border: 2px solid var(--line); cursor: pointer; user-select: none; }
+.mb-item:hover { border-color: var(--accent); }
+.mb-item.gone { opacity: .28; text-decoration: line-through; }
+.mb-total { font-family: var(--display); font-size: 21px; font-weight: 800; color: var(--ink); }
+.mb-total span { color: var(--accent); }
+.mb-note { font-size: 13px; color: var(--muted); max-width: 70ch; }
+/* Base ten: the right manipulative once the numbers stop fitting on a desk. */
+.mb-b10 { display: flex; flex-wrap: wrap; gap: 22px; align-items: flex-end; }
+.mb-flat { width: 130px; height: 130px; background: repeating-linear-gradient(0deg,#2F7A8C 0 1px,transparent 1px 13px),
+  repeating-linear-gradient(90deg,#2F7A8C 0 1px,transparent 1px 13px); border: 2px solid #2F7A8C; border-radius: 4px; }
+.mb-rod { width: 13px; height: 130px; background: repeating-linear-gradient(0deg,#1F7A5C 0 1px,transparent 1px 13px);
+  border: 2px solid #1F7A5C; border-radius: 4px; }
+.mb-one { width: 21px; height: 21px; background: #C0504D; border: 1px solid #8d3a38; border-radius: 3px; }
+.mb-b10 .col { display: flex; flex-direction: column; gap: 5px; align-items: center; }
+.mb-b10 .lab { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.mb-b10 .ones { display: grid; grid-template-columns: repeat(2, auto); gap: 4px; }
+body.mb-on { overflow: hidden; }
+@media (max-width: 620px) {
+  .mb-item { --mb-size: 38px; }
+}
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 @media (max-width: 480px) { .btns { grid-template-columns: 1fr; } }
 </style>
@@ -324,6 +370,34 @@ body.board .prob { font-size: 17px; }
   </div>
 
 </main>
+<div class="mb" id="mboard" hidden role="dialog" aria-modal="true" aria-label="Concrete board">
+  <div class="mb-head">
+    <div>
+      <h2>Concrete board</h2>
+      <p class="mb-prob" id="mb-prob"></p>
+    </div>
+    <button type="button" class="mb-close" id="mb-close">Close</button>
+  </div>
+  <div class="mb-bar">
+    <label class="mb-grp" for="mb-mode">Show&nbsp;<select id="mb-mode">
+      <option value="groups">Equal groups</option>
+      <option value="join">Two piles</option>
+      <option value="one">One pile</option>
+      <option value="b10">Base ten blocks</option>
+    </select></label>
+    <span class="mb-grp" id="mb-g-wrap">Groups
+      <button type="button" data-mb="g-">&minus;</button><output id="mb-g"></output><button type="button" data-mb="g+">+</button>
+    </span>
+    <span class="mb-grp" id="mb-p-wrap">In each
+      <button type="button" data-mb="p-">&minus;</button><output id="mb-p"></output><button type="button" data-mb="p+">+</button>
+    </span>
+    <label class="mb-grp" for="mb-icon">Counter&nbsp;<select id="mb-icon"></select></label>
+    <button type="button" id="mb-total-btn" aria-pressed="true">Hide total</button>
+    <button type="button" id="mb-reset">Back to the problem</button>
+  </div>
+  <div class="mb-stage" id="mb-stage"></div>
+</div>
+
 
   <section class="builder printable" id="printable" aria-label="Student workbook" style="margin-top:24px">
     <div class="row">
@@ -332,6 +406,7 @@ body.board .prob { font-size: 17px; }
       <select id="wb-std" aria-label="Workbook standard"></select>
       <button type="button" id="wb-toggle" aria-pressed="false">Show answer key</button>
       <button type="button" id="wb-print">Print workbook</button>
+      <button type="button" id="wb-print-key">Print answer key</button>
       <span class="note" id="wb-note"></span>
     </div>
     <div id="wb"></div>
@@ -440,6 +515,323 @@ body.board .prob { font-size: 17px; }
     ];
   }
 
+  // ---- Concrete board ------------------------------------------------------
+  //
+  // A manipulative for the projector. It reads the step 6 problem, works out
+  // what is being counted and how it is grouped, and lays that out — so the
+  // model on the wall is the model in the words rather than anonymous dots.
+  //
+  // The reading is a guess. English is not parseable and 305 problems range
+  // from "Ruby has 6 stickers" to "write the square root of minus sixteen",
+  // so every guess it makes is a control the teacher can change, and the
+  // board opens on something sensible rather than something right.
+
+  /** Words that follow a number without being the thing being counted. */
+  var MB_STOP = ("and more equal per are each times plus for the with have has was were that " +
+    "this they them all what how many much write draw find solve does did do an as at by be " +
+    "on or so if not no yes because bigger down gives loose otherwise represent right single " +
+    "solves converts share chance sin").split(" ");
+
+  /** Units of measure: counted, but not objects you can put on a desk. */
+  var MB_MEASURES = ("inch inches foot feet yard yards mile miles meter meters cm centimeters " +
+    "minute minutes hour hours day days week weeks second seconds degree degrees unit units " +
+    "square gram grams pound pounds point points dollar dollars cent cents word words").split(" ");
+
+  var MB_ICONS = {
+    sticker: "⭐", pencil: "✏️", person: "🧑", student: "🧑",
+    kid: "🧑", boy: "🧑", girl: "🧑", voter: "🧑",
+    bead: "🔵", shell: "🐚", apple: "🍎", banana: "🍌",
+    grape: "🍇", orange: "🍊", cookie: "🍪", cupcake: "🧁",
+    muffin: "🧁", candy: "🍬", cup: "🥤", can: "🥤",
+    card: "🃏", page: "📄", book: "📚", box: "📦",
+    pack: "📦", bag: "🛍️", toy: "🧸", marble: "⚪",
+    cube: "🟦", block: "🟥", tile: "🟩", seat: "💺",
+    chair: "🪑", car: "🚗", bus: "🚌", plant: "🌱",
+    tree: "🌳", flower: "🌸", duck: "🦆", bird: "🐦",
+    fish: "🐟", dog: "🐶", cat: "🐱", pet: "🐶",
+    sock: "🧦", straw: "🥤", pen: "🖊️", crayon: "🖍️",
+    coin: "🪙", penny: "🪙", dime: "\uD83E\uDA99", quarter: "\uD83E\uDA99",
+    ball: "⚽", balloon: "🎈", circle: "⭕", triangle: "🔺",
+    slice: "🍕", piece: "🧩", item: "⚫", counter: "⚫"
+  };
+  /** Counters a teacher can switch to whatever the problem says. */
+  var MB_CHOICES = ["counter", "cube", "block", "circle", "sticker", "apple", "cookie",
+    "pencil", "marble", "bead", "card", "student", "car", "flower"];
+
+  /** Adjectives that sit between the number and the thing: "3 red balls". */
+  var MB_ADJ = ("red blue green yellow black white orange purple pink brown grey gray gold " +
+    "silver big small large little long short tall equal same other new old loose single " +
+    "whole half extra total fair").split(" ");
+
+  /**
+   * Candidate singulars for a plural, best first.
+   *
+   * Guessing one and committing to it turned "cookies" into "cooky". Several
+   * are offered and the icon table picks; nothing matching, the first is used
+   * for the label, where being slightly off is cosmetic.
+   */
+  function mbSingulars(w) {
+    w = String(w).toLowerCase();
+    var out = [w];
+    if (w === "people") out.unshift("person");
+    if (w === "children") out.unshift("kid");
+    if (/s$/.test(w) && !/ss$/.test(w)) out.push(w.slice(0, -1));
+    if (/(ches|shes|sses|xes|zes)$/.test(w)) out.push(w.slice(0, -2));
+    if (/ies$/.test(w)) out.push(w.slice(0, -3) + "y");
+    return out;
+  }
+  function mbIcon(noun) { return MB_ICONS[noun] || MB_ICONS.counter; }
+
+  /** The first of a run of words that names something we can draw. */
+  function mbNounFrom(words) {
+    var fallback = null;
+    for (var i = 0; i < words.length; i++) {
+      var w = words[i];
+      if (MB_STOP.indexOf(w) !== -1 || MB_ADJ.indexOf(w) !== -1) continue;
+      var cands = mbSingulars(w);
+      for (var j = 0; j < cands.length; j++) {
+        if (MB_ICONS[cands[j]]) return cands[j];
+      }
+      if (!fallback && MB_MEASURES.indexOf(w) === -1 && MB_MEASURES.indexOf(cands[cands.length - 1]) === -1) {
+        fallback = cands[cands.length - 1];
+      }
+    }
+    return fallback;
+  }
+
+  /**
+   * What the problem is about and how it is grouped.
+   *
+   * Grouping cues come first because "6 bags with 4 apples in each" is six
+   * groups of four, not six and four. Where there is no cue and two numbers,
+   * it opens as two piles, which is what "6 stickers, then 5 more" is.
+   */
+  function mbRead(text) {
+    var q = String(text || "");
+    var low = q.toLowerCase();
+    var nums = (q.match(/\d+/g) || []).map(Number).filter(function (n) { return n > 0; });
+
+    // Up to three words after each number, so "3 red balls" reaches "balls".
+    var real = [];
+    var re = /\b(\d+)\s+((?:[a-z]+\s+){0,2}[a-z]+)\b/g, m;
+    while ((m = re.exec(low)) !== null) {
+      var found = mbNounFrom(m[2].split(/\s+/));
+      if (found && real.indexOf(found) === -1) real.push(found);
+    }
+    // The thing in the groups is named after the second number: "6 bags with
+    // 4 apples in each bag" is a board of apples, not of bags.
+    var grouped = /in each|groups of|rows of|each \w+ has|times as many|\bper\b/.test(low);
+    var noun = (grouped && real.length > 1 ? real[1] : real[0]) || "counter";
+
+    var mode = "one", g = 1, per = nums[0] || 6;
+    if (grouped && nums.length >= 2) { mode = "groups"; g = nums[0]; per = nums[1]; }
+    else if (nums.length >= 2) { mode = "join"; g = nums[0]; per = nums[1]; }
+    else if (nums.length === 1) { mode = "one"; g = 1; per = nums[0]; }
+    // Past a deskful, base ten is the manipulative, not more counters.
+    if (mode !== "groups" && Math.max(g, per) > 60) mode = "b10";
+    return { noun: noun, icon: mbIcon(noun), mode: mode, g: g, per: per };
+  }
+
+  var mbState = null;
+  var mbEls = {};
+
+  /** What the model on the board comes to, before anything is taken away. */
+  function mbTotalOf(mode) {
+    if (mode === "groups") return mbState.g * mbState.per;
+    if (mode === "join") return mbState.g + mbState.per;
+    if (mode === "b10") return mbState.value;
+    return mbState.per;
+  }
+  /** Rewrites the running total in place, so taking a counter away shows. */
+  function mbTotal() {
+    var el = mbEls["mb-stage"].querySelector(".mb-total");
+    if (!el) return;
+    var laid = mbTotalOf(mbState.mode), gone = 0;
+    for (var k in mbState.off) if (mbState.off[k]) gone++;
+    el.innerHTML = "Total: <span>" + Math.max(0, laid - gone) + "</span>" +
+      (gone ? " &nbsp;(" + laid + " laid out, " + gone + " taken away)" : "");
+  }
+  function mbInit() {
+    ["mboard", "mb-prob", "mb-close", "mb-mode", "mb-g", "mb-p", "mb-g-wrap", "mb-p-wrap",
+     "mb-icon", "mb-total-btn", "mb-reset", "mb-stage"].forEach(function (id) {
+      mbEls[id] = document.getElementById(id);
+    });
+    if (!mbEls.mboard) return;
+    MB_CHOICES.forEach(function (w) {
+      var o = document.createElement("option");
+      o.value = w; o.textContent = mbIcon(w) + "  " + w;
+      mbEls["mb-icon"].appendChild(o);
+    });
+    mbEls["mb-close"].addEventListener("click", mbClose);
+    mbEls["mb-reset"].addEventListener("click", function () { mbOpen(mbState.text); });
+    mbEls["mb-mode"].addEventListener("change", function () {
+      if (this.value === "b10") mbState.value = mbTotalOf(mbState.mode);
+      mbState.mode = this.value;
+      mbState.off = {};          // counters taken away do not carry across
+      mbDraw();
+    });
+    mbEls["mb-icon"].addEventListener("change", function () {
+      mbState.noun = this.value; mbState.icon = mbIcon(this.value); mbDraw();
+    });
+    mbEls["mb-total-btn"].addEventListener("click", function () {
+      mbState.showTotal = !mbState.showTotal;
+      this.setAttribute("aria-pressed", mbState.showTotal ? "true" : "false");
+      this.textContent = mbState.showTotal ? "Hide total" : "Show total";
+      mbDraw();
+    });
+    mbEls.mboard.querySelectorAll("[data-mb]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var k = this.getAttribute("data-mb");
+        if (k === "g+") mbState.g = Math.min(30, mbState.g + 1);
+        if (k === "g-") mbState.g = Math.max(1, mbState.g - 1);
+        if (mbState.mode === "b10") {
+          var step = mbState.value >= 100 ? 10 : 1;
+          if (k === "p+") mbState.value = Math.min(999, mbState.value + step);
+          if (k === "p-") mbState.value = Math.max(0, mbState.value - step);
+        } else {
+          if (k === "p+") mbState.per = Math.min(200, mbState.per + 1);
+          if (k === "p-") mbState.per = Math.max(1, mbState.per - 1);
+        }
+        mbState.off = {};
+        mbDraw();
+      });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !mbEls.mboard.hidden) mbClose();
+    });
+  }
+
+  function mbOpen(text) {
+    if (!mbEls.mboard) return;
+    var r = mbRead(text);
+    mbState = { text: text, noun: r.noun, icon: r.icon, mode: r.mode, g: r.g, per: r.per,
+      value: r.mode === "join" ? r.g + r.per : r.mode === "groups" ? r.g * r.per : r.per,
+      showTotal: true, off: {} };
+    mbEls["mb-prob"].textContent = text || "";
+    mbEls["mb-mode"].value = r.mode;
+    var sel = mbEls["mb-icon"];
+    if (!Array.prototype.some.call(sel.options, function (o) { return o.value === r.noun; })) {
+      var o = document.createElement("option");
+      o.value = r.noun; o.textContent = r.icon + "  " + r.noun;
+      sel.insertBefore(o, sel.firstChild);
+    }
+    sel.value = r.noun;
+    mbEls["mb-total-btn"].textContent = "Hide total";
+    mbEls["mb-total-btn"].setAttribute("aria-pressed", "true");
+    mbEls.mboard.hidden = false;
+    document.body.classList.add("mb-on");
+    mbEls["mb-close"].focus();
+    mbDraw();
+  }
+  function mbClose() {
+    if (!mbEls.mboard) return;
+    mbEls.mboard.hidden = true;
+    document.body.classList.remove("mb-on");
+  }
+
+  function mbCell(key) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "mb-item" + (mbState.off[key] ? " gone" : "");
+    b.textContent = mbState.icon;
+    b.setAttribute("aria-label", mbState.noun + (mbState.off[key] ? ", taken away" : ""));
+    b.addEventListener("click", function () {
+      mbState.off[key] = !mbState.off[key];
+      this.classList.toggle("gone");
+      mbTotal();
+    });
+    return b;
+  }
+  function mbPile(label, n, tag) {
+    var set = document.createElement("div"); set.className = "mb-set";
+    if (label) {
+      var l = document.createElement("div"); l.className = "mb-set-label"; l.textContent = label;
+      set.appendChild(l);
+    }
+    var wrap = document.createElement("div"); wrap.className = "mb-items";
+    var cols = Math.min(10, Math.max(1, Math.ceil(Math.sqrt(n))));
+    wrap.style.gridTemplateColumns = "repeat(" + cols + ", auto)";
+    for (var i = 0; i < n; i++) wrap.appendChild(mbCell(tag + ":" + i));
+    set.appendChild(wrap);
+    return set;
+  }
+  function mbBaseTen(n) {
+    var box = document.createElement("div"); box.className = "mb-b10";
+    var h = Math.floor(n / 100), t = Math.floor((n % 100) / 10), o = n % 10;
+    [["Hundreds", h, "mb-flat"], ["Tens", t, "mb-rod"], ["Ones", o, "mb-one"]].forEach(function (part) {
+      if (!part[1]) return;
+      var col = document.createElement("div"); col.className = "col";
+      var row = document.createElement("div");
+      row.className = part[2] === "mb-one" ? "ones" : "";
+      row.style.display = "flex"; row.style.gap = "5px"; row.style.alignItems = "flex-end";
+      if (part[2] === "mb-one") { row.style.display = "grid"; row.style.gridTemplateColumns = "repeat(2, auto)"; }
+      for (var i = 0; i < part[1]; i++) {
+        var d = document.createElement("div"); d.className = part[2]; row.appendChild(d);
+      }
+      var lab = document.createElement("div"); lab.className = "lab";
+      lab.textContent = part[1] + " " + part[0].toLowerCase();
+      col.appendChild(row); col.appendChild(lab); box.appendChild(col);
+    });
+    return box;
+  }
+
+  function mbDraw() {
+    var stage = mbEls["mb-stage"];
+    stage.innerHTML = "";
+    var m = mbState.mode;
+    // This is made to be projected, so a board of twelve counters draws them
+    // large and one of two hundred draws them small, rather than everything
+    // at one size that suits neither.
+    var count = m === "groups" ? mbState.g * mbState.per
+      : m === "join" ? mbState.g + mbState.per : mbState.per;
+    stage.style.setProperty("--mb-size",
+      (count <= 12 ? 104 : count <= 30 ? 78 : count <= 60 ? 60 : count <= 120 ? 46 : 34) + "px");
+    mbEls["mb-g-wrap"].style.display = m === "groups" || m === "join" ? "" : "none";
+    mbEls["mb-p-wrap"].style.display = "";
+    mbEls["mb-icon"].parentNode.style.display = m === "b10" ? "none" : "";
+    mbEls["mb-g-wrap"].firstChild.textContent = m === "join" ? "First pile " : "Groups ";
+    mbEls["mb-p-wrap"].firstChild.textContent =
+      m === "join" ? "Second pile " : m === "b10" ? "Number " : m === "one" ? "How many " : "In each ";
+    mbEls["mb-g"].textContent = mbState.g;
+    mbEls["mb-p"].textContent = m === "b10" ? mbState.value : mbState.per;
+
+    var total = 0, note = "";
+    if (m === "b10") {
+      total = mbState.value;
+      stage.appendChild(mbBaseTen(total));
+      note = "One flat is a hundred, one rod is ten, one small square is one.";
+    } else if (m === "groups") {
+      var n = mbState.g * mbState.per;
+      if (n > 300) {
+        note = "That is " + n + " counters — too many to lay out. Switch to base ten blocks.";
+      } else {
+        var sets = document.createElement("div"); sets.className = "mb-sets";
+        for (var i = 0; i < mbState.g; i++) sets.appendChild(mbPile("Group " + (i + 1), mbState.per, "g" + i));
+        stage.appendChild(sets);
+      }
+    } else if (m === "join") {
+      var sets2 = document.createElement("div"); sets2.className = "mb-sets";
+      sets2.appendChild(mbPile("First", Math.min(mbState.g, 200), "a"));
+      sets2.appendChild(mbPile("Second", Math.min(mbState.per, 200), "b"));
+      stage.appendChild(sets2);
+      total = mbState.g + mbState.per;
+    } else {
+      stage.appendChild(mbPile("", Math.min(mbState.per, 300), "o"));
+      total = mbState.per;
+    }
+
+    if (mbState.showTotal) {
+      var t = document.createElement("div"); t.className = "mb-total";
+      stage.appendChild(t);
+      mbTotal();
+    }
+    var nd = document.createElement("div"); nd.className = "mb-note";
+    nd.textContent = note || "Click a counter to take it away. Change the numbers or the counter above.";
+    if (m === "b10") nd.textContent = note;
+    stage.appendChild(nd);
+  }
+
+  mbInit();
+
   function renderExamples(code) {
     var p = PRAC[code];
     document.querySelectorAll(".ex").forEach(function (box) { box.innerHTML = ""; });
@@ -466,8 +858,16 @@ body.board .prob { font-size: 17px; }
             lab.textContent = w.label;
             var txt = document.createElement("span"); txt.className = "cra-hint"; txt.textContent = w.hint;
             r.appendChild(lab); r.appendChild(txt);
+            d.appendChild(r);
+            if (w.label === "Concrete") {
+              var ob = document.createElement("button");
+              ob.type = "button"; ob.className = "mb-open";
+              ob.textContent = "Open the concrete board";
+              ob.addEventListener("click", function () { mbOpen(item[0]); });
+              d.appendChild(ob);
+            }
             var k = document.createElement("div"); k.className = "ans"; fillText(k, w.label + ": " + w.key);
-            d.appendChild(r); d.appendChild(k);
+            d.appendChild(k);
           });
         } else {
           var hint = document.createElement("div"); hint.style.color = "var(--muted)"; hint.style.fontSize = "13px"; hint.textContent = item[2];
@@ -774,6 +1174,26 @@ body.board .prob { font-size: 17px; }
   // should not have to be told a keyboard shortcut to get a worksheet out.
   var printBtn = document.getElementById("wb-print");
   if (printBtn) printBtn.addEventListener("click", function () { window.print(); });
+
+  // The answer key is the same workbook with the answers shown, so printing
+  // it means turning them on, printing, and putting the page back as the
+  // teacher left it — rather than making them toggle, print, toggle back and
+  // remember which state it was in.
+  var printKeyBtn = document.getElementById("wb-print-key");
+  if (printKeyBtn) printKeyBtn.addEventListener("click", function () {
+    var wb = document.getElementById("wb");
+    var was = wb.classList.contains("show-key");
+    if (!was) wb.classList.add("show-key");
+    var restore = function () {
+      if (!was) wb.classList.remove("show-key");
+      window.removeEventListener("afterprint", restore);
+    };
+    window.addEventListener("afterprint", restore);
+    window.print();
+    // Safari and some mobile browsers never fire afterprint. The timer is a
+    // backstop so the page cannot be left showing answers it was not showing.
+    setTimeout(restore, 1500);
+  });
 
   window.addEventListener("beforeprint", fitSheets);
   window.addEventListener("afterprint", unfitSheets);
