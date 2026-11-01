@@ -29,13 +29,27 @@ export const metadata = {
     "Project-based learning and design thinking: plan a project, or run a design challenge every week of the year.",
 };
 
-const CREAM = "#FAF7F2";
-const INK = "#24303D";
-const MUTED = "#6B7480";
-const RULE = "#E4DED4";
-const BRASS = "#B08A2E";
-const INDIGO = "#3E5FB0";
-const PLUM = "#7A2E6E";
+/**
+ * Brand colours, straight from the Tailwind theme.
+ *
+ * The road maps had grown their own palette — a warm cream, a slate ink and
+ * a brass eyebrow that appear nowhere else on the site. These are the tokens
+ * in tailwind.config.ts, so the road maps now look like the rest of Upshift.
+ *
+ * Each accent is a pair: the brand hue for the 10px card edge, where it is a
+ * block of colour, and a darker relative of it for the small bold text, where
+ * the brand hue alone does not carry enough contrast against white.
+ */
+const PAGE = "#FAFAFA";
+const INK = "#111111";
+const MUTED = "#6A6A6A";
+const RULE = "#E9E9E9";
+const CORAL = "#FF6A5B";
+const CORAL_TEXT = "#C0432F";
+const BLUE = "#4C9AFF";
+const BLUE_TEXT = "#2F6FD0";
+const PINK = "#FF7DAE";
+const PINK_TEXT = "#B3336E";
 
 const HUB = "/api/materials/pbl/pbl-hub.html";
 
@@ -50,10 +64,10 @@ const CYCLE = [
 
 function Hub() {
   return (
-    <div style={{ background: CREAM, color: INK, minHeight: "100vh", padding: "36px 20px 80px" }}>
+    <div style={{ background: PAGE, color: INK, minHeight: "100vh", padding: "36px 20px 80px" }}>
       <div style={{ maxWidth: 1180, margin: "0 auto" }}>
         <div style={{ borderBottom: `3px solid ${RULE}`, paddingBottom: 20 }}>
-          <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.18em", color: BRASS }}>
+          <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.18em", color: CORAL_TEXT }}>
             PROJECT WORK · K&ndash;12
           </div>
           <h1 style={{ margin: "6px 0 0", fontSize: 40, fontWeight: 800, lineHeight: 1.08 }}>
@@ -74,7 +88,7 @@ function Hub() {
             marginTop: 26,
             background: "#FFFFFF",
             border: `3px solid ${RULE}`,
-            borderLeft: `10px solid ${INDIGO}`,
+            borderLeft: `10px solid ${BLUE}`,
             borderRadius: 16,
             padding: "24px 26px",
             textDecoration: "none",
@@ -93,7 +107,7 @@ function Hub() {
             }}
           >
             <div>
-              <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: INDIGO }}>
+              <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: BLUE_TEXT }}>
                 PLAN A PROJECT
               </div>
               <div style={{ fontSize: 27, fontWeight: 800, lineHeight: 1.15, marginTop: 6 }}>
@@ -130,14 +144,14 @@ function Hub() {
             marginTop: 14,
             background: "#FFFFFF",
             border: `3px solid ${RULE}`,
-            borderLeft: `10px solid ${PLUM}`,
+            borderLeft: `10px solid ${PINK}`,
             borderRadius: 16,
             padding: "24px 26px",
             textDecoration: "none",
             color: INK,
           }}
         >
-          <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: PLUM }}>
+          <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: PINK_TEXT }}>
             A CHALLENGE EVERY WEEK
           </div>
           <div style={{ fontSize: 27, fontWeight: 800, lineHeight: 1.15, marginTop: 6 }}>
@@ -158,12 +172,12 @@ function Hub() {
             marginTop: 14,
             background: "#FFFFFF",
             border: `3px solid ${RULE}`,
-            borderLeft: `10px solid ${BRASS}`,
+            borderLeft: `10px solid ${CORAL}`,
             borderRadius: 16,
             padding: "20px 22px",
           }}
         >
-          <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: BRASS }}>
+          <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: CORAL_TEXT }}>
             THE PROJECT CYCLE
           </div>
           <div style={{ fontSize: 21, fontWeight: 800, lineHeight: 1.2, marginTop: 5 }}>
@@ -185,10 +199,10 @@ function Hub() {
                   border: `1.5px solid ${RULE}`,
                   borderRadius: 999,
                   padding: "6px 14px",
-                  background: CREAM,
+                  background: PAGE,
                 }}
               >
-                <span style={{ color: INDIGO, fontWeight: 800 }}>{n}</span>
+                <span style={{ color: BLUE_TEXT, fontWeight: 800 }}>{n}</span>
                 {label}
               </span>
             ))}

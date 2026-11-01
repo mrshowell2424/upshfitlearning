@@ -31,23 +31,38 @@ export const metadata = {
     "Build a lesson from any skill, open the Basic Reading workbooks, or review an OG concept pack.",
 };
 
-const CREAM = "#FAF7F2";
-const INK = "#24303D";
-const MUTED = "#6B7480";
-const RULE = "#E4DED4";
-const BRASS = "#B08A2E";
-const TEAL = "#2F7A8C";
-const NAVY = "#2C4F74";
-const GREEN = "#4E7A44";
+/**
+ * Brand colours, straight from the Tailwind theme.
+ *
+ * The road maps had grown their own palette — a warm cream, a slate ink and
+ * a brass eyebrow that appear nowhere else on the site. These are the tokens
+ * in tailwind.config.ts, so the road maps now look like the rest of Upshift.
+ *
+ * Each accent is a pair: the brand hue for the 10px card edge, where it is a
+ * block of colour, and a darker relative of it for the small bold text, where
+ * the brand hue alone does not carry enough contrast against white.
+ */
+const PAGE = "#FAFAFA";
+const INK = "#111111";
+const MUTED = "#6A6A6A";
+const RULE = "#E9E9E9";
+const CORAL = "#FF6A5B";
+const CORAL_TEXT = "#C0432F";
+const TEAL = "#00B4A6";
+const TEAL_TEXT = "#00756C";
+const BLUE = "#4C9AFF";
+const BLUE_TEXT = "#2F6FD0";
+const LAVENDER = "#B87DFF";
+const LAVENDER_TEXT = "#6B2FB5";
 
 const BUILDER = "/api/materials/science-of-reading/lesson-builder.html";
 
 function Hub() {
   return (
-    <div style={{ background: CREAM, color: INK, minHeight: "100vh", padding: "36px 20px 80px" }}>
+    <div style={{ background: PAGE, color: INK, minHeight: "100vh", padding: "36px 20px 80px" }}>
       <div style={{ maxWidth: 1180, margin: "0 auto" }}>
         <div style={{ borderBottom: `3px solid ${RULE}`, paddingBottom: 20 }}>
-          <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.18em", color: BRASS }}>
+          <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.18em", color: CORAL_TEXT }}>
             INTERVENTION · STRUCTURED LITERACY
           </div>
           <h1 style={{ margin: "6px 0 0", fontSize: 40, fontWeight: 800, lineHeight: 1.08 }}>
@@ -87,7 +102,7 @@ function Hub() {
             }}
           >
             <div>
-              <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: TEAL }}>
+              <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: TEAL_TEXT }}>
                 BUILD A LESSON
               </div>
               <div style={{ fontSize: 27, fontWeight: 800, lineHeight: 1.15, marginTop: 6 }}>
@@ -128,7 +143,8 @@ function Hub() {
               href: "/reading",
               eyebrow: "PRINT AND TEACH",
               title: "Basic Reading workbooks",
-              accent: NAVY,
+              accent: BLUE,
+              accentText: BLUE_TEXT,
               blurb: `All ${SKILL_TOTAL} skills in the scope and sequence, in teaching order, each with its workbook and answer key.`,
               preview: "/previews/workbook.png",
               shape: [751, 1000] as const,
@@ -143,7 +159,8 @@ function Hub() {
               href: "/og-packs",
               eyebrow: "REVIEW A CONCEPT",
               title: "OG concept packs",
-              accent: GREEN,
+              accent: LAVENDER,
+              accentText: LAVENDER_TEXT,
               blurb: `${OG_CONCEPTS.length} packs, each taking one concept across the whole family of skills it covers.`,
               preview: "/previews/og-pack.png",
               shape: [774, 1000] as const,
@@ -217,7 +234,7 @@ function Hub() {
                   }}
                 />
               </div>
-              <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: card.accent }}>
+              <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: card.accentText }}>
                 {card.eyebrow}
               </div>
               <div style={{ fontSize: 21, fontWeight: 800, lineHeight: 1.2, marginTop: 5 }}>
@@ -249,7 +266,7 @@ function Hub() {
             marginTop: 14,
             background: "#FFFFFF",
             border: `3px solid ${RULE}`,
-            borderLeft: `10px solid ${BRASS}`,
+            borderLeft: `10px solid ${CORAL}`,
             borderRadius: 16,
             padding: "16px 22px",
             textDecoration: "none",
@@ -257,7 +274,7 @@ function Hub() {
           }}
         >
           <div>
-            <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: BRASS }}>
+            <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: CORAL_TEXT }}>
               THE WHOLE MAP
             </div>
             <div style={{ fontSize: 18, fontWeight: 800, lineHeight: 1.2, marginTop: 4 }}>
@@ -267,7 +284,7 @@ function Hub() {
               Every skill in teaching order, by level — what comes before a skill and what it sets up.
             </p>
           </div>
-          <span style={{ fontSize: 15, fontWeight: 700, color: BRASS, whiteSpace: "nowrap" }}>
+          <span style={{ fontSize: 15, fontWeight: 700, color: CORAL_TEXT, whiteSpace: "nowrap" }}>
             Open ↗
           </span>
         </a>
