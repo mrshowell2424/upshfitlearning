@@ -12,7 +12,10 @@ const navItems = [
   { label: "Standard match", href: "/match" },
   { label: "Science of Reading", href: "/science-of-reading" },
   { label: "Math", href: "/math" },
-  { label: "Design Thinking", href: "/design-thinking" },
+  // Design Thinking lives under PBL rather than beside it: a design challenge
+  // is a project, and a teacher looking for project work should not have to
+  // know which of two tabs we filed it under. /design-thinking still works.
+  { label: "PBL", href: "/pbl" },
   { label: "Courses", href: "/courses" },
   { label: "Teacher's Lounge", href: "/lounge" },
   { label: "About", href: "/about" },
