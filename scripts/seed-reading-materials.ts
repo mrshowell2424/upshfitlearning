@@ -1458,6 +1458,145 @@ function adapt(rel: string, html: string): string {
   return run(rel, html, ADAPTATIONS);
 }
 
+/**
+ * Puts the teaching materials on the Upshift palette.
+ *
+ * The canvas exports carry palettes of their own — a green for the reading
+ * builder, a different green for the maths hub, a brass and cream across the
+ * 404 workbooks — none of which appear anywhere else on the site. This maps
+ * them onto the tokens in tailwind.config.ts on the way into the table, so
+ * the exports stay as the canvas wrote them and a re-export cannot undo it.
+ *
+ * Hue picks the family; luminance picks the member of it.
+ *
+ * Mapping by what a colour was painting — type or surface — is the obvious
+ * approach and it is wrong, because the thing that decides whether a colour
+ * works is what sits next to it. A chip is a pale tint with its own hue as
+ * the label; a badge is a dark fill with white on top. Decide those two
+ * independently and you get salmon on peach, or white on mint, or in one
+ * case the same colour twice and a line of invisible text.
+ *
+ * Matching luminance sidesteps all of it. The export already had working
+ * contrast, so keeping each colour's lightness and changing only its hue
+ * carries those relationships over intact: what was pale stays pale, what
+ * was dark enough for white text stays dark enough for white text.
+ */
+type Ramp = string[];
+
+/** Each family, light to dark. Luminance is computed, not written down. */
+const FAMILIES: Record<string, Ramp> = {
+  grey: ["FAFAFA", "F2F2F2", "E9E9E9", "8A8A8A", "6A6A6A", "333333", "111111"],
+  warm: ["FFF0EC", "FF6A5B", "E24F41", "C0432F"],
+  amber: ["FFF0EC", "FFB13F", "C0432F"],
+  teal: ["E6F8F6", "00B4A6", "00756C"],
+  blue: ["EAF2FF", "4C9AFF", "2F6FD0", "16213E"],
+  lavender: ["F4E9FF", "B87DFF", "6B2FB5"],
+  pink: ["FFF5F9", "FF7DAE", "B3336E"],
+};
+
+function channel(v: number): number {
+  const x = v / 255;
+  return x <= 0.03928 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4);
+}
+/** Relative luminance — the thing contrast is actually measured on. */
+function luminance(hex: string): number {
+  return (
+    0.2126 * channel(parseInt(hex.slice(0, 2), 16)) +
+    0.7152 * channel(parseInt(hex.slice(2, 4), 16)) +
+    0.0722 * channel(parseInt(hex.slice(4, 6), 16))
+  );
+}
+function saturation(hex: string): number {
+  const r = parseInt(hex.slice(0, 2), 16) / 255;
+  const g = parseInt(hex.slice(2, 4), 16) / 255;
+  const b = parseInt(hex.slice(4, 6), 16) / 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b);
+  if (max === min) return 0;
+  const l = (max + min) / 2;
+  return l > 0.5 ? (max - min) / (2 - max - min) : (max - min) / (max + min);
+}
+function hue(hex: string): number {
+  const r = parseInt(hex.slice(0, 2), 16) / 255;
+  const g = parseInt(hex.slice(2, 4), 16) / 255;
+  const b = parseInt(hex.slice(4, 6), 16) / 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
+  if (!d) return 0;
+  if (max === r) return (((g - b) / d + (g < b ? 6 : 0)) * 60) % 360;
+  if (max === g) return ((b - r) / d + 2) * 60;
+  return ((r - g) / d + 4) * 60;
+}
+
+/** The one real error red, which should stay a red and not become coral. */
+const EXPLICIT: Record<string, string> = { B42318: "E24F41", B00020: "E24F41", "9B2C3C": "E24F41" };
+
+const LUMS: Record<string, number[]> = {};
+for (const [k, ramp] of Object.entries(FAMILIES)) LUMS[k] = ramp.map(luminance);
+
+/** Reading keeps teal; maths keeps lavender, as their road maps do. */
+function accentFamily(rel: string): string {
+  return rel.startsWith("math/") ? "lavender" : "teal";
+}
+
+function familyFor(hex: string, accent: string): string {
+  const sat = saturation(hex);
+  if (sat < 0.12) return "grey";
+  // An off-white is a paper colour, not a tint. #F6F8F4 is technically a
+  // green and reads as white; sent to the teal ramp it turned the reading
+  // builder's page mint.
+  if (sat < 0.4 && luminance(hex) > 0.88) return "grey";
+  // Near-black is ink whatever it is tinted with. The packs' darkest green
+  // is the body colour; sent to the teal ramp it came back three times
+  // lighter and the gold button it sits on stopped being readable.
+  if (luminance(hex) < 0.06) return "grey";
+  const h = hue(hex);
+  if (h < 40 || h >= 330) return "warm";
+  // Gold sits at about 43 degrees. On the other side of the line it was a
+  // coral, which is both wrong and darker than the gold it replaced.
+  if (h < 70) return "amber";
+  if (h < 175) return accent;
+  if (h < 255) return "blue";
+  if (h < 300) return "lavender";
+  return "pink";
+}
+
+function brandFor(hex: string, accent: string): string {
+  const up = hex.toUpperCase();
+  if (EXPLICIT[up]) return EXPLICIT[up];
+  const fam = familyFor(up, accent);
+  const want = luminance(up);
+  const ramp = FAMILIES[fam], lums = LUMS[fam];
+  // Nearest luminance, but break a near-tie downwards.
+  //
+  // The exports' mid-tones are mostly type, and several were already short
+  // of AA against white — the workbooks' brass is 3.1:1. Landing on the
+  // lighter of two equally close brand tones made that worse. The nudge is
+  // small enough not to disturb a pale background or a dark panel, and it
+  // only applies in the range type actually lives in.
+  const bias = want < 0.6 ? 0.05 : 0;
+  const score = (i: number) => Math.abs(lums[i] - want) + (lums[i] > want ? bias : 0);
+  let best = 0;
+  for (let i = 1; i < ramp.length; i++) if (score(i) < score(best)) best = i;
+  return ramp[best];
+}
+
+/**
+ * Design Thinking has a canvas palette of its own that nobody asked to
+ * change, and the PBL hub is a separate export on its own colours.
+ */
+function recolours(rel: string): boolean {
+  return !rel.startsWith("design-thinking/") && !rel.startsWith("pbl/");
+}
+
+function recolour(rel: string, source: string): string {
+  const accent = accentFamily(rel);
+  const cache: Record<string, string> = {};
+  return source.replace(/#([0-9a-fA-F]{6})\b/g, (_whole: string, h: string) => {
+    const up = h.toUpperCase();
+    if (!(up in cache)) cache[up] = brandFor(up, accent);
+    return "#" + cache[up];
+  });
+}
+
 async function walk(dir: string): Promise<string[]> {
   const out: string[] = [];
   for (const entry of await readdir(dir, { withFileTypes: true })) {
@@ -1491,7 +1630,10 @@ for (const full of files) {
     continue;
   }
   const raw = await readFile(full, "utf8");
-  const content = ext === ".html" ? adapt(rel, raw) : raw;
+  // Adapt first, recolour second. The adaptation rules match markup that
+  // contains these colours, so recolouring first would stop them matching.
+  let content = ext === ".html" ? adapt(rel, raw) : raw;
+  if (recolours(rel)) content = recolour(rel, content);
   rows.push({
     path: rel,
     content,
