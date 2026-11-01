@@ -95,6 +95,25 @@ if (problems.length) {
 
 const SUBJECTS = [...new Set(records.map((r) => r.subject))];
 
+/**
+ * The project cycle, lifted from the section above it so the roadmap and the
+ * page never drift apart. If the export renames a stage, this fails rather
+ * than printing a roadmap that no longer matches the cycle it belongs to.
+ */
+const CYCLE = [];
+{
+  const at = src.indexOf("The project cycle");
+  const until = src.indexOf("Project library", at);
+  const re = /<h3[^>]*>([\s\S]*?)<\/h3>\s*<p[^>]*>([\s\S]*?)<\/p>/g;
+  const slice = src.slice(at, until);
+  for (const m of slice.matchAll(re)) CYCLE.push({ name: strip(m[1]), blurb: strip(m[2]) });
+}
+if (CYCLE.length !== 5) {
+  console.error(`✗ expected 5 stages in the project cycle, found ${CYCLE.length}.`);
+  console.error("Nothing was written. Fix this script, or the export.");
+  process.exit(1);
+}
+
 /** The builder that replaces the list, styled in the export's own palette. */
 const BUILDER = `
   <div style="background:#E9F0E0;border-radius:16px;padding:20px;display:grid;gap:14px">
@@ -124,8 +143,27 @@ ${SUBJECTS.map((s) => `      <button type="button" data-pbl-subject="${s}" style
       </label>
       <span id="pbl-count" style="font-size:13px;color:#5A6A52"></span>
     </div>
+    <div id="pbl-views" style="display:none;flex-wrap:wrap;gap:8px;align-items:center;border-top:1px solid #E6EADF;padding-top:14px">
+      <button type="button" data-pbl-view="project">The project</button>
+      <button type="button" data-pbl-view="roadmap">Project roadmap</button>
+      <button type="button" data-pbl-view="workbook">Student workbook</button>
+      <button type="button" id="pbl-print" style="margin-left:auto">Print this</button>
+    </div>
   </div>
   <div id="pbl-out" style="margin-top:20px"></div>
+  <style>
+    @media print {
+      @page { size: letter portrait; margin: 0.4in; }
+      body * { visibility: hidden; }
+      #pbl-out, #pbl-out * { visibility: visible; }
+      #pbl-out { position: absolute; left: 0; top: 0; width: 100%; margin: 0; }
+      /* One sheet, one page. The sheet is the break, so nothing has to guess. */
+      .pbl-sheet { border: 0 !important; border-radius: 0 !important; margin: 0 !important;
+        padding: 0 0 6px !important; max-width: 7.7in !important; min-height: 0 !important;
+        break-after: page; page-break-after: always; break-inside: avoid; page-break-inside: avoid; }
+      .pbl-sheet:last-child { break-after: auto; page-break-after: auto; }
+    }
+  </style>
 `;
 
 const SCRIPT = `
@@ -133,6 +171,8 @@ const SCRIPT = `
 (function () {
   var PBL = ${JSON.stringify(records)};
   var SUBJECTS = ${JSON.stringify(SUBJECTS)};
+  var CYCLE = ${JSON.stringify(CYCLE)};
+  var view = "project";
 
   // "English Language Arts" on a standard and "ELA" on a chip are the same
   // subject; comparing the raw strings called every pairing cross-curricular.
@@ -196,6 +236,14 @@ const SCRIPT = `
     });
   }
 
+  /**
+   * Fills the standard list, and opens nothing on its own.
+   *
+   * The page used to arrive with the first standard already open, which made
+   * it look like the answer to a question nobody had asked. A teacher picks
+   * a subject, or searches, or chooses a standard; until then the panel says
+   * what to do and shows nothing else.
+   */
   function fillStandards(keep) {
     var list = visible();
     stdSel.innerHTML = "";
@@ -204,10 +252,11 @@ const SCRIPT = `
       stdSel.disabled = true;
     } else {
       stdSel.disabled = false;
+      opt(stdSel, "", list.length === 1 ? "Choose the standard…" : "Choose a standard…");
       list.forEach(function (r) {
         opt(stdSel, r.code, r.code + " · " + r.text.slice(0, 68) + (r.text.length > 68 ? "…" : ""));
       });
-      stdSel.value = keep && list.some(function (r) { return r.code === keep; }) ? keep : list[0].code;
+      stdSel.value = keep && list.some(function (r) { return r.code === keep; }) ? keep : "";
     }
     count.textContent = list.length + " of " + PBL.length + " standards";
     render();
@@ -235,11 +284,226 @@ const SCRIPT = `
     s.textContent = text; return s;
   }
 
+  // ---- printable sheets -----------------------------------------------
+  //
+  // A letter page drawn the way it prints, the same shape the maths and
+  // reading workbooks use: white sheet, rule under the heading, name and
+  // date, page number at the foot.
+  function sheet(title, meta, n, of) {
+    var s = document.createElement("section");
+    s.className = "pbl-sheet";
+    s.style.cssText = "background:#fff;border:1px solid #D5DCCB;border-radius:14px;" +
+      "padding:22px 26px 14px;width:100%;max-width:7.7in;min-height:9.9in;margin:0 auto 18px;" +
+      "box-sizing:border-box;display:flex;flex-direction:column;gap:12px";
+    var top = document.createElement("div");
+    top.style.cssText = "display:flex;align-items:baseline;justify-content:space-between;gap:12px;" +
+      "border-bottom:2px solid #243322;padding-bottom:7px";
+    var h = document.createElement("div");
+    h.style.cssText = "font-size:19px;font-weight:800;color:#243322";
+    h.textContent = title;
+    var m = document.createElement("div");
+    m.style.cssText = "font-size:12px;font-weight:700;color:#5A6A52;white-space:nowrap";
+    m.textContent = meta;
+    top.appendChild(h); top.appendChild(m); s.appendChild(top);
+    var bodyEl = document.createElement("div");
+    bodyEl.style.cssText = "display:flex;flex-direction:column;gap:12px;flex:1";
+    s.appendChild(bodyEl);
+    var f = document.createElement("div");
+    f.style.cssText = "margin-top:auto;padding-top:8px;font-size:11px;color:#5A6A52;text-align:right";
+    f.textContent = "Page " + n + " of " + of;
+    s.appendChild(f);
+    s._body = bodyEl;
+    return s;
+  }
+  function nameDate() {
+    var d = document.createElement("div");
+    d.style.cssText = "display:flex;gap:18px;align-items:baseline;font-size:14px;color:#243322";
+    ["Name", "Date"].forEach(function (w) {
+      var f = document.createElement("span");
+      f.style.cssText = "display:flex;gap:6px;align-items:baseline;flex:" + (w === "Date" ? "0 0 32%" : "1 1 auto");
+      var l = document.createElement("span"); l.textContent = w + ":";
+      var rule = document.createElement("span");
+      rule.style.cssText = "flex:1;border-bottom:1px solid #243322;height:14px";
+      f.appendChild(l); f.appendChild(rule); d.appendChild(f);
+    });
+    return d;
+  }
+  function writeBox(prompt, min) {
+    var b = document.createElement("div");
+    b.style.cssText = "border:1px solid #243322;border-radius:10px;padding:9px 11px;" +
+      "min-height:" + (min || 120) + "px;font-size:12px;color:#5A6A52;flex:0 0 auto";
+    b.textContent = prompt || "";
+    return b;
+  }
+  function heading(t) {
+    var h = document.createElement("p");
+    h.style.cssText = "margin:4px 0 0;font-size:15px;font-weight:800;color:#243322";
+    h.textContent = t; return h;
+  }
+  function note(t, css) {
+    var p2 = document.createElement("p");
+    p2.style.cssText = "margin:0;font-size:13px;color:#3E4D38;" + (css || "");
+    p2.textContent = t; return p2;
+  }
+
+  /** The data's phrases have no full stop, so joining them ran two together. */
+  function sentence(t) {
+    t = String(t || "").trim();
+    return /[.!?]$/.test(t) ? t : t + ".";
+  }
+
+  /** What each stage says for this project, built from its own fields. */
+  function stageLines(r, i) {
+    var same = partnersOf(r.code)
+      .filter(function (p) { return byCode[p.code].project === r.project; })
+      .map(function (p) { return p.code; });
+    return [
+      "Open with the driving question: " + sentence(r.dq) + " Show something real that raises it — a photo, an object, a visitor — and record what students already think.",
+      "Teach what " + r.code + " needs: " + sentence(r.text) +
+        (same.length ? " Running this project also covers " + same.join(", ") + ", so plan those in here too." : ""),
+      "Students draft, test and revise the product: " + sentence(r.product) + " Build in one round of critique before they finish.",
+      "Present to a real audience. Decide who before you start, so students know who they are making it for.",
+      "Look back at the driving question: " + sentence(r.dq) + " What changed in their thinking, and what would they do differently?"
+    ][i];
+  }
+
+  /**
+   * Pages measured as they fill, rather than split where it looked about
+   * right. Three stages to a sheet overflowed every one of the 87 projects,
+   * because a long standard pushes the third stage over the edge and a short
+   * one does not. A stage is kept whole: its heading never ends a page with
+   * its box overleaf.
+   */
+  function Flow(title, meta) {
+    var PAGE = 9.9 * 96;
+    var made = [], cur, bodyEl;
+    function open(cont) {
+      cur = sheet(cont ? title + " (continued)" : title, meta, 0, 0);
+      cur.style.minHeight = "0";
+      bodyEl = cur._body;
+      made.push(cur);
+      out.appendChild(cur);
+    }
+    open(false);
+    return {
+      group: function (nodes) {
+        nodes.forEach(function (n) { bodyEl.appendChild(n); });
+        if (cur.scrollHeight > PAGE && bodyEl.children.length > nodes.length) {
+          nodes.forEach(function (n) { bodyEl.removeChild(n); });
+          open(true);
+          nodes.forEach(function (n) { bodyEl.appendChild(n); });
+        }
+      },
+      done: function () {
+        made.forEach(function (s, i) {
+          s.style.minHeight = "";
+          s.lastChild.textContent = "Page " + (i + 1) + " of " + made.length;
+        });
+      }
+    };
+  }
+
+  function renderRoadmap(r) {
+    var flow = Flow("Project roadmap", r.code + " · " + shortSubject(r.subject));
+    var dq = document.createElement("div");
+    dq.style.cssText = "background:#FDF6E3;border-left:6px solid #E0B040;border-radius:10px;padding:12px 14px";
+    dq.appendChild(note("Driving question", "font-weight:700;color:#7A5A10;font-size:12px"));
+    dq.appendChild(note(r.dq, "font-size:16px;font-weight:600;margin-top:3px"));
+    flow.group([heading(r.project), note(r.text), dq,
+      note("Student product: " + sentence(r.product), "font-weight:600")]);
+
+    CYCLE.forEach(function (st, i) {
+      flow.group([
+        heading((i + 1) + ". " + st.name),
+        note(st.blurb, "color:#5A6A52;font-size:12px"),
+        note(stageLines(r, i)),
+        writeBox("Your plan, dates and who is responsible.", 86)
+      ]);
+    });
+
+    var checks = [heading("Before you launch")];
+    ["Who is the real audience, and when will they see it?",
+     "What will you teach just in time, rather than up front?",
+     "Where does critique and revision fit?",
+     "How will each student show what they learned?"].forEach(function (q) {
+      var row = document.createElement("div");
+      row.style.cssText = "display:flex;gap:9px;align-items:flex-start";
+      var box = document.createElement("span");
+      box.style.cssText = "flex:0 0 auto;width:15px;height:15px;border:2px solid #243322;border-radius:3px;margin-top:3px";
+      row.appendChild(box); row.appendChild(note(q));
+      checks.push(row);
+    });
+    flow.group(checks);
+    flow.done();
+  }
+
+  function renderWorkbook(r) {
+    var pages = [
+      ["Our driving question", [
+        ["What we are figuring out", "Write the driving question in your own words.", 170],
+        ["What I already think", "Write or draw what you think the answer might be.", 200]
+      ]],
+      ["What I need to learn", [
+        ["Questions I still have", "Write the questions you need answered before you can build.", 170],
+        ["What I found out", "Notes, facts and where you found them.", 200]
+      ]],
+      ["Make it", [
+        ["My plan", "What are you making, and what will it need?", 170],
+        ["What I changed after feedback", "Who gave you feedback, and what did you change?", 180]
+      ]],
+      ["Share it", [
+        ["Who is my audience", "Who will see this, and what do they need to understand?", 150],
+        ["What I will say", "Your first two sentences.", 190]
+      ]],
+      ["Look back", [
+        ["What I learned", "Answer the driving question in your own words.", 180],
+        ["What I would do differently", "If you ran this project again, what would change?", 170]
+      ]]
+    ];
+    pages.forEach(function (pg, i) {
+      var s = sheet(pg[0], r.project, i + 1, pages.length);
+      if (i === 0) {
+        s._body.appendChild(nameDate());
+        var dq = document.createElement("div");
+        dq.style.cssText = "background:#FDF6E3;border-left:6px solid #E0B040;border-radius:10px;padding:12px 14px";
+        dq.appendChild(note("Driving question", "font-weight:700;color:#7A5A10;font-size:12px"));
+        dq.appendChild(note(r.dq, "font-size:17px;font-weight:600;margin-top:3px"));
+        s._body.appendChild(dq);
+        s._body.appendChild(note("What you will make: " + r.product, "font-weight:600"));
+      }
+      pg[1].forEach(function (part, j) {
+        s._body.appendChild(heading(part[0]));
+        var box = writeBox(part[1] || "", part[2] || 150);
+        // The last box takes whatever the page has left, so a sheet ends
+        // full rather than with three inches of nothing under it.
+        if (j === pg[1].length - 1) box.style.flex = "1 1 auto";
+        s._body.appendChild(box);
+      });
+      if (i === pages.length - 1) {
+        s._body.appendChild(note("Standard: " + r.code + " · " + r.text, "font-size:11px;color:#5A6A52;margin-top:6px"));
+      }
+      out.appendChild(s);
+    });
+  }
+
   function render() {
     var code = stdSel.value;
     var r = byCode[code];
     out.innerHTML = "";
-    if (!r) return;
+    document.getElementById("pbl-views").style.display = r ? "flex" : "none";
+    if (!r) {
+      var hint = document.createElement("div");
+      hint.style.cssText = "background:#fff;border:1px dashed #C7D2BC;border-radius:14px;padding:26px;text-align:center";
+      hint.appendChild(note(
+        visible().length < PBL.length
+          ? "Choose one of the " + visible().length + " standards above to build its project."
+          : "Pick a subject, search, or choose a standard to build its project.",
+        "font-size:15px;color:#5A6A52"));
+      out.appendChild(hint);
+      return;
+    }
+    if (view === "roadmap") { renderRoadmap(r); stamp(r); return; }
+    if (view === "workbook") { renderWorkbook(r); stamp(r); return; }
 
     var wrap = document.createElement("div");
     wrap.style.cssText = "background:#fff;border:1px solid #D5DCCB;border-radius:14px;padding:20px";
@@ -352,9 +616,15 @@ const SCRIPT = `
     wrap.appendChild(grid);
     out.appendChild(wrap);
 
+    stamp(r);
+  }
+
+  /** Keep the standard and the view in the URL, so a page can be sent on. */
+  function stamp(r) {
     try {
       var u = new URL(location.href);
       u.searchParams.set("std", r.code);
+      if (view === "project") u.searchParams.delete("view"); else u.searchParams.set("view", view);
       history.replaceState(null, "", u);
     } catch (e) {}
   }
@@ -386,8 +656,40 @@ const SCRIPT = `
   stdSel.addEventListener("change", render);
   crossOnly.addEventListener("change", render);
 
-  var start = null;
-  try { start = new URL(location.href).searchParams.get("std"); } catch (e) {}
+  // The project, its roadmap and the student workbook are three views of one
+  // standard, so they are tabs rather than three places to navigate to.
+  var tabs = Array.prototype.slice.call(document.querySelectorAll("[data-pbl-view]"));
+  function paintTabs() {
+    tabs.forEach(function (t) {
+      var on = t.getAttribute("data-pbl-view") === view;
+      t.setAttribute("aria-pressed", on ? "true" : "false");
+      t.style.background = on ? "#243322" : "#fff";
+      t.style.color = on ? "#fff" : "#243322";
+      t.style.borderColor = on ? "#243322" : "#D5DCCB";
+    });
+    // Only the printables are worth a print button.
+    document.getElementById("pbl-print").style.display = view === "project" ? "none" : "";
+  }
+  tabs.forEach(function (t) {
+    t.style.cssText = "font:inherit;font-weight:700;font-size:14px;cursor:pointer;" +
+      "padding:8px 16px;border-radius:999px;border:1px solid #D5DCCB;background:#fff;color:#243322";
+    t.addEventListener("click", function () {
+      view = this.getAttribute("data-pbl-view");
+      paintTabs();
+      render();
+    });
+  });
+  document.getElementById("pbl-print").addEventListener("click", function () { window.print(); });
+  paintTabs();
+
+  var start = null, startView = null;
+  try {
+    var u0 = new URL(location.href);
+    start = u0.searchParams.get("std");
+    startView = u0.searchParams.get("view");
+  } catch (e) {}
+  if (startView === "roadmap" || startView === "workbook") view = startView;
+  paintTabs();
   fillStandards(start && byCode[start] ? start : null);
 })();
 <\/script>

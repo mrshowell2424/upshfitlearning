@@ -306,8 +306,27 @@ details.std[open] summary::after{content:"–"}
       </label>
       <span id="pbl-count" style="font-size:13px;color:#5A6A52"></span>
     </div>
+    <div id="pbl-views" style="display:none;flex-wrap:wrap;gap:8px;align-items:center;border-top:1px solid #E6EADF;padding-top:14px">
+      <button type="button" data-pbl-view="project">The project</button>
+      <button type="button" data-pbl-view="roadmap">Project roadmap</button>
+      <button type="button" data-pbl-view="workbook">Student workbook</button>
+      <button type="button" id="pbl-print" style="margin-left:auto">Print this</button>
+    </div>
   </div>
   <div id="pbl-out" style="margin-top:20px"></div>
+  <style>
+    @media print {
+      @page { size: letter portrait; margin: 0.4in; }
+      body * { visibility: hidden; }
+      #pbl-out, #pbl-out * { visibility: visible; }
+      #pbl-out { position: absolute; left: 0; top: 0; width: 100%; margin: 0; }
+      /* One sheet, one page. The sheet is the break, so nothing has to guess. */
+      .pbl-sheet { border: 0 !important; border-radius: 0 !important; margin: 0 !important;
+        padding: 0 0 6px !important; max-width: 7.7in !important; min-height: 0 !important;
+        break-after: page; page-break-after: always; break-inside: avoid; page-break-inside: avoid; }
+      .pbl-sheet:last-child { break-after: auto; page-break-after: auto; }
+    }
+  </style>
 
  <p style="margin:48px 0 0;font-size:14px;color:#5A6A52">Pilot draft for teacher review. Check each match against your class before you plan.</p>
 </div>
@@ -318,6 +337,8 @@ details.std[open] summary::after{content:"–"}
 (function () {
   var PBL = [{"code":"RL.2.1","subject":"English Language Arts","text":"Ask and answer questions such as who, what, where, when, why, and how to demonstrate understanding of key details and clarify the meaning of a literary text (e.g., story, drama, poem).","dq":"What questions will help us learn the most from a text or topic?","project":"Ask Better Questions","product":"A research question board and a short report","matches":["RI.2.1","SL.2.3","W.2.7"]},{"code":"RL.2.2","subject":"English Language Arts","text":"Retell stories, including fables and folktales from diverse cultures, and explain the central message, lesson, or moral using key details.","dq":"What lessons do folktales teach across cultures?","project":"Folktales Around the World","product":"A retold folktale book with illustrations","matches":["SS.2.9","SL.2.2","W.2.3"]},{"code":"RL.2.3","subject":"English Language Arts","text":"Describe how characters in a literary text respond to major events or challenges, using key details.","dq":"How do characters change as a story moves through events?","project":"Stories in Motion","product":"A story map and a dramatic reading","matches":["SS.2.4","SL.2.4","W.2.3"]},{"code":"RL.2.4","subject":"English Language Arts","text":"Describe how specific words and phrases contribute to rhythm, mood, or meaning in a literary text.","dq":"How can we share ideas so that others understand them?","project":"Podcast Stories","product":"A recorded class podcast episode","matches":["L.2.5","SL.2.5","W.2.3"]},{"code":"RL.2.5","subject":"English Language Arts","text":"Describe the structure of a literary text, including how the beginning introduces the story, how events unfold, and how the ending concludes the action.","dq":"How do characters change as a story moves through events?","project":"Stories in Motion","product":"A story map and a dramatic reading","matches":["W.2.3","WF.2.3","RI.2.5"]},{"code":"RL.2.6","subject":"English Language Arts","text":"Distinguish between the narrator’s point of view and the characters’ perspectives in a literary text, recognizing when the narrator is also a character in the story.","dq":"What rules keep our school safe and fair for everyone?","project":"Rules That Protect Us","product":"A class agreement with posters that explain each rule","matches":["SS.2.4","SS.2.5","SL.2.1"]},{"code":"RL.2.7","subject":"English Language Arts","text":"Use illustrations and textual details in print or digital literary texts to describe characters, settings, and plot elements.","dq":"How do characters change as a story moves through events?","project":"Stories in Motion","product":"A story map and a dramatic reading","matches":["RI.2.7","2.MD.10","SL.2.5"]},{"code":"RL.2.9","subject":"English Language Arts","text":"Compare and/or contrast two or more versions of the same story by different authors from different cultures, focusing on characters, settings, and central messages.","dq":"How do food and traditions help us understand other people?","project":"Cultures at Our Table","product":"A class cookbook of family traditions","matches":["SS.2.9","RI.2.9","W.2.2"]},{"code":"RL.2.10","subject":"English Language Arts","text":"Read and comprehend grade-level literary text, with scaffolding as needed. Utilize prior knowledge and draw on previous experiences to support understanding and make meaningful comparisons across texts.","dq":"How do characters change as a story moves through events?","project":"Stories in Motion","product":"A story map and a dramatic reading","matches":["RF.2.4","RI.2.10","SL.2.1"]},{"code":"RI.2.1","subject":"English Language Arts","text":"Ask and answer questions such as who, what, where, when, why, and how to demonstrate understanding of key details and clarify meaning in an informational text (e.g., historical, scientific, or technical texts).","dq":"What questions will help us learn the most from a text or topic?","project":"Ask Better Questions","product":"A research question board and a short report","matches":["RL.2.1","SL.2.3","2.LS.2"]},{"code":"RI.2.2","subject":"English Language Arts","text":"Identify the main topic of an informational text and explain how specific details support that topic.","dq":"How do nonfiction authors help us learn?","project":"Books That Teach","product":"An expert guide that uses text features","matches":["W.2.2","RI.2.8","SS.2.2"]},{"code":"RI.2.3","subject":"English Language Arts","text":"Describe the connection between a series of historical events, scientific ideas or concepts, or steps in technical procedures within an informational text.","dq":"How has our community changed over time?","project":"Our Town Timeline","product":"A timeline with photos and interview notes","matches":["SS.2.1","SS.2.2","2.ESS.3"]},{"code":"RI.2.4","subject":"English Language Arts","text":"Determine the meaning of words and phrases in an informational text using strategies such as context clues, word parts, and text features.","dq":"How do nonfiction authors help us learn?","project":"Books That Teach","product":"An expert guide that uses text features","matches":["L.2.5","L.2.6","RF.2.3"]},{"code":"RI.2.5","subject":"English Language Arts","text":"Know and use various text features (such as captions, bold print, subheadings, glossaries, indexes, electronic menus, and icons) to efficiently locate key facts and details in an informational text.","dq":"How do nonfiction authors help us learn?","project":"Books That Teach","product":"An expert guide that uses text features","matches":["W.2.2","RL.2.5","SS.2.6"]},{"code":"RI.2.6","subject":"English Language Arts","text":"Identify the author’s purpose in an informational text and explain how the text supports that purpose.","dq":"How do characters change as a story moves through events?","project":"Stories in Motion","product":"A story map and a dramatic reading","matches":["W.2.1","SL.2.1","SS.2.4"]},{"code":"RI.2.7","subject":"English Language Arts","text":"Explain how illustrations, diagrams, or other visuals contribute to understanding key ideas in an informational text.","dq":"How do nonfiction authors help us learn?","project":"Books That Teach","product":"An expert guide that uses text features","matches":["2.MD.10","RL.2.7","SS.2.6"]},{"code":"RI.2.8","subject":"English Language Arts","text":"Describe how the author uses evidence to support key ideas in an informational text.","dq":"How do nonfiction authors help us learn?","project":"Books That Teach","product":"An expert guide that uses text features","matches":["W.2.1","SL.2.2","RI.2.9"]},{"code":"RI.2.9","subject":"English Language Arts","text":"Compare and/or contrast key ideas and supporting details in two informational texts on the same topic.","dq":"How do food and traditions help us understand other people?","project":"Cultures at Our Table","product":"A class cookbook of family traditions","matches":["RL.2.9","SS.2.9","W.2.8"]},{"code":"RI.2.10","subject":"English Language Arts","text":"With scaffolding provided as needed, read and comprehend grade level informational text.","dq":"What questions will help us learn the most from a text or topic?","project":"Ask Better Questions","product":"A research question board and a short report","matches":["RI.2.2","W.2.8","RL.2.10"]},{"code":"RF.2.3","subject":"English Language Arts","text":"a. Decode words aligned with phonics patterns in scope and sequence of adopted HQIM, such as: Initial and final 2- to 3 consonant blends Most common vowel teams with long-vowel sounds Hard and soft c and g Vowel-r combinations Compound words Multisyllabic words with closed syllables, open syllables, VCe, Vowel-r, and vowel teams Words containing the -ild, -ost, -old, -olt, -ind pattern Digraphs Trigraphs Silent letter combinations Common prefixes (e.g., distract, input) Common inflectional suffixes (e.g., wishes, wished, wishing) Common derivational suffixes (e.g., neighborhood, teacher) b. Read common high-frequency words with automaticity, aligned with the adopted HQIM, such as: Phonetically regular words Partially regular words Irregular words","dq":"How do word parts help us read and spell?","project":"Word Work Lab","product":"A word-family game and a fluency read-aloud","matches":["WF.2.2","L.2.4","RF.2.4"]},{"code":"RF.2.4","subject":"English Language Arts","text":"Read connected texts with sufficient fluency to support comprehension: a. Orally read decodable, controlled texts containing previously taught patterns with accuracy, automaticity, and appropriate expression to gain meaning from text. b. Orally read grade-level text with accuracy (targeting 95% or better), automaticity, and appropriate expression to gain meaning from text, targeting 100 words correct per minute (wcpm) by the end of second grade. c. Self-monitor word recognition and understanding, rereading as necessary.","dq":"How do word parts help us read and spell?","project":"Word Work Lab","product":"A word-family game and a fluency read-aloud","matches":["RL.2.10","SL.2.2","WF.2.3"]},{"code":"WF.2.1","subject":"English Language Arts","text":"Write legibly in manuscript and/or cursive: a. Write all letters independently, in manuscript and/or cursive, with accuracy and fluency across words and sentences. b. Maintain consistent letter size, spacing, alignment, and automaticity of strokes.","dq":"How can our writing persuade, inform, and entertain readers?","project":"Our Writing Publishing House","product":"A class book of opinion, informative, and narrative pieces","matches":["WF.2.3","L.2.2","W.2.5"]},{"code":"WF.2.2","subject":"English Language Arts","text":"a. Encode words aligned with scope and sequence of adopted HQIM, such as: Grade-appropriate multisyllabic words using knowledge of syllable types, including open, closed, vowel consonant-e, vowel teams, vowel-r, and consonant-le. b. Grade-appropriate high frequency words that are spelled using predictable, decodable phoneme-grapheme correspondences, including those that contain only one irregularity. c. Encode words aligned with phonics patterns in scope and sequence of adopted HQIM, such as: Two- and three-consonant blends, including those containing digraphs Consonant digraphs, trigraphs, and silent-letter combinations Y as a consonant and a vowel Common vowel teams, including diphthongs Hard and soft c and g Contractions with am, is, has, not, have, would, and will, using apostrophes appropriately Compound words Words containing the -ild, -ost, -old, -olt, -ind patterns Common prefixes (e.g., distract, input) Common inflectional suffixes (wishes, wished, wishing) Common derivational suffixes (e.g., neighborhood, teacher)","dq":"How do word parts help us read and spell?","project":"Word Work Lab","product":"A word-family game and a fluency read-aloud","matches":["RF.2.3","L.2.2","L.2.4"]},{"code":"WF.2.3","subject":"English Language Arts","text":"Write complete sentences demonstrating knowledge of punctuation conventions. a. Utilize commas with words in a series in a sentence. b. Use apostrophes to form contractions and possessives (e.g., contractions with am, is, has, not (I’m, she’s, don’t). c. Use punctuation to set off interjections. d. Expand sentences using frequently occurring conjunctions (e.g., because, so, but).","dq":"How can our writing persuade, inform, and entertain readers?","project":"Our Writing Publishing House","product":"A class book of opinion, informative, and narrative pieces","matches":["L.2.1","L.2.2","W.2.5"]},{"code":"W.2.1","subject":"English Language Arts","text":"Write opinion pieces that include a clear topic, a stated opinion, reasons supported by evidence or examples, and a conclusion, using linking words and grade-level phonics-based spelling.","dq":"How can our writing persuade, inform, and entertain readers?","project":"Our Writing Publishing House","product":"A class book of opinion, informative, and narrative pieces","matches":["SL.2.1","RI.2.8","SS.2.4"]},{"code":"W.2.2","subject":"English Language Arts","text":"Write informative pieces that introduce a topic, use facts and definitions to explain ideas, and include a conclusion, using linking words and grade-level phonics-based spelling.","dq":"How do nonfiction authors help us learn?","project":"Books That Teach","product":"An expert guide that uses text features","matches":["RI.2.2","2.LS.1","2.ESS.1"]},{"code":"W.2.3","subject":"English Language Arts","text":"Write narratives that recount sequenced events with descriptive details, temporal words, and a clear conclusion, using linking words and grade-level phonics-based spelling.","dq":"What lessons do folktales teach across cultures?","project":"Folktales Around the World","product":"A retold folktale book with illustrations","matches":["RL.2.2","SL.2.4","L.2.3"]},{"code":"W.2.5","subject":"English Language Arts","text":"With adult support, revise and edit writing to improve clarity, organization, and conventions (e.g., capitalization, punctuation, spelling), using feedback from adults or peers.","dq":"How can our writing persuade, inform, and entertain readers?","project":"Our Writing Publishing House","product":"A class book of opinion, informative, and narrative pieces","matches":["WF.2.3","L.2.1","SL.2.5"]},{"code":"W.2.6","subject":"English Language Arts","text":"With adult support, use a variety of digital tools to produce and publish writing, including in collaboration with peers.","dq":"How can we share ideas so that others understand them?","project":"Podcast Stories","product":"A recorded class podcast episode","matches":["SL.2.5","W.2.8","2.MD.10"]},{"code":"W.2.7","subject":"English Language Arts","text":"With adult support, recall information from personal experiences or gather information from provided sources to answer a specific question in writing.","dq":"What questions will help us learn the most from a text or topic?","project":"Ask Better Questions","product":"A research question board and a short report","matches":["RL.2.1","RI.2.1","SL.2.3"]},{"code":"W.2.8","subject":"English Language Arts","text":"With adult support, engage in shared and independent research projects by reading multiple texts on a topic, recording observations, and composing short reports using grade-level vocabulary and sentence structure.","dq":"What questions will help us learn the most from a text or topic?","project":"Ask Better Questions","product":"A research question board and a short report","matches":["RI.2.9","RI.2.10","SS.2.2"]},{"code":"SL.2.1","subject":"English Language Arts","text":"Participate in discussions about second grade topics and texts in pairs, small groups, or whole-class settings: a. Follow agreed-upon rules for discussions, such as taking turns respectfully, listening carefully, and speaking one at a time about the topics and texts under discussion. b. Engage in conversation by responding to others’ comments across multiple exchanges and contributing ideas that further develop the discussion. c. Ask for clarification and further explanation as needed.","dq":"How can we share ideas so that others understand them?","project":"Podcast Stories","product":"A recorded class podcast episode","matches":["SS.2.4","RL.2.6","W.2.1"]},{"code":"SL.2.2","subject":"English Language Arts","text":"Retell or describe key ideas or details from a text read aloud or information presented in various media and other formats (e.g., orally).","dq":"How can we share ideas so that others understand them?","project":"Podcast Stories","product":"A recorded class podcast episode","matches":["RI.2.9","RL.2.9","2.LS.1"]},{"code":"SL.2.3","subject":"English Language Arts","text":"Ask questions about what a speaker says to clarify comprehension, gather additional information, or deepen understanding of a topic or issue.","dq":"What questions will help us learn the most from a text or topic?","project":"Ask Better Questions","product":"A research question board and a short report","matches":["RL.2.1","RI.2.1","W.2.7"]},{"code":"SL.2.4","subject":"English Language Arts","text":"Tell a story or recount an experience with appropriate facts and relevant, descriptive details, speaking audibly in coherent sentences.","dq":"How can we share ideas so that others understand them?","project":"Podcast Stories","product":"A recorded class podcast episode","matches":["W.2.3","RL.2.3","SS.2.9"]},{"code":"SL.2.5","subject":"English Language Arts","text":"Create audio recordings of stories or poems; add drawings or other visual displays to stories or recounts of experiences when appropriate to clarify ideas, thoughts, and feelings. SL.2.6Use complete sentences, when appropriate to the task or situation, to provide requested details or clarification.","dq":"How can we share ideas so that others understand them?","project":"Podcast Stories","product":"A recorded class podcast episode","matches":["W.2.6","RL.2.7","RL.2.4"]},{"code":"L.2.1","subject":"English Language Arts","text":"Know and apply formal American English grammar, usage, and mechanics when writing or speaking. a. Use collective nouns (e.g., group). b. Form and use frequently occurring irregular plural nouns (e.g., feet, children, teeth, mice, fish). c. Use reflexive pronouns (e.g., myself, ourselves). d. Form and use the past tense of frequently occurring irregular verbs (e.g., sat, hid, told). e. Use adjectives and adverbs. f. Produce, expand, and rearrange complete simple and compound sentences (e.g., The boy watched the movie; The little boy watched the movie; The action movie was watched by the little boy).","dq":"How can our writing persuade, inform, and entertain readers?","project":"Our Writing Publishing House","product":"A class book of opinion, informative, and narrative pieces","matches":["WF.2.3","W.2.5","SL.2.1"]},{"code":"L.2.2","subject":"English Language Arts","text":"Recognize and apply the conventions of formal American English capitalization, punctuation, and spelling. a. Capitalize holidays, product names, and geographic names. b. Use commas to separate items in a series and to format dates, addresses, greetings, and closings of letters. c. Generalize learned spelling patterns when writing words. d. Consult reference materials, including beginning dictionaries, as needed to check and correct spellings.","dq":"How can our writing persuade, inform, and entertain readers?","project":"Our Writing Publishing House","product":"A class book of opinion, informative, and narrative pieces","matches":["WF.2.1","WF.2.3","W.2.5"]},{"code":"L.2.3","subject":"English Language Arts","text":"Use knowledge of language and its conventions when writing, speaking, reading, or listening. a. Recognize formal and informal uses of English. b. Compare formal and informal uses of English.","dq":"How can we share ideas so that others understand them?","project":"Podcast Stories","product":"A recorded class podcast episode","matches":["SL.2.4","RL.2.4","W.2.3"]},{"code":"L.2.4","subject":"English Language Arts","text":"Use word analysis skills to break down and build grade-appropriate words to understand their meaning. a. Utilize context within and beyond a sentence to determine or clarify the meaning of unknown and multiple-meaning words and phrases. b. Determine the meaning of a new word when a known prefix is added to a known word (e.g., happy/unhappy, tell/retell). c. Use a known root word as a clue to the meaning of an unknown word with the same root (e.g., addition, additional). d. Recognize common base words (e.g., look) and inflectional endings used to form and understand new words (e.g., looks, looked, looking). e. Use knowledge of the meaning of base words to understand the meaning of compound words (e.g., birdhouse, lighthouse, bookshelf, notebook).","dq":"How do word parts help us read and spell?","project":"Word Work Lab","product":"A word-family game and a fluency read-aloud","matches":["RF.2.3","WF.2.2","RI.2.4"]},{"code":"L.2.5","subject":"English Language Arts","text":"Demonstrate understanding of word relationships and nuances in word meanings. a. Identify real-life connections between words and their use (e.g., describe foods that are spicy or juicy). b. Distinguish shades of meaning among closely related verbs (e.g., toss, throw, hurl) and closely related adjectives (e.g., thin, slender, skinny, scrawny).","dq":"How do word parts help us read and spell?","project":"Word Work Lab","product":"A word-family game and a fluency read-aloud","matches":["RL.2.4","RI.2.4","SL.2.5"]},{"code":"L.2.6","subject":"English Language Arts","text":"Use words and phrases acquired through conversations, reading and being read to, and responding to texts, including using adjectives and adverbs to describe (e.g., When other kids are happy that makes me happy).","dq":"How can we share ideas so that others understand them?","project":"Podcast Stories","product":"A recorded class podcast episode","matches":["SL.2.2","RI.2.4","W.2.2"]},{"code":"2.OA.1","subject":"Math","text":"Use addition and subtraction within 100 to solve one- and two-step word problems involving situations of adding to, taking from, putting together, taking apart, and comparing, with unknowns in all positions, e.g., by using drawings and equations with a symbol for the unknown number to represent the problem. See Glossary, Table 1.","dq":"How can we spend and save money wisely?","project":"Class Store","product":"A class store opening with price tags and receipts","matches":["2.MD.8","2.NBT.7","SS.2.13"]},{"code":"2.OA.2","subject":"Math","text":"Fluently add and subtract within 20 using mental strategies. By end of Grade 2, know from memory all sums of two one-digit numbers. See standard 1.OA.6 for a list of mental strategies.","dq":"Which strategies help us add and subtract quickly and correctly?","project":"Math Fluency Challenge","product":"A strategy wall and a fluency game","matches":["2.NBT.5","2.OA.1","2.NBT.9"]},{"code":"2.OA.3","subject":"Math","text":"Determine whether a group of objects (up to 20) has an odd or even number of members, e.g., by pairing objects or counting them by 2s; write an equation to express an even number as a sum of two equal addends.","dq":"How can we tell if a group is odd or even, and show it in arrays?","project":"Odd or Even Party","product":"A party plan with arrays and equations","matches":["2.OA.4","2.G.2","2.MD.10"]},{"code":"2.OA.4","subject":"Math","text":"Use addition to find the total number of objects arranged in rectangular arrays with up to 5 rows and up to 5 columns; write an equation to express the total as a sum of equal addends.","dq":"How can we tell if a group is odd or even, and show it in arrays?","project":"Odd or Even Party","product":"A party plan with arrays and equations","matches":["2.G.2","2.OA.3","2.NBT.6"]},{"code":"2.NBT.1","subject":"Math","text":"Understand that the three digits of a three-digit number represent amounts of hundreds, tens, and ones; e.g., 706 equals 7 hundreds, 0 tens, and 6 ones. Understand the following as special cases: a. 100 can be thought of as a bundle of ten tens - called a “hundred.” b. The numbers 100, 200, 300, 400, 500, 600, 700, 800, 900 refer to one, two, three, four, five, six, seven, eight, or nine hundreds (and 0 tens and 0 ones).","dq":"Which strategies help us add and subtract quickly and correctly?","project":"Math Fluency Challenge","product":"A strategy wall and a fluency game","matches":["2.NBT.3","2.NBT.4","2.MD.8"]},{"code":"2.NBT.2","subject":"Math","text":"Count forward and backward within 1,000 by ones, tens, and hundreds starting at any number; skip-count by 5s starting at any multiple of 5.","dq":"Which strategies help us add and subtract quickly and correctly?","project":"Math Fluency Challenge","product":"A strategy wall and a fluency game","matches":["2.NBT.8","2.NBT.1","2.MD.6"]},{"code":"2.NBT.3","subject":"Math","text":"Read and write numbers to 1,000 using base-ten numerals, number names, expanded form, and equivalent representations, e.g., 716 is 700 + 10 + 6, or 6 + 700 + 10, or 6 ones and 71 tens, etc.","dq":"Which strategies help us add and subtract quickly and correctly?","project":"Math Fluency Challenge","product":"A strategy wall and a fluency game","matches":["2.NBT.1","2.NBT.4","2.MD.8"]},{"code":"2.NBT.4","subject":"Math","text":"Compare two three-digit numbers based on meanings of the hundreds, tens, and ones digits, using >, =, and < symbols to record the results of comparisons.","dq":"Which strategies help us add and subtract quickly and correctly?","project":"Math Fluency Challenge","product":"A strategy wall and a fluency game","matches":["2.NBT.3","2.MD.10","2.NBT.9"]},{"code":"2.NBT.5","subject":"Math","text":"Fluently add and subtract within 100 using strategies based on place value, properties of operations, and/or the relationship between addition and subtraction.","dq":"Which strategies help us add and subtract quickly and correctly?","project":"Math Fluency Challenge","product":"A strategy wall and a fluency game","matches":["2.OA.2","2.NBT.6","2.NBT.9"]},{"code":"2.NBT.6","subject":"Math","text":"Add up to four two-digit numbers using strategies based on place value and properties of operations.","dq":"Which strategies help us add and subtract quickly and correctly?","project":"Math Fluency Challenge","product":"A strategy wall and a fluency game","matches":["2.NBT.5","2.OA.4","SS.2.6"]},{"code":"2.NBT.7","subject":"Math","text":"Add and subtract within 1,000, using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between addition and subtraction; record the strategy with a written numerical method (drawings and, when appropriate, equations) and explain the reasoning used. Understand that in adding or subtracting three-digit numbers, hundreds are added or subtracted from hundreds, tens are added or subtracted from tens, ones are added or subtracted from ones; and sometimes it is necessary to compose or decompose tens or hundreds.","dq":"How can we spend and save money wisely?","project":"Class Store","product":"A class store opening with price tags and receipts","matches":["2.MD.8","2.OA.1","SS.2.12"]},{"code":"2.NBT.8","subject":"Math","text":"Mentally add 10 or 100 to a given number 100-900, and mentally subtract 10 or 100 from a given number 100-900.","dq":"Which strategies help us add and subtract quickly and correctly?","project":"Math Fluency Challenge","product":"A strategy wall and a fluency game","matches":["2.NBT.2","2.NBT.9","2.MD.6"]},{"code":"2.NBT.9","subject":"Math","text":"Explain why addition and subtraction strategies work, using place value and the properties of operations. Explanations may be supported by drawings or objects.","dq":"Which strategies help us add and subtract quickly and correctly?","project":"Math Fluency Challenge","product":"A strategy wall and a fluency game","matches":["2.NBT.5","2.NBT.7","2.OA.1"]},{"code":"2.MD.1","subject":"Math","text":"Measure the length of an object by selecting and using appropriate tools such as rulers, yardsticks, meter sticks, and measuring tapes.","dq":"How long is it, really, and how do we know?","project":"Measure Our Classroom","product":"A measurement chart and comparison poster","matches":["2.MD.2","2.MD.9","2.PS.1"]},{"code":"2.MD.2","subject":"Math","text":"Measure the length of an object twice, using length units of different lengths for the two measurements; describe how the two measurements relate to the size of the unit chosen.","dq":"How long is it, really, and how do we know?","project":"Measure Our Classroom","product":"A measurement chart and comparison poster","matches":["2.MD.1","2.MD.3","2.MD.4"]},{"code":"2.MD.3","subject":"Math","text":"Estimate lengths using units of inches, feet, centimeters, and meters.","dq":"How long is it, really, and how do we know?","project":"Measure Our Classroom","product":"A measurement chart and comparison poster","matches":["2.MD.6","2.MD.4","RI.2.7"]},{"code":"2.MD.4","subject":"Math","text":"Measure to determine how much longer one object is than another, expressing the length difference in terms of a standard length unit.","dq":"How long is it, really, and how do we know?","project":"Measure Our Classroom","product":"A measurement chart and comparison poster","matches":["2.MD.5","2.MD.2","2.OA.1"]},{"code":"2.MD.5","subject":"Math","text":"Use addition and subtraction within 100 to solve word problems involving lengths that are given in the same whole number units, e.g., by using drawings and equations with a symbol for the unknown number to represent the problem. Drawings need not show details, but should show the mathematics in the problem. (This applies wherever drawings are mentioned in the Standards.)","dq":"How long is it, really, and how do we know?","project":"Measure Our Classroom","product":"A measurement chart and comparison poster","matches":["2.OA.1","2.MD.4","2.MD.6"]},{"code":"2.MD.6","subject":"Math","text":"Represent whole numbers as lengths from 0 on a number line diagram with equally spaced points corresponding to the numbers 0, 1, 2,..., and represent whole number sums and differences within 100 on a number line diagram.","dq":"How long is it, really, and how do we know?","project":"Measure Our Classroom","product":"A measurement chart and comparison poster","matches":["2.MD.3","2.NBT.8","2.MD.5"]},{"code":"2.MD.7","subject":"Math","text":"Tell and write time from analog and digital clocks to the nearest five minutes, using a.m. and p.m.","dq":"How has our community changed over time?","project":"Our Town Timeline","product":"A timeline with photos and interview notes","matches":["SS.2.1","RI.2.3","2.MD.6"]},{"code":"2.MD.8","subject":"Math","text":"Solve problems with money. a. Identify nickels and quarters by name and value. b. Find the value of a collection of quarters, dimes, nickels, and pennies. c. Solve word problems by adding and subtracting within 100, dollars with dollars and cents with cents (not using dollars and cents simultaneously) using the $ and ₵ symbols appropriately (not including decimal notation).","dq":"How can we spend and save money wisely?","project":"Class Store","product":"A class store opening with price tags and receipts","matches":["2.OA.1","2.NBT.7","SS.2.13"]},{"code":"2.MD.9","subject":"Math","text":"Generate measurement data by measuring lengths of several objects to the nearest whole unit or by making repeated measurements of the same object. Show the measurements by creating a line plot, where the horizontal scale is marked off in whole number units.","dq":"How long is it, really, and how do we know?","project":"Measure Our Classroom","product":"A measurement chart and comparison poster","matches":["2.MD.1","2.MD.10","SS.2.6"]},{"code":"2.MD.10","subject":"Math","text":"Organize, represent, and interpret data with up to four categories; complete picture graphs when single-unit scales are provided; complete bar graphs when single-unit scales are provided; solve simple put-together, take-apart, and compare problems in a graph. See Glossary, Table 1.","dq":"What weather patterns can we notice and measure in our own town?","project":"Weather Watchers","product":"A class weather report with a chart","matches":["SS.2.6","2.MD.9","2.ESS.2"]},{"code":"2.G.1","subject":"Math","text":"Recognize and identify triangles, quadrilaterals, pentagons, and hexagons based on the number of sides or vertices. Recognize and identify cubes, rectangular prisms, cones, and cylinders.","dq":"How can we build a bigger shape from smaller shapes?","project":"Shape Builders","product":"A shape gallery with labels and equal shares","matches":["2.G.2","2.G.3","RL.2.7"]},{"code":"2.G.2","subject":"Math","text":"Partition a rectangle into rows and columns of same-size squares and count to find the total number of them.","dq":"How can we build a bigger shape from smaller shapes?","project":"Shape Builders","product":"A shape gallery with labels and equal shares","matches":["2.OA.4","2.G.3","RI.2.7"]},{"code":"2.G.3","subject":"Math","text":"Partition circles and rectangles into two, three, or four equal shares; describe the shares using the words halves, thirds, or fourths and quarters, and use the phrases half of, third of, or fourth of and quarter of. Describe the whole as two halves, three thirds, or four fourths in real-world contexts. Recognize that equal shares of identical wholes need not have the same shape.","dq":"How can we build a bigger shape from smaller shapes?","project":"Shape Builders","product":"A shape gallery with labels and equal shares","matches":["2.G.1","2.G.2","RL.2.7"]},{"code":"2.ESS.1","subject":"Science","text":"The atmosphere is primarily made up of air.","dq":"What weather patterns can we notice and measure in our own town?","project":"Weather Watchers","product":"A class weather report with a chart","matches":["2.ESS.2","RI.2.3","W.2.2"]},{"code":"2.ESS.2","subject":"Science","text":"Water is present in the atmosphere.","dq":"What weather patterns can we notice and measure in our own town?","project":"Weather Watchers","product":"A class weather report with a chart","matches":["2.ESS.1","2.ESS.3","2.MD.10"]},{"code":"2.ESS.3","subject":"Science","text":"Long- and short-term weather changes occur due to changes in energy.","dq":"What weather patterns can we notice and measure in our own town?","project":"Weather Watchers","product":"A class weather report with a chart","matches":["2.ESS.2","RI.2.3","2.MD.9"]},{"code":"2.PS.1","subject":"Science","text":"Forces change the motion of an object.","dq":"How can we change the way a ball or a car moves?","project":"Push and Pull Playground","product":"A playground design with a live demonstration","matches":["2.MD.1","RI.2.3","SL.2.4"]},{"code":"2.LS.1","subject":"Science","text":"Living things cause changes on Earth.","dq":"Where do animals live near our school, and how do we know?","project":"Our Schoolyard Animals","product":"A habitat walk guide with photos and labels","matches":["W.2.2","RI.2.7","2.LS.2"]},{"code":"2.LS.2","subject":"Science","text":"All organisms alive today result from their ancestors, some of which may be extinct. Not all kinds of organisms that lived in the past are represented by living organisms today.","dq":"Where do animals live near our school, and how do we know?","project":"Our Schoolyard Animals","product":"A habitat walk guide with photos and labels","matches":["2.LS.1","RI.2.3","RL.2.2"]},{"code":"SS.2.1","subject":"Social Studies","text":"Time can be displayed using calendars and timelines.","dq":"How has our community changed over time?","project":"Our Town Timeline","product":"A timeline with photos and interview notes","matches":["2.MD.7","RI.2.3","SS.2.2"]},{"code":"SS.2.2","subject":"Social Studies","text":"Change over time can be shown with primary and secondary sources.","dq":"How has our community changed over time?","project":"Our Town Timeline","product":"A timeline with photos and interview notes","matches":["SS.2.1","RI.2.9","W.2.8"]},{"code":"SS.2.3","subject":"Social Studies","text":"Maps are created to share information about places and their relative location. Individuals can locate places and landmarks using a map and cardinal directions.","dq":"How can we help someone find their way around our neighborhood?","project":"Map Our Neighborhood","product":"A labeled map with a key and compass rose","matches":["2.G.3","2.MD.6","RI.2.7"]},{"code":"SS.2.4","subject":"Social Studies","text":"Individuals promote school and community citizenship by expressing their opinions and compromising for the common good.","dq":"What rules keep our school safe and fair for everyone?","project":"Rules That Protect Us","product":"A class agreement with posters that explain each rule","matches":["SL.2.1","RL.2.3","W.2.1"]},{"code":"SS.2.5","subject":"Social Studies","text":"Groups are accountable for choices they make and actions they take.","dq":"What rules keep our school safe and fair for everyone?","project":"Rules That Protect Us","product":"A class agreement with posters that explain each rule","matches":["RL.2.6","SS.2.10","SL.2.4"]},{"code":"SS.2.6","subject":"Social Studies","text":"Tables, charts, and graphs organize information and show relationships between data sets. Tables, charts, and graphs are titled to indicate the data being presented.","dq":"What weather patterns can we notice and measure in our own town?","project":"Weather Watchers","product":"A class weather report with a chart","matches":["2.MD.10","2.MD.9","RI.2.5"]},{"code":"SS.2.7","subject":"Social Studies","text":"Manufacturing, agriculture, and business have shaped local communities and Ohio’s past development and future opportunities.","dq":"How has our community changed over time?","project":"Our Town Timeline","product":"A timeline with photos and interview notes","matches":["RI.2.3","SS.2.12","W.2.2"]},{"code":"SS.2.8","subject":"Social Studies","text":"Ohio’s regions have similar and different physical and human characteristics.","dq":"How can we help someone find their way around our neighborhood?","project":"Map Our Neighborhood","product":"A labeled map with a key and compass rose","matches":["SS.2.3","RL.2.9","RI.2.7"]},{"code":"SS.2.9","subject":"Social Studies","text":"Sharing customs, traditions, celebrations, language, and food help individuals understand different ways of life and create common experiences.","dq":"How do food and traditions help us understand other people?","project":"Cultures at Our Table","product":"A class cookbook of family traditions","matches":["RL.2.9","RI.2.9","SL.2.2"]},{"code":"SS.2.10","subject":"Social Studies","text":"Laws can protect rights and assign responsibilities.","dq":"What rules keep our school safe and fair for everyone?","project":"Rules That Protect Us","product":"A class agreement with posters that explain each rule","matches":["RL.2.6","SS.2.5","W.2.1"]},{"code":"SS.2.11","subject":"Social Studies","text":"Both positive and negative incentives affect individuals’ choices and behaviors.","dq":"How can we spend and save money wisely?","project":"Class Store","product":"A class store opening with price tags and receipts","matches":["SS.2.12","2.OA.1","SL.2.1"]},{"code":"SS.2.12","subject":"Social Studies","text":"Businesses pay individuals for their skills and knowledge for the business to produce goods and services. Individuals earn income by working in a job or career.","dq":"How can we spend and save money wisely?","project":"Class Store","product":"A class store opening with price tags and receipts","matches":["SS.2.11","2.MD.8","SS.2.13"]},{"code":"SS.2.13","subject":"Social Studies","text":"People use different forms of payment to buy and sell goods and services.","dq":"How can we spend and save money wisely?","project":"Class Store","product":"A class store opening with price tags and receipts","matches":["2.MD.8","SS.2.12","2.OA.1"]}];
   var SUBJECTS = ["English Language Arts","Math","Science","Social Studies"];
+  var CYCLE = [{"name":"Launch","blurb":"Open with an entry event, such as a photo, a problem, or a guest, and post a driving question."},{"name":"Build knowledge","blurb":"Teach the skills and content students need, just in time, as they ask for it."},{"name":"Create","blurb":"Students draft, test, and revise a product that answers the driving question."},{"name":"Share","blurb":"Present to a real audience, like families, another class, or a community partner."},{"name":"Reflect","blurb":"Students look back on what they learned, what they would change, and what comes next."}];
+  var view = "project";
 
   // "English Language Arts" on a standard and "ELA" on a chip are the same
   // subject; comparing the raw strings called every pairing cross-curricular.
@@ -381,6 +402,14 @@ details.std[open] summary::after{content:"–"}
     });
   }
 
+  /**
+   * Fills the standard list, and opens nothing on its own.
+   *
+   * The page used to arrive with the first standard already open, which made
+   * it look like the answer to a question nobody had asked. A teacher picks
+   * a subject, or searches, or chooses a standard; until then the panel says
+   * what to do and shows nothing else.
+   */
   function fillStandards(keep) {
     var list = visible();
     stdSel.innerHTML = "";
@@ -389,10 +418,11 @@ details.std[open] summary::after{content:"–"}
       stdSel.disabled = true;
     } else {
       stdSel.disabled = false;
+      opt(stdSel, "", list.length === 1 ? "Choose the standard…" : "Choose a standard…");
       list.forEach(function (r) {
         opt(stdSel, r.code, r.code + " · " + r.text.slice(0, 68) + (r.text.length > 68 ? "…" : ""));
       });
-      stdSel.value = keep && list.some(function (r) { return r.code === keep; }) ? keep : list[0].code;
+      stdSel.value = keep && list.some(function (r) { return r.code === keep; }) ? keep : "";
     }
     count.textContent = list.length + " of " + PBL.length + " standards";
     render();
@@ -420,11 +450,226 @@ details.std[open] summary::after{content:"–"}
     s.textContent = text; return s;
   }
 
+  // ---- printable sheets -----------------------------------------------
+  //
+  // A letter page drawn the way it prints, the same shape the maths and
+  // reading workbooks use: white sheet, rule under the heading, name and
+  // date, page number at the foot.
+  function sheet(title, meta, n, of) {
+    var s = document.createElement("section");
+    s.className = "pbl-sheet";
+    s.style.cssText = "background:#fff;border:1px solid #D5DCCB;border-radius:14px;" +
+      "padding:22px 26px 14px;width:100%;max-width:7.7in;min-height:9.9in;margin:0 auto 18px;" +
+      "box-sizing:border-box;display:flex;flex-direction:column;gap:12px";
+    var top = document.createElement("div");
+    top.style.cssText = "display:flex;align-items:baseline;justify-content:space-between;gap:12px;" +
+      "border-bottom:2px solid #243322;padding-bottom:7px";
+    var h = document.createElement("div");
+    h.style.cssText = "font-size:19px;font-weight:800;color:#243322";
+    h.textContent = title;
+    var m = document.createElement("div");
+    m.style.cssText = "font-size:12px;font-weight:700;color:#5A6A52;white-space:nowrap";
+    m.textContent = meta;
+    top.appendChild(h); top.appendChild(m); s.appendChild(top);
+    var bodyEl = document.createElement("div");
+    bodyEl.style.cssText = "display:flex;flex-direction:column;gap:12px;flex:1";
+    s.appendChild(bodyEl);
+    var f = document.createElement("div");
+    f.style.cssText = "margin-top:auto;padding-top:8px;font-size:11px;color:#5A6A52;text-align:right";
+    f.textContent = "Page " + n + " of " + of;
+    s.appendChild(f);
+    s._body = bodyEl;
+    return s;
+  }
+  function nameDate() {
+    var d = document.createElement("div");
+    d.style.cssText = "display:flex;gap:18px;align-items:baseline;font-size:14px;color:#243322";
+    ["Name", "Date"].forEach(function (w) {
+      var f = document.createElement("span");
+      f.style.cssText = "display:flex;gap:6px;align-items:baseline;flex:" + (w === "Date" ? "0 0 32%" : "1 1 auto");
+      var l = document.createElement("span"); l.textContent = w + ":";
+      var rule = document.createElement("span");
+      rule.style.cssText = "flex:1;border-bottom:1px solid #243322;height:14px";
+      f.appendChild(l); f.appendChild(rule); d.appendChild(f);
+    });
+    return d;
+  }
+  function writeBox(prompt, min) {
+    var b = document.createElement("div");
+    b.style.cssText = "border:1px solid #243322;border-radius:10px;padding:9px 11px;" +
+      "min-height:" + (min || 120) + "px;font-size:12px;color:#5A6A52;flex:0 0 auto";
+    b.textContent = prompt || "";
+    return b;
+  }
+  function heading(t) {
+    var h = document.createElement("p");
+    h.style.cssText = "margin:4px 0 0;font-size:15px;font-weight:800;color:#243322";
+    h.textContent = t; return h;
+  }
+  function note(t, css) {
+    var p2 = document.createElement("p");
+    p2.style.cssText = "margin:0;font-size:13px;color:#3E4D38;" + (css || "");
+    p2.textContent = t; return p2;
+  }
+
+  /** The data's phrases have no full stop, so joining them ran two together. */
+  function sentence(t) {
+    t = String(t || "").trim();
+    return /[.!?]$/.test(t) ? t : t + ".";
+  }
+
+  /** What each stage says for this project, built from its own fields. */
+  function stageLines(r, i) {
+    var same = partnersOf(r.code)
+      .filter(function (p) { return byCode[p.code].project === r.project; })
+      .map(function (p) { return p.code; });
+    return [
+      "Open with the driving question: " + sentence(r.dq) + " Show something real that raises it — a photo, an object, a visitor — and record what students already think.",
+      "Teach what " + r.code + " needs: " + sentence(r.text) +
+        (same.length ? " Running this project also covers " + same.join(", ") + ", so plan those in here too." : ""),
+      "Students draft, test and revise the product: " + sentence(r.product) + " Build in one round of critique before they finish.",
+      "Present to a real audience. Decide who before you start, so students know who they are making it for.",
+      "Look back at the driving question: " + sentence(r.dq) + " What changed in their thinking, and what would they do differently?"
+    ][i];
+  }
+
+  /**
+   * Pages measured as they fill, rather than split where it looked about
+   * right. Three stages to a sheet overflowed every one of the 87 projects,
+   * because a long standard pushes the third stage over the edge and a short
+   * one does not. A stage is kept whole: its heading never ends a page with
+   * its box overleaf.
+   */
+  function Flow(title, meta) {
+    var PAGE = 9.9 * 96;
+    var made = [], cur, bodyEl;
+    function open(cont) {
+      cur = sheet(cont ? title + " (continued)" : title, meta, 0, 0);
+      cur.style.minHeight = "0";
+      bodyEl = cur._body;
+      made.push(cur);
+      out.appendChild(cur);
+    }
+    open(false);
+    return {
+      group: function (nodes) {
+        nodes.forEach(function (n) { bodyEl.appendChild(n); });
+        if (cur.scrollHeight > PAGE && bodyEl.children.length > nodes.length) {
+          nodes.forEach(function (n) { bodyEl.removeChild(n); });
+          open(true);
+          nodes.forEach(function (n) { bodyEl.appendChild(n); });
+        }
+      },
+      done: function () {
+        made.forEach(function (s, i) {
+          s.style.minHeight = "";
+          s.lastChild.textContent = "Page " + (i + 1) + " of " + made.length;
+        });
+      }
+    };
+  }
+
+  function renderRoadmap(r) {
+    var flow = Flow("Project roadmap", r.code + " · " + shortSubject(r.subject));
+    var dq = document.createElement("div");
+    dq.style.cssText = "background:#FDF6E3;border-left:6px solid #E0B040;border-radius:10px;padding:12px 14px";
+    dq.appendChild(note("Driving question", "font-weight:700;color:#7A5A10;font-size:12px"));
+    dq.appendChild(note(r.dq, "font-size:16px;font-weight:600;margin-top:3px"));
+    flow.group([heading(r.project), note(r.text), dq,
+      note("Student product: " + sentence(r.product), "font-weight:600")]);
+
+    CYCLE.forEach(function (st, i) {
+      flow.group([
+        heading((i + 1) + ". " + st.name),
+        note(st.blurb, "color:#5A6A52;font-size:12px"),
+        note(stageLines(r, i)),
+        writeBox("Your plan, dates and who is responsible.", 86)
+      ]);
+    });
+
+    var checks = [heading("Before you launch")];
+    ["Who is the real audience, and when will they see it?",
+     "What will you teach just in time, rather than up front?",
+     "Where does critique and revision fit?",
+     "How will each student show what they learned?"].forEach(function (q) {
+      var row = document.createElement("div");
+      row.style.cssText = "display:flex;gap:9px;align-items:flex-start";
+      var box = document.createElement("span");
+      box.style.cssText = "flex:0 0 auto;width:15px;height:15px;border:2px solid #243322;border-radius:3px;margin-top:3px";
+      row.appendChild(box); row.appendChild(note(q));
+      checks.push(row);
+    });
+    flow.group(checks);
+    flow.done();
+  }
+
+  function renderWorkbook(r) {
+    var pages = [
+      ["Our driving question", [
+        ["What we are figuring out", "Write the driving question in your own words.", 170],
+        ["What I already think", "Write or draw what you think the answer might be.", 200]
+      ]],
+      ["What I need to learn", [
+        ["Questions I still have", "Write the questions you need answered before you can build.", 170],
+        ["What I found out", "Notes, facts and where you found them.", 200]
+      ]],
+      ["Make it", [
+        ["My plan", "What are you making, and what will it need?", 170],
+        ["What I changed after feedback", "Who gave you feedback, and what did you change?", 180]
+      ]],
+      ["Share it", [
+        ["Who is my audience", "Who will see this, and what do they need to understand?", 150],
+        ["What I will say", "Your first two sentences.", 190]
+      ]],
+      ["Look back", [
+        ["What I learned", "Answer the driving question in your own words.", 180],
+        ["What I would do differently", "If you ran this project again, what would change?", 170]
+      ]]
+    ];
+    pages.forEach(function (pg, i) {
+      var s = sheet(pg[0], r.project, i + 1, pages.length);
+      if (i === 0) {
+        s._body.appendChild(nameDate());
+        var dq = document.createElement("div");
+        dq.style.cssText = "background:#FDF6E3;border-left:6px solid #E0B040;border-radius:10px;padding:12px 14px";
+        dq.appendChild(note("Driving question", "font-weight:700;color:#7A5A10;font-size:12px"));
+        dq.appendChild(note(r.dq, "font-size:17px;font-weight:600;margin-top:3px"));
+        s._body.appendChild(dq);
+        s._body.appendChild(note("What you will make: " + r.product, "font-weight:600"));
+      }
+      pg[1].forEach(function (part, j) {
+        s._body.appendChild(heading(part[0]));
+        var box = writeBox(part[1] || "", part[2] || 150);
+        // The last box takes whatever the page has left, so a sheet ends
+        // full rather than with three inches of nothing under it.
+        if (j === pg[1].length - 1) box.style.flex = "1 1 auto";
+        s._body.appendChild(box);
+      });
+      if (i === pages.length - 1) {
+        s._body.appendChild(note("Standard: " + r.code + " · " + r.text, "font-size:11px;color:#5A6A52;margin-top:6px"));
+      }
+      out.appendChild(s);
+    });
+  }
+
   function render() {
     var code = stdSel.value;
     var r = byCode[code];
     out.innerHTML = "";
-    if (!r) return;
+    document.getElementById("pbl-views").style.display = r ? "flex" : "none";
+    if (!r) {
+      var hint = document.createElement("div");
+      hint.style.cssText = "background:#fff;border:1px dashed #C7D2BC;border-radius:14px;padding:26px;text-align:center";
+      hint.appendChild(note(
+        visible().length < PBL.length
+          ? "Choose one of the " + visible().length + " standards above to build its project."
+          : "Pick a subject, search, or choose a standard to build its project.",
+        "font-size:15px;color:#5A6A52"));
+      out.appendChild(hint);
+      return;
+    }
+    if (view === "roadmap") { renderRoadmap(r); stamp(r); return; }
+    if (view === "workbook") { renderWorkbook(r); stamp(r); return; }
 
     var wrap = document.createElement("div");
     wrap.style.cssText = "background:#fff;border:1px solid #D5DCCB;border-radius:14px;padding:20px";
@@ -537,9 +782,15 @@ details.std[open] summary::after{content:"–"}
     wrap.appendChild(grid);
     out.appendChild(wrap);
 
+    stamp(r);
+  }
+
+  /** Keep the standard and the view in the URL, so a page can be sent on. */
+  function stamp(r) {
     try {
       var u = new URL(location.href);
       u.searchParams.set("std", r.code);
+      if (view === "project") u.searchParams.delete("view"); else u.searchParams.set("view", view);
       history.replaceState(null, "", u);
     } catch (e) {}
   }
@@ -571,8 +822,40 @@ details.std[open] summary::after{content:"–"}
   stdSel.addEventListener("change", render);
   crossOnly.addEventListener("change", render);
 
-  var start = null;
-  try { start = new URL(location.href).searchParams.get("std"); } catch (e) {}
+  // The project, its roadmap and the student workbook are three views of one
+  // standard, so they are tabs rather than three places to navigate to.
+  var tabs = Array.prototype.slice.call(document.querySelectorAll("[data-pbl-view]"));
+  function paintTabs() {
+    tabs.forEach(function (t) {
+      var on = t.getAttribute("data-pbl-view") === view;
+      t.setAttribute("aria-pressed", on ? "true" : "false");
+      t.style.background = on ? "#243322" : "#fff";
+      t.style.color = on ? "#fff" : "#243322";
+      t.style.borderColor = on ? "#243322" : "#D5DCCB";
+    });
+    // Only the printables are worth a print button.
+    document.getElementById("pbl-print").style.display = view === "project" ? "none" : "";
+  }
+  tabs.forEach(function (t) {
+    t.style.cssText = "font:inherit;font-weight:700;font-size:14px;cursor:pointer;" +
+      "padding:8px 16px;border-radius:999px;border:1px solid #D5DCCB;background:#fff;color:#243322";
+    t.addEventListener("click", function () {
+      view = this.getAttribute("data-pbl-view");
+      paintTabs();
+      render();
+    });
+  });
+  document.getElementById("pbl-print").addEventListener("click", function () { window.print(); });
+  paintTabs();
+
+  var start = null, startView = null;
+  try {
+    var u0 = new URL(location.href);
+    start = u0.searchParams.get("std");
+    startView = u0.searchParams.get("view");
+  } catch (e) {}
+  if (startView === "roadmap" || startView === "workbook") view = startView;
+  paintTabs();
   fillStandards(start && byCode[start] ? start : null);
 })();
 </script>
