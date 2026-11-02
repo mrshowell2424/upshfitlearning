@@ -48,14 +48,15 @@ const HUB = "/api/materials/math/math-hub.html";
 const STEPS = [
   ["1", "Math review"],
   ["2", "Warm-up"],
-  ["3", "Tiles"],
-  ["4", "Drills"],
-  ["5", "Review"],
-  ["6", "New info (CRA)"],
-  ["7", "Find the Error"],
-  ["8", "Word problem"],
-  ["9", "Unscramble It"],
-  ["10", "Recap"],
+  ["3", "Which One Doesn't Belong?"],
+  ["4", "Tiles"],
+  ["5", "Drills"],
+  ["6", "Review"],
+  ["7", "New info (CRA)"],
+  ["8", "Find the Error"],
+  ["9", "Word problem"],
+  ["10", "Unscramble It"],
+  ["11", "Recap"],
 ];
 
 function Hub() {
@@ -112,7 +113,8 @@ function Hub() {
               <p style={{ fontSize: 15, fontWeight: 500, color: MUTED, margin: "8px 0 0", lineHeight: 1.55 }}>
                 305 standards across Kindergarten to Grade 12. Pick a grade and a standard and it
                 lays out the lesson — the review, the warm-up, the tile task, the drills, the
-                concrete-to-abstract teaching, the error to find and the scrambled equation —
+                concrete-to-abstract teaching, the error to find, the odd one out and the
+                scrambled equation —
                 with the answer key a button away.
               </p>
             </div>
@@ -132,7 +134,7 @@ function Hub() {
         </a>
 
         {/* What the hub runs, named in order. These are not links: there is
-            one destination on this page, and ten fake doors into it would
+            one destination on this page, and eleven fake doors into it would
             be worse than a list. */}
         <div
           style={{
@@ -148,7 +150,7 @@ function Hub() {
             THE LESSON, IN ORDER
           </div>
           <div style={{ fontSize: 21, fontWeight: 800, lineHeight: 1.2, marginTop: 5 }}>
-            Ten steps, every standard
+            Eleven steps, every standard
           </div>
           <p style={{ fontSize: 14, fontWeight: 500, color: MUTED, margin: "7px 0 14px", lineHeight: 1.5 }}>
             The hub writes each one for the standard you pick. Filter to a single step when you
