@@ -151,8 +151,10 @@ body.board .prob { font-size: 17px; }
   .printable .sheet-meta, .printable .sheet-foot, .printable .wb-note-line, .printable .rdw-hint { color: #444 !important; }
   .printable .wb-work, .printable .rdw-cell, .printable .tile-work,
   .printable .cra-cell { border: 1px solid #000; }
-  /* the tags are the one thing on the sheet that must keep its colour */
+  /* the tags and the tiles are the things on the sheet that must keep
+     their colour: a scrambled equation in grey is a different puzzle */
   .printable .cra-tag { color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .printable .uns-tile { -webkit-print-color-adjust: exact; print-color-adjust: exact; border-color: #000; }
   .printable .ruled div { border-bottom: 1px solid #000; }
   .printable .sheet-top { border-bottom: 2px solid #000; }
   .printable .nd-rule { border-bottom: 1px solid #000; }
@@ -262,6 +264,18 @@ body.mb-only .mb { position: static; height: 100vh; }
 @media (max-width: 620px) {
   .mb-item { --mb-size: 38px; }
 }
+/* Unscramble It: one true equation with its digits shuffled, dealt onto
+   tiles a child can read across the room. */
+.uns { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.uns-slot { display: flex; gap: 5px; }
+.uns-tile { width: 46px; height: 46px; border: 4px solid #111111; border-radius: 8px;
+  display: grid; place-items: center; font-family: var(--display); font-weight: 800;
+  font-size: 26px; color: #111111; }
+.uns-op { font-family: var(--display); font-weight: 800; font-size: 28px; color: #111111; padding: 0 3px; }
+.uns-big .uns-tile { width: 64px; height: 64px; font-size: 36px; }
+.uns-big .uns-op { font-size: 38px; }
+body.board .uns-tile { width: 72px; height: 72px; font-size: 40px; }
+body.board .uns-op { font-size: 42px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 @media (max-width: 480px) { .btns { grid-template-columns: 1fr; } }
 </style>
@@ -269,7 +283,7 @@ body.mb-only .mb { position: static; height: 100vh; }
 <main class="wrap">
   <p class="eyebrow">Intervention &middot; Structured math</p>
   <h1>OG Math Hub</h1>
-  <p class="lede">Pick a grade and standard, then run the nine lesson steps in order.</p>
+  <p class="lede">Pick a grade and standard, then run the ten lesson steps in order.</p>
 
   <section class="builder" aria-label="Lesson builder">
     <div class="row">
@@ -362,8 +376,15 @@ body.mb-only .mb { position: static; height: 100vh; }
       <p>Students read the problem, solve it, and explain their answer in one sentence.</p>
       <div class="ex" data-ex="6"></div>
     </article>
+    <article class="step" id="s-uns" data-step="uns">
+      <div class="step-top"><div class="step-num">9</div><span class="time">About 5 min</span></div>
+      <h3>Unscramble It</h3>
+      <p class="std-title" data-std-label></p>
+      <p id="uns-note">The digits of one true equation, shuffled. Students put them back.</p>
+      <div class="ex" id="uns-ex"></div>
+    </article>
     <article class="step" id="s5" data-step="5">
-      <div class="step-top"><div class="step-num">9</div><span class="time">2&ndash;4 min</span></div>
+      <div class="step-top"><div class="step-num">10</div><span class="time">2&ndash;4 min</span></div>
       <h3>Recap and exit ticket</h3>
       <p class="std-title" data-std-label></p>
       <p>Check whether today's skill landed. Then assign targeted practice or a short journal reflection.</p>
@@ -425,7 +446,8 @@ body.mb-only .mb { position: static; height: 100vh; }
   var STEPS = [
     { id: "s0", label: "1 Math review" }, { id: "s1", label: "2 Warm-up" }, { id: "s-tile", label: "3 Tiles" },
     { id: "s2", label: "4 Drills" }, { id: "s3", label: "5 Review" }, { id: "s4", label: "6 New info (CRA)" },
-    { id: "s-fte", label: "7 Find the Error" }, { id: "s-word", label: "8 Word problem" }, { id: "s5", label: "9 Recap" }
+    { id: "s-fte", label: "7 Find the Error" }, { id: "s-word", label: "8 Word problem" },
+    { id: "s-uns", label: "9 Unscramble It" }, { id: "s5", label: "10 Recap" }
   ];
   var gradeSel = document.getElementById("grade");
   var stdSel = document.getElementById("std");
@@ -870,6 +892,272 @@ body.mb-only .mb { position: static; height: 100vh; }
     mbEls["mb-close"].textContent = "Close this tab";
   })();
 
+  function renderUnscramble(code) {
+    var box = document.getElementById("uns-ex");
+    var note = document.getElementById("uns-note");
+    if (!box) return;
+    box.innerHTML = "";
+    if (!PRAC[code]) {
+      if (note) note.textContent = "Pick a standard to build its puzzle.";
+      return;
+    }
+    var g = gradeSel.value;
+    var puz = unsPuzzle(code, g);
+    var eq = puz.eq, slots = puz.slots;
+    if (note) {
+      note.textContent = eq.own
+        ? "The digits of one true equation from this standard, shuffled. Students put them back."
+        : "The digits of one true equation, shuffled. Students put them back. This one is "
+          + g + " practice in the operation this strand uses — the standard's own problems do not give an equation.";
+    }
+    var d = document.createElement("div");
+    d.className = "prob";
+    d.appendChild(unsRender(eq, slots));
+    var hint = document.createElement("div");
+    hint.style.cssText = "margin-top:8px;color:var(--muted);font-size:13px";
+    hint.textContent = "Move the tiles — all of them, none spare — until the equation is true.";
+    var a = document.createElement("div");
+    a.className = "ans";
+    a.textContent = "Answer: " + eq.x + " " + eq.op + " " + eq.y + " = " + eq.c;
+    var b = document.createElement("button");
+    b.type = "button"; b.textContent = "Show answer";
+    b.addEventListener("click", function () {
+      var on = d.classList.toggle("show");
+      b.textContent = on ? "Hide answer" : "Show answer";
+    });
+    d.appendChild(hint); d.appendChild(a); d.appendChild(b);
+    box.appendChild(d);
+  }
+
+  // ---- Unscramble It -------------------------------------------------
+  //
+  // One true equation, its digits shuffled and dealt back into the same
+  // slots. Nothing is added or taken away, so the puzzle is always solvable
+  // and a student who can check their own arithmetic can finish it.
+  //
+  // The equation comes from the standard wherever the standard will give one.
+  // Most of these problems are prose rather than number sentences, so there
+  // are three sources, best first: an equation written out in the problem
+  // itself; one built from the numbers that problem and its answer use; and,
+  // for the rest, one generated in the operation and the size of number the
+  // strand works in. The third is grade-level practice rather than this
+  // standard's content, and the card says so.
+
+  var UNS_COLOURS = ["#4C9AFF", "#FF7DAE", "#00B4A6", "#FFB13F"];
+  var UNS_OPS = { "×": "×", "x": "×", "*": "×", "÷": "÷", "/": "÷", "+": "+", "−": "−", "-": "−" };
+
+  /** Same standard, same puzzle, every time it is opened or printed. */
+  function unsSeed(text) {
+    var h = 2166136261;
+    for (var i = 0; i < text.length; i++) {
+      h ^= text.charCodeAt(i);
+      h = (h * 16777619) >>> 0;
+    }
+    return h;
+  }
+  function unsRandom(seed) {
+    var s2 = seed >>> 0;
+    return function () {
+      s2 ^= s2 << 13; s2 >>>= 0;
+      s2 ^= s2 >> 17;
+      s2 ^= s2 << 5; s2 >>>= 0;
+      return s2 / 4294967296;
+    };
+  }
+
+  function unsHolds(x, op, y, c) {
+    if (op === "×") return x * y === c;
+    if (op === "÷") return y !== 0 && x / y === c;
+    if (op === "+") return x + y === c;
+    return x - y === c;
+  }
+
+  /** An equation written out in the problem, with its own answer. */
+  function unsFromText(q, a) {
+    var ans = String(a).match(/\d+/);
+    if (!ans) return null;
+    var c = parseInt(ans[0], 10);
+    var m = String(q).match(/(\d+)\s*([×x*÷\/+−-])\s*(\d+)\s*=/);
+    if (!m) return null;
+    var op = UNS_OPS[m[2]];
+    var x = parseInt(m[1], 10), y = parseInt(m[3], 10);
+    if (!op || c < 0 || !unsHolds(x, op, y, c)) return null;
+    return { x: x, op: op, y: y, c: c, own: true };
+  }
+
+  /** A true sentence among the numbers the problem and its answer use. */
+  function unsFromNumbers(q, a) {
+    var ans = String(a).match(/\d+/);
+    if (!ans) return null;
+    var c = parseInt(ans[0], 10);
+    if (!(c > 0) || c > 9999) return null;
+    var seen = {}, nums = [];
+    (String(q).match(/\d+/g) || []).forEach(function (n) {
+      var v = parseInt(n, 10);
+      if (v > 0 && v <= 9999 && !seen[v]) { seen[v] = 1; nums.push(v); }
+    });
+    for (var i = 0; i < nums.length; i++) {
+      for (var j = 0; j < nums.length; j++) {
+        var x = nums[i], y = nums[j];
+        if (x * y === c) return { x: x, op: "×", y: y, c: c, own: true };
+        if (y !== 0 && x / y === c && x !== c) return { x: x, op: "÷", y: y, c: c, own: true };
+        if (x + y === c && x !== c && y !== c) return { x: x, op: "+", y: y, c: c, own: true };
+        if (x - y === c && y !== 0) return { x: x, op: "−", y: y, c: c, own: true };
+      }
+    }
+    return null;
+  }
+
+  /** What the strand works in, when the standard will not give an equation. */
+  var UNS_STRAND = {
+    CC: "+", OA: "+", NBT: "+", MD: "×", G: "×", NF: "÷",
+    RP: "÷", NS: "×", EE: "×", SP: "÷", F: "×",
+    SSE: "×", APR: "×", CED: "×", REI: "÷", IF: "×", BF: "×", LE: "×",
+    CO: "×", SRT: "×", C: "×", GPE: "×", GMD: "×", MG: "×",
+    CN: "×", TF: "×", ID: "÷", IC: "÷", CP: "×"
+  };
+
+  function unsGenerate(code, g) {
+    var rnd = unsRandom(unsSeed("uns:" + code));
+    var gi = grades.indexOf(g);
+    var band = gi <= grades.indexOf("Grade 2") ? 0 : gi <= grades.indexOf("Grade 5") ? 1 : 2;
+    var op = UNS_STRAND[domainOf(code)] || "×";
+    // Addition and subtraction are a younger child's work; by grade 3 the
+    // strand that asks for them is asking about bigger numbers, not about
+    // adding, so those become multiplication.
+    if (band > 0 && (op === "+" || op === "−")) op = "×";
+    if (band === 0 && (op === "×" || op === "÷")) op = "+";
+    var pick = function (lo, hi) { return lo + Math.floor(rnd() * (hi - lo + 1)); };
+    var x, y, c;
+    if (op === "+") {
+      x = pick(2, band === 0 ? 9 : 40); y = pick(2, band === 0 ? 9 : 40); c = x + y;
+    } else if (op === "÷") {
+      y = pick(2, band === 0 ? 5 : band === 1 ? 9 : 12);
+      c = pick(2, band === 0 ? 5 : band === 1 ? 9 : 12);
+      x = y * c;
+    } else {
+      x = pick(2, band === 0 ? 5 : band === 1 ? 9 : 12);
+      y = pick(2, band === 0 ? 5 : band === 1 ? 9 : 12);
+      c = x * y;
+    }
+    return { x: x, op: op, y: y, c: c, own: false };
+  }
+
+  /**
+   * Whether an equation is worth setting as a puzzle.
+   *
+   * Multiplying by one is true and teaches nothing, and the hunt through a
+   * problem's numbers finds a lot of it: twenty-two standards came back with
+   * 1 × 1 = 1. Multiplication in kindergarten is the same kind of wrong —
+   * true, but not what the child is learning.
+   */
+  function unsWorthwhile(eq, g) {
+    if (!eq) return false;
+    if (eq.op === "×" && (eq.x === 1 || eq.y === 1)) return false;
+    if (eq.op === "÷" && (eq.y === 1 || eq.x === eq.y)) return false;
+    if (eq.x === eq.y && eq.y === eq.c) return false;
+    if (grades.indexOf(g) <= grades.indexOf("Grade 2") && (eq.op === "×" || eq.op === "÷")) return false;
+    var digits = String(eq.x) + String(eq.y) + String(eq.c);
+    var distinct = {};
+    for (var i = 0; i < digits.length; i++) distinct[digits[i]] = 1;
+    return digits.length >= 3 && Object.keys(distinct).length >= 2;
+  }
+
+  /**
+   * The equation and its shuffle together, because neither is any use alone:
+   * an equation that cannot be shuffled into a false one is not a puzzle.
+   */
+  function unsPuzzle(code, g) {
+    var p = PRAC[code];
+    var candidates = [];
+    if (p) {
+      var pairs = [];
+      (p.c || []).forEach(function (q, i) { pairs.push([q, (p.ac || [])[i]]); });
+      (p.w || []).forEach(function (q, i) { pairs.push([q, (p.aw || [])[i]]); });
+      pairs.forEach(function (pair) { candidates.push(unsFromText(pair[0], pair[1])); });
+      pairs.forEach(function (pair) { candidates.push(unsFromNumbers(pair[0], pair[1])); });
+    }
+    for (var i = 0; i < candidates.length; i++) {
+      var eq = candidates[i];
+      if (!unsWorthwhile(eq, g)) continue;
+      var slots = unsScramble(eq);
+      if (slots) return { eq: eq, slots: slots };
+    }
+    // Generated equations are built from twos upwards, so one of them always
+    // shuffles; the loop is only here so a freak seed cannot hang the page.
+    for (var n = 0; n < 12; n++) {
+      var made = unsGenerate(code + (n ? ":" + n : ""), g);
+      made.own = false;
+      if (!unsWorthwhile(made, g)) continue;
+      var sl = unsScramble(made);
+      if (sl) return { eq: made, slots: sl };
+    }
+    var last = { x: 2, op: "+", y: 3, c: 5, own: false };
+    return { eq: last, slots: unsScramble(last) || [["2"], ["3"], ["5"]] };
+  }
+
+  /**
+   * The same digits, dealt back into the same slots in a different order.
+   *
+   * A shuffle that happens to come out true would be a puzzle with nothing
+   * to do, and one that comes out as the answer gives it away, so both are
+   * rejected and it shuffles again.
+   */
+  function unsScramble(eq) {
+    var slots = [String(eq.x).split(""), String(eq.y).split(""), String(eq.c).split("")];
+    var all = slots[0].concat(slots[1], slots[2]);
+    var rnd = unsRandom(unsSeed("scramble:" + eq.x + eq.op + eq.y + eq.c));
+    var best = null, bestMoved = -1;
+    for (var attempt = 0; attempt < 200; attempt++) {
+      var bag = all.slice();
+      for (var i = bag.length - 1; i > 0; i--) {
+        var j = Math.floor(rnd() * (i + 1));
+        var t = bag[i]; bag[i] = bag[j]; bag[j] = t;
+      }
+      var at = 0, out = slots.map(function (sl) { return bag.slice(at, at += sl.length); });
+      if (out[0][0] === "0" || out[1][0] === "0" || out[2][0] === "0") continue;
+      var a = parseInt(out[0].join(""), 10), b = parseInt(out[1].join(""), 10), cc = parseInt(out[2].join(""), 10);
+      if (unsHolds(a, eq.op, b, cc)) continue;             // already true: nothing to do
+      // Count how much actually moved. A shuffle that leaves "3 × 6" sitting
+      // there and only swaps the answer is not a puzzle, it is a typo, so
+      // the most-moved arrangement wins rather than the first one found.
+      var moved = 0;
+      for (var k = 0; k < all.length; k++) if (bag[k] !== all[k]) moved++;
+      if (moved > bestMoved) { bestMoved = moved; best = out; }
+      if (moved === all.length) break;                     // nothing left in place
+    }
+    // No false arrangement exists — 1 × 1 = 1 has nowhere to go. The caller
+    // takes that as "this equation will not make a puzzle" and tries another.
+    return bestMoved > 0 ? best : null;
+  }
+
+  /** The tiles, in the four brand colours, in order across the row. */
+  function unsRender(eq, slots, opts) {
+    var wrap = document.createElement("div");
+    wrap.className = "uns" + (opts && opts.big ? " uns-big" : "");
+    var n = 0;
+    slots.forEach(function (digits, si) {
+      if (si > 0) {
+        var o = document.createElement("span");
+        o.className = "uns-op";
+        o.textContent = si === 1 ? eq.op : "=";
+        wrap.appendChild(o);
+      }
+      var slot = document.createElement("span");
+      slot.className = "uns-slot";
+      digits.forEach(function (d) {
+        var t = document.createElement("span");
+        t.className = "uns-tile";
+        t.style.background = UNS_COLOURS[n % UNS_COLOURS.length];
+        n++;
+        t.textContent = d;
+        slot.appendChild(t);
+      });
+      wrap.appendChild(slot);
+    });
+    return wrap;
+  }
+
   function renderExamples(code) {
     var p = PRAC[code];
     document.querySelectorAll(".ex").forEach(function (box) { box.innerHTML = ""; });
@@ -1175,8 +1463,42 @@ body.mb-only .mb { position: static; height: 100vh; }
     fillText(kk, "Answer: " + p.aw[1]);
     add(kk);
 
-    // Step 9: the exit ticket, done alone and handed in.
-    sheet("Step 9 · Recap and exit ticket");
+    // Step 9: Unscramble It, the last thing before they work alone.
+    //
+    // One true equation with its digits shuffled into the same slots. It is
+    // the same arithmetic as the rest of the lesson, read backwards: instead
+    // of working the sentence out, a student has to know what a true one
+    // looks like before they can build it.
+    sheet("Step 9 · Unscramble It");
+    var unsPuz = unsPuzzle(code, g), eq = unsPuz.eq;
+    note(eq.own
+      ? "These are the digits of one true equation from this standard, shuffled."
+      : "These are the digits of one true equation, shuffled.");
+    note("Move them all — none are spare, and none are missing — until the equation is true.");
+    var puzzle = document.createElement("div");
+    puzzle.style.cssText = "padding:14px 0";
+    puzzle.appendChild(unsRender(eq, unsPuz.slots, { big: true }));
+    add(puzzle);
+    head("Write the equation that works");
+    var unsWrite = document.createElement("div");
+    unsWrite.className = "wb-work";
+    unsWrite.style.minHeight = "120px";
+    unsWrite.textContent = "Write it out, then check it.";
+    add(unsWrite);
+    head("How did you know where to start?");
+    var unsWhy = document.createElement("div");
+    unsWhy.className = "wb-work";
+    unsWhy.style.minHeight = "96px";
+    unsWhy.style.flex = "1 1 auto";
+    unsWhy.textContent = "Which tile was easiest to place, and why?";
+    add(unsWhy);
+    var unsKey = document.createElement("div");
+    unsKey.className = "wb-key";
+    fillText(unsKey, "Answer: " + eq.x + " " + eq.op + " " + eq.y + " = " + eq.c);
+    add(unsKey);
+
+    // Step 10: the exit ticket, done alone and handed in.
+    sheet("Step 10 · Recap and exit ticket");
     note("Solve this on your own and hand it in.");
     line(p.c[0], p.ac[0]);
 
@@ -1185,7 +1507,7 @@ body.mb-only .mb { position: static; height: 100vh; }
     // Measuring is over, so the sheets can stand at their full height again.
     [].forEach.call(wb.querySelectorAll(".sheet"), function (s2) { s2.style.minHeight = ""; });
     document.getElementById("wb-note").textContent =
-      code + ": all nine lesson steps, " + count + (count === 1 ? " page." : " pages.");
+      code + ": all ten lesson steps, " + count + (count === 1 ? " page." : " pages.");
   }
 
   // A sheet that runs long is shrunk to the page rather than spilling a stray
@@ -1598,6 +1920,7 @@ body.mb-only .mb { position: static; height: 100vh; }
     });
     renderExamples(code);
     renderFTE(code);
+    renderUnscramble(code);
     // Before the workbook, not after: the workbook reads the review slots,
     // and filling them second left it drawing the previous standard's review.
     fillReview();
