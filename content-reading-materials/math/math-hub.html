@@ -274,6 +274,14 @@ body.mb-only .mb { position: static; height: 100vh; }
 .uns-op { font-family: var(--display); font-weight: 800; font-size: 28px; color: #111111; padding: 0 3px; }
 .uns-big .uns-tile { width: 64px; height: 64px; font-size: 36px; }
 .uns-big .uns-op { font-size: 38px; }
+/* On a lesson card the row has about 270 pixels, which three tiles fill and
+   nine do not. Smaller here, so the equation reads as one line on the card
+   a teacher is planning from; the workbook and the projector keep them big,
+   because that is where a child reads them. */
+.step .uns { gap: 5px; }
+.step .uns-slot { gap: 3px; }
+.step .uns-tile { width: 29px; height: 29px; border-width: 3px; border-radius: 6px; font-size: 17px; }
+.step .uns-op { font-size: 18px; padding: 0 1px; }
 body.board .uns-tile { width: 72px; height: 72px; font-size: 40px; }
 body.board .uns-op { font-size: 42px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }

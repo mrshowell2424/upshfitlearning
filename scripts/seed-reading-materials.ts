@@ -1532,9 +1532,14 @@ const EXPLICIT: Record<string, string> = { B42318: "E24F41", B00020: "E24F41", "
 const LUMS: Record<string, number[]> = {};
 for (const [k, ramp] of Object.entries(FAMILIES)) LUMS[k] = ramp.map(luminance);
 
-/** Reading keeps teal; maths keeps lavender, as their road maps do. */
+/**
+ * Each hub keeps the accent of the card it is opened from: teal for reading,
+ * lavender for maths, blue for projects.
+ */
 function accentFamily(rel: string): string {
-  return rel.startsWith("math/") ? "lavender" : "teal";
+  if (rel.startsWith("math/")) return "lavender";
+  if (rel.startsWith("pbl/")) return "blue";
+  return "teal";
 }
 
 function familyFor(hex: string, accent: string): string {
@@ -1562,6 +1567,13 @@ function familyFor(hex: string, accent: string): string {
 function brandFor(hex: string, accent: string): string {
   const up = hex.toUpperCase();
   if (EXPLICIT[up]) return EXPLICIT[up];
+  // Near-white is paper, and the brand has one paper colour.
+  //
+  // Nearest-luminance sent the PBL hub's #F5F6EF panels to gray-100 rather
+  // than gray-050 — six hundredths closer on paper, and enough to drop every
+  // small label on them from 4.6:1 to 4.36:1. A page that was white should
+  // come out the white this site uses.
+  if (luminance(up) > 0.86) return "FAFAFA";
   const fam = familyFor(up, accent);
   const want = luminance(up);
   const ramp = FAMILIES[fam], lums = LUMS[fam];
@@ -1579,12 +1591,9 @@ function brandFor(hex: string, accent: string): string {
   return ramp[best];
 }
 
-/**
- * Design Thinking has a canvas palette of its own that nobody asked to
- * change, and the PBL hub is a separate export on its own colours.
- */
+/** Design Thinking has a canvas palette of its own that nobody asked to change. */
 function recolours(rel: string): boolean {
-  return !rel.startsWith("design-thinking/") && !rel.startsWith("pbl/");
+  return !rel.startsWith("design-thinking/");
 }
 
 function recolour(rel: string, source: string): string {
