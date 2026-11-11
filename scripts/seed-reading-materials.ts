@@ -416,7 +416,10 @@ const ADAPTATIONS: Adaptation[] = [
           "        const wsItems = (whatSays || []).slice(0, 6).map((t, i) => {\n" +
           "          const q = String(t).split('? (')[0].replace(/^What says\\s*/, '').trim();\n" +
           "          const a = (String(t).split('? (')[1] || '').replace(/\\)\\s*$/, '').trim();\n" +
-          "          return { n: i + 1, q, ans: isKey ? a : '' }; });\n" +
+          "          // The sound is said, not shown. Printing /f/ next to the line\n" +
+          "          // turns a listening drill into a copying one, so the child's\n" +
+          "          // page reads \"What says?\" and the key carries the sound.\n" +
+          "          return { n: i + 1, q: isKey ? ' ' + q : '', ans: isKey ? a : '' }; });\n" +
           anchor
       );
       const tail = "          sbBox: { ...p.decBox, display: sbRows.length && show(isKey ? 'key' : 'wb') ? 'flex' : 'none' }, sbRows }; })";
@@ -479,7 +482,7 @@ const ADAPTATIONS: Adaptation[] = [
         '          <sc-for list="{{ p.wsItems }}" as="x" hint-placeholder-count="6">\n' +
         '            <div style="display:flex;align-items:flex-end;gap:10px;font-size:16px;font-weight:700">' +
         '<span style="flex:none;width:18px">{{ x.n }}.</span>' +
-        '<span style="flex:none;font-size:18px;font-weight:800;white-space:nowrap">What says {{ x.q }}?</span>' +
+        '<span style="flex:none;font-size:18px;font-weight:800;white-space:nowrap">What says{{ x.q }}?</span>' +
         LINE + "{{ x.ans }}</span></div>\n" +
         "          </sc-for>\n" +
         "        </div>\n" +
@@ -1509,6 +1512,51 @@ const ADAPTATIONS: Adaptation[] = [
         "</div>\n  </div>\n";
 
       return out.slice(0, at) + studentBlock + keyBar + keyBlock + out.slice(end);
+    },
+  },
+  {
+    // Make the multisyllabic switch mean the whole lesson.
+    //
+    // It swapped one list — the words a child reads — and left the rest of
+    // the lesson in single syllables: the three differentiated lists, and
+    // the review, all read from real0, the list as it was before the switch.
+    // A teacher who turned it on got a multisyllabic word list sitting above
+    // single-syllable everything else.
+    //
+    // On now means on everywhere the words come from a list. Heart words are
+    // left alone, because an irregular high-frequency word is the word it is,
+    // and the dictation sentences are left alone because there is no
+    // multisyllabic sentence bank to draw on — those would be written, not
+    // switched.
+    name: "let the multisyllabic switch reach the whole lesson",
+    apply: (html) => {
+      const diff =
+        "diff: (() => { const easy = real0.slice().sort((a, b) => a.length - b.length).slice(0, 6); " +
+        "const hard = (MULTI[id] || []).slice(0, 6);";
+      if (!html.includes(diff)) return html;
+      let out = html.replace(
+        diff,
+        "diff: (() => { const pool = real; const byLen = pool.slice().sort((a, b) => a.length - b.length);\n" +
+          "        // With the switch on the three lists stay a gradient: the " +
+          "shortest multisyllabic words, then the list, then the longest.\n" +
+          "        const easy = byLen.slice(0, 6);\n" +
+          "        const hard = isMulti ? byLen.slice(-6).reverse() : (MULTI[id] || []).slice(0, 6);"
+      );
+
+      // The file carries the apostrophe as a literal \u2019 escape inside
+      // its own script, so the anchor needs the backslash, not the character.
+      const onLevel = "'Today\\u2019s word list.', real0.slice(0, 8),";
+      if (!out.includes(onLevel)) return html;
+      out = out.replace(onLevel, "'Today\\u2019s word list.', pool.slice(0, 8),");
+
+      const rev = "wbReview: review.flatMap((r) => r[6].slice(0, Math.ceil(10 / review.length))).slice(0, 10),";
+      if (!out.includes(rev)) return html;
+      out = out.replace(
+        rev,
+        "wbReview: review.flatMap((r) => (isMulti && (MULTI[r[0]] || []).length " +
+          "? MULTI[r[0]] : r[6]).slice(0, Math.ceil(10 / review.length))).slice(0, 10),"
+      );
+      return out;
     },
   },
 ];
