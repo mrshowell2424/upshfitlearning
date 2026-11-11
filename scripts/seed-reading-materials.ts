@@ -1681,6 +1681,59 @@ const ADAPTATIONS: Adaptation[] = [
       return html.replace(decl, bank);
     },
   },
+  {
+    // The Read It title on one line.
+    //
+    // The page header is one flex row: the title on the left, the name line
+    // on the right, nowrap. "📖 Read It — Vowel suffixes · -y" wants 403px
+    // and had 387px, so it wrapped to two lines and pushed the rule box and
+    // everything under it down the page. It is not a near miss either: the
+    // longest name on the list, Latin prefixes and suffixes · trans-, wants
+    // 634px at this size.
+    //
+    // Two changes together, because neither is enough alone.
+    //
+    // The date comes off this page. Every other page in the packet carries
+    // the name alone, and the packet opens on Ten Words A Day, which already
+    // takes a name and a week — so this was the one page asking twice. That
+    // is 83px back.
+    //
+    // Then the title takes the largest size that still fits the line it has.
+    // The type measures 0.53em a character, checked against the shortest
+    // name on the list and the longest. Of the 212 skills, 127 keep all
+    // 26px and the four that shrink furthest sit at 18px, which is still
+    // the biggest type on the page — the name line is 14px and the body 15px.
+    //
+    // Measured rather than guessed: every one of the 212 was rendered and
+    // checked for a second line, for a row wider than the sheet, and for a
+    // name line pushed past the margin.
+    name: "keep the Read It title on one line",
+    apply: (html) => {
+      const anchor =
+        "sk: { label, level, story, rule }, skillId: subPat ? id + '|' + subPat : id,";
+      const title =
+        '<div style="font-size:26px;font-weight:800;color:#2F3E2E;line-height:1.1">' +
+        "\uD83D\uDCD6 Read It \u2014 {{ sk.label }}</div>";
+      const dated = "Name ____________  Date ______";
+      if (!html.includes(anchor) || !html.includes(title) || !html.includes(dated)) return html;
+      // Both copies: the answer key is a clone of these pages, made earlier
+      // in this list, so a plain replace would leave the key wrapping.
+      let out = html.replace(
+        anchor,
+        anchor +
+          "\n      rdH1: (() => {\n" +
+          "        const t = '\\uD83D\\uDCD6 Read It \\u2014 ' + label;\n" +
+          "        const px = Math.max(18, Math.min(26, Math.floor(470 / (0.53 * t.length))));\n" +
+          "        return 'font-size:' + px + 'px;font-weight:800;color:#2F3E2E;" +
+          "line-height:1.1;white-space:nowrap';\n" +
+          "      })(),"
+      );
+      out = out
+        .split(title)
+        .join('<div style="{{ rdH1 }}">\uD83D\uDCD6 Read It \u2014 {{ sk.label }}</div>');
+      return out.split(dated).join("Name ____________");
+    },
+  },
 ];
 
 /**
