@@ -1,5 +1,5 @@
 {
- "_note": "Batches 1 and 2. For each skill: ten more real words on the pattern, four multisyllabic made-up words that are decodable and are not real words, and two more sentences so dictation and the partner read never share one. Checked by scripts/check-extra-words.mjs against /usr/share/dict/words and a pattern test per skill. 'fix' replaces made-up words that turned out to be real English words. 'realfix' replaces a shipped real word that is off the skill's pattern.",
+ "_note": "Batches 1 to 3. For each skill: ten more real words on the pattern, four multisyllabic made-up words that are decodable and are not real words, and two more sentences so dictation and the partner read never share one. Checked by scripts/check-extra-words.mjs against /usr/share/dict/words and a pattern test per skill. 'fix' replaces made-up words that turned out to be real English words. 'realfix' replaces a shipped real word that is off the skill's pattern. 'style: misspelling' marks a skill whose made-up column is wrong spellings of real words rather than nonsense — that is how the Greek, French and connective lessons teach.",
  "cvc-a": {
   "real": [
    "bag",
@@ -810,6 +810,775 @@
   "sent": [
    "He is hopping and running in the sun.",
    "The hottest day stopped our swimming."
+  ]
+ },
+ "og3-01": {
+  "real": [
+   "cent",
+   "cell",
+   "circle",
+   "pencil",
+   "dance",
+   "magic",
+   "germ",
+   "ginger",
+   "energy",
+   "change"
+  ],
+  "fake": [
+   "cergin",
+   "gimcel",
+   "zancil",
+   "pegice"
+  ],
+  "fix": {
+   "mage": "zace"
+  },
+  "sent": [
+   "The giant gem is in the cage.",
+   "We can race to the center of the city."
+  ]
+ },
+ "og3-02": {
+  "real": [
+   "ledge",
+   "lodge",
+   "ridge",
+   "dodge",
+   "badger",
+   "budget",
+   "smudge",
+   "pledge",
+   "trudge",
+   "wedge"
+  ],
+  "fake": [
+   "zadger",
+   "vudgel",
+   "nodgem",
+   "midgen"
+  ],
+  "sent": [
+   "The judge sat on the edge of the bridge.",
+   "I had fudge by the large hedge."
+  ]
+ },
+ "og3-03": {
+  "real": [
+   "bacon",
+   "final",
+   "human",
+   "lazy",
+   "moment",
+   "nature",
+   "over",
+   "photo",
+   "student",
+   "total"
+  ],
+  "fake": [
+   "fitol",
+   "nupel",
+   "dacun",
+   "revid"
+  ],
+  "sent": [
+   "The pilot and the student are at the hotel.",
+   "A tiger and a zebra open the gate."
+  ]
+ },
+ "og3-04": {
+  "real": [
+   "point",
+   "noise",
+   "enjoy",
+   "royal",
+   "launch",
+   "autumn",
+   "crawl",
+   "lawn",
+   "high",
+   "night"
+  ],
+  "fake": [
+   "zoinlaw",
+   "vaudoy",
+   "croighnaw",
+   "dauploy"
+  ],
+  "fix": {
+   "gaw": "zaw",
+   "paul": "vaul"
+  },
+  "sent": [
+   "The boy will enjoy the new toy.",
+   "I saw a hawk at dawn."
+  ]
+ },
+ "og3-05": {
+  "real": [
+   "hiding",
+   "taping",
+   "closed",
+   "nicer",
+   "braver",
+   "writing",
+   "saving",
+   "finest",
+   "shaking",
+   "smiling"
+  ],
+  "fake": [
+   "vriding",
+   "zaking",
+   "plining",
+   "snoper"
+  ],
+  "fix": {
+   "pliny": "vliny"
+  },
+  "sent": [
+   "She is hoping to go skating.",
+   "He baked a cake and smiled."
+  ]
+ },
+ "og3-06": {
+  "real": [
+   "cities",
+   "parties",
+   "studied",
+   "easier",
+   "prettiest",
+   "copies",
+   "hurried",
+   "bodies",
+   "angrier",
+   "busiest"
+  ],
+  "fake": [
+   "zities",
+   "snurried",
+   "plottiest",
+   "vangier"
+  ],
+  "fix": {
+   "plied": "vlied"
+  },
+  "sent": [
+   "The babies cried at the parties.",
+   "She hurried and tried the easier one."
+  ]
+ },
+ "og3-07": {
+  "real": [
+   "never",
+   "finish",
+   "melon",
+   "closet",
+   "punish",
+   "habit",
+   "travel",
+   "model",
+   "second",
+   "dragon"
+  ],
+  "fake": [
+   "vamid",
+   "nelop",
+   "fudic",
+   "bimot"
+  ],
+  "sent": [
+   "The robin sat on the cabin.",
+   "I visit the river with seven friends."
+  ]
+ },
+ "og3-08": {
+  "real": [
+   "cattle",
+   "maple",
+   "simple",
+   "middle",
+   "needle",
+   "handle",
+   "purple",
+   "single",
+   "settle",
+   "bottle"
+  ],
+  "fake": [
+   "vandle",
+   "mupple",
+   "zittle",
+   "frable"
+  ],
+  "sent": [
+   "The turtle sat at the little table.",
+   "I can handle the purple bubble."
+  ]
+ },
+ "og3-09": {
+  "real": [
+   "ago",
+   "again",
+   "alone",
+   "around",
+   "awake",
+   "extra",
+   "china",
+   "drama",
+   "llama",
+   "koala"
+  ],
+  "fake": [
+   "zolla",
+   "mirda",
+   "aplon",
+   "avusta"
+  ],
+  "sent": [
+   "The panda ate a banana on the sofa.",
+   "I will go away to a lagoon."
+  ]
+ },
+ "og3-10": {
+  "real": [
+   "didn't",
+   "he's",
+   "she'll",
+   "we've",
+   "aren't",
+   "couldn't",
+   "that's",
+   "I'll",
+   "you've",
+   "wasn't"
+  ],
+  "fake": [
+   "zan't",
+   "mik's",
+   "thell've",
+   "pey're"
+  ],
+  "sent": [
+   "I can't find it, so we'll look again.",
+   "They're sure that it's done."
+  ]
+ },
+ "og3-11": {
+  "real": [
+   "question",
+   "section",
+   "mention",
+   "option",
+   "portion",
+   "caption",
+   "passion",
+   "session",
+   "division",
+   "direction"
+  ],
+  "fake": [
+   "vortion",
+   "zemsion",
+   "plantion",
+   "nubsion"
+  ],
+  "sent": [
+   "The nation had a long vacation.",
+   "I had a vision at the station."
+  ]
+ },
+ "og3-12": {
+  "real": [
+   "florist",
+   "tourist",
+   "readable",
+   "likable",
+   "sensible",
+   "horrible",
+   "native",
+   "massive",
+   "pianist",
+   "flexible"
+  ],
+  "fake": [
+   "vlorist",
+   "zendable",
+   "mossible",
+   "glantive"
+  ],
+  "sent": [
+   "The artist is very creative.",
+   "That is a possible and sensible plan."
+  ]
+ },
+ "og3-13": {
+  "real": [
+   "return",
+   "repeat",
+   "review",
+   "protest",
+   "propose",
+   "prepare",
+   "predict",
+   "defend",
+   "depart",
+   "reduce"
+  ],
+  "fake": [
+   "revunt",
+   "prolim",
+   "predast",
+   "demorp"
+  ],
+  "sent": [
+   "I will redo and repeat the plan.",
+   "We prepare to protect the program."
+  ]
+ },
+ "og4-01": {
+  "real": [
+   "uniform",
+   "import",
+   "subtract",
+   "disrupt",
+   "scripture",
+   "formal",
+   "report",
+   "contract",
+   "abrupt",
+   "transcribe"
+  ],
+  "fake": [
+   "zoformic",
+   "plantract",
+   "mirupting",
+   "vescribal"
+  ],
+  "sent": [
+   "The tractor will transport the load.",
+   "Please describe how to export the script."
+  ]
+ },
+ "og4-02": {
+  "real": [
+   "inject",
+   "permit",
+   "dismiss",
+   "instruct",
+   "spectacle",
+   "reflection",
+   "eject",
+   "transmit",
+   "suspect",
+   "destruct"
+  ],
+  "fake": [
+   "zospect",
+   "vostruct",
+   "miflecting",
+   "plojectal"
+  ],
+  "sent": [
+   "We inspect the project and reflect on it.",
+   "I will submit the mission report."
+  ]
+ },
+ "og4-03": {
+  "real": [
+   "conduct",
+   "gradual",
+   "current",
+   "evidence",
+   "audience",
+   "convert",
+   "version",
+   "induce",
+   "progression",
+   "visitor"
+  ],
+  "fake": [
+   "zoduct",
+   "vangress",
+   "mircursal",
+   "plaudivert"
+  ],
+  "sent": [
+   "The conductor will produce a video.",
+   "We invert the grade and reverse the audio."
+  ]
+ },
+ "og4-04": {
+  "real": [
+   "transfer",
+   "interrupt",
+   "future",
+   "nervous",
+   "plastic",
+   "popular",
+   "visitor",
+   "activity",
+   "mixture",
+   "jealous"
+  ],
+  "fake": [
+   "transvolic",
+   "intermopure",
+   "zandalous",
+   "prelactor"
+  ],
+  "sent": [
+   "The famous actor had a picture.",
+   "That nature trail is dangerous."
+  ]
+ },
+ "og4-05": {
+  "real": [
+   "create",
+   "science",
+   "trial",
+   "riot",
+   "fluid",
+   "usual",
+   "ruin",
+   "idea",
+   "cereal",
+   "diary"
+  ],
+  "fake": [
+   "zuent",
+   "vialop",
+   "prioad",
+   "fluenim"
+  ],
+  "sent": [
+   "The lion and the giant are quiet.",
+   "I saw a duet on the radio."
+  ]
+ },
+ "og4-06": {
+  "real": [
+   "true",
+   "chew",
+   "juice",
+   "build",
+   "receive",
+   "either",
+   "newspaper",
+   "freight",
+   "nephew",
+   "cruise"
+  ],
+  "fake": [
+   "zuilder",
+   "vreighty",
+   "pleuzant",
+   "snuetter"
+  ],
+  "sent": [
+   "The blue fruit grew by eight trees.",
+   "My neighbor will rescue a few."
+  ]
+ },
+ "og4-07": {
+  "style": "misspelling",
+  "real": [
+   "incorrect",
+   "immobile",
+   "illogical",
+   "irrational",
+   "connect",
+   "complete",
+   "disagree",
+   "explain",
+   "subtract",
+   "discover"
+  ],
+  "fake": [
+   "inmobile",
+   "inlogical",
+   "conplete",
+   "inrational"
+  ],
+  "sent": [
+   "It is impossible to collect it all.",
+   "Do not compare an illegal and irregular plan."
+  ]
+ },
+ "og4-08": {
+  "style": "misspelling",
+  "real": [
+   "financial",
+   "ambitious",
+   "physician",
+   "gracious",
+   "essential",
+   "suspicious",
+   "official",
+   "politician",
+   "spacious",
+   "potential"
+  ],
+  "fake": [
+   "finantial",
+   "ambicious",
+   "physitian",
+   "gratious"
+  ],
+  "sent": [
+   "The musician is a cautious magician.",
+   "That special social event was delicious."
+  ]
+ },
+ "og4-09": {
+  "style": "misspelling",
+  "real": [
+   "referred",
+   "permitted",
+   "equipped",
+   "regretted",
+   "committed",
+   "transferred",
+   "patrolled",
+   "compelled",
+   "expelled",
+   "rebelled"
+  ],
+  "fake": [
+   "refered",
+   "permited",
+   "equiped",
+   "regreted"
+  ],
+  "sent": [
+   "He is forgetting the beginning.",
+   "She admitted that it occurred."
+  ]
+ },
+ "og5-01": {
+  "style": "misspelling",
+  "real": [
+   "alphabet",
+   "elephant",
+   "physical",
+   "trophy",
+   "chemistry",
+   "anchor",
+   "character",
+   "ache",
+   "mechanic",
+   "orphan"
+  ],
+  "fake": [
+   "alfabet",
+   "elefant",
+   "kemistry",
+   "ankor"
+  ],
+  "sent": [
+   "The dolphin heard an echo at school.",
+   "I saw a graph of the phone."
+  ]
+ },
+ "og5-02": {
+  "style": "misspelling",
+  "real": [
+   "gymnast",
+   "mystery",
+   "syrup",
+   "oxygen",
+   "symptom",
+   "cycle",
+   "typical",
+   "pyramid",
+   "lyric",
+   "synonym"
+  ],
+  "fake": [
+   "gimnast",
+   "mistery",
+   "oxigen",
+   "simptom"
+  ],
+  "sent": [
+   "The gym has a new system.",
+   "That style of myth is a mystery."
+  ]
+ },
+ "og5-03": {
+  "style": "misspelling",
+  "real": [
+   "rhombus",
+   "psalm",
+   "pneumonia",
+   "rhetoric",
+   "autumnal",
+   "columnist",
+   "psychology",
+   "rhapsody",
+   "solemnly",
+   "pseudonym"
+  ],
+  "fake": [
+   "rombus",
+   "salm",
+   "numonia",
+   "retoric"
+  ],
+  "sent": [
+   "The rhyme and the rhythm are good.",
+   "In autumn I read a hymn."
+  ]
+ },
+ "og5-04": {
+  "style": "misspelling",
+  "real": [
+   "geography",
+   "hydrogen",
+   "monotone",
+   "polygraph",
+   "biography",
+   "telegram",
+   "phonics",
+   "zoology",
+   "barometer",
+   "photocopy"
+  ],
+  "fake": [
+   "jeography",
+   "hidrogen",
+   "polligraph",
+   "zooligy"
+  ],
+  "sent": [
+   "I used a telescope and a microphone.",
+   "The biology autograph is on the photograph."
+  ]
+ },
+ "og5-05": {
+  "style": "misspelling",
+  "real": [
+   "chute",
+   "parachute",
+   "chandelier",
+   "mustache",
+   "boutique",
+   "plaque",
+   "technique",
+   "youth",
+   "coupon",
+   "souvenir"
+  ],
+  "fake": [
+   "parachoot",
+   "mustash",
+   "plak",
+   "yooth"
+  ],
+  "sent": [
+   "The chef made soup for the group.",
+   "That antique machine is unique."
+  ]
+ },
+ "og5-06": {
+  "style": "misspelling",
+  "real": [
+   "mother",
+   "brother",
+   "honey",
+   "wonder",
+   "nothing",
+   "dozen",
+   "company",
+   "front",
+   "among",
+   "shovel"
+  ],
+  "fake": [
+   "muther",
+   "bruther",
+   "hunny",
+   "wunder"
+  ],
+  "sent": [
+   "My mother and brother come home.",
+   "The glove is above the oven."
+  ]
+ },
+ "og5-07": {
+  "style": "misspelling",
+  "real": [
+   "worthy",
+   "worthless",
+   "workshop",
+   "worldwide",
+   "homework",
+   "network",
+   "password",
+   "worksheet",
+   "wordy",
+   "workout"
+  ],
+  "fake": [
+   "werthy",
+   "werkshop",
+   "homewerk",
+   "netwerk"
+  ],
+  "sent": [
+   "The worker will work in the world.",
+   "That word is worth a lot."
+  ]
+ },
+ "og5-08": {
+  "style": "misspelling",
+  "real": [
+   "balance",
+   "patience",
+   "village",
+   "musical",
+   "evidence",
+   "storage",
+   "personal",
+   "entrance",
+   "voyage",
+   "absence"
+  ],
+  "fake": [
+   "balence",
+   "pacience",
+   "villige",
+   "musicle"
+  ],
+  "sent": [
+   "The package has a message.",
+   "The distance to the village is final."
+  ]
+ },
+ "og5-09": {
+  "style": "misspelling",
+  "real": [
+   "thoughtful",
+   "thoughtless",
+   "naughtier",
+   "slaughter",
+   "drought",
+   "haughty",
+   "distraught",
+   "fraught",
+   "onslaught",
+   "afterthought"
+  ],
+  "fake": [
+   "thoughtfull",
+   "noughty",
+   "drowt",
+   "haughtie"
+  ],
+  "sent": [
+   "I thought I caught the ball.",
+   "She taught my daughter."
   ]
  }
 }

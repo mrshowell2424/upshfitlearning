@@ -77,6 +77,57 @@ const PATTERN = {
   "og2-13": (w) => /^(mis|sub|post)/.test(w),
   // Doubled consonant before a vowel suffix: hop + p + ing.
   "og2-14": (w) => /([bcdfghjklmnpqrstvwxz])\1(ed|ing|er|est|y)$/.test(w),
+
+  // Batch 3: Levels 3 to 5.
+  "og3-01": (w) => /[cg][eiy]/.test(w),
+  "og3-02": (w) => /(dge|ge$)/.test(w),
+  // An open first syllable, with a final y allowed: la-zy as well as ba-by.
+  "og3-03": (w) => new RegExp(`^${C}*${V}${C}[aeiouy]`).test(w),
+  "og3-04": (w) => /(oi|oy|au|aw|ie|igh)/.test(w),
+  "og3-05": (w) => /(ing|ed|er|est|y)$/.test(w),
+  "og3-06": (w) => /(ies|ied|ier|iest)/.test(w),
+  // One consonant between two vowels — the split that makes robin, not robe.
+  "og3-07": (w) => new RegExp(`${V}${C}${V}`).test(w),
+  "og3-08": (w) => /[bcdfgkpstz]le$/.test(w),
+  "og3-09": (w) => /^a|a$/.test(w),
+  "og3-10": (w) => /'/.test(w),
+  "og3-11": (w) => /(tion|sion)$/.test(w),
+  "og3-12": (w) => /(ist|able|ible|ive)$/.test(w),
+  "og3-13": (w) => /^(re|pro|pre|de)/.test(w),
+  "og4-01": (w) => /(form|port|tract|rupt|scrib|script)/.test(w),
+  "og4-02": (w) => /(spec|struct|flect|flex|mit|miss|ject)/.test(w),
+  "og4-03": (w) => /(duc|grad|gress|cur|vid|vis|aud|vert|vers)/.test(w),
+  "og4-04": (w) => /^(trans|inter)/.test(w) || /(ure|ous|ic|ar|or|ity)$/.test(w),
+  // Two vowels that belong to different syllables: ne-on, du-et.
+  "og4-05": (w) => new RegExp(`${V}${V}`).test(w),
+  "og4-06": (w) => /(ue|ei|eu|ew|eigh|ui)/.test(w),
+  "og4-07": (w) => /^(in|im|il|ir|con|com|dis|ex|sub)/.test(w),
+  "og4-08": (w) => /(tian|tial|tious|cian|cial|cious)$/.test(w),
+  "og4-09": (w) => /([bcdfghjklmnpqrstvwxz])\1(ed|ing|er)$/.test(w) || /(ed|ing|er)$/.test(w),
+  "og5-01": (w) => /(ph|ch|f|k)/.test(w),
+  "og5-02": (w) => /[yi]/.test(w),
+  "og5-03": (w) => /(rh|mn|pn|ps|r|m|n|s)/.test(w),
+  "og5-04": (w) => /(phon|tele|photo|bio|graph|ology|meter|geo|hydro|mono|poly|fon|graf|lig)/.test(w),
+  "og5-05": (w) => /(ch|ou|que|sh|oo|k)/.test(w),
+  "og5-06": (w) => /[ou]/.test(w),
+  "og5-07": (w) => /(wor|wer)/.test(w),
+  "og5-08": (w) => /(al|age|ance|ence|el|ence|ige|le)$/.test(w),
+  "og5-09": (w) => /(aught|ought)/.test(w),
+};
+
+/**
+ * How far apart two spellings are. Used only for the misspelling skills,
+ * where a made-up word has to be a wrong spelling of a word in the lesson
+ * and not just any invention: alfabet earns its place next to alphabet,
+ * zaxquel does not.
+ */
+const distance = (a, b) => {
+  const d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
+  for (let j = 0; j <= b.length; j++) d[0][j] = j;
+  for (let i = 1; i <= a.length; i++)
+    for (let j = 1; j <= b.length; j++)
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+  return d[a.length][b.length];
 };
 
 /** The possessive is never in the list, so it comes off before any lookup. */
@@ -137,8 +188,25 @@ for (const [sid, v] of Object.entries(EXTRA)) {
     seenReal.add(key);
   }
 
+  // The Greek, French, connective and doubling lessons do not use nonsense.
+  // Their made-up column is the wrong spelling of a real word, because the
+  // question those lessons ask is which spelling is right — so alfabet and
+  // werk belong there, and a word invented out of nothing does not.
+  const misspelling = v.style === "misspelling";
+
   for (const w of v.fake || []) {
     fakeN++;
+    if (misspelling) {
+      const near = (v.real || []).map((r) => distance(w.toLowerCase(), r.toLowerCase()));
+      const best = Math.min(...near);
+      if (best > 3)
+        problems.push(`${sid}: "${w}" is not a misspelling of anything in the lesson (nearest is ${best} edits away)`);
+      // web2 carries archaic spellings — ryme, tought — so a hit here is
+      // something to look at, not a failure: being an old spelling of the
+      // word is exactly what makes it a good distractor.
+      if (WORDS.has(bare(w))) warnings.push(`${sid}: misspelling "${w}" is in the dictionary — check it still reads as wrong`);
+      continue;
+    }
     if (WORDS.has(bare(w))) problems.push(`${sid}: made-up "${w}" is a real word`);
     if (!fits(w)) problems.push(`${sid}: made-up "${w}" does not match the pattern`);
     if (!sayable(w)) problems.push(`${sid}: made-up "${w}" is not sayable`);
