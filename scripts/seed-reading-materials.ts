@@ -402,7 +402,13 @@ const ADAPTATIONS: Adaptation[] = [
           "          // the change to make; the child writes the new word on the line.\n" +
           "          const cut = lead.split(/\\s*(?:\u2192|\u2014|->|:)\\s*/);\n" +
           "          const from = cut.length > 1 ? cut[0].trim() : '';\n" +
-          "          return { n: i + 1, from, hasFrom: !!from, t: cut.slice(1).join(' ').trim() || lead,\n" +
+          "          const change = cut.slice(1).join(' ').trim() || lead;\n" +
+          "          // The key prints the word the teacher says and the change to\n" +
+          "          // make, because without them it shows an answer with nothing to\n" +
+          "          // get there from. The student's copy keeps both blank: hearing\n" +
+          "          // the word is the activity.\n" +
+          "          return { n: i + 1, from, hasFrom: !!from, t: change,\n" +
+          "            fromShown: isKey ? from : '', changeShown: isKey ? change : 'change',\n" +
           "            ans: isKey ? (parts[1] || '').trim() : '' }; });\n" +
           anchor
       );
@@ -451,9 +457,9 @@ const ADAPTATIONS: Adaptation[] = [
         '        <sc-for list="{{ p.paItems }}" as="x" hint-placeholder-count="5">\n' +
         '          <div style="display:flex;align-items:flex-end;gap:10px;font-size:16px;font-weight:700">' +
         '<span style="flex:none;width:18px">{{ x.n }}.</span>' +
-        LINE.replace("min-height:34px", "min-height:40px") + "</span>" +
-        '<span style="flex:none;font-size:13px;font-weight:700;color:#57534e;padding:0 4px">' +
-        "change</span>" +
+        LINE.replace("min-height:34px", "min-height:40px") + "{{ x.fromShown }}</span>" +
+        '<span style="flex:none;font-size:12.5px;font-weight:700;color:#57534e;padding:0 4px;' +
+        'white-space:nowrap">{{ x.changeShown }}</span>' +
         LINE.replace("min-height:34px", "min-height:40px") + "{{ x.ans }}</span></div>\n" +
         "        </sc-for>\n" +
         "      </div></sc-if>\n" +
