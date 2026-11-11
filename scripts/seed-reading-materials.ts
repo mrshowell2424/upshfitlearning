@@ -410,6 +410,13 @@ const ADAPTATIONS: Adaptation[] = [
           "          return { n: i + 1, from, hasFrom: !!from, t: change,\n" +
           "            fromShown: isKey ? from : '', changeShown: isKey ? change : 'change',\n" +
           "            ans: isKey ? (parts[1] || '').trim() : '' }; });\n" +
+          "        // What says: the sound the teacher makes, and the letters\n" +
+          "        // that spell it. The lesson card runs it orally at step 3;\n" +
+          "        // on paper it is the same drill with somewhere to write.\n" +
+          "        const wsItems = (whatSays || []).slice(0, 6).map((t, i) => {\n" +
+          "          const q = String(t).split('? (')[0].replace(/^What says\\s*/, '').trim();\n" +
+          "          const a = (String(t).split('? (')[1] || '').replace(/\\)\\s*$/, '').trim();\n" +
+          "          return { n: i + 1, q, ans: isKey ? a : '' }; });\n" +
           anchor
       );
       const tail = "          sbBox: { ...p.decBox, display: sbRows.length && show(isKey ? 'key' : 'wb') ? 'flex' : 'none' }, sbRows }; })";
@@ -418,6 +425,7 @@ const ADAPTATIONS: Adaptation[] = [
         tail,
         "          encBox: { ...p.decBox, display: encOn ? 'flex' : 'none' },\n" +
           "          paItems, hasPa: paItems.length > 0, paDir: (paA && paA[1]) || '',\n" +
+          "          wsItems, hasWs: wsItems.length > 0,\n" +
           "          spellWords: Array.from({ length: 10 }, (_, i) => " +
           "({ n: i + 1, ans: isKey ? (real[i] || '') : '' })),\n" +
           "          dictSents: Array.from({ length: 2 }, (_, i) => " +
@@ -463,9 +471,22 @@ const ADAPTATIONS: Adaptation[] = [
         LINE.replace("min-height:34px", "min-height:40px") + "{{ x.ans }}</span></div>\n" +
         "        </sc-for>\n" +
         "      </div></sc-if>\n" +
+        // What says: the sound, then the letters that spell it
+        '      <sc-if value="{{ p.hasWs }}" hint-placeholder-val="{{ true }}">\n' +
+        '      <div style="display:flex;flex-direction:column;gap:8px;break-inside:avoid;page-break-inside:avoid">\n' +
+        "        " + H("2", "What says? Your teacher says the sound. Write the letters that spell it.") + "\n" +
+        '        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 22px">\n' +
+        '          <sc-for list="{{ p.wsItems }}" as="x" hint-placeholder-count="6">\n' +
+        '            <div style="display:flex;align-items:flex-end;gap:10px;font-size:16px;font-weight:700">' +
+        '<span style="flex:none;width:18px">{{ x.n }}.</span>' +
+        '<span style="flex:none;font-size:18px;font-weight:800;white-space:nowrap">What says {{ x.q }}?</span>' +
+        LINE + "{{ x.ans }}</span></div>\n" +
+        "          </sc-for>\n" +
+        "        </div>\n" +
+        "      </div></sc-if>\n" +
         // Spelling: ten words
         '      <div style="display:flex;flex-direction:column;gap:8px;break-inside:avoid;page-break-inside:avoid">\n' +
-        "        " + H("2", "Spelling (encoding). Say the word, tap each sound, then write it.") + "\n" +
+        "        " + H("3", "Spelling (encoding). Say the word, tap each sound, then write it.") + "\n" +
         '        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 22px">\n' +
         '          <sc-for list="{{ p.spellWords }}" as="d" hint-placeholder-count="10">\n' +
         "            " + ROW + '<span style="flex:none;width:18px">{{ d.n }}.</span>' +
@@ -476,7 +497,7 @@ const ADAPTATIONS: Adaptation[] = [
         // Dictation: its own section
         '      <div style="display:flex;flex-direction:column;gap:8px;flex:1;break-inside:avoid;' +
         'page-break-inside:avoid;border:2px solid #2F5E7A;border-radius:12px;padding:12px 16px">\n' +
-        "        " + H("3", "Dictation. Write the whole sentence your teacher says. Two sentences.") + "\n" +
+        "        " + H("4", "Dictation. Write the whole sentence your teacher says. Two sentences.") + "\n" +
         '        <sc-for list="{{ p.dictSents }}" as="d" hint-placeholder-count="2">\n' +
         '          <div style="display:flex;align-items:flex-start;gap:8px;font-size:17px;font-weight:700">' +
         '<span style="flex:none;padding-top:18px">{{ d.n }}.</span>' +
@@ -833,7 +854,8 @@ const ADAPTATIONS: Adaptation[] = [
       if (!out.includes(anchor)) return html;
       const chips =
         "      ...(() => {\n" +
-        "        const PCH = [['wb', '\u{1F4DD} Workbook'], ['spl2', '\u270F\uFE0F Spelling \u00b7 2nd'], " +
+        "        const PCH = [['wb', '\u{1F4DD} Workbook'], ['key', '\u2705 Answer key'], " +
+        "['spl2', '\u270F\uFE0F Spelling \u00b7 2nd'], " +
         "['spl3', '\u{1F58A}\uFE0F Spelling \u00b7 3rd'], ['games', '\u{1F3B2} Word games']];\n" +
         "        const off = POFF;\n" +
         "        const picked = PCH.map(([k]) => k).filter((k) => !off.includes(k));\n" +
@@ -856,6 +878,10 @@ const ADAPTATIONS: Adaptation[] = [
     // piece lit, click to drop one, one button to print what is left. That
     // replaces six separate print buttons, and the old Print all, which the
     // chips say better by simply being on.
+    //
+    // The answer key is one of those chips and starts lit, so one run
+    // prints the workbook and its key together — which is how a teacher
+    // uses them. Clicking it off prints the children's copies alone.
     name: "put the print chooser on the workbook bar",
     apply: (html) => {
       const toggle =
