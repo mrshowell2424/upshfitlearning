@@ -1311,6 +1311,79 @@ const ADAPTATIONS: Adaptation[] = [
     },
   },
   {
+    // Ten words a day, Monday to Friday.
+    //
+    // The packet already asks a child to read ten words once and tick them
+    // off. Reading the same ten every day is what builds the fluency, and it
+    // gives them something the rest of the workbook does not: a number on
+    // Monday and a bigger one on Friday, in their own hand.
+    //
+    // The ten are the skill's own words — the same list the "Read each word"
+    // page uses — so the week's practice and the week's lesson are the same
+    // words, and it goes in front of everything else because it is the five
+    // minutes a lesson opens with.
+    name: "open the workbook with ten words a day",
+    apply: (html) => {
+      const anchor =
+        '<sc-for list="{{ wbPages }}" as="p" hint-placeholder-count="2">\n' +
+        '    <div data-wb="true" style="{{ p.box1 }}">';
+      if (!html.includes(anchor)) return html;
+      const page =
+        "<div data-wb=\"true\" style=\"{{ p.box1 }}\">\n" +
+        "      <div style=\"display:flex;justify-content:space-between;align-items:flex-end;gap:12px;border-bottom:3px solid #4B6049;padding-bottom:8px\">\n" +
+        "        <div>\n" +
+        "          <div style=\"font-family:Outfit,sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;color:#618459\">TEN WORDS A DAY</div>\n" +
+        "          <div style=\"font-size:26px;font-weight:800;color:#2F3E2E;line-height:1.1\">{{ sk.label }}</div>\n" +
+        "        </div>\n" +
+        "        <div style=\"font-size:14px;font-weight:600;white-space:nowrap\">Name ____________  Week ______</div>\n" +
+        "      </div>\n" +
+        "      <div style=\"font-size:14px;line-height:1.45;background:#FDF6E7;border:1.5px solid #E4D3A8;border-radius:8px;padding:7px 12px\">Read all ten words out loud every day. Tick each one you read right the first time. Count your ticks and write the score at the bottom.</div>\n" +
+        "      <div style=\"display:flex;flex-direction:column;gap:5px\">\n" +
+        "        <div style=\"display:flex;gap:6px;align-items:center;font-family:Outfit,sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;color:#618459\">\n" +
+        "          <span style=\"flex:0 0 38%\"></span>\n" +
+        "          <span style=\"flex:1;text-align:center\">MON</span>\n" +
+        "          <span style=\"flex:1;text-align:center\">TUE</span>\n" +
+        "          <span style=\"flex:1;text-align:center\">WED</span>\n" +
+        "          <span style=\"flex:1;text-align:center\">THU</span>\n" +
+        "          <span style=\"flex:1;text-align:center\">FRI</span>\n" +
+        "        </div>\n" +
+        "        <sc-for list=\"{{ wbReal }}\" as=\"w\" hint-placeholder-count=\"10\">\n" +
+        "          <div style=\"display:flex;gap:6px;align-items:center\">\n" +
+        "            <span style=\"flex:0 0 38%;font-size:17px;font-weight:600;color:#111;white-space:nowrap\">{{ w }}</span>\n" +
+        "            <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1\"></span>\n" +
+        "            <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1\"></span>\n" +
+        "            <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1\"></span>\n" +
+        "            <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1\"></span>\n" +
+        "            <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1\"></span>\n" +
+        "          </div>\n" +
+        "        </sc-for>\n" +
+        "        <div style=\"display:flex;gap:6px;align-items:center;border-top:2px solid #111;padding-top:6px\">\n" +
+        "          <span style=\"flex:0 0 38%;font-size:15px;font-weight:800;color:#2F3E2E\">Score out of 10</span>\n" +
+        "          <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1;height:32px\"></span>\n" +
+        "          <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1;height:32px\"></span>\n" +
+        "          <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1;height:32px\"></span>\n" +
+        "          <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1;height:32px\"></span>\n" +
+        "          <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1;height:32px\"></span>\n" +
+        "        </div>\n" +
+        "      </div>\n" +
+        "      <div style=\"display:flex;flex-direction:column;gap:7px;border:2px dashed #111;border-radius:10px;padding:9px 12px;break-inside:avoid;page-break-inside:avoid\">\n" +
+        "        <div style=\"font-size:15px;font-weight:800;color:#2F3E2E\">How did I grow this week?</div>\n" +
+        "        <div style=\"font-size:15px\">Monday I read <span style=\"display:inline-block;width:48px;border-bottom:2px solid #111\"></span> of 10. Friday I read <span style=\"display:inline-block;width:48px;border-bottom:2px solid #111\"></span> of 10.</div>\n" +
+        "        <div style=\"font-size:15px\">That is <span style=\"display:inline-block;width:48px;border-bottom:2px solid #111\"></span> more than on Monday.</div>\n" +
+        "        <div style=\"font-size:14px;color:#57534E\">The word that got easiest: <span style=\"display:inline-block;width:150px;border-bottom:2px solid #111\"></span></div>\n" +
+        "        <div style=\"font-size:14px;color:#57534E\">The word I still want to practise: <span style=\"display:inline-block;width:150px;border-bottom:2px solid #111\"></span></div>\n" +
+        "      </div>\n" +
+        "    </div>\n" +
+        "    ";
+      return html.replace(
+        anchor,
+        '<sc-for list="{{ wbPages }}" as="p" hint-placeholder-count="2">\n    ' +
+          page +
+          '<div data-wb="true" style="{{ p.box1 }}">'
+      );
+    },
+  },
+  {
     // One arrow revealed the student pages and the answer key together, which
     // is the wrong shape for the job: a teacher prints the workbook for the
     // class and opens the key on their own screen. Two bars, each with its
