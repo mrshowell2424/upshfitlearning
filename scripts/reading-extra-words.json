@@ -1,0 +1,407 @@
+{
+ "_note": "Batch 1. For each skill: ten more real words on the pattern, four multisyllabic made-up words that are decodable and are not real words, and two more sentences so dictation and the partner read never share one. Checked by scripts/check-extra-words.mjs against /usr/share/dict/words and a pattern test per skill. 'fix' replaces made-up words that turned out to be real English words.",
+ "cvc-a": {
+  "real": [
+   "bag",
+   "can",
+   "dad",
+   "hat",
+   "lap",
+   "mad",
+   "nap",
+   "rat",
+   "van",
+   "wax"
+  ],
+  "fake": [
+   "vansad",
+   "hadtap",
+   "ranlat",
+   "bagnam"
+  ],
+  "fix": {
+   "tam": "dav",
+   "dag": "vap",
+   "jat": "nass"
+  },
+  "sent": [
+   "Dad ran to the van.",
+   "A fat rat sat on my lap."
+  ]
+ },
+ "cvc-mix": {
+  "real": [
+   "sit",
+   "job",
+   "cup",
+   "leg",
+   "big",
+   "box",
+   "sun",
+   "web",
+   "him",
+   "rock"
+  ],
+  "fake": [
+   "zinlop",
+   "fepmud",
+   "rupnet",
+   "lodbin"
+  ],
+  "fix": {
+   "lod": "vib"
+  },
+  "sent": [
+   "The pup dug in the mud.",
+   "Jen put six eggs in a pot."
+  ]
+ },
+ "dig": {
+  "real": [
+   "shell",
+   "chip",
+   "that",
+   "whip",
+   "dish",
+   "rich",
+   "bath",
+   "shut",
+   "chop",
+   "them"
+  ],
+  "fake": [
+   "shipnoth",
+   "chatwhib",
+   "thinshup",
+   "whenchad"
+  ],
+  "fix": {
+   "shap": "shom",
+   "chen": "shom",
+   "whup": "whib"
+  },
+  "sent": [
+   "Chad will shut the shop.",
+   "The fish swam in the thin ship."
+  ]
+ },
+ "floss": {
+  "real": [
+   "fill",
+   "huff",
+   "pass",
+   "jazz",
+   "tell",
+   "cuff",
+   "toss",
+   "well",
+   "miss",
+   "sell"
+  ],
+  "fake": [
+   "bifftull",
+   "mazzjell",
+   "gussmiff",
+   "nellpuzz"
+  ],
+  "fix": {
+   "biff": "zoff",
+   "jess": "dall"
+  },
+  "sent": [
+   "Bill will toss the ball well.",
+   "Jess had to pass the bell."
+  ]
+ },
+ "blends": {
+  "real": [
+   "plan",
+   "slip",
+   "drum",
+   "grab",
+   "swim",
+   "nest",
+   "lamp",
+   "hand",
+   "desk",
+   "stamp"
+  ],
+  "fake": [
+   "blimstug",
+   "frapnisk",
+   "clendrob",
+   "slagtrup"
+  ],
+  "fix": {
+   "stug": "blig",
+   "frap": "drell"
+  },
+  "sent": [
+   "Stan lost his black belt.",
+   "The frog slid past the damp log."
+  ]
+ },
+ "vce": {
+  "real": [
+   "gate",
+   "ride",
+   "note",
+   "tube",
+   "late",
+   "hive",
+   "rope",
+   "june",
+   "tape",
+   "wide"
+  ],
+  "fake": [
+   "vopedake",
+   "mipefute",
+   "zalegine",
+   "pokelune"
+  ],
+  "fix": {
+   "fute": "zide"
+  },
+  "sent": [
+   "Jane rode her bike up the lane.",
+   "Pete ate a slice of lime cake."
+  ]
+ },
+ "vccv": {
+  "real": [
+   "mitten",
+   "ribbon",
+   "button",
+   "hidden",
+   "traffic",
+   "contest",
+   "plastic",
+   "invent",
+   "velvet",
+   "helmet"
+  ],
+  "fake": [
+   "tadlin",
+   "rompet",
+   "wimbus",
+   "nasket"
+  ],
+  "sent": [
+   "The kitten sat in a basket.",
+   "We had a picnic at sunset."
+  ]
+ },
+ "vccvce": {
+  "real": [
+   "sunrise",
+   "costume",
+   "bedtime",
+   "classmate",
+   "complete",
+   "confuse",
+   "landslide",
+   "campfire",
+   "handshake",
+   "stovepipe"
+  ],
+  "fake": [
+   "zomtike",
+   "bindate",
+   "plemvote",
+   "crumtale"
+  ],
+  "sent": [
+   "We ate a cupcake by the campfire.",
+   "Do not confuse the costume with mine."
+  ]
+ },
+ "ng-nk": {
+  "real": [
+   "ring",
+   "sank",
+   "king",
+   "wink",
+   "song",
+   "drink",
+   "swing",
+   "trunk",
+   "blank",
+   "spring"
+  ],
+  "fake": [
+   "vangzung",
+   "tonkmink",
+   "plingdank",
+   "strunkbong"
+  ],
+  "fix": {
+   "vang": "zong",
+   "mink": "plonk",
+   "tonk": "shing"
+  },
+  "sent": [
+   "The king sang a long song.",
+   "I think the pink drink is strong."
+  ]
+ },
+ "ck-tch": {
+  "real": [
+   "back",
+   "kick",
+   "lock",
+   "pitch",
+   "patch",
+   "truck",
+   "stick",
+   "clock",
+   "ditch",
+   "stretch"
+  ],
+  "fake": [
+   "zeckvatch",
+   "plockmitch",
+   "brackfetch",
+   "snickdotch"
+  ],
+  "fix": {
+   "plock": "drock",
+   "mitch": "dritch"
+  },
+  "sent": [
+   "Jack will catch the black duck.",
+   "The clock fell in the ditch."
+  ]
+ },
+ "y": {
+  "real": [
+   "why",
+   "shy",
+   "dry",
+   "sunny",
+   "puppy",
+   "city",
+   "baby",
+   "lucky",
+   "sleepy",
+   "party"
+  ],
+  "fake": [
+   "blyzappy",
+   "mipsydry",
+   "frynolly",
+   "stybinky"
+  ],
+  "fix": {
+   "dry": "vly"
+  },
+  "sent": [
+   "The puppy is happy and shy.",
+   "My baby sister had a sunny day."
+  ]
+ },
+ "ai-ay": {
+  "real": [
+   "nail",
+   "chain",
+   "brain",
+   "sail",
+   "trail",
+   "away",
+   "today",
+   "clay",
+   "spray",
+   "crayon"
+  ],
+  "fake": [
+   "zailblay",
+   "fraimstay",
+   "draintay",
+   "plaimnay"
+  ],
+  "fix": {
+   "blay": "zaim",
+   "stay": "praith"
+  },
+  "sent": [
+   "We will play in the rain today.",
+   "The snail left a trail on the clay."
+  ]
+ },
+ "ee-ea": {
+  "real": [
+   "seed",
+   "queen",
+   "wheel",
+   "cheek",
+   "speech",
+   "meal",
+   "leaf",
+   "peach",
+   "steam",
+   "repeat"
+  ],
+  "fake": [
+   "fleeppleam",
+   "sneetvead",
+   "greabsteen",
+   "cheampreed"
+  ],
+  "sent": [
+   "The queen ate a sweet peach.",
+   "I read in bed and fell asleep."
+  ]
+ },
+ "oa-ow": {
+  "real": [
+   "toad",
+   "float",
+   "coach",
+   "throat",
+   "toast",
+   "yellow",
+   "pillow",
+   "window",
+   "elbow",
+   "shadow"
+  ],
+  "fake": [
+   "zoatbroam",
+   "flowplow",
+   "groabshow",
+   "snoadtrow"
+  ],
+  "fix": {
+   "flow": "snoat",
+   "plow": "froal"
+  },
+  "sent": [
+   "The goat ate oats by the road.",
+   "Snow fell slow on the yellow boat."
+  ]
+ },
+ "ar-or": {
+  "real": [
+   "card",
+   "hard",
+   "yard",
+   "sharp",
+   "start",
+   "born",
+   "sort",
+   "north",
+   "porch",
+   "garden"
+  ],
+  "fake": [
+   "darmor",
+   "marbtorp",
+   "charnfort",
+   "sparkdorm"
+  ],
+  "sent": [
+   "The shark swam far from the port.",
+   "We park the cart by the barn."
+  ]
+ }
+}

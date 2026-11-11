@@ -21,6 +21,7 @@ import SPLITS from "./reading-skill-splits.json" with { type: "json" };
 import PARTW from "./reading-part-words.json" with { type: "json" };
 import SENT3 from "./reading-third-sentences.json" with { type: "json" };
 import AICOACH from "./reading-ai-writing-coach.json" with { type: "json" };
+import EXTRAW from "./reading-extra-words.json" with { type: "json" };
 import { db } from "@/lib/db";
 import { reading_materials } from "@/lib/db/schema";
 import { inArray, sql } from "drizzle-orm";
@@ -1639,6 +1640,45 @@ const ADAPTATIONS: Adaptation[] = [
           "border:1.5px solid #618459;' + (revMulti " +
           "? 'background:#618459;color:#fff' : 'background:#fff;color:#618459'),"
       );
+    },
+  },
+  {
+    // More words, so a child does not meet the same ten everywhere.
+    //
+    // Each skill shipped with exactly ten real words, and every section that
+    // shows words drew from those ten: the reading list, real-or-made-up,
+    // the spelling test, the tracker, On level. There was nothing to rotate
+    // to — the only fix was to write more, checked by
+    // scripts/check-extra-words.mjs rather than by eye.
+    //
+    // The batch also carries two things that check turned up. Twenty-two of
+    // the sixty made-up words were real English words, five common enough
+    // that a child would know them — dry, stay, flow, plow, mink — each
+    // printed "M" for made-up on the key; `fix` swaps those. And the
+    // multisyllabic switch left the made-up words short while the real ones
+    // grew, so `fake` carries multisyllabic non-words for when it is on.
+    //
+    // Everything hangs off the destructure rather than off isMulti, which is
+    // declared further down: hooking the later line put the lists out of
+    // scope and the page would not render at all.
+    name: "widen the word and sentence banks",
+    apply: (html) => {
+      const decl =
+        "const [id, label0, level, story0, rule, build, realAll, nonsenseAll, heart0, dictAll] = cur;";
+      if (!html.includes(decl)) return html;
+      const bank =
+        "let [id, label0, level, story0, rule, build, realAll, nonsenseAll, heart0, dictAll] = cur;\n" +
+        "    const EXTRAW = " + JSON.stringify(EXTRAW) + ";\n" +
+        "    const exW = EXTRAW[id] || {};\n" +
+        "    const multiOn = !!(this.state && this.state.multi);\n" +
+        "    // The ten a teacher already knows stay at the top of every list;\n" +
+        "    // the new ones follow them.\n" +
+        "    realAll = realAll.concat((exW.real || []).filter((w) => realAll.indexOf(w) === -1));\n" +
+        "    nonsenseAll = multiOn && (exW.fake || []).length\n" +
+        "      ? exW.fake.slice()\n" +
+        "      : nonsenseAll.map((w) => (exW.fix || {})[w] || w);\n" +
+        "    dictAll = dictAll.concat((exW.sent || []).filter((q) => dictAll.indexOf(q) === -1));";
+      return html.replace(decl, bank);
     },
   },
 ];
