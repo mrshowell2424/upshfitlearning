@@ -1570,6 +1570,77 @@ const ADAPTATIONS: Adaptation[] = [
       return out;
     },
   },
+  {
+    // A review switch of its own.
+    //
+    // The lesson's multisyllabic switch now carries the review with it, which
+    // is right most of the time and wrong when a teacher wants the lesson in
+    // longer words and the review in the words the class first met them in —
+    // or the reverse, a single-syllable lesson with multisyllabic review to
+    // stretch it. So review gets its own button, sitting with the review
+    // dropdowns, and the lesson switch no longer reaches it.
+    name: "give the review its own multisyllabic switch",
+    apply: (html) => {
+      const rev =
+        "wbReview: review.flatMap((r) => (isMulti && (MULTI[r[0]] || []).length " +
+        "? MULTI[r[0]] : r[6]).slice(0, Math.ceil(10 / review.length))).slice(0, 10),";
+      if (!html.includes(rev)) return html;
+      let out = html.replace(
+        rev,
+        "wbReview: review.flatMap((r) => (revMulti && (MULTI[r[0]] || []).length " +
+          "? MULTI[r[0]] : r[6]).slice(0, Math.ceil(10 / review.length))).slice(0, 10),"
+      );
+
+      const flag = "const isMulti = !!(this.state && this.state.multi)";
+      if (!out.includes(flag)) return html;
+      out = out.replace(
+        flag,
+        flag + ";\n    const revMulti = !!(this.state && this.state.revmulti)"
+      );
+
+      // the button, next to the review dropdowns it governs
+      const label =
+        '<span style="font-family:Outfit,sans-serif;font-size:14px;font-weight:700;' +
+        'color:#2F3E2E;white-space:nowrap">Review past concepts</span>';
+      if (!out.includes(label)) return html;
+      out = out.replace(
+        label,
+        label +
+          '\n        <button type="button" onClick="{{ toggleRevMulti }}" ' +
+          'style="{{ revMultiBtn }}">{{ revMultiLbl }}</button>'
+      );
+      const grid =
+        'style="display:grid;grid-template-columns:auto repeat(3,minmax(0,1fr));align-items:center;' +
+        'gap:8px;background:#F6F8F4;border:1.5px solid #C9D3C4;border-radius:10px;padding:8px 12px"';
+      if (!out.includes(grid)) return html;
+      out = out.replace(
+        grid,
+        'style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:#F6F8F4;' +
+          'border:1.5px solid #C9D3C4;border-radius:10px;padding:8px 12px"'
+      );
+      const picks = '<sc-for list="{{ reviewPicks }}" as="rp" hint-placeholder-count="3">';
+      if (!out.includes(picks)) return html;
+      out = out.replace(
+        picks,
+        picks.replace("<sc-for", '<sc-for style="flex:1 1 150px;min-width:0"')
+      );
+
+      // and the state it toggles
+      const anchor = "toggleHeart: () => setF('heart', !FS.heart),";
+      if (!out.includes(anchor)) return html;
+      return out.replace(
+        anchor,
+        anchor +
+          "\n      toggleRevMulti: () => this.setState({ revmulti: !revMulti }),\n" +
+          "      revMultiLbl: revMulti ? '\u{1F9D7} Review: multisyllabic' " +
+          ": '\u{1F9D7} Review: single syllable',\n" +
+          "      revMultiBtn: 'font-family:Poppins,sans-serif;font-size:12.5px;font-weight:700;" +
+          "cursor:pointer;border-radius:8px;padding:5px 10px;white-space:nowrap;" +
+          "border:1.5px solid #618459;' + (revMulti " +
+          "? 'background:#618459;color:#fff' : 'background:#fff;color:#618459'),"
+      );
+    },
+  },
 ];
 
 /**
