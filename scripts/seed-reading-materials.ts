@@ -1671,6 +1671,9 @@ const ADAPTATIONS: Adaptation[] = [
         "    const EXTRAW = " + JSON.stringify(EXTRAW) + ";\n" +
         "    const exW = EXTRAW[id] || {};\n" +
         "    const multiOn = !!(this.state && this.state.multi);\n" +
+        "    // A shipped word that is off its own skill's pattern is swapped\n" +
+        "    // first: the open-syllable list printed hen and got.\n" +
+        "    realAll = realAll.map((w) => (exW.realfix || {})[w] || w);\n" +
         "    // The ten a teacher already knows stay at the top of every list;\n" +
         "    // the new ones follow them.\n" +
         "    realAll = realAll.concat((exW.real || []).filter((w) => realAll.indexOf(w) === -1));\n" +

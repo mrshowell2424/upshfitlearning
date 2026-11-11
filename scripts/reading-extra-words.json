@@ -1,5 +1,5 @@
 {
- "_note": "Batch 1. For each skill: ten more real words on the pattern, four multisyllabic made-up words that are decodable and are not real words, and two more sentences so dictation and the partner read never share one. Checked by scripts/check-extra-words.mjs against /usr/share/dict/words and a pattern test per skill. 'fix' replaces made-up words that turned out to be real English words.",
+ "_note": "Batches 1 and 2. For each skill: ten more real words on the pattern, four multisyllabic made-up words that are decodable and are not real words, and two more sentences so dictation and the partner read never share one. Checked by scripts/check-extra-words.mjs against /usr/share/dict/words and a pattern test per skill. 'fix' replaces made-up words that turned out to be real English words. 'realfix' replaces a shipped real word that is off the skill's pattern.",
  "cvc-a": {
   "real": [
    "bag",
@@ -402,6 +402,414 @@
   "sent": [
    "The shark swam far from the port.",
    "We park the cart by the barn."
+  ]
+ },
+ "og1-02": {
+  "real": [
+   "robot",
+   "tiger",
+   "music",
+   "paper",
+   "open",
+   "begin",
+   "bacon",
+   "hotel",
+   "pilot",
+   "zero"
+  ],
+  "fake": [
+   "vuto",
+   "zabo",
+   "pevo",
+   "lodo"
+  ],
+  "fix": {
+   "fo": "vo"
+  },
+  "realfix": {
+   "hen": "she",
+   "got": "flu"
+  },
+  "sent": [
+   "The robot and the tiger go.",
+   "She can begin the music now."
+  ]
+ },
+ "og1-03": {
+  "real": [
+   "rub",
+   "ten",
+   "sun",
+   "mop",
+   "let",
+   "nut",
+   "gum",
+   "rip",
+   "bat",
+   "fog"
+  ],
+  "fake": [
+   "vamlid",
+   "zubtep",
+   "dilnog",
+   "pevtam"
+  ],
+  "sent": [
+   "The pig had a big nap.",
+   "Dad let the dog run."
+  ]
+ },
+ "og1-04": {
+  "real": [
+   "kick",
+   "lick",
+   "pack",
+   "cot",
+   "cub",
+   "kept",
+   "luck",
+   "sick",
+   "deck",
+   "cap"
+  ],
+  "fake": [
+   "cadtick",
+   "kelmock",
+   "nockfid",
+   "zuckem"
+  ],
+  "sent": [
+   "Jack kept the duck in a sock.",
+   "The kid can kick the rock."
+  ]
+ },
+ "og1-06": {
+  "real": [
+   "exit",
+   "taxi",
+   "next",
+   "text",
+   "quilt",
+   "queen",
+   "quill",
+   "relax",
+   "exam",
+   "oxen"
+  ],
+  "fake": [
+   "quimtax",
+   "zaxquel",
+   "quobnix",
+   "nixquom"
+  ],
+  "fix": {
+   "quib": "quog"
+  },
+  "sent": [
+   "The queen will quit the quiz.",
+   "Max put six boxes by the exit."
+  ]
+ },
+ "og1-10": {
+  "real": [
+   "pins",
+   "legs",
+   "nets",
+   "kids",
+   "rugs",
+   "caps",
+   "jobs",
+   "tubs",
+   "hens",
+   "mops"
+  ],
+  "fake": [
+   "zablits",
+   "vomdags",
+   "miptens",
+   "lufgops"
+  ],
+  "sent": [
+   "The hens sit in the nests.",
+   "Ben taps the drums and claps."
+  ]
+ },
+ "og1-11": {
+  "real": [
+   "Jan's",
+   "Tom's",
+   "Pat's",
+   "Meg's",
+   "Rob's",
+   "bug's",
+   "fox's",
+   "duck's",
+   "kid's",
+   "pup's"
+  ],
+  "fake": [
+   "Zomlit's",
+   "Vabdep's",
+   "Miftang's",
+   "Pelnub's"
+  ],
+  "fix": {
+   "vog's": "vob's"
+  },
+  "sent": [
+   "Tom's cat sat on Meg's lap.",
+   "The pup's bed is by Dad's desk."
+  ]
+ },
+ "og1-13": {
+  "real": [
+   "unpin",
+   "unfed",
+   "unlit",
+   "unbend",
+   "unload",
+   "unwell",
+   "unhook",
+   "undress",
+   "unsaid",
+   "unrest"
+  ],
+  "fake": [
+   "unblig",
+   "nonvask",
+   "unglot",
+   "nondrep"
+  ],
+  "sent": [
+   "Unzip the bag and unpack the lunch.",
+   "The nonstop rain made the path unfit."
+  ]
+ },
+ "og2-06": {
+  "real": [
+   "mild",
+   "bold",
+   "host",
+   "blind",
+   "told",
+   "sold",
+   "post",
+   "scold",
+   "grind",
+   "colt"
+  ],
+  "fake": [
+   "zoldrind",
+   "mildnost",
+   "poltgind",
+   "snostkild"
+  ],
+  "sent": [
+   "The bold child told a wild tale.",
+   "Most of the gold is cold."
+  ]
+ },
+ "og2-07": {
+  "real": [
+   "knife",
+   "knight",
+   "kneel",
+   "wrong",
+   "wreck",
+   "wrench",
+   "sigh",
+   "thigh",
+   "lamb",
+   "comb"
+  ],
+  "fake": [
+   "knobwrell",
+   "wralknid",
+   "knimwrosh",
+   "wrudknape"
+  ],
+  "fix": {
+   "knop": "knid",
+   "knub": "knam"
+  },
+  "sent": [
+   "The knight knelt by the wreck.",
+   "I know the answer is wrong."
+  ]
+ },
+ "og2-08": {
+  "real": [
+   "broom",
+   "spoon",
+   "tooth",
+   "round",
+   "proud",
+   "mouth",
+   "brown",
+   "down",
+   "crowd",
+   "shout"
+  ],
+  "fake": [
+   "zoombrout",
+   "ploudgown",
+   "snoutwoom",
+   "drooblound"
+  ],
+  "fix": {
+   "zoon": "zood",
+   "jow": "joud"
+  },
+  "sent": [
+   "The brown owl sat down.",
+   "We found a round spoon."
+  ]
+ },
+ "og2-09": {
+  "real": [
+   "marry",
+   "merry",
+   "worry",
+   "carrot",
+   "mirror",
+   "share",
+   "spare",
+   "score",
+   "pure",
+   "arrow"
+  ],
+  "fake": [
+   "zarrimore",
+   "perrynare",
+   "tirrogare",
+   "surrelpore"
+  ],
+  "fix": {
+   "vare": "zare"
+  },
+  "sent": [
+   "I am sorry you had to hurry.",
+   "The berry is red and the cherry is dark."
+  ]
+ },
+ "og2-10": {
+  "real": [
+   "complex",
+   "instant",
+   "inspect",
+   "contract",
+   "district",
+   "address",
+   "surprise",
+   "mushroom",
+   "laughter",
+   "athlete"
+  ],
+  "fake": [
+   "zundrep",
+   "mintrisk",
+   "polstamp",
+   "fembrisk"
+  ],
+  "sent": [
+   "The children sat in the kingdom.",
+   "A hamster and a dolphin are partners."
+  ]
+ },
+ "og2-11": {
+  "real": [
+   "joyful",
+   "restless",
+   "softness",
+   "movement",
+   "slowly",
+   "playful",
+   "homeless",
+   "illness",
+   "treatment",
+   "bravely"
+  ],
+  "fake": [
+   "zelpment",
+   "vomeless",
+   "tradness",
+   "glomful"
+  ],
+  "sent": [
+   "She was thankful and very helpful.",
+   "The darkness made him careless."
+  ]
+ },
+ "og2-12": {
+  "real": [
+   "helping",
+   "jumping",
+   "tallest",
+   "kindest",
+   "oldest",
+   "melted",
+   "hunted",
+   "rusty",
+   "foxes",
+   "wishes"
+  ],
+  "fake": [
+   "zumping",
+   "vandest",
+   "plimted",
+   "glosty"
+  ],
+  "sent": [
+   "He jumped over the tallest log.",
+   "The dusty box landed in the grass."
+  ]
+ },
+ "og2-13": {
+  "real": [
+   "misread",
+   "misfit",
+   "mislead",
+   "subset",
+   "subplot",
+   "subsoil",
+   "postwar",
+   "postdate",
+   "mistrust",
+   "subtitle"
+  ],
+  "fake": [
+   "misglop",
+   "subnelp",
+   "postvim",
+   "misdrant"
+  ],
+  "sent": [
+   "Do not misspell the word on the subway.",
+   "We will postpone the postgame show."
+  ]
+ },
+ "og2-14": {
+  "real": [
+   "batted",
+   "pinned",
+   "jogging",
+   "sitting",
+   "winner",
+   "dropped",
+   "flatter",
+   "grabbed",
+   "wagging",
+   "hugged"
+  ],
+  "fake": [
+   "mabbing",
+   "zinned",
+   "pretted",
+   "glotted"
+  ],
+  "sent": [
+   "He is hopping and running in the sun.",
+   "The hottest day stopped our swimming."
   ]
  }
 }
