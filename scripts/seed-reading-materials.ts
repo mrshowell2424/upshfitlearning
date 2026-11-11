@@ -22,6 +22,7 @@ import PARTW from "./reading-part-words.json" with { type: "json" };
 import SENT3 from "./reading-third-sentences.json" with { type: "json" };
 import AICOACH from "./reading-ai-writing-coach.json" with { type: "json" };
 import EXTRAW from "./reading-extra-words.json" with { type: "json" };
+import PREQ from "./reading-prerequisites.json" with { type: "json" };
 import { db } from "@/lib/db";
 import { reading_materials } from "@/lib/db/schema";
 import { inArray, sql } from "drizzle-orm";
@@ -1735,6 +1736,80 @@ const ADAPTATIONS: Adaptation[] = [
         .split(title)
         .join('<div style="{{ rdH1 }}">\uD83D\uDCD6 Read It \u2014 {{ sk.label }}</div>');
       return out.split(dated).join("Name ____________");
+    },
+  },
+  {
+    // The review pass picks what this lesson is built on.
+    //
+    // It used to take the two rows above this one in the list. The list is
+    // in the OG scope and sequence, so that is never out of order, but it
+    // is still only "whatever came before" — and that one pick drives three
+    // things: the review words, the grapheme drill cards and the What says
+    // questions. Y as a vowel reviewed -ck and -tch. What it is actually
+    // built on is silent e and the open syllable.
+    //
+    // Three slots now, each with a different job, because two slots doing
+    // the same job is one slot.
+    //
+    //   1. the prerequisite — declared per skill in reading-prerequisites.json
+    //   2. the lesson taught immediately before this one
+    //   3. the spiral, reaching back further the higher the level
+    //
+    // The spiral is the slot that scales. At Level 1 there is little behind
+    // you, so it stays close. From Level 3 it reaches down a level or two,
+    // to syllable division and vowel teams, because what breaks in a Level 4
+    // word is almost never the Level 4 concept — it is a vowel team or a
+    // split inside a long word.
+    //
+    // And a candidate whose own words mostly carry today's grapheme is
+    // skipped. Review is there to contrast with the new pattern, not to
+    // rehearse it by accident.
+    //
+    // A teacher's own picks in the three dropdowns still override all of it.
+    name: "pick the review pass from what the lesson is built on",
+    apply: (html) => {
+      const anchor =
+        "const review = picked.length ? picked : SK.slice(Math.max(0, skIdx - 2), skIdx);";
+      if (!html.includes(anchor)) return html;
+      const body = [
+        "const PREQ = " + JSON.stringify(PREQ.prereq) + ";",
+        "    const SPIRAL = " + JSON.stringify(PREQ.spiral) + ";",
+        "    const taught = SK.slice(0, skIdx);",
+        "    const myLv = parseInt(String(level).replace(/[^0-9]/g, ''), 10) || 1;",
+        "    // Today's graphemes, so a review word cannot quietly rehearse",
+        "    // the pattern this lesson is introducing.",
+        "    const mine = (G[id] || []).filter((x) => x && x.length >= 2);",
+        "    const contrasts = (r) => {",
+        "      const ws = (r && r[6]) || [];",
+        "      if (!ws.length || !mine.length) return true;",
+        "      const n = ws.filter((w) => mine.some((g) => String(w).toLowerCase().indexOf(g) >= 0)).length;",
+        "      return n * 2 <= ws.length;",
+        "    };",
+        "    const auto = [];",
+        "    const take = (r) => {",
+        "      if (r && r[0] !== id && auto.indexOf(r) < 0 && taught.indexOf(r) >= 0) auto.push(r);",
+        "    };",
+        "    // 1. what this lesson is built on",
+        "    take(byId[PREQ[id]]);",
+        "    // 2. the lesson taught just before it, preferring one that contrasts",
+        "    const nearest = (want) => {",
+        "      for (let i = skIdx - 1; i >= 0; i--) {",
+        "        const r = SK[i];",
+        "        if (auto.indexOf(r) < 0 && (!want || contrasts(r))) return r;",
+        "      }",
+        "      return null;",
+        "    };",
+        "    take(nearest(true) || nearest(false));",
+        "    // 3. the spiral, from the pool for this level",
+        "    const pool = (SPIRAL[String(myLv)] || []).map((k) => byId[k]).filter(Boolean);",
+        "    for (let i = 0; i < pool.length && auto.length < 3; i++) {",
+        "      if (taught.indexOf(pool[i]) >= 0 && contrasts(pool[i])) take(pool[i]);",
+        "    }",
+        "    // nothing in the pool is taught yet, so reach back by hand",
+        "    for (let i = skIdx - 3; i >= 0 && auto.length < 3; i--) take(SK[i]);",
+        "    const review = picked.length ? picked : auto;",
+      ].join("\n");
+      return html.replace(anchor, body);
     },
   },
 ];
