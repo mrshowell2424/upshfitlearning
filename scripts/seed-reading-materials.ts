@@ -314,16 +314,27 @@ const ADAPTATIONS: Adaptation[] = [
       if (!out.includes(title)) return html;
       out = out.replace(title, "4. Heart words. Say it. Write the word.");
 
-      // Three sentences for the partner read, not two. On a single part the
-      // sentences that carry that part come first, and the skill's others
-      // make the count up — a part has at most three sentences to draw on, so
-      // filtering alone would leave a child with one line to read.
+      // Three sentences for the partner read, and not the dictation's.
+      //
+      // They were the same sentences: wbSent was dict, so a child read the
+      // two lines to a partner and then wrote the same two from dictation.
+      // They come from the passage instead — different text, the same
+      // pattern, and the lines they are about to meet in the story they read
+      // next. The old behaviour stays as the fallback for a skill whose
+      // passage is too short to give three.
       const sent = 'wbHeart: heart, wbSent: dict,';
       if (!out.includes(sent)) return html;
       out = out.replace(
         sent,
-        "wbHeart: heart, wbSent: dict.concat(dictAll.filter((q) => " +
-          "dict.indexOf(q) === -1)).slice(0, 3),"
+        "wbHeart: heart, wbSent: (() => {\n" +
+          "        const fits = (x) => { const n = x.trim().split(/\\s+/).length; " +
+          "return n >= 4 && n <= 12; };\n" +
+          "        const fromText = (String(ebText || '').replace(/\\n/g, ' ')" +
+          ".match(/[^.!?]+[.!?]/g) || [])\n" +
+          "          .map((x) => x.trim()).filter((x) => fits(x) && dict.indexOf(x) === -1);\n" +
+          "        if (fromText.length >= 2) return fromText.slice(0, 3);\n" +
+          "        return dict.concat(dictAll.filter((q) => dict.indexOf(q) === -1)).slice(0, 3);\n" +
+          "      })(),"
       );
       const forEach = '<sc-for list="{{ wbSent }}" as="s" hint-placeholder-count="2">';
       if (!out.includes(forEach)) return html;
