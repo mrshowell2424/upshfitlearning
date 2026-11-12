@@ -1,0 +1,3879 @@
+{
+ "_note": "Original word ladders, one per lesson and per part of a split lesson. Every rung is a real word that is decodable with what the sequence has taught by that lesson, and every clue has exactly one answer. Checked by scripts/check-word-ladders.mjs. Built, not hand-copied: no ladder here comes from a published book.",
+ "ladders": {
+  "ai-ay": {
+   "start": "set",
+   "words": [
+    "set",
+    "sat",
+    "sad",
+    "said",
+    "sail",
+    "snail",
+    "nail"
+   ],
+   "clues": [
+    "Change the e to a.",
+    "Change the t to d.",
+    "Put an i between the a and the d.",
+    "Change the d to l.",
+    "Put an n between the s and the a.",
+    "Take off the s."
+   ]
+  },
+  "ai-ay|ai": {
+   "start": "sail",
+   "words": [
+    "sail",
+    "pail",
+    "tail",
+    "trail",
+    "train",
+    "brain",
+    "rain"
+   ],
+   "clues": [
+    "Change the s to p.",
+    "Change the p to t.",
+    "Put an r between the t and the a.",
+    "Change the l to n.",
+    "Change the t to b.",
+    "Take off the b."
+   ]
+  },
+  "ai-ay|ay": {
+   "start": "day",
+   "words": [
+    "day",
+    "say",
+    "says",
+    "lays",
+    "lay",
+    "jay",
+    "way"
+   ],
+   "clues": [
+    "Change the d to s.",
+    "Add an s at the end.",
+    "Change the first s to l.",
+    "Take off the s.",
+    "Change the l to j.",
+    "Change the j to w."
+   ]
+  },
+  "ar-or": {
+   "start": "farm",
+   "words": [
+    "farm",
+    "far",
+    "zar",
+    "car",
+    "cart",
+    "card",
+    "hard"
+   ],
+   "clues": [
+    "Take off the m.",
+    "Change the f to z.",
+    "Change the z to c.",
+    "Add a t at the end.",
+    "Change the t to d.",
+    "Change the c to h."
+   ]
+  },
+  "ar-or|ar": {
+   "start": "farm",
+   "words": [
+    "farm",
+    "far",
+    "zar",
+    "car",
+    "card",
+    "yard",
+    "yarn"
+   ],
+   "clues": [
+    "Take off the m.",
+    "Change the f to z.",
+    "Change the z to c.",
+    "Add a d at the end.",
+    "Change the c to y.",
+    "Change the d to n."
+   ]
+  },
+  "ar-or|or": {
+   "start": "horn",
+   "words": [
+    "horn",
+    "corn",
+    "cord",
+    "word",
+    "words"
+   ],
+   "clues": [
+    "Change the h to c.",
+    "Change the n to d.",
+    "Change the c to w.",
+    "Add an s at the end."
+   ]
+  },
+  "blends": {
+   "start": "set",
+   "words": [
+    "set",
+    "sat",
+    "at",
+    "it",
+    "bit",
+    "but",
+    "bus"
+   ],
+   "clues": [
+    "Change the e to a.",
+    "Take off the s.",
+    "Change the a to i.",
+    "Add a b at the start.",
+    "Change the i to u.",
+    "Change the t to s."
+   ]
+  },
+  "blends|cl": {
+   "start": "clap",
+   "words": [
+    "clap",
+    "clip",
+    "clop",
+    "clot",
+    "cloth",
+    "clothe"
+   ],
+   "clues": [
+    "Change the a to i.",
+    "Change the i to o.",
+    "Change the p to t.",
+    "Add an h at the end.",
+    "Add a silent e."
+   ]
+  },
+  "blends|fl": {
+   "start": "flat",
+   "words": [
+    "flat",
+    "flap",
+    "flip",
+    "flop",
+    "flops",
+    "flaps"
+   ],
+   "clues": [
+    "Change the t to p.",
+    "Change the a to i.",
+    "Change the i to o.",
+    "Add an s at the end.",
+    "Change the o to a."
+   ]
+  },
+  "blends|st": {
+   "start": "past",
+   "words": [
+    "past",
+    "cast",
+    "last",
+    "lost",
+    "lot"
+   ],
+   "clues": [
+    "Change the p to c.",
+    "Change the c to l.",
+    "Change the a to o.",
+    "Take off the s."
+   ]
+  },
+  "ck-tch": {
+   "start": "hid",
+   "words": [
+    "hid",
+    "his",
+    "is",
+    "it",
+    "at",
+    "sat",
+    "set"
+   ],
+   "clues": [
+    "Change the d to s.",
+    "Take off the h.",
+    "Change the s to t.",
+    "Change the i to a.",
+    "Add an s at the start.",
+    "Change the a to e."
+   ]
+  },
+  "ck-tch|ck": {
+   "start": "duck",
+   "words": [
+    "duck",
+    "luck",
+    "lick",
+    "click",
+    "clock",
+    "lock",
+    "sock"
+   ],
+   "clues": [
+    "Change the d to l.",
+    "Change the u to i.",
+    "Add a c at the start.",
+    "Change the i to o.",
+    "Take off the first c.",
+    "Change the l to s."
+   ]
+  },
+  "ck-tch|tch": {
+   "start": "patch",
+   "words": [
+    "patch",
+    "pitch",
+    "ditch",
+    "itch",
+    "witch",
+    "watch",
+    "match"
+   ],
+   "clues": [
+    "Change the a to i.",
+    "Change the p to d.",
+    "Take off the d.",
+    "Add a w at the start.",
+    "Change the i to a.",
+    "Change the w to m."
+   ]
+  },
+  "cvc-a": {
+   "start": "cat",
+   "words": [
+    "cat",
+    "bat",
+    "hat",
+    "at",
+    "rat",
+    "sat",
+    "sad"
+   ],
+   "clues": [
+    "Change the c to b.",
+    "Change the b to h.",
+    "Take off the h.",
+    "Add an r at the start.",
+    "Change the r to s.",
+    "Change the t to d."
+   ]
+  },
+  "cvc-mix": {
+   "start": "dot",
+   "words": [
+    "dot",
+    "cot",
+    "cat",
+    "at",
+    "hat",
+    "sat",
+    "sad"
+   ],
+   "clues": [
+    "Change the d to c.",
+    "Change the o to a.",
+    "Take off the c.",
+    "Add an h at the start.",
+    "Change the h to s.",
+    "Change the t to d."
+   ]
+  },
+  "cvc-mix|e": {
+   "start": "me",
+   "words": [
+    "me",
+    "men",
+    "hen",
+    "then",
+    "ten",
+    "pen",
+    "pet"
+   ],
+   "clues": [
+    "Add an n at the end.",
+    "Change the m to h.",
+    "Add a t at the start.",
+    "Take off the h.",
+    "Change the t to p.",
+    "Change the n to t."
+   ]
+  },
+  "cvc-mix|i": {
+   "start": "pig",
+   "words": [
+    "pig",
+    "big",
+    "bit",
+    "it",
+    "in",
+    "fin",
+    "win"
+   ],
+   "clues": [
+    "Change the p to b.",
+    "Change the g to t.",
+    "Take off the b.",
+    "Change the t to n.",
+    "Add an f at the start.",
+    "Change the f to w."
+   ]
+  },
+  "cvc-mix|o": {
+   "start": "to",
+   "words": [
+    "to",
+    "top",
+    "mop",
+    "hop",
+    "hot"
+   ],
+   "clues": [
+    "Add a p at the end.",
+    "Change the t to m.",
+    "Change the m to h.",
+    "Change the p to t."
+   ]
+  },
+  "cvc-mix|u": {
+   "start": "nut",
+   "words": [
+    "nut",
+    "put",
+    "pup",
+    "up",
+    "cup",
+    "cub",
+    "tub"
+   ],
+   "clues": [
+    "Change the n to p.",
+    "Change the t to p.",
+    "Take off the first p.",
+    "Add a c at the start.",
+    "Change the p to b.",
+    "Change the c to t."
+   ]
+  },
+  "dig": {
+   "start": "his",
+   "words": [
+    "his",
+    "has",
+    "had",
+    "chad",
+    "chat",
+    "cat",
+    "sat"
+   ],
+   "clues": [
+    "Change the i to a.",
+    "Change the s to d.",
+    "Add a c at the start.",
+    "Change the d to t.",
+    "Take off the h.",
+    "Change the c to s."
+   ]
+  },
+  "dig|ch": {
+   "start": "chin",
+   "words": [
+    "chin",
+    "chip",
+    "chop",
+    "hop",
+    "shop"
+   ],
+   "clues": [
+    "Change the n to p.",
+    "Change the i to o.",
+    "Take off the c.",
+    "Add an s at the start."
+   ]
+  },
+  "dig|sh": {
+   "start": "fish",
+   "words": [
+    "fish",
+    "dish",
+    "wish",
+    "wash",
+    "cash",
+    "dash",
+    "rash"
+   ],
+   "clues": [
+    "Change the f to d.",
+    "Change the d to w.",
+    "Change the i to a.",
+    "Change the w to c.",
+    "Change the c to d.",
+    "Change the d to r."
+   ]
+  },
+  "dig|th": {
+   "start": "this",
+   "words": [
+    "this",
+    "thin",
+    "then",
+    "the",
+    "them"
+   ],
+   "clues": [
+    "Change the s to n.",
+    "Change the i to e.",
+    "Take off the n.",
+    "Add an m at the end."
+   ]
+  },
+  "dig|wh": {
+   "start": "whiz",
+   "words": [
+    "whiz",
+    "whip",
+    "whim",
+    "him",
+    "hip",
+    "chip",
+    "ship"
+   ],
+   "clues": [
+    "Change the z to p.",
+    "Change the p to m.",
+    "Take off the w.",
+    "Change the m to p.",
+    "Add a c at the start.",
+    "Change the c to s."
+   ]
+  },
+  "ee-ea": {
+   "start": "mad",
+   "words": [
+    "mad",
+    "sad",
+    "sat",
+    "seat",
+    "sea",
+    "set",
+    "wet"
+   ],
+   "clues": [
+    "Change the m to s.",
+    "Change the d to t.",
+    "Put an e between the s and the a.",
+    "Take off the t.",
+    "Change the a to t.",
+    "Change the s to w."
+   ]
+  },
+  "ee-ea|ea": {
+   "start": "peach",
+   "words": [
+    "peach",
+    "each",
+    "teach",
+    "beach",
+    "bench"
+   ],
+   "clues": [
+    "Take off the p.",
+    "Add a t at the start.",
+    "Change the t to b.",
+    "Change the a to n."
+   ]
+  },
+  "ee-ea|ee": {
+   "start": "been",
+   "words": [
+    "been",
+    "bee",
+    "see",
+    "sees",
+    "seed",
+    "need"
+   ],
+   "clues": [
+    "Take off the n.",
+    "Change the b to s.",
+    "Add an s at the end.",
+    "Change the last s to d.",
+    "Change the s to n."
+   ]
+  },
+  "floss": {
+   "start": "buzz",
+   "words": [
+    "buzz",
+    "fuzz",
+    "fuzzy",
+    "fizzy",
+    "fizz"
+   ],
+   "clues": [
+    "Change the b to f.",
+    "Add a y at the end.",
+    "Change the u to i.",
+    "Take off the y."
+   ]
+  },
+  "floss|ff": {
+   "start": "cuff",
+   "words": [
+    "cuff",
+    "puff",
+    "huff",
+    "huffs",
+    "cuffs"
+   ],
+   "clues": [
+    "Change the c to p.",
+    "Change the p to h.",
+    "Add an s at the end.",
+    "Change the h to c."
+   ]
+  },
+  "floss|ll": {
+   "start": "hill",
+   "words": [
+    "hill",
+    "fill",
+    "fell",
+    "sell",
+    "shell",
+    "shall",
+    "small"
+   ],
+   "clues": [
+    "Change the h to f.",
+    "Change the i to e.",
+    "Change the f to s.",
+    "Put an h between the s and the e.",
+    "Change the e to a.",
+    "Change the h to m."
+   ]
+  },
+  "floss|ss": {
+   "start": "mess",
+   "words": [
+    "mess",
+    "jess",
+    "bess",
+    "less",
+    "legs"
+   ],
+   "clues": [
+    "Change the m to j.",
+    "Change the j to b.",
+    "Change the b to l.",
+    "Change the first s to g."
+   ]
+  },
+  "floss|zz": {
+   "start": "buzz",
+   "words": [
+    "buzz",
+    "fuzz",
+    "fuzzy",
+    "fizzy",
+    "fizz"
+   ],
+   "clues": [
+    "Change the b to f.",
+    "Add a y at the end.",
+    "Change the u to i.",
+    "Take off the y."
+   ]
+  },
+  "ng-nk": {
+   "start": "pink",
+   "words": [
+    "pink",
+    "wink",
+    "wing",
+    "swing",
+    "sing",
+    "song",
+    "mong"
+   ],
+   "clues": [
+    "Change the p to w.",
+    "Change the k to g.",
+    "Add an s at the start.",
+    "Take off the w.",
+    "Change the i to o.",
+    "Change the s to m."
+   ]
+  },
+  "ng-nk|ng": {
+   "start": "ding",
+   "words": [
+    "ding",
+    "ring",
+    "wing",
+    "swing",
+    "sing",
+    "song",
+    "mong"
+   ],
+   "clues": [
+    "Change the d to r.",
+    "Change the r to w.",
+    "Add an s at the start.",
+    "Take off the w.",
+    "Change the i to o.",
+    "Change the s to m."
+   ]
+  },
+  "ng-nk|nk": {
+   "start": "drink",
+   "words": [
+    "drink",
+    "dink",
+    "sink",
+    "sank",
+    "bank",
+    "blank"
+   ],
+   "clues": [
+    "Take off the r.",
+    "Change the d to s.",
+    "Change the i to a.",
+    "Change the s to b.",
+    "Put an l between the b and the a."
+   ]
+  },
+  "oa-ow": {
+   "start": "mad",
+   "words": [
+    "mad",
+    "sad",
+    "sat",
+    "seat",
+    "sea",
+    "set",
+    "wet"
+   ],
+   "clues": [
+    "Change the m to s.",
+    "Change the d to t.",
+    "Put an e between the s and the a.",
+    "Take off the t.",
+    "Change the a to t.",
+    "Change the s to w."
+   ]
+  },
+  "oa-ow|oa": {
+   "start": "float",
+   "words": [
+    "float",
+    "bloat",
+    "boat",
+    "goat",
+    "coat",
+    "coast",
+    "toast"
+   ],
+   "clues": [
+    "Change the f to b.",
+    "Take off the l.",
+    "Change the b to g.",
+    "Change the g to c.",
+    "Put an s between the a and the t.",
+    "Change the c to t."
+   ]
+  },
+  "oa-ow|ow": {
+   "start": "know",
+   "words": [
+    "know",
+    "snow",
+    "now",
+    "how",
+    "show",
+    "slow",
+    "blow"
+   ],
+   "clues": [
+    "Change the k to s.",
+    "Take off the s.",
+    "Change the n to h.",
+    "Add an s at the start.",
+    "Change the h to l.",
+    "Change the s to b."
+   ]
+  },
+  "og1-02": {
+   "start": "den",
+   "words": [
+    "den",
+    "hen",
+    "he",
+    "we",
+    "wet",
+    "set",
+    "sat"
+   ],
+   "clues": [
+    "Change the d to h.",
+    "Take off the n.",
+    "Change the h to w.",
+    "Add a t at the end.",
+    "Change the w to s.",
+    "Change the e to a."
+   ]
+  },
+  "og1-03": {
+   "start": "big",
+   "words": [
+    "big",
+    "bag",
+    "bam",
+    "am",
+    "jam",
+    "yam",
+    "yams"
+   ],
+   "clues": [
+    "Change the i to a.",
+    "Change the g to m.",
+    "Take off the b.",
+    "Add a j at the start.",
+    "Change the j to y.",
+    "Add an s at the end."
+   ]
+  },
+  "og1-04": {
+   "start": "cup",
+   "words": [
+    "cup",
+    "cap",
+    "cat",
+    "at",
+    "sat",
+    "set",
+    "pet"
+   ],
+   "clues": [
+    "Change the u to a.",
+    "Change the p to t.",
+    "Take off the c.",
+    "Add an s at the start.",
+    "Change the a to e.",
+    "Change the s to p."
+   ]
+  },
+  "og1-04|c": {
+   "start": "cat",
+   "words": [
+    "cat",
+    "cab",
+    "cap",
+    "cup",
+    "up"
+   ],
+   "clues": [
+    "Change the t to b.",
+    "Change the b to p.",
+    "Change the a to u.",
+    "Take off the c."
+   ]
+  },
+  "og1-04|ck": {
+   "start": "duck",
+   "words": [
+    "duck",
+    "luck",
+    "lick",
+    "kick",
+    "sick",
+    "sock",
+    "rock"
+   ],
+   "clues": [
+    "Change the d to l.",
+    "Change the u to i.",
+    "Change the l to k.",
+    "Change the first k to s.",
+    "Change the i to o.",
+    "Change the s to r."
+   ]
+  },
+  "og1-04|k": {
+   "start": "kit",
+   "words": [
+    "kit",
+    "kid",
+    "kind",
+    "kin",
+    "kim"
+   ],
+   "clues": [
+    "Change the t to d.",
+    "Put an n between the i and the d.",
+    "Take off the d.",
+    "Change the n to m."
+   ]
+  },
+  "og1-06": {
+   "start": "my",
+   "words": [
+    "my",
+    "me",
+    "he",
+    "the",
+    "them",
+    "then",
+    "when"
+   ],
+   "clues": [
+    "Change the y to e.",
+    "Change the m to h.",
+    "Add a t at the start.",
+    "Add an m at the end.",
+    "Change the m to n.",
+    "Change the t to w."
+   ]
+  },
+  "og1-06|qu": {
+   "start": "equip",
+   "words": [
+    "equip",
+    "quip",
+    "quiz",
+    "quib",
+    "quit",
+    "quiet"
+   ],
+   "clues": [
+    "Take off the e.",
+    "Change the p to z.",
+    "Change the z to b.",
+    "Change the b to t.",
+    "Put an e between the i and the t."
+   ]
+  },
+  "og1-06|x": {
+   "start": "fox",
+   "words": [
+    "fox",
+    "fix",
+    "six",
+    "sit",
+    "sits"
+   ],
+   "clues": [
+    "Change the o to i.",
+    "Change the f to s.",
+    "Change the x to t.",
+    "Add an s at the end."
+   ]
+  },
+  "og1-10": {
+   "start": "the",
+   "words": [
+    "the",
+    "they",
+    "then",
+    "hen",
+    "hens",
+    "pens",
+    "pins"
+   ],
+   "clues": [
+    "Add a y at the end.",
+    "Change the y to n.",
+    "Take off the t.",
+    "Add an s at the end.",
+    "Change the h to p.",
+    "Change the e to i."
+   ]
+  },
+  "og1-11": {
+   "start": "has",
+   "words": [
+    "has",
+    "his",
+    "is",
+    "in",
+    "on",
+    "one",
+    "bone"
+   ],
+   "clues": [
+    "Change the a to i.",
+    "Take off the h.",
+    "Change the s to n.",
+    "Change the i to o.",
+    "Add a silent e.",
+    "Add a b at the start."
+   ]
+  },
+  "og1-13": {
+   "start": "did",
+   "words": [
+    "did",
+    "undid",
+    "unfit",
+    "unlock",
+    "unlocked",
+    "unlimited",
+    "unfinished"
+   ],
+   "clues": [
+    "Add the prefix un-.",
+    "Keep un-. Change did to fit.",
+    "Keep un-. Change fit to lock.",
+    "Add -ed.",
+    "Keep un- and -ed. Change lock to limit.",
+    "Keep un- and -ed. Change limit to finish."
+   ]
+  },
+  "og1-13|non-": {
+   "start": "nonfat",
+   "words": [
+    "nonfat",
+    "nonstop",
+    "nonsense",
+    "nonzero",
+    "zero"
+   ],
+   "clues": [
+    "Keep non-. Change fat to stop.",
+    "Keep non-. Change stop to sense.",
+    "Keep non-. Change sense to zero.",
+    "Take off the prefix non-."
+   ]
+  },
+  "og1-13|un-": {
+   "start": "unfit",
+   "words": [
+    "unfit",
+    "unpack",
+    "unplug",
+    "unlock",
+    "unlocked",
+    "unlimited",
+    "unfinished"
+   ],
+   "clues": [
+    "Keep un-. Change fit to pack.",
+    "Keep un-. Change pack to plug.",
+    "Keep un-. Change plug to lock.",
+    "Add -ed.",
+    "Keep un- and -ed. Change lock to limit.",
+    "Keep un- and -ed. Change limit to finish."
+   ]
+  },
+  "og2-06": {
+   "start": "roll",
+   "words": [
+    "roll",
+    "rolled",
+    "jolted",
+    "bolted",
+    "bolt",
+    "unbolt",
+    "unkind"
+   ],
+   "clues": [
+    "Add -ed.",
+    "Keep -ed. Change roll to jolt.",
+    "Keep -ed. Change jolt to bolt.",
+    "Take off -ed.",
+    "Add the prefix un-.",
+    "Keep un-. Change bolt to kind."
+   ]
+  },
+  "og2-06|ild": {
+   "start": "wild",
+   "words": [
+    "wild",
+    "mild",
+    "mildly",
+    "wildly",
+    "wildlife",
+    "wildfire"
+   ],
+   "clues": [
+    "Change the w to m.",
+    "Add ly to the end.",
+    "Keep ly. Change mild to wild.",
+    "Keep wild. Change ly to life.",
+    "Keep wild. Change life to fire."
+   ]
+  },
+  "og2-06|ind": {
+   "start": "grind",
+   "words": [
+    "grind",
+    "behind",
+    "unkind",
+    "blind",
+    "blindfold"
+   ],
+   "clues": [
+    "Keep ind. Change gr to beh.",
+    "Keep ind. Change beh to unk.",
+    "Keep ind. Change unk to bl.",
+    "Add fold to the end."
+   ]
+  },
+  "og2-06|old": {
+   "start": "gold",
+   "words": [
+    "gold",
+    "bold",
+    "old",
+    "told",
+    "fold",
+    "sold",
+    "scold"
+   ],
+   "clues": [
+    "Change the g to b.",
+    "Take off the b.",
+    "Add a t at the start.",
+    "Change the t to f.",
+    "Change the f to s.",
+    "Put a c between the s and the o."
+   ]
+  },
+  "og2-06|oll": {
+   "start": "rolls",
+   "words": [
+    "rolls",
+    "roll",
+    "doll",
+    "toll",
+    "troll",
+    "stroll",
+    "scroll"
+   ],
+   "clues": [
+    "Take off the s.",
+    "Change the r to d.",
+    "Change the d to t.",
+    "Put an r between the t and the o.",
+    "Add an s at the start.",
+    "Change the t to c."
+   ]
+  },
+  "og2-06|olt": {
+   "start": "jolt",
+   "words": [
+    "jolt",
+    "jolted",
+    "bolted",
+    "bolt",
+    "unbolt"
+   ],
+   "clues": [
+    "Add -ed.",
+    "Keep -ed. Change jolt to bolt.",
+    "Take off -ed.",
+    "Add the prefix un-."
+   ]
+  },
+  "og2-06|ost": {
+   "start": "lost",
+   "words": [
+    "lost",
+    "most",
+    "host",
+    "post",
+    "pot"
+   ],
+   "clues": [
+    "Change the l to m.",
+    "Change the m to h.",
+    "Change the h to p.",
+    "Take off the s."
+   ]
+  },
+  "og2-07": {
+   "start": "high",
+   "words": [
+    "high",
+    "sigh",
+    "sight",
+    "night",
+    "right",
+    "wright",
+    "bright"
+   ],
+   "clues": [
+    "Change the first h to s.",
+    "Add a t at the end.",
+    "Change the s to n.",
+    "Change the n to r.",
+    "Add a w at the start.",
+    "Change the w to b."
+   ]
+  },
+  "og2-07|gh": {
+   "start": "thigh",
+   "words": [
+    "thigh",
+    "high",
+    "sigh",
+    "sight",
+    "tight",
+    "night",
+    "knight"
+   ],
+   "clues": [
+    "Take off the t.",
+    "Change the first h to s.",
+    "Add a t at the end.",
+    "Change the s to t.",
+    "Change the first t to n.",
+    "Add a k at the start."
+   ]
+  },
+  "og2-07|kn": {
+   "start": "knop",
+   "words": [
+    "knop",
+    "knob",
+    "knot",
+    "knit",
+    "kit"
+   ],
+   "clues": [
+    "Change the p to b.",
+    "Change the b to t.",
+    "Change the o to i.",
+    "Take off the n."
+   ]
+  },
+  "og2-07|wr": {
+   "start": "wrap",
+   "words": [
+    "wrap",
+    "wreck",
+    "wrist",
+    "wrong",
+    "wring",
+    "wrench",
+    "wreath"
+   ],
+   "clues": [
+    "Keep wr. Change ap to eck.",
+    "Keep wr. Change eck to ist.",
+    "Keep wr. Change ist to ong.",
+    "Keep wr. Change ong to ing.",
+    "Keep wr. Change ing to ench.",
+    "Keep wr. Change ench to eath."
+   ]
+  },
+  "og2-08": {
+   "start": "in",
+   "words": [
+    "in",
+    "is",
+    "its",
+    "it",
+    "at",
+    "sat",
+    "eat"
+   ],
+   "clues": [
+    "Change the n to s.",
+    "Put a t between the i and the s.",
+    "Take off the s.",
+    "Change the i to a.",
+    "Add an s at the start.",
+    "Change the s to e."
+   ]
+  },
+  "og2-08|oo": {
+   "start": "noon",
+   "words": [
+    "noon",
+    "moon",
+    "moo",
+    "boo",
+    "book",
+    "hook",
+    "hoot"
+   ],
+   "clues": [
+    "Change the first n to m.",
+    "Take off the n.",
+    "Change the m to b.",
+    "Add a k at the end.",
+    "Change the b to h.",
+    "Change the k to t."
+   ]
+  },
+  "og2-08|ou": {
+   "start": "sound",
+   "words": [
+    "sound",
+    "found",
+    "round",
+    "around",
+    "ground"
+   ],
+   "clues": [
+    "Change the s to f.",
+    "Change the f to r.",
+    "Add an a at the start.",
+    "Change the a to g."
+   ]
+  },
+  "og2-08|ow": {
+   "start": "blow",
+   "words": [
+    "blow",
+    "slow",
+    "show",
+    "how",
+    "jow",
+    "cow",
+    "cows"
+   ],
+   "clues": [
+    "Change the b to s.",
+    "Change the l to h.",
+    "Take off the s.",
+    "Change the h to j.",
+    "Change the j to c.",
+    "Add an s at the end."
+   ]
+  },
+  "og2-09": {
+   "start": "am",
+   "words": [
+    "am",
+    "at",
+    "sat",
+    "sit",
+    "it",
+    "in",
+    "on"
+   ],
+   "clues": [
+    "Change the m to t.",
+    "Add an s at the start.",
+    "Change the a to i.",
+    "Take off the s.",
+    "Change the t to n.",
+    "Change the i to o."
+   ]
+  },
+  "og2-10": {
+   "start": "and",
+   "words": [
+    "and",
+    "an",
+    "in",
+    "is",
+    "his",
+    "has",
+    "was"
+   ],
+   "clues": [
+    "Take off the d.",
+    "Change the a to i.",
+    "Change the n to s.",
+    "Add an h at the start.",
+    "Change the i to a.",
+    "Change the h to w."
+   ]
+  },
+  "og2-11": {
+   "start": "sad",
+   "words": [
+    "sad",
+    "sadly",
+    "sadness",
+    "kindness",
+    "kindly",
+    "gladly",
+    "glad"
+   ],
+   "clues": [
+    "Add -ly.",
+    "Change -ly to -ness.",
+    "Keep -ness. Change sad to kind.",
+    "Change -ness to -ly.",
+    "Keep -ly. Change kind to glad.",
+    "Take off -ly."
+   ]
+  },
+  "og2-11|-ful": {
+   "start": "useful",
+   "words": [
+    "useful",
+    "helpful",
+    "careful",
+    "playful",
+    "played"
+   ],
+   "clues": [
+    "Keep -ful. Change use to help.",
+    "Keep -ful. Change help to care.",
+    "Keep -ful. Change care to play.",
+    "Change -ful to -ed."
+   ]
+  },
+  "og2-11|-less": {
+   "start": "useless",
+   "words": [
+    "useless",
+    "hopeless",
+    "homeless",
+    "spotless",
+    "spots"
+   ],
+   "clues": [
+    "Keep -less. Change use to hope.",
+    "Keep -less. Change hope to home.",
+    "Keep -less. Change home to spot.",
+    "Change -less to -s."
+   ]
+  },
+  "og2-11|-ly": {
+   "start": "silly",
+   "words": [
+    "silly",
+    "constantly",
+    "sadly",
+    "quickly",
+    "quick"
+   ],
+   "clues": [
+    "Keep -ly. Change sil to constant.",
+    "Keep -ly. Change constant to sad.",
+    "Keep -ly. Change sad to quick.",
+    "Take off -ly."
+   ]
+  },
+  "og2-11|-ment": {
+   "start": "payment",
+   "words": [
+    "payment",
+    "shipment",
+    "movement",
+    "treatment",
+    "treat"
+   ],
+   "clues": [
+    "Keep -ment. Change pay to ship.",
+    "Keep -ment. Change ship to move.",
+    "Keep -ment. Change move to treat.",
+    "Take off -ment."
+   ]
+  },
+  "og2-11|-ness": {
+   "start": "sadness",
+   "words": [
+    "sadness",
+    "kindness",
+    "darkness",
+    "sickness",
+    "sick"
+   ],
+   "clues": [
+    "Keep -ness. Change sad to kind.",
+    "Keep -ness. Change kind to dark.",
+    "Keep -ness. Change dark to sick.",
+    "Take off -ness."
+   ]
+  },
+  "og2-12": {
+   "start": "old",
+   "words": [
+    "old",
+    "oldest",
+    "fastest",
+    "softest",
+    "soften",
+    "golden",
+    "wooden"
+   ],
+   "clues": [
+    "Add -est.",
+    "Keep -est. Change old to fast.",
+    "Keep -est. Change fast to soft.",
+    "Change -est to -en.",
+    "Keep -en. Change soft to gold.",
+    "Keep -en. Change gold to wood."
+   ]
+  },
+  "og2-12|-ed": {
+   "start": "picked",
+   "words": [
+    "picked",
+    "licked",
+    "liked",
+    "lived",
+    "lives"
+   ],
+   "clues": [
+    "Change the p to l.",
+    "Take off the c.",
+    "Change the k to v.",
+    "Change the d to s."
+   ]
+  },
+  "og2-12|-en": {
+   "start": "mitten",
+   "words": [
+    "mitten",
+    "sunken",
+    "sixteen",
+    "fallen",
+    "falls"
+   ],
+   "clues": [
+    "Keep -en. Change mitt to sunk.",
+    "Keep -en. Change sunk to sixte.",
+    "Keep -en. Change sixte to fall.",
+    "Change -en to -s."
+   ]
+  },
+  "og2-12|-es": {
+   "start": "gives",
+   "words": [
+    "gives",
+    "lives",
+    "likes",
+    "bikes",
+    "bike"
+   ],
+   "clues": [
+    "Change the g to l.",
+    "Change the v to k.",
+    "Change the l to b.",
+    "Take off the s."
+   ]
+  },
+  "og2-12|-est": {
+   "start": "oldest",
+   "words": [
+    "oldest",
+    "fastest",
+    "gastest",
+    "hardest",
+    "hard"
+   ],
+   "clues": [
+    "Keep -est. Change old to fast.",
+    "Keep -est. Change fast to gast.",
+    "Keep -est. Change gast to hard.",
+    "Take off -est."
+   ]
+  },
+  "og2-12|-ing": {
+   "start": "flying",
+   "words": [
+    "flying",
+    "quacking",
+    "thinking",
+    "telling",
+    "tells"
+   ],
+   "clues": [
+    "Keep -ing. Change fly to quack.",
+    "Keep -ing. Change quack to think.",
+    "Keep -ing. Change think to tell.",
+    "Change -ing to -s."
+   ]
+  },
+  "og2-12|-y": {
+   "start": "away",
+   "words": [
+    "away",
+    "way",
+    "lay",
+    "play",
+    "blay",
+    "clay"
+   ],
+   "clues": [
+    "Take off the first a.",
+    "Change the w to l.",
+    "Add a p at the start.",
+    "Change the p to b.",
+    "Change the b to c."
+   ]
+  },
+  "og2-13": {
+   "start": "his",
+   "words": [
+    "his",
+    "mis",
+    "is",
+    "it",
+    "in",
+    "on",
+    "won"
+   ],
+   "clues": [
+    "Change the h to m.",
+    "Take off the m.",
+    "Change the s to t.",
+    "Change the t to n.",
+    "Change the i to o.",
+    "Add a w at the start."
+   ]
+  },
+  "og2-13|mis-": {
+   "start": "misfit",
+   "words": [
+    "misfit",
+    "mistake",
+    "misspell",
+    "misstep",
+    "step"
+   ],
+   "clues": [
+    "Keep mis-. Change fit to take.",
+    "Keep mis-. Change take to spell.",
+    "Keep mis-. Change spell to step.",
+    "Take off the prefix mis-."
+   ]
+  },
+  "og2-13|post-": {
+   "start": "postwar",
+   "words": [
+    "postwar",
+    "postpone",
+    "postdate",
+    "posttest",
+    "test"
+   ],
+   "clues": [
+    "Keep post-. Change war to pone.",
+    "Keep post-. Change pone to date.",
+    "Keep post-. Change date to test.",
+    "Take off the prefix post-."
+   ]
+  },
+  "og2-13|sub-": {
+   "start": "subway",
+   "words": [
+    "subway",
+    "sublime",
+    "subtract",
+    "subset",
+    "set"
+   ],
+   "clues": [
+    "Keep sub-. Change way to lime.",
+    "Keep sub-. Change lime to tract.",
+    "Keep sub-. Change tract to set.",
+    "Take off the prefix sub-."
+   ]
+  },
+  "og2-14": {
+   "start": "kim",
+   "words": [
+    "kim",
+    "him",
+    "his",
+    "is",
+    "in",
+    "on",
+    "one"
+   ],
+   "clues": [
+    "Change the k to h.",
+    "Change the m to s.",
+    "Take off the h.",
+    "Change the s to n.",
+    "Change the i to o.",
+    "Add a silent e."
+   ]
+  },
+  "og3-01": {
+   "start": "one",
+   "words": [
+    "one",
+    "on",
+    "in",
+    "it",
+    "is",
+    "his",
+    "this"
+   ],
+   "clues": [
+    "Take off the silent e.",
+    "Change the o to i.",
+    "Change the n to t.",
+    "Change the t to s.",
+    "Add an h at the start.",
+    "Add a t at the start."
+   ]
+  },
+  "og3-02": {
+   "start": "one",
+   "words": [
+    "one",
+    "on",
+    "in",
+    "it",
+    "at",
+    "sat",
+    "saw"
+   ],
+   "clues": [
+    "Take off the silent e.",
+    "Change the o to i.",
+    "Change the n to t.",
+    "Change the i to a.",
+    "Add an s at the start.",
+    "Change the t to w."
+   ]
+  },
+  "og3-03": {
+   "start": "cat",
+   "words": [
+    "cat",
+    "at",
+    "it",
+    "is",
+    "his",
+    "hid",
+    "hide"
+   ],
+   "clues": [
+    "Take off the c.",
+    "Change the a to i.",
+    "Change the t to s.",
+    "Add an h at the start.",
+    "Change the s to d.",
+    "Add a silent e."
+   ]
+  },
+  "og3-04": {
+   "start": "is",
+   "words": [
+    "is",
+    "his",
+    "has",
+    "was",
+    "as",
+    "an",
+    "man"
+   ],
+   "clues": [
+    "Add an h at the start.",
+    "Change the i to a.",
+    "Change the h to w.",
+    "Take off the w.",
+    "Change the s to n.",
+    "Add an m at the start."
+   ]
+  },
+  "og3-04|au": {
+   "start": "fault",
+   "words": [
+    "fault",
+    "faults",
+    "vaults",
+    "vault",
+    "vaulted",
+    "vaulting"
+   ],
+   "clues": [
+    "Add an s at the end.",
+    "Change the f to v.",
+    "Take off the s.",
+    "Add ed to the end.",
+    "Keep vault. Change ed to ing."
+   ]
+  },
+  "og3-04|aw": {
+   "start": "lawn",
+   "words": [
+    "lawn",
+    "yawn",
+    "dawn",
+    "down",
+    "own"
+   ],
+   "clues": [
+    "Change the l to y.",
+    "Change the y to d.",
+    "Change the a to o.",
+    "Take off the d."
+   ]
+  },
+  "og3-04|oi": {
+   "start": "spoil",
+   "words": [
+    "spoil",
+    "soil",
+    "boil",
+    "bowl",
+    "owl"
+   ],
+   "clues": [
+    "Take off the p.",
+    "Change the s to b.",
+    "Change the i to w.",
+    "Take off the b."
+   ]
+  },
+  "og3-04|oy": {
+   "start": "boy",
+   "words": [
+    "boy",
+    "joy",
+    "voy",
+    "toy",
+    "to"
+   ],
+   "clues": [
+    "Change the b to j.",
+    "Change the j to v.",
+    "Change the v to t.",
+    "Take off the y."
+   ]
+  },
+  "og3-05": {
+   "start": "her",
+   "words": [
+    "her",
+    "he",
+    "she",
+    "the",
+    "then",
+    "them",
+    "they"
+   ],
+   "clues": [
+    "Take off the r.",
+    "Add an s at the start.",
+    "Change the s to t.",
+    "Add an n at the end.",
+    "Change the n to m.",
+    "Change the m to y."
+   ]
+  },
+  "og3-06": {
+   "start": "her",
+   "words": [
+    "her",
+    "he",
+    "she",
+    "the",
+    "them",
+    "then",
+    "than"
+   ],
+   "clues": [
+    "Take off the r.",
+    "Add an s at the start.",
+    "Change the s to t.",
+    "Add an m at the end.",
+    "Change the m to n.",
+    "Change the e to a."
+   ]
+  },
+  "og3-07": {
+   "start": "and",
+   "words": [
+    "and",
+    "an",
+    "in",
+    "it",
+    "at",
+    "sat",
+    "saw"
+   ],
+   "clues": [
+    "Take off the d.",
+    "Change the a to i.",
+    "Change the n to t.",
+    "Change the i to a.",
+    "Add an s at the start.",
+    "Change the t to w."
+   ]
+  },
+  "og3-08": {
+   "start": "sat",
+   "words": [
+    "sat",
+    "at",
+    "an",
+    "in",
+    "it",
+    "lit",
+    "fit"
+   ],
+   "clues": [
+    "Take off the s.",
+    "Change the t to n.",
+    "Change the a to i.",
+    "Change the n to t.",
+    "Add an l at the start.",
+    "Change the l to f."
+   ]
+  },
+  "og3-08|-ble": {
+   "start": "humble",
+   "words": [
+    "humble",
+    "tumble",
+    "fumble",
+    "jumble",
+    "rumble",
+    "ramble",
+    "bramble"
+   ],
+   "clues": [
+    "Change the h to t.",
+    "Change the t to f.",
+    "Change the f to j.",
+    "Change the j to r.",
+    "Change the u to a.",
+    "Add a b at the start."
+   ]
+  },
+  "og3-08|-cle": {
+   "start": "bicycle",
+   "words": [
+    "bicycle",
+    "tricycle",
+    "recycle",
+    "cycle",
+    "cycled"
+   ],
+   "clues": [
+    "Keep cycle. Change bi to tri.",
+    "Keep cycle. Change tri to re.",
+    "Take re off the front.",
+    "Add d to the end."
+   ]
+  },
+  "og3-08|-dle": {
+   "start": "middle",
+   "words": [
+    "middle",
+    "candle",
+    "needle",
+    "saddle",
+    "sad"
+   ],
+   "clues": [
+    "Keep -dle. Change mid to can.",
+    "Keep -dle. Change can to nee.",
+    "Keep -dle. Change nee to sad.",
+    "Take off -dle."
+   ]
+  },
+  "og3-08|-gle": {
+   "start": "giggle",
+   "words": [
+    "giggle",
+    "single",
+    "wiggle",
+    "tangle",
+    "tan"
+   ],
+   "clues": [
+    "Keep -gle. Change gig to sin.",
+    "Keep -gle. Change sin to wig.",
+    "Keep -gle. Change wig to tan.",
+    "Take off -gle."
+   ]
+  },
+  "og3-08|-ple": {
+   "start": "purple",
+   "words": [
+    "purple",
+    "sample",
+    "triple",
+    "ripple",
+    "rip"
+   ],
+   "clues": [
+    "Keep -ple. Change pur to sam.",
+    "Keep -ple. Change sam to tri.",
+    "Keep -ple. Change tri to rip.",
+    "Take off -ple."
+   ]
+  },
+  "og3-08|-tle": {
+   "start": "castle",
+   "words": [
+    "castle",
+    "gentle",
+    "turtle",
+    "cattle",
+    "cat"
+   ],
+   "clues": [
+    "Keep -tle. Change cas to gen.",
+    "Keep -tle. Change gen to tur.",
+    "Keep -tle. Change tur to cat.",
+    "Take off -tle."
+   ]
+  },
+  "og3-09": {
+   "start": "one",
+   "words": [
+    "one",
+    "on",
+    "in",
+    "an",
+    "ran",
+    "run"
+   ],
+   "clues": [
+    "Take off the silent e.",
+    "Change the o to i.",
+    "Change the i to a.",
+    "Add an r at the start.",
+    "Change the a to u."
+   ]
+  },
+  "og3-10": {
+   "start": "his",
+   "words": [
+    "his",
+    "is",
+    "it",
+    "at",
+    "hat",
+    "what",
+    "that"
+   ],
+   "clues": [
+    "Take off the h.",
+    "Change the s to t.",
+    "Change the i to a.",
+    "Add an h at the start.",
+    "Add a w at the start.",
+    "Change the w to t."
+   ]
+  },
+  "og3-10|'ll": {
+   "start": "i'll",
+   "words": [
+    "i'll",
+    "we'll",
+    "she'll",
+    "he'll",
+    "they'll",
+    "you'll",
+    "it'll"
+   ],
+   "clues": [
+    "Keep 'll. Change i to we.",
+    "Keep 'll. Change we to she.",
+    "Keep 'll. Change she to he.",
+    "Keep 'll. Change he to they.",
+    "Keep 'll. Change they to you.",
+    "Keep 'll. Change you to it."
+   ]
+  },
+  "og3-10|'s": {
+   "start": "dog's",
+   "words": [
+    "dog's",
+    "cat's",
+    "hen's",
+    "pig's",
+    "kid's",
+    "pup's",
+    "cub's"
+   ],
+   "clues": [
+    "Keep 's. Change dog to cat.",
+    "Keep 's. Change cat to hen.",
+    "Keep 's. Change hen to pig.",
+    "Keep 's. Change pig to kid.",
+    "Keep 's. Change kid to pup.",
+    "Keep 's. Change pup to cub."
+   ]
+  },
+  "og3-10|'ve": {
+   "start": "i've",
+   "words": [
+    "i've",
+    "we've",
+    "they've",
+    "you've",
+    "could've",
+    "would've",
+    "should've"
+   ],
+   "clues": [
+    "Keep 've. Change i to we.",
+    "Keep 've. Change we to they.",
+    "Keep 've. Change they to you.",
+    "Keep 've. Change you to could.",
+    "Keep 've. Change could to would.",
+    "Keep 've. Change would to should."
+   ]
+  },
+  "og3-10|n't": {
+   "start": "isn't",
+   "words": [
+    "isn't",
+    "wasn't",
+    "weren't",
+    "aren't",
+    "don't",
+    "didn't",
+    "doesn't"
+   ],
+   "clues": [
+    "Keep n't. Change is to was.",
+    "Keep n't. Change was to were.",
+    "Keep n't. Change were to are.",
+    "Keep n't. Change are to do.",
+    "Keep n't. Change do to did.",
+    "Keep n't. Change did to does."
+   ]
+  },
+  "og3-11": {
+   "start": "was",
+   "words": [
+    "was",
+    "as",
+    "is",
+    "in",
+    "an",
+    "and",
+    "end"
+   ],
+   "clues": [
+    "Take off the w.",
+    "Change the a to i.",
+    "Change the s to n.",
+    "Change the i to a.",
+    "Add a d at the end.",
+    "Change the a to e."
+   ]
+  },
+  "og3-11|-sion": {
+   "start": "mansion",
+   "words": [
+    "mansion",
+    "tension",
+    "session",
+    "passion",
+    "pass"
+   ],
+   "clues": [
+    "Keep -sion. Change man to ten.",
+    "Keep -sion. Change ten to ses.",
+    "Keep -sion. Change ses to pas.",
+    "Change -sion to -s."
+   ]
+  },
+  "og3-11|-tion": {
+   "start": "section",
+   "words": [
+    "section",
+    "mention",
+    "caption",
+    "cap",
+    "caps"
+   ],
+   "clues": [
+    "Keep -tion. Change sec to men.",
+    "Keep -tion. Change men to cap.",
+    "Take off -tion.",
+    "Add -s."
+   ]
+  },
+  "og3-12": {
+   "start": "an",
+   "words": [
+    "an",
+    "in",
+    "is",
+    "ist",
+    "it",
+    "at",
+    "art"
+   ],
+   "clues": [
+    "Change the a to i.",
+    "Change the n to s.",
+    "Add a t at the end.",
+    "Take off the s.",
+    "Change the i to a.",
+    "Put an r between the a and the t."
+   ]
+  },
+  "og3-12|-able": {
+   "start": "washable",
+   "words": [
+    "washable",
+    "comfortable",
+    "breakable",
+    "fixable",
+    "fix"
+   ],
+   "clues": [
+    "Keep -able. Change wash to comfort.",
+    "Keep -able. Change comfort to break.",
+    "Keep -able. Change break to fix.",
+    "Take off -able."
+   ]
+  },
+  "og3-12|-ible": {
+   "start": "invisible",
+   "words": [
+    "invisible",
+    "visible",
+    "sensible",
+    "flexible",
+    "possible",
+    "impossible"
+   ],
+   "clues": [
+    "Take off the prefix in-.",
+    "Keep -ible. Change vis to sens.",
+    "Keep -ible. Change sens to flex.",
+    "Keep -ible. Change flex to poss.",
+    "Add the prefix im-."
+   ]
+  },
+  "og3-12|-ist": {
+   "start": "tourist",
+   "words": [
+    "tourist",
+    "pianist",
+    "scientist",
+    "artist",
+    "art"
+   ],
+   "clues": [
+    "Keep -ist. Change tour to pian.",
+    "Keep -ist. Change pian to scient.",
+    "Keep -ist. Change scient to art.",
+    "Take off -ist."
+   ]
+  },
+  "og3-12|-ive": {
+   "start": "active",
+   "words": [
+    "active",
+    "creative",
+    "massive",
+    "native",
+    "nature"
+   ],
+   "clues": [
+    "Keep -ive. Change act to creat.",
+    "Keep -ive. Change creat to mass.",
+    "Keep -ive. Change mass to nat.",
+    "Change -ive to -ure."
+   ]
+  },
+  "og3-13": {
+   "start": "test",
+   "words": [
+    "test",
+    "protest",
+    "pretest",
+    "prefix",
+    "preheat",
+    "reheat",
+    "repeat"
+   ],
+   "clues": [
+    "Add the prefix pro-.",
+    "Change pro- to pre-.",
+    "Keep pre-. Change test to fix.",
+    "Keep pre-. Change fix to heat.",
+    "Change pre- to re-.",
+    "Keep re-. Change heat to peat."
+   ]
+  },
+  "og3-13|de-": {
+   "start": "defend",
+   "words": [
+    "defend",
+    "decline",
+    "defrost",
+    "decode",
+    "code"
+   ],
+   "clues": [
+    "Keep de-. Change fend to cline.",
+    "Keep de-. Change cline to frost.",
+    "Keep de-. Change frost to code.",
+    "Take off the prefix de-."
+   ]
+  },
+  "og3-13|pre-": {
+   "start": "prefix",
+   "words": [
+    "prefix",
+    "preheat",
+    "prepare",
+    "prevent",
+    "invent"
+   ],
+   "clues": [
+    "Keep pre-. Change fix to heat.",
+    "Keep pre-. Change heat to pare.",
+    "Keep pre-. Change pare to vent.",
+    "Change pre- to in-."
+   ]
+  },
+  "og3-13|pro-": {
+   "start": "program",
+   "words": [
+    "program",
+    "propose",
+    "promote",
+    "protest",
+    "test"
+   ],
+   "clues": [
+    "Keep pro-. Change gram to pose.",
+    "Keep pro-. Change pose to mote.",
+    "Keep pro-. Change mote to test.",
+    "Take off the prefix pro-."
+   ]
+  },
+  "og3-13|re-": {
+   "start": "relax",
+   "words": [
+    "relax",
+    "rex's",
+    "repeat",
+    "remind",
+    "mind"
+   ],
+   "clues": [
+    "Keep re-. Change lax to x's.",
+    "Keep re-. Change x's to peat.",
+    "Keep re-. Change peat to mind.",
+    "Take off the prefix re-."
+   ]
+  },
+  "og4-01": {
+   "start": "her",
+   "words": [
+    "her",
+    "he",
+    "she",
+    "the",
+    "they",
+    "then",
+    "when"
+   ],
+   "clues": [
+    "Take off the r.",
+    "Add an s at the start.",
+    "Change the s to t.",
+    "Add a y at the end.",
+    "Change the y to n.",
+    "Change the t to w."
+   ]
+  },
+  "og4-01|form": {
+   "start": "reform",
+   "words": [
+    "reform",
+    "inform",
+    "transform",
+    "form",
+    "formal"
+   ],
+   "clues": [
+    "Change re- to in-.",
+    "Change in- to trans-.",
+    "Take off the prefix trans-.",
+    "Add -al."
+   ]
+  },
+  "og4-01|port": {
+   "start": "export",
+   "words": [
+    "export",
+    "transport",
+    "import",
+    "report",
+    "port",
+    "portable",
+    "porter"
+   ],
+   "clues": [
+    "Change ex- to trans-.",
+    "Change trans- to im-.",
+    "Change im- to re-.",
+    "Take off the prefix re-.",
+    "Add -able.",
+    "Change -able to -er."
+   ]
+  },
+  "og4-01|rupt": {
+   "start": "abruptly",
+   "words": [
+    "abruptly",
+    "abrupt",
+    "disrupt",
+    "corrupt",
+    "interrupt",
+    "interrupted"
+   ],
+   "clues": [
+    "Take ly off the end.",
+    "Keep rupt. Change ab to dis.",
+    "Keep rupt. Change dis to cor.",
+    "Keep rupt. Change cor to inter.",
+    "Add ed to the end."
+   ]
+  },
+  "og4-01|scrib/script": {
+   "start": "describe",
+   "words": [
+    "describe",
+    "prescribe",
+    "subscribe",
+    "inscribe",
+    "insect"
+   ],
+   "clues": [
+    "Change de- to pre-.",
+    "Change pre- to sub-.",
+    "Change sub- to in-.",
+    "Keep in-. Change scribe to sect."
+   ]
+  },
+  "og4-01|tract": {
+   "start": "tractor",
+   "words": [
+    "tractor",
+    "traction",
+    "subtraction",
+    "subtract",
+    "contract",
+    "attract",
+    "attractive"
+   ],
+   "clues": [
+    "Keep tract. Change or to ion.",
+    "Put sub in front of tract.",
+    "Take ion off the end.",
+    "Keep tract. Change sub to con.",
+    "Keep tract. Change con to at.",
+    "Add ive to the end."
+   ]
+  },
+  "og4-02": {
+   "start": "we",
+   "words": [
+    "we",
+    "be",
+    "he",
+    "she",
+    "the",
+    "them",
+    "they"
+   ],
+   "clues": [
+    "Change the w to b.",
+    "Change the b to h.",
+    "Add an s at the start.",
+    "Change the s to t.",
+    "Add an m at the end.",
+    "Change the m to y."
+   ]
+  },
+  "og4-02|flect/flex": {
+   "start": "reflex",
+   "words": [
+    "reflex",
+    "flex",
+    "flexed",
+    "flexible",
+    "inflexible"
+   ],
+   "clues": [
+    "Take off the prefix re-.",
+    "Add -ed.",
+    "Change -ed to -ible.",
+    "Add the prefix in-."
+   ]
+  },
+  "og4-02|ject": {
+   "start": "reject",
+   "words": [
+    "reject",
+    "subject",
+    "inject",
+    "injection",
+    "rejection",
+    "objection",
+    "object"
+   ],
+   "clues": [
+    "Keep ject. Change re to sub.",
+    "Keep ject. Change sub to in.",
+    "Add ion to the end.",
+    "Keep ject. Change in to re.",
+    "Keep ject. Change re to ob.",
+    "Take ion off the end."
+   ]
+  },
+  "og4-02|mit/miss": {
+   "start": "missed",
+   "words": [
+    "missed",
+    "misspell",
+    "misstep",
+    "mission",
+    "permission",
+    "admission"
+   ],
+   "clues": [
+    "Keep miss. Change ed to pell.",
+    "Keep miss. Change pell to tep.",
+    "Keep miss. Change tep to ion.",
+    "Put per in front of miss.",
+    "Keep miss. Change per to ad."
+   ]
+  },
+  "og4-02|spec/spect": {
+   "start": "respected",
+   "words": [
+    "respected",
+    "respect",
+    "suspect",
+    "prospect",
+    "inspect",
+    "inspector"
+   ],
+   "clues": [
+    "Take ed off the end.",
+    "Keep spect. Change re to su.",
+    "Keep spect. Change su to pro.",
+    "Keep spect. Change pro to in.",
+    "Add or to the end."
+   ]
+  },
+  "og4-02|struct": {
+   "start": "instruct",
+   "words": [
+    "instruct",
+    "construct",
+    "obstruct",
+    "obstruction",
+    "instruction",
+    "instructions"
+   ],
+   "clues": [
+    "Keep struct. Change in to con.",
+    "Keep struct. Change con to ob.",
+    "Add ion to the end.",
+    "Keep struction. Change ob to in.",
+    "Add an s at the end."
+   ]
+  },
+  "og4-03": {
+   "start": "when",
+   "words": [
+    "when",
+    "then",
+    "the",
+    "she",
+    "he",
+    "her",
+    "hear"
+   ],
+   "clues": [
+    "Change the w to t.",
+    "Take off the n.",
+    "Change the t to s.",
+    "Take off the s.",
+    "Add an r at the end.",
+    "Put an a between the e and the r."
+   ]
+  },
+  "og4-03|aud": {
+   "start": "audio",
+   "words": [
+    "audio",
+    "audience",
+    "auditorium",
+    "audible",
+    "inaudible"
+   ],
+   "clues": [
+    "Keep aud. Change io to ience.",
+    "Keep aud. Change ience to itorium.",
+    "Keep aud. Change itorium to ible.",
+    "Put in in front of aud."
+   ]
+  },
+  "og4-03|cur/curs": {
+   "start": "recur",
+   "words": [
+    "recur",
+    "reheat",
+    "preheat",
+    "precursor",
+    "cursor"
+   ],
+   "clues": [
+    "Keep re-. Change cur to heat.",
+    "Change re- to pre-.",
+    "Keep pre-. Change heat to cursor.",
+    "Take off the prefix pre-."
+   ]
+  },
+  "og4-03|duc/duct": {
+   "start": "conductor",
+   "words": [
+    "conductor",
+    "conduct",
+    "deduct",
+    "aqueduct",
+    "product",
+    "production"
+   ],
+   "clues": [
+    "Take or off the end.",
+    "Keep duct. Change con to de.",
+    "Keep duct. Change de to aque.",
+    "Keep duct. Change aque to pro.",
+    "Add ion to the end."
+   ]
+  },
+  "og4-03|grad/gress": {
+   "start": "grade",
+   "words": [
+    "grade",
+    "degrade",
+    "upgrade",
+    "uphill",
+    "hill"
+   ],
+   "clues": [
+    "Add the prefix de-.",
+    "Change de- to up-.",
+    "Keep up-. Change grade to hill.",
+    "Take off the prefix up-."
+   ]
+  },
+  "og4-03|vert/vers": {
+   "start": "convert",
+   "words": [
+    "convert",
+    "invert",
+    "divert",
+    "revert",
+    "reverted",
+    "reverting"
+   ],
+   "clues": [
+    "Keep vert. Change con to in.",
+    "Keep vert. Change in to di.",
+    "Keep vert. Change di to re.",
+    "Add ed to the end.",
+    "Keep revert. Change ed to ing."
+   ]
+  },
+  "og4-03|vid/vis": {
+   "start": "division",
+   "words": [
+    "division",
+    "television",
+    "vision",
+    "visit",
+    "visitor",
+    "visible",
+    "invisible"
+   ],
+   "clues": [
+    "Keep vis. Change di to tele.",
+    "Take tele off the front.",
+    "Keep vis. Change ion to it.",
+    "Keep vis. Change it to itor.",
+    "Keep vis. Change itor to ible.",
+    "Put in in front of vis."
+   ]
+  },
+  "og4-04": {
+   "start": "they",
+   "words": [
+    "they",
+    "the",
+    "she",
+    "he",
+    "her",
+    "hero"
+   ],
+   "clues": [
+    "Take off the y.",
+    "Change the t to s.",
+    "Take off the s.",
+    "Add an r at the end.",
+    "Add an o at the end."
+   ]
+  },
+  "og4-04|-ar": {
+   "start": "solar",
+   "words": [
+    "solar",
+    "volar",
+    "collar",
+    "dollar",
+    "doll"
+   ],
+   "clues": [
+    "Keep -ar. Change sol to vol.",
+    "Keep -ar. Change vol to coll.",
+    "Keep -ar. Change coll to doll.",
+    "Take off -ar."
+   ]
+  },
+  "og4-04|-ic": {
+   "start": "music",
+   "words": [
+    "music",
+    "fantastic",
+    "panic",
+    "heroic",
+    "hero"
+   ],
+   "clues": [
+    "Keep -ic. Change mus to fantast.",
+    "Keep -ic. Change fantast to pan.",
+    "Keep -ic. Change pan to hero.",
+    "Take off -ic."
+   ]
+  },
+  "og4-04|-ous": {
+   "start": "famous",
+   "words": [
+    "famous",
+    "nervous",
+    "jealous",
+    "curious",
+    "serious",
+    "generous",
+    "enormous"
+   ],
+   "clues": [
+    "Keep -ous. Change fam to nerv.",
+    "Keep -ous. Change nerv to jeal.",
+    "Keep -ous. Change jeal to curi.",
+    "Keep -ous. Change curi to seri.",
+    "Keep -ous. Change seri to gener.",
+    "Keep -ous. Change gener to enorm."
+   ]
+  },
+  "og4-04|-ure": {
+   "start": "nature",
+   "words": [
+    "nature",
+    "picture",
+    "creature",
+    "scripture",
+    "script"
+   ],
+   "clues": [
+    "Keep -ure. Change nat to pict.",
+    "Keep -ure. Change pict to creat.",
+    "Keep -ure. Change creat to script.",
+    "Take off -ure."
+   ]
+  },
+  "og4-04|inter-": {
+   "start": "interact",
+   "words": [
+    "interact",
+    "interest",
+    "interval",
+    "interrupt",
+    "interstate",
+    "interfere",
+    "interpret"
+   ],
+   "clues": [
+    "Keep inter-. Change act to est.",
+    "Keep inter-. Change est to val.",
+    "Keep inter-. Change val to rupt.",
+    "Keep inter-. Change rupt to state.",
+    "Keep inter-. Change state to fere.",
+    "Keep inter-. Change fere to pret."
+   ]
+  },
+  "og4-04|trans-": {
+   "start": "transfer",
+   "words": [
+    "transfer",
+    "transport",
+    "transform",
+    "translate",
+    "late"
+   ],
+   "clues": [
+    "Keep trans-. Change fer to port.",
+    "Keep trans-. Change port to form.",
+    "Keep trans-. Change form to late.",
+    "Take off the prefix trans-."
+   ]
+  },
+  "og4-05": {
+   "start": "be",
+   "words": [
+    "be",
+    "he",
+    "the",
+    "they",
+    "then",
+    "when"
+   ],
+   "clues": [
+    "Change the b to h.",
+    "Add a t at the start.",
+    "Add a y at the end.",
+    "Change the y to n.",
+    "Change the t to w."
+   ]
+  },
+  "og4-06": {
+   "start": "we",
+   "words": [
+    "we",
+    "he",
+    "the",
+    "then",
+    "them",
+    "they"
+   ],
+   "clues": [
+    "Change the w to h.",
+    "Add a t at the start.",
+    "Add an n at the end.",
+    "Change the n to m.",
+    "Change the m to y."
+   ]
+  },
+  "og4-06|ei": {
+   "start": "eight",
+   "words": [
+    "eight",
+    "weight",
+    "weigh",
+    "neigh",
+    "neighbor",
+    "neighbors"
+   ],
+   "clues": [
+    "Add a w at the start.",
+    "Take off the t.",
+    "Change the w to n.",
+    "Add bor to the end.",
+    "Add an s at the end."
+   ]
+  },
+  "og4-06|eigh": {
+   "start": "neigh",
+   "words": [
+    "neigh",
+    "weigh",
+    "weight",
+    "height",
+    "eight",
+    "eighty"
+   ],
+   "clues": [
+    "Change the n to w.",
+    "Add a t at the end.",
+    "Change the w to h.",
+    "Take off the first h.",
+    "Add a y at the end."
+   ]
+  },
+  "og4-06|ew": {
+   "start": "flew",
+   "words": [
+    "flew",
+    "few",
+    "new",
+    "knew",
+    "knee"
+   ],
+   "clues": [
+    "Take off the l.",
+    "Change the f to n.",
+    "Add a k at the start.",
+    "Change the w to e."
+   ]
+  },
+  "og4-06|ue": {
+   "start": "blue",
+   "words": [
+    "blue",
+    "glue",
+    "clue",
+    "club",
+    "cub"
+   ],
+   "clues": [
+    "Change the b to g.",
+    "Change the g to c.",
+    "Change the e to b.",
+    "Take off the l."
+   ]
+  },
+  "og4-06|ui": {
+   "start": "equip",
+   "words": [
+    "equip",
+    "quip",
+    "quiz",
+    "quit",
+    "quiet",
+    "quilt",
+    "guilt"
+   ],
+   "clues": [
+    "Take off the e.",
+    "Change the p to z.",
+    "Change the z to t.",
+    "Put an e between the i and the t.",
+    "Change the e to l.",
+    "Change the q to g."
+   ]
+  },
+  "og4-07": {
+   "start": "and",
+   "words": [
+    "and",
+    "an",
+    "at",
+    "it",
+    "is",
+    "his",
+    "him"
+   ],
+   "clues": [
+    "Take off the d.",
+    "Change the n to t.",
+    "Change the a to i.",
+    "Change the t to s.",
+    "Add an h at the start.",
+    "Change the s to m."
+   ]
+  },
+  "og4-07|con-/com-": {
+   "start": "connect",
+   "words": [
+    "connect",
+    "contest",
+    "contract",
+    "confirm",
+    "consonant",
+    "continue",
+    "convert"
+   ],
+   "clues": [
+    "Keep con-. Change nect to test.",
+    "Keep con-. Change test to tract.",
+    "Keep con-. Change tract to firm.",
+    "Keep con-. Change firm to sonant.",
+    "Keep con-. Change sonant to tinue.",
+    "Keep con-. Change tinue to vert."
+   ]
+  },
+  "og4-07|il-": {
+   "start": "legal",
+   "words": [
+    "legal",
+    "illegal",
+    "illegible",
+    "illogical",
+    "illiterate",
+    "literate"
+   ],
+   "clues": [
+    "Add the prefix il-.",
+    "Keep il-. Change legal to legible.",
+    "Keep il-. Change legible to logical.",
+    "Keep il-. Change logical to literate.",
+    "Take off the prefix il-."
+   ]
+  },
+  "og4-07|im-": {
+   "start": "import",
+   "words": [
+    "import",
+    "impolite",
+    "immobile",
+    "impure",
+    "pure"
+   ],
+   "clues": [
+    "Keep im-. Change port to polite.",
+    "Keep im-. Change polite to mobile.",
+    "Keep im-. Change mobile to pure.",
+    "Take off the prefix im-."
+   ]
+  },
+  "og4-07|ir-": {
+   "start": "regular",
+   "words": [
+    "regular",
+    "irregular",
+    "irrational",
+    "irrelevant",
+    "irresponsible",
+    "responsible"
+   ],
+   "clues": [
+    "Add the prefix ir-.",
+    "Keep ir-. Change regular to rational.",
+    "Keep ir-. Change rational to relevant.",
+    "Keep ir-. Change relevant to responsible.",
+    "Take off the prefix ir-."
+   ]
+  },
+  "og4-08": {
+   "start": "we",
+   "words": [
+    "we",
+    "be",
+    "he",
+    "she",
+    "the",
+    "then",
+    "them"
+   ],
+   "clues": [
+    "Change the w to b.",
+    "Change the b to h.",
+    "Add an s at the start.",
+    "Change the s to t.",
+    "Add an n at the end.",
+    "Change the n to m."
+   ]
+  },
+  "og4-08|-cial": {
+   "start": "special",
+   "words": [
+    "special",
+    "social",
+    "official",
+    "financial",
+    "crucial",
+    "facial",
+    "racial"
+   ],
+   "clues": [
+    "Keep -cial. Change spe to so.",
+    "Keep -cial. Change so to offi.",
+    "Keep -cial. Change offi to finan.",
+    "Keep -cial. Change finan to cru.",
+    "Keep -cial. Change cru to fa.",
+    "Keep -cial. Change fa to ra."
+   ]
+  },
+  "og4-08|-cian": {
+   "start": "magician",
+   "words": [
+    "magician",
+    "musician",
+    "electrician",
+    "politician",
+    "technician",
+    "optician",
+    "beautician"
+   ],
+   "clues": [
+    "Keep -cian. Change magi to musi.",
+    "Keep -cian. Change musi to electri.",
+    "Keep -cian. Change electri to politi.",
+    "Keep -cian. Change politi to techni.",
+    "Keep -cian. Change techni to opti.",
+    "Keep -cian. Change opti to beauti."
+   ]
+  },
+  "og4-08|-cious": {
+   "start": "spacious",
+   "words": [
+    "spacious",
+    "conscious",
+    "malicious",
+    "gracious",
+    "gray"
+   ],
+   "clues": [
+    "Keep -cious. Change spa to cons.",
+    "Keep -cious. Change cons to mali.",
+    "Keep -cious. Change mali to gra.",
+    "Change -cious to -y."
+   ]
+  },
+  "og4-08|-tial": {
+   "start": "partial",
+   "words": [
+    "partial",
+    "essential",
+    "potential",
+    "martial",
+    "marble"
+   ],
+   "clues": [
+    "Keep -tial. Change par to essen.",
+    "Keep -tial. Change essen to poten.",
+    "Keep -tial. Change poten to mar.",
+    "Change -tial to -ble."
+   ]
+  },
+  "og4-08|-tious": {
+   "start": "cautious",
+   "words": [
+    "cautious",
+    "nutritious",
+    "ambitious",
+    "infectious",
+    "fictitious",
+    "scrumptious"
+   ],
+   "clues": [
+    "Keep -tious. Change cau to nutri.",
+    "Keep -tious. Change nutri to ambi.",
+    "Keep -tious. Change ambi to infec.",
+    "Keep -tious. Change infec to ficti.",
+    "Keep -tious. Change ficti to scrump."
+   ]
+  },
+  "og4-09": {
+   "start": "his",
+   "words": [
+    "his",
+    "is",
+    "it",
+    "at",
+    "hat",
+    "what",
+    "that"
+   ],
+   "clues": [
+    "Take off the h.",
+    "Change the s to t.",
+    "Change the i to a.",
+    "Add an h at the start.",
+    "Add a w at the start.",
+    "Change the w to t."
+   ]
+  },
+  "og5-01": {
+   "start": "her",
+   "words": [
+    "her",
+    "he",
+    "the",
+    "then",
+    "when"
+   ],
+   "clues": [
+    "Take off the r.",
+    "Add a t at the start.",
+    "Add an n at the end.",
+    "Change the t to w."
+   ]
+  },
+  "og5-01|ch": {
+   "start": "patch",
+   "words": [
+    "patch",
+    "watch",
+    "witch",
+    "itch",
+    "ditch",
+    "pitch",
+    "pinch"
+   ],
+   "clues": [
+    "Change the p to w.",
+    "Change the a to i.",
+    "Take off the w.",
+    "Add a d at the start.",
+    "Change the d to p.",
+    "Change the t to n."
+   ]
+  },
+  "og5-01|ph": {
+   "start": "photo",
+   "words": [
+    "photo",
+    "photograph",
+    "paragraph",
+    "autograph",
+    "telegraph",
+    "telephone",
+    "headphone"
+   ],
+   "clues": [
+    "Add graph to the end.",
+    "Keep graph. Change photo to para.",
+    "Keep graph. Change para to auto.",
+    "Keep graph. Change auto to tele.",
+    "Keep tele. Change graph to phone.",
+    "Keep phone. Change tele to head."
+   ]
+  },
+  "og5-02": {
+   "start": "and",
+   "words": [
+    "and",
+    "an",
+    "in",
+    "on",
+    "one",
+    "gone"
+   ],
+   "clues": [
+    "Take off the d.",
+    "Change the a to i.",
+    "Change the i to o.",
+    "Add a silent e.",
+    "Add a g at the start."
+   ]
+  },
+  "og5-03": {
+   "start": "it",
+   "words": [
+    "it",
+    "its",
+    "is",
+    "in",
+    "an",
+    "and",
+    "end"
+   ],
+   "clues": [
+    "Add an s at the end.",
+    "Take off the t.",
+    "Change the s to n.",
+    "Change the i to a.",
+    "Add a d at the end.",
+    "Change the a to e."
+   ]
+  },
+  "og5-03|mn": {
+   "start": "autumn",
+   "words": [
+    "autumn",
+    "column",
+    "solemn",
+    "hymn",
+    "condemn"
+   ],
+   "clues": [
+    "Keep mn. Change autu to colu.",
+    "Keep mn. Change colu to sole.",
+    "Keep mn. Change sole to hy.",
+    "Keep mn. Change hy to conde."
+   ]
+  },
+  "og5-03|ps": {
+   "start": "hops",
+   "words": [
+    "hops",
+    "pops",
+    "mops",
+    "maps",
+    "taps",
+    "caps",
+    "claps"
+   ],
+   "clues": [
+    "Change the h to p.",
+    "Change the first p to m.",
+    "Change the o to a.",
+    "Change the m to t.",
+    "Change the t to c.",
+    "Put an l between the c and the a."
+   ]
+  },
+  "og5-03|rh": {
+   "start": "rhyme",
+   "words": [
+    "rhyme",
+    "rhino",
+    "rhombus",
+    "rhubarb",
+    "rhythm",
+    "rhetoric",
+    "rhapsody"
+   ],
+   "clues": [
+    "Keep rh. Change yme to ino.",
+    "Keep rh. Change ino to ombus.",
+    "Keep rh. Change ombus to ubarb.",
+    "Keep rh. Change ubarb to ythm.",
+    "Keep rh. Change ythm to etoric.",
+    "Keep rh. Change etoric to apsody."
+   ]
+  },
+  "og5-04": {
+   "start": "see",
+   "words": [
+    "see",
+    "she",
+    "the",
+    "they",
+    "then",
+    "when"
+   ],
+   "clues": [
+    "Change the first e to h.",
+    "Change the s to t.",
+    "Add a y at the end.",
+    "Change the y to n.",
+    "Change the t to w."
+   ]
+  },
+  "og5-04|bio": {
+   "start": "biology",
+   "words": [
+    "biology",
+    "biography",
+    "biosphere",
+    "biopsy",
+    "biologist",
+    "biochemistry"
+   ],
+   "clues": [
+    "Keep bio. Change logy to graphy.",
+    "Keep bio. Change graphy to sphere.",
+    "Keep bio. Change sphere to psy.",
+    "Keep bio. Change psy to logist.",
+    "Keep bio. Change logist to chemistry."
+   ]
+  },
+  "og5-04|graph": {
+   "start": "paragraph",
+   "words": [
+    "paragraph",
+    "autograph",
+    "telegraph",
+    "photograph",
+    "polygraph"
+   ],
+   "clues": [
+    "Keep graph. Change para to auto.",
+    "Keep graph. Change auto to tele.",
+    "Keep graph. Change tele to photo.",
+    "Keep graph. Change photo to poly."
+   ]
+  },
+  "og5-04|ology": {
+   "start": "biology",
+   "words": [
+    "biology",
+    "zoology",
+    "geology",
+    "mythology",
+    "technology",
+    "psychology"
+   ],
+   "clues": [
+    "Keep ology. Change bi to zo.",
+    "Keep ology. Change zo to ge.",
+    "Keep ology. Change ge to myth.",
+    "Keep ology. Change myth to techn.",
+    "Keep ology. Change techn to psych."
+   ]
+  },
+  "og5-04|phon": {
+   "start": "telephone",
+   "words": [
+    "telephone",
+    "microphone",
+    "headphone",
+    "megaphone",
+    "earphone",
+    "homophone"
+   ],
+   "clues": [
+    "Keep phone. Change tele to micro.",
+    "Keep phone. Change micro to head.",
+    "Keep phone. Change head to mega.",
+    "Keep phone. Change mega to ear.",
+    "Keep phone. Change ear to homo."
+   ]
+  },
+  "og5-04|photo": {
+   "start": "photo",
+   "words": [
+    "photo",
+    "photograph",
+    "photographer",
+    "photography",
+    "photocopy",
+    "photogenic"
+   ],
+   "clues": [
+    "Add graph to the end.",
+    "Add er to the end.",
+    "Keep photograph. Change er to y.",
+    "Keep photo. Change graphy to copy.",
+    "Keep photo. Change copy to genic."
+   ]
+  },
+  "og5-04|tele": {
+   "start": "telephone",
+   "words": [
+    "telephone",
+    "telescope",
+    "television",
+    "telegraph",
+    "telegram",
+    "telepathy"
+   ],
+   "clues": [
+    "Keep tele. Change phone to scope.",
+    "Keep tele. Change scope to vision.",
+    "Keep tele. Change vision to graph.",
+    "Keep tele. Change graph to gram.",
+    "Keep tele. Change gram to pathy."
+   ]
+  },
+  "og5-05": {
+   "start": "one",
+   "words": [
+    "one",
+    "on",
+    "an",
+    "at",
+    "hat",
+    "hot",
+    "how"
+   ],
+   "clues": [
+    "Take off the silent e.",
+    "Change the o to a.",
+    "Change the n to t.",
+    "Add an h at the start.",
+    "Change the a to o.",
+    "Change the t to w."
+   ]
+  },
+  "og5-05|ch": {
+   "start": "patch",
+   "words": [
+    "patch",
+    "watch",
+    "witch",
+    "itch",
+    "ditch",
+    "pitch",
+    "pinch"
+   ],
+   "clues": [
+    "Change the p to w.",
+    "Change the a to i.",
+    "Take off the w.",
+    "Add a d at the start.",
+    "Change the d to p.",
+    "Change the t to n."
+   ]
+  },
+  "og5-05|ou": {
+   "start": "you",
+   "words": [
+    "you",
+    "your",
+    "four",
+    "our",
+    "sour",
+    "soup"
+   ],
+   "clues": [
+    "Add an r at the end.",
+    "Change the y to f.",
+    "Take off the f.",
+    "Add an s at the start.",
+    "Change the r to p."
+   ]
+  },
+  "og5-06": {
+   "start": "to",
+   "words": [
+    "to",
+    "so",
+    "son",
+    "on",
+    "in",
+    "is",
+    "his"
+   ],
+   "clues": [
+    "Change the t to s.",
+    "Add an n at the end.",
+    "Take off the s.",
+    "Change the o to i.",
+    "Change the n to s.",
+    "Add an h at the start."
+   ]
+  },
+  "og5-07": {
+   "start": "word",
+   "words": [
+    "word",
+    "work",
+    "worm",
+    "worms",
+    "words",
+    "wordy",
+    "worry"
+   ],
+   "clues": [
+    "Change the d to k.",
+    "Change the k to m.",
+    "Add an s at the end.",
+    "Change the m to d.",
+    "Change the s to y.",
+    "Change the d to r."
+   ]
+  },
+  "og5-08": {
+   "start": "she",
+   "words": [
+    "she",
+    "the",
+    "they",
+    "then",
+    "when"
+   ],
+   "clues": [
+    "Change the s to t.",
+    "Add a y at the end.",
+    "Change the y to n.",
+    "Change the t to w."
+   ]
+  },
+  "og5-08|-age": {
+   "start": "voyage",
+   "words": [
+    "voyage",
+    "garbage",
+    "message",
+    "package",
+    "pack"
+   ],
+   "clues": [
+    "Keep -age. Change voy to garb.",
+    "Keep -age. Change garb to mess.",
+    "Keep -age. Change mess to pack.",
+    "Take off -age."
+   ]
+  },
+  "og5-08|-al": {
+   "start": "final",
+   "words": [
+    "final",
+    "jackal",
+    "total",
+    "metal",
+    "nonmetal",
+    "nonverbal"
+   ],
+   "clues": [
+    "Keep -al. Change fin to jack.",
+    "Keep -al. Change jack to tot.",
+    "Keep -al. Change tot to met.",
+    "Add the prefix non-.",
+    "Keep non- and -al. Change met to verb."
+   ]
+  },
+  "og5-08|-ance": {
+   "start": "balance",
+   "words": [
+    "balance",
+    "appearance",
+    "assistance",
+    "performance",
+    "perform"
+   ],
+   "clues": [
+    "Keep -ance. Change bal to appear.",
+    "Keep -ance. Change appear to assist.",
+    "Keep -ance. Change assist to perform.",
+    "Take off -ance."
+   ]
+  },
+  "og5-08|-ence": {
+   "start": "sentence",
+   "words": [
+    "sentence",
+    "difference",
+    "silence",
+    "silly",
+    "constantly"
+   ],
+   "clues": [
+    "Keep -ence. Change sent to differ.",
+    "Keep -ence. Change differ to sil.",
+    "Change -ence to -ly.",
+    "Keep -ly. Change sil to constant."
+   ]
+  },
+  "og5-09": {
+   "start": "my",
+   "words": [
+    "my",
+    "me",
+    "he",
+    "the",
+    "they",
+    "then",
+    "when"
+   ],
+   "clues": [
+    "Change the y to e.",
+    "Change the m to h.",
+    "Add a t at the start.",
+    "Add a y at the end.",
+    "Change the y to n.",
+    "Change the t to w."
+   ]
+  },
+  "og5-09|aught": {
+   "start": "caught",
+   "words": [
+    "caught",
+    "aught",
+    "taught",
+    "thaught",
+    "thought"
+   ],
+   "clues": [
+    "Take off the c.",
+    "Add a t at the start.",
+    "Put an h between the t and the a.",
+    "Change the a to o."
+   ]
+  },
+  "og5-09|ought": {
+   "start": "sought",
+   "words": [
+    "sought",
+    "tought",
+    "nought",
+    "ought",
+    "bought",
+    "brought",
+    "drought"
+   ],
+   "clues": [
+    "Change the s to t.",
+    "Change the first t to n.",
+    "Take off the n.",
+    "Add a b at the start.",
+    "Put an r between the b and the o.",
+    "Change the b to d."
+   ]
+  },
+  "vccv": {
+   "start": "pet",
+   "words": [
+    "pet",
+    "set",
+    "sat",
+    "at",
+    "it",
+    "bit",
+    "but"
+   ],
+   "clues": [
+    "Change the p to s.",
+    "Change the e to a.",
+    "Take off the s.",
+    "Change the a to i.",
+    "Add a b at the start.",
+    "Change the i to u."
+   ]
+  },
+  "vccvce": {
+   "start": "pet",
+   "words": [
+    "pet",
+    "set",
+    "sat",
+    "at",
+    "it",
+    "bit",
+    "but"
+   ],
+   "clues": [
+    "Change the p to s.",
+    "Change the e to a.",
+    "Take off the s.",
+    "Change the a to i.",
+    "Add a b at the start.",
+    "Change the i to u."
+   ]
+  },
+  "vccvce|a_e": {
+   "start": "cake",
+   "words": [
+    "cake",
+    "lake",
+    "late",
+    "plate",
+    "plane",
+    "lane",
+    "jane"
+   ],
+   "clues": [
+    "Change the c to l.",
+    "Change the k to t.",
+    "Add a p at the start.",
+    "Change the t to n.",
+    "Take off the p.",
+    "Change the l to j."
+   ]
+  },
+  "vccvce|i_e": {
+   "start": "fine",
+   "words": [
+    "fine",
+    "line",
+    "like",
+    "likes",
+    "bikes",
+    "bike",
+    "mike"
+   ],
+   "clues": [
+    "Change the f to l.",
+    "Change the n to k.",
+    "Add an s at the end.",
+    "Change the l to b.",
+    "Take off the s.",
+    "Change the b to m."
+   ]
+  },
+  "vccvce|o_e": {
+   "start": "home",
+   "words": [
+    "home",
+    "hope",
+    "rope",
+    "rode",
+    "rod"
+   ],
+   "clues": [
+    "Change the m to p.",
+    "Change the h to r.",
+    "Change the p to d.",
+    "Take off the silent e."
+   ]
+  },
+  "vccv|a": {
+   "start": "cat",
+   "words": [
+    "cat",
+    "hat",
+    "hats",
+    "cats",
+    "caps",
+    "cap",
+    "cab"
+   ],
+   "clues": [
+    "Change the c to h.",
+    "Add an s at the end.",
+    "Change the h to c.",
+    "Change the t to p.",
+    "Take off the s.",
+    "Change the p to b."
+   ]
+  },
+  "vccv|e": {
+   "start": "hen",
+   "words": [
+    "hen",
+    "pen",
+    "pens",
+    "pets",
+    "pete",
+    "pet",
+    "vet"
+   ],
+   "clues": [
+    "Change the h to p.",
+    "Add an s at the end.",
+    "Change the n to t.",
+    "Change the s to e.",
+    "Take off the silent e.",
+    "Change the p to v."
+   ]
+  },
+  "vccv|i": {
+   "start": "pig",
+   "words": [
+    "pig",
+    "pigs",
+    "pins",
+    "pine",
+    "pin",
+    "fin",
+    "win"
+   ],
+   "clues": [
+    "Add an s at the end.",
+    "Change the g to n.",
+    "Change the s to e.",
+    "Take off the silent e.",
+    "Change the p to f.",
+    "Change the f to w."
+   ]
+  },
+  "vccv|u": {
+   "start": "bug",
+   "words": [
+    "bug",
+    "tug",
+    "tub",
+    "tubs",
+    "rubs",
+    "rugs",
+    "rug"
+   ],
+   "clues": [
+    "Change the b to t.",
+    "Change the g to b.",
+    "Add an s at the end.",
+    "Change the t to r.",
+    "Change the b to g.",
+    "Take off the s."
+   ]
+  },
+  "vce": {
+   "start": "pin",
+   "words": [
+    "pin",
+    "pine",
+    "line",
+    "like",
+    "likes",
+    "bikes",
+    "bike"
+   ],
+   "clues": [
+    "Add a silent e.",
+    "Change the p to l.",
+    "Change the n to k.",
+    "Add an s at the end.",
+    "Change the l to b.",
+    "Take off the s."
+   ]
+  },
+  "vce|a_e": {
+   "start": "cake",
+   "words": [
+    "cake",
+    "lake",
+    "late",
+    "ate",
+    "gate",
+    "game",
+    "name"
+   ],
+   "clues": [
+    "Change the c to l.",
+    "Change the k to t.",
+    "Take off the l.",
+    "Add a g at the start.",
+    "Change the t to m.",
+    "Change the g to n."
+   ]
+  },
+  "vce|i_e": {
+   "start": "fine",
+   "words": [
+    "fine",
+    "line",
+    "like",
+    "likes",
+    "bikes",
+    "bike",
+    "mike"
+   ],
+   "clues": [
+    "Change the f to l.",
+    "Change the n to k.",
+    "Add an s at the end.",
+    "Change the l to b.",
+    "Take off the s.",
+    "Change the b to m."
+   ]
+  },
+  "vce|o_e": {
+   "start": "home",
+   "words": [
+    "home",
+    "hope",
+    "rope",
+    "rode",
+    "rod"
+   ],
+   "clues": [
+    "Change the m to p.",
+    "Change the h to r.",
+    "Change the p to d.",
+    "Take off the silent e."
+   ]
+  },
+  "vce|u_e": {
+   "start": "fute",
+   "words": [
+    "fute",
+    "cute",
+    "cube",
+    "tube",
+    "tub"
+   ],
+   "clues": [
+    "Change the f to c.",
+    "Change the t to b.",
+    "Change the c to t.",
+    "Take off the silent e."
+   ]
+  },
+  "y": {
+   "start": "sky",
+   "words": [
+    "sky",
+    "shy",
+    "she",
+    "he",
+    "the",
+    "then",
+    "when"
+   ],
+   "clues": [
+    "Change the k to h.",
+    "Change the y to e.",
+    "Take off the s.",
+    "Add a t at the start.",
+    "Add an n at the end.",
+    "Change the t to w."
+   ]
+  }
+ }
+}

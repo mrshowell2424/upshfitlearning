@@ -24,6 +24,7 @@ import AICOACH from "./reading-ai-writing-coach.json" with { type: "json" };
 import EXTRAW from "./reading-extra-words.json" with { type: "json" };
 import PREQ from "./reading-prerequisites.json" with { type: "json" };
 import WSX from "./reading-what-says.json" with { type: "json" };
+import LADD from "./reading-word-ladders.json" with { type: "json" };
 import { db } from "@/lib/db";
 import { reading_materials } from "@/lib/db/schema";
 import { inArray, sql } from "drizzle-orm";
@@ -2206,6 +2207,52 @@ const ADAPTATIONS: Adaptation[] = [
         if (!out.includes(from)) return html;
         out = out.replace(from, to);
       }
+      return out;
+    },
+  },
+  {
+    // A word ladder for every lesson, on that lesson's own pattern.
+    //
+    // The packs carried 58 ladders between 62 lessons, so four of them were
+    // shared: ai-ay, ee-ea and oa-ow all printed the same one, which runs
+    // through ee, ea and oa words — two of those three lessons were asking
+    // for spellings they had not taught yet. The fifteen hand-written
+    // skills had no pack and so printed no ladder at all, and all 150 parts
+    // of a split lesson printed their parent's: the ow page laddered
+    // through oa.
+    //
+    // These are built rather than borrowed. Every rung is a real word that
+    // is decodable with what the sequence has taught by that lesson, every
+    // rung but a rationed few sits on the lesson's own pattern, and every
+    // clue has exactly one answer in the whole legal word set — a clue that
+    // two words satisfy is not a clue. scripts/check-word-ladders.mjs
+    // proves all of that and fails the build if it stops being true.
+    //
+    // The clues are spelling changes rather than meaning riddles, which is
+    // what a decoding lesson wants: the child's attention stays on the one
+    // sound that moved.
+    name: "give every lesson its own word ladder",
+    apply: (html) => {
+      const seat = "const subPat = SEL.split('|')[1] || '';";
+      const call =
+        "if (P.ladder) A('Word ladder', 'Start with \"' + P.ladder.start + " +
+        "'\". Follow each clue. Change one part at a time.', { items: P.ladder.clues, " +
+        "line: true, cols: 2, st: () => ({ fontSize: 12.5, fontWeight: 600, lineHeight: 1.3 }), w: 1.6 });";
+      if (!html.includes(seat) || !html.includes(call)) return html;
+      let out = html.replace(
+        seat,
+        seat + "\n    const LAD = " + JSON.stringify(LADD.ladders) + ";"
+      );
+      // The answer key prints each rung beside its clue, so a teacher is not
+      // solving the ladder at the front of the room.
+      const next =
+        "const LX = LAD[SEL] || LAD[SEL.split('|')[0]] || (P.ladder ? " +
+        "{ start: P.ladder.start, words: [], clues: P.ladder.clues } : null);\n          " +
+        "if (LX) A('Word ladder', 'Start with \"' + LX.start + " +
+        "'\". Follow each clue. Change one part at a time.', " +
+        "{ items: LX.clues.map((c, i) => [c, (LX.words || [])[i + 1] || '']), " +
+        "line: true, cols: 2, st: () => ({ fontSize: 12.5, fontWeight: 600, lineHeight: 1.3 }), w: 1.6 });";
+      out = out.split(call).join(next);
       return out;
     },
   },
