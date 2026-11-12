@@ -2246,13 +2246,96 @@ const ADAPTATIONS: Adaptation[] = [
       // The answer key prints each rung beside its clue, so a teacher is not
       // solving the ladder at the front of the room.
       const next =
-        "const LX = LAD[SEL] || LAD[SEL.split('|')[0]] || (P.ladder ? " +
+        // id, not SEL: on first load nothing has been selected, SEL is the
+        // empty string, and the lesson the page opens on got no ladder at
+        // all. id is the skill the page is actually showing.
+        "const LX = LAD[SEL] || LAD[id] || (P.ladder ? " +
         "{ start: P.ladder.start, words: [], clues: P.ladder.clues } : null);\n          " +
         "if (LX) A('Word ladder', 'Start with \"' + LX.start + " +
         "'\". Follow each clue. Change one part at a time.', " +
         "{ items: LX.clues.map((c, i) => [c, (LX.words || [])[i + 1] || '']), " +
         "line: true, cols: 2, st: () => ({ fontSize: 12.5, fontWeight: 600, lineHeight: 1.3 }), w: 1.6 });";
       out = out.split(call).join(next);
+      return out;
+    },
+  },
+  {
+    // Put the ladder in the workbook, where a teacher will find it.
+    //
+    // It had been living as chest 2 of fourteen inside a Word games panel
+    // that is shut when the page loads, which is a fine place for a game
+    // and a poor place for the one activity on the sheet that asks a child
+    // to write a word for every sound they change. It is a workbook page
+    // now, straight after Ten Words A Day, and it prints with the workbook.
+    //
+    // It stays in the games panel too. The same ladder in both places
+    // costs nothing, and a teacher who already prints the games sheet
+    // should not lose it.
+    //
+    // The rungs climb: the start word sits at the bottom and each new word
+    // goes on the rung above, which is the way a ladder is read and the way
+    // the activity is named. The answer key fills the rungs in.
+    name: "put the word ladder in the workbook",
+    apply: (html) => {
+      const seat = "const cur = byId[SEL.split('|')[0]] || byId.vce;";
+      const rowsAnchor = ", sbRows }; })";
+      const dataAnchor = "wbReal: easyFirst(real.slice(0, 10)),";
+      const trackerTail =
+        'The word I still want to practise: <span style="display:inline-block;' +
+        'width:150px;border-bottom:2px solid #111"></span></div>\n' +
+        "      </div>\n    </div>\n    ";
+      for (const a of [seat, rowsAnchor, dataAnchor, trackerTail])
+        if (!html.includes(a)) return html;
+
+      let out = html.replace(
+        seat,
+        seat + "\n    const LADX = LAD[SEL] || LAD[cur[0]] || null;"
+      );
+      // Each copy of the workbook builds its own rows, so the key fills the
+      // rungs in and the student's page leaves them blank.
+      out = out.replace(
+        rowsAnchor,
+        ", sbRows, ladBox: LADX ? p.box1 : { ...p.box1, display: 'none' }," +
+          " ladRows: (LADX ? LADX.clues : []).map((c, i) =>" +
+          " ({ n: i + 1, c, ans: isKey ? LADX.words[i + 1] : '' })) }; })"
+      );
+      out = out.replace(dataAnchor, dataAnchor + " ladStart: LADX ? LADX.start : '',");
+
+      const page =
+        '<div data-wb="true" style="{{ p.ladBox }}">\n' +
+        '      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;border-bottom:3px solid #4B6049;padding-bottom:8px">\n' +
+        "        <div>\n" +
+        '          <div style="font-family:Outfit,sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;color:#618459">WORD LADDER</div>\n' +
+        '          <div style="font-size:26px;font-weight:800;color:#2F3E2E;line-height:1.1">{{ sk.label }}</div>\n' +
+        "        </div>\n" +
+        '        <div style="font-size:14px;font-weight:600;white-space:nowrap">Name ____________  Week ______</div>\n' +
+        "      </div>\n" +
+        '      <div style="font-size:14px;line-height:1.45;background:#FDF6E7;border:1.5px solid #E4D3A8;border-radius:8px;padding:7px 12px">Start at the bottom. Read the clue on each rung, change that one part, and write the new word on the line. Climb to the top.</div>\n' +
+        // flex:1 and space-evenly, because the page box spreads its children:
+        // without this the rungs bunch into a band and the page prints with
+        // two inches of white above them. Spread, they also give a child
+        // room to write.
+        '      <div style="display:flex;flex-direction:column-reverse;gap:6px;flex:1;justify-content:space-evenly">\n' +
+        '        <div style="display:flex;gap:10px;align-items:center;border:2px solid #111;border-radius:10px;padding:8px 12px;background:#F1F6EE">\n' +
+        '          <span style="flex:0 0 36%;font-size:20px;font-weight:800;color:#111">{{ ladStart }}</span>\n' +
+        '          <span style="flex:1;font-size:13px;font-weight:700;color:#4B6049">Start here. Read it out loud.</span>\n' +
+        "        </div>\n" +
+        '        <sc-for list="{{ p.ladRows }}" as="r" hint-placeholder-count="6">\n' +
+        '          <div style="display:flex;gap:10px;align-items:center;border:2px solid #111;border-radius:10px;padding:11px 12px">\n' +
+        '            <span style="flex:0 0 36%;display:flex;align-items:flex-end;gap:8px">\n' +
+        '              <span style="font-family:Outfit,sans-serif;font-size:13px;font-weight:800;color:#618459">{{ r.n }}</span>\n' +
+        '              <span style="flex:1;border-bottom:2px solid #111;min-height:24px;font-size:19px;font-weight:700;color:#111;line-height:1.2">{{ r.ans }}</span>\n' +
+        "            </span>\n" +
+        '            <span style="flex:1;font-size:13.5px;font-weight:600;line-height:1.35">{{ r.c }}</span>\n' +
+        "          </div>\n" +
+        "        </sc-for>\n" +
+        "      </div>\n" +
+        '      <div style="font-size:13px;font-weight:600;color:#57534E">Now read the whole ladder back, from the bottom rung to the top.</div>\n' +
+        "    </div>\n    ";
+      // Both copies: the answer key is a clone of these pages made earlier
+      // in this list, so a plain replace would put the ladder on the
+      // student's workbook only.
+      out = out.split(trackerTail).join(trackerTail + page);
       return out;
     },
   },
