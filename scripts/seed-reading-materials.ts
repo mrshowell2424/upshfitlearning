@@ -2065,6 +2065,96 @@ const ADAPTATIONS: Adaptation[] = [
       return out;
     },
   },
+  {
+    // Spread the packet across the whole word bank.
+    //
+    // Widening each skill to twenty words did not stop a child meeting the
+    // same ones over and over, because every section took real.slice(0, N)
+    // — the first N. So cake, bike, home, cute and these turned up in the
+    // reading list, real-or-made-up, the syllable split, the sprint, the
+    // dictation and both spelling tests, five to seven times in one packet,
+    // while the second ten were printed nowhere at all.
+    //
+    // Each section now takes its own window of the bank and wraps round the
+    // end, so twenty words carry the packet instead of ten.
+    //
+    //   read each word   0-9     the ten a teacher knows for the skill
+    //   ten words a day  10-19   computed to avoid the reading page
+    //   real or made-up  10-14
+    //   syllable split   4-11
+    //   sprint           8-13
+    //   dictation        16-18
+    //   spelling, 2nd    0-9     you spell what you have just read
+    //   spelling, 3rd    10-19   a different ten for the older sheet
+    //
+    // The maze is not in the list because it is written prose in the pack
+    // data, with the choices inside the sentences. Its words are the
+    // author's and cannot be reassigned by slicing.
+    //
+    // A part of a split skill narrows to ten, and the wrap means those
+    // sections overlap again — unavoidable with ten words, and no worse
+    // than it was for every skill before this.
+    name: "spread the packet across the whole word bank",
+    apply: (html) => {
+      const decl = "const real = isMulti ? (MULTI[id] || real0) : real0;";
+      if (!html.includes(decl)) return html;
+      let out = html.replace(
+        decl,
+        decl +
+          "\n    // One bank, many sections: each takes its own window of it so the\n" +
+          "    // first ten do not carry the whole packet.\n" +
+          "    const ring = (n, off) => { const L = real; if (!L.length) return [];\n" +
+          "      const out = []; for (let i = 0; i < n; i++) out.push(L[(off + i) % L.length]);\n" +
+          "      return out; };"
+      );
+      const edits: [string, string, boolean][] = [
+        ["const rmWords = (() => { const R = real.slice(0, 5);",
+         "const rmWords = (() => { const R = ring(5, 10);", false],
+        ["syWords: real.slice(0, 8).map(", "syWords: ring(8, 4).map(", false],
+        ["'Sprint: ' + real.slice(0, 6).join(' \u00b7 ')",
+         "'Sprint: ' + ring(6, 8).join(' \u00b7 ')", false],
+        // Dictation words, the dictation script and the lesson's spelling
+        // step are one activity read three ways, so they stay in step.
+        ["real.slice(0, 3).concat(nonsense.slice(0, 1))",
+         "ring(3, 16).concat(nonsense.slice(0, 1))", true],
+        ["slots: real.slice(0, 10).map((w, i) => ({ n: i + 1 }))",
+         "slots: ring(10, g === 'g2' ? 0 : 10).map((w, i) => ({ n: i + 1 }))", false],
+        ["script: real.slice(0, 10).map((w, i) => ({ n: i + 1, w,",
+         "script: ring(10, g === 'g2' ? 0 : 10).map((w, i) => ({ n: i + 1, w,", false],
+        ["words: real.slice(0, 10),", "words: ring(10, g === 'g2' ? 0 : 10),", false],
+      ];
+      for (const [from, to, all] of edits) {
+        if (!out.includes(from)) return html;
+        out = all ? out.split(from).join(to) : out.replace(from, to);
+      }
+      return out;
+    },
+  },
+  {
+    // What says: ask once, then just number the lines.
+    //
+    // The section heading already says What says?, and then every one of
+    // the six rows said it again. On the student's page that is six
+    // identical printed questions with nothing to tell them apart — the
+    // sound is spoken, not printed, so the words carried no information
+    // and only crowded the line a child writes on.
+    //
+    // The heading asks the question. The rows are a number and a line.
+    //
+    // The key keeps the sound on each row, which is what a teacher reads
+    // from, so it prints 1. /m/ m rather than six rows of What says.
+    name: "ask What says once, then number the lines",
+    apply: (html) => {
+      const from =
+        '<span style="flex:none;font-size:18px;font-weight:800;white-space:nowrap">' +
+        "What says{{ x.q }}?</span>";
+      const to =
+        '<span style="flex:none;font-size:18px;font-weight:800;white-space:nowrap">' +
+        "{{ x.q }}</span>";
+      if (!html.includes(from)) return html;
+      return html.split(from).join(to);
+    },
+  },
 ];
 
 /**
