@@ -1972,12 +1972,19 @@ const ADAPTATIONS: Adaptation[] = [
         "wbReal: real.slice(0, 10),\n" +
           "      wbTen: (() => {\n" +
           "        const page2 = real.slice(0, 10);\n" +
-          "        const pool = [].concat(realAll || [], MULTI[id] || [], real || []);\n" +
+          "        // A part of a split skill must stay on its own part. The wider\n" +
+          "        // bank belongs to the whole skill, so on the ow page it holds oa\n" +
+          "        // words, and without this the tracker printed them.\n" +
+          "        const fitsSub = (w) => !subPat || subHits(subPat, w);\n" +
+          "        const pool = [].concat(realAll || [], MULTI[id] || []).filter(fitsSub);\n" +
           "        const out = [];\n" +
           "        pool.forEach((w) => {\n" +
           "          if (w && page2.indexOf(w) < 0 && out.indexOf(w) < 0 && out.length < 10) out.push(w);\n" +
           "        });\n" +
-          "        return out.length ? out : page2;\n" +
+          "        // A part may have no second ten of its own. Repeating its ten is\n" +
+          "        // better than borrowing the other half of the split.\n" +
+          "        page2.forEach((w) => { if (out.indexOf(w) < 0 && out.length < 10) out.push(w); });\n" +
+          "        return out;\n" +
           "      })(),"
       );
       // Both copies. The answer key is a clone of these pages made earlier
