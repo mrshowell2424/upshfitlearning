@@ -2162,6 +2162,53 @@ const ADAPTATIONS: Adaptation[] = [
       return html.split(from).join(to);
     },
   },
+  {
+    // The ten words get harder as the child goes down them.
+    //
+    // The lists arrived in whatever order their bank happened to hold, so a
+    // child could meet "between" on line one and "feet" on line nine. That
+    // is backwards: the first word of the day is the one that should go
+    // right, because the five minutes is meant to start with a win.
+    //
+    // Hardness is counted from the three things that make a word take
+    // longer to sound out, in the order they matter: how many syllables it
+    // has, how long it is, and how many consonants are stacked together.
+    // Those dominate deliberately — a two-syllable word is harder than any
+    // one-syllable word on the same list, whatever else is true of it.
+    //
+    // Ties keep the order the bank had, so the author's sequence survives
+    // wherever the scaffold has no opinion.
+    name: "order the ten words from easiest to hardest",
+    apply: (html) => {
+      const decl = "const real = isMulti ? (MULTI[id] || real0) : real0;";
+      if (!html.includes(decl)) return html;
+      let out = html.replace(
+        decl,
+        decl +
+          "\n    // Easy first: the child works down the list, so the list climbs.\n" +
+          "    const hardness = (w) => {\n" +
+          "      const t = String(w).toLowerCase();\n" +
+          "      // Silent e is not a syllable, so it comes off before counting.\n" +
+          "      const syl = (t.replace(/e$/, '').match(/[aeiouy]+/g) || ['']).length;\n" +
+          "      const stack = (t.match(/[^aeiouy']{2,}/g) || [])\n" +
+          "        .reduce((n, c) => n + c.length - 1, 0);\n" +
+          "      return syl * 100 + t.length * 6 + stack * 7;\n" +
+          "    };\n" +
+          "    const easyFirst = (L) => L.map((w, i) => [w, i])\n" +
+          "      .sort((a, b) => hardness(a[0]) - hardness(b[0]) || a[1] - b[1])\n" +
+          "      .map((x) => x[0]);"
+      );
+      const edits: [string, string][] = [
+        ["wbReal: real.slice(0, 10),", "wbReal: easyFirst(real.slice(0, 10)),"],
+        ["        return out;\n      })(),", "        return easyFirst(out);\n      })(),"],
+      ];
+      for (const [from, to] of edits) {
+        if (!out.includes(from)) return html;
+        out = out.replace(from, to);
+      }
+      return out;
+    },
+  },
 ];
 
 /**
