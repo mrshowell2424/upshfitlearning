@@ -1980,7 +1980,11 @@ const ADAPTATIONS: Adaptation[] = [
           "        return out.length ? out : page2;\n" +
           "      })(),"
       );
-      out = out.replace(marker, marker.replace("{{ wbReal }}", "{{ wbTen }}"));
+      // Both copies. The answer key is a clone of these pages made earlier
+      // in this list, so replacing only the first left the key's tracker
+      // printing the reading page's ten — which is the bug this rule exists
+      // to fix, still on the page, one sheet further down.
+      out = out.split(marker).join(marker.replace("{{ wbReal }}", "{{ wbTen }}"));
       return out;
     },
   },
