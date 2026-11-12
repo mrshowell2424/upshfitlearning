@@ -1894,6 +1894,173 @@ const ADAPTATIONS: Adaptation[] = [
       return html.replace(anchor, body);
     },
   },
+  {
+    // Six things to check, not three.
+    //
+    // Every "I did it right if…" box held three. Three is what a child
+    // ticks without reading, and on the writing page it left the two
+    // things they get wrong most — the proof not in quotation marks, the
+    // reason that does not match the answer — unchecked.
+    //
+    // Each box gets three more, written for its own task, and all six are
+    // things a child can check alone without asking what they mean.
+    name: "give every I did it right box six things to check",
+    apply: (html) => {
+      const edits: [string, string][] = [
+        [
+          "<span>\u2610 All 5 parts</span><span>\u2610 2 pattern words</span>" +
+            "<span>\u2610 Capitals + end marks</span>",
+          "<span>\u2610 All 5 parts</span><span>\u2610 2 pattern words</span>" +
+            "<span>\u2610 Capitals + end marks</span>" +
+            "<span>\u2610 My proof is in quotation marks</span>" +
+            "<span>\u2610 My reason matches my answer</span>" +
+            "<span>\u2610 I read it back out loud</span>",
+        ],
+        [
+          "<span>\u2610 Read 1</span><span>\u2610 Read 2</span>" +
+            "<span>\u2610 I circled the {{ patWord }} words</span>",
+          "<span>\u2610 Read 1</span><span>\u2610 Read 2</span>" +
+            "<span>\u2610 I circled the {{ patWord }} words</span>" +
+            "<span>\u2610 I stopped at every full stop</span>" +
+            "<span>\u2610 I went back and fixed a word I missed</span>" +
+            "<span>\u2610 I can say what happened</span>",
+        ],
+        [
+          "<span>\u2610 It makes sense</span><span>\u2610 Capital first</span>" +
+            "<span>\u2610 End mark last</span>",
+          "<span>\u2610 It makes sense</span><span>\u2610 Capital first</span>" +
+            "<span>\u2610 End mark last</span>" +
+            "<span>\u2610 A space between every word</span>" +
+            "<span>\u2610 Every word sits on the line</span>" +
+            "<span>\u2610 I read it back</span>",
+        ],
+      ];
+      let out = html;
+      for (const [from, to] of edits) {
+        if (!out.includes(from)) return html;
+        out = out.split(from).join(to);
+      }
+      return out;
+    },
+  },
+  {
+    // Ten words on Ten Words A Day, and not the ten on the reading page.
+    //
+    // The tracker and the reading page both printed the whole word list.
+    // That was ten words each until the banks were widened to twenty, and
+    // then both pages printed all twenty — a tracker headed TEN WORDS A DAY
+    // with twenty words on it, the same twenty the child had just read.
+    //
+    // The reading page keeps the first ten, which are the ones a teacher
+    // already knows for that skill. The tracker takes ten the reading page
+    // does not have, from the wider bank, so a week's practice is a
+    // different set of words from the lesson's own.
+    //
+    // A part of a split skill narrows to ten, so there is no second ten in
+    // the narrowed list; the tracker draws from the whole skill's bank
+    // instead, and falls back to the multisyllabic list after that.
+    name: "keep Ten Words A Day to ten words the reading page does not use",
+    apply: (html) => {
+      const anchor = "wbReal: real,";
+      const ten = '"        <sc-for list=\\"{{ wbReal }}\\" as=\\"w\\" hint-placeholder-count=\\"10\\">';
+      if (!html.includes(anchor)) return html;
+      const marker = '<sc-for list="{{ wbReal }}" as="w" hint-placeholder-count="10">\n' +
+        '          <div style="display:flex;gap:6px;align-items:center">';
+      if (!html.includes(marker)) return html;
+      let out = html.replace(
+        anchor,
+        "wbReal: real.slice(0, 10),\n" +
+          "      wbTen: (() => {\n" +
+          "        const page2 = real.slice(0, 10);\n" +
+          "        const pool = [].concat(realAll || [], MULTI[id] || [], real || []);\n" +
+          "        const out = [];\n" +
+          "        pool.forEach((w) => {\n" +
+          "          if (w && page2.indexOf(w) < 0 && out.indexOf(w) < 0 && out.length < 10) out.push(w);\n" +
+          "        });\n" +
+          "        return out.length ? out : page2;\n" +
+          "      })(),"
+      );
+      out = out.replace(marker, marker.replace("{{ wbReal }}", "{{ wbTen }}"));
+      return out;
+    },
+  },
+  {
+    // The review dropdowns show what was picked for you.
+    //
+    // The pass chooses three concepts from what the lesson is built on, but
+    // the three dropdowns sat empty, so a teacher could not see the choice
+    // and could not adjust one of them — only replace all three by hand.
+    //
+    // They are filled with the automatic picks now. Changing one keeps the
+    // other two, because the handler starts from what is on screen rather
+    // than from three blanks. Clearing one leaves it cleared: once a
+    // teacher has touched the row it is theirs, and the automatic picks
+    // stop overriding it.
+    name: "show the automatic review picks in the dropdowns",
+    apply: (html) => {
+      const anchor =
+        "      reviewPicks: [0, 1, 2].map((i) => ({ label: 'Review ' + (i + 1), " +
+        "value: ((this.state && this.state.review) || ['', '', ''])[i] || '',";
+      const handler =
+        "        pick: (e) => { const r = ((this.state && this.state.review) || ['', '', '']).slice(); " +
+        "r[i] = e.target.value; this.setState({ review: r }); } })),";
+      if (!html.includes(anchor) || !html.includes(handler)) return html;
+      return html
+        .replace(
+          anchor,
+          "      ...(() => { const revSet = (this.state && this.state.review) || null;\n" +
+            "        const revNow = [0, 1, 2].map((i) => revSet ? (revSet[i] || '')\n" +
+            "          : ((auto[i] && auto[i][0]) || ''));\n" +
+            "        return {\n" +
+            "      reviewPicks: [0, 1, 2].map((i) => ({ label: 'Review ' + (i + 1), value: revNow[i],"
+        )
+        .replace(
+          handler,
+          "        pick: (e) => { const r = revNow.slice(); " +
+            "r[i] = e.target.value; this.setState({ review: r }); } })) }; })(),"
+        );
+    },
+  },
+  {
+    // No writing line on the answer key for Change the sound.
+    //
+    // The key prints the word, the change and the answer — and then printed
+    // them sitting on a 40px ruled line each, which is a line for a child to
+    // write on. Nobody writes on the key. It was two rules per row, five
+    // rows, on a page that is read at a glance while a class works.
+    //
+    // The line is the student's. The key keeps the same two columns so the
+    // rows still line up under each other, drops the rule, loses the 40px
+    // of height per row, and left-aligns the words, because text centred on
+    // a line that is no longer there floats.
+    name: "drop the writing line from Change the sound on the key",
+    apply: (html) => {
+      const mark = "fromShown: isKey ? from : '', changeShown: isKey ? change : 'change',";
+      if (!html.includes(mark)) return html;
+      const student =
+        "flex:1;min-width:0;font-size:17px;color:#B42318;display:flex;align-items:flex-end;overflow-wrap:anywhere;border-bottom:1.5px solid #333;min-height:40px;justify-content:center;padding-bottom:2px";
+      const key = "flex:1;min-width:0;font-size:17px;color:#B42318;display:flex;align-items:flex-end;overflow-wrap:anywhere;min-height:0;justify-content:flex-start";
+      let out = html.replace(
+        mark,
+        mark + "\n" + "            ln: isKey ? '" + key + "' : '" + student + "',"
+      );
+      // Both lines in the Change the sound row, and only those.
+      const row =
+        '<span style="flex:none;width:18px">{{ x.n }}.</span>' +
+        '<span style="flex:1;min-width:0;font-size:17px;color:#B42318;display:flex;align-items:flex-end;overflow-wrap:anywhere;border-bottom:1.5px solid #333;min-height:40px;' +
+        'justify-content:center;padding-bottom:2px">{{ x.fromShown }}</span>';
+      const oldLine =
+        '<span style="flex:1;min-width:0;border-bottom:1.5px solid #333;min-height:40px;' +
+        'font-size:17px;color:#B42318;display:flex;align-items:flex-end;justify-content:center;' +
+        'overflow-wrap:anywhere;padding-bottom:2px">';
+      const a = oldLine + "{{ x.fromShown }}</span>";
+      const b = oldLine + "{{ x.ans }}</span>";
+      if (!out.includes(a) || !out.includes(b)) return html;
+      out = out.split(a).join('<span style="{{ x.ln }}">{{ x.fromShown }}</span>');
+      out = out.split(b).join('<span style="{{ x.ln }}">{{ x.ans }}</span>');
+      return out;
+    },
+  },
 ];
 
 /**

@@ -89,6 +89,10 @@ const G = [
 const HEART = new Set("the a is was of to what they said you your are were there their who does been come some one two here where would could should have give live love done my by i he she we me be go no so do into put push pull full very every from or for want water again any many friend".split(" "));
 // The function words a decodable text cannot do without.
 "and but not had has his her him them then this that with as at it in on up all got get can will did see".split(" ").forEach((w) => HEART.add(w));
+// The Dolch 220. A word a child is taught to read whole is not a word
+// running ahead of the sequence, so these come out of the count.
+const SIGHT = JSON.parse(readFileSync("scripts/reading-sight-words.json", "utf8")).lists.flat();
+SIGHT.forEach((w) => HEART.add(String(w).toLowerCase()));
 const X = JSON.parse(readFileSync(B + "scripts/reading-extra-words.json", "utf8"));
 const out = [];
 for (const [sid, v] of Object.entries(X)) {

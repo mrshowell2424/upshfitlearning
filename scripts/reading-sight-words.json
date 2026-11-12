@@ -1,0 +1,18 @@
+{
+ "_note": "The Dolch 220 service words, in the eleven lists of twenty a teacher assesses them in. Edward Dolch published these in 1936-48 and the list itself is public domain. Transcribed from the assessment sheet Stephanie supplied; that sheet's own layout is K. Wilbur's and is not reproduced.",
+ "_use": "Two jobs. They are the sight-word allowance for scripts/check-word-sequence.mjs — a word a child is taught to read whole is not a word running ahead of the sequence. And they are the source for the sight-word assessment in the workbook.",
+ "_assess": "Five checks a year, the way the supplied sheet does it: September, November, January, March, June.",
+ "lists": [
+  ["the","to","and","he","a","I","you","it","of","in","was","said","his","that","she","for","on","they","but","had"],
+  ["at","him","with","up","all","look","is","her","there","some","out","as","be","have","go","we","am","then","little","down"],
+  ["do","can","would","when","did","what","so","see","not","were","get","them","like","one","this","my","could","me","will","yes"],
+  ["big","went","are","come","if","now","long","no","came","ask","very","an","over","your","its","ride","into","just","blue","red"],
+  ["from","good","any","about","around","want","don't","how","know","right","put","too","got","take","where","every","pretty","jump","green","four"],
+  ["away","old","by","their","here","saw","call","after","well","think","ran","let","help","make","going","sleep","brown","yellow","five","six"],
+  ["walk","two","or","before","eat","again","play","who","been","may","stop","off","never","seven","eight","cold","today","fly","myself","round"],
+  ["tell","much","keep","give","work","first","try","new","must","start","black","white","ten","does","bring","goes","write","always","drink","once"],
+  ["soon","made","run","gave","open","has","find","only","us","three","our","better","hold","buy","funny","warm","ate","full","those","done"],
+  ["use","fast","say","light","pick","hurt","pull","cut","kind","both","sit","which","fall","carry","small","under","read","why","own","found"],
+  ["wash","snow","hot","because","far","live","draw","clean","grow","best","upon","these","sing","together","please","thank","wish","many","shall","laugh"]
+ ]
+}
