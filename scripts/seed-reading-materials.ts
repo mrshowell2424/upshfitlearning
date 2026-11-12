@@ -23,6 +23,7 @@ import SENT3 from "./reading-third-sentences.json" with { type: "json" };
 import AICOACH from "./reading-ai-writing-coach.json" with { type: "json" };
 import EXTRAW from "./reading-extra-words.json" with { type: "json" };
 import PREQ from "./reading-prerequisites.json" with { type: "json" };
+import WSX from "./reading-what-says.json" with { type: "json" };
 import { db } from "@/lib/db";
 import { reading_materials } from "@/lib/db/schema";
 import { inArray, sql } from "drizzle-orm";
@@ -1810,6 +1811,38 @@ const ADAPTATIONS: Adaptation[] = [
         "    const review = picked.length ? picked : auto;",
       ].join("\n");
       return html.replace(anchor, body);
+    },
+  },
+  {
+    // Ask about the sound this lesson actually teaches.
+    //
+    // The What says? drill on the spelling page is built from WS, and WS
+    // shipped with entries for the fifteen hand-written skills only. The
+    // other forty-seven fell back to whatever the review pass supplied, so
+    // the question on the page was never about the day's pattern: Soft c
+    // and soft g asked what says /a/, Greek digraphs asked what says /sh/.
+    // A child could sit the whole lesson and never be asked the one
+    // correspondence it exists to teach.
+    //
+    // Thirty of the forty-seven get their own sounds here. The other
+    // seventeen are left out on purpose and keep the review sounds: a
+    // lesson that teaches a rule or a meaning — the division rules, the
+    // suffix-adding rules, contractions, the Latin roots, the prefixes —
+    // has no new sound to drill, and inventing one would be worse than
+    // the fallback.
+    //
+    // Merged rather than replaced, so the fifteen that already had sounds
+    // keep exactly the ones they shipped with.
+    name: "ask what says for the sound each lesson teaches",
+    apply: (html) => {
+      const anchor =
+        "const picked = ((this.state && this.state.review) || ['', '', ''])";
+      if (!html.includes(anchor)) return html;
+      const merge =
+        "const WSX = " + JSON.stringify(WSX.ws) + ";\n" +
+        "    Object.keys(WSX).forEach((k) => { if (!WS[k]) WS[k] = WSX[k]; });\n" +
+        "    " + anchor;
+      return html.replace(anchor, merge);
     },
   },
 ];
