@@ -89,7 +89,7 @@
    "clem",
    "clup",
    "clost",
-   "clang"
+   "clib"
   ],
   "real": [
    "clap",
@@ -128,7 +128,7 @@
  "blends|st": {
   "fake": [
    "stug",
-   "stem",
+   "stav",
    "stip",
    "stosh",
    "stull"
@@ -296,7 +296,7 @@
  "dig|sh": {
   "fake": [
    "shap",
-   "shim",
+   "shig",
    "vish",
    "mish",
    "shup"
@@ -572,7 +572,7 @@
    "cim",
    "cep",
    "caz",
-   "cum"
+   "caf"
   ],
   "real": [
    "cat",
@@ -1223,7 +1223,7 @@
    "postlod",
    "postnep",
    "postvut",
-   "postdrig"
+   "postmib"
   ],
   "real": [
    "postgame",
@@ -2210,7 +2210,7 @@
    "translod",
    "transnep",
    "transvut",
-   "transdrig"
+   "transmib"
   ],
   "real": [
    "transport",
@@ -2575,7 +2575,7 @@
    "hymn",
    "solemn",
    "condemn",
-   "damn",
+   "solemnly",
    "limn",
    "alumni",
    "mnemonic",

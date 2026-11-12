@@ -257,4 +257,69 @@ if (problems.length) {
   problems.forEach((p) => console.error("   " + p));
   process.exit(1);
 }
+/**
+ * The same checks again, for the sub-pattern banks.
+ *
+ * reading-part-words.json holds a list per part of a split skill — the ai
+ * half of ai/ay, the kn half of the silent letters — and those lists replace
+ * the skill's own when a teacher picks a part. 150 banks, 2,250 words, and
+ * nothing had ever checked them.
+ *
+ * The dictionary test is a warning rather than a failure here, and the
+ * reason is what reading all 56 hits showed: web2 carries naim, drail, nar,
+ * clem, stug, vug, neep, dree. A child will never meet those, and failing
+ * the build over them would mean turning the check off. Three of the 56
+ * were worth acting on and they were found by reading, not by the rule.
+ *
+ * What does fail the build is a word that cannot be said, a word off its own
+ * part's pattern, and a word that should not be on a child's page at all.
+ * That last one is not a hypothetical: the Level 1 c lesson had cum in its
+ * made-up column.
+ */
+const PARTS = JSON.parse(readFileSync("scripts/reading-part-words.json", "utf8"));
+const partAlts = (q) => String(q).split("/").map((a) => a.replace(/[^a-zA-Z_']/g, "")).filter(Boolean);
+const partHits = (q, w) => partAlts(q).some((a) => new RegExp(a.replace(/_/g, "[a-z]"), "i").test(w));
+
+/** Words that do not belong on a child's worksheet, whatever a dictionary says. */
+const NOT_FOR_CHILDREN = /^(cum|ass|arse|tit|tits|piss|crap|fag|slut|whore|dick|cock|wank|shag|bugger|turd|fart|sex|sexy|nude|porn|rape|booze|vodka|meth)$/i;
+
+const partProblems = [];
+const partWarnings = [];
+let partKeys = 0;
+let partFake = 0;
+let partReal = 0;
+
+for (const [key, v] of Object.entries(PARTS)) {
+  if (key.startsWith("_")) continue;
+  partKeys++;
+  const sub = key.split("|")[1] || "";
+  for (const w of v.real || []) {
+    partReal++;
+    if (sub && !partHits(sub, w)) partProblems.push(`${key}: real "${w}" is off this part's pattern`);
+    if (NOT_FOR_CHILDREN.test(String(w))) partProblems.push(`${key}: "${w}" does not belong on a child's page`);
+  }
+  for (const w of v.fake || []) {
+    partFake++;
+    if (sub && !partHits(sub, w)) partProblems.push(`${key}: made-up "${w}" is off this part's pattern`);
+    if (!sayable(w)) partProblems.push(`${key}: made-up "${w}" is not sayable`);
+    if (NOT_FOR_CHILDREN.test(String(w))) partProblems.push(`${key}: "${w}" does not belong on a child's page`);
+    if (WORDS.has(bare(w))) partWarnings.push(`${key}: made-up "${w}" is in the dictionary`);
+  }
+}
+
+console.log(
+  `\nchecked ${partReal} real words and ${partFake} made-up words across ` +
+    `${partKeys} sub-pattern banks`
+);
+if (partWarnings.length)
+  console.log(
+    `   ${partWarnings.length} made-up words web2 lists as real — mostly its own obscurities; ` +
+      `read them before trusting the number`
+  );
+if (partProblems.length) {
+  console.error(`\n✗ ${partProblems.length} problems in the sub-pattern banks:`);
+  partProblems.forEach((p) => console.error("   " + p));
+  process.exit(1);
+}
+
 console.log("✅ every word checks out");
