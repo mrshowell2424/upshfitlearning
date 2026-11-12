@@ -1845,6 +1845,55 @@ const ADAPTATIONS: Adaptation[] = [
       return html.replace(anchor, merge);
     },
   },
+  {
+    // Six What says questions on every lesson, never five and never seven.
+    //
+    // They print in two columns, so an odd number leaves one question alone
+    // on the last row and the block reads lopsided. The count was whatever
+    // the lesson and its review pass happened to hold — anywhere from one
+    // to seven.
+    //
+    // Filled in this order, which is also the order they are read:
+    //
+    //   the review lessons' sounds first, as a warm-up
+    //   then back through the sequence for more already-taught sounds
+    //   then the single consonants, which every lesson has earned
+    //   and today's own sounds last, where they are never cut
+    //
+    // Today's sounds go in first and are appended last, so a lesson with
+    // four of its own still shows all four: the padding gives way, not the
+    // teaching point. The consonant list is the floor — the very first
+    // lesson has no review behind it, and What says /m/? is a fair question
+    // on day one.
+    name: "give every lesson six What says questions",
+    apply: (html) => {
+      const anchor =
+        "const whatSays = review.flatMap((r) => (WS[r[0]] || []).slice(0, 1))" +
+        ".concat(WS[id] || []).map((s) => 'What says ' + s.split(' \u2192 ')[0] +" +
+        " '? (' + s.split(' \u2192 ')[1] + ')');";
+      if (!html.includes(anchor)) return html;
+      const body = [
+        "const WSPAD = ['/m/ \u2192 m', '/s/ \u2192 s', '/t/ \u2192 t', '/p/ \u2192 p',",
+        "      '/b/ \u2192 b', '/f/ \u2192 f', '/n/ \u2192 n', '/d/ \u2192 d', '/g/ \u2192 g',",
+        "      '/l/ \u2192 l', '/r/ \u2192 r', '/h/ \u2192 h'];",
+        "    const wsOwn = (WS[id] || []).slice(0, 6);",
+        "    const wsRest = [];",
+        "    const wsAdd = (x) => {",
+        "      if (x && wsOwn.indexOf(x) < 0 && wsRest.indexOf(x) < 0 &&",
+        "        wsRest.length + wsOwn.length < 6) wsRest.push(x);",
+        "    };",
+        "    review.forEach((r) => (WS[r[0]] || []).slice(0, 1).forEach(wsAdd));",
+        "    review.forEach((r) => (WS[r[0]] || []).forEach(wsAdd));",
+        "    for (let i = skIdx - 1; i >= 0 && wsRest.length + wsOwn.length < 6; i--) {",
+        "      (WS[SK[i][0]] || []).forEach(wsAdd);",
+        "    }",
+        "    WSPAD.forEach(wsAdd);",
+        "    const whatSays = wsRest.concat(wsOwn).slice(0, 6)",
+        "      .map((s) => 'What says ' + s.split(' \u2192 ')[0] + '? (' + s.split(' \u2192 ')[1] + ')');",
+      ].join("\n");
+      return html.replace(anchor, body);
+    },
+  },
 ];
 
 /**
