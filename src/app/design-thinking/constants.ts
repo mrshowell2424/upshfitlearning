@@ -36,13 +36,22 @@ export const DESIGN_GRADES = ["K", "1", "2", "3", "4", "5", "6", "7", "8", "9", 
 
 export type DesignGrade = (typeof DESIGN_GRADES)[number]
 
-/** The five days, in the order a week runs. Colours are the canvas's own. */
+/**
+ * The five days, in the order a week runs.
+ *
+ * The colours walk the brand gradient — coral, pink, lavender, teal — and
+ * finish on charcoal, so the week reads as one ramp rather than five
+ * unrelated badges. Each one is the dark end of its family rather than the
+ * token itself, because the badge is white 11px text on the colour and the
+ * brand book is explicit that coral, pink, lavender and teal come in at 2.4
+ * to 2.8 to 1 on white. The dark ends clear 4.5 to 1 the other way round.
+ */
 export const PHASES = [
-  { letter: "M", day: "Monday", phase: "Empathize", color: "#FF6A5B" },
-  { letter: "T", day: "Tuesday", phase: "Define", color: "#FFB13F" },
-  { letter: "W", day: "Wednesday", phase: "Ideate", color: "#00B4A6" },
-  { letter: "T", day: "Thursday", phase: "Prototype", color: "#2F6FD0" },
-  { letter: "F", day: "Friday", phase: "Test", color: "#6B2FB5" },
+  { letter: "M", day: "Monday", phase: "Empathize", color: "#C0432F" },
+  { letter: "T", day: "Tuesday", phase: "Define", color: "#B3336E" },
+  { letter: "W", day: "Wednesday", phase: "Ideate", color: "#6B2FB5" },
+  { letter: "T", day: "Thursday", phase: "Prototype", color: "#00756C" },
+  { letter: "F", day: "Friday", phase: "Test", color: "#111111" },
 ] as const
 
 /** 36 a year across 13 grades — the number the page puts on the masthead. */
