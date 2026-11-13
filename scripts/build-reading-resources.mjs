@@ -43,7 +43,7 @@ const C = {
 
 const data = {
   my: MY.map((c) => ({
-    id: c.id, week: c.week, tag: c.tag, title: c.title, story: c.story,
+    id: c.id, g: c.grade, week: c.week, tag: c.tag, title: c.title, story: c.story,
     q: c.question, sus: c.suspects, ans: c.answer, proof: c.proof,
     clears: c.clears, explain: c.explain,
   })),
@@ -56,6 +56,12 @@ const data = {
   })),
   myTpl: MYC,
   arTpl: ARC,
+  // The grades each store actually holds. Read off the content rather than
+  // written down, so a finished grade reaches the pickers on the next build
+  // and nobody has to remember to widen a hard-coded list -- which is exactly
+  // how grade 2 and grade 5 ended up seeded but unreachable on this page.
+  myG: [...new Set(MY.map((c) => c.grade))].sort((x, y) => x - y),
+  arG: [...new Set(AR.map((a) => a.grade))].sort((x, y) => x - y),
 };
 
 const html = `<!doctype html>
@@ -126,6 +132,8 @@ pre[hidden]{display:none}
 
   <section id="pane-my">
     <div class="controls">
+      <label class="eyebrow" for="pick-my-g" style="margin:0">Grade</label>
+      <select id="pick-my-g"></select>
       <label class="eyebrow" for="pick-my" style="margin:0">Case</label>
       <select id="pick-my"></select>
     </div>
@@ -135,7 +143,7 @@ pre[hidden]{display:none}
   <section id="pane-ar" hidden>
     <div class="controls">
       <label class="eyebrow" for="pick-ar-g" style="margin:0">Grade</label>
-      <select id="pick-ar-g"><option value="3">Grade 3</option><option value="4">Grade 4</option></select>
+      <select id="pick-ar-g"></select>
       <label class="eyebrow" for="pick-ar-s" style="margin:0">Standard</label>
       <select id="pick-ar-s"></select>
       <label class="eyebrow" for="pick-ar" style="margin:0">Article</label>
@@ -166,25 +174,35 @@ pre[hidden]{display:none}
 
   /* ---------- mysteries ---------- */
   var selMy = document.getElementById("pick-my");
-  D.my.forEach(function (c, i) {
-    var o = document.createElement("option");
-    o.value = String(i);
-    o.textContent = "Week " + c.week + " \\u00b7 " + c.title;
-    selMy.appendChild(o);
-  });
+  var selMyG = document.getElementById("pick-my-g");
+  function gradeName(g) {
+    return g === 0 ? "K" : g === 1 ? "1st" : g === 2 ? "2nd" : g === 3 ? "3rd" : g + "th";
+  }
+  selMyG.innerHTML = D.myG.map(function (g) {
+    return '<option value="' + g + '">' + gradeName(g) + "</option>";
+  }).join("");
+  function myPool() {
+    return D.my.filter(function (c) { return String(c.g) === selMyG.value; });
+  }
+  function fillMy() {
+    selMy.innerHTML = myPool().map(function (c, i) {
+      return '<option value="' + i + '">' + esc("Week " + c.week + " \\u00b7 " + c.title) + "</option>";
+    }).join("");
+  }
   function myPrompt(c) {
     return D.myTpl
-      .replace(/\\{GRADES\\}/g, "2nd-4th")
+      .replace(/\\{GRADES\\}/g, gradeName(c.g))
       .replace(/\\{TITLE\\}/g, c.title)
       .replace("{STORY}", c.story)
       .replace("{QUESTION}", c.q)
       .replace("{SUSPECTS}", c.sus.map(function (s) { return "- " + s.who + ": " + s.why; }).join("\\n"));
   }
   function drawMy() {
-    var c = D.my[Number(selMy.value) || 0];
+    var c = myPool()[Number(selMy.value) || 0];
+    if (!c) { document.getElementById("out-my").innerHTML = ""; return; }
     document.getElementById("out-my").innerHTML =
       '<div class="card"><div class="top"></div><div class="in">' +
-      '<div class="meta"><p class="eyebrow" style="margin:0">Mystery \\u00b7 Week ' + c.week + '</p>' +
+      '<div class="meta"><p class="eyebrow" style="margin:0">Mystery \\u00b7 ' + gradeName(c.g) + ' \\u00b7 Week ' + c.week + '</p>' +
       '<p class="eyebrow" style="margin:0">' + esc(c.tag) + "</p></div>" +
       "<h2>" + esc(c.title) + "</h2>" +
       '<p class="story">' + esc(c.story) + "</p>" +
@@ -203,12 +221,17 @@ pre[hidden]{display:none}
     window.__my = myPrompt(c);
   }
   selMy.addEventListener("change", drawMy);
+  selMyG.addEventListener("change", function () { fillMy(); drawMy(); });
+  fillMy();
 
   /* ---------- articles ---------- */
   var gSel = document.getElementById("pick-ar-g");
   var sSel = document.getElementById("pick-ar-s");
   var aSel = document.getElementById("pick-ar");
   var ver = "hi";
+  gSel.innerHTML = D.arG.map(function (g) {
+    return '<option value="' + g + '">Grade ' + g + "</option>";
+  }).join("");
   function pool() {
     return D.ar.filter(function (a) {
       return String(a.g) === gSel.value && (sSel.value === "*" || a.std === sSel.value);
@@ -232,7 +255,7 @@ pre[hidden]{display:none}
   function arPrompt(a) {
     var v = a[ver];
     return D.arTpl
-      .replace(/\\{GRADES\\}/g, a.g === 4 ? "4th" : "3rd")
+      .replace(/\\{GRADES\\}/g, gradeName(a.g))
       .replace(/\\{TITLE\\}/g, a.title)
       .replace("{STANDARD}", a.std)
       .replace("{ARTICLE}", v.p.map(function (x) { return x[0] + ". " + x[1]; }).join("\\n\\n"))
