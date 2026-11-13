@@ -154,9 +154,13 @@ const seenOpen = new Map();
 let nPass = 0, nWords = 0;
 
 for (const [cid, byGrade] of Object.entries(PASS.passages || {})) {
-  const p = pos[cid];
+  // A key may be a concept, "dig", or one part of one, "dig|sh".
+  const base = cid.split("|")[0];
+  const part = cid.split("|")[1] || "";
+  const p = pos[base];
   const say = (m) => problems.push(`${cid}: ${m}`);
   if (p === undefined) { say("unknown concept"); continue; }
+  if (part && !(SPLITS[base] || []).includes(part)) { say(`${base} has no part "${part}"`); continue; }
   const texts = [];
   for (const g of ["g2", "g3", "g4"]) {
     const v = byGrade[g];
@@ -205,6 +209,14 @@ for (const [cid, byGrade] of Object.entries(PASS.passages || {})) {
       if (a.length && !a.some((x) => lower.includes(x)))
         sayg(`answer ${i + 1} uses no word from the passage`);
     });
+    // A part lesson exists to drill its own spelling, so its passage has
+    // to be visibly denser in that spelling than an ordinary text.
+    if (part) {
+      const alts = part.replace(/^-|-$/g, "").split("/").map((a) => a.replace(/[^a-zA-Z_']/g, "")).filter(Boolean);
+      const hit = words.filter((w) => alts.some((a) =>
+        new RegExp(a.replace(/_/g, "[a-z]"), "i").test(w.replace(/[^a-z']/gi, ""))));
+      if (hit.length < 8) sayg(`only ${hit.length} words use "${part}" — a part passage needs at least 8`);
+    }
     const t = String(v.title).trim().toLowerCase();
     const o = String((v.paras || [])[0] || "").trim().slice(0, 60).toLowerCase();
     if (seenTitle.has(t) && seenTitle.get(t) !== cid)
@@ -221,9 +233,11 @@ for (const [cid, byGrade] of Object.entries(PASS.passages || {})) {
   }
 }
 
-const concepts = Object.keys(PASS.passages || {}).length;
-const total = SK.length;
-console.log(`${nPass} passages across ${concepts} of ${total} concepts, ${nWords} words.`);
+const keys = Object.keys(PASS.passages || {});
+const concepts = keys.filter((k) => !k.includes("|")).length;
+const parts = keys.length - concepts;
+const allParts = SK.reduce((n, r) => n + (SPLITS[r[0]] || []).length, 0);
+console.log(`${nPass} passages: ${concepts} of ${SK.length} concepts and ${parts} of ${allParts} parts, ${nWords} words.`);
 console.log(`problems: ${problems.length}`);
 problems.slice(0, 40).forEach((x) => console.log("  " + x));
 if (problems.length) { console.error("\n✗ fix these before the batch ships."); process.exit(1); }

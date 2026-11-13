@@ -5337,6 +5337,350 @@
      "task": "Write about something somebody taught you. Establish the situation, give a clear sequence, and use dialogue and sensory details."
     }
    }
+  },
+  "dig|sh": {
+   "g2": {
+    "title": "The Fish in the Dish",
+    "paras": [
+     "Josh has a shop. In the shop he has fish in a dish.",
+     "A man came in and said he had a wish. He had a wish for a big fish.",
+     "Josh got him the big fish. It did not fit in the dish.",
+     "So Josh got a sack. He did a dash to the back of the shop and got the sack on it.",
+     "The man got his fish. Josh had to wash the dish. The shop was a shambles, but the man was not sad."
+    ],
+    "qs": [
+     [
+      "What does Josh have in his shop?",
+      "He has fish in a dish."
+     ],
+     [
+      "What was the man's wish?",
+      "He had a wish for a big fish."
+     ],
+     [
+      "Why did the fish not go in the dish?",
+      "It did not fit."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what happened in the shop, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Fish in the Dish",
+    "paras": [
+     "Josh runs the fish shop on the corner, and everything in it is laid out in shallow white dishes on crushed ice.",
+     "A man came in one morning and said he had one wish: the biggest fish in the shop, for his mother's birthday.",
+     "Josh fetched it. It was so long that it would not fit in any dish he had, and the tail hung over the end of the counter.",
+     "He dashed out to the back, came back with a sack, and got the whole thing wrapped before it slid off onto the floor.",
+     "The man left delighted. Josh spent the rest of the morning washing dishes and mopping up melted ice, and he says it was worth it."
+    ],
+    "qs": [
+     [
+      "How is the fish displayed?",
+      "In shallow white dishes on crushed ice."
+     ],
+     [
+      "Who was the big fish for?",
+      "The man's mother, for her birthday."
+     ],
+     [
+      "What did Josh do for the rest of the morning?",
+      "Washed dishes and mopped up melted ice."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Was the big fish worth the trouble? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Fish in the Dish",
+    "paras": [
+     "Josh runs the fish shop on the corner of Mill Street, and everything in that shop is laid out in shallow white dishes on crushed ice, rearranged twice a day so the display never looks picked over.",
+     "A man came in on Tuesday morning and said he had exactly one wish, which was the biggest fish in the shop, and that it was for his mother, and that it was her eightieth birthday on Thursday.",
+     "Josh went and fetched it from the back. It was so long that it would not sit in any dish he owned. The tail hung off the end of the counter and the head pushed up against the till, and both of them stood there looking at it for a moment.",
+     "He dashed out the back for a sack, came back at speed, and got the whole thing wrapped and parcelled about four seconds before it would have slid off the counter and onto the floor.",
+     "The man left delighted, carrying it in both arms. Josh spent the remainder of that morning washing out dishes and mopping melted ice off the tiles, and he says, without any hesitation, that it was entirely worth it."
+    ],
+    "qs": [
+     [
+      "How often is the display rearranged, and why?",
+      "Twice a day, so it never looks picked over."
+     ],
+     [
+      "What two details show how long the fish was?",
+      "The tail hung off the counter and the head pushed against the till."
+     ],
+     [
+      "How close did the fish come to falling?",
+      "About four seconds."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the morning from the man's point of view. Establish the situation, give a clear sequence, and use sensory details."
+    }
+   }
+  },
+  "dig|ch": {
+   "g2": {
+    "title": "Much for Lunch",
+    "paras": [
+     "Chad had a chat with his chum at lunch.",
+     "Chad had a chop. His chum had a chip and a bit of rich ham.",
+     "“That is not much,” said Chad. “Have an inch of my chop.”",
+     "His chum did. Then he had much of it, and then he had a lot of it.",
+     "Chad had the chip. It was not much of a lunch, but it was a chat."
+    ],
+    "qs": [
+     [
+      "Who did Chad have lunch with?",
+      "His chum."
+     ],
+     [
+      "What did Chad have for lunch?",
+      "Chad had a chop."
+     ],
+     [
+      "What did Chad end up eating?",
+      "Chad had the chip."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Was Chad right to share his lunch? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "Much for Lunch",
+    "paras": [
+     "Chad had a chat with his chum over lunch on the bench outside the chip shop.",
+     "Chad had a chop wrapped in paper. His chum had one chip and a chunk of rich ham, which was not much of a lunch by anybody's measure.",
+     "“That is not much,” Chad said, and pushed the paper across. “Have an inch of this.”",
+     "His chum took an inch. Then he took a chunk. By the time the chat had got going properly he had worked his way through most of it.",
+     "Chad ate the chip. It was not much of a lunch, but he says the chat was the point and the lunch was not."
+    ],
+    "qs": [
+     [
+      "Where were they sitting?",
+      "On the bench outside the chip shop."
+     ],
+     [
+      "What did the chum bring?",
+      "One chip and a chunk of rich ham."
+     ],
+     [
+      "What does Chad say was the point?",
+      "The chat was the point and the lunch was not."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how to be a good friend at lunchtime. Group your points and use words like first, then, and finally."
+    }
+   },
+   "g4": {
+    "title": "Much for Lunch",
+    "paras": [
+     "Chad had a chat with his chum over lunch on the bench outside the chip shop, which is where the two of them have eaten on a Thursday for most of a year.",
+     "Chad had a chop wrapped in paper from home. His chum had one chip and a chunk of rich ham, which was not much of a lunch by any reasonable measure, and which he was making a considerable show of enjoying.",
+     "“That is not much,” Chad said, and pushed the paper across the bench without making anything of it. “Have an inch of this.”",
+     "His chum took an inch. Then, a little later, he took a chunk. By the time the chat had got properly going he had worked his way through the better part of the whole chop, and neither of them had remarked on it once.",
+     "Chad ate the chip. It was not much of a lunch and he was hungry by three. He says the chat was the point and the lunch was not, and that if you have to choose between them it is not a difficult choice."
+    ],
+    "qs": [
+     [
+      "How long have they eaten there on Thursdays?",
+      "Most of a year."
+     ],
+     [
+      "What was the chum doing about his small lunch?",
+      "Making a considerable show of enjoying it."
+     ],
+     [
+      "Why did Chad push the paper across 'without making anything of it'?",
+      "So his chum would not feel awkward about accepting."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is it better to share or to keep what is yours? Group your reasons, support them with details from the text, and end with a conclusion."
+    }
+   }
+  },
+  "dig|th": {
+   "g2": {
+    "title": "The Moth on the Path",
+    "paras": [
+     "Beth and I went on a thin path in the sun.",
+     "A moth sat on the path. It was thin and it did not run off.",
+     "“Do not tap that moth,” said Beth. “That moth is not in our path. We are in its path.”",
+     "So we went round it. Then we had a bath to get the mud off.",
+     "The moth was on the path when we got back. Beth said that moth was then a pal."
+    ],
+    "qs": [
+     [
+      "What was on the path?",
+      "A moth was on the path."
+     ],
+     [
+      "What did Beth say?",
+      "Not to tap the moth, because it was not in their path."
+     ],
+     [
+      "Was the moth still there later?",
+      "Yes, it was on the path when they got back."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what happened on the path, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Moth on the Path",
+    "paras": [
+     "Beth and I walked the thin path along the north side of the hill on Thursday, the one that runs between the gorse.",
+     "About halfway along there was a moth sitting in the middle of the path with its wings flat. It did not move for us at all.",
+     "“Do not step on that,” Beth said, in a tone that did not leave anything to discuss. “It is not in the way. We are.”",
+     "So we went round it, one at a time, and carried on, and came back the same way three hours later after a bath in the stream at the bottom.",
+     "The moth was still there, in exactly the same spot, wings flat. Beth said that by then it counted as somebody we were on good terms with."
+    ],
+    "qs": [
+     [
+      "Where does the thin path run?",
+      "Along the north side of the hill, between the gorse."
+     ],
+     [
+      "What did Beth say about who was in the way?",
+      "That the moth was not in the way — they were."
+     ],
+     [
+      "How long were they gone?",
+      "Three hours."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should people move out of the way for small animals? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Moth on the Path",
+    "paras": [
+     "Beth and I walked the thin path along the north side of the hill on Thursday afternoon, the one that runs between the gorse and is barely wide enough for one person to pass another.",
+     "About halfway along, in the exact middle of the path, there was a moth sitting with its wings flat out against the ground. It was pale and quite large and it did not move for either of us, or for the dog, or for anything else.",
+     "“Do not step on that,” Beth said, in the particular tone that does not leave anything open for discussion. “It is not in the way. We are in the way.”",
+     "So we went round it, one at a time, with some difficulty, and carried on to the top. We came back down the same path about three hours later, after a bath in the stream at the bottom of the far side that neither of us had planned on.",
+     "The moth was still there. Same spot, same wings, no sign whatsoever of having moved an inch in either direction. Beth said that by that stage it counted as somebody we knew, and we went round it again without a word."
+    ],
+    "qs": [
+     [
+      "How wide is the path?",
+      "Barely wide enough for one person to pass another."
+     ],
+     [
+      "What exactly did Beth say about who was in the way?",
+      "That the moth was not in the way — they were."
+     ],
+     [
+      "Why did they go round it a second time without a word?",
+      "They had already agreed the moth had the right to be there."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the walk from the moth's point of view. Establish the situation, give a clear sequence, and use sensory details."
+    }
+   }
+  },
+  "dig|wh": {
+   "g2": {
+    "title": "Which One, Whiz?",
+    "paras": [
+     "My pup is Whiz. When we get to the shop, Whiz has to pick.",
+     "“Which one?” I ask him. “Which one do you want?”",
+     "Whiz sits. He will not pick. He does not get why I ask.",
+     "When I pick for him, he whips his back legs about. Then he is not sad.",
+     "So now I do not ask which one. I just pick. Whiz is a pup, not a man."
+    ],
+    "qs": [
+     [
+      "What is the pup called?",
+      "The pup is called Whiz."
+     ],
+     [
+      "What does the narrator ask him?",
+      "Which one do you want?"
+     ],
+     [
+      "Why does the narrator stop asking?",
+      "Because Whiz is a pup and will not pick."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should pets get to choose things? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "Which One, Whiz?",
+    "paras": [
+     "My dog is called Whiz, which was a hopeful name given to an animal that has never once hurried anywhere.",
+     "When we get to the pet shop I hold up two things and ask him which one he wants. I have been doing this for two years.",
+     "Whiz sits down. He will not pick, and he gives every impression of not understanding why anybody would ask him to.",
+     "When I give up and pick for him, he whips his tail about and is perfectly delighted, whichever one I chose.",
+     "So I have stopped asking which. I just pick. Whiz is a dog, and the asking was never for his benefit anyway."
+    ],
+    "qs": [
+     [
+      "Why is the name hopeful?",
+      "He has never once hurried anywhere."
+     ],
+     [
+      "How long has the narrator been asking?",
+      "Two years."
+     ],
+     [
+      "Who was the asking really for?",
+      "The narrator, not the dog."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how to choose a toy for a pet. Group your points and use words like first, then, and finally."
+    }
+   },
+   "g4": {
+    "title": "Which One, Whiz?",
+    "paras": [
+     "My dog is called Whiz, which was an optimistic name to give an animal that has not, in six years, hurried anywhere for any reason whatsoever.",
+     "When we get to the pet shop I crouch down and hold up two things, one in each hand, and ask him which one he would like. I have been doing this since he was a puppy, which is to say for about two years longer than there has been any evidence it works.",
+     "Whiz sits down. He will not pick. He looks at me with an expression of mild, patient confusion, as though I have asked him something in a language he is aware exists but has never studied.",
+     "When I eventually give up and choose for him, he whips his tail about and is entirely delighted, and he is exactly as delighted whichever of the two I happened to be holding, which rather settles the question.",
+     "So I have stopped asking which. I crouch down, I pick, and we go home. Whiz is a dog, and when I am honest about it the asking was never for his benefit in the first place."
+    ],
+    "qs": [
+     [
+      "How long has Whiz failed to hurry?",
+      "Six years."
+     ],
+     [
+      "What expression does Whiz give?",
+      "Mild, patient confusion, as though asked in a language he never studied."
+     ],
+     [
+      "What 'rather settles the question'?",
+      "He is equally delighted whichever one is chosen."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Do animals understand more than we think? Group your reasons, support them with details from the text, and end with a conclusion."
+    }
+   }
   }
  }
 }

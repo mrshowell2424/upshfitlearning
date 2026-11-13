@@ -145,10 +145,15 @@ for (const r of SK) {
   const p = pos[sid];
   const packId = sid.startsWith("og") ? sid.slice(2) : null;
   const pack = packId ? global.OG_PACKS[packId] : null;
+  // The passages are not listed here any more. Every concept now has its
+  // own, written at three reading levels, and those are checked against the
+  // rules for their grade in check-passages.mjs. Counting the retired pack
+  // passages here reported 57 words ahead of their lesson in text the page
+  // no longer shows — grew, knew, dolphin, castle — which was a true
+  // statement about a file and a false one about the site.
   const lists = [
     ["word list", r[6] || []],
     ["multisyllabic list", MULTI[sid] || []],
-    ["passage", ((pack && pack.dec && pack.dec.paras) || []).join(" ").split(/\s+/)],
   ];
   const seen = new Map();
   for (const [where, words] of lists)
@@ -164,10 +169,10 @@ for (const r of SK) {
 }
 const nHits = shipped.reduce((n, x) => n + x.hits.length, 0);
 console.log(
-  `\n— the shipped content, for information —\n\n` +
+  `\n— the shipped word lists, for information —\n\n` +
     `${nHits} words ahead of their own lesson, across ${shipped.length} of ${SK.length} lessons.\n` +
-    `These came with the builder. Nothing here is changed; rewriting a passage\n` +
-    `is your call, not the checker's.\n`
+    `These lists came with the builder and are not changed here. The passages\n` +
+    `are checked separately, by grade, in check-passages.mjs.\n`
 );
 shipped
   .sort((a, b) => Math.max(...b.hits.map((h) => h.early)) - Math.max(...a.hits.map((h) => h.early)))

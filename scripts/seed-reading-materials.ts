@@ -1306,7 +1306,7 @@ const ADAPTATIONS: Adaptation[] = [
           " ((OGD[id] && OGD[id].p.dec && OGD[id].p.dec.title) || label))" +
           ".replace('{PASSAGE}', String(ebText || '').trim())" +
           ".replace('{QUESTION}', ebPrompt)" +
-          ".replace('{WRITING}', (PGX && PGX.write ? PGX.write.type + ' \u2014 ' + PGX.write.task" +
+          ".replace('{WRITING}', (wrTask ? wrPick + ' \u2014 ' + wrTask" +
           " : 'Write a few sentences about what you read.'));\n" +
           frames
       );
@@ -2381,7 +2381,9 @@ const ADAPTATIONS: Adaptation[] = [
           "    const pgUp = !!(this.state && this.state.multi) || !!PG_HARD[cur[0]];\n" +
           "    const pgGrade = pgUp\n" +
           "      ? PG_ORDER[Math.min(2, PG_ORDER.indexOf(pgBase) + 1)] : pgBase;\n" +
-          "    const PGX = (PGS[cur[0]] || {})[pgGrade] || null;"
+          "    // A part of a split lesson takes its own passage where one has\n" +
+          "    // been written, and its concept's where one has not.\n" +
+          "    const PGX = ((PGS[SEL] || PGS[cur[0]]) || {})[pgGrade] || null;"
       );
 
       out = out.replace(
@@ -2469,6 +2471,111 @@ const ADAPTATIONS: Adaptation[] = [
         "'\u{1F4CB} Evidence: For example, ______.', " +
         "'\u{1F517} Justification: This shows ______.'];";
       return html.split(from).join(to);
+    },
+  },
+  {
+    // Let the teacher pick the kind of writing.
+    //
+    // Each passage carries one authored task, and it is a good one, but a
+    // teacher working on opinion writing that week should not have to take
+    // the narrative task because that is what the passage happens to ship
+    // with. The toggle offers all three kinds these grades are taught.
+    //
+    // The authored task is used whenever its own kind is selected. The
+    // other two are built from the passage itself — its title, and the
+    // third comprehension question, which is always the one that asks what
+    // the text shows rather than what it says, and therefore makes a real
+    // opinion prompt. The frames climb with the grade, following what
+    // second, third and fourth graders are each expected to manage.
+    name: "let the teacher pick the kind of writing",
+    apply: (html) => {
+      const seat = "const PGX = ((PGS[SEL] || PGS[cur[0]]) || {})[pgGrade] || null;";
+      if (!html.includes(seat)) return html;
+      const build =
+        "\n    const WR_TYPES = ['Opinion', 'Informative', 'Narrative'];\n" +
+        "    const WR_SHORT = { Opinion: 'Opinion', Informative: 'Info', Narrative: 'Story' };\n" +
+        "    const wrPick = (this.state && this.state.wr) ||\n" +
+        "      ((PGX && PGX.write && PGX.write.type) || 'Narrative');\n" +
+        "    const wrTask = (() => {\n" +
+        "      if (!PGX) return '';\n" +
+        "      if (PGX.write && PGX.write.type === wrPick) return PGX.write.task;\n" +
+        "      const t = '\u201c' + PGX.title + '\u201d';\n" +
+        "      const q = (PGX.qs && PGX.qs[2]) ? PGX.qs[2][0] : '';\n" +
+        "      const F = {\n" +
+        "        Opinion: {\n" +
+        "          g2: q + ' Tell what you think, give two reasons, and write an ending.',\n" +
+        "          g3: q + ' Give your opinion with reasons, and link them with because and also.',\n" +
+        "          g4: q + ' Group your reasons, support them with facts and details from the text,"
+        + " and end with a conclusion.' },\n" +
+        "        Informative: {\n" +
+        "          g2: 'Write three facts about ' + t + '. Start with a sentence that tells your topic"
+        + " and finish with an ending.',\n" +
+        "          g3: 'Explain what happens in ' + t + '. Group the related information together and"
+        + " use words from the text.',\n" +
+        "          g4: 'Write a report on ' + t + '. Organise it into sections, develop each one with"
+        + " facts and examples, and connect your ideas.' },\n" +
+        "        Narrative: {\n" +
+        "          g2: 'Retell ' + t + ' in order. Use first, next and last, and end by telling how"
+        + " somebody felt.',\n" +
+        "          g3: 'Retell ' + t + ' from somebody else in the story. Use time-order words and"
+        + " include something a person says.',\n" +
+        "          g4: 'Retell ' + t + ' from somebody else in the story. Establish the situation,"
+        + " give a clear sequence of events, and use dialogue and sensory details.' } };\n" +
+        "      return (F[wrPick] || {})[pgGrade] || '';\n" +
+        "    })();";
+      let out = html.replace(seat, seat + build);
+
+      // The toggle, beside the reading one.
+      const anchor = '<sc-if value="{{ pgHas }}" hint-placeholder-val="{{ true }}">';
+      if (!out.includes(anchor)) return html;
+      const control =
+        '<sc-if value="{{ pgHas }}" hint-placeholder-val="{{ true }}">' +
+        '<span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;' +
+        'border:1.5px solid #C9D3C4;border-radius:999px;background:#F7FAF6">' +
+        '<span style="font-family:Outfit,sans-serif;font-size:11px;font-weight:800;' +
+        'letter-spacing:.1em;color:#618459;white-space:nowrap">WRITING</span>' +
+        '<sc-for list="{{ wrOpts }}" as="w" hint-placeholder-count="3">' +
+        '<button type="button" onClick="{{ w.pick }}" style="{{ w.st }}">{{ w.label }}</button>' +
+        "</sc-for></span></sc-if>";
+      out = out.replace(anchor, control + anchor);
+
+      const dataAnchor = " pgHas: !!PGX,";
+      if (!out.includes(dataAnchor)) return html;
+      out = out.replace(
+        dataAnchor,
+        dataAnchor +
+          "\n      wrTask, wrPick,\n" +
+          "      wrOpts: WR_TYPES.map((w) => ({ w, label: WR_SHORT[w],\n" +
+          "        st: 'font-family:Outfit,sans-serif;font-size:12px;font-weight:800;" +
+          "border:1.5px solid #4B6049;border-radius:7px;padding:3px 9px;cursor:pointer;" +
+          "white-space:nowrap;' + (w === wrPick ? 'background:#4B6049;color:#fff'" +
+          " : 'background:#fff;color:#4B6049'),\n" +
+          "        pick: () => this.setState({ wr: w }) })),"
+      );
+
+      // Show the chosen task on the writing step, under the question.
+      const qLine =
+        '<div style="font-size:14px;font-weight:800;color:#2F3E2E">' +
+        "\u2753 {{ s.question }}</div>";
+      if (!out.includes(qLine)) return html;
+      const taskBlock =
+        qLine +
+        '\n                <sc-if value="{{ s.hasTask }}" hint-placeholder-val="{{ false }}">' +
+        '<div style="border:1.5px dashed #4B6049;border-radius:10px;padding:9px 12px;' +
+        'background:#F7FAF6;display:flex;flex-direction:column;gap:3px">' +
+        '<div style="font-family:Outfit,sans-serif;font-size:11px;font-weight:800;' +
+        'letter-spacing:.14em;color:#618459">\u270D\uFE0F {{ s.taskType }} WRITING</div>' +
+        '<div style="font-size:14px;line-height:1.5;color:#111">{{ s.task }}</div>' +
+        "</div></sc-if>";
+      out = out.split(qLine).join(taskBlock);
+
+      const step13 = "{ hasPassage: !!ebText, passage: ebText, question: ebPrompt,";
+      if (!out.includes(step13)) return html;
+      out = out.replace(
+        step13,
+        step13 + "\n          hasTask: !!wrTask, task: wrTask, taskType: wrPick.toUpperCase(),"
+      );
+      return out;
     },
   },
 ];
