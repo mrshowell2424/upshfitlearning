@@ -2373,5 +2373,955 @@
    }
   ],
   "note": "Best done with a real book open. Ask the child to find page nine two ways: by turning, and by using the list."
+ },
+ {
+  "id": "g1-26",
+  "grade": 1,
+  "n": 26,
+  "title": "What the Picture Shows",
+  "standard": "RI.1.6",
+  "standard_text": "Standard: Distinguish between information provided by pictures or other illustrations and information provided by the words in a text.\n Spiral: RI.1.5 text features · RI.1.7 illustrations · RI.1.9 comparing texts · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 280,
+   "words": 49,
+   "labelled_words": 49,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The words say the bird has a long bill."
+    },
+    {
+     "label": "B",
+     "text": "The picture shows you just how long that bill is."
+    },
+    {
+     "label": "C",
+     "text": "The words do not say what color the bird is."
+    },
+    {
+     "label": "D",
+     "text": "But the picture shows that the bird is bright blue."
+    },
+    {
+     "label": "E",
+     "text": "So both parts of the page tell you different things."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 160,
+   "words": 35,
+   "labelled_words": 35,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The words say the bird has a long bill."
+    },
+    {
+     "label": "B",
+     "text": "The picture shows how long it is."
+    },
+    {
+     "label": "C",
+     "text": "The words do not say the color."
+    },
+    {
+     "label": "D",
+     "text": "The picture shows it is bright blue."
+    },
+    {
+     "label": "E",
+     "text": "Both parts tell different things."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does the picture tell you that the words do not?",
+    "a": "The picture shows that the bird is bright blue."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. how long the bill is) and paragraph D (i.e. the color).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what the words do and what the picture does.",
+    "a": "The words say the bird has a long bill and the picture shows just how long. The words do not say the color, but the picture shows the bird is bright blue. Both parts of the page tell you different things."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "bill: the hard mouth of a bird.\ncolor: red, blue, green and the rest.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the words and the picture on this page.",
+    "a": "Both parts of the page tell you different things, because the words give the long bill and the picture gives the bright blue."
+   }
+  ],
+  "note": "Cover the picture, read the words, and ask what the child still does not know. Then uncover it. That is the whole standard in one move."
+ },
+ {
+  "id": "g1-27",
+  "grade": 1,
+  "n": 27,
+  "title": "The Words Say More",
+  "standard": "RI.1.6",
+  "standard_text": "Standard: Distinguish between information provided by pictures or other illustrations and information provided by the words in a text.\n Spiral: RI.1.5 text features · RI.1.7 illustrations · RI.1.9 comparing texts · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 290,
+   "words": 49,
+   "labelled_words": 49,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The photo shows a big bear standing in a river."
+    },
+    {
+     "label": "B",
+     "text": "You can see its fur, its claws and the water."
+    },
+    {
+     "label": "C",
+     "text": "The photo cannot tell you that the bear is hungry."
+    },
+    {
+     "label": "D",
+     "text": "It cannot tell you the fish come here every fall."
+    },
+    {
+     "label": "E",
+     "text": "The words have to say those things for you."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 170,
+   "words": 36,
+   "labelled_words": 36,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The photo shows a bear in a river."
+    },
+    {
+     "label": "B",
+     "text": "You can see its fur and the water."
+    },
+    {
+     "label": "C",
+     "text": "The photo cannot say the bear is hungry."
+    },
+    {
+     "label": "D",
+     "text": "It cannot say when the fish come."
+    },
+    {
+     "label": "E",
+     "text": "The words say those things."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What can you see in the photo?",
+    "a": "You can see its fur, its claws and the water."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. hungry) and paragraph D (i.e. when the fish come).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what the photo shows and what it cannot.",
+    "a": "The photo shows a big bear standing in a river, and you can see its fur, its claws and the water. It cannot tell you the bear is hungry or that the fish come every fall, so the words have to say those things."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "photo: a picture made with a camera.\nclaws: the sharp hard nails on an animal's foot.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between what a photo cannot show and the words.",
+    "a": "The photo cannot tell you that the bear is hungry or when the fish come, so the words have to say those things for you."
+   }
+  ],
+  "note": "This is the other half of the standard from What the Picture Shows. Read the two together if you can."
+ },
+ {
+  "id": "g1-28",
+  "grade": 1,
+  "n": 28,
+  "title": "A Picture of a Beak",
+  "standard": "RI.1.6",
+  "standard_text": "Standard: Distinguish between information provided by pictures or other illustrations and information provided by the words in a text.\n Spiral: RI.1.5 text features · RI.1.7 illustrations · RI.1.9 comparing texts · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 300,
+   "words": 52,
+   "labelled_words": 52,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The page shows two different birds side by side."
+    },
+    {
+     "label": "B",
+     "text": "One beak is thin and sharp, like a needle."
+    },
+    {
+     "label": "C",
+     "text": "The other beak is wide and flat, like a spoon."
+    },
+    {
+     "label": "D",
+     "text": "The words say the thin one drinks from deep flowers."
+    },
+    {
+     "label": "E",
+     "text": "Together the picture and the words tell you why it is shaped that way."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 180,
+   "words": 36,
+   "labelled_words": 36,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The page shows two birds side by side."
+    },
+    {
+     "label": "B",
+     "text": "One beak is thin like a needle."
+    },
+    {
+     "label": "C",
+     "text": "The other beak is wide and flat."
+    },
+    {
+     "label": "D",
+     "text": "The words say the thin one drinks from flowers."
+    },
+    {
+     "label": "E",
+     "text": "Together they tell you why."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What are the two beaks like?",
+    "a": "One beak is thin and sharp, like a needle, and the other is wide and flat, like a spoon."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. the thin beak) and paragraph D (i.e. what the words add).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what the page shows about beaks.",
+    "a": "The page shows two birds side by side. One beak is thin and sharp like a needle, and the other is wide and flat like a spoon. The words say the thin one drinks from deep flowers, so the picture and the words together tell you why it is shaped that way."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "beak: the hard mouth of a bird.\nneedle: a thin sharp tool for sewing.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the shape of the beak and what the bird eats.",
+    "a": "The words say the thin one drinks from deep flowers, and the picture shows that beak is thin and sharp like a needle."
+   }
+  ],
+  "note": "Shape and job is the big idea underneath. Ask what the wide flat beak might be for before the child reads anything else."
+ },
+ {
+  "id": "g1-29",
+  "grade": 1,
+  "n": 29,
+  "title": "The Map and the Words",
+  "standard": "RI.1.6",
+  "standard_text": "Standard: Distinguish between information provided by pictures or other illustrations and information provided by the words in a text.\n Spiral: RI.1.5 text features · RI.1.7 illustrations · RI.1.9 comparing texts · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 310,
+   "words": 50,
+   "labelled_words": 50,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A map of the zoo shows where each animal lives."
+    },
+    {
+     "label": "B",
+     "text": "You can see that the lions are near the gate."
+    },
+    {
+     "label": "C",
+     "text": "The map cannot tell you when the lions are fed."
+    },
+    {
+     "label": "D",
+     "text": "The words under the map say feeding is at two."
+    },
+    {
+     "label": "E",
+     "text": "You need both to plan your day at the zoo."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 190,
+   "words": 38,
+   "labelled_words": 38,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A zoo map shows where each animal lives."
+    },
+    {
+     "label": "B",
+     "text": "You can see the lions near the gate."
+    },
+    {
+     "label": "C",
+     "text": "The map cannot say when they are fed."
+    },
+    {
+     "label": "D",
+     "text": "The words say feeding is at two."
+    },
+    {
+     "label": "E",
+     "text": "You need both to plan your day."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does the map show you?",
+    "a": "A map of the zoo shows where each animal lives, and you can see that the lions are near the gate."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. what the map cannot say) and paragraph D (i.e. the words under it).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what the map does and what the words do.",
+    "a": "The zoo map shows where each animal lives, so you can see the lions near the gate. The map cannot tell you when the lions are fed, but the words under it say feeding is at two, so you need both to plan your day."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "map: a picture that shows where things are.\nfeeding: the time an animal is given food.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the map and the words under it.",
+    "a": "The map shows where the lions are and the words say feeding is at two, so you need both to plan your day at the zoo."
+   }
+  ],
+  "note": "Where and when is a clean split for this age. Ask which question the map answers and which one the words answer."
+ },
+ {
+  "id": "g1-30",
+  "grade": 1,
+  "n": 30,
+  "title": "What a Photo Cannot Tell You",
+  "standard": "RI.1.6",
+  "standard_text": "Standard: Distinguish between information provided by pictures or other illustrations and information provided by the words in a text.\n Spiral: RI.1.5 text features · RI.1.7 illustrations · RI.1.9 comparing texts · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 320,
+   "words": 49,
+   "labelled_words": 49,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A photo shows a volcano with gray smoke above it."
+    },
+    {
+     "label": "B",
+     "text": "You can see the gray smoke and the dark rock."
+    },
+    {
+     "label": "C",
+     "text": "A photo cannot tell you how hot that rock is."
+    },
+    {
+     "label": "D",
+     "text": "It cannot tell you the smoke smells like old eggs."
+    },
+    {
+     "label": "E",
+     "text": "Only words can tell you both of those things."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 200,
+   "words": 37,
+   "labelled_words": 37,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A photo shows a volcano with smoke."
+    },
+    {
+     "label": "B",
+     "text": "You can see the smoke and the rock."
+    },
+    {
+     "label": "C",
+     "text": "A photo cannot say how hot it is."
+    },
+    {
+     "label": "D",
+     "text": "It cannot say what the smoke smells like."
+    },
+    {
+     "label": "E",
+     "text": "Only words can tell you that."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What can you see in the photo?",
+    "a": "You can see the gray smoke and the dark rock."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. how hot) and paragraph D (i.e. the smell).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what a photo can show and what it cannot.",
+    "a": "A photo of a volcano shows the gray smoke and the dark rock. It cannot tell you how hot the rock is or that the smoke smells like old eggs, so only words can tell you those things."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "volcano: a mountain that can push out hot rock and smoke.\nsmells: what your nose tells you about something.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between what you cannot see and what words do.",
+    "a": "A photo cannot tell you how hot the rock is or what the smoke smells like, so only words can tell you both of those things."
+   }
+  ],
+  "note": "Heat and smell are the two things no picture carries. That is a rule a child can take to every book on the shelf."
+ },
+ {
+  "id": "g1-31",
+  "grade": 1,
+  "n": 31,
+  "title": "The Big Picture of a Farm",
+  "standard": "RI.1.7",
+  "standard_text": "Standard: Use the illustrations and details in a text to describe its key ideas.\n Spiral: RI.1.1 key details · RI.1.2 main topic · RI.1.6 pictures and words · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 290,
+   "words": 50,
+   "labelled_words": 50,
+   "paras": [
+    {
+     "label": "A",
+     "text": "One wide picture shows the whole farm at one time."
+    },
+    {
+     "label": "B",
+     "text": "The red barn sits close to the road in front."
+    },
+    {
+     "label": "C",
+     "text": "A big field of corn grows behind the barn."
+    },
+    {
+     "label": "D",
+     "text": "A small pond sits at the far end of the field."
+    },
+    {
+     "label": "E",
+     "text": "The picture shows how all of the parts fit together."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 170,
+   "words": 37,
+   "labelled_words": 37,
+   "paras": [
+    {
+     "label": "A",
+     "text": "One wide picture shows the whole farm."
+    },
+    {
+     "label": "B",
+     "text": "The red barn is near the road."
+    },
+    {
+     "label": "C",
+     "text": "A field of corn grows behind the barn."
+    },
+    {
+     "label": "D",
+     "text": "A small pond sits at the far end."
+    },
+    {
+     "label": "E",
+     "text": "The picture shows how the parts fit."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is behind the barn?",
+    "a": "A big field of corn grows behind the barn."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. the pond) and paragraph E (i.e. the parts fitting together).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what the picture of the farm shows.",
+    "a": "One wide picture shows the whole farm at one time. The red barn sits close to the road, a field of corn grows behind it, and a small pond sits at the far end. The picture shows how all the parts fit together."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "barn: the big building on a farm.\npond: a small body of still water.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the wide picture and knowing where things are.",
+    "a": "One wide picture shows the whole farm at one time, so it shows how all of the parts fit together."
+   }
+  ],
+  "note": "Have the child describe the farm with the picture covered. Then uncover it and ask what they could not have said."
+ },
+ {
+  "id": "g1-32",
+  "grade": 1,
+  "n": 32,
+  "title": "Steps in a Picture",
+  "standard": "RI.1.7",
+  "standard_text": "Standard: Use the illustrations and details in a text to describe its key ideas.\n Spiral: RI.1.1 key details · RI.1.2 main topic · RI.1.6 pictures and words · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 280,
+   "words": 49,
+   "labelled_words": 49,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Four small pictures show you how to wash a big dog."
+    },
+    {
+     "label": "B",
+     "text": "In picture one the dog stands in the tub."
+    },
+    {
+     "label": "C",
+     "text": "In picture two the soap goes on its back."
+    },
+    {
+     "label": "D",
+     "text": "In picture three the water rinses all the soap off."
+    },
+    {
+     "label": "E",
+     "text": "The numbers tell you which picture comes first and last."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 160,
+   "words": 39,
+   "labelled_words": 39,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Four pictures show how to wash a dog."
+    },
+    {
+     "label": "B",
+     "text": "In picture one the dog is in the tub."
+    },
+    {
+     "label": "C",
+     "text": "In picture two the soap goes on."
+    },
+    {
+     "label": "D",
+     "text": "In picture three the water rinses it off."
+    },
+    {
+     "label": "E",
+     "text": "The numbers tell you what comes first."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What happens in picture two?",
+    "a": "In picture two the soap goes on its back."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. picture one) and paragraph E (i.e. the numbers).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell how the pictures show washing a dog.",
+    "a": "Four small pictures show how to wash a dog. In picture one the dog stands in the tub, in picture two the soap goes on, and in picture three the water rinses it off. The numbers tell you which picture comes first."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "rinse: to wash soap off with clean water.\ntub: the big bowl you wash in.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the numbers and the order.",
+    "a": "The numbers tell you which picture comes first and last, so you know the soap goes on before the water rinses it off."
+   }
+  ],
+  "note": "Hide the numbers and shuffle the steps. The child will see fast what the numbers were doing."
+ },
+ {
+  "id": "g1-33",
+  "grade": 1,
+  "n": 33,
+  "title": "Follow the Arrow",
+  "standard": "RI.1.7",
+  "standard_text": "Standard: Use the illustrations and details in a text to describe its key ideas.\n Spiral: RI.1.1 key details · RI.1.2 main topic · RI.1.6 pictures and words · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 300,
+   "words": 49,
+   "labelled_words": 49,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A picture of a plant has three arrows drawn on it."
+    },
+    {
+     "label": "B",
+     "text": "One arrow points down from the cloud to the leaf."
+    },
+    {
+     "label": "C",
+     "text": "One arrow points from the soil up through the stem."
+    },
+    {
+     "label": "D",
+     "text": "The last arrow points back out of the leaf."
+    },
+    {
+     "label": "E",
+     "text": "Together the arrows show the way the water travels."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 180,
+   "words": 39,
+   "labelled_words": 39,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A plant picture has three arrows on it."
+    },
+    {
+     "label": "B",
+     "text": "One arrow points from the cloud to the leaf."
+    },
+    {
+     "label": "C",
+     "text": "One points from the soil up the stem."
+    },
+    {
+     "label": "D",
+     "text": "The last points out of the leaf."
+    },
+    {
+     "label": "E",
+     "text": "The arrows show where the water goes."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "How many arrows are on the picture?",
+    "a": "A picture of a plant has three arrows drawn on it."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the arrow from the soil) and paragraph E (i.e. what the arrows show).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what the arrows on the plant picture show.",
+    "a": "A plant picture has three arrows. One points down from the cloud to the leaf, one points from the soil up through the stem, and the last points back out of the leaf. Together they show the way the water travels."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "arrow: a mark that points the way.\nstem: the part of a plant that holds it up.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the three arrows.",
+    "a": "Together the arrows show the way the water travels, from the cloud to the leaf, from the soil up the stem, and back out of the leaf."
+   }
+  ],
+  "note": "An arrow means direction, and children read it as decoration. Trace each one with a finger before talking about it."
+ },
+ {
+  "id": "g1-34",
+  "grade": 1,
+  "n": 34,
+  "title": "A Picture with Labels",
+  "standard": "RI.1.7",
+  "standard_text": "Standard: Use the illustrations and details in a text to describe its key ideas.\n Spiral: RI.1.1 key details · RI.1.2 main topic · RI.1.6 pictures and words · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 310,
+   "words": 51,
+   "labelled_words": 51,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A picture of a bee has small words beside it."
+    },
+    {
+     "label": "B",
+     "text": "A thin line runs from each word to one part."
+    },
+    {
+     "label": "C",
+     "text": "One word says wing, and its line goes to a wing."
+    },
+    {
+     "label": "D",
+     "text": "Those small words beside a picture are called labels."
+    },
+    {
+     "label": "E",
+     "text": "Labels let a picture teach you the name of each part."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 190,
+   "words": 39,
+   "labelled_words": 39,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A bee picture has small words beside it."
+    },
+    {
+     "label": "B",
+     "text": "A line runs from each word to a part."
+    },
+    {
+     "label": "C",
+     "text": "One word says wing and points to the wing."
+    },
+    {
+     "label": "D",
+     "text": "These words are called labels."
+    },
+    {
+     "label": "E",
+     "text": "Labels teach you the name of each part."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What are the small words called?",
+    "a": "Those small words beside a picture are called labels."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. the lines) and paragraph E (i.e. what labels do).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what labels do on a picture.",
+    "a": "A picture of a bee has small words beside it, and a thin line runs from each word to one part. One word says wing and its line goes to a wing. Those words are called labels, and they let a picture teach you the name of each part."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "label: a small word beside a picture that names a part.\nwing: the part a bee flies with.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the line and the label.",
+    "a": "A thin line runs from each word to one part, so the word wing goes with the wing and not with something else."
+   }
+  ],
+  "note": "The line is the part children ignore, and it is the part that makes a label a label. Ask what would happen without the lines."
+ },
+ {
+  "id": "g1-35",
+  "grade": 1,
+  "n": 35,
+  "title": "The Picture at the Start",
+  "standard": "RI.1.7",
+  "standard_text": "Standard: Use the illustrations and details in a text to describe its key ideas.\n Spiral: RI.1.1 key details · RI.1.2 main topic · RI.1.6 pictures and words · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 320,
+   "words": 49,
+   "labelled_words": 49,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A big picture sits at the start of this part."
+    },
+    {
+     "label": "B",
+     "text": "It shows a town street covered in deep snow."
+    },
+    {
+     "label": "C",
+     "text": "No cars are moving and one shop is dark inside."
+    },
+    {
+     "label": "D",
+     "text": "Before you read a word, you know the storm was big."
+    },
+    {
+     "label": "E",
+     "text": "The picture gets your head ready for the words."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 200,
+   "words": 43,
+   "labelled_words": 43,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A big picture is at the start of this part."
+    },
+    {
+     "label": "B",
+     "text": "It shows a street covered in deep snow."
+    },
+    {
+     "label": "C",
+     "text": "No cars move and one shop is dark."
+    },
+    {
+     "label": "D",
+     "text": "Before you read, you know the storm was big."
+    },
+    {
+     "label": "E",
+     "text": "The picture gets you ready for the words."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does the picture show?",
+    "a": "It shows a town street covered in deep snow."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. knowing before you read) and paragraph E (i.e. getting ready).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what the picture at the start does.",
+    "a": "A big picture at the start of the part shows a town street covered in deep snow, with no cars moving and one shop dark. Before you read a word you know the storm was big, so the picture gets your head ready for the words."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "storm: strong wind, rain or snow.\nready: set to begin.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the picture and the words that come after it.",
+    "a": "Before you read a word, the picture tells you the storm was big, so it gets your head ready for the words."
+   }
+  ],
+  "note": "Ask the child to predict one thing the words will say. Then read and check. That is the habit this article is building."
  }
 ]
