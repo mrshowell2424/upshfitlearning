@@ -135,6 +135,51 @@ function Block({
   );
 }
 
+/**
+ * Supportive statements: the words, set as words.
+ *
+ * Every other section on this page is a list of moves. This one is a list of
+ * sentences, and a teacher reading it has about ten seconds before the moment
+ * passes -- so each line is set in the reading face at a size you can take in
+ * whole, with nothing in front of it to scan past. No bullets, no numbers.
+ *
+ * They are written to be said to the student rather than about them, and each
+ * one leaves the work standing: none of these excuse the task, and none of
+ * them are calm down, you're fine, or I know you can do it.
+ */
+function SupportiveStatements({ items }: { items: string[] }) {
+  return (
+    <section style={{ margin: "0 0 22px" }}>
+      <p style={{ ...label, margin: "0 0 2px", color: BRAND.pinkDark }}>
+        Supportive statements
+      </p>
+      <p style={{ ...label, margin: "0 0 10px", fontWeight: 500, letterSpacing: 0, textTransform: "none", fontSize: 13 }}>
+        What to actually say.
+      </p>
+      <div
+        style={{
+          borderLeft: `3px solid ${BRAND.pinkDark}`,
+          paddingLeft: 16,
+        }}
+      >
+        {items.map((t, i) => (
+          <p
+            key={i}
+            style={{
+              fontFamily: 'var(--font-serif), Georgia, "Times New Roman", serif',
+              fontSize: 18,
+              lineHeight: 1.45,
+              margin: i ? "11px 0 0" : 0,
+            }}
+          >
+            {t}
+          </p>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function SignalCard({ s, remove }: { s: Signal; remove: string }) {
   return (
     <Card accent={BRAND.coralDark}>
@@ -191,6 +236,7 @@ function SignalCard({ s, remove }: { s: Signal; remove: string }) {
         items={s.now}
         color={BRAND.tealDark}
       />
+      <SupportiveStatements items={s.say} />
       <Block
         heading="What usually makes it worse"
         note="The reasonable-sounding reflex."

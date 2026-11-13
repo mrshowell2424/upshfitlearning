@@ -87,6 +87,13 @@ export interface Signal {
   ef: EFKey[];
   /** The next few minutes. */
   now: string[];
+  /**
+   * The words. Short enough to say across a room, and written to be said to
+   * the student rather than about them -- they name the thing without
+   * blaming anyone for it, and every one of them leaves the work standing.
+   * Nothing here says calm down, you're fine, or I know you can do it.
+   */
+  say: string[];
   /** The reasonable-sounding reflex that makes this one worse. */
   worse: string[];
   /** The longer arc, once the moment has passed. */
@@ -125,6 +132,13 @@ export const SIGNALS: Signal[] = [
       "Give a motor task with no right answer — hand them something to carry, hold or sort. Movement comes back before speech does.",
       "When speech returns, take the first word as the whole answer. Do not ask them to explain what just happened.",
       "Let the re-entry be partial. One problem, not the page.",
+    ],
+    say: [
+      "“You don’t have to talk. I’m going to sit here a minute.”",
+      "“Nothing is due in the next five minutes.”",
+      "“Thumbs up if you want me to stay, thumbs down if you want space.”",
+      "“You can start with one word and we’ll go from there.”",
+      "“I’m not going to ask what’s wrong. Tell me when you want to.”",
     ],
     worse: [
       "Repeating the direction louder or more firmly. The system that would process it is the part that has stopped.",
@@ -214,6 +228,13 @@ export const SIGNALS: Signal[] = [
       "Let them save face. \"Start wherever you like, I'll come back in two minutes\" ends the standoff without a winner.",
       "Walk away after the ask. An adult waiting for compliance is an audience.",
     ],
+    say: [
+      "“Okay. You don’t have to do it right now.”",
+      "“Which part are you not doing — all of it, or the writing?”",
+      "“You can do the first line and stop. That’s a real option.”",
+      "“I believe you that it feels impossible right now.”",
+      "“I’m not going to argue about it. The work will still be here.”",
+    ],
     worse: [
       "Repeating the demand with an added consequence. It turns a task into a contest, and the contest is one they can win by not working.",
       "Arguing the point. Every exchange is time not spent starting, and the student knows it.",
@@ -270,6 +291,13 @@ export const SIGNALS: Signal[] = [
       "Ask them to say it before writing it, and write what they say. Speech is usually ahead of the page.",
       "Set a two-minute timer and leave. Watched starting is harder than unwatched starting.",
     ],
+    say: [
+      "“What’s the very first thing you have to do? Just the first.”",
+      "“You don’t have to know the answer to write the heading.”",
+      "“I’ll do the first one with you and you do the second.”",
+      "“Starting is the hard part. Everything after it is easier.”",
+      "“Tell me what you’re stuck on so I stop guessing.”",
+    ],
     worse: [
       "Telling them to just begin. If they could, they would. The instruction adds pressure and no information.",
       "Repeating the directions a third time. The directions were understood; the start was not.",
@@ -324,6 +352,13 @@ export const SIGNALS: Signal[] = [
       "Make the target explicit before the next task: \"Three right matters more than five done.\"",
       "Give the checking step a visible home — a box to tick, a highlighter, a partner read.",
     ],
+    say: [
+      "“You finished fast. Now show me how you know.”",
+      "“I’m not looking for done. I’m looking for one you can explain.”",
+      "“Pick the one you’re least sure about and we’ll look together.”",
+      "“Fast is fine. Let’s make sure it’s also right.”",
+      "“You don’t finish by being first. You finish by being sure.”",
+    ],
     worse: [
       "Giving more work to the student who finished first. It teaches that speed is punished, and the next one will be rushed too.",
       "Marking it wrong and handing it back without a step. The feedback arrives after the moment when it could be used.",
@@ -365,6 +400,13 @@ export const SIGNALS: Signal[] = [
       "Say almost nothing. Two or three words, repeated calmly, is more than enough.",
       "Do not ask questions, make requests or offer reasoning until it is coming down. None of it will land.",
       "Wait longer than feels right before re-engaging. Coming back too early restarts it.",
+    ],
+    say: [
+      "“That was the last straw, not the whole thing.”",
+      "“You can be furious about the pencil. We’ll fix the pencil.”",
+      "“I’m not angry with you. Take the time you need.”",
+      "“Come back when your body feels different. I’ll hold your spot.”",
+      "“Something was already hard before the pencil broke.”",
     ],
     worse: [
       "Reasoning mid-escalation. The argument is sound and the student cannot process it.",
@@ -420,6 +462,13 @@ export const SIGNALS: Signal[] = [
       "Name it privately and without heat: \"This one's hard. Let's do the first bit together.\"",
       "Give a real job that uses the same energy — hand things out, read a part, run the timer.",
     ],
+    say: [
+      "“You’re funny. You’re also stuck. Both can be true.”",
+      "“Save it for the end and I’ll laugh then.”",
+      "“I think this part is hard. Am I right?”",
+      "“I’d rather you tell me it’s hard than make me laugh.”",
+      "“You don’t have to be the joke to be all right in here.”",
+    ],
     worse: [
       "Laughing, then correcting. The mixed signal keeps the pattern alive.",
       "A public telling-off. It is a bigger stage than the joke had.",
@@ -462,6 +511,13 @@ export const SIGNALS: Signal[] = [
       "Give genuine choice before the instruction rather than after — which first, which tool, which seat.",
       "Walk away. A standing adult is a negotiating partner.",
     ],
+    say: [
+      "“That’s a fair question. I’ll answer it once you start.”",
+      "“You can disagree with me and still do it.”",
+      "“Write your objection down and we’ll take it at the end.”",
+      "“You’re right that it isn’t fair. It’s still the work.”",
+      "“I’m not debating this one. I’ll debate the next one.”",
+    ],
     worse: [
       "Explaining again in more detail. It rewards the argument with exactly what it asked for.",
       "Winning the point. Being right is not the goal; starting is.",
@@ -503,6 +559,13 @@ export const SIGNALS: Signal[] = [
       "Shorten the work interval instead of lengthening the sitting. Two eight-minute blocks beat one of sixteen.",
       "Put the first step in front of them before they go, so there is something concrete to come back to.",
     ],
+    say: [
+      "“You can take a lap. Come back to the same page.”",
+      "“Where are you going, and when are you back?”",
+      "“Tell me you need a minute instead of leaving.”",
+      "“You don’t need a reason. You need to come back.”",
+      "“Walk to the door and back, then sit down.”",
+    ],
     worse: [
       "Refusing the bathroom. It turns a small avoidance into a dignity fight you cannot win.",
       "Tracking and counting out loud in front of the class.",
@@ -542,6 +605,13 @@ export const SIGNALS: Signal[] = [
       "Hand them a pencil and start the work. The lesson about preparedness can wait; the lesson in front of them cannot.",
       "Give one place for the thing that matters today, and point at it.",
       "Take a photo of finished work, or collect it immediately, so it cannot be lost between here and home.",
+    ],
+    say: [
+      "“Here’s a pencil. We’re not making it a thing.”",
+      "“You’re not in trouble for losing it.”",
+      "“Two minutes looking, then we move on without it.”",
+      "“Where was it last? Start there.”",
+      "“Take this one and put it in the same place every day.”",
     ],
     worse: [
       "Making them go without so they learn. They do not learn; they miss the lesson and the gap widens.",
@@ -584,6 +654,13 @@ export const SIGNALS: Signal[] = [
       "Give a holding place for unfinished work so stopping is not losing.",
       "Let them be the one who runs the transition — timer, door, lights. Being in charge of it removes the switch.",
     ],
+    say: [
+      "“Two minutes until we switch. Nothing changes yet.”",
+      "“Next is math. Same seat, different book.”",
+      "“Finish the sentence you’re on, then stop.”",
+      "“You can be the one who tells everyone when it’s time.”",
+      "“I’ll tell you before it happens, from now on.”",
+    ],
     worse: [
       "Transitioning with no warning and then treating the lag as defiance.",
       "Taking the unfinished work away as the signal to stop.",
@@ -625,6 +702,13 @@ export const SIGNALS: Signal[] = [
       "Point at the part that was right first, specifically, and then at the part to change.",
       "Make the next attempt small enough to be safe — one line, not the page again.",
       "Do not remove the task. Removing it agrees with the verdict.",
+    ],
+    say: [
+      "“One wrong answer doesn’t make it a bad one.”",
+      "“That’s the first thing you’ve found out. Keep going.”",
+      "“Cross it out. Don’t close it.”",
+      "“If you got them all right it would be too easy for you.”",
+      "“You’re allowed to be wrong in here. That’s what it’s for.”",
     ],
     worse: [
       "Over-praising the effort after the collapse. It confirms that something notable just went wrong.",
@@ -678,6 +762,13 @@ export const SIGNALS: Signal[] = [
       "Set a batch size before they begin — check after three, not after each.",
       "Give them a way to check that is not you: a key, a partner, a model answer.",
       "Reflect the judgement back: \"What do you think?\" and accept their answer when it is right.",
+    ],
+    say: [
+      "“Do three more, then ask me.”",
+      "“What do you think? I’ll tell you if you’re wrong.”",
+      "“You already know that one’s right. Tell me why.”",
+      "“I’m not checking every line, because you don’t need me to.”",
+      "“Ask me when you’re stuck, not when you’re unsure.”",
     ],
     worse: [
       "Confirming every item. It is kind and it feeds the loop.",
