@@ -86,6 +86,32 @@ JSON.parse(readFileSync("scripts/reading-sight-words.json", "utf8")).lists.flat(
   .forEach((w) => HEART.add(String(w).toLowerCase()));
 (global.OG_LEVELS || []).forEach((l) => (l.heart || []).forEach((w) => HEART.add(String(w).toLowerCase())));
 
+// A heart word is only a heart word once it has been taught. The set above
+// is cumulative, so on its own it would let a Level 5 sight word stand on a
+// Level 1 rung. ALWAYS is what a child has from the start; everything else
+// carries the level that introduces it, and a rung may not run ahead of it.
+//
+// This caught "says" standing on an ai/ay rung, reached by adding an s to
+// "say". A child at that lesson reads the result /sayz/, which is the one
+// thing "says" is a heart word in order to avoid.
+const ALWAYS = new Set("the a is was of to what they said you your are were there their who does been come some one two here where would could should have give live love done my by i he she we me be go no so do into put push pull full very every from or for want water again any many friend and but not had has his her him them then this that with as at it in on up all got get can will did see".split(" "));
+JSON.parse(readFileSync("scripts/reading-sight-words.json", "utf8")).lists.flat()
+  .forEach((w) => ALWAYS.add(String(w).toLowerCase()));
+const heartLevel = new Map();
+(global.OG_LEVELS || []).forEach((l) => (l.heart || []).forEach((w) => {
+  const k = String(w).toLowerCase();
+  const n = Number(l.level);
+  if (!heartLevel.has(k) || heartLevel.get(k) > n) heartLevel.set(k, n);
+}));
+const levelOf = Object.fromEntries(SK.map((r) => [r[0], Number(String(r[2]).replace("Level ", "")) || 9]));
+/** A heart word this lesson has not met yet, or null. */
+const heartTooSoon = (w, sid) => {
+  const lw = String(w).toLowerCase();
+  if (ALWAYS.has(lw) || !heartLevel.has(lw)) return null;
+  const intro = heartLevel.get(lw);
+  return intro > (levelOf[sid] || 9) ? intro : null;
+};
+
 const CONTRACT = /^([a-z]+)('d|'ll|'re|'s|'ve|'m|n't)$/;
 const isWord = (w) => {
   const x = String(w).toLowerCase().replace(/'s$/, "");
@@ -184,6 +210,8 @@ for (const [key, v] of Object.entries(LAD)) {
     if (!isWord(w)) say(`"${w}" is not a word`);
     if (NOTFORKIDS.test(w)) say(`"${w}" is not for children`);
     if (!legalAt(w, p, sid)) say(`"${w}" uses something taught later`);
+    const soon = heartTooSoon(w, sid);
+    if (soon !== null) say(`"${w}" is a Level ${soon} heart word, taught after this lesson`);
   }
   for (let i = 0; i < v.clues.length; i++) {
     const a = v.words[i], b = v.words[i + 1], c = v.clues[i];

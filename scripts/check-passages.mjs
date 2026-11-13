@@ -93,6 +93,33 @@ JSON.parse(readFileSync("scripts/reading-sight-words.json", "utf8")).lists.flat(
   .forEach((w) => HEART.add(String(w).toLowerCase()));
 (global.OG_LEVELS || []).forEach((l) => (l.heart || []).forEach((w) => HEART.add(String(w).toLowerCase())));
 
+// A heart word only counts once it has been taught. HEART above is the whole
+// cumulative set, so on its own it lets a Level 5 sight word stand in a Level
+// 1 text: the decodability loop below short-circuits on HEART before it ever
+// reaches the sequence table. ALWAYS is what a child has from the first day;
+// every other heart word carries the level that introduces it.
+//
+// This found sixteen second-grade passages leaning on a word the lesson had
+// not reached, among them "thought" in a Level 3 text and "says" in five,
+// which a child at that point reads as /sayz/.
+const ALWAYS = new Set("the a is was of to what they said you your are were there their who does been come some one two here where would could should have give live love done my by i he she we me be go no so do into put push pull full very every from or for want water again any many friend and but not had has his her him them then this that with as at it in on up all got get can will did see".split(" "));
+JSON.parse(readFileSync("scripts/reading-sight-words.json", "utf8")).lists.flat()
+  .forEach((w) => ALWAYS.add(String(w).toLowerCase()));
+const heartLevel = new Map();
+(global.OG_LEVELS || []).forEach((l) => (l.heart || []).forEach((w) => {
+  const k = String(w).toLowerCase(), n = Number(l.level);
+  if (!heartLevel.has(k) || heartLevel.get(k) > n) heartLevel.set(k, n);
+}));
+const levelOf = Object.fromEntries(SK.map((r) => [r[0], Number(String(r[2]).replace("Level ", "")) || 9]));
+/** The level that introduces this heart word, if the lesson has not met it. */
+const heartTooSoon = (w, sid, gradeFloorLevel) => {
+  const lw = String(w).toLowerCase();
+  if (ALWAYS.has(lw) || !heartLevel.has(lw)) return null;
+  const intro = heartLevel.get(lw);
+  const have = Math.max(levelOf[sid] || 9, gradeFloorLevel);
+  return intro > have ? intro : null;
+};
+
 const CONTRACT = /^([a-z]+)('d|'ll|'re|'s|'ve|'m|n't)$/;
 const isWord = (w) => {
   const x = String(w).toLowerCase().replace(/'s$/, "");
@@ -193,6 +220,23 @@ for (const [cid, byGrade] of Object.entries(PASS.passages || {})) {
         if (cid === "og4-05" && /ue|ei|ew|ui/.test(name)) continue;
         if (pos[owner] > floor && test(lw)) ahead.set(lw, name);
       }
+    }
+    // Only second grade is held to this. Heart words are the common words
+    // a classroom meets early whatever the scope says, so a third or fourth
+    // grader has "thought" and "people" even though this programme writes
+    // them down at Level 5 and Level 4. Second grade is the one pinned to
+    // its own lesson, and it is the grade a decodable text is really for.
+    const heartFloor = g === "g2" ? 0 : 99;
+    const soon = new Map();
+    for (const w of words) {
+      const lw = w.toLowerCase().replace(/[^a-z']/g, "").replace(/^'|'$/g, "");
+      if (!lw) continue;
+      const n = heartTooSoon(lw, base, heartFloor);
+      if (n !== null) soon.set(lw, n);
+    }
+    if (soon.size) {
+      const list = [...soon].slice(0, 6).map(([w, n]) => `${w} (Level ${n})`).join(", ");
+      sayg(`${soon.size} heart word${soon.size === 1 ? "" : "s"} taught after this lesson: ${list}`);
     }
     if (ahead.size) {
       const list = [...ahead].slice(0, 6).map(([w, n]) => `${w} (${n})`).join(", ");

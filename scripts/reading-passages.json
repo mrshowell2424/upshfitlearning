@@ -702,7 +702,7 @@
      "She rows down the stream. A crow sits on the bow and will not go.",
      "By the road Joan sees a goat. The goat has its coat in a bush and is stuck.",
      "Joan rows to the bank. She gets the coat free and the goat runs up the slope.",
-     "The crow stays all the way back. Joan says that crow may own the boat by now."
+     "The crow stays all the way back. Joan said that crow may own the boat by now."
     ],
     "qs": [
      [
@@ -1474,7 +1474,7 @@
     "paras": [
      "We are at the camp. Dad tells us to unpack the van.",
      "I undo the straps. Ross unpacks the tent and the pots.",
-     "The tent is a mess. It is unfit for a dog, Ross says.",
+     "The tent is a mess. It is unfit for a dog, said Ross.",
      "We unfold it on the grass. Bit by bit it stands up.",
      "It is not a bad tent. It was just unpacked in a rush."
     ],
@@ -1485,7 +1485,7 @@
      ],
      [
       "What does Ross say about the tent?",
-      "He says it is unfit for a dog."
+      "He said it is unfit for a dog."
      ],
      [
       "Why did the tent look like a mess at first?",
@@ -2164,7 +2164,7 @@
      "He fills a jar and carries it in. His mum is glad.",
      "They stir the berries in a pan on the stove. The kitchen smells sweet.",
      "Perry is sorry when the jar is done. He wants more.",
-     "Mum says there will be more next year. The bush is still there."
+     "Mum said there will be more next year. The bush is still there."
     ],
     "qs": [
      [
@@ -2250,7 +2250,7 @@
      "My pumpkin is a monster. It took three of us to lift it onto the wagon.",
      "Hamish has one that is small but perfect. It has no marks on it at all.",
      "The teachers give the prize to Hamish. I am not upset. My pumpkin is still the biggest.",
-     "We take them both inside and make soup, and there is enough for the whole street."
+     "We take them both inside and make soup, and there is a lot for the whole street."
     ],
     "qs": [
      [
@@ -2332,7 +2332,7 @@
    "g2": {
     "title": "The Helpful List",
     "paras": [
-     "Dad was restless. The shed was a mess and he was not sure where to start.",
+     "Dad was restless. The shed was a mess and he did not know where to start.",
      "I made him a list. It was short and it was helpful.",
      "Sweep the floor. Sort the nails. Hang the tools on the wall.",
      "He worked slowly and he worked gladly. By lunch the shed was spotless.",
@@ -2341,7 +2341,7 @@
     "qs": [
      [
       "Why was Dad restless?",
-      "The shed was a mess and he was not sure where to start."
+      "The shed was a mess and he did not know where to start."
      ],
      [
       "What three things were on the list?",
@@ -2848,15 +2848,15 @@
    "g2": {
     "title": "The Robot in the Basement",
     "paras": [
-     "Our friend Sam built a robot in his basement. He began it in April.",
+     "Our friend Sam made a robot in his basement. He began it in April.",
      "It has a motor, a silver body, and a tiny radio inside its head.",
      "It cannot walk. It can only spin slowly on the spot and hum.",
-     "I think it is the finest thing I have ever seen. Sam is not so sure.",
+     "I think it is the finest thing I have ever seen. Sam does not think so.",
      "He says a robot that only spins is a lamp. I say it is a robot that likes to dance."
     ],
     "qs": [
      [
-      "Where did Sam build the robot?",
+      "Where did Sam make the robot?",
       "In his basement."
      ],
      [
@@ -2936,7 +2936,7 @@
     "paras": [
      "There was a noise in the attic all the fall. A scratching, and then a pause.",
      "Mum said it was the house settling. Dad said it was a bird.",
-     "I thought it was something else. I had heard a small voice up there.",
+     "I was wrong about it. I had heard a small voice up there.",
      "In October we found them: four kittens in a box of straw, and a thin grey cat guarding the lot.",
      "They live in the kitchen now. Nobody mentions the house settling any more."
     ],
@@ -3192,7 +3192,7 @@
    "g2": {
     "title": "The Robin and the Shed",
     "paras": [
-     "A robin built a nest on the shelf in our shed in April.",
+     "A robin made a nest on the shelf in our shed in April.",
      "We could not finish the painting. We could not even open the door properly.",
      "Dad put a wedge under it so the gap stayed the same all month.",
      "The robin did not seem to mind us at all. It came and went past our heads.",
@@ -3200,7 +3200,7 @@
     ],
     "qs": [
      [
-      "Where did the robin build its nest?",
+      "Where did the robin make its nest?",
       "On the shelf in the shed."
      ],
      [
@@ -3624,7 +3624,7 @@
     "paras": [
      "There is an artist who works on the corner by the market every Sunday.",
      "She is incredibly fast. A whole street appears on her paper in about ten minutes.",
-     "People stop and watch. Most of them are too shy to say anything.",
+     "Some stop and watch. Most of them are too shy to say anything.",
      "I asked her once if drawing was teachable. She said it was, but patience was not.",
      "I have been going back every Sunday since. I am slow, but I am not giving up."
     ],
@@ -4397,7 +4397,7 @@
     "title": "The Musician Next Door",
     "paras": [
      "A musician moved in next door in the spring. She practises every day at six.",
-     "At first we were suspicious. Nobody wants an hour of scales through a wall.",
+     "At first we were suspicious. Nobody wants an hour of scales from the next room.",
      "But she is an exceptional player, and the sound is delicious rather than annoying.",
      "My mother, who is cautious about everybody, now leaves her windows open on purpose.",
      "It is official. We are the only street in town with free music every evening."
@@ -4409,7 +4409,7 @@
      ],
      [
       "Why were they suspicious at first?",
-      "Nobody wants an hour of scales through a wall."
+      "Nobody wants an hour of scales from the next room."
      ],
      [
       "What does the mother do now?",
@@ -6033,7 +6033,7 @@
      "Jane made a cake. She made it late, and she made it for the race by the lake.",
      "She gave the cake a name. The name was Mud Cake, as it was the same shade as mud.",
      "Dave came and had a taste. He made a face. Then he had a lot more.",
-     "At the gate by the lake, the cake was gone in a wave of kids.",
+     "At the gate by the lake, the kids ate the cake in a wave.",
      "Jane made the same cake the next time. That time she made two."
     ],
     "qs": [
@@ -6808,7 +6808,7 @@
      "It will not go. It will not show any fear of us at all.",
      "We throw it bits from the yellow bowl. It takes them slow.",
      "Below the window there is a row of its tracks in the snow.",
-     "Now we know the crow. It is our crow, and it is sure of that too."
+     "Now we know the crow. It is our crow, and the crow lets us know it."
     ],
     "qs": [
      [
@@ -6892,8 +6892,8 @@
     "paras": [
      "In the dark of the barn there is a jar on a shelf.",
      "The jar is full of hard bits of glass. Some are sharp.",
-     "Gran says her dad put them in the jar. He got them in the yard.",
-     "“Do not start on that jar,” she says. “It is far too sharp for hands.”",
+     "Gran said her dad put them in the jar. He got them in the yard.",
+     "“Do not start on that jar,” she said. “It is far too sharp for hands.”",
      "So the jar sits in the dark. It is a part of the barn now."
     ],
     "qs": [
@@ -6978,7 +6978,7 @@
     "paras": [
      "There is an old horn on a shelf by the north wall of the barn.",
      "Dad got it at the fort. It is torn at one end.",
-     "He will not sort it out. He says it is worth more than it is.",
+     "He will not sort it out. He said it is worth more than it is.",
      "In the morning my brother got the horn. It was not a short note. It went on and on.",
      "Mom came out. “Not before my corn,” she said."
     ],
@@ -12914,7 +12914,7 @@
      "Dad says it is not valuable, but it is comfortable to sit at.",
      "The cable from the lamp runs under the table.",
      "The cloth on it is washable. That is what we need.",
-     "An old table that is able to do the job is good enough."
+     "An old table that is able to do the job is good."
     ],
     "qs": [
      [
