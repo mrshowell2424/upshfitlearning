@@ -2694,6 +2694,63 @@ const ADAPTATIONS: Adaptation[] = [
       return out;
     },
   },
+  {
+    // The writing toggle, repeated at the writing step.
+    //
+    // It already sits in the toolbar at the top of the page, which is fine
+    // while you are setting the lesson up and useless once you have
+    // scrolled down to the step it controls. A teacher who decides at the
+    // writing step that today is opinion writing should not have to scroll
+    // back up to say so, so the same three buttons sit beside the task.
+    //
+    // Both copies drive the same state, so pressing either moves both.
+    name: "repeat the writing toggle at the writing step",
+    apply: (html) => {
+      // Build the option list once instead of twice.
+      const tail = "      return (F[wrPick] || {})[pgGrade] || '';\n    })();";
+      if (!html.includes(tail)) return html;
+      const inline =
+        "      wrOpts: WR_TYPES.map((w) => ({ w, label: WR_SHORT[w],\n" +
+        "        st: 'font-family:Outfit,sans-serif;font-size:12px;font-weight:800;" +
+        "border:1.5px solid #4B6049;border-radius:7px;padding:3px 9px;cursor:pointer;" +
+        "white-space:nowrap;' + (w === wrPick ? 'background:#4B6049;color:#fff'" +
+        " : 'background:#fff;color:#4B6049'),\n" +
+        "        pick: () => this.setState({ wr: w }) })),";
+      if (!html.includes(inline)) return html;
+      let out = html.replace(
+        tail,
+        tail +
+          "\n    const wrOptList = WR_TYPES.map((w) => ({ w, label: WR_SHORT[w],\n" +
+          "      st: 'font-family:Outfit,sans-serif;font-size:12px;font-weight:800;" +
+          "border:1.5px solid #4B6049;border-radius:7px;padding:3px 9px;cursor:pointer;" +
+          "white-space:nowrap;' + (w === wrPick ? 'background:#4B6049;color:#fff'" +
+          " : 'background:#fff;color:#4B6049'),\n" +
+          "      pick: () => this.setState({ wr: w }) }));"
+      );
+      out = out.replace(inline, "      wrOpts: wrOptList,");
+
+      const step13 = "          hasTask: !!wrTask, task: wrTask, taskType: wrPick.toUpperCase(),";
+      if (!out.includes(step13)) return html;
+      out = out.replace(step13, step13 + "\n          taskOpts: wrOptList,");
+
+      // The header row of the task box carries the buttons.
+      const head =
+        '<div style="font-family:Outfit,sans-serif;font-size:11px;font-weight:800;' +
+        'letter-spacing:.14em;color:#618459">✍️ {{ s.taskType }} WRITING</div>';
+      if (!out.includes(head)) return html;
+      const row =
+        '<div style="display:flex;align-items:center;justify-content:space-between;' +
+        'gap:8px;flex-wrap:wrap">' +
+        '<div style="font-family:Outfit,sans-serif;font-size:11px;font-weight:800;' +
+        'letter-spacing:.14em;color:#618459">✍️ {{ s.taskType }} WRITING</div>' +
+        '<span style="display:inline-flex;align-items:center;gap:6px">' +
+        '<sc-for list="{{ s.taskOpts }}" as="w" hint-placeholder-count="3">' +
+        '<button type="button" onClick="{{ w.pick }}" style="{{ w.st }}">{{ w.label }}</button>' +
+        "</sc-for></span></div>";
+      out = out.split(head).join(row);
+      return out;
+    },
+  },
 ];
 
 /**
