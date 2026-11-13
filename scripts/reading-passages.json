@@ -3617,6 +3617,1726 @@
      "task": "Should people speak up when they do not actually know? Group your reasons, support them with details from the text, and end with a conclusion."
     }
    }
+  },
+  "og3-12": {
+   "g2": {
+    "title": "The Artist on the Corner",
+    "paras": [
+     "There is an artist who works on the corner by the market every Sunday.",
+     "She is incredibly fast. A whole street appears on her paper in about ten minutes.",
+     "People stop and watch. Most of them are too shy to say anything.",
+     "I asked her once if drawing was teachable. She said it was, but patience was not.",
+     "I have been going back every Sunday since. I am slow, but I am not giving up."
+    ],
+    "qs": [
+     [
+      "Where does the artist work?",
+      "On the corner by the market every Sunday."
+     ],
+     [
+      "How fast does she draw?",
+      "A whole street appears in about ten minutes."
+     ],
+     [
+      "What did she say about drawing?",
+      "That drawing was teachable but patience was not."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Can anybody learn to draw? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Artist on the Corner",
+    "paras": [
+     "There is an artist who sets up on the corner by the market every Sunday morning, in all weather, with a folding stool and a board across her knees.",
+     "She is incredibly fast. An entire street — windows, railings, the lot — appears on her paper in about ten minutes, and it is always recognisable.",
+     "People stop and watch her in a loose half circle. Most of them are too shy to say a word, which she does not appear to notice or mind.",
+     "I asked her once whether drawing was teachable. She said it was perfectly teachable, that almost anybody could learn it, and that the part nobody can teach you is patience.",
+     "I have gone back every Sunday since then with a notebook. I am still extremely slow. I have not given up and I do not intend to."
+    ],
+    "qs": [
+     [
+      "What does the artist bring with her?",
+      "A folding stool and a board across her knees."
+     ],
+     [
+      "What appears on the paper in ten minutes?",
+      "An entire street, with windows and railings, always recognisable."
+     ],
+     [
+      "What can nobody teach you?",
+      "Patience."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how to get better at something difficult. Group your points and use words like first, then, and finally."
+    }
+   },
+   "g4": {
+    "title": "The Artist on the Corner",
+    "paras": [
+     "There is an artist who sets up on the corner by the market every Sunday morning without fail, in every kind of weather, with a folding stool, a board across her knees and a tin of pencils worn down to stubs.",
+     "She is incredibly fast, and that is the first thing anybody notices. An entire street — the windows, the railings, the gutters, the particular sag of the roofline over the chemist — appears on her paper inside ten minutes, and it is always immediately recognisable as our street and not any other.",
+     "People stop and watch her in a loose half circle that re-forms itself all morning as some leave and others arrive. Most of them are far too shy to say anything at all, and she gives every impression of not noticing and no impression of minding.",
+     "I asked her once whether drawing was teachable. She did not look up. She said that drawing was perfectly teachable, that almost anybody willing to turn up could learn it inside a year, and that the only part of it nobody has ever managed to pass on is patience.",
+     "I have gone back every Sunday since with a notebook of my own. I am still extremely slow and most of what I produce is not recognisable as anything. I have not given up, and I have no particular intention of doing so."
+    ],
+    "qs": [
+     [
+      "What detail shows the artist has worked a long time?",
+      "Her tin of pencils is worn down to stubs."
+     ],
+     [
+      "How is the drawing recognisable as that street?",
+      "It catches the particular sag of the roofline over the chemist."
+     ],
+     [
+      "What does the author admit about their own work?",
+      "Most of it is not recognisable as anything."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is talent or practice more important? Group your reasons, support them with details from the text, and end with a conclusion."
+    }
+   }
+  },
+  "og3-13": {
+   "g2": {
+    "title": "The Rematch",
+    "paras": [
+     "Our team lost the first match by six goals. We had not prepared at all.",
+     "The coach did not shout. He proposed a rematch and set out a plan.",
+     "For three weeks we trained. We repeated the same drills until we did not have to think.",
+     "The rematch was in May. We did not win, but we only lost by one.",
+     "The coach said that was the best result he had ever seen from a defeat."
+    ],
+    "qs": [
+     [
+      "How badly did the team lose the first match?",
+      "By six goals."
+     ],
+     [
+      "What did the coach do instead of shouting?",
+      "He proposed a rematch and set out a plan."
+     ],
+     [
+      "What was the result of the rematch?",
+      "They lost by only one goal."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what the team did between the two matches, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Rematch",
+    "paras": [
+     "Our team lost the first match of the season by six goals, which was not bad luck. We had not prepared, and everybody on the pitch could see it by half time.",
+     "The coach did not shout at anybody afterwards, which I think surprised us more than losing had. He proposed a rematch for the end of the term and set out, on one sheet of paper, exactly how we were going to prepare for it.",
+     "For three weeks we trained twice a week. We repeated the same four drills until none of us had to think about them any more, which is apparently the entire point of a drill.",
+     "The rematch was in the second week of May. We did not win it. We lost by one goal, in the last ten minutes, having been level the whole way.",
+     "The coach said afterwards that it was the best result he had ever seen come out of a defeat, and nobody argued with him."
+    ],
+    "qs": [
+     [
+      "Why does the narrator say the first loss was not bad luck?",
+      "Because the team had not prepared and everybody knew it by half time."
+     ],
+     [
+      "What was the point of repeating the drills?",
+      "So that nobody had to think about them any more."
+     ],
+     [
+      "How did the rematch go?",
+      "They lost by one goal in the last ten minutes, having been level the whole way."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is losing ever useful? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Rematch",
+    "paras": [
+     "Our team lost the first match of the season by six goals. It was not bad luck and nobody pretended otherwise afterwards. We had not prepared for it in any meaningful way, and every one of us knew that by half time, standing about in the drizzle not looking at each other.",
+     "The coach did not shout at anybody. I think that surprised us considerably more than the defeat had. He waited until the Tuesday, and then he proposed a rematch for the end of term and set out on a single sheet of paper exactly how the next three weeks were going to go.",
+     "We trained twice a week for three weeks. We repeated the same four drills so many times that by the end none of us had to think about any of them at all, which, it turns out, is the entire point of a drill and something nobody had bothered to explain to us before.",
+     "The rematch was played in the second week of May on a dry pitch. We did not win it. We were level with eleven minutes to go, and we lost by one goal scored with about three minutes remaining, and not one person on our side stopped running before the whistle.",
+     "The coach told us afterwards that it was the best result he had ever seen come out of a defeat. Nobody argued with him, and I have thought about that sentence a great deal since."
+    ],
+    "qs": [
+     [
+      "What were the players doing at half time of the first match?",
+      "Standing about in the drizzle not looking at each other."
+     ],
+     [
+      "What had nobody bothered to explain before?",
+      "That the point of a drill is not having to think about it."
+     ],
+     [
+      "What detail shows the team had changed?",
+      "Not one person stopped running before the whistle."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the three weeks of training from a player's point of view. Establish the situation, give a clear sequence, and use dialogue."
+    }
+   }
+  },
+  "og4-01": {
+   "g2": {
+    "title": "The Report on the Volcano",
+    "paras": [
+     "Our class had to write a report. I picked a volcano in Iceland.",
+     "I found a description of the last eruption in a library book.",
+     "It said the ash disrupted every flight in that part of the world for a week.",
+     "I wrote four sections and sketched the shape of the mountain in the margin.",
+     "My teacher said the drawing was not required but she was glad it was there."
+    ],
+    "qs": [
+     [
+      "What did the narrator pick for the report?",
+      "A volcano in Iceland."
+     ],
+     [
+      "What did the ash do?",
+      "It disrupted every flight in that part of the world for a week."
+     ],
+     [
+      "What did the teacher say about the drawing?",
+      "That it was not required but she was glad it was there."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write three facts about volcanoes from the report. Start with a topic sentence and finish with an ending."
+    }
+   },
+   "g3": {
+    "title": "The Report on the Volcano",
+    "paras": [
+     "Our class had to write a report on something that had actually happened, and I picked the volcano in Iceland that erupted the year I was born.",
+     "I found a long description of it in a library book, written by somebody who had been standing about four miles away at the time.",
+     "The ash went up into the flight paths and disrupted air travel across most of northern Europe for the better part of a week. Thousands of people could not get home.",
+     "I wrote four sections about it and then sketched the shape of the mountain down the margin of the last page, because I had the space.",
+     "My teacher said the drawing had not been required. Then she said she was glad it was there, and she put the report on the wall."
+    ],
+    "qs": [
+     [
+      "Why did the narrator pick that volcano?",
+      "It erupted the year they were born."
+     ],
+     [
+      "Who wrote the description in the library book?",
+      "Somebody standing about four miles away at the time."
+     ],
+     [
+      "What happened to air travel?",
+      "It was disrupted across most of northern Europe for nearly a week."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a short report on a natural event. Group related information into sections and use topic vocabulary."
+    }
+   },
+   "g4": {
+    "title": "The Report on the Volcano",
+    "paras": [
+     "Our class was told to write a report on something that had actually happened, which is a broader instruction than it sounds, and after a week of not deciding I picked the volcano in Iceland that erupted in the year I was born.",
+     "I found a long first-hand description of it in a library book. It had been written by a man who was standing about four miles away when it started, and who recorded, among other things, that the sound arrived noticeably later than the light did.",
+     "The ash cloud went straight up into the commercial flight paths and stayed there. Air travel across most of northern Europe was disrupted for the better part of a week, and something in the region of ten million people could not get where they were going.",
+     "I wrote four sections, which was the requirement, and then sketched the profile of the mountain down the margin of the final page, because there was space there and because I had been looking at pictures of it for days.",
+     "My teacher pointed out that the drawing had not been required. Then she said that she was glad it was there, and she put the whole report up on the wall by the window, where it stayed until the end of term."
+    ],
+    "qs": [
+     [
+      "What did the man four miles away record about sound and light?",
+      "That the sound arrived noticeably later than the light."
+     ],
+     [
+      "Roughly how many people were affected?",
+      "Something in the region of ten million."
+     ],
+     [
+      "Why did the narrator add the drawing?",
+      "There was space and they had been looking at pictures for days."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a research report on a natural event. Organise it into sections, develop each with facts and examples, and connect your ideas."
+    }
+   }
+  },
+  "og4-02": {
+   "g2": {
+    "title": "The Inspector and the Bridge",
+    "paras": [
+     "An inspector came to look at the bridge over the river last spring.",
+     "She had to inspect every part of the structure, even the ones nobody can see.",
+     "She found a crack in one support. It was small, but it would not have stayed small.",
+     "The council had to reject her first plan because it cost too much.",
+     "In the end they fixed it properly. The bridge will stand for another hundred years."
+    ],
+    "qs": [
+     [
+      "Who came to look at the bridge?",
+      "An inspector came last spring."
+     ],
+     [
+      "What did she find?",
+      "A crack in one support."
+     ],
+     [
+      "Why was her first plan rejected?",
+      "Because it cost too much."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should the council have paid for the first plan? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Inspector and the Bridge",
+    "paras": [
+     "An inspector came out to look at the bridge over the river last spring. It is a hundred and forty years old and nobody had inspected it properly since the war.",
+     "She had to inspect every part of the structure, including a good deal of it that is underwater and that nobody has looked at in living memory.",
+     "She found a crack in one of the supports. It was small — she said you could have covered it with a hand — but cracks in supports do not stay small.",
+     "The council rejected her first repair plan on cost. Her second plan was cheaper, slower, and she made it clear she did not think much of it.",
+     "In the end they went back and funded the first one. The bridge should now stand for another hundred years, which is more than can be said for the argument."
+    ],
+    "qs": [
+     [
+      "How old is the bridge?",
+      "A hundred and forty years old."
+     ],
+     [
+      "How big was the crack?",
+      "Small enough to cover with a hand."
+     ],
+     [
+      "What did the council do in the end?",
+      "They went back and funded her first plan."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain why old bridges need checking. Group your points and use topic vocabulary."
+    }
+   },
+   "g4": {
+    "title": "The Inspector and the Bridge",
+    "paras": [
+     "An inspector came out to look at the bridge over the river last spring. The bridge is a hundred and forty years old, carries the only road into the village from the east, and had not been properly inspected since before the war.",
+     "Her job was to inspect every part of the structure, which included a considerable amount of it that sits underwater and that nobody now living had ever laid eyes on. She was down there, on and off, for three days.",
+     "She found a crack in one of the supports. It was small. She said afterwards that you could have covered the whole of it with one hand. She also said, and repeated at the meeting, that cracks in load-bearing supports do not stay small, and that the only question was how long.",
+     "The council rejected her first repair plan on cost. She produced a second, which was cheaper and considerably slower, and she made it perfectly clear in writing that she did not think much of it and would not be recommending it.",
+     "In the end they went back and funded the first plan. The work took eight months and the bridge should now stand for another century, which is a good deal longer than the argument about it will be remembered."
+    ],
+    "qs": [
+     [
+      "Why does the bridge matter to the village?",
+      "It carries the only road in from the east."
+     ],
+     [
+      "What did she say was the only real question?",
+      "How long before the crack stopped being small."
+     ],
+     [
+      "How did she respond to the second plan?",
+      "She said in writing that she did not think much of it and would not recommend it."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should safety always come before cost? Group your reasons, support them with details from the text, and end with a conclusion."
+    }
+   }
+  },
+  "og4-03": {
+   "g2": {
+    "title": "The Conductor's Visit",
+    "paras": [
+     "A conductor visited our school in March to lead the orchestra for a day.",
+     "She was not what we had expected. She spoke quietly and watched everything.",
+     "She made us play one bar over and over until it was not a mess.",
+     "Then she made us play the whole piece, and that was not a mess at all.",
+     "I had never understood what a conductor was for. I do now."
+    ],
+    "qs": [
+     [
+      "Who visited the school?",
+      "A conductor visited in March."
+     ],
+     [
+      "What did she make them do first?",
+      "Play one bar over and over until it was not a mess."
+     ],
+     [
+      "What did the narrator learn?",
+      "What a conductor is actually for."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what happened on the day of the visit, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Conductor's Visit",
+    "paras": [
+     "A conductor visited our school in March and spent an entire day leading the orchestra, which is made up of about thirty of us and is not, on the whole, very good.",
+     "She was not what any of us had expected. She did not wave her arms about and she barely raised her voice. She spoke quietly, and she watched everything.",
+     "She made us play the same bar over and over for nearly forty minutes. By the end of it, that bar was not a mess. It was the first thing we had played all year that was not a mess.",
+     "Then she made us play the whole piece straight through, and that was not a mess at all, and several people in the room looked really startled.",
+     "I had never once understood what a conductor was actually for. I understand it now, and I have thought about that day a great deal since."
+    ],
+    "qs": [
+     [
+      "How many are in the orchestra?",
+      "About thirty."
+     ],
+     [
+      "What did she not do that they expected?",
+      "She did not wave her arms about or raise her voice."
+     ],
+     [
+      "How long did they work on one bar?",
+      "Nearly forty minutes."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is it worth repeating one small part until it is right? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Conductor's Visit",
+    "paras": [
+     "A conductor visited our school in March and spent an entire day with the orchestra. The orchestra is about thirty of us, drawn from three year groups, and it is not, taken as a whole and judged honestly, a very good orchestra.",
+     "She was not remotely what any of us had expected. She did not wave her arms about. She never once raised her voice above the level of ordinary conversation. She spoke quietly, she asked a great many questions, and she watched everything that happened in that room with an attention none of us were used to being given.",
+     "Then she made us play the same two bars over and over again for nearly forty minutes. People got frustrated. One of the cellists very nearly walked out. And at the end of those forty minutes, those two bars were not a mess, and they were the first thing our orchestra had produced all year that was not.",
+     "After that she had us play the whole piece straight through without stopping. It was not a mess either. I watched two people in the violin section turn and look at each other halfway through with an expression of genuine astonishment.",
+     "I had never in my life understood what a conductor was actually for. I understand it now, and I have thought about that day more often in the months since than I would have predicted."
+    ],
+    "qs": [
+     [
+      "Where do the orchestra members come from?",
+      "Three year groups."
+     ],
+     [
+      "What nearly happened during the forty minutes?",
+      "One of the cellists very nearly walked out."
+     ],
+     [
+      "What did the two violinists' expression show?",
+      "Genuine astonishment that they sounded good."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the day from the conductor's point of view. Establish the situation, give a clear sequence, and use dialogue."
+    }
+   }
+  },
+  "og4-04": {
+   "g2": {
+    "title": "The Transport Museum",
+    "paras": [
+     "The transport museum is enormous. It takes a whole day to walk round it.",
+     "There is a tram from 1902 that you can sit in. The seats are wooden and hard.",
+     "My favourite is the mail van. It is marvellous inside, with little shelves everywhere.",
+     "The guide was generous with her time. She let us ask questions until the bell went.",
+     "We are going back in October. It is the one trip nobody complains about."
+    ],
+    "qs": [
+     [
+      "How long does it take to walk round the museum?",
+      "A whole day."
+     ],
+     [
+      "What is the narrator's favourite exhibit?",
+      "The mail van, with little shelves everywhere."
+     ],
+     [
+      "Why is this trip different from others?",
+      "It is the one trip nobody complains about."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write three facts about the museum. Start with a topic sentence and finish with an ending."
+    }
+   },
+   "g3": {
+    "title": "The Transport Museum",
+    "paras": [
+     "The transport museum is enormous. It takes a full day to walk round it properly, and most school trips only manage about half.",
+     "There is a tram from 1902 that you are allowed to sit in. The seats are wooden, upright and extremely hard, and it is remarkable to think people once rode across a whole city on them.",
+     "My favourite thing in the museum is the mail van. It is marvellous inside — little wooden shelves on every wall, each one labelled, and a rail down the middle for the sacks.",
+     "The guide was unusually generous with her time. She let us ask questions until the bell went, and she answered the silly ones as seriously as the good ones.",
+     "We are going back in October with the year below. It is the one school trip that nobody in our class has ever complained about."
+    ],
+    "qs": [
+     [
+      "How much of the museum do most school trips manage?",
+      "About half."
+     ],
+     [
+      "What is inside the mail van?",
+      "Little labelled wooden shelves on every wall and a rail down the middle for the sacks."
+     ],
+     [
+      "What did the guide do with the silly questions?",
+      "She answered them as seriously as the good ones."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Are museums worth visiting? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Transport Museum",
+    "paras": [
+     "The transport museum is enormous, and nobody warns you about this in advance. It takes a full day to walk round it properly, at a reasonable pace, without stopping for lunch, and most school trips in practice manage somewhere around half of it before the coach has to leave.",
+     "There is a tram from 1902 that visitors are allowed to climb into and sit in. The seats are wooden, upright, and extremely hard, and it is genuinely remarkable to stand in it and consider that people once rode right across a city on those seats twice a day without apparently thinking anything of it.",
+     "The single best thing in that building is the mail van. It is marvellous inside: small wooden shelves running the length of every wall, each one labelled in faded ink, and a brass rail down the centre of the floor that the sacks were slung from while the train was moving.",
+     "Our guide was unusually generous with her time. She let us ask questions right up until the bell went for the next group, and — this is the part I remember — she answered the silly ones exactly as seriously as she answered the good ones.",
+     "We are going back in October with the year below us. It is, as far as anybody can establish, the only school trip in the history of our class that not one person has ever complained about."
+    ],
+    "qs": [
+     [
+      "Why do school trips only see half the museum?",
+      "The coach has to leave before they can finish."
+     ],
+     [
+      "What is remarkable about the tram seats?",
+      "People rode right across a city on them twice a day without thinking anything of it."
+     ],
+     [
+      "What does the narrator particularly remember about the guide?",
+      "She answered the silly questions as seriously as the good ones."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a report on how people travelled a hundred years ago. Organise it into sections, develop each with facts and examples, and connect your ideas."
+    }
+   }
+  },
+  "og4-05": {
+   "g2": {
+    "title": "The Quiet Poet",
+    "paras": [
+     "There is a poet who lives in the house at the end of our road.",
+     "She is very quiet. She does not create a fuss about anything.",
+     "Once a year she reads her poems in the hall by the science block.",
+     "The room is always full. People come from three villages to sit on hard chairs.",
+     "She never explains a poem. She says the poem has already done that."
+    ],
+    "qs": [
+     [
+      "Who lives at the end of the road?",
+      "A poet lives there."
+     ],
+     [
+      "Where does she read her poems?",
+      "In the hall by the science block, once a year."
+     ],
+     [
+      "Why does she not explain her poems?",
+      "She says the poem has already done that."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should a poet explain her poems? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Quiet Poet",
+    "paras": [
+     "There is a poet living in the end house on our road. She has been there longer than anybody else on the street and she creates no fuss whatsoever about any of it.",
+     "She is extremely quiet. You can pass her in the lane and she will nod and say nothing, and it does not feel rude.",
+     "Once a year, in November, she reads her poems in the hall beside the science block. The event is not advertised anywhere except on one piece of paper in the post office window.",
+     "The room is always completely full. People come in from three villages and sit on hard plastic chairs for an hour and a half without complaining.",
+     "She has never once explained a poem afterwards. If somebody asks what one means she says, quite kindly, that the poem has already answered that."
+    ],
+    "qs": [
+     [
+      "How is the reading advertised?",
+      "On one piece of paper in the post office window."
+     ],
+     [
+      "How long do people sit on the hard chairs?",
+      "An hour and a half."
+     ],
+     [
+      "What does she say if asked what a poem means?",
+      "That the poem has already answered that."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write about going to the reading. Use time-order words and describe what the room was like."
+    }
+   },
+   "g4": {
+    "title": "The Quiet Poet",
+    "paras": [
+     "There is a poet living in the end house on our road. She has been there longer than anybody else on the street, she grows a great many beans, and she creates absolutely no fuss about any part of her life, including the part that other people find interesting.",
+     "She is extremely quiet. You can pass her in the lane and she will nod and say nothing at all, and somehow it does not read as rudeness. It reads as a person who has decided that not everything requires a sentence.",
+     "Once a year, in the second week of November, she reads her poems in the hall beside the science block. The event is advertised nowhere except on a single sheet of paper taped inside the post office window, and it has never needed any more than that.",
+     "The room is always completely full. People come in from three villages and sit on hard plastic chairs for an hour and a half, and in all the years we have been going I have never once seen anybody leave early or look at a watch.",
+     "She has never explained a poem. If somebody asks her afterwards what a particular one was about, she says — quite kindly, and without any suggestion that it was a stupid question — that the poem has already answered that as well as she can."
+    ],
+    "qs": [
+     [
+      "What does the author say her silence reads as?",
+      "A person who has decided that not everything requires a sentence."
+     ],
+     [
+      "What has the narrator never seen at a reading?",
+      "Anybody leave early or look at a watch."
+     ],
+     [
+      "How does she decline to explain a poem?",
+      "Kindly, without suggesting the question was stupid."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should art be explained? Group your reasons, support them with details from the text, and end with a conclusion."
+    }
+   }
+  },
+  "og4-06": {
+   "g2": {
+    "title": "Eight Days of Rain",
+    "paras": [
+     "It rained for eight days without stopping. The weight of the water bent the fence.",
+     "Our neighbour built a small wall of sandbags across the end of the drive.",
+     "On the eighth night the river came up and stopped two feet from the door.",
+     "In the morning the sky was blue, as though nothing had happened.",
+     "We spent a week clearing the field. The fruit trees had survived, which was the main thing."
+    ],
+    "qs": [
+     [
+      "How long did it rain?",
+      "Eight days without stopping."
+     ],
+     [
+      "What did the neighbour build?",
+      "A small wall of sandbags across the end of the drive."
+     ],
+     [
+      "What survived the flood?",
+      "The fruit trees survived."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what happened over the eight days, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "Eight Days of Rain",
+    "paras": [
+     "It rained for eight days without a break. By the fourth the weight of water in the ground had bent two whole sections of the back fence over at an angle.",
+     "Our neighbour, who has lived here longest and has seen it before, built a wall of sandbags across the end of the drive on the sixth day and told us to move everything upstairs.",
+     "On the eighth night the river came up over the bank and stopped about two feet from the back door. Nobody in the house slept.",
+     "In the morning the sky was a clear blue and the water had dropped eight inches, as though the entire week had been somebody else's idea.",
+     "We spent the following week clearing the field. The fruit trees had survived, roots and all, which was the thing everybody had been most worried about."
+    ],
+    "qs": [
+     [
+      "What had bent by the fourth day?",
+      "Two whole sections of the back fence."
+     ],
+     [
+      "Why did the neighbour know what to do?",
+      "He has lived there longest and has seen it before."
+     ],
+     [
+      "What had everybody been most worried about?",
+      "Whether the fruit trees would survive."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain what people should do when a flood is coming. Group your steps and use words like first, then, and finally."
+    }
+   },
+   "g4": {
+    "title": "Eight Days of Rain",
+    "paras": [
+     "It rained for eight days without a genuine break. By the fourth day the sheer weight of water in the ground had pushed two entire sections of the back fence over at an angle, and nobody suggested going out to fix them.",
+     "Our neighbour has lived on this road for fifty-one years and has seen the river come up three times. On the sixth day he built a wall of sandbags across the end of the drive without being asked, and then came and knocked and told us, in about nine words, to move everything we cared about upstairs.",
+     "On the eighth night the river came over the bank. It crossed the field, crossed the lane, and stopped about two feet from the back door, and there it sat for six hours. Nobody in the house slept, and nobody suggested that anybody should try.",
+     "In the morning the sky was a flat clear blue, the water had dropped eight inches overnight, and the whole thing had the air of something that had been somebody else's idea entirely and was now being denied.",
+     "We spent the following week clearing the field of everything the river had carried in. The fruit trees had survived, roots and all, which was what everybody had privately been most worried about and nobody had said out loud."
+    ],
+    "qs": [
+     [
+      "How long has the neighbour lived there and how often has he seen this?",
+      "Fifty-one years, and he has seen the river come up three times."
+     ],
+     [
+      "How long did the water sit two feet from the door?",
+      "Six hours."
+     ],
+     [
+      "What had nobody said out loud?",
+      "That they were worried about the fruit trees."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the eighth night from inside the house. Establish the situation, give a clear sequence, and use sensory details."
+    }
+   }
+  },
+  "og4-07": {
+   "g2": {
+    "title": "The Impossible Shelf",
+    "paras": [
+     "Dad said the shelf would be impossible to put up without help. He was incorrect.",
+     "I measured the wall twice and marked it in pencil. It was not complicated.",
+     "The first hole was imperfect. I filled it and moved along two inches.",
+     "The second one was fine. The shelf went up and it is completely level.",
+     "Dad has not commented on it. He has put three books on it, which is a kind of comment."
+    ],
+    "qs": [
+     [
+      "What did Dad say about the shelf?",
+      "That it would be impossible to put up without help."
+     ],
+     [
+      "What went wrong with the first hole?",
+      "It was imperfect, so it was filled and moved two inches."
+     ],
+     [
+      "How do you know Dad approves?",
+      "He has put three books on the shelf."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Was Dad wrong to say it was impossible? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Impossible Shelf",
+    "paras": [
+     "Dad announced that the shelf in the back room would be impossible to put up without a second pair of hands. He was, as it turned out, incorrect about that.",
+     "I measured the wall twice, marked both ends in pencil, and checked the marks against each other. None of it was complicated. It was simply slow.",
+     "The first hole came out imperfect — slightly off the line and a shade too wide — so I filled it, let it set, and moved along two inches.",
+     "The second was fine. The brackets went on, the shelf went up, and when I put the spirit level across it the bubble sat exactly in the middle.",
+     "Dad has not commented on the shelf at any point. He has, however, put three books on it, which in this house counts as a review."
+    ],
+    "qs": [
+     [
+      "What did Dad say was needed?",
+      "A second pair of hands."
+     ],
+     [
+      "What was wrong with the first hole?",
+      "It was slightly off the line and a shade too wide."
+     ],
+     [
+      "How did the narrator check it was level?",
+      "With a spirit level — the bubble sat exactly in the middle."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how to put up a shelf. Group your steps in order and use topic words like measure, level and bracket."
+    }
+   },
+   "g4": {
+    "title": "The Impossible Shelf",
+    "paras": [
+     "Dad announced over breakfast that the shelf in the back room would be impossible to put up without a second pair of hands, and that we would therefore wait until his brother was down in June. He was incorrect about this, as I established that afternoon.",
+     "I measured the wall twice, marked both ends in pencil, and then checked the two marks against each other with a length of string, because measuring twice is only useful if you compare the answers. None of this was complicated. It was simply slow, and slow is not the same thing as impossible.",
+     "The first hole came out imperfect. It was a few millimetres off the line and a shade too wide for the plug, which I could see immediately and which there was no point arguing with. I filled it, left it to set for an hour, and started again two inches along.",
+     "The second was clean. The brackets went on square, the shelf went up on top of them, and when I laid the spirit level across the front edge the bubble came to rest dead in the centre and stayed there.",
+     "Dad has not commented on the shelf at any point in the eleven days since. He has, however, put three books on it, and in this house that is a review."
+    ],
+    "qs": [
+     [
+      "Why did Dad want to wait until June?",
+      "So his brother could help."
+     ],
+     [
+      "Why did the narrator use a length of string?",
+      "Measuring twice is only useful if you compare the answers."
+     ],
+     [
+      "What does the author mean by 'slow is not the same thing as impossible'?",
+      "The job was difficult and time-consuming but could be done alone."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should you try something difficult alone first? Group your reasons, support them with details, and end with a conclusion."
+    }
+   }
+  },
+  "og4-08": {
+   "g2": {
+    "title": "The Musician Next Door",
+    "paras": [
+     "A musician moved in next door in the spring. She practises every day at six.",
+     "At first we were suspicious. Nobody wants an hour of scales through a wall.",
+     "But she is an exceptional player, and the sound is delicious rather than annoying.",
+     "My mother, who is cautious about everybody, now leaves her windows open on purpose.",
+     "It is official. We are the only street in town with free music every evening."
+    ],
+    "qs": [
+     [
+      "When does the musician practise?",
+      "Every day at six."
+     ],
+     [
+      "Why were they suspicious at first?",
+      "Nobody wants an hour of scales through a wall."
+     ],
+     [
+      "What does the mother do now?",
+      "She leaves her windows open on purpose."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is it good to have a musician next door? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Musician Next Door",
+    "paras": [
+     "A musician moved into the house next door in the spring, and within a week we had worked out that she practises every single day at six in the evening.",
+     "At first the whole street was suspicious about it. Nobody actively wants an hour of scales coming through a party wall, however much they like music in theory.",
+     "She turned out to be an exceptional player. What comes through the wall is not scales and it is not practice noise. It is delicious, and I have not found anybody on this road who disagrees.",
+     "My mother is cautious about everybody and everything on principle. She now opens the kitchen window at ten to six, deliberately, and then pretends she opened it for the air.",
+     "It is more or less official at this point. We are the only street in this town with a free concert every evening, and nobody wants her to move."
+    ],
+    "qs": [
+     [
+      "How soon did they learn her routine?",
+      "Within a week."
+     ],
+     [
+      "Why was the street suspicious?",
+      "Nobody wants an hour of scales through a party wall."
+     ],
+     [
+      "What does the mother pretend?",
+      "That she opened the window for the air."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how to be a good neighbour. Group your points and use words like first, then, and finally."
+    }
+   },
+   "g4": {
+    "title": "The Musician Next Door",
+    "paras": [
+     "A musician moved into the house next door at the end of March, and within about a week the entire street had independently worked out that she practises every single day, without exception, at six o'clock in the evening.",
+     "The initial reaction was suspicion, and it was not unreasonable. Nobody actively wants an hour of scales coming through a party wall every evening of their life, however warmly they may feel about music as a general proposition.",
+     "She turned out to be an exceptional player. What comes through that wall is not scales and it is not the sound of somebody practising. It is delicious, in the most precise sense of that word, and in four months I have not met one person on this road who takes a different view.",
+     "My mother is cautious about every new thing on principle and has been for as long as I have known her. She now opens the kitchen window at ten minutes to six, quite deliberately, and then informs anybody present that she has opened it for the air.",
+     "It is more or less official at this point. We are the only street in this town with a free concert every evening of the week, and the one thing everybody here agrees on is that nobody wants her to move."
+    ],
+    "qs": [
+     [
+      "How did the street learn her routine?",
+      "Independently, within about a week."
+     ],
+     [
+      "Why does the author call the suspicion 'not unreasonable'?",
+      "Nobody wants an hour of scales through a party wall every evening."
+     ],
+     [
+      "What is the one thing everybody agrees on?",
+      "That nobody wants her to move."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should there be rules about noise in a neighbourhood? Group your reasons, support them with details from the text, and end with a conclusion."
+    }
+   }
+  },
+  "og4-09": {
+   "g2": {
+    "title": "Admitted and Forgotten",
+    "paras": [
+     "I had been forgetting things all term. I admitted it to my teacher in November.",
+     "She was not upset. She said the beginning of a fix is noticing.",
+     "We set up a system. Everything I was committing to went straight in one notebook.",
+     "By the end of term I had not forgotten a single thing. I was quite surprised.",
+     "She said the notebook was not magic. She said I had simply stopped relying on luck."
+    ],
+    "qs": [
+     [
+      "What had the narrator been doing all term?",
+      "Forgetting things."
+     ],
+     [
+      "What did the teacher say the beginning of a fix is?",
+      "Noticing."
+     ],
+     [
+      "What went into the notebook?",
+      "Everything the narrator was committing to."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write three facts about the notebook system. Start with a topic sentence and finish with an ending."
+    }
+   },
+   "g3": {
+    "title": "Admitted and Forgotten",
+    "paras": [
+     "I had been forgetting things all term. Homework, kit, a library book that was eventually found behind a radiator. I admitted all of it to my teacher in the second week of November.",
+     "She was not upset in the slightest, which I had not expected. She said that the beginning of any fix is noticing, and that most people never get that far.",
+     "Then we set up a system, which took about ten minutes. Everything I was committing to — every deadline, every item, every promise — went straight into one notebook, immediately, before I did anything else.",
+     "By the end of that term I had not forgotten one single thing. I was more surprised about this than anybody else was.",
+     "She said afterwards that the notebook was not magic and never had been. She said I had simply stopped relying on luck, and that luck had never been very good at the job anyway."
+    ],
+    "qs": [
+     [
+      "Where was the library book found?",
+      "Behind a radiator."
+     ],
+     [
+      "What does the teacher say most people never do?",
+      "Get as far as noticing the problem."
+     ],
+     [
+      "What did the teacher say the real change was?",
+      "That the narrator stopped relying on luck."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write about a habit you changed. Use time-order words and include dialogue."
+    }
+   },
+   "g4": {
+    "title": "Admitted and Forgotten",
+    "paras": [
+     "I had been forgetting things all term and it had been getting steadily worse. Homework, kit, a permission slip, a library book that was eventually recovered from behind a radiator in a state the librarian described as unfortunate. In the second week of November I admitted the whole of it to my teacher.",
+     "She was not upset in the slightest, which was not what I had braced for. She said that the beginning of any fix at all is noticing that something needs fixing, and that a great many people go their entire lives without getting that far.",
+     "Then we set up a system, and the whole thing took about ten minutes. Everything I was committing to — every deadline, every item, every promise made in a corridor — went into one notebook, immediately, before I did anything else at all. Not later. Immediately.",
+     "By the end of that term I had not forgotten one single thing. I was considerably more surprised by this than she appeared to be, and I remember checking the notebook twice in the last week convinced that something must have slipped.",
+     "She told me afterwards that the notebook was not magic and had never been magic. She said I had simply stopped relying on luck to hold my commitments for me, and that luck had never been especially good at that particular job."
+    ],
+    "qs": [
+     [
+      "How did the librarian describe the book's state?",
+      "Unfortunate."
+     ],
+     [
+      "What is the one rule of the system?",
+      "Write it down immediately, before doing anything else."
+     ],
+     [
+      "What did the narrator do in the last week of term?",
+      "Checked the notebook twice, convinced something must have slipped."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is writing things down better than remembering them? Group your reasons, support them with details, and end with a conclusion."
+    }
+   }
+  },
+  "og5-01": {
+   "g2": {
+    "title": "The Elephant Photograph",
+    "paras": [
+     "There is a photograph of an elephant on the wall of our school hall.",
+     "My grandfather took it. He was a photographer for a newspaper for thirty years.",
+     "The elephant is standing in a river with its trunk up, and the light is orange.",
+     "People stop in front of it every day. Nobody ever walks straight past.",
+     "I like that a photograph taken before I was born can still stop a person in a corridor."
+    ],
+    "qs": [
+     [
+      "Who took the photograph?",
+      "The narrator's grandfather took it."
+     ],
+     [
+      "What is the elephant doing?",
+      "Standing in a river with its trunk up."
+     ],
+     [
+      "What do people do in front of it?",
+      "They stop. Nobody walks straight past."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should schools put photographs on the walls? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Elephant Photograph",
+    "paras": [
+     "There is a large photograph of an elephant on the wall of our school hall, in a plain black frame, with no label beside it at all.",
+     "My grandfather took it. He was a photographer for a newspaper for thirty-one years and this was, by his own account, the only picture he ever took that he was satisfied with.",
+     "The elephant is standing chest-deep in a river with its trunk raised, and the light coming across the water is a deep orange that nobody has ever been able to reproduce in a print.",
+     "People stop in front of it every single day. I have watched this happen for four years. Nobody walks straight past it, not even the people who have seen it a thousand times.",
+     "I like that a photograph taken twenty years before I was born can still stop a person halfway down a corridor."
+    ],
+    "qs": [
+     [
+      "What is missing from the frame?",
+      "There is no label beside it at all."
+     ],
+     [
+      "What did the grandfather say about this picture?",
+      "It was the only one he ever took that he was satisfied with."
+     ],
+     [
+      "What has the narrator watched for four years?",
+      "People stopping in front of the photograph every day."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a report on photography. Group related information into sections and use topic vocabulary."
+    }
+   },
+   "g4": {
+    "title": "The Elephant Photograph",
+    "paras": [
+     "There is a large photograph of an elephant on the wall of our school hall. Plain black frame, no label, no explanation, no name anywhere on or near it. It has hung there since before any pupil currently in the building arrived.",
+     "My grandfather took it. He worked as a photographer for a newspaper for thirty-one years and, by his own account, which he gave rarely and without much elaboration, it was the only picture he ever made that he was genuinely satisfied with.",
+     "The elephant is standing chest-deep in a river with its trunk raised, and the light coming low across the water behind it is a particular deep orange that he said no print he ever ordered managed to reproduce properly. He had six made. He kept the closest one and gave the rest away.",
+     "People stop in front of it every single day. I have watched this happen for four years now, from the bench by the door, and I have never once seen somebody walk straight past — not visitors, and not the people who have passed it a thousand times.",
+     "What I like about it is this: a photograph taken twenty years before I was born, by a man who is no longer here, can still stop a stranger halfway down a corridor on a Tuesday morning."
+    ],
+    "qs": [
+     [
+      "How many prints were made, and what happened to them?",
+      "Six — he kept the closest one and gave the rest away."
+     ],
+     [
+      "Where does the narrator watch from?",
+      "The bench by the door."
+     ],
+     [
+      "What does the narrator find remarkable about the photograph?",
+      "That it can still stop a stranger, years after it was taken and after the photographer has died."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write about an object that means something to your family. Establish the situation, give a clear sequence, and use sensory details."
+    }
+   }
+  },
+  "og5-02": {
+   "g2": {
+    "title": "The Myth in the Gym",
+    "paras": [
+     "There is a myth in our school that the gym was built on top of an old well.",
+     "Every pupil hears it in the first week. Nobody has ever checked it.",
+     "Last year a system of cracks appeared across one corner of the floor.",
+     "The caretaker lifted a board. There was no well. There was a very old pipe.",
+     "The myth has not changed at all. People still tell it, and they tell it better now."
+    ],
+    "qs": [
+     [
+      "What is the myth?",
+      "That the gym was built on top of an old well."
+     ],
+     [
+      "What did the caretaker find?",
+      "No well — a very old pipe."
+     ],
+     [
+      "What happened to the myth after that?",
+      "It has not changed. People still tell it, and tell it better."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should people keep telling a story that is not true? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Myth in the Gym",
+    "paras": [
+     "There is a myth in our school that the gym was built directly on top of an old well, and that on quiet afternoons you can hear water underneath the floor.",
+     "Every new pupil hears this within about a week of arriving. In the whole history of the school, as far as anybody can establish, nobody has ever checked it.",
+     "Last year a system of fine cracks appeared across one corner of the floor and the caretaker was sent in with a crowbar to find out why.",
+     "He lifted three boards. There was no well. There was a very old iron pipe with a slow leak in it, which had been quietly soaking the joists for years.",
+     "The myth has not altered in the slightest. People still tell it, and since the pipe they tell it rather better."
+    ],
+    "qs": [
+     [
+      "What is supposed to be heard on quiet afternoons?",
+      "Water underneath the floor."
+     ],
+     [
+      "Why was the caretaker sent in?",
+      "A system of fine cracks had appeared in the floor."
+     ],
+     [
+      "What was actually under the boards?",
+      "A very old iron pipe with a slow leak."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the moment the boards came up. Use time-order words and include dialogue."
+    }
+   },
+   "g4": {
+    "title": "The Myth in the Gym",
+    "paras": [
+     "There is a myth in our school, and it is a good one, that the gym was built directly over the top of an old well, and that on very quiet afternoons in winter you can stand in the centre circle and hear water moving underneath the floor.",
+     "Every new pupil is told this within about a week of arriving, usually by somebody only a year older who heard it the same way. In the entire history of the building, as far as anybody has been able to establish, not one person has ever gone and checked.",
+     "Last year a system of fine cracks spread out across one corner of the floor, in a pattern the head described as concerning, and the caretaker was sent in with a crowbar and told to find out what was underneath.",
+     "He lifted three boards. There was no well, and there never had been. There was a very old iron pipe with a slow leak in it, which had been quietly soaking the joists for a number of years that nobody wanted to estimate out loud.",
+     "The myth has not altered in the slightest. People still tell it to new pupils in the first week, and since the business with the pipe they tell it considerably better, because now there is a part where men come with crowbars."
+    ],
+    "qs": [
+     [
+      "Who usually passes the myth on?",
+      "Somebody only a year older who heard it the same way."
+     ],
+     [
+      "How did the head describe the cracks?",
+      "Concerning."
+     ],
+     [
+      "Why is the myth told better now?",
+      "Because now there is a part where men come with crowbars."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Do stories matter even when they are not true? Group your reasons, support them with details from the text, and end with a conclusion."
+    }
+   }
+  },
+  "og5-03": {
+   "g2": {
+    "title": "The Rhino in Autumn",
+    "paras": [
+     "The rhino at the wildlife park has a name but nobody uses it.",
+     "In autumn she stands by the fence for hours and watches the leaves come down.",
+     "The keeper says it is not a mystery. She likes movement, and leaves move.",
+     "There is a rhythm to it. A leaf falls, she turns her head, she waits for the next one.",
+     "I could watch her do that all day. I am told that I have."
+    ],
+    "qs": [
+     [
+      "What does the rhino do in autumn?",
+      "She stands by the fence and watches the leaves come down."
+     ],
+     [
+      "What does the keeper say?",
+      "That it is not a mystery — she likes movement, and leaves move."
+     ],
+     [
+      "What is the rhythm?",
+      "A leaf falls, she turns her head, she waits for the next one."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write three facts about the rhino. Start with a topic sentence and finish with an ending."
+    }
+   },
+   "g3": {
+    "title": "The Rhino in Autumn",
+    "paras": [
+     "The rhino at the wildlife park has an official name on the sign by her enclosure, and nobody who works there has used it in years. She is simply the rhino.",
+     "In autumn she comes and stands against the fence on the north side for hours at a time, facing the beech trees, watching the leaves come down.",
+     "The keeper says there is no mystery in it at all. Rhinos have poor eyesight and are drawn to movement, and in October everything in that corner of the park is moving.",
+     "There is a rhythm to the way she does it. A leaf comes loose, she turns her head and follows it all the way to the ground, and then she waits, perfectly still, for the next one.",
+     "I could watch her do that all afternoon. My sister tells me that on one occasion I did."
+    ],
+    "qs": [
+     [
+      "Why does nobody use her name?",
+      "She is simply the rhino to everyone who works there."
+     ],
+     [
+      "What does the keeper give as the reason?",
+      "Rhinos have poor eyesight and are drawn to movement."
+     ],
+     [
+      "What does she do between leaves?",
+      "She waits, perfectly still, for the next one."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write an afternoon at the wildlife park. Use time-order words and describe what you could see and hear."
+    }
+   },
+   "g4": {
+    "title": "The Rhino in Autumn",
+    "paras": [
+     "The rhino at the wildlife park has an official name, printed on the sign beside her enclosure, and nobody who actually works there has used it within living memory. To the keepers, to the regulars, and eventually to everybody, she is simply the rhino.",
+     "Every autumn she comes and stands against the fence on the north side of her paddock for hours at a stretch, facing the line of beech trees beyond it, watching the leaves come down. She does this in no other season.",
+     "The keeper says there is no mystery in it whatsoever, and he says this slightly impatiently, as though people ask him too often. Rhinos see poorly and are strongly drawn to movement, and in October every single thing in that corner of the park is moving.",
+     "There is a rhythm to the way she does it that is difficult to look away from. A leaf comes loose somewhere up in the beeches, she turns her enormous head and follows it the whole way down to the grass, and then she stops and waits, entirely still, for the next one.",
+     "I could watch her do that for an entire afternoon. My sister informs me that on at least one occasion I did exactly that, and that she asked three times to go and look at the otters."
+    ],
+    "qs": [
+     [
+      "How does the keeper answer the question?",
+      "Slightly impatiently, as though people ask too often."
+     ],
+     [
+      "In what season does she do this?",
+      "Autumn, and no other season."
+     ],
+     [
+      "What does the sister's detail reveal?",
+      "That the narrator really did watch for a whole afternoon and ignored her."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a report on an animal's behaviour. Organise it into sections, develop each with facts and examples, and connect your ideas."
+    }
+   }
+  },
+  "og5-04": {
+   "g2": {
+    "title": "The Telescope on the Roof",
+    "paras": [
+     "My aunt is a biologist, but her real passion is the telescope on her roof.",
+     "She built the platform herself and photographs the sky from it on clear nights.",
+     "She has a catalogue of every photograph, organised by date and by what is in it.",
+     "She let me look through it once at Saturn. I did not say anything for a while.",
+     "She said that was the correct response and made me a cup of tea."
+    ],
+    "qs": [
+     [
+      "What is the aunt's job?",
+      "She is a biologist."
+     ],
+     [
+      "What did she build herself?",
+      "The platform for the telescope on her roof."
+     ],
+     [
+      "What did the narrator see?",
+      "Saturn."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what happened on the roof, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Telescope on the Roof",
+    "paras": [
+     "My aunt is a biologist by profession, and that is what she will tell you if you ask. Her real passion is the telescope bolted to a platform on her roof.",
+     "She built the platform herself over two summers, and she photographs the sky from it on every clear night she can manage, which in this country is not many.",
+     "She keeps a catalogue of every photograph she has ever taken, organised by date, by what is in the frame, and by how satisfied she was with it, which is the column she consults most.",
+     "She let me look through the telescope once, at Saturn, when I was nine. I remember not saying anything at all for quite a long time.",
+     "She said afterwards that this was the only correct response to a first view of Saturn, and then she went downstairs and made us both a cup of tea."
+    ],
+    "qs": [
+     [
+      "How long did the platform take to build?",
+      "Two summers."
+     ],
+     [
+      "Which column does she consult most?",
+      "How satisfied she was with the photograph."
+     ],
+     [
+      "What did she say about the narrator's silence?",
+      "That it was the only correct response to a first view of Saturn."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a report on how telescopes work. Group related information into sections and use topic vocabulary."
+    }
+   },
+   "g4": {
+    "title": "The Telescope on the Roof",
+    "paras": [
+     "My aunt is a biologist by profession and will tell you so within a minute of meeting you, usually before her name. Her actual passion, as anybody who has spent an evening at her house knows, is the telescope bolted to a timber platform on her roof.",
+     "She built the platform herself across two summers, working alone, and she now photographs the sky from it on every clear night she can get, which in this part of the country amounts to considerably fewer nights a year than she would like.",
+     "She keeps a catalogue of every photograph she has ever taken up there. It is organised by date, by what is in the frame, and — the column she consults far more than either of the others — by how satisfied she was with the result at the time.",
+     "She let me look through the telescope once, at Saturn, the autumn I turned nine. What I remember is not the planet. What I remember is not saying anything whatsoever for what must have been well over a minute, which is a long time at that age.",
+     "She said afterwards that silence was the only correct response to a first view of Saturn, and that anybody who starts talking straight away has not really looked. Then she went downstairs and made us both a cup of tea and did not mention it again."
+    ],
+    "qs": [
+     [
+      "What does she tell people before her name?",
+      "That she is a biologist."
+     ],
+     [
+      "Which column does she consult far more than the others?",
+      "How satisfied she was with the result at the time."
+     ],
+     [
+      "What does she say about people who talk straight away?",
+      "That they have not really looked."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should everybody get the chance to look through a telescope? Group your reasons, support them with details, and end with a conclusion."
+    }
+   }
+  },
+  "og5-05": {
+   "g2": {
+    "title": "The Antique Machine",
+    "paras": [
+     "There is an antique machine in the window of the shop on the corner.",
+     "It is unique. The man in the shop says there is no other one like it in the country.",
+     "It has a brass plaque on the side with a date and a name in French.",
+     "Nobody knows what it was for. The chef next door thinks it made chocolate.",
+     "I hope nobody ever finds out. It is better as a question."
+    ],
+    "qs": [
+     [
+      "Where is the machine?",
+      "In the window of the shop on the corner."
+     ],
+     [
+      "What is on the brass plaque?",
+      "A date and a name in French."
+     ],
+     [
+      "What does the chef think?",
+      "That it made chocolate."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is it better to know or not to know what the machine did? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Antique Machine",
+    "paras": [
+     "There is an antique machine in the window of the shop on the corner, and it has been there since long before we moved to this town.",
+     "It is unique. The man who owns the shop says, and he says it often, that there is not another one like it anywhere in the country.",
+     "It has a brass plaque screwed to one side with a date, 1883, and a name in French that nobody local has ever managed to pronounce the same way twice.",
+     "Nobody knows what it was for. The chef at the restaurant next door is certain it made chocolate. The man in the shop thinks it pressed flowers.",
+     "I hope that nobody ever establishes the answer. It is a far better object as a question than it would be as a fact."
+    ],
+    "qs": [
+     [
+      "What date is on the plaque?",
+      "1883."
+     ],
+     [
+      "What are the two theories?",
+      "The chef says chocolate, the shop owner says it pressed flowers."
+     ],
+     [
+      "Why does the narrator hope nobody finds out?",
+      "It is a better object as a question than as a fact."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write a story about what the machine was really for. Use time-order words and include dialogue."
+    }
+   },
+   "g4": {
+    "title": "The Antique Machine",
+    "paras": [
+     "There is an antique machine standing in the window of the shop on the corner, brass and iron and about the size of a sewing machine, and it has been in that window since considerably before we moved to this town.",
+     "It is unique. The man who owns the shop says so, and he says so frequently and at length to anybody who slows down outside, and as far as anybody has been able to check he is entirely right: there is not another one like it recorded anywhere in the country.",
+     "There is a brass plaque screwed to one side of it carrying a date, 1883, and a name in French which nobody local has ever managed to pronounce the same way twice, including the French teacher at our school, who has tried.",
+     "Nobody knows what the thing was for. The chef at the restaurant next door is absolutely certain it was built to make chocolate and will explain the mechanism to you unprompted. The man in the shop maintains it pressed flowers. A woman from the museum came and looked at it for an hour and left without saying anything at all.",
+     "I hope sincerely that nobody ever establishes the answer. It is a far better object as a question than it could ever be as a fact, and I think the man in the shop quietly agrees with me."
+    ],
+    "qs": [
+     [
+      "How big is the machine?",
+      "About the size of a sewing machine."
+     ],
+     [
+      "What did the woman from the museum do?",
+      "Looked at it for an hour and left without saying anything."
+     ],
+     [
+      "Why does the narrator think the shop owner agrees?",
+      "Because the mystery is what brings people to the window."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should every mystery be solved? Group your reasons, support them with details from the text, and end with a conclusion."
+    }
+   }
+  },
+  "og5-06": {
+   "g2": {
+    "title": "A Month of Mondays",
+    "paras": [
+     "One month last winter, something went wrong with every single Monday.",
+     "The oven broke. The front door stuck. My brother lost a glove, twice.",
+     "My mother started to wonder whether we should simply skip Mondays altogether.",
+     "Then one Monday nothing happened at all. We came home and sat down and nothing broke.",
+     "We talked about that quiet Monday for weeks. It was the best one we had."
+    ],
+    "qs": [
+     [
+      "What went wrong that month?",
+      "The oven broke, the front door stuck, and a glove was lost twice."
+     ],
+     [
+      "What did the mother wonder?",
+      "Whether they should skip Mondays altogether."
+     ],
+     [
+      "Why was the quiet Monday the best one?",
+      "Because nothing went wrong at all."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what happened over the month, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "A Month of Mondays",
+    "paras": [
+     "For one month last winter, something went wrong with every single Monday, without exception, and we started keeping a list.",
+     "The oven broke on the first one. The front door stuck shut on the second, with all of us inside. On the third my brother lost a glove, found it, and lost it again before tea.",
+     "By the fourth Monday my mother had begun to wonder aloud whether the sensible thing would simply be to skip Mondays altogether and go straight from Sunday to Tuesday.",
+     "Then came a Monday when absolutely nothing happened. We came home, we sat down, nothing broke, nothing stuck, nobody lost anything.",
+     "We talked about that one quiet Monday for weeks afterwards. It remains, by some distance, the best Monday any of us can remember."
+    ],
+    "qs": [
+     [
+      "What did the family start keeping?",
+      "A list."
+     ],
+     [
+      "What happened on the second Monday?",
+      "The front door stuck shut with all of them inside."
+     ],
+     [
+      "Why is a Monday where nothing happened memorable?",
+      "Because every other Monday that month had gone wrong."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Are quiet days better than exciting ones? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "A Month of Mondays",
+    "paras": [
+     "For one month last winter, something went wrong on every single Monday without a single exception, and after the second one we started keeping a list on the back of a calendar.",
+     "The oven broke on the first. The front door stuck shut on the second, with all four of us inside the house and my father pulling at it for twenty minutes before anybody thought of the back door. On the third my brother lost a glove, found it again under the stairs, and lost the same glove a second time before tea.",
+     "By the fourth Monday my mother had begun to wonder aloud, in a tone that was only partly joking, whether the sensible course of action would be to skip Mondays altogether and move straight from Sunday to Tuesday.",
+     "Then came a Monday on which absolutely nothing happened. We came home. We sat down. Nothing broke, nothing stuck, nobody lost anything, and at no point did anybody have to go and find a tool.",
+     "We talked about that one quiet Monday for weeks afterwards, and we still bring it up. It remains, by a considerable distance, the best Monday that anybody in this family can remember, and nothing whatsoever occurred on it."
+    ],
+    "qs": [
+     [
+      "Where was the list kept?",
+      "On the back of a calendar."
+     ],
+     [
+      "What did nobody think of for twenty minutes?",
+      "The back door."
+     ],
+     [
+      "What is the irony of the best Monday?",
+      "Nothing whatsoever happened on it."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write about an ordinary day you remember. Establish the situation, give a clear sequence, and use sensory details."
+    }
+   }
+  },
+  "og5-07": {
+   "g2": {
+    "title": "Worth the Work",
+    "paras": [
+     "My grandmother worked the same patch of ground for forty years.",
+     "She says the first word of gardening is patience and the second is work.",
+     "Nothing in that garden arrived quickly. The apple tree took nine years to fruit.",
+     "She never once said it was not worth it. Not in all the time I knew her.",
+     "The tree is still there. Every autumn the whole world seems to come and pick from it."
+    ],
+    "qs": [
+     [
+      "How long did she work the ground?",
+      "Forty years."
+     ],
+     [
+      "How long did the apple tree take to fruit?",
+      "Nine years."
+     ],
+     [
+      "What did she never say?",
+      "That it was not worth it."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write three facts about the garden. Start with a topic sentence and finish with an ending."
+    }
+   },
+   "g3": {
+    "title": "Worth the Work",
+    "paras": [
+     "My grandmother worked the same patch of ground behind her house for forty years, and by the end of it she knew every corner of that garden the way you know a room in the dark.",
+     "She used to say that the first word of gardening is patience and the second word is work, and that most people manage one of the two.",
+     "Nothing in that garden ever arrived quickly. The apple tree she planted the year my father was born took nine years to produce a single apple worth eating.",
+     "She never once said that it had not been worth it. Not in all the years I knew her, and not even in the last ones, when she could only get out there with help.",
+     "The tree is still standing. Every autumn half the world seems to turn up with a basket, and nobody is ever turned away."
+    ],
+    "qs": [
+     [
+      "How well did she know the garden?",
+      "The way you know a room in the dark."
+     ],
+     [
+      "What does she say most people manage?",
+      "One of the two — patience or work."
+     ],
+     [
+      "What happens every autumn now?",
+      "Half the world turns up with a basket and nobody is turned away."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is slow work worth doing? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "Worth the Work",
+    "paras": [
+     "My grandmother worked the same patch of ground behind her house for forty years, and by the end of that time she knew every corner of it the way a person knows a familiar room in the dark — where the step is, where the ground turns heavy, which bed holds the water after rain.",
+     "She used to say that the first word of gardening is patience and the second word is work, and that most people manage one of the two and then wonder why the thing has not happened.",
+     "Nothing in that garden ever arrived quickly, and she did not expect it to. The apple tree she planted in the year my father was born took nine full years before it produced a single apple that was worth the trouble of picking.",
+     "She never once said that it had not been worth it. Not in all the years I knew her, and not in the last two either, when she could only get out there with somebody holding her arm and could do very little once she arrived.",
+     "The tree is still standing and still cropping. Every autumn what feels like half the world turns up at that gate with a basket, and in forty years nobody has ever been turned away from it."
+    ],
+    "qs": [
+     [
+      "Name two things she knew about the ground.",
+      "Where the step is and which bed holds water after rain."
+     ],
+     [
+      "What do most people do, according to her?",
+      "Manage one of patience or work, then wonder why nothing happened."
+     ],
+     [
+      "What does the last line show about her?",
+      "That she was generous with what her long work produced."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is patience the most important quality? Group your reasons, support them with details from the text, and end with a conclusion."
+    }
+   }
+  },
+  "og5-08": {
+   "g2": {
+    "title": "The Performance",
+    "paras": [
+     "Our class gave a performance in the village hall at the end of the year.",
+     "There was a long silence before it started. The audience was patient.",
+     "My part was small, but the difference between knowing it and not knowing it was everything.",
+     "The applause at the end went on for ages. My father stood up, which was embarrassing.",
+     "On the way home nobody mentioned the mistakes. There had been several."
+    ],
+    "qs": [
+     [
+      "Where was the performance?",
+      "In the village hall at the end of the year."
+     ],
+     [
+      "What happened at the end?",
+      "The applause went on for ages and the father stood up."
+     ],
+     [
+      "What did nobody mention on the way home?",
+      "The mistakes, of which there had been several."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what happened at the performance, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Performance",
+    "paras": [
+     "Our class gave a performance in the village hall at the end of the summer term, in front of an audience made up almost entirely of relatives.",
+     "There was a long silence before it began, the kind where somebody clears a throat and everybody else decides not to. The audience was extremely patient about it.",
+     "My own part was small — four lines and a bit of carrying things on — but the difference between knowing those four lines and not knowing them turned out to be the entire evening.",
+     "The applause at the end went on for an embarrassing length of time. My father stood up, alone, in the second row, which I have not fully recovered from.",
+     "On the way home nobody mentioned the mistakes. There had been a considerable number of them, and we all knew it, and not one person said a word."
+    ],
+    "qs": [
+     [
+      "Who made up the audience?",
+      "Almost entirely relatives."
+     ],
+     [
+      "What was the narrator's part?",
+      "Four lines and carrying things on."
+     ],
+     [
+      "What did everybody avoid saying on the way home?",
+      "Anything about the mistakes."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should people point out mistakes afterwards? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Performance",
+    "paras": [
+     "Our class gave a performance in the village hall at the end of the summer term, in front of an audience composed almost entirely of relatives, several of whom had driven a considerable distance to be disappointed.",
+     "There was a long silence before it began — the particular kind of silence in which one person clears a throat and every other person in the room immediately decides not to. The audience was extraordinarily patient all the way through it, which in hindsight was the first act of generosity of the evening.",
+     "My own part was small. Four lines, and some carrying of furniture on and off between scenes. But the difference between knowing those four lines and not knowing them turned out, for me, to be the difference between the whole evening working and not.",
+     "The applause at the end continued for an embarrassing length of time. My father stood up, alone, in the second row, and remained standing, and I have not entirely recovered from it and do not expect to.",
+     "On the walk home not one person mentioned the mistakes. There had been a considerable number of them, some of them substantial, and every single one of us knew exactly what they had been, and nobody said a word about any of it."
+    ],
+    "qs": [
+     [
+      "What does the author say about the relatives who drove far?",
+      "That they had come a considerable distance to be disappointed."
+     ],
+     [
+      "What was the first act of generosity?",
+      "The audience's patience during the long silence."
+     ],
+     [
+      "What does the final paragraph show about the families?",
+      "That they chose kindness over honesty about the mistakes."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the performance from a parent's point of view. Establish the situation, give a clear sequence, and use dialogue and sensory details."
+    }
+   }
+  },
+  "og5-09": {
+   "g2": {
+    "title": "The Thing I Was Taught",
+    "paras": [
+     "My uncle taught me to fish when I was eight. It was the only thing he ever taught me.",
+     "We caught nothing at all for three whole days. I thought about giving up.",
+     "He said he had brought me here to learn to wait, not to learn to catch.",
+     "On the fourth day I caught one. It was small and I put it back.",
+     "I have thought about what he said far more often than I have fished."
+    ],
+    "qs": [
+     [
+      "Who taught the narrator to fish?",
+      "The narrator's uncle."
+     ],
+     [
+      "How long did they catch nothing?",
+      "Three whole days."
+     ],
+     [
+      "What did the uncle say he had brought the narrator there to learn?",
+      "To wait, not to catch."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write three facts about what the uncle taught. Start with a topic sentence and finish with an ending."
+    }
+   },
+   "g3": {
+    "title": "The Thing I Was Taught",
+    "paras": [
+     "My uncle taught me to fish the summer I was eight. It is the only thing he ever taught me directly, and he never offered to teach me anything else.",
+     "We caught nothing for three entire days. Not a bite, not a nibble, nothing. By the second afternoon I had thought seriously about asking to go home.",
+     "On the evening of the third day he said, without any particular emphasis, that he had not brought me out there to learn to catch fish. He had brought me out to learn to wait.",
+     "On the fourth morning I caught one. It was about the length of my hand, and after we had both looked at it properly I put it back in the river.",
+     "I have thought about what he said that evening a great deal more often than I have been fishing, and I am nearly certain that was the point."
+    ],
+    "qs": [
+     [
+      "How old was the narrator?",
+      "Eight."
+     ],
+     [
+      "What did the uncle say on the third evening?",
+      "That he had brought the narrator out to learn to wait, not to catch."
+     ],
+     [
+      "What happened to the fish?",
+      "They looked at it and put it back in the river."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is waiting a skill worth learning? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Thing I Was Taught",
+    "paras": [
+     "My uncle taught me to fish the summer I turned eight. It is the only thing he ever taught me directly, and in the twenty years since he has never once offered to teach me anything else, which I have come to think was deliberate.",
+     "We caught nothing for three entire days. Not a fish, not a bite, not so much as a serious nibble. By the second afternoon I had thought hard about asking to be taken home, and had got as far as working out how to phrase it.",
+     "On the evening of the third day, with the light going and neither of us having said anything for about an hour, he remarked — without any particular emphasis, as though it had just occurred to him — that he had not brought me out there to learn to catch fish. He had brought me out there to learn how to wait.",
+     "On the fourth morning I caught one. It was about the length of my hand and nothing whatsoever to be proud of, and after the two of us had looked at it properly for a while I leaned over the side and put it back into the river.",
+     "I have thought about what he said that evening considerably more often than I have actually been fishing, which cannot be an accident. He was not a man who said a great deal, and he appears to have chosen that sentence carefully and then waited three days to use it."
+    ],
+    "qs": [
+     [
+      "Why does the narrator think the uncle taught nothing else?",
+      "They have come to think it was deliberate."
+     ],
+     [
+      "How had the second afternoon nearly ended?",
+      "The narrator had worked out how to ask to be taken home."
+     ],
+     [
+      "What does the last line suggest about the uncle?",
+      "That he planned the sentence and waited three days for the right moment."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write about something somebody taught you. Establish the situation, give a clear sequence, and use dialogue and sensory details."
+    }
+   }
   }
  }
 }
