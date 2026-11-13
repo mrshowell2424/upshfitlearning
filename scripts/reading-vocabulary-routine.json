@@ -1,0 +1,96 @@
+{
+  "_note": "The three-phase teach-a-word routine. The words themselves are not here: every article already carries two word-and-definition pairs as its vocabulary question, which is 700 of them across seven grades, each already tied to a grade and a standard. This file holds only the routine, in our own words. The structure of say-it, use-it, write-it is a common one -- Kate Kinsella's vocabulary work is the version most teachers have met -- and the script below is ours, not hers.",
+  "title": "Teach a Word",
+  "blurb": "Three phases, about ten minutes, one word. Say it, use it, write it.",
+  "phases": [
+    {
+      "key": "say",
+      "n": 1,
+      "name": "Say it",
+      "minutes": "2 min",
+      "ink": "#C0432F",
+      "tint": "#FFF0EC",
+      "steps": [
+        {
+          "t": "Say the word, then have them say it",
+          "say": "The word is {WORD}. Say it with me: {WORD}.",
+          "do": "Everybody says it out loud. Twice if it has more than two syllables."
+        },
+        {
+          "t": "Clap the parts",
+          "say": "Let's clap the parts of {WORD}.",
+          "do": "Clap once per syllable. A word nobody can pronounce will not get used."
+        },
+        {
+          "t": "Give the meaning in plain words",
+          "say": "{WORD} means {DEF}",
+          "do": "They listen. Do not ask what it means yet — they have not met it."
+        }
+      ]
+    },
+    {
+      "key": "use",
+      "n": 2,
+      "name": "Use it",
+      "minutes": "5 min",
+      "ink": "#6B2FB5",
+      "tint": "#F4E9FF",
+      "steps": [
+        {
+          "t": "Use it in a sentence about them",
+          "say": "Here is one: ___ {WORD} ___.",
+          "do": "Make your sentence about this class, this room, today. An example about nobody is harder to copy."
+        },
+        {
+          "t": "Give them the frame",
+          "say": "Your turn. Finish this: ___ {WORD} ___.",
+          "do": "A frame is the whole point of this phase. Without one the confident children answer and the rest stay quiet."
+        },
+        {
+          "t": "Turn and talk",
+          "say": "Tell your partner your sentence. Use the word.",
+          "do": "Everybody says it to somebody. Walk and listen for a sentence to borrow in the next step."
+        },
+        {
+          "t": "Borrow one out loud",
+          "say": "I heard ___ say this one.",
+          "do": "Read a real sentence from the room. Name the child. This is the step that makes the next word worth trying."
+        }
+      ]
+    },
+    {
+      "key": "write",
+      "n": 3,
+      "name": "Write it",
+      "minutes": "3 min",
+      "ink": "#00756C",
+      "tint": "#E6F8F6",
+      "steps": [
+        {
+          "t": "Write the word",
+          "say": "Write {WORD} at the top.",
+          "do": "Spelling matters less here than having written it once in their own hand."
+        },
+        {
+          "t": "Write their sentence",
+          "say": "Write the sentence you just said.",
+          "do": "The one they already said out loud. Saying it first is what makes this quick."
+        },
+        {
+          "t": "Draw or mark it",
+          "say": "Draw the word, or circle it the next time you see it.",
+          "do": "A drawing for a thing, a mark for an idea. Not every word can be drawn and that is worth admitting."
+        }
+      ]
+    }
+  ],
+  "placement": {
+    "_note": "Where this sits in a lesson. Ten minutes on one word only pays off if the word comes back.",
+    "lines": [
+      "Teach the word before the text it comes from, not after. The point is to clear it out of the way.",
+      "Two words a day is the ceiling. Four words taught properly beats ten mentioned.",
+      "Use the word yourself, out loud, three more times that week. If you do not use it again, neither will they.",
+      "The word is in an article's vocabulary question, so the article is the place it comes back."
+    ]
+  }
+}
