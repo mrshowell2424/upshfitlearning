@@ -28,6 +28,7 @@ const files = existsSync(DIR)
 
 const written = new Map(); // grade -> articles
 const partial = [];
+const skipped = new Set(); // files left out, so they are not credited as sources
 for (const f of files) {
   const one = JSON.parse(readFileSync(`${DIR}/${f}`, "utf8"));
   const list = Array.isArray(one) ? one : one.articles;
@@ -43,6 +44,7 @@ for (const f of files) {
   if (list.length !== plan.perGrade) {
     const name = (plan.grades.find((g) => g.grade === grades[0]) || {}).name ?? grades[0];
     partial.push(`${name} (${list.length}/${plan.perGrade})`);
+    skipped.add(f);
     continue;
   }
   written.set(grades[0], list);
@@ -56,7 +58,7 @@ all.sort((a, b) => (order.get(a.grade) - order.get(b.grade)) || (a.n - b.n));
 data.articles = all;
 data.source = [...new Set([
   ...(data.source || []),
-  ...files.map((f) => `scripts/articles/${f}`),
+  ...files.filter((f) => !skipped.has(f)).map((f) => `scripts/articles/${f}`),
 ])];
 writeFileSync(STORE, JSON.stringify(data, null, 1) + "\n");
 
