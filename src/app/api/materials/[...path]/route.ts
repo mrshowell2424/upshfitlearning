@@ -3,6 +3,7 @@ import { eq } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { reading_materials } from "@/lib/db/schema";
 import { mayReadMaterials } from "@/lib/auth/materials-gate";
+import { TOOLBAR_VERSION, withToolbar } from "@/lib/materials-toolbar";
 
 /**
  * Serves a gated teaching material to a signed-in teacher, and nobody else.
@@ -131,7 +132,7 @@ export async function GET(
   // teacher who had already opened it that morning — they kept the old one
   // and had no way to know. The row carries its own size and write time, so
   // the browser can ask every time and be told "unchanged" for nothing.
-  const tag = `W/"${row.bytes}-${row.updated_at ? new Date(row.updated_at).getTime() : 0}"`;
+  const tag = `W/"${row.bytes}-${row.updated_at ? new Date(row.updated_at).getTime() : 0}-t${TOOLBAR_VERSION}"`;
   if (request.headers.get("if-none-match") === tag) {
     return new NextResponse(null, {
       status: 304,
@@ -139,9 +140,12 @@ export async function GET(
     });
   }
 
+  const isHtml = String(row.content_type).includes("text/html");
   const body = BINARY_TYPES.has(row.content_type)
     ? decodeBase64(row.content)
-    : row.content;
+    : isHtml
+      ? withToolbar(String(row.content), key)
+      : row.content;
 
   return new NextResponse(body, {
     headers: {
