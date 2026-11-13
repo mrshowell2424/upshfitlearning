@@ -58,6 +58,10 @@ const LAVENDER_TEXT = "#6B2FB5";
 
 const BUILDER = "/api/materials/science-of-reading/lesson-builder.html";
 const RESOURCES = "/science-of-reading/resources";
+// Both run on the article store, so they belong in this hub rather than in
+// the top nav: a teacher reaches them from reading, not from the menu bar.
+const FLUENCY = "/fluency";
+const VOCABULARY = "/vocabulary";
 // Counted from the data the page is generated from, so the blurb cannot
 // drift away from what is actually on it.
 const MYSTERY_COUNT = RESOURCE_COUNTS.mysteries;
@@ -174,6 +178,32 @@ function Hub() {
               // page is: pick a text, read it, answer, write.
               focus: "0%",
               alt: "The reading resources page: tabs for mysteries and articles, a case picker, and a mystery with its question and suspects.",
+            },
+            {
+              href: FLUENCY,
+              eyebrow: "TIME A READ",
+              title: "Fluency",
+              accent: TEAL,
+              accentText: TEAL_TEXT,
+              blurb: `A one-minute read on any of the ${ARTICLE_COUNT * 2} passages, with words correct per minute, accuracy and how it sounded.`,
+              preview: "/previews/fluency.png",
+              shape: [1200, 1130] as const,
+              // Opens on the timer and the two boxes, which is the whole tool.
+              focus: "0%",
+              alt: "The fluency page: a one-minute timer, boxes for words read and errors, and the words correct per minute it works out.",
+            },
+            {
+              href: VOCABULARY,
+              eyebrow: "TEACH A WORD",
+              title: "Teach a Word",
+              accent: LAVENDER,
+              accentText: LAVENDER_TEXT,
+              blurb: `Say it, use it, write it, in about ten minutes, on every word the ${ARTICLE_COUNT} articles already define.`,
+              preview: "/previews/teach-a-word.png",
+              shape: [1200, 1130] as const,
+              // Opens on the word itself and the first phase of the script.
+              focus: "0%",
+              alt: "The Teach a Word page: one word with its meaning, then the three phases of the routine with the script filled in.",
             },
             {
               href: "/og-packs",
