@@ -22,6 +22,7 @@ const links = [
   { label: "PBL", href: "/pbl" },
   { label: "Design Thinking", href: "/design-thinking" },
   { label: "Behavior Strategies", href: "/behavior" },
+  { label: "The EF Year", href: "/behavior/year" },
   { label: "Resources", href: "/resources" },
   { label: "Courses", href: "/courses" },
   { label: "Teacher's Lounge", href: "/lounge" },

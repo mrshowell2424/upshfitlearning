@@ -32,7 +32,7 @@
           "blurb": "Every article regrouped by what it is about, each topic running K through 6, with the five minutes to run before you read."
         }
       ],
-      "gap": "Thirteen threads out of the articles we already had, which is a view rather than new content. What is still missing is a thread that reaches the younger grades on government and on the people a textbook leaves out — both start at third grade or later."
+      "gap": null
     },
     {
       "key": "vocabulary",
@@ -62,7 +62,7 @@
           "blurb": "Combine, expand, and because/but/so — on sentences from an article they have read, with the answer key taken from the article's own harder version."
         }
       ],
-      "gap": "Nine minutes a day, and it needed no new sentences: the harder Lexile version of each article already is the answer key. What is still missing is sentence types and punctuation, which would be new content rather than a new view of content we have."
+      "gap": null
     },
     {
       "key": "reasoning",

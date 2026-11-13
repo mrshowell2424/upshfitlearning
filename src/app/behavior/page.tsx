@@ -158,11 +158,18 @@ function SignalCard({ s, remove }: { s: Signal; remove: string }) {
       </h2>
       <p style={{ margin: "0 0 14px", fontSize: 16, color: BRAND.mid }}>{s.short}</p>
 
+      {/* The tags are links now. Naming the skill under a behavior is only
+          half an answer -- the other half is the block of the year that
+          teaches it, and the keys match so the tag can go straight there. */}
       <div style={{ display: "flex", gap: 6, flexWrap: "wrap", margin: "0 0 20px" }}>
         {s.ef.map((k) => (
-          <span key={k} style={tag(BRAND.lavenderDark)}>
+          <a
+            key={k}
+            href={`/behavior/year?s=${k}`}
+            style={{ ...tag(BRAND.lavenderDark), textDecoration: "none" }}
+          >
             {EF[k]}
-          </span>
+          </a>
         ))}
       </div>
 
@@ -374,7 +381,9 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               <ul style={{ margin: 0, paddingLeft: 20 }}>
                 {(Object.keys(EF) as EFKey[]).map((k) => (
                   <li key={k} style={{ margin: "0 0 6px", fontSize: 15, lineHeight: 1.6 }}>
-                    <b>{EF[k]}</b>
+                    <a href={`/behavior/year?s=${k}`} style={{ color: BRAND.ink }}>
+                      <b>{EF[k]}</b>
+                    </a>
                     {` — ${EF_MEANING[k]}`}
                   </li>
                 ))}
@@ -405,7 +414,9 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                   <ul style={{ margin: "0 0 16px", paddingLeft: 20 }}>
                     {shared.map(([k, names]) => (
                       <li key={k} style={{ margin: "0 0 7px", fontSize: 15, lineHeight: 1.6 }}>
-                        <b>{EF[k]}</b>
+                        <a href={`/behavior/year?s=${k}`} style={{ color: BRAND.ink }}>
+                          <b>{EF[k]}</b>
+                        </a>
                         {` — ${EF_MEANING[k]} `}
                         <span style={{ color: BRAND.mid }}>{`(${names.join(", ")})`}</span>
                       </li>
