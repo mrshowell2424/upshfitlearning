@@ -1,0 +1,1427 @@
+[
+ {
+  "id": "g1-1",
+  "grade": 1,
+  "n": 1,
+  "title": "How a Robin Builds a Nest",
+  "standard": "RI.1.1",
+  "standard_text": "Standard: Ask and answer questions about key details in a text.\n Spiral: RI.1.2 main topic · RI.1.4 word meaning · RI.1.7 illustrations · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 290,
+   "words": 60,
+   "labelled_words": 60,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A robin needs a safe place to lay her eggs."
+    },
+    {
+     "label": "B",
+     "text": "She finds a strong fork where a tree branch splits in two."
+    },
+    {
+     "label": "C",
+     "text": "She brings grass and small twigs to the fork, one piece at a time."
+    },
+    {
+     "label": "D",
+     "text": "She packs wet mud inside the bowl and presses it down with her chest."
+    },
+    {
+     "label": "E",
+     "text": "The mud dries hard and holds the whole nest together."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 170,
+   "words": 40,
+   "labelled_words": 40,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A robin needs a safe place for her eggs."
+    },
+    {
+     "label": "B",
+     "text": "She finds a fork in a tree branch."
+    },
+    {
+     "label": "C",
+     "text": "She brings grass and twigs to the fork."
+    },
+    {
+     "label": "D",
+     "text": "She packs wet mud inside the nest."
+    },
+    {
+     "label": "E",
+     "text": "The mud dries hard and holds it together."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Where does the robin build her nest?",
+    "a": "She finds a strong fork where a tree branch splits in two."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. grass and twigs) and paragraph D (i.e. the wet mud).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell how a robin builds a nest.",
+    "a": "She finds a fork in a tree branch, brings grass and twigs one piece at a time, packs wet mud inside, and the mud dries hard and holds the nest together."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "fork: the place where a branch splits in two.\ntwig: a very small, thin stick.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the mud and the nest staying together.",
+    "a": "She packs wet mud inside the bowl, and the mud dries hard and holds the whole nest together."
+   }
+  ],
+  "note": "RI.1.1 is asking and answering from details, so every answer is printed. Have the child put a finger on the sentence before saying it out loud."
+ },
+ {
+  "id": "g1-2",
+  "grade": 1,
+  "n": 2,
+  "title": "What a Frog Catches",
+  "standard": "RI.1.1",
+  "standard_text": "Standard: Ask and answer questions about key details in a text.\n Spiral: RI.1.2 main topic · RI.1.4 word meaning · RI.1.7 illustrations · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 270,
+   "words": 50,
+   "labelled_words": 50,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A frog sits very still at the edge of the pond."
+    },
+    {
+     "label": "B",
+     "text": "It waits for a bug to fly close enough."
+    },
+    {
+     "label": "C",
+     "text": "A frog's tongue is long, pink and very sticky."
+    },
+    {
+     "label": "D",
+     "text": "The tongue snaps out and grabs the bug in a flash."
+    },
+    {
+     "label": "E",
+     "text": "The whole catch takes less than one second to finish."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 150,
+   "words": 35,
+   "labelled_words": 35,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A frog sits still at the pond."
+    },
+    {
+     "label": "B",
+     "text": "It waits for a bug to come close."
+    },
+    {
+     "label": "C",
+     "text": "Its tongue is long and sticky."
+    },
+    {
+     "label": "D",
+     "text": "The tongue snaps out and grabs the bug."
+    },
+    {
+     "label": "E",
+     "text": "The whole catch is very fast."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is a frog's tongue like?",
+    "a": "A frog's tongue is long, pink and very sticky."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. waiting) and paragraph D (i.e. the catch).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell how a frog catches a bug.",
+    "a": "It sits very still at the edge of the pond and waits for a bug to come close. Then its long sticky tongue snaps out and grabs the bug in less than one second."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "sticky: able to hold on to things that touch it.\nsnaps: moves out very fast and then back again.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between sitting still and catching a bug.",
+    "a": "The frog sits very still and waits for a bug to fly close enough, so the bug comes near without being scared away."
+   }
+  ],
+  "note": "Paragraph A and paragraph B are both about waiting. Ask why the writer gave waiting two paragraphs when the catch only gets one."
+ },
+ {
+  "id": "g1-3",
+  "grade": 1,
+  "n": 3,
+  "title": "The Crossing Guard",
+  "standard": "RI.1.1",
+  "standard_text": "Standard: Ask and answer questions about key details in a text.\n Spiral: RI.1.2 main topic · RI.1.4 word meaning · RI.1.7 illustrations · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 280,
+   "words": 54,
+   "labelled_words": 54,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A crossing guard stands at the corner by the school."
+    },
+    {
+     "label": "B",
+     "text": "She wears a bright vest so every driver can see her."
+    },
+    {
+     "label": "C",
+     "text": "She holds up a round sign that tells cars to stop."
+    },
+    {
+     "label": "D",
+     "text": "When the cars stop, she waves the children across the street."
+    },
+    {
+     "label": "E",
+     "text": "She stays in the road until the last child is safe."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 160,
+   "words": 37,
+   "labelled_words": 37,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A crossing guard stands by the school."
+    },
+    {
+     "label": "B",
+     "text": "She wears a bright vest so drivers see her."
+    },
+    {
+     "label": "C",
+     "text": "She holds up a sign that says stop."
+    },
+    {
+     "label": "D",
+     "text": "Then she waves the children across."
+    },
+    {
+     "label": "E",
+     "text": "She waits until every child is safe."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why does the crossing guard wear a bright vest?",
+    "a": "She wears a bright vest so every driver can see her."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the stop sign) and paragraph E (i.e. staying until the end).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what a crossing guard does.",
+    "a": "She stands at the corner by the school in a bright vest, holds up a sign that tells cars to stop, waves the children across, and stays in the road until the last child is safe."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "vest: a bright coat with no sleeves, worn so people can see you.\nguard: a person whose job is keeping others safe.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the sign and the children crossing.",
+    "a": "She holds up a round sign that tells cars to stop, and when the cars stop she waves the children across the street."
+   }
+  ],
+  "note": "The order is the lesson here: sign first, then cars stop, then children cross. Ask what would happen if those swapped."
+ },
+ {
+  "id": "g1-4",
+  "grade": 1,
+  "n": 4,
+  "title": "Why a Cat Purrs",
+  "standard": "RI.1.1",
+  "standard_text": "Standard: Ask and answer questions about key details in a text.\n Spiral: RI.1.2 main topic · RI.1.4 word meaning · RI.1.7 illustrations · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 300,
+   "words": 54,
+   "labelled_words": 54,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A cat purrs by shaking the muscles in its throat very fast."
+    },
+    {
+     "label": "B",
+     "text": "The shake happens when the cat breathes in and when it breathes out."
+    },
+    {
+     "label": "C",
+     "text": "That is why a purr does not stop between breaths."
+    },
+    {
+     "label": "D",
+     "text": "Most cats purr when they feel safe and warm."
+    },
+    {
+     "label": "E",
+     "text": "Some cats also purr when they are hurt or scared."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 180,
+   "words": 41,
+   "labelled_words": 41,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A cat purrs with the muscles in its throat."
+    },
+    {
+     "label": "B",
+     "text": "The shake happens when it breathes in and out."
+    },
+    {
+     "label": "C",
+     "text": "So a purr does not stop between breaths."
+    },
+    {
+     "label": "D",
+     "text": "Most cats purr when they feel safe."
+    },
+    {
+     "label": "E",
+     "text": "Some purr when they are hurt or scared."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What part of a cat makes the purr?",
+    "a": "A cat purrs by shaking the muscles in its throat very fast."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. why a purr never stops) and paragraph E (i.e. purring when hurt).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell how and why a cat purrs.",
+    "a": "A cat shakes the muscles in its throat very fast, both breathing in and breathing out, so the purr never stops between breaths. Most cats purr when they feel safe, and some purr when they are hurt or scared."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "muscle: a part inside the body that can pull and move.\npurr: the soft rumbling sound a cat makes.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between breathing and the sound of a purr.",
+    "a": "The shake happens when the cat breathes in and when it breathes out, which is why a purr does not stop between breaths."
+   }
+  ],
+  "note": "Paragraph E is the surprise and children will want to talk about it. The text says some cats purr when hurt; it does not say why, and that is worth admitting."
+ },
+ {
+  "id": "g1-5",
+  "grade": 1,
+  "n": 5,
+  "title": "The Mail Carrier's Bag",
+  "standard": "RI.1.1",
+  "standard_text": "Standard: Ask and answer questions about key details in a text.\n Spiral: RI.1.2 main topic · RI.1.4 word meaning · RI.1.7 illustrations · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 260,
+   "words": 57,
+   "labelled_words": 57,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A mail carrier sorts the mail into streets before she leaves."
+    },
+    {
+     "label": "B",
+     "text": "Each street goes in order, so the first house comes first."
+    },
+    {
+     "label": "C",
+     "text": "Her bag is heavy at the start and light at the end."
+    },
+    {
+     "label": "D",
+     "text": "She walks the same route every day and knows every dog."
+    },
+    {
+     "label": "E",
+     "text": "The letters at the bottom of the bag are the last stop."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 140,
+   "words": 42,
+   "labelled_words": 42,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A mail carrier sorts the mail into streets."
+    },
+    {
+     "label": "B",
+     "text": "Each street is in order, so the first house is first."
+    },
+    {
+     "label": "C",
+     "text": "Her bag is heavy at the start."
+    },
+    {
+     "label": "D",
+     "text": "She walks the same route every day."
+    },
+    {
+     "label": "E",
+     "text": "The mail at the bottom is the last stop."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does the mail carrier do before she leaves?",
+    "a": "She sorts the mail into streets before she leaves."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. the order) and paragraph E (i.e. the bottom of the bag).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell how a mail carrier gets the mail to the right houses.",
+    "a": "She sorts the mail into streets before she leaves, puts each street in order so the first house comes first, and walks the same route every day. The letters at the bottom of the bag are the last stop."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "sort: to put things into groups that belong together.\nroute: the same path a person takes each day.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between sorting the mail and the bag getting lighter.",
+    "a": "Each street goes in order so the first house comes first, which is why her bag is heavy at the start and light at the end."
+   }
+  ],
+  "note": "Children often miss that the bottom of the bag is the end of the route. It follows from paragraph B, so read those two together."
+ },
+ {
+  "id": "g1-6",
+  "grade": 1,
+  "n": 6,
+  "title": "Bees and Flowers",
+  "standard": "RI.1.2",
+  "standard_text": "Standard: Identify the main topic and retell key details of a text.\n Spiral: RI.1.1 key details · RI.1.3 connections · RI.1.7 illustrations · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 300,
+   "words": 52,
+   "labelled_words": 52,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A bee lands on a flower to drink the sweet nectar."
+    },
+    {
+     "label": "B",
+     "text": "Yellow dust called pollen sticks to the hairs on her legs."
+    },
+    {
+     "label": "C",
+     "text": "She flies to the next flower and some pollen rubs off."
+    },
+    {
+     "label": "D",
+     "text": "That pollen helps the flower make seeds."
+    },
+    {
+     "label": "E",
+     "text": "Bees get food and flowers get seeds, so both of them win."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 180,
+   "words": 35,
+   "labelled_words": 35,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A bee lands on a flower to drink."
+    },
+    {
+     "label": "B",
+     "text": "Yellow pollen sticks to her legs."
+    },
+    {
+     "label": "C",
+     "text": "She flies to the next flower."
+    },
+    {
+     "label": "D",
+     "text": "Some pollen rubs off and helps make seeds."
+    },
+    {
+     "label": "E",
+     "text": "Bees get food and flowers get seeds."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What sticks to the bee's legs?",
+    "a": "Yellow dust called pollen sticks to the hairs on her legs."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the next flower) and paragraph E (i.e. both of them win).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell the main topic of this text.",
+    "a": "Bees and flowers help each other. A bee drinks nectar and pollen sticks to her legs. She rubs some off on the next flower, and that pollen helps the flower make seeds."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "nectar: the sweet juice inside a flower.\npollen: the yellow dust a flower makes.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the bee's legs and the flower's seeds.",
+    "a": "Pollen sticks to the hairs on her legs, and when she flies to the next flower some pollen rubs off and helps that flower make seeds."
+   }
+  ],
+  "note": "The main topic is the trade, not the bee. Ask what the last paragraph adds that the first four do not."
+ },
+ {
+  "id": "g1-7",
+  "grade": 1,
+  "n": 7,
+  "title": "The Fire Station",
+  "standard": "RI.1.2",
+  "standard_text": "Standard: Identify the main topic and retell key details of a text.\n Spiral: RI.1.1 key details · RI.1.3 connections · RI.1.7 illustrations · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 290,
+   "words": 54,
+   "labelled_words": 54,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The fire station is open all day and all night."
+    },
+    {
+     "label": "B",
+     "text": "The truck is backed in so it can drive straight out."
+    },
+    {
+     "label": "C",
+     "text": "Boots and coats wait by the truck with the pants already open."
+    },
+    {
+     "label": "D",
+     "text": "A firefighter can step in and pull them up in seconds."
+    },
+    {
+     "label": "E",
+     "text": "Every second saved is a second sooner at the fire."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 170,
+   "words": 34,
+   "labelled_words": 34,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The fire station is open all night."
+    },
+    {
+     "label": "B",
+     "text": "The truck is backed in so it can drive out."
+    },
+    {
+     "label": "C",
+     "text": "Boots and coats wait by the truck."
+    },
+    {
+     "label": "D",
+     "text": "A firefighter can step in fast."
+    },
+    {
+     "label": "E",
+     "text": "Every second saved helps."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why is the truck backed in?",
+    "a": "The truck is backed in so it can drive straight out."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the waiting boots) and paragraph E (i.e. seconds saved).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell the main topic of this text.",
+    "a": "A fire station is set up so firefighters can leave fast. The truck is backed in, the boots and coats wait by the truck with the pants open, and a firefighter can step in and pull them up in seconds."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "station: the building where fire trucks and firefighters stay.\nsecond: a very short piece of time.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the open pants and getting to the fire.",
+    "a": "The pants are already open so a firefighter can step in and pull them up in seconds, and every second saved is a second sooner at the fire."
+   }
+  ],
+  "note": "Everything here is one idea in five parts: be fast. Ask the child to say the idea in their own words before retelling the details."
+ },
+ {
+  "id": "g1-8",
+  "grade": 1,
+  "n": 8,
+  "title": "How Rain Falls",
+  "standard": "RI.1.2",
+  "standard_text": "Standard: Identify the main topic and retell key details of a text.\n Spiral: RI.1.1 key details · RI.1.3 connections · RI.1.7 illustrations · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 310,
+   "words": 49,
+   "labelled_words": 49,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The sun warms a puddle and the water turns into vapor."
+    },
+    {
+     "label": "B",
+     "text": "The vapor rises up into the cold air above."
+    },
+    {
+     "label": "C",
+     "text": "Up high it cools and sticks to tiny bits of dust."
+    },
+    {
+     "label": "D",
+     "text": "Many drops join together until they are too heavy to float."
+    },
+    {
+     "label": "E",
+     "text": "Then they fall back down as rain."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 190,
+   "words": 35,
+   "labelled_words": 35,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The sun warms a puddle and the water rises."
+    },
+    {
+     "label": "B",
+     "text": "The vapor goes up into cold air."
+    },
+    {
+     "label": "C",
+     "text": "Up high it cools into tiny drops."
+    },
+    {
+     "label": "D",
+     "text": "Drops join until they are too heavy."
+    },
+    {
+     "label": "E",
+     "text": "Then they fall as rain."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What makes the drops fall?",
+    "a": "Many drops join together until they are too heavy to float."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph A (i.e. the sun and the puddle) and paragraph D (i.e. the drops joining).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell the main topic of this text.",
+    "a": "Water goes up and comes back down. The sun turns a puddle into vapor, the vapor rises into cold air and cools onto bits of dust, and the drops join until they are heavy enough to fall as rain."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "vapor: water that has turned into air you cannot see.\nfloat: to stay up without falling.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the sun and the rain.",
+    "a": "The sun warms a puddle and the water turns into vapor, and that vapor is what rises, cools and falls back down as rain."
+   }
+  ],
+  "note": "This is a circle and the text does not say so. Ask where the rain goes next, and whether paragraph A could come after paragraph E."
+ },
+ {
+  "id": "g1-9",
+  "grade": 1,
+  "n": 9,
+  "title": "The Library Card",
+  "standard": "RI.1.2",
+  "standard_text": "Standard: Identify the main topic and retell key details of a text.\n Spiral: RI.1.1 key details · RI.1.3 connections · RI.1.7 illustrations · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 270,
+   "words": 53,
+   "labelled_words": 53,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A library card has your name and a long number on it."
+    },
+    {
+     "label": "B",
+     "text": "The number tells the computer which books you took home."
+    },
+    {
+     "label": "C",
+     "text": "You may keep a book for three weeks."
+    },
+    {
+     "label": "D",
+     "text": "A card is free, and the books you borrow are free too."
+    },
+    {
+     "label": "E",
+     "text": "When you bring a book back, someone else can read it."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 150,
+   "words": 44,
+   "labelled_words": 44,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A library card has your name and a number."
+    },
+    {
+     "label": "B",
+     "text": "The number tells the computer what you took."
+    },
+    {
+     "label": "C",
+     "text": "You may keep a book for three weeks."
+    },
+    {
+     "label": "D",
+     "text": "The card is free and the books are free."
+    },
+    {
+     "label": "E",
+     "text": "When you bring it back, someone else can read it."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "How long may you keep a book?",
+    "a": "You may keep a book for three weeks."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. the number) and paragraph E (i.e. bringing a book back).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell the main topic of this text.",
+    "a": "A library card lets you borrow books for free. It has your name and a number that tells the computer which books you took, you may keep a book for three weeks, and when you bring it back someone else can read it."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "borrow: to take something for a while and then give it back.\nfree: costing no money.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between bringing a book back and other readers.",
+    "a": "When you bring a book back, someone else can read it."
+   }
+  ],
+  "note": "Paragraph E is the point of the whole system and it comes last. Ask why the writer saved it for the end."
+ },
+ {
+  "id": "g1-10",
+  "grade": 1,
+  "n": 10,
+  "title": "A Seed Grows",
+  "standard": "RI.1.2",
+  "standard_text": "Standard: Identify the main topic and retell key details of a text.\n Spiral: RI.1.1 key details · RI.1.3 connections · RI.1.7 illustrations · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 280,
+   "words": 52,
+   "labelled_words": 52,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A seed holds a tiny plant and a packed lunch for it."
+    },
+    {
+     "label": "B",
+     "text": "Water makes the hard coat swell until it cracks open."
+    },
+    {
+     "label": "C",
+     "text": "A root goes down first, before anything goes up."
+    },
+    {
+     "label": "D",
+     "text": "Then a green shoot pushes up toward the light."
+    },
+    {
+     "label": "E",
+     "text": "Once the first leaves open, the plant can make its own food."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 160,
+   "words": 36,
+   "labelled_words": 36,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A seed holds a tiny plant and its food."
+    },
+    {
+     "label": "B",
+     "text": "Water makes the hard coat crack open."
+    },
+    {
+     "label": "C",
+     "text": "A root goes down first."
+    },
+    {
+     "label": "D",
+     "text": "Then a green shoot pushes up."
+    },
+    {
+     "label": "E",
+     "text": "When leaves open, the plant makes its own food."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What goes out of the seed first?",
+    "a": "A root goes down first, before anything goes up."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph A (i.e. the packed lunch) and paragraph E (i.e. making its own food).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell the main topic of this text.",
+    "a": "A seed grows in order. It holds a tiny plant and food for it, water cracks the coat open, a root goes down first, a shoot pushes up, and once the leaves open the plant makes its own food."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "root: the part of a plant that grows down into the soil.\nshoot: the new green stem that pushes up.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the packed lunch and the first leaves.",
+    "a": "A seed holds a packed lunch for the tiny plant, and once the first leaves open the plant can make its own food instead."
+   }
+  ],
+  "note": "Paragraph A and paragraph E are a pair: food that came with the seed, then food the plant makes. The three middle paragraphs sit between them in order."
+ },
+ {
+  "id": "g1-11",
+  "grade": 1,
+  "n": 11,
+  "title": "The Sun and the Puddle",
+  "standard": "RI.1.3",
+  "standard_text": "Standard: Describe the connection between two individuals, events, ideas, or pieces of information in a text.\n Spiral: RI.1.1 key details · RI.1.2 main topic · RI.1.8 reasons · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 260,
+   "words": 50,
+   "labelled_words": 50,
+   "paras": [
+    {
+     "label": "A",
+     "text": "On Monday the rain left a big puddle on the path."
+    },
+    {
+     "label": "B",
+     "text": "By Tuesday the sun was out all morning."
+    },
+    {
+     "label": "C",
+     "text": "By lunch the puddle was only a damp ring."
+    },
+    {
+     "label": "D",
+     "text": "The sun turned the water into a vapor you cannot see."
+    },
+    {
+     "label": "E",
+     "text": "But a puddle in the shade was still there on Wednesday."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 140,
+   "words": 35,
+   "labelled_words": 35,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Rain left a big puddle on the path."
+    },
+    {
+     "label": "B",
+     "text": "The sun came out all morning."
+    },
+    {
+     "label": "C",
+     "text": "By lunch the puddle was small."
+    },
+    {
+     "label": "D",
+     "text": "The sun turned the water into vapor."
+    },
+    {
+     "label": "E",
+     "text": "A puddle in the shade was still there."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What happened to the puddle in the shade?",
+    "a": "A puddle in the shade was still there on Wednesday."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. the sun) and paragraph E (i.e. the shade).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what this text is about.",
+    "a": "The sun dried a puddle. Rain left a big puddle, the sun was out all morning, and by lunch it was only a damp ring. A puddle in the shade was still there the next day."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "damp: a little bit wet.\nshade: a place the sun does not reach.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the sun and the puddle drying.",
+    "a": "The sun was out all morning and turned the water into vapor you cannot see, so by lunch the puddle was only a damp ring."
+   }
+  ],
+  "note": "The shade puddle is the proof and it comes last. Ask the child what it shows that paragraphs A to D do not."
+ },
+ {
+  "id": "g1-12",
+  "grade": 1,
+  "n": 12,
+  "title": "The Bell and the Line",
+  "standard": "RI.1.3",
+  "standard_text": "Standard: Describe the connection between two individuals, events, ideas, or pieces of information in a text.\n Spiral: RI.1.1 key details · RI.1.2 main topic · RI.1.8 reasons · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 250,
+   "words": 51,
+   "labelled_words": 51,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The bell rings at the end of recess every day."
+    },
+    {
+     "label": "B",
+     "text": "When it rings, the children stop playing and walk to the line."
+    },
+    {
+     "label": "C",
+     "text": "The line forms on the yellow paint by the door."
+    },
+    {
+     "label": "D",
+     "text": "A teacher counts the children before the line goes in."
+    },
+    {
+     "label": "E",
+     "text": "The bell is the start of all of it."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 130,
+   "words": 35,
+   "labelled_words": 35,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The bell rings at the end of recess."
+    },
+    {
+     "label": "B",
+     "text": "The children stop playing and walk to the line."
+    },
+    {
+     "label": "C",
+     "text": "The line forms on the yellow paint."
+    },
+    {
+     "label": "D",
+     "text": "A teacher counts the children."
+    },
+    {
+     "label": "E",
+     "text": "The bell starts all of it."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Where does the line form?",
+    "a": "The line forms on the yellow paint by the door."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. walking to the line) and paragraph D (i.e. the counting).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what happens after the bell rings.",
+    "a": "The bell rings at the end of recess, the children stop playing and walk to the line on the yellow paint, and a teacher counts them before the line goes in."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "recess: the time outside for playing.\nform: to come together into a shape, like a line.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the bell and the children lining up.",
+    "a": "When the bell rings, the children stop playing and walk to the line, so the bell is the start of all of it."
+   }
+  ],
+  "note": "Paragraph E names the connection outright. Cover it and see whether the child can say it before reading it."
+ },
+ {
+  "id": "g1-13",
+  "grade": 1,
+  "n": 13,
+  "title": "Why the Beach Changes",
+  "standard": "RI.1.3",
+  "standard_text": "Standard: Describe the connection between two individuals, events, ideas, or pieces of information in a text.\n Spiral: RI.1.1 key details · RI.1.2 main topic · RI.1.8 reasons · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 320,
+   "words": 49,
+   "labelled_words": 49,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Early in the morning the beach is wide and flat."
+    },
+    {
+     "label": "B",
+     "text": "By afternoon the water has come far up the sand."
+    },
+    {
+     "label": "C",
+     "text": "The moon pulls on the ocean as the Earth turns."
+    },
+    {
+     "label": "D",
+     "text": "That pull makes the water rise and fall twice every day."
+    },
+    {
+     "label": "E",
+     "text": "The wide beach comes back again by night."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 200,
+   "words": 36,
+   "labelled_words": 36,
+   "paras": [
+    {
+     "label": "A",
+     "text": "In the morning the beach is wide."
+    },
+    {
+     "label": "B",
+     "text": "By afternoon the water comes up the sand."
+    },
+    {
+     "label": "C",
+     "text": "The moon pulls on the ocean."
+    },
+    {
+     "label": "D",
+     "text": "The water rises and falls twice a day."
+    },
+    {
+     "label": "E",
+     "text": "The wide beach comes back by night."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "How many times a day does the water rise and fall?",
+    "a": "That pull makes the water rise and fall twice a day."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the moon) and paragraph E (i.e. night).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell why the beach changes.",
+    "a": "The moon pulls on the ocean as the Earth turns, and that pull makes the water rise and fall twice a day. So a beach that is wide in the morning is covered by afternoon and wide again by night."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "pull: to draw something toward you.\nocean: the very large body of salt water.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the moon and the water on the sand.",
+    "a": "The moon pulls on the ocean as the Earth turns, and that pull makes the water rise and fall twice a day."
+   }
+  ],
+  "note": "The cause is invisible and far away, which is hard at this age. Keep the child on what they can see in paragraphs A, B and E first."
+ },
+ {
+  "id": "g1-14",
+  "grade": 1,
+  "n": 14,
+  "title": "The Farmer and the Market",
+  "standard": "RI.1.3",
+  "standard_text": "Standard: Describe the connection between two individuals, events, ideas, or pieces of information in a text.\n Spiral: RI.1.1 key details · RI.1.2 main topic · RI.1.8 reasons · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 290,
+   "words": 50,
+   "labelled_words": 50,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A farmer picks beans early, while the air is still cool."
+    },
+    {
+     "label": "B",
+     "text": "Cool beans stay crisp longer than warm ones do."
+    },
+    {
+     "label": "C",
+     "text": "She packs them in boxes and drives to the market."
+    },
+    {
+     "label": "D",
+     "text": "By eight o'clock her table is full and the doors open."
+    },
+    {
+     "label": "E",
+     "text": "Beans picked the day before would already be soft."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 170,
+   "words": 36,
+   "labelled_words": 36,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A farmer picks beans early while it is cool."
+    },
+    {
+     "label": "B",
+     "text": "Cool beans stay crisp longer than warm ones."
+    },
+    {
+     "label": "C",
+     "text": "She packs them and drives to the market."
+    },
+    {
+     "label": "D",
+     "text": "By eight her table is full."
+    },
+    {
+     "label": "E",
+     "text": "Older beans would be soft."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why does the farmer pick beans early?",
+    "a": "Cool beans stay crisp longer than warm ones do."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. why cool matters) and paragraph E (i.e. older beans).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell why the farmer picks early.",
+    "a": "She picks beans early while the air is still cool, because cool beans stay crisp longer than warm ones. She packs them and drives to the market, and by eight o'clock her table is full."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "crisp: firm and fresh, so it snaps.\nmarket: a place where people sell food.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the cool morning air and the beans on the table.",
+    "a": "She picks beans early while the air is still cool, because cool beans stay crisp longer than warm ones do."
+   }
+  ],
+  "note": "Paragraph E is the comparison that makes the reason land. Read B and E together."
+ },
+ {
+  "id": "g1-15",
+  "grade": 1,
+  "n": 15,
+  "title": "The Fly and the Web",
+  "standard": "RI.1.3",
+  "standard_text": "Standard: Describe the connection between two individuals, events, ideas, or pieces of information in a text.\n Spiral: RI.1.1 key details · RI.1.2 main topic · RI.1.8 reasons · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 300,
+   "words": 53,
+   "labelled_words": 53,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A spider's web has sticky threads and plain ones mixed together."
+    },
+    {
+     "label": "B",
+     "text": "The spider walks only on the plain threads, so it never sticks."
+    },
+    {
+     "label": "C",
+     "text": "A fly cannot tell the two kinds apart."
+    },
+    {
+     "label": "D",
+     "text": "When a fly hits a sticky thread, the whole web shakes."
+    },
+    {
+     "label": "E",
+     "text": "The spider feels the shake and knows just where to go."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 180,
+   "words": 40,
+   "labelled_words": 40,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A web has sticky threads and plain ones."
+    },
+    {
+     "label": "B",
+     "text": "The spider walks only on the plain ones."
+    },
+    {
+     "label": "C",
+     "text": "A fly cannot tell them apart."
+    },
+    {
+     "label": "D",
+     "text": "When a fly hits a sticky thread, the web shakes."
+    },
+    {
+     "label": "E",
+     "text": "The spider feels the shake and goes there."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why does the spider not stick to its own web?",
+    "a": "The spider walks only on the plain threads, so it never sticks."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the fly not knowing) and paragraph D (i.e. the shake).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell how a spider knows a fly is caught.",
+    "a": "A web has sticky threads and plain ones mixed together, and the spider walks only on the plain ones. A fly cannot tell them apart, so when it hits a sticky thread the whole web shakes and the spider feels it."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "thread: one thin line of a web.\nplain: not sticky, just ordinary.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the shaking web and the spider finding the fly.",
+    "a": "When a fly hits a sticky thread the whole web shakes, and the spider feels the shake and knows just where to go."
+   }
+  ],
+  "note": "Two connections sit in this text: why the spider is safe, and how it gets the news. Ask the child for both."
+ }
+]

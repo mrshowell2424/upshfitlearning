@@ -1,0 +1,460 @@
+/**
+ * Grade 1 informational articles: 50 of them, five for each of RI.1.1 to
+ * RI.1.10, alternating science and social studies.
+ *
+ * Held to the bands in scripts/reading-article-plan.json: four or five
+ * paragraphs, a higher version at LL 230-350 and a lower one at LL 100-220
+ * with the same lettered paragraphs, five questions of the five named kinds.
+ *
+ * At this level a paragraph is one or two sentences, so the lettered
+ * paragraphs do most of the work of the standard: a child can point at B and
+ * say what B is for. Several of the RI.1 standards are about text features
+ * and pictures, and those articles take the feature as their subject, because
+ * a first grader cannot analyse a caption they have not been shown.
+ *
+ *   bun run scripts/articles/g1.src.mjs && bun run scripts/merge-articles.mjs
+ *   bun run scripts/check-articles.mjs
+ */
+import { grade } from "./build.mjs";
+
+const STD = {
+  1: {
+    text: "Ask and answer questions about key details in a text.",
+    spiral: "RI.1.2 main topic · RI.1.4 word meaning · RI.1.7 illustrations · RI.1.10 comprehension",
+  },
+  2: {
+    text: "Identify the main topic and retell key details of a text.",
+    spiral: "RI.1.1 key details · RI.1.3 connections · RI.1.7 illustrations · RI.1.10 comprehension",
+  },
+  3: {
+    text: "Describe the connection between two individuals, events, ideas, or pieces of information in a text.",
+    spiral: "RI.1.1 key details · RI.1.2 main topic · RI.1.8 reasons · RI.1.10 comprehension",
+  },
+  4: {
+    text: "Ask and answer questions to help determine or clarify the meaning of words and phrases in a text.",
+    spiral: "RI.1.1 key details · RI.1.2 main topic · RI.1.5 text features · RI.1.10 comprehension",
+  },
+  5: {
+    text: "Know and use various text features, such as headings, a table of contents, a glossary and icons, to locate key facts or information in a text.",
+    spiral: "RI.1.2 main topic · RI.1.4 word meaning · RI.1.6 pictures and words · RI.1.10 comprehension",
+  },
+  6: {
+    text: "Distinguish between information provided by pictures or other illustrations and information provided by the words in a text.",
+    spiral: "RI.1.5 text features · RI.1.7 illustrations · RI.1.9 comparing texts · RI.1.10 comprehension",
+  },
+  7: {
+    text: "Use the illustrations and details in a text to describe its key ideas.",
+    spiral: "RI.1.1 key details · RI.1.2 main topic · RI.1.6 pictures and words · RI.1.10 comprehension",
+  },
+  8: {
+    text: "Identify the reasons an author gives to support points in a text.",
+    spiral: "RI.1.1 key details · RI.1.3 connections · RI.1.9 comparing texts · RI.1.10 comprehension",
+  },
+  9: {
+    text: "Identify basic similarities in and differences between two texts on the same topic.",
+    spiral: "RI.1.2 main topic · RI.1.6 pictures and words · RI.1.8 reasons · RI.1.10 comprehension",
+  },
+  10: {
+    text: "With prompting and support, read informational texts appropriately complex for grade 1.",
+    spiral: "RI.1.1 key details · RI.1.2 main topic · RI.1.4 word meaning · RI.1.8 reasons",
+  },
+};
+
+const ARTICLES = [
+  // ---------------------------------------------------------------- RI.1.1
+  {
+    t: "How a Robin Builds a Nest",
+    std: 1, hi: 290, lo: 170,
+    H: [
+      "A robin needs a safe place to lay her eggs.",
+      "She finds a strong fork where a tree branch splits in two.",
+      "She brings grass and small twigs to the fork, one piece at a time.",
+      "She packs wet mud inside the bowl and presses it down with her chest.",
+      "The mud dries hard and holds the whole nest together.",
+    ],
+    L: [
+      "A robin needs a safe place for her eggs.",
+      "She finds a fork in a tree branch.",
+      "She brings grass and twigs to the fork.",
+      "She packs wet mud inside the nest.",
+      "The mud dries hard and holds it together.",
+    ],
+    q: [
+      { k: "main idea/detail", q: "Where does the robin build her nest?", a: "She finds a strong fork where a tree branch splits in two." },
+      { k: "paragraph focus", q: "Paragraph C (i.e. grass and twigs) and paragraph D (i.e. the wet mud)." },
+      { k: "summarize", q: "Tell how a robin builds a nest.", a: "She finds a fork in a tree branch, brings grass and twigs one piece at a time, packs wet mud inside, and the mud dries hard and holds the nest together." },
+      { k: "vocabulary", q: "fork: the place where a branch splits in two.\ntwig: a very small, thin stick." },
+      { k: "connection", q: "Describe the connection between the mud and the nest staying together.", a: "She packs wet mud inside the bowl, and the mud dries hard and holds the whole nest together." },
+    ],
+    note: "RI.1.1 is asking and answering from details, so every answer is printed. Have the child put a finger on the sentence before saying it out loud.",
+  },
+  {
+    t: "What a Frog Catches",
+    std: 1, hi: 270, lo: 150,
+    H: [
+      "A frog sits very still at the edge of the pond.",
+      "It waits for a bug to fly close enough.",
+      "A frog's tongue is long, pink and very sticky.",
+      "The tongue snaps out and grabs the bug in a flash.",
+      "The whole catch takes less than one second to finish.",
+    ],
+    L: [
+      "A frog sits still at the pond.",
+      "It waits for a bug to come close.",
+      "Its tongue is long and sticky.",
+      "The tongue snaps out and grabs the bug.",
+      "The whole catch is very fast.",
+    ],
+    q: [
+      { k: "main idea/detail", q: "What is a frog's tongue like?", a: "A frog's tongue is long, pink and very sticky." },
+      { k: "paragraph focus", q: "Paragraph B (i.e. waiting) and paragraph D (i.e. the catch)." },
+      { k: "summarize", q: "Tell how a frog catches a bug.", a: "It sits very still at the edge of the pond and waits for a bug to come close. Then its long sticky tongue snaps out and grabs the bug in less than one second." },
+      { k: "vocabulary", q: "sticky: able to hold on to things that touch it.\nsnaps: moves out very fast and then back again." },
+      { k: "connection", q: "Describe the connection between sitting still and catching a bug.", a: "The frog sits very still and waits for a bug to fly close enough, so the bug comes near without being scared away." },
+    ],
+    note: "Paragraph A and paragraph B are both about waiting. Ask why the writer gave waiting two paragraphs when the catch only gets one.",
+  },
+  {
+    t: "The Crossing Guard",
+    std: 1, hi: 280, lo: 160,
+    H: [
+      "A crossing guard stands at the corner by the school.",
+      "She wears a bright vest so every driver can see her.",
+      "She holds up a round sign that tells cars to stop.",
+      "When the cars stop, she waves the children across the street.",
+      "She stays in the road until the last child is safe.",
+    ],
+    L: [
+      "A crossing guard stands by the school.",
+      "She wears a bright vest so drivers see her.",
+      "She holds up a sign that says stop.",
+      "Then she waves the children across.",
+      "She waits until every child is safe.",
+    ],
+    q: [
+      { k: "main idea/detail", q: "Why does the crossing guard wear a bright vest?", a: "She wears a bright vest so every driver can see her." },
+      { k: "paragraph focus", q: "Paragraph C (i.e. the stop sign) and paragraph E (i.e. staying until the end)." },
+      { k: "summarize", q: "Tell what a crossing guard does.", a: "She stands at the corner by the school in a bright vest, holds up a sign that tells cars to stop, waves the children across, and stays in the road until the last child is safe." },
+      { k: "vocabulary", q: "vest: a bright coat with no sleeves, worn so people can see you.\nguard: a person whose job is keeping others safe." },
+      { k: "connection", q: "Describe the connection between the sign and the children crossing.", a: "She holds up a round sign that tells cars to stop, and when the cars stop she waves the children across the street." },
+    ],
+    note: "The order is the lesson here: sign first, then cars stop, then children cross. Ask what would happen if those swapped.",
+  },
+  {
+    t: "Why a Cat Purrs",
+    std: 1, hi: 300, lo: 180,
+    H: [
+      "A cat purrs by shaking the muscles in its throat very fast.",
+      "The shake happens when the cat breathes in and when it breathes out.",
+      "That is why a purr does not stop between breaths.",
+      "Most cats purr when they feel safe and warm.",
+      "Some cats also purr when they are hurt or scared.",
+    ],
+    L: [
+      "A cat purrs with the muscles in its throat.",
+      "The shake happens when it breathes in and out.",
+      "So a purr does not stop between breaths.",
+      "Most cats purr when they feel safe.",
+      "Some purr when they are hurt or scared.",
+    ],
+    q: [
+      { k: "main idea/detail", q: "What part of a cat makes the purr?", a: "A cat purrs by shaking the muscles in its throat very fast." },
+      { k: "paragraph focus", q: "Paragraph C (i.e. why a purr never stops) and paragraph E (i.e. purring when hurt)." },
+      { k: "summarize", q: "Tell how and why a cat purrs.", a: "A cat shakes the muscles in its throat very fast, both breathing in and breathing out, so the purr never stops between breaths. Most cats purr when they feel safe, and some purr when they are hurt or scared." },
+      { k: "vocabulary", q: "muscle: a part inside the body that can pull and move.\npurr: the soft rumbling sound a cat makes." },
+      { k: "connection", q: "Describe the connection between breathing and the sound of a purr.", a: "The shake happens when the cat breathes in and when it breathes out, which is why a purr does not stop between breaths." },
+    ],
+    note: "Paragraph E is the surprise and children will want to talk about it. The text says some cats purr when hurt; it does not say why, and that is worth admitting.",
+  },
+  {
+    t: "The Mail Carrier's Bag",
+    std: 1, hi: 260, lo: 140,
+    H: [
+      "A mail carrier sorts the mail into streets before she leaves.",
+      "Each street goes in order, so the first house comes first.",
+      "Her bag is heavy at the start and light at the end.",
+      "She walks the same route every day and knows every dog.",
+      "The letters at the bottom of the bag are the last stop.",
+    ],
+    L: [
+      "A mail carrier sorts the mail into streets.",
+      "Each street is in order, so the first house is first.",
+      "Her bag is heavy at the start.",
+      "She walks the same route every day.",
+      "The mail at the bottom is the last stop.",
+    ],
+    q: [
+      { k: "main idea/detail", q: "What does the mail carrier do before she leaves?", a: "She sorts the mail into streets before she leaves." },
+      { k: "paragraph focus", q: "Paragraph B (i.e. the order) and paragraph E (i.e. the bottom of the bag)." },
+      { k: "summarize", q: "Tell how a mail carrier gets the mail to the right houses.", a: "She sorts the mail into streets before she leaves, puts each street in order so the first house comes first, and walks the same route every day. The letters at the bottom of the bag are the last stop." },
+      { k: "vocabulary", q: "sort: to put things into groups that belong together.\nroute: the same path a person takes each day." },
+      { k: "connection", q: "Describe the connection between sorting the mail and the bag getting lighter.", a: "Each street goes in order so the first house comes first, which is why her bag is heavy at the start and light at the end." },
+    ],
+    note: "Children often miss that the bottom of the bag is the end of the route. It follows from paragraph B, so read those two together.",
+  },
+  // ---------------------------------------------------------------- RI.1.2
+  {
+    t: "Bees and Flowers",
+    std: 2, hi: 300, lo: 180,
+    H: [
+      "A bee lands on a flower to drink the sweet nectar.",
+      "Yellow dust called pollen sticks to the hairs on her legs.",
+      "She flies to the next flower and some pollen rubs off.",
+      "That pollen helps the flower make seeds.",
+      "Bees get food and flowers get seeds, so both of them win.",
+    ],
+    L: [
+      "A bee lands on a flower to drink.",
+      "Yellow pollen sticks to her legs.",
+      "She flies to the next flower.",
+      "Some pollen rubs off and helps make seeds.",
+      "Bees get food and flowers get seeds.",
+    ],
+    q: [
+      { k: "main idea/detail", q: "What sticks to the bee's legs?", a: "Yellow dust called pollen sticks to the hairs on her legs." },
+      { k: "paragraph focus", q: "Paragraph C (i.e. the next flower) and paragraph E (i.e. both of them win)." },
+      { k: "summarize", q: "Tell the main topic of this text.", a: "Bees and flowers help each other. A bee drinks nectar and pollen sticks to her legs. She rubs some off on the next flower, and that pollen helps the flower make seeds." },
+      { k: "vocabulary", q: "nectar: the sweet juice inside a flower.\npollen: the yellow dust a flower makes." },
+      { k: "connection", q: "Describe the connection between the bee's legs and the flower's seeds.", a: "Pollen sticks to the hairs on her legs, and when she flies to the next flower some pollen rubs off and helps that flower make seeds." },
+    ],
+    note: "The main topic is the trade, not the bee. Ask what the last paragraph adds that the first four do not.",
+  },
+  {
+    t: "The Fire Station",
+    std: 2, hi: 290, lo: 170,
+    H: [
+      "The fire station is open all day and all night.",
+      "The truck is backed in so it can drive straight out.",
+      "Boots and coats wait by the truck with the pants already open.",
+      "A firefighter can step in and pull them up in seconds.",
+      "Every second saved is a second sooner at the fire.",
+    ],
+    L: [
+      "The fire station is open all night.",
+      "The truck is backed in so it can drive out.",
+      "Boots and coats wait by the truck.",
+      "A firefighter can step in fast.",
+      "Every second saved helps.",
+    ],
+    q: [
+      { k: "main idea/detail", q: "Why is the truck backed in?", a: "The truck is backed in so it can drive straight out." },
+      { k: "paragraph focus", q: "Paragraph C (i.e. the waiting boots) and paragraph E (i.e. seconds saved)." },
+      { k: "summarize", q: "Tell the main topic of this text.", a: "A fire station is set up so firefighters can leave fast. The truck is backed in, the boots and coats wait by the truck with the pants open, and a firefighter can step in and pull them up in seconds." },
+      { k: "vocabulary", q: "station: the building where fire trucks and firefighters stay.\nsecond: a very short piece of time." },
+      { k: "connection", q: "Describe the connection between the open pants and getting to the fire.", a: "The pants are already open so a firefighter can step in and pull them up in seconds, and every second saved is a second sooner at the fire." },
+    ],
+    note: "Everything here is one idea in five parts: be fast. Ask the child to say the idea in their own words before retelling the details.",
+  },
+  {
+    t: "How Rain Falls",
+    std: 2, hi: 310, lo: 190,
+    H: [
+      "The sun warms a puddle and the water turns into vapor.",
+      "The vapor rises up into the cold air above.",
+      "Up high it cools and sticks to tiny bits of dust.",
+      "Many drops join together until they are too heavy to float.",
+      "Then they fall back down as rain.",
+    ],
+    L: [
+      "The sun warms a puddle and the water rises.",
+      "The vapor goes up into cold air.",
+      "Up high it cools into tiny drops.",
+      "Drops join until they are too heavy.",
+      "Then they fall as rain.",
+    ],
+    q: [
+      { k: "main idea/detail", q: "What makes the drops fall?", a: "Many drops join together until they are too heavy to float." },
+      { k: "paragraph focus", q: "Paragraph A (i.e. the sun and the puddle) and paragraph D (i.e. the drops joining)." },
+      { k: "summarize", q: "Tell the main topic of this text.", a: "Water goes up and comes back down. The sun turns a puddle into vapor, the vapor rises into cold air and cools onto bits of dust, and the drops join until they are heavy enough to fall as rain." },
+      { k: "vocabulary", q: "vapor: water that has turned into air you cannot see.\nfloat: to stay up without falling." },
+      { k: "connection", q: "Describe the connection between the sun and the rain.", a: "The sun warms a puddle and the water turns into vapor, and that vapor is what rises, cools and falls back down as rain." },
+    ],
+    note: "This is a circle and the text does not say so. Ask where the rain goes next, and whether paragraph A could come after paragraph E.",
+  },
+  {
+    t: "The Library Card",
+    std: 2, hi: 270, lo: 150,
+    H: [
+      "A library card has your name and a long number on it.",
+      "The number tells the computer which books you took home.",
+      "You may keep a book for three weeks.",
+      "A card is free, and the books you borrow are free too.",
+      "When you bring a book back, someone else can read it.",
+    ],
+    L: [
+      "A library card has your name and a number.",
+      "The number tells the computer what you took.",
+      "You may keep a book for three weeks.",
+      "The card is free and the books are free.",
+      "When you bring it back, someone else can read it.",
+    ],
+    q: [
+      { k: "main idea/detail", q: "How long may you keep a book?", a: "You may keep a book for three weeks." },
+      { k: "paragraph focus", q: "Paragraph B (i.e. the number) and paragraph E (i.e. bringing a book back)." },
+      { k: "summarize", q: "Tell the main topic of this text.", a: "A library card lets you borrow books for free. It has your name and a number that tells the computer which books you took, you may keep a book for three weeks, and when you bring it back someone else can read it." },
+      { k: "vocabulary", q: "borrow: to take something for a while and then give it back.\nfree: costing no money." },
+      { k: "connection", q: "Describe the connection between bringing a book back and other readers.", a: "When you bring a book back, someone else can read it." },
+    ],
+    note: "Paragraph E is the point of the whole system and it comes last. Ask why the writer saved it for the end.",
+  },
+  {
+    t: "A Seed Grows",
+    std: 2, hi: 280, lo: 160,
+    H: [
+      "A seed holds a tiny plant and a packed lunch for it.",
+      "Water makes the hard coat swell until it cracks open.",
+      "A root goes down first, before anything goes up.",
+      "Then a green shoot pushes up toward the light.",
+      "Once the first leaves open, the plant can make its own food.",
+    ],
+    L: [
+      "A seed holds a tiny plant and its food.",
+      "Water makes the hard coat crack open.",
+      "A root goes down first.",
+      "Then a green shoot pushes up.",
+      "When leaves open, the plant makes its own food.",
+    ],
+    q: [
+      { k: "main idea/detail", q: "What goes out of the seed first?", a: "A root goes down first, before anything goes up." },
+      { k: "paragraph focus", q: "Paragraph A (i.e. the packed lunch) and paragraph E (i.e. making its own food)." },
+      { k: "summarize", q: "Tell the main topic of this text.", a: "A seed grows in order. It holds a tiny plant and food for it, water cracks the coat open, a root goes down first, a shoot pushes up, and once the leaves open the plant makes its own food." },
+      { k: "vocabulary", q: "root: the part of a plant that grows down into the soil.\nshoot: the new green stem that pushes up." },
+      { k: "connection", q: "Describe the connection between the packed lunch and the first leaves.", a: "A seed holds a packed lunch for the tiny plant, and once the first leaves open the plant can make its own food instead." },
+    ],
+    note: "Paragraph A and paragraph E are a pair: food that came with the seed, then food the plant makes. The three middle paragraphs sit between them in order.",
+  },
+  // ---------------------------------------------------------------- RI.1.3
+  {
+    t: "The Sun and the Puddle",
+    std: 3, hi: 260, lo: 140,
+    H: [
+      "On Monday the rain left a big puddle on the path.",
+      "By Tuesday the sun was out all morning.",
+      "By lunch the puddle was only a damp ring.",
+      "The sun turned the water into a vapor you cannot see.",
+      "But a puddle in the shade was still there on Wednesday.",
+    ],
+    L: [
+      "Rain left a big puddle on the path.",
+      "The sun came out all morning.",
+      "By lunch the puddle was small.",
+      "The sun turned the water into vapor.",
+      "A puddle in the shade was still there.",
+    ],
+    q: [
+      { k: "main idea/detail", q: "What happened to the puddle in the shade?", a: "A puddle in the shade was still there on Wednesday." },
+      { k: "paragraph focus", q: "Paragraph B (i.e. the sun) and paragraph E (i.e. the shade)." },
+      { k: "summarize", q: "Tell what this text is about.", a: "The sun dried a puddle. Rain left a big puddle, the sun was out all morning, and by lunch it was only a damp ring. A puddle in the shade was still there the next day." },
+      { k: "vocabulary", q: "damp: a little bit wet.\nshade: a place the sun does not reach." },
+      { k: "connection", q: "Describe the connection between the sun and the puddle drying.", a: "The sun was out all morning and turned the water into vapor you cannot see, so by lunch the puddle was only a damp ring." },
+    ],
+    note: "The shade puddle is the proof and it comes last. Ask the child what it shows that paragraphs A to D do not.",
+  },
+  {
+    t: "The Bell and the Line",
+    std: 3, hi: 250, lo: 130,
+    H: [
+      "The bell rings at the end of recess every day.",
+      "When it rings, the children stop playing and walk to the line.",
+      "The line forms on the yellow paint by the door.",
+      "A teacher counts the children before the line goes in.",
+      "The bell is the start of all of it.",
+    ],
+    L: [
+      "The bell rings at the end of recess.",
+      "The children stop playing and walk to the line.",
+      "The line forms on the yellow paint.",
+      "A teacher counts the children.",
+      "The bell starts all of it.",
+    ],
+    q: [
+      { k: "main idea/detail", q: "Where does the line form?", a: "The line forms on the yellow paint by the door." },
+      { k: "paragraph focus", q: "Paragraph B (i.e. walking to the line) and paragraph D (i.e. the counting)." },
+      { k: "summarize", q: "Tell what happens after the bell rings.", a: "The bell rings at the end of recess, the children stop playing and walk to the line on the yellow paint, and a teacher counts them before the line goes in." },
+      { k: "vocabulary", q: "recess: the time outside for playing.\nform: to come together into a shape, like a line." },
+      { k: "connection", q: "Describe the connection between the bell and the children lining up.", a: "When the bell rings, the children stop playing and walk to the line, so the bell is the start of all of it." },
+    ],
+    note: "Paragraph E names the connection outright. Cover it and see whether the child can say it before reading it.",
+  },
+  {
+    t: "Why the Beach Changes",
+    std: 3, hi: 320, lo: 200,
+    H: [
+      "Early in the morning the beach is wide and flat.",
+      "By afternoon the water has come far up the sand.",
+      "The moon pulls on the ocean as the Earth turns.",
+      "That pull makes the water rise and fall twice every day.",
+      "The wide beach comes back again by night.",
+    ],
+    L: [
+      "In the morning the beach is wide.",
+      "By afternoon the water comes up the sand.",
+      "The moon pulls on the ocean.",
+      "The water rises and falls twice a day.",
+      "The wide beach comes back by night.",
+    ],
+    q: [
+      { k: "main idea/detail", q: "How many times a day does the water rise and fall?", a: "That pull makes the water rise and fall twice a day." },
+      { k: "paragraph focus", q: "Paragraph C (i.e. the moon) and paragraph E (i.e. night)." },
+      { k: "summarize", q: "Tell why the beach changes.", a: "The moon pulls on the ocean as the Earth turns, and that pull makes the water rise and fall twice a day. So a beach that is wide in the morning is covered by afternoon and wide again by night." },
+      { k: "vocabulary", q: "pull: to draw something toward you.\nocean: the very large body of salt water." },
+      { k: "connection", q: "Describe the connection between the moon and the water on the sand.", a: "The moon pulls on the ocean as the Earth turns, and that pull makes the water rise and fall twice a day." },
+    ],
+    note: "The cause is invisible and far away, which is hard at this age. Keep the child on what they can see in paragraphs A, B and E first.",
+  },
+  {
+    t: "The Farmer and the Market",
+    std: 3, hi: 290, lo: 170,
+    H: [
+      "A farmer picks beans early, while the air is still cool.",
+      "Cool beans stay crisp longer than warm ones do.",
+      "She packs them in boxes and drives to the market.",
+      "By eight o'clock her table is full and the doors open.",
+      "Beans picked the day before would already be soft.",
+    ],
+    L: [
+      "A farmer picks beans early while it is cool.",
+      "Cool beans stay crisp longer than warm ones.",
+      "She packs them and drives to the market.",
+      "By eight her table is full.",
+      "Older beans would be soft.",
+    ],
+    q: [
+      { k: "main idea/detail", q: "Why does the farmer pick beans early?", a: "Cool beans stay crisp longer than warm ones do." },
+      { k: "paragraph focus", q: "Paragraph B (i.e. why cool matters) and paragraph E (i.e. older beans)." },
+      { k: "summarize", q: "Tell why the farmer picks early.", a: "She picks beans early while the air is still cool, because cool beans stay crisp longer than warm ones. She packs them and drives to the market, and by eight o'clock her table is full." },
+      { k: "vocabulary", q: "crisp: firm and fresh, so it snaps.\nmarket: a place where people sell food." },
+      { k: "connection", q: "Describe the connection between the cool morning air and the beans on the table.", a: "She picks beans early while the air is still cool, because cool beans stay crisp longer than warm ones do." },
+    ],
+    note: "Paragraph E is the comparison that makes the reason land. Read B and E together.",
+  },
+  {
+    t: "The Fly and the Web",
+    std: 3, hi: 300, lo: 180,
+    H: [
+      "A spider's web has sticky threads and plain ones mixed together.",
+      "The spider walks only on the plain threads, so it never sticks.",
+      "A fly cannot tell the two kinds apart.",
+      "When a fly hits a sticky thread, the whole web shakes.",
+      "The spider feels the shake and knows just where to go.",
+    ],
+    L: [
+      "A web has sticky threads and plain ones.",
+      "The spider walks only on the plain ones.",
+      "A fly cannot tell them apart.",
+      "When a fly hits a sticky thread, the web shakes.",
+      "The spider feels the shake and goes there.",
+    ],
+    q: [
+      { k: "main idea/detail", q: "Why does the spider not stick to its own web?", a: "The spider walks only on the plain threads, so it never sticks." },
+      { k: "paragraph focus", q: "Paragraph C (i.e. the fly not knowing) and paragraph D (i.e. the shake)." },
+      { k: "summarize", q: "Tell how a spider knows a fly is caught.", a: "A web has sticky threads and plain ones mixed together, and the spider walks only on the plain ones. A fly cannot tell them apart, so when it hits a sticky thread the whole web shakes and the spider feels it." },
+      { k: "vocabulary", q: "thread: one thin line of a web.\nplain: not sticky, just ordinary." },
+      { k: "connection", q: "Describe the connection between the shaking web and the spider finding the fly.", a: "When a fly hits a sticky thread the whole web shakes, and the spider feels the shake and knows just where to go." },
+    ],
+    note: "Two connections sit in this text: why the spider is safe, and how it gets the news. Ask the child for both.",
+  },
+];
+
+grade(1, STD, ARTICLES);
+console.log(`grade 1: ${ARTICLES.length} articles written`);
