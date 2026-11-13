@@ -12,6 +12,7 @@ import ARTICLES from "@/../scripts/reading-articles.json";
 import SIGHT_WORDS from "@/../scripts/reading-sight-words.json";
 import SKILL_SPLITS from "@/../scripts/reading-skill-splits.json";
 import THREADS from "@/../scripts/reading-threads.json";
+import SENTENCE_LAB from "@/../scripts/reading-sentence-lab.json";
 
 /**
  * The way into the reading programme.
@@ -90,6 +91,9 @@ const FEATURE_STANDARDS = [
 const STRAND_COUNTS: Record<string, number> = {
   mysteries: MYSTERY_COUNT,
   threads: THREADS.threads.length,
+  // Articles that actually yield a pair, not all 350 -- a count a teacher
+  // can click through to and find empty is worse than no count.
+  sentence: SENTENCE_LAB.items.filter((i) => i.combine.length || i.expand.length).length,
   words: ARTICLES.articles.reduce((n, a) => {
     const v = a.questions.find((q) => q.kind === "vocabulary");
     return n + (v ? String(v.q).split("\n").filter((x) => x.includes(":")).length : 0);

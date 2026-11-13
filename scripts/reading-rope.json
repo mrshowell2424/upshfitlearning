@@ -54,8 +54,15 @@
       "half": "language",
       "name": "Language structure",
       "what": "Syntax and grammar: how a sentence is put together, and what the parts of it are doing.",
-      "have": [],
-      "gap": "Nothing yet, but not for want of material. Every article was written at two Lexiles, and the difference between the two is almost entirely sentence structure — 349 of the 350 pairs carry longer sentences on the higher side, and 271 carry fewer of them. That is 350 ready-made sentence-combining lessons sitting in the content already."
+      "have": [
+        {
+          "label": "Sentence Lab",
+          "href": "/sentence-lab",
+          "count": "sentence",
+          "blurb": "Combine, expand, and because/but/so — on sentences from an article they have read, with the answer key taken from the article's own harder version."
+        }
+      ],
+      "gap": "Nine minutes a day, and it needed no new sentences: the harder Lexile version of each article already is the answer key. What is still missing is sentence types and punctuation, which would be new content rather than a new view of content we have."
     },
     {
       "key": "reasoning",
