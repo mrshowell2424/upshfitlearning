@@ -16,6 +16,7 @@ const navItems = [
   // is a project, and a teacher looking for project work should not have to
   // know which of two tabs we filed it under. /design-thinking still works.
   { label: "PBL", href: "/pbl" },
+  { label: "Behavior", href: "/behavior" },
   { label: "Courses", href: "/courses" },
   { label: "Teacher's Lounge", href: "/lounge" },
   { label: "About", href: "/about" },
