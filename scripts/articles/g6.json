@@ -4286,5 +4286,1115 @@
    }
   ],
   "note": "Paragraph F is the move most students miss. Doing nothing is an option on the table and neither filing argues against it."
+ },
+ {
+  "id": "g6-41",
+  "grade": 6,
+  "n": 41,
+  "title": "Shackleton in Two Books",
+  "standard": "RI.6.9",
+  "standard_text": "Standard: Compare and contrast one author's presentation of events with that of another, for example a memoir written by and a biography on the same person.\n Spiral: RI.6.2 central idea · RI.6.6 point of view · RI.6.8 claims and evidence · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1040,
+   "words": 212,
+   "labelled_words": 212,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Shackleton wrote South himself, two years after the Endurance was crushed and his crew came home alive. A biographer writing eighty years later had his diary, his crew's diaries, and the ship's log."
+    },
+    {
+     "label": "B",
+     "text": "The memoir is written forward. Shackleton tells it as he lived it, so the reader does not know whether the boat journey will work, because at the time he did not either."
+    },
+    {
+     "label": "C",
+     "text": "The biography is written backward from the ending. It can say in chapter one that everyone survives, and it spends its pages on how, which is a different kind of suspense."
+    },
+    {
+     "label": "D",
+     "text": "They disagree about people. Shackleton's book is generous to nearly everyone aboard; the crew's own diaries name the men who would not work, and the biography uses them."
+    },
+    {
+     "label": "E",
+     "text": "They also disagree about Shackleton. He describes decisions as obvious in hindsight. The biography, holding the log beside the memoir, shows two of them taken late and against advice."
+    },
+    {
+     "label": "F",
+     "text": "The memoir has something the biography cannot get. It carries what it felt like to be cold for eighteen months, and no amount of research reproduces that."
+    },
+    {
+     "label": "G",
+     "text": "So neither is the true one. The memoir is the only account by somebody who was there and the least able to see itself; the biography sees more and was not there."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 820,
+   "words": 180,
+   "labelled_words": 180,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Shackleton wrote South himself. He wrote it two years after the Endurance was crushed. A biographer writing eighty years later had his diary, the crew's diaries, and the ship's log."
+    },
+    {
+     "label": "B",
+     "text": "The memoir is written forward. Shackleton tells it as he lived it. The reader does not know whether the boat journey will work. At the time he did not know either."
+    },
+    {
+     "label": "C",
+     "text": "The biography is written backward from the ending. It can say in chapter one that everyone survives. It spends its pages on how."
+    },
+    {
+     "label": "D",
+     "text": "They disagree about people. Shackleton is generous to nearly everyone aboard. The crew's diaries name the men who would not work. The biography uses them."
+    },
+    {
+     "label": "E",
+     "text": "They also disagree about Shackleton. He calls his decisions obvious. The biography holds the log beside the memoir. Two decisions were taken late and against advice."
+    },
+    {
+     "label": "F",
+     "text": "The memoir has something the biography cannot get. It carries what it felt like to be cold for eighteen months."
+    },
+    {
+     "label": "G",
+     "text": "So neither is the true one. The memoir is the only account by somebody who was there. The biography sees more and was not there."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What did the biographer have that Shackleton did not?",
+    "a": "The biographer had his diary, his crew's diaries, and the ship's log, eighty years later."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. written forward) and paragraph C (i.e. written backward from the ending).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how the memoir and the biography differ.",
+    "a": "The memoir is written forward, so the reader does not know whether the boat journey will work, and it carries what being cold for eighteen months felt like. The biography is written backward from a known ending, uses the crew's diaries and the log, and shows decisions the memoir calls obvious as taken late and against advice."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "memoir: an account written by somebody who was there.\nhindsight: knowing how a thing turned out, which changes how it gets told.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between knowing the ending and the kind of suspense a book can have.",
+    "a": "The biography can say in chapter one that everyone survives and spends its pages on how, which is a different kind of suspense from the memoir, where the reader does not know whether the boat journey will work."
+   }
+  ],
+  "note": "Paragraph G is the balance to protect, i.e. the memoir is \"the least able to see itself\" and the biography \"was not there.\" Students will want one of them to win."
+ },
+ {
+  "id": "g6-42",
+  "grade": 6,
+  "n": 42,
+  "title": "Two Accounts of the Triangle Fire",
+  "standard": "RI.6.9",
+  "standard_text": "Standard: Compare and contrast one author's presentation of events with that of another, for example a memoir written by and a biography on the same person.\n Spiral: RI.6.2 central idea · RI.6.6 point of view · RI.6.8 claims and evidence · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1050,
+   "words": 212,
+   "labelled_words": 212,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The Triangle Shirtwaist factory burned on 25 March 1911 and 146 workers died. A New York newspaper described it the next morning. A union pamphlet described it three weeks later."
+    },
+    {
+     "label": "B",
+     "text": "The newspaper counts and locates. It gives the floor, the time the alarm came in, the number of bodies on the sidewalk, and the height the ladders reached, which was six floors short."
+    },
+    {
+     "label": "C",
+     "text": "It calls the fire a disaster and a tragedy. Both words say that something terrible happened and neither says that anybody decided anything."
+    },
+    {
+     "label": "D",
+     "text": "The pamphlet uses different nouns. It calls the deaths a crime, names the two owners, and prints the fact that the ninth floor door opened inward and was locked."
+    },
+    {
+     "label": "E",
+     "text": "The locked door is in both. The newspaper has it in paragraph eleven as a detail of the scene; the pamphlet opens with it, because for the pamphlet it is the argument."
+    },
+    {
+     "label": "F",
+     "text": "They also end differently. The newspaper ends with the funerals. The pamphlet ends with a demand for factory inspection laws, which is what the fire eventually produced."
+    },
+    {
+     "label": "G",
+     "text": "Both are accurate about the door. What differs is whether the door is something that was true of the building or something somebody did, and that is a choice about nouns before it is a choice about facts."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 830,
+   "words": 175,
+   "labelled_words": 175,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The Triangle Shirtwaist factory burned in March 1911. One hundred forty-six workers died. A newspaper described it the next morning. A union pamphlet described it three weeks later."
+    },
+    {
+     "label": "B",
+     "text": "The newspaper counts and locates. It gives the floor and the time of the alarm. It gives the number of bodies on the sidewalk. It says the ladders reached six floors short."
+    },
+    {
+     "label": "C",
+     "text": "It calls the fire a disaster and a tragedy. Both words say something terrible happened. Neither says anybody decided anything."
+    },
+    {
+     "label": "D",
+     "text": "The pamphlet uses different nouns. It calls the deaths a crime. It names the two owners. It prints that the ninth floor door opened inward and was locked."
+    },
+    {
+     "label": "E",
+     "text": "The locked door is in both. The newspaper has it in paragraph eleven. The pamphlet opens with it. For the pamphlet the door is the argument."
+    },
+    {
+     "label": "F",
+     "text": "They also end differently. The newspaper ends with the funerals. The pamphlet ends with a demand for factory inspection laws."
+    },
+    {
+     "label": "G",
+     "text": "Both are accurate about the door. They differ on whether it was a fact about the building or something somebody did."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What detail appears in both accounts?",
+    "a": "The ninth floor door opened inward and was locked appears in both, in paragraph eleven of the newspaper and at the opening of the pamphlet."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. disaster and tragedy) and paragraph D (i.e. crime).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how the two accounts of the fire differ.",
+    "a": "The newspaper counts and locates, giving the floor, the alarm time, the bodies and the ladders that reached six floors short, and calls the fire a disaster. The pamphlet calls the deaths a crime, names the owners, and opens with the locked door that the newspaper put in paragraph eleven. One ends with funerals and the other with a demand for inspection laws."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "pamphlet: a short printed argument published to persuade.\nnoun choice: whether an event is called a disaster or a crime, which assigns responsibility or withholds it.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between where the locked door appears and what each account is doing.",
+    "a": "The newspaper has it in paragraph eleven as a detail of the scene and the pamphlet opens with it, because for the pamphlet it is the argument."
+   }
+  ],
+  "note": "Paragraph G is the whole lesson, i.e. the difference is \"a choice about nouns before it is a choice about facts.\" Both accounts are accurate."
+ },
+ {
+  "id": "g6-43",
+  "grade": 6,
+  "n": 43,
+  "title": "Two Accounts of Vesuvius",
+  "standard": "RI.6.9",
+  "standard_text": "Standard: Compare and contrast one author's presentation of events with that of another, for example a memoir written by and a biography on the same person.\n Spiral: RI.6.2 central idea · RI.6.6 point of view · RI.6.8 claims and evidence · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1030,
+   "words": 208,
+   "labelled_words": 208,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Pliny the Younger was seventeen when Vesuvius buried Pompeii, and he wrote about it twenty-five years later in two letters to a historian. A modern volcanology paper describes the same eruption from the deposits."
+    },
+    {
+     "label": "B",
+     "text": "Pliny gives the shape. He writes that the cloud rose like an umbrella pine, a trunk going up and then spreading, which is the most useful sentence anybody wrote about that day."
+    },
+    {
+     "label": "C",
+     "text": "He gives the sequence too. First the cloud, then ash and pumice falling, then the dark, then something that came down the mountain fast and killed his uncle on the shore."
+    },
+    {
+     "label": "D",
+     "text": "The paper gives the numbers. The column reached about thirty-three kilometers, the fall deposit is graded by size, and the fast thing that came down is named a pyroclastic flow and timed by layer."
+    },
+    {
+     "label": "E",
+     "text": "Pliny's distances are unreliable and his feelings are not. He describes people who believed the world was ending, and no deposit records that."
+    },
+    {
+     "label": "F",
+     "text": "The paper cannot get the timing of the morning without him. Its layers give order and rough duration; his letters give the hour the cloud appeared, because he watched it."
+    },
+    {
+     "label": "G",
+     "text": "So volcanologists still cite a seventeen-year-old. This eruption style is called Plinian, after a boy who got the shape right and the distances wrong."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 810,
+   "words": 170,
+   "labelled_words": 170,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Pliny the Younger was seventeen when Vesuvius buried Pompeii. He wrote about it twenty-five years later in two letters. A modern paper describes the same eruption from the deposits."
+    },
+    {
+     "label": "B",
+     "text": "Pliny gives the shape. He writes that the cloud rose like an umbrella pine. A trunk went up and then spread out."
+    },
+    {
+     "label": "C",
+     "text": "He gives the sequence too. First the cloud. Then ash and pumice falling. Then the dark. Then something came down the mountain fast and killed his uncle."
+    },
+    {
+     "label": "D",
+     "text": "The paper gives the numbers. The column reached about thirty-three kilometers. The fall deposit is sorted by size. The fast thing is named a pyroclastic flow."
+    },
+    {
+     "label": "E",
+     "text": "Pliny's distances are unreliable and his feelings are not. He describes people who believed the world was ending. No deposit records that."
+    },
+    {
+     "label": "F",
+     "text": "The paper cannot time the morning without him. Its layers give order and rough duration. His letters give the hour, because he watched it."
+    },
+    {
+     "label": "G",
+     "text": "So volcanologists still cite a seventeen-year-old. This eruption style is called Plinian, after a boy who got the shape right."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What did Pliny get right that the deposits cannot show?",
+    "a": "He gives the shape of the cloud, rising like an umbrella pine, and the hour it appeared, because he watched it."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. the paper's numbers) and paragraph F (i.e. what the paper needs him for).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what each account of Vesuvius contributes.",
+    "a": "Pliny, writing twenty-five years later, gives the shape of the cloud, the order of events and the hour it began, along with how people behaved. The modern paper gives the column height, the graded deposits and the name for the flow that killed his uncle, but it cannot time the morning without him."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "pyroclastic flow: the fast, hot cloud of gas and rock that runs down a volcano.\nPlinian: the name for this eruption style, taken from Pliny's description.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between Pliny being there and what volcanologists still use him for.",
+    "a": "His letters give the hour the cloud appeared because he watched it, and the paper's layers give only order and rough duration, so the timing of the morning comes from him."
+   }
+  ],
+  "note": "Paragraph G makes the point without a lecture, i.e. the style is named after \"a boy who got the shape right and the distances wrong.\" Both halves matter."
+ },
+ {
+  "id": "g6-44",
+  "grade": 6,
+  "n": 44,
+  "title": "Two Accounts of the Challenger Decision",
+  "standard": "RI.6.9",
+  "standard_text": "Standard: Compare and contrast one author's presentation of events with that of another, for example a memoir written by and a biography on the same person.\n Spiral: RI.6.2 central idea · RI.6.6 point of view · RI.6.8 claims and evidence · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1050,
+   "words": 203,
+   "labelled_words": 203,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The Challenger broke apart in January 1986. A presidential commission reported that June. One of the engineers who had argued against the launch published his own account years later."
+    },
+    {
+     "label": "B",
+     "text": "The commission report is organized by cause. It establishes that a rubber O-ring failed in the cold, documents the temperature, and reconstructs the decision meeting from transcripts and testimony."
+    },
+    {
+     "label": "C",
+     "text": "The engineer's account is organized by the night before. He writes what he said, who stopped listening, and the moment his own management asked him to take off his engineering hat."
+    },
+    {
+     "label": "D",
+     "text": "Both include that sentence. The report quotes it as evidence about the decision process; the memoir gives it as the thing he has thought about ever since."
+    },
+    {
+     "label": "E",
+     "text": "They disagree in emphasis, not in fact. The report distributes responsibility across a structure; the memoir names the room and the people in it, because he was in the room."
+    },
+    {
+     "label": "F",
+     "text": "The report can do something he cannot. It compares every previous flight's O-ring damage against temperature and shows a pattern nobody had plotted before the launch."
+    },
+    {
+     "label": "G",
+     "text": "He can do something it cannot. The report explains how a sound objection failed to stop a launch; the memoir explains what it is like to make one and be overruled."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 830,
+   "words": 178,
+   "labelled_words": 178,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The Challenger broke apart in January 1986. A presidential commission reported that June. One engineer who had argued against the launch published his own account years later."
+    },
+    {
+     "label": "B",
+     "text": "The report is organized by cause. It shows that a rubber O-ring failed in the cold. It documents the temperature. It rebuilds the decision meeting from transcripts."
+    },
+    {
+     "label": "C",
+     "text": "The engineer's account is organized by the night before. He writes what he said. He writes who stopped listening. His management asked him to take off his engineering hat."
+    },
+    {
+     "label": "D",
+     "text": "Both include that sentence. The report quotes it as evidence about the process. The memoir gives it as the thing he has thought about ever since."
+    },
+    {
+     "label": "E",
+     "text": "They differ in emphasis, not in fact. The report spreads responsibility across a structure. The memoir names the room and the people in it."
+    },
+    {
+     "label": "F",
+     "text": "The report can do something he cannot. It compares every past flight's O-ring damage against temperature. It shows a pattern nobody had plotted."
+    },
+    {
+     "label": "G",
+     "text": "He can do something it cannot. The report explains how a sound objection failed. The memoir explains what being overruled is like."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What pattern did the commission report show?",
+    "a": "It compares every previous flight's O-ring damage against temperature and shows a pattern nobody had plotted before the launch."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. the sentence both include) and paragraph F (i.e. what the report can do).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how the two accounts of the Challenger decision differ.",
+    "a": "The commission report is organized by cause, establishing the O-ring failure in the cold and rebuilding the meeting from transcripts, and it plots past O-ring damage against temperature. The engineer's account is organized by the night before, naming who stopped listening, and it conveys what being overruled is like. They differ in emphasis rather than fact."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "O-ring: the rubber seal whose failure in the cold destroyed the shuttle.\nemphasis: which parts of the same set of facts an account puts first.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between being in the room and what the memoir can tell you.",
+    "a": "The memoir names the room and the people in it because he was in the room, so it can explain what it is like to make a sound objection and be overruled."
+   }
+  ],
+  "note": "Paragraph E is the fair reading, i.e. they \"disagree in emphasis, not in fact.\" RI.6.9 is not about catching one account lying."
+ },
+ {
+  "id": "g6-45",
+  "grade": 6,
+  "n": 45,
+  "title": "Two Accounts of the Jamestown Winter",
+  "standard": "RI.6.9",
+  "standard_text": "Standard: Compare and contrast one author's presentation of events with that of another, for example a memoir written by and a biography on the same person.\n Spiral: RI.6.2 central idea · RI.6.6 point of view · RI.6.8 claims and evidence · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1040,
+   "words": 202,
+   "labelled_words": 202,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The winter of 1609 killed about three-quarters of the people at Jamestown. Two men who were there wrote about it, and they were enemies."
+    },
+    {
+     "label": "B",
+     "text": "John Smith had been forced out of the colony before the winter began. His account blames the men who replaced him, and he was not present for the season he describes."
+    },
+    {
+     "label": "C",
+     "text": "George Percy was the one who replaced him. His account blames the supply ships, the weather and the siege, and he was present and in charge."
+    },
+    {
+     "label": "D",
+     "text": "Each names the other's failing and omits his own. Smith does not dwell on the fact that he left; Percy does not dwell on the fact that he commanded."
+    },
+    {
+     "label": "E",
+     "text": "They agree on what happened to the food, and the agreement is the useful part. Where two hostile accounts match, neither is likely to have invented it."
+    },
+    {
+     "label": "F",
+     "text": "Archaeology has since settled some of it. Cut marks on the bones of a fourteen-year-old girl, found in a cellar in 2012, confirmed something both men reported and neither wanted to dwell on."
+    },
+    {
+     "label": "G",
+     "text": "So the two accounts are not two versions to choose between. Read together, their disagreements show where each man was exposed, and their agreements show what is most likely to be true."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 820,
+   "words": 168,
+   "labelled_words": 168,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The winter of 1609 killed about three-quarters of the people at Jamestown. Two men who were there wrote about it. They were enemies."
+    },
+    {
+     "label": "B",
+     "text": "John Smith had been forced out before the winter began. His account blames the men who replaced him. He was not there for the season he describes."
+    },
+    {
+     "label": "C",
+     "text": "George Percy was the man who replaced him. His account blames the supply ships and the weather. He was there and he was in charge."
+    },
+    {
+     "label": "D",
+     "text": "Each names the other's failing and leaves out his own. Smith does not dwell on leaving. Percy does not dwell on commanding."
+    },
+    {
+     "label": "E",
+     "text": "They agree about what happened to the food. That agreement is the useful part. Where two enemies match, neither likely invented it."
+    },
+    {
+     "label": "F",
+     "text": "Archaeology has settled some of it. Cut marks on a girl's bones were found in a cellar in 2012. They confirmed something both men reported."
+    },
+    {
+     "label": "G",
+     "text": "So these are not two versions to choose between. Their disagreements show where each man was exposed. Their agreements show what is likely true."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why was Smith not present for the winter he describes?",
+    "a": "He had been forced out of the colony before the winter began."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. what each man omits) and paragraph E (i.e. where they agree).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize why the two Jamestown accounts should be read together.",
+    "a": "Smith blames the men who replaced him and was not there; Percy blames the ships and weather and was in charge. Each names the other's failing and omits his own, so their disagreements show where each was exposed. Where two hostile accounts agree, as they do about the food, neither is likely to have invented it."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "omit: to leave something out of an account.\ncorroboration: when separate sources agree, which makes a claim more likely to be true.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the two men being enemies and the value of what they agree on.",
+    "a": "Where two hostile accounts match, neither is likely to have invented it, so their agreement about the food is the useful part."
+   }
+  ],
+  "note": "Paragraph F is strong material and is best handled plainly: the cut marks confirm starvation cannibalism, which both men reported. Preview it before assigning."
+ },
+ {
+  "id": "g6-46",
+  "grade": 6,
+  "n": 46,
+  "title": "The Whale Fall",
+  "standard": "RI.6.10",
+  "standard_text": "Standard: By the end of the year, read and comprehend literary nonfiction in the grades 6-8 text complexity band proficiently, with scaffolding as needed at the high end of the range.\n Spiral: RI.6.1 citing evidence · RI.6.2 central idea · RI.6.4 word meaning · RI.6.8 claims and evidence\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1050,
+   "words": 234,
+   "labelled_words": 234,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A gray whale weighs thirty tons and lives in water that is mostly empty of food at depth. When it dies and sinks, it delivers more carbon to one spot on the sea floor than that spot would otherwise receive in two thousand years."
+    },
+    {
+     "label": "B",
+     "text": "The first stage is fast. Hagfish, sleeper sharks and amphipods strip the soft tissue, and a carcass can lose most of its flesh within months, with scavengers arriving from kilometers away."
+    },
+    {
+     "label": "C",
+     "text": "Then the bones become the habitat. A whale skeleton is about sixty percent lipid by weight, which is to say the bones themselves are full of fat, and that fat is the slow fuel."
+    },
+    {
+     "label": "D",
+     "text": "Bacteria break the lipids down and release sulfide. Other bacteria live on the sulfide, and animals live on those bacteria — the same chemistry that runs a hydrothermal vent, running on a skeleton instead of a volcano."
+    },
+    {
+     "label": "E",
+     "text": "This stage lasts decades. A single skeleton can support a community for fifty years or more, which makes a whale fall less an event than an island."
+    },
+    {
+     "label": "F",
+     "text": "Some species are found nowhere else. Osedax, the bone-eating worm, has no mouth or gut and bores into whale bone with acid, which is a way of living that requires dead whales to exist."
+    },
+    {
+     "label": "G",
+     "text": "Which raises an uncomfortable arithmetic. Commercial whaling removed most of the large whales from the ocean, and the islands those species depend on became much further apart."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 830,
+   "words": 190,
+   "labelled_words": 190,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A gray whale weighs thirty tons. The deep water it lives above has little food. When the whale dies and sinks, it delivers more carbon to one spot than that spot gets in two thousand years."
+    },
+    {
+     "label": "B",
+     "text": "The first stage is fast. Hagfish, sharks and amphipods strip the soft tissue. A body can lose most of its flesh within months. Scavengers arrive from kilometers away."
+    },
+    {
+     "label": "C",
+     "text": "Then the bones become the habitat. A whale skeleton is about sixty percent fat by weight. The bones themselves are full of it. That fat is the slow fuel."
+    },
+    {
+     "label": "D",
+     "text": "Bacteria break the fat down and release sulfide. Other bacteria live on the sulfide. Animals live on those bacteria. The same chemistry runs a hydrothermal vent."
+    },
+    {
+     "label": "E",
+     "text": "This stage lasts decades. One skeleton can feed a community for fifty years. A whale fall is less an event than an island."
+    },
+    {
+     "label": "F",
+     "text": "Some species live nowhere else. The bone-eating worm Osedax has no mouth or gut. It bores into whale bone with acid. It needs dead whales to exist."
+    },
+    {
+     "label": "G",
+     "text": "That raises an uncomfortable arithmetic. Whaling removed most of the large whales. The islands those species need became much further apart."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why do a whale's bones last so long as a habitat?",
+    "a": "A whale skeleton is about sixty percent lipid by weight, so the bones themselves are full of fat, and that fat is the slow fuel."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. the fast first stage) and paragraph E (i.e. the decades that follow).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what happens when a whale dies and sinks.",
+    "a": "Scavengers strip the soft tissue within months, then the bones become the habitat because they are about sixty percent lipid. Bacteria break the fat down into sulfide and a community lives on that chemistry for fifty years or more, including species such as Osedax that exist nowhere else."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "lipid: fat, which in a whale skeleton is stored in the bone itself.\nhydrothermal vent: a sea floor opening whose chemistry supports life without sunlight.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between whaling and the species that need whale falls.",
+    "a": "Commercial whaling removed most of the large whales from the ocean, so the islands those species depend on became much further apart."
+   }
+  ],
+  "note": "Paragraph G is the turn, and it is not sentimental: it is arithmetic about the distance between habitats. Let students reach it themselves."
+ },
+ {
+  "id": "g6-47",
+  "grade": 6,
+  "n": 47,
+  "title": "Mapping the Source of the Nile",
+  "standard": "RI.6.10",
+  "standard_text": "Standard: By the end of the year, read and comprehend literary nonfiction in the grades 6-8 text complexity band proficiently, with scaffolding as needed at the high end of the range.\n Spiral: RI.6.1 citing evidence · RI.6.2 central idea · RI.6.4 word meaning · RI.6.8 claims and evidence\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1040,
+   "words": 222,
+   "labelled_words": 222,
+   "paras": [
+    {
+     "label": "A",
+     "text": "For two thousand years European maps marked the source of the Nile as unknown, and the people who lived beside its headwaters knew perfectly well where the water came from."
+    },
+    {
+     "label": "B",
+     "text": "The question was never really geographic. It was a competition, and the prize was the name attached to the answer, which is why the expeditions of the 1850s are remembered as a quarrel."
+    },
+    {
+     "label": "C",
+     "text": "Burton and Speke traveled together and disagreed about what they found. Speke reached a lake in 1858, named it Victoria, and declared it the source. Burton said he had not proved it."
+    },
+    {
+     "label": "D",
+     "text": "Burton was right about the proof. Speke had seen one lake and had not followed the river out of it, which is the only way to show that a lake feeds a particular river."
+    },
+    {
+     "label": "E",
+     "text": "Speke was right about the lake. Later surveys confirmed that the Victoria Nile does flow out of it, though the furthest headwater turned out to be a stream in the Nyungwe forest, found in 2006."
+    },
+    {
+     "label": "F",
+     "text": "The local names were on the maps all along, under other spellings. Expedition journals record guides giving directions, distances and the names of lakes that the published maps then attributed to the expedition."
+    },
+    {
+     "label": "G",
+     "text": "So the discovery was a confirmation. What changed in 1858 was not where the Nile came from but which library held a paper saying so."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 820,
+   "words": 180,
+   "labelled_words": 180,
+   "paras": [
+    {
+     "label": "A",
+     "text": "For two thousand years European maps marked the source of the Nile as unknown. The people living beside its headwaters knew where the water came from."
+    },
+    {
+     "label": "B",
+     "text": "The question was never really geographic. It was a competition. The prize was the name attached to the answer. That is why the 1850s expeditions are remembered as a quarrel."
+    },
+    {
+     "label": "C",
+     "text": "Burton and Speke traveled together and disagreed. Speke reached a lake in 1858. He named it Victoria and called it the source. Burton said he had not proved it."
+    },
+    {
+     "label": "D",
+     "text": "Burton was right about the proof. Speke had seen one lake. He had not followed the river out of it. That is the only way to show a lake feeds a river."
+    },
+    {
+     "label": "E",
+     "text": "Speke was right about the lake. Later surveys confirmed the river flows out of it. The furthest headwater is a stream found in 2006."
+    },
+    {
+     "label": "F",
+     "text": "The local names were on the maps all along. Journals record guides giving directions and distances. The published maps credited the expedition instead."
+    },
+    {
+     "label": "G",
+     "text": "So the discovery was a confirmation. What changed was which library held a paper saying so."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why did Burton say Speke had not proved it?",
+    "a": "Speke had seen one lake and had not followed the river out of it, which is the only way to show that a lake feeds a particular river."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph E (i.e. what later surveys found) and paragraph F (i.e. the local names).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what was and was not settled in 1858.",
+    "a": "Speke reached a lake, named it Victoria and declared it the source without following the river out of it, so Burton was right that it was unproved and Speke was right about the lake. Later surveys confirmed the river flows from it, and the furthest headwater was not found until 2006. The people living there already knew."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "headwater: the furthest stream feeding a river system.\nsurvey: a careful measurement of land or water, as opposed to a sighting.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the guides' knowledge and what the published maps said.",
+    "a": "Expedition journals record guides giving directions, distances and the names of lakes, and the published maps then attributed those to the expedition."
+   }
+  ],
+  "note": "Paragraph G states the thesis flatly, i.e. what changed was \"which library held a paper saying so.\" Ask what the word discovery is doing in the title."
+ },
+ {
+  "id": "g6-48",
+  "grade": 6,
+  "n": 48,
+  "title": "How Elephants Talk Through the Ground",
+  "standard": "RI.6.10",
+  "standard_text": "Standard: By the end of the year, read and comprehend literary nonfiction in the grades 6-8 text complexity band proficiently, with scaffolding as needed at the high end of the range.\n Spiral: RI.6.1 citing evidence · RI.6.2 central idea · RI.6.4 word meaning · RI.6.8 claims and evidence\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1030,
+   "words": 225,
+   "labelled_words": 225,
+   "paras": [
+    {
+     "label": "A",
+     "text": "An elephant herd can coordinate across several kilometers of savanna without any sound a person standing nearby would hear. Much of what they say is below human hearing."
+    },
+    {
+     "label": "B",
+     "text": "The calls are infrasound, below about twenty hertz. Low frequencies carry further than high ones because they lose less energy to the air, which is why distant thunder is a rumble and never a crack."
+    },
+    {
+     "label": "C",
+     "text": "The sound also travels in the ground. A rumble sets up a surface wave in the soil, and that wave outruns the airborne one, arriving first and carrying further still."
+    },
+    {
+     "label": "D",
+     "text": "Elephants appear to read both. They have been observed freezing, leaning forward and pressing their feet flat, which is the posture for picking up vibration through bone rather than ear."
+    },
+    {
+     "label": "E",
+     "text": "The range depends on the air. Calls carry furthest in the hour after sunset, when a layer of cool air near the ground bends sound back down instead of letting it escape upward."
+    },
+    {
+     "label": "F",
+     "text": "This is why herds move at dusk. Researchers playing recordings have shown elephants responding to calls from two kilometers away in the evening and ignoring the same call at noon."
+    },
+    {
+     "label": "G",
+     "text": "It also explains a practical problem. Elephants can hear a truck, a seismic survey or a dam long before anybody assumes they can, and a reserve that is quiet to a visitor may not be quiet to an elephant."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 810,
+   "words": 197,
+   "labelled_words": 197,
+   "paras": [
+    {
+     "label": "A",
+     "text": "An elephant herd can coordinate across several kilometers of savanna. A person standing nearby would hear nothing. Much of what they say is below human hearing."
+    },
+    {
+     "label": "B",
+     "text": "The calls are infrasound, below about twenty hertz. Low sounds carry further than high ones. They lose less energy to the air. That is why distant thunder is a rumble."
+    },
+    {
+     "label": "C",
+     "text": "The sound also travels in the ground. A rumble sets up a wave in the soil. That wave outruns the one in the air. It arrives first and carries further."
+    },
+    {
+     "label": "D",
+     "text": "Elephants seem to read both. They have been seen freezing and leaning forward. They press their feet flat. That is the posture for feeling vibration through bone."
+    },
+    {
+     "label": "E",
+     "text": "The range depends on the air. Calls carry furthest in the hour after sunset. Cool air near the ground bends sound back down instead of letting it escape."
+    },
+    {
+     "label": "F",
+     "text": "This is why herds move at dusk. Played recordings reach elephants two kilometers away in the evening. The same call at noon is ignored."
+    },
+    {
+     "label": "G",
+     "text": "It also explains a practical problem. Elephants hear a truck or a dam long before we assume. A reserve that is quiet to a visitor may not be quiet to an elephant."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why does a low-frequency call carry further?",
+    "a": "Low frequencies lose less energy to the air than high ones, which is why distant thunder is a rumble and never a crack."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the wave in the ground) and paragraph E (i.e. the hour after sunset).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how elephants communicate over long distances.",
+    "a": "They call in infrasound below about twenty hertz, which loses less energy to the air and carries further, and the rumble also sets up a surface wave in the soil that arrives first. Elephants press their feet flat to read the vibration, and calls carry furthest after sunset when cool air bends sound back down."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "infrasound: sound below about twenty hertz, too low for human hearing.\nsurface wave: a vibration traveling through the ground rather than the air.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the time of day and how far a call reaches.",
+    "a": "Calls carry furthest in the hour after sunset, when a layer of cool air near the ground bends sound back down instead of letting it escape upward, and the same call is ignored at noon."
+   }
+  ],
+  "note": "Paragraph G is the one that transfers, i.e. \"a reserve that is quiet to a visitor may not be quiet to an elephant.\" It reframes the whole article."
+ },
+ {
+  "id": "g6-49",
+  "grade": 6,
+  "n": 49,
+  "title": "The Great Stink of London",
+  "standard": "RI.6.10",
+  "standard_text": "Standard: By the end of the year, read and comprehend literary nonfiction in the grades 6-8 text complexity band proficiently, with scaffolding as needed at the high end of the range.\n Spiral: RI.6.1 citing evidence · RI.6.2 central idea · RI.6.4 word meaning · RI.6.8 claims and evidence\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1050,
+   "words": 206,
+   "labelled_words": 206,
+   "paras": [
+    {
+     "label": "A",
+     "text": "In the summer of 1858 the Thames smelled so strongly that Parliament hung curtains soaked in chloride of lime over its river-facing windows, and then considered moving upstream."
+    },
+    {
+     "label": "B",
+     "text": "The cause was a reform. Flush toilets had spread through London in the previous twenty years, and every one of them emptied into a cesspool or a drain that ran, eventually, into the river."
+    },
+    {
+     "label": "C",
+     "text": "The river was also the water supply. Companies drew drinking water from the Thames at points downstream of the sewers, and cholera had killed tens of thousands in three epidemics."
+    },
+    {
+     "label": "D",
+     "text": "The accepted explanation was the smell itself. Miasma theory held that disease rose from foul air, which was wrong about the mechanism and happened to recommend the right action."
+    },
+    {
+     "label": "E",
+     "text": "John Snow had already shown otherwise. His 1854 map of cholera deaths around a Broad Street pump pointed at water, and the finding was largely set aside at the time."
+    },
+    {
+     "label": "F",
+     "text": "Parliament acted in eighteen days. It funded Joseph Bazalgette's sewer system, 1,100 miles of it, built to carry waste below the city and release it downstream of everybody."
+    },
+    {
+     "label": "G",
+     "text": "Bazalgette doubled the pipe diameter his own calculations called for, on the grounds that this would only be done once. Much of London still drains through it."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 830,
+   "words": 172,
+   "labelled_words": 172,
+   "paras": [
+    {
+     "label": "A",
+     "text": "In the summer of 1858 the Thames smelled so strongly that Parliament hung treated curtains over its river-facing windows. Then it considered moving upstream."
+    },
+    {
+     "label": "B",
+     "text": "The cause was a reform. Flush toilets had spread through London over twenty years. Every one of them emptied into a drain. The drains ran into the river."
+    },
+    {
+     "label": "C",
+     "text": "The river was also the water supply. Companies drew drinking water downstream of the sewers. Cholera had killed tens of thousands in three epidemics."
+    },
+    {
+     "label": "D",
+     "text": "People blamed the smell itself. Miasma theory said disease rose from foul air. That was wrong about the cause. It happened to recommend the right action."
+    },
+    {
+     "label": "E",
+     "text": "John Snow had already shown otherwise. His 1854 map of cholera deaths around a street pump pointed at water. The finding was largely set aside."
+    },
+    {
+     "label": "F",
+     "text": "Parliament acted in eighteen days. It funded Joseph Bazalgette's sewer system. It ran 1,100 miles and carried waste downstream of everybody."
+    },
+    {
+     "label": "G",
+     "text": "Bazalgette doubled the pipe width his calculations called for. He said it would only be done once. Much of London still drains through it."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What caused the Great Stink?",
+    "a": "Flush toilets had spread through London in the previous twenty years, and every one of them emptied into a cesspool or a drain that ran into the river."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. miasma theory) and paragraph E (i.e. John Snow's map).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize why Parliament finally built a sewer system.",
+    "a": "Flush toilets had been emptying into the Thames for twenty years while companies drew drinking water downstream of the sewers, and cholera had killed tens of thousands. The smell reached Parliament in 1858 and it funded Bazalgette's 1,100 miles of sewer in eighteen days, acting on a wrong theory that recommended the right thing."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "miasma: the discredited idea that disease rises from foul air.\ncesspool: a pit for waste, which in London drained toward the river.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between a wrong theory and the right action.",
+    "a": "Miasma theory held that disease rose from foul air, which was wrong about the mechanism and happened to recommend the right action."
+   }
+  ],
+  "note": "Paragraph D is the interesting one and students resist it: a false explanation produced a correct decision, while Snow was right and ignored."
+ },
+ {
+  "id": "g6-50",
+  "grade": 6,
+  "n": 50,
+  "title": "The Seed That Waited",
+  "standard": "RI.6.10",
+  "standard_text": "Standard: By the end of the year, read and comprehend literary nonfiction in the grades 6-8 text complexity band proficiently, with scaffolding as needed at the high end of the range.\n Spiral: RI.6.1 citing evidence · RI.6.2 central idea · RI.6.4 word meaning · RI.6.8 claims and evidence\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1040,
+   "words": 223,
+   "labelled_words": 223,
+   "paras": [
+    {
+     "label": "A",
+     "text": "In 2012 a Russian team grew a flowering plant from tissue that had been frozen in Siberian permafrost for about 32,000 years. The plant produced seeds of its own."
+    },
+    {
+     "label": "B",
+     "text": "The material came from a squirrel burrow thirty-eight meters down, found in a riverbank, packed with fruits and seeds an animal had stored and never returned to."
+    },
+    {
+     "label": "C",
+     "text": "The seeds themselves would not germinate. The team worked instead from placental tissue inside immature fruit, grown on in culture, which is a slower route and the one that worked."
+    },
+    {
+     "label": "D",
+     "text": "The dating is the part that drew scrutiny. Radiocarbon on the fruit gave the age, the burrow was sealed under undisturbed ground, and the team argued the layers ruled out anything modern falling in."
+    },
+    {
+     "label": "E",
+     "text": "Other groups asked the obvious question. Contamination by a living seed of the same genus is the standard worry, and the answer rests on the genetics of the plant differing measurably from the modern one."
+    },
+    {
+     "label": "F",
+     "text": "What permafrost preserves is not just age. It holds material at a steady temperature with no liquid water and no oxygen, which is approximately the conditions a seed bank tries to reproduce with machinery."
+    },
+    {
+     "label": "G",
+     "text": "Which is why the thawing matters beyond the headline. Ground that has held its contents still for thirty thousand years is now releasing them, and nobody has a list of what is in there."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 820,
+   "words": 196,
+   "labelled_words": 196,
+   "paras": [
+    {
+     "label": "A",
+     "text": "In 2012 a Russian team grew a flowering plant from frozen tissue. It had been in Siberian permafrost for about 32,000 years. The plant made seeds of its own."
+    },
+    {
+     "label": "B",
+     "text": "The material came from a squirrel burrow thirty-eight meters down. It was found in a riverbank. It was packed with fruits an animal had stored and never came back for."
+    },
+    {
+     "label": "C",
+     "text": "The seeds themselves would not sprout. The team used tissue from inside immature fruit instead. They grew it on in culture. That route is slower and it worked."
+    },
+    {
+     "label": "D",
+     "text": "The dating drew the most scrutiny. Radiocarbon on the fruit gave the age. The burrow was sealed under undisturbed ground. The team said the layers ruled out anything modern."
+    },
+    {
+     "label": "E",
+     "text": "Other groups asked the obvious question. A living seed of the same kind could have contaminated it. The answer rests on the genetics differing from the modern plant."
+    },
+    {
+     "label": "F",
+     "text": "Permafrost preserves more than age. It holds material at one temperature with no liquid water and no oxygen. A seed bank tries to copy that with machinery."
+    },
+    {
+     "label": "G",
+     "text": "That is why thawing matters beyond the headline. Ground that held its contents still for thirty thousand years is releasing them. Nobody has a list."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why did the team not grow the plant from the seeds?",
+    "a": "The seeds themselves would not germinate, so the team worked from placental tissue inside immature fruit, grown on in culture."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. the dating) and paragraph E (i.e. the contamination question).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how a 32,000-year-old plant was grown.",
+    "a": "A squirrel burrow thirty-eight meters down in Siberian permafrost held stored fruit. The seeds would not germinate, so the team grew placental tissue from immature fruit in culture, and the plant produced seeds of its own. Radiocarbon dated the fruit and the plant's genetics differ measurably from the modern one."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "permafrost: ground that has stayed frozen for years at a time.\ncontamination: modern material getting into a sample, which would explain a result without the age being real.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between what permafrost does and what a seed bank does.",
+    "a": "Permafrost holds material at a steady temperature with no liquid water and no oxygen, which is approximately the conditions a seed bank tries to reproduce with machinery."
+   }
+  ],
+  "note": "Paragraph E is good practice in how a claim gets tested, i.e. the answer \"rests on the genetics of the plant differing measurably from the modern one.\""
  }
 ]
