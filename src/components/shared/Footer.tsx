@@ -16,6 +16,8 @@ const links = [
   { label: "Science of Reading", href: "/science-of-reading" },
   { label: "Fluency", href: "/fluency" },
   { label: "Teach a Word", href: "/vocabulary" },
+  { label: "Knowledge Threads", href: "/science-of-reading/threads" },
+  { label: "Sentence Lab", href: "/sentence-lab" },
   { label: "Math", href: "/math" },
   { label: "PBL", href: "/pbl" },
   { label: "Design Thinking", href: "/design-thinking" },
