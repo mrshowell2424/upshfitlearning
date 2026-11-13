@@ -7401,6 +7401,264 @@
      "task": "Is it better to fix a problem quietly or to be seen doing it? Group your reasons, support them with details, and end with a conclusion."
     }
    }
+  },
+  "og1-04|c": {
+   "g2": {
+    "title": "The Cab and the Cup",
+    "paras": [
+     "Cam got in a cab. He had a cup and a cap.",
+     "The cab hit a bad bit of mud. The cup did not hold.",
+     "Cam got a wet cap and a wet lap. The cab man did not cut the run.",
+     "Cam got out. He had to pat the cab man on the back.",
+     "Cam got a cod for his pot. The cup is in the bin."
+    ],
+    "qs": [
+     [
+      "What did Cam have with him?",
+      "A cup and a cap."
+     ],
+     [
+      "What made the cup spill?",
+      "The cab hit a bad bit of mud."
+     ],
+     [
+      "What did Cam get for his pot?",
+      "A cod."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what happened in the cab, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Cab and the Cup",
+    "paras": [
+     "Cam got into the cab at the corner with a cup in one hand and a cap pulled down over his hair.",
+     "The cab hit a bad patch of road about a mile in, and the cup did not hold anything like as well as he had hoped.",
+     "He arrived with a wet cap, a wet lap, and no coffee at all. The driver, to his credit, said nothing whatsoever about it.",
+     "Cam did not cut the fare or make any sort of fuss. He paid what was on the meter and thanked the man properly.",
+     "Then he went and bought himself a cod and a cob for tea instead. The cup went in the bin on the corner."
+    ],
+    "qs": [
+     [
+      "How far in was the bad patch of road?",
+      "About a mile."
+     ],
+     [
+      "What did the driver do?",
+      "He said nothing whatsoever about it."
+     ],
+     [
+      "What did Cam buy instead?",
+      "A cod and a cob for tea."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should Cam have paid the full fare? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Cab and the Cup",
+    "paras": [
+     "Cam got into the cab at the corner carrying a cup in one hand and wearing a cap pulled down low over his hair, which is how he travels and has always travelled.",
+     "The cab hit a bad patch of road about a mile in — a stretch that everybody who drives it knows about and nobody has ever fixed — and the cup did not hold anything like as well as he had been quietly assuming it would.",
+     "He arrived at the other end with a wet cap, a comprehensively wet lap, and no coffee whatsoever. The driver, entirely to his credit, said not one word about any of it, either at the time or on arrival.",
+     "Cam did not attempt to cut the fare and he did not make any kind of fuss. He paid exactly what was on the meter, added something on top of it, and thanked the man properly before getting out.",
+     "Then he walked round the corner and bought himself a cod and a cob for his tea instead, which he says was the better outcome anyway. The cup went in the bin by the lights."
+    ],
+    "qs": [
+     [
+      "What does everybody who drives that road know?",
+      "About the bad patch that nobody has ever fixed."
+     ],
+     [
+      "When did the driver mention it?",
+      "Not at any point — not at the time and not on arrival."
+     ],
+     [
+      "What did Cam do beyond paying the meter?",
+      "He added something on top and thanked the man properly."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a report on how people should behave in shared transport. Organise it into sections and connect your ideas."
+    }
+   }
+  },
+  "og1-04|k": {
+   "g2": {
+    "title": "Ken and the Kid",
+    "paras": [
+     "Ken has a pet kid. The kid is not big.",
+     "The kid got in the keg bin and did not get out.",
+     "Ken had a kit bag. He got the kit out and put the kid in the bag.",
+     "Then the kid got out of the bag as well. It is a kid that can not sit.",
+     "Ken is not mad at it. He just got a lid for the keg bin."
+    ],
+    "qs": [
+     [
+      "What does Ken have?",
+      "Ken has a pet kid."
+     ],
+     [
+      "Where did the kid get stuck?",
+      "In the keg bin."
+     ],
+     [
+      "What did Ken do at the end?",
+      "He got a lid for the keg bin."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is a kid a good pet? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "Ken and the Kid",
+    "paras": [
+     "Ken keeps a kid in the yard behind the house. A kid is a baby goat, and this one is about four months old.",
+     "In October it got into the keg bin head first and could not get itself back out again, which took Ken twenty minutes to sort out.",
+     "He had a kit bag in the shed. He tipped the kit out onto the bench and carried the kid back across the yard in the bag.",
+     "The kid was out of the bag before he had put it down. It is not an animal that can sit still for any length of time.",
+     "Ken is not angry about any of it. He simply bought a lid for the keg bin, which he says he should have done in the first place."
+    ],
+    "qs": [
+     [
+      "How old is the kid?",
+      "About four months old."
+     ],
+     [
+      "How long did it take Ken to free it?",
+      "Twenty minutes."
+     ],
+     [
+      "What did Ken buy afterwards?",
+      "A lid for the keg bin."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how to keep a young animal safe. Group your steps and use words like first, then, and finally."
+    }
+   },
+   "g4": {
+    "title": "Ken and the Kid",
+    "paras": [
+     "Ken keeps a kid in the yard behind his house. A kid is a baby goat, in case that is not obvious, and this particular one is about four months old and has no sense whatsoever.",
+     "In the middle of October it got into the keg bin head first, could not reverse out, and stood there with its back legs on the cobbles making a noise that pulled three neighbours to their gates. It took Ken the better part of twenty minutes to work it free.",
+     "He had an old kit bag hanging in the shed. He tipped the kit out of it onto the bench, carried the bag across, and got the kid into it to bring it back across the yard without it running off again.",
+     "The kid was out of the bag before Ken had finished putting it down on the ground. It is not an animal capable of sitting still for any measurable length of time, and Ken has given up expecting it to.",
+     "He is not angry about any of this. He went into town the following morning and bought a lid for the keg bin, which, as he says himself without any prompting, he should have done in the first place."
+    ],
+    "qs": [
+     [
+      "What brought three neighbours to their gates?",
+      "The noise the kid made while stuck."
+     ],
+     [
+      "Why did Ken use the bag?",
+      "So the kid would not run off again on the way across."
+     ],
+     [
+      "What does Ken admit without prompting?",
+      "That he should have bought the lid in the first place."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the rescue from the kid's point of view. Establish the situation, give a clear sequence, and use sensory details."
+    }
+   }
+  },
+  "og1-04|ck": {
+   "g2": {
+    "title": "The Rock in the Sock",
+    "paras": [
+     "Nick put a rock in a sock.",
+     "The sock got in the back of the deck bin. It did not come up.",
+     "Nick had to pick at it. He got it up, bit by bit.",
+     "The sock did come up. The rock did not. It is in the bin yet.",
+     "Nick had to kick the lid. Now the bin has a rock in it."
+    ],
+    "qs": [
+     [
+      "What did Nick put in the sock?",
+      "He put a rock in it."
+     ],
+     [
+      "Where did the sock get caught?",
+      "In the back of the deck bin."
+     ],
+     [
+      "What is still in the bin?",
+      "The rock is still in the bin."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what Nick did, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Rock in the Sock",
+    "paras": [
+     "Nick put a rock in a sock in July, for a reason that made sense to him at the time and that he has since declined to explain.",
+     "The sock, with the rock still in it, got stuck right down the back of the deck box, wedged behind the hinge where nobody could reach.",
+     "He had to pick at it for most of an afternoon with a tack hammer and a length of wire, lying on his front on the decking.",
+     "The sock came out in the end. The rock did not. It is still down there behind the hinge, and it is going to stay there.",
+     "Nick has to kick the lid to get it shut now. He says the box works fine. The box does not work fine."
+    ],
+    "qs": [
+     [
+      "When did Nick put the rock in the sock?",
+      "In July."
+     ],
+     [
+      "Where exactly did it get stuck?",
+      "Behind the hinge at the back of the deck box."
+     ],
+     [
+      "What does the narrator think of Nick's claim?",
+      "That the box does not work fine."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should Nick fix the box properly? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Rock in the Sock",
+    "paras": [
+     "Nick put a rock in a sock in July. There was a reason for this at the time, and it made complete sense to him, and he has since declined on four separate occasions to explain what it was.",
+     "The sock, with the rock still inside it, went down the back of the deck box and wedged itself behind the hinge, in the one position from which nothing can be retrieved by hand from any direction.",
+     "He had to pick at it for the better part of an afternoon, lying flat on his front on the decking with a tack hammer in one hand and a bent length of wire in the other, getting slowly more annoyed.",
+     "The sock came out at about five o'clock. The rock did not come out at all. It is still down there behind the hinge, and from the look of things it is going to remain there for the life of the box.",
+     "Nick has to kick the lid now to get it to shut properly. He maintains, every time anybody mentions it, that the box works perfectly well. The box does not work perfectly well, and everybody who has ever tried to close it knows that."
+    ],
+    "qs": [
+     [
+      "How many times has Nick declined to explain?",
+      "Four separate occasions."
+     ],
+     [
+      "What two tools did he use?",
+      "A tack hammer and a bent length of wire."
+     ],
+     [
+      "How does the author contradict Nick?",
+      "By saying everybody who has tried to close it knows it does not work."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is it better to fix something properly or work around it? Group your reasons, support them with details, and end with a conclusion."
+    }
+   }
   }
  }
 }
