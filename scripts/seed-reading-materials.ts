@@ -2443,16 +2443,20 @@ const ADAPTATIONS: Adaptation[] = [
     // The writing step follows the EB frame.
     //
     // The page had a five-part frame of its own — My Answer, My Reason, My
-    // Proof, Explain It, Wrap It Up. The EB Writing Workshop frame is a
-    // short intro paragraph of tag, summary and claim, then a body
-    // paragraph of reason, lead-in, evidence and justification. Same
-    // thinking, but it names the parts the way the workshop names them, and
-    // it adds the two the old frame had no slot for: saying what the text
-    // is before arguing about it, and leading into a quote rather than
-    // dropping one in.
+    // Proof, Explain It, Wrap It Up. This is the EB Writing Workshop frame:
+    // an intro paragraph, then a body paragraph, then a closing line. It
+    // adds the two parts the old frame had no slot for — saying what the
+    // text is before arguing about it, and walking the reader up to a quote
+    // rather than dropping one in — and it keeps the old frame's ending,
+    // which an earlier version of this rule dropped without being asked to.
     //
-    // Seven lines rather than five. A second grader writes the intro and
-    // one body paragraph; the older grades add a second reason.
+    // The parts are named in words a second grader already uses rather
+    // than in the workshop's own terms. A child doing the thinking does not
+    // need that vocabulary in order to do it, and the teacher hub carries
+    // the workshop's wording for anybody who wants it.
+    //
+    // Eight lines rather than five. A second grader writes the intro, one
+    // body paragraph and the ending; the older grades add a second reason.
     name: "write to the EB frame",
     apply: (html) => {
       const from =
@@ -2463,13 +2467,14 @@ const ADAPTATIONS: Adaptation[] = [
         "'\u{1F3A4} Wrap It Up: That is why ______.'];";
       if (!html.includes(from)) return html;
       const to =
-        "const ebFrames = ['\u{1F3F7}\uFE0F Tag: The story is ______.', " +
-        "'\u{1F4D6} Summary: It is about ______.', " +
-        "'\u{1F4E3} Claim: I think ______.', " +
-        "'\u{1F9F1} Reason: One reason is ______.', " +
-        "'\u{1F50E} Lead-in: In the story, ______', " +
-        "'\u{1F4CB} Evidence: For example, ______.', " +
-        "'\u{1F517} Justification: This shows ______.'];";
+        "const ebFrames = ['\u{1F3F7}\uFE0F Topic: The story is ______.', " +
+        "'\u{1F4D6} What It Is About: It is about ______.', " +
+        "'\u{1F4E3} My Claim: I think ______.', " +
+        "'\u{1F9F1} My Reason: One reason is ______.', " +
+        "'\u{1F50E} In the Story: In the story, ______', " +
+        "'\u{1F4CB} My Evidence: For example, ______.', " +
+        "'\u{1F517} Why It Matters: This shows ______.', " +
+        "'\u{1F3A4} Wrap It Up: That is why ______.'];";
       return html.split(from).join(to);
     },
   },
@@ -2574,6 +2579,117 @@ const ADAPTATIONS: Adaptation[] = [
       out = out.replace(
         step13,
         step13 + "\n          hasTask: !!wrTask, task: wrTask, taskType: wrPick.toUpperCase(),"
+      );
+      return out;
+    },
+  },
+  {
+    // Two texts when multisyllabic is turned on.
+    //
+    // Comparing two texts and pulling evidence out of both is a harder job
+    // than answering questions about one, and it is the job the
+    // multisyllabic switch already signals: this class is ready for more.
+    // So that switch now also pairs the passage with a second one and
+    // rewrites the questions and the writing task to span both.
+    //
+    // The companion is chosen so that it is always decodable at this
+    // lesson. Within a concept that splits it is the next part along,
+    // written to the same point in the sequence. A concept that splits
+    // pairs with its own first part. A concept that does not split pairs
+    // with the lesson before it in the scope and sequence, which by
+    // definition uses less of the code than this one does. The very first
+    // lesson has nothing before it and so stays on a single text.
+    //
+    // The three questions are open on purpose. A comparison has no one
+    // right answer, so the key tells the teacher what to look for instead
+    // of printing an answer that is not the only one.
+    name: "pair a second passage when multisyllabic is on",
+    apply: (html) => {
+      const seat = "const PGX = ((PGS[SEL] || PGS[cur[0]]) || {})[pgGrade] || null;";
+      if (!html.includes(seat)) return html;
+      const pair = [
+        "",
+        "    const SPL = " + JSON.stringify(SPLITS) + ";",
+        "    const pgPair = (() => {",
+        "      const cid = cur[0];",
+        "      const sel = SEL || cid;",
+        "      const part = sel.indexOf('|') > -1 ? sel.split('|')[1] : '';",
+        "      const ps = SPL[cid] || [];",
+        "      if (part) {",
+        "        if (ps.length > 1) { const i = ps.indexOf(part);",
+        "          return cid + '|' + ps[(i + 1) % ps.length]; }",
+        "        return cid;",
+        "      }",
+        "      if (ps.length) return cid + '|' + ps[0];",
+        "      const n = SK.findIndex((s) => s[0] === cid);",
+        "      return n > 0 ? SK[n - 1][0] : '';",
+        "    })();",
+        "    const PGY = (!!(this.state && this.state.multi) && PGX && pgPair)",
+        "      ? ((PGS[pgPair] || {})[pgGrade] || null) : null;",
+        "    const PGTWO = (PGY && PGY.title !== PGX.title) ? {",
+        "      title: PGX.title + '  +  ' + PGY.title,",
+        "      paras: ['\u{1F4D8} TEXT 1 — ' + PGX.title].concat(PGX.paras,",
+        "        ['\u{1F4D9} TEXT 2 — ' + PGY.title], PGY.paras),",
+        "      qs: [",
+        "        ['Name one thing that happens in both texts.',",
+        "          'Answers vary. Look for one detail from Text 1 and one from Text 2.'],",
+        "        ['What is the biggest difference between Text 1 and Text 2?',",
+        "          'Answers vary. Look for a difference the child can point to in both.'],",
+        "        ['Which text gives the better evidence, and why? Quote one line from each.',",
+        "          'Answers vary. Look for an exact quote from Text 1 and one from Text 2.']",
+        "      ] } : null;",
+        "    const PGV = PGTWO || PGX;",
+      ].join("\n");
+      let out = html.replace(seat, seat + pair);
+
+      const swaps: [string, string][] = [
+        ["const d = (PGX ? [PGX.title, PGX.paras, PGX.qs] : null) ||",
+          "const d = (PGV ? [PGV.title, PGV.paras, PGV.qs] : null) ||"],
+        ["const ebText = (PGX ? PGX.paras.join('\\n') : null) ||",
+          "const ebText = (PGV ? PGV.paras.join('\\n') : null) ||"],
+        ["const ebPrompt = (PGX && PGX.qs && PGX.qs[2] ? PGX.qs[2][0] : null) ||",
+          "const ebPrompt = (PGV && PGV.qs && PGV.qs[2] ? PGV.qs[2][0] : null) ||"],
+        ["      const t = '“' + PGX.title + '”';",
+          "      const t = '“' + PGV.title + '”';"],
+        ["      const q = (PGX.qs && PGX.qs[2]) ? PGX.qs[2][0] : '';",
+          "      const q = (PGV.qs && PGV.qs[2]) ? PGV.qs[2][0] : '';"],
+      ];
+      for (const [from, to] of swaps) {
+        if (!out.includes(from)) return html;
+        out = out.split(from).join(to);
+      }
+
+      // With two texts the authored single-text task no longer applies, and
+      // the writing itself becomes the comparison.
+      const guard = "      if (PGX.write && PGX.write.type === wrPick) return PGX.write.task;";
+      if (!out.includes(guard)) return html;
+      const CF = [
+        "      if (PGTWO) {",
+        "        const CF = {",
+        "          Opinion: {",
+        "            g2: 'Which text did you like more, Text 1 or Text 2? Tell what you think, give two reasons, and use one thing from each text.',",
+        "            g3: 'Which text makes its point better? Give your opinion with reasons, quote one line from each text, and link your reasons with because and also.',",
+        "            g4: 'Which of the two texts makes its point better? Group your reasons, support each one with a quote from a different text, and end with a conclusion.' },",
+        "          Informative: {",
+        "            g2: 'Write three ways the two texts are the same or different. Use one detail from each text and finish with an ending.',",
+        "            g3: 'Explain how the two texts are alike and how they differ. Group the likenesses together, then the differences, and use words from both texts.',",
+        "            g4: 'Write a report comparing the two texts. Organise it into sections, develop each one with evidence from both, and connect your ideas.' },",
+        "          Narrative: {",
+        "            g2: 'Tell what happens in Text 1, then what happens in Text 2. Use first, next and last, and end by saying which one you would rather be in.',",
+        "            g3: 'Retell both texts as one story in which the two sets of people meet. Use time-order words and include something a person from each text says.',",
+        "            g4: 'Write a scene in which somebody from Text 1 meets somebody from Text 2. Establish the situation, give a clear sequence, and use dialogue that shows what each text had already told you about them.' } };",
+        "        return (CF[wrPick] || {})[pgGrade] || '';",
+        "      }",
+      ].join("\n");
+      out = out.replace(guard, CF + "\n" + guard);
+
+      // The reading step says which mode it is in.
+      const note = "      pgNote: pgUp ? ((this.state && this.state.multi) ? '↑ multisyllabic'";
+      if (!out.includes(note)) return html;
+      out = out.replace(
+        note,
+        "      pgNote: PGTWO ? '↑ two texts to compare' : pgUp"
+          + " ? ((this.state && this.state.multi) ? '↑ multisyllabic'"
       );
       return out;
     },
