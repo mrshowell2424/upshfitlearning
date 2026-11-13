@@ -1,0 +1,872 @@
+[
+ {
+  "id": "gK-1",
+  "grade": 0,
+  "n": 1,
+  "title": "A Duck on the Pond",
+  "standard": "RI.K.1",
+  "standard_text": "Standard: With prompting and support, ask and answer questions about key details in a text.\n Spiral: RI.K.2 main topic · RI.K.4 unknown words · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+  "higher": {
+   "lexile": 180,
+   "words": 32,
+   "labelled_words": 32,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A duck has soft feathers under its wings."
+    },
+    {
+     "label": "B",
+     "text": "Oil on the top feathers keeps the water out."
+    },
+    {
+     "label": "C",
+     "text": "The soft ones under them stay dry."
+    },
+    {
+     "label": "D",
+     "text": "So the duck stays warm all day long."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 80,
+   "words": 24,
+   "labelled_words": 24,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A duck has soft feathers under its wings."
+    },
+    {
+     "label": "B",
+     "text": "Oil on top keeps the water out."
+    },
+    {
+     "label": "C",
+     "text": "The soft ones stay dry."
+    },
+    {
+     "label": "D",
+     "text": "The duck stays warm."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What keeps the water out?",
+    "a": "Oil on the top feathers keeps the water out."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the soft feathers) and paragraph D (i.e. staying warm).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what this is about.",
+    "a": "A duck has soft feathers under its wings. Oil on the top feathers keeps the water out, so the soft ones stay dry and the duck stays warm."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "feathers: what covers a bird.\noil: a slippery stuff that water runs off.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the oil and the duck staying warm.",
+    "a": "Oil on the top feathers keeps the water out, so the soft ones under them stay dry and the duck stays warm."
+   }
+  ],
+  "note": "Read it twice. The second time, stop after each paragraph and ask what that one sentence told you."
+ },
+ {
+  "id": "gK-2",
+  "grade": 0,
+  "n": 2,
+  "title": "The Crossing Light",
+  "standard": "RI.K.1",
+  "standard_text": "Standard: With prompting and support, ask and answer questions about key details in a text.\n Spiral: RI.K.2 main topic · RI.K.4 unknown words · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+  "higher": {
+   "lexile": 160,
+   "words": 31,
+   "labelled_words": 31,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A white walking man means you may cross."
+    },
+    {
+     "label": "B",
+     "text": "A red hand means you must wait."
+    },
+    {
+     "label": "C",
+     "text": "The numbers count down the seconds left."
+    },
+    {
+     "label": "D",
+     "text": "Look both ways even when the man is white."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 70,
+   "words": 22,
+   "labelled_words": 22,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A white man means you may cross."
+    },
+    {
+     "label": "B",
+     "text": "A red hand means wait."
+    },
+    {
+     "label": "C",
+     "text": "Numbers count down the seconds."
+    },
+    {
+     "label": "D",
+     "text": "Always look both ways too."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does the red hand mean?",
+    "a": "A red hand means you must wait."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the numbers) and paragraph D (i.e. looking both ways).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what the crossing light shows.",
+    "a": "A white walking man means you may cross and a red hand means you must wait. The numbers count down the seconds left, and you look both ways even when the man is white."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "cross: to walk from one side to the other.\ncount down: to go backward, like five, four, three.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the white man and looking both ways.",
+    "a": "You look both ways even when the man is white, because the light tells cars to stop but cannot make them."
+   }
+  ],
+  "note": "Paragraph D is the one that matters most and it comes last. Say it again at the end."
+ },
+ {
+  "id": "gK-3",
+  "grade": 0,
+  "n": 3,
+  "title": "Where a Bear Sleeps",
+  "standard": "RI.K.1",
+  "standard_text": "Standard: With prompting and support, ask and answer questions about key details in a text.\n Spiral: RI.K.2 main topic · RI.K.4 unknown words · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+  "higher": {
+   "lexile": 170,
+   "words": 31,
+   "labelled_words": 31,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A bear finds a cave or a hole in winter."
+    },
+    {
+     "label": "B",
+     "text": "It sleeps there for many months."
+    },
+    {
+     "label": "C",
+     "text": "It does not eat the whole time."
+    },
+    {
+     "label": "D",
+     "text": "In spring it comes out thin and hungry."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 75,
+   "words": 22,
+   "labelled_words": 22,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A bear finds a cave in winter."
+    },
+    {
+     "label": "B",
+     "text": "It sleeps for many months."
+    },
+    {
+     "label": "C",
+     "text": "It does not eat."
+    },
+    {
+     "label": "D",
+     "text": "In spring it comes out hungry."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Where does the bear sleep?",
+    "a": "A bear finds a cave or a hole in winter."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. not eating) and paragraph D (i.e. spring).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what a bear does in winter.",
+    "a": "A bear finds a cave or a hole, sleeps there for many months without eating, and comes out thin and hungry in spring."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "cave: a hole in rock big enough to go into.\nspring: the season that comes after winter.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between not eating and being hungry.",
+    "a": "It does not eat the whole time, so in spring it comes out thin and hungry."
+   }
+  ],
+  "note": "Four paragraphs, four steps, in order. Count them on your fingers with the child."
+ },
+ {
+  "id": "gK-4",
+  "grade": 0,
+  "n": 4,
+  "title": "The School Nurse",
+  "standard": "RI.K.1",
+  "standard_text": "Standard: With prompting and support, ask and answer questions about key details in a text.\n Spiral: RI.K.2 main topic · RI.K.4 unknown words · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+  "higher": {
+   "lexile": 190,
+   "words": 34,
+   "labelled_words": 34,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The nurse has a small room by the office."
+    },
+    {
+     "label": "B",
+     "text": "She keeps bandages, ice packs and a cot."
+    },
+    {
+     "label": "C",
+     "text": "She writes down every child who comes in."
+    },
+    {
+     "label": "D",
+     "text": "She calls home if a child needs to go."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 90,
+   "words": 28,
+   "labelled_words": 28,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The nurse has a room by the office."
+    },
+    {
+     "label": "B",
+     "text": "She keeps bandages and ice packs."
+    },
+    {
+     "label": "C",
+     "text": "She writes down who comes in."
+    },
+    {
+     "label": "D",
+     "text": "She calls home if you need to go."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does the nurse keep?",
+    "a": "She keeps bandages, ice packs and a cot."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. writing it down) and paragraph D (i.e. calling home).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what the school nurse does.",
+    "a": "The nurse has a small room by the office with bandages, ice packs and a cot. She writes down every child who comes in, and she calls home if a child needs to go."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "bandage: a cover that goes on a cut.\ncot: a small bed you can lie down on.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between writing it down and calling home.",
+    "a": "She writes down every child who comes in, so she knows who to call home about."
+   }
+  ],
+  "note": "Children know this room. Ask what they have seen in it before you read a word."
+ },
+ {
+  "id": "gK-5",
+  "grade": 0,
+  "n": 5,
+  "title": "How a Snail Moves",
+  "standard": "RI.K.1",
+  "standard_text": "Standard: With prompting and support, ask and answer questions about key details in a text.\n Spiral: RI.K.2 main topic · RI.K.4 unknown words · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+  "higher": {
+   "lexile": 175,
+   "words": 31,
+   "labelled_words": 31,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A snail has one wide foot under its shell."
+    },
+    {
+     "label": "B",
+     "text": "It makes slime to slide along."
+    },
+    {
+     "label": "C",
+     "text": "The slime lets it cross a sharp edge."
+    },
+    {
+     "label": "D",
+     "text": "You can see the shiny trail it left."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 85,
+   "words": 25,
+   "labelled_words": 25,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A snail has one foot under its shell."
+    },
+    {
+     "label": "B",
+     "text": "It makes slime to slide on."
+    },
+    {
+     "label": "C",
+     "text": "The slime keeps it safe."
+    },
+    {
+     "label": "D",
+     "text": "You can see its shiny trail."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does the snail make?",
+    "a": "It makes slime to slide along."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the sharp edge) and paragraph D (i.e. the trail).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell how a snail moves.",
+    "a": "A snail has one wide foot under its shell. It makes slime to slide along, the slime lets it cross a sharp edge, and you can see the shiny trail it left."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "slime: wet slippery stuff.\ntrail: the mark something leaves behind.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the slime and the trail.",
+    "a": "It makes slime to slide along, and you can see the shiny trail it left."
+   }
+  ],
+  "note": "Paragraph C is the surprise: the slime is protection, not just slipperiness."
+ },
+ {
+  "id": "gK-6",
+  "grade": 0,
+  "n": 6,
+  "title": "Winter Coats",
+  "standard": "RI.K.2",
+  "standard_text": "Standard: With prompting and support, identify the main topic and retell key details of a text.\n Spiral: RI.K.1 key details · RI.K.3 connections · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+  "higher": {
+   "lexile": 195,
+   "words": 35,
+   "labelled_words": 35,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A dog grows thicker fur when it gets cold."
+    },
+    {
+     "label": "B",
+     "text": "The thick fur holds warm air near the skin."
+    },
+    {
+     "label": "C",
+     "text": "In spring the dog sheds it again."
+    },
+    {
+     "label": "D",
+     "text": "A coat of fur comes and goes with the year."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 95,
+   "words": 28,
+   "labelled_words": 28,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A dog grows thicker fur when it is cold."
+    },
+    {
+     "label": "B",
+     "text": "The fur holds warm air near the skin."
+    },
+    {
+     "label": "C",
+     "text": "In spring the dog sheds it."
+    },
+    {
+     "label": "D",
+     "text": "The fur comes and goes."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does the thick fur hold?",
+    "a": "The thick fur holds warm air near the skin."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph A (i.e. growing fur) and paragraph C (i.e. shedding it).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what this is about.",
+    "a": "A dog grows thicker fur when it gets cold, and the thick fur holds warm air near the skin. In spring the dog sheds it, so a coat of fur comes and goes with the year."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "fur: the hair that covers an animal.\nsheds: drops off.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the cold and the thick fur.",
+    "a": "A dog grows thicker fur when it gets cold, and sheds it again in spring."
+   }
+  ],
+  "note": "The topic is the whole year, not just winter. Paragraph D is what says so."
+ },
+ {
+  "id": "gK-7",
+  "grade": 0,
+  "n": 7,
+  "title": "The Grocery Cart",
+  "standard": "RI.K.2",
+  "standard_text": "Standard: With prompting and support, identify the main topic and retell key details of a text.\n Spiral: RI.K.1 key details · RI.K.3 connections · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+  "higher": {
+   "lexile": 165,
+   "words": 31,
+   "labelled_words": 31,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A cart has four wheels and a deep basket."
+    },
+    {
+     "label": "B",
+     "text": "The two front wheels can turn any way."
+    },
+    {
+     "label": "C",
+     "text": "That is how you steer around a corner."
+    },
+    {
+     "label": "D",
+     "text": "The back wheels only roll straight."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 75,
+   "words": 24,
+   "labelled_words": 24,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A cart has four wheels and a basket."
+    },
+    {
+     "label": "B",
+     "text": "The front wheels turn any way."
+    },
+    {
+     "label": "C",
+     "text": "That is how you steer."
+    },
+    {
+     "label": "D",
+     "text": "The back wheels roll straight."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Which wheels can turn any way?",
+    "a": "The two front wheels can turn any way."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. steering) and paragraph D (i.e. the back wheels).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what this is about.",
+    "a": "A cart has four wheels and a deep basket. The two front wheels can turn any way, which is how you steer around a corner, and the back wheels only roll straight."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "steer: to make something go the way you want.\nbasket: the part that holds what you put in.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the front wheels and steering.",
+    "a": "The two front wheels can turn any way, and that is how you steer around a corner."
+   }
+  ],
+  "note": "Have the child push a cart and watch the wheels. The text will make sense in one trip."
+ },
+ {
+  "id": "gK-8",
+  "grade": 0,
+  "n": 8,
+  "title": "Seeds in the Wind",
+  "standard": "RI.K.2",
+  "standard_text": "Standard: With prompting and support, identify the main topic and retell key details of a text.\n Spiral: RI.K.1 key details · RI.K.3 connections · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+  "higher": {
+   "lexile": 200,
+   "words": 35,
+   "labelled_words": 35,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A dandelion seed has a tiny white parachute."
+    },
+    {
+     "label": "B",
+     "text": "The wind lifts it high off the stem."
+    },
+    {
+     "label": "C",
+     "text": "It can land far from the plant it came from."
+    },
+    {
+     "label": "D",
+     "text": "That is how one plant fills a whole yard."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 100,
+   "words": 26,
+   "labelled_words": 26,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A dandelion seed has a white top."
+    },
+    {
+     "label": "B",
+     "text": "The wind lifts it off the stem."
+    },
+    {
+     "label": "C",
+     "text": "It can land far away."
+    },
+    {
+     "label": "D",
+     "text": "That is how a yard fills up."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What lifts the seed?",
+    "a": "The wind lifts it high off the stem."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph A (i.e. the parachute) and paragraph D (i.e. filling a yard).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what this is about.",
+    "a": "A dandelion seed has a tiny white parachute. The wind lifts it high off the stem and it can land far from the plant it came from, which is how one plant fills a whole yard."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "parachute: a soft top that catches the air.\nstem: the part that holds a plant up.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the parachute and landing far away.",
+    "a": "The seed has a tiny white parachute, so the wind lifts it high and it can land far from the plant it came from."
+   }
+  ],
+  "note": "Blow a real dandelion if you can. Paragraph D is the part they will remember."
+ },
+ {
+  "id": "gK-9",
+  "grade": 0,
+  "n": 9,
+  "title": "The Library Shelf",
+  "standard": "RI.K.2",
+  "standard_text": "Standard: With prompting and support, identify the main topic and retell key details of a text.\n Spiral: RI.K.1 key details · RI.K.3 connections · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+  "higher": {
+   "lexile": 155,
+   "words": 31,
+   "labelled_words": 31,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Picture books sit on the low shelves."
+    },
+    {
+     "label": "B",
+     "text": "The low shelves are where children can reach."
+    },
+    {
+     "label": "C",
+     "text": "Thick books sit up high for big readers."
+    },
+    {
+     "label": "D",
+     "text": "Every shelf has a letter on the end."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 65,
+   "words": 23,
+   "labelled_words": 23,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Picture books sit on the low shelves."
+    },
+    {
+     "label": "B",
+     "text": "Children can reach the low shelves."
+    },
+    {
+     "label": "C",
+     "text": "Thick books sit up high."
+    },
+    {
+     "label": "D",
+     "text": "Each shelf has a letter."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Where do picture books sit?",
+    "a": "Picture books sit on the low shelves."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. reaching) and paragraph D (i.e. the letters).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what this is about.",
+    "a": "Picture books sit on the low shelves where children can reach, thick books sit up high for big readers, and every shelf has a letter on the end."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "shelf: a flat board that holds books.\nreach: to be able to touch.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the low shelves and children.",
+    "a": "Picture books sit on the low shelves, because the low shelves are where children can reach."
+   }
+  ],
+  "note": "Ask the child to find the letter on the end of their own shelf at school."
+ },
+ {
+  "id": "gK-10",
+  "grade": 0,
+  "n": 10,
+  "title": "Why Ice Floats",
+  "standard": "RI.K.2",
+  "standard_text": "Standard: With prompting and support, identify the main topic and retell key details of a text.\n Spiral: RI.K.1 key details · RI.K.3 connections · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+  "higher": {
+   "lexile": 210,
+   "words": 34,
+   "labelled_words": 34,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Water gets bigger when it turns to ice."
+    },
+    {
+     "label": "B",
+     "text": "A bigger piece of the same water is lighter."
+    },
+    {
+     "label": "C",
+     "text": "So ice floats on top instead of sinking."
+    },
+    {
+     "label": "D",
+     "text": "That is why a pond freezes from the top."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 105,
+   "words": 22,
+   "labelled_words": 22,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Water gets bigger when it freezes."
+    },
+    {
+     "label": "B",
+     "text": "Bigger means lighter here."
+    },
+    {
+     "label": "C",
+     "text": "So ice floats on top."
+    },
+    {
+     "label": "D",
+     "text": "A pond freezes from the top down."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What happens to water when it freezes?",
+    "a": "Water gets bigger when it turns to ice."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. floating) and paragraph D (i.e. the pond).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what this is about.",
+    "a": "Water gets bigger when it turns to ice, and a bigger piece of the same water is lighter. So ice floats on top instead of sinking, which is why a pond freezes from the top."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "floats: stays up on top of the water.\nfreezes: turns into ice.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between ice being lighter and a pond freezing on top.",
+    "a": "A bigger piece of the same water is lighter, so ice floats on top and a pond freezes from the top down."
+   }
+  ],
+  "note": "This one is hard and worth it. Put an ice cube in a glass and watch where it sits."
+ }
+]
