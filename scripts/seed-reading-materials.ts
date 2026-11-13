@@ -2815,6 +2815,60 @@ const ADAPTATIONS: Adaptation[] = [
       return out;
     },
   },
+  {
+    // Make the things a child taps look tappable.
+    //
+    // Every chip on this page was a slightly rounded rectangle: a word to
+    // read, a sound to drill, a lesson step to filter by. They read as form
+    // controls, which is what they were, and a seven-year-old reading "ship"
+    // off a grey-edged box is being asked to do school rather than play.
+    //
+    // Three changes, all of them small. Chips become full pills, because a
+    // pill reads as a thing you pick up. They get a little more room to
+    // breathe and a soft tinted shadow instead of a flat edge. And they lift
+    // a pixel when a pointer is over them, which costs nothing and makes the
+    // page feel like it is listening.
+    //
+    // The hover has to come from a stylesheet: these styles are written
+    // inline on every chip, and an inline style has nowhere to put :hover.
+    name: "make the clickables cuter",
+    apply: (html) => {
+      const chip =
+        "chip: { fontSize: small ? 14 : 17, fontWeight: 700, border: '1.5px solid '"
+        + " + COL[n - 1], borderRadius: 8, padding: '3px 10px', background: '#fff' }";
+      if (!html.includes(chip)) return html;
+      const cuter =
+        "chip: { fontSize: small ? 14 : 17, fontWeight: 700, border: '1.5px solid '"
+        + " + COL[n - 1], borderRadius: 999, padding: '5px 14px', background: '#fff',"
+        + " boxShadow: '0 1px 0 ' + COL[n - 1] + '33', transition: 'transform .12s ease,"
+        + " box-shadow .12s ease' }";
+      let out = html.replace(chip, cuter);
+
+      // The word lists under Easier / On level / Harder are built separately.
+      const list = "border-radius:8px;padding:3px 9px;cursor:pointer;white-space:nowrap;";
+      out = out.split(list).join(
+        "border-radius:999px;padding:5px 13px;cursor:pointer;white-space:nowrap;"
+          + "transition:transform .12s ease,box-shadow .12s ease;");
+
+      const style = "<style>button{border-radius:100px !important}";
+      if (!out.includes(style)) return html;
+      return out.replace(
+        style,
+        "<style>button{border-radius:100px !important;"
+          + "transition:transform .12s ease,box-shadow .12s ease}"
+          + "button:hover{transform:translateY(-1px);box-shadow:0 3px 8px rgba(17,17,17,.16)}"
+          + "button:active{transform:translateY(0);box-shadow:none}"
+          // Every chip on the page is a span with a border and padding;
+          // every card is a div. That is the whole selector.
+          + "span[style*=\"border\"][style*=\"padding\"]{border-radius:999px !important;"
+          + "padding:4px 12px !important;white-space:nowrap;"
+          + "box-shadow:0 1px 2px rgba(17,17,17,.10);"
+          + "transition:transform .12s ease,box-shadow .12s ease}"
+          + "span[style*=\"border\"][style*=\"padding\"]:hover{transform:translateY(-1px);"
+          + "box-shadow:0 3px 8px rgba(17,17,17,.15)}"
+      );
+    },
+  },
 ];
 
 /**
