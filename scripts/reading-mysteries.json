@@ -3,6 +3,1194 @@
  "source": "mystery-library.html",
  "cases": [
   {
+   "id": "g1-w1",
+   "grade": 1,
+   "week": 1,
+   "tag": "📚 library",
+   "title": "The Case of the Bent Page",
+   "story": "A book had a bent page. Mr. Ruiz looked in the bin. The book was at the bottom. Six big books sat on top of it. The page is bent, not torn. Ava read it on the rug. She did not bend it. A heavy stack can bend a page.",
+   "question": "What bent the page?",
+   "suspects": [
+    {
+     "who": "📚 The books on top",
+     "why": "six big books sat on it"
+    },
+    {
+     "who": "🙋 Ava",
+     "why": "she did not bend it"
+    },
+    {
+     "who": "✂️ Somebody cut it",
+     "why": "the page is bent, not torn"
+    }
+   ],
+   "answer": "The books on top bent the page.",
+   "proof": [
+    "“Six big books sat on top of it.”",
+    "“A heavy stack can bend a page.”"
+   ],
+   "clears": [
+    "Ava: “She did not bend it.”",
+    "Cutting: “The page is bent, not torn.”"
+   ],
+   "explain": "The book was at the bottom of the bin. Because six big books sat on top, the heavy stack bent the page."
+  },
+  {
+   "id": "g1-w2",
+   "grade": 1,
+   "week": 2,
+   "tag": "🥪 lunchbox",
+   "title": "The Case of the Smashed Sandwich",
+   "story": "Leo opened his lunch box. His sandwich was flat. A big water bottle lay on top of it. The bottle is heavy and full. His mom packed it last. Nobody sat on the box. The bread is flat, not wet.",
+   "question": "What smashed the sandwich?",
+   "suspects": [
+    {
+     "who": "🍶 The heavy bottle",
+     "why": "it lay on top and is full"
+    },
+    {
+     "who": "🪑 Somebody sat on it",
+     "why": "nobody sat on the box"
+    },
+    {
+     "who": "💧 A leak",
+     "why": "the bread is flat, not wet"
+    }
+   ],
+   "answer": "The heavy bottle smashed the sandwich.",
+   "proof": [
+    "“A big water bottle lay on top of it.”",
+    "“The bottle is heavy and full.”"
+   ],
+   "clears": [
+    "Sitting on it: “Nobody sat on the box.”",
+    "A leak: “The bread is flat, not wet.”"
+   ],
+   "explain": "The bread is flat, not wet. Because the heavy bottle lay on top of the sandwich, it pressed the bread flat."
+  },
+  {
+   "id": "g1-w3",
+   "grade": 1,
+   "week": 3,
+   "tag": "✏️ pencil",
+   "title": "The Case of the Broken Tip",
+   "story": "Ivy's pencil tip broke three times. She pressed very hard on the paper. The paper sat on a soft mat. A soft mat lets the tip sink. Her other pencils are fine. The lead is not cracked inside. She moved to a hard desk. The tip did not break.",
+   "question": "Why did the tip keep breaking?",
+   "suspects": [
+    {
+     "who": "🧽 The soft mat",
+     "why": "a soft mat lets the tip sink"
+    },
+    {
+     "who": "✏️ Cracked lead",
+     "why": "the lead is not cracked inside"
+    },
+    {
+     "who": "📦 Bad pencils",
+     "why": "her other pencils are fine"
+    }
+   ],
+   "answer": "The soft mat let the tip sink and break.",
+   "proof": [
+    "“The paper sat on a soft mat.”",
+    "“A soft mat lets the tip sink.”"
+   ],
+   "clears": [
+    "Cracked lead: “The lead is not cracked inside.”",
+    "Bad pencils: “Her other pencils are fine.”"
+   ],
+   "explain": "The tip did not break on a hard desk. Because the soft mat let the tip sink, the point broke when she pressed hard."
+  },
+  {
+   "id": "g1-w4",
+   "grade": 1,
+   "week": 4,
+   "tag": "🍎 apple",
+   "title": "The Case of the Brown Apple",
+   "story": "Sam cut an apple at nine. By noon it was brown. He wrapped the other half up tight. That half is still white. Air turns a cut apple brown. Nobody touched the slices. The slices smell fine.",
+   "question": "Why did the apple turn brown?",
+   "suspects": [
+    {
+     "who": "💨 Air on the cut side",
+     "why": "air turns a cut apple brown"
+    },
+    {
+     "who": "🖐 Somebody touched it",
+     "why": "nobody touched the slices"
+    },
+    {
+     "who": "🦠 It went bad",
+     "why": "the slices smell fine"
+    }
+   ],
+   "answer": "Air turned the cut apple brown.",
+   "proof": [
+    "“Air turns a cut apple brown.”",
+    "“That half is still white.”"
+   ],
+   "clears": [
+    "Touching: “Nobody touched the slices.”",
+    "Going bad: “The slices smell fine.”"
+   ],
+   "explain": "The wrapped half is still white. Because air turns a cut apple brown, the half left open went brown by noon."
+  },
+  {
+   "id": "g1-w5",
+   "grade": 1,
+   "week": 5,
+   "tag": "🚲 bike",
+   "title": "The Case of the Wobbly Seat",
+   "story": "Dev's bike seat wobbled side to side. The bolt under the seat was loose. He did not crash. The frame is straight. A loose bolt lets a seat move. His dad turned the bolt tight. The seat stopped wobbling.",
+   "question": "Why did the seat wobble?",
+   "suspects": [
+    {
+     "who": "🔩 A loose bolt",
+     "why": "the bolt under the seat was loose"
+    },
+    {
+     "who": "💥 A crash",
+     "why": "he did not crash"
+    },
+    {
+     "who": "🚲 A bent frame",
+     "why": "the frame is straight"
+    }
+   ],
+   "answer": "A loose bolt let the seat wobble.",
+   "proof": [
+    "“The bolt under the seat was loose.”",
+    "“A loose bolt lets a seat move.”"
+   ],
+   "clears": [
+    "A crash: “He did not crash.”",
+    "A bent frame: “The frame is straight.”"
+   ],
+   "explain": "The seat stopped wobbling after the bolt was tight. Because the bolt was loose, the seat could move side to side."
+  },
+  {
+   "id": "g1-w6",
+   "grade": 1,
+   "week": 6,
+   "tag": "🐠 fishtank",
+   "title": "The Case of the Hiding Fish",
+   "story": "The class fish hid behind a rock. It used to swim in front. A new big fish came on Monday. Big fish chase little fish. The water is clean. The food is the same. The little fish came out when the big one left.",
+   "question": "Why did the little fish hide?",
+   "suspects": [
+    {
+     "who": "🐟 The new big fish",
+     "why": "big fish chase little fish"
+    },
+    {
+     "who": "💧 Dirty water",
+     "why": "the water is clean"
+    },
+    {
+     "who": "🍚 New food",
+     "why": "the food is the same"
+    }
+   ],
+   "answer": "The new big fish made it hide.",
+   "proof": [
+    "“A new big fish came on Monday.”",
+    "“Big fish chase little fish.”"
+   ],
+   "clears": [
+    "Dirty water: “The water is clean.”",
+    "New food: “The food is the same.”"
+   ],
+   "explain": "The little fish came out when the big one left. Because big fish chase little fish, the new fish made it hide behind the rock."
+  },
+  {
+   "id": "g1-w7",
+   "grade": 1,
+   "week": 7,
+   "tag": "🔊 noise",
+   "title": "The Case of the Tapping Window",
+   "story": "A tap came from the window. It tapped only on windy days. A branch hangs near the glass. Wind pushes the branch. The branch hits the window. The tap came again at noon. No bird was there. The clock does not tap.",
+   "question": "What tapped the window?",
+   "suspects": [
+    {
+     "who": "🌳 A branch",
+     "why": "the branch hits the window"
+    },
+    {
+     "who": "🐦 A bird",
+     "why": "no bird was there"
+    },
+    {
+     "who": "⏰ The clock",
+     "why": "the clock does not tap"
+    }
+   ],
+   "answer": "A branch tapped the window in the wind.",
+   "proof": [
+    "“A branch hangs near the glass.”",
+    "“The branch hits the window.”"
+   ],
+   "clears": [
+    "A bird: “No bird was there.”",
+    "The clock: “The clock does not tap.”"
+   ],
+   "explain": "It tapped only on windy days. Because wind pushes the branch, the branch hits the window."
+  },
+  {
+   "id": "g1-w8",
+   "grade": 1,
+   "week": 8,
+   "tag": "🍂 leaves",
+   "title": "The Case of the Leaf in the Hall",
+   "story": "One red leaf sat in the hall. The door was open at recess. Wind blew in the open door. The leaf is from the big maple. The maple is by that door. No one carried it in. The leaf is not wet.",
+   "question": "How did the leaf get inside?",
+   "suspects": [
+    {
+     "who": "🌬️ Wind through the door",
+     "why": "the maple is by that door"
+    },
+    {
+     "who": "🙋 Somebody carried it",
+     "why": "no one carried it in"
+    },
+    {
+     "who": "🌧️ Rain washed it in",
+     "why": "the leaf is not wet"
+    }
+   ],
+   "answer": "Wind blew the leaf in the open door.",
+   "proof": [
+    "“Wind blew in the open door.”",
+    "“The maple is by that door.”"
+   ],
+   "clears": [
+    "Carrying: “No one carried it in.”",
+    "Rain: “The leaf is not wet.”"
+   ],
+   "explain": "The leaf is from the big maple by that door. Because the door was open and wind blew in, the leaf came in on the wind."
+  },
+  {
+   "id": "g1-w9",
+   "grade": 1,
+   "week": 9,
+   "tag": "🎃 pumpkin",
+   "title": "The Case of the Pumpkin Seeds",
+   "story": "Seeds were on the floor by the pumpkin. The pumpkin has a hole in the side. The hole has small tooth marks. A mouse was seen in the hall. No one cut the pumpkin. The class did not open it.",
+   "question": "Who ate the pumpkin seeds?",
+   "suspects": [
+    {
+     "who": "🐭 A mouse",
+     "why": "the hole has small tooth marks"
+    },
+    {
+     "who": "🔪 Somebody cut it",
+     "why": "no one cut the pumpkin"
+    },
+    {
+     "who": "👩‍🏫 The class opened it",
+     "why": "the class did not open it"
+    }
+   ],
+   "answer": "A mouse chewed a hole and ate the seeds.",
+   "proof": [
+    "“The hole has small tooth marks.”",
+    "“A mouse was seen in the hall.”"
+   ],
+   "clears": [
+    "Cutting: “No one cut the pumpkin.”",
+    "The class: “The class did not open it.”"
+   ],
+   "explain": "The hole has small tooth marks. Because a mouse was seen in the hall, a mouse chewed in and ate the seeds."
+  },
+  {
+   "id": "g1-w10",
+   "grade": 1,
+   "week": 10,
+   "tag": "👣 footprints",
+   "title": "The Case of the Small Prints",
+   "story": "Small muddy prints went to the door. They have four toes. A dog has four toes. The prints are too small for a shoe. The class cat stayed inside. A dog was in the yard. The prints go out the door.",
+   "question": "Who left the muddy prints?",
+   "suspects": [
+    {
+     "who": "🐕 A dog",
+     "why": "a dog has four toes"
+    },
+    {
+     "who": "🐈 The class cat",
+     "why": "the class cat stayed inside"
+    },
+    {
+     "who": "👟 A shoe",
+     "why": "the prints are too small for a shoe"
+    }
+   ],
+   "answer": "A dog left the muddy prints.",
+   "proof": [
+    "“A dog has four toes.”",
+    "“A dog was in the yard.”"
+   ],
+   "clears": [
+    "The cat: “The class cat stayed inside.”",
+    "A shoe: “The prints are too small for a shoe.”"
+   ],
+   "explain": "The prints have four toes and go out the door. Because a dog has four toes and a dog was in the yard, the dog left them."
+  },
+  {
+   "id": "g1-w11",
+   "grade": 1,
+   "week": 11,
+   "tag": "🚌 bus",
+   "title": "The Case of the Wrong Stop",
+   "story": "Mia got off at the wrong stop. She was reading her book. She did not watch the street. The driver calls each stop. Mia did not hear him. Her stop is the next one. The bus was not late.",
+   "question": "Why did Mia get off early?",
+   "suspects": [
+    {
+     "who": "📖 She was reading",
+     "why": "she did not hear the driver"
+    },
+    {
+     "who": "🚌 A late bus",
+     "why": "the bus was not late"
+    },
+    {
+     "who": "🗣️ No call",
+     "why": "the driver calls each stop"
+    }
+   ],
+   "answer": "Mia was reading and missed her stop.",
+   "proof": [
+    "“She was reading her book.”",
+    "“Mia did not hear him.”"
+   ],
+   "clears": [
+    "A late bus: “The bus was not late.”",
+    "No call: “The driver calls each stop.”"
+   ],
+   "explain": "Her stop is the next one. Because she was reading and did not hear the driver, she got off one stop early."
+  },
+  {
+   "id": "g1-w12",
+   "grade": 1,
+   "week": 12,
+   "tag": "🏆 trophy",
+   "title": "The Case of the Tipped Trophy",
+   "story": "The class trophy fell on its side. The shelf is not level. It leans down to the left. The trophy fell to the left. No one bumped the shelf. The trophy is not broken. A level shelf holds a trophy up.",
+   "question": "Why did the trophy tip over?",
+   "suspects": [
+    {
+     "who": "📐 The sloping shelf",
+     "why": "the trophy fell the way the shelf leans"
+    },
+    {
+     "who": "🖐 Somebody bumped it",
+     "why": "no one bumped the shelf"
+    },
+    {
+     "who": "💥 It broke",
+     "why": "the trophy is not broken"
+    }
+   ],
+   "answer": "The sloping shelf let the trophy tip over.",
+   "proof": [
+    "“It leans down to the left.”",
+    "“The trophy fell to the left.”"
+   ],
+   "clears": [
+    "Bumping: “No one bumped the shelf.”",
+    "Breaking: “The trophy is not broken.”"
+   ],
+   "explain": "The trophy fell the same way the shelf leans. Because the shelf is not level, the trophy tipped to the left."
+  },
+  {
+   "id": "g1-w13",
+   "grade": 1,
+   "week": 13,
+   "tag": "🦃 turkey",
+   "title": "The Case of the Cold Plate",
+   "story": "The food was hot in the pan. On the plate it went cold fast. The plates came from a cold shelf. A cold plate takes the heat. The pan was still hot. Nobody opened a window. The next plates were warmed first.",
+   "question": "Why did the food go cold?",
+   "suspects": [
+    {
+     "who": "🍽️ The cold plates",
+     "why": "a cold plate takes the heat"
+    },
+    {
+     "who": "🔥 The pan",
+     "why": "the pan was still hot"
+    },
+    {
+     "who": "🪟 An open window",
+     "why": "nobody opened a window"
+    }
+   ],
+   "answer": "The cold plates took the heat from the food.",
+   "proof": [
+    "“The plates came from a cold shelf.”",
+    "“A cold plate takes the heat.”"
+   ],
+   "clears": [
+    "The pan: “The pan was still hot.”",
+    "An open window: “Nobody opened a window.”"
+   ],
+   "explain": "The next plates were warmed first. Because the plates came from a cold shelf, they took the heat from the food."
+  },
+  {
+   "id": "g1-w14",
+   "grade": 1,
+   "week": 14,
+   "tag": "🧁 cupcake",
+   "title": "The Case of the Stuck Cupcakes",
+   "story": "The cupcakes stuck to the pan. The class forgot the paper cups. Butter was not used either. Cake sticks to a bare pan. Each cup had the same batter. The next batch used paper cups. Those came out clean. The pan is not old.",
+   "question": "Why did the cupcakes stick?",
+   "suspects": [
+    {
+     "who": "🧁 No paper cups",
+     "why": "cake sticks to a bare pan"
+    },
+    {
+     "who": "🍳 An old pan",
+     "why": "the pan is not old"
+    },
+    {
+     "who": "🍰 Too much batter",
+     "why": "each cup had the same batter"
+    }
+   ],
+   "answer": "The cupcakes stuck because the pan was bare.",
+   "proof": [
+    "“The class forgot the paper cups.”",
+    "“Cake sticks to a bare pan.”"
+   ],
+   "clears": [
+    "An old pan: “The pan is not old.”",
+    "Too much batter: “Each cup had the same batter.”"
+   ],
+   "explain": "The next batch used paper cups and came out clean. Because the class forgot the cups and used no butter, the cake stuck to the bare pan."
+  },
+  {
+   "id": "g1-w15",
+   "grade": 1,
+   "week": 15,
+   "tag": "🧤 mitten",
+   "title": "The Case of the Lost Mitten",
+   "story": "Kim had two mittens at recess. She came in with one. The lost one has no clip. Her other mitten is clipped to her coat. A clip holds a mitten on. The lost one was in the snow. No one took it.",
+   "question": "Why did one mitten get lost?",
+   "suspects": [
+    {
+     "who": "📎 No clip on that mitten",
+     "why": "a clip holds a mitten on"
+    },
+    {
+     "who": "🙋 Somebody took it",
+     "why": "no one took it"
+    },
+    {
+     "who": "🧺 It is in the wash",
+     "why": "the lost one was in the snow"
+    }
+   ],
+   "answer": "The mitten with no clip fell off in the snow.",
+   "proof": [
+    "“The lost one has no clip.”",
+    "“A clip holds a mitten on.”"
+   ],
+   "clears": [
+    "Somebody taking it: “No one took it.”",
+    "The wash: “The lost one was in the snow.”"
+   ],
+   "explain": "Her other mitten is clipped to her coat and did not fall. Because the lost one had no clip, it came off in the snow."
+  },
+  {
+   "id": "g1-w16",
+   "grade": 1,
+   "week": 16,
+   "tag": "🎄 ginger",
+   "title": "The Case of the Soggy Roof",
+   "story": "The gingerbread roof went soft. The house sat by the sink. Steam rises from the hot sink. Steam makes gingerbread soft. The walls are away from the sink. The walls are still hard. No one spilled water on it.",
+   "question": "Why did the roof go soft?",
+   "suspects": [
+    {
+     "who": "💨 Steam from the sink",
+     "why": "steam makes gingerbread soft"
+    },
+    {
+     "who": "💧 A spill",
+     "why": "no one spilled water on it"
+    },
+    {
+     "who": "🧱 Bad walls",
+     "why": "the walls are still hard"
+    }
+   ],
+   "answer": "Steam from the sink made the roof soft.",
+   "proof": [
+    "“Steam rises from the hot sink.”",
+    "“Steam makes gingerbread soft.”"
+   ],
+   "clears": [
+    "A spill: “No one spilled water on it.”",
+    "The walls: “The walls are still hard.”"
+   ],
+   "explain": "The walls are away from the sink and are still hard. Because steam rises from the hot sink, the roof above it went soft."
+  },
+  {
+   "id": "g1-w17",
+   "grade": 1,
+   "week": 17,
+   "tag": "💡 lights",
+   "title": "The Case of the Dark String",
+   "story": "A string of lights went dark. The plug was in the wall. The switch was turned off. A switch off means no power. Mr. Cole flipped the switch on. All the lights came on. No bulb was broken.",
+   "question": "Why did the lights go dark?",
+   "suspects": [
+    {
+     "who": "🔘 The switch was off",
+     "why": "a switch off means no power"
+    },
+    {
+     "who": "🔌 The plug",
+     "why": "the plug was in the wall"
+    },
+    {
+     "who": "💡 A broken bulb",
+     "why": "no bulb was broken"
+    }
+   ],
+   "answer": "The switch was turned off.",
+   "proof": [
+    "“The switch was turned off.”",
+    "“A switch off means no power.”"
+   ],
+   "clears": [
+    "The plug: “The plug was in the wall.”",
+    "A broken bulb: “No bulb was broken.”"
+   ],
+   "explain": "All the lights came on when the switch was flipped. Because the switch was off, the string had no power."
+  },
+  {
+   "id": "g1-w18",
+   "grade": 1,
+   "week": 18,
+   "tag": "⏰ clock",
+   "title": "The Case of the Stopped Clock",
+   "story": "The class clock stopped at ten. The hands do not move. Mr. Lee opened the back. The battery was green and old. An old battery stops a clock. Nothing holds the hands. The clock is not cracked. He put a new one in. The clock runs again.",
+   "question": "Why did the clock stop?",
+   "suspects": [
+    {
+     "who": "🔋 The old battery",
+     "why": "an old battery stops a clock"
+    },
+    {
+     "who": "⚙️ Stuck hands",
+     "why": "nothing holds the hands"
+    },
+    {
+     "who": "🔨 A drop",
+     "why": "the clock is not cracked"
+    }
+   ],
+   "answer": "The old battery stopped the clock.",
+   "proof": [
+    "“The battery was green and old.”",
+    "“An old battery stops a clock.”"
+   ],
+   "clears": [
+    "Stuck hands: “Nothing holds the hands.”",
+    "A drop: “The clock is not cracked.”"
+   ],
+   "explain": "The clock runs again with a new battery. Because the old battery was green and dead, the clock stopped."
+  },
+  {
+   "id": "g1-w19",
+   "grade": 1,
+   "week": 19,
+   "tag": "⛄ snow",
+   "title": "The Case of the Small Snowball",
+   "story": "Max made a big snowball. He left it on the step. By lunch it was small. The step is in the sun. Sun melts snow fast. No one kicked it. A wet ring sits around it.",
+   "question": "Why did the snowball get small?",
+   "suspects": [
+    {
+     "who": "☀️ The sun",
+     "why": "sun melts snow fast"
+    },
+    {
+     "who": "🦶 Somebody kicked it",
+     "why": "no one kicked it"
+    },
+    {
+     "who": "🐕 A dog took it",
+     "why": "a wet ring sits around it"
+    }
+   ],
+   "answer": "The sun melted the snowball.",
+   "proof": [
+    "“The step is in the sun.”",
+    "“Sun melts snow fast.”"
+   ],
+   "clears": [
+    "Kicking: “No one kicked it.”",
+    "A dog: “A wet ring sits around it.”"
+   ],
+   "explain": "A wet ring sits around it. Because the step is in the sun, the sun melted the snowball into water."
+  },
+  {
+   "id": "g1-w20",
+   "grade": 1,
+   "week": 20,
+   "tag": "🐦 feeder",
+   "title": "The Case of the Spilled Seed",
+   "story": "Seed lay under the bird feeder. The feeder has a big crack. Seed falls out of the crack. The lid was still shut tight. No squirrel was seen. Birds do not crack plastic. Mr. Lee taped the crack. The seed stopped falling.",
+   "question": "Why was seed on the ground?",
+   "suspects": [
+    {
+     "who": "🪣 A crack in the feeder",
+     "why": "seed falls out of the crack"
+    },
+    {
+     "who": "🐿️ A squirrel",
+     "why": "no squirrel was seen"
+    },
+    {
+     "who": "🐦 The birds",
+     "why": "birds do not crack plastic"
+    }
+   ],
+   "answer": "Seed fell out of the crack.",
+   "proof": [
+    "“The feeder has a big crack.”",
+    "“Seed falls out of the crack.”"
+   ],
+   "clears": [
+    "A squirrel: “No squirrel was seen.”",
+    "The birds: “Birds do not crack plastic.”"
+   ],
+   "explain": "The seed stopped falling after the tape went on. Because the feeder has a big crack, the seed fell out of it."
+  },
+  {
+   "id": "g1-w21",
+   "grade": 1,
+   "week": 21,
+   "tag": "☕ cocoa",
+   "title": "The Case of the Spotted Cocoa",
+   "story": "White spots floated on the cocoa. The milk came from a new jug. The jug sat out all night. Warm milk goes bad and makes spots. The cocoa mix was fresh. The cup was clean. The spots smell sour.",
+   "question": "Why were there spots in the cocoa?",
+   "suspects": [
+    {
+     "who": "🥛 Milk left out",
+     "why": "warm milk goes bad and makes spots"
+    },
+    {
+     "who": "📦 The mix",
+     "why": "the cocoa mix was fresh"
+    },
+    {
+     "who": "🥤 A dirty cup",
+     "why": "the cup was clean"
+    }
+   ],
+   "answer": "The milk went bad sitting out.",
+   "proof": [
+    "“The jug sat out all night.”",
+    "“Warm milk goes bad and makes spots.”"
+   ],
+   "clears": [
+    "The mix: “The cocoa mix was fresh.”",
+    "A dirty cup: “The cup was clean.”"
+   ],
+   "explain": "The spots smell sour. Because the jug sat out all night, the warm milk went bad and made spots."
+  },
+  {
+   "id": "g1-w22",
+   "grade": 1,
+   "week": 22,
+   "tag": "💌 valentine",
+   "title": "The Case of the Blank Valentine",
+   "story": "Ana got a valentine with no name. The card has a heart sticker. Only Jon has heart stickers. Jon sits next to Ana. Mia uses star stickers. Sam was home sick. Ana said thank you to Jon.",
+   "question": "Who gave Ana the valentine?",
+   "suspects": [
+    {
+     "who": "💙 Jon",
+     "why": "only Jon has heart stickers"
+    },
+    {
+     "who": "⭐ Mia",
+     "why": "Mia uses star stickers"
+    },
+    {
+     "who": "🤒 Sam",
+     "why": "Sam was home sick"
+    }
+   ],
+   "answer": "Jon gave Ana the valentine.",
+   "proof": [
+    "“The card has a heart sticker.”",
+    "“Only Jon has heart stickers.”"
+   ],
+   "clears": [
+    "Mia: “Mia uses star stickers.”",
+    "Sam: “Sam was home sick.”"
+   ],
+   "explain": "Only Jon has heart stickers. Because the card has a heart sticker, Jon is the one who gave it."
+  },
+  {
+   "id": "g1-w23",
+   "grade": 1,
+   "week": 23,
+   "tag": "🌋 volcano",
+   "title": "The Case of the Flat Volcano",
+   "story": "Rosa's volcano made no foam. She used baking powder by mistake. The jar says baking powder. Baking soda makes the foam. Her vinegar was new. The cup had no cracks. She tried it again. The right jar worked.",
+   "question": "Why did the volcano make no foam?",
+   "suspects": [
+    {
+     "who": "🥄 The wrong powder",
+     "why": "baking soda makes the foam"
+    },
+    {
+     "who": "🍶 Old vinegar",
+     "why": "her vinegar was new"
+    },
+    {
+     "who": "🥤 A cracked cup",
+     "why": "the cup had no cracks"
+    }
+   ],
+   "answer": "She used baking powder, not baking soda.",
+   "proof": [
+    "“She used baking powder by mistake.”",
+    "“Baking soda makes the foam.”"
+   ],
+   "clears": [
+    "Old vinegar: “Her vinegar was new.”",
+    "A cracked cup: “The cup had no cracks.”"
+   ],
+   "explain": "The right jar worked when she tried again. Because she used baking powder and not baking soda, the volcano made no foam."
+  },
+  {
+   "id": "g1-w24",
+   "grade": 1,
+   "week": 24,
+   "tag": "👑 crown",
+   "title": "The Case of the Torn Crown",
+   "story": "The paper crown has a long rip. It hung on a hook all night. The hook has a sharp end. Paper rips on a sharp end. No one wore it last night. The rip is at the hook spot. It is not cut straight.",
+   "question": "What ripped the crown?",
+   "suspects": [
+    {
+     "who": "🪝 The sharp hook",
+     "why": "the rip is at the hook spot"
+    },
+    {
+     "who": "🙋 Somebody wore it",
+     "why": "no one wore it last night"
+    },
+    {
+     "who": "✂️ Scissors",
+     "why": "it is not cut straight"
+    }
+   ],
+   "answer": "The sharp hook ripped the crown.",
+   "proof": [
+    "“The hook has a sharp end.”",
+    "“The rip is at the hook spot.”"
+   ],
+   "clears": [
+    "Wearing it: “No one wore it last night.”",
+    "Scissors: “It is not cut straight.”"
+   ],
+   "explain": "The rip is at the hook spot. Because the hook has a sharp end, the paper ripped on it."
+  },
+  {
+   "id": "g1-w25",
+   "grade": 1,
+   "week": 25,
+   "tag": "🎹 piano",
+   "title": "The Case of the Stuck Key",
+   "story": "One piano key will not go down. Mr. Lee looked inside. A coin sits under that key. A coin blocks a key. The other keys work fine. No one spilled water. He took the coin out. The key works now.",
+   "question": "Why would one key not go down?",
+   "suspects": [
+    {
+     "who": "🪙 A coin under the key",
+     "why": "a coin blocks a key"
+    },
+    {
+     "who": "💧 Water",
+     "why": "no one spilled water"
+    },
+    {
+     "who": "🎹 A broken piano",
+     "why": "the other keys work fine"
+    }
+   ],
+   "answer": "A coin was stuck under the key.",
+   "proof": [
+    "“A coin sits under that key.”",
+    "“A coin blocks a key.”"
+   ],
+   "clears": [
+    "Water: “No one spilled water.”",
+    "A broken piano: “The other keys work fine.”"
+   ],
+   "explain": "The key works now that the coin is out. Because a coin sat under it, the key could not go down."
+  },
+  {
+   "id": "g1-w26",
+   "grade": 1,
+   "week": 26,
+   "tag": "🪁 kite",
+   "title": "The Case of the Grounded Kite",
+   "story": "Sam's kite would not fly. There was no wind today. A kite needs wind to fly. His string is not tangled. The kite has no rips. Lin's kite did not fly either. The flags hang straight down.",
+   "question": "Why would the kite not fly?",
+   "suspects": [
+    {
+     "who": "🌬️ No wind",
+     "why": "the flags hang straight down"
+    },
+    {
+     "who": "🧵 A tangled string",
+     "why": "his string is not tangled"
+    },
+    {
+     "who": "🕳️ A rip",
+     "why": "the kite has no rips"
+    }
+   ],
+   "answer": "There was no wind to lift the kite.",
+   "proof": [
+    "“There was no wind today.”",
+    "“The flags hang straight down.”"
+   ],
+   "clears": [
+    "A tangled string: “His string is not tangled.”",
+    "A rip: “The kite has no rips.”"
+   ],
+   "explain": "Lin's kite did not fly either. Because there was no wind, no kite could go up."
+  },
+  {
+   "id": "g1-w27",
+   "grade": 1,
+   "week": 27,
+   "tag": "☘️ shamrock",
+   "title": "The Case of the Dry Shamrock",
+   "story": "The shamrock leaves went limp. The pot soil is very dry. Plants need water to stand up. The class was away all week. No one watered it. The leaves are green, not brown. Water made it stand up again.",
+   "question": "Why did the leaves go limp?",
+   "suspects": [
+    {
+     "who": "💧 No water",
+     "why": "the pot soil is very dry"
+    },
+    {
+     "who": "🐛 Bugs",
+     "why": "the leaves are green, not brown"
+    },
+    {
+     "who": "🪴 Bad soil",
+     "why": "water made it stand up again"
+    }
+   ],
+   "answer": "The plant had no water for a week.",
+   "proof": [
+    "“The pot soil is very dry.”",
+    "“Plants need water to stand up.”"
+   ],
+   "clears": [
+    "Bugs: “The leaves are green, not brown.”",
+    "Bad soil: “Water made it stand up again.”"
+   ],
+   "explain": "Water made it stand up again. Because the class was away all week, no one watered it and the soil went dry."
+  },
+  {
+   "id": "g1-w28",
+   "grade": 1,
+   "week": 28,
+   "tag": "🌧️ puddle",
+   "title": "The Case of the Wet Boot",
+   "story": "Theo's left boot is wet inside. His right boot is dry. He stepped in a deep puddle. The left boot has a hole. Water gets in through a hole. He did not spill his drink. The sock on that foot is wet.",
+   "question": "Why is one boot wet inside?",
+   "suspects": [
+    {
+     "who": "🕳️ A hole in the boot",
+     "why": "water gets in through a hole"
+    },
+    {
+     "who": "🥤 A spilled drink",
+     "why": "he did not spill his drink"
+    },
+    {
+     "who": "🌧️ Rain",
+     "why": "his right boot is dry"
+    }
+   ],
+   "answer": "Water came in through the hole.",
+   "proof": [
+    "“The left boot has a hole.”",
+    "“Water gets in through a hole.”"
+   ],
+   "clears": [
+    "A spilled drink: “He did not spill his drink.”",
+    "Rain: “His right boot is dry.”"
+   ],
+   "explain": "The sock on that foot is wet. Because the left boot has a hole, water got in when he stepped in the puddle."
+  },
+  {
+   "id": "g1-w29",
+   "grade": 1,
+   "week": 29,
+   "tag": "🌻 garden",
+   "title": "The Case of the Missing Carrot Tops",
+   "story": "The carrot tops are gone. The carrots are still in the dirt. Small tracks go to the fence. A rabbit hole is by the fence. Rabbits eat green tops. No one picked the carrots. The tracks are not shoe prints.",
+   "question": "What ate the carrot tops?",
+   "suspects": [
+    {
+     "who": "🐰 A rabbit",
+     "why": "rabbits eat green tops"
+    },
+    {
+     "who": "🙋 Somebody picked them",
+     "why": "no one picked the carrots"
+    },
+    {
+     "who": "👟 A person walked in",
+     "why": "the tracks are not shoe prints"
+    }
+   ],
+   "answer": "A rabbit ate the carrot tops.",
+   "proof": [
+    "“A rabbit hole is by the fence.”",
+    "“Rabbits eat green tops.”"
+   ],
+   "clears": [
+    "Picking: “No one picked the carrots.”",
+    "A person: “The tracks are not shoe prints.”"
+   ],
+   "explain": "The carrots are still in the dirt. Because a rabbit hole is by the fence and rabbits eat green tops, a rabbit ate them."
+  },
+  {
+   "id": "g1-w30",
+   "grade": 1,
+   "week": 30,
+   "tag": "🪺 eggs",
+   "title": "The Case of the Broken Shell",
+   "story": "A shell lay under the nest. The shell is in two neat halves. A chick pushes out in halves. A smashed egg is in bits. A new bird sits in the nest. No cat came near. The nest is not torn.",
+   "question": "What happened to the egg?",
+   "suspects": [
+    {
+     "who": "🐣 A chick hatched",
+     "why": "a chick pushes out in halves"
+    },
+    {
+     "who": "🐈 A cat",
+     "why": "no cat came near"
+    },
+    {
+     "who": "🌬️ It fell",
+     "why": "the nest is not torn"
+    }
+   ],
+   "answer": "A chick hatched out of the egg.",
+   "proof": [
+    "“The shell is in two neat halves.”",
+    "“A chick pushes out in halves.”"
+   ],
+   "clears": [
+    "A cat: “No cat came near.”",
+    "Falling: “The nest is not torn.”"
+   ],
+   "explain": "A new bird sits in the nest. Because the shell is in two neat halves, a chick pushed its way out."
+  },
+  {
+   "id": "g1-w31",
+   "grade": 1,
+   "week": 31,
+   "tag": "🌎 earth",
+   "title": "The Case of the Full Bin",
+   "story": "The paper bin fills up fast. The class cuts paper every day. Scraps go in the paper bin. The trash bin is almost empty. No one moved the bins. The scraps are all paper. Mrs. Diaz got a bigger bin.",
+   "question": "Why does the paper bin fill up fast?",
+   "suspects": [
+    {
+     "who": "✂️ Paper scraps from cutting",
+     "why": "scraps go in the paper bin"
+    },
+    {
+     "who": "🗑️ The wrong bin",
+     "why": "no one moved the bins"
+    },
+    {
+     "who": "🍌 Food scraps",
+     "why": "the scraps are all paper"
+    }
+   ],
+   "answer": "Paper scraps from cutting fill the bin.",
+   "proof": [
+    "“The class cuts paper every day.”",
+    "“Scraps go in the paper bin.”"
+   ],
+   "clears": [
+    "The wrong bin: “No one moved the bins.”",
+    "Food scraps: “The scraps are all paper.”"
+   ],
+   "explain": "The trash bin is almost empty. Because the class cuts paper every day, the scraps fill the paper bin fast."
+  },
+  {
+   "id": "g1-w32",
+   "grade": 1,
+   "week": 32,
+   "tag": "📷 camera",
+   "title": "The Case of the Half Photo",
+   "story": "Half of the class photo is dark. A finger shape sits in the corner. Ben held the camera. His finger was over the lens. A finger blocks the light. The lens is clean. The battery was full.",
+   "question": "Why is half the photo dark?",
+   "suspects": [
+    {
+     "who": "👆 A finger on the lens",
+     "why": "a finger blocks the light"
+    },
+    {
+     "who": "🧼 A dirty lens",
+     "why": "the lens is clean"
+    },
+    {
+     "who": "🔋 The battery",
+     "why": "the battery was full"
+    }
+   ],
+   "answer": "Ben's finger covered part of the lens.",
+   "proof": [
+    "“His finger was over the lens.”",
+    "“A finger blocks the light.”"
+   ],
+   "clears": [
+    "A dirty lens: “The lens is clean.”",
+    "The battery: “The battery was full.”"
+   ],
+   "explain": "A finger shape sits in the corner. Because Ben's finger was over the lens, it blocked the light on that side."
+  },
+  {
+   "id": "g1-w33",
+   "grade": 1,
+   "week": 33,
+   "tag": "🌱 plant",
+   "title": "The Case of the Tall Bean",
+   "story": "Two beans grew in one pot. One bean is tall and thin. It grew behind a big book. A plant stretches to find light. The short bean sits in the light. Both got the same water. Both have the same soil.",
+   "question": "Why is one bean tall and thin?",
+   "suspects": [
+    {
+     "who": "📕 The book blocked the light",
+     "why": "a plant stretches to find light"
+    },
+    {
+     "who": "💧 Water",
+     "why": "both got the same water"
+    },
+    {
+     "who": "🪴 Soil",
+     "why": "both have the same soil"
+    }
+   ],
+   "answer": "The book blocked the light, so the bean stretched.",
+   "proof": [
+    "“It grew behind a big book.”",
+    "“A plant stretches to find light.”"
+   ],
+   "clears": [
+    "Water: “Both got the same water.”",
+    "Soil: “Both have the same soil.”"
+   ],
+   "explain": "The short bean sits in the light. Because the tall bean grew behind a big book, it stretched up to find light."
+  },
+  {
+   "id": "g1-w34",
+   "grade": 1,
+   "week": 34,
+   "tag": "🍦 icecream",
+   "title": "The Case of the Drippy Cone",
+   "story": "Nia's cone dripped all over her hand. Jo's cone did not drip. Nia sat in the sun. Jo sat under the tree. Sun melts ice cream fast. Both cones were the same size. Both came from one tub.",
+   "question": "Why did one cone drip?",
+   "suspects": [
+    {
+     "who": "☀️ Sitting in the sun",
+     "why": "sun melts ice cream fast"
+    },
+    {
+     "who": "🍦 A bigger cone",
+     "why": "both cones were the same size"
+    },
+    {
+     "who": "🥛 Bad ice cream",
+     "why": "both came from one tub"
+    }
+   ],
+   "answer": "The sun melted Nia's ice cream.",
+   "proof": [
+    "“Nia sat in the sun.”",
+    "“Sun melts ice cream fast.”"
+   ],
+   "clears": [
+    "A bigger cone: “Both cones were the same size.”",
+    "Bad ice cream: “Both came from one tub.”"
+   ],
+   "explain": "Jo sat under the tree and her cone did not drip. Because Nia sat in the sun, her ice cream melted fast."
+  },
+  {
+   "id": "g1-w35",
+   "grade": 1,
+   "week": 35,
+   "tag": "🎗️ ribbon",
+   "title": "The Case of the Short Ribbon",
+   "story": "Kim's field day ribbon is short. The end is cut straight across. Scissors make a straight cut. The art box was open. A ribbon piece sits in the box. No one pulled on it. A rip is never straight.",
+   "question": "Why is the ribbon short?",
+   "suspects": [
+    {
+     "who": "✂️ Scissors",
+     "why": "scissors make a straight cut"
+    },
+    {
+     "who": "🖐 Somebody pulled it",
+     "why": "no one pulled on it"
+    },
+    {
+     "who": "🪝 It ripped",
+     "why": "a rip is never straight"
+    }
+   ],
+   "answer": "Somebody cut the ribbon with scissors.",
+   "proof": [
+    "“The end is cut straight across.”",
+    "“Scissors make a straight cut.”"
+   ],
+   "clears": [
+    "Pulling: “No one pulled on it.”",
+    "A rip: “A rip is never straight.”"
+   ],
+   "explain": "A ribbon piece sits in the art box. Because the end is cut straight across, scissors made the cut."
+  },
+  {
+   "id": "g1-w36",
+   "grade": 1,
+   "week": 36,
+   "tag": "🎈 balloons",
+   "title": "The Case of the Loud Pop",
+   "story": "A balloon popped by the window. The window sill is hot. Hot air makes a balloon grow. A grown balloon pops. The balloons in the shade are fine. No pin was in the room. No one touched them.",
+   "question": "Why did the balloon pop?",
+   "suspects": [
+    {
+     "who": "☀️ Heat on the sill",
+     "why": "hot air makes a balloon grow"
+    },
+    {
+     "who": "📌 A pin",
+     "why": "no pin was in the room"
+    },
+    {
+     "who": "🖐 Somebody popped it",
+     "why": "no one touched them"
+    }
+   ],
+   "answer": "Heat made the balloon grow and pop.",
+   "proof": [
+    "“The window sill is hot.”",
+    "“Hot air makes a balloon grow.”"
+   ],
+   "clears": [
+    "A pin: “No pin was in the room.”",
+    "Somebody popping it: “No one touched them.”"
+   ],
+   "explain": "The balloons in the shade are fine. Because the window sill is hot, the air inside grew and the balloon popped."
+  },
+  {
    "id": "g2-w1",
    "grade": 2,
    "week": 1,
