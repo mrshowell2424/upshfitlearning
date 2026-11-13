@@ -959,12 +959,12 @@
   "standard_text": "Standard: Determine a central idea of a text and how it is conveyed through particular details; provide a summary of the text distinct from personal opinions or judgments.\n Spiral: RI.6.1 citing evidence · RI.6.3 development · RI.6.5 structure · RI.6.10 comprehension\n Lower range: LL 770 – 870",
   "higher": {
    "lexile": 1010,
-   "words": 249,
-   "labelled_words": 249,
+   "words": 248,
+   "labelled_words": 248,
    "paras": [
     {
      "label": "A",
-     "text": "A sound that reaches you has to cross from air into fluid. The inner ear is filled with liquid, and sound moving from air into water normally bounces off, losing about 99.9 per cent of its energy at the boundary."
+     "text": "A sound that reaches you has to cross from air into fluid. The inner ear is filled with liquid, and sound moving from air into water normally bounces off, losing about 99.9 percent of its energy at the boundary."
     },
     {
      "label": "B",
@@ -1032,7 +1032,7 @@
     "n": 1,
     "kind": "main idea/detail",
     "q": "Why would sound be lost without the middle ear bones?",
-    "a": "Sound moving from air into water normally bounces off, losing about 99.9 per cent of its energy at the boundary, and the inner ear is filled with liquid."
+    "a": "Sound moving from air into water normally bounces off, losing about 99.9 percent of its energy at the boundary, and the inner ear is filled with liquid."
    },
    {
     "n": 2,
@@ -1070,8 +1070,8 @@
   "standard_text": "Standard: Analyze in detail how a key individual, event, or idea is introduced, illustrated, and elaborated in a text, including through examples or anecdotes.\n Spiral: RI.6.1 citing evidence · RI.6.2 central idea · RI.6.5 structure · RI.6.10 comprehension\n Lower range: LL 770 – 870",
   "higher": {
    "lexile": 1060,
-   "words": 258,
-   "labelled_words": 258,
+   "words": 257,
+   "labelled_words": 257,
    "paras": [
     {
      "label": "A",
@@ -1091,7 +1091,7 @@
     },
     {
      "label": "E",
-     "text": "He ordered hand washing in chlorinated lime. Deaths in the first clinic fell from about eighteen per cent to around two within a year. He had no germ theory to explain it and called the cause cadaverous particles."
+     "text": "He ordered hand washing in chlorinated lime. Deaths in the first clinic fell from about eighteen percent to around two within a year. He had no germ theory to explain it and called the cause cadaverous particles."
     },
     {
      "label": "F",
@@ -1105,8 +1105,8 @@
   },
   "lower": {
    "lexile": 840,
-   "words": 193,
-   "labelled_words": 193,
+   "words": 192,
+   "labelled_words": 192,
    "paras": [
     {
      "label": "A",
@@ -1126,7 +1126,7 @@
     },
     {
      "label": "E",
-     "text": "He ordered hand washing in chlorinated lime. Deaths in the first clinic fell from eighteen per cent to about two. He could not say why it worked."
+     "text": "He ordered hand washing in chlorinated lime. Deaths in the first clinic fell from eighteen percent to about two. He could not say why it worked."
     },
     {
      "label": "F",
@@ -1155,7 +1155,7 @@
     "n": 3,
     "kind": "summarize",
     "q": "Summarize what Semmelweis discovered and how it was received.",
-    "a": "He found that mothers delivered by medical students died far more often than those delivered by midwives, traced the cause to students coming from the dissecting room, and cut deaths from about eighteen per cent to two by ordering hand washing in chlorinated lime. The profession took the idea as an insult and his contract was not renewed."
+    "a": "He found that mothers delivered by medical students died far more often than those delivered by midwives, traced the cause to students coming from the dissecting room, and cut deaths from about eighteen percent to two by ordering hand washing in chlorinated lime. The profession took the idea as an insult and his contract was not renewed."
    },
    {
     "n": 4,
@@ -3337,8 +3337,8 @@
   "standard_text": "Standard: Integrate information presented in different media or formats, including visually and quantitatively, as well as in words to develop a coherent understanding of a topic or issue.\n Spiral: RI.6.1 citing evidence · RI.6.2 central idea · RI.6.9 comparing accounts · RI.6.10 comprehension\n Lower range: LL 770 – 870",
   "higher": {
    "lexile": 1020,
-   "words": 197,
-   "labelled_words": 197,
+   "words": 196,
+   "labelled_words": 196,
    "paras": [
     {
      "label": "A",
@@ -3358,7 +3358,7 @@
     },
     {
      "label": "E",
-     "text": "The disagreement is usually about scale. The map says twelve per cent of the town flooded. The table says the average claim was eleven thousand dollars. Both are true and neither mentions that twenty families lost everything."
+     "text": "The disagreement is usually about scale. The map says twelve percent of the town flooded. The table says the average claim was eleven thousand dollars. Both are true and neither mentions that twenty families lost everything."
     },
     {
      "label": "F",
@@ -3368,8 +3368,8 @@
   },
   "lower": {
    "lexile": 800,
-   "words": 154,
-   "labelled_words": 154,
+   "words": 153,
+   "labelled_words": 153,
    "paras": [
     {
      "label": "A",
@@ -3389,7 +3389,7 @@
     },
     {
      "label": "E",
-     "text": "The disagreement is about scale. The map says twelve per cent of the town flooded. The table says the average claim was eleven thousand dollars. Neither mentions the twenty families who lost everything."
+     "text": "The disagreement is about scale. The map says twelve percent of the town flooded. The table says the average claim was eleven thousand dollars. Neither mentions the twenty families who lost everything."
     },
     {
      "label": "F",
@@ -3429,7 +3429,7 @@
     "a": "A budget drawn from the average will not reach the twenty families who lost everything, and a budget drawn from the photograph will not reach the rest."
    }
   ],
-  "note": "Paragraph E is the arithmetic that matters, i.e. twelve per cent and eleven thousand dollars are both true and both leave the twenty families out."
+  "note": "Paragraph E is the arithmetic that matters, i.e. twelve percent and eleven thousand dollars are both true and both leave the twenty families out."
  },
  {
   "id": "g6-33",
@@ -3747,5 +3747,544 @@
    }
   ],
   "note": "Paragraph G is the pairing to teach, i.e. magnitude \"is one number and the intensity map is a thousand.\" One is about the fault and one is about people."
+ },
+ {
+  "id": "g6-36",
+  "grade": 6,
+  "n": 36,
+  "title": "Should the City Build a Bike Lane?",
+  "standard": "RI.6.8",
+  "standard_text": "Standard: Trace and evaluate the argument and specific claims in a text, distinguishing claims that are supported by reasons and evidence from claims that are not.\n Spiral: RI.6.1 citing evidence · RI.6.5 structure · RI.6.6 point of view · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1020,
+   "words": 213,
+   "labelled_words": 213,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The proposal would take one of four traffic lanes on Market Street and make it a protected bike lane. The council packet runs eleven pages. Four of its claims carry evidence and three do not."
+    },
+    {
+     "label": "B",
+     "text": "The supported ones are easy to check. The city counted 1,340 cyclists a day on Market Street in September, and the fire department's own letter says a protected lane does not narrow the path for an engine."
+    },
+    {
+     "label": "C",
+     "text": "The crash figure is supported and smaller than it sounds. Collisions involving cyclists fell 38 percent on Oak Street after its lane was built, which is six fewer crashes a year on one street over three years."
+    },
+    {
+     "label": "D",
+     "text": "Three claims have nothing behind them. The packet says the lane will bring shoppers downtown, that property values will rise, and that traffic will not get worse. No study, no comparison city, no figure."
+    },
+    {
+     "label": "E",
+     "text": "The last of those is the one to press. Taking a lane away and expecting no change in traffic is a claim that could be tested, cheaply, by measuring Oak Street before and after. Nobody did."
+    },
+    {
+     "label": "F",
+     "text": "An argument can be worth supporting and badly made at the same time. The cyclist count and the fire department letter are reasons. The property values are a hope with a sentence around it."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 800,
+   "words": 155,
+   "labelled_words": 155,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The plan would turn one of four traffic lanes into a protected bike lane. The council packet runs eleven pages. Four claims carry evidence. Three do not."
+    },
+    {
+     "label": "B",
+     "text": "The supported ones are easy to check. The city counted 1,340 cyclists a day in September. The fire department wrote that a protected lane still fits an engine."
+    },
+    {
+     "label": "C",
+     "text": "The crash figure is supported and smaller than it sounds. Crashes with cyclists fell 38 percent on Oak Street. That is six fewer crashes a year."
+    },
+    {
+     "label": "D",
+     "text": "Three claims have nothing behind them. The packet says the lane will bring shoppers. It says property values will rise. It says traffic will not get worse."
+    },
+    {
+     "label": "E",
+     "text": "The last one is the one to press. Taking a lane away and expecting no change could be tested. Nobody measured Oak Street before and after."
+    },
+    {
+     "label": "F",
+     "text": "An argument can be worth supporting and badly made. The cyclist count is a reason. The property values are a hope."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Which claims in the packet carry evidence?",
+    "a": "The city counted 1,340 cyclists a day on Market Street in September, the fire department's letter says a protected lane does not narrow the path for an engine, and collisions fell 38 percent on Oak Street."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. the three unsupported claims) and paragraph E (i.e. the one that could have been tested).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize which parts of the bike lane argument are supported and which are not.",
+    "a": "The cyclist count, the fire department letter and the Oak Street crash figure all carry evidence, although the crash drop is six fewer a year. The claims that the lane will bring shoppers, raise property values and not worsen traffic have no study or figure behind them, and the traffic claim could have been tested cheaply."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "protected lane: a bike lane separated from traffic by a physical barrier.\nunsupported: stated without a study, figure or comparison behind it.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the 38 percent figure and what it means in crashes.",
+    "a": "Collisions involving cyclists fell 38 percent on Oak Street, which is six fewer crashes a year on one street over three years."
+   }
+  ],
+  "note": "Paragraph F is the point of the whole standard, i.e. an argument can be \"worth supporting and badly made at the same time.\" Students want those to be one question."
+ },
+ {
+  "id": "g6-37",
+  "grade": 6,
+  "n": 37,
+  "title": "The Claim That Sharks Do Not Get Cancer",
+  "standard": "RI.6.8",
+  "standard_text": "Standard: Trace and evaluate the argument and specific claims in a text, distinguishing claims that are supported by reasons and evidence from claims that are not.\n Spiral: RI.6.1 citing evidence · RI.6.5 structure · RI.6.6 point of view · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1040,
+   "words": 203,
+   "labelled_words": 203,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A 1992 book called Sharks Don't Get Cancer sold well and built an industry. Shark cartilage pills were being sold for hundreds of dollars a bottle within a few years."
+    },
+    {
+     "label": "B",
+     "text": "The argument ran in three steps. Sharks do not get cancer; their skeletons are cartilage; therefore cartilage prevents cancer. Each step was offered as support for the next."
+    },
+    {
+     "label": "C",
+     "text": "The first step is false. The Registry of Tumors in Lower Animals has documented dozens of tumors in sharks, including cancers of the cartilage itself, which were on record before the book was written."
+    },
+    {
+     "label": "D",
+     "text": "The second step is true and does no work. Sharks do have cartilage skeletons, and that fact supports nothing about cancer unless the first step holds."
+    },
+    {
+     "label": "E",
+     "text": "The third step does not follow even if the first two did. A substance in an animal's body is not a drug you can swallow; cartilage is mostly protein, and protein is digested rather than delivered."
+    },
+    {
+     "label": "F",
+     "text": "Trials settled it. Controlled studies of shark cartilage in patients with advanced cancer found no benefit, and regulators have acted against companies for claiming otherwise."
+    },
+    {
+     "label": "G",
+     "text": "The cost was not only money. Shark populations were fished down for the pills, and some patients took them instead of treatment that worked."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 820,
+   "words": 161,
+   "labelled_words": 161,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A 1992 book called Sharks Don't Get Cancer sold well. It built an industry. Shark cartilage pills soon cost hundreds of dollars a bottle."
+    },
+    {
+     "label": "B",
+     "text": "The argument ran in three steps. Sharks do not get cancer. Their skeletons are cartilage. So cartilage prevents cancer."
+    },
+    {
+     "label": "C",
+     "text": "The first step is false. A registry has recorded dozens of tumors in sharks. Some were cancers of the cartilage itself. They were on record before the book."
+    },
+    {
+     "label": "D",
+     "text": "The second step is true and does no work. Sharks do have cartilage skeletons. That supports nothing unless the first step holds."
+    },
+    {
+     "label": "E",
+     "text": "The third step does not follow either. A substance in an animal is not a drug you can swallow. Cartilage is mostly protein. Protein is digested."
+    },
+    {
+     "label": "F",
+     "text": "Trials settled it. Studies in patients with advanced cancer found no benefit. Regulators have acted against companies for claiming otherwise."
+    },
+    {
+     "label": "G",
+     "text": "The cost was not only money. Sharks were fished down for the pills. Some patients took them instead of treatment that worked."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why is the first step of the argument false?",
+    "a": "The Registry of Tumors in Lower Animals has documented dozens of tumors in sharks, including cancers of the cartilage itself."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. the step that does no work) and paragraph F (i.e. the trials).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize the argument and what is wrong with each step.",
+    "a": "It claims sharks do not get cancer, that their skeletons are cartilage, and therefore that cartilage prevents cancer. The first step is false because tumors in sharks were already on record, the second is true but does nothing on its own, and the third does not follow because cartilage is protein and is digested. Trials found no benefit."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "cartilage: the flexible tissue a shark's skeleton is made of.\ncontrolled study: a trial that compares a treatment against no treatment to see whether it works.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the three steps and whether the conclusion holds.",
+    "a": "Each step was offered as support for the next, so because the first step is false the second supports nothing about cancer and the conclusion does not follow."
+   }
+  ],
+  "note": "This is a chain argument, and chains are the clearest case for RI.6.8: one false link and nothing downstream survives, however true the other links are."
+ },
+ {
+  "id": "g6-38",
+  "grade": 6,
+  "n": 38,
+  "title": "Is Bottled Water Worth It?",
+  "standard": "RI.6.8",
+  "standard_text": "Standard: Trace and evaluate the argument and specific claims in a text, distinguishing claims that are supported by reasons and evidence from claims that are not.\n Spiral: RI.6.1 citing evidence · RI.6.5 structure · RI.6.6 point of view · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1010,
+   "words": 209,
+   "labelled_words": 209,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A flyer handed out at a school fair argues that families should stop buying bottled water. It makes five claims, and the strong ones are not the loud ones."
+    },
+    {
+     "label": "B",
+     "text": "The cost claim is solid. A gallon from the tap costs a fraction of a cent in most American cities, and the same gallon in bottles runs a few dollars, which is a comparison anyone can check on a bill."
+    },
+    {
+     "label": "C",
+     "text": "The safety claim is weaker than the flyer suggests. Municipal water in the United States is tested more often than bottled water is, which is true, and that does not make every tap safe — Flint had tested water and a lead problem."
+    },
+    {
+     "label": "D",
+     "text": "The plastic claim is supported and overstated. Bottles really do take centuries to break down, and the flyer's figure of ninety-one percent unrecycled is a global number quoted as if it were local."
+    },
+    {
+     "label": "E",
+     "text": "The taste claim is not an argument. Whether tap water tastes worse varies by city and by person, and the flyer offers it as though it settled something."
+    },
+    {
+     "label": "F",
+     "text": "The one missing piece is the exception. Some people cannot drink their tap water, and a flyer that never says so is making a weaker case than it could, because it leaves itself one obvious counterexample."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 790,
+   "words": 169,
+   "labelled_words": 169,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A flyer at a school fair says families should stop buying bottled water. It makes five claims. The strong ones are not the loud ones."
+    },
+    {
+     "label": "B",
+     "text": "The cost claim is solid. A gallon from the tap costs a fraction of a cent. The same gallon in bottles costs a few dollars. Anyone can check that on a bill."
+    },
+    {
+     "label": "C",
+     "text": "The safety claim is weaker than it sounds. City water is tested more often than bottled water. That is true. It does not make every tap safe. Flint had tested water and a lead problem."
+    },
+    {
+     "label": "D",
+     "text": "The plastic claim is supported and overstated. Bottles do take centuries to break down. The flyer's ninety-one percent figure is a global number used as a local one."
+    },
+    {
+     "label": "E",
+     "text": "The taste claim is not an argument. Taste varies by city and by person. The flyer offers it as if it settled something."
+    },
+    {
+     "label": "F",
+     "text": "The missing piece is the exception. Some people cannot drink their tap water. A flyer that never says so makes a weaker case than it could."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Which claim in the flyer is the strongest?",
+    "a": "The cost claim, because a gallon from the tap costs a fraction of a cent and the same gallon in bottles runs a few dollars, which anyone can check on a bill."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the safety claim) and paragraph F (i.e. the missing exception).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize which of the flyer's claims hold up.",
+    "a": "The cost claim is solid and checkable. The safety claim is true about testing but does not make every tap safe. The plastic claim is supported and quotes a global recycling figure as a local one. The taste claim is not an argument at all, and the flyer never mentions people who cannot drink their tap water."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "municipal: belonging to a city, as in the water a city supplies and tests.\ncounterexample: a single case that a claim fails to cover.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between naming the exception and the strength of the flyer's case.",
+    "a": "Some people cannot drink their tap water, and a flyer that never says so is making a weaker case than it could, because it leaves itself one obvious counterexample."
+   }
+  ],
+  "note": "Paragraph F is the counter-intuitive one worth arguing about: naming the exception makes the argument stronger, not weaker."
+ },
+ {
+  "id": "g6-39",
+  "grade": 6,
+  "n": 39,
+  "title": "The Advertisement for the Memory Pill",
+  "standard": "RI.6.8",
+  "standard_text": "Standard: Trace and evaluate the argument and specific claims in a text, distinguishing claims that are supported by reasons and evidence from claims that are not.\n Spiral: RI.6.1 citing evidence · RI.6.5 structure · RI.6.6 point of view · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1030,
+   "words": 204,
+   "labelled_words": 204,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A full-page advertisement promises better memory in thirty days. It reads like an argument and is built out of things that are not evidence."
+    },
+    {
+     "label": "B",
+     "text": "It opens with a doctor. The photograph is of a person in a white coat, the name has letters after it, and nothing says what the letters are or whether the person studied memory."
+    },
+    {
+     "label": "C",
+     "text": "Then come the testimonials. Four people say the pill worked, and a testimonial cannot show that a pill works because nobody collected the people it did nothing for."
+    },
+    {
+     "label": "D",
+     "text": "The study it cites is real and the sentence about it is not. The advertisement says clinically proven; the study had eleven participants, no comparison group, and ran for two weeks."
+    },
+    {
+     "label": "E",
+     "text": "The graph has no numbers on the vertical axis. The bars rise, and without units a rising bar can represent any difference at all, including none worth noticing."
+    },
+    {
+     "label": "F",
+     "text": "The small print carries the actual claim. These statements have not been evaluated by the Food and Drug Administration, it says, and that sentence contradicts the headline above it."
+    },
+    {
+     "label": "G",
+     "text": "So the test is not whether an argument sounds like science. It is whether any part of it could come out the other way, and nothing in this advertisement could."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 810,
+   "words": 163,
+   "labelled_words": 163,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A full-page advertisement promises better memory in thirty days. It reads like an argument. It is built from things that are not evidence."
+    },
+    {
+     "label": "B",
+     "text": "It opens with a doctor. The photograph shows a person in a white coat. The name has letters after it. Nothing says what the letters mean."
+    },
+    {
+     "label": "C",
+     "text": "Then come the testimonials. Four people say the pill worked. Nobody collected the people it did nothing for."
+    },
+    {
+     "label": "D",
+     "text": "The study it cites is real. The sentence about it is not. The study had eleven people, no comparison group, and ran two weeks."
+    },
+    {
+     "label": "E",
+     "text": "The graph has no numbers on the vertical axis. The bars rise. Without units a rising bar can mean any difference at all."
+    },
+    {
+     "label": "F",
+     "text": "The small print carries the real claim. It says these statements have not been evaluated by the Food and Drug Administration. That contradicts the headline."
+    },
+    {
+     "label": "G",
+     "text": "So the test is not whether it sounds like science. It is whether any part could come out the other way. Nothing here could."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why can a testimonial not show that a pill works?",
+    "a": "Nobody collected the people it did nothing for, so four people saying it worked does not show that the pill worked."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. what the study actually was) and paragraph F (i.e. the small print).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how the advertisement is built and why none of it is evidence.",
+    "a": "It opens with a white coat and letters after a name that are never explained, offers four testimonials with no account of anyone it failed, calls a study of eleven people with no comparison group clinically proven, and prints a graph with no units. The small print then says the statements have not been evaluated at all."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "testimonial: one person's account of a product working, offered in place of a trial.\ncomparison group: the people in a study who do not get the treatment, so the effect can be measured against something.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the small print and the headline.",
+    "a": "The small print says these statements have not been evaluated by the Food and Drug Administration, and that sentence contradicts the headline above it."
+   }
+  ],
+  "note": "Paragraph G is the transferable test, i.e. \"whether any part of it could come out the other way.\" An argument that cannot fail is not an argument."
+ },
+ {
+  "id": "g6-40",
+  "grade": 6,
+  "n": 40,
+  "title": "Should the Dam Come Down?",
+  "standard": "RI.6.8",
+  "standard_text": "Standard: Trace and evaluate the argument and specific claims in a text, distinguishing claims that are supported by reasons and evidence from claims that are not.\n Spiral: RI.6.1 citing evidence · RI.6.5 structure · RI.6.6 point of view · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1050,
+   "words": 221,
+   "labelled_words": 221,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Two sides filed written statements with the county about an eighty-year-old dam, and both are arguing honestly from different things they can prove."
+    },
+    {
+     "label": "B",
+     "text": "The removal side has the fish numbers. Salmon counts above four comparable removed dams rose within three years, with figures from state surveys attached to the filing."
+    },
+    {
+     "label": "C",
+     "text": "They also claim the dam is unsafe, and that one is borrowed. It rests on a state inspection of a different dam built the same decade, which is a reason to inspect this one and not a finding about it."
+    },
+    {
+     "label": "D",
+     "text": "The keep side has the water. Sixty homes draw from the reservoir, and the engineering study they attached shows what each would pay to connect to the municipal line."
+    },
+    {
+     "label": "E",
+     "text": "Their second claim is the weak one. They say removal will flood downstream property, and the filing offers no model, no comparable case, and no figure — the opposite of what their first claim did."
+    },
+    {
+     "label": "F",
+     "text": "Both sides leave out the same thing. Neither filing says what happens if nothing is done, although the dam will keep aging either way and doing nothing is the option that requires no vote."
+    },
+    {
+     "label": "G",
+     "text": "So the strongest claim on each side is specific and local, and the weakest on each side is general and borrowed. That pattern is worth more than knowing which side you are on."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 830,
+   "words": 169,
+   "labelled_words": 169,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Two sides filed statements with the county about an eighty-year-old dam. Both argue honestly. Both argue from different things they can prove."
+    },
+    {
+     "label": "B",
+     "text": "The removal side has the fish numbers. Salmon counts rose above four comparable removed dams within three years. State surveys are attached."
+    },
+    {
+     "label": "C",
+     "text": "They also say the dam is unsafe. That claim is borrowed. It rests on an inspection of a different dam from the same decade. That is a reason to inspect, not a finding."
+    },
+    {
+     "label": "D",
+     "text": "The keep side has the water. Sixty homes draw from the reservoir. Their engineering study shows what each would pay to connect to the city line."
+    },
+    {
+     "label": "E",
+     "text": "Their second claim is the weak one. They say removal will flood downstream property. The filing offers no model, no comparable case, and no figure."
+    },
+    {
+     "label": "F",
+     "text": "Both sides leave out the same thing. Neither says what happens if nothing is done. The dam keeps aging either way."
+    },
+    {
+     "label": "G",
+     "text": "So the strongest claim on each side is specific and local. The weakest on each side is general and borrowed."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What evidence does the removal side attach?",
+    "a": "Salmon counts above four comparable removed dams rose within three years, with figures from state surveys attached to the filing."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the borrowed safety claim) and paragraph E (i.e. the flooding claim with no figure).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize the strongest and weakest claim on each side.",
+    "a": "The removal side has salmon counts from four comparable dams with state surveys attached, and a borrowed safety claim resting on an inspection of a different dam. The keep side has an engineering study of what sixty homes would pay to connect to the city line, and an unsupported claim that removal will flood downstream property."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "filing: a written statement submitted formally to a government body.\nborrowed evidence: a finding about a different case offered as though it were about this one.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between how specific a claim is and how well it is supported.",
+    "a": "The strongest claim on each side is specific and local and the weakest on each side is general and borrowed, which is the pattern worth noticing."
+   }
+  ],
+  "note": "Paragraph F is the move most students miss. Doing nothing is an option on the table and neither filing argues against it."
  }
 ]
