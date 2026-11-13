@@ -177,6 +177,23 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                 {`All ${WORDS.length} words come from the articles themselves, so every word already belongs to a grade, a standard and a text it turns up in.`}
               </p>
 
+              {/* Grade is a row of links, not a select inside the form.
+                  As two coupled selects, changing the grade left the word list
+                  showing the previous grade's words until the button was
+                  pressed -- which reads as every grade having the same list.
+                  A link reloads straight away, so the words on screen always
+                  belong to the grade on screen. It also drops the word index,
+                  since word 40 of one grade has nothing to do with word 40 of
+                  another. */}
+              <p style={{ ...label, margin: "0 0 10px" }}>Grade</p>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "0 0 16px" }}>
+                {GRADES.map((g) => (
+                  <a key={g} href={`/vocabulary?g=${g}`} style={pill(g === grade)}>
+                    {gradeName(g)}
+                  </a>
+                ))}
+              </div>
+
               <form
                 method="get"
                 style={{
@@ -187,20 +204,14 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                   margin: "0 0 18px",
                 }}
               >
-                <label style={label} htmlFor="g">Grade</label>
-                <select id="g" name="g" defaultValue={String(grade)} style={select}>
-                  {GRADES.map((g) => (
-                    <option key={g} value={g}>{gradeName(g)}</option>
-                  ))}
-                </select>
-                <label style={label} htmlFor="w">Word</label>
+                <input type="hidden" name="g" value={grade} />
+                <label style={label} htmlFor="w">{`Word · ${pool.length} in ${gradeName(grade)}`}</label>
                 <select id="w" name="w" defaultValue={String(wi)} style={select}>
                   {pool.map((w, i) => (
                     <option key={w.id} value={i}>{w.word}</option>
                   ))}
                 </select>
                 <button type="submit" style={pill(true)}>Teach it</button>
-                <span style={{ ...label, margin: 0 }}>{`${pool.length} words in ${gradeName(grade)}`}</span>
               </form>
 
               {word ? (

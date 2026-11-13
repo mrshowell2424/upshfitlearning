@@ -453,15 +453,22 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
 
             {tab === "my" ? (
               <>
+                {/* Grade is a row of links, not a select in the form. As two
+                    coupled selects, changing the grade left the case list
+                    showing the previous grade's titles until Show was pressed,
+                    which reads as every grade having the same cases. */}
+                <p style={{ ...label, margin: "0 0 10px" }}>Grade</p>
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "0 0 14px" }}>
+                  {MY_GRADES.map((g) => (
+                    <a key={g} href={`/science-of-reading/resources?tab=my&g=${g}`} style={pill(g === myGrade)}>
+                      {gradeName(g)}
+                    </a>
+                  ))}
+                </div>
                 <form method="get" style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap", margin: "0 0 16px" }}>
                   <input type="hidden" name="tab" value="my" />
-                  <label style={label} htmlFor="mg">Grade</label>
-                  <select id="mg" name="g" defaultValue={String(myGrade)} style={select}>
-                    {MY_GRADES.map((g) => (
-                      <option key={g} value={g}>{gradeName(g)}</option>
-                    ))}
-                  </select>
-                  <label style={label} htmlFor="c">Case</label>
+                  <input type="hidden" name="g" value={myGrade} />
+                  <label style={label} htmlFor="c">{`Case · ${myPool.length} in ${gradeName(myGrade)}`}</label>
                   <select id="c" name="c" defaultValue={String(ci)} style={select}>
                     {myPool.map((c, i) => (
                       <option key={c.id} value={i}>{`Week ${c.week} · ${c.title}`}</option>
@@ -525,15 +532,25 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               </>
             ) : (
               <>
+                {/* Same reason as the mystery grades: a link reloads at once,
+                    so the standards and the articles on screen belong to the
+                    grade on screen. */}
+                <p style={{ ...label, margin: "0 0 10px" }}>Grade</p>
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "0 0 14px" }}>
+                  {AR_GRADES.map((g) => (
+                    <a
+                      key={g}
+                      href={`/science-of-reading/resources?tab=ar&g=${g}&s=*&v=${ver === "lower" ? "lo" : "hi"}`}
+                      style={pill(g === grade)}
+                    >
+                      {gradeName(g)}
+                    </a>
+                  ))}
+                </div>
                 <form method="get" style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap", margin: "0 0 16px" }}>
                   <input type="hidden" name="tab" value="ar" />
                   <input type="hidden" name="v" value={ver === "lower" ? "lo" : "hi"} />
-                  <label style={label} htmlFor="g">Grade</label>
-                  <select id="g" name="g" defaultValue={String(grade)} style={select}>
-                    {AR_GRADES.map((g) => (
-                      <option key={g} value={g}>{g === 0 ? "Kindergarten" : `Grade ${g}`}</option>
-                    ))}
-                  </select>
+                  <input type="hidden" name="g" value={grade} />
                   <label style={label} htmlFor="s">Standard</label>
                   <select id="s" name="s" defaultValue={std} style={select}>
                     <option value="*">All standards</option>

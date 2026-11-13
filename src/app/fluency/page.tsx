@@ -168,6 +168,24 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                 check without anybody retyping a thing.
               </p>
 
+              {/* Grade is a row of links rather than a select in the form.
+                  Coupled selects left the passage list showing the previous
+                  grade's titles until the button was pressed. A link reloads
+                  at once, so the passages on screen belong to the grade on
+                  screen, and the passage index resets with the grade. */}
+              <p style={{ ...label, margin: "0 0 10px" }}>Grade</p>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "0 0 16px" }}>
+                {GRADES.map((g) => (
+                  <a
+                    key={g}
+                    href={`/fluency?g=${g}&v=${ver === "lower" ? "lo" : "hi"}`}
+                    style={pill(g === grade)}
+                  >
+                    {gradeName(g)}
+                  </a>
+                ))}
+              </div>
+
               <form
                 method="get"
                 style={{
@@ -179,13 +197,8 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                 }}
               >
                 <input type="hidden" name="v" value={ver === "lower" ? "lo" : "hi"} />
-                <label style={label} htmlFor="g">Grade</label>
-                <select id="g" name="g" defaultValue={String(grade)} style={select}>
-                  {GRADES.map((g) => (
-                    <option key={g} value={g}>{gradeName(g)}</option>
-                  ))}
-                </select>
-                <label style={label} htmlFor="n">Passage</label>
+                <input type="hidden" name="g" value={grade} />
+                <label style={label} htmlFor="n">{`Passage · ${pool.length} in ${gradeName(grade)}`}</label>
                 <select id="n" name="n" defaultValue={String(ai)} style={select}>
                   {pool.map((a, i) => (
                     <option key={a.id} value={i}>{`${a.n}. ${a.title}`}</option>
