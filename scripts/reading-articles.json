@@ -6,9 +6,4360 @@
   "scripts/articles/g5.json",
   "scripts/articles/g2.json",
   "scripts/articles/g6.json",
-  "scripts/articles/g1.json"
+  "scripts/articles/g1.json",
+  "scripts/articles/g0.json"
  ],
  "articles": [
+  {
+   "id": "gK-1",
+   "grade": 0,
+   "n": 1,
+   "title": "A Duck on the Pond",
+   "standard": "RI.K.1",
+   "standard_text": "Standard: With prompting and support, ask and answer questions about key details in a text.\n Spiral: RI.K.2 main topic · RI.K.4 unknown words · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 180,
+    "words": 32,
+    "labelled_words": 32,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A duck has soft feathers under its wings."
+     },
+     {
+      "label": "B",
+      "text": "Oil on the top feathers keeps the water out."
+     },
+     {
+      "label": "C",
+      "text": "The soft ones under them stay dry."
+     },
+     {
+      "label": "D",
+      "text": "So the duck stays warm all day long."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 80,
+    "words": 24,
+    "labelled_words": 24,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A duck has soft feathers under its wings."
+     },
+     {
+      "label": "B",
+      "text": "Oil on top keeps the water out."
+     },
+     {
+      "label": "C",
+      "text": "The soft ones stay dry."
+     },
+     {
+      "label": "D",
+      "text": "The duck stays warm."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What keeps the water out?",
+     "a": "Oil on the top feathers keeps the water out."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. the soft feathers) and paragraph D (i.e. staying warm).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what this is about.",
+     "a": "A duck has soft feathers under its wings. Oil on the top feathers keeps the water out, so the soft ones stay dry and the duck stays warm."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "feathers: what covers a bird.\noil: a slippery stuff that water runs off.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the oil and the duck staying warm.",
+     "a": "Oil on the top feathers keeps the water out, so the soft ones under them stay dry and the duck stays warm."
+    }
+   ],
+   "note": "Read it twice. The second time, stop after each paragraph and ask what that one sentence told you."
+  },
+  {
+   "id": "gK-2",
+   "grade": 0,
+   "n": 2,
+   "title": "The Crossing Light",
+   "standard": "RI.K.1",
+   "standard_text": "Standard: With prompting and support, ask and answer questions about key details in a text.\n Spiral: RI.K.2 main topic · RI.K.4 unknown words · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 160,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A white walking man means you may cross."
+     },
+     {
+      "label": "B",
+      "text": "A red hand means you must wait."
+     },
+     {
+      "label": "C",
+      "text": "The numbers count down the seconds left."
+     },
+     {
+      "label": "D",
+      "text": "Look both ways even when the man is white."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 70,
+    "words": 22,
+    "labelled_words": 22,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A white man means you may cross."
+     },
+     {
+      "label": "B",
+      "text": "A red hand means wait."
+     },
+     {
+      "label": "C",
+      "text": "Numbers count down the seconds."
+     },
+     {
+      "label": "D",
+      "text": "Always look both ways too."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does the red hand mean?",
+     "a": "A red hand means you must wait."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. the numbers) and paragraph D (i.e. looking both ways).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what the crossing light shows.",
+     "a": "A white walking man means you may cross and a red hand means you must wait. The numbers count down the seconds left, and you look both ways even when the man is white."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "cross: to walk from one side to the other.\ncount down: to go backward, like five, four, three.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the white man and looking both ways.",
+     "a": "You look both ways even when the man is white, because the light tells cars to stop but cannot make them."
+    }
+   ],
+   "note": "Paragraph D is the one that matters most and it comes last. Say it again at the end."
+  },
+  {
+   "id": "gK-3",
+   "grade": 0,
+   "n": 3,
+   "title": "Where a Bear Sleeps",
+   "standard": "RI.K.1",
+   "standard_text": "Standard: With prompting and support, ask and answer questions about key details in a text.\n Spiral: RI.K.2 main topic · RI.K.4 unknown words · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 170,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A bear finds a cave or a hole in winter."
+     },
+     {
+      "label": "B",
+      "text": "It sleeps there for many months."
+     },
+     {
+      "label": "C",
+      "text": "It does not eat the whole time."
+     },
+     {
+      "label": "D",
+      "text": "In spring it comes out thin and hungry."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 75,
+    "words": 22,
+    "labelled_words": 22,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A bear finds a cave in winter."
+     },
+     {
+      "label": "B",
+      "text": "It sleeps for many months."
+     },
+     {
+      "label": "C",
+      "text": "It does not eat."
+     },
+     {
+      "label": "D",
+      "text": "In spring it comes out hungry."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "Where does the bear sleep?",
+     "a": "A bear finds a cave or a hole in winter."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. not eating) and paragraph D (i.e. spring).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what a bear does in winter.",
+     "a": "A bear finds a cave or a hole, sleeps there for many months without eating, and comes out thin and hungry in spring."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "cave: a hole in rock big enough to go into.\nspring: the season that comes after winter.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between not eating and being hungry.",
+     "a": "It does not eat the whole time, so in spring it comes out thin and hungry."
+    }
+   ],
+   "note": "Four paragraphs, four steps, in order. Count them on your fingers with the child."
+  },
+  {
+   "id": "gK-4",
+   "grade": 0,
+   "n": 4,
+   "title": "The School Nurse",
+   "standard": "RI.K.1",
+   "standard_text": "Standard: With prompting and support, ask and answer questions about key details in a text.\n Spiral: RI.K.2 main topic · RI.K.4 unknown words · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 190,
+    "words": 34,
+    "labelled_words": 34,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The nurse has a small room by the office."
+     },
+     {
+      "label": "B",
+      "text": "She keeps bandages, ice packs and a cot."
+     },
+     {
+      "label": "C",
+      "text": "She writes down every child who comes in."
+     },
+     {
+      "label": "D",
+      "text": "She calls home if a child needs to go."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 90,
+    "words": 28,
+    "labelled_words": 28,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The nurse has a room by the office."
+     },
+     {
+      "label": "B",
+      "text": "She keeps bandages and ice packs."
+     },
+     {
+      "label": "C",
+      "text": "She writes down who comes in."
+     },
+     {
+      "label": "D",
+      "text": "She calls home if you need to go."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does the nurse keep?",
+     "a": "She keeps bandages, ice packs and a cot."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. writing it down) and paragraph D (i.e. calling home).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what the school nurse does.",
+     "a": "The nurse has a small room by the office with bandages, ice packs and a cot. She writes down every child who comes in, and she calls home if a child needs to go."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "bandage: a cover that goes on a cut.\ncot: a small bed you can lie down on.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between writing it down and calling home.",
+     "a": "She writes down every child who comes in, so she knows who to call home about."
+    }
+   ],
+   "note": "Children know this room. Ask what they have seen in it before you read a word."
+  },
+  {
+   "id": "gK-5",
+   "grade": 0,
+   "n": 5,
+   "title": "How a Snail Moves",
+   "standard": "RI.K.1",
+   "standard_text": "Standard: With prompting and support, ask and answer questions about key details in a text.\n Spiral: RI.K.2 main topic · RI.K.4 unknown words · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 175,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A snail has one wide foot under its shell."
+     },
+     {
+      "label": "B",
+      "text": "It makes slime to slide along."
+     },
+     {
+      "label": "C",
+      "text": "The slime lets it cross a sharp edge."
+     },
+     {
+      "label": "D",
+      "text": "You can see the shiny trail it left."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 85,
+    "words": 25,
+    "labelled_words": 25,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A snail has one foot under its shell."
+     },
+     {
+      "label": "B",
+      "text": "It makes slime to slide on."
+     },
+     {
+      "label": "C",
+      "text": "The slime keeps it safe."
+     },
+     {
+      "label": "D",
+      "text": "You can see its shiny trail."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does the snail make?",
+     "a": "It makes slime to slide along."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. the sharp edge) and paragraph D (i.e. the trail).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell how a snail moves.",
+     "a": "A snail has one wide foot under its shell. It makes slime to slide along, the slime lets it cross a sharp edge, and you can see the shiny trail it left."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "slime: wet slippery stuff.\ntrail: the mark something leaves behind.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the slime and the trail.",
+     "a": "It makes slime to slide along, and you can see the shiny trail it left."
+    }
+   ],
+   "note": "Paragraph C is the surprise: the slime is protection, not just slipperiness."
+  },
+  {
+   "id": "gK-6",
+   "grade": 0,
+   "n": 6,
+   "title": "Winter Coats",
+   "standard": "RI.K.2",
+   "standard_text": "Standard: With prompting and support, identify the main topic and retell key details of a text.\n Spiral: RI.K.1 key details · RI.K.3 connections · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 195,
+    "words": 35,
+    "labelled_words": 35,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A dog grows thicker fur when it gets cold."
+     },
+     {
+      "label": "B",
+      "text": "The thick fur holds warm air near the skin."
+     },
+     {
+      "label": "C",
+      "text": "In spring the dog sheds it again."
+     },
+     {
+      "label": "D",
+      "text": "A coat of fur comes and goes with the year."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 95,
+    "words": 28,
+    "labelled_words": 28,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A dog grows thicker fur when it is cold."
+     },
+     {
+      "label": "B",
+      "text": "The fur holds warm air near the skin."
+     },
+     {
+      "label": "C",
+      "text": "In spring the dog sheds it."
+     },
+     {
+      "label": "D",
+      "text": "The fur comes and goes."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does the thick fur hold?",
+     "a": "The thick fur holds warm air near the skin."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph A (i.e. growing fur) and paragraph C (i.e. shedding it).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what this is about.",
+     "a": "A dog grows thicker fur when it gets cold, and the thick fur holds warm air near the skin. In spring the dog sheds it, so a coat of fur comes and goes with the year."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "fur: the hair that covers an animal.\nsheds: drops off.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the cold and the thick fur.",
+     "a": "A dog grows thicker fur when it gets cold, and sheds it again in spring."
+    }
+   ],
+   "note": "The topic is the whole year, not just winter. Paragraph D is what says so."
+  },
+  {
+   "id": "gK-7",
+   "grade": 0,
+   "n": 7,
+   "title": "The Grocery Cart",
+   "standard": "RI.K.2",
+   "standard_text": "Standard: With prompting and support, identify the main topic and retell key details of a text.\n Spiral: RI.K.1 key details · RI.K.3 connections · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 165,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A cart has four wheels and a deep basket."
+     },
+     {
+      "label": "B",
+      "text": "The two front wheels can turn any way."
+     },
+     {
+      "label": "C",
+      "text": "That is how you steer around a corner."
+     },
+     {
+      "label": "D",
+      "text": "The back wheels only roll straight."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 75,
+    "words": 24,
+    "labelled_words": 24,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A cart has four wheels and a basket."
+     },
+     {
+      "label": "B",
+      "text": "The front wheels turn any way."
+     },
+     {
+      "label": "C",
+      "text": "That is how you steer."
+     },
+     {
+      "label": "D",
+      "text": "The back wheels roll straight."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "Which wheels can turn any way?",
+     "a": "The two front wheels can turn any way."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. steering) and paragraph D (i.e. the back wheels).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what this is about.",
+     "a": "A cart has four wheels and a deep basket. The two front wheels can turn any way, which is how you steer around a corner, and the back wheels only roll straight."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "steer: to make something go the way you want.\nbasket: the part that holds what you put in.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the front wheels and steering.",
+     "a": "The two front wheels can turn any way, and that is how you steer around a corner."
+    }
+   ],
+   "note": "Have the child push a cart and watch the wheels. The text will make sense in one trip."
+  },
+  {
+   "id": "gK-8",
+   "grade": 0,
+   "n": 8,
+   "title": "Seeds in the Wind",
+   "standard": "RI.K.2",
+   "standard_text": "Standard: With prompting and support, identify the main topic and retell key details of a text.\n Spiral: RI.K.1 key details · RI.K.3 connections · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 200,
+    "words": 35,
+    "labelled_words": 35,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A dandelion seed has a tiny white parachute."
+     },
+     {
+      "label": "B",
+      "text": "The wind lifts it high off the stem."
+     },
+     {
+      "label": "C",
+      "text": "It can land far from the plant it came from."
+     },
+     {
+      "label": "D",
+      "text": "That is how one plant fills a whole yard."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 100,
+    "words": 26,
+    "labelled_words": 26,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A dandelion seed has a white top."
+     },
+     {
+      "label": "B",
+      "text": "The wind lifts it off the stem."
+     },
+     {
+      "label": "C",
+      "text": "It can land far away."
+     },
+     {
+      "label": "D",
+      "text": "That is how a yard fills up."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What lifts the seed?",
+     "a": "The wind lifts it high off the stem."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph A (i.e. the parachute) and paragraph D (i.e. filling a yard).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what this is about.",
+     "a": "A dandelion seed has a tiny white parachute. The wind lifts it high off the stem and it can land far from the plant it came from, which is how one plant fills a whole yard."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "parachute: a soft top that catches the air.\nstem: the part that holds a plant up.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the parachute and landing far away.",
+     "a": "The seed has a tiny white parachute, so the wind lifts it high and it can land far from the plant it came from."
+    }
+   ],
+   "note": "Blow a real dandelion if you can. Paragraph D is the part they will remember."
+  },
+  {
+   "id": "gK-9",
+   "grade": 0,
+   "n": 9,
+   "title": "The Library Shelf",
+   "standard": "RI.K.2",
+   "standard_text": "Standard: With prompting and support, identify the main topic and retell key details of a text.\n Spiral: RI.K.1 key details · RI.K.3 connections · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 155,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Picture books sit on the low shelves."
+     },
+     {
+      "label": "B",
+      "text": "The low shelves are where children can reach."
+     },
+     {
+      "label": "C",
+      "text": "Thick books sit up high for big readers."
+     },
+     {
+      "label": "D",
+      "text": "Every shelf has a letter on the end."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 65,
+    "words": 23,
+    "labelled_words": 23,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Picture books sit on the low shelves."
+     },
+     {
+      "label": "B",
+      "text": "Children can reach the low shelves."
+     },
+     {
+      "label": "C",
+      "text": "Thick books sit up high."
+     },
+     {
+      "label": "D",
+      "text": "Each shelf has a letter."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "Where do picture books sit?",
+     "a": "Picture books sit on the low shelves."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph B (i.e. reaching) and paragraph D (i.e. the letters).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what this is about.",
+     "a": "Picture books sit on the low shelves where children can reach, thick books sit up high for big readers, and every shelf has a letter on the end."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "shelf: a flat board that holds books.\nreach: to be able to touch.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the low shelves and children.",
+     "a": "Picture books sit on the low shelves, because the low shelves are where children can reach."
+    }
+   ],
+   "note": "Ask the child to find the letter on the end of their own shelf at school."
+  },
+  {
+   "id": "gK-10",
+   "grade": 0,
+   "n": 10,
+   "title": "Why Ice Floats",
+   "standard": "RI.K.2",
+   "standard_text": "Standard: With prompting and support, identify the main topic and retell key details of a text.\n Spiral: RI.K.1 key details · RI.K.3 connections · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 210,
+    "words": 34,
+    "labelled_words": 34,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Water gets bigger when it turns to ice."
+     },
+     {
+      "label": "B",
+      "text": "A bigger piece of the same water is lighter."
+     },
+     {
+      "label": "C",
+      "text": "So ice floats on top instead of sinking."
+     },
+     {
+      "label": "D",
+      "text": "That is why a pond freezes from the top."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 105,
+    "words": 22,
+    "labelled_words": 22,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Water gets bigger when it freezes."
+     },
+     {
+      "label": "B",
+      "text": "Bigger means lighter here."
+     },
+     {
+      "label": "C",
+      "text": "So ice floats on top."
+     },
+     {
+      "label": "D",
+      "text": "A pond freezes from the top down."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What happens to water when it freezes?",
+     "a": "Water gets bigger when it turns to ice."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. floating) and paragraph D (i.e. the pond).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what this is about.",
+     "a": "Water gets bigger when it turns to ice, and a bigger piece of the same water is lighter. So ice floats on top instead of sinking, which is why a pond freezes from the top."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "floats: stays up on top of the water.\nfreezes: turns into ice.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between ice being lighter and a pond freezing on top.",
+     "a": "A bigger piece of the same water is lighter, so ice floats on top and a pond freezes from the top down."
+    }
+   ],
+   "note": "This one is hard and worth it. Put an ice cube in a glass and watch where it sits."
+  },
+  {
+   "id": "gK-11",
+   "grade": 0,
+   "n": 11,
+   "title": "Rain and the Worm",
+   "standard": "RI.K.3",
+   "standard_text": "Standard: With prompting and support, describe the connection between two individuals, events, ideas, or pieces of information in a text.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.8 reasons · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 185,
+    "words": 34,
+    "labelled_words": 34,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Worms live in little tunnels in the dirt."
+     },
+     {
+      "label": "B",
+      "text": "When it rains hard, the tunnels fill with water."
+     },
+     {
+      "label": "C",
+      "text": "The worms come up so they can breathe."
+     },
+     {
+      "label": "D",
+      "text": "That is why you see them on the path."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 85,
+    "words": 25,
+    "labelled_words": 25,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Worms live in tunnels in the dirt."
+     },
+     {
+      "label": "B",
+      "text": "Rain fills the tunnels with water."
+     },
+     {
+      "label": "C",
+      "text": "The worms come up to breathe."
+     },
+     {
+      "label": "D",
+      "text": "You see them on the path."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "Where do worms live?",
+     "a": "Worms live in little tunnels in the dirt."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph B (i.e. the rain) and paragraph C (i.e. coming up).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what this is about.",
+     "a": "Worms live in tunnels in the dirt. When it rains hard the tunnels fill with water, so the worms come up to breathe, and that is why you see them on the path."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "tunnel: a hole that goes along under the ground.\nbreathe: to take in air.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the rain and the worms on the path.",
+     "a": "When it rains hard the tunnels fill with water, so the worms come up so they can breathe and you see them on the path."
+    }
+   ],
+   "note": "Go out after rain and look. The child will have the answer before you read a word."
+  },
+  {
+   "id": "gK-12",
+   "grade": 0,
+   "n": 12,
+   "title": "The Sun and the Shadow",
+   "standard": "RI.K.3",
+   "standard_text": "Standard: With prompting and support, describe the connection between two individuals, events, ideas, or pieces of information in a text.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.8 reasons · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 195,
+    "words": 36,
+    "labelled_words": 36,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A shadow is made when you block the sun."
+     },
+     {
+      "label": "B",
+      "text": "In the morning your shadow is very long."
+     },
+     {
+      "label": "C",
+      "text": "At noon the sun is high and it is short."
+     },
+     {
+      "label": "D",
+      "text": "The shadow moves all day as the sun moves."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 95,
+    "words": 25,
+    "labelled_words": 25,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A shadow comes when you block the sun."
+     },
+     {
+      "label": "B",
+      "text": "In the morning it is long."
+     },
+     {
+      "label": "C",
+      "text": "At noon it is short."
+     },
+     {
+      "label": "D",
+      "text": "It moves as the sun moves."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "When is your shadow long?",
+     "a": "In the morning your shadow is very long."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. noon) and paragraph D (i.e. moving all day).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what this is about.",
+     "a": "A shadow is made when you block the sun. In the morning your shadow is very long, at noon the sun is high and it is short, and the shadow moves all day as the sun moves."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "shadow: the dark shape you make in the sun.\nblock: to get in the way of.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the sun and the shadow's size.",
+     "a": "At noon the sun is high and the shadow is short, so the shadow moves and changes all day as the sun moves."
+    }
+   ],
+   "note": "Chalk around a shadow in the morning and look again at lunch. The text is the explanation."
+  },
+  {
+   "id": "gK-13",
+   "grade": 0,
+   "n": 13,
+   "title": "The Line and the Door",
+   "standard": "RI.K.3",
+   "standard_text": "Standard: With prompting and support, describe the connection between two individuals, events, ideas, or pieces of information in a text.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.8 reasons · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 165,
+    "words": 32,
+    "labelled_words": 32,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Our class makes a line before we go out."
+     },
+     {
+      "label": "B",
+      "text": "The line keeps everybody together in the hall."
+     },
+     {
+      "label": "C",
+      "text": "The leader stops at the door and waits."
+     },
+     {
+      "label": "D",
+      "text": "Then the teacher can count us all."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 70,
+    "words": 23,
+    "labelled_words": 23,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Our class makes a line to go out."
+     },
+     {
+      "label": "B",
+      "text": "The line keeps us together."
+     },
+     {
+      "label": "C",
+      "text": "The leader waits at the door."
+     },
+     {
+      "label": "D",
+      "text": "The teacher counts us."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does the line do?",
+     "a": "The line keeps everybody together in the hall."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. the leader waiting) and paragraph D (i.e. counting).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what this is about.",
+     "a": "Our class makes a line before we go out. The line keeps everybody together in the hall, the leader stops at the door and waits, and then the teacher can count us all."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "leader: the person at the front.\ncount: to say how many.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the leader waiting and the teacher counting.",
+     "a": "The leader stops at the door and waits, so the teacher can count us all."
+    }
+   ],
+   "note": "This is their own routine. Ask what goes wrong when the leader does not wait."
+  },
+  {
+   "id": "gK-14",
+   "grade": 0,
+   "n": 14,
+   "title": "The Bird and the Berry",
+   "standard": "RI.K.3",
+   "standard_text": "Standard: With prompting and support, describe the connection between two individuals, events, ideas, or pieces of information in a text.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.8 reasons · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 175,
+    "words": 33,
+    "labelled_words": 33,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A bird eats a red berry off a bush."
+     },
+     {
+      "label": "B",
+      "text": "The seed inside goes right through the bird."
+     },
+     {
+      "label": "C",
+      "text": "It lands far away in a new spot."
+     },
+     {
+      "label": "D",
+      "text": "A new bush can grow from that seed."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 80,
+    "words": 22,
+    "labelled_words": 22,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A bird eats a red berry."
+     },
+     {
+      "label": "B",
+      "text": "The seed goes through the bird."
+     },
+     {
+      "label": "C",
+      "text": "It lands far away."
+     },
+     {
+      "label": "D",
+      "text": "A new bush can grow there."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does the bird eat?",
+     "a": "A bird eats a red berry off a bush."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph B (i.e. the seed) and paragraph D (i.e. the new bush).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what this is about.",
+     "a": "A bird eats a red berry off a bush. The seed inside goes right through the bird and lands far away in a new spot, and a new bush can grow from that seed."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "berry: a small soft fruit.\nseed: the part a new plant grows from.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the bird and the new bush.",
+     "a": "The seed goes right through the bird and lands far away, so a new bush can grow from that seed."
+    }
+   ],
+   "note": "The bird is doing the plant a favor without meaning to. Say that part out loud."
+  },
+  {
+   "id": "gK-15",
+   "grade": 0,
+   "n": 15,
+   "title": "The Bell and the Bus",
+   "standard": "RI.K.3",
+   "standard_text": "Standard: With prompting and support, describe the connection between two individuals, events, ideas, or pieces of information in a text.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.8 reasons · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 155,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The last bell rings at three o'clock."
+     },
+     {
+      "label": "B",
+      "text": "The buses are already waiting in a row."
+     },
+     {
+      "label": "C",
+      "text": "Each bus has a number on the front."
+     },
+     {
+      "label": "D",
+      "text": "You find your own number and get on."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 65,
+    "words": 24,
+    "labelled_words": 24,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The last bell rings at three."
+     },
+     {
+      "label": "B",
+      "text": "The buses wait in a row."
+     },
+     {
+      "label": "C",
+      "text": "Each bus has a number."
+     },
+     {
+      "label": "D",
+      "text": "You find your number and get on."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What is on the front of each bus?",
+     "a": "Each bus has a number on the front."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph B (i.e. the buses waiting) and paragraph D (i.e. finding your number).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what this is about.",
+     "a": "The last bell rings at three o'clock, the buses are already waiting in a row, each bus has a number on the front, and you find your own number and get on."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "row: a line side by side.\nnumber: a figure like 7 or 12.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the number and getting on the right bus.",
+     "a": "Each bus has a number on the front, so you find your own number and get on."
+    }
+   ],
+   "note": "Ask the child their bus number before you read. Then read, and see if they smile."
+  },
+  {
+   "id": "gK-16",
+   "grade": 0,
+   "n": 16,
+   "title": "What Shed Means",
+   "standard": "RI.K.4",
+   "standard_text": "Standard: With prompting and support, ask and answer questions about unknown words in a text.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.5 parts of a book · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 190,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The book says a snake will shed its skin."
+     },
+     {
+      "label": "B",
+      "text": "Shed means to let something drop off."
+     },
+     {
+      "label": "C",
+      "text": "The old skin comes off in one long piece."
+     },
+     {
+      "label": "D",
+      "text": "A new skin was waiting underneath."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 90,
+    "words": 28,
+    "labelled_words": 28,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The book says a snake will shed its skin."
+     },
+     {
+      "label": "B",
+      "text": "Shed means to let it drop off."
+     },
+     {
+      "label": "C",
+      "text": "The old skin comes off whole."
+     },
+     {
+      "label": "D",
+      "text": "A new skin is under it."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does shed mean?",
+     "a": "Shed means to let something drop off."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. the old skin) and paragraph D (i.e. the new one).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what shed means.",
+     "a": "The book says a snake will shed its skin. Shed means to let something drop off, the old skin comes off in one long piece, and a new skin was waiting underneath."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "shed: to let something drop off.\nunderneath: under something else.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the old skin and the new one.",
+     "a": "The old skin comes off in one long piece, and a new skin was waiting underneath."
+    }
+   ],
+   "note": "Paragraph B is the answer and the others are the proof. Ask which sentence gives the meaning."
+  },
+  {
+   "id": "gK-17",
+   "grade": 0,
+   "n": 17,
+   "title": "What Recess Means",
+   "standard": "RI.K.4",
+   "standard_text": "Standard: With prompting and support, ask and answer questions about unknown words in a text.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.5 parts of a book · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 160,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The note says recess is after lunch."
+     },
+     {
+      "label": "B",
+      "text": "Recess means time outside to play."
+     },
+     {
+      "label": "C",
+      "text": "You can run, climb or sit with a friend."
+     },
+     {
+      "label": "D",
+      "text": "A bell ends recess and then you line up."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 70,
+    "words": 22,
+    "labelled_words": 22,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The note says recess is after lunch."
+     },
+     {
+      "label": "B",
+      "text": "Recess means time outside to play."
+     },
+     {
+      "label": "C",
+      "text": "You can run or climb."
+     },
+     {
+      "label": "D",
+      "text": "A bell ends recess."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does recess mean?",
+     "a": "Recess means time outside to play."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. what you can do) and paragraph D (i.e. the bell).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what recess means.",
+     "a": "The note says recess is after lunch. Recess means time outside to play, you can run, climb or sit with a friend, and a bell ends recess and then you line up."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "recess: time outside to play.\nends: stops.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the bell and lining up.",
+     "a": "A bell ends recess and then you line up."
+    }
+   ],
+   "note": "They live this word every day and may never have been told what it means."
+  },
+  {
+   "id": "gK-18",
+   "grade": 0,
+   "n": 18,
+   "title": "What Hatch Means",
+   "standard": "RI.K.4",
+   "standard_text": "Standard: With prompting and support, ask and answer questions about unknown words in a text.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.5 parts of a book · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 180,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The book says the chick will hatch today."
+     },
+     {
+      "label": "B",
+      "text": "Hatch means to come out of an egg."
+     },
+     {
+      "label": "C",
+      "text": "The chick pecks the shell from inside."
+     },
+     {
+      "label": "D",
+      "text": "It takes many hours and nobody helps it."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 85,
+    "words": 23,
+    "labelled_words": 23,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The book says the chick will hatch."
+     },
+     {
+      "label": "B",
+      "text": "Hatch means to come out of an egg."
+     },
+     {
+      "label": "C",
+      "text": "The chick pecks the shell."
+     },
+     {
+      "label": "D",
+      "text": "Nobody helps it."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does hatch mean?",
+     "a": "Hatch means to come out of an egg."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. pecking) and paragraph D (i.e. no help).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what hatch means.",
+     "a": "The book says the chick will hatch today. Hatch means to come out of an egg, the chick pecks the shell from inside, and it takes many hours and nobody helps it."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "hatch: to come out of an egg.\npecks: hits with a beak.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between pecking and hatching.",
+     "a": "The chick pecks the shell from inside, which is how it comes out of the egg."
+    }
+   ],
+   "note": "Paragraph D is the hard part to hear. Children want to help, and the text says not to."
+  },
+  {
+   "id": "gK-19",
+   "grade": 0,
+   "n": 19,
+   "title": "What Line Up Means",
+   "standard": "RI.K.4",
+   "standard_text": "Standard: With prompting and support, ask and answer questions about unknown words in a text.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.5 parts of a book · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 170,
+    "words": 33,
+    "labelled_words": 33,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The teacher says to line up at the door."
+     },
+     {
+      "label": "B",
+      "text": "Line up means to stand one behind another."
+     },
+     {
+      "label": "C",
+      "text": "You leave a little space in front of you."
+     },
+     {
+      "label": "D",
+      "text": "Then the line can walk without bumping."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 75,
+    "words": 26,
+    "labelled_words": 26,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The teacher says to line up at the door."
+     },
+     {
+      "label": "B",
+      "text": "Line up means to stand one behind another."
+     },
+     {
+      "label": "C",
+      "text": "Leave a little space in front."
+     },
+     {
+      "label": "D",
+      "text": "Then nobody bumps."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does line up mean?",
+     "a": "Line up means to stand one behind another."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. the space) and paragraph D (i.e. not bumping).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what line up means.",
+     "a": "The teacher says to line up at the door. Line up means to stand one behind another, you leave a little space in front of you, and then the line can walk without bumping."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "line up: to stand one behind another.\nspace: the gap between two things.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the space and not bumping.",
+     "a": "You leave a little space in front of you, so then the line can walk without bumping."
+    }
+   ],
+   "note": "Practice paragraph C with arms out. The space becomes obvious in one try."
+  },
+  {
+   "id": "gK-20",
+   "grade": 0,
+   "n": 20,
+   "title": "What Bloom Means",
+   "standard": "RI.K.4",
+   "standard_text": "Standard: With prompting and support, ask and answer questions about unknown words in a text.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.5 parts of a book · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 200,
+    "words": 32,
+    "labelled_words": 32,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The sign says the tulips will bloom in April."
+     },
+     {
+      "label": "B",
+      "text": "Bloom means to open into a flower."
+     },
+     {
+      "label": "C",
+      "text": "Before that the bud is closed and green."
+     },
+     {
+      "label": "D",
+      "text": "After it blooms the petals show their color."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 100,
+    "words": 27,
+    "labelled_words": 27,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The sign says the tulips will bloom."
+     },
+     {
+      "label": "B",
+      "text": "Bloom means to open into a flower."
+     },
+     {
+      "label": "C",
+      "text": "First the bud is closed and green."
+     },
+     {
+      "label": "D",
+      "text": "Then the petals show their color."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does bloom mean?",
+     "a": "Bloom means to open into a flower."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. the closed bud) and paragraph D (i.e. the petals).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what bloom means.",
+     "a": "The sign says the tulips will bloom in April. Bloom means to open into a flower, before that the bud is closed and green, and after it blooms the petals show their color."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "bloom: to open into a flower.\nbud: a closed flower before it opens.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the bud and the petals.",
+     "a": "Before it blooms the bud is closed and green, and after it blooms the petals show their color."
+    }
+   ],
+   "note": "Before and after is the shape here. Ask which paragraph is before and which is after."
+  },
+  {
+   "id": "gK-21",
+   "grade": 0,
+   "n": 21,
+   "title": "The Front of a Book",
+   "standard": "RI.K.5",
+   "standard_text": "Standard: Identify the front cover, back cover, and title page of a book.\n Spiral: RI.K.4 unknown words · RI.K.6 author and illustrator · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 175,
+    "words": 33,
+    "labelled_words": 33,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The front cover is the first thing you see."
+     },
+     {
+      "label": "B",
+      "text": "It has the name of the book on it."
+     },
+     {
+      "label": "C",
+      "text": "It usually has a big picture too."
+     },
+     {
+      "label": "D",
+      "text": "The front cover tells you what is inside."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 80,
+    "words": 26,
+    "labelled_words": 26,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The front cover is what you see first."
+     },
+     {
+      "label": "B",
+      "text": "It has the name of the book."
+     },
+     {
+      "label": "C",
+      "text": "It has a big picture."
+     },
+     {
+      "label": "D",
+      "text": "It tells you what is inside."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What is on the front cover?",
+     "a": "It has the name of the book on it."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. the picture) and paragraph D (i.e. what is inside).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what the front cover does.",
+     "a": "The front cover is the first thing you see. It has the name of the book and usually a big picture, and it tells you what is inside."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "cover: the outside of a book.\nname: what a thing is called.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the picture and what is inside.",
+     "a": "The front cover usually has a big picture, and the front cover tells you what is inside."
+    }
+   ],
+   "note": "Hold a real book. Point at the front cover before you say anything about it."
+  },
+  {
+   "id": "gK-22",
+   "grade": 0,
+   "n": 22,
+   "title": "The Back of a Book",
+   "standard": "RI.K.5",
+   "standard_text": "Standard: Identify the front cover, back cover, and title page of a book.\n Spiral: RI.K.4 unknown words · RI.K.6 author and illustrator · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 205,
+    "words": 36,
+    "labelled_words": 36,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Turn the book over to find the back cover."
+     },
+     {
+      "label": "B",
+      "text": "The back often tells you a little about the story."
+     },
+     {
+      "label": "C",
+      "text": "It can have stars or words from readers."
+     },
+     {
+      "label": "D",
+      "text": "The price is usually printed down in a corner."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 105,
+    "words": 28,
+    "labelled_words": 28,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Turn the book over to find the back."
+     },
+     {
+      "label": "B",
+      "text": "The back tells a little about the story."
+     },
+     {
+      "label": "C",
+      "text": "It can have words from readers."
+     },
+     {
+      "label": "D",
+      "text": "The price is in a corner."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does the back cover tell you?",
+     "a": "The back often tells you a little about the story."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. words from readers) and paragraph D (i.e. the price).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what the back cover has on it.",
+     "a": "Turn the book over to find the back cover. It often tells you a little about the story, it can have stars or words from readers, and the price is usually printed in a corner."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "back cover: the outside at the end of a book.\nprice: how much something costs.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the front cover and the back cover.",
+     "a": "The front cover is the first thing you see, and you turn the book over to find the back cover."
+    }
+   ],
+   "note": "Front and back as a pair. Have the child flip a book over and name each one."
+  },
+  {
+   "id": "gK-23",
+   "grade": 0,
+   "n": 23,
+   "title": "The Title Page",
+   "standard": "RI.K.5",
+   "standard_text": "Standard: Identify the front cover, back cover, and title page of a book.\n Spiral: RI.K.4 unknown words · RI.K.6 author and illustrator · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 215,
+    "words": 39,
+    "labelled_words": 39,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Open the cover and turn one or two pages."
+     },
+     {
+      "label": "B",
+      "text": "The title page says the name of the book again."
+     },
+     {
+      "label": "C",
+      "text": "It also says who wrote it and who drew it."
+     },
+     {
+      "label": "D",
+      "text": "The front cover is outside and this page is inside."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 110,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Open the cover and turn a page."
+     },
+     {
+      "label": "B",
+      "text": "The title page says the name again."
+     },
+     {
+      "label": "C",
+      "text": "It says who wrote it and who drew it."
+     },
+     {
+      "label": "D",
+      "text": "The cover is outside and this is inside."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does the title page say?",
+     "a": "The title page says the name of the book again."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. who wrote and drew it) and paragraph D (i.e. inside and outside).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what the title page is.",
+     "a": "Open the cover and turn one or two pages to find the title page. It says the name of the book again and who wrote it and who drew it. The front cover is outside and the title page is inside."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "title: the name of a book.\ntitle page: the page inside that gives the name again.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the front cover and the title page.",
+     "a": "The front cover is outside and this page is inside, and both of them say the name of the book."
+    }
+   ],
+   "note": "The repeat confuses children. Say plainly that the name appears twice on purpose."
+  },
+  {
+   "id": "gK-24",
+   "grade": 0,
+   "n": 24,
+   "title": "Which Way Is Up",
+   "standard": "RI.K.5",
+   "standard_text": "Standard: Identify the front cover, back cover, and title page of a book.\n Spiral: RI.K.4 unknown words · RI.K.6 author and illustrator · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 185,
+    "words": 37,
+    "labelled_words": 37,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A book has a top and a bottom."
+     },
+     {
+      "label": "B",
+      "text": "The words go the right way up when you hold it right."
+     },
+     {
+      "label": "C",
+      "text": "The spine stays on your left as you read."
+     },
+     {
+      "label": "D",
+      "text": "Turn pages from the right to the left."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 90,
+    "words": 29,
+    "labelled_words": 29,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A book has a top and a bottom."
+     },
+     {
+      "label": "B",
+      "text": "Hold it so the words are the right way up."
+     },
+     {
+      "label": "C",
+      "text": "The spine stays on your left."
+     },
+     {
+      "label": "D",
+      "text": "Turn pages right to left."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "Where does the spine stay?",
+     "a": "The spine stays on your left as you read."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph B (i.e. the words the right way up) and paragraph D (i.e. turning pages).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell how to hold a book.",
+     "a": "A book has a top and a bottom. You hold it so the words go the right way up, the spine stays on your left as you read, and you turn pages from the right to the left."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "spine: the folded edge where a book is held together.\nturn: to move a page over.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the spine and turning pages.",
+     "a": "The spine stays on your left as you read, so you turn pages from the right to the left."
+    }
+   ],
+   "note": "Do it with them rather than telling them. Hand over a book upside down and wait."
+  },
+  {
+   "id": "gK-25",
+   "grade": 0,
+   "n": 25,
+   "title": "The Spine of a Book",
+   "standard": "RI.K.5",
+   "standard_text": "Standard: Identify the front cover, back cover, and title page of a book.\n Spiral: RI.K.4 unknown words · RI.K.6 author and illustrator · RI.K.7 illustrations · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 170,
+    "words": 32,
+    "labelled_words": 32,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The spine is the folded edge of a book."
+     },
+     {
+      "label": "B",
+      "text": "It holds all the pages together."
+     },
+     {
+      "label": "C",
+      "text": "The name is printed down the spine."
+     },
+     {
+      "label": "D",
+      "text": "That is how you find a book on a shelf."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 75,
+    "words": 26,
+    "labelled_words": 26,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The spine is the folded edge."
+     },
+     {
+      "label": "B",
+      "text": "It holds the pages together."
+     },
+     {
+      "label": "C",
+      "text": "The name is printed on it."
+     },
+     {
+      "label": "D",
+      "text": "That is how you find it on a shelf."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does the spine hold?",
+     "a": "It holds all the pages together."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. the printed name) and paragraph D (i.e. finding it on a shelf).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what the spine of a book is.",
+     "a": "The spine is the folded edge of a book. It holds all the pages together, the name is printed down the spine, and that is how you find a book on a shelf."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "spine: the folded edge that holds a book together.\nshelf: a flat board that holds books.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the name on the spine and finding a book.",
+     "a": "The name is printed down the spine, and that is how you find a book on a shelf."
+    }
+   ],
+   "note": "Stand a book on a shelf and ask what you can still see. Only the spine."
+  },
+  {
+   "id": "gK-26",
+   "grade": 0,
+   "n": 26,
+   "title": "Who Wrote It",
+   "standard": "RI.K.6",
+   "standard_text": "Standard: Name the author and illustrator of a text and define the role of each in presenting the ideas or information in a text.\n Spiral: RI.K.5 parts of a book · RI.K.7 illustrations · RI.K.9 comparing texts · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 185,
+    "words": 34,
+    "labelled_words": 34,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The author is the person who wrote the words."
+     },
+     {
+      "label": "B",
+      "text": "The author decides what the book will tell you."
+     },
+     {
+      "label": "C",
+      "text": "You can find the name on the front cover."
+     },
+     {
+      "label": "D",
+      "text": "The same author may write many books."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 85,
+    "words": 25,
+    "labelled_words": 25,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The author wrote the words."
+     },
+     {
+      "label": "B",
+      "text": "The author decides what the book says."
+     },
+     {
+      "label": "C",
+      "text": "The name is on the front cover."
+     },
+     {
+      "label": "D",
+      "text": "One author can write many books."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does the author do?",
+     "a": "The author is the person who wrote the words."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph B (i.e. deciding what the book tells you) and paragraph D (i.e. many books).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what an author does.",
+     "a": "The author is the person who wrote the words and decides what the book will tell you. You can find the name on the front cover, and the same author may write many books."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "author: the person who wrote the words.\ndecides: picks what will happen.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the author and what the book tells you.",
+     "a": "The author is the person who wrote the words, and the author decides what the book will tell you."
+    }
+   ],
+   "note": "Say author, not writer, every time. The word itself is the point of this standard."
+  },
+  {
+   "id": "gK-27",
+   "grade": 0,
+   "n": 27,
+   "title": "Who Drew It",
+   "standard": "RI.K.6",
+   "standard_text": "Standard: Name the author and illustrator of a text and define the role of each in presenting the ideas or information in a text.\n Spiral: RI.K.5 parts of a book · RI.K.7 illustrations · RI.K.9 comparing texts · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 190,
+    "words": 33,
+    "labelled_words": 33,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The illustrator is the person who made the pictures."
+     },
+     {
+      "label": "B",
+      "text": "The illustrator decides what everything looks like."
+     },
+     {
+      "label": "C",
+      "text": "Their name is on the cover under the author's."
+     },
+     {
+      "label": "D",
+      "text": "A book can have pictures and no story."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 90,
+    "words": 23,
+    "labelled_words": 23,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The illustrator made the pictures."
+     },
+     {
+      "label": "B",
+      "text": "The illustrator decides how things look."
+     },
+     {
+      "label": "C",
+      "text": "Their name is under the author's."
+     },
+     {
+      "label": "D",
+      "text": "A book can be all pictures."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does the illustrator do?",
+     "a": "The illustrator is the person who made the pictures."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph B (i.e. deciding how things look) and paragraph C (i.e. where the name sits).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what an illustrator does.",
+     "a": "The illustrator is the person who made the pictures and decides what everything looks like. Their name is on the cover under the author's name."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "illustrator: the person who made the pictures.\nlooks like: how a thing appears.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the illustrator and the pictures.",
+     "a": "The illustrator is the person who made the pictures, and decides what everything looks like."
+    }
+   ],
+   "note": "Pair this with Who Wrote It. The two words are easier side by side than alone."
+  },
+  {
+   "id": "gK-28",
+   "grade": 0,
+   "n": 28,
+   "title": "Two Names on One Book",
+   "standard": "RI.K.6",
+   "standard_text": "Standard: Name the author and illustrator of a text and define the role of each in presenting the ideas or information in a text.\n Spiral: RI.K.5 parts of a book · RI.K.7 illustrations · RI.K.9 comparing texts · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 175,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Many books have two different names on the front cover."
+     },
+     {
+      "label": "B",
+      "text": "One of them wrote all the words."
+     },
+     {
+      "label": "C",
+      "text": "The other one drew all the pictures."
+     },
+     {
+      "label": "D",
+      "text": "They worked on the same book together."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 80,
+    "words": 23,
+    "labelled_words": 23,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Many books have two names on the cover."
+     },
+     {
+      "label": "B",
+      "text": "One wrote the words."
+     },
+     {
+      "label": "C",
+      "text": "The other drew the pictures."
+     },
+     {
+      "label": "D",
+      "text": "They worked on the same book."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "How many names are on the cover?",
+     "a": "Many books have two different names on the front cover."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph B (i.e. the words) and paragraph C (i.e. the pictures).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell why a book has two names.",
+     "a": "Many books have two different names on the front cover. One of them wrote all the words and the other one drew all the pictures, and they worked on the same book together."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "cover: the outside of a book.\ntogether: with each other.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the two names.",
+     "a": "One of them wrote all the words and the other drew all the pictures, and they worked on the same book together."
+    }
+   ],
+   "note": "Hold up a book with two names and ask the child to guess which one did which."
+  },
+  {
+   "id": "gK-29",
+   "grade": 0,
+   "n": 29,
+   "title": "When One Person Does Both",
+   "standard": "RI.K.6",
+   "standard_text": "Standard: Name the author and illustrator of a text and define the role of each in presenting the ideas or information in a text.\n Spiral: RI.K.5 parts of a book · RI.K.7 illustrations · RI.K.9 comparing texts · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 200,
+    "words": 32,
+    "labelled_words": 32,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Some books have only one name on them."
+     },
+     {
+      "label": "B",
+      "text": "That person wrote the words and drew the pictures."
+     },
+     {
+      "label": "C",
+      "text": "They are the author and the illustrator."
+     },
+     {
+      "label": "D",
+      "text": "That one person did both of the jobs."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 100,
+    "words": 27,
+    "labelled_words": 27,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Some books have only one name."
+     },
+     {
+      "label": "B",
+      "text": "That person wrote the words and drew the pictures."
+     },
+     {
+      "label": "C",
+      "text": "They are the author and the illustrator."
+     },
+     {
+      "label": "D",
+      "text": "One person did both jobs."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What did that one person do?",
+     "a": "That person wrote the words and drew the pictures."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. being both) and paragraph D (i.e. both jobs).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what it means when a book has one name.",
+     "a": "Some books have only one name on them. That person wrote the words and drew the pictures, so they are the author and the illustrator, and one person did both of the jobs."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "both: the two of them.\njob: work that somebody does.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the one name and the two jobs.",
+     "a": "Some books have only one name because that person wrote the words and drew the pictures, so one person did both of the jobs."
+    }
+   ],
+   "note": "This is the hard case and it comes fourth on purpose. Do the two-name books first."
+  },
+  {
+   "id": "gK-30",
+   "grade": 0,
+   "n": 30,
+   "title": "Where to Find the Names",
+   "standard": "RI.K.6",
+   "standard_text": "Standard: Name the author and illustrator of a text and define the role of each in presenting the ideas or information in a text.\n Spiral: RI.K.5 parts of a book · RI.K.7 illustrations · RI.K.9 comparing texts · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 165,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Look at the front cover for the names."
+     },
+     {
+      "label": "B",
+      "text": "Look at the title page inside for them too."
+     },
+     {
+      "label": "C",
+      "text": "The author's name is usually on top."
+     },
+     {
+      "label": "D",
+      "text": "The illustrator's name is usually under it."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 70,
+    "words": 24,
+    "labelled_words": 24,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Look at the front cover for the names."
+     },
+     {
+      "label": "B",
+      "text": "Look at the title page too."
+     },
+     {
+      "label": "C",
+      "text": "The author is usually on top."
+     },
+     {
+      "label": "D",
+      "text": "The illustrator is under."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "Where can you find the names?",
+     "a": "Look at the front cover for the names, and look at the title page inside for them too."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. the author on top) and paragraph D (i.e. the illustrator under).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell where the names are.",
+     "a": "Look at the front cover for the names and at the title page inside for them too. The author's name is usually on top and the illustrator's name is usually under it."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "title page: the page inside that gives the name of the book.\nunder: below something else.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the front cover and the title page.",
+     "a": "Look at the front cover for the names, and look at the title page inside for them too."
+    }
+   ],
+   "note": "Two places, the same two names. Check both on a real book."
+  },
+  {
+   "id": "gK-31",
+   "grade": 0,
+   "n": 31,
+   "title": "The Picture Helps the Words",
+   "standard": "RI.K.7",
+   "standard_text": "Standard: With prompting and support, describe the relationship between illustrations and the text in which they appear.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.6 author and illustrator · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 170,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The words say that the dog is wet."
+     },
+     {
+      "label": "B",
+      "text": "The picture shows water dripping off its ears."
+     },
+     {
+      "label": "C",
+      "text": "Now you know just how wet it is."
+     },
+     {
+      "label": "D",
+      "text": "The picture and the words work together."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 75,
+    "words": 23,
+    "labelled_words": 23,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The words say the dog is wet."
+     },
+     {
+      "label": "B",
+      "text": "The picture shows water dripping off."
+     },
+     {
+      "label": "C",
+      "text": "Now you know how wet it is."
+     },
+     {
+      "label": "D",
+      "text": "They work together."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What do the words say?",
+     "a": "The words say that the dog is wet."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph B (i.e. the dripping water) and paragraph D (i.e. working together).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell how the picture helps the words.",
+     "a": "The words say the dog is wet and the picture shows water dripping off its ears, so now you know just how wet it is. The picture and the words work together."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "dripping: falling in drops.\ntogether: with each other.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the words and the picture.",
+     "a": "The words say the dog is wet and the picture shows water dripping off its ears, so they work together."
+    }
+   ],
+   "note": "Read the words with the picture covered, then uncover it. Ask what changed."
+  },
+  {
+   "id": "gK-32",
+   "grade": 0,
+   "n": 32,
+   "title": "Count What You See",
+   "standard": "RI.K.7",
+   "standard_text": "Standard: With prompting and support, describe the relationship between illustrations and the text in which they appear.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.6 author and illustrator · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 180,
+    "words": 32,
+    "labelled_words": 32,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The words say there are some eggs in a nest."
+     },
+     {
+      "label": "B",
+      "text": "The picture lets you count them one by one."
+     },
+     {
+      "label": "C",
+      "text": "There are four eggs in that nest."
+     },
+     {
+      "label": "D",
+      "text": "The picture gave you the number."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 85,
+    "words": 22,
+    "labelled_words": 22,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The words say there are some eggs."
+     },
+     {
+      "label": "B",
+      "text": "The picture lets you count them."
+     },
+     {
+      "label": "C",
+      "text": "There are four eggs."
+     },
+     {
+      "label": "D",
+      "text": "The picture gave the number."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "How many eggs are there?",
+     "a": "There are four eggs in that nest."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph B (i.e. counting) and paragraph D (i.e. the number).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell how the picture helped.",
+     "a": "The words say there are some eggs in a nest. The picture lets you count them one by one, there are four eggs, and the picture gave you the number."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "count: to say how many.\nnest: the home a bird builds for eggs.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the word some and the number four.",
+     "a": "The words say there are some eggs, and the picture lets you count them and find four."
+    }
+   ],
+   "note": "Some is a vague word and children accept it. The picture is what makes it exact."
+  },
+  {
+   "id": "gK-33",
+   "grade": 0,
+   "n": 33,
+   "title": "The Picture Shows the Size",
+   "standard": "RI.K.7",
+   "standard_text": "Standard: With prompting and support, describe the relationship between illustrations and the text in which they appear.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.6 author and illustrator · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 195,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The words say that a blue whale is big."
+     },
+     {
+      "label": "B",
+      "text": "The picture puts a bus beside the whale."
+     },
+     {
+      "label": "C",
+      "text": "The whale is longer than three buses."
+     },
+     {
+      "label": "D",
+      "text": "Now the word big means something real."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 95,
+    "words": 26,
+    "labelled_words": 26,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The words say a blue whale is big."
+     },
+     {
+      "label": "B",
+      "text": "The picture puts a bus beside it."
+     },
+     {
+      "label": "C",
+      "text": "The whale is longer than three buses."
+     },
+     {
+      "label": "D",
+      "text": "Now big means something."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What is beside the whale in the picture?",
+     "a": "The picture puts a bus beside the whale."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. three buses) and paragraph D (i.e. what big means).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell how the picture shows size.",
+     "a": "The words say a blue whale is big. The picture puts a bus beside the whale, the whale is longer than three buses, and now the word big means something real."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "size: how big or small a thing is.\nbeside: next to.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the bus and the word big.",
+     "a": "The picture puts a bus beside the whale so you can see it is longer than three buses, and now the word big means something real."
+    }
+   ],
+   "note": "Big is a word children use for everything. The bus is what gives it an amount."
+  },
+  {
+   "id": "gK-34",
+   "grade": 0,
+   "n": 34,
+   "title": "What the Words Add",
+   "standard": "RI.K.7",
+   "standard_text": "Standard: With prompting and support, describe the relationship between illustrations and the text in which they appear.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.6 author and illustrator · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 205,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The picture shows a frog on a leaf."
+     },
+     {
+      "label": "B",
+      "text": "You cannot tell if the frog is poisonous."
+     },
+     {
+      "label": "C",
+      "text": "The words say do not touch this one."
+     },
+     {
+      "label": "D",
+      "text": "Only the words could tell you that."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 105,
+    "words": 28,
+    "labelled_words": 28,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The picture shows a frog on a leaf."
+     },
+     {
+      "label": "B",
+      "text": "You cannot tell if it is poisonous."
+     },
+     {
+      "label": "C",
+      "text": "The words say do not touch it."
+     },
+     {
+      "label": "D",
+      "text": "Only the words tell you that."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What do the words say?",
+     "a": "The words say do not touch this one."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph B (i.e. what you cannot tell) and paragraph D (i.e. only the words).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what the words add to the picture.",
+     "a": "The picture shows a frog on a leaf, but you cannot tell if the frog is poisonous. The words say do not touch this one, and only the words could tell you that."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "poisonous: able to make you sick if you touch or eat it.\ntouch: to put a hand on.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the picture and the warning.",
+     "a": "The picture shows a frog on a leaf but cannot tell you if it is poisonous, so only the words could tell you not to touch it."
+    }
+   ],
+   "note": "Danger is a thing a picture cannot carry. That is worth saying plainly."
+  },
+  {
+   "id": "gK-35",
+   "grade": 0,
+   "n": 35,
+   "title": "A Picture on Every Page",
+   "standard": "RI.K.7",
+   "standard_text": "Standard: With prompting and support, describe the relationship between illustrations and the text in which they appear.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.6 author and illustrator · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 160,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "This book has a picture on every page."
+     },
+     {
+      "label": "B",
+      "text": "Each picture shows what that page says."
+     },
+     {
+      "label": "C",
+      "text": "If you get lost, look at the picture."
+     },
+     {
+      "label": "D",
+      "text": "The picture will remind you where you are."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 65,
+    "words": 28,
+    "labelled_words": 28,
+    "paras": [
+     {
+      "label": "A",
+      "text": "This book has a picture on every page."
+     },
+     {
+      "label": "B",
+      "text": "Each picture shows what the page says."
+     },
+     {
+      "label": "C",
+      "text": "If you get lost, look at it."
+     },
+     {
+      "label": "D",
+      "text": "It reminds you where you are."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does each picture show?",
+     "a": "Each picture shows what that page says."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. getting lost) and paragraph D (i.e. being reminded).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what the pictures do in this book.",
+     "a": "This book has a picture on every page and each one shows what that page says. If you get lost, look at the picture, and it will remind you where you are."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "remind: to help you remember.\nlost: not sure where you are.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between getting lost and the picture.",
+     "a": "If you get lost, look at the picture, and the picture will remind you where you are."
+    }
+   ],
+   "note": "This is a strategy, not a fact. Tell the child to try it the next time they get stuck."
+  },
+  {
+   "id": "gK-36",
+   "grade": 0,
+   "n": 36,
+   "title": "Why We Wear a Helmet",
+   "standard": "RI.K.8",
+   "standard_text": "Standard: With prompting and support, identify the reasons an author gives to support points in a text.\n Spiral: RI.K.1 key details · RI.K.3 connections · RI.K.9 comparing texts · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 180,
+    "words": 34,
+    "labelled_words": 34,
+    "paras": [
+     {
+      "label": "A",
+      "text": "You should wear a helmet on a bike."
+     },
+     {
+      "label": "B",
+      "text": "One reason is that a fall can hurt your head."
+     },
+     {
+      "label": "C",
+      "text": "Another reason is that a helmet is soft inside."
+     },
+     {
+      "label": "D",
+      "text": "It takes the bump instead of you."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 85,
+    "words": 29,
+    "labelled_words": 29,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Wear a helmet on a bike."
+     },
+     {
+      "label": "B",
+      "text": "One reason is a fall can hurt your head."
+     },
+     {
+      "label": "C",
+      "text": "Another is that a helmet is soft inside."
+     },
+     {
+      "label": "D",
+      "text": "It takes the bump for you."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What is one reason to wear a helmet?",
+     "a": "One reason is that a fall can hurt your head."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. the soft inside) and paragraph D (i.e. taking the bump).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell why you wear a helmet.",
+     "a": "You should wear a helmet on a bike. One reason is that a fall can hurt your head, and another is that a helmet is soft inside, so it takes the bump instead of you."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "helmet: a hard hat that keeps your head safe.\nreason: why somebody says to do a thing.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the soft inside and your head.",
+     "a": "A helmet is soft inside, so it takes the bump instead of you."
+    }
+   ],
+   "note": "Two reasons, in B and C. Hold up two fingers while you read them."
+  },
+  {
+   "id": "gK-37",
+   "grade": 0,
+   "n": 37,
+   "title": "Why Plants Need Rain",
+   "standard": "RI.K.8",
+   "standard_text": "Standard: With prompting and support, identify the reasons an author gives to support points in a text.\n Spiral: RI.K.1 key details · RI.K.3 connections · RI.K.9 comparing texts · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 170,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A plant will die without any rain."
+     },
+     {
+      "label": "B",
+      "text": "One reason is that roots drink the water."
+     },
+     {
+      "label": "C",
+      "text": "Another reason is that water carries food up."
+     },
+     {
+      "label": "D",
+      "text": "A dry plant droops and then turns brown."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 75,
+    "words": 25,
+    "labelled_words": 25,
+    "paras": [
+     {
+      "label": "A",
+      "text": "A plant will die without rain."
+     },
+     {
+      "label": "B",
+      "text": "One reason is that roots drink water."
+     },
+     {
+      "label": "C",
+      "text": "Another is that water carries food up."
+     },
+     {
+      "label": "D",
+      "text": "A dry plant turns brown."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What do the roots do?",
+     "a": "One reason is that roots drink the water."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. carrying food) and paragraph D (i.e. the dry plant).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell why plants need rain.",
+     "a": "A plant will die without any rain. One reason is that roots drink the water, and another is that water carries food up. A dry plant droops and then turns brown."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "roots: the parts of a plant under the ground.\ndroops: hangs down instead of standing up.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between no rain and a brown plant.",
+     "a": "Roots drink the water and water carries food up, so a dry plant droops and then turns brown."
+    }
+   ],
+   "note": "Paragraph D is the proof for both reasons. Ask what happens if neither one happens."
+  },
+  {
+   "id": "gK-38",
+   "grade": 0,
+   "n": 38,
+   "title": "Why We Hold the Rail",
+   "standard": "RI.K.8",
+   "standard_text": "Standard: With prompting and support, identify the reasons an author gives to support points in a text.\n Spiral: RI.K.1 key details · RI.K.3 connections · RI.K.9 comparing texts · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 190,
+    "words": 34,
+    "labelled_words": 34,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Hold the rail on the stairs every time."
+     },
+     {
+      "label": "B",
+      "text": "One reason is that stairs are easy to trip on."
+     },
+     {
+      "label": "C",
+      "text": "Another reason is that the rail catches you."
+     },
+     {
+      "label": "D",
+      "text": "Your hand is already there if you slip."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 90,
+    "words": 28,
+    "labelled_words": 28,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Hold the rail on the stairs."
+     },
+     {
+      "label": "B",
+      "text": "One reason is that stairs are easy to trip on."
+     },
+     {
+      "label": "C",
+      "text": "Another is that the rail catches you."
+     },
+     {
+      "label": "D",
+      "text": "Your hand is already there."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What is one reason to hold the rail?",
+     "a": "One reason is that stairs are easy to trip on."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. the rail catching you) and paragraph D (i.e. your hand already there).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell why you hold the rail.",
+     "a": "Hold the rail on the stairs every time. One reason is that stairs are easy to trip on, and another is that the rail catches you, because your hand is already there if you slip."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "rail: the bar beside the stairs that you hold.\ntrip: to catch your foot and fall.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between holding the rail and slipping.",
+     "a": "Your hand is already there if you slip, so the rail catches you."
+    }
+   ],
+   "note": "Paragraph D is the real reason: already there beats grabbing late. Say it that way."
+  },
+  {
+   "id": "gK-39",
+   "grade": 0,
+   "n": 39,
+   "title": "Why Birds Fly South",
+   "standard": "RI.K.8",
+   "standard_text": "Standard: With prompting and support, identify the reasons an author gives to support points in a text.\n Spiral: RI.K.1 key details · RI.K.3 connections · RI.K.9 comparing texts · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 200,
+    "words": 33,
+    "labelled_words": 33,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Many birds fly south before winter comes."
+     },
+     {
+      "label": "B",
+      "text": "One reason is that the bugs are gone up here."
+     },
+     {
+      "label": "C",
+      "text": "Another reason is that water freezes over."
+     },
+     {
+      "label": "D",
+      "text": "They go where food is still easy to find."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 100,
+    "words": 27,
+    "labelled_words": 27,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Many birds fly south before winter."
+     },
+     {
+      "label": "B",
+      "text": "One reason is that the bugs are gone."
+     },
+     {
+      "label": "C",
+      "text": "Another is that water freezes."
+     },
+     {
+      "label": "D",
+      "text": "They go where food is easy to find."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What is one reason birds fly south?",
+     "a": "One reason is that the bugs are gone up here."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. the frozen water) and paragraph D (i.e. finding food).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell why birds fly south.",
+     "a": "Many birds fly south before winter comes. One reason is that the bugs are gone up here, and another is that water freezes over, so they go where food is still easy to find."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "south: the warm way, down on a map.\nfreezes: turns to ice.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the two reasons and the food.",
+     "a": "The bugs are gone and the water freezes over, so the birds go where food is still easy to find."
+    }
+   ],
+   "note": "Both reasons are about food. Paragraph D is the one that names that."
+  },
+  {
+   "id": "gK-40",
+   "grade": 0,
+   "n": 40,
+   "title": "Why We Share the Blocks",
+   "standard": "RI.K.8",
+   "standard_text": "Standard: With prompting and support, identify the reasons an author gives to support points in a text.\n Spiral: RI.K.1 key details · RI.K.3 connections · RI.K.9 comparing texts · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 160,
+    "words": 32,
+    "labelled_words": 32,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Everybody shares the blocks in our room."
+     },
+     {
+      "label": "B",
+      "text": "One reason is that there is only one set."
+     },
+     {
+      "label": "C",
+      "text": "Another reason is that two can build more."
+     },
+     {
+      "label": "D",
+      "text": "A big tower needs more hands than one."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 70,
+    "words": 25,
+    "labelled_words": 25,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Everybody shares the blocks."
+     },
+     {
+      "label": "B",
+      "text": "One reason is there is only one set."
+     },
+     {
+      "label": "C",
+      "text": "Another is that two can build more."
+     },
+     {
+      "label": "D",
+      "text": "A big tower needs more hands."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What is one reason to share?",
+     "a": "One reason is that there is only one set."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. two building more) and paragraph D (i.e. the big tower).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell why the class shares the blocks.",
+     "a": "Everybody shares the blocks because there is only one set, and because two can build more than one. A big tower needs more hands than one."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "share: to let others use it too.\nset: all of one thing kept together.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between two children and a big tower.",
+     "a": "Two can build more, because a big tower needs more hands than one."
+    }
+   ],
+   "note": "Paragraph B is a rule and paragraph C is a benefit. Ask which reason they like better."
+  },
+  {
+   "id": "gK-41",
+   "grade": 0,
+   "n": 41,
+   "title": "Two Books About Cats",
+   "standard": "RI.K.9",
+   "standard_text": "Standard: With prompting and support, identify basic similarities in and differences between two texts on the same topic.\n Spiral: RI.K.2 main topic · RI.K.6 author and illustrator · RI.K.8 reasons · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 175,
+    "words": 32,
+    "labelled_words": 32,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Both of these books are about cats."
+     },
+     {
+      "label": "B",
+      "text": "One book is about a pet cat at home."
+     },
+     {
+      "label": "C",
+      "text": "The other is about big cats in the wild."
+     },
+     {
+      "label": "D",
+      "text": "Both books say cats sleep a lot."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 80,
+    "words": 24,
+    "labelled_words": 24,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Both books are about cats."
+     },
+     {
+      "label": "B",
+      "text": "One is about a pet cat."
+     },
+     {
+      "label": "C",
+      "text": "The other is about big wild cats."
+     },
+     {
+      "label": "D",
+      "text": "Both say cats sleep a lot."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What do both books say?",
+     "a": "Both books say cats sleep a lot."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph B (i.e. the pet cat) and paragraph C (i.e. the wild cats).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell how the two cat books are alike and different.",
+     "a": "Both books are about cats and both say cats sleep a lot. One is about a pet cat at home and the other is about big cats in the wild."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "pet: an animal that lives with people.\nwild: living out in nature, not with people.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the two books.",
+     "a": "Both books are about cats and both say cats sleep a lot, but one is a pet and the others are wild."
+    }
+   ],
+   "note": "Same and different. Say the same part first, every time."
+  },
+  {
+   "id": "gK-42",
+   "grade": 0,
+   "n": 42,
+   "title": "Two Books About Trucks",
+   "standard": "RI.K.9",
+   "standard_text": "Standard: With prompting and support, identify basic similarities in and differences between two texts on the same topic.\n Spiral: RI.K.2 main topic · RI.K.6 author and illustrator · RI.K.8 reasons · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 165,
+    "words": 32,
+    "labelled_words": 32,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Both of these two books are about trucks."
+     },
+     {
+      "label": "B",
+      "text": "One book shows a fire truck up close."
+     },
+     {
+      "label": "C",
+      "text": "The other one shows every kind of truck."
+     },
+     {
+      "label": "D",
+      "text": "Both books have big photos on each page."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 70,
+    "words": 24,
+    "labelled_words": 24,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Both of these books are about trucks."
+     },
+     {
+      "label": "B",
+      "text": "One book shows a fire truck."
+     },
+     {
+      "label": "C",
+      "text": "The other shows many kinds of truck."
+     },
+     {
+      "label": "D",
+      "text": "Both have big photos."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What do both books have?",
+     "a": "Both books have big photos on each page."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph B (i.e. the fire truck) and paragraph C (i.e. every kind).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell how the two truck books are alike and different.",
+     "a": "Both books are about trucks and both have big photos on each page. One shows a fire truck up close and the other shows every kind of truck."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "photo: a picture made with a camera.\nkind: a sort or type of thing.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the two books.",
+     "a": "Both books are about trucks with big photos, but one is about a single fire truck and the other is about every kind."
+    }
+   ],
+   "note": "One book goes deep and one goes wide. Ask which they would pick to learn about a fire truck."
+  },
+  {
+   "id": "gK-43",
+   "grade": 0,
+   "n": 43,
+   "title": "Two Books About Apples",
+   "standard": "RI.K.9",
+   "standard_text": "Standard: With prompting and support, identify basic similarities in and differences between two texts on the same topic.\n Spiral: RI.K.2 main topic · RI.K.6 author and illustrator · RI.K.8 reasons · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 185,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Both books are about apples in the fall."
+     },
+     {
+      "label": "B",
+      "text": "One book shows how an apple grows."
+     },
+     {
+      "label": "C",
+      "text": "The other shows how to bake a pie."
+     },
+     {
+      "label": "D",
+      "text": "Both of the books start with a tree."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 85,
+    "words": 24,
+    "labelled_words": 24,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Both books are about apples."
+     },
+     {
+      "label": "B",
+      "text": "One shows how an apple grows."
+     },
+     {
+      "label": "C",
+      "text": "The other shows how to bake a pie."
+     },
+     {
+      "label": "D",
+      "text": "Both start with a tree."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What do both books start with?",
+     "a": "Both of the books start with a tree."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph B (i.e. growing) and paragraph C (i.e. baking).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell how the two apple books are alike and different.",
+     "a": "Both books are about apples in the fall and both start with a tree. One shows how an apple grows and the other shows how to bake a pie."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "bake: to cook in an oven.\nfall: the season when leaves drop.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the two books.",
+     "a": "Both books start with a tree, but one follows the apple on the tree and the other follows it into a pie."
+    }
+   ],
+   "note": "Same beginning, two endings. Draw the fork in the road with your finger."
+  },
+  {
+   "id": "gK-44",
+   "grade": 0,
+   "n": 44,
+   "title": "Two Books About the Moon",
+   "standard": "RI.K.9",
+   "standard_text": "Standard: With prompting and support, identify basic similarities in and differences between two texts on the same topic.\n Spiral: RI.K.2 main topic · RI.K.6 author and illustrator · RI.K.8 reasons · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 195,
+    "words": 32,
+    "labelled_words": 32,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Both of these books are about the moon."
+     },
+     {
+      "label": "B",
+      "text": "One book shows the moon changing shape."
+     },
+     {
+      "label": "C",
+      "text": "The other shows people landing on it."
+     },
+     {
+      "label": "D",
+      "text": "Both books have a big photo of the full moon."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 95,
+    "words": 27,
+    "labelled_words": 27,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Both books are about the moon."
+     },
+     {
+      "label": "B",
+      "text": "One shows the moon changing shape."
+     },
+     {
+      "label": "C",
+      "text": "The other shows people landing on it."
+     },
+     {
+      "label": "D",
+      "text": "Both have a photo of the full moon."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What do both books have?",
+     "a": "Both books have a big photo of the full moon."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph B (i.e. changing shape) and paragraph C (i.e. landing on it).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell how the two moon books are alike and different.",
+     "a": "Both books are about the moon and both have a photo of the full moon. One shows the moon changing shape and the other shows people landing on it."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "full moon: the moon when it looks like a whole circle.\nlanding: coming down onto something.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the two books.",
+     "a": "Both books are about the moon and both show the full moon, but one is about its shape and one is about people going there."
+    }
+   ],
+   "note": "One is about the sky and one is about people. That split comes up again and again."
+  },
+  {
+   "id": "gK-45",
+   "grade": 0,
+   "n": 45,
+   "title": "Two Books About Bugs",
+   "standard": "RI.K.9",
+   "standard_text": "Standard: With prompting and support, identify basic similarities in and differences between two texts on the same topic.\n Spiral: RI.K.2 main topic · RI.K.6 author and illustrator · RI.K.8 reasons · RI.K.10 group reading\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 155,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Both of these books are about bugs in the yard."
+     },
+     {
+      "label": "B",
+      "text": "One book is only about ants."
+     },
+     {
+      "label": "C",
+      "text": "The other has a page for each bug."
+     },
+     {
+      "label": "D",
+      "text": "Both books tell you how many legs."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 65,
+    "words": 25,
+    "labelled_words": 25,
+    "paras": [
+     {
+      "label": "A",
+      "text": "Both books are about bugs."
+     },
+     {
+      "label": "B",
+      "text": "One book is only about ants."
+     },
+     {
+      "label": "C",
+      "text": "The other has a page for each bug."
+     },
+     {
+      "label": "D",
+      "text": "Both tell you how many legs."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What do both books tell you?",
+     "a": "Both books tell you how many legs."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph B (i.e. only ants) and paragraph C (i.e. a page each).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell how the two bug books are alike and different.",
+     "a": "Both books are about bugs in the yard and both tell you how many legs. One is only about ants and the other has a page for each bug."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "legs: the parts an animal walks on.\npage: one side of a sheet in a book.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the two books.",
+     "a": "Both books tell you how many legs a bug has, but one is only about ants and the other covers many bugs."
+    }
+   ],
+   "note": "Ask which book you would open to find out about a beetle."
+  },
+  {
+   "id": "gK-46",
+   "grade": 0,
+   "n": 46,
+   "title": "Reading Together on the Rug",
+   "standard": "RI.K.10",
+   "standard_text": "Standard: Actively engage in group reading activities with purpose and understanding.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.4 unknown words · RI.K.8 reasons\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 170,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The class sits on the rug to read together."
+     },
+     {
+      "label": "B",
+      "text": "Everybody can see the big book from there."
+     },
+     {
+      "label": "C",
+      "text": "You listen while the teacher reads a page."
+     },
+     {
+      "label": "D",
+      "text": "Then everybody talks about that page."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 75,
+    "words": 25,
+    "labelled_words": 25,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The class sits on the rug to read."
+     },
+     {
+      "label": "B",
+      "text": "Everybody can see the big book."
+     },
+     {
+      "label": "C",
+      "text": "You listen while the teacher reads."
+     },
+     {
+      "label": "D",
+      "text": "Then everybody talks about it."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "Where does the class sit?",
+     "a": "The class sits on the rug to read together."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. listening) and paragraph D (i.e. talking).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what reading together looks like.",
+     "a": "The class sits on the rug so everybody can see the big book. You listen while the teacher reads a page, and then everybody talks about that page."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "together: all at the same time.\nlisten: to pay attention with your ears.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between listening and talking.",
+     "a": "You listen while the teacher reads a page, and then everybody talks about that page."
+    }
+   ],
+   "note": "Listen, then talk, is the whole routine. Say the order out loud before you start."
+  },
+  {
+   "id": "gK-47",
+   "grade": 0,
+   "n": 47,
+   "title": "When to Ask Your Question",
+   "standard": "RI.K.10",
+   "standard_text": "Standard: Actively engage in group reading activities with purpose and understanding.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.4 unknown words · RI.K.8 reasons\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 180,
+    "words": 31,
+    "labelled_words": 31,
+    "paras": [
+     {
+      "label": "A",
+      "text": "You will have questions while we read together."
+     },
+     {
+      "label": "B",
+      "text": "Hold the question until the page is done."
+     },
+     {
+      "label": "C",
+      "text": "Then put your hand up and ask it."
+     },
+     {
+      "label": "D",
+      "text": "That way nobody misses the next part."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 85,
+    "words": 27,
+    "labelled_words": 27,
+    "paras": [
+     {
+      "label": "A",
+      "text": "You will have questions while we read."
+     },
+     {
+      "label": "B",
+      "text": "Hold the question until the page is done."
+     },
+     {
+      "label": "C",
+      "text": "Then put your hand up."
+     },
+     {
+      "label": "D",
+      "text": "That way nobody misses the next part."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What do you do with your question?",
+     "a": "Hold the question until the page is done."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. putting your hand up) and paragraph D (i.e. not missing the next part).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell when to ask a question.",
+     "a": "You will have questions while we read. Hold the question until the page is done, then put your hand up and ask it, so nobody misses the next part."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "question: something you want to find out.\nhold: to keep for a little while.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between waiting and not missing anything.",
+     "a": "Hold the question until the page is done, and that way nobody misses the next part."
+    }
+   ],
+   "note": "Children think waiting means their question does not matter. Paragraph D says why it does."
+  },
+  {
+   "id": "gK-48",
+   "grade": 0,
+   "n": 48,
+   "title": "Looking Where the Reader Points",
+   "standard": "RI.K.10",
+   "standard_text": "Standard: Actively engage in group reading activities with purpose and understanding.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.4 unknown words · RI.K.8 reasons\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 165,
+    "words": 32,
+    "labelled_words": 32,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The teacher points at the words while reading."
+     },
+     {
+      "label": "B",
+      "text": "Your eyes follow the finger across the page."
+     },
+     {
+      "label": "C",
+      "text": "That shows you which word is being said."
+     },
+     {
+      "label": "D",
+      "text": "The words always go from left to right."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 70,
+    "words": 24,
+    "labelled_words": 24,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The teacher points at the words."
+     },
+     {
+      "label": "B",
+      "text": "Your eyes follow the finger."
+     },
+     {
+      "label": "C",
+      "text": "That shows which word is said."
+     },
+     {
+      "label": "D",
+      "text": "The words go from left to right."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What do your eyes follow?",
+     "a": "Your eyes follow the finger across the page."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. which word is being said) and paragraph D (i.e. left to right).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what the pointing finger does.",
+     "a": "The teacher points at the words while reading, and your eyes follow the finger across the page. That shows you which word is being said, and the words always go from left to right."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "follow: to go along behind.\nleft to right: the way words go on a page.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between the finger and knowing the word.",
+     "a": "Your eyes follow the finger across the page, and that shows you which word is being said."
+    }
+   ],
+   "note": "This one is about print awareness. Point slowly and let them watch the finger, not you."
+  },
+  {
+   "id": "gK-49",
+   "grade": 0,
+   "n": 49,
+   "title": "Saying What You Noticed",
+   "standard": "RI.K.10",
+   "standard_text": "Standard: Actively engage in group reading activities with purpose and understanding.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.4 unknown words · RI.K.8 reasons\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 190,
+    "words": 32,
+    "labelled_words": 32,
+    "paras": [
+     {
+      "label": "A",
+      "text": "After a page, the teacher asks what you noticed."
+     },
+     {
+      "label": "B",
+      "text": "You can say anything you really saw or heard."
+     },
+     {
+      "label": "C",
+      "text": "There is more than one right answer."
+     },
+     {
+      "label": "D",
+      "text": "Somebody else may have noticed something new."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 90,
+    "words": 25,
+    "labelled_words": 25,
+    "paras": [
+     {
+      "label": "A",
+      "text": "The teacher asks what you noticed."
+     },
+     {
+      "label": "B",
+      "text": "Say anything you really saw or heard."
+     },
+     {
+      "label": "C",
+      "text": "There is more than one right answer."
+     },
+     {
+      "label": "D",
+      "text": "Others may notice something new."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "What does the teacher ask?",
+     "a": "After a page, the teacher asks what you noticed."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. more than one right answer) and paragraph D (i.e. somebody else).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell what happens after a page.",
+     "a": "After a page, the teacher asks what you noticed. You can say anything you really saw or heard, there is more than one right answer, and somebody else may have noticed something new."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "noticed: saw or heard and thought about.\nanswer: what you say back.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between many answers and listening to others.",
+     "a": "There is more than one right answer, so somebody else may have noticed something new."
+    }
+   ],
+   "note": "Paragraph C is the one that frees a shy child. Read it twice on the first day."
+  },
+  {
+   "id": "gK-50",
+   "grade": 0,
+   "n": 50,
+   "title": "Reading It Again Tomorrow",
+   "standard": "RI.K.10",
+   "standard_text": "Standard: Actively engage in group reading activities with purpose and understanding.\n Spiral: RI.K.1 key details · RI.K.2 main topic · RI.K.4 unknown words · RI.K.8 reasons\n Lower range: LL 0 – 110",
+   "higher": {
+    "lexile": 205,
+    "words": 34,
+    "labelled_words": 34,
+    "paras": [
+     {
+      "label": "A",
+      "text": "We will read this same book again tomorrow."
+     },
+     {
+      "label": "B",
+      "text": "The second time you hear more than the first."
+     },
+     {
+      "label": "C",
+      "text": "You already know what is going to happen."
+     },
+     {
+      "label": "D",
+      "text": "So your head is free to notice other things."
+     }
+    ]
+   },
+   "lower": {
+    "lexile": 105,
+    "words": 24,
+    "labelled_words": 24,
+    "paras": [
+     {
+      "label": "A",
+      "text": "We will read this book again tomorrow."
+     },
+     {
+      "label": "B",
+      "text": "The second time you hear more."
+     },
+     {
+      "label": "C",
+      "text": "You know what will happen."
+     },
+     {
+      "label": "D",
+      "text": "So you can notice other things."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 1,
+     "kind": "main idea/detail",
+     "q": "When will the class read the book again?",
+     "a": "We will read this same book again tomorrow."
+    },
+    {
+     "n": 2,
+     "kind": "paragraph focus",
+     "q": "Paragraph C (i.e. already knowing) and paragraph D (i.e. noticing other things).",
+     "a": ""
+    },
+    {
+     "n": 3,
+     "kind": "summarize",
+     "q": "Tell why the class reads a book twice.",
+     "a": "The class reads the same book again tomorrow. The second time you hear more than the first, because you already know what is going to happen, so your head is free to notice other things."
+    },
+    {
+     "n": 4,
+     "kind": "vocabulary",
+     "q": "second: the one that comes after the first.\nfree: not busy with something else.",
+     "a": ""
+    },
+    {
+     "n": 5,
+     "kind": "connection",
+     "q": "Describe the connection between knowing the story and noticing more.",
+     "a": "You already know what is going to happen, so your head is free to notice other things."
+    }
+   ],
+   "note": "This explains rereading, which children often take as a punishment. It is the opposite."
+  },
   {
    "id": "g1-1",
    "grade": 1,
