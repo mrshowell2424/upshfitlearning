@@ -27,16 +27,19 @@ export function CopyButton({ text, label }: { text: string; label: string }) {
           alert("Copying was blocked. The full prompt is at the bottom of this page.");
         }
       }}
+      // This is the primary action on the page -- the reason the prompt exists
+      // -- and it used to look identical to the three buttons beside it. Filled
+      // against their outlines, it reads as the one to press.
       style={{
         fontFamily: "Inter, system-ui, sans-serif",
         fontSize: 13,
         fontWeight: 700,
         borderRadius: 100,
-        padding: "8px 18px",
+        padding: "9px 20px",
         cursor: "pointer",
         border: "1.5px solid #111111",
-        background: done ? "#111111" : "#FFFFFF",
-        color: done ? "#FFFFFF" : "#111111",
+        background: "#111111",
+        color: "#FFFFFF",
       }}
     >
       {done ? "✓ Copied" : "\u{1F4CB} " + label}

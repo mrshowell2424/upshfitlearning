@@ -283,7 +283,16 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
           </div>
           {art.questions.map((q) => (
             <div key={q.n} style={{ breakInside: "avoid", margin: "0 0 12px" }}>
-              <div style={{ fontSize: 14, fontWeight: 700 }}>{`${q.n}. ${q.q}`}</div>
+              {/* The kind tells the student what sort of answer is wanted, and it
+                  was being dropped on the sheet they actually write on. The
+                  newline matters too: a vocabulary item is two definitions on
+                  two lines, and without pre-line they print as one run-on. */}
+              <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: SOFT }}>
+                {q.kind}
+              </div>
+              <div style={{ fontSize: 14, fontWeight: 700, whiteSpace: "pre-line" }}>
+                {`${q.n}. ${q.q}`}
+              </div>
               <div style={{ fontSize: 11, color: SOFT }}>Paragraph: ____</div>
               <Lines n={2} />
             </div>

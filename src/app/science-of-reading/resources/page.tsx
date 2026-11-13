@@ -40,6 +40,11 @@ const BRAND = {
   line: "#E9E9E9",
   panel: "#F2F2F2",
   paper: "#F7F6F4",
+  // The dark end of each ramp. The brand hues sit at 2.4-2.8:1 on white and
+  // fail for text, so anything carrying meaning uses these instead.
+  coralDark: "#C0432F",
+  lavenderDark: "#6B2FB5",
+  tealDark: "#00756C",
 };
 const GRADIENT =
   `linear-gradient(135deg, ${BRAND.coral}, ${BRAND.pink}, ${BRAND.lavender}, ${BRAND.teal})`;
@@ -117,13 +122,58 @@ const select: React.CSSProperties = {
   fontSize: 14,
   padding: "9px 12px",
   borderRadius: 12,
-  border: "1.5px solid #C9D3C4",
+  // Was a sage green that appears nowhere else on the site. The hairline grey
+  // is the one the cards and rules already use.
+  border: `1.5px solid ${BRAND.line}`,
   background: "#FFFFFF",
   color: BRAND.ink,
   maxWidth: "100%",
 };
 
-function Card({ children }: { children: React.ReactNode }) {
+/**
+ * The measure, which is the whole point of this page.
+ *
+ * Running text was set across the full 972px column, about 105 characters a
+ * line. Comfortable measure is 55-75; past that the eye loses the line on the
+ * return sweep, which is precisely the reader this site is built for. 66ch at
+ * 18px lands around 620px and is the single biggest change here.
+ */
+const reading: React.CSSProperties = {
+  maxWidth: "66ch",
+  fontSize: 18,
+  lineHeight: 1.72,
+};
+
+/** Each tab gets its own accent, so switching tabs looks like switching. */
+const ACCENT = { my: BRAND.lavenderDark, ar: BRAND.tealDark } as const;
+
+const bandLabel = (color: string): React.CSSProperties => ({
+  ...label,
+  color,
+  margin: "0 0 10px",
+});
+
+/** The kind of question an item is, which the prompt has always carried. */
+const kindTag: React.CSSProperties = {
+  fontFamily: "Inter, system-ui, sans-serif",
+  fontSize: 10,
+  fontWeight: 800,
+  letterSpacing: "0.1em",
+  textTransform: "uppercase",
+  color: BRAND.mid,
+  background: BRAND.panel,
+  border: `1px solid ${BRAND.line}`,
+  borderRadius: 100,
+  padding: "2px 8px",
+  whiteSpace: "nowrap",
+};
+
+/**
+ * The card carries one flat accent rather than a second copy of the page's
+ * gradient bar. Two gradients forty pixels apart was one gradient too many,
+ * and a single colour also tells you which tab you are on.
+ */
+function Card({ children, accent }: { children: React.ReactNode; accent: string }) {
   return (
     <div
       style={{
@@ -134,9 +184,41 @@ function Card({ children }: { children: React.ReactNode }) {
         margin: "0 0 18px",
       }}
     >
-      <div style={{ height: 4, background: GRADIENT }} />
-      <div style={{ padding: "20px 24px 24px" }}>{children}</div>
+      <div style={{ height: 4, background: accent }} />
+      <div style={{ padding: "22px 26px 26px" }}>{children}</div>
     </div>
+  );
+}
+
+/**
+ * One labelled band of the card: the text, the questions, the writing.
+ *
+ * All three used to run together in a single white field with nothing but a
+ * small grey label between them, so a teacher projecting the page had nothing
+ * to point at. A rule and a coloured label give each part an edge.
+ */
+function Band({
+  heading,
+  accent,
+  first,
+  children,
+}: {
+  heading: string;
+  accent: string;
+  first?: boolean;
+  children: React.ReactNode;
+}) {
+  return (
+    <section
+      style={{
+        borderTop: first ? "none" : `1px solid ${BRAND.line}`,
+        margin: first ? "16px 0 0" : "22px 0 0",
+        paddingTop: first ? 0 : 20,
+      }}
+    >
+      <p style={bandLabel(accent)}>{heading}</p>
+      {children}
+    </section>
   );
 }
 
@@ -171,10 +253,26 @@ function Actions({ children }: { children: React.ReactNode }) {
   );
 }
 
+/**
+ * The answer key, which is for the adult in the room and nobody else.
+ *
+ * It used to be the fourth of four identical pills, so the one control a
+ * teacher must not press while projecting looked exactly like the three they
+ * press all day. It now sits at the far end of the bar with a dashed edge.
+ */
 function Answers({ children }: { children: React.ReactNode }) {
   return (
-    <details style={{ marginTop: 14 }}>
-      <summary style={{ ...pill(false), listStyle: "none" }}>Show answers</summary>
+    <details style={{ marginTop: 0, marginLeft: "auto" }}>
+      <summary
+        style={{
+          ...pill(false),
+          listStyle: "none",
+          border: `1.5px dashed ${BRAND.mid}`,
+          color: BRAND.mid,
+        }}
+      >
+        🔑 Answers (teacher)
+      </summary>
       <div style={{ background: BRAND.panel, borderRadius: 12, padding: "12px 16px", marginTop: 10, fontSize: 15 }}>
         {children}
       </div>
@@ -244,12 +342,16 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
           blurb="Mysteries and informational articles with questions, a written response, and an AI prompt that carries the whole text. Free — an account is all it takes."
         >
           <div style={{ height: 4, background: GRADIENT }} />
-          <div style={{ maxWidth: 1100, margin: "0 auto", padding: "28px 5% 80px", background: BRAND.paper, color: BRAND.ink, fontFamily: "Inter, system-ui, sans-serif", lineHeight: 1.6 }}>
+          {/* The paper is painted on the full-width wrapper and the column is
+              centred inside it. Painting it on the column itself left a bare
+              white band down the right of any wide screen. */}
+          <div style={{ background: BRAND.paper, color: BRAND.ink, fontFamily: "Inter, system-ui, sans-serif", lineHeight: 1.6 }}>
+          <div style={{ maxWidth: 880, margin: "0 auto", padding: "32px 5% 80px" }}>
             <p style={{ ...label, margin: "0 0 6px" }}>Upshift Learning</p>
             <h1 style={{ fontFamily: "Poppins, Inter, sans-serif", fontSize: 40, fontWeight: 900, letterSpacing: "-1px", margin: "0 0 4px", lineHeight: 1.1 }}>
               Reading Resources
             </h1>
-            <p style={{ color: BRAND.mid, margin: "0 0 22px", fontSize: 17 }}>
+            <p style={{ color: BRAND.mid, margin: "0 0 24px", fontSize: 17, maxWidth: "60ch" }}>
               Extra texts for comprehension and writing. Pick one, read it together, answer the
               questions from the text, then write the response. Copy the prompt to hand the whole
               text to a student-safe AI space.
@@ -279,23 +381,38 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                   <button type="submit" style={pill(true)}>Show</button>
                 </form>
 
-                <Card>
+                <Card accent={ACCENT.my}>
                   <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
                     <p style={{ ...label, margin: 0 }}>{`Mystery · ${gradeName(myCase.grade)} · Week ${myCase.week}`}</p>
                     <p style={{ ...label, margin: 0 }}>{myCase.tag}</p>
                   </div>
-                  <h2 style={{ fontFamily: "Poppins, Inter, sans-serif", fontSize: 26, fontWeight: 800, margin: "2px 0 10px", letterSpacing: "-0.4px", lineHeight: 1.2 }}>
+                  <h2 style={{ fontFamily: "Poppins, Inter, sans-serif", fontSize: 30, fontWeight: 800, margin: "4px 0 2px", letterSpacing: "-0.6px", lineHeight: 1.15 }}>
                     {myCase.title}
                   </h2>
-                  <p style={{ fontSize: 17, lineHeight: 1.75, margin: "0 0 16px" }}>{myCase.story}</p>
-                  <p style={{ fontWeight: 700, margin: "14px 0 6px", fontSize: 15 }}>{`❓ ${myCase.question}`}</p>
-                  <ul style={{ margin: "6px 0 14px", paddingLeft: 22 }}>
-                    {myCase.suspects.map((s) => (
-                      <li key={s.who} style={{ margin: "0 0 5px" }}>
-                        <b>{s.who}</b>{` — ${s.why}`}
-                      </li>
-                    ))}
-                  </ul>
+
+                  <Band heading="The case" accent={ACCENT.my} first>
+                    <div style={{ ...reading, textWrap: "pretty" }}>{myCase.story}</div>
+                  </Band>
+
+                  <Band heading="The question" accent={ACCENT.my}>
+                    <p style={{ ...reading, fontWeight: 700, margin: "0 0 14px" }}>{myCase.question}</p>
+                    <p style={{ ...label, margin: "0 0 8px" }}>Who could it be?</p>
+                    <div style={{ ...reading, fontSize: 17 }}>
+                      {myCase.suspects.map((s) => (
+                        <div key={s.who} style={{ margin: "0 0 10px", textWrap: "pretty" }}>
+                          <b>{s.who}</b>
+                          <span style={{ color: BRAND.mid }}>{` — ${s.why}`}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </Band>
+
+                  <Band heading="Then write" accent={ACCENT.my}>
+                    <div style={reading}>
+                      Who did it, and how do you know? Quote the words from the case that prove it,
+                      and say what rules each of the others out.
+                    </div>
+                  </Band>
                   <Actions>
                     <CopyButton text={mysteryPrompt(myCase)} label="Copy mystery prompt" />
                     <Prompt text={mysteryPrompt(myCase)} />
@@ -341,32 +458,55 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                 </form>
 
                 {art && v ? (
-                  <Card>
+                  <Card accent={ACCENT.ar}>
                     <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
                       <p style={{ ...label, margin: 0 }}>{`${art.standard} · Grade ${art.grade}`}</p>
                       <p style={{ ...label, margin: 0 }}>{`Lexile ${v.lexile} · ${v.words} words`}</p>
                     </div>
-                    <h2 style={{ fontFamily: "Poppins, Inter, sans-serif", fontSize: 26, fontWeight: 800, margin: "2px 0 10px", letterSpacing: "-0.4px", lineHeight: 1.2 }}>
+                    <h2 style={{ fontFamily: "Poppins, Inter, sans-serif", fontSize: 30, fontWeight: 800, margin: "4px 0 12px", letterSpacing: "-0.6px", lineHeight: 1.15 }}>
                       {art.title}
                     </h2>
-                    <div style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "0 0 14px" }}>
+                    <div style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "0 0 4px" }}>
                       <a href={href({ v: "lo" })} style={pill(ver === "lower")}>Lower Lexile</a>
                       <a href={href({ v: "hi" })} style={pill(ver === "higher")}>Higher Lexile</a>
                     </div>
-                    {v.paras.map((p) => (
-                      <div key={p.label} style={{ display: "flex", gap: 10, margin: "0 0 12px", fontSize: 16, lineHeight: 1.7 }}>
-                        <b style={{ color: "#2F6FD0", flex: "0 0 auto" }}>{p.label}</b>
-                        <div>{p.text}</div>
+
+                    <Band heading="The text" accent={ACCENT.ar} first>
+                      <div style={reading}>
+                        {v.paras.map((p) => (
+                          <div key={p.label} style={{ display: "flex", gap: 14, margin: "0 0 16px" }}>
+                            <b style={{ color: BRAND.coralDark, flex: "0 0 auto", width: "1.1em" }}>{p.label}</b>
+                            <div style={{ textWrap: "pretty" }}>{p.text}</div>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                    <p style={{ ...label, margin: "18px 0 2px" }}>Questions</p>
-                    {art.questions.map((q) => (
-                      <p key={q.n} style={{ margin: "6px 0", fontSize: 15 }}>{`${q.n}. ${q.q}`}</p>
-                    ))}
-                    <div style={{ borderTop: `1px solid ${BRAND.line}`, margin: "14px 0 0", padding: "12px 0 0", fontSize: 15 }}>
-                      <b>Then write a response to reading.</b> What is the most important idea in this
-                      article, and how do you know? Name the paragraph letter for every piece of evidence.
-                    </div>
+                    </Band>
+
+                    <Band heading="Five questions" accent={ACCENT.ar}>
+                      {/* The number is drawn rather than left to the list marker:
+                          Tailwind's preflight sets list-style to none, so an <ol>
+                          here renders with no numbers at all. */}
+                      <div style={{ ...reading, fontSize: 17 }}>
+                        {art.questions.map((q) => (
+                          <div key={q.n} style={{ display: "flex", gap: 14, margin: "0 0 16px" }}>
+                            <b style={{ color: ACCENT.ar, flex: "0 0 auto", width: "1.1em" }}>{q.n}</b>
+                            <div>
+                              <span style={{ ...kindTag, display: "inline-block", marginBottom: 5 }}>{q.kind}</span>
+                              {/* A vocabulary item is two definitions on two lines; the
+                                  newline in the data used to collapse and run them together. */}
+                              <div style={{ whiteSpace: "pre-line", textWrap: "pretty" }}>{q.q}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </Band>
+
+                    <Band heading="Then write" accent={ACCENT.ar}>
+                      <div style={reading}>
+                        What is the most important idea in this article, and how do you know? Name
+                        the paragraph letter for every piece of evidence.
+                      </div>
+                    </Band>
                     <Actions>
                       <CopyButton text={articlePrompt(art, ver)} label="Copy article prompt" />
                       <Prompt text={articlePrompt(art, ver)} />
@@ -387,11 +527,12 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               </>
             )}
 
-            <p style={{ fontSize: 13, color: BRAND.mid, margin: "6px 0 0" }}>
+            <p style={{ fontSize: 13, color: BRAND.mid, margin: "6px 0 0", maxWidth: "66ch" }}>
               These are not decodable texts. They are written to meaning and reading level rather
               than to the phonics sequence, so they use spellings a given lesson has not taught.
               Read them with the class.
             </p>
+          </div>
           </div>
         </SignInGate>
       </main>
