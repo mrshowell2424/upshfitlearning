@@ -387,7 +387,7 @@ function LockedPreview({ feature, summary }) {
 
 function NotAuthoredYet({ what }) {
   return (
-    <div className="border border-dashed border-border rounded-2xl p-10 text-center">
+    <div className="border border-border rounded-2xl p-10 text-center">
       <p className="text-[17px] font-semibold text-charcoal mb-2">
         No {what} for this standard yet
       </p>
@@ -1261,7 +1261,7 @@ function GenerateTab({ standard_code, blueprint, unpack }) {
       {/* Output preview */}
       <div>
         {!generated ? (
-          <div className="bg-gray-050 rounded-lg p-8 aspect-square flex items-center justify-center border-2 border-dashed border-hairline">
+          <div className="bg-gray-050 rounded-lg p-8 aspect-square flex items-center justify-center border-2 border-hairline">
             <div className="text-center">
               <p className="text-text-muted mb-2">Generated content will appear here</p>
               <p className="text-xs text-text-faint">

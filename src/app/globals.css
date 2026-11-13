@@ -46,6 +46,7 @@
   --color-text-muted: var(--color-text-muted);
   --color-text-faint: var(--color-text-faint);
   --font-sans: var(--font-inter);
+  --font-reading: var(--font-serif);
   --radius-20: 20px;
   --radius-18: 18px;
   --radius-16: 16px;
@@ -81,9 +82,17 @@ body {
   font-family: var(--font-inter);
 }
 
-/* The brand book: everything in Inter, the geometric face for the wordmark
-   and the display sizes. Headings keep Poppins because that is where the
-   brand's heavy, tight display styles live; running text does not. */
+/* The brand book: Inter runs the interface, Poppins stays on the wordmark
+   and the display sizes because that is where the brand's heavy, tight
+   styles live. Running text never gets Poppins -- a display face set at
+   18px across sixty-six characters is what made the reading pages feel
+   dense. Lines a child reads get the serif, via .reading-text below. */
 h1, h2, .wordmark {
   font-family: var(--font-poppins), var(--font-inter), system-ui, sans-serif;
+}
+
+/* The reading face. Applied to the column a child reads, never to the
+   interface around it, so the eye can tell the two apart at a glance. */
+.reading-text {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
 }

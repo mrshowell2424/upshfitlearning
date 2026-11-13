@@ -143,6 +143,12 @@ const reading: React.CSSProperties = {
   maxWidth: "66ch",
   fontSize: 18,
   lineHeight: 1.72,
+  // The second half of the fix. Measure got the line length right; the face
+  // gets the line itself right. Poppins and Inter run the chrome around this
+  // column -- setting the passage in a third, serif face is what tells a
+  // reader where the page stops being a website and starts being something
+  // to read.
+  fontFamily: 'var(--font-serif), Georgia, "Times New Roman", serif',
 };
 
 /** Each tab gets its own accent, so switching tabs looks like switching. */
@@ -259,7 +265,7 @@ function Actions({ children }: { children: React.ReactNode }) {
  *
  * It used to be the fourth of four identical pills, so the one control a
  * teacher must not press while projecting looked exactly like the three they
- * press all day. It now sits at the far end of the bar with a dashed edge.
+ * press all day. It sits at the far end of the bar, set apart by colour.
  */
 function Answers({ children }: { children: React.ReactNode }) {
   return (
@@ -268,7 +274,7 @@ function Answers({ children }: { children: React.ReactNode }) {
         style={{
           ...pill(false),
           listStyle: "none",
-          border: `1.5px dashed ${BRAND.mid}`,
+          border: `1.5px solid ${BRAND.mid}`,
           color: BRAND.mid,
         }}
       >

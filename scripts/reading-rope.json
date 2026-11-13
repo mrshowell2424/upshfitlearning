@@ -1,0 +1,141 @@
+{
+  "_note": "Scarborough's reading rope, as the organising frame for the Science of Reading hub. The eight strands and their two halves come from Hollis Scarborough's model; the mapping of which Upshift material serves which strand is ours, and so is every word of the descriptions. The counts are not written here -- the page reads them from the content so a strand cannot claim material it does not have.",
+  "source": "The eight strands and the two halves are Hollis Scarborough's reading rope (2001).",
+  "intro": "Eight strands, two halves. Word recognition becomes automatic; language comprehension becomes strategic. Fluency is where the two weave together, which is why it is not a ninth strand.",
+  "halves": [
+    {
+      "key": "language",
+      "name": "Language comprehension",
+      "becomes": "increasingly strategic",
+      "ink": "#6B2FB5",
+      "tint": "#F4E9FF"
+    },
+    {
+      "key": "word",
+      "name": "Word recognition",
+      "becomes": "increasingly automatic",
+      "ink": "#C0432F",
+      "tint": "#FFF0EC"
+    }
+  ],
+  "strands": [
+    {
+      "key": "background",
+      "half": "language",
+      "name": "Background knowledge",
+      "what": "What a reader already knows about the thing the text is about. A text about a glacier is harder if you have never heard of one.",
+      "have": [],
+      "gap": "No home on the site yet. The 350 articles build background knowledge by accident — a teacher reading one has no five minutes of \"what do you already know about this\" to run first. This is the biggest hole in the rope."
+    },
+    {
+      "key": "vocabulary",
+      "half": "language",
+      "name": "Vocabulary",
+      "what": "Knowing what the words mean, and enough about each one to use it rather than only recognise it.",
+      "have": [
+        {
+          "label": "Teach a Word",
+          "href": "/vocabulary",
+          "count": "words",
+          "blurb": "Say it, use it, write it, in about ten minutes a word."
+        }
+      ],
+      "gap": null
+    },
+    {
+      "key": "structure",
+      "half": "language",
+      "name": "Language structure",
+      "what": "Syntax and grammar: how a sentence is put together, and what the parts of it are doing.",
+      "have": [],
+      "gap": "Nothing yet, and the only strand with nothing to build on. Parts of speech, sentence combining and word maps would all be new content rather than a new view of content we already have."
+    },
+    {
+      "key": "reasoning",
+      "half": "language",
+      "name": "Verbal reasoning",
+      "what": "Inference and evidence: working out what a text implies but does not say, and proving it from the words on the page.",
+      "have": [
+        {
+          "label": "Mysteries",
+          "href": "/science-of-reading/resources?tab=my",
+          "count": "mysteries",
+          "blurb": "A case a week, K through 5. Every one is a claim-and-evidence task in disguise."
+        }
+      ],
+      "gap": null
+    },
+    {
+      "key": "literacy",
+      "half": "language",
+      "name": "Literacy knowledge",
+      "what": "How texts work: print concepts, text features, and the shapes a nonfiction text comes in.",
+      "have": [
+        {
+          "label": "Text feature articles",
+          "href": "/science-of-reading/resources?tab=ar",
+          "count": "feature",
+          "blurb": "Articles that take the feature itself as the subject — the glossary, the heading, the caption, the arrow."
+        }
+      ],
+      "gap": null
+    },
+    {
+      "key": "phonological",
+      "half": "word",
+      "name": "Phonological awareness",
+      "what": "Hearing and moving the sounds in words, before any letter is involved.",
+      "have": [
+        {
+          "label": "Basic Reading workbooks",
+          "href": "/reading",
+          "count": "splits",
+          "blurb": "The scope and sequence in teaching order, each skill with its workbook and key."
+        }
+      ],
+      "gap": null
+    },
+    {
+      "key": "decoding",
+      "half": "word",
+      "name": "Decoding",
+      "what": "Turning letters into sounds reliably enough that the word arrives without effort.",
+      "have": [
+        {
+          "label": "OG concept packs",
+          "href": "/og-packs",
+          "count": "packs",
+          "blurb": "One concept across the whole family of skills it covers."
+        },
+        {
+          "label": "Lesson builder",
+          "href": "/api/materials/science-of-reading/lesson-builder.html",
+          "count": null,
+          "blurb": "Pick a skill and it writes the lesson, the word lists and the workbook."
+        }
+      ],
+      "gap": null
+    },
+    {
+      "key": "sight",
+      "half": "word",
+      "name": "Sight recognition",
+      "what": "Words read instantly, without sounding out — which is where every decoded word ends up with enough practice.",
+      "have": [
+        {
+          "label": "Sight word lists",
+          "href": "/reading",
+          "count": "sightLists",
+          "blurb": "Eleven lists, in the order the workbooks teach them."
+        }
+      ],
+      "gap": null
+    }
+  ],
+  "bridge": {
+    "name": "Fluency",
+    "what": "Where the two halves weave together. A reader who decodes accurately but slowly is spending on the words what they need for the meaning.",
+    "href": "/fluency",
+    "blurb": "A one-minute read on any passage, with words correct per minute, accuracy and how it sounded."
+  }
+}

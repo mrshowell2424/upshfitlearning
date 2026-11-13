@@ -301,7 +301,7 @@ function ResourcesContent() {
 
           {/* Grid */}
           {loading ? (
-            <div className="text-center py-16 border-2 border-dashed border-hairline rounded-[16px]">
+            <div className="text-center py-16 border-2 border-hairline rounded-[16px]">
               <p className="text-text-muted mb-4">Loading resources...</p>
               <p className="text-sm text-text-muted">Fetching your resources from the library...</p>
             </div>
@@ -349,7 +349,7 @@ function ResourcesContent() {
               </div>
             </>
           ) : (
-            <div className="text-center py-16 border-2 border-dashed border-hairline rounded-[16px]">
+            <div className="text-center py-16 border-2 border-hairline rounded-[16px]">
               <p className="text-text-muted mb-4">No resources found</p>
               <p className="text-sm text-text-muted">Try adjusting your search or filters</p>
             </div>

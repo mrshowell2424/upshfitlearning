@@ -7,6 +7,10 @@ import { SignInGate } from "@/components/shared/SignInGate";
 import { MaterialsPass } from "@/components/shared/MaterialsPass";
 import { SKILL_TOTAL } from "@/app/reading/lessons-data";
 import { OG_CONCEPTS } from "@/app/reading/og-packs-data";
+import ROPE from "@/../scripts/reading-rope.json";
+import ARTICLES from "@/../scripts/reading-articles.json";
+import SIGHT_WORDS from "@/../scripts/reading-sight-words.json";
+import SKILL_SPLITS from "@/../scripts/reading-skill-splits.json";
 
 /**
  * The way into the reading programme.
@@ -66,6 +70,200 @@ const VOCABULARY = "/vocabulary";
 // drift away from what is actually on it.
 const MYSTERY_COUNT = RESOURCE_COUNTS.mysteries;
 const ARTICLE_COUNT = RESOURCE_COUNTS.articles;
+
+/**
+ * How many of each thing a strand can claim.
+ *
+ * Counted from the content rather than written into the rope file, so a
+ * strand cannot say it has fifty articles when it has none. The feature count
+ * is the articles that take a text feature as their subject -- the glossary,
+ * the heading, the caption -- which is what literacy knowledge actually means
+ * on this site.
+ */
+const FEATURE_STANDARDS = [
+  "RI.K.5", "RI.K.6", "RI.K.7",
+  "RI.1.5", "RI.1.6", "RI.1.7",
+  "RI.2.5", "RI.2.7",
+  "RI.6.5", "RI.6.7",
+];
+const STRAND_COUNTS: Record<string, number> = {
+  mysteries: MYSTERY_COUNT,
+  words: ARTICLES.articles.reduce((n, a) => {
+    const v = a.questions.find((q) => q.kind === "vocabulary");
+    return n + (v ? String(v.q).split("\n").filter((x) => x.includes(":")).length : 0);
+  }, 0),
+  feature: ARTICLES.articles.filter((a) => FEATURE_STANDARDS.includes(a.standard)).length,
+  splits: Object.keys(SKILL_SPLITS).length,
+  packs: OG_CONCEPTS.length,
+  sightLists: (SIGHT_WORDS.lists ?? []).length,
+};
+
+/**
+ * The rope, as the way into the page.
+ *
+ * The hub used to be organised by artefact -- workbooks, resources, packs --
+ * which is how the material was made rather than how a teacher thinks about
+ * reading. A teacher could not look at it and answer "what do I have for
+ * verbal reasoning", and the answer was 216 mysteries.
+ *
+ * Organised by strand, two things happen at once. Material that was already
+ * here gets named in the words a teacher uses, so the mysteries stop being
+ * invisible. And the two strands with nothing behind them -- background
+ * knowledge and language structure -- show up as holes instead of staying
+ * theoretical. A gap that is written down is a gap somebody can fill, so the
+ * empty strands say so rather than being quietly left out.
+ */
+function Rope() {
+  return (
+    <section style={{ marginTop: 34 }}>
+      <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: LAVENDER_TEXT }}>
+        THE EIGHT STRANDS
+      </div>
+      <h2 style={{ margin: "6px 0 0", fontSize: 27, fontWeight: 800, lineHeight: 1.15 }}>
+        What we have for each part of reading
+      </h2>
+      <p style={{ margin: "8px 0 0", fontSize: 15, fontWeight: 500, color: MUTED, maxWidth: "66ch", lineHeight: 1.55 }}>
+        {ROPE.intro}
+      </p>
+
+      {ROPE.halves.map((half) => (
+        <div key={half.key} style={{ marginTop: 24 }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "baseline",
+              gap: 12,
+              flexWrap: "wrap",
+              borderBottom: `3px solid ${RULE}`,
+              paddingBottom: 8,
+            }}
+          >
+            <h3 style={{ margin: 0, fontSize: 20, fontWeight: 800, color: half.ink }}>
+              {half.name}
+            </h3>
+            <span style={{ fontSize: 14, fontWeight: 500, color: MUTED }}>
+              {half.becomes}
+            </span>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: 12,
+              marginTop: 12,
+            }}
+          >
+            {ROPE.strands
+              .filter((st) => st.half === half.key)
+              .map((st) => {
+                const empty = st.have.length === 0;
+                return (
+                  <div
+                    key={st.key}
+                    style={{
+                      background: "#FFFFFF",
+                      border: `2px solid ${RULE}`,
+                      borderLeft: `8px solid ${empty ? RULE : half.ink}`,
+                      borderRadius: 14,
+                      padding: "16px 18px",
+                    }}
+                  >
+                    <div style={{ fontSize: 17, fontWeight: 800, lineHeight: 1.2 }}>
+                      {st.name}
+                    </div>
+                    <p
+                      style={{
+                        fontSize: 14,
+                        fontWeight: 500,
+                        color: MUTED,
+                        margin: "6px 0 10px",
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      {st.what}
+                    </p>
+
+                    {st.have.map((h) => (
+                      <Link
+                        key={h.href}
+                        href={h.href}
+                        style={{
+                          display: "block",
+                          background: half.tint,
+                          borderRadius: 10,
+                          padding: "10px 12px",
+                          marginBottom: 8,
+                          textDecoration: "none",
+                          color: INK,
+                        }}
+                      >
+                        <div style={{ fontSize: 15, fontWeight: 800 }}>
+                          {h.count && STRAND_COUNTS[h.count] !== undefined
+                            ? `${h.label} · ${STRAND_COUNTS[h.count]}`
+                            : h.label}
+                        </div>
+                        <div style={{ fontSize: 13, fontWeight: 500, color: MUTED, lineHeight: 1.45 }}>
+                          {h.blurb}
+                        </div>
+                      </Link>
+                    ))}
+
+                    {st.gap && (
+                      <p
+                        style={{
+                          fontSize: 13,
+                          fontWeight: 500,
+                          color: empty ? CORAL_TEXT : MUTED,
+                          margin: 0,
+                          lineHeight: 1.5,
+                          fontStyle: empty ? "normal" : "italic",
+                        }}
+                      >
+                        {empty ? <b>Nothing here yet. </b> : null}
+                        {st.gap}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+      ))}
+
+      {/* Fluency sits between the halves rather than beside them, because that
+          is where it sits in the rope: the two strands weaving. */}
+      <Link
+        href={ROPE.bridge.href}
+        style={{
+          display: "block",
+          marginTop: 20,
+          background: "#FFFFFF",
+          border: `2px solid ${RULE}`,
+          borderLeft: `8px solid ${TEAL}`,
+          borderRadius: 14,
+          padding: "16px 18px",
+          textDecoration: "none",
+          color: INK,
+        }}
+      >
+        <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: TEAL_TEXT }}>
+          WHERE THE TWO HALVES MEET
+        </div>
+        <div style={{ fontSize: 19, fontWeight: 800, marginTop: 4 }}>
+          {`${ROPE.bridge.name} · ${ARTICLE_COUNT * 2} passages`}
+        </div>
+        <p style={{ fontSize: 14, fontWeight: 500, color: MUTED, margin: "6px 0 0", lineHeight: 1.5, maxWidth: "70ch" }}>
+          {ROPE.bridge.what}
+        </p>
+      </Link>
+
+      <p style={{ fontSize: 12, fontWeight: 500, color: MUTED, margin: "14px 0 0" }}>
+        {ROPE.source}
+      </p>
+    </section>
+  );
+}
 
 function Hub() {
   return (
@@ -139,6 +337,17 @@ function Hub() {
             />
           </div>
         </a>
+
+        <Rope />
+
+        <div style={{ marginTop: 34 }}>
+          <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: CORAL_TEXT }}>
+            THE MATERIALS THEMSELVES
+          </div>
+          <h2 style={{ margin: "6px 0 0", fontSize: 27, fontWeight: 800, lineHeight: 1.15 }}>
+            Open one
+          </h2>
+        </div>
 
         <div
           style={{

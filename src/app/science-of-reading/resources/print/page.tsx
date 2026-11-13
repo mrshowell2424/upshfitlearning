@@ -105,7 +105,7 @@ function Annotatable({ letter, text }: { letter?: string; text: string }) {
       <div
         style={{
           flex: "0 0 150px",
-          borderLeft: "1px dashed #9AA0A6",
+          borderLeft: "1px solid #9AA0A6",
           paddingLeft: 8,
           fontSize: 10,
           color: SOFT,

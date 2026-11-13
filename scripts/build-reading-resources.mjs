@@ -76,9 +76,14 @@ const html = `<!doctype html>
 <title>Reading Resources</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
+/* Three faces, each with one job. Poppins is the display face and stays on
+   headings. Inter runs the interface: tabs, pills, selects, buttons. The
+   serif carries the lines a child actually reads, so a reading page is not
+   set in the same face as its own navigation. */
+:root{--read:"Source Serif 4",Georgia,"Times New Roman",serif}
 body{margin:0;background:${C.paper};color:${C.ink};
   font-family:Inter,system-ui,sans-serif;line-height:1.6}
 .bar{height:4px;background:linear-gradient(135deg,${C.coral},${C.pink},${C.lavender},${C.teal})}
@@ -86,7 +91,8 @@ main{max-width:880px;margin:0 auto;padding:32px 5% 80px}
 /* The measure. Running text was set across the full column, about 105
    characters a line; comfortable measure is 55-75, and past that the eye
    loses the line on the return sweep. */
-.reading{max-width:66ch;font-size:18px;line-height:1.72;text-wrap:pretty}
+.reading{max-width:66ch;font-size:18px;line-height:1.72;text-wrap:pretty;
+  font-family:var(--read)}
 .band{border-top:1px solid ${C.line};margin:22px 0 0;padding-top:20px}
 .band.first{border-top:none;margin:16px 0 0;padding-top:0}
 .band > .eyebrow{font-size:11px;margin:0 0 10px}
@@ -121,21 +127,25 @@ select{font-family:Inter,sans-serif;font-size:14px;padding:9px 12px;border-radiu
 .meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
 h2{font-family:Poppins,Inter,sans-serif;font-size:30px;font-weight:800;margin:4px 0 2px;
   letter-spacing:-.6px;line-height:1.15}
-.story{font-size:18px;line-height:1.72;margin:0;max-width:66ch;text-wrap:pretty}
+.story{font-size:18px;line-height:1.72;margin:0;max-width:66ch;text-wrap:pretty;
+  font-family:var(--read)}
 .para{display:flex;gap:14px;margin:0 0 16px}
 /* Was blue, the one colour on the page that is not ours. */
 .para b{color:${C.coralDark};flex:0 0 auto;width:1.1em}
-.q{font-weight:700;margin:0 0 14px;font-size:18px}
-ul{margin:0;padding-left:0;list-style:none}li{margin:0 0 10px}
-.answer{background:${C.panel};border-radius:12px;padding:12px 16px;margin:12px 0 0;font-size:15px}
+.q{font-weight:700;margin:0 0 14px;font-size:18px;font-family:var(--read)}
+ul{margin:0;padding-left:0;list-style:none}
+li{margin:0 0 10px;font-family:var(--read)}
+.answer{background:${C.panel};border-radius:12px;padding:12px 16px;margin:12px 0 0;
+  font-size:15px;font-family:var(--read)}
 .answer[hidden]{display:none}
 .btns{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 0;padding:16px 0 0;
   border-top:1px solid ${C.line};align-items:center}
 .pill.primary{background:${C.ink};color:${C.white};padding:9px 20px}
 /* The answer key is the one control a teacher must not press while
-   projecting, and it used to look like the three they press all day. */
-.pill.teacher{border:1.5px dashed ${C.mid};color:${C.mid};margin-left:auto}
-.note{font-size:13px;color:${C.mid};margin:6px 0 0;max-width:66ch}
+   projecting, and it used to look like the three they press all day. It is
+   set apart by colour and position now -- a solid rule, not a dashed one. */
+.pill.teacher{border:1.5px solid ${C.mid};color:${C.mid};margin-left:auto}
+.note{font-size:13px;color:${C.mid};margin:6px 0 0;max-width:66ch;font-family:var(--read)}
 /* Read + Think: the same choice board for every article, so it lives in the
    page rather than being redrawn on each pick. Collapsed, because a class
    reading the text does not need eighteen extra tasks in the way. */
@@ -157,7 +167,8 @@ pre{white-space:pre-wrap;font-family:ui-monospace,Menlo,monospace;font-size:12px
   line-height:1.5;background:${C.panel};border-radius:12px;padding:14px;max-height:360px;
   overflow:auto;margin:14px 0 0}
 pre[hidden]{display:none}
-.task{font-size:18px;line-height:1.72;max-width:66ch;text-wrap:pretty}
+.task{font-size:18px;line-height:1.72;max-width:66ch;text-wrap:pretty;
+  font-family:var(--read)}
 @media (max-width:640px){h1{font-size:30px}.card .in{padding:16px}}
 </style></head>
 <body>

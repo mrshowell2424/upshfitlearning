@@ -118,7 +118,7 @@ export default async function GradeStandardsPage({ params }: PageProps) {
           )}
 
           {forGrade.length === 0 && !dataError ? (
-            <div className="border border-dashed border-border rounded-2xl p-10 text-center">
+            <div className="border border-border rounded-2xl p-10 text-center">
               <p className="text-[17px] font-semibold text-charcoal mb-2">
                 Nothing written up for {gradeLabel(decoded)} yet
               </p>

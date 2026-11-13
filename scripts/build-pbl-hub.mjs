@@ -493,7 +493,7 @@ const SCRIPT = `
     document.getElementById("pbl-views").style.display = r ? "flex" : "none";
     if (!r) {
       var hint = document.createElement("div");
-      hint.style.cssText = "background:#fff;border:1px dashed #C7D2BC;border-radius:14px;padding:26px;text-align:center";
+      hint.style.cssText = "background:#fff;border:1px solid #C7D2BC;border-radius:14px;padding:26px;text-align:center";
       hint.appendChild(note(
         visible().length < PBL.length
           ? "Choose one of the " + visible().length + " standards above to build its project."

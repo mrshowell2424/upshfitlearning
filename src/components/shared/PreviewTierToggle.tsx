@@ -50,7 +50,7 @@ export default function PreviewTierToggle({ compact = false }: { compact?: boole
 
   return (
     <div
-      className="flex items-center gap-1 rounded-full border border-dashed p-0.5"
+      className="flex items-center gap-1 rounded-full border p-0.5"
       style={{ borderColor: 'var(--color-border-strong)' }}
       title={PAYMENTS_ENABLED
         ? 'Preview only — switches what the site shows, not a real subscription'

@@ -243,7 +243,7 @@ function ReadingFiler() {
             style={{
               marginTop: 40,
               background: "#fff",
-              border: `3px dashed ${RULE}`,
+              border: `3px solid ${RULE}`,
               borderRadius: 16,
               padding: 44,
               textAlign: "center",
