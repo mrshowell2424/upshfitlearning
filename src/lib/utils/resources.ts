@@ -17,6 +17,16 @@ const COL = {
 } as const
 
 /**
+ * Publishers whose material is not ours to list.
+ *
+ * These are matched against the access column, lowercased, because that is
+ * where the name actually turns up: a row that should read free or paid reads
+ * "Edutopia" instead. A row like that is a pointer to somebody else's resource
+ * rather than one of ours, so it never enters the store.
+ */
+const EXCLUDED_SOURCES = ['edutopia'] as const
+
+/**
  * Upshift's own YouTube handle, including the misspellings that appear in the
  * sheet's "Created By" column (@mrshowel24, @rshowell24, @mrhsowell24).
  */
@@ -249,6 +259,14 @@ async function fetchGoogleSheetResources(): Promise<Resource[]> {
       const youtubeUrl = row[COL.youtubeUrl]?.trim()
       const youtubeId = extractYoutubeId(youtubeUrl)
       const access = row[COL.access]?.trim().toLowerCase() ?? ''
+
+      // Rows whose access column names a publisher instead of free or paid are
+      // somebody else's material that landed in the sheet. Two rows currently
+      // say "Edutopia" where the access value belongs, and those should not be
+      // listed as Upshift resources. Dropping them here keeps them out of the
+      // library, the search and the standard matcher at once, rather than in
+      // each place that renders a resource.
+      if (EXCLUDED_SOURCES.some((name) => access.includes(name))) continue
 
       resources.push({
         id: String(i),
