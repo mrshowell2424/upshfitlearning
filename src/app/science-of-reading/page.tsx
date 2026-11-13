@@ -1,4 +1,3 @@
-import RESOURCE_COUNTS from "@/../scripts/reading-resources-counts.json";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/shared/Header";
@@ -57,11 +56,6 @@ const LAVENDER = "#B87DFF";
 const LAVENDER_TEXT = "#6B2FB5";
 
 const BUILDER = "/api/materials/science-of-reading/lesson-builder.html";
-const RESOURCES = "/api/materials/science-of-reading/resources.html";
-// Counted from the data the page is generated from, so the blurb cannot
-// drift away from what is actually on it.
-const MYSTERY_COUNT = RESOURCE_COUNTS.mysteries;
-const ARTICLE_COUNT = RESOURCE_COUNTS.articles;
 
 function Hub() {
   return (
@@ -160,20 +154,6 @@ function Hub() {
               // clears it in one step and shows the whole sentence.
               focus: "27%",
               alt: "A workbook page: the rule for short i, three columns of words to read, silly words, and spaces for spelling and dictation.",
-            },
-            {
-              href: RESOURCES,
-              eyebrow: "READ AND RESPOND",
-              title: "Reading resources",
-              accent: CORAL,
-              accentText: CORAL_TEXT,
-              blurb: `${MYSTERY_COUNT} mysteries and ${ARTICLE_COUNT} science and social studies articles, each with questions, a written response and an AI prompt that carries the whole text.`,
-              preview: "/previews/reading-resources.png",
-              shape: [1200, 1130] as const,
-              // Opens on the masthead and the first case, which is what the
-              // page is: pick a text, read it, answer, write.
-              focus: "0%",
-              alt: "The reading resources page: tabs for mysteries and articles, a case picker, and a mystery with its question and suspects.",
             },
             {
               href: "/og-packs",
