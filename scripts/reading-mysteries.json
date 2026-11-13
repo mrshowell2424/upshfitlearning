@@ -1177,6 +1177,1194 @@
     "Students: \"No one was near the fence, because everyone was eating popsicles under the tree.\""
    ],
    "explain": "This shows the heat popped them because only the balloons in the sun popped. Because of this, the hot sun was the cause. (Science link: heat makes gas expand.)"
+  },
+  {
+   "id": "g4-w1",
+   "grade": 4,
+   "week": 1,
+   "tag": "📚 library",
+   "title": "The Case of the Overdue Shelf",
+   "story": "Mr. Ruiz keeps the library's new books on a cart by the window. On Friday the whole top row was gone. The sign-out tablet showed no checkouts after lunch. A folded permission slip for the book fair lay under the cart. The custodian, Mrs. Ames, had waxed the floor and moved nothing. Ms. Patel's class had been in the gym since one o'clock. Then Mr. Ruiz found the books shelved neatly in the fiction aisle, in alphabetical order. Dev, the new helper, had been told to shelve returns and had shelved everything he saw.",
+   "question": "What happened to the new books?",
+   "suspects": [
+    {
+     "who": "🙋 Dev the new helper",
+     "why": "told to shelve returns, shelved everything he saw"
+    },
+    {
+     "who": "🧹 Mrs. Ames the custodian",
+     "why": "waxed the floor and moved nothing"
+    },
+    {
+     "who": "🏀 Ms. Patel's class",
+     "why": "in the gym since one o'clock"
+    }
+   ],
+   "answer": "Dev shelved the new books in with the returns.",
+   "proof": [
+    "“Then Mr. Ruiz found the books shelved neatly in the fiction aisle, in alphabetical order.”",
+    "“Dev, the new helper, had been told to shelve returns and had shelved everything he saw.”"
+   ],
+   "clears": [
+    "Mrs. Ames: “had waxed the floor and moved nothing.”",
+    "Ms. Patel's class: “had been in the gym since one o'clock.”"
+   ],
+   "explain": "The books were never missing. Because Dev was told to shelve returns and shelved everything he saw, the new books ended up in the fiction aisle in alphabetical order."
+  },
+  {
+   "id": "g4-w2",
+   "grade": 4,
+   "week": 2,
+   "tag": "🥪 lunchbox",
+   "title": "The Case of the Cold Soup",
+   "story": "Nina packed hot tomato soup in a thermos on Tuesday. At lunch the soup was cold. Her thermos was sitting upright in her bag, and the lid was screwed on tight. Her brother Theo had packed the same soup and his was still steaming. Nina had filled hers from the pot before her mother turned the burner on. Theo had filled his afterward, once the pot was steaming. The thermos had kept the soup exactly as cold as it went in.",
+   "question": "Why was Nina's soup cold?",
+   "suspects": [
+    {
+     "who": "🍲 The soup went in cold",
+     "why": "filled from the pot before the burner was on"
+    },
+    {
+     "who": "🧴 A broken thermos",
+     "why": "lid screwed on tight, sitting upright in her bag"
+    },
+    {
+     "who": "🧒 Theo swapped them",
+     "why": "his soup was still steaming"
+    }
+   ],
+   "answer": "The soup was already cold when Nina poured it in.",
+   "proof": [
+    "“Nina had filled hers from the pot before her mother turned the burner on.”",
+    "“The thermos had kept the soup exactly as cold as it went in.”"
+   ],
+   "clears": [
+    "A broken thermos: “the lid was screwed on tight.”",
+    "Theo: “Theo had filled his afterward, once the pot was steaming.”"
+   ],
+   "explain": "A thermos keeps food at the temperature it went in. Because Nina filled hers before her mother turned the burner on, the soup was cold from the start."
+  },
+  {
+   "id": "g4-w3",
+   "grade": 4,
+   "week": 3,
+   "tag": "✏️ pencil",
+   "title": "The Case of the Shrinking Pencils",
+   "story": "Every Monday Mr. Dunn counted thirty sharpened pencils into the cup. By Friday there were thirty stubs. Nobody had taken a pencil home. The sharpener's drawer was packed tight with shavings, and the floor beneath it was clean. Mr. Dunn watched the cup and the sharpener for a whole week. Jonah sharpened his pencil eleven times on Wednesday alone, because he liked the sound. The pencils were all still there. They had simply been ground away a little at a time.",
+   "question": "Where did the pencils go?",
+   "suspects": [
+    {
+     "who": "✏️ The sharpener",
+     "why": "drawer packed tight with shavings"
+    },
+    {
+     "who": "🎒 Somebody took them home",
+     "why": "nobody had taken a pencil home"
+    },
+    {
+     "who": "🧹 They fell on the floor",
+     "why": "the floor beneath it was clean"
+    }
+   ],
+   "answer": "The sharpener ground the pencils down into stubs.",
+   "proof": [
+    "“The sharpener's drawer was packed tight with shavings, and the floor beneath it was clean.”",
+    "“Jonah sharpened his pencil eleven times on Wednesday alone, because he liked the sound.”"
+   ],
+   "clears": [
+    "Taken home: “Nobody had taken a pencil home.”",
+    "The floor: “the floor beneath it was clean.”"
+   ],
+   "explain": "The pencils never left the room. Because Jonah sharpened his pencil eleven times in one day, the shavings filled the drawer and the pencils became stubs."
+  },
+  {
+   "id": "g4-w4",
+   "grade": 4,
+   "week": 4,
+   "tag": "🍎 apple",
+   "title": "The Case of the Light Apple Crate",
+   "story": "The fourth grade picked apples all morning and filled six crates. Back at school, one crate weighed much less than the others. The orchard guide had taped a count to every lid. Crate four said forty apples and held twenty-two. A line of apples lay in the grass along the path from the bus. Nobody had eaten any, because the class had packed sandwiches. The bottom slat of crate four hung loose on one nail. It had been dropping apples the whole way back.",
+   "question": "Why was crate four so light?",
+   "suspects": [
+    {
+     "who": "🪵 A loose slat in the crate",
+     "why": "bottom slat hung loose on one nail"
+    },
+    {
+     "who": "🍎 Somebody ate the apples",
+     "why": "the class had packed sandwiches"
+    },
+    {
+     "who": "📋 The guide miscounted",
+     "why": "had taped a count to every lid"
+    }
+   ],
+   "answer": "The loose slat dropped apples along the path.",
+   "proof": [
+    "“A line of apples lay in the grass along the path from the bus.”",
+    "“The bottom slat of crate four hung loose on one nail.”"
+   ],
+   "clears": [
+    "Eating: “Nobody had eaten any”",
+    "The guide: “had taped a count to every lid.”"
+   ],
+   "explain": "The apples were lost on the way back, not at the orchard. Because the bottom slat hung loose on one nail, crate four left a line of apples along the path."
+  },
+  {
+   "id": "g4-w5",
+   "grade": 4,
+   "week": 5,
+   "tag": "🚲 bike",
+   "title": "The Case of the Bent Wheel",
+   "story": "Omar's bike wobbled badly on the ride to school. The front wheel had a flat spot, and two spokes were loose. His tires were full and the brakes held fine. On Saturday he had ridden down the park stairs with his cousin, who filmed it. The video shows the front wheel landing first on every step. His father spun the wheel and watched it rise and fall. Nothing else on the bike had changed. A wheel bends a little with each hard landing.",
+   "question": "What bent Omar's front wheel?",
+   "suspects": [
+    {
+     "who": "🪜 The park stairs",
+     "why": "front wheel landed first on every step"
+    },
+    {
+     "who": "🛞 A flat tire",
+     "why": "his tires were full"
+    },
+    {
+     "who": "🛑 The brakes",
+     "why": "the brakes held fine"
+    }
+   ],
+   "answer": "Riding down the stairs bent the wheel.",
+   "proof": [
+    "“The video shows the front wheel landing first on every step.”",
+    "“A wheel bends a little with each hard landing.”"
+   ],
+   "clears": [
+    "A flat tire: “His tires were full”",
+    "The brakes: “the brakes held fine.”"
+   ],
+   "explain": "The damage came from the landings, not from the tire or the brakes. Because the front wheel landed first on every step, it bent a little each time."
+  },
+  {
+   "id": "g4-w6",
+   "grade": 4,
+   "week": 6,
+   "tag": "🐠 fishtank",
+   "title": "The Case of the Missing Guppy",
+   "story": "The class counted eight guppies on Friday and seven on Monday. The tank lid was on and the filter ran all weekend. No guppy floated at the top and none lay on the carpet. The big angelfish had been added two weeks earlier. Ms. Ortiz read the care card taped inside the cabinet. Angelfish eat anything that fits in their mouths, it said. The angelfish had not been fed since Thursday. It was the only fish in the tank big enough.",
+   "question": "What happened to the eighth guppy?",
+   "suspects": [
+    {
+     "who": "🐟 The angelfish",
+     "why": "eats anything that fits, not fed since Thursday"
+    },
+    {
+     "who": "🪟 It jumped out",
+     "why": "the tank lid was on"
+    },
+    {
+     "who": "🔌 The filter",
+     "why": "the filter ran all weekend"
+    }
+   ],
+   "answer": "The angelfish ate the guppy.",
+   "proof": [
+    "“Angelfish eat anything that fits in their mouths, it said.”",
+    "“The angelfish had not been fed since Thursday.”"
+   ],
+   "clears": [
+    "Jumping out: “The tank lid was on”",
+    "The filter: “the filter ran all weekend.”"
+   ],
+   "explain": "The guppy never left the tank. Because the angelfish eats anything that fits and had not been fed since Thursday, it was the only fish big enough to do it."
+  },
+  {
+   "id": "g4-w7",
+   "grade": 4,
+   "week": 7,
+   "tag": "🔊 noise",
+   "title": "The Case of the Thumping Wall",
+   "story": "Every afternoon at two the wall behind the reading corner thumped four times. Mr. Blake checked the pipes and found no air in them. The classroom above had music at ten, not at two. Outside, the basketball hoop stood against that same wall. At two o'clock the fifth grade had recess. Mr. Blake stepped outside and watched four students take turns shooting. Each miss hit the backboard and the wall shook. The thumping stopped the day the hoop was moved.",
+   "question": "What made the wall thump?",
+   "suspects": [
+    {
+     "who": "🏀 The basketball hoop",
+     "why": "stands against that wall, each miss hit the backboard"
+    },
+    {
+     "who": "🚰 The pipes",
+     "why": "no air in them"
+    },
+    {
+     "who": "🎵 The class upstairs",
+     "why": "music at ten, not at two"
+    }
+   ],
+   "answer": "Missed shots hitting the backboard shook the wall.",
+   "proof": [
+    "“Outside, the basketball hoop stood against that same wall.”",
+    "“Each miss hit the backboard and the wall shook.”"
+   ],
+   "clears": [
+    "The pipes: “found no air in them.”",
+    "The class upstairs: “had music at ten, not at two.”"
+   ],
+   "explain": "The noise came from outside the room. Because the hoop stood against that same wall, each miss hit the backboard and the wall shook."
+  },
+  {
+   "id": "g4-w8",
+   "grade": 4,
+   "week": 8,
+   "tag": "🍂 leaves",
+   "title": "The Case of the Bare Maple",
+   "story": "Two maples stand at the front of the school, planted the same spring. In October the one by the road had lost every leaf. The one by the field still held most of its own. Both had been watered by the same hose all summer. The road tree stands beside the bus lane, where the plows pile salt each winter. A soil test from the road tree came back high in salt. The field tree's test came back normal. Salt in the soil makes a tree drop its leaves early.",
+   "question": "Why did the road maple lose its leaves first?",
+   "suspects": [
+    {
+     "who": "🧂 Salt in the soil",
+     "why": "soil test came back high in salt"
+    },
+    {
+     "who": "💧 Not enough water",
+     "why": "watered by the same hose all summer"
+    },
+    {
+     "who": "🌱 A younger tree",
+     "why": "planted the same spring"
+    }
+   ],
+   "answer": "Salt in the soil made the road tree drop its leaves early.",
+   "proof": [
+    "“A soil test from the road tree came back high in salt.”",
+    "“Salt in the soil makes a tree drop its leaves early.”"
+   ],
+   "clears": [
+    "Water: “Both had been watered by the same hose all summer.”",
+    "Age: “planted the same spring.”"
+   ],
+   "explain": "The two trees are the same age and got the same water. Because the road tree's soil came back high in salt, it dropped its leaves first."
+  },
+  {
+   "id": "g4-w9",
+   "grade": 4,
+   "week": 9,
+   "tag": "🎃 pumpkin",
+   "title": "The Case of the Sunken Pumpkin",
+   "story": "The class pumpkin sat on the sill from October first. By Halloween it had caved in on one side. The custodian had not moved it. No animal prints marked the sill or the floor. The radiator under the window had come on for the first time that week. The caved side was the side facing the glass, where the sun struck all afternoon. A second pumpkin in the cool hallway stayed firm. Heat dries a pumpkin from one side and the shell collapses.",
+   "question": "Why did the pumpkin cave in on one side?",
+   "suspects": [
+    {
+     "who": "☀️ Heat at the window",
+     "why": "radiator on, sun struck the glass side all afternoon"
+    },
+    {
+     "who": "🐀 An animal",
+     "why": "no prints on the sill or the floor"
+    },
+    {
+     "who": "🧹 The custodian",
+     "why": "had not moved it"
+    }
+   ],
+   "answer": "Heat at the window dried that side of the pumpkin.",
+   "proof": [
+    "“The caved side was the side facing the glass, where the sun struck all afternoon.”",
+    "“Heat dries a pumpkin from one side and the shell collapses.”"
+   ],
+   "clears": [
+    "An animal: “No animal prints marked the sill or the floor.”",
+    "The custodian: “had not moved it.”"
+   ],
+   "explain": "The pumpkin in the cool hallway stayed firm. Because the caved side faced the glass where the sun struck all afternoon, the heat dried that side and the shell collapsed."
+  },
+  {
+   "id": "g4-w10",
+   "grade": 4,
+   "week": 10,
+   "tag": "👣 footprints",
+   "title": "The Case of the Painted Trail",
+   "story": "On Thursday a line of blue footprints crossed the gym floor. The art room had opened a gallon of blue paint that morning. The prints were the size of a grown-up's shoe. Coach Rivas had worn sneakers with a wavy sole, and the prints showed a flat heel. Mr. Shaw, the art teacher, had carried the open can to the kiln room through the gym. His boots have flat heels. A blue smear ran along the gym wall at hand height.",
+   "question": "Who left the blue footprints?",
+   "suspects": [
+    {
+     "who": "🎨 Mr. Shaw the art teacher",
+     "why": "carried the open can through the gym, flat heels"
+    },
+    {
+     "who": "🏀 Coach Rivas",
+     "why": "wavy sole, but the prints show a flat heel"
+    },
+    {
+     "who": "🧒 A student",
+     "why": "the prints are a grown-up's size"
+    }
+   ],
+   "answer": "Mr. Shaw left the footprints while carrying the paint can.",
+   "proof": [
+    "“Mr. Shaw, the art teacher, had carried the open can to the kiln room through the gym.”",
+    "“His boots have flat heels.”"
+   ],
+   "clears": [
+    "Coach Rivas: “had worn sneakers with a wavy sole”",
+    "A student: “The prints were the size of a grown-up's shoe.”"
+   ],
+   "explain": "The prints have a flat heel and a grown-up's size. Because Mr. Shaw carried the open can through the gym and his boots have flat heels, the trail is his."
+  },
+  {
+   "id": "g4-w11",
+   "grade": 4,
+   "week": 11,
+   "tag": "🚌 bus",
+   "title": "The Case of the Late Bus",
+   "story": "Bus 12 reached school at 8:40 every day this week instead of 8:20. The driver, Mr. Hahn, left the depot on time each morning. The route had not changed and no student was added. On Monday the city closed the bridge on Oak Street for repair. The detour sends Bus 12 around three extra blocks and through two lights. Mr. Hahn timed it himself at nineteen minutes added. The bridge reopens in April. Until then the bus will be late.",
+   "question": "Why is Bus 12 arriving late?",
+   "suspects": [
+    {
+     "who": "🌉 The bridge detour",
+     "why": "three extra blocks and two lights, nineteen minutes"
+    },
+    {
+     "who": "🕗 A late start",
+     "why": "left the depot on time each morning"
+    },
+    {
+     "who": "🧒 Extra stops",
+     "why": "no student was added"
+    }
+   ],
+   "answer": "The bridge detour adds nineteen minutes to the route.",
+   "proof": [
+    "“The detour sends Bus 12 around three extra blocks and through two lights.”",
+    "“Mr. Hahn timed it himself at nineteen minutes added.”"
+   ],
+   "clears": [
+    "A late start: “left the depot on time each morning.”",
+    "Extra stops: “The route had not changed and no student was added.”"
+   ],
+   "explain": "The bus leaves on time and carries the same students. Because the closed bridge sends it around three extra blocks and through two lights, it arrives nineteen minutes late."
+  },
+  {
+   "id": "g4-w12",
+   "grade": 4,
+   "week": 12,
+   "tag": "🏆 trophy",
+   "title": "The Case of the Tarnished Trophy",
+   "story": "The chess trophy shone in September and looked brown by December. Nobody had touched it, because the case stays locked. The case sits beside the pool door, which is propped open each morning. Air from the pool room carries chlorine. The science teacher tested the trophy's surface and found silver, not gold. A silver spoon left by the same door had turned brown in a month. The soccer trophy in the front hall is still bright. Chlorine in the air darkens silver.",
+   "question": "Why did the chess trophy turn brown?",
+   "suspects": [
+    {
+     "who": "🧪 Chlorine from the pool",
+     "why": "the air carries chlorine, a silver spoon turned brown"
+    },
+    {
+     "who": "🖐 Handling",
+     "why": "nobody had touched it, the case stays locked"
+    },
+    {
+     "who": "🏅 Cheap paint",
+     "why": "the surface tested as silver, not gold"
+    }
+   ],
+   "answer": "Chlorine in the air darkened the silver trophy.",
+   "proof": [
+    "“Air from the pool room carries chlorine.”",
+    "“A silver spoon left by the same door had turned brown in a month.”"
+   ],
+   "clears": [
+    "Handling: “Nobody had touched it”",
+    "Paint: “found silver, not gold.”"
+   ],
+   "explain": "The soccer trophy in the front hall is still bright. Because the chess case sits beside the propped pool door and chlorine darkens silver, that trophy turned brown."
+  },
+  {
+   "id": "g4-w13",
+   "grade": 4,
+   "week": 13,
+   "tag": "🦃 turkey",
+   "title": "The Case of the Early Dinner",
+   "story": "The fourth grade planned a Thanksgiving lunch for noon. The turkey came out of the oven at ten and was dry by twelve. The recipe said to roast it four hours at 325 degrees. Mrs. Kerr had set the dial to 425 by mistake. The oven light had been out for a month, so nobody checked the number. A thermometer in the bird read done two hours early. The rolls baked in the same oven had burned on the bottoms.",
+   "question": "Why was the turkey dry?",
+   "suspects": [
+    {
+     "who": "🔥 The oven was too hot",
+     "why": "dial set to 425, rolls burned on the bottoms"
+    },
+    {
+     "who": "⏲️ It cooked too long",
+     "why": "a thermometer read done two hours early"
+    },
+    {
+     "who": "📖 The recipe",
+     "why": "said four hours at 325 degrees"
+    }
+   ],
+   "answer": "The oven ran a hundred degrees too hot.",
+   "proof": [
+    "“Mrs. Kerr had set the dial to 425 by mistake.”",
+    "“The rolls baked in the same oven had burned on the bottoms.”"
+   ],
+   "clears": [
+    "Cooking too long: “A thermometer in the bird read done two hours early.”",
+    "The recipe: “said to roast it four hours at 325 degrees.”"
+   ],
+   "explain": "The turkey came out two hours early, so time was not the problem. Because the dial was set to 425 instead of 325, the oven ran a hundred degrees hot and the rolls burned too."
+  },
+  {
+   "id": "g4-w14",
+   "grade": 4,
+   "week": 14,
+   "tag": "🧁 cupcake",
+   "title": "The Case of the Flat Cupcakes",
+   "story": "Room 12 baked two dozen cupcakes for the class party. Every one came out flat and dense. Mrs. Lin tasted one and frowned. The class used the same recipe as last year. The flour, sugar and eggs were all fresh. The baking powder tin at the back of the cupboard expired in 2021. Ava had measured everything exactly and the oven ran at the right temperature. A test spoonful of the baking powder in water did not fizz.",
+   "question": "Why were the cupcakes flat?",
+   "suspects": [
+    {
+     "who": "🥄 Dead baking powder",
+     "why": "expired in 2021, did not fizz in water"
+    },
+    {
+     "who": "📖 The recipe",
+     "why": "the same recipe as last year"
+    },
+    {
+     "who": "🌡️ The oven",
+     "why": "ran at the right temperature"
+    }
+   ],
+   "answer": "The baking powder was too old to make the cupcakes rise.",
+   "proof": [
+    "“The baking powder tin at the back of the cupboard expired in 2021.”",
+    "“A test spoonful of the baking powder in water did not fizz.”"
+   ],
+   "clears": [
+    "The recipe: “The class used the same recipe as last year.”",
+    "The oven: “the oven ran at the right temperature.”"
+   ],
+   "explain": "Everything else was the same as last year. Because the baking powder was from 2021 and did not fizz in water, it had no lift left and the cupcakes stayed flat."
+  },
+  {
+   "id": "g4-w15",
+   "grade": 4,
+   "week": 15,
+   "tag": "🧤 mitten",
+   "title": "The Case of the Shrunken Mitten",
+   "story": "Priya's wool mittens fit in November and would not go on in January. Her hands had not grown. Her gloves from the same drawer still fit. The mittens had been soaked at recess and dried on the radiator. The care tag says to lay them flat and keep them away from heat. Her brother's wool hat, washed in hot water, had shrunk the same way. Wool fibers lock together and tighten when they are heated wet. The mittens are now a third smaller than they were.",
+   "question": "Why do the mittens no longer fit?",
+   "suspects": [
+    {
+     "who": "🔥 Drying on the radiator",
+     "why": "soaked at recess, dried on heat, the tag warns against it"
+    },
+    {
+     "who": "✋ Priya's hands grew",
+     "why": "her gloves from the same drawer still fit"
+    },
+    {
+     "who": "🧤 They were always small",
+     "why": "they fit in November"
+    }
+   ],
+   "answer": "Drying the wet mittens on the radiator shrank the wool.",
+   "proof": [
+    "“The mittens had been soaked at recess and dried on the radiator.”",
+    "“Wool fibers lock together and tighten when they are heated wet.”"
+   ],
+   "clears": [
+    "Priya's hands: “Her gloves from the same drawer still fit.”",
+    "Always small: “Priya's wool mittens fit in November”"
+   ],
+   "explain": "Her hands are the same size, because her gloves still fit. Because the soaked mittens dried on the radiator, the wool fibers locked together and tightened."
+  },
+  {
+   "id": "g4-w16",
+   "grade": 4,
+   "week": 16,
+   "tag": "🎄 ginger",
+   "title": "The Case of the Collapsing Roof",
+   "story": "The gingerbread house stood up on Monday and fell in on Wednesday. The class had used royal icing on the walls and canned frosting on the roof. The walls still hold. Nobody had touched either house. Royal icing dries hard like cement, and canned frosting stays soft. The room had been warm all week with the heat on. A second house, iced entirely with royal icing, is still standing. The roof pieces slid apart along the frosting seam.",
+   "question": "Why did the roof fall in?",
+   "suspects": [
+    {
+     "who": "🍯 Canned frosting on the roof",
+     "why": "stays soft, and the seam slid apart"
+    },
+    {
+     "who": "🖐 Somebody knocked it",
+     "why": "nobody had touched either house"
+    },
+    {
+     "who": "🧱 The walls",
+     "why": "the walls still hold"
+    }
+   ],
+   "answer": "The canned frosting stayed soft and let the roof slide.",
+   "proof": [
+    "“Royal icing dries hard like cement, and canned frosting stays soft.”",
+    "“The roof pieces slid apart along the frosting seam.”"
+   ],
+   "clears": [
+    "Knocking: “Nobody had touched either house.”",
+    "The walls: “The walls still hold.”"
+   ],
+   "explain": "The house iced entirely with royal icing is still standing. Because the roof was stuck on with canned frosting, which stays soft, the pieces slid apart at the seam."
+  },
+  {
+   "id": "g4-w17",
+   "grade": 4,
+   "week": 17,
+   "tag": "💡 lights",
+   "title": "The Case of the Half-Dark Strand",
+   "story": "Half of the hallway light strand went dark on Monday morning. The other half still glows. The plug is in and the fuse in the plug is whole. Mr. Cole pulled each bulb from the dark half and tested it. One bulb in the middle had a broken filament. The lights on this strand are wired in series, so one gap stops everything after it. The dark half starts exactly at that bulb. He replaced it and the whole strand lit.",
+   "question": "Why is half the strand dark?",
+   "suspects": [
+    {
+     "who": "💡 One broken bulb",
+     "why": "a broken filament, and the dark half starts at that bulb"
+    },
+    {
+     "who": "🔌 The plug",
+     "why": "the plug is in and the fuse is whole"
+    },
+    {
+     "who": "⚡ A power cut",
+     "why": "the other half still glows"
+    }
+   ],
+   "answer": "One bulb with a broken filament stopped the rest of the strand.",
+   "proof": [
+    "“One bulb in the middle had a broken filament.”",
+    "“The lights on this strand are wired in series, so one gap stops everything after it.”"
+   ],
+   "clears": [
+    "The plug: “The plug is in and the fuse in the plug is whole.”",
+    "A power cut: “The other half still glows.”"
+   ],
+   "explain": "The strand is wired in series, so one gap stops everything after it. Because the bulb in the middle had a broken filament, every bulb past it went dark."
+  },
+  {
+   "id": "g4-w18",
+   "grade": 4,
+   "week": 18,
+   "tag": "⏰ clock",
+   "title": "The Case of the Slow Clock",
+   "story": "The classroom clock lost eleven minutes between Monday and Friday. The battery tested full in the meter. The hands move freely and nothing rubs the face. The clock hangs directly above the radiator, which ran all week. Mr. Ellis moved a second clock to the same spot on Tuesday. By Friday that one had lost nine minutes too. The paper tag inside says the clock is rated for cool rooms only. Nothing else in the room had changed. Heat makes the small motor run slow.",
+   "question": "Why is the clock losing time?",
+   "suspects": [
+    {
+     "who": "🔥 Heat from the radiator",
+     "why": "a second clock in the same spot lost nine minutes"
+    },
+    {
+     "who": "🔋 The battery",
+     "why": "tested full in the meter"
+    },
+    {
+     "who": "⚙️ The hands sticking",
+     "why": "the hands move freely and nothing rubs"
+    }
+   ],
+   "answer": "Heat from the radiator makes the clock run slow.",
+   "proof": [
+    "“Mr. Ellis moved a second clock to the same spot on Tuesday.”",
+    "“Heat makes the small motor run slow.”"
+   ],
+   "clears": [
+    "The battery: “The battery tested full in the meter.”",
+    "The hands: “The hands move freely and nothing rubs the face.”"
+   ],
+   "explain": "A second clock in the same place lost nine minutes in the same week. Because the clock hangs directly above the radiator and heat makes the motor run slow, it loses time."
+  },
+  {
+   "id": "g4-w19",
+   "grade": 4,
+   "week": 19,
+   "tag": "⛄ snow",
+   "title": "The Case of the Lopsided Snowman",
+   "story": "The class built a snowman on Monday with three even balls. By Thursday the bottom ball had slumped to one side. Nobody had pushed it, because the yard was roped off. The snowman stands on the south side of the building. The sun hits that wall from noon until three. The shaded side of the bottom ball is still round. A puddle had frozen on the sunny side each night and melted again each day. The shaded side never dripped at all.",
+   "question": "Why did the snowman slump to one side?",
+   "suspects": [
+    {
+     "who": "☀️ Sun on the south wall",
+     "why": "the sun hits that wall from noon until three"
+    },
+    {
+     "who": "🖐 Somebody pushed it",
+     "why": "the yard was roped off"
+    },
+    {
+     "who": "❄️ Bad packing",
+     "why": "it was built with three even balls"
+    }
+   ],
+   "answer": "The sun melted the sunny side of the bottom ball.",
+   "proof": [
+    "“The sun hits that wall from noon until three.”",
+    "“The shaded side of the bottom ball is still round.”"
+   ],
+   "clears": [
+    "Pushing: “the yard was roped off.”",
+    "Bad packing: “with three even balls.”"
+   ],
+   "explain": "The shaded side is still round. Because the sun hits that wall from noon until three, only the sunny side melted and the snowman leaned."
+  },
+  {
+   "id": "g4-w20",
+   "grade": 4,
+   "week": 20,
+   "tag": "🐦 feeder",
+   "title": "The Case of the Empty Feeder",
+   "story": "The bird feeder emptied in two days instead of two weeks. The seed was the same mix the class always buys. No seed lay on the ground beneath it. The feeder hangs from a branch two feet from the trunk. Scratches run down the pole and along the branch above the feeder. A squirrel can jump four feet from a standing start. The class moved the feeder six feet out, away from every branch, and it lasted twelve days.",
+   "question": "What emptied the feeder?",
+   "suspects": [
+    {
+     "who": "🐿️ A squirrel",
+     "why": "scratches on the branch, and it can jump four feet"
+    },
+    {
+     "who": "🕳️ A leak",
+     "why": "no seed lay on the ground beneath it"
+    },
+    {
+     "who": "🌾 Bad seed",
+     "why": "the same mix the class always buys"
+    }
+   ],
+   "answer": "A squirrel reached the feeder from the branch.",
+   "proof": [
+    "“Scratches run down the pole and along the branch above the feeder.”",
+    "“A squirrel can jump four feet from a standing start.”"
+   ],
+   "clears": [
+    "A leak: “No seed lay on the ground beneath it.”",
+    "Bad seed: “The seed was the same mix the class always buys.”"
+   ],
+   "explain": "Moving the feeder six feet out made it last twelve days. Because a squirrel can jump four feet and left scratches on the branch above, it was reaching the feeder from the tree."
+  },
+  {
+   "id": "g4-w21",
+   "grade": 4,
+   "week": 21,
+   "tag": "☕ cocoa",
+   "title": "The Case of the Gritty Cocoa",
+   "story": "The cocoa at the winter party was gritty at the bottom of every cup. The mix was fresh. The milk was cold from the fridge. The recipe says to stir the powder into a little hot milk first. Room 8 poured all the cold milk in at once and stirred twice. Room 9 followed the recipe and had no grit. Cocoa powder does not dissolve in cold liquid. A spoonful of the leftover grit dissolved at once in hot water.",
+   "question": "Why was the cocoa gritty?",
+   "suspects": [
+    {
+     "who": "🥛 The cold milk",
+     "why": "powder does not dissolve in cold liquid"
+    },
+    {
+     "who": "📦 Old mix",
+     "why": "the mix was fresh"
+    },
+    {
+     "who": "🧊 The grit is sugar",
+     "why": "a spoonful dissolved at once in hot water"
+    }
+   ],
+   "answer": "The cold milk left the cocoa powder undissolved.",
+   "proof": [
+    "“Room 8 poured all the cold milk in at once and stirred twice.”",
+    "“Cocoa powder does not dissolve in cold liquid.”"
+   ],
+   "clears": [
+    "Old mix: “The mix was fresh.”",
+    "The grit: “A spoonful of the leftover grit dissolved at once in hot water.”"
+   ],
+   "explain": "Room 9 followed the recipe and had no grit. Because Room 8 poured cold milk in all at once, and cocoa powder does not dissolve in cold liquid, the powder sank to the bottom."
+  },
+  {
+   "id": "g4-w22",
+   "grade": 4,
+   "week": 22,
+   "tag": "💌 valentine",
+   "title": "The Case of the Torn Valentines",
+   "story": "Twenty valentines went into the class mailbox and came out with torn corners. The mailbox is a cardboard box with a slot cut in the lid. The slot is three inches wide. Most of the envelopes are four inches across. Jamal pushed his through and the corner caught on the cardboard. Ms. Reyes had taped the slot edges, but the tape had peeled back. Every tear is on a corner, and all the tears face the same way.",
+   "question": "What tore the valentines?",
+   "suspects": [
+    {
+     "who": "✉️ The narrow slot",
+     "why": "the slot is three inches, the envelopes are four"
+    },
+    {
+     "who": "🙋 A student tore them",
+     "why": "all the tears face the same way"
+    },
+    {
+     "who": "🐭 A mouse",
+     "why": "every tear is on a corner"
+    }
+   ],
+   "answer": "The narrow slot tore the corners off the envelopes.",
+   "proof": [
+    "“The slot is three inches wide.”",
+    "“Jamal pushed his through and the corner caught on the cardboard.”"
+   ],
+   "clears": [
+    "A student: “all the tears face the same way.”",
+    "A mouse: “Every tear is on a corner”"
+   ],
+   "explain": "All the tears are on corners and face the same way, which a hand or a mouse would not do. Because the slot is three inches wide and the envelopes are four inches across, every corner caught."
+  },
+  {
+   "id": "g4-w23",
+   "grade": 4,
+   "week": 23,
+   "tag": "🌋 volcano",
+   "title": "The Case of the Quiet Volcano",
+   "story": "The science fair volcano fizzed at home and did nothing on stage. Mia used the same baking soda from the same box. The vinegar bottle on stage had been open since the last fair. Vinegar loses its strength once the bottle stays open. A fresh bottle made the model erupt over the table. The model itself had no cracks and the crater was clear. Mia poured the same amount both times. She measured it with the same cup.",
+   "question": "Why did the volcano not erupt on stage?",
+   "suspects": [
+    {
+     "who": "🍶 Old vinegar",
+     "why": "the bottle had been open since the last fair"
+    },
+    {
+     "who": "🥄 The baking soda",
+     "why": "the same box she used at home"
+    },
+    {
+     "who": "🗻 The model",
+     "why": "no cracks and the crater was clear"
+    }
+   ],
+   "answer": "The old vinegar had lost its strength.",
+   "proof": [
+    "“The vinegar bottle on stage had been open since the last fair.”",
+    "“Vinegar loses its strength once the bottle stays open.”"
+   ],
+   "clears": [
+    "The baking soda: “Mia used the same baking soda from the same box.”",
+    "The model: “The model itself had no cracks and the crater was clear.”"
+   ],
+   "explain": "A fresh bottle made the model erupt over the table. Because the stage bottle had been open since the last fair, the vinegar had lost its strength."
+  },
+  {
+   "id": "g4-w24",
+   "grade": 4,
+   "week": 24,
+   "tag": "👑 crown",
+   "title": "The Case of the Crooked Crown",
+   "story": "The paper crown for the play sat straight at dress rehearsal and tipped on opening night. Nobody had bent it, because it was kept flat in a box. The crown is held on with two bobby pins. On opening night Eli wore it over his costume wig. The wig is an inch thicker than his own hair. The pins no longer reached his hair at all. The crown sat on top of the wig instead of down in his hair.",
+   "question": "Why did the crown tip on opening night?",
+   "suspects": [
+    {
+     "who": "🎭 The costume wig",
+     "why": "an inch thicker, so the pins no longer reached his hair"
+    },
+    {
+     "who": "🖐 Somebody bent it",
+     "why": "it was kept flat in a box"
+    },
+    {
+     "who": "📌 Missing pins",
+     "why": "it is held on with two bobby pins"
+    }
+   ],
+   "answer": "The wig held the crown too high for the pins to reach hair.",
+   "proof": [
+    "“The wig is an inch thicker than his own hair.”",
+    "“The pins no longer reached his hair at all.”"
+   ],
+   "clears": [
+    "Bending: “it was kept flat in a box.”",
+    "Missing pins: “The crown is held on with two bobby pins.”"
+   ],
+   "explain": "The crown sat straight at dress rehearsal, when Eli wore no wig. Because the wig is an inch thicker than his hair, the two pins could not reach hair and the crown tipped."
+  },
+  {
+   "id": "g4-w25",
+   "grade": 4,
+   "week": 25,
+   "tag": "🎹 piano",
+   "title": "The Case of the Silent Pedal",
+   "story": "The music room piano held its notes all year and stopped on Monday. The keys all sound. The damper pedal goes down and springs back up. Mr. Okafor looked underneath and found the pedal rod resting beside its slot instead of inside it. The piano had been rolled across the room on Friday for the concert. Nothing was dropped and nobody forced the pedal. A rod can shake loose when a piano is moved. He set the rod back in its slot and the notes held again.",
+   "question": "Why did the piano stop holding its notes?",
+   "suspects": [
+    {
+     "who": "🎹 The pedal rod came loose",
+     "why": "found resting beside its slot, and the piano was moved"
+    },
+    {
+     "who": "🔨 Something was dropped on it",
+     "why": "nothing was dropped and nobody forced the pedal"
+    },
+    {
+     "who": "🎵 A broken key",
+     "why": "the keys all sound"
+    }
+   ],
+   "answer": "The pedal rod had shaken loose out of its slot.",
+   "proof": [
+    "“Mr. Okafor looked underneath and found the pedal rod resting beside its slot instead of inside it.”",
+    "“A rod can shake loose when a piano is moved.”"
+   ],
+   "clears": [
+    "Dropping: “Nothing was dropped and nobody forced the pedal.”",
+    "A broken key: “The keys all sound.”"
+   ],
+   "explain": "He set the rod back in its slot and the notes held again. Because the piano was rolled across the room on Friday, the rod had shaken out of its slot."
+  },
+  {
+   "id": "g4-w26",
+   "grade": 4,
+   "week": 26,
+   "tag": "🪁 kite",
+   "title": "The Case of the Diving Kite",
+   "story": "Maya's kite flew well in March and dove straight down in April. The sail has no tears and the strings are even. She flew it from the same field both times. In April she had tied on a shorter tail to make it look neater. A kite's tail keeps the nose pointed up into the wind. Her friend's kite, with its full tail, flew fine beside hers. Maya tied the long tail back on and the kite climbed.",
+   "question": "Why did the kite dive?",
+   "suspects": [
+    {
+     "who": "🎏 The shorter tail",
+     "why": "a tail holds the nose up, and a full tail flew fine beside it"
+    },
+    {
+     "who": "🕳️ A torn sail",
+     "why": "the sail has no tears"
+    },
+    {
+     "who": "🌬️ The field",
+     "why": "she flew it from the same field both times"
+    }
+   ],
+   "answer": "The shorter tail let the kite's nose drop.",
+   "proof": [
+    "“In April she had tied on a shorter tail to make it look neater.”",
+    "“A kite's tail keeps the nose pointed up into the wind.”"
+   ],
+   "clears": [
+    "A torn sail: “The sail has no tears and the strings are even.”",
+    "The field: “She flew it from the same field both times.”"
+   ],
+   "explain": "Maya tied the long tail back on and the kite climbed. Because the shorter tail could not hold the nose up into the wind, the kite dove."
+  },
+  {
+   "id": "g4-w27",
+   "grade": 4,
+   "week": 27,
+   "tag": "☘️ shamrock",
+   "title": "The Case of the Wilted Shamrocks",
+   "story": "Room 9 grew shamrocks on two windowsills from the same packet of seed. The south window plants are pale and drooping. The north window plants are green. Both pots were watered on the same days with the same cup. The south sill sits above the heater vent, which has run since February. A thermometer on the south sill reads eighty-four degrees. The packet says shamrocks want a cool room. The soil in the south pot was dry an hour after watering.",
+   "question": "Why are the south window shamrocks wilting?",
+   "suspects": [
+    {
+     "who": "🔥 Heat from the vent",
+     "why": "the sill reads eighty-four, and the packet wants a cool room"
+    },
+    {
+     "who": "💧 Not enough water",
+     "why": "both pots were watered on the same days with the same cup"
+    },
+    {
+     "who": "🌱 Bad seed",
+     "why": "both came from the same packet"
+    }
+   ],
+   "answer": "Heat from the vent dried the south pot out.",
+   "proof": [
+    "“A thermometer on the south sill reads eighty-four degrees.”",
+    "“The packet says shamrocks want a cool room.”"
+   ],
+   "clears": [
+    "Water: “Both pots were watered on the same days with the same cup.”",
+    "Bad seed: “from the same packet of seed.”"
+   ],
+   "explain": "The north window plants are green on the same water and the same seed. Because the south sill sits above the heater vent and reads eighty-four degrees, that soil was dry an hour after watering."
+  },
+  {
+   "id": "g4-w28",
+   "grade": 4,
+   "week": 28,
+   "tag": "🌧️ puddle",
+   "title": "The Case of the Hallway Puddle",
+   "story": "A puddle appears outside the art room every Tuesday and never on other days. The roof above it was replaced in August and does not leak. The drinking fountain is forty feet away and dry. On Tuesdays the kiln runs all morning in the room next door. A kiln pushes damp air out through a vent above the art room door. The puddle sits directly under that vent. Mr. Shaw taped a paper towel to the vent and it was soaked by noon.",
+   "question": "Where is the puddle coming from?",
+   "suspects": [
+    {
+     "who": "🏺 The kiln vent",
+     "why": "the kiln runs Tuesdays and the puddle sits under the vent"
+    },
+    {
+     "who": "🏠 A roof leak",
+     "why": "the roof was replaced and does not leak"
+    },
+    {
+     "who": "🚰 The drinking fountain",
+     "why": "forty feet away and dry"
+    }
+   ],
+   "answer": "Damp air from the kiln vent drips onto the floor.",
+   "proof": [
+    "“A kiln pushes damp air out through a vent above the art room door.”",
+    "“The puddle sits directly under that vent.”"
+   ],
+   "clears": [
+    "A roof leak: “The roof above it was replaced in August and does not leak.”",
+    "The fountain: “The drinking fountain is forty feet away and dry.”"
+   ],
+   "explain": "A paper towel taped to the vent was soaked by noon. Because the kiln runs on Tuesdays and pushes damp air through that vent, the puddle shows up under it on Tuesdays only."
+  },
+  {
+   "id": "g4-w29",
+   "grade": 4,
+   "week": 29,
+   "tag": "🌻 garden",
+   "title": "The Case of the Headless Sunflowers",
+   "story": "The school garden grew twelve sunflowers and nine lost their heads overnight. The stalks are cut clean at an angle, not torn. The fence is four feet high and has no gaps. Deer tracks run along the outside of the fence and stop there. A deer can reach over a four-foot fence without jumping it. The three sunflowers that kept their heads grew in the middle of the bed. The nine that lost them all stood within arm's reach of the fence.",
+   "question": "What took the sunflower heads?",
+   "suspects": [
+    {
+     "who": "🦌 A deer reaching over the fence",
+     "why": "tracks outside the fence, and only the near flowers lost heads"
+    },
+    {
+     "who": "🐛 Insects",
+     "why": "the stalks are cut clean at an angle, not torn"
+    },
+    {
+     "who": "🕳️ Something got through the fence",
+     "why": "the fence has no gaps"
+    }
+   ],
+   "answer": "A deer reached over the fence and took them.",
+   "proof": [
+    "“Deer tracks run along the outside of the fence and stop there.”",
+    "“A deer can reach over a four-foot fence without jumping it.”"
+   ],
+   "clears": [
+    "Insects: “The stalks are cut clean at an angle, not torn.”",
+    "Something getting through: “The fence is four feet high and has no gaps.”"
+   ],
+   "explain": "The nine that lost their heads all stood within arm's reach of the fence, and the three in the middle kept theirs. Because the deer tracks stop at the outside of the fence and a deer can reach over four feet, it never had to come in."
+  },
+  {
+   "id": "g4-w30",
+   "grade": 4,
+   "week": 30,
+   "tag": "🪺 eggs",
+   "title": "The Case of the Cold Nest",
+   "story": "A robin built a nest on the school ledge and sat on four eggs for nine days. On the tenth morning the robin was gone and the four eggs were cold. No shells lay on the ground and the nest was undamaged. The ledge is beside the gym door, which was propped open all week for painting. Workers walked past the nest about thirty times a day. Robins will abandon a nest that is disturbed too often. The week had been mild, with no night below fifty degrees.",
+   "question": "Why did the robin leave the nest?",
+   "suspects": [
+    {
+     "who": "🚪 The propped gym door",
+     "why": "workers passed thirty times a day, and robins abandon disturbed nests"
+    },
+    {
+     "who": "🐈 A predator",
+     "why": "no shells on the ground and the nest was undamaged"
+    },
+    {
+     "who": "❄️ Cold weather",
+     "why": "no night below fifty degrees"
+    }
+   ],
+   "answer": "The robin abandoned the nest because people kept passing it.",
+   "proof": [
+    "“Workers walked past the nest about thirty times a day.”",
+    "“Robins will abandon a nest that is disturbed too often.”"
+   ],
+   "clears": [
+    "A predator: “No shells lay on the ground and the nest was undamaged.”",
+    "Cold weather: “The week had been mild, with no night below fifty degrees.”"
+   ],
+   "explain": "The eggs were still in the nest and nothing was broken, so nothing ate them. Because the gym door was propped open and workers passed about thirty times a day, the robin abandoned the nest."
+  },
+  {
+   "id": "g4-w31",
+   "grade": 4,
+   "week": 31,
+   "tag": "🌎 earth",
+   "title": "The Case of the Litter by the Gate",
+   "story": "The playground is clean except for one corner by the back gate. Wrappers pile up there every week. The nearest trash can sits by the basketball court, ninety feet away. The wind on this field blows steadily from the west. The back gate corner is the east fence line. Ms. Diaz emptied the corner on Monday and it had refilled by Friday without anyone eating there. Wind carries loose wrappers until a fence stops them. Nothing else on the playground catches them first.",
+   "question": "Why does litter collect in that one corner?",
+   "suspects": [
+    {
+     "who": "🌬️ The wind and the fence",
+     "why": "the wind blows from the west and the corner is the east fence line"
+    },
+    {
+     "who": "🍪 Students eat there",
+     "why": "it refilled without anyone eating there"
+    },
+    {
+     "who": "🗑️ A missing trash can",
+     "why": "the nearest can sits ninety feet away"
+    }
+   ],
+   "answer": "The wind blows loose wrappers against the east fence.",
+   "proof": [
+    "“The wind on this field blows steadily from the west.”",
+    "“Wind carries loose wrappers until a fence stops them.”"
+   ],
+   "clears": [
+    "Eating there: “it had refilled by Friday without anyone eating there.”",
+    "The trash can: “The nearest trash can sits by the basketball court, ninety feet away.”"
+   ],
+   "explain": "The corner refilled in a week with nobody eating there. Because the wind blows steadily from the west and the back gate corner is the east fence line, wrappers travel across the field and stop at that fence."
+  },
+  {
+   "id": "g4-w32",
+   "grade": 4,
+   "week": 32,
+   "tag": "📷 camera",
+   "title": "The Case of the Dark Photographs",
+   "story": "The fourth grade took ninety photographs at the aquarium and eighty came out black. The ten that worked were all taken in the lobby. The camera battery was full. The lens was clean. A sign at the tank room door asks visitors to turn the flash off. Dev had turned the flash off as the sign asked. The tank rooms are lit only by the tanks themselves. A camera needs either light in the room or a flash.",
+   "question": "Why did eighty photographs come out black?",
+   "suspects": [
+    {
+     "who": "🌑 No room light and no flash",
+     "why": "the tank rooms are lit only by the tanks, and the flash was off"
+    },
+    {
+     "who": "🔋 The battery",
+     "why": "the camera battery was full"
+    },
+    {
+     "who": "🧼 A dirty lens",
+     "why": "the lens was clean"
+    }
+   ],
+   "answer": "The tank rooms were too dark once the flash was turned off.",
+   "proof": [
+    "“The tank rooms are lit only by the tanks themselves.”",
+    "“A camera needs either light in the room or a flash.”"
+   ],
+   "clears": [
+    "The battery: “The camera battery was full.”",
+    "A dirty lens: “The lens was clean.”"
+   ],
+   "explain": "The ten photographs that worked were all taken in the lobby, where there is room light. Because the tank rooms are lit only by the tanks and Dev had turned the flash off as the sign asked, the camera had no light to use."
+  },
+  {
+   "id": "g4-w33",
+   "grade": 4,
+   "week": 33,
+   "tag": "🌱 plant",
+   "title": "The Case of the Leaning Bean",
+   "story": "Two bean plants grew in identical cups on the same shelf. One stands straight and one leans hard to the left. Both got the same water and the same soil. The straight plant sits under the ceiling light. The leaning plant sits two feet to the right of the window. Plants grow toward the strongest light they can reach. The leaning plant points directly at the window. Ms. Reed turned its cup around and in four days it had leaned the other way.",
+   "question": "Why does one bean plant lean?",
+   "suspects": [
+    {
+     "who": "🪟 Light from the window",
+     "why": "it points at the window, and plants grow toward light"
+    },
+    {
+     "who": "💧 Water and soil",
+     "why": "both got the same water and the same soil"
+    },
+    {
+     "who": "🫘 A weak stem",
+     "why": "turning the cup made it lean the other way instead"
+    }
+   ],
+   "answer": "The plant leans toward the light from the window.",
+   "proof": [
+    "“Plants grow toward the strongest light they can reach.”",
+    "“The leaning plant points directly at the window.”"
+   ],
+   "clears": [
+    "Water and soil: “Both got the same water and the same soil.”",
+    "A weak stem: “Ms. Reed turned its cup around and in four days it had leaned the other way.”"
+   ],
+   "explain": "Turning the cup made the plant lean the other way within four days. Because plants grow toward the strongest light and this one points directly at the window, the window is what it is reaching for."
+  },
+  {
+   "id": "g4-w34",
+   "grade": 4,
+   "week": 34,
+   "tag": "🍦 icecream",
+   "title": "The Case of the Soupy Ice Cream",
+   "story": "The fifth grade sold ice cream at the spring fair and the last twenty cups were soup. The freezer was plugged in. Its light came on. A thermometer inside read twenty-two degrees, which is above freezing for ice cream. The lid had been propped open with a scoop since noon so servers could work faster. Warm air pours into a freezer whenever the lid is open. The first hundred cups, served before noon, were solid. Nothing about the recipe had changed that day.",
+   "question": "Why did the last cups melt?",
+   "suspects": [
+    {
+     "who": "🪣 The propped lid",
+     "why": "propped open with a scoop since noon, and warm air pours in"
+    },
+    {
+     "who": "🔌 The freezer was off",
+     "why": "it was plugged in and its light came on"
+    },
+    {
+     "who": "🍨 Bad ice cream",
+     "why": "the first hundred cups were solid"
+    }
+   ],
+   "answer": "The propped lid let warm air into the freezer.",
+   "proof": [
+    "“The lid had been propped open with a scoop since noon so servers could work faster.”",
+    "“Warm air pours into a freezer whenever the lid is open.”"
+   ],
+   "clears": [
+    "The freezer being off: “The freezer was plugged in.”",
+    "Bad ice cream: “The first hundred cups, served before noon, were solid.”"
+   ],
+   "explain": "The first hundred cups, served before noon, were solid. Because the lid was propped open with a scoop from noon onward, warm air poured in and the thermometer read twenty-two degrees."
+  },
+  {
+   "id": "g4-w35",
+   "grade": 4,
+   "week": 35,
+   "tag": "🎗️ ribbon",
+   "title": "The Case of the Wrong Ribbon",
+   "story": "Field day ended with the fifty-meter ribbons handed out and one runner got the wrong color. Priya crossed the line second and received a third-place ribbon. The timer's sheet lists her at second. The ribbon table was sorted into three piles by color. The second and third place ribbons are both shades of blue. Under the tent canopy the two piles looked identical. Two other runners also received a ribbon that did not match the sheet. Nobody checked a ribbon against the sheet before handing it over.",
+   "question": "Why did Priya get the wrong ribbon?",
+   "suspects": [
+    {
+     "who": "🎗️ Two look-alike blues",
+     "why": "both are shades of blue and looked identical under the canopy"
+    },
+    {
+     "who": "⏱️ A timing mistake",
+     "why": "the timer's sheet lists her at second"
+    },
+    {
+     "who": "🏃 Priya finished third",
+     "why": "she crossed the line second"
+    }
+   ],
+   "answer": "The second and third ribbons were both blue and got mixed up.",
+   "proof": [
+    "“The second and third place ribbons are both shades of blue.”",
+    "“Under the tent canopy the two piles looked identical.”"
+   ],
+   "clears": [
+    "A timing mistake: “The timer's sheet lists her at second.”",
+    "Priya's finish: “Priya crossed the line second”"
+   ],
+   "explain": "Two other runners also got a ribbon that did not match the sheet. Because the second and third place ribbons are both shades of blue and looked identical under the canopy, the piles were handed out wrong."
+  },
+  {
+   "id": "g4-w36",
+   "grade": 4,
+   "week": 36,
+   "tag": "🎈 balloons",
+   "title": "The Case of the Popping Balloons",
+   "story": "The class blew up forty balloons for the last-day party and eleven popped by lunch. All eleven had been taped to the window side of the room. The balloons on the inside wall are still full. Nobody touched them and no pins were in the room. The window side was in direct sun from ten o'clock on. Air inside a balloon expands as it warms. The rubber stretches until it splits. The eleven popped between ten and twelve.",
+   "question": "Why did eleven balloons pop?",
+   "suspects": [
+    {
+     "who": "☀️ Sun on the window side",
+     "why": "direct sun from ten, and they popped between ten and twelve"
+    },
+    {
+     "who": "📌 A pin",
+     "why": "no pins were in the room"
+    },
+    {
+     "who": "🖐 Somebody popped them",
+     "why": "nobody touched them"
+    }
+   ],
+   "answer": "The sun warmed the air inside and the rubber split.",
+   "proof": [
+    "“The window side was in direct sun from ten o'clock on.”",
+    "“Air inside a balloon expands as it warms.”"
+   ],
+   "clears": [
+    "A pin: “no pins were in the room.”",
+    "Somebody popping them: “Nobody touched them”"
+   ],
+   "explain": "The balloons on the inside wall are still full, and the eleven popped between ten and twelve. Because the window side was in direct sun from ten o'clock, the air inside expanded and the rubber stretched until it split."
   }
  ]
 }
