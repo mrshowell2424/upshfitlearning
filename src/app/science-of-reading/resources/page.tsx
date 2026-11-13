@@ -122,6 +122,36 @@ function Card({ children }: { children: React.ReactNode }) {
 }
 
 /** Teacher answers, open by default on paper and closed on screen. */
+/**
+ * The foot of the card, where everything you can press lives.
+ *
+ * The four controls used to sit loose in the text, so they read as four
+ * unrelated things that happened to be near each other rather than as the
+ * set of things you can do with this text. Pulled below a rule, against a
+ * tint, they read as one bar.
+ *
+ * The two panels open underneath their own button and push the strip
+ * taller, which keeps what opened next to what opened it.
+ */
+function Actions({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      style={{
+        borderTop: `1px solid ${BRAND.line}`,
+        background: BRAND.paper,
+        margin: "20px -24px -24px",
+        padding: "14px 24px 16px",
+        display: "flex",
+        flexWrap: "wrap",
+        gap: 8,
+        alignItems: "flex-start",
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
 function Answers({ children }: { children: React.ReactNode }) {
   return (
     <details style={{ marginTop: 14 }}>
@@ -235,12 +265,11 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                       </li>
                     ))}
                   </ul>
-                  <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 16 }}>
+                  <Actions>
                     <CopyButton text={mysteryPrompt(myCase)} label="Copy mystery prompt" />
                     <a href={`/science-of-reading/resources/print?tab=my&c=${ci}`} style={pill(false)}>
                       🖨 Printable workbook
                     </a>
-                  </div>
                   <Answers>
                     <p><b>Answer:</b> {myCase.answer}</p>
                     <p><b>Key proof:</b></p>
@@ -254,6 +283,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                     {myCase.explain && <p><i>{myCase.explain}</i></p>}
                   </Answers>
                   <Prompt text={mysteryPrompt(myCase)} />
+                  </Actions>
                 </Card>
               </>
             ) : (
@@ -305,12 +335,11 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                       <b>Then write a response to reading.</b> What is the most important idea in this
                       article, and how do you know? Name the paragraph letter for every piece of evidence.
                     </div>
-                    <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 16 }}>
+                    <Actions>
                       <CopyButton text={articlePrompt(art, ver)} label="Copy article prompt" />
                       <a href={href({}).replace("/resources?", "/resources/print?")} style={pill(false)}>
                         🖨 Printable workbook
                       </a>
-                    </div>
                     <Answers>
                       {art.questions.filter((q) => q.a).map((q) => (
                         <p key={q.n}><b>{q.n}.</b> {q.a}</p>
@@ -318,6 +347,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                       {art.note && <p><i>Teacher note: {art.note}</i></p>}
                     </Answers>
                     <Prompt text={articlePrompt(art, ver)} />
+                    </Actions>
                   </Card>
                 ) : (
                   <p style={{ color: BRAND.mid }}>No article matches that filter.</p>

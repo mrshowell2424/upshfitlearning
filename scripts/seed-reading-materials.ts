@@ -2892,6 +2892,49 @@ const ADAPTATIONS: Adaptation[] = [
       );
     },
   },
+  {
+    // Tell the two texts apart.
+    //
+    // With the multisyllabic switch on, the reading step holds two stories
+    // and the only thing separating them was a line of plain text, because
+    // the passage renders as one pre-line block and a block of text has
+    // nowhere to put a heading. A child scrolling through it cannot see
+    // where the first story stops.
+    //
+    // So the passage renders line by line instead of as one lump, and the
+    // two markers get to be headings: bolder, smaller, spaced out, with a
+    // rule above them. Everything else reads exactly as it did.
+    name: "set the two texts apart",
+    apply: (html) => {
+      const anchor = "          hasTask: !!wrTask, task: wrTask, taskType: wrPick.toUpperCase(),";
+      if (!html.includes(anchor)) return html;
+      const parts = [
+        "",
+        "          passageParts: String(ebText || '').split('\\n')",
+        "            .map((t) => t.trim()).filter(Boolean).map((t, i) => {",
+        "              const head = /^(\\u{1F4D8}|\\u{1F4D9})/u.test(t);",
+        "              return { t, head, st: head",
+        "                ? 'font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:800;'",
+        "                  + 'letter-spacing:.1em;color:#4B6049;margin:' + (i ? '14px' : '0')",
+        "                  + ' 0 2px;padding-top:' + (i ? '10px' : '0')",
+        "                  + ';border-top:' + (i ? '1.5px solid #C9D3C4' : '0')",
+        "                : 'font-size:15px;line-height:1.6;color:#1F2E2A;text-wrap:pretty;'",
+        "                  + 'margin:0 0 6px' };",
+        "            }),",
+      ].join("\n");
+      let out = html.replace(anchor, anchor + parts);
+
+      const div =
+        '<div style="font-size:15px;line-height:1.6;color:#1F2E2A;text-wrap:pretty;'
+        + 'white-space:pre-line">{{ s.passage }}</div>';
+      if (!out.includes(div)) return html;
+      const lines =
+        '<div><sc-for list="{{ s.passageParts }}" as="p" hint-placeholder-count="6">'
+        + '<div style="{{ p.st }}">{{ p.t }}</div></sc-for></div>';
+      out = out.split(div).join(lines);
+      return out;
+    },
+  },
 ];
 
 /**
