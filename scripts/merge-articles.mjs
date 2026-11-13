@@ -27,6 +27,7 @@ const files = existsSync(DIR)
   : [];
 
 const written = new Map(); // grade -> articles
+const partial = [];
 for (const f of files) {
   const one = JSON.parse(readFileSync(`${DIR}/${f}`, "utf8"));
   const list = Array.isArray(one) ? one : one.articles;
@@ -34,9 +35,20 @@ for (const f of files) {
   const grades = [...new Set(list.map((a) => a.grade))];
   if (grades.length !== 1) throw new Error(`${f}: mixes grades ${grades.join(", ")}`);
   if (written.has(grades[0])) throw new Error(`grade ${grades[0]} written twice`);
+  // A grade still being written stays out of the store. Fifty articles take
+  // several sittings, and a teacher who picks grade 6 should not find twenty
+  // and a gap where RI.6.5 ought to be. The gate would refuse the store
+  // anyway; this keeps the half-written grade out of the file to begin with,
+  // so a finished grade can always ship while the next one is in progress.
+  if (list.length !== plan.perGrade) {
+    const name = (plan.grades.find((g) => g.grade === grades[0]) || {}).name ?? grades[0];
+    partial.push(`${name} (${list.length}/${plan.perGrade})`);
+    continue;
+  }
   written.set(grades[0], list);
 }
 
+// Only grades with a complete file are replaced; everything else is kept.
 const kept = data.articles.filter((a) => !written.has(a.grade));
 const all = [...kept, ...[...written.values()].flat()];
 all.sort((a, b) => (order.get(a.grade) - order.get(b.grade)) || (a.n - b.n));
@@ -55,3 +67,4 @@ for (const g of plan.grades) {
   const n = by.get(g.grade) || 0;
   if (n) console.log(`  grade ${g.name.padEnd(2)} ${String(n).padStart(3)}${n === plan.perGrade ? "" : "  (incomplete)"}`);
 }
+if (partial.length) console.log(`still being written, left out: ${partial.join(", ")}`);
