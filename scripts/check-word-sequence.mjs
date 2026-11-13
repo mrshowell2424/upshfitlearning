@@ -80,7 +80,8 @@ const G = [
   ["consonant-le", "og3-08", (w) => new RegExp("[^" + V + "]le$").test(w)],
   ["tion/sion", "og3-11", (w) => /(tion|sion)$/.test(w)],
   // gu is not the vowel team either — guess, guide. And -eing is be-ing.
-  ["ue/ei/ew/eigh/ui", "og4-06", (w) => /(ue|ei|ew|eigh|ui)/.test(w) && !/[qg](ue|ui)/.test(w) && !/eing/.test(w)],
+  ["ue/ei/ew/eigh/ui", "og4-06", (w) => /(ue|ei|ew|eigh|ui)/.test(w) && !/[qg](ue|ui)/.test(w) && !/eing/.test(w)
+    && !(/ew/.test(w) && !/(ei|eigh|ue|ui)/.test(w) && compound(w, "ew"))],
   ["ph", "og5-01", (w) => /ph/.test(w) && !compound(w, "ph")],
   ["rh/mn/pn/ps", "og5-03", (w) => /^(rh|pn|ps|mn)/.test(w) || /mn$/.test(w)],
   ["que", "og5-05", (w) => /que$/.test(w)],

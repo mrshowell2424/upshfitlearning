@@ -79,7 +79,8 @@ const G = [
   ["oi/oy/au/aw", "og3-04", (w) => /(oi|oy)/.test(w) || new RegExp("(au|aw)(?![" + V + "])").test(w)],
   ["consonant-le", "og3-08", (w) => new RegExp("[^" + V + "]le$").test(w)],
   ["tion/sion", "og3-11", (w) => /(tion|sion)$/.test(w)],
-  ["ue/ei/ew/eigh/ui", "og4-06", (w) => /(ue|ei|ew|eigh|ui)/.test(w) && !/[qg](ue|ui)/.test(w) && !/eing/.test(w)],
+  ["ue/ei/ew/eigh/ui", "og4-06", (w) => /(ue|ei|ew|eigh|ui)/.test(w) && !/[qg](ue|ui)/.test(w) && !/eing/.test(w)
+    && !(/ew/.test(w) && !/(ei|eigh|ue|ui)/.test(w) && compound(w, "ew"))],
   ["ph", "og5-01", (w) => /ph/.test(w) && !compound(w, "ph")],
   ["rh/mn/pn/ps", "og5-03", (w) => /^(rh|pn|ps|mn)/.test(w) || /mn$/.test(w)],
   ["que", "og5-05", (w) => /que$/.test(w)],
