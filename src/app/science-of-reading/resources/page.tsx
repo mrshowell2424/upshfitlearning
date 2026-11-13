@@ -237,6 +237,9 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                   </ul>
                   <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 16 }}>
                     <CopyButton text={mysteryPrompt(myCase)} label="Copy mystery prompt" />
+                    <a href={`/science-of-reading/resources/print?tab=my&c=${ci}`} style={pill(false)}>
+                      🖨 Printable workbook
+                    </a>
                   </div>
                   <Answers>
                     <p><b>Answer:</b> {myCase.answer}</p>
@@ -304,6 +307,9 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                     </div>
                     <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 16 }}>
                       <CopyButton text={articlePrompt(art, ver)} label="Copy article prompt" />
+                      <a href={href({}).replace("/resources?", "/resources/print?")} style={pill(false)}>
+                        🖨 Printable workbook
+                      </a>
                     </div>
                     <Answers>
                       {art.questions.filter((q) => q.a).map((q) => (
