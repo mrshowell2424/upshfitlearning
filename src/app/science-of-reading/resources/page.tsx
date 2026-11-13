@@ -267,6 +267,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                   </ul>
                   <Actions>
                     <CopyButton text={mysteryPrompt(myCase)} label="Copy mystery prompt" />
+                    <Prompt text={mysteryPrompt(myCase)} />
                     <a href={`/science-of-reading/resources/print?tab=my&c=${ci}`} style={pill(false)}>
                       🖨 Printable workbook
                     </a>
@@ -282,7 +283,6 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                     )}
                     {myCase.explain && <p><i>{myCase.explain}</i></p>}
                   </Answers>
-                  <Prompt text={mysteryPrompt(myCase)} />
                   </Actions>
                 </Card>
               </>
@@ -337,6 +337,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                     </div>
                     <Actions>
                       <CopyButton text={articlePrompt(art, ver)} label="Copy article prompt" />
+                      <Prompt text={articlePrompt(art, ver)} />
                       <a href={href({}).replace("/resources?", "/resources/print?")} style={pill(false)}>
                         🖨 Printable workbook
                       </a>
@@ -346,7 +347,6 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                       ))}
                       {art.note && <p><i>Teacher note: {art.note}</i></p>}
                     </Answers>
-                    <Prompt text={articlePrompt(art, ver)} />
                     </Actions>
                   </Card>
                 ) : (
