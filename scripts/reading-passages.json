@@ -5681,6 +5681,1726 @@
      "task": "Do animals understand more than we think? Group your reasons, support them with details from the text, and end with a conclusion."
     }
    }
+  },
+  "cvc-mix|i": {
+   "g2": {
+    "title": "Tim and the Big Pig",
+    "paras": [
+     "Tim has a pig. The pig is big. It will not fit in the bin.",
+     "Tim did dig a pit for it. He hid the lid of the bin in the pit.",
+     "The pig did sit in the pit. It did not want to get up.",
+     "Tim got a fig. He did hold it up. The pig got up and did run to him.",
+     "Now the pig will sit with Tim. Tim will not dig a pit for it."
+    ],
+    "qs": [
+     [
+      "Who has a pig?",
+      "Tim has a pig."
+     ],
+     [
+      "What did Tim dig?",
+      "He did dig a pit for the pig."
+     ],
+     [
+      "What got the pig up?",
+      "A fig that Tim held up."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what Tim did, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "Tim and the Big Pig",
+    "paras": [
+     "Tim keeps a pig in the bit of field behind his house, and it is a very big pig indeed.",
+     "In spring he dug a shallow pit for it to wallow in, which took him most of a Sunday with a spade.",
+     "The pig sat down in the pit the minute it was finished and did not get up again for six hours.",
+     "Tim tried calling. He tried whistling. In the end he held up a fig, and the pig was out of the pit and across the field in seconds.",
+     "The pig now follows him everywhere. Tim has not dug anything since, and he says he does not intend to."
+    ],
+    "qs": [
+     [
+      "Where does Tim keep the pig?",
+      "In the bit of field behind his house."
+     ],
+     [
+      "How long did digging the pit take?",
+      "Most of a Sunday."
+     ],
+     [
+      "What finally worked?",
+      "Holding up a fig."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Was the pit a good idea? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "Tim and the Big Pig",
+    "paras": [
+     "Tim keeps a pig in the strip of field behind his house. It is a very big pig, bigger than it has any business being, and it has opinions about where it sits.",
+     "In the spring he dug it a shallow pit to wallow in. This took him the better part of a Sunday with a spade and a wheelbarrow, and he finished it in the middle of the afternoon feeling rather pleased with himself.",
+     "The pig sat down in the pit within a minute of its completion and did not get up again for six solid hours, which Tim had not anticipated and had no plan for.",
+     "He tried calling it. He tried whistling, which has never worked on this pig and did not begin working then. In the end he went and got a fig from the kitchen and held it up, and the pig was out of the pit and halfway across the field before he had finished lifting his arm.",
+     "The pig follows him everywhere now, at a distance of about three feet. Tim has not dug anything since that Sunday, and he says, with some feeling, that he has no intention of ever digging again."
+    ],
+    "qs": [
+     [
+      "How did Tim feel when he finished the pit?",
+      "Rather pleased with himself."
+     ],
+     [
+      "What had Tim not anticipated?",
+      "That the pig would sit in it for six hours and not get up."
+     ],
+     [
+      "How far behind does the pig follow?",
+      "About three feet."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a report on keeping a pig. Organise it into sections, develop each with facts and examples, and connect your ideas."
+    }
+   }
+  },
+  "cvc-mix|o": {
+   "g2": {
+    "title": "The Pot on the Cot",
+    "paras": [
+     "Mom got a pot. The pot is hot. She put it on a cot by the tub.",
+     "The dog got on the cot. He did not go to the pot.",
+     "“Off, dog,” said Mom. “The pot is hot. Do not go on the cot.”",
+     "The dog got off. He sat on the rug and did not nod off.",
+     "Mom got the pot. The dog got the cot. Not a bad job for a dog."
+    ],
+    "qs": [
+     [
+      "Where did Mom put the hot pot?",
+      "On a cot by the tub."
+     ],
+     [
+      "What did the dog do?",
+      "He got on the cot."
+     ],
+     [
+      "What did the dog get at the end?",
+      "The dog got the cot."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should the dog be on the cot? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Pot on the Cot",
+    "paras": [
+     "Mom took the pot off the stove on Monday and set it down on the folding cot by the back door, which is not where a hot pot goes.",
+     "The dog was on that cot within about four seconds. He has never been on it before in his life and he chose that moment.",
+     "“Off,” said Mom, in the voice that does not get argued with. “That pot is hot. Get off the cot.”",
+     "He got off. He sat down on the rug a foot away and watched the pot with great attention for the next twenty minutes, not nodding off once.",
+     "Mom got the pot back to the stove. The dog got the cot, and he has slept on it every night since."
+    ],
+    "qs": [
+     [
+      "Where did Mom set the hot pot?",
+      "On the folding cot by the back door."
+     ],
+     [
+      "How quickly was the dog on the cot?",
+      "Within about four seconds."
+     ],
+     [
+      "What happened to the cot afterwards?",
+      "The dog got it and has slept on it every night since."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write this from the dog's point of view. Use time-order words and include something somebody says."
+    }
+   },
+   "g4": {
+    "title": "The Pot on the Cot",
+    "paras": [
+     "Mom took the pot off the stove on Monday evening and set it down, without really thinking about it, on the folding cot by the back door. A hot pot does not go on a folding cot. Everybody in the house knows this, including, as it turns out, Mom.",
+     "The dog was on that cot within about four seconds. He has never been on the cot before in his entire life. It has stood there for three years and he has walked past it perhaps two thousand times without once showing any interest, and he chose that precise moment to get on it.",
+     "“Off,” Mom said, in the particular voice that does not get argued with by anybody, dog or otherwise. “That pot is hot. Get off the cot.”",
+     "He got off at once. Then he sat down on the rug about a foot away from the cot and watched that pot with enormous attention for the next twenty minutes, not nodding off even slightly, as though he had been given a job.",
+     "Mom got the pot back to the stove where it belonged. The dog got the cot. He has slept on it every single night since, and nobody has suggested otherwise."
+    ],
+    "qs": [
+     [
+      "How long has the cot been there?",
+      "Three years."
+     ],
+     [
+      "Why is the dog's timing remarkable?",
+      "He had ignored the cot about two thousand times before."
+     ],
+     [
+      "What does the dog seem to think he has been given?",
+      "A job — watching the pot."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should pets be allowed on the furniture? Group your reasons, support them with details, and end with a conclusion."
+    }
+   }
+  },
+  "cvc-mix|u": {
+   "g2": {
+    "title": "The Bug in the Mug",
+    "paras": [
+     "Gus has a mug. The mug is on a rug by the tub.",
+     "A bug got in the mug. It did run up and it did run down.",
+     "Gus did not want to cut up the bug. He got a bun and put it on the rug.",
+     "The bug did run up out of the mug. It did go to the bun.",
+     "Gus got his mug. The bug got a bun. Gus is not a bad lad."
+    ],
+    "qs": [
+     [
+      "Where is the mug?",
+      "On a rug by the tub."
+     ],
+     [
+      "What got in the mug?",
+      "A bug got in the mug."
+     ],
+     [
+      "How did Gus get the bug out?",
+      "He put a bun on the rug and the bug went to it."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what Gus did, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Bug in the Mug",
+    "paras": [
+     "Gus left his mug on the rug by the tub on Sunday morning, which is how most of the trouble in his life begins.",
+     "By the time he came back there was a bug in it, running up the inside and sliding back down again, over and over, getting nowhere.",
+     "He did not want to tip it out and he did not want to squash it. So he tore up a bit of a bun and put the crumbs on the rug next to the mug.",
+     "The bug stopped running, worked its way up the side one more time, got over the lip, and went straight to the crumbs.",
+     "Gus got his mug back and washed it twice. The bug got the bun. Gus says that is about as fair as mornings usually get."
+    ],
+    "qs": [
+     [
+      "Where did Gus leave his mug?",
+      "On the rug by the tub."
+     ],
+     [
+      "What was the bug doing?",
+      "Running up the inside and sliding back down, getting nowhere."
+     ],
+     [
+      "What did Gus use instead of tipping it out?",
+      "Crumbs from a bun put on the rug."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Was Gus right to rescue the bug? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Bug in the Mug",
+    "paras": [
+     "Gus left his mug on the rug by the tub on Sunday morning. Leaving things in places they do not belong is how most of the trouble in Gus's life begins, and he is aware of this, and it has never once stopped him.",
+     "By the time he came back for it there was a bug in the bottom, running up the smooth inside of the mug and sliding straight back down again, over and over, with enormous effort and absolutely no progress whatsoever.",
+     "He did not want to tip it out onto the rug, and he was not going to squash it. So he tore up a bit of a bun that was sitting on the counter and put the crumbs down on the rug about an inch from the mug, and then sat back on his heels and waited.",
+     "The bug stopped running. It gathered itself, worked its way up the side one more time, got a grip on the lip, hauled itself over, and went directly to the crumbs without pausing.",
+     "Gus got his mug back and washed it twice, with care, before using it again. The bug got the bun. Gus says that is about as fair as a Sunday morning generally manages to be."
+    ],
+    "qs": [
+     [
+      "What does Gus know about himself?",
+      "That leaving things where they do not belong causes his trouble, and it never stops him."
+     ],
+     [
+      "How is the bug's effort described?",
+      "Enormous effort and absolutely no progress whatsoever."
+     ],
+     [
+      "What did Gus do after waiting?",
+      "Nothing — he let the bug climb out on its own."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how to get an insect out of a house without hurting it. Organise it into steps and connect your ideas."
+    }
+   }
+  },
+  "cvc-mix|e": {
+   "g2": {
+    "title": "Ten Red Hens",
+    "paras": [
+     "Jed has ten red hens. The hens are in a pen by the hut.",
+     "Jed fed the hens. He set the pet bed in the pen.",
+     "Ten hens, one bed. Not all the hens got in the bed. One hen did not.",
+     "It sat on the pen leg. Jed let it sit. Then it got in the bed as well.",
+     "Ten hens, one bed. Jed is a man who can get a job done."
+    ],
+    "qs": [
+     [
+      "How many hens does Jed have?",
+      "Jed has ten red hens."
+     ],
+     [
+      "Where did Jed set the bed?",
+      "He set the pet bed in the pen."
+     ],
+     [
+      "Which hen did not get in the bed at first?",
+      "One hen sat on the pen leg."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write three facts about Jed's hens. Start with a topic sentence and finish with an ending."
+    }
+   },
+   "g3": {
+    "title": "Ten Red Hens",
+    "paras": [
+     "Jed keeps ten red hens in a pen beside the shed, and he has kept the same ten since the end of September.",
+     "He fed them at seven every evening, and in October he set an old pet bed down in the corner of the pen to see what would happen.",
+     "Nine of them were in it that same night, pressed together in a heap. The tenth stayed out and sat on the fence rail instead, on her own.",
+     "Jed let her be. He has learned not to interfere with hens. She watched the rest of them from the rail for eleven nights.",
+     "On the twelfth she got into the bed with the others, and that was the end of it. Ten hens, one bed, nothing said."
+    ],
+    "qs": [
+     [
+      "How long has Jed kept these ten?",
+      "Since the end of September."
+     ],
+     [
+      "Where did the tenth hen sleep at first?",
+      "On the fence rail, on her own."
+     ],
+     [
+      "How many nights did she stay out?",
+      "Eleven nights."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the eleven nights from the tenth hen's point of view. Use time-order words and describe what she could see."
+    }
+   },
+   "g4": {
+    "title": "Ten Red Hens",
+    "paras": [
+     "Jed keeps ten red hens in a pen beside the shed. They are the same ten he has had since the end of September, and he can tell them apart, which he says is not a special skill and simply takes paying attention.",
+     "He feeds them at seven every evening without fail. In the middle of October he put an old pet bed down in the corner of the pen, not for any particular reason, mainly to see what they would do about it.",
+     "Nine of them were in it that same night, pressed into a single heap with no gaps anywhere. The tenth did not go near it. She went up onto the fence rail instead and sat there on her own in the cold.",
+     "Jed let her be. He has kept hens for eleven years and the main thing he has learned is not to interfere with them. She watched the other nine from that rail every night for eleven nights, and he did not move her once.",
+     "On the twelfth night she got down and got into the bed with the rest of them, and that was the end of the matter. Ten hens, one bed, and nobody had said a word about it to anybody."
+    ],
+    "qs": [
+     [
+      "What does Jed say about telling the hens apart?",
+      "That it is not a special skill and simply takes paying attention."
+     ],
+     [
+      "Why did he put the bed in?",
+      "For no particular reason, mainly to see what they would do."
+     ],
+     [
+      "What is the main thing eleven years has taught him?",
+      "Not to interfere with hens."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is it better to leave something alone or to step in? Group your reasons, support them with details, and end with a conclusion."
+    }
+   }
+  },
+  "vce|a_e": {
+   "g2": {
+    "title": "The Cake on the Lake",
+    "paras": [
+     "Jane made a cake. She made it late, and she made it for the race by the lake.",
+     "She gave the cake a name. The name was Mud Cake, as it was the same shade as mud.",
+     "Dave came and had a taste. He made a face. Then he had a lot more.",
+     "At the gate by the lake, the cake was gone in a wave of kids.",
+     "Jane made the same cake the next time. That time she made two."
+    ],
+    "qs": [
+     [
+      "Who made the cake?",
+      "Jane made the cake."
+     ],
+     [
+      "What name did she give it?",
+      "She gave it the name Mud Cake."
+     ],
+     [
+      "What did Jane do the next time?",
+      "She made the same cake, but she made two."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what happened to the cake, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Cake on the Lake",
+    "paras": [
+     "Jane made the cake late on the Friday, for the race at the lake the following morning, and she was still icing it at eleven.",
+     "She gave it a name, because she names everything. It was called Mud Cake, on the grounds that it was exactly the same shade as the path down to the water.",
+     "Dave came over and took a taste before anybody else was awake. He made a face that was not encouraging, and then he had a second slice, and then a third.",
+     "At the gate by the lake the whole cake went in about four minutes, in a wave of children who had not been told it was coming.",
+     "Jane made the same cake again the next weekend. That time she made two, and the second one lasted nearly ten minutes."
+    ],
+    "qs": [
+     [
+      "When did Jane finish the cake?",
+      "She was still icing it at eleven on the Friday night."
+     ],
+     [
+      "Why was it called Mud Cake?",
+      "It was the same shade as the path down to the water."
+     ],
+     [
+      "How long did the whole cake last?",
+      "About four minutes."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Was Dave's reaction fair? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Cake on the Lake",
+    "paras": [
+     "Jane made the cake late on the Friday, for the race at the lake the next morning, and she was still icing it at eleven at night with the radio on and everybody else in the house asleep.",
+     "She gave it a name, because she names everything she makes and always has. It was called Mud Cake, on the entirely reasonable grounds that it was precisely the same shade as the path that runs down to the water.",
+     "Dave came over early and took a taste before anybody else in the house was awake. He made a face that could not fairly be described as encouraging. He then had a second slice, and shortly afterwards a third, and did not revise the face or offer any explanation for either.",
+     "At the gate by the lake the entire cake went in about four minutes, in a wave of children who had not been told it was coming and who arrived from three directions at once.",
+     "Jane made the same cake again the following weekend. That time she made two of them, and the second one lasted nearly ten minutes, which she considers a substantial improvement."
+    ],
+    "qs": [
+     [
+      "What was Jane doing at eleven at night?",
+      "Still icing the cake with the radio on."
+     ],
+     [
+      "What is odd about Dave's behaviour?",
+      "He made an unencouraging face and then ate three slices without explaining."
+     ],
+     [
+      "Why does Jane consider ten minutes an improvement?",
+      "The first cake had lasted only four."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a report on planning food for an event. Organise it into sections, develop each with examples, and connect your ideas."
+    }
+   }
+  },
+  "vce|i_e": {
+   "g2": {
+    "title": "The Kite and the Pine",
+    "paras": [
+     "Mike has a kite. It is white with a line of red on the side.",
+     "He likes to fly it, but it got in a pine at the side of the lane.",
+     "Mike did not like that. The kite was up in the pine and he is not tall.",
+     "Dad came with a pole. It did take a while, but the kite came down fine.",
+     "Mike will fly the kite a mile from that pine the next time."
+    ],
+    "qs": [
+     [
+      "What does Mike's kite look like?",
+      "It is white with a line of red on the side."
+     ],
+     [
+      "Where did the kite get stuck?",
+      "In a pine at the side of the lane."
+     ],
+     [
+      "How did it come down?",
+      "Dad came with a pole."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell how the kite came down, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Kite and the Pine",
+    "paras": [
+     "Mike's kite is white with a line of red down one side, and he has flown it nearly every week since his birthday.",
+     "On Saturday the wind swung round while he was not looking and put it straight into the big pine at the side of the lane.",
+     "It was high up. Mike is not tall and the lowest branch is well above his head, and he spent some time pretending he had a plan.",
+     "Dad came out with the window pole, which is nine feet long and not meant for this. It took a while and a good deal of advice from both of them, but the kite came down undamaged.",
+     "Mike flies it a good mile from that pine now. He says the wind is better down there, which is not the reason."
+    ],
+    "qs": [
+     [
+      "How often has Mike flown the kite?",
+      "Nearly every week since his birthday."
+     ],
+     [
+      "Why could Mike not reach it?",
+      "He is not tall and the lowest branch is above his head."
+     ],
+     [
+      "What is not the real reason he moved?",
+      "That the wind is better further away."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should Mike fly the kite somewhere else? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Kite and the Pine",
+    "paras": [
+     "Mike's kite is white with a single line of red running down one side, and he has flown it nearly every week since his birthday in April, in conditions ranging from ideal to extremely unwise.",
+     "On Saturday afternoon the wind swung right round while he was looking the other way and put the kite straight into the big pine at the side of the lane, about twenty feet up, where it lodged and stayed.",
+     "It was well out of reach. Mike is not tall, the lowest branch on that pine is a good way above his head, and he spent several minutes walking round the base of the tree giving a convincing impression of somebody who had a plan.",
+     "Dad came out eventually with the window pole, which is nine feet long and was not designed for retrieving anything from a tree. It took a quarter of an hour and a considerable volume of advice from both parties, but the kite came down undamaged and with the line still attached.",
+     "Mike flies it a good mile from that pine now, down by the river. He says the wind is better down there. The wind is not better down there, and everybody involved is aware of it."
+    ],
+    "qs": [
+     [
+      "How high did the kite lodge?",
+      "About twenty feet up."
+     ],
+     [
+      "What was Mike really doing while walking round the tree?",
+      "Giving a convincing impression of somebody who had a plan."
+     ],
+     [
+      "What does the last line tell you?",
+      "Everybody knows the real reason is the tree, not the wind."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the rescue from Dad's point of view. Establish the situation, give a clear sequence, and use dialogue."
+    }
+   }
+  },
+  "vce|o_e": {
+   "g2": {
+    "title": "The Mole by the Rose",
+    "paras": [
+     "A mole made a hole by the rose. Mom got the hose to fill it up.",
+     "“Do not do that,” I said. “That hole is its home.”",
+     "Mom did not use the hose. She put a cone on the hole so that no one would fall in it.",
+     "The mole did not use that hole. It made a hole by the pole.",
+     "Now we have a cone, a pole, a rose, and a mole with a home."
+    ],
+    "qs": [
+     [
+      "What made a hole by the rose?",
+      "A mole made the hole."
+     ],
+     [
+      "What did Mom put on the hole?",
+      "She put a cone on it."
+     ],
+     [
+      "Where did the mole make its next hole?",
+      "By the pole."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write three facts about the mole. Start with a topic sentence and finish with an ending."
+    }
+   },
+   "g3": {
+    "title": "The Rope and the Stone",
+    "paras": [
+     "Rose had a rope and one very large stone, and a plan that did not survive contact with the rope or the stone.",
+     "She tied the rope to the stone and then tied the other end to the gate pole, on the theory that she could lever it. The stone did not move an inch.",
+     "She did not mope about it. She went inside, got a note pad, and sat down at the table to think, which is more than most people do.",
+     "What she wrote was this: hose the mud off it first, then roll it rather than drag it. Mud is what is holding it down.",
+     "She did exactly that. The stone rolled, and then rode home on a pole and the rope, and it is in her garden now."
+    ],
+    "qs": [
+     [
+      "What was Rose's first theory?",
+      "That she could lever the stone using the gate pole."
+     ],
+     [
+      "What did she do instead of moping?",
+      "She got a note pad and sat down to think."
+     ],
+     [
+      "What was holding the stone down?",
+      "Mud."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is stopping to think better than trying harder? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Rope and the Stone",
+    "paras": [
+     "Rose had a rope, one extremely large stone, and a plan, and the plan did not survive its first contact with either of the other two.",
+     "She tied the rope around the stone and then tied the other end to the gate pole, on the theory that she could use the pole as a lever and walk the stone out of the ground. The stone did not move. It did not even acknowledge the attempt.",
+     "She did not mope about it, which is the part I find remarkable. She went indoors, got a note pad off the shelf, sat down at the kitchen table and thought about it properly for twenty minutes, which is more than most people manage in a week.",
+     "What she wrote down was this: hose the mud off it first, then roll it rather than drag it, because it is the mud holding it and not the weight. Both of those turned out to be correct.",
+     "She did exactly that, in that order. The stone rolled over twice, came free, and then rode home on the pole and the rope with two of us steadying it. It sits in her garden now, and she has never once mentioned the lever."
+    ],
+    "qs": [
+     [
+      "What was wrong with the lever plan?",
+      "The stone did not move or even acknowledge the attempt."
+     ],
+     [
+      "What does the narrator find remarkable?",
+      "That Rose did not mope about it."
+     ],
+     [
+      "What two things did she write down?",
+      "Hose the mud off first, and roll it rather than drag it."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how to move something heavy safely. Organise it into steps, develop each with examples, and connect your ideas."
+    }
+   }
+  },
+  "vce|u_e": {
+   "g2": {
+    "title": "The Cute Mule",
+    "paras": [
+     "June has a mule. The mule is cute. It is not rude, but it is not tame.",
+     "June got a tube of mule mash. The mule did not use it.",
+     "“Do not be rude,” said June. “I got this for you.”",
+     "The mule came up. It did use the tube. Then it sat on June's shoe.",
+     "June did not fuss. A cute mule can sit on a shoe if it likes."
+    ],
+    "qs": [
+     [
+      "What does June have?",
+      "June has a cute mule."
+     ],
+     [
+      "What did June get for it?",
+      "A tube of mule mash."
+     ],
+     [
+      "What did the mule sit on?",
+      "It sat on June's shoe."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is the mule rude? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Cute Mule",
+    "paras": [
+     "June keeps a mule in the field behind the house. It is cute in the way that difficult animals often are, and it is not remotely tame.",
+     "She bought a tube of the expensive feed in June, which the man in the shop had assured her no animal could refuse. The mule refused it for nine days.",
+     "“Do not be rude,” June told it, every morning, holding the tube out at arm's length. “I bought this for you.”",
+     "On the tenth morning it came over, used the whole tube in about a minute, and then stood on June's shoe and would not get off.",
+     "June did not mind. She says a mule that has decided to stand on your shoe has decided a great deal more than that."
+    ],
+    "qs": [
+     [
+      "How long did the mule refuse the feed?",
+      "Nine days."
+     ],
+     [
+      "What had the man in the shop said?",
+      "That no animal could refuse it."
+     ],
+     [
+      "What does June think standing on her shoe means?",
+      "That the mule has decided a great deal more than that."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the ten days from the mule's point of view. Use time-order words and describe what it could smell."
+    }
+   },
+   "g4": {
+    "title": "The Cute Mule",
+    "paras": [
+     "June keeps a mule in the field behind her house. It is cute in the particular way that difficult animals often are, which is to say that it is cute until you want it to do something, and it is not remotely tame and has never pretended to be.",
+     "She bought a tube of the expensive feed back in June, on the recommendation of the man in the shop, who assured her at some length that no animal alive could refuse it. The mule refused it, without any apparent effort, for nine consecutive days.",
+     "“Do not be rude,” June told it every single morning, standing at the gate with the tube held out at arm's length. “I bought this for you.” The mule would look at the tube, and then at her, and then walk away.",
+     "On the tenth morning it came straight over, used the entire tube in something under a minute, and then put one front hoof down on June's shoe and stood there, with its whole weight on it, and would not move.",
+     "June did not mind, and still does not. She says that a mule which has decided to stand on your shoe has quietly decided a great deal more than that, and that it is worth waiting nine days for."
+    ],
+    "qs": [
+     [
+      "In what way is the mule cute?",
+      "Cute until you want it to do something."
+     ],
+     [
+      "What did the mule do each morning?",
+      "Look at the tube, then at June, then walk away."
+     ],
+     [
+      "What does June think the shoe means?",
+      "That the mule has accepted her, and it was worth the nine days."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is patience the best way to win an animal over? Group your reasons, support them with details, and end with a conclusion."
+    }
+   }
+  },
+  "ai-ay|ai": {
+   "g2": {
+    "title": "The Snail on the Rail",
+    "paras": [
+     "There is a snail on the rail at the end of our lane.",
+     "It has been there since the rain. It did not fail to stay put.",
+     "I gave it a name. The name is Maid, as she sits so plain and still.",
+     "Dad said a snail will wait for rain and then it will trail off.",
+     "It did rain. Maid left a trail on the rail and went. I did not mind."
+    ],
+    "qs": [
+     [
+      "Where is the snail?",
+      "On the rail at the end of our lane."
+     ],
+     [
+      "What name did the narrator give it?",
+      "The name is Maid."
+     ],
+     [
+      "What did the snail do when it rained?",
+      "It left a trail on the rail and went."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what the snail did, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Snail on the Rail",
+    "paras": [
+     "There has been a snail on the rail at the end of our lane since the rain nine days ago, in exactly the same spot.",
+     "I gave it a name, which Dad says is a mistake with snails. The name is Maid, because she sits so plain and still.",
+     "He explained that a snail will wait out dry weather without moving at all, and then trail off the moment the air gets damp again.",
+     "It rained on Friday night. On Saturday morning there was a faint silver trail along the rail and no snail at the end of it.",
+     "I do not mind. She waited nine days for that rain and she had earned the right to go."
+    ],
+    "qs": [
+     [
+      "How long had the snail been there?",
+      "Nine days, since the rain."
+     ],
+     [
+      "What does Dad say a snail does in dry weather?",
+      "Waits without moving at all."
+     ],
+     [
+      "What was left on the rail?",
+      "A faint silver trail."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how snails survive dry weather. Group your points and use topic vocabulary."
+    }
+   },
+   "g4": {
+    "title": "The Snail on the Rail",
+    "paras": [
+     "There has been a snail on the rail at the end of our lane since the rain on Tuesday, in precisely the same spot, at precisely the same angle, for nine days without a visible change of any kind.",
+     "I gave it a name, which Dad maintains is a mistake to make with snails. The name is Maid, chosen because she sits so plain and still that you could walk past her a hundred times without registering that she is an animal at all.",
+     "He explained the reason, which I had not known. A snail will wait out dry weather entirely, sealed against the surface it has chosen, losing nothing, gaining nothing, and will trail off the moment the air turns damp enough to be worth the effort.",
+     "It rained hard on Friday night. On Saturday morning there was a faint silver trail running along the rail for about a foot, and at the end of it there was no snail.",
+     "I do not mind, and I was not expecting to feel that way. She had waited nine days for that rain. Nothing that waits nine days for anything should have to explain itself when it finally goes."
+    ],
+    "qs": [
+     [
+      "What makes the snail easy to walk past?",
+      "She sits so plain and still she does not register as an animal."
+     ],
+     [
+      "What does a snail do while sealed against a surface?",
+      "It loses nothing and gains nothing."
+     ],
+     [
+      "Why does the narrator not mind?",
+      "The snail had waited nine days and had earned the right to go."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is it worth waiting a long time for something? Group your reasons, support them with details, and end with a conclusion."
+    }
+   }
+  },
+  "ai-ay|ay": {
+   "g2": {
+    "title": "A Day in the Hay",
+    "paras": [
+     "We stay at my gran's in May. There is hay in the big bay of the barn.",
+     "We play in the hay all day. Gran will not say no.",
+     "One day a gray cat came to play. It did not stay.",
+     "It ran away when my brother did a big jump in the hay.",
+     "The next day it came back. It may stay if we play in a quiet way."
+    ],
+    "qs": [
+     [
+      "When do they stay at Gran's?",
+      "In May."
+     ],
+     [
+      "Where is the hay?",
+      "In the big bay of the barn."
+     ],
+     [
+      "Why did the gray cat run away?",
+      "Because the brother did a big jump in the hay."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should they play quietly for the cat? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "A Day in the Hay",
+    "paras": [
+     "We stay at my gran's every May, and the best thing about it is the hay stacked up in the big bay at the end of the barn.",
+     "We play in it all day and Gran has never once said no, which I think is the whole reason we keep going back.",
+     "One afternoon a gray cat came in and sat on a bale to watch us, and it stayed for nearly an hour without moving.",
+     "Then my brother took a run and jumped into the stack from the ladder, and the cat was out of the door before he landed.",
+     "It came back the next day. It will stay as long as we play in a quiet way, and we have learned to."
+    ],
+    "qs": [
+     [
+      "What is stacked in the bay of the barn?",
+      "Hay."
+     ],
+     [
+      "How long did the cat stay?",
+      "Nearly an hour."
+     ],
+     [
+      "What have they learned?",
+      "To play in a quiet way so the cat will stay."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the afternoon from the cat's point of view. Use time-order words and describe what it could hear."
+    }
+   },
+   "g4": {
+    "title": "A Day in the Hay",
+    "paras": [
+     "We stay at my gran's every May for a fortnight, and the best thing about the whole arrangement is the hay stacked right up to the roof in the big bay at the far end of the barn.",
+     "We play in it all day, every day, and Gran has never once said no to any of it. I am fairly certain that is the entire reason we keep going back, and I am fairly certain she knows that too.",
+     "One afternoon a gray cat came in through the side door, picked a bale near the front, and sat on it to watch us. It stayed for the better part of an hour without moving anything except its eyes.",
+     "Then my brother climbed the ladder, took a run at the edge, and jumped into the stack from a height that Gran would not have approved of, and the cat was through the door and gone before he had finished landing.",
+     "It came back the following day and sat on the same bale. It will stay for as long as we play in a quiet way, which is a thing we have had to learn, and which has turned out to be worth learning."
+    ],
+    "qs": [
+     [
+      "How long do they stay in May?",
+      "A fortnight."
+     ],
+     [
+      "What did the cat move while watching?",
+      "Nothing except its eyes."
+     ],
+     [
+      "What has turned out to be worth learning?",
+      "How to play in a quiet way."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a report on how to behave around a nervous animal. Organise it into sections and connect your ideas."
+    }
+   }
+  },
+  "ee-ea|ee": {
+   "g2": {
+    "title": "Three Green Trees",
+    "paras": [
+     "There are three green trees at the end of the street.",
+     "A bee went to the trees. We did see it from the steps.",
+     "We need to keep the trees. Dad said he will feed them in the week.",
+     "Deep in the green there is a nest. We can see the feet of a bird in it.",
+     "Three trees, one bee, one nest. That street is the best street."
+    ],
+    "qs": [
+     [
+      "How many trees are there?",
+      "There are three green trees."
+     ],
+     [
+      "What went to the trees?",
+      "A bee went to the trees."
+     ],
+     [
+      "What is deep in the green?",
+      "A nest, with the feet of a bird in it."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write three facts about the trees. Start with a topic sentence and finish with an ending."
+    }
+   },
+   "g3": {
+    "title": "Three Green Trees",
+    "paras": [
+     "There are three green trees at the end of our street, planted close together, and they have been there longer than any of the houses.",
+     "A bee went into them one morning and we watched it from the front steps for a good while before it came out again.",
+     "Dad says we need to keep those trees in better condition than we have been, and that he will feed them properly this week.",
+     "Deep inside the middle one there is a nest. If you stand underneath and look straight up you can see two feet over the edge of it, and nothing else.",
+     "Three trees, one bee, one nest. We keep telling people it is the best street in the town, and we keep being right."
+    ],
+    "qs": [
+     [
+      "How long have the trees been there?",
+      "Longer than any of the houses."
+     ],
+     [
+      "What can you see if you look straight up?",
+      "Two feet over the edge of the nest."
+     ],
+     [
+      "What does Dad plan to do this week?",
+      "Feed the trees properly."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should every street have trees? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "Three Green Trees",
+    "paras": [
+     "There are three green trees at the end of our street. They stand close together, almost touching at the top, and they have been there a great deal longer than any of the houses that now surround them.",
+     "A bee went into them on Tuesday afternoon and we sat on the front steps and watched for it to come out, which took a surprisingly long time and which neither of us admitted to enjoying as much as we did.",
+     "Dad says we need to keep those trees in rather better condition than we have been keeping them, and that he intends to feed them properly this week, which he has said in previous weeks.",
+     "Deep inside the middle one, well above head height, there is a nest. If you stand directly underneath and look straight up you can see two small feet hooked over the edge of it and absolutely nothing else of the bird at all.",
+     "Three trees, one bee, one nest. We have told a great many people that this is the best street in the town, and so far nobody has been able to supply a convincing argument against it."
+    ],
+    "qs": [
+     [
+      "How do the trees stand?",
+      "Close together, almost touching at the top."
+     ],
+     [
+      "What did neither of them admit?",
+      "How much they enjoyed watching for the bee."
+     ],
+     [
+      "What is implied about Dad's plan?",
+      "He has promised to feed them in previous weeks and not done it."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write about a tree you know well. Establish the situation, give a clear sequence, and use sensory details."
+    }
+   }
+  },
+  "ee-ea|ea": {
+   "g2": {
+    "title": "Tea by the Sea",
+    "paras": [
+     "We eat by the sea each year. Gran makes tea and we each get a peach.",
+     "The sand is clean and the sea is near. You can hear it from the seat.",
+     "A seal came up. It did not speak, but it did eat a bit of my meal.",
+     "“That seal is not weak,” said Gran. “It has a real plan.”",
+     "Each year we go back. Each year the seal gets a meal."
+    ],
+    "qs": [
+     [
+      "What does Gran make?",
+      "Gran makes tea."
+     ],
+     [
+      "What came up while they were eating?",
+      "A seal came up."
+     ],
+     [
+      "What did Gran say about the seal?",
+      "That it is not weak and has a real plan."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what happened by the sea, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "Tea by the Sea",
+    "paras": [
+     "We eat by the sea at least once each year, and Gran brings tea in a flask and a peach for everybody, which she has done since before I can remember.",
+     "The sand at that beach is clean and the sea comes in close, so you can hear it clearly from the seat on the wall where we always sit.",
+     "A seal came up out of the water last year while we were eating. It did not make a sound. It worked its way up the sand and took a good piece of my meal.",
+     "“That seal is not weak,” Gran said, without getting up. “That seal has a real plan and it has used it before.”",
+     "We go back each year to the same stretch of beach. Each year the seal gets a meal, and each year Gran brings an extra peach."
+    ],
+    "qs": [
+     [
+      "What does Gran bring?",
+      "Tea in a flask and a peach for everybody."
+     ],
+     [
+      "What did the seal do?",
+      "It came up the sand without a sound and took a piece of the meal."
+     ],
+     [
+      "What has changed since?",
+      "Gran brings an extra peach each year."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should people feed wild animals? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "Tea by the Sea",
+    "paras": [
+     "We eat by the sea at least once each year, and Gran brings tea in a flask and a peach for every single person, which she has done for as long as anybody in this family can actually remember.",
+     "The sand on that beach is clean and the sea comes in close at high tide, so that from the seat on the wall where we always sit you can hear it clearly without having to stop talking to do so.",
+     "A seal came up out of the water last year while we were in the middle of eating. It made no sound whatsoever. It worked its way up the wet sand in a series of short efforts, arrived at the edge of the blanket, and took a substantial piece of my meal without any sense of hurry.",
+     "“That seal is not weak,” Gran said, not getting up, not even putting down her tea. “That seal has a real plan, and from the look of it that seal has used this plan a number of times before.”",
+     "We go back every year to the same stretch of beach and the same seat on the same wall. Each year the seal gets a meal. Each year, since then, Gran has carried one extra peach, and nobody has ever discussed why."
+    ],
+    "qs": [
+     [
+      "What can you do from the seat on the wall?",
+      "Hear the sea without stopping talking."
+     ],
+     [
+      "How did the seal move up the sand?",
+      "In a series of short efforts, without any hurry."
+     ],
+     [
+      "What has nobody ever discussed?",
+      "Why Gran brings one extra peach."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a report on seals. Organise it into sections, develop each with facts and examples, and connect your ideas."
+    }
+   }
+  },
+  "oa-ow|oa": {
+   "g2": {
+    "title": "The Goat on the Road",
+    "paras": [
+     "A goat got out and went up the road. It had a coat of thick white hair.",
+     "Joan got her coat and went to get it. The goat did not want to go home.",
+     "It did eat the oats from her hand. Then it did eat the soap from the load.",
+     "“Not the soap,” said Joan. “You can not eat soap.”",
+     "The goat went home on the road with Joan. It did moan the whole way."
+    ],
+    "qs": [
+     [
+      "What was on the road?",
+      "A goat was on the road."
+     ],
+     [
+      "What did the goat eat?",
+      "It ate the oats from Joan's hand, then the soap."
+     ],
+     [
+      "How did the goat go home?",
+      "On the road with Joan, moaning the whole way."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what the goat did, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Goat on the Road",
+    "paras": [
+     "A goat got out of the top field on Sunday and went straight up the road, which is the one direction nobody wanted it to take.",
+     "Joan got her coat and went after it. The goat had no intention of going home and made that perfectly clear by walking faster every time she got close.",
+     "In the end she stopped chasing and held out a handful of oats. The goat ate the oats. Then, before she could stop it, it ate a bar of soap off the load in the back of the cart.",
+     "“Not the soap,” Joan said. “Nothing eats soap. You cannot eat soap.”",
+     "It walked home on the road beside her without any further argument, and it moaned, steadily and without pause, the entire way."
+    ],
+    "qs": [
+     [
+      "Which way did the goat go?",
+      "Straight up the road, the one direction nobody wanted."
+     ],
+     [
+      "How did the goat react when Joan got close?",
+      "It walked faster."
+     ],
+     [
+      "What did it do all the way home?",
+      "It moaned steadily without pause."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Was Joan right to stop chasing? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Goat on the Road",
+    "paras": [
+     "A goat got out of the top field on Sunday morning and went straight up the road, which is the one direction out of four that nobody in the house wanted it to take, and which it appeared to have selected deliberately.",
+     "Joan got her coat and went after it. The goat had no intention whatsoever of coming home, and it made this clear in the way goats do, which is by walking slightly faster every single time she got within reach of it and then stopping again as soon as she gave up.",
+     "In the end she stopped chasing altogether, sat down on the bank, and held out a handful of oats. The goat came over and ate the oats. Then, before she could do anything about it, it ate a bar of soap straight off the load in the back of the cart.",
+     "“Not the soap,” Joan said. “Nothing eats soap. There is no animal on this earth that eats soap.” The goat looked back at her with complete composure and finished it.",
+     "It walked home along the road beside her afterwards without any further argument at all, and it moaned steadily, without pausing once for breath, for the entire length of the journey."
+    ],
+    "qs": [
+     [
+      "How did the goat choose its direction?",
+      "It appeared to have selected it deliberately, the one nobody wanted."
+     ],
+     [
+      "What is the goat's method of avoiding capture?",
+      "Walking faster when approached, then stopping when she gives up."
+     ],
+     [
+      "How did the goat react to being told off?",
+      "With complete composure, and it finished the soap."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the morning from the goat's point of view. Establish the situation, give a clear sequence, and use dialogue."
+    }
+   }
+  },
+  "oa-ow|ow": {
+   "g2": {
+    "title": "The Crow on the Window",
+    "paras": [
+     "A crow sits on the window sill when the snow falls.",
+     "It will not go. It will not show any fear of us at all.",
+     "We throw it bits from the yellow bowl. It takes them slow.",
+     "Below the window there is a row of its tracks in the snow.",
+     "Now we know the crow. It is our crow, and it is sure of that too."
+    ],
+    "qs": [
+     [
+      "When does the crow sit on the sill?",
+      "When the snow falls."
+     ],
+     [
+      "What do they throw it?",
+      "Bits from the yellow bowl."
+     ],
+     [
+      "What is below the window?",
+      "A row of its tracks in the snow."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what the crow does, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Crow on the Window",
+    "paras": [
+     "A crow sits on our window sill whenever snow falls, and it has done so every winter for three years now.",
+     "It will not go when we open the window, and it shows no fear of any of us, which is not normal for a crow.",
+     "We throw it bits from the yellow bowl on the sill. It takes them slow, one at a time, and never takes more than four.",
+     "Below the window there is always a row of its tracks going off across the snow in the same direction, towards the low wall.",
+     "Now we know the crow and it knows us. My mother says we should not have named it. We named it anyway."
+    ],
+    "qs": [
+     [
+      "How long has the crow been coming?",
+      "Every winter for three years."
+     ],
+     [
+      "How many bits does it take?",
+      "Never more than four."
+     ],
+     [
+      "Where do its tracks go?",
+      "Across the snow towards the low wall."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should wild birds be fed in winter? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Crow on the Window",
+    "paras": [
+     "A crow sits on our kitchen window sill whenever snow falls. It has done this every winter for three years, and it arrives within about an hour of the first flakes, which nobody has ever been able to explain.",
+     "It does not go when we open the window. It shows no fear of any of us whatsoever, which is not normal behaviour for a crow, and which took some getting used to in the first winter.",
+     "We throw it bits from the yellow bowl we now keep on the sill for that purpose. It takes them slow, one at a time, turning each one over before swallowing it, and it has never once taken more than four.",
+     "Below the window there is always a row of tracks going off across the snow in the same direction, towards the low wall at the end of the garden, and never in any other direction.",
+     "Now we know the crow and the crow knows us. My mother says we should never have given it a name, because naming a wild thing is how you end up responsible for it. We gave it a name anyway, four days in."
+    ],
+    "qs": [
+     [
+      "How soon does the crow arrive?",
+      "Within about an hour of the first flakes."
+     ],
+     [
+      "What does it do before swallowing?",
+      "It turns each piece over."
+     ],
+     [
+      "What is the mother's argument against naming it?",
+      "Naming a wild thing is how you end up responsible for it."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a report on crows. Organise it into sections, develop each with facts and examples, and connect your ideas."
+    }
+   }
+  },
+  "ar-or|ar": {
+   "g2": {
+    "title": "The Jar in the Barn",
+    "paras": [
+     "In the dark of the barn there is a jar on a shelf.",
+     "The jar is full of hard bits of glass. Some are sharp.",
+     "Gran says her dad put them in the jar. He got them in the yard.",
+     "“Do not start on that jar,” she says. “It is far too sharp for hands.”",
+     "So the jar sits in the dark. It is a part of the barn now."
+    ],
+    "qs": [
+     [
+      "Where is the jar?",
+      "On a shelf in the dark of the barn."
+     ],
+     [
+      "What is in the jar?",
+      "Hard bits of glass, some of them sharp."
+     ],
+     [
+      "What does Gran say?",
+      "Not to start on the jar, because it is far too sharp for hands."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should the jar be thrown away? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Jar in the Barn",
+    "paras": [
+     "In the dark at the far end of the barn there is a glass jar on a shelf, and it has sat there since long before I was born.",
+     "It is full of hard bits of coloured glass, worn smooth at the edges by years in the ground, though some of them are still sharp.",
+     "Gran says her father filled it. He turned the pieces up in the yard whenever he dug, and he kept every single one of them.",
+     "“Do not start on that jar,” she tells us, every summer. “Parts of it are far too sharp for hands.”",
+     "So the jar stays where it is, in the dark, on the same shelf. It is a part of the barn now, as much as the beams are."
+    ],
+    "qs": [
+     [
+      "How did Gran's father collect the glass?",
+      "He turned the pieces up in the yard whenever he dug."
+     ],
+     [
+      "Why are most pieces smooth?",
+      "They were worn smooth by years in the ground."
+     ],
+     [
+      "What does the narrator compare the jar to?",
+      "The beams of the barn."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write about the man who filled the jar. Use time-order words and include something he might say."
+    }
+   },
+   "g4": {
+    "title": "The Jar in the Barn",
+    "paras": [
+     "In the dark at the far end of the barn, on the third shelf up, there is a large glass jar, and it has stood in that exact spot since a long time before I was born.",
+     "It is full of hard bits of coloured glass — green, brown, and a very few blue — most of them worn smooth at the edges by years in the ground, though a small number of them are still perfectly sharp.",
+     "Gran says her father filled it over about forty years. He turned pieces up in the yard every time he dug for anything, and rather than throwing them out he carried them in and dropped them into the jar, and he did this until he could not dig any more.",
+     "“Do not start on that jar,” she tells us, every summer, in the same words. “Parts of it are far too sharp for hands.” None of us ever has.",
+     "So it stays where it is, in the dark, on its shelf. Nobody has emptied it and nobody has suggested emptying it. It is as much a part of that barn now as the beams are."
+    ],
+    "qs": [
+     [
+      "What three colours are in the jar?",
+      "Green, brown and a very few blue."
+     ],
+     [
+      "Over how long did her father fill it?",
+      "About forty years, until he could not dig any more."
+     ],
+     [
+      "What has nobody ever suggested?",
+      "Emptying the jar."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should families keep things that have no use? Group your reasons, support them with details, and end with a conclusion."
+    }
+   }
+  },
+  "ar-or|or": {
+   "g2": {
+    "title": "The Horn by the Barn",
+    "paras": [
+     "There is an old horn on a shelf by the north wall of the barn.",
+     "Dad got it at the fort. It is torn at one end.",
+     "He will not sort it out. He says it is worth more than it is.",
+     "In the morning my brother got the horn. It was not a short note. It went on and on.",
+     "Mom came out. “Not before my corn,” she said."
+    ],
+    "qs": [
+     [
+      "Where is the horn?",
+      "On a shelf by the north wall of the barn."
+     ],
+     [
+      "What is wrong with it?",
+      "It is torn at one end."
+     ],
+     [
+      "What did Mom say?",
+      "Not before her corn."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what happened in the barn, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Horn on the Porch",
+    "paras": [
+     "There is an old brass horn on the porch by the north door, hanging from a nail that was put there for something else.",
+     "Dad bought it years ago from a shop near the fort, for a sum he has never been willing to tell anybody. It is torn at one end and it is not worth much.",
+     "He will not throw it out and he will not hear any argument about it. He says it is worth more than it looks, and that this is right about most things on that porch.",
+     "On Sunday morning my brother took it down and sounded it, with no warning to anybody. It was not a short sound. It went on for a remarkable length of time.",
+     "Mom came out onto the porch in her dressing gown. “Not,” she said, “before I have had my corn.” That is the whole rule now."
+    ],
+    "qs": [
+     [
+      "Where did Dad buy the horn?",
+      "From a shop near the fort."
+     ],
+     [
+      "What has he never been willing to say?",
+      "How much he paid for it."
+     ],
+     [
+      "What is the rule now?",
+      "No horn before Mom has had her corn."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should the horn be allowed on Sunday mornings? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Horn on the Porch",
+    "paras": [
+     "There is an old brass horn hanging on the porch by the north door, from a nail that was driven in for something else entirely and has held the horn for eleven years without complaint.",
+     "Dad bought it from a shop near the fort a long time ago, for a sum of money that he has consistently and cheerfully refused to disclose to anybody, including, I believe, Mom. It is torn at one end, the lacquer has gone, and it is worth very little.",
+     "He will not throw it out and he will not entertain any argument on the subject. He says it is worth a good deal more than it looks, and that the same is true of almost everything else on that porch, which is a point he is not wrong about.",
+     "On Sunday morning my brother took it down off its nail and blew it, without warning anybody in the house of his intentions. It was not a short sound. It went on for a genuinely remarkable length of time and could be heard, we later established, from the end of the road.",
+     "Mom came out onto the porch in her dressing gown and stood there for a moment. “Not,” she said, “before I have had my corn.” That has been the whole of the rule ever since, and it has not needed adding to."
+    ],
+    "qs": [
+     [
+      "How long has the nail held the horn?",
+      "Eleven years."
+     ],
+     [
+      "Who does Dad apparently not tell the price?",
+      "Anybody, including Mom."
+     ],
+     [
+      "How far could the horn be heard?",
+      "From the end of the road."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the Sunday morning from Mom's point of view. Establish the situation, give a clear sequence, and use dialogue."
+    }
+   }
+  },
+  "ng-nk|ng": {
+   "g2": {
+    "title": "The Song in the Spring",
+    "paras": [
+     "In the spring a bird sings on the long branch by the swing.",
+     "It sings the same song for a long time. It will not stop.",
+     "I bring a bit of string and hang it on the branch for the nest.",
+     "The bird takes the string. Then it sings the long song again.",
+     "That song is the best thing about spring on our bit of land."
+    ],
+    "qs": [
+     [
+      "Where does the bird sing?",
+      "On the long branch by the swing."
+     ],
+     [
+      "What did the narrator bring?",
+      "A bit of string for the nest."
+     ],
+     [
+      "What did the bird do with the string?",
+      "It took the string."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write three facts about the bird. Start with a topic sentence and finish with an ending."
+    }
+   },
+   "g3": {
+    "title": "The Song in the Spring",
+    "paras": [
+     "Every spring a bird sings from the long branch above the swing, starting before six and keeping going for most of the morning.",
+     "It is the same song every time, repeated without variation, and after the first week you stop hearing it as a sound and start hearing it as the time of year.",
+     "In April I took out a length of string, cut it into short bits, and hung them along the branch where the bird could reach them.",
+     "It took every one of them over the following three days and then went back to singing the same long song from the same spot.",
+     "The nest is above the swing now. That song is the best thing about spring on our bit of ground, and it costs nothing."
+    ],
+    "qs": [
+     [
+      "When does the bird start singing?",
+      "Before six in the morning."
+     ],
+     [
+      "What happens after the first week?",
+      "You stop hearing it as a sound and hear it as the time of year."
+     ],
+     [
+      "How long did it take the string?",
+      "Over the following three days."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the spring from the bird's point of view. Use time-order words and describe what it could see."
+    }
+   },
+   "g4": {
+    "title": "The Song in the Spring",
+    "paras": [
+     "Every spring a bird sings from the long branch directly above the swing. It starts before six in the morning and it keeps going, with very few breaks, until something like eleven.",
+     "It is the same song each time, repeated without any variation at all, and after about a week of it you stop hearing it as a sound in the garden and begin hearing it as the time of year itself, which is a strange thing to be able to say about a noise.",
+     "In the middle of April I took out a length of string, cut it into short pieces of about four inches, and hung them along the branch at intervals where the bird could easily get at them.",
+     "It took every single piece over the following three days, one at a time, working from the end nearest the trunk, and then it went back to singing the same long song from precisely the same spot it had used before.",
+     "The nest is directly above the swing now, which means nobody can use the swing until July. That song is still the best thing about spring on this bit of ground, and it has never cost us anything but a swing."
+    ],
+    "qs": [
+     [
+      "How long does the bird sing each day?",
+      "From before six until about eleven."
+     ],
+     [
+      "In what order did it take the string?",
+      "One at a time, working from the end nearest the trunk."
+     ],
+     [
+      "What does the nest cost the family?",
+      "The use of the swing until July."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is it worth giving up something for wildlife? Group your reasons, support them with details, and end with a conclusion."
+    }
+   }
+  },
+  "ng-nk|nk": {
+   "g2": {
+    "title": "The Pink Tank",
+    "paras": [
+     "Hank has a fish tank. The tank has a pink light on the back.",
+     "He thinks the fish like it. I think they do not blink at it at all.",
+     "A bit of junk sank to the bottom of the tank. Hank got it out.",
+     "Then he gave the fish a drink of clean water. He did not thank me for the help.",
+     "The pink light is still on. The fish still do not blink."
+    ],
+    "qs": [
+     [
+      "What does Hank have?",
+      "Hank has a fish tank."
+     ],
+     [
+      "What is on the back of the tank?",
+      "A pink light."
+     ],
+     [
+      "What sank to the bottom?",
+      "A bit of junk."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should the tank have a pink light? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Pink Tank",
+    "paras": [
+     "Hank has kept a fish tank on the bank of shelves by his window since the summer, and in September he put a pink light on the back of it.",
+     "He thinks the fish like it. I think the fish have not blinked at it once, and I have told him so more than once.",
+     "On Sunday a bit of junk sank to the bottom, off the shelf above, and the whole tank went cloudy within the hour.",
+     "Hank got it out with a net on a stick, changed half the water, and gave them a clean drink without any help from anybody.",
+     "The pink light is still on. The fish still do not blink at it. Hank has not thanked me for my opinion."
+    ],
+    "qs": [
+     [
+      "When did Hank add the light?",
+      "In September."
+     ],
+     [
+      "What happened when the junk sank?",
+      "The whole tank went cloudy within the hour."
+     ],
+     [
+      "How did Hank fix it?",
+      "With a net on a stick, and by changing half the water."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how to look after a fish tank. Group your steps and use words like first, then, and finally."
+    }
+   },
+   "g4": {
+    "title": "The Pink Tank",
+    "paras": [
+     "Hank has kept a fish tank on the bank of shelves by his bedroom window since the summer before last, and in September he fitted a pink light to the back panel of it, on the grounds that it would be good for them.",
+     "He thinks the fish like it. I think the fish have not blinked at that light once in the entire time it has been there, and I have said so to him on at least four separate occasions without any noticeable effect.",
+     "On Sunday a bit of junk sank to the bottom of the tank, having fallen off the shelf directly above it, and the water went cloudy within the hour and stayed that way for most of the afternoon.",
+     "Hank got the junk out with a net taped to a stick, changed rather more than half the water, and gave the whole tank a proper clean without asking for or receiving any help from anybody in the house.",
+     "The pink light is still on. The fish still do not blink at it. Hank has yet to thank me for my opinion on the matter and I have stopped expecting him to."
+    ],
+    "qs": [
+     [
+      "Why did Hank fit the light?",
+      "On the grounds that it would be good for the fish."
+     ],
+     [
+      "How many times has the narrator said so?",
+      "At least four separate occasions."
+     ],
+     [
+      "What has the narrator stopped expecting?",
+      "To be thanked for the opinion."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should you keep giving advice nobody takes? Group your reasons, support them with details, and end with a conclusion."
+    }
+   }
+  },
+  "ck-tch|ck": {
+   "g2": {
+    "title": "The Duck and the Truck",
+    "paras": [
+     "A duck sat in the back of a truck by the dock.",
+     "The truck had a sack of rock in it. The duck sat on the sack.",
+     "Jack came to check the truck. He got a shock.",
+     "“Off the sack,” said Jack. The duck did not pick itself up.",
+     "So Jack sat on the rock and had a snack. The duck kept the sack."
+    ],
+    "qs": [
+     [
+      "Where did the duck sit?",
+      "In the back of a truck by the dock."
+     ],
+     [
+      "What was in the truck?",
+      "A sack of rock."
+     ],
+     [
+      "What did Jack do in the end?",
+      "He sat on the rock and had a snack."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what happened by the dock, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Duck and the Truck",
+    "paras": [
+     "There was a duck sitting in the back of a truck down by the dock on Thursday, and it had clearly been there some time.",
+     "The truck had a sack of broken rock in it, waiting to go up to the yard, and the duck had made itself comfortable right on top of the sack.",
+     "Jack came down to check the truck before taking it up and got a considerable shock when the duck looked back at him.",
+     "“Off the sack,” said Jack, with no particular authority. The duck did not pick up one foot.",
+     "So Jack sat down on a rock on the dock and had his snack instead, and the duck kept the sack for another forty minutes."
+    ],
+    "qs": [
+     [
+      "What was in the sack?",
+      "Broken rock."
+     ],
+     [
+      "Why did Jack get a shock?",
+      "The duck looked back at him from the truck."
+     ],
+     [
+      "Who won?",
+      "The duck — it kept the sack for another forty minutes."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should Jack have moved the duck? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Duck and the Truck",
+    "paras": [
+     "There was a duck sitting in the back of the truck down by the dock on Thursday morning, and from the state of the truck bed it had clearly been there for a considerable length of time before anybody noticed.",
+     "The truck had a sack of broken rock in it, loaded the previous evening and waiting to go up to the yard, and the duck had arranged itself directly on top of the sack with every appearance of ownership.",
+     "Jack came down to check the truck before driving it up and got a genuine shock, because he was looking at the tyres and the duck was looking at him, and he did not notice this until he straightened up.",
+     "“Off the sack,” Jack said, with no particular authority in his voice and, by his own later account, no real expectation of being obeyed. The duck did not pick up either foot.",
+     "So Jack sat down on a rock at the edge of the dock and had his snack instead, which he had been going to eat later anyway. The duck kept the sack for another forty minutes and then left of its own accord."
+    ],
+    "qs": [
+     [
+      "How could they tell the duck had been there a while?",
+      "From the state of the truck bed."
+     ],
+     [
+      "Why did the shock happen?",
+      "Jack was looking at the tyres and did not see the duck until he straightened up."
+     ],
+     [
+      "How did the situation end?",
+      "The duck left of its own accord after forty minutes."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the morning from the duck's point of view. Establish the situation, give a clear sequence, and use sensory details."
+    }
+   }
+  },
+  "ck-tch|tch": {
+   "g2": {
+    "title": "The Patch on the Pitch",
+    "paras": [
+     "There is a bad patch on the pitch by the ditch.",
+     "When it is wet you can not catch on that patch. The ball will not come up.",
+     "Mitch had a plan. He got sand from the ditch and put it on the patch.",
+     "Then we had a match. No one did a bad catch on that patch at all.",
+     "Mitch did not brag. He just sat on the bench and had his lunch."
+    ],
+    "qs": [
+     [
+      "Where is the bad patch?",
+      "On the pitch by the ditch."
+     ],
+     [
+      "What was Mitch's plan?",
+      "To get sand from the ditch and put it on the patch."
+     ],
+     [
+      "What did Mitch do after the match?",
+      "He sat on the bench and had his lunch."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Was Mitch's plan a good one? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Patch on the Pitch",
+    "paras": [
+     "There is a bad patch on the pitch down by the ditch, and it has been getting worse every winter for about three years.",
+     "When it rains you cannot catch anything on that patch. The ball hits it and stops dead instead of coming up, and everybody has learned to avoid it.",
+     "Mitch had a plan that nobody expected to work. He fetched sand up from the ditch in a bucket, load after load, and worked it into the patch over two afternoons.",
+     "Then we had a match on it. Nobody dropped a single catch on that patch, and two people did not even notice it was there.",
+     "Mitch did not brag about any of it. He sat on the bench afterwards and ate his lunch and let other people work it out."
+    ],
+    "qs": [
+     [
+      "How long has the patch been getting worse?",
+      "About three years."
+     ],
+     [
+      "What does the ball do on the patch?",
+      "It hits it and stops dead instead of coming up."
+     ],
+     [
+      "How did Mitch behave afterwards?",
+      "He did not brag — he sat on the bench and ate his lunch."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the two afternoons Mitch spent fixing it. Use time-order words and include dialogue."
+    }
+   },
+   "g4": {
+    "title": "The Patch on the Pitch",
+    "paras": [
+     "There is a bad patch on the pitch down by the ditch, about eight feet across, and it has been getting steadily worse every winter for something like three years without anybody doing anything about it.",
+     "When it rains you cannot catch anything on that patch at all. The ball comes down, hits it, and stops dead rather than coming up, and over three seasons everybody who plays there has quietly learned to avoid standing on it.",
+     "Mitch had a plan, and nobody who heard it expected it to work. He fetched sand up from the bottom of the ditch in a bucket, load after load after load, and worked it down into the patch with a rake across two long afternoons.",
+     "Then we had a match on it that Saturday. Nobody dropped a single catch on that patch. Two people played the entire match without noticing that it had ever been there at all, which Mitch considered the best possible result.",
+     "He did not brag about it, then or since. He sat on the bench afterwards and ate his lunch and let the rest of us work out for ourselves what had changed, which took us most of the afternoon."
+    ],
+    "qs": [
+     [
+      "How big is the patch?",
+      "About eight feet across."
+     ],
+     [
+      "What did Mitch consider the best result?",
+      "That two people never noticed the patch had been there."
+     ],
+     [
+      "How long did it take the others to work out what changed?",
+      "Most of the afternoon."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is it better to fix a problem quietly or to be seen doing it? Group your reasons, support them with details, and end with a conclusion."
+    }
+   }
   }
  }
 }
