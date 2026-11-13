@@ -1,5 +1,5 @@
 {
- "_note": "One story per concept, written at three reading levels. 2nd grade is pinned to what its own lesson has taught; 3rd and 4th are given a floor of all Level 2 and all Level 3, because a fourth grader reviewing short a has been taught digraphs and a passage that pretends otherwise is unreadable rather than careful. Each level carries three comprehension questions with answers and a writing task of a type that grade is expected to write. Checked by scripts/check-passages.mjs. Written for Upshift, not copied from any published reader.",
+ "_note": "One story per concept, written at three reading levels. 2nd grade is pinned to what its own lesson has taught, because the youngest readers are the ones a decodable text is really for. 3rd and 4th are given a floor of all Level 3 and all Level 4, since the levels track the grades. Each level carries three comprehension questions with answers and a writing task of a type that grade is expected to write. Checked by scripts/check-passages.mjs. Written for Upshift, not copied from any published reader.",
  "levels": {
   "g2": "2nd grade",
   "g3": "3rd grade",
@@ -777,6 +777,780 @@
     "write": {
      "type": "Opinion",
      "task": "Is it better to travel slowly or quickly? Group your reasons, support them with facts and details, and finish with a conclusion."
+    }
+   }
+  },
+  "og1-02": {
+   "g2": {
+    "title": "Go, Bo, Go",
+    "paras": [
+     "Bo is my pup. Bo is red. He can go and go and go.",
+     "We go up to the top of the lot. Bo digs. He digs a pit by a log.",
+     "I say, “No, Bo. We can not dig a pit by the log.”",
+     "Bo sits. He is sad. So I give him a pat. He is not sad a lot.",
+     "We go to the van. Bo is on my lap. He is my pup and I am his."
+    ],
+    "qs": [
+     [
+      "Who is Bo?",
+      "Bo is my red pup."
+     ],
+     [
+      "Where does Bo dig a pit?",
+      "He digs a pit by a log."
+     ],
+     [
+      "How do you know Bo does not stay sad?",
+      "He is not sad a lot and he sits on my lap."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what Bo did, in order. Use first, next, and last, and end by telling how Bo felt."
+    }
+   },
+   "g3": {
+    "title": "Go, Bo, Go",
+    "paras": [
+     "Bo is a red pup with one white foot and no sense of when to stop running.",
+     "We walk him to the top of the empty lot every morning, and every morning he finds the same log and starts digging beside it.",
+     "“No, Bo,” I tell him. “Not there.” He looks up with dirt on his nose and thinks about it.",
+     "He sits down then, properly sad, ears flat. It lasts about four seconds, which is as long as Bo has ever been sad about anything.",
+     "By the time we get back to the van he has forgotten the whole thing. He rides home on my lap with his chin on my arm."
+    ],
+    "qs": [
+     [
+      "What does Bo do every morning at the lot?",
+      "He digs beside the same log."
+     ],
+     [
+      "How long does Bo stay sad?",
+      "About four seconds."
+     ],
+     [
+      "What does the last line show about Bo and the narrator?",
+      "That they are close, because Bo rides on the narrator's lap."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how to take a dog for a walk. Group your steps in order and use words like first, then, and finally."
+    }
+   },
+   "g4": {
+    "title": "Go, Bo, Go",
+    "paras": [
+     "Bo is a red pup with one white foot, an excellent nose, and absolutely no sense of when a thing is finished. He does not walk anywhere. He arrives.",
+     "Every morning we take him to the empty lot at the top of the road, and every morning, out of all the ground available to him, he chooses the same log and begins digging beside it with real conviction.",
+     "“No, Bo,” I tell him. “Not there.” He stops. He looks up with dirt across the bridge of his nose and considers the instruction carefully, the way you might consider a suggestion from someone who has never dug anything in their life.",
+     "Then he sits, and he is sad. Ears flat, chin low, the full performance. It lasts about four seconds, which is the longest Bo has ever been sad about anything, including the time he fell in the creek.",
+     "By the time we reach the van he has forgotten all of it. He rides home across my lap with his chin hooked over my arm, already asleep, already planning tomorrow's hole."
+    ],
+    "qs": [
+     [
+      "What does 'He does not walk anywhere. He arrives.' tell you about Bo?",
+      "That he moves fast and with energy rather than calmly."
+     ],
+     [
+      "How does the author describe the way Bo considers the instruction?",
+      "Like a suggestion from someone who has never dug anything in their life."
+     ],
+     [
+      "Why does the author call Bo's sadness a performance?",
+      "Because it lasts only four seconds and is not really felt."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should dogs be allowed to dig wherever they want? Group your reasons, support them with details, and end with a conclusion."
+    }
+   }
+  },
+  "og1-03": {
+   "g2": {
+    "title": "The Red Hen",
+    "paras": [
+     "Peg has a hen. The hen is red. Peg put the hen in a pen.",
+     "The hen got out. It ran to the mud by the tub. It did not go in the pen.",
+     "Peg got a bit of a bun. She put the bit in the pen.",
+     "The hen ran in to get the bun. Peg got the pen set.",
+     "Now the hen is in the pen. Peg is not mad. She is a bit wet, but the hen is in."
+    ],
+    "qs": [
+     [
+      "What did Peg put in the pen?",
+      "She put a bit of a bun in the pen."
+     ],
+     [
+      "Where did the hen go when it got out?",
+      "It ran to the mud by the tub."
+     ],
+     [
+      "Why did Peg use the bun?",
+      "To get the hen to run back in the pen."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Was the bun a good way to catch the hen? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Red Hen",
+    "paras": [
+     "Peg kept one red hen, and the red hen kept getting out. The pen had been mended three times already that month.",
+     "One morning it was out again, standing in the mud by the water tub and refusing, politely, to come anywhere near her.",
+     "Peg had learned not to chase it. Chasing made it faster. Instead she went inside, tore a piece off a bun, and set it down just inside the pen gate.",
+     "The hen watched her from the mud. Then it crossed the yard, walked in after the bun, and Peg closed the gate behind it.",
+     "Peg stood there, muddy to the knees, and decided that mending the pen a fourth time could wait until after lunch."
+    ],
+    "qs": [
+     [
+      "How many times had the pen been mended that month?",
+      "Three times already."
+     ],
+     [
+      "Why did Peg stop chasing the hen?",
+      "Chasing only made it faster."
+     ],
+     [
+      "What does Peg decide at the end?",
+      "That mending the pen again could wait until after lunch."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a how-to for catching a loose chicken. Group your steps and use words like first, then, and finally."
+    }
+   },
+   "g4": {
+    "title": "The Red Hen",
+    "paras": [
+     "Peg kept one red hen, and the red hen kept getting out. By the middle of the month the pen had been mended three separate times, each repair more inventive than the last, and each of them defeated inside a week.",
+     "One morning the hen was standing in the mud beside the water tub, entirely at ease, declining in the politest possible way to come within ten feet of her.",
+     "Peg had learned the hard way not to chase it. Chasing it made it faster and made her slower, and the one time she had cornered it against the fence she had gone home with a cut across her wrist and no hen.",
+     "So she went inside instead. She tore a piece off yesterday's bun, carried it out, and set it on the ground just inside the open gate. Then she stepped back and waited, saying nothing at all.",
+     "The hen considered the bun for a long moment. Then it crossed the yard at its own unhurried pace, walked through the gate, and began to eat. Peg shut the gate, looked down at the mud to her knees, and decided the fourth repair could wait until after lunch."
+    ],
+    "qs": [
+     [
+      "What happened the one time Peg cornered the hen?",
+      "She went home with a cut across her wrist and no hen."
+     ],
+     [
+      "Why does Peg step back and say nothing?",
+      "So the hen will come to the bun on its own instead of being chased."
+     ],
+     [
+      "What does the repeated mending suggest about the hen?",
+      "That it is determined and keeps finding new ways out."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write this morning from the hen's point of view. Establish the situation, give a clear sequence of events, and use sensory details."
+    }
+   }
+  },
+  "og1-04": {
+   "g2": {
+    "title": "Jack the Duck",
+    "paras": [
+     "Nick has a duck. The duck is Jack. Jack sits on a rock in the sun.",
+     "Jack will not get up. Nick can not get him up. Jack just sits.",
+     "Nick picks up a sack. In the sack is a bit of a bun.",
+     "Jack got up! He hops off the rock. He pecks at the bun in the sack.",
+     "Nick pats Jack on the back. Jack is a duck. Jack got his bun."
+    ],
+    "qs": [
+     [
+      "Where does Jack sit?",
+      "Jack sits on a rock in the sun."
+     ],
+     [
+      "What is in the sack?",
+      "A bit of a bun."
+     ],
+     [
+      "What made Jack get off the rock?",
+      "The bun in the sack."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what Nick did to get Jack off the rock. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "Jack the Duck",
+    "paras": [
+     "Nick's duck is called Jack, and Jack has one favourite rock. He sits on it most of the day, facing the sun, ignoring everybody.",
+     "Calling him does nothing. Nick has tried it for a whole summer. Jack hears his name perfectly well and simply does not move.",
+     "What does work is the sack. Nick fetched it from the shed, put a scoop of mash in the bottom, and shook it once.",
+     "Jack was off the rock before the sound finished. He crossed the yard at speed and had his head in the sack within seconds.",
+     "Nick patted him on the back while he ate. Jack is not a difficult duck, Nick has decided. He just has conditions."
+    ],
+    "qs": [
+     [
+      "What is Jack's favourite spot?",
+      "One particular rock, facing the sun."
+     ],
+     [
+      "How long has Nick tried calling him?",
+      "A whole summer."
+     ],
+     [
+      "What does Nick mean by saying Jack 'has conditions'?",
+      "Jack will come, but only for the mash in the sack."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is Jack a good pet? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "Jack the Duck",
+    "paras": [
+     "Nick's duck is called Jack, and Jack has one rock. Not a favourite rock among several — one rock, selected years ago for reasons known only to him, and occupied for most of every daylight hour.",
+     "Calling his name accomplishes nothing whatsoever. Nick spent an entire summer establishing this. Jack hears perfectly. He turns his head very slightly, registers that he has been addressed, and then does not move, which is somehow worse than not hearing at all.",
+     "What works is the sack. It lives on a hook in the shed, and the sound it makes when it is shaken with mash in the bottom is, as far as Jack is concerned, the only noise in the world worth responding to.",
+     "Nick shook it once. Jack was off the rock before the sound had finished, across the yard at a speed that his usual behaviour gives no hint of, and head-down in the sack within seconds.",
+     "Nick patted his back while he ate. Jack is not a difficult duck, Nick has concluded after some years of study. He simply has conditions, and he sees no reason to pretend otherwise."
+    ],
+    "qs": [
+     [
+      "Why does the author correct 'favourite rock' to 'one rock'?",
+      "To show Jack uses only that rock and no other."
+     ],
+     [
+      "Why is Jack's response to his name 'worse than not hearing at all'?",
+      "Because he hears, registers it, and still refuses to move."
+     ],
+     [
+      "What is the only sound Jack responds to?",
+      "The sack being shaken with mash in the bottom."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a report on keeping ducks. Organise it into sections, develop each with facts and examples, and connect your ideas."
+    }
+   }
+  },
+  "og1-06": {
+   "g2": {
+    "title": "The Fox in the Box",
+    "paras": [
+     "Rex is a fox. Rex sits in a box at the back of the shed.",
+     "A quick bug got in the box. Rex did not want it in with him.",
+     "Rex got up. He did a quick dash at the bug.",
+     "The bug ran. Rex ran. The box tips on its top.",
+     "Now Rex has no box. He sits in a sack. Rex is a fox in a sack."
+    ],
+    "qs": [
+     [
+      "Where does Rex sit at the start?",
+      "Rex sits in a box at the back of the shed."
+     ],
+     [
+      "What got in the box?",
+      "A quick bug got in the box."
+     ],
+     [
+      "Why does Rex end up in a sack?",
+      "The box tipped over when he dashed at the bug."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what happened to the box, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Fox in the Box",
+    "paras": [
+     "Rex is a small red fox who lives at the back of our shed, in a wooden box that used to hold apples.",
+     "On Saturday a quick brown beetle got into the box with him. Rex does not share. He made that clear at once.",
+     "He sprang up, missed the beetle entirely, and knocked the whole box onto its side with a crash that pulled my mother to the window.",
+     "The beetle left. Rex stood in the wreckage looking extremely surprised, which is not a thing foxes are good at hiding.",
+     "He sleeps in a feed sack now. It is softer than the box was, and so far nothing has crawled into it."
+    ],
+    "qs": [
+     [
+      "What did the box used to hold?",
+      "Apples."
+     ],
+     [
+      "What happened when Rex sprang at the beetle?",
+      "He missed it and knocked the box onto its side."
+     ],
+     [
+      "Why is the sack better than the box?",
+      "It is softer and nothing has crawled into it."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should wild animals be allowed to live near a house? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Fox in the Box",
+    "paras": [
+     "Rex is a small red fox who has lived at the back of our shed since the spring before last, in a wooden crate that used to hold apples and still, faintly, smells of them.",
+     "On Saturday a beetle got in with him. It was an ordinary beetle, brown and unhurried, and it had no particular intentions, but Rex does not share his crate with anything and he established this position immediately.",
+     "He sprang. He missed by a considerable margin. His back legs caught the edge of the crate on the way down and the whole thing went over sideways with a crash that pulled my mother to the kitchen window in about two seconds.",
+     "The beetle, which had not asked for any of this, walked away unharmed. Rex stood in the wreckage of his own home looking profoundly surprised — an expression foxes are famously bad at concealing.",
+     "He has been sleeping in a feed sack ever since. It is softer than the crate, it holds the shape of him, and so far nothing whatsoever has crawled into it."
+    ],
+    "qs": [
+     [
+      "How long has Rex lived behind the shed?",
+      "Since the spring before last."
+     ],
+     [
+      "What does the author say about the beetle's intentions?",
+      "It had no particular intentions and had not asked for any of this."
+     ],
+     [
+      "What is funny about the phrase 'the wreckage of his own home'?",
+      "Rex destroyed his own crate himself while attacking a harmless beetle."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a report on foxes for a younger reader. Organise it into sections, develop each with facts and examples, and connect your ideas."
+    }
+   }
+  },
+  "og1-10": {
+   "g2": {
+    "title": "Six Hats",
+    "paras": [
+     "Mom has six hats. The hats sit on a shelf in the hall.",
+     "Jen picks a hat. It flops on her nose. She can not see.",
+     "Dad grabs the next hat. It fits on him, but it is red with dots.",
+     "The pups get the last hat. They drag it to the rug and sit on it.",
+     "Mom gets the hat back. She puts the hats on the shelf. Then she picks the red one with dots."
+    ],
+    "qs": [
+     [
+      "Where do the hats sit?",
+      "The hats sit on a shelf in the hall."
+     ],
+     [
+      "What happened when Jen picked a hat?",
+      "It flopped on her nose and she could not see."
+     ],
+     [
+      "Which hat does Mom pick at the end?",
+      "She picks the red one with dots."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Which hat is the best one? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "Six Hats",
+    "paras": [
+     "There are six hats on the shelf in our hall, and every one of them belongs to Mom. That has never stopped anybody.",
+     "Jen tried the straw one first. It came down over her nose and she walked into the door frame, which settled the question of whether it fit.",
+     "Dad took the next one off the shelf and put it on without looking. It fit him perfectly. It was also pink and covered in white dots, and he wore it for the rest of the afternoon.",
+     "The pups got the last hat off the chair somehow, dragged it onto the rug, and sat on it together, which is how most things in our house end.",
+     "Mom got it back, brushed it off, and put all six hats in a row on the shelf. Then she took down the pink one with the dots and wore it to the shops."
+    ],
+    "qs": [
+     [
+      "Who do all six hats belong to?",
+      "They all belong to Mom."
+     ],
+     [
+      "How did Jen find out the straw hat did not fit?",
+      "It came down over her nose and she walked into the door frame."
+     ],
+     [
+      "What does Mom do at the very end?",
+      "She takes the pink hat with dots and wears it to the shops."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write about a time something did not fit. Use time-order words and include something somebody said."
+    }
+   },
+   "g4": {
+    "title": "Six Hats",
+    "paras": [
+     "There are six hats on the shelf in our hall. All six belong to Mom. This has never once stopped anybody in this house from wearing them.",
+     "Jen went first, as Jen always does, and chose the straw one. It came down over her nose and most of her chin, and she walked directly into the door frame, which answered the question of fit without anybody having to say anything.",
+     "Dad reached up without looking and took the next one down. It fit him perfectly, which was unfortunate, because it was pink and covered in small white dots. He wore it for the remainder of the afternoon and refused every opportunity to take it off.",
+     "The pups managed the last hat on their own. We never established how they got it off the chair. They dragged it across the floor, arranged themselves on top of it, and went to sleep, which is how a great many objects in this house finish their lives.",
+     "Mom retrieved it, brushed it out, and set all six back in a row on the shelf in the order she likes them. Then she took the pink one with the dots back down and wore it to the shops, and nobody said a word."
+    ],
+    "qs": [
+     [
+      "Why does the author call Dad's perfect fit 'unfortunate'?",
+      "Because the hat was pink and covered in small white dots."
+     ],
+     [
+      "What does the author never establish about the pups?",
+      "How they got the hat off the chair."
+     ],
+     [
+      "Why might nobody say a word when Mom wears the pink hat?",
+      "Because everyone had already worn her hats without asking."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should people be allowed to borrow things without asking? Group your reasons, support them with details from the text, and end with a conclusion."
+    }
+   }
+  },
+  "og1-11": {
+   "g2": {
+    "title": "Ben's Bike",
+    "paras": [
+     "Ben's bike is red. It has a bell and a big back rack.",
+     "Ben's dad fits a lamp on the front. Now Ben can ride when it is dim.",
+     "Ben rings the bell at the top of the lane. His pal Tess runs out.",
+     "Tess's bike is black. The two bikes go fast down the lane.",
+     "At the end they stop. Ben's hands are cold, but Ben's grin is big."
+    ],
+    "qs": [
+     [
+      "What colour is Ben's bike?",
+      "Ben's bike is red."
+     ],
+     [
+      "What did Ben's dad fit on the front?",
+      "He fits a lamp on the front."
+     ],
+     [
+      "How do you know Ben had a good time?",
+      "Ben's grin is big at the end."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what Ben did, in order. Use first, next, and last, and end by telling how Ben felt."
+    }
+   },
+   "g3": {
+    "title": "Ben's Bike",
+    "paras": [
+     "Ben's bike is red, with a bell on the handlebars and a rack over the back wheel for carrying things that will not fit in a bag.",
+     "His dad fitted a lamp to the front of it in October, which meant Ben could keep riding after the afternoons started getting dark.",
+     "He rings the bell at the top of the lane every day on his way past. It is a signal, and Tess knows it. She comes out of her gate about four seconds later.",
+     "Tess's bike is black and a little bigger than Ben's. They go down the lane together with the wind pulling at their coats, and not one of them brakes until the bottom.",
+     "At the end Ben's hands are too cold to feel the handlebars properly. He does not mention this to anybody, because tomorrow he would like to do it again."
+    ],
+    "qs": [
+     [
+      "What is the rack on the back for?",
+      "Carrying things that will not fit in a bag."
+     ],
+     [
+      "Why did Ben's dad fit a lamp in October?",
+      "So Ben could keep riding after the afternoons got dark."
+     ],
+     [
+      "Why does Ben not mention his cold hands?",
+      "He wants to be allowed to do it again tomorrow."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how to ride a bike safely when it is dark. Group your points and use words like first, then, and finally."
+    }
+   },
+   "g4": {
+    "title": "Ben's Bike",
+    "paras": [
+     "Ben's bike is red and secondhand and the best thing he owns. It has a bell bolted to the handlebars, a rack over the back wheel for the things that will not fit in a bag, and a scrape down one side that was there when he got it.",
+     "His dad fitted a lamp to the front in October. It was a small job and it took him twenty minutes, and it meant that Ben could go on riding after the afternoons started closing in at four, which is not a small thing when you are eleven.",
+     "He rings the bell once at the top of the lane on the way past. It is not decoration. It is a signal, and Tess's front gate opens about four seconds later, every single time, without either of them ever having agreed on it.",
+     "Tess's bike is black and a size bigger. They go down the lane side by side with the wind pulling at their coats and the hedges going past too fast to see properly, and neither of them touches the brakes until the bottom, which is the whole point of the lane.",
+     "At the end Ben's hands are too cold to feel the handlebars. He does not mention this to his father, or to Tess, or to anybody, because tomorrow is Saturday and he would very much like to do it all again."
+    ],
+    "qs": [
+     [
+      "What three details does the author give about the bike in the first paragraph?",
+      "A bell on the handlebars, a rack over the back wheel, and a scrape down one side."
+     ],
+     [
+      "Why does the author say the bell 'is not decoration'?",
+      "Because it is a signal to Tess, who comes out four seconds later."
+     ],
+     [
+      "What is 'the whole point of the lane'?",
+      "Going down it without touching the brakes."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the ride down the lane from Tess's point of view. Establish the situation, give a clear sequence, and use sensory details."
+    }
+   }
+  },
+  "vccv": {
+   "g2": {
+    "title": "The Picnic Basket",
+    "paras": [
+     "Mom packs a basket. In it is a muffin, a napkin, and a bit of ham.",
+     "We walk to the sunset spot. Dad lugs the basket up the hill.",
+     "A rabbit sits in the grass. It is not upset. It just sits and blinks at us.",
+     "We sit on a blanket and eat. The muffin is the best bit.",
+     "The sun drops. We pack up the basket and walk back in the dim."
+    ],
+    "qs": [
+     [
+      "What is in the basket?",
+      "A muffin, a napkin, and a bit of ham."
+     ],
+     [
+      "What sits in the grass?",
+      "A rabbit sits in the grass."
+     ],
+     [
+      "What is the best bit of the picnic?",
+      "The muffin is the best bit."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write three facts about the picnic. Start with a topic sentence and finish with an ending."
+    }
+   },
+   "g3": {
+    "title": "The Picnic Basket",
+    "paras": [
+     "Mom packed the basket herself on Sunday: muffins, napkins, a slab of ham, and a jar of pickles nobody had asked for.",
+     "We walked out to the spot at the top of the hill where you can see the whole valley, and Dad carried the basket the entire way without complaining once.",
+     "There was a rabbit sitting in the grass when we arrived. It did not run. It watched us spread the blanket, decided we were not a problem, and went back to eating.",
+     "The muffins were the best part, and the pickles were, as predicted, left in the jar.",
+     "We packed up when the sun went down and walked home in the dim with the empty basket swinging between us."
+    ],
+    "qs": [
+     [
+      "What did Mom pack that nobody asked for?",
+      "A jar of pickles."
+     ],
+     [
+      "Why did the rabbit stay?",
+      "It decided we were not a problem."
+     ],
+     [
+      "What happened to the pickles?",
+      "They were left in the jar."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write about a meal outdoors. Use time-order words, describe what you could see, and include dialogue."
+    }
+   },
+   "g4": {
+    "title": "The Picnic Basket",
+    "paras": [
+     "Mom packed the basket herself on Sunday morning and would not let anybody check it. Muffins, napkins, a slab of ham wrapped in paper, and a jar of pickles that nobody in the history of this family has ever requested.",
+     "We walked out to the spot at the very top of the hill, where the whole valley opens up below you and the wind never quite stops. Dad carried the basket the entire way, both hands, no complaints, and set it down as if it had been nothing.",
+     "A rabbit was already there, sitting in the long grass about ten feet from where we spread the blanket. It did not run. It watched the whole operation with great attention, arrived at some private conclusion about our intentions, and went back to eating.",
+     "The muffins were the best thing in the basket and disappeared first. The ham went next. The pickles sat in their jar in the middle of the blanket for two hours, exactly as everybody had privately predicted, and came home again unopened.",
+     "We packed up as the sun dropped behind the far ridge and walked back down in the half dark, the empty basket swinging between us, nobody saying very much."
+    ],
+    "qs": [
+     [
+      "What does the author say about the pickles' history in the family?",
+      "Nobody has ever requested them."
+     ],
+     [
+      "How does the author show the hill is high and exposed?",
+      "The whole valley opens up below and the wind never quite stops."
+     ],
+     [
+      "What does 'arrived at some private conclusion' suggest about the rabbit?",
+      "That it decided for itself the people were not dangerous."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is it better to eat outdoors or indoors? Group your reasons, support them with details, and end with a conclusion."
+    }
+   }
+  },
+  "vccvce": {
+   "g2": {
+    "title": "The Cupcake Contest",
+    "paras": [
+     "Our class has a cupcake contest. One kid, one cupcake.",
+     "Mandy makes a cupcake with a lime on top. It is bumpy but it smells fine.",
+     "Hudson makes one that is the size of his fist. He had to use a big pan.",
+     "Miss Hopkins picks Mandy's lime cupcake. Mandy did not expect it at all.",
+     "Mandy cuts it up so that the whole class can taste it. That was the best bit."
+    ],
+    "qs": [
+     [
+      "How many cupcakes can each kid make?",
+      "One kid, one cupcake."
+     ],
+     [
+      "What is on top of Mandy's cupcake?",
+      "A lime is on top."
+     ],
+     [
+      "What does Mandy do when she wins?",
+      "She cuts it up so the whole class can taste it."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should the judge have picked Mandy's cupcake? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Cupcake Contest",
+    "paras": [
+     "Our class held a cupcake contest in May. One cupcake each, baked at home, judged on Friday by whoever happened to be free.",
+     "Mandy made one with a slice of lime set on top. It was lopsided and the icing had slid down one side, but the whole room could smell it from the door.",
+     "Hudson made one about the size of his own fist. He had used a cake tin instead of a cupcake tray and had decided, correctly, that nobody had said he could not.",
+     "The judge picked Mandy's. Mandy, who had entered mostly because everyone else was entering, looked completely astonished.",
+     "Then she cut it into about fifteen pieces so the whole class got a taste, which most of us agreed was the best part of the afternoon."
+    ],
+    "qs": [
+     [
+      "When was the contest judged?",
+      "On Friday."
+     ],
+     [
+      "Why was Hudson's cupcake so big?",
+      "He used a cake tin instead of a cupcake tray."
+     ],
+     [
+      "Why was Mandy astonished to win?",
+      "She had entered mostly because everyone else was entering."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a how-to for running a class contest. Group your steps and use words like first, then, and finally."
+    }
+   },
+   "g4": {
+    "title": "The Cupcake Contest",
+    "paras": [
+     "Our class held a cupcake contest in May. The rules were short: one cupcake each, baked at home, judged on Friday afternoon by whichever adult could be persuaded into the room.",
+     "Mandy's had a slice of lime set on the top. It was visibly lopsided, the icing had slid down one side and set there, and it was, without any question, the best thing in the room, because you could smell it from the doorway before you could see it.",
+     "Hudson's was approximately the size of his own fist. He had used a cake tin rather than a cupcake tray, on the entirely defensible grounds that nobody had said he could not, and he presented it with the confidence of a person who knows he has found a loophole.",
+     "The judge picked Mandy's, and Mandy looked astonished. She had entered because everybody else was entering, and she told me afterwards that she had assumed the lime was a mistake right up until the moment it was not.",
+     "Then she cut it into about fifteen uneven pieces so that the whole class got a taste. Most of us agreed afterwards that this was the best part of the afternoon, and several of us noticed that she gave the biggest piece to Hudson."
+    ],
+    "qs": [
+     [
+      "What were the three rules of the contest?",
+      "One cupcake each, baked at home, judged on Friday."
+     ],
+     [
+      "On what grounds did Hudson use a cake tin?",
+      "Nobody had said he could not."
+     ],
+     [
+      "What does giving Hudson the biggest piece show about Mandy?",
+      "That she was generous to the person she had beaten."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the contest from Hudson's point of view. Establish the situation, give a clear sequence, and use dialogue."
+    }
+   }
+  },
+  "og1-13": {
+   "g2": {
+    "title": "Unpack the Van",
+    "paras": [
+     "We are at the camp. Dad tells us to unpack the van.",
+     "I undo the straps. Ross unpacks the tent and the pots.",
+     "The tent is a mess. It is unfit for a dog, Ross says.",
+     "We unfold it on the grass. Bit by bit it stands up.",
+     "It is not a bad tent. It was just unpacked in a rush."
+    ],
+    "qs": [
+     [
+      "What does Dad tell them to do?",
+      "He tells them to unpack the van."
+     ],
+     [
+      "What does Ross say about the tent?",
+      "He says it is unfit for a dog."
+     ],
+     [
+      "Why did the tent look like a mess at first?",
+      "It was just unpacked in a rush."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell how the tent got put up, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "Unpack the Van",
+    "paras": [
+     "We got to the campsite at four and Dad told us to unpack the van before anybody sat down, which is the rule and has always been the rule.",
+     "I undid the straps on the roof box. Ross hauled out the tent, the pots, and a bag of things nobody could identify.",
+     "The tent, when it came out of its sack, looked like something that had been rolled up wet and left in a cupboard. Ross said it was unfit for a dog.",
+     "We unfolded it anyway, on the flattest bit of grass we could find, and pegged the corners one at a time until it slowly stood itself up.",
+     "It turned out to be a perfectly good tent. It had just been packed in a hurry at the end of last summer and left that way for a year."
+    ],
+    "qs": [
+     [
+      "What is the family rule on arriving?",
+      "Unpack the van before anybody sits down."
+     ],
+     [
+      "What did Ross say about the tent?",
+      "That it was unfit for a dog."
+     ],
+     [
+      "Why did the tent look so bad?",
+      "It had been packed in a hurry last summer and left for a year."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how to put up a tent. Group your steps in order and use topic words like pegs, poles and groundsheet."
+    }
+   },
+   "g4": {
+    "title": "Unpack the Van",
+    "paras": [
+     "We reached the campsite at four in the afternoon and Dad told us to unpack the van before anybody sat down. This is the rule. It has been the rule since before I can remember, and the one time we broke it we were still unpacking at nine o'clock at night in the rain.",
+     "I undid the straps on the roof box, which had seized up over the winter and had to be worked loose a notch at a time. Ross hauled out the tent, the pots, two folding chairs, and a canvas bag that nobody could identify and nobody was willing to open.",
+     "The tent came out of its sack in one damp lump. It looked like something that had been rolled up wet and forgotten in the back of a cupboard, which is exactly what had happened to it. Ross held it at arm's length and announced that it was unfit for a dog.",
+     "We unfolded it anyway. We found the flattest piece of grass on the site, spread it out, and pegged the corners one at a time, and after about twenty minutes of nothing happening at all it suddenly stood itself up and became a tent again.",
+     "It is a perfectly good tent. It had simply been packed in a hurry on the last morning of last summer, by people who wanted to be home, and then left exactly that way for a year."
+    ],
+    "qs": [
+     [
+      "What happened the one time the family broke the rule?",
+      "They were still unpacking at nine at night in the rain."
+     ],
+     [
+      "Why could the roof box straps not be undone quickly?",
+      "They had seized up over the winter."
+     ],
+     [
+      "Who does the author blame for the state of the tent?",
+      "The people who packed it in a hurry on the last morning of last summer."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should families have rules like unpacking before resting? Group your reasons, support them with details, and end with a conclusion."
     }
    }
   }

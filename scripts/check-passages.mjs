@@ -128,18 +128,20 @@ const PASS = JSON.parse(readFileSync("scripts/reading-passages.json", "utf8"));
 /**
  * What each grade may read.
  *
- * Second grade is pinned to its own lesson. Third and fourth are given a
- * floor: wherever the lesson sits, a third grader may use anything taught
- * by the end of Level 2 and a fourth grader anything taught by the end of
- * Level 3. Without that floor a fourth-grade passage on short a could not
- * contain the word "she", which is absurd.
+ * Second grade is pinned to its own lesson, because the youngest readers
+ * are the ones a decodable text is really for. Third and fourth are given
+ * a floor instead: wherever the lesson sits, a third grader may use
+ * anything taught by the end of Level 3 and a fourth grader anything
+ * taught by the end of Level 4, since the levels track the grades. Without
+ * that floor a fourth-grade passage on short a could not contain the word
+ * "she", and a third-grade one could not contain "little" or "because".
  */
 const lastOf = (prefix) => {
   let best = -1;
   SK.forEach((r, n) => { if (String(r[2]) === prefix) best = Math.max(best, n); });
   return best;
 };
-const FLOOR = { g2: -1, g3: lastOf("Level 2"), g4: lastOf("Level 3") };
+const FLOOR = { g2: -1, g3: lastOf("Level 3"), g4: lastOf("Level 4") };
 const GRADE_NAME = { g2: "2nd", g3: "3rd", g4: "4th" };
 // The three kinds of writing these grades are taught, and the formats they
 // practise them through.
