@@ -2162,5 +2162,528 @@
    }
   ],
   "note": "The connotation is the lesson, i.e. a word that \"assigns blame to an organism that merely arrived.\" Ask what non-native loses as well as what it gains."
+ },
+ {
+  "id": "g6-21",
+  "grade": 6,
+  "n": 21,
+  "title": "The Shape of a Science Article",
+  "standard": "RI.6.5",
+  "standard_text": "Standard: Analyze how a particular sentence, paragraph, chapter, or section fits into the overall structure of a text and contributes to the development of the ideas.\n Spiral: RI.6.2 central idea · RI.6.3 development · RI.6.6 point of view · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1030,
+   "words": 256,
+   "labelled_words": 256,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A research paper looks like prose and works like a form. Every one has the same five parts in the same order, and a scientist reading it does not start at the beginning."
+    },
+    {
+     "label": "B",
+     "text": "The abstract comes first and is written last. It is a compressed version of the whole paper, and most readers decide from it alone whether to read any further."
+    },
+    {
+     "label": "C",
+     "text": "The introduction narrows. It opens with what the field already knows, moves to what it does not, and ends with the one question this paper will answer. A reader can usually find that question in the last sentence of the section."
+    },
+    {
+     "label": "D",
+     "text": "Methods is the section nobody reads for pleasure and the one that decides whether the paper counts. It exists so that another lab can run the same study, and a method too vague to repeat is a finding that cannot be checked."
+    },
+    {
+     "label": "E",
+     "text": "Results states what happened and nothing else. The discussion, which comes after, is where the authors are allowed to say what they think it means. Keeping those apart is the whole reason for the split."
+    },
+    {
+     "label": "F",
+     "text": "The limitations paragraph sits near the end of the discussion. It is where the authors name what their study cannot show, and a paper without one is usually a paper making a larger claim than it earned."
+    },
+    {
+     "label": "G",
+     "text": "So the order is an argument about trust. Each section does one job, the claims come after the evidence, and anything the authors want you to believe can be traced back to the part where they showed their work."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 810,
+   "words": 156,
+   "labelled_words": 156,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A research paper looks like prose. It works like a form. Every one has the same five parts. They come in the same order."
+    },
+    {
+     "label": "B",
+     "text": "The abstract comes first. It is written last. It is a short version of the whole paper. Most readers stop there."
+    },
+    {
+     "label": "C",
+     "text": "The introduction narrows. It starts with what the field knows. Then it names what the field does not know. The last sentence gives the question."
+    },
+    {
+     "label": "D",
+     "text": "Methods is dull and it matters most. It lets another lab run the same study. A method too vague to repeat cannot be checked."
+    },
+    {
+     "label": "E",
+     "text": "Results says what happened. That is all it says. The discussion comes next. There the authors may say what it means."
+    },
+    {
+     "label": "F",
+     "text": "The limitations paragraph sits near the end. The authors name what their study cannot show. A paper without one is usually claiming too much."
+    },
+    {
+     "label": "G",
+     "text": "So the order is about trust. Each section has one job. The claims come after the evidence."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why does the methods section matter even though nobody reads it for pleasure?",
+    "a": "It exists so that another lab can run the same study, and a method too vague to repeat is a finding that cannot be checked."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph E (i.e. results against discussion) and paragraph F (i.e. limitations).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how a research paper is organized and why.",
+    "a": "It has five parts in a fixed order: an abstract written last, an introduction that narrows to one question, methods that let another lab repeat the study, results that state only what happened, and a discussion where the authors say what it means. The order keeps the claims after the evidence so a reader can check them."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "abstract: the compressed version of a whole paper, placed first and written last.\nlimitations: the paragraph where authors name what their study cannot show.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between splitting results from discussion and what a reader can trust.",
+    "a": "Results states what happened and nothing else, and the discussion is where the authors are allowed to say what they think it means, so keeping those apart lets a reader separate the evidence from the interpretation."
+   }
+  ],
+  "note": "This is RI.6.5 at the scale of a whole text. Ask which paragraph could move and which could not, i.e. why limitations cannot come before results."
+ },
+ {
+  "id": "g6-22",
+  "grade": 6,
+  "n": 22,
+  "title": "The Turn in the Middle",
+  "standard": "RI.6.5",
+  "standard_text": "Standard: Analyze how a particular sentence, paragraph, chapter, or section fits into the overall structure of a text and contributes to the development of the ideas.\n Spiral: RI.6.2 central idea · RI.6.3 development · RI.6.6 point of view · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1010,
+   "words": 199,
+   "labelled_words": 199,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Most arguments worth reading change direction once. The writer builds a case, then stops and takes the other side seriously, then answers it. That stop is the turn, and it usually arrives in the middle."
+    },
+    {
+     "label": "B",
+     "text": "You can find it by its words. However, admittedly, it is true that, critics argue — each one announces that the next sentence will not continue the paragraph before it."
+    },
+    {
+     "label": "C",
+     "text": "The turn is not a weakness. A reader who has already thought of the objection will stop trusting a writer who pretends it does not exist, so naming it first is what keeps them reading."
+    },
+    {
+     "label": "D",
+     "text": "What the writer does after the turn is the test. A strong piece concedes the part that is actually true and then shows why the main claim survives anyway. A weak one restates the objection and calls it silly."
+    },
+    {
+     "label": "E",
+     "text": "Remove the turn and the piece gets shorter and worse. It becomes a list of reasons for one side, which persuades nobody who did not already agree."
+    },
+    {
+     "label": "F",
+     "text": "So when you read an argument, find the turn first. It tells you what the writer thinks the strongest case against them is, and whether they were willing to say it out loud."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 790,
+   "words": 156,
+   "labelled_words": 156,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Most good arguments change direction once. The writer builds a case. Then the writer takes the other side seriously. Then the writer answers it. That stop is the turn."
+    },
+    {
+     "label": "B",
+     "text": "You can find it by its words. However. Admittedly. Critics argue. Each one warns you that the next sentence will not agree with the last."
+    },
+    {
+     "label": "C",
+     "text": "The turn is not a weakness. A reader may have thought of the objection already. If the writer hides it, the reader stops trusting the writer."
+    },
+    {
+     "label": "D",
+     "text": "What comes after the turn is the test. A strong piece admits the part that is true. Then it shows the main claim still holds. A weak piece just calls the objection silly."
+    },
+    {
+     "label": "E",
+     "text": "Take out the turn and the piece gets worse. It becomes a list of reasons for one side. It persuades nobody."
+    },
+    {
+     "label": "F",
+     "text": "So find the turn first. It shows what the writer fears most. It also shows whether they would say it out loud."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What words signal that a turn is coming?",
+    "a": "However, admittedly, it is true that, and critics argue each announce that the next sentence will not continue the paragraph before it."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. why the turn builds trust) and paragraph D (i.e. what the writer does after it).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what the turn is and what it does for an argument.",
+    "a": "The turn is the point where a writer stops building their case, states the other side seriously, and answers it. It usually comes in the middle and is marked by words such as however or critics argue. Naming the objection keeps a reader who already thought of it, and what the writer does after the turn shows whether the argument is strong."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "concede: to admit that part of the other side's case is true.\nobjection: the strongest reason somebody might disagree with the claim.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between hiding an objection and losing a reader.",
+    "a": "A reader who has already thought of the objection will stop trusting a writer who pretends it does not exist, so naming it first is what keeps them reading."
+   }
+  ],
+  "note": "Have students mark the turn in a real opinion column. The piece with no turn in it is the one worth discussing."
+ },
+ {
+  "id": "g6-23",
+  "grade": 6,
+  "n": 23,
+  "title": "Why the Timeline Comes First",
+  "standard": "RI.6.5",
+  "standard_text": "Standard: Analyze how a particular sentence, paragraph, chapter, or section fits into the overall structure of a text and contributes to the development of the ideas.\n Spiral: RI.6.2 central idea · RI.6.3 development · RI.6.6 point of view · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1000,
+   "words": 202,
+   "labelled_words": 202,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Open a history chapter and the first thing on the page is usually a timeline. It is easy to skip, and skipping it is why the chapter gets harder three pages later."
+    },
+    {
+     "label": "B",
+     "text": "A timeline does one job the prose cannot. It fixes the order of events in a single glance, so the reader is not holding dates in mind while also following an argument."
+    },
+    {
+     "label": "C",
+     "text": "History writing rarely runs in order. A chapter may open in 1945, jump back thirty years for causes, and return. That structure is deliberate, and it only works if the reader has the straight sequence somewhere to check against."
+    },
+    {
+     "label": "D",
+     "text": "The spacing carries information too. Four events in one year and then a gap of twenty tells you where the pressure was, which a list of dates in a paragraph would hide."
+    },
+    {
+     "label": "E",
+     "text": "What a timeline leaves out is the argument. It will tell you that two things happened in order and never that one caused the other, and a reader who treats sequence as cause has misread it."
+    },
+    {
+     "label": "F",
+     "text": "So read it twice. Once before the chapter, to get the order, and once after, when the dates have names and reasons attached and the gaps have become the interesting part."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 780,
+   "words": 139,
+   "labelled_words": 139,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Open a history chapter. The first thing is often a timeline. It is easy to skip. Skipping it makes the chapter harder later."
+    },
+    {
+     "label": "B",
+     "text": "A timeline does one job the prose cannot. It fixes the order in one glance. Then the reader is not holding dates in mind."
+    },
+    {
+     "label": "C",
+     "text": "History writing rarely runs in order. A chapter may start in 1945. Then it jumps back for causes. The reader needs the straight order to check against."
+    },
+    {
+     "label": "D",
+     "text": "The spacing tells you something too. Four events in one year, then a gap of twenty. That shows where the pressure was."
+    },
+    {
+     "label": "E",
+     "text": "A timeline leaves out the argument. It shows that two things happened in order. It never shows that one caused the other."
+    },
+    {
+     "label": "F",
+     "text": "So read it twice. Read it before the chapter for the order. Read it after, when the dates have reasons attached."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What job does a timeline do that the prose cannot?",
+    "a": "It fixes the order of events in a single glance, so the reader is not holding dates in mind while also following an argument."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. the spacing) and paragraph E (i.e. what a timeline leaves out).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize why a history chapter puts a timeline before the prose.",
+    "a": "History writing rarely runs in order, so a reader needs the straight sequence somewhere to check against while the chapter jumps between years. The timeline fixes that order at a glance and its spacing shows where events clustered, but it cannot show cause, so it is worth reading both before and after the chapter."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "sequence: the order in which events actually happened.\nchronological: arranged in time order, which a timeline is and a chapter often is not.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the gaps on a timeline and where the pressure was.",
+    "a": "Four events in one year and then a gap of twenty tells you where the pressure was, which a list of dates in a paragraph would hide."
+   }
+  ],
+  "note": "Paragraph E is the one to hold on to, i.e. \"a reader who treats sequence as cause has misread it.\" That error is the whole reason the section exists."
+ },
+ {
+  "id": "g6-24",
+  "grade": 6,
+  "n": 24,
+  "title": "Where a Lab Report Ends",
+  "standard": "RI.6.5",
+  "standard_text": "Standard: Analyze how a particular sentence, paragraph, chapter, or section fits into the overall structure of a text and contributes to the development of the ideas.\n Spiral: RI.6.2 central idea · RI.6.3 development · RI.6.6 point of view · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1020,
+   "words": 209,
+   "labelled_words": 209,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Students are often taught that a lab report ends with a conclusion, and then taught to write the conclusion as a summary. Those two instructions pull in opposite directions."
+    },
+    {
+     "label": "B",
+     "text": "A summary repeats. A conclusion decides. The last section of a report is where the writer answers the question the first section asked, and a reader should be able to read those two paragraphs alone and understand the point."
+    },
+    {
+     "label": "C",
+     "text": "Which means the conclusion is written against the hypothesis, not against the data. If the opening predicted that the salt water would freeze later, the ending says whether it did, in those words."
+    },
+    {
+     "label": "D",
+     "text": "The sentence that makes a conclusion work is usually the one admitting what went wrong. A thermometer read in a warm room, a timer started late — naming it is not a confession, it is the reason the number came out as it did."
+    },
+    {
+     "label": "E",
+     "text": "A conclusion that ends with what to do next is stronger than one that ends with a result. The next experiment is the evidence that the writer understood their own."
+    },
+    {
+     "label": "F",
+     "text": "So the shape is a circle. The question at the front and the answer at the back hold the report together, and everything between them is there to get from one to the other."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 800,
+   "words": 141,
+   "labelled_words": 141,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Students are told a lab report ends with a conclusion. They are also told to write a summary. Those two instructions pull apart."
+    },
+    {
+     "label": "B",
+     "text": "A summary repeats. A conclusion decides. The last section answers the question the first section asked. A reader should understand the point from those two parts alone."
+    },
+    {
+     "label": "C",
+     "text": "So the conclusion is written against the hypothesis. The opening may predict that salt water freezes later. The ending says whether it did."
+    },
+    {
+     "label": "D",
+     "text": "The best sentence often admits what went wrong. A thermometer read in a warm room. A timer started late. That is not a confession. It explains the number."
+    },
+    {
+     "label": "E",
+     "text": "A conclusion that says what to do next is stronger. The next experiment shows the writer understood this one."
+    },
+    {
+     "label": "F",
+     "text": "So the shape is a circle. The question at the front and the answer at the back hold the report together."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is the difference between a summary and a conclusion?",
+    "a": "A summary repeats and a conclusion decides, because the conclusion answers the question the first section asked."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. writing against the hypothesis) and paragraph D (i.e. naming what went wrong).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what the last section of a lab report is for.",
+    "a": "It answers the question the opening asked, written against the hypothesis in the same words, so the first and last sections can be read alone and still make sense. It should name what went wrong and say what to do next, which makes the report a circle from question to answer."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "hypothesis: the prediction the report sets out to test.\nconclusion: the section that decides the question rather than repeating the report.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the first section of a report and the last one.",
+    "a": "The last section answers the question the first section asked, so the question at the front and the answer at the back hold the report together and everything between them is there to get from one to the other."
+   }
+  ],
+  "note": "Ask students to read only the first and last paragraphs of a real report. If the point does not survive that, the conclusion was a summary."
+ },
+ {
+  "id": "g6-25",
+  "grade": 6,
+  "n": 25,
+  "title": "The Sidebar and the Story",
+  "standard": "RI.6.5",
+  "standard_text": "Standard: Analyze how a particular sentence, paragraph, chapter, or section fits into the overall structure of a text and contributes to the development of the ideas.\n Spiral: RI.6.2 central idea · RI.6.3 development · RI.6.6 point of view · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1040,
+   "words": 217,
+   "labelled_words": 217,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A news feature often carries a box beside the main text, set in a different typeface and a tinted panel. The box is not an interruption. It is doing work the article cannot do without stopping."
+    },
+    {
+     "label": "B",
+     "text": "The main story has to move. A sidebar holds the material that would break that movement: a definition, a short history, the numbers behind a claim, a second voice that does not fit the narrative."
+    },
+    {
+     "label": "C",
+     "text": "Where it sits is a decision. A sidebar placed beside the paragraph it serves gets read; the same box at the end of the article usually does not, and editors argue about this."
+    },
+    {
+     "label": "D",
+     "text": "A sidebar can also carry the part the writer is least sure of. A disputed figure, a claim from one source only — putting it in a box marks it as separate from the reporting without hiding it."
+    },
+    {
+     "label": "E",
+     "text": "That means reading the box changes the article. A story about a factory closing reads one way beside a sidebar on the town's unemployment rate and another beside one on the owner's other plants."
+    },
+    {
+     "label": "F",
+     "text": "So the question to ask is not what the sidebar says but why it is a sidebar. Something was kept out of the main column on purpose, and what it was tells you how the writer wanted the story to run."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 820,
+   "words": 166,
+   "labelled_words": 166,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A news feature often has a box beside the main text. It is set in a different typeface. The box is not an interruption. It does work the article cannot."
+    },
+    {
+     "label": "B",
+     "text": "The main story has to move. A sidebar holds what would break that movement. A definition. A short history. The numbers behind a claim."
+    },
+    {
+     "label": "C",
+     "text": "Where it sits is a decision. A sidebar beside the paragraph it serves gets read. The same box at the end usually does not."
+    },
+    {
+     "label": "D",
+     "text": "A sidebar can hold the part the writer is least sure of. A disputed figure. A claim from one source. The box marks it as separate without hiding it."
+    },
+    {
+     "label": "E",
+     "text": "So reading the box changes the article. A story about a factory closing reads one way beside the town's jobless rate. It reads another beside the owner's other plants."
+    },
+    {
+     "label": "F",
+     "text": "So ask why it is a sidebar. Something was kept out of the main column on purpose. What it was tells you how the writer wanted the story to run."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What kind of material goes in a sidebar?",
+    "a": "A definition, a short history, the numbers behind a claim, or a second voice that does not fit the narrative — material that would break the movement of the main story."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. where the box sits) and paragraph D (i.e. what the writer is least sure of).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what a sidebar does and why its placement matters.",
+    "a": "A sidebar holds material that would stop the main story moving, such as a definition, a short history or the numbers behind a claim, and it can mark a disputed figure as separate without hiding it. A box beside the paragraph it serves gets read and one at the end usually does not, so placement decides whether it changes the article at all."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "sidebar: a boxed section beside an article carrying material that would interrupt it.\nnarrative: the line the main story follows from beginning to end.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between what is in the sidebar and how the main story reads.",
+    "a": "A story about a factory closing reads one way beside a sidebar on the town's unemployment rate and another beside one on the owner's other plants, so the box changes the article."
+   }
+  ],
+  "note": "Paragraph F turns the standard into a habit, i.e. ask \"not what the sidebar says but why it is a sidebar.\" That question works on any text with a box in it."
  }
 ]
