@@ -57,7 +57,7 @@ const LAVENDER = "#B87DFF";
 const LAVENDER_TEXT = "#6B2FB5";
 
 const BUILDER = "/api/materials/science-of-reading/lesson-builder.html";
-const RESOURCES = "/api/materials/science-of-reading/resources.html";
+const RESOURCES = "/science-of-reading/resources";
 // Counted from the data the page is generated from, so the blurb cannot
 // drift away from what is actually on it.
 const MYSTERY_COUNT = RESOURCE_COUNTS.mysteries;
