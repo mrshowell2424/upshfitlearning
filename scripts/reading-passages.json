@@ -2585,6 +2585,1038 @@
      "task": "Write about something that arrived late or was lost and found. Establish the situation, give a clear sequence, and use sensory details."
     }
    }
+  },
+  "og2-14": {
+   "g2": {
+    "title": "Hopping to the Finish",
+    "paras": [
+     "Our school had a hopping race on sports day.",
+     "You had to hop the whole way on one leg. Stopping meant starting again.",
+     "Robbie was winning. Then he got the giggles and fell sideways in the grass.",
+     "He got up and kept hopping. He was grinning the whole time.",
+     "He came last, and he was the only one still hopping at the end."
+    ],
+    "qs": [
+     [
+      "What was the rule of the race?",
+      "You had to hop the whole way on one leg, and stopping meant starting again."
+     ],
+     [
+      "Why did Robbie fall?",
+      "He got the giggles and fell sideways in the grass."
+     ],
+     [
+      "Why is coming last not the whole story?",
+      "He was the only one still hopping at the end."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what happened in the race, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "Hopping to the Finish",
+    "paras": [
+     "Our school holds a hopping race every sports day, and nobody can remember who started it or why.",
+     "The rules are simple and strictly enforced. One leg, the whole way, and if you put the other foot down you go back and begin again.",
+     "Robbie was winning it comfortably until about halfway, when he got the giggles and went over sideways into the grass at some speed.",
+     "He got up, went back to the start as the rules demand, and began hopping again, grinning the entire time.",
+     "He finished last by a long way. He was also the only person on that field still hopping when he crossed the line."
+    ],
+    "qs": [
+     [
+      "How long has the race been going?",
+      "Nobody can remember who started it or why."
+     ],
+     [
+      "What happens if you put the other foot down?",
+      "You go back and begin again."
+     ],
+     [
+      "How did Robbie finish?",
+      "Last by a long way, but still hopping."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should Robbie have gone back to the start? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "Hopping to the Finish",
+    "paras": [
+     "Our school holds a hopping race on sports day every June. Nobody can remember who began the tradition, why anybody thought it was a good idea, or when it became the event that everybody actually turns up to watch.",
+     "The rules are short and they are enforced without mercy by whichever teacher is holding the whistle. One leg. The whole distance. If the other foot touches the ground at any point you return to the start line and begin again from nothing.",
+     "Robbie was winning it comfortably, perhaps fifteen metres clear, when at about the halfway mark he caught somebody's eye in the crowd and got the giggles, and went over sideways into the grass at a speed that made several parents stand up.",
+     "He picked himself up. He walked all the way back to the start line, because those are the rules and he was not going to be the person who ignored them, and then he set off again, grinning, with the entire field already far ahead of him.",
+     "He finished last by a considerable distance. He was also the only competitor on that field still hopping when he crossed the line, and the noise when he did was louder than it had been for the winner."
+    ],
+    "qs": [
+     [
+      "What does the author say the race has become?",
+      "The event that everybody actually turns up to watch."
+     ],
+     [
+      "Why did Robbie walk back to the start?",
+      "Those are the rules and he would not be the person who ignored them."
+     ],
+     [
+      "What does the noise at the end tell you?",
+      "The crowd admired finishing honestly more than winning."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should rules always be followed exactly? Group your reasons, support them with details from the text, and end with a conclusion."
+    }
+   }
+  },
+  "og3-01": {
+   "g2": {
+    "title": "The Giant of the Village",
+    "paras": [
+     "In the centre of our village there is a huge stone giant.",
+     "The story says he was kind. He carried the stones for the arch on his own.",
+     "The city sent men to help, but by the time they came the arch was finished.",
+     "Once a year we place a ring of lamps round the giant.",
+     "My gran says the giant is a nice story. I think a nice story can still be real."
+    ],
+    "qs": [
+     [
+      "Where is the stone giant?",
+      "In the centre of our village."
+     ],
+     [
+      "What did the giant do?",
+      "He carried the stones for the arch on his own."
+     ],
+     [
+      "What do the villagers do once a year?",
+      "They place a ring of lamps round the giant."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is the story of the giant true? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Giant of the Village",
+    "paras": [
+     "In the centre of our village there is a stone figure of a giant, twice as tall as a person, facing the bridge.",
+     "The story goes that he was gentle, and that he carried every stone for that bridge down from the ridge himself, one at a time, over a single winter.",
+     "The city sent a gang of men to help with the work. By the time they arrived the bridge was finished and the giant had gone.",
+     "Once a year the village places a circle of candles around the base of the stone figure and leaves them to burn down.",
+     "My gran says it is a nice story and nothing more. I have never been able to see why a nice story cannot also be a real one."
+    ],
+    "qs": [
+     [
+      "How tall is the stone figure?",
+      "Twice as tall as a person."
+     ],
+     [
+      "What happened when the city's men arrived?",
+      "The bridge was finished and the giant had gone."
+     ],
+     [
+      "What does Gran think of the story?",
+      "That it is a nice story and nothing more."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the winter the giant built the bridge. Use time-order words and describe what the work was like."
+    }
+   },
+   "g4": {
+    "title": "The Giant of the Village",
+    "paras": [
+     "In the centre of our village, facing the bridge, there is a stone stone figure of a giant. It stands twice the height of a grown person and it has been there longer than any record the parish council can produce.",
+     "The story, which everybody here is told before they are six, is that he was gentle. That he carried every single stone for that bridge down from the ridge himself, one at a time, across the course of one winter, and that he did it because the village needed a crossing and nobody else was going to build one.",
+     "The city, when it finally noticed, sent a gang of men up with carts and ropes to assist. By the time they arrived at the top of the valley the bridge was standing, the last stone was in place, and the giant was nowhere to be found.",
+     "Once a year, on the first Sunday in December, the village sets a circle of candles around the base of the stone figure and lets them burn right down. Nobody has ever decided this. It simply happens.",
+     "My gran says it is a nice story and that is all it is. I have never once been able to work out why a nice story should not also be a true one, and I have decided not to ask her again."
+    ],
+    "qs": [
+     [
+      "Why does the story say the giant built the bridge?",
+      "The village needed a crossing and nobody else was going to build one."
+     ],
+     [
+      "What is unusual about the December candles?",
+      "Nobody has ever decided it — it simply happens."
+     ],
+     [
+      "Why has the narrator decided not to ask Gran again?",
+      "Because they disagree and do not want the argument."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a report on a local story or landmark. Organise it into sections, develop each with facts and examples, and connect your ideas."
+    }
+   }
+  },
+  "og3-02": {
+   "g2": {
+    "title": "The Badger at the Edge",
+    "paras": [
+     "There is a badger that lives at the edge of our garden, under the hedge.",
+     "We never see it. We only see the ridge of earth it pushes up each night.",
+     "Dad put a camera by the bridge over the ditch to catch it.",
+     "For six nights there was nothing. On the seventh the badger walked straight past the lens.",
+     "We have the picture on the fridge now. It is not a good picture. We do not care."
+    ],
+    "qs": [
+     [
+      "Where does the badger live?",
+      "At the edge of our garden, under the hedge."
+     ],
+     [
+      "What did Dad do to catch it?",
+      "He put a camera by the bridge over the ditch."
+     ],
+     [
+      "How many nights was there nothing?",
+      "Six nights."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write three facts about the badger from the story. Start with a topic sentence and finish with an ending."
+    }
+   },
+   "g3": {
+    "title": "The Badger at the Edge",
+    "paras": [
+     "There is a badger living at the edge of our garden, somewhere under the hedge where the ground drops away towards the ditch.",
+     "We have never once seen it. All we ever see is the fresh ridge of earth it pushes up overnight, in a slightly different place each morning.",
+     "In August Dad set up a camera on a post beside the little bridge over the ditch, pointed at the gap in the hedge, and left it there.",
+     "For six nights it recorded absolutely nothing except a very bored-looking fox. On the seventh the badger walked straight past the lens without glancing at it.",
+     "The picture is on the fridge now. It is blurred, it is off-centre, and most of the badger is out of frame. Nobody in this house cares in the slightest."
+    ],
+    "qs": [
+     [
+      "What is the only sign of the badger?",
+      "The fresh ridge of earth it pushes up overnight."
+     ],
+     [
+      "What did the camera record for six nights?",
+      "Nothing except a very bored-looking fox."
+     ],
+     [
+      "What is wrong with the picture?",
+      "It is blurred, off-centre, and most of the badger is out of frame."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the seventh night from the badger's point of view. Use time-order words and describe what it could smell and hear."
+    }
+   },
+   "g4": {
+    "title": "The Badger at the Edge",
+    "paras": [
+     "There is a badger living at the edge of our garden, somewhere beneath the hedge at the point where the ground gives up and drops away towards the ditch. We have known about it for three years.",
+     "In all that time we have never once seen it. What we see is the evidence: a fresh ridge of turned earth pushed up overnight, in a slightly different place every morning, as though it were working its way along the hedge to a plan it has not shared with us.",
+     "In August Dad fixed a camera to a post beside the small bridge over the ditch, aimed it squarely at the gap in the hedge where the ridge usually appeared, and left it out there for a week.",
+     "For six consecutive nights it recorded nothing whatsoever except a fox, which came past at approximately the same time each night and looked, in every single frame, profoundly unimpressed by the whole arrangement.",
+     "On the seventh night the badger walked straight past the lens without so much as turning its head. The picture is on the fridge now. It is blurred, it is badly off-centre, and a good third of the animal is outside the frame entirely. Nobody in this house cares even slightly."
+    ],
+    "qs": [
+     [
+      "How long have they known about the badger?",
+      "Three years."
+     ],
+     [
+      "What does the author suggest about the badger's plan?",
+      "That it is working along the hedge to a plan it has not shared."
+     ],
+     [
+      "How did the fox appear in every frame?",
+      "Profoundly unimpressed by the whole arrangement."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is it better to watch wildlife with a camera or with your own eyes? Group your reasons, support them with details, and end with a conclusion."
+    }
+   }
+  },
+  "og3-03": {
+   "g2": {
+    "title": "The Robot in the Basement",
+    "paras": [
+     "Our friend Sam built a robot in his basement. He began it in April.",
+     "It has a motor, a silver body, and a tiny radio inside its head.",
+     "It cannot walk. It can only spin slowly on the spot and hum.",
+     "I think it is the finest thing I have ever seen. Sam is not so sure.",
+     "He says a robot that only spins is a lamp. I say it is a robot that likes to dance."
+    ],
+    "qs": [
+     [
+      "Where did Sam build the robot?",
+      "In his basement."
+     ],
+     [
+      "What is inside the robot's head?",
+      "A tiny radio."
+     ],
+     [
+      "What does Sam say the robot really is?",
+      "He says a robot that only spins is a lamp."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is the robot a real robot? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Robot in the Basement",
+    "paras": [
+     "My uncle began house a robot in his basement in April, and by the middle of August it was finished, or finished enough to look at.",
+     "It stands about the size of a chair. It has a motor, a silver body made from a bin lid, and a tiny radio bolted inside its head.",
+     "It cannot walk. It has never been able to walk and my uncle has stopped pretending it will. What it can do is rotate slowly on the spot and hum.",
+     "I think it is the finest object I have ever been shown. My uncle is a great deal less certain and keeps apologising for it.",
+     "He says that a robot which only spins is really just a lamp. I say that it is a robot that happens to like dancing, and so far not one of us has given way."
+    ],
+    "qs": [
+     [
+      "How long did the robot take to build?",
+      "From April to the middle of August."
+     ],
+     [
+      "What is the silver body made from?",
+      "A bin lid."
+     ],
+     [
+      "What is the disagreement about?",
+      "Whether a robot that only spins is really a lamp or a robot that likes dancing."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how to build something simple from things you already have. Group your steps and use words like first, then, and finally."
+    }
+   },
+   "g4": {
+    "title": "The Robot in the Basement",
+    "paras": [
+     "My uncle began house a robot in his basement in April. By the middle of August it was finished, or at least finished to the point where he would let people come down and look at it, which is not quite the same thing.",
+     "It stands about the size of a kitchen chair. It has a motor he took out of a broken fan, a silver body hammered out of a bin lid, and a tiny radio bolted inside the head so that it makes a faint crackling noise even when it is switched off.",
+     "It cannot walk. It has never been able to walk, and some time in June my uncle stopped pretending that it was going to. What it can do, and does, is rotate very slowly on the spot while humming, which it will keep up for as long as you leave it plugged in.",
+     "I think it is the finest object anybody has ever shown me. My uncle is a great deal less certain, and he has apologised for it every single time I have been down there, which cannot be good for a person.",
+     "He maintains that a robot which only spins is, in honest terms, a lamp. I maintain that it is a robot that happens to enjoy dancing. Not one of us has moved an inch on this in four months and I do not expect that to change."
+    ],
+    "qs": [
+     [
+      "Where did the motor come from?",
+      "A broken fan."
+     ],
+     [
+      "Why does the robot crackle when switched off?",
+      "There is a tiny radio bolted inside its head."
+     ],
+     [
+      "What does the author imply about the uncle apologising?",
+      "That it cannot be good for him to keep running down his own work."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write about making something that did not turn out as planned. Establish the situation, give a clear sequence, and use dialogue."
+    }
+   }
+  },
+  "og3-04": {
+   "g2": {
+    "title": "The Noise in the Attic",
+    "paras": [
+     "There was a noise in the attic all the fall. A scratching, and then a pause.",
+     "Mum said it was the house settling. Dad said it was a bird.",
+     "I thought it was something else. I had heard a small voice up there.",
+     "In October we found them: four kittens in a box of straw, and a thin grey cat guarding the lot.",
+     "They live in the kitchen now. Nobody mentions the house settling any more."
+    ],
+    "qs": [
+     [
+      "How long was there a noise in the attic?",
+      "All the fall."
+     ],
+     [
+      "What did Mum and Dad each think it was?",
+      "Mum said the house settling and Dad said a bird."
+     ],
+     [
+      "What was really up there?",
+      "Four kittens in a box of straw and a thin grey cat."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell how the kittens were found, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Noise in the Attic",
+    "paras": [
+     "There was a noise in the attic for most of that the fall. A scratching sound, then a long pause, then the scratching again.",
+     "Mum was certain it was the house settling, which is the answer she gives to every sound a house makes. Dad was equally certain it was a bird that had got in under the slates.",
+     "I thought they were both avoiding the obvious. Twice, late on, I had heard something that was unmistakably a small voice.",
+     "We went up with a torch on the first Saturday in October and found four kittens in a box of straw behind the water tank, with a thin grey cat sitting in front of them refusing to move.",
+     "All five of them live in the kitchen now. Nobody in this house has mentioned the house settling since."
+    ],
+    "qs": [
+     [
+      "What answer does Mum give to every house noise?",
+      "That the house is settling."
+     ],
+     [
+      "What had the narrator heard twice?",
+      "Something that was unmistakably a small voice."
+     ],
+     [
+      "What was the grey cat doing?",
+      "Sitting in front of the kittens refusing to move."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should the family have kept the cats? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Noise in the Attic",
+    "paras": [
+     "There was a noise in the attic for most of that the fall. It went in a pattern you could set a clock by: a scratching, for perhaps half a minute, then a long and deliberate pause, then the scratching again.",
+     "Mum was entirely certain it was the house settling. This is the answer she gives to every sound a house has ever made, and she gives it with such confidence that people generally stop asking. Dad was equally certain, and equally untroubled, that it was a bird that had got in under the slates.",
+     "I thought they were both quietly avoiding the obvious. Twice, late in the evening, with the television off, I had heard something from up there that was not a bird and was not a joist. It was unmistakably a small voice.",
+     "We went up with a torch on the first Saturday in October. Behind the water tank, in a cardboard box somebody had filled with straw years before, there were four kittens. In front of them, between them and us, sat a thin grey cat who had no intention of moving for anybody.",
+     "All five of them live in the kitchen now, on a blanket by the boiler, and nobody in this house has mentioned the house settling at any point since."
+    ],
+    "qs": [
+     [
+      "How does the author describe the pattern of the noise?",
+      "Scratching for half a minute, a long deliberate pause, then scratching again."
+     ],
+     [
+      "Why do people stop asking Mum about house noises?",
+      "She answers with such confidence that they stop asking."
+     ],
+     [
+      "What two things did the narrator rule out?",
+      "A bird and a joist."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a report on how to care for a cat and her kittens. Organise it into sections, develop each with facts and examples, and connect your ideas."
+    }
+   }
+  },
+  "og3-05": {
+   "g2": {
+    "title": "Making the Model",
+    "paras": [
+     "Our class is making a model of the village out of card.",
+     "I am sticking the roofs on. Tam is shaping the trees.",
+     "We kept losing the small pieces, so we began using a lid to hold them.",
+     "By Friday the whole thing is standing, and it is hiding nothing. Every house is there.",
+     "We are taking it to the hall on Monday so the school can see it."
+    ],
+    "qs": [
+     [
+      "What is the class making?",
+      "A model of the village out of card."
+     ],
+     [
+      "How did they stop losing the small pieces?",
+      "They began using a lid to hold them."
+     ],
+     [
+      "Where is the model going on Monday?",
+      "To the hall, so the school can see it."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write three facts about making the model. Start with a topic sentence and finish with an ending."
+    }
+   },
+   "g3": {
+    "title": "Making the Model",
+    "paras": [
+     "Our class spent three weeks making a model of the village out of card, and it very nearly did not get finished.",
+     "I was sticking roofs on. Tam was shaping trees out of wire and green paper, which turned out to be the slowest job in the room by a long way.",
+     "We kept losing the small pieces into the carpet, until somebody had the sense to start using a tin lid as a tray. After that we lost nothing.",
+     "By Friday afternoon the whole village was standing on two tables pushed together, and it was hiding nothing. Every single house on our road was on it, including the empty one.",
+     "We are carrying it down to the hall on Monday, very slowly, so the rest of the school can have a look."
+    ],
+    "qs": [
+     [
+      "How long did the model take?",
+      "Three weeks."
+     ],
+     [
+      "What was the slowest job?",
+      "Shaping trees out of wire and green paper."
+     ],
+     [
+      "How do you know the model was complete?",
+      "Every house on the road was on it, including the empty one."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write about a project you worked on with other people. Use time-order words and include dialogue."
+    }
+   },
+   "g4": {
+    "title": "Making the Model",
+    "paras": [
+     "Our class spent three weeks making a model of the village out of card, and there was a stretch in the middle of the second week when it very nearly did not get finished at all.",
+     "I was sticking roofs on, which is straightforward and which I would recommend. Tam was shaping trees out of wire and green tissue paper, one at a time, and that turned out to be the slowest job in the room by a distance nobody had anticipated.",
+     "The real problem was losing things. Small pieces went into the carpet at a rate of about one every ten minutes and were never seen again, until somebody finally had the sense to start using a tin lid as a holding tray. After that we did not lose a single thing.",
+     "By Friday afternoon the entire village was standing on two tables pushed end to end, and it was hiding nothing. Every house on our road was on it, in order, including the empty one at the far end that nobody ever mentions.",
+     "We are carrying it down to the hall on Monday morning, very slowly indeed and with four people on the corners, so that the rest of the school can come and have a look at it."
+    ],
+    "qs": [
+     [
+      "At what rate were pieces being lost?",
+      "About one every ten minutes."
+     ],
+     [
+      "What detail shows the model was honest about the village?",
+      "It included the empty house at the far end that nobody mentions."
+     ],
+     [
+      "Why will four people carry it?",
+      "So it is not dropped or damaged on the way to the hall."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is group work better than working alone? Group your reasons, support them with details from the text, and end with a conclusion."
+    }
+   }
+  },
+  "og3-06": {
+   "g2": {
+    "title": "The Happiest Day",
+    "paras": [
+     "Last summer was the hottest we have had, and the days were the longest too.",
+     "We carried water to the garden every evening and studied the sky for rain.",
+     "None came. The grass dried and the leaves curled and nothing in the beds got any taller.",
+     "Then one Friday the sky went grey and it rained for an hour.",
+     "We stood out in it and got soaked, and it was the happiest I have been in a garden."
+    ],
+    "qs": [
+     [
+      "What was last summer like?",
+      "It was the hottest they have had and the days were the longest."
+     ],
+     [
+      "What did they do every evening?",
+      "They carried water to the garden and studied the sky for rain."
+     ],
+     [
+      "Why were they so happy on Friday?",
+      "Because it finally rained for an hour."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what happened in the garden, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Happiest Day",
+    "paras": [
+     "Last summer was the hottest anybody round here can remember, and the days seemed to go on much longer than days normally do.",
+     "We carried water out to the garden every single evening and studied the sky afterwards, hoping. My little sister took it the most seriously of any of us.",
+     "Nothing came. The grass dried out to straw, the leaves on the bean plants curled up at the edges, and for six weeks almost nothing in those beds got any taller.",
+     "Then on a Friday in August the sky went grey in about ten minutes and it rained properly for a whole hour.",
+     "We went out and stood in it and got completely soaked, all four of us, and it remains the happiest I have ever been in a garden."
+    ],
+    "qs": [
+     [
+      "How long did almost nothing get taller?",
+      "Six weeks."
+     ],
+     [
+      "Who took the watering most seriously?",
+      "The narrator's little sister."
+     ],
+     [
+      "How quickly did the sky change?",
+      "In about ten minutes."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how to keep a garden alive in dry weather. Group your steps and use words like first, then, and finally."
+    }
+   },
+   "g4": {
+    "title": "The Happiest Day",
+    "paras": [
+     "Last summer was the hottest anybody round here can remember, and the days seemed to stretch out considerably longer than days have any business stretching.",
+     "We carried water out to the garden every single evening, two cans each, and then stood about studying the sky afterwards as though looking hard enough might help. My younger sister took this part more seriously than the rest of us put together and kept a chart.",
+     "Nothing came. The grass dried out to straw and went crisp underfoot. The leaves on the bean plants curled up at the edges and then browned. For six solid weeks almost nothing in that garden grew by any amount worth measuring.",
+     "Then on a Friday afternoon in the middle of August the sky went from blue to grey in about ten minutes, with no warning any of us had noticed, and it rained properly and heavily for a full hour.",
+     "We went out and stood in it. All four of us, in the middle of the lawn, getting steadily and completely soaked and not one of us suggesting we go back in. It remains, without any competition, the happiest I have ever been in a garden."
+    ],
+    "qs": [
+     [
+      "What did the younger sister keep?",
+      "A chart."
+     ],
+     [
+      "What two stages did the bean leaves go through?",
+      "They curled at the edges and then browned."
+     ],
+     [
+      "Why does the author mention nobody suggested going in?",
+      "To show how much they were all enjoying the rain."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is it worth keeping a garden? Group your reasons, support them with details from the text, and end with a conclusion."
+    }
+   }
+  },
+  "og3-07": {
+   "g2": {
+    "title": "The Robin and the Shed",
+    "paras": [
+     "A robin built a nest on the shelf in our shed in April.",
+     "We could not finish the painting. We could not even open the door properly.",
+     "Dad put a wedge under it so the gap stayed the same all month.",
+     "The robin did not seem to mind us at all. It came and went past our heads.",
+     "By June the young had gone. We finished the shed in one afternoon."
+    ],
+    "qs": [
+     [
+      "Where did the robin build its nest?",
+      "On the shelf in the shed."
+     ],
+     [
+      "Why could they not open the door properly?",
+      "Because the robin had a nest inside and they kept the gap the same."
+     ],
+     [
+      "When did they finish the shed?",
+      "In June, after the young had gone."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Was it right to stop work for the robin? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Robin and the Shed",
+    "paras": [
+     "A robin built its nest on the top shelf of our shed in the first week of April, which was awkward, because the shed was half painted.",
+     "We stopped. You cannot finish a shed with a robin in it, and anyway opening the door more than a hand's width made the bird panic.",
+     "Dad put a wooden wedge under the door so that the gap stayed exactly the same for the whole of April and May, and we went in sideways when we had to.",
+     "After the first fortnight the robin stopped minding us entirely. It would come and go past our heads with food in its beak as though we were part of the furniture.",
+     "By the second week of June the young had all gone. We finished the painting in a single afternoon and left the wedge where it was, in case."
+    ],
+    "qs": [
+     [
+      "Why was the nest awkward?",
+      "The shed was half painted and the work had to stop."
+     ],
+     [
+      "What did the wedge do?",
+      "It kept the door gap exactly the same for April and May."
+     ],
+     [
+      "Why did they leave the wedge in place?",
+      "In case the robin comes back."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the two months from the robin's point of view. Use time-order words and describe what it could see and hear."
+    }
+   },
+   "g4": {
+    "title": "The Robin and the Shed",
+    "paras": [
+     "A robin built its nest on the top shelf of our shed in the first week of April. This was awkward, because the shed was at that point half painted, with one wall done, one wall undercoated and a tin of green gloss open on the floor.",
+     "We stopped. There is no sensible way to finish a shed with a robin living in it, and in any case we established within about a day that opening the door more than a hand's width sent the bird into a panic that was unpleasant to watch.",
+     "So Dad cut a wooden wedge and put it under the door, and for the whole of April and the whole of May that gap did not change by so much as a finger's width. Anybody who needed anything out of that shed went in sideways and came out the same way.",
+     "After the first fortnight the robin stopped minding us altogether. It would come and go directly past our heads with food in its beak, at speed, as though we were a particularly dull piece of garden furniture it had long ago stopped noticing.",
+     "By the second week of June the young had all gone, and the shelf was empty. We finished the painting in a single afternoon. The wedge is still under the door, and nobody has suggested moving it."
+    ],
+    "qs": [
+     [
+      "What state was the shed in when the robin arrived?",
+      "One wall done, one undercoated, and a tin of green gloss open on the floor."
+     ],
+     [
+      "What did they learn within a day?",
+      "That opening the door more than a hand's width panicked the bird."
+     ],
+     [
+      "What does leaving the wedge show?",
+      "They hope the robin will come back next year."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a report on how birds build and use nests. Organise it into sections, develop each with facts and examples, and connect your ideas."
+    }
+   }
+  },
+  "og3-08": {
+   "g2": {
+    "title": "The Wobbly Table",
+    "paras": [
+     "The table in our kitchen is terrible. One leg is shorter than the other three.",
+     "It wobbles whenever anybody puts an elbow on it. Every bottle falls over.",
+     "Gran folded a little piece of cardboard and pushed it under the short leg.",
+     "The wobble stopped at once. It was that simple.",
+     "Dad had been planning to buy a new table for a year. He is a bit annoyed."
+    ],
+    "qs": [
+     [
+      "What is wrong with the table?",
+      "One leg is shorter than the other three, so it wobbles."
+     ],
+     [
+      "What did Gran do?",
+      "She folded a little piece of cardboard and pushed it under the short leg."
+     ],
+     [
+      "Why is Dad annoyed?",
+      "He had been planning to buy a new table for a year."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write three facts about fixing the table. Start with a topic sentence and finish with an ending."
+    }
+   },
+   "g3": {
+    "title": "The Wobbly Table",
+    "paras": [
+     "The table in our kitchen is terrible and has been terrible for as long as I have been able to reach it. One leg is a little shorter than the other three.",
+     "It wobbles whenever anybody rests an elbow on it, which is constantly, and every bottle that has ever been set near the middle has eventually gone over.",
+     "Gran came for lunch in September, watched this happen twice, and then folded a piece of cardboard into four and pushed it under the short leg without comment.",
+     "The wobble stopped immediately and has not come back once. The whole repair took her about nine seconds and cost nothing at all.",
+     "Dad had been planning to buy a replacement table for the better part of a year. He has not said much about it since."
+    ],
+    "qs": [
+     [
+      "How long has the table been terrible?",
+      "As long as the narrator has been able to reach it."
+     ],
+     [
+      "What did Gran do before fixing it?",
+      "She watched a bottle go over twice."
+     ],
+     [
+      "How long did the repair take?",
+      "About nine seconds."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is it better to mend things or replace them? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Wobbly Table",
+    "paras": [
+     "The table in our kitchen is terrible, and it has been terrible for as long as I have been tall enough to reach the top of it. One leg is fractionally shorter than the other three. Not visibly. Just enough.",
+     "It wobbles whenever anybody rests an elbow on it, which in this house is more or less continuously, and every bottle that has ever been set down near the middle of it has, given sufficient time, gone over.",
+     "Gran came for lunch in September. She watched a bottle of squash go over twice in twenty minutes without saying anything about it. Then she got up, folded a piece of cardboard into four, crouched down, and pushed it under the short leg.",
+     "The wobble stopped immediately. It has not come back, not once, in the seven months since. The entire repair took her about nine seconds and cost precisely nothing, and she went back to her lunch without mentioning it again.",
+     "Dad had been planning to replace that table for the better part of a year. He had looked at three in a shop in town. He has not said a great deal about any of it since September."
+    ],
+    "qs": [
+     [
+      "How short is the leg?",
+      "Fractionally — not visibly, just enough."
+     ],
+     [
+      "How did Gran behave before fixing it?",
+      "She watched it happen twice without saying anything."
+     ],
+     [
+      "What had Dad already done about the table?",
+      "He had looked at three replacements in a shop in town."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write about a problem somebody solved in a surprisingly simple way. Establish the situation, give a clear sequence, and use dialogue."
+    }
+   }
+  },
+  "og3-09": {
+   "g2": {
+    "title": "A Banana for the Walk",
+    "paras": [
+     "We were about to set off on a long walk along the canal.",
+     "Mum gave us each a banana and a bottle of water to carry.",
+     "Ahead of us the path went away into the trees and we could not see the end of it.",
+     "An hour along, my brother sat down on a wall and ate his banana in about four bites.",
+     "Mine lasted the whole way. I am aware that this was the only part of the walk I won."
+    ],
+    "qs": [
+     [
+      "Where were they walking?",
+      "Along the canal."
+     ],
+     [
+      "What did Mum give them?",
+      "A banana and a bottle of water each."
+     ],
+     [
+      "How fast did the brother eat his banana?",
+      "In about four bites."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what happened on the walk, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "A Banana for the Walk",
+    "paras": [
+     "We were about to set off on a long walk along the canal, the sort that is announced as an hour and turns out to be three.",
+     "Mum handed us each a banana and a bottle of water at the gate and told us to carry our own, which was fair.",
+     "Ahead of us the towpath ran away into the trees and simply kept going. You could not see the end of it from the start, which is the whole trouble with canals.",
+     "About an hour along, my brother sat down on a low wall and ate his banana in about four bites, then spent the remaining two hours mentioning that he was hungry.",
+     "Mine lasted the entire way. I am well aware that this was the only part of that walk I won, and I have never let him forget it."
+    ],
+    "qs": [
+     [
+      "How long was the walk announced as?",
+      "An hour, but it turned out to be three."
+     ],
+     [
+      "What is 'the whole trouble with canals'?",
+      "You cannot see the end of the path from the start."
+     ],
+     [
+      "What did the brother do for the last two hours?",
+      "He kept mentioning that he was hungry."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is it better to save a treat or eat it straight away? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "A Banana for the Walk",
+    "paras": [
+     "We were about to set off on a long walk along the canal. It had been announced to us as an hour. It was, in the end, a little over three, which is the usual arrangement with walks in our family and by now it surprises nobody.",
+     "Mum handed us each a banana and a bottle of water at the gate and told us we were carrying our own, which was perfectly fair and which both of us immediately complained about anyway.",
+     "Ahead of us the towpath ran away into the trees and then simply kept going. You cannot see the end of a canal from the beginning of it. That is the entire trouble with canals, and it is why the first hour always feels like the whole walk.",
+     "About an hour along, my brother sat himself down on a low wall and ate his banana in approximately four bites, with every appearance of satisfaction, and then spent the remaining two hours of the afternoon mentioning at regular intervals that he was hungry.",
+     "Mine lasted the entire distance, in small pieces, all the way to the last bridge. I am aware that this was the only part of that walk I won, and I have never once allowed him to forget about it."
+    ],
+    "qs": [
+     [
+      "What is the 'usual arrangement' with walks in this family?",
+      "They are announced as much shorter than they turn out to be."
+     ],
+     [
+      "Why does the first hour feel like the whole walk?",
+      "Because you cannot see the end of a canal from the beginning."
+     ],
+     [
+      "How did the narrator make the banana last?",
+      "By eating it in small pieces all the way to the last bridge."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a report on how to prepare for a long walk. Organise it into sections, develop each with facts and examples, and connect your ideas."
+    }
+   }
+  },
+  "og3-10": {
+   "g2": {
+    "title": "She Won't Say Why",
+    "paras": [
+     "My sister won't tell me where she goes on Saturday mornings.",
+     "She isn't rude about it. She just says, “You'll find out,” and gets her coat.",
+     "I don't like not knowing. I've tried asking Mum, who won't say.",
+     "Last week I followed her. She's been helping at the animal shelter since March.",
+     "She didn't mind me knowing. She said, “I'd have told you. You'd have wanted to come.”"
+    ],
+    "qs": [
+     [
+      "What won't the sister say?",
+      "Where she goes on Saturday mornings."
+     ],
+     [
+      "Where does she actually go?",
+      "She has been helping at the animal shelter since March."
+     ],
+     [
+      "Why didn't she tell anybody?",
+      "She says the narrator would have wanted to come."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what happened on Saturday, in order. Use first, next, and last, and include something somebody said."
+    }
+   },
+   "g3": {
+    "title": "She Won't Say Why",
+    "paras": [
+     "My sister won't tell anybody where she goes on Saturday mornings, and she's been going since the start of the year.",
+     "She isn't rude about it, which somehow makes it worse. She just says, “You'll find out eventually,” picks up her coat, and leaves before anybody can argue.",
+     "I don't like not knowing things. I'd asked Mum twice, and Mum, who clearly does know, wouldn't say a word.",
+     "So last Saturday I followed her at a distance all the way into town, and she went straight into the animal shelter on Mill Street and put on an apron.",
+     "She didn't mind being caught. She said, “I'd have told you months ago. You'd have wanted to come, and they don't take anybody under twelve.”"
+    ],
+    "qs": [
+     [
+      "How long has the sister been going?",
+      "Since the start of the year."
+     ],
+     [
+      "What makes it worse that she isn't rude?",
+      "It leaves the narrator with nothing to argue about."
+     ],
+     [
+      "Why hadn't she said anything?",
+      "The narrator would have wanted to come and they don't take anybody under twelve."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Was the sister right to keep it secret? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "She Won't Say Why",
+    "paras": [
+     "My sister won't tell anybody in this house where she goes on Saturday mornings. She's been going since the first week of January, she leaves at ten past eight, and she's back by one, and that is the entire sum of what we know.",
+     "She isn't rude about it, which somehow makes the whole thing worse. If she snapped at us we'd have something to be annoyed about. Instead she says, “You'll find out eventually,” in a perfectly pleasant voice, picks up her coat, and is out of the door before anybody has assembled a follow-up question.",
+     "I don't like not knowing things. I'd asked Mum about it twice. Mum knows — that much is obvious from her face every time the subject comes up — and Mum wouldn't say a single word either, which I thought was unfair of both of them.",
+     "So last Saturday I followed her. All the way down the hill, through town, past the market, and in through the side door of the animal shelter on Mill Street, where she took an apron off a hook and put it on like somebody who'd done it a hundred times.",
+     "She didn't mind being caught, in the end. She said, “I'd have told you months ago. But you'd have wanted to come, and they won't take anybody under twelve, and I didn't fancy having that argument every week until your birthday.”"
+    ],
+    "qs": [
+     [
+      "What exactly does the family know?",
+      "That she leaves at ten past eight and is back by one."
+     ],
+     [
+      "Why would it be easier if she snapped at them?",
+      "Then they would have something to be annoyed about."
+     ],
+     [
+      "What argument was the sister avoiding?",
+      "Having to refuse to take the narrator every week until their birthday."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the Saturday from the sister's point of view. Establish the situation, give a clear sequence, and use dialogue and sensory details."
+    }
+   }
+  },
+  "og3-11": {
+   "g2": {
+    "title": "The Station Question",
+    "paras": [
+     "Our station is tiny. One platform, one bench, and a sign with no information on it.",
+     "The six o'clock train had not come. There was no explanation and nobody to ask.",
+     "A man in a grey coat said it was cancelled. He gave no reason for that opinion.",
+     "Then the station master came out and said there was a problem with a signal.",
+     "The train came at seven. The man in the grey coat said he had known all along."
+    ],
+    "qs": [
+     [
+      "What is on the platform?",
+      "One bench and a sign with no information on it."
+     ],
+     [
+      "What did the station master say?",
+      "That there was a problem with a signal."
+     ],
+     [
+      "What did the man in the grey coat claim at the end?",
+      "That he had known all along."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should the man have said the train was cancelled? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Station Question",
+    "paras": [
+     "Our station is tiny. One platform, one bench, one sign that has never in living memory carried any information at all.",
+     "On Thursday the six o'clock train did not arrive. There was no announcement, no explanation on the board, and nobody on the platform in any kind of uniform.",
+     "A man in a grey coat announced to everybody that it had been cancelled. He offered no reason for this opinion and nobody asked him for one, which is how these things go.",
+     "Twenty minutes later the station master came out of the office and told us there was a fault on a signal two stations up the line and the train was running late.",
+     "It arrived at seven. The man in the grey coat told the carriage he had known about the signal all along."
+    ],
+    "qs": [
+     [
+      "What has the sign never carried?",
+      "Any information at all."
+     ],
+     [
+      "What was the real reason for the delay?",
+      "A fault on a signal two stations up the line."
+     ],
+     [
+      "Why is the man's final claim hard to believe?",
+      "He had offered no reason earlier and had said it was cancelled."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how information should be given to people who are waiting. Group your points and use words like first, then, and finally."
+    }
+   },
+   "g4": {
+    "title": "The Station Question",
+    "paras": [
+     "Our station is tiny. One platform, one bench, and a single electronic sign which has not, in the memory of anybody currently alive, displayed any information whatsoever about any train.",
+     "On Tuesday evening the six o'clock did not arrive. There was no announcement over the speakers, no explanation on the board, and not one member of staff visible anywhere on the platform or in the ticket office behind it.",
+     "After about four minutes of this a man in a grey coat announced to the platform in general that the train had been cancelled. He offered no evidence for this position and nobody present asked him for any, which is, in my experience, exactly how these situations develop.",
+     "Twenty minutes later the station master came out of the office with a radio in his hand and told us there was a fault on a signal two stations up the line, that the train was held there, and that it would be with us inside the hour.",
+     "It arrived at seven minutes past. As we got on, the man in the grey coat was explaining to the whole carriage that he had known about the signal from the beginning."
+    ],
+    "qs": [
+     [
+      "How long after six did the man speak?",
+      "About four minutes."
+     ],
+     [
+      "What did the station master have in his hand?",
+      "A radio."
+     ],
+     [
+      "What does the author imply about claims made with no evidence?",
+      "That people accept them without asking, which is how such situations develop."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should people speak up when they do not actually know? Group your reasons, support them with details from the text, and end with a conclusion."
+    }
+   }
   }
  }
 }
