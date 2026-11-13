@@ -1,6 +1,7 @@
 import { SignInGate } from "@/components/shared/SignInGate";
 import MYSTERIES from "@/../scripts/reading-mysteries.json";
 import ARTICLES from "@/../scripts/reading-articles.json";
+import READ_THINK from "@/../scripts/reading-read-think.json";
 
 /**
  * The printable workbook for a mystery or an article.
@@ -143,6 +144,75 @@ function Frame({ what }: { what: string }) {
   );
 }
 
+/**
+ * Read + Think, printed as its own sheet.
+ *
+ * On paper the grid has to survive a black and white printer, so each level
+ * keeps its tint but also carries its name in heavy type, and every task has
+ * a tick box: the sheet is a thing a child marks, not a thing they read.
+ */
+function ReadThinkSheet({ title }: { title: string }) {
+  return (
+    <div className="sheet2" style={{ paddingTop: 10 }}>
+      <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: SOFT }}>
+        {READ_THINK.title.toUpperCase()}
+      </div>
+      <h2 style={{ fontFamily: "Poppins, Inter, sans-serif", fontSize: 20, fontWeight: 800, margin: "2px 0 4px" }}>
+        {title}
+      </h2>
+      <NameLine />
+      <div style={{ fontSize: 12, color: SOFT, margin: "0 0 10px" }}>{READ_THINK.blurb}</div>
+      {READ_THINK.rows.map((row) => (
+        <div key={row.level} style={{ breakInside: "avoid", margin: "0 0 8px" }}>
+          <div
+            style={{
+              background: row.tint,
+              border: `1px solid ${INK}`,
+              borderRadius: 8,
+              padding: "4px 8px",
+              fontSize: 12,
+              fontWeight: 800,
+              color: INK,
+            }}
+          >
+            {`${row.level} — ${row.verb}`}
+          </div>
+          <div style={{ display: "flex", gap: 8, margin: "5px 0 0" }}>
+            {row.tasks.map((task) => (
+              <div
+                key={task.t}
+                style={{
+                  flex: "1 1 0",
+                  border: `1px solid #9AA0A6`,
+                  borderRadius: 8,
+                  padding: "6px 8px",
+                }}
+              >
+                <div style={{ display: "flex", gap: 6, alignItems: "flex-start" }}>
+                  <span
+                    style={{
+                      border: `1.5px solid ${INK}`,
+                      width: 12,
+                      height: 12,
+                      flex: "0 0 auto",
+                      marginTop: 2,
+                      display: "inline-block",
+                    }}
+                  />
+                  <div>
+                    <div style={{ fontSize: 12, fontWeight: 700, lineHeight: 1.25 }}>{task.t}</div>
+                    <div style={{ fontSize: 11, color: SOFT, lineHeight: 1.35 }}>{task.d}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default async function Page({ searchParams }: { searchParams: Search }) {
   const sp = await searchParams;
   const kind = one(sp.tab) === "ar" ? "ar" : "my";
@@ -222,6 +292,9 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               ["Box", "yellow", "a word you do not know"],
             ]}
           />
+          <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: SOFT, margin: "10px 0 4px" }}>
+            THE CASE
+          </div>
           <Annotatable text={myCase.story} />
 
           <Rule />
@@ -241,7 +314,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
 
           <div className="sheet2" style={{ paddingTop: 10 }}>
             <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: SOFT }}>
-              WRITE YOUR ANSWER
+              THEN WRITE
             </div>
             <h2 style={{ fontFamily: "Poppins, Inter, sans-serif", fontSize: 20, fontWeight: 800, margin: "2px 0 4px" }}>
               {myCase.title}
@@ -270,13 +343,16 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               ["Star", "red", "the one sentence you would keep if you kept only one"],
             ]}
           />
+          <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: SOFT, margin: "10px 0 4px" }}>
+            THE TEXT
+          </div>
           {art[ver].paras.map((p) => (
             <Annotatable key={p.label} letter={p.label} text={p.text} />
           ))}
 
           <Rule />
           <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", margin: "0 0 8px" }}>
-            QUESTIONS
+            FIVE QUESTIONS
           </div>
           <div style={{ fontSize: 12, color: SOFT, margin: "0 0 10px" }}>
             Answer in your own words. For each one, write the paragraph letter you found it in.
@@ -300,7 +376,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
 
           <div className="sheet2" style={{ paddingTop: 10 }}>
             <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: SOFT }}>
-              RESPONSE TO READING
+              THEN WRITE
             </div>
             <h2 style={{ fontFamily: "Poppins, Inter, sans-serif", fontSize: 20, fontWeight: 800, margin: "2px 0 4px" }}>
               {art.title}
@@ -314,6 +390,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
             </div>
             <Frame what="article" />
           </div>
+          <ReadThinkSheet title={art.title} />
         </div>
       ) : (
         <div style={sheet}>No article matches that filter.</div>

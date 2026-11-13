@@ -1,0 +1,127 @@
+{
+  "_note": "The Read + Think choice board, as six Bloom levels with three options each. The board Stephanie uses is written for stories -- name the characters, draw the setting, write a new chapter -- and none of that works on 'The Radium Dial Painters'. This is the same structure rewritten for informational text, so every task can be done with any article in the store. Pick one from each row.",
+  "title": "Read + Think",
+  "blurb": "Pick ONE idea from each row. Think first, then do it.",
+  "rows": [
+    {
+      "level": "Remember",
+      "verb": "Find it",
+      "tint": "#FFF5F9",
+      "ink": "#B3336E",
+      "tasks": [
+        {
+          "t": "List 5 key words",
+          "d": "Write them down and what each one means."
+        },
+        {
+          "t": "Name the topic",
+          "d": "Say in one sentence what this text is about."
+        },
+        {
+          "t": "Find the numbers",
+          "d": "Write down every fact that has a number in it."
+        }
+      ]
+    },
+    {
+      "level": "Understand",
+      "verb": "Explain it",
+      "tint": "#FFF0EC",
+      "ink": "#C0432F",
+      "tasks": [
+        {
+          "t": "Retell it in order",
+          "d": "Tell what happened using your own words."
+        },
+        {
+          "t": "Say the big idea",
+          "d": "Give the main idea of the whole text in one sentence."
+        },
+        {
+          "t": "Explain one paragraph",
+          "d": "Pick a paragraph and say what job it does for the text."
+        }
+      ]
+    },
+    {
+      "level": "Apply",
+      "verb": "Use it",
+      "tint": "#E6F8F6",
+      "ink": "#00756C",
+      "tasks": [
+        {
+          "t": "Teach it to someone",
+          "d": "Explain it to a person who has not read it."
+        },
+        {
+          "t": "Draw how it works",
+          "d": "Make a labelled diagram of the thing the text describes."
+        },
+        {
+          "t": "Find it somewhere else",
+          "d": "Name one place outside this text where this idea shows up."
+        }
+      ]
+    },
+    {
+      "level": "Analyze",
+      "verb": "Sort it",
+      "tint": "#EAF2FF",
+      "ink": "#2F6FD0",
+      "tasks": [
+        {
+          "t": "Cause and effect",
+          "d": "Make two columns: what happened, and what it caused."
+        },
+        {
+          "t": "Fact or claim",
+          "d": "Sort three sentences into proved and only stated."
+        },
+        {
+          "t": "Compare two parts",
+          "d": "Tell how two paragraphs are alike and different."
+        }
+      ]
+    },
+    {
+      "level": "Evaluate",
+      "verb": "Judge it",
+      "tint": "#F4E9FF",
+      "ink": "#6B2FB5",
+      "tasks": [
+        {
+          "t": "Rate the evidence",
+          "d": "Give the strongest fact 5 stars and the weakest 1. Say why."
+        },
+        {
+          "t": "Name what is missing",
+          "d": "What do you still want to know, and where would you look?"
+        },
+        {
+          "t": "Did the author prove it",
+          "d": "Say whether the point was proved, and how you can tell."
+        }
+      ]
+    },
+    {
+      "level": "Create",
+      "verb": "Make it",
+      "tint": "#F2F2F2",
+      "ink": "#111111",
+      "tasks": [
+        {
+          "t": "Write a headline",
+          "d": "Write a title that is true and makes someone want to read."
+        },
+        {
+          "t": "Make a one-page guide",
+          "d": "Turn the text into a poster that teaches it to a class."
+        },
+        {
+          "t": "Write the next part",
+          "d": "Write the paragraph that should come after the last one."
+        }
+      ]
+    }
+  ]
+}

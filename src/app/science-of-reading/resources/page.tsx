@@ -6,6 +6,7 @@ import MYSTERIES from "@/../scripts/reading-mysteries.json";
 import ARTICLES from "@/../scripts/reading-articles.json";
 import MY_COACH from "@/../scripts/reading-mystery-coach.json";
 import AR_COACH from "@/../scripts/reading-article-coach.json";
+import READ_THINK from "@/../scripts/reading-read-think.json";
 
 /**
  * Reading Resources: the mysteries and the informational articles.
@@ -304,6 +305,94 @@ function Prompt({ text }: { text: string }) {
   );
 }
 
+/**
+ * The Read + Think choice board: six Bloom levels, three options each.
+ *
+ * The board Stephanie uses is written for stories -- name the characters,
+ * draw the setting, write a new chapter -- and none of that survives contact
+ * with an article about radium poisoning. Same structure, rewritten so every
+ * task works on any informational text in the store, which is why it is one
+ * board rather than one per article.
+ *
+ * It is collapsed by default. A teacher who wants it opens it; a class
+ * reading the text does not have eighteen extra tasks in the way.
+ */
+function ReadThink() {
+  return (
+    <details style={{ margin: "0 0 18px" }}>
+      <summary style={{ ...pill(false), listStyle: "none", display: "inline-block" }}>
+        {`\u{1F9E0} ${READ_THINK.title} \u2014 choice board`}
+      </summary>
+      <div
+        style={{
+          background: "#FFFFFF",
+          border: `1px solid ${BRAND.line}`,
+          borderRadius: 18,
+          padding: "20px 22px",
+          marginTop: 12,
+        }}
+      >
+        <h3
+          style={{
+            fontFamily: "Poppins, Inter, sans-serif",
+            fontSize: 24,
+            fontWeight: 900,
+            margin: "0 0 2px",
+            letterSpacing: "-0.5px",
+          }}
+        >
+          {READ_THINK.title}
+        </h3>
+        <p style={{ color: BRAND.mid, margin: "0 0 16px", fontSize: 15 }}>{READ_THINK.blurb}</p>
+        <div style={{ display: "grid", gap: 10 }}>
+          {READ_THINK.rows.map((row) => (
+            <div
+              key={row.level}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "minmax(110px, 150px) repeat(3, 1fr)",
+                gap: 10,
+              }}
+            >
+              <div
+                style={{
+                  background: row.tint,
+                  borderRadius: 14,
+                  padding: "12px 14px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
+              >
+                <div style={{ fontWeight: 800, fontSize: 16, color: row.ink, lineHeight: 1.2 }}>
+                  {row.level}
+                </div>
+                <div style={{ fontSize: 13, color: BRAND.mid }}>{row.verb}</div>
+              </div>
+              {row.tasks.map((task) => (
+                <div
+                  key={task.t}
+                  style={{
+                    background: BRAND.paper,
+                    border: `1px solid ${BRAND.line}`,
+                    borderRadius: 14,
+                    padding: "12px 14px",
+                  }}
+                >
+                  <div style={{ fontWeight: 700, fontSize: 15, lineHeight: 1.3, marginBottom: 3 }}>
+                    {task.t}
+                  </div>
+                  <div style={{ fontSize: 13, color: BRAND.mid, lineHeight: 1.45 }}>{task.d}</div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </details>
+  );
+}
+
 export default async function Page({ searchParams }: { searchParams: Search }) {
   const sp = await searchParams;
   const tab = one(sp.tab) === "ar" ? "ar" : "my";
@@ -524,6 +613,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                 ) : (
                   <p style={{ color: BRAND.mid }}>No article matches that filter.</p>
                 )}
+                <ReadThink />
               </>
             )}
 
