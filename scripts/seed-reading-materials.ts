@@ -2854,7 +2854,30 @@ const ADAPTATIONS: Adaptation[] = [
       if (!out.includes(style)) return html;
       return out.replace(
         style,
-        "<style>button{border-radius:100px !important;"
+        "<style>"
+          // The Reading Resources page settles every button into one
+          // charcoal pill: outline when it is off, solid when it is on.
+          // The builder had a different colour for almost every control,
+          // so the page read as a row of unrelated things rather than one
+          // set of switches. Colour still carries meaning here, but on the
+          // step headings and the word lists, where it means something.
+          //
+          // A button carries its own state inline, and white means off, so
+          // that substring is the whole test.
+          + "button{border:1.5px solid rgb(17,17,17) !important;"
+          + "font-family:Inter,system-ui,sans-serif !important;font-size:13px !important;"
+          + "font-weight:700 !important;padding:8px 18px !important}"
+          // The browser rewrites an inline #fff into rgb(255, 255, 255)
+          // before any selector sees it, so that is what has to be
+          // matched. The "background: " prefix matters: without it the
+          // same string appears in a selected button's white text.
+          + "button[style*=\"background: rgb(255, 255, 255)\"],"
+          + "button[style*=\"background: rgb(250, 250, 250)\"]"
+          + "{background:rgb(255,255,255) !important;color:rgb(17,17,17) !important}"
+          + "button:not([style*=\"background: rgb(255, 255, 255)\"])"
+          + ":not([style*=\"background: rgb(250, 250, 250)\"])"
+          + "{background:rgb(17,17,17) !important;color:rgb(255,255,255) !important}"
+          + "button{border-radius:100px !important;"
           + "transition:transform .12s ease,box-shadow .12s ease}"
           + "button:hover{transform:translateY(-1px);box-shadow:0 3px 8px rgba(17,17,17,.16)}"
           + "button:active{transform:translateY(0);box-shadow:none}"
