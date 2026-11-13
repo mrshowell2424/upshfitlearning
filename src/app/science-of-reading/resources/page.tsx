@@ -61,11 +61,20 @@ function mysteryPrompt(c: (typeof MY)[number]) {
     .replace("{SUSPECTS}", c.suspects.map((s) => `- ${s.who}: ${s.why}`).join("\n"));
 }
 
+/**
+ * Which grades the article store holds, in order, and how to say one.
+ * Both are read off the articles rather than written down, so a new grade
+ * file reaches the pickers with no change here.
+ */
+const GRADES = [...new Set(AR.map((a) => a.grade))].sort((x, y) => x - y);
+const gradeName = (g: number) =>
+  g === 0 ? "K" : g === 1 ? "1st" : g === 2 ? "2nd" : g === 3 ? "3rd" : `${g}th`;
+
 function articlePrompt(a: (typeof AR)[number], ver: "higher" | "lower") {
   const v = a[ver];
   return AR_COACH.lines
     .join("\n")
-    .replace(/\{GRADES\}/g, a.grade === 4 ? "4th" : "3rd")
+    .replace(/\{GRADES\}/g, gradeName(a.grade))
     .replace(/\{TITLE\}/g, a.title)
     .replace("{STANDARD}", a.standard)
     .replace("{ARTICLE}", v.paras.map((p) => `${p.label}. ${p.text}`).join("\n\n"))
@@ -196,7 +205,8 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   const myCase = MY[ci];
 
   // Articles: grade, then standard, then the article inside what is left.
-  const grade = one(sp.g) === "4" ? 4 : 3;
+  const asked = Number(one(sp.g));
+  const grade = GRADES.includes(asked) ? asked : (GRADES[0] ?? 3);
   const stds = [...new Set(AR.filter((a) => a.grade === grade).map((a) => a.standard))].sort();
   const std = stds.includes(one(sp.s) ?? "") ? (one(sp.s) as string) : "*";
   const pool = AR.filter((a) => a.grade === grade && (std === "*" || a.standard === std));
@@ -293,8 +303,9 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                   <input type="hidden" name="v" value={ver === "lower" ? "lo" : "hi"} />
                   <label style={label} htmlFor="g">Grade</label>
                   <select id="g" name="g" defaultValue={String(grade)} style={select}>
-                    <option value="3">Grade 3</option>
-                    <option value="4">Grade 4</option>
+                    {GRADES.map((g) => (
+                      <option key={g} value={g}>{g === 0 ? "Kindergarten" : `Grade ${g}`}</option>
+                    ))}
                   </select>
                   <label style={label} htmlFor="s">Standard</label>
                   <select id="s" name="s" defaultValue={std} style={select}>

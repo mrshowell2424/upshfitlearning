@@ -150,7 +150,11 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   const ci = Math.min(Math.max(Number(one(sp.c) ?? 0) || 0, 0), MY.length - 1);
   const myCase = MY[ci];
 
-  const grade = one(sp.g) === "4" ? 4 : 3;
+  // Follow whatever grades the store holds, so a workbook link from the
+  // resources page lands on the grade it was asked for.
+  const grades = [...new Set(AR.map((a) => a.grade))].sort((x, y) => x - y);
+  const asked = Number(one(sp.g));
+  const grade = grades.includes(asked) ? asked : (grades[0] ?? 3);
   const std = one(sp.s) ?? "*";
   const pool = AR.filter((a) => a.grade === grade && (std === "*" || a.standard === std));
   const ai = Math.min(Math.max(Number(one(sp.n) ?? 0) || 0, 0), Math.max(pool.length - 1, 0));
