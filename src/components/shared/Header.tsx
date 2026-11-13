@@ -11,6 +11,7 @@ const navItems = [
   { label: "Resources", href: "/resources" },
   { label: "Standard match", href: "/match" },
   { label: "Science of Reading", href: "/science-of-reading" },
+  { label: "Fluency", href: "/fluency" },
   { label: "Math", href: "/math" },
   // Design Thinking lives under PBL rather than beside it: a design challenge
   // is a project, and a teacher looking for project work should not have to

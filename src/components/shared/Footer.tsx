@@ -14,6 +14,7 @@ const links = [
   { label: "About", href: "/about" },
   { label: "Standard match", href: "/match" },
   { label: "Science of Reading", href: "/science-of-reading" },
+  { label: "Fluency", href: "/fluency" },
   { label: "Math", href: "/math" },
   { label: "PBL", href: "/pbl" },
   { label: "Design Thinking", href: "/design-thinking" },

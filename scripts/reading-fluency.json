@@ -1,0 +1,37 @@
+{
+  "_note": "What a fluency read needs that the passages do not already carry: the prosody scale, the norms, and the wording of the one-minute routine. The passages themselves come from scripts/reading-articles.json, which already holds 600 of them with a measured word count and a Lexile on every one, so nothing here repeats a passage.",
+  "routine": [
+    { "n": 1, "t": "Hand over the passage", "d": "The student reads from the printed sheet or the screen. Do not read it to them first — this is a cold read unless you are deliberately testing a practiced one." },
+    { "n": 2, "t": "Say the same thing every time", "d": "\"Start at the top and read out loud until I say stop. If you get stuck on a word, I will tell you it. Read it the way you would read it to someone.\"" },
+    { "n": 3, "t": "Start the timer and follow along", "d": "Mark a word as an error if it is misread, skipped, or the student stalls for more than three seconds. Self-corrections are not errors. Repeats are not errors." },
+    { "n": 4, "t": "Stop at one minute", "d": "Mark where they got to. Let them finish the sentence if they are close — just do not count past the minute." },
+    { "n": 5, "t": "Enter the two numbers", "d": "How many words they reached, and how many errors. Everything else is arithmetic." },
+    { "n": 6, "t": "Score how it sounded", "d": "Rate the prosody while it is fresh. A child can hit the rate and still read like a list of words, and that is the part a number will not show you." }
+  ],
+  "prosody": {
+    "label": "How it sounded",
+    "source": "Adapted from the NAEP oral reading fluency scale.",
+    "levels": [
+      { "n": 4, "t": "Reads in sentences", "d": "Mostly in longer, meaningful phrases. Keeps the author's wording. Expression fits the sentence." },
+      { "n": 3, "t": "Reads in phrases", "d": "Three- or four-word phrases. Some awkward breaks, but the phrasing mostly holds the meaning." },
+      { "n": 2, "t": "Reads in short phrases", "d": "Two- and three-word groups. Some word-by-word. Breaks often fall in the wrong place." },
+      { "n": 1, "t": "Reads word by word", "d": "One word at a time. Little or no phrasing, even where the student reads the words correctly." }
+    ]
+  },
+  "norms": {
+    "_note": "Approximate 50th-percentile words correct per minute. These describe how a large sample of children actually read; they are not a target a particular child owes anybody. A child below the median is not behind by itself — read the accuracy and the prosody alongside the rate.",
+    "source": "Approximate figures in the range reported by Hasbrouck & Tindal's oral reading fluency norms.",
+    "grades": [
+      { "grade": 1, "fall": null, "winter": 29, "spring": 60 },
+      { "grade": 2, "fall": 50, "winter": 84, "spring": 100 },
+      { "grade": 3, "fall": 83, "winter": 97, "spring": 112 },
+      { "grade": 4, "fall": 94, "winter": 120, "spring": 133 },
+      { "grade": 5, "fall": 121, "winter": 133, "spring": 146 },
+      { "grade": 6, "fall": 132, "winter": 145, "spring": 146 }
+    ]
+  },
+  "reading": {
+    "accuracyFloor": 95,
+    "_accuracyNote": "Under about 95 percent accuracy the passage is too hard to practice fluency on, however fast it was read. Drop to the lower Lexile version before working on rate."
+  }
+}
