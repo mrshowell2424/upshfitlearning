@@ -1,0 +1,19 @@
+{
+  "_note": "One mystery a week for thirty-six weeks, at every grade K-12. The grade 3 band is measured from the original thirty-six cases, which were written for 2nd-4th and sit at 66-92 words with a mean sentence of nine words. Every other band is stepped outward from that one. Suspects grow with the grade because ruling out a fourth and fifth person is the harder half of the task.",
+  "weeks": 36,
+  "grades": [
+    { "grade": 0,  "name": "K",  "words": [26, 48],  "sentence": 7,  "suspects": [3, 3], "proof": 1 },
+    { "grade": 1,  "name": "1",  "words": [36, 60],  "sentence": 8,  "suspects": [3, 3], "proof": 1 },
+    { "grade": 2,  "name": "2",  "words": [50, 76],  "sentence": 10,  "suspects": [3, 3], "proof": 2 },
+    { "grade": 3,  "name": "3",  "words": [64, 94],  "sentence": 12, "suspects": [3, 3], "proof": 1 },
+    { "grade": 4,  "name": "4",  "words": [78, 112], "sentence": 13, "suspects": [3, 4], "proof": 2 },
+    { "grade": 5,  "name": "5",  "words": [92, 132], "sentence": 14, "suspects": [3, 4], "proof": 2 },
+    { "grade": 6,  "name": "6",  "words": [106, 152], "sentence": 15, "suspects": [4, 4], "proof": 2 },
+    { "grade": 7,  "name": "7",  "words": [120, 172], "sentence": 16, "suspects": [4, 4], "proof": 2 },
+    { "grade": 8,  "name": "8",  "words": [134, 192], "sentence": 17, "suspects": [4, 5], "proof": 2 },
+    { "grade": 9,  "name": "9",  "words": [148, 212], "sentence": 18, "suspects": [4, 5], "proof": 3 },
+    { "grade": 10, "name": "10", "words": [162, 232], "sentence": 19, "suspects": [4, 5], "proof": 3 },
+    { "grade": 11, "name": "11", "words": [176, 252], "sentence": 20, "suspects": [5, 5], "proof": 3 },
+    { "grade": 12, "name": "12", "words": [190, 272], "sentence": 21, "suspects": [5, 5], "proof": 3 }
+  ]
+}

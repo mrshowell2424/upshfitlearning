@@ -147,14 +147,24 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   const sp = await searchParams;
   const kind = one(sp.tab) === "ar" ? "ar" : "my";
 
-  const ci = Math.min(Math.max(Number(one(sp.c) ?? 0) || 0, 0), MY.length - 1);
-  const myCase = MY[ci];
-
-  // Follow whatever grades the store holds, so a workbook link from the
-  // resources page lands on the grade it was asked for.
+  // Follow whatever grades each store holds, so a workbook link from the
+  // resources page lands on the grade it was asked for. The two stores fill
+  // up at different rates, so each falls back to the nearest grade it has.
   const grades = [...new Set(AR.map((a) => a.grade))].sort((x, y) => x - y);
+  const myGrades = [...new Set(MY.map((c) => c.grade))].sort((x, y) => x - y);
   const asked = Number(one(sp.g));
-  const grade = grades.includes(asked) ? asked : (grades[0] ?? 3);
+  const wanted = Number.isFinite(asked) ? asked : 3;
+  const nearest = (want: number, have: number[]) =>
+    have.includes(want)
+      ? want
+      : have.reduce((best, g) => (Math.abs(g - want) < Math.abs(best - want) ? g : best), have[0] ?? 3);
+
+  const myGrade = nearest(wanted, myGrades);
+  const myPool = MY.filter((c) => c.grade === myGrade).sort((a, b) => a.week - b.week);
+  const ci = Math.min(Math.max(Number(one(sp.c) ?? 0) || 0, 0), Math.max(myPool.length - 1, 0));
+  const myCase = myPool[ci];
+
+  const grade = nearest(wanted, grades);
   const std = one(sp.s) ?? "*";
   const pool = AR.filter((a) => a.grade === grade && (std === "*" || a.standard === std));
   const ai = Math.min(Math.max(Number(one(sp.n) ?? 0) || 0, 0), Math.max(pool.length - 1, 0));
@@ -198,7 +208,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
       {kind === "my" ? (
         <div style={sheet}>
           <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: SOFT }}>
-            {`MYSTERY · WEEK ${myCase.week}`}
+            {`MYSTERY · ${myCase.grade === 0 ? "K" : myCase.grade === 1 ? "1ST" : myCase.grade === 2 ? "2ND" : myCase.grade === 3 ? "3RD" : `${myCase.grade}TH`} · WEEK ${myCase.week}`}
           </div>
           <h1 style={{ fontFamily: "Poppins, Inter, sans-serif", fontSize: 26, fontWeight: 900, margin: "2px 0 6px" }}>
             {myCase.title}

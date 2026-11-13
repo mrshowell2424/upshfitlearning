@@ -54,7 +54,7 @@ const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
 function mysteryPrompt(c: (typeof MY)[number]) {
   return MY_COACH.lines
     .join("\n")
-    .replace(/\{GRADES\}/g, "2nd-4th")
+    .replace(/\{GRADES\}/g, gradeName(c.grade))
     .replace(/\{TITLE\}/g, c.title)
     .replace("{STORY}", c.story)
     .replace("{QUESTION}", c.question)
@@ -62,13 +62,23 @@ function mysteryPrompt(c: (typeof MY)[number]) {
 }
 
 /**
- * Which grades the article store holds, in order, and how to say one.
- * Both are read off the articles rather than written down, so a new grade
- * file reaches the pickers with no change here.
+ * Which grades each store holds, in order, and how to say one. All of it is
+ * read off the content rather than written down, so a new grade file reaches
+ * the pickers with no change here.
+ *
+ * The two stores fill up at different rates, so a teacher who picks grade 5
+ * on the articles and switches to the mysteries may ask for a grade that has
+ * not been written yet. Rather than drop them back to the first grade, each
+ * tab shows the nearest grade it actually has.
  */
-const GRADES = [...new Set(AR.map((a) => a.grade))].sort((x, y) => x - y);
+const AR_GRADES = [...new Set(AR.map((a) => a.grade))].sort((x, y) => x - y);
+const MY_GRADES = [...new Set(MY.map((c) => c.grade))].sort((x, y) => x - y);
 const gradeName = (g: number) =>
   g === 0 ? "K" : g === 1 ? "1st" : g === 2 ? "2nd" : g === 3 ? "3rd" : `${g}th`;
+const nearestGrade = (want: number, have: number[]) =>
+  have.includes(want)
+    ? want
+    : have.reduce((best, g) => (Math.abs(g - want) < Math.abs(best - want) ? g : best), have[0] ?? 3);
 
 function articlePrompt(a: (typeof AR)[number], ver: "higher" | "lower") {
   const v = a[ver];
@@ -200,13 +210,18 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   const sp = await searchParams;
   const tab = one(sp.tab) === "ar" ? "ar" : "my";
 
-  // Mysteries
-  const ci = Math.min(Math.max(Number(one(sp.c) ?? 0) || 0, 0), MY.length - 1);
-  const myCase = MY[ci];
+  // One grade choice, shared by both tabs, each falling back to what it has.
+  const asked = Number(one(sp.g));
+  const wanted = Number.isFinite(asked) ? asked : 3;
+
+  // Mysteries: the grade, then the week inside it.
+  const myGrade = nearestGrade(wanted, MY_GRADES);
+  const myPool = MY.filter((c) => c.grade === myGrade).sort((a, b) => a.week - b.week);
+  const ci = Math.min(Math.max(Number(one(sp.c) ?? 0) || 0, 0), Math.max(myPool.length - 1, 0));
+  const myCase = myPool[ci];
 
   // Articles: grade, then standard, then the article inside what is left.
-  const asked = Number(one(sp.g));
-  const grade = GRADES.includes(asked) ? asked : (GRADES[0] ?? 3);
+  const grade = nearestGrade(wanted, AR_GRADES);
   const stds = [...new Set(AR.filter((a) => a.grade === grade).map((a) => a.standard))].sort();
   const std = stds.includes(one(sp.s) ?? "") ? (one(sp.s) as string) : "*";
   const pool = AR.filter((a) => a.grade === grade && (std === "*" || a.standard === std));
@@ -216,7 +231,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   const v = art ? art[ver] : null;
 
   const href = (next: Record<string, string>) => {
-    const q = new URLSearchParams({ tab, g: String(grade), s: std, n: String(ai), v: ver === "lower" ? "lo" : "hi", c: String(ci), ...next });
+    const q = new URLSearchParams({ tab, g: String(tab === "my" ? myGrade : grade), s: std, n: String(ai), v: ver === "lower" ? "lo" : "hi", c: String(ci), ...next });
     return `/science-of-reading/resources?${q.toString()}`;
   };
 
@@ -249,9 +264,15 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               <>
                 <form method="get" style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap", margin: "0 0 16px" }}>
                   <input type="hidden" name="tab" value="my" />
+                  <label style={label} htmlFor="mg">Grade</label>
+                  <select id="mg" name="g" defaultValue={String(myGrade)} style={select}>
+                    {MY_GRADES.map((g) => (
+                      <option key={g} value={g}>{gradeName(g)}</option>
+                    ))}
+                  </select>
                   <label style={label} htmlFor="c">Case</label>
                   <select id="c" name="c" defaultValue={String(ci)} style={select}>
-                    {MY.map((c, i) => (
+                    {myPool.map((c, i) => (
                       <option key={c.id} value={i}>{`Week ${c.week} · ${c.title}`}</option>
                     ))}
                   </select>
@@ -260,7 +281,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
 
                 <Card>
                   <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
-                    <p style={{ ...label, margin: 0 }}>{`Mystery · Week ${myCase.week}`}</p>
+                    <p style={{ ...label, margin: 0 }}>{`Mystery · ${gradeName(myCase.grade)} · Week ${myCase.week}`}</p>
                     <p style={{ ...label, margin: 0 }}>{myCase.tag}</p>
                   </div>
                   <h2 style={{ fontFamily: "Poppins, Inter, sans-serif", fontSize: 26, fontWeight: 800, margin: "2px 0 10px", letterSpacing: "-0.4px", lineHeight: 1.2 }}>
@@ -278,7 +299,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                   <Actions>
                     <CopyButton text={mysteryPrompt(myCase)} label="Copy mystery prompt" />
                     <Prompt text={mysteryPrompt(myCase)} />
-                    <a href={`/science-of-reading/resources/print?tab=my&c=${ci}`} style={pill(false)}>
+                    <a href={`/science-of-reading/resources/print?tab=my&g=${myGrade}&c=${ci}`} style={pill(false)}>
                       🖨 Printable workbook
                     </a>
                   <Answers>
@@ -303,7 +324,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                   <input type="hidden" name="v" value={ver === "lower" ? "lo" : "hi"} />
                   <label style={label} htmlFor="g">Grade</label>
                   <select id="g" name="g" defaultValue={String(grade)} style={select}>
-                    {GRADES.map((g) => (
+                    {AR_GRADES.map((g) => (
                       <option key={g} value={g}>{g === 0 ? "Kindergarten" : `Grade ${g}`}</option>
                     ))}
                   </select>

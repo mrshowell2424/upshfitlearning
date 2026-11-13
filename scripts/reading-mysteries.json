@@ -1,9 +1,10 @@
 {
- "_note": "The 36 mystery cases, lifted verbatim from mystery-library.html. Each one is a short story, a question, the suspects with what the text says about each, and the teacher answer with its proof quotes. A mystery is a claim-and-evidence task in disguise, which is why it sits beside the writing step and uses the same frame.",
+ "_note": "One mystery a week for thirty-six weeks at every grade that has been written. Each case is a short story, a question, the suspects with what the text says about each, and the teacher answer with its proof quotes. A mystery is a claim-and-evidence task in disguise, which is why it sits beside the writing step and uses the same frame. Built by scripts/merge-mysteries.mjs from scripts/mysteries/g<N>.json; do not edit by hand.",
  "source": "mystery-library.html",
  "cases": [
   {
-   "id": "library",
+   "id": "g3-w1",
+   "grade": 3,
    "week": 1,
    "tag": "📚 library",
    "title": "The Case of the Library Mess",
@@ -36,7 +37,8 @@
    "explain": "This shows Nibbles was out of his cage because the door was open and his sawdust was on the floor. Because of this, Nibbles is the one who made the mess."
   },
   {
-   "id": "lunchbox",
+   "id": "g3-w2",
+   "grade": 3,
    "week": 2,
    "tag": "🥪 lunchbox",
    "title": "The Swapped Lunchbox",
@@ -67,7 +69,8 @@
    "explain": "This shows the boxes got mixed up because they look the same on the shelf. Because of this, Omar got Owen’s lunch."
   },
   {
-   "id": "pencil",
+   "id": "g3-w3",
+   "grade": 3,
    "week": 3,
    "tag": "✏️ pencil",
    "title": "The Pencil Thief",
@@ -98,7 +101,8 @@
    "explain": "This shows Kiwi took the pencils because the video caught her grabbing one. Because of this, Kiwi is the pencil thief."
   },
   {
-   "id": "apple",
+   "id": "g3-w4",
+   "grade": 3,
    "week": 4,
    "tag": "🍎 apple",
    "title": "The Apple Orchard Mix-Up",
@@ -130,7 +134,8 @@
    "explain": "This shows Jack had Mia’s red apples because he said he traded bags. Because of this, Jack is the one who switched them."
   },
   {
-   "id": "bike",
+   "id": "g3-w5",
+   "grade": 3,
    "week": 5,
    "tag": "🚲 bike",
    "title": "The Case of the Flat Tire",
@@ -162,7 +167,8 @@
    "explain": "This shows the tack popped the tire because it was stuck right in the rubber. Because of this, a fallen thumbtack caused the flat."
   },
   {
-   "id": "fishtank",
+   "id": "g3-w6",
+   "grade": 3,
    "week": 6,
    "tag": "🐠 fishtank",
    "title": "The Mystery of the Cloudy Tank",
@@ -193,7 +199,8 @@
    "explain": "This shows the water could not stay clean because the filter was off and sunlight helps algae grow. Because of this, the tank turned cloudy and green."
   },
   {
-   "id": "noise",
+   "id": "g3-w7",
+   "grade": 3,
    "week": 7,
    "tag": "🔊 noise",
    "title": "The Midnight Noise",
@@ -224,7 +231,8 @@
    "explain": "This shows a squirrel is on the roof because its nest and acorns are right there. Because of this, the tapping is a squirrel, not a ghost."
   },
   {
-   "id": "leaves",
+   "id": "g3-w8",
+   "grade": 3,
    "week": 8,
    "tag": "🍂 leaves",
    "title": "The Scattered Leaf Pile",
@@ -256,7 +264,8 @@
    "explain": "This shows the wind was very strong because the trees were bending and gusts were 30 miles per hour. Because of this, the wind scattered the pile."
   },
   {
-   "id": "pumpkin",
+   "id": "g3-w9",
+   "grade": 3,
    "week": 9,
    "tag": "🎃 pumpkin",
    "title": "The Case of the Chewed Pumpkin",
@@ -288,7 +297,8 @@
    "explain": "This shows a raccoon was at the porch because raccoons have hand-shaped paws and one was seen eating it. Because of this, a raccoon chewed the pumpkin."
   },
   {
-   "id": "footprints",
+   "id": "g3-w10",
+   "grade": 3,
    "week": 10,
    "tag": "👣 footprints",
    "title": "The Muddy Footprints",
@@ -320,7 +330,8 @@
    "explain": "This shows the prints came from a dog because people do not have round prints with four toes. Because of this, Daisy made the mess."
   },
   {
-   "id": "bus",
+   "id": "g3-w11",
+   "grade": 3,
    "week": 11,
    "tag": "🚌 bus",
    "title": "The Lost Backpack",
@@ -352,7 +363,8 @@
    "explain": "This shows Eli left it on the bus because he took it off there and it was found under his seat. Because of this, the backpack was on the bus all night."
   },
   {
-   "id": "trophy",
+   "id": "g3-w12",
+   "grade": 3,
    "week": 12,
    "tag": "🏆 trophy",
    "title": "The Lost Soccer Trophy",
@@ -384,7 +396,8 @@
    "explain": "This shows Sam was by the case because the muddy cleat print matches his cleats. Because of this, Sam is the one who took the trophy."
   },
   {
-   "id": "turkey",
+   "id": "g3-w13",
+   "grade": 3,
    "week": 13,
    "tag": "🦃 turkey",
    "title": "The Thanksgiving Pie Puzzle",
@@ -417,7 +430,8 @@
    "explain": "This shows a turkey was at the pie because turkeys have three toes and leave feathers. Because of this, the wild turkey ate the slice."
   },
   {
-   "id": "cupcake",
+   "id": "g3-w14",
+   "grade": 3,
    "week": 14,
    "tag": "🧁 cupcake",
    "title": "The Missing Birthday Cupcakes",
@@ -448,7 +462,8 @@
    "explain": "This shows Ben ate a cupcake because the frosting on his chin matches the cupcakes. Because of this, Ben is the one who ate them."
   },
   {
-   "id": "mitten",
+   "id": "g3-w15",
+   "grade": 3,
    "week": 15,
    "tag": "🧤 mitten",
    "title": "The Missing Mitten",
@@ -480,7 +495,8 @@
    "explain": "This shows the cat had the mitten because he was lying on it with red fuzz on his fur. Because of this, Marshmallow took Ava’s mitten."
   },
   {
-   "id": "ginger",
+   "id": "g3-w16",
+   "grade": 3,
    "week": 16,
    "tag": "🎄 ginger",
    "title": "The Gingerbread House Mystery",
@@ -513,7 +529,8 @@
    "explain": "This shows a mouse got into the house because mice chew small holes and leave droppings. Because of this, the mouse ate the gumdrops."
   },
   {
-   "id": "lights",
+   "id": "g3-w17",
+   "grade": 3,
    "week": 17,
    "tag": "💡 lights",
    "title": "The Dark Holiday Lights",
@@ -545,7 +562,8 @@
    "explain": "This shows the plug came out while Mom cleaned because it was next to the vacuum. Because of this, the lights had no power."
   },
   {
-   "id": "clock",
+   "id": "g3-w18",
+   "grade": 3,
    "week": 18,
    "tag": "⏰ clock",
    "title": "The Clock That Stopped",
@@ -576,7 +594,8 @@
    "explain": "This shows the battery was the problem because the clock worked as soon as it had a new one. Because of this, a dead battery stopped the clock."
   },
   {
-   "id": "snow",
+   "id": "g3-w19",
+   "grade": 3,
    "week": 19,
    "tag": "⛄ snow",
    "title": "The Melting Snowman",
@@ -607,7 +626,8 @@
    "explain": "This shows it was too warm for snow because 45 degrees is above freezing. Because of this, the sun melted the snowman. (Science link: matter changes from solid to liquid.)"
   },
   {
-   "id": "feeder",
+   "id": "g3-w20",
+   "grade": 3,
    "week": 20,
    "tag": "🐦 feeder",
    "title": "The Broken Bird Feeder",
@@ -639,7 +659,8 @@
    "explain": "This shows a deer was at the feeder because deer have hooves and one was seen licking it. Because of this, a deer knocked it down."
   },
   {
-   "id": "cocoa",
+   "id": "g3-w21",
+   "grade": 3,
    "week": 21,
    "tag": "☕ cocoa",
    "title": "The Missing Marshmallows",
@@ -671,7 +692,8 @@
    "explain": "This shows Max ate them because a marshmallow fell out of his mouth. Because of this, Max is the marshmallow thief."
   },
   {
-   "id": "valentine",
+   "id": "g3-w22",
+   "grade": 3,
    "week": 22,
    "tag": "💌 valentine",
    "title": "The Vanished Valentines",
@@ -702,7 +724,8 @@
    "explain": "This shows the wind took the cards because they ended up in the bushes right outside the open window. Because of this, the wind made the valentines vanish."
   },
   {
-   "id": "volcano",
+   "id": "g3-w23",
+   "grade": 3,
    "week": 23,
    "tag": "🌋 volcano",
    "title": "The Volcano That Would Not Erupt",
@@ -733,7 +756,8 @@
    "explain": "This shows the powder was wrong because only baking soda makes vinegar fizz. Because of this, the volcano would not erupt until Ruby brought the real one."
   },
   {
-   "id": "crown",
+   "id": "g3-w24",
+   "grade": 3,
    "week": 24,
    "tag": "👑 crown",
    "title": "The Missing Play Crown",
@@ -765,7 +789,8 @@
    "explain": "This shows Zoe had the crown because the glitter trail ended right where she was working. Because of this, Zoe is the one who took it."
   },
   {
-   "id": "piano",
+   "id": "g3-w25",
+   "grade": 3,
    "week": 25,
    "tag": "🎹 piano",
    "title": "The Silent Piano Key",
@@ -796,7 +821,8 @@
    "explain": "This shows the sock blocked the strings because it was stuck right inside with Theo’s name on it. Because of this, the key could not make a sound."
   },
   {
-   "id": "kite",
+   "id": "g3-w26",
+   "grade": 3,
    "week": 26,
    "tag": "🪁 kite",
    "title": "The Stuck Kite",
@@ -828,7 +854,8 @@
    "explain": "This shows the kite is in the tree because its tail and string are tangled in the branches. Because of this, the wind blew the kite into the oak tree."
   },
   {
-   "id": "shamrock",
+   "id": "g3-w27",
+   "grade": 3,
    "week": 27,
    "tag": "☘️ shamrock",
    "title": "The Green Footprints",
@@ -860,7 +887,8 @@
    "explain": "This shows Leo stepped in the paint because the green paint on his shoes matches the footprints. Because of this, Leo made the footprints."
   },
   {
-   "id": "puddle",
+   "id": "g3-w28",
+   "grade": 3,
    "week": 28,
    "tag": "🌧️ puddle",
    "title": "The Puddle in the Hall",
@@ -892,7 +920,8 @@
    "explain": "This shows the water came from the ceiling because drops were falling from the stain. Because of this, the roof leak made the puddle."
   },
   {
-   "id": "garden",
+   "id": "g3-w29",
+   "grade": 3,
    "week": 29,
    "tag": "🌻 garden",
    "title": "Who Ate the Garden?",
@@ -924,7 +953,8 @@
    "explain": "This shows the rabbit got into the garden because it had a hole under the fence. Because of this, the rabbit is the one who ate the lettuce."
   },
   {
-   "id": "eggs",
+   "id": "g3-w30",
+   "grade": 3,
    "week": 30,
    "tag": "🪺 eggs",
    "title": "The Empty Nest",
@@ -955,7 +985,8 @@
    "explain": "This shows the eggs hatched because there are broken shells and baby birds in the nest. Because of this, the eggs turned into baby robins. (Science link: life cycles.)"
   },
   {
-   "id": "earth",
+   "id": "g3-w31",
+   "grade": 3,
    "week": 31,
    "tag": "🌎 earth",
    "title": "The Earth Day Litter Mystery",
@@ -986,7 +1017,8 @@
    "explain": "This shows raccoons got into the trash because the wrappers were bitten and their prints led away. Because of this, raccoons made the mess."
   },
   {
-   "id": "camera",
+   "id": "g3-w32",
+   "grade": 3,
    "week": 32,
    "tag": "📷 camera",
    "title": "The Lost Field Trip Camera",
@@ -1018,7 +1050,8 @@
    "explain": "This shows the camera was on the bench because Ty saw her set it there and a worker found it there. Because of this, the camera was left behind, not stolen."
   },
   {
-   "id": "plant",
+   "id": "g3-w33",
+   "grade": 3,
    "week": 33,
    "tag": "🌱 plant",
    "title": "The Droopy Bean Plant",
@@ -1049,7 +1082,8 @@
    "explain": "This shows the plant needed light because it turned green again in the sun. Because of this, being in the dark closet made it pale. (Science link: what plants need.)"
   },
   {
-   "id": "icecream",
+   "id": "g3-w34",
+   "grade": 3,
    "week": 34,
    "tag": "🍦 icecream",
    "title": "The Melted Ice Cream",
@@ -1080,7 +1114,8 @@
    "explain": "This shows the freezer could not stay cold because the door was blocked open. Because of this, the ice cream melted. (Science link: solid to liquid.)"
   },
   {
-   "id": "ribbon",
+   "id": "g3-w35",
+   "grade": 3,
    "week": 35,
    "tag": "🎗️ ribbon",
    "title": "The Field Day Ribbon",
@@ -1112,7 +1147,8 @@
    "explain": "This shows the wind carried the ribbon because it ended up on the fence after a big gust. Because of this, nobody took it."
   },
   {
-   "id": "balloons",
+   "id": "g3-w36",
+   "grade": 3,
    "week": 36,
    "tag": "🎈 balloons",
    "title": "The Popping Balloons",
