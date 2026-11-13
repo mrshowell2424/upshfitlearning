@@ -21,6 +21,10 @@ import SPLITS from "./reading-skill-splits.json" with { type: "json" };
 import PARTW from "./reading-part-words.json" with { type: "json" };
 import SENT3 from "./reading-third-sentences.json" with { type: "json" };
 import AICOACH from "./reading-ai-writing-coach.json" with { type: "json" };
+import MYSTERIES from "./reading-mysteries.json" with { type: "json" };
+import MYSTERYCOACH from "./reading-mystery-coach.json" with { type: "json" };
+import ARTICLES from "./reading-articles.json" with { type: "json" };
+import ARTICLECOACH from "./reading-article-coach.json" with { type: "json" };
 import EXTRAW from "./reading-extra-words.json" with { type: "json" };
 import PREQ from "./reading-prerequisites.json" with { type: "json" };
 import WSX from "./reading-what-says.json" with { type: "json" };
@@ -2748,6 +2752,379 @@ const ADAPTATIONS: Adaptation[] = [
         '<button type="button" onClick="{{ w.pick }}" style="{{ w.st }}">{{ w.label }}</button>' +
         "</sc-for></span></div>";
       out = out.split(head).join(row);
+      return out;
+    },
+  },
+  {
+    // Wear the Upshift Learning brand.
+    //
+    // The colours already arrive on brand: the recolour pass below maps
+    // every hue in the export onto the brand families, matching luminance
+    // so contrast survives. What did not match was the type and the shape.
+    //
+    // The brand book sets the whole site in Inter and keeps the geometric
+    // face for the wordmark. This page was in Outfit, which is a different
+    // voice, so Outfit becomes Inter and Poppins keeps Inter behind it as
+    // the wordmark stack the tokens describe.
+    //
+    // Buttons are full pills at a 100px radius in the brand, and were 7px
+    // and 8px here. That is one override rather than forty edits, because
+    // the radius is written inline on every button.
+    //
+    // The 4px gradient bar is the brand's own card treatment, at 135
+    // degrees from coral through pink and lavender to teal. One strip
+    // across the top of the page signs it without touching the layout.
+    //
+    // Deliberately not done: the brand's card radius of 20px. The page
+    // uses 10px on cards and on small chips alike, so a blanket swap would
+    // round the chips into lozenges. That wants picking apart by hand.
+    //
+    // The bar's four colours are written rgb() rather than hex on purpose.
+    // The recolour pass matches #rrggbb and remaps by hue, and it does not
+    // know these are already the brand: given hex it turned the pink into
+    // coral and the teal into blue. rgb() is invisible to it.
+    name: "wear the Upshift Learning brand",
+    apply: (html) => {
+      const link =
+        '<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800'
+        + '&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">';
+      if (!html.includes(link)) return html;
+      const brandLink =
+        '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900'
+        + '&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">'
+        + '\n<style>button{border-radius:100px !important}'
+        + '[data-wide="1"]{grid-column:1 / -1 !important;width:100% !important}'
+        + 'div:has(> [data-wide="1"]){grid-column:1 / -1 !important}'
+        + 'div:has(> div > [data-wide="1"]){grid-column:1 / -1 !important}</style>';
+      let out = html.replace(link, brandLink);
+
+      const outfit = "font-family:Outfit,sans-serif";
+      if (!out.includes(outfit)) return html;
+      out = out.split(outfit).join("font-family:Inter,system-ui,sans-serif");
+
+      const poppins = "font-family:Poppins,sans-serif";
+      if (!out.includes(poppins)) return html;
+      out = out.split(poppins).join("font-family:Poppins,Inter,system-ui,sans-serif");
+
+      if (!out.includes("<body>")) return html;
+      out = out.replace(
+        "<body>",
+        '<body>\n<div style="height:4px;background:linear-gradient(135deg,'
+          + 'rgb(255,106,91),rgb(255,125,174),rgb(184,125,255),rgb(0,180,166))"></div>'
+      );
+      return out;
+    },
+  },
+  {
+    // The mystery resource, beside the writing step.
+    //
+    // A mystery is a claim-and-evidence task wearing a costume. "Who made
+    // the mess?" is a claim; "a trail of sawdust led from the shelf" is the
+    // evidence; ruling out the suspect who was in the gym all morning is
+    // the same move as explaining why your evidence fits. So the case sits
+    // next to the writing step and uses the frame words the child has just
+    // been given, rather than inventing a second vocabulary.
+    //
+    // Each lesson gets one case, picked from the lesson's own id so it is
+    // the same case every time that lesson is opened, and the week number
+    // is shown so it lines up with the Mystery Week calendar.
+    //
+    // These are NOT decodable texts. They are written for a child to read
+    // with a teacher, and they use words the sequence has not taught. The
+    // block says so, because the passage above it is decodable and the two
+    // must not be mistaken for each other.
+    //
+    // The whole story is baked into the prompt, so Copy carries the text
+    // with it and the AI space has it without the paper. The answer is
+    // deliberately left out of the prompt: a coach that knows the culprit
+    // leaks it, however firmly it is told not to.
+    name: "add the mystery resource and its AI prompt",
+    apply: (html) => {
+      // Inject where the writing frames are built: `level` is in scope
+      // there and is not yet at the passage seat further up.
+      const seat = "const ebFrames = ['\u{1F3F7}\uFE0F Topic: The story is ______.'";
+      if (!html.includes(seat)) return html;
+      const tpl = MYSTERYCOACH.lines.join("\n");
+      const cases = MYSTERIES.cases.map((c) => ({
+        week: c.week, tag: c.tag, title: c.title, story: c.story,
+        question: c.question, suspects: c.suspects,
+        answer: c.answer, proof: c.proof, clears: c.clears, explain: c.explain,
+      }));
+      const build = [
+        "",
+        "    const MYS = " + JSON.stringify(cases) + ";",
+        "    const MY_TPL = " + JSON.stringify(tpl) + ";",
+        "    const myPick = (() => {",
+        "      const key = String(cur[0] || '');",
+        "      let n = 0;",
+        "      for (let i = 0; i < key.length; i++) n = (n * 31 + key.charCodeAt(i)) >>> 0;",
+        "      return MYS[n % MYS.length];",
+        "    })();",
+        "    const mySus = myPick.suspects.map((x) => '- ' + x.who + ': ' + x.why).join('\\n');",
+        "    const myPrompt = MY_TPL",
+        "      .replace(/\\{GRADES\\}/g, ((OGL.find((l) => 'Level ' + l.level === level) || {})" +
+          ".grades) || '1st-3rd')",
+        "      .replace(/\\{TITLE\\}/g, myPick.title)",
+        "      .replace('{STORY}', myPick.story)",
+        "      .replace('{QUESTION}', myPick.question)",
+        "      .replace('{SUSPECTS}', mySus);",
+      ].join("\n");
+      let out = html.replace(seat, build + "\n" + seat);
+
+      // Hang it off the writing step beside the other coach.
+      const step13 = "          hasTask: !!wrTask, task: wrTask, taskType: wrPick.toUpperCase(),";
+      if (!out.includes(step13)) return html;
+      out = out.replace(
+        step13,
+        step13 + "\n" + [
+          "          hasMy: true, myTitle: myPick.title, myTag: myPick.tag,",
+          "          myWeek: 'MYSTERY WEEK ' + myPick.week, myStory: myPick.story,",
+          "          myQuestion: myPick.question,",
+          "          mySuspects: myPick.suspects.map((x) => ({ line: x.who + ' — ' + x.why })),",
+          "          myKey: 'Answer: ' + myPick.answer + '  Proof: ' + myPick.proof.join(' '),",
+          "          myOpen: !!(this.state && this.state.myOpen),",
+          "          myBtn: (this.state && this.state.myOpen) ? 'Hide prompt ▲'" +
+            " : 'Show prompt ▼',",
+          "          toggleMy: () => this.setState({ myOpen: !(this.state && this.state.myOpen) }),",
+          "          myPrompt,",
+          "          copyMyLabel: (this.state && this.state.myCopied) ? '✓ Copied'" +
+            " : '\u{1F4CB} Copy mystery prompt',",
+          "          copyMy: () => { const ok = () => this.setState({ myCopied: true });",
+          "            const no = () => this.setState({ myOpen: true });",
+          "            try { const r = navigator.clipboard.writeText(myPrompt);",
+          "              if (r && r.then) r.then(ok, no); else ok(); } catch (e) { no(); } },",
+        ].join("\n")
+      );
+
+      // The block, under the AI writing coach.
+      const tailOfAi = "              </div>\n            </sc-if>";
+      if (!out.includes(tailOfAi)) return html;
+      const btn =
+        "font-family:Outfit,sans-serif;font-size:12.5px;font-weight:700;" +
+        "border:1.5px solid #B3336E;background:#fff;color:#B3336E;padding:6px 12px;" +
+        "border-radius:8px;cursor:pointer;white-space:nowrap";
+      const block =
+        tailOfAi +
+        '\n            <sc-if value="{{ s.hasMy }}" hint-placeholder-val="{{ false }}">\n' +
+        '              <div data-wide="1" style="grid-column:1 / -1;border:1.5px solid #B3336E;' +
+        'border-radius:10px;padding:10px 12px;background:#FFF5F9;display:flex;' +
+        'flex-direction:column;gap:7px">\n' +
+        '                <div style="display:flex;align-items:center;justify-content:' +
+        'space-between;gap:8px;flex-wrap:wrap">' +
+        '<div style="font-family:Outfit,sans-serif;font-size:11px;font-weight:700;' +
+        'letter-spacing:.14em;color:#B3336E">\u{1F50D} MYSTERY — EXTRA TEXT</div>' +
+        '<div style="font-family:Outfit,sans-serif;font-size:10.5px;font-weight:700;' +
+        'letter-spacing:.1em;color:#6A6A6A">{{ s.myWeek }}</div></div>\n' +
+        '                <div style="font-size:15px;font-weight:800;color:#111">' +
+        "{{ s.myTag }} {{ s.myTitle }}</div>\n" +
+        '                <div style="font-size:11.5px;line-height:1.45;color:#444">' +
+        "Read this one together. It is not a decodable text — it uses spellings this " +
+        "lesson has not taught, and it is here for the thinking, not the sounding out.</div>\n" +
+        '                <div style="font-size:14px;line-height:1.6;color:#111;background:#fff;' +
+        'border:1px solid #E9E9E9;border-radius:8px;padding:9px 11px">{{ s.myStory }}</div>\n' +
+        '                <div style="font-size:14px;font-weight:800;color:#111">' +
+        "❓ {{ s.myQuestion }}</div>\n" +
+        '                <sc-for list="{{ s.mySuspects }}" as="x" hint-placeholder-count="3">' +
+        '<div style="font-size:13px;line-height:1.5;color:#444">• {{ x.line }}</div>' +
+        "</sc-for>\n" +
+        '                <div data-noprint="true" style="display:flex;gap:7px;flex-wrap:wrap">' +
+        '<button type="button" onClick="{{ s.copyMy }}" style="' + btn + '">' +
+        "{{ s.copyMyLabel }}</button>" +
+        '<button type="button" onClick="{{ s.toggleMy }}" style="' + btn + '">' +
+        "{{ s.myBtn }}</button></div>\n" +
+        '                <sc-if value="{{ s.myOpen }}" hint-placeholder-val="{{ false }}">' +
+        '<div style="white-space:pre-wrap;font-family:ui-monospace,Menlo,monospace;' +
+        "font-size:11.5px;line-height:1.5;color:#1c1917;background:#fff;" +
+        "border:1px solid #E9E9E9;border-radius:8px;padding:9px 10px;max-height:320px;" +
+        'overflow:auto">{{ s.myPrompt }}</div></sc-if>\n' +
+        "              </div>\n            </sc-if>";
+      out = out.replace(tailOfAi, block);
+      return out;
+    },
+  },
+  {
+    // The informational article, for science and social studies.
+    //
+    // The packs ship every article twice, a higher and a lower Lexile
+    // version of the same text with the same lettered paragraphs, which is
+    // exactly the shape the reading-level control on this page already
+    // has. So the level the teacher has chosen picks the version: second
+    // grade reads the lower version of the grade 3 article, third grade
+    // the higher version of the same one, and fourth grade moves up to the
+    // grade 4 pack. The article number stays the same across the three, so
+    // a class working at mixed levels is reading the same story.
+    //
+    // Two jobs follow it: the five comprehension questions the pack ships
+    // with, then a response to reading, which is the same frame the
+    // writing step uses. The teacher answers print on the key and are kept
+    // off both the student's view and the AI prompt.
+    //
+    // Like the mystery, this is not a decodable text. It is an article,
+    // written to a Lexile band rather than to the phonics sequence.
+    name: "add the informational article resource and its AI prompt",
+    apply: (html) => {
+      const seat = "const ebFrames = ['\u{1F3F7}️ Topic: The story is ______.'";
+      if (!html.includes(seat)) return html;
+      const tpl = ARTICLECOACH.lines.join("\n");
+      // Only what the page renders: the long standard blurb stays in the
+      // data file, since the code alone is what the block shows.
+      const arts = ARTICLES.articles.map((a) => ({
+        g: a.grade, n: a.n, t: a.title, s: a.standard,
+        hi: { lx: a.higher.lexile, p: a.higher.paras.map((x) => [x.label, x.text]) },
+        lo: { lx: a.lower.lexile, p: a.lower.paras.map((x) => [x.label, x.text]) },
+        q: a.questions.map((x) => [x.n, x.kind, x.q, x.a]),
+      }));
+      const build = [
+        "",
+        "    const ARTS = " + JSON.stringify(arts) + ";",
+        "    const AR_TPL = " + JSON.stringify(tpl) + ";",
+        "    const arGrade = pgGrade === 'g4' ? 4 : 3;",
+        "    const arVer = pgGrade === 'g2' ? 'lo' : 'hi';",
+        "    const arPool = ARTS.filter((a) => a.g === arGrade);",
+        "    const arPick = (() => {",
+        "      const key = String(cur[0] || '');",
+        "      let n = 0;",
+        "      for (let i = 0; i < key.length; i++) n = (n * 37 + key.charCodeAt(i)) >>> 0;",
+        "      return arPool[n % arPool.length] || null;",
+        "    })();",
+        "    const arBody = arPick ? arPick[arVer].p.map((x) => x[0] + '. ' + x[1]).join('\\n\\n') : '';",
+        "    const arQs = arPick ? arPick.q.map((x) => x[0] + ' (' + x[1] + ') ' + x[2]).join('\\n') : '';",
+        "    const arPrompt = arPick ? AR_TPL",
+        "      .replace(/\\{GRADES\\}/g, ((OGL.find((l) => 'Level ' + l.level === level) || {})" +
+          ".grades) || '1st-3rd')",
+        "      .replace(/\\{TITLE\\}/g, arPick.t)",
+        "      .replace('{STANDARD}', arPick.s)",
+        "      .replace('{ARTICLE}', arBody)",
+        "      .replace('{QUESTIONS}', arQs) : '';",
+      ].join("\n");
+      let out = html.replace(seat, build + "\n" + seat);
+
+      const step13 = "          hasTask: !!wrTask, task: wrTask, taskType: wrPick.toUpperCase(),";
+      if (!out.includes(step13)) return html;
+      out = out.replace(
+        step13,
+        step13 + "\n" + [
+          "          hasAr: !!arPick,",
+          "          arTitle: arPick ? arPick.t : '', arStd: arPick ? arPick.s : '',",
+          "          arLex: arPick ? ('LEXILE ' + arPick[arVer].lx) : '',",
+          "          arParas: arPick ? arPick[arVer].p.map((x) => ({ L: x[0], t: x[1] })) : [],",
+          "          arQuestions: arPick ? arPick.q.map((x) =>" +
+            " ({ line: x[0] + '. ' + x[2], kind: x[1] })) : [],",
+          "          arKey: arPick ? arPick.q.filter((x) => x[3])" +
+            ".map((x) => x[0] + '. ' + x[3]).join('  ') : '',",
+          "          arPrompt,",
+          "          arOpen: !!(this.state && this.state.arOpen),",
+          "          arBtn: (this.state && this.state.arOpen) ? 'Hide prompt ▲'" +
+            " : 'Show prompt ▼',",
+          "          toggleAr: () => this.setState({ arOpen: !(this.state && this.state.arOpen) }),",
+          "          copyArLabel: (this.state && this.state.arCopied) ? '✓ Copied'" +
+            " : '\u{1F4CB} Copy article prompt',",
+          "          copyAr: () => { const ok = () => this.setState({ arCopied: true });",
+          "            const no = () => this.setState({ arOpen: true });",
+          "            try { const r = navigator.clipboard.writeText(arPrompt);",
+          "              if (r && r.then) r.then(ok, no); else ok(); } catch (e) { no(); } },",
+        ].join("\n")
+      );
+
+      // The block, after the mystery.
+      const tailOfMy = '{{ s.myPrompt }}</div></sc-if>\n' +
+        "              </div>\n            </sc-if>";
+      if (!out.includes(tailOfMy)) return html;
+      const btn =
+        "font-family:Outfit,sans-serif;font-size:12.5px;font-weight:700;" +
+        "border:1.5px solid #2F6FD0;background:#fff;color:#2F6FD0;padding:6px 12px;" +
+        "border-radius:8px;cursor:pointer;white-space:nowrap";
+      const block =
+        tailOfMy +
+        '\n            <sc-if value="{{ s.hasAr }}" hint-placeholder-val="{{ false }}">\n' +
+        '              <div data-wide="1" style="grid-column:1 / -1;border:1.5px solid #2F6FD0;' +
+        'border-radius:10px;padding:10px 12px;background:#EAF2FF;display:flex;' +
+        'flex-direction:column;gap:7px">\n' +
+        '                <div style="display:flex;align-items:center;justify-content:' +
+        'space-between;gap:8px;flex-wrap:wrap">' +
+        '<div style="font-family:Outfit,sans-serif;font-size:11px;font-weight:700;' +
+        'letter-spacing:.14em;color:#2F6FD0">\u{1F4F0} ARTICLE — SCIENCE &amp; SOCIAL STUDIES</div>' +
+        '<div style="font-family:Outfit,sans-serif;font-size:10.5px;font-weight:700;' +
+        'letter-spacing:.1em;color:#6A6A6A">{{ s.arStd }} · {{ s.arLex }}</div></div>\n' +
+        '                <div style="font-size:15px;font-weight:800;color:#111">' +
+        "{{ s.arTitle }}</div>\n" +
+        '                <div style="font-size:11.5px;line-height:1.45;color:#444">' +
+        "Read together. This is an article, written to a reading level rather than to the " +
+        "phonics sequence, so it uses spellings this lesson has not taught.</div>\n" +
+        '                <div style="background:#fff;border:1px solid #E9E9E9;border-radius:8px;' +
+        'padding:9px 11px;display:flex;flex-direction:column;gap:6px">' +
+        '<sc-for list="{{ s.arParas }}" as="p" hint-placeholder-count="6">' +
+        '<div style="font-size:14px;line-height:1.6;color:#111">' +
+        '<span style="font-weight:800;color:#2F6FD0">{{ p.L }}</span>  {{ p.t }}</div>' +
+        "</sc-for></div>\n" +
+        '                <div style="font-family:Outfit,sans-serif;font-size:11px;' +
+        'font-weight:700;letter-spacing:.14em;color:#2F6FD0">QUESTIONS</div>\n' +
+        '                <sc-for list="{{ s.arQuestions }}" as="q" hint-placeholder-count="5">' +
+        '<div style="font-size:13.5px;line-height:1.5;color:#111">{{ q.line }}</div>' +
+        "</sc-for>\n" +
+        '                <div style="font-size:13.5px;line-height:1.5;color:#111;' +
+        'border-top:1px solid #C9D3C4;padding-top:7px">' +
+        "<strong>Then write a response to reading.</strong> What is the most important idea in " +
+        "this article, and how do you know? Answer it in the frame above, and name the " +
+        "paragraph letter for every piece of evidence.</div>\n" +
+        '                <div data-noprint="true" style="display:flex;gap:7px;flex-wrap:wrap">' +
+        '<button type="button" onClick="{{ s.copyAr }}" style="' + btn + '">' +
+        "{{ s.copyArLabel }}</button>" +
+        '<button type="button" onClick="{{ s.toggleAr }}" style="' + btn + '">' +
+        "{{ s.arBtn }}</button></div>\n" +
+        '                <sc-if value="{{ s.arOpen }}" hint-placeholder-val="{{ false }}">' +
+        '<div style="white-space:pre-wrap;font-family:ui-monospace,Menlo,monospace;' +
+        "font-size:11.5px;line-height:1.5;color:#1c1917;background:#fff;" +
+        "border:1px solid #E9E9E9;border-radius:8px;padding:9px 10px;max-height:320px;" +
+        'overflow:auto">{{ s.arPrompt }}</div></sc-if>\n' +
+        "              </div>\n            </sc-if>";
+      out = out.replace(tailOfMy, block);
+      return out;
+    },
+  },
+  {
+    // Give the extra resources their own area.
+    //
+    // The mystery and the article went in beside the writing step because
+    // that is where the frame they use is explained. In practice that made
+    // step 13 four screens long and buried the writing task the step is
+    // actually for. They are their own work: a second text, comprehension
+    // questions, and a response that happens to use the same frame.
+    //
+    // So they move out into step 14, with its own number, colour and
+    // heading, and the writing step goes back to being about the writing.
+    // Nothing about the blocks changes; the template keys them off
+    // s.hasMy and s.hasAr, so moving the properties moves the blocks.
+    name: "give comprehension and the extra writing their own step",
+    apply: (html) => {
+      // The two property blocks, exactly as the rules above left them.
+      const from = "          hasAr: !!arPick,";
+      const to = "          taskOpts: wrOptList,";
+      const a = html.indexOf(from);
+      const b = html.indexOf(to, a);
+      if (a < 0 || b < 0 || b < a) return html;
+      const span = html.slice(a, b);
+      let out = html.slice(0, a) + html.slice(b);
+
+      // Step 14 needs a colour of its own; COL is indexed by step number.
+      const col = "'#4B6049', '#2F7A8C', '#8F5E2F']";
+      if (!out.includes(col)) return html;
+      out = out.replace(col, "'#4B6049', '#2F7A8C', '#8F5E2F', '#7A4E6B']");
+
+      // Append it after the writing step, at the end of the array.
+      const close = "              if (r && r.then) r.then(ok, no); else ok(); }"
+        + " catch (e) { no(); } } }),\n    ];";
+      if (!out.includes(close)) return html;
+      const step =
+        "              if (r && r.then) r.then(ok, no); else ok(); }"
+        + " catch (e) { no(); } } }),\n"
+        + "      Object.assign(mk(14, 'Comprehension + response', '10 min',"
+        + " 'Extra reading beside the decodable. Read the mystery or the article together,"
+        + " answer the questions from the text, then write the response using the same frame"
+        + " as the writing step.', []), {\n"
+        + span
+        + "      }),\n    ];";
+      out = out.replace(close, step);
       return out;
     },
   },

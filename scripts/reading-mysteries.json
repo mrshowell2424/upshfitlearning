@@ -1,0 +1,1146 @@
+{
+ "_note": "The 36 mystery cases, lifted verbatim from mystery-library.html. Each one is a short story, a question, the suspects with what the text says about each, and the teacher answer with its proof quotes. A mystery is a claim-and-evidence task in disguise, which is why it sits beside the writing step and uses the same frame.",
+ "source": "mystery-library.html",
+ "cases": [
+  {
+   "id": "library",
+   "week": 1,
+   "tag": "📚 library",
+   "title": "The Case of the Library Mess",
+   "story": "On Monday morning, Ms. Park opened the school library and gasped. Books were all over the floor! She looked for clues. A trail of sawdust led from the shelf to the class pet cage. The cage door was open, and Nibbles the hamster was gone. Coach Dan had been in the gym all morning with the 5th grade. Leo, the student helper, had stayed home sick. Behind the beanbag, Ms. Park found Nibbles snuggled in a nest of torn paper. \"Nibbles!\" she said. \"You wanted a story, didn’t you?\"",
+   "question": "Who made the mess in the library?",
+   "suspects": [
+    {
+     "who": "🐹 Nibbles the hamster",
+     "why": "sawdust trail, open cage, nest of paper"
+    },
+    {
+     "who": "🏀 Coach Dan",
+     "why": "in the gym all morning"
+    },
+    {
+     "who": "🙋 Leo the helper",
+     "why": "home sick"
+    }
+   ],
+   "answer": "Nibbles the hamster made the mess.",
+   "proof": [
+    "\"A trail of sawdust led from the shelf to the class pet cage.\"",
+    "\"The cage door was open, and Nibbles the hamster was gone.\"",
+    "\"…Nibbles snuggled in a nest of torn paper.\""
+   ],
+   "clears": [
+    "Coach Dan: \"…had been in the gym all morning with the 5th grade.\"",
+    "Leo: \"…had stayed home sick.\""
+   ],
+   "explain": "This shows Nibbles was out of his cage because the door was open and his sawdust was on the floor. Because of this, Nibbles is the one who made the mess."
+  },
+  {
+   "id": "lunchbox",
+   "week": 2,
+   "tag": "🥪 lunchbox",
+   "title": "The Swapped Lunchbox",
+   "story": "At lunch, Omar opened his lunchbox and found a tuna sandwich. Omar hates tuna! His lunchbox is blue with a rocket sticker. On the next table sat Owen with the same blue lunchbox, but his had no sticker. Owen was eating a peanut butter sandwich and frowning. Their teacher, Ms. Bell, had lined up all the lunchboxes on one shelf that morning. \"We grabbed the wrong ones!\" Owen laughed. They swapped back.",
+   "question": "Why did Omar get the wrong lunch?",
+   "suspects": [
+    {
+     "who": "🔵 Owen grabbed the wrong box",
+     "why": "same blue box, no sticker, PB sandwich"
+    },
+    {
+     "who": "🍎 Ms. Bell packed it",
+     "why": "she only lined them up"
+    },
+    {
+     "who": "🐱 The cafeteria cat",
+     "why": "there is no cat in the story"
+    }
+   ],
+   "answer": "Omar and Owen grabbed each other’s lunchboxes.",
+   "proof": [
+    "\"…Owen with the same blue lunchbox, but his had no sticker.\"",
+    "\"Owen was eating a peanut butter sandwich and frowning.\""
+   ],
+   "clears": [
+    "Ms. Bell: \"…had lined up all the lunchboxes on one shelf…\""
+   ],
+   "explain": "This shows the boxes got mixed up because they look the same on the shelf. Because of this, Omar got Owen’s lunch."
+  },
+  {
+   "id": "pencil",
+   "week": 3,
+   "tag": "✏️ pencil",
+   "title": "The Pencil Thief",
+   "story": "Every day this week, pencils disappeared from the pencil cup in Room 12. On Thursday, Mr. Ortiz set up a camera. The video showed the class parrot, Kiwi, flying out of her cage when the door was left open. She grabbed a pencil in her beak and flew to the top of the cabinet. On top of the cabinet, Mr. Ortiz found 15 pencils in a pile! Nina sat by the pencil cup but was at the nurse all morning. \"Kiwi, you’re a collector!\" laughed the class.",
+   "question": "Who took the pencils?",
+   "suspects": [
+    {
+     "who": "🦜 Kiwi the parrot",
+     "why": "video, pencils on the cabinet"
+    },
+    {
+     "who": "👧 Nina",
+     "why": "at the nurse all morning"
+    },
+    {
+     "who": "🧑‍🏫 Mr. Ortiz",
+     "why": "set up the camera to catch the thief"
+    }
+   ],
+   "answer": "Kiwi the parrot took the pencils.",
+   "proof": [
+    "\"She grabbed a pencil in her beak and flew to the top of the cabinet.\"",
+    "\"…Mr. Ortiz found 15 pencils in a pile!\""
+   ],
+   "clears": [
+    "Nina: \"…was at the nurse all morning.\""
+   ],
+   "explain": "This shows Kiwi took the pencils because the video caught her grabbing one. Because of this, Kiwi is the pencil thief."
+  },
+  {
+   "id": "apple",
+   "week": 4,
+   "tag": "🍎 apple",
+   "title": "The Apple Orchard Mix-Up",
+   "story": "The class went on a field trip to Red Barn Orchard. Each student picked a bag of apples. On the bus, Mia saw that her bag of red apples was now full of green ones! Her seat partner, Jack, had a bag of red apples and a big grin. Mr. Stone, the bus driver, had both hands on the wheel the whole ride. The farmer had stayed back at the orchard. Jack laughed. \"I traded bags when you were looking out the window. I love red apples!\"",
+   "question": "Who switched Mia’s apples?",
+   "suspects": [
+    {
+     "who": "🧒 Jack",
+     "why": "bag of red apples, big grin, he said he traded"
+    },
+    {
+     "who": "🚌 Mr. Stone",
+     "why": "both hands on the wheel the whole ride"
+    },
+    {
+     "who": "👨‍🌾 The farmer",
+     "why": "stayed back at the orchard"
+    }
+   ],
+   "answer": "Jack switched Mia’s apples.",
+   "proof": [
+    "\"Her seat partner, Jack, had a bag of red apples and a big grin.\"",
+    "\"I traded bags when you were looking out the window.\""
+   ],
+   "clears": [
+    "Mr. Stone: \"…had both hands on the wheel the whole ride.\"",
+    "Farmer: \"The farmer had stayed back at the orchard.\""
+   ],
+   "explain": "This shows Jack had Mia’s red apples because he said he traded bags. Because of this, Jack is the one who switched them."
+  },
+  {
+   "id": "bike",
+   "week": 5,
+   "tag": "🚲 bike",
+   "title": "The Case of the Flat Tire",
+   "story": "After school, Jada found her bike tire flat. She looked closely and saw a sharp thumbtack stuck in the rubber. A row of thumbtacks had fallen out of the art room box onto the sidewalk. Her friend Theo rode a scooter and never touched the bike rack. The crossing guard, Mr. Hill, stood at the corner all afternoon. \"My tire ran over a tack!\" Jada said. \"It was an accident, not a person.\"",
+   "question": "What caused Jada’s flat tire?",
+   "suspects": [
+    {
+     "who": "📌 A fallen thumbtack",
+     "why": "tack stuck in the tire, tacks on the sidewalk"
+    },
+    {
+     "who": "🛴 Theo",
+     "why": "rode a scooter, never touched the rack"
+    },
+    {
+     "who": "🦺 Mr. Hill",
+     "why": "at the corner all afternoon"
+    }
+   ],
+   "answer": "A fallen thumbtack caused the flat tire.",
+   "proof": [
+    "\"…saw a sharp thumbtack stuck in the rubber.\"",
+    "\"A row of thumbtacks had fallen out of the art room box onto the sidewalk.\""
+   ],
+   "clears": [
+    "Theo: \"…rode a scooter and never touched the bike rack.\"",
+    "Mr. Hill: \"…stood at the corner all afternoon.\""
+   ],
+   "explain": "This shows the tack popped the tire because it was stuck right in the rubber. Because of this, a fallen thumbtack caused the flat."
+  },
+  {
+   "id": "fishtank",
+   "week": 6,
+   "tag": "🐠 fishtank",
+   "title": "The Mystery of the Cloudy Tank",
+   "story": "On Monday, the class fish tank was cloudy and green. Goldie the fish was hiding behind a plant. Over the weekend, the tank had been sitting in bright sunlight by the window. The fish food can was full, so nobody overfed Goldie. The filter was unplugged because a cord had been bumped during cleaning. \"No sun and a working filter will fix it,\" said Mr. Diaz.",
+   "question": "Why did the fish tank get cloudy?",
+   "suspects": [
+    {
+     "who": "☀️ Sun + unplugged filter",
+     "why": "bright sun, filter unplugged"
+    },
+    {
+     "who": "🍤 Too much food",
+     "why": "food can was full"
+    },
+    {
+     "who": "🐠 Goldie",
+     "why": "just hiding behind a plant"
+    }
+   ],
+   "answer": "Sunlight and an unplugged filter made the tank cloudy.",
+   "proof": [
+    "\"…the tank had been sitting in bright sunlight by the window.\"",
+    "\"The filter was unplugged because a cord had been bumped during cleaning.\""
+   ],
+   "clears": [
+    "Too much food: \"The fish food can was full, so nobody overfed Goldie.\""
+   ],
+   "explain": "This shows the water could not stay clean because the filter was off and sunlight helps algae grow. Because of this, the tank turned cloudy and green."
+  },
+  {
+   "id": "noise",
+   "week": 7,
+   "tag": "🔊 noise",
+   "title": "The Midnight Noise",
+   "story": "Every night at midnight, the Garcias heard a loud tap-tap-tap on the roof. Lucia thought it was a ghost. Her dad climbed up in the morning and found acorns all over the roof. A big oak tree hung right over the house. In the corner of the roof sat a squirrel’s nest full of acorns. The neighbors were asleep and their lights were off by 10:00. \"It’s not a ghost,\" Dad said. \"It’s a busy squirrel!\"",
+   "question": "What is making the noise on the roof?",
+   "suspects": [
+    {
+     "who": "🐿️ A squirrel",
+     "why": "acorns on the roof, nest full of acorns"
+    },
+    {
+     "who": "👻 A ghost",
+     "why": "no clues point to a ghost"
+    },
+    {
+     "who": "🏠 The neighbors",
+     "why": "asleep with lights off by 10:00"
+    }
+   ],
+   "answer": "A squirrel is making the noise.",
+   "proof": [
+    "\"…found acorns all over the roof.\"",
+    "\"…sat a squirrel’s nest full of acorns.\""
+   ],
+   "clears": [
+    "Neighbors: \"The neighbors were asleep and their lights were off by 10:00.\""
+   ],
+   "explain": "This shows a squirrel is on the roof because its nest and acorns are right there. Because of this, the tapping is a squirrel, not a ghost."
+  },
+  {
+   "id": "leaves",
+   "week": 8,
+   "tag": "🍂 leaves",
+   "title": "The Scattered Leaf Pile",
+   "story": "On Saturday, Dad and Lila raked a giant pile of leaves in the front yard. They went inside for lunch. When they came back, the leaves were spread all over the street! The trees across the street were bending back and forth. The weather report on the radio said wind gusts of 30 miles per hour. Their dog, Pepper, had been napping inside by the heater. The neighbor kids were away at a soccer game. \"The wind wins this time,\" Dad sighed.",
+   "question": "What scattered the leaf pile?",
+   "suspects": [
+    {
+     "who": "💨 The strong wind",
+     "why": "trees bending, 30 mph gusts"
+    },
+    {
+     "who": "🐕 Pepper the dog",
+     "why": "napping inside by the heater"
+    },
+    {
+     "who": "⚽ The neighbor kids",
+     "why": "away at a soccer game"
+    }
+   ],
+   "answer": "The strong wind scattered the leaves.",
+   "proof": [
+    "\"The trees across the street were bending back and forth.\"",
+    "\"The weather report on the radio said wind gusts of 30 miles per hour.\""
+   ],
+   "clears": [
+    "Pepper: \"…had been napping inside by the heater.\"",
+    "Neighbor kids: \"The neighbor kids were away at a soccer game.\""
+   ],
+   "explain": "This shows the wind was very strong because the trees were bending and gusts were 30 miles per hour. Because of this, the wind scattered the pile."
+  },
+  {
+   "id": "pumpkin",
+   "week": 9,
+   "tag": "🎃 pumpkin",
+   "title": "The Case of the Chewed Pumpkin",
+   "story": "The Lopez family carved a jack-o’-lantern and set it on the porch. In the morning, big chunks were missing from the top! Small hand-shaped prints were in the dirt by the steps. The trash can lid was knocked over, and food was spread on the driveway. Little Rosa had been asleep upstairs all night. The cat, Shadow, was locked inside. That night, Mr. Lopez saw a masked raccoon munching on the pumpkin. \"Happy Halloween, raccoon!\" he laughed.",
+   "question": "Who chewed the pumpkin?",
+   "suspects": [
+    {
+     "who": "🦝 A raccoon",
+     "why": "hand-shaped prints, trash knocked over, seen munching"
+    },
+    {
+     "who": "👧 Little Rosa",
+     "why": "asleep upstairs all night"
+    },
+    {
+     "who": "🐈‍⬛ Shadow the cat",
+     "why": "locked inside"
+    }
+   ],
+   "answer": "A raccoon chewed the pumpkin.",
+   "proof": [
+    "\"Small hand-shaped prints were in the dirt by the steps.\"",
+    "\"That night, Mr. Lopez saw a masked raccoon munching on the pumpkin.\""
+   ],
+   "clears": [
+    "Rosa: \"Little Rosa had been asleep upstairs all night.\"",
+    "Shadow: \"The cat, Shadow, was locked inside.\""
+   ],
+   "explain": "This shows a raccoon was at the porch because raccoons have hand-shaped paws and one was seen eating it. Because of this, a raccoon chewed the pumpkin."
+  },
+  {
+   "id": "footprints",
+   "week": 10,
+   "tag": "👣 footprints",
+   "title": "The Muddy Footprints",
+   "story": "After recess, muddy footprints went across the clean classroom floor. They were small and round, with four toes. They led to the reading corner. There, curled up on the beanbag, was Daisy, the school therapy dog, who had come in from the wet playground. Every student had wiped their shoes on the mat. Mrs. Moore had boots on, but her prints were big and flat. \"Daisy, you need a towel!\" the class giggled.",
+   "question": "Who made the muddy footprints?",
+   "suspects": [
+    {
+     "who": "🐶 Daisy the therapy dog",
+     "why": "small round prints with four toes, on the beanbag"
+    },
+    {
+     "who": "🧒 The students",
+     "why": "wiped their shoes on the mat"
+    },
+    {
+     "who": "👢 Mrs. Moore",
+     "why": "her prints were big and flat"
+    }
+   ],
+   "answer": "Daisy the dog made the muddy footprints.",
+   "proof": [
+    "\"They were small and round, with four toes.\"",
+    "\"…curled up on the beanbag, was Daisy… who had come in from the wet playground.\""
+   ],
+   "clears": [
+    "Students: \"Every student had wiped their shoes on the mat.\"",
+    "Mrs. Moore: \"…her prints were big and flat.\""
+   ],
+   "explain": "This shows the prints came from a dog because people do not have round prints with four toes. Because of this, Daisy made the mess."
+  },
+  {
+   "id": "bus",
+   "week": 11,
+   "tag": "🚌 bus",
+   "title": "The Lost Backpack",
+   "story": "When Eli got home, he could not find his green backpack. He remembered wearing it at the bus stop. On the bus, he took it off to show his friend a toy. The next morning, the bus driver, Ms. Joy, held up a green backpack. \"I found this under seat 7 last night,\" she said. Eli always sits in seat 7. His mom had checked the whole house, and his little sister said she never saw it.",
+   "question": "Where did Eli leave his backpack?",
+   "suspects": [
+    {
+     "who": "🚌 On the bus, under seat 7",
+     "why": "took it off on the bus, found under his seat"
+    },
+    {
+     "who": "🏠 At home",
+     "why": "mom checked the whole house"
+    },
+    {
+     "who": "👧 With his sister",
+     "why": "she never saw it"
+    }
+   ],
+   "answer": "Eli left his backpack on the bus.",
+   "proof": [
+    "\"On the bus, he took it off to show his friend a toy.\"",
+    "\"Eli always sits in seat 7.\""
+   ],
+   "clears": [
+    "Home: \"His mom had checked the whole house…\"",
+    "Sister: \"…his little sister said she never saw it.\""
+   ],
+   "explain": "This shows Eli left it on the bus because he took it off there and it was found under his seat. Because of this, the backpack was on the bus all night."
+  },
+  {
+   "id": "trophy",
+   "week": 12,
+   "tag": "🏆 trophy",
+   "title": "The Lost Soccer Trophy",
+   "story": "The Tigers won the big soccer game, and their shiny trophy sat in the trophy case. The next day, it was gone! A muddy cleat print was on the floor by the case. Coach Kim wears sneakers, not cleats. The janitor, Mr. Lee, had just mopped the hall and his shoes were clean. Sam, the team captain, still had mud on his cleats from practice. At lunch, Sam held up the trophy. \"I was taking it to show my grandpa at the nursing home!\" he said. \"I forgot to ask first.\"",
+   "question": "Who took the trophy?",
+   "suspects": [
+    {
+     "who": "⚽ Sam the captain",
+     "why": "mud on his cleats"
+    },
+    {
+     "who": "👟 Coach Kim",
+     "why": "wears sneakers"
+    },
+    {
+     "who": "🧹 Mr. Lee",
+     "why": "shoes were clean"
+    }
+   ],
+   "answer": "Sam took the trophy.",
+   "proof": [
+    "\"Sam, the team captain, still had mud on his cleats from practice.\"",
+    "\"A muddy cleat print was on the floor by the case.\""
+   ],
+   "clears": [
+    "Coach Kim: \"…wears sneakers, not cleats.\"",
+    "Mr. Lee: \"…his shoes were clean.\""
+   ],
+   "explain": "This shows Sam was by the case because the muddy cleat print matches his cleats. Because of this, Sam is the one who took the trophy."
+  },
+  {
+   "id": "turkey",
+   "week": 13,
+   "tag": "🦃 turkey",
+   "title": "The Thanksgiving Pie Puzzle",
+   "story": "On Thanksgiving morning, Grandma set a pumpkin pie on the porch to cool. An hour later, one big slice was gone! There were tiny footprints with three toes in the flour on the steps. Feathers were stuck to the edge of the plate. Cousin Ella was inside helping set the table the whole time. Uncle Ray was in the yard raking leaves, and his hands were covered in dirt, not flour. Out by the fence, a wild turkey was pecking at orange crumbs. \"Well,\" Grandma laughed, \"someone else is thankful for pie!\"",
+   "question": "Who ate the slice of pie?",
+   "suspects": [
+    {
+     "who": "🦃 The wild turkey",
+     "why": "three-toed prints, feathers, orange crumbs"
+    },
+    {
+     "who": "👧 Cousin Ella",
+     "why": "inside setting the table the whole time"
+    },
+    {
+     "who": "🍂 Uncle Ray",
+     "why": "raking leaves, dirt on his hands, not flour"
+    }
+   ],
+   "answer": "The wild turkey ate the slice of pie.",
+   "proof": [
+    "\"There were tiny footprints with three toes in the flour on the steps.\"",
+    "\"Feathers were stuck to the edge of the plate.\"",
+    "\"Out by the fence, a wild turkey was pecking at orange crumbs.\""
+   ],
+   "clears": [
+    "Cousin Ella: \"…was inside helping set the table the whole time.\"",
+    "Uncle Ray: \"…his hands were covered in dirt, not flour.\""
+   ],
+   "explain": "This shows a turkey was at the pie because turkeys have three toes and leave feathers. Because of this, the wild turkey ate the slice."
+  },
+  {
+   "id": "cupcake",
+   "week": 14,
+   "tag": "🧁 cupcake",
+   "title": "The Missing Birthday Cupcakes",
+   "story": "It was Maya’s birthday, and her dad baked 12 cupcakes. He put them on the counter to cool. When Maya came home, only 9 were left! Her little brother Ben had pink frosting on his chin. The dog, Rocket, was asleep in the yard and had been outside all day. Grandma was at the store and came home after Maya. Maya smiled at Ben. \"I think someone couldn’t wait for the party!\"",
+   "question": "Who ate the missing cupcakes?",
+   "suspects": [
+    {
+     "who": "👦 Ben",
+     "why": "pink frosting on his chin"
+    },
+    {
+     "who": "🐕 Rocket the dog",
+     "why": "outside all day"
+    },
+    {
+     "who": "👵 Grandma",
+     "why": "at the store, came home after Maya"
+    }
+   ],
+   "answer": "Ben ate the missing cupcakes.",
+   "proof": [
+    "\"Her little brother Ben had pink frosting on his chin.\""
+   ],
+   "clears": [
+    "Rocket: \"…had been outside all day.\"",
+    "Grandma: \"…was at the store and came home after Maya.\""
+   ],
+   "explain": "This shows Ben ate a cupcake because the frosting on his chin matches the cupcakes. Because of this, Ben is the one who ate them."
+  },
+  {
+   "id": "mitten",
+   "week": 15,
+   "tag": "🧤 mitten",
+   "title": "The Missing Mitten",
+   "story": "After recess, Ava had only one red mitten. She looked in her pockets and her cubby. Then she heard a tiny meow from the lost-and-found box. Inside was the school cat, Marshmallow, curled up on her red mitten! Red fuzz was stuck to his white fur. Ava’s friend Grace had blue mittens on both hands. The recess aide, Mr. Ray, had been watching the swings. \"Marshmallow, you made a bed!\" Ava giggled.",
+   "question": "Who took Ava’s mitten?",
+   "suspects": [
+    {
+     "who": "🐱 Marshmallow the cat",
+     "why": "curled up on the mitten, red fuzz on his fur"
+    },
+    {
+     "who": "👧 Grace",
+     "why": "blue mittens on both hands"
+    },
+    {
+     "who": "🦺 Mr. Ray",
+     "why": "watching the swings"
+    }
+   ],
+   "answer": "Marshmallow the cat took the mitten.",
+   "proof": [
+    "\"Inside was the school cat, Marshmallow, curled up on her red mitten!\"",
+    "\"Red fuzz was stuck to his white fur.\""
+   ],
+   "clears": [
+    "Grace: \"Ava’s friend Grace had blue mittens on both hands.\"",
+    "Mr. Ray: \"…had been watching the swings.\""
+   ],
+   "explain": "This shows the cat had the mitten because he was lying on it with red fuzz on his fur. Because of this, Marshmallow took Ava’s mitten."
+  },
+  {
+   "id": "ginger",
+   "week": 16,
+   "tag": "🎄 ginger",
+   "title": "The Gingerbread House Mystery",
+   "story": "The class made a gingerbread house for the winter party. On Friday morning, the candy roof was missing three gumdrops! Small brown droppings were on the shelf next to the house. A tiny hole had been chewed in the back wall. The custodian, Ms. Ruiz, had locked the room at 4:00. All the students had gone home on the bus. That afternoon, Mr. Kent set a humane trap and caught a little gray mouse with sugar on its whiskers. \"Our mystery guest likes candy!\" said the class.",
+   "question": "Who ate the gumdrops?",
+   "suspects": [
+    {
+     "who": "🐭 A little mouse",
+     "why": "droppings, chewed hole, sugar on its whiskers"
+    },
+    {
+     "who": "🧹 Ms. Ruiz",
+     "why": "locked the room at 4:00"
+    },
+    {
+     "who": "🎒 The students",
+     "why": "had all gone home on the bus"
+    }
+   ],
+   "answer": "A little mouse ate the gumdrops.",
+   "proof": [
+    "\"Small brown droppings were on the shelf next to the house.\"",
+    "\"A tiny hole had been chewed in the back wall.\"",
+    "\"…caught a little gray mouse with sugar on its whiskers.\""
+   ],
+   "clears": [
+    "Ms. Ruiz: \"…had locked the room at 4:00.\"",
+    "Students: \"All the students had gone home on the bus.\""
+   ],
+   "explain": "This shows a mouse got into the house because mice chew small holes and leave droppings. Because of this, the mouse ate the gumdrops."
+  },
+  {
+   "id": "lights",
+   "week": 17,
+   "tag": "💡 lights",
+   "title": "The Dark Holiday Lights",
+   "story": "The Kims put lights on their tree every December. One night, the lights would not turn on! Dad checked every bulb, and none were broken. Then June found the plug lying on the floor next to the vacuum cleaner. Mom had vacuumed under the tree that afternoon. The cat had been sleeping in June’s room all day. Mom smiled. \"Oops! I must have pulled the plug with the vacuum.\"",
+   "question": "Why did the lights go out?",
+   "suspects": [
+    {
+     "who": "🧹 The vacuum pulled the plug",
+     "why": "plug on the floor by the vacuum, Mom vacuumed there"
+    },
+    {
+     "who": "🐈 The cat",
+     "why": "sleeping in June’s room all day"
+    },
+    {
+     "who": "💡 Broken bulbs",
+     "why": "none were broken"
+    }
+   ],
+   "answer": "The vacuum pulled out the plug.",
+   "proof": [
+    "\"Then June found the plug lying on the floor next to the vacuum cleaner.\"",
+    "\"Mom had vacuumed under the tree that afternoon.\""
+   ],
+   "clears": [
+    "Cat: \"The cat had been sleeping in June’s room all day.\"",
+    "Bulbs: \"Dad checked every bulb, and none were broken.\""
+   ],
+   "explain": "This shows the plug came out while Mom cleaned because it was next to the vacuum. Because of this, the lights had no power."
+  },
+  {
+   "id": "clock",
+   "week": 18,
+   "tag": "⏰ clock",
+   "title": "The Clock That Stopped",
+   "story": "When the class came back from winter break, the wall clock said 2:15. But it was only 8:30 in the morning! The clock hands were not moving at all. Mr. Park climbed up and opened the back. The battery was old and covered in white crust. Nobody had been in the room over break because the doors were locked. He put in a new battery, and the clock started ticking right away.",
+   "question": "Why did the clock stop?",
+   "suspects": [
+    {
+     "who": "🔋 A dead battery",
+     "why": "old battery with crust, worked with a new one"
+    },
+    {
+     "who": "🧒 A student",
+     "why": "the room was locked over break"
+    },
+    {
+     "who": "👻 A ghost",
+     "why": "no clues point to a ghost"
+    }
+   ],
+   "answer": "The clock stopped because the battery died.",
+   "proof": [
+    "\"The battery was old and covered in white crust.\"",
+    "\"He put in a new battery, and the clock started ticking right away.\""
+   ],
+   "clears": [
+    "Student: \"Nobody had been in the room over break because the doors were locked.\""
+   ],
+   "explain": "This shows the battery was the problem because the clock worked as soon as it had a new one. Because of this, a dead battery stopped the clock."
+  },
+  {
+   "id": "snow",
+   "week": 19,
+   "tag": "⛄ snow",
+   "title": "The Melting Snowman",
+   "story": "The class built a giant snowman at recess. After lunch, he was only half as big! His carrot nose was on the ground. Some kids thought a dog knocked him over, but there were no paw prints in the snow. The sun was shining bright, and the snow around him was wet and slushy. The thermometer by the door said 45 degrees. \"Our snowman is melting!\" said Ava.",
+   "question": "What happened to the snowman?",
+   "suspects": [
+    {
+     "who": "☀️ The warm sun",
+     "why": "bright sun, wet slushy snow, 45 degrees"
+    },
+    {
+     "who": "🐕 A dog",
+     "why": "no paw prints"
+    },
+    {
+     "who": "🧒 A student",
+     "why": "everyone was at lunch"
+    }
+   ],
+   "answer": "The warm sun melted the snowman.",
+   "proof": [
+    "\"The sun was shining bright, and the snow around him was wet and slushy.\"",
+    "\"The thermometer by the door said 45 degrees.\""
+   ],
+   "clears": [
+    "Dog: \"…there were no paw prints in the snow.\""
+   ],
+   "explain": "This shows it was too warm for snow because 45 degrees is above freezing. Because of this, the sun melted the snowman. (Science link: matter changes from solid to liquid.)"
+  },
+  {
+   "id": "feeder",
+   "week": 20,
+   "tag": "🐦 feeder",
+   "title": "The Broken Bird Feeder",
+   "story": "The class hung a bird feeder outside the window. On Monday, it was on the ground, and all the seeds were gone! There were big hoof prints in the snow under the tree. The branch it hung from was low, and bark was rubbed off the trunk. Small birds can not knock down a heavy feeder. The custodian, Mr. Bell, had not been outside all weekend. On Tuesday, the class saw a deer stretching its neck to lick the new feeder.",
+   "question": "Who knocked down the bird feeder?",
+   "suspects": [
+    {
+     "who": "🦌 A deer",
+     "why": "hoof prints, rubbed bark, seen at the feeder"
+    },
+    {
+     "who": "🐦 The birds",
+     "why": "too small to knock down a heavy feeder"
+    },
+    {
+     "who": "🧹 Mr. Bell",
+     "why": "not outside all weekend"
+    }
+   ],
+   "answer": "A deer knocked down the bird feeder.",
+   "proof": [
+    "\"There were big hoof prints in the snow under the tree.\"",
+    "\"On Tuesday, the class saw a deer stretching its neck to lick the new feeder.\""
+   ],
+   "clears": [
+    "Birds: \"Small birds can not knock down a heavy feeder.\"",
+    "Mr. Bell: \"…had not been outside all weekend.\""
+   ],
+   "explain": "This shows a deer was at the feeder because deer have hooves and one was seen licking it. Because of this, a deer knocked it down."
+  },
+  {
+   "id": "cocoa",
+   "week": 21,
+   "tag": "☕ cocoa",
+   "title": "The Missing Marshmallows",
+   "story": "On a snowy day, Grandpa made hot cocoa for Nora and her little brother, Max. He set out a bowl of marshmallows. When Nora came back from washing her hands, the bowl was empty! Max had white sugar powder on his fingers and a puffy cheek. Grandpa had been at the stove stirring the pot. The dog was outside playing in the snow. Max giggled, and a marshmallow fell out of his mouth.",
+   "question": "Who ate the marshmallows?",
+   "suspects": [
+    {
+     "who": "👦 Max",
+     "why": "sugar on his fingers, puffy cheek, one fell out"
+    },
+    {
+     "who": "👴 Grandpa",
+     "why": "at the stove stirring the pot"
+    },
+    {
+     "who": "🐕 The dog",
+     "why": "outside playing in the snow"
+    }
+   ],
+   "answer": "Max ate the marshmallows.",
+   "proof": [
+    "\"Max had white sugar powder on his fingers and a puffy cheek.\"",
+    "\"Max giggled, and a marshmallow fell out of his mouth.\""
+   ],
+   "clears": [
+    "Grandpa: \"Grandpa had been at the stove stirring the pot.\"",
+    "Dog: \"The dog was outside playing in the snow.\""
+   ],
+   "explain": "This shows Max ate them because a marshmallow fell out of his mouth. Because of this, Max is the marshmallow thief."
+  },
+  {
+   "id": "valentine",
+   "week": 22,
+   "tag": "💌 valentine",
+   "title": "The Vanished Valentines",
+   "story": "For the Valentine’s party, each student had a paper bag mailbox by the open window. After lunch, five valentines were missing from Kai’s bag! Ms. Rose found pink cards stuck in the bushes outside the window. The flag on the pole was flapping hard in the wind. Kai’s bag was the closest one to the window. All the students were at lunch, and the door was locked. \"The wind delivered them outside!\" said Ms. Rose.",
+   "question": "What happened to Kai’s valentines?",
+   "suspects": [
+    {
+     "who": "💨 The wind blew them out",
+     "why": "open window, cards in the bushes, flag flapping"
+    },
+    {
+     "who": "🧒 A classmate",
+     "why": "everyone was at lunch, door locked"
+    },
+    {
+     "who": "🧑‍🏫 Ms. Rose",
+     "why": "she found the cards"
+    }
+   ],
+   "answer": "The wind blew the valentines out the window.",
+   "proof": [
+    "\"Ms. Rose found pink cards stuck in the bushes outside the window.\"",
+    "\"Kai’s bag was the closest one to the window.\""
+   ],
+   "clears": [
+    "Classmates: \"All the students were at lunch, and the door was locked.\""
+   ],
+   "explain": "This shows the wind took the cards because they ended up in the bushes right outside the open window. Because of this, the wind made the valentines vanish."
+  },
+  {
+   "id": "volcano",
+   "week": 23,
+   "tag": "🌋 volcano",
+   "title": "The Volcano That Would Not Erupt",
+   "story": "At the science fair, Ben’s volcano was supposed to fizz and bubble. He poured in the vinegar, but nothing happened! His sister, Ruby, looked at the box of baking soda. It was full of white powder, but the label said Powdered Sugar. Ben had grabbed the wrong box from the kitchen. The judge, Ms. Lane, had not touched the table. Ruby ran home and brought the real baking soda. Fizz! The volcano erupted all over the table.",
+   "question": "Why didn’t the volcano erupt?",
+   "suspects": [
+    {
+     "who": "🍰 The wrong powder",
+     "why": "label said Powdered Sugar, worked with real baking soda"
+    },
+    {
+     "who": "👩‍⚖️ Ms. Lane",
+     "why": "had not touched the table"
+    },
+    {
+     "who": "🧪 Bad vinegar",
+     "why": "it fizzed once the right powder was added"
+    }
+   ],
+   "answer": "Ben used powdered sugar instead of baking soda.",
+   "proof": [
+    "\"It was full of white powder, but the label said Powdered Sugar.\"",
+    "\"Ben had grabbed the wrong box from the kitchen.\""
+   ],
+   "clears": [
+    "Ms. Lane: \"The judge, Ms. Lane, had not touched the table.\""
+   ],
+   "explain": "This shows the powder was wrong because only baking soda makes vinegar fizz. Because of this, the volcano would not erupt until Ruby brought the real one."
+  },
+  {
+   "id": "crown",
+   "week": 24,
+   "tag": "👑 crown",
+   "title": "The Missing Play Crown",
+   "story": "The night before the school play, the king’s gold crown went missing! The costume box had glitter spilled all over it. A trail of gold glitter led down the hall to the art room. In the art room, Zoe was painting a castle backdrop, and her hands were covered in gold glitter. She held up the crown. \"It needed more sparkle!\" she said. Mr. Fox, the director, had been on stage the whole time. Kenji, who plays the king, was at home practicing his lines.",
+   "question": "Who took the crown?",
+   "suspects": [
+    {
+     "who": "🎨 Zoe",
+     "why": "glitter trail to the art room, glitter on her hands"
+    },
+    {
+     "who": "🎬 Mr. Fox",
+     "why": "on stage the whole time"
+    },
+    {
+     "who": "🤴 Kenji",
+     "why": "at home practicing"
+    }
+   ],
+   "answer": "Zoe took the crown to add more sparkle.",
+   "proof": [
+    "\"A trail of gold glitter led down the hall to the art room.\"",
+    "\"…her hands were covered in gold glitter.\""
+   ],
+   "clears": [
+    "Mr. Fox: \"…had been on stage the whole time.\"",
+    "Kenji: \"…was at home practicing his lines.\""
+   ],
+   "explain": "This shows Zoe had the crown because the glitter trail ended right where she was working. Because of this, Zoe is the one who took it."
+  },
+  {
+   "id": "piano",
+   "week": 25,
+   "tag": "🎹 piano",
+   "title": "The Silent Piano Key",
+   "story": "In music class, one piano key would not make a sound. Mrs. Song pressed it again and again. Then she opened the top of the piano. Inside, a striped sock was stuck on the strings! The sock had a name tag that said Theo. Theo had taken off his wet socks after recess and laid them on top of the piano to dry. The window was closed, and the room was quiet. Theo turned red. \"I think my sock slipped in!\"",
+   "question": "Why was the piano key silent?",
+   "suspects": [
+    {
+     "who": "🧦 Theo’s sock fell inside",
+     "why": "sock with his name tag stuck on the strings"
+    },
+    {
+     "who": "💨 The wind",
+     "why": "the window was closed"
+    },
+    {
+     "who": "🎹 A broken key",
+     "why": "it worked once the sock was out"
+    }
+   ],
+   "answer": "Theo’s sock fell into the piano.",
+   "proof": [
+    "\"Inside, a striped sock was stuck on the strings!\"",
+    "\"Theo had taken off his wet socks after recess and laid them on top of the piano to dry.\""
+   ],
+   "clears": [
+    "Wind: \"The window was closed, and the room was quiet.\""
+   ],
+   "explain": "This shows the sock blocked the strings because it was stuck right inside with Theo’s name on it. Because of this, the key could not make a sound."
+  },
+  {
+   "id": "kite",
+   "week": 26,
+   "tag": "🪁 kite",
+   "title": "The Stuck Kite",
+   "story": "On a windy March day, Zara flew her new rainbow kite at the park. Suddenly, the string went slack and the kite disappeared! Zara looked up and saw a rainbow tail hanging from the top of a tall oak tree. The broken string was tangled in the branches. Her brother, Sam, was on the swings far away. Nobody else at the park had a kite. \"The wind pushed it right into the tree,\" Zara sighed.",
+   "question": "Where did Zara’s kite go?",
+   "suspects": [
+    {
+     "who": "🌳 Stuck in the oak tree",
+     "why": "rainbow tail in the tree, string tangled in branches"
+    },
+    {
+     "who": "🧒 Sam took it",
+     "why": "he was on the swings far away"
+    },
+    {
+     "who": "👀 Someone else",
+     "why": "nobody else had a kite"
+    }
+   ],
+   "answer": "The kite got stuck in the oak tree.",
+   "proof": [
+    "\"Zara looked up and saw a rainbow tail hanging from the top of a tall oak tree.\"",
+    "\"The broken string was tangled in the branches.\""
+   ],
+   "clears": [
+    "Sam: \"Her brother, Sam, was on the swings far away.\"",
+    "Others: \"Nobody else at the park had a kite.\""
+   ],
+   "explain": "This shows the kite is in the tree because its tail and string are tangled in the branches. Because of this, the wind blew the kite into the oak tree."
+  },
+  {
+   "id": "shamrock",
+   "week": 27,
+   "tag": "☘️ shamrock",
+   "title": "The Green Footprints",
+   "story": "On St. Patrick’s Day, green footprints went across the hallway! They started at the art room door. Inside, a can of green paint was tipped over on the floor. Leo’s sneakers had wet green paint on the bottoms. The art teacher, Ms. Fern, had stepped out to make copies. The class leprechaun trap was still set and empty. Leo looked at his shoes. \"Uh-oh. I think I’m the leprechaun!\"",
+   "question": "Who made the green footprints?",
+   "suspects": [
+    {
+     "who": "👟 Leo",
+     "why": "wet green paint on his sneakers"
+    },
+    {
+     "who": "🍀 A leprechaun",
+     "why": "the trap was still set and empty"
+    },
+    {
+     "who": "🎨 Ms. Fern",
+     "why": "had stepped out to make copies"
+    }
+   ],
+   "answer": "Leo made the green footprints.",
+   "proof": [
+    "\"Inside, a can of green paint was tipped over on the floor.\"",
+    "\"Leo’s sneakers had wet green paint on the bottoms.\""
+   ],
+   "clears": [
+    "Leprechaun: \"The class leprechaun trap was still set and empty.\"",
+    "Ms. Fern: \"…had stepped out to make copies.\""
+   ],
+   "explain": "This shows Leo stepped in the paint because the green paint on his shoes matches the footprints. Because of this, Leo made the footprints."
+  },
+  {
+   "id": "puddle",
+   "week": 28,
+   "tag": "🌧️ puddle",
+   "title": "The Puddle in the Hall",
+   "story": "During a big spring storm, a puddle appeared in the middle of the hallway. Kids thought someone spilled a drink. Mr. Diaz looked up and saw a brown water stain on the ceiling tile. Every few seconds, a drop of water fell from it. The water fountain was at the other end of the hall and was dry. No cups or bottles were anywhere near the puddle. \"The roof has a leak!\" said Mr. Diaz.",
+   "question": "What made the puddle?",
+   "suspects": [
+    {
+     "who": "🏠 A leaky roof",
+     "why": "water stain on the ceiling, drops falling"
+    },
+    {
+     "who": "🥤 A spilled drink",
+     "why": "no cups or bottles nearby"
+    },
+    {
+     "who": "🚰 The water fountain",
+     "why": "at the other end of the hall and dry"
+    }
+   ],
+   "answer": "A leaky roof made the puddle.",
+   "proof": [
+    "\"Mr. Diaz looked up and saw a brown water stain on the ceiling tile.\"",
+    "\"Every few seconds, a drop of water fell from it.\""
+   ],
+   "clears": [
+    "Drink: \"No cups or bottles were anywhere near the puddle.\"",
+    "Fountain: \"The water fountain was at the other end of the hall and was dry.\""
+   ],
+   "explain": "This shows the water came from the ceiling because drops were falling from the stain. Because of this, the roof leak made the puddle."
+  },
+  {
+   "id": "garden",
+   "week": 29,
+   "tag": "🌻 garden",
+   "title": "Who Ate the Garden?",
+   "story": "Mrs. Gray’s class planted lettuce in the school garden. On Friday, the lettuce had big bites taken out of it! There were long, thin tracks in the dirt. A rabbit hole was under the fence. The birds only sat on the roof and ate seeds from the feeder. The class turtle, Speedy, was inside his tank all week. The next morning, the class saw a fluffy white rabbit nibbling a leaf. \"Mystery solved!\" said Mrs. Gray.",
+   "question": "Who ate the lettuce?",
+   "suspects": [
+    {
+     "who": "🐰 The rabbit",
+     "why": "tracks, hole under the fence, seen nibbling"
+    },
+    {
+     "who": "🐦 The birds",
+     "why": "ate seeds from the feeder"
+    },
+    {
+     "who": "🐢 Speedy the turtle",
+     "why": "inside his tank all week"
+    }
+   ],
+   "answer": "A rabbit ate the lettuce.",
+   "proof": [
+    "\"A rabbit hole was under the fence.\"",
+    "\"…the class saw a fluffy white rabbit nibbling a leaf.\""
+   ],
+   "clears": [
+    "Birds: \"…ate seeds from the feeder.\"",
+    "Speedy: \"…was inside his tank all week.\""
+   ],
+   "explain": "This shows the rabbit got into the garden because it had a hole under the fence. Because of this, the rabbit is the one who ate the lettuce."
+  },
+  {
+   "id": "eggs",
+   "week": 30,
+   "tag": "🪺 eggs",
+   "title": "The Empty Nest",
+   "story": "A robin built a nest in the bush outside Room 9. The class watched three blue eggs every day. One morning, the eggs were gone! Pieces of blue shell were at the bottom of the nest. The class heard tiny cheep-cheep sounds. Three fuzzy baby birds poked their heads up with their mouths open. No cats or snakes were seen near the bush. \"The eggs didn’t disappear,\" said Mr. Gold. \"They hatched!\"",
+   "question": "What happened to the robin eggs?",
+   "suspects": [
+    {
+     "who": "🐣 They hatched",
+     "why": "pieces of shell, baby birds cheeping"
+    },
+    {
+     "who": "🐈 A cat",
+     "why": "no cats were seen near the bush"
+    },
+    {
+     "who": "🐍 A snake",
+     "why": "no snakes were seen"
+    }
+   ],
+   "answer": "The robin eggs hatched.",
+   "proof": [
+    "\"Pieces of blue shell were at the bottom of the nest.\"",
+    "\"Three fuzzy baby birds poked their heads up with their mouths open.\""
+   ],
+   "clears": [
+    "Cat or snake: \"No cats or snakes were seen near the bush.\""
+   ],
+   "explain": "This shows the eggs hatched because there are broken shells and baby birds in the nest. Because of this, the eggs turned into baby robins. (Science link: life cycles.)"
+  },
+  {
+   "id": "earth",
+   "week": 31,
+   "tag": "🌎 earth",
+   "title": "The Earth Day Litter Mystery",
+   "story": "For Earth Day, the class went to clean up Maple Park. They found trash all around the picnic table! The trash can lid was off, and the bag inside was ripped open. Wrappers had little bite marks on them. Muddy paw prints with five fingers led to the creek. The park ranger said she emptied the can last week and closed the lid tight. That evening, a raccoon family came out to dig in the can again.",
+   "question": "Who made the mess at the park?",
+   "suspects": [
+    {
+     "who": "🦝 Raccoons",
+     "why": "ripped bag, bite marks, five-finger prints"
+    },
+    {
+     "who": "👩‍🌾 The park ranger",
+     "why": "closed the lid tight"
+    },
+    {
+     "who": "🧒 The class",
+     "why": "they came to clean it up"
+    }
+   ],
+   "answer": "Raccoons made the mess at the park.",
+   "proof": [
+    "\"Wrappers had little bite marks on them.\"",
+    "\"Muddy paw prints with five fingers led to the creek.\""
+   ],
+   "clears": [
+    "Ranger: \"The park ranger said she emptied the can last week and closed the lid tight.\""
+   ],
+   "explain": "This shows raccoons got into the trash because the wrappers were bitten and their prints led away. Because of this, raccoons made the mess."
+  },
+  {
+   "id": "camera",
+   "week": 32,
+   "tag": "📷 camera",
+   "title": "The Lost Field Trip Camera",
+   "story": "At the zoo, Ms. Ray took pictures with the class camera. When the class got back on the bus, the camera was gone! Ms. Ray checked her bag and her coat pockets. Then Ty remembered that she set it on the bench by the penguins to tie her shoe. The zoo worker at the penguin house found a camera on that bench. The bus driver had stayed on the bus the whole time. The monkeys were in a closed cage far away.",
+   "question": "Where did the camera go?",
+   "suspects": [
+    {
+     "who": "🐧 Left on the penguin bench",
+     "why": "Ty saw her set it there, worker found it there"
+    },
+    {
+     "who": "🐒 The monkeys",
+     "why": "in a closed cage far away"
+    },
+    {
+     "who": "🚌 The bus driver",
+     "why": "stayed on the bus the whole time"
+    }
+   ],
+   "answer": "Ms. Ray left the camera on the bench by the penguins.",
+   "proof": [
+    "\"Then Ty remembered that she set it on the bench by the penguins to tie her shoe.\"",
+    "\"The zoo worker at the penguin house found a camera on that bench.\""
+   ],
+   "clears": [
+    "Monkeys: \"The monkeys were in a closed cage far away.\"",
+    "Driver: \"The bus driver had stayed on the bus the whole time.\""
+   ],
+   "explain": "This shows the camera was on the bench because Ty saw her set it there and a worker found it there. Because of this, the camera was left behind, not stolen."
+  },
+  {
+   "id": "plant",
+   "week": 33,
+   "tag": "🌱 plant",
+   "title": "The Droopy Bean Plant",
+   "story": "The class planted bean seeds in cups. Every plant grew tall and green, except one. Jin’s plant was pale yellow and droopy. His cup had been moved into the dark supply closet to make room for a project. The other cups sat on the sunny windowsill. Jin watered his plant every day, and the soil was still wet. After one week back by the window, his plant turned green again.",
+   "question": "Why was Jin’s plant pale and droopy?",
+   "suspects": [
+    {
+     "who": "🌑 No sunlight",
+     "why": "moved into the dark closet, green again by the window"
+    },
+    {
+     "who": "💧 No water",
+     "why": "he watered every day, soil was wet"
+    },
+    {
+     "who": "🌱 A bad seed",
+     "why": "it grew again by the window"
+    }
+   ],
+   "answer": "Jin’s plant did not get sunlight.",
+   "proof": [
+    "\"His cup had been moved into the dark supply closet to make room for a project.\"",
+    "\"After one week back by the window, his plant turned green again.\""
+   ],
+   "clears": [
+    "Water: \"Jin watered his plant every day, and the soil was still wet.\""
+   ],
+   "explain": "This shows the plant needed light because it turned green again in the sun. Because of this, being in the dark closet made it pale. (Science link: what plants need.)"
+  },
+  {
+   "id": "icecream",
+   "week": 34,
+   "tag": "🍦 icecream",
+   "title": "The Melted Ice Cream",
+   "story": "For the end-of-unit party, Mr. Fox bought ice cream and put it in the teacher lounge freezer. At 2:00, the ice cream was soup! The freezer door was open a crack, and a box of paper plates was stuck in it. Cold air was coming out into the room. Ms. Hall had put the paper plates on the top shelf that morning. The power was on, because the microwave and lights worked. \"The door could not close!\" said Mr. Fox.",
+   "question": "Why did the ice cream melt?",
+   "suspects": [
+    {
+     "who": "🚪 The freezer door was open",
+     "why": "door open a crack, plates stuck in it"
+    },
+    {
+     "who": "🔌 The power went out",
+     "why": "the microwave and lights worked"
+    },
+    {
+     "who": "☀️ A hot day",
+     "why": "it would have stayed frozen with the door closed"
+    }
+   ],
+   "answer": "The freezer door was left open, so the ice cream melted.",
+   "proof": [
+    "\"The freezer door was open a crack, and a box of paper plates was stuck in it.\"",
+    "\"Cold air was coming out into the room.\""
+   ],
+   "clears": [
+    "Power: \"The power was on, because the microwave and lights worked.\""
+   ],
+   "explain": "This shows the freezer could not stay cold because the door was blocked open. Because of this, the ice cream melted. (Science link: solid to liquid.)"
+  },
+  {
+   "id": "ribbon",
+   "week": 35,
+   "tag": "🎗️ ribbon",
+   "title": "The Field Day Ribbon",
+   "story": "On Field Day, Maya won a blue first-place ribbon. She clipped it to her water bottle and went to the sack race. When she came back, the ribbon was gone! A gust of wind blew everyone’s hats around. Maya saw something blue flapping against the fence at the edge of the field. It was her ribbon, caught on the wire. Her friend Ally had been in the sack race with her the whole time. The coach had all the extra ribbons locked in a box.",
+   "question": "What happened to Maya’s ribbon?",
+   "suspects": [
+    {
+     "who": "💨 The wind blew it away",
+     "why": "gust of wind, ribbon caught on the fence"
+    },
+    {
+     "who": "🧒 Ally",
+     "why": "in the sack race with her the whole time"
+    },
+    {
+     "who": "🏅 The coach",
+     "why": "extra ribbons were locked in a box"
+    }
+   ],
+   "answer": "The wind blew Maya’s ribbon to the fence.",
+   "proof": [
+    "\"A gust of wind blew everyone’s hats around.\"",
+    "\"It was her ribbon, caught on the wire.\""
+   ],
+   "clears": [
+    "Ally: \"Her friend Ally had been in the sack race with her the whole time.\"",
+    "Coach: \"The coach had all the extra ribbons locked in a box.\""
+   ],
+   "explain": "This shows the wind carried the ribbon because it ended up on the fence after a big gust. Because of this, nobody took it."
+  },
+  {
+   "id": "balloons",
+   "week": 36,
+   "tag": "🎈 balloons",
+   "title": "The Popping Balloons",
+   "story": "On the last day of school, the class tied balloons to the playground fence. One by one, they started to pop! The balloons were in the bright, hot sun, and the thermometer said 90 degrees. The balloons in the shade by the door were still fine. No one was near the fence, because everyone was eating popsicles under the tree. \"The heat made the air inside get bigger!\" said Ms. Jade.",
+   "question": "Why did the balloons pop?",
+   "suspects": [
+    {
+     "who": "☀️ The hot sun",
+     "why": "90 degrees, sunny ones popped, shady ones were fine"
+    },
+    {
+     "who": "🧒 The students",
+     "why": "everyone was under the tree"
+    },
+    {
+     "who": "🐦 Birds",
+     "why": "no clues point to birds"
+    }
+   ],
+   "answer": "The hot sun made the balloons pop.",
+   "proof": [
+    "\"The balloons were in the bright, hot sun, and the thermometer said 90 degrees.\"",
+    "\"The balloons in the shade by the door were still fine.\""
+   ],
+   "clears": [
+    "Students: \"No one was near the fence, because everyone was eating popsicles under the tree.\""
+   ],
+   "explain": "This shows the heat popped them because only the balloons in the sun popped. Because of this, the hot sun was the cause. (Science link: heat makes gas expand.)"
+  }
+ ]
+}
