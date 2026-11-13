@@ -3216,5 +3216,536 @@
    }
   ],
   "note": "Paragraph F is the move to teach, i.e. funding \"does not tell you which is wrong, it tells you which questions each was built to answer.\" That is RI.6.6 without the cynicism."
+ },
+ {
+  "id": "g6-31",
+  "grade": 6,
+  "n": 31,
+  "title": "The Graph and the Glacier",
+  "standard": "RI.6.7",
+  "standard_text": "Standard: Integrate information presented in different media or formats, including visually and quantitatively, as well as in words to develop a coherent understanding of a topic or issue.\n Spiral: RI.6.1 citing evidence · RI.6.2 central idea · RI.6.9 comparing accounts · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1030,
+   "words": 240,
+   "labelled_words": 240,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A photograph of a glacier taken in 1920 beside one from today is the most persuasive thing in any article about ice. It is also the least precise, and the two facts are related."
+    },
+    {
+     "label": "B",
+     "text": "The photographs show that the front of the glacier has moved. They cannot say how fast, when most of it happened, or whether it is still happening. A century is a long gap between two frames."
+    },
+    {
+     "label": "C",
+     "text": "The graph beside them does the rest. A line of annual mass balance, measured every year since 1950, shows the ice losing more each summer than it gains each winter, and the slope steepening after 1990."
+    },
+    {
+     "label": "D",
+     "text": "The table underneath is where the numbers live. Mean loss per decade, in meters of water equivalent, with the uncertainty beside each figure — unglamorous, and the only part that lets you check the line."
+    },
+    {
+     "label": "E",
+     "text": "Each format fails alone. The photographs have no scale, the graph has no sense of a place, and the table is unreadable at a glance. Together they say what none of them says by itself."
+    },
+    {
+     "label": "F",
+     "text": "Watch what the article chose to lead with. A photograph pair at the top and the table in a footnote is a different piece from the same evidence arranged the other way round."
+    },
+    {
+     "label": "G",
+     "text": "So read the caption last and the axis first. The axis tells you what was measured and over what span, and a graph with no units is a picture, not evidence."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 810,
+   "words": 178,
+   "labelled_words": 178,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A glacier photograph from 1920 beside one from today is persuasive. It is also the least precise thing in the article."
+    },
+    {
+     "label": "B",
+     "text": "The photographs show the front of the glacier has moved. They cannot say how fast. They cannot say when it happened. A century is a long gap."
+    },
+    {
+     "label": "C",
+     "text": "The graph does the rest. It shows mass balance each year since 1950. The ice loses more each summer than it gains each winter. The slope steepens after 1990."
+    },
+    {
+     "label": "D",
+     "text": "The table holds the numbers. It gives mean loss per decade. It gives the uncertainty beside each figure. It is the only part you can check the line against."
+    },
+    {
+     "label": "E",
+     "text": "Each format fails alone. The photographs have no scale. The graph has no sense of place. The table cannot be read at a glance."
+    },
+    {
+     "label": "F",
+     "text": "Watch what the article leads with. Photographs at the top and the table in a footnote is a different piece. The evidence is the same."
+    },
+    {
+     "label": "G",
+     "text": "So read the axis first. It tells you what was measured and over what span. A graph with no units is a picture."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What can the two photographs not tell you?",
+    "a": "They cannot say how fast the front of the glacier moved, when most of it happened, or whether it is still happening."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the graph) and paragraph D (i.e. the table).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what each format contributes to an article about a glacier.",
+    "a": "The photographs show that the front has moved but have no scale and a century-long gap. The graph shows annual mass balance since 1950 and the slope steepening after 1990. The table holds the per-decade numbers and the uncertainty, which is the only way to check the line. Each one fails alone."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "mass balance: the difference between the ice a glacier gains in winter and loses in summer.\nuncertainty: the measured range a figure could fall within, printed beside it.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between where a format sits in the article and the impression it leaves.",
+    "a": "A photograph pair at the top and the table in a footnote is a different piece from the same evidence arranged the other way round."
+   }
+  ],
+  "note": "Paragraph G is the habit, i.e. \"read the caption last and the axis first.\" Students will do the opposite unless they are told."
+ },
+ {
+  "id": "g6-32",
+  "grade": 6,
+  "n": 32,
+  "title": "A Map, a Table, and a Flood",
+  "standard": "RI.6.7",
+  "standard_text": "Standard: Integrate information presented in different media or formats, including visually and quantitatively, as well as in words to develop a coherent understanding of a topic or issue.\n Spiral: RI.6.1 citing evidence · RI.6.2 central idea · RI.6.9 comparing accounts · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1020,
+   "words": 197,
+   "labelled_words": 197,
+   "paras": [
+    {
+     "label": "A",
+     "text": "After a river floods, a town meeting usually has three documents on the table, and they do not agree about who was hurt."
+    },
+    {
+     "label": "B",
+     "text": "The map shades the flooded area. It is the only one that shows where, and it treats every shaded house the same, whether the water came to the doorstep or the ceiling."
+    },
+    {
+     "label": "C",
+     "text": "The table counts. Houses damaged, dollars claimed, days out of the home — it distinguishes severity, and it has no geography at all, so you cannot see that one street took most of it."
+    },
+    {
+     "label": "D",
+     "text": "The photographs do what neither can. A single picture of a kitchen under four feet of water puts a number into a body, and it also shows one kitchen out of six hundred."
+    },
+    {
+     "label": "E",
+     "text": "The disagreement is usually about scale. The map says twelve per cent of the town flooded. The table says the average claim was eleven thousand dollars. Both are true and neither mentions that twenty families lost everything."
+    },
+    {
+     "label": "F",
+     "text": "So the question for the meeting is which document the decision is being made from. A budget drawn from the average will not reach the twenty, and a budget drawn from the photograph will not reach the rest."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 800,
+   "words": 154,
+   "labelled_words": 154,
+   "paras": [
+    {
+     "label": "A",
+     "text": "After a river floods, a town meeting has three documents. They do not agree about who was hurt."
+    },
+    {
+     "label": "B",
+     "text": "The map shades the flooded area. It is the only one that shows where. It treats every shaded house the same. Water at the doorstep looks like water at the ceiling."
+    },
+    {
+     "label": "C",
+     "text": "The table counts. It lists houses damaged and dollars claimed. It shows how bad each case was. It has no geography, so one hard-hit street does not show."
+    },
+    {
+     "label": "D",
+     "text": "The photographs do what neither can. One picture of a flooded kitchen makes a number real. It also shows one kitchen out of six hundred."
+    },
+    {
+     "label": "E",
+     "text": "The disagreement is about scale. The map says twelve per cent of the town flooded. The table says the average claim was eleven thousand dollars. Neither mentions the twenty families who lost everything."
+    },
+    {
+     "label": "F",
+     "text": "So ask which document the decision comes from. A budget built on the average will not reach those twenty."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does the map treat the same that the table does not?",
+    "a": "The map treats every shaded house the same, whether the water came to the doorstep or the ceiling, while the table distinguishes severity."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. what the table counts) and paragraph E (i.e. the disagreement about scale).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what each of the three documents shows and misses.",
+    "a": "The map is the only one that shows where the water went but treats a doorstep and a ceiling alike. The table records severity in houses, dollars and days but has no geography. The photographs make one case vivid and are one case out of six hundred. The averages leave out the families who lost everything."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "severity: how badly each case was affected, as opposed to how many were affected.\naverage: a single figure standing for a whole group, which can hide the extremes inside it.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between which document is used and who a budget reaches.",
+    "a": "A budget drawn from the average will not reach the twenty families who lost everything, and a budget drawn from the photograph will not reach the rest."
+   }
+  ],
+  "note": "Paragraph E is the arithmetic that matters, i.e. twelve per cent and eleven thousand dollars are both true and both leave the twenty families out."
+ },
+ {
+  "id": "g6-33",
+  "grade": 6,
+  "n": 33,
+  "title": "Reading a Population Pyramid",
+  "standard": "RI.6.7",
+  "standard_text": "Standard: Integrate information presented in different media or formats, including visually and quantitatively, as well as in words to develop a coherent understanding of a topic or issue.\n Spiral: RI.6.1 citing evidence · RI.6.2 central idea · RI.6.9 comparing accounts · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1040,
+   "words": 198,
+   "labelled_words": 198,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A population pyramid is two bar charts laid back to back, men on one side and women on the other, with age rising from the bottom. The shape alone tells you most of what a country is about to face."
+    },
+    {
+     "label": "B",
+     "text": "A wide base and a narrow top means many children and few old people. Those countries need schools now and will need jobs in fifteen years, and they can usually say exactly when."
+    },
+    {
+     "label": "C",
+     "text": "A narrow base under a thick middle is the opposite problem. Japan's pyramid is shaped like a lightbulb, and every worker there supports a growing number of retired people."
+    },
+    {
+     "label": "D",
+     "text": "Notches are history. A pinch in one age band marks a war, a famine, or a policy, and because that band also had fewer children, the pinch reappears twenty-five years higher up."
+    },
+    {
+     "label": "E",
+     "text": "What a pyramid cannot show is movement. Migration in and out is invisible on it, which is why a country's pyramid and its actual population can diverge within a decade."
+    },
+    {
+     "label": "F",
+     "text": "So read the shape, then the notches, then the year it was drawn. A pyramid is a photograph of a population, and the thing it is best at is telling you what happens next."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 820,
+   "words": 159,
+   "labelled_words": 159,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A population pyramid is two bar charts back to back. Men are on one side and women on the other. Age rises from the bottom. The shape tells you a lot."
+    },
+    {
+     "label": "B",
+     "text": "A wide base and a narrow top means many children and few old people. Those countries need schools now. They will need jobs in fifteen years."
+    },
+    {
+     "label": "C",
+     "text": "A narrow base under a thick middle is the opposite problem. Japan's pyramid looks like a lightbulb. Each worker supports more retired people."
+    },
+    {
+     "label": "D",
+     "text": "Notches are history. A pinch in one age band marks a war or a famine. That band also had fewer children. So the pinch shows up again higher up."
+    },
+    {
+     "label": "E",
+     "text": "A pyramid cannot show movement. Migration in and out is invisible on it. So a pyramid and the real population can drift apart."
+    },
+    {
+     "label": "F",
+     "text": "So read the shape, then the notches, then the year. A pyramid is a photograph of a population. It is best at telling you what comes next."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does a wide base on a pyramid tell you?",
+    "a": "It means many children and few old people, so those countries need schools now and will need jobs in fifteen years."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. the notches) and paragraph E (i.e. what a pyramid cannot show).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what a population pyramid shows and what it hides.",
+    "a": "It is two bar charts back to back with age rising from the bottom, and its shape shows whether a country has many children or many retired people. Notches mark a war, famine or policy and reappear higher up a generation later. It cannot show migration, so it can drift from the real population."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "population pyramid: two back-to-back bar charts of a population by age and sex.\nmigration: people moving into or out of a country, which a pyramid does not record.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between a notch and the one above it.",
+    "a": "A pinch in one age band also had fewer children, so the pinch reappears twenty-five years higher up."
+   }
+  ],
+  "note": "Paragraph D is the one students find striking, i.e. a famine showing up twice on the same chart twenty-five years apart."
+ },
+ {
+  "id": "g6-34",
+  "grade": 6,
+  "n": 34,
+  "title": "The Chart in the Doctor's Office",
+  "standard": "RI.6.7",
+  "standard_text": "Standard: Integrate information presented in different media or formats, including visually and quantitatively, as well as in words to develop a coherent understanding of a topic or issue.\n Spiral: RI.6.1 citing evidence · RI.6.2 central idea · RI.6.9 comparing accounts · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1010,
+   "words": 214,
+   "labelled_words": 214,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A growth chart is a sheet of curved lines, and a child's height is a dot somewhere among them. Parents read the dot. Doctors read which line it is following."
+    },
+    {
+     "label": "B",
+     "text": "The lines are percentiles. A child on the fiftieth is taller than half of children that age; one on the fifth is taller than one in twenty. None of those is a grade, and the chart does not have a passing line."
+    },
+    {
+     "label": "C",
+     "text": "A dot low on the chart is not the concern. A child who has tracked the tenth percentile since birth is growing exactly as expected, and the expected thing is to stay on your line."
+    },
+    {
+     "label": "D",
+     "text": "Crossing lines is what gets attention. A child who moves from the fiftieth to the tenth over two years has not become short; something has changed, and the chart found it because two dots were compared and not just read."
+    },
+    {
+     "label": "E",
+     "text": "The chart also only works for what it was built from. Different charts exist for different populations and for premature infants, and using the wrong one produces a worrying dot and no actual problem."
+    },
+    {
+     "label": "F",
+     "text": "So the useful object is not the dot. It is the line of dots across years, which is why the nurse measures a child who has obviously grown and writes it down anyway."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 790,
+   "words": 176,
+   "labelled_words": 176,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A growth chart is a sheet of curved lines. A child's height is a dot among them. Parents read the dot. Doctors read which line it follows."
+    },
+    {
+     "label": "B",
+     "text": "The lines are percentiles. A child on the fiftieth is taller than half of children that age. A child on the fifth is taller than one in twenty. None of those is a grade."
+    },
+    {
+     "label": "C",
+     "text": "A low dot is not the concern. A child on the tenth percentile since birth is growing as expected. Staying on your line is the expected thing."
+    },
+    {
+     "label": "D",
+     "text": "Crossing lines gets attention. A child who moves from the fiftieth to the tenth has not become short. Something has changed. Two dots were compared, not just read."
+    },
+    {
+     "label": "E",
+     "text": "The chart only works for what it was built from. There are different charts for different groups and for premature babies. The wrong chart makes a worrying dot and no real problem."
+    },
+    {
+     "label": "F",
+     "text": "So the useful thing is not the dot. It is the line of dots across years. That is why the nurse measures and writes it down every time."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What do doctors look at that parents often do not?",
+    "a": "Doctors read which line the dot is following rather than the dot itself."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. a low dot) and paragraph D (i.e. crossing lines).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how a growth chart is meant to be read.",
+    "a": "The curved lines are percentiles, not grades, and there is no passing line. A low dot is not a concern if the child has tracked that line since birth, because staying on your line is what is expected. Crossing lines is what gets attention, so the useful object is the line of dots across years rather than any one dot."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "percentile: the position in a hundred, so the tenth percentile is taller than one child in ten.\ntracking: staying on the same percentile line over time.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between measuring every visit and what the chart can show.",
+    "a": "The chart found the change because two dots were compared and not just read, which is why the nurse measures a child who has obviously grown and writes it down anyway."
+   }
+  ],
+  "note": "Paragraph B is worth saying out loud, i.e. \"the chart does not have a passing line.\" Families read percentiles as scores constantly."
+ },
+ {
+  "id": "g6-35",
+  "grade": 6,
+  "n": 35,
+  "title": "The Seismograph and the Map",
+  "standard": "RI.6.7",
+  "standard_text": "Standard: Integrate information presented in different media or formats, including visually and quantitatively, as well as in words to develop a coherent understanding of a topic or issue.\n Spiral: RI.6.1 citing evidence · RI.6.2 central idea · RI.6.9 comparing accounts · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1030,
+   "words": 238,
+   "labelled_words": 238,
+   "paras": [
+    {
+     "label": "A",
+     "text": "An earthquake arrives at a seismograph as a wiggle on a line, and the wiggle is not a picture of the shaking. It is a record of two different waves arriving at two different times."
+    },
+    {
+     "label": "B",
+     "text": "The fast wave comes first. P waves travel through rock at about six kilometers a second; S waves follow at roughly half that, and the gap between them on the trace is the only thing needed to find the distance."
+    },
+    {
+     "label": "C",
+     "text": "That gives a distance, not a direction. A single station can say the quake was two hundred kilometers away and nothing more, which draws a circle of possible locations around it."
+    },
+    {
+     "label": "D",
+     "text": "Three stations give a point. Three circles cross in one place, and that intersection is the epicenter, which is why a seismic network is useless with one instrument and precise with several."
+    },
+    {
+     "label": "E",
+     "text": "The height of the wiggle is a separate measurement. Amplitude gives magnitude, and magnitude is a number about the quake itself rather than about how it felt anywhere in particular."
+    },
+    {
+     "label": "F",
+     "text": "How it felt is a different map. Shaking intensity is collected from instruments and from people reporting what moved, and it depends on soil, depth and building type as much as on magnitude."
+    },
+    {
+     "label": "G",
+     "text": "So a magnitude 6 is one number and the intensity map is a thousand. Reading only the number tells you what happened at the fault; reading only the map tells you nothing about what the fault did."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 810,
+   "words": 184,
+   "labelled_words": 184,
+   "paras": [
+    {
+     "label": "A",
+     "text": "An earthquake reaches a seismograph as a wiggle on a line. The wiggle is not a picture of the shaking. It records two waves arriving at two times."
+    },
+    {
+     "label": "B",
+     "text": "The fast wave comes first. P waves move through rock at about six kilometers a second. S waves follow at about half that. The gap between them gives the distance."
+    },
+    {
+     "label": "C",
+     "text": "That gives a distance, not a direction. One station can say the quake was two hundred kilometers away. That draws a circle of possible places."
+    },
+    {
+     "label": "D",
+     "text": "Three stations give a point. Three circles cross in one place. That crossing is the epicenter. One instrument is useless and several are precise."
+    },
+    {
+     "label": "E",
+     "text": "The height of the wiggle is a separate measure. It gives magnitude. Magnitude is about the quake itself, not about how it felt."
+    },
+    {
+     "label": "F",
+     "text": "How it felt is a different map. Intensity comes from instruments and from people reporting what moved. It depends on soil and depth and buildings."
+    },
+    {
+     "label": "G",
+     "text": "So a magnitude 6 is one number. The intensity map is a thousand. The number tells you what the fault did. The map tells you what it was like."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "How does a single station work out how far away a quake was?",
+    "a": "The gap between the P wave and the S wave arriving on the trace is the only thing needed to find the distance."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. three stations) and paragraph F (i.e. the intensity map).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how a quake's location and size are worked out.",
+    "a": "The gap between the fast P wave and the slower S wave gives a distance, which draws a circle around one station, and three circles cross at the epicenter. The height of the wiggle gives magnitude, a number about the quake itself, while shaking intensity is a separate map that depends on soil, depth and buildings."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "epicenter: the point on the surface above where a quake began.\nmagnitude: a single number for the size of the quake itself, not for how it felt anywhere.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the number of stations and knowing where a quake was.",
+    "a": "A single station can say only that the quake was two hundred kilometers away, which draws a circle of possible locations, so three stations are needed because three circles cross in one place."
+   }
+  ],
+  "note": "Paragraph G is the pairing to teach, i.e. magnitude \"is one number and the intensity map is a thousand.\" One is about the fault and one is about people."
  }
 ]
