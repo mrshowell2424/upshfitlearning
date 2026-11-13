@@ -2915,11 +2915,11 @@ const ADAPTATIONS: Adaptation[] = [
         "              const head = /^(\\u{1F4D8}|\\u{1F4D9})/u.test(t);",
         "              return { t, head, st: head",
         "                ? 'font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:800;'",
-        "                  + 'letter-spacing:.1em;color:#4B6049;margin:' + (i ? '14px' : '0')",
-        "                  + ' 0 2px;padding-top:' + (i ? '10px' : '0')",
+        "                  + 'letter-spacing:.1em;color:#4B6049;margin:' + (i ? '24px' : '0')",
+        "                  + ' 0 6px;padding-top:' + (i ? '24px' : '0')",
         "                  + ';border-top:' + (i ? '1.5px solid #C9D3C4' : '0')",
         "                : 'font-size:15px;line-height:1.6;color:#1F2E2A;text-wrap:pretty;'",
-        "                  + 'margin:0 0 6px' };",
+        "                  + 'margin:0 0 10px' };",
         "            }),",
       ].join("\n");
       let out = html.replace(anchor, anchor + parts);
