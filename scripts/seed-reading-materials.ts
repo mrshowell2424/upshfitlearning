@@ -2445,14 +2445,14 @@ const ADAPTATIONS: Adaptation[] = [
     // The page had a five-part frame of its own — My Answer, My Reason, My
     // Proof, Explain It, Wrap It Up. The EB Writing Workshop frame is a
     // short intro paragraph of tag, summary and claim, then a body
-    // paragraph of premise, lead-in, evidence and justification. Same
+    // paragraph of reason, lead-in, evidence and justification. Same
     // thinking, but it names the parts the way the workshop names them, and
     // it adds the two the old frame had no slot for: saying what the text
     // is before arguing about it, and leading into a quote rather than
     // dropping one in.
     //
     // Seven lines rather than five. A second grader writes the intro and
-    // one body paragraph; the older grades add a second premise.
+    // one body paragraph; the older grades add a second reason.
     name: "write to the EB frame",
     apply: (html) => {
       const from =
@@ -2466,7 +2466,7 @@ const ADAPTATIONS: Adaptation[] = [
         "const ebFrames = ['\u{1F3F7}\uFE0F Tag: The story is ______.', " +
         "'\u{1F4D6} Summary: It is about ______.', " +
         "'\u{1F4E3} Claim: I think ______.', " +
-        "'\u{1F9F1} Premise: One reason is ______.', " +
+        "'\u{1F9F1} Reason: One reason is ______.', " +
         "'\u{1F50E} Lead-in: In the story, ______', " +
         "'\u{1F4CB} Evidence: For example, ______.', " +
         "'\u{1F517} Justification: This shows ______.'];";
