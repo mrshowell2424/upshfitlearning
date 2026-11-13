@@ -1423,5 +1423,955 @@
    }
   ],
   "note": "Two connections sit in this text: why the spider is safe, and how it gets the news. Ask the child for both."
+ },
+ {
+  "id": "g1-16",
+  "grade": 1,
+  "n": 16,
+  "title": "What Hibernate Means",
+  "standard": "RI.1.4",
+  "standard_text": "Standard: Ask and answer questions to help determine or clarify the meaning of words and phrases in a text.\n Spiral: RI.1.1 key details · RI.1.2 main topic · RI.1.5 text features · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 310,
+   "words": 49,
+   "labelled_words": 49,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The book says the bear will hibernate all winter long."
+    },
+    {
+     "label": "B",
+     "text": "Hibernate is a word for a long, deep winter sleep."
+    },
+    {
+     "label": "C",
+     "text": "A bear that hibernates does not eat for many months."
+    },
+    {
+     "label": "D",
+     "text": "Its heart beats slower and its body stays cool."
+    },
+    {
+     "label": "E",
+     "text": "In spring the bear wakes up thin and very hungry."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 190,
+   "words": 37,
+   "labelled_words": 37,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The book says the bear will hibernate all winter."
+    },
+    {
+     "label": "B",
+     "text": "Hibernate means a long, deep winter sleep."
+    },
+    {
+     "label": "C",
+     "text": "The bear does not eat for months."
+    },
+    {
+     "label": "D",
+     "text": "Its heart beats slower and it stays cool."
+    },
+    {
+     "label": "E",
+     "text": "In spring it wakes up hungry."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does hibernate mean?",
+    "a": "Hibernate is a word for a long, deep winter sleep."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. what the word means) and paragraph E (i.e. waking up).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what hibernate means and what a bear does.",
+    "a": "Hibernate means a long, deep winter sleep. A bear that hibernates does not eat for many months, its heart beats slower and its body stays cool, and in spring it wakes up thin and very hungry."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "hibernate: to sleep deeply all winter.\nspring: the season that comes after winter.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between not eating and waking up thin.",
+    "a": "A bear that hibernates does not eat for many months, so in spring it wakes up thin and very hungry."
+   }
+  ],
+  "note": "RI.1.4 is asking about a word, so paragraph B is the answer and the rest is evidence. Ask the child which paragraph gives them the meaning."
+ },
+ {
+  "id": "g1-17",
+  "grade": 1,
+  "n": 17,
+  "title": "Words That Tell Where",
+  "standard": "RI.1.4",
+  "standard_text": "Standard: Ask and answer questions to help determine or clarify the meaning of words and phrases in a text.\n Spiral: RI.1.1 key details · RI.1.2 main topic · RI.1.5 text features · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 290,
+   "words": 50,
+   "labelled_words": 50,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A map uses small words to tell you where to go."
+    },
+    {
+     "label": "B",
+     "text": "Above means higher up, and below means lower down."
+    },
+    {
+     "label": "C",
+     "text": "Beside means right next to something else on the map."
+    },
+    {
+     "label": "D",
+     "text": "Between means in the middle of two other things."
+    },
+    {
+     "label": "E",
+     "text": "If you miss those small words, the map cannot help you."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 170,
+   "words": 35,
+   "labelled_words": 35,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A map uses small words to tell where."
+    },
+    {
+     "label": "B",
+     "text": "Above means higher. Below means lower."
+    },
+    {
+     "label": "C",
+     "text": "Beside means next to."
+    },
+    {
+     "label": "D",
+     "text": "Between means in the middle of two things."
+    },
+    {
+     "label": "E",
+     "text": "If you miss them, the map will not help."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does between mean?",
+    "a": "Between means in the middle of two other things."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. above and below) and paragraph E (i.e. missing the words).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what this text teaches.",
+    "a": "A map uses small words to tell you where to go. Above means higher up and below means lower down, beside means right next to, and between means in the middle of two things. If you miss those words the map cannot help you."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "beside: right next to something.\nbetween: in the middle of two things.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the small words and using a map.",
+    "a": "A map uses small words to tell you where to go, so if you miss those small words the map cannot help you."
+   }
+  ],
+  "note": "These are the words that trip children up on every map all year. Have them put a finger on two things and say what is between them."
+ },
+ {
+  "id": "g1-18",
+  "grade": 1,
+  "n": 18,
+  "title": "What Melt Means",
+  "standard": "RI.1.4",
+  "standard_text": "Standard: Ask and answer questions to help determine or clarify the meaning of words and phrases in a text.\n Spiral: RI.1.1 key details · RI.1.2 main topic · RI.1.5 text features · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 270,
+   "words": 50,
+   "labelled_words": 50,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Melt means to change from hard into something soft and runny."
+    },
+    {
+     "label": "B",
+     "text": "Ice melts into plain water when it gets warm enough."
+    },
+    {
+     "label": "C",
+     "text": "Butter melts in a hot pan and spreads out flat."
+    },
+    {
+     "label": "D",
+     "text": "A crayon left on a sunny sill can melt too."
+    },
+    {
+     "label": "E",
+     "text": "Heat is what makes all of those things melt."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 150,
+   "words": 35,
+   "labelled_words": 35,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Melt means to change from hard to runny."
+    },
+    {
+     "label": "B",
+     "text": "Ice melts into water when it is warm."
+    },
+    {
+     "label": "C",
+     "text": "Butter melts in a hot pan."
+    },
+    {
+     "label": "D",
+     "text": "A crayon in the sun can melt."
+    },
+    {
+     "label": "E",
+     "text": "Heat makes all of them melt."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does melt mean?",
+    "a": "Melt means to change from hard into something soft and runny."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph A (i.e. the meaning) and paragraph E (i.e. what they all share).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what melt means and give examples.",
+    "a": "Melt means to change from hard into something soft and runny. Ice melts into water, butter melts in a hot pan, and a crayon on a sunny sill can melt. Heat is what makes all of those things melt."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "melt: to change from hard into soft and runny.\nheat: warmth that can change things.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the three examples in the middle.",
+    "a": "Ice, butter and a crayon are all different, and heat is what makes all of those things melt."
+   }
+  ],
+  "note": "The shape is a definition, three examples and the thing they share. Ask what all three have in common before reading paragraph E."
+ },
+ {
+  "id": "g1-19",
+  "grade": 1,
+  "n": 19,
+  "title": "Signs at the Pool",
+  "standard": "RI.1.4",
+  "standard_text": "Standard: Ask and answer questions to help determine or clarify the meaning of words and phrases in a text.\n Spiral: RI.1.1 key details · RI.1.2 main topic · RI.1.5 text features · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 280,
+   "words": 49,
+   "labelled_words": 49,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A sign at the pool says NO DIVING in big letters."
+    },
+    {
+     "label": "B",
+     "text": "Diving means going in head first instead of feet first."
+    },
+    {
+     "label": "C",
+     "text": "Another sign says to WALK and not to run."
+    },
+    {
+     "label": "D",
+     "text": "A third sign tells you how deep the water is."
+    },
+    {
+     "label": "E",
+     "text": "Reading those signs before you swim keeps you safe."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 160,
+   "words": 36,
+   "labelled_words": 36,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A sign at the pool says NO DIVING."
+    },
+    {
+     "label": "B",
+     "text": "Diving means going in head first."
+    },
+    {
+     "label": "C",
+     "text": "Another sign says to walk, not run."
+    },
+    {
+     "label": "D",
+     "text": "A third sign tells how deep the water is."
+    },
+    {
+     "label": "E",
+     "text": "Read the signs to stay safe."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does diving mean?",
+    "a": "Diving means going in head first instead of feet first."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. what diving means) and paragraph D (i.e. the depth sign).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what the signs at the pool say.",
+    "a": "One sign says NO DIVING, which means going in head first. Another says to walk and not run, and a third tells you how deep the water is. Reading those signs before you swim keeps you safe."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "diving: going into water head first.\ndeep: going far down from the top.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between reading the signs and staying safe.",
+    "a": "Reading those signs before you swim keeps you safe."
+   }
+  ],
+  "note": "The word children get wrong is diving, because they use it for any jump. Paragraph B is there for exactly that."
+ },
+ {
+  "id": "g1-20",
+  "grade": 1,
+  "n": 20,
+  "title": "Float and Sink",
+  "standard": "RI.1.4",
+  "standard_text": "Standard: Ask and answer questions to help determine or clarify the meaning of words and phrases in a text.\n Spiral: RI.1.1 key details · RI.1.2 main topic · RI.1.5 text features · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 300,
+   "words": 49,
+   "labelled_words": 49,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Float means to stay up on top of the water."
+    },
+    {
+     "label": "B",
+     "text": "Sink means to go all the way down to the bottom."
+    },
+    {
+     "label": "C",
+     "text": "A cork floats, and a small rock sinks."
+    },
+    {
+     "label": "D",
+     "text": "A big boat floats even though it is very heavy."
+    },
+    {
+     "label": "E",
+     "text": "So what matters is not just weight but shape too."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 180,
+   "words": 39,
+   "labelled_words": 39,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Float means to stay on top of the water."
+    },
+    {
+     "label": "B",
+     "text": "Sink means to go down to the bottom."
+    },
+    {
+     "label": "C",
+     "text": "A cork floats and a rock sinks."
+    },
+    {
+     "label": "D",
+     "text": "A big boat floats, and it is heavy."
+    },
+    {
+     "label": "E",
+     "text": "So weight is not the only thing."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does sink mean?",
+    "a": "Sink means to go all the way down to the bottom."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the cork and the rock) and paragraph D (i.e. the boat).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what float and sink mean.",
+    "a": "Float means to stay up on top of the water and sink means to go down to the bottom. A cork floats and a small rock sinks, but a big heavy boat floats too, so what matters is not just weight but shape."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "float: to stay up on top of water.\nsink: to go down to the bottom.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the boat and the rest of the text.",
+    "a": "A cork floats and a small rock sinks, but a big boat floats even though it is very heavy, so what matters is not just weight but shape too."
+   }
+  ],
+  "note": "Paragraph D breaks the rule paragraph C sets up, and that is deliberate. Ask the child why a heavy boat does not sink."
+ },
+ {
+  "id": "g1-21",
+  "grade": 1,
+  "n": 21,
+  "title": "The List at the Front",
+  "standard": "RI.1.5",
+  "standard_text": "Standard: Know and use various text features, such as headings, a table of contents, a glossary and icons, to locate key facts or information in a text.\n Spiral: RI.1.2 main topic · RI.1.4 word meaning · RI.1.6 pictures and words · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 290,
+   "words": 51,
+   "labelled_words": 51,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The first page of this book is a list."
+    },
+    {
+     "label": "B",
+     "text": "The list shows every part of the book in order."
+    },
+    {
+     "label": "C",
+     "text": "Next to each part is the page it starts on."
+    },
+    {
+     "label": "D",
+     "text": "If you want frogs, the list sends you to page nine."
+    },
+    {
+     "label": "E",
+     "text": "You do not have to turn every page to find it."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 170,
+   "words": 35,
+   "labelled_words": 35,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The first page of this book is a list."
+    },
+    {
+     "label": "B",
+     "text": "It shows every part in order."
+    },
+    {
+     "label": "C",
+     "text": "Each part has a page number."
+    },
+    {
+     "label": "D",
+     "text": "If you want frogs, go to page nine."
+    },
+    {
+     "label": "E",
+     "text": "You do not turn every page."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is next to each part on the list?",
+    "a": "Next to each part is the page it starts on."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. finding frogs) and paragraph E (i.e. not turning every page).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what the list at the front is for.",
+    "a": "The first page is a list that shows every part of the book in order, with the page each part starts on. If you want frogs the list sends you to page nine, so you do not have to turn every page."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "list: names written one under another.\npage number: the number that tells you which page you are on.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the list and finding what you want.",
+    "a": "Next to each part is the page it starts on, so the list sends you straight to page nine instead of turning every page."
+   }
+  ],
+  "note": "This is a table of contents and the text never uses the term. Name it after the child has used it, not before."
+ },
+ {
+  "id": "g1-22",
+  "grade": 1,
+  "n": 22,
+  "title": "The Word List at the Back",
+  "standard": "RI.1.5",
+  "standard_text": "Standard: Know and use various text features, such as headings, a table of contents, a glossary and icons, to locate key facts or information in a text.\n Spiral: RI.1.2 main topic · RI.1.4 word meaning · RI.1.6 pictures and words · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 300,
+   "words": 52,
+   "labelled_words": 52,
+   "paras": [
+    {
+     "label": "A",
+     "text": "At the back of the book there is a word list."
+    },
+    {
+     "label": "B",
+     "text": "It holds the hard words from every page."
+    },
+    {
+     "label": "C",
+     "text": "The words are in ABC order, so they are easy to find."
+    },
+    {
+     "label": "D",
+     "text": "After each word is a short line that tells what it means."
+    },
+    {
+     "label": "E",
+     "text": "You can look up a word without asking anyone."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 180,
+   "words": 36,
+   "labelled_words": 36,
+   "paras": [
+    {
+     "label": "A",
+     "text": "At the back of the book is a word list."
+    },
+    {
+     "label": "B",
+     "text": "It holds the hard words."
+    },
+    {
+     "label": "C",
+     "text": "The words are in ABC order."
+    },
+    {
+     "label": "D",
+     "text": "After each word is what it means."
+    },
+    {
+     "label": "E",
+     "text": "You can look up a word by yourself."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What order are the words in?",
+    "a": "The words are in ABC order, so they are easy to find."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. ABC order) and paragraph E (i.e. looking it up yourself).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what the word list at the back is for.",
+    "a": "The back of the book has a list of the hard words from every page, in ABC order, with a short line after each one telling what it means. You can look up a word without asking anyone."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "ABC order: the order of the letters of the alphabet.\nmeans: what a word is telling you.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between ABC order and finding a word fast.",
+    "a": "The words are in ABC order, so they are easy to find and you can look one up without asking anyone."
+   }
+  ],
+  "note": "This is a glossary. Point out that it only holds words from this book, which is what makes it different from a dictionary."
+ },
+ {
+  "id": "g1-23",
+  "grade": 1,
+  "n": 23,
+  "title": "Headings Tell You Where",
+  "standard": "RI.1.5",
+  "standard_text": "Standard: Know and use various text features, such as headings, a table of contents, a glossary and icons, to locate key facts or information in a text.\n Spiral: RI.1.2 main topic · RI.1.4 word meaning · RI.1.6 pictures and words · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 280,
+   "words": 52,
+   "labelled_words": 52,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A heading is the dark line above a part of a page."
+    },
+    {
+     "label": "B",
+     "text": "It says in a few words what that part is about."
+    },
+    {
+     "label": "C",
+     "text": "A heading that says Eggs tells you eggs come next."
+    },
+    {
+     "label": "D",
+     "text": "You can read just the headings to find what you need."
+    },
+    {
+     "label": "E",
+     "text": "Headings save you from reading the whole page."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 160,
+   "words": 38,
+   "labelled_words": 38,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A heading is the dark line above a part."
+    },
+    {
+     "label": "B",
+     "text": "It tells what that part is about."
+    },
+    {
+     "label": "C",
+     "text": "A heading that says Eggs means eggs come next."
+    },
+    {
+     "label": "D",
+     "text": "You can read just the headings."
+    },
+    {
+     "label": "E",
+     "text": "Headings save you reading the whole page."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does a heading tell you?",
+    "a": "It says in a few words what that part is about."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the Eggs heading) and paragraph E (i.e. saving reading).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what headings do.",
+    "a": "A heading is the dark line above a part of a page, and it says in a few words what that part is about. A heading that says Eggs tells you eggs come next, so you can read just the headings to find what you need."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "heading: the dark line of words above a part of a page.\nabout: what something is telling you.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between reading headings and reading the whole page.",
+    "a": "You can read just the headings to find what you need, which saves you from reading the whole page."
+   }
+  ],
+  "note": "Have the child find a heading in any book on the shelf and say what will come under it before they read it."
+ },
+ {
+  "id": "g1-24",
+  "grade": 1,
+  "n": 24,
+  "title": "Buttons You Can Tap",
+  "standard": "RI.1.5",
+  "standard_text": "Standard: Know and use various text features, such as headings, a table of contents, a glossary and icons, to locate key facts or information in a text.\n Spiral: RI.1.2 main topic · RI.1.4 word meaning · RI.1.6 pictures and words · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 310,
+   "words": 51,
+   "labelled_words": 51,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A screen has small pictures you can tap with a finger."
+    },
+    {
+     "label": "B",
+     "text": "A tiny house always takes you back to the start."
+    },
+    {
+     "label": "C",
+     "text": "A round glass means you can search for something."
+    },
+    {
+     "label": "D",
+     "text": "An arrow that curls back means undo what you just did."
+    },
+    {
+     "label": "E",
+     "text": "The pictures mean the same thing on almost every screen."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 190,
+   "words": 37,
+   "labelled_words": 37,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A screen has small pictures you can tap."
+    },
+    {
+     "label": "B",
+     "text": "A tiny house takes you back to the start."
+    },
+    {
+     "label": "C",
+     "text": "A round glass means you can search."
+    },
+    {
+     "label": "D",
+     "text": "A curled arrow means undo."
+    },
+    {
+     "label": "E",
+     "text": "The pictures mean the same on most screens."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does the tiny house do?",
+    "a": "A tiny house always takes you back to the start."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. the curling arrow) and paragraph E (i.e. every screen).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what the small pictures on a screen do.",
+    "a": "A screen has small pictures you tap with a finger. A tiny house takes you back to the start, a round glass means search, and an arrow that curls back means undo. They mean the same thing on almost every screen."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "tap: to touch a screen once with a finger.\nundo: to take back what you just did.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between learning these pictures and using a new screen.",
+    "a": "The pictures mean the same thing on almost every screen, so learning them once helps on a screen you have never used."
+   }
+  ],
+  "note": "Paragraph E is the useful part and children will skip it for the pictures. It is why learning three icons is worth the time."
+ },
+ {
+  "id": "g1-25",
+  "grade": 1,
+  "n": 25,
+  "title": "The Numbers at the Bottom",
+  "standard": "RI.1.5",
+  "standard_text": "Standard: Know and use various text features, such as headings, a table of contents, a glossary and icons, to locate key facts or information in a text.\n Spiral: RI.1.2 main topic · RI.1.4 word meaning · RI.1.6 pictures and words · RI.1.10 comprehension\n Lower range: LL 100 – 220",
+  "higher": {
+   "lexile": 320,
+   "words": 55,
+   "labelled_words": 55,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Look at the very bottom corner of this page."
+    },
+    {
+     "label": "B",
+     "text": "A small number sits there, and the next page is one more."
+    },
+    {
+     "label": "C",
+     "text": "Page numbers let a list at the front point at a page."
+    },
+    {
+     "label": "D",
+     "text": "They also let you stop reading and find your place again."
+    },
+    {
+     "label": "E",
+     "text": "A book with no page numbers is hard to talk about."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 200,
+   "words": 35,
+   "labelled_words": 35,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Look at the bottom corner of the page."
+    },
+    {
+     "label": "B",
+     "text": "A small number sits there."
+    },
+    {
+     "label": "C",
+     "text": "The next page is one more."
+    },
+    {
+     "label": "D",
+     "text": "Numbers help you find your place again."
+    },
+    {
+     "label": "E",
+     "text": "They also let the list point at a page."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Where do you find the page number?",
+    "a": "Look at the very bottom corner of this page."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. pointing from the list) and paragraph D (i.e. finding your place).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Tell what page numbers are for.",
+    "a": "A small number sits at the bottom corner of each page, and the next page is one more. Page numbers let the list at the front point at a page, and they let you stop reading and find your place again."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "corner: the spot where two edges of a page meet.\nplace: the spot you stopped at.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between page numbers and the list at the front.",
+    "a": "Page numbers let a list at the front point at a page."
+   }
+  ],
+  "note": "Best done with a real book open. Ask the child to find page nine two ways: by turning, and by using the list."
  }
 ]
