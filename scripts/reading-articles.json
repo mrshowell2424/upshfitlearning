@@ -10,7 +10,7 @@
    "grade": 3,
    "n": 1,
    "title": "The Race to Nome",
-   "standard": "RI.3.1 · Grade 3",
+   "standard": "RI.3.1",
    "standard_text": "Standard: Ask and answer questions to demonstrate understanding of a text, referring explicitly to the text as the basis for the answers.\n Spiral: RI.3.2 main idea · RI.3.3 connections · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 760,
@@ -111,7 +111,7 @@
    "grade": 3,
    "n": 2,
    "title": "Why Your Stomach Growls",
-   "standard": "RI.3.1 · Grade 3",
+   "standard": "RI.3.1",
    "standard_text": "Standard: Ask and answer questions to demonstrate understanding of a text, referring explicitly to the text as the basis for the answers.\n Spiral: RI.3.2 main idea · RI.3.3 connections · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 780,
@@ -204,7 +204,7 @@
    "grade": 3,
    "n": 3,
    "title": "The Hats That Almost Ended the Birds",
-   "standard": "RI.3.1 · Grade 3",
+   "standard": "RI.3.1",
    "standard_text": "Standard: Ask and answer questions to demonstrate understanding of a text, referring explicitly to the text as the basis for the answers.\n Spiral: RI.3.2 main idea · RI.3.3 connections · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 790,
@@ -297,7 +297,7 @@
    "grade": 3,
    "n": 4,
    "title": "Cities Under Our Feet",
-   "standard": "RI.3.1 · Grade 3",
+   "standard": "RI.3.1",
    "standard_text": "Standard: Ask and answer questions to demonstrate understanding of a text, referring explicitly to the text as the basis for the answers.\n Spiral: RI.3.2 main idea · RI.3.3 connections · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 770,
@@ -390,7 +390,7 @@
    "grade": 3,
    "n": 5,
    "title": "The Glue That Failed",
-   "standard": "RI.3.1 · Grade 3",
+   "standard": "RI.3.1",
    "standard_text": "Standard: Ask and answer questions to demonstrate understanding of a text, referring explicitly to the text as the basis for the answers.\n Spiral: RI.3.2 main idea · RI.3.3 connections · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 750,
@@ -491,7 +491,7 @@
    "grade": 3,
    "n": 6,
    "title": "The Town That Moved",
-   "standard": "RI.3.2 · Grade 3",
+   "standard": "RI.3.2",
    "standard_text": "Standard: Determine the main idea of a text; recount the key details and explain how they support the main idea.\n Spiral: RI.3.1 key details · RI.3.3 connections · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 750,
@@ -592,7 +592,7 @@
    "grade": 3,
    "n": 7,
    "title": "The Dogs That Find Whales",
-   "standard": "RI.3.2 · Grade 3",
+   "standard": "RI.3.2",
    "standard_text": "Standard: Determine the main idea of a text; recount the key details and explain how they support the main idea.\n Spiral: RI.3.1 key details · RI.3.3 connections · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 780,
@@ -693,7 +693,7 @@
    "grade": 3,
    "n": 8,
    "title": "How a Seed Crosses an Ocean",
-   "standard": "RI.3.2 · Grade 3",
+   "standard": "RI.3.2",
    "standard_text": "Standard: Determine the main idea of a text; recount the key details and explain how they support the main idea.\n Spiral: RI.3.1 key details · RI.3.3 connections · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 760,
@@ -786,7 +786,7 @@
    "grade": 3,
    "n": 9,
    "title": "The Woman Who Got Tired of Broken Dishes",
-   "standard": "RI.3.2 · Grade 3",
+   "standard": "RI.3.2",
    "standard_text": "Standard: Determine the main idea of a text; recount the key details and explain how they support the main idea.\n Spiral: RI.3.1 key details · RI.3.3 connections · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 790,
@@ -879,7 +879,7 @@
    "grade": 3,
    "n": 10,
    "title": "Why Bridges Have Gaps",
-   "standard": "RI.3.2 · Grade 3",
+   "standard": "RI.3.2",
    "standard_text": "Standard: Determine the main idea of a text; recount the key details and explain how they support the main idea.\n Spiral: RI.3.1 key details · RI.3.3 connections · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 770,
@@ -972,7 +972,7 @@
    "grade": 3,
    "n": 11,
    "title": "How a Cave Is Carved",
-   "standard": "RI.3.3 · Grade 3",
+   "standard": "RI.3.3",
    "standard_text": "Standard: Describe the relationship between a series of historical events, scientific ideas or concepts, or steps in technical procedures in a text, using language that pertains to time, sequence, and cause/effect.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 760,
@@ -1073,7 +1073,7 @@
    "grade": 3,
    "n": 12,
    "title": "The Long Road of a Banana",
-   "standard": "RI.3.3 · Grade 3",
+   "standard": "RI.3.3",
    "standard_text": "Standard: Describe the relationship between a series of historical events, scientific ideas or concepts, or steps in technical procedures in a text, using language that pertains to time, sequence, and cause/effect.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 780,
@@ -1174,7 +1174,7 @@
    "grade": 3,
    "n": 13,
    "title": "How a Broken Bone Heals",
-   "standard": "RI.3.3 · Grade 3",
+   "standard": "RI.3.3",
    "standard_text": "Standard: Describe the relationship between a series of historical events, scientific ideas or concepts, or steps in technical procedures in a text, using language that pertains to time, sequence, and cause/effect.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 790,
@@ -1275,7 +1275,7 @@
    "grade": 3,
    "n": 14,
    "title": "How a Wildfire Starts and Stops",
-   "standard": "RI.3.3 · Grade 3",
+   "standard": "RI.3.3",
    "standard_text": "Standard: Describe the relationship between a series of historical events, scientific ideas or concepts, or steps in technical procedures in a text, using language that pertains to time, sequence, and cause/effect.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 770,
@@ -1376,7 +1376,7 @@
    "grade": 3,
    "n": 15,
    "title": "From Sand to Window Glass",
-   "standard": "RI.3.3 · Grade 3",
+   "standard": "RI.3.3",
    "standard_text": "Standard: Describe the relationship between a series of historical events, scientific ideas or concepts, or steps in technical procedures in a text, using language that pertains to time, sequence, and cause/effect.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 800,
@@ -1477,7 +1477,7 @@
    "grade": 3,
    "n": 16,
    "title": "Life in a Tide Pool",
-   "standard": "RI.3.4 · Grade 3",
+   "standard": "RI.3.4",
    "standard_text": "Standard: Determine the meaning of general academic and domain-specific words and phrases in a text relevant to a grade 3 topic or subject area.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.3 connections · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 770,
@@ -1570,7 +1570,7 @@
    "grade": 3,
    "n": 17,
    "title": "The Parts of a Volcano",
-   "standard": "RI.3.4 · Grade 3",
+   "standard": "RI.3.4",
    "standard_text": "Standard: Determine the meaning of general academic and domain-specific words and phrases in a text relevant to a grade 3 topic or subject area.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.3 connections · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 780,
@@ -1671,7 +1671,7 @@
    "grade": 3,
    "n": 18,
    "title": "How Birds Migrate",
-   "standard": "RI.3.4 · Grade 3",
+   "standard": "RI.3.4",
    "standard_text": "Standard: Determine the meaning of general academic and domain-specific words and phrases in a text relevant to a grade 3 topic or subject area.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.3 connections · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 760,
@@ -1764,7 +1764,7 @@
    "grade": 3,
    "n": 19,
    "title": "Deserts Are Not Always Hot",
-   "standard": "RI.3.4 · Grade 3",
+   "standard": "RI.3.4",
    "standard_text": "Standard: Determine the meaning of general academic and domain-specific words and phrases in a text relevant to a grade 3 topic or subject area.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.3 connections · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 750,
@@ -1857,7 +1857,7 @@
    "grade": 3,
    "n": 20,
    "title": "What Makes an Earthquake",
-   "standard": "RI.3.4 · Grade 3",
+   "standard": "RI.3.4",
    "standard_text": "Standard: Determine the meaning of general academic and domain-specific words and phrases in a text relevant to a grade 3 topic or subject area.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.3 connections · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 790,
@@ -1958,7 +1958,7 @@
    "grade": 3,
    "n": 21,
    "title": "Inside a Beehive",
-   "standard": "RI.3.5 · Grade 3",
+   "standard": "RI.3.5",
    "standard_text": "Standard: Use text features and search tools (e.g., key words, sidebars, hyperlinks) to locate information relevant to a given topic efficiently.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 780,
@@ -2059,7 +2059,7 @@
    "grade": 3,
    "n": 22,
    "title": "The Layers of the Rainforest",
-   "standard": "RI.3.5 · Grade 3",
+   "standard": "RI.3.5",
    "standard_text": "Standard: Use text features and search tools (e.g., key words, sidebars, hyperlinks) to locate information relevant to a given topic efficiently.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 770,
@@ -2160,7 +2160,7 @@
    "grade": 3,
    "n": 23,
    "title": "Reading a Weather Map",
-   "standard": "RI.3.5 · Grade 3",
+   "standard": "RI.3.5",
    "standard_text": "Standard: Use text features and search tools (e.g., key words, sidebars, hyperlinks) to locate information relevant to a given topic efficiently.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 790,
@@ -2261,7 +2261,7 @@
    "grade": 3,
    "n": 24,
    "title": "The Road to the Vote",
-   "standard": "RI.3.5 · Grade 3",
+   "standard": "RI.3.5",
    "standard_text": "Standard: Use text features and search tools (e.g., key words, sidebars, hyperlinks) to locate information relevant to a given topic efficiently.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 800,
@@ -2362,7 +2362,7 @@
    "grade": 3,
    "n": 25,
    "title": "What Lives in the Deep Ocean",
-   "standard": "RI.3.5 · Grade 3",
+   "standard": "RI.3.5",
    "standard_text": "Standard: Use text features and search tools (e.g., key words, sidebars, hyperlinks) to locate information relevant to a given topic efficiently.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 760,
@@ -2455,7 +2455,7 @@
    "grade": 3,
    "n": 26,
    "title": "Homework in Elementary School",
-   "standard": "RI.3.6 · Grade 3",
+   "standard": "RI.3.6",
    "standard_text": "Standard: Distinguish their own point of view from that of the author of a text.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 790,
@@ -2556,7 +2556,7 @@
    "grade": 3,
    "n": 27,
    "title": "Should Zoos Exist?",
-   "standard": "RI.3.6 · Grade 3",
+   "standard": "RI.3.6",
    "standard_text": "Standard: Distinguish their own point of view from that of the author of a text.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 800,
@@ -2657,7 +2657,7 @@
    "grade": 3,
    "n": 28,
    "title": "A Letter About the New Skate Park",
-   "standard": "RI.3.6 · Grade 3",
+   "standard": "RI.3.6",
    "standard_text": "Standard: Distinguish their own point of view from that of the author of a text.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 780,
@@ -2758,7 +2758,7 @@
    "grade": 3,
    "n": 29,
    "title": "Why I Changed My Mind About Wolves",
-   "standard": "RI.3.6 · Grade 3",
+   "standard": "RI.3.6",
    "standard_text": "Standard: Distinguish their own point of view from that of the author of a text.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 810,
@@ -2859,7 +2859,7 @@
    "grade": 3,
    "n": 30,
    "title": "Two Views of the Cell Phone Rule",
-   "standard": "RI.3.6 · Grade 3",
+   "standard": "RI.3.6",
    "standard_text": "Standard: Distinguish their own point of view from that of the author of a text.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 770,
@@ -2960,7 +2960,7 @@
    "grade": 3,
    "n": 31,
    "title": "The Oregon Trail",
-   "standard": "RI.3.7 · Grade 3",
+   "standard": "RI.3.7",
    "standard_text": "Standard: Use information gained from illustrations (e.g., maps, photographs) and the words in a text to demonstrate understanding of the text (e.g., where, when, why, and how key events occur).\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 780,
@@ -3061,7 +3061,7 @@
    "grade": 3,
    "n": 32,
    "title": "Inside a Volcano Eruption",
-   "standard": "RI.3.7 · Grade 3",
+   "standard": "RI.3.7",
    "standard_text": "Standard: Use information gained from illustrations (e.g., maps, photographs) and the words in a text to demonstrate understanding of the text (e.g., where, when, why, and how key events occur).\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 790,
@@ -3162,7 +3162,7 @@
    "grade": 3,
    "n": 33,
    "title": "A Day in the Life of a Coral Reef",
-   "standard": "RI.3.7 · Grade 3",
+   "standard": "RI.3.7",
    "standard_text": "Standard: Use information gained from illustrations (e.g., maps, photographs) and the words in a text to demonstrate understanding of the text (e.g., where, when, why, and how key events occur).\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 770,
@@ -3263,7 +3263,7 @@
    "grade": 3,
    "n": 34,
    "title": "How a City Gets Its Water",
-   "standard": "RI.3.7 · Grade 3",
+   "standard": "RI.3.7",
    "standard_text": "Standard: Use information gained from illustrations (e.g., maps, photographs) and the words in a text to demonstrate understanding of the text (e.g., where, when, why, and how key events occur).\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 800,
@@ -3364,7 +3364,7 @@
    "grade": 3,
    "n": 35,
    "title": "The Underground Railroad",
-   "standard": "RI.3.7 · Grade 3",
+   "standard": "RI.3.7",
    "standard_text": "Standard: Use information gained from illustrations (e.g., maps, photographs) and the words in a text to demonstrate understanding of the text (e.g., where, when, why, and how key events occur).\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 810,
@@ -3465,7 +3465,7 @@
    "grade": 3,
    "n": 36,
    "title": "Why Leaves Change Color",
-   "standard": "RI.3.8 · Grade 3",
+   "standard": "RI.3.8",
    "standard_text": "Standard: Describe the logical connection between particular sentences and paragraphs in a text (e.g., comparison, cause/effect, first/second/third in a sequence).\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 780,
@@ -3566,7 +3566,7 @@
    "grade": 3,
    "n": 37,
    "title": "The First Public Library",
-   "standard": "RI.3.8 · Grade 3",
+   "standard": "RI.3.8",
    "standard_text": "Standard: Describe the logical connection between particular sentences and paragraphs in a text (e.g., comparison, cause/effect, first/second/third in a sequence).\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 790,
@@ -3667,7 +3667,7 @@
    "grade": 3,
    "n": 38,
    "title": "How Salmon Find Their River",
-   "standard": "RI.3.8 · Grade 3",
+   "standard": "RI.3.8",
    "standard_text": "Standard: Describe the logical connection between particular sentences and paragraphs in a text (e.g., comparison, cause/effect, first/second/third in a sequence).\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 800,
@@ -3768,7 +3768,7 @@
    "grade": 3,
    "n": 39,
    "title": "Two Ways to Build a House",
-   "standard": "RI.3.8 · Grade 3",
+   "standard": "RI.3.8",
    "standard_text": "Standard: Describe the logical connection between particular sentences and paragraphs in a text (e.g., comparison, cause/effect, first/second/third in a sequence).\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 770,
@@ -3869,7 +3869,7 @@
    "grade": 3,
    "n": 40,
    "title": "What Happened to the Passenger Pigeon",
-   "standard": "RI.3.8 · Grade 3",
+   "standard": "RI.3.8",
    "standard_text": "Standard: Describe the logical connection between particular sentences and paragraphs in a text (e.g., comparison, cause/effect, first/second/third in a sequence).\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 810,
@@ -3970,7 +3970,7 @@
    "grade": 3,
    "n": 41,
    "title": "Two Texts: Honeybees and Wild Bees",
-   "standard": "RI.3.9 · Grade 3",
+   "standard": "RI.3.9",
    "standard_text": "Standard: Compare and contrast the most important points and key details presented in two texts on the same topic.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 780,
@@ -4071,7 +4071,7 @@
    "grade": 3,
    "n": 42,
    "title": "Two Texts: The First Flight",
-   "standard": "RI.3.9 · Grade 3",
+   "standard": "RI.3.9",
    "standard_text": "Standard: Compare and contrast the most important points and key details presented in two texts on the same topic.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 790,
@@ -4172,7 +4172,7 @@
    "grade": 3,
    "n": 43,
    "title": "Two Texts: What Happened to the Dinosaurs",
-   "standard": "RI.3.9 · Grade 3",
+   "standard": "RI.3.9",
    "standard_text": "Standard: Compare and contrast the most important points and key details presented in two texts on the same topic.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 800,
@@ -4273,7 +4273,7 @@
    "grade": 3,
    "n": 44,
    "title": "Two Texts: Living on a Submarine",
-   "standard": "RI.3.9 · Grade 3",
+   "standard": "RI.3.9",
    "standard_text": "Standard: Compare and contrast the most important points and key details presented in two texts on the same topic.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 770,
@@ -4374,7 +4374,7 @@
    "grade": 3,
    "n": 45,
    "title": "Two Texts: The Great Wall",
-   "standard": "RI.3.9 · Grade 3",
+   "standard": "RI.3.9",
    "standard_text": "Standard: Compare and contrast the most important points and key details presented in two texts on the same topic.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.4 word meaning · RI.3.10 comprehension\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 790,
@@ -4475,7 +4475,7 @@
    "grade": 3,
    "n": 46,
    "title": "The Library That Rides a Donkey",
-   "standard": "RI.3.10 · Grade 3",
+   "standard": "RI.3.10",
    "standard_text": "Standard: By the end of the year, read and comprehend informational texts, including history/social studies, science, and technical texts, at the high end of the grades 2–3 text complexity band independently and proficiently.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.3 connections · RI.3.4 word meaning · RI.3.7 images\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 790,
@@ -4576,7 +4576,7 @@
    "grade": 3,
    "n": 47,
    "title": "How Ice Cream Freezes",
-   "standard": "RI.3.10 · Grade 3",
+   "standard": "RI.3.10",
    "standard_text": "Standard: By the end of the year, read and comprehend informational texts, including history/social studies, science, and technical texts, at the high end of the grades 2–3 text complexity band independently and proficiently.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.3 connections · RI.3.4 word meaning · RI.3.7 images\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 800,
@@ -4677,7 +4677,7 @@
    "grade": 3,
    "n": 48,
    "title": "The Town That Moved",
-   "standard": "RI.3.10 · Grade 3",
+   "standard": "RI.3.10",
    "standard_text": "Standard: By the end of the year, read and comprehend informational texts, including history/social studies, science, and technical texts, at the high end of the grades 2–3 text complexity band independently and proficiently.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.3 connections · RI.3.4 word meaning · RI.3.7 images\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 810,
@@ -4778,7 +4778,7 @@
    "grade": 3,
    "n": 49,
    "title": "The Bird That Sews",
-   "standard": "RI.3.10 · Grade 3",
+   "standard": "RI.3.10",
    "standard_text": "Standard: By the end of the year, read and comprehend informational texts, including history/social studies, science, and technical texts, at the high end of the grades 2–3 text complexity band independently and proficiently.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.3 connections · RI.3.4 word meaning · RI.3.7 images\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 780,
@@ -4879,7 +4879,7 @@
    "grade": 3,
    "n": 50,
    "title": "The Clock That Runs on Water",
-   "standard": "RI.3.10 · Grade 3",
+   "standard": "RI.3.10",
    "standard_text": "Standard: By the end of the year, read and comprehend informational texts, including history/social studies, science, and technical texts, at the high end of the grades 2–3 text complexity band independently and proficiently.\n Spiral: RI.3.1 key details · RI.3.2 main idea · RI.3.3 connections · RI.3.4 word meaning · RI.3.7 images\n Lower range: LL 500 – 580",
    "higher": {
     "lexile": 800,
@@ -4980,7 +4980,7 @@
    "grade": 4,
    "n": 1,
    "title": "The Ship in the Desert",
-   "standard": "RI.4.1 · Grade 4",
+   "standard": "RI.4.1",
    "standard_text": "Standard: Refer to details and examples in a text when explaining what the text says explicitly and when drawing inferences from the text.\n Spiral: RI.4.2 main idea · RI.4.3 explaining events · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 880,
@@ -5081,7 +5081,7 @@
    "grade": 4,
    "n": 2,
    "title": "The Woman Who Mapped the Ocean Floor",
-   "standard": "RI.4.1 · Grade 4",
+   "standard": "RI.4.1",
    "standard_text": "Standard: Refer to details and examples in a text when explaining what the text says explicitly and when drawing inferences from the text.\n Spiral: RI.4.2 main idea · RI.4.3 explaining events · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 900,
@@ -5182,7 +5182,7 @@
    "grade": 4,
    "n": 3,
    "title": "Why Venice Is Sinking",
-   "standard": "RI.4.1 · Grade 4",
+   "standard": "RI.4.1",
    "standard_text": "Standard: Refer to details and examples in a text when explaining what the text says explicitly and when drawing inferences from the text.\n Spiral: RI.4.2 main idea · RI.4.3 explaining events · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 890,
@@ -5283,7 +5283,7 @@
    "grade": 4,
    "n": 4,
    "title": "The Night the Radio Lied",
-   "standard": "RI.4.1 · Grade 4",
+   "standard": "RI.4.1",
    "standard_text": "Standard: Refer to details and examples in a text when explaining what the text says explicitly and when drawing inferences from the text.\n Spiral: RI.4.2 main idea · RI.4.3 explaining events · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 910,
@@ -5384,7 +5384,7 @@
    "grade": 4,
    "n": 5,
    "title": "Reading the Rings",
-   "standard": "RI.4.1 · Grade 4",
+   "standard": "RI.4.1",
    "standard_text": "Standard: Refer to details and examples in a text when explaining what the text says explicitly and when drawing inferences from the text.\n Spiral: RI.4.2 main idea · RI.4.3 explaining events · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 870,
@@ -5485,7 +5485,7 @@
    "grade": 4,
    "n": 6,
    "title": "The Clock That Found the Longitude",
-   "standard": "RI.4.2 · Grade 4",
+   "standard": "RI.4.2",
    "standard_text": "Standard: Determine the main idea of a text and explain how it is supported by key details; summarize the text.\n Spiral: RI.4.1 details and inferences · RI.4.3 explaining events · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 890,
@@ -5586,7 +5586,7 @@
    "grade": 4,
    "n": 7,
    "title": "The River That Wants to Move",
-   "standard": "RI.4.2 · Grade 4",
+   "standard": "RI.4.2",
    "standard_text": "Standard: Determine the main idea of a text and explain how it is supported by key details; summarize the text.\n Spiral: RI.4.1 details and inferences · RI.4.3 explaining events · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 900,
@@ -5687,7 +5687,7 @@
    "grade": 4,
    "n": 8,
    "title": "The Vault Inside the Mountain",
-   "standard": "RI.4.2 · Grade 4",
+   "standard": "RI.4.2",
    "standard_text": "Standard: Determine the main idea of a text and explain how it is supported by key details; summarize the text.\n Spiral: RI.4.1 details and inferences · RI.4.3 explaining events · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 870,
@@ -5788,7 +5788,7 @@
    "grade": 4,
    "n": 9,
    "title": "The Girl Who Named a Planet",
-   "standard": "RI.4.2 · Grade 4",
+   "standard": "RI.4.2",
    "standard_text": "Standard: Determine the main idea of a text and explain how it is supported by key details; summarize the text.\n Spiral: RI.4.1 details and inferences · RI.4.3 explaining events · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 860,
@@ -5889,7 +5889,7 @@
    "grade": 4,
    "n": 10,
    "title": "What the Forest Is Saying",
-   "standard": "RI.4.2 · Grade 4",
+   "standard": "RI.4.2",
    "standard_text": "Standard: Determine the main idea of a text and explain how it is supported by key details; summarize the text.\n Spiral: RI.4.1 details and inferences · RI.4.3 explaining events · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 880,
@@ -5990,7 +5990,7 @@
    "grade": 4,
    "n": 11,
    "title": "The Winter the Thames Froze",
-   "standard": "RI.4.3 · Grade 4",
+   "standard": "RI.4.3",
    "standard_text": "Standard: Explain events, procedures, ideas, or concepts in a historical, scientific, or technical text, including what happened and why, based on specific information in the text.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 890,
@@ -6091,7 +6091,7 @@
    "grade": 4,
    "n": 12,
    "title": "How a Vaccine Teaches the Body",
-   "standard": "RI.4.3 · Grade 4",
+   "standard": "RI.4.3",
    "standard_text": "Standard: Explain events, procedures, ideas, or concepts in a historical, scientific, or technical text, including what happened and why, based on specific information in the text.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 910,
@@ -6192,7 +6192,7 @@
    "grade": 4,
    "n": 13,
    "title": "The Bridge That Danced",
-   "standard": "RI.4.3 · Grade 4",
+   "standard": "RI.4.3",
    "standard_text": "Standard: Explain events, procedures, ideas, or concepts in a historical, scientific, or technical text, including what happened and why, based on specific information in the text.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 900,
@@ -6293,7 +6293,7 @@
    "grade": 4,
    "n": 14,
    "title": "When the Sahara Was Green",
-   "standard": "RI.4.3 · Grade 4",
+   "standard": "RI.4.3",
    "standard_text": "Standard: Explain events, procedures, ideas, or concepts in a historical, scientific, or technical text, including what happened and why, based on specific information in the text.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 880,
@@ -6394,7 +6394,7 @@
    "grade": 4,
    "n": 15,
    "title": "How a Lock Lifts a Ship",
-   "standard": "RI.4.3 · Grade 4",
+   "standard": "RI.4.3",
    "standard_text": "Standard: Explain events, procedures, ideas, or concepts in a historical, scientific, or technical text, including what happened and why, based on specific information in the text.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 870,
@@ -6495,7 +6495,7 @@
    "grade": 4,
    "n": 16,
    "title": "The Currency of Salt",
-   "standard": "RI.4.4 · Grade 4",
+   "standard": "RI.4.4",
    "standard_text": "Standard: Determine the meaning of general academic and domain-specific words or phrases in a text relevant to a grade 4 topic or subject area.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.3 explaining events · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 900,
@@ -6592,7 +6592,7 @@
    "grade": 4,
    "n": 17,
    "title": "How Antibiotics Stop Working",
-   "standard": "RI.4.4 · Grade 4",
+   "standard": "RI.4.4",
    "standard_text": "Standard: Determine the meaning of general academic and domain-specific words or phrases in a text relevant to a grade 4 topic or subject area.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.3 explaining events · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 920,
@@ -6689,7 +6689,7 @@
    "grade": 4,
    "n": 18,
    "title": "Reading the Rings of a Tree",
-   "standard": "RI.4.4 · Grade 4",
+   "standard": "RI.4.4",
    "standard_text": "Standard: Determine the meaning of general academic and domain-specific words or phrases in a text relevant to a grade 4 topic or subject area.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.3 explaining events · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 880,
@@ -6790,7 +6790,7 @@
    "grade": 4,
    "n": 19,
    "title": "The Grid That Powers Your House",
-   "standard": "RI.4.4 · Grade 4",
+   "standard": "RI.4.4",
    "standard_text": "Standard: Determine the meaning of general academic and domain-specific words or phrases in a text relevant to a grade 4 topic or subject area.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.3 explaining events · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 910,
@@ -6887,7 +6887,7 @@
    "grade": 4,
    "n": 20,
    "title": "What a Census Counts",
-   "standard": "RI.4.4 · Grade 4",
+   "standard": "RI.4.4",
    "standard_text": "Standard: Determine the meaning of general academic and domain-specific words or phrases in a text relevant to a grade 4 topic or subject area.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.3 explaining events · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 890,
@@ -6988,7 +6988,7 @@
    "grade": 4,
    "n": 21,
    "title": "The Lead in the Pipes",
-   "standard": "RI.4.5 · Grade 4",
+   "standard": "RI.4.5",
    "standard_text": "Standard: Describe the overall structure (e.g., chronology, comparison, cause/effect, problem/solution) of events, ideas, concepts, or information in a text or part of a text.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 900,
@@ -7089,7 +7089,7 @@
    "grade": 4,
    "n": 22,
    "title": "Two Ways to Power a Car",
-   "standard": "RI.4.5 · Grade 4",
+   "standard": "RI.4.5",
    "standard_text": "Standard: Describe the overall structure (e.g., chronology, comparison, cause/effect, problem/solution) of events, ideas, concepts, or information in a text or part of a text.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 890,
@@ -7190,7 +7190,7 @@
    "grade": 4,
    "n": 23,
    "title": "The Year Without a Summer",
-   "standard": "RI.4.5 · Grade 4",
+   "standard": "RI.4.5",
    "standard_text": "Standard: Describe the overall structure (e.g., chronology, comparison, cause/effect, problem/solution) of events, ideas, concepts, or information in a text or part of a text.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 910,
@@ -7291,7 +7291,7 @@
    "grade": 4,
    "n": 24,
    "title": "How the Interstate Was Built",
-   "standard": "RI.4.5 · Grade 4",
+   "standard": "RI.4.5",
    "standard_text": "Standard: Describe the overall structure (e.g., chronology, comparison, cause/effect, problem/solution) of events, ideas, concepts, or information in a text or part of a text.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 880,
@@ -7392,7 +7392,7 @@
    "grade": 4,
    "n": 25,
    "title": "The Fish That Ate the River",
-   "standard": "RI.4.5 · Grade 4",
+   "standard": "RI.4.5",
    "standard_text": "Standard: Describe the overall structure (e.g., chronology, comparison, cause/effect, problem/solution) of events, ideas, concepts, or information in a text or part of a text.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 870,
@@ -7493,7 +7493,7 @@
    "grade": 4,
    "n": 26,
    "title": "The Night the Lights Went Out",
-   "standard": "RI.4.6 · Grade 4",
+   "standard": "RI.4.6",
    "standard_text": "Standard: Compare and contrast a firsthand and secondhand account of the same event or topic; describe the differences in focus and the information provided.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 890,
@@ -7594,7 +7594,7 @@
    "grade": 4,
    "n": 27,
    "title": "Climbing Denali",
-   "standard": "RI.4.6 · Grade 4",
+   "standard": "RI.4.6",
    "standard_text": "Standard: Compare and contrast a firsthand and secondhand account of the same event or topic; describe the differences in focus and the information provided.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 910,
@@ -7695,7 +7695,7 @@
    "grade": 4,
    "n": 28,
    "title": "The Day the Levees Broke",
-   "standard": "RI.4.6 · Grade 4",
+   "standard": "RI.4.6",
    "standard_text": "Standard: Compare and contrast a firsthand and secondhand account of the same event or topic; describe the differences in focus and the information provided.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 900,
@@ -7796,7 +7796,7 @@
    "grade": 4,
    "n": 29,
    "title": "Working the Night Shift at the Zoo",
-   "standard": "RI.4.6 · Grade 4",
+   "standard": "RI.4.6",
    "standard_text": "Standard: Compare and contrast a firsthand and secondhand account of the same event or topic; describe the differences in focus and the information provided.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 880,
@@ -7897,7 +7897,7 @@
    "grade": 4,
    "n": 30,
    "title": "Apollo 13",
-   "standard": "RI.4.6 · Grade 4",
+   "standard": "RI.4.6",
    "standard_text": "Standard: Compare and contrast a firsthand and secondhand account of the same event or topic; describe the differences in focus and the information provided.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 920,
@@ -7998,7 +7998,7 @@
    "grade": 4,
    "n": 31,
    "title": "How a Lock Lifts a Ship",
-   "standard": "RI.4.7 · Grade 4",
+   "standard": "RI.4.7",
    "standard_text": "Standard: Interpret information presented visually, orally, or quantitatively (e.g., in charts, graphs, diagrams, time lines, animations, or interactive elements on Web pages) and explain how the information contributes to an understanding of the text in which it appears.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 900,
@@ -8099,7 +8099,7 @@
    "grade": 4,
    "n": 32,
    "title": "Reading a Hurricane Track Map",
-   "standard": "RI.4.7 · Grade 4",
+   "standard": "RI.4.7",
    "standard_text": "Standard: Interpret information presented visually, orally, or quantitatively (e.g., in charts, graphs, diagrams, time lines, animations, or interactive elements on Web pages) and explain how the information contributes to an understanding of the text in which it appears.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 910,
@@ -8200,7 +8200,7 @@
    "grade": 4,
    "n": 33,
    "title": "The Fastest Land Animals",
-   "standard": "RI.4.7 · Grade 4",
+   "standard": "RI.4.7",
    "standard_text": "Standard: Interpret information presented visually, orally, or quantitatively (e.g., in charts, graphs, diagrams, time lines, animations, or interactive elements on Web pages) and explain how the information contributes to an understanding of the text in which it appears.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 890,
@@ -8301,7 +8301,7 @@
    "grade": 4,
    "n": 34,
    "title": "Where the Water Goes",
-   "standard": "RI.4.7 · Grade 4",
+   "standard": "RI.4.7",
    "standard_text": "Standard: Interpret information presented visually, orally, or quantitatively (e.g., in charts, graphs, diagrams, time lines, animations, or interactive elements on Web pages) and explain how the information contributes to an understanding of the text in which it appears.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 880,
@@ -8402,7 +8402,7 @@
    "grade": 4,
    "n": 35,
    "title": "The Longest Bridges Ever Built",
-   "standard": "RI.4.7 · Grade 4",
+   "standard": "RI.4.7",
    "standard_text": "Standard: Interpret information presented visually, orally, or quantitatively (e.g., in charts, graphs, diagrams, time lines, animations, or interactive elements on Web pages) and explain how the information contributes to an understanding of the text in which it appears.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 920,
@@ -8503,7 +8503,7 @@
    "grade": 4,
    "n": 36,
    "title": "Start School Later",
-   "standard": "RI.4.8 · Grade 4",
+   "standard": "RI.4.8",
    "standard_text": "Standard: Explain how an author uses reasons and evidence to support particular points in a text.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 900,
@@ -8604,7 +8604,7 @@
    "grade": 4,
    "n": 37,
    "title": "Keep the Library Open on Sundays",
-   "standard": "RI.4.8 · Grade 4",
+   "standard": "RI.4.8",
    "standard_text": "Standard: Explain how an author uses reasons and evidence to support particular points in a text.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 890,
@@ -8705,7 +8705,7 @@
    "grade": 4,
    "n": 38,
    "title": "Ban Plastic Bags? Read the Numbers First",
-   "standard": "RI.4.8 · Grade 4",
+   "standard": "RI.4.8",
    "standard_text": "Standard: Explain how an author uses reasons and evidence to support particular points in a text.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 920,
@@ -8806,7 +8806,7 @@
    "grade": 4,
    "n": 39,
    "title": "Recess Is Not a Reward",
-   "standard": "RI.4.8 · Grade 4",
+   "standard": "RI.4.8",
    "standard_text": "Standard: Explain how an author uses reasons and evidence to support particular points in a text.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 880,
@@ -8907,7 +8907,7 @@
    "grade": 4,
    "n": 40,
    "title": "Why This Town Says No to a New Stadium",
-   "standard": "RI.4.8 · Grade 4",
+   "standard": "RI.4.8",
    "standard_text": "Standard: Explain how an author uses reasons and evidence to support particular points in a text.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 910,
@@ -9008,7 +9008,7 @@
    "grade": 4,
    "n": 41,
    "title": "Two Texts: Wolves Return to Yellowstone",
-   "standard": "RI.4.9 · Grade 4",
+   "standard": "RI.4.9",
    "standard_text": "Standard: Integrate information from two texts on the same topic in order to write or speak about the subject knowledgeably.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 910,
@@ -9109,7 +9109,7 @@
    "grade": 4,
    "n": 42,
    "title": "Two Texts: The Lost Colony of Roanoke",
-   "standard": "RI.4.9 · Grade 4",
+   "standard": "RI.4.9",
    "standard_text": "Standard: Integrate information from two texts on the same topic in order to write or speak about the subject knowledgeably.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 920,
@@ -9210,7 +9210,7 @@
    "grade": 4,
    "n": 43,
    "title": "Two Texts: Should Zoos Exist?",
-   "standard": "RI.4.9 · Grade 4",
+   "standard": "RI.4.9",
    "standard_text": "Standard: Integrate information from two texts on the same topic in order to write or speak about the subject knowledgeably.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 900,
@@ -9311,7 +9311,7 @@
    "grade": 4,
    "n": 44,
    "title": "Two Texts: The Dust Bowl",
-   "standard": "RI.4.9 · Grade 4",
+   "standard": "RI.4.9",
    "standard_text": "Standard: Integrate information from two texts on the same topic in order to write or speak about the subject knowledgeably.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 890,
@@ -9412,7 +9412,7 @@
    "grade": 4,
    "n": 45,
    "title": "Two Texts: Sleep and Memory",
-   "standard": "RI.4.9 · Grade 4",
+   "standard": "RI.4.9",
    "standard_text": "Standard: Integrate information from two texts on the same topic in order to write or speak about the subject knowledgeably.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.4 word meaning · RI.4.10 comprehension\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 910,
@@ -9513,7 +9513,7 @@
    "grade": 4,
    "n": 46,
    "title": "The Seed Vault in the Ice",
-   "standard": "RI.4.10 · Grade 4",
+   "standard": "RI.4.10",
    "standard_text": "Standard: By the end of year, read and comprehend informational texts, including history/social studies, science, and technical texts, in the grades 4–5 text complexity band proficiently, with scaffolding as needed at the high end of the range.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.3 events and procedures · RI.4.4 word meaning · RI.4.7 visual information\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 910,
@@ -9614,7 +9614,7 @@
    "grade": 4,
    "n": 47,
    "title": "The Sound of a Stadium",
-   "standard": "RI.4.10 · Grade 4",
+   "standard": "RI.4.10",
    "standard_text": "Standard: By the end of year, read and comprehend informational texts, including history/social studies, science, and technical texts, in the grades 4–5 text complexity band proficiently, with scaffolding as needed at the high end of the range.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.3 events and procedures · RI.4.4 word meaning · RI.4.7 visual information\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 900,
@@ -9715,7 +9715,7 @@
    "grade": 4,
    "n": 48,
    "title": "The Man Who Refused to Fly",
-   "standard": "RI.4.10 · Grade 4",
+   "standard": "RI.4.10",
    "standard_text": "Standard: By the end of year, read and comprehend informational texts, including history/social studies, science, and technical texts, in the grades 4–5 text complexity band proficiently, with scaffolding as needed at the high end of the range.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.3 events and procedures · RI.4.4 word meaning · RI.4.7 visual information\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 920,
@@ -9816,7 +9816,7 @@
    "grade": 4,
    "n": 49,
    "title": "What a Tree Ring Remembers",
-   "standard": "RI.4.10 · Grade 4",
+   "standard": "RI.4.10",
    "standard_text": "Standard: By the end of year, read and comprehend informational texts, including history/social studies, science, and technical texts, in the grades 4–5 text complexity band proficiently, with scaffolding as needed at the high end of the range.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.3 events and procedures · RI.4.4 word meaning · RI.4.7 visual information\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 910,
@@ -9917,7 +9917,7 @@
    "grade": 4,
    "n": 50,
    "title": "The Machine That Reads the Sea Floor",
-   "standard": "RI.4.10 · Grade 4",
+   "standard": "RI.4.10",
    "standard_text": "Standard: By the end of year, read and comprehend informational texts, including history/social studies, science, and technical texts, in the grades 4–5 text complexity band proficiently, with scaffolding as needed at the high end of the range.\n Spiral: RI.4.1 details and inferences · RI.4.2 main idea · RI.4.3 events and procedures · RI.4.4 word meaning · RI.4.7 visual information\n Lower range: LL 610 – 690",
    "higher": {
     "lexile": 900,
