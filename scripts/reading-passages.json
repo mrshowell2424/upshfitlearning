@@ -1,0 +1,784 @@
+{
+ "_note": "One story per concept, written at three reading levels. 2nd grade is pinned to what its own lesson has taught; 3rd and 4th are given a floor of all Level 2 and all Level 3, because a fourth grader reviewing short a has been taught digraphs and a passage that pretends otherwise is unreadable rather than careful. Each level carries three comprehension questions with answers and a writing task of a type that grade is expected to write. Checked by scripts/check-passages.mjs. Written for Upshift, not copied from any published reader.",
+ "levels": {
+  "g2": "2nd grade",
+  "g3": "3rd grade",
+  "g4": "4th grade"
+ },
+ "passages": {
+  "cvc-a": {
+   "g2": {
+    "title": "Nat and the Map",
+    "paras": [
+     "Nat is a cat. Nat has a tan hat. The hat is not big. It is a cat hat.",
+     "Dad sat on a mat. Dad had a map. The map was for a run up to see Nan.",
+     "Nat ran at the map. Nat sat on it. “Get up, Nat,” said Dad. Nat did not get up.",
+     "Dad put the map on his lap. Nat sat on the lap. Nat had a nap on Dad.",
+     "Dad can see the map now. Nat can nap. Dad and Nat are pals."
+    ],
+    "qs": [
+     [
+      "What does Nat sit on at the start?",
+      "Nat sits on the map."
+     ],
+     [
+      "Why does Dad put the map on his lap?",
+      "So he can see the map and Nat can still sit on him."
+     ],
+     [
+      "How do you know Nat and Dad are pals?",
+      "Nat naps on Dad and Dad lets him stay."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what Nat did, in order. Use first, next, and last. End by telling how Dad felt."
+    }
+   },
+   "g3": {
+    "title": "Nat and the Map",
+    "paras": [
+     "Nat is a tan cat with one black ear. He has a hat that Dad made from an old bag, and he wears it all day long.",
+     "On Saturday, Dad sat on the mat with a big paper map. He was planning a trip to see Gram in the next town.",
+     "Nat ran straight at the map and sat down right on top of it. “Get up, Nat,” said Dad. Nat did not move one bit.",
+     "Dad thought for a moment. Then he lifted the map onto his lap. Nat climbed up after it and curled into a ball.",
+     "Now Dad could read the map, and Nat could nap. They both got what they wanted, which is how it usually goes with pals."
+    ],
+    "qs": [
+     [
+      "Where was Dad planning to go?",
+      "To the next town to see Gram."
+     ],
+     [
+      "What problem did Nat cause?",
+      "He sat in the middle of the map so Dad could not read it."
+     ],
+     [
+      "How did Dad solve the problem without moving Nat?",
+      "He lifted the map onto his lap so Nat could sit there too."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Rewrite this story as Nat the cat telling it. Use time-order words and at least one line of dialogue."
+    }
+   },
+   "g4": {
+    "title": "Nat and the Map",
+    "paras": [
+     "Nat is a tan cat with a single black ear and a strong opinion about where he belongs, which is always directly on top of whatever a person is trying to use.",
+     "On Saturday morning, Dad spread a paper map across the mat and began tracing the road to Gram's town with one finger. Nat watched from the doorway, tail twitching.",
+     "He crossed the room in four quick steps and settled himself in the exact centre of the map, folding his paws under his chest as if he had been invited.",
+     "“Get up, Nat,” Dad said. Nat closed his eyes. Dad tried lifting one corner, then the other. The cat stayed put, heavy and completely unbothered.",
+     "In the end Dad gave up arguing and lifted the whole map onto his lap. Nat climbed aboard, turned twice, and fell asleep. Dad read the route over a warm, rumbling cat, which is the sort of compromise you learn to make with a pal."
+    ],
+    "qs": [
+     [
+      "What does the first paragraph tell you about Nat's character?",
+      "He always sits on whatever a person is trying to use."
+     ],
+     [
+      "Why does the author say Nat sat 'as if he had been invited'?",
+      "To show Nat thinks he has every right to be there."
+     ],
+     [
+      "What does Dad's choice at the end show about him?",
+      "He would rather compromise than argue with the cat."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Was Dad right to give in to Nat? State your opinion, support it with two reasons and details from the story, and finish with a conclusion."
+    }
+   }
+  },
+  "cvc-mix": {
+   "g2": {
+    "title": "The Pig in the Pen",
+    "paras": [
+     "Rob has a pig. The pig is big. Rob put the pig in a pen.",
+     "The pig did not sit. He dug in the mud. He dug a pit by the log.",
+     "Then the pig was out. He ran in the sun. He sat in the wet mud and did not get up.",
+     "Rob ran to get him. The pig ran too. Rob sat down in the mud.",
+     "Now Rob is wet. The pig is wet. Rob did not get mad. He let the pig sit in the mud."
+    ],
+    "qs": [
+     [
+      "Where did Rob put the pig?",
+      "Rob put the pig in a pen."
+     ],
+     [
+      "How did the pig get out?",
+      "He dug a pit by the log."
+     ],
+     [
+      "How do you know Rob was not angry?",
+      "He did not get mad and he let the pig sit in the mud."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write three facts about the pig from the story. Start with a sentence that tells your topic and finish with an ending sentence."
+    }
+   },
+   "g3": {
+    "title": "The Pig in the Pen",
+    "paras": [
+     "Rob kept a big pink pig in a pen beside the red barn. The pen had a strong gate and a long log across one end.",
+     "The pig had other plans. All morning he pushed his snout into the soft ground and dug, and by lunchtime there was a hole under the log.",
+     "He squeezed through it, trotted into the sunshine, and dropped himself into the wettest, blackest patch of mud on the whole farm.",
+     "Rob came running. The pig ran too, and he was faster than he looked. Rob skidded, slipped, and landed in the mud with a thud.",
+     "For a moment nobody moved. Then Rob began to grin, because he was every bit as muddy as the pig. He let the pig stay until the sun went down."
+    ],
+    "qs": [
+     [
+      "What did the pen have to keep the pig in?",
+      "A strong gate and a long log across one end."
+     ],
+     [
+      "How long did it take the pig to dig the hole?",
+      "From the morning until lunchtime."
+     ],
+     [
+      "Why does the author say the pig 'was faster than he looked'?",
+      "Because Rob could not catch him and landed in the mud instead."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a how-to telling someone how to keep a pig in a pen. Group your steps in order and use words like first, then, and finally."
+    }
+   },
+   "g4": {
+    "title": "The Pig in the Pen",
+    "paras": [
+     "Rob's pig was enormous and had opinions about freedom. The pen beside the red barn had a strong gate, a log across the low end, and, Rob believed, no weaknesses at all.",
+     "The pig disagreed. He spent the whole morning working his snout into the soft ground near the log, shifting a little more earth each time, patient as water wearing at stone.",
+     "By noon the hole was wide enough. He wriggled through, shook himself off, and marched directly to the deepest, blackest patch of mud on the property, where he lay down with a sigh of pure satisfaction.",
+     "Rob sprinted across the yard. The pig, who was considerably faster than an enormous pig has any right to be, swung around the mud and left Rob to skid through it alone.",
+     "Rob sat up, dripping. He looked at the pig. The pig looked back, entirely unrepentant. Rob grinned in spite of himself, then went to get a shovel, because the hole would still be there tomorrow."
+    ],
+    "qs": [
+     [
+      "What comparison does the author use for how the pig dug?",
+      "Patient as water wearing at stone."
+     ],
+     [
+      "Why did Rob end up in the mud instead of the pig?",
+      "The pig swung around it and Rob skidded straight through."
+     ],
+     [
+      "What does the last sentence suggest about the pig's escape?",
+      "That it will happen again unless Rob fixes the hole."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the next day from the pig's point of view. Establish the situation, give a clear sequence of events, and use dialogue and sensory details."
+    }
+   }
+  },
+  "dig": {
+   "g2": {
+    "title": "The Chick in the Shed",
+    "paras": [
+     "Chet has a shed at the back. In the shed is a hen. The hen has one thin chick.",
+     "The chick will not eat. Chet got a dish and put mash in it. He set the dish by the chick.",
+     "The chick did not wish to eat. It just sat in the sun and did not peck.",
+     "Then Chet got a thin chip of ham. He held it up. The chick ran to him and got it!",
+     "Now the chick will eat. Chet shuts the shed. He is much better at this than he was."
+    ],
+    "qs": [
+     [
+      "What is in Chet's shed?",
+      "A hen and one thin chick."
+     ],
+     [
+      "What did Chet put in the dish?",
+      "He put mash in it."
+     ],
+     [
+      "What made the chick eat?",
+      "A thin chip of ham that Chet held up."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Was the ham a good way to get the chick to eat? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "Chet and the Fish",
+    "paras": [
+     "Chet had one wish that summer: to catch the big fish that lived in the pond behind the shed. Everybody in the family had seen it. Nobody had ever caught it.",
+     "On Thursday he carried his rod down to the water and sat in the thin shade of a willow. He had a chip of ham on the hook and a whole afternoon ahead of him.",
+     "The sun climbed. A bug landed on his chin, and he let it stay rather than move and scare the fish. Three hours went by without one pull on the line.",
+     "Then the rod bent nearly double. Chet held on with both hands while the line hissed through the water, and at last a thick silver fish came up into the light.",
+     "He looked at it for a long moment. Then he unhooked it and slid it gently back into the pond. “I will catch you when you are bigger,” he told it."
+    ],
+    "qs": [
+     [
+      "Why was this fish famous in Chet's family?",
+      "Everybody had seen it but nobody had ever caught it."
+     ],
+     [
+      "Why did Chet let the bug stay on his chin?",
+      "He did not want to move and scare the fish."
+     ],
+     [
+      "What does Chet's choice at the end tell you about him?",
+      "He is patient and willing to wait and catch it when it is bigger."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write what happens the day Chet goes back. Use time-order words, describe the pond, and include something Chet says out loud."
+    }
+   },
+   "g4": {
+    "title": "Chet and the Fish",
+    "paras": [
+     "Every family keeps a story, and Chet's family kept the one about the fish in the pond behind the shed. His grandfather had hooked it twice and lost it twice. His mother claimed she had seen it rise, broad as a dinner plate, on a still evening in June.",
+     "Chet went down on a Thursday with his rod, a chip of ham, and the whole long afternoon in front of him. He settled into the thin shade of the willow and made himself a promise not to move.",
+     "Keeping that promise turned out to be the hard part. The sun pushed higher. A bug landed on his chin and walked across it, and Chet let it, because the surface of the pond was flat and perfect and he would not be the one to break it.",
+     "The strike, when it finally came, nearly took the rod out of his hands. Line hissed off the reel. His arms burned. For four full minutes the fish ran, and then it tired, and a thick silver shape rose slowly into the light.",
+     "Chet held it in the shallows, feeling the size of it, the cold muscle of it working against his palms. Then he worked the hook free and let go. The fish hung still for a second and vanished. “I will catch you when you are bigger,” Chet said, to nobody at all."
+    ],
+    "qs": [
+     [
+      "What evidence shows the fish was important to Chet's whole family?",
+      "His grandfather hooked and lost it twice and his mother saw it rise."
+     ],
+     [
+      "What promise did Chet make himself, and why was it hard to keep?",
+      "Not to move, which was hard because a bug walked across his chin."
+     ],
+     [
+      "Why might the author end with 'to nobody at all'?",
+      "To show Chet is alone and the moment is private to him."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Chet released a fish his family had chased for years. Was that the right choice? Group your reasons, support them with details from the text, and end with a conclusion."
+    }
+   }
+  },
+  "floss": {
+   "g2": {
+    "title": "The Bell on the Hill",
+    "paras": [
+     "Nell has a job. The bell on the hill is hers. When it is six, Nell will hit the bell and the kids run up the path.",
+     "Then the bell fell off. It fell in the mud at the back of the mill. Nell did not yell.",
+     "She got a rag and a tub of suds. She did wash the bell until it was much bell and less mud.",
+     "Then Nell put the bell back on top of the hill. It was a big job.",
+     "At six, Nell hit the bell. The kids ran up the path. Nell will not miss."
+    ],
+    "qs": [
+     [
+      "What is Nell's job?",
+      "To hit the bell on the hill when it is six."
+     ],
+     [
+      "What happened to the bell?",
+      "It fell off and landed in the mud at the back of the mill."
+     ],
+     [
+      "How did Nell fix it?",
+      "She got a rag and a tub of suds and washed it."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write three facts about Nell's job. Start with a topic sentence and finish with an ending."
+    }
+   },
+   "g3": {
+    "title": "The Bell on the Hill",
+    "paras": [
+     "Nell had the best job in the village. At six o'clock every morning she climbed the hill and rang the bell, and every child in the valley understood it was time to start walking to school.",
+     "One wet morning the rope slipped, the bracket gave way, and the bell went over the rim of the hill. It rolled all the way down and stopped in the mud behind the mill.",
+     "Nell did not panic. She fetched a rag and a bucket of soapy water, and she scrubbed until the brass came back bright enough to see her own face in.",
+     "Getting it up the hill again was the hard part. It took her until nearly six, and her arms shook the whole way.",
+     "She hung it, waited, and struck it on the hour. Down in the valley, doors began to open."
+    ],
+    "qs": [
+     [
+      "What did Nell do at six o'clock every morning?",
+      "She climbed the hill and rang the bell."
+     ],
+     [
+      "What caused the bell to fall?",
+      "The rope slipped and the bracket gave way."
+     ],
+     [
+      "How do you know the village depended on Nell?",
+      "When she rang the bell, doors began to open all over the valley."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should a child have a job like Nell's? Give your opinion with reasons, using because and also to link them."
+    }
+   },
+   "g4": {
+    "title": "The Bell on the Hill",
+    "paras": [
+     "Nell had held the job since she was nine, and in four years she had not missed a single morning. At six she climbed the hill, took the rope in both hands, and rang the bell, and every child in the valley below understood it was time to start walking.",
+     "On a wet morning in March the rope slipped through her fingers. The bracket, rusted thin by years of rain, gave way all at once. The bell went over the lip of the hill and rolled, ringing all the way down, until it buried itself in the mud behind the mill.",
+     "Nell stood at the top and looked at the long brown scar it had left in the grass. Then she went down after it with a rag and a bucket, because nobody else was going to.",
+     "She scrubbed for an hour. Brass came up under the mud, dull at first, then bright enough to show her face stretched strange across the curve of it. Carrying it back up took everything she had.",
+     "At three minutes to six she hung it on a new bracket. At six she struck it. All down the valley, one door after another swung open, and Nell sat down in the wet grass and let her arms shake."
+    ],
+    "qs": [
+     [
+      "How long had Nell held the job, and what is her record?",
+      "Since she was nine, and she had not missed a single morning in four years."
+     ],
+     [
+      "What does 'rusted thin by years of rain' explain?",
+      "Why the bracket gave way and the bell fell."
+     ],
+     [
+      "Why does the author end with Nell letting her arms shake?",
+      "To show how hard the work was, now that the job is done."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the scene where Nell carries the bell back up the hill. Establish the situation, give a clear sequence, and use sensory details."
+    }
+   }
+  },
+  "vce": {
+   "g2": {
+    "title": "The Cave by the Lake",
+    "paras": [
+     "Jane and Dave ride bikes to the lake. A cave is cut in the side of the hill. It is wide but it is not big.",
+     "Jane came up to the cave. She made a note of the time. Dave gave her a rope to hold.",
+     "Inside, Jane came to a pile of five white bones. A mole had made a home in the cave.",
+     "Jane did not take the bones. She made a note and came back out to Dave.",
+     "At home, Jane made a page in her log. She gave the cave a name. It is Mole Cave."
+    ],
+    "qs": [
+     [
+      "Where is the cave?",
+      "It is cut in the side of the hill by the lake."
+     ],
+     [
+      "What did Jane find inside?",
+      "A pile of five white bones and a mole home."
+     ],
+     [
+      "What did Jane name the cave?",
+      "She gave it the name Mole Cave."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what Jane did, in order. Use first, next, and last, and end by telling how Jane felt."
+    }
+   },
+   "g3": {
+    "title": "The Stone Gate",
+    "paras": [
+     "Jane lived at the end of a long lane, behind a stone gate so wide that two cars could have driven through it side by side.",
+     "That was the problem. The gate was lovely and the gate was far too heavy, because one person on her own could not make it slide more than a hand's width.",
+     "Jane tried a rope. She tried a pole jammed in the gap, leaning on it with her whole body until her feet skidded in the gravel.",
+     "Dave came up the lane while she was still leaning. He took one side, she took the other, and together they walked it closed in about four seconds.",
+     "They sat on the wall afterwards and shared a ripe plum. “Some things are not a one-person job,” Dave said."
+    ],
+    "qs": [
+     [
+      "How wide was the gate?",
+      "Wide enough for two cars to drive through side by side."
+     ],
+     [
+      "Name two things Jane tried before Dave arrived.",
+      "She tried a rope and a pole jammed in the gap."
+     ],
+     [
+      "What is the lesson Dave states at the end?",
+      "Some things are not a one-person job."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how to move something too heavy to lift alone. Group your steps and use words like first, then, and finally."
+    }
+   },
+   "g4": {
+    "title": "The Stone Gate",
+    "paras": [
+     "Jane's home sat at the end of a lane so long that visitors usually gave up and turned around. The stone gate at the entrance had been built two hundred years earlier, when people apparently had more hands.",
+     "It was a beautiful thing, pale and heavy, carved at the top with a pattern nobody could name any more. It was also, for one eleven-year-old, completely impossible. On her own she could move it a hand's width before it stopped dead.",
+     "She tried a rope first, looping it through the ironwork and hauling until the fibres bit into her palms. Then she jammed a pole in the gap and leaned her whole body against it. Her feet skidded in the gravel. The gate did not care.",
+     "Dave came up the lane while she was still leaning, red-faced and furious. He did not say anything clever. He just took the far side, nodded at her, and the two of them walked the gate closed in about four seconds.",
+     "They sat on the wall afterwards and split a ripe plum between them, and Jane thought about how long she had been treating a two-person job as proof that she was weak."
+    ],
+    "qs": [
+     [
+      "Why does the author mention the gate was built two hundred years earlier?",
+      "To suggest it was built when more people were available to move it."
+     ],
+     [
+      "What does 'The gate did not care' tell you?",
+      "That no amount of Jane's effort alone would move it."
+     ],
+     [
+      "What does Jane realise at the end?",
+      "That needing help was not proof she was weak, because it was a two-person job."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is asking for help a sign of weakness? Group your reasons, support them with details from the story, and end with a conclusion."
+    }
+   }
+  },
+  "blends": {
+   "g2": {
+    "title": "The Frog Jump",
+    "paras": [
+     "Fran has a frog. The frog is Spot. Spot can jump up on a stump.",
+     "The class had a frog jump. Ten frogs sat on a flat rock in the grass.",
+     "Stan had a frog that went fast. It went past Spot in one jump.",
+     "Then Spot bent his legs. He made a big jump and went past Stan's frog.",
+     "Spot won the frog jump. Fran held him up. The class clapped and Spot sat still."
+    ],
+    "qs": [
+     [
+      "What is the frog's name?",
+      "The frog is Spot."
+     ],
+     [
+      "Where did the ten frogs sit?",
+      "On a flat rock in the grass."
+     ],
+     [
+      "How did Spot win?",
+      "He bent his legs and made a big jump past Stan's frog."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Which frog was best, Spot or Stan's frog? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "The Frog Jump",
+    "paras": [
+     "Fran had kept a frog named Spot in a tank by the window since spring. He was small, green, and spent most of his life sitting absolutely still on a stump.",
+     "In June the class held a frog jump. Ten frogs were set on a flat rock in the grass, and ten children knelt behind them shouting encouragement.",
+     "Stan's frog went first and went fast, clearing the chalk line in one flat leap. Everyone agreed that was that.",
+     "Spot did nothing for a long moment. Then he folded his back legs under him, held still one second more, and sprang clean past Stan's mark.",
+     "Fran lifted him up and the class clapped. Spot, who had no idea he had won anything, sat perfectly still in her hands."
+    ],
+    "qs": [
+     [
+      "Where had Fran kept Spot since spring?",
+      "In a tank by the window."
+     ],
+     [
+      "Why did everyone think Stan's frog had won?",
+      "It cleared the chalk line in a single flat leap."
+     ],
+     [
+      "What is funny about Spot at the end?",
+      "He won but had no idea he had won anything."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the frog jump from Spot's point of view. Use time-order words and include what the noise felt like."
+    }
+   },
+   "g4": {
+    "title": "The Frog Jump",
+    "paras": [
+     "Fran had kept Spot since spring, in a glass tank on the windowsill where the afternoon light came through. He was a small green frog with an enormous talent for doing nothing at all, and he practised it daily on a piece of driftwood she had put in for him.",
+     "The class frog jump was held in June on the flat rock behind the school. Ten frogs, ten lines of chalk, ten children kneeling in the grass and shouting advice that no frog has ever been able to follow.",
+     "Stan's frog went first. It was long-legged and quick, and it cleared the chalk in one flat leap that pulled a gasp from everybody watching. Stan folded his arms. The contest, as far as he was concerned, was finished.",
+     "Spot sat. He sat so long that children began to laugh. Fran crouched beside him and said nothing, because she had watched him on that driftwood all spring and she had learned the difference between a frog who would not jump and a frog who was not ready yet.",
+     "He folded his back legs. He waited one second longer. Then he went, high and clean, over Stan's chalk line with room to spare. The class erupted. Spot, who understood none of it, settled into Fran's cupped hands and went back to doing nothing at all."
+    ],
+    "qs": [
+     [
+      "What had Fran learned from watching Spot all spring?",
+      "The difference between a frog who will not jump and one who is not ready yet."
+     ],
+     [
+      "How does the author show Stan was overconfident?",
+      "He folded his arms and considered the contest finished."
+     ],
+     [
+      "Why is it funny that Spot 'understood none of it'?",
+      "Because everyone else is celebrating a victory the frog cannot even know about."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a short report on frogs for a younger reader. Organise it into sections, develop each with facts and examples, and connect your ideas."
+    }
+   }
+  },
+  "ai-ay": {
+   "g2": {
+    "title": "Rain on Game Day",
+    "paras": [
+     "Gail and Ray play on the same side. The big game was set for Saturday.",
+     "Then the rain came. It fell all day and it did not stay away.",
+     "The field was wet. The trail to it was just mud. Will the game wait?",
+     "Gail got a rake. Ray got a bag of sand. They did not wait for help. They made a dry way to the field.",
+     "At ten the sun came up and the game was on. Gail and Ray had mud on them, but they did play."
+    ],
+    "qs": [
+     [
+      "When was the big game set for?",
+      "It was set for Saturday."
+     ],
+     [
+      "What was wrong with the trail to the field?",
+      "It was just mud because the rain fell all day."
+     ],
+     [
+      "How did Gail and Ray fix it?",
+      "Gail got a rake and Ray got a bag of sand, and they made a dry way."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should the game have been played in the mud? Tell what you think, give two reasons, and write an ending."
+    }
+   },
+   "g3": {
+    "title": "Rain on Game Day",
+    "paras": [
+     "Gail and Ray had been waiting all season for the Saturday game, and on Friday night the rain started and did not stop.",
+     "By morning the field was a swamp. The trail down to it had turned to thick brown mud that pulled at your shoes.",
+     "The coach said the game might be called off. Gail did not want to wait around to find out, so she went home and came back with a rake.",
+     "Ray arrived ten minutes later dragging a bag of sand. They worked along the trail, raking and spreading, until there was a dry way to walk on.",
+     "The sun came out at ten and the game went ahead. Both of them played the whole match with mud up to their knees, and not one of them complained."
+    ],
+    "qs": [
+     [
+      "When did the rain start?",
+      "On Friday night, and it did not stop."
+     ],
+     [
+      "What did Gail and Ray each bring?",
+      "Gail brought a rake and Ray brought a bag of sand."
+     ],
+     [
+      "Why do you think neither of them complained about the mud?",
+      "Because they had worked to make sure the game could be played at all."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write what happened on the trail that morning. Use time-order words, describe what the mud was like, and include dialogue."
+    }
+   },
+   "g4": {
+    "title": "Rain on Game Day",
+    "paras": [
+     "Gail and Ray had been waiting for the Saturday game since the season began. On Friday night the rain arrived, and it settled in over the valley with no intention of leaving.",
+     "By morning the field had become a swamp and the trail leading down to it was thick brown mud that gripped your shoes and held on. The coach stood at the top of it with his arms crossed, saying the word postponed.",
+     "Gail did not stay to argue. She walked home, took the rake off the wall of the shed, and walked back, and by the time she returned Ray was coming the other way dragging a bag of sand he had talked out of the groundskeeper.",
+     "They worked the whole length of the trail. Rake, spread, press down, move on. It was slow and it was filthy and not one of them suggested stopping, because stopping meant no game.",
+     "At ten the clouds broke apart and the sun came through, and the coach, who had been watching the last part of this from the clubhouse window, called them on. Gail and Ray played the full match with mud to their knees and never once mentioned the trail to anybody."
+    ],
+    "qs": [
+     [
+      "What word was the coach saying at the top of the trail?",
+      "Postponed."
+     ],
+     [
+      "How did Ray get the bag of sand?",
+      "He talked the groundskeeper out of it."
+     ],
+     [
+      "Why might they never mention the trail to anybody?",
+      "They did the work to play, not to be praised for it."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Did Gail and Ray do the right thing by fixing the trail themselves? Group your reasons, use details from the text, and end with a conclusion."
+    }
+   }
+  },
+  "ee-ea": {
+   "g2": {
+    "title": "The Seed Team",
+    "paras": [
+     "Dean and Lee had a tray of seeds. They put each seed in a pot of dirt.",
+     "Each day they gave them a drink. The seeds did not seem to get big.",
+     "Lee said, “We need heat.” They set the pots near the glass where the sun is.",
+     "In a week, green leaves came up. Dean and Lee were pleased.",
+     "They had a real team of plants. Each pot got a name on a bit of tape."
+    ],
+    "qs": [
+     [
+      "What did Dean and Lee put in each pot?",
+      "They put a seed in a pot of dirt."
+     ],
+     [
+      "What did Lee say the seeds need?",
+      "Lee said they need heat."
+     ],
+     [
+      "What came up in a week?",
+      "Green leaves came up."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write three facts about how to grow a seed. Start with a topic sentence and finish with an ending."
+    }
+   },
+   "g3": {
+    "title": "The Seed Team",
+    "paras": [
+     "Dean and Lee started with a tray of bean seeds and a bag of dirt, and a plan to grow something before the end of the term.",
+     "They planted one seed in each pot and watered them every day without fail. For two weeks nothing happened at all. The dirt just sat there looking like dirt.",
+     "“They need heat,” Lee said at last. So they carried the whole tray over to the window where the afternoon sun came through the glass.",
+     "Four days later the first green leaf pushed up through the dirt, and then another, and by the end of the week every pot had something growing in it.",
+     "They labelled each one with tape and a marker. Dean wanted to call them all Steve. Lee talked him out of it."
+    ],
+    "qs": [
+     [
+      "What kind of seeds did they start with?",
+      "Bean seeds."
+     ],
+     [
+      "How long did nothing happen?",
+      "Two weeks."
+     ],
+     [
+      "What was Lee's idea, and did it work?",
+      "To move them to the window for heat, and yes, leaves came up four days later."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a how-to for growing a bean seed. Group your steps, use topic words like seed, soil and sunlight, and put them in order."
+    }
+   },
+   "g4": {
+    "title": "The Seed Team",
+    "paras": [
+     "Dean and Lee began the project in October with a tray of bean seeds, a bag of potting soil, and a shared determination to grow something before the term ended.",
+     "They were careful. One seed per pot, pressed down to the depth the packet recommended, watered every single day without fail. And for two solid weeks, absolutely nothing happened. The soil sat there looking exactly like soil.",
+     "Lee worked out the problem on a cold Thursday. “They need heat,” she said. “We have been keeping them in the coldest corner of the room.” They carried the entire tray across to the window, where the afternoon sun came through the glass and warmed the sills.",
+     "The first leaf appeared four days later, pale green and folded over on itself like something learning how to stand. By Friday there was one in every pot.",
+     "They labelled each plant with tape and a marker. Dean proposed naming all of them Steve, on the grounds that it would be easier to remember. Lee pointed out, reasonably, that this would make the record-keeping meaningless, and they settled on numbers."
+    ],
+    "qs": [
+     [
+      "What two mistakes had the pair not made before the leaves appeared?",
+      "They planted at the right depth and watered every day without fail."
+     ],
+     [
+      "What did Lee realise was wrong?",
+      "The seeds were in the coldest corner of the room and needed heat."
+     ],
+     [
+      "What image does the author use for the first leaf?",
+      "Something learning how to stand."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Write a report on what a seed needs to grow. Organise it into sections, develop each with facts and examples, and connect your ideas."
+    }
+   }
+  },
+  "oa-ow": {
+   "g2": {
+    "title": "The Slow Boat",
+    "paras": [
+     "Joan has a boat. It is slow. It will not go fast, and Joan likes it that way.",
+     "She rows down the stream. A crow sits on the bow and will not go.",
+     "By the road Joan sees a goat. The goat has its coat in a bush and is stuck.",
+     "Joan rows to the bank. She gets the coat free and the goat runs up the slope.",
+     "The crow stays all the way back. Joan says that crow may own the boat by now."
+    ],
+    "qs": [
+     [
+      "What is Joan's boat like?",
+      "It is slow and will not go fast."
+     ],
+     [
+      "What sits on the bow?",
+      "A crow sits on the bow."
+     ],
+     [
+      "What was wrong with the goat?",
+      "Its coat was stuck in a bush by the road."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what Joan did, in order. Use first, next, and last, and end by telling how Joan felt."
+    }
+   },
+   "g3": {
+    "title": "The Slow Boat",
+    "paras": [
+     "Joan's boat was the slowest on the whole stream, and she had no plans to change that. She liked having time to look at things.",
+     "She rowed out after breakfast with a crow riding on the bow. It had taken up that spot three weeks earlier and showed no sign of giving it up.",
+     "Near the road she spotted a goat tangled in a thorn bush, its coat caught fast on both sides. It had clearly been struggling for a while.",
+     "Joan rowed to the bank, climbed out, and worked the coat loose a thorn at a time, talking quietly the whole while so the goat would hold still.",
+     "The goat bolted up the slope the moment it was free. The crow had not moved an inch. Joan had begun to suspect the boat belonged to it now."
+    ],
+    "qs": [
+     [
+      "Why did Joan like a slow boat?",
+      "She liked having time to look at things."
+     ],
+     [
+      "How long had the crow been riding on the bow?",
+      "Three weeks."
+     ],
+     [
+      "Why did Joan talk quietly while freeing the goat?",
+      "So the goat would hold still."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Write the goat's side of this story. Develop the character, use time-order words, and include what it could see and hear."
+    }
+   },
+   "g4": {
+    "title": "The Slow Boat",
+    "paras": [
+     "Joan's boat was the slowest thing on the stream and she had no intention of improving it. A fast boat gets you to the end. A slow one lets you see what you are passing, which was, as far as Joan was concerned, the entire point.",
+     "She rowed out after breakfast with a crow riding the bow. It had claimed the position three weeks earlier, and it now treated her presence as a minor inconvenience to be tolerated.",
+     "Near the road she saw the goat. It was tangled in a thorn bush, its coat caught on both sides, and from the state of the ground it had been fighting the bush for most of the morning and losing.",
+     "Joan tied up, climbed the bank, and began working the coat free one thorn at a time. She talked the whole while, low and steady and about nothing in particular, because an animal that is listening to a voice is not thrashing against thorns.",
+     "The goat went up the slope the instant it was loose, without a backward glance. The crow had not shifted an inch through any of it. Joan pushed off, took up the oars, and privately conceded that the boat was probably the crow's now."
+    ],
+    "qs": [
+     [
+      "What is Joan's argument for a slow boat?",
+      "A fast boat gets you to the end but a slow one lets you see what you are passing."
+     ],
+     [
+      "How could Joan tell the goat had been stuck a long time?",
+      "From the state of the ground where it had been fighting the bush."
+     ],
+     [
+      "Why did Joan keep talking while she worked?",
+      "An animal listening to a voice is not thrashing against the thorns."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is it better to travel slowly or quickly? Group your reasons, support them with facts and details, and finish with a conclusion."
+    }
+   }
+  }
+ }
+}

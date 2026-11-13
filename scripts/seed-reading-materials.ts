@@ -25,6 +25,7 @@ import EXTRAW from "./reading-extra-words.json" with { type: "json" };
 import PREQ from "./reading-prerequisites.json" with { type: "json" };
 import WSX from "./reading-what-says.json" with { type: "json" };
 import LADD from "./reading-word-ladders.json" with { type: "json" };
+import PASSAGES from "./reading-passages.json" with { type: "json" };
 import { db } from "@/lib/db";
 import { reading_materials } from "@/lib/db/schema";
 import { inArray, sql } from "drizzle-orm";
@@ -1301,8 +1302,12 @@ const ADAPTATIONS: Adaptation[] = [
           " || '1st-3rd';\n" +
           "    const aiPrompt = AI_TPL.replace(/\\{GRADES\\}/g, aiGrades)" +
           ".replace(/\\{SKILL\\}/g, label)" +
+          ".replace('{TITLE}', (PGX && PGX.title) ||" +
+          " ((OGD[id] && OGD[id].p.dec && OGD[id].p.dec.title) || label))" +
           ".replace('{PASSAGE}', String(ebText || '').trim())" +
-          ".replace('{QUESTION}', ebPrompt);\n" +
+          ".replace('{QUESTION}', ebPrompt)" +
+          ".replace('{WRITING}', (PGX && PGX.write ? PGX.write.type + ' \u2014 ' + PGX.write.task" +
+          " : 'Write a few sentences about what you read.'));\n" +
           frames
       );
 
@@ -2337,6 +2342,133 @@ const ADAPTATIONS: Adaptation[] = [
       // student's workbook only.
       out = out.split(trackerTail).join(trackerTail + page);
       return out;
+    },
+  },
+  {
+    // A different passage for every concept, at three reading levels.
+    //
+    // 212 lesson choices shared 59 passages between them. The three vowel
+    // team lessons and all their parts — nine choices — read the same story
+    // about a goat and a boat, and two of those three lessons had not
+    // taught oa or ow yet. There was one reading level for all of it.
+    //
+    // Each concept written so far now has its own story at second, third
+    // and fourth grade, and a teacher picks the level. A concept not
+    // written yet keeps the passage it had, so the page never goes blank
+    // while the rest are written.
+    //
+    // The level starts from the lesson's own band and steps up one when
+    // the multisyllabic button is on or the lesson is a digraph lesson,
+    // because both of those ask a child for more than the band does.
+    name: "give every concept its own passage at three reading levels",
+    apply: (html) => {
+      const seat = "const cur = byId[SEL.split('|')[0]] || byId.vce;";
+      const pick = "const d = D[id] || (XT.DEC || {})[id] ||";
+      if (!html.includes(seat) || !html.includes(pick)) return html;
+
+      let out = html.replace(
+        seat,
+        seat +
+          "\n    const PGS = " + JSON.stringify(PASSAGES.passages) + ";\n" +
+          "    const PG_ORDER = ['g2', 'g3', 'g4'];\n" +
+          "    const PG_NAME = { g2: '2nd', g3: '3rd', g4: '4th' };\n" +
+          "    // Where the lesson sits decides the level, until a teacher says otherwise.\n" +
+          "    const pgBase = (this.state && this.state.pg) ||\n" +
+          "      (String(cur[2]) === 'Level 1' ? 'g2' : String(cur[2]) === 'Level 2' ? 'g3' : 'g4');\n" +
+          "    // Multisyllabic work and the digraph lessons both ask for more\n" +
+          "    // than the band does, so the passage steps up one level.\n" +
+          "    const PG_HARD = { dig: 1, 'ck-tch': 1, 'og5-01': 1 };\n" +
+          "    const pgUp = !!(this.state && this.state.multi) || !!PG_HARD[cur[0]];\n" +
+          "    const pgGrade = pgUp\n" +
+          "      ? PG_ORDER[Math.min(2, PG_ORDER.indexOf(pgBase) + 1)] : pgBase;\n" +
+          "    const PGX = (PGS[cur[0]] || {})[pgGrade] || null;"
+      );
+
+      out = out.replace(
+        pick,
+        "const d = (PGX ? [PGX.title, PGX.paras, PGX.qs] : null) || D[id] || (XT.DEC || {})[id] ||"
+      );
+
+      // The writing step and its AI coach read the same passage the reading
+      // level is showing, not the one the pack shipped with.
+      const eb = "const ebText = EBT[id] ||";
+      if (!out.includes(eb)) return html;
+      out = out.replace(eb, "const ebText = (PGX ? PGX.paras.join('\\n') : null) || EBT[id] ||");
+      const ebq = "const ebPrompt = EBP[id] ||";
+      if (!out.includes(ebq)) return html;
+      out = out.replace(
+        ebq,
+        "const ebPrompt = (PGX && PGX.qs && PGX.qs[2] ? PGX.qs[2][0] : null) || EBP[id] ||"
+      );
+
+      // The level control, beside the other toolbar buttons. The toolbar is
+      // recoloured and reflowed by an earlier rule, so this anchors on a
+      // binding that survives that rather than on the original markup.
+      const btnAnchor = '<button type="button" onClick="{{ toggleGames }}"';
+      if (!out.includes(btnAnchor)) return html;
+      const control =
+        '        <sc-if value="{{ pgHas }}" hint-placeholder-val="{{ true }}">\n' +
+        '          <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1.5px solid #C9D3C4;border-radius:999px;background:#F7FAF6">\n' +
+        '            <span style="font-family:Outfit,sans-serif;font-size:11px;font-weight:800;letter-spacing:.1em;color:#618459;white-space:nowrap">READING</span>\n' +
+        '            <sc-for list="{{ pgOpts }}" as="o" hint-placeholder-count="3">\n' +
+        '              <button type="button" onClick="{{ o.pick }}" style="{{ o.st }}">{{ o.label }}</button>\n' +
+        "            </sc-for>\n" +
+        '            <span style="font-size:11px;font-weight:700;color:#8A7A4E;white-space:nowrap">{{ pgNote }}</span>\n' +
+        "          </span>\n" +
+        "        </sc-if>\n";
+      out = out.replace(btnAnchor, control + btnAnchor);
+
+      // The data behind it.
+      const dataAnchor = "wbReal: easyFirst(real.slice(0, 10)),";
+      if (!out.includes(dataAnchor)) return html;
+      out = out.replace(
+        dataAnchor,
+        dataAnchor +
+          " pgHas: !!PGX,\n" +
+          "      pgNote: pgUp ? ((this.state && this.state.multi) ? '\u2191 multisyllabic'" +
+          " : '\u2191 digraphs') : '',\n" +
+          "      pgOpts: PG_ORDER.map((g) => ({ g, label: PG_NAME[g],\n" +
+          "        st: 'font-family:Outfit,sans-serif;font-size:12px;font-weight:800;" +
+          "border:1.5px solid #4B6049;border-radius:7px;padding:3px 9px;cursor:pointer;" +
+          "white-space:nowrap;' + (g === pgGrade ? 'background:#4B6049;color:#fff'" +
+          " : 'background:#fff;color:#4B6049'),\n" +
+          "        pick: () => this.setState({ pg: g }) })),"
+      );
+      return out;
+    },
+  },
+  {
+    // The writing step follows the EB frame.
+    //
+    // The page had a five-part frame of its own — My Answer, My Reason, My
+    // Proof, Explain It, Wrap It Up. The EB Writing Workshop frame is a
+    // short intro paragraph of tag, summary and claim, then a body
+    // paragraph of premise, lead-in, evidence and justification. Same
+    // thinking, but it names the parts the way the workshop names them, and
+    // it adds the two the old frame had no slot for: saying what the text
+    // is before arguing about it, and leading into a quote rather than
+    // dropping one in.
+    //
+    // Seven lines rather than five. A second grader writes the intro and
+    // one body paragraph; the older grades add a second premise.
+    name: "write to the EB frame",
+    apply: (html) => {
+      const from =
+        "const ebFrames = ['\u{1F4E3} My Answer: I think ______.', " +
+        "'\u{1F9F1} My Reason: First, ______.', " +
+        "'\u{1F50E} My Proof: The text says, \"______.\"', " +
+        "'\u{1F517} Explain It: This shows ______.', " +
+        "'\u{1F3A4} Wrap It Up: That is why ______.'];";
+      if (!html.includes(from)) return html;
+      const to =
+        "const ebFrames = ['\u{1F3F7}\uFE0F Tag: The story is ______.', " +
+        "'\u{1F4D6} Summary: It is about ______.', " +
+        "'\u{1F4E3} Claim: I think ______.', " +
+        "'\u{1F9F1} Premise: One reason is ______.', " +
+        "'\u{1F50E} Lead-in: In the story, ______', " +
+        "'\u{1F4CB} Evidence: For example, ______.', " +
+        "'\u{1F517} Justification: This shows ______.'];";
+      return html.split(from).join(to);
     },
   },
 ];
