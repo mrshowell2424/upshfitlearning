@@ -269,8 +269,11 @@ pre[hidden]{display:none}
   var sSel = document.getElementById("pick-ar-s");
   var aSel = document.getElementById("pick-ar");
   var ver = "hi";
+  /* gradeName, same as the mysteries picker above. This select was left on the
+     raw number, so kindergarten read "Grade 0" on the one page where the
+     kindergarten articles live. */
   gSel.innerHTML = D.arG.map(function (g) {
-    return '<option value="' + g + '">Grade ' + g + "</option>";
+    return '<option value="' + g + '">' + gradeName(g) + "</option>";
   }).join("");
   function pool() {
     return D.ar.filter(function (a) {
