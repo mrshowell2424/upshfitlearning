@@ -1,0 +1,415 @@
+{
+ "_note": "What a K-12 informational article pack looks like at each grade. The word bands are measured off the two packs that already exist, not read off their headings: not one of those 100 headings matches its own text, and they run about a quarter high. Grade 3 actually runs a median of 190 words in the higher version and grade 4 a median of 205, and every other grade is anchored on those two. The lower version is about seventy per cent of the higher one, which is the relationship the real packs keep. Lexile bands follow the CCSS stretch bands, with grades 3 and 4 taken from the packs themselves. Each grade gets 50 articles, five for each of its ten RI standards, alternating science and social studies. Grades 9 and 10 share the RI.9-10 standards and grades 11 and 12 share RI.11-12, which is how the standards are written.",
+ "questionKinds": [
+  "main idea/detail",
+  "paragraph focus",
+  "summarize",
+  "vocabulary",
+  "connection"
+ ],
+ "perStandard": 5,
+ "perGrade": 50,
+ "grades": [
+  {
+   "grade": 0,
+   "name": "K",
+   "std": "RI.K",
+   "paras": [
+    3,
+    4
+   ],
+   "higher": {
+    "lexile": [
+     120,
+     230
+    ],
+    "words": [
+     31,
+     60
+    ]
+   },
+   "lower": {
+    "lexile": [
+     0,
+     110
+    ],
+    "words": [
+     22,
+     49
+    ]
+   }
+  },
+  {
+   "grade": 1,
+   "name": "1",
+   "std": "RI.1",
+   "paras": [
+    4,
+    5
+   ],
+   "higher": {
+    "lexile": [
+     230,
+     350
+    ],
+    "words": [
+     49,
+     94
+    ]
+   },
+   "lower": {
+    "lexile": [
+     100,
+     220
+    ],
+    "words": [
+     34,
+     76
+    ]
+   }
+  },
+  {
+   "grade": 2,
+   "name": "2",
+   "std": "RI.2",
+   "paras": [
+    5,
+    5
+   ],
+   "higher": {
+    "lexile": [
+     520,
+     620
+    ],
+    "words": [
+     98,
+     188
+    ]
+   },
+   "lower": {
+    "lexile": [
+     330,
+     430
+    ],
+    "words": [
+     69,
+     154
+    ]
+   }
+  },
+  {
+   "grade": 3,
+   "name": "3",
+   "std": "RI.3",
+   "paras": [
+    5,
+    6
+   ],
+   "higher": {
+    "lexile": [
+     740,
+     820
+    ],
+    "words": [
+     133,
+     255
+    ]
+   },
+   "lower": {
+    "lexile": [
+     500,
+     580
+    ],
+    "words": [
+     93,
+     208
+    ]
+   }
+  },
+  {
+   "grade": 4,
+   "name": "4",
+   "std": "RI.4",
+   "paras": [
+    6,
+    6
+   ],
+   "higher": {
+    "lexile": [
+     850,
+     930
+    ],
+    "words": [
+     144,
+     275
+    ]
+   },
+   "lower": {
+    "lexile": [
+     610,
+     700
+    ],
+    "words": [
+     101,
+     225
+    ]
+   }
+  },
+  {
+   "grade": 5,
+   "name": "5",
+   "std": "RI.5",
+   "paras": [
+    6,
+    6
+   ],
+   "higher": {
+    "lexile": [
+     930,
+     1010
+    ],
+    "words": [
+     168,
+     322
+    ]
+   },
+   "lower": {
+    "lexile": [
+     690,
+     790
+    ],
+    "words": [
+     118,
+     263
+    ]
+   }
+  },
+  {
+   "grade": 6,
+   "name": "6",
+   "std": "RI.6",
+   "paras": [
+    6,
+    7
+   ],
+   "higher": {
+    "lexile": [
+     990,
+     1080
+    ],
+    "words": [
+     196,
+     375
+    ]
+   },
+   "lower": {
+    "lexile": [
+     770,
+     870
+    ],
+    "words": [
+     137,
+     307
+    ]
+   }
+  },
+  {
+   "grade": 7,
+   "name": "7",
+   "std": "RI.7",
+   "paras": [
+    7,
+    7
+   ],
+   "higher": {
+    "lexile": [
+     1040,
+     1130
+    ],
+    "words": [
+     224,
+     429
+    ]
+   },
+   "lower": {
+    "lexile": [
+     820,
+     920
+    ],
+    "words": [
+     156,
+     350
+    ]
+   }
+  },
+  {
+   "grade": 8,
+   "name": "8",
+   "std": "RI.8",
+   "paras": [
+    7,
+    7
+   ],
+   "higher": {
+    "lexile": [
+     1090,
+     1190
+    ],
+    "words": [
+     252,
+     482
+    ]
+   },
+   "lower": {
+    "lexile": [
+     870,
+     970
+    ],
+    "words": [
+     176,
+     394
+    ]
+   }
+  },
+  {
+   "grade": 9,
+   "name": "9",
+   "std": "RI.9-10",
+   "paras": [
+    7,
+    8
+   ],
+   "higher": {
+    "lexile": [
+     1140,
+     1260
+    ],
+    "words": [
+     280,
+     536
+    ]
+   },
+   "lower": {
+    "lexile": [
+     920,
+     1020
+    ],
+    "words": [
+     196,
+     438
+    ]
+   }
+  },
+  {
+   "grade": 10,
+   "name": "10",
+   "std": "RI.9-10",
+   "paras": [
+    8,
+    8
+   ],
+   "higher": {
+    "lexile": [
+     1190,
+     1310
+    ],
+    "words": [
+     308,
+     590
+    ]
+   },
+   "lower": {
+    "lexile": [
+     970,
+     1070
+    ],
+    "words": [
+     216,
+     482
+    ]
+   }
+  },
+  {
+   "grade": 11,
+   "name": "11",
+   "std": "RI.11-12",
+   "paras": [
+    8,
+    8
+   ],
+   "higher": {
+    "lexile": [
+     1240,
+     1360
+    ],
+    "words": [
+     336,
+     643
+    ]
+   },
+   "lower": {
+    "lexile": [
+     1020,
+     1120
+    ],
+    "words": [
+     235,
+     526
+    ]
+   }
+  },
+  {
+   "grade": 12,
+   "name": "12",
+   "std": "RI.11-12",
+   "paras": [
+    8,
+    9
+   ],
+   "higher": {
+    "lexile": [
+     1280,
+     1400
+    ],
+    "words": [
+     364,
+     697
+    ]
+   },
+   "lower": {
+    "lexile": [
+     1050,
+     1160
+    ],
+    "words": [
+     254,
+     568
+    ]
+   }
+  }
+ ],
+ "accepted": {
+  "_note": "Things the two original packs do that the gate would otherwise stop. They are recorded rather than waved through, because the rule should keep biting for everything written from here on. Each was checked by hand first.",
+  "shortLowerParagraphs": {
+   "titles": [
+    "The Currency of Salt",
+    "How Antibiotics Stop Working",
+    "The Grid That Powers Your House"
+   ],
+   "why": "The lower version drops paragraph F. Checked: none of the five questions on any of the three refers to F, so no child is asked about a paragraph they were not given."
+  },
+  "sharedTitles": {
+   "titles": [
+    "The Town That Moved",
+    "How a Lock Lifts a Ship"
+   ],
+   "why": "Two different articles under each title, one per standard, not a duplicate. The picker shows them twice with nothing to tell them apart, which is worth fixing in the packs rather than here."
+  },
+  "lowerSentencesLonger": {
+   "titles": [
+    "Two Texts: Living on a Submarine"
+   ],
+   "why": "The lower version averages 11.6 words a sentence against the higher version's 10.5. It is shorter overall and its vocabulary is easier, so it is still the easier read, but on sentence length alone it is not."
+  }
+ }
+}
