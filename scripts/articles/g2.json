@@ -1,0 +1,4752 @@
+[
+ {
+  "id": "g2-1",
+  "grade": 2,
+  "n": 1,
+  "title": "The Bird That Builds with Mud",
+  "standard": "RI.2.1",
+  "standard_text": "Standard: Ask and answer such questions as who, what, where, when, why, and how to demonstrate understanding of key details in a text.\n Spiral: RI.2.2 main topic · RI.2.3 connections · RI.2.4 word meaning · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 580,
+   "words": 133,
+   "labelled_words": 133,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A barn swallow builds its nest out of mud. It does not carry the mud in its feet. It carries it in its beak, one small ball at a time."
+    },
+    {
+     "label": "B",
+     "text": "The bird lands at the edge of a puddle. It picks up mud and grass together. The grass holds the mud, the way sticks hold a wall together."
+    },
+    {
+     "label": "C",
+     "text": "Then it flies to a barn or a bridge. It presses the ball onto the wall and waits. The mud dries hard in the sun."
+    },
+    {
+     "label": "D",
+     "text": "A nest takes about a thousand trips. Two birds work together for a week or more. The nest ends up shaped like a cup."
+    },
+    {
+     "label": "E",
+     "text": "The same pair may come back the next year. They fix the old nest instead of building a new one. That saves them a thousand trips."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 390,
+   "words": 96,
+   "labelled_words": 96,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A barn swallow builds its nest out of mud. It carries the mud in its beak. It takes one small ball at a time."
+    },
+    {
+     "label": "B",
+     "text": "The bird lands by a puddle. It picks up mud and grass. The grass holds the mud together."
+    },
+    {
+     "label": "C",
+     "text": "Then it flies to a barn. It presses the ball onto the wall. The mud dries hard."
+    },
+    {
+     "label": "D",
+     "text": "A nest takes about a thousand trips. Two birds work for a week. The nest looks like a cup."
+    },
+    {
+     "label": "E",
+     "text": "The same pair may come back next year. They fix the old nest. That saves a thousand trips."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "How does a barn swallow carry mud?",
+    "a": "It carries the mud in its beak, one small ball at a time."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. the puddle) and paragraph D (i.e. a thousand trips).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how a barn swallow builds a nest.",
+    "a": "It picks up mud and grass at a puddle, carries one ball at a time in its beak, and presses each ball onto a wall until the mud dries hard. A nest takes about a thousand trips."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "beak: the hard mouth of a bird.\npuddle: a small pool of water on the ground.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the grass and the mud.",
+    "a": "The grass holds the mud together, the way sticks hold a wall together."
+   }
+  ],
+  "note": "A thousand trips is the number to put on the board. Ask the class to guess first, then read paragraph D."
+ },
+ {
+  "id": "g2-2",
+  "grade": 2,
+  "n": 2,
+  "title": "The First Traffic Light",
+  "standard": "RI.2.1",
+  "standard_text": "Standard: Ask and answer such questions as who, what, where, when, why, and how to demonstrate understanding of key details in a text.\n Spiral: RI.2.2 main topic · RI.2.3 connections · RI.2.4 word meaning · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 560,
+   "words": 121,
+   "labelled_words": 121,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The first traffic light in America was turned on in 1914. It stood on a corner in Cleveland, Ohio. It had only two colors, red and green."
+    },
+    {
+     "label": "B",
+     "text": "There was no yellow light yet. A loud buzzer sounded before the color changed. Drivers heard the buzz and knew to slow down."
+    },
+    {
+     "label": "C",
+     "text": "A police officer sat in a small booth nearby. He pushed a switch by hand to change the light. The light could not change on its own."
+    },
+    {
+     "label": "D",
+     "text": "Cars were new then, and so were the rules. Before the light, a police officer stood in the street and waved his arms all day."
+    },
+    {
+     "label": "E",
+     "text": "Yellow was added a few years later. Today most lights change by themselves, and nobody sits in a booth."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 370,
+   "words": 92,
+   "labelled_words": 92,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The first traffic light in America came on in 1914. It stood in Cleveland, Ohio. It had two colors. Red and green."
+    },
+    {
+     "label": "B",
+     "text": "There was no yellow light yet. A loud buzzer sounded first. Drivers heard it and slowed down."
+    },
+    {
+     "label": "C",
+     "text": "A police officer sat in a small booth. He pushed a switch by hand. The light could not change on its own."
+    },
+    {
+     "label": "D",
+     "text": "Cars were new then. So were the rules. Before the light, an officer stood in the street and waved."
+    },
+    {
+     "label": "E",
+     "text": "Yellow came a few years later. Now most lights change by themselves."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Where was the first traffic light, and when?",
+    "a": "It was turned on in 1914 on a corner in Cleveland, Ohio."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. the buzzer) and paragraph C (i.e. the officer in the booth).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what the first traffic light was like.",
+    "a": "It had only red and green, a buzzer sounded before the color changed, and a police officer in a booth pushed a switch by hand to change it."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "buzzer: a thing that makes a loud sound to warn people.\nbooth: a very small room for one person.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between having no yellow light and the buzzer.",
+    "a": "There was no yellow light yet, so a loud buzzer sounded before the color changed and drivers knew to slow down."
+   }
+  ],
+  "note": "Who, what, where and when are all in paragraph A. Let students find each one and say which question it answers."
+ },
+ {
+  "id": "g2-3",
+  "grade": 2,
+  "n": 3,
+  "title": "How a Seed Drinks",
+  "standard": "RI.2.1",
+  "standard_text": "Standard: Ask and answer such questions as who, what, where, when, why, and how to demonstrate understanding of key details in a text.\n Spiral: RI.2.2 main topic · RI.2.3 connections · RI.2.4 word meaning · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 540,
+   "words": 111,
+   "labelled_words": 111,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A seed looks dry and hard. Inside it is a tiny plant, waiting. The plant cannot grow until the seed gets water."
+    },
+    {
+     "label": "B",
+     "text": "Water soaks in through a small hole in the seed coat. The hole is smaller than the point of a pencil."
+    },
+    {
+     "label": "C",
+     "text": "The seed swells as it drinks. Sometimes the seed coat splits open. That is the first sign that a seed is alive."
+    },
+    {
+     "label": "D",
+     "text": "The water wakes up the tiny plant. A root pushes down first, before any leaf comes up. The root looks for more water."
+    },
+    {
+     "label": "E",
+     "text": "A seed can wait a long time for its drink. Some seeds wait one year. A few kinds have waited hundreds of years."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 350,
+   "words": 84,
+   "labelled_words": 84,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A seed looks dry and hard. Inside is a tiny plant. It waits for water."
+    },
+    {
+     "label": "B",
+     "text": "Water soaks in through a small hole. The hole is in the seed coat. It is very small."
+    },
+    {
+     "label": "C",
+     "text": "The seed swells as it drinks. The seed coat may split open. That means the seed is alive."
+    },
+    {
+     "label": "D",
+     "text": "The water wakes the tiny plant. A root pushes down first. No leaf comes up yet."
+    },
+    {
+     "label": "E",
+     "text": "A seed can wait a long time. Some seeds wait a year. A few wait much longer."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does a seed need before it can grow?",
+    "a": "It needs water, because the tiny plant inside cannot grow until the seed gets a drink."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. the small hole) and paragraph D (i.e. the root).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how a seed starts to grow.",
+    "a": "Water soaks in through a small hole in the seed coat. The seed swells and the coat may split. Then a root pushes down before any leaf comes up."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "seed coat: the hard cover around the outside of a seed.\nswell: to get bigger.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the water and the root.",
+    "a": "The water wakes up the tiny plant, and a root pushes down first to look for more water."
+   }
+  ],
+  "note": "Soak beans overnight and bring them in split. Paragraph C stops being a fact and becomes something on the desk."
+ },
+ {
+  "id": "g2-4",
+  "grade": 2,
+  "n": 4,
+  "title": "The Lighthouse Keeper's Lamp",
+  "standard": "RI.2.1",
+  "standard_text": "Standard: Ask and answer such questions as who, what, where, when, why, and how to demonstrate understanding of key details in a text.\n Spiral: RI.2.2 main topic · RI.2.3 connections · RI.2.4 word meaning · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 570,
+   "words": 119,
+   "labelled_words": 119,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Before electric lights, a lighthouse burned oil. A keeper lived at the lighthouse and took care of the lamp every single night."
+    },
+    {
+     "label": "B",
+     "text": "The keeper climbed the stairs at sunset. He filled the lamp with oil and lit the wick. Then he waited and watched."
+    },
+    {
+     "label": "C",
+     "text": "The glass had to stay clean. Smoke from the flame left a gray film. The keeper wiped the glass many times each night."
+    },
+    {
+     "label": "D",
+     "text": "Around the lamp sat rings of thick glass. The rings bent the light into one strong beam. Ships could see that beam far out at sea."
+    },
+    {
+     "label": "E",
+     "text": "A keeper slept in the day. If the lamp went out, a ship might not see the rocks. So someone stayed awake all night, every night."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 380,
+   "words": 93,
+   "labelled_words": 93,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Long ago a lighthouse burned oil. A keeper lived there. He took care of the lamp every night."
+    },
+    {
+     "label": "B",
+     "text": "The keeper climbed the stairs at sunset. He filled the lamp with oil. He lit the wick."
+    },
+    {
+     "label": "C",
+     "text": "The glass had to stay clean. Smoke left a gray film. The keeper wiped it many times."
+    },
+    {
+     "label": "D",
+     "text": "Rings of thick glass sat around the lamp. They bent the light into one beam. Ships saw it far away."
+    },
+    {
+     "label": "E",
+     "text": "A keeper slept in the day. If the lamp went out, a ship might hit rocks. Someone stayed awake all night."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why did the keeper wipe the glass?",
+    "a": "Smoke from the flame left a gray film on the glass, so he wiped it many times each night."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. the rings of glass) and paragraph E (i.e. staying awake).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what a lighthouse keeper did each night.",
+    "a": "He climbed the stairs at sunset, filled the lamp with oil and lit the wick. He wiped smoke off the glass many times and stayed awake all night."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "wick: the string in a lamp that holds the flame.\nbeam: a line of light that shines out in one direction.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the rings of glass and the ships.",
+    "a": "The rings bent the light into one strong beam, so ships could see that beam far out at sea."
+   }
+  ],
+  "note": "Why questions are the hardest of the six. Paragraphs C and E both answer one, and both answers are a whole sentence away from the question."
+ },
+ {
+  "id": "g2-5",
+  "grade": 2,
+  "n": 5,
+  "title": "Why a Cat Has Whiskers",
+  "standard": "RI.2.1",
+  "standard_text": "Standard: Ask and answer such questions as who, what, where, when, why, and how to demonstrate understanding of key details in a text.\n Spiral: RI.2.2 main topic · RI.2.3 connections · RI.2.4 word meaning · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 550,
+   "words": 104,
+   "labelled_words": 104,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A cat's whiskers are not just hair. Each one grows from a deep spot in the skin. That spot is full of nerves."
+    },
+    {
+     "label": "B",
+     "text": "Whiskers feel things the cat does not touch. Moving air bends a whisker a little. The cat knows something is near."
+    },
+    {
+     "label": "C",
+     "text": "Whiskers also measure. A cat's whiskers are about as wide as its body. If the whiskers fit through a gap, the cat fits too."
+    },
+    {
+     "label": "D",
+     "text": "A cat uses whiskers most in the dark. Eyes need light. Whiskers work with no light at all."
+    },
+    {
+     "label": "E",
+     "text": "Whiskers fall out and grow back. That is normal. But a cat with cut whiskers bumps into things."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 360,
+   "words": 89,
+   "labelled_words": 89,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A cat's whiskers are not just hair. Each one grows deep in the skin. That spot is full of nerves."
+    },
+    {
+     "label": "B",
+     "text": "Whiskers feel things the cat does not touch. Moving air bends a whisker. The cat knows something is near."
+    },
+    {
+     "label": "C",
+     "text": "Whiskers also measure. They are as wide as the cat's body. If they fit through a gap, the cat fits."
+    },
+    {
+     "label": "D",
+     "text": "A cat uses whiskers in the dark. Eyes need light. Whiskers do not."
+    },
+    {
+     "label": "E",
+     "text": "Whiskers fall out and grow back. That is normal. A cat with cut whiskers bumps into things."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "How do whiskers help a cat in the dark?",
+    "a": "Eyes need light, but whiskers work with no light at all, so a cat uses whiskers most in the dark."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. measuring a gap) and paragraph D (i.e. the dark).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what a cat's whiskers do.",
+    "a": "Whiskers feel moving air so a cat knows something is near, and they are about as wide as the cat's body so they measure whether a gap is big enough."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "nerve: a part of the body that carries feeling to the brain.\ngap: a narrow open space between two things.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the width of a cat's whiskers and the size of a gap.",
+    "a": "A cat's whiskers are about as wide as its body, so if the whiskers fit through a gap, the cat fits too."
+   }
+  ],
+  "note": "Paragraph E answers a question children ask before they are told not to. Say it plainly: whiskers are never cut."
+ },
+ {
+  "id": "g2-6",
+  "grade": 2,
+  "n": 6,
+  "title": "The Mail Comes to Town",
+  "standard": "RI.2.2",
+  "standard_text": "Standard: Identify the main topic of a multiparagraph text as well as the focus of specific paragraphs within the text.\n Spiral: RI.2.1 key details · RI.2.3 connections · RI.2.6 author's purpose · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 560,
+   "words": 118,
+   "labelled_words": 118,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A letter travels a long way before it reaches a door. It makes many stops. Each stop has a job."
+    },
+    {
+     "label": "B",
+     "text": "First it goes in a blue box on a corner. A truck comes once a day and empties the box into a big bag."
+    },
+    {
+     "label": "C",
+     "text": "Next it goes to a sorting center. A machine reads the address and sends the letter down the right chute. The machine reads many letters each second."
+    },
+    {
+     "label": "D",
+     "text": "Then it rides in a truck or a plane. A letter going across the country flies at night while the town sleeps."
+    },
+    {
+     "label": "E",
+     "text": "Last a carrier walks the street with a bag. The carrier knows which houses get mail and which do not. Then the letter is home."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 370,
+   "words": 87,
+   "labelled_words": 87,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A letter travels a long way. It makes many stops. Each stop has a job."
+    },
+    {
+     "label": "B",
+     "text": "First it goes in a blue box. A truck comes once a day. It empties the box into a bag."
+    },
+    {
+     "label": "C",
+     "text": "Next it goes to a sorting center. A machine reads the address. It sends the letter the right way."
+    },
+    {
+     "label": "D",
+     "text": "Then it rides in a truck or a plane. A letter can fly at night."
+    },
+    {
+     "label": "E",
+     "text": "Last a carrier walks the street. The carrier knows which houses get mail. Then the letter is home."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is this whole text about?",
+    "a": "It is about the stops a letter makes on its way from a blue box to a door."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the sorting machine) and paragraph E (i.e. the carrier).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize the trip a letter takes.",
+    "a": "A letter goes into a blue box, a truck empties the box, a machine at a sorting center reads the address, a truck or plane carries it, and a carrier walks it to the door."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "sorting: putting things into groups so each one goes the right way.\ncarrier: the person who brings mail to houses.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the machine and the chute.",
+    "a": "The machine reads the address and sends the letter down the right chute, so the letter goes the right way."
+   }
+  ],
+  "note": "RI.2.2 wants the topic of the whole text and the focus of one paragraph. Ask for both in the same breath: what is this about, and what is paragraph C about?"
+ },
+ {
+  "id": "g2-7",
+  "grade": 2,
+  "n": 7,
+  "title": "What a Spider Spins",
+  "standard": "RI.2.2",
+  "standard_text": "Standard: Identify the main topic of a multiparagraph text as well as the focus of specific paragraphs within the text.\n Spiral: RI.2.1 key details · RI.2.3 connections · RI.2.6 author's purpose · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 550,
+   "words": 117,
+   "labelled_words": 117,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A spider makes silk inside its own body. The silk comes out of small spouts at the back. The spider pulls it out with its legs."
+    },
+    {
+     "label": "B",
+     "text": "Not all silk is the same. One kind is sticky. One kind is dry and strong. A spider makes both in the same web."
+    },
+    {
+     "label": "C",
+     "text": "The dry lines come first. They hold the web up, like the poles of a tent. The spider walks on those lines."
+    },
+    {
+     "label": "D",
+     "text": "Then the spider adds the sticky spiral. Bugs stick to that part. The spider does not, because it steps on the dry lines."
+    },
+    {
+     "label": "E",
+     "text": "Many spiders eat the old web at night. The silk goes back into the body. A new web gets built before morning."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 360,
+   "words": 82,
+   "labelled_words": 82,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A spider makes silk inside its body. The silk comes out at the back. The spider pulls it with its legs."
+    },
+    {
+     "label": "B",
+     "text": "Not all silk is the same. One kind is sticky. One kind is dry and strong."
+    },
+    {
+     "label": "C",
+     "text": "The dry lines come first. They hold the web up. The spider walks on those lines."
+    },
+    {
+     "label": "D",
+     "text": "Then the spider adds sticky lines. Bugs stick to them. The spider does not stick."
+    },
+    {
+     "label": "E",
+     "text": "Many spiders eat the old web at night. Then they build a new one."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is the main topic of this text?",
+    "a": "It is about the silk a spider makes and how it uses two kinds of silk to build a web."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the dry lines) and paragraph D (i.e. the sticky spiral).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how a spider builds a web.",
+    "a": "A spider makes silk inside its body and pulls it out with its legs. It lays dry lines first to hold the web up, then adds a sticky spiral that bugs stick to."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "silk: the thin strong thread a spider makes.\nspiral: a line that curves around and around.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the dry lines and the spider not sticking.",
+    "a": "The spider steps on the dry lines, so it does not stick to the sticky spiral that catches bugs."
+   }
+  ],
+  "note": "Most students arrive thinking spiders have oily feet. Paragraph D gives the real answer and it is simpler than the myth."
+ },
+ {
+  "id": "g2-8",
+  "grade": 2,
+  "n": 8,
+  "title": "Bread from a Field",
+  "standard": "RI.2.2",
+  "standard_text": "Standard: Identify the main topic of a multiparagraph text as well as the focus of specific paragraphs within the text.\n Spiral: RI.2.1 key details · RI.2.3 connections · RI.2.6 author's purpose · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 570,
+   "words": 105,
+   "labelled_words": 105,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Bread starts in a field, not a store. A farmer plants wheat in the fall. It grows all through the spring."
+    },
+    {
+     "label": "B",
+     "text": "In late summer the wheat turns gold. A big machine cuts it and shakes the seeds loose. Those seeds are called grain."
+    },
+    {
+     "label": "C",
+     "text": "The grain goes to a mill. Heavy wheels crush it into a soft powder. The powder is flour."
+    },
+    {
+     "label": "D",
+     "text": "A baker mixes flour with water, salt, and yeast. The yeast makes tiny bubbles. The dough puffs up and gets soft."
+    },
+    {
+     "label": "E",
+     "text": "Heat from the oven sets the bread. The bubbles stay as holes. That is why a slice of bread has holes in it."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 380,
+   "words": 81,
+   "labelled_words": 81,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Bread starts in a field. A farmer plants wheat in the fall. It grows in the spring."
+    },
+    {
+     "label": "B",
+     "text": "In late summer the wheat turns gold. A machine cuts it. It shakes the seeds loose."
+    },
+    {
+     "label": "C",
+     "text": "The seeds go to a mill. Heavy wheels crush them. The powder is called flour."
+    },
+    {
+     "label": "D",
+     "text": "A baker mixes flour, water, salt, and yeast. The yeast makes tiny bubbles. The dough puffs up."
+    },
+    {
+     "label": "E",
+     "text": "The oven sets the bread. The bubbles stay as holes. That is why bread has holes."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is this text mostly about?",
+    "a": "It is about how bread gets made, from wheat in a field to a slice with holes in it."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the mill) and paragraph D (i.e. the yeast).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how bread is made.",
+    "a": "A farmer grows wheat and a machine shakes the grain loose. A mill crushes the grain into flour. A baker mixes flour with water, salt and yeast, and the oven sets the dough."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "mill: a place where grain is crushed into flour.\nyeast: a tiny living thing that makes dough puff up.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the yeast and the holes in a slice of bread.",
+    "a": "The yeast makes tiny bubbles in the dough, and heat from the oven sets the bread so the bubbles stay as holes."
+   }
+  ],
+  "note": "Hold up a slice while reading paragraph E. The holes stop being a detail and become the evidence."
+ },
+ {
+  "id": "g2-9",
+  "grade": 2,
+  "n": 9,
+  "title": "The Moon Changes Shape",
+  "standard": "RI.2.2",
+  "standard_text": "Standard: Identify the main topic of a multiparagraph text as well as the focus of specific paragraphs within the text.\n Spiral: RI.2.1 key details · RI.2.3 connections · RI.2.6 author's purpose · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 560,
+   "words": 110,
+   "labelled_words": 110,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The moon looks different every night. Some nights it is a thin curve. Some nights it is a full circle."
+    },
+    {
+     "label": "B",
+     "text": "The moon does not really change. It is always a ball of rock. Only the lit part changes."
+    },
+    {
+     "label": "C",
+     "text": "The sun lights up one half of the moon. We see part of that lit half. How much we see depends on where the moon is."
+    },
+    {
+     "label": "D",
+     "text": "The moon takes about a month to go around the Earth. In that month we see every shape, from thin curve to full circle and back."
+    },
+    {
+     "label": "E",
+     "text": "You can watch it yourself. Draw the moon every night for a month. Your drawings will show the whole pattern."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 370,
+   "words": 87,
+   "labelled_words": 87,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The moon looks different each night. Some nights it is a thin curve. Some nights it is round."
+    },
+    {
+     "label": "B",
+     "text": "The moon does not change. It is a ball of rock. Only the lit part changes."
+    },
+    {
+     "label": "C",
+     "text": "The sun lights one half of the moon. We see part of that half. It depends on where the moon is."
+    },
+    {
+     "label": "D",
+     "text": "The moon goes around the Earth in about a month. In that month we see every shape."
+    },
+    {
+     "label": "E",
+     "text": "You can watch it. Draw the moon each night. Your drawings will show the pattern."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Does the moon really change shape?",
+    "a": "No. The moon is always a ball of rock, and only the lit part that we see changes."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the lit half) and paragraph D (i.e. the month).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize why the moon looks different each night.",
+    "a": "The sun lights one half of the moon, and we see part of that lit half. How much we see depends on where the moon is as it goes around the Earth in about a month."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "curve: a line that bends instead of going straight.\npattern: something that happens again and again in the same order.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between where the moon is and the shape we see.",
+    "a": "How much of the lit half we see depends on where the moon is, so as it goes around the Earth in a month we see every shape."
+   }
+  ],
+  "note": "Paragraph E is an assignment, not a sentence. A month of drawings on the wall teaches this better than any diagram."
+ },
+ {
+  "id": "g2-10",
+  "grade": 2,
+  "n": 10,
+  "title": "The Playground Gets Built",
+  "standard": "RI.2.2",
+  "standard_text": "Standard: Identify the main topic of a multiparagraph text as well as the focus of specific paragraphs within the text.\n Spiral: RI.2.1 key details · RI.2.3 connections · RI.2.6 author's purpose · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 580,
+   "words": 102,
+   "labelled_words": 102,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A town wanted a new playground. First the children drew what they wanted. They taped the drawings on the library wall."
+    },
+    {
+     "label": "B",
+     "text": "Next the town counted the cost. Swings, a slide, and soft ground cost money. The town held a bake sale and asked for help."
+    },
+    {
+     "label": "C",
+     "text": "Then grown-ups picked a spot. It had to be flat. It had to be far from the road."
+    },
+    {
+     "label": "D",
+     "text": "On a Saturday, forty people came to dig. Some mixed cement. Some held the posts straight while the cement went in."
+    },
+    {
+     "label": "E",
+     "text": "The playground opened in June. The sign by the gate still has one of the drawings on it."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 390,
+   "words": 85,
+   "labelled_words": 85,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A town wanted a new playground. The children drew what they wanted. They put the drawings on the library wall."
+    },
+    {
+     "label": "B",
+     "text": "Next the town counted the cost. Swings and a slide cost money. The town held a bake sale."
+    },
+    {
+     "label": "C",
+     "text": "Then grown-ups picked a spot. It had to be flat. It had to be away from the road."
+    },
+    {
+     "label": "D",
+     "text": "On a Saturday, forty people came to dig. Some mixed cement. Some held the posts straight."
+    },
+    {
+     "label": "E",
+     "text": "The playground opened in June. The sign still has one drawing on it."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is this text mostly about?",
+    "a": "It is about the steps a town took to build a new playground."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. the cost) and paragraph D (i.e. the Saturday dig).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how the playground got built.",
+    "a": "The children drew what they wanted, the town counted the cost and held a bake sale, grown-ups picked a flat spot far from the road, and forty people came on a Saturday to dig and mix cement."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "cost: how much money something takes.\ncement: a gray mix that gets hard and holds things in place.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the children's drawings and the sign by the gate.",
+    "a": "The children drew what they wanted at the start, and the sign by the gate still has one of those drawings on it."
+   }
+  ],
+  "note": "Five paragraphs, five steps. This is the easiest text in the set for naming what one paragraph is about."
+ },
+ {
+  "id": "g2-11",
+  "grade": 2,
+  "n": 11,
+  "title": "What Happens Inside a Cocoon",
+  "standard": "RI.2.3",
+  "standard_text": "Standard: Describe the connection between a series of historical events, scientific ideas or concepts, or steps in technical procedures in a text.\n Spiral: RI.2.1 key details · RI.2.2 main topic · RI.2.5 text features · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 570,
+   "words": 104,
+   "labelled_words": 104,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A caterpillar eats and eats. It grows so fast that its skin gets tight. It sheds that skin and keeps eating."
+    },
+    {
+     "label": "B",
+     "text": "When it is big enough, it stops. A moth caterpillar spins silk around itself. That silk case is a cocoon."
+    },
+    {
+     "label": "C",
+     "text": "Inside, the caterpillar breaks down. Most of its body turns to soft goo. A few small patches of cells are saved."
+    },
+    {
+     "label": "D",
+     "text": "Those saved patches grow into new parts. One patch becomes a wing. One becomes a leg. One becomes an eye."
+    },
+    {
+     "label": "E",
+     "text": "Weeks later a moth pushes out. Its wings are wet and folded. It pumps them full and waits for them to dry."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 380,
+   "words": 80,
+   "labelled_words": 80,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A caterpillar eats and eats. Its skin gets tight. It sheds the skin and eats more."
+    },
+    {
+     "label": "B",
+     "text": "When it is big enough, it stops. It spins silk around itself. That case is a cocoon."
+    },
+    {
+     "label": "C",
+     "text": "Inside, the caterpillar breaks down. Most of it turns to goo. A few small patches are saved."
+    },
+    {
+     "label": "D",
+     "text": "Those patches grow into new parts. One becomes a wing. One becomes a leg."
+    },
+    {
+     "label": "E",
+     "text": "Weeks later a moth pushes out. Its wings are wet. It pumps them full and waits."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What happens to the caterpillar's body inside the cocoon?",
+    "a": "Most of its body breaks down into soft goo, and a few small patches of cells are saved."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. breaking down) and paragraph D (i.e. the new parts).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize the steps from caterpillar to moth.",
+    "a": "A caterpillar eats and sheds its skin, then spins a silk cocoon. Inside, most of its body turns to goo while a few patches of cells are saved, and those patches grow into wings and legs before a moth pushes out."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "cocoon: the silk case a caterpillar spins around itself.\nshed: to drop off something the body no longer needs.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the saved patches and the moth's wings.",
+    "a": "The few small patches of cells that are saved grow into new parts, and one of those patches becomes a wing."
+   }
+  ],
+  "note": "A butterfly makes a chrysalis, not a cocoon. This text says moth on purpose, and the difference is worth one sentence."
+ },
+ {
+  "id": "g2-12",
+  "grade": 2,
+  "n": 12,
+  "title": "From Tree to Pencil",
+  "standard": "RI.2.3",
+  "standard_text": "Standard: Describe the connection between a series of historical events, scientific ideas or concepts, or steps in technical procedures in a text.\n Spiral: RI.2.1 key details · RI.2.2 main topic · RI.2.5 text features · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 580,
+   "words": 103,
+   "labelled_words": 103,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A pencil starts as a tree. Most pencil wood comes from cedar, because cedar is soft and straight."
+    },
+    {
+     "label": "B",
+     "text": "The wood is cut into thin flat boards. Each board is about as long as a pencil and as wide as six of them."
+    },
+    {
+     "label": "C",
+     "text": "A machine cuts narrow grooves into the board. The grooves look like little ditches running side by side."
+    },
+    {
+     "label": "D",
+     "text": "Gray sticks of graphite are laid in the grooves. A second grooved board is glued on top, like a sandwich."
+    },
+    {
+     "label": "E",
+     "text": "Then a cutter slices the sandwich into six pencils. Paint goes on last, and the eraser is crimped on with a metal ring."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 390,
+   "words": 79,
+   "labelled_words": 79,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A pencil starts as a tree. Most pencil wood is cedar. Cedar is soft and straight."
+    },
+    {
+     "label": "B",
+     "text": "The wood is cut into thin flat boards. Each board is as long as a pencil."
+    },
+    {
+     "label": "C",
+     "text": "A machine cuts narrow grooves in the board. They look like little ditches."
+    },
+    {
+     "label": "D",
+     "text": "Gray sticks of graphite go in the grooves. A second board is glued on top."
+    },
+    {
+     "label": "E",
+     "text": "A cutter slices it into six pencils. Paint goes on last. The eraser is added with a metal ring."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why is cedar used for pencils?",
+    "a": "Cedar is used because it is soft and straight."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the grooves) and paragraph E (i.e. slicing and finishing).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize the steps from tree to pencil.",
+    "a": "Cedar is cut into thin flat boards, a machine cuts grooves in them, graphite sticks are laid in the grooves, a second board is glued on top, and a cutter slices the sandwich into six pencils."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "groove: a long narrow cut in a surface.\ngraphite: the soft gray stuff that makes a pencil mark.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the grooves and the graphite.",
+    "a": "The machine cuts narrow grooves into the board so the gray sticks of graphite can be laid inside them."
+   }
+  ],
+  "note": "There is no lead in a pencil and never was. Paragraph D names graphite, and students will ask."
+ },
+ {
+  "id": "g2-13",
+  "grade": 2,
+  "n": 13,
+  "title": "How a Puddle Disappears",
+  "standard": "RI.2.3",
+  "standard_text": "Standard: Describe the connection between a series of historical events, scientific ideas or concepts, or steps in technical procedures in a text.\n Spiral: RI.2.1 key details · RI.2.2 main topic · RI.2.5 text features · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 550,
+   "words": 98,
+   "labelled_words": 98,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The rain stops and a puddle sits on the sidewalk. An hour later the puddle is smaller. By the afternoon it is gone."
+    },
+    {
+     "label": "B",
+     "text": "The water did not sink in. Sidewalk is hard. The water went up into the air instead."
+    },
+    {
+     "label": "C",
+     "text": "Sun warms the top of the puddle. Warm water bits break away and float off. That is called evaporation."
+    },
+    {
+     "label": "D",
+     "text": "The water is still there. It is just too small to see. It is now part of the air around you."
+    },
+    {
+     "label": "E",
+     "text": "Later that air rises and cools. The bits come back together into drops. Those drops make a cloud."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 360,
+   "words": 82,
+   "labelled_words": 82,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The rain stops. A puddle sits on the sidewalk. Later it is smaller. By afternoon it is gone."
+    },
+    {
+     "label": "B",
+     "text": "The water did not sink in. Sidewalk is hard. The water went up into the air."
+    },
+    {
+     "label": "C",
+     "text": "Sun warms the top of the puddle. Tiny bits of water float off. That is evaporation."
+    },
+    {
+     "label": "D",
+     "text": "The water is still there. It is too small to see. It is part of the air."
+    },
+    {
+     "label": "E",
+     "text": "Later that air rises and cools. The bits come back together. They make a cloud."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Where does the water in a puddle go?",
+    "a": "It goes up into the air, because sun warms the top of the puddle and warm water bits break away and float off."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. evaporation) and paragraph E (i.e. making a cloud).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what happens to a puddle.",
+    "a": "Sun warms the top of the puddle and tiny bits of water float off into the air. The water is still there but too small to see, and when that air rises and cools the bits come together into drops and make a cloud."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "evaporation: when water turns into tiny bits that float in the air.\ncool: to get colder.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the puddle and the cloud.",
+    "a": "Bits of water float off the puddle into the air, and later that air rises and cools so the bits come back together into drops that make a cloud."
+   }
+  ],
+  "note": "Paragraph D is the one that matters. The water is not gone, and students who say gone have missed the whole idea."
+ },
+ {
+  "id": "g2-14",
+  "grade": 2,
+  "n": 14,
+  "title": "The Steps of a Fire Drill",
+  "standard": "RI.2.3",
+  "standard_text": "Standard: Describe the connection between a series of historical events, scientific ideas or concepts, or steps in technical procedures in a text.\n Spiral: RI.2.1 key details · RI.2.2 main topic · RI.2.5 text features · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 570,
+   "words": 113,
+   "labelled_words": 113,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A fire drill is practice. Nothing is burning. The school practices so that everyone knows what to do if something ever is."
+    },
+    {
+     "label": "B",
+     "text": "The alarm sounds first. It is loud on purpose. A quiet alarm would not be heard over a busy room."
+    },
+    {
+     "label": "C",
+     "text": "Everyone stops and stands. Pencils stay on the desk. Coats stay on the hook, because grabbing things slows the line down."
+    },
+    {
+     "label": "D",
+     "text": "The teacher takes the class list and leads the line out. The last person out closes the door. A closed door slows a real fire."
+    },
+    {
+     "label": "E",
+     "text": "Outside, the teacher reads every name. That is the step the whole drill is for. The drill is not over until every name is answered."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 380,
+   "words": 83,
+   "labelled_words": 83,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A fire drill is practice. Nothing is burning. The school practices so everyone knows what to do."
+    },
+    {
+     "label": "B",
+     "text": "The alarm sounds first. It is loud on purpose. A quiet alarm would not be heard."
+    },
+    {
+     "label": "C",
+     "text": "Everyone stops and stands. Pencils stay on the desk. Coats stay on the hook."
+    },
+    {
+     "label": "D",
+     "text": "The teacher takes the class list. The line goes out. The last person closes the door."
+    },
+    {
+     "label": "E",
+     "text": "Outside, the teacher reads every name. That is what the drill is for. It ends when every name is answered."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why do coats stay on the hook?",
+    "a": "Grabbing things slows the line down, so pencils stay on the desk and coats stay on the hook."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. the closed door) and paragraph E (i.e. reading the names).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize the steps of a fire drill.",
+    "a": "The alarm sounds, everyone stops and stands without grabbing anything, the teacher takes the class list and leads the line out while the last person closes the door, and outside the teacher reads every name."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "drill: practicing something so you will know what to do.\nalarm: a loud sound that warns people.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the closed door and a real fire.",
+    "a": "The last person out closes the door, and a closed door slows a real fire."
+   }
+  ],
+  "note": "Read this before the next drill, not after. Every step has a reason attached, which is what RI.2.3 is asking students to see."
+ },
+ {
+  "id": "g2-15",
+  "grade": 2,
+  "n": 15,
+  "title": "How a Tooth Falls Out",
+  "standard": "RI.2.3",
+  "standard_text": "Standard: Describe the connection between a series of historical events, scientific ideas or concepts, or steps in technical procedures in a text.\n Spiral: RI.2.1 key details · RI.2.2 main topic · RI.2.5 text features · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 560,
+   "words": 102,
+   "labelled_words": 102,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A baby tooth does not fall out by accident. The body takes it apart on purpose, slowly, from underneath."
+    },
+    {
+     "label": "B",
+     "text": "A grown-up tooth starts growing in the jaw below. It pushes up toward the baby tooth above it."
+    },
+    {
+     "label": "C",
+     "text": "Cells in the gum dissolve the root of the baby tooth. The root gets shorter and shorter. Nobody can see this happening."
+    },
+    {
+     "label": "D",
+     "text": "Soon almost no root is left. The tooth is held by a thin piece of gum. That is when it wiggles."
+    },
+    {
+     "label": "E",
+     "text": "The tooth comes out and the new one keeps rising. A person loses twenty baby teeth this way, one at a time."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 370,
+   "words": 76,
+   "labelled_words": 76,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A baby tooth does not fall out by accident. The body takes it apart from underneath."
+    },
+    {
+     "label": "B",
+     "text": "A grown-up tooth grows in the jaw below. It pushes up."
+    },
+    {
+     "label": "C",
+     "text": "Cells in the gum dissolve the root. The root gets shorter. Nobody can see this."
+    },
+    {
+     "label": "D",
+     "text": "Soon almost no root is left. A thin bit of gum holds the tooth. That is when it wiggles."
+    },
+    {
+     "label": "E",
+     "text": "The tooth comes out. The new one keeps rising. A person loses twenty baby teeth."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why does a baby tooth wiggle?",
+    "a": "Cells in the gum dissolve the root until almost no root is left, and the tooth is held by only a thin piece of gum."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the root) and paragraph D (i.e. the wiggle).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how a baby tooth falls out.",
+    "a": "A grown-up tooth grows in the jaw and pushes up. Cells in the gum dissolve the root of the baby tooth until almost none is left, so the tooth wiggles and comes out while the new one keeps rising."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "root: the part of a tooth that is under the gum.\ndissolve: to break something down until it goes away.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the grown-up tooth and the baby tooth.",
+    "a": "The grown-up tooth grows in the jaw below and pushes up toward the baby tooth, while cells in the gum dissolve the baby tooth's root."
+   }
+  ],
+  "note": "Every second grader has a stake in this one. Paragraph A is the surprise: the falling out is planned, not an accident."
+ },
+ {
+  "id": "g2-16",
+  "grade": 2,
+  "n": 16,
+  "title": "Words on a Street Sign",
+  "standard": "RI.2.4",
+  "standard_text": "Standard: Determine the meaning of words and phrases in a text relevant to a grade 2 topic or subject area.\n Spiral: RI.2.1 key details · RI.2.2 main topic · RI.2.5 text features · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 570,
+   "words": 112,
+   "labelled_words": 112,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Street signs use few words. There is no room for a sentence. Each word has to do a lot of work."
+    },
+    {
+     "label": "B",
+     "text": "Yield means let others go first. It does not mean stop. A driver slows down and waits for a gap."
+    },
+    {
+     "label": "C",
+     "text": "A sign that says One Way means cars go in one direction only. An arrow on the sign shows which way."
+    },
+    {
+     "label": "D",
+     "text": "Detour means the usual road is closed. The sign sends you a different way and brings you back to the same road later."
+    },
+    {
+     "label": "E",
+     "text": "Some signs use no words at all. A picture of a child walking means a school is near. A shape can say as much as a word."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 380,
+   "words": 73,
+   "labelled_words": 73,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Street signs use few words. There is no room for a sentence. Each word works hard."
+    },
+    {
+     "label": "B",
+     "text": "Yield means let others go first. It does not mean stop. A driver slows and waits."
+    },
+    {
+     "label": "C",
+     "text": "One Way means cars go one direction only. An arrow shows which way."
+    },
+    {
+     "label": "D",
+     "text": "Detour means the road is closed. The sign sends you a different way."
+    },
+    {
+     "label": "E",
+     "text": "Some signs use no words. A picture of a child means a school is near."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does yield mean?",
+    "a": "Yield means let others go first; it does not mean stop, so a driver slows down and waits for a gap."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. detour) and paragraph E (i.e. signs with no words).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what these sign words mean.",
+    "a": "Yield means let others go first, One Way means cars go in one direction only, and Detour means the usual road is closed and you are sent a different way."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "yield: to let someone else go first.\ndetour: a different route around a closed road.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the small space on a sign and the words chosen.",
+    "a": "There is no room for a sentence on a street sign, so each word has to do a lot of work and some signs use a picture instead."
+   }
+  ],
+  "note": "Walk the block. Students who have read this will start reading signs they have passed for years."
+ },
+ {
+  "id": "g2-17",
+  "grade": 2,
+  "n": 17,
+  "title": "What Nocturnal Means",
+  "standard": "RI.2.4",
+  "standard_text": "Standard: Determine the meaning of words and phrases in a text relevant to a grade 2 topic or subject area.\n Spiral: RI.2.1 key details · RI.2.2 main topic · RI.2.5 text features · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 580,
+   "words": 102,
+   "labelled_words": 102,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Some animals sleep at night. Some sleep in the day. An animal that is awake at night and asleep in the day is called nocturnal."
+    },
+    {
+     "label": "B",
+     "text": "Owls are nocturnal. So are bats, raccoons, and most mice. They hunt and eat while the sun is down."
+    },
+    {
+     "label": "C",
+     "text": "The opposite word is diurnal. A diurnal animal is awake in the day. People are diurnal."
+    },
+    {
+     "label": "D",
+     "text": "There is a third word. Crepuscular animals are awake at dawn and dusk. Deer and rabbits often are."
+    },
+    {
+     "label": "E",
+     "text": "The words tell you when to look. If you want to see a bat, go out at night. A noon walk will not work."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 390,
+   "words": 76,
+   "labelled_words": 76,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Some animals sleep at night. Some sleep in the day. An animal awake at night is nocturnal."
+    },
+    {
+     "label": "B",
+     "text": "Owls are nocturnal. So are bats and raccoons. They hunt while the sun is down."
+    },
+    {
+     "label": "C",
+     "text": "The opposite word is diurnal. A diurnal animal is awake in the day. People are diurnal."
+    },
+    {
+     "label": "D",
+     "text": "There is a third word. Crepuscular animals are awake at dawn and dusk."
+    },
+    {
+     "label": "E",
+     "text": "The words tell you when to look. To see a bat, go out at night."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does nocturnal mean?",
+    "a": "A nocturnal animal is awake at night and asleep in the day."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. diurnal) and paragraph D (i.e. crepuscular).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize the three words in this text.",
+    "a": "Nocturnal animals are awake at night, diurnal animals are awake in the day, and crepuscular animals are awake at dawn and dusk."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "diurnal: awake in the day and asleep at night.\ndusk: the time just after the sun goes down.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between knowing the word nocturnal and seeing a bat.",
+    "a": "The words tell you when to look, so to see a bat you go out at night, because a noon walk will not work."
+   }
+  ],
+  "note": "Three words, one idea. Sort classroom animal cards into the three groups and the words stick in one lesson."
+ },
+ {
+  "id": "g2-18",
+  "grade": 2,
+  "n": 18,
+  "title": "The Words in a Recipe",
+  "standard": "RI.2.4",
+  "standard_text": "Standard: Determine the meaning of words and phrases in a text relevant to a grade 2 topic or subject area.\n Spiral: RI.2.1 key details · RI.2.2 main topic · RI.2.5 text features · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 560,
+   "words": 102,
+   "labelled_words": 102,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A recipe is a set of orders. Every word is a thing to do. Mixing up two words can ruin the food."
+    },
+    {
+     "label": "B",
+     "text": "Stir means move it around gently. Beat means move it fast and hard. Eggs for a cake are beaten, not stirred."
+    },
+    {
+     "label": "C",
+     "text": "Chop means cut into pieces. Dice means cut into small even cubes. Diced is smaller than chopped."
+    },
+    {
+     "label": "D",
+     "text": "Simmer means keep it just below a boil. A simmer has small bubbles at the edge. A boil has big bubbles all over."
+    },
+    {
+     "label": "E",
+     "text": "Fold means turn the batter over itself slowly. It keeps the air in. Stirring would push the air out."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 370,
+   "words": 71,
+   "labelled_words": 71,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A recipe is a set of orders. Every word is a thing to do. The right word matters."
+    },
+    {
+     "label": "B",
+     "text": "Stir means move it gently. Beat means move it fast and hard."
+    },
+    {
+     "label": "C",
+     "text": "Chop means cut into pieces. Dice means cut into small cubes. Diced is smaller."
+    },
+    {
+     "label": "D",
+     "text": "Simmer means just below a boil. A simmer has small bubbles. A boil has big ones."
+    },
+    {
+     "label": "E",
+     "text": "Fold means turn it over slowly. It keeps the air in."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is the difference between stir and beat?",
+    "a": "Stir means move it around gently and beat means move it fast and hard, so eggs for a cake are beaten, not stirred."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. chop and dice) and paragraph D (i.e. simmer and boil).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize the recipe words in this text.",
+    "a": "Stir is gentle and beat is fast and hard. Chop makes pieces and dice makes small even cubes. Simmer is just below a boil, and fold turns batter over slowly to keep the air in."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "batter: a soft mix of flour and liquid before it is cooked.\ncube: a small block with flat square sides.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between folding and the air in a batter.",
+    "a": "Folding turns the batter over itself slowly so it keeps the air in, while stirring would push the air out."
+   }
+  ],
+  "note": "Act the verbs out with an empty bowl. Stir, beat and fold look different from across the room."
+ },
+ {
+  "id": "g2-19",
+  "grade": 2,
+  "n": 19,
+  "title": "Words for Baby Animals",
+  "standard": "RI.2.4",
+  "standard_text": "Standard: Determine the meaning of words and phrases in a text relevant to a grade 2 topic or subject area.\n Spiral: RI.2.1 key details · RI.2.2 main topic · RI.2.5 text features · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 550,
+   "words": 113,
+   "labelled_words": 113,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Many baby animals have their own name. The name is not the same as the grown-up name. Knowing both helps you read."
+    },
+    {
+     "label": "B",
+     "text": "A baby cat is a kitten. A baby dog is a puppy. A baby duck is a duckling."
+    },
+    {
+     "label": "C",
+     "text": "Some names are used for more than one animal. A young goat and a young antelope are both called a kid. A young deer is a fawn."
+    },
+    {
+     "label": "D",
+     "text": "Other names are a surprise. A baby swan is a cygnet. A baby owl is an owlet. A baby kangaroo is a joey."
+    },
+    {
+     "label": "E",
+     "text": "A few animals share one word. A baby seal, whale, or elephant is a calf, the same word used for a baby cow."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 360,
+   "words": 87,
+   "labelled_words": 87,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Many baby animals have their own name. It is not the grown-up name. Knowing both helps you read."
+    },
+    {
+     "label": "B",
+     "text": "A baby cat is a kitten. A baby dog is a puppy. A baby duck is a duckling."
+    },
+    {
+     "label": "C",
+     "text": "Some names are used for more than one animal. A young goat is a kid."
+    },
+    {
+     "label": "D",
+     "text": "Other names are a surprise. A baby swan is a cygnet. A baby owl is an owlet."
+    },
+    {
+     "label": "E",
+     "text": "A few animals share one word. A baby seal or whale is a calf. So is a baby cow."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is a baby swan called?",
+    "a": "A baby swan is called a cygnet."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. names used for more than one animal) and paragraph E (i.e. one word shared).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what this text says about baby animal names.",
+    "a": "Many baby animals have their own name, such as kitten, puppy and duckling. Some names are used for more than one animal, like kid, and a baby seal, whale or cow is all called a calf."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "cygnet: a baby swan.\ncalf: a baby cow, seal, whale or elephant.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between a baby whale and a baby cow.",
+    "a": "A baby seal, whale or elephant is a calf, which is the same word used for a baby cow."
+   }
+  ],
+  "note": "Paragraph E is the useful one. One word doing several jobs is the thing that trips readers up later."
+ },
+ {
+  "id": "g2-20",
+  "grade": 2,
+  "n": 20,
+  "title": "Words on a Weather Report",
+  "standard": "RI.2.4",
+  "standard_text": "Standard: Determine the meaning of words and phrases in a text relevant to a grade 2 topic or subject area.\n Spiral: RI.2.1 key details · RI.2.2 main topic · RI.2.5 text features · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 570,
+   "words": 102,
+   "labelled_words": 102,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A weather report uses short words for big ideas. Each one means something exact. Guessing at a word can leave you cold or wet."
+    },
+    {
+     "label": "B",
+     "text": "Overcast means the whole sky is covered by cloud. Partly cloudy means some cloud and some sun."
+    },
+    {
+     "label": "C",
+     "text": "A watch is not a warning. A watch means the weather could happen. A warning means it is happening now."
+    },
+    {
+     "label": "D",
+     "text": "Wind chill is not the real temperature. It is how cold the air feels when wind is blowing on your skin."
+    },
+    {
+     "label": "E",
+     "text": "Scattered showers means rain in some places, not everywhere. Your street may stay dry while the next town gets wet."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 380,
+   "words": 76,
+   "labelled_words": 76,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A weather report uses short words. Each one means something exact. Guessing can leave you wet."
+    },
+    {
+     "label": "B",
+     "text": "Overcast means the sky is covered by cloud. Partly cloudy means some cloud and some sun."
+    },
+    {
+     "label": "C",
+     "text": "A watch is not a warning. A watch means it could happen. A warning means it is happening."
+    },
+    {
+     "label": "D",
+     "text": "Wind chill is not the real temperature. It is how cold the air feels."
+    },
+    {
+     "label": "E",
+     "text": "Scattered showers means rain in some places. Your street may stay dry."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is the difference between a watch and a warning?",
+    "a": "A watch means the weather could happen, and a warning means it is happening now."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. wind chill) and paragraph E (i.e. scattered showers).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize the weather words in this text.",
+    "a": "Overcast means the sky is covered by cloud and partly cloudy means some cloud and some sun. A watch means it could happen and a warning means it is happening. Wind chill is how cold the air feels, and scattered showers means rain in some places."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "overcast: covered all over by cloud.\nscattered: spread out here and there, not everywhere.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between wind and how cold it feels.",
+    "a": "Wind chill is not the real temperature; it is how cold the air feels when wind is blowing on your skin."
+   }
+  ],
+  "note": "Watch and warning is the pair adults get wrong too. Paragraph C is worth memorizing word for word."
+ },
+ {
+  "id": "g2-21",
+  "grade": 2,
+  "n": 21,
+  "title": "How to Use an Index",
+  "standard": "RI.2.5",
+  "standard_text": "Standard: Know and use various text features, such as captions, bold print, subheadings, glossaries, indexes, electronic menus and icons, to locate key facts or information in a text efficiently.\n Spiral: RI.2.1 key details · RI.2.4 word meaning · RI.2.7 images · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 570,
+   "words": 110,
+   "labelled_words": 110,
+   "paras": [
+    {
+     "label": "A",
+     "text": "An index sits at the very back of a book. It is a list of topics in ABC order. Next to each topic is a page number."
+    },
+    {
+     "label": "B",
+     "text": "An index is not a table of contents. The contents page lists chapters in order. The index lists topics in ABC order."
+    },
+    {
+     "label": "C",
+     "text": "Say you want to know about bats. You do not read the whole book. You look under B and find the page."
+    },
+    {
+     "label": "D",
+     "text": "Some topics have more than one number. That means bats are talked about on more than one page."
+    },
+    {
+     "label": "E",
+     "text": "An index saves time. A reader with an index finds a fact in seconds. A reader without one turns every page."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 380,
+   "words": 78,
+   "labelled_words": 78,
+   "paras": [
+    {
+     "label": "A",
+     "text": "An index sits at the back of a book. It lists topics in ABC order. Each topic has a page number."
+    },
+    {
+     "label": "B",
+     "text": "An index is not a table of contents. The contents page lists chapters. The index lists topics."
+    },
+    {
+     "label": "C",
+     "text": "Say you want to know about bats. Do not read the whole book. Look under B."
+    },
+    {
+     "label": "D",
+     "text": "Some topics have more than one number. Bats are on more than one page."
+    },
+    {
+     "label": "E",
+     "text": "An index saves time. You find a fact in seconds."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Where do you find an index?",
+    "a": "An index sits at the very back of a book."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. index and contents) and paragraph D (i.e. more than one number).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what an index does.",
+    "a": "An index at the back of a book lists topics in ABC order with a page number next to each, so a reader can find a fact in seconds instead of turning every page."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "index: a list of topics with page numbers at the back of a book.\ntopic: the thing a part of a book is about.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the ABC order and finding bats quickly.",
+    "a": "The index lists topics in ABC order, so you look under B and find the page without reading the whole book."
+   }
+  ],
+  "note": "Hand out a real nonfiction book and call out three topics. The race is the lesson."
+ },
+ {
+  "id": "g2-22",
+  "grade": 2,
+  "n": 22,
+  "title": "Why Some Words Are Bold",
+  "standard": "RI.2.5",
+  "standard_text": "Standard: Know and use various text features, such as captions, bold print, subheadings, glossaries, indexes, electronic menus and icons, to locate key facts or information in a text efficiently.\n Spiral: RI.2.1 key details · RI.2.4 word meaning · RI.2.7 images · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 580,
+   "words": 103,
+   "labelled_words": 103,
+   "paras": [
+    {
+     "label": "A",
+     "text": "In some books a few words look darker and thicker than all the rest. Those words are printed in bold."
+    },
+    {
+     "label": "B",
+     "text": "Bold is a signal, not a decoration. It tells a reader that this word matters and is probably new."
+    },
+    {
+     "label": "C",
+     "text": "A bold word is often explained right there on the page. The sentence just after it usually tells you what the word means."
+    },
+    {
+     "label": "D",
+     "text": "Bold words often show up again in the glossary. The author bolded them so you could find them twice."
+    },
+    {
+     "label": "E",
+     "text": "A reader can use bold on purpose. Look at the bold words first. They give you the big ideas before you start."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 390,
+   "words": 75,
+   "labelled_words": 75,
+   "paras": [
+    {
+     "label": "A",
+     "text": "In some books a few words look darker. Those words are in bold print."
+    },
+    {
+     "label": "B",
+     "text": "Bold is a signal. It tells you this word matters. It is probably new."
+    },
+    {
+     "label": "C",
+     "text": "A bold word is often explained right there. The next sentence tells you what it means."
+    },
+    {
+     "label": "D",
+     "text": "Bold words often show up in the glossary. You can find them twice."
+    },
+    {
+     "label": "E",
+     "text": "You can use bold on purpose. Look at the bold words first. They give you the big ideas."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does bold print tell a reader?",
+    "a": "It tells a reader that this word matters and is probably new."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the explanation nearby) and paragraph E (i.e. reading bold first).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what bold print is for.",
+    "a": "Bold is a signal that a word matters and is probably new. The sentence after it usually explains it, the word often appears in the glossary too, and a reader can look at the bold words first to get the big ideas."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "bold: printed darker and thicker than the words around it.\nglossary: a list at the back of a book that tells what words mean.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between a bold word and the glossary.",
+    "a": "Bold words often show up again in the glossary, because the author bolded them so you could find them twice."
+   }
+  ],
+  "note": "Paragraph E turns a feature into a strategy. Preview the bold words before reading the next science chapter and see what it does."
+ },
+ {
+  "id": "g2-23",
+  "grade": 2,
+  "n": 23,
+  "title": "The Captions Under the Pictures",
+  "standard": "RI.2.5",
+  "standard_text": "Standard: Know and use various text features, such as captions, bold print, subheadings, glossaries, indexes, electronic menus and icons, to locate key facts or information in a text efficiently.\n Spiral: RI.2.1 key details · RI.2.4 word meaning · RI.2.7 images · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 560,
+   "words": 109,
+   "labelled_words": 109,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A caption is the small line of words under a picture. It is easy to skip. It is also where some of the best facts hide."
+    },
+    {
+     "label": "B",
+     "text": "A caption tells you what the picture shows. Without it, a photo of a crowd is just a crowd."
+    },
+    {
+     "label": "C",
+     "text": "Captions often add a fact the page does not have. A caption may give the year, the place, or a person's name."
+    },
+    {
+     "label": "D",
+     "text": "In a history book the caption may say who took the photo. That tells you who was there and who was not."
+    },
+    {
+     "label": "E",
+     "text": "Read the caption before the picture if you can. Then you know what you are looking at while you look."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 370,
+   "words": 73,
+   "labelled_words": 73,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A caption is the small line under a picture. It is easy to skip. It holds good facts."
+    },
+    {
+     "label": "B",
+     "text": "A caption tells you what the picture shows. Without it, a crowd is just a crowd."
+    },
+    {
+     "label": "C",
+     "text": "Captions often add a new fact. A caption may give the year or the place."
+    },
+    {
+     "label": "D",
+     "text": "In a history book the caption may say who took the photo."
+    },
+    {
+     "label": "E",
+     "text": "Read the caption first. Then you know what you are looking at."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is a caption?",
+    "a": "A caption is the small line of words under a picture that tells you what the picture shows."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the extra fact) and paragraph E (i.e. reading it first).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize why captions matter.",
+    "a": "A caption tells you what a picture shows and often adds a fact the page does not have, such as the year, the place or a person's name."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "caption: the line of words printed under a picture.\nphoto: a picture made with a camera.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between a caption and a photo of a crowd.",
+    "a": "Without a caption, a photo of a crowd is just a crowd, because the caption is what tells you what the picture shows."
+   }
+  ],
+  "note": "Cover the captions in a magazine and ask what the pictures are of. Then uncover them."
+ },
+ {
+  "id": "g2-24",
+  "grade": 2,
+  "n": 24,
+  "title": "A Glossary at the Back",
+  "standard": "RI.2.5",
+  "standard_text": "Standard: Know and use various text features, such as captions, bold print, subheadings, glossaries, indexes, electronic menus and icons, to locate key facts or information in a text efficiently.\n Spiral: RI.2.1 key details · RI.2.4 word meaning · RI.2.7 images · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 570,
+   "words": 111,
+   "labelled_words": 111,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A glossary is a small dictionary inside a book. It only holds the words that book uses. It sits near the back."
+    },
+    {
+     "label": "B",
+     "text": "The words are in ABC order. Each word has a short meaning next to it. The meaning fits that book."
+    },
+    {
+     "label": "C",
+     "text": "That last part matters. The word bed means one thing in a sleep book and another in a river book. A glossary gives the one you need."
+    },
+    {
+     "label": "D",
+     "text": "A glossary is faster than a dictionary. A dictionary holds thousands of words. A glossary holds the few that are hard in this book."
+    },
+    {
+     "label": "E",
+     "text": "If a word is bold on the page, check the glossary. The author put it there for you."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 380,
+   "words": 84,
+   "labelled_words": 84,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A glossary is a small dictionary inside a book. It holds only the words that book uses."
+    },
+    {
+     "label": "B",
+     "text": "The words are in ABC order. Each one has a short meaning next to it."
+    },
+    {
+     "label": "C",
+     "text": "That matters. The word bed means one thing in a sleep book. It means another in a river book."
+    },
+    {
+     "label": "D",
+     "text": "A glossary is faster than a dictionary. A dictionary holds thousands of words. A glossary holds a few."
+    },
+    {
+     "label": "E",
+     "text": "If a word is bold, check the glossary. The author put it there for you."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is a glossary?",
+    "a": "A glossary is a small dictionary inside a book that holds only the words that book uses."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the word bed) and paragraph D (i.e. faster than a dictionary).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what a glossary does.",
+    "a": "A glossary near the back lists the hard words of that book in ABC order with a short meaning for each, and the meaning fits that book rather than every book."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "dictionary: a book that tells what many words mean.\nmeaning: what a word stands for.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between a bold word and the glossary.",
+    "a": "If a word is bold on the page, check the glossary, because the author put it there for you."
+   }
+  ],
+  "note": "Paragraph C is the idea worth keeping: a glossary is not a dictionary, it is this book's dictionary."
+ },
+ {
+  "id": "g2-25",
+  "grade": 2,
+  "n": 25,
+  "title": "Icons on a Screen",
+  "standard": "RI.2.5",
+  "standard_text": "Standard: Know and use various text features, such as captions, bold print, subheadings, glossaries, indexes, electronic menus and icons, to locate key facts or information in a text efficiently.\n Spiral: RI.2.1 key details · RI.2.4 word meaning · RI.2.7 images · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 550,
+   "words": 104,
+   "labelled_words": 104,
+   "paras": [
+    {
+     "label": "A",
+     "text": "An icon is a tiny picture that stands for a job. You tap it and something happens. There are no words on most of them."
+    },
+    {
+     "label": "B",
+     "text": "A magnifying glass means search. A house means go back to the start. A gear means settings."
+    },
+    {
+     "label": "C",
+     "text": "Icons work in every language. A picture of a trash can means delete whether you read English or not."
+    },
+    {
+     "label": "D",
+     "text": "Some icons come from old objects. The save icon is a floppy disk, a thing almost nobody has used in thirty years."
+    },
+    {
+     "label": "E",
+     "text": "If an icon is new to you, hold your finger on it. Many screens will show the word for a second."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 360,
+   "words": 70,
+   "labelled_words": 70,
+   "paras": [
+    {
+     "label": "A",
+     "text": "An icon is a tiny picture that stands for a job. You tap it and something happens."
+    },
+    {
+     "label": "B",
+     "text": "A magnifying glass means search. A house means go back to the start."
+    },
+    {
+     "label": "C",
+     "text": "Icons work in every language. A trash can means delete in any country."
+    },
+    {
+     "label": "D",
+     "text": "Some icons come from old objects. The save icon is a floppy disk."
+    },
+    {
+     "label": "E",
+     "text": "If an icon is new, hold your finger on it. The word may appear."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is an icon?",
+    "a": "An icon is a tiny picture that stands for a job, and you tap it and something happens."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. every language) and paragraph D (i.e. old objects).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what icons do.",
+    "a": "Icons are tiny pictures that stand for jobs, such as a magnifying glass for search or a trash can for delete. They work in every language, and some come from old objects like the floppy disk."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "icon: a tiny picture on a screen that stands for a job.\nsettings: the place where you change how something works.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between icons and language.",
+    "a": "Icons work in every language, because a picture of a trash can means delete whether you read English or not."
+   }
+  ],
+  "note": "Bring in a floppy disk if you can find one. Paragraph D lands better held than described."
+ },
+ {
+  "id": "g2-26",
+  "grade": 2,
+  "n": 26,
+  "title": "A Sign That Asks You to Help",
+  "standard": "RI.2.6",
+  "standard_text": "Standard: Identify the main purpose of a text, including what the author wants to answer, explain, or describe.\n Spiral: RI.2.2 main topic · RI.2.5 text features · RI.2.8 reasons · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 580,
+   "words": 110,
+   "labelled_words": 110,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A sign at the park says: Please carry out what you carry in. The sign is short. It has one job."
+    },
+    {
+     "label": "B",
+     "text": "The sign is not there to explain trash. It is not there to describe the park. It is there to ask you to do something."
+    },
+    {
+     "label": "C",
+     "text": "Under the big words there is a smaller line. It says that a bag left behind can harm the birds that pick at it."
+    },
+    {
+     "label": "D",
+     "text": "That line is the reason. The author gave one reason, not five, because a sign has to be read while walking."
+    },
+    {
+     "label": "E",
+     "text": "Think about why a thing was written. Signs ask. Maps show. Books often explain. The purpose shapes every word."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 390,
+   "words": 79,
+   "labelled_words": 79,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A sign at the park says: carry out what you carry in. The sign is short. It has one job."
+    },
+    {
+     "label": "B",
+     "text": "The sign does not explain trash. It does not describe the park. It asks you to do something."
+    },
+    {
+     "label": "C",
+     "text": "A smaller line sits under the big words. A bag left behind can harm the birds."
+    },
+    {
+     "label": "D",
+     "text": "That line is the reason. The author gave one reason, not five."
+    },
+    {
+     "label": "E",
+     "text": "Think about why a thing was written. Signs ask. Maps show. Books explain."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is the sign's one job?",
+    "a": "It is there to ask you to do something: to carry out what you carry in."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. what the sign is not for) and paragraph D (i.e. one reason).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize the purpose of the sign.",
+    "a": "The sign asks people to carry out what they carry in, and gives one reason underneath: a bag left behind can harm the birds that pick at it."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "purpose: the reason something was made or written.\nharm: to hurt something.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between a sign being read while walking and the number of reasons given.",
+    "a": "A sign has to be read while walking, so the author gave one reason, not five."
+   }
+  ],
+  "note": "Paragraph E gives three purposes in six words. Ask the class to name one thing in the room for each."
+ },
+ {
+  "id": "g2-27",
+  "grade": 2,
+  "n": 27,
+  "title": "How to Wash Your Hands",
+  "standard": "RI.2.6",
+  "standard_text": "Standard: Identify the main purpose of a text, including what the author wants to answer, explain, or describe.\n Spiral: RI.2.2 main topic · RI.2.5 text features · RI.2.8 reasons · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 560,
+   "words": 102,
+   "labelled_words": 102,
+   "paras": [
+    {
+     "label": "A",
+     "text": "This text has one purpose. It is not here to tell a story and not here to describe a place. It is here to explain how to do something."
+    },
+    {
+     "label": "B",
+     "text": "Wet your hands first. Then add soap. Soap is the part that does the work."
+    },
+    {
+     "label": "C",
+     "text": "Rub for twenty seconds. That is about as long as singing the ABC song once. Most people stop too soon."
+    },
+    {
+     "label": "D",
+     "text": "Soap does not kill most germs. It makes them slide off, because soap lets water grab on to grease and dirt."
+    },
+    {
+     "label": "E",
+     "text": "Rinse and dry. Drying matters, because wet hands pick up more germs from what they touch next."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 370,
+   "words": 69,
+   "labelled_words": 69,
+   "paras": [
+    {
+     "label": "A",
+     "text": "This text has one purpose. It is not a story. It explains how to do something."
+    },
+    {
+     "label": "B",
+     "text": "Wet your hands first. Then add soap. Soap does the work."
+    },
+    {
+     "label": "C",
+     "text": "Rub for twenty seconds. That is about one ABC song. Most people stop too soon."
+    },
+    {
+     "label": "D",
+     "text": "Soap does not kill most germs. It makes them slide off. Soap lets water grab dirt."
+    },
+    {
+     "label": "E",
+     "text": "Rinse and dry. Drying matters. Wet hands pick up more germs."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is this text's purpose?",
+    "a": "It is here to explain how to do something, not to tell a story or describe a place."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. twenty seconds) and paragraph D (i.e. how soap works).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize the steps for washing hands.",
+    "a": "Wet your hands, add soap, rub for twenty seconds, then rinse and dry, because wet hands pick up more germs."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "germs: tiny living things that can make you sick.\nrinse: to wash something off with clean water.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between soap and the germs.",
+    "a": "Soap does not kill most germs; it makes them slide off, because soap lets water grab on to grease and dirt."
+   }
+  ],
+  "note": "Paragraph D corrects what most students believe. Soap is not a poison, it is a handle."
+ },
+ {
+  "id": "g2-28",
+  "grade": 2,
+  "n": 28,
+  "title": "A Letter to the Principal",
+  "standard": "RI.2.6",
+  "standard_text": "Standard: Identify the main purpose of a text, including what the author wants to answer, explain, or describe.\n Spiral: RI.2.2 main topic · RI.2.5 text features · RI.2.8 reasons · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 570,
+   "words": 102,
+   "labelled_words": 102,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A second grade class wrote a letter to their principal. They wanted a water fountain put in near the field."
+    },
+    {
+     "label": "B",
+     "text": "The letter did not tell a story and did not describe the school. It asked for one thing and gave two reasons for it."
+    },
+    {
+     "label": "C",
+     "text": "The first reason was distance. The nearest fountain is inside the building, all the way down two halls."
+    },
+    {
+     "label": "D",
+     "text": "The second reason was time. Recess is twenty minutes, and walking in and out uses five of them."
+    },
+    {
+     "label": "E",
+     "text": "The class wrote one more line at the end. They offered to help pick the spot. That offer was a reason too."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 380,
+   "words": 74,
+   "labelled_words": 74,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A second grade class wrote a letter to their principal. They wanted a water fountain near the field."
+    },
+    {
+     "label": "B",
+     "text": "The letter did not tell a story. It asked for one thing. It gave reasons."
+    },
+    {
+     "label": "C",
+     "text": "The first reason was distance. The nearest fountain is inside, down two halls."
+    },
+    {
+     "label": "D",
+     "text": "The second reason was time. Recess is twenty minutes. Walking uses five."
+    },
+    {
+     "label": "E",
+     "text": "The class added one more line at the end. They offered to help pick the spot."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What did the class ask for?",
+    "a": "They asked for a water fountain to be put in near the field."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. distance) and paragraph D (i.e. time).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize the letter and its reasons.",
+    "a": "The class asked the principal for a water fountain near the field. The nearest one is inside down two halls, walking there uses five of their twenty recess minutes, and they offered to help pick the spot."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "principal: the person in charge of a school.\nrecess: the break when children play outside.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the length of recess and the class's second reason.",
+    "a": "Recess is twenty minutes, and walking in and out to the fountain uses five of them."
+   }
+  ],
+  "note": "Write the real version afterwards. The standard is about purpose, and nothing teaches purpose like having one."
+ },
+ {
+  "id": "g2-29",
+  "grade": 2,
+  "n": 29,
+  "title": "What a Field Guide Is For",
+  "standard": "RI.2.6",
+  "standard_text": "Standard: Identify the main purpose of a text, including what the author wants to answer, explain, or describe.\n Spiral: RI.2.2 main topic · RI.2.5 text features · RI.2.8 reasons · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 580,
+   "words": 110,
+   "labelled_words": 110,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A field guide is a book for naming things. It does not tell you a story about a bird. It helps you say which bird it was."
+    },
+    {
+     "label": "B",
+     "text": "The pages are built for speed. Pictures sit on one side. Short notes sit on the other."
+    },
+    {
+     "label": "C",
+     "text": "Each note lists the things that are easy to see. Size. Color. The shape of the beak. Where it lives."
+    },
+    {
+     "label": "D",
+     "text": "A field guide leaves most things out on purpose. It does not say what the bird dreams or how it feels."
+    },
+    {
+     "label": "E",
+     "text": "The purpose decides what goes in. A book made to help you name a bird looks nothing like a book made to tell its story."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 390,
+   "words": 74,
+   "labelled_words": 74,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A field guide is a book for naming things. It does not tell a story. It helps you say which bird it was."
+    },
+    {
+     "label": "B",
+     "text": "The pages are built for speed. Pictures on one side. Short notes on the other."
+    },
+    {
+     "label": "C",
+     "text": "Each note lists things that are easy to see. Size. Color. Beak shape."
+    },
+    {
+     "label": "D",
+     "text": "A field guide leaves most things out on purpose."
+    },
+    {
+     "label": "E",
+     "text": "The purpose decides what goes in. A naming book is not a story book."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is a field guide for?",
+    "a": "A field guide is a book for naming things; it helps you say which bird it was."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. what the notes list) and paragraph D (i.e. what is left out).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what a field guide is and how it is built.",
+    "a": "A field guide helps you name what you see. Pictures sit on one side and short notes on the other, listing size, color, beak shape and where it lives, and everything else is left out on purpose."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "field guide: a book that helps you name plants or animals you see.\nbeak: the hard mouth of a bird.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the purpose of a book and what goes inside it.",
+    "a": "The purpose decides what goes in, so a book made to help you name a bird looks nothing like a book made to tell its story."
+   }
+  ],
+  "note": "Put a field guide and a story about a bird side by side. Paragraph E becomes obvious in ten seconds."
+ },
+ {
+  "id": "g2-30",
+  "grade": 2,
+  "n": 30,
+  "title": "The Museum Map",
+  "standard": "RI.2.6",
+  "standard_text": "Standard: Identify the main purpose of a text, including what the author wants to answer, explain, or describe.\n Spiral: RI.2.2 main topic · RI.2.5 text features · RI.2.8 reasons · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 560,
+   "words": 105,
+   "labelled_words": 105,
+   "paras": [
+    {
+     "label": "A",
+     "text": "At the door of a museum, someone hands you a map. The map is one page. It was made with one purpose."
+    },
+    {
+     "label": "B",
+     "text": "The map does not describe the art. It does not explain who painted it. It shows you where things are."
+    },
+    {
+     "label": "C",
+     "text": "Rooms are drawn as boxes with numbers. A small key tells you what each number holds."
+    },
+    {
+     "label": "D",
+     "text": "Icons mark the things you will need. A fork means food. A letter W means water. An arrow means the way out."
+    },
+    {
+     "label": "E",
+     "text": "The signs inside the rooms do the other job. Those explain the art. The map gets you to the room, and the sign takes over."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 370,
+   "words": 76,
+   "labelled_words": 76,
+   "paras": [
+    {
+     "label": "A",
+     "text": "At the door of a museum, someone hands you a map. It is one page. It has one purpose."
+    },
+    {
+     "label": "B",
+     "text": "The map does not describe the art. It shows you where things are."
+    },
+    {
+     "label": "C",
+     "text": "Rooms are drawn as boxes with numbers. A small key tells what each number holds."
+    },
+    {
+     "label": "D",
+     "text": "Icons mark what you need. A fork means food. An arrow means the way out."
+    },
+    {
+     "label": "E",
+     "text": "The signs inside the rooms explain the art. The map just gets you there."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is the museum map for?",
+    "a": "It shows you where things are; it does not describe the art or explain who painted it."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. the icons) and paragraph E (i.e. what the signs do).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize the purpose of the museum map.",
+    "a": "The map shows where things are. Rooms are boxes with numbers and a key tells what each holds, and icons mark food, water and the way out, while the signs inside the rooms explain the art."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "museum: a place where art or old things are kept for people to see.\nkey: a small list that tells what the marks on a map mean.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the map and the signs inside the rooms.",
+    "a": "The map gets you to the room and the sign takes over, because the signs are what explain the art."
+   }
+  ],
+  "note": "Two texts, two purposes, one building. That pairing is what makes paragraph E worth reading twice."
+ },
+ {
+  "id": "g2-31",
+  "grade": 2,
+  "n": 31,
+  "title": "The Picture That Shows the Inside",
+  "standard": "RI.2.7",
+  "standard_text": "Standard: Explain how specific images, such as a diagram showing how a machine works, contribute to and clarify a text.\n Spiral: RI.2.2 main topic · RI.2.3 connections · RI.2.5 text features · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 570,
+   "words": 113,
+   "labelled_words": 113,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Some pictures in a science book look like something has been sliced open. A seed, a volcano, or a tooth is shown cut in half."
+    },
+    {
+     "label": "B",
+     "text": "That kind of picture is called a cutaway. Nothing was really cut. The artist drew away one side so you can see in."
+    },
+    {
+     "label": "C",
+     "text": "A cutaway does a job words cannot. A sentence can say a seed has a tiny plant inside. The picture shows you where."
+    },
+    {
+     "label": "D",
+     "text": "Small labels point to the parts. A line runs from each word to the exact spot it names."
+    },
+    {
+     "label": "E",
+     "text": "Read the picture and the words together. If the words say root and the label says root, you have found the same thing twice."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 380,
+   "words": 84,
+   "labelled_words": 84,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Some pictures look like something is sliced open. A seed or a tooth is shown cut in half."
+    },
+    {
+     "label": "B",
+     "text": "That kind of picture is called a cutaway. Nothing was really cut. The artist drew away one side."
+    },
+    {
+     "label": "C",
+     "text": "A cutaway does a job words cannot. Words can say a seed has a plant inside. The picture shows where."
+    },
+    {
+     "label": "D",
+     "text": "Small labels point to the parts. A line runs from each word to the spot."
+    },
+    {
+     "label": "E",
+     "text": "Read the picture and the words together. You find the same thing twice."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is a cutaway picture?",
+    "a": "It is a picture drawn as if one side has been taken away so you can see inside, though nothing was really cut."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. what a cutaway shows) and paragraph D (i.e. the labels).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what a cutaway picture does.",
+    "a": "A cutaway shows the inside of something like a seed or a tooth, with small labels and lines pointing to each part, so you can see where a thing is instead of only reading that it exists."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "cutaway: a drawing that shows the inside of a thing.\nlabel: a word on a picture that names one part.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the words on the page and the labels on the picture.",
+    "a": "If the words say root and the label says root, you have found the same thing twice, so reading them together tells you where the part is."
+   }
+  ],
+  "note": "Cut an apple in half and set it beside a cutaway drawing. Paragraph B stops being a trick and becomes obvious."
+ },
+ {
+  "id": "g2-32",
+  "grade": 2,
+  "n": 32,
+  "title": "The Map Next to the Story",
+  "standard": "RI.2.7",
+  "standard_text": "Standard: Explain how specific images, such as a diagram showing how a machine works, contribute to and clarify a text.\n Spiral: RI.2.2 main topic · RI.2.3 connections · RI.2.5 text features · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 560,
+   "words": 107,
+   "labelled_words": 107,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A book about a long journey often has a map beside the words. The map is not there to look nice."
+    },
+    {
+     "label": "B",
+     "text": "The words can say the family travelled for six weeks. The map shows how far six weeks took them."
+    },
+    {
+     "label": "C",
+     "text": "A dotted line usually marks the route. Dots or stars mark the places where they stopped."
+    },
+    {
+     "label": "D",
+     "text": "A map also shows what is not in the words. You can see a mountain range the family had to cross even if no sentence says so."
+    },
+    {
+     "label": "E",
+     "text": "Look at the map before you read, and again at the end. The second look is the one that makes the story fit together."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 370,
+   "words": 76,
+   "labelled_words": 76,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A book about a long journey often has a map. The map is not there to look nice."
+    },
+    {
+     "label": "B",
+     "text": "The words can say the family travelled six weeks. The map shows how far that was."
+    },
+    {
+     "label": "C",
+     "text": "A dotted line marks the route. Stars mark the places where they stopped."
+    },
+    {
+     "label": "D",
+     "text": "A map shows what the words do not. You can see a mountain they had to cross."
+    },
+    {
+     "label": "E",
+     "text": "Look at the map before you read. Look again at the end."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does the map add to the words?",
+    "a": "The words can say the family travelled for six weeks, and the map shows how far six weeks took them."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the dotted line) and paragraph D (i.e. what the words leave out).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what a map beside a story does.",
+    "a": "A dotted line marks the route and stars mark the stops, so the map shows how far the words went and shows things the words never say, like a mountain range that had to be crossed."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "route: the way someone goes from one place to another.\nrange: a row of mountains.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between looking at the map twice and understanding the story.",
+    "a": "Look at the map before you read and again at the end, and the second look is the one that makes the story fit together."
+   }
+  ],
+  "note": "Try it with any journey book on the shelf. Students who look at the map first read the chapter differently."
+ },
+ {
+  "id": "g2-33",
+  "grade": 2,
+  "n": 33,
+  "title": "Arrows in a Diagram",
+  "standard": "RI.2.7",
+  "standard_text": "Standard: Explain how specific images, such as a diagram showing how a machine works, contribute to and clarify a text.\n Spiral: RI.2.2 main topic · RI.2.3 connections · RI.2.5 text features · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 580,
+   "words": 102,
+   "labelled_words": 102,
+   "paras": [
+    {
+     "label": "A",
+     "text": "An arrow in a diagram is not decoration. It means something exact. It usually means this goes here next."
+    },
+    {
+     "label": "B",
+     "text": "In a water cycle diagram, arrows carry water from the sea to a cloud to the ground and back."
+    },
+    {
+     "label": "C",
+     "text": "Arrows can also mean push. In a picture of a machine, an arrow may show which way a part is being pressed."
+    },
+    {
+     "label": "D",
+     "text": "The size of an arrow can matter too. A thick arrow may mean a lot. A thin one may mean a little."
+    },
+    {
+     "label": "E",
+     "text": "Follow the arrows in order before reading the words. The order they make is the thing the diagram is about."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 390,
+   "words": 79,
+   "labelled_words": 79,
+   "paras": [
+    {
+     "label": "A",
+     "text": "An arrow in a diagram is not decoration. It means something exact. It means this goes here next."
+    },
+    {
+     "label": "B",
+     "text": "In a water cycle, arrows carry water from the sea to a cloud and back."
+    },
+    {
+     "label": "C",
+     "text": "Arrows can also mean push. An arrow may show which way a part is pressed."
+    },
+    {
+     "label": "D",
+     "text": "The size can matter. A thick arrow may mean a lot. A thin one may mean a little."
+    },
+    {
+     "label": "E",
+     "text": "Follow the arrows in order. That order is what the diagram is about."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does an arrow usually mean in a diagram?",
+    "a": "It usually means this goes here next."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. arrows that mean push) and paragraph D (i.e. the size of an arrow).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what arrows do in a diagram.",
+    "a": "Arrows show what goes where next, as in a water cycle, and can also show which way a part is being pressed. A thick arrow may mean a lot and a thin one a little."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "diagram: a drawing that shows how something works.\ncycle: something that goes around and starts again.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between following the arrows and understanding the diagram.",
+    "a": "Follow the arrows in order before reading the words, because the order they make is the thing the diagram is about."
+   }
+  ],
+  "note": "Give the class a diagram with the words covered. The arrows alone will carry most of the meaning."
+ },
+ {
+  "id": "g2-34",
+  "grade": 2,
+  "n": 34,
+  "title": "Then and Now Pictures",
+  "standard": "RI.2.7",
+  "standard_text": "Standard: Explain how specific images, such as a diagram showing how a machine works, contribute to and clarify a text.\n Spiral: RI.2.2 main topic · RI.2.3 connections · RI.2.5 text features · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 570,
+   "words": 99,
+   "labelled_words": 99,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Some history books put two pictures side by side. One of them is old. The other was taken from the same spot today."
+    },
+    {
+     "label": "B",
+     "text": "The pair does something one picture cannot. It shows change without saying a word about it."
+    },
+    {
+     "label": "C",
+     "text": "Look for what stayed. A church, a hill, or a bend in the river is often in both pictures."
+    },
+    {
+     "label": "D",
+     "text": "Then look for what went. A streetcar line, a row of trees, or a whole block of houses may be gone."
+    },
+    {
+     "label": "E",
+     "text": "The things that stayed are how you know it is the same place. The things that went are the story."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 380,
+   "words": 77,
+   "labelled_words": 77,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Some history books put two pictures side by side. One is old. One is from today."
+    },
+    {
+     "label": "B",
+     "text": "The pair does what one picture cannot. It shows change without words."
+    },
+    {
+     "label": "C",
+     "text": "Look for what stayed. A church, a hill, or a bend in the river is often in both."
+    },
+    {
+     "label": "D",
+     "text": "Then look for what went. A row of trees or a block of houses may be gone."
+    },
+    {
+     "label": "E",
+     "text": "What stayed tells you it is the same place. What went is the story."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What do two pictures side by side show?",
+    "a": "They show change, because one is old and the other was taken from the same spot today."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. what stayed) and paragraph D (i.e. what went).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how to read a then and now pair.",
+    "a": "Look for what stayed, such as a church, a hill or a bend in the river, and then look for what went, such as a row of trees or a block of houses."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "spot: the exact place where someone stood.\nstreetcar: a train that ran along a city street.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the things that stayed and the things that went.",
+    "a": "The things that stayed are how you know it is the same place, and the things that went are the story."
+   }
+  ],
+  "note": "A local pair works best. Photograph the view outside the school and set it beside an old picture of the same corner."
+ },
+ {
+  "id": "g2-35",
+  "grade": 2,
+  "n": 35,
+  "title": "A Picture That Shows Size",
+  "standard": "RI.2.7",
+  "standard_text": "Standard: Explain how specific images, such as a diagram showing how a machine works, contribute to and clarify a text.\n Spiral: RI.2.2 main topic · RI.2.3 connections · RI.2.5 text features · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 550,
+   "words": 103,
+   "labelled_words": 103,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A picture of an animal does not tell you how big it is. A beetle and a bear can fill the same page."
+    },
+    {
+     "label": "B",
+     "text": "So books add something for scale. A small drawing of a hand, a coin, or a person stands next to the animal."
+    },
+    {
+     "label": "C",
+     "text": "Now the page means something. If the beetle is half as long as a hand, you know."
+    },
+    {
+     "label": "D",
+     "text": "Some books use a ruler line instead. A short bar under the picture is marked with inches or centimeters."
+    },
+    {
+     "label": "E",
+     "text": "Always look for the scale before you decide a thing is huge. Without it, every picture is the size of the page."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 360,
+   "words": 80,
+   "labelled_words": 80,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A picture does not tell you how big an animal is. A beetle and a bear can fill the same page."
+    },
+    {
+     "label": "B",
+     "text": "So books add something for scale. A small hand or a coin stands next to the animal."
+    },
+    {
+     "label": "C",
+     "text": "Now the page means something. The beetle is half as long as a hand."
+    },
+    {
+     "label": "D",
+     "text": "Some books use a ruler line. A short bar is marked with inches."
+    },
+    {
+     "label": "E",
+     "text": "Look for the scale first. Without it, every picture is the size of the page."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why do books put a hand or a coin next to an animal?",
+    "a": "A picture of an animal does not tell you how big it is, so the hand or coin gives you a scale."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. the hand or coin) and paragraph D (i.e. the ruler line).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how a picture shows size.",
+    "a": "A small drawing of a hand, a coin or a person stands next to the animal, or a short bar marked in inches sits under the picture, so a reader can tell how big the thing really is."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "scale: something that shows how big a thing really is.\nbar: a short straight line used as a measure.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between having no scale and thinking something is huge.",
+    "a": "Without a scale, every picture is the size of the page, so a beetle and a bear can look the same."
+   }
+  ],
+  "note": "Show two animal pictures with no scale and ask which is bigger. Then show the scale bars."
+ },
+ {
+  "id": "g2-36",
+  "grade": 2,
+  "n": 36,
+  "title": "Why the Bus Has Rules",
+  "standard": "RI.2.8",
+  "standard_text": "Standard: Describe how reasons support specific points the author makes in a text.\n Spiral: RI.2.1 key details · RI.2.6 author's purpose · RI.2.9 comparing texts · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 580,
+   "words": 101,
+   "labelled_words": 101,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A school bus has a short list of rules. Each one has a reason. The reasons are not written on the sign, but they exist."
+    },
+    {
+     "label": "B",
+     "text": "Stay seated. A bus can stop fast. A person standing has nothing to hold them in place."
+    },
+    {
+     "label": "C",
+     "text": "Keep the aisle clear. If the bus must be left in a hurry, a bag in the aisle slows everyone behind it."
+    },
+    {
+     "label": "D",
+     "text": "Keep your voice low. The driver has to hear a train, a siren, or a horn through an open window."
+    },
+    {
+     "label": "E",
+     "text": "The rules are not about being good. Each one answers a danger the driver already knows about."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 390,
+   "words": 72,
+   "labelled_words": 72,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A school bus has a short list of rules. Each rule has a reason behind it."
+    },
+    {
+     "label": "B",
+     "text": "Stay seated. A bus can stop fast. A standing person has nothing to hold them."
+    },
+    {
+     "label": "C",
+     "text": "Keep the aisle clear. If the bus must be left fast, a bag slows everyone."
+    },
+    {
+     "label": "D",
+     "text": "Keep your voice low. The driver must hear a train or a siren."
+    },
+    {
+     "label": "E",
+     "text": "The rules are not about being good. Each one answers a real danger."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why does the rule say stay seated?",
+    "a": "A bus can stop fast, and a person standing has nothing to hold them in place."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the clear aisle) and paragraph D (i.e. a low voice).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize the rules and their reasons.",
+    "a": "Stay seated because a bus can stop fast. Keep the aisle clear because a bag slows everyone leaving in a hurry. Keep your voice low because the driver has to hear a train, a siren or a horn."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "aisle: the open path to walk between two rows of seats.\nsiren: a loud warning sound from a fire truck or police car.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the driver's hearing and the voice rule.",
+    "a": "The driver has to hear a train, a siren or a horn through an open window, so the rule says keep your voice low."
+   }
+  ],
+  "note": "Pair each rule with its reason on the board. RI.2.8 is about that pairing, not about the rules themselves."
+ },
+ {
+  "id": "g2-37",
+  "grade": 2,
+  "n": 37,
+  "title": "Why Trees Are Planted on Streets",
+  "standard": "RI.2.8",
+  "standard_text": "Standard: Describe how reasons support specific points the author makes in a text.\n Spiral: RI.2.1 key details · RI.2.6 author's purpose · RI.2.9 comparing texts · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 570,
+   "words": 108,
+   "labelled_words": 108,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Cities spend money putting trees along streets. A tree costs more than a lamp post. There are reasons they do it anyway."
+    },
+    {
+     "label": "B",
+     "text": "The first reason is heat. A street with trees can be ten degrees cooler than the same street with none."
+    },
+    {
+     "label": "C",
+     "text": "The second reason is water. Roots and soil soak up rain that would otherwise run straight into a drain and flood it."
+    },
+    {
+     "label": "D",
+     "text": "The third reason is air. Leaves catch dust and soot, and the dirt stays on the leaf instead of in a lung."
+    },
+    {
+     "label": "E",
+     "text": "A fourth reason is harder to measure. People walk more on a street with trees, and shops on those streets do better."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 380,
+   "words": 78,
+   "labelled_words": 78,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Cities spend money putting trees on streets. A tree costs more than a lamp post. There are reasons."
+    },
+    {
+     "label": "B",
+     "text": "The first reason is heat. A street with trees can be ten degrees cooler."
+    },
+    {
+     "label": "C",
+     "text": "The second reason is water. Roots and soil soak up rain. Less rain runs into the drain."
+    },
+    {
+     "label": "D",
+     "text": "The third reason is air. Leaves catch dust. The dirt stays on the leaf."
+    },
+    {
+     "label": "E",
+     "text": "A fourth reason is harder to measure. People walk more on a street with trees."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is the first reason given for planting street trees?",
+    "a": "Heat: a street with trees can be ten degrees cooler than the same street with none."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. water) and paragraph E (i.e. the reason that is hard to measure).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize the reasons for street trees.",
+    "a": "Trees make a street about ten degrees cooler, their roots and soil soak up rain that would flood a drain, their leaves catch dust and soot, and people walk more on streets with trees."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "soot: black dust left behind by smoke.\ndrain: a hole that carries water away from a street.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between roots and a flooded drain.",
+    "a": "Roots and soil soak up rain that would otherwise run straight into a drain and flood it."
+   }
+  ],
+  "note": "Four reasons, four paragraphs. Ask which one a student finds strongest and make them say why."
+ },
+ {
+  "id": "g2-38",
+  "grade": 2,
+  "n": 38,
+  "title": "Why the Library Is Quiet",
+  "standard": "RI.2.8",
+  "standard_text": "Standard: Describe how reasons support specific points the author makes in a text.\n Spiral: RI.2.1 key details · RI.2.6 author's purpose · RI.2.9 comparing texts · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 560,
+   "words": 99,
+   "labelled_words": 99,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A library asks people to be quiet. Some children think it is just an old rule. There are reasons behind it."
+    },
+    {
+     "label": "B",
+     "text": "The first reason is reading. Reading uses the same part of the brain that listens. A loud voice pulls that part away."
+    },
+    {
+     "label": "C",
+     "text": "The second reason is sharing. One room holds many people doing different work. A quiet room belongs to all of them."
+    },
+    {
+     "label": "D",
+     "text": "The third reason is help. A librarian answering a question needs to hear it the first time."
+    },
+    {
+     "label": "E",
+     "text": "Notice that every reason is about other people. The rule is not there to make the room dull."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 370,
+   "words": 76,
+   "labelled_words": 76,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A library asks people to be quiet. Some think it is just an old rule. There are reasons."
+    },
+    {
+     "label": "B",
+     "text": "The first reason is reading. Reading uses the part of the brain that listens."
+    },
+    {
+     "label": "C",
+     "text": "The second reason is sharing. One room holds many people doing different work."
+    },
+    {
+     "label": "D",
+     "text": "The third reason is help. A librarian needs to hear a question the first time."
+    },
+    {
+     "label": "E",
+     "text": "Every reason is about other people. The rule is not there to make the room dull."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why does reading need quiet?",
+    "a": "Reading uses the same part of the brain that listens, so a loud voice pulls that part away."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. sharing the room) and paragraph E (i.e. what the reasons have in common).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize the reasons a library is quiet.",
+    "a": "Reading uses the part of the brain that listens, one room holds many people doing different work, and a librarian needs to hear a question the first time."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "librarian: the person who helps people find books.\nshare: to use one thing together with others.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between all three reasons.",
+    "a": "Every reason is about other people, because the rule is not there to make the room dull."
+   }
+  ],
+  "note": "Paragraph E does something the others do not: it finds what the three reasons have in common. That is a step past RI.2.8 and worth praising."
+ },
+ {
+  "id": "g2-39",
+  "grade": 2,
+  "n": 39,
+  "title": "Why Bikes Need Helmets",
+  "standard": "RI.2.8",
+  "standard_text": "Standard: Describe how reasons support specific points the author makes in a text.\n Spiral: RI.2.1 key details · RI.2.6 author's purpose · RI.2.9 comparing texts · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 580,
+   "words": 109,
+   "labelled_words": 109,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A helmet looks like a hard shell. Most of the work is done by the soft foam inside it."
+    },
+    {
+     "label": "B",
+     "text": "A head stops faster than a brain does. The brain keeps moving for a moment and hits the inside of the skull."
+    },
+    {
+     "label": "C",
+     "text": "Foam crushes slowly. That gives the head a few more milliseconds to stop, and those milliseconds are what protect the brain."
+    },
+    {
+     "label": "D",
+     "text": "A crushed helmet has done its job. It cannot do it twice, so a helmet in a crash is replaced, not reused."
+    },
+    {
+     "label": "E",
+     "text": "Fit is a reason too. A loose helmet slides off the forehead, and the part that matters is no longer over the part that matters."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 390,
+   "words": 74,
+   "labelled_words": 74,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A helmet looks like a hard shell. The soft foam inside does most of the work."
+    },
+    {
+     "label": "B",
+     "text": "A head stops faster than a brain. The brain keeps moving for a moment."
+    },
+    {
+     "label": "C",
+     "text": "Foam crushes slowly. That gives the head more time to stop. That time protects the brain."
+    },
+    {
+     "label": "D",
+     "text": "A crushed helmet has done its job. It cannot do it twice. It must be replaced."
+    },
+    {
+     "label": "E",
+     "text": "Fit is a reason too. A loose helmet slides off the forehead."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What part of a helmet does most of the work?",
+    "a": "The soft foam inside does most of the work, not the hard shell."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the foam) and paragraph D (i.e. replacing a helmet).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize why a helmet protects a brain.",
+    "a": "A head stops faster than a brain does, so the brain keeps moving and hits the skull. Foam crushes slowly and gives the head a few more milliseconds to stop, which is what protects the brain."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "foam: a soft light material full of tiny holes.\nskull: the bone around the brain.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between a crushed helmet and buying a new one.",
+    "a": "A crushed helmet has done its job and cannot do it twice, so a helmet in a crash is replaced, not reused."
+   }
+  ],
+  "note": "Paragraph A is the surprise. Most students will say the hard shell, and the text says the opposite."
+ },
+ {
+  "id": "g2-40",
+  "grade": 2,
+  "n": 40,
+  "title": "Why Dogs Must Be on a Leash",
+  "standard": "RI.2.8",
+  "standard_text": "Standard: Describe how reasons support specific points the author makes in a text.\n Spiral: RI.2.1 key details · RI.2.6 author's purpose · RI.2.9 comparing texts · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 570,
+   "words": 105,
+   "labelled_words": 105,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Most parks ask that dogs be kept on a leash. Dog owners sometimes argue about it. The rule has several reasons."
+    },
+    {
+     "label": "B",
+     "text": "The first is other people. A friendly dog running toward a stranger does not look friendly to that stranger."
+    },
+    {
+     "label": "C",
+     "text": "The second is other dogs. Two dogs meeting at full speed start more fights than two dogs meeting slowly."
+    },
+    {
+     "label": "D",
+     "text": "The third is wildlife. A dog off a leash chases birds off their nests, and the eggs cool while the parent is away."
+    },
+    {
+     "label": "E",
+     "text": "The fourth is the dog. A leash is what stops a dog from reaching a road before its owner can call it back."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 380,
+   "words": 71,
+   "labelled_words": 71,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Most parks ask that dogs be kept on a leash. The rule has several reasons."
+    },
+    {
+     "label": "B",
+     "text": "The first is other people. A friendly dog running at a stranger does not look friendly."
+    },
+    {
+     "label": "C",
+     "text": "The second is other dogs. Two dogs meeting fast start more fights."
+    },
+    {
+     "label": "D",
+     "text": "The third is wildlife. A dog off a leash chases birds off their nests."
+    },
+    {
+     "label": "E",
+     "text": "The fourth is the dog. A leash stops a dog from reaching a road."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What is the fourth reason for a leash?",
+    "a": "The dog itself: a leash is what stops a dog from reaching a road before its owner can call it back."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. wildlife) and paragraph E (i.e. the dog).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize the reasons for a leash rule.",
+    "a": "A friendly dog running at a stranger does not look friendly, two dogs meeting at full speed start more fights, a loose dog chases birds off their nests, and a leash stops a dog reaching a road."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "leash: a strap used to hold a dog while walking.\nwildlife: wild animals living in a place.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between a dog off a leash and eggs in a nest.",
+    "a": "A dog off a leash chases birds off their nests, and the eggs cool while the parent is away."
+   }
+  ],
+  "note": "Paragraph A names the disagreement openly. Students with dogs will have opinions, and the reasons are there to argue with."
+ },
+ {
+  "id": "g2-41",
+  "grade": 2,
+  "n": 41,
+  "title": "Two Books About Bats",
+  "standard": "RI.2.9",
+  "standard_text": "Standard: Compare and contrast the most important points presented by two texts on the same topic.\n Spiral: RI.2.2 main topic · RI.2.6 author's purpose · RI.2.8 reasons · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 580,
+   "words": 121,
+   "labelled_words": 121,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Two books on the shelf are both about bats. They do not say the same things. Reading both is better than reading one twice."
+    },
+    {
+     "label": "B",
+     "text": "The first book is about how bats find food. It spends most of its pages on sound. A bat calls out and listens for the echo."
+    },
+    {
+     "label": "C",
+     "text": "The second book is about where bats live. It shows caves, bridges, and hollow trees. It barely mentions sound at all."
+    },
+    {
+     "label": "D",
+     "text": "Both books agree on two points. Bats are mammals, and most bats eat insects. Those facts are in each one."
+    },
+    {
+     "label": "E",
+     "text": "The books differ on one thing. The first says a bat can eat a thousand insects an hour. The second says hundreds. Neither is lying; they counted in different places."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 390,
+   "words": 78,
+   "labelled_words": 78,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Two books are both about bats. They do not say the same things. Reading both is better."
+    },
+    {
+     "label": "B",
+     "text": "The first book is about how bats find food. A bat calls out and listens for the echo."
+    },
+    {
+     "label": "C",
+     "text": "The second book is about where bats live. It shows caves and hollow trees."
+    },
+    {
+     "label": "D",
+     "text": "Both books agree on two points. Bats are mammals. Most bats eat insects."
+    },
+    {
+     "label": "E",
+     "text": "The books differ on one thing. One says a thousand insects an hour. One says hundreds."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What do both books agree on?",
+    "a": "Both books agree that bats are mammals and that most bats eat insects."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. the first book) and paragraph C (i.e. the second book).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how the two books are the same and different.",
+    "a": "One book is about how bats find food using sound and echoes, and the other is about where bats live in caves, bridges and hollow trees. Both say bats are mammals and most eat insects, but they give different numbers of insects."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "echo: a sound that bounces back from something.\nmammal: an animal that has fur and feeds its young milk.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the two different numbers.",
+    "a": "The first says a bat can eat a thousand insects an hour and the second says hundreds, and neither is lying because they counted in different places."
+   }
+  ],
+  "note": "Paragraph E is the hard idea and the valuable one. Two true books can give two numbers."
+ },
+ {
+  "id": "g2-42",
+  "grade": 2,
+  "n": 42,
+  "title": "Two Books About Trains",
+  "standard": "RI.2.9",
+  "standard_text": "Standard: Compare and contrast the most important points presented by two texts on the same topic.\n Spiral: RI.2.2 main topic · RI.2.6 author's purpose · RI.2.8 reasons · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 570,
+   "words": 103,
+   "labelled_words": 103,
+   "paras": [
+    {
+     "label": "A",
+     "text": "One shelf holds two books about trains. One of them is about how a train works. The other is about the people who ride them."
+    },
+    {
+     "label": "B",
+     "text": "The how book has diagrams. It shows the engine, the wheels, and the track. Almost nobody appears in the pictures."
+    },
+    {
+     "label": "C",
+     "text": "The people book has photographs. It shows a conductor, a family with bags, and a man asleep in a seat."
+    },
+    {
+     "label": "D",
+     "text": "Both say trains carry more weight than trucks. That point shows up in each book, in different words."
+    },
+    {
+     "label": "E",
+     "text": "The two books feel very different, but neither one is wrong. They simply picked different parts of the same subject."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 380,
+   "words": 70,
+   "labelled_words": 70,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Two books on a shelf are about trains. One is about how a train works. One is about people."
+    },
+    {
+     "label": "B",
+     "text": "The how book has diagrams. It shows the engine, the wheels, and the track."
+    },
+    {
+     "label": "C",
+     "text": "The people book has photographs. It shows a conductor and a family with bags."
+    },
+    {
+     "label": "D",
+     "text": "Both say trains carry more weight than trucks. That point is in each book."
+    },
+    {
+     "label": "E",
+     "text": "The two books feel different. Neither one is wrong."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What do both books say about trains?",
+    "a": "Both say trains carry more weight than trucks."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. the how book) and paragraph C (i.e. the people book).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how the two train books differ.",
+    "a": "One has diagrams of the engine, wheels and track with almost nobody in the pictures, and the other has photographs of a conductor and a family with bags. Both say trains carry more weight than trucks."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "conductor: the person who works on a train and checks tickets.\ndiagram: a drawing that shows how something works.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the two books and the same subject.",
+    "a": "The two books feel very different but neither is wrong, because they simply picked different parts of the same subject."
+   }
+  ],
+  "note": "Diagrams against photographs is the clue. What a book chooses to picture tells you what it is about."
+ },
+ {
+  "id": "g2-43",
+  "grade": 2,
+  "n": 43,
+  "title": "Two Books About Rain",
+  "standard": "RI.2.9",
+  "standard_text": "Standard: Compare and contrast the most important points presented by two texts on the same topic.\n Spiral: RI.2.2 main topic · RI.2.6 author's purpose · RI.2.8 reasons · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 560,
+   "words": 105,
+   "labelled_words": 105,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Two books on rain sit side by side. One explains where rain comes from. One tells what people do when it falls."
+    },
+    {
+     "label": "B",
+     "text": "The science book starts with the sea. Water rises, cools, makes clouds, and falls again. The whole book is that circle."
+    },
+    {
+     "label": "C",
+     "text": "The other book starts with a boot. It shows umbrellas, puddles, drains, and a city that must move water off its streets."
+    },
+    {
+     "label": "D",
+     "text": "Both books use the word evaporation. The science book explains it. The city book just uses it."
+    },
+    {
+     "label": "E",
+     "text": "Reading both gives you something neither gives alone. You learn where rain comes from and what a town has to do about it."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 370,
+   "words": 75,
+   "labelled_words": 75,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Two books on rain sit side by side. One tells where rain comes from. One tells what people do."
+    },
+    {
+     "label": "B",
+     "text": "The science book starts with the sea. Water rises, cools, makes clouds, and falls."
+    },
+    {
+     "label": "C",
+     "text": "The other book starts with a boot. It shows umbrellas, puddles, and drains."
+    },
+    {
+     "label": "D",
+     "text": "Both books use the word evaporation. One explains it. One just uses it."
+    },
+    {
+     "label": "E",
+     "text": "Reading both gives you more. You learn where rain comes from and what a town does."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does the science book explain?",
+    "a": "It explains where rain comes from: water rises from the sea, cools, makes clouds, and falls again."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the city book) and paragraph D (i.e. the shared word).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how the two rain books differ.",
+    "a": "One starts with the sea and follows water as it rises, cools, makes clouds and falls. The other starts with a boot and shows umbrellas, puddles, drains and a city moving water off its streets."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "evaporation: when water turns into tiny bits that float in the air.\numbrella: a thing you hold over your head to keep rain off.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the two books and the word evaporation.",
+    "a": "Both books use the word evaporation, but the science book explains it and the city book just uses it."
+   }
+  ],
+  "note": "Paragraph D is a small, sharp observation. A word can appear in two books and be doing different work."
+ },
+ {
+  "id": "g2-44",
+  "grade": 2,
+  "n": 44,
+  "title": "Two Books About Firefighters",
+  "standard": "RI.2.9",
+  "standard_text": "Standard: Compare and contrast the most important points presented by two texts on the same topic.\n Spiral: RI.2.2 main topic · RI.2.6 author's purpose · RI.2.8 reasons · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 580,
+   "words": 108,
+   "labelled_words": 108,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Two books about firefighters were written forty years apart. Put together they show what the job is and how it changed."
+    },
+    {
+     "label": "B",
+     "text": "The older book is mostly about fire. Every picture has flames in it. The trucks carry ladders and hoses and nothing else."
+    },
+    {
+     "label": "C",
+     "text": "The newer book says something surprising. Most calls today are not fires. Firefighters go to car crashes and medical calls far more often."
+    },
+    {
+     "label": "D",
+     "text": "Both books make the same main point. Firefighters train constantly, because the work has to be done the same way every time."
+    },
+    {
+     "label": "E",
+     "text": "A reader with both books knows two things. What firefighters do, and that the answer has not stayed the same."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 390,
+   "words": 74,
+   "labelled_words": 74,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Two books about firefighters were written forty years apart. Together they show how the job changed."
+    },
+    {
+     "label": "B",
+     "text": "The older book is mostly about fire. Every picture has flames. The trucks carry ladders and hoses."
+    },
+    {
+     "label": "C",
+     "text": "The newer book says something surprising. Most calls today are not fires. Many are medical calls."
+    },
+    {
+     "label": "D",
+     "text": "Both books make the same point. Firefighters train all the time."
+    },
+    {
+     "label": "E",
+     "text": "A reader with both books knows more. The answer has not stayed the same."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does the newer book say that is surprising?",
+    "a": "Most calls today are not fires; firefighters go to car crashes and medical calls far more often."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. the older book) and paragraph C (i.e. the newer book).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how the two firefighter books compare.",
+    "a": "The older book is mostly about fire, with flames in every picture and trucks carrying ladders and hoses. The newer book says most calls are not fires. Both say firefighters train constantly."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "medical: having to do with helping someone who is sick or hurt.\nconstantly: all the time, again and again.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the age of a book and what it says.",
+    "a": "The two books were written forty years apart, so together they show what firefighters do and that the answer has not stayed the same."
+   }
+  ],
+  "note": "Check the copyright date on two books about the same job. Second graders can do that, and it changes how they read both."
+ },
+ {
+  "id": "g2-45",
+  "grade": 2,
+  "n": 45,
+  "title": "Two Books About the Sun",
+  "standard": "RI.2.9",
+  "standard_text": "Standard: Compare and contrast the most important points presented by two texts on the same topic.\n Spiral: RI.2.2 main topic · RI.2.6 author's purpose · RI.2.8 reasons · RI.2.10 comprehension\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 550,
+   "words": 112,
+   "labelled_words": 112,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Two books about the sun are open on a table. One is about the sun itself. One is about what the sun does for us."
+    },
+    {
+     "label": "B",
+     "text": "The first book gives numbers. The sun is a star. It is about 93 million miles away and far bigger than the Earth."
+    },
+    {
+     "label": "C",
+     "text": "The second book gives examples. Plants use sunlight to make food. Skin makes vitamin D. Solar panels turn light into power."
+    },
+    {
+     "label": "D",
+     "text": "Both books say the same thing about light. Light from the sun takes about eight minutes to reach us."
+    },
+    {
+     "label": "E",
+     "text": "One book is mostly about a thing. One is mostly about effects. The topic is the same and the point of view is not."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 360,
+   "words": 86,
+   "labelled_words": 86,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Two books about the sun are open on a table. One is about the sun. One is about what it does for us."
+    },
+    {
+     "label": "B",
+     "text": "The first book gives numbers. The sun is a star. It is far bigger than the Earth."
+    },
+    {
+     "label": "C",
+     "text": "The second book gives examples. Plants use sunlight to make food. Solar panels make power."
+    },
+    {
+     "label": "D",
+     "text": "Both books say the same thing about light. It takes about eight minutes to reach us."
+    },
+    {
+     "label": "E",
+     "text": "One book is about a thing. One is about effects. The topic is the same."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What do both books say about light?",
+    "a": "Both say light from the sun takes about eight minutes to reach us."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. the numbers) and paragraph C (i.e. the examples).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how the two sun books differ.",
+    "a": "One gives numbers about the sun itself, that it is a star about 93 million miles away and far bigger than the Earth. The other gives examples of what the sun does, like plants making food and solar panels making power."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "solar: having to do with the sun.\nvitamin: something the body needs a small amount of to stay well.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the two books having the same topic.",
+    "a": "One book is mostly about a thing and one is mostly about effects, so the topic is the same and the point of view is not."
+   }
+  ],
+  "note": "A thing and its effects is a split that shows up everywhere. Name it here and students will spot it again."
+ },
+ {
+  "id": "g2-46",
+  "grade": 2,
+  "n": 46,
+  "title": "The Statue That Came in Pieces",
+  "standard": "RI.2.10",
+  "standard_text": "Standard: By the end of the year, read and comprehend informational texts, including history/social studies, science, and technical texts, in the grades 2-3 text complexity band proficiently, with scaffolding as needed at the high end of the range.\n Spiral: RI.2.1 key details · RI.2.2 main topic · RI.2.4 word meaning · RI.2.8 reasons\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 570,
+   "words": 108,
+   "labelled_words": 108,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The Statue of Liberty did not arrive standing up. It came across the ocean in 214 wooden crates."
+    },
+    {
+     "label": "B",
+     "text": "The statue was built in France first. Workers put the whole thing together in a Paris yard, then took it apart again."
+    },
+    {
+     "label": "C",
+     "text": "Each piece was numbered. Without the numbers, nobody in New York would have known which sheet of copper went where."
+    },
+    {
+     "label": "D",
+     "text": "The copper skin is thinner than two pennies stacked. It is held on an iron frame, the way skin is held on bones."
+    },
+    {
+     "label": "E",
+     "text": "It took four months to put back together. The crates sat on an island for almost a year first, because the base was not ready."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 380,
+   "words": 76,
+   "labelled_words": 76,
+   "paras": [
+    {
+     "label": "A",
+     "text": "The Statue of Liberty did not arrive standing up. It came in 214 wooden crates."
+    },
+    {
+     "label": "B",
+     "text": "The statue was built in France first. Workers put it together, then took it apart."
+    },
+    {
+     "label": "C",
+     "text": "Each piece was numbered. Without the numbers, nobody would know which piece went where."
+    },
+    {
+     "label": "D",
+     "text": "The copper skin is very thin. It is held on an iron frame, like skin on bones."
+    },
+    {
+     "label": "E",
+     "text": "It took four months to put back together. The crates waited almost a year first."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "How did the statue cross the ocean?",
+    "a": "It came across the ocean in 214 wooden crates."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. the numbers) and paragraph E (i.e. the wait).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how the Statue of Liberty got to New York.",
+    "a": "It was built in France, put together in a Paris yard, then taken apart with each piece numbered and shipped in 214 crates. The crates waited almost a year because the base was not ready, and it took four months to rebuild."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "crate: a strong wooden box for shipping things.\ncopper: an orange-brown metal that turns green over time.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the numbers on the pieces and rebuilding the statue.",
+    "a": "Each piece was numbered, because without the numbers nobody in New York would have known which sheet of copper went where."
+   }
+  ],
+  "note": "Two pennies stacked is the detail students repeat at dinner. Let them hold two pennies while you read paragraph D."
+ },
+ {
+  "id": "g2-47",
+  "grade": 2,
+  "n": 47,
+  "title": "The Tree That Grows in Salt Water",
+  "standard": "RI.2.10",
+  "standard_text": "Standard: By the end of the year, read and comprehend informational texts, including history/social studies, science, and technical texts, in the grades 2-3 text complexity band proficiently, with scaffolding as needed at the high end of the range.\n Spiral: RI.2.1 key details · RI.2.2 main topic · RI.2.4 word meaning · RI.2.8 reasons\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 580,
+   "words": 111,
+   "labelled_words": 111,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Most trees die in salt water. A mangrove lives in it. It grows where a river meets the sea."
+    },
+    {
+     "label": "B",
+     "text": "Salt is the problem. A plant pulls water up through its roots, and salt comes along with it."
+    },
+    {
+     "label": "C",
+     "text": "Mangroves solve it in two ways. Some roots block most of the salt. Some leaves push salt out, and it dries in white crystals on top."
+    },
+    {
+     "label": "D",
+     "text": "The mud is a second problem. It holds almost no air. So mangroves grow roots that stick up out of the water to breathe."
+    },
+    {
+     "label": "E",
+     "text": "Those tangled roots do a job for everyone else. They slow a storm wave before it reaches land, and young fish hide between them."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 390,
+   "words": 81,
+   "labelled_words": 81,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Most trees die in salt water. A mangrove lives in it. It grows where a river meets the sea."
+    },
+    {
+     "label": "B",
+     "text": "Salt is the problem. A plant pulls water up through its roots. Salt comes too."
+    },
+    {
+     "label": "C",
+     "text": "Mangroves solve it in two ways. Some roots block the salt. Some leaves push salt out."
+    },
+    {
+     "label": "D",
+     "text": "The mud is another problem. It holds almost no air. So some roots stick up to breathe."
+    },
+    {
+     "label": "E",
+     "text": "Those roots help everyone. They slow a storm wave. Young fish hide between them."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why is salt a problem for a plant?",
+    "a": "A plant pulls water up through its roots, and salt comes along with it."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. two ways to handle salt) and paragraph D (i.e. roots that breathe).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how a mangrove survives in salt water.",
+    "a": "Some of its roots block most of the salt and some of its leaves push salt out, which dries in white crystals. Because the mud holds almost no air, it also grows roots that stick up out of the water to breathe."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "mangrove: a tree that grows in salt water near a coast.\ncrystal: a small hard piece that forms as something dries.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the tangled roots and a storm wave.",
+    "a": "The tangled roots slow a storm wave before it reaches land, and young fish hide between them."
+   }
+  ],
+  "note": "Two problems, two solutions, and then a paragraph about everyone else. That shape is worth naming out loud."
+ },
+ {
+  "id": "g2-48",
+  "grade": 2,
+  "n": 48,
+  "title": "The Town with No Cars",
+  "standard": "RI.2.10",
+  "standard_text": "Standard: By the end of the year, read and comprehend informational texts, including history/social studies, science, and technical texts, in the grades 2-3 text complexity band proficiently, with scaffolding as needed at the high end of the range.\n Spiral: RI.2.1 key details · RI.2.2 main topic · RI.2.4 word meaning · RI.2.8 reasons\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 570,
+   "words": 111,
+   "labelled_words": 111,
+   "paras": [
+    {
+     "label": "A",
+     "text": "There is an island in Michigan where cars have been against the law since 1898. About five hundred people live there all year."
+    },
+    {
+     "label": "B",
+     "text": "People get around on bicycles, on foot, and in carriages pulled by horses. There are more than five hundred horses on the island in summer."
+    },
+    {
+     "label": "C",
+     "text": "Everything arrives by boat. Furniture, food, and building supplies are unloaded at a dock and moved by wagon."
+    },
+    {
+     "label": "D",
+     "text": "Even an emergency runs on horses. The ambulance is a sled in winter and a horse-drawn wagon the rest of the year."
+    },
+    {
+     "label": "E",
+     "text": "The rule started because the first cars frightened the horses. It stayed because people decided they liked the island the way it was."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 380,
+   "words": 71,
+   "labelled_words": 71,
+   "paras": [
+    {
+     "label": "A",
+     "text": "There is an island in Michigan where cars are against the law. The rule began in 1898."
+    },
+    {
+     "label": "B",
+     "text": "People get around on bikes, on foot, and in carriages pulled by horses."
+    },
+    {
+     "label": "C",
+     "text": "Everything arrives by boat. Food and supplies come to a dock. Wagons move them."
+    },
+    {
+     "label": "D",
+     "text": "Even an emergency runs on horses. The ambulance is a sled in winter."
+    },
+    {
+     "label": "E",
+     "text": "The rule started because cars frightened the horses. It stayed because people liked it."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "How do people get around on the island?",
+    "a": "They get around on bicycles, on foot, and in carriages pulled by horses."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. arriving by boat) and paragraph E (i.e. why the rule stayed).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize life on the island without cars.",
+    "a": "Cars have been against the law since 1898, so people use bicycles, their feet and horse-drawn carriages. Everything arrives by boat and moves by wagon, and even the ambulance is a sled or a wagon."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "carriage: a cart with seats that a horse pulls.\ndock: a place at the edge of water where boats are loaded.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the first cars and the rule.",
+    "a": "The rule started because the first cars frightened the horses, and it stayed because people decided they liked the island the way it was."
+   }
+  ],
+  "note": "Paragraph E separates why a rule began from why it lasted. Those are rarely the same thing."
+ },
+ {
+  "id": "g2-49",
+  "grade": 2,
+  "n": 49,
+  "title": "The Ants That Grow Their Own Food",
+  "standard": "RI.2.10",
+  "standard_text": "Standard: By the end of the year, read and comprehend informational texts, including history/social studies, science, and technical texts, in the grades 2-3 text complexity band proficiently, with scaffolding as needed at the high end of the range.\n Spiral: RI.2.1 key details · RI.2.2 main topic · RI.2.4 word meaning · RI.2.8 reasons\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 580,
+   "words": 116,
+   "labelled_words": 116,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Some ants do not hunt for food. They grow it. Leafcutter ants have been farming for millions of years."
+    },
+    {
+     "label": "B",
+     "text": "A line of ants carries pieces of leaf back to the nest. The leaves are not what they eat. They cannot digest a leaf at all."
+    },
+    {
+     "label": "C",
+     "text": "Underground, the ants chew the leaves into a soft mush. They plant a fungus in it. The fungus grows, and that is the food."
+    },
+    {
+     "label": "D",
+     "text": "The nest is kept clean on purpose. Workers pull out any mold that is not the right kind and carry it far away."
+    },
+    {
+     "label": "E",
+     "text": "A big nest can hold millions of ants and reach deeper than a person is tall. All of it is built around one crop."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 390,
+   "words": 78,
+   "labelled_words": 78,
+   "paras": [
+    {
+     "label": "A",
+     "text": "Some ants do not hunt for food. They grow it. Leafcutter ants are farmers."
+    },
+    {
+     "label": "B",
+     "text": "A line of ants carries leaf pieces to the nest. The leaves are not what they eat."
+    },
+    {
+     "label": "C",
+     "text": "Underground, they chew the leaves into mush. They plant a fungus in it. The fungus is the food."
+    },
+    {
+     "label": "D",
+     "text": "The nest is kept clean. Workers pull out the wrong kind of mold."
+    },
+    {
+     "label": "E",
+     "text": "A big nest can hold millions of ants. All of it is built around one crop."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What do leafcutter ants actually eat?",
+    "a": "They eat a fungus they grow, not the leaves, because they cannot digest a leaf at all."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. growing the fungus) and paragraph D (i.e. keeping the nest clean).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how leafcutter ants farm.",
+    "a": "Ants carry pieces of leaf underground and chew them into a soft mush, then plant a fungus in it. The fungus grows and that is their food, and workers pull out any mold that is the wrong kind."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "fungus: a living thing like a mushroom or a mold.\ncrop: a plant that people or animals grow for food.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the leaves and the ants' food.",
+    "a": "The ants cannot digest a leaf, so they chew the leaves into mush and plant a fungus in it, and the fungus is what they eat."
+   }
+  ],
+  "note": "Paragraph B is the twist. Every student will assume the ants eat the leaves, and the second sentence says no."
+ },
+ {
+  "id": "g2-50",
+  "grade": 2,
+  "n": 50,
+  "title": "The Room Made for Children",
+  "standard": "RI.2.10",
+  "standard_text": "Standard: By the end of the year, read and comprehend informational texts, including history/social studies, science, and technical texts, in the grades 2-3 text complexity band proficiently, with scaffolding as needed at the high end of the range.\n Spiral: RI.2.1 key details · RI.2.2 main topic · RI.2.4 word meaning · RI.2.8 reasons\n Lower range: LL 330 – 430",
+  "higher": {
+   "lexile": 570,
+   "words": 105,
+   "labelled_words": 105,
+   "paras": [
+    {
+     "label": "A",
+     "text": "For a long time, libraries had no room for children. Many would not let anyone under fourteen through the door at all."
+    },
+    {
+     "label": "B",
+     "text": "In 1890, a librarian in Brookline, Massachusetts set aside one room with low shelves and small chairs. It was one of the first."
+    },
+    {
+     "label": "C",
+     "text": "The idea spread quickly. Within thirty years most city libraries had a children's room, and some had a librarian who worked only there."
+    },
+    {
+     "label": "D",
+     "text": "Those librarians changed what got published. They asked for books with bigger print and better pictures, and companies made them."
+    },
+    {
+     "label": "E",
+     "text": "A children's room looks ordinary now. It was an argument once, and somebody had to win it."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 380,
+   "words": 73,
+   "labelled_words": 73,
+   "paras": [
+    {
+     "label": "A",
+     "text": "For a long time, libraries had no room for children. Many would not let them in at all."
+    },
+    {
+     "label": "B",
+     "text": "In 1890, a librarian in Massachusetts set aside one room. It had low shelves and small chairs."
+    },
+    {
+     "label": "C",
+     "text": "The idea spread. Within thirty years most city libraries had a children's room."
+    },
+    {
+     "label": "D",
+     "text": "Those librarians changed what got published. They asked for bigger print and better pictures."
+    },
+    {
+     "label": "E",
+     "text": "A children's room looks ordinary now. It was an argument once."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What did libraries used to do about children?",
+    "a": "Many libraries would not let anyone under fourteen through the door at all."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. the first room) and paragraph D (i.e. changing the books).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how children's rooms began.",
+    "a": "In 1890 a librarian in Brookline, Massachusetts set aside a room with low shelves and small chairs. Within thirty years most city libraries had one, and those librarians asked publishers for bigger print and better pictures."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "librarian: the person who helps people find books.\npublished: printed and sold as a book.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the children's librarians and the books that were made.",
+    "a": "They asked for books with bigger print and better pictures, and companies made them."
+   }
+  ],
+  "note": "Read this one in the children's room. The last sentence is the whole point and the room is the evidence."
+ }
+]
