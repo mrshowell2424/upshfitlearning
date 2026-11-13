@@ -36,7 +36,7 @@ const tabs = [
  * violet is the standard's own machinery, teal is learning science.
  */
 const LABEL = {
-  violet: "#7C3AED",
+  violet: "#6B2FB5",
   indigo: "#4338CA",
   teal: "#0E9384",
   coral: "var(--color-coral)",

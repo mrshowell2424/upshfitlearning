@@ -258,7 +258,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
               <div className="p-7">
                 <p
                   className="text-[11px] font-bold uppercase tracking-[0.14em] mb-3"
-                  style={{ color: "#7C3AED" }}
+                  style={{ color: "#6B2FB5" }}
                 >
                   Learning target
                 </p>

@@ -45,7 +45,7 @@
   --color-text-body: var(--color-text-body);
   --color-text-muted: var(--color-text-muted);
   --color-text-faint: var(--color-text-faint);
-  --font-sans: var(--font-poppins);
+  --font-sans: var(--font-inter);
   --radius-20: 20px;
   --radius-18: 18px;
   --radius-16: 16px;
@@ -78,5 +78,12 @@
 
 body {
   @apply bg-white text-text-body;
-  font-family: var(--font-poppins);
+  font-family: var(--font-inter);
+}
+
+/* The brand book: everything in Inter, the geometric face for the wordmark
+   and the display sizes. Headings keep Poppins because that is where the
+   brand's heavy, tight display styles live; running text does not. */
+h1, h2, .wordmark {
+  font-family: var(--font-poppins), var(--font-inter), system-ui, sans-serif;
 }

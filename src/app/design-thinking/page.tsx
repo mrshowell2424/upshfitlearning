@@ -33,13 +33,13 @@ import {
  */
 
 /** The canvas's own palette. */
-const CREAM = "#FBF7F0";
-const INK = "#211E33";
-const PLUM = "#7A2E6E";
-const CORAL = "#F26D5B";
-const MUTED = "#54506B";
-const FAINT = "#8B8699";
-const RULE = "#E6DFD3";
+const CREAM = "#F7F6F4";
+const INK = "#111111";
+const PLUM = "#6B2FB5";
+const CORAL = "#FF6A5B";
+const MUTED = "#444444";
+const FAINT = "#6A6A6A";
+const RULE = "#F2F2F2";
 
 const MATERIALS = "/api/materials/design-thinking";
 
@@ -379,7 +379,7 @@ function DesignThinkingRoadMap() {
                         <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 14 }}>
                           {([
                             ["Teacher slides", "Teacher Slides.dc.html", PLUM, CREAM],
-                            ["Student workbook", "Workbook.dc.html", "#2FA39B", "#FFFFFF"],
+                            ["Student workbook", "Workbook.dc.html", "#00B4A6", "#FFFFFF"],
                             ["Answer key", "Workbook Key.dc.html", "#FFFFFF", INK],
                           ] as const).map(([label, file, bg, fg]) => (
                             <a

@@ -23,12 +23,12 @@ import { OG_LEVELS, OG_CONCEPTS, ogPackHref } from "@/app/reading/og-packs-data"
  */
 
 /** The road map's own palette. */
-const CREAM = "#FAF7F2";
-const INK = "#24303D";
-const MUTED = "#6B7480";
-const RULE = "#E4DED4";
-const BRASS = "#B08A2E";
-const OG_TEAL = "#2F7A8C";
+const CREAM = "#F7F6F4";
+const INK = "#111111";
+const MUTED = "#444444";
+const RULE = "#F2F2F2";
+const BRASS = "#C0432F";
+const OG_TEAL = "#00756C";
 
 const SKILL_NAME = new Map(LESSONS.map((l) => [l.id, l.skill]));
 
@@ -126,7 +126,7 @@ function Packs() {
                         </div>
                       ) : (
                         // Built, but nothing in this road map teaches it yet.
-                        <div style={{ fontSize: 12, fontWeight: 500, color: "#9AA3AD", marginTop: 9 }}>
+                        <div style={{ fontSize: 12, fontWeight: 500, color: "#8A8A8A", marginTop: 9 }}>
                           Not in the road map yet
                         </div>
                       )}

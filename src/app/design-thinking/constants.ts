@@ -38,11 +38,11 @@ export type DesignGrade = (typeof DESIGN_GRADES)[number]
 
 /** The five days, in the order a week runs. Colours are the canvas's own. */
 export const PHASES = [
-  { letter: "M", day: "Monday", phase: "Empathize", color: "#F26D5B" },
-  { letter: "T", day: "Tuesday", phase: "Define", color: "#F2A93B" },
-  { letter: "W", day: "Wednesday", phase: "Ideate", color: "#2FA39B" },
-  { letter: "T", day: "Thursday", phase: "Prototype", color: "#5B5BD6" },
-  { letter: "F", day: "Friday", phase: "Test", color: "#8B3E8F" },
+  { letter: "M", day: "Monday", phase: "Empathize", color: "#FF6A5B" },
+  { letter: "T", day: "Tuesday", phase: "Define", color: "#FFB13F" },
+  { letter: "W", day: "Wednesday", phase: "Ideate", color: "#00B4A6" },
+  { letter: "T", day: "Thursday", phase: "Prototype", color: "#2F6FD0" },
+  { letter: "F", day: "Friday", phase: "Test", color: "#6B2FB5" },
 ] as const
 
 /** 36 a year across 13 grades — the number the page puts on the masthead. */

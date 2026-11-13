@@ -20,16 +20,16 @@ import { LESSONS, SECTIONS, SKILL_TOTAL } from "./lessons-data";
 const STORAGE_KEY = "basicReading.taught.v1";
 
 /** The road map's own palette, kept from the design. */
-const NAVY = "#2C4F74";
-const GOLD = "#D8A846";
-const BLUE = "#B2C5CB";
-const PINK = "#E8BDB3";
-const CREAM = "#FAF7F2";
-const INK = "#24303D";
-const MUTED = "#6B7480";
-const RULE = "#E4DED4";
-const BRASS = "#B08A2E";
-const GREEN = "#4E7A44";
+const NAVY = "#2F6FD0";
+const GOLD = "#FFB13F";
+const BLUE = "#E6F8F6";
+const PINK = "#FFF0EC";
+const CREAM = "#F7F6F4";
+const INK = "#111111";
+const MUTED = "#444444";
+const RULE = "#F2F2F2";
+const BRASS = "#C0432F";
+const GREEN = "#00756C";
 
 /** Each material type gets its own colour, so the mix is readable at a glance. */
 const LINK_STYLE: Record<string, [string, string]> = {
@@ -38,7 +38,7 @@ const LINK_STYLE: Record<string, [string, string]> = {
   Slides: [GOLD, INK],
   Maze: [PINK, INK],
   Workbook: [GREEN, "#FFFFFF"],
-  "Workbook key": ["#EDE7DC", INK],
+  "Workbook key": ["#F2F2F2", INK],
 };
 
 /**
@@ -279,8 +279,8 @@ function ReadingFiler() {
                   <div
                     key={item.id}
                     style={{
-                      background: on ? "#F4F7F3" : "#FFFFFF",
-                      border: `3px solid ${on ? "#C3D6BD" : RULE}`,
+                      background: on ? "#F7F6F4" : "#FFFFFF",
+                      border: `3px solid ${on ? "#E6F8F6" : RULE}`,
                       borderRadius: 14,
                       padding: "15px 17px",
                       display: "flex",
