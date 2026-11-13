@@ -2685,5 +2685,536 @@
    }
   ],
   "note": "Paragraph F turns the standard into a habit, i.e. ask \"not what the sidebar says but why it is a sidebar.\" That question works on any text with a box in it."
+ },
+ {
+  "id": "g6-26",
+  "grade": 6,
+  "n": 26,
+  "title": "Who Wrote the Brochure",
+  "standard": "RI.6.6",
+  "standard_text": "Standard: Determine an author's point of view or purpose in a text and explain how it is conveyed in the text.\n Spiral: RI.6.1 citing evidence · RI.6.4 word meaning · RI.6.8 claims and evidence · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1010,
+   "words": 199,
+   "labelled_words": 199,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A national park brochure and a resort brochure for the same valley can both be accurate and leave opposite impressions. Neither has to lie to do it, and neither usually does."
+    },
+    {
+     "label": "B",
+     "text": "Start with who paid. The park service brochure is funded by an agency whose job is protecting the place and whose budget depends on visitors behaving. The resort's is funded by somebody selling rooms."
+    },
+    {
+     "label": "C",
+     "text": "The park brochure warns. It names the elevation, the afternoon storms, the distance to the nearest water, and the two trails that have killed people. Warning you is part of its purpose."
+    },
+    {
+     "label": "D",
+     "text": "The resort brochure photographs the same trail in good light and does not mention the storms. Everything in it is true, and the storms are missing, and that absence is the point."
+    },
+    {
+     "label": "E",
+     "text": "Word choice carries the rest. One says rugged and remote; the other says secluded and unspoiled. They are describing the same emptiness and asking you to feel differently about it."
+    },
+    {
+     "label": "F",
+     "text": "So the question is not which brochure is honest. Both can be. It is what each one needs you to do after reading it — stay safe, or book a room — and every choice in it follows from that."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 790,
+   "words": 141,
+   "labelled_words": 141,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A park brochure and a resort brochure can describe the same valley. Both can be accurate. They leave opposite impressions. Neither has to lie to do it."
+    },
+    {
+     "label": "B",
+     "text": "Start with who paid. The park service protects the place. Its budget depends on visitors behaving. The resort is selling rooms."
+    },
+    {
+     "label": "C",
+     "text": "The park brochure warns. It gives the elevation. It gives the afternoon storms. It names two trails that have killed people."
+    },
+    {
+     "label": "D",
+     "text": "The resort brochure shows the same trail in good light. It does not mention the storms. Everything in it is true. The storms are missing."
+    },
+    {
+     "label": "E",
+     "text": "Word choice does the rest. One says rugged and remote. The other says secluded and unspoiled. The emptiness is the same."
+    },
+    {
+     "label": "F",
+     "text": "So ask what each one needs you to do after you read it. Stay safe, or book a room. Every choice in it follows from that."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Why can both brochures be accurate and still leave opposite impressions?",
+    "a": "Everything in the resort brochure is true and the storms are missing, so the absence does the work rather than a lie."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. who paid) and paragraph E (i.e. word choice).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how two accurate brochures about the same place can differ.",
+    "a": "The park service brochure warns because its purpose is keeping visitors safe, naming the elevation, the storms and the trails that have killed people. The resort brochure photographs the same trail in good light and leaves the storms out. Word choice carries the rest, and both follow from what each one needs the reader to do."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "purpose: what a text is trying to get the reader to think or do.\nomission: something true that has been left out, which can shape a reader as much as a claim.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between who paid for a brochure and what it leaves out.",
+    "a": "The resort's brochure is funded by somebody selling rooms, so it does not mention the storms, while the park service brochure is funded by an agency whose job is protecting the place and warning you is part of its purpose."
+   }
+  ],
+  "note": "Paragraph E is the cleanest pair of synonyms students will meet all year, i.e. \"rugged and remote\" against \"secluded and unspoiled.\" Same fact, opposite feeling."
+ },
+ {
+  "id": "g6-27",
+  "grade": 6,
+  "n": 27,
+  "title": "The Scientist and the Press Release",
+  "standard": "RI.6.6",
+  "standard_text": "Standard: Determine an author's point of view or purpose in a text and explain how it is conveyed in the text.\n Spiral: RI.6.1 citing evidence · RI.6.4 word meaning · RI.6.8 claims and evidence · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1040,
+   "words": 221,
+   "labelled_words": 221,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A study is published, a university writes a press release about it, and a news site writes a story from the release. By the end of that chain the claim is often larger than the study."
+    },
+    {
+     "label": "B",
+     "text": "The study is written to be careful. It says that an association was observed in a sample of a particular size, under particular conditions, and that further work is needed."
+    },
+    {
+     "label": "C",
+     "text": "The press release is written to be noticed. It is produced by a communications office whose purpose is attention for the university, and its first sentence usually drops the conditions."
+    },
+    {
+     "label": "D",
+     "text": "Researchers do not always see it before it goes out, and some have publicly objected to the version of their own work that ended up in the headline."
+    },
+    {
+     "label": "E",
+     "text": "The news story then works from the release rather than the paper. Studies of this chain have found that most of the exaggeration in health reporting is already present in the release, not added by the journalist."
+    },
+    {
+     "label": "F",
+     "text": "The tells are findable. A study says may be associated with; a release says could help prevent; a headline says prevents. Each step drops a hedge and nobody writes anything untrue."
+    },
+    {
+     "label": "G",
+     "text": "So read in the other direction. Find the study, read what it says it measured and in how many people, and compare that to the sentence that reached you."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 820,
+   "words": 171,
+   "labelled_words": 171,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A study is published. A university writes a press release. A news site writes a story from the release. By the end the claim is often larger."
+    },
+    {
+     "label": "B",
+     "text": "The study is careful. It says an association was seen in a sample of one size. It says the conditions were particular. It says more work is needed."
+    },
+    {
+     "label": "C",
+     "text": "The press release is written to be noticed. A communications office produces it. Its job is attention for the university. The first sentence usually drops the conditions."
+    },
+    {
+     "label": "D",
+     "text": "Researchers do not always see it first. Some have objected in public to the version of their own work in the headline."
+    },
+    {
+     "label": "E",
+     "text": "The news story works from the release, not the paper. Studies of this chain found most of the exaggeration is already in the release."
+    },
+    {
+     "label": "F",
+     "text": "The tells are findable. A study says may be associated with. A release says could help prevent. A headline says prevents."
+    },
+    {
+     "label": "G",
+     "text": "So read backwards. Find the study. Read what it measured and in how many people. Compare that to the sentence you saw."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "Where does most of the exaggeration in health reporting come from?",
+    "a": "Studies of this chain have found that most of the exaggeration is already present in the release, not added by the journalist."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. who writes the release) and paragraph F (i.e. the dropped hedges).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize how a careful study becomes an overstated headline.",
+    "a": "The study reports an association in a particular sample under particular conditions. A university communications office writes a release to attract attention and drops the conditions, often without the researchers seeing it. The news story works from the release rather than the paper, so each step removes a hedge without anybody writing something untrue."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "hedge: a word that limits a claim, such as may or associated with.\npress release: an announcement written by an organization's own communications office.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the purpose of a communications office and the first sentence of a release.",
+    "a": "Its purpose is attention for the university, so the first sentence usually drops the conditions the study was careful to state."
+   }
+  ],
+  "note": "Paragraph F is a three-step ladder worth putting on the board, i.e. \"may be associated with\" to \"could help prevent\" to \"prevents.\""
+ },
+ {
+  "id": "g6-28",
+  "grade": 6,
+  "n": 28,
+  "title": "A Letter to the Editor About the Dam",
+  "standard": "RI.6.6",
+  "standard_text": "Standard: Determine an author's point of view or purpose in a text and explain how it is conveyed in the text.\n Spiral: RI.6.1 citing evidence · RI.6.4 word meaning · RI.6.8 claims and evidence · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1020,
+   "words": 203,
+   "labelled_words": 203,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A letter in a small-town paper argues that the old dam should stay. It runs four hundred words and never says what the writer does for a living. It is signed with a name and a street."
+    },
+    {
+     "label": "B",
+     "text": "The argument is about memory. The writer swam in that reservoir as a child, names three families who did the same, and asks what the town will be without it."
+    },
+    {
+     "label": "C",
+     "text": "Not one sentence addresses the engineering report. The report says the spillway has failed inspection twice, and the letter does not mention a spillway at all."
+    },
+    {
+     "label": "D",
+     "text": "That silence is the strongest clue to purpose. A writer who wanted to win on the merits would take on the report; a writer who wants the reader to feel something will stay where the feeling is."
+    },
+    {
+     "label": "E",
+     "text": "It can still be worth reading. What the town loses is real, and it is a thing the engineering report does not measure and was never meant to."
+    },
+    {
+     "label": "F",
+     "text": "So hold both. The letter is evidence about what people value and no evidence at all about whether the dam is safe. Treating it as either one alone gets the decision wrong, and only one of the two questions is one an engineer can answer."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 800,
+   "words": 171,
+   "labelled_words": 171,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A letter in a small-town paper says the old dam should stay. It runs four hundred words. It never says what the writer does for a living. It is signed with a name and a street."
+    },
+    {
+     "label": "B",
+     "text": "The argument is about memory. The writer swam in that reservoir as a child. The letter names three families who did the same. It asks what the town will be without it."
+    },
+    {
+     "label": "C",
+     "text": "No sentence addresses the engineering report. The report says the spillway failed inspection twice. The letter never mentions a spillway."
+    },
+    {
+     "label": "D",
+     "text": "That silence is the best clue to purpose. A writer who wanted to win on the merits would take on the report. A writer who wants you to feel something stays where the feeling is."
+    },
+    {
+     "label": "E",
+     "text": "It can still be worth reading. What the town loses is real. The engineering report does not measure that."
+    },
+    {
+     "label": "F",
+     "text": "So hold both. The letter shows what people value. It shows nothing about whether the dam is safe. Only one of those is a question an engineer can answer."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does the letter never mention?",
+    "a": "It never mentions the spillway, although the engineering report says the spillway has failed inspection twice."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph D (i.e. what the silence tells you) and paragraph E (i.e. what the letter is still good for).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what the letter argues and what it leaves out.",
+    "a": "It argues that the old dam should stay on the grounds of memory, naming families who swam in the reservoir and asking what the town will be without it. It never addresses the engineering report or mentions the spillway that has failed inspection twice, so it is evidence about what people value and none about whether the dam is safe."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "spillway: the channel that lets water past a dam safely.\nmerits: the facts of a case, as opposed to how people feel about it.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between what the letter avoids and what the writer wants the reader to feel.",
+    "a": "A writer who wanted to win on the merits would take on the report, and a writer who wants the reader to feel something will stay where the feeling is, which is why the letter never mentions a spillway."
+   }
+  ],
+  "note": "Paragraph E keeps this honest. The letter is weak evidence about safety and real evidence about value, and students should be able to say both."
+ },
+ {
+  "id": "g6-29",
+  "grade": 6,
+  "n": 29,
+  "title": "Why the Museum Label Says Probably",
+  "standard": "RI.6.6",
+  "standard_text": "Standard: Determine an author's point of view or purpose in a text and explain how it is conveyed in the text.\n Spiral: RI.6.1 citing evidence · RI.6.4 word meaning · RI.6.8 claims and evidence · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1030,
+   "words": 198,
+   "labelled_words": 198,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A museum label is about forty words long and every one of them has been argued over. The hedges in it are not caution for its own sake. They are a record of how much is actually known."
+    },
+    {
+     "label": "B",
+     "text": "Probably a burial site means the objects were found arranged the way burials usually are, and no body survived. Ritual object means nobody knows what it was for."
+    },
+    {
+     "label": "C",
+     "text": "Attributed to means the museum is not certain who made it. Circle of means somebody in that workshop. After means a later copy. Each is a different distance from the artist's own hand."
+    },
+    {
+     "label": "D",
+     "text": "Date ranges work the same way. 1480 to 1520 is not vagueness; it is the span the evidence allows, and narrowing it would be claiming more than the museum can support."
+    },
+    {
+     "label": "E",
+     "text": "The labels also record how an object arrived. Acquired in 1897 and collected during the expedition are doing different work, and some museums now say removed from, which is a sentence about a dispute."
+    },
+    {
+     "label": "F",
+     "text": "So read the hedges as the honest part. A label with no qualifiers anywhere is either very well evidenced or written by somebody who has stopped distinguishing what is known from what is assumed."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 810,
+   "words": 155,
+   "labelled_words": 155,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A museum label is about forty words long. Every word has been argued over. The hedges are not caution for its own sake. They record how much is known."
+    },
+    {
+     "label": "B",
+     "text": "Probably a burial site means the objects lay the way burials usually do. It also means no body survived. Ritual object means nobody knows what it was for."
+    },
+    {
+     "label": "C",
+     "text": "Attributed to means the museum is not sure who made it. Circle of means somebody in that workshop. After means a later copy."
+    },
+    {
+     "label": "D",
+     "text": "Date ranges work the same way. 1480 to 1520 is not vagueness. It is the span the evidence allows. Narrowing it would claim too much."
+    },
+    {
+     "label": "E",
+     "text": "Labels also record how an object arrived. Acquired in 1897 and collected during the expedition do different work. Some museums now say removed from."
+    },
+    {
+     "label": "F",
+     "text": "So read the hedges as the honest part. A label with no qualifiers is either very well evidenced or written by somebody who has stopped checking."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "What does a date range like 1480 to 1520 on a label mean?",
+    "a": "It is not vagueness; it is the span the evidence allows, and narrowing it would be claiming more than the museum can support."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph C (i.e. attributed to, circle of and after) and paragraph E (i.e. how an object arrived).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize what the hedges on a museum label are doing.",
+    "a": "They record how much is actually known. Probably a burial site means the arrangement looked like a burial and no body survived, ritual object means nobody knows what it was for, and attributed to, circle of and after each mark a different distance from the artist's hand. Date ranges give the span the evidence allows."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "attributed to: assigned to a maker the museum is not certain about.\nqualifier: a word that limits a claim, such as probably or circle of.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between a label's wording and what the museum can support.",
+    "a": "Narrowing a date range would be claiming more than the museum can support, so the span the evidence allows is what gets printed."
+   }
+  ],
+  "note": "Paragraph E is the live one, i.e. \"collected during the expedition\" against \"removed from.\" Those are two accounts of the same event."
+ },
+ {
+  "id": "g6-30",
+  "grade": 6,
+  "n": 30,
+  "title": "The Company's Report on the River",
+  "standard": "RI.6.6",
+  "standard_text": "Standard: Determine an author's point of view or purpose in a text and explain how it is conveyed in the text.\n Spiral: RI.6.1 citing evidence · RI.6.4 word meaning · RI.6.8 claims and evidence · RI.6.10 comprehension\n Lower range: LL 770 – 870",
+  "higher": {
+   "lexile": 1050,
+   "words": 229,
+   "labelled_words": 229,
+   "paras": [
+    {
+     "label": "A",
+     "text": "When a plant is accused of polluting a river, three reports usually appear. The company writes one, the state agency writes one, and a university lab writes one, and all three may use the same samples."
+    },
+    {
+     "label": "B",
+     "text": "The company's report is not required to lie and generally does not. It selects. It reports the readings downstream of the outfall after the spring melt, when the river is highest and anything in it is most dilute."
+    },
+    {
+     "label": "C",
+     "text": "It also chooses the comparison. Measured against the legal limit, the number passes. Measured against the river above the plant, the same number is eleven times higher."
+    },
+    {
+     "label": "D",
+     "text": "The agency report is bound by a procedure, which is its strength and its limit. It tests what the rules say to test, on the schedule the rules set, which a plant can plan around."
+    },
+    {
+     "label": "E",
+     "text": "The university lab has the most freedom and the least power. It can sample where it likes and publish what it finds, and it cannot require anybody to do anything about it."
+    },
+    {
+     "label": "F",
+     "text": "Who funded each one is printed somewhere in all three, usually near the back. It does not tell you which is wrong. It tells you which questions each was built to answer."
+    },
+    {
+     "label": "G",
+     "text": "So compare the methods sections before the conclusions. Where they sampled, when, and what they compared it to will explain most of the disagreement before you reach anybody's opinion."
+    }
+   ]
+  },
+  "lower": {
+   "lexile": 830,
+   "words": 190,
+   "labelled_words": 190,
+   "paras": [
+    {
+     "label": "A",
+     "text": "A plant is accused of polluting a river. Three reports usually appear. The company writes one. The state agency writes one. A university lab writes one. All three may use the same samples."
+    },
+    {
+     "label": "B",
+     "text": "The company's report does not have to lie. It selects. It reports readings downstream after the spring melt. The river is highest then. Anything in it is most dilute."
+    },
+    {
+     "label": "C",
+     "text": "It also picks the comparison. Against the legal limit, the number passes. Against the river above the plant, the same number is eleven times higher."
+    },
+    {
+     "label": "D",
+     "text": "The agency report follows a procedure. That is its strength and its limit. It tests what the rules say to test. A plant can plan around the schedule."
+    },
+    {
+     "label": "E",
+     "text": "The university lab has the most freedom and the least power. It can sample where it likes. It cannot make anybody act on what it finds."
+    },
+    {
+     "label": "F",
+     "text": "All three print who funded them, usually near the back. That does not tell you which is wrong. It tells you what each was built to answer."
+    },
+    {
+     "label": "G",
+     "text": "So compare the methods before the conclusions. Where they sampled, when, and what they compared it to explains most of the disagreement."
+    }
+   ]
+  },
+  "questions": [
+   {
+    "n": 1,
+    "kind": "main idea/detail",
+    "q": "How can the same reading both pass and fail?",
+    "a": "Measured against the legal limit the number passes, and measured against the river above the plant the same number is eleven times higher."
+   },
+   {
+    "n": 2,
+    "kind": "paragraph focus",
+    "q": "Paragraph B (i.e. when the company sampled) and paragraph C (i.e. what it compared the number to).",
+    "a": ""
+   },
+   {
+    "n": 3,
+    "kind": "summarize",
+    "q": "Summarize why three reports using the same samples can disagree.",
+    "a": "The company selects when and where to sample and which comparison to make, so its readings come from the most dilute moment and are measured against the legal limit. The agency follows a fixed procedure a plant can plan around. The university lab can sample freely but cannot require anything, so the disagreement sits in the methods."
+   },
+   {
+    "n": 4,
+    "kind": "vocabulary",
+    "q": "outfall: the point where a pipe discharges into a river.\ndilute: thinned out, so the same amount of a substance reads lower.",
+    "a": ""
+   },
+   {
+    "n": 5,
+    "kind": "connection",
+    "q": "Describe the connection between the spring melt and the company's numbers.",
+    "a": "It reports the readings after the spring melt, when the river is highest and anything in it is most dilute, which makes the numbers read lower."
+   }
+  ],
+  "note": "Paragraph F is the move to teach, i.e. funding \"does not tell you which is wrong, it tells you which questions each was built to answer.\" That is RI.6.6 without the cynicism."
  }
 ]
