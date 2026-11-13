@@ -24,6 +24,7 @@ const MY = JSON.parse(readFileSync("scripts/reading-mysteries.json", "utf8")).ca
 const AR = JSON.parse(readFileSync("scripts/reading-articles.json", "utf8")).articles;
 const MYC = JSON.parse(readFileSync("scripts/reading-mystery-coach.json", "utf8")).lines.join("\n");
 const ARC = JSON.parse(readFileSync("scripts/reading-article-coach.json", "utf8")).lines.join("\n");
+const RT = JSON.parse(readFileSync("scripts/reading-read-think.json", "utf8"));
 
 // Brand, from the Upshift Learning design system.
 const C = {
@@ -39,6 +40,11 @@ const C = {
   white: "rgb(255,255,255)",
   plum: "rgb(179,51,110)",
   blue: "rgb(47,111,208)",
+  // The dark end of each ramp. The brand hues fail contrast for text, so
+  // anything carrying meaning -- a paragraph letter, a band label -- uses these.
+  coralDark: "rgb(192,67,47)",
+  lavenderDark: "rgb(107,47,181)",
+  tealDark: "rgb(0,117,108)",
 };
 
 const data = {
@@ -76,10 +82,20 @@ const html = `<!doctype html>
 body{margin:0;background:${C.paper};color:${C.ink};
   font-family:Inter,system-ui,sans-serif;line-height:1.6}
 .bar{height:4px;background:linear-gradient(135deg,${C.coral},${C.pink},${C.lavender},${C.teal})}
-main{max-width:1100px;margin:0 auto;padding:28px 5% 80px}
+main{max-width:880px;margin:0 auto;padding:32px 5% 80px}
+/* The measure. Running text was set across the full column, about 105
+   characters a line; comfortable measure is 55-75, and past that the eye
+   loses the line on the return sweep. */
+.reading{max-width:66ch;font-size:18px;line-height:1.72;text-wrap:pretty}
+.band{border-top:1px solid ${C.line};margin:22px 0 0;padding-top:20px}
+.band.first{border-top:none;margin:16px 0 0;padding-top:0}
+.band > .eyebrow{font-size:11px;margin:0 0 10px}
+.kind{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  color:${C.mid};background:${C.panel};border:1px solid ${C.line};border-radius:100px;
+  padding:2px 8px;display:inline-block;margin:0 0 5px;white-space:nowrap}
 h1{font-family:Poppins,Inter,sans-serif;font-size:40px;font-weight:900;
   letter-spacing:-1px;margin:0 0 4px;line-height:1.1}
-.sub{color:${C.mid};margin:0 0 22px;font-size:17px}
+.sub{color:${C.mid};margin:0 0 24px;font-size:17px;max-width:60ch}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   color:${C.mid};margin:0 0 6px}
 .tabs{display:flex;gap:8px;margin:0 0 18px;flex-wrap:wrap}
@@ -89,31 +105,59 @@ h1{font-family:Poppins,Inter,sans-serif;font-size:40px;font-weight:900;
 .tab[aria-selected="true"]{background:${C.ink};color:${C.white}}
 .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 16px}
 select{font-family:Inter,sans-serif;font-size:14px;padding:9px 12px;border-radius:12px;
-  border:1.5px solid rgb(201,211,196);background:${C.white};color:${C.ink};max-width:100%}
+  border:1.5px solid ${C.line};background:${C.white};color:${C.ink};max-width:100%}
 .pill{font-family:Inter,sans-serif;font-size:13px;font-weight:700;border-radius:100px;
   padding:7px 16px;cursor:pointer;border:1.5px solid ${C.ink};background:${C.white};color:${C.ink}}
 .pill[aria-pressed="true"]{background:${C.ink};color:${C.white}}
 .card{background:${C.white};border:1px solid ${C.line};border-radius:20px;padding:0;
   overflow:hidden;margin:0 0 18px}
-.card .top{height:4px;background:linear-gradient(135deg,${C.coral},${C.pink},${C.lavender},${C.teal})}
-.card .in{padding:20px 24px 24px}
+/* One flat accent, not a second copy of the page's gradient bar forty pixels
+   above it. The colour also says which tab you are on. */
+.card .top{height:4px;background:${C.lavenderDark}}
+#pane-ar .card .top{background:${C.tealDark}}
+#pane-my .band > .eyebrow{color:${C.lavenderDark}}
+#pane-ar .band > .eyebrow{color:${C.tealDark}}
+.card .in{padding:22px 26px 26px}
 .meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
-h2{font-family:Poppins,Inter,sans-serif;font-size:26px;font-weight:800;margin:2px 0 10px;
-  letter-spacing:-.4px;line-height:1.2}
-.story{font-size:17px;line-height:1.75;margin:0 0 16px}
-.para{display:flex;gap:10px;margin:0 0 12px;font-size:16px;line-height:1.7}
-.para b{color:${C.blue};flex:0 0 auto}
-.q{font-weight:700;margin:14px 0 6px;font-size:15px}
-ul{margin:6px 0 14px;padding-left:22px}li{margin:0 0 5px}
+h2{font-family:Poppins,Inter,sans-serif;font-size:30px;font-weight:800;margin:4px 0 2px;
+  letter-spacing:-.6px;line-height:1.15}
+.story{font-size:18px;line-height:1.72;margin:0;max-width:66ch;text-wrap:pretty}
+.para{display:flex;gap:14px;margin:0 0 16px}
+/* Was blue, the one colour on the page that is not ours. */
+.para b{color:${C.coralDark};flex:0 0 auto;width:1.1em}
+.q{font-weight:700;margin:0 0 14px;font-size:18px}
+ul{margin:0;padding-left:0;list-style:none}li{margin:0 0 10px}
 .answer{background:${C.panel};border-radius:12px;padding:12px 16px;margin:12px 0 0;font-size:15px}
 .answer[hidden]{display:none}
-.btns{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 0}
-.note{font-size:13px;color:${C.mid};margin:6px 0 0}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 0;padding:16px 0 0;
+  border-top:1px solid ${C.line};align-items:center}
+.pill.primary{background:${C.ink};color:${C.white};padding:9px 20px}
+/* The answer key is the one control a teacher must not press while
+   projecting, and it used to look like the three they press all day. */
+.pill.teacher{border:1.5px dashed ${C.mid};color:${C.mid};margin-left:auto}
+.note{font-size:13px;color:${C.mid};margin:6px 0 0;max-width:66ch}
+/* Read + Think: the same choice board for every article, so it lives in the
+   page rather than being redrawn on each pick. Collapsed, because a class
+   reading the text does not need eighteen extra tasks in the way. */
+.rt{margin:0 0 18px}
+.rt > summary{list-style:none;display:inline-block}
+.rt-board{background:${C.white};border:1px solid ${C.line};border-radius:18px;
+  padding:20px 22px;margin:12px 0 0}
+.rt-row{display:grid;grid-template-columns:minmax(110px,150px) repeat(3,1fr);gap:10px;
+  margin:0 0 10px}
+.rt-level{border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;
+  justify-content:center}
+.rt-level b{font-size:16px;line-height:1.2}
+.rt-level span{font-size:13px;color:${C.mid}}
+.rt-task{background:${C.paper};border:1px solid ${C.line};border-radius:14px;padding:12px 14px}
+.rt-task b{display:block;font-size:15px;line-height:1.3;margin:0 0 3px}
+.rt-task span{font-size:13px;color:${C.mid};line-height:1.45}
+@media (max-width:720px){.rt-row{grid-template-columns:1fr}}
 pre{white-space:pre-wrap;font-family:ui-monospace,Menlo,monospace;font-size:12px;
   line-height:1.5;background:${C.panel};border-radius:12px;padding:14px;max-height:360px;
   overflow:auto;margin:14px 0 0}
 pre[hidden]{display:none}
-.task{border-top:1px solid ${C.line};margin:14px 0 0;padding:12px 0 0;font-size:15px}
+.task{font-size:18px;line-height:1.72;max-width:66ch;text-wrap:pretty}
 @media (max-width:640px){h1{font-size:30px}.card .in{padding:16px}}
 </style></head>
 <body>
@@ -152,6 +196,21 @@ pre[hidden]{display:none}
       <button class="pill" id="ver-hi" aria-pressed="true">Higher Lexile</button>
     </div>
     <div id="out-ar"></div>
+    <details class="rt">
+      <summary class="pill">\u{1F9E0} ${RT.title} \u2014 choice board</summary>
+      <div class="rt-board">
+        <h2 style="margin:0 0 2px">${RT.title}</h2>
+        <p class="sub" style="margin:0 0 16px">${RT.blurb}</p>
+        ${RT.rows.map((row) => `
+        <div class="rt-row">
+          <div class="rt-level" style="background:${row.tint}">
+            <b style="color:${row.ink}">${row.level}</b>
+            <span>${row.verb}</span>
+          </div>
+          ${row.tasks.map((t) => `<div class="rt-task"><b>${t.t}</b><span>${t.d}</span></div>`).join("")}
+        </div>`).join("")}
+      </div>
+    </details>
   </section>
 
   <p class="note">These are not decodable texts. They are written to meaning and reading level
@@ -169,7 +228,7 @@ pre[hidden]{display:none}
     });
   };
   var copyBtn = function (id, label) {
-    return '<button class="pill" data-copy="' + id + '">📋 ' + label + '</button>';
+    return '<button class="pill primary" data-copy="' + id + '">📋 ' + label + '</button>';
   };
 
   /* ---------- mysteries ---------- */
@@ -205,13 +264,20 @@ pre[hidden]{display:none}
       '<div class="meta"><p class="eyebrow" style="margin:0">Mystery \\u00b7 ' + gradeName(c.g) + ' \\u00b7 Week ' + c.week + '</p>' +
       '<p class="eyebrow" style="margin:0">' + esc(c.tag) + "</p></div>" +
       "<h2>" + esc(c.title) + "</h2>" +
-      '<p class="story">' + esc(c.story) + "</p>" +
-      '<p class="q">❓ ' + esc(c.q) + "</p><ul>" +
+      '<div class="band first"><p class="eyebrow">The case</p>' +
+      '<p class="story">' + esc(c.story) + "</p></div>" +
+      '<div class="band"><p class="eyebrow">The question</p>' +
+      '<p class="q">' + esc(c.q) + "</p>" +
+      '<p class="eyebrow" style="margin:0 0 8px">Who could it be?</p>' +
+      '<ul class="reading">' +
       c.sus.map(function (s) { return "<li><b>" + esc(s.who) + "</b> \\u2014 " + esc(s.why) + "</li>"; }).join("") +
-      "</ul>" +
+      "</ul></div>" +
+      '<div class="band"><p class="eyebrow">Then write</p><p class="task">' +
+      "Who did it, and how do you know? Quote the words from the case that prove it, " +
+      "and say what rules each of the others out.</p></div>" +
       '<div class="btns">' + copyBtn("my", "Copy mystery prompt") +
-      '<button class="pill" data-toggle="my-ans">Show answer</button>' +
-      '<button class="pill" data-toggle="my-pre">Show prompt</button></div>' +
+      '<button class="pill" data-toggle="my-pre">Show prompt</button>' +
+      '<button class="pill teacher" data-toggle="my-ans">\\u{1F511} Answers (teacher)</button></div>' +
       '<div class="answer" id="my-ans" hidden><b>Answer:</b> ' + esc(c.ans) +
       "<br><b>Key proof:</b><ul>" + c.proof.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") +
       "</ul>" + (c.clears.length ? "<b>Clears:</b><ul>" + c.clears.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + "</ul>" : "") +
@@ -271,14 +337,24 @@ pre[hidden]{display:none}
       '<div class="meta"><p class="eyebrow" style="margin:0">' + esc(a.std) + " \\u00b7 Grade " + a.g + "</p>" +
       '<p class="eyebrow" style="margin:0">Lexile ' + v.lx + " \\u00b7 " + v.w + " words</p></div>" +
       "<h2>" + esc(a.title) + "</h2>" +
+      '<div class="band first"><p class="eyebrow">The text</p><div class="reading">' +
       v.p.map(function (x) { return '<div class="para"><b>' + esc(x[0]) + "</b><div>" + esc(x[1]) + "</div></div>"; }).join("") +
-      '<p class="eyebrow" style="margin:18px 0 2px">Questions</p>' +
-      a.qs.map(function (q) { return '<p class="q" style="font-weight:400">' + q[0] + ". " + esc(q[2]) + "</p>"; }).join("") +
-      '<div class="task"><b>Then write a response to reading.</b> What is the most important idea in ' +
-      "this article, and how do you know? Name the paragraph letter for every piece of evidence.</div>" +
+      "</div></div>" +
+      '<div class="band"><p class="eyebrow">Five questions</p><div class="reading">' +
+      a.qs.map(function (q) {
+        // The number is drawn, the kind is shown, and the newline inside a
+        // vocabulary item is kept: all three were being dropped here.
+        return '<div class="para"><b>' + q[0] + "</b><div>" +
+          '<span class="kind">' + esc(q[1]) + "</span>" +
+          '<div style="white-space:pre-line">' + esc(q[2]) + "</div></div></div>";
+      }).join("") +
+      "</div></div>" +
+      '<div class="band"><p class="eyebrow">Then write</p><p class="task">' +
+      "What is the most important idea in this article, and how do you know? " +
+      "Name the paragraph letter for every piece of evidence.</p></div>" +
       '<div class="btns">' + copyBtn("ar", "Copy article prompt") +
-      '<button class="pill" data-toggle="ar-ans">Show answers</button>' +
-      '<button class="pill" data-toggle="ar-pre">Show prompt</button></div>' +
+      '<button class="pill" data-toggle="ar-pre">Show prompt</button>' +
+      '<button class="pill teacher" data-toggle="ar-ans">\u{1F511} Answers (teacher)</button></div>' +
       '<div class="answer" id="ar-ans" hidden>' +
       a.qs.map(function (q) { return q[3] ? "<p><b>" + q[0] + ".</b> " + esc(q[3]) + "</p>" : ""; }).join("") +
       (a.note ? "<p><i>Teacher note: " + esc(a.note) + "</i></p>" : "") + "</div>" +
