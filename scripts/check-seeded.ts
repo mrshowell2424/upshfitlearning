@@ -36,7 +36,7 @@ const checks: [string, boolean, string][] = [
   ["reading serif applied", html.includes("--read:"), "the --read custom property"],
   ["no dashed borders", !/border:[^;]*dashed/.test(html), "every rule solid"],
   ["articles cover K-6", [0, 1, 2, 3, 4, 5, 6].every((g) => nums(arG).includes(g)), `arG = [${arG}]`],
-  ["mysteries cover K-5", [0, 1, 2, 3, 4, 5].every((g) => nums(myG).includes(g)), `myG = [${myG}]`],
+  ["mysteries cover K-6", [0, 1, 2, 3, 4, 5, 6].every((g) => nums(myG).includes(g)), `myG = [${myG}]`],
   ["grades named, not numbered", !html.includes("'Grade ' + g"), "kindergarten reads K, not Grade 0"],
   ["both selects use gradeName", (html.match(/gradeName\(g\)/g) || []).length >= 2, "articles and mysteries"],
 ];
