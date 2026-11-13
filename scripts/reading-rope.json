@@ -24,8 +24,15 @@
       "half": "language",
       "name": "Background knowledge",
       "what": "What a reader already knows about the thing the text is about. A text about a glacier is harder if you have never heard of one.",
-      "have": [],
-      "gap": "No home on the site yet. The 350 articles build background knowledge by accident — a teacher reading one has no five minutes of \"what do you already know about this\" to run first. This is the biggest hole in the rope."
+      "have": [
+        {
+          "label": "Knowledge Threads",
+          "href": "/science-of-reading/threads",
+          "count": "threads",
+          "blurb": "Every article regrouped by what it is about, each topic running K through 6, with the five minutes to run before you read."
+        }
+      ],
+      "gap": "Thirteen threads out of the articles we already had, which is a view rather than new content. What is still missing is a thread that reaches the younger grades on government and on the people a textbook leaves out — both start at third grade or later."
     },
     {
       "key": "vocabulary",
@@ -48,7 +55,7 @@
       "name": "Language structure",
       "what": "Syntax and grammar: how a sentence is put together, and what the parts of it are doing.",
       "have": [],
-      "gap": "Nothing yet, and the only strand with nothing to build on. Parts of speech, sentence combining and word maps would all be new content rather than a new view of content we already have."
+      "gap": "Nothing yet, but not for want of material. Every article was written at two Lexiles, and the difference between the two is almost entirely sentence structure — 349 of the 350 pairs carry longer sentences on the higher side, and 271 carry fewer of them. That is 350 ready-made sentence-combining lessons sitting in the content already."
     },
     {
       "key": "reasoning",
