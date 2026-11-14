@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
+import { siteOrigin } from "@/lib/utils/site-origin";
 
 /**
  * Built per request, on fetch rather than Node's http module — the same two
@@ -28,6 +29,7 @@ export async function POST(request: NextRequest) {
     }
 
     const stripe = stripeClient();
+    const origin = siteOrigin(request);
 
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
@@ -40,8 +42,8 @@ export async function POST(request: NextRequest) {
       ],
       customer_email: email,
       client_reference_id: userId,
-      success_url: `${process.env.NEXT_PUBLIC_APP_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/pricing`,
+      success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${origin}/pricing`,
       metadata: {
         userId,
       },
@@ -50,8 +52,15 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ sessionId: session.id });
   } catch (error) {
     console.error("Checkout error:", error);
+    // The generic message hid a configuration fault for months: every
+    // failure read the same whether Stripe was down or the return URL was
+    // the word "undefined". The reason goes to the log either way; a
+    // configuration problem is also worth saying out loud, because it is
+    // the operator who can fix it and nobody else will see the log.
+    const reason = error instanceof Error ? error.message : "";
+    const isConfig = /NEXT_PUBLIC_APP_URL|STRIPE_SECRET_KEY|site's address/.test(reason);
     return NextResponse.json(
-      { error: "Failed to create checkout session" },
+      { error: isConfig ? reason : "Failed to create checkout session" },
       { status: 500 }
     );
   }
