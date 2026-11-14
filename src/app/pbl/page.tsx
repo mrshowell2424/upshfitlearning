@@ -24,7 +24,7 @@ import { DESIGN_WEEK_TOTAL } from "@/app/design-thinking/constants";
  * app, so it does not.
  */
 export const metadata = {
-  title: "PBL — Upshift Learning",
+  title: "PBL",
   description:
     "Project-based learning and design thinking: plan a project, or run a design challenge every week of the year.",
 };

@@ -504,7 +504,7 @@ function SignalCard({ s, remove }: { s: Signal; remove: string }) {
 }
 
 export const metadata = {
-  title: "Behavior Strategies · Upshift Learning",
+  title: "Behavior Strategies",
   description:
     "Start from what you are seeing in a student. What it looks like, what is happening inside, what helps in the moment, and what builds the skill over time.",
 };

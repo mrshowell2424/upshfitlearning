@@ -23,7 +23,7 @@ import { PRINCIPLES } from "@/lib/constants/learning-science";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "The learning science behind every lesson — Upshift Learning",
+  title: "The learning science behind every lesson",
   description:
     "The principles every Upshift lesson blueprint is built on, what each one means, and what it looks like in a classroom.",
 };

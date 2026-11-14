@@ -73,6 +73,12 @@ function span(weeks: string): [number, number] {
 
 const TOTAL_WEEKS = Math.max(...EF_YEAR.map((b) => span(b.weeks)[1]));
 
+export const metadata = {
+  title: "The executive function year",
+  description:
+    "Eleven executive function skills across a school year, two minutes a day. The behavior page names the skill under a hard morning; this is the week-by-week plan for building it.",
+};
+
 export default async function Page({ searchParams }: { searchParams: Search }) {
   const sp = await searchParams;
 

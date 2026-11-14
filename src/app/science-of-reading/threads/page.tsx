@@ -103,6 +103,12 @@ function articlesIn(key: string) {
   }));
 }
 
+export const metadata = {
+  title: "Knowledge Threads",
+  description:
+    "A text about a glacier is harder if you have never heard of one. The same articles you already have, grouped by what they are about rather than which standard they teach, so you can see a topic run from kindergarten to sixth grade.",
+};
+
 export default async function Page({ searchParams }: { searchParams: Search }) {
   const sp = await searchParams;
   const asked = one(sp.t);

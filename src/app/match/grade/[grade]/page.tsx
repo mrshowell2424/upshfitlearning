@@ -31,7 +31,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps) {
   const { grade } = await params;
-  return { title: `${gradeLabel(decodeURIComponent(grade))} standards — Upshift Learning` };
+  return { title: `${gradeLabel(decodeURIComponent(grade))} standards` };
 }
 
 export default async function GradeStandardsPage({ params }: PageProps) {

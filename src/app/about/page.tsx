@@ -15,7 +15,7 @@ import { RESOURCE_TOTAL, STANDARD_TOTAL } from "@/lib/constants/totals";
  * skimming for credibility finds it in one pass.
  */
 export const metadata = {
-  title: "About — Upshift Learning",
+  title: "About",
   description:
     "Stephanie Howell is an Intervention Specialist, instructional coach, educational consultant and international speaker, and the person behind Upshift Learning.",
 };

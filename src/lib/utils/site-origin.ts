@@ -55,3 +55,33 @@ export function siteOrigin(request: OriginRequest): string {
       "https://upshiftlearning.org",
   );
 }
+
+/**
+ * The site's own address, for metadata that has to be absolute: Open Graph
+ * images, canonical URLs, the sitemap.
+ *
+ * Same order of trust as siteOrigin above, minus the request -- metadata is
+ * built without one, and in the sitemap's case at build time. The important
+ * difference is that this one never throws. siteOrigin guards a payment
+ * redirect, where a wrong answer sends a paying customer somewhere else and
+ * refusing is the right move. This guards a preview card. A page that fails
+ * to render because its link preview could not be addressed would be a far
+ * worse bug than a link preview with a localhost URL in it, so the last
+ * resort here is a fallback rather than an error.
+ *
+ * On Vercel the platform always sets VERCEL_PROJECT_PRODUCTION_URL, so
+ * production is correct with nothing configured. Set NEXT_PUBLIC_APP_URL to
+ * the custom domain and cards will use that instead of the vercel.app host.
+ */
+export function siteUrl(): string {
+  const configured = process.env.NEXT_PUBLIC_APP_URL?.trim();
+  if (configured && /^https?:\/\//i.test(configured)) {
+    return configured.replace(/\/+$/, "");
+  }
+
+  const vercel =
+    process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
+  if (vercel) return `https://${vercel.replace(/^https?:\/\//i, "").replace(/\/+$/, "")}`;
+
+  return `http://localhost:${process.env.PORT || 3000}`;
+}

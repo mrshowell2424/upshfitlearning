@@ -33,7 +33,7 @@ import SENTENCE_LAB from "@/../scripts/reading-sentence-lab.json";
  * in its own tab rather than being rebuilt here.
  */
 export const metadata = {
-  title: "Science of Reading — Upshift Learning",
+  title: "Science of Reading",
   description:
     "Build a lesson from any skill, open the Basic Reading workbooks, or review an OG concept pack.",
 };

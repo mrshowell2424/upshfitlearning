@@ -28,6 +28,12 @@ export const dynamic = 'force-dynamic'
  * need to be visible without an account. Only the Google Classroom link is
  * member-only, gated inside AnnouncedCourses.
  */
+export const metadata = {
+  title: "Courses",
+  description:
+    "Teacher PD in five tracks - classroom management, instruction and lesson design, technology and blended learning, book studies, and quick PD.",
+};
+
 export default async function CoursesPage() {
   let courseList: Course[] = []
 

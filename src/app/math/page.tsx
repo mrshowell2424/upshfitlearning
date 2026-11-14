@@ -17,7 +17,7 @@ import { MaterialsPass } from "@/components/shared/MaterialsPass";
  * steps — so it opens in its own tab rather than being rebuilt here.
  */
 export const metadata = {
-  title: "Math — Upshift Learning",
+  title: "Math",
   description:
     "Pick a grade and standard, then run the maths lesson steps in order.",
 };

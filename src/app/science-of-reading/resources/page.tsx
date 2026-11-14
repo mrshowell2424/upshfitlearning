@@ -441,6 +441,12 @@ function ReadThink() {
   );
 }
 
+export const metadata = {
+  title: "Reading Resources",
+  description:
+    "Extra texts for comprehension and writing. Pick one, read it together, answer the questions from the text, then write the response - with a teacher answer key and a prompt you can hand to a student-safe AI space.",
+};
+
 export default async function Page({ searchParams }: { searchParams: Search }) {
   const sp = await searchParams;
   const tab = one(sp.tab) === "ar" ? "ar" : "my";

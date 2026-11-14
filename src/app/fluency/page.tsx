@@ -105,7 +105,7 @@ function Band({
 }
 
 export const metadata = {
-  title: "Fluency · Upshift Learning",
+  title: "Fluency",
   description:
     "A one-minute read on any Upshift passage, with words correct per minute, accuracy and a prosody rating.",
 };

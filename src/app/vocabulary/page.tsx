@@ -124,7 +124,7 @@ function fill(text: string, w: Word) {
 }
 
 export const metadata = {
-  title: "Teach a Word · Upshift Learning",
+  title: "Teach a Word",
   description:
     "A three-phase vocabulary routine — say it, use it, write it — on every word in the Upshift article library.",
 };

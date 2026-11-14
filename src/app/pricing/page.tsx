@@ -59,6 +59,12 @@ const CHECKOUT_URL_FALLBACK = 'https://buy.stripe.com/test_fZucMZ2t5bAG5Oi3x4f3a
  */
 const CHECKOUT_URL_ANNUAL_FALLBACK = undefined
 
+export const metadata = {
+  title: "Pricing",
+  description:
+    "The lesson blueprint for every standard is free, and always will be. All-Access opens the deconstruction, the matched resources and the courses.",
+};
+
 export default function PricingPage() {
   /**
    * Nothing is for sale at the moment, so this page is unlinked and anyone

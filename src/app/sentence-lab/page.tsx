@@ -131,6 +131,12 @@ function Key({ children }: { children: React.ReactNode }) {
   );
 }
 
+export const metadata = {
+  title: "Sentence Lab",
+  description:
+    "Nine minutes on how a sentence is built, using sentences from an article your class has read. Every article exists at two levels, so the answer key is not an opinion - it is the article.",
+};
+
 export default async function Page({ searchParams }: { searchParams: Search }) {
   const sp = await searchParams;
 
