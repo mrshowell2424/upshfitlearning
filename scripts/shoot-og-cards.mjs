@@ -129,6 +129,9 @@ const CARDS = [
   { file: "fluency", eyebrow: "Fluency", title: "A one-minute read,\nscored while they read it.",
     line: "Words correct per minute, accuracy and a prosody rating on any Upshift passage.", accent: BRAND.teal },
 
+  { file: "writing", eyebrow: "Opinion Writing", title: "Argue from a text\nyou can read.",
+    line: "Sixty-two prompts, each with a passage written at the pattern you are teaching.", accent: BRAND.coral },
+
   { file: "morphology", eyebrow: "Word Parts", title: "Read words nobody\ntaught you.",
     line: "Prefixes, suffixes and roots, on words your class has already met in an article.", accent: BRAND.teal },
 

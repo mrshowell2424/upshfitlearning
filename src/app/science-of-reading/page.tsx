@@ -14,6 +14,7 @@ import SIGHT_WORDS from "@/../scripts/reading-sight-words.json";
 import SKILL_SPLITS from "@/../scripts/reading-skill-splits.json";
 import THREADS from "@/../scripts/reading-threads.json";
 import MORPH from "@/../scripts/reading-morphology.json";
+import WRITING_SETS_DATA from "@/../scripts/reading-writing-passages.json";
 import SENTENCE_LAB from "@/../scripts/reading-sentence-lab.json";
 
 /**
@@ -77,6 +78,8 @@ const VOCABULARY = "/vocabulary";
 const THREADS_PAGE = "/science-of-reading/threads";
 const SENTENCE_LAB_PAGE = "/sentence-lab";
 const MORPHOLOGY_PAGE = "/morphology";
+const WRITING_PAGE = "/writing";
+const WRITING_SETS = Object.keys(WRITING_SETS_DATA).length;
 const MORPH_WORDS = MORPH.morphemes.reduce((s, m) => s + m.words.length, 0);
 // Counted from the data the page is generated from, so the blurb cannot
 // drift away from what is actually on it.
@@ -471,6 +474,18 @@ function Hub() {
               // teacher picks from before any single word.
               focus: "0%",
               alt: "The Word Parts page: a three-step routine, rows of prefix, suffix and root pills, and one part opened with its words and the article sentence each came from.",
+            },
+            {
+              href: WRITING_PAGE,
+              eyebrow: "ARGUE FROM A TEXT",
+              title: "Opinion writing",
+              accent: CORAL,
+              accentText: CORAL_TEXT,
+              blurb: `${WRITING_SETS} prompts, each with a passage written at the phonics pattern you are teaching — so the reading is not the obstacle and what you are marking is the thinking.`,
+              preview: "/previews/writing.png",
+              shape: [1200, 1130] as const,
+              focus: "0%",
+              alt: "The Opinion writing page: a question, the decodable passage it is argued from, and the eight-part frame with its sentence starters.",
             },
             {
               href: "/og-packs",

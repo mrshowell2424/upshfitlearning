@@ -9,7 +9,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "typecheck:tests": "tsc --noEmit -p tests/tsconfig.json",
-    "check": "bun scripts/check-articles.mjs && bun scripts/check-mysteries.mjs && bun scripts/check-passages.mjs && bun scripts/check-word-ladders.mjs && bun scripts/check-word-sequence.mjs && bun scripts/check-extra-words.mjs && bun scripts/check-morphology.mjs",
+    "check": "bun scripts/check-articles.mjs && bun scripts/check-mysteries.mjs && bun scripts/check-passages.mjs && bun scripts/check-word-ladders.mjs && bun scripts/check-word-sequence.mjs && bun scripts/check-extra-words.mjs && bun scripts/check-morphology.mjs && bun scripts/check-writing.mjs",
     "check:db": "bun run scripts/check-in-sync.ts && bun run scripts/check-seeded.ts",
     "check:links": "bun scripts/check-links.mjs",
     "check:meta": "bun scripts/check-metadata.mjs",
