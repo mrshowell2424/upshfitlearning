@@ -37,12 +37,81 @@ const sents = (t) =>
 
 const words = (s) => s.split(/\s+/).filter(Boolean).length;
 
+const toks = (s) =>
+  s
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .split(/\s+/)
+    .filter(Boolean);
+
+/**
+ * Words that carry the sentence's content, which is to say everything that
+ * is not grammar. Deliberately a short list: it only has to be good enough
+ * to tell "the same sentence with more in it" from "a different sentence".
+ */
+const STOP = new Set(
+  ("a an and the is are was were be been it its this that these those to of in on at for with " +
+    "as by from or but so not no do does did have has had he she they them his her their you " +
+    "your we our i my if then than there here what when where which who whom how all any each " +
+    "more most other some such only own same too very can will just")
+    .split(" "),
+);
+
+/**
+ * How much of the kernel survives into the longer sentence, as a fraction of
+ * its content words.
+ *
+ * Expansion is found by lining the two versions of a paragraph up sentence
+ * by sentence, which assumes the harder version rewrote each sentence in
+ * place. Sometimes it did not -- it merged two and added a third, and the
+ * paragraph still has the same number of sentences, so the alignment holds
+ * and position three on one side faces something unrelated on the other:
+ *
+ *   They were taught to roll the bristles between their lips.
+ *   A dial has small numbers, and a sharp tip was the only way to fill them.
+ *
+ * That shipped, as an answer key. A key that shows a different sentence is
+ * worse than no exercise at all, so a pair now has to keep most of what it
+ * started with. This is not a demand that nothing changed -- "The fur comes
+ * and goes" becoming "A coat of fur comes and goes with the year" is the
+ * lesson -- only that the sentence is still about what it was about.
+ */
+const kept = (lower, higher) => {
+  const c = toks(lower).filter((w) => !STOP.has(w) && w.length > 1);
+  if (!c.length) return 1;
+  const h = new Set(toks(higher));
+  return c.filter((w) => h.has(w)).length / c.length;
+};
+
+/** Below this, the two sentences are not two versions of each other. */
+const MIN_KEPT = 0.7;
+
 /** How many pairs of each kind to keep. More than this is noise in a lesson. */
 const KEEP_COMBINE = 2;
 const KEEP_EXPAND = 3;
 
-/** Expansion has to be visible to be worth teaching. */
-const MIN_EXPAND_LIFT = 4;
+/**
+ * Expansion has to be visible to be worth teaching -- and visible is a
+ * proportion, not a word count.
+ *
+ * This was a flat four words, which is a different lesson at either end of
+ * the school. Four words on a six-word kindergarten sentence nearly doubles
+ * it; four on an eighteen-word sixth-grade sentence is a rounding error. The
+ * flat rule therefore threw away almost every kindergarten pair -- the K tab
+ * offered 15 of its 50 articles, and the ones it refused looked like this:
+ *
+ *   A bear finds a cave in winter.
+ *   A bear finds a cave or a hole in winter.
+ *
+ * which is exactly the lesson, three words short of qualifying.
+ *
+ * So: at least two words longer, and at least thirty per cent longer. The
+ * floor keeps a one-word swap out, the proportion makes the rule mean the
+ * same thing in every grade. It is stricter than the old one on long
+ * sentences, where a four-word addition genuinely does not read as an
+ * expansion, and those articles keep their combining pairs regardless.
+ */
+const minExpandLift = (kernelWords) => Math.max(2, Math.ceil(0.3 * kernelWords));
 
 const items = [];
 const barren = [];
@@ -62,7 +131,11 @@ for (const a of AR) {
       combine.push({ para: lab, from: ls, to: hs });
     } else if (ls.length === hs.length) {
       for (let i = 0; i < ls.length; i++) {
-        if (ls[i] !== hs[i] && words(hs[i]) >= words(ls[i]) + MIN_EXPAND_LIFT) {
+        if (
+          ls[i] !== hs[i] &&
+          words(hs[i]) - words(ls[i]) >= minExpandLift(words(ls[i])) &&
+          kept(ls[i], hs[i]) >= MIN_KEPT
+        ) {
           expand.push({ para: lab, kernel: ls[i], expanded: hs[i] });
         }
       }
@@ -107,7 +180,13 @@ const withWork = items.filter((i) => i.combine.length || i.expand.length);
  * the Lexile versions towards each other the lessons quietly vanish. Better
  * to fail the build than to serve a page of empty exercises.
  */
-const FLOOR = 0.8;
+/**
+ * Raised from 0.8 when the expansion rule stopped being a flat word count:
+ * coverage went from 299 of 350 to 344, so a floor of 0.8 would no longer
+ * notice a third of the pairs disappearing. This leaves real headroom and
+ * still fails loudly if the two Lexile versions start drifting together.
+ */
+const FLOOR = 0.92;
 const ratio = withWork.length / items.length;
 if (ratio < FLOOR) {
   console.error(
