@@ -1,4 +1,5 @@
 import Header from "@/components/shared/Header";
+import { ogCard, twitterCard } from "@/lib/constants/metadata";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
 import ARTICLES from "@/../scripts/reading-articles.json";
@@ -127,6 +128,8 @@ export const metadata = {
   title: "Teach a Word",
   description:
     "A three-phase vocabulary routine — say it, use it, write it — on every word in the Upshift article library.",
+  openGraph: ogCard("/og/vocabulary.png"),
+  twitter: twitterCard("/og/vocabulary.png"),
 };
 
 export default async function Page({ searchParams }: { searchParams: Search }) {

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ogCard, twitterCard } from "@/lib/constants/metadata";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
@@ -135,6 +136,8 @@ export const metadata = {
   title: "Sentence Lab",
   description:
     "Nine minutes on how a sentence is built, using sentences from an article your class has read. Every article exists at two levels, so the answer key is not an opinion - it is the article.",
+  openGraph: ogCard("/og/sentence-lab.png"),
+  twitter: twitterCard("/og/sentence-lab.png"),
 };
 
 export default async function Page({ searchParams }: { searchParams: Search }) {

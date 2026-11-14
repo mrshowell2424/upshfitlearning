@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ogCard, twitterCard } from "@/lib/constants/metadata";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { SIGNALS, EF, EF_MEANING, strategyIndex, type EFKey, type Signal } from "./signals";
@@ -507,6 +508,8 @@ export const metadata = {
   title: "Behavior Strategies",
   description:
     "Start from what you are seeing in a student. What it looks like, what is happening inside, what helps in the moment, and what builds the skill over time.",
+  openGraph: ogCard("/og/behavior.png"),
+  twitter: twitterCard("/og/behavior.png"),
 };
 
 export default async function Page({ searchParams }: { searchParams: Search }) {

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ogCard, twitterCard } from "@/lib/constants/metadata";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
@@ -107,6 +108,8 @@ export const metadata = {
   title: "Knowledge Threads",
   description:
     "A text about a glacier is harder if you have never heard of one. The same articles you already have, grouped by what they are about rather than which standard they teach, so you can see a topic run from kindergarten to sixth grade.",
+  openGraph: ogCard("/og/science-of-reading.png"),
+  twitter: twitterCard("/og/science-of-reading.png"),
 };
 
 export default async function Page({ searchParams }: { searchParams: Search }) {

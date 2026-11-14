@@ -1,4 +1,5 @@
 import Header from "@/components/shared/Header";
+import { ogCard, twitterCard } from "@/lib/constants/metadata";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
 import { CopyButton } from "./copy-button";
@@ -445,6 +446,8 @@ export const metadata = {
   title: "Reading Resources",
   description:
     "Extra texts for comprehension and writing. Pick one, read it together, answer the questions from the text, then write the response - with a teacher answer key and a prompt you can hand to a student-safe AI space.",
+  openGraph: ogCard("/og/science-of-reading.png"),
+  twitter: twitterCard("/og/science-of-reading.png"),
 };
 
 export default async function Page({ searchParams }: { searchParams: Search }) {

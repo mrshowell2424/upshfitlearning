@@ -1,4 +1,5 @@
 import Header from "@/components/shared/Header";
+import { ogCard, twitterCard } from "@/lib/constants/metadata";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
 import ARTICLES from "@/../scripts/reading-articles.json";
@@ -108,6 +109,8 @@ export const metadata = {
   title: "Fluency",
   description:
     "A one-minute read on any Upshift passage, with words correct per minute, accuracy and a prosody rating.",
+  openGraph: ogCard("/og/fluency.png"),
+  twitter: twitterCard("/og/fluency.png"),
 };
 
 export default async function Page({ searchParams }: { searchParams: Search }) {

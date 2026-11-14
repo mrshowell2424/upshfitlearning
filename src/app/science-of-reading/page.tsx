@@ -1,4 +1,5 @@
 import RESOURCE_COUNTS from "@/../scripts/reading-resources-counts.json";
+import { ogCard, twitterCard } from "@/lib/constants/metadata";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/shared/Header";
@@ -36,6 +37,8 @@ export const metadata = {
   title: "Science of Reading",
   description:
     "Build a lesson from any skill, open the Basic Reading workbooks, or review an OG concept pack.",
+  openGraph: ogCard("/og/science-of-reading.png"),
+  twitter: twitterCard("/og/science-of-reading.png"),
 };
 
 /**

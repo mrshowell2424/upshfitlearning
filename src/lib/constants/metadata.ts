@@ -14,3 +14,28 @@
  * the wrong dash.
  */
 export const TITLE_TEMPLATE = "%s · Upshift Learning";
+
+/** The brand card every page falls back to. */
+export const OG_DEFAULT = "/og/default.png";
+
+/**
+ * A page that sets `openGraph` replaces its parent's rather than merging
+ * into it, so naming an image would quietly drop siteName, type and locale.
+ * This returns the whole object, which is also the only place the card
+ * dimensions are written down.
+ *
+ * Cards are drawn by scripts/shoot-og-cards.mjs and live in public/og.
+ */
+export function ogCard(image: string, type: "website" | "article" = "website") {
+  return {
+    type,
+    siteName: "Upshift Learning",
+    locale: "en_US",
+    images: [{ url: image, width: 1200, height: 630 }],
+  };
+}
+
+/** The Twitter half of the same card. */
+export function twitterCard(image: string) {
+  return { card: "summary_large_image" as const, images: [image] };
+}

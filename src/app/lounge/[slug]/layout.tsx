@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { articles } from "./articles";
+import { OG_DEFAULT, ogCard, twitterCard } from "@/lib/constants/metadata";
 
 /**
  * The article page is a client component and cannot export metadata, so each
@@ -24,7 +25,8 @@ export async function generateMetadata({
   return {
     title: article.title,
     description: opening.length > 300 ? `${opening.slice(0, 297).trimEnd()}…` : opening,
-    openGraph: { type: "article" },
+    openGraph: ogCard(OG_DEFAULT, "article"),
+    twitter: twitterCard(OG_DEFAULT),
   };
 }
 

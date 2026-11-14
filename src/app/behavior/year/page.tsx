@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ogCard, twitterCard } from "@/lib/constants/metadata";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { EF_YEAR, blockForWeek } from "../ef-weeks";
@@ -77,6 +78,8 @@ export const metadata = {
   title: "The executive function year",
   description:
     "Eleven executive function skills across a school year, two minutes a day. The behavior page names the skill under a hard morning; this is the week-by-week plan for building it.",
+  openGraph: ogCard("/og/behavior.png"),
+  twitter: twitterCard("/og/behavior.png"),
 };
 
 export default async function Page({ searchParams }: { searchParams: Search }) {

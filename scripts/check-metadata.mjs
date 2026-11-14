@@ -79,6 +79,18 @@ for (const route of ROUTES) {
   }
 
   if (!desc) problems.push([route, "no description"]);
+
+  // A link card that resolves to a relative path shows no image at all:
+  // the scraper has no base to resolve it against. That is what
+  // metadataBase is for, and it is silent when missing.
+  const image = tag(html, /<meta property="og:image" content="([^"]*)"/i);
+  if (!image) problems.push([route, "no og:image"]);
+  else if (!/^https?:\/\//i.test(image)) {
+    problems.push([route, `og:image is relative, so no card will render: "${image}"`]);
+  }
+
+  const ogTitle = tag(html, /<meta property="og:title" content="([^"]*)"/i);
+  if (!ogTitle) problems.push([route, "no og:title"]);
 }
 
 console.log(`routes checked: ${checked}`);
@@ -89,4 +101,4 @@ if (problems.length) {
   process.exit(1);
 }
 
-console.log("\n✅ every page names itself, once");
+console.log("\n✅ every page names itself once, and shares with a card");

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Poppins, Source_Serif_4 } from "next/font/google";
 import { AuthProvider } from "@/providers/AuthProvider";
 import { siteUrl } from "@/lib/utils/site-origin";
-import { TITLE_TEMPLATE } from "@/lib/constants/metadata";
+import { TITLE_TEMPLATE, OG_DEFAULT, ogCard, twitterCard } from "@/lib/constants/metadata";
 import "./globals.css";
 
 // Three faces, each with one job. Poppins is the brand's display face and
@@ -50,12 +50,8 @@ export const metadata: Metadata = {
   },
   description:
     "Lesson blueprints for every K-12 standard, plus reading, fluency, vocabulary and behavior tools built on what the research actually says.",
-  openGraph: {
-    type: "website",
-    siteName: "Upshift Learning",
-    locale: "en_US",
-  },
-  twitter: { card: "summary_large_image" },
+  openGraph: ogCard(OG_DEFAULT),
+  twitter: twitterCard(OG_DEFAULT),
 };
 
 export default function RootLayout({

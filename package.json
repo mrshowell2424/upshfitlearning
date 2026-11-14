@@ -13,6 +13,7 @@
     "check:db": "bun run scripts/check-in-sync.ts && bun run scripts/check-seeded.ts",
     "check:links": "bun scripts/check-links.mjs",
     "check:meta": "bun scripts/check-metadata.mjs",
+    "og:cards": "bun scripts/shoot-og-cards.mjs",
     "db:seed": "bun run scripts/seed-resources.ts",
     "db:seed:standards": "bun run scripts/seed-standards.ts",
     "db:push": "drizzle-kit push",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogCard, twitterCard } from "@/lib/constants/metadata";
 import { TITLE_TEMPLATE } from "@/lib/constants/metadata";
 
 /**
@@ -15,6 +16,8 @@ export const metadata: Metadata = {
   },
   description:
     "Enter a standard code or describe what you are teaching, and open the lesson blueprint for any K-12 standard.",
+  openGraph: ogCard("/og/match.png"),
+  twitter: twitterCard("/og/match.png"),
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
