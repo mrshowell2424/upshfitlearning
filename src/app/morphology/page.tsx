@@ -357,6 +357,17 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               <p style={{ ...reading, margin: 0 }}>
                 means <b>{morpheme.means}</b>
               </p>
+              {/* On screen the split and the meaning are both given, which is
+                  right beside a teacher and useless as practice. The sheet
+                  gives the part and keeps the work. */}
+              <p style={{ fontSize: 13, margin: "12px 0 0" }}>
+                <Link
+                  href={`/morphology/print?m=${morpheme.key}${grade !== null ? `&g=${grade}` : ""}`}
+                  style={{ color: accent, fontWeight: 700, textDecoration: "none" }}
+                >
+                  Print this as a worksheet →
+                </Link>
+              </p>
             </div>
 
             {/* The words. */}

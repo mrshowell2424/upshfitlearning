@@ -188,6 +188,24 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                 </span>
               </p>
 
+              {/* A one-minute read is two surfaces: the child reads off one
+                  and the teacher marks errors on the other. One monitor
+                  cannot be both, which is why every published probe is a
+                  sheet of paper. */}
+              <p style={{ margin: "-14px 0 24px", fontSize: 15 }}>
+                <a
+                  href={`/fluency/print?g=${grade}&n=${ai}&v=${ver === "lower" ? "lo" : "hi"}`}
+                  style={{ color: BRAND.tealDark, fontWeight: 700, textDecoration: "none" }}
+                >
+                  Print this as a running record →
+                </a>
+                <span style={{ color: BRAND.mid }}>
+                  {" "}
+                  — the passage in ten-word runs with the total down the margin, and the scoring on
+                  the same sheet.
+                </span>
+              </p>
+
               {/* Grade is a row of links rather than a select in the form.
                   Coupled selects left the passage list showing the previous
                   grade's titles until the button was pressed. A link reloads

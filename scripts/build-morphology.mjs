@@ -47,6 +47,30 @@ for (const a of AR) {
   }
 }
 
+/**
+ * A sentence shown on its own has to be a whole one.
+ *
+ * The splitter breaks on a full stop, which is right for this prose except
+ * where a full stop is not the end of a sentence. "Woke at 2 a.m." gets cut
+ * after "a.m", and a sentence quoted inside an article gets cut leaving a
+ * close-quote with nothing to close -- which on the printed worksheet looks
+ * exactly like a typo somebody did not notice.
+ *
+ * Both show up the same way, as a quote mark without its partner, so both
+ * are caught here. A structural marker like "FIRSTHAND ·" is not prose
+ * either and goes with them.
+ */
+function wholeSentence(s) {
+  if (s.includes("·")) return false;
+  const pairs = [["\u201c", "\u201d"], ['"', '"']];
+  for (const [open, close] of pairs) {
+    const o = s.split(open).length - 1;
+    const c = s.split(close).length - 1;
+    if (open === close ? o % 2 !== 0 : o !== c) return false;
+  }
+  return true;
+}
+
 /** Whole word only: "load" must not match "loaded", "unload" or "payload". */
 const has = (sentence, word) =>
   new RegExp(`(^|[^A-Za-z])${word}([^A-Za-z]|$)`, "i").test(sentence);
@@ -57,7 +81,7 @@ const has = (sentence, word) =>
  * the shortest true one, not the first one found.
  */
 function findSentence(word) {
-  const hits = sentences.filter((h) => has(h.s, word));
+  const hits = sentences.filter((h) => has(h.s, word) && wholeSentence(h.s));
   if (!hits.length) return null;
   hits.sort(
     (a, b) =>
@@ -208,7 +232,10 @@ if (inflected.length) {
   if (inflected.length > 10) console.log(`    ... and ${inflected.length - 10} more`);
 }
 if (missing.length) {
-  console.log(`\n  ${missing.length} curated word(s) appear in no article, so they are not shipped:`);
+  console.log(
+    `\n  ${missing.length} curated word(s) are not shipped -- they appear in no article, or ` +
+      "only inside a sentence the splitter cannot hand over whole:",
+  );
   for (const w of missing.slice(0, 12)) console.log("    " + w);
   if (missing.length > 12) console.log(`    ... and ${missing.length - 12} more`);
 }

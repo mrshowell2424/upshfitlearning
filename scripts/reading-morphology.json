@@ -1187,11 +1187,11 @@
      "grade": 4,
      "gradeName": "4th",
      "article": {
-      "id": "g4-44",
-      "title": "Two Texts: The Dust Bowl"
+      "id": "g4-24",
+      "title": "How the Interstate Was Built"
      },
      "level": "lower",
-     "sentence": "The government men came and taught contour plowing in 1937, two years after.\""
+     "sentence": "In 1956, as president, Eisenhower signed a law authorizing 41,000 miles of interstate, paid mostly by the federal government and funded by a gas tax."
     },
     {
      "word": "movement",
@@ -1356,20 +1356,6 @@
      },
      "level": "lower",
      "sentence": "Almost every other bee is a female worker."
-    },
-    {
-     "word": "climber",
-     "base": "climb",
-     "note": null,
-     "means": "someone who climbs",
-     "grade": 4,
-     "gradeName": "4th",
-     "article": {
-      "id": "g4-27",
-      "title": "Climbing Denali"
-     },
-     "level": "lower",
-     "sentence": "FIRSTHAND · From a climber’s journal, day eleven: \"Woke at 2 a.m."
     }
    ]
   },
