@@ -24,6 +24,45 @@ const QUICK_STANDARDS = [
   { code: "L.5.4", label: "vocabulary in context" },
 ];
 
+/**
+ * A standard's page is the deep link this site gets shared by: a teacher
+ * sends a colleague RL.4.6, not the home page. Until now every one of them
+ * previewed as "Upshift Learning Hub" with the site's generic blurb, so the
+ * link said nothing about the standard it opens.
+ *
+ * Wrapped in try/catch and falling back to the bare code, because metadata
+ * that throws takes the whole page down with it. A database that is briefly
+ * unreachable should cost the preview text, not the lesson blueprint.
+ */
+export async function generateMetadata({ params }: PageProps) {
+  const { code } = await params;
+  const decoded = decodeURIComponent(code);
+
+  try {
+    const [row] = await db
+      .select({
+        name: standards.name,
+        plain_reading: standards.plain_reading,
+        learning_target: standards.learning_target,
+      })
+      .from(standards)
+      .where(eq(standards.code, decoded))
+      .limit(1);
+
+    if (!row) return { title: decoded };
+
+    return {
+      title: `${decoded} — ${row.name}`,
+      description:
+        row.plain_reading ||
+        row.learning_target ||
+        `The lesson blueprint, unpacked standard and matched resources for ${decoded}.`,
+    };
+  } catch {
+    return { title: decoded };
+  }
+}
+
 export default async function MatchDetailPage({ params }: PageProps) {
   const { code } = await params;
   const decodedCode = decodeURIComponent(code);

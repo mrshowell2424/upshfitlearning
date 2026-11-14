@@ -11,6 +11,35 @@ interface PageProps {
   params: Promise<{ id: string }>;
 }
 
+/**
+ * Resources are the other thing people send each other a direct link to, and
+ * the sheet already holds a title, a purpose and a grade band -- everything a
+ * preview needs. getResources() is cached in memory, so this costs nothing
+ * the page was not already paying.
+ *
+ * try/catch for the same reason as the standards page: if the sheet is
+ * unreachable the resource page should fail on its own terms, in
+ * notFound(), not in the metadata that runs before it.
+ */
+export async function generateMetadata({ params }: PageProps) {
+  const { id } = await params;
+  try {
+    const resource = await getResourceById(id);
+    if (!resource) return { title: "Resource not found" };
+
+    const facts = [resource.format, resource.grade_band, resource.skill]
+      .filter(Boolean)
+      .join(" · ");
+
+    return {
+      title: resource.title,
+      description: resource.purpose || facts || undefined,
+    };
+  } catch {
+    return {};
+  }
+}
+
 export default async function ResourceDetailPage({ params }: PageProps) {
   const { id } = await params;
 

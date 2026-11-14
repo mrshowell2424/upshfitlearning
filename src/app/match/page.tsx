@@ -9,6 +9,7 @@ import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
 import { isStandardCode, standardHref, standardTheme } from "@/lib/utils/standards";
 import { COURSE_COUNT } from "@/app/courses/courses-data";
+import { STANDARD_TOTAL } from "@/lib/constants/totals";
 import { RESOURCE_TOTAL } from "@/lib/constants/totals";
 import { PRINCIPLES } from "@/lib/constants/learning-science";
 
@@ -75,7 +76,7 @@ function MatchPageContent() {
       <main className="flex-1 flex items-center justify-center px-5 md:px-8 py-16">
         <SignInGate
           title="Every standard, unpacked"
-          blurb="Search 335 standards and open the lesson blueprint for any of them. Free — an account is all it takes."
+          blurb={`Search ${STANDARD_TOTAL} standards and open the lesson blueprint for any of them. Free — an account is all it takes.`}
         >
         <div className="w-full max-w-2xl">
           {/* Eyebrow */}

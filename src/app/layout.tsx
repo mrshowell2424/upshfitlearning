@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Poppins, Source_Serif_4 } from "next/font/google";
 import { AuthProvider } from "@/providers/AuthProvider";
 import { siteUrl } from "@/lib/utils/site-origin";
+import { TITLE_TEMPLATE } from "@/lib/constants/metadata";
 import "./globals.css";
 
 // Three faces, each with one job. Poppins is the brand's display face and
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl()),
   title: {
     default: "Upshift Learning · Describe what you're teaching, get the lesson",
-    template: "%s · Upshift Learning",
+    template: TITLE_TEMPLATE,
   },
   description:
     "Lesson blueprints for every K-12 standard, plus reading, fluency, vocabulary and behavior tools built on what the research actually says.",

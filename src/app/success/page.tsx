@@ -12,7 +12,8 @@ import Footer from '@/components/shared/Footer'
  * this flow strands somebody.
  */
 export const metadata = {
-  title: 'Thanks for subscribing — Upshift Learning',
+  title: 'Thanks for subscribing',
+  robots: { index: false, follow: false },
 }
 
 export default function SuccessPage() {
