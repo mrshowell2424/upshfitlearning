@@ -13,6 +13,7 @@ import ARTICLES from "@/../scripts/reading-articles.json";
 import SIGHT_WORDS from "@/../scripts/reading-sight-words.json";
 import SKILL_SPLITS from "@/../scripts/reading-skill-splits.json";
 import THREADS from "@/../scripts/reading-threads.json";
+import MORPH from "@/../scripts/reading-morphology.json";
 import SENTENCE_LAB from "@/../scripts/reading-sentence-lab.json";
 
 /**
@@ -75,6 +76,8 @@ const VOCABULARY = "/vocabulary";
 // text, which is why they live beside the resources rather than under them.
 const THREADS_PAGE = "/science-of-reading/threads";
 const SENTENCE_LAB_PAGE = "/sentence-lab";
+const MORPHOLOGY_PAGE = "/morphology";
+const MORPH_WORDS = MORPH.morphemes.reduce((s, m) => s + m.words.length, 0);
 // Counted from the data the page is generated from, so the blurb cannot
 // drift away from what is actually on it.
 const MYSTERY_COUNT = RESOURCE_COUNTS.mysteries;
@@ -454,6 +457,20 @@ function Hub() {
               // whole lesson before a single sentence is picked.
               focus: "0%",
               alt: "The Sentence Lab page: three routine cards with their timings, a grade picker, and a combining exercise with its numbered sentences.",
+            },
+            {
+              href: MORPHOLOGY_PAGE,
+              eyebrow: "TAKE A WORD APART",
+              title: "Word Parts",
+              accent: LAVENDER,
+              accentText: LAVENDER_TEXT,
+              blurb: `${MORPH_WORDS} words from the articles, grouped by the ${MORPH.morphemes.length} prefixes, suffixes and roots they share — each with the sentence your class first met it in.`,
+              preview: "/previews/morphology.png",
+              shape: [1200, 1130] as const,
+              // Opens on the routine and the rows of parts, which is what a
+              // teacher picks from before any single word.
+              focus: "0%",
+              alt: "The Word Parts page: a three-step routine, rows of prefix, suffix and root pills, and one part opened with its words and the article sentence each came from.",
             },
             {
               href: "/og-packs",

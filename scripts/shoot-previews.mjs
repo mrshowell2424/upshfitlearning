@@ -44,6 +44,7 @@ const SCALE = 2;
 const SHOTS = [
   { name: "threads", path: "/science-of-reading/threads?t=water" },
   { name: "sentence-lab", path: "/sentence-lab?g=3" },
+  { name: "morphology", path: "/morphology?m=ment" },
   { name: "ef-year", path: "/behavior/year?w=1" },
   { name: "fluency", path: "/fluency" },
   { name: "teach-a-word", path: "/vocabulary" },
@@ -88,7 +89,11 @@ const problems = [];
 for (const shot of todo) {
   const url = BASE + shot.path;
   const out = `public/previews/${shot.name}.png`;
-  const resp = await page.goto(url, { waitUntil: "networkidle" });
+  // 90s, not Playwright's default 30. A dev server compiling a route for
+  // the first time can take longer than that on a loaded machine, and the
+  // failure reads as a timeout rather than as "it was still building" --
+  // the same trap the link checker already has a comment about.
+  const resp = await page.goto(url, { waitUntil: "networkidle", timeout: 90000 });
 
   if (!resp || resp.status() >= 400) {
     problems.push(`${shot.name}: ${url} returned ${resp ? resp.status() : "nothing"}`);

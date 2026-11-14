@@ -1,0 +1,1903 @@
+{
+ "_note": "Built by scripts/build-morphology.mjs from scripts/morphemes.mjs and the 350 articles. Every word here appears in an article; every sentence is verbatim from one. Do not hand-edit -- edit the morpheme table and rebuild.",
+ "source": "scripts/morphemes.mjs + scripts/reading-articles.json",
+ "routine": [
+  {
+   "key": "break",
+   "name": "Break it",
+   "minutes": 1,
+   "what": "Cover the part. Read what is left. Is that a word you know?",
+   "why": "The child does the splitting, not the teacher. A part that is pointed out is a fact; a part that is found is a strategy they can use on the next word."
+  },
+  {
+   "key": "mean",
+   "name": "Mean it",
+   "minutes": 2,
+   "what": "The part means this. The base means that. So what does the whole word mean?",
+   "why": "Two knowns and an unknown, which is a problem a child can solve. This is the step that turns a word they have never seen into one they can work out."
+  },
+  {
+   "key": "build",
+   "name": "Build it",
+   "minutes": 2,
+   "what": "Same part, different base. Say another word that uses it, then one that does not exist -- and say why it does not.",
+   "why": "Generating is harder than recognising, and the word that does not work is where the learning is. It is the difference between knowing ten words that happen to share a part and owning the part itself."
+  }
+ ],
+ "morphemes": [
+  {
+   "key": "un",
+   "form": "un-",
+   "kind": "prefix",
+   "means": "not, or the opposite of",
+   "grade": 1,
+   "gradeName": "1st",
+   "words": [
+    {
+     "word": "unhooks",
+     "base": "hooks",
+     "note": "here un- undoes something rather than meaning not",
+     "means": "undoes the hooking",
+     "grade": 1,
+     "gradeName": "1st",
+     "article": {
+      "id": "g1-50",
+      "title": "How a Zipper Works"
+     },
+     "level": "lower",
+     "sentence": "Pulling down unhooks them again."
+    },
+    {
+     "word": "unloaded",
+     "base": "loaded",
+     "note": "here un- undoes the loading rather than meaning not",
+     "means": "taken off again",
+     "grade": 2,
+     "gradeName": "2nd",
+     "article": {
+      "id": "g2-48",
+      "title": "The Town with No Cars"
+     },
+     "level": "higher",
+     "sentence": "Furniture, food, and building supplies are unloaded at a dock and moved by wagon."
+    },
+    {
+     "word": "unbroken",
+     "base": "broken",
+     "note": null,
+     "means": "not broken",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-1",
+      "title": "The Race to Nome"
+     },
+     "level": "higher",
+     "sentence": "The medicine arrived frozen but unbroken."
+    },
+    {
+     "word": "unfinished",
+     "base": "finished",
+     "note": null,
+     "means": "not finished",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-26",
+      "title": "Homework in Elementary School"
+     },
+     "level": "lower",
+     "sentence": "Homework came back finished for students whose parents had time to help, and unfinished for students whose parents worked nights."
+    },
+    {
+     "word": "unhappy",
+     "base": "happy",
+     "note": null,
+     "means": "not happy",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-26",
+      "title": "Homework in Elementary School"
+     },
+     "level": "lower",
+     "sentence": "Some families were unhappy."
+    },
+    {
+     "word": "unsteady",
+     "base": "steady",
+     "note": null,
+     "means": "not steady",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-6",
+      "title": "The Town That Moved"
+     },
+     "level": "higher",
+     "sentence": "Digging under Kiruna has made the ground unsteady."
+    },
+    {
+     "word": "unchanged",
+     "base": "changed",
+     "note": null,
+     "means": "not changed",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-34",
+      "title": "Where the Water Goes"
+     },
+     "level": "higher",
+     "sentence": "The total amount of water is unchanged."
+    },
+    {
+     "word": "uncomfortable",
+     "base": "comfortable",
+     "note": null,
+     "means": "not comfortable",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-12",
+      "title": "How a Vaccine Teaches the Body"
+     },
+     "level": "higher",
+     "sentence": "The training is uncomfortable for a day."
+    },
+    {
+     "word": "unusual",
+     "base": "usual",
+     "note": null,
+     "means": "not usual",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-29",
+      "title": "Working the Night Shift at the Zoo"
+     },
+     "level": "lower",
+     "sentence": "Noticing unusual behavior early is the best sign of illness in animals that hide symptoms."
+    },
+    {
+     "word": "unable",
+     "base": "able",
+     "note": null,
+     "means": "not able to",
+     "grade": 5,
+     "gradeName": "5th",
+     "article": {
+      "id": "g5-8",
+      "title": "The Boys Who Planted a Forest"
+     },
+     "level": "lower",
+     "sentence": "Many men arrived unable to read."
+    },
+    {
+     "word": "unknown",
+     "base": "known",
+     "note": null,
+     "means": "not known",
+     "grade": 5,
+     "gradeName": "5th",
+     "article": {
+      "id": "g5-23",
+      "title": "Two Texts: Plastic in the Ocean"
+     },
+     "level": "lower",
+     "sentence": "One covers what is still unknown."
+    },
+    {
+     "word": "unlike",
+     "base": "like",
+     "note": null,
+     "means": "not like",
+     "grade": 5,
+     "gradeName": "5th",
+     "article": {
+      "id": "g5-9",
+      "title": "The Tide and the Moon"
+     },
+     "level": "higher",
+     "sentence": "Tidal power stations in France and South Korea run turbines on the flow, and unlike wind or sun, the schedule is known for centuries ahead."
+    },
+    {
+     "word": "unconscious",
+     "base": "conscious",
+     "note": null,
+     "means": "not awake",
+     "grade": 6,
+     "gradeName": "6th",
+     "article": {
+      "id": "g6-8",
+      "title": "The Lake That Flipped Over"
+     },
+     "level": "lower",
+     "sentence": "Many were unconscious before they knew anything was wrong."
+    },
+    {
+     "word": "unfair",
+     "base": "fair",
+     "note": null,
+     "means": "not fair",
+     "grade": 6,
+     "gradeName": "6th",
+     "article": {
+      "id": "g6-17",
+      "title": "Theory, Law, and Hypothesis"
+     },
+     "level": "lower",
+     "sentence": "This is why just a theory is unfair in an argument."
+    },
+    {
+     "word": "unsafe",
+     "base": "safe",
+     "note": null,
+     "means": "not safe",
+     "grade": 6,
+     "gradeName": "6th",
+     "article": {
+      "id": "g6-40",
+      "title": "Should the Dam Come Down?"
+     },
+     "level": "lower",
+     "sentence": "They also say the dam is unsafe."
+    }
+   ]
+  },
+  {
+   "key": "re",
+   "form": "re-",
+   "kind": "prefix",
+   "means": "again, or back",
+   "grade": 3,
+   "gradeName": "3rd",
+   "words": [
+    {
+     "word": "rebuild",
+     "base": "build",
+     "note": null,
+     "means": "build it again",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-6",
+      "title": "The Town That Moved"
+     },
+     "level": "higher",
+     "sentence": "Not rebuild it somewhere else."
+    },
+    {
+     "word": "repay",
+     "base": "pay",
+     "note": "here re- means back, not again",
+     "means": "pay it back",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-45",
+      "title": "Two Texts: Sleep and Memory"
+     },
+     "level": "higher",
+     "sentence": "This is why a shortened night hurts skill learning more than fact learning, and why sleeping in on weekends does not repay the debt evenly."
+    },
+    {
+     "word": "replay",
+     "base": "play",
+     "note": null,
+     "means": "play it again",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-45",
+      "title": "Two Texts: Sleep and Memory"
+     },
+     "level": "lower",
+     "sentence": "The replay finding is solid, and it is used to argue that students should sleep more."
+    },
+    {
+     "word": "rejoin",
+     "base": "join",
+     "note": null,
+     "means": "join it again",
+     "grade": 5,
+     "gradeName": "5th",
+     "article": {
+      "id": "g5-7",
+      "title": "The Owl's Silent Wing"
+     },
+     "level": "higher",
+     "sentence": "It ends in a soft fringe that lets the separated streams rejoin gradually, and the wing surface itself is covered in a velvety down that absorbs the high notes."
+    },
+    {
+     "word": "reform",
+     "base": "form",
+     "note": null,
+     "means": "form it again",
+     "grade": 6,
+     "gradeName": "6th",
+     "article": {
+      "id": "g6-49",
+      "title": "The Great Stink of London"
+     },
+     "level": "lower",
+     "sentence": "The cause was a reform."
+    }
+   ]
+  },
+  {
+   "key": "dis",
+   "form": "dis-",
+   "kind": "prefix",
+   "means": "not, or the opposite of",
+   "grade": 3,
+   "gradeName": "3rd",
+   "words": [
+    {
+     "word": "dislike",
+     "base": "like",
+     "note": null,
+     "means": "the opposite of like",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-18",
+      "title": "How Birds Migrate"
+     },
+     "level": "higher",
+     "sentence": "Birds migrate because food moves, not because they dislike cold."
+    },
+    {
+     "word": "disagree",
+     "base": "agree",
+     "note": null,
+     "means": "the opposite of agree",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-10",
+      "title": "What the Forest Is Saying"
+     },
+     "level": "higher",
+     "sentence": "Scientists disagree about how to describe this."
+    },
+    {
+     "word": "disappear",
+     "base": "appear",
+     "note": null,
+     "means": "the opposite of appear",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-38",
+      "title": "Ban Plastic Bags? Read the Numbers First"
+     },
+     "level": "lower",
+     "sentence": "When thin bags disappear, shoppers buy thicker reusable bags and more small trash-can liners."
+    },
+    {
+     "word": "dishonest",
+     "base": "honest",
+     "note": null,
+     "means": "not honest",
+     "grade": 6,
+     "gradeName": "6th",
+     "article": {
+      "id": "g6-19",
+      "title": "Headline Words"
+     },
+     "level": "lower",
+     "sentence": "None of this makes headlines dishonest."
+    }
+   ]
+  },
+  {
+   "key": "mis",
+   "form": "mis-",
+   "kind": "prefix",
+   "means": "wrongly, or badly",
+   "grade": 4,
+   "gradeName": "4th",
+   "words": [
+    {
+     "word": "misbehavior",
+     "base": "behavior",
+     "note": null,
+     "means": "behaving badly",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-39",
+      "title": "Recess Is Not a Reward"
+     },
+     "level": "higher",
+     "sentence": "In many schools recess is withheld as a punishment for unfinished work or misbehavior."
+    },
+    {
+     "word": "misread",
+     "base": "read",
+     "note": null,
+     "means": "read it wrongly",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-32",
+      "title": "Reading a Hurricane Track Map"
+     },
+     "level": "lower",
+     "sentence": "The cone is the most misread graphic in weather reporting."
+    },
+    {
+     "word": "mislead",
+     "base": "lead",
+     "note": null,
+     "means": "lead someone the wrong way",
+     "grade": 5,
+     "gradeName": "5th",
+     "article": {
+      "id": "g5-32",
+      "title": "Checking a Photograph"
+     },
+     "level": "lower",
+     "sentence": "Any one source can mislead."
+    },
+    {
+     "word": "mistake",
+     "base": "take",
+     "note": null,
+     "means": "something taken wrongly",
+     "grade": 6,
+     "gradeName": "6th",
+     "article": {
+      "id": "g6-17",
+      "title": "Theory, Law, and Hypothesis"
+     },
+     "level": "lower",
+     "sentence": "Error does not mean mistake."
+    }
+   ]
+  },
+  {
+   "key": "over",
+   "form": "over-",
+   "kind": "prefix",
+   "means": "too much, or above",
+   "grade": 2,
+   "gradeName": "2nd",
+   "words": [
+    {
+     "word": "overcast",
+     "base": "cast",
+     "note": null,
+     "means": "covered over with cloud",
+     "grade": 2,
+     "gradeName": "2nd",
+     "article": {
+      "id": "g2-20",
+      "title": "Words on a Weather Report"
+     },
+     "level": "lower",
+     "sentence": "Overcast means the sky is covered by cloud."
+    },
+    {
+     "word": "overhead",
+     "base": "head",
+     "note": null,
+     "means": "above your head",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-40",
+      "title": "What Happened to the Passenger Pigeon"
+     },
+     "level": "lower",
+     "sentence": "One flock could take three days to pass overhead."
+    },
+    {
+     "word": "overflowed",
+     "base": "flowed",
+     "note": null,
+     "means": "flowed over the top",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-25",
+      "title": "The Fish That Ate the River"
+     },
+     "level": "higher",
+     "sentence": "Ponds overflowed into the Mississippi watershed, and the carp went with them."
+    },
+    {
+     "word": "overheated",
+     "base": "heated",
+     "note": null,
+     "means": "heated too much",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-26",
+      "title": "The Night the Lights Went Out"
+     },
+     "level": "lower",
+     "sentence": "The load shifted to two other lines, which overheated and shut off within ninety seconds."
+    },
+    {
+     "word": "overlap",
+     "base": "lap",
+     "note": null,
+     "means": "lie partly on top of each other",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-49",
+      "title": "What a Tree Ring Remembers"
+     },
+     "level": "lower",
+     "sentence": "That overlap makes tree rings a calendar."
+    },
+    {
+     "word": "overload",
+     "base": "load",
+     "note": null,
+     "means": "load it too much",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-19",
+      "title": "The Grid That Powers Your House"
+     },
+     "level": "lower",
+     "sentence": "If one line fails, its load shifts to other lines, which may overload and shut down too."
+    },
+    {
+     "word": "overnight",
+     "base": "night",
+     "note": "here over- means through, not too much",
+     "means": "through the night",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-29",
+      "title": "Working the Night Shift at the Zoo"
+     },
+     "level": "lower",
+     "sentence": "Overnight watching lets keepers see feeding and movement that visitors never see."
+    }
+   ]
+  },
+  {
+   "key": "under",
+   "form": "under-",
+   "kind": "prefix",
+   "means": "below, or not enough",
+   "grade": 0,
+   "gradeName": "K",
+   "words": [
+    {
+     "word": "underneath",
+     "base": "neath",
+     "note": "neath is an old word for below -- this one is worth saying out loud, not solving",
+     "means": "below something",
+     "grade": 0,
+     "gradeName": "K",
+     "article": {
+      "id": "gK-16",
+      "title": "What Shed Means"
+     },
+     "level": "higher",
+     "sentence": "A new skin was waiting underneath."
+    },
+    {
+     "word": "underground",
+     "base": "ground",
+     "note": null,
+     "means": "below the ground",
+     "grade": 2,
+     "gradeName": "2nd",
+     "article": {
+      "id": "g2-49",
+      "title": "The Ants That Grow Their Own Food"
+     },
+     "level": "lower",
+     "sentence": "Underground, they chew the leaves into mush."
+    },
+    {
+     "word": "underside",
+     "base": "side",
+     "note": null,
+     "means": "the side underneath",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-16",
+      "title": "Life in a Tide Pool"
+     },
+     "level": "higher",
+     "sentence": "Hundreds of tiny tube feet on its underside grip the rock and also grip prey."
+    },
+    {
+     "word": "underwater",
+     "base": "water",
+     "note": null,
+     "means": "below the water",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-7",
+      "title": "The Dogs That Find Whales"
+     },
+     "level": "lower",
+     "sentence": "The whales live underwater."
+    },
+    {
+     "word": "undercount",
+     "base": "count",
+     "note": "here it is the not-enough sense, not the below sense",
+     "means": "count too few",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-20",
+      "title": "What a Census Counts"
+     },
+     "level": "higher",
+     "sentence": "Federal programs distribute hundreds of billions of dollars each year using census figures, so an undercount in one county means fewer dollars for its roads, clinics, and school lunches for a full decade."
+    }
+   ]
+  },
+  {
+   "key": "inter",
+   "form": "inter-",
+   "kind": "prefix",
+   "means": "between",
+   "grade": 4,
+   "gradeName": "4th",
+   "words": [
+    {
+     "word": "interaction",
+     "base": "action",
+     "note": null,
+     "means": "action between people or things",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-29",
+      "title": "Working the Night Shift at the Zoo"
+     },
+     "level": "higher",
+     "sentence": "Keepers observe feeding, social interaction, and locomotion that daytime visitors never see."
+    },
+    {
+     "word": "interrupting",
+     "base": "rupting",
+     "note": "rupt is a root meaning break",
+     "means": "breaking in between",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-4",
+      "title": "The Night the Radio Lied"
+     },
+     "level": "higher",
+     "sentence": "The script was written as a series of news bulletins interrupting a program of dance music."
+    },
+    {
+     "word": "interstate",
+     "base": "state",
+     "note": null,
+     "means": "running between states",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-24",
+      "title": "How the Interstate Was Built"
+     },
+     "level": "lower",
+     "sentence": "In 1956, as president, Eisenhower signed a law authorizing 41,000 miles of interstate, paid mostly by the federal government and funded by a gas tax."
+    },
+    {
+     "word": "international",
+     "base": "national",
+     "note": null,
+     "means": "between nations",
+     "grade": 6,
+     "gradeName": "6th",
+     "article": {
+      "id": "g6-9",
+      "title": "The Match Girls' Strike"
+     },
+     "level": "higher",
+     "sentence": "Britain did not ban it in matches until 1908, twenty years after the strike, and only after a treaty made the ban international."
+    }
+   ]
+  },
+  {
+   "key": "trans",
+   "form": "trans-",
+   "kind": "prefix",
+   "means": "across",
+   "grade": 4,
+   "gradeName": "4th",
+   "words": [
+    {
+     "word": "transfers",
+     "base": "fers",
+     "note": "fer is a root meaning carry",
+     "means": "carries it across",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-10",
+      "title": "What the Forest Is Saying"
+     },
+     "level": "higher",
+     "sentence": "The transfers are not random."
+    },
+    {
+     "word": "transmission",
+     "base": "mission",
+     "note": "miss is a root meaning send",
+     "means": "sending across",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-26",
+      "title": "The Night the Lights Went Out"
+     },
+     "level": "higher",
+     "sentence": "when a transmission line contacted an untrimmed tree near Carlton."
+    },
+    {
+     "word": "translate",
+     "base": "late",
+     "note": "late here is from a root meaning carried",
+     "means": "carry a meaning across into another language",
+     "grade": 5,
+     "gradeName": "5th",
+     "article": {
+      "id": "g5-12",
+      "title": "The Interpreter on the Expedition"
+     },
+     "level": "lower",
+     "sentence": "She did more than translate."
+    },
+    {
+     "word": "transportation",
+     "base": "portation",
+     "note": "port is a root meaning carry",
+     "means": "carrying things across",
+     "grade": 5,
+     "gradeName": "5th",
+     "article": {
+      "id": "g5-38",
+      "title": "The Argument for a Crosswalk"
+     },
+     "level": "lower",
+     "sentence": "They cited a transportation study of marked crossings."
+    }
+   ]
+  },
+  {
+   "key": "ful",
+   "form": "-ful",
+   "kind": "suffix",
+   "means": "full of",
+   "grade": 3,
+   "gradeName": "3rd",
+   "words": [
+    {
+     "word": "beautiful",
+     "base": "beauty",
+     "note": "the y turns into an i",
+     "means": "full of beauty",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-48",
+      "title": "The Town That Moved"
+     },
+     "level": "higher",
+     "sentence": "The wooden church, built in 1912 and voted the most beautiful building in Sweden, was cut into pieces and carried in a slow parade to its new place."
+    },
+    {
+     "word": "useful",
+     "base": "use",
+     "note": null,
+     "means": "full of use",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-5",
+      "title": "The Glue That Failed"
+     },
+     "level": "lower",
+     "sentence": "Silver thought it was useful."
+    },
+    {
+     "word": "plentiful",
+     "base": "plenty",
+     "note": "the y turns into an i",
+     "means": "full of plenty",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-18",
+      "title": "Reading the Rings of a Tree"
+     },
+     "level": "higher",
+     "sentence": "In spring, when water is plentiful, it produces large thin-walled cells that look pale."
+    },
+    {
+     "word": "powerful",
+     "base": "power",
+     "note": null,
+     "means": "full of power",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-5",
+      "title": "Reading the Rings"
+     },
+     "level": "higher",
+     "sentence": "That shared pattern is what makes the method powerful."
+    },
+    {
+     "word": "careful",
+     "base": "care",
+     "note": null,
+     "means": "full of care",
+     "grade": 5,
+     "gradeName": "5th",
+     "article": {
+      "id": "g5-36",
+      "title": "The Case for Keeping the Old Bridge"
+     },
+     "level": "lower",
+     "sentence": "A careful reader sorts those."
+    },
+    {
+     "word": "peaceful",
+     "base": "peace",
+     "note": null,
+     "means": "full of peace",
+     "grade": 5,
+     "gradeName": "5th",
+     "article": {
+      "id": "g5-12",
+      "title": "The Interpreter on the Expedition"
+     },
+     "level": "lower",
+     "sentence": "A party with a woman and a baby looked peaceful."
+    },
+    {
+     "word": "harmful",
+     "base": "harm",
+     "note": null,
+     "means": "full of harm",
+     "grade": 6,
+     "gradeName": "6th",
+     "article": {
+      "id": "g6-20",
+      "title": "What Invasive Means"
+     },
+     "level": "lower",
+     "sentence": "It is harmful by one measure and valuable by another."
+    }
+   ]
+  },
+  {
+   "key": "less",
+   "form": "-less",
+   "kind": "suffix",
+   "means": "without",
+   "grade": 4,
+   "gradeName": "4th",
+   "words": [
+    {
+     "word": "harmless",
+     "base": "harm",
+     "note": null,
+     "means": "without harm",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-12",
+      "title": "How a Vaccine Teaches the Body"
+     },
+     "level": "lower",
+     "sentence": "A vaccine delivers a harmless piece of a germ."
+    },
+    {
+     "word": "useless",
+     "base": "use",
+     "note": null,
+     "means": "without any use",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-6",
+      "title": "The Clock That Found the Longitude"
+     },
+     "level": "lower",
+     "sentence": "On a rocking ship a pendulum is useless."
+    },
+    {
+     "word": "pointless",
+     "base": "point",
+     "note": null,
+     "means": "without a point",
+     "grade": 5,
+     "gradeName": "5th",
+     "article": {
+      "id": "g5-34",
+      "title": "Planning a Visit to a National Park"
+     },
+     "level": "lower",
+     "sentence": "Each one can make the next question pointless."
+    },
+    {
+     "word": "wingless",
+     "base": "wing",
+     "note": null,
+     "means": "without wings",
+     "grade": 5,
+     "gradeName": "5th",
+     "article": {
+      "id": "g5-13",
+      "title": "The Fig and the Wasp"
+     },
+     "level": "lower",
+     "sentence": "Wingless males chew exits through the wall and die."
+    },
+    {
+     "word": "jobless",
+     "base": "job",
+     "note": null,
+     "means": "without a job",
+     "grade": 6,
+     "gradeName": "6th",
+     "article": {
+      "id": "g6-25",
+      "title": "The Sidebar and the Story"
+     },
+     "level": "lower",
+     "sentence": "A story about a factory closing reads one way beside the town's jobless rate."
+    }
+   ]
+  },
+  {
+   "key": "ness",
+   "form": "-ness",
+   "kind": "suffix",
+   "means": "the state of being",
+   "grade": 3,
+   "gradeName": "3rd",
+   "words": [
+    {
+     "word": "dryness",
+     "base": "dry",
+     "note": null,
+     "means": "how dry it is",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-19",
+      "title": "Deserts Are Not Always Hot"
+     },
+     "level": "lower",
+     "sentence": "Dryness is."
+    },
+    {
+     "word": "thickness",
+     "base": "thick",
+     "note": null,
+     "means": "how thick it is",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-11",
+      "title": "How a Cave Is Carved"
+     },
+     "level": "higher",
+     "sentence": "A stalactite may grow about the thickness of a sheet of paper in a year."
+    },
+    {
+     "word": "fairness",
+     "base": "fair",
+     "note": null,
+     "means": "being fair",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-39",
+      "title": "Recess Is Not a Reward"
+     },
+     "level": "lower",
+     "sentence": "There is also a fairness problem."
+    },
+    {
+     "word": "illness",
+     "base": "ill",
+     "note": null,
+     "means": "being ill",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-12",
+      "title": "How a Vaccine Teaches the Body"
+     },
+     "level": "lower",
+     "sentence": "A vaccine is a way to get the practice without the illness."
+    },
+    {
+     "word": "soreness",
+     "base": "sore",
+     "note": null,
+     "means": "being sore",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-12",
+      "title": "How a Vaccine Teaches the Body"
+     },
+     "level": "higher",
+     "sentence": "Soreness or a mild fever after a shot is not the vaccine making you ill."
+    },
+    {
+     "word": "wakefulness",
+     "base": "wakeful",
+     "note": "two suffixes stacked: wake + ful + ness",
+     "means": "being wakeful",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-45",
+      "title": "Two Texts: Sleep and Memory"
+     },
+     "level": "higher",
+     "sentence": "Typing a new finger sequence improves overnight without further practice, and the improvement shows up in sleep, not in the hours of wakefulness before it."
+    },
+    {
+     "word": "weakness",
+     "base": "weak",
+     "note": null,
+     "means": "being weak",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-21",
+      "title": "The Lead in the Pipes"
+     },
+     "level": "lower",
+     "sentence": "That fix has a weakness."
+    },
+    {
+     "word": "willingness",
+     "base": "willing",
+     "note": null,
+     "means": "being willing",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-43",
+      "title": "Two Texts: Should Zoos Exist?"
+     },
+     "level": "higher",
+     "sentence": "Surveys find that visitors leave with greater knowledge of local species and higher stated willingness to support conservation funding."
+    },
+    {
+     "word": "brightness",
+     "base": "bright",
+     "note": null,
+     "means": "how bright it is",
+     "grade": 5,
+     "gradeName": "5th",
+     "article": {
+      "id": "g5-47",
+      "title": "The Clock in Your Body"
+     },
+     "level": "lower",
+     "sentence": "Special cells in the retina report brightness to that clock."
+    }
+   ]
+  },
+  {
+   "key": "ment",
+   "form": "-ment",
+   "kind": "suffix",
+   "means": "the result of, or the act of",
+   "grade": 2,
+   "gradeName": "2nd",
+   "words": [
+    {
+     "word": "argument",
+     "base": "argue",
+     "note": "the base loses its e",
+     "means": "the act of arguing",
+     "grade": 2,
+     "gradeName": "2nd",
+     "article": {
+      "id": "g2-50",
+      "title": "The Room Made for Children"
+     },
+     "level": "lower",
+     "sentence": "It was an argument once."
+    },
+    {
+     "word": "amendment",
+     "base": "amend",
+     "note": null,
+     "means": "a change that amends something",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-24",
+      "title": "The Road to the Vote"
+     },
+     "level": "lower",
+     "sentence": "After the Civil War, the Fifteenth Amendment said a state could not deny the vote because of race."
+    },
+    {
+     "word": "assignment",
+     "base": "assign",
+     "note": null,
+     "means": "what is assigned",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-26",
+      "title": "Homework in Elementary School"
+     },
+     "level": "higher",
+     "sentence": "The assignment measured the household, not the child."
+    },
+    {
+     "word": "development",
+     "base": "develop",
+     "note": null,
+     "means": "the act of developing",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-34",
+      "title": "How a City Gets Its Water"
+     },
+     "level": "higher",
+     "sentence": "Most cities also filter their water; New York is one of the few large cities allowed to skip that step, because the land around its reservoirs is protected from development."
+    },
+    {
+     "word": "equipment",
+     "base": "equip",
+     "note": null,
+     "means": "what you are equipped with",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-25",
+      "title": "The Fish That Ate the River"
+     },
+     "level": "lower",
+     "sentence": "Algae clouded their ponds and clogged their equipment."
+    },
+    {
+     "word": "government",
+     "base": "govern",
+     "note": null,
+     "means": "the people who govern",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-44",
+      "title": "Two Texts: The Dust Bowl"
+     },
+     "level": "lower",
+     "sentence": "The government men came and taught contour plowing in 1937, two years after.\""
+    },
+    {
+     "word": "movement",
+     "base": "move",
+     "note": null,
+     "means": "the act of moving",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-29",
+      "title": "Working the Night Shift at the Zoo"
+     },
+     "level": "lower",
+     "sentence": "Overnight watching lets keepers see feeding and movement that visitors never see."
+    },
+    {
+     "word": "payment",
+     "base": "pay",
+     "note": null,
+     "means": "what is paid",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-16",
+      "title": "The Currency of Salt"
+     },
+     "level": "lower",
+     "sentence": "The Latin word for that payment is where we get the word salary."
+    },
+    {
+     "word": "settlement",
+     "base": "settle",
+     "note": null,
+     "means": "a place people settled",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-42",
+      "title": "Two Texts: The Lost Colony of Roanoke"
+     },
+     "level": "lower",
+     "sentence": "When White landed in 1590, the settlement was empty."
+    },
+    {
+     "word": "agreement",
+     "base": "agree",
+     "note": null,
+     "means": "what people agree on",
+     "grade": 5,
+     "gradeName": "5th",
+     "article": {
+      "id": "g5-18",
+      "title": "What a Map's Legend Tells You"
+     },
+     "level": "higher",
+     "sentence": "The scale is the first agreement to find."
+    },
+    {
+     "word": "statement",
+     "base": "state",
+     "note": null,
+     "means": "something stated",
+     "grade": 5,
+     "gradeName": "5th",
+     "article": {
+      "id": "g5-19",
+      "title": "What a Chance of Rain Really Means"
+     },
+     "level": "higher",
+     "sentence": "Forty per cent is not a promise about the sky; it is a statement about how often a day like today turns out wet."
+    },
+    {
+     "word": "treatment",
+     "base": "treat",
+     "note": null,
+     "means": "the way something is treated",
+     "grade": 6,
+     "gradeName": "6th",
+     "article": {
+      "id": "g6-37",
+      "title": "The Claim That Sharks Do Not Get Cancer"
+     },
+     "level": "lower",
+     "sentence": "Some patients took them instead of treatment that worked."
+    }
+   ]
+  },
+  {
+   "key": "er",
+   "form": "-er",
+   "kind": "suffix",
+   "means": "a person or thing that does it",
+   "grade": 0,
+   "gradeName": "K",
+   "words": [
+    {
+     "word": "teacher",
+     "base": "teach",
+     "note": null,
+     "means": "someone who teaches",
+     "grade": 0,
+     "gradeName": "K",
+     "article": {
+      "id": "gK-13",
+      "title": "The Line and the Door"
+     },
+     "level": "lower",
+     "sentence": "The teacher counts us."
+    },
+    {
+     "word": "farmer",
+     "base": "farm",
+     "note": null,
+     "means": "someone who farms",
+     "grade": 1,
+     "gradeName": "1st",
+     "article": {
+      "id": "g1-14",
+      "title": "The Farmer and the Market"
+     },
+     "level": "lower",
+     "sentence": "A farmer picks beans early while it is cool."
+    },
+    {
+     "word": "writer",
+     "base": "write",
+     "note": "the base loses its e",
+     "means": "someone who writes",
+     "grade": 1,
+     "gradeName": "1st",
+     "article": {
+      "id": "g1-39",
+      "title": "Why Bats Help Us"
+     },
+     "level": "lower",
+     "sentence": "The writer gives three reasons."
+    },
+    {
+     "word": "reader",
+     "base": "read",
+     "note": null,
+     "means": "someone who reads",
+     "grade": 2,
+     "gradeName": "2nd",
+     "article": {
+      "id": "g2-44",
+      "title": "Two Books About Firefighters"
+     },
+     "level": "lower",
+     "sentence": "A reader with both books knows more."
+    },
+    {
+     "word": "worker",
+     "base": "work",
+     "note": null,
+     "means": "someone who works",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-21",
+      "title": "Inside a Beehive"
+     },
+     "level": "lower",
+     "sentence": "Almost every other bee is a female worker."
+    },
+    {
+     "word": "climber",
+     "base": "climb",
+     "note": null,
+     "means": "someone who climbs",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-27",
+      "title": "Climbing Denali"
+     },
+     "level": "lower",
+     "sentence": "FIRSTHAND · From a climber’s journal, day eleven: \"Woke at 2 a.m."
+    }
+   ]
+  },
+  {
+   "key": "ly",
+   "form": "-ly",
+   "kind": "suffix",
+   "means": "in that way",
+   "grade": 0,
+   "gradeName": "K",
+   "words": [
+    {
+     "word": "really",
+     "base": "real",
+     "note": "the parts are real, but the meaning has drifted -- worth noticing, not solving",
+     "means": "truly",
+     "grade": 0,
+     "gradeName": "K",
+     "article": {
+      "id": "gK-49",
+      "title": "Saying What You Noticed"
+     },
+     "level": "lower",
+     "sentence": "Say anything you really saw or heard."
+    },
+    {
+     "word": "gently",
+     "base": "gentle",
+     "note": "the base loses its e",
+     "means": "in a gentle way",
+     "grade": 2,
+     "gradeName": "2nd",
+     "article": {
+      "id": "g2-18",
+      "title": "The Words in a Recipe"
+     },
+     "level": "lower",
+     "sentence": "Stir means move it gently."
+    },
+    {
+     "word": "quickly",
+     "base": "quick",
+     "note": null,
+     "means": "in a quick way",
+     "grade": 2,
+     "gradeName": "2nd",
+     "article": {
+      "id": "g2-50",
+      "title": "The Room Made for Children"
+     },
+     "level": "higher",
+     "sentence": "The idea spread quickly."
+    },
+    {
+     "word": "slowly",
+     "base": "slow",
+     "note": null,
+     "means": "in a slow way",
+     "grade": 2,
+     "gradeName": "2nd",
+     "article": {
+      "id": "g2-39",
+      "title": "Why Bikes Need Helmets"
+     },
+     "level": "lower",
+     "sentence": "Foam crushes slowly."
+    },
+    {
+     "word": "easily",
+     "base": "easy",
+     "note": "the y turns into an i",
+     "means": "in an easy way",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-41",
+      "title": "Two Texts: Honeybees and Wild Bees"
+     },
+     "level": "lower",
+     "sentence": "A mason bee carries loose, dry pollen that falls off easily onto the next flower."
+    },
+    {
+     "word": "finally",
+     "base": "final",
+     "note": null,
+     "means": "at last",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-20",
+      "title": "What Makes an Earthquake"
+     },
+     "level": "lower",
+     "sentence": "Finally the friction gives."
+    },
+    {
+     "word": "nearly",
+     "base": "near",
+     "note": "the parts are real, but the meaning has drifted -- worth noticing, not solving",
+     "means": "almost",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-24",
+      "title": "The Road to the Vote"
+     },
+     "level": "lower",
+     "sentence": "In Mississippi, Black voter registration went from about 7 percent to nearly 60 percent in four years."
+    },
+    {
+     "word": "carefully",
+     "base": "careful",
+     "note": "two suffixes stacked: care + ful + ly",
+     "means": "in a careful way",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-8",
+      "title": "The Vault Inside the Mountain"
+     },
+     "level": "lower",
+     "sentence": "The place was chosen carefully."
+    },
+    {
+     "word": "safely",
+     "base": "safe",
+     "note": null,
+     "means": "in a safe way",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-33",
+      "title": "The Fastest Land Animals"
+     },
+     "level": "higher",
+     "sentence": "After that its body temperature rises past what it can safely carry, and it must stop."
+    },
+    {
+     "word": "quietly",
+     "base": "quiet",
+     "note": null,
+     "means": "in a quiet way",
+     "grade": 6,
+     "gradeName": "6th",
+     "article": {
+      "id": "g6-17",
+      "title": "Theory, Law, and Hypothesis"
+     },
+     "level": "higher",
+     "sentence": "What a reader can do is notice when a word is being used as the field uses it, and when it has quietly slipped back into everyday speech."
+    }
+   ]
+  },
+  {
+   "key": "able",
+   "form": "-able",
+   "kind": "suffix",
+   "means": "can be done",
+   "grade": 3,
+   "gradeName": "3rd",
+   "words": [
+    {
+     "word": "fashionable",
+     "base": "fashion",
+     "note": "the parts are real, but the meaning has drifted -- worth noticing, not solving",
+     "means": "in fashion",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-3",
+      "title": "The Hats That Almost Ended the Birds"
+     },
+     "level": "higher",
+     "sentence": "In the 1890s, the most fashionable hats in America were covered in feathers."
+    },
+    {
+     "word": "traceable",
+     "base": "trace",
+     "note": "the e stays, to keep the c soft",
+     "means": "can be traced",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-10",
+      "title": "What the Forest Is Saying"
+     },
+     "level": "lower",
+     "sentence": "Researchers put a traceable kind of carbon into one tree and found it days later inside a different tree twenty feet away."
+    },
+    {
+     "word": "treatable",
+     "base": "treat",
+     "note": null,
+     "means": "can be treated",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-17",
+      "title": "How Antibiotics Stop Working"
+     },
+     "level": "higher",
+     "sentence": "That accident became penicillin, and infections that routinely killed people became treatable within twenty years."
+    },
+    {
+     "word": "valuable",
+     "base": "value",
+     "note": "the parts are real, but the meaning has drifted -- worth noticing, not solving",
+     "means": "worth a lot",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-16",
+      "title": "The Currency of Salt"
+     },
+     "level": "higher",
+     "sentence": "It was the only reliable way to keep food from rotting, and that made it valuable enough to fight wars over."
+    }
+   ]
+  },
+  {
+   "key": "tion",
+   "form": "-tion",
+   "kind": "suffix",
+   "means": "the act of, or the result of",
+   "grade": 2,
+   "gradeName": "2nd",
+   "words": [
+    {
+     "word": "decoration",
+     "base": "decorate",
+     "note": "the base loses its e",
+     "means": "something used to decorate",
+     "grade": 2,
+     "gradeName": "2nd",
+     "article": {
+      "id": "g2-33",
+      "title": "Arrows in a Diagram"
+     },
+     "level": "lower",
+     "sentence": "An arrow in a diagram is not decoration."
+    },
+    {
+     "word": "direction",
+     "base": "direct",
+     "note": null,
+     "means": "the way something is directed",
+     "grade": 2,
+     "gradeName": "2nd",
+     "article": {
+      "id": "g2-16",
+      "title": "Words on a Street Sign"
+     },
+     "level": "lower",
+     "sentence": "One Way means cars go one direction only."
+    },
+    {
+     "word": "evaporation",
+     "base": "evaporate",
+     "note": "the base loses its e",
+     "means": "the act of evaporating",
+     "grade": 2,
+     "gradeName": "2nd",
+     "article": {
+      "id": "g2-13",
+      "title": "How a Puddle Disappears"
+     },
+     "level": "lower",
+     "sentence": "That is evaporation."
+    },
+    {
+     "word": "collection",
+     "base": "collect",
+     "note": null,
+     "means": "a group of things collected",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-37",
+      "title": "The First Public Library"
+     },
+     "level": "lower",
+     "sentence": "Readers paid a yearly fee and shared a collection."
+    },
+    {
+     "word": "connection",
+     "base": "connect",
+     "note": null,
+     "means": "the place two things connect",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-26",
+      "title": "Homework in Elementary School"
+     },
+     "level": "lower",
+     "sentence": "The connection is stronger in high school, but that is not who I teach."
+    },
+    {
+     "word": "eruption",
+     "base": "erupt",
+     "note": null,
+     "means": "the act of erupting",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-17",
+      "title": "The Parts of a Volcano"
+     },
+     "level": "lower",
+     "sentence": "Geologists read the shape of a volcano to learn what kind of eruption built it."
+    },
+    {
+     "word": "exception",
+     "base": "except",
+     "note": null,
+     "means": "something left out",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-7",
+      "title": "The Dogs That Find Whales"
+     },
+     "level": "higher",
+     "sentence": "There is one exception."
+    },
+    {
+     "word": "invitation",
+     "base": "invite",
+     "note": "the base loses its e",
+     "means": "the thing that invites you",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-3",
+      "title": "The Hats That Almost Ended the Birds"
+     },
+     "level": "higher",
+     "sentence": "So they used what they did have: an invitation list."
+    },
+    {
+     "word": "protection",
+     "base": "protect",
+     "note": null,
+     "means": "the act of protecting",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-40",
+      "title": "What Happened to the Passenger Pigeon"
+     },
+     "level": "lower",
+     "sentence": "Below a certain size, that protection stopped working."
+    }
+   ]
+  },
+  {
+   "key": "dict",
+   "form": "dict",
+   "kind": "root",
+   "means": "say",
+   "grade": 2,
+   "gradeName": "2nd",
+   "words": [
+    {
+     "word": "dictionary",
+     "base": "dict + ionary",
+     "note": null,
+     "means": "the book of what words say",
+     "grade": 2,
+     "gradeName": "2nd",
+     "article": {
+      "id": "g2-24",
+      "title": "A Glossary at the Back"
+     },
+     "level": "lower",
+     "sentence": "A dictionary holds thousands of words."
+    },
+    {
+     "word": "predict",
+     "base": "pre + dict",
+     "note": "pre means before",
+     "means": "to say it before it happens",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-26",
+      "title": "Homework in Elementary School"
+     },
+     "level": "lower",
+     "sentence": "How much a child reads does predict how well they read later."
+    },
+    {
+     "word": "contradict",
+     "base": "contra + dict",
+     "note": "contra means against",
+     "means": "to say the opposite",
+     "grade": 5,
+     "gradeName": "5th",
+     "article": {
+      "id": "g5-26",
+      "title": "Two Views of the Boston Massacre"
+     },
+     "level": "higher",
+     "sentence": "John Adams defended the soldiers, and the jury heard dozens of witnesses contradict each other about whether the word fire was ever spoken."
+    },
+    {
+     "word": "prediction",
+     "base": "pre + dict + ion",
+     "note": null,
+     "means": "the thing that was said beforehand",
+     "grade": 5,
+     "gradeName": "5th",
+     "article": {
+      "id": "g5-20",
+      "title": "The Vocabulary of an Election"
+     },
+     "level": "higher",
+     "sentence": "The distinction matters because incumbents win far more often than challengers, so the label carries a prediction with it."
+    }
+   ]
+  },
+  {
+   "key": "graph",
+   "form": "graph",
+   "kind": "root",
+   "means": "write, or draw",
+   "grade": 3,
+   "gradeName": "3rd",
+   "words": [
+    {
+     "word": "photograph",
+     "base": "photo + graph",
+     "note": "photo means light",
+     "means": "a picture drawn with light",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-42",
+      "title": "Two Texts: The First Flight"
+     },
+     "level": "higher",
+     "sentence": "One of them took the photograph that is now in every textbook."
+    },
+    {
+     "word": "telegraph",
+     "base": "tele + graph",
+     "note": "tele means far",
+     "means": "writing sent far",
+     "grade": 3,
+     "gradeName": "3rd",
+     "article": {
+      "id": "g3-40",
+      "title": "What Happened to the Passenger Pigeon"
+     },
+     "level": "lower",
+     "sentence": "Railroads carried barrels of pigeons to city markets, and the telegraph told hunters where flocks had landed."
+    },
+    {
+     "word": "graphic",
+     "base": "graph + ic",
+     "note": null,
+     "means": "to do with drawing or writing",
+     "grade": 4,
+     "gradeName": "4th",
+     "article": {
+      "id": "g4-32",
+      "title": "Reading a Hurricane Track Map"
+     },
+     "level": "lower",
+     "sentence": "The cone is the most misread graphic in weather reporting."
+    },
+    {
+     "word": "paragraph",
+     "base": "para + graph",
+     "note": null,
+     "means": "a piece of writing marked off from the rest",
+     "grade": 5,
+     "gradeName": "5th",
+     "article": {
+      "id": "g5-30",
+      "title": "The Same Flood in Two Newspapers"
+     },
+     "level": "higher",
+     "sentence": "Whose questions a writer is answering shapes what goes in the first paragraph and what never appears at all."
+    },
+    {
+     "word": "biography",
+     "base": "bio + graph + y",
+     "note": "bio means life",
+     "means": "the writing of a life",
+     "grade": 6,
+     "gradeName": "6th",
+     "article": {
+      "id": "g6-41",
+      "title": "Shackleton in Two Books"
+     },
+     "level": "lower",
+     "sentence": "The biography uses them."
+    },
+    {
+     "word": "geography",
+     "base": "geo + graph + y",
+     "note": "geo means earth",
+     "means": "writing down the earth",
+     "grade": 6,
+     "gradeName": "6th",
+     "article": {
+      "id": "g6-32",
+      "title": "A Map, a Table, and a Flood"
+     },
+     "level": "lower",
+     "sentence": "It has no geography, so one hard-hit street does not show."
+    },
+    {
+     "word": "graph",
+     "base": "graph",
+     "note": "the root standing on its own, with nothing added to it",
+     "means": "a drawing that shows numbers",
+     "grade": 6,
+     "gradeName": "6th",
+     "article": {
+      "id": "g6-31",
+      "title": "The Graph and the Glacier"
+     },
+     "level": "lower",
+     "sentence": "The graph does the rest."
+    }
+   ]
+  }
+ ]
+}
