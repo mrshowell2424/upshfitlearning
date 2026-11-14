@@ -83,5 +83,20 @@ export function siteUrl(): string {
     process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
   if (vercel) return `https://${vercel.replace(/^https?:\/\//i, "").replace(/\/+$/, "")}`;
 
-  return `http://localhost:${process.env.PORT || 3000}`;
+  const local = `http://localhost:${process.env.PORT || 3000}`;
+
+  // Reaching this in a production build means neither the explicit variable
+  // nor Vercel's own was set, and the sitemap is about to go out telling
+  // search engines to crawl localhost. That is worse than having no sitemap,
+  // and it is silent, so say so where a deploy log will show it.
+  if (process.env.NODE_ENV === "production") {
+    console.warn(
+      "[site-origin] NEXT_PUBLIC_APP_URL is not set and this is not a Vercel " +
+        `build, so absolute URLs fall back to ${local}. Set NEXT_PUBLIC_APP_URL ` +
+        "to the real site address before deploying -- the sitemap, robots.txt " +
+        "and every link preview are built from it.",
+    );
+  }
+
+  return local;
 }
