@@ -287,6 +287,48 @@ function Answers({ children }: { children: React.ReactNode }) {
   );
 }
 
+/**
+ * A line of the answer key, with its marker drawn.
+ *
+ * The key used to be bare <p>s and <ul>s, and Tailwind's preflight zeroes
+ * the margin on one and the markers on the other -- so three quotes of
+ * proof, two clearings and a teacher note arrived as eleven lines of the
+ * same weight with nothing between them. On a tab a teacher opens while a
+ * class waits, that is the one panel that has to be scannable, and it was
+ * the least scannable thing on the page.
+ */
+function Keyed({
+  marker,
+  color,
+  children,
+}: {
+  marker: string;
+  color: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "1.1em 1fr",
+        gap: 10,
+        margin: "0 0 7px",
+        lineHeight: 1.55,
+      }}
+    >
+      <b aria-hidden="true" style={{ color, textAlign: "center" }}>
+        {marker}
+      </b>
+      <div style={{ textWrap: "pretty" }}>{children}</div>
+    </div>
+  );
+}
+
+/** A heading inside the answer key. */
+function KeyLabel({ children, color }: { children: React.ReactNode; color: string }) {
+  return <p style={{ ...label, color, margin: "14px 0 7px" }}>{children}</p>;
+}
+
 function Prompt({ text }: { text: string }) {
   return (
     <details style={{ marginTop: 10 }}>
@@ -522,16 +564,44 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                       🖨 Printable workbook
                     </a>
                   <Answers>
-                    <p><b>Answer:</b> {myCase.answer}</p>
-                    <p><b>Key proof:</b></p>
-                    <ul>{myCase.proof.map((p, i) => <li key={i}>{p}</li>)}</ul>
+                    <p style={{ fontSize: 17, fontWeight: 700, margin: 0, textWrap: "pretty" }}>
+                      {myCase.answer}
+                    </p>
+                    <KeyLabel color={ACCENT.my}>{`Key proof · ${myCase.proof.length}`}</KeyLabel>
+                    {/* A bullet rather than a quote mark: the proof strings
+                        carry their own quotes already. */}
+                    {myCase.proof.map((p, i) => (
+                      <Keyed key={i} marker="•" color={ACCENT.my}>
+                        {p}
+                      </Keyed>
+                    ))}
                     {myCase.clears.length > 0 && (
                       <>
-                        <p><b>Clears:</b></p>
-                        <ul>{myCase.clears.map((p, i) => <li key={i}>{p}</li>)}</ul>
+                        <KeyLabel color={BRAND.coralDark}>
+                          {`Clears · ${myCase.clears.length}`}
+                        </KeyLabel>
+                        {myCase.clears.map((p, i) => (
+                          <Keyed key={i} marker="×" color={BRAND.coralDark}>
+                            {p}
+                          </Keyed>
+                        ))}
                       </>
                     )}
-                    {myCase.explain && <p><i>{myCase.explain}</i></p>}
+                    {myCase.explain && (
+                      <p
+                        style={{
+                          margin: "14px 0 0",
+                          paddingTop: 12,
+                          borderTop: `1px solid ${BRAND.line}`,
+                          fontStyle: "italic",
+                          color: BRAND.mid,
+                          lineHeight: 1.55,
+                          textWrap: "pretty",
+                        }}
+                      >
+                        {myCase.explain}
+                      </p>
+                    )}
                   </Answers>
                   </Actions>
                 </Card>
@@ -626,10 +696,32 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                         🖨 Printable workbook
                       </a>
                     <Answers>
-                      {art.questions.filter((q) => q.a).map((q) => (
-                        <p key={q.n}><b>{q.n}.</b> {q.a}</p>
-                      ))}
-                      {art.note && <p><i>Teacher note: {art.note}</i></p>}
+                      {art.questions
+                        .filter((q) => q.a)
+                        .map((q) => (
+                          <Keyed key={q.n} marker={String(q.n)} color={ACCENT.ar}>
+                            {/* Vocabulary answers are two definitions on two
+                                lines, and the newline in the data collapses
+                                without this -- the same fault the question
+                                side had. */}
+                            <span style={{ whiteSpace: "pre-line" }}>{q.a}</span>
+                          </Keyed>
+                        ))}
+                      {art.note && (
+                        <p
+                          style={{
+                            margin: "14px 0 0",
+                            paddingTop: 12,
+                            borderTop: `1px solid ${BRAND.line}`,
+                            fontStyle: "italic",
+                            color: BRAND.mid,
+                            lineHeight: 1.55,
+                            textWrap: "pretty",
+                          }}
+                        >
+                          {`Teacher note: ${art.note}`}
+                        </p>
+                      )}
                     </Answers>
                     </Actions>
                   </Card>

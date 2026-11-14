@@ -324,8 +324,21 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                         ))}
                       </div>
 
+                      {/* The span this thread actually covers, not the span
+                          the site covers. "Kindergarten to sixth" was
+                          hard-coded, so a thread that starts in third said so
+                          directly above three rows reading "Nothing in this
+                          thread yet" -- on the page whose whole argument is
+                          that an empty grade is worth naming. */}
                       <p style={{ ...label, margin: "0 0 12px", color: BRAND.tealDark }}>
-                        {total} articles, kindergarten to sixth
+                        {(() => {
+                          const filled = rows.filter((r) => r.items.length);
+                          if (!filled.length) return `${total} articles`;
+                          const lo = gradeName(filled[0].grade);
+                          const hi = gradeName(filled[filled.length - 1].grade);
+                          const span = lo === hi ? lo : `${lo} to ${hi}`;
+                          return `${total} article${total === 1 ? "" : "s"}, ${span}`;
+                        })()}
                       </p>
 
                       {rows.map((r) => (
