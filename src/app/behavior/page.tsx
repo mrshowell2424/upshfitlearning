@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { SIGNALS, EF, EF_MEANING, strategyIndex, type EFKey, type Signal } from "./signals";
+import { EF_YEAR } from "./ef-weeks";
 
 /**
  * Behavior Strategies — start from what you can see.
@@ -90,6 +92,93 @@ function Card({ children, accent }: { children: React.ReactNode; accent?: string
     >
       {children}
     </div>
+  );
+}
+
+/**
+ * The way to the year plan.
+ *
+ * Every skill tag on this page already links into /behavior/year, but a tag
+ * only exists once a signal has been picked -- so a teacher who opened this
+ * page and read it without clicking anything had no route to the term plan
+ * at all. This is that route, and it sits at the bottom because that is
+ * where the question arrives: the signal cards answer the next few minutes
+ * and then the next few weeks, and the obvious next question is what to do
+ * with the other thirty-four.
+ */
+function YearCard() {
+  const weeks = Math.max(
+    ...EF_YEAR.map((b) => Number(b.weeks.match(/(\d+)\D+(\d+)/)?.[2] ?? 0)),
+  );
+  return (
+    <a
+      href="/behavior/year"
+      style={{
+        display: "block",
+        background: "#FFFFFF",
+        border: `1px solid ${BRAND.line}`,
+        borderLeft: `8px solid ${BRAND.tealDark}`,
+        borderRadius: 18,
+        padding: "22px 24px",
+        margin: "0 0 18px",
+        textDecoration: "none",
+        color: BRAND.ink,
+      }}
+    >
+      {/* The same 20:7 band the reading hub crops, for the same reason: a
+          teacher deciding whether to click should see the thing rather than
+          infer it from a sentence. */}
+      <div
+        style={{
+          position: "relative",
+          aspectRatio: "20 / 7",
+          overflow: "hidden",
+          borderRadius: 10,
+          border: `1px solid ${BRAND.line}`,
+          marginBottom: 16,
+        }}
+      >
+        <Image
+          src="/previews/ef-year.png"
+          alt="The executive function year: a strip of eleven skills across the school year, a week box, and the five two-minute lessons for task initiation."
+          width={1200}
+          height={1130}
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "block",
+            objectFit: "cover",
+            objectPosition: "center 0%",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: 0,
+            right: 0,
+            bottom: 0,
+            height: "36%",
+            background: "linear-gradient(to bottom, rgba(255,255,255,0), #FFFFFF)",
+          }}
+        />
+      </div>
+      <p style={{ ...label, margin: "0 0 4px", color: BRAND.tealDark }}>Over the term</p>
+      <h2
+        style={{
+          fontFamily: "Poppins, Inter, sans-serif",
+          fontSize: 22,
+          fontWeight: 800,
+          margin: "0 0 8px",
+          letterSpacing: "-0.4px",
+        }}
+      >
+        The executive function year
+      </h2>
+      <p style={{ margin: 0, fontSize: 15, color: BRAND.mid, lineHeight: 1.6 }}>
+        {`All ${EF_YEAR.length} skills named on this page, taught across ${weeks} weeks at two minutes a day — five lessons a week, an I-can statement the class ends up saying, and something to send home.`}
+      </p>
+    </a>
   );
 }
 
@@ -507,6 +596,8 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               </ul>
             </Card>
           )}
+
+          <YearCard />
 
           <p
             style={{

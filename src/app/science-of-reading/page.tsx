@@ -68,6 +68,10 @@ const RESOURCES = "/science-of-reading/resources";
 // the top nav: a teacher reaches them from reading, not from the menu bar.
 const FLUENCY = "/fluency";
 const VOCABULARY = "/vocabulary";
+// The two strand pages. Both are views of the article store rather than new
+// text, which is why they live beside the resources rather than under them.
+const THREADS_PAGE = "/science-of-reading/threads";
+const SENTENCE_LAB_PAGE = "/sentence-lab";
 // Counted from the data the page is generated from, so the blurb cannot
 // drift away from what is actually on it.
 const MYSTERY_COUNT = RESOURCE_COUNTS.mysteries;
@@ -419,6 +423,34 @@ function Hub() {
               // Opens on the word itself and the first phase of the script.
               focus: "0%",
               alt: "The Teach a Word page: one word with its meaning, then the three phases of the routine with the script filled in.",
+            },
+            {
+              href: THREADS_PAGE,
+              eyebrow: "BUILD THE BACKGROUND",
+              title: "Knowledge Threads",
+              accent: TEAL,
+              accentText: TEAL_TEXT,
+              blurb: `The same ${ARTICLE_COUNT} articles in ${THREADS.threads.length} topic threads running K through 6, so you can see what a class already met about water before they read about a glacier.`,
+              preview: "/previews/threads.png",
+              shape: [1200, 1130] as const,
+              // Opens on the board of threads, which is the thing to look at:
+              // a teacher reads the topics and the grade bars, not the prose.
+              focus: "0%",
+              alt: "The Knowledge Threads page: thirteen topic cards, each with a count and a bar per grade, and one thread opened underneath.",
+            },
+            {
+              href: SENTENCE_LAB_PAGE,
+              eyebrow: "BUILD A SENTENCE",
+              title: "Sentence Lab",
+              accent: BLUE,
+              accentText: BLUE_TEXT,
+              blurb: `Combine, expand, because/but/so — nine minutes on ${STRAND_COUNTS.sentence} of the articles, with the answer key taken from the article's own harder version.`,
+              preview: "/previews/sentence-lab.png",
+              shape: [1200, 1130] as const,
+              // Opens on the three routines and their minutes, which is the
+              // whole lesson before a single sentence is picked.
+              focus: "0%",
+              alt: "The Sentence Lab page: three routine cards with their timings, a grade picker, and a combining exercise with its numbered sentences.",
             },
             {
               href: "/og-packs",
