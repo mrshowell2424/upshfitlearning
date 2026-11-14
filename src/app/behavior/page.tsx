@@ -65,6 +65,33 @@ const pill = (on: boolean): React.CSSProperties => ({
   color: on ? "#FFFFFF" : BRAND.ink,
 });
 
+/**
+ * The line length everything readable on this page is held to.
+ *
+ * The card is nearly nine hundred pixels wide and the body text was running
+ * the whole of it -- around 110 characters a line, where the eye starts
+ * losing its place on the way back to the left margin. Every list and every
+ * paragraph of prose is capped here instead. The panels keep their full
+ * width, so the page does not turn into one narrow column.
+ */
+const MEASURE = 660;
+
+/**
+ * Disclosure headings. Pair it with className="disclosure" on the <details>,
+ * which draws the chevron -- see globals.css. The default triangle is a
+ * different shape, size and colour in every browser.
+ */
+const summaryStyle: React.CSSProperties = {
+  cursor: "pointer",
+  listStyle: "none",
+  fontFamily: "Inter, system-ui, sans-serif",
+  fontSize: 12,
+  fontWeight: 800,
+  letterSpacing: "0.08em",
+  textTransform: "uppercase",
+  color: BRAND.ink,
+};
+
 const tag = (color: string): React.CSSProperties => ({
   fontFamily: "Inter, system-ui, sans-serif",
   fontSize: 11,
@@ -182,7 +209,20 @@ function YearCard() {
   );
 }
 
-/** One of the four questions, with its list. */
+/**
+ * One of the questions, with its list.
+ *
+ * The markers are drawn here rather than left to the browser. Tailwind's
+ * preflight sets list-style: none on every ul and ol in the project, so the
+ * <li>s on this page had been rendering as indented paragraphs since the day
+ * it was written -- five sections of six sentences each, with nothing to
+ * tell the eye where one ended and the next began. A dot in the section's
+ * own colour does that, and ties the item to the heading above it.
+ *
+ * The heading gets a short bar of the same colour. Five headings that differ
+ * only in hue are hard to tell apart while scrolling; a bar above each one
+ * gives the section a top edge.
+ */
 function Block({
   heading,
   note,
@@ -195,11 +235,12 @@ function Block({
   color: string;
 }) {
   return (
-    <section style={{ margin: "0 0 18px" }}>
+    <section style={{ margin: "0 0 26px" }}>
+      <div style={{ width: 26, height: 3, borderRadius: 2, background: color, margin: "0 0 9px" }} />
       <h3
         style={{
           fontFamily: "Poppins, Inter, sans-serif",
-          fontSize: 15,
+          fontSize: 16,
           fontWeight: 800,
           margin: "0 0 2px",
           color,
@@ -209,14 +250,35 @@ function Block({
         {heading}
       </h3>
       {note && (
-        <p style={{ margin: "0 0 8px", fontSize: 13, color: BRAND.mid, fontStyle: "italic" }}>
+        <p style={{ margin: "0 0 10px", fontSize: 13, color: BRAND.mid, fontStyle: "italic" }}>
           {note}
         </p>
       )}
-      <ul style={{ margin: "6px 0 0", paddingLeft: 20 }}>
+      <ul style={{ margin: "8px 0 0", padding: 0, listStyle: "none", maxWidth: MEASURE }}>
         {items.map((t) => (
-          <li key={t} style={{ margin: "0 0 7px", fontSize: 15, lineHeight: 1.6 }}>
-            {t}
+          <li
+            key={t}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "14px 1fr",
+              gap: 10,
+              margin: "0 0 9px",
+              fontSize: 15,
+              lineHeight: 1.6,
+            }}
+          >
+            <span
+              aria-hidden="true"
+              style={{
+                width: 6,
+                height: 6,
+                borderRadius: 999,
+                background: color,
+                // Centred on the first line of text rather than its top.
+                marginTop: 9,
+              }}
+            />
+            <span>{t}</span>
           </li>
         ))}
       </ul>
@@ -225,45 +287,93 @@ function Block({
 }
 
 /**
- * Supportive statements: the words, set as words.
+ * The words, set as words.
  *
  * Every other section on this page is a list of moves. This one is a list of
- * sentences, and a teacher reading it has about ten seconds before the moment
- * passes -- so each line is set in the reading face at a size you can take in
- * whole, with nothing in front of it to scan past. No bullets, no numbers.
+ * sentences, and a teacher reading it has about ten seconds before the
+ * moment passes -- so each line is set in the reading face at a size you can
+ * take in whole, with nothing in front of it to scan past. No bullets, no
+ * numbers.
  *
- * They are written to be said to the student rather than about them, and each
- * one leaves the work standing: none of these excuse the task, and none of
- * them are calm down, you're fine, or I know you can do it.
+ * The two halves belong in one panel. A page that only lists better
+ * sentences does not displace the ones already in a teacher's mouth: in a
+ * hard moment you reach for whatever is nearest, and the nearest words are
+ * the well-meant ones on the right. Putting them side by side is what makes
+ * it a swap rather than a wish.
+ *
+ * What to say is written to be said to the student rather than about them,
+ * and every line leaves the work standing: none of them excuse the task, and
+ * none of them are calm down, you're fine, or I know you can do it.
  */
-function SupportiveStatements({ items }: { items: string[] }) {
+function Words({ say, avoid }: { say: string[]; avoid: { words: string; why: string }[] }) {
   return (
-    <section style={{ margin: "0 0 22px" }}>
-      <p style={{ ...label, margin: "0 0 2px", color: BRAND.pinkDark }}>
-        Supportive statements
-      </p>
-      <p style={{ ...label, margin: "0 0 10px", fontWeight: 500, letterSpacing: 0, textTransform: "none", fontSize: 13 }}>
-        What to actually say.
-      </p>
+    <section
+      style={{
+        margin: "0 0 26px",
+        border: `1px solid ${BRAND.line}`,
+        borderRadius: 14,
+        overflow: "hidden",
+        background: "#FFFFFF",
+      }}
+    >
       <div
         style={{
-          borderLeft: `3px solid ${BRAND.pinkDark}`,
-          paddingLeft: 16,
+          display: "grid",
+          // One column until there is room for two. Side by side is the whole
+          // point of the panel, but not at the cost of a 30-character line.
+          gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))",
         }}
       >
-        {items.map((t, i) => (
-          <p
-            key={i}
-            style={{
-              fontFamily: 'var(--font-serif), Georgia, "Times New Roman", serif',
-              fontSize: 18,
-              lineHeight: 1.45,
-              margin: i ? "11px 0 0" : 0,
-            }}
-          >
-            {t}
+        <div style={{ padding: "18px 20px", borderTop: `3px solid ${BRAND.tealDark}` }}>
+          <p style={{ ...label, margin: "0 0 2px", color: BRAND.tealDark }}>Say this</p>
+          <p style={{ margin: "0 0 14px", fontSize: 13, color: BRAND.mid, fontStyle: "italic" }}>
+            Short enough to say across a room.
           </p>
-        ))}
+          {say.map((t, i) => (
+            <p
+              key={i}
+              style={{
+                fontFamily: 'var(--font-serif), Georgia, "Times New Roman", serif',
+                fontSize: 18,
+                lineHeight: 1.45,
+                margin: i ? "13px 0 0" : 0,
+              }}
+            >
+              {t}
+            </p>
+          ))}
+        </div>
+
+        <div
+          style={{
+            padding: "18px 20px",
+            borderTop: `3px solid ${BRAND.coralDark}`,
+            background: BRAND.paper,
+          }}
+        >
+          <p style={{ ...label, margin: "0 0 2px", color: BRAND.coralDark }}>Not this</p>
+          <p style={{ margin: "0 0 14px", fontSize: 13, color: BRAND.mid, fontStyle: "italic" }}>
+            All of them kind. All of them in daily use.
+          </p>
+          {avoid.map((a, i) => (
+            <div key={i} style={{ margin: i ? "14px 0 0" : 0 }}>
+              <p
+                style={{
+                  fontFamily: 'var(--font-serif), Georgia, "Times New Roman", serif',
+                  fontSize: 18,
+                  lineHeight: 1.45,
+                  margin: 0,
+                  color: BRAND.coralDark,
+                }}
+              >
+                {a.words}
+              </p>
+              <p style={{ margin: "3px 0 0", fontSize: 14, lineHeight: 1.55, color: BRAND.mid }}>
+                {a.why}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -325,7 +435,7 @@ function SignalCard({ s, remove }: { s: Signal; remove: string }) {
         items={s.now}
         color={BRAND.tealDark}
       />
-      <SupportiveStatements items={s.say} />
+      <Words say={s.say} avoid={s.avoid} />
       <Block
         heading="What usually makes it worse"
         note="The reasonable-sounding reflex."
@@ -351,16 +461,11 @@ function SignalCard({ s, remove }: { s: Signal; remove: string }) {
       </section>
 
       {s.research && s.research.length > 0 && (
-        <details style={{ marginTop: 18, borderTop: `1px solid ${BRAND.line}`, paddingTop: 14 }}>
-          <summary
-            style={{
-              cursor: "pointer",
-              fontFamily: "Inter, system-ui, sans-serif",
-              fontSize: 13,
-              fontWeight: 800,
-              color: BRAND.ink,
-            }}
-          >
+        <details
+          className="disclosure"
+          style={{ marginTop: 18, borderTop: `1px solid ${BRAND.line}`, paddingTop: 14 }}
+        >
+          <summary style={summaryStyle}>
             {`Research behind this (${s.research.length})`}
           </summary>
           <div style={{ marginTop: 12 }}>
@@ -443,17 +548,21 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
       <Header />
       <main className="flex-1">
         <div style={{ height: 4, background: GRADIENT }} />
-        <div
-          style={{
-            maxWidth: 1000,
-            margin: "0 auto",
-            padding: "28px 5% 80px",
-            background: BRAND.paper,
-            color: BRAND.ink,
-            fontFamily: "Inter, system-ui, sans-serif",
-            lineHeight: 1.6,
-          }}
-        >
+        {/* The paper runs the full width and the column sits on it. It used
+            to be the other way round -- the background was on the 1000px
+            column, so on any wide screen the page was a beige rectangle with
+            two hard vertical edges standing in a white room. */}
+        <div style={{ background: BRAND.paper }}>
+          <div
+            style={{
+              maxWidth: 1000,
+              margin: "0 auto",
+              padding: "28px 5% 80px",
+              color: BRAND.ink,
+              fontFamily: "Inter, system-ui, sans-serif",
+              lineHeight: 1.6,
+            }}
+          >
           <p style={{ ...label, margin: "0 0 6px" }}>Upshift Learning</p>
           <h1
             style={{
@@ -583,17 +692,26 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
             <SignalCard key={s.id} s={s} remove={href(picked.filter((x) => x !== s.id))} />
           ))}
 
+          {/* Closed by default. This is an index of every strategy on the
+              site, not an answer to the signal that was picked, and open it
+              ran to sixty lines -- longer than the signal card above it and
+              the last thing on the screen, which made it look like the point
+              of the page. It is a reference, so it behaves like one. */}
           {chosen.length > 0 && (
             <Card>
-              <p style={{ ...label, margin: "0 0 8px" }}>Every strategy named on this page</p>
-              <ul style={{ margin: 0, paddingLeft: 20 }}>
-                {strategyIndex().map(([name, signals]) => (
-                  <li key={name} style={{ margin: "0 0 6px", fontSize: 15, lineHeight: 1.6 }}>
-                    <b>{name}</b>
-                    <span style={{ color: BRAND.mid }}>{` — ${signals.join(", ")}`}</span>
-                  </li>
-                ))}
-              </ul>
+              <details className="disclosure">
+                <summary style={summaryStyle}>
+                  {`Every strategy named on this page (${strategyIndex().length})`}
+                </summary>
+                <ul style={{ margin: "14px 0 0", padding: 0, listStyle: "none", maxWidth: MEASURE }}>
+                  {strategyIndex().map(([name, signals]) => (
+                    <li key={name} style={{ margin: "0 0 7px", fontSize: 15, lineHeight: 1.6 }}>
+                      <b>{name}</b>
+                      <span style={{ color: BRAND.mid }}>{` — ${signals.join(", ")}`}</span>
+                    </li>
+                  ))}
+                </ul>
+              </details>
             </Card>
           )}
 
@@ -615,6 +733,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
             note says what the finding does not establish as well as what it does, because a
             teacher handed a neuroscience claim deserves both halves.
           </p>
+          </div>
         </div>
       </main>
       <Footer />

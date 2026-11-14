@@ -83,8 +83,13 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Nav — desktop only; the phone gets the panel below */}
-      <nav className="hidden lg:flex flex-1 items-center h-full gap-0">
+      {/* Nav -- wide screens only; everything narrower gets the panel below.
+          The breakpoint is 1280 rather than Tailwind's lg, because lg is
+          1024 and this nav is 869px wide on its own: between those two
+          numbers the bar simply ran off the side of the window and every
+          page on the site got a horizontal scrollbar. A flex child will not
+          shrink below its content, so nothing was going to absorb it. */}
+      <nav className="hidden min-[1280px]:flex flex-1 items-center h-full gap-0">
         {navItems.map((item) => (
           <button
             key={item.label}
@@ -106,9 +111,12 @@ export default function Header() {
       </nav>
 
       {/* Right */}
-      <div className="flex items-center gap-2 lg:gap-3 flex-shrink-0 ml-auto lg:ml-0">
-        {/* Preview tier switch (dev/staging only) */}
-        <div className="hidden lg:block">
+      <div className="flex items-center gap-2 min-[1280px]:gap-3 flex-shrink-0 ml-auto min-[1280px]:ml-0">
+        {/* Preview tier switch (dev/staging only). It is 261px wide, which
+            is more than the bar has spare at 1280, so it comes in later and
+            lives in the menu panel until then. In production it renders
+            nothing at all. */}
+        <div className="hidden min-[1560px]:block">
           <PreviewTierToggle />
         </div>
 
@@ -149,7 +157,7 @@ export default function Header() {
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           aria-controls="mobile-nav"
-          className="lg:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-lg text-charcoal hover:bg-gray-050 transition-colors"
+          className="min-[1280px]:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-lg text-charcoal hover:bg-gray-050 transition-colors"
         >
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
             {menuOpen ? (
@@ -173,7 +181,7 @@ export default function Header() {
       {menuOpen && (
         <div
           id="mobile-nav"
-          className="lg:hidden absolute top-[72px] left-0 right-0 bg-white border-b border-hairline shadow-lg max-h-[calc(100vh-72px)] overflow-y-auto"
+          className="min-[1280px]:hidden absolute top-[72px] left-0 right-0 bg-white border-b border-hairline shadow-lg max-h-[calc(100vh-72px)] overflow-y-auto"
         >
           <nav className="flex flex-col py-2">
             {navItems.map(item => (
@@ -191,7 +199,7 @@ export default function Header() {
               </button>
             ))}
 
-            <div className="lg:hidden flex items-center px-5 py-3 border-t border-hairline mt-2">
+            <div className="min-[1560px]:hidden flex items-center px-5 py-3 border-t border-hairline mt-2">
               <PreviewTierToggle />
             </div>
 

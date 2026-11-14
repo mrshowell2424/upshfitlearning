@@ -31,8 +31,30 @@ import { chromium } from "playwright";
 
 const BASE = process.env.CHECK_BASE ?? "http://localhost:3000";
 const MAX_PAGES = Number(process.env.CHECK_MAX ?? 250);
-/** How many different query strings to follow for any one path. */
-const PER_PATH = 4;
+/** How many URLs to follow for any one route. */
+const PER_ROUTE = 4;
+
+/**
+ * The route a URL belongs to, with its variable parts folded away.
+ *
+ * Capping by literal path does not work here: /match/RL.4.6 and
+ * /match/RI.2.1 are different paths and the same page, and there are several
+ * hundred of them. The first run of this walked 250 pages and never left the
+ * standards. Anything that looks like an identifier rather than a word
+ * becomes :id, and four of each route is plenty -- they all run the same
+ * code, and a fifth proves nothing the fourth did not.
+ */
+const routeOf = (url) => {
+  const path = url.split("?")[0];
+  return path
+    .split("/")
+    .map((seg) =>
+      // A standard code (RL.4.6), a uuid, a number, or anything else with a
+      // digit or a dot in it: not a route name.
+      /\d/.test(seg) || /^[0-9a-f-]{8,}$/i.test(seg) ? ":id" : seg,
+    )
+    .join("/");
+};
 
 const res = await fetch(BASE).catch(() => null);
 if (!res?.ok) {
@@ -52,7 +74,7 @@ await ctx.addInitScript(() => {
 const page = await ctx.newPage();
 
 const seen = new Set();
-const perPath = new Map();
+const perRoute = new Map();
 const queue = [["/", "(the start)"]];
 const broken = [];
 const reached = [];
@@ -65,12 +87,27 @@ while (queue.length && reached.length < MAX_PAGES) {
   if (seen.has(url)) continue;
   seen.add(url);
 
+  /*
+   * Twice before giving up. The first request to a route on a dev server
+   * compiles it, which on the heavier pages takes longer than any sensible
+   * timeout -- and a slow first compile is not a broken link. The second
+   * attempt hits a warm route, so a page that fails both times is failing
+   * for a reason worth printing.
+   */
   let status = 0;
-  try {
-    const r = await page.goto(BASE + url, { waitUntil: "domcontentloaded", timeout: 20000 });
-    status = r?.status() ?? 0;
-  } catch (e) {
-    broken.push([url, "no response", from, String(e.message).split("\n")[0]]);
+  let failure = null;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const r = await page.goto(BASE + url, { waitUntil: "domcontentloaded", timeout: 45000 });
+      status = r?.status() ?? 0;
+      failure = null;
+      break;
+    } catch (e) {
+      failure = String(e.message).split("\n")[0];
+    }
+  }
+  if (failure) {
+    broken.push([url, "no response", from, failure]);
     continue;
   }
   if (status >= 400 || status === 0) {
@@ -91,10 +128,10 @@ while (queue.length && reached.length < MAX_PAGES) {
     // API routes answer to fetch, not to a browser, and several of them are
     // POST only -- a GET returning 405 is correct and would read as a break.
     if (clean.startsWith("/api/")) continue;
-    const path = clean.split("?")[0];
-    const n = perPath.get(path) ?? 0;
-    if (n >= PER_PATH) continue;
-    perPath.set(path, n + 1);
+    const route = routeOf(clean);
+    const n = perRoute.get(route) ?? 0;
+    if (n >= PER_ROUTE) continue;
+    perRoute.set(route, n + 1);
     queue.push([clean, url]);
   }
 

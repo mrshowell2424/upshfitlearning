@@ -94,6 +94,19 @@ export interface Signal {
    * Nothing here says calm down, you're fine, or I know you can do it.
    */
   say: string[];
+  /**
+   * The sentences that make it worse, and why.
+   *
+   * Every one of these is kind, or at least well meant, and every one of
+   * them is in common use -- which is the point. A teacher reaching for
+   * words in a hard moment reaches for whatever is nearest, and the nearest
+   * words are usually these. Naming the substitute next to the thing it
+   * substitutes for is what makes the swap learnable; a list of better
+   * sentences on its own does not displace anything.
+   *
+   * Not one of these is a thing only a bad teacher says.
+   */
+  avoid: { words: string; why: string }[];
   /** The reasonable-sounding reflex that makes this one worse. */
   worse: string[];
   /** The longer arc, once the moment has passed. */
@@ -140,9 +153,23 @@ export const SIGNALS: Signal[] = [
       "“You can start with one word and we’ll go from there.”",
       "“I’m not going to ask what’s wrong. Tell me when you want to.”",
     ],
+    avoid: [
+      {
+        words: "“What’s wrong?”",
+        why: "A question needs the working memory and the speech that have just gone offline. It is the hardest thing in the room to answer.",
+      },
+      {
+        words: "“I’m going to count to three.”",
+        why: "A deadline, handed to a student who could not meet the first one. Three arrives and now there is a second problem.",
+      },
+      {
+        words: "“You’re fine.”",
+        why: "It tells them their own body is lying, and it ends the conversation before they can say otherwise.",
+      },
+    ],
     worse: [
       "Repeating the direction louder or more firmly. The system that would process it is the part that has stopped.",
-      "Asking \"what's wrong?\" — it is a question that needs working memory and speech, the two things missing.",
+      "Sliding the work back in front of them, or re-reading the question. It is a new demand wearing the clothes of help.",
       "Giving a countdown or an ultimatum. It adds a demand to a student who could not meet the first one.",
       "Reading the stillness as disrespect. It looks like refusal and it is the opposite end of the same cascade.",
       "Sending them out mid-shutdown. Walking and being looked at are both demands.",
@@ -235,6 +262,20 @@ export const SIGNALS: Signal[] = [
       "“I believe you that it feels impossible right now.”",
       "“I’m not going to argue about it. The work will still be here.”",
     ],
+    avoid: [
+      {
+        words: "“You have to.”",
+        why: "It turns the task into a contest, and the contest is one they win by doing nothing at all.",
+      },
+      {
+        words: "“Then you lose your break.”",
+        why: "The price was already worked out before they refused. Naming it only confirms the deal was worth it.",
+      },
+      {
+        words: "“Everyone else has started.”",
+        why: "Shame, in front of the audience that made climbing down hard in the first place.",
+      },
+    ],
     worse: [
       "Repeating the demand with an added consequence. It turns a task into a contest, and the contest is one they can win by not working.",
       "Arguing the point. Every exchange is time not spent starting, and the student knows it.",
@@ -295,11 +336,25 @@ export const SIGNALS: Signal[] = [
       "“What’s the very first thing you have to do? Just the first.”",
       "“You don’t have to know the answer to write the heading.”",
       "“I’ll do the first one with you and you do the second.”",
-      "“Starting is the hard part. Everything after it is easier.”",
+      "“Write the worst first line you can think of. We’ll fix it after.”",
       "“Tell me what you’re stuck on so I stop guessing.”",
     ],
+    avoid: [
+      {
+        words: "“Just begin.”",
+        why: "If they could, they would. It adds pressure and no information about what to actually do.",
+      },
+      {
+        words: "“You’ve got twenty minutes left.”",
+        why: "Time is the thing already stopping them. More of it pointed at them does not start anything.",
+      },
+      {
+        words: "“It’s easy, just do the first one.”",
+        why: "If it turns out not to be easy, they are now also stupid. That is a worse place to start from.",
+      },
+    ],
     worse: [
-      "Telling them to just begin. If they could, they would. The instruction adds pressure and no information.",
+      "Standing beside the desk and waiting. The pressure goes up, the first step is still missing, and now it is being watched.",
       "Repeating the directions a third time. The directions were understood; the start was not.",
       "Taking the delay as laziness and moving on. Ten minutes later they are no further and now behind as well.",
     ],
@@ -357,7 +412,21 @@ export const SIGNALS: Signal[] = [
       "“I’m not looking for done. I’m looking for one you can explain.”",
       "“Pick the one you’re least sure about and we’ll look together.”",
       "“Fast is fine. Let’s make sure it’s also right.”",
-      "“You don’t finish by being first. You finish by being sure.”",
+      "“Put a dot next to any you guessed. I won’t mark those.”",
+    ],
+    avoid: [
+      {
+        words: "“Slow down.”",
+        why: "It names a speed, not a step. There is nothing in it to actually do differently on the next question.",
+      },
+      {
+        words: "“Go back and check it.”",
+        why: "They will re-read it at the same speed, see what they expected to see, and find nothing.",
+      },
+      {
+        words: "“You’re better than this.”",
+        why: "They hear that they are a disappointment, and the next one comes back faster, not slower.",
+      },
     ],
     worse: [
       "Giving more work to the student who finished first. It teaches that speed is punished, and the next one will be rushed too.",
@@ -407,6 +476,20 @@ export const SIGNALS: Signal[] = [
       "“I’m not angry with you. Take the time you need.”",
       "“Come back when your body feels different. I’ll hold your spot.”",
       "“Something was already hard before the pencil broke.”",
+    ],
+    avoid: [
+      {
+        words: "“It’s just a pencil.”",
+        why: "True, and it tells them mid-reaction that their reaction is ridiculous. Nobody has ever calmed down on hearing it.",
+      },
+      {
+        words: "“Calm down.”",
+        why: "It asks for the one thing that is not available right now, and it says the problem is the noise rather than whatever came before it.",
+      },
+      {
+        words: "“Look at me when I’m talking to you.”",
+        why: "Eye contact raises arousal. It is the wrong demand at the exact worst second.",
+      },
     ],
     worse: [
       "Reasoning mid-escalation. The argument is sound and the student cannot process it.",
@@ -469,6 +552,20 @@ export const SIGNALS: Signal[] = [
       "“I’d rather you tell me it’s hard than make me laugh.”",
       "“You don’t have to be the joke to be all right in here.”",
     ],
+    avoid: [
+      {
+        words: "“That’s not funny.”",
+        why: "It makes the joke the subject. The joke was never the subject; the part of the page they cannot do was.",
+      },
+      {
+        words: "“Do you want to go and see the head?”",
+        why: "It raises the stakes, so the performance now has to continue or they lose face.",
+      },
+      {
+        words: "“Stop showing off.”",
+        why: "It names a motive they would never claim, in front of the people they were performing for.",
+      },
+    ],
     worse: [
       "Laughing, then correcting. The mixed signal keeps the pattern alive.",
       "A public telling-off. It is a bigger stage than the joke had.",
@@ -518,6 +615,20 @@ export const SIGNALS: Signal[] = [
       "“You’re right that it isn’t fair. It’s still the work.”",
       "“I’m not debating this one. I’ll debate the next one.”",
     ],
+    avoid: [
+      {
+        words: "“Because I said so.”",
+        why: "It confirms that the only reason is power, which is the thing the argument was testing.",
+      },
+      {
+        words: "“I’m not arguing with you.”",
+        why: "Said in the middle of arguing, it is not true, and they can hear that it is not true.",
+      },
+      {
+        words: "“Why do you always have to question everything?”",
+        why: "Always turns one moment into a character, and a character is much harder to put down.",
+      },
+    ],
     worse: [
       "Explaining again in more detail. It rewards the argument with exactly what it asked for.",
       "Winning the point. Being right is not the goal; starting is.",
@@ -563,8 +674,22 @@ export const SIGNALS: Signal[] = [
       "“You can take a lap. Come back to the same page.”",
       "“Where are you going, and when are you back?”",
       "“Tell me you need a minute instead of leaving.”",
-      "“You don’t need a reason. You need to come back.”",
+      "“You don’t owe me a reason. Just come back.”",
       "“Walk to the door and back, then sit down.”",
+    ],
+    avoid: [
+      {
+        words: "“Sit down.”",
+        why: "It says where the body should be. It does not say what to do when it will not stay there.",
+      },
+      {
+        words: "“That’s the third time.”",
+        why: "A tally. Having paid for three, the fourth is worth having too.",
+      },
+      {
+        words: "“Do you need the nurse or not?”",
+        why: "It makes them commit to a story, and then they have to keep defending the story.",
+      },
     ],
     worse: [
       "Refusing the bathroom. It turns a small avoidance into a dignity fight you cannot win.",
@@ -612,6 +737,20 @@ export const SIGNALS: Signal[] = [
       "“Two minutes looking, then we move on without it.”",
       "“Where was it last? Start there.”",
       "“Take this one and put it in the same place every day.”",
+    ],
+    avoid: [
+      {
+        words: "“Where did you leave it?”",
+        why: "If they knew that, it would not be lost. The question can only be answered by the one person who cannot answer it.",
+      },
+      {
+        words: "“This is the third time this week.”",
+        why: "Accurate, and there is nothing in it they can do. It buys a feeling and no pencil.",
+      },
+      {
+        words: "“You’ll have to manage without it.”",
+        why: "Now the missing pencil is the lesson, and whatever you were teaching is not.",
+      },
     ],
     worse: [
       "Making them go without so they learn. They do not learn; they miss the lesson and the gap widens.",
@@ -661,6 +800,20 @@ export const SIGNALS: Signal[] = [
       "“You can be the one who tells everyone when it’s time.”",
       "“I’ll tell you before it happens, from now on.”",
     ],
+    avoid: [
+      {
+        words: "“We’re moving on, come on.”",
+        why: "The moving on is the problem. Hurrying it is simply more of the thing that is hard.",
+      },
+      {
+        words: "“You were fine a minute ago.”",
+        why: "True, and it lands as an accusation that they have chosen this.",
+      },
+      {
+        words: "“Everyone’s waiting for you.”",
+        why: "It puts an audience on the ninety seconds of the day they are least able to do.",
+      },
+    ],
     worse: [
       "Transitioning with no warning and then treating the lag as defiance.",
       "Taking the unfinished work away as the signal to stop.",
@@ -709,6 +862,20 @@ export const SIGNALS: Signal[] = [
       "“Cross it out. Don’t close it.”",
       "“If you got them all right it would be too easy for you.”",
       "“You’re allowed to be wrong in here. That’s what it’s for.”",
+    ],
+    avoid: [
+      {
+        words: "“It’s only one question.”",
+        why: "The size of the mistake was never what this was about.",
+      },
+      {
+        words: "“Don’t be silly, you’re good at this.”",
+        why: "It contradicts the evidence in front of them, which is a wrong answer in their own handwriting.",
+      },
+      {
+        words: "“Just try again.”",
+        why: "It asks for the same risk with nothing about the risk changed.",
+      },
     ],
     worse: [
       "Over-praising the effort after the collapse. It confirms that something notable just went wrong.",
@@ -769,6 +936,20 @@ export const SIGNALS: Signal[] = [
       "“You already know that one’s right. Tell me why.”",
       "“I’m not checking every line, because you don’t need me to.”",
       "“Ask me when you’re stuck, not when you’re unsure.”",
+    ],
+    avoid: [
+      {
+        words: "“Yes, that’s right.”",
+        why: "Kind, and it buys the next question. Five seconds of relief, and the loop is now a little stronger.",
+      },
+      {
+        words: "“You don’t need me, you know this.”",
+        why: "They do not feel that, so what arrives is being sent away at the moment they asked for help.",
+      },
+      {
+        words: "“Stop asking me.”",
+        why: "It removes the question and puts nothing in its place, so the next one is asked more anxiously or not at all.",
+      },
     ],
     worse: [
       "Confirming every item. It is kind and it feeds the loop.",

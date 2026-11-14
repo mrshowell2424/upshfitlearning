@@ -96,3 +96,27 @@ h1, h2, .wordmark {
 .reading-text {
   font-family: var(--font-serif), Georgia, "Times New Roman", serif;
 }
+
+/* Disclosures. The default marker is a different shape, size and colour in
+   every browser and sits badly against the uppercase labels it heads, so it
+   is replaced by one chevron that turns when the section opens. The summary
+   keeps its own focus ring: this is the control, and a keyboard has to be
+   able to find it. */
+.disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+.disclosure > summary::before {
+  content: "";
+  display: inline-block;
+  width: 0.42em;
+  height: 0.42em;
+  margin-right: 0.7em;
+  vertical-align: 0.08em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 120ms ease;
+}
+.disclosure[open] > summary::before {
+  transform: rotate(45deg);
+}
