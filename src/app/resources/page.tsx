@@ -144,9 +144,25 @@ function ResourcesContent() {
         title="The whole resource library"
         blurb={`All ${RESOURCE_TOTAL.toLocaleString()} resources, searchable and matched to the standard you are teaching. Free — an account is all it takes.`}
       >
-      <div className="flex-1 flex">
+      {/* The filters were a fixed 320px column beside the results at every
+          width. On a phone that left the list 70px wide, so it ran off the
+          side of the screen -- the library was the one page on the site you
+          could not read on the thing most teachers open it on. Column on a
+          phone, two columns from lg, and the filters are short enough
+          (Category, five buckets) to sit above the results rather than
+          needing a drawer of their own. */}
+      <div className="flex-1 flex flex-col lg:flex-row">
         {/* Sidebar with filters */}
-        <aside className="w-80 px-5 md:px-8 py-8 border-r border-border bg-white">
+        <aside className="w-full lg:w-80 lg:flex-shrink-0 px-5 md:px-8 py-4 lg:py-8 border-b lg:border-b-0 lg:border-r border-border bg-white">
+          {/* On a phone the filters are one closed line, so the page still
+              opens on its own title and search box rather than on five
+              checkboxes. The same markup, rendered twice: only one of the
+              two is ever displayed, and both read the same state. */}
+          <details className="disclosure lg:hidden">
+            <summary className="cursor-pointer list-none py-2 text-sm font-bold uppercase tracking-[0.1em] text-charcoal">
+              Filter by category
+            </summary>
+            <div className="pt-3">
           <div className="space-y-8">
             {/*
               The Access filter is hidden while everything is free. Free and
@@ -218,10 +234,86 @@ function ResourcesContent() {
               </div>
             </div>
           </div>
+            </div>
+          </details>
+          <div className="hidden lg:block">
+          <div className="space-y-8">
+            {/*
+              The Access filter is hidden while everything is free. Free and
+              All-Access were a real distinction when one of them cost money;
+              offering it now sorts the library by a difference the visitor
+              cannot act on. The state and the API parameter are left intact,
+              so turning payments back on restores the filter with one change.
+            */}
+            {PAYMENTS_ENABLED && (
+            <>
+            {/* Access filter */}
+            <div>
+              <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-charcoal mb-3">Access</h3>
+              <div className="space-y-2">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={filterType === 'free'}
+                    onChange={() => {
+                      setFilterType(filterType === 'free' ? 'all' : 'free');
+                      setPage(1);
+                    }}
+                    className="w-4 h-4"
+                  />
+                  <span className="text-sm text-charcoal">Free</span>
+                  <span className="text-xs text-text-muted ml-auto">{accessCounts.free}</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={filterType === 'paid'}
+                    onChange={() => {
+                      setFilterType(filterType === 'paid' ? 'all' : 'paid');
+                      setPage(1);
+                    }}
+                    className="w-4 h-4"
+                  />
+                  <span className="text-sm text-charcoal">All-Access</span>
+                  <span className="text-xs text-text-muted ml-auto">{accessCounts.paid}</span>
+                </label>
+              </div>
+            </div>
+            </>
+            )}
+
+            {/* Category filter — five buckets covering the whole library */}
+            <div>
+              <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-charcoal mb-3">Category</h3>
+              <div className="space-y-1">
+                {categories.map((c) => (
+                  <label
+                    key={c.value}
+                    className="flex items-center gap-2 cursor-pointer min-h-[36px] rounded-md px-1 -mx-1 hover:bg-gray-050"
+                  >
+                    <input
+                      type="checkbox"
+                      checked={category === (c.slug ?? categorySlug(c.value))}
+                      onChange={() => {
+                        const slug = c.slug ?? categorySlug(c.value);
+                        setCategory(category === slug ? 'all' : slug);
+                        setPage(1);
+                      }}
+                      className="w-4 h-4 cursor-pointer"
+                    />
+                    <span className="text-sm text-charcoal">{c.value}</span>
+                    <span className="text-xs text-text-muted ml-auto">{c.count}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          </div>
+          </div>
         </aside>
 
-        {/* Main content */}
-        <main className="flex-1 px-5 md:px-8 py-8">
+        {/* min-w-0: without it the card grid's own minimum width keeps this
+            column from shrinking, and it pushes out of the viewport instead. */}
+        <main className="flex-1 min-w-0 px-5 md:px-8 py-8">
           <div className="mb-6">
             <div className="flex items-center justify-between gap-4">
               <div>
