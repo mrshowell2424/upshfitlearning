@@ -1,0 +1,4327 @@
+{
+ "_note": "Built by scripts/build-fluency-play.mjs from the 350 articles. Every line is verbatim from one. Do not hand-edit -- change the script and rebuild.",
+ "source": "scripts/reading-articles.json",
+ "voices": [
+  {
+   "key": "robot",
+   "name": "A robot",
+   "how": "Flat. Every. Word. The. Same.",
+   "teaches": "What phrasing does, by taking it away. Read it again as yourself straight after and the difference is the lesson."
+  },
+  {
+   "key": "whisper",
+   "name": "A whisper",
+   "how": "Quiet enough that somebody across the room leans in.",
+   "teaches": "Phrasing without volume. A whisper that still groups its words proves the phrasing is real and not just loudness."
+  },
+  {
+   "key": "announcer",
+   "name": "A sports announcer",
+   "how": "Loud and fast, like the last ten seconds of a game.",
+   "teaches": "Pace, and the nerve to push it. Speed collapses into mumbling unless the phrases hold."
+  },
+  {
+   "key": "secret",
+   "name": "Telling a secret",
+   "how": "Like you are telling one person something nobody else should hear.",
+   "teaches": "Leaning on the words that matter. A secret has to land, so the stress goes somewhere on purpose."
+  },
+  {
+   "key": "sleepy",
+   "name": "Just woke up",
+   "how": "Slow and heavy, one eye still shut.",
+   "teaches": "Holding a phrase together when it is slow. Slow is where word-by-word reading hides."
+  },
+  {
+   "key": "excited",
+   "name": "Very excited",
+   "how": "Like you just found out something brilliant.",
+   "teaches": "Pitch moving across a sentence instead of sitting flat."
+  },
+  {
+   "key": "news",
+   "name": "A newsreader",
+   "how": "Clear and even. This is the six o'clock news.",
+   "teaches": "The neutral expert read. This one is the target, which is why it comes after the silly ones."
+  },
+  {
+   "key": "grumpy",
+   "name": "Grumpy",
+   "how": "Like somebody made you read it.",
+   "teaches": "That tone is a choice. The words did not change; the feeling did."
+  },
+  {
+   "key": "giant",
+   "name": "A giant",
+   "how": "Low and enormous. The floor shakes.",
+   "teaches": "Breath and volume across a whole phrase rather than one word at a time."
+  },
+  {
+   "key": "mouse",
+   "name": "A tiny mouse",
+   "how": "High and quick and small.",
+   "teaches": "Speed and clarity together. Fast and tiny still has to be understood."
+  },
+  {
+   "key": "scared",
+   "name": "A bit scared",
+   "how": "Like something is behind the door.",
+   "teaches": "Pausing for meaning. Fear puts the breaks in different places, and the child chooses where."
+  },
+  {
+   "key": "bored",
+   "name": "Completely bored",
+   "how": "Like this is the dullest sentence ever written.",
+   "teaches": "The opposite of expression, named out loud. Children recognise this voice, which is why it is worth making fun of."
+  }
+ ],
+ "punctuation": [
+  {
+   "mark": ".",
+   "name": "Telling",
+   "how": "Your voice goes down at the end. You are stating it."
+  },
+  {
+   "mark": "?",
+   "name": "Asking",
+   "how": "Your voice goes up at the end. You want an answer."
+  },
+  {
+   "mark": "!",
+   "name": "Meaning it",
+   "how": "Louder and sharper. You are surprised, or you are certain."
+  }
+ ],
+ "lines": {
+  "0": [
+   {
+    "text": "Hold it so the words are the right way up.",
+    "words": 10,
+    "article": "Which Way Is Up",
+    "id": "gK-24"
+   },
+   {
+    "text": "One reason is that stairs are easy to trip on.",
+    "words": 10,
+    "article": "Why We Hold the Rail",
+    "id": "gK-38"
+   },
+   {
+    "text": "A dog grows thicker fur when it is cold.",
+    "words": 9,
+    "article": "Winter Coats",
+    "id": "gK-6"
+   },
+   {
+    "text": "The book says a snake will shed its skin.",
+    "words": 9,
+    "article": "What Shed Means",
+    "id": "gK-16"
+   },
+   {
+    "text": "The teacher says to line up at the door.",
+    "words": 9,
+    "article": "What Line Up Means",
+    "id": "gK-19"
+   },
+   {
+    "text": "One reason is a fall can hurt your head.",
+    "words": 9,
+    "article": "Why We Wear a Helmet",
+    "id": "gK-36"
+   },
+   {
+    "text": "A duck has soft feathers under its wings.",
+    "words": 8,
+    "article": "A Duck on the Pond",
+    "id": "gK-1"
+   },
+   {
+    "text": "The nurse has a room by the office.",
+    "words": 8,
+    "article": "The School Nurse",
+    "id": "gK-4"
+   },
+   {
+    "text": "A snail has one foot under its shell.",
+    "words": 8,
+    "article": "How a Snail Moves",
+    "id": "gK-5"
+   },
+   {
+    "text": "The fur holds warm air near the skin.",
+    "words": 8,
+    "article": "Winter Coats",
+    "id": "gK-6"
+   },
+   {
+    "text": "A cart has four wheels and a basket.",
+    "words": 8,
+    "article": "The Grocery Cart",
+    "id": "gK-7"
+   },
+   {
+    "text": "A shadow comes when you block the sun.",
+    "words": 8,
+    "article": "The Sun and the Shadow",
+    "id": "gK-12"
+   },
+   {
+    "text": "Our class makes a line to go out.",
+    "words": 8,
+    "article": "The Line and the Door",
+    "id": "gK-13"
+   },
+   {
+    "text": "Hatch means to come out of an egg.",
+    "words": 8,
+    "article": "What Hatch Means",
+    "id": "gK-18"
+   },
+   {
+    "text": "Line up means to stand one behind another.",
+    "words": 8,
+    "article": "What Line Up Means",
+    "id": "gK-19"
+   },
+   {
+    "text": "The front cover is what you see first.",
+    "words": 8,
+    "article": "The Front of a Book",
+    "id": "gK-21"
+   },
+   {
+    "text": "Turn the book over to find the back.",
+    "words": 8,
+    "article": "The Back of a Book",
+    "id": "gK-22"
+   },
+   {
+    "text": "The back tells a little about the story.",
+    "words": 8,
+    "article": "The Back of a Book",
+    "id": "gK-22"
+   },
+   {
+    "text": "The cover is outside and this is inside.",
+    "words": 8,
+    "article": "The Title Page",
+    "id": "gK-23"
+   },
+   {
+    "text": "A book has a top and a bottom.",
+    "words": 8,
+    "article": "Which Way Is Up",
+    "id": "gK-24"
+   },
+   {
+    "text": "Many books have two names on the cover.",
+    "words": 8,
+    "article": "Two Names on One Book",
+    "id": "gK-28"
+   },
+   {
+    "text": "Look at the front cover for the names.",
+    "words": 8,
+    "article": "Where to Find the Names",
+    "id": "gK-30"
+   },
+   {
+    "text": "The words say a blue whale is big.",
+    "words": 8,
+    "article": "The Picture Shows the Size",
+    "id": "gK-33"
+   },
+   {
+    "text": "The picture shows a frog on a leaf.",
+    "words": 8,
+    "article": "What the Words Add",
+    "id": "gK-34"
+   },
+   {
+    "text": "Another is that a helmet is soft inside.",
+    "words": 8,
+    "article": "Why We Wear a Helmet",
+    "id": "gK-36"
+   },
+   {
+    "text": "One reason is that the bugs are gone.",
+    "words": 8,
+    "article": "Why Birds Fly South",
+    "id": "gK-39"
+   },
+   {
+    "text": "One reason is there is only one set.",
+    "words": 8,
+    "article": "Why We Share the Blocks",
+    "id": "gK-40"
+   },
+   {
+    "text": "The other shows how to bake a pie.",
+    "words": 8,
+    "article": "Two Books About Apples",
+    "id": "gK-43"
+   },
+   {
+    "text": "Both have a photo of the full moon.",
+    "words": 8,
+    "article": "Two Books About the Moon",
+    "id": "gK-44"
+   },
+   {
+    "text": "The other has a page for each bug.",
+    "words": 8,
+    "article": "Two Books About Bugs",
+    "id": "gK-45"
+   },
+   {
+    "text": "The class sits on the rug to read.",
+    "words": 8,
+    "article": "Reading Together on the Rug",
+    "id": "gK-46"
+   },
+   {
+    "text": "Hold the question until the page is done.",
+    "words": 8,
+    "article": "When to Ask Your Question",
+    "id": "gK-47"
+   },
+   {
+    "text": "Oil on top keeps the water out.",
+    "words": 7,
+    "article": "A Duck on the Pond",
+    "id": "gK-1"
+   },
+   {
+    "text": "A white man means you may cross.",
+    "words": 7,
+    "article": "The Crossing Light",
+    "id": "gK-2"
+   },
+   {
+    "text": "A bear finds a cave in winter.",
+    "words": 7,
+    "article": "Where a Bear Sleeps",
+    "id": "gK-3"
+   },
+   {
+    "text": "A dandelion seed has a white top.",
+    "words": 7,
+    "article": "Seeds in the Wind",
+    "id": "gK-8"
+   },
+   {
+    "text": "The wind lifts it off the stem.",
+    "words": 7,
+    "article": "Seeds in the Wind",
+    "id": "gK-8"
+   },
+   {
+    "text": "Picture books sit on the low shelves.",
+    "words": 7,
+    "article": "The Library Shelf",
+    "id": "gK-9"
+   },
+   {
+    "text": "A pond freezes from the top down.",
+    "words": 7,
+    "article": "Why Ice Floats",
+    "id": "gK-10"
+   },
+   {
+    "text": "Worms live in tunnels in the dirt.",
+    "words": 7,
+    "article": "Rain and the Worm",
+    "id": "gK-11"
+   },
+   {
+    "text": "You find your number and get on.",
+    "words": 7,
+    "article": "The Bell and the Bus",
+    "id": "gK-15"
+   },
+   {
+    "text": "Shed means to let it drop off.",
+    "words": 7,
+    "article": "What Shed Means",
+    "id": "gK-16"
+   },
+   {
+    "text": "The note says recess is after lunch.",
+    "words": 7,
+    "article": "What Recess Means",
+    "id": "gK-17"
+   },
+   {
+    "text": "The book says the chick will hatch.",
+    "words": 7,
+    "article": "What Hatch Means",
+    "id": "gK-18"
+   },
+   {
+    "text": "The sign says the tulips will bloom.",
+    "words": 7,
+    "article": "What Bloom Means",
+    "id": "gK-20"
+   },
+   {
+    "text": "Bloom means to open into a flower.",
+    "words": 7,
+    "article": "What Bloom Means",
+    "id": "gK-20"
+   },
+   {
+    "text": "Open the cover and turn a page.",
+    "words": 7,
+    "article": "The Title Page",
+    "id": "gK-23"
+   },
+   {
+    "text": "The author decides what the book says.",
+    "words": 7,
+    "article": "Who Wrote It",
+    "id": "gK-26"
+   },
+   {
+    "text": "The name is on the front cover.",
+    "words": 7,
+    "article": "Who Wrote It",
+    "id": "gK-26"
+   },
+   {
+    "text": "The words say the dog is wet.",
+    "words": 7,
+    "article": "The Picture Helps the Words",
+    "id": "gK-31"
+   },
+   {
+    "text": "Now you know how wet it is.",
+    "words": 7,
+    "article": "The Picture Helps the Words",
+    "id": "gK-31"
+   },
+   {
+    "text": "The words say there are some eggs.",
+    "words": 7,
+    "article": "Count What You See",
+    "id": "gK-32"
+   },
+   {
+    "text": "The picture puts a bus beside it.",
+    "words": 7,
+    "article": "The Picture Shows the Size",
+    "id": "gK-33"
+   },
+   {
+    "text": "You cannot tell if it is poisonous.",
+    "words": 7,
+    "article": "What the Words Add",
+    "id": "gK-34"
+   },
+   {
+    "text": "Each picture shows what the page says.",
+    "words": 7,
+    "article": "A Picture on Every Page",
+    "id": "gK-35"
+   },
+   {
+    "text": "If you get lost, look at it.",
+    "words": 7,
+    "article": "A Picture on Every Page",
+    "id": "gK-35"
+   },
+   {
+    "text": "One reason is that roots drink water.",
+    "words": 7,
+    "article": "Why Plants Need Rain",
+    "id": "gK-37"
+   },
+   {
+    "text": "Another is that water carries food up.",
+    "words": 7,
+    "article": "Why Plants Need Rain",
+    "id": "gK-37"
+   },
+   {
+    "text": "Another is that the rail catches you.",
+    "words": 7,
+    "article": "Why We Hold the Rail",
+    "id": "gK-38"
+   },
+   {
+    "text": "Another is that two can build more.",
+    "words": 7,
+    "article": "Why We Share the Blocks",
+    "id": "gK-40"
+   }
+  ],
+  "1": [
+   {
+    "text": "Each street is in order, so the first house is first.",
+    "words": 11,
+    "article": "The Mail Carrier's Bag",
+    "id": "g1-5"
+   },
+   {
+    "text": "The truck is backed in so it can drive out.",
+    "words": 10,
+    "article": "The Fire Station",
+    "id": "g1-7"
+   },
+   {
+    "text": "When you bring it back, someone else can read it.",
+    "words": 10,
+    "article": "The Library Card",
+    "id": "g1-9"
+   },
+   {
+    "text": "When a fly hits a sticky thread, the web shakes.",
+    "words": 10,
+    "article": "The Fly and the Web",
+    "id": "g1-15"
+   },
+   {
+    "text": "At the back of the book is a word list.",
+    "words": 10,
+    "article": "The Word List at the Back",
+    "id": "g1-22"
+   },
+   {
+    "text": "A big picture is at the start of this part.",
+    "words": 10,
+    "article": "The Picture at the Start",
+    "id": "g1-35"
+   },
+   {
+    "text": "Our class practices a fire drill four times a year.",
+    "words": 10,
+    "article": "Why We Practice the Fire Drill",
+    "id": "g1-38"
+   },
+   {
+    "text": "Both books tell what happens after the sun goes down.",
+    "words": 10,
+    "article": "Two Books About Night",
+    "id": "g1-42"
+   },
+   {
+    "text": "A school bus has a long mirror above the driver.",
+    "words": 10,
+    "article": "The Bus Driver's Mirror",
+    "id": "g1-49"
+   },
+   {
+    "text": "A robin needs a safe place for her eggs.",
+    "words": 9,
+    "article": "How a Robin Builds a Nest",
+    "id": "g1-1"
+   },
+   {
+    "text": "A cat purrs with the muscles in its throat.",
+    "words": 9,
+    "article": "Why a Cat Purrs",
+    "id": "g1-4"
+   },
+   {
+    "text": "The shake happens when it breathes in and out.",
+    "words": 9,
+    "article": "Why a Cat Purrs",
+    "id": "g1-4"
+   },
+   {
+    "text": "The mail at the bottom is the last stop.",
+    "words": 9,
+    "article": "The Mail Carrier's Bag",
+    "id": "g1-5"
+   },
+   {
+    "text": "The sun warms a puddle and the water rises.",
+    "words": 9,
+    "article": "How Rain Falls",
+    "id": "g1-8"
+   },
+   {
+    "text": "A library card has your name and a number.",
+    "words": 9,
+    "article": "The Library Card",
+    "id": "g1-9"
+   },
+   {
+    "text": "A seed holds a tiny plant and its food.",
+    "words": 9,
+    "article": "A Seed Grows",
+    "id": "g1-10"
+   },
+   {
+    "text": "When leaves open, the plant makes its own food.",
+    "words": 9,
+    "article": "A Seed Grows",
+    "id": "g1-10"
+   },
+   {
+    "text": "The children stop playing and walk to the line.",
+    "words": 9,
+    "article": "The Bell and the Line",
+    "id": "g1-12"
+   },
+   {
+    "text": "A farmer picks beans early while it is cool.",
+    "words": 9,
+    "article": "The Farmer and the Market",
+    "id": "g1-14"
+   },
+   {
+    "text": "The book says the bear will hibernate all winter.",
+    "words": 9,
+    "article": "What Hibernate Means",
+    "id": "g1-16"
+   },
+   {
+    "text": "If you miss them, the map will not help.",
+    "words": 9,
+    "article": "Words That Tell Where",
+    "id": "g1-17"
+   },
+   {
+    "text": "A third sign tells how deep the water is.",
+    "words": 9,
+    "article": "Signs at the Pool",
+    "id": "g1-19"
+   },
+   {
+    "text": "Float means to stay on top of the water.",
+    "words": 9,
+    "article": "Float and Sink",
+    "id": "g1-20"
+   },
+   {
+    "text": "The first page of this book is a list.",
+    "words": 9,
+    "article": "The List at the Front",
+    "id": "g1-21"
+   },
+   {
+    "text": "A heading is the dark line above a part.",
+    "words": 9,
+    "article": "Headings Tell You Where",
+    "id": "g1-23"
+   },
+   {
+    "text": "A heading that says Eggs means eggs come next.",
+    "words": 9,
+    "article": "Headings Tell You Where",
+    "id": "g1-23"
+   },
+   {
+    "text": "A tiny house takes you back to the start.",
+    "words": 9,
+    "article": "Buttons You Can Tap",
+    "id": "g1-24"
+   },
+   {
+    "text": "The words say the bird has a long bill.",
+    "words": 9,
+    "article": "What the Picture Shows",
+    "id": "g1-26"
+   },
+   {
+    "text": "The words say the thin one drinks from flowers.",
+    "words": 9,
+    "article": "A Picture of a Beak",
+    "id": "g1-28"
+   },
+   {
+    "text": "In picture one the dog is in the tub.",
+    "words": 9,
+    "article": "Steps in a Picture",
+    "id": "g1-32"
+   },
+   {
+    "text": "One arrow points from the cloud to the leaf.",
+    "words": 9,
+    "article": "Follow the Arrow",
+    "id": "g1-33"
+   },
+   {
+    "text": "A line runs from each word to a part.",
+    "words": 9,
+    "article": "A Picture with Labels",
+    "id": "g1-34"
+   },
+   {
+    "text": "One word says wing and points to the wing.",
+    "words": 9,
+    "article": "A Picture with Labels",
+    "id": "g1-34"
+   },
+   {
+    "text": "Before you read, you know the storm was big.",
+    "words": 9,
+    "article": "The Picture at the Start",
+    "id": "g1-35"
+   },
+   {
+    "text": "A plant in a dark closet will not grow.",
+    "words": 9,
+    "article": "Why Plants Need Sun",
+    "id": "g1-37"
+   },
+   {
+    "text": "One reason is that leaves make food from light.",
+    "words": 9,
+    "article": "Why Plants Need Sun",
+    "id": "g1-37"
+   },
+   {
+    "text": "A third is that the teacher can count us.",
+    "words": 9,
+    "article": "Why We Practice the Fire Drill",
+    "id": "g1-38"
+   },
+   {
+    "text": "A third is that their droppings make good soil.",
+    "words": 9,
+    "article": "Why Bats Help Us",
+    "id": "g1-39"
+   },
+   {
+    "text": "A third is that each job teaches you something.",
+    "words": 9,
+    "article": "Why the Class Has Jobs",
+    "id": "g1-40"
+   },
+   {
+    "text": "The first page tells how a bee makes honey.",
+    "words": 9,
+    "article": "Two Pages About Bees",
+    "id": "g1-41"
+   },
+   {
+    "text": "Both pages say a bee lives in a hive.",
+    "words": 9,
+    "article": "Two Pages About Bees",
+    "id": "g1-41"
+   },
+   {
+    "text": "One follows an egg until it is a frog.",
+    "words": 9,
+    "article": "Two Books About Frogs",
+    "id": "g1-44"
+   },
+   {
+    "text": "One is mostly pictures and one is mostly words.",
+    "words": 9,
+    "article": "Two Books About Snow",
+    "id": "g1-45"
+   },
+   {
+    "text": "When it is scared, it pulls its head in.",
+    "words": 9,
+    "article": "How a Turtle Hides",
+    "id": "g1-46"
+   },
+   {
+    "text": "A bird can peck the shell and get nothing.",
+    "words": 9,
+    "article": "How a Turtle Hides",
+    "id": "g1-46"
+   },
+   {
+    "text": "Thin lines run from the stem to the edges.",
+    "words": 9,
+    "article": "Why Leaves Have Veins",
+    "id": "g1-48"
+   },
+   {
+    "text": "A stuck zipper has one tooth out of line.",
+    "words": 9,
+    "article": "How a Zipper Works",
+    "id": "g1-50"
+   },
+   {
+    "text": "The mud dries hard and holds it together.",
+    "words": 8,
+    "article": "How a Robin Builds a Nest",
+    "id": "g1-1"
+   },
+   {
+    "text": "The tongue snaps out and grabs the bug.",
+    "words": 8,
+    "article": "What a Frog Catches",
+    "id": "g1-2"
+   },
+   {
+    "text": "A bee lands on a flower to drink.",
+    "words": 8,
+    "article": "Bees and Flowers",
+    "id": "g1-6"
+   },
+   {
+    "text": "Some pollen rubs off and helps make seeds.",
+    "words": 8,
+    "article": "Bees and Flowers",
+    "id": "g1-6"
+   },
+   {
+    "text": "Rain left a big puddle on the path.",
+    "words": 8,
+    "article": "The Sun and the Puddle",
+    "id": "g1-11"
+   },
+   {
+    "text": "A puddle in the shade was still there.",
+    "words": 8,
+    "article": "The Sun and the Puddle",
+    "id": "g1-11"
+   },
+   {
+    "text": "The bell rings at the end of recess.",
+    "words": 8,
+    "article": "The Bell and the Line",
+    "id": "g1-12"
+   },
+   {
+    "text": "By afternoon the water comes up the sand.",
+    "words": 8,
+    "article": "Why the Beach Changes",
+    "id": "g1-13"
+   },
+   {
+    "text": "The water rises and falls twice a day.",
+    "words": 8,
+    "article": "Why the Beach Changes",
+    "id": "g1-13"
+   },
+   {
+    "text": "Cool beans stay crisp longer than warm ones.",
+    "words": 8,
+    "article": "The Farmer and the Market",
+    "id": "g1-14"
+   },
+   {
+    "text": "A web has sticky threads and plain ones.",
+    "words": 8,
+    "article": "The Fly and the Web",
+    "id": "g1-15"
+   },
+   {
+    "text": "Its heart beats slower and it stays cool.",
+    "words": 8,
+    "article": "What Hibernate Means",
+    "id": "g1-16"
+   },
+   {
+    "text": "A map uses small words to tell where.",
+    "words": 8,
+    "article": "Words That Tell Where",
+    "id": "g1-17"
+   }
+  ],
+  "2": [
+   {
+    "text": "Before the light, an officer stood in the street and waved.",
+    "words": 11,
+    "article": "The First Traffic Light",
+    "id": "g2-2"
+   },
+   {
+    "text": "An icon is a tiny picture that stands for a job.",
+    "words": 11,
+    "article": "Icons on a Screen",
+    "id": "g2-25"
+   },
+   {
+    "text": "At the door of a museum, someone hands you a map.",
+    "words": 11,
+    "article": "The Museum Map",
+    "id": "g2-30"
+   },
+   {
+    "text": "A picture does not tell you how big an animal is.",
+    "words": 11,
+    "article": "A Picture That Shows Size",
+    "id": "g2-35"
+   },
+   {
+    "text": "A small hand or a coin stands next to the animal.",
+    "words": 11,
+    "article": "A Picture That Shows Size",
+    "id": "g2-35"
+   },
+   {
+    "text": "If the bus must be left fast, a bag slows everyone.",
+    "words": 11,
+    "article": "Why the Bus Has Rules",
+    "id": "g2-36"
+   },
+   {
+    "text": "A friendly dog running at a stranger does not look friendly.",
+    "words": 11,
+    "article": "Why Dogs Must Be on a Leash",
+    "id": "g2-40"
+   },
+   {
+    "text": "You learn where rain comes from and what a town does.",
+    "words": 11,
+    "article": "Two Books About Rain",
+    "id": "g2-43"
+   },
+   {
+    "text": "If the lamp went out, a ship might hit rocks.",
+    "words": 10,
+    "article": "The Lighthouse Keeper's Lamp",
+    "id": "g2-4"
+   },
+   {
+    "text": "The moon goes around the Earth in about a month.",
+    "words": 10,
+    "article": "The Moon Changes Shape",
+    "id": "g2-9"
+   },
+   {
+    "text": "A picture of a child means a school is near.",
+    "words": 10,
+    "article": "Words on a Street Sign",
+    "id": "g2-16"
+   },
+   {
+    "text": "In a history book the caption may say who took the photo.",
+    "words": 12,
+    "article": "The Captions Under the Pictures",
+    "id": "g2-23"
+   },
+   {
+    "text": "The word bed means one thing in a sleep book.",
+    "words": 10,
+    "article": "A Glossary at the Back",
+    "id": "g2-24"
+   },
+   {
+    "text": "If an icon is new, hold your finger on it.",
+    "words": 10,
+    "article": "Icons on a Screen",
+    "id": "g2-25"
+   },
+   {
+    "text": "A sign at the park says: carry out what you carry in.",
+    "words": 12,
+    "article": "A Sign That Asks You to Help",
+    "id": "g2-26"
+   },
+   {
+    "text": "A second grade class wrote a letter to their principal.",
+    "words": 10,
+    "article": "A Letter to the Principal",
+    "id": "g2-28"
+   },
+   {
+    "text": "A seed or a tooth is shown cut in half.",
+    "words": 10,
+    "article": "The Picture That Shows the Inside",
+    "id": "g2-31"
+   },
+   {
+    "text": "A book about a long journey often has a map.",
+    "words": 10,
+    "article": "The Map Next to the Story",
+    "id": "g2-32"
+   },
+   {
+    "text": "An arrow may show which way a part is pressed.",
+    "words": 10,
+    "article": "Arrows in a Diagram",
+    "id": "g2-33"
+   },
+   {
+    "text": "A row of trees or a block of houses may be gone.",
+    "words": 12,
+    "article": "Then and Now Pictures",
+    "id": "g2-34"
+   },
+   {
+    "text": "A librarian needs to hear a question the first time.",
+    "words": 10,
+    "article": "Why the Library Is Quiet",
+    "id": "g2-38"
+   },
+   {
+    "text": "The rule is not there to make the room dull.",
+    "words": 10,
+    "article": "Why the Library Is Quiet",
+    "id": "g2-38"
+   },
+   {
+    "text": "Most parks ask that dogs be kept on a leash.",
+    "words": 10,
+    "article": "Why Dogs Must Be on a Leash",
+    "id": "g2-40"
+   },
+   {
+    "text": "Two books about the sun are open on a table.",
+    "words": 10,
+    "article": "Two Books About the Sun",
+    "id": "g2-45"
+   },
+   {
+    "text": "Without the numbers, nobody would know which piece went where.",
+    "words": 10,
+    "article": "The Statue That Came in Pieces",
+    "id": "g2-46"
+   },
+   {
+    "text": "A line of ants carries leaf pieces to the nest.",
+    "words": 10,
+    "article": "The Ants That Grow Their Own Food",
+    "id": "g2-49"
+   },
+   {
+    "text": "For a long time, libraries had no room for children.",
+    "words": 10,
+    "article": "The Room Made for Children",
+    "id": "g2-50"
+   },
+   {
+    "text": "Within thirty years most city libraries had a children's room.",
+    "words": 10,
+    "article": "The Room Made for Children",
+    "id": "g2-50"
+   },
+   {
+    "text": "A barn swallow builds its nest out of mud.",
+    "words": 9,
+    "article": "The Bird That Builds with Mud",
+    "id": "g2-1"
+   },
+   {
+    "text": "If they fit through a gap, the cat fits.",
+    "words": 9,
+    "article": "Why a Cat Has Whiskers",
+    "id": "g2-5"
+   },
+   {
+    "text": "The school practices so everyone knows what to do.",
+    "words": 9,
+    "article": "The Steps of a Fire Drill",
+    "id": "g2-14"
+   },
+   {
+    "text": "A baby tooth does not fall out by accident.",
+    "words": 9,
+    "article": "How a Tooth Falls Out",
+    "id": "g2-15"
+   },
+   {
+    "text": "Some names are used for more than one animal.",
+    "words": 9,
+    "article": "Words for Baby Animals",
+    "id": "g2-19"
+   },
+   {
+    "text": "An index sits at the back of a book.",
+    "words": 9,
+    "article": "How to Use an Index",
+    "id": "g2-21"
+   },
+   {
+    "text": "A caption is the small line under a picture.",
+    "words": 9,
+    "article": "The Captions Under the Pictures",
+    "id": "g2-23"
+   },
+   {
+    "text": "A glossary is a small dictionary inside a book.",
+    "words": 9,
+    "article": "A Glossary at the Back",
+    "id": "g2-24"
+   },
+   {
+    "text": "The class added one more line at the end.",
+    "words": 9,
+    "article": "A Letter to the Principal",
+    "id": "g2-28"
+   },
+   {
+    "text": "A field guide is a book for naming things.",
+    "words": 9,
+    "article": "What a Field Guide Is For",
+    "id": "g2-29"
+   },
+   {
+    "text": "Each note lists things that are easy to see.",
+    "words": 9,
+    "article": "What a Field Guide Is For",
+    "id": "g2-29"
+   },
+   {
+    "text": "Words can say a seed has a plant inside.",
+    "words": 9,
+    "article": "The Picture That Shows the Inside",
+    "id": "g2-31"
+   },
+   {
+    "text": "The words can say the family travelled six weeks.",
+    "words": 9,
+    "article": "The Map Next to the Story",
+    "id": "g2-32"
+   },
+   {
+    "text": "Some history books put two pictures side by side.",
+    "words": 9,
+    "article": "Then and Now Pictures",
+    "id": "g2-34"
+   },
+   {
+    "text": "A school bus has a short list of rules.",
+    "words": 9,
+    "article": "Why the Bus Has Rules",
+    "id": "g2-36"
+   },
+   {
+    "text": "A street with trees can be ten degrees cooler.",
+    "words": 9,
+    "article": "Why Trees Are Planted on Streets",
+    "id": "g2-37"
+   },
+   {
+    "text": "The soft foam inside does most of the work.",
+    "words": 9,
+    "article": "Why Bikes Need Helmets",
+    "id": "g2-39"
+   },
+   {
+    "text": "The first book is about how bats find food.",
+    "words": 9,
+    "article": "Two Books About Bats",
+    "id": "g2-41"
+   },
+   {
+    "text": "A bat calls out and listens for the echo.",
+    "words": 9,
+    "article": "Two Books About Bats",
+    "id": "g2-41"
+   },
+   {
+    "text": "Two books about firefighters were written forty years apart.",
+    "words": 9,
+    "article": "Two Books About Firefighters",
+    "id": "g2-44"
+   },
+   {
+    "text": "The Statue of Liberty did not arrive standing up.",
+    "words": 9,
+    "article": "The Statue That Came in Pieces",
+    "id": "g2-46"
+   },
+   {
+    "text": "People get around on bikes, on foot, and in carriages pulled by horses.",
+    "words": 13,
+    "article": "The Town with No Cars",
+    "id": "g2-48"
+   },
+   {
+    "text": "The same pair may come back next year.",
+    "words": 8,
+    "article": "The Bird That Builds with Mud",
+    "id": "g2-1"
+   },
+   {
+    "text": "A police officer sat in a small booth.",
+    "words": 8,
+    "article": "The First Traffic Light",
+    "id": "g2-2"
+   },
+   {
+    "text": "Rings of thick glass sat around the lamp.",
+    "words": 8,
+    "article": "The Lighthouse Keeper's Lamp",
+    "id": "g2-4"
+   },
+   {
+    "text": "Whiskers feel things the cat does not touch.",
+    "words": 8,
+    "article": "Why a Cat Has Whiskers",
+    "id": "g2-5"
+   },
+   {
+    "text": "Many spiders eat the old web at night.",
+    "words": 8,
+    "article": "What a Spider Spins",
+    "id": "g2-7"
+   },
+   {
+    "text": "A baker mixes flour, water, salt, and yeast.",
+    "words": 8,
+    "article": "Bread from a Field",
+    "id": "g2-8"
+   },
+   {
+    "text": "The sun lights one half of the moon.",
+    "words": 8,
+    "article": "The Moon Changes Shape",
+    "id": "g2-9"
+   },
+   {
+    "text": "On a Saturday, forty people came to dig.",
+    "words": 8,
+    "article": "The Playground Gets Built",
+    "id": "g2-10"
+   },
+   {
+    "text": "The sign still has one drawing on it.",
+    "words": 8,
+    "article": "The Playground Gets Built",
+    "id": "g2-10"
+   },
+   {
+    "text": "The wood is cut into thin flat boards.",
+    "words": 8,
+    "article": "From Tree to Pencil",
+    "id": "g2-12"
+   }
+  ],
+  "3": [
+   {
+    "text": "A train carried the medicine as far as the tracks went.",
+    "words": 11,
+    "article": "The Race to Nome",
+    "id": "g3-1"
+   },
+   {
+    "text": "Wind flipped the sled and buried the medicine in the snow.",
+    "words": 11,
+    "article": "The Race to Nome",
+    "id": "g3-1"
+   },
+   {
+    "text": "The wave pushes everything forward, like squeezing a tube of toothpaste.",
+    "words": 11,
+    "article": "Why Your Stomach Growls",
+    "id": "g3-2"
+   },
+   {
+    "text": "So the company mailed free samples to offices in one city.",
+    "words": 11,
+    "article": "The Glue That Failed",
+    "id": "g3-5"
+   },
+   {
+    "text": "Whale waste floats for about half an hour before it sinks.",
+    "words": 11,
+    "article": "The Dogs That Find Whales",
+    "id": "g3-7"
+   },
+   {
+    "text": "A crew watching the water might find one sample all day.",
+    "words": 11,
+    "article": "The Dogs That Find Whales",
+    "id": "g3-7"
+   },
+   {
+    "text": "Coconuts have crossed thousands of miles and grown on new beaches.",
+    "words": 11,
+    "article": "How a Seed Crosses an Ocean",
+    "id": "g3-8"
+   },
+   {
+    "text": "Families did not want one, because washing by hand was cheap.",
+    "words": 11,
+    "article": "The Woman Who Got Tired of Broken Dishes",
+    "id": "g3-9"
+   },
+   {
+    "text": "The same idea shows up in sidewalks, train tracks, and pipes.",
+    "words": 11,
+    "article": "Why Bridges Have Gaps",
+    "id": "g3-10"
+   },
+   {
+    "text": "When a drop hangs from the ceiling, some limestone stays behind.",
+    "words": 11,
+    "article": "How a Cave Is Carved",
+    "id": "g3-11"
+   },
+   {
+    "text": "Next the bunches are washed, cut into small clusters, and boxed.",
+    "words": 11,
+    "article": "The Long Road of a Banana",
+    "id": "g3-12"
+   },
+   {
+    "text": "For months the body shaves it down and rebuilds the inside.",
+    "words": 11,
+    "article": "How a Broken Bone Heals",
+    "id": "g3-13"
+   },
+   {
+    "text": "A fire going uphill does the same thing, because heat rises.",
+    "words": 11,
+    "article": "How a Wildfire Starts and Stops",
+    "id": "g3-14"
+   },
+   {
+    "text": "Crews scrape a strip of bare dirt called a fire line.",
+    "words": 11,
+    "article": "How a Wildfire Starts and Stops",
+    "id": "g3-14"
+   },
+   {
+    "text": "A volcano is not just a mountain with fire in it.",
+    "words": 11,
+    "article": "The Parts of a Volcano",
+    "id": "g3-17"
+   },
+   {
+    "text": "The way up is the conduit, a pipe through the mountain.",
+    "words": 11,
+    "article": "The Parts of a Volcano",
+    "id": "g3-17"
+   },
+   {
+    "text": "Birds migrate because their food moves, not because they hate cold.",
+    "words": 11,
+    "article": "How Birds Migrate",
+    "id": "g3-18"
+   },
+   {
+    "text": "Where two plates meet there is a crack called a fault.",
+    "words": 11,
+    "article": "What Makes an Earthquake",
+    "id": "g3-20"
+   },
+   {
+    "text": "Once you know four of them, you can guess at tomorrow.",
+    "words": 11,
+    "article": "Reading a Weather Map",
+    "id": "g3-23"
+   },
+   {
+    "text": "An L marks low pressure, where air rises and forms clouds.",
+    "words": 11,
+    "article": "Reading a Weather Map",
+    "id": "g3-23"
+   },
+   {
+    "text": "A tiger in the wild ranges over dozens of square miles.",
+    "words": 11,
+    "article": "Should Zoos Exist?",
+    "id": "g3-27"
+   },
+   {
+    "text": "A reader who skates will weigh this differently than I do.",
+    "words": 11,
+    "article": "A Letter About the New Skate Park",
+    "id": "g3-28"
+   },
+   {
+    "text": "If you ranch, you may think I gave up too much.",
+    "words": 11,
+    "article": "Why I Changed My Mind About Wolves",
+    "id": "g3-29"
+   },
+   {
+    "text": "A reader has to decide what weight to give each view.",
+    "words": 11,
+    "article": "Two Views of the Cell Phone Rule",
+    "id": "g3-30"
+   },
+   {
+    "text": "Leave too early and there is no grass for the oxen.",
+    "words": 11,
+    "article": "The Oregon Trail",
+    "id": "g3-31"
+   },
+   {
+    "text": "When water gets too warm, the polyps push out their algae.",
+    "words": 11,
+    "article": "A Day in the Life of a Coral Reef",
+    "id": "g3-33"
+   },
+   {
+    "text": "As the green fades, the yellows and oranges underneath finally show.",
+    "words": 11,
+    "article": "Why Leaves Change Color",
+    "id": "g3-36"
+   },
+   {
+    "text": "Far out at sea, the salmon reads the Earth’s magnetic field.",
+    "words": 11,
+    "article": "How Salmon Find Their River",
+    "id": "g3-38"
+   },
+   {
+    "text": "If a room should be larger, a site crew can adjust.",
+    "words": 11,
+    "article": "Two Ways to Build a House",
+    "id": "g3-39"
+   },
+   {
+    "text": "Other inventors tried to build planes that stayed steady by themselves.",
+    "words": 11,
+    "article": "Two Texts: The First Flight",
+    "id": "g3-42"
+   },
+   {
+    "text": "Getting all three to hold together is harder than it sounds.",
+    "words": 11,
+    "article": "How Ice Cream Freezes",
+    "id": "g3-47"
+   },
+   {
+    "text": "Below it is the largest underground iron mine in the world.",
+    "words": 11,
+    "article": "The Town That Moved",
+    "id": "g3-48"
+   },
+   {
+    "text": "The mining has gone on for more than a hundred years.",
+    "words": 11,
+    "article": "The Town That Moved",
+    "id": "g3-48"
+   },
+   {
+    "text": "About every ninety minutes those muscles squeeze in a wave.",
+    "words": 10,
+    "article": "Why Your Stomach Growls",
+    "id": "g3-2"
+   },
+   {
+    "text": "Some rest, and scientists think they are a backup crew.",
+    "words": 10,
+    "article": "Cities Under Our Feet",
+    "id": "g3-4"
+   },
+   {
+    "text": "Leafcutter ants even grow a fungus on chewed leaves and eat that.",
+    "words": 12,
+    "article": "Cities Under Our Feet",
+    "id": "g3-4"
+   },
+   {
+    "text": "For five years he looked for someone who wanted a weak glue.",
+    "words": 12,
+    "article": "The Glue That Failed",
+    "id": "g3-5"
+   },
+   {
+    "text": "Kiruna is a town in the far north of Sweden.",
+    "words": 10,
+    "article": "The Town That Moved",
+    "id": "g3-6"
+   },
+   {
+    "text": "If nothing is done, parts of the town will sink.",
+    "words": 10,
+    "article": "The Town That Moved",
+    "id": "g3-6"
+   },
+   {
+    "text": "An island rises out of the sea with no life on it.",
+    "words": 12,
+    "article": "How a Seed Crosses an Ocean",
+    "id": "g3-8"
+   },
+   {
+    "text": "Limestone is a soft rock made from old sea shells.",
+    "words": 10,
+    "article": "How a Cave Is Carved",
+    "id": "g3-11"
+   },
+   {
+    "text": "First, workers cut the bunch while the bananas are hard and green.",
+    "words": 12,
+    "article": "The Long Road of a Banana",
+    "id": "g3-12"
+   },
+   {
+    "text": "In a few hours the clot forms a soft collar.",
+    "words": 10,
+    "article": "How a Broken Bone Heals",
+    "id": "g3-13"
+   },
+   {
+    "text": "Soda ash makes the mix melt at a lower heat.",
+    "words": 10,
+    "article": "From Sand to Window Glass",
+    "id": "g3-15"
+   },
+   {
+    "text": "Glass floats on tin and does not mix with it.",
+    "words": 10,
+    "article": "From Sand to Window Glass",
+    "id": "g3-15"
+   },
+   {
+    "text": "Each one is a small world rebuilt every twelve hours.",
+    "words": 10,
+    "article": "Life in a Tide Pool",
+    "id": "g3-16"
+   },
+   {
+    "text": "When the tide is out, the water heats up and gets saltier.",
+    "words": 12,
+    "article": "Life in a Tide Pool",
+    "id": "g3-16"
+   },
+   {
+    "text": "Antarctica is dry because cold air cannot hold much moisture.",
+    "words": 10,
+    "article": "Deserts Are Not Always Hot",
+    "id": "g3-19"
+   },
+   {
+    "text": "The plates keep pushing, and the rock bends and stores the strain.",
+    "words": 12,
+    "article": "What Makes an Earthquake",
+    "id": "g3-20"
+   },
+   {
+    "text": "Plants grow huge leaves to catch the little light that gets through.",
+    "words": 12,
+    "article": "The Layers of the Rainforest",
+    "id": "g3-22"
+   },
+   {
+    "text": "Deep sea animals survive because they have no air pockets to crush.",
+    "words": 12,
+    "article": "What Lives in the Deep Ocean",
+    "id": "g3-25"
+   },
+   {
+    "text": "How much a child reads does predict how well they read later.",
+    "words": 12,
+    "article": "Homework in Elementary School",
+    "id": "g3-26"
+   },
+   {
+    "text": "Part of every ticket goes to protecting habitat far away.",
+    "words": 10,
+    "article": "Should Zoos Exist?",
+    "id": "g3-27"
+   },
+   {
+    "text": "To the editor: I have lived on Water Street for thirty-one years.",
+    "words": 12,
+    "article": "A Letter About the New Skate Park",
+    "id": "g3-28"
+   },
+   {
+    "text": "For most of them I believed wolves should be shot on sight.",
+    "words": 12,
+    "article": "Why I Changed My Mind About Wolves",
+    "id": "g3-29"
+   },
+   {
+    "text": "Two people who live with that rule wrote about it.",
+    "words": 10,
+    "article": "Two Views of the Cell Phone Rule",
+    "id": "g3-30"
+   },
+   {
+    "text": "Oxen pulled them because oxen can live on prairie grass.",
+    "words": 10,
+    "article": "The Oregon Trail",
+    "id": "g3-31"
+   },
+   {
+    "text": "A coral reef is not a rock or a plant.",
+    "words": 10,
+    "article": "A Day in the Life of a Coral Reef",
+    "id": "g3-33"
+   },
+   {
+    "text": "The Underground Railroad was not underground and not a railroad.",
+    "words": 10,
+    "article": "The Underground Railroad",
+    "id": "g3-35"
+   },
+   {
+    "text": "The red and orange in a fall leaf were there all summer.",
+    "words": 12,
+    "article": "Why Leaves Change Color",
+    "id": "g3-36"
+   }
+  ],
+  "4": [
+   {
+    "text": "So she stayed on shore and turned the numbers into pictures.",
+    "words": 11,
+    "article": "The Woman Who Mapped the Ocean Floor",
+    "id": "g4-2"
+   },
+   {
+    "text": "Her coworker Bruce Heezen told her to do the work over.",
+    "words": 11,
+    "article": "The Woman Who Mapped the Ocean Floor",
+    "id": "g4-2"
+   },
+   {
+    "text": "The listeners were not as easily fooled as the story says.",
+    "words": 11,
+    "article": "The Night the Radio Lied",
+    "id": "g4-4"
+   },
+   {
+    "text": "A wide ring means a good year with plenty of water.",
+    "words": 11,
+    "article": "Reading the Rings",
+    "id": "g4-5"
+   },
+   {
+    "text": "Britain offered a huge prize to anyone who could fix it.",
+    "words": 11,
+    "article": "The Clock That Found the Longitude",
+    "id": "g4-6"
+   },
+   {
+    "text": "His fourth clock was the size of a large pocket watch.",
+    "words": 11,
+    "article": "The Clock That Found the Longitude",
+    "id": "g4-6"
+   },
+   {
+    "text": "Countries send extra samples of their seeds in sealed foil packets.",
+    "words": 11,
+    "article": "The Vault Inside the Mountain",
+    "id": "g4-8"
+   },
+   {
+    "text": "So the fairs did not end only because the weather warmed.",
+    "words": 11,
+    "article": "The Winter the Thames Froze",
+    "id": "g4-11"
+   },
+   {
+    "text": "Green ground pulls in more rain, which grows more green ground.",
+    "words": 11,
+    "article": "When the Sahara Was Green",
+    "id": "g4-14"
+   },
+   {
+    "text": "A salt tax is hard to avoid, because everyone needs salt.",
+    "words": 11,
+    "article": "The Currency of Salt",
+    "id": "g4-16"
+   },
+   {
+    "text": "A tree grows by adding a layer just under the bark.",
+    "words": 11,
+    "article": "Reading the Rings of a Tree",
+    "id": "g4-18"
+   },
+   {
+    "text": "With no winter, growth never pauses and no clear rings form.",
+    "words": 11,
+    "article": "Reading the Rings of a Tree",
+    "id": "g4-18"
+   },
+   {
+    "text": "Lead does not change the color, smell, or taste of water.",
+    "words": 11,
+    "article": "The Lead in the Pipes",
+    "id": "g4-21"
+   },
+   {
+    "text": "Utilities added a chemical that coats the inside of the pipe.",
+    "words": 11,
+    "article": "The Lead in the Pipes",
+    "id": "g4-21"
+   },
+   {
+    "text": "Brakes last longer because the motor does much of the slowing.",
+    "words": 11,
+    "article": "Two Ways to Power a Car",
+    "id": "g4-22"
+   },
+   {
+    "text": "Ponds spilled into the Mississippi, and the carp went with them.",
+    "words": 11,
+    "article": "The Fish That Ate the River",
+    "id": "g4-25"
+   },
+   {
+    "text": "The generator caught after about eight seconds, which felt much longer.",
+    "words": 11,
+    "article": "The Night the Lights Went Out",
+    "id": "g4-26"
+   },
+   {
+    "text": "I made myself finish the oatmeal and it took twenty minutes.",
+    "words": 11,
+    "article": "Climbing Denali",
+    "id": "g4-27"
+   },
+   {
+    "text": "The big cats are awake and follow me along the fence.",
+    "words": 11,
+    "article": "Working the Night Shift at the Zoo",
+    "id": "g4-29"
+   },
+   {
+    "text": "The elephants sleep standing and lie down for maybe an hour.",
+    "words": 11,
+    "article": "Working the Night Shift at the Zoo",
+    "id": "g4-29"
+   },
+   {
+    "text": "Emergency managers use those, not the cone, to decide about evacuations.",
+    "words": 11,
+    "article": "Reading a Hurricane Track Map",
+    "id": "g4-32"
+   },
+   {
+    "text": "Schools that started later report better attendance and fewer first-period failures.",
+    "words": 11,
+    "article": "Start School Later",
+    "id": "g4-36"
+   },
+   {
+    "text": "A team can be part of how a city sees itself.",
+    "words": 11,
+    "article": "Why This Town Says No to a New Stadium",
+    "id": "g4-40"
+   },
+   {
+    "text": "Within fifteen years the elk herd fell by more than half.",
+    "words": 11,
+    "article": "Two Texts: Wolves Return to Yellowstone",
+    "id": "g4-41"
+   },
+   {
+    "text": "The chain is real in some places and overstated in others.",
+    "words": 11,
+    "article": "Two Texts: Wolves Return to Yellowstone",
+    "id": "g4-41"
+   },
+   {
+    "text": "Mixed layers suggest people living together, not trading from far away.",
+    "words": 11,
+    "article": "Two Texts: The Lost Colony of Roanoke",
+    "id": "g4-42"
+   },
+   {
+    "text": "Analysts sort through boulders, rock ridges, and lost shipping containers first.",
+    "words": 11,
+    "article": "The Machine That Reads the Sea Floor",
+    "id": "g4-50"
+   },
+   {
+    "text": "In the town of Moynaq, rusting fishing boats sit in the sand.",
+    "words": 12,
+    "article": "The Ship in the Desert",
+    "id": "g4-1"
+   },
+   {
+    "text": "The lake had lost about ninety percent of its water.",
+    "words": 10,
+    "article": "The Ship in the Desert",
+    "id": "g4-1"
+   },
+   {
+    "text": "The soft ground slowly squeezes down under the weight of the city.",
+    "words": 12,
+    "article": "Why Venice Is Sinking",
+    "id": "g4-3"
+   },
+   {
+    "text": "Venice dropped about twelve centimeters before the pumping was banned.",
+    "words": 10,
+    "article": "Why Venice Is Sinking",
+    "id": "g4-3"
+   },
+   {
+    "text": "The broadcast still teaches a lesson, but maybe not the usual one.",
+    "words": 12,
+    "article": "The Night the Radio Lied",
+    "id": "g4-4"
+   },
+   {
+    "text": "In the Southwest, the chain reaches back more than two thousand years.",
+    "words": 12,
+    "article": "Reading the Rings",
+    "id": "g4-5"
+   },
+   {
+    "text": "Each depositor keeps its own boxes and only it can open them.",
+    "words": 12,
+    "article": "The Vault Inside the Mountain",
+    "id": "g4-8"
+   },
+   {
+    "text": "Astronomers had found a ninth planet, and it had no name yet.",
+    "words": 12,
+    "article": "The Girl Who Named a Planet",
+    "id": "g4-9"
+   },
+   {
+    "text": "Venetia had been studying Greek and Roman myths at school.",
+    "words": 10,
+    "article": "The Girl Who Named a Planet",
+    "id": "g4-9"
+   },
+   {
+    "text": "Either way, cut the network and the forest grows differently.",
+    "words": 10,
+    "article": "What the Forest Is Saying",
+    "id": "g4-10"
+   },
+   {
+    "text": "Europe was going through a stretch of very cold centuries.",
+    "words": 10,
+    "article": "The Winter the Thames Froze",
+    "id": "g4-11"
+   },
+   {
+    "text": "A vaccine is a way to get the practice without the illness.",
+    "words": 12,
+    "article": "How a Vaccine Teaches the Body",
+    "id": "g4-12"
+   },
+   {
+    "text": "Your immune cells find the piece and treat it as an intruder.",
+    "words": 12,
+    "article": "How a Vaccine Teaches the Body",
+    "id": "g4-12"
+   },
+   {
+    "text": "Wind could not pass through them, so it had to go around.",
+    "words": 12,
+    "article": "The Bridge That Danced",
+    "id": "g4-13"
+   },
+   {
+    "text": "Ships are raised eighty-five feet, carried across a lake, and lowered again.",
+    "words": 12,
+    "article": "How a Lock Lifts a Ship",
+    "id": "g4-15"
+   },
+   {
+    "text": "Pork that would spoil in two days lasts two years.",
+    "words": 10,
+    "article": "The Currency of Salt",
+    "id": "g4-16"
+   },
+   {
+    "text": "Young children, renters, and rural residents have often been undercounted.",
+    "words": 10,
+    "article": "What a Census Counts",
+    "id": "g4-20"
+   },
+   {
+    "text": "Comparing them part by part shows where each one wins.",
+    "words": 10,
+    "article": "Two Ways to Power a Car",
+    "id": "g4-22"
+   },
+   {
+    "text": "In Switzerland, writers kept indoors by rain held a ghost story contest.",
+    "words": 12,
+    "article": "The Year Without a Summer",
+    "id": "g4-23"
+   },
+   {
+    "text": "One officer on that trip was a young Dwight Eisenhower.",
+    "words": 10,
+    "article": "How the Interstate Was Built",
+    "id": "g4-24"
+   },
+   {
+    "text": "In open water nothing was big enough to eat them.",
+    "words": 10,
+    "article": "The Fish That Ate the River",
+    "id": "g4-25"
+   },
+   {
+    "text": "when a power line touched an untrimmed tree near Carlton.",
+    "words": 10,
+    "article": "The Night the Lights Went Out",
+    "id": "g4-26"
+   },
+   {
+    "text": "Climbers lower the risk by acclimatizing: carrying loads high, then sleeping low.",
+    "words": 12,
+    "article": "Climbing Denali",
+    "id": "g4-27"
+   },
+   {
+    "text": "Most breaks happened below the level the walls were built to handle.",
+    "words": 12,
+    "article": "The Day the Levees Broke",
+    "id": "g4-28"
+   },
+   {
+    "text": "A lock is a concrete box with a gate at each end.",
+    "words": 12,
+    "article": "How a Lock Lifts a Ship",
+    "id": "g4-31"
+   },
+   {
+    "text": "A boat headed upstream comes in through the lower gate.",
+    "words": 10,
+    "article": "How a Lock Lifts a Ship",
+    "id": "g4-31"
+   },
+   {
+    "text": "The cone is the most misread graphic in weather reporting.",
+    "words": 10,
+    "article": "Reading a Hurricane Track Map",
+    "id": "g4-32"
+   },
+   {
+    "text": "After that its body gets too hot and it has to stop.",
+    "words": 12,
+    "article": "The Fastest Land Animals",
+    "id": "g4-33"
+   },
+   {
+    "text": "A city gets rain the same way a field does.",
+    "words": 10,
+    "article": "Where the Water Goes",
+    "id": "g4-34"
+   },
+   {
+    "text": "Almost all of it crosses farmland on short concrete spans.",
+    "words": 10,
+    "article": "The Longest Bridges Ever Built",
+    "id": "g4-35"
+   },
+   {
+    "text": "At puberty the body clock shifts about two hours later.",
+    "words": 10,
+    "article": "Start School Later",
+    "id": "g4-36"
+   },
+   {
+    "text": "Sunday is also the only day many people can come.",
+    "words": 10,
+    "article": "Keep the Library Open on Sundays",
+    "id": "g4-37"
+   },
+   {
+    "text": "Recess is the only part of the day that is not academic.",
+    "words": 12,
+    "article": "Recess Is Not a Reward",
+    "id": "g4-39"
+   }
+  ],
+  "5": [
+   {
+    "text": "A run that points straight up means fly toward the sun.",
+    "words": 11,
+    "article": "The Bees That Dance",
+    "id": "g5-1"
+   },
+   {
+    "text": "A letter would cross from Missouri to California in ten days.",
+    "words": 11,
+    "article": "The Pony Express",
+    "id": "g5-2"
+   },
+   {
+    "text": "Each rider carried about twenty pounds of mail and little else.",
+    "words": 11,
+    "article": "The Pony Express",
+    "id": "g5-2"
+   },
+   {
+    "text": "The green of chlorophyll is so strong that nothing else shows.",
+    "words": 11,
+    "article": "What a Leaf Loses in Autumn",
+    "id": "g5-3"
+   },
+   {
+    "text": "Lake Erie sits almost six hundred feet above the Hudson River.",
+    "words": 11,
+    "article": "The Erie Canal",
+    "id": "g5-6"
+   },
+   {
+    "text": "Soon it handled more trade than three other big ports together.",
+    "words": 11,
+    "article": "The Erie Canal",
+    "id": "g5-6"
+   },
+   {
+    "text": "Evening classes taught more than forty thousand of them to read.",
+    "words": 11,
+    "article": "The Boys Who Planted a Forest",
+    "id": "g5-8"
+   },
+   {
+    "text": "But there are two bulges of water and only one moon.",
+    "words": 11,
+    "article": "The Tide and the Moon",
+    "id": "g5-9"
+   },
+   {
+    "text": "When the sun and moon line up, the tides are large.",
+    "words": 11,
+    "article": "The Tide and the Moon",
+    "id": "g5-9"
+   },
+   {
+    "text": "Silk in Rome cost many times what it cost in China.",
+    "words": 11,
+    "article": "The Silk Road",
+    "id": "g5-10"
+   },
+   {
+    "text": "Two trains could head toward each other on the same rail.",
+    "words": 11,
+    "article": "The Telegraph and the Railroad",
+    "id": "g5-14"
+   },
+   {
+    "text": "The box that explains them is the legend, or the key.",
+    "words": 11,
+    "article": "What a Map's Legend Tells You",
+    "id": "g5-18"
+   },
+   {
+    "text": "Brown means the lines that show the shape of the land.",
+    "words": 11,
+    "article": "What a Map's Legend Tells You",
+    "id": "g5-18"
+   },
+   {
+    "text": "A science museum and a state agency both write about hurricanes.",
+    "words": 11,
+    "article": "Two Texts: How a Hurricane Forms",
+    "id": "g5-21"
+   },
+   {
+    "text": "Two accounts of the California gold rush sit side by side.",
+    "words": 11,
+    "article": "Two Texts: The Gold Rush",
+    "id": "g5-22"
+   },
+   {
+    "text": "And six million can be seen as that many kitchen tables.",
+    "words": 11,
+    "article": "Two Texts: The Great Migration",
+    "id": "g5-24"
+   },
+   {
+    "text": "The story of how the shape was found takes more names.",
+    "words": 11,
+    "article": "Who Saw the Shape of DNA",
+    "id": "g5-27"
+   },
+   {
+    "text": "The solar system had a tenth planet, or fewer than nine.",
+    "words": 11,
+    "article": "The Argument About Pluto",
+    "id": "g5-29"
+   },
+   {
+    "text": "Check only the forecast and you are guessing at the roads.",
+    "words": 11,
+    "article": "Three Sources on a Snowstorm",
+    "id": "g5-31"
+   },
+   {
+    "text": "An image may be new even if a search finds nothing.",
+    "words": 11,
+    "article": "Checking a Photograph",
+    "id": "g5-32"
+   },
+   {
+    "text": "A brown bird with a streaked chest lands on a feeder.",
+    "words": 11,
+    "article": "Finding a Bird's Name",
+    "id": "g5-33"
+   },
+   {
+    "text": "Alone, any one can send a beginner to the wrong species.",
+    "words": 11,
+    "article": "Finding a Bird's Name",
+    "id": "g5-33"
+   },
+   {
+    "text": "A family has two days at a national park in July.",
+    "words": 11,
+    "article": "Planning a Visit to a National Park",
+    "id": "g5-34"
+   },
+   {
+    "text": "A trailhead can be much colder than the town below it.",
+    "words": 11,
+    "article": "Planning a Visit to a National Park",
+    "id": "g5-34"
+   },
+   {
+    "text": "Sugar in the first three places means a lot of sugar.",
+    "words": 11,
+    "article": "Reading a Nutrition Label",
+    "id": "g5-35"
+   },
+   {
+    "text": "A park sign asks visitors not to feed bread to ducks.",
+    "words": 11,
+    "article": "Why Not to Feed Ducks Bread",
+    "id": "g5-37"
+   },
+   {
+    "text": "Students at a middle school asked their city for a crosswalk.",
+    "words": 11,
+    "article": "The Argument for a Crosswalk",
+    "id": "g5-38"
+   },
+   {
+    "text": "The student says something none of the three authors wrote down.",
+    "words": 11,
+    "article": "Three Texts on the Monarch Butterfly",
+    "id": "g5-41"
+   },
+   {
+    "text": "What the body does depends on its size and the cold.",
+    "words": 11,
+    "article": "Three Texts on Hibernation",
+    "id": "g5-43"
+   },
+   {
+    "text": "The alarm was raised at about nine on a Sunday evening.",
+    "words": 11,
+    "article": "Three Texts on the Chicago Fire",
+    "id": "g5-44"
+   },
+   {
+    "text": "A reader who mixes them up will reach a wrong conclusion.",
+    "words": 11,
+    "article": "Three Texts on Antarctic Ice",
+    "id": "g5-45"
+   },
+   {
+    "text": "The village is in a side canyon of the Grand Canyon.",
+    "words": 11,
+    "article": "The Mail That Went by Mule",
+    "id": "g5-46"
+   },
+   {
+    "text": "A small group of neurons behind the eyes sets the pace.",
+    "words": 11,
+    "article": "The Clock in Your Body",
+    "id": "g5-47"
+   },
+   {
+    "text": "A teenager told to sleep at nine cannot yet do it.",
+    "words": 11,
+    "article": "The Clock in Your Body",
+    "id": "g5-47"
+   },
+   {
+    "text": "For more than a decade she met the contractors and trustees.",
+    "words": 11,
+    "article": "The Woman Who Finished the Bridge",
+    "id": "g5-48"
+   },
+   {
+    "text": "A fin whale's call can be heard a thousand miles away.",
+    "words": 11,
+    "article": "The Channel That Carries Whale Song",
+    "id": "g5-49"
+   },
+   {
+    "text": "Its direction tells the other bees which way to fly.",
+    "words": 10,
+    "article": "The Bees That Dance",
+    "id": "g5-1"
+   },
+   {
+    "text": "A thin layer of cells seals the leaf stalk to the branch.",
+    "words": 12,
+    "article": "What a Leaf Loses in Autumn",
+    "id": "g5-3"
+   },
+   {
+    "text": "Most had been at sea for one or two weeks.",
+    "words": 10,
+    "article": "Ellis Island",
+    "id": "g5-4"
+   },
+   {
+    "text": "The usual reasons were illness or no way to earn a living.",
+    "words": 12,
+    "article": "Ellis Island",
+    "id": "g5-4"
+   },
+   {
+    "text": "The Hawaiian Islands sit in the middle of a plate.",
+    "words": 10,
+    "article": "How a Volcano Builds an Island",
+    "id": "g5-5"
+   },
+   {
+    "text": "Magma burns through the plate and erupts on the seafloor.",
+    "words": 10,
+    "article": "How a Volcano Builds an Island",
+    "id": "g5-5"
+   },
+   {
+    "text": "A pigeon taking off can be heard across a yard.",
+    "words": 10,
+    "article": "The Owl's Silent Wing",
+    "id": "g5-7"
+   },
+   {
+    "text": "The difference is in its feathers, not in how carefully it flies.",
+    "words": 12,
+    "article": "The Owl's Silent Wing",
+    "id": "g5-7"
+   },
+   {
+    "text": "The work was the kind no company would pay for.",
+    "words": 10,
+    "article": "The Boys Who Planted a Forest",
+    "id": "g5-8"
+   },
+   {
+    "text": "A bolt of silk might pass through a dozen owners.",
+    "words": 10,
+    "article": "The Silk Road",
+    "id": "g5-10"
+   },
+   {
+    "text": "In heavy rain the pond holds part of the surge.",
+    "words": 10,
+    "article": "The Beaver and the Flood",
+    "id": "g5-11"
+   },
+   {
+    "text": "At a Mandan village that winter they hired a trader named Charbonneau.",
+    "words": 12,
+    "article": "The Interpreter on the Expedition",
+    "id": "g5-12"
+   },
+   {
+    "text": "A party with a woman and a baby looked peaceful.",
+    "words": 10,
+    "article": "The Interpreter on the Expedition",
+    "id": "g5-12"
+   },
+   {
+    "text": "A wasp with no fig has nowhere to lay eggs.",
+    "words": 10,
+    "article": "The Fig and the Wasp",
+    "id": "g5-13"
+   },
+   {
+    "text": "Two inventions arrived in America at about the same time.",
+    "words": 10,
+    "article": "The Telegraph and the Railroad",
+    "id": "g5-14"
+   },
+   {
+    "text": "Some of it is replaced from four thousand miles away.",
+    "words": 10,
+    "article": "Why the Sahara Feeds the Amazon",
+    "id": "g5-15"
+   },
+   {
+    "text": "The Bodele Depression in Chad is a dried lake bed.",
+    "words": 10,
+    "article": "Why the Sahara Feeds the Amazon",
+    "id": "g5-15"
+   },
+   {
+    "text": "A forty per cent chance of rain is often misread.",
+    "words": 10,
+    "article": "What a Chance of Rain Really Means",
+    "id": "g5-19"
+   },
+   {
+    "text": "One is how sure they are that rain will form.",
+    "words": 10,
+    "article": "What a Chance of Rain Really Means",
+    "id": "g5-19"
+   },
+   {
+    "text": "A ballot measure is a question put straight to voters.",
+    "words": 10,
+    "article": "The Vocabulary of an Election",
+    "id": "g5-20"
+   },
+   {
+    "text": "A poll is a survey of what people say they will do.",
+    "words": 12,
+    "article": "The Vocabulary of an Election",
+    "id": "g5-20"
+   },
+   {
+    "text": "Reading it, a person learns how one stage leads to the next.",
+    "words": 12,
+    "article": "Two Texts: How a Hurricane Forms",
+    "id": "g5-21"
+   },
+   {
+    "text": "The other account is a list of actions in order.",
+    "words": 10,
+    "article": "Two Texts: The Return of the Bald Eagle",
+    "id": "g5-25"
+   },
+   {
+    "text": "The list is better for a timeline on a wall.",
+    "words": 10,
+    "article": "Two Texts: The Return of the Bald Eagle",
+    "id": "g5-25"
+   }
+  ],
+  "6": [
+   {
+    "text": "The painters had to keep a fine point on the brush.",
+    "words": 11,
+    "article": "The Radium Dial Painters",
+    "id": "g6-1"
+   },
+   {
+    "text": "Later the scientists walked the same paths in the same mask.",
+    "words": 11,
+    "article": "What a Crow Remembers",
+    "id": "g6-4"
+   },
+   {
+    "text": "Almost all the ocean's water came from one of those two.",
+    "words": 11,
+    "article": "Why the Ocean Is Salty",
+    "id": "g6-6"
+   },
+   {
+    "text": "The Mississippi carries about a tenth of a gram per litre.",
+    "words": 11,
+    "article": "Why the Ocean Is Salty",
+    "id": "g6-6"
+   },
+   {
+    "text": "Computer once meant a person who did arithmetic for a living.",
+    "words": 11,
+    "article": "The Women Who Computed Orbits",
+    "id": "g6-7"
+   },
+   {
+    "text": "The lake released about a cubic kilometer of gas in hours.",
+    "words": 11,
+    "article": "The Lake That Flipped Over",
+    "id": "g6-8"
+   },
+   {
+    "text": "In reptiles two of these bones are part of the jaw.",
+    "words": 11,
+    "article": "The Bones That Carry Sound",
+    "id": "g6-10"
+   },
+   {
+    "text": "Fossils show them moving into the ear over millions of years.",
+    "words": 11,
+    "article": "The Bones That Carry Sound",
+    "id": "g6-10"
+   },
+   {
+    "text": "Shipping could eat a quarter of what the goods were worth.",
+    "words": 11,
+    "article": "The Box That Changed Trade",
+    "id": "g6-14"
+   },
+   {
+    "text": "Ships, railways, cranes and trucks all use one set of measurements.",
+    "words": 11,
+    "article": "The Box That Changed Trade",
+    "id": "g6-14"
+   },
+   {
+    "text": "The cone shows where the centre of the storm may go.",
+    "words": 11,
+    "article": "What a Cone of Uncertainty Means",
+    "id": "g6-16"
+   },
+   {
+    "text": "The centre stays inside it about two thirds of the time.",
+    "words": 11,
+    "article": "What a Cone of Uncertainty Means",
+    "id": "g6-16"
+   },
+   {
+    "text": "Notice when a word is technical and when it is ordinary.",
+    "words": 11,
+    "article": "Theory, Law, and Hypothesis",
+    "id": "g6-17"
+   },
+   {
+    "text": "Invasive is a technical word with a military word inside it.",
+    "words": 11,
+    "article": "What Invasive Means",
+    "id": "g6-20"
+   },
+   {
+    "text": "If the writer hides it, the reader stops trusting the writer.",
+    "words": 11,
+    "article": "The Turn in the Middle",
+    "id": "g6-22"
+   },
+   {
+    "text": "A reader should understand the point from those two parts alone.",
+    "words": 11,
+    "article": "Where a Lab Report Ends",
+    "id": "g6-24"
+   },
+   {
+    "text": "A news feature often has a box beside the main text.",
+    "words": 11,
+    "article": "The Sidebar and the Story",
+    "id": "g6-25"
+   },
+   {
+    "text": "Only one of those is a question an engineer can answer.",
+    "words": 11,
+    "article": "A Letter to the Editor About the Dam",
+    "id": "g6-28"
+   },
+   {
+    "text": "Attributed to means the museum is not sure who made it.",
+    "words": 11,
+    "article": "Why the Museum Label Says Probably",
+    "id": "g6-29"
+   },
+   {
+    "text": "The university lab has the most freedom and the least power.",
+    "words": 11,
+    "article": "The Company's Report on the River",
+    "id": "g6-30"
+   },
+   {
+    "text": "The ice loses more each summer than it gains each winter.",
+    "words": 11,
+    "article": "The Graph and the Glacier",
+    "id": "g6-31"
+   },
+   {
+    "text": "A budget built on the average will not reach those twenty.",
+    "words": 11,
+    "article": "A Map, a Table, and a Flood",
+    "id": "g6-32"
+   },
+   {
+    "text": "A narrow base under a thick middle is the opposite problem.",
+    "words": 11,
+    "article": "Reading a Population Pyramid",
+    "id": "g6-33"
+   },
+   {
+    "text": "A child on the fifth is taller than one in twenty.",
+    "words": 11,
+    "article": "The Chart in the Doctor's Office",
+    "id": "g6-34"
+   },
+   {
+    "text": "The wrong chart makes a worrying dot and no real problem.",
+    "words": 11,
+    "article": "The Chart in the Doctor's Office",
+    "id": "g6-34"
+   },
+   {
+    "text": "An earthquake reaches a seismograph as a wiggle on a line.",
+    "words": 11,
+    "article": "The Seismograph and the Map",
+    "id": "g6-35"
+   },
+   {
+    "text": "P waves move through rock at about six kilometers a second.",
+    "words": 11,
+    "article": "The Seismograph and the Map",
+    "id": "g6-35"
+   },
+   {
+    "text": "Taking a lane away and expecting no change could be tested.",
+    "words": 11,
+    "article": "Should the City Build a Bike Lane?",
+    "id": "g6-36"
+   },
+   {
+    "text": "A gallon from the tap costs a fraction of a cent.",
+    "words": 11,
+    "article": "Is Bottled Water Worth It?",
+    "id": "g6-38"
+   },
+   {
+    "text": "Without units a rising bar can mean any difference at all.",
+    "words": 11,
+    "article": "The Advertisement for the Memory Pill",
+    "id": "g6-39"
+   },
+   {
+    "text": "Two sides filed statements with the county about an eighty-year-old dam.",
+    "words": 11,
+    "article": "Should the Dam Come Down?",
+    "id": "g6-40"
+   },
+   {
+    "text": "Salmon counts rose above four comparable removed dams within three years.",
+    "words": 11,
+    "article": "Should the Dam Come Down?",
+    "id": "g6-40"
+   },
+   {
+    "text": "The reader does not know whether the boat journey will work.",
+    "words": 11,
+    "article": "Shackleton in Two Books",
+    "id": "g6-41"
+   },
+   {
+    "text": "The memoir is the only account by somebody who was there.",
+    "words": 11,
+    "article": "Shackleton in Two Books",
+    "id": "g6-41"
+   },
+   {
+    "text": "Elephants hear a truck or a dam long before we assume.",
+    "words": 11,
+    "article": "How Elephants Talk Through the Ground",
+    "id": "g6-48"
+   },
+   {
+    "text": "A living seed of the same kind could have contaminated it.",
+    "words": 11,
+    "article": "The Seed That Waited",
+    "id": "g6-50"
+   },
+   {
+    "text": "The answer rests on the genetics differing from the modern plant.",
+    "words": 11,
+    "article": "The Seed That Waited",
+    "id": "g6-50"
+   },
+   {
+    "text": "A worker could sue a boss over a disease caught at work.",
+    "words": 12,
+    "article": "The Radium Dial Painters",
+    "id": "g6-1"
+   },
+   {
+    "text": "Boulders in the base scrape long grooves in the rock.",
+    "words": 10,
+    "article": "How a Glacier Moves",
+    "id": "g6-2"
+   },
+   {
+    "text": "A ridge of rubble marks how far the ice reached.",
+    "words": 10,
+    "article": "How a Glacier Moves",
+    "id": "g6-2"
+   },
+   {
+    "text": "The library kept the original and gave back the copy.",
+    "words": 10,
+    "article": "The Library of Alexandria",
+    "id": "g6-3"
+   },
+   {
+    "text": "Eratosthenes measured the size of the Earth using two shadows.",
+    "words": 10,
+    "article": "The Library of Alexandria",
+    "id": "g6-3"
+   },
+   {
+    "text": "A crow that has been treated badly does not forget.",
+    "words": 10,
+    "article": "What a Crow Remembers",
+    "id": "g6-4"
+   },
+   {
+    "text": "At Langley a group of Black women worked in a segregated wing.",
+    "words": 12,
+    "article": "The Women Who Computed Orbits",
+    "id": "g6-7"
+   },
+   {
+    "text": "The company told the workers to sign a paper calling it untrue.",
+    "words": 12,
+    "article": "The Match Girls' Strike",
+    "id": "g6-9"
+   },
+   {
+    "text": "About one mother in ten died of childbed fever there.",
+    "words": 10,
+    "article": "The Doctor Nobody Believed",
+    "id": "g6-11"
+   },
+   {
+    "text": "The students came to the ward from the dissecting room.",
+    "words": 10,
+    "article": "The Doctor Nobody Believed",
+    "id": "g6-11"
+   },
+   {
+    "text": "The rock beside the ridge is magnetised in matching bands.",
+    "words": 10,
+    "article": "The Idea Called Plate Tectonics",
+    "id": "g6-12"
+   },
+   {
+    "text": "Four years earlier a drop from his nose fell on a plate.",
+    "words": 12,
+    "article": "The Mold on the Windowsill",
+    "id": "g6-15"
+   },
+   {
+    "text": "The first patient was a policeman with an infected scratch.",
+    "words": 10,
+    "article": "The Mold on the Windowsill",
+    "id": "g6-15"
+   },
+   {
+    "text": "A scientific theory is an explanation that has survived testing.",
+    "words": 10,
+    "article": "Theory, Law, and Hypothesis",
+    "id": "g6-17"
+   },
+   {
+    "text": "A man who held people in slavery wrote these principles.",
+    "words": 10,
+    "article": "The Words of the Declaration",
+    "id": "g6-18"
+   },
+   {
+    "text": "So a headline can imply more than the article shows.",
+    "words": 10,
+    "article": "Headline Words",
+    "id": "g6-19"
+   },
+   {
+    "text": "The headline may say a study links a food to a disease.",
+    "words": 12,
+    "article": "Headline Words",
+    "id": "g6-19"
+   },
+   {
+    "text": "The word fits only the few that spread and damage.",
+    "words": 10,
+    "article": "What Invasive Means",
+    "id": "g6-20"
+   },
+   {
+    "text": "Four events in one year, then a gap of twenty.",
+    "words": 10,
+    "article": "Why the Timeline Comes First",
+    "id": "g6-23"
+   },
+   {
+    "text": "Students are told a lab report ends with a conclusion.",
+    "words": 10,
+    "article": "Where a Lab Report Ends",
+    "id": "g6-24"
+   },
+   {
+    "text": "A sidebar can hold the part the writer is least sure of.",
+    "words": 12,
+    "article": "The Sidebar and the Story",
+    "id": "g6-25"
+   },
+   {
+    "text": "A park brochure and a resort brochure can describe the same valley.",
+    "words": 12,
+    "article": "Who Wrote the Brochure",
+    "id": "g6-26"
+   },
+   {
+    "text": "The resort brochure shows the same trail in good light.",
+    "words": 10,
+    "article": "Who Wrote the Brochure",
+    "id": "g6-26"
+   }
+  ]
+ },
+ "stems": {
+  "0": [
+   {
+    "text": "The soft ones stay dry.",
+    "words": 5,
+    "article": "A Duck on the Pond",
+    "id": "gK-1"
+   },
+   {
+    "text": "A red hand means wait.",
+    "words": 5,
+    "article": "The Crossing Light",
+    "id": "gK-2"
+   },
+   {
+    "text": "Numbers count down the seconds.",
+    "words": 5,
+    "article": "The Crossing Light",
+    "id": "gK-2"
+   },
+   {
+    "text": "The slime keeps it safe.",
+    "words": 5,
+    "article": "How a Snail Moves",
+    "id": "gK-5"
+   },
+   {
+    "text": "The fur comes and goes.",
+    "words": 5,
+    "article": "Winter Coats",
+    "id": "gK-6"
+   },
+   {
+    "text": "The back wheels roll straight.",
+    "words": 5,
+    "article": "The Grocery Cart",
+    "id": "gK-7"
+   },
+   {
+    "text": "Thick books sit up high.",
+    "words": 5,
+    "article": "The Library Shelf",
+    "id": "gK-9"
+   },
+   {
+    "text": "Each shelf has a letter.",
+    "words": 5,
+    "article": "The Library Shelf",
+    "id": "gK-9"
+   },
+   {
+    "text": "So ice floats on top.",
+    "words": 5,
+    "article": "Why Ice Floats",
+    "id": "gK-10"
+   },
+   {
+    "text": "At noon it is short.",
+    "words": 5,
+    "article": "The Sun and the Shadow",
+    "id": "gK-12"
+   },
+   {
+    "text": "The line keeps us together.",
+    "words": 5,
+    "article": "The Line and the Door",
+    "id": "gK-13"
+   },
+   {
+    "text": "Each bus has a number.",
+    "words": 5,
+    "article": "The Bell and the Bus",
+    "id": "gK-15"
+   },
+   {
+    "text": "You can run or climb.",
+    "words": 5,
+    "article": "What Recess Means",
+    "id": "gK-17"
+   },
+   {
+    "text": "The chick pecks the shell.",
+    "words": 5,
+    "article": "What Hatch Means",
+    "id": "gK-18"
+   },
+   {
+    "text": "Turn pages right to left.",
+    "words": 5,
+    "article": "Which Way Is Up",
+    "id": "gK-24"
+   },
+   {
+    "text": "The author wrote the words.",
+    "words": 5,
+    "article": "Who Wrote It",
+    "id": "gK-26"
+   },
+   {
+    "text": "The illustrator made the pictures.",
+    "words": 5,
+    "article": "Who Drew It",
+    "id": "gK-27"
+   },
+   {
+    "text": "The other drew the pictures.",
+    "words": 5,
+    "article": "Two Names on One Book",
+    "id": "gK-28"
+   },
+   {
+    "text": "One person did both jobs.",
+    "words": 5,
+    "article": "When One Person Does Both",
+    "id": "gK-29"
+   },
+   {
+    "text": "The picture gave the number.",
+    "words": 5,
+    "article": "Count What You See",
+    "id": "gK-32"
+   },
+   {
+    "text": "A dry plant turns brown.",
+    "words": 5,
+    "article": "Why Plants Need Rain",
+    "id": "gK-37"
+   },
+   {
+    "text": "Your hand is already there.",
+    "words": 5,
+    "article": "Why We Hold the Rail",
+    "id": "gK-38"
+   },
+   {
+    "text": "Another is that water freezes.",
+    "words": 5,
+    "article": "Why Birds Fly South",
+    "id": "gK-39"
+   },
+   {
+    "text": "Both books are about cats.",
+    "words": 5,
+    "article": "Two Books About Cats",
+    "id": "gK-41"
+   },
+   {
+    "text": "Both books are about apples.",
+    "words": 5,
+    "article": "Two Books About Apples",
+    "id": "gK-43"
+   },
+   {
+    "text": "Both start with a tree.",
+    "words": 5,
+    "article": "Two Books About Apples",
+    "id": "gK-43"
+   },
+   {
+    "text": "Both books are about bugs.",
+    "words": 5,
+    "article": "Two Books About Bugs",
+    "id": "gK-45"
+   },
+   {
+    "text": "Your eyes follow the finger.",
+    "words": 5,
+    "article": "Looking Where the Reader Points",
+    "id": "gK-48"
+   },
+   {
+    "text": "Others may notice something new.",
+    "words": 5,
+    "article": "Saying What You Noticed",
+    "id": "gK-49"
+   },
+   {
+    "text": "You know what will happen.",
+    "words": 5,
+    "article": "Reading It Again Tomorrow",
+    "id": "gK-50"
+   },
+   {
+    "text": "The duck stays warm.",
+    "words": 4,
+    "article": "A Duck on the Pond",
+    "id": "gK-1"
+   },
+   {
+    "text": "In spring it comes out hungry.",
+    "words": 6,
+    "article": "Where a Bear Sleeps",
+    "id": "gK-3"
+   },
+   {
+    "text": "You can see its shiny trail.",
+    "words": 6,
+    "article": "How a Snail Moves",
+    "id": "gK-5"
+   },
+   {
+    "text": "In spring the dog sheds it.",
+    "words": 6,
+    "article": "Winter Coats",
+    "id": "gK-6"
+   },
+   {
+    "text": "The front wheels turn any way.",
+    "words": 6,
+    "article": "The Grocery Cart",
+    "id": "gK-7"
+   },
+   {
+    "text": "Water gets bigger when it freezes.",
+    "words": 6,
+    "article": "Why Ice Floats",
+    "id": "gK-10"
+   },
+   {
+    "text": "Rain fills the tunnels with water.",
+    "words": 6,
+    "article": "Rain and the Worm",
+    "id": "gK-11"
+   },
+   {
+    "text": "The worms come up to breathe.",
+    "words": 6,
+    "article": "Rain and the Worm",
+    "id": "gK-11"
+   },
+   {
+    "text": "In the morning it is long.",
+    "words": 6,
+    "article": "The Sun and the Shadow",
+    "id": "gK-12"
+   },
+   {
+    "text": "The leader waits at the door.",
+    "words": 6,
+    "article": "The Line and the Door",
+    "id": "gK-13"
+   }
+  ],
+  "1": [
+   {
+    "text": "A root goes down first.",
+    "words": 5,
+    "article": "A Seed Grows",
+    "id": "g1-10"
+   },
+   {
+    "text": "A teacher counts the children.",
+    "words": 5,
+    "article": "The Bell and the Line",
+    "id": "g1-12"
+   },
+   {
+    "text": "Older beans would be soft.",
+    "words": 5,
+    "article": "The Farmer and the Market",
+    "id": "g1-14"
+   },
+   {
+    "text": "A curled arrow means undo.",
+    "words": 5,
+    "article": "Buttons You Can Tap",
+    "id": "g1-24"
+   },
+   {
+    "text": "A small number sits there.",
+    "words": 5,
+    "article": "The Numbers at the Bottom",
+    "id": "g1-25"
+   },
+   {
+    "text": "Both parts tell different things.",
+    "words": 5,
+    "article": "What the Picture Shows",
+    "id": "g1-26"
+   },
+   {
+    "text": "The words say those things.",
+    "words": 5,
+    "article": "The Words Say More",
+    "id": "g1-27"
+   },
+   {
+    "text": "Together they tell you why.",
+    "words": 5,
+    "article": "A Picture of a Beak",
+    "id": "g1-28"
+   },
+   {
+    "text": "The book gives both reasons.",
+    "words": 5,
+    "article": "Why Plants Need Sun",
+    "id": "g1-37"
+   },
+   {
+    "text": "The writer gives three reasons.",
+    "words": 5,
+    "article": "Why Bats Help Us",
+    "id": "g1-39"
+   },
+   {
+    "text": "Another is that everybody helps.",
+    "words": 5,
+    "article": "Why the Class Has Jobs",
+    "id": "g1-40"
+   },
+   {
+    "text": "The jobs change on Monday.",
+    "words": 5,
+    "article": "Why the Class Has Jobs",
+    "id": "g1-40"
+   },
+   {
+    "text": "Both pages are about bees.",
+    "words": 5,
+    "article": "Two Pages About Bees",
+    "id": "g1-41"
+   },
+   {
+    "text": "Both books are about frogs.",
+    "words": 5,
+    "article": "Two Books About Frogs",
+    "id": "g1-44"
+   },
+   {
+    "text": "Only one has a map.",
+    "words": 5,
+    "article": "Two Books About Frogs",
+    "id": "g1-44"
+   },
+   {
+    "text": "Both books are about snow.",
+    "words": 5,
+    "article": "Two Books About Snow",
+    "id": "g1-45"
+   },
+   {
+    "text": "Pulling down unhooks them again.",
+    "words": 5,
+    "article": "How a Zipper Works",
+    "id": "g1-50"
+   },
+   {
+    "text": "Its tongue is long and sticky.",
+    "words": 6,
+    "article": "What a Frog Catches",
+    "id": "g1-2"
+   },
+   {
+    "text": "The whole catch is very fast.",
+    "words": 6,
+    "article": "What a Frog Catches",
+    "id": "g1-2"
+   },
+   {
+    "text": "Yellow pollen sticks to her legs.",
+    "words": 6,
+    "article": "Bees and Flowers",
+    "id": "g1-6"
+   },
+   {
+    "text": "A firefighter can step in fast.",
+    "words": 6,
+    "article": "The Fire Station",
+    "id": "g1-7"
+   },
+   {
+    "text": "Every second saved helps.",
+    "words": 4,
+    "article": "The Fire Station",
+    "id": "g1-7"
+   },
+   {
+    "text": "The sun came out all morning.",
+    "words": 6,
+    "article": "The Sun and the Puddle",
+    "id": "g1-11"
+   },
+   {
+    "text": "By lunch the puddle was small.",
+    "words": 6,
+    "article": "The Sun and the Puddle",
+    "id": "g1-11"
+   },
+   {
+    "text": "The bell starts all of it.",
+    "words": 6,
+    "article": "The Bell and the Line",
+    "id": "g1-12"
+   },
+   {
+    "text": "The moon pulls on the ocean.",
+    "words": 6,
+    "article": "Why the Beach Changes",
+    "id": "g1-13"
+   },
+   {
+    "text": "By eight her table is full.",
+    "words": 6,
+    "article": "The Farmer and the Market",
+    "id": "g1-14"
+   },
+   {
+    "text": "A fly cannot tell them apart.",
+    "words": 6,
+    "article": "The Fly and the Web",
+    "id": "g1-15"
+   },
+   {
+    "text": "In spring it wakes up hungry.",
+    "words": 6,
+    "article": "What Hibernate Means",
+    "id": "g1-16"
+   },
+   {
+    "text": "Beside means next to.",
+    "words": 4,
+    "article": "Words That Tell Where",
+    "id": "g1-17"
+   },
+   {
+    "text": "Butter melts in a hot pan.",
+    "words": 6,
+    "article": "What Melt Means",
+    "id": "g1-18"
+   },
+   {
+    "text": "Heat makes all of them melt.",
+    "words": 6,
+    "article": "What Melt Means",
+    "id": "g1-18"
+   },
+   {
+    "text": "Diving means going in head first.",
+    "words": 6,
+    "article": "Signs at the Pool",
+    "id": "g1-19"
+   },
+   {
+    "text": "Read the signs to stay safe.",
+    "words": 6,
+    "article": "Signs at the Pool",
+    "id": "g1-19"
+   },
+   {
+    "text": "Each part has a page number.",
+    "words": 6,
+    "article": "The List at the Front",
+    "id": "g1-21"
+   },
+   {
+    "text": "You do not turn every page.",
+    "words": 6,
+    "article": "The List at the Front",
+    "id": "g1-21"
+   },
+   {
+    "text": "The words are in ABC order.",
+    "words": 6,
+    "article": "The Word List at the Back",
+    "id": "g1-22"
+   },
+   {
+    "text": "You can read just the headings.",
+    "words": 6,
+    "article": "Headings Tell You Where",
+    "id": "g1-23"
+   },
+   {
+    "text": "The next page is one more.",
+    "words": 6,
+    "article": "The Numbers at the Bottom",
+    "id": "g1-25"
+   },
+   {
+    "text": "Only words can tell you that.",
+    "words": 6,
+    "article": "What a Photo Cannot Tell You",
+    "id": "g1-30"
+   }
+  ],
+  "2": [
+   {
+    "text": "A loud buzzer sounded first.",
+    "words": 5,
+    "article": "The First Traffic Light",
+    "id": "g2-2"
+   },
+   {
+    "text": "Inside is a tiny plant.",
+    "words": 5,
+    "article": "How a Seed Drinks",
+    "id": "g2-3"
+   },
+   {
+    "text": "A root pushes down first.",
+    "words": 5,
+    "article": "How a Seed Drinks",
+    "id": "g2-3"
+   },
+   {
+    "text": "Smoke left a gray film.",
+    "words": 5,
+    "article": "The Lighthouse Keeper's Lamp",
+    "id": "g2-4"
+   },
+   {
+    "text": "Ships saw it far away.",
+    "words": 5,
+    "article": "The Lighthouse Keeper's Lamp",
+    "id": "g2-4"
+   },
+   {
+    "text": "Moving air bends a whisker.",
+    "words": 5,
+    "article": "Why a Cat Has Whiskers",
+    "id": "g2-5"
+   },
+   {
+    "text": "Each stop has a job.",
+    "words": 5,
+    "article": "The Mail Comes to Town",
+    "id": "g2-6"
+   },
+   {
+    "text": "A machine reads the address.",
+    "words": 5,
+    "article": "The Mail Comes to Town",
+    "id": "g2-6"
+   },
+   {
+    "text": "The dry lines come first.",
+    "words": 5,
+    "article": "What a Spider Spins",
+    "id": "g2-7"
+   },
+   {
+    "text": "The spider does not stick.",
+    "words": 5,
+    "article": "What a Spider Spins",
+    "id": "g2-7"
+   },
+   {
+    "text": "Bread starts in a field.",
+    "words": 5,
+    "article": "Bread from a Field",
+    "id": "g2-8"
+   },
+   {
+    "text": "The powder is called flour.",
+    "words": 5,
+    "article": "Bread from a Field",
+    "id": "g2-8"
+   },
+   {
+    "text": "Some nights it is round.",
+    "words": 5,
+    "article": "The Moon Changes Shape",
+    "id": "g2-9"
+   },
+   {
+    "text": "The moon does not change.",
+    "words": 5,
+    "article": "The Moon Changes Shape",
+    "id": "g2-9"
+   },
+   {
+    "text": "Some held the posts straight.",
+    "words": 5,
+    "article": "The Playground Gets Built",
+    "id": "g2-10"
+   },
+   {
+    "text": "The playground opened in June.",
+    "words": 5,
+    "article": "The Playground Gets Built",
+    "id": "g2-10"
+   },
+   {
+    "text": "A caterpillar eats and eats.",
+    "words": 5,
+    "article": "What Happens Inside a Cocoon",
+    "id": "g2-11"
+   },
+   {
+    "text": "Inside, the caterpillar breaks down.",
+    "words": 5,
+    "article": "What Happens Inside a Cocoon",
+    "id": "g2-11"
+   },
+   {
+    "text": "Most pencil wood is cedar.",
+    "words": 5,
+    "article": "From Tree to Pencil",
+    "id": "g2-12"
+   },
+   {
+    "text": "Cedar is soft and straight.",
+    "words": 5,
+    "article": "From Tree to Pencil",
+    "id": "g2-12"
+   },
+   {
+    "text": "By afternoon it is gone.",
+    "words": 5,
+    "article": "How a Puddle Disappears",
+    "id": "g2-13"
+   },
+   {
+    "text": "The water is still there.",
+    "words": 5,
+    "article": "How a Puddle Disappears",
+    "id": "g2-13"
+   },
+   {
+    "text": "A fire drill is practice.",
+    "words": 5,
+    "article": "The Steps of a Fire Drill",
+    "id": "g2-14"
+   },
+   {
+    "text": "Pencils stay on the desk.",
+    "words": 5,
+    "article": "The Steps of a Fire Drill",
+    "id": "g2-14"
+   },
+   {
+    "text": "The new one keeps rising.",
+    "words": 5,
+    "article": "How a Tooth Falls Out",
+    "id": "g2-15"
+   },
+   {
+    "text": "Street signs use few words.",
+    "words": 5,
+    "article": "Words on a Street Sign",
+    "id": "g2-16"
+   },
+   {
+    "text": "A driver slows and waits.",
+    "words": 5,
+    "article": "Words on a Street Sign",
+    "id": "g2-16"
+   },
+   {
+    "text": "Some animals sleep at night.",
+    "words": 5,
+    "article": "What Nocturnal Means",
+    "id": "g2-17"
+   },
+   {
+    "text": "Some sleep in the day.",
+    "words": 5,
+    "article": "What Nocturnal Means",
+    "id": "g2-17"
+   },
+   {
+    "text": "Stir means move it gently.",
+    "words": 5,
+    "article": "The Words in a Recipe",
+    "id": "g2-18"
+   },
+   {
+    "text": "Chop means cut into pieces.",
+    "words": 5,
+    "article": "The Words in a Recipe",
+    "id": "g2-18"
+   },
+   {
+    "text": "Knowing both helps you read.",
+    "words": 5,
+    "article": "Words for Baby Animals",
+    "id": "g2-19"
+   },
+   {
+    "text": "Other names are a surprise.",
+    "words": 5,
+    "article": "Words for Baby Animals",
+    "id": "g2-19"
+   },
+   {
+    "text": "Each one means something exact.",
+    "words": 5,
+    "article": "Words on a Weather Report",
+    "id": "g2-20"
+   },
+   {
+    "text": "Guessing can leave you wet.",
+    "words": 5,
+    "article": "Words on a Weather Report",
+    "id": "g2-20"
+   },
+   {
+    "text": "The contents page lists chapters.",
+    "words": 5,
+    "article": "How to Use an Index",
+    "id": "g2-21"
+   },
+   {
+    "text": "You can find them twice.",
+    "words": 5,
+    "article": "Why Some Words Are Bold",
+    "id": "g2-22"
+   },
+   {
+    "text": "A glossary holds a few.",
+    "words": 5,
+    "article": "A Glossary at the Back",
+    "id": "g2-24"
+   },
+   {
+    "text": "A magnifying glass means search.",
+    "words": 5,
+    "article": "Icons on a Screen",
+    "id": "g2-25"
+   },
+   {
+    "text": "Icons work in every language.",
+    "words": 5,
+    "article": "Icons on a Screen",
+    "id": "g2-25"
+   }
+  ],
+  "3": [
+   {
+    "text": "The plan was a relay.",
+    "words": 5,
+    "article": "The Race to Nome",
+    "id": "g3-1"
+   },
+   {
+    "text": "Egrets were hunted the most.",
+    "words": 5,
+    "article": "The Hats That Almost Ended the Birds",
+    "id": "g3-3"
+   },
+   {
+    "text": "Some care for the young.",
+    "words": 5,
+    "article": "Cities Under Our Feet",
+    "id": "g3-4"
+   },
+   {
+    "text": "No ant is the boss.",
+    "words": 5,
+    "article": "Cities Under Our Feet",
+    "id": "g3-4"
+   },
+   {
+    "text": "Silver thought it was useful.",
+    "words": 5,
+    "article": "The Glue That Failed",
+    "id": "g3-5"
+   },
+   {
+    "text": "Wind carries the smallest seeds.",
+    "words": 5,
+    "article": "How a Seed Crosses an Ocean",
+    "id": "g3-8"
+   },
+   {
+    "text": "Water still drips from above.",
+    "words": 5,
+    "article": "How a Cave Is Carved",
+    "id": "g3-11"
+   },
+   {
+    "text": "Every part has a job.",
+    "words": 5,
+    "article": "The Parts of a Volcano",
+    "id": "g3-17"
+   },
+   {
+    "text": "Finding the way is harder.",
+    "words": 5,
+    "article": "How Birds Migrate",
+    "id": "g3-18"
+   },
+   {
+    "text": "Deserts form for different reasons.",
+    "words": 5,
+    "article": "Deserts Are Not Always Hot",
+    "id": "g3-19"
+   },
+   {
+    "text": "A beehive looks like chaos.",
+    "words": 5,
+    "article": "Inside a Beehive",
+    "id": "g3-21"
+   },
+   {
+    "text": "Every hive has one queen.",
+    "words": 5,
+    "article": "Inside a Beehive",
+    "id": "g3-21"
+   },
+   {
+    "text": "The understory sits in shade.",
+    "words": 5,
+    "article": "The Layers of the Rainforest",
+    "id": "g3-22"
+   },
+   {
+    "text": "The forest floor is darkest.",
+    "words": 5,
+    "article": "The Layers of the Rainforest",
+    "id": "g3-22"
+   },
+   {
+    "text": "Thin curving lines are isobars.",
+    "words": 5,
+    "article": "Reading a Weather Map",
+    "id": "g3-23"
+   },
+   {
+    "text": "Pressure is the first problem.",
+    "words": 5,
+    "article": "What Lives in the Deep Ocean",
+    "id": "g3-25"
+   },
+   {
+    "text": "Their bodies are mostly water.",
+    "words": 5,
+    "article": "What Lives in the Deep Ocean",
+    "id": "g3-25"
+   },
+   {
+    "text": "I want to explain why.",
+    "words": 5,
+    "article": "Homework in Elementary School",
+    "id": "g3-26"
+   },
+   {
+    "text": "I also saw the cost.",
+    "words": 5,
+    "article": "Homework in Elementary School",
+    "id": "g3-26"
+   },
+   {
+    "text": "Zoos also pay for fieldwork.",
+    "words": 5,
+    "article": "Should Zoos Exist?",
+    "id": "g3-27"
+   },
+   {
+    "text": "Neither is making anything up.",
+    "words": 5,
+    "article": "Two Views of the Cell Phone Rule",
+    "id": "g3-30"
+   },
+   {
+    "text": "The hardest part came last.",
+    "words": 5,
+    "article": "The Oregon Trail",
+    "id": "g3-31"
+   },
+   {
+    "text": "Helens slid off the mountain.",
+    "words": 5,
+    "article": "Inside a Volcano Eruption",
+    "id": "g3-32"
+   },
+   {
+    "text": "Scientists watched the bulge grow.",
+    "words": 5,
+    "article": "Inside a Volcano Eruption",
+    "id": "g3-32"
+   },
+   {
+    "text": "Night belongs to other hunters.",
+    "words": 5,
+    "article": "A Day in the Life of a Coral Reef",
+    "id": "g3-33"
+   },
+   {
+    "text": "A conductor was a guide.",
+    "words": 5,
+    "article": "The Underground Railroad",
+    "id": "g3-35"
+   },
+   {
+    "text": "Nobody knows the true number.",
+    "words": 5,
+    "article": "The Underground Railroad",
+    "id": "g3-35"
+   },
+   {
+    "text": "Once at sea, it grows.",
+    "words": 5,
+    "article": "How Salmon Find Their River",
+    "id": "g3-38"
+   },
+   {
+    "text": "Almost everything else is different.",
+    "words": 5,
+    "article": "Two Ways to Build a House",
+    "id": "g3-39"
+   },
+   {
+    "text": "Speed is the biggest difference.",
+    "words": 5,
+    "article": "Two Ways to Build a House",
+    "id": "g3-39"
+   },
+   {
+    "text": "First, the forests were cut.",
+    "words": 5,
+    "article": "What Happened to the Passenger Pigeon",
+    "id": "g3-40"
+   },
+   {
+    "text": "Almost every book came back.",
+    "words": 5,
+    "article": "The Library That Rides a Donkey",
+    "id": "g3-46"
+   },
+   {
+    "text": "Other places copied the idea.",
+    "words": 5,
+    "article": "The Library That Rides a Donkey",
+    "id": "g3-46"
+   },
+   {
+    "text": "Stirring also folds in air.",
+    "words": 5,
+    "article": "How Ice Cream Freezes",
+    "id": "g3-47"
+   },
+   {
+    "text": "The tailorbird does something else.",
+    "words": 5,
+    "article": "The Bird That Sews",
+    "id": "g3-49"
+   },
+   {
+    "text": "Hiding is its whole defense.",
+    "words": 5,
+    "article": "The Bird That Sews",
+    "id": "g3-49"
+   },
+   {
+    "text": "Children in his town were sick.",
+    "words": 6,
+    "article": "The Race to Nome",
+    "id": "g3-1"
+   },
+   {
+    "text": "Some had a whole stuffed bird.",
+    "words": 6,
+    "article": "The Hats That Almost Ended the Birds",
+    "id": "g3-3"
+   },
+   {
+    "text": "No one else did.",
+    "words": 4,
+    "article": "The Glue That Failed",
+    "id": "g3-5"
+   },
+   {
+    "text": "The mine paid for the town.",
+    "words": 6,
+    "article": "The Town That Moved",
+    "id": "g3-6"
+   }
+  ],
+  "4": [
+   {
+    "text": "The sea started to shrink.",
+    "words": 5,
+    "article": "The Ship in the Desert",
+    "id": "g4-1"
+   },
+   {
+    "text": "Marie Tharp was a geologist.",
+    "words": 5,
+    "article": "The Woman Who Mapped the Ocean Floor",
+    "id": "g4-2"
+   },
+   {
+    "text": "The valley was a problem.",
+    "words": 5,
+    "article": "The Woman Who Mapped the Ocean Floor",
+    "id": "g4-2"
+   },
+   {
+    "text": "A narrow ring means drought.",
+    "words": 5,
+    "article": "Reading the Rings",
+    "id": "g4-5"
+   },
+   {
+    "text": "The place was chosen carefully.",
+    "words": 5,
+    "article": "The Vault Inside the Mountain",
+    "id": "g4-8"
+   },
+   {
+    "text": "The sharing is not random.",
+    "words": 5,
+    "article": "What the Forest Is Saying",
+    "id": "g4-10"
+   },
+   {
+    "text": "The first was the weather.",
+    "words": 5,
+    "article": "The Winter the Thames Froze",
+    "id": "g4-11"
+   },
+   {
+    "text": "The second was the river.",
+    "words": 5,
+    "article": "The Winter the Thames Froze",
+    "id": "g4-11"
+   },
+   {
+    "text": "Locals called it Galloping Gertie.",
+    "words": 5,
+    "article": "The Bridge That Danced",
+    "id": "g4-13"
+   },
+   {
+    "text": "No pumps do the lifting.",
+    "words": 5,
+    "article": "How a Lock Lifts a Ship",
+    "id": "g4-15"
+   },
+   {
+    "text": "Two habits speed this up.",
+    "words": 5,
+    "article": "How Antibiotics Stop Working",
+    "id": "g4-17"
+   },
+   {
+    "text": "Tropical trees are less useful.",
+    "words": 5,
+    "article": "Reading the Rings of a Tree",
+    "id": "g4-18"
+   },
+   {
+    "text": "Money follows the count too.",
+    "words": 5,
+    "article": "What a Census Counts",
+    "id": "g4-20"
+   },
+   {
+    "text": "An accurate count is hard.",
+    "words": 5,
+    "article": "What a Census Counts",
+    "id": "g4-20"
+   },
+   {
+    "text": "The source was the pipes.",
+    "words": 5,
+    "article": "The Lead in the Pipes",
+    "id": "g4-21"
+   },
+   {
+    "text": "Temperatures fell about one degree.",
+    "words": 5,
+    "article": "The Year Without a Summer",
+    "id": "g4-23"
+   },
+   {
+    "text": "Frost killed crops in August.",
+    "words": 5,
+    "article": "The Year Without a Summer",
+    "id": "g4-23"
+   },
+   {
+    "text": "The trip took sixty-two days.",
+    "words": 5,
+    "article": "How the Interstate Was Built",
+    "id": "g4-24"
+   },
+   {
+    "text": "The routes were not neutral.",
+    "words": 5,
+    "article": "How the Interstate Was Built",
+    "id": "g4-24"
+   },
+   {
+    "text": "Their solution used living things.",
+    "words": 5,
+    "article": "The Fish That Ate the River",
+    "id": "g4-25"
+   },
+   {
+    "text": "because the wind changed pitch.",
+    "words": 5,
+    "article": "Climbing Denali",
+    "id": "g4-27"
+   },
+   {
+    "text": "Nobody talks much up here.",
+    "words": 5,
+    "article": "Climbing Denali",
+    "id": "g4-27"
+   },
+   {
+    "text": "We went to the attic.",
+    "words": 5,
+    "article": "The Day the Levees Broke",
+    "id": "g4-28"
+   },
+   {
+    "text": "Many prey animals hide weakness.",
+    "words": 5,
+    "article": "Working the Night Shift at the Zoo",
+    "id": "g4-29"
+   },
+   {
+    "text": "The gate closes behind it.",
+    "words": 5,
+    "article": "How a Lock Lifts a Ship",
+    "id": "g4-31"
+   },
+   {
+    "text": "Only the size is different.",
+    "words": 5,
+    "article": "How a Lock Lifts a Ship",
+    "id": "g4-31"
+   },
+   {
+    "text": "The first reason is biology.",
+    "words": 5,
+    "article": "Start School Later",
+    "id": "g4-36"
+   },
+   {
+    "text": "The second reason is safety.",
+    "words": 5,
+    "article": "Start School Later",
+    "id": "g4-36"
+   },
+   {
+    "text": "Sunday is the second-busiest day.",
+    "words": 5,
+    "article": "Keep the Library Open on Sundays",
+    "id": "g4-37"
+   },
+   {
+    "text": "The second result holds up.",
+    "words": 5,
+    "article": "Ban Plastic Bags? Read the Numbers First",
+    "id": "g4-38"
+   },
+   {
+    "text": "Now consider who loses recess.",
+    "words": 5,
+    "article": "Recess Is Not a Reward",
+    "id": "g4-39"
+   },
+   {
+    "text": "A conversation costs more minutes.",
+    "words": 5,
+    "article": "Recess Is Not a Reward",
+    "id": "g4-39"
+   },
+   {
+    "text": "The jobs argument comes first.",
+    "words": 5,
+    "article": "Why This Town Says No to a New Stadium",
+    "id": "g4-40"
+   },
+   {
+    "text": "The spending argument is weaker.",
+    "words": 5,
+    "article": "Why This Town Says No to a New Stadium",
+    "id": "g4-40"
+   },
+   {
+    "text": "Welfare is a separate question.",
+    "words": 5,
+    "article": "Two Texts: Should Zoos Exist?",
+    "id": "g4-43"
+   },
+   {
+    "text": "The same holds for skills.",
+    "words": 5,
+    "article": "Two Texts: Sleep and Memory",
+    "id": "g4-45"
+   },
+   {
+    "text": "Winton told almost no one.",
+    "words": 5,
+    "article": "The Man Who Refused to Fly",
+    "id": "g4-48"
+   },
+   {
+    "text": "One pulse gives one depth.",
+    "words": 5,
+    "article": "The Machine That Reads the Sea Floor",
+    "id": "g4-50"
+   },
+   {
+    "text": "Two rivers fed the Aral Sea.",
+    "words": 6,
+    "article": "The Ship in the Desert",
+    "id": "g4-1"
+   },
+   {
+    "text": "The two problems have different causes.",
+    "words": 6,
+    "article": "Why Venice Is Sinking",
+    "id": "g4-3"
+   }
+  ],
+  "5": [
+   {
+    "text": "The dance is not perfect.",
+    "words": 5,
+    "article": "The Bees That Dance",
+    "id": "g5-1"
+   },
+   {
+    "text": "Riders had to be light.",
+    "words": 5,
+    "article": "The Pony Express",
+    "id": "g5-2"
+   },
+   {
+    "text": "Chlorophyll turns sunlight into sugar.",
+    "words": 5,
+    "article": "What a Leaf Loses in Autumn",
+    "id": "g5-3"
+   },
+   {
+    "text": "The tree stops rebuilding chlorophyll.",
+    "words": 5,
+    "article": "What a Leaf Loses in Autumn",
+    "id": "g5-3"
+   },
+   {
+    "text": "Some families were split up.",
+    "words": 5,
+    "article": "Ellis Island",
+    "id": "g5-4"
+   },
+   {
+    "text": "The records can be searched.",
+    "words": 5,
+    "article": "Ellis Island",
+    "id": "g5-4"
+   },
+   {
+    "text": "The plate above it moves.",
+    "words": 5,
+    "article": "How a Volcano Builds an Island",
+    "id": "g5-5"
+   },
+   {
+    "text": "The chain shows each step.",
+    "words": 5,
+    "article": "How a Volcano Builds an Island",
+    "id": "g5-5"
+   },
+   {
+    "text": "Critics called it Clinton's Ditch.",
+    "words": 5,
+    "article": "The Erie Canal",
+    "id": "g5-6"
+   },
+   {
+    "text": "The canal needed eighty-three locks.",
+    "words": 5,
+    "article": "The Erie Canal",
+    "id": "g5-6"
+   },
+   {
+    "text": "Engineers have copied the design.",
+    "words": 5,
+    "article": "The Owl's Silent Wing",
+    "id": "g5-7"
+   },
+   {
+    "text": "About three million men joined.",
+    "words": 5,
+    "article": "The Boys Who Planted a Forest",
+    "id": "g5-8"
+   },
+   {
+    "text": "All that water carries energy.",
+    "words": 5,
+    "article": "The Tide and the Moon",
+    "id": "g5-9"
+   },
+   {
+    "text": "Each trade raised the price.",
+    "words": 5,
+    "article": "The Silk Road",
+    "id": "g5-10"
+   },
+   {
+    "text": "Buddhism moved east into China.",
+    "words": 5,
+    "article": "The Silk Road",
+    "id": "g5-10"
+   },
+   {
+    "text": "Water soaks into the banks.",
+    "words": 5,
+    "article": "The Beaver and the Flood",
+    "id": "g5-11"
+   },
+   {
+    "text": "Other animals follow the water.",
+    "words": 5,
+    "article": "The Beaver and the Flood",
+    "id": "g5-11"
+   },
+   {
+    "text": "The reason was his wife.",
+    "words": 5,
+    "article": "The Interpreter on the Expedition",
+    "id": "g5-12"
+   },
+   {
+    "text": "Talk ran through a chain.",
+    "words": 5,
+    "article": "The Interpreter on the Expedition",
+    "id": "g5-12"
+   },
+   {
+    "text": "One insect can get in.",
+    "words": 5,
+    "article": "The Fig and the Wasp",
+    "id": "g5-13"
+   },
+   {
+    "text": "Neither one can manage alone.",
+    "words": 5,
+    "article": "The Fig and the Wasp",
+    "id": "g5-13"
+   },
+   {
+    "text": "E pluribus unum is Latin.",
+    "words": 5,
+    "article": "The Words on a Dollar Bill",
+    "id": "g5-16"
+   },
+   {
+    "text": "Older bills said something else.",
+    "words": 5,
+    "article": "The Words on a Dollar Bill",
+    "id": "g5-16"
+   },
+   {
+    "text": "Height is added in front.",
+    "words": 5,
+    "article": "Naming the Clouds",
+    "id": "g5-17"
+   },
+   {
+    "text": "Color is a shorthand too.",
+    "words": 5,
+    "article": "What a Map's Legend Tells You",
+    "id": "g5-18"
+   },
+   {
+    "text": "A symbol can change meaning.",
+    "words": 5,
+    "article": "What a Map's Legend Tells You",
+    "id": "g5-18"
+   },
+   {
+    "text": "A candidate runs for office.",
+    "words": 5,
+    "article": "The Vocabulary of an Election",
+    "id": "g5-20"
+   },
+   {
+    "text": "An incumbent already holds it.",
+    "words": 5,
+    "article": "The Vocabulary of an Election",
+    "id": "g5-20"
+   },
+   {
+    "text": "A student needs the chronology.",
+    "words": 5,
+    "article": "Two Texts: How a Hurricane Forms",
+    "id": "g5-21"
+   },
+   {
+    "text": "A family needs the solutions.",
+    "words": 5,
+    "article": "Two Texts: How a Hurricane Forms",
+    "id": "g5-21"
+   },
+   {
+    "text": "Cheap passage around Cape Horn.",
+    "words": 5,
+    "article": "Two Texts: The Gold Rush",
+    "id": "g5-22"
+   },
+   {
+    "text": "The timeline gives the order.",
+    "words": 5,
+    "article": "Two Texts: The Gold Rush",
+    "id": "g5-22"
+   },
+   {
+    "text": "A whole section says so.",
+    "words": 5,
+    "article": "Two Texts: Plastic in the Ocean",
+    "id": "g5-23"
+   },
+   {
+    "text": "One asks you to act.",
+    "words": 5,
+    "article": "Two Texts: Plastic in the Ocean",
+    "id": "g5-23"
+   },
+   {
+    "text": "The crowd is drawn calm.",
+    "words": 5,
+    "article": "Two Views of the Boston Massacre",
+    "id": "g5-26"
+   },
+   {
+    "text": "A soldier was knocked down.",
+    "words": 5,
+    "article": "Two Views of the Boston Massacre",
+    "id": "g5-26"
+   },
+   {
+    "text": "A planet orbits the sun.",
+    "words": 5,
+    "article": "The Argument About Pluto",
+    "id": "g5-29"
+   },
+   {
+    "text": "Pluto fails the third test.",
+    "words": 5,
+    "article": "The Argument About Pluto",
+    "id": "g5-29"
+   },
+   {
+    "text": "Both front pages are accurate.",
+    "words": 5,
+    "article": "The Same Flood in Two Newspapers",
+    "id": "g5-30"
+   },
+   {
+    "text": "A family needs three answers.",
+    "words": 5,
+    "article": "Three Sources on a Snowstorm",
+    "id": "g5-31"
+   }
+  ],
+  "6": [
+   {
+    "text": "The glow came from radium.",
+    "words": 5,
+    "article": "The Radium Dial Painters",
+    "id": "g6-1"
+   },
+   {
+    "text": "Soon the women lost teeth.",
+    "words": 5,
+    "article": "The Radium Dial Painters",
+    "id": "g6-1"
+   },
+   {
+    "text": "The motion has two parts.",
+    "words": 5,
+    "article": "How a Glacier Moves",
+    "id": "g6-2"
+   },
+   {
+    "text": "Ice under great pressure bends.",
+    "words": 5,
+    "article": "How a Glacier Moves",
+    "id": "g6-2"
+   },
+   {
+    "text": "Scholars worked there for pay.",
+    "words": 5,
+    "article": "The Library of Alexandria",
+    "id": "g6-3"
+   },
+   {
+    "text": "Euclid wrote his geometry there.",
+    "words": 5,
+    "article": "The Library of Alexandria",
+    "id": "g6-3"
+   },
+   {
+    "text": "Some had never been trapped.",
+    "words": 5,
+    "article": "What a Crow Remembers",
+    "id": "g6-4"
+   },
+   {
+    "text": "More birds joined each time.",
+    "words": 5,
+    "article": "What a Crow Remembers",
+    "id": "g6-4"
+   },
+   {
+    "text": "The work was still wanted.",
+    "words": 5,
+    "article": "The Pullman Porters",
+    "id": "g6-5"
+   },
+   {
+    "text": "The rain breaks down rock.",
+    "words": 5,
+    "article": "Why the Ocean Is Salty",
+    "id": "g6-6"
+   },
+   {
+    "text": "No tongue can taste that.",
+    "words": 5,
+    "article": "Why the Ocean Is Salty",
+    "id": "g6-6"
+   },
+   {
+    "text": "Nobody had put them together.",
+    "words": 5,
+    "article": "The Women Who Computed Orbits",
+    "id": "g6-7"
+   },
+   {
+    "text": "The volcano is not erupting.",
+    "words": 5,
+    "article": "The Lake That Flipped Over",
+    "id": "g6-8"
+   },
+   {
+    "text": "Nyos is deep and tropical.",
+    "words": 5,
+    "article": "The Lake That Flipped Over",
+    "id": "g6-8"
+   },
+   {
+    "text": "People called it phossy jaw.",
+    "words": 5,
+    "article": "The Match Girls' Strike",
+    "id": "g6-9"
+   },
+   {
+    "text": "Three bones solve the problem.",
+    "words": 5,
+    "article": "The Bones That Carry Sound",
+    "id": "g6-10"
+   },
+   {
+    "text": "The system can protect itself.",
+    "words": 5,
+    "article": "The Bones That Carry Sound",
+    "id": "g6-10"
+   },
+   {
+    "text": "Midwives worked in the second.",
+    "words": 5,
+    "article": "The Doctor Nobody Believed",
+    "id": "g6-11"
+   },
+   {
+    "text": "His contract was not renewed.",
+    "words": 5,
+    "article": "The Doctor Nobody Believed",
+    "id": "g6-11"
+   },
+   {
+    "text": "Look at a world map.",
+    "words": 5,
+    "article": "The Idea Called Plate Tectonics",
+    "id": "g6-12"
+   },
+   {
+    "text": "People noticed this centuries ago.",
+    "words": 5,
+    "article": "The Idea Called Plate Tectonics",
+    "id": "g6-12"
+   },
+   {
+    "text": "Most charity workers only visited.",
+    "words": 5,
+    "article": "The House on Halsted Street",
+    "id": "g6-13"
+   },
+   {
+    "text": "The residents also counted things.",
+    "words": 5,
+    "article": "The House on Halsted Street",
+    "id": "g6-13"
+   },
+   {
+    "text": "The box itself is ordinary.",
+    "words": 5,
+    "article": "The Box That Changed Trade",
+    "id": "g6-14"
+   },
+   {
+    "text": "So he knew the pattern.",
+    "words": 5,
+    "article": "The Mold on the Windowsill",
+    "id": "g6-15"
+   },
+   {
+    "text": "Their work was the extraction.",
+    "words": 5,
+    "article": "The Mold on the Windowsill",
+    "id": "g6-15"
+   },
+   {
+    "text": "Other words are technical too.",
+    "words": 5,
+    "article": "What a Cone of Uncertainty Means",
+    "id": "g6-16"
+   },
+   {
+    "text": "Forecasters have tried renaming things.",
+    "words": 5,
+    "article": "What a Cone of Uncertainty Means",
+    "id": "g6-16"
+   },
+   {
+    "text": "A law is different again.",
+    "words": 5,
+    "article": "Theory, Law, and Hypothesis",
+    "id": "g6-17"
+   },
+   {
+    "text": "A law describes what happens.",
+    "words": 5,
+    "article": "Theory, Law, and Hypothesis",
+    "id": "g6-17"
+   },
+   {
+    "text": "Unalienable is a legal term.",
+    "words": 5,
+    "article": "The Words of the Declaration",
+    "id": "g6-18"
+   },
+   {
+    "text": "Some words have shifted far.",
+    "words": 5,
+    "article": "The Words of the Declaration",
+    "id": "g6-18"
+   },
+   {
+    "text": "So newspapers use short words.",
+    "words": 5,
+    "article": "Headline Words",
+    "id": "g6-19"
+   },
+   {
+    "text": "Length is the first reason.",
+    "words": 5,
+    "article": "Headline Words",
+    "id": "g6-19"
+   },
+   {
+    "text": "The metaphor does real work.",
+    "words": 5,
+    "article": "What Invasive Means",
+    "id": "g6-20"
+   },
+   {
+    "text": "The definition has two parts.",
+    "words": 5,
+    "article": "What Invasive Means",
+    "id": "g6-20"
+   },
+   {
+    "text": "Each section has one job.",
+    "words": 5,
+    "article": "The Shape of a Science Article",
+    "id": "g6-21"
+   },
+   {
+    "text": "The writer builds a case.",
+    "words": 5,
+    "article": "The Turn in the Middle",
+    "id": "g6-22"
+   },
+   {
+    "text": "So find the turn first.",
+    "words": 5,
+    "article": "The Turn in the Middle",
+    "id": "g6-22"
+   },
+   {
+    "text": "The numbers behind a claim.",
+    "words": 5,
+    "article": "The Sidebar and the Story",
+    "id": "g6-25"
+   }
+  ]
+ }
+}

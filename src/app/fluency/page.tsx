@@ -171,6 +171,23 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                 check without anybody retyping a thing.
               </p>
 
+              {/* The scorer measures; it hands a child nothing to do about
+                  what it found. The practice side is the other half, and it
+                  has to be reachable from here or nobody will know it is
+                  there. */}
+              <p style={{ margin: "-14px 0 24px", fontSize: 15 }}>
+                <a
+                  href="/fluency/play"
+                  style={{ color: BRAND.tealDark, fontWeight: 700, textDecoration: "none" }}
+                >
+                  Practise it instead → Fluency games
+                </a>
+                <span style={{ color: BRAND.mid }}>
+                  {" "}
+                  — voices, three timed reads charted, and one sentence read three ways.
+                </span>
+              </p>
+
               {/* Grade is a row of links rather than a select in the form.
                   Coupled selects left the passage list showing the previous
                   grade's titles until the button was pressed. A link reloads
