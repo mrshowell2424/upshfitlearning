@@ -23,7 +23,16 @@ import { Dictation, type SpellPart, type Sentence } from "./dictation";
  */
 
 const DATA = SPELLING as unknown as {
-  patterns: { key: string; parts: SpellPart[]; sub: string[]; sentence: Sentence }[];
+  patterns: {
+    key: string;
+    parts: SpellPart[];
+    sub: string[];
+    sentence: Sentence;
+    /** A second list of words this pattern's first list does not hold. */
+    extra?: { parts: SpellPart[]; sentence: Sentence };
+    /** "What says /k/?" -- the sound this lesson teaches, and its spellings. */
+    whatSays?: string[];
+  }[];
 };
 
 const KEYS = DATA.patterns
@@ -97,7 +106,6 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   const info = patternInfo(key);
   const student = one(sp.view) === "student";
 
-  const wordCount = pattern.parts.reduce((n, p) => n + p.words.length, 0);
   const totalWords = DATA.patterns.reduce(
     (n, p) => n + p.parts.reduce((m, q) => m + q.words.length, 0),
     0,
@@ -112,9 +120,17 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
     else groups.push({ name: g, keys: [k] });
   }
 
-  const href = (next: { p?: string; view?: "teacher" | "student" }) => {
+  // Which list of words. The second exists only where the extra bank held
+  // words the first did not, which is six of the forty.
+  const second = one(sp.list) === "2" && !!pattern.extra;
+  const round = second && pattern.extra ? pattern.extra : { parts: pattern.parts, sentence: pattern.sentence };
+  const roundWords = round.parts.reduce((n, p) => n + p.words.length, 0);
+
+  const href = (next: { p?: string; view?: "teacher" | "student"; list?: "1" | "2" }) => {
     const q = new URLSearchParams();
     q.set("p", next.p ?? key);
+    const l = next.p && next.p !== key ? "1" : (next.list ?? (second ? "2" : "1"));
+    if (l === "2") q.set("list", "2");
     const v = next.view ?? (student ? "student" : "teacher");
     if (v === "student") q.set("view", "student");
     return `/spelling?${q.toString()}`;
@@ -225,6 +241,72 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               </details>
             )}
 
+            {/* What says? The auditory drill: the teacher names a sound and
+                the child names the spelling that makes it. It runs before
+                the writing, and only 18 of the 40 patterns have one --
+                a lesson that teaches a rule or a meaning rather than a
+                sound has no new sound to drill. */}
+            {pattern.whatSays && (
+              <div
+                style={{
+                  border: `1px solid ${BRAND.line}`,
+                  borderLeft: `3px solid ${BRAND.tealDark}`,
+                  borderRadius: "3px 14px 14px 3px",
+                  padding: "14px 18px",
+                  margin: "0 0 14px",
+                }}
+              >
+                <p style={{ ...label, margin: "0 0 4px", color: BRAND.tealDark }}>
+                  First · what says?
+                </p>
+                <p style={{ fontSize: 13, color: BRAND.mid, margin: "0 0 10px", maxWidth: "58ch", lineHeight: 1.55 }}>
+                  Say the sound. The child names the spelling that makes it — out loud, before
+                  anything is written.
+                </p>
+                <div style={{ display: "flex", gap: 18, flexWrap: "wrap" }}>
+                  {pattern.whatSays.map((line) => {
+                    const [sound, spelling] = line.split("\u2192").map((x) => x.trim());
+                    return (
+                      <div key={line}>
+                        <p
+                          style={{
+                            fontFamily: 'var(--font-serif), Georgia, serif',
+                            fontSize: 22,
+                            fontWeight: 700,
+                            margin: 0,
+                            color: BRAND.ink,
+                          }}
+                        >
+                          What says {sound}?
+                        </p>
+                        {!student && (
+                          <p style={{ fontSize: 13.5, color: BRAND.tealDark, margin: "2px 0 0", fontWeight: 700 }}>
+                            {spelling}
+                          </p>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* Which list. Only where there is a second one. */}
+            {!student && pattern.extra && (
+              <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center", margin: "0 0 14px" }}>
+                <span style={{ ...label, marginRight: 4 }}>Words</span>
+                <Link href={href({ list: "1" })} style={pill(!second, BRAND.lavenderDark)}>
+                  First list · {pattern.parts.reduce((n, p) => n + p.words.length, 0)}
+                </Link>
+                <Link href={href({ list: "2" })} style={pill(second, BRAND.lavenderDark)}>
+                  More words · {pattern.extra.parts.reduce((n, p) => n + p.words.length, 0)}
+                </Link>
+                <span style={{ fontSize: 12.5, color: BRAND.mid, marginLeft: 4 }}>
+                  None of the second list appears in the first.
+                </span>
+              </div>
+            )}
+
             {/* The round. */}
             <div
               style={{
@@ -237,14 +319,16 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               {!student && (
                 <p style={{ ...label, margin: "0 0 12px", color: BRAND.coralDark }}>
                   {info.group}
-                  {info.grades ? ` · ${info.grades}` : ""} · {info.name} · {wordCount} words
+                  {info.grades ? ` · ${info.grades}` : ""} · {info.name} · {roundWords} words
+                  {second ? " · more words" : ""}
                 </p>
               )}
 
               <Dictation
+                key={second ? "2" : "1"}
                 patternName={info.name}
-                parts={pattern.parts}
-                sentence={pattern.sentence}
+                parts={round.parts}
+                sentence={round.sentence}
                 student={student}
               />
             </div>

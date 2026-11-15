@@ -28,12 +28,22 @@ const read = (f) => JSON.parse(readFileSync(join(ROOT, "scripts", f), "utf8"));
 
 const DATA = read("reading-spelling.json");
 const BANKS = read("reading-part-words.json");
+const EXTRA = read("reading-extra-words.json");
+const WHATSAYS = read("reading-what-says.json").ws;
 
 const problems = [];
 const fail = (where, why) => problems.push(`${where}: ${why}`);
 
 const REAL = new Map();
 const FAKE = new Set();
+/** The second round's words and fakes, keyed by skill rather than by part. */
+const EXTRA_REAL = new Map();
+for (const [k, v] of Object.entries(EXTRA)) {
+  if (k.startsWith("_")) continue;
+  EXTRA_REAL.set(k, new Set(v.real || []));
+  (v.fake || []).forEach((w) => FAKE.add(String(w).toLowerCase()));
+  for (const w of Object.values(v.fix || {})) FAKE.add(String(w).toLowerCase());
+}
 for (const [k, v] of Object.entries(BANKS)) {
   if (k.startsWith("_")) continue;
   REAL.set(k, new Set(v.real || []));
@@ -44,6 +54,8 @@ const has = (sentence, word) =>
   new RegExp(`(^|[^a-z])${word.toLowerCase()}($|[^a-z])`, "i").test(sentence);
 
 let words = 0;
+let extraWords = 0;
+let drills = 0;
 
 for (const p of DATA.patterns) {
   if (!p.parts.length) fail(p.key, "no parts");
@@ -106,6 +118,75 @@ for (const p of DATA.patterns) {
     if (!all.has(w)) fail(p.key, `the sentence claims to carry "${w}", which is not one of its words`);
     if (!has(s.text, w)) fail(p.key, `the sentence claims to carry "${w}" and does not contain it`);
   }
+
+  /*
+   * The second round, held to the same standard as the first.
+   *
+   * It exists so a teacher can run dictation twice in a week without
+   * repeating a word, which only works if it really does not repeat one
+   * -- so that is checked rather than assumed. Every word still has to
+   * be a real word out of the extra bank, still has to carry its own
+   * lesson at the span it claims, and still has to be absent from round
+   * one. A second round that shared words with the first would be the
+   * same round wearing a different number.
+   */
+  if (p.extra) {
+    const bank = EXTRA_REAL.get(p.key);
+    if (!bank) fail(p.key, "has a second round and no extra bank of that name");
+    const seen = new Set();
+    for (const part of p.extra.parts) {
+      if (!p.sub.includes(part.part))
+        fail(p.key, `second round has a part "${part.part}" that is not one of this lesson's`);
+      for (const { word, span } of part.words) {
+        extraWords++;
+        if (bank && !bank.has(word)) fail(p.key, `second round: "${word}" is not in the extra bank`);
+        if (FAKE.has(word.toLowerCase()))
+          fail(p.key, `second round: "${word}" is a made-up word -- those are a reading task`);
+        if (all.has(word)) fail(p.key, `second round repeats "${word}" from the first`);
+        if (seen.has(word)) fail(p.key, `second round lists "${word}" twice`);
+        seen.add(word);
+        const fresh = spanOf(word, part.part);
+        if (!fresh) fail(p.key, `second round: "${word}" does not contain ${part.part}`);
+        else if (fresh[0] !== span[0] || fresh[1] !== span[1])
+          fail(
+            p.key,
+            `second round: "${word}" marks ${span.join("-")} but ${part.part} is at ${fresh.join("-")}`,
+          );
+      }
+    }
+    const e = p.extra.sentence;
+    if (!e || !e.text) fail(p.key, "second round has no sentence");
+    else {
+      if (!/[.!?]$/.test(e.text.trim()))
+        fail(p.key, `the second round's sentence does not end in a stop: "${e.text}"`);
+      if (e.text.trim() === s.text.trim())
+        fail(p.key, "the second round's sentence is the first round's sentence");
+      if (e.text.trim().split(/\s+/).length !== e.words)
+        fail(p.key, `the second round's sentence says ${e.words} words and has ${e.text.trim().split(/\s+/).length}`);
+      for (const w of e.carries) {
+        if (!seen.has(w)) fail(p.key, `the second round's sentence claims to carry "${w}", not one of its words`);
+        if (!has(e.text, w)) fail(p.key, `the second round's sentence claims to carry "${w}" and does not`);
+      }
+    }
+  }
+
+  /*
+   * The sound drill. It is printed as "What says /x/?" with the spelling
+   * on the answer key, so each line has to have both halves.
+   */
+  if (p.whatSays) {
+    drills++;
+    const fromFile = WHATSAYS[p.key];
+    if (!fromFile) fail(p.key, "carries a sound drill that is not in reading-what-says.json");
+    else if (JSON.stringify(fromFile) !== JSON.stringify(p.whatSays))
+      fail(p.key, "its sound drill has drifted from reading-what-says.json");
+    for (const line of p.whatSays) {
+      if (!/\u2192/.test(line)) fail(p.key, `sound drill line has no spelling after it: "${line}"`);
+      const [sound, spelling] = String(line).split("\u2192").map((x) => x.trim());
+      if (!sound || !/^\/.*\/$/.test(sound)) fail(p.key, `sound drill line does not name a sound: "${line}"`);
+      if (!spelling) fail(p.key, `sound drill line names no spelling: "${line}"`);
+    }
+  }
 }
 
 /* ------------------------------------------------------------------ *
@@ -159,8 +240,10 @@ for (const [word, part, typed, want] of VERDICTS) {
   }
 }
 
+const withExtra = DATA.patterns.filter((x) => x.extra).length;
 console.log(`patterns: ${DATA.patterns.length}`);
-console.log(`words:    ${words}`);
+console.log(`words:    ${words} in the first list, ${extraWords} more across ${withExtra} patterns`);
+console.log(`drills:   ${drills} patterns carry a what-says sound drill`);
 
 if (problems.length) {
   console.log(`\n❌ ${problems.length}:`);

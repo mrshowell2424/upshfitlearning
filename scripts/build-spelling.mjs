@@ -37,6 +37,8 @@ const PART_WORDS = read("reading-part-words.json");
 const PASSAGES = read("reading-passages.json").passages;
 const WRITTEN = read("reading-third-sentences.json");
 const SPLITS = read("reading-skill-splits.json");
+const EXTRA = read("reading-extra-words.json");
+const WHATSAYS = read("reading-what-says.json").ws;
 
 import { spanOf } from "./lib/spelling-span.mjs";
 
@@ -192,11 +194,77 @@ for (const base of bases) {
     continue;
   }
 
+  /*
+   * A second round, out of reading-extra-words.json.
+   *
+   * Ten more real words per skill and two more sentences, written so a
+   * teacher running dictation twice in a week never repeats a word. They
+   * arrive keyed by skill rather than by sub-pattern, so each word's own
+   * sub has to be found before its span can be marked -- the span is
+   * what lets the tool tell a pattern error from an error elsewhere, and
+   * a second round without it would be a worse tool wearing the same
+   * face.
+   *
+   * The made-up words in that file stay out, for the reason the first
+   * round leaves them out: dictating a nonsense word and marking a child
+   * wrong for spelling it the sensible way marks them wrong for knowing
+   * a pattern.
+   */
+  const ex = EXTRA[base];
+  let extra = null;
+  if (ex && Array.isArray(ex.real) && ex.real.length) {
+    const subs = SPLITS[base] ?? parts.map((p) => p.part);
+    const byPart = new Map();
+    // Only the words the first round does not already have. The extra
+    // file was written as "ten more words on the pattern", and across the
+    // 62 skills 283 of its 620 turn out to be words the main bank already
+    // holds -- for eight skills, all ten of them. A second round made of
+    // those would be the first round with a different number on it, so
+    // the overlap comes out here and the floor below decides whether what
+    // is left is still a round.
+    const already = new Set(parts.flatMap((q) => q.words.map((w) => w.word)));
+    for (const w of ex.real) {
+      if (already.has(w)) continue;
+      // Longest matching sub first, so "ai" does not claim a word whose
+      // lesson is really the longer spelling it sits inside.
+      const sub = [...subs]
+        .sort((a, b) => b.replace(/-/g, "").length - a.replace(/-/g, "").length)
+        .find((x) => spanOf(w, x));
+      if (!sub) {
+        dropped.push(`${base} · extra word ${w} · the lesson is not in the spelling`);
+        continue;
+      }
+      if (!byPart.has(sub)) byPart.set(sub, []);
+      byPart.get(sub).push({ word: w, span: spanOf(w, sub) });
+    }
+    const exParts = [...byPart.entries()].map(([part, words]) => ({ part, words }));
+    const exAll = exParts.flatMap((p) => p.words.map((w) => w.word));
+    const exSent = (ex.sent || []).find((t) => wholeSentence(t));
+    // A round of two words is not a round. Where the extra list barely
+    // survives span-matching -- blends, whose recorded sub-patterns cover
+    // three of the many blends a word can start with -- no second round
+    // is offered rather than a thin one.
+    const MIN_ROUND = 5;
+    if (exAll.length >= MIN_ROUND && exSent) {
+      extra = {
+        parts: exParts,
+        sentence: {
+          text: exSent,
+          words: wordCount(exSent),
+          carries: exAll.filter((w) => has(exSent, w)),
+          source: "written for dictation",
+        },
+      };
+    }
+  }
+
   patterns.push({
     key: base,
     parts,
     sub: SPLITS[base] ?? parts.map((p) => p.part),
     sentence,
+    ...(extra ? { extra } : {}),
+    ...(WHATSAYS[base] ? { whatSays: WHATSAYS[base] } : {}),
   });
 }
 
@@ -222,6 +290,10 @@ console.log(`patterns:  ${patterns.length}`);
 console.log(`parts:     ${patterns.reduce((n, p) => n + p.parts.length, 0)}`);
 console.log(`words:     ${words}`);
 console.log(`sentences: ${patterns.length - fromPassage} written, ${fromPassage} from the pattern's own passage`);
+const withExtra = patterns.filter((p) => p.extra);
+const extraWords = withExtra.reduce((n, p) => n + p.extra.parts.reduce((m, q) => m + q.words.length, 0), 0);
+console.log(`round two:  ${withExtra.length} patterns, ${extraWords} more words`);
+console.log(`what says:  ${patterns.filter((p) => p.whatSays).length} patterns carry the sound drill`);
 if (dropped.length) {
   console.log(`\ndropped ${dropped.length}:`);
   dropped.forEach((d) => console.log("   " + d));

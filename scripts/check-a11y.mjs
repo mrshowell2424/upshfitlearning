@@ -47,6 +47,7 @@ const ALL_ROUTES = [
   "/sentence-lab", "/morphology", "/morphology/print",
   "/writing", "/writing/print",
   "/spelling", "/spelling?view=student", "/spelling/print",
+  "/spelling?p=og1-04", "/spelling?p=cvc-mix&list=2",
   "/word-ladders", "/word-ladders?view=student", "/word-ladders/print",
   "/review", "/review/print",
   "/passages", "/passages?view=student", "/passages/print",

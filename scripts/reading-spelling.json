@@ -1072,6 +1072,61 @@
      "hop"
     ],
     "source": "written for dictation"
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "i",
+      "words": [
+       {
+        "word": "sit",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "big",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "him",
+        "span": [
+         1,
+         2
+        ]
+       }
+      ]
+     },
+     {
+      "part": "e",
+      "words": [
+       {
+        "word": "pen",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "web",
+        "span": [
+         1,
+         2
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "The pup dug in the mud.",
+     "words": 6,
+     "carries": [],
+     "source": "written for dictation"
+    }
    }
   },
   {
@@ -1563,6 +1618,75 @@
      "week"
     ],
     "source": "written for dictation"
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "ee",
+      "words": [
+       {
+        "word": "seed",
+        "span": [
+         1,
+         3
+        ]
+       },
+       {
+        "word": "wheel",
+        "span": [
+         2,
+         4
+        ]
+       },
+       {
+        "word": "cheek",
+        "span": [
+         2,
+         4
+        ]
+       },
+       {
+        "word": "speech",
+        "span": [
+         2,
+         4
+        ]
+       }
+      ]
+     },
+     {
+      "part": "ea",
+      "words": [
+       {
+        "word": "meal",
+        "span": [
+         1,
+         3
+        ]
+       },
+       {
+        "word": "steam",
+        "span": [
+         2,
+         4
+        ]
+       },
+       {
+        "word": "repeat",
+        "span": [
+         3,
+         5
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "The queen ate a sweet peach.",
+     "words": 6,
+     "carries": [],
+     "source": "written for dictation"
+    }
    }
   },
   {
@@ -2467,7 +2591,10 @@
      "rock"
     ],
     "source": "Jack the Duck · 3rd grade"
-   }
+   },
+   "whatSays": [
+    "/k/ → c, k, ck"
+   ]
   },
   {
    "key": "og1-06",
@@ -2635,7 +2762,80 @@
      "box"
     ],
     "source": "The Fox in the Box · 2nd grade"
-   }
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "x",
+      "words": [
+       {
+        "word": "taxi",
+        "span": [
+         2,
+         3
+        ]
+       },
+       {
+        "word": "text",
+        "span": [
+         2,
+         3
+        ]
+       },
+       {
+        "word": "relax",
+        "span": [
+         4,
+         5
+        ]
+       },
+       {
+        "word": "exam",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "oxen",
+        "span": [
+         1,
+         2
+        ]
+       }
+      ]
+     },
+     {
+      "part": "qu",
+      "words": [
+       {
+        "word": "quip",
+        "span": [
+         0,
+         2
+        ]
+       },
+       {
+        "word": "equip",
+        "span": [
+         1,
+         3
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "The queen can quit the quiz.",
+     "words": 6,
+     "carries": [],
+     "source": "written for dictation"
+    }
+   },
+   "whatSays": [
+    "/ks/ → x",
+    "/kw/ → qu"
+   ]
   },
   {
    "key": "og1-13",
@@ -2802,6 +3002,91 @@
      "unfit"
     ],
     "source": "Unpack the Van · 2nd grade"
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "un-",
+      "words": [
+       {
+        "word": "unpin",
+        "span": [
+         0,
+         2
+        ]
+       },
+       {
+        "word": "unfed",
+        "span": [
+         0,
+         2
+        ]
+       },
+       {
+        "word": "unlit",
+        "span": [
+         0,
+         2
+        ]
+       },
+       {
+        "word": "unbend",
+        "span": [
+         0,
+         2
+        ]
+       },
+       {
+        "word": "unmask",
+        "span": [
+         0,
+         2
+        ]
+       },
+       {
+        "word": "unwell",
+        "span": [
+         0,
+         2
+        ]
+       },
+       {
+        "word": "undid",
+        "span": [
+         0,
+         2
+        ]
+       },
+       {
+        "word": "undress",
+        "span": [
+         0,
+         2
+        ]
+       },
+       {
+        "word": "unjust",
+        "span": [
+         0,
+         2
+        ]
+       },
+       {
+        "word": "unrest",
+        "span": [
+         0,
+         2
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "Unzip the bag and unpack the lunch.",
+     "words": 7,
+     "carries": [],
+     "source": "written for dictation"
+    }
    }
   },
   {
@@ -3275,7 +3560,11 @@
      "post"
     ],
     "source": "The Gold Colt · 2nd grade"
-   }
+   },
+   "whatSays": [
+    "/ī/ → i (ild, ind)",
+    "/ō/ → o (old, ost, oll, olt)"
+   ]
   },
   {
    "key": "og2-07",
@@ -3518,7 +3807,12 @@
      "light"
     ],
     "source": "The Knot in the Night · 2nd grade"
-   }
+   },
+   "whatSays": [
+    "/n/ → kn",
+    "/r/ → wr",
+    "/ī/ → igh"
+   ]
   },
   {
    "key": "og2-08",
@@ -3763,7 +4057,12 @@
      "owl"
     ],
     "source": "The Owl in the Woods · 2nd grade"
-   }
+   },
+   "whatSays": [
+    "/ū/ → oo (moon)",
+    "/ŭ/ → oo (book)",
+    "/ow/ → ou, ow"
+   ]
   },
   {
    "key": "og2-11",
@@ -4630,7 +4929,12 @@
      "running"
     ],
     "source": "The Fastest Runner · 2nd grade"
-   }
+   },
+   "whatSays": [
+    "/ed/ → ed",
+    "/t/ → ed",
+    "/d/ → ed"
+   ]
   },
   {
    "key": "og2-13",
@@ -5192,7 +5496,13 @@
      "noise"
     ],
     "source": "The Noise in the Attic · 2nd grade"
-   }
+   },
+   "whatSays": [
+    "/oi/ → oi, oy",
+    "/aw/ → au, aw",
+    "/ī/ → ie, igh",
+    "/ĕ/ → ea"
+   ]
   },
   {
    "key": "og3-08",
@@ -5664,7 +5974,10 @@
      "terrible"
     ],
     "source": "The Wobbly Table · 2nd grade"
-   }
+   },
+   "whatSays": [
+    "/ul/ → le"
+   ]
   },
   {
    "key": "og3-10",
@@ -6151,7 +6464,11 @@
      "station"
     ],
     "source": "The Station Question · 2nd grade"
-   }
+   },
+   "whatSays": [
+    "/shun/ → tion",
+    "/zhun/ → sion"
+   ]
   },
   {
    "key": "og3-12",
@@ -6470,7 +6787,10 @@
      "artist"
     ],
     "source": "The Artist on the Corner · 2nd grade"
-   }
+   },
+   "whatSays": [
+    "/uhbul/ → able, ible"
+   ]
   },
   {
    "key": "og4-01",
@@ -8205,7 +8525,12 @@
      "transport"
     ],
     "source": "The Transport Museum · 4th grade"
-   }
+   },
+   "whatSays": [
+    "/er/ → ar, or",
+    "/us/ → ous",
+    "/chur/ → ure"
+   ]
   },
   {
    "key": "og4-06",
@@ -8600,7 +8925,12 @@
      "weight"
     ],
     "source": "Eight Days of Rain · 2nd grade"
-   }
+   },
+   "whatSays": [
+    "/ū/ → ue, ui, ew",
+    "/ā/ → ei, eigh",
+    "/ē/ → ei"
+   ]
   },
   {
    "key": "og4-07",
@@ -9314,7 +9644,10 @@
      "musician"
     ],
     "source": "The Musician Next Door · 2nd grade"
-   }
+   },
+   "whatSays": [
+    "/sh/ → ti, ci"
+   ]
   },
   {
    "key": "og5-01",
@@ -9482,7 +9815,11 @@
      "elephant"
     ],
     "source": "The Elephant Photograph · 2nd grade"
-   }
+   },
+   "whatSays": [
+    "/f/ → ph",
+    "/k/ → ch"
+   ]
   },
   {
    "key": "og5-03",
@@ -9725,7 +10062,13 @@
      "rhythm"
     ],
     "source": "The Rhino in Autumn · 2nd grade"
-   }
+   },
+   "whatSays": [
+    "/r/ → rh",
+    "/m/ → mn",
+    "/n/ → pn",
+    "/s/ → ps"
+   ]
   },
   {
    "key": "og5-04",
@@ -10364,7 +10707,12 @@
      "chef"
     ],
     "source": "The Antique Machine · 2nd grade"
-   }
+   },
+   "whatSays": [
+    "/sh/ → ch",
+    "/ū/ → ou",
+    "/k/ → que"
+   ]
   },
   {
    "key": "og5-08",
@@ -10684,7 +11032,12 @@
      "performance"
     ],
     "source": "The Performance · 2nd grade"
-   }
+   },
+   "whatSays": [
+    "/ul/ → al",
+    "/ij/ → age",
+    "/uns/ → ance, ence"
+   ]
   },
   {
    "key": "og5-09",
@@ -10851,7 +11204,10 @@
      "taught"
     ],
     "source": "The Thing I Was Taught · 2nd grade"
-   }
+   },
+   "whatSays": [
+    "/aw/ → augh, ough"
+   ]
   },
   {
    "key": "vccvce",
@@ -11095,6 +11451,68 @@
      "invite"
     ],
     "source": "written for dictation"
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "i_e",
+      "words": [
+       {
+        "word": "sunrise",
+        "span": [
+         4,
+         7
+        ]
+       },
+       {
+        "word": "bedtime",
+        "span": [
+         4,
+         7
+        ]
+       },
+       {
+        "word": "landslide",
+        "span": [
+         6,
+         9
+        ]
+       },
+       {
+        "word": "stovepipe",
+        "span": [
+         6,
+         9
+        ]
+       }
+      ]
+     },
+     {
+      "part": "a_e",
+      "words": [
+       {
+        "word": "classmate",
+        "span": [
+         6,
+         9
+        ]
+       },
+       {
+        "word": "handshake",
+        "span": [
+         6,
+         9
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "We ate a cupcake by the campfire.",
+     "words": 7,
+     "carries": [],
+     "source": "written for dictation"
+    }
    }
   },
   {
@@ -11416,6 +11834,61 @@
      "muffin"
     ],
     "source": "written for dictation"
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "e",
+      "words": [
+       {
+        "word": "hidden",
+        "span": [
+         4,
+         5
+        ]
+       },
+       {
+        "word": "contest",
+        "span": [
+         4,
+         5
+        ]
+       },
+       {
+        "word": "invent",
+        "span": [
+         3,
+         4
+        ]
+       }
+      ]
+     },
+     {
+      "part": "a",
+      "words": [
+       {
+        "word": "traffic",
+        "span": [
+         2,
+         3
+        ]
+       },
+       {
+        "word": "plastic",
+        "span": [
+         2,
+         3
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "The kitten sat in a basket.",
+     "words": 6,
+     "carries": [],
+     "source": "written for dictation"
+    }
    }
   },
   {
