@@ -138,6 +138,8 @@ const CARDS = [
     line: "212 ladders, every rung decodable at that lesson and every clue with one answer.", accent: BRAND.teal },
   { file: "review", eyebrow: "Spiral review", title: "What to go over\nbefore today.",
     line: "Three earlier lessons, chosen from the sequence rather than left to the end of a long day.", accent: BRAND.pink },
+  { file: "passages", eyebrow: "Decodable passages", title: "Readable the day\nit is taught.",
+    line: "636 stories, one per lesson, at three grades \u2014 with the questions and the answers.", accent: BRAND.coral },
 
   { file: "morphology", eyebrow: "Word Parts", title: "Read words nobody\ntaught you.",
     line: "Prefixes, suffixes and roots, on words your class has already met in an article.", accent: BRAND.teal },

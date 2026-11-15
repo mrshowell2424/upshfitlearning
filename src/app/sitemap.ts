@@ -34,6 +34,7 @@ const STATIC_ROUTES: [path: string, priority: number][] = [
   ["/spelling", 0.8],
   ["/word-ladders", 0.8],
   ["/review", 0.8],
+  ["/passages", 0.8],
   ["/fluency", 0.8],
   ["/fluency/play", 0.8],
   ["/vocabulary", 0.8],

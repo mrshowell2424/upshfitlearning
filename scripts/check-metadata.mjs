@@ -30,7 +30,7 @@ const SKIP = new Set(["/videos", "/match/random"]);
 
 const ROUTES = [
   "/", "/about", "/behavior", "/behavior/year", "/courses", "/pricing",
-  "/sentence-lab", "/morphology", "/writing", "/spelling", "/word-ladders", "/review", "/science-of-reading", "/science-of-reading/threads",
+  "/sentence-lab", "/morphology", "/writing", "/spelling", "/word-ladders", "/review", "/passages", "/science-of-reading", "/science-of-reading/threads",
   "/science-of-reading/resources", "/fluency", "/fluency/play", "/vocabulary", "/math", "/pbl",
   "/learning-science", "/success", "/resources", "/reading", "/og-packs",
   "/design-thinking", "/lounge", "/planner", "/match",

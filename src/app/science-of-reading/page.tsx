@@ -18,6 +18,7 @@ import WRITING_SETS_DATA from "@/../scripts/reading-writing-passages.json";
 import SPELLING from "@/../scripts/reading-spelling.json";
 import WORD_LADDERS from "@/../scripts/reading-word-ladders.json";
 import SEQUENCE from "@/../scripts/reading-sequence.json";
+import PASSAGES from "@/../scripts/reading-passages.json";
 import SENTENCE_LAB from "@/../scripts/reading-sentence-lab.json";
 
 /**
@@ -93,6 +94,18 @@ const LADDERS = WORD_LADDERS.ladders as Record<string, { words: string[] }>;
 const LADDER_COUNT = Object.keys(LADDERS).length;
 const LADDER_RUNGS = Object.values(LADDERS).reduce((n, l) => n + l.words.length - 1, 0);
 const SEQ_LESSONS = (SEQUENCE as { sequence: unknown[] }).sequence.length;
+const PASSAGE_SET = (PASSAGES as { passages: Record<string, Record<string, { paras: string[] }>> })
+  .passages;
+const PASSAGE_COUNT = Object.values(PASSAGE_SET).reduce((n, c) => n + Object.keys(c).length, 0);
+const PASSAGE_WORDS = Object.values(PASSAGE_SET).reduce(
+  (n, c) =>
+    n +
+    Object.values(c).reduce(
+      (m, p) => m + p.paras.reduce((w, x) => w + x.split(/\s+/).filter(Boolean).length, 0),
+      0,
+    ),
+  0,
+);
 // Counted from the data the page is generated from, so the blurb cannot
 // drift away from what is actually on it.
 const MYSTERY_COUNT = RESOURCE_COUNTS.mysteries;
@@ -534,6 +547,18 @@ function Hub() {
               shape: [1200, 1130] as const,
               focus: "0%",
               alt: "The Spiral review page: today's lesson at the top and three earlier lessons beneath it, each with the words to say out loud.",
+            },
+            {
+              href: "/passages",
+              eyebrow: "READ IT THE SAME DAY",
+              title: "Decodable passages",
+              accent: CORAL,
+              accentText: CORAL_TEXT,
+              blurb: `${PASSAGE_COUNT} stories and ${PASSAGE_WORDS.toLocaleString()} words — one per lesson at three grades, so a child who met the pattern this morning reads something this afternoon and gets it right.`,
+              preview: "/previews/passages.png",
+              shape: [1200, 1130] as const,
+              focus: "0%",
+              alt: "The Decodable passages page: a story, three comprehension questions with their answers, and a writing task.",
             },
             {
               href: "/og-packs",
