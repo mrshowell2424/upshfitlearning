@@ -103,7 +103,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
       <div className="noprint" style={{ ...sheet, paddingBottom: 0 }}>
         <p style={{ fontSize: 13, color: SOFT, margin: 0 }}>
           This is the printable sheet. Press <b>Cmd/Ctrl + P</b>.{" "}
-          <a href={`/morphology?m=${morpheme.key}`} style={{ color: "#2F6FD0" }}>
+          <a href={`/morphology?m=${morpheme.key}`} style={{ color: "#2F6FD0", textDecoration: "underline" }}>
             Back to Word Parts
           </a>
         </p>

@@ -31,7 +31,7 @@ function ClassroomAccess({ url }: { url: string }) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${BUTTON} bg-coral text-white hover:bg-coral-press`}
+      className={`${BUTTON} bg-coral-ink text-white hover:bg-coral-ink-press`}
     >
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M12 3L2 8l10 5 10-5-10-5zM2 13.5V17c0 .6 4.5 3 10 3s10-2.4 10-3v-3.5l-10 5-10-5z" />
@@ -68,7 +68,7 @@ function HowItWorks() {
         </h3>
         <p className="text-sm text-text-body">
           Courses marked{' '}
-          <span className="inline-flex items-center rounded-full bg-teal-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-teal align-middle">
+          <span className="inline-flex items-center rounded-full bg-teal-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-teal-ink align-middle">
             Grad credit
           </span>{' '}
           carry credit through Malone University — open to anyone, no membership
@@ -158,14 +158,17 @@ export function AnnouncedCourses() {
                     {course.category}
                   </span>
                   {course.gradCredit && (
-                    <span className="inline-flex items-center rounded-full bg-teal-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-teal">
+                    <span className="inline-flex items-center rounded-full bg-teal-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-teal-ink">
                       Grad credit
                     </span>
                   )}
                   {course.status && (
                     <span
-                      className="inline-flex items-center rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white"
-                      style={{ backgroundColor: 'var(--color-amber)' }}
+                      // White on brand amber is 1.80:1, the worst ratio on
+                      // the site. The chip keeps the amber; the text goes to
+                      // the ink of the same hue on a pale wash of it.
+                      className="inline-flex items-center rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em]"
+                      style={{ backgroundColor: '#FFF3DE', color: 'var(--color-amber-ink)' }}
                     >
                       {course.status}
                     </span>

@@ -192,7 +192,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <SignInGate
           title="Word Parts"
           blurb="Prefixes, suffixes and roots, taught on words your class has already met in an article — with the sentence each one came from. Free — an account is all it takes."

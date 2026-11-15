@@ -170,7 +170,9 @@ function ReadingFiler() {
           <div style={{ display: "flex", gap: 10 }}>
             <div style={{ background: NAVY, color: CREAM, borderRadius: 12, padding: "12px 18px", minWidth: 98 }}>
               <div style={{ fontSize: 26, fontWeight: 800, lineHeight: 1 }}>{rows.length}</div>
-              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", color: BLUE }}>
+              {/* This label was BLUE on NAVY: 4.44:1, which misses AA by
+                  six hundredths. CREAM is the same family and passes. */}
+              <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", color: CREAM }}>
                 SHOWING
               </div>
             </div>
@@ -196,7 +198,9 @@ function ReadingFiler() {
               borderRadius: 12,
               background: "#fff",
               color: INK,
-              outline: "none",
+              // No outline: "none" here. An inline style beats every
+              // stylesheet, so zeroing it took the site's focus ring with
+              // it and left a keyboard with nothing to follow.
             }}
           />
           <select
@@ -398,7 +402,7 @@ export default function ReadingPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <SignInGate
           title="The Basic Reading road map"
           blurb={`All ${SKILL_TOTAL} skills in the scope and sequence, in teaching order, with ${SKILLS_ON_SHOW} workbooks and answer keys a click away. Free — an account is all it takes.`}

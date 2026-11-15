@@ -210,7 +210,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-1 px-5 md:px-8 py-8">
+      <main id="main" tabIndex={-1} className="flex-1 px-5 md:px-8 py-8">
         <div className="max-w-7xl mx-auto">
           {/* Back link on the left; search with the quick picks tucked beneath it */}
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-6">
@@ -282,7 +282,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
                   {standard.text}
                 </p>
               ) : dataError ? (
-                <p className="text-[17px] italic" style={{ color: "var(--color-coral)" }}>
+                <p className="text-[17px] italic" style={{ color: "var(--color-coral-ink)" }}>
                   We could not load this standard just now. This is a problem at
                   our end, not a gap in the library — please try again shortly.
                 </p>
@@ -309,7 +309,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
               <div className="p-7">
                 <p
                   className="text-[11px] font-bold uppercase tracking-[0.14em] mb-3"
-                  style={{ color: "#0E9384" }}
+                  style={{ color: "#00756C" }}
                 >
                   Learning science at work
                 </p>
@@ -321,7 +321,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
                         className="px-3 py-1.5 rounded-lg text-[15px] font-semibold"
                         style={{
                           backgroundColor: "rgba(0, 180, 166, 0.10)",
-                          color: "#0E9384",
+                          color: "#00756C",
                         }}
                       >
                         {tag}

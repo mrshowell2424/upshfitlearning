@@ -126,7 +126,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
         <p style={{ fontSize: 13, color: SOFT, margin: 0 }}>
           This is the printable sheet. Press <b>Cmd/Ctrl + P</b>. Print two: one for the child to
           read from, one for you to mark.{" "}
-          <a href={`/fluency?g=${grade}&n=${ai}&v=${ver === "lower" ? "lo" : "hi"}`} style={{ color: "#2F6FD0" }}>
+          <a href={`/fluency?g=${grade}&n=${ai}&v=${ver === "lower" ? "lo" : "hi"}`} style={{ color: "#2F6FD0", textDecoration: "underline" }}>
             Back to Fluency
           </a>
         </p>

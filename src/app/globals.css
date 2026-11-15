@@ -13,6 +13,21 @@
   --color-blue: #4C9AFF;
   --color-link-blue: #2F6FD0;
 
+  /* The ink set: the same hues, dark enough to carry text.
+     The brand colours above are light. White on coral is 2.81:1 and coral
+     on white is the same, both of which fail WCAG AA, and coral is the
+     colour of every button on the site. These are their text-bearing
+     siblings -- same family, 5:1 or better -- so the brand keeps its
+     colours for fills, rules, chips and anything decorative, and anything
+     a person has to READ uses the ink.
+     Changing one line here changes every button of that colour. */
+  --color-coral-ink: #C0432F;        /* white on it: 5.14 */
+  --color-coral-ink-press: #9E3523;  /* its pressed state: 7.03 */
+  --color-pink-ink: #B3336E;         /* 5.81 */
+  --color-lavender-ink: #6B2FB5;     /* 7.78 */
+  --color-teal-ink: #00756C;         /* 5.58 */
+  --color-amber-ink: #8A5400;        /* 6.27 */
+
   /* Grays */
   --color-gray-050: #FAFAFA;
   --color-gray-100: #F2F2F2;
@@ -23,7 +38,12 @@
   /* Text colors */
   --color-text-body: #333333;
   --color-text-muted: #6A6A6A;
-  --color-text-faint: #8A8A8A;
+  /* #8A8A8A was 3.45:1 on white, which fails AA for anything under 24px,
+     and these greys are used almost entirely for the small uppercase
+     labels. "Faint" now means the lightest grey that is still legible,
+     which lands it close to muted -- the distance that used to be between
+     them was the distance between readable and not. */
+  --color-text-faint: #6E6E6E;
 }
 
 @theme inline {
@@ -45,6 +65,12 @@
   --color-text-body: var(--color-text-body);
   --color-text-muted: var(--color-text-muted);
   --color-text-faint: var(--color-text-faint);
+  --color-coral-ink: var(--color-coral-ink);
+  --color-coral-ink-press: var(--color-coral-ink-press);
+  --color-pink-ink: var(--color-pink-ink);
+  --color-lavender-ink: var(--color-lavender-ink);
+  --color-teal-ink: var(--color-teal-ink);
+  --color-amber-ink: var(--color-amber-ink);
   --font-sans: var(--font-inter);
   --font-reading: var(--font-serif);
   --radius-20: 20px;
@@ -119,4 +145,80 @@ h1, h2, .wordmark {
 }
 .disclosure[open] > summary::before {
   transform: rotate(45deg);
+}
+
+/* ---------------------------------------------------------------------
+   Keyboard
+   --------------------------------------------------------------------- */
+
+/* One focus ring for the whole site.
+   Browsers each draw their own, several components turn theirs off with
+   focus:outline-none and then paint nothing in its place, and the result
+   is that a teacher tabbing through a page has no idea where they are.
+   This is :focus-visible rather than :focus, so it appears for the
+   keyboard and not on every mouse click.
+
+   Two rings, not one: a white one inside a dark one, so it stays visible
+   on a coral button and on a white card alike. Specificity is high enough
+   to beat a utility class that zeroed the outline. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-charcoal);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #FFFFFF;
+  border-radius: 3px;
+}
+
+/* A control that sets its own radius keeps it under the ring. */
+.rounded-full:focus-visible,
+.rounded-999:focus-visible {
+  border-radius: 999px;
+}
+
+/* Skip to the content.
+   Every page opens with the same header: a wordmark, a search box and
+   fourteen navigation links. Without this, reaching the first word of a
+   lesson means pressing Tab seventeen times, on every page, every time.
+   Off-screen until it is focused, which is the only time it is wanted. */
+.skip-link {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -120%);
+  z-index: 100;
+  padding: 12px 20px;
+  background: var(--color-charcoal);
+  color: #FFFFFF;
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 0 0 10px 10px;
+  text-decoration: none;
+  transition: transform 120ms ease;
+}
+.skip-link:focus {
+  transform: translate(-50%, 0);
+}
+
+/* The target of the skip link should not grow a focus ring of its own --
+   it is a destination, not a control. */
+#main:focus {
+  outline: none;
+}
+
+/* ---------------------------------------------------------------------
+   Motion
+   --------------------------------------------------------------------- */
+
+/* Honour the setting. upRise and upPulse run on page entry across the
+   reading pages, and a reader who has asked their machine to stop moving
+   things has usually asked for a reason. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

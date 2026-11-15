@@ -56,7 +56,7 @@ export function SignInGate({
         <div className="w-full max-w-md rounded-2xl border border-hairline bg-white/95 backdrop-blur-sm shadow-xl p-7 text-center">
           <p
             className="text-[11px] font-bold uppercase tracking-[0.14em] mb-3"
-            style={{ color: "var(--color-teal)" }}
+            style={{ color: "var(--color-teal-ink)" }}
           >
             Free with an account
           </p>
@@ -69,13 +69,13 @@ export function SignInGate({
           <div className="flex flex-col gap-2">
             <Link
               href="/auth/signup"
-              className="px-6 py-3 rounded-xl font-semibold text-white bg-coral hover:bg-coral-press transition-colors"
+              className="px-6 py-3 rounded-xl font-semibold text-white bg-coral-ink hover:bg-coral-ink-press transition-colors"
             >
               Create a free account
             </Link>
             <Link
               href="/auth/signin"
-              className="text-sm font-semibold text-charcoal hover:text-coral transition-colors py-2"
+              className="text-sm font-semibold text-charcoal hover:text-coral-ink transition-colors py-2"
             >
               Already have one? Sign in
             </Link>

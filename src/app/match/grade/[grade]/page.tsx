@@ -69,7 +69,7 @@ export default async function GradeStandardsPage({ params }: PageProps) {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-1 px-5 md:px-8 py-8">
+      <main id="main" tabIndex={-1} className="flex-1 px-5 md:px-8 py-8">
         <div className="max-w-7xl mx-auto">
           <Link
             href="/match"
@@ -128,7 +128,7 @@ export default async function GradeStandardsPage({ params }: PageProps) {
               </p>
               <Link
                 href="/match"
-                className="inline-flex items-center justify-center rounded-lg bg-coral px-5 py-3 font-semibold text-white hover:bg-coral-press transition-colors"
+                className="inline-flex items-center justify-center rounded-lg bg-coral-ink px-5 py-3 font-semibold text-white hover:bg-coral-ink-press transition-colors"
               >
                 Search standards
               </Link>

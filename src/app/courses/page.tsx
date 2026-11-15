@@ -46,7 +46,7 @@ export default async function CoursesPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         {/* Hero */}
         <section className="py-12 md:py-16 px-5 md:px-8 bg-gradient-to-br from-teal-50 to-white border-b border-hairline">
           <div className="max-w-7xl mx-auto">
@@ -81,7 +81,7 @@ export default async function CoursesPage() {
                     <div className="p-6 flex flex-col flex-1">
                       <div className="flex items-center gap-2 mb-2 flex-wrap">
                         {course.track && (
-                          <span className="text-xs font-bold text-teal uppercase tracking-[0.1em]">
+                          <span className="text-xs font-bold text-teal-ink uppercase tracking-[0.1em]">
                             {course.track}
                           </span>
                         )}

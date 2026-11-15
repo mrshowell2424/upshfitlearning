@@ -549,7 +549,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <div style={{ height: 4, background: GRADIENT }} />
         {/* The paper runs the full width and the column sits on it. It used
             to be the other way round -- the background was on the 1000px

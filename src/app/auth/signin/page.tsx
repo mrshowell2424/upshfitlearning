@@ -87,7 +87,7 @@ function SignInForm() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1 flex items-center justify-center px-5 md:px-8 py-14 md:py-24 bg-gray-050">
+      <main id="main" tabIndex={-1} className="flex-1 flex items-center justify-center px-5 md:px-8 py-14 md:py-24 bg-gray-050">
         <div className="w-full max-w-md">
           <div className="bg-white rounded-3xl p-8 border border-hairline">
             <h1 className="text-3xl font-bold text-charcoal mb-2">Sign in</h1>
@@ -162,7 +162,7 @@ function SignInForm() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-coral hover:bg-coral-press text-white px-6 py-3 rounded-xl font-semibold transition-colors disabled:opacity-50"
+                className="w-full bg-coral-ink hover:bg-coral-ink-press text-white px-6 py-3 rounded-xl font-semibold transition-colors disabled:opacity-50"
               >
                 {loading ? 'Signing in...' : 'Sign in'}
               </button>
@@ -173,7 +173,7 @@ function SignInForm() {
                 Don't have an account?{' '}
                 <Link
                   href="/auth/signup"
-                  className="text-coral font-semibold hover:text-coral-press"
+                  className="text-coral-ink font-semibold hover:text-coral-ink-press"
                 >
                   Sign up
                 </Link>

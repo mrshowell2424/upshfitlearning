@@ -91,7 +91,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
         <p style={{ fontSize: 13, color: SOFT, margin: 0 }}>
           This is the printable sheet. Press <b>Cmd/Ctrl + P</b>. Two pages: the passage, then the
           frame.{" "}
-          <a href={`/writing?p=${key}`} style={{ color: "#2F6FD0" }}>
+          <a href={`/writing?p=${key}`} style={{ color: "#2F6FD0", textDecoration: "underline" }}>
             Back to Opinion writing
           </a>
         </p>

@@ -137,7 +137,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <SignInGate
           title="Fluency"
           blurb="A one-minute read on any Upshift passage, with words correct per minute, accuracy and how it sounded. Free — an account is all it takes."

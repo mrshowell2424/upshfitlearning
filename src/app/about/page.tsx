@@ -49,14 +49,14 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         {/* Hero */}
         <section className="px-5 md:px-8 py-14 md:py-20 border-b border-hairline bg-gradient-to-br from-gray-050 to-white">
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_300px] gap-10 md:gap-12 items-center">
             <div className="order-2 md:order-1">
               <p
                 className="text-[13px] font-bold uppercase tracking-[0.16em] mb-4"
-                style={{ color: "var(--color-teal)" }}
+                style={{ color: "var(--color-teal-ink)" }}
               >
                 The person behind Upshift
               </p>
@@ -208,7 +208,7 @@ export default function AboutPage() {
             </div>
             <Link
               href="/match"
-              className="inline-flex items-center justify-center rounded-xl bg-coral px-6 py-3 font-semibold text-white hover:bg-coral-press transition-colors"
+              className="inline-flex items-center justify-center rounded-xl bg-coral-ink px-6 py-3 font-semibold text-white hover:bg-coral-ink-press transition-colors"
             >
               Find your standard
             </Link>

@@ -38,8 +38,8 @@ const tabs = [
 const LABEL = {
   violet: "#6B2FB5",
   indigo: "#4338CA",
-  teal: "#0E9384",
-  coral: "var(--color-coral)",
+  teal: "#00756C",
+  coral: "var(--color-coral-ink)",
   crimson: "#B4245C",
   blue: "var(--color-link-blue)",
   rust: "#B4482C",
@@ -48,11 +48,11 @@ const LABEL = {
 
 // The route every blueprint runs, named so the eight steps below read as a shape.
 const ROUTE_PHASES = [
-  { name: "Retrieve", caption: "Activate prior knowledge", color: "var(--color-pink)" },
-  { name: "Learn", caption: "Model & think aloud", color: "var(--color-amber)" },
-  { name: "Practice", caption: "Guided & collaborative", color: "var(--color-teal)" },
-  { name: "Apply", caption: "Independent practice", color: "var(--color-blue)" },
-  { name: "Reflect", caption: "Metacognition & reflection", color: "var(--color-lavender)" },
+  { name: "Retrieve", caption: "Activate prior knowledge", color: "var(--color-pink-ink)" },
+  { name: "Learn", caption: "Model & think aloud", color: "var(--color-amber-ink)" },
+  { name: "Practice", caption: "Guided & collaborative", color: "var(--color-teal-ink)" },
+  { name: "Apply", caption: "Independent practice", color: "var(--color-link-blue)" },
+  { name: "Reflect", caption: "Metacognition & reflection", color: "var(--color-lavender-ink)" },
 ];
 
 export function MatchDetailClient({
@@ -271,7 +271,7 @@ function PremiumLoading({ state, detail, onRetry }) {
         <button
           type="button"
           onClick={onRetry}
-          className="px-5 py-3 rounded-[10px] font-semibold text-white bg-coral hover:bg-coral-press transition-colors"
+          className="px-5 py-3 rounded-[10px] font-semibold text-white bg-coral-ink hover:bg-coral-ink-press transition-colors"
         >
           Try again
         </button>
@@ -310,9 +310,9 @@ function LockedOverlay({ locked, feature, summary, children }) {
       <div className="absolute inset-0 flex items-start justify-center pt-16">
         <div className="bg-white border border-border rounded-2xl shadow-lg p-8 max-w-md text-center">
           <div className="w-12 h-12 rounded-full bg-coral/10 flex items-center justify-center mx-auto mb-4">
-            <LockIcon className="w-5 h-5 text-coral" />
+            <LockIcon className="w-5 h-5 text-coral-ink" />
           </div>
-          <p className="text-xs font-bold uppercase tracking-[0.16em] text-coral mb-2">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-coral-ink mb-2">
             All Access
           </p>
           <h3 className="text-[22px] font-bold text-charcoal mb-3">
@@ -325,13 +325,13 @@ function LockedOverlay({ locked, feature, summary, children }) {
           <div className="flex flex-col gap-2">
             <Link
               href="/auth/signup"
-              className="px-6 py-3 rounded-[10px] font-semibold text-white bg-coral hover:bg-coral-press transition-colors"
+              className="px-6 py-3 rounded-[10px] font-semibold text-white bg-coral-ink hover:bg-coral-ink-press transition-colors"
             >
               Create a free account
             </Link>
             <Link
               href="/auth/signin"
-              className="text-sm font-semibold text-charcoal hover:text-coral transition-colors"
+              className="text-sm font-semibold text-charcoal hover:text-coral-ink transition-colors"
             >
               Already have one? Sign in
             </Link>
@@ -368,7 +368,7 @@ function LockedPreview({ feature, summary }) {
             <li key={row.label} className="flex items-baseline gap-3">
               <span
                 className="text-[22px] font-bold tabular-nums w-10 shrink-0 text-right"
-                style={{ color: "var(--color-teal)" }}
+                style={{ color: "var(--color-teal-ink)" }}
               >
                 {row.count}
               </span>
@@ -397,7 +397,7 @@ function NotAuthoredYet({ what }) {
       </p>
       <Link
         href="/match"
-        className="text-coral font-semibold hover:text-coral-press transition-colors"
+        className="text-coral-ink font-semibold hover:text-coral-ink-press transition-colors"
       >
         Try another standard →
       </Link>
@@ -644,7 +644,7 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
                       border: "1px solid rgba(0, 180, 166, 0.28)",
                     }}
                   >
-                    <span style={{ color: "var(--color-teal)" }} aria-hidden="true">
+                    <span style={{ color: "var(--color-teal-ink)" }} aria-hidden="true">
                       ☑
                     </span>
                     {support}
@@ -666,7 +666,7 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
                   science the steps are built on. */}
               {[
                 { label: "Standard", color: "var(--color-navy)", href: "/match" },
-                { label: "Learning science", color: "var(--color-teal)", href: "/learning-science" },
+                { label: "Learning science", color: "var(--color-teal-ink)", href: "/learning-science" },
                 { label: "Meaningful learning", color: LABEL.violet, href: null },
               ].map((chip, idx) => (
                 <div key={chip.label} className="flex items-center gap-3">
@@ -800,7 +800,10 @@ function UnpackTab({ unpack, standard, onOpenTab }) {
                 <div className="flex items-center gap-2 mb-2">
                   <span
                     className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-white text-[12px] font-bold"
-                    style={{ backgroundColor: "var(--color-teal)" }}
+                    // The number is text, so the circle under it has to be
+                    // the ink teal. The bar below stays the brand teal --
+                    // it is a fill and carries nothing.
+                    style={{ backgroundColor: "var(--color-teal-ink)" }}
                   >
                     {idx + 1}
                   </span>
@@ -1014,7 +1017,7 @@ function UnpackTab({ unpack, standard, onOpenTab }) {
           </div>
           <button
             onClick={() => onOpenTab("resources")}
-            className="inline-flex items-center min-h-[52px] px-6 rounded-xl font-semibold text-[15px] text-white bg-coral hover:bg-coral-press transition-colors flex-shrink-0"
+            className="inline-flex items-center min-h-[52px] px-6 rounded-xl font-semibold text-[15px] text-white bg-coral-ink hover:bg-coral-ink-press transition-colors flex-shrink-0"
           >
             Find resources for this →
           </button>
@@ -1248,7 +1251,7 @@ function GenerateTab({ standard_code, blueprint, unpack }) {
             className={`w-full mt-6 py-3 rounded-lg font-semibold text-white transition-colors ${
               generating
                 ? "bg-gray-400 cursor-not-allowed"
-                : "bg-coral hover:bg-coral-press"
+                : "bg-coral-ink hover:bg-coral-ink-press"
             }`}
             onClick={handleGenerate}
             disabled={generating}

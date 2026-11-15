@@ -135,7 +135,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <SignInGate
           title="Fluency games"
           blurb="Four ways to practise what a fluency score measures — a spinner of voices, three timed reads charted, and one sentence read three ways. Free — an account is all it takes."
@@ -181,6 +181,16 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                   </Link>
                 </p>
               </>
+            )}
+
+            {/* Student view clears the screen on purpose: the child needs
+                the game and nothing else. But a page with no h1 leaves a
+                screen reader with no name for what it has just opened, so
+                the heading stays in the document and comes off the screen. */}
+            {student && (
+              <h1 className="sr-only">
+                Fluency games — {GAMES.find((x) => x.key === game)?.name}
+              </h1>
             )}
 
             {/* Who is looking. Kept at the top in both views, because the way

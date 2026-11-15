@@ -31,15 +31,15 @@ export function UpgradeModal({ isOpen, onClose, feature }: { isOpen: boolean; on
         <div className="bg-gray-050 rounded-lg p-4 mb-6">
           <div className="space-y-2">
             <div className="flex gap-2">
-              <span className="text-coral font-bold">✓</span>
+              <span className="text-coral-ink font-bold">✓</span>
               <span className="text-sm">AI-powered lesson generation</span>
             </div>
             <div className="flex gap-2">
-              <span className="text-coral font-bold">✓</span>
+              <span className="text-coral-ink font-bold">✓</span>
               <span className="text-sm">Save and organize lessons</span>
             </div>
             <div className="flex gap-2">
-              <span className="text-coral font-bold">✓</span>
+              <span className="text-coral-ink font-bold">✓</span>
               <span className="text-sm">Priority support</span>
             </div>
           </div>
@@ -49,7 +49,7 @@ export function UpgradeModal({ isOpen, onClose, feature }: { isOpen: boolean; on
           <button
             onClick={handleUpgrade}
             disabled={loading}
-            className="w-full py-2 rounded-lg bg-coral text-white font-semibold hover:bg-coral-press transition-colors disabled:bg-gray-400"
+            className="w-full py-2 rounded-lg bg-coral-ink text-white font-semibold hover:bg-coral-ink-press transition-colors disabled:bg-gray-400"
           >
             {loading ? "Redirecting..." : "Upgrade to Pro"}
           </button>

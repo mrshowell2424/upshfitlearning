@@ -37,6 +37,9 @@ const CREAM = "#F7F6F4";
 const INK = "#111111";
 const PLUM = "#6B2FB5";
 const CORAL = "#FF6A5B";
+// The same hue dark enough to set 11px bold text in: coral on white is
+// 2.81:1. CORAL stays for the 5px rules down the side of the panels.
+const CORAL_INK = "#C0432F";
 const MUTED = "#444444";
 const FAINT = "#6A6A6A";
 const RULE = "#F2F2F2";
@@ -220,7 +223,7 @@ function DesignThinkingRoadMap() {
             borderRadius: 4,
           }}
         >
-          <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: CORAL }}>
+          <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: CORAL_INK }}>
             {gradeLabel.toUpperCase()} · ALL 36 WEEKS BUILT
           </span>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
@@ -379,7 +382,7 @@ function DesignThinkingRoadMap() {
                         <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 14 }}>
                           {([
                             ["Teacher slides", "Teacher Slides.dc.html", PLUM, CREAM],
-                            ["Student workbook", "Workbook.dc.html", "#00B4A6", "#FFFFFF"],
+                            ["Student workbook", "Workbook.dc.html", "#00756C", "#FFFFFF"],
                             ["Answer key", "Workbook Key.dc.html", "#FFFFFF", INK],
                           ] as const).map(([label, file, bg, fg]) => (
                             <a
@@ -437,7 +440,7 @@ export default function DesignThinkingPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <SignInGate
           title="Design Thinking"
           blurb="A design challenge for every week of the year, K to 12, with teacher slides, a student workbook and an answer key for all 36 weeks. Free — an account is all it takes."

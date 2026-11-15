@@ -44,7 +44,7 @@ export default function LoginPage() {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-1 flex items-center justify-center px-5 md:px-8 py-16">
+      <main id="main" tabIndex={-1} className="flex-1 flex items-center justify-center px-5 md:px-8 py-16">
         <div className="w-full max-w-md">
           <h1 className="text-[36px] font-bold text-center mb-2">Welcome back</h1>
           <p className="text-center text-text-muted mb-8">Sign in to your account</p>
@@ -83,7 +83,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-2 rounded-lg bg-coral text-white font-semibold hover:bg-coral-press transition-colors disabled:bg-gray-400"
+              className="w-full py-2 rounded-lg bg-coral-ink text-white font-semibold hover:bg-coral-ink-press transition-colors disabled:bg-gray-400"
             >
               {loading ? "Signing in..." : "Sign in"}
             </button>
@@ -91,7 +91,7 @@ export default function LoginPage() {
 
           <div className="mt-6 text-center">
             <p className="text-text-muted mb-3">New to Upshift?</p>
-            <a href="/auth/signup" className="text-coral font-semibold hover:text-coral-press">
+            <a href="/auth/signup" className="text-coral-ink font-semibold hover:text-coral-ink-press">
               Create an account
             </a>
           </div>

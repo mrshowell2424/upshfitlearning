@@ -129,12 +129,12 @@ export default function PricingPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         {/* Hero */}
         <section className="py-14 md:py-24 px-5 md:px-8 bg-gradient-to-br from-gray-050 to-white border-b border-hairline">
           <div className="max-w-7xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-opacity-10 rounded-full" style={{backgroundColor: 'rgba(255, 106, 91, 0.1)'}}>
-              <span className="text-xs font-bold tracking-wide text-coral uppercase">Transparent Pricing</span>
+              <span className="text-xs font-bold tracking-wide text-coral-ink uppercase">Transparent Pricing</span>
             </div>
             <h1 className="text-5xl font-bold text-charcoal mb-4">
               Simple, fair pricing
@@ -161,7 +161,7 @@ export default function PricingPage() {
                   }`}
                 >
                   {plan.highlighted && (
-                    <div className="inline-block mb-4 px-3 py-1 bg-coral text-white text-xs font-bold rounded-full">
+                    <div className="inline-block mb-4 px-3 py-1 bg-coral-ink text-white text-xs font-bold rounded-full">
                       Most Popular
                     </div>
                   )}
@@ -196,7 +196,7 @@ export default function PricingPage() {
                       href={plan.ctaHref ?? '/auth/signup'}
                       className={`block w-full text-center px-6 py-3 rounded-xl font-semibold mb-8 transition-colors ${
                         plan.highlighted
-                          ? 'bg-coral hover:bg-coral-press text-white'
+                          ? 'bg-coral-ink hover:bg-coral-ink-press text-white'
                           : 'bg-white border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white'
                       }`}
                     >
@@ -207,7 +207,7 @@ export default function PricingPage() {
                   <ul className="space-y-4">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
-                        <span className="text-teal text-lg flex-shrink-0">✓</span>
+                        <span className="text-teal-ink text-lg flex-shrink-0">✓</span>
                         <span className="text-sm text-text-body">{feature}</span>
                       </li>
                     ))}

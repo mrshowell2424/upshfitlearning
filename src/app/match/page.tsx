@@ -73,7 +73,7 @@ function MatchPageContent() {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-1 flex items-center justify-center px-5 md:px-8 py-16">
+      <main id="main" tabIndex={-1} className="flex-1 flex items-center justify-center px-5 md:px-8 py-16">
         <SignInGate
           title="Every standard, unpacked"
           blurb={`Search ${STANDARD_TOTAL} standards and open the lesson blueprint for any of them. Free — an account is all it takes.`}
@@ -83,7 +83,7 @@ function MatchPageContent() {
           <div className="text-center mb-6">
             <p
               className="text-[15px] font-bold uppercase tracking-[0.14em] mb-6"
-              style={{ color: "var(--color-teal)" }}
+              style={{ color: "var(--color-teal-ink)" }}
             >
               STANDARD MATCHER
             </p>
@@ -116,13 +116,13 @@ function MatchPageContent() {
               onClick={() => handleSearch(query)}
               className="px-6 min-h-[48px] rounded-[10px] font-semibold text-white transition-colors flex-shrink-0"
               style={{
-                backgroundColor: "var(--color-coral)",
+                backgroundColor: "var(--color-coral-ink)",
               }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.backgroundColor = "var(--color-coral-press)")
+                (e.currentTarget.style.backgroundColor = "var(--color-coral-ink-press)")
               }
               onMouseLeave={(e) =>
-                (e.currentTarget.style.backgroundColor = "var(--color-coral)")
+                (e.currentTarget.style.backgroundColor = "var(--color-coral-ink)")
               }
             >
               Match my standard
@@ -220,7 +220,7 @@ function MatchPageContent() {
             >
               <p
                 className="text-[30px] font-bold"
-                style={{ color: "var(--color-coral)" }}
+                style={{ color: "var(--color-coral-ink)" }}
               >
                 {RESOURCE_TOTAL.toLocaleString()}
               </p>
@@ -234,7 +234,7 @@ function MatchPageContent() {
             >
               <p
                 className="text-[30px] font-bold"
-                style={{ color: "var(--color-lavender)" }}
+                style={{ color: "var(--color-lavender-ink)" }}
               >
                 {COURSE_COUNT}
               </p>
@@ -248,7 +248,7 @@ function MatchPageContent() {
             >
               <p
                 className="text-[30px] font-bold"
-                style={{ color: "var(--color-teal)" }}
+                style={{ color: "var(--color-teal-ink)" }}
               >
                 K–12
               </p>
@@ -265,7 +265,7 @@ function MatchPageContent() {
             >
               <p
                 className="text-[30px] font-bold"
-                style={{ color: "var(--color-pink)" }}
+                style={{ color: "var(--color-pink-ink)" }}
               >
                 {PRINCIPLES.length}
               </p>

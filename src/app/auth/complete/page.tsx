@@ -65,7 +65,7 @@ function CompleteSignIn() {
   }, [router, searchParams])
 
   return (
-    <main className="flex-1 flex items-center justify-center px-6 py-14 md:py-24 bg-gray-050 min-h-screen">
+    <main id="main" tabIndex={-1} className="flex-1 flex items-center justify-center px-6 py-14 md:py-24 bg-gray-050 min-h-screen">
       <div className="w-full max-w-md bg-white rounded-3xl p-8 border border-hairline text-center">
         {error ? (
           <>
@@ -73,7 +73,7 @@ function CompleteSignIn() {
             <p className="text-sm text-text-muted mb-6">{error}</p>
             <a
               href="/auth/signin"
-              className="inline-flex items-center justify-center rounded-lg bg-coral px-5 py-3 font-semibold text-white hover:bg-coral-press transition-colors"
+              className="inline-flex items-center justify-center rounded-lg bg-coral-ink px-5 py-3 font-semibold text-white hover:bg-coral-ink-press transition-colors"
             >
               Back to sign in
             </a>
@@ -91,7 +91,7 @@ function CompleteSignIn() {
 
 function Waiting() {
   return (
-    <main className="flex-1 flex items-center justify-center px-6 py-14 md:py-24 bg-gray-050 min-h-screen">
+    <main id="main" tabIndex={-1} className="flex-1 flex items-center justify-center px-6 py-14 md:py-24 bg-gray-050 min-h-screen">
       <div className="w-full max-w-md bg-white rounded-3xl p-8 border border-hairline text-center">
         <h1 className="text-2xl font-bold text-charcoal mb-2">Signing you in…</h1>
         <p className="text-sm text-text-muted">One moment.</p>

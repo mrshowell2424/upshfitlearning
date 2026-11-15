@@ -55,13 +55,13 @@ export default async function LearningSciencePage() {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         {/* Hero */}
         <section className="px-5 md:px-8 py-14 md:py-20 border-b border-hairline bg-gradient-to-br from-gray-050 to-white">
           <div className="max-w-4xl mx-auto">
             <p
               className="text-[13px] font-bold uppercase tracking-[0.16em] mb-4"
-              style={{ color: "var(--color-teal)" }}
+              style={{ color: "var(--color-teal-ink)" }}
             >
               Science of Learning First
             </p>
@@ -98,7 +98,9 @@ export default async function LearningSciencePage() {
                   <div className="flex flex-wrap items-baseline justify-between gap-3 mb-1">
                     <h2
                       className="text-[22px] md:text-[26px] font-bold"
-                      style={{ color: principle.color }}
+                      // The rule down the side can be the brand hue; the
+                      // heading cannot. Coral on white is 2.81:1.
+                      style={{ color: principle.ink }}
                     >
                       {scienceLabel(principle.tag)}
                     </h2>
@@ -158,7 +160,7 @@ export default async function LearningSciencePage() {
             </div>
             <Link
               href="/match"
-              className="inline-flex items-center justify-center rounded-xl bg-coral px-6 py-3 font-semibold text-white hover:bg-coral-press transition-colors"
+              className="inline-flex items-center justify-center rounded-xl bg-coral-ink px-6 py-3 font-semibold text-white hover:bg-coral-ink-press transition-colors"
             >
               Find your standard
             </Link>

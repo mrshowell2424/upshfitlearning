@@ -120,7 +120,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <SignInGate
           title="Knowledge Threads"
           blurb="The same 350 articles, grouped by what they are about instead of which standard they teach — so you can see what a child has already met on a topic, and what is coming. Free — an account is all it takes."

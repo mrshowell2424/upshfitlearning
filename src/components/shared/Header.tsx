@@ -140,10 +140,10 @@ export default function Header() {
               href="/auth/signup"
               className="inline-flex items-center min-h-[44px] px-4 text-sm font-semibold text-white rounded-lg transition-colors"
               style={{
-                backgroundColor: "var(--color-coral)",
+                backgroundColor: "var(--color-coral-ink)",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--color-coral-press)")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--color-coral)")}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--color-coral-ink-press)")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--color-coral-ink)")}
             >
               Get started
             </a>

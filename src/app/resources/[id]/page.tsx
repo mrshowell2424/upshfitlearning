@@ -64,7 +64,7 @@ export default async function ResourceDetailPage({ params }: PageProps) {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-1 px-5 md:px-8 py-8 max-w-6xl mx-auto w-full">
+      <main id="main" tabIndex={-1} className="flex-1 px-5 md:px-8 py-8 max-w-6xl mx-auto w-full">
         {/* Back link */}
         <a href="/resources" className="text-link-blue hover:underline text-sm font-semibold mb-6 inline-block">
           ← Back to library
@@ -209,7 +209,7 @@ export default async function ResourceDetailPage({ params }: PageProps) {
                         )}
                       </div>
                       <div className="min-w-0">
-                        <p className="text-[13px] font-semibold text-charcoal leading-snug line-clamp-2 group-hover:text-coral transition-colors">
+                        <p className="text-[13px] font-semibold text-charcoal leading-snug line-clamp-2 group-hover:text-coral-ink transition-colors">
                           {item.title}
                         </p>
                         {item.purpose && (

@@ -200,7 +200,7 @@ export default function MathPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <SignInGate
           title="Math"
           blurb="Pick a grade and standard, then run the maths lesson steps in order. Free — an account is all it takes."

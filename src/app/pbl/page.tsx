@@ -230,7 +230,7 @@ export default function PblPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <SignInGate
           title="Project-Based Learning"
           blurb="Plan a project from a standard, or run a design challenge every week of the year. Free — an account is all it takes."

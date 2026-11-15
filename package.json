@@ -13,6 +13,7 @@
     "check:db": "bun run scripts/check-in-sync.ts && bun run scripts/check-seeded.ts",
     "check:links": "bun scripts/check-links.mjs",
     "check:meta": "bun scripts/check-metadata.mjs",
+    "check:a11y": "bun scripts/check-a11y.mjs",
     "og:cards": "bun scripts/shoot-og-cards.mjs",
     "play:build": "bun scripts/build-fluency-play.mjs",
     "db:seed": "bun run scripts/seed-resources.ts",

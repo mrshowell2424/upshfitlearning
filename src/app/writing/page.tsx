@@ -138,7 +138,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <SignInGate
           title="Opinion writing"
           blurb="Sixty-two opinion prompts, each with a passage written at the phonics pattern you are teaching — so a child argues from a text they can read. Free — an account is all it takes."

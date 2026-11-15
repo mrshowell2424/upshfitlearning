@@ -21,7 +21,7 @@ export default function SuccessPage() {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-1 flex items-center justify-center px-5 md:px-8 py-14 md:py-24 bg-gray-050">
+      <main id="main" tabIndex={-1} className="flex-1 flex items-center justify-center px-5 md:px-8 py-14 md:py-24 bg-gray-050">
         <div className="w-full max-w-lg bg-white rounded-3xl p-8 md:p-10 border border-hairline">
           <div
             className="w-12 h-12 rounded-full flex items-center justify-center mb-6"
@@ -79,7 +79,7 @@ export default function SuccessPage() {
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
               href="/auth/signin"
-              className="flex-1 text-center px-6 py-3 rounded-xl font-semibold text-white bg-coral hover:bg-coral-press transition-colors"
+              className="flex-1 text-center px-6 py-3 rounded-xl font-semibold text-white bg-coral-ink hover:bg-coral-ink-press transition-colors"
             >
               Sign in
             </Link>

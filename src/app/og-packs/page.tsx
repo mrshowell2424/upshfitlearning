@@ -126,7 +126,7 @@ function Packs() {
                         </div>
                       ) : (
                         // Built, but nothing in this road map teaches it yet.
-                        <div style={{ fontSize: 12, fontWeight: 500, color: "#8A8A8A", marginTop: 9 }}>
+                        <div style={{ fontSize: 12, fontWeight: 500, color: "var(--color-text-faint)", marginTop: 9 }}>
                           Not in the road map yet
                         </div>
                       )}
@@ -159,7 +159,7 @@ export default function OgPacksPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <SignInGate
           title="OG concept packs"
           blurb="Fifty-eight Orton-Gillingham concept packs — roadmap, activities, decodable and answer key for each. Free — an account is all it takes."

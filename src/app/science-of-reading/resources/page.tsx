@@ -482,7 +482,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <SignInGate
           title="Reading Resources"
           blurb="Mysteries and informational articles with questions, a written response, and an AI prompt that carries the whole text. Free — an account is all it takes."

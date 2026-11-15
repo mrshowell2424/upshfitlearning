@@ -42,6 +42,9 @@ export function LessonBanner({ blueprint, standard, unpack }: { blueprint?: any;
         {view.sub && (
           <p
             className="text-[16px] md:text-[17px] font-semibold mt-1"
+            // On the navy banner the contrast runs the other way: the ink
+            // teal is 2.85:1 against it and the brand teal is 6.11:1. Dark
+            // ink is for light grounds -- here the bright one is correct.
             style={{ color: 'var(--color-teal)' }}
           >
             {view.sub}
@@ -64,7 +67,7 @@ export function LessonBanner({ blueprint, standard, unpack }: { blueprint?: any;
       ) : view.badge ? (
         <span
           className="inline-block px-5 py-2 rounded-full text-[13px] font-bold uppercase tracking-[0.08em] text-white flex-shrink-0"
-          style={{ backgroundColor: 'var(--color-teal)' }}
+          style={{ backgroundColor: 'var(--color-teal-ink)' }}
         >
           {view.badge}
         </span>

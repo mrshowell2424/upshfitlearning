@@ -62,6 +62,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable} ${serif.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-white">
+        {/* First stop on every page. The header carries a wordmark, a
+            search box and fourteen links, so without this the first word
+            of a lesson is seventeen presses of Tab away -- on every page,
+            every time. It is off-screen until it is focused. */}
+        <a href="#main" className="skip-link">
+          Skip to the content
+        </a>
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>

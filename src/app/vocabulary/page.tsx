@@ -145,7 +145,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <SignInGate
           title="Teach a Word"
           blurb="A three-phase vocabulary routine on every word in the article library, with the script already filled in. Free — an account is all it takes."

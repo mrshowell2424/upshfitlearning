@@ -13,7 +13,10 @@ export interface Principle {
   what: string;
   classroom: string;
   mistake: string;
+  /** The rule down the left of the card. Decoration, so the brand hue. */
   color: string;
+  /** The same hue, dark enough to set the heading in. */
+  ink: string;
 }
 
 /**
@@ -31,6 +34,7 @@ export const PRINCIPLES: Principle[] = [
     mistake:
       "Treating discussion as elaboration. Talking about a topic is not the same as explaining how it works — the question has to demand a because.",
     color: "var(--color-coral)",
+    ink: "var(--color-coral-ink)",
   },
   {
     tag: "dual-coding",
@@ -42,6 +46,7 @@ export const PRINCIPLES: Principle[] = [
     mistake:
       "Decorative images. A picture that does not carry the idea adds load without adding a channel, and actively costs attention.",
     color: "var(--color-lavender)",
+    ink: "var(--color-lavender-ink)",
   },
   {
     tag: "retrieval",
@@ -53,6 +58,7 @@ export const PRINCIPLES: Principle[] = [
     mistake:
       "Making it high stakes. Retrieval works because it is frequent and unthreatening; graded quizzes turn it into something students revise for rather than a way of learning.",
     color: "var(--color-teal)",
+    ink: "var(--color-teal-ink)",
   },
   {
     tag: "spaced",
@@ -64,6 +70,7 @@ export const PRINCIPLES: Principle[] = [
     mistake:
       "Reading the difficulty as failure. Spaced practice feels worse and works better — the struggle on return is the mechanism, not a sign the first lesson failed.",
     color: "var(--color-blue)",
+    ink: "var(--color-link-blue)",
   },
   {
     tag: "interleaving",
@@ -75,6 +82,7 @@ export const PRINCIPLES: Principle[] = [
     mistake:
       "Interleaving too early. Students need to be able to execute a method before being asked to choose between methods.",
     color: "var(--color-amber)",
+    ink: "var(--color-amber-ink)",
   },
   {
     tag: "collaborative",
@@ -86,6 +94,7 @@ export const PRINCIPLES: Principle[] = [
     mistake:
       "Group work without individual accountability. If one student can carry the task, the others get the answer without doing the thinking.",
     color: "var(--color-pink)",
+    ink: "var(--color-pink-ink)",
   },
   {
     tag: "metacognition",
@@ -97,5 +106,6 @@ export const PRINCIPLES: Principle[] = [
     mistake:
       "Asking students to reflect without giving them anything to check against. Reflection with no feedback just rehearses the original impression.",
     color: "#6B2FB5",
+    ink: "#6B2FB5",
   },
 ];

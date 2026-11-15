@@ -41,7 +41,7 @@ export function CheckoutButtons({
       <div className="mb-8">
         <Link
           href="/auth/signup"
-          className="block w-full text-center px-6 py-3 rounded-xl font-semibold bg-coral hover:bg-coral-press text-white transition-colors"
+          className="block w-full text-center px-6 py-3 rounded-xl font-semibold bg-coral-ink hover:bg-coral-ink-press text-white transition-colors"
         >
           Get All-Access
         </Link>
@@ -55,7 +55,7 @@ export function CheckoutButtons({
       <div className="mb-8">
         <Link
           href="/auth/signup?next=/pricing"
-          className="block w-full text-center px-6 py-3 rounded-xl font-semibold bg-coral hover:bg-coral-press text-white transition-colors"
+          className="block w-full text-center px-6 py-3 rounded-xl font-semibold bg-coral-ink hover:bg-coral-ink-press text-white transition-colors"
         >
           Create an account to upgrade
         </Link>
@@ -105,7 +105,7 @@ export function CheckoutButtons({
     <div className="mb-8">
       <a
         href={withAccount(monthlyUrl)}
-        className="block w-full text-center px-6 py-3 rounded-xl font-semibold bg-coral hover:bg-coral-press text-white transition-colors"
+        className="block w-full text-center px-6 py-3 rounded-xl font-semibold bg-coral-ink hover:bg-coral-ink-press text-white transition-colors"
       >
         {yearlyUrl ? 'Subscribe monthly' : 'Get All-Access'}
       </a>
@@ -120,7 +120,7 @@ export function CheckoutButtons({
       )}
 
       {isTestMode && (
-        <p className="text-[12px] font-semibold text-center mt-3" style={{ color: 'var(--color-amber)' }}>
+        <p className="text-[12px] font-semibold text-center mt-3" style={{ color: 'var(--color-amber-ink)' }}>
           Test mode — no payment will be taken
         </p>
       )}

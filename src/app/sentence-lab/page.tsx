@@ -152,7 +152,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <SignInGate
           title="Sentence Lab"
           blurb="Sentence combining and expanding, run on sentences from articles your class has already read — with the answer key taken from the article's own harder version. Free — an account is all it takes."

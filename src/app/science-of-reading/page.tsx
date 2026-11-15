@@ -642,7 +642,7 @@ export default function ScienceOfReadingPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <SignInGate
           title="Science of Reading"
           blurb="Build a lesson from any skill, open the Basic Reading workbooks, or review an OG concept pack. Free — an account is all it takes."

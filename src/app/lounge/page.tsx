@@ -49,7 +49,7 @@ export default function TeachersLounge() {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         {/* Hero Section */}
         <section className="py-12 px-5 md:px-8 bg-white border-b border-hairline">
           <div className="max-w-7xl mx-auto">
@@ -101,7 +101,7 @@ export default function TeachersLounge() {
                     href={featuredArticle.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 min-h-[44px] text-coral font-semibold hover:text-coral-press transition-colors"
+                    className="inline-flex items-center gap-2 min-h-[44px] text-coral-ink font-semibold hover:text-coral-ink-press transition-colors"
                   >
                     Read it on Substack →
                   </a>
@@ -199,7 +199,7 @@ export default function TeachersLounge() {
                           href={article.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 min-h-[44px] text-coral font-semibold text-sm hover:text-coral-press transition-colors"
+                          className="inline-flex items-center gap-1 min-h-[44px] text-coral-ink font-semibold text-sm hover:text-coral-ink-press transition-colors"
                         >
                           Read it →
                         </a>

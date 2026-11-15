@@ -269,7 +269,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
         <p style={{ fontSize: 13, color: SOFT, margin: 0 }}>
           This is the printable sheet. Press <b>Cmd/Ctrl + P</b>. Two pages: the text with room to
           mark it, then the written response.{" "}
-          <a href="/science-of-reading/resources" style={{ color: "#2F6FD0" }}>
+          <a href="/science-of-reading/resources" style={{ color: "#2F6FD0", textDecoration: "underline" }}>
             Back to Reading Resources
           </a>
         </p>

@@ -313,7 +313,7 @@ function ResourcesContent() {
 
         {/* min-w-0: without it the card grid's own minimum width keeps this
             column from shrinking, and it pushes out of the viewport instead. */}
-        <main className="flex-1 min-w-0 px-5 md:px-8 py-8">
+        <main id="main" tabIndex={-1} className="flex-1 min-w-0 px-5 md:px-8 py-8">
           <div className="mb-6">
             <div className="flex items-center justify-between gap-4">
               <div>
@@ -433,7 +433,7 @@ function ResourcesContent() {
                 {page < totalPages && (
                   <a
                     href={`/resources?page=${page + 1}`}
-                    className="px-4 py-2 rounded-lg bg-coral text-white hover:bg-coral-press"
+                    className="px-4 py-2 rounded-lg bg-coral-ink text-white hover:bg-coral-ink-press"
                   >
                     Show 30 more
                   </a>

@@ -51,13 +51,13 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         {/* Hero Section */}
         <section className="relative py-12 md:py-24 px-5 md:px-8 bg-gradient-to-br from-gray-050 to-white">
           <div className="relative max-w-7xl mx-auto">
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-opacity-10 rounded-full" style={{backgroundColor: 'rgba(255, 106, 91, 0.1)'}}>
-              <span className="text-xs font-bold tracking-wide text-coral uppercase">Science of Learning First</span>
+              <span className="text-xs font-bold tracking-wide text-coral-ink uppercase">Science of Learning First</span>
             </div>
 
             {/* Hero Headline */}
@@ -75,7 +75,7 @@ export default function Home() {
             <div className="mb-6 max-w-2xl">
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 bg-white rounded-2xl p-3 border border-border" style={{boxShadow: '0 12px 34px rgba(17,17,17,.09)'}}>
                 <div className="flex items-center gap-2 flex-1 min-w-0">
-                  <span className="text-coral text-xl flex-shrink-0">✳</span>
+                  <span className="text-coral-ink text-xl flex-shrink-0">✳</span>
                   <input
                     type="text"
                     placeholder='RL.2.1 — or "text evidence"'
@@ -87,7 +87,7 @@ export default function Home() {
                 </div>
                 <button
                   onClick={() => handleSearch(searchInput)}
-                  className="bg-coral hover:bg-coral-press text-white px-6 min-h-[44px] rounded-xl text-sm font-semibold transition-colors flex-shrink-0"
+                  className="bg-coral-ink hover:bg-coral-ink-press text-white px-6 min-h-[44px] rounded-xl text-sm font-semibold transition-colors flex-shrink-0"
                 >
                   Match my standard
                 </button>
@@ -112,19 +112,19 @@ export default function Home() {
             {/* Stat Strip */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-hairline rounded-2xl overflow-hidden">
               <Link href="/resources" className="bg-white p-4 md:p-6 text-center hover:bg-gray-050 transition-colors">
-                <div className="text-3xl md:text-4xl font-bold text-coral mb-1">{RESOURCE_TOTAL.toLocaleString()}</div>
+                <div className="text-3xl md:text-4xl font-bold text-coral-ink mb-1">{RESOURCE_TOTAL.toLocaleString()}</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Resources</div>
               </Link>
               <Link href="/match" className="bg-white p-4 md:p-6 text-center hover:bg-gray-050 transition-colors">
-                <div className="text-3xl md:text-4xl font-bold text-lavender mb-1">{STANDARD_TOTAL}</div>
+                <div className="text-3xl md:text-4xl font-bold text-lavender-ink mb-1">{STANDARD_TOTAL}</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Standards</div>
               </Link>
               <Link href="/match/random" className="bg-white p-4 md:p-6 text-center hover:bg-gray-050 transition-colors">
-                <div className="text-3xl md:text-4xl font-bold text-teal mb-1">K–12</div>
+                <div className="text-3xl md:text-4xl font-bold text-teal-ink mb-1">K–12</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Grade Span</div>
               </Link>
               <Link href="/learning-science" className="bg-white p-4 md:p-6 text-center hover:bg-gray-050 transition-colors">
-                <div className="text-3xl md:text-4xl font-bold text-pink mb-1">{PRINCIPLES.length}</div>
+                <div className="text-3xl md:text-4xl font-bold text-pink-ink mb-1">{PRINCIPLES.length}</div>
                 <div className="text-xs uppercase font-bold tracking-wider text-text-faint">Learning Science Principles</div>
               </Link>
             </div>
@@ -139,36 +139,36 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Card 1 */}
               <div className="border-2 border-coral rounded-2xl bg-white p-6 hover:border-charcoal transition-colors">
-                <div className="text-xs font-bold tracking-wider text-coral uppercase mb-2">Find Standards</div>
+                <div className="text-xs font-bold tracking-wider text-coral-ink uppercase mb-2">Find Standards</div>
                 <h3 className="text-xl font-bold text-charcoal mb-3">Standard matcher</h3>
                 <p className="text-sm text-text-body mb-4">
                   Search by code or describe what you're teaching, and we'll find the exact standard.
                 </p>
-                <Link href="/match" className="inline-flex items-center gap-2 text-coral font-semibold hover:text-coral-press transition-colors">
+                <Link href="/match" className="inline-flex items-center gap-2 text-coral-ink font-semibold hover:text-coral-ink-press transition-colors">
                   Get started →
                 </Link>
               </div>
 
               {/* Card 2 */}
               <div className="border-l-4 border-lavender rounded-2xl bg-white p-6 border border-hairline hover:border-charcoal transition-colors">
-                <div className="text-xs font-bold tracking-wider text-lavender uppercase mb-2">Discover Resources</div>
+                <div className="text-xs font-bold tracking-wider text-lavender-ink uppercase mb-2">Discover Resources</div>
                 <h3 className="text-xl font-bold text-charcoal mb-3">Resource library</h3>
                 <p className="text-sm text-text-body mb-4">
                   All {RESOURCE_TOTAL.toLocaleString()} curated resources, free with an account. Filter by grade, skill, and format.
                 </p>
-                <Link href="/resources" className="inline-flex items-center gap-2 text-coral font-semibold hover:text-coral-press transition-colors">
+                <Link href="/resources" className="inline-flex items-center gap-2 text-coral-ink font-semibold hover:text-coral-ink-press transition-colors">
                   Browse resources →
                 </Link>
               </div>
 
               {/* Card 3 */}
               <div className="border-l-4 border-teal rounded-2xl bg-white p-6 border border-hairline hover:border-charcoal transition-colors">
-                <div className="text-xs font-bold tracking-wider text-teal uppercase mb-2">Learn More</div>
+                <div className="text-xs font-bold tracking-wider text-teal-ink uppercase mb-2">Learn More</div>
                 <h3 className="text-xl font-bold text-charcoal mb-3">Teacher's lounge</h3>
                 <p className="text-sm text-text-body mb-4">
                   Read articles, watch videos, and learn from teaching strategies grounded in learning science.
                 </p>
-                <Link href="/lounge" className="inline-flex items-center gap-2 text-coral font-semibold hover:text-coral-press transition-colors">
+                <Link href="/lounge" className="inline-flex items-center gap-2 text-coral-ink font-semibold hover:text-coral-ink-press transition-colors">
                   Read articles →
                 </Link>
               </div>

@@ -75,7 +75,7 @@ export default function HeaderSearch({
       {query.trim() && (
         <button
           type="submit"
-          className="flex-shrink-0 text-[12px] font-bold uppercase tracking-[0.06em] text-coral hover:text-coral-press transition-colors"
+          className="flex-shrink-0 text-[12px] font-bold uppercase tracking-[0.06em] text-coral-ink hover:text-coral-ink-press transition-colors"
         >
           Go
         </button>

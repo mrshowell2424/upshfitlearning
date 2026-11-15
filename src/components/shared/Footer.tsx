@@ -38,14 +38,14 @@ export default function Footer() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm font-semibold text-charcoal hover:text-coral transition-colors"
+              className="text-sm font-semibold text-charcoal hover:text-coral-ink transition-colors"
             >
               {l.label}
             </Link>
           ))}
           <a
             href="mailto:hello@upshiftlearning.org"
-            className="text-sm font-semibold text-charcoal hover:text-coral transition-colors"
+            className="text-sm font-semibold text-charcoal hover:text-coral-ink transition-colors"
           >
             Contact
           </a>
