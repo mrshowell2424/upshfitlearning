@@ -48,3 +48,18 @@ next-env.d.ts
 
 # Finder duplicates, e.g. "Basic Reading Lesson Filer copy.html"
 *\ copy.html
+
+# Working material sitting in the repo root: downloaded archives and scans.
+# 432MB of it at the time of writing, none of it code, none of it ignored --
+# so one `git add -A` would have staged the lot. The largest is a 416MB zip
+# of third-party curriculum (Lexia, Wilson, Beck/McKeown/Kucan) which must
+# not be published from here at all; GitHub's 100MB file ceiling was the
+# only thing standing in the way, which is luck rather than a safeguard.
+#
+# Only archives and scans are listed. Loose .html stays visible in
+# `git status` on purpose, so it keeps reminding you it is there.
+/*.zip
+/*.tif
+/*.tiff
+/*.pdf
+/Books*/
