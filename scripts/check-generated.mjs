@@ -24,7 +24,7 @@
  *   GENERATED_SLOW=1 bun scripts/check-generated.mjs   # + the math PDFs
  */
 
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 
 /*
@@ -45,11 +45,13 @@ const BUILDERS = [
     ["scripts/reading-resources-counts.json", "content-reading-materials/science-of-reading/resources.html"],
   ],
   ["scripts/build-pbl-hub.mjs", ["content-reading-materials/pbl/pbl-hub.html"]],
-  ["scripts/articles/g0.src.mjs", ["scripts/articles/g0.json"]],
-  ["scripts/articles/g1.src.mjs", ["scripts/articles/g1.json"]],
-  ["scripts/articles/g2.src.mjs", ["scripts/articles/g2.json"]],
-  ["scripts/articles/g5.src.mjs", ["scripts/articles/g5.json"]],
-  ["scripts/articles/g6.src.mjs", ["scripts/articles/g6.json"]],
+  // Every grade that has a source file, found rather than listed, so a new
+  // grade is covered on the day it is written instead of the day someone
+  // remembers to add it here.
+  ...readdirSync("scripts/articles")
+    .filter((f) => /^g\d+\.src\.mjs$/.test(f))
+    .sort()
+    .map((f) => [`scripts/articles/${f}`, [`scripts/articles/${f.replace(".src.mjs", ".json")}`]]),
 ];
 
 /*

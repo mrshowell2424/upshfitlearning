@@ -110,6 +110,14 @@ const BY_HAND = {
   "Naming the Park": "civics",                  // three cases for a park's name
   "The Mold on the Windowsill": "body",         // Fleming, 1928
   "How Elephants Talk Through the Ground": "animals",
+  // Grade 7. The keyword rules placed forty-five of the fifty; these are
+  // the five where the subject of the article is not what its vocabulary
+  // is made of.
+  "What Lives in a Gut": "body",                 // the human microbiome
+  "Why the Big Animals Vanished": "animals",     // megafauna extinction
+  "The Parts That Had to Fit": "machines",       // interchangeable parts
+  "What a Scientist Means by Significant": "books",  // how to read a claim
+  "The Order of a Checklist": "books",           // how a document is built
 };
 
 const pats = Object.fromEntries(

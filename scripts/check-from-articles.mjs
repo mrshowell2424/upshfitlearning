@@ -33,7 +33,7 @@
  *   bun scripts/check-from-articles.mjs
  */
 
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync } from "node:fs";
 
 const read = (p) => JSON.parse(readFileSync(p, "utf8"));
 const ART = read("scripts/reading-articles.json").articles;
@@ -104,24 +104,29 @@ const homeless = [...ids].filter((id) => !(id in (TH.assign ?? {})));
 if (homeless.length)
   say(`threads: ${homeless.length} articles belong to no thread — ${homeless.slice(0, 6).join(", ")}`);
 
-// 5. the generated grade files still match what the site serves
-const GRADES = { g0: "gK", g1: "g1", g2: "g2", g5: "g5", g6: "g6" };
+/*
+ * 5. the generated grade files still match what the site serves
+ *
+ * Read off the directory rather than listed here. A hardcoded list is a
+ * thing to forget on the day grade 8 is written, and forgetting it would
+ * leave the new grade as the only one nobody compares.
+ */
+const files = existsSync("scripts/articles")
+  ? readdirSync("scripts/articles").filter((f) => /^g\d+\.json$/.test(f)).sort()
+  : [];
+if (!files.length) say("scripts/articles holds no generated grade files at all");
 let generated = 0;
-for (const [file, prefix] of Object.entries(GRADES)) {
-  const path = `scripts/articles/${file}.json`;
-  if (!existsSync(path)) {
-    say(`${path} is gone, and ${prefix} articles are built from it`);
-    continue;
-  }
+for (const file of files) {
+  const path = `scripts/articles/${file}`;
   for (const a of read(path)) {
     generated++;
     const live = ART.find((x) => x.id === a.id);
     if (!live) {
-      say(`${file}.json holds ${a.id}, which reading-articles.json does not serve`);
+      say(`${file} holds ${a.id}, which reading-articles.json does not serve`);
     } else if (JSON.stringify(a) !== JSON.stringify(live)) {
       say(
-        `${a.id} differs between ${file}.json and reading-articles.json — ` +
-          `rebuilding the grade changed the generated file and not the one the site reads`,
+        `${a.id} differs between ${file} and reading-articles.json — ` +
+          `the grade was rebuilt and scripts/merge-articles.mjs was not run`,
       );
     }
   }

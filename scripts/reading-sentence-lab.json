@@ -10470,6 +10470,1926 @@
    ],
    "expand": [],
    "stem": "Nobody has a list."
+  },
+  {
+   "id": "g7-1",
+   "grade": 7,
+   "n": 1,
+   "title": "The Tree Rings That Dated a Tsunami",
+   "standard": "RI.7.1",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "A tree grows one ring each year.",
+      "The outer ring of these cedars is complete.",
+      "It has the dense wood that forms at the end of a season.",
+      "No ring starts after it."
+     ],
+     "to": [
+      "A tree keeps a ring for every year it grows.",
+      "The outermost ring of the ghost cedars is complete, with the dense latewood that forms at the end of a growing season, and no ring begins after it."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "Japanese officials wrote about a wave on January 27, 1700.",
+      "It flooded villages on the Pacific coast.",
+      "Nobody in Japan had felt an earthquake.",
+      "The records call it an orphan tsunami."
+     ],
+     "to": [
+      "Eight thousand kilometres away, Japanese officials recorded a wave that flooded villages on the Pacific coast on the night of January 27, 1700.",
+      "No earthquake had been felt in Japan, so the records call it an orphan tsunami."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "No ring starts after it."
+  },
+  {
+   "id": "g7-2",
+   "grade": 7,
+   "n": 2,
+   "title": "The Orphan Trains",
+   "standard": "RI.7.1",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "Some children were adopted.",
+      "They called it the best day of their lives.",
+      "Others were taken as unpaid farm labour.",
+      "Agents were supposed to check on them.",
+      "Often they never came."
+     ],
+     "to": [
+      "Some children were adopted outright and remembered the day as the best of their lives.",
+      "Others were taken as unpaid farm labour, and agents who were meant to check on them a year later often never came."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "From 1854 to 1929, groups like the Children's Aid Society sent children west by train.",
+      "About two hundred thousand went.",
+      "They were sent to live with families they had never met."
+     ],
+     "to": [
+      "Between 1854 and 1929 the Children's Aid Society and other organizations put roughly two hundred thousand children on trains out of New York and sent them west to live with families they had never met."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The almshouses were worse."
+  },
+  {
+   "id": "g7-3",
+   "grade": 7,
+   "n": 3,
+   "title": "The Bird That Builds a Compost Heap",
+   "standard": "RI.7.1",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "In autumn the male scrapes a pit several metres wide.",
+      "He fills it with leaves and twigs.",
+      "Rain soaks the pile.",
+      "The material rots, and rotting gives off heat, just like a compost heap."
+     ],
+     "to": [
+      "In autumn the male scrapes a pit several metres across and fills it with leaves and twigs.",
+      "Rain soaks the pile, and the material begins to rot, which releases heat exactly the way a garden compost heap does."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "So the male tests the mound.",
+      "He pushes his beak into the sand.",
+      "His bill and mouth tell him if it is warm or cool.",
+      "Then he adds sand or digs some away."
+     ],
+     "to": [
+      "So the male tests the mound.",
+      "He pushes his beak into the sand, and the sensitivity of his bill and mouth tells him whether the inside is warm or cool, and then he adds sand or digs it away."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Rain soaks the pile."
+  },
+  {
+   "id": "g7-4",
+   "grade": 7,
+   "n": 4,
+   "title": "The Blizzard That Buried the Wires",
+   "standard": "RI.7.1",
+   "combine": [
+    {
+     "para": "G",
+     "from": [
+      "Boston and other cities did the same.",
+      "People sometimes call the storm the cause.",
+      "That is not quite right.",
+      "The case was already made.",
+      "The storm settled who would pay."
+     ],
+     "to": [
+      "Boston and other cities followed.",
+      "The ice storm is sometimes described as the cause, which is not quite right: the engineering case was already made, and the storm settled who was going to pay for it."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "In March 1888 a storm stalled over the north-east United States.",
+      "It snowed for three days.",
+      "Drifts in New York reached second-floor windows.",
+      "About four hundred people died."
+     ],
+     "to": [
+      "In March 1888 a storm stalled over the north-east of the United States and snowed for three days.",
+      "Drifts in New York City reached the second floor of some buildings, and about four hundred people died."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It snowed for three days."
+  },
+  {
+   "id": "g7-5",
+   "grade": 7,
+   "n": 5,
+   "title": "The Lead in the Greenland Ice",
+   "standard": "RI.7.1",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "In cores from the last three thousand years, lead rises sharply.",
+      "It stays high for centuries.",
+      "Then it collapses.",
+      "The rise starts near 600 BCE.",
+      "The fall is in the third century CE."
+     ],
+     "to": [
+      "In cores covering the last three thousand years, the lead content rises sharply, holds high for several centuries, and then collapses.",
+      "The rise begins around 600 BCE and the collapse falls in the third century CE."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "Snow that falls on the Greenland ice sheet does not melt.",
+      "Next year's snow buries it.",
+      "It is pressed into ice.",
+      "It stays in order for thousands of years."
+     ],
+     "to": [
+      "Snow that falls on the Greenland ice sheet does not melt.",
+      "It is buried by the next year's snow, compressed into ice, and stays where it is, in order, for thousands of years."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Smelting silver releases it."
+  },
+  {
+   "id": "g7-6",
+   "grade": 7,
+   "n": 6,
+   "title": "The Canal and the Mosquito",
+   "standard": "RI.7.2",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "The French began a canal across Panama in 1881.",
+      "They gave up eight years later.",
+      "The engineering beat them.",
+      "So did a death rate in the thousands."
+     ],
+     "to": [
+      "The French began digging a canal across Panama in 1881 and gave up eight years later.",
+      "The engineering had defeated them, and so had a death rate that reached into the thousands."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "Yellow fever and malaria killed workers faster than the company could replace them.",
+      "Hospitals set bed legs in pans of water to keep ants off.",
+      "That bred mosquitoes beside every bed."
+     ],
+     "to": [
+      "Yellow fever and malaria killed workers faster than the company could replace them.",
+      "Hospitals of the period set the legs of beds in pans of water to keep ants off the patients, which bred mosquitoes beside every sickbed."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The engineering beat them."
+  },
+  {
+   "id": "g7-7",
+   "grade": 7,
+   "n": 7,
+   "title": "The Factory Whistle",
+   "standard": "RI.7.2",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Before factories, most work was measured by the task.",
+      "A weaver finished a length of cloth.",
+      "A farmer brought in a field.",
+      "How long it took was their own business."
+     ],
+     "to": [
+      "Before factories, most work was measured by the task.",
+      "A weaver finished a length of cloth, a farmer brought in a field, and how long either took was a private matter between the worker and the work."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "The second idea grew from the first.",
+      "Time was now the thing being bought.",
+      "So time became the thing to bargain over.",
+      "The ten-hour day and the eight-hour day were new demands."
+     ],
+     "to": [
+      "The second idea grew out of the first.",
+      "Once time was the unit being bought, time became the thing to bargain over, and the ten-hour day and then the eight-hour day were demands that could not have been phrased earlier."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The whistle made that happen."
+  },
+  {
+   "id": "g7-8",
+   "grade": 7,
+   "n": 8,
+   "title": "What Lives in a Gut",
+   "standard": "RI.7.2",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "That gave scientists a catalogue.",
+      "A catalogue raises a harder question.",
+      "Does the mixture do anything?",
+      "Or is it just present, like dust in a house?"
+     ],
+     "to": [
+      "That produced a catalogue, and a catalogue invited a second question, which is harder: does the mixture do anything, or is it simply present the way dust is present in a house?"
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A human intestine holds a large population of bacteria.",
+      "Counting them is hard.",
+      "Old textbook figures were estimates built on estimates.",
+      "The number is in the trillions."
+     ],
+     "to": [
+      "A human intestine holds a large population of bacteria.",
+      "Counting them is harder than it sounds, and older textbook figures were estimates built on estimates, but the number is in the trillions."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Counting them is hard."
+  },
+  {
+   "id": "g7-9",
+   "grade": 7,
+   "n": 9,
+   "title": "The Typewriter and the Office Door",
+   "standard": "RI.7.2",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "The first typewriter that sold well went on sale in 1874.",
+      "It caught on slowly.",
+      "Some people thought a typed letter was rude.",
+      "The writer had not bothered to use a pen."
+     ],
+     "to": [
+      "The first commercially successful typewriter went on sale in 1874.",
+      "It was slow to catch on, partly because a typed letter struck some recipients as rude, as though the writer had not troubled to use a pen."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "Typing was a separate track from the start.",
+      "It was not the first rung of the clerical ladder.",
+      "The men kept the ladder.",
+      "The new workers got a room with a door."
+     ],
+     "to": [
+      "Typing was defined from the start as a separate track rather than the first rung of the clerical ladder.",
+      "The men kept the ladder, and the new entrants were given a room with a door on it."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It caught on slowly."
+  },
+  {
+   "id": "g7-10",
+   "grade": 7,
+   "n": 10,
+   "title": "The Ring of Coral",
+   "standard": "RI.7.2",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "Charles Darwin gave an answer in 1842.",
+      "He had seen atolls on the Beagle voyage.",
+      "A volcano builds an island.",
+      "Coral grows around its shore.",
+      "Then the volcano sinks slowly."
+     ],
+     "to": [
+      "Charles Darwin proposed an answer in 1842 after seeing atolls on the Beagle voyage.",
+      "A volcano builds an island, coral grows as a fringe around its shore, and the volcano then subsides slowly beneath the sea."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A coral atoll is a ring of low islands around a lagoon.",
+      "It often sits far out in deep ocean.",
+      "The shape needs explaining.",
+      "Shallow-water animals sit beside very deep water."
+     ],
+     "to": [
+      "A coral atoll is a ring of low islands around a lagoon, often far out in deep ocean.",
+      "The shape is strange enough to need explaining: a ring of shallow-water animals with thousands of metres of water just outside it."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The shape needs explaining."
+  },
+  {
+   "id": "g7-11",
+   "grade": 7,
+   "n": 11,
+   "title": "The Chemist Who Fed and Poisoned",
+   "standard": "RI.7.3",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Plants need nitrogen.",
+      "The air is almost four fifths nitrogen.",
+      "But that form is locked in a very stable bond.",
+      "Almost nothing alive can break it.",
+      "So farming relied on manure, clover and mined deposits."
+     ],
+     "to": [
+      "Plants need nitrogen, and the air is nearly four fifths nitrogen, but the atmospheric form is locked in a bond so stable that almost nothing alive can break it.",
+      "Farming therefore depended on manure, on clover, and on mined deposits that were running down."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "In 1909 Fritz Haber combined nitrogen and hydrogen.",
+      "He used great pressure, heat and a catalyst.",
+      "He made ammonia.",
+      "Carl Bosch turned it into an industry.",
+      "By 1913 a factory made fertilizer out of air."
+     ],
+     "to": [
+      "In 1909 Fritz Haber combined nitrogen and hydrogen under great pressure and heat over a catalyst and produced ammonia.",
+      "Carl Bosch turned the laboratory result into an industrial process, and by 1913 a factory was making fertilizer out of air."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "War came in 1914."
+  },
+  {
+   "id": "g7-12",
+   "grade": 7,
+   "n": 12,
+   "title": "The Seed Collection Under Siege",
+   "standard": "RI.7.3",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The argument made him enemies.",
+      "Trofim Lysenko rejected the genetics behind the collection.",
+      "The state backed Lysenko.",
+      "Vavilov was arrested in 1940.",
+      "He died in prison in 1943."
+     ],
+     "to": [
+      "The argument made him enemies.",
+      "Trofim Lysenko rejected the genetics the collection was built on and had the backing of the state, and Vavilov was arrested in 1940 and died in prison in 1943."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "Nikolai Vavilov collected seed in the 1920s and 1930s.",
+      "He travelled five continents.",
+      "He gathered kinds of wheat, rice, maize and potato.",
+      "By 1940 his institute in Leningrad held the largest such collection on earth."
+     ],
+     "to": [
+      "Nikolai Vavilov spent the 1920s and 1930s collecting seed.",
+      "He travelled across five continents gathering varieties of wheat, rice, maize and potato, and by 1940 his institute in Leningrad held the largest such collection in the world."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "He travelled five continents."
+  },
+  {
+   "id": "g7-13",
+   "grade": 7,
+   "n": 13,
+   "title": "The Bridge That Shook Itself Apart",
+   "standard": "RI.7.3",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "The Tacoma Narrows Bridge opened in July 1940.",
+      "It fell four months later.",
+      "Film of the collapse shows the deck twisting.",
+      "The angle looks impossible for a road to survive."
+     ],
+     "to": [
+      "The Tacoma Narrows Bridge opened in July 1940 and fell into the water four months later.",
+      "Film of the collapse shows the deck twisting through an angle that looks impossible for a road to survive even briefly."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "It moved from the day it opened.",
+      "Drivers felt the deck rise and fall.",
+      "Locals called it Galloping Gertie.",
+      "People treated the motion as a nuisance, not a warning."
+     ],
+     "to": [
+      "It also moved from the day it opened.",
+      "Drivers reported the deck rising and falling, local people called it Galloping Gertie, and the motion was treated as a nuisance to be damped rather than a warning."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The motion fed itself."
+  },
+  {
+   "id": "g7-14",
+   "grade": 7,
+   "n": 14,
+   "title": "The Nurse Who Drew a Diagram",
+   "standard": "RI.7.3",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "She began counting.",
+      "The hospital kept poor records.",
+      "Even the number of deaths was uncertain.",
+      "Her first work was not nursing.",
+      "It was building a system that gave a trustworthy figure each month."
+     ],
+     "to": [
+      "She began counting.",
+      "The hospital kept records so poorly that even the number of deaths was uncertain, and her first work was not nursing but building a system that produced a trustworthy figure every month."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "The sanitary commission dug out the sewers.",
+      "They improved the air.",
+      "The death rate fell.",
+      "Crediting that only to the diagram would be too neat.",
+      "Several changes happened at once."
+     ],
+     "to": [
+      "The sanitary commission dug out the sewers and improved ventilation, and the death rate fell.",
+      "Attributing that fall entirely to the diagram would be too neat, because several changes happened together."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "They improved the air."
+  },
+  {
+   "id": "g7-15",
+   "grade": 7,
+   "n": 15,
+   "title": "The Eruption That Cancelled a Summer",
+   "standard": "RI.7.3",
+   "combine": [
+    {
+     "para": "G",
+     "from": [
+      "That is the shape of the story.",
+      "An event.",
+      "Then a mechanism nobody could see.",
+      "Then effects on another continent.",
+      "Only afterwards, a chain of evidence joining them."
+     ],
+     "to": [
+      "That is the shape of the story: an event, then a mechanism nobody could see, then consequences on another continent, and only afterwards a chain of evidence joining them together."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "The effects were social.",
+      "Food prices rose.",
+      "People in Switzerland and elsewhere went hungry.",
+      "Failed harvests pushed families off farms in Vermont and New Hampshire.",
+      "They moved west to Ohio and Indiana."
+     ],
+     "to": [
+      "The consequences were social.",
+      "Food prices rose, people in Switzerland and elsewhere went hungry, and the failed harvests pushed families off farms in Vermont and New Hampshire and westward into Ohio and Indiana."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The effects were social."
+  },
+  {
+   "id": "g7-16",
+   "grade": 7,
+   "n": 16,
+   "title": "What a Scientist Means by Significant",
+   "standard": "RI.7.4",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "That threshold is a convention.",
+      "Nobody worked it out from nature.",
+      "It was chosen.",
+      "It could have been one in fifty or one in ten."
+     ],
+     "to": [
+      "That threshold is a convention.",
+      "It was not derived; it was chosen, and it could have been one in fifty or one in ten without anything in nature changing."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "In ordinary speech, significant means important.",
+      "A significant change in the weather is one you would notice.",
+      "A significant amount of money is worth having."
+     ],
+     "to": [
+      "In ordinary speech, significant means important.",
+      "A significant change in the weather is one you would notice, and a significant amount of money is an amount worth having."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Suppose the treatment does nothing."
+  },
+  {
+   "id": "g7-17",
+   "grade": 7,
+   "n": 17,
+   "title": "Mistakes Were Made",
+   "standard": "RI.7.4",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "In an official report the same form does other work.",
+      "Funds were misallocated tells a reader money went wrong.",
+      "It holds back the fact the reader most wants.",
+      "By whom?"
+     ],
+     "to": [
+      "In an official report the same construction does other work.",
+      "Funds were misallocated tells a reader that money went where it should not have gone and withholds the one fact a reader most wants, which is by whom."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "Readers can test a document fast.",
+      "Find a sentence about something going wrong.",
+      "Ask whether a person or an organization is the subject.",
+      "Keep count down the page."
+     ],
+     "to": [
+      "Readers can test a document quickly.",
+      "Take any sentence describing something going wrong and ask whether a person or an organization appears as the subject, and keep count across a page."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "A",
+     "kernel": "English lets a writer name an action without naming who did it.",
+     "expanded": "English lets a writer build a sentence that names an action without naming whoever performed it."
+    }
+   ],
+   "stem": "The window was broken."
+  },
+  {
+   "id": "g7-18",
+   "grade": 7,
+   "n": 18,
+   "title": "What a Doctor Means by Positive",
+   "standard": "RI.7.4",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "A positive result sounds like bad news.",
+      "A negative one sounds like good news.",
+      "In a clinic the words mean neither.",
+      "Positive means the test found what it looks for.",
+      "Negative means it did not."
+     ],
+     "to": [
+      "A positive test result sounds like bad news and a negative one like good news, and in a clinic the words carry neither meaning.",
+      "Positive means the test detected what it looks for.",
+      "Negative means it did not."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "No test is perfect.",
+      "Two numbers describe how a test fails.",
+      "How often does it miss the thing when it is there?",
+      "How often does it report the thing when it is not?"
+     ],
+     "to": [
+      "No test detects perfectly.",
+      "Two numbers describe how a test fails: how often it misses the thing when the thing is there, and how often it reports the thing when the thing is absent."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "No test is perfect."
+  },
+  {
+   "id": "g7-19",
+   "grade": 7,
+   "n": 19,
+   "title": "The Words on a Census Form",
+   "standard": "RI.7.4",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "The stakes are real.",
+      "Census counts are not only descriptions.",
+      "They draw electoral boundaries.",
+      "They share out funding.",
+      "They decide where a hospital or school is built."
+     ],
+     "to": [
+      "The stakes are real, because census counts are not only descriptions.",
+      "They are used to draw electoral boundaries, to distribute funding and to decide where a hospital or a school is built."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A census looks like counting.",
+      "Counting looks like the plainest thing a government does.",
+      "But the form is a list of words.",
+      "Each word decides what can be counted."
+     ],
+     "to": [
+      "A census looks like an act of counting, and counting looks like the plainest thing a government can do.",
+      "The form, though, is a list of words, and each word decides what can be counted at all."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Both change the total."
+  },
+  {
+   "id": "g7-20",
+   "grade": 7,
+   "n": 20,
+   "title": "What Natural Means on a Label",
+   "standard": "RI.7.4",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Two words on a package can look alike and work very differently.",
+      "Organic is defined in regulation.",
+      "There are rules about growing and processing.",
+      "An inspection sits behind the claim."
+     ],
+     "to": [
+      "Two words on a food package can look like a matched pair and work completely differently.",
+      "Organic is defined in regulation, with rules about what may be used in growing and processing, and an inspection behind the claim."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "Readers fill in the missing meaning.",
+      "Natural suggests unprocessed.",
+      "It suggests grown rather than made.",
+      "That suggestion does the work a definition would do."
+     ],
+     "to": [
+      "Readers supply the missing meaning themselves.",
+      "Natural carries a strong connotation of unprocessed, of grown rather than made, and that connotation does the work a definition would otherwise do."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Neither word measures nutrition."
+  },
+  {
+   "id": "g7-21",
+   "grade": 7,
+   "n": 21,
+   "title": "The Inverted Pyramid",
+   "standard": "RI.7.5",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The shape has a name.",
+      "It is the inverted pyramid.",
+      "The heaviest material sits at the top.",
+      "The paragraphs get less important as they go down."
+     ],
+     "to": [
+      "The shape has a name.",
+      "It is called the inverted pyramid, because the widest and heaviest material sits at the top and the paragraphs narrow in importance as they go down."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "The habit is usually traced to the telegraph.",
+      "A wire could fail mid-message.",
+      "Transmission cost money by the word.",
+      "A reporter who buried the outcome risked sending the least useful part first."
+     ],
+     "to": [
+      "The habit is usually traced to the telegraph.",
+      "A wire could fail mid-message and transmission was charged by the word, so a correspondent who buried the outcome risked sending the least useful part of the story first."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The shape has a name."
+  },
+  {
+   "id": "g7-22",
+   "grade": 7,
+   "n": 22,
+   "title": "Why a Field Guide Is Not Alphabetical",
+   "standard": "RI.7.5",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "So a guide is organized by what can be seen.",
+      "Trees go by leaf arrangement and shape.",
+      "Birds go by outline and habitat.",
+      "Rocks go by hardness and shine.",
+      "That order is half the work."
+     ],
+     "to": [
+      "So a guide is organized by what can be observed.",
+      "Trees are grouped by leaf arrangement and shape, birds by silhouette and habitat, rocks by hardness and lustre, and the organization is the first half of the identification."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "Many guides add a key.",
+      "A key is a chain of paired choices.",
+      "Are the leaves opposite or alternate?",
+      "Is the edge toothed or smooth?",
+      "Each answer sends you to another pair."
+     ],
+     "to": [
+      "Many guides go further and provide a key.",
+      "A key is a chain of paired choices: leaves opposite or alternate, edge toothed or smooth, and each answer sends the reader to another pair."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "G",
+     "kernel": "So the organization is an argument.",
+     "expanded": "The organization is therefore an argument about how identification happens."
+    }
+   ],
+   "stem": "A field guide cannot be."
+  },
+  {
+   "id": "g7-23",
+   "grade": 7,
+   "n": 23,
+   "title": "The Shape of a Court Opinion",
+   "standard": "RI.7.5",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "It usually opens with the facts, told flatly.",
+      "Who did what, and when.",
+      "What the lower courts decided.",
+      "This part aims to be uncontroversial.",
+      "If the parties disagree, the opinion says so."
+     ],
+     "to": [
+      "It usually opens with the facts, told flatly.",
+      "Who did what, when, and what the lower courts decided.",
+      "This section is meant to be uncontroversial, and where the parties disagree about a fact the opinion says so."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "Next comes the question presented.",
+      "The court narrows it as far as it can.",
+      "A case about a search is not decided as a case about privacy in general.",
+      "The narrowing is on purpose."
+     ],
+     "to": [
+      "Then comes the question presented, narrowed as far as the court can narrow it.",
+      "A case about a search is not decided as a case about privacy in general, and the narrowing is deliberate."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "A dissent binds nobody."
+  },
+  {
+   "id": "g7-24",
+   "grade": 7,
+   "n": 24,
+   "title": "The Order of a Checklist",
+   "standard": "RI.7.5",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "So its structure is unusual.",
+      "Items are short.",
+      "Each is an action with a spoken response.",
+      "There are few of them.",
+      "A list long enough to be thorough is long enough to be skipped."
+     ],
+     "to": [
+      "So its structure is unusual.",
+      "Items are short, they are stated as actions with a confirming response, and there are few of them, because a list long enough to be thorough is long enough to be skipped."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The aircraft was sound.",
+      "A gust lock holds the control surfaces still on the ground.",
+      "It had been left on.",
+      "The pilot had not got to it among everything else the new machine needed."
+     ],
+     "to": [
+      "The aircraft was sound.",
+      "A gust lock, which holds the control surfaces still on the ground, had been left engaged, and the pilot had simply not got to it among everything else the new machine required."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "C",
+     "kernel": "People concluded the design was too much aeroplane for one man to fly.",
+     "expanded": "The conclusion at the time was that the design was too much aeroplane for one man to fly."
+    }
+   ],
+   "stem": "The aircraft was sound."
+  },
+  {
+   "id": "g7-25",
+   "grade": 7,
+   "n": 25,
+   "title": "Why a Treaty Has a Preamble",
+   "standard": "RI.7.5",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "A treaty opens with a passage that promises nothing.",
+      "It names the parties.",
+      "It recalls earlier agreements.",
+      "It states what the signatories want.",
+      "Sentences often begin with desiring or recognising."
+     ],
+     "to": [
+      "A treaty opens with a passage that promises nothing.",
+      "It names the parties, recalls earlier agreements and states what the signatories are trying to achieve, in sentences that often begin with desiring or recognising."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "Readers skip it.",
+      "That is fair, because the duties come later.",
+      "The articles that follow are numbered.",
+      "Each states what a party must do, must not do, or may do."
+     ],
+     "to": [
+      "Readers skip it, reasonably enough, because the obligations are further down.",
+      "The articles that follow are numbered, and each one states something a party must do, must not do, or may do."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It names the parties."
+  },
+  {
+   "id": "g7-26",
+   "grade": 7,
+   "n": 26,
+   "title": "Who Paid for the Study",
+   "standard": "RI.7.6",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "What the disclosure does is show where to look harder.",
+      "Check the comparison group.",
+      "Check the length of the trial.",
+      "Check whether the measure reported is the one they set out to measure."
+     ],
+     "to": [
+      "What the disclosure does is tell a reader where to look harder.",
+      "It is a reason to check the comparison group, the length of the trial and whether the measure reported is the one the study originally set out to measure."
+     ]
+    },
+    {
+     "para": "G",
+     "from": [
+      "So the paragraph is not an accusation.",
+      "It is not a clearance either.",
+      "It is information about where the work was written from.",
+      "A reader can weigh it instead of guessing."
+     ],
+     "to": [
+      "So the paragraph is not an accusation and not a clearance.",
+      "It is information about the position the work was written from, offered so that a reader can weigh it rather than guess at it."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "B",
+     "kernel": "The paragraph exists because funding shifts findings.",
+     "expanded": "The paragraph exists because funding is known to shift findings."
+    }
+   ],
+   "stem": "Check the comparison group."
+  },
+  {
+   "id": "g7-27",
+   "grade": 7,
+   "n": 27,
+   "title": "The Plaque That Was Replaced",
+   "standard": "RI.7.6",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "A monument usually carries a small plaque.",
+      "The plaque is a piece of writing.",
+      "It has an author, a date and a purpose.",
+      "It rarely names any of the three."
+     ],
+     "to": [
+      "A monument usually carries a small plaque, and the plaque is a piece of writing with an author, a date and a purpose, even though it rarely names any of the three."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "An older text often uses the passive voice.",
+      "It uses words like settled or pacified.",
+      "A newer one names the parties, gives numbers and says who died.",
+      "That is a choice about what counts as the event."
+     ],
+     "to": [
+      "An older text often uses the passive voice and words such as settled or pacified.",
+      "A newer one more often names the parties, gives numbers, and states who died, which is a choice about what counts as the event."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "G",
+     "kernel": "Saying where your account differs from an earlier one, on the same panel, is harder and more useful.",
+     "expanded": "Marking where your account differs from an earlier one, and saying so on the same panel, is a harder and more useful thing to do."
+    }
+   ],
+   "stem": "Replacement is argued about."
+  },
+  {
+   "id": "g7-28",
+   "grade": 7,
+   "n": 28,
+   "title": "The Choices in a Nature Film",
+   "standard": "RI.7.6",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "Much of that is true.",
+      "The patience behind it is real.",
+      "A few minutes of film can rest on months in a hide.",
+      "The behaviour on screen did happen."
+     ],
+     "to": [
+      "Much of that is true, and the patience behind it is real.",
+      "A sequence of a few minutes can rest on months in a hide, and the behaviour on screen is behaviour that happened."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "The music does more than fill silence.",
+      "It tells a viewer whether a hunt is a tragedy or a triumph.",
+      "The same footage can be cut either way.",
+      "Not one frame has to change."
+     ],
+     "to": [
+      "The score does more than fill silence.",
+      "Music tells a viewer whether a hunt is a tragedy or a triumph, and the same footage of the same hunt can be cut to make either, without a single frame changing."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The sound is different."
+  },
+  {
+   "id": "g7-29",
+   "grade": 7,
+   "n": 29,
+   "title": "The Editorial and the News Story",
+   "standard": "RI.7.6",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "The signals are physical too.",
+      "A different column width.",
+      "A standing label.",
+      "A box.",
+      "Sometimes a different typeface.",
+      "All of it tells a reader the rules just changed."
+     ],
+     "to": [
+      "The signals are physical as well.",
+      "A different column width, a standing label, a box, sometimes a different typeface, all of which say to a reader that the rules just changed."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "A news story is built to be checked.",
+      "Claims are attributed.",
+      "People who are criticised get a chance to reply.",
+      "The reporter's own view should not appear."
+     ],
+     "to": [
+      "A news story is built to be checkable.",
+      "Claims are attributed, the people criticised are offered a reply, and the reporter's own view is meant not to appear in the sentences at all."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "G",
+     "kernel": "A paper arguing openly, over its own name, is being honest.",
+     "expanded": "A paper arguing openly for a position, over its own name, is doing something honest."
+    },
+    {
+     "para": "G",
+     "kernel": "An editorial is not a lesser thing.",
+     "expanded": "An editorial is not a lesser thing than a report."
+    }
+   ],
+   "stem": "It takes a position."
+  },
+  {
+   "id": "g7-30",
+   "grade": 7,
+   "n": 30,
+   "title": "The Paragraph Where an Author Admits the Limits",
+   "standard": "RI.7.6",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "That is an odd thing for a writer to do.",
+      "Most writing argues for its claim.",
+      "It leaves the weak points for an opponent to find.",
+      "Volunteering them looks like a mistake."
+     ],
+     "to": [
+      "That is an unusual thing for any writer to do.",
+      "Most writing argues for its claim and leaves the weaknesses for an opponent to find, and a section volunteering them looks at first like a tactical error."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "Near the end of a research paper there is often a section headed limitations.",
+      "The authors write it about their own work.",
+      "It lists reasons their conclusion might be wrong."
+     ],
+     "to": [
+      "Near the end of a research paper there is usually a section headed limitations.",
+      "It is written by the authors, about their own work, and it lists the reasons their conclusion might be wrong."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "No direct criticism is needed."
+  },
+  {
+   "id": "g7-31",
+   "grade": 7,
+   "n": 31,
+   "title": "The Speech on the Page and in the Air",
+   "standard": "RI.7.7",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The recording holds what a page cannot.",
+      "Pace.",
+      "Volume.",
+      "The length of a pause.",
+      "A voice that tightens or steadies.",
+      "An audience responding, which changes what the next sentence must do."
+     ],
+     "to": [
+      "The recording carries what the page cannot hold.",
+      "Pace, volume, the length of a pause, a voice that tightens or steadies, and the sound of an audience responding, which changes what the next sentence has to do."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A speech exists twice.",
+      "There is a text.",
+      "It can be read in silence at any speed.",
+      "There is a delivery.",
+      "It happened once, at one pace, in one room, before people who answered back."
+     ],
+     "to": [
+      "A speech exists twice.",
+      "There is a text, which can be read in silence at any speed, and there is a delivery, which happened once, at a particular pace, in a particular room, in front of people who answered back."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "A speech exists twice."
+  },
+  {
+   "id": "g7-32",
+   "grade": 7,
+   "n": 32,
+   "title": "Three Ways to Look at a Heart",
+   "standard": "RI.7.7",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "Sound is immediate and cheap.",
+      "It is also crude.",
+      "It says something is wrong long before it says what.",
+      "Two different problems can make a similar noise."
+     ],
+     "to": [
+      "Sound is immediate and cheap, and it is also crude.",
+      "It tells a listener that something is irregular long before it tells them what, and two different problems can produce a similar noise."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "An electrocardiogram records something else.",
+      "It is not sound.",
+      "It records electrical activity and draws it as a line.",
+      "It shows the timing of the signal that makes the muscle contract."
+     ],
+     "to": [
+      "An electrocardiogram records something else entirely.",
+      "It is not sound but electrical activity, drawn as a line, and it shows the timing and the sequence of the signal that makes the muscle contract."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It is also crude."
+  },
+  {
+   "id": "g7-33",
+   "grade": 7,
+   "n": 33,
+   "title": "The Night the Radio Play Aired",
+   "standard": "RI.7.7",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "So there are three things to compare.",
+      "A novel.",
+      "A broadcast that changed its form but not its plot.",
+      "A press account that may say more about newspapers than about listeners."
+     ],
+     "to": [
+      "So there are three things to compare: a novel, a broadcast that changed the novel's form without changing its plot, and a press account of the broadcast that may say more about newspapers than about listeners."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "Later research questioned nearly all of it.",
+      "The audience that night was small.",
+      "Surveys taken soon after found few listeners who believed it.",
+      "The mass flight is poorly evidenced."
+     ],
+     "to": [
+      "Later research questioned nearly all of it.",
+      "The programme had a small audience that night, surveys taken immediately afterwards found few listeners who believed an invasion was underway, and the widespread flight is poorly evidenced."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The form was the point."
+  },
+  {
+   "id": "g7-34",
+   "grade": 7,
+   "n": 34,
+   "title": "A Bird Call in Three Forms",
+   "standard": "RI.7.7",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "Some guides use mnemonics.",
+      "They invent English words that sound like the song.",
+      "These are memorable.",
+      "They are also a trap.",
+      "Once you learn one, the bird starts to sound like the phrase."
+     ],
+     "to": [
+      "Some guides use mnemonics instead, inventing English words that sound like the song.",
+      "These are memorable and they are also a trap, because once a listener has learned one, the bird begins to sound like the phrase."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "A spectrogram is the third form.",
+      "Time runs across the page.",
+      "Pitch runs up it.",
+      "The sound is drawn as marks.",
+      "A two-second song becomes a shape you can study for as long as you like."
+     ],
+     "to": [
+      "A spectrogram is the third form.",
+      "Time runs across the page, pitch runs up it, and the energy of the sound is drawn as marks, so a song that lasts two seconds becomes a shape that can be examined for as long as you like."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Some guides use mnemonics."
+  },
+  {
+   "id": "g7-35",
+   "grade": 7,
+   "n": 35,
+   "title": "When a Trial Is Televised",
+   "standard": "RI.7.7",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "Courts have settled this differently.",
+      "Some allow cameras.",
+      "Some allow audio only.",
+      "Some allow sketch artists and nothing more.",
+      "Each rule judges which record does least harm."
+     ],
+     "to": [
+      "Different courts have settled this differently.",
+      "Some allow cameras, some allow audio only, some allow sketch artists and nothing else, and each rule is a judgement about which record does least damage."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "Cameras change the evidence available.",
+      "A viewer sees hesitation and posture.",
+      "A viewer sees whether a witness looked at the accused.",
+      "The transcript records none of that."
+     ],
+     "to": [
+      "Cameras change the available evidence.",
+      "A viewer sees hesitation, posture and whether a witness looked at the person they were accusing, none of which the transcript records and some of which jurors are told to weigh."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Some allow audio only."
+  },
+  {
+   "id": "g7-36",
+   "grade": 7,
+   "n": 36,
+   "title": "The Argument for a Later School Start",
+   "standard": "RI.7.8",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "The case for a later school start runs like this.",
+      "Teenage sleep timing shifts later for biological reasons.",
+      "A start before eight cuts sleep rather than moving it.",
+      "Short sleep harms learning, mood and safety."
+     ],
+     "to": [
+      "The case for starting secondary school later runs like this.",
+      "Adolescent sleep timing shifts later for biological reasons, a start before eight o'clock cuts sleep rather than moving it, and short sleep damages learning, mood and safety."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "One result is often quoted alone.",
+      "Teenage car crashes fell after one district moved its start.",
+      "The study is real.",
+      "One district over a few years is a thin base for a general claim."
+     ],
+     "to": [
+      "One result is often quoted on its own: a fall in teenage car crashes after a district moved its start.",
+      "That study is real, but a single district over a few years is a thin base for a general claim."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The second follows well."
+  },
+  {
+   "id": "g7-37",
+   "grade": 7,
+   "n": 37,
+   "title": "The Case Against the New Stadium",
+   "standard": "RI.7.8",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "A city is asked to help pay for a stadium.",
+      "The proposal comes with an economic impact study.",
+      "It projects jobs, visitor spending and tax revenue.",
+      "The numbers are large."
+     ],
+     "to": [
+      "A city is asked to help pay for a stadium, and the proposal arrives with an economic impact study.",
+      "The study projects jobs, visitor spending and tax revenue, and the numbers are large."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "Such studies are usually paid for by the side that wants the stadium.",
+      "That does not make them wrong.",
+      "It does tell a reader which assumptions to check first."
+     ],
+     "to": [
+      "Such studies are usually commissioned by the party that wants the stadium, which does not make them wrong but does tell a reader which assumptions to check first."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "G",
+     "kernel": "That is the distinction.",
+     "expanded": "That is the distinction the argument turns on."
+    }
+   ],
+   "stem": "The numbers are large."
+  },
+  {
+   "id": "g7-38",
+   "grade": 7,
+   "n": 38,
+   "title": "The Argument for Culling the Deer",
+   "standard": "RI.7.8",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "Opponents suggest alternatives.",
+      "Fertility control.",
+      "Fencing valuable areas.",
+      "Bringing back predators.",
+      "Each has evidence.",
+      "Each works at a different scale and over a different time."
+     ],
+     "to": [
+      "Opponents propose alternatives, including fertility control, fencing valuable areas and reintroducing predators.",
+      "Each has an evidence base, and each works at a different scale and over a different timescale."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A park proposes to cut its deer numbers by shooting.",
+      "The argument is ecological.",
+      "The herd has no large predators.",
+      "Numbers have risen.",
+      "Browsing stops the forest regrowing."
+     ],
+     "to": [
+      "A park proposes to reduce its deer population by shooting.",
+      "The argument offered is ecological: the herd has no large predators, numbers have risen, and the browsing is preventing the forest from regenerating."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The argument is ecological."
+  },
+  {
+   "id": "g7-39",
+   "grade": 7,
+   "n": 39,
+   "title": "The Claim That Scores Fell",
+   "standard": "RI.7.8",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The second is whether the test changed.",
+      "A revised test is not the old test.",
+      "Comparing a score from each needs a statistical bridge.",
+      "That bridge may not have been built."
+     ],
+     "to": [
+      "The second is whether the test changed.",
+      "A revised test is not the old test, and comparing a score from one with a score from the other requires a statistical bridge that may or may not have been built."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A headline says reading scores have fallen.",
+      "Before the explanations start, a reader has questions.",
+      "The answers decide whether there is anything to explain."
+     ],
+     "to": [
+      "A headline reports that reading scores have fallen.",
+      "Before the explanations begin, a reader has several questions, and the answers decide whether there is anything to explain."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Those are three different claims."
+  },
+  {
+   "id": "g7-40",
+   "grade": 7,
+   "n": 40,
+   "title": "The Claim About Plastic Straws",
+   "standard": "RI.7.8",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Campaigns to ban plastic straws spread fast.",
+      "A video of a turtle with a straw in its nostril helped.",
+      "The argument was that straws are needless, replaceable and harmful.",
+      "All three are defensible."
+     ],
+     "to": [
+      "Campaigns to ban plastic straws spread quickly, helped by a video of a turtle with a straw lodged in its nostril.",
+      "The argument was that straws are unnecessary, replaceable and harmful, and all three are defensible."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "That does not make a ban pointless.",
+      "Harm is not only about mass.",
+      "A light object can kill an animal that swallows it.",
+      "An item nobody needs is easy to stop making."
+     ],
+     "to": [
+      "That does not make a ban pointless.",
+      "Harm is not only a question of mass, a light object can kill an animal that swallows it, and an item nobody needs is an easy thing to stop producing."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "All three are defensible."
+  },
+  {
+   "id": "g7-41",
+   "grade": 7,
+   "n": 41,
+   "title": "Two Accounts of the Dust Bowl",
+   "standard": "RI.7.9",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "In the 1930s the southern plains of the United States lost much of their topsoil to wind.",
+      "Dust storms darkened skies as far east as the Atlantic.",
+      "Families left farms across several states."
+     ],
+     "to": [
+      "In the 1930s the southern plains of the United States lost a great deal of their topsoil to the wind.",
+      "Dust storms darkened the sky as far east as the Atlantic coast, and families abandoned farms across several states."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "A government film from 1936 blamed ploughing.",
+      "Native grass had held the soil through dry years for a very long time.",
+      "The plough removed what the drought then exposed."
+     ],
+     "to": [
+      "A government film made in 1936 presented the disaster as the result of ploughing.",
+      "Native grass had held the soil through dry years for a very long time, the argument ran, and the plough removed what the drought then exposed."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "That evidence is real too."
+  },
+  {
+   "id": "g7-42",
+   "grade": 7,
+   "n": 42,
+   "title": "Two Papers on One Fossil",
+   "standard": "RI.7.9",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "Both papers cited measurements.",
+      "Sometimes the same ones.",
+      "The argument was about which features count.",
+      "A wrist bone that forms early is harder to explain as illness than body size is."
+     ],
+     "to": [
+      "Both papers cited measurements, and in several cases the same measurements.",
+      "The disagreement was about which features are diagnostic: a wrist bone that develops early is harder to explain as illness than overall body size is."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "Evidence built up favouring the first reading.",
+      "More individuals were found at the site.",
+      "That is hard to explain if the first was one affected person.",
+      "Stone tools covered a long span of time."
+     ],
+     "to": [
+      "Evidence accumulated that favoured the first reading.",
+      "More individuals were found at the site, which is difficult to explain if the first was a single affected person, and stone tools in the deposit covered a long span of time."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Both papers cited measurements."
+  },
+  {
+   "id": "g7-43",
+   "grade": 7,
+   "n": 43,
+   "title": "The Two Texts of a Treaty",
+   "standard": "RI.7.9",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "The Treaty of Waitangi was signed in New Zealand in 1840.",
+      "It exists in two versions.",
+      "One is English.",
+      "One is Māori.",
+      "The difference has shaped the country's law ever since."
+     ],
+     "to": [
+      "The Treaty of Waitangi was signed in New Zealand in 1840.",
+      "It exists in two versions, one in English and one in Māori, and the difference between them has shaped the country's law ever since."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "The Māori text uses kāwanatanga.",
+      "The word is built from the word governor.",
+      "It is closer to governorship than to sovereignty.",
+      "It is not the word a Māori speaker would use for full authority."
+     ],
+     "to": [
+      "The Māori text uses kāwanatanga, a word built from the transliteration of governor.",
+      "It conveys something closer to governorship than to sovereignty, and it is not the word a Māori speaker would have reached for to mean full authority."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It exists in two versions."
+  },
+  {
+   "id": "g7-44",
+   "grade": 7,
+   "n": 44,
+   "title": "Why the Big Animals Vanished",
+   "standard": "RI.7.9",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "One explanation blames people.",
+      "Extinctions on each landmass follow the arrival of modern humans.",
+      "The pattern repeats on islands reached much later.",
+      "The lost species are mostly large and slow to breed."
+     ],
+     "to": [
+      "One explanation puts the cause on people.",
+      "Extinctions on each landmass tend to follow the arrival of modern humans, the pattern repeats on islands reached much later, and the species lost are overwhelmingly large and slow-breeding."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "Africa is the case both must answer.",
+      "It lost fewer large mammals in proportion.",
+      "One side says its animals evolved alongside humans.",
+      "The other says its climate shifted less."
+     ],
+     "to": [
+      "Africa is the case both must address.",
+      "It lost proportionally fewer large mammals than other continents, and each explanation has an answer, which is that its animals evolved alongside humans or that its climate shifted less."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "One explanation blames people."
+  },
+  {
+   "id": "g7-45",
+   "grade": 7,
+   "n": 45,
+   "title": "Two Histories of One Strike",
+   "standard": "RI.7.9",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "Both can cite documents.",
+      "Company letters show advance planning.",
+      "Union minutes show the plant was occupied.",
+      "The agents were armed and so were the workers.",
+      "Both facts appear in testimony."
+     ],
+     "to": [
+      "Both accounts can cite documents.",
+      "Company correspondence shows advance planning; union minutes show the plant was occupied; the Pinkerton agents were armed and so were the workers, and both facts appear in testimony."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "The difference shows in sequence and in naming.",
+      "One account starts with the occupation.",
+      "The other starts with the decision to break the union.",
+      "One writes guards.",
+      "The other writes agents."
+     ],
+     "to": [
+      "The difference shows up in sequence and in naming.",
+      "One account begins with the occupation of the plant and the other with the decision to break the union, and where one writes guards the other writes agents."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Both can cite documents."
+  },
+  {
+   "id": "g7-46",
+   "grade": 7,
+   "n": 46,
+   "title": "The Second That Was Added to a Year",
+   "standard": "RI.7.10",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "Atomic time does not wobble.",
+      "So the two slowly separate.",
+      "Left long enough, clock noon would drift from the sun being overhead.",
+      "First a little, then visibly."
+     ],
+     "to": [
+      "Atomic time does not wobble, so the two slowly separate.",
+      "Left alone for long enough, clock noon would drift away from the sun being overhead, by a small amount at first and then by a visible one."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "In 2022 the international body voted to stop adding them by 2035.",
+      "The gap will grow.",
+      "A larger correction will deal with it much later."
+     ],
+     "to": [
+      "In 2022 the international body responsible voted to stop inserting them by 2035, letting the gap grow and dealing with it in a larger correction much later."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The gap will grow."
+  },
+  {
+   "id": "g7-47",
+   "grade": 7,
+   "n": 47,
+   "title": "The Ship That Was Built Too Tall",
+   "standard": "RI.7.10",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "The warship Vasa sailed from Stockholm on its first voyage in August 1628.",
+      "It went about 1,300 metres.",
+      "A gust heeled it over.",
+      "Water came through the open gunports.",
+      "It sank in the harbour."
+     ],
+     "to": [
+      "The warship Vasa sailed from Stockholm on its first voyage in August 1628.",
+      "It travelled roughly 1,300 metres, heeled over in a gust, took water through its open gunports and sank in the harbour."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The ship was heavily ornamented.",
+      "It carried two full decks of guns.",
+      "It was narrow for its height.",
+      "It had far too little ballast to balance the weight above the waterline."
+     ],
+     "to": [
+      "The ship was extraordinarily ornamented and carried two full decks of guns.",
+      "It was also narrow for its height, and it had far too little ballast in the hold to balance the weight above the waterline."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The rolling grew dangerous."
+  },
+  {
+   "id": "g7-48",
+   "grade": 7,
+   "n": 48,
+   "title": "The Forest That Is One Tree",
+   "standard": "RI.7.10",
+   "combine": [
+    {
+     "para": "G",
+     "from": [
+      "Fenced areas inside the stand have started to regrow.",
+      "That points at browsing by deer and elk.",
+      "It is an unusual case.",
+      "The patient is not dying.",
+      "It is failing to replace itself."
+     ],
+     "to": [
+      "Fenced areas within the stand have begun to regenerate, which points at browsing by deer and elk.",
+      "It is an unusual conservation problem: the patient is not dying, it is failing to replace itself."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "Testing that takes more than looking.",
+      "Genetic samples across the stand match.",
+      "The stems are all male.",
+      "They leaf out and turn colour together, which nearby stands do not."
+     ],
+     "to": [
+      "Testing that is not a matter of looking.",
+      "Genetic sampling across the stand returns the same profile, the stems are male throughout, and they leaf out and turn colour together in a way neighbouring stands do not."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It is one organism."
+  },
+  {
+   "id": "g7-49",
+   "grade": 7,
+   "n": 49,
+   "title": "The Parts That Had to Fit",
+   "standard": "RI.7.10",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The real invention was not a machine.",
+      "It was a system of gauges.",
+      "A go gauge that a correct part passes.",
+      "A no-go gauge it must not pass.",
+      "Plus the discipline of using them on every part."
+     ],
+     "to": [
+      "So the real invention was not a machine.",
+      "It was a system of gauges, a go gauge that a correct part passes and a no-go gauge it must not pass, together with the discipline of using them on every part."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "Making parts interchangeable sounds small.",
+      "It is not.",
+      "Two parts made months apart in different places must fall within a tolerance.",
+      "So the tolerance must be written down and measurable."
+     ],
+     "to": [
+      "Making parts interchangeable sounds like a small change and is not.",
+      "It requires that two parts made months apart in different places fall within a tolerance, which means the tolerance has to be written down and measurable."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Making parts interchangeable sounds small."
+  },
+  {
+   "id": "g7-50",
+   "grade": 7,
+   "n": 50,
+   "title": "What the Permafrost Holds",
+   "standard": "RI.7.10",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "Thawing releases it.",
+      "The form matters.",
+      "Decay with oxygen gives carbon dioxide.",
+      "Decay in wet ground without oxygen gives methane.",
+      "Methane traps far more heat per molecule for decades."
+     ],
+     "to": [
+      "Thawing releases it, and the form matters.",
+      "Decay with oxygen produces carbon dioxide; decay in waterlogged ground without oxygen produces methane, which traps far more heat per molecule over the following decades."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "The worry is a feedback.",
+      "Warming thaws ground.",
+      "Thawed ground releases gas.",
+      "The gas adds to warming.",
+      "That loop does not need anyone to do anything more to keep going."
+     ],
+     "to": [
+      "The worry is that this is a feedback.",
+      "Warming thaws ground, thawed ground releases gas, and the released gas contributes to further warming, which is a loop that does not require anyone to do anything more to continue."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The figure is uncertain."
   }
  ]
 }

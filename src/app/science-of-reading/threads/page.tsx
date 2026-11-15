@@ -29,7 +29,11 @@ import THREADS from "@/../scripts/reading-threads.json";
  */
 
 const AR = ARTICLES.articles;
-const GRADES = [0, 1, 2, 3, 4, 5, 6];
+// Taken from the articles, the way every other page that shows a grade
+// row does it. This was a written-out list of K to 6, so the day grade 7
+// was added its fifty articles existed, passed every check, and did not
+// appear in a single thread on this page.
+const GRADES = [...new Set(AR.map((a) => a.grade))].sort((a, b) => a - b);
 
 const BRAND = {
   coral: "#FF6A5B",
