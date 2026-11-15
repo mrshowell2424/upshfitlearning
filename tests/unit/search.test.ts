@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeAll, afterAll } from "vitest";
+import { eq } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { standards } from "@/lib/db/schema";
 
@@ -31,7 +32,10 @@ describeDb("Search standards", () => {
   });
 
   afterAll(async () => {
-    // Cleanup would go here if needed
+    // These rows are inserted by this file and belong to nothing else, so
+    // they go out again. The empty version of this hook is how TEST.1.1
+    // would have become permanent in whatever database it reached.
+    await db.delete(standards).where(eq(standards.code, "TEST.1.1"));
   });
 
   describe("Standard matching", () => {
@@ -39,7 +43,7 @@ describeDb("Search standards", () => {
       const result = await db
         .select()
         .from(standards)
-        .where((c) => c.code === "TEST.1.1");
+        .where(eq(standards.code, "TEST.1.1"));
 
       expect(result.length).toBeGreaterThan(0);
       expect(result[0].code).toBe("TEST.1.1");
@@ -50,7 +54,7 @@ describeDb("Search standards", () => {
       const result = await db
         .select()
         .from(standards)
-        .where((c) => c.code === code);
+        .where(eq(standards.code, code));
 
       expect(result.length).toBeGreaterThan(0);
     });

@@ -182,9 +182,14 @@ test.describe("External Integrations E2E Tests", () => {
       // Click generation tab
       await page.click("text=Make it for my learners");
 
-      // Check for student needs
-      await expect(page.locator("text=STUDENT NEEDS")).toBeVisible() ||
-        expect(page.locator("text=Customization, text=Options")).toBeVisible();
+      // Check for student needs. Either heading counts.
+      await expect(
+        page
+          .locator("text=STUDENT NEEDS")
+          .or(page.locator("text=Customization"))
+          .or(page.locator("text=Options"))
+          .first()
+      ).toBeVisible();
     });
 
     test("generated content can be downloaded", async ({ page }) => {

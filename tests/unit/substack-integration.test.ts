@@ -106,8 +106,9 @@ describe("Substack Integration", () => {
     });
 
     it("includes engagement metrics", () => {
-      expect(mockArticle.reactions).toBeDefined();
-      expect(mockArticle.reactions.total_count).toBeGreaterThanOrEqual(0);
+      const reactions = mockArticle.reactions;
+      expect(reactions).toBeDefined();
+      expect(reactions?.total_count).toBeGreaterThanOrEqual(0);
     });
 
     it("distinguishes free vs paid content", () => {
@@ -481,7 +482,9 @@ describe("Substack Integration", () => {
     });
 
     it("stores reaction count", () => {
-      expect(article.reactions.total_count).toBeGreaterThan(0);
+      const reactions = article.reactions;
+      expect(reactions).toBeDefined();
+      expect(reactions?.total_count).toBeGreaterThan(0);
     });
 
     it("stores publication timestamps", () => {

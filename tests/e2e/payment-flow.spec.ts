@@ -127,8 +127,12 @@ test.describe("Payment Flow E2E Tests", () => {
 
     // Check for free trial button
     await expect(page.locator("text=Start free trial")).toBeVisible();
-    await expect(page.locator("text=7 days free")).toBeVisible() ||
-      expect(page.locator("text=free trial")).toBeVisible();
+    await expect(
+      page
+        .locator("text=7 days free")
+        .or(page.locator("text=free trial"))
+        .first()
+    ).toBeVisible();
   });
 
   test("School tier shows custom pricing option", async ({ page }) => {
@@ -201,7 +205,11 @@ test.describe("Payment Flow E2E Tests", () => {
     await page.goto("/account/invoices");
 
     // Should show list of invoices
-    await expect(page.locator("text=Invoices")).toBeVisible() ||
-      expect(page.locator("text=Billing history")).toBeVisible();
+    await expect(
+      page
+        .locator("text=Invoices")
+        .or(page.locator("text=Billing history"))
+        .first()
+    ).toBeVisible();
   });
 });

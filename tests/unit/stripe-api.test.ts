@@ -143,7 +143,7 @@ describe("Stripe API Routes", () => {
     });
 
     it("rejects invalid signatures", () => {
-      const signature = "invalid_signature";
+      const signature: string = "invalid_signature";
       const isValid = signature === "valid_signature";
 
       expect(isValid).toBe(false);

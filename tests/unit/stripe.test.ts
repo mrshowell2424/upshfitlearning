@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
+import { canGenerateLessons, canSaveResources } from "@/lib/auth";
 
 // Mock Stripe types
 type MockStripeSession = {
@@ -204,33 +205,33 @@ describe("Stripe Payment Flow", () => {
     });
   });
 
+  /**
+   * These used to re-implement the tier rule inline -- `tier === "pro" ||
+   * tier === "school"` written out in each test -- and then assert against
+   * the copy. That passes whatever the real gate does, which is the one
+   * thing a payment test should not do. They call the real functions now,
+   * so a change to who gets in fails here.
+   */
   describe("Feature gating after payment", () => {
     it("grants lesson generation access after successful payment", () => {
-      const userTier = "pro";
-      const canGenerate = userTier === "pro" || userTier === "school";
-
-      expect(canGenerate).toBe(true);
+      expect(canGenerateLessons("pro")).toBe(true);
+      expect(canGenerateLessons("school")).toBe(true);
     });
 
     it("grants resource saving access after payment", () => {
-      const userTier = "pro";
-      const canSave = userTier === "pro" || userTier === "school";
-
-      expect(canSave).toBe(true);
+      expect(canSaveResources("pro")).toBe(true);
+      expect(canSaveResources("school")).toBe(true);
     });
 
     it("restricts free users from premium features", () => {
-      const userTier = "free";
-      const canGenerate = userTier === "pro" || userTier === "school";
-
-      expect(canGenerate).toBe(false);
+      expect(canGenerateLessons("free")).toBe(false);
+      expect(canSaveResources("free")).toBe(false);
     });
 
     it("maintains access during subscription renewal", () => {
-      const userTier = "pro";
       const subscriptionActive = true;
 
-      expect(userTier === "pro" && subscriptionActive).toBe(true);
+      expect(canGenerateLessons("pro") && subscriptionActive).toBe(true);
     });
   });
 
