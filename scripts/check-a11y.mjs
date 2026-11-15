@@ -50,6 +50,7 @@ const ALL_ROUTES = [
   "/word-ladders", "/word-ladders?view=student", "/word-ladders/print",
   "/review", "/review/print",
   "/passages", "/passages?view=student", "/passages/print",
+  "/heart-words", "/heart-words?view=student", "/heart-words/print",
   "/science-of-reading", "/science-of-reading/threads",
   "/science-of-reading/resources",
   "/fluency", "/fluency/play", "/fluency/play?view=student", "/fluency/print",

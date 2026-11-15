@@ -19,6 +19,7 @@ import SPELLING from "@/../scripts/reading-spelling.json";
 import WORD_LADDERS from "@/../scripts/reading-word-ladders.json";
 import SEQUENCE from "@/../scripts/reading-sequence.json";
 import PASSAGES from "@/../scripts/reading-passages.json";
+import HEARTWORDS from "@/../scripts/reading-heart-words.json";
 import SENTENCE_LAB from "@/../scripts/reading-sentence-lab.json";
 
 /**
@@ -97,6 +98,7 @@ const SEQ_LESSONS = (SEQUENCE as { sequence: unknown[] }).sequence.length;
 const PASSAGE_SET = (PASSAGES as { passages: Record<string, Record<string, { paras: string[] }>> })
   .passages;
 const PASSAGE_COUNT = Object.values(PASSAGE_SET).reduce((n, c) => n + Object.keys(c).length, 0);
+const HEART_COUNT = (HEARTWORDS as { words: unknown[] }).words.length;
 const PASSAGE_WORDS = Object.values(PASSAGE_SET).reduce(
   (n, c) =>
     n +
@@ -559,6 +561,18 @@ function Hub() {
               shape: [1200, 1130] as const,
               focus: "0%",
               alt: "The Decodable passages page: a story, three comprehension questions with their answers, and a writing task.",
+            },
+            {
+              href: "/heart-words",
+              eyebrow: "ONLY THE ODD LETTERS",
+              title: "Heart words",
+              accent: LAVENDER,
+              accentText: LAVENDER_TEXT,
+              blurb: `${HEART_COUNT} words decoding will not give you — with a heart over the letters that are irregular and nothing over the letters that are not, which is the opposite of a flashcard.`,
+              preview: "/previews/heart-words.png",
+              shape: [1200, 1130] as const,
+              focus: "0%",
+              alt: "The Heart words page: the word said with a heart over the ai and the s and d left plain, and a line saying ai says /e/ as in bed.",
             },
             {
               href: "/og-packs",

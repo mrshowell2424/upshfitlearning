@@ -1,0 +1,877 @@
+{
+  "_note": "The heart words: the high-frequency words whose spelling will not give a child the word by decoding alone. For each one, the letters that have to be learned by heart -- and only those, because the rest of the word is decodable and treating the whole word as a shape to memorise is the practice the science of reading corrected.",
+  "_authored": "The word list and its levels come from the OG packs' own heart lists, which are Stephanie's. The spans and the reasons are not: they were marked word by word and need her eye. scripts/check-heart-words.mjs enforces the shape, that each span really is the letters it claims, that no word is marked heart from end to end, and that the list still matches the OG levels.",
+  "words": [
+    {
+      "word": "the",
+      "level": 1,
+      "hearts": [
+        [
+          2,
+          3
+        ]
+      ],
+      "letters": [
+        "e"
+      ],
+      "why": "e says /uh/, not /e/ as in bed"
+    },
+    {
+      "word": "a",
+      "level": 1,
+      "hearts": [
+        [
+          0,
+          1
+        ]
+      ],
+      "letters": [
+        "a"
+      ],
+      "why": "a says /uh/ on its own, not /a/ as in cat"
+    },
+    {
+      "word": "said",
+      "level": 1,
+      "hearts": [
+        [
+          1,
+          3
+        ]
+      ],
+      "letters": [
+        "ai"
+      ],
+      "why": "ai says /e/ as in bed, not /ay/"
+    },
+    {
+      "word": "are",
+      "level": 1,
+      "hearts": [
+        [
+          2,
+          3
+        ]
+      ],
+      "letters": [
+        "e"
+      ],
+      "why": "ar is regular; the e is silent and does nothing"
+    },
+    {
+      "word": "was",
+      "level": 1,
+      "hearts": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "letters": [
+        "a",
+        "s"
+      ],
+      "why": "a says /u/ and s says /z/"
+    },
+    {
+      "word": "were",
+      "level": 1,
+      "hearts": [
+        [
+          1,
+          4
+        ]
+      ],
+      "letters": [
+        "ere"
+      ],
+      "why": "ere says /er/"
+    },
+    {
+      "word": "to",
+      "level": 1,
+      "hearts": [
+        [
+          1,
+          2
+        ]
+      ],
+      "letters": [
+        "o"
+      ],
+      "why": "o says /oo/"
+    },
+    {
+      "word": "do",
+      "level": 1,
+      "hearts": [
+        [
+          1,
+          2
+        ]
+      ],
+      "letters": [
+        "o"
+      ],
+      "why": "o says /oo/"
+    },
+    {
+      "word": "of",
+      "level": 1,
+      "hearts": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "letters": [
+        "o",
+        "f"
+      ],
+      "why": "o says /u/ and f says /v/"
+    },
+    {
+      "word": "what",
+      "level": 1,
+      "hearts": [
+        [
+          2,
+          3
+        ]
+      ],
+      "letters": [
+        "a"
+      ],
+      "why": "a says /u/, not /a/ as in cat"
+    },
+    {
+      "word": "you",
+      "level": 1,
+      "hearts": [
+        [
+          1,
+          3
+        ]
+      ],
+      "letters": [
+        "ou"
+      ],
+      "why": "ou says /oo/"
+    },
+    {
+      "word": "your",
+      "level": 2,
+      "hearts": [
+        [
+          1,
+          3
+        ]
+      ],
+      "letters": [
+        "ou"
+      ],
+      "why": "ou says /or/ with the r"
+    },
+    {
+      "word": "one",
+      "level": 2,
+      "hearts": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "letters": [
+        "o",
+        "e"
+      ],
+      "why": "o carries a /w/ before it, and the e is silent"
+    },
+    {
+      "word": "two",
+      "level": 2,
+      "hearts": [
+        [
+          1,
+          2
+        ]
+      ],
+      "letters": [
+        "w"
+      ],
+      "why": "the w is silent"
+    },
+    {
+      "word": "once",
+      "level": 2,
+      "hearts": [
+        [
+          0,
+          1
+        ]
+      ],
+      "letters": [
+        "o"
+      ],
+      "why": "o carries a /w/ before it; the ce is a regular soft c"
+    },
+    {
+      "word": "come",
+      "level": 2,
+      "hearts": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "letters": [
+        "o",
+        "e"
+      ],
+      "why": "o says /u/, and the e does not make it long"
+    },
+    {
+      "word": "some",
+      "level": 2,
+      "hearts": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "letters": [
+        "o",
+        "e"
+      ],
+      "why": "o says /u/, and the e does not make it long"
+    },
+    {
+      "word": "does",
+      "level": 2,
+      "hearts": [
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "letters": [
+        "oe",
+        "s"
+      ],
+      "why": "oe says /u/ and s says /z/"
+    },
+    {
+      "word": "done",
+      "level": 2,
+      "hearts": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "letters": [
+        "o",
+        "e"
+      ],
+      "why": "o says /u/, and the e does not make it long"
+    },
+    {
+      "word": "gone",
+      "level": 2,
+      "hearts": [
+        [
+          3,
+          4
+        ]
+      ],
+      "letters": [
+        "e"
+      ],
+      "why": "the o stays short; the e does not make it long"
+    },
+    {
+      "word": "they",
+      "level": 2,
+      "hearts": [
+        [
+          2,
+          4
+        ]
+      ],
+      "letters": [
+        "ey"
+      ],
+      "why": "ey says /ay/"
+    },
+    {
+      "word": "there",
+      "level": 3,
+      "hearts": [
+        [
+          2,
+          5
+        ]
+      ],
+      "letters": [
+        "ere"
+      ],
+      "why": "ere says /air/"
+    },
+    {
+      "word": "where",
+      "level": 3,
+      "hearts": [
+        [
+          2,
+          5
+        ]
+      ],
+      "letters": [
+        "ere"
+      ],
+      "why": "ere says /air/"
+    },
+    {
+      "word": "any",
+      "level": 3,
+      "hearts": [
+        [
+          0,
+          1
+        ]
+      ],
+      "letters": [
+        "a"
+      ],
+      "why": "a says /e/ as in bed"
+    },
+    {
+      "word": "many",
+      "level": 3,
+      "hearts": [
+        [
+          1,
+          2
+        ]
+      ],
+      "letters": [
+        "a"
+      ],
+      "why": "a says /e/ as in bed"
+    },
+    {
+      "word": "would",
+      "level": 3,
+      "hearts": [
+        [
+          1,
+          4
+        ]
+      ],
+      "letters": [
+        "oul"
+      ],
+      "why": "ou says the short /oo/ and the l is silent"
+    },
+    {
+      "word": "should",
+      "level": 3,
+      "hearts": [
+        [
+          2,
+          5
+        ]
+      ],
+      "letters": [
+        "oul"
+      ],
+      "why": "ou says the short /oo/ and the l is silent"
+    },
+    {
+      "word": "could",
+      "level": 3,
+      "hearts": [
+        [
+          1,
+          4
+        ]
+      ],
+      "letters": [
+        "oul"
+      ],
+      "why": "ou says the short /oo/ and the l is silent"
+    },
+    {
+      "word": "says",
+      "level": 3,
+      "hearts": [
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "letters": [
+        "ay",
+        "s"
+      ],
+      "why": "ay says /e/ as in bed, and the s says /z/"
+    },
+    {
+      "word": "have",
+      "level": 3,
+      "hearts": [
+        [
+          3,
+          4
+        ]
+      ],
+      "letters": [
+        "e"
+      ],
+      "why": "the e does not make the a long"
+    },
+    {
+      "word": "again",
+      "level": 3,
+      "hearts": [
+        [
+          2,
+          4
+        ]
+      ],
+      "letters": [
+        "ai"
+      ],
+      "why": "ai says /e/ as in bed"
+    },
+    {
+      "word": "been",
+      "level": 3,
+      "hearts": [
+        [
+          1,
+          3
+        ]
+      ],
+      "letters": [
+        "ee"
+      ],
+      "why": "ee says the short /i/"
+    },
+    {
+      "word": "against",
+      "level": 3,
+      "hearts": [
+        [
+          2,
+          4
+        ]
+      ],
+      "letters": [
+        "ai"
+      ],
+      "why": "ai says /e/ as in bed"
+    },
+    {
+      "word": "great",
+      "level": 3,
+      "hearts": [
+        [
+          2,
+          4
+        ]
+      ],
+      "letters": [
+        "ea"
+      ],
+      "why": "ea says /ay/, not /ee/"
+    },
+    {
+      "word": "walk",
+      "level": 3,
+      "hearts": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "letters": [
+        "a",
+        "l"
+      ],
+      "why": "a says /aw/ and the l is silent"
+    },
+    {
+      "word": "sure",
+      "level": 4,
+      "hearts": [
+        [
+          0,
+          2
+        ]
+      ],
+      "letters": [
+        "su"
+      ],
+      "why": "su says /sh/ plus the vowel"
+    },
+    {
+      "word": "sugar",
+      "level": 4,
+      "hearts": [
+        [
+          0,
+          2
+        ]
+      ],
+      "letters": [
+        "su"
+      ],
+      "why": "su says /sh/ plus the vowel"
+    },
+    {
+      "word": "friend",
+      "level": 4,
+      "hearts": [
+        [
+          2,
+          4
+        ]
+      ],
+      "letters": [
+        "ie"
+      ],
+      "why": "ie says /e/ as in bed"
+    },
+    {
+      "word": "buy",
+      "level": 4,
+      "hearts": [
+        [
+          1,
+          3
+        ]
+      ],
+      "letters": [
+        "uy"
+      ],
+      "why": "uy says /eye/"
+    },
+    {
+      "word": "guy",
+      "level": 4,
+      "hearts": [
+        [
+          1,
+          3
+        ]
+      ],
+      "letters": [
+        "uy"
+      ],
+      "why": "uy says /eye/; the u is also doing its job after g"
+    },
+    {
+      "word": "build",
+      "level": 4,
+      "hearts": [
+        [
+          1,
+          3
+        ]
+      ],
+      "letters": [
+        "ui"
+      ],
+      "why": "ui says the short /i/"
+    },
+    {
+      "word": "built",
+      "level": 4,
+      "hearts": [
+        [
+          1,
+          3
+        ]
+      ],
+      "letters": [
+        "ui"
+      ],
+      "why": "ui says the short /i/"
+    },
+    {
+      "word": "though",
+      "level": 4,
+      "hearts": [
+        [
+          2,
+          6
+        ]
+      ],
+      "letters": [
+        "ough"
+      ],
+      "why": "ough says /oh/"
+    },
+    {
+      "word": "tough",
+      "level": 4,
+      "hearts": [
+        [
+          1,
+          5
+        ]
+      ],
+      "letters": [
+        "ough"
+      ],
+      "why": "ough says /uf/"
+    },
+    {
+      "word": "enough",
+      "level": 4,
+      "hearts": [
+        [
+          2,
+          6
+        ]
+      ],
+      "letters": [
+        "ough"
+      ],
+      "why": "ough says /uf/"
+    },
+    {
+      "word": "their",
+      "level": 4,
+      "hearts": [
+        [
+          2,
+          4
+        ]
+      ],
+      "letters": [
+        "ei"
+      ],
+      "why": "ei says /air/ with the r"
+    },
+    {
+      "word": "people",
+      "level": 4,
+      "hearts": [
+        [
+          1,
+          3
+        ]
+      ],
+      "letters": [
+        "eo"
+      ],
+      "why": "eo says /ee/; the -ple is a regular consonant-le"
+    },
+    {
+      "word": "through",
+      "level": 5,
+      "hearts": [
+        [
+          3,
+          7
+        ]
+      ],
+      "letters": [
+        "ough"
+      ],
+      "why": "ough says /oo/"
+    },
+    {
+      "word": "thorough",
+      "level": 5,
+      "hearts": [
+        [
+          4,
+          8
+        ]
+      ],
+      "letters": [
+        "ough"
+      ],
+      "why": "ough says /uh/ at the end"
+    },
+    {
+      "word": "thought",
+      "level": 5,
+      "hearts": [
+        [
+          2,
+          6
+        ]
+      ],
+      "letters": [
+        "ough"
+      ],
+      "why": "ough says /aw/"
+    },
+    {
+      "word": "heart",
+      "level": 5,
+      "hearts": [
+        [
+          1,
+          3
+        ]
+      ],
+      "letters": [
+        "ea"
+      ],
+      "why": "ea says /ar/ with the r"
+    },
+    {
+      "word": "caught",
+      "level": 5,
+      "hearts": [
+        [
+          1,
+          5
+        ]
+      ],
+      "letters": [
+        "augh"
+      ],
+      "why": "augh says /aw/"
+    },
+    {
+      "word": "daughter",
+      "level": 5,
+      "hearts": [
+        [
+          1,
+          5
+        ]
+      ],
+      "letters": [
+        "augh"
+      ],
+      "why": "augh says /aw/"
+    },
+    {
+      "word": "fought",
+      "level": 5,
+      "hearts": [
+        [
+          1,
+          5
+        ]
+      ],
+      "letters": [
+        "ough"
+      ],
+      "why": "ough says /aw/"
+    },
+    {
+      "word": "bought",
+      "level": 5,
+      "hearts": [
+        [
+          1,
+          5
+        ]
+      ],
+      "letters": [
+        "ough"
+      ],
+      "why": "ough says /aw/"
+    },
+    {
+      "word": "double",
+      "level": 5,
+      "hearts": [
+        [
+          1,
+          3
+        ]
+      ],
+      "letters": [
+        "ou"
+      ],
+      "why": "ou says /u/"
+    },
+    {
+      "word": "country",
+      "level": 5,
+      "hearts": [
+        [
+          1,
+          3
+        ]
+      ],
+      "letters": [
+        "ou"
+      ],
+      "why": "ou says /u/"
+    },
+    {
+      "word": "warm",
+      "level": 5,
+      "hearts": [
+        [
+          1,
+          3
+        ]
+      ],
+      "letters": [
+        "ar"
+      ],
+      "why": "ar says /or/ after a w"
+    },
+    {
+      "word": "wart",
+      "level": 5,
+      "hearts": [
+        [
+          1,
+          3
+        ]
+      ],
+      "letters": [
+        "ar"
+      ],
+      "why": "ar says /or/ after a w"
+    }
+  ]
+}

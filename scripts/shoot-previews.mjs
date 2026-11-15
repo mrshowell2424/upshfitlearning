@@ -50,6 +50,7 @@ const SHOTS = [
   { name: "word-ladders", path: "/word-ladders?p=ai-ay" },
   { name: "review", path: "/review?p=ai-ay" },
   { name: "passages", path: "/passages?p=ai-ay&g=g2" },
+  { name: "heart-words", path: "/heart-words?l=1" },
   { name: "ef-year", path: "/behavior/year?w=1" },
   { name: "fluency", path: "/fluency" },
   { name: "teach-a-word", path: "/vocabulary" },

@@ -140,6 +140,8 @@ const CARDS = [
     line: "Three earlier lessons, chosen from the sequence rather than left to the end of a long day.", accent: BRAND.pink },
   { file: "passages", eyebrow: "Decodable passages", title: "Readable the day\nit is taught.",
     line: "636 stories, one per lesson, at three grades \u2014 with the questions and the answers.", accent: BRAND.coral },
+  { file: "heart-words", eyebrow: "Heart words", title: "Only the letters\nthat are odd.",
+    line: "said is s-ai-d. The s and the d are ordinary \u2014 a heart goes over the ai and nowhere else.", accent: BRAND.pink },
 
   { file: "morphology", eyebrow: "Word Parts", title: "Read words nobody\ntaught you.",
     line: "Prefixes, suffixes and roots, on words your class has already met in an article.", accent: BRAND.teal },
