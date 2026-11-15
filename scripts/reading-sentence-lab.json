@@ -16284,6 +16284,1927 @@
    ],
    "expand": [],
    "stem": "Optical atomic clocks reached that stability."
+  },
+  {
+   "id": "g10-1",
+   "grade": 10,
+   "n": 1,
+   "title": "The Evidence That Birds Are Dinosaurs",
+   "standard": "RI.9-10.1",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "The claim that birds are dinosaurs is not a comparison or a figure of speech.",
+      "It is a statement about descent.",
+      "Birds sit inside the theropod group, as bats sit inside the mammals.",
+      "It is now the mainstream position."
+     ],
+     "to": [
+      "The claim that birds are dinosaurs is not a comparison or a figure of speech.",
+      "It is a statement about descent: that birds sit inside the theropod group, in the way that bats sit inside the mammals, and it is now the mainstream position."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "Particular structures do the heaviest work.",
+      "The furcula, the fused collarbone a diner calls a wishbone, appears in theropods long before any bird.",
+      "So does a hollow-boned skeleton.",
+      "So does a wrist bone that lets the hand fold sideways, which is the motion a wing makes."
+     ],
+     "to": [
+      "Particular structures do the heaviest work.",
+      "The furcula, the fused collarbone a diner calls a wishbone, is present in theropods long before any bird; so is a hollow-boned skeleton; so is a wrist bone shaped to let the hand fold sideways, which is the motion a wing makes."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "So does a hollow-boned skeleton."
+  },
+  {
+   "id": "g10-2",
+   "grade": 10,
+   "n": 2,
+   "title": "Who Built Stonehenge",
+   "standard": "RI.9-10.1",
+   "combine": [
+    {
+     "para": "H",
+     "from": [
+      "Together the lines support one inference and refuse a looser one.",
+      "They support people travelling far and gathering seasonally to build.",
+      "They do not identify a group, a purpose or a belief.",
+      "A confident account of why reaches past the material."
+     ],
+     "to": [
+      "Assembled, the lines support a specific inference and refuse a looser one.",
+      "They support people travelling long distances and gathering seasonally to build; they do not identify a single group, a purpose or a belief, and a confident account of why it was built is reaching past what the material holds."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "Stonehenge was raised in stages over roughly fifteen hundred years, by people who left no writing.",
+      "Everything claimed about them is inferred from material.",
+      "Those inferences have become far stronger in the last thirty years."
+     ],
+     "to": [
+      "Stonehenge was raised in stages over roughly fifteen hundred years, by people who left no writing.",
+      "Everything claimed about them is inferred from material, and the inferences have become far stronger in the last thirty years."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The stones carry an origin."
+  },
+  {
+   "id": "g10-3",
+   "grade": 10,
+   "n": 3,
+   "title": "Measuring the Distance to a Star",
+   "standard": "RI.9-10.1",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The shift is minute.",
+      "Friedrich Bessel measured the first in 1838, for the star 61 Cygni.",
+      "The angle is roughly what a coin would cover from several kilometres away.",
+      "That is why the measurement waited for the nineteenth century."
+     ],
+     "to": [
+      "The shift is minute.",
+      "Friedrich Bessel measured the first one in 1838, for the star 61 Cygni, and the angle involved is roughly what a coin would subtend from several kilometres away, which is why the measurement waited for the nineteenth century."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "The next rung uses a particular kind of star.",
+      "Henrietta Swan Leavitt showed that certain variable stars pulse at a rate related to their true brightness.",
+      "Measuring the period gives the luminosity.",
+      "Comparing that with how bright it looks gives distance."
+     ],
+     "to": [
+      "The next rung depends on a particular kind of star.",
+      "Henrietta Swan Leavitt established that certain variable stars pulse at a rate related to their true brightness, so measuring the period of one gives its luminosity, and comparing that with how bright it looks gives distance."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The shift is minute."
+  },
+  {
+   "id": "g10-4",
+   "grade": 10,
+   "n": 4,
+   "title": "The Court Records of a Village",
+   "standard": "RI.9-10.1",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Most people who have ever lived left no written trace.",
+      "They did not write.",
+      "Nobody wrote about them.",
+      "The documents that survive concern taxation, landholding and the affairs of people who mattered."
+     ],
+     "to": [
+      "Most people who have ever lived left no written trace of themselves.",
+      "They did not write, nobody wrote about them, and the documents that survive from their societies are about taxation, landholding and the affairs of people who mattered."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "Court records are the richest of these.",
+      "A proceeding must establish what happened.",
+      "That means recording who was where, who saw it, what time it was, what the weather did, and who owed money to whom."
+     ],
+     "to": [
+      "Court records are the richest of these.",
+      "A proceeding has to establish what happened, which means recording who was where, who saw it, what time it was, what the weather was doing and who was owed money by whom."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "They did not write."
+  },
+  {
+   "id": "g10-5",
+   "grade": 10,
+   "n": 5,
+   "title": "How a Drug Is Shown to Work",
+   "standard": "RI.9-10.1",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "Conditions fluctuate.",
+      "People seek help when they feel worst.",
+      "Expecting to improve produces measurable change.",
+      "A study comparing patients before and after cannot tell a drug from any of those."
+     ],
+     "to": [
+      "Conditions fluctuate, people seek help when they feel worst, and expecting to improve produces measurable change.",
+      "A study that compares patients before and after cannot distinguish a drug from any of those."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "Showing that a treatment works is harder than it sounds.",
+      "Most people given most treatments improve.",
+      "Improvement is the thing everybody involved was hoping for."
+     ],
+     "to": [
+      "Showing that a treatment works is harder than it sounds, and the difficulty is not technical.",
+      "Most people given most treatments improve, improvement is the thing everybody involved was hoping for, and the question is therefore never whether patients got better but whether the treatment is why."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The fourth is blinding."
+  },
+  {
+   "id": "g10-6",
+   "grade": 10,
+   "n": 6,
+   "title": "The Discovery That Ulcers Are Infectious",
+   "standard": "RI.9-10.2",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "For most of the twentieth century stomach ulcers were understood as a disease of stress and acid.",
+      "The treatment reduced acid.",
+      "That relieved symptoms.",
+      "The ulcers very often came back."
+     ],
+     "to": [
+      "For most of the twentieth century stomach ulcers were understood as a disease of stress and acid, and the understanding was not idle speculation but a framework with a treatment attached.",
+      "The treatment was to reduce acid, it relieved symptoms reliably, and the ulcers very often came back."
+     ]
+    },
+    {
+     "para": "G",
+     "from": [
+      "A self-experiment with one subject is weak evidence by every normal standard.",
+      "Its force came from what it predicted.",
+      "If the bacterium causes the disease, antibiotics should cure ulcers.",
+      "Trials showed they did."
+     ],
+     "to": [
+      "A self-experiment with one subject, unblinded and unrandomised, is weak evidence by every standard that normally applies to anything.",
+      "Its force came from what it predicted rather than from what it showed: if the bacterium causes the disease, then antibiotics should cure ulcers, and controlled trials showed that they did."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The treatment reduced acid."
+  },
+  {
+   "id": "g10-7",
+   "grade": 10,
+   "n": 7,
+   "title": "The Enclosure of the Commons",
+   "standard": "RI.9-10.2",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "For centuries much of England was farmed in open fields.",
+      "A household held scattered strips across several large fields.",
+      "Alongside them it held rights over common land: to graze animals, gather fuel, cut turf or glean after a harvest."
+     ],
+     "to": [
+      "For centuries much of England was farmed in open fields, under an arrangement that looks chaotic on a map and was not.",
+      "A household held scattered strips across several large fields, and alongside them held rights over common land: to graze animals, gather fuel, cut turf or glean the grain left after a harvest."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "Those rights were not ownership and not charity.",
+      "They were customary entitlements attached to a holding, recognised in manorial courts.",
+      "For a household at the margin they were often the difference between sufficiency and destitution."
+     ],
+     "to": [
+      "Those rights were not ownership and they were not charity.",
+      "They were customary entitlements attached to a holding, recognised in manorial courts, and for a household at the margin they were frequently the difference between sufficiency and destitution."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The agricultural case was real."
+  },
+  {
+   "id": "g10-8",
+   "grade": 10,
+   "n": 8,
+   "title": "The Ozone Hole",
+   "standard": "RI.9-10.2",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "The prediction was gradual thinning spread across the globe.",
+      "That is what the chemistry implied.",
+      "That is what the argument was debated as.",
+      "The chemical industry's response addressed that version."
+     ],
+     "to": [
+      "The prediction was for gradual thinning spread across the globe.",
+      "That is what the chemistry implied, and it is what the argument was debated as, and the chemical industry's response addressed that version of the claim."
+     ]
+    },
+    {
+     "para": "H",
+     "from": [
+      "So the central idea develops in three stages and differs at each.",
+      "A prediction from pure chemistry.",
+      "An observation that did not match it.",
+      "A mechanism explaining why the observation was worse than the prediction and confined to one place."
+     ],
+     "to": [
+      "The central idea develops through three stages and is different at each.",
+      "A prediction from pure chemistry, an observation that did not match it, and a mechanism that explained why the observation was worse than the prediction and confined to one place."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "A prediction from pure chemistry."
+  },
+  {
+   "id": "g10-9",
+   "grade": 10,
+   "n": 9,
+   "title": "The Standard Gauge",
+   "standard": "RI.9-10.2",
+   "combine": [
+    {
+     "para": "G",
+     "from": [
+      "The central idea refines as it goes.",
+      "It starts as a story about an arbitrary measurement.",
+      "It becomes a story about why the better design lost.",
+      "It ends as a story about a property belonging to networks rather than things."
+     ],
+     "to": [
+      "The central idea refines as it goes.",
+      "It begins as a story about an arbitrary measurement, becomes a story about why the better design lost, and ends as a story about a property that belongs to networks rather than to things."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "The distance between the rails on most of the world's railways is an awkward figure: four feet eight and a half inches.",
+      "It is not a round number in any system.",
+      "Nothing about it was calculated."
+     ],
+     "to": [
+      "The distance between the rails on most of the world's railways is an awkward figure: four feet eight and a half inches.",
+      "It is not a round number in any system, and nothing about it was calculated."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Nothing about it was calculated."
+  },
+  {
+   "id": "g10-10",
+   "grade": 10,
+   "n": 10,
+   "title": "The Green Revolution",
+   "standard": "RI.9-10.2",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "What changed the projection was plant breeding.",
+      "Norman Borlaug and others developed wheat and then rice varieties that were short-stemmed.",
+      "That sounds like a small detail.",
+      "It is the centre of the whole thing."
+     ],
+     "to": [
+      "What changed the projection was plant breeding.",
+      "Norman Borlaug and others developed wheat and then rice varieties that were short-stemmed, which sounds like a small detail and is the centre of the whole thing."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "In the middle of the twentieth century several countries were expected to be unable to feed themselves within a generation.",
+      "Population was rising faster than yields.",
+      "The projections were widely published and widely believed."
+     ],
+     "to": [
+      "In the middle of the twentieth century a number of countries were expected to be unable to feed themselves within a generation.",
+      "Population was rising faster than yields, the arithmetic was straightforward, and the projections were widely published, widely believed and taken seriously by the governments they concerned."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Aggregate production rose decisively."
+  },
+  {
+   "id": "g10-11",
+   "grade": 10,
+   "n": 11,
+   "title": "How an Outbreak Is Investigated",
+   "standard": "RI.9-10.3",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "An outbreak investigation has a prescribed sequence, and it is not a formality.",
+      "Each step produces the material the next one needs.",
+      "Doing them in another order produces answers that cannot be relied on."
+     ],
+     "to": [
+      "An outbreak investigation has a prescribed sequence, set out in training materials and followed by public health agencies everywhere, and the sequence is not a formality.",
+      "Each step produces the material the next one needs, and performing them in a different order produces answers that cannot be relied on afterwards."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The first step is to establish that there is an outbreak.",
+      "More cases than usual is a comparison, which requires knowing what usual was.",
+      "A rise can be produced by a new test, a new doctor or a new reason to look."
+     ],
+     "to": [
+      "The first step is to establish that there is an outbreak at all.",
+      "More cases than usual is a comparison, which requires knowing what usual was, and a rise can be produced by a new test, a new doctor or a new reason to look."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The third step is descriptive."
+  },
+  {
+   "id": "g10-12",
+   "grade": 10,
+   "n": 12,
+   "title": "How a Budget Is Assembled",
+   "standard": "RI.9-10.3",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "A public budget arrives as one document and is produced by a process running most of a year.",
+      "The order of that process decides what can be changed and when.",
+      "The document rarely shows it."
+     ],
+     "to": [
+      "A public budget arrives as a single document and is produced by a process that runs for most of a year.",
+      "The order of that process determines what is possible to change and when, which is rarely obvious from the document."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "It begins with a forecast rather than a plan.",
+      "Officials estimate what revenue will be available under existing arrangements.",
+      "That figure constrains everything afterwards, without having been chosen by anybody."
+     ],
+     "to": [
+      "It begins with a forecast rather than a plan.",
+      "Officials estimate what revenue will be available under existing arrangements, and that figure constrains everything afterwards without having been chosen by anybody."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It is not neutral."
+  },
+  {
+   "id": "g10-13",
+   "grade": 10,
+   "n": 13,
+   "title": "How a Theorem Is Proved",
+   "standard": "RI.9-10.3",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "That order is not chronological.",
+      "Mathematicians usually start from the result they want and work toward what would establish it.",
+      "The paper presents the reverse of the route actually taken."
+     ],
+     "to": [
+      "That order is not chronological.",
+      "Mathematicians typically start from the result they want and work toward what would establish it, and the paper presents the reverse of the route actually taken."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "The reason is that a proof is a check rather than a narrative.",
+      "A reader must verify each step using only what precedes it.",
+      "An account in discovery order would require accepting things before they were established."
+     ],
+     "to": [
+      "The reason is that a proof is a check rather than a narrative.",
+      "A reader has to be able to verify each step using only what precedes it, and an account in discovery order would require accepting things before they had been established."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "A",
+     "kernel": "It opens with definitions, moves through small results nobody cares about, and reaches the theorem near the end.",
+     "expanded": "It begins with definitions, proceeds through a series of small results that nobody outside the paper cares about, and reaches the theorem it is named for somewhere near the end."
+    }
+   ],
+   "stem": "That order is not chronological."
+  },
+  {
+   "id": "g10-14",
+   "grade": 10,
+   "n": 14,
+   "title": "How a Law Is Drafted",
+   "standard": "RI.9-10.3",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "Then come the duties, in a deliberate order.",
+      "Who must do what.",
+      "By when.",
+      "Subject to which exceptions.",
+      "Enforced by whom.",
+      "With what consequence for failure.",
+      "Each is a separate decision capable of hollowing out the one before it."
+     ],
+     "to": [
+      "Then come the duties, in a deliberate order: who must do what, by when, subject to which exceptions, enforced by whom, with what consequence for failure.",
+      "Each of those is a separate decision and each is capable of hollowing out the one before it."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "The drafter's first question is usually one nobody in the department asked.",
+      "What exactly counts as the thing being regulated?",
+      "Who precisely does the obligation fall on?",
+      "What happens in the case the policy did not consider?"
+     ],
+     "to": [
+      "The drafter's first question is usually one nobody in the department asked.",
+      "What exactly counts as the thing being regulated, who precisely does the obligation fall on, and what happens in the case the policy did not consider."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "A",
+     "kernel": "Between those two events is a drafting process whose order shapes the law more than most of the debate about it does.",
+     "expanded": "Between those two events is a drafting process, largely invisible from outside, whose order shapes the law that results more than most of the public debate about it does."
+    },
+    {
+     "para": "A",
+     "kernel": "A government decides to do something, and a statute eventually appears.",
+     "expanded": "A government decides to do something, and some months or years later a statute appears."
+    }
+   ],
+   "stem": "Who must do what."
+  },
+  {
+   "id": "g10-15",
+   "grade": 10,
+   "n": 15,
+   "title": "How a Species Is Named",
+   "standard": "RI.9-10.3",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Naming a newly recognised organism is governed by rules closer to law than to biology.",
+      "They determine which of several proposed names is correct.",
+      "Correctness here has almost nothing to do with whether a name is apt."
+     ],
+     "to": [
+      "Naming a newly recognised organism is governed by rules that are closer to law than to biology.",
+      "They determine which of several proposed names is correct, and correctness here has almost nothing to do with whether a name is apt."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The first requirement is a type specimen.",
+      "One particular individual, physically preserved and deposited where anyone can consult it, becomes the permanent anchor of the name.",
+      "The name refers to whatever group that specimen belongs to."
+     ],
+     "to": [
+      "The first requirement is a type specimen.",
+      "One particular individual, physically preserved and deposited in a collection anyone can consult, becomes the permanent anchor of the name, and the name refers to whatever group that specimen belongs to."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Specimen, then publication, then priority."
+  },
+  {
+   "id": "g10-16",
+   "grade": 10,
+   "n": 16,
+   "title": "The Language of a Safety Data Sheet",
+   "standard": "RI.9-10.4",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "Signal words are reduced to two.",
+      "Danger marks the more severe category, Warning the less severe.",
+      "No third option exists.",
+      "That stops a manufacturer softening a classification through phrasing."
+     ],
+     "to": [
+      "Signal words are reduced to two.",
+      "Danger marks the more severe category and Warning the less severe, and no third option exists, which prevents a manufacturer from softening a classification through phrasing."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "Every hazardous chemical in a workplace arrives with a document in a fixed sixteen-section format.",
+      "It is written to be found in an emergency by someone who has never read it before.",
+      "Almost every feature follows from that."
+     ],
+     "to": [
+      "Every hazardous chemical in a workplace arrives with a document in a fixed sixteen-section format.",
+      "It is written to be found in an emergency, in a hurry, by somebody who has never read that particular sheet before and may never read another, and almost every feature of it follows from that."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "No third option exists."
+  },
+  {
+   "id": "g10-17",
+   "grade": 10,
+   "n": 17,
+   "title": "The Language of a Peace Agreement",
+   "standard": "RI.9-10.4",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "Verbs are chosen for how much they bind.",
+      "Shall creates an obligation.",
+      "Will is weaker and often read as an expectation.",
+      "Should is close to advisory.",
+      "The difference is often the subject of the longest arguments in a negotiation."
+     ],
+     "to": [
+      "Verbs are chosen for how much they bind.",
+      "Shall creates an obligation, will is weaker and often read as an expectation, and should is close to advisory, and the difference between them is frequently the subject of the longest arguments in a negotiation."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "That is a genuine technique with a genuine cost.",
+      "The dispute has not been resolved.",
+      "It has been postponed and moved into the interpretation of a clause.",
+      "It will reappear when the clause must be applied."
+     ],
+     "to": [
+      "This is a genuine technique with a genuine cost.",
+      "The dispute has not been resolved, it has been postponed and relocated into the interpretation of a clause, and it will reappear when the clause has to be applied."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Shall creates an obligation."
+  },
+  {
+   "id": "g10-18",
+   "grade": 10,
+   "n": 18,
+   "title": "What Engineers Mean by Failure",
+   "standard": "RI.9-10.4",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "It means the design absorbs variation nobody can measure in advance.",
+      "Material slightly below specification.",
+      "A load nobody anticipated.",
+      "Corrosion that accumulated.",
+      "An installation done imperfectly on a wet afternoon."
+     ],
+     "to": [
+      "It means the design absorbs variation nobody can measure in advance: the material that came in slightly below specification, the load nobody anticipated, the corrosion that accumulated, the installation done imperfectly on a wet afternoon."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "Ductile and brittle come next, and the distinction matters more than almost any other.",
+      "A ductile failure deforms visibly before giving way.",
+      "A brittle one separates without warning.",
+      "Designs are often chosen to make failure ductile rather than less likely."
+     ],
+     "to": [
+      "Ductile and brittle are the next pair, and the distinction matters more than almost any other.",
+      "A ductile failure deforms visibly before it gives way, and a brittle one separates without warning, and a design is frequently chosen to make failure ductile rather than to make it less likely."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Material slightly below specification."
+  },
+  {
+   "id": "g10-19",
+   "grade": 10,
+   "n": 19,
+   "title": "The Language of a Reference",
+   "standard": "RI.9-10.4",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The result is a register built from verifiable facts.",
+      "Dates of employment.",
+      "Job title.",
+      "Duties as recorded.",
+      "Attendance figures.",
+      "Each can be defended from a file.",
+      "None answers the question the reader is asking."
+     ],
+     "to": [
+      "The result is a register built from verifiable facts.",
+      "Dates of employment, job title, duties as recorded, and attendance figures, each of which can be defended from a file and none of which answers the question the reader is asking."
+     ]
+    },
+    {
+     "para": "H",
+     "from": [
+      "The cumulative effect is a genre that satisfies nobody.",
+      "The writer cannot say what they think.",
+      "The reader cannot learn what they need.",
+      "Both continue because the alternative is a document with no standing at all."
+     ],
+     "to": [
+      "The cumulative effect is a genre that satisfies nobody.",
+      "The writer cannot say what they think, the reader cannot learn what they need, and both continue to participate because the alternative is a document with no standing at all."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "A",
+     "kernel": "A written reference for a former employee is constrained in ways that make it almost unreadable by ordinary standards.",
+     "expanded": "A written reference for a former employee is constrained in ways that make it almost unreadable by ordinary standards, and the constraints are not the writer's choice."
+    },
+    {
+     "para": "A",
+     "kernel": "The constraints come from law, from policy, and from the fact that the subject may eventually see it.",
+     "expanded": "They come from law, from institutional policy, and from the fact that the subject of the reference may eventually be entitled to see it."
+    }
+   ],
+   "stem": "Each can be defended from a file."
+  },
+  {
+   "id": "g10-20",
+   "grade": 10,
+   "n": 20,
+   "title": "What a Statistician Means by Random",
+   "standard": "RI.9-10.4",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "People are poor at producing it and poor at recognising it.",
+      "Asked to write a random sequence, most produce too few repetitions.",
+      "A run of four looks wrong.",
+      "Genuine randomness produces runs more often than intuition allows."
+     ],
+     "to": [
+      "People are poor at producing it and poor at recognising it.",
+      "Asked to write a random sequence, most produce one with too few repetitions, because a run of four looks wrong, and genuine randomness produces runs more often than intuition allows."
+     ]
+    },
+    {
+     "para": "H",
+     "from": [
+      "So the word means almost the reverse of its everyday sense.",
+      "Ordinary random means nobody chose.",
+      "Statistical random means the choosing was done by a specified process whose properties are known.",
+      "That is a strong condition, not the absence of one."
+     ],
+     "to": [
+      "The cumulative effect is a word that means almost the reverse of its everyday sense.",
+      "Ordinary random means nobody chose; statistical random means the choosing was done by a specified process whose properties are known, which is a strong condition rather than an absence of one."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Ordinary random means nobody chose."
+  },
+  {
+   "id": "g10-21",
+   "grade": 10,
+   "n": 21,
+   "title": "The Introduction of a Paper",
+   "standard": "RI.9-10.5",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "It then narrows to what is known.",
+      "A paragraph summarises established findings, with citations.",
+      "The summary is selective.",
+      "The author is assembling the background against which their own claim will look necessary."
+     ],
+     "to": [
+      "It then narrows to what is known.",
+      "A paragraph summarises the established findings, with citations, and the summary is selective, because the author is assembling the particular background against which their own claim will look necessary."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "That gap is constructed rather than discovered.",
+      "Many things are not known about any subject.",
+      "The author has selected the one their study happens to address.",
+      "That is legitimate and worth seeing clearly."
+     ],
+     "to": [
+      "That gap is constructed rather than discovered.",
+      "There are always many things not known about any subject, and the author has selected the one their study happens to address, which is legitimate and is worth seeing clearly."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The summary is selective."
+  },
+  {
+   "id": "g10-22",
+   "grade": 10,
+   "n": 22,
+   "title": "The First Chapter of a History",
+   "standard": "RI.9-10.5",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "It generally does four things.",
+      "It states the question.",
+      "It defines the period.",
+      "It explains why existing accounts are inadequate.",
+      "It announces what this book will do differently.",
+      "In that order, with varying politeness."
+     ],
+     "to": [
+      "It generally does four things.",
+      "It states the question, defines the period, explains why the existing accounts are inadequate, and announces what this book will do differently, in that order and with varying degrees of politeness."
+     ]
+    },
+    {
+     "para": "G",
+     "from": [
+      "Everything after is shaped by those commitments.",
+      "The chapters follow the period as defined.",
+      "The evidence is of the kind announced.",
+      "The conclusion answers the question stated on page four and no other."
+     ],
+     "to": [
+      "Everything after is then shaped by those commitments.",
+      "The chapters follow the period as defined, the evidence is of the kind announced, and the conclusion answers the question stated on page four rather than any other question."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It states the question."
+  },
+  {
+   "id": "g10-23",
+   "grade": 10,
+   "n": 23,
+   "title": "The Discussion Section",
+   "standard": "RI.9-10.5",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "The discussion is the last substantial section of a paper and the one where its claim can grow.",
+      "Results state what was measured.",
+      "The discussion says what it means.",
+      "The distance between them is where a paper is most vulnerable."
+     ],
+     "to": [
+      "The discussion is the last substantial section of a research paper and the one where its claim can grow.",
+      "The results section states what was measured; the discussion says what it means, and the distance between those is where the paper is most vulnerable."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "It then places the finding among existing work.",
+      "Studies that agree are cited.",
+      "Studies that disagree are explained.",
+      "The explanation is frequently a methodological difference the author cannot verify."
+     ],
+     "to": [
+      "It then places the finding among existing work.",
+      "Studies that agree are cited, studies that disagree are explained, and the explanation for disagreement is frequently a methodological difference the author is in no position to verify."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Results state what was measured."
+  },
+  {
+   "id": "g10-24",
+   "grade": 10,
+   "n": 24,
+   "title": "The Executive Summary",
+   "standard": "RI.9-10.5",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "What gets dropped is predictable.",
+      "Sample sizes.",
+      "The basis of estimates.",
+      "The range around a central figure.",
+      "The conditions a recommendation depends on.",
+      "Each costs a clause and none changes the headline."
+     ],
+     "to": [
+      "What gets dropped is predictable.",
+      "Sample sizes, the basis of estimates, the range around a central figure and the conditions a recommendation depends on are the first to go, because each costs a clause and none changes the headline."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A long report opens with a summary of two or three pages.",
+      "It is written last, read first, and for most of its audience it is the only part read at all.",
+      "That gives it a peculiar status within the document."
+     ],
+     "to": [
+      "A long report opens with a summary of two or three pages.",
+      "It is written last, it is read first, and for most of its audience it is the only part that is read at all, which gives it a peculiar status within the document."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The basis of estimates."
+  },
+  {
+   "id": "g10-25",
+   "grade": 10,
+   "n": 25,
+   "title": "The Caveats at the End of a Model",
+   "standard": "RI.9-10.5",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "It usually says first that these are projections and not predictions.",
+      "A projection states what follows if stated assumptions hold.",
+      "A prediction states what will happen.",
+      "A model produces only the first."
+     ],
+     "to": [
+      "The first thing it usually says is that these are projections and not predictions.",
+      "A projection states what follows if stated assumptions hold, and a prediction states what will happen, and a model produces only the first."
+     ]
+    },
+    {
+     "para": "G",
+     "from": [
+      "Uncertainty appears in the same section, in a particular form.",
+      "A range is not a confidence that the truth lies inside it.",
+      "It is the spread of the runs performed.",
+      "A factor nobody modelled lies outside the range entirely."
+     ],
+     "to": [
+      "Uncertainty is given in the same section and in a particular form.",
+      "A range is not a confidence that the truth lies inside it; it is the spread produced by the runs that were performed, and a factor nobody modelled lies outside the range entirely."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "A prediction states what will happen."
+  },
+  {
+   "id": "g10-26",
+   "grade": 10,
+   "n": 26,
+   "title": "The Expert Witness",
+   "standard": "RI.9-10.6",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "An expert witness occupies a structurally strange position.",
+      "They are paid by one side in a dispute.",
+      "They are called because their opinion helps that side.",
+      "Their formal duty is owed to the court, not to whoever pays."
+     ],
+     "to": [
+      "An expert witness occupies a position that is structurally strange.",
+      "They are paid by one side in a dispute, they are called because their opinion assists that side, and their formal duty is owed to the court rather than to whoever is paying."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "Those concessions are not weakness.",
+      "An expert who concedes nothing is easier to attack.",
+      "An opponent need only find one overstatement to question the whole opinion.",
+      "A report that marks its own edges removes that opportunity."
+     ],
+     "to": [
+      "Those concessions are not weakness.",
+      "An expert who concedes nothing is easier to attack, because an opponent need only find one overstatement to put the whole opinion in question, and a report that marks its own edges has removed that opportunity."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "That duty is not decorative."
+  },
+  {
+   "id": "g10-27",
+   "grade": 10,
+   "n": 27,
+   "title": "The Budget Speech",
+   "standard": "RI.9-10.6",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "A finance minister presenting a budget is performing a document that already exists.",
+      "The figures were settled weeks earlier.",
+      "The speech cannot change them.",
+      "Everything in the delivery is about how they will be understood."
+     ],
+     "to": [
+      "A finance minister presenting a budget is performing a document that already exists.",
+      "The figures were settled weeks earlier, the speech cannot change them, and everything in the delivery is about how they will be understood."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "The baseline is chosen too.",
+      "An increase measured against a planned reduction is an increase.",
+      "The same figure against last year's actual spending may be a cut.",
+      "Both descriptions can be defended."
+     ],
+     "to": [
+      "The baseline is chosen as well.",
+      "An increase measured against a planned reduction is an increase; the same figure measured against last year's actual spending may be a cut, and both descriptions can be defended."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The speech cannot change them."
+  },
+  {
+   "id": "g10-28",
+   "grade": 10,
+   "n": 28,
+   "title": "How a Risk Is Communicated",
+   "standard": "RI.9-10.6",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "That finding puts a communicator in an awkward position.",
+      "There is no neutral framing.",
+      "Survival and mortality are both accurate.",
+      "One has to be chosen.",
+      "The choice will affect what people do."
+     ],
+     "to": [
+      "That finding puts a communicator in an awkward position.",
+      "There is no neutral framing available: survival and mortality are both accurate, one of them has to be chosen, and the choice will affect what people do."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "The usual response is to give both.",
+      "That helps and does not solve it.",
+      "Order still matters.",
+      "The first framing anchors the reader.",
+      "A document presenting both has made a smaller version of the same decision."
+     ],
+     "to": [
+      "The usual response is to give both, which helps and does not solve it.",
+      "Order still matters, the first framing anchors the reader, and a document that presents both has made a smaller version of the same decision."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Frequencies are understood better."
+  },
+  {
+   "id": "g10-29",
+   "grade": 10,
+   "n": 29,
+   "title": "The Recruitment Campaign",
+   "standard": "RI.9-10.6",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The first is belonging.",
+      "The imagery is almost always groups rather than individuals.",
+      "The implied offer is membership of something with a boundary around it.",
+      "Competing employers find that hard to match."
+     ],
+     "to": [
+      "The first is belonging.",
+      "The imagery is almost always of groups rather than individuals, and the implied offer is membership of something with a boundary around it, which is an offer competing employers find difficult to match."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "The second is significance.",
+      "The work is shown as mattering to other people in a way most work does not.",
+      "This appeal is powerful precisely because it is frequently true."
+     ],
+     "to": [
+      "The second is significance.",
+      "The work is presented as mattering to other people in a way most work does not, and this appeal is powerful precisely because it is frequently true."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "A",
+     "kernel": "Organisations that need people to join them, and cannot offer high pay, advertise something else.",
+     "expanded": "Organisations that need people to join them, and that cannot compete on pay with the employers those people could otherwise choose, have to advertise something else."
+    }
+   ],
+   "stem": "The first is belonging."
+  },
+  {
+   "id": "g10-30",
+   "grade": 10,
+   "n": 30,
+   "title": "The Science Museum Label",
+   "standard": "RI.9-10.6",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "Every constraint pushes the same way.",
+      "There is no room for qualification.",
+      "No room for competing accounts.",
+      "No room to explain why the object is in a museum rather than somewhere else."
+     ],
+     "to": [
+      "Every constraint pushes in the same direction.",
+      "There is no room for qualification, no room for competing accounts, and no room to explain why the object is in a museum rather than somewhere else."
+     ]
+    },
+    {
+     "para": "G",
+     "from": [
+      "The cost falls on what cannot be shown.",
+      "An object is a thing that survived.",
+      "A gallery of surviving objects is a gallery of what was built well, kept carefully and thought worth keeping.",
+      "That is not what was typical."
+     ],
+     "to": [
+      "The cost falls on what cannot be shown.",
+      "An object is a thing that survived, and a gallery of surviving objects is a gallery of what was built well, kept carefully and considered worth retaining, which is not the same as what was typical."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "No room for competing accounts."
+  },
+  {
+   "id": "g10-31",
+   "grade": 10,
+   "n": 31,
+   "title": "A Building in Three Representations",
+   "standard": "RI.9-10.7",
+   "combine": [
+    {
+     "para": "H",
+     "from": [
+      "So the three are used in a sequence matching their strengths.",
+      "The render sells the idea.",
+      "The model gets the permission.",
+      "The drawing builds the thing.",
+      "A disappointed occupant usually saw only the first."
+     ],
+     "to": [
+      "So the three are used in a sequence that matches their strengths.",
+      "The render sells the idea, the model gets the permission, and the drawing builds the thing, and a disappointed occupant is usually someone who was shown only the first."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The drawing is the legal and constructive document.",
+      "It is dimensioned and to scale.",
+      "A contractor builds from it.",
+      "Anything not drawn will not be built, and any error in it becomes a wall in the wrong place."
+     ],
+     "to": [
+      "The drawing is the legal and constructive document.",
+      "It is dimensioned, it is to scale, and a contractor builds from it, which means that anything not drawn is not going to be built and any error in it becomes a wall in the wrong place."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "A contractor builds from it."
+  },
+  {
+   "id": "g10-32",
+   "grade": 10,
+   "n": 32,
+   "title": "A War in Photographs and Statistics",
+   "standard": "RI.9-10.7",
+   "combine": [
+    {
+     "para": "H",
+     "from": [
+      "So the honest reading uses each for what it establishes.",
+      "The photograph shows that something occurred and is poor evidence of how common.",
+      "The number is the reverse.",
+      "A reader with one of them has half the account."
+     ],
+     "to": [
+      "So the honest reading uses each for what it establishes.",
+      "The photograph is evidence that something occurred and poor evidence of how common it was, and the number is the reverse, and a reader with only one of them has half the account."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A conflict is described by photographs and by numbers.",
+      "The two accounts differ so much in what they can carry that they are often read as contradicting each other when they do not."
+     ],
+     "to": [
+      "A conflict is described by photographs and by numbers, and the two accounts are so different in what they can carry that they are frequently read as contradicting each other when they do not."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It cannot establish how often."
+  },
+  {
+   "id": "g10-33",
+   "grade": 10,
+   "n": 33,
+   "title": "A Protein in Three Forms",
+   "standard": "RI.9-10.7",
+   "combine": [
+    {
+     "para": "H",
+     "from": [
+      "So confidence runs opposite to vividness.",
+      "The sequence is most certain and least illuminating.",
+      "The animation is most illuminating and least constrained.",
+      "The structure sits between.",
+      "That is why all three are published together."
+     ],
+     "to": [
+      "So confidence runs opposite to vividness.",
+      "The sequence is most certain and least illuminating, the animation is most illuminating and least constrained, and the structure sits between them, which is why all three are published together."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The sequence is the most compact and most certain.",
+      "It is a string of letters for amino acids in order.",
+      "It can be stored and searched.",
+      "Comparing sequences reveals relationships between organisms nothing else shows as cheaply."
+     ],
+     "to": [
+      "The sequence is the most compact and the most certain.",
+      "It is a string of letters representing amino acids in order, it can be stored and searched, and comparing two sequences reveals relationships between organisms that nothing else shows as cheaply."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The structure sits between."
+  },
+  {
+   "id": "g10-34",
+   "grade": 10,
+   "n": 34,
+   "title": "An Economy in Three Accounts",
+   "standard": "RI.9-10.7",
+   "combine": [
+    {
+     "para": "H",
+     "from": [
+      "So the useful arrangement is all three in a known order.",
+      "The aggregate says how much.",
+      "The chart says in what pattern.",
+      "The account says what it consists of.",
+      "Each misleads predictably when it appears alone."
+     ],
+     "to": [
+      "So the useful arrangement is all three in a known order.",
+      "The aggregate says how much, the chart says in what pattern, the account says what it consists of, and each of them is misleading in a predictable way when it appears alone."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "A chart's design decisions are substantial.",
+      "The period chosen decides what counts as normal.",
+      "The axis decides how large a change looks.",
+      "Showing a figure per person or in total can reverse the direction of the line."
+     ],
+     "to": [
+      "A chart's design decisions are substantial.",
+      "The period chosen determines what counts as normal, the axis determines how large a change looks, and whether a figure is shown per person or in total can reverse the direction of the line."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The aggregate says how much."
+  },
+  {
+   "id": "g10-35",
+   "grade": 10,
+   "n": 35,
+   "title": "A Species as Specimen, Photograph and Recording",
+   "standard": "RI.9-10.7",
+   "combine": [
+    {
+     "para": "H",
+     "from": [
+      "So the three divide along a clear line.",
+      "The specimen holds structure permanently.",
+      "The photograph holds appearance at a moment.",
+      "The recording holds behaviour.",
+      "A description with only the first cannot separate species a listener tells apart in a field."
+     ],
+     "to": [
+      "So the three divide along a clear line.",
+      "The specimen holds structure permanently, the photograph holds appearance at a moment, the recording holds behaviour, and a description with only the first is unable to distinguish species that a listener can tell apart in a field."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A newly described animal is documented in three ways at once.",
+      "Each answers a question the others cannot.",
+      "That is why a modern description includes all of them where it can."
+     ],
+     "to": [
+      "A newly described animal is documented in three ways at once, and each of the three answers a question the others cannot answer at all, which is why a modern description includes all of them wherever the describing team is able to."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "F",
+     "kernel": "A photograph is taken by someone who decided what mattered, from where they could stand.",
+     "expanded": "A photograph is taken by someone who decided what mattered, from where they could stand, and the feature a later researcher wants is frequently just outside the frame."
+    }
+   ],
+   "stem": "The recording holds behaviour."
+  },
+  {
+   "id": "g10-36",
+   "grade": 10,
+   "n": 36,
+   "title": "Survivorship Bias",
+   "standard": "RI.9-10.8",
+   "combine": [
+    {
+     "para": "G",
+     "from": [
+      "Spotting it in a new case means asking one question before looking at figures.",
+      "What would have had to happen for a case to be absent from this data?",
+      "Is that thing related to what is being measured?"
+     ],
+     "to": [
+      "Identifying it in a new case requires asking a particular question before looking at any figures: what would have had to happen for a case to be absent from this data, and is that thing related to what is being measured?"
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A study of successful companies finds the habits they share and recommends those habits.",
+      "The reasoning looks unimpeachable.",
+      "The data are real, the habits were measured, and the companies did succeed."
+     ],
+     "to": [
+      "A study of successful companies identifies the habits they share and recommends those habits to everybody else.",
+      "The reasoning seems unimpeachable at first reading: the data are real, the habits were measured carefully, and the companies in question did in fact succeed."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The reasoning looks unimpeachable."
+  },
+  {
+   "id": "g10-37",
+   "grade": 10,
+   "n": 37,
+   "title": "The Appeal to Consequences",
+   "standard": "RI.9-10.8",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "It appears in both directions.",
+      "If this result holds, decades of work were wasted.",
+      "If this result holds, our approach is vindicated.",
+      "Same move.",
+      "The second is challenged less, because the people making it are pleased."
+     ],
+     "to": [
+      "It appears in both directions.",
+      "If this result holds, decades of work were wasted, and if this result holds, our approach is vindicated, are the same move, and the second is less often challenged because the people making it are pleased."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "The distinction is between implying something false and implying something unwelcome.",
+      "The first is a logical relation.",
+      "The second is an assessment of consequences.",
+      "An argument slides between them because both begin the same way."
+     ],
+     "to": [
+      "The distinction is between implying something false and implying something unwelcome.",
+      "The first is a logical relation and the second is an assessment of consequences, and an argument slides between them easily because both begin the same way."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It appears in both directions."
+  },
+  {
+   "id": "g10-38",
+   "grade": 10,
+   "n": 38,
+   "title": "The Pattern Drawn Afterwards",
+   "standard": "RI.9-10.8",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "A study measures many things and reports the one that came out striking.",
+      "Nothing was fabricated.",
+      "The measurement was real.",
+      "The conclusion is still unreliable in a way the paper alone cannot show."
+     ],
+     "to": [
+      "A study measures many things at once and reports the one that came out striking.",
+      "Nothing has been fabricated, every measurement was really taken, and the conclusion is still unreliable in a way that cannot be detected by reading the paper alone."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "A paper reporting that one comparison has reported a true measurement.",
+      "It has not reported how many others were made.",
+      "Without that number a reader cannot tell a finding from a lottery result."
+     ],
+     "to": [
+      "A paper reporting that one comparison has reported a true measurement.",
+      "What it has not reported is how many others were made, and without that number a reader cannot tell a finding from a lottery result."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "E",
+     "kernel": "A treatment with no overall effect may show one in men over sixty.",
+     "expanded": "A treatment showing no overall effect may show one in men over sixty, and if twelve subgroups were examined the appearance of one such result is what chance alone predicts."
+    },
+    {
+     "para": "F",
+     "kernel": "It is to state in advance which comparison is the main one, and treat the rest as questions for a later study.",
+     "expanded": "It is to state in advance which comparison is the main one, and to treat everything else as a question for a later study rather than as a finding."
+    }
+   ],
+   "stem": "The measurement was real."
+  },
+  {
+   "id": "g10-39",
+   "grade": 10,
+   "n": 39,
+   "title": "The Slippery Slope",
+   "standard": "RI.9-10.8",
+   "combine": [
+    {
+     "para": "H",
+     "from": [
+      "So the assessment must be specific.",
+      "Name the steps.",
+      "Ask what evidence supports each transition.",
+      "Ask what would prevent it.",
+      "An argument that cannot answer those about step two has not earned step seven."
+     ],
+     "to": [
+      "So the assessment has to be specific.",
+      "Name the steps, ask what evidence supports each transition, and ask what would prevent it, and an argument that cannot answer those about step two has not earned step seven."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The form is not automatically fallacious, which makes it difficult.",
+      "Some chains are real.",
+      "Institutions do set precedents.",
+      "An argument that a measure will be extended is sometimes a correct prediction with evidence behind it."
+     ],
+     "to": [
+      "The form is not automatically fallacious, which is why it is difficult.",
+      "Some chains are real, institutions do set precedents, and an argument that a measure will be extended is sometimes a correct prediction with evidence behind it."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Some chains are real."
+  },
+  {
+   "id": "g10-40",
+   "grade": 10,
+   "n": 40,
+   "title": "Absence of Evidence",
+   "standard": "RI.9-10.8",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "A search finds nothing, and two opposite conclusions are drawn from the same result.",
+      "One side says this shows the thing does not exist.",
+      "The other says it shows nothing.",
+      "Both are sometimes right."
+     ],
+     "to": [
+      "A search finds nothing, and two opposite conclusions are drawn from the same result.",
+      "One side says this shows the thing does not exist, the other says this shows nothing at all, and both are sometimes right."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "A search that would certainly have detected the thing, and did not, is strong evidence that it is not there.",
+      "That is an ordinary, sound inference.",
+      "It is what a negative medical test is for."
+     ],
+     "to": [
+      "A search that would certainly have detected the thing, and did not, is strong evidence that the thing is not there.",
+      "That is an ordinary and sound inference, and it is what a negative medical test is for."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "H",
+     "kernel": "The slogan survives because it corrects one specific error.",
+     "expanded": "The slogan survives because it is a useful correction to one specific error."
+    }
+   ],
+   "stem": "Both are sometimes right."
+  },
+  {
+   "id": "g10-41",
+   "grade": 10,
+   "n": 41,
+   "title": "The Preamble to the Constitution",
+   "standard": "RI.9-10.9",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "The purposes that follow are a list of six, and the order is not random.",
+      "A more perfect union comes first.",
+      "Justice and domestic tranquillity next.",
+      "The common defence after that.",
+      "The general welfare and liberty last."
+     ],
+     "to": [
+      "The purposes that follow are a list of six, and they are not in a random order.",
+      "A more perfect union comes first, justice and domestic tranquillity next, the common defence after that, and the general welfare and liberty last."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "That change was partly practical.",
+      "The document would take effect when nine states ratified.",
+      "Naming thirteen would have been inaccurate the moment it was signed.",
+      "The general formulation avoided the problem."
+     ],
+     "to": [
+      "That change was partly practical.",
+      "The document would take effect when nine states ratified, so naming thirteen would have been inaccurate the moment it was signed, and the general formulation avoided the problem."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "That change was partly practical."
+  },
+  {
+   "id": "g10-42",
+   "grade": 10,
+   "n": 42,
+   "title": "Federalist Number Ten",
+   "standard": "RI.9-10.9",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "The solution inverts the received view entirely.",
+      "In a large republic there are more interests.",
+      "A majority is harder to assemble.",
+      "Any majority that forms must be built from groups agreeing about less."
+     ],
+     "to": [
+      "The solution is where the essay inverts the received view entirely.",
+      "In a large republic there are more interests, so a majority is harder to assemble, and any majority that forms must be built from groups that agree about less."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "The Federalist papers were written to persuade New York to ratify the Constitution.",
+      "They are advocacy, published under a pseudonym.",
+      "The tenth is the most studied because it answers the other side's strongest objection."
+     ],
+     "to": [
+      "The Federalist papers were written to persuade New York to ratify the Constitution.",
+      "They are advocacy, published under a pseudonym, and the tenth of them is the most studied because it answers the strongest objection the other side had."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "That objection came from accepted theory."
+  },
+  {
+   "id": "g10-43",
+   "grade": 10,
+   "n": 43,
+   "title": "The Bill of Rights",
+   "standard": "RI.9-10.9",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "Several states ratified the Constitution only on the understanding that amendments protecting individual rights would follow.",
+      "Without that understanding the document would probably not have been adopted.",
+      "The amendments are part of the price of ratification."
+     ],
+     "to": [
+      "Several states had ratified the Constitution only on the understanding that amendments protecting individual rights would follow.",
+      "Without that understanding the document would probably not have been adopted, and the amendments are therefore part of the price of ratification."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "The argument against them was not that rights do not matter.",
+      "Hamilton argued in Federalist 84 that a list would be dangerous.",
+      "Naming some rights implies the ones not named were not protected."
+     ],
+     "to": [
+      "The argument against them was not that rights do not matter.",
+      "Hamilton argued in Federalist 84 that a list would be dangerous, because enumerating some rights implies that the ones not listed were not protected."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It was written to answer an argument."
+  },
+  {
+   "id": "g10-44",
+   "grade": 10,
+   "n": 44,
+   "title": "Lincoln's Second Inaugural",
+   "standard": "RI.9-10.9",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "It then names the cause of the war directly, which the first inaugural had not.",
+      "Slavery is identified as the interest over which the parties divided.",
+      "The sentence is built so no reader can take it otherwise."
+     ],
+     "to": [
+      "It then names the cause of the war directly, which the first inaugural had not.",
+      "Slavery is identified as the interest over which the parties divided, and the sentence is constructed so that no reader can take it as referring to anything else."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "The passage then declines to resolve the symmetry in his own favour.",
+      "Lincoln says the prayers of neither have been fully answered, and that the Almighty has his own purposes.",
+      "That refuses divine endorsement when it was available."
+     ],
+     "to": [
+      "The passage then declines to resolve the symmetry in his own favour.",
+      "Lincoln says that the prayers of neither have been answered fully, and that the Almighty has his own purposes, which is a refusal to claim divine endorsement at a moment when it was available."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The symmetry does deliberate work."
+  },
+  {
+   "id": "g10-45",
+   "grade": 10,
+   "n": 45,
+   "title": "What the Emancipation Proclamation Did",
+   "standard": "RI.9-10.9",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "It also changed who could fight.",
+      "The proclamation authorised enlisting Black soldiers in the United States forces.",
+      "Roughly two hundred thousand served.",
+      "That altered the manpower position and the meaning of the war at once."
+     ],
+     "to": [
+      "It also changed who could fight.",
+      "The proclamation authorised the enlistment of Black soldiers in the United States forces, and roughly two hundred thousand served, which altered the manpower position and the meaning of the war simultaneously."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "The Emancipation Proclamation took effect on the first of January, 1863.",
+      "It is among the most famous documents in American history and among the most misdescribed.",
+      "What it did and what it is remembered for are not the same."
+     ],
+     "to": [
+      "The Emancipation Proclamation took effect on the first of January, 1863, in the middle of a war whose outcome was not yet decided.",
+      "It is among the most famous documents in American history and among the most frequently misdescribed, because what it actually did and what it is remembered for are not the same thing."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It did not abolish slavery."
+  },
+  {
+   "id": "g10-46",
+   "grade": 10,
+   "n": 46,
+   "title": "The Eclipse That Tested a Theory",
+   "standard": "RI.9-10.10",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The prediction was testable only in one circumstance.",
+      "The sun's light drowns the stars beside it.",
+      "They can only be photographed during a total eclipse, and a shift measured only by comparing that photograph with one taken months later."
+     ],
+     "to": [
+      "The prediction was testable only under one circumstance.",
+      "The sun's own light drowns the stars beside it, so the only way to photograph them is during a total eclipse, and the only way to measure a shift is to compare that photograph with one of the same stars months later."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "The measurement is extremely difficult and the numbers are tiny.",
+      "The expected shift is a fraction of a second of arc.",
+      "It required photographic plates compared with instruments working close to their limits."
+     ],
+     "to": [
+      "The measurement is extremely difficult and the numbers involved are tiny.",
+      "The expected shift is a fraction of a second of arc, which required photographic plates compared with instruments operating close to their limits."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The conditions were poor."
+  },
+  {
+   "id": "g10-47",
+   "grade": 10,
+   "n": 47,
+   "title": "The Manuscripts of Timbuktu",
+   "standard": "RI.9-10.10",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "Their physical condition is the permanent problem.",
+      "The climate is hostile to paper.",
+      "Insects are a continuous threat.",
+      "A manuscript that survived four hundred years in a chest may not survive being moved, opened or photographed."
+     ],
+     "to": [
+      "Their physical condition is the permanent problem.",
+      "The climate is hostile to paper, insects are a continuous threat, and a manuscript that has survived four hundred years in a chest may not survive being moved, opened or photographed."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "Those manuscripts contradict a claim once widely made.",
+      "Written scholarship in West Africa before European contact was frequently denied.",
+      "The denial survived partly because the evidence sat in private family collections rather than public institutions."
+     ],
+     "to": [
+      "The existence of those manuscripts contradicts a claim that was once widely made.",
+      "Written scholarship in West Africa before European contact was frequently denied, and the denial survived partly because the evidence was held in private family collections rather than in public institutions."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "A",
+     "kernel": "Timbuktu, in present-day Mali, was a centre of scholarship for several centuries.",
+     "expanded": "Timbuktu, in present-day Mali, was a centre of scholarship for several centuries, with universities and a trade in books."
+    }
+   ],
+   "stem": "Insects are a continuous threat."
+  },
+  {
+   "id": "g10-48",
+   "grade": 10,
+   "n": 48,
+   "title": "The Island That Rose From the Sea",
+   "standard": "RI.9-10.10",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "The arrivals were recorded in order, which is the whole value of the exercise.",
+      "Bacteria and fungi came early.",
+      "The first vascular plant was found in 1965.",
+      "Mosses followed.",
+      "Lichens appeared several years later."
+     ],
+     "to": [
+      "The arrivals were recorded in order, which is the entire value of the exercise.",
+      "Bacteria and fungi were present early, the first vascular plant was found in 1965, mosses followed, and lichens appeared several years after that."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "Iceland protected it almost immediately.",
+      "Landing is restricted to a few researchers.",
+      "Nothing may be brought ashore that could introduce an organism.",
+      "The island has been surveyed on a schedule ever since."
+     ],
+     "to": [
+      "Iceland protected it almost immediately.",
+      "Landing is restricted to a small number of researchers, nothing may be brought ashore that could introduce an organism, and the island has been surveyed on a schedule ever since."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "A",
+     "kernel": "In November 1963 a volcanic eruption began on the sea floor south of Iceland and continued for more than three years.",
+     "expanded": "In November 1963 a volcanic eruption began on the sea floor south of Iceland, was first noticed by the crew of a fishing boat, and continued for more than three years."
+    },
+    {
+     "para": "A",
+     "kernel": "What emerged was a new island, named Surtsey, of about two and a half square kilometres.",
+     "expanded": "What emerged from it was an entirely new island, named Surtsey, covering about two and a half square kilometres at its largest."
+    }
+   ],
+   "stem": "Iceland protected it almost immediately."
+  },
+  {
+   "id": "g10-49",
+   "grade": 10,
+   "n": 49,
+   "title": "The Village That Shut Its Gates",
+   "standard": "RI.9-10.10",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The account rests on sources of very different quality.",
+      "Parish burial registers are contemporary and reliable.",
+      "The narrative of a collective decision rests substantially on accounts written considerably later."
+     ],
+     "to": [
+      "The account rests on a mixture of sources of very different quality.",
+      "Parish burial registers are contemporary and reliable; the narrative of a collective decision rests substantially on accounts written considerably later."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "That distinction matters because the two support different claims.",
+      "The registers establish who died and when, with dates.",
+      "The later accounts establish what people in the next century believed about why."
+     ],
+     "to": [
+      "That distinction matters because the two support different claims.",
+      "The registers establish who died and when, with dates, and the later accounts establish what people in the following century believed about why."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "A",
+     "kernel": "Over the following fourteen months a substantial proportion of the inhabitants died.",
+     "expanded": "Over the following fourteen months a substantial proportion of the inhabitants died, in a community small enough that the dead were known individually to everyone left."
+    },
+    {
+     "para": "E",
+     "kernel": "Burial dates, combined with surviving household records, allow transmission within the village to be studied with unusual precision.",
+     "expanded": "The burial dates, combined with surviving records of which households stood where and who lived in them, allow transmission within the village to be reconstructed with unusual precision."
+    },
+    {
+     "para": "E",
+     "kernel": "Historians have used the registers for something the villagers cannot have intended.",
+     "expanded": "Historians have used the registers for something the villagers could not have intended and would not have recognised as a use."
+    }
+   ],
+   "stem": "Mortality varied enormously between households."
+  },
+  {
+   "id": "g10-50",
+   "grade": 10,
+   "n": 50,
+   "title": "The Signal That Came From a Microwave",
+   "standard": "RI.9-10.10",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The strange ones were given their own name, perytons.",
+      "They appeared at roughly the right frequencies.",
+      "They were short.",
+      "They looked enough like the real signals that telling them apart was not immediately possible."
+     ],
+     "to": [
+      "The strange ones were given their own name, perytons.",
+      "They appeared at roughly the right frequencies, they were short, and they looked enough like the real signals that distinguishing them was not immediately possible."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "Radio telescopes at Parkes in Australia had been recording occasional bursts of radio energy lasting milliseconds.",
+      "Some were genuinely astronomical.",
+      "Some belonged to a second category that behaved strangely."
+     ],
+     "to": [
+      "Radio telescopes at Parkes in Australia had for some years been recording occasional bursts of radio energy lasting only milliseconds.",
+      "Some of them were genuinely astronomical and are now an established field of study, and some belonged to a second category that behaved strangely from the beginning."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Some were genuinely astronomical."
   }
  ]
 }

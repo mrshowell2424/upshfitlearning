@@ -143,6 +143,20 @@ const BY_HAND = {
   "The Trial in Three Media": "civics",
   "The Study That Could Not Have Shown That": "books",
   "Moving the Goalposts": "books",
+  // Grade 10. Twelve of the fifty, and the pattern has not changed since
+  // grade 7: method, evidence and how documents work.
+  "How a Drug Is Shown to Work": "body",
+  "How an Outbreak Is Investigated": "body",
+  "What a Statistician Means by Random": "books",
+  "The Caveats at the End of a Model": "books",
+  "The Budget Speech": "civics",
+  "How a Risk Is Communicated": "body",
+  "The Recruitment Campaign": "civics",
+  "Survivorship Bias": "books",
+  "The Pattern Drawn Afterwards": "books",
+  "Federalist Number Ten": "civics",
+  "The Manuscripts of Timbuktu": "books",
+  "The Village That Shut Its Gates": "body",      // plague, and how it spread
 };
 
 const pats = Object.fromEntries(
