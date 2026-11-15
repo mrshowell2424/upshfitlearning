@@ -1,6 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { judge, wrotePattern } from "@/app/spelling/dictation";
-import { spanOf } from "../../scripts/lib/spelling-span.mjs";
+import { judgeSpelling, wrotePattern, spanOf } from "../../scripts/lib/spelling-span.mjs";
 
 /**
  * The one piece of real logic in the dictation tool.
@@ -25,7 +24,7 @@ import { spanOf } from "../../scripts/lib/spelling-span.mjs";
  */
 
 function verdict(word: string, part: string, typed: string) {
-  return judge(word, part, typed).kind;
+  return judgeSpelling(word, part, typed);
 }
 
 describe("wrotePattern", () => {
