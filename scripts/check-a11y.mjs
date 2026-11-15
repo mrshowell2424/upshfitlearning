@@ -46,6 +46,7 @@ const ALL_ROUTES = [
   "/", "/about", "/behavior", "/behavior/year", "/courses", "/pricing",
   "/sentence-lab", "/morphology", "/morphology/print",
   "/writing", "/writing/print",
+  "/spelling", "/spelling?view=student", "/spelling/print",
   "/science-of-reading", "/science-of-reading/threads",
   "/science-of-reading/resources",
   "/fluency", "/fluency/play", "/fluency/play?view=student", "/fluency/print",

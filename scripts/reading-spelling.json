@@ -1,0 +1,11743 @@
+{
+ "_note": "Dictation built from the word banks in reading-part-words.json. Each word carries the span of the lesson inside it, so a wrong spelling can be told apart from a wrong lesson. Sentences are the hand-written ones where they exist and the pattern's own passage otherwise. Built by scripts/build-spelling.mjs, checked by scripts/check-spelling.mjs.",
+ "_omitted": "The fake words are not here: they are a reading task, and there is no defensible way to mark a dictated nonsense word. Nothing here says a word is irregular, because that cannot be read off a spelling.",
+ "patterns": [
+  {
+   "key": "ai-ay",
+   "parts": [
+    {
+     "part": "ai",
+     "words": [
+      {
+       "word": "rain",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "train",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "paint",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "mail",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "wait",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "chain",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "brain",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "trail",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "afraid",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "explain",
+       "span": [
+        4,
+        6
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ay",
+     "words": [
+      {
+       "word": "play",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "stay",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "day",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "tray",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "gray",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "say",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "way",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "clay",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "spray",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "today",
+       "span": [
+        3,
+        5
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "ai",
+    "ay"
+   ],
+   "sentence": {
+    "text": "I will paint the gray tray today.",
+    "words": 7,
+    "carries": [
+     "paint",
+     "tray",
+     "gray",
+     "today"
+    ],
+    "source": "written for dictation"
+   }
+  },
+  {
+   "key": "ar-or",
+   "parts": [
+    {
+     "part": "ar",
+     "words": [
+      {
+       "word": "car",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "star",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "farm",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "hard",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "park",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "yard",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "dark",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "sharp",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "start",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "barn",
+       "span": [
+        1,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "part": "or",
+     "words": [
+      {
+       "word": "corn",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "fork",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "horn",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "born",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "short",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "storm",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "north",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "sport",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "horse",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "forty",
+       "span": [
+        1,
+        3
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "ar",
+    "or"
+   ],
+   "sentence": {
+    "text": "Park the car by the short barn door.",
+    "words": 8,
+    "carries": [
+     "car",
+     "park",
+     "barn",
+     "short"
+    ],
+    "source": "written for dictation"
+   }
+  },
+  {
+   "key": "blends",
+   "parts": [
+    {
+     "part": "cl",
+     "words": [
+      {
+       "word": "clap",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "club",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "clip",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "class",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "clock",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "cliff",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "climb",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "clean",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "close",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "cloud",
+       "span": [
+        0,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "part": "fl",
+     "words": [
+      {
+       "word": "flag",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "flat",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "flip",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "flop",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "floss",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "flash",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "float",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "flute",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "flame",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "floor",
+       "span": [
+        0,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "part": "st",
+     "words": [
+      {
+       "word": "stop",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "step",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "stick",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "star",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "stand",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "stamp",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "still",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "storm",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "stone",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "street",
+       "span": [
+        0,
+        2
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "cl",
+    "fl",
+    "st"
+   ],
+   "sentence": {
+    "text": "We clap for the best flag.",
+    "words": 6,
+    "carries": [
+     "clap",
+     "flag"
+    ],
+    "source": "written for dictation"
+   }
+  },
+  {
+   "key": "ck-tch",
+   "parts": [
+    {
+     "part": "ck",
+     "words": [
+      {
+       "word": "duck",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "back",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "sock",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "neck",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "rock",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "kick",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "lock",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "stick",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "truck",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "black",
+       "span": [
+        3,
+        5
+       ]
+      }
+     ]
+    },
+    {
+     "part": "tch",
+     "words": [
+      {
+       "word": "catch",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "match",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "watch",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "pitch",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "witch",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "fetch",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "stretch",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "ditch",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "hatch",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "scratch",
+       "span": [
+        4,
+        7
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "ck",
+    "tch"
+   ],
+   "sentence": {
+    "text": "Flick the switch and pick a match.",
+    "words": 7,
+    "carries": [
+     "match"
+    ],
+    "source": "written for dictation"
+   }
+  },
+  {
+   "key": "cvc-mix",
+   "parts": [
+    {
+     "part": "e",
+     "words": [
+      {
+       "word": "bed",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "net",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "hen",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "leg",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "pet",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "wet",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "men",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "ten",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "jet",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "red",
+       "span": [
+        1,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "part": "i",
+     "words": [
+      {
+       "word": "pig",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "fin",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "lip",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "zip",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "hit",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "bit",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "win",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "dig",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "rib",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "mix",
+       "span": [
+        1,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "part": "o",
+     "words": [
+      {
+       "word": "hop",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "dot",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "mop",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "log",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "cot",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "job",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "nod",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "rob",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "top",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "fog",
+       "span": [
+        1,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "part": "u",
+     "words": [
+      {
+       "word": "bug",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "cub",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "mud",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "run",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "cup",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "sun",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "hug",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "tub",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "nut",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "gum",
+       "span": [
+        1,
+        2
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "i",
+    "o",
+    "u",
+    "e"
+   ],
+   "sentence": {
+    "text": "The pig can hop to the bed.",
+    "words": 7,
+    "carries": [
+     "bed",
+     "pig",
+     "hop"
+    ],
+    "source": "written for dictation"
+   }
+  },
+  {
+   "key": "dig",
+   "parts": [
+    {
+     "part": "ch",
+     "words": [
+      {
+       "word": "chin",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "chat",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "chop",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "much",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "such",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "chip",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "rich",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "lunch",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "bench",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "chest",
+       "span": [
+        0,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "part": "sh",
+     "words": [
+      {
+       "word": "ship",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "shop",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "fish",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "dish",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "shut",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "wish",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "cash",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "rush",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "shed",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "shell",
+       "span": [
+        0,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "part": "th",
+     "words": [
+      {
+       "word": "thin",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "path",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "bath",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "math",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "with",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "moth",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "that",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "them",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "this",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "thud",
+       "span": [
+        0,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "part": "wh",
+     "words": [
+      {
+       "word": "when",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "what",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "whip",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "white",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "whale",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "wheel",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "which",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "while",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "whisk",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "whiff",
+       "span": [
+        0,
+        2
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "sh",
+    "ch",
+    "th",
+    "wh"
+   ],
+   "sentence": {
+    "text": "When will the ship stop at the shop?",
+    "words": 8,
+    "carries": [
+     "ship",
+     "shop",
+     "when"
+    ],
+    "source": "written for dictation"
+   }
+  },
+  {
+   "key": "ee-ea",
+   "parts": [
+    {
+     "part": "ea",
+     "words": [
+      {
+       "word": "eat",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "read",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "team",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "beach",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "dream",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "clean",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "leaf",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "speak",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "teach",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "peach",
+       "span": [
+        1,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ee",
+     "words": [
+      {
+       "word": "feet",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "tree",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "green",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "sleep",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "three",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "week",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "sweet",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "queen",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "street",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "sheep",
+       "span": [
+        2,
+        4
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "ee",
+    "ea"
+   ],
+   "sentence": {
+    "text": "My team will read and clean each week.",
+    "words": 8,
+    "carries": [
+     "read",
+     "team",
+     "clean",
+     "week"
+    ],
+    "source": "written for dictation"
+   }
+  },
+  {
+   "key": "floss",
+   "parts": [
+    {
+     "part": "ff",
+     "words": [
+      {
+       "word": "off",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "puff",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "cuff",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "stuff",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "sniff",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "cliff",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "staff",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "huff",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "stiff",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "fluff",
+       "span": [
+        3,
+        5
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ll",
+     "words": [
+      {
+       "word": "bell",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "tell",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "fell",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "hill",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "will",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "doll",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "pull",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "shell",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "spell",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "small",
+       "span": [
+        3,
+        5
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ss",
+     "words": [
+      {
+       "word": "miss",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "kiss",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "mess",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "less",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "pass",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "glass",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "class",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "dress",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "grass",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "press",
+       "span": [
+        3,
+        5
+       ]
+      }
+     ]
+    },
+    {
+     "part": "zz",
+     "words": [
+      {
+       "word": "buzz",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "fizz",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "jazz",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "fuzz",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "frizz",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "whizz",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "razz",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "fizzy",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "fuzzy",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "dizzy",
+       "span": [
+        2,
+        4
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "ff",
+    "ll",
+    "ss",
+    "zz"
+   ],
+   "sentence": {
+    "text": "Bill will puff and the bell will buzz.",
+    "words": 8,
+    "carries": [
+     "puff",
+     "bell",
+     "will",
+     "buzz"
+    ],
+    "source": "written for dictation"
+   }
+  },
+  {
+   "key": "ng-nk",
+   "parts": [
+    {
+     "part": "ng",
+     "words": [
+      {
+       "word": "sing",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "ring",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "long",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "king",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "song",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "bring",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "wing",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "string",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "strong",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "thing",
+       "span": [
+        3,
+        5
+       ]
+      }
+     ]
+    },
+    {
+     "part": "nk",
+     "words": [
+      {
+       "word": "bank",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "pink",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "sink",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "think",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "drink",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "thank",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "trunk",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "blank",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "skunk",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "wink",
+       "span": [
+        2,
+        4
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "ng",
+    "nk"
+   ],
+   "sentence": {
+    "text": "The strong king will sing and think.",
+    "words": 7,
+    "carries": [
+     "sing",
+     "king",
+     "strong",
+     "think"
+    ],
+    "source": "written for dictation"
+   }
+  },
+  {
+   "key": "oa-ow",
+   "parts": [
+    {
+     "part": "oa",
+     "words": [
+      {
+       "word": "boat",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "coat",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "road",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "soap",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "goat",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "toast",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "float",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "coast",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "throat",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "roast",
+       "span": [
+        1,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ow",
+     "words": [
+      {
+       "word": "snow",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "show",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "grow",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "slow",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "blow",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "throw",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "yellow",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "window",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "pillow",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "follow",
+       "span": [
+        4,
+        6
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "oa",
+    "ow"
+   ],
+   "sentence": {
+    "text": "Show me the coat and the bowl of oats.",
+    "words": 9,
+    "carries": [
+     "coat",
+     "show"
+    ],
+    "source": "written for dictation"
+   }
+  },
+  {
+   "key": "og1-04",
+   "parts": [
+    {
+     "part": "c",
+     "words": [
+      {
+       "word": "cat",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "cup",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "can",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "cot",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "cut",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "cap",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "cob",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "cab",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "camp",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "cast",
+       "span": [
+        0,
+        1
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ck",
+     "words": [
+      {
+       "word": "duck",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "back",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "sock",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "neck",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "rock",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "kick",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "lock",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "pick",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "luck",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "deck",
+       "span": [
+        2,
+        4
+       ]
+      }
+     ]
+    },
+    {
+     "part": "k",
+     "words": [
+      {
+       "word": "kit",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "kid",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "kin",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "kept",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "keg",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "kelp",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "kilt",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "kiss",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "kind",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "kitten",
+       "span": [
+        0,
+        1
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "c",
+    "k",
+    "ck"
+   ],
+   "sentence": {
+    "text": "Nick's duck is called Jack, and Jack has one favourite rock.",
+    "words": 11,
+    "carries": [
+     "duck",
+     "rock"
+    ],
+    "source": "Jack the Duck · 3rd grade"
+   }
+  },
+  {
+   "key": "og1-06",
+   "parts": [
+    {
+     "part": "qu",
+     "words": [
+      {
+       "word": "quit",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "quiz",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "quack",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "queen",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "quick",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "quilt",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "quail",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "quiet",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "quote",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "square",
+       "span": [
+        1,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "part": "x",
+     "words": [
+      {
+       "word": "fox",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "six",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "box",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "mix",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "fix",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "wax",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "tax",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "ox",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "exit",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "next",
+       "span": [
+        2,
+        3
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "x",
+    "qu"
+   ],
+   "sentence": {
+    "text": "A quick bug got in the box.",
+    "words": 7,
+    "carries": [
+     "quick",
+     "box"
+    ],
+    "source": "The Fox in the Box · 2nd grade"
+   }
+  },
+  {
+   "key": "og1-13",
+   "parts": [
+    {
+     "part": "non-",
+     "words": [
+      {
+       "word": "nonstop",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "nonfat",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "nonsense",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "nonfiction",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "nonstick",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "nonliving",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "nonprofit",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "nonverbal",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "nonzero",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "nonmetal",
+       "span": [
+        0,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "part": "un-",
+     "words": [
+      {
+       "word": "unlock",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "unzip",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "undo",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "unfit",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "unpack",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "unplug",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "unsafe",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "untie",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "unwrap",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "unkind",
+       "span": [
+        0,
+        2
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "un-",
+    "non-"
+   ],
+   "sentence": {
+    "text": "It is unfit for a dog, said Ross.",
+    "words": 8,
+    "carries": [
+     "unfit"
+    ],
+    "source": "Unpack the Van · 2nd grade"
+   }
+  },
+  {
+   "key": "og2-06",
+   "parts": [
+    {
+     "part": "ild",
+     "words": [
+      {
+       "word": "child",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "wild",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "mild",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "childish",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "wildcat",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "wildlife",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "mildly",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "childhood",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "grandchild",
+       "span": [
+        7,
+        10
+       ]
+      },
+      {
+       "word": "wildfire",
+       "span": [
+        1,
+        4
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ind",
+     "words": [
+      {
+       "word": "find",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "kind",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "mind",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "behind",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "blind",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "grind",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "remind",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "rewind",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "unkind",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "mankind",
+       "span": [
+        4,
+        7
+       ]
+      }
+     ]
+    },
+    {
+     "part": "old",
+     "words": [
+      {
+       "word": "old",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "cold",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "gold",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "hold",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "told",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "fold",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "bold",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "sold",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "scold",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "golden",
+       "span": [
+        1,
+        4
+       ]
+      }
+     ]
+    },
+    {
+     "part": "oll",
+     "words": [
+      {
+       "word": "roll",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "toll",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "poll",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "stroll",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "scroll",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "troll",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "enroll",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "rolling",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "strolling",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "payroll",
+       "span": [
+        4,
+        7
+       ]
+      }
+     ]
+    },
+    {
+     "part": "olt",
+     "words": [
+      {
+       "word": "bolt",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "colt",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "jolt",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "volt",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "molt",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "revolt",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "unbolt",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "thunderbolt",
+       "span": [
+        8,
+        11
+       ]
+      },
+      {
+       "word": "bolted",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "jolted",
+       "span": [
+        1,
+        4
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ost",
+     "words": [
+      {
+       "word": "most",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "post",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "host",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "ghost",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "almost",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "postcard",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "hostess",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "posted",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "hosting",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "mostly",
+       "span": [
+        1,
+        4
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "ild",
+    "old",
+    "ost",
+    "ind",
+    "oll",
+    "olt"
+   ],
+   "sentence": {
+    "text": "We find it behind the post by the road.",
+    "words": 9,
+    "carries": [
+     "find",
+     "behind",
+     "post"
+    ],
+    "source": "The Gold Colt · 2nd grade"
+   }
+  },
+  {
+   "key": "og2-07",
+   "parts": [
+    {
+     "part": "gh",
+     "words": [
+      {
+       "word": "night",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "light",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "right",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "sight",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "high",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "bright",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "fight",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "might",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "tight",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "sigh",
+       "span": [
+        2,
+        4
+       ]
+      }
+     ]
+    },
+    {
+     "part": "kn",
+     "words": [
+      {
+       "word": "knee",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "knot",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "know",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "knife",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "knock",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "knit",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "knight",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "kneel",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "knob",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "knuckle",
+       "span": [
+        0,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "part": "wr",
+     "words": [
+      {
+       "word": "write",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "wrap",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "wrist",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "wrong",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "wreck",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "wrench",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "wring",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "wrinkle",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "wreath",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "writer",
+       "span": [
+        0,
+        2
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "kn",
+    "wr",
+    "gh"
+   ],
+   "sentence": {
+    "text": "He sits in the light by the window and tries.",
+    "words": 10,
+    "carries": [
+     "light"
+    ],
+    "source": "The Knot in the Night · 2nd grade"
+   }
+  },
+  {
+   "key": "og2-08",
+   "parts": [
+    {
+     "part": "oo",
+     "words": [
+      {
+       "word": "moon",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "book",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "food",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "look",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "soon",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "took",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "room",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "good",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "spoon",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "foot",
+       "span": [
+        1,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ou",
+     "words": [
+      {
+       "word": "out",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "cloud",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "loud",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "found",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "round",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "sound",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "mouse",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "house",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "about",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "shout",
+       "span": [
+        2,
+        4
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ow",
+     "words": [
+      {
+       "word": "cow",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "town",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "now",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "down",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "how",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "brown",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "crowd",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "flower",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "power",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "owl",
+       "span": [
+        0,
+        2
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "oo",
+    "ou",
+    "ow"
+   ],
+   "sentence": {
+    "text": "An owl can look sound but still be hurt.",
+    "words": 9,
+    "carries": [
+     "look",
+     "sound",
+     "owl"
+    ],
+    "source": "The Owl in the Woods · 2nd grade"
+   }
+  },
+  {
+   "key": "og2-11",
+   "parts": [
+    {
+     "part": "-ful",
+     "words": [
+      {
+       "word": "helpful",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "careful",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "playful",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "thankful",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "useful",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "joyful",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "painful",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "hopeful",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "peaceful",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "colorful",
+       "span": [
+        5,
+        8
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-less",
+     "words": [
+      {
+       "word": "hopeless",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "useless",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "careless",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "endless",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "fearless",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "painless",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "restless",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "spotless",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "homeless",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "timeless",
+       "span": [
+        4,
+        8
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-ly",
+     "words": [
+      {
+       "word": "sadly",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "quickly",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "slowly",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "softly",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "kindly",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "badly",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "gladly",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "loudly",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "neatly",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "bravely",
+       "span": [
+        5,
+        7
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-ment",
+     "words": [
+      {
+       "word": "payment",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "movement",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "moment",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "treatment",
+       "span": [
+        5,
+        9
+       ]
+      },
+      {
+       "word": "shipment",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "basement",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "statement",
+       "span": [
+        5,
+        9
+       ]
+      },
+      {
+       "word": "agreement",
+       "span": [
+        5,
+        9
+       ]
+      },
+      {
+       "word": "equipment",
+       "span": [
+        5,
+        9
+       ]
+      },
+      {
+       "word": "argument",
+       "span": [
+        4,
+        8
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-ness",
+     "words": [
+      {
+       "word": "kindness",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "darkness",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "sadness",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "illness",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "sickness",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "weakness",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "softness",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "fitness",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "brightness",
+       "span": [
+        6,
+        10
+       ]
+      },
+      {
+       "word": "happiness",
+       "span": [
+        5,
+        9
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "-ful",
+    "-less",
+    "-ness",
+    "-ment",
+    "-ly"
+   ],
+   "sentence": {
+    "text": "He worked slowly and he worked gladly.",
+    "words": 7,
+    "carries": [
+     "slowly",
+     "gladly"
+    ],
+    "source": "The Helpful List · 2nd grade"
+   }
+  },
+  {
+   "key": "og2-12",
+   "parts": [
+    {
+     "part": "-ed",
+     "words": [
+      {
+       "word": "jumped",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "landed",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "played",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "rested",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "picked",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "walked",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "wanted",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "helped",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "planted",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "asked",
+       "span": [
+        3,
+        5
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-en",
+     "words": [
+      {
+       "word": "broken",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "frozen",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "golden",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "wooden",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "sharpen",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "hidden",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "chosen",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "fallen",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "soften",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "darken",
+       "span": [
+        4,
+        6
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-es",
+     "words": [
+      {
+       "word": "boxes",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "dishes",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "wishes",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "benches",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "foxes",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "buses",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "glasses",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "classes",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "brushes",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "matches",
+       "span": [
+        5,
+        7
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-est",
+     "words": [
+      {
+       "word": "fastest",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "biggest",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "longest",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "tallest",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "smallest",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "hardest",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "softest",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "quickest",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "oldest",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "coldest",
+       "span": [
+        4,
+        7
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-ing",
+     "words": [
+      {
+       "word": "resting",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "jumping",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "playing",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "running",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "singing",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "reading",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "helping",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "landing",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "picking",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "walking",
+       "span": [
+        4,
+        7
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-y",
+     "words": [
+      {
+       "word": "dusty",
+       "span": [
+        4,
+        5
+       ]
+      },
+      {
+       "word": "windy",
+       "span": [
+        4,
+        5
+       ]
+      },
+      {
+       "word": "sunny",
+       "span": [
+        4,
+        5
+       ]
+      },
+      {
+       "word": "rainy",
+       "span": [
+        4,
+        5
+       ]
+      },
+      {
+       "word": "funny",
+       "span": [
+        4,
+        5
+       ]
+      },
+      {
+       "word": "lucky",
+       "span": [
+        4,
+        5
+       ]
+      },
+      {
+       "word": "sleepy",
+       "span": [
+        5,
+        6
+       ]
+      },
+      {
+       "word": "hungry",
+       "span": [
+        5,
+        6
+       ]
+      },
+      {
+       "word": "cloudy",
+       "span": [
+        5,
+        6
+       ]
+      },
+      {
+       "word": "messy",
+       "span": [
+        4,
+        5
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "-ed",
+    "-ing",
+    "-est",
+    "-y",
+    "-en",
+    "-es"
+   ],
+   "sentence": {
+    "text": "Last week our class was running races on the grass.",
+    "words": 10,
+    "carries": [
+     "running"
+    ],
+    "source": "The Fastest Runner · 2nd grade"
+   }
+  },
+  {
+   "key": "og2-13",
+   "parts": [
+    {
+     "part": "mis-",
+     "words": [
+      {
+       "word": "misspell",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "mistake",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "misstep",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "misplace",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "misread",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "misprint",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "misjudge",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "mislead",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "mismatch",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "misuse",
+       "span": [
+        0,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "part": "post-",
+     "words": [
+      {
+       "word": "postgame",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "postpone",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "postcard",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "postscript",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "postwar",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "postdate",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "posttest",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "postmark",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "postseason",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "postnatal",
+       "span": [
+        0,
+        4
+       ]
+      }
+     ]
+    },
+    {
+     "part": "sub-",
+     "words": [
+      {
+       "word": "subway",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "submit",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "subtract",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "subset",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "subsoil",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "subzero",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "submarine",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "subject",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "subfloor",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "subtitle",
+       "span": [
+        0,
+        3
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "mis-",
+    "sub-",
+    "post-"
+   ],
+   "sentence": {
+    "text": "Gran sent me a postcard from the sea.",
+    "words": 8,
+    "carries": [
+     "postcard"
+    ],
+    "source": "The Misplaced Postcard · 2nd grade"
+   }
+  },
+  {
+   "key": "og3-04",
+   "parts": [
+    {
+     "part": "au",
+     "words": [
+      {
+       "word": "author",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "autumn",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "August",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "because",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "sauce",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "haul",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "launch",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "fault",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "applaud",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "pause",
+       "span": [
+        1,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "part": "aw",
+     "words": [
+      {
+       "word": "saw",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "claw",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "draw",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "lawn",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "yawn",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "crawl",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "hawk",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "straw",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "dawn",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "shawl",
+       "span": [
+        2,
+        4
+       ]
+      }
+     ]
+    },
+    {
+     "part": "oi",
+     "words": [
+      {
+       "word": "coin",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "boil",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "soil",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "join",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "point",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "voice",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "spoil",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "choice",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "noise",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "avoid",
+       "span": [
+        2,
+        4
+       ]
+      }
+     ]
+    },
+    {
+     "part": "oy",
+     "words": [
+      {
+       "word": "boy",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "toy",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "joy",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "enjoy",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "royal",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "loyal",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "destroy",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "annoy",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "employ",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "voyage",
+       "span": [
+        1,
+        3
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "oi",
+    "oy",
+    "au",
+    "aw"
+   ],
+   "sentence": {
+    "text": "There was a noise in the attic all the fall.",
+    "words": 10,
+    "carries": [
+     "noise"
+    ],
+    "source": "The Noise in the Attic · 2nd grade"
+   }
+  },
+  {
+   "key": "og3-08",
+   "parts": [
+    {
+     "part": "-ble",
+     "words": [
+      {
+       "word": "table",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "bubble",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "marble",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "humble",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "tumble",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "stable",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "pebble",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "nibble",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "scramble",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "terrible",
+       "span": [
+        5,
+        8
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-cle",
+     "words": [
+      {
+       "word": "circle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "bicycle",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "uncle",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "muscle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "article",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "obstacle",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "miracle",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "particle",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "vehicle",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "icicle",
+       "span": [
+        3,
+        6
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-dle",
+     "words": [
+      {
+       "word": "candle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "handle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "middle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "puddle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "saddle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "bundle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "needle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "riddle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "cradle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "paddle",
+       "span": [
+        3,
+        6
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-gle",
+     "words": [
+      {
+       "word": "jungle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "eagle",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "single",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "giggle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "wiggle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "struggle",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "bugle",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "tangle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "juggle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "mingle",
+       "span": [
+        3,
+        6
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-ple",
+     "words": [
+      {
+       "word": "apple",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "purple",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "simple",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "people",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "couple",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "maple",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "sample",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "staple",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "triple",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "ripple",
+       "span": [
+        3,
+        6
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-tle",
+     "words": [
+      {
+       "word": "turtle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "little",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "bottle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "gentle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "cattle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "title",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "rattle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "settle",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "whistle",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "castle",
+       "span": [
+        3,
+        6
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "-ble",
+    "-cle",
+    "-dle",
+    "-gle",
+    "-ple",
+    "-tle"
+   ],
+   "sentence": {
+    "text": "The table in our kitchen is terrible.",
+    "words": 7,
+    "carries": [
+     "table",
+     "terrible"
+    ],
+    "source": "The Wobbly Table · 2nd grade"
+   }
+  },
+  {
+   "key": "og3-10",
+   "parts": [
+    {
+     "part": "'ll",
+     "words": [
+      {
+       "word": "we'll",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "I'll",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "he'll",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "she'll",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "they'll",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "it'll",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "you'll",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "that'll",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "there'll",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "who'll",
+       "span": [
+        3,
+        6
+       ]
+      }
+     ]
+    },
+    {
+     "part": "'s",
+     "words": [
+      {
+       "word": "it's",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "he's",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "she's",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "that's",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "what's",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "there's",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "let's",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "who's",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "here's",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "everyone's",
+       "span": [
+        8,
+        10
+       ]
+      }
+     ]
+    },
+    {
+     "part": "'ve",
+     "words": [
+      {
+       "word": "I've",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "you've",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "we've",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "they've",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "who've",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "should've",
+       "span": [
+        6,
+        9
+       ]
+      },
+      {
+       "word": "could've",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "would've",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "might've",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "must've",
+       "span": [
+        4,
+        7
+       ]
+      }
+     ]
+    },
+    {
+     "part": "n't",
+     "words": [
+      {
+       "word": "can't",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "don't",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "isn't",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "won't",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "didn't",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "wasn't",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "aren't",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "doesn't",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "couldn't",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "shouldn't",
+       "span": [
+        6,
+        9
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "n't",
+    "'s",
+    "'ll",
+    "'ve"
+   ],
+   "sentence": {
+    "text": "I've tried asking Mum, who won't say.",
+    "words": 7,
+    "carries": [
+     "I've",
+     "won't"
+    ],
+    "source": "She Won't Say Why · 2nd grade"
+   }
+  },
+  {
+   "key": "og3-11",
+   "parts": [
+    {
+     "part": "-sion",
+     "words": [
+      {
+       "word": "vision",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "mansion",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "tension",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "mission",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "session",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "version",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "passion",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "division",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "decision",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "explosion",
+       "span": [
+        5,
+        9
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-tion",
+     "words": [
+      {
+       "word": "action",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "station",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "motion",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "nation",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "fiction",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "caution",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "mention",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "section",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "question",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "direction",
+       "span": [
+        5,
+        9
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "-tion",
+    "-sion"
+   ],
+   "sentence": {
+    "text": "Then the station master came out and said there was a problem with a signal.",
+    "words": 15,
+    "carries": [
+     "station"
+    ],
+    "source": "The Station Question · 2nd grade"
+   }
+  },
+  {
+   "key": "og3-12",
+   "parts": [
+    {
+     "part": "-able",
+     "words": [
+      {
+       "word": "washable",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "fixable",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "readable",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "lovable",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "usable",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "breakable",
+       "span": [
+        5,
+        9
+       ]
+      },
+      {
+       "word": "comfortable",
+       "span": [
+        7,
+        11
+       ]
+      },
+      {
+       "word": "reasonable",
+       "span": [
+        6,
+        10
+       ]
+      },
+      {
+       "word": "valuable",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "enjoyable",
+       "span": [
+        5,
+        9
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-ible",
+     "words": [
+      {
+       "word": "visible",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "possible",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "terrible",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "horrible",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "sensible",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "flexible",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "invisible",
+       "span": [
+        5,
+        9
+       ]
+      },
+      {
+       "word": "incredible",
+       "span": [
+        6,
+        10
+       ]
+      },
+      {
+       "word": "responsible",
+       "span": [
+        7,
+        11
+       ]
+      },
+      {
+       "word": "edible",
+       "span": [
+        2,
+        6
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-ist",
+     "words": [
+      {
+       "word": "artist",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "dentist",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "cyclist",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "tourist",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "pianist",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "florist",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "scientist",
+       "span": [
+        6,
+        9
+       ]
+      },
+      {
+       "word": "novelist",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "journalist",
+       "span": [
+        7,
+        10
+       ]
+      },
+      {
+       "word": "violinist",
+       "span": [
+        6,
+        9
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-ive",
+     "words": [
+      {
+       "word": "active",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "native",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "creative",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "positive",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "massive",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "festive",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "expensive",
+       "span": [
+        6,
+        9
+       ]
+      },
+      {
+       "word": "attractive",
+       "span": [
+        7,
+        10
+       ]
+      },
+      {
+       "word": "sensitive",
+       "span": [
+        6,
+        9
+       ]
+      },
+      {
+       "word": "detective",
+       "span": [
+        6,
+        9
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "-ist",
+    "-able",
+    "-ible",
+    "-ive"
+   ],
+   "sentence": {
+    "text": "There is an artist who works on the corner by the market every Sunday.",
+    "words": 14,
+    "carries": [
+     "artist"
+    ],
+    "source": "The Artist on the Corner · 2nd grade"
+   }
+  },
+  {
+   "key": "og4-01",
+   "parts": [
+    {
+     "part": "form",
+     "words": [
+      {
+       "word": "form",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "inform",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "reform",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "transform",
+       "span": [
+        5,
+        9
+       ]
+      },
+      {
+       "word": "uniform",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "formal",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "format",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "formula",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "performer",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "deformed",
+       "span": [
+        2,
+        6
+       ]
+      }
+     ]
+    },
+    {
+     "part": "port",
+     "words": [
+      {
+       "word": "transport",
+       "span": [
+        5,
+        9
+       ]
+      },
+      {
+       "word": "report",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "export",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "import",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "support",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "portable",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "porter",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "passport",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "airport",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "deport",
+       "span": [
+        2,
+        6
+       ]
+      }
+     ]
+    },
+    {
+     "part": "rupt",
+     "words": [
+      {
+       "word": "erupt",
+       "span": [
+        1,
+        5
+       ]
+      },
+      {
+       "word": "abrupt",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "disrupt",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "corrupt",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "rupture",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "eruption",
+       "span": [
+        1,
+        5
+       ]
+      },
+      {
+       "word": "interrupt",
+       "span": [
+        5,
+        9
+       ]
+      },
+      {
+       "word": "bankrupt",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "disruption",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "abruptly",
+       "span": [
+        2,
+        6
+       ]
+      }
+     ]
+    },
+    {
+     "part": "scrib/script",
+     "words": [
+      {
+       "word": "describe",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "script",
+       "span": [
+        0,
+        6
+       ]
+      },
+      {
+       "word": "prescribe",
+       "span": [
+        3,
+        8
+       ]
+      },
+      {
+       "word": "subscribe",
+       "span": [
+        3,
+        8
+       ]
+      },
+      {
+       "word": "inscribe",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "manuscript",
+       "span": [
+        4,
+        10
+       ]
+      },
+      {
+       "word": "scripture",
+       "span": [
+        0,
+        6
+       ]
+      },
+      {
+       "word": "transcript",
+       "span": [
+        4,
+        10
+       ]
+      },
+      {
+       "word": "description",
+       "span": [
+        2,
+        8
+       ]
+      },
+      {
+       "word": "scribble",
+       "span": [
+        0,
+        5
+       ]
+      }
+     ]
+    },
+    {
+     "part": "tract",
+     "words": [
+      {
+       "word": "tractor",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "attract",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "subtract",
+       "span": [
+        3,
+        8
+       ]
+      },
+      {
+       "word": "extract",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "contract",
+       "span": [
+        3,
+        8
+       ]
+      },
+      {
+       "word": "traction",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "distract",
+       "span": [
+        3,
+        8
+       ]
+      },
+      {
+       "word": "retract",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "tractable",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "protract",
+       "span": [
+        3,
+        8
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "form",
+    "port",
+    "tract",
+    "rupt",
+    "scrib/script"
+   ],
+   "sentence": {
+    "text": "I found a description of the last eruption in a library book.",
+    "words": 12,
+    "carries": [
+     "eruption",
+     "description"
+    ],
+    "source": "The Report on the Volcano · 2nd grade"
+   }
+  },
+  {
+   "key": "og4-02",
+   "parts": [
+    {
+     "part": "flect/flex",
+     "words": [
+      {
+       "word": "reflect",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "deflect",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "flexible",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "reflection",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "inflect",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "flexed",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "reflex",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "inflexible",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "deflection",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "flexibility",
+       "span": [
+        0,
+        4
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ject",
+     "words": [
+      {
+       "word": "project",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "reject",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "inject",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "eject",
+       "span": [
+        1,
+        5
+       ]
+      },
+      {
+       "word": "object",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "subject",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "injection",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "projector",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "rejection",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "objection",
+       "span": [
+        2,
+        6
+       ]
+      }
+     ]
+    },
+    {
+     "part": "mit/miss",
+     "words": [
+      {
+       "word": "mission",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "submit",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "permit",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "transmit",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "admit",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "missile",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "dismiss",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "permission",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "admission",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "omit",
+       "span": [
+        1,
+        4
+       ]
+      }
+     ]
+    },
+    {
+     "part": "spec/spect",
+     "words": [
+      {
+       "word": "inspect",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "respect",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "suspect",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "spectator",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "inspector",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "spectacle",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "aspect",
+       "span": [
+        1,
+        5
+       ]
+      },
+      {
+       "word": "prospect",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "specimen",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "spectrum",
+       "span": [
+        0,
+        4
+       ]
+      }
+     ]
+    },
+    {
+     "part": "struct",
+     "words": [
+      {
+       "word": "construct",
+       "span": [
+        3,
+        9
+       ]
+      },
+      {
+       "word": "instruct",
+       "span": [
+        2,
+        8
+       ]
+      },
+      {
+       "word": "structure",
+       "span": [
+        0,
+        6
+       ]
+      },
+      {
+       "word": "destruct",
+       "span": [
+        2,
+        8
+       ]
+      },
+      {
+       "word": "instructor",
+       "span": [
+        2,
+        8
+       ]
+      },
+      {
+       "word": "obstruct",
+       "span": [
+        2,
+        8
+       ]
+      },
+      {
+       "word": "construction",
+       "span": [
+        3,
+        9
+       ]
+      },
+      {
+       "word": "structural",
+       "span": [
+        0,
+        6
+       ]
+      },
+      {
+       "word": "destructive",
+       "span": [
+        2,
+        8
+       ]
+      },
+      {
+       "word": "restructure",
+       "span": [
+        2,
+        8
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "spec/spect",
+    "struct",
+    "flect/flex",
+    "mit/miss",
+    "ject"
+   ],
+   "sentence": {
+    "text": "She had to inspect every part of the structure, even the ones nobody can see.",
+    "words": 15,
+    "carries": [
+     "inspect",
+     "structure"
+    ],
+    "source": "The Inspector and the Bridge · 2nd grade"
+   }
+  },
+  {
+   "key": "og4-03",
+   "parts": [
+    {
+     "part": "aud",
+     "words": [
+      {
+       "word": "audio",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "audience",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "auditor",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "audible",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "audition",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "auditorium",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "inaudible",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "audiobook",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "auditory",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "audiovisual",
+       "span": [
+        0,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "part": "cur/curs",
+     "words": [
+      {
+       "word": "cursive",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "current",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "occur",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "recur",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "cursor",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "excursion",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "currency",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "recurring",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "precursor",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "concur",
+       "span": [
+        3,
+        6
+       ]
+      }
+     ]
+    },
+    {
+     "part": "duc/duct",
+     "words": [
+      {
+       "word": "produce",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "conduct",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "reduce",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "introduce",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "product",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "conductor",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "deduct",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "induce",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "production",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "aqueduct",
+       "span": [
+        4,
+        7
+       ]
+      }
+     ]
+    },
+    {
+     "part": "grad/gress",
+     "words": [
+      {
+       "word": "progress",
+       "span": [
+        3,
+        8
+       ]
+      },
+      {
+       "word": "graduate",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "gradual",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "congress",
+       "span": [
+        3,
+        8
+       ]
+      },
+      {
+       "word": "regress",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "grade",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "upgrade",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "degrade",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "aggressive",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "progression",
+       "span": [
+        3,
+        8
+       ]
+      }
+     ]
+    },
+    {
+     "part": "vert/vers",
+     "words": [
+      {
+       "word": "invert",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "convert",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "reverse",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "version",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "universe",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "divert",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "advertise",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "reversible",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "conversation",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "anniversary",
+       "span": [
+        4,
+        8
+       ]
+      }
+     ]
+    },
+    {
+     "part": "vid/vis",
+     "words": [
+      {
+       "word": "video",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "visible",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "vision",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "provide",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "visit",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "evidence",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "revise",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "supervise",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "invisible",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "advise",
+       "span": [
+        2,
+        5
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "duc/duct",
+    "grad/gress",
+    "cur/curs",
+    "vid/vis",
+    "aud",
+    "vert/vers"
+   ],
+   "sentence": {
+    "text": "I had never understood what a conductor was for.",
+    "words": 9,
+    "carries": [
+     "conductor"
+    ],
+    "source": "The Conductor's Visit · 2nd grade"
+   }
+  },
+  {
+   "key": "og4-04",
+   "parts": [
+    {
+     "part": "-ar",
+     "words": [
+      {
+       "word": "solar",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "similar",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "popular",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "regular",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "dollar",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "collar",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "calendar",
+       "span": [
+        6,
+        8
+       ]
+      },
+      {
+       "word": "particular",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "muscular",
+       "span": [
+        6,
+        8
+       ]
+      },
+      {
+       "word": "familiar",
+       "span": [
+        6,
+        8
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-ic",
+     "words": [
+      {
+       "word": "magic",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "music",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "plastic",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "traffic",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "electric",
+       "span": [
+        6,
+        8
+       ]
+      },
+      {
+       "word": "fantastic",
+       "span": [
+        7,
+        9
+       ]
+      },
+      {
+       "word": "athletic",
+       "span": [
+        6,
+        8
+       ]
+      },
+      {
+       "word": "magnetic",
+       "span": [
+        6,
+        8
+       ]
+      },
+      {
+       "word": "historic",
+       "span": [
+        6,
+        8
+       ]
+      },
+      {
+       "word": "specific",
+       "span": [
+        6,
+        8
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-ous",
+     "words": [
+      {
+       "word": "famous",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "nervous",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "jealous",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "dangerous",
+       "span": [
+        6,
+        9
+       ]
+      },
+      {
+       "word": "enormous",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "curious",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "serious",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "generous",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "delicious",
+       "span": [
+        6,
+        9
+       ]
+      },
+      {
+       "word": "marvelous",
+       "span": [
+        6,
+        9
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-ure",
+     "words": [
+      {
+       "word": "picture",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "nature",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "future",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "capture",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "mixture",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "adventure",
+       "span": [
+        6,
+        9
+       ]
+      },
+      {
+       "word": "furniture",
+       "span": [
+        6,
+        9
+       ]
+      },
+      {
+       "word": "temperature",
+       "span": [
+        8,
+        11
+       ]
+      },
+      {
+       "word": "creature",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "culture",
+       "span": [
+        4,
+        7
+       ]
+      }
+     ]
+    },
+    {
+     "part": "inter-",
+     "words": [
+      {
+       "word": "interstate",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "interact",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "internet",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "interview",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "interrupt",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "international",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "interval",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "intersection",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "interfere",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "interpret",
+       "span": [
+        0,
+        5
+       ]
+      }
+     ]
+    },
+    {
+     "part": "trans-",
+     "words": [
+      {
+       "word": "transport",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "transfer",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "translate",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "transform",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "transmit",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "transparent",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "transit",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "transplant",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "transaction",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "transcribe",
+       "span": [
+        0,
+        5
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "trans-",
+    "inter-",
+    "-ure",
+    "-ous",
+    "-ic",
+    "-ar"
+   ],
+   "sentence": {
+    "text": "The transport museum is enormous, and nobody warns you about this in advance.",
+    "words": 13,
+    "carries": [
+     "enormous",
+     "transport"
+    ],
+    "source": "The Transport Museum · 4th grade"
+   }
+  },
+  {
+   "key": "og4-06",
+   "parts": [
+    {
+     "part": "ei",
+     "words": [
+      {
+       "word": "ceiling",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "receive",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "either",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "neither",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "protein",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "seize",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "weird",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "leisure",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "caffeine",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "receipt",
+       "span": [
+        3,
+        5
+       ]
+      }
+     ]
+    },
+    {
+     "part": "eigh",
+     "words": [
+      {
+       "word": "eight",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "weigh",
+       "span": [
+        1,
+        5
+       ]
+      },
+      {
+       "word": "neighbor",
+       "span": [
+        1,
+        5
+       ]
+      },
+      {
+       "word": "sleigh",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "weight",
+       "span": [
+        1,
+        5
+       ]
+      },
+      {
+       "word": "eighteen",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "freight",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "eighty",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "neigh",
+       "span": [
+        1,
+        5
+       ]
+      },
+      {
+       "word": "height",
+       "span": [
+        1,
+        5
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ew",
+     "words": [
+      {
+       "word": "few",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "new",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "grew",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "blew",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "threw",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "crew",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "chew",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "screw",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "knew",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "stew",
+       "span": [
+        2,
+        4
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ue",
+     "words": [
+      {
+       "word": "blue",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "glue",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "true",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "clue",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "rescue",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "value",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "argue",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "statue",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "continue",
+       "span": [
+        6,
+        8
+       ]
+      },
+      {
+       "word": "avenue",
+       "span": [
+        4,
+        6
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ui",
+     "words": [
+      {
+       "word": "fruit",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "suit",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "juice",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "build",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "guide",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "guilt",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "cruise",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "bruise",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "recruit",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "biscuit",
+       "span": [
+        4,
+        6
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "ue",
+    "ei",
+    "ew",
+    "eigh",
+    "ui"
+   ],
+   "sentence": {
+    "text": "The weight of the water bent the fence.",
+    "words": 8,
+    "carries": [
+     "weight"
+    ],
+    "source": "Eight Days of Rain · 2nd grade"
+   }
+  },
+  {
+   "key": "og4-07",
+   "parts": [
+    {
+     "part": "con-/com-",
+     "words": [
+      {
+       "word": "connect",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "compare",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "combine",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "complete",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "construct",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "command",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "compete",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "confirm",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "contain",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "comfort",
+       "span": [
+        0,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "part": "il-",
+     "words": [
+      {
+       "word": "illegal",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "illegible",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "illiterate",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "illogical",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "illicit",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "illiberal",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "illimitable",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "illegality",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "illegally",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "illogically",
+       "span": [
+        0,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "part": "im-",
+     "words": [
+      {
+       "word": "impossible",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "impolite",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "immature",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "imperfect",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "immobile",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "impatient",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "improper",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "immortal",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "impure",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "immodest",
+       "span": [
+        0,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ir-",
+     "words": [
+      {
+       "word": "irregular",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "irresponsible",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "irrational",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "irreversible",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "irrelevant",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "irresistible",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "irreplaceable",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "irreverent",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "irregularity",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "irrationally",
+       "span": [
+        0,
+        2
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "im-",
+    "il-",
+    "ir-",
+    "con-/com-"
+   ],
+   "sentence": {
+    "text": "Dad said the shelf would be impossible to put up without help.",
+    "words": 12,
+    "carries": [
+     "impossible"
+    ],
+    "source": "The Impossible Shelf · 2nd grade"
+   }
+  },
+  {
+   "key": "og4-08",
+   "parts": [
+    {
+     "part": "-cial",
+     "words": [
+      {
+       "word": "special",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "social",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "official",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "crucial",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "facial",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "racial",
+       "span": [
+        2,
+        6
+       ]
+      },
+      {
+       "word": "commercial",
+       "span": [
+        6,
+        10
+       ]
+      },
+      {
+       "word": "financial",
+       "span": [
+        5,
+        9
+       ]
+      },
+      {
+       "word": "beneficial",
+       "span": [
+        6,
+        10
+       ]
+      },
+      {
+       "word": "artificial",
+       "span": [
+        6,
+        10
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-cian",
+     "words": [
+      {
+       "word": "musician",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "magician",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "physician",
+       "span": [
+        5,
+        9
+       ]
+      },
+      {
+       "word": "electrician",
+       "span": [
+        7,
+        11
+       ]
+      },
+      {
+       "word": "technician",
+       "span": [
+        6,
+        10
+       ]
+      },
+      {
+       "word": "politician",
+       "span": [
+        6,
+        10
+       ]
+      },
+      {
+       "word": "optician",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "beautician",
+       "span": [
+        6,
+        10
+       ]
+      },
+      {
+       "word": "mathematician",
+       "span": [
+        9,
+        13
+       ]
+      },
+      {
+       "word": "pediatrician",
+       "span": [
+        8,
+        12
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-cious",
+     "words": [
+      {
+       "word": "delicious",
+       "span": [
+        4,
+        9
+       ]
+      },
+      {
+       "word": "precious",
+       "span": [
+        3,
+        8
+       ]
+      },
+      {
+       "word": "gracious",
+       "span": [
+        3,
+        8
+       ]
+      },
+      {
+       "word": "spacious",
+       "span": [
+        3,
+        8
+       ]
+      },
+      {
+       "word": "suspicious",
+       "span": [
+        5,
+        10
+       ]
+      },
+      {
+       "word": "vicious",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "conscious",
+       "span": [
+        4,
+        9
+       ]
+      },
+      {
+       "word": "ferocious",
+       "span": [
+        4,
+        9
+       ]
+      },
+      {
+       "word": "atrocious",
+       "span": [
+        4,
+        9
+       ]
+      },
+      {
+       "word": "malicious",
+       "span": [
+        4,
+        9
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-tial",
+     "words": [
+      {
+       "word": "partial",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "essential",
+       "span": [
+        5,
+        9
+       ]
+      },
+      {
+       "word": "initial",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "potential",
+       "span": [
+        5,
+        9
+       ]
+      },
+      {
+       "word": "confidential",
+       "span": [
+        8,
+        12
+       ]
+      },
+      {
+       "word": "martial",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "substantial",
+       "span": [
+        7,
+        11
+       ]
+      },
+      {
+       "word": "influential",
+       "span": [
+        7,
+        11
+       ]
+      },
+      {
+       "word": "residential",
+       "span": [
+        7,
+        11
+       ]
+      },
+      {
+       "word": "spatial",
+       "span": [
+        3,
+        7
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-tious",
+     "words": [
+      {
+       "word": "cautious",
+       "span": [
+        3,
+        8
+       ]
+      },
+      {
+       "word": "ambitious",
+       "span": [
+        4,
+        9
+       ]
+      },
+      {
+       "word": "nutritious",
+       "span": [
+        5,
+        10
+       ]
+      },
+      {
+       "word": "fictitious",
+       "span": [
+        5,
+        10
+       ]
+      },
+      {
+       "word": "infectious",
+       "span": [
+        5,
+        10
+       ]
+      },
+      {
+       "word": "conscientious",
+       "span": [
+        8,
+        13
+       ]
+      },
+      {
+       "word": "superstitious",
+       "span": [
+        8,
+        13
+       ]
+      },
+      {
+       "word": "contentious",
+       "span": [
+        6,
+        11
+       ]
+      },
+      {
+       "word": "pretentious",
+       "span": [
+        6,
+        11
+       ]
+      },
+      {
+       "word": "scrumptious",
+       "span": [
+        6,
+        11
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "-tial",
+    "-tious",
+    "-cian",
+    "-cial",
+    "-cious"
+   ],
+   "sentence": {
+    "text": "A musician moved in next door in the spring.",
+    "words": 9,
+    "carries": [
+     "musician"
+    ],
+    "source": "The Musician Next Door · 2nd grade"
+   }
+  },
+  {
+   "key": "og5-01",
+   "parts": [
+    {
+     "part": "ch",
+     "words": [
+      {
+       "word": "school",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "chorus",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "echo",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "stomach",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "character",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "chemistry",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "ache",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "anchor",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "mechanic",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "orchestra",
+       "span": [
+        2,
+        4
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ph",
+     "words": [
+      {
+       "word": "phone",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "graph",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "photo",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "dolphin",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "alphabet",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "elephant",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "phrase",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "physical",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "trophy",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "orphan",
+       "span": [
+        2,
+        4
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "ph",
+    "ch"
+   ],
+   "sentence": {
+    "text": "There is a photograph of an elephant on the wall of our school hall.",
+    "words": 14,
+    "carries": [
+     "school",
+     "elephant"
+    ],
+    "source": "The Elephant Photograph · 2nd grade"
+   }
+  },
+  {
+   "key": "og5-03",
+   "parts": [
+    {
+     "part": "mn",
+     "words": [
+      {
+       "word": "autumn",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "column",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "hymn",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "solemn",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "condemn",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "solemnly",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "limn",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "alumni",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "mnemonic",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "columnist",
+       "span": [
+        4,
+        6
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ps",
+     "words": [
+      {
+       "word": "psychic",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "psalm",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "psychology",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "pseudonym",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "psyche",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "psychiatrist",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "psoriasis",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "psychotic",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "psychedelic",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "pseudo",
+       "span": [
+        0,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "part": "rh",
+     "words": [
+      {
+       "word": "rhyme",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "rhino",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "rhythm",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "rhubarb",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "rhetoric",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "rhombus",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "rheumatic",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "rhapsody",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "rhinoceros",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "rhododendron",
+       "span": [
+        0,
+        2
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "rh",
+    "mn",
+    "ps"
+   ],
+   "sentence": {
+    "text": "There is a rhythm to it.",
+    "words": 6,
+    "carries": [
+     "rhythm"
+    ],
+    "source": "The Rhino in Autumn · 2nd grade"
+   }
+  },
+  {
+   "key": "og5-04",
+   "parts": [
+    {
+     "part": "bio",
+     "words": [
+      {
+       "word": "biology",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "biography",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "biosphere",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "biopsy",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "biologist",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "biodegradable",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "biochemistry",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "biodiversity",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "bionic",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "biome",
+       "span": [
+        0,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "part": "graph",
+     "words": [
+      {
+       "word": "graph",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "paragraph",
+       "span": [
+        4,
+        9
+       ]
+      },
+      {
+       "word": "autograph",
+       "span": [
+        4,
+        9
+       ]
+      },
+      {
+       "word": "photograph",
+       "span": [
+        5,
+        10
+       ]
+      },
+      {
+       "word": "telegraph",
+       "span": [
+        4,
+        9
+       ]
+      },
+      {
+       "word": "graphic",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "biography",
+       "span": [
+        3,
+        8
+       ]
+      },
+      {
+       "word": "calligraphy",
+       "span": [
+        5,
+        10
+       ]
+      },
+      {
+       "word": "geography",
+       "span": [
+        3,
+        8
+       ]
+      },
+      {
+       "word": "graphite",
+       "span": [
+        0,
+        5
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ology",
+     "words": [
+      {
+       "word": "biology",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "geology",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "zoology",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "technology",
+       "span": [
+        5,
+        10
+       ]
+      },
+      {
+       "word": "psychology",
+       "span": [
+        5,
+        10
+       ]
+      },
+      {
+       "word": "archaeology",
+       "span": [
+        6,
+        11
+       ]
+      },
+      {
+       "word": "meteorology",
+       "span": [
+        6,
+        11
+       ]
+      },
+      {
+       "word": "mythology",
+       "span": [
+        4,
+        9
+       ]
+      },
+      {
+       "word": "sociology",
+       "span": [
+        4,
+        9
+       ]
+      },
+      {
+       "word": "ecology",
+       "span": [
+        2,
+        7
+       ]
+      }
+     ]
+    },
+    {
+     "part": "phon",
+     "words": [
+      {
+       "word": "telephone",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "phonics",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "symphony",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "microphone",
+       "span": [
+        5,
+        9
+       ]
+      },
+      {
+       "word": "headphone",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "megaphone",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "phoneme",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "saxophone",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "xylophone",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "homophone",
+       "span": [
+        4,
+        8
+       ]
+      }
+     ]
+    },
+    {
+     "part": "photo",
+     "words": [
+      {
+       "word": "photo",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "photograph",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "photocopy",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "photosynthesis",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "photographer",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "photogenic",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "photon",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "photoshoot",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "photocell",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "photometer",
+       "span": [
+        0,
+        5
+       ]
+      }
+     ]
+    },
+    {
+     "part": "tele",
+     "words": [
+      {
+       "word": "telephone",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "telescope",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "television",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "telegraph",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "telepathy",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "telecast",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "telegram",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "telework",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "telemetry",
+       "span": [
+        0,
+        4
+       ]
+      },
+      {
+       "word": "teleport",
+       "span": [
+        0,
+        4
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "phon",
+    "tele",
+    "photo",
+    "bio",
+    "graph",
+    "ology"
+   ],
+   "sentence": {
+    "text": "My aunt is a biologist, but her real passion is the telescope on her roof.",
+    "words": 15,
+    "carries": [
+     "biologist",
+     "telescope"
+    ],
+    "source": "The Telescope on the Roof · 2nd grade"
+   }
+  },
+  {
+   "key": "og5-05",
+   "parts": [
+    {
+     "part": "ch",
+     "words": [
+      {
+       "word": "chef",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "machine",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "parachute",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "brochure",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "chandelier",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "mustache",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "chalet",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "charade",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "chic",
+       "span": [
+        0,
+        2
+       ]
+      },
+      {
+       "word": "quiche",
+       "span": [
+        3,
+        5
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ou",
+     "words": [
+      {
+       "word": "soup",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "group",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "you",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "youth",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "routine",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "souvenir",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "boutique",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "coupon",
+       "span": [
+        1,
+        3
+       ]
+      },
+      {
+       "word": "silhouette",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "bouquet",
+       "span": [
+        1,
+        3
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "ch",
+    "ou"
+   ],
+   "sentence": {
+    "text": "The chef next door thinks it made chocolate.",
+    "words": 8,
+    "carries": [
+     "chef"
+    ],
+    "source": "The Antique Machine · 2nd grade"
+   }
+  },
+  {
+   "key": "og5-08",
+   "parts": [
+    {
+     "part": "-age",
+     "words": [
+      {
+       "word": "package",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "garbage",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "village",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "message",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "courage",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "storage",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "baggage",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "passage",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "average",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "language",
+       "span": [
+        5,
+        8
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-al",
+     "words": [
+      {
+       "word": "final",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "natural",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "normal",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "total",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "local",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "animal",
+       "span": [
+        4,
+        6
+       ]
+      },
+      {
+       "word": "personal",
+       "span": [
+        6,
+        8
+       ]
+      },
+      {
+       "word": "musical",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "several",
+       "span": [
+        5,
+        7
+       ]
+      },
+      {
+       "word": "original",
+       "span": [
+        6,
+        8
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-ance",
+     "words": [
+      {
+       "word": "distance",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "balance",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "entrance",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "importance",
+       "span": [
+        6,
+        10
+       ]
+      },
+      {
+       "word": "appearance",
+       "span": [
+        6,
+        10
+       ]
+      },
+      {
+       "word": "performance",
+       "span": [
+        7,
+        11
+       ]
+      },
+      {
+       "word": "assistance",
+       "span": [
+        6,
+        10
+       ]
+      },
+      {
+       "word": "insurance",
+       "span": [
+        5,
+        9
+       ]
+      },
+      {
+       "word": "romance",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "guidance",
+       "span": [
+        4,
+        8
+       ]
+      }
+     ]
+    },
+    {
+     "part": "-ence",
+     "words": [
+      {
+       "word": "sentence",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "science",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "silence",
+       "span": [
+        3,
+        7
+       ]
+      },
+      {
+       "word": "difference",
+       "span": [
+        6,
+        10
+       ]
+      },
+      {
+       "word": "experience",
+       "span": [
+        6,
+        10
+       ]
+      },
+      {
+       "word": "confidence",
+       "span": [
+        6,
+        10
+       ]
+      },
+      {
+       "word": "evidence",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "presence",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "patience",
+       "span": [
+        4,
+        8
+       ]
+      },
+      {
+       "word": "absence",
+       "span": [
+        3,
+        7
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "-al",
+    "-age",
+    "-ance",
+    "-ence"
+   ],
+   "sentence": {
+    "text": "Our class gave a performance in the village hall at the end of the year.",
+    "words": 15,
+    "carries": [
+     "village",
+     "performance"
+    ],
+    "source": "The Performance · 2nd grade"
+   }
+  },
+  {
+   "key": "og5-09",
+   "parts": [
+    {
+     "part": "aught",
+     "words": [
+      {
+       "word": "caught",
+       "span": [
+        1,
+        6
+       ]
+      },
+      {
+       "word": "taught",
+       "span": [
+        1,
+        6
+       ]
+      },
+      {
+       "word": "daughter",
+       "span": [
+        1,
+        6
+       ]
+      },
+      {
+       "word": "naughty",
+       "span": [
+        1,
+        6
+       ]
+      },
+      {
+       "word": "slaughter",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "distraught",
+       "span": [
+        5,
+        10
+       ]
+      },
+      {
+       "word": "aught",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "fraught",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "haughty",
+       "span": [
+        1,
+        6
+       ]
+      },
+      {
+       "word": "onslaught",
+       "span": [
+        4,
+        9
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ought",
+     "words": [
+      {
+       "word": "bought",
+       "span": [
+        1,
+        6
+       ]
+      },
+      {
+       "word": "thought",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "brought",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "fought",
+       "span": [
+        1,
+        6
+       ]
+      },
+      {
+       "word": "ought",
+       "span": [
+        0,
+        5
+       ]
+      },
+      {
+       "word": "sought",
+       "span": [
+        1,
+        6
+       ]
+      },
+      {
+       "word": "nought",
+       "span": [
+        1,
+        6
+       ]
+      },
+      {
+       "word": "drought",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "wrought",
+       "span": [
+        2,
+        7
+       ]
+      },
+      {
+       "word": "thoughtful",
+       "span": [
+        2,
+        7
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "aught",
+    "ought"
+   ],
+   "sentence": {
+    "text": "It was the only thing he ever taught me.",
+    "words": 9,
+    "carries": [
+     "taught"
+    ],
+    "source": "The Thing I Was Taught · 2nd grade"
+   }
+  },
+  {
+   "key": "vccvce",
+   "parts": [
+    {
+     "part": "a_e",
+     "words": [
+      {
+       "word": "pancake",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "mistake",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "cupcake",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "escape",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "inflate",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "cascade",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "handmade",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "backstage",
+       "span": [
+        6,
+        9
+       ]
+      },
+      {
+       "word": "landscape",
+       "span": [
+        6,
+        9
+       ]
+      },
+      {
+       "word": "milkshake",
+       "span": [
+        6,
+        9
+       ]
+      }
+     ]
+    },
+    {
+     "part": "i_e",
+     "words": [
+      {
+       "word": "inside",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "invite",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "sunshine",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "combine",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "confine",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "decline",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "admire",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "campfire",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "sublime",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "pastime",
+       "span": [
+        4,
+        7
+       ]
+      }
+     ]
+    },
+    {
+     "part": "o_e",
+     "words": [
+      {
+       "word": "explode",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "trombone",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "implode",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "postpone",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "milestone",
+       "span": [
+        6,
+        9
+       ]
+      },
+      {
+       "word": "backbone",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "limestone",
+       "span": [
+        6,
+        9
+       ]
+      },
+      {
+       "word": "headphone",
+       "span": [
+        6,
+        9
+       ]
+      },
+      {
+       "word": "wishbone",
+       "span": [
+        5,
+        8
+       ]
+      },
+      {
+       "word": "cellphone",
+       "span": [
+        6,
+        9
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "a_e",
+    "i_e",
+    "o_e"
+   ],
+   "sentence": {
+    "text": "Invite Kate to compete for a cupcake.",
+    "words": 7,
+    "carries": [
+     "cupcake",
+     "invite"
+    ],
+    "source": "written for dictation"
+   }
+  },
+  {
+   "key": "vccv",
+   "parts": [
+    {
+     "part": "a",
+     "words": [
+      {
+       "word": "rabbit",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "napkin",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "magnet",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "basket",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "happen",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "carpet",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "cactus",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "tablet",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "canyon",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "pattern",
+       "span": [
+        1,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "part": "e",
+     "words": [
+      {
+       "word": "pencil",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "helmet",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "velvet",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "tennis",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "lesson",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "letter",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "member",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "temper",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "center",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "seldom",
+       "span": [
+        1,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "part": "i",
+     "words": [
+      {
+       "word": "picnic",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "mitten",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "winter",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "kitten",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "sister",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "finger",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "dinner",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "ribbon",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "silver",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "window",
+       "span": [
+        1,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "part": "u",
+     "words": [
+      {
+       "word": "muffin",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "sunset",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "button",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "summer",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "number",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "puppet",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "supper",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "hunter",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "tunnel",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "subject",
+       "span": [
+        1,
+        2
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "a",
+    "e",
+    "i",
+    "u"
+   ],
+   "sentence": {
+    "text": "The rabbit hid a muffin in the basket.",
+    "words": 8,
+    "carries": [
+     "rabbit",
+     "basket",
+     "muffin"
+    ],
+    "source": "written for dictation"
+   }
+  },
+  {
+   "key": "vce",
+   "parts": [
+    {
+     "part": "a_e",
+     "words": [
+      {
+       "word": "cake",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "make",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "late",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "game",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "name",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "gate",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "plane",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "grape",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "shade",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "snake",
+       "span": [
+        2,
+        5
+       ]
+      }
+     ]
+    },
+    {
+     "part": "i_e",
+     "words": [
+      {
+       "word": "bike",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "time",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "like",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "ride",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "kite",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "smile",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "mine",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "side",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "white",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "shine",
+       "span": [
+        2,
+        5
+       ]
+      }
+     ]
+    },
+    {
+     "part": "o_e",
+     "words": [
+      {
+       "word": "home",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "rope",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "note",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "hope",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "stone",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "nose",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "bone",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "code",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "those",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "woke",
+       "span": [
+        1,
+        4
+       ]
+      }
+     ]
+    },
+    {
+     "part": "u_e",
+     "words": [
+      {
+       "word": "cute",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "mule",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "tube",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "cube",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "rule",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "June",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "flute",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "huge",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "tune",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "use",
+       "span": [
+        0,
+        3
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "a_e",
+    "i_e",
+    "o_e",
+    "u_e"
+   ],
+   "sentence": {
+    "text": "Jane made a grape cake at home.",
+    "words": 7,
+    "carries": [
+     "cake",
+     "grape",
+     "home"
+    ],
+    "source": "written for dictation"
+   }
+  }
+ ]
+}

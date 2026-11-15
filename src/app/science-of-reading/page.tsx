@@ -15,6 +15,7 @@ import SKILL_SPLITS from "@/../scripts/reading-skill-splits.json";
 import THREADS from "@/../scripts/reading-threads.json";
 import MORPH from "@/../scripts/reading-morphology.json";
 import WRITING_SETS_DATA from "@/../scripts/reading-writing-passages.json";
+import SPELLING from "@/../scripts/reading-spelling.json";
 import SENTENCE_LAB from "@/../scripts/reading-sentence-lab.json";
 
 /**
@@ -81,6 +82,11 @@ const MORPHOLOGY_PAGE = "/morphology";
 const WRITING_PAGE = "/writing";
 const WRITING_SETS = Object.keys(WRITING_SETS_DATA).length;
 const MORPH_WORDS = MORPH.morphemes.reduce((s, m) => s + m.words.length, 0);
+const SPELL_PATTERNS = SPELLING.patterns.length;
+const SPELL_WORDS = SPELLING.patterns.reduce(
+  (n, p) => n + p.parts.reduce((m, q) => m + q.words.length, 0),
+  0,
+);
 // Counted from the data the page is generated from, so the blurb cannot
 // drift away from what is actually on it.
 const MYSTERY_COUNT = RESOURCE_COUNTS.mysteries;
@@ -486,6 +492,18 @@ function Hub() {
               shape: [1200, 1130] as const,
               focus: "0%",
               alt: "The Opinion writing page: a question, the decodable passage it is argued from, and the eight-part frame with its sentence starters.",
+            },
+            {
+              href: "/spelling",
+              eyebrow: "WRITE THE PATTERN",
+              title: "Dictation",
+              accent: TEAL,
+              accentText: TEAL_TEXT,
+              blurb: `${SPELL_WORDS.toLocaleString()} words across ${SPELL_PATTERNS} patterns, read aloud instead of shown — and a check that tells a spelling slip apart from a lesson that has not landed.`,
+              preview: "/previews/spelling.png",
+              shape: [1200, 1130] as const,
+              focus: "0%",
+              alt: "The Dictation page: a word with its lesson letters underlined, a box to write it in, and feedback naming whether the error was on the pattern or elsewhere.",
             },
             {
               href: "/og-packs",

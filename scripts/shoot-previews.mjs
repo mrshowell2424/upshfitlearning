@@ -46,6 +46,7 @@ const SHOTS = [
   { name: "sentence-lab", path: "/sentence-lab?g=3" },
   { name: "morphology", path: "/morphology?m=ment" },
   { name: "writing", path: "/writing?p=floss" },
+  { name: "spelling", path: "/spelling?p=ai-ay" },
   { name: "ef-year", path: "/behavior/year?w=1" },
   { name: "fluency", path: "/fluency" },
   { name: "teach-a-word", path: "/vocabulary" },
