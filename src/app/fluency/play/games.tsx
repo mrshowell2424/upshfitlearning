@@ -27,7 +27,7 @@ const BRAND = {
 };
 
 const label: React.CSSProperties = {
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 11,
   fontWeight: 800,
   letterSpacing: "0.12em",
@@ -89,7 +89,7 @@ function Button({
       type="button"
       onClick={onClick}
       style={{
-        fontFamily: "Inter, system-ui, sans-serif",
+        fontFamily: "Poppins, system-ui, sans-serif",
         fontSize: big ? 17 : 14,
         fontWeight: 800,
         padding: big ? "14px 26px" : "9px 18px",
@@ -181,7 +181,7 @@ export function SayItLike({
         <p style={{ ...label, margin: "0 0 6px", color: BRAND.lavenderDark }}>Say it like</p>
         <p
           style={{
-            fontFamily: "Poppins, Inter, sans-serif",
+            fontFamily: "Poppins, sans-serif",
             fontSize: student ? 42 : 30,
             fontWeight: 900,
             letterSpacing: "-0.5px",
@@ -310,7 +310,7 @@ export function BeatYourScore({
       <div style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
         <span
           style={{
-            fontFamily: "Poppins, Inter, sans-serif",
+            fontFamily: "Poppins, sans-serif",
             fontSize: 46,
             fontWeight: 900,
             minWidth: 86,
@@ -410,7 +410,7 @@ function Field({
         value={value}
         onChange={(e) => onChange(e.target.value.replace(/[^\d]/g, ""))}
         style={{
-          fontFamily: "Inter, system-ui, sans-serif",
+          fontFamily: "Poppins, system-ui, sans-serif",
           fontSize: 20,
           fontWeight: 700,
           width: 120,
@@ -521,7 +521,7 @@ export function HearItFirst({
                   value={pick}
                   onChange={(e) => setPick(Number(e.target.value))}
                   style={{
-                    fontFamily: "Inter, system-ui, sans-serif",
+                    fontFamily: "Poppins, system-ui, sans-serif",
                     fontSize: 15,
                     minHeight: 44,
                     padding: "8px 12px",

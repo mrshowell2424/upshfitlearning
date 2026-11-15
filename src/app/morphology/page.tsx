@@ -74,7 +74,7 @@ const gradeName = (g: number) =>
   g === 0 ? "K" : g === 1 ? "1st" : g === 2 ? "2nd" : g === 3 ? "3rd" : `${g}th`;
 
 const label: React.CSSProperties = {
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 11,
   fontWeight: 800,
   letterSpacing: "0.12em",
@@ -82,7 +82,7 @@ const label: React.CSSProperties = {
   color: BRAND.mid,
 };
 
-/** The lines a child reads get the serif. Chrome stays in Inter. */
+/** The lines a child reads get the serif. Chrome stays in Poppins. */
 const reading: React.CSSProperties = {
   fontFamily: 'var(--font-serif), Georgia, "Times New Roman", serif',
   fontSize: 18,
@@ -91,7 +91,7 @@ const reading: React.CSSProperties = {
 
 function pill(on: boolean, color: string): React.CSSProperties {
   return {
-    fontFamily: "Inter, system-ui, sans-serif",
+    fontFamily: "Poppins, system-ui, sans-serif",
     fontSize: 13,
     fontWeight: 800,
     padding: "7px 14px",
@@ -122,7 +122,7 @@ function Split({ parts, mark, color }: { parts: string[]; mark: number; color: s
           {i > 0 && (
             <span
               aria-hidden="true"
-              style={{ fontFamily: "Inter, sans-serif", fontSize: 15, fontWeight: 800, color: BRAND.mid }}
+              style={{ fontFamily: "Poppins, sans-serif", fontSize: 15, fontWeight: 800, color: BRAND.mid }}
             >
               +
             </span>
@@ -203,7 +203,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
             <p style={{ ...label, margin: "0 0 6px", color: BRAND.blueDark }}>Word structure</p>
             <h1
               style={{
-                fontFamily: "Poppins, Inter, sans-serif",
+                fontFamily: "Poppins, sans-serif",
                 fontSize: 40,
                 fontWeight: 900,
                 letterSpacing: "-1px",
@@ -255,7 +255,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                   <div key={r.key}>
                     <p
                       style={{
-                        fontFamily: "Inter, system-ui, sans-serif",
+                        fontFamily: "Poppins, system-ui, sans-serif",
                         fontSize: 14,
                         fontWeight: 800,
                         margin: "0 0 4px",

@@ -85,16 +85,33 @@ export default function Header() {
 
       {/* Nav -- wide screens only; everything narrower gets the panel below.
           The breakpoint is 1280 rather than Tailwind's lg, because lg is
-          1024 and this nav is 869px wide on its own: between those two
+          1024 and this nav is 841px wide on its own: between those two
           numbers the bar simply ran off the side of the window and every
           page on the site got a horizontal scrollbar. A flex child will not
-          shrink below its content, so nothing was going to absorb it. */}
+          shrink below its content, so nothing was going to absorb it.
+
+          The measurements below are what let it still fit at 1280 in
+          Poppins. Set in Inter at 11.5px with 0.1em of tracking the row
+          came to 869px; the same row in Poppins came to 1041px, 190px more
+          than there is space for, and every label with two words in it --
+          STANDARD MATCH, SCIENCE OF READING, TEACHER'S LOUNGE -- broke onto
+          a second and third line inside its own button.
+
+          Most of that is tracking rather than size. 0.1em is a lot to add
+          to uppercase, and it was the right amount for Inter, whose caps
+          are narrow and tightly spaced. Poppins is a geometric face with
+          generous sidebearings and needs far less help, so the tracking
+          comes down to 0.06em and the padding to 10px, which is the real
+          fix; 11.5px to 10.5px is the small remainder. Whitespace is
+          pinned to nowrap so that if a label is ever added that does not
+          fit, it shows up as the row running wide here rather than as one
+          button quietly going two lines deep on the live site. */}
       <nav className="hidden min-[1280px]:flex flex-1 items-center h-full gap-0">
         {navItems.map((item) => (
           <button
             key={item.label}
             onClick={() => router.push(item.href)}
-            className="h-full px-[15px] text-[11.5px] font-semibold uppercase tracking-[0.1em] relative transition-colors"
+            className="h-full px-[10px] text-[10.5px] font-semibold uppercase tracking-[0.06em] whitespace-nowrap relative transition-colors"
             style={{
               color: activeNav === item.label ? "#111111" : "#6A6A6A",
             }}
@@ -102,7 +119,7 @@ export default function Header() {
             {item.label}
             {activeNav === item.label && (
               <div
-                className="absolute bottom-0 left-[11px] right-[11px] h-[3px] bg-coral rounded-t-[3px]"
+                className="absolute bottom-0 left-[6px] right-[6px] h-[3px] bg-coral rounded-t-[3px]"
                 style={{ backgroundColor: "var(--color-coral)" }}
               />
             )}

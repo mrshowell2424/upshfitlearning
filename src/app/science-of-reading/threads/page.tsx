@@ -55,7 +55,7 @@ const gradeName = (g: number) =>
   g === 0 ? "K" : g === 1 ? "1st" : g === 2 ? "2nd" : g === 3 ? "3rd" : `${g}th`;
 
 const label: React.CSSProperties = {
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 11,
   fontWeight: 800,
   letterSpacing: "0.12em",
@@ -63,7 +63,7 @@ const label: React.CSSProperties = {
   color: BRAND.mid,
 };
 
-/** Running text gets the serif; the chrome around it stays in Inter. */
+/** Running text gets the serif; the chrome around it stays in Poppins. */
 const reading: React.CSSProperties = {
   fontFamily: 'var(--font-serif), Georgia, "Times New Roman", serif',
   fontSize: 17,
@@ -130,7 +130,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
             style={{
               background: BRAND.paper,
               color: BRAND.ink,
-              fontFamily: "Inter, system-ui, sans-serif",
+              fontFamily: "Poppins, system-ui, sans-serif",
               lineHeight: 1.6,
             }}
           >
@@ -140,7 +140,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               </p>
               <h1
                 style={{
-                  fontFamily: "Poppins, Inter, sans-serif",
+                  fontFamily: "Poppins, sans-serif",
                   fontSize: 40,
                   fontWeight: 900,
                   letterSpacing: "-1px",
@@ -258,7 +258,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                       >
                         <h2
                           style={{
-                            fontFamily: "Poppins, Inter, sans-serif",
+                            fontFamily: "Poppins, sans-serif",
                             fontSize: 28,
                             fontWeight: 800,
                             letterSpacing: "-0.5px",
@@ -366,7 +366,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                                 width: 52,
                                 fontSize: 19,
                                 fontWeight: 900,
-                                fontFamily: "Poppins, Inter, sans-serif",
+                                fontFamily: "Poppins, sans-serif",
                                 color: r.items.length ? BRAND.ink : BRAND.line,
                                 textDecoration: "none",
                               }}
@@ -410,7 +410,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                                       {a.title}
                                       <span
                                         style={{
-                                          fontFamily: "Inter, system-ui, sans-serif",
+                                          fontFamily: "Poppins, system-ui, sans-serif",
                                           fontSize: 11,
                                           fontWeight: 700,
                                           color: BRAND.mid,

@@ -99,7 +99,7 @@ function articlePrompt(a: (typeof AR)[number], ver: "higher" | "lower") {
 }
 
 const label: React.CSSProperties = {
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 11,
   fontWeight: 700,
   letterSpacing: "0.14em",
@@ -107,7 +107,7 @@ const label: React.CSSProperties = {
   color: BRAND.mid,
 };
 const pill = (on: boolean): React.CSSProperties => ({
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 13,
   fontWeight: 700,
   borderRadius: 100,
@@ -120,7 +120,7 @@ const pill = (on: boolean): React.CSSProperties => ({
   color: on ? "#FFFFFF" : BRAND.ink,
 });
 const select: React.CSSProperties = {
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 14,
   padding: "9px 12px",
   borderRadius: 12,
@@ -145,7 +145,7 @@ const reading: React.CSSProperties = {
   fontSize: 18,
   lineHeight: 1.72,
   // The second half of the fix. Measure got the line length right; the face
-  // gets the line itself right. Poppins and Inter run the chrome around this
+  // gets the line itself right. Poppins runs the chrome around this
   // column -- setting the passage in a third, serif face is what tells a
   // reader where the page stops being a website and starts being something
   // to read.
@@ -163,7 +163,7 @@ const bandLabel = (color: string): React.CSSProperties => ({
 
 /** The kind of question an item is, which the prompt has always carried. */
 const kindTag: React.CSSProperties = {
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 10,
   fontWeight: 800,
   letterSpacing: "0.1em",
@@ -383,7 +383,7 @@ function ReadThink() {
       >
         <h3
           style={{
-            fontFamily: "Poppins, Inter, sans-serif",
+            fontFamily: "Poppins, sans-serif",
             fontSize: 24,
             fontWeight: 900,
             margin: "0 0 2px",
@@ -491,10 +491,10 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
           {/* The paper is painted on the full-width wrapper and the column is
               centred inside it. Painting it on the column itself left a bare
               white band down the right of any wide screen. */}
-          <div style={{ background: BRAND.paper, color: BRAND.ink, fontFamily: "Inter, system-ui, sans-serif", lineHeight: 1.6 }}>
+          <div style={{ background: BRAND.paper, color: BRAND.ink, fontFamily: "Poppins, system-ui, sans-serif", lineHeight: 1.6 }}>
           <div style={{ maxWidth: 880, margin: "0 auto", padding: "32px 5% 80px" }}>
             <p style={{ ...label, margin: "0 0 6px" }}>Upshift Learning</p>
-            <h1 style={{ fontFamily: "Poppins, Inter, sans-serif", fontSize: 40, fontWeight: 900, letterSpacing: "-1px", margin: "0 0 4px", lineHeight: 1.1 }}>
+            <h1 style={{ fontFamily: "Poppins, sans-serif", fontSize: 40, fontWeight: 900, letterSpacing: "-1px", margin: "0 0 4px", lineHeight: 1.1 }}>
               Reading Resources
             </h1>
             <p style={{ color: BRAND.mid, margin: "0 0 24px", fontSize: 17, maxWidth: "60ch" }}>
@@ -539,7 +539,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                     <p style={{ ...label, margin: 0 }}>{`Mystery · ${gradeName(myCase.grade)} · Week ${myCase.week}`}</p>
                     <p style={{ ...label, margin: 0 }}>{myCase.tag}</p>
                   </div>
-                  <h2 style={{ fontFamily: "Poppins, Inter, sans-serif", fontSize: 30, fontWeight: 800, margin: "4px 0 2px", letterSpacing: "-0.6px", lineHeight: 1.15 }}>
+                  <h2 style={{ fontFamily: "Poppins, sans-serif", fontSize: 30, fontWeight: 800, margin: "4px 0 2px", letterSpacing: "-0.6px", lineHeight: 1.15 }}>
                     {myCase.title}
                   </h2>
 
@@ -654,7 +654,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                       <p style={{ ...label, margin: 0 }}>{`${art.standard} · Grade ${art.grade}`}</p>
                       <p style={{ ...label, margin: 0 }}>{`Lexile ${v.lexile} · ${v.words} words`}</p>
                     </div>
-                    <h2 style={{ fontFamily: "Poppins, Inter, sans-serif", fontSize: 30, fontWeight: 800, margin: "4px 0 12px", letterSpacing: "-0.6px", lineHeight: 1.15 }}>
+                    <h2 style={{ fontFamily: "Poppins, sans-serif", fontSize: 30, fontWeight: 800, margin: "4px 0 12px", letterSpacing: "-0.6px", lineHeight: 1.15 }}>
                       {art.title}
                     </h2>
                     <div style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "0 0 4px" }}>

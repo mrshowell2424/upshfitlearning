@@ -59,7 +59,7 @@ const gradeName = (g: number) =>
   g === 0 ? "K" : g === 1 ? "1st" : g === 2 ? "2nd" : g === 3 ? "3rd" : `${g}th`;
 
 const label: React.CSSProperties = {
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 11,
   fontWeight: 800,
   letterSpacing: "0.12em",
@@ -69,7 +69,7 @@ const label: React.CSSProperties = {
 
 function pill(on: boolean, color: string): React.CSSProperties {
   return {
-    fontFamily: "Inter, system-ui, sans-serif",
+    fontFamily: "Poppins, system-ui, sans-serif",
     fontSize: 13,
     fontWeight: 800,
     padding: "8px 15px",
@@ -150,7 +150,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                 </p>
                 <h1
                   style={{
-                    fontFamily: "Poppins, Inter, sans-serif",
+                    fontFamily: "Poppins, sans-serif",
                     fontSize: 40,
                     fontWeight: 900,
                     letterSpacing: "-1px",

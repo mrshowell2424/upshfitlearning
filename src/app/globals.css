@@ -71,7 +71,7 @@
   --color-lavender-ink: var(--color-lavender-ink);
   --color-teal-ink: var(--color-teal-ink);
   --color-amber-ink: var(--color-amber-ink);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-poppins);
   --font-reading: var(--font-serif);
   --radius-20: 20px;
   --radius-18: 18px;
@@ -105,16 +105,16 @@
 
 body {
   @apply bg-white text-text-body;
-  font-family: var(--font-inter);
+  font-family: var(--font-poppins), system-ui, sans-serif;
 }
 
-/* The brand book: Inter runs the interface, Poppins stays on the wordmark
-   and the display sizes because that is where the brand's heavy, tight
-   styles live. Running text never gets Poppins -- a display face set at
-   18px across sixty-six characters is what made the reading pages feel
-   dense. Lines a child reads get the serif, via .reading-text below. */
+/* The brand book: Poppins is the whole interface, headings and running text
+   alike, because it is the brand's face and the site should look like the
+   brand everywhere a teacher looks. Lines a child reads are the exception
+   and get the serif, via .reading-text below -- a reading page should not
+   be set in the same face as its own navigation. */
 h1, h2, .wordmark {
-  font-family: var(--font-poppins), var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-poppins), system-ui, sans-serif;
 }
 
 /* The reading face. Applied to the column a child reads, never to the
@@ -188,7 +188,7 @@ h1, h2, .wordmark {
   padding: 12px 20px;
   background: var(--color-charcoal);
   color: #FFFFFF;
-  font-family: var(--font-inter);
+  font-family: var(--font-poppins), system-ui, sans-serif;
   font-size: 14px;
   font-weight: 700;
   border-radius: 0 0 10px 10px;

@@ -54,7 +54,7 @@ type Search = Promise<Record<string, string | string[] | undefined>>;
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
 
 const label: React.CSSProperties = {
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 11,
   fontWeight: 800,
   letterSpacing: "0.12em",
@@ -64,7 +64,7 @@ const label: React.CSSProperties = {
 
 function pill(on: boolean, color: string): React.CSSProperties {
   return {
-    fontFamily: "Inter, system-ui, sans-serif",
+    fontFamily: "Poppins, system-ui, sans-serif",
     fontSize: 12.5,
     fontWeight: 800,
     padding: "7px 13px",
@@ -138,7 +138,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                 </p>
                 <h1
                   style={{
-                    fontFamily: "Poppins, Inter, sans-serif",
+                    fontFamily: "Poppins, sans-serif",
                     fontSize: 40,
                     fontWeight: 900,
                     letterSpacing: "-1px",

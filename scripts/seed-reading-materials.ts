@@ -2762,10 +2762,10 @@ const ADAPTATIONS: Adaptation[] = [
     // every hue in the export onto the brand families, matching luminance
     // so contrast survives. What did not match was the type and the shape.
     //
-    // The brand book sets the whole site in Inter and keeps the geometric
-    // face for the wordmark. This page was in Outfit, which is a different
-    // voice, so Outfit becomes Inter and Poppins keeps Inter behind it as
-    // the wordmark stack the tokens describe.
+    // The brand book sets the whole site in Poppins, headings and running
+    // text alike. This page was in Outfit, which is a different voice, so
+    // Outfit becomes Poppins and the page's own Poppins stack loses the
+    // second face it used to fall back to.
     //
     // Buttons are full pills at a 100px radius in the brand, and were 7px
     // and 8px here. That is one override rather than forty edits, because
@@ -2790,8 +2790,8 @@ const ADAPTATIONS: Adaptation[] = [
         + '&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">';
       if (!html.includes(link)) return html;
       const brandLink =
-        '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900'
-        + '&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">'
+        '<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900'
+        + '&display=swap" rel="stylesheet">'
         + '\n<style>button{border-radius:100px !important}'
         + '[data-wide="1"]{grid-column:1 / -1 !important;width:100% !important}'
         + 'div:has(> [data-wide="1"]){grid-column:1 / -1 !important}'
@@ -2800,11 +2800,11 @@ const ADAPTATIONS: Adaptation[] = [
 
       const outfit = "font-family:Outfit,sans-serif";
       if (!out.includes(outfit)) return html;
-      out = out.split(outfit).join("font-family:Inter,system-ui,sans-serif");
+      out = out.split(outfit).join("font-family:Poppins,system-ui,sans-serif");
 
       const poppins = "font-family:Poppins,sans-serif";
       if (!out.includes(poppins)) return html;
-      out = out.split(poppins).join("font-family:Poppins,Inter,system-ui,sans-serif");
+      out = out.split(poppins).join("font-family:Poppins,system-ui,sans-serif");
 
       if (!out.includes("<body>")) return html;
       out = out.replace(
@@ -2865,7 +2865,7 @@ const ADAPTATIONS: Adaptation[] = [
           // A button carries its own state inline, and white means off, so
           // that substring is the whole test.
           + "button{border:1.5px solid rgb(17,17,17) !important;"
-          + "font-family:Inter,system-ui,sans-serif !important;font-size:13px !important;"
+          + "font-family:Poppins,system-ui,sans-serif !important;font-size:13px !important;"
           + "font-weight:700 !important;padding:8px 18px !important}"
           // The browser rewrites an inline #fff into rgb(255, 255, 255)
           // before any selector sees it, so that is what has to be
@@ -2914,7 +2914,7 @@ const ADAPTATIONS: Adaptation[] = [
         "            .map((t) => t.trim()).filter(Boolean).map((t, i) => {",
         "              const head = /^(\\u{1F4D8}|\\u{1F4D9})/u.test(t);",
         "              return { t, head, st: head",
-        "                ? 'font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:800;'",
+        "                ? 'font-family:Poppins,system-ui,sans-serif;font-size:12px;font-weight:800;'",
         "                  + 'letter-spacing:.1em;color:#4B6049;margin:' + (i ? '24px' : '0')",
         "                  + ' 0 6px;padding-top:' + (i ? '24px' : '0')",
         "                  + ';border-top:' + (i ? '1.5px solid #C9D3C4' : '0')",

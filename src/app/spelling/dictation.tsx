@@ -44,7 +44,7 @@ const BRAND = {
 };
 
 const label: React.CSSProperties = {
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 11,
   fontWeight: 800,
   letterSpacing: "0.12em",
@@ -170,7 +170,7 @@ function SayButton({
       type="button"
       onClick={onClick}
       style={{
-        fontFamily: "Inter, system-ui, sans-serif",
+        fontFamily: "Poppins, system-ui, sans-serif",
         fontSize: big ? 16 : 13.5,
         fontWeight: 800,
         padding: big ? "14px 24px" : "9px 16px",
@@ -360,7 +360,7 @@ export function Dictation({
           type="submit"
           disabled={!verdict && !typed.trim()}
           style={{
-            fontFamily: "Inter, system-ui, sans-serif",
+            fontFamily: "Poppins, system-ui, sans-serif",
             fontSize: 14,
             fontWeight: 800,
             padding: "12px 22px",
@@ -573,7 +573,7 @@ function SentenceRound({
             type="submit"
             disabled={!attempt}
             style={{
-              fontFamily: "Inter, system-ui, sans-serif",
+              fontFamily: "Poppins, system-ui, sans-serif",
               fontSize: 14,
               fontWeight: 800,
               padding: "12px 22px",
@@ -652,7 +652,7 @@ function SentenceRound({
             type="button"
             onClick={again}
             style={{
-              fontFamily: "Inter, system-ui, sans-serif",
+              fontFamily: "Poppins, system-ui, sans-serif",
               fontSize: 13.5,
               fontWeight: 800,
               padding: "11px 20px",

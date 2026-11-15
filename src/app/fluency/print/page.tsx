@@ -105,7 +105,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
     padding: "22px 26px 40px",
     background: "#FFFFFF",
     color: INK,
-    fontFamily: "Inter, system-ui, sans-serif",
+    fontFamily: "Poppins, system-ui, sans-serif",
   };
 
   return (
@@ -145,7 +145,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
           </div>
           <h1
             style={{
-              fontFamily: "Poppins, Inter, sans-serif",
+              fontFamily: "Poppins, sans-serif",
               fontSize: 26,
               fontWeight: 900,
               margin: "2px 0 6px",

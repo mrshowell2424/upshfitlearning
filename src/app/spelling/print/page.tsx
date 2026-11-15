@@ -75,7 +75,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
     padding: "22px 26px 40px",
     background: "#FFFFFF",
     color: INK,
-    fontFamily: "Inter, system-ui, sans-serif",
+    fontFamily: "Poppins, system-ui, sans-serif",
   };
 
   return (

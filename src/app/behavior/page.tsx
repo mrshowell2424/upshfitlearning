@@ -44,7 +44,7 @@ const all = (v: string | string[] | undefined): string[] =>
   v === undefined ? [] : Array.isArray(v) ? v : [v];
 
 const label: React.CSSProperties = {
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 11,
   fontWeight: 700,
   letterSpacing: "0.14em",
@@ -53,7 +53,7 @@ const label: React.CSSProperties = {
 };
 
 const pill = (on: boolean): React.CSSProperties => ({
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 13,
   fontWeight: 700,
   borderRadius: 100,
@@ -85,7 +85,7 @@ const MEASURE = 660;
 const summaryStyle: React.CSSProperties = {
   cursor: "pointer",
   listStyle: "none",
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 12,
   fontWeight: 800,
   letterSpacing: "0.08em",
@@ -94,7 +94,7 @@ const summaryStyle: React.CSSProperties = {
 };
 
 const tag = (color: string): React.CSSProperties => ({
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 11,
   fontWeight: 800,
   letterSpacing: "0.04em",
@@ -194,7 +194,7 @@ function YearCard() {
       <p style={{ ...label, margin: "0 0 4px", color: BRAND.tealDark }}>Over the term</p>
       <h2
         style={{
-          fontFamily: "Poppins, Inter, sans-serif",
+          fontFamily: "Poppins, sans-serif",
           fontSize: 22,
           fontWeight: 800,
           margin: "0 0 8px",
@@ -240,7 +240,7 @@ function Block({
       <div style={{ width: 26, height: 3, borderRadius: 2, background: color, margin: "0 0 9px" }} />
       <h3
         style={{
-          fontFamily: "Poppins, Inter, sans-serif",
+          fontFamily: "Poppins, sans-serif",
           fontSize: 16,
           fontWeight: 800,
           margin: "0 0 2px",
@@ -391,7 +391,7 @@ function SignalCard({ s, remove }: { s: Signal; remove: string }) {
       </div>
       <h2
         style={{
-          fontFamily: "Poppins, Inter, sans-serif",
+          fontFamily: "Poppins, sans-serif",
           fontSize: 28,
           fontWeight: 900,
           margin: "2px 0 4px",
@@ -562,14 +562,14 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               margin: "0 auto",
               padding: "28px 5% 80px",
               color: BRAND.ink,
-              fontFamily: "Inter, system-ui, sans-serif",
+              fontFamily: "Poppins, system-ui, sans-serif",
               lineHeight: 1.6,
             }}
           >
           <p style={{ ...label, margin: "0 0 6px" }}>Upshift Learning</p>
           <h1
             style={{
-              fontFamily: "Poppins, Inter, sans-serif",
+              fontFamily: "Poppins, sans-serif",
               fontSize: 42,
               fontWeight: 900,
               letterSpacing: "-1.2px",
@@ -610,7 +610,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
             <Card>
               <h2
                 style={{
-                  fontFamily: "Poppins, Inter, sans-serif",
+                  fontFamily: "Poppins, sans-serif",
                   fontSize: 22,
                   fontWeight: 800,
                   margin: "0 0 8px",
@@ -643,7 +643,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               <p style={{ ...label, margin: "0 0 4px" }}>{`Across the ${chosen.length} you picked`}</p>
               <h2
                 style={{
-                  fontFamily: "Poppins, Inter, sans-serif",
+                  fontFamily: "Poppins, sans-serif",
                   fontSize: 22,
                   fontWeight: 800,
                   margin: "0 0 12px",

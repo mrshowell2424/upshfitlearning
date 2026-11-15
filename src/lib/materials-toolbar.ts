@@ -32,7 +32,7 @@ function hubFor(key: string): { href: string; label: string } {
 function toolbarHtml(key: string): string {
   const hub = hubFor(key);
   const link = (href: string, text: string) =>
-    `<a href="${href}" style="font-family:Inter,system-ui,sans-serif;font-size:13px;` +
+    `<a href="${href}" style="font-family:Poppins,system-ui,sans-serif;font-size:13px;` +
     `font-weight:700;color:rgb(17,17,17);text-decoration:none;border:1.5px solid rgb(17,17,17);` +
     `border-radius:100px;padding:6px 14px;white-space:nowrap;background:#fff">${text}</a>`;
   return (
@@ -42,7 +42,7 @@ function toolbarHtml(key: string): string {
     `rgb(255,125,174),rgb(184,125,255),rgb(0,180,166))"></div>` +
     `<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;` +
     `padding:8px 16px">` +
-    `<span style="font-family:Poppins,Inter,system-ui,sans-serif;font-size:13px;` +
+    `<span style="font-family:Poppins,system-ui,sans-serif;font-size:13px;` +
     `font-weight:900;letter-spacing:.02em;color:rgb(17,17,17);margin-right:4px">UPSHIFT</span>` +
     link(hub.href, "\u2190 " + hub.label) +
     link("/science-of-reading/resources", "Reading Resources") +

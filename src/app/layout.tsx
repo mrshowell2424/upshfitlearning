@@ -1,22 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Poppins, Source_Serif_4 } from "next/font/google";
+import { Poppins, Source_Serif_4 } from "next/font/google";
 import { AuthProvider } from "@/providers/AuthProvider";
 import { siteUrl } from "@/lib/utils/site-origin";
 import { TITLE_TEMPLATE, OG_DEFAULT, ogCard, twitterCard } from "@/lib/constants/metadata";
 import "./globals.css";
 
-// Three faces, each with one job. Poppins is the brand's display face and
-// stays on headings and the wordmark. Inter runs the interface: tabs, pills,
-// labels, buttons. Source Serif carries the lines a child actually reads --
-// passages, questions, tasks -- because a reading page should not be set in
-// the same face as its own navigation, and a serif marks where the reading
-// starts without a single extra pixel of chrome.
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
-
+// Two faces. Poppins is the brand, and it runs everything the teacher sees:
+// headings, the wordmark, tabs, pills, labels, buttons, running text. Source
+// Serif carries the lines a child actually reads -- passages, questions,
+// tasks -- because a reading page should not be set in the same face as its
+// own navigation, and a serif marks where the reading starts without a
+// single extra pixel of chrome.
+//
+// Poppins is loaded from 300 up because the interface uses the light and
+// medium weights that the display sizes never touch.
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
@@ -60,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable} ${serif.variable} h-full antialiased`}>
+    <html lang="en" className={`${poppins.variable} ${serif.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-white">
         {/* First stop on every page. The header carries a wordmark, a
             search box and fourteen links, so without this the first word

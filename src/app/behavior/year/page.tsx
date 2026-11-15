@@ -47,7 +47,7 @@ type Search = Promise<Record<string, string | string[] | undefined>>;
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
 
 const label: React.CSSProperties = {
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 11,
   fontWeight: 700,
   letterSpacing: "0.14em",
@@ -55,7 +55,7 @@ const label: React.CSSProperties = {
   color: BRAND.mid,
 };
 
-/** Running text gets the serif; the interface around it stays in Inter. */
+/** Running text gets the serif; the interface around it stays in Poppins. */
 const reading: React.CSSProperties = {
   fontFamily: 'var(--font-serif), Georgia, "Times New Roman", serif',
   fontSize: 17,
@@ -109,7 +109,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
           style={{
             background: BRAND.paper,
             color: BRAND.ink,
-            fontFamily: "Inter, system-ui, sans-serif",
+            fontFamily: "Poppins, system-ui, sans-serif",
             lineHeight: 1.6,
           }}
         >
@@ -119,7 +119,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
             </p>
             <h1
               style={{
-                fontFamily: "Poppins, Inter, sans-serif",
+                fontFamily: "Poppins, sans-serif",
                 fontSize: 40,
                 fontWeight: 900,
                 letterSpacing: "-1px",
@@ -200,7 +200,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                 defaultValue={byWeek ? askedWeek : ""}
                 placeholder={`1–${TOTAL_WEEKS}`}
                 style={{
-                  fontFamily: "Inter, system-ui, sans-serif",
+                  fontFamily: "Poppins, system-ui, sans-serif",
                   fontSize: 14,
                   padding: "9px 12px",
                   borderRadius: 12,
@@ -256,7 +256,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               </div>
               <h2
                 style={{
-                  fontFamily: "Poppins, Inter, sans-serif",
+                  fontFamily: "Poppins, sans-serif",
                   fontSize: 30,
                   fontWeight: 800,
                   letterSpacing: "-0.6px",
@@ -313,7 +313,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                     style={{
                       flex: "0 0 auto",
                       width: 44,
-                      fontFamily: "Inter, system-ui, sans-serif",
+                      fontFamily: "Poppins, system-ui, sans-serif",
                       fontSize: 12,
                       fontWeight: 800,
                       letterSpacing: "0.06em",

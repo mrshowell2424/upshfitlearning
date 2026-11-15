@@ -31,7 +31,7 @@ export function CopyButton({ text, label }: { text: string; label: string }) {
       // -- and it used to look identical to the three buttons beside it. Filled
       // against their outlines, it reads as the one to press.
       style={{
-        fontFamily: "Inter, system-ui, sans-serif",
+        fontFamily: "Poppins, system-ui, sans-serif",
         fontSize: 13,
         fontWeight: 700,
         borderRadius: 100,

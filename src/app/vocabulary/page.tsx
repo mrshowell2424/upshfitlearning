@@ -88,7 +88,7 @@ const WORDS = allWords();
 const GRADES = [...new Set(WORDS.map((w) => w.grade))].sort((x, y) => x - y);
 
 const label: React.CSSProperties = {
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 11,
   fontWeight: 700,
   letterSpacing: "0.14em",
@@ -96,7 +96,7 @@ const label: React.CSSProperties = {
   color: BRAND.mid,
 };
 const pill = (on: boolean): React.CSSProperties => ({
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 13,
   fontWeight: 700,
   borderRadius: 100,
@@ -109,7 +109,7 @@ const pill = (on: boolean): React.CSSProperties => ({
   color: on ? "#FFFFFF" : BRAND.ink,
 });
 const select: React.CSSProperties = {
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 14,
   padding: "9px 12px",
   borderRadius: 12,
@@ -155,7 +155,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
             style={{
               background: BRAND.paper,
               color: BRAND.ink,
-              fontFamily: "Inter, system-ui, sans-serif",
+              fontFamily: "Poppins, system-ui, sans-serif",
               lineHeight: 1.6,
             }}
           >
@@ -163,7 +163,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               <p style={{ ...label, margin: "0 0 6px" }}>Upshift Learning</p>
               <h1
                 style={{
-                  fontFamily: "Poppins, Inter, sans-serif",
+                  fontFamily: "Poppins, sans-serif",
                   fontSize: 42,
                   fontWeight: 900,
                   letterSpacing: "-1.2px",
@@ -244,7 +244,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                     </div>
                     <h2
                       style={{
-                        fontFamily: "Poppins, Inter, sans-serif",
+                        fontFamily: "Poppins, sans-serif",
                         fontSize: 44,
                         fontWeight: 900,
                         margin: "4px 0 4px",
@@ -296,7 +296,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                         </span>
                         <h3
                           style={{
-                            fontFamily: "Poppins, Inter, sans-serif",
+                            fontFamily: "Poppins, sans-serif",
                             fontSize: 24,
                             fontWeight: 800,
                             margin: 0,

@@ -48,7 +48,7 @@ const gradeName = (g: number) =>
   g === 0 ? "K" : g === 1 ? "1st" : g === 2 ? "2nd" : g === 3 ? "3rd" : `${g}th`;
 
 const label: React.CSSProperties = {
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 11,
   fontWeight: 800,
   letterSpacing: "0.12em",
@@ -56,7 +56,7 @@ const label: React.CSSProperties = {
   color: BRAND.mid,
 };
 
-/** The lines a child reads get the serif. Chrome stays in Inter. */
+/** The lines a child reads get the serif. Chrome stays in Poppins. */
 const reading: React.CSSProperties = {
   fontFamily: 'var(--font-serif), Georgia, "Times New Roman", serif',
   fontSize: 18,
@@ -82,7 +82,7 @@ function Numbered({ n, children }: { n: number | string; children: React.ReactNo
           borderRadius: 999,
           background: BRAND.ink,
           color: BRAND.white,
-          fontFamily: "Inter, system-ui, sans-serif",
+          fontFamily: "Poppins, system-ui, sans-serif",
           fontSize: 12,
           fontWeight: 800,
           display: "flex",
@@ -105,7 +105,7 @@ function Key({ children }: { children: React.ReactNode }) {
           listStyle: "none",
           display: "inline-block",
           cursor: "pointer",
-          fontFamily: "Inter, system-ui, sans-serif",
+          fontFamily: "Poppins, system-ui, sans-serif",
           fontSize: 12,
           fontWeight: 800,
           letterSpacing: "0.06em",
@@ -162,7 +162,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
             style={{
               background: BRAND.paper,
               color: BRAND.ink,
-              fontFamily: "Inter, system-ui, sans-serif",
+              fontFamily: "Poppins, system-ui, sans-serif",
               lineHeight: 1.6,
             }}
           >
@@ -172,7 +172,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               </p>
               <h1
                 style={{
-                  fontFamily: "Poppins, Inter, sans-serif",
+                  fontFamily: "Poppins, sans-serif",
                   fontSize: 40,
                   fontWeight: 900,
                   letterSpacing: "-1px",
@@ -259,7 +259,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                   name="n"
                   defaultValue={String(idx)}
                   style={{
-                    fontFamily: "Inter, system-ui, sans-serif",
+                    fontFamily: "Poppins, system-ui, sans-serif",
                     fontSize: 14,
                     padding: "9px 12px",
                     borderRadius: 12,
@@ -309,7 +309,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                     </p>
                     <h2
                       style={{
-                        fontFamily: "Poppins, Inter, sans-serif",
+                        fontFamily: "Poppins, sans-serif",
                         fontSize: 28,
                         fontWeight: 800,
                         letterSpacing: "-0.5px",
@@ -322,7 +322,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                     <Link
                       href={`/science-of-reading/resources?tab=ar&g=${item.grade}&s=*&n=${item.n - 1}`}
                       style={{
-                        fontFamily: "Inter, system-ui, sans-serif",
+                        fontFamily: "Poppins, system-ui, sans-serif",
                         fontSize: 13,
                         fontWeight: 700,
                         color: BRAND.tealDark,

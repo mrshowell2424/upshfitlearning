@@ -74,7 +74,7 @@ export function Scorer({
       >
         <div
           style={{
-            fontFamily: "Poppins, Inter, sans-serif",
+            fontFamily: "Poppins, sans-serif",
             fontSize: 44,
             fontWeight: 900,
             letterSpacing: "-2px",
@@ -91,7 +91,7 @@ export function Scorer({
           onClick={() => setRunning((r) => !r)}
           disabled={left === 0}
           style={{
-            fontFamily: "Inter, system-ui, sans-serif",
+            fontFamily: "Poppins, system-ui, sans-serif",
             fontSize: 14,
             fontWeight: 700,
             borderRadius: 100,
@@ -112,7 +112,7 @@ export function Scorer({
             setLeft(60);
           }}
           style={{
-            fontFamily: "Inter, system-ui, sans-serif",
+            fontFamily: "Poppins, system-ui, sans-serif",
             fontSize: 13,
             fontWeight: 700,
             borderRadius: 100,
@@ -156,7 +156,7 @@ export function Scorer({
             onChange={(e) => setRead(e.target.value)}
             placeholder="0"
             style={{
-              fontFamily: "Inter, system-ui, sans-serif",
+              fontFamily: "Poppins, system-ui, sans-serif",
               fontSize: 20,
               fontWeight: 700,
               padding: "10px 14px",
@@ -192,7 +192,7 @@ export function Scorer({
             onChange={(e) => setErrors(e.target.value)}
             placeholder="0"
             style={{
-              fontFamily: "Inter, system-ui, sans-serif",
+              fontFamily: "Poppins, system-ui, sans-serif",
               fontSize: 20,
               fontWeight: 700,
               padding: "10px 14px",
@@ -273,7 +273,7 @@ export function Scorer({
               type="button"
               onClick={() => setProsody(prosody === n ? null : n)}
               style={{
-                fontFamily: "Inter, system-ui, sans-serif",
+                fontFamily: "Poppins, system-ui, sans-serif",
                 fontSize: 13,
                 fontWeight: 700,
                 borderRadius: 100,
@@ -336,7 +336,7 @@ function Stat({
       </div>
       <div
         style={{
-          fontFamily: "Poppins, Inter, sans-serif",
+          fontFamily: "Poppins, sans-serif",
           fontSize: big ? 40 : 28,
           fontWeight: 900,
           letterSpacing: "-1px",

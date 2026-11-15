@@ -83,7 +83,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
     padding: "22px 26px 40px",
     background: "#FFFFFF",
     color: INK,
-    fontFamily: "Inter, system-ui, sans-serif",
+    fontFamily: "Poppins, system-ui, sans-serif",
   };
 
   return (
@@ -194,7 +194,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               }}
             >
               {w.sentence}
-              <span style={{ fontFamily: "Inter, sans-serif", fontSize: 11 }}>
+              <span style={{ fontFamily: "Poppins, sans-serif", fontSize: 11 }}>
                 {" "}
                 — {w.article.title}, {w.gradeName}
               </span>

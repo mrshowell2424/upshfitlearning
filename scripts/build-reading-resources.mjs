@@ -76,16 +76,16 @@ const html = `<!doctype html>
 <title>Reading Resources</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
-/* Three faces, each with one job. Poppins is the display face and stays on
-   headings. Inter runs the interface: tabs, pills, selects, buttons. The
-   serif carries the lines a child actually reads, so a reading page is not
-   set in the same face as its own navigation. */
+/* Two faces. Poppins is the brand and runs the whole interface: headings,
+   tabs, pills, selects, buttons, running text. The serif carries the lines
+   a child actually reads, so a reading page is not set in the same face as
+   its own navigation. */
 :root{--read:"Source Serif 4",Georgia,"Times New Roman",serif}
 body{margin:0;background:${C.paper};color:${C.ink};
-  font-family:Inter,system-ui,sans-serif;line-height:1.6}
+  font-family:Poppins,system-ui,sans-serif;line-height:1.6}
 .bar{height:4px;background:linear-gradient(135deg,${C.coral},${C.pink},${C.lavender},${C.teal})}
 main{max-width:880px;margin:0 auto;padding:32px 5% 80px}
 /* The measure. Running text was set across the full column, about 105
@@ -99,20 +99,20 @@ main{max-width:880px;margin:0 auto;padding:32px 5% 80px}
 .kind{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
   color:${C.mid};background:${C.panel};border:1px solid ${C.line};border-radius:100px;
   padding:2px 8px;display:inline-block;margin:0 0 5px;white-space:nowrap}
-h1{font-family:Poppins,Inter,sans-serif;font-size:40px;font-weight:900;
+h1{font-family:Poppins,sans-serif;font-size:40px;font-weight:900;
   letter-spacing:-1px;margin:0 0 4px;line-height:1.1}
 .sub{color:${C.mid};margin:0 0 24px;font-size:17px;max-width:60ch}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   color:${C.mid};margin:0 0 6px}
 .tabs{display:flex;gap:8px;margin:0 0 18px;flex-wrap:wrap}
-.tab{font-family:Inter,sans-serif;font-size:14px;font-weight:700;border-radius:100px;
+.tab{font-family:Poppins,sans-serif;font-size:14px;font-weight:700;border-radius:100px;
   padding:9px 20px;cursor:pointer;border:1.5px solid ${C.ink};background:${C.white};
   color:${C.ink}}
 .tab[aria-selected="true"]{background:${C.ink};color:${C.white}}
 .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 16px}
-select{font-family:Inter,sans-serif;font-size:14px;padding:9px 12px;border-radius:12px;
+select{font-family:Poppins,sans-serif;font-size:14px;padding:9px 12px;border-radius:12px;
   border:1.5px solid ${C.line};background:${C.white};color:${C.ink};max-width:100%}
-.pill{font-family:Inter,sans-serif;font-size:13px;font-weight:700;border-radius:100px;
+.pill{font-family:Poppins,sans-serif;font-size:13px;font-weight:700;border-radius:100px;
   padding:7px 16px;cursor:pointer;border:1.5px solid ${C.ink};background:${C.white};color:${C.ink}}
 .pill[aria-pressed="true"]{background:${C.ink};color:${C.white}}
 .card{background:${C.white};border:1px solid ${C.line};border-radius:20px;padding:0;
@@ -125,7 +125,7 @@ select{font-family:Inter,sans-serif;font-size:14px;padding:9px 12px;border-radiu
 #pane-ar .band > .eyebrow{color:${C.tealDark}}
 .card .in{padding:22px 26px 26px}
 .meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
-h2{font-family:Poppins,Inter,sans-serif;font-size:30px;font-weight:800;margin:4px 0 2px;
+h2{font-family:Poppins,sans-serif;font-size:30px;font-weight:800;margin:4px 0 2px;
   letter-spacing:-.6px;line-height:1.15}
 .story{font-size:18px;line-height:1.72;margin:0;max-width:66ch;text-wrap:pretty;
   font-family:var(--read)}
