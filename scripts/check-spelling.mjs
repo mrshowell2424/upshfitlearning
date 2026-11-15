@@ -22,6 +22,20 @@ import { readFileSync } from "node:fs";
 import { join, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spanOf, judgeSpelling } from "./lib/spelling-span.mjs";
+import { LESSON_SPANS, lessonSpan } from "./lib/lesson-span.mjs";
+import { packWords, widePool } from "./lib/pack-words.mjs";
+
+/*
+ * Where the lesson should be. Thirteen patterns have no word bank and
+ * are built from a span rule in lib/lesson-span.mjs instead, because a
+ * substring is not the pattern for them: the -s suffix in desks is the
+ * last s, and the soft letter in magic is the g. Those are recomputed
+ * with the rule, everything else with spanOf, and the point either way
+ * is that this file recomputes rather than trusts.
+ */
+const freshSpan = (key, word, part) =>
+  LESSON_SPANS[key] ? lessonSpan(key, word)?.span ?? null : spanOf(word, part);
+
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const read = (f) => JSON.parse(readFileSync(join(ROOT, "scripts", f), "utf8"));
@@ -37,6 +51,25 @@ const fail = (where, why) => problems.push(`${where}: ${why}`);
 const REAL = new Map();
 const FAKE = new Set();
 /** The second round's words and fakes, keyed by skill rather than by part. */
+/*
+ * Where a ruled pattern's words are allowed to come from.
+ *
+ * The banked patterns are held to their bank: every word has to be in
+ * reading-part-words.json under that exact part, so nothing can drift
+ * in. The thirteen ruled patterns have no bank, and the same guarantee
+ * is owed: their words must be the OG pack's own, or the ones written
+ * in reading-extra-words.json. Nothing may be invented here.
+ */
+const fromSource = (key) => {
+  const ex = EXTRA[key] ?? {};
+  return new Set([
+    ...(packWords(key, Infinity) ?? []),
+    ...widePool(key),
+    ...(ex.real ?? []),
+  ].map((w) => String(w).toLowerCase()));
+};
+const SOURCES = new Map(Object.keys(LESSON_SPANS).map((k) => [k, fromSource(k)]));
+
 const EXTRA_REAL = new Map();
 for (const [k, v] of Object.entries(EXTRA)) {
   if (k.startsWith("_")) continue;
@@ -63,19 +96,23 @@ for (const p of DATA.patterns) {
   for (const part of p.parts) {
     const bankKey = `${p.key}|${part.part}`;
     const bank = REAL.get(bankKey);
-    if (!bank) fail(bankKey, "no bank of that name in reading-part-words.json");
+    const ruled = SOURCES.get(p.key);
+    if (!bank && !ruled) fail(bankKey, "no bank of that name in reading-part-words.json");
 
     for (const { word, span } of part.words) {
       words++;
 
-      // The word is the bank's, not something that drifted in.
+      // The word is the bank's -- or, for a ruled pattern, the pack's --
+      // and not something that drifted in.
       if (bank && !bank.has(word)) fail(bankKey, `"${word}" is not in that bank`);
+      if (!bank && ruled && !ruled.has(word.toLowerCase()))
+        fail(bankKey, `"${word}" is in neither the OG pack nor the extra-words file`);
       if (FAKE.has(word.toLowerCase())) {
         fail(bankKey, `"${word}" is a fake word -- those are a reading task, not a dictation one`);
       }
 
       // The span still points at the lesson.
-      const fresh = spanOf(word, part.part);
+      const fresh = freshSpan(p.key, word, part.part);
       if (!fresh) {
         fail(bankKey, `"${word}" no longer contains ${part.part}`);
       } else if (fresh[0] !== span[0] || fresh[1] !== span[1]) {
@@ -145,7 +182,7 @@ for (const p of DATA.patterns) {
         if (all.has(word)) fail(p.key, `second round repeats "${word}" from the first`);
         if (seen.has(word)) fail(p.key, `second round lists "${word}" twice`);
         seen.add(word);
-        const fresh = spanOf(word, part.part);
+        const fresh = freshSpan(p.key, word, part.part);
         if (!fresh) fail(p.key, `second round: "${word}" does not contain ${part.part}`);
         else if (fresh[0] !== span[0] || fresh[1] !== span[1])
           fail(
@@ -231,6 +268,25 @@ const VERDICTS = [
   ["unlock", "un-", "unlok", "elsewhere"],
   ["submit", "mit/miss", "submitt", "elsewhere"],
   ["rain", "ai", "rainn", "elsewhere"],
+
+  /*
+   * An affix has a place. A child who writes "desk" for "desks" has not
+   * written the -s suffix, and the test used to ask only whether the
+   * letter appeared anywhere in what they wrote -- so desk, which ends
+   * in k and holds an s, was called a correct -s with a mistake
+   * somewhere else. Same for "particul" against particular.
+   *
+   * "sing" for "singing" stays "elsewhere" on purpose: sing really does
+   * end in -ing, so the suffix spelling is not what went wrong. What
+   * went wrong is a dropped syllable, which this tool does not claim to
+   * judge.
+   */
+  ["desks", "-s", "desk", "lesson"],
+  ["desks", "-s", "desks", "right"],
+  ["particular", "-ar", "particul", "lesson"],
+  ["jumping", "-ing", "jumpin", "lesson"],
+  ["singing", "-ing", "sing", "elsewhere"],
+  ["unlock", "un-", "lock", "lesson"],
 ];
 
 for (const [word, part, typed, want] of VERDICTS) {

@@ -41,6 +41,8 @@ const EXTRA = read("reading-extra-words.json");
 const WHATSAYS = read("reading-what-says.json").ws;
 
 import { spanOf } from "./lib/spelling-span.mjs";
+import { LESSON_SPANS, lessonSpan } from "./lib/lesson-span.mjs";
+import { packWords, widePool } from "./lib/pack-words.mjs";
 
 /* ------------------------------------------------------------------ *
  * The sentence to dictate.
@@ -148,13 +150,81 @@ function sentenceFromPassage(key, bankWords) {
  * ------------------------------------------------------------------ */
 
 const keys = Object.keys(PART_WORDS).filter((k) => !k.startsWith("_"));
-const bases = [...new Set(keys.map((k) => k.split("|")[0]))];
+const banked = [...new Set(keys.map((k) => k.split("|")[0]))];
+
+/*
+ * Thirteen lessons with no word bank at all.
+ *
+ * reading-part-words.json covers forty-one lessons, so forty of the
+ * sixty-two had dictation and twenty-one had none. The missing piece was
+ * never the words -- every one of those lessons has ten in its OG pack
+ * and ten more in reading-extra-words.json, and two sentences written for
+ * dictation. What was missing was the span: which letters in "badge" are
+ * the lesson. Without it the tool cannot tell a pattern error from a
+ * slip, and that is the whole of what makes it more than a spelling test.
+ *
+ * lib/lesson-span.mjs now carries a span rule for thirteen of the
+ * twenty-one. Those thirteen build their parts from the rule instead of
+ * from a bank. The other eight still have none, because no substring is
+ * their lesson -- syllable division is a boundary, the silent e rule is
+ * about a letter nobody writes, and which a in panda is the schwa cannot
+ * be read off the spelling.
+ *
+ * The words come from the OG pack and from the extra-words file, read
+ * through lib/pack-words.mjs. Not from reading-sequence.json, which takes
+ * a lesson's words from its dictation bank where one exists: reading it
+ * here would be deriving these words from this file's own output.
+ */
+const ruled = Object.keys(LESSON_SPANS).filter((k) => !banked.includes(k));
+const bases = [...banked, ...ruled];
+
+/** Where the lesson sits in a word: the rule where there is one. */
+const locate = (base, word, part) =>
+  LESSON_SPANS[base] ? lessonSpan(base, word)?.span ?? null : spanOf(word, part);
+
+const WANT = 10;
+
+/**
+ * Parts for a lesson with no bank: its pack words grouped by which of the
+ * lesson's spellings each one is an example of. A word the rule cannot
+ * place is not an example and is left out -- short a's pack covers all
+ * five short vowels, so eight of its ten are other vowels -- and the list
+ * is refilled from the wider pack fields rather than shipped short.
+ */
+function partsFromRule(base) {
+  const byPart = new Map();
+  const taken = new Set();
+  const add = (w) => {
+    const hit = lessonSpan(base, w);
+    if (!hit || taken.has(w)) return false;
+    taken.add(w);
+    if (!byPart.has(hit.sub)) byPart.set(hit.sub, []);
+    byPart.get(hit.sub).push({ word: w, span: hit.span });
+    return true;
+  };
+  for (const w of packWords(base, Infinity) ?? []) {
+    if (taken.size >= WANT) break;
+    add(w);
+  }
+  for (const w of widePool(base).sort((a, b) => a.length - b.length || a.localeCompare(b))) {
+    if (taken.size >= WANT) break;
+    add(w);
+  }
+  return { parts: [...byPart.entries()].map(([part, words]) => ({ part, words })), taken };
+}
 
 const patterns = [];
 const dropped = [];
 
 for (const base of bases) {
-  const parts = [];
+  let parts = [];
+  if (LESSON_SPANS[base] && !banked.includes(base)) {
+    parts = partsFromRule(base).parts;
+    if (!parts.length) {
+      dropped.push(`${base} · no pack word is an example of its own lesson`);
+      continue;
+    }
+  }
   for (const k of keys.filter((x) => x.split("|")[0] === base)) {
     const raw = k.split("|")[1];
     if (!raw) continue;
@@ -214,6 +284,7 @@ for (const base of bases) {
   let extra = null;
   if (ex && Array.isArray(ex.real) && ex.real.length) {
     const subs = SPLITS[base] ?? parts.map((p) => p.part);
+    const ruleHere = Boolean(LESSON_SPANS[base]);
     const byPart = new Map();
     // Only the words the first round does not already have. The extra
     // file was written as "ten more words on the pattern", and across the
@@ -227,15 +298,17 @@ for (const base of bases) {
       if (already.has(w)) continue;
       // Longest matching sub first, so "ai" does not claim a word whose
       // lesson is really the longer spelling it sits inside.
-      const sub = [...subs]
-        .sort((a, b) => b.replace(/-/g, "").length - a.replace(/-/g, "").length)
-        .find((x) => spanOf(w, x));
+      const sub = ruleHere
+        ? lessonSpan(base, w)?.sub
+        : [...subs]
+            .sort((a, b) => b.replace(/-/g, "").length - a.replace(/-/g, "").length)
+            .find((x) => spanOf(w, x));
       if (!sub) {
         dropped.push(`${base} · extra word ${w} · the lesson is not in the spelling`);
         continue;
       }
       if (!byPart.has(sub)) byPart.set(sub, []);
-      byPart.get(sub).push({ word: w, span: spanOf(w, sub) });
+      byPart.get(sub).push({ word: w, span: locate(base, w, sub) });
     }
     const exParts = [...byPart.entries()].map(([part, words]) => ({ part, words }));
     const exAll = exParts.flatMap((p) => p.words.map((w) => w.word));

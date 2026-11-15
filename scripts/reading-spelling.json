@@ -4797,8 +4797,8 @@
       {
        "word": "singing",
        "span": [
-        1,
-        4
+        4,
+        7
        ]
       },
       {
@@ -8113,8 +8113,8 @@
       {
        "word": "particular",
        "span": [
-        1,
-        3
+        8,
+        10
        ]
       },
       {
@@ -12211,6 +12211,2259 @@
     ],
     "source": "written for dictation"
    }
+  },
+  {
+   "key": "cvc-a",
+   "parts": [
+    {
+     "part": "a",
+     "words": [
+      {
+       "word": "cat",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "map",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "bag",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "fan",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "ham",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "jam",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "mat",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "rag",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "tan",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "van",
+       "span": [
+        1,
+        2
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "a"
+   ],
+   "sentence": {
+    "text": "The bat ran at the cat.",
+    "words": 6,
+    "carries": [
+     "cat"
+    ],
+    "source": "written for dictation"
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "a",
+      "words": [
+       {
+        "word": "can",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "dad",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "hat",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "lap",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "mad",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "nap",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "rat",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "yam",
+        "span": [
+         1,
+         2
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "Dad ran to the van.",
+     "words": 5,
+     "carries": [
+      "dad"
+     ],
+     "source": "written for dictation"
+    }
+   }
+  },
+  {
+   "key": "og1-02",
+   "parts": [
+    {
+     "part": "e",
+     "words": [
+      {
+       "word": "he",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "me",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "we",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "be",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "she",
+       "span": [
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "part": "o",
+     "words": [
+      {
+       "word": "go",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "no",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "so",
+       "span": [
+        1,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "part": "i",
+     "words": [
+      {
+       "word": "hi",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "I",
+       "span": [
+        0,
+        1
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "e",
+    "o",
+    "i"
+   ],
+   "sentence": {
+    "text": "We go up to the top of the lot.",
+    "words": 9,
+    "carries": [
+     "we",
+     "go"
+    ],
+    "source": "Go, Bo, Go · 2nd grade"
+   },
+   "whatSays": [
+    "/ē/ → e",
+    "/ō/ → o",
+    "/ī/ → i"
+   ]
+  },
+  {
+   "key": "og1-10",
+   "parts": [
+    {
+     "part": "-s",
+     "words": [
+      {
+       "word": "cats",
+       "span": [
+        3,
+        4
+       ]
+      },
+      {
+       "word": "dogs",
+       "span": [
+        3,
+        4
+       ]
+      },
+      {
+       "word": "pens",
+       "span": [
+        3,
+        4
+       ]
+      },
+      {
+       "word": "cups",
+       "span": [
+        3,
+        4
+       ]
+      },
+      {
+       "word": "beds",
+       "span": [
+        3,
+        4
+       ]
+      },
+      {
+       "word": "hats",
+       "span": [
+        3,
+        4
+       ]
+      },
+      {
+       "word": "bugs",
+       "span": [
+        3,
+        4
+       ]
+      },
+      {
+       "word": "maps",
+       "span": [
+        3,
+        4
+       ]
+      },
+      {
+       "word": "frogs",
+       "span": [
+        4,
+        5
+       ]
+      },
+      {
+       "word": "desks",
+       "span": [
+        4,
+        5
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "-s"
+   ],
+   "sentence": {
+    "text": "The hats sit on a shelf in the hall.",
+    "words": 9,
+    "carries": [
+     "hats"
+    ],
+    "source": "Six Hats · 2nd grade"
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "-s",
+      "words": [
+       {
+        "word": "pins",
+        "span": [
+         3,
+         4
+        ]
+       },
+       {
+        "word": "legs",
+        "span": [
+         3,
+         4
+        ]
+       },
+       {
+        "word": "nets",
+        "span": [
+         3,
+         4
+        ]
+       },
+       {
+        "word": "kids",
+        "span": [
+         3,
+         4
+        ]
+       },
+       {
+        "word": "rugs",
+        "span": [
+         3,
+         4
+        ]
+       },
+       {
+        "word": "caps",
+        "span": [
+         3,
+         4
+        ]
+       },
+       {
+        "word": "jobs",
+        "span": [
+         3,
+         4
+        ]
+       },
+       {
+        "word": "tubs",
+        "span": [
+         3,
+         4
+        ]
+       },
+       {
+        "word": "hens",
+        "span": [
+         3,
+         4
+        ]
+       },
+       {
+        "word": "mops",
+        "span": [
+         3,
+         4
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "The hens sit in the nests.",
+     "words": 6,
+     "carries": [
+      "hens"
+     ],
+     "source": "written for dictation"
+    }
+   },
+   "whatSays": [
+    "/s/ → s",
+    "/z/ → s"
+   ]
+  },
+  {
+   "key": "og1-11",
+   "parts": [
+    {
+     "part": "'s",
+     "words": [
+      {
+       "word": "Sam's",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "dog's",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "mom's",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "Kim's",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "cat's",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "dad's",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "Ben's",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "hen's",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "pig's",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "bug's",
+       "span": [
+        3,
+        5
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "'s"
+   ],
+   "sentence": {
+    "text": "Ben's hands are cold, but Ben's grin is big.",
+    "words": 9,
+    "carries": [
+     "Ben's"
+    ],
+    "source": "Ben's Bike · 2nd grade"
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "'s",
+      "words": [
+       {
+        "word": "Jan's",
+        "span": [
+         3,
+         5
+        ]
+       },
+       {
+        "word": "Tom's",
+        "span": [
+         3,
+         5
+        ]
+       },
+       {
+        "word": "Pat's",
+        "span": [
+         3,
+         5
+        ]
+       },
+       {
+        "word": "Meg's",
+        "span": [
+         3,
+         5
+        ]
+       },
+       {
+        "word": "Rob's",
+        "span": [
+         3,
+         5
+        ]
+       },
+       {
+        "word": "fox's",
+        "span": [
+         3,
+         5
+        ]
+       },
+       {
+        "word": "duck's",
+        "span": [
+         4,
+         6
+        ]
+       },
+       {
+        "word": "kid's",
+        "span": [
+         3,
+         5
+        ]
+       },
+       {
+        "word": "pup's",
+        "span": [
+         3,
+         5
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "Tom's cat sat on Meg's lap.",
+     "words": 6,
+     "carries": [
+      "Tom's",
+      "Meg's"
+     ],
+     "source": "written for dictation"
+    }
+   },
+   "whatSays": [
+    "/z/ → 's"
+   ]
+  },
+  {
+   "key": "y",
+   "parts": [
+    {
+     "part": "y",
+     "words": [
+      {
+       "word": "fly",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "cry",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "my",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "try",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "sky",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "candy",
+       "span": [
+        4,
+        5
+       ]
+      },
+      {
+       "word": "happy",
+       "span": [
+        4,
+        5
+       ]
+      },
+      {
+       "word": "baby",
+       "span": [
+        3,
+        4
+       ]
+      },
+      {
+       "word": "funny",
+       "span": [
+        4,
+        5
+       ]
+      },
+      {
+       "word": "puppy",
+       "span": [
+        4,
+        5
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "y"
+   ],
+   "sentence": {
+    "text": "I will try not to cry on a windy day.",
+    "words": 10,
+    "carries": [
+     "cry",
+     "try"
+    ],
+    "source": "written for dictation"
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "y",
+      "words": [
+       {
+        "word": "why",
+        "span": [
+         2,
+         3
+        ]
+       },
+       {
+        "word": "shy",
+        "span": [
+         2,
+         3
+        ]
+       },
+       {
+        "word": "dry",
+        "span": [
+         2,
+         3
+        ]
+       },
+       {
+        "word": "sunny",
+        "span": [
+         4,
+         5
+        ]
+       },
+       {
+        "word": "city",
+        "span": [
+         3,
+         4
+        ]
+       },
+       {
+        "word": "lucky",
+        "span": [
+         4,
+         5
+        ]
+       },
+       {
+        "word": "silly",
+        "span": [
+         4,
+         5
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "The puppy is happy and shy.",
+     "words": 6,
+     "carries": [
+      "shy"
+     ],
+     "source": "written for dictation"
+    }
+   }
+  },
+  {
+   "key": "og2-09",
+   "parts": [
+    {
+     "part": "rr",
+     "words": [
+      {
+       "word": "carry",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "berry",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "hurry",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "cherry",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "sorry",
+       "span": [
+        2,
+        4
+       ]
+      }
+     ]
+    },
+    {
+     "part": "re",
+     "words": [
+      {
+       "word": "care",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "here",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "fire",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "more",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "store",
+       "span": [
+        3,
+        5
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "rr",
+    "re"
+   ],
+   "sentence": {
+    "text": "Perry has a berry bush by the shed.",
+    "words": 8,
+    "carries": [
+     "berry"
+    ],
+    "source": "The Berry Jar · 2nd grade"
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "rr",
+      "words": [
+       {
+        "word": "marry",
+        "span": [
+         2,
+         4
+        ]
+       },
+       {
+        "word": "merry",
+        "span": [
+         2,
+         4
+        ]
+       },
+       {
+        "word": "worry",
+        "span": [
+         2,
+         4
+        ]
+       },
+       {
+        "word": "carrot",
+        "span": [
+         2,
+         4
+        ]
+       },
+       {
+        "word": "mirror",
+        "span": [
+         2,
+         4
+        ]
+       },
+       {
+        "word": "arrow",
+        "span": [
+         1,
+         3
+        ]
+       }
+      ]
+     },
+     {
+      "part": "re",
+      "words": [
+       {
+        "word": "share",
+        "span": [
+         3,
+         5
+        ]
+       },
+       {
+        "word": "spare",
+        "span": [
+         3,
+         5
+        ]
+       },
+       {
+        "word": "score",
+        "span": [
+         3,
+         5
+        ]
+       },
+       {
+        "word": "pure",
+        "span": [
+         2,
+         4
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "I am sorry you had to hurry.",
+     "words": 7,
+     "carries": [],
+     "source": "written for dictation"
+    }
+   },
+   "whatSays": [
+    "/ar/ → arr",
+    "/er/ → err",
+    "/air/ → are"
+   ]
+  },
+  {
+   "key": "og2-14",
+   "parts": [
+    {
+     "part": "pp/tt/nn/gg/mm/bb/dd/ll/rr/ss/ff/zz",
+     "words": [
+      {
+       "word": "hopping",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "running",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "sitter",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "bigger",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "stopped",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "swimming",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "hottest",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "skipped",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "funny",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "shopping",
+       "span": [
+        3,
+        5
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "pp/tt/nn/gg/mm/bb/dd/ll/rr/ss/ff/zz"
+   ],
+   "sentence": {
+    "text": "Our school had a hopping race on sports day.",
+    "words": 9,
+    "carries": [
+     "hopping"
+    ],
+    "source": "Hopping to the Finish · 2nd grade"
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "pp/tt/nn/gg/mm/bb/dd/ll/rr/ss/ff/zz",
+      "words": [
+       {
+        "word": "batted",
+        "span": [
+         2,
+         4
+        ]
+       },
+       {
+        "word": "pinned",
+        "span": [
+         2,
+         4
+        ]
+       },
+       {
+        "word": "jogging",
+        "span": [
+         2,
+         4
+        ]
+       },
+       {
+        "word": "sitting",
+        "span": [
+         2,
+         4
+        ]
+       },
+       {
+        "word": "winner",
+        "span": [
+         2,
+         4
+        ]
+       },
+       {
+        "word": "dropped",
+        "span": [
+         3,
+         5
+        ]
+       },
+       {
+        "word": "flatter",
+        "span": [
+         3,
+         5
+        ]
+       },
+       {
+        "word": "grabbed",
+        "span": [
+         3,
+         5
+        ]
+       },
+       {
+        "word": "wagging",
+        "span": [
+         2,
+         4
+        ]
+       },
+       {
+        "word": "hugged",
+        "span": [
+         2,
+         4
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "He is hopping and running in the sun.",
+     "words": 8,
+     "carries": [],
+     "source": "written for dictation"
+    }
+   }
+  },
+  {
+   "key": "og3-01",
+   "parts": [
+    {
+     "part": "c",
+     "words": [
+      {
+       "word": "city",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "face",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "rice",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "ice",
+       "span": [
+        1,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "part": "g",
+     "words": [
+      {
+       "word": "gem",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "cage",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "giant",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "page",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "huge",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "gentle",
+       "span": [
+        0,
+        1
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "c",
+    "g"
+   ],
+   "sentence": {
+    "text": "In the centre of our village there is a huge stone giant.",
+    "words": 12,
+    "carries": [
+     "giant",
+     "huge"
+    ],
+    "source": "The Giant of the Village · 2nd grade"
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "c",
+      "words": [
+       {
+        "word": "cent",
+        "span": [
+         0,
+         1
+        ]
+       },
+       {
+        "word": "cell",
+        "span": [
+         0,
+         1
+        ]
+       },
+       {
+        "word": "decide",
+        "span": [
+         2,
+         3
+        ]
+       },
+       {
+        "word": "pencil",
+        "span": [
+         3,
+         4
+        ]
+       },
+       {
+        "word": "dance",
+        "span": [
+         3,
+         4
+        ]
+       }
+      ]
+     },
+     {
+      "part": "g",
+      "words": [
+       {
+        "word": "magic",
+        "span": [
+         2,
+         3
+        ]
+       },
+       {
+        "word": "germ",
+        "span": [
+         0,
+         1
+        ]
+       },
+       {
+        "word": "ginger",
+        "span": [
+         0,
+         1
+        ]
+       },
+       {
+        "word": "energy",
+        "span": [
+         4,
+         5
+        ]
+       },
+       {
+        "word": "change",
+        "span": [
+         4,
+         5
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "The giant gem is in the cage.",
+     "words": 7,
+     "carries": [],
+     "source": "written for dictation"
+    }
+   },
+   "whatSays": [
+    "/s/ → c (e, i, y)",
+    "/j/ → g (e, i, y)"
+   ]
+  },
+  {
+   "key": "og3-02",
+   "parts": [
+    {
+     "part": "dge",
+     "words": [
+      {
+       "word": "badge",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "bridge",
+       "span": [
+        3,
+        6
+       ]
+      },
+      {
+       "word": "judge",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "fudge",
+       "span": [
+        2,
+        5
+       ]
+      },
+      {
+       "word": "edge",
+       "span": [
+        1,
+        4
+       ]
+      },
+      {
+       "word": "hedge",
+       "span": [
+        2,
+        5
+       ]
+      }
+     ]
+    },
+    {
+     "part": "ge",
+     "words": [
+      {
+       "word": "huge",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "page",
+       "span": [
+        2,
+        4
+       ]
+      },
+      {
+       "word": "stage",
+       "span": [
+        3,
+        5
+       ]
+      },
+      {
+       "word": "large",
+       "span": [
+        3,
+        5
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "dge",
+    "ge"
+   ],
+   "sentence": {
+    "text": "There is a badger that lives at the edge of our garden, under the hedge.",
+    "words": 15,
+    "carries": [
+     "edge",
+     "hedge"
+    ],
+    "source": "The Badger at the Edge · 2nd grade"
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "dge",
+      "words": [
+       {
+        "word": "ledge",
+        "span": [
+         2,
+         5
+        ]
+       },
+       {
+        "word": "lodge",
+        "span": [
+         2,
+         5
+        ]
+       },
+       {
+        "word": "ridge",
+        "span": [
+         2,
+         5
+        ]
+       },
+       {
+        "word": "dodge",
+        "span": [
+         2,
+         5
+        ]
+       },
+       {
+        "word": "badger",
+        "span": [
+         2,
+         5
+        ]
+       },
+       {
+        "word": "budget",
+        "span": [
+         2,
+         5
+        ]
+       },
+       {
+        "word": "smudge",
+        "span": [
+         3,
+         6
+        ]
+       },
+       {
+        "word": "pledge",
+        "span": [
+         3,
+         6
+        ]
+       },
+       {
+        "word": "trudge",
+        "span": [
+         3,
+         6
+        ]
+       },
+       {
+        "word": "wedge",
+        "span": [
+         2,
+         5
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "The judge sat on the edge of the bridge.",
+     "words": 9,
+     "carries": [],
+     "source": "written for dictation"
+    }
+   },
+   "whatSays": [
+    "/j/ → dge, ge"
+   ]
+  },
+  {
+   "key": "og3-06",
+   "parts": [
+    {
+     "part": "i",
+     "words": [
+      {
+       "word": "cried",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "happier",
+       "span": [
+        4,
+        5
+       ]
+      },
+      {
+       "word": "babies",
+       "span": [
+        3,
+        4
+       ]
+      },
+      {
+       "word": "funniest",
+       "span": [
+        4,
+        5
+       ]
+      },
+      {
+       "word": "tried",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "puppies",
+       "span": [
+        4,
+        5
+       ]
+      },
+      {
+       "word": "dried",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "flies",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "carried",
+       "span": [
+        4,
+        5
+       ]
+      }
+     ]
+    },
+    {
+     "part": "y",
+     "words": [
+      {
+       "word": "crying",
+       "span": [
+        2,
+        3
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "i",
+    "y"
+   ],
+   "sentence": {
+    "text": "We carried water to the garden every evening and studied the sky for rain.",
+    "words": 14,
+    "carries": [
+     "carried"
+    ],
+    "source": "The Happiest Day · 2nd grade"
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "i",
+      "words": [
+       {
+        "word": "cities",
+        "span": [
+         3,
+         4
+        ]
+       },
+       {
+        "word": "parties",
+        "span": [
+         4,
+         5
+        ]
+       },
+       {
+        "word": "studied",
+        "span": [
+         4,
+         5
+        ]
+       },
+       {
+        "word": "easier",
+        "span": [
+         3,
+         4
+        ]
+       },
+       {
+        "word": "prettiest",
+        "span": [
+         5,
+         6
+        ]
+       },
+       {
+        "word": "copies",
+        "span": [
+         3,
+         4
+        ]
+       },
+       {
+        "word": "hurried",
+        "span": [
+         4,
+         5
+        ]
+       },
+       {
+        "word": "bodies",
+        "span": [
+         3,
+         4
+        ]
+       },
+       {
+        "word": "angrier",
+        "span": [
+         4,
+         5
+        ]
+       },
+       {
+        "word": "busiest",
+        "span": [
+         3,
+         4
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "The babies cried at the parties.",
+     "words": 6,
+     "carries": [
+      "parties"
+     ],
+     "source": "written for dictation"
+    }
+   }
+  },
+  {
+   "key": "og5-02",
+   "parts": [
+    {
+     "part": "y",
+     "words": [
+      {
+       "word": "myth",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "gym",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "cyber",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "type",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "system",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "symbol",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "style",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "nylon",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "hydrant",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "crystal",
+       "span": [
+        2,
+        3
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "y"
+   ],
+   "sentence": {
+    "text": "The myth has not changed at all.",
+    "words": 7,
+    "carries": [
+     "myth"
+    ],
+    "source": "The Myth in the Gym · 2nd grade"
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "y",
+      "words": [
+       {
+        "word": "gymnast",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "mystery",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "syrup",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "oxygen",
+        "span": [
+         2,
+         3
+        ]
+       },
+       {
+        "word": "symptom",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "cycle",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "typical",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "pyramid",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "lyric",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "synonym",
+        "span": [
+         1,
+         2
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "The gym has a new system.",
+     "words": 6,
+     "carries": [],
+     "source": "written for dictation"
+    }
+   },
+   "whatSays": [
+    "/ĭ/ → y",
+    "/ī/ → y"
+   ]
+  },
+  {
+   "key": "og5-06",
+   "parts": [
+    {
+     "part": "o",
+     "words": [
+      {
+       "word": "month",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "oven",
+       "span": [
+        0,
+        1
+       ]
+      },
+      {
+       "word": "love",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "some",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "son",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "glove",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "come",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "done",
+       "span": [
+        1,
+        2
+       ]
+      },
+      {
+       "word": "above",
+       "span": [
+        2,
+        3
+       ]
+      },
+      {
+       "word": "money",
+       "span": [
+        1,
+        2
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "o"
+   ],
+   "sentence": {
+    "text": "One month last winter, something went wrong with every single Monday.",
+    "words": 11,
+    "carries": [
+     "month"
+    ],
+    "source": "A Month of Mondays · 2nd grade"
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "o",
+      "words": [
+       {
+        "word": "mother",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "brother",
+        "span": [
+         2,
+         3
+        ]
+       },
+       {
+        "word": "honey",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "wonder",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "nothing",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "dozen",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "company",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "word": "front",
+        "span": [
+         2,
+         3
+        ]
+       },
+       {
+        "word": "among",
+        "span": [
+         2,
+         3
+        ]
+       },
+       {
+        "word": "shovel",
+        "span": [
+         2,
+         3
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "My mother and brother come home.",
+     "words": 6,
+     "carries": [
+      "mother",
+      "brother"
+     ],
+     "source": "written for dictation"
+    }
+   },
+   "whatSays": [
+    "/ŭ/ → o"
+   ]
+  },
+  {
+   "key": "og5-07",
+   "parts": [
+    {
+     "part": "wor",
+     "words": [
+      {
+       "word": "worm",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "word",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "work",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "world",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "worth",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "worse",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "worst",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "worry",
+       "span": [
+        0,
+        3
+       ]
+      },
+      {
+       "word": "homework",
+       "span": [
+        4,
+        7
+       ]
+      },
+      {
+       "word": "worker",
+       "span": [
+        0,
+        3
+       ]
+      }
+     ]
+    }
+   ],
+   "sub": [
+    "wor"
+   ],
+   "sentence": {
+    "text": "She says the first word of gardening is patience and the second is work.",
+    "words": 14,
+    "carries": [
+     "word",
+     "work"
+    ],
+    "source": "Worth the Work · 2nd grade"
+   },
+   "extra": {
+    "parts": [
+     {
+      "part": "wor",
+      "words": [
+       {
+        "word": "worthy",
+        "span": [
+         0,
+         3
+        ]
+       },
+       {
+        "word": "worthless",
+        "span": [
+         0,
+         3
+        ]
+       },
+       {
+        "word": "workshop",
+        "span": [
+         0,
+         3
+        ]
+       },
+       {
+        "word": "worldwide",
+        "span": [
+         0,
+         3
+        ]
+       },
+       {
+        "word": "network",
+        "span": [
+         3,
+         6
+        ]
+       },
+       {
+        "word": "password",
+        "span": [
+         4,
+         7
+        ]
+       },
+       {
+        "word": "worksheet",
+        "span": [
+         0,
+         3
+        ]
+       },
+       {
+        "word": "wordy",
+        "span": [
+         0,
+         3
+        ]
+       },
+       {
+        "word": "workout",
+        "span": [
+         0,
+         3
+        ]
+       }
+      ]
+     }
+    ],
+    "sentence": {
+     "text": "The worker will work in the world.",
+     "words": 7,
+     "carries": [],
+     "source": "written for dictation"
+    }
+   },
+   "whatSays": [
+    "/er/ → wor"
+   ]
   }
  ]
 }

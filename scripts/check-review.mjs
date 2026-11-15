@@ -158,6 +158,9 @@ for (const r of seq) {
     if (!r.words.some((w) => holds(w, sub)))
       say(`${r.key} (${r.name}): not one of its review words carries "${sub}" — ${r.words.join(", ")}`);
   }
+  const twice = r.words.filter((w, i) => r.words.indexOf(w) !== i);
+  if (twice.length)
+    say(`${r.key} (${r.name}): ${[...new Set(twice)].join(", ")} appears twice in its review words`);
   const strays = r.words.filter((w) => !subs.some((sub) => holds(w, sub)));
   if (strays.length)
     say(

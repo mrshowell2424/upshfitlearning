@@ -213,7 +213,33 @@ export function Dictation({
   // One flat run through the pattern's words, in the order the banks give
   // them, so a teacher working down the list on paper and a child working
   // down the screen are on the same word.
-  const words = useMemo(() => parts.flatMap((p) => p.words.map((w) => ({ ...w, part: p.part }))), [parts]);
+  /*
+   * What to call the lesson when talking about ONE word.
+   *
+   * A part may be written as alternatives -- mit/miss, con-/com-, and
+   * the doubling rule's twelve doubled consonants -- and the name of the
+   * set is not what a child is looking at. "The pp/tt/nn/gg/mm/bb/dd/ll/
+   * rr/ss/ff/zz is the part to look at" is a worse sentence than "the pp
+   * is the part to look at", and the letters are already marked in the
+   * word, so naming them is naming what they can see.
+   *
+   * Only for alternates. A split vowel stays a_e, because the letters
+   * the span covers there are "ake" and the pattern is not.
+   */
+  const words = useMemo(
+    () =>
+      parts.flatMap((p) =>
+        p.words.map((w) => ({
+          ...w,
+          part: p.part,
+          // What to SAY. The judging still gets the real part, hyphen and
+          // alternates intact, because a hyphen says where an affix has
+          // to sit and dropping it would change the verdict.
+          label: p.part.includes("/") ? w.word.slice(w.span[0], w.span[1]) : p.part,
+        })),
+      ),
+    [parts],
+  );
 
   const [at, setAt] = useState(0);
   const [typed, setTyped] = useState("");
@@ -272,7 +298,7 @@ export function Dictation({
             feedback, once they have committed. */}
         <p style={{ ...label, margin: "0 0 10px" }}>
           Word {at + 1} of {words.length}
-          {!student && ` · ${w.part}`}
+          {!student && ` · ${w.label}`}
         </p>
         {!student && (
           <p style={{ ...label, margin: "0 0 10px", color: BRAND.tealDark }}>
@@ -399,7 +425,7 @@ function Feedback({
   patternName,
 }: {
   verdict: Verdict;
-  w: SpellWord & { part: string };
+  w: SpellWord & { part: string; label: string };
   typed: string;
   patternName: string;
 }) {
@@ -422,13 +448,13 @@ function Feedback({
           <p style={{ ...label, margin: "0 0 6px", color: tone }}>That is it</p>
           <p style={{ fontSize: 15, lineHeight: 1.55, color: BRAND.mid, margin: 0 }}>
             <Marked word={w.word} span={w.span} size={18} color={tone} /> — the{" "}
-            <b>{w.part}</b> is doing the work.
+            <b>{w.label}</b> is doing the work.
           </p>
         </>
       ) : (
         <>
           <p style={{ ...label, margin: "0 0 8px", color: tone }}>
-            {verdict.kind === "lesson" ? `The ${w.part} is the part to look at` : `The ${w.part} is right`}
+            {verdict.kind === "lesson" ? `The ${w.label} is the part to look at` : `The ${w.label} is right`}
           </p>
           <p style={{ fontSize: 16, lineHeight: 1.6, margin: "0 0 8px" }}>
             <span style={{ fontFamily: serif, fontSize: 22, color: BRAND.mid, textDecoration: "line-through" }}>
@@ -445,7 +471,7 @@ function Feedback({
               </>
             ) : (
               <>
-                The <b>{w.part}</b> is spelled correctly — what slipped is somewhere else in the
+                The <b>{w.label}</b> is spelled correctly — what slipped is somewhere else in the
                 word. This one is not a gap in {patternName}; it is worth knowing which part it was.
               </>
             )}

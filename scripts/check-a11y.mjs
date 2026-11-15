@@ -48,6 +48,12 @@ const ALL_ROUTES = [
   "/writing", "/writing/print",
   "/spelling", "/spelling?view=student", "/spelling/print",
   "/spelling?p=og1-04", "/spelling?p=cvc-mix&list=2",
+  // Two of the thirteen patterns built from a span rule rather than a word
+  // bank: one whose part is an alternation (the doubling rule names the
+  // doubled letters of the word in hand, not all twelve), and one whose
+  // extra words turned out to belong to a different lesson, so it has a
+  // first list and no second.
+  "/spelling?p=og2-14", "/spelling?p=og1-02",
   "/word-ladders", "/word-ladders?view=student", "/word-ladders/print",
   "/review", "/review/print",
   "/passages", "/passages?view=student", "/passages/print",

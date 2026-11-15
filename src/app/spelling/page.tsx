@@ -16,10 +16,19 @@ import { Dictation, type SpellPart, type Sentence } from "./dictation";
  * a_e with nothing in front of you to choose from. A child can read a
  * pattern for a year before they can write it.
  *
- * Forty patterns, 1,460 words, all of them already written and already
- * checked against their place in the sequence. What is new is that each
- * word knows where its own lesson sits inside it, so the tool can tell a
- * spelling error apart from a lesson that has not landed.
+ * Fifty-three patterns, 1,590 words, all of them already written and
+ * already checked against their place in the sequence. What is new is
+ * that each word knows where its own lesson sits inside it, so the tool
+ * can tell a spelling error apart from a lesson that has not landed.
+ *
+ * It was forty patterns until thirteen lessons with no word bank got a
+ * span rule in scripts/lib/lesson-span.mjs. Those thirteen had words all
+ * along -- in their OG pack and in reading-extra-words.json -- and what
+ * they lacked was the one thing this page is built on: knowing which
+ * letters in the word are the lesson. Eight lessons still have none, and
+ * that is deliberate: no substring is the lesson when the lesson is
+ * where a syllable divides, or a silent e that is not written, or which
+ * a in panda is the schwa.
  */
 
 const DATA = SPELLING as unknown as {
@@ -92,7 +101,7 @@ function pill(on: boolean, color: string): React.CSSProperties {
 export const metadata = {
   title: "Dictation",
   description:
-    "The write side of phonics: 1,460 words across 40 patterns, dictated aloud, and a check that tells a spelling slip apart from a lesson that has not landed.",
+    "The write side of phonics: 1,590 words across 53 patterns, dictated aloud, and a check that tells a spelling slip apart from a lesson that has not landed.",
   openGraph: ogCard("/og/spelling.png"),
   twitter: twitterCard("/og/spelling.png"),
 };
@@ -142,7 +151,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
       <main id="main" tabIndex={-1} className="flex-1">
         <SignInGate
           title="Dictation"
-          blurb="The write side of the same phonics: 1,460 words across 40 patterns, dictated aloud, with a check that says where the spelling went wrong. Free — an account is all it takes."
+          blurb="The write side of the same phonics: 1,590 words across 53 patterns, dictated aloud, with a check that says where the spelling went wrong. Free — an account is all it takes."
         >
           <div style={{ height: 4, background: GRADIENT }} />
 
@@ -243,7 +252,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
 
             {/* What says? The auditory drill: the teacher names a sound and
                 the child names the spelling that makes it. It runs before
-                the writing, and only 18 of the 40 patterns have one --
+                the writing, and only 27 of the 53 patterns have one --
                 a lesson that teaches a rule or a meaning rather than a
                 sound has no new sound to drill. */}
             {pattern.whatSays && (

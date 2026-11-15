@@ -34,32 +34,13 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { deriveSequence } from "./lib/sequence.mjs";
 import { LESSON_SPANS, lessonSpan } from "./lib/lesson-span.mjs";
+import { packWords, widePool } from "./lib/pack-words.mjs";
 
-const R = "content-reading-materials/og-packs/";
-global.window = global;
-new Function(readFileSync(R + "og-concepts.js", "utf8"))();
-new Function(readFileSync(R + "og-pack-data.js", "utf8"))();
-const PACKS = global.OG_PACKS;
 
 const SPELL = JSON.parse(readFileSync("scripts/reading-spelling.json", "utf8"));
 const SPELL_BY_KEY = new Map(SPELL.patterns.map((p) => [p.key, p]));
 const SPLITS = JSON.parse(readFileSync("scripts/reading-skill-splits.json", "utf8"));
 
-/*
- * The same system dictionary the ladder check uses, for the same reason.
- * The wider pack fields are worth reaching into when the short list
- * misses a sub-pattern, but some of them carry the made-up words from
- * the real-or-fake exercises -- proll, mandle, jicture, interblate -- and
- * a review sheet telling a teacher to read "mandle" is worse than one
- * that is merely incomplete.
- */
-const DICT = new Set(
-  readFileSync("/usr/share/dict/words", "utf8")
-    .split("\n")
-    .map((w) => w.trim())
-    .filter((w) => w && w === w.toLowerCase()),
-);
-const realWord = (w) => DICT.has(w) || DICT.has(w.replace(/'s$/, "")) || DICT.has(w.replace(/-/g, ""));
 
 const bare = (raw) => raw.toLowerCase().split("/").map((x) => x.replace(/-/g, "")).filter(Boolean);
 const carries = (word, raw) =>
@@ -85,71 +66,47 @@ const example = (key, w) =>
     ? Boolean(lessonSpan(key, w))
     : (SPLITS[key] ?? []).some((sub) => carries(w, sub));
 
-/** Every real word anywhere in a pack's word fields. */
-const WIDE_FIELDS = ["speed", "bank", "read", "read2", "lists"];
-function widePool(id) {
-  const p = PACKS[id];
-  if (!p) return [];
-  const out = new Set();
-  for (const f of WIDE_FIELDS) {
-    const v = p[f];
-    if (!v) continue;
-    for (const item of Array.isArray(v) ? v : [v]) {
-      if (typeof item !== "string") continue;
-      for (const w of item.split(/[^A-Za-z'-]+/)) {
-        const lw = w.toLowerCase();
-        if (lw.length > 1 && realWord(lw)) out.add(lw);
-      }
-    }
-  }
-  return [...out];
-}
 
-/** Basic Reading patterns and the OG pack that covers the same ground. */
-const PACK_FOR_BASIC = {
-  "cvc-a": "1-01",
-  "cvc-mix": "1-01",
-  dig: "1-05",
-  floss: "1-07",
-  vce: "1-08",
-  blends: "1-09",
-  vccv: "1-12",
-  vccvce: "1-12",
-  "ng-nk": "2-01",
-  y: "2-02",
-  "ck-tch": "2-03",
-  "ar-or": "2-04",
-  "ai-ay": "2-05",
-  "ee-ea": "2-05",
-  "oa-ow": "2-05",
-};
 
 const WANT = 10;
 
 function fromSpelling(key) {
   const s = SPELL_BY_KEY.get(key);
   if (!s) return null;
+  /*
+   * One from each part in turn, rather than a fixed quota each.
+   *
+   * A quota wastes what a thin part cannot fill. The final-y lesson has
+   * two parts and the second holds a single word -- crying, the one that
+   * keeps its y -- so a quota of five each produced six words, and the
+   * four that topped the list back up to ten came from the wider pack
+   * shortest-first: fried, plied, spied. Those are not third-grade
+   * review words. Taking turns gives the same balance where both parts
+   * are full and spends nothing on a part that is empty.
+   */
+  // A word can belong to two parts -- telephone is both the tele part and
+  // the phone part, biology is both bio and ology -- and listing it twice
+  // reads as a mistake on a review sheet.
   const out = [];
-  const per = Math.ceil(WANT / s.parts.length);
-  for (const part of s.parts) for (const w of part.words.slice(0, per)) out.push(w.word);
-  return out.slice(0, WANT);
-}
-
-function fromPack(key) {
-  const id = key.startsWith("og") ? key.slice(2) : PACK_FOR_BASIC[key];
-  const p = id && PACKS[id];
-  if (!p) return null;
-  for (const field of ["speed", "bank", "read"]) {
-    const v = p[field];
-    if (Array.isArray(v) && v.length) {
-      const words = [...new Set(v.map((w) => String(w).trim()).filter((w) => /^[a-zA-Z'-]+$/.test(w)))];
-      if (words.length) return words.slice(0, WANT);
+  const seen = new Set();
+  for (let i = 0; out.length < WANT; i++) {
+    let added = false;
+    for (const part of s.parts) {
+      if (i >= part.words.length) continue;
+      added = true;
+      const w = part.words[i].word;
+      if (out.length < WANT && !seen.has(w)) {
+        seen.add(w);
+        out.push(w);
+      }
     }
+    if (!added) break;
   }
-  return null;
+  return out;
 }
 
-const packId = (key) => (key.startsWith("og") ? key.slice(2) : PACK_FOR_BASIC[key]);
+const fromPack = (key) => packWords(key, WANT);
+
 
 /*
  * Top up a list that does not reach all of its lesson's sub-patterns.
@@ -168,7 +125,7 @@ function topUp(key, words) {
   const holds = (w, sub) => (rule ? lessonSpan(key, w)?.sub === sub : carries(w, sub));
   const missing = subs.filter((sub) => !words.some((w) => holds(w, sub)));
 
-  const pool = widePool(packId(key)).filter((w) => example(key, w));
+  const pool = widePool(key).filter((w) => example(key, w));
   const out = [...words];
   let topped = 0;
   for (const sub of missing) {
