@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F6F8F4}
+a{color:#4B6049}a:hover{color:#2F3E2E}
+[data-print-root]{display:none}
+@page{size:letter portrait;margin:0.4in}
+@media print{body{background:#fff}[data-screen]{display:none!important}[data-print-root]{display:block!important}}
+</style>
+</helmet>
+
+<div data-screen="true" style="font-family:'Poppins',sans-serif;color:#1c1917;max-width:1180px;margin:0 auto;padding:22px 22px 60px;display:flex;flex-direction:column;gap:18px">
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px;border-bottom:3px solid #618459;padding-bottom:12px">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <a data-back-plans="true" href="%E2%9E%A1%EF%B8%8F%20PLANS.dc.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;text-decoration:none">← Back to Plans</a>
+      <div style="font-family:'Outfit',sans-serif;font-size:34px;font-weight:800;color:#2F3E2E;line-height:1">Executive Functioning Portal</div>
+      <div style="font-size:14px;color:#57534e">{{ weekLine }}</div>
+    </div>
+    <div style="display:flex;border:2px solid #4B6049;border-radius:999px;overflow:hidden">
+      <button type="button" onClick="{{ toTeacher }}" style="{{ teacherBtn }}">Teacher</button>
+      <button type="button" onClick="{{ toStudent }}" style="{{ studentBtn }}">Student</button>
+    </div>
+  </div>
+
+  <sc-if value="{{ isTeacher }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;flex-wrap:wrap;gap:6px">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+        <button type="button" onClick="{{ t.go }}" style="{{ t.style }}">{{ t.label }}</button>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ tabWeek }}" hint-placeholder-val="{{ true }}">
+      <div style="background:#fff;border:2px solid #4B6049;border-radius:14px;padding:20px 22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px 28px">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;color:#618459">THIS WEEK · {{ cur.weekLabel }}</div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="font-size:52px;line-height:1">{{ cur.icon }}</span>
+            <div>
+              <div style="font-family:'Outfit',sans-serif;font-size:30px;font-weight:800;color:#2F3E2E;line-height:1.05">{{ cur.name }}</div>
+              <div style="font-size:13px;font-weight:700;color:#618459">{{ cur.skill }}</div>
+            </div>
+          </div>
+          <div style="font-size:17px;font-weight:700;line-height:1.35">{{ cur.ican }}</div>
+          <div style="font-size:14px"><b style="color:#4B6049">Tool:</b> {{ cur.tool }}</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;justify-content:center">
+          <div style="font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;color:#618459">TODAY'S 2-MINUTE LESSON</div>
+          <div style="font-size:16px;line-height:1.45;background:#EEF3EC;border-radius:10px;padding:12px 14px">{{ cur.todayText }}</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <button type="button" onClick="{{ presentToday }}" style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;background:#4B6049;color:#fff;border:0;border-radius:10px;padding:11px 18px;cursor:pointer">▶ Show today's slides</button>
+            <button type="button" onClick="{{ openCurLesson }}" style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;background:#fff;color:#4B6049;border:2px solid #4B6049;border-radius:10px;padding:9px 16px;cursor:pointer">Full week plan</button>
+          </div>
+        </div>
+      </div>
+      <div style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:800;color:#2F3E2E">All {{ skillCount }} skills · the year at a glance</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px">
+        <sc-for list="{{ skillCards }}" as="s" hint-placeholder-count="12">
+          <button type="button" onClick="{{ s.open }}" style="{{ s.card }}">
+            <div style="display:flex;align-items:center;gap:10px">
+              <span style="font-size:28px;line-height:1">{{ s.icon }}</span>
+              <div style="text-align:left">
+                <div style="font-family:'Outfit',sans-serif;font-size:17px;font-weight:800;color:#2F3E2E;line-height:1.1">{{ s.name }}</div>
+                <div style="font-size:12px;color:#618459;font-weight:700">{{ s.skill }}</div>
+              </div>
+            </div>
+            <div style="font-size:12px;color:#57534e;text-align:left;line-height:1.4">{{ s.weeks }}</div>
+            <sc-if value="{{ s.isNow }}" hint-placeholder-val="{{ false }}">
+              <span style="align-self:flex-start;font-family:'Outfit',sans-serif;font-size:11px;font-weight:800;letter-spacing:.1em;background:#4B6049;color:#fff;border-radius:999px;padding:3px 10px">THIS WEEK</span>
+            </sc-if>
+          </button>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ tabLesson }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px">
+        <span style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;color:#4B6049">Skill</span>
+        <select onChange="{{ pickSkill }}" value="{{ selValue }}" style="font-family:'Poppins',sans-serif;font-size:14px;border:2px solid #789677;border-radius:8px;padding:8px 10px;background:#fff;min-width:260px">
+          <sc-for list="{{ skillOptions }}" as="o" hint-placeholder-count="12"><option value="{{ o.value }}">{{ o.label }}</option></sc-for>
+        </select>
+      </div>
+      <div style="background:#fff;border:2px solid #789677;border-radius:14px;padding:20px 22px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:center;gap:14px">
+          <span style="font-size:46px;line-height:1">{{ sel.icon }}</span>
+          <div>
+            <div style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:800;color:#2F3E2E;line-height:1.05">{{ sel.name }}</div>
+            <div style="font-size:13px;font-weight:700;color:#618459">{{ sel.skill }} · {{ sel.weeks }}</div>
+          </div>
+        </div>
+        <div style="font-size:17px;font-weight:700">{{ sel.ican }}</div>
+        <div style="font-size:14px"><b style="color:#4B6049">Tool:</b> {{ sel.tool }}</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ selDays }}" as="d" hint-placeholder-count="5">
+            <div style="display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:12px;align-items:center;border:1.5px solid #C9D3C4;border-radius:10px;padding:10px 12px">
+              <span style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:800;color:#4B6049">{{ d.day }}</span>
+              <span style="font-size:14px;line-height:1.4">{{ d.text }}</span>
+              <button type="button" onClick="{{ d.present }}" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;background:#4B6049;color:#fff;border:0;border-radius:8px;padding:8px 12px;cursor:pointer;white-space:nowrap">▶ Slides</button>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+          <div style="font-size:14px;line-height:1.45;background:#EAF2F7;border-radius:10px;padding:12px 14px"><b style="color:#2F5E7A">Victor:</b> {{ sel.victor }}</div>
+          <div style="font-size:14px;line-height:1.45;background:#FDF6E7;border-radius:10px;padding:12px 14px"><b style="color:#7A5410">Home tip:</b> {{ sel.home }}</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ tabStudents }}" hint-placeholder-val="{{ false }}">
+      <div style="font-size:14px;color:#57534e">Each student's focus skill, their self-check this week (1 = tough day, 3 = great day), and your notes.</div>
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:#2F3E2E">{{ g.grade }} grade</div>
+          <sc-for list="{{ g.kids }}" as="k" hint-placeholder-count="3">
+            <div style="background:#fff;border:2px solid #C9D3C4;border-radius:12px;padding:12px 14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 18px;align-items:start">
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800">{{ k.name }}</div>
+                <select onChange="{{ k.pickFocus }}" value="{{ k.focus }}" style="font-family:'Poppins',sans-serif;font-size:13px;border:1.5px solid #C9D3C4;border-radius:6px;padding:6px 8px;background:#fff">
+                  <sc-for list="{{ focusOptions }}" as="o" hint-placeholder-count="13"><option value="{{ o.value }}">{{ o.label }}</option></sc-for>
+                </select>
+                <div style="display:flex;gap:6px">
+                  <sc-for list="{{ k.week }}" as="w" hint-placeholder-count="5">
+                    <div style="{{ w.style }}">{{ w.label }}</div>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <div style="display:flex;gap:6px">
+                  <input value="{{ k.draft }}" onChange="{{ k.setDraft }}" placeholder="Quick note…" style="flex:1;min-width:0;font-family:'Poppins',sans-serif;font-size:13px;border:1.5px solid #C9D3C4;border-radius:6px;padding:7px 9px"></input>
+                  <button type="button" onClick="{{ k.addLog }}" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;background:#4B6049;color:#fff;border:0;border-radius:6px;padding:7px 12px;cursor:pointer">Log</button>
+                </div>
+                <sc-for list="{{ k.logs }}" as="l" hint-placeholder-count="0">
+                  <div style="font-size:12.5px;line-height:1.35;border-left:3px solid #9FB39A;padding-left:8px"><b>{{ l.date }}</b> · {{ l.skill }}: {{ l.note }}</div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-for>
+    </sc-if>
+
+    <sc-if value="{{ tabVictor }}" hint-placeholder-val="{{ false }}">
+      <div style="background:#fff;border:2px solid #2F5E7A;border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px">
+          <div style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;color:#2F5E7A">Victor · {{ vDateLabel }}</div>
+          <div style="font-size:13px;color:#57534e">IEP goal: stay focused 10 minutes and use his help signal.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+          <sc-for list="{{ vCounters }}" as="c" hint-placeholder-count="3">
+            <div style="border:2px solid #C9D9E3;border-radius:12px;padding:12px;display:flex;flex-direction:column;align-items:center;gap:8px;background:#F7FAFC">
+              <div style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:#2F5E7A;text-align:center">{{ c.label }}</div>
+              <div style="font-family:'Outfit',sans-serif;font-size:40px;font-weight:800;color:#1c1917;line-height:1">{{ c.value }}</div>
+              <div style="display:flex;gap:6px">
+                <button type="button" onClick="{{ c.dec }}" style="font-size:18px;font-weight:800;width:44px;height:44px;border-radius:10px;border:2px solid #2F5E7A;background:#fff;color:#2F5E7A;cursor:pointer">−</button>
+                <button type="button" onClick="{{ c.inc }}" style="font-size:18px;font-weight:800;width:44px;height:44px;border-radius:10px;border:0;background:#2F5E7A;color:#fff;cursor:pointer">+</button>
+              </div>
+            </div>
+          </sc-for>
+          <button type="button" onClick="{{ vToggleBus }}" style="{{ vBusStyle }}">
+            <span style="font-size:34px;line-height:1">🚌</span>
+            <span style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:800">{{ vBusLabel }}</span>
+          </button>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:#2F5E7A">Focus minutes · last 10 days logged · goal line = 10</div>
+          <div style="position:relative;height:150px;display:flex;align-items:flex-end;gap:8px;border-bottom:2px solid #1c1917;padding:0 4px">
+            <div style="position:absolute;left:0;right:0;bottom:75px;border-top:2px dashed #618459"></div>
+            <sc-for list="{{ vBars }}" as="b" hint-placeholder-count="0">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;height:100%;justify-content:flex-end">
+                <span style="font-size:11px;font-weight:700">{{ b.v }}</span>
+                <div style="{{ b.style }}"></div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex;gap:8px;padding:0 4px">
+            <sc-for list="{{ vBars }}" as="b" hint-placeholder-count="0"><span style="flex:1;text-align:center;font-size:10.5px;color:#57534e">{{ b.d }}</span></sc-for>
+          </div>
+          <sc-if value="{{ vEmpty }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;color:#78716c">No days logged yet. Use the counters above.</div></sc-if>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ tabPrint }}" hint-placeholder-val="{{ false }}">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+        <sc-for list="{{ printBtns }}" as="p" hint-placeholder-count="4">
+          <button type="button" onClick="{{ p.go }}" style="background:#fff;border:2px solid #789677;border-radius:12px;padding:16px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:4px">
+            <span style="font-size:28px;line-height:1">{{ p.icon }}</span>
+            <span style="font-family:'Outfit',sans-serif;font-size:17px;font-weight:800;color:#2F3E2E">{{ p.label }}</span>
+            <span style="font-family:'Poppins',sans-serif;font-size:13px;color:#57534e">{{ p.sub }}</span>
+          </button>
+        </sc-for>
+      </div>
+    </sc-if>
+  </sc-if>
+
+  <sc-if value="{{ isStudent }}" hint-placeholder-val="{{ false }}">
+    <sc-if value="{{ noKid }}" hint-placeholder-val="{{ true }}">
+      <div style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:800;color:#2F3E2E;text-align:center;margin-top:10px">Tap your name</div>
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
+          <sc-for list="{{ g.kids }}" as="k" hint-placeholder-count="3">
+            <button type="button" onClick="{{ k.pick }}" style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;background:#fff;color:#2F3E2E;border:3px solid #789677;border-radius:16px;padding:18px 30px;cursor:pointer;min-width:170px">{{ k.name }}</button>
+          </sc-for>
+        </div>
+      </sc-for>
+    </sc-if>
+    <sc-if value="{{ hasKid }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+        <div style="font-family:'Outfit',sans-serif;font-size:30px;font-weight:800;color:#2F3E2E">Hi, {{ kidName }}!</div>
+        <button type="button" onClick="{{ clearKid }}" style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;background:#fff;color:#4B6049;border:2px solid #4B6049;border-radius:10px;padding:8px 14px;cursor:pointer">Not me</button>
+      </div>
+      <div style="background:#fff;border:3px solid #4B6049;border-radius:18px;padding:22px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+        <div style="font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;color:#618459">MY SKILL</div>
+        <span style="font-size:64px;line-height:1">{{ kidSkill.icon }}</span>
+        <div style="font-family:'Outfit',sans-serif;font-size:36px;font-weight:800;color:#2F3E2E;line-height:1.05">{{ kidSkill.name }}</div>
+        <div style="font-size:21px;font-weight:600;line-height:1.35;max-width:640px">{{ kidSkill.ican }}</div>
+        <div style="font-size:17px;background:#EEF3EC;border-radius:10px;padding:8px 16px"><b>My tool:</b> {{ kidSkill.tool }}</div>
+      </div>
+      <div style="background:#fff;border:2px solid #789677;border-radius:18px;padding:20px;display:flex;flex-direction:column;align-items:center;gap:14px">
+        <div style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;color:#2F3E2E">How did I do today?</div>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px">
+          <sc-for list="{{ rateBtns }}" as="r" hint-placeholder-count="3">
+            <button type="button" onClick="{{ r.go }}" style="{{ r.style }}">
+              <span style="font-size:46px;line-height:1">{{ r.face }}</span>
+              <span style="font-family:'Outfit',sans-serif;font-size:17px;font-weight:800">{{ r.label }}</span>
+            </button>
+          </sc-for>
+        </div>
+        <div style="display:flex;gap:8px">
+          <sc-for list="{{ kidWeek }}" as="w" hint-placeholder-count="5"><div style="{{ w.style }}">{{ w.label }}</div></sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <div style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;color:#2F3E2E">My tools</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px">
+      <div style="background:#fff;border:2px solid #789677;border-radius:16px;padding:18px;display:flex;flex-direction:column;align-items:center;gap:12px">
+        <div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:#2F3E2E">⏱️ Focus timer</div>
+        <div style="{{ timerRing }}">
+          <div style="width:150px;height:150px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:40px;font-weight:800;color:#2F3E2E">{{ timerText }}</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px">
+          <sc-for list="{{ timerPresets }}" as="t" hint-placeholder-count="4">
+            <button type="button" onClick="{{ t.go }}" style="{{ t.style }}">{{ t.label }}</button>
+          </sc-for>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button type="button" onClick="{{ timerToggle }}" style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;background:#4B6049;color:#fff;border:0;border-radius:10px;padding:10px 20px;cursor:pointer">{{ timerBtn }}</button>
+          <button type="button" onClick="{{ timerReset }}" style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;background:#fff;color:#4B6049;border:2px solid #4B6049;border-radius:10px;padding:8px 16px;cursor:pointer">Reset</button>
+        </div>
+        <sc-if value="{{ timerDone }}" hint-placeholder-val="{{ false }}"><div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:#4B6049">Time's up! Brain break 🎉</div></sc-if>
+      </div>
+      <div style="background:#fff;border:2px solid #789677;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px">
+        <div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:#2F3E2E;text-align:center">🌡️ Feelings thermometer</div>
+        <sc-for list="{{ thermo }}" as="t" hint-placeholder-count="5">
+          <button type="button" onClick="{{ t.go }}" style="{{ t.style }}"><span style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:800;width:26px">{{ t.n }}</span><span style="font-size:22px">{{ t.face }}</span><span style="font-family:'Poppins',sans-serif;font-size:14px;font-weight:600">{{ t.label }}</span></button>
+        </sc-for>
+        <sc-if value="{{ hasThermo }}" hint-placeholder-val="{{ false }}">
+          <div style="font-size:14px;line-height:1.45;background:#EEF3EC;border-radius:10px;padding:10px 12px"><b>Try this:</b> {{ thermoTip }}</div>
+        </sc-if>
+      </div>
+      <div style="background:#fff;border:2px solid #789677;border-radius:16px;padding:18px;display:flex;flex-direction:column;align-items:center;gap:12px">
+        <div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:#2F3E2E">🫁 Box breathing</div>
+        <div style="width:190px;height:190px;display:flex;align-items:center;justify-content:center">
+          <div style="{{ breathBox }}">{{ breathText }}</div>
+        </div>
+        <button type="button" onClick="{{ breathToggle }}" style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;background:#4B6049;color:#fff;border:0;border-radius:10px;padding:10px 20px;cursor:pointer">{{ breathBtn }}</button>
+      </div>
+    </div>
+  </sc-if>
+</div>
+
+<sc-if value="{{ presenting }}" hint-placeholder-val="{{ false }}">
+  <div data-screen="true" style="position:fixed;inset:0;z-index:100;background:#2F3E2E;display:flex;flex-direction:column;font-family:'Poppins',sans-serif">
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:40px 8vw;text-align:center;color:#fff">
+      <div style="font-family:'Outfit',sans-serif;font-size:clamp(14px,1.6vw,22px);font-weight:700;letter-spacing:.2em;color:#CFE0C8">{{ slide.kicker }}</div>
+      <div style="font-size:clamp(60px,9vw,130px);line-height:1">{{ slide.icon }}</div>
+      <div style="font-family:'Outfit',sans-serif;font-size:clamp(36px,5.5vw,84px);font-weight:800;line-height:1.05;text-wrap:balance">{{ slide.title }}</div>
+      <div style="font-size:clamp(20px,2.6vw,40px);font-weight:500;line-height:1.4;max-width:1200px;color:#EEF3EC;text-wrap:pretty">{{ slide.body }}</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:rgba(0,0,0,.2)">
+      <button type="button" onClick="{{ slidePrev }}" style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;background:#fff;color:#2F3E2E;border:0;border-radius:10px;padding:10px 18px;cursor:pointer">← Back</button>
+      <span style="font-family:'Outfit',sans-serif;font-size:15px;color:#CFE0C8">{{ slideCount }}</span>
+      <div style="display:flex;gap:8px">
+        <button type="button" onClick="{{ slideNext }}" style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;background:#CFE0C8;color:#2F3E2E;border:0;border-radius:10px;padding:10px 18px;cursor:pointer">Next →</button>
+        <button type="button" onClick="{{ closeSlides }}" style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;background:transparent;color:#fff;border:2px solid #fff;border-radius:10px;padding:8px 14px;cursor:pointer">Close</button>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<div data-print-root="true">
+  <sc-for list="{{ posters }}" as="p" hint-placeholder-count="0">
+    <div style="break-after:page;page-break-after:always;width:7.7in;height:10.1in;box-sizing:border-box;border:6px solid #4B6049;border-radius:24px;padding:0.5in;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;font-family:'Poppins',sans-serif;color:#1c1917;overflow:hidden">
+      <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;letter-spacing:.2em;color:#618459">EXECUTIVE FUNCTIONING SKILL</div>
+      <div style="font-size:150px;line-height:1">{{ p.icon }}</div>
+      <div style="font-family:'Outfit',sans-serif;font-size:66px;font-weight:800;color:#2F3E2E;line-height:1">{{ p.name }}</div>
+      <div style="font-size:18px;font-weight:700;color:#618459">{{ p.skill }}</div>
+      <div style="font-size:30px;font-weight:700;line-height:1.3">{{ p.ican }}</div>
+      <div style="width:100%;box-sizing:border-box;background:#EEF3EC;border:3px solid #4B6049;border-radius:16px;padding:18px 22px">
+        <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:800;letter-spacing:.14em;color:#4B6049">MY TOOL</div>
+        <div style="font-size:26px;font-weight:700;margin-top:4px">{{ p.tool }}</div>
+      </div>
+    </div>
+  </sc-for>
+  <sc-for list="{{ letters }}" as="l" hint-placeholder-count="0">
+    <div style="break-after:page;page-break-after:always;width:7.7in;min-height:9.8in;box-sizing:border-box;padding:0.3in 0.2in;font-family:'Poppins',sans-serif;color:#1c1917;display:flex;flex-direction:column;gap:18px">
+      <div style="display:flex;align-items:center;gap:16px;border-bottom:4px solid #4B6049;padding-bottom:14px">
+        <span style="font-size:64px;line-height:1">{{ l.icon }}</span>
+        <div>
+          <div style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;letter-spacing:.18em;color:#618459">SKILL OF THE WEEK · {{ l.week }}</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:38px;font-weight:800;color:#2F3E2E;line-height:1.05">{{ l.name }}</div>
+        </div>
+      </div>
+      <div style="font-size:16px;line-height:1.7">Dear families,</div>
+      <div style="font-size:16px;line-height:1.7">This week in our group, we're working on <b>{{ l.name }}</b>. That's the skill of {{ l.skillLower }}. Our goal for students is: <b>"{{ l.ican }}"</b></div>
+      <div style="font-size:16px;line-height:1.7">We'll practice for a couple of minutes each day using this tool: <b>{{ l.tool }}</b>.</div>
+      <div style="background:#EEF3EC;border:2px solid #4B6049;border-radius:14px;padding:16px 20px">
+        <div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;letter-spacing:.14em;color:#4B6049">ONE WAY TO HELP AT HOME</div>
+        <div style="font-size:18px;font-weight:600;line-height:1.5;margin-top:6px">{{ l.home }}</div>
+      </div>
+      <div style="font-size:16px;line-height:1.7">Ask your child to show you the tool, or to tell you one time they used it this week. Thanks for partnering with me!</div>
+      <div style="font-size:16px;line-height:1.7">Stephanie Howell</div>
+      <div style="margin-top:auto;border-top:2px dashed #9FB39A;padding-top:12px;font-size:14px;line-height:1.9">
+        <div>Student: _______________________ Family signature: _______________________</div>
+        <div>One time my child used this skill at home: ____________________________________________</div>
+      </div>
+    </div>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const DOW = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+const STORE = 'ef-portal.v1';
+const THERMO = [
+  { n: 5, face: '🌋', label: 'Exploding', color: '#C0504D', tip: 'Ask for a break with your help signal. Walk to the calm corner and squeeze the stress ball.' },
+  { n: 4, face: '😡', label: 'Really upset', color: '#E07B39', tip: 'Do 4 box breaths. Then tell an adult "I need…"' },
+  { n: 3, face: '😟', label: 'Bothered', color: '#D9A441', tip: 'Take 3 slow breaths and get a drink of water.' },
+  { n: 2, face: '🙂', label: 'Okay', color: '#9FB39A', tip: 'Keep going! Check your plan for the next step.' },
+  { n: 1, face: '😌', label: 'Calm and ready', color: '#4B6049', tip: "You're ready to learn. Start strong!" },
+];
+const RATE = [{ v: 1, face: '😕', label: 'Tough day', color: '#D9A441' }, { v: 2, face: '🙂', label: 'Pretty good', color: '#9FB39A' }, { v: 3, face: '🤩', label: 'Great day', color: '#4B6049' }];
+const RATE_COLOR = { 1: '#D9A441', 2: '#9FB39A', 3: '#4B6049' };
+
+class Component extends DCLogic {
+  state = { ready: false, side: 'teacher', tab: 'week', sel: null, kid: null, data: { self: {}, logs: {}, focus: {}, victor: {} }, drafts: {}, present: null, printing: null,
+    timer: { total: 300, left: 300, running: false }, thermo: null, breath: { running: false, t: 0 } };
+
+  componentDidMount() {
+    let data = this.state.data;
+    try { data = { ...data, ...(JSON.parse(localStorage.getItem(STORE) || '{}') || {}) }; } catch (e) {}
+    let kid = null; try { kid = localStorage.getItem('ef-portal.kid'); } catch (e) {}
+    const side = /[?&]side=student/.test(location.search) ? 'student' : 'teacher';
+    import('./ef-skills.js').then(() => this.setState({ ready: true, data, kid, side })).catch(() => this.setState({ data, kid, side }));
+    this._tick = setInterval(() => {
+      const t = this.state.timer;
+      if (t.running && t.left > 0) this.setState({ timer: { ...t, left: t.left - 1, running: t.left - 1 > 0 } });
+      if (this.state.breath.running) this.setState((s) => ({ breath: { ...s.breath, t: s.breath.t + 1 } }));
+    }, 1000);
+    this._key = (e) => { if (this.state.present) { if (e.key === 'ArrowRight' || e.key === ' ') this.slide(1); if (e.key === 'ArrowLeft') this.slide(-1); if (e.key === 'Escape') this.setState({ present: null }); } };
+    window.addEventListener('keydown', this._key);
+    this._after = () => this.setState({ printing: null });
+    window.addEventListener('afterprint', this._after);
+  }
+  componentWillUnmount() { clearInterval(this._tick); window.removeEventListener('keydown', this._key); window.removeEventListener('afterprint', this._after); }
+
+  save(patch) { const data = { ...this.state.data, ...patch }; try { localStorage.setItem(STORE, JSON.stringify(data)); } catch (e) {} this.setState({ data }); }
+  slide(dir) { const p = this.state.present; if (!p) return; const i = Math.max(0, Math.min(2, p.i + dir)); this.setState({ present: { ...p, i } }); }
+  print(kind) { this.setState({ printing: kind }, () => setTimeout(() => window.print(), 300)); }
+
+  renderVals() {
+    const EF = window.EF;
+    if (!EF) return { isTeacher: true, tabWeek: true, tabs: [], skillCards: [], cur: {}, weekLine: 'Loading…' };
+    const S = EF.SKILLS;
+    const today = EF.key(new Date());
+    const wk = EF.weekOf(today);
+    const curIdx = (wk - 1) % S.length;
+    const dow = Math.min(5, Math.max(1, new Date().getDay() || 1));
+    const mon = EF.mondayOf(today);
+    const wkDays = [0, 1, 2, 3, 4].map((i) => { const d = EF.parse(mon); d.setDate(d.getDate() + i); return EF.key(d); });
+    const md = (k) => { const d = EF.parse(k); return (d.getMonth() + 1) + '/' + d.getDate(); };
+    const weeksFor = (i) => { const out = []; for (let n = i + 1; n <= EF.MONDAYS.length; n += S.length) out.push(n); return out; };
+    const weeksText = (i) => weeksFor(i).map((n) => 'Wk ' + n + ' (' + md(EF.MONDAYS[n - 1]) + ')').join(' · ');
+    const st = this.state, data = st.data;
+    const selIdx = st.sel ?? curIdx;
+    const skillView = (i) => ({ ...S[i], weeks: weeksText(i) });
+    const btn = (on) => ({ fontFamily: "'Outfit',sans-serif", fontSize: 14, fontWeight: 700, cursor: 'pointer', padding: '9px 16px', borderRadius: 999, border: '2px solid #789677', background: on ? '#4B6049' : '#fff', color: on ? '#fff' : '#4B6049' });
+    const side = (on) => ({ fontFamily: "'Outfit',sans-serif", fontSize: 14, fontWeight: 700, cursor: 'pointer', padding: '9px 20px', border: 0, background: on ? '#4B6049' : '#fff', color: on ? '#fff' : '#4B6049' });
+    const presentFor = (i, d) => () => this.setState({ present: { skill: i, day: d, i: 0 } });
+
+    const TABS = [['week', 'This week'], ['lesson', 'Daily lessons'], ['students', 'Students'], ['victor', 'Victor tracker'], ['print', 'Print']];
+    const dots = (name) => wkDays.map((k, i) => { const r = ((data.self || {})[name] || {})[k]; return { label: DOW[i][0], style: { width: 30, height: 30, borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Outfit',sans-serif", fontSize: 12, fontWeight: 800, background: r ? RATE_COLOR[r] : '#F3F4F1', color: r ? '#fff' : '#a8a29e', border: k === today ? '2px solid #1c1917' : '2px solid transparent' } }; });
+    const groups = Object.entries(EF.STUDENTS).map(([grade, names]) => ({ grade, kids: names.map((name) => {
+      const f = (data.focus || {})[name];
+      const fIdx = f === undefined || f === '' ? curIdx : Number(f);
+      return { name, focus: f === undefined ? '' : String(f), week: dots(name), draft: st.drafts[name] || '',
+        logs: ((data.logs || {})[name] || []).slice(-3).reverse().map((l) => ({ date: md(l.d), skill: S[l.s] ? S[l.s].name : '', note: l.note })),
+        pick: () => { try { localStorage.setItem('ef-portal.kid', name); } catch (e) {} this.setState({ kid: name }); },
+        pickFocus: (e) => this.save({ focus: { ...(data.focus || {}), [name]: e.target.value } }),
+        setDraft: (e) => this.setState({ drafts: { ...st.drafts, [name]: e.target.value } }),
+        addLog: () => { const note = (st.drafts[name] || '').trim(); if (!note) return; const logs = { ...(data.logs || {}) }; logs[name] = [...(logs[name] || []), { d: today, s: fIdx, note }]; this.save({ logs }); this.setState({ drafts: { ...st.drafts, [name]: '' } }); } };
+    }) }));
+
+    const v = (data.victor || {})[today] || { focus: 0, breaks: 0, help: 0, bus: false };
+    const setV = (patch) => this.save({ victor: { ...(data.victor || {}), [today]: { ...v, ...patch } } });
+    const counter = (label, k, step) => ({ label, value: v[k] || 0, inc: () => setV({ [k]: (v[k] || 0) + step }), dec: () => setV({ [k]: Math.max(0, (v[k] || 0) - step) }) });
+    const vDays = Object.keys(data.victor || {}).sort().slice(-10);
+
+    const kidName = st.kid;
+    const kf = kidName ? (data.focus || {})[kidName] : undefined;
+    const kidIdx = kf === undefined || kf === '' ? curIdx : Number(kf);
+    const kidToday = kidName ? ((data.self || {})[kidName] || {})[today] : null;
+
+    const t = st.timer;
+    const pct = t.total ? (t.left / t.total) * 100 : 0;
+    const phases = ['Breathe in', 'Hold', 'Breathe out', 'Hold'];
+    const phase = Math.floor(st.breath.t / 4) % 4;
+    const big = phase === 0 ? false : phase === 1 ? true : phase === 2 ? true : false;
+    const p = st.present;
+    let slide = {}, slideCount = '';
+    if (p) {
+      const sk = S[p.skill];
+      const slides = [
+        { kicker: 'SKILL OF THE WEEK', icon: sk.icon, title: sk.name, body: sk.ican },
+        { kicker: 'OUR TOOL', icon: '🧰', title: sk.tool, body: 'We use this tool when ' + sk.skill.toLowerCase() + ' gets hard.' },
+        { kicker: DOW[p.day - 1].toUpperCase() + ' · 2-MINUTE PRACTICE', icon: '⏱️', title: sk.days[p.day - 1].split(':')[0], body: sk.days[p.day - 1].split(':').slice(1).join(':').trim() || sk.days[p.day - 1] },
+      ];
+      slide = slides[p.i]; slideCount = (p.i + 1) + ' / 3';
+    }
+    const printIdx = st.printing && st.printing.idx !== undefined ? st.printing.idx : null;
+
+    return {
+      skillCount: S.length,
+      weekLine: 'Week ' + wk + ' · ' + md(wkDays[0]) + '–' + md(wkDays[4]),
+      isTeacher: st.side === 'teacher', isStudent: st.side === 'student',
+      teacherBtn: side(st.side === 'teacher'), studentBtn: side(st.side === 'student'),
+      toTeacher: () => this.setState({ side: 'teacher' }), toStudent: () => this.setState({ side: 'student' }),
+      tabs: TABS.map(([id, label]) => ({ label, style: btn(st.tab === id), go: () => this.setState({ tab: id }) })),
+      tabWeek: st.tab === 'week', tabLesson: st.tab === 'lesson', tabStudents: st.tab === 'students', tabVictor: st.tab === 'victor', tabPrint: st.tab === 'print',
+      cur: { ...S[curIdx], weekLabel: 'WEEK ' + wk, todayText: DOW[dow - 1] + ' · ' + S[curIdx].days[dow - 1] },
+      presentToday: presentFor(curIdx, dow), openCurLesson: () => this.setState({ tab: 'lesson', sel: curIdx }),
+      skillCards: S.map((s, i) => ({ icon: s.icon, name: s.name, skill: s.skill, weeks: weeksText(i), isNow: i === curIdx,
+        open: () => this.setState({ tab: 'lesson', sel: i }),
+        card: { background: i === curIdx ? '#EEF3EC' : '#fff', border: '2px solid ' + (i === curIdx ? '#4B6049' : '#C9D3C4'), borderRadius: 12, padding: '14px', cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: 8, fontFamily: "'Poppins',sans-serif" } })),
+      skillOptions: S.map((s, i) => ({ value: String(i), label: s.icon + ' ' + s.name })), selValue: String(selIdx),
+      pickSkill: (e) => this.setState({ sel: Number(e.target.value) }),
+      sel: skillView(selIdx), selDays: S[selIdx].days.map((text, i) => ({ day: DOW[i], text, present: presentFor(selIdx, i + 1) })),
+      groups, focusOptions: [{ value: '', label: 'Skill of the week' }].concat(S.map((s, i) => ({ value: String(i), label: s.icon + ' ' + s.name }))),
+      vDateLabel: DOW[dow - 1] + ' ' + md(today),
+      vCounters: [counter('Focus minutes', 'focus', 1), counter('Breaks taken', 'breaks', 1), counter('Used help signal', 'help', 1)],
+      vToggleBus: () => setV({ bus: !v.bus }), vBusLabel: v.bus ? 'Bus duty earned!' : 'Bus duty not yet',
+      vBusStyle: { border: '2px solid ' + (v.bus ? '#4B6049' : '#C9D9E3'), borderRadius: 12, background: v.bus ? '#EEF3EC' : '#F7FAFC', color: v.bus ? '#2F3E2E' : '#57534e', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 8, padding: 12 },
+      vBars: vDays.map((k) => { const f = data.victor[k].focus || 0; return { d: md(k), v: f, style: { width: '100%', maxWidth: 40, height: Math.min(130, f * 7.5) + 'px', background: f >= 10 ? '#4B6049' : '#2F5E7A', borderRadius: '6px 6px 0 0' } }; }),
+      vEmpty: vDays.length === 0,
+      printBtns: [
+        { icon: '🖼️', label: "This week's poster", sub: S[curIdx].name, go: () => this.print({ kind: 'posters', idx: curIdx }) },
+        { icon: '🗂️', label: 'All ' + S.length + ' posters', sub: S.length + ' pages, one per skill', go: () => this.print({ kind: 'posters' }) },
+        { icon: '✉️', label: "This week's home letter", sub: 'Print one per student', go: () => this.print({ kind: 'letters', idx: curIdx }) },
+        { icon: '📬', label: 'All ' + S.length + ' home letters', sub: 'Print ahead for the year', go: () => this.print({ kind: 'letters' }) },
+      ],
+      posters: st.printing && st.printing.kind === 'posters' ? S.filter((s, i) => printIdx === null || i === printIdx) : [],
+      letters: st.printing && st.printing.kind === 'letters' ? S.map((s, i) => ({ ...s, i })).filter((s) => printIdx === null || s.i === printIdx).map((s) => ({ ...s, skillLower: s.skill.toLowerCase(), week: weeksFor(s.i).map((n) => 'Week ' + n).join(', ') })) : [],
+      noKid: !kidName, hasKid: !!kidName, kidName, kidSkill: S[kidIdx], clearKid: () => { try { localStorage.removeItem('ef-portal.kid'); } catch (e) {} this.setState({ kid: null }); },
+      rateBtns: RATE.map((r) => ({ face: r.face, label: r.label, go: () => { const self = { ...(data.self || {}) }; self[kidName] = { ...(self[kidName] || {}), [today]: r.v }; this.save({ self }); },
+        style: { display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, minWidth: 140, padding: '16px 18px', borderRadius: 16, cursor: 'pointer', border: '3px solid ' + r.color, background: kidToday === r.v ? r.color : '#fff', color: kidToday === r.v ? '#fff' : '#1c1917' } })),
+      kidWeek: kidName ? dots(kidName) : [],
+      timerRing: { width: 180, height: 180, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'conic-gradient(#4B6049 ' + pct + '%, #E7ECE4 0)' },
+      timerText: Math.floor(t.left / 60) + ':' + String(t.left % 60).padStart(2, '0'),
+      timerPresets: [1, 3, 5, 10].map((m) => ({ label: m + ' min', go: () => this.setState({ timer: { total: m * 60, left: m * 60, running: false } }),
+        style: { fontFamily: "'Outfit',sans-serif", fontSize: 13, fontWeight: 700, cursor: 'pointer', padding: '7px 12px', borderRadius: 999, border: '2px solid #789677', background: t.total === m * 60 ? '#EEF3EC' : '#fff', color: '#4B6049' } })),
+      timerToggle: () => this.setState({ timer: { ...t, left: t.left || t.total, running: !t.running } }), timerBtn: t.running ? 'Pause' : 'Start',
+      timerReset: () => this.setState({ timer: { ...t, left: t.total, running: false } }), timerDone: t.left === 0,
+      thermo: THERMO.map((x) => ({ ...x, go: () => this.setState({ thermo: x.n }),
+        style: { display: 'flex', alignItems: 'center', gap: 10, padding: '8px 12px', borderRadius: 10, cursor: 'pointer', border: '2px solid ' + x.color, background: st.thermo === x.n ? x.color : '#fff', color: st.thermo === x.n ? '#fff' : '#1c1917', textAlign: 'left' } })),
+      hasThermo: st.thermo !== null, thermoTip: st.thermo !== null ? THERMO.find((x) => x.n === st.thermo).tip : '',
+      breathBox: { width: big ? 180 : 100, height: big ? 180 : 100, borderRadius: 18, background: '#CFE0C8', border: '3px solid #4B6049', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Outfit',sans-serif", fontSize: 18, fontWeight: 800, color: '#2F3E2E', transition: 'all 4s ease-in-out', textAlign: 'center' },
+      breathText: st.breath.running ? phases[phase] + ' · ' + (4 - (st.breath.t % 4)) : 'Ready?',
+      breathToggle: () => this.setState({ breath: { running: !st.breath.running, t: 0 } }), breathBtn: st.breath.running ? 'Stop' : 'Start',
+      presenting: !!p, slide, slideCount, slidePrev: () => this.slide(-1), slideNext: () => this.slide(1), closeSlides: () => this.setState({ present: null }),
+    };
+  }
+}
+</script>
+</body>
+</html>

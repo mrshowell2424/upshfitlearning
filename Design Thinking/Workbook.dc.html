@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; font-family: Poppins, system-ui, sans-serif; }
+  a { color: #7A2E6E; } a:hover { color: #F26D5B; }
+  doc-page:not(:defined) { visibility: hidden; }
+</style>
+<script src="./doc-page.js"></script>
+</helmet>
+
+<doc-page size="letter">
+
+  <sc-for list="{{ days }}" as="d" hint-placeholder-count="5">
+    <section class="page" style="box-sizing:border-box;padding:0;display:flex;flex-direction:column;background:#FFF;color:#211E33">
+      <div style="{{ d.bandStyle }}">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+          <div style="font-size:13pt;font-weight:800;letter-spacing:0.16em">{{ d.head }}</div>
+          <div style="font-size:11pt;font-weight:700;letter-spacing:0.1em">{{ d.stamp }}</div>
+        </div>
+        <div style="font-size:33pt;line-height:1.02;font-weight:700;letter-spacing:-0.02em;margin-top:10px">{{ d.sub }}</div>
+        <div style="font-size:12.5pt;font-weight:500;margin-top:9px">{{ hmw }}</div>
+      </div>
+      <div style="padding:30px 52px 38px;display:flex;flex-direction:column;flex:1">
+        <div style="font-size:11pt;font-weight:800;letter-spacing:0.14em;color:#8B8699">NAME <span style="display:inline-block;min-width:240px;border-bottom:1.5px solid #211E33">&nbsp;</span></div>
+
+        <div style="margin-top:24px;display:flex;flex-direction:column;gap:20px">
+          <sc-for list="{{ d.steps }}" as="s" hint-placeholder-count="3">
+            <div>
+              <div style="font-size:15pt;font-weight:700">{{ s.head }}</div>
+              <sc-if value="{{ s.plain }}" hint-placeholder-val="{{ true }}">
+                <div style="{{ s.boxStyle }}"></div>
+              </sc-if>
+              <sc-if value="{{ s.isGrid }}" hint-placeholder-val="{{ false }}">
+                <div style="{{ s.gridStyle }}">
+                  <sc-for list="{{ s.cells }}" as="c" hint-placeholder-count="4">
+                    <div style="{{ c.style }}"><span style="font-size:8.5pt;font-weight:700;color:#B8AFA0">{{ c.n }}</span></div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="flex:1"></div>
+        <div style="{{ d.exitStyle }}">
+          <div style="font-size:11pt;font-weight:800;letter-spacing:0.12em;color:{{ d.deep }}">EXIT TICKET</div>
+          <div style="font-size:14pt;font-weight:600;margin-top:6px">{{ d.exit }}</div>
+          <div style="border-bottom:1.5px solid #C9BFB0;height:28px;margin-top:14px"></div>
+          <div style="border-bottom:1.5px solid #C9BFB0;height:28px"></div>
+        </div>
+      </div>
+    </section>
+  </sc-for>
+
+  <section class="page" style="box-sizing:border-box;padding:0;display:flex;flex-direction:column;background:#FFF;color:#211E33">
+    <div style="background:#211E33;color:#FBF7F0;padding:32px 52px 26px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+        <div style="font-size:13pt;font-weight:800;letter-spacing:0.16em;color:#F2A93B">EXTENSION · IF YOU HAVE TIME</div>
+        <div style="font-size:11pt;font-weight:700;letter-spacing:0.1em">{{ stamp }}</div>
+      </div>
+      <div style="font-size:31pt;line-height:1.02;font-weight:700;letter-spacing:-0.02em;margin-top:10px">{{ extTitle }}</div>
+      <div style="font-size:12.5pt;font-weight:500;margin-top:9px;color:#CFC6D8">{{ extBlurb }}</div>
+    </div>
+    <div style="padding:28px 52px 36px;display:flex;flex-direction:column;flex:1;gap:18px">
+      <sc-for list="{{ extSteps }}" as="s" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;flex:1">
+          <div style="font-size:15pt;font-weight:700">{{ s.head }}</div>
+          <div style="font-size:11.5pt;color:#54506B;margin-top:3px">{{ s.body }}</div>
+          <div style="{{ s.boxStyle }}"></div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section class="page" style="box-sizing:border-box;padding:0;display:flex;flex-direction:column;background:#FFF;color:#211E33">
+    <div style="background:#211E33;color:#FBF7F0;padding:30px 46px 26px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+        <div style="font-size:12pt;font-weight:800;letter-spacing:0.16em;color:#F2A93B">ONE-PAGE VERSION</div>
+        <div style="font-size:10.5pt;font-weight:700;letter-spacing:0.1em">{{ stamp }}</div>
+      </div>
+      <div style="font-size:29pt;line-height:1.02;font-weight:700;letter-spacing:-0.02em;margin-top:8px">{{ title }}</div>
+      <div style="font-size:12pt;font-weight:500;margin-top:8px;color:#F2A93B">{{ hmw }}</div>
+    </div>
+    <div style="padding:26px 46px 34px;display:flex;flex-direction:column;flex:1;gap:13px">
+      <div style="font-size:10.5pt;font-weight:800;letter-spacing:0.14em;color:#8B8699">NAME <span style="display:inline-block;min-width:280px;border-bottom:1.5px solid #211E33">&nbsp;</span></div>
+      <sc-for list="{{ days }}" as="d" hint-placeholder-count="5">
+        <div style="{{ d.miniStyle }}">
+          <div style="font-size:11pt;font-weight:800;letter-spacing:0.12em;color:{{ d.deep }}">{{ d.head }}</div>
+          <div style="font-size:12.5pt;font-weight:600;margin-top:4px">{{ d.mini }}</div>
+        </div>
+      </sc-for>
+      <div style="font-size:10pt;color:#8B8699">Upshift Learning · Design Thinking Road Map · five-mode sequence adapted from the Stanford d.school</div>
+    </div>
+  </section>
+
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const EXT_COLORS = ["#F26D5B", "#F2A93B", "#2FA39B", "#8B3E8F"];
+const BOX_H = [150, 150, 130];
+
+const GRADE_FILES = { "K": "./year-data-gk.js", "1": "./year-data-g1.js", "2": "./year-data-g2.js", "3": "./year-data.js", "4": "./year-data-g4.js", "5": "./year-data-g5.js", "6": "./year-data-g6.js", "7": "./year-data-g7.js", "8": "./year-data-g8.js", "9": "./year-data-g9.js", "10": "./year-data-g10.js", "11": "./year-data-g11.js", "12": "./year-data-g12.js" };
+const GRADE_LABEL = { "K": "KINDERGARTEN", "1": "GRADE 1", "2": "GRADE 2", "3": "GRADE 3", "4": "GRADE 4", "5": "GRADE 5", "6": "GRADE 6", "7": "GRADE 7", "8": "GRADE 8", "9": "GRADE 9", "10": "GRADE 10", "11": "GRADE 11", "12": "GRADE 12" };
+
+class Component extends DCLogic {
+  state = { data: null };
+
+  componentDidMount() {
+    const g = this.gradeNumber();
+    import(GRADE_FILES[g] || "./year-data.js")
+      .then(m => this.setState({ data: m })).catch(() => {});
+  }
+
+  params() {
+    return new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
+  }
+
+  gradeNumber() {
+    const raw = (this.params().get("grade") || "3").toUpperCase();
+    return GRADE_FILES[raw] ? raw : "3";
+  }
+
+  weekNumber() {
+    const n = parseInt(this.params().get("week") || "1", 10);
+    return Number.isFinite(n) && n >= 1 && n <= 36 ? n : 1;
+  }
+
+  renderVals() {
+    const m = this.state.data;
+    if (!m) return {};
+    const n = this.weekNumber();
+    const w = m.weekByNumber(n);
+    const stamp = GRADE_LABEL[this.gradeNumber()] + " · WEEK " + n;
+    if (!w) return { days: [], extSteps: [], title: "Not written yet", hmw: "", extTitle: "—", extBlurb: "", stamp };
+
+    const boxCount = m.IDEA_BOXES || 0;
+    const cols = m.IDEA_COLS || 2;
+
+    const days = w.days.map((d, i) => {
+      const p = m.PHASES[i];
+      return {
+        head: p.day + " · " + p.phase,
+        stamp: stamp + " · DAY " + (i + 1),
+        sub: d.sub,
+        exit: d.exit,
+        deep: p.deep,
+        mini: d.steps[0],
+        bandStyle: "background:" + p.color + ";color:" + p.ink + ";padding:34px 52px 28px",
+        exitStyle: "background:#FBF7F0;border-left:8px solid " + p.color + ";border-radius:6px;padding:18px 22px",
+        miniStyle: "border:2px solid " + p.color + ";border-radius:8px;padding:14px 18px;flex:1",
+        steps: d.steps.map((t, j) => {
+          const wed = i === 2 && boxCount > 0;
+          const grid = wed && j === 0;
+          const rows = Math.ceil(boxCount / cols);
+          const cellH = Math.max(34, Math.round((186 - (rows - 1) * 7) / rows));
+          // Wednesday's grid is taller than the box it replaces, so steps 2 and 3
+          // give back the difference — the page box is fixed and clips on print.
+          const h = wed ? [0, 100, 85][j] : BOX_H[j];
+          return {
+            head: (j + 1) + " · " + t,
+            plain: !grid,
+            isGrid: grid,
+            boxStyle: "border:2px solid #E6DFD3;border-radius:8px;height:" + h + "px;margin-top:10px",
+            gridStyle: "display:grid;grid-template-columns:repeat(" + cols + ",minmax(0,1fr));gap:7px;margin-top:10px",
+            cells: grid ? Array.from({ length: boxCount }, (_, k) => ({
+              n: k + 1,
+              style: "border:2px solid " + p.color + ";border-radius:6px;height:" + cellH + "px;padding:4px 6px;box-sizing:border-box"
+            })) : []
+          };
+        })
+      };
+    });
+
+    return {
+      days,
+      stamp,
+      title: w.title,
+      hmw: w.hmw,
+      extTitle: w.ext.title,
+      extBlurb: w.ext.blurb,
+      extSteps: w.ext.steps.map((s, i) => ({
+        head: (i + 1) + " · " + s[0],
+        body: s[1],
+        boxStyle: "border:2px solid " + EXT_COLORS[i % 4] + ";border-radius:8px;flex:1;min-height:82px;margin-top:8px"
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

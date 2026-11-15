@@ -9,7 +9,6 @@
   "higher": {
    "lexile": 970,
    "words": 243,
-   "labelled_words": 243,
    "paras": [
     {
      "label": "A",
@@ -40,7 +39,6 @@
   "lower": {
    "lexile": 720,
    "words": 156,
-   "labelled_words": 156,
    "paras": [
     {
      "label": "A",
@@ -112,7 +110,6 @@
   "higher": {
    "lexile": 990,
    "words": 217,
-   "labelled_words": 217,
    "paras": [
     {
      "label": "A",
@@ -143,7 +140,6 @@
   "lower": {
    "lexile": 740,
    "words": 152,
-   "labelled_words": 152,
    "paras": [
     {
      "label": "A",
@@ -215,7 +211,6 @@
   "higher": {
    "lexile": 950,
    "words": 218,
-   "labelled_words": 218,
    "paras": [
     {
      "label": "A",
@@ -246,7 +241,6 @@
   "lower": {
    "lexile": 700,
    "words": 144,
-   "labelled_words": 144,
    "paras": [
     {
      "label": "A",
@@ -318,7 +312,6 @@
   "higher": {
    "lexile": 980,
    "words": 200,
-   "labelled_words": 200,
    "paras": [
     {
      "label": "A",
@@ -349,7 +342,6 @@
   "lower": {
    "lexile": 730,
    "words": 154,
-   "labelled_words": 154,
    "paras": [
     {
      "label": "A",
@@ -421,7 +413,6 @@
   "higher": {
    "lexile": 960,
    "words": 201,
-   "labelled_words": 201,
    "paras": [
     {
      "label": "A",
@@ -452,7 +443,6 @@
   "lower": {
    "lexile": 710,
    "words": 146,
-   "labelled_words": 146,
    "paras": [
     {
      "label": "A",
@@ -524,7 +514,6 @@
   "higher": {
    "lexile": 1000,
    "words": 222,
-   "labelled_words": 222,
    "paras": [
     {
      "label": "A",
@@ -555,7 +544,6 @@
   "lower": {
    "lexile": 760,
    "words": 169,
-   "labelled_words": 169,
    "paras": [
     {
      "label": "A",
@@ -627,7 +615,6 @@
   "higher": {
    "lexile": 980,
    "words": 205,
-   "labelled_words": 205,
    "paras": [
     {
      "label": "A",
@@ -658,7 +645,6 @@
   "lower": {
    "lexile": 720,
    "words": 139,
-   "labelled_words": 139,
    "paras": [
     {
      "label": "A",
@@ -730,7 +716,6 @@
   "higher": {
    "lexile": 1000,
    "words": 201,
-   "labelled_words": 201,
    "paras": [
     {
      "label": "A",
@@ -761,7 +746,6 @@
   "lower": {
    "lexile": 750,
    "words": 152,
-   "labelled_words": 152,
    "paras": [
     {
      "label": "A",
@@ -833,7 +817,6 @@
   "higher": {
    "lexile": 990,
    "words": 214,
-   "labelled_words": 214,
    "paras": [
     {
      "label": "A",
@@ -864,7 +847,6 @@
   "lower": {
    "lexile": 740,
    "words": 158,
-   "labelled_words": 158,
    "paras": [
     {
      "label": "A",
@@ -936,7 +918,6 @@
   "higher": {
    "lexile": 1010,
    "words": 188,
-   "labelled_words": 188,
    "paras": [
     {
      "label": "A",
@@ -967,7 +948,6 @@
   "lower": {
    "lexile": 770,
    "words": 142,
-   "labelled_words": 142,
    "paras": [
     {
      "label": "A",
@@ -1039,7 +1019,6 @@
   "higher": {
    "lexile": 970,
    "words": 211,
-   "labelled_words": 211,
    "paras": [
     {
      "label": "A",
@@ -1070,7 +1049,6 @@
   "lower": {
    "lexile": 720,
    "words": 146,
-   "labelled_words": 146,
    "paras": [
     {
      "label": "A",
@@ -1142,7 +1120,6 @@
   "higher": {
    "lexile": 1000,
    "words": 208,
-   "labelled_words": 208,
    "paras": [
     {
      "label": "A",
@@ -1173,7 +1150,6 @@
   "lower": {
    "lexile": 760,
    "words": 150,
-   "labelled_words": 150,
    "paras": [
     {
      "label": "A",
@@ -1245,7 +1221,6 @@
   "higher": {
    "lexile": 960,
    "words": 209,
-   "labelled_words": 209,
    "paras": [
     {
      "label": "A",
@@ -1276,7 +1251,6 @@
   "lower": {
    "lexile": 710,
    "words": 165,
-   "labelled_words": 165,
    "paras": [
     {
      "label": "A",
@@ -1348,7 +1322,6 @@
   "higher": {
    "lexile": 990,
    "words": 200,
-   "labelled_words": 200,
    "paras": [
     {
      "label": "A",
@@ -1379,7 +1352,6 @@
   "lower": {
    "lexile": 740,
    "words": 146,
-   "labelled_words": 146,
    "paras": [
     {
      "label": "A",
@@ -1451,7 +1423,6 @@
   "higher": {
    "lexile": 1010,
    "words": 201,
-   "labelled_words": 201,
    "paras": [
     {
      "label": "A",
@@ -1482,7 +1453,6 @@
   "lower": {
    "lexile": 780,
    "words": 134,
-   "labelled_words": 134,
    "paras": [
     {
      "label": "A",
@@ -1554,7 +1524,6 @@
   "higher": {
    "lexile": 1010,
    "words": 202,
-   "labelled_words": 202,
    "paras": [
     {
      "label": "A",
@@ -1585,7 +1554,6 @@
   "lower": {
    "lexile": 780,
    "words": 152,
-   "labelled_words": 152,
    "paras": [
     {
      "label": "A",
@@ -1657,7 +1625,6 @@
   "higher": {
    "lexile": 1000,
    "words": 186,
-   "labelled_words": 186,
    "paras": [
     {
      "label": "A",
@@ -1688,7 +1655,6 @@
   "lower": {
    "lexile": 750,
    "words": 134,
-   "labelled_words": 134,
    "paras": [
     {
      "label": "A",
@@ -1760,7 +1726,6 @@
   "higher": {
    "lexile": 980,
    "words": 205,
-   "labelled_words": 205,
    "paras": [
     {
      "label": "A",
@@ -1791,7 +1756,6 @@
   "lower": {
    "lexile": 730,
    "words": 142,
-   "labelled_words": 142,
    "paras": [
     {
      "label": "A",
@@ -1863,7 +1827,6 @@
   "higher": {
    "lexile": 1010,
    "words": 222,
-   "labelled_words": 222,
    "paras": [
     {
      "label": "A",
@@ -1894,7 +1857,6 @@
   "lower": {
    "lexile": 770,
    "words": 156,
-   "labelled_words": 156,
    "paras": [
     {
      "label": "A",
@@ -1966,7 +1928,6 @@
   "higher": {
    "lexile": 1000,
    "words": 199,
-   "labelled_words": 199,
    "paras": [
     {
      "label": "A",
@@ -1997,7 +1958,6 @@
   "lower": {
    "lexile": 760,
    "words": 133,
-   "labelled_words": 133,
    "paras": [
     {
      "label": "A",
@@ -2069,7 +2029,6 @@
   "higher": {
    "lexile": 970,
    "words": 209,
-   "labelled_words": 209,
    "paras": [
     {
      "label": "A",
@@ -2100,7 +2059,6 @@
   "lower": {
    "lexile": 720,
    "words": 150,
-   "labelled_words": 150,
    "paras": [
     {
      "label": "A",
@@ -2172,7 +2130,6 @@
   "higher": {
    "lexile": 990,
    "words": 185,
-   "labelled_words": 185,
    "paras": [
     {
      "label": "A",
@@ -2203,7 +2160,6 @@
   "lower": {
    "lexile": 750,
    "words": 146,
-   "labelled_words": 146,
    "paras": [
     {
      "label": "A",
@@ -2275,7 +2231,6 @@
   "higher": {
    "lexile": 1000,
    "words": 190,
-   "labelled_words": 190,
    "paras": [
     {
      "label": "A",
@@ -2306,7 +2261,6 @@
   "lower": {
    "lexile": 760,
    "words": 147,
-   "labelled_words": 147,
    "paras": [
     {
      "label": "A",
@@ -2378,7 +2332,6 @@
   "higher": {
    "lexile": 1010,
    "words": 184,
-   "labelled_words": 184,
    "paras": [
     {
      "label": "A",
@@ -2409,7 +2362,6 @@
   "lower": {
    "lexile": 780,
    "words": 152,
-   "labelled_words": 152,
    "paras": [
     {
      "label": "A",
@@ -2481,7 +2433,6 @@
   "higher": {
    "lexile": 980,
    "words": 192,
-   "labelled_words": 192,
    "paras": [
     {
      "label": "A",
@@ -2512,7 +2463,6 @@
   "lower": {
    "lexile": 730,
    "words": 140,
-   "labelled_words": 140,
    "paras": [
     {
      "label": "A",
@@ -2584,7 +2534,6 @@
   "higher": {
    "lexile": 1010,
    "words": 192,
-   "labelled_words": 192,
    "paras": [
     {
      "label": "A",
@@ -2615,7 +2564,6 @@
   "lower": {
    "lexile": 770,
    "words": 154,
-   "labelled_words": 154,
    "paras": [
     {
      "label": "A",
@@ -2687,7 +2635,6 @@
   "higher": {
    "lexile": 1000,
    "words": 193,
-   "labelled_words": 193,
    "paras": [
     {
      "label": "A",
@@ -2718,7 +2665,6 @@
   "lower": {
    "lexile": 760,
    "words": 136,
-   "labelled_words": 136,
    "paras": [
     {
      "label": "A",
@@ -2790,7 +2736,6 @@
   "higher": {
    "lexile": 990,
    "words": 184,
-   "labelled_words": 184,
    "paras": [
     {
      "label": "A",
@@ -2821,7 +2766,6 @@
   "lower": {
    "lexile": 740,
    "words": 154,
-   "labelled_words": 154,
    "paras": [
     {
      "label": "A",
@@ -2893,7 +2837,6 @@
   "higher": {
    "lexile": 1000,
    "words": 191,
-   "labelled_words": 191,
    "paras": [
     {
      "label": "A",
@@ -2924,7 +2867,6 @@
   "lower": {
    "lexile": 750,
    "words": 147,
-   "labelled_words": 147,
    "paras": [
     {
      "label": "A",
@@ -2996,7 +2938,6 @@
   "higher": {
    "lexile": 980,
    "words": 179,
-   "labelled_words": 179,
    "paras": [
     {
      "label": "A",
@@ -3027,7 +2968,6 @@
   "lower": {
    "lexile": 730,
    "words": 144,
-   "labelled_words": 144,
    "paras": [
     {
      "label": "A",
@@ -3099,7 +3039,6 @@
   "higher": {
    "lexile": 990,
    "words": 191,
-   "labelled_words": 191,
    "paras": [
     {
      "label": "A",
@@ -3130,7 +3069,6 @@
   "lower": {
    "lexile": 740,
    "words": 130,
-   "labelled_words": 130,
    "paras": [
     {
      "label": "A",
@@ -3202,7 +3140,6 @@
   "higher": {
    "lexile": 1000,
    "words": 186,
-   "labelled_words": 186,
    "paras": [
     {
      "label": "A",
@@ -3233,7 +3170,6 @@
   "lower": {
    "lexile": 760,
    "words": 142,
-   "labelled_words": 142,
    "paras": [
     {
      "label": "A",
@@ -3305,7 +3241,6 @@
   "higher": {
    "lexile": 980,
    "words": 194,
-   "labelled_words": 194,
    "paras": [
     {
      "label": "A",
@@ -3336,7 +3271,6 @@
   "lower": {
    "lexile": 730,
    "words": 140,
-   "labelled_words": 140,
    "paras": [
     {
      "label": "A",
@@ -3408,7 +3342,6 @@
   "higher": {
    "lexile": 1010,
    "words": 186,
-   "labelled_words": 186,
    "paras": [
     {
      "label": "A",
@@ -3439,7 +3372,6 @@
   "lower": {
    "lexile": 780,
    "words": 136,
-   "labelled_words": 136,
    "paras": [
     {
      "label": "A",
@@ -3511,7 +3443,6 @@
   "higher": {
    "lexile": 1000,
    "words": 203,
-   "labelled_words": 203,
    "paras": [
     {
      "label": "A",
@@ -3542,7 +3473,6 @@
   "lower": {
    "lexile": 750,
    "words": 151,
-   "labelled_words": 151,
    "paras": [
     {
      "label": "A",
@@ -3614,7 +3544,6 @@
   "higher": {
    "lexile": 1000,
    "words": 190,
-   "labelled_words": 190,
    "paras": [
     {
      "label": "A",
@@ -3645,7 +3574,6 @@
   "lower": {
    "lexile": 760,
    "words": 139,
-   "labelled_words": 139,
    "paras": [
     {
      "label": "A",
@@ -3717,7 +3645,6 @@
   "higher": {
    "lexile": 970,
    "words": 177,
-   "labelled_words": 177,
    "paras": [
     {
      "label": "A",
@@ -3748,7 +3675,6 @@
   "lower": {
    "lexile": 720,
    "words": 128,
-   "labelled_words": 128,
    "paras": [
     {
      "label": "A",
@@ -3820,7 +3746,6 @@
   "higher": {
    "lexile": 980,
    "words": 182,
-   "labelled_words": 182,
    "paras": [
     {
      "label": "A",
@@ -3851,7 +3776,6 @@
   "lower": {
    "lexile": 730,
    "words": 133,
-   "labelled_words": 133,
    "paras": [
     {
      "label": "A",
@@ -3923,7 +3847,6 @@
   "higher": {
    "lexile": 1010,
    "words": 172,
-   "labelled_words": 172,
    "paras": [
     {
      "label": "A",
@@ -3954,7 +3877,6 @@
   "lower": {
    "lexile": 770,
    "words": 121,
-   "labelled_words": 121,
    "paras": [
     {
      "label": "A",
@@ -4026,7 +3948,6 @@
   "higher": {
    "lexile": 990,
    "words": 191,
-   "labelled_words": 191,
    "paras": [
     {
      "label": "A",
@@ -4057,7 +3978,6 @@
   "lower": {
    "lexile": 750,
    "words": 155,
-   "labelled_words": 155,
    "paras": [
     {
      "label": "A",
@@ -4129,7 +4049,6 @@
   "higher": {
    "lexile": 1000,
    "words": 190,
-   "labelled_words": 190,
    "paras": [
     {
      "label": "A",
@@ -4160,7 +4079,6 @@
   "lower": {
    "lexile": 760,
    "words": 136,
-   "labelled_words": 136,
    "paras": [
     {
      "label": "A",
@@ -4232,7 +4150,6 @@
   "higher": {
    "lexile": 1010,
    "words": 200,
-   "labelled_words": 200,
    "paras": [
     {
      "label": "A",
@@ -4263,7 +4180,6 @@
   "lower": {
    "lexile": 780,
    "words": 151,
-   "labelled_words": 151,
    "paras": [
     {
      "label": "A",
@@ -4335,7 +4251,6 @@
   "higher": {
    "lexile": 990,
    "words": 196,
-   "labelled_words": 196,
    "paras": [
     {
      "label": "A",
@@ -4366,7 +4281,6 @@
   "lower": {
    "lexile": 740,
    "words": 146,
-   "labelled_words": 146,
    "paras": [
     {
      "label": "A",
@@ -4438,7 +4352,6 @@
   "higher": {
    "lexile": 1000,
    "words": 203,
-   "labelled_words": 203,
    "paras": [
     {
      "label": "A",
@@ -4469,7 +4382,6 @@
   "lower": {
    "lexile": 760,
    "words": 155,
-   "labelled_words": 155,
    "paras": [
     {
      "label": "A",
@@ -4541,7 +4453,6 @@
   "higher": {
    "lexile": 1010,
    "words": 188,
-   "labelled_words": 188,
    "paras": [
     {
      "label": "A",
@@ -4572,7 +4483,6 @@
   "lower": {
    "lexile": 780,
    "words": 138,
-   "labelled_words": 138,
    "paras": [
     {
      "label": "A",
@@ -4644,7 +4554,6 @@
   "higher": {
    "lexile": 980,
    "words": 191,
-   "labelled_words": 191,
    "paras": [
     {
      "label": "A",
@@ -4675,7 +4584,6 @@
   "lower": {
    "lexile": 730,
    "words": 147,
-   "labelled_words": 147,
    "paras": [
     {
      "label": "A",
@@ -4747,7 +4655,6 @@
   "higher": {
    "lexile": 1010,
    "words": 203,
-   "labelled_words": 203,
    "paras": [
     {
      "label": "A",
@@ -4778,7 +4685,6 @@
   "lower": {
    "lexile": 770,
    "words": 142,
-   "labelled_words": 142,
    "paras": [
     {
      "label": "A",
@@ -4850,7 +4756,6 @@
   "higher": {
    "lexile": 1000,
    "words": 190,
-   "labelled_words": 190,
    "paras": [
     {
      "label": "A",
@@ -4881,7 +4786,6 @@
   "lower": {
    "lexile": 750,
    "words": 142,
-   "labelled_words": 142,
    "paras": [
     {
      "label": "A",
@@ -4953,7 +4857,6 @@
   "higher": {
    "lexile": 1010,
    "words": 217,
-   "labelled_words": 217,
    "paras": [
     {
      "label": "A",
@@ -4984,7 +4887,6 @@
   "lower": {
    "lexile": 780,
    "words": 151,
-   "labelled_words": 151,
    "paras": [
     {
      "label": "A",
@@ -5056,7 +4958,6 @@
   "higher": {
    "lexile": 1000,
    "words": 202,
-   "labelled_words": 202,
    "paras": [
     {
      "label": "A",
@@ -5087,7 +4988,6 @@
   "lower": {
    "lexile": 760,
    "words": 142,
-   "labelled_words": 142,
    "paras": [
     {
      "label": "A",

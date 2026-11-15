@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F6F8F4}a{color:#2F3E2E}a:hover{color:#4B6049}</style>
+</helmet>
+<div style="font-family:'Poppins',sans-serif;color:#1F2E2A;max-width:1180px;margin:0 auto;padding:22px 20px 60px;display:flex;flex-direction:column;gap:16px">
+  <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between">
+    <div style="display:flex;gap:14px;flex-wrap:wrap"><a href="Start%20Here.dc.html" style="font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">🏠 Start Here</a><a href="Social%20Content%20Hub.dc.html" style="font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">📅 Social Content Hub</a><a href="https://docs.google.com/spreadsheets/d/1dVlowQJxditueoFpI42NOnZrlJ1sArKPRqfPQwFAqrc/edit" target="_blank" rel="noopener" style="font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">Howell Resources sheet</a></div>
+  </div>
+  <div style="border-bottom:3px solid #4B6049;padding-bottom:12px">
+    <div style="font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;color:#618459">@MRSHOWELL24 · UPSHIFT LEARNING</div>
+    <div style="font-size:30px;font-weight:800;line-height:1.1;color:#2F3E2E">Creator Studio</div>
+  </div>
+  <div style="display:flex;gap:4px;flex-wrap:wrap;background:#EEF3EC;border-radius:12px;padding:4px">
+    <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="7"><button type="button" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button></sc-for>
+  </div>
+
+  <sc-if value="{{ isLib }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+      <input type="search" value="{{ q }}" onInput="{{ setQ }}" placeholder="🔎 Search resources…" style="font-family:Poppins,sans-serif;font-size:14px;padding:9px 12px;border:1.5px solid #C9D3C4;border-radius:10px;flex:1;min-width:220px">
+      <select value="{{ purpose }}" onChange="{{ setPurpose }}" style="font-family:Poppins,sans-serif;font-size:13.5px;font-weight:600;padding:8px 10px;border:1.5px solid #C9D3C4;border-radius:10px;background:#fff"><sc-for list="{{ purposeOpts }}" as="o" hint-placeholder-count="6"><option value="{{ o.v }}">{{ o.t }}</option></sc-for></select>
+      <span style="font-size:12.5px;font-weight:600;color:#57534e">{{ libCount }}</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px">
+      <sc-for list="{{ lib }}" as="r" hint-placeholder-count="9">
+        <div style="background:#fff;border:1.5px solid #C9D3C4;border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:7px">
+          <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="{{ r.chip }}">{{ r.purpose }}</span><span style="font-size:11.5px;color:#78716c">{{ r.date }}</span></div>
+          <div style="font-size:15px;font-weight:800;line-height:1.3">{{ r.title }}</div>
+          <div style="font-size:12.5px;line-height:1.45;color:#44403c">{{ r.sum }}</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:auto">
+            <sc-for list="{{ r.links }}" as="l" hint-placeholder-count="2"><a href="{{ l.href }}" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;text-decoration:none;border:1.5px solid #C9D3C4;border-radius:999px;padding:3px 10px;white-space:nowrap">{{ l.t }}</a></sc-for>
+            <button type="button" onClick="{{ r.toGraphic }}" style="font-family:Poppins,sans-serif;font-size:12px;font-weight:700;cursor:pointer;border:none;border-radius:999px;padding:4px 10px;background:#4B6049;color:#fff;white-space:nowrap">🖼 Graphic</button>
+            <button type="button" onClick="{{ r.toCarousel }}" style="font-family:Poppins,sans-serif;font-size:12px;font-weight:700;cursor:pointer;border:none;border-radius:999px;padding:4px 10px;background:#B7791F;color:#fff;white-space:nowrap">🎠 Carousel</button>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isMake }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+      <select value="{{ pickVal }}" onChange="{{ pickItem }}" style="font-family:Poppins,sans-serif;font-size:14px;font-weight:600;padding:8px 10px;border:1.5px solid #C9D3C4;border-radius:10px;background:#fff;flex:1;min-width:240px"><sc-for list="{{ itemOpts }}" as="o" hint-placeholder-count="10"><option value="{{ o.v }}">{{ o.t }}</option></sc-for></select>
+      <div style="display:flex;gap:4px"><sc-for list="{{ themeTabs }}" as="t" hint-placeholder-count="3"><button type="button" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button></sc-for></div>
+      <button type="button" onClick="{{ download }}" style="font-family:Poppins,sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;border:none;border-radius:10px;padding:9px 16px;background:#4B6049;color:#fff;white-space:nowrap">{{ dlLabel }}</button>
+    </div>
+    <div style="font-size:12.5px;color:#57534e">{{ makeNote }}</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px">
+      <sc-for list="{{ slides }}" as="s" hint-placeholder-count="5">
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <div style="{{ s.box }}">
+            <div style="{{ s.kick }}">{{ s.kicker }}</div>
+            <div style="{{ s.big }}">{{ s.title }}</div>
+            <div style="{{ s.small }}">{{ s.body }}</div>
+            <div style="{{ s.foot }}">{{ s.footer }}</div>
+          </div>
+          <span style="font-size:11.5px;font-weight:700;color:#78716c">{{ s.label }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <div style="background:#fff;border:1.5px solid #C9D3C4;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:6px">
+      <div style="display:flex;justify-content:space-between;gap:8px;align-items:center"><b style="font-size:14px">Caption</b><button type="button" onClick="{{ copyCap }}" style="font-family:Poppins,sans-serif;font-size:12px;font-weight:700;cursor:pointer;border:none;border-radius:8px;padding:5px 12px;background:#4B6049;color:#fff">{{ copyCapLbl }}</button></div>
+      <div style="font-size:13px;line-height:1.55;white-space:pre-line">{{ caption }}</div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isNews }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+      <sc-for list="{{ newsPicks }}" as="p" hint-placeholder-count="3"><select value="{{ p.v }}" onChange="{{ p.pick }}" aria-label="{{ p.label }}" style="font-family:Poppins,sans-serif;font-size:13px;font-weight:600;padding:7px 9px;border:1.5px solid #C9D3C4;border-radius:10px;background:#fff;max-width:300px"><sc-for list="{{ p.opts }}" as="o" hint-placeholder-count="8"><option value="{{ o.v }}">{{ o.t }}</option></sc-for></select></sc-for>
+      <button type="button" onClick="{{ newsShuffle }}" style="font-family:Poppins,sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:1.5px solid #4B6049;border-radius:10px;padding:7px 12px;background:#fff;color:#4B6049">🔀 New picks</button>
+      <button type="button" onClick="{{ copyNews }}" style="font-family:Poppins,sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:none;border-radius:10px;padding:8px 14px;background:#4B6049;color:#fff">{{ copyNewsLbl }}</button>
+    </div>
+    <div style="background:#fff;border:1.5px solid #C9D3C4;border-radius:16px;padding:22px 26px;max-width:680px;display:flex;flex-direction:column;gap:12px;color:#000">
+      <div style="font-size:13px;color:#57534e">Subject: <b style="color:#000">{{ news.subject }}</b></div>
+      <sc-for list="{{ news.blocks }}" as="b" hint-placeholder-count="6"><div style="{{ b.style }}">{{ b.t }}</div></sc-for>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isSess }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+      <input type="search" value="{{ sq }}" onInput="{{ setSq }}" placeholder="🔎 Search sessions or co-presenters…" style="font-family:Poppins,sans-serif;font-size:14px;padding:9px 12px;border:1.5px solid #C9D3C4;border-radius:10px;flex:1;min-width:220px">
+      <span style="font-size:12.5px;font-weight:600;color:#57534e">{{ sessCount }}</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <sc-for list="{{ sess }}" as="s" hint-placeholder-count="6">
+        <div style="background:#fff;border:1.5px solid #C9D3C4;border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:7px">
+          <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline"><b style="font-size:15px">{{ s.title }}</b><span style="{{ s.chip }}">{{ s.purpose }}</span></div>
+          <div style="font-size:12.5px;line-height:1.45;color:#44403c">{{ s.desc }}</div>
+          <div style="font-size:12px;color:#78716c">{{ s.co }}</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <button type="button" onClick="{{ s.copyBlurb }}" style="font-family:Poppins,sans-serif;font-size:12px;font-weight:700;cursor:pointer;border:1.5px solid #4B6049;border-radius:8px;padding:4px 10px;background:#fff;color:#4B6049">{{ s.blurbLbl }}</button>
+            <button type="button" onClick="{{ s.copyPost }}" style="font-family:Poppins,sans-serif;font-size:12px;font-weight:700;cursor:pointer;border:none;border-radius:8px;padding:5px 11px;background:#4B6049;color:#fff">{{ s.postLbl }}</button>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isList }}" hint-placeholder-val="{{ false }}">
+    <div style="font-size:13px;color:#57534e;line-height:1.5">{{ listNote }}</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px">
+      <sc-for list="{{ listCards }}" as="c" hint-placeholder-count="8">
+        <div style="background:#fff;border:1.5px solid #C9D3C4;border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:7px">
+          <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap"><span style="{{ c.chip }}">{{ c.tag }}</span><span style="font-size:12px;font-weight:700;color:#57534e">{{ c.when }}</span></div>
+          <div style="font-size:14.5px;font-weight:800;line-height:1.3">{{ c.title }}</div>
+          <div style="font-size:12.5px;line-height:1.5;white-space:pre-line;background:#F6F8F4;border-radius:8px;padding:8px 10px">{{ c.text }}</div>
+          <div style="display:flex;justify-content:flex-end"><button type="button" onClick="{{ c.copy }}" style="font-family:Poppins,sans-serif;font-size:12px;font-weight:700;cursor:pointer;border:none;border-radius:8px;padding:5px 12px;background:#4B6049;color:#fff">{{ c.copyLbl }}</button></div>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const KEY = 'creator-studio:v1';
+// Seed rows from Howell Resources (the Social Content Hub keeps these updated from your sheet).
+const RES = [
+  ['Behavior Bingo', 'Classroom Management', 'https://www.youtube.com/watch?v=ctkvqH4EcqM', 'Looking for a fun way to motivate your students? Try Behavior Bingo! Set a class goal, like a movie day or extra recess, and let students earn their squares together.', '6-16-15', 'https://docs.google.com/presentation/d/1Rj_vwsLOjRnwRtHUplMc6vbijq5JdR-XEEQnU1-yNuA/edit', 'https://mrshowell24.substack.com/p/behavior-bingo'],
+  ['Make It Real', 'Instructional Strategies', 'https://www.youtube.com/watch?v=i0Zbj8bphaE', 'This activity moves students from empathy to action by exploring real-world issues through four powerful prompts.', '6-16-15', 'https://docs.google.com/presentation/d/1rGPfQ6jc4q3jAE0W8_ZMMhDyxCPtF_BKC8ygdmkQyiU/edit', 'https://mrshowell24.substack.com/p/make-it-real'],
+  ['Apple Pie Directions', 'Classroom Management', 'https://youtu.be/KaY6lqsEFPA', 'Directions that stick. Apple Pie gives kids a quick, clear way to know exactly what to do next.', '9-13-18', 'https://docs.google.com/presentation/d/1t4U8sXNUcTezcQ4HdLiAiC9HY2cZu88qk_4jbkZ0OGw/edit', ''],
+  ['ST Math Game', 'Game Based Learning', 'https://youtu.be/HlG5oAIT3F0', 'ST Math turns math into a puzzle kids can\u2019t stop solving. Here\u2019s how to run it well in your math block.', '11-3-18', '', ''],
+  ['Tracking Missing Work', 'Organization', 'https://youtu.be/jpV2WDoT2rY', 'Missing work pile too tall? This tracker keeps it tight. Save it and watch the chaos calm down.', '2-2-20', 'https://sites.google.com/mrshowell24.com/mrshowell24/blog/tracking-missing-work', ''],
+  ['Podcast Walk & Listen', 'Instructional Strategies', 'https://www.youtube.com/watch?v=Sf9Tqu0TaV4', 'Students need movement to fuel focus! A quick stroll while listening to a podcast resets energy and boosts learning.', '2-9-20', 'https://docs.google.com/document/d/1dUKvbZ-QxoVQdhspJaGU8FhrnHg3kN8w-ZzD9MJEnpc/edit', ''],
+  ['Tech Madness', 'Coaching', 'https://www.youtube.com/watch?v=LZb9YEocSjM', 'Tech Madness is your bracket of new tools. Staff vote, test, and pick the winner. PD that feels like a game!', '2-23-20', 'https://www.mrshowell24.com/blog/tech-madness', ''],
+  ['Step Challenge', 'Coaching', 'https://www.youtube.com/watch?v=6OhgE1iFKjM', 'A Step Challenge for staff builds team, boosts mood, and gets folks moving.', '3-1-20', 'https://www.mrshowell24.com/blog/step-challenge', ''],
+  ['Missing Work Check', 'Classroom Management', 'https://youtu.be/J8XqPZaqg00', 'Students check their highlighted assignments and make sure they\u2019ve earned at least 80%.', '3-8-20', 'https://docs.google.com/document/d/1G7zkFmvGCliE8QYCsmph6lh1DmqctjPPUlAFtpkpbeA/edit', 'https://mrshowell24.substack.com/p/tracking-missing-work'],
+  ['Feedback Ideas', 'Feedback', 'https://youtu.be/poTDZSlSWkM', 'Feedback Ideas is low prep, high pull, and lands fast. Save it for your next lesson plan.', '5-30-20', 'https://docs.google.com/presentation/d/1kyiTAuN16iUua1DencCuc-wiKpKj_D3YHQpGoyHvEjQ/edit', ''],
+  ['Check In Items', 'SEL', 'https://www.youtube.com/watch?v=LypnW6bWqBo', 'A quick check-in can shift a kid\u2019s whole day. Save this set for any morning meeting.', '5-30-20', 'https://docs.google.com/spreadsheets/d/1754h1kSJ8P-9JOxd5_ofx4sRPv9ozuLgyt4HUS82nkM/edit', ''],
+  ['Birthday Celebrations', 'SEL', 'https://youtu.be/JLU8mU2chVs', 'Make every birthday feel big with a quick, low-prep way to help each kid feel seen on their day.', '9-6-20', 'https://www.mrshowell24.com/blog/birthdays', ''],
+];
+const SUB = [
+  ['The First 20 Minutes', 'https://mrshowell24.substack.com/p/the-first-20-minutes', 'Most of us teach the way we feel, not the way we plan. The first 20 minutes of your day shape all of it.'],
+  ['Why Your Brain Feels Fried by Wednesday', 'https://mrshowell24.substack.com/p/why-your-brain-feels-fried-by-wednesday', 'You\u2019re not lazy. Your brain is fried. Pre-load boring choices, take real breaks, and close your loops before you leave.'],
+  ['The \u201cThree Versions\u201d Trick', 'https://mrshowell24.substack.com/p/the-three-versions-trick', 'Build one SchoolAI Space with three reading levels and let kids pick what fits. Eight minutes to set up.'],
+  ['Stop Waiting for Motivation', 'https://mrshowell24.substack.com/p/stop-waiting-for-motivation', 'Motivation shows up after you start, not before. Here\u2019s the small move that gets me going on the hard stuff.'],
+  ['What If It All Works Out?', 'https://mrshowell24.substack.com/p/what-if-it-all-works-out', 'Some days my brain plans for things to fall apart. Asking \u201cwhat if it all works out?\u201d flips the whole vibe.'],
+  ['Hand the Mic Over', 'https://mrshowell24.substack.com/p/hand-the-mic-over', 'Want to see kids light up around AI? Stop driving and let them steer.'],
+  ['The \u201cShow Me Your Prompt\u201d Move', 'https://mrshowell24.substack.com/p/the-show-me-your-prompt-move', 'Stuck coaching a teacher past AI fear? Try the \u201cshow me your prompt\u201d move.'],
+  ['Post the Plan Before You Press Play', 'https://mrshowell24.substack.com/p/post-the-plan-before-you-press-play', 'A daily move that lands for every learner and works just as well in a leadership room.'],
+];
+const SESS = [
+  ['A Practical Guide to Better Instruction', 'AI', 'Got high-quality instructional materials? Great! But are they truly transforming your classroom and ensuring every student thrives?', 'Gary Sandler'],
+  ['AI-Driven Strategies to Meet the Needs of Every Student', 'AI', 'Educators face diverse classrooms and must meet the unique needs of every student. Can AI support practical, personalized instruction?', 'Rebecca Dwenger'],
+  ['Designing Beyond the Hype: Learning Science Meets AI', 'AI', 'A practical look at how learning science can make AI in education a real breakthrough instead of a buzzword.', 'Gary Sandler'],
+  ['Empowering Educators: Transforming Professional Learning with AI', 'AI', 'Teachers\u2019 resistance to change decreases when we focus on the problems they wish to solve. Welcome to The Choice Academy.', 'Lisa'],
+  ['From Bots to Brilliance: Using AI to Engage Learners', 'AI', 'The evolution of AI-driven engagement, from basic bots to brilliant strategies that improve the learner experience.', 'Brittany'],
+  ['Making Thinking Visible: Strategies for Enhancing Learning', 'AI', 'Practical strategies to make student thinking visible, promote critical thinking, and deepen understanding.', 'Gary Sandler'],
+  ['Personalized Learning Meets Ethical AI', 'AI', 'Design personalized, inclusive learning experiences while helping students think critically about AI.', 'Gary Sandler'],
+  ['Practical Strategies for School-Wide AI Adoption', 'AI', 'Realistic, scalable strategies for bringing AI into daily school practice beyond the hype.', ''],
+  ['The Intersection of AI, Design, and Learning', 'AI', 'What if you could give every learner a personalized experience? Explore where AI, design, and learning meet.', 'Gary Sandler'],
+  ['Think. Design. Learn. Repeat.', 'AI', 'Great learning starts with design, not tools. Use design thinking to shape intentional, learner-centered experiences.', 'Gary Sandler'],
+  ['Blended Learning Cookbook', 'Blended Learning', 'Recipes for blending face-to-face instruction with online learning in ways that actually work.', 'Margie'],
+];
+const HOLI = [
+  ['11-11', 'Veterans Day', ['SEL'], 'Honor service with a gratitude moment in class.'],
+  ['11-26', 'Thanksgiving', ['SEL', 'Feedback'], 'A gratitude routine kids will remember.'],
+  ['12-01', 'Holiday break countdown', ['Classroom Management', 'Game Based Learning'], 'Keep December calm and fun.'],
+  ['01-04', 'Back from break', ['Classroom Management', 'Organization', 'SEL'], 'Reset routines on the first day back.'],
+  ['01-18', 'MLK Day', ['Instructional Strategies', 'SEL'], 'Move from empathy to action.'],
+  ['02-14', 'Kindness week', ['SEL'], 'Small moves that make kids feel seen.'],
+  ['03-01', 'Testing season', ['Instructional Strategies', 'Game Based Learning', 'Feedback'], 'Review that doesn\u2019t feel like a drill.'],
+  ['03-02', 'Read Across America', ['Instructional Strategies'], 'Celebrate reading with something new.'],
+  ['05-04', 'Teacher Appreciation Week', ['Coaching'], 'Lift up your team this week.'],
+  ['05-20', 'End-of-year', ['SEL', 'Organization', 'Game Based Learning'], 'Finish strong and celebrate growth.'],
+  ['08-15', 'Back to school', ['Classroom Management', 'SEL', 'Organization'], 'Set the tone in the first week.'],
+];
+const PC = { 'Classroom Management': ['#E6F0F7', '#2F5E7A'], 'Instructional Strategies': ['#EAF6DC', '#3B6B23'], 'Game Based Learning': ['#FDE7C7', '#9A4B00'], 'Organization': ['#F4F4F2', '#57534e'], 'Coaching': ['#F3EAF8', '#7A3E9D'], 'Feedback': ['#FFF1C2', '#8A6410'], 'SEL': ['#FCEBEC', '#9B2C3C'], 'AI': ['#E3F2FF', '#1E4E8C'], 'Blended Learning': ['#EAF6DC', '#3B6B23'] };
+const chip = (p) => { const c = PC[p] || ['#EEF3EC', '#4B6049']; return 'font-size:11px;font-weight:800;border-radius:999px;padding:2px 9px;white-space:nowrap;background:' + c[0] + ';color:' + c[1]; };
+const TAGS = { 'Classroom Management': '#ClassroomManagement', 'Instructional Strategies': '#InstructionalStrategies', 'Game Based Learning': '#GameBasedLearning', 'Organization': '#TeacherOrganization', 'Coaching': '#InstructionalCoaching', 'Feedback': '#Feedback', 'SEL': '#SEL' };
+const THEMES = { green: ['🌿 Green', '#2F3E2E', '#FFFFFF', '#E8B923', '#CFE0C8'], gold: ['🟡 Gold', '#FFF1C2', '#2F3E2E', '#4B6049', '#8A6410'], cream: ['🤍 Cream', '#FBF9F5', '#1F2E2A', '#B7791F', '#618459'] };
+const yearOf = (d) => { const m = /(\d+)-(\d+)-(\d+)/.exec(d || ''); if (!m) return null; let y = +m[3]; return y < 100 ? 2000 + y : y; };
+class Component extends DCLogic {
+  state = { tab: 'lib', q: '', purpose: '', mode: 'graphic', item: 'r0', theme: 'green', sq: '', copied: '', news: [0, 1, 0], res: RES, sub: SUB };
+  componentDidMount() {
+    try { const h = JSON.parse(localStorage.getItem('social-hub:v1') || '{}'); if (h.res && h.res.length > RES.length) this.setState({ res: h.res.map((r) => { const s = RES.find((x) => x[0] === r[0]); return s || [r[0], r[1], r[2], r[3], '', '', '']; }) }); if (h.sub && h.sub.length > SUB.length) this.setState({ sub: h.sub }); } catch (e) {}
+    try { const s = JSON.parse(localStorage.getItem(KEY) || '{}'); if (s.theme) this.setState({ theme: s.theme }); } catch (e) {}
+  }
+  copy(t, id) { const done = () => { this.setState({ copied: id }); clearTimeout(this._c); this._c = setTimeout(() => this.setState({ copied: '' }), 1600); }; if (navigator.clipboard) navigator.clipboard.writeText(t).then(done, done); else done(); }
+  item() { const S = this.state; const k = S.item[0], i = +S.item.slice(1); if (k === 's') { const s = S.sub[i] || S.sub[0]; return { kind: 'sub', title: s[0], link: s[1], sum: s[2], purpose: 'Substack' }; } const r = S.res[i] || S.res[0]; return { kind: 'res', title: r[0], purpose: r[1], link: r[2], sum: r[3] }; }
+  slidesFor(it, mode) {
+    const sents = (it.sum || '').replace(/[🎉🎯🧩📋🎧🏀✨💛📌🥧✅🎂🧠➡️🚶]/gu, '').split(/(?<=[.!?])\s+/).filter((x) => x.trim().length > 3);
+    if (mode === 'graphic') return [{ kicker: it.kind === 'sub' ? 'NEW ON MY SUBSTACK' : (it.purpose || '').toUpperCase(), title: it.title, body: sents.slice(0, 2).join(' '), footer: '@mrshowell24 · Upshift Learning', label: 'Square post · 1080 × 1080' }];
+    const steps = sents.length >= 3 ? sents.slice(0, 3) : sents.concat(['Try it once this week.', 'Notice what changes for your kids.']).slice(0, 3);
+    return [
+      { kicker: 'SAVE THIS 📌', title: it.title, body: it.kind === 'sub' ? 'A quick read for busy teachers.' : 'A low-prep idea you can use tomorrow.', footer: 'Swipe →', label: 'Slide 1 · Hook' },
+      ...steps.map((s, i) => ({ kicker: 'STEP ' + (i + 1), title: s.length > 70 ? s.split(/,|—| and /)[0] : s, body: s.length > 70 ? s : '', footer: 'Swipe →', label: 'Slide ' + (i + 2) })),
+      { kicker: 'TEACHER TIP', title: it.kind === 'sub' ? 'Start small.' : 'Make it a routine.', body: it.kind === 'sub' ? 'Pick one idea and try it for a week.' : 'Use it at the same time each week so kids know what to expect.', footer: 'Swipe →', label: 'Slide ' + (steps.length + 2) },
+      { kicker: 'WANT MORE?', title: 'Follow @mrshowell24', body: it.kind === 'sub' ? 'Read the full post on my Substack. Link in bio.' : 'Watch the full video. Link in bio.', footer: 'Share with a teacher friend 💚', label: 'Slide ' + (steps.length + 3) + ' · CTA' },
+    ];
+  }
+  drawPng(sl, th) {
+    const c = document.createElement('canvas'); c.width = 1080; c.height = 1080; const x = c.getContext('2d');
+    x.fillStyle = th[1]; x.fillRect(0, 0, 1080, 1080); x.fillStyle = th[3]; x.fillRect(0, 0, 1080, 22); x.fillRect(80, 930, 120, 10);
+    const wrap = (t, font, size, y0, lh, max, col) => { x.font = font + ' ' + size + 'px Poppins'; x.fillStyle = col; let line = '', y = y0; (t || '').split(' ').forEach((w) => { const tt = line ? line + ' ' + w : w; if (x.measureText(tt).width > max && line) { x.fillText(line, 80, y); line = w; y += lh; } else line = tt; }); if (line) x.fillText(line, 80, y); return y + lh; };
+    let y = wrap(sl.kicker, '800', 34, 170, 46, 920, th[4]);
+    y = wrap(sl.title, '800', sl.title.length > 40 ? 72 : 92, y + 40, sl.title.length > 40 ? 86 : 104, 920, th[2]);
+    if (sl.body) wrap(sl.body, '500', 40, y + 30, 58, 920, th[2]);
+    x.font = '700 32px Poppins'; x.fillStyle = th[2]; x.fillText(sl.footer, 80, 1000);
+    return c;
+  }
+  renderVals() {
+    const S = this.state; const tab = S.tab; const th = THEMES[S.theme];
+    const T = [['lib', '📇 Library'], ['graphic', '🖼 Graphics'], ['carousel', '🎠 Carousels'], ['news', '📬 Newsletter'], ['sess', '🗂 Sessions'], ['ever', '🔁 Evergreen'], ['holi', '🗓 Holidays']];
+    const out = { tabs: T.map(([k, l]) => ({ label: l, pick: () => this.setState({ tab: k, mode: k === 'carousel' ? 'carousel' : k === 'graphic' ? 'graphic' : S.mode }), style: 'font-family:Poppins,sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;border:none;border-radius:9px;padding:8px 14px;white-space:nowrap;' + (tab === k ? 'background:#4B6049;color:#fff' : 'background:transparent;color:#4B6049') })),
+      isLib: tab === 'lib', isMake: tab === 'graphic' || tab === 'carousel', isNews: tab === 'news', isSess: tab === 'sess', isList: tab === 'ever' || tab === 'holi' };
+    // Library
+    const purposes = Array.from(new Set(S.res.map((r) => r[1]).filter(Boolean)));
+    const q = S.q.trim().toLowerCase();
+    const lib = S.res.map((r, i) => ({ r, i })).filter(({ r }) => (!S.purpose || r[1] === S.purpose) && (!q || (r[0] + ' ' + r[1] + ' ' + r[3]).toLowerCase().includes(q)));
+    Object.assign(out, { q: S.q, setQ: (e) => this.setState({ q: e.target.value }), purpose: S.purpose, setPurpose: (e) => this.setState({ purpose: e.target.value }),
+      purposeOpts: [{ v: '', t: 'All purposes' }].concat(purposes.map((p) => ({ v: p, t: p }))), libCount: lib.length + ' of ' + S.res.length + ' resources',
+      lib: lib.map(({ r, i }) => ({ title: r[0], purpose: r[1], chip: chip(r[1]), sum: r[3], date: r[4] ? r[4].replace(/-/g, '/') : '',
+        links: [['▶ Video', r[2]], ['📄 Slides/Doc', r[5]], ['✍️ Substack', r[6]]].filter((l) => l[1] && /^https?:/.test(l[1])).map(([t, href]) => ({ t, href })),
+        toGraphic: () => this.setState({ tab: 'graphic', mode: 'graphic', item: 'r' + i }), toCarousel: () => this.setState({ tab: 'carousel', mode: 'carousel', item: 'r' + i }) })) });
+    // Graphics + carousels
+    const it = this.item(); const mode = tab === 'carousel' ? 'carousel' : 'graphic';
+    const slides = this.slidesFor(it, mode);
+    const W = 270, sc = W / 1080;
+    const caption = (it.kind === 'sub' ? it.sum + '\n\n📖 New on my Substack: \u201c' + it.title + '\u201d\n🔗 ' + it.link : '\u2728 ' + it.title + '\n\n' + it.sum + '\n\n▶ ' + it.link) + '\n\nSave this for later 📌 Tag a teacher who needs it 👇\n\n' + (TAGS[it.purpose] || '#TeacherLife') + ' #TeacherTips #Educators #mrshowell24';
+    Object.assign(out, {
+      itemOpts: S.res.map((r, i) => ({ v: 'r' + i, t: '📚 ' + r[0] })).concat(S.sub.map((s, i) => ({ v: 's' + i, t: '✍️ ' + s[0] }))), pickVal: S.item, pickItem: (e) => this.setState({ item: e.target.value }),
+      themeTabs: Object.entries(THEMES).map(([k, v]) => ({ label: v[0], pick: () => { this.setState({ theme: k }); try { localStorage.setItem(KEY, JSON.stringify({ theme: k })); } catch (e) {} }, style: 'font-family:Poppins,sans-serif;font-size:12.5px;font-weight:700;cursor:pointer;border-radius:8px;padding:6px 10px;white-space:nowrap;border:1.5px solid ' + (S.theme === k ? '#4B6049' : '#C9D3C4') + ';background:' + v[1] + ';color:' + v[2] })),
+      slides: slides.map((s) => ({ ...s, box: { width: W, height: W, boxSizing: 'border-box', background: th[1], borderTop: (22 * sc) + 'px solid ' + th[3], borderRadius: 10, padding: (80 * sc) + 'px', display: 'flex', flexDirection: 'column', gap: 8, overflow: 'hidden', boxShadow: '0 3px 10px rgba(0,0,0,.1)' },
+        kick: { fontSize: 34 * sc + 2, fontWeight: 800, letterSpacing: '.08em', color: th[4] }, big: { fontSize: (s.title.length > 40 ? 72 : 92) * sc, fontWeight: 800, lineHeight: 1.12, color: th[2] },
+        small: { fontSize: 40 * sc + 1, lineHeight: 1.4, color: th[2] }, foot: { marginTop: 'auto', fontSize: 32 * sc + 1, fontWeight: 700, color: th[2] } })),
+      makeNote: mode === 'carousel' ? slides.length + ' slides for Instagram, LinkedIn or Facebook. Each downloads as its own 1080 × 1080 PNG.' : 'One square post. Download it as a 1080 × 1080 PNG and upload it with the caption below.',
+      dlLabel: mode === 'carousel' ? '⬇ Download ' + slides.length + ' PNGs' : '⬇ Download PNG',
+      download: () => { slides.forEach((sl, i) => setTimeout(() => { const c = this.drawPng(sl, th); const a = document.createElement('a'); a.href = c.toDataURL('image/png'); a.download = it.title.replace(/[^a-z0-9]+/gi, '-').toLowerCase() + (slides.length > 1 ? '-' + (i + 1) : '') + '.png'; a.click(); }, i * 350)); },
+      caption, copyCap: () => this.copy(caption, 'cap'), copyCapLbl: S.copied === 'cap' ? '✓ Copied' : '📋 Copy caption',
+    });
+    // Newsletter
+    const [a, b, s] = S.news; const r1 = S.res[a] || S.res[0], r2 = S.res[b] || S.res[1], sb = S.sub[s] || S.sub[0];
+    const nb = [
+      ['Hi friends! 👋', 'font-size:16px;font-weight:700'],
+      ['Here are 3 quick ideas for your week. Pick one, try it, and hit reply to tell me how it went.', 'font-size:15px;line-height:1.6'],
+      ['1️⃣ ' + r1[0], 'font-size:17px;font-weight:800;margin-top:6px'], [r1[3], 'font-size:15px;line-height:1.6'], ['▶ Watch: ' + r1[2], 'font-size:14px;font-weight:600;color:#2F5E7A'],
+      ['2️⃣ ' + r2[0], 'font-size:17px;font-weight:800;margin-top:6px'], [r2[3], 'font-size:15px;line-height:1.6'], ['▶ Watch: ' + r2[2], 'font-size:14px;font-weight:600;color:#2F5E7A'],
+      ['3️⃣ From my Substack: ' + sb[0], 'font-size:17px;font-weight:800;margin-top:6px'], [sb[2], 'font-size:15px;line-height:1.6'], ['📖 Read it: ' + sb[1], 'font-size:14px;font-weight:600;color:#2F5E7A'],
+      ['Have a great week! Let\u2019s keep growing together. 💚', 'font-size:15px;margin-top:8px'], ['Stephanie · @mrshowell24 · Upshift Learning', 'font-size:14px;font-weight:700'],
+    ];
+    const subject = '3 ideas for your week: ' + r1[0] + ', ' + r2[0] + ' + more';
+    Object.assign(out, { news: { subject, blocks: nb.map(([t, style]) => ({ t, style })) },
+      newsPicks: [['Resource 1', 0, S.res], ['Resource 2', 1, S.res], ['Substack', 2, S.sub]].map(([label, k, arr]) => ({ label, v: String(S.news[k]), opts: arr.map((r, i) => ({ v: String(i), t: r[0] })), pick: (e) => { const n = S.news.slice(); n[k] = +e.target.value; this.setState({ news: n }); } })),
+      newsShuffle: () => { const R = (n) => Math.floor(Math.random() * n); let x = R(S.res.length), y = R(S.res.length); if (y === x) y = (x + 1) % S.res.length; this.setState({ news: [x, y, R(S.sub.length)] }); },
+      copyNews: () => this.copy('Subject: ' + subject + '\n\n' + nb.map((n) => n[0]).join('\n\n'), 'news'), copyNewsLbl: S.copied === 'news' ? '✓ Copied' : '📋 Copy email' });
+    // Sessions
+    const sq = S.sq.trim().toLowerCase(); const sess = SESS.map((x, i) => ({ x, i })).filter(({ x }) => !sq || x.join(' ').toLowerCase().includes(sq));
+    Object.assign(out, { sq: S.sq, setSq: (e) => this.setState({ sq: e.target.value }), sessCount: sess.length + ' sessions (sample from your Session Catalog)',
+      sess: sess.map(({ x, i }) => { const blurb = x[0] + '\n\n' + x[2] + ' Participants will leave with practical strategies and ready-to-use resources they can try the next day.' + (x[3] ? '\n\nCo-presented with ' + x[3] + '.' : '');
+        const post = '🎤 I\u2019m presenting \u201c' + x[0] + '\u201d!\n\n' + x[2] + '\n\nCome say hi and grab the resources 💚' + (x[3] ? ' So excited to present with ' + x[3] + '!' : '') + '\n\n#EdTech #' + x[1].replace(/\s+/g, '') + ' #TeacherPD';
+        return { title: x[0], purpose: x[1], chip: chip(x[1]), desc: x[2], co: x[3] ? 'Co-presented with ' + x[3] : 'Solo session',
+          copyBlurb: () => this.copy(blurb, 'b' + i), blurbLbl: S.copied === 'b' + i ? '✓ Copied' : '📝 Proposal blurb', copyPost: () => this.copy(post, 'p' + i), postLbl: S.copied === 'p' + i ? '✓ Copied' : '📣 "I\u2019m presenting" post' }; }) });
+    // Evergreen + holidays
+    const now = new Date(); const yr = now.getFullYear();
+    if (tab === 'ever') {
+      const old = S.res.map((r, i) => ({ r, i, y: yearOf(r[4]) })).filter((x) => !x.y || x.y <= yr - 2).sort((p, q2) => (p.y || 0) - (q2.y || 0));
+      out.listNote = 'Older resources from your sheet (2+ years) rewritten as fresh throwback posts. They still work, and most of your newer followers have never seen them.';
+      out.listCards = old.map(({ r, i, y }) => { const txt = '🔁 Throwback ' + (y ? 'from ' + y + ' ' : '') + 'that still works: ' + r[0] + '!\n\n' + r[3] + '\n\nStill one of my favorites. ▶ ' + r[2] + '\n\n' + (TAGS[r[1]] || '#TeacherTips') + ' #ThrowbackThursday';
+        return { tag: r[1], chip: chip(r[1]), when: y ? 'First shared ' + y : 'Older resource', title: r[0], text: txt, copy: () => this.copy(txt, 'e' + i), copyLbl: S.copied === 'e' + i ? '✓ Copied' : '📋 Copy' }; });
+    }
+    if (tab === 'holi') {
+      const upcoming = HOLI.map(([md, name, ps, hook]) => { const [mm, dd] = md.split('-').map(Number); let d = new Date(yr, mm - 1, dd); if (d < new Date(now.toDateString())) d = new Date(yr + 1, mm - 1, dd); return { d, name, ps, hook }; }).sort((p, q2) => p.d - q2.d);
+      out.listNote = 'Upcoming events matched to resources from your sheet. Post 3–7 days before so teachers have time to plan.';
+      out.listCards = upcoming.map((h, k) => { const r = S.res.find((x) => h.ps.includes(x[1])) || S.res[k % S.res.length]; const post = new Date(h.d); post.setDate(post.getDate() - 5);
+        const txt = '📅 ' + h.name + ' is coming up! ' + h.hook + '\n\nTry ' + r[0] + ': ' + r[3] + '\n\n▶ ' + r[2] + '\n\nSave this for later 📌\n\n' + (TAGS[r[1]] || '#TeacherTips') + ' #TeacherLife';
+        return { tag: h.name, chip: chip(r[1]), when: 'Post by ' + post.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' · event ' + h.d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }), title: r[0], text: txt, copy: () => this.copy(txt, 'h' + k), copyLbl: S.copied === 'h' + k ? '✓ Copied' : '📋 Copy' }; });
+    }
+    if (!out.listCards) { out.listCards = []; out.listNote = ''; }
+    return out;
+  }
+}
+</script>
+</body>
+</html>

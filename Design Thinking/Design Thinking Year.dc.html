@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FBF7F0; font-family: Poppins, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #7A2E6E; }
+  a:hover { color: #F26D5B; }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#FBF7F0;color:#211E33;padding:0 0 96px">
+
+  <div style="max-width:1180px;margin:0 auto;padding:56px 32px 0">
+    <div style="font-size:12px;font-weight:700;letter-spacing:0.18em;color:#7A2E6E">ROAD MAP · MORNING MEETING</div>
+    <h1 style="font-size:clamp(38px,6vw,64px);line-height:1.02;font-weight:700;letter-spacing:-0.025em;margin:14px 0 0;max-width:16ch">A design challenge every week of the year.</h1>
+    <p style="font-size:19px;line-height:1.55;color:#54506B;max-width:62ch;margin:20px 0 0;text-wrap:pretty">Thirty-six weeks. Five days each — empathize Monday, define Tuesday, ideate Wednesday, prototype Thursday, test Friday. Five to ten minutes a day. Pick your grade, find the week, print what you need.</p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:28px;margin:36px 0 0;padding:22px 0 0;border-top:1px solid #E6DFD3">
+      <div><div style="font-size:28px;font-weight:700;letter-spacing:-0.02em">36</div><div style="font-size:12px;font-weight:600;letter-spacing:0.1em;color:#8B8699">WEEKS</div></div>
+      <div><div style="font-size:28px;font-weight:700;letter-spacing:-0.02em">180</div><div style="font-size:12px;font-weight:600;letter-spacing:0.1em;color:#8B8699">DAILY ACTIVITIES</div></div>
+      <div><div style="font-size:28px;font-weight:700;letter-spacing:-0.02em">5–10</div><div style="font-size:12px;font-weight:600;letter-spacing:0.1em;color:#8B8699">MINUTES A DAY</div></div>
+      <div><div style="font-size:28px;font-weight:700;letter-spacing:-0.02em">K–12</div><div style="font-size:12px;font-weight:600;letter-spacing:0.1em;color:#8B8699">GRADE SPAN</div></div>
+    </div>
+  </div>
+
+  <div style="max-width:1180px;margin:0 auto;padding:44px 32px 0">
+    <div style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:#8B8699;margin-bottom:12px">GRADE</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <sc-for list="{{ grades }}" as="g" hint-placeholder-count="13">
+        <button type="button" onClick="{{ g.pick }}" style="{{ g.style }}">{{ g.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="max-width:1180px;margin:0 auto;padding:16px 32px 0">
+    <sc-if value="{{ isSample }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:22px 0 0;padding:16px 20px;background:#FFF;border:1px solid #E6DFD3;border-left:5px solid #F26D5B;border-radius:4px">
+        <span style="font-size:11px;font-weight:800;letter-spacing:0.12em;color:#F26D5B">ALL 36 WEEKS BUILT</span>
+        <span style="font-size:15px;color:#54506B">Every week has teacher slides, a student workbook and an answer key. Click a day letter to jump straight to that day's slide.</span>
+      </div>
+    </sc-if>
+    <sc-if value="{{ isPlanned }}" hint-placeholder-val="{{ false }}">
+      <div style="margin:22px 0 0;padding:34px 26px;background:#FFF;border:1px dashed #CFC6B6;border-radius:6px">
+        <div style="font-size:11px;font-weight:800;letter-spacing:0.12em;color:#8B8699">NOT BUILT YET</div>
+        <div style="font-size:22px;font-weight:600;letter-spacing:-0.01em;margin:8px 0 0">{{ plannedHeading }}</div>
+        <p style="font-size:16px;line-height:1.55;color:#54506B;max-width:58ch;margin:10px 0 0">Grades 2, 3 and 4 are built. This grade gets the same 36-week arc with its own driving questions, academic ties and community partners.</p>
+      </div>
+    </sc-if>
+  </div>
+
+  <sc-for list="{{ quarters }}" as="q" hint-placeholder-count="4">
+    <div style="max-width:1180px;margin:0 auto;padding:52px 32px 0">
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;padding-bottom:14px;border-bottom:2px solid #211E33">
+        <h2 style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin:0">{{ q.name }}</h2>
+        <span style="font-size:13px;font-weight:600;letter-spacing:0.1em;color:#8B8699">{{ q.meta }}</span>
+      </div>
+      <p style="font-size:16px;line-height:1.5;color:#54506B;max-width:64ch;margin:14px 0 0">{{ q.blurb }}</p>
+
+      <div style="display:grid;gap:12px;margin-top:22px">
+        <sc-for list="{{ q.weeks }}" as="w" hint-placeholder-count="9">
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:start;background:#FFF;border:1px solid #E6DFD3;border-radius:6px;padding:18px 20px" style-hover="border-color:#211E33">
+            <div style="min-width:0">
+              <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+                <span style="font-size:11px;font-weight:800;letter-spacing:0.1em;color:#FBF7F0;background:#211E33;padding:4px 8px;border-radius:3px">WK {{ w.n }}</span>
+                <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;color:{{ w.tint }}">{{ w.tag }}</span>
+              </div>
+              <div style="font-size:21px;font-weight:600;letter-spacing:-0.015em;margin:9px 0 0">{{ w.title }}</div>
+              <div style="font-size:15px;line-height:1.5;color:#54506B;margin:5px 0 0;text-wrap:pretty">{{ w.hmw }}</div>
+              <div style="font-size:13px;color:#8B8699;margin:9px 0 0">Authentic audience — {{ w.audience }}</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end">
+              <sc-if value="{{ w.live }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;gap:4px">
+                  <sc-for list="{{ w.dayLinks }}" as="d" hint-placeholder-count="5">
+                    <a href="{{ d.href }}" title="{{ d.title }}" style="{{ d.style }}" style-hover="outline:2px solid #211E33;outline-offset:1px">{{ d.letter }}</a>
+                  </sc-for>
+                </div>
+              </sc-if>
+              <sc-if value="{{ w.pending }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;gap:4px">
+                  <sc-for list="{{ w.days }}" as="d" hint-placeholder-count="5">
+                    <span title="{{ d.title }}" style="{{ d.style }}">{{ d.letter }}</span>
+                  </sc-for>
+                </div>
+              </sc-if>
+              <sc-if value="{{ w.live }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end">
+                  <a href="{{ w.slides }}" style="font-size:13px;font-weight:600;text-decoration:none;color:#FBF7F0;background:#7A2E6E;padding:7px 12px;border-radius:4px;white-space:nowrap" style-hover="background:#211E33">Teacher slides</a>
+                  <a href="{{ w.book }}" style="font-size:13px;font-weight:600;text-decoration:none;color:#211E33;background:#FBF7F0;border:1px solid #CFC6B6;padding:7px 12px;border-radius:4px;white-space:nowrap" style-hover="border-color:#211E33">Workbook</a>
+                  <a href="{{ w.key }}" style="font-size:13px;font-weight:600;text-decoration:none;color:#211E33;background:#FBF7F0;border:1px solid #CFC6B6;padding:7px 12px;border-radius:4px;white-space:nowrap" style-hover="border-color:#211E33">Answer key</a>
+                </div>
+              </sc-if>
+              <sc-if value="{{ w.pending }}" hint-placeholder-val="{{ true }}">
+                <span style="font-size:12px;font-weight:600;letter-spacing:0.06em;color:#A9A2B5">PLANNED</span>
+              </sc-if>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-for>
+
+  <div style="max-width:1180px;margin:0 auto;padding:64px 32px 0">
+    <div style="background:#211E33;color:#FBF7F0;border-radius:8px;padding:38px 34px">
+      <div style="font-size:11px;font-weight:800;letter-spacing:0.14em;color:#F2A93B">HOW THE WEEK RUNS</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;margin-top:24px">
+        <div><div style="font-size:13px;font-weight:800;letter-spacing:0.1em;color:#F26D5B">MON · EMPATHIZE</div><div style="font-size:15px;line-height:1.5;opacity:0.82;margin-top:7px">Notice and listen. One talks, one listens, then swap.</div></div>
+        <div><div style="font-size:13px;font-weight:800;letter-spacing:0.1em;color:#F2A93B">TUE · DEFINE</div><div style="font-size:15px;line-height:1.5;opacity:0.82;margin-top:7px">Sort what you heard. Pick the one problem to fix.</div></div>
+        <div><div style="font-size:13px;font-weight:800;letter-spacing:0.1em;color:#2FA39B">WED · IDEATE</div><div style="font-size:15px;line-height:1.5;opacity:0.82;margin-top:7px">Four ideas in four minutes. Yes, and — never no, but.</div></div>
+        <div><div style="font-size:13px;font-weight:800;letter-spacing:0.1em;color:#7B7BE0">THU · PROTOTYPE</div><div style="font-size:15px;line-height:1.5;opacity:0.82;margin-top:7px">Build something rough you can hold up and point at.</div></div>
+        <div><div style="font-size:13px;font-weight:800;letter-spacing:0.1em;color:#C77BC9">FRI · TEST</div><div style="font-size:15px;line-height:1.5;opacity:0.82;margin-top:7px">Pitch it to a real person. Write down what they say.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1180px;margin:0 auto;padding:34px 32px 0;font-size:13px;color:#8B8699">
+    Design thinking sequence adapted from the Stanford d.school five-mode model. Weekly extensions are d.school-style redesign challenges. Skills Focus competencies mapped to the CASEL framework — social awareness, responsible decision-making, self-awareness, self-management and relationship skills, all five across every week. © 2026 Upshift Learning.
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const DAYS = [
+  { letter: "M", title: "Monday — Empathize", color: "#F26D5B" },
+  { letter: "T", title: "Tuesday — Define", color: "#F2A93B" },
+  { letter: "W", title: "Wednesday — Ideate", color: "#2FA39B" },
+  { letter: "T", title: "Thursday — Prototype", color: "#5B5BD6" },
+  { letter: "F", title: "Friday — Test", color: "#8B3E8F" }
+];
+
+const G3 = [
+  { n: 1, tag: "BACK TO SCHOOL · OUR CLASS", title: "The Belonging Project", hmw: "How might we make our classroom a place where everyone feels they belong?", audience: "your own class, then the school counselor on Friday", live: true },
+  { n: 2, tag: "OUR CLASS", title: "Morning Meeting Makeover", hmw: "How might we make morning meeting something everyone wants to join?", audience: "your class votes; the winning idea runs next week" },
+  { n: 3, tag: "OUR CLASS", title: "The Lost and Found", hmw: "How might we help our class stop losing pencils, jackets and water bottles?", audience: "the custodian — invite them for five minutes on Friday" },
+  { n: 4, tag: "OUR CLASS", title: "Quiet Corners", hmw: "How might we make a calm spot for someone who needs a break?", audience: "the school counselor" },
+  { n: 5, tag: "OUR CLASS", title: "Substitute Survival Kit", hmw: "How might we help a substitute teacher have a great day in our room?", audience: "the office staff who call the substitutes" },
+  { n: 6, tag: "OUR GRADE", title: "Lunch Table Redesign", hmw: "How might we make lunch feel less lonely for someone eating alone?", audience: "cafeteria staff" },
+  { n: 7, tag: "OUR SCHOOL", title: "The Fire Drill Fix", hmw: "How might we help kindergartners stay calm during a drill?", audience: "a kindergarten teacher" },
+  { n: 8, tag: "OUR CLASS · HOME", title: "Homework Helper", hmw: "How might we help each other remember what is due?", audience: "families — send the prototype home" },
+  { n: 9, tag: "QUARTER PITCH", title: "Show What We Learned", hmw: "Which of our first eight ideas should the school actually try?", audience: "the principal or assistant principal" },
+
+  { n: 10, tag: "ACADEMIC TIE · MATH", title: "Multiplication Mission", hmw: "How might we help a classmate learn a fact family they keep missing?", audience: "the other third grade classes" },
+  { n: 11, tag: "ACADEMIC TIE · READING", title: "The Reading Buddy Kit", hmw: "How might we make reading aloud to a kindergartner go well every time?", audience: "a kindergarten class" },
+  { n: 12, tag: "NOVEMBER", title: "Thankful by Design", hmw: "How might we thank someone at school who is easy to forget?", audience: "custodial and cafeteria staff" },
+  { n: 13, tag: "WINTER", title: "The Warm Things Drive", hmw: "How might we get warm coats, hats and gloves to families who need them?", audience: "the family liaison or school social worker" },
+  { n: 14, tag: "WINTER", title: "Recess in the Cold", hmw: "How might we make indoor recess fun for everyone, not just the loud kids?", audience: "the PE teacher" },
+  { n: 15, tag: "DECEMBER", title: "The Gift That Costs Nothing", hmw: "How might we give someone a real gift without spending money?", audience: "families at home" },
+  { n: 16, tag: "NEW YEAR", title: "New Year, One Habit", hmw: "How might we help ourselves stick to one good habit for a whole month?", audience: "your class keeps a shared tracker" },
+  { n: 17, tag: "ACADEMIC TIE · WRITING", title: "Directions That Work", hmw: "How might we write directions a first grader can actually follow?", audience: "a first grade class tests them" },
+  { n: 18, tag: "QUARTER PITCH", title: "Halfway Pitch Day", hmw: "What have we learned that the whole grade should hear?", audience: "the third grade teaching team" },
+
+  { n: 19, tag: "OUR SCHOOL", title: "The Kindness Machine", hmw: "How might we make kindness easy to notice at our school?", audience: "the school counselor" },
+  { n: 20, tag: "OUR SCHOOL", title: "Hallway Helper Signs", hmw: "How might we help a visitor find their way without asking anyone?", audience: "front office staff" },
+  { n: 21, tag: "OUR SCHOOL", title: "The Spot That Bugs Everyone", hmw: "How might we fix one place in our school that frustrates people every day?", audience: "the custodian" },
+  { n: 22, tag: "TESTING SEASON", title: "Test Week Calm", hmw: "How might we help each other feel steady during testing week?", audience: "the counselor and your own class" },
+  { n: 23, tag: "OUR SCHOOL", title: "Recycle It Right", hmw: "How might we cut down what our school throws away at lunch?", audience: "the custodian and the city recycling office" },
+  { n: 24, tag: "OUR SCHOOL", title: "The Library Redesign", hmw: "How might we make our library a place kids choose to go?", audience: "the librarian" },
+  { n: 25, tag: "OUR SCHOOL", title: "Playground Fair Play", hmw: "How might we make sure nobody gets left out at recess?", audience: "recess monitors" },
+  { n: 26, tag: "OUR SCHOOL", title: "Announcement Makeover", hmw: "How might we make morning announcements worth listening to?", audience: "the principal" },
+  { n: 27, tag: "QUARTER PITCH", title: "School Pitch Day", hmw: "Which school-wide idea deserves real money and real time?", audience: "the principal and a PTO parent" },
+
+  { n: 28, tag: "OUR COMMUNITY", title: "Who Lives Near Us?", hmw: "How might we find out what our neighbors actually need?", audience: "a local community partner or business owner" },
+  { n: 29, tag: "OUR COMMUNITY", title: "The Animal Shelter Challenge", hmw: "How might we help animals waiting for a home get noticed?", audience: "a shelter volunteer" },
+  { n: 30, tag: "OUR COMMUNITY", title: "Food Pantry Fix", hmw: "How might we make picking up food feel easy and private for a family?", audience: "food pantry staff" },
+  { n: 31, tag: "OUR COMMUNITY", title: "The Park Bench Problem", hmw: "How might we make one public place better for everyone who uses it?", audience: "city parks staff" },
+  { n: 32, tag: "OUR COMMUNITY", title: "Safe Walk to School", hmw: "How might we make walking or biking to school safer?", audience: "the school resource officer" },
+  { n: 33, tag: "PASS IT DOWN", title: "Teach the Little Kids", hmw: "How might we teach kindergartners something we know how to do?", audience: "a kindergarten class" },
+  { n: 34, tag: "CIVIC VOICE", title: "Letters That Land", hmw: "How might we write to someone who can actually change something?", audience: "the mayor's office or the school board" },
+  { n: 35, tag: "END OF YEAR", title: "Pass It On", hmw: "How might we leave something behind for next year's third graders?", audience: "next year's third grade teacher" },
+  { n: 36, tag: "SHOWCASE", title: "Design Thinking Showcase", hmw: "Which idea from our whole year is worth building for real?", audience: "families, community partners and district staff" }
+];
+
+const QUARTER_META = [
+  { name: "Quarter 1 · Our Class", meta: "WEEKS 1–9 · AUGUST TO OCTOBER", blurb: "Start close to home. Problems students can see from their own seat, audiences they already know, and a first taste of pitching to an adult." },
+  { name: "Quarter 2 · Our Grade", meta: "WEEKS 10–18 · NOVEMBER TO JANUARY", blurb: "Widen to the grade level and tie the work to what they are already learning — multiplication facts, reading aloud, writing clear directions." },
+  { name: "Quarter 3 · Our School", meta: "WEEKS 19–27 · FEBRUARY TO APRIL", blurb: "School-wide problems, real staff to talk to, and a testing-season week built to lower the temperature rather than raise it." },
+  { name: "Quarter 4 · Our Community", meta: "WEEKS 28–36 · APRIL TO JUNE", blurb: "Outside the building. Partners who are not paid to be nice to children, and a closing showcase for families and the district." }
+];
+
+const GRADES = ["K","1","2","3","4","5","6","7","8","9","10","11","12"];
+
+class Component extends DCLogic {
+  state = { grade: "3", built: [], src: null };
+
+  componentDidMount() {
+    this.load("3");
+  }
+
+  load(grade) {
+    if (this.state.cache && this.state.cache[grade]) {
+      this.setState({ grade, src: this.state.cache[grade].weeks, qmeta: this.state.cache[grade].quarters });
+      return;
+    }
+    const file = { "K": "./year-data-gk.js", "1": "./year-data-g1.js", "2": "./year-data-g2.js", "4": "./year-data-g4.js", "5": "./year-data-g5.js", "6": "./year-data-g6.js", "7": "./year-data-g7.js", "8": "./year-data-g8.js", "9": "./year-data-g9.js", "10": "./year-data-g10.js", "11": "./year-data-g11.js", "12": "./year-data-g12.js" }[grade] || "./year-data.js";
+    import(file)
+      .then(m => this.setState(s => ({
+        grade,
+        src: m.WEEKS,
+        qmeta: m.QUARTERS,
+        cache: Object.assign({}, s.cache, { [grade]: { weeks: m.WEEKS, quarters: m.QUARTERS } })
+      })))
+      .catch(() => this.setState({ grade, src: null, qmeta: null }));
+  }
+
+  hasContent(grade) {
+    return ["K", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"].indexOf(grade) !== -1;
+  }
+
+  renderVals() {
+    const g = this.state.grade;
+    const live = this.hasContent(g) && this.state.src && this.state.src.length === 36;
+    const source = live ? this.state.src : G3;
+    const qmeta = live && this.state.qmeta ? this.state.qmeta : QUARTER_META;
+    const days = DAYS.map(d => ({
+      letter: d.letter,
+      title: d.title,
+      style: "width:24px;height:24px;display:grid;place-items:center;border-radius:4px;font-size:11px;font-weight:800;color:#FFF;background:" + d.color
+    }));
+    const q = "&grade=" + g;
+
+    const quarters = qmeta.map((qq, qi) => ({
+      name: qq.name,
+      meta: qq.meta,
+      blurb: qq.blurb,
+      weeks: source.slice(qi * 9, qi * 9 + 9).map(w => {
+        return {
+          n: w.n,
+          tag: w.tag,
+          tint: w.n % 9 === 0 ? "#7A2E6E" : "#8B8699",
+          title: live ? w.title : "Week " + w.n,
+          hmw: live ? w.hmw : "Driving question written when this grade's year is built.",
+          audience: live ? (w.audience || (w.guest || "").replace(/^The /, "the ")) : "to be matched to this grade",
+          days,
+          dayLinks: DAYS.map((d, i) => ({
+            letter: d.letter,
+            title: d.title + " — open this slide",
+            href: "Teacher Slides.dc.html?week=" + w.n + q + "#" + (i + 2),
+            style: "width:24px;height:24px;display:grid;place-items:center;border-radius:4px;font-size:11px;font-weight:800;color:#FFF;text-decoration:none;background:" + d.color
+          })),
+          live,
+          pending: !live,
+          slides: "Teacher Slides.dc.html?week=" + w.n + q,
+          book: "Workbook.dc.html?week=" + w.n + q,
+          key: "Workbook Key.dc.html?week=" + w.n + q
+        };
+      })
+    }));
+
+    return {
+      isSample: live,
+      isPlanned: !live,
+      plannedHeading: (g === "K" ? "Kindergarten" : "Grade " + g) + " — 36 weeks, same five-day rhythm",
+      quarters,
+      grades: GRADES.map(x => ({
+        label: x === "K" ? "K" : x,
+        pick: () => this.load(x),
+        style: [
+          "font-family:inherit;cursor:pointer;min-width:44px;min-height:44px;padding:0 14px;border-radius:5px;font-size:15px;font-weight:600;letter-spacing:0.02em",
+          x === g ? "background:#211E33;color:#FBF7F0;border:1px solid #211E33" : "background:#FFF;color:#211E33;border:1px solid #E6DFD3"
+        ].join(";")
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

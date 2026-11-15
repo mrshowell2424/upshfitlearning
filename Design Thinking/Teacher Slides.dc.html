@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #211E33; font-family: Poppins, system-ui, sans-serif; }
+  a { color: #F2A93B; } a:hover { color: #F26D5B; }
+</style>
+</helmet>
+
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <section data-label="Week overview" data-screen-label="01" data-speaker-notes="{{ notesOverview }}" style="background:#211E33;color:#FBF7F0;padding:96px;display:flex;flex-direction:column;box-sizing:border-box">
+    <div style="font-size:26px;font-weight:800;letter-spacing:0.22em;color:#F2A93B">{{ eyebrow }}</div>
+    <h1 style="font-size:126px;line-height:0.95;font-weight:700;letter-spacing:-0.035em;margin:26px 0 0">{{ title }}</h1>
+    <div style="font-size:40px;font-weight:300;line-height:1.35;color:#CFC6D8;margin:26px 0 0;max-width:34ch">A five-day design challenge for morning meeting. Five to ten minutes a day.</div>
+    <div style="flex:1"></div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:20px">
+      <sc-for list="{{ days }}" as="d" hint-placeholder-count="5">
+        <div style="{{ d.cardStyle }}"><div style="font-size:24px;font-weight:800;letter-spacing:0.14em">{{ d.short }}</div><div style="font-size:38px;font-weight:700;letter-spacing:-0.01em;margin-top:8px">{{ d.phaseTitle }}</div></div>
+      </sc-for>
+    </div>
+    <div style="font-size:34px;font-weight:500;color:#F2A93B;margin-top:44px">{{ hmw }}</div>
+  </section>
+
+  <sc-for list="{{ days }}" as="d" hint-placeholder-count="5">
+    <section data-label="{{ d.label }}" data-screen-label="{{ d.screenLabel }}" data-speaker-notes="{{ d.notes }}" style="background:#FBF7F0;color:#211E33;padding:88px 96px;display:grid;grid-template-columns:640px minmax(0,1fr);gap:72px;box-sizing:border-box">
+      <div style="display:flex;flex-direction:column">
+        <div style="font-size:28px;font-weight:800;letter-spacing:0.2em;color:{{ d.deep }}">{{ d.day }}</div>
+        <div style="font-size:104px;line-height:0.98;font-weight:700;letter-spacing:-0.03em;margin:14px 0 0">{{ d.phase }}</div>
+        <div style="font-size:44px;font-weight:300;color:#54506B;margin:12px 0 0">{{ d.sub }}</div>
+        <div style="{{ d.chipStyle }}">5–10 MIN</div>
+        <div style="flex:1"></div>
+        <div style="border-top:4px solid #211E33;padding-top:26px;margin-top:40px">
+          <div style="font-size:24px;font-weight:800;letter-spacing:0.14em;color:#7A2E6E">SKILLS FOCUS</div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px">
+            <sc-for list="{{ d.skills }}" as="s" hint-placeholder-count="2">
+              <div style="font-size:28px;line-height:1.35">{{ s }}</div>
+            </sc-for>
+          </div>
+          <div style="font-size:22px;font-weight:700;letter-spacing:0.06em;color:{{ d.deep }};margin-top:16px">CASEL · {{ d.casel }}</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <div style="font-size:24px;font-weight:800;letter-spacing:0.16em;color:#8B8699">TODAY'S STEPS</div>
+        <div style="display:flex;flex-direction:column;gap:22px;margin-top:26px">
+          <sc-for list="{{ d.steps }}" as="s" hint-placeholder-count="3">
+            <div style="display:grid;grid-template-columns:74px minmax(0,1fr);gap:26px;align-items:start">
+              <div style="width:74px;height:74px;border-radius:37px;background:#211E33;color:#FBF7F0;display:grid;place-items:center;font-size:38px;font-weight:700">{{ s.n }}</div>
+              <div style="font-size:36px;line-height:1.35;padding-top:10px">{{ s.text }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="flex:1"></div>
+        <div style="background:#FFF;border:2px solid #E6DFD3;border-radius:10px;padding:26px 28px;margin-top:34px">
+          <div style="font-size:22px;font-weight:800;letter-spacing:0.14em;color:#8B8699">WHAT YOU NEED</div>
+          <div style="font-size:29px;margin-top:10px">{{ d.needs }}</div>
+        </div>
+        <div style="background:#211E33;color:#FBF7F0;border-radius:10px;padding:22px 28px;margin-top:16px">
+          <span style="font-size:22px;font-weight:800;letter-spacing:0.14em;color:#F2A93B">EXIT TICKET</span>
+          <span style="font-size:29px;margin-left:14px">{{ d.exit }}</span>
+        </div>
+      </div>
+    </section>
+  </sc-for>
+
+  <section data-label="CASEL map" data-screen-label="07" data-speaker-notes="For your own planning and for anyone who asks what SEL standard this covers. Each day carries two of CASEL's five competencies; across a week students touch all five." style="background:#FBF7F0;color:#211E33;padding:88px 96px;display:flex;flex-direction:column;box-sizing:border-box">
+    <div style="font-size:26px;font-weight:800;letter-spacing:0.2em;color:#7A2E6E">CASEL COMPETENCIES · THIS WEEK</div>
+    <h2 style="font-size:82px;line-height:1;font-weight:700;letter-spacing:-0.03em;margin:18px 0 0">All five, in five days.</h2>
+    <div style="display:flex;flex-direction:column;gap:16px;margin-top:46px">
+      <sc-for list="{{ caselRows }}" as="r" hint-placeholder-count="5">
+        <div style="{{ r.rowStyle }}">
+          <div><div style="font-size:24px;font-weight:800;letter-spacing:0.14em;color:{{ r.deep }}">{{ r.head }}</div><div style="font-size:30px;font-weight:700;margin-top:4px">{{ r.name }}</div></div>
+          <div style="font-size:28px;line-height:1.35">{{ r.gloss }}</div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="flex:1"></div>
+    <div style="font-size:24px;color:#8B8699;margin-top:34px">Competency names from the CASEL framework · casel.org</div>
+  </section>
+
+  <section data-label="Prompt bank" data-screen-label="08" data-speaker-notes="Keep this slide up while students work. These are the moves that get a second idea out of a student who thinks they are done." style="background:#211E33;color:#FBF7F0;padding:88px 96px;display:flex;flex-direction:column;box-sizing:border-box">
+    <div style="font-size:26px;font-weight:800;letter-spacing:0.2em;color:#F2A93B">TEACHER PROMPT BANK</div>
+    <h2 style="font-size:82px;line-height:1;font-weight:700;letter-spacing:-0.03em;margin:18px 0 0">Say this when they stop thinking.</h2>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin-top:52px">
+      <sc-for list="{{ prompts }}" as="p" hint-placeholder-count="4">
+        <div style="background:#2B2740;border-radius:12px;padding:30px 32px">
+          <div style="font-size:24px;font-weight:800;letter-spacing:0.14em;color:{{ p.color }}">{{ p.head }}</div>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-top:16px">
+            <sc-for list="{{ p.lines }}" as="l" hint-placeholder-count="3">
+              <div style="font-size:31px;line-height:1.4">{{ l }}</div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section data-label="Extension" data-screen-label="09" data-speaker-notes="{{ notesExtension }}" style="background:#FBF7F0;color:#211E33;padding:88px 96px;display:grid;grid-template-columns:minmax(0,1fr) 620px;gap:72px;box-sizing:border-box">
+    <div style="display:flex;flex-direction:column">
+      <div style="font-size:26px;font-weight:800;letter-spacing:0.2em;color:#7A2E6E">EXTENSION · IF YOU HAVE TIME</div>
+      <h2 style="font-size:86px;line-height:1;font-weight:700;letter-spacing:-0.03em;margin:18px 0 0">{{ extTitle }}</h2>
+      <div style="font-size:38px;line-height:1.4;color:#54506B;margin:24px 0 0;max-width:30ch">{{ extBlurb }}</div>
+      <div style="flex:1"></div>
+      <div style="font-size:24px;color:#8B8699;margin-top:40px;max-width:52ch">A d.school-style redesign challenge — design for one named person, not for everyone.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px;justify-content:center">
+      <sc-for list="{{ extSteps }}" as="s" hint-placeholder-count="4">
+        <div style="{{ s.style }}"><div style="font-size:32px;font-weight:700">{{ s.head }}</div><div style="font-size:28px;line-height:1.4;color:#54506B;margin-top:8px">{{ s.body }}</div></div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section data-label="Authentic audience" data-screen-label="10" data-speaker-notes="{{ notesAudience }}" style="background:#211E33;color:#FBF7F0;padding:88px 96px;display:grid;grid-template-columns:minmax(0,1fr) 640px;gap:72px;box-sizing:border-box">
+    <div style="display:flex;flex-direction:column">
+      <div style="font-size:26px;font-weight:800;letter-spacing:0.2em;color:#F2A93B">AUTHENTIC AUDIENCE</div>
+      <h2 style="font-size:80px;line-height:1;font-weight:700;letter-spacing:-0.03em;margin:18px 0 0">Who hears the pitch on Friday?</h2>
+      <div style="font-size:40px;font-weight:700;color:#F26D5B;margin:26px 0 0">{{ guest }}</div>
+      <div style="font-size:31px;line-height:1.4;color:#CFC6D8;margin:14px 0 0;max-width:38ch">{{ guestWhy }}</div>
+      <div style="flex:1"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:center">
+      <div style="background:#2B2740;border-radius:12px;padding:30px 32px">
+        <div style="font-size:24px;font-weight:800;letter-spacing:0.14em;color:#2FA39B">SEND THIS MONDAY</div>
+        <div style="font-size:30px;line-height:1.45;margin-top:16px;font-style:italic">“{{ invite }}”</div>
+      </div>
+      <div style="background:#2B2740;border-radius:12px;padding:26px 32px;margin-top:20px">
+        <div style="font-size:24px;font-weight:800;letter-spacing:0.14em;color:#C77BC9">IF THE WEEK GOES SIDEWAYS</div>
+        <div style="font-size:25px;line-height:1.5;margin-top:14px">{{ sideways }}</div>
+      </div>
+    </div>
+  </section>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const CASEL_ROWS = [
+  { head: "MON · EMPATHIZE", name: "Social awareness", color: "#F26D5B", deep: "#B0402C", gloss: "Taking the perspective of somebody whose experience differs from yours — and listening without fixing it." },
+  { head: "TUE · DEFINE", name: "Responsible decision-making", color: "#F2A93B", deep: "#8A6210", gloss: "Identifying a problem, weighing which one matters most, and living with the group's choice." },
+  { head: "WED · IDEATE", name: "Self-awareness", color: "#2FA39B", deep: "#1F7C76", gloss: "Naming a rough idea as your own and leaving it on the page. Growth mindset in one move." },
+  { head: "THU · PROTOTYPE", name: "Self-management", color: "#5B5BD6", deep: "#4646C4", gloss: "Setting a goal in ten minutes, and starting over calmly when the tape gives out." },
+  { head: "FRI · TEST", name: "Relationship skills", color: "#8B3E8F", deep: "#7A2E6E", gloss: "Speaking to an unfamiliar audience, and taking “I wish” without arguing back." }
+];
+
+const EXT_COLORS = ["#F26D5B", "#F2A93B", "#2FA39B", "#8B3E8F"];
+
+const GRADE_FILES = { "K": "./year-data-gk.js", "1": "./year-data-g1.js", "2": "./year-data-g2.js", "3": "./year-data.js", "4": "./year-data-g4.js", "5": "./year-data-g5.js", "6": "./year-data-g6.js", "7": "./year-data-g7.js", "8": "./year-data-g8.js", "9": "./year-data-g9.js", "10": "./year-data-g10.js", "11": "./year-data-g11.js", "12": "./year-data-g12.js" };
+const GRADE_LABEL = { "K": "KINDERGARTEN", "1": "GRADE 1", "2": "GRADE 2", "3": "GRADE 3", "4": "GRADE 4", "5": "GRADE 5", "6": "GRADE 6", "7": "GRADE 7", "8": "GRADE 8", "9": "GRADE 9", "10": "GRADE 10", "11": "GRADE 11", "12": "GRADE 12" };
+
+class Component extends DCLogic {
+  state = { data: null, error: null };
+
+  componentDidMount() {
+    const g = this.gradeNumber();
+    import(GRADE_FILES[g] || "./year-data.js")
+      .then(m => this.setState({ data: m }))
+      .catch(e => this.setState({ error: String(e) }));
+  }
+
+  params() {
+    return new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
+  }
+
+  gradeNumber() {
+    const raw = (this.params().get("grade") || "3").toUpperCase();
+    return GRADE_FILES[raw] ? raw : "3";
+  }
+
+  weekNumber() {
+    const n = parseInt(this.params().get("week") || "1", 10);
+    return Number.isFinite(n) && n >= 1 && n <= 36 ? n : 1;
+  }
+
+  renderVals() {
+    const m = this.state.data;
+    const n = this.weekNumber();
+    if (!m) return {};
+    const w = m.weekByNumber(n);
+    const gr = this.gradeNumber();
+    if (!w) {
+      return {
+        eyebrow: GRADE_LABEL[gr] + " · WEEK " + n,
+        title: "Not written yet",
+        hmw: "This week is planned. Its content lands in the next content pass.",
+        days: [], caselRows: CASEL_ROWS.map(r => ({ ...r, rowStyle: "" })), prompts: m.PROMPTS,
+        extTitle: "—", extBlurb: "", extSteps: [], guest: "—", guestWhy: "", invite: "", sideways: m.SIDEWAYS,
+        notesOverview: "", notesExtension: "", notesAudience: ""
+      };
+    }
+
+    const q = n <= 9 ? 1 : n <= 18 ? 2 : n <= 27 ? 3 : 4;
+
+    const days = w.days.map((d, i) => {
+      const p = m.PHASES[i];
+      return {
+        day: p.day,
+        short: p.day.slice(0, 3),
+        phase: p.phase,
+        phaseTitle: p.phase.charAt(0) + p.phase.slice(1).toLowerCase(),
+        label: p.day.slice(0, 3).charAt(0) + p.day.slice(1, 3).toLowerCase() + " · " + p.phase.charAt(0) + p.phase.slice(1).toLowerCase(),
+        screenLabel: "0" + (i + 2),
+        deep: p.deep,
+        casel: p.casel,
+        sub: d.sub,
+        needs: d.needs,
+        exit: d.exit,
+        skills: d.skills,
+        steps: d.steps.map((t, j) => ({ n: j + 1, text: t })),
+        notes: d.say + " Watch for: " + d.watch.join(" ") + " Skills check: " + d.check,
+        cardStyle: "background:" + p.color + ";color:" + p.ink + ";border-radius:10px;padding:26px 24px",
+        chipStyle: "display:inline-flex;align-self:flex-start;font-size:26px;font-weight:700;letter-spacing:0.06em;background:" + p.color + ";color:" + p.ink + ";padding:12px 20px;border-radius:8px;margin-top:34px"
+      };
+    });
+
+    return {
+      eyebrow: GRADE_LABEL[gr] + " · WEEK " + w.n + " · QUARTER " + q + " · " + w.tag,
+      title: w.title,
+      hmw: w.hmw,
+      days,
+      caselRows: CASEL_ROWS.map(r => ({
+        ...r,
+        rowStyle: "display:grid;grid-template-columns:300px minmax(0,1fr);gap:32px;align-items:center;background:#FFF;border:2px solid #E6DFD3;border-left:14px solid " + r.color + ";border-radius:10px;padding:22px 26px"
+      })),
+      prompts: m.PROMPTS,
+      extTitle: w.ext.title,
+      extBlurb: w.ext.blurb,
+      extSteps: w.ext.steps.map((s, i) => ({
+        head: (i + 1) + " · " + s[0],
+        body: s[1],
+        style: "background:#FFF;border:2px solid #E6DFD3;border-left:12px solid " + EXT_COLORS[i % 4] + ";border-radius:10px;padding:26px 28px"
+      })),
+      guest: w.guest,
+      guestWhy: w.guestWhy,
+      invite: w.invite,
+      sideways: m.SIDEWAYS,
+      notesOverview: "Two minutes. Read the driving question out loud twice. Remind students they are designers this week: designers listen to real people, find a real problem, and build something to fix it. Drawing counts as much as writing.",
+      notesExtension: "Optional. Use it Friday if the pitches run short, or as a standalone morning meeting. " + w.ext.keyNote,
+      notesAudience: "Send the invitation Monday, not Thursday. Ten minutes is all you are asking for. Tell the guest exactly what you need: listen to three pitches and answer with I like, I wish, what if."
+    };
+  }
+}
+</script>
+</body>
+</html>

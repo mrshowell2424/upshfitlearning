@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F6F8F4}a{color:#2F3E2E}a:hover{color:#4B6049}@page{size:letter portrait;margin:0.35in}@media print{body{background:#fff}[data-noprint]{display:none !important}[data-vroot]{padding:0 !important;gap:0 !important;max-width:none !important}[data-page]{box-shadow:none !important;margin:0 !important;width:7.8in !important;height:10.2in !important;break-inside:avoid;page-break-inside:avoid;break-after:page;page-break-after:always}[data-lastpage]{break-after:auto !important;page-break-after:auto !important}}</style>
+</helmet>
+<div data-vroot="true" style="font-family:'Poppins',sans-serif;color:#1F2E2A;max-width:1080px;margin:0 auto;padding:22px 20px 60px;display:flex;flex-direction:column;gap:16px">
+  <div data-noprint="true" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+    <div style="display:flex;gap:14px;flex-wrap:wrap"><a href="Start%20Here.dc.html" style="font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">🏠 Start Here</a><a href="%E2%9E%A1%EF%B8%8F%20PLANS.dc.html" style="font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">PLANS</a><a href="Vocabulary%20Hub.dc.html" style="font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">Vocabulary Hub</a></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" onClick="{{ printPacket }}" style="font-family:Poppins,sans-serif;font-size:14px;font-weight:700;cursor:pointer;border:1.5px solid #4B6049;border-radius:10px;padding:8px 14px;background:#fff;color:#4B6049;white-space:nowrap">{{ packetBtn }}</button><button type="button" onClick="{{ printKey }}" style="font-family:Poppins,sans-serif;font-size:14px;font-weight:700;cursor:pointer;border:1.5px solid #4B6049;border-radius:10px;padding:8px 14px;background:#fff;color:#4B6049;white-space:nowrap">🔑 Print key</button><button type="button" onClick="{{ doPrint }}" style="font-family:Poppins,sans-serif;font-size:14px;font-weight:700;cursor:pointer;border:none;border-radius:10px;padding:9px 16px;background:#4B6049;color:#fff;white-space:nowrap">🖨 Print this word</button><sc-if value="{{ hasWeeks }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ printWeek }}" style="font-family:Poppins,sans-serif;font-size:14px;font-weight:700;cursor:pointer;border:1.5px solid #4B6049;border-radius:10px;padding:8px 14px;background:#fff;color:#4B6049;white-space:nowrap">{{ weekBtn }}</button></sc-if></div>
+  </div>
+
+  <div data-noprint="true" style="border-bottom:3px solid #4B6049;padding-bottom:12px;display:flex;flex-direction:column;gap:4px">
+    <div style="font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;color:#618459">VOCABULARY ROUTINE PORTAL · 3 PHASES · ABOUT 10 MINUTES A WORD</div>
+    <div style="font-size:32px;font-weight:800;line-height:1.1;color:#2F3E2E">Teach a Word: Say It, Use It, Write It</div>
+    <div style="font-size:13.5px;color:#57534e;max-width:760px">Based on Dr. Kate Kinsella's vocabulary routine. Pick a word, then click through the steps. Each step tells you what to say and what students do, with the word already filled in.</div>
+  </div>
+
+  <div data-noprint="true" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+    <div style="display:flex;gap:2px;background:#EEF3EC;border-radius:10px;padding:3px">
+      <sc-for list="{{ gradeTabs }}" as="t" hint-placeholder-count="3"><button type="button" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button></sc-for>
+    </div>
+    <select value="{{ src }}" onChange="{{ pickSrc }}" style="font-family:Poppins,sans-serif;font-size:14px;font-weight:700;border:1.5px solid #9FB39A;border-radius:10px;padding:8px 10px;background:#fff;color:#2F3E2E">
+      <sc-for list="{{ srcOpts }}" as="o" hint-placeholder-count="3"><option value="{{ o.id }}">{{ o.label }}</option></sc-for>
+    </select>
+    <sc-if value="{{ hasWeeks }}" hint-placeholder-val="{{ false }}"><select value="{{ wk }}" onChange="{{ pickWk }}" style="font-family:Poppins,sans-serif;font-size:14px;font-weight:700;border:1.5px solid #9FB39A;border-radius:10px;padding:8px 10px;background:#fff;color:#2F3E2E">
+      <sc-for list="{{ wkOpts }}" as="o" hint-placeholder-count="10"><option value="{{ o.id }}">{{ o.label }}</option></sc-for>
+    </select></sc-if>
+    <select value="{{ wordId }}" onChange="{{ pickWord }}" style="font-family:Poppins,sans-serif;font-size:15px;font-weight:700;border:1.5px solid #9FB39A;border-radius:10px;padding:8px 12px;background:#fff;color:#2F3E2E;min-width:240px">
+      <sc-for list="{{ wordOpts }}" as="o" hint-placeholder-count="8"><option value="{{ o.id }}">{{ o.label }}</option></sc-for>
+    </select>
+    <div style="display:flex;gap:2px;background:#EEF3EC;border-radius:10px;padding:3px;margin-left:auto">
+      <sc-for list="{{ modeTabs }}" as="t" hint-placeholder-count="3"><button type="button" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button></sc-for>
+    </div>
+  </div>
+
+  <sc-if value="{{ hasWeeks }}" hint-placeholder-val="{{ false }}">
+    <div data-noprint="true" style="background:#fff;border:1.5px solid #C9D3C4;border-radius:14px;padding:12px 16px;display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline"><b style="font-size:15px;color:#2F3E2E">{{ weekTitle }}</b><span style="font-size:12px;color:#78716c">Tap a word to teach it · about 10 min a word</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px">
+        <sc-for list="{{ weekWords }}" as="x" hint-placeholder-count="5"><button type="button" onClick="{{ x.pick }}" style="{{ x.style }}"><b style="font-size:15px">{{ x.word }}</b><span style="font-size:12px;line-height:1.35;color:#57534e">{{ x.def }}</span></button></sc-for>
+      </div>
+    </div>
+  </sc-if>
+  <sc-if value="{{ isMine }}" hint-placeholder-val="{{ false }}">
+    <div data-noprint="true" style="background:#fff;border:1.5px solid #C9D3C4;border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px">
+      <div style="grid-column:1 / -1;font-size:15px;font-weight:800;color:#2F3E2E">✏️ My own word (saves on this computer)</div>
+      <sc-for list="{{ fields }}" as="f" hint-placeholder-count="8">
+        <label style="display:flex;flex-direction:column;gap:3px;font-size:12px;font-weight:700;color:#4B6049">{{ f.label }}<input value="{{ f.val }}" onInput="{{ f.set }}" placeholder="{{ f.ph }}" style="font-family:Poppins,sans-serif;font-size:14px;font-weight:500;padding:7px 10px;border:1.5px solid #C9D3C4;border-radius:8px;color:#1F2E2A"></label>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isTeach }}" hint-placeholder-val="{{ true }}">
+    <div data-noprint="true" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+        <sc-for list="{{ phaseBar }}" as="p" hint-placeholder-count="3"><button type="button" onClick="{{ p.go }}" style="{{ p.style }}"><span style="font-size:11px;font-weight:700;letter-spacing:.12em">{{ p.kicker }}</span><span style="font-size:15px;font-weight:800">{{ p.name }}</span></button></sc-for>
+      </div>
+      <div style="background:#fff;border:2px solid #4B6049;border-radius:18px;overflow:hidden;box-shadow:0 3px 0 #C9D3C4">
+        <div style="background:#4B6049;color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+          <div style="display:flex;align-items:baseline;gap:10px"><span style="font-size:13px;font-weight:700;color:#CFE0C8">STEP {{ stepN }} OF {{ stepTotal }}</span><span style="font-size:20px;font-weight:800">{{ step.title }}</span></div>
+          <div style="font-size:34px;font-weight:800;letter-spacing:.02em">{{ w.word }}</div>
+        </div>
+        <div style="padding:18px 22px;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#618459">🎤 I SAY</div>
+            <div style="font-size:22px;font-weight:600;line-height:1.45;color:#1F2E2A;text-wrap:pretty">{{ step.say }}</div>
+            <sc-if value="{{ step.hasFrame }}" hint-placeholder-val="{{ false }}"><div style="font-size:24px;font-weight:800;line-height:1.4;background:#FFF7D6;border:2px dashed #C9A400;border-radius:12px;padding:10px 14px;color:#2F3E2E">{{ step.frame }}</div></sc-if>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="background:#EEF3EC;border-radius:12px;padding:10px 14px;display:flex;flex-direction:column;gap:4px"><div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#4B6049">🙋 STUDENTS</div><div style="font-size:15px;font-weight:600;line-height:1.45">{{ step.kids }}</div></div>
+            <sc-if value="{{ step.hasTip }}" hint-placeholder-val="{{ false }}"><div style="background:#FDF6E7;border-radius:12px;padding:10px 14px;display:flex;flex-direction:column;gap:4px"><div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#7A5410">💡 TIP</div><div style="font-size:13.5px;line-height:1.45">{{ step.tip }}</div></div></sc-if>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 20px;border-top:1.5px solid #EEF3EC;flex-wrap:wrap">
+          <button type="button" onClick="{{ prev }}" style="font-family:Poppins,sans-serif;font-size:15px;font-weight:700;cursor:pointer;border:1.5px solid #4B6049;border-radius:10px;padding:9px 18px;background:#fff;color:#4B6049">← Back</button>
+          <div style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center"><sc-for list="{{ dots }}" as="d" hint-placeholder-count="12"><button type="button" onClick="{{ d.go }}" style="{{ d.style }}"></button></sc-for></div>
+          <button type="button" onClick="{{ next }}" style="font-family:Poppins,sans-serif;font-size:15px;font-weight:700;cursor:pointer;border:none;border-radius:10px;padding:10px 20px;background:#4B6049;color:#fff">{{ nextLbl }}</button>
+        </div>
+      </div>
+      <div style="font-size:12px;color:#78716c">Tip: use the ← → arrow keys to move through the steps.</div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isGlance }}" hint-placeholder-val="{{ false }}">
+    <div data-noprint="true" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px">
+      <sc-for list="{{ glance }}" as="p" hint-placeholder-count="3">
+        <div style="background:#fff;border:1.5px solid #C9D3C4;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:6px">
+          <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#618459">{{ p.kicker }}</div>
+          <div style="font-size:18px;font-weight:800;color:#2F3E2E">{{ p.name }}</div>
+          <sc-for list="{{ p.steps }}" as="s" hint-placeholder-count="6"><div style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:6px;font-size:13.5px;line-height:1.4"><b style="color:#4B6049">{{ s.n }}</b><span>{{ s.t }}</span></div></sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <sc-for list="{{ pages }}" as="pg" hint-placeholder-count="1">
+  <div data-page="true" style="{{ pg.style }}">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;border-bottom:3px solid #000;padding-bottom:8px">
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:.16em">MY VOCABULARY · {{ pg.unit }}</div><div style="font-size:30px;font-weight:800;line-height:1.1">🔑 {{ pg.word }}</div></div>
+      <div style="font-size:14px;font-weight:600;white-space:nowrap">Name ______________</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
+      <div style="border:2px solid #000;border-radius:12px;padding:8px 12px"><div style="font-size:11px;font-weight:800;letter-spacing:.1em">SAY IT</div><div style="font-size:18px;font-weight:700">{{ pg.syl }}</div></div>
+      <div style="border:2px solid #000;border-radius:12px;padding:8px 12px"><div style="font-size:11px;font-weight:800;letter-spacing:.1em">CLAPS</div><div style="font-size:18px;font-weight:700">{{ pg.claps }}</div></div>
+      <div style="border:2px solid #000;border-radius:12px;padding:8px 12px"><div style="font-size:11px;font-weight:800;letter-spacing:.1em">KIND OF WORD</div><div style="font-size:18px;font-weight:700">{{ pg.pos }}</div></div>
+    </div>
+    <div style="border:2px solid #000;border-radius:12px;padding:10px 14px;display:flex;flex-direction:column;gap:4px"><div style="font-size:12px;font-weight:800;letter-spacing:.1em">WHAT IT MEANS</div><div style="font-size:17px;line-height:1.45">{{ pg.def }}</div><div style="font-size:15px;line-height:1.5;margin-top:4px">{{ pg.cueBlank }}</div></div>
+    <div style="border:2px solid #000;border-radius:12px;padding:10px 14px;display:flex;flex-direction:column;gap:6px">
+      <div style="font-size:12px;font-weight:800;letter-spacing:.1em">🗣 SAY IT WITH A PARTNER</div>
+      <div style="font-size:15px;line-height:1.5"><b>Example:</b> {{ pg.ex1Full }}</div>
+      <div style="font-size:16px;font-weight:600;line-height:1.5">{{ pg.talkFrame }}</div>
+      <div style="border-bottom:1.5px solid #000;height:30px"></div>
+    </div>
+    <div style="border:2px solid #000;border-radius:12px;padding:10px 14px;display:flex;flex-direction:column;gap:6px">
+      <div style="font-size:12px;font-weight:800;letter-spacing:.1em">⭐ MY FAVORITE IDEA (mine, my partner's, or one I heard)</div>
+      <div style="font-size:16px;font-weight:600;line-height:1.5">{{ pg.ex2Frame }}</div>
+      <div style="border-bottom:1.5px solid #000;height:30px"></div>
+    </div>
+    <div style="border:2px solid #000;border-radius:12px;padding:10px 14px;display:flex;flex-direction:column;gap:6px;flex:1">
+      <div style="font-size:12px;font-weight:800;letter-spacing:.1em">✍️ WRITE IT</div>
+      <div style="font-size:14px;line-height:1.5"><b>Example:</b> {{ pg.writeModel }}</div>
+      <div style="font-size:16px;font-weight:600;line-height:1.5">{{ pg.writeFrame }}</div>
+      <div style="border-bottom:1.5px solid #000;height:30px"></div><div style="border-bottom:1.5px solid #000;height:30px"></div>
+      <div style="font-size:12px;font-weight:700;margin-top:4px">WORD BANK: {{ pg.bank }}</div>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px">
+      <div style="border:2px dashed #000;border-radius:12px;padding:8px 12px;min-height:1.1in;font-size:12px;font-weight:700">🎨 DRAW IT (vocabulary Velcro)</div>
+      <div style="border:2px solid #000;border-radius:12px;padding:8px 12px;font-size:13.5px;font-weight:600;line-height:1.7">I did it right if…<br>☐ I said it and clapped it<br>☐ I used the frame with my partner<br>☐ I wrote a full sentence with the word</div>
+    </div>
+  </div>
+  </sc-for>
+
+  <sc-for list="{{ packet }}" as="pk" hint-placeholder-count="0">
+  <div data-page="true" style="width:7.8in;height:10.3in;box-sizing:border-box;background:#fff;padding:0.35in 0.4in;box-shadow:0 4px 18px rgba(0,0,0,.12);display:flex;flex-direction:column;gap:11px;overflow:hidden;align-self:center;color:#000">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;border-bottom:3px solid #000;padding-bottom:8px">
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:.16em">{{ pk.kicker }}</div><div style="font-size:27px;font-weight:800;line-height:1.1">{{ pk.title }}</div></div>
+      <div style="font-size:14px;font-weight:600;white-space:nowrap">{{ pk.name }}</div>
+    </div>
+    <div style="font-size:14.5px;font-weight:600;line-height:1.4">{{ pk.dir }}</div>
+    <sc-if value="{{ pk.hasBank }}" hint-placeholder-val="{{ false }}">
+      <div style="border:2px solid #000;border-radius:10px;padding:7px 12px;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:15px;font-weight:700"><span style="font-size:11px;font-weight:800;letter-spacing:.12em;align-self:center">WORD BANK</span><sc-for list="{{ pk.bank }}" as="b" hint-placeholder-count="6"><span>{{ b }}</span></sc-for></div>
+    </sc-if>
+    <div style="{{ pk.grid }}">
+      <sc-for list="{{ pk.cells }}" as="c" hint-placeholder-count="12"><div style="{{ c.style }}">{{ c.t }}</div></sc-for>
+    </div>
+    <sc-for list="{{ pk.writes }}" as="w" hint-placeholder-count="0">
+      <div style="border:2px solid #000;border-radius:12px;padding:8px 14px;display:flex;flex-direction:column;gap:4px">
+        <div style="font-size:14.5px;font-weight:700">{{ w.q }}</div>
+        <div style="border-bottom:1.5px solid #000;height:30px;font-size:14px;font-weight:700;color:#B42318;display:flex;align-items:flex-end">{{ w.a }}</div>
+        <div style="border-bottom:1.5px solid #000;height:30px"></div>
+      </div>
+    </sc-for>
+    <div style="margin-top:auto;display:flex;gap:8px 18px;flex-wrap:wrap;font-size:13px;font-weight:600;border:2px solid #000;border-radius:10px;padding:7px 12px"><b>I did it right if…</b><sc-for list="{{ pk.checks }}" as="c" hint-placeholder-count="3"><span style="white-space:nowrap">☐ {{ c }}</span></sc-for></div>
+  </div>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const KEY = 'vocab-portal:v1';
+// [id, word, syllables, claps, part of speech, student-friendly definition, cue (blank = word), ex1 frame, ex1 answer, ex2 frame, ex2 answer, talk frame, write frame, write model, bank, unit]
+const W = {
+  g2: [
+    ['observe', 'observe', 'ob · serve', 2, 'verb (action)', 'to look at something very carefully to learn about it', 'When you look at something very carefully to learn about it, you ___ it.', 'In science, I can observe ___.', 'a bug crawling on a leaf', 'One thing I like to observe at recess is ___.', 'the clouds moving', 'One thing I could observe in our classroom is ___.', 'When I observe ___, I notice that ___.', 'When I observe a plant, I notice that it grows toward the window.', 'plant, bird, weather, rocks, insects, my friends', 'SCIENCE'],
+    ['compare', 'compare', 'com · pare', 2, 'verb (action)', 'to tell how two things are the same and different', 'When you tell how two things are the same and different, you ___ them.', 'I can compare a cat and a ___.', 'dog', 'Two foods I could compare are ___ and ___.', 'apples and oranges', 'Two things I could compare are ___ and ___.', 'When I compare ___ and ___, they are the same because ___.', 'When I compare a ball and an orange, they are the same because they are both round.', 'shape, size, color, animals, seasons', 'ELA'],
+    ['describe', 'describe', 'de · scribe', 2, 'verb (action)', 'to use words to tell what something is like', 'When you use words to tell what something is like, you ___ it.', 'I can describe my favorite toy as ___.', 'soft and blue', 'I would describe my best day as ___.', 'sunny and fun', 'I would describe ___ as ___.', 'I can describe ___ by saying it is ___ and ___.', 'I can describe my backpack by saying it is heavy and green.', 'big, small, soft, loud, bright, fuzzy', 'ELA'],
+    ['predict', 'predict', 'pre · dict', 2, 'verb (action)', 'to make a smart guess about what will happen next', 'When you make a smart guess about what will happen next, you ___.', 'I predict the story will end with ___.', 'a happy surprise', 'Before lunch, I predict we will ___.', 'read a book', 'I predict that tomorrow ___.', 'I predict that ___ because ___.', 'I predict that it will rain because the sky is gray.', 'weather, story, game, recess, lunch', 'ELA'],
+  ],
+  g3: [
+    ['matter', 'matter', 'mat · ter', 2, 'noun (thing)', 'anything that takes up space and has mass', 'Anything that takes up space and has mass is ___.', 'One example of matter is ___.', 'a rock', 'One kind of matter I use every day is ___.', 'water', 'One example of matter in our room is ___.', '___ is matter because it ___.', 'A desk is matter because it takes up space and has mass.', 'solid, liquid, gas, space, mass', 'SCIENCE · WEEK 15'],
+    ['mass', 'mass', 'mass', 1, 'noun (thing)', 'how much matter is in something', 'How much matter is in something is its ___.', 'Something with a lot of mass is ___.', 'a bowling ball', 'Something with very little mass is ___.', 'a feather', 'One thing with a lot of mass is ___.', 'A ___ has more mass than a ___ because ___.', 'A brick has more mass than a sponge because it has more matter packed inside.', 'heavy, light, scale, more, less', 'SCIENCE · WEEK 15'],
+    ['volume', 'volume', 'vol · ume', 2, 'noun (thing)', 'how much space something takes up', 'How much space something takes up is its ___.', 'A big box has more volume than ___.', 'a small cup', 'Something with a large volume is ___.', 'a swimming pool', 'Something with a small volume is ___.', 'The ___ has a bigger volume than the ___ because ___.', 'The bathtub has a bigger volume than the sink because it holds more water.', 'space, fill, hold, cup, container', 'SCIENCE · WEEK 15'],
+    ['evidence', 'evidence', 'ev · i · dence', 3, 'noun (thing)', 'facts or clues that prove something is true', 'Facts or clues that prove something is true are ___.', 'One piece of evidence that it rained is ___.', 'wet grass', 'Evidence that someone is happy is ___.', 'a big smile', 'One piece of evidence that it is winter is ___.', 'My evidence that ___ is ___.', 'My evidence that Max works hard is that he practices every day.', 'clue, proof, fact, text, shows', 'EBW'],
+    ['community', 'community', 'com · mu · ni · ty', 4, 'noun (thing)', 'a place where people live, work, and help each other', 'A place where people live, work, and help each other is a ___.', 'One helper in my community is ___.', 'a firefighter', 'One place in my community I like is ___.', 'the park', 'One way I help my community is ___.', 'My community is a good place because ___.', 'My community is a good place because neighbors help each other.', 'neighbors, school, park, helpers, rules', 'SOCIAL STUDIES'],
+  ],
+  g4: [
+    ['inspire', 'inspire', 'in · spire', 2, 'verb (action)', 'to give someone the feeling that they want to do something great', 'When you give someone the feeling they want to do something great, you ___ them.', 'One person who inspires me is ___.', 'my grandma', 'Something that inspires me to work hard is ___.', 'my favorite team', 'One thing that could inspire a poem is ___.', '___ inspires me because ___.', 'My coach inspires me because she never gives up on our team.', 'family, sports, nature, music, friends', 'POETRY'],
+    ['claim', 'claim', 'claim', 1, 'noun (thing)', 'what you think and are trying to prove', 'What you think and are trying to prove is your ___.', 'My claim is that ___ is the best season.', 'summer', 'A claim I could make about school is ___.', 'recess should be longer', 'One claim I could make about my favorite book is ___.', 'My claim is that ___ because ___.', 'My claim is that dogs make the best pets because they are loyal.', 'best, should, because, I think, reason', 'EBW'],
+    ['analyze', 'analyze', 'an · a · lyze', 3, 'verb (action)', 'to look closely at the parts of something to understand it', 'When you look closely at the parts of something to understand it, you ___ it.', 'When I analyze a poem, I look at ___.', 'the words the poet chose', 'I could analyze a game to find out ___.', 'how to win', 'When I analyze a story, I look for ___.', 'When I analyze ___, I notice ___.', 'When I analyze the poem, I notice that the poet repeats the word home.', 'parts, words, details, pattern, notice', 'ELA'],
+    ['synthesize', 'synthesize', 'syn · the · size', 3, 'verb (action)', 'to put ideas from two or more places together to make a new idea', 'When you put ideas from two or more places together to make a new idea, you ___.', 'I can synthesize two books about ___.', 'sharks', 'To synthesize, I put together ideas from ___ and ___.', 'a video and an article', 'One topic I could synthesize from two texts is ___.', 'When I synthesize ___ and ___, I learn that ___.', 'When I synthesize the article and the video, I learn that bees help plants grow.', 'both, together, text 1, text 2, new idea', 'ELA'],
+  ],
+};
+const PH = [['PHASE 1', 'Introduce the word'], ['PHASE 2', 'Talk it out'], ['PHASE 3', 'Write it']];
+const fill = (s, a) => s.replace(/___/, a);
+const steps = (w) => [
+  [0, 'Set the purpose', `Let\u2019s learn a word we will need for our ${/SCIENCE/.test(w.unit) ? 'science' : /SOCIAL|STUDIES/.test(w.unit) ? 'social studies' : /POETRY|EBW/.test(w.unit) ? 'writing' : 'reading'} work.`, '', 'Eyes on the word.', ''],
+  [0, 'Point to the word', `Point to the word. The word we are learning is ${w.word}.`, w.word, 'Point to the word with me.', 'Write the word big where everyone can see it.'],
+  [0, 'Say it', `Say it with me: ${w.word}.`, w.word, 'Say the word together.', ''],
+  [0, 'Clap it', w.claps === '___' ? `Listen as I tap each part of ${w.word} slowly. Now you tap it and count the parts.` : `Listen as I tap each part: ${w.syl}. Now you tap it and say it.`, w.syl, w.claps === '___' ? 'Tap and count the parts. Write the number in the CLAPS box.' : `Tap or clap ${w.claps} time${w.claps === 1 ? '' : 's'} while saying it.`, w.claps === '___' ? 'Tap it first so you model the right number of parts.' : ''],
+  [0, 'Kind of word', (() => { const base = w.pos.replace(/ \(.*\)/, ''); const m = /\((.*)\)/.exec(w.pos); const an = (x) => (/^[aeiou]/i.test(x) ? 'an ' : 'a ') + x; return `The word ${w.word} is ${an(base)}${m ? ', ' + an(m[1]) : ''}.`; })(), w.pos, 'Repeat the kind of word.', ''],
+  [0, 'What it means', `${w.word.charAt(0).toUpperCase() + w.word.slice(1)} means ${w.def}.`, '', 'Listen, then say the meaning back with me.', 'Keep it short and kid-friendly.'],
+  [0, 'Fill in the blank', w.cue.replace('___', '…') + ' Everyone, fill in the word.', w.cue, `Say "${w.word}" all together.`, 'This quick check tells you who has it.'],
+  [1, 'Example 1', 'Let\u2019s read our first example together.', fill(w.ex1, w.ex1a), 'Point and read the sentence with me.', ''],
+  [1, 'Think, then tell a partner', 'Take 30 seconds to think of your own idea. Then share with your partner using the frame. Partner B goes first.', w.talk, 'Think quietly, then share with a partner. Switch.', 'Walk around and listen. Help anyone who is stuck.'],
+  [1, 'Example 2', 'Here is the word in a different sentence. What could go in the blank?', fill(w.ex2, w.ex2a), 'Read it with me in phrases. Think of your own answer.', 'Show a word bank: ' + w.bank + '.'],
+  [1, 'Partner A shares', 'Partner A, share first. Read your whole sentence with eye contact and expression.', w.ex2, 'Partner A shares, then Partner B.', 'Pick 2 strong answers to share with the group.'],
+  [1, 'Share out', 'Let\u2019s hear some answers. Use your public voice and the frame. Listen for an idea that will help you remember the word.', w.ex2, 'Chosen students share. Everyone listens.', 'Call on the students you picked first.'],
+  [2, 'Write your favorite', 'Write the answer that was most interesting to you. It can be yours, your partner\u2019s, or one you heard.', w.ex2, 'Write it in the ⭐ box on your page.', ''],
+  [2, 'Model the writing frame', 'Now let\u2019s write a full sentence. Read my example with me.', w.wmodel, 'Read the example silently, then out loud.', 'Underline the word and the frame parts.'],
+  [2, 'Write your own', 'Think of your own idea. Then write it using the frame.', w.wframe, 'Write a full sentence with the word.', 'Give plenty of think time.'],
+  [2, 'Read it to a partner', 'Read your sentence to your partner two times. Then switch and read each other\u2019s.', '', 'Read, listen, and switch.', 'Walk around and give quick feedback.'],
+  [2, 'Share and celebrate', 'Let\u2019s hear some sentences. Who used the word in a new way?', w.wframe, 'Chosen students read their sentence.', 'Celebrate strong word use.'],
+];
+class Component extends DCLogic {
+  state = { g: 'g3', id: '', mode: 'teach', i: 0, mine: {}, src: 'ss', wk: '', L: null, all: false };
+  componentDidMount() {
+    try { const s = JSON.parse(localStorage.getItem(KEY) || '{}'); this.setState({ g: s.g || 'g3', id: s.id || '', mine: s.mine || {}, src: s.src || 'ss', wk: s.wk || '' }); } catch (e) {}
+    import('./vocab-lists.js').then((m) => this.setState({ L: { ss: m.SS, sci: m.SCI } })).catch(() => {});
+    this.after = () => (this.state.all || this.state.packet) && this.setState({ all: false, packet: false }); window.addEventListener('afterprint', this.after);
+    this.key = (e) => { if (this.state.mode !== 'teach' || /input|select|textarea/i.test(e.target.tagName)) return; if (e.key === 'ArrowRight') this.move(1); if (e.key === 'ArrowLeft') this.move(-1); };
+    window.addEventListener('keydown', this.key);
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this.key); window.removeEventListener('afterprint', this.after); }
+  save(p) { this.setState(p, () => { try { localStorage.setItem(KEY, JSON.stringify({ g: this.state.g, id: this.state.id, mine: this.state.mine, src: this.state.src, wk: this.state.wk })); } catch (e) {} }); }
+  move(d) { this.setState((s) => ({ i: Math.max(0, Math.min(16, s.i + d)) })); }
+  weekList() { const S = this.state; if (S.g !== 'g3' || S.src === 'bank' || !S.L) return null; const L = S.L[S.src]; return L.find((x) => String(x[0]) === String(S.wk)) || L[0]; }
+  auto(word, def, all) {
+    const pos = /^to /i.test(def) ? 'verb (action)' : /^(describing|having|being|full of|able)/i.test(def) ? 'adjective (describing word)' : 'noun (thing or idea)';
+    const syl = word; const claps = '___';
+    const W2 = word.charAt(0).toUpperCase() + word.slice(1); const others = all.filter((x) => x !== word).slice(0, 5).join(', ');
+    return { word, syl, claps, pos, def, cue: (pos.startsWith('verb') ? 'When you ' + def.replace(/^to /i, '') + ', you ___.' : def.charAt(0).toUpperCase() + def.slice(1) + ' is called ___.'),
+      ex1: 'One example of ' + word + ' is ___.', ex1a: '(an example from this week\u2019s reading)', ex2: 'I could use the word ' + word + ' when I talk about ___.', ex2a: '___', talk: 'One example of ' + word + ' is ___.',
+      wframe: W2 + ' is important because ___.', wmodel: 'I learned that ' + word + ' means ' + def + '.', bank: others, unit: '' };
+  }
+  word() {
+    const S = this.state;
+    const WL = this.weekList(); if (WL) { const words = WL[1].map((x) => x[0]); const r = WL[1].find((x) => x[0] === S.id) || WL[1][0]; const w = this.auto(r[0], r[1], words); w.unit = (S.src === 'ss' ? 'STUDIES WEEKLY' : 'SCIENCE WEEKLY') + ' · WEEK ' + WL[0]; return w; }
+    if (S.id === 'mine') { const m = S.mine; const word = m.word || 'word';
+      return { word, syl: m.syl || word, claps: m.claps || '?', pos: m.pos || 'noun (thing)', def: m.def || 'what the word means', cue: (m.def ? 'When something is ' + m.def + ', it is ___.' : 'Fill in: ___.'),
+        ex1: m.ex1 || ('One example of ' + word + ' is ___.'), ex1a: m.ex1a || '______________', ex2: m.ex2 || ('Another example of ' + word + ' is ___.'), ex2a: '___', talk: m.ex1 || ('One example of ' + word + ' is ___.'),
+        wframe: m.wframe || ('___ shows ' + word + ' because ___.'), wmodel: m.wmodel || '', bank: m.bank || '', unit: 'MY WORD' }; }
+    const list = W[S.g]; const r = list.find((x) => x[0] === S.id) || list[0];
+    return { word: r[1], syl: r[2], claps: r[3], pos: r[4], def: r[5], cue: r[6], ex1: r[7], ex1a: r[8], ex2: r[9], ex2a: r[10], talk: r[11], wframe: r[12], wmodel: r[13], bank: r[14], unit: r[15] };
+  }
+  renderVals() {
+    const S = this.state; const w = this.word(); const ST = steps(w); const cur = ST[S.i];
+    const tab = (on) => 'font-family:Poppins,sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:none;border-radius:8px;padding:7px 14px;white-space:nowrap;' + (on ? 'background:#4B6049;color:#fff' : 'background:transparent;color:#4B6049');
+    const WL = this.weekList();
+    const list = WL ? WL[1].map((x) => [x[0], x[0], '', '', '', '', '', '', '', '', '', '', '', '', '', 'week ' + WL[0]]) : W[S.g];
+    const curId = S.id === 'mine' ? 'mine' : (list.find((x) => x[0] === S.id) || list[0])[0];
+    const mkPage = (ww) => ({ ...ww, cueBlank: ww.cue.replace('___', '______________'), ex1Full: fill(ww.ex1, ww.ex1a), talkFrame: ww.talk.replace('___', '______________'), ex2Frame: ww.ex2.replace(/___/g, '______________'), writeFrame: ww.wframe.replace(/___/g, '__________'), writeModel: ww.wmodel,
+      style: 'width:7.8in;height:10.3in;box-sizing:border-box;background:#fff;padding:0.35in 0.4in;box-shadow:0 4px 18px rgba(0,0,0,.12);display:' + ((S.mode === 'page' || S.all) && !S.packet ? 'flex' : 'none') + ';flex-direction:column;gap:10px;overflow:hidden;align-self:center;color:#000' });
+    const rowObj = (r) => ({ word: r[1], syl: r[2], claps: r[3], pos: r[4], def: r[5], cue: r[6], ex1: r[7], ex1a: r[8], ex2: r[9], ex2a: r[10], talk: r[11], wframe: r[12], wmodel: r[13], bank: r[14], unit: r[15] });
+    const allWords = WL ? WL[1].map((x) => { const a = this.auto(x[0], x[1], WL[1].map((y) => y[0])); a.unit = (S.src === 'ss' ? 'STUDIES WEEKLY' : 'SCIENCE WEEKLY') + ' · WEEK ' + WL[0]; return a; }) : W[S.g].map(rowObj);
+    // Weekly packet: the whole week's list (Studies/Science Weekly week, or the grade's starter words).
+    const PW = (allWords.length ? allWords : [w]).slice(0, 10).map((a) => ({ word: a.word, def: a.def, cue: a.cue }));
+    const unitTag = WL ? (S.src === 'ss' ? 'STUDIES WEEKLY' : 'SCIENCE WEEKLY') + ' · WEEK ' + WL[0] : 'GRADE ' + S.g.slice(1) + ' STARTER WORDS';
+    const n = PW.length; const big = n <= 6; const fs = big ? 16 : 13.5; const rh = big ? 64 : 48;
+    const cell = (t, o = {}) => ({ t, style: 'border-top:1.5px solid #000;border-left:' + (o.first ? 'none' : '1.5px solid #000') + ';padding:7px 9px;font-size:' + (o.fs || fs) + 'px;line-height:1.35;min-height:' + (o.h || rh) + 'px;display:flex;align-items:center;' + (o.b ? 'font-weight:800;' : '') + (o.head ? 'background:#000;color:#fff;font-size:11.5px;font-weight:800;letter-spacing:.08em;min-height:0;border-top:none;' : '') + (o.key ? 'color:#B42318;font-weight:800;' : '') });
+    const tbl = (cols, rows, tmpl) => ({ grid: 'display:grid;grid-template-columns:' + tmpl + ';border:2px solid #000;border-radius:10px;overflow:hidden', cells: cols.map((c, i) => cell(c, { head: true, first: !i })).concat(...rows.map((r) => r.map((c, i) => (typeof c === 'object' ? cell(c.t, { ...c, first: !i }) : cell(c, { first: !i, b: i === 0 }))))) });
+    const shuf = PW.map((_, i) => (i * 3 + 1) % n).filter((v, i, a) => a.indexOf(v) === i); while (shuf.length < n) shuf.push([...Array(n).keys()].find((k) => !shuf.includes(k)));
+    const L = (i) => String.fromCharCode(65 + i);
+    const blankCue = (w) => (w.cue.includes('___') ? w.cue.replace('___', '______________') : 'When something is ' + w.def + ', it is ______________.');
+    const mk = (kicker, title, dir, t, extra = {}) => ({ kicker: unitTag + ' · ' + kicker, title, name: 'Name ______________', dir, hasBank: false, bank: [], writes: [], checks: ['Neat', 'Spelled the word right', 'Checked my work'], ...t, ...extra });
+    const sentRows = PW.map((w) => [w.word, '', '']);
+    const packet = !S.packet ? [] : [
+      mk('MONDAY', '🔑 My Words This Week', 'Say each word. Clap the parts. Read what it means. Draw a quick picture to help you remember.', tbl(['WORD', 'CLAPS', 'WHAT IT MEANS', 'DRAW IT'], PW.map((w) => [w.word, '', { t: w.def, fs: big ? 14 : 12 }, '']), '1.25in 0.6in minmax(0,1fr) 1.5in'), { checks: ['I said each word', 'I clapped the parts', 'I drew a picture'] }),
+      mk('MONDAY', '📊 How Well Do I Know It?', 'Before we learn: check one box for each word. On Friday, come back and check again!', tbl(['WORD', 'MON: never heard it', 'MON: heard it', 'MON: can use it', 'FRI: can use it'], PW.map((w) => [w.word, '☐', '☐', '☐', '☐']), '1.6in repeat(4,minmax(0,1fr))'), { checks: ['One box for each word', 'Honest answers', 'Back on Friday'] }),
+      mk('TUESDAY', '🔗 Match It', 'Write the letter of the meaning next to each word.', tbl(['WORD', 'LETTER', 'MEANING'], PW.map((w, i) => [w.word, '____', { t: L(i) + '.  ' + PW[shuf[i]].def, fs: big ? 15 : 12.5 }]), '1.6in 0.8in minmax(0,1fr)'), { checks: ['Every word has a letter', 'I used each letter once', 'I reread to check'] }),
+      mk('WEDNESDAY', '🧩 Fill It In', 'Read each sentence. Write the word from the word bank that fits.', tbl(['#', 'SENTENCE'], PW.map((w, i) => [String(i + 1), { t: blankCue(w), fs: big ? 15.5 : 13 }]), '0.5in minmax(0,1fr)'), { hasBank: true, bank: PW.map((w) => w.word), checks: ['Every blank has a word', 'It makes sense', 'Spelled right'] }),
+      mk('THURSDAY', '✍️ Use It', 'Write your own sentence for each word. Show what the word means.', tbl(['WORD', 'MY SENTENCE'], sentRows.map((r) => [r[0], { t: '', h: big ? 74 : 54 }]), '1.6in minmax(0,1fr)'), { checks: ['Capital letter', 'End mark', 'Sentence shows the meaning'] }),
+      mk('FRIDAY', '🏁 Word Check', 'Part 1: Write the word that matches each meaning. Part 2: Go back to your Monday chart and check the FRI box.', tbl(['#', 'MEANING', 'WORD'], PW.map((w, i) => [String(i + 1), { t: PW[shuf[i]].def, fs: big ? 14.5 : 12.5 }, '']), '0.5in minmax(0,1fr) 1.9in'), { hasBank: true, bank: PW.map((w) => w.word).slice().sort(), writes: [{ q: 'Part 3: Pick your favorite word. Use it in a sentence about YOUR life.', a: '' }], checks: ['All words written', 'Spelled right', 'Checked FRI on Monday\u2019s chart'] }),
+      mk('TEACHER KEY', '🔑 Answer Key', 'Answers are in red, in the same order as the student pages. Score each day out of ' + n + '.', tbl(['#', 'TUE · MATCH IT', 'WED · FILL IT IN', 'FRI · WORD CHECK'], PW.map((w, i) => [String(i + 1), { t: w.word + ' → ' + L(shuf.indexOf(i)), key: true }, { t: w.word, key: true }, { t: PW[shuf[i]].word, key: true }]), '0.5in repeat(3,minmax(0,1fr))'),
+        { name: '', writes: [{ q: 'Monday · My Words + How Well Do I Know It: no key. Check that every word has claps, a picture, and one box checked. Compare Monday and Friday boxes for growth.', a: '' }, { q: 'Thursday · Use It and Friday Part 3: accept any sentence that uses the word correctly and shows its meaning.', a: '' }], checks: ['Tue __ / ' + n, 'Wed __ / ' + n, 'Fri __ / ' + n] }),
+    ].filter((p, i, a) => i === a.length - 1);
+    if (packet.length) { const k = packet[0];
+      Object.assign(k, { dir: 'One row per word, in the same order as the student pages. Answers in red.', writes: [{ q: 'Say it with a partner, My favorite idea, Write it, Draw it: accept any answer that uses the word correctly and shows its meaning.', a: '' }], checks: ['Fill-in word correct', 'Full sentence with the word', 'Picture matches the meaning'] },
+        tbl(['WORD', 'WHAT IT MEANS (fill-in answer)', 'SAMPLE EXAMPLE'], (S.packet === 'one' ? [w] : allWords).map((w) => [w.word, { t: w.cue.includes('___') ? w.cue.replace('___', w.word.toUpperCase()) : w.def, fs: 12.5 }, { t: w.ex1a && !/^[_(]/.test(w.ex1a) ? w.ex1a : 'answers vary', fs: 12.5, key: true }]), '1.35in minmax(0,1.6fr) minmax(0,1fr)')); }
+    const pages = S.packet ? (S.packet === true || S.packet === 'one' ? (S.packet === 'one' ? [w] : allWords).map((a) => { const p = mkPage(a); p.style = p.style.replace('display:none', 'display:flex'); return p; }) : []) : S.all && WL ? WL[1].map((x) => { const a = this.auto(x[0], x[1], WL[1].map((y) => y[0])); a.unit = (S.src === 'ss' ? 'STUDIES WEEKLY' : 'SCIENCE WEEKLY') + ' · WEEK ' + WL[0]; return mkPage(a); }) : [mkPage(w)];
+    const F = [['word', 'Word', 'labor'], ['syl', 'Syllables (with ·)', 'la · bor'], ['claps', 'Claps', '2'], ['pos', 'Kind of word', 'noun (thing)'], ['def', 'Kid-friendly meaning', 'hard work'], ['ex1', 'Example frame (use ___)', 'One type of hard labor is ___.'], ['ex1a', 'Example answer', 'building a house'], ['ex2', 'Second frame (use ___)', 'One type of labor I can do well is ___.'], ['wframe', 'Writing frame', '___ is labor because ___.'], ['wmodel', 'Writing example', 'Farming is labor because it is hard work.'], ['bank', 'Word bank', 'chores, farming, cleaning']];
+    return {
+      w: { ...w, cueBlank: w.cue.replace('___', '______________'), ex1Full: fill(w.ex1, w.ex1a), talkFrame: w.talk.replace('___', '______________'), ex2Frame: w.ex2.replace(/___/g, '______________'), writeFrame: w.wframe.replace(/___/g, '__________'), writeModel: w.wmodel },
+      pages,
+      src: S.g === 'g3' ? S.src : 'bank',
+      srcOpts: (S.g === 'g3' ? [['ss', '📚 Studies Weekly (SS)'], ['sci', '🔬 Science Weekly'], ['bank', '⭐ Starter words']] : [['bank', '⭐ Starter words']]).map(([id, label]) => ({ id, label })),
+      pickSrc: (e) => this.save({ src: e.target.value, id: '', wk: '', i: 0 }),
+      hasWeeks: !!WL, wk: WL ? String(WL[0]) : '',
+      wkOpts: WL ? S.L[S.src].map((x) => ({ id: String(x[0]), label: 'Week ' + x[0] + ' · ' + x[1].length + ' words' })) : [],
+      pickWk: (e) => this.save({ wk: e.target.value, id: '', i: 0 }),
+      weekTitle: WL ? (S.src === 'ss' ? '📚 Studies Weekly' : '🔬 Science Weekly') + ' · Week ' + WL[0] + ' · ' + WL[1].length + ' words' : '',
+      weekWords: WL ? WL[1].map((x) => ({ word: x[0], def: x[1], pick: () => this.save({ id: x[0], i: 0, mode: S.mode === 'glance' ? 'teach' : S.mode }),
+        style: 'font-family:Poppins,sans-serif;cursor:pointer;display:flex;flex-direction:column;gap:2px;text-align:left;border-radius:10px;padding:8px 11px;' + (x[0] === curId ? 'background:#EEF3EC;border:2px solid #4B6049;color:#2F3E2E' : 'background:#fff;border:1.5px solid #C9D3C4;color:#2F3E2E') })) : [],
+      weekBtn: '🖨 Print all ' + (WL ? WL[1].length : '') + ' words',
+      printWeek: () => this.setState({ all: true }, () => setTimeout(() => window.print(), 400)),
+      gradeTabs: ['g2', 'g3', 'g4'].map((g) => ({ label: g.slice(1) + (g === 'g2' ? 'nd' : g === 'g3' ? 'rd' : 'th'), pick: () => this.save({ g, id: '', i: 0 }), style: tab(S.g === g) })),
+      wordOpts: list.map((x) => ({ id: x[0], label: x[1] + ' · ' + x[15].toLowerCase() })).concat(WL ? [] : [{ id: 'mine', label: '✏️ My own word…' }]), wordId: curId,
+      pickWord: (e) => this.save({ id: e.target.value, i: 0 }),
+      modeTabs: [['teach', '🎤 Teach it'], ['glance', '📋 Steps at a glance'], ['page', '📄 Student page']].map(([m, label]) => ({ label, pick: () => this.setState({ mode: m }), style: tab(S.mode === m) })),
+      isTeach: S.mode === 'teach', isGlance: S.mode === 'glance', isMine: S.id === 'mine',
+      fields: F.map(([k, label, ph]) => ({ label, ph, val: S.mine[k] || '', set: (e) => this.save({ mine: { ...S.mine, [k]: e.target.value } }) })),
+      step: { title: cur[1], say: cur[2], frame: cur[3], hasFrame: !!cur[3], kids: cur[4], tip: cur[5], hasTip: !!cur[5] },
+      stepN: S.i + 1, stepTotal: ST.length,
+      phaseBar: PH.map(([k, n], pi) => ({ kicker: k, name: n, go: () => this.setState({ i: ST.findIndex((x) => x[0] === pi) }),
+        style: 'font-family:Poppins,sans-serif;cursor:pointer;display:flex;flex-direction:column;gap:2px;align-items:flex-start;border-radius:12px;padding:9px 14px;text-align:left;' + (cur[0] === pi ? 'background:#4B6049;color:#fff;border:2px solid #4B6049' : 'background:#fff;color:#4B6049;border:2px solid #C9D3C4') })),
+      dots: ST.map((x, j) => ({ go: () => this.setState({ i: j }), style: 'width:' + (j === S.i ? 22 : 10) + 'px;height:10px;border-radius:999px;border:none;cursor:pointer;padding:0;background:' + (j === S.i ? '#4B6049' : j < S.i ? '#9FB39A' : '#E3E9DF') })),
+      prev: () => this.move(-1), next: () => S.i >= ST.length - 1 ? this.setState({ i: 0 }) : this.move(1), nextLbl: S.i >= ST.length - 1 ? '↺ Start over' : 'Next →',
+      glance: PH.map(([k, n], pi) => ({ kicker: k, name: n, steps: ST.map((x, j) => ({ n: j + 1, t: x[1] + (x[3] ? ': ' + x[3] : ''), p: x[0] })).filter((x) => x.p === pi) })),
+      _unused: 'width:7.8in;height:10.3in;box-sizing:border-box;background:#fff;padding:0.35in 0.4in;box-shadow:0 4px 18px rgba(0,0,0,.12);display:' + (S.mode === 'page' ? 'flex' : 'none') + ';flex-direction:column;gap:10px;overflow:hidden;align-self:center;color:#000',
+      doPrint: () => this.setState({ mode: 'page', packet: 'one', all: false }, () => setTimeout(() => window.print(), 400)),
+      packet, packetBtn: '🗓 Print week packet (' + allWords.length + ' words)',
+      printPacket: () => this.setState({ packet: true, all: false }, () => setTimeout(() => window.print(), 500)),
+      printKey: () => this.setState({ packet: 'key', all: false }, () => setTimeout(() => window.print(), 400)),
+    };
+  }
+}
+</script>
+</body>
+</html>

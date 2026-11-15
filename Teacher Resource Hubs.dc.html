@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F4F1EA}a{color:#1B2A4A}a:hover{color:#E8572A}</style>
+</helmet>
+<div style="font-family:'Poppins',sans-serif;color:#1B2A4A;min-height:100vh">
+  <div style="{{ hero }}">
+    <div style="max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+        <a href="%E2%9E%A1%EF%B8%8F%20PLANS.dc.html" style="font-size:13px;font-weight:700;text-decoration:none;color:#fff;opacity:.85">← Back to Plans</a>
+        <div style="display:flex;gap:4px;background:rgba(255,255,255,.14);border-radius:999px;padding:3px">
+          <sc-for list="{{ hubTabs }}" as="t" hint-placeholder-count="3">
+            <button type="button" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button>
+          </sc-for>
+          <a href="EB%20Teacher%20Hub.dc.html" style="font-family:Poppins,sans-serif;font-size:13px;font-weight:700;border-radius:999px;padding:7px 14px;white-space:nowrap;color:#fff;text-decoration:none">EB ↗</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+        <div style="min-width:0">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.2em;opacity:.8">{{ hub.kicker }}</div>
+          <div style="font-size:42px;font-weight:900;line-height:1.04">{{ hub.title }}</div>
+          <div style="font-size:15px;opacity:.85;margin-top:6px;max-width:660px;text-wrap:pretty">{{ hub.blurb }}</div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <sc-if value="{{ hasSite }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ hub.site }}" target="_blank" rel="noopener" style="{{ siteBtn }}">{{ hub.siteLabel }}</a>
+          </sc-if>
+          <a href="{{ hub.folder }}" target="_blank" rel="noopener" style="font-size:13px;font-weight:800;text-decoration:none;color:#1B2A4A;background:#fff;border-radius:999px;padding:9px 16px;white-space:nowrap">Open Drive folder</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1180px;margin:0 auto;padding:22px 24px 60px;display:flex;flex-direction:column;gap:20px">
+    <div style="background:#fff;border-radius:18px;padding:18px 20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 2px 0 #E2DACB">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px">
+        <div>
+          <div style="{{ accentKicker }}">ADAPTED TO MY CURRICULUM</div>
+          <div style="font-size:24px;font-weight:800;line-height:1.15">Use it with what I'm teaching</div>
+        </div>
+        <div style="display:flex;gap:4px;background:#F4F1EA;border-radius:999px;padding:3px">
+          <sc-for list="{{ gradeTabs }}" as="t" hint-placeholder-count="3">
+            <button type="button" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="font-size:13.5px;color:#44403c;line-height:1.45">{{ gradeNow }}</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px">
+        <sc-for list="{{ plays }}" as="p" hint-placeholder-count="4">
+          <div style="{{ p.box }}">
+            <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline">
+              <sc-if value="{{ p.built }}" hint-placeholder-val="{{ true }}"><a href="{{ p.href }}" style="font-size:15px;font-weight:800;line-height:1.2;color:#1B2A4A;text-decoration:underline;text-underline-offset:3px">{{ p.game }} →</a></sc-if>
+              <sc-if value="{{ p.notBuilt }}" hint-placeholder-val="{{ false }}"><div style="font-size:15px;font-weight:800;line-height:1.2">{{ p.game }}</div></sc-if>
+              <span style="{{ p.pill }}">{{ p.subj }}</span>
+            </div>
+            <div style="font-size:13px;line-height:1.5;text-wrap:pretty">{{ p.plan }}</div>
+            <div style="font-size:12px;font-weight:700;color:#57534e">📦 {{ p.load }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <sc-if value="{{ hasFilters }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-wrap:wrap;gap:6px">
+        <sc-for list="{{ filters }}" as="t" hint-placeholder-count="5">
+          <button type="button" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px">
+      <sc-for list="{{ cards }}" as="c" hint-placeholder-count="9">
+        <div style="background:#fff;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 0 #E2DACB">
+          <div style="{{ c.band }}">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+              <span style="font-size:30px;line-height:1">{{ c.icon }}</span>
+              <span style="font-size:10.5px;font-weight:800;letter-spacing:.06em;background:rgba(255,255,255,.24);border-radius:999px;padding:3px 9px">{{ c.tag }}</span>
+            </div>
+            <div style="font-size:19px;font-weight:800;line-height:1.15">{{ c.title }}</div>
+          </div>
+          <div style="padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px;flex:1">
+            <div style="font-size:14px;line-height:1.5;text-wrap:pretty">{{ c.what }}</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+              <span style="font-size:12px;font-weight:700;background:#F4F1EA;border-radius:8px;padding:4px 9px">⏱ {{ c.time }}</span>
+              <span style="font-size:12px;font-weight:700;background:#F4F1EA;border-radius:8px;padding:4px 9px">🧰 {{ c.need }}</span>
+            </div>
+            <div style="background:#E9F6F4;border-radius:10px;padding:8px 11px;font-size:13px;line-height:1.45">
+              <div style="font-size:10.5px;font-weight:800;letter-spacing:.14em;color:#1F7A70;margin-bottom:2px">IN MY SMALL GROUP</div>
+              <div style="text-wrap:pretty">{{ c.small }}</div>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:4px">
+              <a href="{{ c.url }}" target="{{ c.target }}" rel="noopener" style="{{ c.btn }}">{{ c.open }}</a>
+              <sc-if value="{{ c.hasExtra }}" hint-placeholder-val="{{ false }}">
+                <a href="{{ c.extraUrl }}" target="{{ c.extraTarget }}" rel="noopener" style="font-size:13px;font-weight:700;text-decoration:none;color:#1B2A4A;border:1.5px solid #D6CDBB;border-radius:10px;padding:7px 13px">{{ c.extraLabel }}</a>
+              </sc-if>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px">
+      <div style="background:#fff;border-radius:18px;padding:18px 20px;display:flex;flex-direction:column;gap:12px">
+        <div>
+          <div style="{{ accentKicker }}">{{ hub.loopKicker }}</div>
+          <div style="font-size:22px;font-weight:800;line-height:1.15">{{ hub.loopTitle }}</div>
+        </div>
+        <sc-for list="{{ loop }}" as="l" hint-placeholder-count="4">
+          <div style="display:flex;gap:12px;align-items:flex-start">
+            <div style="{{ l.dot }}">{{ l.n }}</div>
+            <div><div style="font-size:15px;font-weight:800">{{ l.t }}</div><div style="font-size:13.5px;line-height:1.45;color:#44403c">{{ l.d }}</div></div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="background:#fff;border-radius:18px;padding:18px 20px;display:flex;flex-direction:column;gap:10px">
+        <div>
+          <div style="{{ accentKicker }}">{{ hub.ideasKicker }}</div>
+          <div style="font-size:22px;font-weight:800;line-height:1.15">{{ hub.ideasTitle }}</div>
+          <div style="font-size:13px;color:#57534e;margin-top:2px">{{ hub.ideasSub }}</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          <sc-for list="{{ ideas }}" as="x" hint-placeholder-count="12">
+            <span style="{{ chip }}">{{ x }}</span>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const S = (id) => 'https://docs.google.com/presentation/d/' + id + '/edit';
+const F = (id) => 'https://drive.google.com/drive/folders/' + id;
+const P = (id) => 'https://drive.google.com/file/d/' + id + '/view';
+const HUBS = {
+  emc2: {
+    label: 'EMC²', kicker: 'GAME-BASED REVIEW · TEAM CHALLENGES', title: 'EMC² Learning Hub', bg: '#1B2A4A', accent: '#E8572A', tint: '#FFF1EA', tintBorder: '#FFD2BE',
+    blurb: 'Your EMC² templates in one place, with setup, time, and how to run each one with a small group of 2nd–4th graders.',
+    folder: F('12E8x4d_zSgAvGHc9JDo8EDHQ4rA25zqu'),
+    site: 'https://emc2learning.com/', siteLabel: 'Log in to EMC² Learning',
+    filters: ['All', 'Fall', 'Winter', 'Any time'],
+    loopKicker: 'HOW EVERY EMC² GAME WORKS', loopTitle: 'Same loop, new theme',
+    loop: [['Grab a challenge', 'A team draws a crate, slip, chest, or center card.'], ['Solve it together', 'They work the task, then call the "referee" (you) to check it in under 30 seconds.'], ['Earn a turn', 'A correct answer earns a roll, flick, chip, or block. A miss means a 2-minute timeout.'], ['Strategize', 'Bonus and wildcard cards let teams help themselves or slow a rival.']],
+    ideasKicker: 'CHALLENGE CRATE IDEAS', ideasTitle: 'Drop these into any game', ideasSub: 'EMC²\u2019s "5 things" tasks, sized down to 3 for my groups.',
+    ideas: ['Read 3 words to me', 'Write 3 vocab words + a picture', 'Spell 3 pattern words', 'Fill 3 boxes on a Venn', 'Draw and label 3 details', 'Write 1 sentence with a pattern word', '3 emojis that match the story', 'Build 3 words with tiles', 'Ask 3 questions about the text', 'Sort 6 words into 2 groups', 'Make 3 connections to your life', 'Solve 3 math problems'],
+    items: [
+      ['📦', 'Challenge Crates from my OG packs', 'Any time', 'Hub%20Activity.dc.html?a=emc2-og', 'Pick any of the 58 OG concepts and print 12 ready-to-cut crate cards plus a referee score sheet. Works with any EMC² game.', '20–30 min', 'Printer, scissors, crates', 'Choose the pattern each student is on from the dropdown, then drop the cards into Lumber Jacked, Football Flickers, or Scramble Centers.'],
+      ['🏃', 'Stamina Stampede: Venn Valley', 'Any time', S('17vvyxruBs5V6Y8yrZCswxy0Nkzu59zXla5k9fkROv0U'), 'Each 1-minute round adds one more rep: match 1 word to its definition, then 2, then 3, while teams add details to a Venn diagram.', '10–15 min', 'Word cards, Venn, timer', 'Use this week\u2019s vocabulary or pattern words. Cap it at 5 rounds so it stays fun.'],
+      ['🪵', 'Lumber Jacked', 'Fall', S('1_IbZKpyMmZT1gIXTScInVcIdcylgrqtwrEZLYQbSkYU'), 'Solve a challenge crate, get it checked, then roll a marker "log" down a taped river into point zones.', '20–30 min', 'Tape, markers, crates', 'Put Survival Island chest cards in the crates. Each student rolls, then the group adds up points.'],
+      ['🌽', 'Scramble Centers: Fall Brawl', 'Fall', S('1nhHf74K1kiMlK1g3iFmT-NckuktGv5ueMS7u9rvLQKU'), 'Teams pick from 8 Harvest Challenges in any order. A wrong answer means a 2-minute "weather delay."', '30–45 min', 'Handouts, dice, sticky notes', 'Use 4 centers instead of 8, one per skill. Give each student 2 "raincoat" help tokens.', ['Handouts', S('18_800EtAoJ1EPXNfPScd5RrGLKR6D2Tsc3-gtthM6jI')]],
+      ['🏈', 'Fold and Fly Football Flickers', 'Fall', S('18mm7XMlxWz6aqPrsIBlXhX-wnos8zQR_2aUjG3rGwnM'), 'Correct answers earn poker chips. Each chip color is a perk: extra flick, move closer, or block a rival.', '20 min', 'Paper footballs, chips', 'Great for Victor. Each right answer on the reading list earns a flick at the end.'],
+      ['🎡', 'Story Spinner Smackdown: Autumn Brawl', 'Fall', S('1-iF5RSy9oj-A8RkFS4ZGK0O96IlqNpj82rEg7BZC0-4'), 'Spin image wheels and race to connect each picture to what we learned. A "stipulation" card changes the rules each round.', '20 min', 'Projector, timer', 'Spin once, and have each student say one connection. Write it on a whiteboard for points.'],
+      ['❄️', 'Story Spinner Smackdown: Winter Wonderslam', 'Winter', S('1wtP0YWy-l5KnWXb5BxWuIiTrF85lM2PbLJm-KoV8HvU'), 'The winter version of Story Spinner, with snowy team names and stipulation cards.', '20 min', 'Projector, timer', 'Use the topic box for this week\u2019s decodable or science vocabulary.'],
+      ['🌀', 'Portal Kombat', 'Any time', S('1UuX7fX7HK8nzlhoDWK5I9FzHsaVGACmI0r95BY0csgQ'), 'Students design a "fighter" from the unit: a bio, signature moves, and a finishing move, then argue why theirs wins.', '30–40 min', 'Slide 7 copies', 'Kylie will love this. Use poets, scientists, or story characters, and fill only 4 boxes.'],
+      ['🍪', 'Poker Chip Chase: Holiday Cookie Chaos', 'Winter', S('1ygegFxuq4q6j9gVvkaAGP20xKz4cXJpmgvg75x-tE74'), 'Teams collect "cookies" with secret point values, but can only take so many each round.', '20 min', 'Chips or cards', 'Each cookie is a word card. Students read it to take it home.'],
+      ['🛷', 'Selfish Elfish Sleigh Ride', 'Winter', S('1iAbZMQ4L6dv4CDyTMWw7eNP4tk09YDd05f5RwBoc05s'), 'Solve a slip, then roll to toss "coal" into a rival\u2019s sleigh or pull it out of yours. Fewest coal wins.', '20–25 min', 'Dice, cubes or pom-poms', 'Use a shared "sleigh" for the group and play against the timer instead of each other.'],
+      ['🎁', 'Scramble Centers: Holiday Hullabaloo', 'Winter', S('153h50euSzFFrADpqIjUZU63n4JuQFG6hioev43dFCMs'), '8 holiday "stores" to shop at in any order. Wrong answers bring a 2-minute "price hike."', '30–45 min', 'Handouts, dice', 'Run 4 stores with one skill each. Great for the week before break.', ['Handouts', S('1lx2_hy_XOPLADAOJ-RkisGdJMoEG_T_QVNR_UnDzxNw')]],
+      ['🍬', 'Candy Bridge Build Off', 'Winter', S('1aGLSnbufb8mhjfemqJhseqT9co77Qb91TlekcQjZBZY'), 'Teams finish design challenges to earn string, tape, and candy canes, then build a bridge.', '30–45 min', 'Candy canes, string, tape', 'Pairs well with Design Thinking. Use Build It, Sketch It, and Write It tasks.'],
+      ['🎄', 'Traps & Treasures: Yankee Swap', 'Winter', S('1JvXz9pGIVPVeeYqLz2vjVbUij4W5gbXBYK0-0evVXAs'), 'Printable bonus and penalty cards hidden inside each center. Swap, steal, or protect your treasure.', 'Add-on', 'Printed cards, envelopes', 'Hide one card behind each Survival Island chest for a surprise.'],
+      ['💻', 'Theme Task Cards: Hacker', 'Any time', S('15A0mKKWaMZeZHXglnHL45tYsSWwHkNenRuEigcRbMJA'), '30 blank, hacker-themed task cards you can fill with any question.', 'Any', 'Printed cards', 'Fill them with this week\u2019s reading list and spelling words.'],
+      ['🧩', 'Scramble Centers: Extra Activities', 'Any time', S('1TZTcN75sSA00mUko6PlmDr6cTdh3ozAL11JlTrXcEH0'), 'A library of swap-in centers: YouTube, Google Forms, Quizizz, Image Expert, and more.', 'Any', 'Varies', 'Pick 1–2 that work offline, like Image Expert with printed pictures.'],
+      ['💧', 'Water Cycle Worksheet', 'Any time', 'https://docs.google.com/document/d/1gkBHjT0FOtPLW1enn8Fjbi7IlLm0OC2yt7eY7kzjBLg/edit', 'Fill-in-the-blank, matching, and drawing for the five steps of the water cycle.', '15 min', 'Printed page', 'Use as a challenge crate task for 3rd or 4th grade science.'],
+    ],
+  },
+  edu: {
+    label: 'EduProtocols', kicker: 'REPEATABLE LESSON FRAMES · THINKING ROUTINES', title: 'EduProtocols Hub', bg: '#1F6F6B', accent: '#1F6F6B', tint: '#E6F0EF', tintBorder: '#B9D7D3',
+    blurb: 'Lesson frames you can use again and again with any content: the routine stays the same, so students spend their energy on the learning.',
+    folder: F('1nlBJ40p1m91Qq_zblhrhDCcvwEz4O0qZ'),
+    filters: [],
+    loopKicker: 'THE EDUPROTOCOL CYCLE', loopTitle: 'Teach the frame once, use it all year',
+    loop: [['Model it with easy content', 'First time, use something fun, like a favorite food, so students learn the steps.'], ['Repeat with real content', 'Same steps, new topic. Students already know what to do.'], ['Keep it short', 'Most frames take 5–15 minutes and fit in a small group block.'], ['Talk it out', 'End with a share so students explain their thinking.']],
+    ideasKicker: 'FRAMES TO TRY', ideasTitle: 'More EduProtocols for my groups', ideasSub: 'Common EduProtocols that fit 2nd–4th grade intervention.',
+    ideas: ['Thin Slides', 'Fast and Curious', 'Frayer Model', 'Sketch and Tell', 'Iron Chef', 'Number Mania', 'Cyber Sandwich', 'Smart Start', '8 Parts of Speech', 'Random Emoji Writing', 'Wicked Hydra', 'Annotate and Tell'],
+    items: [
+      ['🗺️', 'Thin Slides: Geographic Themes', 'Thin Slides', S('1bBQuWDb4vK6jue6NYnYFH99diJRaBByQMA3uZv_bUmc'), '1 picture and 1 word or phrase per slide, for Location, Place, Human Interaction, Movement, and Region.', '10 min', 'Chromebooks', 'Change Cincinnati to Lancaster. One student per slide, then each shares their word.'],
+      ['🔢', 'Number Talks', 'Math routine', P('1KEoQlEE7pIhIgl80hJxpRvy9LJUzplEF'), 'Short daily math talks where students solve mentally and share strategies.', '5–10 min', 'Whiteboard', 'Start math group with one Number Talk. Thumbs up when you have an answer.'],
+      ['🍳', '5E Roadmap: Ratios in Cooking', '5E Model', S('1LDs8QDKqUpyelp83q_rBwfyIgvWsT_i4M-8xbbaR95k'), 'Engage, Explore, Explain, Elaborate, Evaluate, using a recipe gone wrong. Written for grades 6–8.', '1–2 days', 'Recipe cards', 'Adapt to doubling a recipe for 3rd grade multiplication.'],
+      ['🎨', 'Beauty and Truth', 'Project Zero', P('14xnnbfrbX1RJx4sF9ke74M6fSH4XOKGb'), 'A Harvard Project Zero thinking routine: where is the beauty and the truth in an image or story?', '10 min', 'Image or story', 'Use with the poet unit: "What is beautiful in this poem? What is true?"'],
+      ['🔍', 'Curiosity Quiz', 'SEL', P('1-Zaq94dus35yHwzcSXyp8zY3HmKPsOZ8'), 'Greater Good Science Center quiz on how curious you are, with ways to grow curiosity.', '10 min', 'Printed or online', 'For you or adults. Pull 3–4 kid-friendly questions for a SchoolBeat check-in.'],
+      ['💃', 'Penny Pedagogy: Doodle Dance Party', 'EMC²', S('165Nnk8QY4grw-dcyk3gJIvqomdctnilPPwRuJMLduj4'), 'Song 1: read. Song 2: doodle what you read. Song 3: share your doodle with a partner.', '15 min', 'Music, paper', 'Use with the weekly decodable. Short songs for my groups.'],
+      ['♟️', 'Check Mates', 'EMC²', S('1yp7nXp5shns138NA9qQ0h586yHI7upa5NvjAwZZPuw0'), 'Redesign chess pieces using people from the unit and explain why each one fits.', '30 min', 'Slides', 'Use 3 pieces (King, Queen, Knight) with story characters.'],
+      ['⭐', 'Action-Packed Jacks & Stacks', 'EMC²', S('1-QCz7OVym1sxwID_bEGYngEzsYf44bpZGbbSxeCzyAU'), 'Connect one center idea to 4, 5, or 6 others to earn blocks for your tower.', '20 min', 'Blocks, printables', 'Use the 4-pointed jack. Center = the vowel pattern, points = words that use it.', ['Printables', S('1_Vm8J9Ssgo_qhsziZ54KxdEAxQgAP9OeChIKR_amqxA')]],
+      ['🚌', 'AF 2026 Road Show', 'Folder', P('1JF5jKK_jzbxgxTvs3-Wx_qUJMypoj0Ak'), 'Shortcut to the AF 2026 Road Show materials.', 'Varies', 'Drive', 'Look here for new frames from the Road Show.'],
+    ],
+  },
+  pz: {
+    label: 'Project Zero', kicker: 'HARVARD THINKING ROUTINES · VISIBLE THINKING', title: 'Project Zero Hub', bg: '#A51C30', accent: '#A51C30', tint: '#FBEDEF', tintBorder: '#EBC3CA',
+    blurb: 'Short Harvard Project Zero routines that make student thinking visible. Same steps every time, any content.',
+    folder: F('1-mAeow8l1xm_G-4YUsVzziRUnq7movZp'),
+    site: 'https://pz.harvard.edu/thinking-routines', siteLabel: 'All PZ routines',
+    filters: ['All', 'Start a topic', 'Look closely', 'Reason', 'Wrap up'],
+    loopKicker: 'HOW TO RUN A ROUTINE', loopTitle: 'Make thinking visible',
+    loop: [['Show something worth thinking about', 'A picture, poem, short text, object, or math problem.'], ['Give quiet think time', 'Students jot or draw first, so everyone has an idea before talking.'], ['Share and record', 'Write their words on a chart or whiteboard so all thinking is visible.'], ['Ask "What makes you say that?"', 'Push for evidence every time. Over time, kids start asking it themselves.']],
+    ideasKicker: 'SENTENCE STARTERS', ideasTitle: 'Kid-friendly language', ideasSub: 'Post these on the table for my groups.',
+    ideas: ['I see…', 'I think… because…', 'I wonder…', 'This reminds me of…', 'I used to think…', 'Now I think…', 'My claim is…', 'My proof is…', 'A question I have is…', 'From the view of ___, I think…', 'What excites me is…', 'What worries me is…'],
+    items: [
+      ['👀', 'See, Think, Wonder', 'Look closely', P('1dSbV1PQUE5kW8-N07RwA6LiQGtbye7M0'), 'What do you see? What do you think about that? What does it make you wonder?', '5–10 min', 'A picture or object', 'Start a new decodable or science week with a photo. Kids draw what they see first.', ['Student page', 'Hub%20Activity.dc.html?a=pz-r-stw']],
+      ['🤔', 'What Makes You Say That?', 'Look closely', P('1bz2LX21b0MgAE7K1GmkWk_MWTfWSL1Nc'), 'What\u2019s going on? What do you see that makes you say that?', '5 min', 'Image, poem, or text', 'Use after every answer in reading group so kids point to proof in the text.', ['Student page', 'Hub%20Activity.dc.html?a=pz-r-wmyst']],
+      ['🧩', 'Think, Puzzle, Explore', 'Start a topic', P('1alXsNfXXMHYz-u881zST36G0qFWRnH26'), 'What do you think you know? What puzzles you? How could you explore it?', '10 min', 'Chart paper', 'Open a new EL module or science unit. Revisit the chart at the end.', ['Student page', 'Hub%20Activity.dc.html?a=pz-r-tpe']],
+      ['🧭', 'Compass Points', 'Reason', P('1yTcYngTfsHPX-QDkh5PZBxRvdkWYO3J9'), 'E = Excited, W = Worrisome, N = Need to know, S = Stance or suggestion.', '10–15 min', 'Compass on the board', 'Try with a classroom choice, like a new Plinko prize or seating idea.', ['Student page', 'Hub%20Activity.dc.html?a=pz-r-compass']],
+      ['⭕', 'Circle of Viewpoints', 'Reason', P('11EGM_mcSGK9y0FzQJUQo7km62gs-SFaD'), 'List viewpoints, pick one, then: "I think… A question I have from this viewpoint is…"', '10 min', 'Viewpoint cards', 'Great with SchoolBeat empathy lessons or a story character\u2019s choice.', ['Student page', 'Hub%20Activity.dc.html?a=pz-r-circle']],
+      ['🔗', 'Connect, Extend, Challenge', 'Wrap up', P('1F3deU1EIkDYfcbPZb66vKn5HMvhMW4hB'), 'How does this connect to what you know? What stretched your thinking? What still puzzles you?', '5–10 min', 'Exit slip', 'End a read aloud or science video with this as the exit ticket.', ['Student page', 'Hub%20Activity.dc.html?a=pz-r-cec']],
+      ['💬', 'Think, Pair, Share', 'Reason', P('1KUtB9j-L2WRJaFCwZN0snGDNnDsrZWLo'), 'Ask a question, give think time, talk with a partner, then share out.', '3–5 min', 'Nothing', 'Have partners explain each other\u2019s answer so kids listen closely.', ['Student page', 'Hub%20Activity.dc.html?a=pz-r-tps']],
+      ['🔄', 'I Used to Think… Now I Think…', 'Wrap up', P('19Ji1aQMEdGJ1gBWsT0gO2Yw_zXp9JUWX'), 'Reflect on how your thinking changed after the lesson or unit.', '5 min', 'Sentence strips', 'Use on Friday with My Growth: "I used to think silent e was… Now I think…"', ['Student page', 'Hub%20Activity.dc.html?a=pz-r-iut']],
+      ['⚖️', 'Claim, Support, Question', 'Reason', P('1iNV1h0FTCti_njVHdKEgmlQjbhSCWbXZ'), 'Make a claim, give support, then ask a question about it.', '10 min', 'Two-column chart', 'Use for 4th grade poet writing: claim about the poet, proof from research.', ['Student page', 'Hub%20Activity.dc.html?a=pz-r-csq']],
+      ['🧠', 'Empathy Map + Design Sketch', 'Design', S('19eoUH7lHNMqhr3qaFhv-xUMV_uApm3o3FY7BBRRakgc'), 'Say, Think, Feel, Do from an interview, then a key insight and a redesign sketch.', '20–30 min', 'Slide or printout', 'Fits Design Thinking: interview a classmate, then sketch a fix.', ['Student page', 'Hub%20Activity.dc.html?a=pz-r-empathy']],
+      ['📂', 'More routine folders', 'Folders', F('1-mAeow8l1xm_G-4YUsVzziRUnq7movZp'), 'Digging Deeper Into Ideas, Synthesizing & Organizing Ideas, Global Thinking, and Guides.', 'Varies', 'Drive', 'Browse here for more routines.'],
+    ],
+  },
+  genta: {
+    label: 'Monica Genta', kicker: 'SEL · ELEMENTARY · PROJECTS', title: 'Monica Genta Resource Hub', bg: '#7A3E9D', accent: '#7A3E9D', tint: '#F3EAF8', tintBorder: '#DCC6EA',
+    blurb: 'Monica Genta\u2019s collection: 180 days of SEL, an elementary edition, battle brackets, and project assets.',
+    folder: F('1mO3ayQO9IgBAO50eHJmZiHpIMPNoQNjn'),
+    filters: [],
+    loopKicker: 'HOW I USE IT', loopTitle: 'Where it fits in my week',
+    loop: [['Morning SEL', 'Pull a "180 Days of Awesome" prompt for SchoolBeat or the first 5 minutes of group.'], ['Friday choice', 'Battle Brackets make a fun "this or that" debate with reasons.'], ['Projects', 'Project ASSETS have graphics and pieces for student projects.'], ['Watch first', 'Start with the video overview to see how it all fits together.']],
+    ideasKicker: 'BATTLE BRACKET TOPICS', ideasTitle: 'Bracket ideas for my kids', ideasSub: 'Students pick a winner and give one reason, round by round.',
+    ideas: ['Best pet', 'Best sport', 'Best snack', 'Best superpower', 'Best book character', 'Best video game', 'Best season', 'Best Disney movie', 'Best job', 'Best animal at the zoo', 'Best vowel team word', 'Best poet we studied'],
+    items: [
+      ['🎬', 'Video overview', 'Start here', 'https://www.youtube.com/watch?v=ygCqnKqHvNU', 'A video walk-through of the resources.', '5 min', 'Video', 'Watch this first before using the folders.', ['Overview doc', 'https://docs.google.com/document/d/1f4Q1uzozldDgbSWbiQ42ftV2mVZentBIELr6xa4dPhk/edit']],
+      ['🤖', 'Elementary SchoolAI Space', 'SchoolAI', 'https://app.schoolai.com/dot/spaces/a7d9a0f5-c511-4bc7-847a-73734b572a5d/', 'An elementary SchoolAI Space that goes with this collection.', '10–15 min', 'Chromebooks', 'Try it during a digital content rotation on Thursdays.'],
+      ['☀️', '180 Days of Awesome: SEL', 'SEL', F('1l12uO_0j_MyeT4KbbErqx4s8lazxeBnW'), 'A daily SEL prompt or activity for every day of the school year.', '5 min', 'Folder', 'Use as the SchoolBeat warm-up or a Monday check-in.'],
+      ['🏫', 'Elementary Edition', 'Elementary', F('1fNTpSOZKNmoQWDXIwAgdxPVJZQtvGC8e'), 'The elementary versions of the activities.', 'Varies', 'Folder', 'Start here for 2nd–4th grade.'],
+      ['🏆', 'Battle Brackets', 'Debate', F('1q7IGVxSQx0Qwqcr-pVQPN2iroVjVz0j3'), 'March Madness-style brackets where students pick a winner and explain why.', '15–20 min', 'Bracket printout', 'A great Friday choice. Each pick needs one "because."'],
+      ['🧱', 'Project ASSETS', 'Projects', F('1TvauSlCpg904XyIBneJM_KrHfYWzmAon'), 'Graphics and pieces for building student projects.', 'Varies', 'Folder', 'Use for Friday projects in Canva or WeVideo.'],
+    ],
+  },
+};
+const NOW = {
+  g2: '2nd grade: EL Module 1 (Schools and Community), Eureka Math² Module 1, Heggerty, and Basic Reading phonics in group.',
+  g3: '3rd grade: EL Module 1, Eureka Math² multiplication and division, Studies Weekly vocabulary, and Science Week 15 (matter, mass, volume).',
+  g4: '4th grade: EL Module 1 (Poetry, Poets, and Becoming Writers), the poet biography and poem, Eureka Math² Module 1, and Long Vowel Roadmaps (silent e and vowel teams).',
+};
+const ADAPT = {
+  emc2: {
+    g2: [
+      ['Stamina Stampede', 'Phonics', 'Round 1: read 1 word from this week\u2019s Basic Reading list. Add one word each round. Stop at round 5.', 'Basic Reading word cards'],
+      ['Fold and Fly Football Flickers', 'Math', 'Each correct addition or subtraction fact earns a chip. Green chip = move closer for the flick.', 'Eureka Module 1 fact cards'],
+      ['Story Spinner Smackdown', 'ELA', 'Spin, then tell how one picture connects to our school or community.', 'Topic: Schools and Community'],
+      ['Lumber Jacked', 'Heggerty', 'Crate tasks are oral: say the first sound, blend 3 sounds, or change a sound. Roll a log for each one.', 'Heggerty skill of the week'],
+    ],
+    g3: [
+      ['Stamina Stampede: Venn Valley', 'Science', 'Venn: Solid vs. Liquid. Match vocabulary words to definitions, one more each round.', 'Week 15 words: matter, mass, volume'],
+      ['Football Flickers', 'Math', 'Each multiplication or division fact earns a chip. Black chip = double points.', 'Eureka facts ×2, ×3, ×4, ×5, ×10'],
+      ['Scramble Centers: Fall Brawl', 'Vocabulary', 'Use 4 centers: define it, draw it, use it in a sentence, sort it.', 'Studies Weekly + science vocabulary'],
+      ['Portal Kombat', 'ELA', 'Design a fighter based on a character from our EL text. Fill 4 boxes.', 'EL Module 1 read-aloud'],
+    ],
+    g4: [
+      ['Lumber Jacked', 'Phonics', 'Put Survival Island chest cards in the crates. Each correct chest earns a log roll.', 'Long Vowel Roadmaps chests'],
+      ['Portal Kombat', 'ELA', 'Make your poet a fighter. Bio = 3 facts from your research, signature move = a poem they wrote.', 'Poet biography notes'],
+      ['Stamina Stampede: Venn Valley', 'ELA', 'Venn: compare two poets, or silent e vs. vowel teams. One more detail each round.', 'Poet notes or word cards'],
+      ['Football Flickers', 'Math', 'Each place value or addition problem solved earns a chip.', 'Eureka Module 1 problems'],
+    ],
+  },
+  edu: {
+    g2: [
+      ['Thin Slides', 'ELA', '1 picture + 1 word about a place in our school or community.', 'EL Module 1 topic'],
+      ['Number Talks', 'Math', 'Open math group with a dot image or 10 + 7. Students share how they saw it.', 'Eureka Module 1'],
+      ['Doodle Dance Party', 'Reading', 'Song 1: read the decodable. Song 2: doodle it. Song 3: tell a partner.', 'This week\u2019s decodable'],
+      ['Jacks & Stacks (4-point)', 'Phonics', 'Center = this week\u2019s sound. Each point = a word with that sound.', 'Basic Reading pattern'],
+    ],
+    g3: [
+      ['Thin Slides', 'Science', '1 picture + 1 word for matter, mass, or volume.', 'Science Week 15'],
+      ['Fast and Curious', 'Vocabulary', 'Quick daily quiz on the same words Monday to Friday. Students watch their scores grow.', 'Studies Weekly words'],
+      ['Number Talks', 'Math', 'Show an array. "How many? How did you count?"', 'Eureka multiplication'],
+      ['Frayer Model', 'Vocabulary', 'Definition, picture, example, non-example for one science word.', 'Matter, mass, volume'],
+    ],
+    g4: [
+      ['Beauty and Truth', 'ELA', '"What is beautiful in this poem? What is true?" Use with your poet\u2019s poem.', 'Poet\u2019s poem'],
+      ['Thin Slides', 'ELA', '1 picture + 1 word that shows something about your poet\u2019s life.', 'Poet biography'],
+      ['Jacks & Stacks (4-point)', 'Phonics', 'Center = silent e or vowel team. Points = 4 words with it.', 'Long Vowel Roadmaps'],
+      ['Number Talks', 'Math', 'Open math group with a place value or mental math talk.', 'Eureka Module 1'],
+    ],
+  },
+  pz: {
+    g2: [
+      ['See, Think, Wonder', 'ELA', 'Show a photo of a place in our school or community. Students say "I see… I think… I wonder…"', 'EL Module 1 photo'],
+      ['Think, Pair, Share', 'Math', 'Pose one Eureka problem. Think time, tell a partner, share how you solved it.', 'Eureka Module 1'],
+      ['What Makes You Say That?', 'Reading', 'After reading the decodable, ask about a picture. Kids point to the words that prove it.', 'This week\u2019s decodable'],
+    ],
+    g3: [
+      ['See, Think, Wonder', 'Science', 'Show ice, water, and steam. "What do you see? What do you think? What do you wonder?"', 'Science Week 15: matter'],
+      ['Claim, Support, Question', 'Science', '"Air is matter." Kids find proof (it takes up space, has mass) and ask a question.', 'Matter, mass, volume'],
+      ['I Used to Think… Now I Think…', 'Vocabulary', 'On Friday, reflect on one Studies Weekly word.', 'Studies Weekly words'],
+    ],
+    g4: [
+      ['What Makes You Say That?', 'ELA', 'Read a stanza from your poet. "What\u2019s going on? What words make you say that?"', 'Poet\u2019s poem'],
+      ['Claim, Support, Question', 'Writing', 'Claim about your poet, 2 facts from research as support, then one question.', 'Poet biography'],
+      ['Connect, Extend, Challenge', 'Phonics', 'After Long Vowel Roadmaps: how does silent e connect to vowel teams? What still puzzles you?', 'Long Vowel Roadmaps'],
+    ],
+  },
+  genta: {
+    g2: [
+      ['180 Days of Awesome', 'SEL', 'Use the day\u2019s prompt as the group check-in.', 'SchoolBeat theme'],
+      ['Battle Brackets', 'Speaking', '"Best place at school." Pick a winner and say one reason.', 'EL Module 1 topic'],
+      ['Elementary SchoolAI Space', 'Digital', 'Use during the Thursday digital rotation.', 'Thursday stations'],
+    ],
+    g3: [
+      ['Battle Brackets', 'Science', '"Which matters most: solid, liquid, or gas?" Give a reason for each pick.', 'Science Week 15'],
+      ['180 Days of Awesome', 'SEL', 'Pull a prompt for SchoolBeat or Monday check-in.', 'SchoolBeat theme'],
+      ['Project ASSETS', 'Projects', 'Graphics for the Friday choice project in Canva.', 'Friday choice'],
+    ],
+    g4: [
+      ['Battle Brackets', 'ELA', '"Best poem we read." Each pick needs a line from the poem as proof.', 'EL Module 1 poems'],
+      ['Project ASSETS', 'Projects', 'Graphics for the poet biography poster or slides.', 'Poet project'],
+      ['180 Days of Awesome', 'SEL', 'Use a growth mindset prompt before the writing roadmap.', 'Writing roadmap'],
+    ],
+  },
+};
+const BUILT = ['emc2-g2-1', 'emc2-g2-2', 'emc2-g2-3', 'emc2-g2-4', 'emc2-g3-1', 'emc2-g3-2', 'emc2-g3-3', 'emc2-g3-4', 'emc2-g4-1', 'emc2-g4-2', 'emc2-g4-3', 'emc2-g4-4',
+  'edu-g2-1', 'edu-g2-2', 'edu-g2-3', 'edu-g2-4', 'edu-g3-1', 'edu-g3-2', 'edu-g3-3', 'edu-g3-4', 'edu-g4-1', 'edu-g4-2', 'edu-g4-3', 'edu-g4-4',
+  'genta-g2-1', 'genta-g2-2', 'genta-g3-1', 'genta-g3-2', 'genta-g4-1', 'genta-g4-3',
+  'pz-g2-1', 'pz-g2-2', 'pz-g2-3', 'pz-g3-1', 'pz-g3-2', 'pz-g3-3', 'pz-g4-1', 'pz-g4-2', 'pz-g4-3'];
+const KEY = 'resource-hubs:v1';
+class Component extends DCLogic {
+  state = { hub: 'emc2', filter: 'All', grade: 'g4' };
+  componentDidMount() {
+    const q = new URLSearchParams(location.search).get('hub');
+    let s = {}; try { s = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+    this.setState({ hub: HUBS[q] ? q : (HUBS[s.hub] ? s.hub : 'emc2') });
+  }
+  pick(h) { this.setState({ hub: h, filter: 'All' }); try { localStorage.setItem(KEY, JSON.stringify({ hub: h })); } catch (e) {} }
+  renderVals() {
+    const id = this.state.hub; const H = HUBS[id];
+    const items = H.items.filter((x) => this.state.filter === 'All' || x[2] === this.state.filter);
+    const pill = (on, a) => 'font-family:Poppins,sans-serif;font-size:13px;font-weight:700;cursor:pointer;border-radius:999px;padding:7px 15px;white-space:nowrap;' + (on ? 'background:' + a + ';color:#fff;border:1.5px solid ' + a : 'background:#fff;color:#1B2A4A;border:1.5px solid #D6CDBB');
+    return {
+      hero: { background: H.bg, color: '#fff', padding: '22px 24px 26px' },
+      hub: H,
+      hasSite: !!H.site,
+      gradeTabs: ['g2', 'g3', 'g4'].map((g) => ({ label: g.slice(1) + (g === 'g2' ? 'nd' : g === 'g3' ? 'rd' : 'th'), pick: () => this.setState({ grade: g }),
+        style: 'font-family:Poppins,sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:none;border-radius:999px;padding:6px 14px;' + (this.state.grade === g ? 'background:' + H.bg + ';color:#fff' : 'background:transparent;color:#1B2A4A') })),
+      gradeNow: NOW[this.state.grade],
+      plays: ((ADAPT[id] || {})[this.state.grade] || []).map(([game, subj, plan, load], i) => { const aid = id + '-' + this.state.grade + '-' + (i + 1); const built = BUILT.includes(aid); return { game, subj, plan, load,
+        href: built ? 'Hub%20Activity.dc.html?a=' + aid : '', built, notBuilt: !built,
+        box: { border: '1.5px solid ' + H.tintBorder, background: H.tint, borderRadius: 14, padding: '12px 14px', display: 'flex', flexDirection: 'column', gap: 6 },
+        pill: { fontSize: 10.5, fontWeight: 800, color: '#fff', background: H.bg, borderRadius: 999, padding: '2px 8px', whiteSpace: 'nowrap' } }; }),
+      siteBtn: { fontSize: 13, fontWeight: 800, textDecoration: 'none', color: '#fff', background: H.accent, borderRadius: 999, padding: '9px 16px', whiteSpace: 'nowrap' },
+      hubTabs: Object.keys(HUBS).map((k) => ({ label: HUBS[k].label, pick: () => this.pick(k),
+        style: 'font-family:Poppins,sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:none;border-radius:999px;padding:7px 14px;white-space:nowrap;' + (k === id ? 'background:#fff;color:' + H.bg : 'background:transparent;color:#fff') })),
+      hasFilters: H.filters.length > 0,
+      filters: H.filters.map((f) => ({ label: f, pick: () => this.setState({ filter: f }), style: pill(this.state.filter === f, H.accent) })),
+      cards: items.map(([icon, title, tag, url, what, time, need, small, extra]) => ({ icon, title, tag, url, what, time, need, small,
+        open: /folders/.test(url) ? 'Open folder' : /^https?:/.test(url) ? 'Open' : 'Open printable',
+        hasExtra: !!extra, extraLabel: extra ? extra[0] : '', extraUrl: extra ? extra[1] : '',
+        target: /^https?:/.test(url) ? '_blank' : '_self', extraTarget: extra && !/^https?:/.test(extra[1]) ? '_self' : '_blank',
+        band: { background: H.bg, color: '#fff', padding: '14px 16px', display: 'flex', flexDirection: 'column', gap: 8 },
+        btn: { fontSize: 13, fontWeight: 800, textDecoration: 'none', color: '#fff', background: H.accent === H.bg ? H.bg : H.accent, borderRadius: 10, padding: '8px 14px' } })),
+      loop: H.loop.map(([t, d], i) => ({ n: i + 1, t, d, dot: { flex: 'none', width: 32, height: 32, borderRadius: '50%', background: H.bg, color: '#fff', fontWeight: 800, fontSize: 15, display: 'flex', alignItems: 'center', justifyContent: 'center' } })),
+      ideas: H.ideas,
+      chip: { fontSize: 13, fontWeight: 600, background: H.tint, border: '1.5px solid ' + H.tintBorder, borderRadius: 10, padding: '5px 10px' },
+      accentKicker: { fontSize: 11, fontWeight: 800, letterSpacing: '.18em', color: H.accent },
+    };
+  }
+}
+</script>
+</body>
+</html>

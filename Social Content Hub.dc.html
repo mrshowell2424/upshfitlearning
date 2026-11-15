@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F6F8F4}a{color:#2F3E2E}a:hover{color:#4B6049}</style>
+</helmet>
+<div style="font-family:'Poppins',sans-serif;color:#1F2E2A;max-width:1180px;margin:0 auto;padding:22px 20px 60px;display:flex;flex-direction:column;gap:16px">
+  <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+    <div style="display:flex;gap:14px;flex-wrap:wrap"><a href="Start%20Here.dc.html" style="font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">🏠 Start Here</a><a href="https://docs.google.com/spreadsheets/d/1dVlowQJxditueoFpI42NOnZrlJ1sArKPRqfPQwFAqrc/edit" target="_blank" rel="noopener" style="font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">Howell Resources sheet</a><a href="https://publish.buffer.com" target="_blank" rel="noopener" style="font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">Buffer</a><a href="Creator%20Studio.dc.html" style="font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">🎨 Creator Studio</a></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button type="button" onClick="{{ refresh }}" style="font-family:Poppins,sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:1.5px solid #4B6049;border-radius:10px;padding:7px 13px;background:#fff;color:#4B6049;white-space:nowrap">{{ refreshLbl }}</button>
+      <button type="button" onClick="{{ copyWeek }}" style="font-family:Poppins,sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:1.5px solid #4B6049;border-radius:10px;padding:7px 13px;background:#fff;color:#4B6049;white-space:nowrap">{{ copyWeekLbl }}</button>
+      <button type="button" onClick="{{ exportCsv }}" style="font-family:Poppins,sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:none;border-radius:10px;padding:8px 14px;background:#4B6049;color:#fff;white-space:nowrap">⬇ Buffer CSV ({{ platLabel }})</button>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between;border-bottom:3px solid #4B6049;padding-bottom:12px">
+    <div><div style="font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;color:#618459">@MRSHOWELL24 · SOCIAL CONTENT</div><div style="font-size:30px;font-weight:800;line-height:1.1;color:#2F3E2E">{{ monthName }} Posting Plan</div></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4"><div style="background:#fff;border:1.5px solid #C9D3C4;border-radius:12px;padding:8px 14px;min-width:90px"><div style="font-size:22px;font-weight:800;line-height:1;color:#2F3E2E">{{ s.n }}</div><div style="font-size:11.5px;font-weight:600;color:#57534e">{{ s.t }}</div></div></sc-for>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px">
+    <div style="background:#fff;border:1.5px solid #C9D3C4;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px">
+      <b style="font-size:15px;color:#2F3E2E">⏰ Best times to post</b>
+      <sc-for list="{{ timesInfo }}" as="t" hint-placeholder-count="4"><div style="display:grid;grid-template-columns:96px minmax(0,1fr);gap:8px;font-size:12.5px;line-height:1.4;border-bottom:1px solid #EEF3EC;padding:3px 0"><b>{{ t.p }}</b><span>{{ t.w }}</span></div></sc-for>
+      <div style="font-size:11.5px;color:#78716c;line-height:1.45">Your sheet doesn't track likes or shares, so these times are based on when teachers are usually online: before school, after dinner, and Sunday night planning. Send me a Buffer analytics export and I'll tune them to your followers.</div>
+    </div>
+    <div style="background:#fff;border:1.5px solid #C9D3C4;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px">
+      <b style="font-size:15px;color:#2F3E2E">🗓 Weekly rhythm</b>
+      <sc-for list="{{ rhythm }}" as="r" hint-placeholder-count="7"><div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:8px;font-size:12.5px;line-height:1.35"><b style="color:#4B6049">{{ r.d }}</b><span>{{ r.t }}</span></div></sc-for>
+    </div>
+    <div style="background:#fff;border:1.5px solid #C9D3C4;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px">
+      <b style="font-size:15px;color:#2F3E2E">🔗 Daily sheet check</b>
+      <div style="font-size:12.5px;color:#57534e;line-height:1.45">{{ connMsg }}</div>
+      <input value="{{ resUrl }}" onChange="{{ setRes }}" placeholder="Resources tab · published CSV link" style="font-family:Poppins,sans-serif;font-size:12px;border:1.5px solid #C9D3C4;border-radius:8px;padding:7px 9px">
+      <input value="{{ subUrl }}" onChange="{{ setSub }}" placeholder="Substack tab · published CSV link" style="font-family:Poppins,sans-serif;font-size:12px;border:1.5px solid #C9D3C4;border-radius:8px;padding:7px 9px">
+      <div style="font-size:11.5px;color:#78716c;line-height:1.45">One-time setup: in the sheet, File → Share → Publish to web → pick the tab → Comma-separated values → Publish. Paste each link above. After that, the hub checks the sheet every day when you open it and adds new rows to the plan.</div>
+      <sc-if value="{{ hasNew }}" hint-placeholder-val="{{ false }}"><div style="font-size:12px;font-weight:700;background:#FFFBEA;border-radius:8px;padding:6px 9px">🆕 {{ newLine }}</div></sc-if>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+    <div style="display:flex;gap:2px;background:#EEF3EC;border-radius:10px;padding:3px;flex-wrap:wrap"><sc-for list="{{ platTabs }}" as="t" hint-placeholder-count="4"><button type="button" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button></sc-for></div>
+    <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+      <button type="button" onClick="{{ prevM }}" style="font-family:Poppins,sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:1.5px solid #C9D3C4;border-radius:8px;padding:6px 12px;background:#fff;color:#4B6049">←</button>
+      <button type="button" onClick="{{ thisM }}" style="font-family:Poppins,sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:1.5px solid #C9D3C4;border-radius:8px;padding:6px 12px;background:#EEF3EC;color:#4B6049">This month</button>
+      <button type="button" onClick="{{ nextM }}" style="font-family:Poppins,sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:1.5px solid #C9D3C4;border-radius:8px;padding:6px 12px;background:#fff;color:#4B6049">→</button>
+      <button type="button" onClick="{{ reshuffle }}" style="font-family:Poppins,sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:1.5px solid #C9D3C4;border-radius:8px;padding:6px 12px;background:#fff;color:#4B6049;white-space:nowrap">🔀 Shuffle picks</button>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px">
+    <sc-for list="{{ days }}" as="d" hint-placeholder-count="9">
+      <div style="{{ d.box }}">
+        <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline">
+          <b style="font-size:14px;color:#2F3E2E">{{ d.date }}</b>
+          <span style="{{ d.timeChip }}">⏰ {{ d.time }}</span>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span style="{{ d.kindChip }}">{{ d.kind }}</span><span style="font-size:12px;font-weight:700;color:#57534e">{{ d.theme }}</span></div>
+        <div style="font-size:14px;font-weight:800;line-height:1.3">{{ d.title }}</div>
+        <textarea value="{{ d.text }}" onChange="{{ d.edit }}" rows="8" style="font-family:Poppins,sans-serif;font-size:12.5px;line-height:1.5;border:1.5px solid #E3E9DF;border-radius:8px;padding:7px 9px;resize:vertical;color:#1F2E2A;width:100%;box-sizing:border-box"></textarea>
+        <div style="display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap">
+          <span style="{{ d.lenStyle }}">{{ d.len }}</span>
+          <div style="display:flex;gap:6px">
+            <button type="button" onClick="{{ d.copy }}" style="font-family:Poppins,sans-serif;font-size:12px;font-weight:700;cursor:pointer;border:none;border-radius:8px;padding:5px 12px;background:#4B6049;color:#fff">{{ d.copyLbl }}</button>
+            <button type="button" onClick="{{ d.toggle }}" style="{{ d.doneStyle }}">{{ d.doneLbl }}</button>
+          </div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const KEY = 'social-hub:v1';
+const RES = [
+  ['Behavior Bingo', 'Classroom Management', 'https://www.youtube.com/watch?v=ctkvqH4EcqM', 'Looking for a fun way to motivate your students? 🎉 Try Behavior Bingo! Set a class goal, like a movie day or extra recess, and let students earn their squares together.'],
+  ['Make It Real', 'Instructional Strategies', 'https://www.youtube.com/watch?v=i0Zbj8bphaE', '🎯 Make It Real! This activity moves students from empathy to action by exploring real-world issues through four powerful prompts.'],
+  ['Apple Pie Directions', 'Classroom Management', 'https://youtu.be/KaY6lqsEFPA', 'Directions that stick 🥧 Apple Pie gives kids a quick, clear way to know exactly what to do next. No big lift. Big payoff!'],
+  ['ST Math Game', 'Game Based Learning', 'https://youtu.be/HlG5oAIT3F0', 'ST Math turns math into a puzzle kids can\u2019t stop solving 🧩 Here\u2019s how to run it well in your math block.'],
+  ['Tracking Missing Work', 'Organization', 'https://youtu.be/jpV2WDoT2rY', 'Missing work pile too tall? 📋 This tracker keeps it tight. Save it and watch the chaos calm down.'],
+  ['Podcast Walk & Listen', 'Instructional Strategies', 'https://www.youtube.com/watch?v=Sf9Tqu0TaV4', '🧠➡️🚶 Students need movement to fuel focus! Host a Walk & Listen 🎧 A quick stroll while listening resets energy and boosts learning.'],
+  ['Tech Madness', 'Coaching', 'https://www.youtube.com/watch?v=LZb9YEocSjM', 'Tech Madness is your bracket of new tools 🏀 Staff vote, test, and pick the winner. PD that feels like a game!'],
+  ['Step Challenge', 'Coaching', 'https://www.youtube.com/watch?v=6OhgE1iFKjM', 'A Step Challenge for staff? Yes! ✨ It builds team, boosts mood, and gets folks moving. Here\u2019s how to run one.'],
+  ['Missing Work Check', 'Classroom Management', 'https://youtu.be/J8XqPZaqg00', 'Students check their highlighted assignments and make sure they\u2019ve earned at least 80% ✅ Simple ownership, big results.'],
+  ['Feedback Ideas', 'Feedback', 'https://youtu.be/poTDZSlSWkM', 'Save this one for your next lesson plan 📌 Feedback Ideas is low prep, high pull, and lands fast.'],
+  ['Check In Items', 'SEL', 'https://www.youtube.com/watch?v=LypnW6bWqBo', 'A quick check-in can shift a kid\u2019s whole day 💛 Save this set for any morning meeting.'],
+  ['Birthday Celebrations', 'SEL', 'https://youtu.be/JLU8mU2chVs', 'Make every birthday feel big 🎂 A quick, low-prep way to help each kid feel seen on their day.'],
+];
+const SUB = [
+  ['The First 20 Minutes', 'https://mrshowell24.substack.com/p/the-first-20-minutes', 'Most of us teach the way we feel, not the way we plan. The first 20 minutes of your day shape all of it. Try this tiny shift this week.'],
+  ['Why Your Brain Feels Fried by Wednesday', 'https://mrshowell24.substack.com/p/why-your-brain-feels-fried-by-wednesday', 'Wednesday-wiped? You\u2019re not lazy. Your brain is fried. Pre-load boring choices, take real breaks, and close your loops before you leave.'],
+  ['The \u201cThree Versions\u201d Trick', 'https://mrshowell24.substack.com/p/the-three-versions-trick', 'Tired of printing three reading group packets? Build one SchoolAI Space with three reading levels and let kids pick what fits. Eight minutes to set up.'],
+  ['ISTE 2.5 Designer', 'https://mrshowell24.substack.com/p/iste-25-designer', 'Redesign that doesn\u2019t eat your weekend? Yes please. The ISTE 2.5 Designer standard is making the work feel doable for me.'],
+  ['What If This Year Really Works Out', 'https://mrshowell24.substack.com/p/what-if-this-year-really-works-out', 'What if this year actually works out, and not the way fear keeps showing you? Letting that question sit changed my whole week.'],
+  ['Stop Waiting for Motivation', 'https://mrshowell24.substack.com/p/stop-waiting-for-motivation', 'Motivation is a liar. It shows up after you start, not before. Here\u2019s the small move that gets me going on the hard stuff.'],
+  ['Three Coaching Moves When a Teacher Says \u201cAI Won\u2019t Work for My Kids\u201d', 'https://mrshowell24.substack.com/p/three-coaching-moves-when-a-teacher', 'When a teacher says AI won\u2019t work for their kids, don\u2019t argue. Try one of these three coaching moves instead.'],
+  ['What If It All Works Out?', 'https://mrshowell24.substack.com/p/what-if-it-all-works-out', 'Some days my brain plans for things to fall apart. Asking \u201cwhat if it all works out?\u201d flips the whole vibe.'],
+  ['The Question I Keep Asking Myself Lately', 'https://mrshowell24.substack.com/p/the-question-i-keep-asking-myself', 'I keep asking myself one question this week, and it\u2019s quietly changing how I show up.'],
+  ['The \u201cShow Me Your Prompt\u201d Move', 'https://mrshowell24.substack.com/p/the-show-me-your-prompt-move', 'Stuck coaching a teacher past AI fear? Try the \u201cshow me your prompt\u201d move. It\u2019s simple and it works.'],
+  ['Post the Plan Before You Press Play', 'https://mrshowell24.substack.com/p/post-the-plan-before-you-press-play', 'A daily move that lands for every learner and works just as well in a leadership room: post the plan first.'],
+  ['Hand the Mic Over', 'https://mrshowell24.substack.com/p/hand-the-mic-over', 'Want to see kids light up around AI? Stop driving and let them steer. Here\u2019s how to hand the mic over.'],
+];
+const TAGS = { 'Classroom Management': '#ClassroomManagement #TeacherTips', 'Instructional Strategies': '#InstructionalStrategies #TeacherTips', 'Game Based Learning': '#GameBasedLearning #EdTech', 'Organization': '#TeacherOrganization #TeacherTips', 'Coaching': '#InstructionalCoaching #EdLeadership', 'Feedback': '#Feedback #TeacherTips', 'SEL': '#SEL #MorningMeeting', 'Substack': '#TeacherLife #Educators' };
+// Day of week → [type, theme]
+const PLAN = { 1: ['sub', 'Motivation Monday'], 2: ['res', 'Teacher Tip Tuesday'], 3: ['sub', 'Wellness Wednesday'], 4: ['res', 'Try-It Thursday'], 5: ['res', 'Fun Friday'], 6: null, 0: ['sub', 'Sunday Planning'] };
+const PLAT = {
+  x: ['𝕏 / Twitter', 280, { 1: '6:30 AM', 2: '6:30 AM', 3: '6:30 AM', 4: '6:30 AM', 5: '6:30 AM', 0: '7:00 PM' }],
+  fb: ['Facebook', 1200, { 1: '7:30 PM', 2: '7:30 PM', 3: '7:30 PM', 4: '7:30 PM', 5: '3:45 PM', 0: '7:00 PM' }],
+  li: ['LinkedIn', 1300, { 1: '7:30 AM', 2: '7:30 AM', 3: '7:30 AM', 4: '7:30 AM', 5: '7:30 AM', 0: '6:00 PM' }],
+  ig: ['Instagram', 2200, { 1: '7:00 PM', 2: '7:00 PM', 3: '7:00 PM', 4: '7:00 PM', 5: '3:45 PM', 0: '8:00 PM' }],
+};
+const CTA = ['Save this for later 📌', 'Tag a teacher who needs this 👇', 'Which one are you trying first?', 'Share with your team 💚', 'Drop a 🙌 if you\u2019d try this'];
+const parseCsv = (txt) => { const rows = []; let row = [], cell = '', q = false; for (let i = 0; i < txt.length; i++) { const c = txt[i]; if (q) { if (c === '"' && txt[i + 1] === '"') { cell += '"'; i++; } else if (c === '"') q = false; else cell += c; } else if (c === '"') q = true; else if (c === ',') { row.push(cell); cell = ''; } else if (c === '\n') { row.push(cell); rows.push(row); row = []; cell = ''; } else if (c !== '\r') cell += c; } if (cell || row.length) { row.push(cell); rows.push(row); } return rows; };
+class Component extends DCLogic {
+  state = { off: 0, plat: 'x', seed: 0, edits: {}, done: {}, resUrl: '', subUrl: '', res: RES, sub: SUB, copied: '', lastCheck: '', newN: 0, newLine: '', checking: false };
+  componentDidMount() {
+    try { const s = JSON.parse(localStorage.getItem(KEY) || '{}'); this.setState({ edits: s.edits || {}, done: s.done || {}, resUrl: s.resUrl || '', subUrl: s.subUrl || '', seed: s.seed || 0, plat: s.plat || 'x', res: s.res && s.res.length ? s.res : RES, sub: s.sub && s.sub.length ? s.sub : SUB, lastCheck: s.lastCheck || '' }, () => { const today = new Date().toDateString(); if ((this.state.resUrl || this.state.subUrl) && this.state.lastCheck !== today) this.check(); }); } catch (e) {}
+  }
+  save(p) { this.setState(p, () => { const S = this.state; try { localStorage.setItem(KEY, JSON.stringify({ edits: S.edits, done: S.done, resUrl: S.resUrl, subUrl: S.subUrl, seed: S.seed, plat: S.plat, res: S.res, sub: S.sub, lastCheck: S.lastCheck })); } catch (e) {} }); }
+  async check() {
+    const S = this.state; if (!S.resUrl && !S.subUrl) { this.setState({ newLine: '' }); return; }
+    this.setState({ checking: true });
+    const get = async (u) => { try { const r = await fetch(u); return parseCsv(await r.text()); } catch (e) { return null; } };
+    let res = S.res, sub = S.sub, added = [];
+    if (S.resUrl) { const rows = await get(S.resUrl); if (rows) { const h = rows[0].map((x) => x.trim().toLowerCase()); const ti = h.indexOf('title of resource'), pi = h.indexOf('purpose'), di = h.indexOf('description'), si = h.indexOf('summary');
+      const fresh = rows.slice(1).filter((r) => (r[ti] || '').trim()).map((r) => [r[ti].trim(), (r[pi] || '').trim(), (r[di] || '').trim(), (r[si] || '').trim()]);
+      const known = new Set(res.map((r) => r[0])); added = added.concat(fresh.filter((r) => !known.has(r[0])).map((r) => r[0])); if (fresh.length) res = fresh; } }
+    if (S.subUrl) { const rows = await get(S.subUrl); if (rows) { const h = rows[0].map((x) => x.trim().toLowerCase()); const ti = h.indexOf('title'), ui = h.indexOf('url'), si = h.findIndex((x) => x.startsWith('social'));
+      const fresh = rows.slice(1).filter((r) => (r[ti] || '').trim()).map((r) => [r[ti].trim(), (r[ui] || '').trim(), (r[si] || '').trim().replace(/\s*(Read it here:|Take a peek:|Here's why:|Sharing it here:)?\s*https?:\S+\s*$/i, '')]);
+      const known = new Set(sub.map((r) => r[0])); added = added.concat(fresh.filter((r) => !known.has(r[0])).map((r) => r[0])); if (fresh.length) sub = fresh; } }
+    this.save({ res, sub, lastCheck: new Date().toDateString(), checking: false, newN: added.length, newLine: added.length ? added.length + ' new from the sheet: ' + added.slice(0, 4).join(' · ') + (added.length > 4 ? '…' : '') : 'Checked today · nothing new' });
+  }
+  copyTxt(t, id) { const done = () => { this.setState({ copied: id }); clearTimeout(this._c); this._c = setTimeout(() => this.setState({ copied: '' }), 1600); }; if (navigator.clipboard) navigator.clipboard.writeText(t).then(done, done); else done(); }
+  build(kind, item, plat, n) {
+    const cta = CTA[n % CTA.length];
+    if (kind === 'res') { const [title, purpose, link, sum] = item; const tags = TAGS[purpose] || '#TeacherTips';
+      const body = (sum || '').replace(/\s*(Watch:|See how)[\s\S]*$/i, '').replace(/\s+/g, ' ').trim();
+      if (plat === 'x') { const base = '\u2728 ' + title + '\n\n'; const tail = '\n\n' + link + ' ' + tags.split(' ')[0]; const room = 280 - base.length - tail.length - 23; return base + (body.length > room ? body.slice(0, room - 1).replace(/\s\S*$/, '') + '\u2026' : body) + tail; }
+      if (plat === 'li') return title + '\n\n' + body + '\n\nHow I use it: quick to set up, easy to repeat, and kids actually look forward to it.\n\n\u25b6 Watch: ' + link + '\n\n' + cta + '\n\n' + tags + ' #Education';
+      if (plat === 'ig') return '\u2728 ' + title + ' \u2728\n\n' + body + '\n\n' + cta + '\n\ud83d\udd17 Video link in bio\n.\n.\n' + tags + ' #TeachersOfInstagram #TeacherIdeas #ElementaryTeacher #EdTech';
+      return '\u2728 ' + title + '\n\n' + body + '\n\nWatch how it works: ' + link + '\n\n' + cta + ' ' + tags; }
+    const [title, link, sum] = item; const tags = TAGS.Substack;
+    if (plat === 'x') { const tail = '\n\n' + link; const room = 280 - tail.length - 23 - 2; const b = sum.length > room ? sum.slice(0, room - 1).replace(/\s\S*$/, '') + '\u2026' : sum; return b + tail; }
+    if (plat === 'li') return sum + '\n\nI wrote more about it in this week\u2019s post: \u201c' + title + '.\u201d\n\n\ud83d\udcd6 ' + link + '\n\n' + cta + '\n\n' + tags + ' #EducationLeadership';
+    if (plat === 'ig') return sum + '\n\n\ud83d\udcd6 New on my Substack: \u201c' + title + '\u201d\n\ud83d\udd17 Link in bio\n\n' + cta + '\n.\n.\n' + tags + ' #TeachersOfInstagram #TeacherWellness #TeacherMindset';
+    return sum + '\n\nRead the full post: ' + link + '\n\n' + cta + ' ' + tags;
+  }
+  renderVals() {
+    const S = this.state; const now = new Date(); const base = new Date(now.getFullYear(), now.getMonth() + S.off, 1);
+    const y = base.getFullYear(), m = base.getMonth(); const P = PLAT[S.plat];
+    const days = []; let ri = 0, si = 0;
+    const rot = (arr, k) => arr[(k + S.seed * 5 + m * 3) % arr.length];
+    for (let d = 1; d <= new Date(y, m + 1, 0).getDate(); d++) {
+      const dt = new Date(y, m, d); const dow = dt.getDay(); const pl = PLAN[dow]; if (!pl) continue;
+      const iso = y + '-' + String(m + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+      const kind = pl[0]; const item = kind === 'res' ? rot(S.res, ri++) : rot(S.sub, si++);
+      const id = iso + '|' + S.plat; const auto = this.build(kind, item, S.plat, d);
+      const text = S.edits[id] != null ? S.edits[id] : auto; const done = !!S.done[id]; const past = dt < new Date(now.toDateString());
+      const over = text.length > P[1];
+      days.push({ iso, id, text, time: P[2][dow], dow,
+        date: dt.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }), theme: pl[1], title: item[0],
+        kind: kind === 'res' ? '📚 Resource' : '✍️ Substack',
+        kindChip: 'font-size:11px;font-weight:800;border-radius:999px;padding:2px 9px;white-space:nowrap;' + (kind === 'res' ? 'background:#E6F0F7;color:#2F5E7A' : 'background:#F3EAF8;color:#7A3E9D'),
+        timeChip: 'font-size:11.5px;font-weight:800;border-radius:999px;padding:2px 9px;white-space:nowrap;background:#FFF1C2;color:#8A6410',
+        box: 'background:#fff;border:1.5px solid ' + (done ? '#9FC88A' : '#C9D3C4') + ';border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:7px;' + (done || past ? 'opacity:.62' : ''),
+        len: text.length + ' / ' + P[1] + (over ? ' · too long' : ''), lenStyle: 'font-size:11.5px;font-weight:700;color:' + (over ? '#9B2C3C' : '#78716c'),
+        edit: (e) => this.save({ edits: { ...S.edits, [id]: e.target.value } }),
+        copy: () => this.copyTxt(text, id), copyLbl: S.copied === id ? '✓ Copied' : '📋 Copy',
+        toggle: () => this.save({ done: { ...S.done, [id]: !done } }), doneLbl: done ? '✓ Scheduled' : 'Mark scheduled',
+        doneStyle: 'font-family:Poppins,sans-serif;font-size:12px;font-weight:700;cursor:pointer;border-radius:8px;padding:4px 10px;border:1.5px solid #9FC88A;' + (done ? 'background:#DDEFD3;color:#2F5A26' : 'background:#fff;color:#4B6049') });
+    }
+    const to24 = (t) => { const [hm, ap] = t.split(' '); let [h, mi] = hm.split(':').map(Number); if (ap === 'PM' && h !== 12) h += 12; if (ap === 'AM' && h === 12) h = 0; return String(h).padStart(2, '0') + ':' + String(mi).padStart(2, '0'); };
+    const wkStart = new Date(now.getFullYear(), now.getMonth(), now.getDate() - ((now.getDay() + 6) % 7)); const wkEnd = new Date(wkStart.getFullYear(), wkStart.getMonth(), wkStart.getDate() + 7);
+    const thisWeek = days.filter((d) => { const dt = new Date(d.iso + 'T00:00'); return dt >= wkStart && dt < wkEnd; });
+    const todo = days.filter((d) => !S.done[d.id]).length;
+    return {
+      monthName: base.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }),
+      stats: [{ n: String(days.length), t: 'posts this month' }, { n: String(todo), t: 'left to schedule' }, { n: String(S.res.length), t: 'resources' }, { n: String(S.sub.length), t: 'Substack posts' }],
+      timesInfo: [{ p: '𝕏 / Twitter', w: 'Weekdays 6:30 AM (before school) · Sunday 7 PM' }, { p: 'Facebook', w: 'Weeknights 7:30 PM · Friday 3:45 PM (after dismissal)' }, { p: 'LinkedIn', w: 'Weekdays 7:30 AM, best Tue–Thu · Sunday 6 PM' }, { p: 'Instagram', w: 'Weeknights 7 PM · Friday 3:45 PM · Sunday 8 PM' }],
+      rhythm: [{ d: 'Mon', t: '✍️ Motivation Monday · a Substack mindset post' }, { d: 'Tue', t: '📚 Teacher Tip Tuesday · a resource' }, { d: 'Wed', t: '✍️ Wellness Wednesday · a Substack post' }, { d: 'Thu', t: '📚 Try-It Thursday · a resource' }, { d: 'Fri', t: '📚 Fun Friday · a game or celebration resource' }, { d: 'Sat', t: 'Off · rest day (lowest reach)' }, { d: 'Sun', t: '✍️ Sunday Planning · Substack for weekly planners' }],
+      platTabs: Object.entries(PLAT).map(([k, v]) => ({ label: v[0], pick: () => this.save({ plat: k }), style: 'font-family:Poppins,sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:none;border-radius:8px;padding:7px 14px;white-space:nowrap;' + (S.plat === k ? 'background:#4B6049;color:#fff' : 'background:transparent;color:#4B6049') })),
+      platLabel: P[0], days,
+      prevM: () => this.setState({ off: S.off - 1 }), nextM: () => this.setState({ off: S.off + 1 }), thisM: () => this.setState({ off: 0 }),
+      reshuffle: () => this.save({ seed: S.seed + 1 }),
+      refresh: () => this.check(), refreshLbl: S.checking ? 'Checking…' : '🔄 Check sheet now',
+      resUrl: S.resUrl, subUrl: S.subUrl, setRes: (e) => this.save({ resUrl: e.target.value.trim() }), setSub: (e) => this.save({ subUrl: e.target.value.trim() }),
+      connMsg: S.resUrl || S.subUrl ? 'Connected. Last checked: ' + (S.lastCheck || 'not yet') + '.' : 'Using the resources I pulled from your sheet today (12 resources, 12 Substack posts). Add your published links below so new rows show up on their own.',
+      hasNew: !!S.newLine, newLine: S.newLine,
+      copyWeekLbl: S.copied === 'week' ? '✓ Copied week' : '📋 Copy this week',
+      copyWeek: () => this.copyTxt(thisWeek.map((d) => d.date + ' · ' + d.time + '\n' + d.text).join('\n\n———\n\n'), 'week'),
+      exportCsv: () => { const q = (s) => '"' + String(s).replace(/"/g, '""') + '"'; const rows = [['Text', 'Image URL', 'Tags', 'Posting Time']].concat(days.filter((d) => !S.done[d.id]).map((d) => [d.text, '', d.theme, d.iso + ' ' + to24(d.time)]));
+        const blob = new Blob([rows.map((r) => r.map(q).join(',')).join('\n')], { type: 'text/csv' }); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'buffer-' + S.plat + '-' + y + '-' + String(m + 1).padStart(2, '0') + '.csv'; a.click(); },
+    };
+  }
+}
+</script>
+</body>
+</html>

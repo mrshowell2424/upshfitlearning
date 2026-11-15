@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FCFBF7; }
+  a { color: #1F6F6B; }
+  a:hover { color: #134e4a; }
+</style>
+<style>@media print { [data-back-plans] { display: none !important; } }</style>
+</helmet>
+<a data-back-plans="true" href="%E2%9E%A1%EF%B8%8F%20PLANS.dc.html" style="position:fixed;left:16px;bottom:16px;z-index:60;font-family:Outfit,sans-serif;font-size:14px;font-weight:700;text-decoration:none;background:#134e4a;color:#fff;padding:10px 16px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.18)">← Back to Plans</a>
+
+
+<div style="font-family:'Andika',sans-serif;color:#1c1917;padding:28px 26px 60px;max-width:1240px;margin:0 auto">
+
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;border-bottom:3px solid #1F6F6B;padding-bottom:14px">
+    <div>
+      <div style="font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:.26em;color:#E8A33D">LANCASTER CITY SCHOOLS · 2026–2027</div>
+      <div style="font-family:'Outfit',sans-serif;font-size:42px;font-weight:800;line-height:1.05;color:#134e4a;letter-spacing:-0.02em;margin-top:6px">Daily Planner</div>
+      <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;color:#1F6F6B;margin-top:2px">Click any school day to see the lesson and open the printable.</div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <sc-for list="{{ gradeTabs }}" as="t" hint-placeholder-count="3">
+        <button type="button" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button>
+      </sc-for>
+      <a href="%E2%9E%A1%EF%B8%8F%20PLANS.dc.html" style="font-family:Outfit,sans-serif;font-size:13px;font-weight:700;text-decoration:none;border:2px solid #d6d3d1;color:#57534e;padding:8px 14px;border-radius:5px">Daily &amp; weekly plans →</a>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) 316px;gap:26px;align-items:start;margin-top:22px">
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px">
+      <sc-for list="{{ months }}" as="m" hint-placeholder-count="10">
+        <div style="background:#fff;border:1px solid #e7e5e4;border-radius:8px;padding:12px 12px 14px">
+          <div style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;letter-spacing:.14em;color:#134e4a">{{ m.name }}</div>
+          <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-top:8px">
+            <sc-for list="{{ dow }}" as="d" hint-placeholder-count="7">
+              <div style="font-family:'Outfit',sans-serif;font-size:9px;font-weight:700;color:#a8a29e;text-align:center;padding-bottom:2px">{{ d }}</div>
+            </sc-for>
+            <sc-for list="{{ m.cells }}" as="c" hint-placeholder-count="35">
+              <button type="button" title="{{ c.title }}" onClick="{{ c.pick }}" style="{{ c.style }}">
+                <span style="font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;line-height:1">{{ c.label }}</span>
+                <span style="font-family:'Outfit',sans-serif;font-size:7.5px;font-weight:700;line-height:1;letter-spacing:.04em">{{ c.tag }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="position:sticky;top:20px;display:flex;flex-direction:column;gap:14px">
+      <div style="background:#134e4a;color:#fff;border-radius:8px;padding:16px 18px">
+        <div style="font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;color:#E8A33D">{{ sel.kicker }}</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;line-height:1.15;margin-top:5px">{{ sel.dateLong }}</div>
+        <div style="font-size:14px;line-height:1.5;color:#c7e3e0;margin-top:4px">{{ sel.sub }}</div>
+      </div>
+
+      <sc-if value="{{ sel.teaching }}" hint-placeholder-val="{{ true }}">
+        <div style="background:#fff;border:2px solid #1F6F6B;border-radius:8px;padding:16px 18px">
+          <div style="font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;color:#1F6F6B">CLOSE READING</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:800;color:#134e4a;margin-top:4px">{{ sel.readCode }}</div>
+          <div style="font-size:14px;line-height:1.55;color:#44403c;margin-top:4px">{{ sel.readWhat }}</div>
+          <a href="{{ sel.readHref }}" style="display:inline-block;margin-top:12px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;text-decoration:none;background:#1F6F6B;color:#fff;padding:9px 14px;border-radius:5px">Open reading pack →</a>
+        </div>
+
+        <div style="background:#FDF6EA;border:2px solid #E8A33D;border-radius:8px;padding:16px 18px">
+          <div style="font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;color:#B45309">DAILY 4 MATH</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:800;color:#134e4a;margin-top:4px">{{ sel.mathWeek }}</div>
+          <div style="font-size:14px;line-height:1.55;color:#44403c;margin-top:4px">{{ sel.mathWhat }}</div>
+          <a href="{{ sel.mathHref }}" style="display:inline-block;margin-top:12px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;text-decoration:none;background:#B45309;color:#fff;padding:9px 14px;border-radius:5px">Open math week →</a>
+        </div>
+        <div style="background:#fff;border:2px solid #134e4a;border-radius:8px;padding:16px 18px">
+          <div style="font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;color:#134e4a">PRINT JUST ONE THING</div>
+          <div style="font-size:13px;line-height:1.5;color:#78716c;margin-top:5px">Opens the packet set to that piece and prints it.</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px">
+            <sc-for list="{{ sel.quickPackets }}" as="q" hint-placeholder-count="5">
+              <a href="{{ q.href }}" style="display:block;text-align:center;box-sizing:border-box;font-family:Outfit,sans-serif;font-size:12.5px;font-weight:700;text-decoration:none;background:#fff;color:#134e4a;border:2px solid #1F6F6B;padding:8px 6px;border-radius:5px">{{ q.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <div style="background:#fff;border:1px solid #e7e5e4;border-radius:8px;padding:14px 16px">
+        <div style="font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;color:#78716c">THE YEAR</div>
+        <div style="font-size:13px;line-height:1.6;color:#44403c;margin-top:6px">{{ yearNote }}</div>
+        <a href="Year%20Plan.dc.html" style="display:inline-block;margin-top:10px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700">Scope &amp; sequence →</a>
+      </div>
+
+      <div style="background:#fff;border:1px solid #e7e5e4;border-radius:8px;padding:14px 16px;font-size:12.5px;line-height:1.7;color:#57534e">
+        <div style="font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;color:#78716c;margin-bottom:6px">LEGEND</div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="width:14px;height:14px;border-radius:3px;background:#fff;border:1px solid #d6d3d1;display:inline-block"></span> School day, numbered</div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="width:14px;height:14px;border-radius:3px;background:#134e4a;display:inline-block"></span> Selected</div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="width:14px;height:14px;border-radius:3px;background:#f5f5f4;border:1px solid #e7e5e4;display:inline-block"></span> No school</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1240,&quot;height&quot;:900}}">
+const READING_FOCUS = {
+  1: 'Ask and answer questions · cite the text',
+  2: 'Main idea and key details',
+  3: 'Connections between events, ideas, and steps',
+  4: 'Meaning of words and phrases',
+  5: 'Text features and structure',
+  6: 'Author\u2019s point of view and purpose',
+  7: 'Visual information: charts, diagrams, timelines',
+  8: 'Reasons and evidence that support points',
+  9: 'Comparing two texts on the same topic',
+  10: 'Mixed-topic review set'
+};
+
+// Lancaster City Schools 2026-27, elementary. Sept 1 through June 4.
+const FIRST = '2026-09-01';
+const LAST = '2027-06-04';
+const CLOSED = {
+  '2026-09-07': 'Labor Day',
+  '2026-10-15': 'Fairfield County Fair',
+  '2026-10-16': 'Fairfield County Fair',
+  '2026-11-13': 'Parent/teacher conferences',
+  '2026-11-25': 'Parent/teacher conferences',
+  '2026-11-26': 'Thanksgiving',
+  '2026-11-27': 'Thanksgiving',
+  '2027-01-15': 'Staff records day',
+  '2027-01-18': 'Martin Luther King Day',
+  '2027-02-15': 'Presidents\u2019 Day',
+  '2027-05-31': 'Memorial Day'
+};
+const CLOSED_RANGES = [
+  ['2026-12-21', '2027-01-01', 'Holiday vacation'],
+  ['2027-03-26', '2027-04-02', 'Good Friday / spring break']
+];
+
+const MONTH_NAMES = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
+const LONG_MONTH = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const LONG_DOW = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+function key(d) {
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+function parse(s) { const p = s.split('-').map(Number); return new Date(p[0], p[1] - 1, p[2]); }
+
+function closedReason(k) {
+  if (CLOSED[k]) return CLOSED[k];
+  for (let i = 0; i < CLOSED_RANGES.length; i++) {
+    const r = CLOSED_RANGES[i];
+    if (k >= r[0] && k <= r[1]) return r[2];
+  }
+  return null;
+}
+
+// Build the instructional-day list once.
+function buildDays() {
+  const days = [];
+  const end = parse(LAST);
+  for (let d = parse(FIRST); d <= end; d.setDate(d.getDate() + 1)) {
+    const k = key(d);
+    const dow = d.getDay();
+    if (dow === 0 || dow === 6) continue;
+    if (closedReason(k)) continue;
+    days.push(k);
+  }
+  return days;
+}
+const DAYS = buildDays();
+const DAY_INDEX = {};
+DAYS.forEach((k, i) => { DAY_INDEX[k] = i + 1; });
+
+// Math week ids, read from the same list the math document uses.
+const MATH_WEEKS = {
+  g2: [], g3: [], g4: []
+};
+
+class Component extends DCLogic {
+  state = { grade: 'g2', sel: DAYS[0], weeks: null };
+
+  componentDidMount() {
+    const today = key(new Date());
+    if (DAY_INDEX[today]) this.setState({ sel: today });
+    fetch('Daily%204%20Math.dc.html').then((r) => r.text()).then((t) => {
+      const m = t.match(/const ALL_WEEKS = \[([\s\S]*?)\];/);
+      if (!m) return;
+      const ids = (m[1].match(/'([^']+)'/g) || []).map((s) => s.replace(/'/g, ''));
+      const weeks = { g2: [], g3: [], g4: [] };
+      ids.forEach((id) => { const g = id.slice(0, 2); if (weeks[g]) weeks[g].push(id); });
+      this.setState({ weeks: weeks });
+    }).catch(() => {});
+  }
+
+  weekIds() {
+    const w = this.state.weeks || MATH_WEEKS;
+    return w[this.state.grade] || [];
+  }
+
+  // One 4-week block per reading standard; 20 school days per block.
+  lessonFor(dayNum) {
+    const g = this.state.grade;
+    const gn = g.slice(1);
+    const week = Math.ceil(dayNum / 5);
+    const dayOfWeek = ((dayNum - 1) % 5) + 1;
+    const std = Math.min(9, Math.ceil(week / 4));
+    const blockDay = ((week - 1) % 4) * 5 + dayOfWeek; // 1..20
+    const setNum = Math.ceil(blockDay / 3);
+    const pageNum = ((blockDay - 1) % 3) + 1;
+    const pageName = pageNum === 1 ? 'passage page' : pageNum === 2 ? 'first response page' : 'second response page';
+    const readWhat = blockDay > 15
+      ? 'Flex day ' + (blockDay - 15) + ' of 5 \u00b7 reteach, retest, or finish unfinished sets. ' + READING_FOCUS[std]
+      : 'Passage ' + setNum + ' of 5, ' + pageName + '. ' + READING_FOCUS[std];
+    const ids = this.weekIds();
+    const mathId = ids[week - 1] || '';
+    const mathLabel = mathId
+      ? mathId.slice(7).replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
+      : '';
+    return {
+      week: week,
+      dayOfWeek: dayOfWeek,
+      readCode: 'RI.' + gn + '.' + std,
+      readWhat: readWhat,
+      readHref: 'Close%20Reading%20Pack.dc.html#' + g + '-ri-' + gn + '-' + std,
+      mathWeek: 'Week ' + week + ' \u00b7 Day ' + dayOfWeek,
+      mathWhat: mathLabel,
+      mathHref: mathId ? 'Daily%204%20Math.dc.html#' + mathId : 'Daily%204%20Math.dc.html'
+    };
+  }
+
+  renderVals() {
+    const selKey = this.state.sel;
+    const selDate = parse(selKey);
+    const selNum = DAY_INDEX[selKey];
+    const lesson = selNum ? this.lessonFor(selNum) : null;
+
+    const months = [];
+    let cursor = new Date(2026, 8, 1);
+    const stop = new Date(2027, 6, 1);
+    while (cursor < stop) {
+      const y = cursor.getFullYear();
+      const mo = cursor.getMonth();
+      const first = new Date(y, mo, 1);
+      const total = new Date(y, mo + 1, 0).getDate();
+      const cells = [];
+      for (let i = 0; i < first.getDay(); i++) {
+        cells.push({ label: '', tag: '', title: '', style: 'visibility:hidden;height:34px', pick: () => {} });
+      }
+      for (let dnum = 1; dnum <= total; dnum++) {
+        const d = new Date(y, mo, dnum);
+        const k = key(d);
+        const num = DAY_INDEX[k];
+        const weekend = d.getDay() === 0 || d.getDay() === 6;
+        const reason = closedReason(k);
+        const inYear = k >= FIRST && k <= LAST;
+        const isSel = k === selKey;
+        const base = 'height:34px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;border-radius:4px;border:1px solid ';
+        let style;
+        let title = LONG_DOW[d.getDay()] + ', ' + LONG_MONTH[mo] + ' ' + dnum;
+        if (isSel && num) {
+          style = base + '#134e4a;background:#134e4a;color:#fff;cursor:pointer';
+          title += ' \u00b7 Day ' + num;
+        } else if (num) {
+          style = base + '#d6d3d1;background:#fff;color:#1c1917;cursor:pointer';
+          title += ' \u00b7 Day ' + num;
+        } else if (weekend) {
+          style = base + 'transparent;background:transparent;color:#d6d3d1;cursor:default';
+        } else {
+          style = base + '#e7e5e4;background:#f5f5f4;color:#a8a29e;cursor:default';
+          title += reason ? ' \u00b7 ' + reason : inYear ? '' : ' \u00b7 Outside the school year';
+        }
+        cells.push({
+          label: String(dnum),
+          tag: num ? 'D' + num : '',
+          title: title,
+          style: style,
+          pick: num ? () => this.setState({ sel: k }) : () => {}
+        });
+      }
+      months.push({ name: MONTH_NAMES[mo] + ' \u2019' + String(y).slice(2), cells: cells });
+      cursor = new Date(y, mo + 1, 1);
+    }
+
+    const gradeTabs = ['g2', 'g3', 'g4'].map((g) => {
+      const on = this.state.grade === g;
+      return {
+        label: 'Grade ' + g.slice(1),
+        style: 'font-family:Outfit,sans-serif;font-size:14px;font-weight:700;padding:9px 16px;border-radius:5px;cursor:pointer;border:2px solid #1F6F6B;'
+          + (on ? 'background:#1F6F6B;color:#fff' : 'background:#fff;color:#1F6F6B'),
+        pick: () => this.setState({ grade: g })
+      };
+    });
+
+    const reason = closedReason(selKey);
+    const sel = lesson
+      ? {
+          kicker: 'SCHOOL DAY ' + selNum + ' OF ' + DAYS.length,
+          dateLong: LONG_DOW[selDate.getDay()] + ', ' + LONG_MONTH[selDate.getMonth()] + ' ' + selDate.getDate(),
+          sub: 'Week ' + lesson.week + ', Day ' + lesson.dayOfWeek + ' \u00b7 Grade ' + this.state.grade.slice(1),
+          teaching: true,
+          readCode: lesson.readCode,
+          readWhat: lesson.readWhat,
+          readHref: lesson.readHref,
+          mathWeek: lesson.mathWeek,
+          mathWhat: lesson.mathWhat,
+          mathHref: lesson.mathHref,
+          quickPackets: [
+            ['math', 'Math week'],
+            ['reading', 'Reading pack'],
+            ['mkey', 'Key · math week'],
+            ['rkey', 'Key · reading pack'],
+            ['wkey', 'Key · phonemic awareness warm-up']
+          ].map((q) => ({
+            label: q[1],
+            href: 'Week%20Packet.dc.html#w' + lesson.week + '/' + q[0] + '/print'
+          }))
+        }
+      : {
+          kicker: 'NO SCHOOL',
+          dateLong: LONG_DOW[selDate.getDay()] + ', ' + LONG_MONTH[selDate.getMonth()] + ' ' + selDate.getDate(),
+          sub: reason || 'Not a school day',
+          teaching: false,
+          readCode: '', readWhat: '', readHref: '#', mathWeek: '', mathWhat: '', mathHref: '#'
+        };
+
+    const fullWeeks = Math.floor(DAYS.length / 5);
+    const extraDays = DAYS.length % 5;
+    const covered = fullWeeks + (extraDays
+      ? ' full weeks plus ' + extraDays + (extraDays === 1 ? ' day' : ' days') + ' of week ' + (fullWeeks + 1)
+      : ' full weeks');
+    const spare = 36 - fullWeeks - (extraDays ? 1 : 0);
+    const yearNote = DAYS.length + ' student days, September 1 to June 4. That covers ' + covered
+      + ', leaving ' + (spare ? spare + (spare === 1 ? ' week' : ' weeks') : 'the remainder')
+      + ' spare for reteaching or testing time.';
+
+    return {
+      months: months,
+      dow: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+      gradeTabs: gradeTabs,
+      sel: sel,
+      yearNote: yearNote
+    };
+  }
+}
+</script>
+</body>
+</html>

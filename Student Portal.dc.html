@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F4F1EA}a{color:#0E2841}</style>
+</helmet>
+<div style="font-family:'Poppins',sans-serif;color:#0E2841;max-width:1100px;margin:0 auto;padding:20px 18px 60px;display:flex;flex-direction:column;gap:18px">
+  <sc-if value="{{ picking }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:20px;padding:40px 0;text-align:center">
+      <div style="font-size:44px;font-weight:900">👋 Who are you?</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;width:100%;max-width:900px">
+        <sc-for list="{{ kids }}" as="k" hint-placeholder-count="5"><button type="button" onClick="{{ k.pick }}" style="{{ k.style }}"><span style="font-size:64px;line-height:1">{{ k.icon }}</span><span style="font-size:26px;font-weight:900">{{ k.name }}</span></button></sc-for>
+      </div>
+      <a href="%E2%9E%A1%EF%B8%8F%20PLANS.dc.html" style="font-size:13px;font-weight:700;color:#78716c">Teacher: back to Plans</a>
+    </div>
+  </sc-if>
+  <sc-if value="{{ inside }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:14px"><span style="font-size:56px;line-height:1">{{ kid.icon }}</span><div><div style="font-size:14px;font-weight:700;color:#57534e">{{ dateLine }}</div><div style="font-size:38px;font-weight:900;line-height:1">Hi, {{ kid.name }}!</div></div></div>
+      <button type="button" onClick="{{ switchKid }}" style="font-family:Poppins,sans-serif;font-size:14px;font-weight:700;cursor:pointer;border:2px solid #0E2841;border-radius:999px;padding:7px 14px;background:#fff">↩ Not me</button>
+    </div>
+    <div style="background:#0E2841;color:#fff;border-radius:22px;padding:18px 22px;display:flex;flex-direction:column;gap:6px">
+      <div style="font-size:12px;font-weight:800;letter-spacing:.16em;color:#FDD43C">MY GOAL THIS WEEK</div>
+      <div style="font-size:24px;font-weight:800;line-height:1.25">{{ kid.goal }}</div>
+      <div style="font-size:15px;color:#C9D6E6">🧠 Brain skill: {{ ef }}</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px">
+      <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="8">
+        <a href="{{ t.href }}" style="{{ t.style }}"><span style="font-size:50px;line-height:1">{{ t.icon }}</span><span style="font-size:22px;font-weight:900;line-height:1.1">{{ t.title }}</span><span style="font-size:14px;font-weight:600;color:#44403c">{{ t.sub }}</span></a>
+      </sc-for>
+    </div>
+    <div style="background:#fff;border:3px solid #0E2841;border-radius:22px;padding:16px 20px;font-size:22px;font-weight:800;line-height:1.35;text-align:center">💚 What we're doing is important. You can do it. And I'm not going to give up on you.</div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const KEY = 'student-portal:v1';
+const K = [
+  { name: 'Lilly', icon: '🏀', og: '1-08', goal: 'I can read and spell two-syllable silent e words.', bg: '#FFF6CC' },
+  { name: 'Kylie', icon: '⚽', og: '1-08', goal: 'I can read silent e and made-up words, and fix my own sentences.', bg: '#EAF6DC' },
+  { name: 'Victor', icon: '🏈', og: '2-05', goal: 'I can read vowel team words and flip the question into a full sentence.', bg: '#E3F2FF' },
+  { name: 'Dylan', icon: '🦖', og: '1-05', goal: 'I can read and spell words with sh, ch, th, and wh.', bg: '#FDE6F5' },
+  { name: 'Odin', icon: '🚀', og: '1-05', goal: 'I can read and spell words with sh, ch, th, and wh.', bg: '#FFE8CC' },
+];
+const EF = ['🛑 Stop and Think', '🧠 Hold It in My Head', '🌡️ Keep My Cool', '🚀 Start Strong', '🎯 Stay on Target', '🗺️ Make a Plan', '🎒 Get Organized', '⏰ Beat the Clock', '🔄 Bend, Don\u2019t Break', '🔍 Check My Work', '🧗 Keep Climbing', '🙋 Speak Up'];
+class Component extends DCLogic {
+  state = { kid: null };
+  componentDidMount() { const q = new URLSearchParams(location.search).get('kid'); let s = null; try { s = localStorage.getItem(KEY); } catch (e) {} const n = q || s; if (n && K.find((k) => k.name.toLowerCase() === n.toLowerCase())) this.setState({ kid: K.find((k) => k.name.toLowerCase() === n.toLowerCase()).name }); }
+  pick(n) { try { localStorage.setItem(KEY, n); } catch (e) {} this.setState({ kid: n }); }
+  renderVals() {
+    const kid = K.find((k) => k.name === this.state.kid);
+    const wk = Math.floor((Date.now() - new Date(2026, 7, 24)) / 6048e5) + 1;
+    const tile = (bg) => ({ background: bg, border: '3px solid #0E2841', borderRadius: 22, boxShadow: '0 5px 0 #0E2841', padding: '18px 18px', display: 'flex', flexDirection: 'column', gap: 6, textDecoration: 'none', color: '#0E2841' });
+    return {
+      picking: !kid, inside: !!kid,
+      kids: K.map((k) => ({ ...k, pick: () => this.pick(k.name), style: { fontFamily: 'Poppins,sans-serif', cursor: 'pointer', background: k.bg, border: '3px solid #0E2841', borderRadius: 24, boxShadow: '0 5px 0 #0E2841', padding: '22px 10px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, color: '#0E2841' } })),
+      kid: kid || { name: '', icon: '', goal: '' },
+      switchKid: () => { try { localStorage.removeItem(KEY); } catch (e) {} this.setState({ kid: null }); },
+      dateLine: new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }),
+      ef: EF[((wk - 1) % EF.length + EF.length) % EF.length],
+      tiles: kid ? [
+        ['🗺️', 'My Roadmap', 'Today\u2019s stops', 'Long%20Vowel%20Roadmaps.dc.html', '#FFF6CC'],
+        ['📘', 'My Word Pack', 'My OG pattern practice', 'OG%20Pack.dc.html?c=' + kid.og, '#EAF6DC'],
+        ['🕵️', 'Mystery Game', 'Find the proof!', 'Mystery%20Game.dc.html', '#E3F2FF'],
+        ['🏁', 'Fluency Race', 'How fast can I read?', 'Fluency%20Race%20Tracks.dc.html', '#FFE8CC'],
+        ['❤️', 'Heart Words', '2-minute review', 'Heart%20Word%20Wall.dc.html', '#FDE6F5'],
+        ['🫙', 'Prompt Jar', 'Shake for a writing idea', 'Writing%20Prompt%20Jar.dc.html', '#F3EAF8'],
+        ['📣', 'Writing Made Easy', 'My 5 parts', 'EBW%20Lessons.dc.html', '#FFF6CC'],
+      ].map(([icon, title, sub, href, bg]) => ({ icon, title, sub, href, style: tile(bg) })) : [],
+    };
+  }
+}
+</script>
+</body>
+</html>

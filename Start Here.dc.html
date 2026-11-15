@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F6F8F4}a{color:#2F3E2E}a:hover{color:#4B6049}</style>
+</helmet>
+<div style="font-family:'Poppins',sans-serif;color:#1F2E2A;max-width:1120px;margin:0 auto;padding:26px 20px 60px;display:flex;flex-direction:column;gap:18px">
+  <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between;border-bottom:3px solid #4B6049;padding-bottom:12px">
+    <div>
+      <div style="font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;color:#618459">{{ dateLine }}</div>
+      <div style="font-size:32px;font-weight:800;line-height:1.1;color:#2F3E2E">{{ hello }}</div>
+    </div>
+    <a href="%E2%9E%A1%EF%B8%8F%20PLANS.dc.html" style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;text-decoration:none;background:#4B6049;color:#fff;border-radius:10px;padding:9px 16px;white-space:nowrap">📋 Open PLANS →</a>
+  </div>
+
+  <div style="position:relative">
+    <input type="search" value="{{ q }}" onInput="{{ setQ }}" placeholder="🔎  Search a student, skill, or page… (try “silent e”, “Odin”, “Plinko”)" style="font-family:Poppins,sans-serif;width:100%;box-sizing:border-box;font-size:16px;padding:13px 16px;border:2px solid #C9D3C4;border-radius:12px;outline:none;background:#fff;color:#1F2E2A">
+    <sc-if value="{{ hasResults }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:8px;background:#fff;border:1.5px solid #C9D3C4;border-radius:12px;overflow:hidden">
+        <sc-for list="{{ results }}" as="r" hint-placeholder-count="6">
+          <a href="{{ r.href }}" style="display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;align-items:center;padding:9px 14px;border-top:1px solid #EEF3EC;text-decoration:none;color:#1F2E2A">
+            <span style="font-size:18px">{{ r.icon }}</span>
+            <span style="display:flex;flex-direction:column;min-width:0"><b style="font-size:14px">{{ r.label }}</b><span style="font-size:12px;color:#78716c;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.sub }}</span></span>
+            <span style="font-size:11px;font-weight:700;color:#618459;white-space:nowrap">{{ r.kind }}</span>
+          </a>
+        </sc-for>
+      </div>
+    </sc-if>
+    <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}"><div style="margin-top:8px;font-size:13px;color:#78716c">Nothing found. Try a shorter word.</div></sc-if>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px">
+    <div style="background:#fff;border:1.5px solid #C9D3C4;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><b style="font-size:16px;color:#2F3E2E">✅ Work samples to do</b><a href="%F0%9F%92%AA%20Work%20Samples.dc.html" style="font-size:12px;font-weight:700;white-space:nowrap">Tracker →</a></div>
+      <div style="font-size:12.5px;color:#57534e">{{ pmLine }}</div>
+      <sc-for list="{{ todo }}" as="t" hint-placeholder-count="5">
+        <div style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;align-items:start;background:#F6F8F4;border-radius:8px;padding:7px 9px">
+          <span style="width:22px;height:22px;border-radius:50%;background:#4B6049;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center">{{ t.n }}</span>
+          <span style="display:flex;flex-direction:column;min-width:0"><b style="font-size:13px">{{ t.kid }} · <span style="font-weight:600">{{ t.area }}</span></b><span style="font-size:11.5px;font-weight:700;color:#7A5410">{{ t.why }}</span></span>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="background:#fff;border:1.5px solid #C9D3C4;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><b style="font-size:16px;color:#2F3E2E">📅 Coming up</b><a href="Caseload%20Calendar.dc.html" style="font-size:12px;font-weight:700;white-space:nowrap">Calendar →</a></div>
+      <sc-for list="{{ upcoming }}" as="u" hint-placeholder-count="6">
+        <div style="display:grid;grid-template-columns:64px minmax(0,1fr);gap:10px;align-items:center;border-bottom:1px solid #EEF3EC;padding:5px 0">
+          <span style="{{ u.chip }}">{{ u.when }}</span>
+          <span style="font-size:13px;line-height:1.35"><b>{{ u.title }}</b><span style="color:#78716c"> · {{ u.date }}</span></span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <div style="font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;color:#618459">JUMP TO</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px">
+      <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="12">
+        <a href="{{ t.href }}" style="display:flex;flex-direction:column;gap:4px;background:#fff;border:1.5px solid #C9D3C4;border-radius:12px;padding:12px 14px;text-decoration:none;color:#1F2E2A;box-shadow:0 2px 0 #E3E9DF">
+          <span style="font-size:22px;line-height:1">{{ t.icon }}</span>
+          <b style="font-size:14px">{{ t.label }}</b>
+          <span style="font-size:11.5px;color:#78716c;line-height:1.3">{{ t.sub }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const TILES = [
+  ['📋', 'PLANS', 'Day + week plans, printables', '➡️ PLANS.dc.html'],
+  ['☀️', 'Today', 'Schedule, blocks, pull-outs', 'Today.dc.html'],
+  ['📊', 'Work Samples Tracker', 'Greens, objectives, what\u2019s left', '💪 Work Samples.dc.html'],
+  ['📄', 'Work sample pages', 'Print samples, scripts, keys', 'Work Samples.dc.html'],
+  ['📅', 'Caseload Calendar', 'IEPs, reports, speech/OT, subs', 'Caseload Calendar.dc.html'],
+  ['📈', 'OTES Data Story', 'Growth graphs for evidence', 'OTES Data Story.dc.html'],
+  ['✍️', 'IEP Writer', 'Checklist, goals, ETR, parent talking points', 'IEP Writer.dc.html'],
+  ['🗂', 'IEP Meeting Prep', 'Draft changes + what to say', 'IEP Meeting Prep.dc.html'],
+  ['🎯', 'IEP Goals', 'Every goal, word for word', 'IEP Goals.dc.html'],
+  ['🧒', 'Student Cards', 'One student at a glance', 'Student Card.dc.html'],
+  ['🧩', 'OG Concept Packs', '58 full lesson packs', 'OG Concept Packs.dc.html'],
+  ['✍️', 'EBW Lessons', 'Writing Made Easy, 5 parts', 'EBW Lessons.dc.html'],
+  ['🧠', 'EF Portal', 'Skill of the week', 'EF Portal.dc.html'],
+  ['🎒', 'Sub Folder', 'Emergency plans', 'Sub Folder.dc.html'],
+];
+const KW = {
+  'OG Scope and Sequence': 'scope sequence orton gillingham imse levels concepts order phonics',
+  'IEP Writer': 'iep write checklist pre-read cot etr present levels plaafp goals smart parent talking points timeline pwn',
+  'OG Pack': 'orton gillingham phonics silent e vowel team blends digraph floss lesson pack',
+  'Long Vowel Roadmaps': 'silent e vowel teams survival island chest decodable lake race goat boat',
+  'Long Vowel Anchor Charts': 'silent e vowel teams anchor chart poster',
+  'Mystery Game': 'mystery detective evidence case',
+  'EBW Toolkit': 'mystery evidence detective sentence strips rubric posters debate',
+  'Plinko Sheet': 'plinko behavior scoreboard',
+  'Survival Island Game': 'survival island chest game review',
+  'Science of Reading': 'blending drill phonemic awareness heggerty',
+  'Vocabulary Hub': 'vocabulary words review studies weekly',
+  'Fluency Race Tracks': 'fluency wcpm reading race',
+  'Heart Word Wall': 'heart words sight words high frequency',
+  'Friday Grade Check': 'grade check powerschool',
+  'Parent Messages': 'parentsquare families message',
+  'OTES and LPDC': 'otes lpdc evaluation pgp',
+  'SchoolBeat': 'schoolbeat sel social emotional casel',
+  'Test Prep Writing': 'state test writing prompt',
+  'Seasonal EBW Packs': 'thanksgiving winter halloween writing',
+  'Spooky Week': 'halloween spooky stations',
+  'EF Tools': 'executive functioning ef self check timer break menu schedule ready to learn chunk transition cards week graph prompt ladder',
+  'Game Showcase': 'visitor video game showcase silent e friday present gemini',
+  'Poem Guide 4th': 'poem poetry poet inspiration i am list free verse simile metaphor 4th',
+  'Spelling Test': 'spelling test 10 words 3rd grade weekly list',
+  'EF Sheets': 'executive functioning ef on task begin checklist work plan victor kylie kevin odin michiel dylan chips first then',
+};
+const PAGES = ["OG Scope and Sequence.dc.html","Spelling Test.dc.html","IEP Writer.dc.html","One Away Checklist.dc.html","Odin 1.3 Work Sample.dc.html","EF Tools.dc.html","Game Showcase.dc.html","Poem Guide 4th.dc.html","EF Sheets.dc.html","1st Grade This Week.dc.html","2nd Grade This Week.dc.html","3rd Grade This Week.dc.html","4th Grade Resources.dc.html","5th Grade.dc.html","6th Grade.dc.html","7th Grade.dc.html","8th Grade.dc.html","Behavior Reflection.dc.html","Brain Dump Sheet.dc.html","Choice Board.dc.html","Classroom Screen.dc.html","Close Reading Pack.dc.html","Coverage Map.dc.html","Daily 4 Math.dc.html","Dashboard.dc.html","EB Adapted 2-4.dc.html","EB Fluency Hub.dc.html","EB Teacher Hub.dc.html","EBW Book Practice.dc.html","EBW Lessons.dc.html","EBW Toolkit.dc.html","EBW Webinar Notes.dc.html","EF Portal.dc.html","Fair Break Paragraph Scaffold.dc.html","Fluency Race Tracks.dc.html","Friday Grade Check.dc.html","Gen Ed Updates.dc.html","General Education.dc.html","Grammar Games.dc.html","Group Roadmap Week.dc.html","Heart Word Wall.dc.html","High Expectations Kit.dc.html","Hub Activity.dc.html","I Am Poem.dc.html","IEP Dates.dc.html","IEP Goals.dc.html","IEP Meeting Prep.dc.html","IEP Rep Sheet.dc.html","Independent Practice.dc.html","Intervention Resources.dc.html","Kindergarten This Week.dc.html","LEA Union.dc.html","Leadership.dc.html","Lesson Plan Builder.dc.html","Long Vowel Anchor Charts.dc.html","Long Vowel Roadmaps.dc.html","Morning Meeting.dc.html","Mystery Game.dc.html","Mystery Podcast 4th.dc.html","OG Concept Packs.dc.html","OG Concept Roadmap.dc.html","OG Pack.dc.html","OTES Evidence Tracker.dc.html","OTES Lesson Plan Oct 7 Deck.dc.html","OTES Lesson Plan Oct 7.dc.html","OTES Post-Conference Prep.dc.html","OTES Post-Observation Reflection.dc.html","OTES Pre-Conference Answers.dc.html","OTES Pre-Observation Form.dc.html","OTES and LPDC.dc.html","Oct 7 Lesson Slides.dc.html","PBL Projects.dc.html","💪 Work Samples.dc.html","Parent Messages.dc.html","Planner Portal.dc.html","Plinko Sheet.dc.html","Poet Biography Organizer.dc.html","Poet Essay Organizer.dc.html","Poet Paragraph Scaffold.dc.html","Poetry Module 4th.dc.html","Q1 Summary.dc.html","Q2 Planning Board.dc.html","Quarterly Data.dc.html","Regular Ed Plans.dc.html","SchoolBeat Get to Know You.dc.html","SchoolBeat Lessons.dc.html","SchoolBeat Pre-Assessment.dc.html","SchoolBeat.dc.html","Science of Reading.dc.html","Seasonal EBW Packs.dc.html","Spooky Week.dc.html","Student Portal.dc.html","Student Surveys.dc.html","Students v2.dc.html","Sub Folder.dc.html","Survival Island Deck.dc.html","Survival Island Game.dc.html","TOR Dashboard.dc.html","TOR.dc.html","Teacher One-Pager.dc.html","Teacher Resource Hubs.dc.html","Test Prep Writing.dc.html","Thursday Stations.dc.html","Today.dc.html","Victor Checklist.dc.html","Vocabulary Hub.dc.html","Week Packet.dc.html","Weekly Share.dc.html","Wonderwall Builder.dc.html","Wonderwall Oct 7.dc.html","Work Samples.dc.html","Workbook Key L1-B03 The f s l z rule.dc.html","Workbook L1-B03 The f s l z rule.dc.html","Writing Prompt Jar.dc.html","Writing Roadmap Sheet.dc.html","Writing Scaffold Pages.dc.html","Year Plan.dc.html","➡️ PLANS.dc.html"];
+class Component extends DCLogic {
+  state = { q: '', pm: null, td: null };
+  componentDidMount() {
+    import('./pm-data.js').then((p) => { let D = {}; try { D = JSON.parse(localStorage.getItem(p.KEY) || '{}') || {}; } catch (e) {} this.setState({ pm: { ...p, D } }); }).catch(() => {});
+    import('./today-data.js').then((t) => { let ov = {}; try { ov = JSON.parse(localStorage.getItem('upshift-iep-dates:v1') || '{}') || {}; } catch (e) {} this.setState({ td: { KIDS: t.KIDS || [], ov } }); }).catch(() => {});
+  }
+  renderVals() {
+    const now = new Date(new Date().toDateString());
+    const dayN = (iso) => iso ? Math.round((new Date(iso + 'T00:00') - now) / 864e5) : 999;
+    const hr = new Date().getHours();
+    const PM = this.state.pm; const TD = this.state.td;
+    // Work samples still needed (same rules as the tracker: greens at 80%+, baselines don't count, every objective too).
+    const todo = [];
+    let totalMore = 0;
+    if (PM) {
+      PM.KIDS.forEach((k) => {
+        const bf = (PM.BASE_FIRST || []).includes(k.id);
+        const kd = TD ? TD.KIDS.find((x) => x.id === k.id) : null; const iD = kd ? (TD.ov['meet|' + k.id] || kd.meeting || kd.due) : '';
+        k.goals.forEach(([area, total, needN, , , kind], gi) => {
+          if (kind === 'speech' || kind === 'ot') return;
+          const past = (((PM.PAST[k.id] || [])[gi]) || []).slice(bf ? 1 : 0);
+          const vals = Array.from({ length: 12 }, (_, i) => { const key = k.id + '|' + gi + '|' + i; if (key in PM.D) return PM.D[key]; return past[i] ? past[i][1] : null; }).filter((v) => v != null);
+          let more = Math.max(0, needN - vals.filter((v) => v >= 80).length);
+          const objL = [];
+          (((PM.OBJ || {})[k.id] || [])[gi] || []).forEach((o, j) => { if (((PM.OBJ_DONE || {})[k.id + '|' + gi] || []).includes(j)) return; const op = (((PM.OPAST || {})[k.id + '|' + gi] || [])[j] || []).slice(bf ? 1 : 0); const ov = Array.from({ length: 12 }, (_, i) => { const key = k.id + '|' + gi + '|o' + j + '|' + i; if (key in PM.D) return PM.D[key]; return op[i] ? op[i][1] : null; }).filter((v) => v != null); const m = Math.max(0, needN - ov.filter((v) => v >= 80).length); if (m) objL.push(o[0]); more = Math.max(more, m); });
+          if (more) { totalMore += more; todo.push({ kid: k.name, area, more, objL, d: dayN(iD) }); }
+        });
+      });
+    }
+    todo.sort((a, b) => ((a.d <= 30 ? 0 : 1) - (b.d <= 30 ? 0 : 1)) || (b.more - a.more) || (a.d - b.d));
+    // Coming up: IEP meetings + key dates.
+    const ev = [];
+    if (TD) TD.KIDS.forEach((k) => { const d = TD.ov['meet|' + k.id] || k.meeting; if (d) ev.push([d, (k.name || k.id) + '\u2019s IEP meeting', 'iep']); });
+    [['2026-10-27', 'Work samples done (your goal date)', 'pm'], ['2026-10-30', 'Progress reports due', 'pm'], ['2026-12-18', 'Q2 progress window starts (estimate)', 'pm'], ['2027-03-13', 'Possible sub days (Mar 13–16)', 'sub']].forEach((x) => ev.push(x));
+    const upcoming = ev.map(([d, t, k]) => ({ d, t, k, n: dayN(d) })).filter((x) => x.n >= 0).sort((a, b) => a.n - b.n).slice(0, 7).map((x) => {
+      const [y, m, dd] = x.d.split('-').map(Number);
+      return { title: x.t, date: new Date(y, m - 1, dd).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }), when: x.n === 0 ? 'Today' : x.n === 1 ? 'Tomorrow' : x.n + ' days',
+        chip: "font-family:'Outfit',sans-serif;font-size:11.5px;font-weight:800;text-align:center;border-radius:999px;padding:3px 0;white-space:nowrap;" + (x.n <= 7 ? 'background:#FDD43C;color:#2F3E2E' : x.k === 'iep' ? 'background:#EEF3EC;color:#2F3E2E' : 'background:#F3EAF8;color:#7A3E9D') };
+    });
+    // Search
+    const q = this.state.q.trim().toLowerCase();
+    let results = [];
+    if (q.length >= 2) {
+      const kids = (PM ? PM.KIDS : []).map((k) => ({ icon: '🧒', label: k.name, sub: k.grade + ' grade · goals: ' + k.goals.map((g) => g[0]).join(' · '), kind: 'Student', href: 'Student%20Card.dc.html?kid=' + k.id, hay: (k.name + ' ' + k.goals.map((g) => g[0]).join(' ')).toLowerCase() }));
+      const pages = PAGES.map((f) => { const label = f.replace(/\.dc\.html$/, '').replace(/^➡️ /, ''); return { icon: '📄', label, sub: KW[label] || '', kind: 'Page', href: encodeURIComponent(f), hay: (label + ' ' + (KW[label] || '')).toLowerCase() }; });
+      const words = q.split(/\s+/);
+      results = kids.concat(pages).map((r) => ({ ...r, score: words.every((w) => r.hay.includes(w)) ? (r.label.toLowerCase().startsWith(q) ? 3 : r.label.toLowerCase().includes(q) ? 2 : 1) : 0 })).filter((r) => r.score).sort((a, b) => b.score - a.score).slice(0, 10);
+    }
+    return {
+      hello: (hr < 12 ? 'Good morning' : hr < 17 ? 'Good afternoon' : 'Good evening') + ', Mrs. Howell',
+      dateLine: new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }).toUpperCase(),
+      q: this.state.q, setQ: (e) => this.setState({ q: e.target.value }),
+      results, hasResults: results.length > 0, noResults: q.length >= 2 && !results.length,
+      todo: todo.slice(0, 5).map((t, i) => ({ n: i + 1, kid: t.kid, area: t.area, why: 'needs ' + t.more + ' more' + (t.objL.length ? ' · obj ' + t.objL.join(', ') : '') + (t.d <= 30 ? ' · IEP in ' + t.d + ' days' : '') })),
+      pmLine: PM ? totalMore + ' more work samples needed across your caseload. Closest IEPs first.' : 'Loading…',
+      upcoming,
+      tiles: TILES.map(([icon, label, sub, f]) => ({ icon, label, sub, href: encodeURIComponent(f) })),
+    };
+  }
+}
+</script>
+</body>
+</html>

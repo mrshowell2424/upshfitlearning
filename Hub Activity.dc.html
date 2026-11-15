@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="og-concepts.js"></script>
+<script src="og-pack-data.js"></script>
+<script src="hub-activities.js"></script>
+<script src="hub-activities-2.js"></script>
+<script src="hub-activities-3.js"></script>
+<style>body{margin:0;background:#E7E1D4}a{color:#1B2A4A}a:hover{color:#E8572A}@page{size:letter portrait;margin:0.3in}@media print{body{background:#fff}[data-noprint]{display:none !important}[data-page]{box-shadow:none !important;margin:0 !important;break-after:page}}</style>
+</helmet>
+<div style="font-family:'Poppins',sans-serif;color:#1B2A4A;padding:20px 16px 60px;display:flex;flex-direction:column;align-items:center;gap:18px">
+  <div data-noprint="true" style="width:100%;max-width:7.9in;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+    <a href="{{ backHref }}" style="font-size:13px;font-weight:700;text-decoration:none;color:#1B2A4A">← Back to the hub</a>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+      <sc-if value="{{ usesPattern }}" hint-placeholder-val="{{ false }}">
+        <select onChange="{{ pickPattern }}" value="{{ patternId }}" style="font-family:Poppins,sans-serif;font-size:13px;font-weight:600;border:1.5px solid #C9BFAA;border-radius:10px;padding:7px 10px;background:#fff;max-width:260px">
+          <sc-for list="{{ patternOpts }}" as="o" hint-placeholder-count="6"><option value="{{ o.id }}">{{ o.label }}</option></sc-for>
+        </select>
+      </sc-if>
+      <button type="button" onClick="{{ doPrint }}" style="font-family:Poppins,sans-serif;font-size:14px;font-weight:800;cursor:pointer;border:none;border-radius:10px;padding:9px 16px;background:#E8572A;color:#fff;white-space:nowrap">🖨 Print</button>
+    </div>
+  </div>
+  <sc-if value="{{ missing }}" hint-placeholder-val="{{ false }}">
+    <div style="background:#fff;border-radius:14px;padding:20px;max-width:7.9in;font-size:14px">This activity is loading. If it doesn't show, go back and open it again.</div>
+  </sc-if>
+  <sc-for list="{{ pages }}" as="pg" hint-placeholder-count="1">
+    <div data-page="true" style="width:7.9in;min-height:10.3in;box-sizing:border-box;background:#fff;padding:0.35in 0.4in;box-shadow:0 4px 18px rgba(0,0,0,.12);display:flex;flex-direction:column;gap:14px">
+      <sc-for list="{{ pg.blocks }}" as="b" hint-placeholder-count="3">
+        <sc-if value="{{ b.isHead }}" hint-placeholder-val="{{ true }}">
+          <div style="border-bottom:3px solid #1B2A4A;padding-bottom:8px;display:flex;flex-direction:column;gap:2px">
+            <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><div style="font-size:10.5px;font-weight:800;letter-spacing:.16em;color:#E8572A">{{ b.kicker }}</div><div style="font-size:13px;font-weight:600;white-space:nowrap">Name ______________</div></div>
+            <div style="font-size:30px;font-weight:900;line-height:1.05">{{ b.title }}</div>
+            <div style="font-size:14px;color:#44403c;text-wrap:pretty">{{ b.sub }}</div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isSteps }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px">
+            <sc-for list="{{ b.items }}" as="s" hint-placeholder-count="4">
+              <div style="display:flex;gap:10px;align-items:flex-start;background:#F4F1EA;border-radius:12px;padding:9px 12px"><span style="flex:none;width:26px;height:26px;border-radius:50%;background:#1B2A4A;color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center">{{ s.n }}</span><span style="font-size:13.5px;line-height:1.4;font-weight:600">{{ s.t }}</span></div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isCards }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#57534e">✂ {{ b.label }}</div>
+            <div style="{{ b.grid }}">
+              <sc-for list="{{ b.items }}" as="c" hint-placeholder-count="9">
+                <div style="{{ c.box }}"><div style="{{ c.aStyle }}">{{ c.a }}</div><sc-if value="{{ c.hasB }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;line-height:1.35;font-weight:500;text-wrap:pretty">{{ c.b }}</div></sc-if></div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isBoxes }}" hint-placeholder-val="{{ false }}">
+          <div style="{{ b.grid }}">
+            <sc-for list="{{ b.items }}" as="x" hint-placeholder-count="4">
+              <div style="{{ x.box }}"><div style="font-size:12.5px;font-weight:800;line-height:1.3">{{ x.label }}</div></div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isVenn }}" hint-placeholder-val="{{ false }}">
+          <div style="position:relative;height:3.6in">
+            <div style="position:absolute;left:0;top:0;width:62%;height:100%;border:3px solid #1B2A4A;border-radius:50%;background:rgba(232,87,42,.06)"></div>
+            <div style="position:absolute;right:0;top:0;width:62%;height:100%;border:3px solid #1B2A4A;border-radius:50%;background:rgba(79,193,181,.08)"></div>
+            <div style="position:absolute;left:9%;top:10px;font-size:18px;font-weight:900">{{ b.left }}</div>
+            <div style="position:absolute;right:9%;top:10px;font-size:18px;font-weight:900;text-align:right">{{ b.right }}</div>
+            <div style="position:absolute;left:50%;top:10px;transform:translateX(-50%);font-size:12px;font-weight:800;color:#57534e;text-align:center;width:22%">{{ b.both }}</div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isStar }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1.6in 1.6in 1.6in;gap:10px;align-items:stretch">
+            <div></div><div style="border:2.5px dashed #1B2A4A;border-radius:14px;padding:8px;font-size:12px;font-weight:800">Point 1</div><div></div>
+            <div style="border:2.5px dashed #1B2A4A;border-radius:14px;padding:8px;font-size:12px;font-weight:800">Point 2</div>
+            <div style="border:4px solid #E8572A;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-size:16px;font-weight:900;padding:10px;background:#FFF1EA">{{ b.center }}</div>
+            <div style="border:2.5px dashed #1B2A4A;border-radius:14px;padding:8px;font-size:12px;font-weight:800">Point 3</div>
+            <div></div><div style="border:2.5px dashed #1B2A4A;border-radius:14px;padding:8px;font-size:12px;font-weight:800">Point 4</div><div></div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isBracket }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;height:4.6in">
+            <sc-for list="{{ b.cols }}" as="col" hint-placeholder-count="4">
+              <div style="display:flex;flex-direction:column;justify-content:space-around;gap:6px">
+                <div style="font-size:10.5px;font-weight:800;letter-spacing:.12em;color:#57534e;text-align:center">{{ col.name }}</div>
+                <sc-for list="{{ col.slots }}" as="s" hint-placeholder-count="8">
+                  <div style="{{ s.style }}">{{ s.t }}</div>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ b.isScore }}" hint-placeholder-val="{{ false }}">
+          <div style="border:2px solid #1B2A4A;border-radius:12px;overflow:hidden">
+            <div style="background:#1B2A4A;color:#fff;font-size:12px;font-weight:800;letter-spacing:.1em;padding:6px 12px">{{ b.label }}</div>
+            <sc-for list="{{ b.rows }}" as="r" hint-placeholder-count="4">
+              <div style="{{ r.style }}"><div style="font-size:13.5px;font-weight:600;padding:8px 12px">{{ r.t }}</div><sc-for list="{{ r.cells }}" as="cl" hint-placeholder-count="1"><div style="border-left:1.5px solid #D6CDBB;padding:8px 10px;font-size:11px;color:#a8a29e;font-weight:700">{{ cl }}</div></sc-for></div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </sc-for>
+    </div>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const DEFAULT_PATTERN = { g2: '1-05', g3: '2-05', g4: '1-08' };
+class Component extends DCLogic {
+  state = { ready: false, pat: null };
+  componentDidMount() {
+    const tick = () => { if (window.HUB_ACTS && window.HUB_ACTS._ctx && window.OG_CONCEPTS) this.setState({ ready: true }); else this.t = setTimeout(tick, 150); };
+    tick();
+  }
+  componentWillUnmount() { clearTimeout(this.t); }
+  renderVals() {
+    const q = new URLSearchParams(location.search);
+    const id = q.get('a') || 'emc2-g4-1';
+    const hub = id.split('-')[0];
+    const back = q.get('back');
+    const base = { backHref: back === 'plans' ? '%E2%9E%A1%EF%B8%8F%20PLANS.dc.html' : back === 'sb' ? 'SchoolBeat.dc.html' : 'Teacher%20Resource%20Hubs.dc.html?hub=' + (hub === 'sb' ? 'pz' : hub), doPrint: () => window.print(), usesPattern: false, patternOpts: [], patternId: '', pickPattern: () => {} };
+    const A = this.state.ready && window.HUB_ACTS[id];
+    if (!A) return { ...base, missing: true, pages: [] };
+    const packs = window.OG_PACKS || {};
+    const opts = (window.OG_CONCEPTS || []).filter((c) => c.pack && packs[c.id]);
+    const patId = this.state.pat || q.get('p') || DEFAULT_PATTERN[A.grade];
+    const concept = opts.find((c) => c.id === patId) || opts[0] || { id: '', name: '', words: [] };
+    const pk = packs[concept.id] || {};
+    const pool = [].concat(pk.speed || [], pk.read || [], concept.words || []);
+    const words = pool.filter((w, i) => pool.indexOf(w) === i);
+    while (words.length < 15 && words.length) words.push(words[words.length % Math.max(1, words.length)]);
+    const ctx = { ...window.HUB_ACTS._ctx, words, harder: pk.read2 || [], patternName: concept.name.toUpperCase() };
+    const card = (cols) => ({ display: 'grid', gridTemplateColumns: 'repeat(' + cols + ',minmax(0,1fr))', gap: 0, border: '1.5px dashed #57534e' });
+    const pages = A.pages(ctx).map((blocks) => ({ blocks: blocks.map((b) => {
+      const o = { isHead: b.t === 'head', isSteps: b.t === 'steps', isCards: b.t === 'cards', isBoxes: b.t === 'boxes', isVenn: b.t === 'venn', isBracket: b.t === 'bracket', isScore: b.t === 'score', isStar: b.t === 'star', ...b };
+      if (b.t === 'steps') o.items = b.items.map((t, i) => ({ n: i + 1, t }));
+      if (b.t === 'cards') { o.grid = card(b.cols); o.items = b.items.map((c) => ({ a: c.a, b: c.b || '', hasB: !!c.b,
+        box: { borderRight: '1.5px dashed #57534e', borderBottom: '1.5px dashed #57534e', padding: c.big ? '14px 10px' : '10px 10px', minHeight: c.b ? 78 : 56, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: c.b && !c.big ? 'flex-start' : 'center', textAlign: c.b && !c.big ? 'left' : 'center', gap: 4 },
+        aStyle: { fontSize: c.big ? 34 : c.b ? 14 : (b.cols >= 5 ? 20 : 18), fontWeight: 800, lineHeight: 1.15, width: '100%', whiteSpace: c.b && !c.big ? 'nowrap' : 'normal' } })); }
+      if (b.t === 'boxes') { o.grid = { display: 'grid', gridTemplateColumns: 'repeat(' + b.cols + ',minmax(0,1fr))', gap: 10, flex: 1 };
+        o.items = b.items.map((x) => ({ label: x.label, box: { border: '2px solid #1B2A4A', borderRadius: 14, padding: '9px 12px', minHeight: x.h } })); }
+      if (b.t === 'bracket') { const sz = [8, 4, 2, 1], nm = ['ROUND 1', 'ROUND 2', 'FINAL', 'CHAMPION'];
+        o.cols = sz.map((n, ci) => ({ name: nm[ci], slots: Array.from({ length: n }, (_, k) => ({ t: ci === 0 ? b.seeds[k] : '',
+          style: { border: '2px solid ' + (ci === 3 ? '#E8572A' : '#1B2A4A'), borderRadius: 10, minHeight: ci === 3 ? 60 : 34, padding: '6px 8px', fontSize: 13, fontWeight: 700, background: ci === 3 ? '#FFF1EA' : '#fff', display: 'flex', alignItems: 'center' } })) })); }
+      if (b.t === 'score') o.rows = b.rows.map((t, i) => ({ t, cells: b.cols, style: { display: 'grid', gridTemplateColumns: 'minmax(0,1fr) ' + b.cols.map(() => '90px').join(' '), borderTop: i ? '1.5px solid #D6CDBB' : 'none' } }));
+      return o; }) }));
+    return { ...base, missing: false, pages,
+      usesPattern: !!A.pattern, patternId: concept.id,
+      patternOpts: opts.map((c) => ({ id: c.id, label: c.id + ' · ' + c.name })),
+      pickPattern: (e) => this.setState({ pat: e.target.value }) };
+  }
+}
+</script>
+</body>
+</html>

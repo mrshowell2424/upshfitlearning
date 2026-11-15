@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FCFBF7; }
+  a { color: #1F6F6B; }
+  a:hover { color: #134e4a; }
+</style>
+<style>@media print { [data-back-plans] { display: none !important; } }</style>
+</helmet>
+<sc-if value="{{ standalone }}" hint-placeholder-val="{{ false }}">
+<a data-back-plans="true" href="%E2%9E%A1%EF%B8%8F%20PLANS.dc.html" style="position:fixed;left:16px;bottom:16px;z-index:60;font-family:Outfit,sans-serif;font-size:14px;font-weight:700;text-decoration:none;background:#134e4a;color:#fff;padding:10px 16px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.18)">← Back to Plans</a>
+</sc-if>
+
+
+<div style="font-family:'Andika',sans-serif;color:#1c1917;padding:24px 24px 48px;max-width:1240px;margin:0 auto">
+
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;border-bottom:3px solid #1F6F6B;padding-bottom:14px">
+    <div style="min-width:0">
+      <div style="font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:.26em;color:#B7791F">STUDIES WEEKLY · 5-MINUTE REVIEW</div>
+      <div style="font-family:'Outfit',sans-serif;font-size:40px;font-weight:800;line-height:1.05;color:#134e4a;letter-spacing:-0.02em;margin-top:6px">Vocabulary Hub</div>
+    </div>
+    <div style="display:flex;gap:4px;background:#fff;border:1px solid #e7e5e4;border-radius:8px;padding:4px">
+      <sc-for list="{{ subjects }}" as="s" hint-placeholder-count="2">
+        <button type="button" onClick="{{ s.pick }}" style="{{ s.style }}">{{ s.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:16px">
+    <span style="font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;color:#a8a29e;margin-right:4px">WEEK</span>
+    <sc-for list="{{ weeks }}" as="w" hint-placeholder-count="12">
+      <button type="button" onClick="{{ w.pick }}" style="{{ w.style }}">{{ w.label }}</button>
+    </sc-for>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px;padding:10px 12px;background:#fff;border:1px solid #e7e5e4;border-radius:10px">
+    <sc-if value="{{ hasGameLinks }}" hint-placeholder-val="{{ true }}">
+      <span style="font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;color:#134e4a;margin-right:4px">{{ gameLinksTitle }}</span>
+      <sc-for list="{{ gameLinks }}" as="g" hint-placeholder-count="3">
+        <a href="{{ g.href }}" target="_blank" rel="noopener" style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;color:#134e4a;background:#E6F0EF;border:1.5px solid #1F6F6B;border-radius:999px;padding:5px 14px;text-decoration:none">{{ g.label }}</a>
+      </sc-for>
+    </sc-if>
+    <a href="{{ sheetHref }}" target="_blank" rel="noopener" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;color:#B7791F;margin-left:auto;text-decoration:underline">All weeks sheet</a>
+  </div>
+
+  <div style="display:grid;grid-template-columns:minmax(0,250px) minmax(0,1fr);gap:20px;margin-top:20px;align-items:start">
+
+    <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+      <div style="background:#134e4a;color:#fff;border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#9FC9C5">TIMER</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:52px;font-weight:800;line-height:1;letter-spacing:-0.02em">{{ clock }}</div>
+        <div style="height:8px;background:rgba(255,255,255,.18);border-radius:99px;overflow:hidden">
+          <div style="height:100%;width:{{ timePct }};background:#E8A33D;border-radius:99px"></div>
+        </div>
+        <div style="display:flex;gap:6px">
+          <button type="button" onClick="{{ toggleRun }}" style="flex:1;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;border:none;background:#E8A33D;color:#1c1917;border-radius:6px;padding:9px 0;cursor:pointer">{{ runLabel }}</button>
+          <button type="button" onClick="{{ resetRun }}" style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;border:1.5px solid rgba(255,255,255,.4);background:transparent;color:#fff;border-radius:6px;padding:9px 12px;cursor:pointer">Reset</button>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+          <button type="button" onClick="{{ s.pick }}" style="{{ s.style }}">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px">
+              <span style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:800">{{ s.n }}. {{ s.label }}</span>
+              <span style="font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;opacity:.75">{{ s.time }}</span>
+            </div>
+            <div style="font-size:13px;margin-top:3px;opacity:.85;text-align:left;text-wrap:pretty">{{ s.desc }}</div>
+          </button>
+        </sc-for>
+      </div>
+
+      <div style="background:#fff;border:1px solid #e7e5e4;border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px">
+        <label style="font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;color:#a8a29e">QUIZ ON</label>
+        <input type="date" value="{{ quizDate }}" onChange="{{ setQuizDate }}" style="font-family:'Andika',sans-serif;font-size:15px;padding:6px 8px;border:1.5px solid #d6d3d1;border-radius:5px;background:#FCFBF7;color:#1c1917" />
+        <div style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:#B7791F">{{ quizAway }}</div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border:1px solid #e7e5e4;border-radius:12px;min-height:520px;display:flex;flex-direction:column;min-width:0;overflow:hidden">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:10px;padding:16px 22px;border-bottom:1px solid #f0efed;background:#F2F8F7">
+        <div style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;color:#134e4a">{{ stageTitle }}</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;color:#1F6F6B">{{ stageSub }}</div>
+      </div>
+
+      <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:40px;font-family:'Outfit',sans-serif;font-size:18px;font-weight:600;color:#a8a29e;text-align:center">This study guide has no words yet.</div>
+      </sc-if>
+
+      <sc-if value="{{ isWords }}" hint-placeholder-val="{{ true }}">
+        <div style="padding:20px 22px 24px;display:flex;flex-direction:column;gap:16px">
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px">
+            <sc-for list="{{ words }}" as="w" hint-placeholder-count="5">
+              <div style="border:1.5px solid #e7e5e4;border-radius:10px;padding:14px 16px;background:#FCFBF7;display:flex;flex-direction:column;gap:6px;min-width:0">
+                <div style="font-family:'Outfit',sans-serif;font-size:26px;font-weight:800;color:#134e4a;line-height:1.1;overflow-wrap:anywhere">{{ w.t }}</div>
+                <div style="font-size:18px;line-height:1.4;color:#44403c;text-wrap:pretty">{{ w.d }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <sc-if value="{{ hasFacts }}" hint-placeholder-val="{{ false }}">
+            <div style="border:2px dashed #E8C27A;border-radius:10px;padding:12px 16px;background:#FFFBF2;display:flex;flex-direction:column;gap:6px">
+              <div style="font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;color:#92400e">ALSO KNOW</div>
+              <sc-for list="{{ facts }}" as="f" hint-placeholder-count="2">
+                <div style="font-size:18px;line-height:1.4;color:#1c1917">{{ f }}</div>
+              </sc-for>
+            </div>
+          </sc-if>
+          <div style="font-size:14px;color:#78716c">Read each word together, then have students say it to a partner.</div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isGame }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;gap:6px;padding:14px 22px 0;flex-wrap:wrap">
+          <sc-for list="{{ games }}" as="g" hint-placeholder-count="2">
+            <button type="button" onClick="{{ g.pick }}" style="{{ g.style }}">{{ g.label }}</button>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ isMystery }}" hint-placeholder-val="{{ true }}">
+          <div style="flex:1;display:flex;flex-direction:column;gap:20px;padding:18px 26px 24px">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+              <span style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;letter-spacing:.16em;color:#a8a29e">MYSTERY WORD {{ myCount }}</span>
+              <span style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:800;color:#fff;background:#B7791F;border-radius:6px;padding:5px 12px">Worth {{ myPoints }} pts · Class total {{ myTotal }}</span>
+            </div>
+            <div style="font-size:30px;line-height:1.35;color:#1c1917;text-wrap:pretty">{{ myDef }}</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:10px 0">
+              <sc-for list="{{ myTiles }}" as="t" hint-placeholder-count="6">
+                <div style="{{ t.style }}">{{ t.ch }}</div>
+              </sc-for>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:auto">
+              <button type="button" onClick="{{ revealLetter }}" style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;border:1.5px solid #B7791F;background:#fff;color:#92400e;border-radius:6px;padding:10px 16px;cursor:pointer">Give a letter (−1)</button>
+              <button type="button" onClick="{{ gotIt }}" style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;border:none;background:#1F6F6B;color:#fff;border-radius:6px;padding:10px 18px;cursor:pointer">{{ gotLabel }}</button>
+              <button type="button" onClick="{{ nextMystery }}" style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;border:1.5px solid #d6d3d1;background:#fff;color:#57534e;border-radius:6px;padding:10px 16px;cursor:pointer">Next word ›</button>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isMatch }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;display:flex;flex-direction:column;gap:14px;padding:18px 22px 24px">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+              <span style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;color:#57534e">Tap a word, then its meaning.</span>
+              <span style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:800;color:#fff;background:#1F6F6B;border-radius:6px;padding:5px 12px">{{ matchLabel }}</span>
+            </div>
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:10px">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <sc-for list="{{ mWords }}" as="c" hint-placeholder-count="5">
+                  <button type="button" onClick="{{ c.pick }}" style="{{ c.style }}">{{ c.t }}</button>
+                </sc-for>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <sc-for list="{{ mDefs }}" as="c" hint-placeholder-count="5">
+                  <button type="button" onClick="{{ c.pick }}" style="{{ c.style }}">{{ c.t }}</button>
+                </sc-for>
+              </div>
+            </div>
+            <sc-if value="{{ matchDone }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;background:#F2F8F7;border-radius:10px;padding:14px">
+                <span style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;color:#134e4a">{{ matchDoneLabel }}</span>
+                <button type="button" onClick="{{ matchAgain }}" style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;border:none;background:#1F6F6B;color:#fff;border-radius:6px;padding:8px 14px;cursor:pointer">Beat it again</button>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </sc-if>
+
+      <sc-if value="{{ isCheck }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;display:flex;flex-direction:column;gap:18px;padding:24px 26px">
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
+            <sc-for list="{{ teams }}" as="tm" hint-placeholder-count="2">
+              <button type="button" onClick="{{ tm.pick }}" style="{{ tm.style }}">
+                <span style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:700">{{ tm.label }}</span>
+                <span style="font-family:'Outfit',sans-serif;font-size:36px;font-weight:800;line-height:1">{{ tm.pts }}</span>
+              </button>
+            </sc-for>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+            <span style="{{ qTagStyle }}">{{ qTag }}</span>
+            <span style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:#57534e">{{ qCount }} · {{ turnLabel }}</span>
+          </div>
+          <div style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;letter-spacing:.16em;color:#a8a29e">WHICH WORD MEANS…</div>
+          <div style="font-size:30px;line-height:1.35;color:#1c1917;text-wrap:pretty">{{ qDef }}</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px">
+            <sc-for list="{{ qOpts }}" as="o" hint-placeholder-count="3">
+              <button type="button" onClick="{{ o.pick }}" style="{{ o.style }}">{{ o.t }}</button>
+            </sc-for>
+          </div>
+          <sc-if value="{{ winner }}" hint-placeholder-val="{{ false }}">
+            <div style="text-align:center;font-family:'Outfit',sans-serif;font-size:28px;font-weight:800;color:#fff;background:#B7791F;border-radius:10px;padding:14px">{{ winner }}</div>
+          </sc-if>
+          <div style="display:flex;justify-content:flex-end;margin-top:auto">
+            <button type="button" onClick="{{ nextQ }}" style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;border:none;background:#1F6F6B;color:#fff;border-radius:6px;padding:10px 18px;cursor:pointer">{{ nextQLabel }}</button>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const SS = [
+  ['1', [['economist','someone who studies money and finance'],['geographer','a person who studies people and how they live and work in their environment'],['historian','a person who studies the past'],['political scientist','a person who studies how a government works'],['social scientist','someone who studies all parts of a person']]],
+  ['2', [['calendar','something that shows days of the week and months of the year'],['cause','why something happened'],['chronological','the order in which events happened'],['critical thinking','a clear and organized way of making connections'],['effect','the result of what happened'],['timeline','a list of events in chronological order']]],
+  ['3', [['analyze','to study something carefully'],['historian','a person who studies history by using evidence and asking questions'],['perspective','a way of seeing things'],['primary sources','sources created by people who saw or experienced something themselves'],['secondary sources','sources made by people who did not see or experience events themselves']]],
+  ['5', [['convenient','something that is close or easy for people'],['ghost town','an abandoned town'],['harbor','a body of water that is protected from rough seas by land or strong walls'],['harvest','the process of gathering a crop or resource in some manner'],['infected','to catch, or be affected by, something that causes a disease']]],
+  ['7', [['compass rose','a symbol that shows the cardinal directions (north, south, east, west)'],['legend/key','explains what the symbols and colors on a map mean'],['maps','models of places around the world'],['physical map','a map that shows where natural features are located'],['political map','a map that shows borders between places'],['scale','shows distance on a map'],['title','tells us what the map is about']]],
+  ['12', [['adapt','people change how they live based on their environment'],['modify','people change their environment to meet their needs'],['depend on','something or someone you need or rely on to meet your needs'],['environment','everything around us, living and non-living'],['maps','models of places around the world']]],
+  ['13', [['transportation','how a person or a thing gets from one place to another'],['innovators','people who create or invent new things'],['possessions','things people own'],['rails','lines of metal bars laid on the ground to form a railroad track'],['canoes','narrow boats usually moved using a paddle or paddles'],['ferry','a flat platform that carries cars and wagons across the river when there is no bridge']]],
+  ['14', [['communication','how people talk or share information with each other'],['internet','an online platform on a computer'],['satellite','a machine that sends signals and images from space all around the world'],['telegraph','system that sends Morse code over long distances through wires'],['telephone','a communication machine that allows people to talk to each other without being in the same place'],['typewriter','the first writing machine']]],
+  ['15', [['architecture','the style and design of a building'],['culture','the beliefs, traditions, and celebrations of a group of people'],['religion','a system of beliefs shared by a group of people'],['communication','how people talk or share information with each other'],['transportation','how a person or a thing gets from one place to another']]],
+  ['18/20', [['budget','a plan for how to spend money'],['need','something that you have to have every day'],['scarce','something that is not easily available'],['want','something you would like to have but can live without'],['culture','the beliefs, traditions, and celebrations of a group of people']]],
+  ['22', [['expenses','the cost to run a business'],['entrepreneur','someone who comes up with an idea and then uses the idea to start a business'],['income','the money businesses earn'],['loss','when the expenses of a business cost more than the income the business earns'],['profit','the money left over after a business pays all of its expenses']]],
+  ['24', [['demand','how many people want or need a good'],['scarcity','not having enough of something'],['supply','how much a good there is to buy'],['surplus','when there is more of something than people need or want'],['need','something that you have to have every day'],['want','something you would like to have but can live without']]],
+  ['26', [['allocate','to set money aside for something'],['budget','a plan on how to use your money'],['owe','needing to pay back for something already received'],['need','something that you have to have every day'],['want','something you would like to have but can live without']]],
+  ['27', [['consequence','something that happens after making a choice and taking action'],['Constitution','the law of the United States'],['laws','rules that are written and approved by people in authority'],['rules','instructions that tell people what they can or can’t do'],['authority figures','people who create and enforce rules and laws']]],
+  ['28', [['common good','working to create laws and rules that benefit everyone'],['consent of the governed','people agree to abide by the decisions of their representatives'],['enforce','make sure people follow the laws'],['government','a group of citizens who lead a community'],['Constitution','the law of the United States']]],
+  ['29/30', [['rights','freedoms that every person has as a citizen of a community, state, or country'],['freedom of religion','the right to worship in your own way'],['freedom of speech','the right to express your thoughts and opinions'],['freedom of the press','protects people who report the news'],['right to assemble','the right for people to meet together on public property']]],
+  ['31', [['compromise','when we change our thinking about a solution and everyone gives up something to create a solution'],['consensus','when most people in a group have the same opinion or agree to the same solution'],['conflict','disagreement between individuals or groups'],['evaluate','to see how well something worked'],['rights','freedoms that every person has as a citizen of a community, state, or country']]],
+  ['32', [['consent','to agree to something'],['General Assembly','Ohio’s House of Representatives and Senate together'],['executive branch','the branch of government that administers Ohio’s laws'],['judicial branch','the branch of government that interprets and enforces Ohio’s laws'],['legislative branch','the branch of government that makes or changes Ohio’s laws']]],
+];
+const SCI = [
+  ['7', [['fossil fuel','the most common source of nonrenewable energy; e.g., coal, petroleum, and natural gas'],['fracking','a process where high-pressure water splits apart underground rocks, releasing trapped natural gas'],['natural gas','a fossil fuel found underground that is mostly made up of methane'],['nonrenewable','describing a resource with a limited supply that takes a long time to regenerate'],['nuclear energy','a type of nonrenewable energy that is not a fossil fuel']]],
+  ['8', [['hydroelectric power','a type of renewable power that is generated when water from a reservoir is released through a dam and spins a turbine connected to a generator that produces electricity'],['renewable resource','a resource that is widely available and takes a relatively small amount of time to regenerate, if any time at all'],['solar energy','a type of renewable energy that is created when sunlight is converted into electricity'],['windmill','a device that uses wind to create mechanical energy to perform tasks like milling grain or pumping water'],['wind turbine','a device that converts wind energy into electricity']]],
+  ['10', [['extinct','no longer exists'],['essential resources','water, soil, air, plants, and animals'],['pollution','harmful substances that negatively affects us.']], ['All organisms need: food, air, and water to survive','The main goal of all organisms on Earth is to survive']],
+  ['11', [['deforestation','the process of forests being destroyed'],['environment','the natural world where you live'],['litter','trash outside of a garbage can'],['pollution','something harmful that is introduced to the environment'],['wetland','area of land covered in water']]],
+  ['15', [['matter','anything with volume and mass. Everything has matter.'],['volume','measurement of how much space something takes up. A graduated cylinder measures volume.'],['mass','measurement of how much matter is in an object. A pan balance and scale measure mass.']]],
+  ['16', [['particle','a very small piece of something. All matter is made of particles'],['solid','particles packed closely together'],['liquid','particles moving slowly'],['gas','particles bouncing around']]],
+  ['17', [['conductor','transfers heat between objects'],['generator','produces heat'],['insulator','stops heat transfer']], ['A solid can change to a liquid by adding heat','The 3 states of matter are solid, liquid, and gas.']],
+  ['18/24', [['electricity','energy that moves through wires. The energy created when electrons flow from place to place'],['light','energy that moves in waves. It is the fastest thing known.'],['sound','energy created by vibrations'],['electron','a small particle that has a negative charge and travels around the nucleus of an atom']], ['It is hard to see in a dark room because there is no light to reflect off of objects.']],
+  ['19/20', [['kinetic energy','the energy of an object in motion'],['mechanical energy','a mix of potential and kinetic energy'],['potential energy','the type of energy an object stores while it is still'],['velocity','the scientific word for speed in a specific direction']]],
+  ['26', [['DNA','Determines an organism’s traits'],['offspring','a person’s child']], ['Gregor Mendel was Father of Genetics','Siblings can look different from each other and have some similarities']],
+  ['28/30', [['apex predator','the animal at the top of the food chain'],['annotate','take notes while reading'],['hypothesis','what you believe will happen in your investigation'],['data','Information collected during an investigation']]],
+  ['31', [['organism','living thing'],['life-span','the length of an organism’s life'],['decomposition','when an organism like earthworms break down a dead animal or waste and return those nutrients to the earth'],['observe','to look at closely']], ['4 stages to a life cycle in order: birth, growth, reproduction, death']],
+];
+const DATA = { ss: SS, sci: SCI };
+const STEPS = [
+  ['words', 'Read the words', '1:00', 60, 'Say each word and meaning together.'],
+  ['game', 'Word game', '2:00', 120, 'Mystery Word or Match-Up. Rotates each week.'],
+  ['check', 'Team showdown', '2:00', 120, 'Two teams take turns. Includes 2 words from past weeks.'],
+];
+const TOTAL = 300;
+const KEY = 'vocabhub.v1';
+const START = new Date(2026, 8, 8);
+const rng = seed => () => { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; };
+const hash = s => { let h = 7; for (const c of s) h = (h * 31 + c.charCodeAt(0)) & 0x7fffffff; return h; };
+const shuffle = (a, r) => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const wkNum = w => parseInt(w, 10);
+
+// Science runs ahead of the calendar: week 15 during the week of Oct 5, 2026.
+const SCI_AHEAD = 10;
+function defaultWeek(list, ahead) {
+  const now = new Date();
+  const mon = new Date(START.getFullYear(), START.getMonth(), START.getDate() - ((START.getDay() + 6) % 7));
+  const cur = Math.floor((now - mon) / (7 * 864e5)) + 1 + (ahead || 0);
+  let pick = list[0][0];
+  for (const [w] of list) if (wkNum(w) <= cur) pick = w;
+  return pick;
+}
+
+class Component extends DCLogic {
+  state = { subj: 'ss', week: { ss: defaultWeek(SS), sci: defaultWeek(SCI, SCI_AHEAD) }, step: 'words', card: 0, flipped: false, defFirst: false,
+    q: 0, answers: {}, running: false, elapsed: 0, dates: {},
+    game: null, my: 0, myRev: [], myShown: false, myTotal: 0, mSel: null, mDone: [], mWrong: null, mMiss: 0, mRound: 0, team: {}, turn0: 0 };
+  gameReset() { return { my: 0, myRev: [], myShown: false, myTotal: 0, mSel: null, mDone: [], mWrong: null, mMiss: 0, team: {}, turn0: 0 }; }
+  componentDidMount() {
+    try { const s = JSON.parse(localStorage.getItem(KEY) || '{}'); if (s.dates) this.setState({ dates: s.dates }); if (s.subj) this.setState({ subj: s.subj }); } catch (e) {}
+    this._t = setInterval(() => {
+      if (!this.state.running) return;
+      const elapsed = Math.min(TOTAL, this.state.elapsed + 0.25);
+      let acc = 0, step = this.state.step;
+      if (this.state.autoStep) for (const s of STEPS) { if (elapsed < acc + s[3]) { step = s[0]; break; } acc += s[3]; }
+      this.setState({ elapsed, running: elapsed < TOTAL, step });
+    }, 250);
+  }
+  componentWillUnmount() { clearInterval(this._t); }
+  persist() { localStorage.setItem(KEY, JSON.stringify({ dates: this.state.dates, subj: this.state.subj })); }
+  resetReview(extra) { this.setState({ card: 0, flipped: false, q: 0, answers: {}, elapsed: 0, running: false, step: 'words', game: null, ...this.gameReset(), ...extra }); }
+  pickMatch(side, i, pairs) {
+    const { mSel, mDone } = this.state;
+    if (mDone.includes(i)) return;
+    if (!mSel || mSel.side === side) { this.setState({ mSel: { side, i }, mWrong: null }); return; }
+    if (mSel.i === i) this.setState({ mDone: [...mDone, i], mSel: null, mWrong: null });
+    else { this.setState({ mWrong: { side, i }, mSel: null, mMiss: this.state.mMiss + 1 }); setTimeout(() => this.setState({ mWrong: null }), 600); }
+  }
+  renderVals() {
+    const __base = this.__rv();
+    const SW = [
+      [['1','2'], [['Wayground','https://wayground.com/admin/assessment/6aac1e65afb27ce79be0ca43?source=lesson_share'],['Gimkit','https://www.gimkit.com/view/6aafb35208e885685ef564c7'],['Blooket','https://dashboard.blooket.com/set/6aafb3adf19795742e8e6d2d'],['Brisk podcast 1','https://app.briskteaching.com/student_podcast/dbtjaafvfb'],['Brisk podcast 2','https://app.briskteaching.com/student_podcast/fm9vs93zcb']]],
+      [['3'], [['Wayground','https://wayground.com/admin/assessment/6aad7b22fa5c725d54bc0069?source=lesson_share'],['Gimkit','https://www.gimkit.com/view/6aafb04308e885685ef00792'],['Blooket','https://dashboard.blooket.com/set/6aaea28396c99e9eefb7e092']]],
+      [['5'], [['Wayground','https://wayground.com/admin/assessment/6ab54e1234f29c68bc56f4bc?source=lesson_share'],['Blooket','https://dashboard.blooket.com/set/6aba5ebd542df00ce26aebad']]]
+    ];
+    const wk = String(this.state.week[this.state.subj]);
+    const row = this.state.subj === 'ss' ? SW.find((r) => r[0].includes(wk)) : null;
+    const gameLinks = row ? row[1].map(([label, href]) => ({ label, href })) : [];
+    return { ...__base, standalone: !this.props.embedded, gameLinks, hasGameLinks: gameLinks.length > 0,
+      gameLinksTitle: 'Studies Weekly games · Week ' + (row ? row[0].join(' + ') : wk),
+      sheetHref: 'https://docs.google.com/spreadsheets/d/1sR8zyV8TGLT4SFhGPqq6VHV2H2aXirAzBOMDRrT2N24/edit' };
+  }
+  __rv() {
+    const { subj, step, card, flipped, defFirst, q, answers, running, elapsed, dates } = this.state;
+    const list = DATA[subj];
+    const week = this.state.week[subj];
+    const entry = list.find(e => e[0] === week) || list[0];
+    const terms = entry[1];
+    const facts = entry[2] || [];
+    const r = rng(hash(subj + week));
+
+    const btn = on => ({ fontFamily: 'Outfit,sans-serif', fontSize: 14, fontWeight: 700, border: 'none', borderRadius: 5, padding: '7px 14px', cursor: 'pointer', whiteSpace: 'nowrap', background: on ? '#1F6F6B' : 'transparent', color: on ? '#fff' : '#57534e' });
+    const chip = on => ({ fontFamily: 'Outfit,sans-serif', fontSize: 13, fontWeight: 700, borderRadius: 999, padding: '5px 11px', cursor: 'pointer', whiteSpace: 'nowrap', border: `1.5px solid ${on ? '#1F6F6B' : '#d6d3d1'}`, background: on ? '#1F6F6B' : '#fff', color: on ? '#fff' : '#57534e' });
+
+    // flash
+    const deck = shuffle(terms, rng(hash(subj + week + 'f')));
+    const ci = ((card % deck.length) + deck.length) % deck.length;
+    const c = deck[ci] || ['', ''];
+    const showDef = defFirst ? !flipped : flipped;
+
+    // check
+    const idx = list.indexOf(entry);
+    const past = list.slice(0, idx).flatMap(e => e[1].map(t => ({ t, wk: e[0] })));
+    const thisSet = new Set(terms.map(t => t[0].toLowerCase()));
+    const pastPool = shuffle(past.filter(p => !thisSet.has(p.t[0].toLowerCase())), rng(hash(subj + week + 'p')));
+    const seen = new Set(); const spiral = [];
+    for (const p of pastPool) { const k = p.t[0].toLowerCase(); if (!seen.has(k)) { seen.add(k); spiral.push(p); } if (spiral.length === 2) break; }
+    const qs = [...shuffle(terms, rng(hash(subj + week + 'q'))).slice(0, 4).map(t => ({ t, wk: null })), ...spiral];
+    const allTerms = [...new Set(list.flatMap(e => e[1].map(t => t[0])))];
+    const qi = Math.min(q, qs.length - 1);
+    const cur = qs[qi];
+    const qr = rng(hash(subj + week + 'o' + qi));
+    const near = shuffle(terms.map(t => t[0]).filter(t => t.toLowerCase() !== cur.t[0].toLowerCase()), qr);
+    const far = shuffle(allTerms.filter(t => t.toLowerCase() !== cur.t[0].toLowerCase() && !near.includes(t)), qr);
+    const opts = shuffle([cur.t[0], ...[...near, ...far].slice(0, 2)], qr);
+    const picked = answers[qi];
+    const nRight = Object.entries(answers).filter(([i, a]) => qs[i] && a === qs[i].t[0]).length;
+    const nAns = Object.keys(answers).length;
+
+    const left = Math.max(0, TOTAL - elapsed);
+    const mm = Math.floor(Math.ceil(left) / 60), ss = Math.ceil(left) % 60;
+
+    const qd = dates[subj + week] || '';
+    let quizAway = 'Add the date from the study guide.';
+    if (qd) { const [y, m, d] = qd.split('-').map(Number); const n = Math.round((new Date(y, m - 1, d) - new Date(new Date().toDateString())) / 864e5); quizAway = n === 0 ? 'Quiz is today' : n === 1 ? 'Quiz is tomorrow' : n > 0 ? `Quiz in ${n} days` : 'Quiz is done'; }
+
+    const stepObj = STEPS.find(s => s[0] === step);
+    const empty = !terms.length;
+
+    // games
+    const st = this.state;
+    const game = st.game || (idx % 2 ? 'match' : 'mystery');
+    const tab = on => ({ fontFamily: 'Outfit,sans-serif', fontSize: 14, fontWeight: 700, borderRadius: 999, padding: '6px 14px', cursor: 'pointer', border: `1.5px solid ${on ? '#B7791F' : '#d6d3d1'}`, background: on ? '#B7791F' : '#fff', color: on ? '#fff' : '#57534e' });
+    const myDeck = deck;
+    const mi = st.my % Math.max(1, myDeck.length);
+    const mw = myDeck[mi] || ['', ''];
+    const letters = [...mw[0]];
+    const letterIdx = letters.map((ch, i) => /[a-z]/i.test(ch) ? i : -1).filter(i => i >= 0);
+    const myPoints = Math.max(1, 5 - st.myRev.length);
+    const myTiles = letters.map((ch, i) => {
+      const isL = /[a-z]/i.test(ch);
+      const open = st.myShown || st.myRev.includes(i) || !isL;
+      if (ch === ' ') return { ch: '', style: { width: 18 } };
+      return { ch: open ? ch.toUpperCase() : '', style: { width: 46, height: 58, borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Outfit,sans-serif', fontSize: 32, fontWeight: 800,
+        background: open && isL ? (st.myShown && !st.myRev.includes(i) ? '#1F6F6B' : '#FDF0DA') : isL ? '#fff' : 'transparent', color: st.myShown && !st.myRev.includes(i) ? '#fff' : '#1c1917',
+        border: isL ? `2.5px solid ${open ? 'transparent' : '#134e4a'}` : 'none', borderBottomWidth: isL ? 4 : 0 } };
+    });
+    const pairs = shuffle(terms, rng(hash(subj + week + 'm' + st.mRound))).slice(0, 5);
+    const defOrder = shuffle(pairs.map((_, i) => i), rng(hash(subj + week + 'd' + st.mRound)));
+    const mCard = (side, i, text) => {
+      const done = st.mDone.includes(i), sel = st.mSel && st.mSel.side === side && st.mSel.i === i, wrong = st.mWrong && st.mWrong.side === side && st.mWrong.i === i;
+      const isW = side === 'w';
+      return { t: text, pick: () => this.pickMatch(side, i, pairs),
+        style: { fontFamily: isW ? 'Outfit,sans-serif' : 'Andika,sans-serif', fontSize: isW ? 20 : 15, fontWeight: isW ? 800 : 400, lineHeight: 1.3, textAlign: 'left', borderRadius: 10, padding: isW ? '14px 14px' : '10px 14px', minHeight: 58, cursor: done ? 'default' : 'pointer',
+          border: `2.5px solid ${wrong ? '#B45309' : sel ? '#B7791F' : done ? '#9FC9C5' : '#e7e5e4'}`,
+          background: wrong ? '#FDE7D6' : sel ? '#FDF0DA' : done ? '#E6F1F0' : '#FCFBF7', color: done ? '#7aa9a5' : '#1c1917',
+          textDecoration: done ? 'line-through' : 'none', transform: sel ? 'scale(1.02)' : 'none', transition: 'all .15s' } };
+    };
+    const matchDone = pairs.length > 0 && st.mDone.length === pairs.length;
+
+    // teams
+    const turnTeam = (st.turn0 + qi) % 2;
+    const teamNames = ['Team 1', 'Team 2'];
+    const pts = [st.team[0] || 0, st.team[1] || 0];
+    const lastQ = qi === qs.length - 1 && picked !== undefined;
+    const pickAnswer = t => {
+      if (picked !== undefined) return;
+      const right = t === cur.t[0];
+      this.setState({ answers: { ...answers, [qi]: t }, team: right ? { ...st.team, [turnTeam]: (st.team[turnTeam] || 0) + 1 } : st.team });
+    };
+
+    return {
+      isGame: !empty && step === 'game', isMystery: game === 'mystery', isMatch: game === 'match',
+      games: [['mystery', 'Mystery Word'], ['match', 'Match-Up']].map(([k, label]) => ({ label, style: tab(game === k), pick: () => this.setState({ game: k }) })),
+      myCount: `${mi + 1} of ${myDeck.length}`, myDef: mw[1], myTiles, myPoints, myTotal: st.myTotal,
+      revealLetter: () => { const hidden = letterIdx.filter(i => !st.myRev.includes(i)); if (st.myShown || hidden.length <= 1) return; this.setState({ myRev: [...st.myRev, hidden[Math.floor(Math.random() * hidden.length)]] }); },
+      gotIt: () => { if (st.myShown) return; this.setState({ myShown: true, myTotal: st.myTotal + myPoints }); },
+      gotLabel: st.myShown ? `+${myPoints} added` : 'Class got it!',
+      nextMystery: () => this.setState({ my: st.my + 1, myRev: [], myShown: false }),
+      mWords: pairs.map((p, i) => mCard('w', i, p[0])),
+      mDefs: defOrder.map(i => mCard('d', i, pairs[i][1])),
+      matchLabel: `${st.mDone.length} of ${pairs.length} matched · ${st.mMiss} miss${st.mMiss === 1 ? '' : 'es'}`,
+      matchDone, matchDoneLabel: st.mMiss === 0 ? 'Perfect round!' : `All matched with ${st.mMiss} miss${st.mMiss === 1 ? '' : 'es'}`,
+      matchAgain: () => this.setState({ mRound: st.mRound + 1, mDone: [], mSel: null, mMiss: 0 }),
+      teams: teamNames.map((label, i) => ({ label: i === turnTeam && !lastQ ? `${label} · your turn` : label, pts: pts[i], pick: () => {},
+        style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 10, borderRadius: 10, padding: '12px 16px', cursor: 'default',
+          border: `2.5px solid ${i === turnTeam && !lastQ ? (i ? '#B7791F' : '#1F6F6B') : '#e7e5e4'}`, background: i === turnTeam && !lastQ ? (i ? '#FDF0DA' : '#E6F1F0') : '#fff', color: i ? '#92400e' : '#134e4a' } })),
+      turnLabel: lastQ ? 'Final' : `${teamNames[turnTeam]}'s turn`,
+      winner: lastQ ? (pts[0] === pts[1] ? `It's a tie, ${pts[0]} to ${pts[1]}!` : `${pts[0] > pts[1] ? 'Team 1' : 'Team 2'} wins, ${Math.max(...pts)} to ${Math.min(...pts)}!`) : '',
+      subjects: [['ss', 'Social Studies'], ['sci', 'Science']].map(([k, label]) => ({ label, style: btn(subj === k), pick: () => { this.setState({ subj: k }, () => this.persist()); this.resetReview(); } })),
+      weeks: list.map(([w]) => ({ label: `Wk ${w}`, style: chip(w === week), pick: () => { this.setState(s => ({ week: { ...s.week, [subj]: w } })); this.resetReview(); } })),
+      clock: `${mm}:${String(ss).padStart(2, '0')}`,
+      timePct: `${elapsed / TOTAL * 100}%`,
+      runLabel: running ? 'Pause' : elapsed >= TOTAL ? 'Done' : elapsed > 0 ? 'Resume' : 'Start 5 min',
+      toggleRun: () => { if (elapsed >= TOTAL) return; this.setState({ running: !running, autoStep: true }); },
+      resetRun: () => this.setState({ running: false, elapsed: 0, step: 'words', card: 0, flipped: false, q: 0, answers: {}, ...this.gameReset() }),
+      steps: STEPS.map(([k, label, time, , desc], i) => ({ n: i + 1, label, time, desc, pick: () => this.setState({ step: k, autoStep: false }),
+        style: { border: `1.5px solid ${step === k ? '#1F6F6B' : '#e7e5e4'}`, background: step === k ? '#F2F8F7' : '#fff', color: step === k ? '#134e4a' : '#57534e', borderRadius: 8, padding: '10px 12px', cursor: 'pointer', textAlign: 'left' } })),
+      quizDate: qd, quizAway,
+      setQuizDate: e => this.setState({ dates: { ...dates, [subj + week]: e.target.value } }, () => this.persist()),
+      stageTitle: `${subj === 'ss' ? 'Social Studies' : 'Science'} · Week ${week}`,
+      stageSub: `${stepObj[1]} · ${terms.length} words`,
+      isEmpty: empty, isWords: !empty && step === 'words', isFlash: !empty && step === 'flash', isCheck: !empty && step === 'check',
+      words: terms.map(([t, d]) => ({ t, d })), facts, hasFacts: facts.length > 0,
+      flip: () => this.setState({ flipped: !flipped }),
+      cardKicker: showDef ? 'MEANING' : 'WORD',
+      cardKickerInk: showDef ? '#FDF0DA' : '#9FC9C5',
+      cardText: showDef ? c[1] : c[0],
+      cardHint: 'Tap to flip',
+      cardStyle: { width: '100%', maxWidth: 720, minHeight: 300, border: 'none', borderRadius: 16, cursor: 'pointer', padding: '28px 32px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', gap: 16, background: showDef ? '#B7791F' : '#134e4a', color: '#fff', boxShadow: '0 6px 0 rgba(0,0,0,.12)' },
+      cardTextStyle: { fontFamily: showDef ? 'Andika,sans-serif' : 'Outfit,sans-serif', fontSize: showDef ? (c[1].length > 110 ? 26 : 32) : 60, fontWeight: showDef ? 700 : 800, lineHeight: 1.25, textAlign: 'center', textWrap: 'balance', overflowWrap: 'anywhere' },
+      cardCount: `${ci + 1} of ${deck.length}`,
+      prevCard: () => this.setState({ card: card - 1, flipped: false }),
+      nextCard: () => this.setState({ card: card + 1, flipped: false }),
+      swapSide: () => this.setState({ defFirst: !defFirst, flipped: false }),
+      swapLabel: defFirst ? 'Show word first' : 'Show meaning first',
+      qTag: cur.wk ? `Review · Week ${cur.wk}` : `This week`,
+      qTagStyle: { fontFamily: 'Outfit,sans-serif', fontSize: 12, fontWeight: 700, borderRadius: 4, padding: '4px 9px', background: cur.wk ? '#FDF0DA' : '#E6F1F0', color: cur.wk ? '#92400e' : '#1F6F6B' },
+      qCount: `${qi + 1} of ${qs.length}`,
+      score: `${nRight}/${nAns} right`,
+      qDef: cur.t[1],
+      qOpts: opts.map(t => {
+        const isRight = t === cur.t[0];
+        const show = picked !== undefined;
+        const bg = !show ? '#FCFBF7' : isRight ? '#1F6F6B' : t === picked ? '#B45309' : '#FCFBF7';
+        return { t, pick: () => pickAnswer(t),
+          style: { fontFamily: 'Outfit,sans-serif', fontSize: 22, fontWeight: 700, borderRadius: 10, padding: '16px 12px', cursor: show ? 'default' : 'pointer', minHeight: 72,
+            border: `2px solid ${show && (isRight || t === picked) ? bg : '#d6d3d1'}`, background: bg, color: show && (isRight || t === picked) ? '#fff' : '#1c1917', opacity: show && !isRight && t !== picked ? 0.5 : 1 } };
+      }),
+      nextQ: () => qi + 1 >= qs.length ? this.setState({ q: 0, answers: {}, team: {}, turn0: 1 - st.turn0 }) : this.setState({ q: qi + 1 }),
+      nextQLabel: qi + 1 >= qs.length ? 'Play again' : 'Next ›',
+    };
+  }
+}
+</script>
+</body>
+</html>

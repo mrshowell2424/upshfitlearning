@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#FFFFFF}a{color:#0E2841}a:hover{color:#C26200}@media print{[data-noprint]{display:none !important}}</style>
+</helmet>
+<div style="font-family:'Poppins',sans-serif;color:#0E2841;max-width:1180px;margin:0 auto;padding:28px 24px 64px;display:flex;flex-direction:column;gap:22px">
+  <div data-noprint="true" style="display:flex;flex-direction:column;border-radius:20px;overflow:hidden;background:#0E2841">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px;padding:20px 24px 18px">
+      <div>
+        <div style="display:flex;gap:14px">
+          <a href="%E2%9E%A1%EF%B8%8F%20PLANS.dc.html" style="font-size:13px;font-weight:700;text-decoration:none;color:#FDD43C">← Back to Plans</a>
+          <a href="EB%20Teacher%20Hub.dc.html" style="font-size:13px;font-weight:700;text-decoration:none;color:#FDD43C">← EB Hub</a>
+        </div>
+        <div style="font-size:12px;font-weight:700;letter-spacing:.18em;color:#00FDFF;margin-top:8px">EB FLUENCY PROGRAM · 2ND–5TH</div>
+        <div style="font-size:42px;font-weight:800;line-height:1.1;color:#fff">Fluency <span style="color:#FF9300">H</span><span style="color:#FDD43C">u</span><span style="color:#A4D96E">b</span></div>
+      </div>
+      <div style="display:flex;gap:4px;background:#1E3A5A;border-radius:14px;padding:5px">
+        <sc-for list="{{ gradeTabs }}" as="g" hint-placeholder-count="4">
+          <button type="button" onClick="{{ g.pick }}" style="{{ g.style }}">{{ g.t }}</button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);height:14px"><span style="background:#FF9300"></span><span style="background:#FDD43C"></span><span style="background:#A4D96E"></span><span style="background:#00FDFF"></span><span style="background:#FE89D7"></span></div>
+  </div>
+
+  <div data-noprint="true" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px">
+    <sc-for list="{{ days }}" as="d" hint-placeholder-count="4">
+      <button type="button" onClick="{{ d.pick }}" style="{{ d.style }}">
+        <span style="font-size:11px;font-weight:800;letter-spacing:.1em">{{ d.k }}</span>
+        <span style="font-size:15px;font-weight:800">{{ d.t }}</span>
+        <span style="font-size:12px;line-height:1.4;font-weight:500">{{ d.d }}</span>
+      </button>
+    </sc-for>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start">
+    <div style="display:flex;flex-direction:column;gap:14px;min-width:0;flex:1 1 480px">
+      <div data-noprint="true" style="display:flex;flex-wrap:wrap;gap:6px">
+        <sc-for list="{{ passTabs }}" as="p" hint-placeholder-count="4">
+          <button type="button" onClick="{{ p.pick }}" style="{{ p.style }}">{{ p.t }}</button>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ isEB }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#fff;border:1.5px solid #E6DCCB;border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-size:13px;color:#57534e">EB's 20 grade 5 passages. Open the PDF to print or project it, then enter the words read and errors in the scoring panel.</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px">
+            <sc-for list="{{ ebList }}" as="e" hint-placeholder-count="20">
+              <a href="{{ e.href }}" onClick="{{ e.pick }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;text-decoration:none;background:#fff;border:2px solid #0E2841;border-radius:12px;padding:8px 12px">
+                <span style="{{ e.badge }}">{{ e.n }}</span>
+                <span style="display:flex;flex-direction:column"><span style="font-size:13.5px;font-weight:700;line-height:1.25">{{ e.t }}</span><span style="font-size:11px;color:#57534e">{{ e.kind }}</span></span>
+              </a>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isMine }}" hint-placeholder-val="{{ true }}">
+        <div style="{{ passCard }}">
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px">
+            <div style="font-size:26px;font-weight:800">{{ pass.t }}</div>
+            <div style="font-size:12px;font-weight:700;color:#C26200">{{ pass.meta }}</div>
+          </div>
+          <div data-noprint="true" style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px;color:#57534e">
+            <span style="font-weight:700">Tap words to:</span>
+            <sc-for list="{{ modes }}" as="m" hint-placeholder-count="2">
+              <button type="button" onClick="{{ m.pick }}" style="{{ m.style }}">{{ m.t }}</button>
+            </sc-for>
+            <button type="button" onClick="{{ clearMarks }}" style="font-family:Poppins,sans-serif;font-size:12px;font-weight:600;cursor:pointer;background:none;border:none;color:#57534e;text-decoration:underline">Clear marks</button>
+          </div>
+          <div style="font-size:21px;line-height:1.9;display:flex;flex-wrap:wrap;column-gap:7px">
+            <sc-for list="{{ words }}" as="w" hint-placeholder-count="80">
+              <span onClick="{{ w.tap }}" style="{{ w.style }}">{{ w.w }}</span>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;border-top:1.5px dashed #E6DCCB;padding-top:10px">
+            <div style="font-size:12px;font-weight:800;letter-spacing:.1em;color:#C26200">DAY 4 · THINK ABOUT IT</div>
+            <sc-for list="{{ pass.qs }}" as="q" hint-placeholder-count="2">
+              <div style="font-size:15px;font-weight:600">{{ q }}</div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+
+    <div data-noprint="true" style="display:flex;flex-direction:column;gap:14px;position:sticky;top:16px;flex:1 1 300px;max-width:380px">
+      <div style="background:#0E2841;color:#fff;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:12px;box-shadow:5px 5px 0 #00FDFF">
+        <div style="font-size:12px;font-weight:800;letter-spacing:.14em;color:#FDD43C">1-MINUTE READ</div>
+        <input type="text" value="{{ name }}" onChange="{{ onName }}" placeholder="Student name" style="font-family:Poppins,sans-serif;font-size:15px;font-weight:600;padding:8px 12px;border-radius:10px;border:none"></input>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          <sc-for list="{{ kidChips }}" as="k" hint-placeholder-count="6">
+            <button type="button" onClick="{{ k.pick }}" style="font-family:Poppins,sans-serif;font-size:12px;font-weight:700;cursor:pointer;border:none;border-radius:999px;padding:4px 10px;background:#FFF0D9;color:#0E2841">{{ k.t }}</button>
+          </sc-for>
+        </div>
+        <div style="font-size:64px;font-weight:800;line-height:1;text-align:center;font-variant-numeric:tabular-nums">{{ clock }}</div>
+        <div style="display:flex;gap:8px">
+          <button type="button" onClick="{{ toggleRun }}" style="flex:1;font-family:Poppins,sans-serif;font-size:16px;font-weight:800;cursor:pointer;border:none;border-radius:10px;padding:10px;background:#FF9300;color:#0E2841">{{ runLabel }}</button>
+          <button type="button" onClick="{{ resetRun }}" style="font-family:Poppins,sans-serif;font-size:14px;font-weight:700;cursor:pointer;border:1.5px solid #fff;border-radius:10px;padding:10px 14px;background:transparent;color:#fff">Reset</button>
+        </div>
+        <sc-if value="{{ isEB }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <label style="display:flex;flex-direction:column;gap:3px;font-size:11px;font-weight:700">WORDS READ<input type="number" value="{{ manualWords }}" onChange="{{ onWords }}" style="font-family:Poppins,sans-serif;font-size:16px;padding:6px 10px;border-radius:8px;border:none"></input></label>
+            <label style="display:flex;flex-direction:column;gap:3px;font-size:11px;font-weight:700">ERRORS<input type="number" value="{{ manualErr }}" onChange="{{ onErr }}" style="font-family:Poppins,sans-serif;font-size:16px;padding:6px 10px;border-radius:8px;border:none"></input></label>
+          </div>
+        </sc-if>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;text-align:center">
+          <div style="background:#1E3A5A;border-radius:10px;padding:8px 4px"><div style="font-size:24px;font-weight:800;color:#FDD43C">{{ wcpm }}</div><div style="font-size:10px;font-weight:700">WCPM</div></div>
+          <div style="background:#1E3A5A;border-radius:10px;padding:8px 4px"><div style="font-size:24px;font-weight:800;color:#A4D96E">{{ acc }}</div><div style="font-size:10px;font-weight:700">ACCURACY</div></div>
+          <div style="background:#1E3A5A;border-radius:10px;padding:8px 4px"><div style="font-size:24px;font-weight:800;color:#00FDFF">{{ errCount }}</div><div style="font-size:10px;font-weight:700">ERRORS</div></div>
+        </div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#FDD43C">PROSODY (HOW IT SOUNDED)</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+          <sc-for list="{{ prosody }}" as="p" hint-placeholder-count="4">
+            <button type="button" onClick="{{ p.pick }}" style="{{ p.style }}">{{ p.t }}</button>
+          </sc-for>
+        </div>
+        <button type="button" onClick="{{ saveRead }}" style="font-family:Poppins,sans-serif;font-size:15px;font-weight:800;cursor:pointer;border:none;border-radius:10px;padding:11px;background:#A4D96E;color:#0E2841">✓ Save this read</button>
+        <div style="font-size:11.5px;color:#CFD8E3;line-height:1.4">{{ saveNote }}</div>
+      </div>
+
+      <div style="background:#fff;border:2px solid #0E2841;border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:10px;box-shadow:5px 5px 0 #FE89D7">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px">
+          <div style="font-size:12px;font-weight:800;letter-spacing:.14em;color:#C26200">{{ chartTitle }}</div>
+          <div style="font-size:11px;color:#57534e">{{ goalNote }}</div>
+        </div>
+        <sc-if value="{{ hasChart }}" hint-placeholder-val="{{ false }}">
+          <div style="position:relative;height:150px;display:flex;align-items:flex-end;gap:6px;border-bottom:1.5px solid #E6DCCB">
+            <div style="{{ goalLine }}"></div>
+            <sc-for list="{{ bars }}" as="b" hint-placeholder-count="6">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:2px;min-width:0">
+                <div style="font-size:10px;font-weight:700">{{ b.v }}</div>
+                <div style="{{ b.style }}"></div>
+                <div style="font-size:9px;color:#57534e;white-space:nowrap">{{ b.l }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ noChart }}" hint-placeholder-val="{{ true }}">
+          <div style="font-size:13px;color:#57534e">Pick a student and save a read to see their growth here.</div>
+        </sc-if>
+        <sc-for list="{{ recent }}" as="r" hint-placeholder-count="0">
+          <div style="display:flex;justify-content:space-between;gap:8px;font-size:12px;border-top:1px solid #F1E9DA;padding-top:6px">
+            <span><b>{{ r.date }}</b> · {{ r.pass }} · {{ r.day }}</span>
+            <span style="display:flex;gap:8px;align-items:center"><b>{{ r.wcpm }}</b> {{ r.pros }}<button type="button" onClick="{{ r.del }}" style="background:none;border:none;cursor:pointer;color:#A8A29E;font-size:13px">✕</button></span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const LOG_KEY = 'ebfluency.log.v1';
+const PAL = ['#FF9300', '#FDD43C', '#A4D96E', '#00FDFF', '#FE89D7'];
+const GC = { 2: '#FF9300', 3: '#A4D96E', 4: '#00FDFF', 5: '#FE89D7' };
+const TINT = { '#FF9300': '#FFE4BF', '#FDD43C': '#FFF3B8', '#A4D96E': '#E3F5CF', '#00FDFF': '#CCFEFF' };
+// Hasbrouck & Tindal (2017) 50th percentile WCPM: fall, winter, spring
+const NORMS = { 2: [50, 84, 100], 3: [83, 97, 112], 4: [94, 120, 133], 5: [121, 133, 146] };
+const KIDS = { 2: ['Dylan', 'Odin', 'Michiel'], 3: [], 4: ['Lilly', 'Kylie', 'Victor'], 5: [] };
+const EB = ['The Eagle Has Landed', 'A Desert in Bloom', 'Now the Noisy Winds Are Still', 'Amazing Ants', 'Stormalong: An American Tall Tale', 'Wild Geese', 'Australia\u2019s Giant Toads', 'The Great Salt Lake\u2019s Changing Shoreline', 'The Lighthouse on Windward Point', 'Bonsai', 'Beaks and Feathers', 'Down the Rabbit Hole', 'Seagrass Meadows', 'The Story Game', 'Chickens in the Neighborhood', 'Monarch Butterflies', 'Ice Cores', 'Giant Superstars', 'The Work of Forest Fire Lookouts', 'City of Mystery'];
+const EB_FILE = ['The Eagle Has Landed', 'A Desert in Bloom', 'Now the Noisy Winds Are Still', 'Amazing Ants', 'Stormalong An American Tall Tale', 'Wild Geese', 'Australias Giant Toads', 'The Great Salt Lakes Changing Shoreline', 'The Lighthouse on Windward Point', 'Bonsai', 'Beaks and Feathers', 'Down the Rabbit Hole', 'Seagrass Meadows', 'The Story Game', 'Chickens in the Neighborhood', 'Monarch Butterflies', 'Ice Cores', 'Giant Superstars', 'The Work of Forest Fire Lookouts', 'City of Mystery'];
+const EB_KIND = { 2: 'Story', 3: 'Poem', 5: 'Tall tale', 6: 'Poem', 9: 'Story', 12: 'Story', 14: 'Story', 20: 'Story' };
+const PASS = {
+  2: [
+    ['Ants at Work', 'Ants live in a big group called a colony. Each ant has a job. The queen lays the eggs. Worker ants dig tunnels and keep the nest clean. Some ants go out to find food. When an ant finds a crumb, it leaves a smell trail on the way home. Then the other ants can follow the trail to the food. One ant is small, but it can lift things much heavier than it is. When they work together, ants can do big things!', ['What does the queen ant do?', 'How do the other ants find the food?']],
+    ['A Trip to the Moon', 'Long ago, in 1969, two men went to the moon. Their names were Neil Armstrong and Buzz Aldrin. They rode in a rocket for three days. When they landed, Neil stepped out first. The moon was gray and dusty. There was no air, so they wore big space suits. They hopped and jumped because the moon does not pull as hard as Earth. They put a flag on the moon and took rocks back home to study.', ['Who stepped on the moon first?', 'Why did the men hop and jump?']],
+    ['The Butterfly\u2019s Long Trip', 'Monarch butterflies are orange and black. In the fall, the air gets cold. Monarchs can not live in the cold, so they fly south to Mexico. Some fly more than two thousand miles! That is a long trip for such a small bug. In Mexico, they rest in the trees. So many land on one tree that the branches look orange. In the spring, they fly back north and lay eggs on milkweed plants.', ['Why do monarchs fly south?', 'Where do monarchs lay their eggs?']],
+    ['The Lighthouse Keeper', 'Long ago, ships needed help at night. Big rocks hid under the waves. A lighthouse stood by the sea with a bright light on top. A keeper lived in a small house next to it. Each night, the keeper climbed many steps to light the lamp. He cleaned the glass so the light would shine far. When a storm came, he stayed awake all night. Sailors saw the light and knew to stay away from the rocks.', ['Why did ships need the lighthouse?', 'What did the keeper do each night?']],
+  ],
+  3: [
+    ['Ant Colonies', 'Ants are some of the hardest-working insects on Earth. They live together in groups called colonies, and every ant has an important job. The queen is the largest ant, and her only job is to lay eggs. Worker ants take care of the eggs, dig new tunnels, and carry food back to the nest. When a worker finds food, it leaves a scent trail on the ground as it walks home. Other ants smell the trail and follow it straight to the food. Ants are also very strong for their size. A single ant can carry something many times heavier than its own body. By working as a team, a colony of tiny ants can build a nest with hundreds of rooms.', ['How do ants show each other where the food is?', 'What is the main idea of this passage?']],
+    ['One Small Step', 'On July 20, 1969, millions of people sat in front of their televisions. They were waiting to see something that had never happened before. Two astronauts, Neil Armstrong and Buzz Aldrin, were about to land on the moon. Their small spacecraft was called the Eagle. As it got close to the ground, Armstrong saw that it was heading toward a field of big rocks. He quickly took control and steered to a smooth, flat spot. Then he called back to Earth, \u201cThe Eagle has landed!\u201d A few hours later, Armstrong climbed down the ladder and became the first person to walk on the moon. His footprints are still there today, because there is no wind on the moon to blow them away.', ['Why did Armstrong take control of the spacecraft?', 'Why are the footprints still on the moon?']],
+    ['Monarchs on the Move', 'Every fall, something amazing happens in the sky over North America. Millions of orange and black monarch butterflies begin a long journey south. They cannot survive cold winters, so they fly all the way to the mountains of Mexico. Some monarchs travel almost three thousand miles. Scientists are still learning how such small insects find their way. They think monarchs use the sun like a compass. When they arrive, the butterflies cluster together on fir trees to stay warm. In the spring, they head north again. Along the way, they lay eggs on milkweed, the only plant their caterpillars will eat.', ['How do scientists think monarchs find their way?', 'Why is milkweed important to monarchs?']],
+    ['Keeping the Light', 'Long ago, a lighthouse needed a person to keep it running. This person was called a keeper. Every evening, the keeper carried heavy cans of oil up a long, winding staircase. At the top, he filled the lamp, trimmed the wick, and polished the glass until it sparkled. The light had to stay on all night, even during terrible storms. If it went out, a ship could crash into the rocks. Keepers also wrote down the weather and watched for ships in trouble. The job was lonely and tiring, but keepers knew it was important. Today, most lighthouses have automatic lights, so they no longer need keepers.', ['What did a keeper do each night?', 'How have lighthouses changed since long ago?']],
+  ],
+  4: [
+    ['Farmers Underground', 'When you think of farmers, you probably picture tractors and fields of corn. But some of the world\u2019s oldest farmers are much smaller. Leafcutter ants, which live in Central and South America, have been growing their own food for millions of years. Each morning, long lines of worker ants march out of the colony. They use their sharp jaws to slice pieces of leaves, then carry them home like tiny green umbrellas. Surprisingly, the ants do not eat the leaves. Instead, smaller workers chew the leaves into a soft paste and spread it in underground gardens. A special fungus grows on the paste, and that fungus becomes food for the whole colony. The ants even weed their gardens and remove anything that might harm the crop. Scientists study these ants to learn how teamwork helps a community survive.', ['Why do leafcutter ants cut leaves if they do not eat them?', 'Why does the author compare the ants to farmers?']],
+    ['Sixty Seconds of Fuel', 'Landing on the moon was one of the most dangerous moments of the Apollo 11 mission. As the lunar module, called the Eagle, dropped toward the surface, warning alarms began to flash inside the cabin. Back on Earth, the engineers at Mission Control had only seconds to decide whether the astronauts should keep going. They gave the signal to continue. Then Neil Armstrong looked out the window and noticed a serious problem. The computer was steering them toward a crater full of boulders the size of cars. Armstrong took manual control and flew the Eagle over the rocks, searching for a safe place to land. Fuel was running dangerously low. With less than a minute of fuel left, the Eagle touched down gently on a flat, dusty plain. The people at Mission Control finally let out their breath and cheered.', ['What two problems did the astronauts face while landing?', 'What does \u201cmanual control\u201d mean in this passage?']],
+    ['A Butterfly Relay', 'The monarch butterfly\u2019s migration is like a relay race that takes several generations to finish. In the fall, monarchs in Canada and the northern United States fly south to the mountains of central Mexico. These butterflies are special. They live up to eight months, much longer than the few weeks most monarchs live. They spend the winter resting in huge clusters on fir trees. In the spring, they fly north to Texas, lay their eggs on milkweed, and die. Their children continue the trip, flying farther north and laying their own eggs. It takes three or four generations to reach Canada again. Amazingly, the great-great-grandchildren of the first butterflies find their way back to the same forests in Mexico the next fall, even though they have never been there before.', ['Why does the author compare the migration to a relay race?', 'What makes the fall monarchs different from other monarchs?']],
+    ['The Last Keeper of Windy Cape', 'For forty years, Thomas Hale was the keeper of the lighthouse at Windy Cape. Every night, he climbed one hundred and twelve steps to the lantern room. He refilled the oil, trimmed the wick, and wiped salt spray from the thick glass windows. On stormy nights, he stayed awake until dawn, listening to the wind howl and watching for ships in trouble. Once, during a terrible blizzard, he spotted a fishing boat drifting toward the rocks. He rang the warning bell for hours until the crew turned safely toward the harbor. In 1965, the lighthouse got an automatic electric light. Thomas was no longer needed, but he could not leave the sea behind. He moved into a small cottage nearby, where he could still see the steady beam sweep across the waves each night.', ['How did Thomas save the fishing boat?', 'Why do you think Thomas stayed near the lighthouse?']],
+  ],
+};
+class Component extends DCLogic {
+  state = { grade: 4, pi: 0, day: 0, mode: 'err', errs: {}, last: -1, secs: 60, running: false, name: '', pros: -1, mw: '', me: '',
+    log: (() => { try { return JSON.parse(localStorage.getItem(LOG_KEY) || '[]'); } catch (e) { return []; } })() };
+  componentWillUnmount() { clearInterval(this.t); }
+  stop() { clearInterval(this.t); this.t = null; this.setState({ running: false }); }
+  start() {
+    if (this.state.secs <= 0) this.setState({ secs: 60 });
+    this.setState({ running: true });
+    this.t = setInterval(() => { const s = this.state.secs - 1; if (s <= 0) { this.setState({ secs: 0 }); this.stop(); } else this.setState({ secs: s }); }, 1000);
+  }
+  persist(log) { try { localStorage.setItem(LOG_KEY, JSON.stringify(log)); } catch (e) {} this.setState({ log }); }
+  renderVals() {
+    const S = this.state, g = S.grade, isEB = g === 5;
+    const pass = isEB ? null : PASS[g][S.pi];
+    const words = pass ? pass[1].split(/\s+/) : [];
+    const elapsed = 60 - S.secs;
+    const read = isEB ? (parseInt(S.mw) || 0) : (S.last >= 0 ? S.last + 1 : 0);
+    const errs = isEB ? (parseInt(S.me) || 0) : Object.keys(S.errs).filter((k) => S.errs[k] && +k <= (S.last >= 0 ? S.last : 1e9)).length;
+    const correct = Math.max(0, read - errs);
+    const mins = elapsed > 0 && elapsed < 60 ? elapsed / 60 : 1;
+    const wcpm = read ? Math.round(correct / mins) : 0;
+    const acc = read ? Math.round((correct / read) * 100) : 0;
+    const mo = new Date().getMonth(), season = mo >= 7 && mo <= 10 ? 0 : (mo === 11 || mo <= 2) ? 1 : 2;
+    const goal = NORMS[g][season];
+    const PROS = ['😐 Monotone', '🧱 Choppy', '🙂 Mostly smooth', '🤩 Fluent + expressive'];
+    const DAYS = [['DAY 1', 'Cold Read', 'Read it once on your own. Listen to me model a part. Echo or choral read.', '#FF9300'], ['DAY 2', 'Assisted Reading', 'Reread with a partner. Take turns. Give feedback on accuracy, pacing, and prosody.', '#FDD43C'], ['DAY 3', 'Practice + Pacing Check', 'Reread quietly, then aloud to a partner. Time it if you want.', '#A4D96E'], ['DAY 4', 'Hot Read', 'Final timed read. Answer the questions. Celebrate your growth!', '#00FDFF']];
+    const mine = S.log.filter((r) => S.name && r.name.toLowerCase() === S.name.trim().toLowerCase());
+    const shown = mine.slice(-8);
+    const top = Math.max(goal * 1.25, ...shown.map((r) => r.wcpm), 1);
+    const btn = (on, extra) => 'font-family:Poppins,sans-serif;cursor:pointer;border-radius:999px;font-weight:700;border:2px solid #0E2841;' + (on ? 'background:#FF9300;color:#0E2841;' : 'background:#fff;color:#0E2841;') + (extra || '');
+    const DC = DAYS[S.day][3];
+    return {
+      gradeTabs: [2, 3, 4, 5].map((n) => ({ t: n === 5 ? '5th · EB' : ['', '', '2nd', '3rd', '4th'][n], pick: () => this.setState({ grade: n, pi: 0, errs: {}, last: -1, mw: '', me: '' }),
+        style: 'font-family:Poppins,sans-serif;font-size:14px;font-weight:800;cursor:pointer;border:none;border-radius:10px;padding:8px 16px;' + (g === n ? 'background:' + GC[n] + ';color:#0E2841' : 'background:transparent;color:#fff') })),
+      days: DAYS.map(([k, t, d, c], i) => ({ k, t, d, pick: () => this.setState({ day: i }),
+        style: { fontFamily: 'Poppins,sans-serif', textAlign: 'left', cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: 3, borderRadius: 14, padding: '12px 14px', color: '#0E2841', background: S.day === i ? c : TINT[c], border: '2px solid #0E2841', boxShadow: S.day === i ? '4px 4px 0 #0E2841' : 'none', transform: S.day === i ? 'translate(-2px,-2px)' : 'none' } })),
+      passTabs: isEB ? [] : PASS[g].map((p, i) => ({ t: (i + 1) + '. ' + p[0], pick: () => this.setState({ pi: i, errs: {}, last: -1 }), style: btn(S.pi === i, 'font-size:13px;padding:6px 14px;') })),
+      isEB, isMine: !isEB,
+      passCard: { background: '#fff', border: '2px solid #0E2841', borderTop: '10px solid ' + DC, borderRadius: 16, padding: '20px 26px', display: 'flex', flexDirection: 'column', gap: 12, boxShadow: '5px 5px 0 ' + DC },
+      ebList: EB.map((t, i) => ({ n: i + 1, t, kind: (S.ebi === i ? '✓ Scoring this one · ' : '') + (EB_KIND[i + 1] || 'Informational'), pick: () => this.setState({ ebi: i }), badge: { flex: 'none', width: 30, height: 30, borderRadius: 9, background: PAL[i % 5], color: '#0E2841', border: '2px solid #0E2841', fontSize: 13, fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center' }, href: 'uploads/5th%20Grade%20Fluency%20FINAL%20optimized/' + encodeURIComponent((i + 1) + ' ' + EB_FILE[i]) + '.pdf' })),
+      pass: pass ? { t: pass[0], qs: pass[2], meta: ['', '', '2nd', '3rd', '4th'][g] + ' grade · ' + words.length + ' words · written for my groups' } : { t: '', qs: [], meta: '' },
+      modes: [['err', '✗ Mark an error'], ['last', '⚑ Mark last word read']].map(([k, t]) => ({ t, pick: () => this.setState({ mode: k }), style: btn(S.mode === k, 'font-size:12px;padding:4px 12px;') })),
+      clearMarks: () => this.setState({ errs: {}, last: -1 }),
+      words: words.map((w, i) => {
+        const isErr = !!S.errs[i], isLast = i === S.last, past = S.last >= 0 && i > S.last;
+        return { w, tap: () => S.mode === 'err' ? this.setState({ errs: { ...S.errs, [i]: !S.errs[i] || undefined } }) : this.setState({ last: i }),
+          style: { cursor: 'pointer', borderRadius: 6, padding: '0 3px', color: past ? '#A8A29E' : '#0E2841', background: isErr ? '#FFD6EF' : isLast ? '#FDD43C' : 'transparent', textDecoration: isErr ? 'line-through' : 'none', textDecorationColor: '#A0206E', outline: isLast ? '2px solid #0E2841' : 'none' } };
+      }),
+      name: S.name, onName: (e) => this.setState({ name: e.target.value }),
+      kidChips: KIDS[g].map((t) => ({ t, pick: () => this.setState({ name: t }) })),
+      clock: S.secs >= 60 ? '1:00' : '0:' + String(S.secs).padStart(2, '0'),
+      runLabel: S.running ? '⏸ Stop' : S.secs < 60 && S.secs > 0 ? '▶ Resume' : '▶ Start',
+      toggleRun: () => S.running ? this.stop() : this.start(),
+      resetRun: () => { this.stop(); this.setState({ secs: 60, errs: {}, last: -1, pros: -1, mw: '', me: '' }); },
+      manualWords: S.mw, manualErr: S.me, onWords: (e) => this.setState({ mw: e.target.value }), onErr: (e) => this.setState({ me: e.target.value }),
+      wcpm, acc: read ? acc + '%' : '\u2013', errCount: errs,
+      prosody: PROS.map((t, i) => ({ t, pick: () => this.setState({ pros: i }),
+        style: 'font-family:Poppins,sans-serif;font-size:11.5px;font-weight:700;cursor:pointer;border-radius:8px;padding:6px 4px;' + (S.pros === i ? 'background:#FDD43C;color:#0E2841;border:1.5px solid #FDD43C' : 'background:transparent;color:#fff;border:1.5px solid #3B5675') })),
+      saveRead: () => {
+        if (!S.name.trim() || !read) return;
+        const d = new Date();
+        this.persist([...S.log, { name: S.name.trim(), grade: g, pass: isEB ? EB[S.ebi || 0] : pass[0], day: DAYS[S.day][1], wcpm, acc, pros: S.pros, date: (d.getMonth() + 1) + '/' + d.getDate() }]);
+      },
+      saveNote: !S.name.trim() ? 'Type or tap a name to save.' : !read ? (isEB ? 'Enter words read to score it.' : 'Tap the last word they read (⚑) to score it.') : 'Saves on this computer. Goal for ' + ['fall', 'winter', 'spring'][season] + ': about ' + goal + ' WCPM.',
+      chartTitle: S.name.trim() ? S.name.trim().toUpperCase() + '\u2019S GROWTH' : 'GROWTH',
+      goalNote: '— goal ' + goal + ' WCPM',
+      hasChart: shown.length > 0, noChart: shown.length === 0,
+      goalLine: { position: 'absolute', left: 0, right: 0, bottom: (goal / top) * 130 + 'px', borderTop: '2px dashed #C26200', pointerEvents: 'none' },
+      bars: shown.map((r) => ({ v: r.wcpm, l: r.date, style: { width: '100%', maxWidth: 30, borderRadius: '6px 6px 0 0', height: Math.max(4, (r.wcpm / top) * 130) + 'px', background: r.wcpm >= goal ? '#A4D96E' : '#FF9300', border: '2px solid #0E2841', borderBottom: 'none' } })),
+      recent: mine.slice(-5).reverse().map((r) => ({ date: r.date, pass: r.pass, day: r.day, wcpm: r.wcpm + ' wcpm', pros: r.pros >= 0 ? PROS[r.pros].split(' ')[0] : '',
+        del: () => this.persist(S.log.filter((x) => x !== r)) })),
+    };
+  }
+}
+</script>
+</body>
+</html>

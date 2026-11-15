@@ -14,6 +14,16 @@
  * H and L are the paragraphs in order; they are lettered A, B, C... to match.
  * std is the last number of the standard, so 3 means RI.5.3 in grade 5.
  * hi and lo are the two Lexiles. Word counts are measured, never stated.
+ *
+ * There used to be a labelled_words beside words, set to the same number.
+ * Nothing ever read it, and in the two packs that came in -- grades 3 and
+ * 4, the hundred articles with no source file here -- it had stopped
+ * matching its own prose: 200 of the 700 versions overstated their length
+ * by 14,163 words between them, one of them by 153 on a 244-word article.
+ * That is the exact failure this file was written to prevent, sitting in
+ * the data the whole time under a name nothing used. Gone rather than
+ * repaired: a second copy of a measured number is a trap whether or not
+ * it happens to be right today.
  */
 import { readFileSync, writeFileSync } from "node:fs";
 
@@ -27,7 +37,7 @@ const paras = (list) =>
 const version = (lexile, list) => {
   const p = paras(list);
   const w = count(p.map((x) => x.text).join(" "));
-  return { lexile, words: w, labelled_words: w, paras: p };
+  return { lexile, words: w, paras: p };
 };
 
 /** The block under the title: the standard, what it spirals, the lower band. */
