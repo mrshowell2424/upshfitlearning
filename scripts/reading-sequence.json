@@ -7,17 +7,17 @@
       "level": 1,
       "words": [
         "cat",
-        "pig",
-        "hen",
-        "mop",
-        "bug",
         "map",
-        "sit",
-        "red",
-        "hot",
-        "fun"
+        "bag",
+        "fan",
+        "ham",
+        "jam",
+        "mat",
+        "rag",
+        "tan",
+        "van"
       ],
-      "wordSource": "pack"
+      "wordSource": "pack+pool"
     },
     {
       "key": "cvc-mix",

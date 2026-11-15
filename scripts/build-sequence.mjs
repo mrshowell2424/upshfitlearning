@@ -33,6 +33,7 @@
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { deriveSequence } from "./lib/sequence.mjs";
+import { LESSON_SPANS, lessonSpan } from "./lib/lesson-span.mjs";
 
 const R = "content-reading-materials/og-packs/";
 global.window = global;
@@ -65,6 +66,24 @@ const carries = (word, raw) =>
   bare(raw).some((b) =>
     b.includes("_") ? new RegExp(b.replace(/_/g, ".")).test(word.toLowerCase()) : word.toLowerCase().includes(b),
   );
+
+/**
+ * Is this word an example of this lesson?
+ *
+ * For a lesson with a span rule, the rule answers it -- and answers it
+ * strictly, which is the point. Short a (CVC) was shipping pig, hen, mop,
+ * bug, sit, red, hot and fun as its review words, because its pack covers
+ * all five short vowels and nothing here looked at the vowel. A loose
+ * substring test would not have caught that either: every one of those
+ * words is in the pack and none of them holds an a.
+ *
+ * Lessons without a rule keep the loose test they had. Their words come
+ * from a dictation bank that was already chosen for the pattern.
+ */
+const example = (key, w) =>
+  LESSON_SPANS[key]
+    ? Boolean(lessonSpan(key, w))
+    : (SPLITS[key] ?? []).some((sub) => carries(w, sub));
 
 /** Every real word anywhere in a pack's word fields. */
 const WIDE_FIELDS = ["speed", "bank", "read", "read2", "lists"];
@@ -145,15 +164,16 @@ const packId = (key) => (key.startsWith("og") ? key.slice(2) : PACK_FOR_BASIC[ke
 function topUp(key, words) {
   const subs = SPLITS[key];
   if (!subs || !subs.length) return { words, topped: 0 };
-  const missing = subs.filter((sub) => !words.some((w) => carries(w, sub)));
-  if (!missing.length) return { words, topped: 0 };
+  const rule = LESSON_SPANS[key];
+  const holds = (w, sub) => (rule ? lessonSpan(key, w)?.sub === sub : carries(w, sub));
+  const missing = subs.filter((sub) => !words.some((w) => holds(w, sub)));
 
-  const pool = widePool(packId(key));
+  const pool = widePool(packId(key)).filter((w) => example(key, w));
   const out = [...words];
   let topped = 0;
   for (const sub of missing) {
     const pick = pool
-      .filter((w) => carries(w, sub) && !out.includes(w))
+      .filter((w) => holds(w, sub) && !out.includes(w))
       // shortest first: a review word should be the plainest example of
       // its pattern, not the longest one in the pack.
       .sort((a, b) => a.length - b.length || a.localeCompare(b))[0];
@@ -162,13 +182,30 @@ function topUp(key, words) {
       topped++;
     }
   }
+  /*
+   * Refill what the sieve took out. A lesson whose list was mostly not
+   * its own pattern comes out of the filter short -- short a keeps cat
+   * and map out of ten -- and a review list of two words is not one.
+   * Same pool, same shortest-first rule as above.
+   */
+  for (const w of pool.sort((a, b) => a.length - b.length || a.localeCompare(b))) {
+    if (out.length >= WANT) break;
+    if (!out.includes(w)) {
+      out.push(w);
+      topped++;
+    }
+  }
   return { words: out, topped };
 }
 
 let toppedTotal = 0;
+let sieved = 0;
 const seq = deriveSequence().map((r) => {
-  const base = fromSpelling(r.key) ?? fromPack(r.key) ?? [];
+  const raw = fromSpelling(r.key) ?? fromPack(r.key) ?? [];
   const source = fromSpelling(r.key) ? "spelling" : fromPack(r.key) ? "pack" : "none";
+  // Keep only the words that really are examples of this lesson.
+  const base = raw.filter((w) => example(r.key, w) || !SPLITS[r.key]?.length);
+  sieved += raw.length - base.length;
   if (!base.length) return { ...r, words: [], wordSource: "none" };
   const { words, topped } = topUp(r.key, base);
   toppedTotal += topped;
@@ -187,6 +224,7 @@ const bySource = seq.reduce((m, r) => ((m[r.wordSource] = (m[r.wordSource] || 0)
 console.log("wrote scripts/reading-sequence.json");
 console.log(`  ${seq.length} lessons in order`);
 console.log(`  words from: ${Object.entries(bySource).map(([s, n]) => `${s} ${n}`).join(", ")}`);
-console.log(`  ${toppedTotal} words added to reach sub-patterns the pack list missed`);
+console.log(`  ${sieved} words dropped for not being examples of their own lesson`);
+console.log(`  ${toppedTotal} words added to reach sub-patterns the pack list missed, or to refill`);
 const none = seq.filter((r) => r.wordSource === "none").map((r) => r.key);
 if (none.length) console.log(`  no words for: ${none.join(", ")}`);

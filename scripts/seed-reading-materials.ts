@@ -19,6 +19,27 @@ import path from "node:path";
 import WRITING from "./reading-writing-passages.json" with { type: "json" };
 import SPLITS from "./reading-skill-splits.json" with { type: "json" };
 import PARTW from "./reading-part-words.json" with { type: "json" };
+
+/**
+ * The parts this page may offer as their own focus: the ones with a word
+ * bank behind them.
+ *
+ * reading-skill-splits.json says what a lesson teaches. It used to say
+ * that for only the forty-one lessons that have banks, so the two lists
+ * were the same and this script could read either. Thirteen more lessons
+ * have splits recorded now -- short a, soft c and g, the doubling rule --
+ * and none of them has a bank. Offering those as parts would put a "soft
+ * c" option in the workbook whose word list is narrowed by a plain
+ * substring test, which would hand a child cage as a soft-c word.
+ *
+ * So the offer is tied to the bank, which is what the comment below the
+ * narrowing code already said it was.
+ */
+const OFFERED: Record<string, string[]> = Object.fromEntries(
+  Object.entries(SPLITS as Record<string, string[]>)
+    .map(([k, subs]) => [k, subs.filter((q) => (PARTW as Record<string, unknown>)[`${k}|${q}`])])
+    .filter(([, subs]) => (subs as string[]).length),
+);
 import SENT3 from "./reading-third-sentences.json" with { type: "json" };
 import AICOACH from "./reading-ai-writing-coach.json" with { type: "json" };
 import MYSTERIES from "./reading-mysteries.json" with { type: "json" };
@@ -572,7 +593,7 @@ const ADAPTATIONS: Adaptation[] = [
       return html
         .replace(
           cur,
-          "const SPLITS = " + JSON.stringify(SPLITS) + ";\n" +
+          "const SPLITS = " + JSON.stringify(OFFERED) + ";\n" +
             "    // 'ai-ay|ay' picks the skill and, after the pipe, the one part of it.\n" +
             "    const SEL = String((this.state && this.state.skill) || '');\n" +
             "    const subPat = SEL.split('|')[1] || '';\n" +

@@ -280,7 +280,12 @@ for (const [cid, byGrade] of Object.entries(PASS.passages || {})) {
 const keys = Object.keys(PASS.passages || {});
 const concepts = keys.filter((k) => !k.includes("|")).length;
 const parts = keys.length - concepts;
-const allParts = SK.reduce((n, r) => n + (SPLITS[r[0]] || []).length, 0);
+// How many parts there ARE to write a passage for: the parts with a word
+// bank. Counted off reading-skill-splits.json until that file grew splits
+// for thirteen lessons that have no bank, at which point this line started
+// reporting nineteen passages missing that were never owed.
+const PARTW = JSON.parse(readFileSync("scripts/reading-part-words.json", "utf8"));
+const allParts = Object.keys(PARTW).filter((k) => !k.startsWith("_") && k.includes("|")).length;
 console.log(`${nPass} passages: ${concepts} of ${SK.length} concepts and ${parts} of ${allParts} parts, ${nWords} words.`);
 console.log(`problems: ${problems.length}`);
 problems.slice(0, 40).forEach((x) => console.log("  " + x));

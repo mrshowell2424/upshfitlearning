@@ -23,6 +23,7 @@
  */
 
 import { readFileSync } from "node:fs";
+import { LESSON_SPANS, lessonSpan } from "./lib/lesson-span.mjs";
 import { deriveSequence } from "./lib/sequence.mjs";
 import { reviewSlots } from "./lib/review-slots.mjs";
 
@@ -113,9 +114,26 @@ for (const r of seq) {
  * anywhere. The page cheerfully told a teacher to review -dge with those.
  *
  * So every lesson that has sub-patterns recorded must show words that
- * between them carry each of its sub-patterns. Lessons whose pattern is
- * not a letter string -- open syllables, possessives -- have no split to
- * check against and are only required to show something.
+ * between them carry each of its sub-patterns, AND every word it shows
+ * must be an example of one of them.
+ *
+ * The second half was added after the first half passed something it
+ * should not have. Short a (CVC) draws its words from an OG pack that
+ * covers all five short vowels, and it was listing cat, pig, hen, mop,
+ * bug, map, sit, red, hot, fun -- eight words with no a in them, under a
+ * heading that says short a. "Some word carries the pattern" is true of
+ * that list and tells you nothing. It costs nothing to ask for all of
+ * them: every one of the forty-one lessons that had splits before today
+ * already passed the stricter rule.
+ *
+ * Where a lesson has a span rule in lib/lesson-span.mjs, that rule is the
+ * test, because a substring is not the pattern: desks ends in the -s
+ * suffix and also contains an s that is part of desk, and the c in magic
+ * is not a soft c.
+ *
+ * Lessons whose pattern is not a letter string at all -- syllable
+ * division, the silent e rule, schwa a -- have no split to check against
+ * and are only required to show something.
  */
 const bare = (raw) => raw.toLowerCase().split("/").map((x) => x.replace(/-/g, "")).filter(Boolean);
 const carries = (word, raw) =>
@@ -134,10 +152,20 @@ for (const r of seq) {
   const subs = SPLITS[r.key];
   if (!subs || !subs.length) continue;
   checkedAgainstSplits++;
+  const rule = LESSON_SPANS[r.key];
+  const holds = (w, sub) => (rule ? lessonSpan(r.key, w)?.sub === sub : carries(w, sub));
   for (const sub of subs) {
-    if (!r.words.some((w) => carries(w, sub)))
+    if (!r.words.some((w) => holds(w, sub)))
       say(`${r.key} (${r.name}): not one of its review words carries "${sub}" — ${r.words.join(", ")}`);
   }
+  const strays = r.words.filter((w) => !subs.some((sub) => holds(w, sub)));
+  if (strays.length)
+    say(
+      `${r.key} (${r.name}): ${strays.join(", ")} ${strays.length === 1 ? "is" : "are"} shown as review ` +
+        `for this lesson and ${strays.length === 1 ? "is" : "are"} not ${
+          strays.length === 1 ? "an example" : "examples"
+        } of ${subs.map((s) => `"${s}"`).join(" or ")}`,
+    );
 }
 
 // The overrides have to actually override, and have to refuse nonsense.

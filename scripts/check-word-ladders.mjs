@@ -28,7 +28,7 @@ import { deriveSequence } from "./lib/sequence.mjs";
 // exactly the same order and a second copy would drift.
 const SK = deriveSequence().map((r) => [r.key, r.name, "Level " + r.level]);
 const pos = Object.fromEntries(SK.map((r, n) => [r[0], n]));
-const SPLITS = JSON.parse(readFileSync("scripts/reading-skill-splits.json", "utf8"));
+const PART_WORDS = JSON.parse(readFileSync("scripts/reading-part-words.json", "utf8"));
 const LAD = JSON.parse(readFileSync("scripts/reading-word-ladders.json", "utf8")).ladders;
 
 const DICT = readFileSync("/usr/share/dict/words", "utf8").split("\n").map((w) => w.trim());
@@ -148,10 +148,23 @@ Object.values(LAD).forEach((v) => v.words.forEach((w) => UNIVERSE.add(String(w).
 
 const problems = [];
 let rungs = 0;
+/*
+ * One ladder per lesson, and one per part of a lesson that has a word
+ * bank. The parts come from reading-part-words.json, which is what a
+ * ladder is actually built against -- its rungs have to be words a child
+ * can decode at that point, and the bank is the list of them.
+ *
+ * This used to read the parts out of reading-skill-splits.json instead.
+ * The two lists were identical, so it passed, and the day splits were
+ * recorded for thirteen lessons that have no word bank it demanded
+ * nineteen ladders -- including one for the possessive 's and one for
+ * soft c, neither of which is a chain of one-sound changes. Splits say
+ * what a lesson teaches. Banks say what there are words for.
+ */
 const expected = [];
 for (const r of SK) {
   expected.push(r[0]);
-  for (const sub of SPLITS[r[0]] || []) expected.push(r[0] + "|" + sub);
+  for (const k of Object.keys(PART_WORDS)) if (!k.startsWith("_") && k.split("|")[0] === r[0] && k.includes("|")) expected.push(k);
 }
 for (const key of expected) if (!LAD[key]) problems.push(`${key}: no ladder`);
 for (const [key, v] of Object.entries(LAD)) {
