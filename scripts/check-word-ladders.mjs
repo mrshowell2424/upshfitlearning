@@ -19,6 +19,7 @@
  *   bun run scripts/check-word-ladders.mjs
  */
 import { readFileSync } from "node:fs";
+import { describes, judgeRung } from "./lib/ladder-clue.mjs";
 
 const R = "content-reading-materials/og-packs/";
 global.window = global;
@@ -144,40 +145,6 @@ const legalAt = (w, p, sid) => {
 };
 const NOTFORKIDS = /^(fat|fats|fatter|fattest|kill|killed|dead|death|gun|guns|shot|blood|drunk|beer|wine|hell|damn|ass|butt|stupid|dumb|ugly|hate|war|sex|drug|drugs|naked)$/i;
 
-/** Would this clue, read literally, turn `a` into `b`? */
-function describes(a, b, c) {
-  const pickIdx = (a, L, q) => {
-    const idxs = [...a].map((ch, n) => (ch === L ? n : -1)).filter((n) => n >= 0);
-    if (!q || idxs.length <= 1) return idxs;
-    return q === "first " ? [idxs[0]] : q === "last " ? [idxs[idxs.length - 1]] : idxs.slice(1, -1);
-  };
-  let m;
-  if ((m = c.match(/^Change the (first |last |middle )?(\w) to (\w)\.$/)))
-    return pickIdx(a, m[2], m[1]).some((i) => a.slice(0, i) + m[3] + a.slice(i + 1) === b);
-  if (c === "Add a silent e.") return b === a + "e";
-  if (c === "Take off the silent e.") return a.endsWith("e") && b === a.slice(0, -1);
-  if ((m = c.match(/^Add an? (\w) at the (start|end)\.$/)))
-    return b === (m[2] === "start" ? m[1] + a : a + m[1]);
-  if ((m = c.match(/^Put an? (\w) between the (\w) and the (\w)\.$/))) {
-    for (let i = 1; i < a.length; i++)
-      if (a[i - 1] === m[2] && a[i] === m[3] && a.slice(0, i) + m[1] + a.slice(i) === b) return true;
-    return false;
-  }
-  if ((m = c.match(/^Take off the (first |last |middle )?(\w)\.$/)))
-    return pickIdx(a, m[2], m[1]).some((i) => a.slice(0, i) + a.slice(i + 1) === b);
-  if ((m = c.match(/^Keep .*?\. Change (\S+) to (\S+)\.$/))) return a !== b && b === a.replace(m[1], m[2]);
-  if ((m = c.match(/^Change (\S+)- to (\S+)-\.$/))) return a.startsWith(m[1]) && b === m[2] + a.slice(m[1].length);
-  if ((m = c.match(/^Change -(\S+) to -(\S+)\.$/))) return a.endsWith(m[1]) && b === a.slice(0, -m[1].length) + m[2];
-  if ((m = c.match(/^Add the prefix (\S+)-\.$/))) return b === m[1] + a;
-  if ((m = c.match(/^Take off the prefix (\S+)-\.$/))) return a.startsWith(m[1]) && b === a.slice(m[1].length);
-  if ((m = c.match(/^Add -(\S+)\.$/))) return b === a + m[1];
-  if ((m = c.match(/^Take off -(\S+)\.$/))) return a.endsWith(m[1]) && b === a.slice(0, -m[1].length);
-  if ((m = c.match(/^Add (\S+) to the end\.$/))) return b === a + m[1];
-  if ((m = c.match(/^Take (\S+) off the end\.$/))) return a.endsWith(m[1]) && b === a.slice(0, -m[1].length);
-  if ((m = c.match(/^Put (\S+) in front of (\S+)\.$/))) return b === m[1] + a;
-  if ((m = c.match(/^Take (\S+) off the front\.$/))) return a.startsWith(m[1]) && b === a.slice(m[1].length);
-  return false;
-}
 
 // Every word any ladder uses, which is the set a clue could be answered
 // from. Checking against the whole dictionary would fail honest clues over
@@ -221,6 +188,101 @@ for (const [key, v] of Object.entries(LAD)) {
   }
 }
 
+/*
+ * What the page tells a child.
+ *
+ * These verdicts come from the same judgeRung the ladder page calls, so
+ * the rule itself is under test rather than a description of it. The
+ * split that earns its keep is "near" against "far": a child who changed
+ * one sound and picked the wrong one has the method and missed the
+ * target; a child who wrote a different word altogether has not
+ * manipulated anything. Those are different lessons tomorrow.
+ */
+const VERDICTS = [
+  // prev,   want,   clue,                                typed,    expected
+  ["set",    "sat",  "Change the e to a.",                "sat",    "right"],
+  ["set",    "sat",  "Change the e to a.",                "  SAT ", "right"],
+  ["set",    "sat",  "Change the e to a.",                "",       "empty"],
+  ["set",    "sat",  "Change the e to a.",                "set",    "same"],
+  // One sound changed, wrong one. The method is there.
+  ["set",    "sat",  "Change the e to a.",                "sit",    "near"],
+  ["set",    "sat",  "Change the e to a.",                "bet",    "near"],
+  ["set",    "sat",  "Change the e to a.",                "sea",    "near"],
+  // A different word altogether. The method is not there.
+  ["set",    "sat",  "Change the e to a.",                "dog",    "far"],
+  ["set",    "sat",  "Change the e to a.",                "mat",    "far"],
+  // Insertions and deletions count as one edit.
+  ["sad",    "said", "Put an i between the a and the d.", "said",   "right"],
+  ["sad",    "said", "Put an i between the a and the d.", "sand",   "near"],
+  ["snail",  "nail", "Take off the s.",                   "nail",   "right"],
+  ["snail",  "nail", "Take off the s.",                   "snai",   "near"],
+  // "tail" is two edits from "snail" -- drop the s AND change n to t --
+  // so it is far, not near. Worth keeping as the case that says what one
+  // edit actually means.
+  ["snail",  "nail", "Take off the s.",                   "tail",   "far"],
+  ["snail",  "nail", "Take off the s.",                   "sail",   "near"],
+  ["snail",  "nail", "Take off the s.",                   "rain",   "far"],
+  ["pin",    "pine", "Add a silent e.",                   "pine",   "right"],
+  ["pin",    "pine", "Add a silent e.",                   "pint",   "near"],
+  ["pine",   "pin",  "Take off the silent e.",            "pin",    "right"],
+];
+
+for (const [prev, want, clue, typed, want_v] of VERDICTS) {
+  const got = judgeRung(prev, want, clue, typed);
+  if (got !== want_v)
+    problems.push(`judgeRung("${prev}","${want}","${clue}","${typed}") = ${got}, expected ${want_v}`);
+}
+
+/*
+ * Every clue admits exactly one string.
+ *
+ * This is not a nicety: a verdict of the form "you followed the
+ * instruction but that is not a word" was written here and then taken out
+ * again, because across all 1,089 clues there is no string other than the
+ * answer that satisfies any of them. Anything that follows the
+ * instruction already is the answer. Asserting it keeps that branch from
+ * coming back on the strength of an assumption, and would catch a new
+ * clue form loose enough to allow two readings.
+ */
+const ALPHA = "abcdefghijklmnopqrstuvwxyz".split("");
+let clueCount = 0;
+for (const [key, v] of Object.entries(LAD)) {
+  for (let i = 0; i < v.clues.length; i++) {
+    const a = v.words[i], want = v.words[i + 1], c = v.clues[i];
+    clueCount++;
+    const cand = new Set();
+    for (let q = 0; q < a.length; q++) {
+      for (const ch of ALPHA) cand.add(a.slice(0, q) + ch + a.slice(q + 1));
+      cand.add(a.slice(0, q) + a.slice(q + 1));
+    }
+    for (let q = 0; q <= a.length; q++) for (const ch of ALPHA) cand.add(a.slice(0, q) + ch + a.slice(q));
+    for (const x of cand) {
+      if (x !== want && describes(a, x, c))
+        problems.push(`${key}: rung ${i + 1} ("${c}") is satisfied by "${x}" as well as "${want}"`);
+    }
+  }
+}
+
+/*
+ * And the near/far split has to be reachable on real ladders, or it is
+ * decoration. For every rung, how many of the one-edit neighbours of the
+ * rung above are judged "near"?
+ */
+let nearReachable = 0;
+for (const v of Object.values(LAD)) {
+  for (let i = 0; i < v.clues.length; i++) {
+    const a = v.words[i], want = v.words[i + 1], c = v.clues[i];
+    const neigh = new Set();
+    for (let q = 0; q < a.length; q++) {
+      for (const ch of ALPHA) neigh.add(a.slice(0, q) + ch + a.slice(q + 1));
+      neigh.add(a.slice(0, q) + a.slice(q + 1));
+    }
+    for (const x of neigh) if (judgeRung(a, want, c, x) === "near") nearReachable++;
+  }
+}
+if (nearReachable === 0) problems.push('the "near" verdict never fires on any rung -- it is decoration');
+
+console.log(`verdicts: ${VERDICTS.length} checked; ${clueCount.toLocaleString()} clues each admit exactly one string; "near" reachable on ${nearReachable.toLocaleString()} near-misses.`);
 console.log(`${Object.keys(LAD).length} ladders, ${rungs} rungs, across ${expected.length} lessons and parts.`);
 console.log(`problems: ${problems.length}`);
 problems.slice(0, 40).forEach((x) => console.log("  " + x));

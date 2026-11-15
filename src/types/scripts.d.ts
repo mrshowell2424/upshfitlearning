@@ -15,3 +15,24 @@ declare module "@/../scripts/lib/spelling-span.mjs" {
     typed: string,
   ): "right" | "lesson" | "elsewhere";
 }
+
+/**
+ * The word ladder clue logic, in scripts/lib for the same reason: the
+ * ladder page and scripts/check-word-ladders.mjs both decide whether a
+ * clue turns one word into another, and two copies would drift silently.
+ */
+declare module "@/../scripts/lib/ladder-clue.mjs" {
+  /** Would this clue, read literally, turn `a` into `b`? */
+  export function describes(a: string, b: string, clue: string): boolean;
+  /** Trim, lowercase, and drop anything that is not a letter. */
+  export function tidy(typed: unknown): string;
+  /** One letter swapped, added or taken away? */
+  export function oneEditAway(a: string, b: string): boolean;
+  /** What a child is told about one rung. */
+  export function judgeRung(
+    prev: string,
+    want: string,
+    clue: string,
+    typed: string,
+  ): "right" | "same" | "near" | "far" | "empty";
+}

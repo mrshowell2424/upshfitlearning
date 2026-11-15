@@ -134,6 +134,8 @@ const CARDS = [
 
   { file: "spelling", eyebrow: "Dictation", title: "Reading it is not\nspelling it.",
     line: "Fourteen hundred words read aloud, with a check that says where the spelling went wrong.", accent: BRAND.lavender },
+  { file: "word-ladders", eyebrow: "Word ladders", title: "Change one sound.\nSay what is left.",
+    line: "212 ladders, every rung decodable at that lesson and every clue with one answer.", accent: BRAND.teal },
 
   { file: "morphology", eyebrow: "Word Parts", title: "Read words nobody\ntaught you.",
     line: "Prefixes, suffixes and roots, on words your class has already met in an article.", accent: BRAND.teal },
