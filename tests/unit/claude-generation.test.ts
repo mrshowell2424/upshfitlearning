@@ -30,7 +30,9 @@ describe("Claude Lesson Generation API", () => {
   describe("Authentication", () => {
     it("requires ANTHROPIC_API_KEY environment variable", () => {
       const apiKey = process.env.ANTHROPIC_API_KEY;
-      expect(typeof apiKey).toBe("string" || "undefined");
+      // `"string" || "undefined"` is just "string", so this used to demand
+      // the key be set and failed on every machine that had not loaded it.
+      expect(["string", "undefined"]).toContain(typeof apiKey);
     });
 
     it("uses Claude 3.5 Sonnet model", () => {
@@ -75,7 +77,8 @@ describe("Claude Lesson Generation API", () => {
     });
 
     it("validates required fields", () => {
-      const hasRequired = request.standard && request.format;
+      // A chain of && yields the last operand ("slides"), never `true`.
+      const hasRequired = Boolean(request.standard && request.format);
       expect(hasRequired).toBe(true);
     });
 
@@ -238,7 +241,12 @@ Create engaging, age-appropriate content that helps students understand standard
     });
 
     it("generates appropriate content length", () => {
-      const slideContent = "Slide 1: Introduction\nSlide 2: Key concepts\n...";
+      const slideContent =
+        "Slide 1: Introduction\n" +
+        "Slide 2: Key concepts and vocabulary\n" +
+        "Slide 3: Worked example with the class\n" +
+        "Slide 4: Partner practice\n" +
+        "Slide 5: Closure and exit ticket";
       const minLength = 100;
 
       expect(slideContent.length).toBeGreaterThan(minLength);
@@ -420,7 +428,7 @@ Create engaging, age-appropriate content that helps students understand standard
 
     it("handles API timeout", async () => {
       const error = new Error("Claude API request timed out after 30s");
-      expect(error.message).toContain("timeout");
+      expect(error.message).toMatch(/timed out|timeout/);
     });
 
     it("handles rate limiting", async () => {
@@ -546,18 +554,21 @@ Create engaging, age-appropriate content that helps students understand standard
       const content = {
         title: "Valid Title",
         description: "Valid description",
-        content: "Valid content with substantial text",
+        content:
+          "Valid content with substantial text, long enough to clear the " +
+          "fifty-character floor this rule checks for.",
       };
 
-      const isValid =
-        content.title && content.description && content.content.length > 50;
+      const isValid = Boolean(
+        content.title && content.description && content.content.length > 50
+      );
 
       expect(isValid).toBe(true);
     });
 
     it("checks for minimum content length", () => {
       const minLength = 200;
-      const generatedContent = "A" * 250; // 250 characters
+      const generatedContent = "A".repeat(250);
 
       expect(generatedContent.length).toBeGreaterThan(minLength);
     });

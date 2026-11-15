@@ -39,7 +39,7 @@ describe("Substack Integration", () => {
   describe("Webhook Configuration", () => {
     it("requires SUBSTACK_WEBHOOK_SECRET environment variable", () => {
       const secret = process.env.SUBSTACK_WEBHOOK_SECRET;
-      expect(typeof secret).toBe("string" || "undefined");
+      expect(["string", "undefined"]).toContain(typeof secret);
     });
 
     it("webhook endpoint is /api/webhooks/substack", () => {
@@ -354,9 +354,20 @@ describe("Substack Integration", () => {
 
     it("handles invalid JSON payload", async () => {
       const invalidPayload = "not json";
-      const isJSON = typeof JSON.parse(invalidPayload) === "object";
 
-      expect(isJSON).toBe(false);
+      // JSON.parse throws on this rather than returning a non-object, so
+      // the old form threw out of the test instead of asserting anything.
+      expect(() => JSON.parse(invalidPayload)).toThrow();
+
+      const parse = (s: string) => {
+        try {
+          return JSON.parse(s);
+        } catch {
+          return null;
+        }
+      };
+      expect(parse(invalidPayload)).toBeNull();
+      expect(parse('{"title":"ok"}')).toEqual({ title: "ok" });
     });
 
     it("handles missing required article fields", () => {

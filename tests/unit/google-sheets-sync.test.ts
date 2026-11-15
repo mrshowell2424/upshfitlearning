@@ -33,8 +33,8 @@ describe("Google Sheets Sync Integration", () => {
 
     it("requires GOOGLE_SHEETS_ID environment variable", () => {
       const spreadsheetId = process.env.GOOGLE_SHEETS_ID;
-      // In test, should be undefined or mocked
-      expect(typeof spreadsheetId).toBe("string" || "undefined");
+      // In test, should be undefined or mocked.
+      expect(["string", "undefined"]).toContain(typeof spreadsheetId);
     });
 
     it("authorizes with Google Sheets API", async () => {
@@ -156,7 +156,8 @@ describe("Google Sheets Sync Integration", () => {
     });
 
     it("validates required fields are present", () => {
-      const hasRequired = row.title && row.link_url && row.summary;
+      // A chain of && yields the last operand, never `true`.
+      const hasRequired = Boolean(row.title && row.link_url && row.summary);
       expect(hasRequired).toBe(true);
     });
 

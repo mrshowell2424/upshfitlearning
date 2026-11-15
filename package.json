@@ -20,9 +20,9 @@
     "db:seed": "bun run scripts/seed-resources.ts",
     "db:seed:standards": "bun run scripts/seed-standards.ts",
     "db:push": "drizzle-kit push",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage",
+    "test": "bun test tests/unit/",
+    "test:watch": "bun test --watch tests/unit/",
+    "test:coverage": "bun test --coverage tests/unit/",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui"
   },
