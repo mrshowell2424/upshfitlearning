@@ -12390,6 +12390,1973 @@
    ],
    "expand": [],
    "stem": "The figure is uncertain."
+  },
+  {
+   "id": "g8-1",
+   "grade": 8,
+   "n": 1,
+   "title": "The Fossil That Was Predicted",
+   "standard": "RI.8.1",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "In 2004 they found an animal with the scales and fins of a fish.",
+      "It had a flat head with eyes on top.",
+      "It had a neck.",
+      "Inside its fin were the bones of a shoulder, an elbow and a wrist."
+     ],
+     "to": [
+      "What they found in 2004 was an animal with the scales and fins of a fish, a flat head with eyes on top, a neck, and inside its fin the bones of a shoulder, an elbow and a wrist."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "Fossils of fish are common in rocks of one age.",
+      "Fossils of four-legged land animals are common in younger rocks.",
+      "The gap between them held very little.",
+      "That gap was the problem."
+     ],
+     "to": [
+      "Fossils of fish are common in rocks of a certain age, and fossils of four-legged land animals are common in younger rocks.",
+      "For a long time the interval between them held very little, and that gap was the problem."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "F",
+     "kernel": "The neck, which fish do not have, is a third.",
+     "expanded": "The presence of a neck, which fish do not have, is a third."
+    }
+   ],
+   "stem": "It had a neck."
+  },
+  {
+   "id": "g8-2",
+   "grade": 8,
+   "n": 2,
+   "title": "Who Reached the Pole First",
+   "standard": "RI.8.1",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "In 1909 two American explorers claimed to have reached the North Pole.",
+      "Frederick Cook said April 1908.",
+      "Robert Peary said April 1909.",
+      "Each disputed the other."
+     ],
+     "to": [
+      "In 1909 two American explorers claimed to have reached the North Pole.",
+      "Frederick Cook said he had arrived in April 1908, and Robert Peary said he had arrived in April 1909, and each disputed the other."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "There is nothing at the Pole to photograph.",
+      "It is sea ice, the same as the ice for many kilometres around.",
+      "It drifts.",
+      "A party cannot leave a marker and expect it to be found."
+     ],
+     "to": [
+      "There is nothing at the Pole to photograph.",
+      "It is sea ice, indistinguishable from the ice for many kilometres around it, and it drifts, so a party cannot leave a marker and expect anyone to find it again."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Each disputed the other."
+  },
+  {
+   "id": "g8-3",
+   "grade": 8,
+   "n": 3,
+   "title": "The Bones Inside a Flipper",
+   "standard": "RI.8.1",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "Inside it looks nothing like a fin.",
+      "An x-ray shows one long bone.",
+      "Then two side by side.",
+      "Then a cluster of small ones.",
+      "Then rows of finger bones.",
+      "That is a human arm."
+     ],
+     "to": [
+      "Inside it does not resemble a fin at all.",
+      "An x-ray shows one long bone, then two bones side by side, then a cluster of small ones, then rows of finger bones, which is the arrangement in a human arm."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "The second is far stronger.",
+      "The fish fin shows why.",
+      "Outward likeness can come from a shared problem.",
+      "Anything that swims fast becomes streamlined.",
+      "That says nothing about ancestry."
+     ],
+     "to": [
+      "The second is far stronger, and the fish fin is why.",
+      "Outward similarity can be produced by a shared problem, since anything swimming fast will end up streamlined, and a shared problem explains nothing about ancestry."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "That is no surprise."
+  },
+  {
+   "id": "g8-4",
+   "grade": 8,
+   "n": 4,
+   "title": "The Shipwreck That Dated a Trade Route",
+   "standard": "RI.8.1",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "What was aboard came from a very wide area.",
+      "Copper from Cyprus.",
+      "Tin from further east.",
+      "Ebony from Africa.",
+      "Amber from the Baltic.",
+      "Pottery from the Levant.",
+      "A gold scarab with an Egyptian queen's name."
+     ],
+     "to": [
+      "What was aboard came from a very wide area.",
+      "Copper from Cyprus, tin from further east, ebony from Africa, amber from the Baltic, pottery from the Levant, and a gold scarab bearing the name of an Egyptian queen."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "Any one item could have travelled alone.",
+      "A single amber bead in a tomb proves the bead moved.",
+      "It does not prove a route existed.",
+      "Objects pass through many hands over many years."
+     ],
+     "to": [
+      "Any one of those items could have travelled alone.",
+      "A single Baltic amber bead in a tomb proves that the bead moved and does not prove that a route existed, because objects can pass through many hands over many years."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Tin from further east."
+  },
+  {
+   "id": "g8-5",
+   "grade": 8,
+   "n": 5,
+   "title": "What Makes a Fingerprint Evidence",
+   "standard": "RI.8.1",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The basic observation is sound.",
+      "Ridge patterns form before birth.",
+      "They are not inherited in detail.",
+      "They last a lifetime.",
+      "Two people are very unlikely to share a full print."
+     ],
+     "to": [
+      "The underlying observation is sound.",
+      "The ridge patterns on a finger form before birth, they are not inherited in detail, and they persist through a lifetime, so two people are very unlikely to share a full print."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "What happens in a case is different.",
+      "A print from a surface is usually partial, smeared and overlapping.",
+      "It was left in an unknown substance.",
+      "It is compared with a clean print taken in controlled conditions."
+     ],
+     "to": [
+      "What happens in a case is a different operation.",
+      "A print recovered from a surface is usually partial, smeared, overlapping with others and left in an unknown substance, and it is compared with a clean print taken under controlled conditions."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "G",
+     "kernel": "So the strongest evidence for a fingerprint method is not its age or the examiner's confidence.",
+     "expanded": "The strongest evidence for a fingerprint method is therefore not how long it has been used or how confident the examiner is."
+    }
+   ],
+   "stem": "They last a lifetime."
+  },
+  {
+   "id": "g8-6",
+   "grade": 8,
+   "n": 6,
+   "title": "The Mosquito That Was Engineered",
+   "standard": "RI.8.2",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Malaria is carried by a few mosquito species.",
+      "In much of Africa the main one is Anopheles gambiae.",
+      "Nets, drugs and spraying have cut deaths hugely.",
+      "They have not ended the disease."
+     ],
+     "to": [
+      "Malaria is carried by a small number of mosquito species, and in much of Africa the main one is Anopheles gambiae.",
+      "Nets, drugs and spraying have reduced deaths enormously and have not ended the disease, and in some places the mosquitoes have become resistant to the insecticides the nets are treated with."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "Ordinary inheritance will not spread such a gene.",
+      "A harmful variant goes to about half the offspring.",
+      "It is selected against.",
+      "So it disappears instead of building up."
+     ],
+     "to": [
+      "Ordinary inheritance will not spread such a gene.",
+      "A harmful variant is passed to about half the offspring and is selected against, so it disappears instead of accumulating."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It is selected against."
+  },
+  {
+   "id": "g8-7",
+   "grade": 8,
+   "n": 7,
+   "title": "The Country That Changed Its Alphabet",
+   "standard": "RI.8.2",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "A linguistic argument was offered.",
+      "Arabic script marks consonants fully and vowels sparingly.",
+      "Turkish has eight vowels that matter.",
+      "Readers had to supply from context what the writing did not record."
+     ],
+     "to": [
+      "A linguistic argument was offered.",
+      "Arabic script marks consonants fully and vowels sparingly, Turkish has eight vowels that matter a great deal, and readers were required to supply from context what the writing did not record."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "A national teaching campaign followed, with classes for adults.",
+      "Literacy rose over the following decades.",
+      "Separating the alphabet's effect from mass schooling is genuinely hard."
+     ],
+     "to": [
+      "A nationwide teaching campaign followed, with classes for adults, and literacy rose over the following decades, although separating the effect of the alphabet from the effect of mass schooling is genuinely difficult, since the two arrived together and a child learning to read in 1935 had no earlier script to forget."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "A linguistic argument was offered."
+  },
+  {
+   "id": "g8-8",
+   "grade": 8,
+   "n": 8,
+   "title": "How a Vaccine Stays Cold",
+   "standard": "RI.8.2",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "A vaccine is a biological product.",
+      "Biological products degrade with heat.",
+      "Most routine vaccines must stay between two and eight degrees from factory to arm.",
+      "Some newer ones need far colder storage."
+     ],
+     "to": [
+      "A vaccine is a biological product, and biological products degrade with heat.",
+      "Most routine vaccines must be held between two and eight degrees from the factory to the arm, and some newer ones require storage far colder than any ordinary household freezer can reach."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "A simple device helps.",
+      "A vial monitor is a small square of heat-sensitive material on the label.",
+      "It darkens with exposure and does not reverse.",
+      "A health worker can read the dose's history."
+     ],
+     "to": [
+      "A simple device addresses this.",
+      "A vial monitor is a small square of heat-sensitive material printed on the label, and it darkens cumulatively with exposure, so a health worker can read the dose's history before using it."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The chain fails quietly."
+  },
+  {
+   "id": "g8-9",
+   "grade": 8,
+   "n": 9,
+   "title": "The Line Drawn in Five Weeks",
+   "standard": "RI.8.2",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "The timetable was not his.",
+      "Independence had been moved forward.",
+      "The award was finished before the date and published two days after it.",
+      "People learned which country they were in after both existed."
+     ],
+     "to": [
+      "The timetable was not his.",
+      "Independence had been brought forward, and the award was completed before the date and published two days after it, so people learned which country they were in once both countries existed."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "What followed was among the largest forced movements of people in recorded history.",
+      "Many millions crossed in both directions.",
+      "Very large numbers were killed in the violence."
+     ],
+     "to": [
+      "What followed was among the largest forced movements of people in recorded history, with many millions crossing in both directions and very large numbers killed in the violence that accompanied it, often along the same roads, canals and railway lines the new border had cut across."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Accounts differ on responsibility."
+  },
+  {
+   "id": "g8-10",
+   "grade": 8,
+   "n": 10,
+   "title": "The Element That Was Missing",
+   "standard": "RI.8.2",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "He went further, and this set his table apart.",
+      "For three gaps he predicted the missing element's properties.",
+      "Its weight.",
+      "Its density.",
+      "How its oxide would behave."
+     ],
+     "to": [
+      "He went further, and this is what separated his table from the others.",
+      "For three of the gaps he predicted the properties of the missing element: its weight, its density, how its oxide would behave."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "By 1869 chemists knew of about sixty elements.",
+      "They had noticed that some behaved alike.",
+      "Several people were arranging them in tables.",
+      "The arrangements mostly broke down somewhere."
+     ],
+     "to": [
+      "By 1869 chemists knew of around sixty elements and had noticed that some behaved alike.",
+      "Several people were arranging them in tables, and the arrangements mostly broke down somewhere, usually at a point where an element's weight set it beside elements it had nothing chemically in common with."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "B",
+     "kernel": "When an element did not fit where its weight put it, he blamed the order, not the pattern.",
+     "expanded": "When an element did not fit where the weights put it, he treated that as a problem with the order rather than with the pattern."
+    }
+   ],
+   "stem": "He named it gallium."
+  },
+  {
+   "id": "g8-11",
+   "grade": 8,
+   "n": 11,
+   "title": "What an Analogy Costs",
+   "standard": "RI.8.3",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "An atom is often introduced as a tiny solar system.",
+      "A nucleus at the centre.",
+      "Electrons going round like planets.",
+      "The picture is memorable and easy to draw.",
+      "Nearly every student meets it first."
+     ],
+     "to": [
+      "An atom is often introduced as a tiny solar system, with a nucleus at the centre and electrons going round it like planets.",
+      "The picture is memorable, it is easy to draw, and nearly every student meets it first."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "It gets several things right.",
+      "There is a dense centre holding almost all the mass.",
+      "The rest is mostly empty space.",
+      "What is out there is held by an attraction toward the middle."
+     ],
+     "to": [
+      "It gets several things right.",
+      "There is a dense centre holding almost all the mass, the rest is mostly empty space, and what is out there is held in place by an attraction toward the middle."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Teaching would be impossible."
+  },
+  {
+   "id": "g8-12",
+   "grade": 8,
+   "n": 12,
+   "title": "The Category Called Teenager",
+   "standard": "RI.8.3",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "Three changes built the category.",
+      "Compulsory schooling held young people longer.",
+      "Child labour laws removed them from workplaces.",
+      "Together these made a large group who were neither children nor workers."
+     ],
+     "to": [
+      "Three changes built the category.",
+      "Compulsory schooling held young people in institutions for longer, child labour laws removed them from workplaces, and both together produced a large group of people who were neither children nor workers."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "Then came the market.",
+      "Postwar firms saw a population with some money, time and no dependants.",
+      "Products, magazines and music were made for them.",
+      "The category became visible to itself."
+     ],
+     "to": [
+      "Then came the market.",
+      "Postwar American firms noticed a population with some money, time and no dependants, and products, magazines and music were made specifically for them, which made the category visible to itself."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "D",
+     "kernel": "Stanley Hall argued that adolescence was a distinct stage with its own traits.",
+     "expanded": "Stanley Hall had argued in 1904 that adolescence was a distinct developmental stage with its own characteristics."
+    }
+   ],
+   "stem": "Then came the market."
+  },
+  {
+   "id": "g8-13",
+   "grade": 8,
+   "n": 13,
+   "title": "Is a Virus Alive?",
+   "standard": "RI.8.3",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Biology teaches a list of things living organisms do.",
+      "Take in energy.",
+      "Maintain themselves.",
+      "Respond to surroundings.",
+      "Grow.",
+      "Reproduce.",
+      "Most examples satisfy the whole list comfortably."
+     ],
+     "to": [
+      "Biology teaches a list of things living organisms do.",
+      "They take in energy, they maintain themselves, they respond to their surroundings, they grow and they reproduce, and most examples satisfy all of it comfortably."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "A virus satisfies some of it and not the rest.",
+      "It carries genetic material.",
+      "It evolves by natural selection.",
+      "It reproduces.",
+      "That is a serious part of the list."
+     ],
+     "to": [
+      "A virus satisfies some of it and not the rest.",
+      "It carries genetic material written in the same chemical alphabet as everything else, it evolves by natural selection, and it reproduces, which is a serious part of the list."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It carries genetic material."
+  },
+  {
+   "id": "g8-14",
+   "grade": 8,
+   "n": 14,
+   "title": "What Counts as a City",
+   "standard": "RI.8.3",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The first is the administrative boundary.",
+      "That is the line a government draws for governing.",
+      "It appears on official documents.",
+      "It was often drawn long ago and rarely moved."
+     ],
+     "to": [
+      "The first is the administrative boundary, the line a government draws for the purpose of governing.",
+      "It is the one that appears on an official document, and it was often drawn long ago and seldom moved since."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "Comparing two cities by population sounds like a simple lookup.",
+      "It is not.",
+      "The number depends entirely on which boundary somebody used."
+     ],
+     "to": [
+      "Comparing two cities by population sounds like a simple lookup.",
+      "It is not, because the number depends entirely on which of several boundaries somebody used, and there are at least three in ordinary use that disagree with one another."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It ignores administration completely."
+  },
+  {
+   "id": "g8-15",
+   "grade": 8,
+   "n": 15,
+   "title": "Why a Peanut Is Not a Nut",
+   "standard": "RI.8.3",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "A peanut is not a nut.",
+      "An almond is not a nut.",
+      "A cashew is not a nut.",
+      "Each statement is true in botany and useless in a kitchen.",
+      "That is the interesting part."
+     ],
+     "to": [
+      "A peanut is not a nut, an almond is not a nut, and a cashew is not a nut.",
+      "Each of those statements is true in botany and useless in a kitchen, which is the interesting part."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "Medicine uses a third.",
+      "Allergy guidance separates peanuts from tree nuts.",
+      "The proteins differ.",
+      "A person allergic to one may safely eat the other.",
+      "Neither earlier category captures that."
+     ],
+     "to": [
+      "Medicine uses a third.",
+      "Allergy guidance separates peanuts from tree nuts, because the proteins differ and a person allergic to one may safely eat the other, which neither of the first two categories captures."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Medicine uses a third."
+  },
+  {
+   "id": "g8-16",
+   "grade": 8,
+   "n": 16,
+   "title": "Calling It a Greenhouse",
+   "standard": "RI.8.4",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The usual explanation is that glass lets sunlight in and stops heat escaping.",
+      "Light passes through and warms what is inside.",
+      "The glass then traps the warmth.",
+      "So the air inside gets hot."
+     ],
+     "to": [
+      "The explanation usually offered is that glass lets sunlight in and stops heat escaping.",
+      "Light passes through, warms what is inside, and the warmth is then trapped by the glass, which is why the air in there gets hot."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "The atmosphere does something genuinely different.",
+      "Certain gases let sunlight through.",
+      "They absorb the infrared the warmed surface sends back out.",
+      "Then they re-emit it in all directions, including down."
+     ],
+     "to": [
+      "The atmosphere does something genuinely different.",
+      "Certain gases are transparent to incoming sunlight and absorb the infrared radiation the warmed surface sends back out, then re-emit it in all directions, including downward."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "One blocks moving air."
+  },
+  {
+   "id": "g8-17",
+   "grade": 8,
+   "n": 17,
+   "title": "The Allusion in a Speech",
+   "standard": "RI.8.4",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "It is also deniable.",
+      "A speaker who alludes has not said the thing.",
+      "Those who hear the reference can insist on it.",
+      "The speaker can deny it.",
+      "Both point at the same words."
+     ],
+     "to": [
+      "It is also deniable.",
+      "A speaker who alludes has not said the thing, so the reference can be insisted on by those who hear it and denied by the speaker, and both can point at the same words."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "Allusion carries a risk quotation does not.",
+      "A listener who misses the source loses the layer.",
+      "They may hear only odd phrasing.",
+      "So an allusion divides an audience in a way a quotation does not."
+     ],
+     "to": [
+      "Allusion carries a risk that quotation does not.",
+      "A listener who does not recognise the source loses the layer entirely, and may hear only an odd phrasing, so an allusion divides an audience in a way a quotation does not."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It sets a tone."
+  },
+  {
+   "id": "g8-18",
+   "grade": 8,
+   "n": 18,
+   "title": "The Genome Is Not a Blueprint",
+   "standard": "RI.8.4",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "A genome is often called a blueprint for an organism.",
+      "The comparison is everywhere.",
+      "It has been in textbooks for decades.",
+      "It gets the most important thing backwards."
+     ],
+     "to": [
+      "A genome is often called a blueprint for an organism.",
+      "The comparison is everywhere, it has been in textbooks for decades, and it gets the most important thing backwards."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "A blueprint is a scaled drawing.",
+      "Every line matches a part of the finished building.",
+      "The drawing can be measured.",
+      "You can point at a door on the plan and at the same door in the corridor."
+     ],
+     "to": [
+      "A blueprint is a scaled drawing.",
+      "Every line on it corresponds to a part of the finished building, the drawing can be measured, and a person can point at a door on the plan and at the same door in the corridor."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The comparison is everywhere."
+  },
+  {
+   "id": "g8-19",
+   "grade": 8,
+   "n": 19,
+   "title": "Naming a Disease",
+   "standard": "RI.8.4",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "What is recommended is descriptive and dull.",
+      "The symptoms.",
+      "The affected system.",
+      "The pathogen.",
+      "A year or identifier if needed.",
+      "The names are harder to remember, which is partly the point."
+     ],
+     "to": [
+      "What is recommended instead is descriptive and dull: the symptoms, the affected system, the pathogen, with a year or an identifier where one is needed.",
+      "The resulting names are harder to remember, which is partly the point."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "A place name attaches a population to an illness.",
+      "The 1918 influenza pandemic is still called Spanish flu.",
+      "Spain's link to it came mainly from being neutral and not censoring its press."
+     ],
+     "to": [
+      "A place name attaches a population to an illness.",
+      "The influenza pandemic of 1918 is still widely called Spanish flu, and Spain's association with it comes mainly from Spain being neutral and not censoring its press."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "A",
+     "kernel": "Each convention has produced a name that caused harm.",
+     "expanded": "Each of those conventions has produced a name that caused harm, and in several cases the harm fell on people who had nothing to do with the outbreak."
+    }
+   ],
+   "stem": "A year or identifier if needed."
+  },
+  {
+   "id": "g8-20",
+   "grade": 8,
+   "n": 20,
+   "title": "What a Chemist Means by Organic",
+   "standard": "RI.8.4",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "By that definition petrol is organic.",
+      "Most plastics are organic.",
+      "So is every pesticide built on a carbon skeleton.",
+      "That sounds like a trick.",
+      "It is the technical meaning used consistently."
+     ],
+     "to": [
+      "By that definition petrol is organic, most plastics are organic, and so is every pesticide built on a carbon skeleton, which is a sentence that sounds like a trick and is simply the technical meaning applied consistently."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "The older sense explains how this happened.",
+      "Chemists once thought compounds from living things needed a vital force.",
+      "They could not be made from non-living material.",
+      "So organic meant from an organism."
+     ],
+     "to": [
+      "The older sense explains how this happened.",
+      "Chemists once believed compounds from living things required a vital force and could not be made from non-living material, so organic meant from an organism."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Most plastics are organic."
+  },
+  {
+   "id": "g8-21",
+   "grade": 8,
+   "n": 21,
+   "title": "How a Paragraph Builds a Definition",
+   "standard": "RI.8.5",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Take a paragraph defining the word species in a biology textbook.",
+      "Read it one sentence at a time.",
+      "The paragraph is short.",
+      "Almost every sentence does a different job from the one before."
+     ],
+     "to": [
+      "Take a paragraph defining the word species in a biology textbook and read it one sentence at a time.",
+      "The paragraph is short, and almost every sentence in it is doing a different job from the one before."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The first sentence usually gives the definition plainly.",
+      "A species is a group that can interbreed and produce fertile offspring.",
+      "On its own it sounds complete.",
+      "It is written to sound that way."
+     ],
+     "to": [
+      "The first sentence usually offers the definition plainly: a species is a group of organisms that can interbreed and produce fertile offspring.",
+      "On its own that sentence sounds complete, which is the effect it is written to have."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The paragraph is short."
+  },
+  {
+   "id": "g8-22",
+   "grade": 8,
+   "n": 22,
+   "title": "The Sentence That Concedes",
+   "standard": "RI.8.5",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "The sentence after a concession does the work.",
+      "It usually starts with but, yet or however.",
+      "It does not deny what was granted.",
+      "It argues that the granted point does not reach the conclusion."
+     ],
+     "to": [
+      "The sentence after a concession is where the work happens.",
+      "It usually begins with but, yet or however, and it does not deny what was just granted; it argues that the granted point does not reach the conclusion."
+     ]
+    },
+    {
+     "para": "G",
+     "from": [
+      "So the test is what gets conceded, not whether anything does.",
+      "Think of the strongest objection.",
+      "Ask whether the paragraph names it.",
+      "A concession that avoids the hard one is a performance."
+     ],
+     "to": [
+      "So the test is what gets conceded, not whether anything does.",
+      "Find the strongest objection you can think of and ask whether the paragraph names it, because a concession that avoids the hard one is a performance."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It usually strengthens it."
+  },
+  {
+   "id": "g8-23",
+   "grade": 8,
+   "n": 23,
+   "title": "The Paragraph That Reports Nothing Happened",
+   "standard": "RI.8.5",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "That distinction matters more than it looks.",
+      "An absence cannot be proved.",
+      "A bound is a measurement.",
+      "A bound can be combined with other studies.",
+      "An absence cannot be combined with anything."
+     ],
+     "to": [
+      "That distinction matters more than it looks.",
+      "An absence is unprovable, a bound is a measurement, and the second can be combined with other studies while the first cannot be combined with anything."
+     ]
+    },
+    {
+     "para": "G",
+     "from": [
+      "These paragraphs are easier to find now.",
+      "Trials are registered before they run.",
+      "A study that reports nothing can be checked against its plan.",
+      "One never reported leaves a visible gap."
+     ],
+     "to": [
+      "Such paragraphs are now easier to find because trials are registered before they run, so a study that reports nothing can be matched against the plan it was registered with, and one that is never reported leaves a visible gap."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It is harder to publish."
+  },
+  {
+   "id": "g8-24",
+   "grade": 8,
+   "n": 24,
+   "title": "The Definitions Section of a Law",
+   "standard": "RI.8.5",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The form is one paragraph of repeated clauses.",
+      "In this Act, vehicle means.",
+      "Employee means.",
+      "Premises means.",
+      "The repetition is deliberate.",
+      "A definition that varies invites argument about the variation."
+     ],
+     "to": [
+      "The convention is a single paragraph built from repeated clauses: in this Act, vehicle means, employee means, premises means.",
+      "The repetition is deliberate, because a definition that varies in form invites argument about whether the variation meant something."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "Many laws open with a section that only defines words.",
+      "Almost every reader skips it.",
+      "It frequently decides the outcome of every dispute the law produces."
+     ],
+     "to": [
+      "Many laws open with a section that does nothing but define words.",
+      "It is skipped by almost every reader, including many who are otherwise reading carefully, and it frequently determines the outcome of every dispute the law produces."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "G",
+     "kernel": "A sentence that looked clear often uses a word in a sense fixed in a paragraph the reader skipped.",
+     "expanded": "A sentence later in the law that looked clear often turns out to be using at least one word in a sense that was fixed in a paragraph the reader skipped."
+    }
+   ],
+   "stem": "The repetition is deliberate."
+  },
+  {
+   "id": "g8-25",
+   "grade": 8,
+   "n": 25,
+   "title": "One Paragraph of a Forecast Discussion",
+   "standard": "RI.8.5",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "A paragraph from one has a clear structure.",
+      "It opens with the current situation.",
+      "It says what the computer models show.",
+      "It notes where the models disagree.",
+      "Then it gives the forecaster's judgement."
+     ],
+     "to": [
+      "A paragraph from one of these has a recognisable structure.",
+      "It opens with the current situation, states what the computer models are showing, notes where the models disagree, and then gives the forecaster's judgement between them."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "Next comes the reasoning.",
+      "A forecaster may prefer one model because it handled this pattern well this season.",
+      "Or because its starting data used observations the other lacked.",
+      "The reason is stated."
+     ],
+     "to": [
+      "Next comes the reasoning.",
+      "A forecaster may prefer one model because it has handled this pattern well this season, or because its starting conditions used observations the other one lacked, and the preference is stated with its reason."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Next comes the reasoning."
+  },
+  {
+   "id": "g8-26",
+   "grade": 8,
+   "n": 26,
+   "title": "The Paper That Answers Its Critics",
+   "standard": "RI.8.6",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The sequence is fixed.",
+      "Someone publishes a result.",
+      "Another researcher writes a comment arguing it is wrong.",
+      "The original authors reply.",
+      "All three sit in the record together."
+     ],
+     "to": [
+      "The sequence is fixed.",
+      "Someone publishes a result, another researcher writes a comment arguing it is wrong, the original authors reply, and all three appear in the record where anyone can read them together."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "A comment is narrower than disagreement.",
+      "It names a specific step.",
+      "An analysis that should have excluded certain data.",
+      "A missing control.",
+      "An alternative explanation the paper did not rule out."
+     ],
+     "to": [
+      "What a comment does is narrower than disagreement.",
+      "It identifies a specific step: an analysis that should have excluded certain data, a control that was missing, an alternative explanation the paper did not rule out."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The sequence is fixed."
+  },
+  {
+   "id": "g8-27",
+   "grade": 8,
+   "n": 27,
+   "title": "The Report With a Minority View",
+   "standard": "RI.8.6",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "A good minority statement is narrow.",
+      "It does not restate the whole investigation.",
+      "It names the findings it accepts.",
+      "It identifies the one or two it does not.",
+      "It says what evidence was weighed wrongly."
+     ],
+     "to": [
+      "A good minority statement is narrow.",
+      "It does not restate the whole investigation; it names the findings it accepts, identifies the one or two it does not, and says what evidence it thinks was weighed wrongly."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "Sometimes a member will not sign.",
+      "The usual mechanism is a separate statement inside the same report.",
+      "It comes after the main findings.",
+      "It is labelled a minority or dissenting view."
+     ],
+     "to": [
+      "Sometimes a member will not sign.",
+      "The usual mechanism is a separate statement printed inside the same report, placed after the main findings and labelled as a minority or dissenting view."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The placement is the point."
+  },
+  {
+   "id": "g8-28",
+   "grade": 8,
+   "n": 28,
+   "title": "The Review That Weighs Studies",
+   "standard": "RI.8.6",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "On most questions in medicine there is not one study but dozens.",
+      "They do not all agree.",
+      "A systematic review deals with that.",
+      "Its method matters as much as its conclusion."
+     ],
+     "to": [
+      "On most questions in medicine there is not one study but dozens, and they do not all agree.",
+      "A systematic review is the document written to deal with that, and its method is as important as its conclusion."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "It begins before any results are seen.",
+      "The authors write down the question, which studies will count, and how studies will be assessed.",
+      "They publish that plan in advance."
+     ],
+     "to": [
+      "It begins before any results are looked at.",
+      "The authors write down what question they are asking, which studies will count, and how the studies will be assessed, and they publish that plan in advance."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "G",
+     "kernel": "The conclusion carries weight because of what came before it.",
+     "expanded": "The conclusion of such a review carries weight because of everything that came before it."
+    }
+   ],
+   "stem": "They do not all agree."
+  },
+  {
+   "id": "g8-29",
+   "grade": 8,
+   "n": 29,
+   "title": "The Textbook That Shows Two Views",
+   "standard": "RI.8.6",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "Done badly it becomes its own habit.",
+      "Showing every question as two balanced views implies the evidence is always evenly split.",
+      "Often it is not.",
+      "That is its own distortion."
+     ],
+     "to": [
+      "Done badly it becomes a habit of its own.",
+      "Presenting every question as two balanced views implies the evidence is always evenly divided, and on many questions it is not, which is its own kind of distortion."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "Better versions separate the cases.",
+      "Some disagreements are about what the evidence shows.",
+      "Some are about which evidence matters.",
+      "Some are between a well-supported position and a weak one."
+     ],
+     "to": [
+      "The better versions distinguish the cases.",
+      "Some disagreements are about what the evidence shows, some are about which evidence matters, and some are between a position with substantial support and one with very little."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "D",
+     "kernel": "The arrangement is honest that a choice exists.",
+     "expanded": "The arrangement is honest about there being a choice to make."
+    }
+   ],
+   "stem": "The cost comes later."
+  },
+  {
+   "id": "g8-30",
+   "grade": 8,
+   "n": 30,
+   "title": "The Scientist Who Published a Correction",
+   "standard": "RI.8.6",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Published research is sometimes wrong.",
+      "The system has two formal ways of saying so.",
+      "A correction fixes an error and leaves the conclusion standing.",
+      "A retraction withdraws the paper."
+     ],
+     "to": [
+      "Published research is sometimes wrong, and the system has two formal ways of saying so.",
+      "A correction fixes an error while leaving the conclusion standing, and a retraction withdraws the paper entirely."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "Authors do not always start these.",
+      "Some corrections follow an outside reader finding the problem.",
+      "Some retractions are issued by a journal over the authors' objection.",
+      "The notice usually says which."
+     ],
+     "to": [
+      "Authors do not always initiate these.",
+      "Some corrections follow an outside reader finding the problem, and some retractions are issued by a journal over the authors' objection, and the notice usually says which happened."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Published research is sometimes wrong."
+  },
+  {
+   "id": "g8-31",
+   "grade": 8,
+   "n": 31,
+   "title": "Why Every Flat Map Is Wrong",
+   "standard": "RI.8.7",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "So every projection chooses what to keep.",
+      "Mercator keeps angles right, so a compass bearing is a straight line.",
+      "The price is area.",
+      "Greenland looks like Africa and is about a fourteenth of its size."
+     ],
+     "to": [
+      "So every projection chooses what to preserve.",
+      "Mercator keeps angles correct, which is why a compass bearing is a straight line on it, and the price is area: Greenland appears comparable to Africa and is about a fourteenth of its size."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "Equal-area projections trade the other way.",
+      "They show relative sizes correctly and distort shape.",
+      "Continents look stretched.",
+      "They are unusable for the navigation Mercator was built for."
+     ],
+     "to": [
+      "Equal-area projections make the opposite trade.",
+      "They show the relative sizes of landmasses correctly and distort shape instead, so continents appear stretched, and they are unusable for the navigation Mercator was built for."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The price is area."
+  },
+  {
+   "id": "g8-32",
+   "grade": 8,
+   "n": 32,
+   "title": "The Archive on Paper and on a Server",
+   "standard": "RI.8.7",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "Digital storage is better at almost everything else.",
+      "A server holds a collection in little space.",
+      "It serves anyone anywhere.",
+      "It searches a million pages for a phrase in under a second."
+     ],
+     "to": [
+      "Digital storage is better at almost everything else.",
+      "A server holds a collection in a fraction of the space, serves it to anyone anywhere, and lets a reader search a million pages for a phrase in under a second."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "It is worse at lasting.",
+      "Media degrade within decades.",
+      "More importantly, formats stop being readable.",
+      "A file from a word processor thirty years ago may need software nobody distributes."
+     ],
+     "to": [
+      "It is worse at lasting.",
+      "Storage media degrade within decades, and more importantly formats stop being readable, so a file saved in a word processor from thirty years ago may now require software nobody distributes."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It serves anyone anywhere."
+  },
+  {
+   "id": "g8-33",
+   "grade": 8,
+   "n": 33,
+   "title": "The Diagram and the Equation",
+   "standard": "RI.8.7",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The diagram is better at the first step.",
+      "It shows how many forces there are and which way each points.",
+      "It shows which must balance.",
+      "Forgetting friction is visible as a missing arrow."
+     ],
+     "to": [
+      "The diagram is better at the first step.",
+      "It shows how many forces there are, roughly which way each points, and which ones must balance, and a mistake like forgetting friction is visible as a missing arrow."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "It is worse at the second step.",
+      "A diagram cannot be solved.",
+      "Arrows do not combine.",
+      "A hand-drawn angle is not a measured angle.",
+      "A picture does not say what happens when the slope gets steeper."
+     ],
+     "to": [
+      "It is worse at the second step.",
+      "A diagram cannot be solved.",
+      "Arrows do not combine, an angle drawn by hand is not a measured angle, and a picture does not say what happens when the slope gets steeper."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Arrows do not combine."
+  },
+  {
+   "id": "g8-34",
+   "grade": 8,
+   "n": 34,
+   "title": "The Museum Case and the Scan",
+   "standard": "RI.8.7",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "An object in a museum case is the thing itself.",
+      "It has a size a visitor can stand next to.",
+      "It has a surface that catches light.",
+      "Part of its presence is knowing it is not a copy."
+     ],
+     "to": [
+      "An object in a museum case is the thing itself.",
+      "It has a size a visitor can stand next to, a surface that catches light, and a presence that comes partly from knowing it is not a copy."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "A high-resolution scan reverses nearly all of that.",
+      "It can be rotated, enlarged, measured and lit from any angle.",
+      "A researcher on another continent can use it.",
+      "A class with no museum nearby can too."
+     ],
+     "to": [
+      "A high-resolution scan reverses nearly all of that.",
+      "It can be rotated, enlarged, measured, lit from any angle, examined by a researcher on another continent, and handed to a class in a school with no museum nearby."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It is also almost unreachable."
+  },
+  {
+   "id": "g8-35",
+   "grade": 8,
+   "n": 35,
+   "title": "The Photograph That Is Not a Photograph",
+   "standard": "RI.8.7",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The filters are usually chosen for chemistry, not appearance.",
+      "One admits light from hydrogen.",
+      "Another from oxygen.",
+      "Another from sulphur.",
+      "Each grey frame maps where one element is."
+     ],
+     "to": [
+      "Those filters are usually chosen for chemistry rather than appearance.",
+      "One admits the light emitted by hydrogen, another by oxygen, another by sulphur, so each grey frame is a map of where one element is."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The telescope did not record colour.",
+      "It recorded brightness through narrow filters.",
+      "Each filter admits light of one wavelength.",
+      "Each exposure came back as a grey image."
+     ],
+     "to": [
+      "The telescope did not record colour.",
+      "It recorded brightness through a series of narrow filters, each admitting light of one particular wavelength, and each exposure came back as a grey image."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "This is not deception."
+  },
+  {
+   "id": "g8-36",
+   "grade": 8,
+   "n": 36,
+   "title": "Does the Full Moon Change Behaviour?",
+   "standard": "RI.8.8",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "A particular reply is often offered.",
+      "The moon moves the tides.",
+      "People are mostly water.",
+      "So the moon must move something in a person.",
+      "The reasoning is confident and irrelevant."
+     ],
+     "to": [
+      "A particular kind of argument is often offered in reply.",
+      "The moon moves the tides, people are mostly water, so the moon must move something in a person, and the reasoning is confident and has nothing to do with the question."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "That is a mechanism, and it predicts things.",
+      "The belief should be strongest among people who work nights, and it is.",
+      "The effect should vanish when records are counted, and it does."
+     ],
+     "to": [
+      "That is a mechanism, and it predicts what should be found: the belief should be strongest among people who work nights, which it is, and the effect should vanish when records are counted, which it does."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Testing it is straightforward."
+  },
+  {
+   "id": "g8-37",
+   "grade": 8,
+   "n": 37,
+   "title": "The Petition With a Thousand Signatures",
+   "standard": "RI.8.8",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "Some further questions sharpen it.",
+      "How many signatories live on the road?",
+      "How were they asked?",
+      "What did the sheet actually say?",
+      "A petition is also a survey with no controls."
+     ],
+     "to": [
+      "Some additional questions sharpen it.",
+      "How many signatories live on the road, how were they asked, and what did the sheet they signed actually say, because a petition is also a survey with no controls."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A petition reaches a council meeting with a thousand signatures.",
+      "It asks that a road be closed to through traffic.",
+      "The number is read out.",
+      "It is treated as the strongest part of the case."
+     ],
+     "to": [
+      "A petition arrives at a council meeting with a thousand signatures asking that a road be closed to through traffic.",
+      "The number is read out at the start, before anything else in the document is described, and it is treated as the strongest part of the case."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "B",
+     "kernel": "If the question is whether residents want the road closed, a thousand signatures is direct evidence about what residents want.",
+     "expanded": "If the question is whether residents want the road closed, a thousand signatures is direct evidence about what residents want, which is the thing being asked."
+    }
+   ],
+   "stem": "The number is read out."
+  },
+  {
+   "id": "g8-38",
+   "grade": 8,
+   "n": 38,
+   "title": "The Testimonial in a Health Claim",
+   "standard": "RI.8.8",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "A testimonial cannot do that arithmetic even in principle.",
+      "One person.",
+      "No comparison.",
+      "Selected because of the outcome.",
+      "Nine more testimonials give ten of the same thing, not evidence."
+     ],
+     "to": [
+      "A testimonial cannot do that arithmetic even in principle.",
+      "It is one person, with no comparison group and no record of what would have happened otherwise, selected for inclusion precisely because of the outcome, and adding nine more testimonials produces ten of the same thing rather than evidence."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "Most conditions vary.",
+      "People look for a remedy when symptoms are worst.",
+      "Symptoms at their worst tend to improve afterwards whatever is done.",
+      "That gives a real recovery with no cause attached."
+     ],
+     "to": [
+      "Most conditions vary.",
+      "People seek a remedy when symptoms are at their worst, and symptoms at their worst tend to improve afterwards whatever is done, which produces a real recovery with no cause attached."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Neither group knows which."
+  },
+  {
+   "id": "g8-39",
+   "grade": 8,
+   "n": 39,
+   "title": "The Argument That Changes the Subject",
+   "standard": "RI.8.8",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "These are hard to catch in the moment.",
+      "They feel like continuations.",
+      "Each sentence follows the one before.",
+      "The drift happens one reasonable-sounding step at a time."
+     ],
+     "to": [
+      "These are hard to catch in the moment because they feel like continuations.",
+      "Each new sentence follows the one before it, and the drift away from the question happens one reasonable-sounding step at a time."
+     ]
+    },
+    {
+     "para": "G",
+     "from": [
+      "The defence is to write the question down.",
+      "Keep the sentence that was asked in front of you.",
+      "Check each contribution against it.",
+      "One that does not touch it is not part of the argument."
+     ],
+     "to": [
+      "The defence is to write the question down.",
+      "Keep the sentence that was actually asked in front of you and check each contribution against it, because a contribution that does not touch it is not part of the argument."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "D",
+     "kernel": "A related move answers a different question.",
+     "expanded": "A related move answers a different question than the one asked."
+    }
+   ],
+   "stem": "They feel like continuations."
+  },
+  {
+   "id": "g8-40",
+   "grade": 8,
+   "n": 40,
+   "title": "The Chart With a Cut Axis",
+   "standard": "RI.8.8",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "There are other versions of the trick.",
+      "A second axis with a different scale.",
+      "A time range starting at a convenient year.",
+      "Unequal spacing along the bottom.",
+      "All change a shape without touching a number."
+     ],
+     "to": [
+      "There are other versions of the same trick.",
+      "A second axis with a different scale, a time range beginning at a convenient year, and unequal spacing along the bottom all change a shape without touching a number."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A bar chart shows two columns.",
+      "The second is visibly twice the height of the first.",
+      "The impression is immediate.",
+      "It is produced by the drawing, not by the numbers."
+     ],
+     "to": [
+      "A bar chart shows two columns, and the second is visibly twice the height of the first.",
+      "The impression is immediate, and it is produced by the drawing rather than by the numbers."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The impression is immediate."
+  },
+  {
+   "id": "g8-41",
+   "grade": 8,
+   "n": 41,
+   "title": "Two Inquiries Into One Disaster",
+   "standard": "RI.8.9",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "The space shuttle Challenger broke apart in January 1986, shortly after launch.",
+      "All seven aboard died.",
+      "A presidential commission was appointed.",
+      "It produced a report within months."
+     ],
+     "to": [
+      "The space shuttle Challenger broke apart in January 1986, shortly after launch, killing all seven aboard.",
+      "A presidential commission was appointed, and it produced a report within months."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "On that point the texts do not conflict.",
+      "Everyone agreed the physical finding.",
+      "It was shown in a public hearing with a piece of the material and a glass of iced water.",
+      "It has never been contested."
+     ],
+     "to": [
+      "On that point there is no conflict between the texts.",
+      "The physical finding was agreed by everyone, demonstrated in a public hearing with a piece of the material and a glass of iced water, and it has never been contested."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "All seven aboard died."
+  },
+  {
+   "id": "g8-42",
+   "grade": 8,
+   "n": 42,
+   "title": "Two Counts of the Same Crowd",
+   "standard": "RI.8.9",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "Neither side has to be lying.",
+      "Counting a crowd is a measurement problem.",
+      "A figure depends on decisions rarely stated.",
+      "Which area was counted.",
+      "At what time.",
+      "What density was assumed."
+     ],
+     "to": [
+      "Neither side has to be lying for this to happen.",
+      "Counting a crowd is a measurement problem, and a figure depends on decisions that are rarely stated: which area was counted, at what time, and what density was assumed."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "After a large public gathering, two numbers appear.",
+      "Organisers give one figure.",
+      "Authorities give another.",
+      "They often differ by three times or more for the same afternoon in the same square."
+     ],
+     "to": [
+      "After a large public gathering, two numbers appear.",
+      "The organisers give one figure, the authorities give another, and the two often differ by a factor of three or more for the same afternoon in the same square."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Organisers give one figure."
+  },
+  {
+   "id": "g8-43",
+   "grade": 8,
+   "n": 43,
+   "title": "Two Studies That Disagree About Coffee",
+   "standard": "RI.8.9",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "That design has a known weakness.",
+      "Coffee drinkers differ from non-drinkers in many other ways.",
+      "Some of those ways affect health directly.",
+      "A difference in outcome may belong to something else."
+     ],
+     "to": [
+      "That design has a known weakness.",
+      "People who drink coffee differ from people who do not in many other ways, and some of those ways affect health directly, so a difference in outcome may belong to something else entirely."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "Researchers adjust for differences they can measure.",
+      "One study adjusts for smoking, income and exercise.",
+      "Another adds diet and existing illness.",
+      "The two then report different numbers from similar data."
+     ],
+     "to": [
+      "Researchers adjust for the differences they can measure.",
+      "One study may adjust for smoking, income and exercise, and another for those plus diet and existing illness, and the two will then report different numbers from similar data."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "G",
+     "kernel": "The useful document is the review that reads the studies together and reports where their methods differ.",
+     "expanded": "The useful document is the review that reads a field's studies together and reports where their methods differ, which is where the conflict actually lives."
+    }
+   ],
+   "stem": "Another reports no benefit."
+  },
+  {
+   "id": "g8-44",
+   "grade": 8,
+   "n": 44,
+   "title": "Two Maps of the Same War",
+   "standard": "RI.8.9",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Two newspapers print a map of the same conflict on the same day.",
+      "The front lines sit in different places.",
+      "The shaded areas differ.",
+      "Some towns appear on one map and not the other."
+     ],
+     "to": [
+      "Two newspapers print a map of the same conflict on the same day.",
+      "The front lines are drawn in different places, the shaded areas differ, and some towns appear on one map and not the other."
+     ]
+    },
+    {
+     "para": "G",
+     "from": [
+      "So comparing two maps means asking three questions in order.",
+      "Where do they disagree about who holds what?",
+      "Where do they define holding differently?",
+      "What has each left off the page?"
+     ],
+     "to": [
+      "Comparing two maps therefore means asking three questions in order.",
+      "Where do they disagree about who holds what, where do they use different definitions of holding, and what has each chosen not to put on the page at all?"
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The shaded areas differ."
+  },
+  {
+   "id": "g8-45",
+   "grade": 8,
+   "n": 45,
+   "title": "Two Dates for the Same Site",
+   "standard": "RI.8.9",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The methods answer slightly different questions.",
+      "Radiocarbon dates the death of the organism the sample came from.",
+      "Stratigraphy dates a layer relative to those around it.",
+      "They measure different events."
+     ],
+     "to": [
+      "The methods answer slightly different questions.",
+      "Radiocarbon dates the death of the organism the sample came from, and stratigraphy dates the layer relative to the layers around it, so the two are not measuring the same event."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "Calibration adds a step.",
+      "Radiocarbon years are not calendar years.",
+      "Converting uses a curve built from tree rings.",
+      "The curve has flat stretches where one measurement covers several centuries."
+     ],
+     "to": [
+      "Calibration adds a further step.",
+      "Radiocarbon years are not calendar years, and converting between them uses a curve built from tree rings, which has flat stretches where a single measurement corresponds to a range of several centuries."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "F",
+     "kernel": "So the first question is what each date dated.",
+     "expanded": "So the first question when two dates conflict is what each one dated."
+    }
+   ],
+   "stem": "They measure different events."
+  },
+  {
+   "id": "g8-46",
+   "grade": 8,
+   "n": 46,
+   "title": "The Experiment That Weighed the Earth",
+   "standard": "RI.8.10",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "From the force he got the density of the earth.",
+      "About five and a half times that of water.",
+      "That is more than any surface rock.",
+      "It was the first real evidence of a dense metal interior."
+     ],
+     "to": [
+      "From the force he obtained the density of the earth, about five and a half times that of water, which is more than any surface rock and was the first real evidence of a dense metallic interior."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "Gravity between everyday objects is extraordinarily weak.",
+      "Two lead balls on a table attract each other far too weakly to feel.",
+      "The problem was not understanding the effect.",
+      "It was detecting it."
+     ],
+     "to": [
+      "Gravity between everyday objects is extraordinarily weak.",
+      "Two lead balls on a table attract each other with a force far too small to feel, and the problem was not understanding the effect but detecting it at all."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It was detecting it."
+  },
+  {
+   "id": "g8-47",
+   "grade": 8,
+   "n": 47,
+   "title": "The City That Reversed Its River",
+   "standard": "RI.8.10",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "It worked, in that the engineering did what it was designed to do.",
+      "The river reversed in 1900.",
+      "The intake pipes stopped receiving the city's waste.",
+      "Deaths from waterborne disease fell sharply."
+     ],
+     "to": [
+      "It worked, in the sense that the engineering did what it was designed to do.",
+      "The river reversed in 1900, the intake pipes stopped receiving the city's own waste, and deaths from waterborne disease in Chicago fell sharply."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "It also moved the problem downstream.",
+      "Missouri sued, arguing Chicago was sending sewage toward St Louis.",
+      "The case reached the Supreme Court.",
+      "The canal was not stopped."
+     ],
+     "to": [
+      "It also moved the problem downstream.",
+      "The state of Missouri sued, arguing that Chicago was sending its sewage toward St Louis, and the case went to the Supreme Court, which did not stop the canal."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The river reversed in 1900."
+  },
+  {
+   "id": "g8-48",
+   "grade": 8,
+   "n": 48,
+   "title": "The Bacteria That Eat Rock",
+   "standard": "RI.8.10",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Almost every familiar food chain starts with sunlight.",
+      "Plants capture it.",
+      "Animals eat the plants.",
+      "Trace any meal back far enough and you reach a leaf, and then the sun."
+     ],
+     "to": [
+      "Almost every familiar food chain starts with sunlight.",
+      "Plants capture it, animals eat the plants, other animals eat those, and tracing any meal backwards far enough arrives at a leaf and then at the sun."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "Some organisms do not begin there.",
+      "Certain bacteria get energy by driving chemical reactions on minerals.",
+      "They take electrons from iron or sulphur compounds in rock.",
+      "They need no light at all."
+     ],
+     "to": [
+      "Some organisms do not begin there.",
+      "Certain bacteria obtain energy by driving chemical reactions on minerals, taking electrons from iron or sulphur compounds in rock, and they require no light at any stage."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "G",
+     "kernel": "If life needs no starlight, only chemical energy and liquid water, then the places worth examining are not limited to the surfaces of planets.",
+     "expanded": "If life does not require a star's light but only a source of chemical energy and liquid water, then the places worth examining for it are not limited to the surfaces of planets."
+    },
+    {
+     "para": "C",
+     "kernel": "They have been recovered from boreholes kilometres deep, from rock beneath the ocean floor, and from long-isolated underground water.",
+     "expanded": "They have been recovered from boreholes kilometres deep, from the rock beneath the ocean floor, and from water that has been isolated underground for a long time."
+    },
+    {
+     "para": "C",
+     "kernel": "They live where that chemistry exists, which is a very large volume.",
+     "expanded": "They live where that chemistry is available, which turns out to be a very large volume."
+    }
+   ],
+   "stem": "Animals eat the plants."
+  },
+  {
+   "id": "g8-49",
+   "grade": 8,
+   "n": 49,
+   "title": "The Day the Clocks Were Standardised",
+   "standard": "RI.8.10",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "For most of history every town kept its own time.",
+      "Noon was when the sun stood highest over that town.",
+      "Clocks a hundred kilometres apart genuinely disagreed.",
+      "Nothing was wrong with either."
+     ],
+     "to": [
+      "For most of history every town kept its own time.",
+      "Noon was when the sun stood highest over that town, so clocks in two places a hundred kilometres apart genuinely disagreed, and nothing was wrong with either."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "Railways removed that tolerance.",
+      "A timetable must state a departure time.",
+      "A train crossing many towns in an afternoon cannot leave at a different noon in each.",
+      "So companies published their own time."
+     ],
+     "to": [
+      "Railways removed that tolerance.",
+      "A timetable has to state a departure time, and a train crossing many towns in an afternoon cannot leave at a different noon in each, so railway companies began publishing their own time."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Railways removed that tolerance."
+  },
+  {
+   "id": "g8-50",
+   "grade": 8,
+   "n": 50,
+   "title": "The Detector a Kilometre Underground",
+   "standard": "RI.8.10",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The difficulty is not the signal.",
+      "It is everything else.",
+      "Cosmic rays hit the atmosphere constantly.",
+      "The particles they make would swamp a detector at the surface.",
+      "Real events would be lost."
+     ],
+     "to": [
+      "The difficulty is not the signal.",
+      "It is everything else.",
+      "Cosmic rays strike the atmosphere constantly and the particles they produce would swamp a detector at the surface, with real events lost in an enormous background."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "The first such experiment produced a famous problem.",
+      "It measured neutrinos from the sun.",
+      "It found about a third of the predicted number.",
+      "The shortfall lasted three decades."
+     ],
+     "to": [
+      "The first such experiment produced a famous problem.",
+      "It measured neutrinos from the sun and found about a third of the number the understood physics of the sun predicted, and the shortfall persisted for three decades."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "B",
+     "kernel": "A detector is a very large tank of liquid, watched by thousands of light sensors, waiting for a rare hit.",
+     "expanded": "A detector is built as a very large tank of liquid, watched by thousands of light sensors, waiting for the rare occasion when one neutrino hits a nucleus."
+    }
+   ],
+   "stem": "It is everything else."
   }
  ]
 }

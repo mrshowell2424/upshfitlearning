@@ -118,6 +118,21 @@ const BY_HAND = {
   "The Parts That Had to Fit": "machines",       // interchangeable parts
   "What a Scientist Means by Significant": "books",  // how to read a claim
   "The Order of a Checklist": "books",           // how a document is built
+  // Grade 8. Thirty-eight of the fifty were placed by keyword. These twelve
+  // are about how knowledge is made, recorded and argued over, and that is
+  // a subject the keyword lists were never built to recognise.
+  "What Makes a Fingerprint Evidence": "civics",     // evidence in court
+  "The Mosquito That Was Engineered": "body",        // malaria control
+  "The Element That Was Missing": "machines",        // the periodic table
+  "What an Analogy Costs": "books",                  // how explanations work
+  "Is a Virus Alive?": "body",                       // what counts as living
+  "What a Chemist Means by Organic": "books",        // one word, two meanings
+  "The Paper That Answers Its Critics": "books",     // comment and reply
+  "The Review That Weighs Studies": "body",          // medical evidence
+  "The Scientist Who Published a Correction": "books",
+  "The Museum Case and the Scan": "town",            // a civic institution
+  "Two Inquiries Into One Disaster": "machines",     // Challenger
+  "Two Studies That Disagree About Coffee": "body",
 };
 
 const pats = Object.fromEntries(
