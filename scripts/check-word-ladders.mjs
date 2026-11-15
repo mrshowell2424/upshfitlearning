@@ -20,20 +20,13 @@
  */
 import { readFileSync } from "node:fs";
 import { describes, judgeRung } from "./lib/ladder-clue.mjs";
+import { deriveSequence } from "./lib/sequence.mjs";
 
-const R = "content-reading-materials/og-packs/";
-global.window = global;
-new Function(readFileSync(R + "og-concepts.js", "utf8"))();
-new Function(readFileSync(R + "og-pack-data.js", "utf8"))();
-const s = readFileSync("content-reading-materials/science-of-reading/lesson-builder.html", "utf8");
-const i = s.indexOf("const SK = [");
-const SKF = eval(s.slice(i + "const SK = ".length, s.indexOf("\n    ];", i) + "\n    ]".length));
-const SK = SKF.map((r) => [r[0], r[1], r[2], r[6] || []]);
-const COVER = { "1-01":1,"1-05":1,"1-07":1,"1-08":1,"1-09":1,"1-12":1,"2-01":1,"2-02":1,"2-03":1,"2-04":1,"2-05":1 };
-global.OG_CONCEPTS.filter((c) => !COVER[c.id] && global.OG_PACKS[c.id]).forEach((c) =>
-  SK.push(["og" + c.id, c.name, "Level " + c.level, []]));
-const SCOPE = { 'cvc-a':'1-01a','cvc-mix':'1-01b',dig:'1-05',floss:'1-07',vce:'1-08',blends:'1-09',vccv:'1-12a',vccvce:'1-12b','ng-nk':'2-01',y:'2-02','ck-tch':'2-03','ar-or':'2-04','ai-ay':'2-05a','ee-ea':'2-05b','oa-ow':'2-05c' };
-SK.sort((a, b) => (SCOPE[a[0]] || a[0].slice(2)).localeCompare(SCOPE[b[0]] || b[0].slice(2)));
+// The order, the scope numbers that interleave the Basic patterns among
+// the OG concepts, and the reach into the lesson builder for the list
+// itself all live in lib/sequence.mjs now, because the review page needs
+// exactly the same order and a second copy would drift.
+const SK = deriveSequence().map((r) => [r.key, r.name, "Level " + r.level]);
 const pos = Object.fromEntries(SK.map((r, n) => [r[0], n]));
 const SPLITS = JSON.parse(readFileSync("scripts/reading-skill-splits.json", "utf8"));
 const LAD = JSON.parse(readFileSync("scripts/reading-word-ladders.json", "utf8")).ladders;

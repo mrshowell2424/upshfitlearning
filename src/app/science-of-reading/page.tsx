@@ -17,6 +17,7 @@ import MORPH from "@/../scripts/reading-morphology.json";
 import WRITING_SETS_DATA from "@/../scripts/reading-writing-passages.json";
 import SPELLING from "@/../scripts/reading-spelling.json";
 import WORD_LADDERS from "@/../scripts/reading-word-ladders.json";
+import SEQUENCE from "@/../scripts/reading-sequence.json";
 import SENTENCE_LAB from "@/../scripts/reading-sentence-lab.json";
 
 /**
@@ -91,6 +92,7 @@ const SPELL_WORDS = SPELLING.patterns.reduce(
 const LADDERS = WORD_LADDERS.ladders as Record<string, { words: string[] }>;
 const LADDER_COUNT = Object.keys(LADDERS).length;
 const LADDER_RUNGS = Object.values(LADDERS).reduce((n, l) => n + l.words.length - 1, 0);
+const SEQ_LESSONS = (SEQUENCE as { sequence: unknown[] }).sequence.length;
 // Counted from the data the page is generated from, so the blurb cannot
 // drift away from what is actually on it.
 const MYSTERY_COUNT = RESOURCE_COUNTS.mysteries;
@@ -520,6 +522,18 @@ function Hub() {
               shape: [1200, 1130] as const,
               focus: "0%",
               alt: "The Word ladders page: a start word, a clue reading change the e to a, and a box to write the new word in.",
+            },
+            {
+              href: "/review",
+              eyebrow: "BEFORE TODAY'S LESSON",
+              title: "Spiral review",
+              accent: BLUE,
+              accentText: BLUE_TEXT,
+              blurb: `Three earlier lessons to go over first, chosen from the ${SEQ_LESSONS}-lesson sequence rather than left to the end of a long day — what today is built on, what was taught last, and what is going cold.`,
+              preview: "/previews/review.png",
+              shape: [1200, 1130] as const,
+              focus: "0%",
+              alt: "The Spiral review page: today's lesson at the top and three earlier lessons beneath it, each with the words to say out loud.",
             },
             {
               href: "/og-packs",

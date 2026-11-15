@@ -36,3 +36,25 @@ declare module "@/../scripts/lib/ladder-clue.mjs" {
     typed: string,
   ): "right" | "same" | "near" | "far" | "empty";
 }
+
+/**
+ * The spiral review's three slots, in scripts/lib so the page and
+ * scripts/check-review.mjs choose them the same way.
+ */
+declare module "@/../scripts/lib/review-slots.mjs" {
+  export interface ReviewSlot {
+    why: string;
+    key: string | null;
+    name: string | null;
+    level: number | null;
+  }
+  export function reviewSlots(
+    key: string,
+    data: {
+      seq: { key: string; name: string; level: number }[];
+      prereq: Record<string, string>;
+      spiral: Record<string, string[]>;
+    },
+    picks?: { s1?: string; s2?: string; s3?: string },
+  ): ReviewSlot[];
+}

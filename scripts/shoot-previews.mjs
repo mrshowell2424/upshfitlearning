@@ -48,6 +48,7 @@ const SHOTS = [
   { name: "writing", path: "/writing?p=floss" },
   { name: "spelling", path: "/spelling?p=ai-ay" },
   { name: "word-ladders", path: "/word-ladders?p=ai-ay" },
+  { name: "review", path: "/review?p=ai-ay" },
   { name: "ef-year", path: "/behavior/year?w=1" },
   { name: "fluency", path: "/fluency" },
   { name: "teach-a-word", path: "/vocabulary" },
