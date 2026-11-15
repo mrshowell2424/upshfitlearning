@@ -133,6 +133,16 @@ const BY_HAND = {
   "The Museum Case and the Scan": "town",            // a civic institution
   "Two Inquiries Into One Disaster": "machines",     // Challenger
   "Two Studies That Disagree About Coffee": "body",
+  // Grade 9. Seven of the fifty, and the same pattern as grade 8: articles
+  // about how evidence is weighed and how documents work, which the
+  // keyword lists do not recognise as a subject.
+  "The Antibiotic Nobody Will Develop": "body",
+  "The Credit Score": "civics",                      // deciding about people
+  "How an Accident Investigation Proceeds": "safety",
+  "The Briefing After the Failure": "books",
+  "The Trial in Three Media": "civics",
+  "The Study That Could Not Have Shown That": "books",
+  "Moving the Goalposts": "books",
 };
 
 const pats = Object.fromEntries(

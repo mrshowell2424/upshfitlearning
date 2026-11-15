@@ -14357,6 +14357,1933 @@
     }
    ],
    "stem": "It is everything else."
+  },
+  {
+   "id": "g9-1",
+   "grade": 9,
+   "n": 1,
+   "title": "The Case for an Asteroid",
+   "standard": "RI.9-10.1",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "One anomaly is a curiosity.",
+      "What made it a claim was that the same enrichment turned up site after site.",
+      "In marine rocks and land rocks.",
+      "At the same level.",
+      "A local explanation cannot cover that."
+     ],
+     "to": [
+      "A single anomaly is a curiosity.",
+      "What turned it into a claim was that the same enrichment appeared at site after site, in marine rocks and in terrestrial ones, at the same stratigraphic position, which rules out a local explanation."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "The second line is physical, not chemical.",
+      "The layer holds quartz grains with microscopic fracture patterns.",
+      "Those form only under shock pressures.",
+      "Impacts make them.",
+      "Volcanoes, however large, do not."
+     ],
+     "to": [
+      "The second line is physical rather than chemical.",
+      "The layer contains quartz grains with microscopic fracture patterns that form only under shock pressures, of a kind produced by impacts and not by volcanoes, however large."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "At the same level."
+  },
+  {
+   "id": "g9-2",
+   "grade": 9,
+   "n": 2,
+   "title": "Reading the Domesday Book",
+   "standard": "RI.9-10.1",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "It records, manor by manor, who held the land before the conquest and who held it now.",
+      "How much ploughland.",
+      "How many mills.",
+      "How many people of various legal categories.",
+      "What the whole was worth."
+     ],
+     "to": [
+      "It records, manor by manor, who held the land before the conquest and who held it now, how much ploughland there was, how many mills and how many people of various legal categories, and what the whole was worth."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "In 1086, twenty years after the conquest of England, William I ordered a survey of the land he had taken.",
+      "Commissioners went into the shires.",
+      "They questioned juries of local men.",
+      "The answers became Domesday Book."
+     ],
+     "to": [
+      "In 1086, twenty years after the conquest of England, William I ordered a survey of the land he had taken.",
+      "Commissioners went into the shires, put questions to juries of local men, and the answers were compiled into what became known as Domesday Book."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "There are known gaps."
+  },
+  {
+   "id": "g9-3",
+   "grade": 9,
+   "n": 3,
+   "title": "How Old the Earth Is",
+   "standard": "RI.9-10.1",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "Clair Patterson's solution in the early 1950s was to date meteorites.",
+      "The solar system's material formed at one time.",
+      "So an undisturbed meteorite dates the formation of everything, including the earth."
+     ],
+     "to": [
+      "Clair Patterson's solution in the early 1950s was to date meteorites instead, on the argument that the solar system's material formed at one time, so an undisturbed meteorite dates the formation of everything including the earth."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "Each rests on an assumed rate.",
+      "If sediment has always built up at today's rate, a thickness gives a time.",
+      "The answer is only as good as an assumption nobody could test."
+     ],
+     "to": [
+      "Each of those rests on an assumed rate.",
+      "If sediment has always accumulated at today's rate, a thickness gives a time, and the answer is only as good as an assumption nobody could test."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Radioactivity changed the problem."
+  },
+  {
+   "id": "g9-4",
+   "grade": 9,
+   "n": 4,
+   "title": "The Photographs at the Mill",
+   "standard": "RI.9-10.1",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "They were made in hard conditions.",
+      "Employers did not want a photographer inside.",
+      "Hine often entered claiming to be an insurance inspector or a machinery salesman.",
+      "He worked fast and left."
+     ],
+     "to": [
+      "They were made in difficult conditions.",
+      "Employers did not want a photographer inside, so Hine often entered claiming to be an insurance inspector or a machinery salesman, and he worked quickly and left."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "He also solved a measurement problem.",
+      "Children did not always know their ages.",
+      "Employers had reason to overstate them.",
+      "So Hine learned the height of his own coat buttons and photographed children beside him."
+     ],
+     "to": [
+      "He also solved a measurement problem.",
+      "Children did not always know their ages and employers had reason to overstate them, so Hine learned the height of the buttons on his own coat and photographed children standing beside him."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "He worked fast and left."
+  },
+  {
+   "id": "g9-5",
+   "grade": 9,
+   "n": 5,
+   "title": "The Case That Smoking Causes Cancer",
+   "standard": "RI.9-10.1",
+   "combine": [
+    {
+     "para": "G",
+     "from": [
+      "Bradford Hill's answer in 1965 set out what to look for without an experiment.",
+      "A strong association.",
+      "Found repeatedly in different populations.",
+      "The cause before the effect.",
+      "A dose relationship.",
+      "A plausible mechanism."
+     ],
+     "to": [
+      "Bradford Hill's response in 1965 was to set out what, in the absence of an experiment, should be looked for: a strong association, found repeatedly in different populations, with the cause preceding the effect, a dose relationship, and a plausible mechanism."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "So they ran a second study the other way round.",
+      "They enrolled British doctors in 1951.",
+      "They recorded smoking before anyone was ill.",
+      "They followed them for decades.",
+      "That removed the recall problem."
+     ],
+     "to": [
+      "So they ran a second study in the other direction.",
+      "They enrolled British doctors in 1951, recorded their smoking before anyone was ill, and followed them for decades, which removed the problem of recall entirely."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "They followed them for decades."
+  },
+  {
+   "id": "g9-6",
+   "grade": 9,
+   "n": 6,
+   "title": "What a Thermometer Had to Settle",
+   "standard": "RI.9-10.2",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "An early thermometer could show that today was warmer than yesterday.",
+      "It could not say by how much.",
+      "There was no agreement about what the numbers on the tube meant."
+     ],
+     "to": [
+      "An early thermometer could show that today was warmer than yesterday and could not say by how much, because there was no agreement about what the numbers on the side of the tube meant."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The instrument was not the difficulty.",
+      "A sealed tube of liquid that expands with heat works well.",
+      "Several were in use by the seventeenth century.",
+      "Each was marked by its maker's own scheme."
+     ],
+     "to": [
+      "The instrument itself was not the difficulty.",
+      "A sealed tube of liquid that expands with heat works perfectly well, and several were in use by the seventeenth century, each marked according to its maker's own scheme."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The problem was reproducibility."
+  },
+  {
+   "id": "g9-7",
+   "grade": 9,
+   "n": 7,
+   "title": "The Invention of the Weekend",
+   "standard": "RI.9-10.2",
+   "combine": [
+    {
+     "para": "G",
+     "from": [
+      "None of these pressures was about rest.",
+      "Religious observance.",
+      "Absenteeism.",
+      "The practicalities of two sabbaths.",
+      "The creation of consumers.",
+      "Each produced the same result for a different reason."
+     ],
+     "to": [
+      "None of these pressures was about rest.",
+      "Religious observance, absenteeism, the practicalities of two sabbaths and the creation of consumers each produced the same result for a different reason."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "The first official concession ran the other way.",
+      "Factories began closing early on Saturday.",
+      "Workers got an afternoon.",
+      "Employers got a workforce that arrived on Monday.",
+      "A half-day was a compromise."
+     ],
+     "to": [
+      "The first official concession ran the other way.",
+      "Factories began closing early on Saturday, which gave workers an afternoon and gave employers a workforce that arrived on Monday, and a half-day was a compromise rather than a principle."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Employers disliked it intensely."
+  },
+  {
+   "id": "g9-8",
+   "grade": 9,
+   "n": 8,
+   "title": "The Antibiotic Nobody Will Develop",
+   "standard": "RI.9-10.2",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Bacteria evolve resistance to antibiotics.",
+      "That is not a surprise or a failure.",
+      "It is what a population under selection does.",
+      "Every antibiotic in use has a finite working life for that reason."
+     ],
+     "to": [
+      "Bacteria evolve resistance to antibiotics.",
+      "This is not a surprise or a failure; it is what a population under selection does, and every antibiotic in use has a finite working life for that reason."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "The economics work against it in an unusual way.",
+      "A new antibiotic effective against resistant infections goes straight into reserve.",
+      "It is used as little as possible.",
+      "So a successful drug barely sells."
+     ],
+     "to": [
+      "The economics work against it in an unusual way.",
+      "A new antibiotic that works against resistant infections is immediately placed in reserve, used as little as possible to protect it, which means a successful drug is one that barely sells."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Bacteria evolve resistance to antibiotics."
+  },
+  {
+   "id": "g9-9",
+   "grade": 9,
+   "n": 9,
+   "title": "The Credit Score",
+   "standard": "RI.9-10.2",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "The method has real advantages, and not only efficiency.",
+      "A formula applies the same rule to everyone.",
+      "It can be examined.",
+      "A decision it produces can be audited, which an impression cannot."
+     ],
+     "to": [
+      "The method has real advantages, and they are not only about efficiency.",
+      "A formula applies the same rule to everyone, it can be examined, and a decision it produces can be audited in a way an impression cannot."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "A second refinement is what the number is about.",
+      "A score predicts the behaviour of people with similar records.",
+      "That is a statement about a group.",
+      "It is then used to decide about one person."
+     ],
+     "to": [
+      "A second refinement concerns what the number is about.",
+      "A score predicts the behaviour of people with similar records, which is a statement about a group, and it is then used to make a decision about one person who may not resemble their group."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It can be examined."
+  },
+  {
+   "id": "g9-10",
+   "grade": 9,
+   "n": 10,
+   "title": "The Metre That Was a Mistake",
+   "standard": "RI.9-10.2",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "Méchain found an inconsistency in his own Barcelona measurements and could not resolve it.",
+      "He did not report it.",
+      "He worked on it privately for years.",
+      "He died on a journey to extend the survey."
+     ],
+     "to": [
+      "Méchain discovered an inconsistency in his own measurements at Barcelona and could not resolve it.",
+      "He did not report it, he continued working on the problem privately for years, and he died on a journey to extend the survey."
+     ]
+    },
+    {
+     "para": "G",
+     "from": [
+      "Later definitions left objects behind.",
+      "The metre was tied to a wavelength of light in 1960.",
+      "Since 1983 it has been defined by fixing the speed of light.",
+      "The unit comes from a constant, not an artefact."
+     ],
+     "to": [
+      "Later definitions moved away from objects entirely.",
+      "The metre was tied to a wavelength of light in 1960, and since 1983 it has been defined by fixing the speed of light, so the unit is now derived from a constant rather than from an artefact."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It nearly destroyed them."
+  },
+  {
+   "id": "g9-11",
+   "grade": 9,
+   "n": 11,
+   "title": "How an Accident Investigation Proceeds",
+   "standard": "RI.9-10.3",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "Those activities are split among groups with narrow remits.",
+      "One handles structures.",
+      "Another systems.",
+      "Another operations.",
+      "Another weather.",
+      "Each produces a factual report with no explanation."
+     ],
+     "to": [
+      "Those activities are divided among groups with narrow remits.",
+      "One group handles structures, another systems, another operations, another weather, and each produces a factual report without offering an explanation."
+     ]
+    },
+    {
+     "para": "H",
+     "from": [
+      "So the order encodes a theory of error.",
+      "Facts before explanation.",
+      "Explanation tested against all facts.",
+      "Conclusion stated as probability.",
+      "No punishment attached.",
+      "Each step protects the next."
+     ],
+     "to": [
+      "The order therefore encodes a theory of error.",
+      "Facts before explanation, explanation tested against all facts, conclusion stated as probability, and no punishment attached, each step protecting the next one from a way the process could go wrong."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Its sequence is prescribed."
+  },
+  {
+   "id": "g9-12",
+   "grade": 9,
+   "n": 12,
+   "title": "How a Prosecution Is Built",
+   "standard": "RI.9-10.3",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The order of a case follows from that.",
+      "A prosecutor must establish every element.",
+      "The presentation is organised around them.",
+      "Evidence that is interesting but touches no element has no place in the case."
+     ],
+     "to": [
+      "The order of a case follows from that structure.",
+      "A prosecutor must establish every element, so the presentation is organised around them, and evidence that is interesting but touches no element has no place in the case at all."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "The defence need not offer an alternative account.",
+      "It can contest one element.",
+      "A case built on five pillars falls if one is removed.",
+      "That is why the defence often concentrates narrowly."
+     ],
+     "to": [
+      "The defence does not have to offer an alternative account.",
+      "It can simply contest one element, and a case built on five pillars can be defeated by removing one of them, which is why the defence often concentrates its effort narrowly."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The asymmetry is deliberate."
+  },
+  {
+   "id": "g9-13",
+   "grade": 9,
+   "n": 13,
+   "title": "Differential Diagnosis",
+   "standard": "RI.9-10.3",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "So the list is built and then ordered.",
+      "It is ordered by two things at once.",
+      "How likely each possibility is.",
+      "How much damage it does if missed for an hour."
+     ],
+     "to": [
+      "So the list is built and then ordered, and it is ordered by two things at once: how likely each possibility is, and how much damage it does if it is missed for an hour."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "Those two criteria do not agree.",
+      "Indigestion is far more likely than a tear in the aorta.",
+      "The tear kills faster.",
+      "So the order of investigation is not the order of probability."
+     ],
+     "to": [
+      "Those two criteria do not agree.",
+      "Indigestion is far more likely than a tear in the aorta, and the tear kills faster, so the order of investigation is not the order of probability and cannot be."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The tear kills faster."
+  },
+  {
+   "id": "g9-14",
+   "grade": 9,
+   "n": 14,
+   "title": "How a Case Is Appealed",
+   "standard": "RI.9-10.3",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "So what can be raised is limited.",
+      "An appellant usually must identify a specific error of law.",
+      "Evidence wrongly admitted.",
+      "A legal test wrongly stated.",
+      "Not simply that the outcome was unjust."
+     ],
+     "to": [
+      "What can be raised is therefore limited.",
+      "An appellant usually must identify a specific error of law, such as evidence wrongly admitted or a legal test wrongly stated, rather than argue that the outcome was unjust."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "An appeal is generally a review of the first proceeding, not a repetition.",
+      "There is no jury and no witnesses.",
+      "In most cases there is no new evidence.",
+      "The court works from the record and written arguments."
+     ],
+     "to": [
+      "An appeal is generally a review of the first proceeding, not a repetition of it.",
+      "There is no jury, no witnesses, and in most cases no new evidence; the court works from the record made below and from written arguments."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "A legal test wrongly stated."
+  },
+  {
+   "id": "g9-15",
+   "grade": 9,
+   "n": 15,
+   "title": "Two Ways to Assemble a Genome",
+   "standard": "RI.9-10.3",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "That works while the sequence is varied.",
+      "Overlaps are found by matching.",
+      "Matching is reliable where a stretch appears once.",
+      "That is true of much of a genome and not all of it."
+     ],
+     "to": [
+      "That works while the sequence is varied.",
+      "Overlaps are found by matching, and matching is reliable where a stretch of sequence appears once, which is true of a great deal of a genome and not of all of it."
+     ]
+    },
+    {
+     "para": "G",
+     "from": [
+      "That is faster.",
+      "It depends on repeats being resolvable by sheer volume, which was the point in dispute.",
+      "Both published in 2001.",
+      "The later view is that the fast method worked partly because the mapped data existed to check against."
+     ],
+     "to": [
+      "That is faster and it depends on the repeats being resolvable by sheer volume, which was the point in dispute.",
+      "Both projects published in 2001, and the later consensus is that the fast method worked partly because the mapped data existed to check against."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Repeated regions break it."
+  },
+  {
+   "id": "g9-16",
+   "grade": 9,
+   "n": 16,
+   "title": "Hedging in a Scientific Abstract",
+   "standard": "RI.9-10.4",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "Its vocabulary is unusually careful, and the care is not decoration.",
+      "Suggests.",
+      "May.",
+      "Is consistent with.",
+      "Appears to.",
+      "Each marks a different distance between what was observed and what is claimed."
+     ],
+     "to": [
+      "Its vocabulary is unusually careful, and the care is not decoration.",
+      "Words such as suggests, may, is consistent with, and appears to each mark a different distance between what was observed and what is being claimed."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "Consider three versions of one finding.",
+      "The drug reduced mortality.",
+      "The drug was associated with reduced mortality.",
+      "The data are consistent with a reduction.",
+      "Same numbers, three different claims."
+     ],
+     "to": [
+      "Consider three versions of one finding.",
+      "The drug reduced mortality, the drug was associated with reduced mortality, and the data are consistent with a reduction in mortality describe the same numbers and make three different claims."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The drug reduced mortality."
+  },
+  {
+   "id": "g9-17",
+   "grade": 9,
+   "n": 17,
+   "title": "The Language of a Court Opinion",
+   "standard": "RI.9-10.4",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "A newspaper says the court decided.",
+      "An opinion says we hold.",
+      "That is not formality.",
+      "Hold marks the one part that binds other courts.",
+      "A sentence saying decided would not mark it."
+     ],
+     "to": [
+      "A newspaper says the court decided.",
+      "An opinion says we hold, and the distinction is not formality: hold marks the one part of the document that binds other courts, and a sentence that said decided would not mark it."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A newspaper report and a court opinion about the same case are written in different languages.",
+      "Both are English.",
+      "Both cover the same events.",
+      "Almost every choice in one would be wrong in the other."
+     ],
+     "to": [
+      "A newspaper report and a court opinion about the same case are written in different languages.",
+      "Both are English, both are about the same events, and almost every choice in one would be wrong in the other."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "That is not formality."
+  },
+  {
+   "id": "g9-18",
+   "grade": 9,
+   "n": 18,
+   "title": "Why a Patent Reads Like That",
+   "standard": "RI.9-10.4",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "A patent is written in a style that is nearly unreadable.",
+      "Almost all of it is deliberate.",
+      "The document does a job ordinary description cannot.",
+      "The style is what the job requires."
+     ],
+     "to": [
+      "A patent is written in a style that is nearly unreadable, and almost all of it is deliberate.",
+      "The document has to do a job that ordinary description cannot do, and the style is what the job requires."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The operative part is the claims, a numbered list at the end.",
+      "Everything before describes the invention.",
+      "Only the claims define what is protected.",
+      "A feature described and left out of the claims is given away."
+     ],
+     "to": [
+      "The operative part is the claims, a numbered list at the end.",
+      "Everything before them describes the invention; only the claims define what is protected, and a feature described at length and left out of the claims is given away."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "H",
+     "kernel": "So the whole is a document optimised against a reader looking for a way out.",
+     "expanded": "So the effect of the whole is a document optimised against a reader who is looking for a way out."
+    }
+   ],
+   "stem": "It has to be."
+  },
+  {
+   "id": "g9-19",
+   "grade": 9,
+   "n": 19,
+   "title": "What Diplomats Say Instead",
+   "standard": "RI.9-10.4",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "Actions are graded and readable too.",
+      "Summoning an ambassador is a public rebuke.",
+      "Recalling your own for consultations is stronger.",
+      "Expelling diplomats is stronger again.",
+      "All are read as a sequence."
+     ],
+     "to": [
+      "Actions are also graded and also readable.",
+      "Summoning an ambassador is a public rebuke, recalling your own ambassador for consultations is stronger, and expelling diplomats is stronger again, and all of these are understood as a sequence."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "A frank exchange of views means they disagreed.",
+      "A full and frank exchange means they disagreed sharply.",
+      "A useful meeting means little happened.",
+      "A historic meeting is the only one that means what it says."
+     ],
+     "to": [
+      "A frank exchange of views means the parties disagreed.",
+      "A full and frank exchange means they disagreed sharply.",
+      "A useful meeting means very little happened, and a historic meeting is the only one of these that means what it says."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It also limits honesty."
+  },
+  {
+   "id": "g9-20",
+   "grade": 9,
+   "n": 20,
+   "title": "The Vocabulary of Risk",
+   "standard": "RI.9-10.4",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The absolute version carries what a person needs.",
+      "Risk rose from four in ten thousand to eight in ten thousand.",
+      "Less striking.",
+      "Harder to headline.",
+      "The only form in which the size of the effect appears."
+     ],
+     "to": [
+      "The absolute version carries the information a person needs.",
+      "Risk rose from four in ten thousand to eight in ten thousand is less striking, harder to put in a headline, and the only form in which the size of the effect appears."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A headline reports that a habit doubles the risk of a disease.",
+      "The sentence is probably accurate.",
+      "It is almost certainly incomplete.",
+      "The missing piece is the one that lets a reader decide anything."
+     ],
+     "to": [
+      "A headline reports that a habit doubles the risk of a disease.",
+      "The sentence is probably accurate, it is almost certainly incomplete, and the missing piece is the one that would let a reader decide anything."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The sentence is probably accurate."
+  },
+  {
+   "id": "g9-21",
+   "grade": 9,
+   "n": 21,
+   "title": "Where a Review Article Turns",
+   "standard": "RI.9-10.5",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "Summary alone would not justify it.",
+      "Anyone can list papers.",
+      "A review earns its place by doing something a list cannot.",
+      "That happens in a particular section and can usually be located."
+     ],
+     "to": [
+      "Summary alone would not justify it.",
+      "Anyone can list papers, and a review earns its place by doing something the list cannot, which happens in a particular section and can usually be located precisely."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "The first part establishes the field.",
+      "It defines the terms.",
+      "It sets out the main findings in a defensible order.",
+      "It gives the reader enough to follow an argument they could not have followed before."
+     ],
+     "to": [
+      "The first part establishes the field.",
+      "It defines the terms, sets out the main findings in a defensible order, and gives the reader enough to follow an argument they could not have followed before."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Anyone can list papers."
+  },
+  {
+   "id": "g9-22",
+   "grade": 9,
+   "n": 22,
+   "title": "The Middle of a Biography",
+   "standard": "RI.9-10.5",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "A careful biographer marks the thinness rather than smoothing it.",
+      "The record is silent.",
+      "He may have.",
+      "There is no evidence that.",
+      "These do structural work, showing where the narrative carries weight it cannot support."
+     ],
+     "to": [
+      "A careful biographer marks the thinness rather than smoothing it.",
+      "Phrases such as the record is silent, or he may have, or there is no evidence that, are doing structural work by showing where the narrative is carrying weight it cannot support."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "Biographies are rarely weakest at the start or the end.",
+      "Family records document the childhood.",
+      "Newspapers document the late career.",
+      "The thin stretch is usually the middle, before the subject became worth recording."
+     ],
+     "to": [
+      "Biographies are rarely weakest at the beginning or the end.",
+      "The childhood is documented by family records and the late career by newspapers, and the thin stretch is usually in the middle, before the subject became worth recording."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The record is silent."
+  },
+  {
+   "id": "g9-23",
+   "grade": 9,
+   "n": 23,
+   "title": "The Supplementary File",
+   "standard": "RI.9-10.5",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The arrangement solves a real constraint.",
+      "Journals limit length.",
+      "A reader wants a followable argument.",
+      "A methods section with every parameter would be unreadable and serve nobody."
+     ],
+     "to": [
+      "The arrangement solves a real constraint.",
+      "Journals limit length, a reader wants an argument they can follow, and a methods section containing every parameter would be unreadable without serving any reader well."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "It also moves material across a line.",
+      "Reviewers and editors read the main text closely.",
+      "Far fewer read the supplement closely.",
+      "What is in it is formally part of the paper and practically less examined."
+     ],
+     "to": [
+      "It also moves material across a line.",
+      "The main text is read by reviewers and editors closely; the supplement is read closely by far fewer people, and what is in it is formally part of the paper and practically less examined."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "H",
+     "kernel": "A short paper with a long supplement and one with none make very different offers.",
+     "expanded": "A short paper with a long supplement and a short paper with none are making very different offers to a reader."
+    }
+   ],
+   "stem": "That creates a predictable shape."
+  },
+  {
+   "id": "g9-24",
+   "grade": 9,
+   "n": 24,
+   "title": "How a Manifesto Is Built",
+   "standard": "RI.9-10.5",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "It opens with a diagnosis.",
+      "Something is described as wrong.",
+      "The description is written to be agreed with by people who will disagree about everything after it.",
+      "So the opening is the least controversial part."
+     ],
+     "to": [
+      "It opens with a diagnosis.",
+      "Something is described as wrong, and the description is written to be agreed with by people who will disagree about everything after it, so the opening is usually the least controversial part."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "The demands come last.",
+      "They are the only part that commits anybody.",
+      "A manifesto with a vivid diagnosis and vague demands has arranged agreement without obligation.",
+      "That is the commonest form."
+     ],
+     "to": [
+      "The demands come last, and they are the only part that commits anybody.",
+      "A manifesto with a vivid diagnosis and vague demands has arranged for agreement without obligation, which is the commonest form the document takes."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The demands come last."
+  },
+  {
+   "id": "g9-25",
+   "grade": 9,
+   "n": 25,
+   "title": "The Figure That Carries the Paper",
+   "standard": "RI.9-10.5",
+   "combine": [
+    {
+     "para": "G",
+     "from": [
+      "This is where a paper is most often visibly weak.",
+      "A key figure with three replicates.",
+      "Error bars whose definition is unstated.",
+      "An axis beginning where the difference looks largest.",
+      "All readable without a word of prose."
+     ],
+     "to": [
+      "This is also where a paper is most often weak in a visible way.",
+      "A key figure showing three replicates, or error bars whose definition is unstated, or an axis that begins where the difference looks largest, is readable as such without reading a word."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "That is not laziness.",
+      "In most experimental papers one figure carries the central claim.",
+      "A reader who understands it understands what the paper asserts.",
+      "The text says how it was produced."
+     ],
+     "to": [
+      "That is not laziness.",
+      "In most experimental papers one figure carries the central claim, and a reader who understands that figure understands what the paper is asserting, with the text serving to say how it was produced."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "That is not laziness."
+  },
+  {
+   "id": "g9-26",
+   "grade": 9,
+   "n": 26,
+   "title": "How a Grant Application Persuades",
+   "standard": "RI.9-10.6",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "A research grant application is a persuasive document almost never read as one.",
+      "Scientists write it.",
+      "Scientists review it.",
+      "It uses rhetoric as deliberately as any advertisement."
+     ],
+     "to": [
+      "A research grant application is a persuasive document that is almost never read as one.",
+      "It is written by scientists, reviewed by scientists, and it uses rhetoric as deliberately as any advertisement."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "Its first task is to show a problem matters.",
+      "The opening pages argue significance.",
+      "They connect a narrow technical question to something a reader already cares about.",
+      "The connection does the work."
+     ],
+     "to": [
+      "Its first task is to establish that a problem matters.",
+      "The opening pages argue significance, usually by connecting a narrow technical question to something a reader already cares about, and the connection is the part doing the work."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Preliminary data demonstrate feasibility."
+  },
+  {
+   "id": "g9-27",
+   "grade": 9,
+   "n": 27,
+   "title": "The Shape of a Public Apology",
+   "standard": "RI.9-10.6",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "A complete apology names the act.",
+      "It states what was done, in language the people affected would recognise.",
+      "Not an incident.",
+      "Not a situation.",
+      "Not a matter that has come to attention."
+     ],
+     "to": [
+      "A complete apology names the act.",
+      "It states what was done, in language a person affected would recognise, rather than describing it as an incident, a situation or a matter that has come to attention."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "A remedy follows, with specifics.",
+      "What will be done.",
+      "By when.",
+      "How anyone will know it happened.",
+      "A promise with no date is not checkable and will not be checked."
+     ],
+     "to": [
+      "A remedy follows, with specifics.",
+      "What will be done, by when, and how anyone will know it happened, because a promise with no date attached is not checkable and will not be checked."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "A",
+     "kernel": "A public apology from an organisation is a composed document with recognisable parts.",
+     "expanded": "A public apology from an organisation is a composed document, drafted by several people and approved by more, and it has recognisable parts."
+    },
+    {
+     "para": "A",
+     "kernel": "Knowing them makes it possible to say exactly what a statement does and does not do.",
+     "expanded": "Knowing them makes it possible to say precisely what a given statement does and does not do, which is harder than deciding whether it sounded sincere."
+    }
+   ],
+   "stem": "What will be done."
+  },
+  {
+   "id": "g9-28",
+   "grade": 9,
+   "n": 28,
+   "title": "The Advertisement That Shows the Crash",
+   "standard": "RI.9-10.6",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Road safety campaigns often use frightening images.",
+      "A slowed shot of an impact.",
+      "A hospital corridor.",
+      "A family being told something.",
+      "The technique is old, widely used and less effective than it looks."
+     ],
+     "to": [
+      "Road safety campaigns often use frightening images.",
+      "A slowed shot of an impact, a hospital corridor, a family being told something: the technique is old, widely used and not as effective as it looks."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "Research on fear appeals does not support that cleanly.",
+      "Fear reliably gets attention.",
+      "Attention is not behaviour.",
+      "A message that frightens without offering a response can produce avoidance instead of change."
+     ],
+     "to": [
+      "Research on fear appeals does not support that cleanly.",
+      "Fear reliably gets attention, and attention is not behaviour, and a message that frightens without offering a response can produce avoidance instead of change."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The reasoning is intuitive."
+  },
+  {
+   "id": "g9-29",
+   "grade": 9,
+   "n": 29,
+   "title": "What a Concession Speech Is For",
+   "standard": "RI.9-10.6",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "There are standard elements.",
+      "Name the winner.",
+      "Congratulate them explicitly.",
+      "State that you have called them.",
+      "Offer cooperation.",
+      "Each signals that the contest has ended rather than paused."
+     ],
+     "to": [
+      "There are standard elements.",
+      "The speaker names the winner, congratulates them explicitly, states that they have called them, and usually offers cooperation, and each of those is a signal that the contest has ended rather than paused."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "So its rhetoric is addressed inward.",
+      "The audience is not the country but the people who voted for the speaker.",
+      "They are disappointed.",
+      "They may suspect the result.",
+      "They will take their reading from them."
+     ],
+     "to": [
+      "Its rhetoric is therefore addressed inward.",
+      "The audience is not the country generally but the people who voted for the speaker, who are disappointed, who may suspect the result, and who will take their reading of events from them."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "There are standard elements."
+  },
+  {
+   "id": "g9-30",
+   "grade": 9,
+   "n": 30,
+   "title": "The Briefing After the Failure",
+   "standard": "RI.9-10.6",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Something has gone wrong in public.",
+      "A system is down.",
+      "A product has injured someone.",
+      "A launch has failed.",
+      "Within hours an organisation holds a briefing.",
+      "Almost everything said is constrained beforehand."
+     ],
+     "to": [
+      "Something has gone wrong in public: a system is down, a product has injured someone, a launch has failed.",
+      "Within hours an organisation holds a briefing, and almost everything said in it is constrained before anyone speaks."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "The resulting rhetoric is recognisable.",
+      "Statements of concern.",
+      "A commitment to investigate.",
+      "A description of what is being done now.",
+      "No account of why.",
+      "Why is what cannot yet be said."
+     ],
+     "to": [
+      "The resulting rhetoric is recognisable.",
+      "Statements of concern, a commitment to investigate, a description of what is being done now, and no account of why, because why is the thing that cannot yet be said."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "A system is down."
+  },
+  {
+   "id": "g9-31",
+   "grade": 9,
+   "n": 31,
+   "title": "An Expedition in Three Records",
+   "standard": "RI.9-10.7",
+   "combine": [
+    {
+     "para": "G",
+     "from": [
+      "So each medium emphasises something different.",
+      "The log emphasises sequence.",
+      "The narrative emphasises meaning.",
+      "The data emphasise result.",
+      "No two of them disagree about any fact."
+     ],
+     "to": [
+      "Each medium therefore emphasises a different thing.",
+      "The log emphasises sequence, the narrative emphasises meaning, and the data emphasise result, and no two of them disagree about any fact."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "The second is the published narrative, written afterwards for a general audience.",
+      "It has a shape.",
+      "A beginning, a crisis, a resolution.",
+      "Events are selected and ordered to produce that shape."
+     ],
+     "to": [
+      "The second is the published narrative, written afterwards for a general audience.",
+      "It has a shape, with a beginning, a crisis and a resolution, and the events are selected and ordered to produce that shape."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It has a shape."
+  },
+  {
+   "id": "g9-32",
+   "grade": 9,
+   "n": 32,
+   "title": "A Life in Three Tellings",
+   "standard": "RI.9-10.7",
+   "combine": [
+    {
+     "para": "H",
+     "from": [
+      "So the emphases follow from the form.",
+      "Intention from the autobiography.",
+      "Verification from the biography.",
+      "Public meaning from the obituary.",
+      "A reader who wants all three must read all three."
+     ],
+     "to": [
+      "So the emphases are predictable from the form.",
+      "Intention from the autobiography, verification from the biography, and public meaning from the obituary, and a reader who wants all three has to read all three."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "It also has the worst vantage point.",
+      "A person explains their life to themselves as well as to a reader.",
+      "The account was composed after everything turned out.",
+      "Memory reorganises around outcomes."
+     ],
+     "to": [
+      "It also has the worst possible vantage point.",
+      "A person is explaining their own life to themselves as well as to a reader, the account was composed after everything had already turned out, and memory reorganises around outcomes."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Memory reorganises around outcomes."
+  },
+  {
+   "id": "g9-33",
+   "grade": 9,
+   "n": 33,
+   "title": "One Storm, Three Instruments",
+   "standard": "RI.9-10.7",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "The third record is the surface observation.",
+      "A buoy reporting pressure.",
+      "A gauge recording rainfall.",
+      "An aircraft flying through and measuring directly.",
+      "An account from someone who was there."
+     ],
+     "to": [
+      "The third record is the surface observation: a buoy reporting pressure, a gauge recording rainfall, a reconnaissance aircraft flying through and measuring directly, and an account from someone who was there."
+     ]
+    },
+    {
+     "para": "H",
+     "from": [
+      "So each medium emphasises what it can reach.",
+      "The satellite emphasises structure.",
+      "The model emphasises what comes next.",
+      "The observations emphasise what occurred.",
+      "A forecaster holds all three at once."
+     ],
+     "to": [
+      "So each medium emphasises what it can reach.",
+      "The satellite emphasises structure, the model emphasises what comes next, the observations emphasise what actually occurred, and a forecaster's work is largely the business of holding all three at once."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "A buoy reporting pressure."
+  },
+  {
+   "id": "g9-34",
+   "grade": 9,
+   "n": 34,
+   "title": "The Trial in Three Media",
+   "standard": "RI.9-10.7",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The transcript is complete and nearly unreadable.",
+      "It records every word in order.",
+      "The procedural exchanges.",
+      "The objections.",
+      "The long passages where nothing happens, which is most of a trial."
+     ],
+     "to": [
+      "The transcript is complete and nearly unreadable.",
+      "It records every word in order, including the procedural exchanges, the objections and the long passages where nothing happens, which is most of what a trial is."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "A courtroom sketch records what the transcript cannot.",
+      "Where people sat.",
+      "How they held themselves.",
+      "Who was looking at whom.",
+      "In courts that exclude cameras it is the only visual record."
+     ],
+     "to": [
+      "A courtroom sketch records something the transcript cannot.",
+      "It shows where people sat, how they held themselves and who was looking at whom, and in courts that exclude cameras it is the only visual record there is."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "How they held themselves."
+  },
+  {
+   "id": "g9-35",
+   "grade": 9,
+   "n": 35,
+   "title": "The Study, the Release and the Leaflet",
+   "standard": "RI.9-10.7",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "One piece of medical research reaches the public through a chain of documents.",
+      "The paper.",
+      "A press release written by the institution.",
+      "News coverage.",
+      "Sometimes a leaflet given to patients."
+     ],
+     "to": [
+      "One piece of medical research reaches the public through a chain of documents, each written by different people for different readers.",
+      "There is the paper, then a press release written by the institution that employs the researchers, then news coverage, then sometimes a leaflet handed to patients in a waiting room."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The paper is written for specialists and states its claim with its limits attached.",
+      "What population was studied.",
+      "Over what period.",
+      "With what comparison.",
+      "What the authors can and cannot conclude."
+     ],
+     "to": [
+      "The paper is written for specialists and states its claim with its limits attached.",
+      "It says what population was studied, over what period, with what comparison, and what the authors can and cannot conclude."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "What population was studied."
+  },
+  {
+   "id": "g9-36",
+   "grade": 9,
+   "n": 36,
+   "title": "The Study That Could Not Have Shown That",
+   "standard": "RI.9-10.8",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "Before asking whether the difference is real, ask a prior question.",
+      "Could this design have produced the claimed answer, whatever the result had been?",
+      "Often not.",
+      "Then the size of the difference does not matter."
+     ],
+     "to": [
+      "Before asking whether the difference is real, ask a prior question: could this design have produced the answer being claimed, whatever the result had been?",
+      "Often the answer is no, and then the size of the difference does not matter."
+     ]
+    },
+    {
+     "para": "H",
+     "from": [
+      "So this is not scepticism about conclusions.",
+      "It is an earlier question, about whether the conclusion was reachable.",
+      "A study that fails it has not given weak evidence.",
+      "It has given evidence about something else."
+     ],
+     "to": [
+      "So this is not scepticism about conclusions.",
+      "It is a question asked earlier than that, about whether the conclusion was reachable, and a study that fails it has not produced weak evidence but evidence about something else."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Applied honestly it is uncomfortable."
+  },
+  {
+   "id": "g9-37",
+   "grade": 9,
+   "n": 37,
+   "title": "The Argument From Tradition",
+   "standard": "RI.9-10.8",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "Age and merit are different properties.",
+      "A practice persists for many reasons.",
+      "Nobody examined it.",
+      "Changing it was costly.",
+      "The people who found it intolerable had no say."
+     ],
+     "to": [
+      "The reason is that age and merit are different properties.",
+      "A practice persists for many reasons, including that nobody examined it, that changing it was costly, and that the people who found it intolerable had no say."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "That argument is about caution, not merit.",
+      "It says find out what this is for before removing it.",
+      "That is a demand for investigation.",
+      "It is satisfied by investigating."
+     ],
+     "to": [
+      "That argument is about caution rather than about merit.",
+      "It says find out what this is for before you remove it, which is a demand for investigation, and it is satisfied by investigating."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "That is usually true."
+  },
+  {
+   "id": "g9-38",
+   "grade": 9,
+   "n": 38,
+   "title": "The Claim That Proves Itself",
+   "standard": "RI.9-10.8",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "Nothing false has been said.",
+      "Every sentence may be accurate.",
+      "The arithmetic may be right.",
+      "The conclusion follows from the premises.",
+      "That is exactly what makes it hard to see."
+     ],
+     "to": [
+      "Nothing false has been said.",
+      "Every sentence may be accurate, the arithmetic may be correct, and the conclusion follows from the premises, which is exactly what makes this difficult to see."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "Detecting it takes a specific move.",
+      "State the conclusion.",
+      "State the premises.",
+      "Ask whether believing the premises requires already believing the conclusion.",
+      "If so, the argument is circular however long."
+     ],
+     "to": [
+      "Detecting it requires a specific move: state the conclusion, then state the premises, then ask whether believing the premises requires already believing the conclusion.",
+      "If it does, the argument is circular however long it is."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Nothing false has been said."
+  },
+  {
+   "id": "g9-39",
+   "grade": 9,
+   "n": 39,
+   "title": "The Only Two Options",
+   "standard": "RI.9-10.8",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The move is not always illegitimate.",
+      "Some choices really are binary.",
+      "A speaker who examined the alternatives and found them unavailable is reporting rather than framing.",
+      "A listener can test that difference."
+     ],
+     "to": [
+      "The move is not always illegitimate.",
+      "Some choices really are binary, and a speaker who has examined the alternatives and found them unavailable is reporting rather than framing, and that is a difference a listener can test."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "The fallacious version cannot do this and usually does not have to.",
+      "The two options appear in the opening sentence.",
+      "Discussion moves to which is worse.",
+      "By the time anyone asks, everyone has accepted the frame."
+     ],
+     "to": [
+      "The fallacious version cannot do this, and usually does not have to.",
+      "The two options appear in the opening sentence, the discussion moves immediately to which is worse, and by the time anyone asks, the frame has been accepted by everybody arguing inside it."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It is a quantity."
+  },
+  {
+   "id": "g9-40",
+   "grade": 9,
+   "n": 40,
+   "title": "Moving the Goalposts",
+   "standard": "RI.9-10.8",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Someone makes a claim and names what would show it wrong.",
+      "A test is run.",
+      "The named result does not appear.",
+      "The claim is restated with a new condition that was not mentioned before."
+     ],
+     "to": [
+      "Someone makes a claim and names what would show it to be wrong.",
+      "A test is run, the named result does not appear, and the claim is restated with a new condition attached that was not mentioned before."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "Each restatement can be reasonable.",
+      "Science revises claims constantly.",
+      "An experiment can genuinely fail for a technical reason.",
+      "Insisting a hypothesis die at the first bad result would be poor practice."
+     ],
+     "to": [
+      "Each individual restatement can be reasonable.",
+      "Science revises claims constantly, an experiment can genuinely fail for a technical reason, and insisting that a hypothesis die at the first disconfirming result would be bad practice."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "H",
+     "kernel": "That request also tests the claim's holder.",
+     "expanded": "That request is also a test of the claim's holder."
+    }
+   ],
+   "stem": "A test is run."
+  },
+  {
+   "id": "g9-41",
+   "grade": 9,
+   "n": 41,
+   "title": "The Declaration and the Declaration of Sentiments",
+   "standard": "RI.9-10.9",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "The grievances are addressed to a different party.",
+      "The original lists the acts of a king.",
+      "The Declaration of Sentiments lists the acts of men, in the same accumulating form.",
+      "He has.",
+      "He has.",
+      "He has."
+     ],
+     "to": [
+      "The grievances are addressed to a different party.",
+      "Where the original lists the acts of a king, the Declaration of Sentiments lists the acts of men, in the same accumulating form: he has, he has, he has."
+     ]
+    },
+    {
+     "para": "G",
+     "from": [
+      "The convention did not agree about everything.",
+      "The resolution demanding the vote was the most contested item.",
+      "It passed after Frederick Douglass spoke for it.",
+      "The proceedings record this."
+     ],
+     "to": [
+      "The convention did not agree about everything.",
+      "The resolution demanding the vote was the most contested item, and it passed after Frederick Douglass spoke for it, which is recorded in the proceedings."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "E",
+     "kernel": "An audience that recognises the form is asked to notice that an argument they already accept extends further than they have taken it.",
+     "expanded": "An audience that recognises the form is being asked to notice that the argument they already accept, in the version they already accept, extends further than they have taken it."
+    }
+   ],
+   "stem": "The proceedings record this."
+  },
+  {
+   "id": "g9-42",
+   "grade": 9,
+   "n": 42,
+   "title": "Washington's Farewell Address",
+   "standard": "RI.9-10.9",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The form matters to how it reads.",
+      "A letter can be longer than a speech.",
+      "It can be reread.",
+      "A reader meets its arguments in the writer's order, not in the order an audience's attention allows."
+     ],
+     "to": [
+      "The form matters to how it reads.",
+      "A letter can be longer than a speech, it can be reread, and a reader meets its arguments in the order the writer chose rather than in the order an audience's attention allows."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "The address is careful about its own authority.",
+      "It offers advice as a departing friend rather than instruction.",
+      "It says the writer may be wrong.",
+      "That is a rhetorical choice as much as a modest one."
+     ],
+     "to": [
+      "The address is careful about its own authority.",
+      "It presents its advice as that of a departing friend rather than as instruction, and it says the writer may be wrong, which is a rhetorical choice as much as a modest one."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It can be reread."
+  },
+  {
+   "id": "g9-43",
+   "grade": 9,
+   "n": 43,
+   "title": "Two Hundred and Seventy Words",
+   "standard": "RI.9-10.9",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "The structure is three sentences of work.",
+      "The past founded a nation on a proposition.",
+      "The present tests whether such a nation can endure.",
+      "The future is a task for the living.",
+      "The speech moves through all three."
+     ],
+     "to": [
+      "The structure is three sentences of work.",
+      "The past founded a nation on a proposition, the present is testing whether such a nation can endure, and the future is a task handed to the living, and the whole speech moves through those three."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "That matters because the documents say different things.",
+      "The Declaration asserts that all men are created equal.",
+      "The Constitution as then written accommodated slavery.",
+      "Choosing the earlier text chooses which principle the war defends."
+     ],
+     "to": [
+      "That matters because the two documents say different things.",
+      "The Declaration asserts that all men are created equal; the Constitution as then written accommodated slavery, and choosing the earlier text as the founding is choosing which principle the war defends."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The speech moves through all three."
+  },
+  {
+   "id": "g9-44",
+   "grade": 9,
+   "n": 44,
+   "title": "The Four Freedoms",
+   "standard": "RI.9-10.9",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The passage everyone remembers comes at the end and does something else.",
+      "It names four freedoms that should exist everywhere in the world.",
+      "Of speech.",
+      "Of worship.",
+      "From want.",
+      "From fear."
+     ],
+     "to": [
+      "The passage everyone remembers comes at the end and does something different.",
+      "It names four freedoms that should exist everywhere in the world: of speech, of worship, from want, and from fear."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "On January 6, 1941, Roosevelt gave his annual message to Congress.",
+      "The United States was not at war.",
+      "The country was divided about whether it should be.",
+      "The speech is written around that fact."
+     ],
+     "to": [
+      "On January 6, 1941, Roosevelt delivered his annual message to Congress.",
+      "The United States was not at war, the country was divided about whether it should be, and the speech is written in and around that fact."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "That distinction is the argument."
+  },
+  {
+   "id": "g9-45",
+   "grade": 9,
+   "n": 45,
+   "title": "Letter from Birmingham Jail",
+   "standard": "RI.9-10.9",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The letter answers them point by point, and that shapes everything.",
+      "It is not a speech to supporters.",
+      "It is a reply to people who thought themselves sympathetic.",
+      "That is harder to write than an attack or an appeal."
+     ],
+     "to": [
+      "The letter answers them point by point, which shapes everything about it.",
+      "It is not a speech to supporters; it is a reply to people who considered themselves sympathetic, and that is a harder document to write than either an attack or an appeal."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "A second argument answers the charge of breaking laws.",
+      "The letter separates just from unjust laws.",
+      "An unjust law is one a majority imposes on a minority and does not bind itself by.",
+      "Augustine and Aquinas are cited."
+     ],
+     "to": [
+      "A second argument addresses the charge of breaking laws.",
+      "The letter distinguishes just from unjust laws, defines an unjust law as one a majority imposes on a minority but does not bind itself by, and cites Augustine and Aquinas for the distinction."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Augustine and Aquinas are cited."
+  },
+  {
+   "id": "g9-46",
+   "grade": 9,
+   "n": 46,
+   "title": "The Map of the Ocean Floor",
+   "standard": "RI.9-10.10",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "For most of history the sea floor was assumed to be a featureless plain.",
+      "Nothing contradicted that.",
+      "Nobody could see it, and the few soundings came from lowering a weighted line."
+     ],
+     "to": [
+      "For most of history the sea floor was assumed to be a featureless plain.",
+      "Nothing contradicted the assumption, because nobody could see it and the few available soundings were taken by lowering a weighted line."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "Echo sounding changed what was available.",
+      "A ship could record depth continuously along its track.",
+      "By the late 1940s there were thousands of tracks, each a profile of the bottom along one line."
+     ],
+     "to": [
+      "Echo sounding changed what was available.",
+      "A ship could record the depth continuously along its track, and by the late 1940s there were thousands of such tracks, each a profile of the bottom along one line."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Echo sounding changed what was available."
+  },
+  {
+   "id": "g9-47",
+   "grade": 9,
+   "n": 47,
+   "title": "The Town That Moved",
+   "standard": "RI.9-10.10",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Hibbing, Minnesota, sits on the Mesabi Range.",
+      "The iron ore the town existed to mine turned out to run directly underneath it.",
+      "The ore was worth more than the location.",
+      "So the town was moved."
+     ],
+     "to": [
+      "Hibbing, Minnesota, sits on the Mesabi Range, and the iron ore that the town existed to mine turned out to extend directly underneath it.",
+      "The ore was worth more than the location, and so the town was moved."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "Not everything went.",
+      "Larger structures were demolished rather than moved.",
+      "Some buildings were cut into sections and rebuilt.",
+      "Some residents refused long enough that it was negotiated building by building."
+     ],
+     "to": [
+      "Not everything went.",
+      "Larger structures were demolished rather than moved, some buildings were cut into sections and reassembled, and a number of residents refused for long enough that the process had to be negotiated building by building."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "So the town was moved."
+  },
+  {
+   "id": "g9-48",
+   "grade": 9,
+   "n": 48,
+   "title": "The Antenna That Could Not Be Cleaned",
+   "standard": "RI.9-10.10",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "There was more noise than there should have been.",
+      "A faint hiss remained after every known source was accounted for.",
+      "It did not change with the hour or the season.",
+      "It came from every direction equally."
+     ],
+     "to": [
+      "There was more noise than there should have been.",
+      "A faint hiss remained after every known source was accounted for, it did not change with the time of day, it did not change with the season, and it came from every direction equally."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "They worked through the possibilities methodically.",
+      "The receiver was checked.",
+      "The joints were checked.",
+      "Nearby New York City was considered and excluded, because the signal did not vary with direction."
+     ],
+     "to": [
+      "They worked through the possibilities methodically.",
+      "The receiver was checked, the joints were checked, nearby New York City was considered and excluded because the signal did not vary with direction."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "G",
+     "kernel": "A hot early universe would leave radiation filling space, cooled by expansion to a few degrees.",
+     "expanded": "A hot early universe would have left radiation filling all space, cooled by expansion to a few degrees, and they were building an instrument to find it."
+    }
+   ],
+   "stem": "The receiver was checked."
+  },
+  {
+   "id": "g9-49",
+   "grade": 9,
+   "n": 49,
+   "title": "The Index That Ranked Nations",
+   "standard": "RI.9-10.10",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "It also measured one thing.",
+      "A country could raise income per person while life expectancy fell.",
+      "The figure would record only improvement.",
+      "It was not built to notice anything else."
+     ],
+     "to": [
+      "It also measured one thing.",
+      "A country could raise income per person while life expectancy fell, and the figure would record only improvement, because the figure was not built to notice anything else."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "Combining them meant deciding how much each should count.",
+      "The index weights the three roughly equally.",
+      "That choice cannot be derived from anything.",
+      "It had to be defended as reasonable, not correct."
+     ],
+     "to": [
+      "Combining them required deciding how much each should count.",
+      "The index weights the three roughly equally, which is a choice that cannot be derived from anything and had to be defended as reasonable rather than correct."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The weights are arbitrary."
+  },
+  {
+   "id": "g9-50",
+   "grade": 9,
+   "n": 50,
+   "title": "The Clock That Runs Slower Downstairs",
+   "standard": "RI.9-10.10",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "General relativity predicts that a clock closer to a massive object runs slower than one further away.",
+      "The prediction is not about any particular clock's mechanism.",
+      "It is a statement about time itself."
+     ],
+     "to": [
+      "General relativity predicts that a clock closer to a massive object runs slower than one further away.",
+      "The prediction is not about the mechanism of any particular clock; it is a statement about time itself."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "For most of a century the effect could only be seen where it was large.",
+      "Clocks flown in aircraft, satellite signals and light from dense stars all showed it.",
+      "All required great speed or great distance."
+     ],
+     "to": [
+      "For most of a century the effect could only be observed where it was large.",
+      "Clocks flown in aircraft, signals from satellites and light from dense stars all showed it, and all required either great speed or great distance."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Optical atomic clocks reached that stability."
   }
  ]
 }
