@@ -18205,6 +18205,1926 @@
    ],
    "expand": [],
    "stem": "Some were genuinely astronomical."
+  },
+  {
+   "id": "g11-1",
+   "grade": 11,
+   "n": 1,
+   "title": "What the Fossil Record Cannot Say",
+   "standard": "RI.11-12.1",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "Each condition filters.",
+      "Hard parts survive and soft ones rarely do.",
+      "A world of worms and jellyfish leaves almost nothing.",
+      "The apparent abundance of shelled animals is partly a fact about shells."
+     ],
+     "to": [
+      "Each of those conditions filters.",
+      "Hard parts survive and soft ones rarely do, so a world of worms and jellyfish leaves almost nothing, and the apparent abundance of shelled animals in the record is partly a fact about shells."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "Environment filters too.",
+      "Sediment builds up in river deltas, lake beds and shallow seas.",
+      "An animal living on a mountainside is where rock erodes rather than accumulates.",
+      "Whole habitats are nearly absent."
+     ],
+     "to": [
+      "Environment filters as well.",
+      "Sediment accumulates in river deltas, lake beds and shallow seas, and an animal that lived on a mountainside is in a place that erodes rather than accumulates, so entire habitats are nearly absent."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Whole habitats are nearly absent."
+  },
+  {
+   "id": "g11-2",
+   "grade": 11,
+   "n": 2,
+   "title": "How Confident Is a Climate Projection",
+   "standard": "RI.11-12.1",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "The two are genuinely independent.",
+      "High confidence that a quantity lies somewhere in a broad range is coherent.",
+      "So is low confidence about a narrow one.",
+      "A summary reporting only the number has dropped the half saying how much to trust it."
+     ],
+     "to": [
+      "Those two are genuinely independent.",
+      "High confidence that a quantity lies somewhere in a broad range is a coherent position, and so is low confidence about a narrow one, and a summary that reports only the number has dropped the half that says how much to trust it."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "An assessment report on climate runs to thousands of pages and is summarised in a few.",
+      "The summaries are what circulate.",
+      "What is most often lost in the compression is the vocabulary the report uses to say how sure it is."
+     ],
+     "to": [
+      "An assessment report on climate runs to thousands of pages and is summarised in a few.",
+      "The summaries are what circulate, and the thing most frequently lost in the compression is the vocabulary the report uses to say how sure it is."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The summaries are what circulate."
+  },
+  {
+   "id": "g11-3",
+   "grade": 11,
+   "n": 3,
+   "title": "The Numbers We Do Not Have",
+   "standard": "RI.11-12.1",
+   "combine": [
+    {
+     "para": "G",
+     "from": [
+      "The damaging practice is restatement.",
+      "A careful range becomes a midpoint in a later survey.",
+      "The midpoint becomes a figure in a textbook.",
+      "The figure is then cited as though it were counted."
+     ],
+     "to": [
+      "The practice that causes damage is the restatement.",
+      "A range published carefully becomes a midpoint in a later survey, the midpoint becomes a figure in a textbook, and the figure is then cited as though it were counted."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "Quantitative history depends on records created for other purposes.",
+      "For most of the past, the records needed to answer a modern question simply do not exist."
+     ],
+     "to": [
+      "Quantitative history depends on records that were created for other purposes, and for most of the past the records needed to answer a modern question simply do not exist."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "E",
+     "kernel": "Documents survive where institutions were stable, where the climate was dry and where nobody had reason to destroy them.",
+     "expanded": "Documents survive where institutions were stable, where the climate was dry and where nobody had a reason to destroy them, which means survival correlates with exactly the conditions a historian might want to study."
+    },
+    {
+     "para": "F",
+     "kernel": "Good practice states ranges and assumptions rather than figures.",
+     "expanded": "Good practice addresses this by stating ranges and assumptions rather than figures."
+    }
+   ],
+   "stem": "The damaging practice is restatement."
+  },
+  {
+   "id": "g11-4",
+   "grade": 11,
+   "n": 4,
+   "title": "What the Unemployment Rate Leaves Out",
+   "standard": "RI.11-12.1",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "The unemployment rate is among the most widely reported economic figures, and almost nobody who quotes it could state its definition.",
+      "It is not the proportion of adults without a job.",
+      "The difference between those two quantities is large."
+     ],
+     "to": [
+      "The unemployment rate is among the most widely reported economic figures, and almost nobody who quotes it could state its definition.",
+      "It is not the proportion of adults without a job, and the difference between those two quantities is large."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "Each condition excludes people.",
+      "Someone who stopped looking because they believed no suitable work existed meets the first two and fails the third.",
+      "The statistics move them out of the labour force rather than counting them as unemployed."
+     ],
+     "to": [
+      "Each of those conditions excludes people.",
+      "Somebody who stopped looking because they believed no suitable work existed satisfies the first two and fails the third, and the statistics move them out of the labour force entirely rather than counting them as unemployed."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "E",
+     "kernel": "Someone working four hours a week who wants full-time work is employed under the headline measure.",
+     "expanded": "Someone working four hours a week who wants full-time work is employed under the headline measure, so a shift from full employment to insufficient employment may not register in the figure at all."
+    }
+   ],
+   "stem": "Each condition excludes people."
+  },
+  {
+   "id": "g11-5",
+   "grade": 11,
+   "n": 5,
+   "title": "The Limits of a Genetic Ancestry Test",
+   "standard": "RI.11-12.1",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "This is why results change with no new sample.",
+      "A company that expands or revises its panels issues updated percentages to existing customers.",
+      "A person whose figure for one region moves ten points has not changed.",
+      "The comparison set has."
+     ],
+     "to": [
+      "This is why results change without any new sample.",
+      "A company that expands or revises its panels issues updated percentages to existing customers, and a person whose figure for one region moves by ten points has not changed; the comparison set has."
+     ]
+    },
+    {
+     "para": "H",
+     "from": [
+      "So what the test establishes firmly is narrower than what it reports.",
+      "Close relationships are near-certain.",
+      "Broad patterns are informative.",
+      "A specific percentage for a specific region is an estimate against a changing reference, and the figure does not display its uncertainty."
+     ],
+     "to": [
+      "What the test establishes firmly is therefore narrower than what it reports.",
+      "Close relationships are near-certain, broad patterns are informative, and a specific percentage for a specific region is an estimate against a changing reference whose uncertainty the figure does not display."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "F",
+     "kernel": "Identifying a close biological relative is extremely reliable, because shared chromosome segments are long and unmistakable.",
+     "expanded": "Identifying a close biological relative is extremely reliable, because shared segments of chromosome are long and unmistakable, and that is a different operation from estimating a continental percentage."
+    }
+   ],
+   "stem": "Those readings are accurate."
+  },
+  {
+   "id": "g11-6",
+   "grade": 11,
+   "n": 6,
+   "title": "Why Cities Are Hotter",
+   "standard": "RI.11-12.2",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "The third is the absence of water.",
+      "A leaf cools its surroundings by evaporating water.",
+      "A surface that sheds rain into a drain within minutes does none of that cooling.",
+      "Paving a surface removes an air conditioner nobody installed."
+     ],
+     "to": [
+      "The third is the absence of water.",
+      "A leaf cools its surroundings by evaporating water, and a surface that sheds rain into a drain within minutes performs none of that cooling, so paving a surface removes an air conditioner nobody had installed."
+     ]
+    },
+    {
+     "para": "H",
+     "from": [
+      "The two ideas produce something neither holds alone.",
+      "The physics explains why a surface is hot.",
+      "The history explains why that surface is in one neighbourhood and not another.",
+      "A heat map of a city records materials and spending at once."
+     ],
+     "to": [
+      "The two ideas produce something neither contains alone.",
+      "The physics explains why a surface is hot, the history explains why that surface is in one neighbourhood rather than another, and a heat map of a city is simultaneously a record of materials and a record of spending."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The first is absorption."
+  },
+  {
+   "id": "g11-7",
+   "grade": 11,
+   "n": 7,
+   "title": "Where a Prisoner Counts",
+   "standard": "RI.11-12.2",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "So the arrangement transfers representation geographically.",
+      "The prison district gains population for drawing boundaries.",
+      "The districts people came from lose it.",
+      "Neither transfer involved anybody moving in any ordinary sense."
+     ],
+     "to": [
+      "So the arrangement transfers representation geographically.",
+      "The district with the prison gains population for the purpose of drawing boundaries, and the districts the incarcerated people came from lose it, and neither transfer involved anybody moving in any ordinary sense."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A census records where people are, which sounds like a factual question with a factual answer.",
+      "For a person in prison it is not.",
+      "The place they are and the place they belong to differ, and a rule must choose."
+     ],
+     "to": [
+      "A census records where people are, and that sounds like a factual question with a factual answer.",
+      "For a person in prison it is not, because the place they are and the place they belong to are different, and a rule has to choose."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Prisons are not distributed randomly."
+  },
+  {
+   "id": "g11-8",
+   "grade": 11,
+   "n": 8,
+   "title": "The Grid and the Weather",
+   "standard": "RI.11-12.2",
+   "combine": [
+    {
+     "para": "H",
+     "from": [
+      "The two ideas interact rather than sitting side by side.",
+      "The first is about matching energy over hours, addressed by forecasting and storage.",
+      "The second is about stability over seconds, addressed by different equipment.",
+      "A grid solving only one would fail in a way the other could not predict."
+     ],
+     "to": [
+      "The two ideas interact rather than sitting side by side.",
+      "The first is about matching energy over hours and is addressed by forecasting and storage; the second is about stability over seconds and is addressed by different equipment entirely, and a grid that solved only one of them would fail in a way the other could not predict."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "That requirement has shaped every grid ever built.",
+      "Generation is adjusted constantly to follow demand.",
+      "The ability to adjust is itself valuable, which is why a plant that can raise output within minutes has commanded a premium over one that cannot."
+     ],
+     "to": [
+      "That requirement has shaped every grid ever built.",
+      "Generation is adjusted constantly to follow demand, and the ability to adjust is itself the valuable thing, which is why a plant that can increase output within minutes has historically commanded a premium over one that cannot."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Storage changes the shape again."
+  },
+  {
+   "id": "g11-9",
+   "grade": 11,
+   "n": 9,
+   "title": "Copyright and the Public Domain",
+   "standard": "RI.11-12.2",
+   "combine": [
+    {
+     "para": "G",
+     "from": [
+      "The hard case is the orphan work.",
+      "A book whose rights holder cannot be found is protected and unusable.",
+      "A library that digitises it risks a claim, and the absence of a claimant is not a defence.",
+      "The work is lost while remaining legally owned."
+     ],
+     "to": [
+      "The hard case is the orphan work.",
+      "A book whose rights holder cannot be identified or found is protected and unusable, so a library that digitises it risks a claim and the absence of a claimant is not a defence, and the work is effectively lost while remaining legally owned."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The exchange is stated in the oldest statutes.",
+      "An author receives a limited monopoly because that is expected to produce more works than would otherwise exist.",
+      "The limit is what the public receives in return."
+     ],
+     "to": [
+      "The exchange is stated plainly in the oldest statutes, which are less coy about it than modern discussion tends to be.",
+      "An author receives a limited monopoly because that is expected to produce more works than would otherwise exist, and the limit on it is what the public receives in return for granting it."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Copyright is an exchange."
+  },
+  {
+   "id": "g11-10",
+   "grade": 11,
+   "n": 10,
+   "title": "The Rate at Which Soil Is Made",
+   "standard": "RI.11-12.2",
+   "combine": [
+    {
+     "para": "G",
+     "from": [
+      "So there are two distinct problems that look like one from a distance.",
+      "One is a quantity being physically removed.",
+      "The other is a quality being lost in place.",
+      "A measure recording only depth misses the second entirely."
+     ],
+     "to": [
+      "So there are two distinct problems that look like one from a distance.",
+      "One is a quantity being physically removed, and the other is a quality being lost in place, and a measure that records only depth will miss the second entirely."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "Formation is slow because it depends on weathering, which is slow.",
+      "Rock is broken down physically and chemically, organic matter builds from whatever grows in it, and organisms mix the two.",
+      "All of that is measured in centimetres per century rather than per year."
+     ],
+     "to": [
+      "Formation is slow because it depends on weathering, which is slow.",
+      "Rock is broken down physically and chemically, organic matter accumulates from whatever grows in it, and organisms mix the two, and all of that is measured in centimetres per century rather than per year."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Loss can be very fast."
+  },
+  {
+   "id": "g11-11",
+   "grade": 11,
+   "n": 11,
+   "title": "How Insulin Became a Medicine",
+   "standard": "RI.11-12.3",
+   "combine": [
+    {
+     "para": "H",
+     "from": [
+      "So the sequence is a chain in which no element is sufficient.",
+      "An old physiological idea.",
+      "A procedural suggestion from an outsider.",
+      "A laboratory he did not own.",
+      "A purification he could not perform.",
+      "A decision about ownership that none of the science required."
+     ],
+     "to": [
+      "The sequence is therefore a chain in which no element is sufficient.",
+      "An old physiological idea, a procedural suggestion from an outsider, a laboratory he did not own, a purification he could not perform, and a decision about ownership that none of the science required."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "The credit was disputed immediately and the dispute was bitter.",
+      "Banting and Macleod received the Nobel Prize in 1923.",
+      "Banting said he would share his half with Best.",
+      "Macleod shared his with Collip.",
+      "The arrangement settled nothing about who had done what."
+     ],
+     "to": [
+      "The credit was disputed immediately and the dispute was bitter.",
+      "Banting and Macleod received the Nobel Prize in 1923, Banting announced he would share his half with Best, Macleod shared his with Collip, and the arrangement settled nothing about who had done what."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "An old physiological idea."
+  },
+  {
+   "id": "g11-12",
+   "grade": 11,
+   "n": 12,
+   "title": "The Making of the Marshall Plan",
+   "standard": "RI.11-12.3",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "The political argument ran alongside the economic one and was stated openly in internal documents.",
+      "Economic distress was understood as strengthening communist parties in western Europe.",
+      "Reconstruction was a security measure as much as an economic one."
+     ],
+     "to": [
+      "The political argument ran alongside the economic one and was stated openly in internal documents.",
+      "Economic distress was understood as making communist parties stronger in western Europe, and reconstruction was accordingly a security measure as much as an economic one."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "The design reflected a judgement about how to make it acceptable.",
+      "The offer went to all European states including the Soviet Union, on terms requiring participants to open their accounts and coordinate with each other.",
+      "The Soviet Union declined and required its neighbours to decline."
+     ],
+     "to": [
+      "The proposal's design reflected a judgement about how to make it acceptable.",
+      "The offer was extended to all European states including the Soviet Union, on terms requiring participants to open their accounts and coordinate with each other, which the Soviet Union declined and required its neighbours to decline."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "So the effects separate into kinds."
+  },
+  {
+   "id": "g11-13",
+   "grade": 11,
+   "n": 13,
+   "title": "How Smallpox Was Eradicated",
+   "standard": "RI.11-12.3",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The disease had features that made elimination conceivable at all, and most infections do not share them.",
+      "It has no animal reservoir, so it cannot persist outside people.",
+      "It produces a visible rash, so cases can be identified without a laboratory.",
+      "Survivors are immune for life."
+     ],
+     "to": [
+      "The disease had several features that made elimination conceivable at all, and they are not shared by most infections.",
+      "It has no animal reservoir, so there is nowhere for it to persist outside people; it produces a visible rash, so cases can be identified without a laboratory; and survivors are immune for life."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "Implementing it required a surveillance system rather than a vaccination campaign.",
+      "Rewards were offered for reporting cases.",
+      "Teams investigated each report.",
+      "The operational problem became finding the last cases in places with no health infrastructure and active conflict."
+     ],
+     "to": [
+      "Implementing it required a surveillance system rather than a vaccination campaign.",
+      "Rewards were offered for reporting cases, teams investigated each report, and the operational problem became finding the last cases in places with no health infrastructure and active conflict."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Teams investigated each report."
+  },
+  {
+   "id": "g11-14",
+   "grade": 11,
+   "n": 14,
+   "title": "How the Interstates Were Routed",
+   "standard": "RI.11-12.3",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "The combination decided where the roads went.",
+      "Routes ran through neighbourhoods with low property values and limited political representation.",
+      "That lowered acquisition costs, satisfied renewal objectives and met the least organised resistance.",
+      "The three criteria selected the same places."
+     ],
+     "to": [
+      "The combination determined where the roads went.",
+      "Routes ran through neighbourhoods with low property values and limited political representation, which lowered acquisition costs, satisfied renewal objectives and met the least organised resistance, and those three criteria selected the same places."
+     ]
+    },
+    {
+     "para": "H",
+     "from": [
+      "So the interaction is between actors with different aims producing one outcome.",
+      "Federal engineers, municipal governments and renewal agencies each had a reason.",
+      "No single reason explains the routes.",
+      "The routes are what all three wanted at once."
+     ],
+     "to": [
+      "So the interaction is between actors with different aims producing a single outcome.",
+      "Federal engineers, municipal governments and renewal agencies each had a reason, no single one of those reasons explains the routes, and the routes are what all three wanted at once."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "No single reason explains the routes."
+  },
+  {
+   "id": "g11-15",
+   "grade": 11,
+   "n": 15,
+   "title": "How the Atom Was Taken Apart",
+   "standard": "RI.11-12.3",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The first step removed the indivisibility.",
+      "J.",
+      "J.",
+      "Thomson showed in 1897 that cathode rays were particles far lighter than any atom, carrying negative charge.",
+      "So atoms contained something smaller than themselves."
+     ],
+     "to": [
+      "The first step removed the indivisibility, and it did so from an experiment that had been running in various forms for decades.",
+      "J.",
+      "J.",
+      "Thomson showed in 1897 that cathode rays consisted of particles far lighter than any atom and carrying a negative charge, which meant that atoms contained something smaller than themselves and therefore had parts."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "That produced an immediate structural question.",
+      "Matter is electrically neutral, so a negative component implies a positive one.",
+      "Thomson's own proposal spread the positive charge through the atom's volume with the electrons embedded in it."
+     ],
+     "to": [
+      "That produced an immediate structural question.",
+      "Matter is electrically neutral, so a negative component implies a positive one, and Thomson's own proposal distributed the positive charge through the volume of the atom with the electrons embedded in it."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The first step removed the indivisibility."
+  },
+  {
+   "id": "g11-16",
+   "grade": 11,
+   "n": 16,
+   "title": "When a Definition Had to Be Rewritten",
+   "standard": "RI.11-12.4",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "For most of history death required no definition.",
+      "The signs were unmistakable and simultaneous.",
+      "Breathing stopped, the heart stopped, the body cooled.",
+      "No circumstance existed in which a reasonable person would disagree about which state somebody was in."
+     ],
+     "to": [
+      "For most of history death required no definition, because the signs were unmistakable and simultaneous.",
+      "Breathing stopped, the heart stopped, and the body cooled, and no circumstance existed in which a reasonable person would disagree about which state somebody was in."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "The exclusions do most of the definition's work.",
+      "A barbiturate overdose can produce every listed sign and is reversible.",
+      "The criteria require such causes to be ruled out before the findings mean anything.",
+      "That requirement is part of the term, not a caution attached to it."
+     ],
+     "to": [
+      "The exclusions are where the definition does most of its work.",
+      "A barbiturate overdose can produce every listed sign and is reversible, so the criteria require that such causes be ruled out before the findings mean anything, and that requirement is part of the term rather than a caution attached to it."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The signs were unmistakable and simultaneous."
+  },
+  {
+   "id": "g11-17",
+   "grade": 11,
+   "n": 17,
+   "title": "The Word Terrorism in Three Statutes",
+   "standard": "RI.11-12.4",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "Most definitions contain three elements in some combination.",
+      "An act, usually violence or serious damage.",
+      "An intention, usually to intimidate a population or compel a government.",
+      "A motivation, often described as political, religious or ideological."
+     ],
+     "to": [
+      "Most definitions contain three elements in some combination.",
+      "There is an act, usually violence or serious damage; there is an intention, usually to intimidate a population or compel a government; and there is a motivation, frequently described as political, religious or ideological."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "What the classification changes is substantial and specific.",
+      "It alters available charges, sentencing, investigative powers, periods of detention before charge and the admissibility of certain evidence.",
+      "The definition does procedural work as well as descriptive work."
+     ],
+     "to": [
+      "What the classification changes is substantial and specific.",
+      "It alters available charges, sentencing, investigative powers, periods of detention before charge and the admissibility of certain evidence, so the definition is doing procedural work as well as descriptive work."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "A",
+     "kernel": "Terrorism carries enormous weight in public argument and has no single legal meaning.",
+     "expanded": "Terrorism is a word that carries enormous weight in public argument and has no single legal meaning."
+    }
+   ],
+   "stem": "An act, usually violence or serious damage."
+  },
+  {
+   "id": "g11-18",
+   "grade": 11,
+   "n": 18,
+   "title": "How a Paper Refines Its Own Term",
+   "standard": "RI.11-12.4",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The methods section narrows it to something measurable.",
+      "A study of loneliness does not measure loneliness.",
+      "It measures responses to a specific instrument.",
+      "From that section onward the word means the score that instrument produces."
+     ],
+     "to": [
+      "The methods section then narrows it to something measurable.",
+      "A study of loneliness does not measure loneliness; it measures responses to a specific instrument, and from that section onward the word in the paper means the score that instrument produces."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A research paper often uses a familiar word in a way that differs from ordinary usage, and the best papers do not simply announce the difference at the start.",
+      "They build the meaning across the text.",
+      "A reader who takes the first definition as final will misread the result."
+     ],
+     "to": [
+      "A research paper frequently uses a familiar word in a way that differs from ordinary usage, and the best papers do not simply announce the difference at the start.",
+      "They build the meaning across the text, and a reader who takes the first definition as final will misread the result."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The pattern is recognisable once described."
+  },
+  {
+   "id": "g11-19",
+   "grade": 11,
+   "n": 19,
+   "title": "The Word Liberty in One Speech",
+   "standard": "RI.11-12.4",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "Lincoln identified this directly in 1864, observing that the North and the South both used the word and meant incompatible things by it.",
+      "One meant a person's control of themselves.",
+      "The other meant a person's control of other people."
+     ],
+     "to": [
+      "Lincoln identified this directly in 1864, observing that the North and the South both used the word and meant incompatible things by it: one meaning a person's control of themselves, the other meaning a person's control of other people."
+     ]
+    },
+    {
+     "para": "H",
+     "from": [
+      "So tracking a key term through a speech means asking at each occurrence what it is attached to.",
+      "The word is the same.",
+      "The proposition it belongs to is different.",
+      "A listener who hears only the word has heard the part designed to be agreeable."
+     ],
+     "to": [
+      "So tracking a key term through a speech means asking at each occurrence what it is attached to.",
+      "The word is the same, and the proposition it belongs to is different, and a listener who hears only the word has heard the part designed to be agreeable."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The word is the same."
+  },
+  {
+   "id": "g11-20",
+   "grade": 11,
+   "n": 20,
+   "title": "What Natural Selection Does Not Mean",
+   "standard": "RI.11-12.4",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Natural selection is a term whose two words both mislead, and whose author knew it and said so.",
+      "Selection implies a selector.",
+      "Nature implies an agent.",
+      "The process the term names has neither."
+     ],
+     "to": [
+      "Natural selection is a term whose two words both mislead, and whose author knew it and said so.",
+      "Selection implies a selector and nature implies an agent, and the process the term names has neither."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "The analogy carries a cost he was aware of.",
+      "In breeding there is someone with an intention.",
+      "In nature there is nothing corresponding to that.",
+      "So the term suggests exactly the thing the theory was proposed to replace."
+     ],
+     "to": [
+      "The analogy carries a cost he was aware of.",
+      "In breeding there is someone with an intention, and in nature there is nothing corresponding to that, so the term suggests exactly the thing the theory was proposed to replace."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Selection implies a selector."
+  },
+  {
+   "id": "g11-21",
+   "grade": 11,
+   "n": 21,
+   "title": "When a Numbered List Is the Wrong Shape",
+   "standard": "RI.11-12.5",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "Some structures keep the scannability and fix the assumptions.",
+      "A diagram shows dependency directly.",
+      "A table with a severity column restores the differences between items.",
+      "A list divided under headings signals that the groups are not comparable."
+     ],
+     "to": [
+      "There are structures that keep the scannability and fix the assumptions.",
+      "A diagram shows dependency directly, a table with a severity column restores the differences between items, and a list divided under headings signals that the groups are not comparable."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A numbered list is the most common structure in technical and official writing, and it carries an assumption that is often false.",
+      "A list asserts that its items are of the same kind, independent of each other, and complete.",
+      "A great deal of material satisfies none of those."
+     ],
+     "to": [
+      "A numbered list is the most common structure in technical and official writing, and it carries an assumption that is frequently false.",
+      "A list asserts that its items are of the same kind, independent of one another, and complete, and a great deal of material satisfies none of those conditions."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The equality assumption fails next."
+  },
+  {
+   "id": "g11-22",
+   "grade": 11,
+   "n": 22,
+   "title": "The Report Organised by Theme",
+   "standard": "RI.11-12.5",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "An inquiry into something that went wrong must choose between two structures.",
+      "The choice is made early and shapes everything the report can show.",
+      "It can proceed chronologically, or by theme."
+     ],
+     "to": [
+      "An inquiry into something that went wrong has to choose between two structures, and the choice is made early and shapes everything the report can show.",
+      "It can proceed chronologically, or it can proceed by theme."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "That structure has a specific weakness.",
+      "A cause that operated continuously, such as a reporting line that discouraged bad news, appears nowhere in particular because it was everywhere.",
+      "A reader following the timeline meets it as a series of unconnected moments."
+     ],
+     "to": [
+      "That structure has a specific weakness.",
+      "A cause that operated continuously throughout, such as a reporting line that discouraged bad news, appears nowhere in particular because it was everywhere, and a reader following the timeline meets it as a series of unconnected moments."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "B",
+     "kernel": "A chronological report follows events in order.",
+     "expanded": "A chronological report follows the events in order, which is the arrangement most readers expect and the one most inquiries adopt by default."
+    },
+    {
+     "para": "F",
+     "kernel": "Many inquiries attempt both, and the attempt is usually visible.",
+     "expanded": "Many inquiries attempt both and the attempt is usually visible in the structure."
+    },
+    {
+     "para": "D",
+     "kernel": "A thematic report inverts both properties.",
+     "expanded": "A thematic report inverts both properties at once."
+    }
+   ],
+   "stem": "Its weakness is equally specific."
+  },
+  {
+   "id": "g11-23",
+   "grade": 11,
+   "n": 23,
+   "title": "The Textbook That Starts With the Answer",
+   "standard": "RI.11-12.5",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "Textbook chapters are written in two opposite shapes, and the difference is not stylistic.",
+      "One begins with the conclusion and explains it.",
+      "The other reconstructs the problem and reaches the conclusion at the end."
+     ],
+     "to": [
+      "Textbook chapters are written in two opposite shapes, and the difference is not stylistic.",
+      "One begins with the conclusion and explains it; the other reconstructs the problem and arrives at the conclusion at the end."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The first is the standard modern form and its advantages are real.",
+      "A chapter stating the principle in its opening paragraph gives a reader a framework to hang everything on.",
+      "What follows is easier to track because its destination is known."
+     ],
+     "to": [
+      "The first is the standard modern form, and its advantages are real rather than merely conventional.",
+      "A chapter that states the principle in its opening paragraph gives a reader a framework to hang everything else on, and all the subsequent material is easier to follow because its destination is already known."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "C",
+     "kernel": "It also reflects how the field now thinks.",
+     "expanded": "It also reflects how the field itself now thinks, which is not a trivial consideration."
+    }
+   ],
+   "stem": "The reconstructive shape makes the opposite trade."
+  },
+  {
+   "id": "g11-24",
+   "grade": 11,
+   "n": 24,
+   "title": "Chronological or Thematic in a History",
+   "standard": "RI.11-12.5",
+   "combine": [
+    {
+     "para": "H",
+     "from": [
+      "So evaluating the structure means asking what the book claims.",
+      "A book arguing that one development caused another needs the sequence visible.",
+      "A book arguing that a society had a particular character does not.",
+      "A structure that fights the argument is a real defect."
+     ],
+     "to": [
+      "Evaluating the structure therefore means asking what the book claims.",
+      "A book arguing that one development caused another needs the sequence visible, and a book arguing that a society had a particular character does not, and a structure that fights the argument is a real defect rather than a preference."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "A chronological history preserves contingency, which is its great strength.",
+      "A reader moving forward in time meets events in the order the participants did, without knowing what will happen.",
+      "The sense that things could have gone otherwise survives."
+     ],
+     "to": [
+      "A chronological history preserves contingency, which is its great strength.",
+      "A reader moving forward in time meets events in the order the participants did, without knowing what will happen, and the sense that things could have gone otherwise survives."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Some historians solve this by nesting."
+  },
+  {
+   "id": "g11-25",
+   "grade": 11,
+   "n": 25,
+   "title": "The Argument Built on a Diagram",
+   "standard": "RI.11-12.5",
+   "combine": [
+    {
+     "para": "E",
+     "from": [
+      "A well-made piece turns these into strengths deliberately.",
+      "The figure carries the claims that are genuinely discrete and directional.",
+      "The prose carries what cannot be drawn.",
+      "The text says explicitly that the diagram simplifies in a stated way."
+     ],
+     "to": [
+      "A well-made piece turns these into strengths deliberately.",
+      "The figure carries the claims that are genuinely discrete and directional, the prose carries what cannot be drawn, and the text says explicitly that the diagram simplifies in a stated way."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "Its first effect is that the argument becomes available at a glance.",
+      "A reader who understands the figure has the claim.",
+      "The text that follows is confirmation rather than construction, which is why such pieces are easy to remember."
+     ],
+     "to": [
+      "Its first effect is that the argument becomes available at a glance.",
+      "A reader who understands the figure has the claim, and the text that follows is confirmation rather than construction, which is why such pieces are easy to remember."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The prose carries what cannot be drawn."
+  },
+  {
+   "id": "g11-26",
+   "grade": 11,
+   "n": 26,
+   "title": "The Shortest Important Paper",
+   "standard": "RI.11-12.6",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The opening sentence does something unusual for a technical paper.",
+      "It announces a structure and calls it of considerable biological interest.",
+      "That is a claim about significance offered before any evidence, in a register closer to understatement than announcement."
+     ],
+     "to": [
+      "The opening sentence does something unusual for a technical paper.",
+      "It announces a structure and calls it of considerable biological interest, which is a claim about significance offered before any evidence and in a register closer to understatement than to announcement."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "The second paragraph disposes of a rival.",
+      "It describes an earlier proposed structure, states precisely why it cannot be right, and moves on.",
+      "Four sentences remove the main competing account before the new one is presented."
+     ],
+     "to": [
+      "The second paragraph disposes of a rival.",
+      "It describes an earlier proposed structure, states precisely why it cannot be right, and moves on, which takes four sentences and removes the main competing account from the reader's mind before the new one is presented."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The restraint is the effect."
+  },
+  {
+   "id": "g11-27",
+   "grade": 11,
+   "n": 27,
+   "title": "The Last Sentence of a Book",
+   "standard": "RI.11-12.6",
+   "combine": [
+    {
+     "para": "D",
+     "from": [
+      "The accumulation is the technique.",
+      "Each clause adds a law.",
+      "The sentence refuses to end.",
+      "The reader's sense of how much is being accounted for grows with the syntax rather than being stated by it."
+     ],
+     "to": [
+      "The accumulation is the technique.",
+      "Each clause adds a law, the sentence refuses to end, and the reader's sense of how much is being accounted for grows with the syntax rather than being stated by it."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "The closing sentence of On the Origin of Species is among the most quoted in English scientific writing.",
+      "Its effect is produced by techniques that can be described precisely, which makes it worth studying rather than merely admiring."
+     ],
+     "to": [
+      "The closing sentence of On the Origin of Species is one of the most quoted in English scientific writing, and its effect is produced by techniques that can be described precisely, which is what makes it worth studying rather than merely admiring."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The accumulation is the technique."
+  },
+  {
+   "id": "g11-28",
+   "grade": 11,
+   "n": 28,
+   "title": "The Letter That Is Not Angry",
+   "standard": "RI.11-12.6",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The first is anger, and it has real advantages.",
+      "It conveys the scale of the wrong.",
+      "It is honest about what the writer feels.",
+      "It will satisfy readers who already agree, a larger group than writers usually estimate."
+     ],
+     "to": [
+      "The first is anger, and it has real advantages.",
+      "It conveys the scale of the wrong, it is honest about what the writer feels, and it will satisfy readers who already agree, which is a larger group than writers usually estimate."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "Its disadvantage is specific rather than moral.",
+      "An angry letter lets a reader who wishes to avoid the substance discuss the tone instead.",
+      "That discussion can continue indefinitely without anyone addressing the accusation."
+     ],
+     "to": [
+      "Its disadvantage is specific rather than moral.",
+      "An angry letter allows a reader who wishes to avoid the substance to discuss the tone instead, and the discussion of tone can proceed indefinitely without anyone addressing the accusation."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "A",
+     "kernel": "A letter written in reply to an unjust accusation has two available registers.",
+     "expanded": "A letter written in reply to a public and unjust accusation has two available registers, and the choice between them is made in the first sentence."
+    },
+    {
+     "para": "A",
+     "kernel": "The choice between them determines almost everything about what the letter can accomplish.",
+     "expanded": "It determines almost everything about what the letter can subsequently accomplish, and it cannot be revised halfway through without the revision itself becoming the subject."
+    }
+   ],
+   "stem": "The reader fills that gap themselves."
+  },
+  {
+   "id": "g11-29",
+   "grade": 11,
+   "n": 29,
+   "title": "The Understatement in a Report",
+   "standard": "RI.11-12.6",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The mechanism is contrast.",
+      "A sentence recording that a request for additional staffing was submitted on four occasions and not acknowledged is doing nothing dramatic.",
+      "The drama is supplied entirely by the reader placing it beside the outcome."
+     ],
+     "to": [
+      "The mechanism is contrast.",
+      "A sentence recording that a request for additional staffing was submitted on four occasions and not acknowledged is doing nothing dramatic, and the drama is supplied entirely by the reader placing it beside the outcome."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "The technique depends absolutely on the surrounding register being consistent.",
+      "A report flat throughout makes each factual sentence land.",
+      "A report that permits itself one indignant paragraph has taught the reader that the flatness was a choice."
+     ],
+     "to": [
+      "The technique depends absolutely on the surrounding register being consistent.",
+      "A report that is flat throughout makes each factual sentence land, and a report that permits itself one indignant paragraph has taught the reader that the flatness was a choice and can be departed from."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "B",
+     "kernel": "Less often noticed is that the restraint, in a well-written report, is a deliberate rhetorical instrument and is often the most effective one available.",
+     "expanded": "What is less often noticed is that the restraint, in a well-written report, is also a deliberate rhetorical instrument, and that it is frequently the most effective one available to the people writing."
+    },
+    {
+     "para": "B",
+     "kernel": "Some of that is defensive and has been discussed elsewhere.",
+     "expanded": "Some of that flatness is defensive, and the legal pressures producing it have been discussed elsewhere."
+    }
+   ],
+   "stem": "The mechanism is contrast."
+  },
+  {
+   "id": "g11-30",
+   "grade": 11,
+   "n": 30,
+   "title": "The Speech Built on One Repetition",
+   "standard": "RI.11-12.6",
+   "combine": [
+    {
+     "para": "G",
+     "from": [
+      "A listener can test this directly and in real time.",
+      "Take the repeated passage, remove the repetition, and read the items as a plain list.",
+      "A set of strong instances survives that treatment.",
+      "A padded one visibly collapses."
+     ],
+     "to": [
+      "A listener can test this directly and in real time.",
+      "Take the repeated passage, remove the repetition, and read the items as a plain list, and a set of strong instances survives that treatment while a padded one visibly collapses."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "Its first function is structural and is felt rather than noticed.",
+      "A repeated opening tells a listener where each new unit begins.",
+      "That matters enormously in speech, where a listener cannot see a paragraph break or go back."
+     ],
+     "to": [
+      "Its first function is structural, and it is felt by an audience rather than consciously noticed by them.",
+      "A repeated opening tells a listener where each new unit begins, which matters enormously in speech, where a listener cannot see a paragraph break, cannot go back, and has only the sound to navigate by."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The third is anticipation."
+  },
+  {
+   "id": "g11-31",
+   "grade": 11,
+   "n": 31,
+   "title": "Deciding Whether a Bridge Is Safe",
+   "standard": "RI.11-12.7",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "Integrating these is not averaging.",
+      "They disagree in a structured way.",
+      "The design says what should be there.",
+      "The inspection says what can be seen.",
+      "The instruments say what one point is doing.",
+      "The model says what follows if the first three are right."
+     ],
+     "to": [
+      "Integrating these is not a matter of averaging.",
+      "They disagree in a structured way: the design says what should be there, the inspection says what can be seen, the instruments say what one point is doing, and the model says what follows if the first three are right."
+     ]
+    },
+    {
+     "para": "H",
+     "from": [
+      "So the engineer's judgement is about which source governs where.",
+      "Visible deterioration overrides a model.",
+      "An instrument reading that contradicts an inspection prompts a second inspection rather than a conclusion.",
+      "The design drawing is evidence about intention and never about present condition."
+     ],
+     "to": [
+      "So the engineer's judgement is about which source governs where.",
+      "Visible deterioration overrides a model, an instrument reading that contradicts an inspection prompts a second inspection rather than a conclusion, and the design drawing is evidence about intention and never about present condition."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The third is instrumental."
+  },
+  {
+   "id": "g11-32",
+   "grade": 11,
+   "n": 32,
+   "title": "Deciding Where to Put a School",
+   "standard": "RI.11-12.7",
+   "combine": [
+    {
+     "para": "G",
+     "from": [
+      "Integrating these means noticing that they have different time horizons.",
+      "Cost is a figure for next year.",
+      "Travel patterns change over a decade.",
+      "Demography is a projection about a generation.",
+      "A decision optimising the precise short-term input is judged against the uncertain long-term one."
+     ],
+     "to": [
+      "Integrating these means noticing that they have different time horizons.",
+      "Cost is a figure for next year, travel patterns change over a decade, and demography is a projection about a generation, and a decision that optimises the precise short-term input will be judged against the uncertain long-term one."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "Housing plans are a separate source and interact with the first.",
+      "Approved developments supply a number of dwellings with a timescale.",
+      "Converting dwellings into children needs an assumption about household composition that varies with the kind of housing built."
+     ],
+     "to": [
+      "Housing plans are a separate source and they interact with the first.",
+      "Approved developments supply a number of dwellings with a timescale, and converting dwellings into children requires an assumption about household composition that varies with the kind of housing built."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Travel patterns change over a decade."
+  },
+  {
+   "id": "g11-33",
+   "grade": 11,
+   "n": 33,
+   "title": "Deciding Whether to Evacuate",
+   "standard": "RI.11-12.7",
+   "combine": [
+    {
+     "para": "G",
+     "from": [
+      "The integration problem is that these update at incompatible rates.",
+      "The forecast changes every six hours.",
+      "The transport deadline is fixed.",
+      "The vulnerability information is months old.",
+      "The decision must be made on the schedule set by the slowest component."
+     ],
+     "to": [
+      "The integration problem is that these have incompatible update rates.",
+      "The forecast changes every six hours, the transport deadline is fixed, and the vulnerability information is months old, so the decision has to be made on the schedule set by the slowest component."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The forecast is the first input and is a distribution rather than a path.",
+      "Models produce a range of possible tracks.",
+      "The published cone shows where the centre is likely to go.",
+      "A reader treating the cone's edge as the edge of the danger has misread it entirely."
+     ],
+     "to": [
+      "The forecast is the first input and it is a distribution rather than a path.",
+      "Models produce a range of possible tracks, the commonly published cone represents where the centre is likely to go, and a reader who treats the cone's edge as the edge of the danger has misread it entirely."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "A",
+     "kernel": "Everything available is a projection, and the costs of being wrong are asymmetric and both large.",
+     "expanded": "Everything available at the moment of decision is a projection, and the costs of being wrong are asymmetric and both large."
+    }
+   ],
+   "stem": "A census records residence."
+  },
+  {
+   "id": "g11-34",
+   "grade": 11,
+   "n": 34,
+   "title": "Deciding What a Painting Is",
+   "standard": "RI.11-12.7",
+   "combine": [
+    {
+     "para": "G",
+     "from": [
+      "So the sources are not of equal kind and cannot be weighed on one scale.",
+      "One can disprove.",
+      "One establishes a chain.",
+      "One describes method.",
+      "One is expert judgement.",
+      "A case is built by seeing whether any produces a refutation."
+     ],
+     "to": [
+      "So the sources are not of equal kind and cannot be weighed on one scale.",
+      "One can disprove, one can establish a chain, one describes method, and one is expert judgement, and a case is built by seeing whether any of them produces a refutation."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "A painting is offered for sale as the work of a particular artist.",
+      "Whether it is cannot be answered by looking, although looking is where it starts and sometimes where it ends."
+     ],
+     "to": [
+      "A painting is offered for sale as the work of a particular artist, and the question of whether it is cannot be answered by looking, although looking is where it starts and sometimes where it ends."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "One establishes a chain."
+  },
+  {
+   "id": "g11-35",
+   "grade": 11,
+   "n": 35,
+   "title": "Deciding Whether to Approve a Drug",
+   "standard": "RI.11-12.7",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "Trial results are the centre of the submission and the most structured input.",
+      "They state effects in defined populations with stated statistical properties.",
+      "Their main limitation is in who was studied rather than in how carefully."
+     ],
+     "to": [
+      "Trial results are the centre of the submission and are by a long way the most structured input the regulator receives.",
+      "They state effects in defined populations with stated statistical properties, and their principal limitation lies in who was studied rather than in how carefully the study was conducted."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "Trial populations are routinely narrower than the population that will receive the drug.",
+      "Participants are often younger, with fewer other conditions and fewer other medications.",
+      "The evidence is strongest about people least like the average eventual patient."
+     ],
+     "to": [
+      "Trial populations are routinely narrower than the population that will receive the drug.",
+      "Participants are often younger, with fewer other conditions and fewer other medications, so the evidence is strongest about people least like the average eventual patient."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Adverse events are counted as rates."
+  },
+  {
+   "id": "g11-36",
+   "grade": 11,
+   "n": 36,
+   "title": "Marbury and the Power to Decide",
+   "standard": "RI.11-12.8",
+   "combine": [
+    {
+     "para": "G",
+     "from": [
+      "The conclusion follows from a premise stated as though it were obvious.",
+      "A written constitution is superior law.",
+      "A court deciding a case must apply the law.",
+      "Where two laws conflict a court must say which governs.",
+      "Any reader can follow the chain, and nothing in the text explicitly authorises it."
+     ],
+     "to": [
+      "The conclusion follows from a premise stated as though it were obvious.",
+      "A written constitution is superior law, a court deciding a case must apply the law, and where two laws conflict a court must say which governs, which is a chain any reader can follow and which nothing in the text explicitly authorises."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The facts were small and the politics were not.",
+      "A departing administration had made appointments at the last moment.",
+      "The incoming Secretary of State declined to deliver some commissions.",
+      "William Marbury asked the Court to order delivery."
+     ],
+     "to": [
+      "The facts of the case were small and the politics surrounding it were not.",
+      "A departing administration had made a series of appointments at the last possible moment, the incoming Secretary of State declined to deliver some of the resulting commissions, and William Marbury went to the Court and asked it to order delivery."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "A written constitution is superior law."
+  },
+  {
+   "id": "g11-37",
+   "grade": 11,
+   "n": 37,
+   "title": "The Dissent That Became the Law",
+   "standard": "RI.11-12.8",
+   "combine": [
+    {
+     "para": "A",
+     "from": [
+      "In 1896 the Supreme Court upheld a Louisiana law requiring separate railway carriages for Black and white passengers.",
+      "The decision was seven to one.",
+      "The single dissent is now better known than the majority opinion it failed to prevent."
+     ],
+     "to": [
+      "In 1896 the Supreme Court upheld a Louisiana law requiring separate railway carriages for Black and white passengers.",
+      "The decision was seven to one, and the single dissent is now better known than the majority opinion it failed to prevent."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The majority reasoned from a distinction it treated as straightforward.",
+      "A law requiring separation, it held, does not by itself impose inequality.",
+      "A requirement applying to both races equally is not a discrimination the Fourteenth Amendment reaches."
+     ],
+     "to": [
+      "The majority's reasoning proceeded from a distinction it treated as straightforward.",
+      "A law requiring separation, it held, does not of itself impose inequality, so a requirement applying to both races equally is not a discrimination that the Fourteenth Amendment reaches."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "G",
+     "kernel": "The dissent is not unqualified and is weaker in places usually omitted.",
+     "expanded": "The dissent is not an unqualified document and is weaker in places that are usually omitted."
+    }
+   ],
+   "stem": "The decision was seven to one."
+  },
+  {
+   "id": "g11-38",
+   "grade": 11,
+   "n": 38,
+   "title": "The Concurrence That Became the Framework",
+   "standard": "RI.11-12.8",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The majority reasoned from the absence of authorisation.",
+      "No statute permitted the seizure.",
+      "Congress had considered and rejected such a power.",
+      "The Constitution grants no general power to take property.",
+      "So the action had no legal basis."
+     ],
+     "to": [
+      "The majority opinion reasoned from the absence of authorisation.",
+      "No statute permitted the seizure, Congress had considered and rejected such a power, and the Constitution does not grant the executive a general power to take property, so the action had no legal basis."
+     ]
+    },
+    {
+     "para": "F",
+     "from": [
+      "In the second the President acts where Congress has neither granted nor denied.",
+      "Jackson called this zone twilight.",
+      "The outcome is likely to depend on practice and circumstance rather than on an abstract allocation."
+     ],
+     "to": [
+      "In the second the President acts where Congress has neither granted nor denied, a zone Jackson called twilight, in which the outcome is likely to depend on practice and circumstance rather than on an abstract allocation."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "No statute permitted the seizure."
+  },
+  {
+   "id": "g11-39",
+   "grade": 11,
+   "n": 39,
+   "title": "Federalist Fifty-One",
+   "standard": "RI.11-12.8",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The famous formulation states the problem with unusual symmetry.",
+      "If men were angels no government would be necessary.",
+      "If angels governed men no controls on government would be necessary.",
+      "The whole difficulty is that neither condition holds."
+     ],
+     "to": [
+      "The famous formulation states the problem with unusual symmetry.",
+      "If men were angels no government would be necessary, and if angels governed men no controls on government would be necessary, which locates the whole difficulty in the fact that neither condition holds."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "The proposed mechanism is structural and is stated plainly as a design principle.",
+      "Ambition must be made to counteract ambition.",
+      "The interest of the person must be connected with the constitutional rights of the place."
+     ],
+     "to": [
+      "The proposed mechanism is structural and is stated plainly as a design principle.",
+      "Ambition must be made to counteract ambition, so the interest of the person must be connected with the constitutional rights of the place."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "A",
+     "kernel": "A government must be strong enough to govern and limited enough not to become dangerous, and those requirements pull against each other.",
+     "expanded": "A government has to be strong enough to actually govern and limited enough not to become dangerous to the people it governs, and those two requirements pull directly against each other."
+    },
+    {
+     "para": "B",
+     "kernel": "The essay rejects the obvious remedy before proposing its own.",
+     "expanded": "The essay rejects the obvious remedy before it proposes its own, which is why the rejection comes first."
+    },
+    {
+     "para": "A",
+     "kernel": "Federalist 51 addresses a problem the earlier papers raised and did not solve.",
+     "expanded": "Federalist 51 addresses a problem that the earlier papers in the series had raised repeatedly and had not solved."
+    }
+   ],
+   "stem": "Ambition must be made to counteract ambition."
+  },
+  {
+   "id": "g11-40",
+   "grade": 11,
+   "n": 40,
+   "title": "The Reasoning of Brown",
+   "standard": "RI.11-12.8",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "That move is significant and is a choice rather than a necessity.",
+      "Having found the historical argument indeterminate, the Court states that it cannot turn the clock back and must consider public education as it exists now.",
+      "That is a decision about how a constitution should be read."
+     ],
+     "to": [
+      "That move is significant and is a choice rather than a necessity.",
+      "Having found the historical argument indeterminate, the Court states that it cannot turn the clock back and must consider public education as it exists now, which is a decision about how a constitution should be read."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "The opinion then establishes the importance of education in contemporary terms.",
+      "It describes schooling as the foundation of citizenship and the principal instrument preparing a child for life.",
+      "This paragraph does work the historical section could not."
+     ],
+     "to": [
+      "The opinion then establishes the importance of education in contemporary terms.",
+      "It describes schooling as the foundation of citizenship and the principal instrument by which a child is prepared for life, and this paragraph is doing work that the historical section could not."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The opinion then does something procedurally distinctive."
+  },
+  {
+   "id": "g11-41",
+   "grade": 11,
+   "n": 41,
+   "title": "The Mayflower Compact",
+   "standard": "RI.11-12.9",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "The compact answers that specific claim.",
+      "It is not a constitution.",
+      "It establishes no offices and describes no procedure.",
+      "What it does is create an obligation by agreement where the signatories had concluded none otherwise existed."
+     ],
+     "to": [
+      "The compact is a response to that specific claim.",
+      "It is not a constitution, it establishes no offices and describes no procedure, and what it does is create an obligation by agreement where the signatories had concluded no obligation otherwise existed."
+     ]
+    },
+    {
+     "para": "G",
+     "from": [
+      "The limitations should be stated as plainly as the significance.",
+      "It was signed by forty-one men.",
+      "It did not extend to the women aboard or to servants.",
+      "It says nothing about the people already living where the ship had arrived."
+     ],
+     "to": [
+      "The document's limitations should be stated as plainly as its significance.",
+      "It was signed by forty-one men, it did not extend to the women aboard or to servants, and it says nothing about the people already living where the ship had arrived."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "It is not a constitution."
+  },
+  {
+   "id": "g11-42",
+   "grade": 11,
+   "n": 42,
+   "title": "Common Sense",
+   "standard": "RI.11-12.9",
+   "combine": [
+    {
+     "para": "H",
+     "from": [
+      "So the rhetorical achievement is the removal of a middle.",
+      "Before the pamphlet, a reader could want redress without wanting independence.",
+      "After it, the pamphlet has argued those are the same question.",
+      "That shift is what its circulation carried."
+     ],
+     "to": [
+      "The rhetorical achievement is therefore the removal of a middle.",
+      "Before the pamphlet, a reader could want redress without wanting independence; after it, the pamphlet has argued that those are the same question, and that is the shift its enormous circulation carried."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "Thomas Paine's pamphlet appeared in January 1776 and sold in numbers that remain extraordinary relative to the population.",
+      "Its argument had been made before in various forms.",
+      "The reason this version mattered is almost entirely how it was written."
+     ],
+     "to": [
+      "Thomas Paine's pamphlet appeared in January 1776 and sold in numbers that remain extraordinary relative to the population.",
+      "Its argument had been made before in various forms, and the reason this version mattered is almost entirely a matter of how it was written."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "That is an argument addressed to merchants."
+  },
+  {
+   "id": "g11-43",
+   "grade": 11,
+   "n": 43,
+   "title": "The Virginia Statute for Religious Freedom",
+   "standard": "RI.11-12.9",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "Its structure is unusual for a statute and is why it reads as an argument.",
+      "The operative provision is brief.",
+      "It is preceded by a long preamble setting out the reasoning at a length no modern drafter would permit."
+     ],
+     "to": [
+      "Its structure is unusual for a statute and is the reason it reads as an argument.",
+      "The operative provision is brief, and it is preceded by a long preamble that sets out the reasoning at a length no modern drafter would permit."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "The preamble begins from a claim about the mind rather than about rights.",
+      "It asserts that God created the mind free, and that attempts to influence it by punishment produce only hypocrisy.",
+      "That is an argument about efficacy before it is one about justice."
+     ],
+     "to": [
+      "The preamble begins from a claim about the mind rather than about rights.",
+      "It asserts that God created the mind free, and that attempts to influence it by punishment produce only hypocrisy, which is an argument about efficacy before it is one about justice."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "A",
+     "kernel": "The Virginia Statute for Religious Freedom was drafted by Thomas Jefferson in 1777 and enacted in 1786 after a long legislative fight.",
+     "expanded": "The Virginia Statute for Religious Freedom was drafted by Thomas Jefferson in 1777 and was not enacted until 1786, after a legislative fight that ran for most of a decade."
+    }
+   ],
+   "stem": "The operative provision is brief."
+  },
+  {
+   "id": "g11-44",
+   "grade": 11,
+   "n": 44,
+   "title": "What to the Slave Is the Fourth of July",
+   "standard": "RI.11-12.9",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "What follows is not an accusation of falsehood but of inconsistency, and that distinction drives the entire speech.",
+      "The principles are not disputed.",
+      "They are accepted.",
+      "The argument is that the nation does not apply them."
+     ],
+     "to": [
+      "What follows is not an accusation of falsehood but of inconsistency, and the distinction is the engine of the entire speech.",
+      "The principles are not disputed; they are accepted, and the argument is that the nation does not apply them."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "A",
+     "kernel": "The date he chose is the first element of the argument and was understood as such.",
+     "expanded": "The date on which he chose to deliver it is the first element of the argument, and it was understood as such by everybody present."
+    }
+   ],
+   "stem": "The principles are not disputed."
+  },
+  {
+   "id": "g11-45",
+   "grade": 11,
+   "n": 45,
+   "title": "Civil Disobedience",
+   "standard": "RI.11-12.9",
+   "combine": [
+    {
+     "para": "C",
+     "from": [
+      "He is explicit about the consequence for majority rule.",
+      "A majority decides questions not because it is more likely to be right but because it is stronger.",
+      "He states that plainly, and it is the premise the rest proceeds from."
+     ],
+     "to": [
+      "He is explicit about the consequence for majority rule.",
+      "A majority decides questions not because it is more likely to be right but because it is stronger, which he states plainly, and that observation is the premise from which the rest proceeds."
+     ]
+    },
+    {
+     "para": "D",
+     "from": [
+      "The essay then distinguishes kinds of complicity, which is where the argument becomes specific.",
+      "A person who disapproves of an injustice while paying for it is participating in it.",
+      "The payment is where an opinion becomes an action."
+     ],
+     "to": [
+      "The essay then distinguishes between kinds of complicity, which is where its argument becomes specific.",
+      "A person who disapproves of an injustice while paying for it is participating in it, and the payment is the point at which an opinion becomes an action."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The remedy proposed is withdrawal rather than resistance."
+  },
+  {
+   "id": "g11-46",
+   "grade": 11,
+   "n": 46,
+   "title": "The Man Who Lived Without a Clock",
+   "standard": "RI.11-12.10",
+   "combine": [
+    {
+     "para": "F",
+     "from": [
+      "Those records showed something less tidy than the first account.",
+      "Cycles were not uniformly long.",
+      "Some stretched to forty-eight hours.",
+      "A few participants in related studies settled near twenty-five.",
+      "The pattern varied between individuals and over time."
+     ],
+     "to": [
+      "What those records showed was less tidy than the first account.",
+      "Cycles were not uniformly long; some stretched to forty-eight hours, a few participants in related studies settled near twenty-five, and the pattern varied between individuals and over time."
+     ]
+    },
+    {
+     "para": "B",
+     "from": [
+      "The arrangement was deliberate and the conditions were severe.",
+      "He had no watch, no daylight and no indication of the hour.",
+      "A surface team recorded the times he telephoned them without telling him anything about when those calls occurred."
+     ],
+     "to": [
+      "The arrangement was deliberate and the conditions underground were severe.",
+      "He had no watch, no daylight and no indication of the hour at any point, and a surface team logged the times at which he telephoned them while telling him nothing whatever about when those calls had occurred."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "A",
+     "kernel": "He had gone to study the ice and ended up conducting an experiment on himself.",
+     "expanded": "He had gone there to study the ice underground and ended up conducting, more or less by accident, a long experiment on himself."
+    }
+   ],
+   "stem": "Cycles were not uniformly long."
+  },
+  {
+   "id": "g11-47",
+   "grade": 11,
+   "n": 47,
+   "title": "The Census That Burned",
+   "standard": "RI.11-12.10",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The loss is unusual among archival disasters because the scale is so complete.",
+      "For most censuses a researcher can consult the original schedules and see individual households.",
+      "For 1890 that is impossible for all but a tiny fraction of the population."
+     ],
+     "to": [
+      "The loss is unusual among archival disasters because the scale is so complete.",
+      "For most censuses a researcher can consult the original schedules and see individual households, and for 1890 that is impossible for all but a tiny fraction of the population."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "What survives is the published statistical summary, which answers different questions entirely.",
+      "A researcher can learn how many people lived in a county and how they were distributed by broad categories.",
+      "They cannot learn who any of them were."
+     ],
+     "to": [
+      "What survives is the published statistical summary, which answers different questions entirely.",
+      "A researcher can learn how many people lived in a county and how they were distributed by broad categories, and cannot learn who any of them were."
+     ]
+    }
+   ],
+   "expand": [
+    {
+     "para": "F",
+     "kernel": "The 1890 census also produced a famous administrative claim, now read differently because of the loss.",
+     "expanded": "The 1890 census is also the one that produced a famous administrative claim, which is now read differently because of the loss."
+    }
+   ],
+   "stem": "The episode is why archival practice changed."
+  },
+  {
+   "id": "g11-48",
+   "grade": 11,
+   "n": 48,
+   "title": "The Archive of Ordinary Days",
+   "standard": "RI.11-12.10",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The methods were deliberately plural, and the plurality was the point.",
+      "Volunteers kept diaries.",
+      "Observers recorded conversations in public places.",
+      "Panels of correspondents answered open questions sent to them each month."
+     ],
+     "to": [
+      "The methods were deliberately plural and the plurality was the point.",
+      "Volunteers kept diaries, observers recorded conversations in public places, and panels of correspondents answered open questions sent to them each month."
+     ]
+    },
+    {
+     "para": "E",
+     "from": [
+      "What it captures that other sources do not is nevertheless substantial.",
+      "Official records say what was decided.",
+      "Newspapers say what was said publicly.",
+      "These diaries say what somebody thought was worth mentioning about a Tuesday, which no other source preserves."
+     ],
+     "to": [
+      "What it captures that other sources do not is nevertheless substantial.",
+      "Official records say what was decided, newspapers say what was said publicly, and these diaries say what somebody thought was worth mentioning about a Tuesday, which no other source preserves."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "Observers recorded conversations in public places."
+  },
+  {
+   "id": "g11-49",
+   "grade": 11,
+   "n": 49,
+   "title": "The Experiment That Outlived Its Experimenters",
+   "standard": "RI.11-12.10",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "The purpose was demonstrative rather than investigative.",
+      "Pitch at room temperature shatters when struck with a hammer, which is the behaviour of a solid.",
+      "The experiment was set up to show students that it is in fact an extremely viscous liquid."
+     ],
+     "to": [
+      "The purpose was demonstrative rather than investigative.",
+      "Pitch at room temperature shatters when struck with a hammer, which is the behaviour of a solid, and the experiment was set up to show students that it is in fact an extremely viscous liquid."
+     ]
+    },
+    {
+     "para": "C",
+     "from": [
+      "The rate at which it behaves as one is the striking part.",
+      "A drop forms over years and detaches roughly once a decade.",
+      "The entire visible result of a year's running is a very small change in the shape of a hanging blob of tar."
+     ],
+     "to": [
+      "The rate at which it behaves as one is the striking part.",
+      "A drop forms over a period of years and detaches roughly once a decade, which means the entire visible result of a year's running is a very small change in the shape of a hanging blob of tar."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "The apparatus has been running ever since."
+  },
+  {
+   "id": "g11-50",
+   "grade": 11,
+   "n": 50,
+   "title": "The Animal Nobody Had Filmed",
+   "standard": "RI.11-12.10",
+   "combine": [
+    {
+     "para": "B",
+     "from": [
+      "That produced a strange kind of knowledge.",
+      "The animal's anatomy was well described.",
+      "Its maximum size was argued about from measured specimens.",
+      "Nothing whatever was known about how it moved, hunted or behaved."
+     ],
+     "to": [
+      "That situation produced a strange kind of knowledge.",
+      "The animal's anatomy was well described, its maximum size was argued about from measured specimens, and nothing whatever was known about how it moved, hunted or behaved."
+     ]
+    },
+    {
+     "para": "A",
+     "from": [
+      "The giant squid was known from carcasses for well over a century before anybody obtained an image of a living one.",
+      "Specimens washed ashore, were taken in nets and were recovered from the stomachs of whales.",
+      "All of them were dead."
+     ],
+     "to": [
+      "The giant squid was known to science from carcasses for well over a century before anybody obtained an image of a living one.",
+      "Specimens washed ashore on beaches, were taken up in fishing nets and were recovered from the stomachs of whales, and every single one of them was dead when it was examined."
+     ]
+    }
+   ],
+   "expand": [],
+   "stem": "All of them were dead."
   }
  ]
 }

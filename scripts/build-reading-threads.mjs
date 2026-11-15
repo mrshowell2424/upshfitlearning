@@ -157,6 +157,13 @@ const BY_HAND = {
   "Federalist Number Ten": "civics",
   "The Manuscripts of Timbuktu": "books",
   "The Village That Shut Its Gates": "body",      // plague, and how it spread
+  // Grade 11. Six of the fifty, same pattern as grades 7 through 10.
+  "The Limits of a Genetic Ancestry Test": "body",
+  "How the Atom Was Taken Apart": "machines",
+  "The Word Liberty in One Speech": "books",
+  "Deciding Whether to Approve a Drug": "body",
+  "The Archive of Ordinary Days": "books",
+  "The Experiment That Outlived Its Experimenters": "machines",
 };
 
 const pats = Object.fromEntries(
