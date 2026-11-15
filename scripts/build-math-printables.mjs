@@ -18,14 +18,46 @@
  *
  * Writes into content-reading-materials/math/printables/, which the seed then
  * carries into Postgres. Re-run the seed afterwards.
+ *
+ * The build is reproducible on purpose. Chromium stamps the moment of
+ * printing into every PDF, so rebuilding changed all 52 files in twelve
+ * bytes each and nothing else -- which meant a diff could not answer the
+ * only question worth asking of a regenerated printable, which is whether
+ * anything on the page moved. The two dates are rewritten to a fixed
+ * value afterwards, in place and at the same length so no offset in the
+ * file shifts, and a rebuild that changes nothing now shows as changing
+ * nothing.
  */
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+
 import path from "node:path";
 import { chromium } from "playwright";
 
 const ROOT = process.cwd();
 const HUB = path.join(ROOT, "content-reading-materials/math/math-hub.html");
 const OUT = path.join(ROOT, "content-reading-materials/math/printables");
+
+/**
+ * Chromium writes the current time into /CreationDate and /ModDate. Both
+ * are fixed-width, so replacing them with a constant of the same length
+ * leaves every byte offset in the file where it was.
+ */
+const FIXED = "D:20000101000000+00'00'";
+function stampDate(file) {
+  const buf = readFileSync(file);
+  let text = buf.toString("latin1");
+  let changed = 0;
+  // The head is captured and put back verbatim, spacing included. Writing
+  // "/CreationDate(" where the file said "/CreationDate (" costs one byte,
+  // and a PDF that is two bytes shorter has an xref table pointing two
+  // bytes past everything in it.
+  text = text.replace(/(\/(?:CreationDate|ModDate)\s*\()([^)]*)(\))/g, (m, head, val, tail) => {
+    if (val.length !== FIXED.length) return m;
+    changed++;
+    return head + FIXED + tail;
+  });
+  if (changed) writeFileSync(file, Buffer.from(text, "latin1"));
+}
 
 /** Pulls one of the hub's `var NAME = {...};` tables out of the export. */
 function table(html, name) {
@@ -279,12 +311,14 @@ for (const [grade, codes] of byGrade) {
       if (spill.length) {
         spill.forEach((x) => spills.push(`${name}_${key ? "key" : "student"} :: ${x}`));
       }
+      const out = path.join(OUT, `${name}_${key ? "key" : "student"}.pdf`);
       await page1.pdf({
-        path: path.join(OUT, `${name}_${key ? "key" : "student"}.pdf`),
+        path: out,
         format: "Letter",
         printBackground: true,
         margin: { top: "0.5in", bottom: "0.5in", left: "0.5in", right: "0.5in" },
       });
+      stampDate(out);
       wrote++;
       process.stdout.write(`\r  ✓ ${wrote} files`);
     }
