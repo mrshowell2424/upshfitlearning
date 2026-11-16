@@ -30,7 +30,55 @@
    "Max: “He had no cup.”",
    "Rain: “The wet spot is round.”"
   ],
-  "explain": "The wet spot is round like a cup. Because the full cup sat on the book, it made the page wet."
+  "explain": "The wet spot is round like a cup. Because the full cup sat on the book, it made the page wet.",
+  "debate": {
+   "story": "A book page is wet. A full cup sat on the book. Max had juice on his hands. He read it outside in the rain. The wet mark is a round ring.",
+   "question": "What made the page wet? Point to the words.",
+   "suspects": [
+    {
+     "who": "🥤 The cup",
+     "why": "a full cup on the book"
+    },
+    {
+     "who": "🙋 Max",
+     "why": "juice on his hands"
+    },
+    {
+     "who": "🌧️ Rain",
+     "why": "he read it outside in the rain"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“A full cup sat on the book.”"
+     ],
+     "against": "“He read it outside in the rain.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“Max had juice on his hands.”"
+     ],
+     "against": "“The wet mark is a round ring.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“He read it outside in the rain.”"
+     ],
+     "against": "“A full cup sat on the book.”"
+    }
+   ],
+   "clears": [],
+   "note": "A round spot is the shape a cup makes. Draw a cup bottom on paper and let the children see the circle."
+  }
  },
  {
   "id": "gK-w2",
@@ -63,7 +111,56 @@
    "Jo: “Jo's chips are crisp.”",
    "Water: “No one spilled water.”"
   ],
-  "explain": "Jo's bag was shut and her chips are crisp. Because Tam's bag was open, air got in and made the chips soft."
+  "explain": "Jo's bag was shut and her chips are crisp. Because Tam's bag was open, air got in and made the chips soft.",
+  "debate": {
+   "story": "Tam's chips went soft. His bag was open. Air makes chips soft. Jo held the bag at play time. A wet cup sat next to it.",
+   "question": "Why did the chips go soft? Show the words.",
+   "suspects": [
+    {
+     "who": "💨 The open bag",
+     "why": "an open bag, and air makes chips soft"
+    },
+    {
+     "who": "🙋 Jo",
+     "why": "held the bag at play time"
+    },
+    {
+     "who": "💧 Water",
+     "why": "a wet cup next to it"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“His bag was open.”",
+      "“Air makes chips soft.”"
+     ],
+     "against": "“Jo held the bag at play time.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“Jo held the bag at play time.”"
+     ],
+     "against": "“Air makes chips soft.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“A wet cup sat next to it.”"
+     ],
+     "against": "“His bag was open.”"
+    }
+   ],
+   "clears": [],
+   "note": "Soft is not wet. Ask the class to feel the difference, and ask what water would have done to the chips."
+  }
  },
  {
   "id": "gK-w3",
@@ -96,7 +193,56 @@
    "A bad pencil: “Her other pencil is sharp.”",
    "The paper: “The paper is fine.”"
   ],
-  "explain": "She sharpened it and it wrote. Because the tip was flat, the pencil could not make a line."
+  "explain": "She sharpened it and it wrote. Because the tip was flat, the pencil could not make a line.",
+  "debate": {
+   "story": "Ann's pencil will not write. The tip is flat. A flat tip makes no line. The pencil came from a new box. The paper is shiny and slick.",
+   "question": "Why will the pencil not write? Point to the words.",
+   "suspects": [
+    {
+     "who": "✏️ A flat tip",
+     "why": "a flat tip, which makes no line"
+    },
+    {
+     "who": "📦 A bad pencil",
+     "why": "a pencil from a new box"
+    },
+    {
+     "who": "📄 The paper",
+     "why": "shiny slick paper"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“The tip is flat.”",
+      "“A flat tip makes no line.”"
+     ],
+     "against": "“The paper is shiny and slick.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“The pencil came from a new box.”"
+     ],
+     "against": "“A flat tip makes no line.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The paper is shiny and slick.”"
+     ],
+     "against": "“The tip is flat.”"
+    }
+   ],
+   "clears": [],
+   "note": "Try the pencil on two kinds of paper. That one test answers the whole case in a minute."
+  }
  },
  {
   "id": "gK-w4",
@@ -129,7 +275,56 @@
    "Sam: “Sam did not eat it.”",
    "The cat: “The cat was outside.”"
   ],
-  "explain": "Mouse tracks are by the box. Because a mouse makes small bites, a mouse bit the apple."
+  "explain": "Mouse tracks are by the box. Because a mouse makes small bites, a mouse bit the apple.",
+  "debate": {
+   "story": "An apple has a bite. The bite is small. A mouse makes small bites. Tracks are by the box. Sam sat by the box. The cat came in at nine.",
+   "question": "Who took a bite? Show the words.",
+   "suspects": [
+    {
+     "who": "🐭 A mouse",
+     "why": "small bites, and a mouse makes small bites"
+    },
+    {
+     "who": "🙋 Sam",
+     "why": "sat by the box"
+    },
+    {
+     "who": "🐈 The cat",
+     "why": "came in at nine"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“A mouse makes small bites.”",
+      "“Tracks are by the box.”"
+     ],
+     "against": "“Sam sat by the box.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“Sam sat by the box.”"
+     ],
+     "against": "“The bite is small.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The cat came in at nine.”"
+     ],
+     "against": "“A mouse makes small bites.”"
+    }
+   ],
+   "clears": [],
+   "note": "Hold up a hand and ask how big Sam's bite would be. Small is the word that matters here."
+  }
  },
  {
   "id": "gK-w5",
@@ -162,7 +357,56 @@
    "A fall: “Lu did not fall.”",
    "A bad bike: “The other tire is hard.”"
   ],
-  "explain": "Her dad pulled the tack out. Because a tack made a hole, the air came out and the tire went soft."
+  "explain": "Her dad pulled the tack out. Because a tack made a hole, the air came out and the tire went soft.",
+  "debate": {
+   "story": "Lu's bike tire is soft. A tack is in the tire. Air comes out of a hole. Lu fell on Friday. The bike is three years old.",
+   "question": "Why is the tire soft? Point to the words.",
+   "suspects": [
+    {
+     "who": "📌 A tack",
+     "why": "a tack in the tire, where air comes out"
+    },
+    {
+     "who": "💥 A fall",
+     "why": "fell on Friday"
+    },
+    {
+     "who": "🚲 A bad bike",
+     "why": "a bike three years old"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“A tack is in the tire.”",
+      "“Air comes out of a hole.”"
+     ],
+     "against": "“Lu fell on Friday.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“Lu fell on Friday.”"
+     ],
+     "against": "“A tack is in the tire.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The bike is three years old.”"
+     ],
+     "against": "“Air comes out of a hole.”"
+    }
+   ],
+   "clears": [],
+   "note": "The tack is still in the tire. Ask the class what they would do first, and somebody will want to pull it out."
+  }
  },
  {
   "id": "gK-w6",
@@ -195,7 +439,56 @@
    "The filter: “The filter is clean.”",
    "Touching it: “No one touched the tank.”"
   ],
-  "explain": "Less food made it clear. Because the class fed the fish a lot, the old food made the water foggy."
+  "explain": "Less food made it clear. Because the class fed the fish a lot, the old food made the water foggy.",
+  "debate": {
+   "story": "The tank water looks foggy. The class fed the fish a lot. Old food makes water foggy. The filter stopped on Monday. Two hands went in the tank.",
+   "question": "Why is the water foggy? Show the words.",
+   "suspects": [
+    {
+     "who": "🍚 Too much food",
+     "why": "a lot of food, and old food makes water foggy"
+    },
+    {
+     "who": "🔌 The filter",
+     "why": "a filter that stopped on Monday"
+    },
+    {
+     "who": "🖐 Somebody touched it",
+     "why": "two hands in the tank"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“The class fed the fish a lot.”",
+      "“Old food makes water foggy.”"
+     ],
+     "against": "“The filter stopped on Monday.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“The filter stopped on Monday.”"
+     ],
+     "against": "“Old food makes water foggy.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“Two hands went in the tank.”"
+     ],
+     "against": "“The class fed the fish a lot.”"
+    }
+   ],
+   "clears": [],
+   "note": "A filter cleans and food dirties. Ask which one stopped and which one went up, and whether both could be true."
+  }
  },
  {
   "id": "gK-w7",
@@ -228,7 +521,56 @@
    "The window: “The window was shut.”",
    "A mouse: “No mouse was seen.”"
   ],
-  "explain": "Oil stopped the squeak. Because the hinge was dry, it squeaked when the door swung open."
+  "explain": "Oil stopped the squeak. Because the hinge was dry, it squeaked when the door swung open.",
+  "debate": {
+   "story": "A squeak came from the door. The hinge is dry. A dry hinge squeaks. The window slides open there. A mouse was seen by the door.",
+   "question": "What is squeaking? Point to the words.",
+   "suspects": [
+    {
+     "who": "🚪 A dry hinge",
+     "why": "a dry hinge, and a dry hinge squeaks"
+    },
+    {
+     "who": "🪟 The window",
+     "why": "a window that slides open there"
+    },
+    {
+     "who": "🐭 A mouse",
+     "why": "a mouse seen by the door"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“The hinge is dry.”",
+      "“A dry hinge squeaks.”"
+     ],
+     "against": "“A mouse was seen by the door.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“The window slides open there.”"
+     ],
+     "against": "“The hinge is dry.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“A mouse was seen by the door.”"
+     ],
+     "against": "“A dry hinge squeaks.”"
+    }
+   ],
+   "clears": [],
+   "note": "Open the classroom door slowly and listen. A squeak you can make again is a squeak you can explain."
+  }
  },
  {
   "id": "gK-w8",
@@ -261,7 +603,56 @@
    "Raking: “No one raked them.”",
    "A dog: “The gate was shut.”"
   ],
-  "explain": "Leaves are by the fence now. Because the wind blew hard, it moved the light leaves."
+  "explain": "Leaves are by the fence now. Because the wind blew hard, it moved the light leaves.",
+  "debate": {
+   "story": "The leaf pile is gone. The wind blew hard. Wind moves light leaves. A rake stands by the shed. The yard gate stood open all night long.",
+   "question": "Where did the leaves go? Show the words.",
+   "suspects": [
+    {
+     "who": "🌬️ The wind",
+     "why": "hard wind, and wind moves light leaves"
+    },
+    {
+     "who": "🙋 Somebody raked them",
+     "why": "a rake standing by the shed"
+    },
+    {
+     "who": "🐕 A dog",
+     "why": "a gate open all night"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“The wind blew hard.”",
+      "“Wind moves light leaves.”"
+     ],
+     "against": "“A rake stands by the shed.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“A rake stands by the shed.”"
+     ],
+     "against": "“Wind moves light leaves.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The yard gate stood open all night long.”"
+     ],
+     "against": "“The wind blew hard.”"
+    }
+   ],
+   "clears": [],
+   "note": "Ask where the leaves are now. Nobody has looked, and a five-year-old will want to go and see."
+  }
  },
  {
   "id": "gK-w9",
@@ -294,7 +685,56 @@
    "A drop: “No one dropped it.”",
    "Bugs: “No bug holes are in it.”"
   ],
-  "explain": "The cool one is hard. Because this pumpkin sat by the heater, the heat made it squishy."
+  "explain": "The cool one is hard. Because this pumpkin sat by the heater, the heat made it squishy.",
+  "debate": {
+   "story": "The pumpkin feels squishy. It sat by the heater. Heat makes a pumpkin soft. It rolled off the shelf. A small hole is in the side.",
+   "question": "Why is the pumpkin squishy? Point to the words.",
+   "suspects": [
+    {
+     "who": "🔥 The heater",
+     "why": "sat by the heater, and heat makes it soft"
+    },
+    {
+     "who": "🖐 A drop",
+     "why": "rolled off the shelf"
+    },
+    {
+     "who": "🐛 Bugs",
+     "why": "a small hole in the side"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“It sat by the heater.”",
+      "“Heat makes a pumpkin soft.”"
+     ],
+     "against": "“It rolled off the shelf.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“It rolled off the shelf.”"
+     ],
+     "against": "“Heat makes a pumpkin soft.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“A small hole is in the side.”"
+     ],
+     "against": "“It sat by the heater.”"
+    }
+   ],
+   "clears": [],
+   "note": "Squishy all over or squishy in one place? The case does not say, and that is a good thing to notice."
+  }
  },
  {
   "id": "gK-w10",
@@ -327,7 +767,55 @@
    "A shoe: “Shoes make flat prints.”",
    "A mop: “They have four toes.”"
   ],
-  "explain": "The prints have four toes. Because the class cat was out, the cat walked across the floor."
+  "explain": "The prints have four toes. Because the class cat was out, the cat walked across the floor.",
+  "debate": {
+   "story": "Paw prints cross the floor. Each print shows four toes. A cat has four toes. A dog has four toes too. The mop was used at ten.",
+   "question": "Who left the prints? Show the words.",
+   "suspects": [
+    {
+     "who": "🐈 The class cat",
+     "why": "four toes, and a cat has four"
+    },
+    {
+     "who": "🐕 A dog",
+     "why": "a dog has four toes too"
+    },
+    {
+     "who": "🧹 A mop",
+     "why": "a mop used at ten"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“A cat has four toes.”"
+     ],
+     "against": "“A dog has four toes too.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“A dog has four toes too.”"
+     ],
+     "against": "“Paw prints cross the floor.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The mop was used at ten.”"
+     ],
+     "against": "“Each print shows four toes.”"
+    }
+   ],
+   "clears": [],
+   "note": "Four toes used to be the answer. Now two animals have four toes, so it is only half an answer."
+  }
  },
  {
   "id": "gK-w11",
@@ -360,7 +848,56 @@
    "At home: “His mom checked his room.”",
    "At school: “He wore it on the bus.”"
   ],
-  "explain": "The driver found a hat. Because Ben took his hat off on the bus, it stayed there."
+  "explain": "The driver found a hat. Because Ben took his hat off on the bus, it stayed there.",
+  "debate": {
+   "story": "Ben's hat is gone. Ben had it on the bus. The driver found a hat. Two boys have the same hat. His mom did not look in the car.",
+   "question": "Where is the hat? Point to the words.",
+   "suspects": [
+    {
+     "who": "🚌 On the bus",
+     "why": "a hat the driver found"
+    },
+    {
+     "who": "🏠 At home",
+     "why": "a car his mom did not look in"
+    },
+    {
+     "who": "🏫 At school",
+     "why": "two boys with the same hat"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“Ben had it on the bus.”",
+      "“The driver found a hat.”"
+     ],
+     "against": "“Two boys have the same hat.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“His mom did not look in the car.”"
+     ],
+     "against": "“Ben had it on the bus.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“Two boys have the same hat.”"
+     ],
+     "against": "“The driver found a hat.”"
+    }
+   ],
+   "clears": [],
+   "note": "A hat is not his hat. Ask how Ben could tell, and somebody will say to look for his name."
+  }
  },
  {
   "id": "gK-w12",
@@ -393,7 +930,56 @@
    "A push: “No one pushed it.”",
    "Breaking: “The cup is not broken.”"
   ],
-  "explain": "A new nail fixed it. Because the shelf had a loose nail, it tipped and the cup fell."
+  "explain": "A new nail fixed it. Because the shelf had a loose nail, it tipped and the cup fell.",
+  "debate": {
+   "story": "The class cup fell down. The shelf has one loose nail. A loose nail tips a shelf. The door bangs that wall. The cup has a small chip.",
+   "question": "Why did the cup fall? Show the words.",
+   "suspects": [
+    {
+     "who": "🔩 A loose nail",
+     "why": "a loose nail, which tips a shelf"
+    },
+    {
+     "who": "🚪 The banging door",
+     "why": "a door that bangs that wall"
+    },
+    {
+     "who": "🧩 A small chip",
+     "why": "a small chip on the cup"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“The shelf has one loose nail.”",
+      "“A loose nail tips a shelf.”"
+     ],
+     "against": "“The door bangs that wall.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“The door bangs that wall.”"
+     ],
+     "against": "“A loose nail tips a shelf.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The cup has a small chip.”"
+     ],
+     "against": "“The class cup fell down.”"
+    }
+   ],
+   "clears": [],
+   "note": "Did the chip make it fall, or did the fall make the chip? That question is worth asking out loud."
+  }
  },
  {
   "id": "gK-w13",
@@ -426,7 +1012,56 @@
    "The pot: “The pot was still hot.”",
    "A window: “No window was open.”"
   ],
-  "explain": "A warm bowl kept it hot. Because the bowl came from the fridge, it took the heat from the corn."
+  "explain": "A warm bowl kept it hot. Because the bowl came from the fridge, it took the heat from the corn.",
+  "debate": {
+   "story": "The corn went cold fast. The bowl came from the fridge. A cold bowl takes heat. The pot sat off the heat. The window by the table is open.",
+   "question": "Why did the corn go cold? Point to the words.",
+   "suspects": [
+    {
+     "who": "🥣 The cold bowl",
+     "why": "a bowl from the fridge, which takes heat"
+    },
+    {
+     "who": "🍲 The pot",
+     "why": "a pot sitting off the heat"
+    },
+    {
+     "who": "🪟 A window",
+     "why": "an open window by the table"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“The bowl came from the fridge.”",
+      "“A cold bowl takes heat.”"
+     ],
+     "against": "“The window by the table is open.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“The pot sat off the heat.”"
+     ],
+     "against": "“A cold bowl takes heat.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The window by the table is open.”"
+     ],
+     "against": "“The bowl came from the fridge.”"
+    }
+   ],
+   "clears": [],
+   "note": "Three cold things and one bowl of corn. Count them on fingers with the class."
+  }
  },
  {
   "id": "gK-w14",
@@ -459,7 +1094,56 @@
    "A child: “No child was near.”",
    "A bug: “Paw prints are on the mat.”"
   ],
-  "explain": "Paw prints are on the mat. Because a dog was in the room and dogs like sweet things, the dog licked the frosting off."
+  "explain": "Paw prints are on the mat. Because a dog was in the room and dogs like sweet things, the dog licked the frosting off.",
+  "debate": {
+   "story": "Six cupcakes have no frosting. Frosting is on the floor. Paw marks show on the mat. Dogs like sweet things. A child sat by the tray. Ants are on the floor too.",
+   "question": "Who took the frosting? Show the words.",
+   "suspects": [
+    {
+     "who": "🐕 A dog",
+     "why": "paw prints, and dogs like sweet things"
+    },
+    {
+     "who": "🧒 A child",
+     "why": "a child sitting by the tray"
+    },
+    {
+     "who": "🐜 Ants",
+     "why": "ants on the floor too"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“Paw marks show on the mat.”",
+      "“Dogs like sweet things.”"
+     ],
+     "against": "“A child sat by the tray.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“A child sat by the tray.”"
+     ],
+     "against": "“Paw marks show on the mat.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“Ants are on the floor too.”"
+     ],
+     "against": "“Frosting is on the floor.”"
+    }
+   ],
+   "clears": [],
+   "note": "The frosting is on the floor, so somebody knocked it rather than ate it. Ants came after."
+  }
  },
  {
   "id": "gK-w15",
@@ -492,7 +1176,56 @@
    "The heater: “Both dried on the heater.”",
    "Rain: “Her other hand was in her coat.”"
   ],
-  "explain": "Her other hand stayed in her coat. Because Kim made a snowball with one hand, snow melted into that mitten."
+  "explain": "Her other hand stayed in her coat. Because Kim made a snowball with one hand, snow melted into that mitten.",
+  "debate": {
+   "story": "One mitten is wet. Kim made a snowball. She used that hand. Snow melts into a mitten. That mitten hung on the heater. It rained on the way home.",
+   "question": "Why is one mitten wet? Point to the words.",
+   "suspects": [
+    {
+     "who": "❄️ The snowball",
+     "why": "made a snowball with that hand"
+    },
+    {
+     "who": "🔥 The heater",
+     "why": "that mitten hung on the heater"
+    },
+    {
+     "who": "☔ Rain",
+     "why": "rain on the way home"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“Kim made a snowball.”",
+      "“She used that hand.”"
+     ],
+     "against": "“That mitten hung on the heater.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“That mitten hung on the heater.”"
+     ],
+     "against": "“Snow melts into a mitten.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“It rained on the way home.”"
+     ],
+     "against": "“One mitten is wet.”"
+    }
+   ],
+   "clears": [],
+   "note": "Rain falls on both hands. Only one mitten is wet. Let the class say why that matters."
+  }
  },
  {
   "id": "gK-w16",
@@ -525,7 +1258,56 @@
    "A bump: “No one bumped it.”",
    "The walls: “The walls still stand.”"
   ],
-  "explain": "Hard icing held the rest. Because the class used soft frosting, it never dried and the candy fell off."
+  "explain": "Hard icing held the rest. Because the class used soft frosting, it never dried and the candy fell off.",
+  "debate": {
+   "story": "Candy fell off the house. The class used soft frosting. Soft frosting does not dry. The table was bumped at lunch. The roof wall leans over.",
+   "question": "Why did the candy fall? Show the words.",
+   "suspects": [
+    {
+     "who": "🍯 Soft frosting",
+     "why": "soft frosting, which does not dry"
+    },
+    {
+     "who": "🍽️ The bumped table",
+     "why": "a table bumped at lunch"
+    },
+    {
+     "who": "🏠 A leaning wall",
+     "why": "a roof wall that leans over"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“The class used soft frosting.”",
+      "“Soft frosting does not dry.”"
+     ],
+     "against": "“The table was bumped at lunch.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“The table was bumped at lunch.”"
+     ],
+     "against": "“Soft frosting does not dry.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The roof wall leans over.”"
+     ],
+     "against": "“The class used soft frosting.”"
+    }
+   ],
+   "clears": [],
+   "note": "Hard frosting holds candy on a leaning wall. Soft frosting does not hold it on a straight one."
+  }
  },
  {
   "id": "gK-w17",
@@ -558,7 +1340,56 @@
    "A dead bulb: “The bulb is new.”",
    "The switch: “The switch is on.”"
   ],
-  "explain": "It lit up when plugged in. Because the plug was on the floor, the lamp had no power."
+  "explain": "It lit up when plugged in. Because the plug was on the floor, the lamp had no power.",
+  "debate": {
+   "story": "The class lamp will not light. The plug is on the floor. A plug must be in the wall. The bulb is black inside. The switch moves but feels loose.",
+   "question": "Why will the lamp not light? Point to the words.",
+   "suspects": [
+    {
+     "who": "🔌 The plug is out",
+     "why": "a plug on the floor, not in the wall"
+    },
+    {
+     "who": "💡 A dead bulb",
+     "why": "a bulb black inside"
+    },
+    {
+     "who": "🔘 The switch",
+     "why": "a switch that feels loose"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“The plug is on the floor.”",
+      "“A plug must be in the wall.”"
+     ],
+     "against": "“The bulb is black inside.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“The bulb is black inside.”"
+     ],
+     "against": "“A plug must be in the wall.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The switch moves but feels loose.”"
+     ],
+     "against": "“The plug is on the floor.”"
+    }
+   ],
+   "clears": [],
+   "note": "Three things are wrong with one lamp. Ask which one they would fix first and why that one."
+  }
  },
  {
   "id": "gK-w18",
@@ -591,7 +1422,56 @@
    "Bent hands: “The hands are not bent.”",
    "A drop: “No one dropped it.”"
   ],
-  "explain": "A new battery started it. Because the back had no battery, the clock could not run."
+  "explain": "A new battery started it. Because the back had no battery, the clock could not run.",
+  "debate": {
+   "story": "The class clock stopped. It stopped at three. The back has no battery. A clock needs a battery. One hand is bent a bit. The clock fell last week.",
+   "question": "Why did the clock stop? Show the words.",
+   "suspects": [
+    {
+     "who": "🔋 No battery",
+     "why": "no battery, and a clock needs one"
+    },
+    {
+     "who": "⚙️ A bent hand",
+     "why": "one hand bent a bit"
+    },
+    {
+     "who": "🔨 The fall last week",
+     "why": "a fall last week"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“The back has no battery.”",
+      "“A clock needs a battery.”"
+     ],
+     "against": "“One hand is bent a bit.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“One hand is bent a bit.”"
+     ],
+     "against": "“A clock needs a battery.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The clock fell last week.”"
+     ],
+     "against": "“It stopped at three.”"
+    }
+   ],
+   "clears": [],
+   "note": "A fall can bend a hand and knock a battery out. Two of these answers might be one answer."
+  }
  },
  {
   "id": "gK-w19",
@@ -624,7 +1504,56 @@
    "A push: “No one pushed it.”",
    "A dog: “The yard gate was locked.”"
   ],
-  "explain": "Water sits all around it. Because the sun was out all day, it melted the snow."
+  "explain": "Water sits all around it. Because the sun was out all day, it melted the snow.",
+  "debate": {
+   "story": "The snowman got small. The sun was out all day. Sun melts snow. Water sits all around it. Boot marks are by it. The gate was open.",
+   "question": "Why did the snowman get small? Point to the words.",
+   "suspects": [
+    {
+     "who": "☀️ The sun",
+     "why": "sun all day, and sun melts snow"
+    },
+    {
+     "who": "👢 The boot marks",
+     "why": "boot marks beside it"
+    },
+    {
+     "who": "🚪 The open gate",
+     "why": "an open gate"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“The sun was out all day.”",
+      "“Water sits all around it.”"
+     ],
+     "against": "“Boot marks are by it.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“Boot marks are by it.”"
+     ],
+     "against": "“Sun melts snow.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The gate was open.”"
+     ],
+     "against": "“Water sits all around it.”"
+    }
+   ],
+   "clears": [],
+   "note": "The water all around it is the snow. Say that out loud and let them work out where it went."
+  }
  },
  {
   "id": "gK-w20",
@@ -657,7 +1586,56 @@
    "A hole: “No seed is on the ground.”",
    "The birds: “Birds eat a little.”"
   ],
-  "explain": "No seed is on the ground. Because a squirrel sat on the dish and squirrels eat bird seed, it ate the seed."
+  "explain": "No seed is on the ground. Because a squirrel sat on the dish and squirrels eat bird seed, it ate the seed.",
+  "debate": {
+   "story": "The bird dish is empty. A squirrel sat on it. Squirrels eat bird seed. Seed lies on the ground below. Ten small birds came by all day.",
+   "question": "Where did the seed go? Show the words.",
+   "suspects": [
+    {
+     "who": "🐿️ A squirrel",
+     "why": "a squirrel on it, and squirrels eat seed"
+    },
+    {
+     "who": "🕳️ Seed on the ground",
+     "why": "seed lying on the ground below"
+    },
+    {
+     "who": "🐦 The birds",
+     "why": "ten birds all day"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“A squirrel sat on it.”",
+      "“Squirrels eat bird seed.”"
+     ],
+     "against": "“Seed lies on the ground below.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“Seed lies on the ground below.”"
+     ],
+     "against": "“Squirrels eat bird seed.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“Ten small birds came by all day.”"
+     ],
+     "against": "“A squirrel sat on it.”"
+    }
+   ],
+   "clears": [],
+   "note": "Seed on the ground is seed that nobody ate. Ask whether the dish is empty because of eating or spilling."
+  }
  },
  {
   "id": "gK-w21",
@@ -690,7 +1668,56 @@
    "The pot: “The pot was hot.”",
    "Sitting too long: “It sat for one minute.”"
   ],
-  "explain": "A shut window kept the next cup warm. Because the window was open, cold air cooled the drink."
+  "explain": "A shut window kept the next cup warm. Because the window was open, cold air cooled the drink.",
+  "debate": {
+   "story": "The cocoa went cold. The cup sat by the window. The window was open. Cold air cools a drink. The pot sat off the stove. The cup waited ten minutes.",
+   "question": "Why did the cocoa go cold? Point to the words.",
+   "suspects": [
+    {
+     "who": "🪟 The open window",
+     "why": "an open window, and cold air cools a drink"
+    },
+    {
+     "who": "🍲 The pot",
+     "why": "a pot sitting off the stove"
+    },
+    {
+     "who": "⏰ It sat too long",
+     "why": "ten minutes of waiting"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“The window was open.”",
+      "“Cold air cools a drink.”"
+     ],
+     "against": "“The cup waited ten minutes.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“The pot sat off the stove.”"
+     ],
+     "against": "“Cold air cools a drink.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The cup waited ten minutes.”"
+     ],
+     "against": "“The window was open.”"
+    }
+   ],
+   "clears": [],
+   "note": "Ten minutes is a long time for a drink. Count it on the class clock and watch them change their minds."
+  }
  },
  {
   "id": "gK-w22",
@@ -723,7 +1750,56 @@
    "Somebody else: “No one else used red.”",
    "A crayon: “Paint was on the brush.”"
   ],
-  "explain": "Soap washed it off. Because the red paint jar was open and Pat made a red card, the paint got on Pat's hands."
+  "explain": "Soap washed it off. Because the red paint jar was open and Pat made a red card, the paint got on Pat's hands.",
+  "debate": {
+   "story": "Pat has red hands. The red paint jar is open. Pat made a red card. Jo used the red jar first. A red crayon is broken on the desk.",
+   "question": "What made Pat's hands red? Show the words.",
+   "suspects": [
+    {
+     "who": "🎨 The red paint",
+     "why": "an open paint jar, and a red card made"
+    },
+    {
+     "who": "🙋 Somebody else",
+     "why": "Jo used the red jar first"
+    },
+    {
+     "who": "🖍️ A red crayon",
+     "why": "a broken red crayon on the desk"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“The red paint jar is open.”",
+      "“Pat made a red card.”"
+     ],
+     "against": "“A red crayon is broken on the desk.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“Jo used the red jar first.”"
+     ],
+     "against": "“Pat made a red card.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“A red crayon is broken on the desk.”"
+     ],
+     "against": "“The red paint jar is open.”"
+    }
+   ],
+   "clears": [],
+   "note": "Paint and crayon look different on a hand. Ask which one washes off, and try it."
+  }
  },
  {
   "id": "gK-w23",
@@ -756,7 +1832,56 @@
    "Old vinegar: “The vinegar was new.”",
    "A cracked cup: “The cup had no crack.”"
   ],
-  "explain": "Soda made it bubble when they put some in. Because there was no soda in the cup, nothing bubbled."
+  "explain": "Soda made it bubble when they put some in. Because there was no soda in the cup, nothing bubbled.",
+  "debate": {
+   "story": "The cup made no bubbles. There was no soda in it. Soda makes the bubbles. The vinegar jar sat open all year. The cup has a thin crack.",
+   "question": "Why were there no bubbles? Point to the words.",
+   "suspects": [
+    {
+     "who": "🥄 No soda",
+     "why": "no soda, and soda makes the bubbles"
+    },
+    {
+     "who": "🍶 Old vinegar",
+     "why": "a jar open all year"
+    },
+    {
+     "who": "🥤 A cracked cup",
+     "why": "a thin crack in the cup"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“There was no soda in it.”",
+      "“Soda makes the bubbles.”"
+     ],
+     "against": "“The vinegar jar sat open all year.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“The vinegar jar sat open all year.”"
+     ],
+     "against": "“Soda makes the bubbles.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The cup has a thin crack.”"
+     ],
+     "against": "“There was no soda in it.”"
+    }
+   ],
+   "clears": [],
+   "note": "No bubbles at all is different from a few bubbles. Ask the class which answer gives none."
+  }
  },
  {
   "id": "gK-w24",
@@ -789,7 +1914,56 @@
    "Sitting on it: “No one sat on it.”",
    "A tear: “The crown is not torn.”"
   ],
-  "explain": "A flat shelf keeps it straight. Because the crown was under a big box, the box bent the paper."
+  "explain": "A flat shelf keeps it straight. Because the crown was under a big box, the box bent the paper.",
+  "debate": {
+   "story": "The paper crown is bent. It was under a big box. A box bends paper. Sam sat on that chair. A small tear is on one side.",
+   "question": "What bent the crown? Show the words.",
+   "suspects": [
+    {
+     "who": "📦 The box",
+     "why": "under a big box, and a box bends paper"
+    },
+    {
+     "who": "🪑 Sam on that chair",
+     "why": "Sam sat on that chair"
+    },
+    {
+     "who": "✂️ A small tear",
+     "why": "a small tear on one side"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“It was under a big box.”",
+      "“A box bends paper.”"
+     ],
+     "against": "“Sam sat on that chair.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“Sam sat on that chair.”"
+     ],
+     "against": "“A box bends paper.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“A small tear is on one side.”"
+     ],
+     "against": "“It was under a big box.”"
+    }
+   ],
+   "clears": [],
+   "note": "Bent and torn are two different words. Ask which one the crown is, and whether it is both."
+  }
  },
  {
   "id": "gK-w25",
@@ -822,7 +1996,56 @@
    "A stuck key: “The key goes down fine.”",
    "Water: “No one spilled water.”"
   ],
-  "explain": "The sock came out and the note was loud again. Because a sock was in the piano, it made that note soft."
+  "explain": "The sock came out and the note was loud again. Because a sock was in the piano, it made that note soft.",
+  "debate": {
+   "story": "One note sounds soft. A sock is in the piano. A sock makes a note soft. That key goes down slowly. A cup spilled on the lid.",
+   "question": "Why is one note soft? Point to the words.",
+   "suspects": [
+    {
+     "who": "🧦 A sock inside",
+     "why": "a sock inside, which makes a note soft"
+    },
+    {
+     "who": "🎹 A stuck key",
+     "why": "a key that goes down slowly"
+    },
+    {
+     "who": "💧 Water",
+     "why": "a cup spilled on the lid"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“A sock is in the piano.”",
+      "“A sock makes a note soft.”"
+     ],
+     "against": "“That key goes down slowly.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“That key goes down slowly.”"
+     ],
+     "against": "“A sock makes a note soft.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“A cup spilled on the lid.”"
+     ],
+     "against": "“A sock is in the piano.”"
+    }
+   ],
+   "clears": [],
+   "note": "Take the sock out and press the key. That is the whole answer and it takes ten seconds."
+  }
  },
  {
   "id": "gK-w26",
@@ -855,7 +2078,56 @@
    "Letting go: “No one let go.”",
    "A rip: “The kite has no rips.”"
   ],
-  "explain": "A new string held fine. Because the string was thin, it broke and the kite blew into the tree."
+  "explain": "A new string held fine. Because the string was thin, it broke and the kite blew into the tree.",
+  "debate": {
+   "story": "The kite is in a tree. The string broke. A thin string breaks. The wind blew hard. Ana's hand was cold. A small rip is near the tail.",
+   "question": "Why is the kite in the tree? Show the words.",
+   "suspects": [
+    {
+     "who": "🧵 The string broke",
+     "why": "a thin string that broke"
+    },
+    {
+     "who": "🥶 A cold hand",
+     "why": "a cold hand"
+    },
+    {
+     "who": "🕳️ A small rip",
+     "why": "a small rip near the tail"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“The string broke.”",
+      "“A thin string breaks.”"
+     ],
+     "against": "“Ana's hand was cold.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“Ana's hand was cold.”"
+     ],
+     "against": "“The string broke.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“A small rip is near the tail.”"
+     ],
+     "against": "“The wind blew hard.”"
+    }
+   ],
+   "clears": [],
+   "note": "A broken string and a let-go string look different at the end. Ask what the end of Ana's string looks like."
+  }
  },
  {
   "id": "gK-w27",
@@ -888,7 +2160,56 @@
    "Water: “The pot has water.”",
    "Bad soil: “The soil is good.”"
   ],
-  "explain": "A turn made it straight. Because the plant sits by one window, it leans toward the light."
+  "explain": "A turn made it straight. Because the plant sits by one window, it leans toward the light.",
+  "debate": {
+   "story": "The plant leans way over. It sits by one window. Plants lean to the light. The pot is dry on top. The soil came from the yard.",
+   "question": "Why does the plant lean? Point to the words.",
+   "suspects": [
+    {
+     "who": "🪟 The light",
+     "why": "one window, and plants lean to the light"
+    },
+    {
+     "who": "💧 Water",
+     "why": "a pot dry on top"
+    },
+    {
+     "who": "🪴 Bad soil",
+     "why": "soil from the yard"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“It sits by one window.”",
+      "“Plants lean to the light.”"
+     ],
+     "against": "“The pot is dry on top.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“The pot is dry on top.”"
+     ],
+     "against": "“Plants lean to the light.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The soil came from the yard.”"
+     ],
+     "against": "“It sits by one window.”"
+    }
+   ],
+   "clears": [],
+   "note": "A thirsty plant droops down. This one leans sideways. Show both with your arm."
+  }
  },
  {
   "id": "gK-w28",
@@ -921,7 +2242,56 @@
    "The sink: “The sink is far away.”",
    "A spill: “No cup was spilled.”"
   ],
-  "explain": "It rained all morning. Because boots bring in water, the mat by the door got wet."
+  "explain": "It rained all morning. Because boots bring in water, the mat by the door got wet.",
+  "debate": {
+   "story": "The door mat is wet. It rained all morning. Boots bring in water. The sink is right by the door. A cup lies on its side.",
+   "question": "Why is the mat wet? Show the words.",
+   "suspects": [
+    {
+     "who": "👢 Wet boots",
+     "why": "rain all morning, and boots bring in water"
+    },
+    {
+     "who": "🚰 The sink",
+     "why": "a sink right by the door"
+    },
+    {
+     "who": "🥤 A spill",
+     "why": "a cup lying on its side"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“It rained all morning.”",
+      "“Boots bring in water.”"
+     ],
+     "against": "“The sink is right by the door.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“The sink is right by the door.”"
+     ],
+     "against": "“Boots bring in water.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“A cup lies on its side.”"
+     ],
+     "against": "“It rained all morning.”"
+    }
+   ],
+   "clears": [],
+   "note": "Wet all over or wet in one spot? Go and look at the mat, and the class will tell you."
+  }
  },
  {
   "id": "gK-w29",
@@ -954,7 +2324,56 @@
    "A shovel: “No one used a shovel.”",
    "A bird: “The seeds are still there.”"
   ],
-  "explain": "The fence has a gap. Because paw prints are by the hole and dogs dig holes, a dog came in and dug."
+  "explain": "The fence has a gap. Because paw prints are by the hole and dogs dig holes, a dog came in and dug.",
+  "debate": {
+   "story": "A hole is in the dirt. Paw prints are by it. A dog digs holes. A shovel lies on the grass. A bird pecked there all week.",
+   "question": "Who dug the hole? Point to the words.",
+   "suspects": [
+    {
+     "who": "🐕 A dog",
+     "why": "paw prints, and a dog digs holes"
+    },
+    {
+     "who": "🧑‍🌾 A shovel",
+     "why": "a shovel lying on the grass"
+    },
+    {
+     "who": "🐦 A bird",
+     "why": "a bird pecking there all week"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“Paw prints are by it.”",
+      "“A dog digs holes.”"
+     ],
+     "against": "“A shovel lies on the grass.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“A shovel lies on the grass.”"
+     ],
+     "against": "“A dog digs holes.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“A bird pecked there all week.”"
+     ],
+     "against": "“Paw prints are by it.”"
+    }
+   ],
+   "clears": [],
+   "note": "A shovel makes a straight edge and paws make a messy one. Look at the hole before choosing."
+  }
  },
  {
   "id": "gK-w30",
@@ -987,7 +2406,56 @@
    "A cat: “No cat came by.”",
    "Falling: “No shells are on the path.”"
   ],
-  "explain": "The birds can fly now. Because three small birds sit near the nest, the eggs hatched."
+  "explain": "The birds can fly now. Because three small birds sit near the nest, the eggs hatched.",
+  "debate": {
+   "story": "The nest has no eggs. Three small birds sit near. Eggs turn into birds. A cat sat under the tree. The nest leans to one side.",
+   "question": "Where did the eggs go? Show the words.",
+   "suspects": [
+    {
+     "who": "🐣 The eggs hatched",
+     "why": "three small birds near, and eggs turn into birds"
+    },
+    {
+     "who": "🐈 The cat under the tree",
+     "why": "a cat under the tree"
+    },
+    {
+     "who": "🪹 A leaning nest",
+     "why": "a nest that leans to one side"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“Three small birds sit near.”",
+      "“Eggs turn into birds.”"
+     ],
+     "against": "“A cat sat under the tree.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“A cat sat under the tree.”"
+     ],
+     "against": "“Eggs turn into birds.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The nest leans to one side.”"
+     ],
+     "against": "“Three small birds sit near.”"
+    }
+   ],
+   "clears": [],
+   "note": "Count the eggs and count the birds. Three and three is the best answer a five-year-old can give."
+  }
  },
  {
   "id": "gK-w31",
@@ -1020,7 +2488,56 @@
    "A full bin: “The bin is not full.”",
    "Throwing it: “No one threw it.”"
   ],
-  "explain": "A lid stopped the mess. Because the bin had no lid, the wind lifted the paper out."
+  "explain": "A lid stopped the mess. Because the bin had no lid, the wind lifted the paper out.",
+  "debate": {
+   "story": "Paper is on the grass. The bin has no lid. Wind lifts loose paper. The bin is full to the top. Two children ate lunch there.",
+   "question": "Why is paper on the grass? Point to the words.",
+   "suspects": [
+    {
+     "who": "🌬️ Wind and no lid",
+     "why": "no lid, and wind lifts loose paper"
+    },
+    {
+     "who": "🗑️ A bin full to the top",
+     "why": "a bin full to the top"
+    },
+    {
+     "who": "🍪 Two who ate there",
+     "why": "two children who ate lunch there"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“The bin has no lid.”",
+      "“Wind lifts loose paper.”"
+     ],
+     "against": "“The bin is full to the top.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“The bin is full to the top.”"
+     ],
+     "against": "“Wind lifts loose paper.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“Two children ate lunch there.”"
+     ],
+     "against": "“The bin has no lid.”"
+    }
+   ],
+   "clears": [],
+   "note": "A full bin and no lid work together. Ask whether emptying the bin would be enough on a windy day."
+  }
  },
  {
   "id": "gK-w32",
@@ -1053,7 +2570,56 @@
    "A dirty lens: “The lens is clean.”",
    "Bad light: “The light was good.”"
   ],
-  "explain": "The next one is clear. Because Max moved when it clicked, that photo came out blurry."
+  "explain": "The next one is clear. Because Max moved when it clicked, that photo came out blurry.",
+  "debate": {
+   "story": "The photo face is blurry. Max moved when it clicked. Moving makes a blurry photo. The lens has a smudge. The room was dim that day.",
+   "question": "Why is the photo blurry? Show the words.",
+   "suspects": [
+    {
+     "who": "🏃 Max moved",
+     "why": "moved when it clicked, and moving blurs a photo"
+    },
+    {
+     "who": "🧼 A dirty lens",
+     "why": "a smudge on the lens"
+    },
+    {
+     "who": "🌑 Bad light",
+     "why": "a dim room that day"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“Max moved when it clicked.”",
+      "“Moving makes a blurry photo.”"
+     ],
+     "against": "“The lens has a smudge.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“The lens has a smudge.”"
+     ],
+     "against": "“Moving makes a blurry photo.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The room was dim that day.”"
+     ],
+     "against": "“Max moved when it clicked.”"
+    }
+   ],
+   "clears": [],
+   "note": "Only the face is blurry. Ask what the rest of the photo looks like, because nobody has said."
+  }
  },
  {
   "id": "gK-w33",
@@ -1086,7 +2652,56 @@
    "A bad seed: “The seed was new.”",
    "No sun: “The sun hit the cup.”"
   ],
-  "explain": "Water made it sprout. Because the cup had no water, the seed could not grow."
+  "explain": "Water made it sprout. Because the cup had no water, the seed could not grow.",
+  "debate": {
+   "story": "The seed did not grow. The cup has no water. Seeds need water to grow. The seed came from an old jar. The cup sat in a dark box.",
+   "question": "Why did the seed not grow? Point to the words.",
+   "suspects": [
+    {
+     "who": "💧 No water",
+     "why": "no water, and seeds need water"
+    },
+    {
+     "who": "🌱 A bad seed",
+     "why": "a seed from an old jar"
+    },
+    {
+     "who": "☀️ No sun",
+     "why": "a cup in a dark box"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“The cup has no water.”",
+      "“Seeds need water to grow.”"
+     ],
+     "against": "“The seed came from an old jar.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“The seed came from an old jar.”"
+     ],
+     "against": "“Seeds need water to grow.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The cup sat in a dark box.”"
+     ],
+     "against": "“The cup has no water.”"
+    }
+   ],
+   "clears": [],
+   "note": "Plant four more seeds and change one thing each time. That is a whole week of science from six sentences."
+  }
  },
  {
   "id": "gK-w34",
@@ -1119,7 +2734,56 @@
    "A bad lid: “The lid was on tight.”",
    "Warm milk: “It was cold at first.”"
   ],
-  "explain": "The shade cup is firm. Because this cup sat in the sun, the sun melted it."
+  "explain": "The shade cup is firm. Because this cup sat in the sun, the sun melted it.",
+  "debate": {
+   "story": "The ice cream is soup. The cup sat in the sun. Sun melts ice cream. The lid was not pushed down. The cup was warm when it was filled. The shade cup is firm.",
+   "question": "Why is the ice cream soup? Show the words.",
+   "suspects": [
+    {
+     "who": "☀️ The sun",
+     "why": "sat in the sun, and sun melts ice cream"
+    },
+    {
+     "who": "🕳️ A bad lid",
+     "why": "a lid not pushed down"
+    },
+    {
+     "who": "🥛 Warm to start with",
+     "why": "a cup that was warm when filled"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“The cup sat in the sun.”",
+      "“The shade cup is firm.”"
+     ],
+     "against": "“The lid was not pushed down.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“The lid was not pushed down.”"
+     ],
+     "against": "“Sun melts ice cream.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“The cup was warm when it was filled.”"
+     ],
+     "against": "“The shade cup is firm.”"
+    }
+   ],
+   "clears": [],
+   "note": "The shade cup is the one to keep pointing at. Same ice cream, same lid, no sun, still firm."
+  }
  },
  {
   "id": "gK-w35",
@@ -1152,7 +2816,56 @@
    "Giving it away: “She did not give it away.”",
    "Somebody taking it: “No one took it.”"
   ],
-  "explain": "The ribbon was under her desk. Because her bag has a hole, the ribbon fell through it."
+  "explain": "The ribbon was under her desk. Because her bag has a hole, the ribbon fell through it.",
+  "debate": {
+   "story": "Mia cannot find her ribbon. Her bag has a hole. Things fall through a hole. She lent it to Ann. Two ribbons in the class look the same.",
+   "question": "Where is the ribbon? Point to the words.",
+   "suspects": [
+    {
+     "who": "🕳️ The hole in her bag",
+     "why": "a hole in her bag"
+    },
+    {
+     "who": "🤝 Lent to Ann",
+     "why": "lent it to Ann"
+    },
+    {
+     "who": "🎀 Two the same",
+     "why": "two ribbons that look the same"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“Her bag has a hole.”",
+      "“Things fall through a hole.”"
+     ],
+     "against": "“She lent it to Ann.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“She lent it to Ann.”"
+     ],
+     "against": "“Things fall through a hole.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“Two ribbons in the class look the same.”"
+     ],
+     "against": "“Her bag has a hole.”"
+    }
+   ],
+   "clears": [],
+   "note": "Lost is not the only way a thing goes missing. Sometimes you gave it to somebody and forgot."
+  }
  },
  {
   "id": "gK-w36",
@@ -1185,6 +2898,55 @@
    "A pin: “No pin was near.”",
    "Sitting on it: “No one sat on it.”"
   ],
-  "explain": "A new knot held the air. Because the knot came undone, the air went out of the balloon."
+  "explain": "A new knot held the air. Because the knot came undone, the air went out of the balloon.",
+  "debate": {
+   "story": "The balloon is flat. The knot came undone. Air goes out an open knot. A pin is on the floor. It was under a coat all night.",
+   "question": "Why is the balloon flat? Show the words.",
+   "suspects": [
+    {
+     "who": "🪢 The knot came undone",
+     "why": "a knot that came undone"
+    },
+    {
+     "who": "📌 A pin",
+     "why": "a pin on the floor"
+    },
+    {
+     "who": "🪑 Somebody sat on it",
+     "why": "under a coat all night"
+    }
+   ],
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "who": 0,
+     "evidence": [
+      "“The knot came undone.”",
+      "“Air goes out an open knot.”"
+     ],
+     "against": "“A pin is on the floor.”"
+    },
+    {
+     "who": 1,
+     "evidence": [
+      "“A pin is on the floor.”"
+     ],
+     "against": "“The knot came undone.”"
+    },
+    {
+     "who": 2,
+     "evidence": [
+      "“It was under a coat all night.”"
+     ],
+     "against": "“Air goes out an open knot.”"
+    }
+   ],
+   "clears": [],
+   "note": "A pin pops a balloon with a bang. A flat balloon went down quietly. Ask if anybody heard anything."
+  }
  }
 ]
