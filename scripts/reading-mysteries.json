@@ -16101,6 +16101,1590 @@
     "Burst balloons: “three balloons burst during filling.”"
    ],
    "explain": "Fifteen centimetres looks like a small overfill, which is exactly why nobody suspected it. Width is not volume. Going from twenty-three to thirty-eight centimetres is four and a half times the gas in every single balloon, and that one decision is worth more than every leak and burst put together."
+  },
+  {
+   "id": "g12-w1",
+   "grade": 12,
+   "week": 1,
+   "tag": "📚 library",
+   "title": "The Case of the Books Nobody Wanted",
+   "story": "The library's weeding list is built from loan counts and it names four hundred books that have not gone out once in two years. Every one of them is on the top two shelves. Four explanations have been offered and each describes a real effect. Old books do go out less, and the sample is older than the collection average by about six years. Dull covers are a real deterrent, and the list is heavy with plain cloth bindings. Subject matters, and poetry and reference always lend less than fiction. The catalogue mislabels some of these books, and a book nobody can find is a book nobody borrows. Those four together might explain a lower rate, and the figure here is not lower but zero. The top shelf is two metres and ten centimetres from the floor. The step stool was taken away in September two years ago after a pupil fell from it. Ninety-four percent of all loans since then have come from below one metre fifty. A librarian ran a different measurement last month and counted the dust-free tops of the pages. The high shelves show sixty-one books with worn page edges and broken spines, all borrowed heavily before the stool went. A loan count does not measure what people want to read. It measures what people can reach.",
+   "question": "Why have four hundred books never been borrowed?",
+   "suspects": [
+    {
+     "who": "📏 The height the books sit at",
+     "why": "the top shelf is two metres and ten centimetres from the floor and the step stool was taken away two years ago"
+    },
+    {
+     "who": "📅 Their age",
+     "why": "old books do go out less, and the sample is older than the collection average by about six years"
+    },
+    {
+     "who": "🎨 Dull covers",
+     "why": "dull covers are a real deterrent, and the list is heavy with plain cloth bindings"
+    },
+    {
+     "who": "📖 Their subject",
+     "why": "poetry and reference always lend less than fiction"
+    },
+    {
+     "who": "🏷️ Catalogue errors",
+     "why": "the catalogue mislabels some of these books, and a book nobody can find is a book nobody borrows"
+    }
+   ],
+   "answer": "The books are on shelves nobody has been able to reach since the stool went.",
+   "proof": [
+    "“Ninety-four percent of all loans since then have come from below one metre fifty.”",
+    "“The high shelves show sixty-one books with worn page edges and broken spines, all borrowed heavily before the stool went.”",
+    "“A loan count does not measure what people want to read.”"
+   ],
+   "clears": [
+    "Age: “older than the collection average by about six years.”",
+    "Covers: “the list is heavy with plain cloth bindings.”",
+    "Subject: “poetry and reference always lend less than fiction.”",
+    "The catalogue: “a book nobody can find is a book nobody borrows.”"
+   ],
+   "explain": "Four real reasons a book lends less, and the list is not of books that lend less but of books that never lend at all. Nothing about a cloth binding produces a clean zero. The wear on the page edges is a second measurement of the same question, taken a different way, and it says these books were loved until the day the stool was removed."
+  },
+  {
+   "id": "g12-w2",
+   "grade": 12,
+   "week": 2,
+   "tag": "🥪 lunchbox",
+   "title": "The Case of the Salad Nobody Chose",
+   "story": "The kitchen's uptake count says eleven pupils out of six hundred take the salad option, and the governors want it dropped. Four reasons have been given for the figure and each of them is a genuine problem with that salad. It costs twenty pence more than the pasta, which the kitchen's own pricing trial showed matters. It is served in a plain white bowl at the cold end of the counter, which is bad presentation by anybody's standard. The portion is smaller than the hot options by weight. And teenagers do pick hot food over cold in winter, which the county survey confirms. Those four would depress a figure and they would not flatten it to eleven. The salad is made in a single tray of about forty portions. The kitchen serves from half past eleven, and the tray is empty by seven minutes past twelve. The uptake count is taken from the till report at the end of service at twenty to one. Every pupil who wanted salad after seven minutes past was served something else and counted as something else. A tally kept at the counter for one week found a hundred and ninety pupils who asked for salad and were told it had gone.",
+   "question": "Why does the count say eleven?",
+   "suspects": [
+    {
+     "who": "⏰ The count taken after the salad ran out",
+     "why": "the tray is empty by seven minutes past twelve and the count is taken at twenty to one"
+    },
+    {
+     "who": "💷 The price",
+     "why": "it costs twenty pence more than the pasta, which the kitchen's own pricing trial showed matters"
+    },
+    {
+     "who": "🍽️ The presentation",
+     "why": "it is served in a plain white bowl at the cold end of the counter"
+    },
+    {
+     "who": "⚖️ The portion size",
+     "why": "the portion is smaller than the hot options by weight"
+    },
+    {
+     "who": "🥶 The season",
+     "why": "teenagers do pick hot food over cold in winter, which the county survey confirms"
+    }
+   ],
+   "answer": "The salad sells out long before the count that says nobody wants it.",
+   "proof": [
+    "“The salad is made in a single tray of about forty portions.”",
+    "“Every pupil who wanted salad after seven minutes past was served something else and counted as something else.”",
+    "“A tally kept at the counter for one week found a hundred and ninety pupils who asked for salad and were told it had gone.”"
+   ],
+   "clears": [
+    "The price: “which the kitchen's own pricing trial showed matters.”",
+    "The presentation: “it is served in a plain white bowl at the cold end of the counter, which is bad presentation by anybody's standard.”",
+    "The portion: “smaller than the hot options by weight.”",
+    "The season: “teenagers do pick hot food over cold in winter, which the county survey confirms.”"
+   ],
+   "explain": "The figure of eleven is wrong in a way no arithmetic catches, because eleven really is what the till recorded. The till can only record what the kitchen had to sell. A tray of forty cannot produce a number above forty however many people want one, and the counter tally found a hundred and ninety of them."
+  },
+  {
+   "id": "g12-w3",
+   "grade": 12,
+   "week": 3,
+   "tag": "✏️ pencil",
+   "title": "The Case of the Brand That Snapped Most",
+   "story": "The breakage book says Haleby pencils break four times as often as Corwin pencils, and the school is about to stop buying Haleby. Four differences between the brands are offered and all four are real. Haleby leads test softer on the laboratory scale, and a softer lead does break more readily. Haleby barrels are round and Corwin barrels hexagonal, and a round pencil rolls off a desk. The Haleby batch was delivered in August and stored in the damp cupboard, which weakens the glue along the seam. And Haleby pencils are two centimetres shorter, which changes how hard a hand can press before the lead gives. Those four together might account for a difference of a third, not of four times. Haleby pencils are issued to Years Seven and Eight and Corwin pencils to the sixth form. The breakage book is filled in by the stock cupboard when a class asks for replacements. Sixth formers buy their own replacements from the shop rather than asking. A fortnight of marked pencils, fifty of each brand given to the same Year Eight class, ended with nine Haleby and seven Corwin broken. The book never compared two brands. It compared two age groups and one habit of asking.",
+   "question": "Do Haleby pencils really break more?",
+   "suspects": [
+    {
+     "who": "🧑‍🎓 Who each brand was given to",
+     "why": "Haleby pencils are issued to Years Seven and Eight and Corwin pencils to the sixth form"
+    },
+    {
+     "who": "🪨 The softer lead",
+     "why": "Haleby leads test softer on the laboratory scale, and a softer lead does break more readily"
+    },
+    {
+     "who": "⭕ The round barrel",
+     "why": "Haleby barrels are round and Corwin barrels hexagonal, and a round pencil rolls off a desk"
+    },
+    {
+     "who": "💧 The damp cupboard",
+     "why": "the Haleby batch was stored in the damp cupboard, which weakens the glue along the seam"
+    },
+    {
+     "who": "📐 The shorter length",
+     "why": "Haleby pencils are two centimetres shorter, which changes how hard a hand can press"
+    }
+   ],
+   "answer": "The two brands went to different year groups with different habits.",
+   "proof": [
+    "“The breakage book is filled in by the stock cupboard when a class asks for replacements.”",
+    "“Sixth formers buy their own replacements from the shop rather than asking.”",
+    "“A fortnight of marked pencils, fifty of each brand given to the same Year Eight class, ended with nine Haleby and seven Corwin broken.”"
+   ],
+   "clears": [
+    "The lead: “a softer lead does break more readily.”",
+    "The barrel: “a round pencil rolls off a desk.”",
+    "The cupboard: “which weakens the glue along the seam.”",
+    "The length: “which changes how hard a hand can press before the lead gives.”"
+   ],
+   "explain": "Haleby pencils are genuinely the weaker pencil, by about a third, which the marked fortnight shows. The book says four times because it counts requests rather than breakages, and the group that never requests anything is the group holding the other brand. Put both brands in the same hands and the gap shrinks to almost nothing."
+  },
+  {
+   "id": "g12-w4",
+   "grade": 12,
+   "week": 4,
+   "tag": "🍎 apple",
+   "title": "The Case of the Row That Cropped Best",
+   "story": "The orchard record shows the north row yielding ninety kilograms a tree and the other four rows about thirty. The north row is to be propagated and the rest replaced. Four advantages of that row have been named and each is real. It faces south over open ground and gets about an hour more sun a day. It sits above the old stable yard, where the soil tests richer in nitrogen. It was planted three years earlier, so those trees are larger. And it is the only row on free-draining gravel rather than clay. Those four between them might be worth half as much again, not three times. The north row is picked by the head gardener with the orchard ladder. The other four rows are picked by classes on a Friday afternoon, without the ladder, for safety. A count made from the ground in October found fruit still hanging above two metres on every tree in rows two to five. Nine trees were picked properly by the gardener afterwards as a test, and they gave between seventy and eighty-eight kilograms. The record is not a measurement of what the trees grew. It is a measurement of what somebody could get down.",
+   "question": "Is the north row really the best?",
+   "suspects": [
+    {
+     "who": "🪜 Who picked which row",
+     "why": "the north row is picked by the head gardener with the orchard ladder and the others by classes without it"
+    },
+    {
+     "who": "☀️ More sun",
+     "why": "it faces south over open ground and gets about an hour more sun a day"
+    },
+    {
+     "who": "🌱 Richer soil",
+     "why": "it sits above the old stable yard, where the soil tests richer in nitrogen"
+    },
+    {
+     "who": "🌳 Older trees",
+     "why": "it was planted three years earlier, so those trees are larger"
+    },
+    {
+     "who": "🪨 Better drainage",
+     "why": "it is the only row on free-draining gravel rather than clay"
+    }
+   ],
+   "answer": "Only the north row is picked with a ladder.",
+   "proof": [
+    "“A count made from the ground in October found fruit still hanging above two metres on every tree in rows two to five.”",
+    "“Nine trees were picked properly by the gardener afterwards as a test, and they gave between seventy and eighty-eight kilograms.”",
+    "“The record is not a measurement of what the trees grew.”"
+   ],
+   "clears": [
+    "The sun: “about an hour more sun a day.”",
+    "The soil: “the soil tests richer in nitrogen.”",
+    "The older trees: “those trees are larger.”",
+    "The drainage: “free-draining gravel rather than clay.”"
+   ],
+   "explain": "Four genuine advantages, worth perhaps half as much again, against a record that says three times. The ladder is not an advantage of the trees at all, and the fruit left hanging above two metres is the missing two thirds. Replacing those rows would have destroyed four healthy rows on the strength of a safety rule."
+  },
+  {
+   "id": "g12-w5",
+   "grade": 12,
+   "week": 5,
+   "tag": "🚲 bike",
+   "title": "The Case of the Shed Where Nothing Was Stolen",
+   "story": "The bike shed log records two thefts in three years and the school is citing it to refuse a request for cameras. Four reasons for the low figure have been offered and every one of them is true of that shed. It is overlooked by the staff room window for most of the day. The frame is bolted into concrete and the hoops are the sort a cutter struggles with. The gate is locked from nine until three. And most pupils use a good lock, which a spot survey put at seventy-one percent. Those four would lower a theft rate, and they would not take it to two. The log is written up from forms handed in at the school office. The office closes at four o'clock and the shed empties between half past three and six. A pupil who finds a bike gone at half past five comes back the next morning to an office with a queue, and most do not bother. The local police were asked for their own figures last month. They hold nineteen reports of bicycles taken from that address in the same three years. Seventeen of the nineteen are timed after four o'clock.",
+   "question": "Why does the log show only two thefts?",
+   "suspects": [
+    {
+     "who": "🕓 The office closing at four",
+     "why": "the office closes at four o'clock and the shed empties between half past three and six"
+    },
+    {
+     "who": "👀 The staff room window",
+     "why": "the shed is overlooked by the staff room window for most of the day"
+    },
+    {
+     "who": "🔩 The bolted frame",
+     "why": "the frame is bolted into concrete and the hoops are the sort a cutter struggles with"
+    },
+    {
+     "who": "🚪 The locked gate",
+     "why": "the gate is locked from nine until three"
+    },
+    {
+     "who": "🔒 Good locks",
+     "why": "most pupils use a good lock, which a spot survey put at seventy-one percent"
+    }
+   ],
+   "answer": "Thefts happen after the only place that records them has shut.",
+   "proof": [
+    "“The log is written up from forms handed in at the school office.”",
+    "“They hold nineteen reports of bicycles taken from that address in the same three years.”",
+    "“Seventeen of the nineteen are timed after four o'clock.”"
+   ],
+   "clears": [
+    "The window: “overlooked by the staff room window for most of the day.”",
+    "The frame: “the hoops are the sort a cutter struggles with.”",
+    "The gate: “the gate is locked from nine until three.”",
+    "Locks: “which a spot survey put at seventy-one percent.”"
+   ],
+   "explain": "Every protection named here works during the day, and the log only exists during the day, so the log is a record of the hours the shed is safe. The police figures cover the same address and the same three years and are nearly ten times higher. Two is not a theft rate. It is an opening time."
+  },
+  {
+   "id": "g12-w6",
+   "grade": 12,
+   "week": 6,
+   "tag": "🐠 fishtank",
+   "title": "The Case of the Tank That Killed Fish",
+   "story": "Tank B has lost thirty-one fish in two years and tank A has lost four, and the club wants tank B stripped down. Four faults in tank B have been named and every one is real. Its heater runs a degree and a half warm, which the thermometer confirms. Its filter is the older model and turns the water over more slowly. It stands near the door and gets a draught whenever the room is used. And its gravel has never been replaced, so it holds more waste than tank A's. Those four would raise a death rate and they would not multiply it by eight. Tank B is the quarantine tank, and every fish bought for the club spends its first three weeks in it. Tank A receives only fish that have already survived those three weeks. A newly bought fish carries the stress of transport and whatever it arrived with, and the trade's own figure for first-month losses is about a quarter. Two hundred and ten fish have passed through tank B and sixty-eight through tank A. Thirty-one of two hundred and ten is fifteen percent, and four of sixty-eight is six. The gap is real and it is a third of the size the raw counts suggest.",
+   "question": "Why does tank B lose so many fish?",
+   "suspects": [
+    {
+     "who": "🚪 Tank B being the quarantine tank",
+     "why": "every fish bought for the club spends its first three weeks in tank B, and tank A receives only survivors"
+    },
+    {
+     "who": "🌡️ The warm heater",
+     "why": "its heater runs a degree and a half warm, which the thermometer confirms"
+    },
+    {
+     "who": "🧽 The older filter",
+     "why": "its filter is the older model and turns the water over more slowly"
+    },
+    {
+     "who": "💨 The draught",
+     "why": "it stands near the door and gets a draught whenever the room is used"
+    },
+    {
+     "who": "🪨 The old gravel",
+     "why": "its gravel has never been replaced, so it holds more waste than tank A's"
+    }
+   ],
+   "answer": "Tank B holds every new fish and tank A holds only the ones that lived.",
+   "proof": [
+    "“Tank A receives only fish that have already survived those three weeks.”",
+    "“Two hundred and ten fish have passed through tank B and sixty-eight through tank A.”",
+    "“Thirty-one of two hundred and ten is fifteen percent, and four of sixty-eight is six.”"
+   ],
+   "clears": [
+    "The heater: “its heater runs a degree and a half warm, which the thermometer confirms.”",
+    "The filter: “turns the water over more slowly.”",
+    "The draught: “gets a draught whenever the room is used.”",
+    "The gravel: “holds more waste than tank A's.”"
+   ],
+   "explain": "Counting deaths without counting fish is the first error, and it accounts for most of the gap. The second is deeper: tank A's fish were selected by tank B. Every weak fish died before it could be an A statistic, which is why the healthiest tank in the room is the one that never meets a new arrival."
+  },
+  {
+   "id": "g12-w7",
+   "grade": 12,
+   "week": 7,
+   "tag": "🔊 noise",
+   "title": "The Case of the Loudest Day of the Week",
+   "story": "The noise file says Wednesday is the loudest day in the building by eleven decibels, and the timetable is about to be rewritten around it. Four reasons have been put forward and each is genuinely true of Wednesdays. The whole school eats in two sittings rather than three, so the hall holds more people at once. Band practice runs at lunchtime in the room above the office. The corridor by the gym is used as a through route while the yard is resurfaced. And Wednesday afternoon is the only games session that starts indoors. Those four could add two or three decibels between them. The sound meter is not left running. It is fetched from the cupboard and switched on when somebody complains at the office. The office is staffed on Wednesdays and on no other day, because the administrator works one day a week. Forty-one of the forty-four readings in the file were taken on a Wednesday. A borrowed meter was left recording for a fortnight last term with nobody attending it. It found Thursday the loudest day of the five by four decibels, and Wednesday the third of the five.",
+   "question": "Is Wednesday really the loudest day?",
+   "suspects": [
+    {
+     "who": "📋 The day the meter is switched on",
+     "why": "the office is staffed on Wednesdays and on no other day, because the administrator works one day a week"
+    },
+    {
+     "who": "🍽️ The two lunch sittings",
+     "why": "the whole school eats in two sittings rather than three, so the hall holds more people at once"
+    },
+    {
+     "who": "🎺 Band practice",
+     "why": "band practice runs at lunchtime in the room above the office"
+    },
+    {
+     "who": "🚶 The gym corridor",
+     "why": "the corridor by the gym is used as a through route while the yard is resurfaced"
+    },
+    {
+     "who": "🏐 Indoor games",
+     "why": "Wednesday afternoon is the only games session that starts indoors"
+    }
+   ],
+   "answer": "The meter is only ever switched on when the office is staffed.",
+   "proof": [
+    "“Forty-one of the forty-four readings in the file were taken on a Wednesday.”",
+    "“A borrowed meter was left recording for a fortnight last term with nobody attending it.”",
+    "“It found Thursday the loudest day of the five by four decibels, and Wednesday the third of the five.”"
+   ],
+   "clears": [
+    "The sittings: “so the hall holds more people at once.”",
+    "The band: “band practice runs at lunchtime in the room above the office.”",
+    "The corridor: “used as a through route while the yard is resurfaced.”",
+    "Indoor games: “the only games session that starts indoors.”"
+   ],
+   "explain": "Wednesday is genuinely two or three decibels louder and the file says eleven, because the file is forty-one Wednesdays and three of everything else. A measurement that is only taken when somebody is there to take it describes the observer's week. The unattended meter had no opinion about which day mattered, and it chose Thursday."
+  },
+  {
+   "id": "g12-w8",
+   "grade": 12,
+   "week": 8,
+   "tag": "🍂 leaves",
+   "title": "The Case of the Tree That Dropped Everything",
+   "story": "The grounds record blames the big sycamore for eighty-one percent of the leaf litter cleared each autumn, and a felling notice has been drafted. Four points in its favour are made and all of them are true. It is the largest tree on the site by crown spread. Sycamore leaves are broad and heavy and do not blow away. It holds its leaves late, so it drops into the weeks when clearing is logged. And it stands at the top of the slope, so its leaves travel down across the whole site. Those four make it a genuine nuisance and a leading contributor. The record is compiled from the sweeping sheets, which are filled in for paths, steps and the yard. The sycamore is the only mature tree on the site standing over a path. The eleven limes, the beech and the two horse chestnuts all stand on grass, where leaves are mown in and nothing is swept. A netting trial last October caught fall over measured squares under every tree. The sycamore produced nineteen percent of the leaf mass on the site. The sweeping sheets never measured what fell. They measured what landed somewhere a broom was going to be used.",
+   "question": "Does the sycamore really drop four fifths of the leaves?",
+   "suspects": [
+    {
+     "who": "🧹 Where the sweeping is recorded",
+     "why": "the record is compiled from sweeping sheets for paths, steps and the yard, and the sycamore is the only mature tree over a path"
+    },
+    {
+     "who": "🌳 Its size",
+     "why": "it is the largest tree on the site by crown spread"
+    },
+    {
+     "who": "🍁 Its heavy leaves",
+     "why": "sycamore leaves are broad and heavy and do not blow away"
+    },
+    {
+     "who": "📅 Its late fall",
+     "why": "it holds its leaves late, so it drops into the weeks when clearing is logged"
+    },
+    {
+     "who": "⛰️ Its position on the slope",
+     "why": "it stands at the top of the slope, so its leaves travel down across the whole site"
+    }
+   ],
+   "answer": "It is the only big tree standing over a surface anybody sweeps.",
+   "proof": [
+    "“The eleven limes, the beech and the two horse chestnuts all stand on grass, where leaves are mown in and nothing is swept.”",
+    "“A netting trial last October caught fall over measured squares under every tree.”",
+    "“The sycamore produced nineteen percent of the leaf mass on the site.”"
+   ],
+   "clears": [
+    "Its size: “the largest tree on the site by crown spread.”",
+    "Its leaves: “broad and heavy and do not blow away.”",
+    "Its late fall: “it drops into the weeks when clearing is logged.”",
+    "Its position: “its leaves travel down across the whole site.”"
+   ],
+   "explain": "Everything said about the sycamore is accurate, and it is the largest single producer on the site at nineteen percent. Eighty-one is the share of the swept leaves rather than the fallen ones. Fourteen other trees drop onto grass and vanish into the mower, which is a leaf nobody counts rather than a leaf that was never there."
+  },
+  {
+   "id": "g12-w9",
+   "grade": 12,
+   "week": 9,
+   "tag": "🎃 pumpkin",
+   "title": "The Case of the Variety That Grew Giants",
+   "story": "The growers' table shows Hallow King averaging two hundred and forty kilograms and every other variety under ninety, and the club has voted to grow nothing else. Four strengths of the variety are listed and all four are genuine. Its vines run longer, which gives more leaf to feed one fruit. Its skin is thicker, so fewer entries split before the weigh-in. It sets fruit about nine days earlier. And its seed is sold by a single supplier with good stock records. Those four are worth real weight and the gap in the table is nearly three to one. The table is compiled from weigh-in results at the county show. The show charges four pounds an entry and will not accept a pumpkin under a hundred kilograms. Hallow King seed costs eleven pounds a packet and is bought by growers who intend to compete. The club's own patch records, kept for every fruit whether entered or not, tell a different story. Hallow King averages a hundred and six kilograms across all its fruit, and the next variety averages ninety-four. Every pumpkin under a hundred kilograms is missing from the table, and most pumpkins are under a hundred kilograms.",
+   "question": "Is Hallow King really three times better?",
+   "suspects": [
+    {
+     "who": "⚖️ The hundred kilogram entry rule",
+     "why": "the show will not accept a pumpkin under a hundred kilograms, and most pumpkins are under a hundred kilograms"
+    },
+    {
+     "who": "🌿 Its longer vines",
+     "why": "its vines run longer, which gives more leaf to feed one fruit"
+    },
+    {
+     "who": "🛡️ Its thicker skin",
+     "why": "its skin is thicker, so fewer entries split before the weigh-in"
+    },
+    {
+     "who": "📆 Its earlier fruit set",
+     "why": "it sets fruit about nine days earlier"
+    },
+    {
+     "who": "🏪 Its supplier",
+     "why": "its seed is sold by a single supplier with good stock records"
+    }
+   ],
+   "answer": "The table only contains pumpkins heavy enough to be allowed in.",
+   "proof": [
+    "“The table is compiled from weigh-in results at the county show.”",
+    "“The club's own patch records, kept for every fruit whether entered or not, tell a different story.”",
+    "“Hallow King averages a hundred and six kilograms across all its fruit, and the next variety averages ninety-four.”"
+   ],
+   "clears": [
+    "The vines: “which gives more leaf to feed one fruit.”",
+    "The skin: “fewer entries split before the weigh-in.”",
+    "The fruit set: “it sets fruit about nine days earlier.”",
+    "The supplier: “a single supplier with good stock records.”"
+   ],
+   "explain": "Hallow King is the better variety, by about twelve percent, which the patch records show. The table says three to one because a cut-off at a hundred kilograms throws away the whole lower half of every variety, and it throws away more of the varieties that do worse. A rule about entries became a claim about plants."
+  },
+  {
+   "id": "g12-w10",
+   "grade": 12,
+   "week": 10,
+   "tag": "👣 footprints",
+   "title": "The Case of the Visitors Who All Came From the East",
+   "story": "The signing-in book shows eighty-four percent of visitors arriving from the east of the town, and the governors are planning the new car park on that side. Four reasons have been given and each is genuinely true of the east. The bus from the east stops at the gate and the western route stops four hundred metres away. The two nearest primary schools, which send most of the parents, are both east of the site. The eastern housing is denser, with about nine hundred more households inside a mile. And the eastern approach has a pavement the whole way, where the west has three hundred metres without one. Those four would make an eastern majority a fair expectation of perhaps sixty percent. The signing-in book lives on the desk in the east lobby, because that is where reception is. The west entrance has a buzzer, a door release and no book at all. A counter on the west door was read for a fortnight in March and logged two hundred and twelve people. The east lobby book recorded two hundred and sixty-one in the same fortnight. The book is not a record of where visitors come from. It is a record of which door has a pen on it.",
+   "question": "Do most visitors really come from the east?",
+   "suspects": [
+    {
+     "who": "🖊️ The door the book sits on",
+     "why": "the signing-in book lives on the desk in the east lobby and the west entrance has no book at all"
+    },
+    {
+     "who": "🚌 The bus stop",
+     "why": "the bus from the east stops at the gate and the western route stops four hundred metres away"
+    },
+    {
+     "who": "🏫 The feeder primaries",
+     "why": "the two nearest primary schools, which send most of the parents, are both east of the site"
+    },
+    {
+     "who": "🏘️ The denser housing",
+     "why": "the eastern housing is denser, with about nine hundred more households inside a mile"
+    },
+    {
+     "who": "🛣️ The pavement",
+     "why": "the eastern approach has a pavement the whole way, where the west has three hundred metres without one"
+    }
+   ],
+   "answer": "Only the east door has a book to sign.",
+   "proof": [
+    "“The west entrance has a buzzer, a door release and no book at all.”",
+    "“A counter on the west door was read for a fortnight in March and logged two hundred and twelve people.”",
+    "“The east lobby book recorded two hundred and sixty-one in the same fortnight.”"
+   ],
+   "clears": [
+    "The bus: “the western route stops four hundred metres away.”",
+    "The primaries: “both east of the site.”",
+    "The housing: “about nine hundred more households inside a mile.”",
+    "The pavement: “the west has three hundred metres without one.”"
+   ],
+   "explain": "Four honest reasons to expect an eastern majority, and a figure of eighty-four percent that no combination of them reaches. The west door counter turns the eighty-four into fifty-five in a fortnight. A car park built on the strength of that book would have been built on the position of a pen."
+  },
+  {
+   "id": "g12-w11",
+   "grade": 12,
+   "week": 11,
+   "tag": "🚌 bus",
+   "title": "The Case of the Service That Was Ninety-Seven Percent Punctual",
+   "story": "The bus company's figures show ninety-seven percent of journeys on the school route arriving within five minutes of the timetable, and the complaints are being dismissed. Four reasons for genuine good performance have been offered and all four hold up. The route avoids the town centre entirely. The timetable was rewritten in September with four extra minutes of slack at the midpoint. The same two drivers work it, both of whom know the road. And a bus lane was opened on the longest straight in October. Those four would produce a strong punctuality figure and nobody disputes that they help. The company's measure is taken from journeys that were operated. A journey that is cancelled generates no arrival time, so it enters neither the top nor the bottom of the fraction. The operations log shows forty-one cancellations on this route in the same term, out of four hundred and six scheduled journeys. Three hundred and fifty-four of the three hundred and sixty-five operated journeys ran on time, which is ninety-seven percent. Three hundred and fifty-four of the four hundred and six scheduled journeys is eighty-seven percent. A pupil standing at a stop does not care which of the two numbers the company prefers.",
+   "question": "Is the route really ninety-seven percent punctual?",
+   "suspects": [
+    {
+     "who": "🚫 Cancelled journeys leaving the sample",
+     "why": "a journey that is cancelled generates no arrival time, so it enters neither the top nor the bottom of the fraction"
+    },
+    {
+     "who": "🏙️ Avoiding the town centre",
+     "why": "the route avoids the town centre entirely"
+    },
+    {
+     "who": "⏱️ The extra slack",
+     "why": "the timetable was rewritten in September with four extra minutes of slack at the midpoint"
+    },
+    {
+     "who": "🧑‍✈️ The regular drivers",
+     "why": "the same two drivers work it, both of whom know the road"
+    },
+    {
+     "who": "🛣️ The new bus lane",
+     "why": "a bus lane was opened on the longest straight in October"
+    }
+   ],
+   "answer": "The forty-one cancelled journeys are not counted at all.",
+   "proof": [
+    "“The operations log shows forty-one cancellations on this route in the same term, out of four hundred and six scheduled journeys.”",
+    "“Three hundred and fifty-four of the three hundred and sixty-five operated journeys ran on time, which is ninety-seven percent.”",
+    "“Three hundred and fifty-four of the four hundred and six scheduled journeys is eighty-seven percent.”"
+   ],
+   "clears": [
+    "The route: “the route avoids the town centre entirely.”",
+    "The slack: “four extra minutes of slack at the midpoint.”",
+    "The drivers: “both of whom know the road.”",
+    "The bus lane: “a bus lane was opened on the longest straight in October.”"
+   ],
+   "explain": "Nothing in the ninety-seven percent is false. Every journey it counts really did arrive on time, and the four improvements really did help. The worst outcome a passenger can meet, a bus that never comes, is the one outcome the measure cannot see, because a bus that never comes has no arrival time to be late."
+  },
+  {
+   "id": "g12-w12",
+   "grade": 12,
+   "week": 12,
+   "tag": "🏆 trophy",
+   "title": "The Case of the Team That Only Won at Home",
+   "story": "The record book shows nineteen home wins and three away wins, and the coach is being asked to explain a collapse on the road. Four causes have been offered and each is a real effect in school sport. The home pitch is grass and most away fixtures are played on an artificial surface the team rarely trains on. The coach is present at every home game and misses about a third of away games. Travel takes an hour and the team plays within twenty minutes of arriving. And the home crowd is worth something that every player will swear to. Those four would produce a real home advantage, which the county average puts at about fifteen percent. The record book is kept by the fixtures secretary from the league return sheets. League returns are only submitted for competitive league fixtures. Friendlies are not returned, and the school plays almost all of its friendlies away because it cannot spare the pitch. The coach's own notebook lists forty-one away fixtures in the same period, of which the team won twenty-two. The book did not record a team that loses away. It recorded the fixtures that come with paperwork.",
+   "question": "Does the team really collapse away from home?",
+   "suspects": [
+    {
+     "who": "📄 Which fixtures generate a return sheet",
+     "why": "league returns are only submitted for competitive league fixtures, and the school plays almost all of its friendlies away"
+    },
+    {
+     "who": "🌱 The playing surface",
+     "why": "the home pitch is grass and most away fixtures are played on an artificial surface the team rarely trains on"
+    },
+    {
+     "who": "🧑‍🏫 The coach's absence",
+     "why": "the coach is present at every home game and misses about a third of away games"
+    },
+    {
+     "who": "🚐 The travel",
+     "why": "travel takes an hour and the team plays within twenty minutes of arriving"
+    },
+    {
+     "who": "📣 The home crowd",
+     "why": "the home crowd is worth something that every player will swear to"
+    }
+   ],
+   "answer": "Only league fixtures reach the book, and the friendlies are all away.",
+   "proof": [
+    "“The record book is kept by the fixtures secretary from the league return sheets.”",
+    "“The coach's own notebook lists forty-one away fixtures in the same period, of which the team won twenty-two.”",
+    "“The book did not record a team that loses away.”"
+   ],
+   "clears": [
+    "The surface: “an artificial surface the team rarely trains on.”",
+    "The coach: “misses about a third of away games.”",
+    "The travel: “the team plays within twenty minutes of arriving.”",
+    "The crowd: “worth something that every player will swear to.”"
+   ],
+   "explain": "A home advantage is real and worth about fifteen percent. The book shows something far stronger because it is not a list of matches but a list of matches that generated a form. Twenty-two away wins exist in a notebook nobody thought to add, and they are the fixtures the league never asked about."
+  },
+  {
+   "id": "g12-w13",
+   "grade": 12,
+   "week": 13,
+   "tag": "🦃 turkey",
+   "title": "The Case of the Dinner Everyone Enjoyed",
+   "story": "The feedback cards from the Christmas dinner came back at an average of four point seven out of five, and the kitchen is repeating the menu unchanged. Four reasons for genuine satisfaction have been put forward and each is fair. The turkey was carved at the tables rather than plated in advance. The kitchen bought better potatoes this year, which the staff noticed independently. The hall was decorated by the art department and looked remarkable. And a free pudding was added at the last minute. Those four would lift a score and they would not lift it to four point seven. The cards were left face down on the tables and collected by the staff at two o'clock. Service began at half past twelve and the hall was timetabled to clear by half past one. A head count at twenty past one recorded a hundred and ninety pupils still seated out of four hundred and twenty served. Ninety-one cards were returned, all of them from tables still occupied at two. The pupils who left early include everybody who did not want a second helping, everybody waiting for a bus, and everybody who did not like the food. The score measures the people who stayed.",
+   "question": "Did everyone really enjoy the dinner?",
+   "suspects": [
+    {
+     "who": "🪑 Who was still in the hall at two",
+     "why": "the cards were collected at two o'clock and all ninety-one came from tables still occupied then"
+    },
+    {
+     "who": "🔪 Carving at the tables",
+     "why": "the turkey was carved at the tables rather than plated in advance"
+    },
+    {
+     "who": "🥔 The better potatoes",
+     "why": "the kitchen bought better potatoes this year, which the staff noticed independently"
+    },
+    {
+     "who": "🎀 The decorations",
+     "why": "the hall was decorated by the art department and looked remarkable"
+    },
+    {
+     "who": "🍮 The free pudding",
+     "why": "a free pudding was added at the last minute"
+    }
+   ],
+   "answer": "Only the people still sitting there at two o'clock filled in a card.",
+   "proof": [
+    "“A head count at twenty past one recorded a hundred and ninety pupils still seated out of four hundred and twenty served.”",
+    "“The pupils who left early include everybody who did not want a second helping, everybody waiting for a bus, and everybody who did not like the food.”",
+    "“The score measures the people who stayed.”"
+   ],
+   "clears": [
+    "The carving: “carved at the tables rather than plated in advance.”",
+    "The potatoes: “which the staff noticed independently.”",
+    "The decorations: “looked remarkable.”",
+    "The pudding: “a free pudding was added at the last minute.”"
+   ],
+   "explain": "Four hundred and twenty people ate and ninety-one scored it. The ninety-one are not a sample of the four hundred and twenty, because staying in a hall for ninety minutes after your dinner is itself a sign of having enjoyed it. The people whose opinion would move the average are the people who had already gone."
+  },
+  {
+   "id": "g12-w14",
+   "grade": 12,
+   "week": 14,
+   "tag": "🧁 cupcake",
+   "title": "The Case of the Flavour That Outsold the Rest",
+   "story": "The bake sale's sheet shows chocolate selling two hundred and ten cakes against lemon's forty, and next term's baking rota has been rewritten around chocolate. Four reasons have been offered and each is real. Chocolate was on the front table where the queue forms. The chocolate cakes were iced and the lemon ones were plain. Chocolate is the flavour most people name when asked in the abstract. And the chocolate cakes were a few grams larger. Those four give chocolate a genuine edge and the sheet shows a ratio of more than five to one. The rota tells the bakers how many of each to make, and it asked for two hundred and forty chocolate and forty-five lemon. Two hundred and ten of two hundred and forty chocolate cakes sold, which is eighty-eight percent. Forty of forty-five lemon cakes sold, which is eighty-nine percent. The lemon table was cleared and packed away forty minutes before the sale ended. Twenty-two people were turned away from the lemon table in that forty minutes, which a helper counted on the back of a receipt. A count of what sold cannot tell you what would have sold, unless you also know what there was.",
+   "question": "Does chocolate really outsell lemon five to one?",
+   "suspects": [
+    {
+     "who": "📝 How many of each were made",
+     "why": "the rota asked for two hundred and forty chocolate and forty-five lemon"
+    },
+    {
+     "who": "🪧 The front table",
+     "why": "chocolate was on the front table where the queue forms"
+    },
+    {
+     "who": "🧁 The icing",
+     "why": "the chocolate cakes were iced and the lemon ones were plain"
+    },
+    {
+     "who": "💭 Chocolate's reputation",
+     "why": "chocolate is the flavour most people name when asked in the abstract"
+    },
+    {
+     "who": "⚖️ The larger cakes",
+     "why": "the chocolate cakes were a few grams larger"
+    }
+   ],
+   "answer": "Six times as many chocolate cakes were baked in the first place.",
+   "proof": [
+    "“Two hundred and ten of two hundred and forty chocolate cakes sold, which is eighty-eight percent.”",
+    "“Forty of forty-five lemon cakes sold, which is eighty-nine percent.”",
+    "“A count of what sold cannot tell you what would have sold, unless you also know what there was.”"
+   ],
+   "clears": [
+    "The front table: “where the queue forms.”",
+    "The icing: “the chocolate cakes were iced and the lemon ones were plain.”",
+    "Reputation: “the flavour most people name when asked in the abstract.”",
+    "The size: “the chocolate cakes were a few grams larger.”"
+   ],
+   "explain": "The two flavours sold at the same rate to within one percent, and lemon turned twenty-two people away after it ran out. The rota that was rewritten on the strength of the sheet is the same rota that produced the sheet, which means next term chocolate will outsell lemon by even more, and the figure will still mean nothing."
+  },
+  {
+   "id": "g12-w15",
+   "grade": 12,
+   "week": 15,
+   "tag": "🧤 mitten",
+   "title": "The Case of the Mittens That Were Always Wool",
+   "story": "The lost property audit lists ninety-four wool mittens and six acrylic, and a letter is being drafted advising parents against wool. Four reasons have been given and each is a real property of wool. Wool mittens are more often knitted by hand and so have no maker's label or name tape. They are warmer, so children take them off indoors, which is where mittens are abandoned. They are bulkier and less likely to fit in a coat pocket. And they are more often handed down, so they are older and their elastic is looser. Those four would skew a lost property box towards wool and they would not produce a ratio of sixteen to one. The lost property box is emptied every Friday by the site team. Anything judged to have no value is bagged for the textile bank and not entered in the audit. The site team's standing instruction, written in two thousand and nine, treats synthetic gloves as having no resale value. A fortnight of logging everything that entered the box, with nothing discarded, recorded fifty-one wool and thirty-eight acrylic. The audit was never a list of what was lost. It was a list of what was kept.",
+   "question": "Are wool mittens really lost sixteen times as often?",
+   "suspects": [
+    {
+     "who": "🗑️ What the site team throws away",
+     "why": "anything judged to have no value is bagged for the textile bank and not entered in the audit"
+    },
+    {
+     "who": "🏷️ No name tapes",
+     "why": "wool mittens are more often knitted by hand and so have no maker's label or name tape"
+    },
+    {
+     "who": "🔥 Their warmth",
+     "why": "they are warmer, so children take them off indoors, which is where mittens are abandoned"
+    },
+    {
+     "who": "🧥 Their bulk",
+     "why": "they are bulkier and less likely to fit in a coat pocket"
+    },
+    {
+     "who": "👶 Being handed down",
+     "why": "they are more often handed down, so they are older and their elastic is looser"
+    }
+   ],
+   "answer": "Acrylic mittens are binned before the audit ever sees them.",
+   "proof": [
+    "“The site team's standing instruction, written in two thousand and nine, treats synthetic gloves as having no resale value.”",
+    "“A fortnight of logging everything that entered the box, with nothing discarded, recorded fifty-one wool and thirty-eight acrylic.”",
+    "“The audit was never a list of what was lost.”"
+   ],
+   "clears": [
+    "Name tapes: “so have no maker's label or name tape.”",
+    "Warmth: “which is where mittens are abandoned.”",
+    "Bulk: “less likely to fit in a coat pocket.”",
+    "Handing down: “their elastic is looser.”"
+   ],
+   "explain": "Wool really is lost more, by about four to three, which the unfiltered fortnight shows. The audit says sixteen to one because a rule written fifteen years ago removes most of the acrylic before anybody counts. A letter telling parents to avoid wool would have been sound advice drawn from a sorting policy."
+  },
+  {
+   "id": "g12-w16",
+   "grade": 12,
+   "week": 16,
+   "tag": "🎄 ginger",
+   "title": "The Case of the Recipe That Never Failed",
+   "story": "The gingerbread house recipe carries two hundred and eleven reviews online at an average of four point eight stars, and the class is using it unchanged. Four reasons for genuine quality have been offered and each stands up. The dough includes an extra egg yolk, which does make a firmer panel. The template is printed to scale rather than described in words. The method gives a weight for the icing sugar rather than a cup measure. And the author answers questions underneath, which catches mistakes early. Those four make it a better than average recipe and nobody is arguing otherwise. A review can only be left by somebody who has made the house and photographed it. The site requires a photograph of the finished build before a review will post. A house that collapsed cannot be photographed finished, and its baker has nothing to upload. The author's own question thread, where no photograph is required, carries four hundred and six questions. A hundred and seventy of them describe a wall that slid or a roof that came down. The stars are not a measure of how often the recipe works. They are a measure of how it went for the people whose houses stood up.",
+   "question": "Is the recipe really that reliable?",
+   "suspects": [
+    {
+     "who": "📷 The photograph the site demands",
+     "why": "the site requires a photograph of the finished build before a review will post"
+    },
+    {
+     "who": "🥚 The extra egg yolk",
+     "why": "the dough includes an extra egg yolk, which does make a firmer panel"
+    },
+    {
+     "who": "📐 The printed template",
+     "why": "the template is printed to scale rather than described in words"
+    },
+    {
+     "who": "⚖️ Weighed icing sugar",
+     "why": "the method gives a weight for the icing sugar rather than a cup measure"
+    },
+    {
+     "who": "💬 The author's answers",
+     "why": "the author answers questions underneath, which catches mistakes early"
+    }
+   ],
+   "answer": "Only people whose houses stood up are able to leave a review.",
+   "proof": [
+    "“A house that collapsed cannot be photographed finished, and its baker has nothing to upload.”",
+    "“The author's own question thread, where no photograph is required, carries four hundred and six questions.”",
+    "“A hundred and seventy of them describe a wall that slid or a roof that came down.”"
+   ],
+   "clears": [
+    "The egg yolk: “which does make a firmer panel.”",
+    "The template: “printed to scale rather than described in words.”",
+    "The icing sugar: “a weight for the icing sugar rather than a cup measure.”",
+    "The author's answers: “which catches mistakes early.”"
+   ],
+   "explain": "The four point eight is honest and every star was given by somebody who built the house. The rule that produced it also removed every failure from the record, which is why the comments underneath and the stars above describe two different recipes. The question thread has no photograph rule and no average above four."
+  },
+  {
+   "id": "g12-w17",
+   "grade": 12,
+   "week": 17,
+   "tag": "💡 lights",
+   "title": "The Case of the Bulbs That Failed Too Often",
+   "story": "The maintenance file records sixty-one LED failures and nine filament failures this year, and the school is reverting to filament bulbs. Four reasons have been offered and each is a real weakness of the LEDs that were fitted. They were the cheapest fitting on the framework and their drivers are the known weak point. They were installed in enclosed fittings the maker warns against. The corridor circuit they sit on has a voltage spike logged twice a week. And they run hotter in those fittings than the specification allows. Those four make the LED failure rate genuinely poor, which nobody disputes. A failure is recorded when a bulb is brought to the caretaker's office and a form filled in. An LED fitting costs eighteen pounds and is replaced under warranty, which requires the form. A filament bulb costs forty pence and the cleaners change them from the trolley without telling anybody. The stores ledger shows eight hundred and ninety filament bulbs issued this year against ninety LED units. There are two hundred and ten filament fittings in the building and three hundred and forty LED ones. The file records warranty claims. It was never a count of failures.",
+   "question": "Do the LEDs really fail seven times as often?",
+   "suspects": [
+    {
+     "who": "📄 Which failures need a form",
+     "why": "an LED is replaced under warranty, which requires the form, and the cleaners change filament bulbs without telling anybody"
+    },
+    {
+     "who": "💸 The cheap fittings",
+     "why": "they were the cheapest fitting on the framework and their drivers are the known weak point"
+    },
+    {
+     "who": "📦 The enclosed fittings",
+     "why": "they were installed in enclosed fittings the maker warns against"
+    },
+    {
+     "who": "⚡ The voltage spikes",
+     "why": "the corridor circuit they sit on has a voltage spike logged twice a week"
+    },
+    {
+     "who": "🌡️ Running hot",
+     "why": "they run hotter in those fittings than the specification allows"
+    }
+   ],
+   "answer": "Only LED failures generate paperwork, so only LED failures get counted.",
+   "proof": [
+    "“The stores ledger shows eight hundred and ninety filament bulbs issued this year against ninety LED units.”",
+    "“There are two hundred and ten filament fittings in the building and three hundred and forty LED ones.”",
+    "“The file records warranty claims.”"
+   ],
+   "clears": [
+    "The cheap fittings: “their drivers are the known weak point.”",
+    "The enclosed fittings: “the maker warns against.”",
+    "The spikes: “a voltage spike logged twice a week.”",
+    "Running hot: “they run hotter in those fittings than the specification allows.”"
+   ],
+   "explain": "These LEDs really are bad, for four separate and documented reasons. The ledger still settles it: eight hundred and ninety filament bulbs into two hundred and ten fittings is more than four replacements each, against ninety units into three hundred and forty. Reverting to filament would be a decision taken from the one record that cannot see a filament bulb fail."
+  },
+  {
+   "id": "g12-w18",
+   "grade": 12,
+   "week": 18,
+   "tag": "⏰ clock",
+   "title": "The Case of the Clock That Was Never Wrong",
+   "story": "The checking book for the tower clock carries eleven years of weekly entries and not one records an error above thirty seconds. The clock is being left out of the restoration on the strength of it. Four reasons for genuine accuracy have been offered and each is fair. It was rebuilt in nineteen ninety-eight with a new escapement. Its pendulum hangs in a sealed case, which keeps the dust and most of the damp off it. The tower holds a steady temperature because of the stone. And it is wound every Sunday by the same person, which keeps the drive even. Those four would make it a good clock, and eleven years without a single entry over thirty seconds is better than a good clock. The book is filled in by the winder on Sunday mornings. The entry is made by comparing the tower clock against the winder's own wristwatch. The wristwatch is set each Sunday from the tower clock before the climb, because the kitchen radio is unreliable. A phone set by the national time signal was carried up in October and found the clock four minutes and twenty seconds slow. The book has been comparing the clock with itself for eleven years.",
+   "question": "Has the clock really never been wrong?",
+   "suspects": [
+    {
+     "who": "🔁 The watch set from the clock",
+     "why": "the wristwatch is set each Sunday from the tower clock before the climb"
+    },
+    {
+     "who": "⚙️ The nineteen ninety-eight rebuild",
+     "why": "it was rebuilt in nineteen ninety-eight with a new escapement"
+    },
+    {
+     "who": "🫙 The sealed pendulum case",
+     "why": "its pendulum hangs in a sealed case, which keeps the dust and most of the damp off it"
+    },
+    {
+     "who": "🧱 The stone tower",
+     "why": "the tower holds a steady temperature because of the stone"
+    },
+    {
+     "who": "🔧 The regular winding",
+     "why": "it is wound every Sunday by the same person, which keeps the drive even"
+    }
+   ],
+   "answer": "The watch it is checked against is set from the clock itself.",
+   "proof": [
+    "“The entry is made by comparing the tower clock against the winder's own wristwatch.”",
+    "“A phone set by the national time signal was carried up in October and found the clock four minutes and twenty seconds slow.”",
+    "“The book has been comparing the clock with itself for eleven years.”"
+   ],
+   "clears": [
+    "The rebuild: “a new escapement.”",
+    "The pendulum case: “which keeps the dust and most of the damp off it.”",
+    "The tower: “the tower holds a steady temperature because of the stone.”",
+    "The winding: “which keeps the drive even.”"
+   ],
+   "explain": "A record of eleven years without an error is not strong evidence, it is impossible evidence, and that is the tell. No mechanical clock does that. The book is not lying and the winder is not careless. The comparison simply has no outside reference in it, so it could only ever return the answer it did."
+  },
+  {
+   "id": "g12-w19",
+   "grade": 12,
+   "week": 19,
+   "tag": "⛄ snow",
+   "title": "The Case of the Field That Got Twice the Snow",
+   "story": "Eleven years of readings show the field taking twice the snow depth of the car park, and the grounds plan treats the two as different microclimates. Four reasons have been offered and each is physically sound. Grass insulates what falls on it, where tarmac holds warmth from the day and melts the first centimetre. The car park is gritted, and grit lowers the freezing point of what lands on it. The field is four metres higher and a little colder. And the car park is sheltered by the sports hall on its windward side. Those four would give the field a genuine edge of perhaps a third. The field reading is taken at the marker post, which was driven in beside the hedge in two thousand and twelve. The car park reading is taken in the open, in the middle of the hardstanding. Wind-blown snow piles against a hedge and scours the open ground beside it. A set of five measured stakes was put across the field last January at ten-metre spacings. The marker post read twenty-six centimetres and the open stakes read between nine and thirteen. The post was not placed to measure snowfall. It was placed where the hedge was, because a post needs something to be driven in beside.",
+   "question": "Does the field really get twice the snow?",
+   "suspects": [
+    {
+     "who": "📍 Where the marker post stands",
+     "why": "the field reading is taken at the marker post beside the hedge, and wind-blown snow piles against a hedge"
+    },
+    {
+     "who": "🌱 The grass against the tarmac",
+     "why": "grass insulates what falls on it, where tarmac holds warmth from the day and melts the first centimetre"
+    },
+    {
+     "who": "🧂 The grit",
+     "why": "the car park is gritted, and grit lowers the freezing point of what lands on it"
+    },
+    {
+     "who": "⛰️ The height",
+     "why": "the field is four metres higher and a little colder"
+    },
+    {
+     "who": "🏟️ The sports hall shelter",
+     "why": "the car park is sheltered by the sports hall on its windward side"
+    }
+   ],
+   "answer": "The field is measured in a drift against a hedge.",
+   "proof": [
+    "“Wind-blown snow piles against a hedge and scours the open ground beside it.”",
+    "“The marker post read twenty-six centimetres and the open stakes read between nine and thirteen.”",
+    "“The post was not placed to measure snowfall.”"
+   ],
+   "clears": [
+    "The grass: “tarmac holds warmth from the day and melts the first centimetre.”",
+    "The grit: “grit lowers the freezing point of what lands on it.”",
+    "The height: “the field is four metres higher and a little colder.”",
+    "The shelter: “the car park is sheltered by the sports hall on its windward side.”"
+   ],
+   "explain": "Four real differences worth about a third, and a record that says double. The five stakes show the field itself disagreeing with its own post by a factor of two, which means the difference is not between the field and the car park at all. It is between a hedge and open ground, measured eleven years running because that is where the post went in."
+  },
+  {
+   "id": "g12-w20",
+   "grade": 12,
+   "week": 20,
+   "tag": "🐦 feeder",
+   "title": "The Case of the Garden Full of Robins",
+   "story": "The nature club's three-year record names the robin the commonest bird in the school grounds, ahead of every other species. Four reasons have been given and each is a true fact about robins. They hold a territory all year, so the same bird is reliably present. They are bold and will feed with people nearby. They are brightly marked and easy to identify with no doubt. And they sing through the winter, which draws attention. Those four make a robin far more noticeable than most birds in the garden. The record is kept as sightings, with one mark made each time a species is seen. A robin alone on a post is one mark, and a flock of thirty starlings arriving together is also one mark. The club meets at lunchtime, and the counts are made between half past twelve and one. A ringing session run by the county trust at dawn last March caught and counted individual birds instead. It recorded four robins, sixty-one starlings, fifty-three house sparrows and thirty-eight goldfinches. The record did not count birds. It counted the times somebody noticed a kind of bird, at the one hour of the day the club is free.",
+   "question": "Is the robin really the commonest bird?",
+   "suspects": [
+    {
+     "who": "✔️ Counting sightings instead of birds",
+     "why": "a robin alone is one mark and a flock of thirty starlings arriving together is also one mark"
+    },
+    {
+     "who": "🏠 Their year-round territory",
+     "why": "they hold a territory all year, so the same bird is reliably present"
+    },
+    {
+     "who": "😊 Their boldness",
+     "why": "they are bold and will feed with people nearby"
+    },
+    {
+     "who": "🎨 Their markings",
+     "why": "they are brightly marked and easy to identify with no doubt"
+    },
+    {
+     "who": "🎵 Their winter song",
+     "why": "they sing through the winter, which draws attention"
+    }
+   ],
+   "answer": "The record counts sightings, so one robin outscores a flock of thirty.",
+   "proof": [
+    "“The record is kept as sightings, with one mark made each time a species is seen.”",
+    "“A ringing session run by the county trust at dawn last March caught and counted individual birds instead.”",
+    "“It recorded four robins, sixty-one starlings, fifty-three house sparrows and thirty-eight goldfinches.”"
+   ],
+   "clears": [
+    "Their territory: “the same bird is reliably present.”",
+    "Their boldness: “they are bold and will feed with people nearby.”",
+    "Their markings: “easy to identify with no doubt.”",
+    "Their song: “which draws attention.”"
+   ],
+   "explain": "Everything the club says about robins is true, which is why the answer felt obvious. A sighting is an event in the observer's day, not a bird in the garden, and a species that flocks can never win a contest scored that way. The ringing session counted birds and found four robins to a hundred and fifty of everything else."
+  },
+  {
+   "id": "g12-w21",
+   "grade": 12,
+   "week": 21,
+   "tag": "☕ cocoa",
+   "title": "The Case of the Machine Only Staff Used",
+   "story": "The usage report for the drinks machine shows ninety-six percent of cups taken by staff, and the machine is being moved into the staff room. Four reasons have been offered and all four are genuine. Staff have longer breaks and more of them across a day. The machine stands in the corridor outside the staff room. Pupils are not allowed hot drinks in lessons, which rules out most of their day. And staff drink more hot drinks per head than teenagers do by any national measure. Those four would give staff a clear majority and would not give them ninety-six percent. The report is generated from the staff key fobs, which log every cup against a name for the billing. A pupil pays with a coin, and the coin mechanism has no counter wired to the reporting board. The engineer's visit in February logged total cups dispensed from the flow meter instead. It recorded four thousand one hundred cups in a fortnight against the key fob total of one thousand six hundred. Two thousand five hundred cups in that fortnight were paid for in coins. The report was never a record of who used the machine. It was a record of who had to be billed for it.",
+   "question": "Do staff really take ninety-six percent of the cups?",
+   "suspects": [
+    {
+     "who": "🔑 The key fob billing system",
+     "why": "the report is generated from the staff key fobs and the coin mechanism has no counter wired to the reporting board"
+    },
+    {
+     "who": "⏳ Longer staff breaks",
+     "why": "staff have longer breaks and more of them across a day"
+    },
+    {
+     "who": "🚪 Where the machine stands",
+     "why": "the machine stands in the corridor outside the staff room"
+    },
+    {
+     "who": "📏 The rule on hot drinks",
+     "why": "pupils are not allowed hot drinks in lessons, which rules out most of their day"
+    },
+    {
+     "who": "☕ Drinking habits",
+     "why": "staff drink more hot drinks per head than teenagers do by any national measure"
+    }
+   ],
+   "answer": "The report counts billed cups, and pupils pay in coins.",
+   "proof": [
+    "“The engineer's visit in February logged total cups dispensed from the flow meter instead.”",
+    "“It recorded four thousand one hundred cups in a fortnight against the key fob total of one thousand six hundred.”",
+    "“Two thousand five hundred cups in that fortnight were paid for in coins.”"
+   ],
+   "clears": [
+    "Break times: “longer breaks and more of them across a day.”",
+    "The position: “outside the staff room.”",
+    "The rule: “which rules out most of their day.”",
+    "Habits: “staff drink more hot drinks per head than teenagers do by any national measure.”"
+   ],
+   "explain": "Ninety-six percent of the cups the system can see belong to staff, and that sentence is true. The flow meter counts water rather than names, and it finds pupils taking three cups in five. Moving the machine into the staff room would remove it from the people who use it most."
+  },
+  {
+   "id": "g12-w22",
+   "grade": 12,
+   "week": 22,
+   "tag": "💌 valentine",
+   "title": "The Case of the Year Group That Sent the Most Cards",
+   "story": "The post count shows Year Nine sending two hundred and twelve cards and no other year reaching sixty. The tutor team is being asked what makes that year group different. Four explanations have been put forward and each is plausible and partly true. Year Nine is the largest cohort by thirty-one pupils. It is the year the school runs its friendship and relationships unit, which raises the subject in February. Its form rooms are next to the art rooms, where the card-making club meets. And its tutors ran a charity link, giving twenty pence a card to the hospice. Those four would lift one year group's total and would not quadruple it. The single post box stands in the Year Nine corridor, outside room fourteen. Every other year group reaches it by crossing the quad or going up two flights. A second box was put in the Year Eleven corridor for three days as a trial this year. It took ninety-one cards in three days, against the main box's hundred and four over the same three days. A count of cards posted is a count of cards posted somewhere convenient.",
+   "question": "Does Year Nine really send four times as many cards?",
+   "suspects": [
+    {
+     "who": "📮 Where the only post box stands",
+     "why": "the single post box stands in the Year Nine corridor and every other year group reaches it by crossing the quad"
+    },
+    {
+     "who": "👥 The cohort size",
+     "why": "Year Nine is the largest cohort by thirty-one pupils"
+    },
+    {
+     "who": "📘 The relationships unit",
+     "why": "it is the year the school runs its friendship and relationships unit, which raises the subject in February"
+    },
+    {
+     "who": "🎨 The art rooms",
+     "why": "its form rooms are next to the art rooms, where the card-making club meets"
+    },
+    {
+     "who": "💝 The charity link",
+     "why": "its tutors ran a charity link, giving twenty pence a card to the hospice"
+    }
+   ],
+   "answer": "The only post box is in the Year Nine corridor.",
+   "proof": [
+    "“A second box was put in the Year Eleven corridor for three days as a trial this year.”",
+    "“It took ninety-one cards in three days, against the main box's hundred and four over the same three days.”",
+    "“A count of cards posted is a count of cards posted somewhere convenient.”"
+   ],
+   "clears": [
+    "Cohort size: “Year Nine is the largest cohort by thirty-one pupils.”",
+    "The unit: “which raises the subject in February.”",
+    "The art rooms: “where the card-making club meets.”",
+    "The charity link: “giving twenty pence a card to the hospice.”"
+   ],
+   "explain": "Four reasons that would each add a few cards, against a total four times everybody else's. The three-day trial is decisive and cheap: a second box in another corridor nearly matched the first. The cards were always being written. They were not being carried across a quad to be counted."
+  },
+  {
+   "id": "g12-w23",
+   "grade": 12,
+   "week": 23,
+   "tag": "🌋 volcano",
+   "title": "The Case of the Volcanoes That Won Every Prize",
+   "story": "Eleven of the last fourteen science fair prizes have gone to volcano projects, and the department is worried that judges are being won over by spectacle. Four reasons have been offered and each is reasonable. A volcano is visual, and a judge remembers what they saw. It has a clear result that needs no explanation. It can be built by one pupil without a technician. And it photographs well for the newsletter, which shapes what the next year attempts. Those four would favour volcanoes and would not deliver eleven prizes in fourteen. Judging runs between two o'clock and three o'clock on the Friday afternoon. A judge walks the hall and asks each entrant to show what their project does. A volcano can be made to erupt on request in forty seconds. The germination trial, the mould study, the rusting experiment and the yeast investigation all need between a day and three weeks to show anything. Those four entries can offer a judge a folder of results and nothing to watch. The prize does not reward the best science. It rewards the science that can be performed inside a one-hour window.",
+   "question": "Why do volcanoes win every prize?",
+   "suspects": [
+    {
+     "who": "🕑 The one-hour judging window",
+     "why": "a volcano can be made to erupt on request in forty seconds and the other projects need between a day and three weeks"
+    },
+    {
+     "who": "👁️ Being visual",
+     "why": "a volcano is visual, and a judge remembers what they saw"
+    },
+    {
+     "who": "✅ Its clear result",
+     "why": "it has a clear result that needs no explanation"
+    },
+    {
+     "who": "🔧 Needing no technician",
+     "why": "it can be built by one pupil without a technician"
+    },
+    {
+     "who": "📰 The newsletter photographs",
+     "why": "it photographs well for the newsletter, which shapes what the next year attempts"
+    }
+   ],
+   "answer": "Judging happens in an hour, and only a volcano can perform in an hour.",
+   "proof": [
+    "“A judge walks the hall and asks each entrant to show what their project does.”",
+    "“Those four entries can offer a judge a folder of results and nothing to watch.”",
+    "“The prize does not reward the best science.”"
+   ],
+   "clears": [
+    "Being visual: “a judge remembers what they saw.”",
+    "The clear result: “a clear result that needs no explanation.”",
+    "No technician: “built by one pupil without a technician.”",
+    "The newsletter: “which shapes what the next year attempts.”"
+   ],
+   "explain": "Spectacle is real and it is not the mechanism. The judging method asks every entrant to perform, and a question like that can only be answered by projects whose result arrives in under a minute. Everything with a timescale longer than the fair was ruled out before a judge formed an opinion about it."
+  },
+  {
+   "id": "g12-w24",
+   "grade": 12,
+   "week": 24,
+   "tag": "👑 crown",
+   "title": "The Case of the Most Photographed Crown",
+   "story": "The museum's figures show the Tudor crown photographed eleven thousand times last year, more than the next four objects together, and the gallery is being rebuilt around it. Four reasons have been offered and each is genuine. It is the only object in the museum that most visitors have seen in a schoolbook. It sits at eye level in an open case rather than behind a rail. It is lit from four sides, which makes a photograph that works. And it is the last object before the shop, where people have their phones out already. Those four would make it the most photographed and they do not explain a figure larger than the next four combined. The count comes from the photography permission scheme, where a visitor taps a card to unlock the no-flash rule in that room. Rooms two through seven are marked no photography because of loan conditions on their contents. There is no way for a visitor to photograph the Anglo-Saxon hoard or the illuminated psalter at all. The count of eleven thousand is a count of the one room where photography is permitted and logged. Six objects were never in the competition.",
+   "question": "Is the crown really the most photographed object?",
+   "suspects": [
+    {
+     "who": "🚫 The rooms where photography is banned",
+     "why": "rooms two through seven are marked no photography because of loan conditions on their contents"
+    },
+    {
+     "who": "📖 Its fame",
+     "why": "it is the only object in the museum that most visitors have seen in a schoolbook"
+    },
+    {
+     "who": "👀 Its open case",
+     "why": "it sits at eye level in an open case rather than behind a rail"
+    },
+    {
+     "who": "💡 Its lighting",
+     "why": "it is lit from four sides, which makes a photograph that works"
+    },
+    {
+     "who": "🛍️ Its place before the shop",
+     "why": "it is the last object before the shop, where people have their phones out already"
+    }
+   ],
+   "answer": "It is the only object visitors are allowed to photograph.",
+   "proof": [
+    "“The count comes from the photography permission scheme, where a visitor taps a card to unlock the no-flash rule in that room.”",
+    "“There is no way for a visitor to photograph the Anglo-Saxon hoard or the illuminated psalter at all.”",
+    "“Six objects were never in the competition.”"
+   ],
+   "clears": [
+    "Its fame: “the only object in the museum that most visitors have seen in a schoolbook.”",
+    "Its case: “at eye level in an open case rather than behind a rail.”",
+    "Its lighting: “lit from four sides, which makes a photograph that works.”",
+    "The shop: “where people have their phones out already.”"
+   ],
+   "explain": "A ranking needs the things being ranked to be able to score. Six of the museum's best objects cannot be photographed by anybody under any circumstances, so a photograph count puts them at zero and calls it unpopularity. Rebuilding the gallery around the crown would be rebuilding it around a loan condition."
+  },
+  {
+   "id": "g12-w25",
+   "grade": 12,
+   "week": 25,
+   "tag": "🎹 piano",
+   "title": "The Case of the Pianists Who Were Better at Maths",
+   "story": "The school's figures show pupils who learn the piano scoring eleven points above the year average in maths, and a bid is being written to fund piano lessons for everybody. Four mechanisms have been proposed and each has some research behind it. Reading two staves at once trains the handling of two streams of information. Rhythm is counted in fractions, and pupils who count them daily meet them early. Practice builds a habit of returning to something difficult. And performance teaches work under pressure. Those four are real and the published effect for each is small. Piano lessons at this school cost eighteen pounds a week and are arranged privately by families. Ninety-one percent of the pupils learning piano are not eligible for free school meals, against sixty-two percent of the year group. When the same figures are compared within the group that pays for lessons, the piano gap falls to two points. The county ran a funded scheme in two thousand and nineteen giving free lessons to a randomly chosen hundred pupils. That cohort finished one point above its control group. Learning the piano is mostly a measure of being able to afford to learn the piano.",
+   "question": "Does learning the piano raise maths scores?",
+   "suspects": [
+    {
+     "who": "💷 Who can afford the lessons",
+     "why": "piano lessons cost eighteen pounds a week and are arranged privately by families"
+    },
+    {
+     "who": "🎼 Reading two staves",
+     "why": "reading two staves at once trains the handling of two streams of information"
+    },
+    {
+     "who": "🥁 Counting rhythm",
+     "why": "rhythm is counted in fractions, and pupils who count them daily meet them early"
+    },
+    {
+     "who": "🔁 The practice habit",
+     "why": "practice builds a habit of returning to something difficult"
+    },
+    {
+     "who": "🎤 Performing",
+     "why": "performance teaches work under pressure"
+    }
+   ],
+   "answer": "The pupils who learn piano are the pupils whose families can pay for it.",
+   "proof": [
+    "“Ninety-one percent of the pupils learning piano are not eligible for free school meals, against sixty-two percent of the year group.”",
+    "“When the same figures are compared within the group that pays for lessons, the piano gap falls to two points.”",
+    "“That cohort finished one point above its control group.”"
+   ],
+   "clears": [
+    "Two staves: “trains the handling of two streams of information.”",
+    "Rhythm: “pupils who count them daily meet them early.”",
+    "Practice: “a habit of returning to something difficult.”",
+    "Performing: “teaches work under pressure.”"
+   ],
+   "explain": "All four mechanisms are real and together they are worth a point or two, which is what the funded scheme found. The eleven points belong to the thing that decides who sits at a piano in the first place. The bid is still worth writing, for music, as long as nobody promises it will move a maths grade."
+  },
+  {
+   "id": "g12-w26",
+   "grade": 12,
+   "week": 26,
+   "tag": "🪁 kite",
+   "title": "The Case of the Kites That Never Met Bad Weather",
+   "story": "Four years of club records show the field's wind running between eight and forty kilometres an hour and never outside it, and a member is writing that the site has unusually steady weather. Four reasons have been offered and each is physically real. The field sits in a shallow bowl with rising ground on three sides. The line of poplars along the western edge breaks the strongest gusts. The site is twelve kilometres inland, away from coastal extremes. And the valley runs across the prevailing wind rather than along it. Those four would narrow a range and they would not put a hard floor and a hard ceiling on it. The readings are taken by whoever turns up, from the handheld meter in the clubhouse. Nobody drives to a kite field on a still day, because there is nothing to do there. Nobody drives to a kite field in a gale either, because the club rules forbid flying above forty. The parish council's own weather station, four hundred metres away, logs every hour whether anybody is there or not. It records winds below eight on a hundred and ninety days a year and above forty on thirty-one. The club measured its own attendance rules.",
+   "question": "Is the field's wind really that steady?",
+   "suspects": [
+    {
+     "who": "🚗 Who bothers to turn up",
+     "why": "nobody drives to a kite field on a still day and nobody drives to one in a gale either"
+    },
+    {
+     "who": "🏞️ The shallow bowl",
+     "why": "the field sits in a shallow bowl with rising ground on three sides"
+    },
+    {
+     "who": "🌲 The poplars",
+     "why": "the line of poplars along the western edge breaks the strongest gusts"
+    },
+    {
+     "who": "🧭 Being inland",
+     "why": "the site is twelve kilometres inland, away from coastal extremes"
+    },
+    {
+     "who": "🏔️ The valley's line",
+     "why": "the valley runs across the prevailing wind rather than along it"
+    }
+   ],
+   "answer": "Nobody goes to the field on the days the wind is outside that range.",
+   "proof": [
+    "“The readings are taken by whoever turns up, from the handheld meter in the clubhouse.”",
+    "“The parish council's own weather station, four hundred metres away, logs every hour whether anybody is there or not.”",
+    "“It records winds below eight on a hundred and ninety days a year and above forty on thirty-one.”"
+   ],
+   "clears": [
+    "The bowl: “rising ground on three sides.”",
+    "The poplars: “breaks the strongest gusts.”",
+    "Being inland: “away from coastal extremes.”",
+    "The valley: “runs across the prevailing wind rather than along it.”"
+   ],
+   "explain": "Four years of readings and not one outside the range is the tell, because weather does not have edges that sharp. The forty is the club rule and the eight is the point below which the drive is not worth it. A dataset gathered by volunteers records the conditions under which volunteers volunteer."
+  },
+  {
+   "id": "g12-w27",
+   "grade": 12,
+   "week": 27,
+   "tag": "☘️ shamrock",
+   "title": "The Case of the Lucky Corner of the Field",
+   "story": "The club's find book records sixty-one four-leaf clovers from the top corner of the field and nine from everywhere else, and the corner is being fenced as a conservation plot. Four reasons have been offered and each is a real possibility. The corner is the only part of the field that was never ploughed. It is damper, lying at the foot of the slope where water collects. It is mown less often because the mower cannot turn there. And disturbance is known to raise the rate of the mutation that produces a fourth leaflet. Those four could raise the local rate, perhaps by half. The find book records clovers found and has no column for time spent looking. The corner is where the club meets, because it is the only shaded spot and the gate is there. A log kept last summer recorded searcher-hours as well as finds. The corner took a hundred and forty hours of searching and the rest of the field took eleven. Sixty-one finds in a hundred and forty hours is one every two and a quarter hours, and nine finds in eleven hours is one every one and a quarter. Measured by the hour, the corner is the worst ground on the field.",
+   "question": "Is the top corner really luckier?",
+   "suspects": [
+    {
+     "who": "⏳ Where the searching happens",
+     "why": "the corner is where the club meets, and the find book has no column for time spent looking"
+    },
+    {
+     "who": "🚜 The unploughed ground",
+     "why": "the corner is the only part of the field that was never ploughed"
+    },
+    {
+     "who": "💧 The damper soil",
+     "why": "it is damper, lying at the foot of the slope where water collects"
+    },
+    {
+     "who": "✂️ Less mowing",
+     "why": "it is mown less often because the mower cannot turn there"
+    },
+    {
+     "who": "🧬 Disturbance",
+     "why": "disturbance is known to raise the rate of the mutation that produces a fourth leaflet"
+    }
+   ],
+   "answer": "Almost all the searching has been done in that one corner.",
+   "proof": [
+    "“A log kept last summer recorded searcher-hours as well as finds.”",
+    "“The corner took a hundred and forty hours of searching and the rest of the field took eleven.”",
+    "“Measured by the hour, the corner is the worst ground on the field.”"
+   ],
+   "clears": [
+    "The ploughing: “the only part of the field that was never ploughed.”",
+    "The damp: “lying at the foot of the slope where water collects.”",
+    "The mowing: “the mower cannot turn there.”",
+    "Disturbance: “raise the rate of the mutation that produces a fourth leaflet.”"
+   ],
+   "explain": "A count of finds without a count of looking is not a rate at all, and the whole case turns on supplying the missing denominator. Once the hours go in, the corner falls from seven times better to nearly half as good. The club would have fenced off its own meeting place and called it a discovery."
+  },
+  {
+   "id": "g12-w28",
+   "grade": 12,
+   "week": 28,
+   "tag": "🌧️ puddle",
+   "title": "The Case of the Flooding That Started in Two Thousand and Nineteen",
+   "story": "The site record shows four flooding incidents in the yard before two thousand and nineteen and seventy-one since, and a drainage contract worth ninety thousand pounds is being prepared. Four causes have been offered and each is real. The playground was resurfaced in two thousand and eighteen with a tighter asphalt that takes water less readily. The new bicycle store covers a hundred and ten square metres that used to be grass. Rainfall at the parish station has risen about eight percent across the same period. And a new kerb line directs water that used to run onto the verge back towards the yard. Those four would raise a flooding rate and nobody is arguing they have not. The online estates form was introduced in January two thousand and nineteen and can be filled in from a phone in two minutes. Before that, a flood had to be reported by telephone to a county office open between ten and three. The caretaker's own diary, kept continuously since two thousand and eleven, mentions standing water in the yard in every year of its record. The diary counts between nine and fourteen floods a year throughout, with no step in two thousand and nineteen. The site record changed in that year. The yard did not.",
+   "question": "Did the flooding really start in two thousand and nineteen?",
+   "suspects": [
+    {
+     "who": "📱 The new reporting form",
+     "why": "the online estates form was introduced in January two thousand and nineteen and can be filled in from a phone in two minutes"
+    },
+    {
+     "who": "🛣️ The resurfacing",
+     "why": "the playground was resurfaced with a tighter asphalt that takes water less readily"
+    },
+    {
+     "who": "🚲 The bicycle store",
+     "why": "the new bicycle store covers a hundred and ten square metres that used to be grass"
+    },
+    {
+     "who": "🌧️ More rain",
+     "why": "rainfall at the parish station has risen about eight percent across the same period"
+    },
+    {
+     "who": "🧱 The new kerb line",
+     "why": "a new kerb line directs water that used to run onto the verge back towards the yard"
+    }
+   ],
+   "answer": "The form changed in two thousand and nineteen, not the yard.",
+   "proof": [
+    "“Before that, a flood had to be reported by telephone to a county office open between ten and three.”",
+    "“The caretaker's own diary, kept continuously since two thousand and eleven, mentions standing water in the yard in every year of its record.”",
+    "“The diary counts between nine and fourteen floods a year throughout, with no step in two thousand and nineteen.”"
+   ],
+   "clears": [
+    "The resurfacing: “a tighter asphalt that takes water less readily.”",
+    "The bicycle store: “a hundred and ten square metres that used to be grass.”",
+    "More rain: “risen about eight percent across the same period.”",
+    "The kerb: “directs water that used to run onto the verge back towards the yard.”"
+   ],
+   "explain": "The yard genuinely drains worse than it did, for four documented reasons. None of them arrives as a jump in a single January. A record that steps the moment the reporting method changes is describing the method, and the diary, which never changed, shows a flat line straight through the year everything supposedly began."
+  },
+  {
+   "id": "g12-w29",
+   "grade": 12,
+   "week": 29,
+   "tag": "🌻 garden",
+   "title": "The Case of the Bed That Grew Everything Best",
+   "story": "Bed four has produced the heaviest crop in each of six years and the garden club wants the other five beds rebuilt to match it. Four advantages have been named and each is genuine. It is the only raised bed, so its soil warms earlier in spring. It was filled with bought compost where the others use the school's own. It faces south-west and catches the afternoon sun. And its timber sides keep the rabbits out, which the chewed rows elsewhere confirm. Those four are worth real weight and the gap is more than two to one. Bed four stands beside the outside tap. The hose reaches bed four without being dragged and reaches bed five only if the coil is unwound across the path. The watering rota has one instruction on it, which is to water what needs it, and it is carried out by whoever is free at the time. A log kept last summer recorded eighty-one waterings for bed four and between nine and nineteen for the other five. Bed two was moved next to the tap in September as a test and grew the heaviest crop this year. Bed four was moved to the far end and came fourth.",
+   "question": "Is bed four really the best bed?",
+   "suspects": [
+    {
+     "who": "🚰 Standing next to the tap",
+     "why": "the hose reaches bed four without being dragged and reaches bed five only if the coil is unwound across the path"
+    },
+    {
+     "who": "📦 Being raised",
+     "why": "it is the only raised bed, so its soil warms earlier in spring"
+    },
+    {
+     "who": "🪴 The bought compost",
+     "why": "it was filled with bought compost where the others use the school's own"
+    },
+    {
+     "who": "🧭 Facing south-west",
+     "why": "it faces south-west and catches the afternoon sun"
+    },
+    {
+     "who": "🐰 The timber sides",
+     "why": "its timber sides keep the rabbits out, which the chewed rows elsewhere confirm"
+    }
+   ],
+   "answer": "Bed four is the bed the hose reaches, so it is the bed that gets watered.",
+   "proof": [
+    "“A log kept last summer recorded eighty-one waterings for bed four and between nine and nineteen for the other five.”",
+    "“Bed two was moved next to the tap in September as a test and grew the heaviest crop this year.”",
+    "“Bed four was moved to the far end and came fourth.”"
+   ],
+   "clears": [
+    "Being raised: “its soil warms earlier in spring.”",
+    "The compost: “where the others use the school's own.”",
+    "The aspect: “catches the afternoon sun.”",
+    "The sides: “which the chewed rows elsewhere confirm.”"
+   ],
+   "explain": "Four advantages that travel with the bed, and the club proved they were not the cause by moving the bed. Everything bed four was built with went to the far end and finished fourth. What stayed behind was the tap, and the rota's one instruction quietly turns convenience into a crop yield."
+  },
+  {
+   "id": "g12-w30",
+   "grade": 12,
+   "week": 30,
+   "tag": "🪺 eggs",
+   "title": "The Case of the Hens That Came Already Proven",
+   "story": "The six brown hens have laid two thousand one hundred eggs between them and the six white hens nine hundred, and the school is about to buy only browns. Four reasons have been offered and each is a real difference between the two groups. The browns are a commercial laying strain bred for output over sixty years. They are heavier birds and eat about fifteen percent more feed. They came with a vaccination record and the whites did not. And they were six months older on arrival, so they began laying four months sooner. Those four are worth a genuine advantage of perhaps a quarter. The browns were bought from a commercial unit that sells its birds on at seventy-two weeks. That unit culls any bird falling below five eggs a week at the forty-week check. The whites came from a hatchery as day-old chicks, with no selection of any kind applied to them. Every brown hen in the run is a bird that had already proved itself before the school saw it. The three whites that lay best in the run average five point two eggs a week, which is the number the commercial unit uses as its cut.",
+   "question": "Are brown hens really better layers?",
+   "suspects": [
+    {
+     "who": "✂️ The culling before the sale",
+     "why": "the unit culls any bird falling below five eggs a week at the forty-week check"
+    },
+    {
+     "who": "🧬 The laying strain",
+     "why": "the browns are a commercial laying strain bred for output over sixty years"
+    },
+    {
+     "who": "🌾 Eating more",
+     "why": "they are heavier birds and eat about fifteen percent more feed"
+    },
+    {
+     "who": "💉 The vaccination record",
+     "why": "they came with a vaccination record and the whites did not"
+    },
+    {
+     "who": "📆 Being older",
+     "why": "they were six months older on arrival, so they began laying four months sooner"
+    }
+   ],
+   "answer": "Every brown hen had already passed a laying test before the school bought her.",
+   "proof": [
+    "“The whites came from a hatchery as day-old chicks, with no selection of any kind applied to them.”",
+    "“Every brown hen in the run is a bird that had already proved itself before the school saw it.”",
+    "“The three whites that lay best in the run average five point two eggs a week, which is the number the commercial unit uses as its cut.”"
+   ],
+   "clears": [
+    "The strain: “bred for output over sixty years.”",
+    "Eating more: “about fifteen percent more feed.”",
+    "The vaccinations: “they came with a vaccination record and the whites did not.”",
+    "Being older: “they began laying four months sooner.”"
+   ],
+   "explain": "The browns really are the better strain, by about a quarter. The rest of the gap was manufactured by a cull the school never saw, which removed every poor brown layer before the comparison began. The best three whites meet the commercial standard, and in a brown flock they would be the survivors too."
+  },
+  {
+   "id": "g12-w31",
+   "grade": 12,
+   "week": 31,
+   "tag": "🌎 earth",
+   "title": "The Case of the School Where Everybody Walked",
+   "story": "The eco club's survey reports ninety-one percent of pupils walking or cycling to school, and the travel plan has been signed off on that basis. Four reasons have been offered and each is real. The catchment is compact, with three quarters of pupils living inside a mile. There is a safe crossing on the main road and a marked cycle lane the length of the hill. The school has run a walking bus for eleven years. And parking at the gate was removed in September, which does change behaviour. Those four would give a high figure and they would not give ninety-one percent. The survey was handed out at the eco club's Thursday meeting and to the club's contacts in form time. It gathered a hundred and forty responses from a roll of eight hundred and ten. The club meets to campaign about transport, and joining it is a choice pupils make. A gate count run by the office for five mornings in November, which counts everybody arriving by any means, found three hundred and nine arrivals by car. Three hundred and nine of eight hundred and ten is thirty-eight percent. A survey of people who care about walking will find that people care about walking.",
+   "question": "Do ninety-one percent really walk?",
+   "suspects": [
+    {
+     "who": "🙋 Who filled the survey in",
+     "why": "the survey was handed out at the eco club's Thursday meeting, and joining the club is a choice pupils make"
+    },
+    {
+     "who": "🗺️ The compact catchment",
+     "why": "three quarters of pupils live inside a mile"
+    },
+    {
+     "who": "🚸 The crossing and cycle lane",
+     "why": "there is a safe crossing on the main road and a marked cycle lane the length of the hill"
+    },
+    {
+     "who": "🚶 The walking bus",
+     "why": "the school has run a walking bus for eleven years"
+    },
+    {
+     "who": "🅿️ The parking removed",
+     "why": "parking at the gate was removed in September, which does change behaviour"
+    }
+   ],
+   "answer": "The survey was given to the people most likely to walk.",
+   "proof": [
+    "“It gathered a hundred and forty responses from a roll of eight hundred and ten.”",
+    "“A gate count run by the office for five mornings in November, which counts everybody arriving by any means, found three hundred and nine arrivals by car.”",
+    "“Three hundred and nine of eight hundred and ten is thirty-eight percent.”"
+   ],
+   "clears": [
+    "The catchment: “three quarters of pupils living inside a mile.”",
+    "The crossing: “a marked cycle lane the length of the hill.”",
+    "The walking bus: “for eleven years.”",
+    "The parking: “which does change behaviour.”"
+   ],
+   "explain": "Nobody lied on a form. A hundred and forty people who chose to join a transport campaign really do walk, at ninety-one percent. The other six hundred and seventy were never asked, and a gate count that cannot be opted out of puts more than a third of them in a car."
+  },
+  {
+   "id": "g12-w32",
+   "grade": 12,
+   "week": 32,
+   "tag": "📷 camera",
+   "title": "The Case of the Camera That Was Brilliant in the Dark",
+   "story": "The club's portfolio holds forty low-light photographs, every one of them sharp, and the camera is being recommended for the trip on that evidence. Four reasons have been offered and each is a genuine strength of the body. Its sensor is physically large, which gathers more light per pixel. Its lens opens to one point four. Its stabiliser is rated at four stops. And its processor applies a noise reduction that the reviews praise. Those four make it a good low-light camera and nobody is disputing that. The portfolio is assembled each term from whatever members choose to submit. The card from the November evening shoot was still in the bag and held nine hundred and six frames. Two hundred and forty of them are low-light and fourteen were submitted. A count of the two hundred and forty found a hundred and ninety-one too blurred to use and thirty-five visibly noisy. The camera's hit rate in low light is about six percent, and the portfolio's hit rate is a hundred. Nobody deleted anything dishonestly, and the weak frames simply were not worth submitting to a portfolio. A folder of successes cannot tell you anything about a rate unless somebody kept the failures.",
+   "question": "Is the camera really that good in the dark?",
+   "suspects": [
+    {
+     "who": "🗂️ A portfolio made only of successes",
+     "why": "the portfolio is assembled each term from whatever members choose to submit"
+    },
+    {
+     "who": "🔲 The large sensor",
+     "why": "its sensor is physically large, which gathers more light per pixel"
+    },
+    {
+     "who": "🔆 The fast lens",
+     "why": "its lens opens to one point four"
+    },
+    {
+     "who": "🤚 The stabiliser",
+     "why": "its stabiliser is rated at four stops"
+    },
+    {
+     "who": "🧮 The noise reduction",
+     "why": "its processor applies a noise reduction that the reviews praise"
+    }
+   ],
+   "answer": "The portfolio contains only the frames that came out.",
+   "proof": [
+    "“Two hundred and forty of them are low-light and fourteen were submitted.”",
+    "“A count of the two hundred and forty found a hundred and ninety-one too blurred to use and thirty-five visibly noisy.”",
+    "“The camera's hit rate in low light is about six percent, and the portfolio's hit rate is a hundred.”"
+   ],
+   "clears": [
+    "The sensor: “gathers more light per pixel.”",
+    "The lens: “its lens opens to one point four.”",
+    "The stabiliser: “rated at four stops.”",
+    "The noise reduction: “that the reviews praise.”"
+   ],
+   "explain": "Forty perfect photographs are forty pieces of evidence that the camera can do it, and none at all about how often. The card that nobody emptied is the control nobody meant to keep. Six percent is still a usable camera, as long as the trip is planned for two hundred frames rather than fourteen."
+  },
+  {
+   "id": "g12-w33",
+   "grade": 12,
+   "week": 33,
+   "tag": "🌱 plant",
+   "title": "The Case of the Compost That Grew Giants",
+   "story": "The compost trial reports tray C averaging thirty-one centimetres against tray A's nineteen, and the school is switching to the brand in tray C. Four advantages have been offered and each is real. Tray C's compost tests higher in nitrogen by a fifth. It holds water better on the laboratory's own measure. Its texture is finer, which suits a small seed. And it is pasteurised, so it carries fewer fungal spores. Those four would give a genuine advantage of perhaps a quarter. The method sheet says to thin each tray to the strongest twelve seedlings at two weeks. Tray C was thinned on the fourteenth day as written. Trays A, B and D were not thinned, because the pupil responsible was away and nobody picked it up. Thinning also leaves the plants that remain with more root room and more light. Tray C's average is the average of twelve chosen plants and tray A's is the average of all forty-one that came up. The twelve tallest plants in tray A average twenty-nine centimetres. Thinning a tray does not make plants grow. It changes which plants are in the number at the end.",
+   "question": "Is tray C's compost really better?",
+   "suspects": [
+    {
+     "who": "✂️ Only tray C being thinned",
+     "why": "tray C was thinned to the strongest twelve on the fourteenth day and the others were not thinned at all"
+    },
+    {
+     "who": "🧪 More nitrogen",
+     "why": "tray C's compost tests higher in nitrogen by a fifth"
+    },
+    {
+     "who": "💧 Holding water",
+     "why": "it holds water better on the laboratory's own measure"
+    },
+    {
+     "who": "🫧 The finer texture",
+     "why": "its texture is finer, which suits a small seed"
+    },
+    {
+     "who": "🔥 Being pasteurised",
+     "why": "it is pasteurised, so it carries fewer fungal spores"
+    }
+   ],
+   "answer": "Tray C's average is of twelve chosen plants and the others are of everything.",
+   "proof": [
+    "“Tray C's average is the average of twelve chosen plants and tray A's is the average of all forty-one that came up.”",
+    "“The twelve tallest plants in tray A average twenty-nine centimetres.”",
+    "“Thinning a tray does not make plants grow.”"
+   ],
+   "clears": [
+    "The nitrogen: “higher in nitrogen by a fifth.”",
+    "Water: “holds water better on the laboratory's own measure.”",
+    "The texture: “which suits a small seed.”",
+    "Pasteurising: “it carries fewer fungal spores.”"
+   ],
+   "explain": "Tray C's compost is better, by about two centimetres, which is what the matched comparison gives. The other ten came from a step in the method that was carried out in one tray and missed in three. An average over a group that has had its weakest members removed is not comparable to an average over a group that has not."
+  },
+  {
+   "id": "g12-w34",
+   "grade": 12,
+   "week": 34,
+   "tag": "🍦 icecream",
+   "title": "The Case of the Flavour That Was Always Vanilla",
+   "story": "Three years of till data put vanilla at sixty-one percent of ice cream sales, and the kitchen is cutting the other flavours. Four reasons have been offered and each is fair. Vanilla goes with the puddings the kitchen serves, which the others do not. It is the flavour least likely to be refused by anybody. It is priced ten pence lower because it is bought in larger tubs. And it is the flavour most often chosen by the youngest pupils, who are the largest group of buyers. Those four would give vanilla a lead and would not give it sixty-one percent. The freezer in the servery holds two tubs. One is permanently vanilla by standing instruction, because it is the safe choice. The second rotates through chocolate, strawberry, mint and toffee, one at a time. A flavour that is not in the freezer cannot be chosen by anybody, however much they want it. A stock audit shows vanilla available on every one of the five hundred and seventy serving days. Each of the other four flavours was available on between a hundred and ten and a hundred and thirty days. Measured per day available, vanilla sells eighty-one portions and toffee sells ninety-four.",
+   "question": "Is vanilla really the most popular flavour?",
+   "suspects": [
+    {
+     "who": "🧊 The standing instruction on the freezer",
+     "why": "one tub is permanently vanilla by standing instruction and the second rotates through four flavours one at a time"
+    },
+    {
+     "who": "🍮 Going with the puddings",
+     "why": "vanilla goes with the puddings the kitchen serves, which the others do not"
+    },
+    {
+     "who": "🙂 Being nobody's least favourite",
+     "why": "it is the flavour least likely to be refused by anybody"
+    },
+    {
+     "who": "💷 The lower price",
+     "why": "it is priced ten pence lower because it is bought in larger tubs"
+    },
+    {
+     "who": "🧒 The youngest buyers",
+     "why": "it is the flavour most often chosen by the youngest pupils, who are the largest group of buyers"
+    }
+   ],
+   "answer": "Vanilla is on sale every day and the others about one day in five.",
+   "proof": [
+    "“A stock audit shows vanilla available on every one of the five hundred and seventy serving days.”",
+    "“Each of the other four flavours was available on between a hundred and ten and a hundred and thirty days.”",
+    "“Measured per day available, vanilla sells eighty-one portions and toffee sells ninety-four.”"
+   ],
+   "clears": [
+    "The puddings: “which the others do not.”",
+    "Not being refused: “least likely to be refused by anybody.”",
+    "The price: “priced ten pence lower because it is bought in larger tubs.”",
+    "The young buyers: “the largest group of buyers.”"
+   ],
+   "explain": "Sixty-one percent of sales is exactly what vanilla took, and five times the opportunity is why. Once the days available go into the denominator, vanilla is not even first. Cutting the other flavours would remove the best seller in the freezer on the strength of a rota."
+  },
+  {
+   "id": "g12-w35",
+   "grade": 12,
+   "week": 35,
+   "tag": "🎗️ ribbon",
+   "title": "The Case of the Year Group That Gave Most",
+   "story": "The appeal's figures show Year Eleven giving four hundred and ten pounds and no other year reaching ninety, and Year Eleven is to be held up as an example in assembly. Four reasons have been offered and each is plausible. Year Eleven has the oldest pupils, who are likelier to carry money. It ran a cake stall alongside the ribbons. Two of its tutors have a long connection with the charity. And leavers' years do give more to school appeals, which the office has noticed before. Those four would lift one year group and would not multiply it by five. Ribbons were offered to Year Eleven in form time, at the desk, by a tutor, with a tin passed along the row. Every other year group was told in assembly that ribbons could be collected from the office at break. A trial this year took the tin into four Year Eight forms in exactly the Year Eleven way. Those four forms gave a hundred and sixty-eight pounds in a week, from a year group that gave sixty-one pounds in the whole of last year's appeal. Asking somebody directly and asking them to walk to an office are not the same question.",
+   "question": "Is Year Eleven really the most generous?",
+   "suspects": [
+    {
+     "who": "🙋 How each year group was asked",
+     "why": "Year Eleven was asked in form time with a tin passed along the row and everyone else was told to collect ribbons from the office"
+    },
+    {
+     "who": "💷 Older pupils",
+     "why": "Year Eleven has the oldest pupils, who are likelier to carry money"
+    },
+    {
+     "who": "🧁 The cake stall",
+     "why": "it ran a cake stall alongside the ribbons"
+    },
+    {
+     "who": "🤝 The tutors' connection",
+     "why": "two of its tutors have a long connection with the charity"
+    },
+    {
+     "who": "🎓 Being the leavers",
+     "why": "leavers' years do give more to school appeals, which the office has noticed before"
+    }
+   ],
+   "answer": "Year Eleven is the only year group that was actually asked.",
+   "proof": [
+    "“A trial this year took the tin into four Year Eight forms in exactly the Year Eleven way.”",
+    "“Those four forms gave a hundred and sixty-eight pounds in a week, from a year group that gave sixty-one pounds in the whole of last year's appeal.”",
+    "“Asking somebody directly and asking them to walk to an office are not the same question.”"
+   ],
+   "clears": [
+    "Older pupils: “likelier to carry money.”",
+    "The cake stall: “it ran a cake stall alongside the ribbons.”",
+    "The tutors: “a long connection with the charity.”",
+    "The leavers: “which the office has noticed before.”"
+   ],
+   "explain": "Four real reasons to expect Year Eleven to lead, and a gap of five to one that none of them reaches. The difference is in the asking. Four Year Eight forms, given the same tin in the same room, beat their own year's entire previous appeal in a week, and nothing about those pupils had changed."
+  },
+  {
+   "id": "g12-w36",
+   "grade": 12,
+   "week": 36,
+   "tag": "🎈 balloons",
+   "title": "The Case of the Balloons That All Landed in Towns",
+   "story": "Two hundred balloons were released with reply cards and sixty-three came back. Fifty-eight of the sixty-three were found in towns and villages, and the report concludes that the prevailing wind carries balloons towards settlements. Four reasons have been offered and each sounds sensible. Towns sit in valleys, and the valley wind does funnel along them. Buildings and street trees catch a descending balloon where open ground lets it skip. The town lies downwind of the launch field on most days. And warm air rising over a town is known to affect how a light object descends. Those four might tilt a distribution a little. A card can only come back if a person finds the balloon, reads the card, and posts it. Towns hold most of the people, so towns are where found balloons are found. The moorland downwind of the launch field holds four houses in eleven kilometres. The club walked a measured transect across eleven kilometres of moorland downwind three days after the launch. It recovered twenty-nine balloons, none of which had been reported by anybody. A hundred and thirty-seven balloons were never heard of again, and the moor is the only place anyone has looked for them.",
+   "question": "Do balloons really land in towns?",
+   "suspects": [
+    {
+     "who": "📬 Only found balloons send a card",
+     "why": "a card can only come back if a person finds the balloon, reads the card, and posts it"
+    },
+    {
+     "who": "🏞️ The valley wind",
+     "why": "towns sit in valleys, and the valley wind does funnel along them"
+    },
+    {
+     "who": "🌳 Buildings and street trees",
+     "why": "buildings and street trees catch a descending balloon where open ground lets it skip"
+    },
+    {
+     "who": "🧭 The town being downwind",
+     "why": "the town lies downwind of the launch field on most days"
+    },
+    {
+     "who": "♨️ Warm air over a town",
+     "why": "warm air rising over a town is known to affect how a light object descends"
+    }
+   ],
+   "answer": "A balloon that lands where nobody lives never sends a card back.",
+   "proof": [
+    "“Towns hold most of the people, so towns are where found balloons are found.”",
+    "“It recovered twenty-nine balloons, none of which had been reported by anybody.”",
+    "“A hundred and thirty-seven balloons were never heard of again, and the moor is the only place anyone has looked for them.”"
+   ],
+   "clears": [
+    "The valley wind: “the valley wind does funnel along them.”",
+    "Buildings: “catch a descending balloon where open ground lets it skip.”",
+    "Being downwind: “the town lies downwind of the launch field on most days.”",
+    "Warm air: “known to affect how a light object descends.”"
+   ],
+   "explain": "Sixty-three cards and every one of them true. The conclusion is still backwards, because the data was collected by the very thing it claims to measure: a balloon reports its landing place only if it lands near somebody. One walk across the moor turned up twenty-nine balloons that the study would have counted as never having come down."
   }
  ]
 }
