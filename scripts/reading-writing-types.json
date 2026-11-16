@@ -1,0 +1,349 @@
+{
+ "_note": "The kinds of writing the lesson builder offers, and what each one asks for at every grade from kindergarten to twelfth. Six types, thirteen grades, five frame steps each. The frame steps change by band because a frame is scaffolding: a second grader needs 'One reason is ______', an eleventh grader needs a counterclaim. {T} is the passage title and {Q} the passage question; both are filled in by the page. Checked by scripts/check-writing-types.mjs.",
+ "bands": {
+  "k2": [
+   "K",
+   "1",
+   "2"
+  ],
+  "g35": [
+   "3",
+   "4",
+   "5"
+  ],
+  "g68": [
+   "6",
+   "7",
+   "8"
+  ],
+  "g912": [
+   "9",
+   "10",
+   "11",
+   "12"
+  ]
+ },
+ "grades": [
+  "K",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11",
+  "12"
+ ],
+ "types": [
+  {
+   "key": "opinion",
+   "label": "Opinion",
+   "short": "Opinion",
+   "blurb": "Take a side and prove it from the text.",
+   "frame": {
+    "k2": [
+     "📣 My Answer: I think ______.",
+     "🧱 My Reason: One reason is ______.",
+     "🔎 My Proof: The text says, “______.”",
+     "🔗 Explain It: This shows ______.",
+     "🎤 Wrap It Up: That is why ______."
+    ],
+    "g35": [
+     "📣 My Claim: I think ______.",
+     "🧱 My Reasons: First ______. Also ______.",
+     "🔎 My Proof: The text says, “______.”",
+     "🔗 Explain It: This shows ______.",
+     "🎤 Wrap It Up: That is why ______."
+    ],
+    "g68": [
+     "📣 My Claim: ______.",
+     "🧱 Reasons, strongest first: ______.",
+     "🔎 Evidence: The text says, “______.”",
+     "⚖️ Someone might say: ______. But ______.",
+     "🎤 Conclusion: ______."
+    ],
+    "g912": [
+     "📣 Claim, precise and arguable: ______.",
+     "🧱 Line of reasoning: ______.",
+     "🔎 Evidence, quoted and cited: “______.”",
+     "⚖️ Counterclaim and rebuttal: ______.",
+     "🎤 Conclusion that follows from the argument: ______."
+    ]
+   },
+   "tasks": {
+    "K": "{Q} Draw your answer, then say it out loud: I think ______ because ______.",
+    "1": "{Q} Write what you think and one reason from {T}.",
+    "2": "{Q} Tell what you think, give two reasons, and write an ending.",
+    "3": "{Q} Give your opinion with reasons, and link them with because, also and for example.",
+    "4": "{Q} Group your reasons, support each one with facts from {T}, and end with a conclusion.",
+    "5": "{Q} Order your reasons from strongest to weakest and support each with evidence from {T}.",
+    "6": "{Q} State a claim about {T}, support it with clear reasons and relevant evidence, and use transitions.",
+    "7": "{Q} Make a claim, support it with evidence from {T}, and acknowledge one opposing claim.",
+    "8": "{Q} Distinguish your claim from an opposing claim, and answer the opposing claim with evidence.",
+    "9": "{Q} Develop a claim and a counterclaim fairly, supplying evidence for both from {T}.",
+    "10": "{Q} Argue a claim about {T}, anticipate the strongest objection, and answer it.",
+    "11": "{Q} Establish the significance of your claim, develop it with the most telling evidence in {T}, and answer the strongest counterclaim.",
+    "12": "{Q} Build a sustained argument from {T}, weigh the limits of your own evidence, and answer the strongest counterclaim."
+   }
+  },
+  {
+   "key": "informative",
+   "label": "Informative",
+   "short": "Info",
+   "blurb": "Explain what the text says, in order.",
+   "frame": {
+    "k2": [
+     "📘 My Topic: This is about ______.",
+     "1️⃣ Fact One: ______.",
+     "2️⃣ Fact Two: ______.",
+     "🔎 From the Text: It says, “______.”",
+     "🎤 Wrap It Up: Now you know ______."
+    ],
+    "g35": [
+     "📘 My Topic: This is about ______.",
+     "🧱 Point One: ______.",
+     "🧱 Point Two: ______.",
+     "🔎 From the Text: It says, “______.”",
+     "🎤 Wrap It Up: So ______."
+    ],
+    "g68": [
+     "📘 Topic and why it matters: ______.",
+     "🧱 Section one: ______.",
+     "🧱 Section two: ______.",
+     "🔎 Evidence and definitions: “______.”",
+     "🎤 Conclusion: ______."
+    ],
+    "g912": [
+     "📘 Thesis: ______.",
+     "🧱 How the ideas are organised: ______.",
+     "🔎 Evidence, quoted and cited: “______.”",
+     "🔗 Analysis: this matters because ______.",
+     "🎤 Conclusion that follows from the explanation: ______."
+    ]
+   },
+   "tasks": {
+    "K": "Draw one thing you learned from {T}, then tell a partner two facts about it.",
+    "1": "Write two facts about {T}. Start by naming what it is about.",
+    "2": "Write three facts about {T}. Start with a sentence that tells your topic and finish with an ending.",
+    "3": "Explain what happens in {T}. Group the related information together and use words from the text.",
+    "4": "Write a report on {T}. Organise it into sections, develop each with facts and examples, and connect your ideas.",
+    "5": "Explain {T} in logically grouped sections, using precise words from the text and a concluding statement.",
+    "6": "Explain {T} using definition and classification, with relevant facts and a formal tone.",
+    "7": "Explain {T}, choosing the facts that matter most and linking your sections with transitions.",
+    "8": "Explain {T} with well-chosen, relevant facts, and keep the explanation in a consistent formal style.",
+    "9": "Explain the complex idea in {T}, organising it so each part builds on the one before.",
+    "10": "Explain {T}, using precise language and varied transitions to make the relationships between ideas clear.",
+    "11": "Synthesise what {T} explains, anticipating what a reader is likely to misunderstand.",
+    "12": "Synthesise {T} into an explanation that establishes the significance of the idea and its limits."
+   }
+  },
+  {
+   "key": "narrative",
+   "label": "Narrative",
+   "short": "Story",
+   "blurb": "Tell the story, in order, in your own words.",
+   "frame": {
+    "k2": [
+     "🎬 Who and Where: ______.",
+     "1️⃣ First: ______.",
+     "2️⃣ Next: ______.",
+     "3️⃣ Last: ______.",
+     "💛 How they felt: ______."
+    ],
+    "g35": [
+     "🎬 The Setup: ______.",
+     "1️⃣ First: ______.",
+     "2️⃣ Then: ______.",
+     "🗣️ Somebody says: “______.”",
+     "💛 The Ending: ______."
+    ],
+    "g68": [
+     "🎬 Situation and narrator: ______.",
+     "🧱 Sequence of events: ______.",
+     "🗣️ Dialogue that does work: “______.”",
+     "🌀 Pacing: where it slows down: ______.",
+     "💛 Resolution: ______."
+    ],
+    "g912": [
+     "🎬 Point of view and why it is this one: ______.",
+     "🧱 Structure of events: ______.",
+     "🗣️ Dialogue and description: “______.”",
+     "🌀 Pacing and tension: ______.",
+     "💛 Resolution that reflects on what happened: ______."
+    ]
+   },
+   "tasks": {
+    "K": "Draw what happened first, next and last in {T}. Then tell it to a partner.",
+    "1": "Retell two things that happened in {T}, in the order they happened.",
+    "2": "Retell {T} in order. Use first, next and last, and end by telling how somebody felt.",
+    "3": "Retell {T} from somebody else in the story. Use time-order words and include something a person says.",
+    "4": "Retell {T} from somebody else in the story. Set up the situation, give a clear sequence, and use dialogue and sensory details.",
+    "5": "Retell {T} from another point of view, pacing the events and ending with how the narrator sees it now.",
+    "6": "Write {T} as a narrative with a clear point of view, dialogue, and a sequence that unfolds naturally.",
+    "7": "Write {T} as a narrative, using relevant descriptive details and transitions that signal shifts in time.",
+    "8": "Write {T} as a narrative with more than one line of events, and dialogue that reveals character.",
+    "9": "Write {T} as a narrative from a chosen point of view, using pacing and description to build tension.",
+    "10": "Write {T} as a narrative whose structure creates a particular effect on the reader, and say what that effect is.",
+    "11": "Write {T} as a narrative that uses point of view deliberately, and reflect on what the telling reveals.",
+    "12": "Write {T} as a narrative with a controlled structure, and end by reflecting on what the events mean."
+   }
+  },
+  {
+   "key": "descriptive",
+   "label": "Descriptive",
+   "short": "Describe",
+   "blurb": "Make a reader see it, using the text's own details.",
+   "frame": {
+    "k2": [
+     "👀 What I see: ______.",
+     "👂 What I hear: ______.",
+     "✋ What it feels like: ______.",
+     "🔎 From the Text: It says, “______.”",
+     "🎤 Wrap It Up: It is like ______."
+    ],
+    "g35": [
+     "👀 Looks like: ______.",
+     "👂 Sounds like: ______.",
+     "✋ Feels like: ______.",
+     "🔎 From the Text: “______.”",
+     "🎤 Wrap It Up: Altogether it is ______."
+    ],
+    "g68": [
+     "📐 Overall impression: ______.",
+     "👀 Details that build it: ______.",
+     "🔎 Exact words from the text: “______.”",
+     "🧠 Comparison: it is like ______ because ______.",
+     "🎤 Close: ______."
+    ],
+    "g912": [
+     "📐 Dominant impression: ______.",
+     "👀 Selected details and their order: ______.",
+     "🔎 Evidence, quoted: “______.”",
+     "🧠 Figurative language and what it does: ______.",
+     "🎤 Close that returns to the impression: ______."
+    ]
+   },
+   "tasks": {
+    "K": "Draw one thing from {T}. Then tell a partner what it looks like and what it sounds like.",
+    "1": "Write two sentences describing something in {T}. Use a word for what you see and one for what you hear.",
+    "2": "Describe something from {T} using what you would see, hear and feel.",
+    "3": "Describe a place or thing in {T} so a reader can picture it, using details from the text.",
+    "4": "Describe something in {T} with precise nouns and verbs, and one comparison of your own.",
+    "5": "Describe something in {T} so every detail builds one overall impression.",
+    "6": "Describe something in {T}, choosing details in an order that builds a single impression.",
+    "7": "Describe something in {T} using sensory detail and one piece of figurative language, and say what it does.",
+    "8": "Describe something in {T} so that the description carries an attitude towards it without stating one.",
+    "9": "Describe something in {T}, controlling the order of details to create a dominant impression.",
+    "10": "Describe something in {T} so that the figurative language and the literal detail work together.",
+    "11": "Describe something in {T} so the description makes an implicit argument about it.",
+    "12": "Describe something in {T} with controlled diction and syntax, and account for the effect you chose."
+   }
+  },
+  {
+   "key": "compare",
+   "label": "Compare & Contrast",
+   "short": "Compare",
+   "blurb": "Two texts. What they agree on, and where they part.",
+   "frame": {
+    "k2": [
+     "📘 The two things: ______ and ______.",
+     "🤝 Same: Both ______.",
+     "↔️ Different: Only ______.",
+     "🔎 From the Text: It says, “______.”",
+     "🎤 Wrap It Up: So ______."
+    ],
+    "g35": [
+     "📘 What I am comparing: ______ and ______.",
+     "🤝 Alike: Both ______.",
+     "↔️ Different: One ______, the other ______.",
+     "🔎 From the Texts: “______” and “______.”",
+     "🎤 Wrap It Up: The bigger difference is ______."
+    ],
+    "g68": [
+     "📘 The two accounts: ______.",
+     "🤝 Where they agree: ______.",
+     "↔️ Where they differ, and on what: ______.",
+     "🔎 Evidence from each: “______” / “______.”",
+     "🎤 What the difference is caused by: ______."
+    ],
+    "g912": [
+     "📘 The two texts and their purposes: ______.",
+     "🤝 Shared ground: ______.",
+     "↔️ The real point of disagreement: ______.",
+     "🔎 Evidence from each, quoted: “______” / “______.”",
+     "🎤 Which is better supported, and why: ______."
+    ]
+   },
+   "tasks": {
+    "K": "Look at both texts. Draw one thing that is the same and one thing that is different.",
+    "1": "Write one way the two texts are the same and one way they are different.",
+    "2": "Write two ways the two texts are alike and two ways they are different.",
+    "3": "Compare the two texts. Say what both tell you and what only one of them tells you.",
+    "4": "Compare the two texts on the same points, using details from each one.",
+    "5": "Compare the two texts point by point, and say which gives you more.",
+    "6": "Compare how the two texts present the same topic, and say where they disagree.",
+    "7": "Compare the two texts and explain what causes the difference between them.",
+    "8": "Compare the two texts, name the point they actually disagree on, and weigh the evidence for each.",
+    "9": "Compare the two texts' claims and evidence, and judge which is better supported.",
+    "10": "Compare the two texts, accounting for the purpose each was written for.",
+    "11": "Compare the two texts, analysing how each selects evidence and what each leaves out.",
+    "12": "Compare the two texts and build your own position out of the disagreement between them."
+   }
+  },
+  {
+   "key": "procedural",
+   "label": "Procedural",
+   "short": "How-to",
+   "blurb": "Write the steps so somebody else could do it.",
+   "frame": {
+    "k2": [
+     "🎯 What you are doing: ______.",
+     "🧺 What you need: ______.",
+     "1️⃣ First: ______.",
+     "2️⃣ Next: ______.",
+     "✅ Last: ______."
+    ],
+    "g35": [
+     "🎯 The job: ______.",
+     "🧺 What you need: ______.",
+     "🧱 The steps, in order: ______.",
+     "⚠️ Be careful here: ______.",
+     "✅ How you know it worked: ______."
+    ],
+    "g68": [
+     "🎯 Purpose and reader: ______.",
+     "🧺 Materials and conditions: ______.",
+     "🧱 Numbered steps, each one action: ______.",
+     "⚠️ Where it usually goes wrong: ______.",
+     "✅ How to check the result: ______."
+    ],
+    "g912": [
+     "🎯 Purpose, reader and scope: ______.",
+     "🧺 Materials, conditions and assumptions: ______.",
+     "🧱 Procedure, each step testable: ______.",
+     "⚠️ Failure points and what to do: ______.",
+     "✅ How the result is verified: ______."
+    ]
+   },
+   "tasks": {
+    "K": "Draw the steps for something in {T}, in order. Then tell them to a partner.",
+    "1": "Write two steps for doing something from {T}. Use first and next.",
+    "2": "Write the steps for something in {T}. Use first, next, then and last.",
+    "3": "Write how to do something from {T} so a classmate could follow it, with the things they need.",
+    "4": "Write how to do something from {T} in numbered steps, and say how to tell it worked.",
+    "5": "Write the procedure from {T} so somebody who has not read it could follow it.",
+    "6": "Write the procedure from {T} for a named reader, with materials and a check at the end.",
+    "7": "Write the procedure from {T}, naming the step where it usually goes wrong and what to do about it.",
+    "8": "Write the procedure from {T} so each step is one action and can be checked.",
+    "9": "Write the procedure from {T}, stating its scope and the conditions it assumes.",
+    "10": "Write the procedure from {T} with failure points and how the result is verified.",
+    "11": "Write the procedure from {T} for a reader with different expertise than yours, and say what you adjusted.",
+    "12": "Write the procedure from {T}, and account for how you decided what could be left out."
+   }
+  }
+ ]
+}

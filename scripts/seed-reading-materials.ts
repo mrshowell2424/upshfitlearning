@@ -48,6 +48,7 @@ import ARTICLES from "./reading-articles.json" with { type: "json" };
 import ARTICLECOACH from "./reading-article-coach.json" with { type: "json" };
 import EXTRAW from "./reading-extra-words.json" with { type: "json" };
 import MSB from "./reading-multisyllabic.json" with { type: "json" };
+import WTYPES from "./reading-writing-types.json" with { type: "json" };
 import PREQ from "./reading-prerequisites.json" with { type: "json" };
 import WSX from "./reading-what-says.json" with { type: "json" };
 import LADD from "./reading-word-ladders.json" with { type: "json" };
@@ -3094,6 +3095,126 @@ const ADAPTATIONS: Adaptation[] = [
         "</sc-for></span></div>";
       out = out.split(head).join(row);
       return out;
+    },
+  },
+  {
+    // Six kinds of writing, and every grade from K to 12.
+    //
+    // The step offered Opinion, Info and Story, and the task behind each
+    // was written for three grades — 2nd, 3rd and 4th — because those are
+    // the three reading levels the passages come in. Those are two
+    // different things. A fifth grader reading a 3rd grade passage is
+    // still a fifth grader when they write about it, and a kindergarten
+    // class has no setting at all.
+    //
+    // So the writing grade is its own control now, K to 12, separate from
+    // which passage is on the page. The types are the three that were here
+    // plus Descriptive, Compare & Contrast and Procedural.
+    //
+    // The frame steps change by band rather than by grade, because a frame
+    // is scaffolding and scaffolding changes when the demand does: a 2nd
+    // grader needs "One reason is ______", a 7th grader needs somewhere to
+    // put the opposing claim, an 11th grader needs the counterclaim
+    // answered. Four bands, not thirteen near-identical sets.
+    //
+    // Picking Compare & Contrast pairs the second passage, the same one
+    // the multisyllabic switch pairs. Comparing needs two texts whether or
+    // not the words are long.
+    name: "give the writing six types and every grade",
+    apply: (html) => {
+      const types =
+        "const WR_TYPES = ['Opinion', 'Informative', 'Narrative'];\n" +
+        "    const WR_SHORT = { Opinion: 'Opinion', Informative: 'Info', Narrative: 'Story' };";
+      if (!html.includes(types)) return html;
+      const block =
+        "const WT = " + JSON.stringify(WTYPES) + ";\n" +
+        "    const WR_TYPES = WT.types.map((t) => t.label);\n" +
+        "    const WR_SHORT = Object.fromEntries(WT.types.map((t) => [t.label, t.short]));\n" +
+        "    const wrType = (lbl) => WT.types.find((t) => t.label === lbl) || WT.types[0];\n" +
+        "    // The passage's own reading level is the sensible first guess at\n" +
+        "    // the writing grade, and only that: the teacher moves it.\n" +
+        "    const wrGrade = (this.state && this.state.wrg) ||\n" +
+        "      ({ g2: '2', g3: '3', g4: '4' })[pgGrade] || '3';\n" +
+        "    const wrBand = Object.keys(WT.bands)\n" +
+        "      .find((b) => WT.bands[b].indexOf(wrGrade) > -1) || 'g35';";
+      let out = html.replace(types, block);
+
+      // the task, from the chosen type and grade
+      // The hand-written task short-circuits the whole chooser, which was
+      // right when there were three grades and they were the passage's. It
+      // has to answer to the writing grade now.
+      const short =
+        "      if (PGX.write && PGX.write.type === wrPick) return PGX.write.task;";
+      if (!out.includes(short)) return html;
+      out = out.replace(
+        short,
+        "      if (PGX.write && PGX.write.type === wrPick &&\n" +
+          "        wrGrade === ({ g2: '2', g3: '3', g4: '4' })[pgGrade]) return PGX.write.task;"
+      );
+
+      const task =
+        "      return (F[wrPick] || {})[pgGrade] || '';\n" +
+        "    })();";
+      if (!out.includes(task)) return html;
+      out = out.replace(
+        task,
+        "      const picked = wrType(wrPick);\n" +
+          "      // The hand-written task wins where it is the same type at the\n" +
+          "      // same grade; it was written for this passage and the general\n" +
+          "      // one was not.\n" +
+          "      const gen = (picked.tasks[wrGrade] || '')\n" +
+          "        .split('{T}').join(t).split('{Q}').join(q);\n" +
+          "      return gen || (F[wrPick] || {})[pgGrade] || '';\n" +
+          "    })();\n" +
+          "    // The frame follows the type, not the passage.\n" +
+          "    const wrFrames = (wrType(wrPick).frame[wrBand] || []).slice();"
+      );
+
+      // the frame, on the lesson card and in the workbook
+      const stepFrames =
+        "ebFrames.map((t) => t.replace('For example, ______.', 'The text says, \"______.\"')), true)";
+      if (!out.includes(stepFrames)) return html;
+      out = out.replace(stepFrames, "wrFrames.slice(), true)");
+      const propFrames =
+        "ebFrames: ebFrames.map((t) => ({ t: t.replace('For example, ______.', " +
+        "'The text says, \"______.\"') })),";
+      if (!out.includes(propFrames)) return html;
+      out = out.replace(propFrames, "ebFrames: wrFrames.map((t) => ({ t })),");
+
+      // six buttons, not three, and a grade beside them
+      const forTypes = '<sc-for list="{{ wrOpts }}" as="w" hint-placeholder-count="3">';
+      if (!out.includes(forTypes)) return html;
+      out = out.replace(
+        forTypes,
+        '<select value="{{ wrGrade }}" onChange="{{ wrGradePick }}" aria-label="Writing grade" ' +
+          "style=\"font-family:'Poppins',sans-serif;font-size:11.5px;font-weight:700;padding:2px 4px;" +
+          'border:1.5px solid #4B6049;border-radius:7px;background:#fff;color:#4B6049">' +
+          '<sc-for list="{{ wrGradeOpts }}" as="g" hint-placeholder-count="13">' +
+          '<option value="{{ g.id }}">{{ g.label }}</option></sc-for></select>' +
+          '<sc-for list="{{ wrOpts }}" as="w" hint-placeholder-count="6">'
+      );
+
+      const data = "\n      wrTask, wrPick,";
+      if (!out.includes(data)) return html;
+      out = out.replace(
+        data,
+        data +
+          "\n      wrGrade,\n" +
+          "      wrGradeOpts: WT.grades.map((g) => ({ id: g,\n" +
+          "        label: g === 'K' ? 'K' : g + (({ 1: 'st', 2: 'nd', 3: 'rd' })[g] || 'th') })),\n" +
+          "      wrGradePick: (e) => this.setState({ wrg: e.target.value }),"
+      );
+
+      // comparing needs two texts, switch or no switch
+      const gate = "const PGY = (!!(this.state && this.state.multi) && PGX && pgPair)";
+      if (!out.includes(gate)) return html;
+      return out.replace(
+        gate,
+        "const PGY = ((!!(this.state && this.state.multi) || " +
+          // Read off state rather than wrPick: the pairing is declared
+          // beside PGX, which is above where wrPick is worked out.
+          "(this.state && this.state.wr) === 'Compare & Contrast') && PGX && pgPair)"
+      );
     },
   },
   {
