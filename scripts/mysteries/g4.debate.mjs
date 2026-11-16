@@ -265,6 +265,11 @@ export const DEBATES = {
     story:
       "Room 12 baked two dozen cupcakes for the class party. Every one came out flat and dense. The baking powder tin at the back of the cupboard expired in 2021. A test spoonful of it in water did not fizz. Ava measured the flour by scooping the cup straight into the bag. Scooping packs in about half as much flour again as the recipe wants. The oven door was opened three times in the first ten minutes. A cake that is jolted early can fall before it sets.",
     q: "Why were the cupcakes flat? Choose one cause and back it up.",
+    who: [
+      "",
+      "🥣 Flour scooped from the bag",
+      "🚪 The oven door",
+    ],
     why: [
       "a tin that expired in 2021 and would not fizz",
       "flour scooped from the bag, packing in half as much again",
@@ -284,6 +289,11 @@ export const DEBATES = {
     story:
       "Priya's wool mittens went on easily in November and will not go on in January. The mittens were soaked at recess and dried on the radiator. The care tag says to lay them flat and keep them away from heat. Wool fibers lock together and tighten when they are heated wet. The mittens are now a third smaller than they were. Priya has moved up two shoe sizes since September. Her gloves from the same drawer are a stretchy knit that gives with any hand. The mittens were a hand-me-down and had already been washed many times.",
     q: "Why will the mittens not go on? Argue for one cause.",
+    who: [
+      "",
+      "",
+      "👕 An old hand-me-down",
+    ],
     why: [
       "soaked at recess and dried on a radiator the tag warns against",
       "two shoe sizes up since September, with stretchy gloves that still give",
@@ -303,6 +313,11 @@ export const DEBATES = {
     story:
       "The gingerbread house stood up on Monday and fell in on Wednesday. The class used royal icing on the walls and canned frosting on the roof. Royal icing dries hard like cement, and canned frosting stays soft. The roof pieces slid apart along the frosting seam. The room had been warm all week with the heat on. A second house, iced entirely with royal icing, has lost two candies from its roof. The roof slabs on the fallen house are the two biggest pieces in the kit. Nobody weighed anything before they built it.",
     q: "Why did the roof fall in? Pick one cause and prove it.",
+    who: [
+      "",
+      "🌡️ The warm room",
+      "🧱 The weight of the roof slabs",
+    ],
     why: [
       "canned frosting that stays soft, and a seam that slid apart",
       "a warm room all week, and a second house losing candies",
@@ -322,6 +337,11 @@ export const DEBATES = {
     story:
       "Half of the hallway light strand went dark on Monday morning. The other half is still lit. Mr. Cole pulled each bulb from the dark half and tested it. One bulb in the middle had a broken filament. The lights on this strand are wired in series, so one gap stops everything after it. The dark half starts exactly at that bulb. The strand joins a second strand at a plug halfway along, right by that bulb. The plug is loose enough to turn in its socket. The dark half is the half plugged into the second strand.",
     q: "Why did half the strand go dark? Make the case for one cause.",
+    who: [
+      "",
+      "",
+      "🔗 The series wiring",
+    ],
     why: [
       "a broken filament where the dark half begins",
       "a loose plug joining the two strands, right at that point",
@@ -398,6 +418,11 @@ export const DEBATES = {
     story:
       "The cocoa at the winter party was gritty at the bottom of every cup. The recipe says to stir the powder into a little hot milk first. Room 8 poured all the cold milk in at once and stirred twice. Cocoa powder does not dissolve in cold liquid. Room 9 followed the recipe and had grit in four of its twenty cups. The tin Room 8 used had been open on the shelf since last winter. Damp powder goes lumpy and the lumps do not break up. Nobody sieved the powder in either room.",
     q: "Why was the cocoa gritty? Choose one cause and back it from the text.",
+    who: [
+      "",
+      "",
+      "🥄 Nobody sieving",
+    ],
     why: [
       "cold milk poured in at once, and powder that will not dissolve cold",
       "a tin open since last winter, going lumpy with damp",
@@ -417,6 +442,11 @@ export const DEBATES = {
     story:
       "Twenty valentines went into the class mailbox and came out with torn corners. The mailbox is a cardboard box with a slot cut in the lid. The slot is three inches wide and most of the envelopes are four inches across. Jamal pushed his through and the corner caught on the cardboard. Ms. Reyes had taped the slot edges, but the tape had peeled back. The box was carried down two flights of stairs and dropped once. Each tear is at a corner, and every one of them points the same way. A gnawed hole the size of a thumb sits low on the back of the box.",
     q: "What tore the valentines? Pick one cause and prove it.",
+    who: [
+      "",
+      "📦 The box carried and dropped",
+      "",
+    ],
     why: [
       "a three-inch slot for four-inch envelopes, with the tape peeled back",
       "carried down two flights and dropped once",
@@ -436,6 +466,11 @@ export const DEBATES = {
     story:
       "The science fair volcano fizzed at home and did nothing on stage. The vinegar bottle on stage had been open since the last fair. Vinegar loses its strength once the bottle stays open. A fresh bottle made the model erupt over the table. The stage hall was eleven degrees colder than Mia's kitchen. A cold mixture reacts more slowly than a warm one. The baking soda box on stage had been left open beside a kettle. Damp baking soda gives off its gas early and has less left to give.",
     q: "Why did the volcano do nothing on stage? Make the case for one cause.",
+    who: [
+      "",
+      "🥶 The colder hall",
+      "🥄 Damp baking soda",
+    ],
     why: [
       "a bottle open since the last fair, and a fresh one that erupted",
       "a hall eleven degrees colder than the kitchen",
@@ -455,6 +490,11 @@ export const DEBATES = {
     story:
       "The paper crown for the play sat straight at dress rehearsal and tipped on opening night. Two bobby pins are all that hold the crown on. On opening night Eli wore it over his costume wig. The wig is an inch thicker than his own hair. The pins no longer reached his hair at all. One pin was found bent flat in the costume box after the show. The crown was stored under three other hats and came out with a soft dent in the band. A dented band sits unevenly however it is pinned.",
     q: "Why did the crown tip? Choose one cause and quote the story.",
+    who: [
+      "",
+      "📌 A pin bent flat",
+      "👑 A dent in the band",
+    ],
     why: [
       "a wig an inch thicker, so the pins reached no hair",
       "one pin found bent flat in the costume box",
@@ -474,6 +514,11 @@ export const DEBATES = {
     story:
       "The music room piano held its notes all year and stopped on Monday. Mr. Okafor looked underneath and found the pedal rod resting beside its slot. The piano was rolled across the room on Friday for the concert. A rod can shake loose when a piano is moved. A music stand fell against the pedal during the concert and nobody picked it up until after. Three keys in the middle sound thin and will not ring on. The felt on the dampers is worn down to the cloth on those three. Nothing was written in the room log all week.",
     q: "Why did the piano stop holding its notes? Pick one cause and prove it.",
+    who: [
+      "",
+      "",
+      "🎹 Worn damper felt",
+    ],
     why: [
       "found resting beside its slot after the piano was rolled",
       "a music stand that fell against the pedal during the concert",
@@ -493,6 +538,11 @@ export const DEBATES = {
     story:
       "Maya's kite flew well in March and dove straight down in April. In April she tied on a shorter tail to make it look neater. A kite's tail keeps the nose pointed up into the wind. Her friend's kite, with its full tail, flew fine beside hers. The March flight was on the open field and the April one was behind the sports hall. Wind coming over a building breaks up into gusts that drop a kite. One of Maya's bridle strings has a knot that slipped an inch. An uneven bridle tips the kite before the wind even takes it.",
     q: "Why did the kite dive? Make the case for one cause.",
+    who: [
+      "",
+      "🏢 The sports hall wind",
+      "🪢 A slipped bridle knot",
+    ],
     why: [
       "a shorter tail, where a tail keeps the nose up",
       "flown behind the sports hall, where wind breaks into gusts",
@@ -512,6 +562,11 @@ export const DEBATES = {
     story:
       "Room 9 grew shamrocks on two windowsills, sowing one packet across both. The south window plants are pale and drooping. The north window plants are green. The south sill sits above the heater vent, which has run since February. A thermometer on the south sill reads eighty-four degrees. The packet says shamrocks want a cool room. The soil in the south pot was dry an hour after watering. The south pot is a thin plastic one and the north pot is clay. The south window gets six hours of direct sun and the north window gets none.",
     q: "Why are the south plants drooping? Choose one cause and quote the story.",
+    who: [
+      "",
+      "☀️ Six hours of direct sun",
+      "🪴 A thin plastic pot",
+    ],
     why: [
       "a sill at eighty-four degrees, over a vent, for a plant wanting cool",
       "six hours of direct sun against none at the north window",
@@ -531,6 +586,11 @@ export const DEBATES = {
     story:
       "A puddle appears outside the art room every Tuesday and never on other days. On Tuesdays the kiln runs all morning in the room next door. A kiln pushes damp air out through a vent above the art room door. The puddle sits directly under that vent. Mr. Shaw taped a paper towel to the vent and it was soaked by noon. The floor is mopped every Tuesday morning by the early cleaner. A mop leaves water in a low spot, and that corner is the lowest in the hall. The drinking fountain was fixed in September and now runs on Tuesdays and Thursdays only.",
     q: "Where does the Tuesday puddle come from? Argue for one cause.",
+    who: [
+      "",
+      "🧹 The Tuesday mop",
+      "",
+    ],
     why: [
       "a kiln that runs Tuesdays, venting over the door above the puddle",
       "a mop every Tuesday morning, and the lowest corner in the hall",
@@ -550,6 +610,11 @@ export const DEBATES = {
     story:
       "The school garden grew twelve sunflowers and nine lost their heads overnight. Each stalk ends in a clean angled cut rather than a tear. Deer tracks run along the outside of the fence and stop there. A deer can reach over a four-foot fence without jumping it. The nine that lost their heads all stood within arm's reach of the fence. The gate was found unlatched on the morning the heads went. A pair of garden shears was left out on the bed all week. Shears cut a stalk clean at an angle, which is also how a deer's teeth leave one.",
     q: "What took the sunflower heads? Pick one and prove it from the story.",
+    who: [
+      "",
+      "🚪 The unlatched gate",
+      "✂️ The shears left out",
+    ],
     why: [
       "tracks outside the fence, and only the flowers within reach lost heads",
       "a gate found unlatched on the morning the heads went",
@@ -626,6 +691,11 @@ export const DEBATES = {
     story:
       "Two bean plants grew in identical cups on the same shelf. One stands straight and one leans hard to the left. The leaning plant sits two feet to the right of the window. Plants grow toward the strongest light they can reach. The leaning plant points directly at the window. The straight plant sits under the ceiling light, which is on all day. The leaning plant's stem is thinner than the other's and bends at a touch. The shelf tilts about a finger's width down toward the window end.",
     q: "Why does one bean plant lean? Argue for one cause.",
+    who: [
+      "",
+      "🌱 A thin weak stem",
+      "📐 A tilting shelf",
+    ],
     why: [
       "two feet from the window, and pointing directly at it",
       "a thinner stem that bends at a touch",
@@ -645,6 +715,11 @@ export const DEBATES = {
     story:
       "The fifth grade sold ice cream at the spring fair. The last twenty cups were soup. A thermometer inside the freezer read twenty-two degrees, which is above freezing for ice cream. The lid had been propped open with a scoop since noon so servers could work faster. Warm air pours into a freezer whenever the lid is open. Every cup served before noon came out solid, a hundred of them. The freezer stands in full sun from eleven o'clock, and nobody moved it. The last twenty cups came from the tub nearest the lid opening. That tub had been dug into all morning and was half air by noon.",
     q: "Why were the last cups soup? Choose one cause and quote the story.",
+    who: [
+      "",
+      "☀️ Full sun on the freezer",
+      "🫙 The tub nearest the opening",
+    ],
     why: [
       "a lid propped open with a scoop since noon",
       "standing in full sun from eleven, and never moved",
@@ -664,6 +739,11 @@ export const DEBATES = {
     story:
       "Field day ended with the fifty-meter ribbons handed out and one runner got the wrong color. Priya came in second across the line and was handed a third-place ribbon. The ribbon table was sorted into three piles by color. The second and third place ribbons are both shades of blue. Under the tent canopy the two piles looked identical. Two other runners also received a ribbon that did not match the sheet. Nobody checked a ribbon against the sheet before handing it over. The timer wrote the places on a wet sheet and two lines are smudged. The finish judge and the timer disagreed about third place at the time.",
     q: "How did Priya get the wrong ribbon? Pick one cause and prove it.",
+    who: [
+      "",
+      "",
+      "✅ No ribbon checked against the sheet",
+    ],
     why: [
       "two shades of blue that looked identical under the canopy",
       "a wet sheet with two smudged lines, and a judge who disagreed",
@@ -683,6 +763,11 @@ export const DEBATES = {
     story:
       "The class blew up forty balloons for the last-day party and eleven popped by lunch. All eleven had been taped to the window side of the room. The balloons on the inside wall are still full. The window side was in direct sun from ten o'clock on. Air inside a balloon expands as it warms, and the rubber stretches until it splits. The eleven popped between ten and twelve. The window-side balloons were blown up first and hardest, to get them done. The tape on that side was the rough kind and was pressed onto the rubber.",
     q: "Why did eleven balloons pop? Make the case for one cause.",
+    who: [
+      "",
+      "💨 Blown up first and hardest",
+      "🩹 Rough tape on the rubber",
+    ],
     why: [
       "direct sun from ten, and eleven popping between ten and twelve",
       "blown up first and hardest, to get them done",

@@ -86,7 +86,7 @@ function debatePrompt(c: (typeof MY)[number]) {
     .replace("{STORY}", d.story)
     .replace("{QUESTION}", d.question)
     .replace("{SUSPECTS}", d.suspects.map((x) => `- ${x.who}: ${x.why}`).join("\n"))
-    .replace("{OPEN}", d.open.map((i) => `- ${c.suspects[i].who}`).join("\n"));
+    .replace("{OPEN}", d.open.map((i) => `- ${d.suspects[i].who}`).join("\n"));
 }
 
 /**
@@ -1028,7 +1028,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                     {dbt.arguments.map((a, i) => (
                       <div key={i} style={{ marginTop: 14, paddingTop: 12, borderTop: `1px solid ${BRAND.line}` }}>
                         <p style={{ fontFamily: POPPINS, fontSize: 15, fontWeight: 800, margin: "0 0 7px", textWrap: "pretty" }}>
-                          {myCase.suspects[a.who]?.who}
+                          {dbt.suspects[a.who]?.who}
                         </p>
                         {a.evidence.map((q, j) => (
                           <Keyed key={j} marker="•" color={ACCENT.my}>

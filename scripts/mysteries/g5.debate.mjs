@@ -355,6 +355,11 @@ export const DEBATES = {
     story:
       "The entrance pumpkin held its shape for three weeks and caved in overnight on the twenty-second day. Nobody saw it happen. The temperature dropped to twenty-six degrees that night, the first freeze of the fall. A pumpkin is about ninety percent water, and water expands when it freezes. Expanding ice pushes the cell walls apart, and they do not go back when the ice melts. Two shallow scratches run across the base where it meets the step. The custodian moved the pumpkin twice that week to sweep under it. A soft patch the size of a hand sits on the underside, and it smells sour. The lobby pumpkin, kept at room temperature, is still firm after twenty-four days.",
     q: "Why did the pumpkin cave in? Make the case for one cause.",
+    who: [
+      "",
+      "🦠 A sour soft patch underneath",
+      "",
+    ],
     why: [
       "twenty-six degrees that night, the first freeze of the fall",
       "scratches across the base and a sour soft patch underneath",
@@ -681,6 +686,11 @@ export const DEBATES = {
     story:
       "The class piano sounded fine in June and noticeably out of tune in September. Nobody touched it. The tuner found that the strings in the middle two octaves had all gone flat by about the same amount. A piano's strings pull on a wooden frame with about eighteen tons of total tension. Wood swells when the air is damp and shrinks when it dries. The school's humidity ran at seventy percent all summer with the ventilation off. As the soundboard swelled, the strings stretched and their pitch dropped. The summer music camp used the room for six weeks and the lid was found open in August. A tuning pin in the middle section turns more easily than the others. The piano was moved eight feet in July to make room for chairs.",
     q: "Why did the piano go out of tune? Make the case for one cause.",
+    who: [
+      "",
+      "",
+      "📌 A loose tuning pin",
+    ],
     why: [
       "seventy percent humidity all summer with the ventilation off",
       "six weeks of music camp, and the lid found open in August",
@@ -757,6 +767,11 @@ export const DEBATES = {
     story:
       "All six rows went in on one day, from a single packet of seed. Five rows came up thick. The sixth is nearly empty. The empty row is the one nearest the brick wall. A soil test showed the sixth row at pH 8.4 while the others read 6.6. Beans will not germinate well in soil much above pH 7.5. Old mortar between bricks releases lime, and lime raises soil pH. The wall was repointed with new mortar in April, a month before planting. The wall shades row six until two in the afternoon. The hose reaches row six last, and whoever waters usually stops before the end. The few plants that did come up in row six are small and yellow.",
     q: "Why did one row fail to come up? Make the case for one cause.",
+    who: [
+      "",
+      "🌳 Shade from the wall",
+      "",
+    ],
     why: [
       "pH 8.4 against 6.6, beside a wall repointed in April",
       "shaded by the wall until two in the afternoon",
@@ -776,6 +791,11 @@ export const DEBATES = {
     story:
       "The class incubator held twelve eggs, and nine of them hatched on day twenty-one. The three that did not were all in the back left corner of the tray. The incubator's thermometer sat in the front right corner and read ninety-nine degrees all month. A second thermometer placed in the back left corner read ninety-four. The heating element is mounted on the front wall of the box. Chick embryos need a steady ninety-nine to one hundred degrees to develop. Five degrees below that stops development without obviously spoiling the egg. The tray was never turned, and an unturned egg can stick to its own shell membrane. The three were the oldest eggs in the carton, collected four days before the rest.",
     q: "Why did three eggs fail to hatch? Choose a cause and prove it.",
+    who: [
+      "",
+      "🔄 A tray never turned",
+      "📅 The three oldest eggs",
+    ],
     why: [
       "the back left corner reading ninety-four, far from the element",
       "a tray never turned, and an egg that can stick to its membrane",
@@ -814,6 +834,11 @@ export const DEBATES = {
     story:
       "Every photograph from the field trip has a dark band across the bottom third. The band shows up indoors and outdoors alike. A camera's shutter is two curtains that cross the sensor in sequence. At fast shutter speeds they travel as a moving slit rather than opening fully. If the second curtain sticks, part of the frame receives less light than the rest. Shots taken at slow speeds that day came out evenly lit. The lens hood was fitted back to front, which brings its rim into the bottom of the frame. The camera was set to a scene mode that darkens the lower half for landscapes. Nobody changed any setting after breakfast.",
     q: "What made the dark band? Pick a cause and back it from the case.",
+    who: [
+      "",
+      "🛡️ The lens hood on backwards",
+      "⚙️ A scene mode setting",
+    ],
     why: [
       "a second curtain that sticks at fast speeds",
       "a lens hood fitted back to front, rim in the frame",
@@ -833,6 +858,11 @@ export const DEBATES = {
     story:
       "A classroom spider plant has full growth on its left side and almost none on its right. One can waters both sides on the same days. The right side faces a window with a heating vent directly beneath it. Hot dry air from the vent blows up across that side for six hours a day. Spider plants lose water through their leaves faster than their roots can replace it. Dry moving air makes that worse. The leaf tips on the right side are brown and crisp. The window faces north and the right side gets about two hours of weak light. The pot was repotted in autumn and the root ball sits off centre, with the right side close to the clay.",
     q: "Why is one side of the plant bare? Make the case for one cause.",
+    who: [
+      "",
+      "🌥️ Too little light",
+      "",
+    ],
     why: [
       "hot dry air from the vent for six hours a day",
       "a north window giving the right side two hours of weak light",
@@ -852,6 +882,11 @@ export const DEBATES = {
     story:
       "The fifth grade's homemade ice cream came out full of hard ice crystals instead of smooth. The mixture froze in the school freezer, which was set to minus ten degrees. Last year the class used an ice-and-salt bag, which holds about fourteen degrees. Slow freezing lets water molecules join into large crystals. The freezer cycles its compressor on and off, and the mix partly thawed and refroze nine times overnight. Each thaw and refreeze builds bigger crystals than the one before. Nobody stirred the mixture once it went in, where last year the bag was shaken for twenty minutes. The cream was the low-fat kind this year, and fat is what keeps crystals small. The tub sat uncovered on the top shelf.",
     q: "Why was the ice cream full of crystals? Choose a cause and prove it.",
+    who: [
+      "",
+      "🥄 Never stirred",
+      "🥛 Low-fat cream",
+    ],
     why: [
       "nine thaws and refreezes as the compressor cycled",
       "never stirred, where last year the bag was shaken twenty minutes",
@@ -871,6 +906,11 @@ export const DEBATES = {
     story:
       "Half the field day ribbons came out of storage faded nearly white. The other half kept their color. They were stored in one cabinet in two boxes. The faded ones were in the box on the top shelf, next to a south-facing window with no blind. The second box sat on the bottom shelf in shadow. Sunlight breaks down the dye molecules in colored cloth over time. The faded ribbons are palest on the side that faced the window. The cabinet door has a glass panel in its upper half. The top shelf is directly under an uninsulated roof and runs hot all summer. The top box was printed from the end of the dye batch, when the colour ran thin.",
     q: "Why did half the ribbons fade? Argue for one cause.",
+    who: [
+      "",
+      "🔥 Heat under the roof",
+      "🖨️ The end of the dye batch",
+    ],
     why: [
       "a top shelf by a south window, palest on the window side",
       "a top shelf under an uninsulated roof, hot all summer",
@@ -890,6 +930,11 @@ export const DEBATES = {
     story:
       "The helium balloons were floating at four o'clock. By nine the next morning they rested on the floor. The latex balloons sagged while the foil ones beside them still floated. Helium atoms are small enough to pass between the molecules of a latex wall. Foil balloons have a metal layer with no gaps that size. A balloon that loses helium also loses lift and sinks before it visibly shrinks. The heating went off at six and the hall fell to five degrees by morning. Gas shrinks as it cools, and a smaller balloon pushes aside less air. The latex balloons were filled first, two hours before the foil ones. The knots on three latex balloons had worked loose enough to wet a finger held against them.",
     q: "Why did only some balloons sink? Pick one cause and prove it.",
+    who: [
+      "",
+      "🥶 The cold hall",
+      "🪢 Three loose knots",
+    ],
     why: [
       "helium passing straight through a latex wall",
       "the hall at five degrees by morning, and gas shrinks as it cools",

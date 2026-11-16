@@ -22,6 +22,15 @@
  *   d: { story, q, why: [...], open: [0, 2, 3],
  *        for: [ { who, ev: [...], but }, ... ], clears: [...], note }
  *
+ * who is optional and renames the suspects, one per suspect in order, with an
+ * empty string meaning keep the ordinary version's name. Most debates keep all
+ * four names, because arguing over the same line-up is the point. Some cannot:
+ * a suspect like "two different birds" or "all the bulbs burning out" exists
+ * in the ordinary case only to be knocked down, and there is no honest case to
+ * be made for it. Where that happens the debate swaps the name as well as the
+ * reason, and doing it through this field makes the swap visible instead of
+ * leaving a card whose name and reason describe different things.
+ *
  * why gives each suspect a fresh one-line reason, one per suspect in order.
  * The ordinary version's reasons cannot be reused, because several of them
  * are the clearing: the custodian's reason is "said he moved nothing", and
@@ -68,7 +77,10 @@ export function gradeMysteries(n, cases) {
             debate: {
               story: String(c.d.story).trim(),
               question: c.d.q,
-              suspects: c.d.why.map((w, j) => ({ who: c.s[j].who, why: w })),
+              suspects: c.d.why.map((w, j) => ({
+                who: (c.d.who && c.d.who[j]) || c.s[j].who,
+                why: w,
+              })),
               open: c.d.open,
               arguments: c.d.for.map((a) => ({
                 who: a.who,
