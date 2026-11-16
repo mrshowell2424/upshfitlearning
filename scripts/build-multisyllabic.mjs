@@ -124,11 +124,18 @@ function corpus() {
       }
     }
   };
-  // Everything but this script's own output. Reading that back in would
-  // feed the bank its own made-up words and the second run would throw
-  // them out as words the site uses, so the file would never settle.
-  const files = readdirSync("scripts")
-    .filter((f) => f.endsWith(".json") && f !== "reading-multisyllabic.json");
+  // Content only. Two kinds of file are skipped: this script's own output,
+  // because feeding the bank its own made-up words means the second run
+  // throws them out as words the site uses and the file never settles; and
+  // the generated counts files, which are numbers with a note at the top
+  // and are not anything a child reads. Adding reading-hub-counts.json
+  // changed the word bank, which is how the second rule was found.
+  const SKIP = new Set([
+    "reading-multisyllabic.json",
+    "reading-hub-counts.json",
+    "reading-resources-counts.json",
+  ]);
+  const files = readdirSync("scripts").filter((f) => f.endsWith(".json") && !SKIP.has(f));
   const dirs = ["scripts/articles", "scripts/mysteries"].filter((d) => existsSync(d));
   for (const d of dirs) for (const f of readdirSync(d)) if (f.endsWith(".json")) files.push(`../${d.split("/")[1]}/${f}`);
   for (const f of files) {

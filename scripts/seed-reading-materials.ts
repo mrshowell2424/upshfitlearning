@@ -44,6 +44,7 @@ import SENT3 from "./reading-third-sentences.json" with { type: "json" };
 import AICOACH from "./reading-ai-writing-coach.json" with { type: "json" };
 import MYSTERIES from "./reading-mysteries.json" with { type: "json" };
 import MYSTERYCOACH from "./reading-mystery-coach.json" with { type: "json" };
+import MYSTERYDEBATECOACH from "./reading-mystery-debate-coach.json" with { type: "json" };
 import ARTICLES from "./reading-articles.json" with { type: "json" };
 import ARTICLECOACH from "./reading-article-coach.json" with { type: "json" };
 import EXTRAW from "./reading-extra-words.json" with { type: "json" };
@@ -3281,6 +3282,12 @@ const ADAPTATIONS: Adaptation[] = [
         "        const MYS = (() => { try {\n" +
         "          return JSON.parse(document.getElementById('sor-mysteries').textContent);\n" +
         "        } catch (e) { return []; } })();\n" +
+        "        // Two coaches, because they have to believe different things.\n" +
+        "        // The solve coach must not know who did it or it leaks it; the\n" +
+        "        // debate coach must not think there is an answer at all, or it\n" +
+        "        // steers the child to whichever suspect it settled on.\n" +
+        "        const MYC = " + JSON.stringify(MYSTERYCOACH.lines.join("\n")) + ";\n" +
+        "        const MYD = " + JSON.stringify(MYSTERYDEBATECOACH.lines.join("\n")) + ";\n" +
         "        const gNum = (g) => (g === 'K' ? 0 : Number(g));\n" +
         "        const myg = (this.state && this.state.myg) || wrGrade;\n" +
         "        const pool = MYS.filter((c) => c.g === gNum(myg));\n" +
@@ -3333,6 +3340,34 @@ const ADAPTATIONS: Adaptation[] = [
         "          myArgs: dbOn ? D.g.map((a) => ({ who: (D.u[a.w] || {}).w || '',\n" +
         "            ev: a.e.map((t) => ({ t })), against: a.x || '' })) : [],\n" +
         "          myDebateNote: dbOn ? D.t : '',\n" +
+        "          myPrompt: C ? (dbOn ? MYD : MYC)\n" +
+        "            .split('{GRADES}').join(myg === 'K' ? 'kindergarten'\n" +
+        "              : myg + (({ 1: 'st', 2: 'nd', 3: 'rd' })[myg] || 'th'))\n" +
+        "            .split('{TITLE}').join(C.n)\n" +
+        "            .replace('{STORY}', dbOn ? D.s : C.s)\n" +
+        "            .replace('{QUESTION}', dbOn ? D.q : C.q)\n" +
+        "            .replace('{SUSPECTS}', sus.map((x) => '- ' + x.w + ': ' + x.y).join('\\n'))\n" +
+        "            .replace('{OPEN}', dbOn ? D.o.map((i) => '- ' + D.u[i].w).join('\\n') : '')\n" +
+        "            : '',\n" +
+        "          myPromptOpen: !!(this.state && this.state.myprompt),\n" +
+        "          toggleMyPrompt: () => this.setState({\n" +
+        "            myprompt: !(this.state && this.state.myprompt) }),\n" +
+        "          myPromptBtn: (this.state && this.state.myprompt ? 'Hide' : 'Show') + ' prompt',\n" +
+        "          copyMyLabel: (this.state && this.state.mycopied)\n" +
+        "            ? '\\u2713 Copied' : '\\u{1F4CB} Copy prompt',\n" +
+        "          copyMyPrompt: () => {\n" +
+        "            const text = (dbOn ? MYD : MYC)\n" +
+        "              .split('{GRADES}').join(myg === 'K' ? 'kindergarten'\n" +
+        "                : myg + (({ 1: 'st', 2: 'nd', 3: 'rd' })[myg] || 'th'))\n" +
+        "              .split('{TITLE}').join(C ? C.n : '')\n" +
+        "              .replace('{STORY}', C ? (dbOn ? D.s : C.s) : '')\n" +
+        "              .replace('{QUESTION}', C ? (dbOn ? D.q : C.q) : '')\n" +
+        "              .replace('{SUSPECTS}', sus.map((x) => '- ' + x.w + ': ' + x.y).join('\\n'))\n" +
+        "              .replace('{OPEN}', dbOn ? D.o.map((i) => '- ' + D.u[i].w).join('\\n') : '');\n" +
+        "            const ok = () => this.setState({ mycopied: true });\n" +
+        "            const no = () => this.setState({ myprompt: true });\n" +
+        "            try { const r = navigator.clipboard.writeText(text);\n" +
+        "              if (r && r.then) r.then(ok, no); else ok(); } catch (e) { no(); } },\n" +
         "        };\n" +
         "      })(),";
       out = out.replace(seat, logic);
@@ -3386,6 +3421,17 @@ const ADAPTATIONS: Adaptation[] = [
         "    </div>\n" +
         '    <div style="font-size:14px;line-height:1.55;background:#FDF6E7;border:1.5px solid #E4D3A8;' +
         'border-radius:10px;padding:9px 12px"><b>Then write:</b> {{ myTask }}</div>\n' +
+        '    <div style="display:flex;gap:7px;flex-wrap:wrap">' +
+        '<button type="button" onClick="{{ copyMyPrompt }}" style="' + F +
+        'font-size:12.5px;font-weight:700;border:1.5px solid #2F7A8C;background:#fff;color:#2F7A8C;' +
+        'padding:6px 12px;border-radius:8px;cursor:pointer">{{ copyMyLabel }}</button>' +
+        '<button type="button" onClick="{{ toggleMyPrompt }}" style="' + F +
+        'font-size:12.5px;font-weight:700;border:1.5px solid #2F7A8C;background:#fff;color:#2F7A8C;' +
+        'padding:6px 12px;border-radius:8px;cursor:pointer">{{ myPromptBtn }}</button></div>\n' +
+        '    <sc-if value="{{ myPromptOpen }}" hint-placeholder-val="{{ false }}">' +
+        '<div style="white-space:pre-wrap;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;' +
+        'line-height:1.5;color:#1c1917;background:#F6F8F4;border:1px solid #C9D3C4;border-radius:8px;' +
+        'padding:9px 10px;max-height:320px;overflow:auto">{{ myPrompt }}</div></sc-if>\n' +
         '    <div><button type="button" onClick="{{ toggleMyKey }}" style="' + F +
         'font-size:12.5px;font-weight:700;border:1.5px solid #57534e;background:#fff;color:#57534e;' +
         'padding:5px 11px;border-radius:8px;cursor:pointer">{{ myKeyBtn }}</button></div>\n' +
@@ -3492,6 +3538,130 @@ const ADAPTATIONS: Adaptation[] = [
         ladder,
         "{ items: LX.clues.map((c, i) => [(i + 1) + '. ' + c, (LX.words || [])[i + 1] || '']),",
       );
+    },
+  },
+  {
+    // The reading level, as a grade rather than a text number.
+    //
+    // The row offered 2nd, 3rd and 4th, which are the three reading levels
+    // every passage is written at. A teacher does not think in text levels,
+    // they think in the class in front of them, and a 7th grade
+    // intervention group had no setting on that row at all.
+    //
+    // So it asks for the grade, K to 12, and says which of the three texts
+    // that lands on. Thirteen grades onto three passages is the honest
+    // shape of it: there are three texts, and pretending there are thirteen
+    // would mean a teacher picking 7th and getting the 4th grade text
+    // without being told.
+    name: "ask the reading row for a grade, K to 12",
+    apply: (html) => {
+      const grade =
+        "const pgGrade = pgUp\n" +
+        "      ? PG_ORDER[Math.min(2, PG_ORDER.indexOf(pgBase) + 1)] : pgBase;";
+      if (!html.includes(grade)) return html;
+      let out = html.replace(
+        grade,
+        "const pgRead = (this.state && this.state.pgg) || '';\n" +
+          "    // Three texts, thirteen grades. Below 3rd reads the 2nd grade\n" +
+          "    // text, 3rd reads its own, and 4th upwards read the 4th, which\n" +
+          "    // is the hardest one written.\n" +
+          "    const pgFromGrade = !pgRead ? ''\n" +
+          "      : (pgRead === 'K' || pgRead === '1' || pgRead === '2') ? 'g2'\n" +
+          "      : pgRead === '3' ? 'g3' : 'g4';\n" +
+          "    const pgGrade = pgFromGrade || (pgUp\n" +
+          "      ? PG_ORDER[Math.min(2, PG_ORDER.indexOf(pgBase) + 1)] : pgBase);",
+      );
+
+      const opts =
+        "pgOpts: PG_ORDER.map((g) => ({ g, label: PG_NAME[g],";
+      if (!out.includes(opts)) return html;
+      out = out.replace(
+        opts,
+        "pgReadGrade: pgRead || ({ g2: '2', g3: '3', g4: '4' })[pgGrade] || '3',\n" +
+          "      pgReadOpts: WT.grades.map((g) => ({ id: g,\n" +
+          "        label: g === 'K' ? 'K' : g + (({ 1: 'st', 2: 'nd', 3: 'rd' })[g] || 'th') })),\n" +
+          "      pgReadPick: (e) => this.setState({ pg: '', pgg: e.target.value }),\n" +
+          "      pgLands: 'reads the ' + (PG_NAME[pgGrade] || '') + ' text',\n" +
+          "      pgOpts: PG_ORDER.map((g) => ({ g, label: PG_NAME[g],",
+      );
+
+      const row =
+        '            <sc-for list="{{ pgOpts }}" as="o" hint-placeholder-count="3">\n' +
+        '              <button type="button" onClick="{{ o.pick }}" style="{{ o.st }}">{{ o.label }}</button>\n' +
+        "            </sc-for>";
+      if (!out.includes(row)) return html;
+      return out.replace(
+        row,
+        '            <select value="{{ pgReadGrade }}" onChange="{{ pgReadPick }}" ' +
+          'aria-label="Reading grade" style="font-family:\'Poppins\',sans-serif;font-size:11.5px;' +
+          "font-weight:700;padding:2px 4px;border:1.5px solid #4B6049;border-radius:7px;" +
+          'background:#fff;color:#4B6049">' +
+          '<sc-for list="{{ pgReadOpts }}" as="g" hint-placeholder-count="13">' +
+          '<option value="{{ g.id }}">{{ g.label }}</option></sc-for></select>\n' +
+          '            <span style="font-size:11px;font-weight:700;color:#618459;' +
+          'white-space:nowrap">{{ pgLands }}</span>',
+      );
+    },
+  },
+  {
+    // The mystery, on paper.
+    //
+    // It is on the screen under Writing Made Easy, which is where a teacher
+    // sets it up. The page a child works on is the printed workbook, so the
+    // case has to be there too — the story to read, the suspects to weigh,
+    // the question, and ruled lines to answer it on.
+    //
+    // It prints as its own sheet right after the writing page, because the
+    // two are the same job: make a claim, then prove it from the text. In
+    // debate the sheet asks for the line that works against them as well,
+    // which is the part that makes it an argument rather than a guess.
+    name: "print the mystery in the workbook",
+    apply: (html) => {
+      const close =
+        "I read it back out loud</span></div>\n      </div>\n    </div>";
+      if (!html.includes(close)) return html;
+      const F = "font-family:Poppins,system-ui,sans-serif;";
+      const page =
+        close +
+        '\n    <sc-if value="{{ myHas }}" hint-placeholder-val="{{ true }}">\n' +
+        '    <div data-wb="true" style="{{ p.box1 }}">\n' +
+        '      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;' +
+        'border-bottom:3px solid #000;padding-bottom:8px">\n' +
+        '        <div><div style="' + F + "font-size:12px;font-weight:700;letter-spacing:.16em;" +
+        'color:#000">{{ p.kicker }} · MYSTERY · {{ myKicker }}</div>' +
+        '<div style="font-size:26px;font-weight:800;color:#000">\u{1F50D} {{ myTitle }}</div></div>\n' +
+        '        <div style="font-size:14px;font-weight:600;white-space:nowrap">Name ______________</div>\n' +
+        "      </div>\n" +
+        '      <div style="display:flex;flex-direction:column;gap:8px">\n' +
+        '        <div style="font-size:15px;font-weight:800;color:#111">8. The case. Read it twice. ' +
+        "The second time, underline anything that could be proof.</div>\n" +
+        '        <div style="border:2px solid #111;border-radius:10px;padding:12px 16px;' +
+        'font-size:15.5px;line-height:1.7;color:#111;text-wrap:pretty">{{ myStory }}</div>\n' +
+        '        <div style="border:2.5px solid #111;border-radius:10px;padding:8px 14px;' +
+        'font-size:19px;font-weight:800;color:#111">❓ {{ myQ }}</div>\n' +
+        '        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px">\n' +
+        '          <sc-for list="{{ mySus }}" as="s" hint-placeholder-count="4">\n' +
+        '            <div style="border:2px solid #111;border-radius:10px;padding:7px 11px;' +
+        'font-size:14px;color:#111"><b>{{ s.w }}</b>' +
+        '<sc-if value="{{ s.open }}" hint-placeholder-val="{{ false }}">' +
+        '<span style="' + F + 'font-size:10px;font-weight:800;letter-spacing:.1em">' +
+        " IN PLAY</span></sc-if> — {{ s.y }}</div>\n" +
+        "          </sc-for>\n" +
+        "        </div>\n" +
+        '        <div style="font-size:14.5px;font-weight:700;color:#111;border:2px solid #111;' +
+        'border-radius:10px;padding:8px 12px">✍️ {{ myTask }}</div>\n' +
+        '        <div style="position:relative;min-height:290px;background-image:' +
+        "repeating-linear-gradient(to bottom,transparent 0,transparent 34.5px,#333 34.5px,#333 36px);" +
+        'background-size:100% 36px"></div>\n' +
+        '        <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:14px;font-weight:700;' +
+        'border:2px solid #111;border-radius:10px;padding:8px 12px;color:#111">' +
+        "<span>I did it right if…</span><span>☐ I named one</span>" +
+        "<span>☐ I quoted the case</span><span>☐ I said what the quote shows</span>" +
+        "<span>☐ I answered the line against me</span></div>\n" +
+        "      </div>\n" +
+        "    </div>\n" +
+        "    </sc-if>";
+      return html.split(close).join(page);
     },
   },
   {
