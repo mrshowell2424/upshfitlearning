@@ -3174,7 +3174,14 @@ const ADAPTATIONS: Adaptation[] = [
       const stepFrames =
         "ebFrames.map((t) => t.replace('For example, ______.', 'The text says, \"______.\"')), true)";
       if (!out.includes(stepFrames)) return html;
-      out = out.replace(stepFrames, "wrFrames.slice(), true)");
+      // The lesson card is the teacher's glance at the frame, not the paper
+      // a child writes on, so it shows where each part starts and leaves the
+      // blank to the workbook. Six underscores set in Poppins come out as
+      // six separate dashes, which is what the blanks looked like.
+      out = out.replace(
+        stepFrames,
+        "wrFrames.map((t) => t.replace(/\\s*_{3,}\\s*\\.?/g, '\\u2026')), true)",
+      );
       const propFrames =
         "ebFrames: ebFrames.map((t) => ({ t: t.replace('For example, ______.', " +
         "'The text says, \"______.\"') })),";
@@ -3214,6 +3221,276 @@ const ADAPTATIONS: Adaptation[] = [
           // Read off state rather than wrPick: the pairing is declared
           // beside PGX, which is above where wrPick is worked out.
           "(this.state && this.state.wr) === 'Compare & Contrast') && PGX && pgPair)"
+      );
+    },
+  },
+  {
+    // The mysteries, after Writing Made Easy.
+    //
+    // 468 of them, one a week for thirty-six weeks at every grade from K to
+    // 12, each a claim-and-evidence task in disguise: say who did it, then
+    // prove it from the text. That is the same job the writing step asks
+    // for, which is why it belongs directly after it rather than anywhere
+    // else in the lesson.
+    //
+    // Two versions. Solve has one culprit and the text rules the others
+    // out. Debate withholds the deciding line: three suspects are each
+    // arguable, and what is marked is the evidence and the reasoning rather
+    // than the name. Both are written for every case.
+    //
+    // The case is picked by the writing grade and the lesson's place in the
+    // sequence, so every lesson gets a different one and the same lesson
+    // always gets the same one — a teacher who plans Monday on Sunday needs
+    // Monday to still say the same thing. Both pickers are there to
+    // override it.
+    //
+    // The data goes in its own JSON block rather than into the logic
+    // source. It is 1.9 MB, the logic class is compiled with new Function
+    // on every load, and JSON.parse on a script tag is the cheap way round
+    // that.
+    name: "bring the mysteries in after the writing step",
+    apply: (html) => {
+      const trim = (MYSTERIES as { cases: Record<string, unknown>[] }).cases.map((c) => ({
+        g: c.grade, w: c.week, t: c.tag, n: c.title, s: c.story, q: c.question,
+        u: (c.suspects as { who: string; why: string }[]).map((x) => ({ w: x.who, y: x.why })),
+        a: c.answer, p: c.proof, c: c.clears, e: c.explain,
+        d: c.debate ? (() => { const d = c.debate as Record<string, unknown>; return {
+          s: d.story, q: d.question,
+          u: (d.suspects as { who: string; why: string }[]).map((x) => ({ w: x.who, y: x.why })),
+          o: d.open,
+          g: (d.arguments as { who: number; evidence: string[]; against: string }[])
+            .map((a) => ({ w: a.who, e: a.evidence, x: a.against })),
+          c: d.clears, t: d.note }; })() : null,
+      }));
+
+      const end = "</body>";
+      if (!html.includes(end)) return html;
+      let out = html.replace(
+        end,
+        '<script id="sor-mysteries" type="application/json">' +
+          JSON.stringify(trim).replace(/</g, "\\u003c") +
+          "</script>\n" + end,
+      );
+
+      // the lesson's own case, worked out beside the writing props
+      const seat = "\n      wrTask, wrPick,";
+      if (!out.includes(seat)) return html;
+      const logic =
+        seat +
+        "\n      ...(() => {\n" +
+        "        const MYS = (() => { try {\n" +
+        "          return JSON.parse(document.getElementById('sor-mysteries').textContent);\n" +
+        "        } catch (e) { return []; } })();\n" +
+        "        const gNum = (g) => (g === 'K' ? 0 : Number(g));\n" +
+        "        const myg = (this.state && this.state.myg) || wrGrade;\n" +
+        "        const pool = MYS.filter((c) => c.g === gNum(myg));\n" +
+        "        // The lesson's place in the sequence picks the week, so the\n" +
+        "        // thirty-six cases spread across the thirty-six lessons\n" +
+        "        // instead of every lesson opening on week one.\n" +
+        "        const auto = String((Math.max(0, skIdx) % 36) + 1);\n" +
+        "        const myw = (this.state && this.state.myw) || auto;\n" +
+        "        const C = pool.find((c) => String(c.w) === String(myw)) || pool[0] || null;\n" +
+        "        const dbOn = !!(this.state && this.state.mydb) && !!(C && C.d);\n" +
+        "        const D = dbOn ? C.d : null;\n" +
+        "        const sus = C ? (D ? D.u : C.u) : [];\n" +
+        "        const pill = (on) => 'font-family:Poppins,system-ui,sans-serif;font-size:12px;" +
+        "font-weight:800;border:1.5px solid #7A4E6B;border-radius:7px;padding:3px 10px;" +
+        "cursor:pointer;white-space:nowrap;' + (on ? 'background:#7A4E6B;color:#fff'" +
+        " : 'background:#fff;color:#7A4E6B');\n" +
+        "        return {\n" +
+        "          myHas: !!C,\n" +
+        "          myKicker: C ? (myg === 'K' ? 'Kindergarten' : 'Grade ' + myg) + ' \\u00b7 Week ' + C.w : '',\n" +
+        "          myTag: C ? C.t : '', myTitle: C ? C.n : '',\n" +
+        "          myStory: C ? (D ? D.s : C.s) : '', myQ: C ? (D ? D.q : C.q) : '',\n" +
+        "          mySus: sus.map((s, i) => ({ w: s.w, y: s.y,\n" +
+        "            open: !!(D && D.o.indexOf(i) > -1) })),\n" +
+        "          myTask: D\n" +
+        "            ? 'Name the one you are charging. Quote at least two lines from the case, " +
+        "and after each one say what it shows. Then name the strongest line against you and answer it.'\n" +
+        "            : 'Say who did it. Quote the words from the case that prove it, and say what " +
+        "rules each of the others out.',\n" +
+        "          myDbOn: dbOn, mySolveOn: !dbOn, myHasDb: !!(C && C.d),\n" +
+        "          myNote: dbOn\n" +
+        "            ? 'No answer key. Three suspects are arguable; the evidence is what counts.'\n" +
+        "            : 'One culprit. The case rules the others out.',\n" +
+        "          mySolveSt: pill(!dbOn), myDebateSt: pill(dbOn),\n" +
+        "          mySolvePick: () => this.setState({ mydb: false }),\n" +
+        "          myDebatePick: () => this.setState({ mydb: true }),\n" +
+        "          myGrade: myg,\n" +
+        "          myGradeOpts: WT.grades.map((g) => ({ id: g,\n" +
+        "            label: g === 'K' ? 'K' : g + (({ 1: 'st', 2: 'nd', 3: 'rd' })[g] || 'th') })),\n" +
+        "          myGradePick: (e) => this.setState({ myg: e.target.value, myw: '' }),\n" +
+        "          myWeek: String(myw),\n" +
+        "          myWeekOpts: pool.map((c) => ({ id: String(c.w), label: 'Week ' + c.w + ' \\u00b7 ' + c.n })),\n" +
+        "          myWeekPick: (e) => this.setState({ myw: e.target.value }),\n" +
+        "          myKeyOpen: !!(this.state && this.state.mykey),\n" +
+        "          toggleMyKey: () => this.setState({ mykey: !(this.state && this.state.mykey) }),\n" +
+        "          myKeyBtn: (this.state && this.state.mykey ? 'Hide ' : 'Show ') +\n" +
+        "            (dbOn ? '\\u{1F511} Teacher notes' : '\\u{1F511} Answer key'),\n" +
+        "          myAnswer: C && !dbOn ? C.a : '', myExplain: C && !dbOn ? C.e : '',\n" +
+        "          myProof: C && !dbOn ? C.p.map((t) => ({ t })) : [],\n" +
+        "          myClears: C ? (dbOn ? D.c : C.c).map((t) => ({ t })) : [],\n" +
+        "          myArgs: dbOn ? D.g.map((a) => ({ who: (D.u[a.w] || {}).w || '',\n" +
+        "            ev: a.e.map((t) => ({ t })), against: a.x || '' })) : [],\n" +
+        "          myDebateNote: dbOn ? D.t : '',\n" +
+        "        };\n" +
+        "      })(),";
+      out = out.replace(seat, logic);
+
+      // the block itself, between the last lesson step and the workbook bar
+      const wbBar =
+        '  <div data-noprint="true" style="display:flex;align-items:center;' +
+        'justify-content:space-between;gap:12px;flex-wrap:wrap;background:#fff;' +
+        'border:1.5px solid #C9D3C4;border-radius:12px;padding:12px 16px">';
+      if (!out.includes(wbBar)) return html;
+      const F = "font-family:Poppins,system-ui,sans-serif;";
+      const block =
+        '  <sc-if value="{{ myHas }}" hint-placeholder-val="{{ true }}">\n' +
+        '  <div style="background:#fff;border:1.5px solid #C9D3C4;border-left:4px solid #7A4E6B;' +
+        'border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:10px">\n' +
+        '    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">\n' +
+        '      <span style="' + F + 'font-size:11px;font-weight:800;letter-spacing:.14em;' +
+        'color:#7A4E6B;white-space:nowrap">\u{1F50D} MYSTERY</span>\n' +
+        '      <span style="font-size:12.5px;color:#57534e">{{ myKicker }}</span>\n' +
+        '      <select value="{{ myGrade }}" onChange="{{ myGradePick }}" aria-label="Mystery grade" ' +
+        'style="' + F + "font-size:11.5px;font-weight:700;padding:2px 4px;border:1.5px solid #7A4E6B;" +
+        'border-radius:7px;background:#fff;color:#7A4E6B">' +
+        '<sc-for list="{{ myGradeOpts }}" as="g" hint-placeholder-count="13">' +
+        '<option value="{{ g.id }}">{{ g.label }}</option></sc-for></select>\n' +
+        '      <select value="{{ myWeek }}" onChange="{{ myWeekPick }}" aria-label="Mystery case" ' +
+        'style="' + F + "font-size:11.5px;font-weight:700;padding:2px 4px;border:1.5px solid #7A4E6B;" +
+        'border-radius:7px;background:#fff;color:#7A4E6B;max-width:240px">' +
+        '<sc-for list="{{ myWeekOpts }}" as="w" hint-placeholder-count="36">' +
+        '<option value="{{ w.id }}">{{ w.label }}</option></sc-for></select>\n' +
+        '      <sc-if value="{{ myHasDb }}" hint-placeholder-val="{{ true }}">' +
+        '<button type="button" onClick="{{ mySolvePick }}" style="{{ mySolveSt }}">\u{1F50D} Solve it</button>' +
+        '<button type="button" onClick="{{ myDebatePick }}" style="{{ myDebateSt }}">\u{1F4AC} Debate it</button>' +
+        "</sc-if>\n" +
+        "    </div>\n" +
+        '    <div style="font-size:12.5px;color:#57534e">{{ myNote }}</div>\n' +
+        '    <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px">' +
+        '<b style="font-size:19px;color:#2F3E2E">{{ myTitle }}</b>' +
+        '<span style="font-size:12.5px;color:#57534e">{{ myTag }}</span></div>\n' +
+        '    <div style="font-size:15.5px;line-height:1.6;color:#1c1917;text-wrap:pretty;' +
+        'border-left:3px solid #E4D3A8;padding-left:12px">{{ myStory }}</div>\n' +
+        '    <div style="font-size:15px;font-weight:800;color:#2F3E2E">❓ {{ myQ }}</div>\n' +
+        '    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px">\n' +
+        '      <sc-for list="{{ mySus }}" as="s" hint-placeholder-count="4">\n' +
+        '        <div style="border:1.5px solid #C9D3C4;border-radius:10px;padding:8px 11px;font-size:13.5px">' +
+        '<b>{{ s.w }}</b>' +
+        '<sc-if value="{{ s.open }}" hint-placeholder-val="{{ false }}">' +
+        '<span style="' + F + 'font-size:10px;font-weight:800;letter-spacing:.1em;color:#7A4E6B;' +
+        'margin-left:6px">\u00a0IN PLAY</span></sc-if>' +
+        '<span style="color:#44403c"> — {{ s.y }}</span></div>\n' +
+        "      </sc-for>\n" +
+        "    </div>\n" +
+        '    <div style="font-size:14px;line-height:1.55;background:#FDF6E7;border:1.5px solid #E4D3A8;' +
+        'border-radius:10px;padding:9px 12px"><b>Then write:</b> {{ myTask }}</div>\n' +
+        '    <div><button type="button" onClick="{{ toggleMyKey }}" style="' + F +
+        'font-size:12.5px;font-weight:700;border:1.5px solid #57534e;background:#fff;color:#57534e;' +
+        'padding:5px 11px;border-radius:8px;cursor:pointer">{{ myKeyBtn }}</button></div>\n' +
+        '    <sc-if value="{{ myKeyOpen }}" hint-placeholder-val="{{ false }}">\n' +
+        '      <div style="background:#F6F8F4;border:1.5px solid #C9D3C4;border-radius:10px;' +
+        'padding:10px 13px;font-size:13.5px;line-height:1.55;display:flex;flex-direction:column;gap:7px">\n' +
+        '        <sc-if value="{{ myDbOn }}" hint-placeholder-val="{{ false }}">\n' +
+        "          <div><b>There is no answer to this one.</b> Any of the three marked in play can be " +
+        "argued from the text. What is marked is the evidence and the reasoning, not the name.</div>\n" +
+        '          <sc-for list="{{ myArgs }}" as="a" hint-placeholder-count="3">\n' +
+        "            <div><b>{{ a.who }}</b>" +
+        '<sc-for list="{{ a.ev }}" as="e" hint-placeholder-count="2">' +
+        '<div style="color:#44403c">• {{ e.t }}</div></sc-for>' +
+        '<div style="color:#8F5E2F">× Has to answer: {{ a.against }}</div></div>\n' +
+        "          </sc-for>\n" +
+        "          <div><b>Really is ruled out</b>" +
+        '<sc-for list="{{ myClears }}" as="c" hint-placeholder-count="1">' +
+        '<div style="color:#44403c">× {{ c.t }}</div></sc-for></div>\n' +
+        "          <div><i>{{ myDebateNote }}</i></div>\n" +
+        "        </sc-if>\n" +
+        '        <sc-if value="{{ mySolveOn }}" hint-placeholder-val="{{ true }}">\n' +
+        "          <div><b>Answer:</b> {{ myAnswer }}</div>\n" +
+        "          <div><b>Key proof:</b>" +
+        '<sc-for list="{{ myProof }}" as="p" hint-placeholder-count="2">' +
+        '<div style="color:#44403c">\u2022 {{ p.t }}</div></sc-for></div>\n' +
+        "          <div><b>Clears:</b>" +
+        '<sc-for list="{{ myClears }}" as="c" hint-placeholder-count="2">' +
+        '<div style="color:#44403c">\u00d7 {{ c.t }}</div></sc-for></div>\n' +
+        "          <div><i>{{ myExplain }}</i></div>\n" +
+        "        </sc-if>\n" +
+        "      </div>\n" +
+        "    </sc-if>\n" +
+        "  </div>\n" +
+        "  </sc-if>\n\n";
+      return out.replace(wbBar, block + wbBar);
+    },
+  },
+  {
+    // Three things a teacher noticed on the page.
+    //
+    // 1. The sentence starters wrote their blanks as six underscores. In
+    //    Poppins those render as six separate dashes with gaps, so the
+    //    line a child writes on is dotted. A blank is a rule to write on,
+    //    not a character: it is a border now, and it stretches to fill the
+    //    space instead of being however long six underscores happen to be.
+    //
+    // 2. Chest 1 wrapped long words onto a second line inside their box,
+    //    which breaks the two-colour highlight — a child colours a box,
+    //    not a line. The words stay on one line and the type steps down to
+    //    fit, which is the trade a highlighting task wants.
+    //
+    // 3. The word ladder gave its clues in order and numbered none of
+    //    them, so a child reading down the column had to infer that the
+    //    order mattered.
+    name: "solid lines, words that fit, and a numbered ladder",
+    apply: (html) => {
+      // 1. the blanks
+      const frameProp = "ebFrames: wrFrames.map((t) => ({ t })),";
+      if (!html.includes(frameProp)) return html;
+      let out = html.replace(
+        frameProp,
+        "ebFrames: wrFrames.map((t) => ({ t, parts: String(t).split(/_{3,}/)\n" +
+          "        .reduce((a, x, i) => { if (i) a.push({ line: true, text: '' });\n" +
+          "          if (x) a.push({ line: false, text: x }); return a; }, []) })),",
+      );
+
+      const frameCell =
+        '<div style="font-size:15px;font-weight:700;color:#111">{{ f.t }}</div>';
+      if (!out.includes(frameCell)) return html;
+      const ruled =
+        '<div style="font-size:15px;font-weight:700;color:#111;display:flex;' +
+        'flex-wrap:wrap;align-items:baseline;gap:3px">' +
+        '<sc-for list="{{ f.parts }}" as="q" hint-placeholder-count="3">' +
+        '<sc-if value="{{ q.line }}" hint-placeholder-val="{{ false }}">' +
+        '<span style="flex:1 1 110px;min-width:70px;border-bottom:1.5px solid #111;' +
+        'height:1.2em"></span></sc-if>' +
+        '<sc-if value="{{ q.text }}" hint-placeholder-val="{{ true }}">' +
+        "<span>{{ q.text }}</span></sc-if>" +
+        "</sc-for></div>";
+      out = out.split(frameCell).join(ruled);
+
+      // 2. the chips, which stay on one line
+      const chip =
+        "const chip = (t, big) => ({ fontSize: big ? 20 : (t.length > 12 ? 14 : 17), " +
+        "fontWeight: 700, border: '1.5px solid #000', borderRadius: 8, padding: '5px 9px', " +
+        "textAlign: 'center', overflowWrap: 'anywhere', boxSizing: 'border-box' });";
+      if (!out.includes(chip)) return html;
+      out = out.replace(
+        chip,
+        "const chip = (t, big) => { const n = String(t).length;\n" +
+          "          // One line, always. A box a child colours cannot wrap.\n" +
+          "          const fs = big ? 20 : n > 15 ? 10.5 : n > 13 ? 12 : n > 11 ? 13.5\n" +
+          "            : n > 9 ? 15 : 17;\n" +
+          "          return { fontSize: fs, fontWeight: 700, border: '1.5px solid #000',\n" +
+          "            borderRadius: 8, padding: '5px 7px', textAlign: 'center',\n" +
+          "            whiteSpace: 'nowrap', overflow: 'hidden', boxSizing: 'border-box' }; };",
+      );
+
+      // 3. the ladder, numbered
+      const ladder =
+        "{ items: LX.clues.map((c, i) => [c, (LX.words || [])[i + 1] || '']),";
+      if (!out.includes(ladder)) return html;
+      return out.replace(
+        ladder,
+        "{ items: LX.clues.map((c, i) => [(i + 1) + '. ' + c, (LX.words || [])[i + 1] || '']),",
       );
     },
   },
