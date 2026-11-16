@@ -7,10 +7,12 @@ import { ORG } from "@/lib/constants/org";
  *
  * The old site ran its form through Formspree. That endpoint is not carried
  * over, because a form that silently posts nowhere is worse than no form:
- * the visitor gets a success message and nobody ever sees the message. The
- * email and the phone go straight through instead, which is what the form
- * was doing anyway, and the mail link pre-fills a subject so a message from
- * here is identifiable.
+ * the visitor gets a success message and nobody ever sees the message.
+ *
+ * So the page gives the two ways to reach a person and no third thing that
+ * looks like one. The address and the number are the whole of it, written
+ * large enough to use; the mail link pre-fills a subject so a message sent
+ * from here is identifiable.
  */
 export const metadata = {
   title: "Contact",
@@ -81,12 +83,6 @@ export default function ContactPage() {
                   </dd>
                 </div>
               </dl>
-              <a
-                href={`mailto:${ORG.email}?subject=Hello%20from%20upshiftlearning.org`}
-                className="mt-7 inline-flex items-center justify-center min-h-[48px] px-7 rounded-xl bg-coral-ink hover:bg-coral-ink-press text-white font-semibold transition-colors"
-              >
-                Send a Message
-              </a>
             </div>
 
             <div className="bg-white border border-hairline rounded-2xl p-7">
