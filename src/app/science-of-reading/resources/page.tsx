@@ -133,103 +133,8 @@ const select: React.CSSProperties = {
   maxWidth: "100%",
 };
 
-/**
- * The measure, which is the whole point of this page.
- *
- * Running text was set across the full 972px column, about 105 characters a
- * line. Comfortable measure is 55-75; past that the eye loses the line on the
- * return sweep, which is precisely the reader this site is built for. 66ch at
- * 18px lands around 620px and is the single biggest change here.
- */
-const reading: React.CSSProperties = {
-  maxWidth: "66ch",
-  fontSize: 18,
-  lineHeight: 1.72,
-  // The second half of the fix. Measure got the line length right; the face
-  // gets the line itself right. Poppins runs the chrome around this
-  // column -- setting the passage in a third, serif face is what tells a
-  // reader where the page stops being a website and starts being something
-  // to read.
-  fontFamily: 'var(--font-serif), Georgia, "Times New Roman", serif',
-};
-
 /** Each tab gets its own accent, so switching tabs looks like switching. */
 const ACCENT = { my: BRAND.lavenderDark, ar: BRAND.tealDark } as const;
-
-const bandLabel = (color: string): React.CSSProperties => ({
-  ...label,
-  color,
-  margin: "0 0 10px",
-});
-
-/** The kind of question an item is, which the prompt has always carried. */
-const kindTag: React.CSSProperties = {
-  fontFamily: "var(--font-poppins), system-ui, sans-serif",
-  fontSize: 10,
-  fontWeight: 800,
-  letterSpacing: "0.1em",
-  textTransform: "uppercase",
-  color: BRAND.mid,
-  background: BRAND.panel,
-  border: `1px solid ${BRAND.line}`,
-  borderRadius: 100,
-  padding: "2px 8px",
-  whiteSpace: "nowrap",
-};
-
-/**
- * The card carries one flat accent rather than a second copy of the page's
- * gradient bar. Two gradients forty pixels apart was one gradient too many,
- * and a single colour also tells you which tab you are on.
- */
-function Card({ children, accent }: { children: React.ReactNode; accent: string }) {
-  return (
-    <div
-      style={{
-        background: "#FFFFFF",
-        border: `1px solid ${BRAND.line}`,
-        borderRadius: 20,
-        overflow: "hidden",
-        margin: "0 0 18px",
-      }}
-    >
-      <div style={{ height: 4, background: accent }} />
-      <div style={{ padding: "22px 26px 26px" }}>{children}</div>
-    </div>
-  );
-}
-
-/**
- * One labelled band of the card: the text, the questions, the writing.
- *
- * All three used to run together in a single white field with nothing but a
- * small grey label between them, so a teacher projecting the page had nothing
- * to point at. A rule and a coloured label give each part an edge.
- */
-function Band({
-  heading,
-  accent,
-  first,
-  children,
-}: {
-  heading: string;
-  accent: string;
-  first?: boolean;
-  children: React.ReactNode;
-}) {
-  return (
-    <section
-      style={{
-        borderTop: first ? "none" : `1px solid ${BRAND.line}`,
-        margin: first ? "16px 0 0" : "22px 0 0",
-        paddingTop: first ? 0 : 20,
-      }}
-    >
-      <p style={bandLabel(accent)}>{heading}</p>
-      {children}
-    </section>
-  );
-}
 
 /** Teacher answers, open by default on paper and closed on screen. */
 /**
@@ -373,22 +278,203 @@ function KeyLabel({ children, color }: { children: React.ReactNode; color: strin
 const POPPINS = "var(--font-poppins), system-ui, sans-serif";
 
 /**
- * The case text, in Poppins.
+ * The text a student reads, on both tabs, in Poppins.
  *
- * `reading` sets passages in Source Serif on the reasoning that a reading
- * page should not be in the same face as its own navigation. Stephanie asked
- * for Poppins on the mysteries, so the mysteries are in Poppins; the article
- * tab keeps the serif. Poppins runs wider and has a taller x-height than
- * Source Serif at the same size, so the measure comes down to 60ch and the
- * leading opens a little to hold the line length where it reads comfortably.
+ * This used to be Source Serif, on the reasoning that a reading page should
+ * not be set in the same face as its own navigation. Stephanie asked for
+ * Poppins, first on the mysteries and then on the articles, so both are
+ * Poppins and the page has one reading face again. Poppins runs wider with a
+ * taller x-height than Source Serif at the same size, so the measure comes
+ * down to 60ch and the leading opens a little, which holds the line length
+ * where it reads comfortably.
  */
-const caseText: React.CSSProperties = {
+const bodyText: React.CSSProperties = {
   maxWidth: "60ch",
   fontSize: 18,
   lineHeight: 1.78,
   fontFamily: POPPINS,
   fontWeight: 400,
 };
+
+/**
+ * The cover of an article, the twin of CaseCover.
+ *
+ * The standard code is the thing a teacher came here for, so it is the file
+ * number. Lexile and word count were two words of grey 11px type at the top
+ * of the old card; they are the numbers that decide whether this text suits
+ * this group, so they are chips you can read across a room.
+ */
+function ArticleCover({
+  standard,
+  grade,
+  title,
+  lexile,
+  words,
+}: {
+  standard: string;
+  grade: string;
+  title: string;
+  lexile: number;
+  words: number;
+}) {
+  const chip: React.CSSProperties = {
+    fontFamily: POPPINS,
+    fontSize: 12,
+    fontWeight: 700,
+    letterSpacing: "0.04em",
+    color: "#FFFFFF",
+    background: "rgba(255,255,255,0.16)",
+    border: "1px solid rgba(255,255,255,0.26)",
+    borderRadius: 100,
+    padding: "4px 11px",
+  };
+  return (
+    <div style={{ background: BRAND.ink, color: "#FFFFFF", padding: "22px 26px 24px" }}>
+      <p style={{ ...label, color: "rgba(255,255,255,0.62)", margin: "0 0 4px" }}>
+        {`${standard} · ${grade}`}
+      </p>
+      <h2
+        style={{
+          fontFamily: POPPINS,
+          fontSize: 32,
+          fontWeight: 900,
+          letterSpacing: "-0.8px",
+          lineHeight: 1.1,
+          margin: "0 0 12px",
+          textWrap: "balance",
+        }}
+      >
+        {title}
+      </h2>
+      <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+        <span style={chip}>{`Lexile ${lexile}`}</span>
+        <span style={chip}>{`${words} words`}</span>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * One lettered paragraph.
+ *
+ * The letter was a bold character in the text colour, the width of one em,
+ * sitting in a column beside the paragraph. Four of the five questions on
+ * every article ask the student to name a paragraph by its letter, and the
+ * write task asks for a letter against every piece of evidence, so the
+ * letters are the index the whole task runs on. Drawn as badges they can be
+ * found at a glance and pointed at from the back of a room.
+ */
+function Para({ letter, text, accent }: { letter: string; text: string; accent: string }) {
+  return (
+    <div style={{ display: "flex", gap: 14, margin: "0 0 18px" }}>
+      <span
+        aria-hidden="true"
+        style={{
+          flex: "0 0 auto",
+          width: 26,
+          height: 26,
+          borderRadius: 8,
+          background: accent,
+          color: "#FFFFFF",
+          fontFamily: POPPINS,
+          fontSize: 13,
+          fontWeight: 900,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: 4,
+        }}
+      >
+        {letter}
+      </span>
+      <div style={{ ...bodyText, textWrap: "pretty" }}>{text}</div>
+    </div>
+  );
+}
+
+/**
+ * One of the five questions, as a card.
+ *
+ * They were five lines of a list with a small grey tag above each. The kind
+ * tag is the useful part -- it says which sort of thinking the item wants --
+ * and in grey on grey it was the least visible thing on the row. On the
+ * accent, against a card, the five read as five separate asks.
+ */
+function Question({
+  n,
+  kind,
+  q,
+  accent,
+}: {
+  n: number;
+  kind: string;
+  q: string;
+  accent: string;
+}) {
+  return (
+    <li
+      style={{
+        listStyle: "none",
+        background: "#FFFFFF",
+        border: `1.5px solid ${BRAND.line}`,
+        borderRadius: 16,
+        padding: "14px 16px",
+        display: "grid",
+        gridTemplateColumns: "28px 1fr",
+        gap: 12,
+        alignItems: "start",
+      }}
+    >
+      <span
+        aria-hidden="true"
+        style={{
+          width: 26,
+          height: 26,
+          borderRadius: 100,
+          border: `2px solid ${accent}`,
+          color: accent,
+          fontFamily: POPPINS,
+          fontSize: 13,
+          fontWeight: 900,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {n}
+      </span>
+      <div style={{ minWidth: 0 }}>
+        <span
+          style={{
+            display: "inline-block",
+            fontFamily: POPPINS,
+            fontSize: 10,
+            fontWeight: 800,
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            color: accent,
+            marginBottom: 6,
+          }}
+        >
+          {kind}
+        </span>
+        {/* A vocabulary item is two definitions on two lines; the newline in
+            the data collapses without this. */}
+        <div
+          style={{
+            fontFamily: POPPINS,
+            fontSize: 16,
+            lineHeight: 1.6,
+            whiteSpace: "pre-line",
+            textWrap: "pretty",
+          }}
+        >
+          {q}
+        </div>
+      </div>
+    </li>
+  );
+}
 
 /**
  * The cover of the file. Ink rather than white, because the one thing the
@@ -798,7 +884,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                           thing to be read starts. */}
                       <div
                         style={{
-                          ...caseText,
+                          ...bodyText,
                           textWrap: "pretty",
                           borderLeft: `3px solid ${ACCENT.my}`,
                           paddingLeft: 18,
@@ -931,55 +1017,130 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                 </form>
 
                 {art && v ? (
-                  <Card accent={ACCENT.ar}>
-                    <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
-                      <p style={{ ...label, margin: 0 }}>{`${art.standard} · Grade ${art.grade}`}</p>
-                      <p style={{ ...label, margin: 0 }}>{`Lexile ${v.lexile} · ${v.words} words`}</p>
-                    </div>
-                    <h2 style={{ fontFamily: "var(--font-poppins), system-ui, sans-serif", fontSize: 30, fontWeight: 800, margin: "4px 0 12px", letterSpacing: "-0.6px", lineHeight: 1.15 }}>
-                      {art.title}
-                    </h2>
-                    <div style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "0 0 4px" }}>
-                      <a href={href({ v: "lo" })} style={pill(ver === "lower")}>Lower Lexile</a>
-                      <a href={href({ v: "hi" })} style={pill(ver === "higher")}>Higher Lexile</a>
-                    </div>
+                  <div
+                    style={{
+                      background: "#FFFFFF",
+                      border: `1px solid ${BRAND.line}`,
+                      borderRadius: 20,
+                      overflow: "hidden",
+                      margin: "0 0 18px",
+                    }}
+                  >
+                    <ArticleCover
+                      standard={art.standard}
+                      grade={`Grade ${art.grade}`}
+                      title={art.title}
+                      lexile={v.lexile}
+                      words={v.words}
+                    />
+                    <div style={{ padding: "26px 24px 24px" }}>
+                      {/* The two Lexiles were a pair of small pills under the
+                          title, which is where a teacher looks last. Picking
+                          the level is the whole reason both versions exist,
+                          so it is labelled and it comes first. */}
+                      <div
+                        style={{
+                          display: "flex",
+                          gap: 10,
+                          alignItems: "center",
+                          flexWrap: "wrap",
+                          background: BRAND.paper,
+                          border: `1px solid ${BRAND.line}`,
+                          borderRadius: 100,
+                          padding: "8px 8px 8px 16px",
+                          margin: "0 0 26px",
+                          width: "fit-content",
+                        }}
+                      >
+                        <span style={{ ...label, margin: 0 }}>Reading level</span>
+                        <span style={{ display: "inline-flex", gap: 6 }}>
+                          <a href={href({ v: "lo" })} style={pill(ver === "lower")}>Lower</a>
+                          <a href={href({ v: "hi" })} style={pill(ver === "higher")}>Higher</a>
+                        </span>
+                      </div>
 
-                    <Band heading="The text" accent={ACCENT.ar} first>
-                      <div style={reading}>
+                      {/* Every article has carried standard_text since the
+                          store was built -- the wording of the standard, what
+                          it spirals to, and the lower Lexile band -- and the
+                          page has never once shown it. Closed by default,
+                          because a class reading the article does not need
+                          the standard on screen and the teacher planning
+                          from it does. */}
+                      {art.standard_text && (
+                        <details style={{ margin: "-14px 0 24px" }}>
+                          <summary
+                            style={{
+                              ...pill(false),
+                              listStyle: "none",
+                              border: `1.5px solid ${BRAND.line}`,
+                              color: BRAND.mid,
+                            }}
+                          >
+                            {`What ${art.standard} asks`}
+                          </summary>
+                          <p
+                            style={{
+                              whiteSpace: "pre-line",
+                              fontSize: 15,
+                              lineHeight: 1.65,
+                              color: BRAND.mid,
+                              background: BRAND.paper,
+                              border: `1px solid ${BRAND.line}`,
+                              borderRadius: 14,
+                              padding: "14px 18px",
+                              margin: "10px 0 0",
+                              maxWidth: "66ch",
+                              textWrap: "pretty",
+                            }}
+                          >
+                            {art.standard_text}
+                          </p>
+                        </details>
+                      )}
+
+                      <Step
+                        n={1}
+                        heading="Read the article"
+                        hint={`${v.paras.length} paragraphs, lettered ${v.paras[0]?.label} to ${v.paras[v.paras.length - 1]?.label}. The letters are how you point at your evidence.`}
+                        accent={ACCENT.ar}
+                      >
                         {v.paras.map((p) => (
-                          <div key={p.label} style={{ display: "flex", gap: 14, margin: "0 0 16px" }}>
-                            <b style={{ color: BRAND.coralDark, flex: "0 0 auto", width: "1.1em" }}>{p.label}</b>
-                            <div style={{ textWrap: "pretty" }}>{p.text}</div>
-                          </div>
+                          <Para key={p.label} letter={p.label} text={p.text} accent={ACCENT.ar} />
                         ))}
-                      </div>
-                    </Band>
+                      </Step>
 
-                    <Band heading="Five questions" accent={ACCENT.ar}>
-                      {/* The number is drawn rather than left to the list marker:
-                          Tailwind's preflight sets list-style to none, so an <ol>
-                          here renders with no numbers at all. */}
-                      <div style={{ ...reading, fontSize: 17 }}>
-                        {art.questions.map((q) => (
-                          <div key={q.n} style={{ display: "flex", gap: 14, margin: "0 0 16px" }}>
-                            <b style={{ color: ACCENT.ar, flex: "0 0 auto", width: "1.1em" }}>{q.n}</b>
-                            <div>
-                              <span style={{ ...kindTag, display: "inline-block", marginBottom: 5 }}>{q.kind}</span>
-                              {/* A vocabulary item is two definitions on two lines; the
-                                  newline in the data used to collapse and run them together. */}
-                              <div style={{ whiteSpace: "pre-line", textWrap: "pretty" }}>{q.q}</div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </Band>
+                      <Step
+                        n={2}
+                        heading="Answer five questions"
+                        hint="Each one says which kind of thinking it asks for."
+                        accent={ACCENT.ar}
+                      >
+                        <ul style={{ display: "grid", gap: 10, margin: 0, padding: 0 }}>
+                          {art.questions.map((q) => (
+                            <Question key={q.n} n={q.n} kind={q.kind} q={q.q} accent={ACCENT.ar} />
+                          ))}
+                        </ul>
+                      </Step>
 
-                    <Band heading="Then write" accent={ACCENT.ar}>
-                      <div style={reading}>
-                        What is the most important idea in this article, and how do you know? Name
-                        the paragraph letter for every piece of evidence.
-                      </div>
-                    </Band>
+                      <Step n={3} heading="Then write" accent={ACCENT.ar}>
+                        <Ask accent={ACCENT.ar}>
+                          What is the most important idea in this article, and how do you know?
+                        </Ask>
+                        <div
+                          style={{
+                            background: BRAND.paper,
+                            border: `1px solid ${BRAND.line}`,
+                            borderRadius: 16,
+                            padding: "14px 18px",
+                            marginTop: 12,
+                          }}
+                        >
+                          <p style={{ ...label, color: ACCENT.ar, margin: "0 0 6px" }}>How to answer</p>
+                          <p style={{ fontSize: 16, lineHeight: 1.6, margin: 0, textWrap: "pretty" }}>
+                            Name the paragraph letter for every piece of evidence you use.
+                          </p>
+                        </div>
+                      </Step>
                     <Actions>
                       <CopyButton text={articlePrompt(art, ver)} label="Copy article prompt" />
                       <Prompt text={articlePrompt(art, ver)} />
@@ -1015,7 +1176,8 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                       )}
                     </Answers>
                     </Actions>
-                  </Card>
+                    </div>
+                  </div>
                 ) : (
                   <p style={{ color: BRAND.mid }}>No article matches that filter.</p>
                 )}
