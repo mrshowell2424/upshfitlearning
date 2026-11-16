@@ -5965,7 +5965,64 @@
     "The custodian: “said he moved nothing.”",
     "Checkouts: “found no checkouts after Thursday.”"
    ],
-   "explain": "Nothing was missing and nothing was damaged. Because the worksheet asked for reverse order and the student answered all twelve questions correctly, she shelved the whole range backward on purpose."
+   "explain": "Nothing was missing and nothing was damaged. Because the worksheet asked for reverse order and the student answered all twelve questions correctly, she shelved the whole range backward on purpose.",
+   "debate": {
+    "story": "Every book in the 500s was out of order on Monday morning. The call numbers ran backward from 599 to 500. The sign-out log shows three books taken Friday and all three back on the shelf. The custodian waxed that aisle Friday night. To wax it he lifted every book off and put it back. The aisle light had been out since Thursday. A sixth-grade class used the library Friday afternoon for a lesson on call numbers. Taped inside the cart was a worksheet titled Practice Shelving: Reverse Order. One student wrote her name on it and answered eleven of the twelve questions. Mrs. Kim saw a fifth grader slide a book behind the row on Friday. The whole row sits pushed back two inches from the shelf edge.",
+    "question": "Who put the books in backward order, and what in the case says so?",
+    "suspects": [
+     {
+      "who": "📋 A shelving practice worksheet",
+      "why": "titled Reverse Order, taped in the cart after a lesson on call numbers"
+     },
+     {
+      "who": "🧹 The custodian",
+      "why": "lifted every book off to wax, in an aisle with no light"
+     },
+     {
+      "who": "📕 Books checked out",
+      "why": "three taken Friday, and all three back on the shelf"
+     },
+     {
+      "who": "🙋 A student hiding a book",
+      "why": "seen sliding a book behind a row that now sits pushed back"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     3
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“Taped inside the cart was a worksheet titled Practice Shelving: Reverse Order.”",
+       "“A sixth-grade class used the library Friday afternoon for a lesson on call numbers.”"
+      ],
+      "against": "“One student wrote her name on it and answered eleven of the twelve questions.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“To wax it he lifted every book off and put it back.”",
+       "“The aisle light had been out since Thursday.”"
+      ],
+      "against": "“The call numbers ran backward from 599 to 500.”"
+     },
+     {
+      "who": 3,
+      "evidence": [
+       "“Mrs. Kim saw a fifth grader slide a book behind the row on Friday.”",
+       "“The whole row sits pushed back two inches from the shelf edge.”"
+      ],
+      "against": "“Every book in the 500s was out of order on Monday morning.”"
+     }
+    ],
+    "clears": [
+     "Checkouts: “three books taken Friday and all three back on the shelf.”"
+    ],
+    "note": "Three books cannot reorder a hundred, so the checkouts are out and everybody should say so. After that the case does not choose. The worksheet explains the exact backward order but not the one wrong answer. The custodian explains a whole shelf handled in the dark but not why it came back in perfect reverse. The hidden book explains a row pushed back but not a hundred call numbers. A strong answer names which fact its suspect cannot explain and says why it still picks that suspect."
+   }
   },
   {
    "id": "g5-w2",
@@ -6002,7 +6059,65 @@
     "The cooler: “The cooler was working.”",
     "Time out of the cooler: “The other sixteen also came out at 11:45 but stayed inside closed lunchboxes.”"
    ],
-   "explain": "All twenty cartons left the cooler together. Because only four sat on a table in direct sun while the rest stayed in closed lunchboxes, the sun warmed those four and nothing else."
+   "explain": "All twenty cartons left the cooler together. Because only four sat on a table in direct sun while the rest stayed in closed lunchboxes, the sun warmed those four and nothing else.",
+   "debate": {
+    "story": "Four students in Room 12 had warm milk at lunch and the rest were cold. All twenty cartons came out of the same cooler at 11:40. The four warm ones belonged to students who sit at the window table. Those four set their cartons out at 11:45 and ate last, at 12:20. The window table gets direct sun from 11:30 until one o'clock. A thermometer left on that table for ten minutes read eighty-one degrees. The cooler door was propped open all morning for a delivery. Its dial reads forty, but nobody has checked the dial against a thermometer. The four warm cartons were the last four pulled from the back of the cooler. All twenty cartons carry the same date and came from one crate.",
+    "question": "Why was only some of the milk warm? Say who you would blame and prove it.",
+    "suspects": [
+     {
+      "who": "☀️ The sunny window table",
+      "why": "a thermometer on that table read eighty-one degrees"
+     },
+     {
+      "who": "🧊 The cooler",
+      "why": "propped open all morning, and the dial has never been checked"
+     },
+     {
+      "who": "🥛 Bad milk",
+      "why": "all twenty cartons share one date and one crate"
+     },
+     {
+      "who": "⏰ Time out of the cooler",
+      "why": "set out at 11:45 by the four who ate last"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     3
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“The window table gets direct sun from 11:30 until one o'clock.”",
+       "“A thermometer left on that table for ten minutes read eighty-one degrees.”"
+      ],
+      "against": "“All twenty cartons came out of the same cooler at 11:40.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“The cooler door was propped open all morning for a delivery.”",
+       "“Its dial reads forty, but nobody has checked the dial against a thermometer.”",
+       "“The four warm cartons were the last four pulled from the back of the cooler.”"
+      ],
+      "against": "“The four warm ones belonged to students who sit at the window table.”"
+     },
+     {
+      "who": 3,
+      "evidence": [
+       "“Those four set their cartons out at 11:45 and ate last, at 12:20.”",
+       "“Four students in Room 12 had warm milk at lunch and the rest were cold.”"
+      ],
+      "against": "“A thermometer left on that table for ten minutes read eighty-one degrees.”"
+     }
+    ],
+    "clears": [
+     "Bad milk: “All twenty cartons carry the same date and came from one crate.”"
+    ],
+    "note": "One crate and one date rules the milk itself out. The other three all fit the same four children, which is what makes this hard: they sit in the sun, they waited longest, and theirs came from the back of a cooler propped open all morning. The best answers notice that the four warm cartons are warm for three reasons at once, and argue for the one they think did most of the work."
+   }
   },
   {
    "id": "g5-w3",
@@ -6035,7 +6150,58 @@
     "Taking them home: “No student had taken one home”",
     "Desks: “the class had searched desks twice.”"
    ],
-   "explain": "Nothing else fell after tape went along the sill edge. Because the sill tilts toward the window and an eraser rolls, the erasers rolled off into the vent below."
+   "explain": "Nothing else fell after tape went along the sill edge. Because the sill tilts toward the window and an eraser rolls, the erasers rolled off into the vent below.",
+   "debate": {
+    "story": "Mr. Dunn bought a box of thirty pink erasers in September. By November eleven were gone. He found three of them in the heating vent under the window. The vent sits directly below the pencil cup on the sill. An eraser is light and rolls, and the sill tilts half an inch toward the window. Two students were seen putting erasers in their pockets at the end of October. Erasers cost a nickel, and nobody counts them going out the door. The class searched desks once, in the first week of November, and found two. Nine desks were not opened, because those students were at band.",
+    "question": "Where did the other erasers go? Pick one answer and back it from the text.",
+    "suspects": [
+     {
+      "who": "🕳️ The heating vent below the sill",
+      "why": "three found in it, under a sill that tilts toward the window"
+     },
+     {
+      "who": "🎒 Students took them home",
+      "why": "two seen pocketing erasers, and nobody counts them going out"
+     },
+     {
+      "who": "🗄️ Lost in desks",
+      "why": "searched once, with nine desks never opened"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     2
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“He found three of them in the heating vent under the window.”",
+       "“An eraser is light and rolls, and the sill tilts half an inch toward the window.”"
+      ],
+      "against": "“By November eleven were gone.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“Two students were seen putting erasers in their pockets at the end of October.”",
+       "“Erasers cost a nickel, and nobody counts them going out the door.”"
+      ],
+      "against": "“He found three of them in the heating vent under the window.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“The class searched desks once, in the first week of November, and found two.”",
+       "“Nine desks were not opened, because those students were at band.”"
+      ],
+      "against": "“The vent sits directly below the pencil cup on the sill.”"
+     }
+    ],
+    "clears": [],
+    "note": "Three of the eleven are accounted for by the vent and two by the desks, which leaves six that nothing in the case places. That gap is the exercise. Every answer here is partly right, so the argument is about which explanation covers the most erasers, and a strong one says out loud how many it has explained and how many it has not."
+   }
   },
   {
    "id": "g5-w4",
@@ -6068,7 +6234,58 @@
     "The truck: “The truck ride was eight minutes on a paved road.”",
     "A dropped crate: “Nobody dropped a crate.”"
    ],
-   "explain": "The unbruised crates have no stems loose inside them. Because fourteen students pulled instead of twisting, the stems came away with the fruit and pressed into the apples around them."
+   "explain": "The unbruised crates have no stems loose inside them. Because fourteen students pulled instead of twisting, the stems came away with the fruit and pressed into the apples around them.",
+   "debate": {
+    "story": "The fifth grade picked four bushels and found a third of them bruised two days later. The bruises are all on one side and about the size of a thumb. The students had been told to pick with a twist, not a pull. Fourteen of them pulled instead. A pulled apple comes away with the stem still attached. A loose stem in a crate presses into whatever it touches. The truck ride was twenty minutes. The road behind the orchard is gravel and washboarded. One crate was set down hard at the loading dock and its corner split. The bruised apples came from two crates, and nobody wrote down which two.",
+    "question": "What bruised the apples? Name one cause and quote the case.",
+    "suspects": [
+     {
+      "who": "🍎 Loose stems from pulled apples",
+      "why": "fourteen pulled instead of twisting, leaving the stems attached"
+     },
+     {
+      "who": "🚚 The truck ride",
+      "why": "twenty minutes over a washboarded gravel road"
+     },
+     {
+      "who": "📦 A dropped crate",
+      "why": "one set down hard enough to split its corner"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     2
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“A pulled apple comes away with the stem still attached.”",
+       "“A loose stem in a crate presses into whatever it touches.”"
+      ],
+      "against": "“The bruised apples came from two crates, and nobody wrote down which two.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“The truck ride was twenty minutes.”",
+       "“The road behind the orchard is gravel and washboarded.”"
+      ],
+      "against": "“The bruises are all on one side and about the size of a thumb.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“One crate was set down hard at the loading dock and its corner split.”",
+       "“The fifth grade picked four bushels and found a third of them bruised two days later.”"
+      ],
+      "against": "“Fourteen of them pulled instead.”"
+     }
+    ],
+    "clears": [],
+    "note": "The sentence that used to settle this case is the one saying which crates the bruised apples came from, and it has been taken out. Now the stem explanation fits the size and shape of the bruise, the truck fits a third of the load, and the dropped crate fits one crate exactly. Ask which suspect explains the bruise being on one side only, and the room will divide usefully."
+   }
   },
   {
    "id": "g5-w5",
@@ -6101,7 +6318,58 @@
     "Tire pressure: “Both tires held the same pressure”",
     "A bent frame: “the frame sat straight against a wall.”"
    ],
-   "explain": "The pull stopped once the housing was replaced and both pads met the rim together. Because the split housing let the cable stretch, the left pad gripped half a second before the right."
+   "explain": "The pull stopped once the housing was replaced and both pads met the rim together. Because the split housing let the cable stretch, the left pad gripped half a second before the right.",
+   "debate": {
+    "story": "Dev's bike pulled left every time he squeezed the brake. His father watched the wheels while Dev braked slowly in the driveway. The front brake pad on the left touched the rim a half second before the right one. One brake cable runs through a housing that had split near the handlebar. A split housing lets the cable stretch, which delays one side. The left tire reads thirty-four pounds and the right reads forty-one. A softer tire grips more and slows that wheel first. Dev's bike was hit in the rack in September and the front forks were straightened by hand. A frame held against a wall looks straight to the eye within a quarter inch.",
+    "question": "Why does the bike pull to one side? Make the case for one cause.",
+    "suspects": [
+     {
+      "who": "🔧 A split brake cable housing",
+      "why": "split near the handlebar, and the left pad lands first"
+     },
+     {
+      "who": "🛞 Tire pressure",
+      "why": "thirty-four pounds on the left against forty-one on the right"
+     },
+     {
+      "who": "🚲 A bent frame",
+      "why": "hit in the rack in September and straightened by hand"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     2
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“One brake cable runs through a housing that had split near the handlebar.”",
+       "“A split housing lets the cable stretch, which delays one side.”"
+      ],
+      "against": "“The left tire reads thirty-four pounds and the right reads forty-one.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“The left tire reads thirty-four pounds and the right reads forty-one.”",
+       "“A softer tire grips more and slows that wheel first.”"
+      ],
+      "against": "“The front brake pad on the left touched the rim a half second before the right one.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“Dev's bike was hit in the rack in September and the front forks were straightened by hand.”",
+       "“A frame held against a wall looks straight to the eye within a quarter inch.”"
+      ],
+      "against": "“Dev's bike pulled left every time he squeezed the brake.”"
+     }
+    ],
+    "clears": [],
+    "note": "All three now have a measurement behind them, and the pull is to the left in every one. The useful question is which of them explains why the bike only pulls when he brakes. Two of the three predict a pull all the time, and a student who notices that has done the real work whichever name they end up writing."
+   }
   },
   {
    "id": "g5-w6",
@@ -6134,7 +6402,58 @@
     "The filter: “the filter ran all night.”",
     "Water chemistry: “A test strip showed no ammonia and the right pH.”"
    ],
-   "explain": "The fish swam low again within a day of moving the tank. Because the radiator warmed the water to eighty-two degrees, the water held less oxygen and the fish went to the surface for it."
+   "explain": "The fish swam low again within a day of moving the tank. Because the radiator warmed the water to eighty-two degrees, the water held less oxygen and the fish went to the surface for it.",
+   "debate": {
+    "story": "The class goldfish hung near the surface and gulped at the air for two days. A fish at the surface is trying to reach the layer with the most oxygen. The tank sits beside a radiator that came on when the weather turned. A thermometer in the water read eighty-two degrees, eight above the usual reading. Warm water holds less dissolved oxygen than cool water does. The filter ran all night, but its outflow no longer breaks the surface since the water level dropped. Moving water is how most of the oxygen gets in. The test strip is from a tube that expired in March. Ammonia burns the gills, and a burned fish breathes fast wherever it is.",
+    "question": "Why is the fish gulping at the surface? Argue for one cause.",
+    "suspects": [
+     {
+      "who": "🔥 Warm water from the radiator",
+      "why": "eighty-two degrees, eight above the usual reading"
+     },
+     {
+      "who": "🔌 The filter",
+      "why": "running, but its outflow no longer breaks the surface"
+     },
+     {
+      "who": "🧪 Bad water chemistry",
+      "why": "tested with a strip from a tube that expired in March"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     2
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“A thermometer in the water read eighty-two degrees, eight above the usual reading.”",
+       "“Warm water holds less dissolved oxygen than cool water does.”"
+      ],
+      "against": "“The filter ran all night, but its outflow no longer breaks the surface since the water level dropped.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“Moving water is how most of the oxygen gets in.”",
+       "“The tank sits beside a radiator that came on when the weather turned.”"
+      ],
+      "against": "“A fish at the surface is trying to reach the layer with the most oxygen.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“The test strip is from a tube that expired in March.”",
+       "“Ammonia burns the gills, and a burned fish breathes fast wherever it is.”"
+      ],
+      "against": "“A thermometer in the water read eighty-two degrees, eight above the usual reading.”"
+     }
+    ],
+    "clears": [],
+    "note": "Two of these take oxygen out of the water and one stops it going in, so the first two arguments agree about the mechanism and disagree about the cause. The chemistry argument is the interesting one, because the only reason it was ruled out before was a test strip, and the case now says the strip is nine months out of date. Evidence that cannot be trusted is not evidence that says no."
+   }
   },
   {
    "id": "g5-w7",
@@ -6167,7 +6486,58 @@
     "Loose screws: “Mr. Blake found no loose screws.”",
     "The straps: “The duct is strapped tight.”"
    ],
-   "explain": "On Saturday the heat was off and the rattle stopped. Because the worn pin no longer held the damper steady, the damper swung every time the heat came on."
+   "explain": "On Saturday the heat was off and the rattle stopped. Because the worn pin no longer held the damper steady, the damper swung every time the heat came on.",
+   "debate": {
+    "story": "A rattle came from the ceiling vent in Room 8 three or four times an hour. It stopped completely on Saturday and started again Monday. The rattle happens about ten seconds after the heat kicks on. A thin metal damper inside the duct swings when air first moves through it. The damper's pin has worn a groove and no longer holds it steady. Two screws on the ceiling grille turn freely without tightening. A loose grille buzzes when air pushes past it. The duct straps were fitted in August and one of them hangs an inch below the duct. On Saturday the building heat was off, so nothing moved in the duct at all.",
+    "question": "What is rattling in the vent? Pick a cause and prove it from the text.",
+    "suspects": [
+     {
+      "who": "🌀 A worn damper pin",
+      "why": "worn into a groove, and the damper swings on the first air"
+     },
+     {
+      "who": "🔩 Loose screws",
+      "why": "two on the grille turn freely without tightening"
+     },
+     {
+      "who": "📏 The duct straps",
+      "why": "one of them hangs an inch below the duct"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     2
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“A thin metal damper inside the duct swings when air first moves through it.”",
+       "“The damper's pin has worn a groove and no longer holds it steady.”"
+      ],
+      "against": "“Two screws on the ceiling grille turn freely without tightening.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“Two screws on the ceiling grille turn freely without tightening.”",
+       "“A loose grille buzzes when air pushes past it.”"
+      ],
+      "against": "“The rattle happens about ten seconds after the heat kicks on.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“The duct straps were fitted in August and one of them hangs an inch below the duct.”",
+       "“It stopped completely on Saturday and started again Monday.”"
+      ],
+      "against": "“A thin metal damper inside the duct swings when air first moves through it.”"
+     }
+    ],
+    "clears": [],
+    "note": "Saturday no longer clears anybody, because the heat was off and all three suspects need moving air. That is worth saying aloud: a test that every suspect passes has told you nothing. The ten-second delay is the detail that still does work, and the strongest answers use it, whichever side they are arguing."
+   }
   },
   {
    "id": "g5-w8",
@@ -6200,7 +6570,58 @@
     "Road salt: “The branch is on the north side, away from the parking lot and the road salt.”",
     "Insects: “No insect holes appear in the fallen leaves.”"
    ],
-   "explain": "The rest of the tree is fed by uncut bark and stayed green. Because the trimmer cut through the thin layer that carries water to that branch, only that branch lost its leaves."
+   "explain": "The rest of the tree is fed by uncut bark and stayed green. Because the trimmer cut through the thin layer that carries water to that branch, only that branch lost its leaves.",
+   "debate": {
+    "story": "One maple at the school entrance dropped the leaves from a single branch in September. The rest of the tree stayed green. A groundskeeper found a deep cut in the bark where that branch meets the trunk. The cut came from a string trimmer used around the base in August. Water travels to a branch through a thin layer just under the bark. A cut that circles part of that layer starves whatever is above it. The branch is the lowest on the tree and the only one that reaches over the parking lot. Salt spray from the lot killed two shrubs on that side last winter. Three leaves in the fallen pile have small round holes near the stem.",
+    "question": "Why did one branch lose its leaves? Choose a cause and back it up.",
+    "suspects": [
+     {
+      "who": "🪚 A cut in the bark",
+      "why": "deep, where that branch meets the trunk"
+     },
+     {
+      "who": "🧂 Road salt",
+      "why": "the only branch over the lot, and salt killed shrubs on that side"
+     },
+     {
+      "who": "🐛 Insects",
+      "why": "small round holes in three of the fallen leaves"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     2
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“A groundskeeper found a deep cut in the bark where that branch meets the trunk.”",
+       "“A cut that circles part of that layer starves whatever is above it.”"
+      ],
+      "against": "“The branch is the lowest on the tree and the only one that reaches over the parking lot.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“The branch is the lowest on the tree and the only one that reaches over the parking lot.”",
+       "“Salt spray from the lot killed two shrubs on that side last winter.”"
+      ],
+      "against": "“One maple at the school entrance dropped the leaves from a single branch in September.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“Three leaves in the fallen pile have small round holes near the stem.”",
+       "“The rest of the tree stayed green.”"
+      ],
+      "against": "“The cut came from a string trimmer used around the base in August.”"
+     }
+    ],
+    "clears": [],
+    "note": "The branch now has three things wrong with it at once, which is what makes it arguable. Push on timing: the cut was made in August and the leaves fell in September, the salt came last winter, and three holes is a small number out of a whole branch. A student who argues from how long each cause takes to show is reasoning well even if they pick the salt."
+   }
   },
   {
    "id": "g5-w9",
@@ -6233,7 +6654,58 @@
     "An animal: “No animal tracks or tooth marks appear anywhere on it.”",
     "The custodian: “The custodian did not move it.”"
    ],
-   "explain": "The lobby pumpkin in the same light is still firm. Because the night dropped to twenty-six degrees and a pumpkin is mostly water, the ice pushed the cell walls apart and the shell gave way as it thawed."
+   "explain": "The lobby pumpkin in the same light is still firm. Because the night dropped to twenty-six degrees and a pumpkin is mostly water, the ice pushed the cell walls apart and the shell gave way as it thawed.",
+   "debate": {
+    "story": "The entrance pumpkin held its shape for three weeks and caved in overnight on the twenty-second day. Nobody saw it happen. The temperature dropped to twenty-six degrees that night, the first freeze of the fall. A pumpkin is about ninety percent water, and water expands when it freezes. Expanding ice pushes the cell walls apart, and they do not go back when the ice melts. Two shallow scratches run across the base where it meets the step. The custodian moved the pumpkin twice that week to sweep under it. A soft patch the size of a hand sits on the underside, and it smells sour. The lobby pumpkin, kept at room temperature, is still firm after twenty-four days.",
+    "question": "Why did the pumpkin cave in? Make the case for one cause.",
+    "suspects": [
+     {
+      "who": "❄️ The overnight freeze",
+      "why": "twenty-six degrees that night, the first freeze of the fall"
+     },
+     {
+      "who": "🐀 An animal",
+      "why": "scratches across the base and a sour soft patch underneath"
+     },
+     {
+      "who": "🧹 The custodian",
+      "why": "moved it twice that week to sweep under it"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     2
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“The temperature dropped to twenty-six degrees that night, the first freeze of the fall.”",
+       "“Expanding ice pushes the cell walls apart, and they do not go back when the ice melts.”"
+      ],
+      "against": "“A soft patch the size of a hand sits on the underside, and it smells sour.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“Two shallow scratches run across the base where it meets the step.”",
+       "“A soft patch the size of a hand sits on the underside, and it smells sour.”"
+      ],
+      "against": "“The entrance pumpkin held its shape for three weeks and caved in overnight on the twenty-second day.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“The custodian moved the pumpkin twice that week to sweep under it.”",
+       "“The lobby pumpkin, kept at room temperature, is still firm after twenty-four days.”"
+      ],
+      "against": "“A pumpkin is about ninety percent water, and water expands when it freezes.”"
+     }
+    ],
+    "clears": [],
+    "note": "The lobby pumpkin is the strongest single fact in the case and it can be used on two sides. It was never frozen and never moved, so it supports the freeze and the custodian equally well. Ask the class what one extra fact would settle it, and the answer they should reach is whether the lobby pumpkin was ever outdoors."
+   }
   },
   {
    "id": "g5-w10",

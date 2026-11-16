@@ -18,6 +18,26 @@
  *   6. The answer names somebody who is actually on the suspect list.
  *   7. Titles are unique, so two cases never look alike in the picker.
  *
+ * A case may also carry a debate version, and that gets its own checks. The
+ * debate version is only worth having if the text really does leave three
+ * suspects standing, so the gate refuses to take that on trust:
+ *
+ *   8. The debate story sits in the same grade band as the ordinary one.
+ *   9. Exactly three suspects are left open, named by index, and each one has
+ *      at least two quotes behind it that are really in the debate story.
+ *  10. The three sets of quotes are disjoint. Three arguments built from the
+ *      same sentence are one argument with three names on it.
+ *  11. None of the ordinary version's clearing quotes survive into the debate
+ *      story. This is the check that makes the debate real: if the sentence
+ *      that rules the custodian out is still on the page, the custodian is
+ *      not arguable and the exercise is a single-answer case wearing a label.
+ *  12. Any suspect NOT left open is still cleared, quoting the debate story,
+ *      so the debate keeps the elimination work rather than replacing it.
+ *  13. The debate gives every suspect a fresh reason, and none of those
+ *      reasons carries a clearing from the ordinary version. The suspect
+ *      cards are on screen beside the story, so a reason reading "said he
+ *      moved nothing" settles the case there however open the story is.
+ *
  *   bun run scripts/check-mysteries.mjs
  */
 import { readFileSync } from "node:fs";
@@ -112,6 +132,79 @@ for (const c of CASES) {
   if (!c.question) say("no question");
   if (!c.explain) say("no explanation");
 
+  // 8-12. the debate version, when there is one
+  if (c.debate) {
+    const d = c.debate;
+    const dStory = norm(d.story);
+    const dw = words(d.story);
+    if (dw < wMin || dw > wMax) say(`debate story is ${dw} words, band is ${wMin}-${wMax}`);
+    const dms = dw / (sentences(d.story).length || 1);
+    if (dms > plan.sentence)
+      say(`debate sentences average ${dms.toFixed(1)} words, grade ${plan.name} allows ${plan.sentence}`);
+    if (!d.question) say("the debate version has no question");
+    if (!d.note) say("the debate version has no teacher note");
+
+    const open = Array.isArray(d.open) ? d.open : [];
+    if (open.length !== 3) say(`${open.length} suspects left open, a debate wants exactly 3`);
+    if (new Set(open).size !== open.length) say("the same suspect is left open twice");
+    for (const i of open) if (!c.suspects[i]) say(`open suspect ${i} is not on the suspect list`);
+
+    const args = Array.isArray(d.arguments) ? d.arguments : [];
+    if (args.length !== open.length) say(`${args.length} arguments for ${open.length} open suspects`);
+    const seen = new Map();
+    args.forEach((a, n) => {
+      if (!open.includes(a.who)) say(`argument ${n + 1} is for a suspect that is not open`);
+      const ev = Array.isArray(a.evidence) ? a.evidence : [];
+      if (ev.length < 2) say(`argument ${n + 1} has ${ev.length} quotes, a case needs at least 2`);
+      ev.forEach((q, i) => {
+        const parts = fragments(q);
+        if (!parts.length) return say(`argument ${n + 1} quote ${i + 1} has nothing quotable in it`);
+        for (const part of parts) {
+          if (!dStory.includes(part))
+            say(`argument ${n + 1} quote ${i + 1} is not in the debate story: "${part}"`);
+          // 10. two suspects may not lean on the same sentence
+          if (seen.has(part) && seen.get(part) !== a.who)
+            say(`argument ${n + 1} shares a quote with another: "${part}"`);
+          seen.set(part, a.who);
+        }
+      });
+      if (a.against)
+        for (const part of fragments(a.against))
+          if (!dStory.includes(part))
+            say(`argument ${n + 1} answers a line that is not in the debate story: "${part}"`);
+    });
+
+    // 13. every suspect gets a fresh reason for its card
+    const dSus = Array.isArray(d.suspects) ? d.suspects : [];
+    if (dSus.length !== c.suspects.length)
+      say(`the debate gives ${dSus.length} suspect reasons for ${c.suspects.length} suspects`);
+    dSus.forEach((x, i) => {
+      if (!x.why) say(`debate suspect ${i + 1} has no reason on its card`);
+    });
+    const dCards = norm(dSus.map((x) => x.why).join(" | "));
+
+    // 11 and 13. nothing that ruled a suspect out in the ordinary version may
+    // remain, in the story or on a card.
+    (c.clears || []).forEach((cl, i) => {
+      for (const part of fragments(cl)) {
+        if (dStory.includes(part))
+          say(`the debate story still carries clearing ${i + 1}, so nobody has to argue: "${part}"`);
+        if (dCards.includes(part))
+          say(`a debate suspect card still carries clearing ${i + 1}: "${part}"`);
+      }
+    });
+
+    // 12. suspects left out of the debate are still ruled out
+    const shut = c.suspects.map((_, i) => i).filter((i) => !open.includes(i));
+    const dClears = Array.isArray(d.clears) ? d.clears : [];
+    if (dClears.length !== shut.length)
+      say(`${shut.length} suspects are not open but ${dClears.length} are cleared in the debate`);
+    dClears.forEach((cl, i) => {
+      const parts = fragments(cl).filter((q) => dStory.includes(q));
+      if (!parts.length) say(`debate clearing ${i + 1} quotes nothing from the debate story`);
+    });
+  }
+
   // 7. unique titles
   const key = String(c.title).trim().toLowerCase();
   if (titles.has(key)) say(`shares its title with ${titles.get(key)}`);
@@ -134,6 +227,8 @@ const done = PLAN.grades.filter((g) => CASES.some((c) => c.grade === g.grade));
 const whole = PLAN.grades.filter((g) => CASES.filter((c) => c.grade === g.grade).length === PLAN.weeks);
 console.log(`${CASES.length} mysteries across ${done.length} of ${PLAN.grades.length} grades; ${whole.length} complete.`);
 console.log(`grades started: ${done.map((g) => g.name).join(", ") || "none"}`);
+const withDebate = CASES.filter((c) => c.debate).length;
+console.log(`${withDebate} of ${CASES.length} cases also carry a debate version.`);
 console.log(`problems: ${problems.length}`);
 problems.slice(0, 40).forEach((p) => console.log("  " + p));
 if (problems.length) { console.error("\n✗ fix these before the pack ships."); process.exit(1); }

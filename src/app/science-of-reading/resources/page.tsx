@@ -6,6 +6,7 @@ import { CopyButton } from "./copy-button";
 import MYSTERIES from "@/../scripts/reading-mysteries.json";
 import ARTICLES from "@/../scripts/reading-articles.json";
 import MY_COACH from "@/../scripts/reading-mystery-coach.json";
+import MY_DEBATE_COACH from "@/../scripts/reading-mystery-debate-coach.json";
 import AR_COACH from "@/../scripts/reading-article-coach.json";
 import READ_THINK from "@/../scripts/reading-read-think.json";
 
@@ -66,6 +67,26 @@ function mysteryPrompt(c: (typeof MY)[number]) {
     .replace("{STORY}", c.story)
     .replace("{QUESTION}", c.question)
     .replace("{SUSPECTS}", c.suspects.map((s) => `- ${s.who}: ${s.why}`).join("\n"));
+}
+
+/**
+ * The debate version's prompt. It is a different prompt rather than the same
+ * one with a line added, because the two coaches have to believe different
+ * things. The ordinary coach must not know the answer or it leaks it. This
+ * one must not think there is an answer, or it will quietly steer the student
+ * towards whichever suspect it has decided on.
+ */
+function debatePrompt(c: (typeof MY)[number]) {
+  const d = c.debate;
+  if (!d) return mysteryPrompt(c);
+  return MY_DEBATE_COACH.lines
+    .join("\n")
+    .replace(/\{GRADES\}/g, gradeName(c.grade))
+    .replace(/\{TITLE\}/g, c.title)
+    .replace("{STORY}", d.story)
+    .replace("{QUESTION}", d.question)
+    .replace("{SUSPECTS}", d.suspects.map((x) => `- ${x.who}: ${x.why}`).join("\n"))
+    .replace("{OPEN}", d.open.map((i) => `- ${c.suspects[i].who}`).join("\n"));
 }
 
 /**
@@ -196,7 +217,7 @@ function Actions({ children }: { children: React.ReactNode }) {
  * others costs the right-hand position and keeps all four together, which is
  * the thing worth having.
  */
-function Answers({ children }: { children: React.ReactNode }) {
+function Answers({ children, label: text = "🔑 Answers (teacher)" }: { children: React.ReactNode; label?: string }) {
   return (
     <details>
       <summary
@@ -207,7 +228,7 @@ function Answers({ children }: { children: React.ReactNode }) {
           color: BRAND.mid,
         }}
       >
-        🔑 Answers (teacher)
+        {text}
       </summary>
       <div style={{ background: BRAND.panel, borderRadius: 12, padding: "12px 16px", marginTop: 10, fontSize: 15 }}>
         {children}
@@ -578,14 +599,17 @@ function Step({
  * is what makes a line-up scannable and what lets a teacher say "the third
  * one" and have the room land on the same card.
  */
-function Suspect({ who, why }: { who: string; why: string }) {
+function Suspect({ who, why, open }: { who: string; why: string; open?: boolean }) {
   const [face, ...rest] = who.split(" ");
   return (
     <li
       style={{
         listStyle: "none",
         background: "#FFFFFF",
-        border: `1.5px solid ${BRAND.line}`,
+        // In the debate version the three suspects still in play are drawn in,
+        // because "any of them could be right" is a claim a child should be
+        // able to see on the card rather than take on trust from a teacher.
+        border: open ? `2px solid ${ACCENT.my}` : `1.5px solid ${BRAND.line}`,
         borderRadius: 16,
         padding: "14px 16px",
         display: "grid",
@@ -600,6 +624,9 @@ function Suspect({ who, why }: { who: string; why: string }) {
       <div style={{ minWidth: 0 }}>
         <p style={{ fontFamily: POPPINS, fontSize: 15, fontWeight: 800, margin: "0 0 3px", textWrap: "pretty" }}>
           {rest.join(" ")}
+          {open && (
+            <span style={{ ...label, color: ACCENT.my, marginLeft: 8, fontSize: 11 }}>in play</span>
+          )}
         </p>
         <p style={{ color: BRAND.mid, fontSize: 14, lineHeight: 1.5, margin: 0, textWrap: "pretty" }}>
           {why}
@@ -765,6 +792,18 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   const myPool = MY.filter((c) => c.grade === myGrade).sort((a, b) => a.week - b.week);
   const ci = Math.min(Math.max(Number(one(sp.c) ?? 0) || 0, 0), Math.max(myPool.length - 1, 0));
   const myCase = myPool[ci];
+  // Two versions of the same case. "solve" is the original: one culprit, the
+  // rest ruled out by the text. "debate" withholds the deciding line, leaves
+  // three suspects standing, and grades the argument instead of the name. A
+  // case without a debate version stays on solve whatever the URL asks for.
+  const dbt = myCase?.debate;
+  const mode: "solve" | "debate" = one(sp.m) === "db" && dbt ? "debate" : "solve";
+  const myStory = mode === "debate" && dbt ? dbt.story : myCase?.story;
+  const myQ = mode === "debate" && dbt ? dbt.question : myCase?.question;
+  // The suspect cards sit beside the story, so they carry the same weight as
+  // it does. The solve version's reasons are often the clearing itself, which
+  // would settle the debate on the card, so the debate brings its own.
+  const mySuspects = mode === "debate" && dbt ? dbt.suspects : (myCase?.suspects ?? []);
 
   // Articles: grade, then standard, then the article inside what is left.
   const grade = nearestGrade(wanted, AR_GRADES);
@@ -777,7 +816,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   const v = art ? art[ver] : null;
 
   const href = (next: Record<string, string>) => {
-    const q = new URLSearchParams({ tab, g: String(tab === "my" ? myGrade : grade), s: std, n: String(ai), v: ver === "lower" ? "lo" : "hi", c: String(ci), ...next });
+    const q = new URLSearchParams({ tab, g: String(tab === "my" ? myGrade : grade), s: std, n: String(ai), v: ver === "lower" ? "lo" : "hi", c: String(ci), m: mode === "debate" ? "db" : "s", ...next });
     return `/science-of-reading/resources?${q.toString()}`;
   };
 
@@ -857,6 +896,24 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                   </span>
                 </form>
 
+                {/* Two versions of the case. The toggle only appears where
+                    the case has a debate version written, so a grade still
+                    waiting for one does not show a control that does nothing. */}
+                {dbt && (
+                  <div style={{ margin: "0 0 16px" }}>
+                    <p style={{ ...label, margin: "0 0 8px" }}>Version</p>
+                    <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
+                      <a href={href({ m: "s" })} style={pill(mode === "solve")}>&#128269; Solve it</a>
+                      <a href={href({ m: "db" })} style={pill(mode === "debate")}>&#128172; Debate it</a>
+                      <span style={{ color: BRAND.mid, fontSize: 14, textWrap: "pretty" }}>
+                        {mode === "debate"
+                          ? "No answer key. Three suspects are arguable; the evidence is what counts."
+                          : "One culprit. The case rules the others out."}
+                      </span>
+                    </div>
+                  </div>
+                )}
+
                 <div
                   style={{
                     background: "#FFFFFF",
@@ -876,7 +933,11 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                     <Step
                       n={1}
                       heading="Read the case"
-                      hint="Every clue you need is in these sentences. Nothing is hidden."
+                      hint={
+                        mode === "debate"
+                          ? "Everything you can use is in these sentences. Nothing in them settles it."
+                          : "Every clue you need is in these sentences. Nothing is hidden."
+                      }
                       accent={ACCENT.my}
                     >
                       {/* The one place on the page set in the serif. The
@@ -890,14 +951,18 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                           paddingLeft: 18,
                         }}
                       >
-                        {myCase.story}
+                        {myStory}
                       </div>
                     </Step>
 
                     <Step
                       n={2}
                       heading="Line up the suspects"
-                      hint={`${myCase.suspects.length} of them. One did it. The case rules out the rest.`}
+                      hint={
+                        mode === "debate" && dbt
+                          ? `${myCase.suspects.length} of them. Three could be argued. Pick one and prove it.`
+                          : `${myCase.suspects.length} of them. One did it. The case rules out the rest.`
+                      }
                       accent={ACCENT.my}
                     >
                       <ul
@@ -909,14 +974,19 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                           padding: 0,
                         }}
                       >
-                        {myCase.suspects.map((s) => (
-                          <Suspect key={s.who} who={s.who} why={s.why} />
+                        {mySuspects.map((s, i) => (
+                          <Suspect
+                            key={s.who}
+                            who={s.who}
+                            why={s.why}
+                            open={mode === "debate" && !!dbt && dbt.open.includes(i)}
+                          />
                         ))}
                       </ul>
                     </Step>
 
-                    <Step n={3} heading="Make the call" accent={ACCENT.my}>
-                      <Ask accent={ACCENT.my}>{myCase.question}</Ask>
+                    <Step n={3} heading={mode === "debate" ? "Take a side" : "Make the call"} accent={ACCENT.my}>
+                      <Ask accent={ACCENT.my}>{myQ}</Ask>
                       <div
                         style={{
                           background: BRAND.paper,
@@ -928,17 +998,78 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                       >
                         <p style={{ ...label, color: ACCENT.my, margin: "0 0 6px" }}>Then write</p>
                         <p style={{ fontSize: 16, lineHeight: 1.6, margin: 0, textWrap: "pretty" }}>
-                          Say who did it. Quote the words from the case that prove it, and say what
-                          rules each of the others out.
+                          {mode === "debate"
+                            ? "Name the one you are charging. Quote at least two lines from the case, and after each one say what it shows. Then name the strongest line against you and answer it."
+                            : "Say who did it. Quote the words from the case that prove it, and say what rules each of the others out."}
                         </p>
                       </div>
                     </Step>
                   <Actions>
-                    <CopyButton text={mysteryPrompt(myCase)} label="Copy mystery prompt" />
-                    <Prompt text={mysteryPrompt(myCase)} />
-                    <a href={`/science-of-reading/resources/print?tab=my&g=${myGrade}&c=${ci}`} style={pill(false)}>
+                    <CopyButton
+                      text={mode === "debate" ? debatePrompt(myCase) : mysteryPrompt(myCase)}
+                      label={mode === "debate" ? "Copy debate prompt" : "Copy mystery prompt"}
+                    />
+                    <Prompt text={mode === "debate" ? debatePrompt(myCase) : mysteryPrompt(myCase)} />
+                    <a
+                      href={`/science-of-reading/resources/print?tab=my&g=${myGrade}&c=${ci}${mode === "debate" ? "&m=db" : ""}`}
+                      style={pill(false)}
+                    >
                       🖨 Workbook
                     </a>
+                  {mode === "debate" && dbt ? (
+                  <Answers label="🔑 Teacher notes">
+                    <p style={{ fontSize: 15, fontWeight: 700, margin: "0 0 2px", textWrap: "pretty" }}>
+                      There is no answer to this one.
+                    </p>
+                    <p style={{ fontSize: 15, color: BRAND.mid, margin: 0, textWrap: "pretty" }}>
+                      Any of the three below can be argued from the text. What is being marked is
+                      the evidence and the reasoning, not the name.
+                    </p>
+                    {dbt.arguments.map((a, i) => (
+                      <div key={i} style={{ marginTop: 14, paddingTop: 12, borderTop: `1px solid ${BRAND.line}` }}>
+                        <p style={{ fontFamily: POPPINS, fontSize: 15, fontWeight: 800, margin: "0 0 7px", textWrap: "pretty" }}>
+                          {myCase.suspects[a.who]?.who}
+                        </p>
+                        {a.evidence.map((q, j) => (
+                          <Keyed key={j} marker="•" color={ACCENT.my}>
+                            {q}
+                          </Keyed>
+                        ))}
+                        {a.against && (
+                          <Keyed marker="×" color={BRAND.coralDark}>
+                            <span style={{ color: BRAND.mid }}>Has to answer: </span>
+                            {a.against}
+                          </Keyed>
+                        )}
+                      </div>
+                    ))}
+                    {dbt.clears.length > 0 && (
+                      <>
+                        <KeyLabel color={BRAND.coralDark}>
+                          {`Really is ruled out · ${dbt.clears.length}`}
+                        </KeyLabel>
+                        {dbt.clears.map((q, i) => (
+                          <Keyed key={i} marker="×" color={BRAND.coralDark}>
+                            {q}
+                          </Keyed>
+                        ))}
+                      </>
+                    )}
+                    <p
+                      style={{
+                        margin: "14px 0 0",
+                        paddingTop: 12,
+                        borderTop: `1px solid ${BRAND.line}`,
+                        fontStyle: "italic",
+                        color: BRAND.mid,
+                        lineHeight: 1.55,
+                        textWrap: "pretty",
+                      }}
+                    >
+                      {dbt.note}
+                    </p>
+                  </Answers>
+                  ) : (
                   <Answers>
                     <p style={{ fontSize: 17, fontWeight: 700, margin: 0, textWrap: "pretty" }}>
                       {myCase.answer}
@@ -979,6 +1110,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                       </p>
                     )}
                   </Answers>
+                  )}
                   </Actions>
                   </div>
                 </div>

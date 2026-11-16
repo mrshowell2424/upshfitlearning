@@ -233,6 +233,12 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   const myPool = MY.filter((c) => c.grade === myGrade).sort((a, b) => a.week - b.week);
   const ci = Math.min(Math.max(Number(one(sp.c) ?? 0) || 0, 0), Math.max(myPool.length - 1, 0));
   const myCase = myPool[ci];
+  // The debate version of the same case, when the URL asks for it and the
+  // case has one. The sheet only differs in three places: the text, the
+  // question, and the colour key, because "cross out who could NOT have done
+  // it" is the wrong instruction when nobody is ruled out.
+  const dbt = myCase?.debate;
+  const debate = one(sp.m) === "db" && !!dbt;
 
   const grade = nearest(wanted, grades);
   const std = one(sp.s) ?? "*";
@@ -278,31 +284,44 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
       {kind === "my" ? (
         <div style={sheet}>
           <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: SOFT }}>
-            {`MYSTERY · ${myCase.grade === 0 ? "K" : myCase.grade === 1 ? "1ST" : myCase.grade === 2 ? "2ND" : myCase.grade === 3 ? "3RD" : `${myCase.grade}TH`} · WEEK ${myCase.week}`}
+            {`${debate ? "MYSTERY DEBATE" : "MYSTERY"} · ${myCase.grade === 0 ? "K" : myCase.grade === 1 ? "1ST" : myCase.grade === 2 ? "2ND" : myCase.grade === 3 ? "3RD" : `${myCase.grade}TH`} · WEEK ${myCase.week}`}
           </div>
           <h1 style={{ fontFamily: "var(--font-poppins), system-ui, sans-serif", fontSize: 26, fontWeight: 900, margin: "2px 0 6px" }}>
             {myCase.title}
           </h1>
           <NameLine />
           <Key
-            rows={[
-              ["Circle", "blue", "every person or animal who could have done it"],
-              ["Underline", "green", "words that prove who did it"],
-              ["Cross out", "red", "words that show somebody could NOT have done it"],
-              ["Box", "yellow", "a word you do not know"],
-            ]}
+            rows={
+              debate
+                ? [
+                    ["Circle", "blue", "every person or thing that could have done it"],
+                    ["Underline", "green", "words that back the one you are charging"],
+                    ["Cross out", "red", "words that work against you"],
+                    ["Box", "yellow", "a word you do not know"],
+                  ]
+                : [
+                    ["Circle", "blue", "every person or animal who could have done it"],
+                    ["Underline", "green", "words that prove who did it"],
+                    ["Cross out", "red", "words that show somebody could NOT have done it"],
+                    ["Box", "yellow", "a word you do not know"],
+                  ]
+            }
           />
           <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: SOFT, margin: "10px 0 4px" }}>
             THE CASE
           </div>
-          <Annotatable text={myCase.story} />
+          <Annotatable text={debate && dbt ? dbt.story : myCase.story} />
 
           <Rule />
-          <div style={{ fontSize: 15, fontWeight: 800, margin: "0 0 8px" }}>{myCase.question}</div>
-          <div style={{ fontSize: 12, color: SOFT, margin: "0 0 6px" }}>
-            Write what the text says about each one. Then tick the one you think did it.
+          <div style={{ fontSize: 15, fontWeight: 800, margin: "0 0 8px" }}>
+            {debate && dbt ? dbt.question : myCase.question}
           </div>
-          {myCase.suspects.map((s) => (
+          <div style={{ fontSize: 12, color: SOFT, margin: "0 0 6px" }}>
+            {debate
+              ? "Write what the text says about each one. Tick the one you are charging. There is no answer key: your evidence is the answer."
+              : "Write what the text says about each one. Then tick the one you think did it."}
+          </div>
+          {(debate && dbt ? dbt.suspects : myCase.suspects).map((s) => (
             <div key={s.who} style={{ breakInside: "avoid", margin: "0 0 10px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 700 }}>
                 <span style={{ border: `1.5px solid ${INK}`, width: 14, height: 14, display: "inline-block" }} />
