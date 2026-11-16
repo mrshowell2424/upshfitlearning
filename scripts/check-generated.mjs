@@ -40,6 +40,7 @@ const BUILDERS = [
   ["scripts/build-fluency-play.mjs", ["scripts/reading-fluency-play.json"]],
   ["scripts/build-reading-threads.mjs", ["scripts/reading-threads.json"]],
   ["scripts/build-morphology.mjs", ["scripts/reading-morphology.json"]],
+  ["scripts/build-multisyllabic.mjs", ["scripts/reading-multisyllabic.json"]],
   [
     "scripts/build-reading-resources.mjs",
     ["scripts/reading-resources-counts.json", "content-reading-materials/science-of-reading/resources.html"],
