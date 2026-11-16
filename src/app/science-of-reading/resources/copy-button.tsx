@@ -35,7 +35,11 @@ export function CopyButton({ text, label }: { text: string; label: string }) {
         fontSize: 13,
         fontWeight: 700,
         borderRadius: 100,
-        padding: "9px 20px",
+        // Matches pill() exactly. A button, an anchor and a summary have
+        // three different default line heights, so the four controls in the
+        // action bar only line up if every one of them states its own.
+        padding: "8px 18px",
+        lineHeight: 1.25,
         cursor: "pointer",
         border: "1.5px solid #111111",
         background: "#111111",

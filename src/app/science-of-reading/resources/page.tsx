@@ -112,6 +112,7 @@ const pill = (on: boolean): React.CSSProperties => ({
   fontWeight: 700,
   borderRadius: 100,
   padding: "8px 18px",
+  lineHeight: 1.25,
   cursor: "pointer",
   textDecoration: "none",
   display: "inline-block",
@@ -245,6 +246,7 @@ function Band({
 function Actions({ children }: { children: React.ReactNode }) {
   return (
     <div
+      className="res-actions"
       style={{
         borderTop: `1px solid ${BRAND.line}`,
         background: BRAND.paper,
@@ -253,9 +255,23 @@ function Actions({ children }: { children: React.ReactNode }) {
         display: "flex",
         flexWrap: "wrap",
         gap: 8,
-        alignItems: "flex-start",
+        alignItems: "center",
       }}
     >
+      {/* Both panels are <details>, so they are flex items in this bar, and a
+          closed one is a pill the same size as the buttons beside it. An open
+          one was still a flex item: the prompt is 2,000 characters of
+          monospace and the answer key is a dozen lines, and both were being
+          folded into whatever column width the flex row had left over.
+          details[open] takes the whole row, so the panel opens at the full
+          width of the bar with its own button sitting on top of it. The
+          marker rule is Safari, which draws a triangle that list-style alone
+          does not remove. */}
+      <style>{`
+        .res-actions > details[open] { width: 100%; }
+        .res-actions summary::-webkit-details-marker { display: none; }
+        .res-actions summary::marker { content: ""; }
+      `}</style>
       {children}
     </div>
   );
@@ -270,7 +286,7 @@ function Actions({ children }: { children: React.ReactNode }) {
  */
 function Answers({ children }: { children: React.ReactNode }) {
   return (
-    <details style={{ marginTop: 0, marginLeft: "auto" }}>
+    <details style={{ marginLeft: "auto" }}>
       <summary
         style={{
           ...pill(false),
@@ -525,7 +541,7 @@ function Ask({ children, accent }: { children: React.ReactNode; accent: string }
 
 function Prompt({ text }: { text: string }) {
   return (
-    <details style={{ marginTop: 10 }}>
+    <details>
       <summary style={{ ...pill(false), listStyle: "none" }}>Show prompt</summary>
       <pre
         style={{
