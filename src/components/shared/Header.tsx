@@ -19,7 +19,11 @@ const navItems = [
   { label: "Behavior", href: "/behavior" },
   { label: "Courses", href: "/courses" },
   { label: "Teacher's Lounge", href: "/lounge" },
-  { label: "What We Offer", href: "/services" },
+  // "What We Offer" is deliberately not here. The full nav only appears at
+  // 1280px and ten items already filled it exactly; an eleventh pushed the
+  // sign-in cluster past the viewport, which gave every page a horizontal
+  // scrollbar and left the centred content looking shoved to one side. It
+  // is in the footer, on the home page and linked from About.
   { label: "About", href: "/about" },
 ];
 

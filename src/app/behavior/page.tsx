@@ -153,44 +153,6 @@ function YearCard() {
         color: BRAND.ink,
       }}
     >
-      {/* The same 20:7 band the reading hub crops, for the same reason: a
-          teacher deciding whether to click should see the thing rather than
-          infer it from a sentence. */}
-      <div
-        style={{
-          position: "relative",
-          aspectRatio: "20 / 7",
-          overflow: "hidden",
-          borderRadius: 10,
-          border: `1px solid ${BRAND.line}`,
-          marginBottom: 16,
-        }}
-      >
-        <Image
-          src="/previews/ef-year.png"
-          alt="The executive function year: a strip of eleven skills across the school year, a week box, and the five two-minute lessons for task initiation."
-          width={1200}
-          height={1130}
-          style={{
-            width: "100%",
-            height: "100%",
-            display: "block",
-            objectFit: "cover",
-            objectPosition: "center 0%",
-          }}
-        />
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            left: 0,
-            right: 0,
-            bottom: 0,
-            height: "36%",
-            background: "linear-gradient(to bottom, rgba(255,255,255,0), #FFFFFF)",
-          }}
-        />
-      </div>
       <p style={{ ...label, margin: "0 0 4px", color: BRAND.tealDark }}>Over the term</p>
       <h2
         style={{
@@ -206,6 +168,47 @@ function YearCard() {
       <p style={{ margin: 0, fontSize: 15, color: BRAND.mid, lineHeight: 1.6 }}>
         {`All ${EF_YEAR.length} skills named on this page, taught across ${weeks} weeks at two minutes a day — five lessons a week, an I-can statement the class ends up saying, and something to send home.`}
       </p>
+      {/* The eleven skills, drawn rather than photographed.
+          This was a screenshot of the year page cropped to a 20:7 band, on
+          the principle that a teacher deciding whether to click should see
+          the thing. At the width this card actually renders, the screenshot
+          was a smudge of unreadable interface with its own title inside it,
+          so the card showed the same heading twice and neither legibly.
+          The skills themselves are the useful part, and as text they are
+          readable at any size and cost no image. */}
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: 6,
+          padding: "14px 15px",
+          background: BRAND.paper,
+          border: `1px solid ${BRAND.line}`,
+          borderRadius: 12,
+          marginTop: 16,
+        }}
+      >
+        {EF_YEAR.map((bk) => (
+          <span
+            key={bk.key}
+            style={{
+              fontSize: 12.5,
+              fontWeight: 700,
+              color: BRAND.ink,
+              background: "#FFFFFF",
+              border: `1px solid ${BRAND.line}`,
+              borderRadius: 999,
+              padding: "4px 11px",
+              whiteSpace: "nowrap",
+            }}
+          >
+            <span aria-hidden="true" style={{ marginRight: 5 }}>
+              {bk.icon}
+            </span>
+            {bk.name}
+          </span>
+        ))}
+      </div>
     </a>
   );
 }
@@ -617,24 +620,56 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                   letterSpacing: "-0.4px",
                 }}
               >
-                Pick what you are seeing
+                The eleven skills behind those signals
               </h2>
-              <p style={{ margin: "0 0 14px", fontSize: 16 }}>
-                Pick more than one if the morning had more than one. Where several signals load
-                the same executive function skill, that skill is the thing to work on — not the
-                behaviors one at a time.
+              <p style={{ margin: "0 0 18px", fontSize: 16, maxWidth: "62ch" }}>
+                Pick more than one above if the morning had more than one. Where several signals
+                load the same executive function skill, that skill is the thing to work on — not
+                the behaviors one at a time.
               </p>
-              <p style={{ ...label, margin: "0 0 8px" }}>The executive function skills used here</p>
-              <ul style={{ margin: 0, paddingLeft: 20 }}>
+              {/* A grid, not a bulleted list. Eleven definitions down a single
+                  column read as a wall of prose and nothing in them could be
+                  found again; two columns of short cards can be scanned, and
+                  each one is the link into its own term plan. */}
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                  gap: 10,
+                }}
+              >
                 {(Object.keys(EF) as EFKey[]).map((k) => (
-                  <li key={k} style={{ margin: "0 0 6px", fontSize: 15, lineHeight: 1.6 }}>
-                    <a href={`/behavior/year?s=${k}`} style={{ color: BRAND.ink }}>
-                      <b>{EF[k]}</b>
-                    </a>
-                    {` — ${EF_MEANING[k]}`}
-                  </li>
+                  <a
+                    key={k}
+                    href={`/behavior/year?s=${k}`}
+                    style={{
+                      display: "block",
+                      background: BRAND.paper,
+                      border: `1px solid ${BRAND.line}`,
+                      borderRadius: 12,
+                      padding: "11px 13px",
+                      textDecoration: "none",
+                      color: BRAND.ink,
+                    }}
+                  >
+                    <span
+                      style={{
+                        display: "block",
+                        fontFamily: "Poppins, sans-serif",
+                        fontSize: 14.5,
+                        fontWeight: 800,
+                        letterSpacing: "-0.2px",
+                        marginBottom: 2,
+                      }}
+                    >
+                      {EF[k]}
+                    </span>
+                    <span style={{ fontSize: 13.5, lineHeight: 1.5, color: BRAND.mid }}>
+                      {EF_MEANING[k]}
+                    </span>
+                  </a>
                 ))}
-              </ul>
+              </div>
             </Card>
           )}
 
