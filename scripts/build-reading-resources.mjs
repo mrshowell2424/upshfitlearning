@@ -23,6 +23,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 const MY = JSON.parse(readFileSync("scripts/reading-mysteries.json", "utf8")).cases;
 const AR = JSON.parse(readFileSync("scripts/reading-articles.json", "utf8")).articles;
 const MYC = JSON.parse(readFileSync("scripts/reading-mystery-coach.json", "utf8")).lines.join("\n");
+const MYD = JSON.parse(readFileSync("scripts/reading-mystery-debate-coach.json", "utf8")).lines.join("\n");
 const ARC = JSON.parse(readFileSync("scripts/reading-article-coach.json", "utf8")).lines.join("\n");
 const RT = JSON.parse(readFileSync("scripts/reading-read-think.json", "utf8"));
 
@@ -52,6 +53,15 @@ const data = {
     id: c.id, g: c.grade, week: c.week, tag: c.tag, title: c.title, story: c.story,
     q: c.question, sus: c.suspects, ans: c.answer, proof: c.proof,
     clears: c.clears, explain: c.explain,
+    // The debate version of the same case, where one is written: its own
+    // story, question and suspect cards, which three of them are still in
+    // play, the case for each, and the teacher note. Left null where it is
+    // not written, which is how the toggle knows whether to appear.
+    d: c.debate ? {
+      story: c.debate.story, q: c.debate.question, sus: c.debate.suspects,
+      open: c.debate.open, args: c.debate.arguments,
+      clears: c.debate.clears, note: c.debate.note,
+    } : null,
   })),
   ar: AR.map((a) => ({
     id: a.id, g: a.grade, n: a.n, title: a.title, std: a.standard,
@@ -61,6 +71,7 @@ const data = {
     note: a.note,
   })),
   myTpl: MYC,
+  myDbTpl: MYD,
   arTpl: ARC,
   // The grades each store actually holds. Read off the content rather than
   // written down, so a finished grade reaches the pickers on the next build
@@ -191,7 +202,10 @@ pre[hidden]{display:none}
       <select id="pick-my-g"></select>
       <label class="eyebrow" for="pick-my" style="margin:0">Case</label>
       <select id="pick-my"></select>
+      <button class="pill" id="my-solve" aria-pressed="true">🔍 Solve it</button>
+      <button class="pill" id="my-debate" aria-pressed="false">💬 Debate it</button>
     </div>
+    <p class="note" id="my-mode" style="margin:-8px 0 16px"></p>
     <div id="out-my"></div>
   </section>
 
@@ -259,6 +273,14 @@ pre[hidden]{display:none}
       return '<option value="' + i + '">' + esc("Week " + c.week + " \\u00b7 " + c.title) + "</option>";
     }).join("");
   }
+  /* Which version of the case is on screen. Solve is the default: a case
+     with one culprit the text rules the others out of. Debate withholds the
+     deciding line, leaves three suspects arguable, and marks the evidence
+     rather than the name. */
+  var myMode = "solve";
+  var bSolve = document.getElementById("my-solve");
+  var bDebate = document.getElementById("my-debate");
+  var modeNote = document.getElementById("my-mode");
   function myPrompt(c) {
     return D.myTpl
       .replace(/\\{GRADES\\}/g, gradeName(c.g))
@@ -267,38 +289,100 @@ pre[hidden]{display:none}
       .replace("{QUESTION}", c.q)
       .replace("{SUSPECTS}", c.sus.map(function (s) { return "- " + s.who + ": " + s.why; }).join("\\n"));
   }
+  /* The debate version carries its own coach rather than the same one with a
+     line added, because the two have to believe different things. The solve
+     coach must not know the answer or it leaks it. This one must not think
+     there is an answer, or it quietly steers the student towards whichever
+     suspect it settled on. */
+  function myDebatePrompt(c) {
+    var d = c.d;
+    if (!d) return myPrompt(c);
+    return D.myDbTpl
+      .replace(/\\{GRADES\\}/g, gradeName(c.g))
+      .replace(/\\{TITLE\\}/g, c.title)
+      .replace("{STORY}", d.story)
+      .replace("{QUESTION}", d.q)
+      .replace("{SUSPECTS}", d.sus.map(function (s) { return "- " + s.who + ": " + s.why; }).join("\\n"))
+      .replace("{OPEN}", d.open.map(function (i) { return "- " + d.sus[i].who; }).join("\\n"));
+  }
+  /* The teacher panel. Solve gives an answer and the lines that clear the
+     rest; debate gives the case for each suspect still in play, the line
+     each one has to answer, and only the suspects the text really does rule
+     out. */
+  function myKey(c, d) {
+    if (!d) {
+      return "<b>Answer:</b> " + esc(c.ans) +
+        "<br><b>Key proof:</b><ul>" + c.proof.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") +
+        "</ul>" + (c.clears.length ? "<b>Clears:</b><ul>" + c.clears.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + "</ul>" : "") +
+        (c.explain ? "<i>" + esc(c.explain) + "</i>" : "");
+    }
+    return "<b>There is no answer to this one.</b><br>Any of the three marked in play can be " +
+      "argued from the text. What is being marked is the evidence and the reasoning, not the name." +
+      d.args.map(function (a) {
+        return '<p style="margin:12px 0 2px"><b>' + esc(d.sus[a.who].who) + "</b></p><ul>" +
+          a.evidence.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + "</ul>" +
+          (a.against ? '<p style="margin:0">\\u00d7 Has to answer: ' + esc(a.against) + "</p>" : "");
+      }).join("") +
+      (d.clears.length
+        ? '<p style="margin:12px 0 2px"><b>Really is ruled out</b></p><ul>' +
+          d.clears.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + "</ul>"
+        : "") +
+      "<i>" + esc(d.note) + "</i>";
+  }
   function drawMy() {
     var c = myPool()[Number(selMy.value) || 0];
     if (!c) { document.getElementById("out-my").innerHTML = ""; return; }
+    /* The toggle only appears where a debate version is written, so a case
+       still waiting for one does not show a control that does nothing. */
+    var d = c.d && myMode === "debate" ? c.d : null;
+    bSolve.hidden = !c.d;
+    bDebate.hidden = !c.d;
+    bSolve.setAttribute("aria-pressed", d ? "false" : "true");
+    bDebate.setAttribute("aria-pressed", d ? "true" : "false");
+    modeNote.textContent = !c.d ? "" : d
+      ? "No answer key. Three suspects are arguable; the evidence is what counts."
+      : "One culprit. The case rules the others out.";
+    var story = d ? d.story : c.story;
+    var q = d ? d.q : c.q;
+    var sus = d ? d.sus : c.sus;
+    var txt = d ? myDebatePrompt(c) : myPrompt(c);
     document.getElementById("out-my").innerHTML =
       '<div class="card"><div class="top"></div><div class="in">' +
       '<div class="meta"><p class="eyebrow" style="margin:0">Mystery \\u00b7 ' + gradeName(c.g) + ' \\u00b7 Week ' + c.week + '</p>' +
       '<p class="eyebrow" style="margin:0">' + esc(c.tag) + "</p></div>" +
       "<h2>" + esc(c.title) + "</h2>" +
       '<div class="band first"><p class="eyebrow">The case</p>' +
-      '<p class="story">' + esc(c.story) + "</p></div>" +
+      '<p class="story">' + esc(story) + "</p></div>" +
       '<div class="band"><p class="eyebrow">The question</p>' +
-      '<p class="q">' + esc(c.q) + "</p>" +
+      '<p class="q">' + esc(q) + "</p>" +
       '<p class="eyebrow" style="margin:0 0 8px">Who could it be?</p>' +
       '<ul class="reading">' +
-      c.sus.map(function (s) { return "<li><b>" + esc(s.who) + "</b> \\u2014 " + esc(s.why) + "</li>"; }).join("") +
+      sus.map(function (s, i) {
+        return "<li><b>" + esc(s.who) + "</b>" +
+          (d && d.open.indexOf(i) >= 0 ? ' <span class="kind" style="margin:0 0 0 8px">in play</span>' : "") +
+          " \\u2014 " + esc(s.why) + "</li>";
+      }).join("") +
       "</ul></div>" +
       '<div class="band"><p class="eyebrow">Then write</p><p class="task">' +
-      "Who did it, and how do you know? Quote the words from the case that prove it, " +
-      "and say what rules each of the others out.</p></div>" +
-      '<div class="btns">' + copyBtn("my", "Copy mystery prompt") +
+      (d
+        ? "Name the one you are charging. Quote at least two lines from the case, and after each " +
+          "one say what it shows. Then name the strongest line against you and answer it."
+        : "Who did it, and how do you know? Quote the words from the case that prove it, " +
+          "and say what rules each of the others out.") +
+      "</p></div>" +
+      '<div class="btns">' + copyBtn("my", d ? "Copy debate prompt" : "Copy mystery prompt") +
       '<button class="pill" data-toggle="my-pre">Show prompt</button>' +
-      '<button class="pill teacher" data-toggle="my-ans">\\u{1F511} Answers (teacher)</button></div>' +
-      '<div class="answer" id="my-ans" hidden><b>Answer:</b> ' + esc(c.ans) +
-      "<br><b>Key proof:</b><ul>" + c.proof.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") +
-      "</ul>" + (c.clears.length ? "<b>Clears:</b><ul>" + c.clears.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + "</ul>" : "") +
-      (c.explain ? "<i>" + esc(c.explain) + "</i>" : "") + "</div>" +
-      '<pre id="my-pre" hidden>' + esc(myPrompt(c)) + "</pre>" +
+      '<button class="pill teacher" data-toggle="my-ans">\\u{1F511} ' +
+      (d ? "Teacher notes" : "Answers (teacher)") + "</button></div>" +
+      '<div class="answer" id="my-ans" hidden>' + myKey(c, d) + "</div>" +
+      '<pre id="my-pre" hidden>' + esc(txt) + "</pre>" +
       "</div></div>";
-    window.__my = myPrompt(c);
+    window.__my = txt;
   }
   selMy.addEventListener("change", drawMy);
   selMyG.addEventListener("change", function () { fillMy(); drawMy(); });
+  bSolve.addEventListener("click", function () { myMode = "solve"; drawMy(); });
+  bDebate.addEventListener("click", function () { myMode = "debate"; drawMy(); });
   fillMy();
 
   /* ---------- articles ---------- */
