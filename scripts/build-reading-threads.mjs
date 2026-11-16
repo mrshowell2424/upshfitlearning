@@ -164,6 +164,16 @@ const BY_HAND = {
   "Deciding Whether to Approve a Drug": "body",
   "The Archive of Ordinary Days": "books",
   "The Experiment That Outlived Its Experimenters": "machines",
+  // Grade 12. Seven of the fifty. Same pattern as grades 7 through 11, and it
+  // is now the finding rather than an exception: every article the keyword
+  // rules cannot place is about method, evidence or how a text works.
+  "How Many Species Are There": "animals",
+  "Counting the Dead After a Disaster": "civics",
+  "The Disagreement About the Age of the Universe": "sky",
+  "How Anaesthesia Was Established": "body",
+  "The Word Genocide": "civics",
+  "The Eulogy That Is About Something Else": "civics",   // a case made in public
+  "The Lecture Given on Receiving a Prize": "books",     // what a paper may not say
 };
 
 const pats = Object.fromEntries(
