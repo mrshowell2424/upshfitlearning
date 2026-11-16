@@ -2528,6 +2528,39 @@ const ADAPTATIONS: Adaptation[] = [
     },
   },
   {
+    // The partner read, when the switch is on.
+    //
+    // The sentences a child reads to a partner were written for the
+    // single-syllable lesson — "Jill will toss the ball well." — so a class
+    // that had spent the whole lesson on two- and three-syllable words read
+    // that out at the end of it.
+    //
+    // The bank carries sentences for this too, and they are mined rather
+    // than generated: every one is a sentence a person wrote for this age
+    // group, somewhere in this site's own passages, that happens to carry
+    // at least two of the pattern's longer words. They are longer than the
+    // hand-written ones as a consequence rather than as a target, which is
+    // the right way round.
+    //
+    // A pattern with fewer than two such sentences keeps the ones it has.
+    name: "give the partner read longer sentences when the switch is on",
+    apply: (html) => {
+      const anchor =
+        "wbSent: (() => {\n" +
+        "        const fits = (x) => { const n = x.trim().split(/\\s+/).length; " +
+        "return n >= 4 && n <= 12; };";
+      if (!html.includes(anchor)) return html;
+      return html.replace(
+        anchor,
+        "wbSent: (() => {\n" +
+          "        if (isMulti && msBank.sent && msBank.sent.length >= 2) " +
+          "return msBank.sent.slice(0, 3);\n" +
+          "        const fits = (x) => { const n = x.trim().split(/\\s+/).length; " +
+          "return n >= 4 && n <= 12; };"
+      );
+    },
+  },
+  {
     // A word ladder for every lesson, on that lesson's own pattern.
     //
     // The packs carried 58 ladders between 62 lessons, so four of them were

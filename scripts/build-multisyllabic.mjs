@@ -76,6 +76,7 @@ const FAKES = 8;
 function corpus() {
   const freq = new Map();
   const grade = new Map();
+  const sentences = [];
   /**
    * The grade each word was met at, as low as it goes.
    *
@@ -90,6 +91,18 @@ function corpus() {
   const walk = (node, g) => {
     if (node == null) return;
     if (typeof node === "string") {
+      // Whole sentences, for the partner read. Written by a person for this
+      // age group, which is the part a generated sentence cannot be.
+      if (node.length > 20 && node.length < 2000 && /[.!?]/.test(node)) {
+        for (const q of node.split(/(?<=[.!?])\s+/)) {
+          const w = q.trim();
+          const n = w.split(/\s+/).length;
+          if (n >= 6 && n <= 18 && /^[A-Z]/.test(w) && /[.!?]$/.test(w) &&
+              !/[<>{}\[\]|_=]/.test(w) && (w.match(/"/g) || []).length % 2 === 0) {
+            sentences.push([w, g]);
+          }
+        }
+      }
       for (const m of node.match(/[A-Za-z][A-Za-z\u2019']{2,}/g) || []) {
         const w = m.toLowerCase().replace(/\u2019/g, "'");
         if (!/^[a-z]+('[a-z]+)?$/.test(w)) continue;
@@ -121,7 +134,7 @@ function corpus() {
   for (const f of files) {
     try { walk(JSON.parse(readFileSync(`scripts/${f}`, "utf8")), null); } catch { /* not JSON we can walk */ }
   }
-  return { freq, grade };
+  return { freq, grade, sentences };
 }
 
 /**
@@ -282,7 +295,7 @@ export function keysAndPatterns() {
 
 /* ----------------------------------------------------------------- build */
 
-const { freq: FREQ, grade: GRADE } = corpus();
+const { freq: FREQ, grade: GRADE, sentences: SENTS } = corpus();
 const DICT = dictionary();
 /**
  * The runs are taken from the words this site uses, not from the whole
@@ -403,7 +416,40 @@ if (import.meta.main) {
       return got;
     };
     const words = pick(POOL);
-    bank[key] = { real: words, one: pick(ONES), fake: fakes(words, carries) };
+    /**
+     * Sentences for the partner read, when the switch is on.
+     *
+     * The hand-written ones are short and single-syllable, because they
+     * were written for the single-syllable lesson: "Jill will toss the
+     * ball." Turning the switch on left a class reading two-syllable words
+     * all lesson and then reading that out to a partner. These carry at
+     * least two of the pattern's longer words and are long enough to be
+     * worth reading aloud, and every one of them is a sentence a person
+     * wrote for this age group.
+     */
+    const ms = new Set(words.map((w) => w.toLowerCase()));
+    // A sentence opening on a bare pronoun is about something the previous
+    // sentence named, so on its own it reads as a fragment of somebody
+    // else's paragraph. Those are kept, but only to fill up.
+    const LEANS = /^(It|He|She|They|That|This|These|Those|Then|But|And|So|Her|His|Their)\b/;
+    const standalone = [];
+    const rest = [];
+    const seenSent = new Set();
+    for (const [q, g] of SENTS) {
+      // Written for a class of twelve-year-olds at the oldest. The
+      // grade 9 to 12 mysteries are full of sentences that are perfectly
+      // on pattern and about appellate courts.
+      if (g != null && g > 6) continue;
+      const hit = new Set((q.toLowerCase().match(/[a-z']{3,}/g) || []).filter((w) => ms.has(w)));
+      if (hit.size < 2) continue;
+      const k = q.toLowerCase();
+      if (seenSent.has(k)) continue;
+      seenSent.add(k);
+      (LEANS.test(q) ? rest : standalone).push(q);
+      if (standalone.length >= 6) break;
+    }
+    const sent = standalone.concat(rest).slice(0, 6);
+    bank[key] = { real: words, one: pick(ONES), fake: fakes(words, carries), sent };
     if (words.length < TARGET) thin.push(`${key} (${words.length})`);
   }
 
@@ -417,7 +463,8 @@ if (import.meta.main) {
     }, null, 1) + "\n",
   );
 
-  console.log(`${Object.keys(bank).length} lists, ${Object.values(bank).reduce((n, b) => n + b.real.length, 0)} multisyllabic, ${Object.values(bank).reduce((n, b) => n + b.one.length, 0)} single-syllable and ${Object.values(bank).reduce((n, b) => n + b.fake.length, 0)} made-up words`);
+  console.log(`${Object.keys(bank).length} lists, ${Object.values(bank).reduce((n, b) => n + b.real.length, 0)} multisyllabic, ${Object.values(bank).reduce((n, b) => n + b.one.length, 0)} single-syllable and ${Object.values(bank).reduce((n, b) => n + b.fake.length, 0)} made-up words, ${Object.values(bank).reduce((n, b) => n + b.sent.length, 0)} sentences`);
+console.log(`${Object.values(bank).filter((b) => b.sent.length < 3).length} lists have fewer than three sentences`);
   console.log(`pool: ${POOL.length} multisyllabic words, out of ${FREQ.size} in the content`);
   if (thin.length) console.log(`under ${TARGET}: ${thin.length}\n  ${thin.join("\n  ")}`);
   if (empty.length) console.log(`no pattern recorded, left out: ${empty.join(", ")}`);

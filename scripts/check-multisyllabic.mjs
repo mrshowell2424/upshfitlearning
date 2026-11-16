@@ -34,6 +34,7 @@ const KEYS = keysAndPatterns();
 let real = 0;
 let fake = 0;
 let one = 0;
+let sentences = 0;
 
 for (const [key, list] of Object.entries(BANK.words)) {
   const patterns = KEYS.get(key);
@@ -62,6 +63,16 @@ for (const [key, list] of Object.entries(BANK.words)) {
     if (!DICT.has(w)) fail(key, `"${w}" is not a word in the dictionary`);
     if (HEART.has(w)) fail(key, `"${w}" is a heart word, taught as an exception`);
   }
+  // Sentences for the partner read: long enough to be worth reading, and
+  // carrying at least two of the pattern's own words.
+  for (const q of list.sent || []) {
+    sentences++;
+    const n = q.split(/\s+/).length;
+    if (n < 6 || n > 18) fail(key, `sentence of ${n} words: "${q.slice(0, 40)}…"`);
+    const ms = new Set(list.real.map((w) => w.toLowerCase()));
+    const hit = new Set((q.toLowerCase().match(/[a-z']{3,}/g) || []).filter((w) => ms.has(w)));
+    if (hit.size < 2) fail(key, `sentence carries ${hit.size} pattern words: "${q.slice(0, 40)}…"`);
+  }
   for (const w of list.fake) {
     fake++;
     if (syllables(w) < 2) fail(key, `made-up "${w}" is one syllable`);
@@ -79,6 +90,7 @@ for (const [key, list] of Object.entries(BANK.words)) {
 const lists = Object.keys(BANK.words).length;
 const thin = Object.entries(BANK.words).filter(([, l]) => l.real.length < 10).length;
 console.log(`${lists} lists, ${real} multisyllabic, ${one} single-syllable and ${fake} made-up words, every one on its pattern.`);
+console.log(`${sentences} partner-read sentences, each carrying two of its pattern\u2019s words.`);
 console.log(`${thin} lists hold fewer than ten real words — English has few two-syllable words on those patterns.`);
 console.log(`\nproblems: ${problems.length}`);
 if (problems.length) {
