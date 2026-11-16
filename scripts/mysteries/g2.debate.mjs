@@ -518,7 +518,7 @@ export const DEBATES = {
     story:
       "Room 9 grew shamrocks in two pots. The plants in one pot are thin and pale. That pot sits far from the window. The other pot sits right on the sill. Plants need light to grow strong. The far pot also sits above the warm heater. The thin ones lean toward the window.",
     q: "Why are some shamrocks thin? Say which one, and show the words.",
-    who: ["", "🔥 The heater below the pot", ""],
+    who: ["", "🔥 The heater below the pot", "🌱 Stretching toward the window"],
     why: [
       "a pot far from the window, where plants need light",
       "a pot sitting above the warm heater",
