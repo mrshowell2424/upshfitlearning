@@ -231,8 +231,11 @@ export function hits(q, w, place = "anywhere", key = "") {
         return new RegExp("(?<![aeiou])" + a.replace(/_/g, "[bcdfghjklmnpqrstvwxz]") +
           SUFFIXED + "$", "i").test(word);
       }
+      // No vowel in front of the VCe vowel, or the tail match is an
+      // accident of spelling: because, cause, house and mouse all end in
+      // use and none of them is a u_e word.
       return tails.some((t) => word.length > t.length &&
-        new RegExp(t + SUFFIXED + "$", "i").test(word));
+        new RegExp("(?<![aeiou])" + t + SUFFIXED + "$", "i").test(word));
     }
     const body = a.replace(/_/g, "[a-z]");
     if (place === "initial") return new RegExp("^" + body, "i").test(word);

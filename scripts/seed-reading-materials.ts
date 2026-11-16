@@ -2382,6 +2382,50 @@ const ADAPTATIONS: Adaptation[] = [
     },
   },
   {
+    // The review switch, reaching the review words.
+    //
+    // The row has had its own 🧗 button for a while, and it governed one
+    // thing: the ten-word review strip in the workbook, drawn from the old
+    // ten-word map. Step 5 — the words the class actually reads aloud from
+    // the past concepts — ignored it entirely, so turning it on changed a
+    // printed sheet and nothing a child heard.
+    //
+    // Both now come from the same place: each picked concept's own list in
+    // the word bank, single-syllable or multisyllabic according to the
+    // button. The three concepts draw from one tally, so two of them cannot
+    // offer the same word, and the tally already holds today's own words,
+    // so the review cannot hand back a word from the lesson it is meant to
+    // be revisiting.
+    name: "let the review switch reach the review words",
+    apply: (html) => {
+      const step5 = "const reviewWords = review.flatMap((r) => r[6].slice(0, 3));";
+      if (!html.includes(step5)) return html;
+      let out = html.replace(
+        step5,
+        "// Each picked concept's own list, in the length the button asks for.\n" +
+          "    const revBank = (r) => revMulti\n" +
+          "      ? ((MSB[r[0]] && MSB[r[0]].real.length) ? MSB[r[0]].real : r[6])\n" +
+          "      // Off, the concept's own ten come first: a teacher wrote those\n" +
+          "      // for it. The mined list is only there to top them up when the\n" +
+          "      // tally has already spent them.\n" +
+          "      : r[6].concat((MSB[r[0]] && MSB[r[0]].one) || []);\n" +
+          "    // Drawn against the lesson's own tally, so a review word is never\n" +
+          "    // one of today's and never one another review slot has taken.\n" +
+          "    const revTake = (r, n) => drawFrom(revBank(r), takenWords, n);\n" +
+          "    const reviewWords = review.flatMap((r) => revTake(r, 3));\n" +
+          "    const reviewTen = review.length\n" +
+          "      ? review.flatMap((r) => revTake(r, Math.ceil(10 / review.length))).slice(0, 10)\n" +
+          "      : [];"
+      );
+
+      const strip =
+        "wbReview: review.flatMap((r) => (revMulti && (MULTI[r[0]] || []).length " +
+        "? MULTI[r[0]] : r[6]).slice(0, Math.ceil(10 / review.length))).slice(0, 10),";
+      if (!out.includes(strip)) return html;
+      return out.replace(strip, "wbReview: reviewTen,");
+    },
+  },
+  {
     // A word ladder for every lesson, on that lesson's own pattern.
     //
     // The packs carried 58 ladders between 62 lessons, so four of them were

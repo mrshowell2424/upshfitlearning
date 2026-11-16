@@ -3213,14 +3213,10 @@
   },
   "vce": {
    "real": [
-    "because",
     "inside",
     "used",
-    "beside",
     "outside",
-    "sometimes",
     "cupcake",
-    "alike",
     "upside",
     "times",
     "determine",
@@ -3228,40 +3224,24 @@
     "pancake",
     "trombone",
     "sides",
-    "aside",
     "whites",
-    "lighthouse",
-    "limestone",
     "alongside",
     "sided",
-    "navigate",
     "underside",
     "dislike",
-    "decode",
-    "fluoride",
-    "warehouse",
     "likely",
     "shaded",
-    "calculated",
     "timed",
-    "greenhouse",
-    "lifetime",
-    "famine",
     "inflated",
     "tuned",
     "mountainside",
     "bedtime",
-    "irrigate",
     "inflate",
     "lopsided",
     "daytime",
     "footnote",
-    "unrelated",
     "translate",
     "unlike",
-    "uninsulated",
-    "related",
-    "chloride",
     "wartime",
     "accused",
     "confuse",
@@ -3269,10 +3249,30 @@
     "nickname",
     "unlikely",
     "determined",
-    "aeroplane",
     "mines",
     "hugely",
-    "isolate"
+    "subside",
+    "template",
+    "misuse",
+    "encode",
+    "backbone",
+    "untuned",
+    "refuse",
+    "appellate",
+    "hoped",
+    "faceplate",
+    "boned",
+    "noted",
+    "wishbone",
+    "undetermined",
+    "untimely",
+    "fused",
+    "confused",
+    "hillside",
+    "collarbone",
+    "lately",
+    "plated",
+    "timely"
    ],
    "one": [
     "same",
@@ -3338,57 +3338,32 @@
    ],
    "fake": [
     "oupside",
-    "sonetimes",
     "cutcake",
     "utside",
     "depermine",
     "sumshine",
-    "linestone",
-    "arongside"
+    "arongside",
+    "ungerside",
+    "mounpainside"
    ]
   },
   "vce|a_e": {
    "real": [
     "cupcake",
     "pancake",
-    "navigate",
     "shaded",
-    "calculated",
     "inflated",
-    "irrigate",
     "inflate",
-    "unrelated",
     "translate",
-    "uninsulated",
-    "related",
     "nickname",
-    "aeroplane",
-    "isolate",
-    "fumigate",
     "template",
-    "isolated",
-    "insulated",
-    "investigate",
-    "chocolate",
-    "aggregate",
     "appellate",
-    "circulate",
-    "correlate",
     "faceplate",
-    "regulated",
-    "accumulate",
     "lately",
     "plated",
     "unshaded",
-    "correlated",
-    "violate",
-    "tabulated",
-    "congratulate",
-    "relate",
     "unmake",
-    "conflate",
-    "stipulate",
-    "articulate"
+    "conflate"
    ],
    "one": [
     "same",
@@ -3454,60 +3429,45 @@
    ],
    "fake": [
     "cutcake",
-    "nabigate",
-    "carculated",
-    "irligate",
-    "unlelated",
     "tlanslate",
-    "uminsulated",
-    "funigate"
+    "aptellate",
+    "facetlate",
+    "umshaded",
+    "ummake"
    ]
   },
   "vce|i_e": {
    "real": [
     "inside",
-    "beside",
     "outside",
-    "sometimes",
-    "alike",
     "upside",
     "times",
     "determine",
     "sunshine",
     "sides",
-    "aside",
     "whites",
     "alongside",
     "sided",
     "underside",
     "dislike",
-    "fluoride",
     "likely",
     "timed",
-    "lifetime",
-    "famine",
     "mountainside",
     "bedtime",
     "lopsided",
     "daytime",
     "unlike",
-    "chloride",
     "wartime",
     "unlikely",
     "determined",
     "mines",
     "subside",
-    "examine",
     "undetermined",
     "untimely",
     "hillside",
-    "unexamined",
     "timely",
-    "teatime",
     "roadside",
-    "besides",
     "pastime",
-    "maritime",
     "countryside",
     "override",
     "undermine"
@@ -3576,20 +3536,18 @@
    ],
    "fake": [
     "oupside",
-    "sonetimes",
     "utside",
     "depermine",
     "sumshine",
     "arongside",
     "ungerside",
-    "limetime"
+    "mounpainside",
+    "lotsided"
    ]
   },
   "vce|o_e": {
    "real": [
     "trombone",
-    "limestone",
-    "decode",
     "footnote",
     "jawbone",
     "encode",
@@ -3600,8 +3558,6 @@
     "wishbone",
     "collarbone",
     "diagnoses",
-    "milestone",
-    "gravestone",
     "ropes"
    ],
    "one": [
@@ -3667,36 +3623,22 @@
     "dose"
    ],
    "fake": [
-    "linestone",
     "corlarbone",
-    "diabnoses",
-    "mirestone",
-    "glavestone"
+    "diabnoses"
    ]
   },
   "vce|u_e": {
    "real": [
-    "because",
     "used",
-    "lighthouse",
-    "warehouse",
-    "greenhouse",
     "tuned",
     "accused",
     "confuse",
     "hugely",
-    "almshouse",
     "misuse",
-    "executed",
     "untuned",
     "refuse",
-    "applause",
-    "clubhouse",
     "fused",
     "confused",
-    "execute",
-    "spherule",
-    "prosecute",
     "unused"
    ],
    "one": [
@@ -3723,13 +3665,8 @@
     "fute"
    ],
    "fake": [
-    "gleenhouse",
     "comfuse",
-    "armshouse",
-    "apprause",
-    "crubhouse",
     "comfused",
-    "plosecute",
     "umused"
    ]
   },
@@ -5281,7 +5218,6 @@
     "confined",
     "combined",
     "inflated",
-    "mountainside",
     "exploded",
     "declined",
     "admired"
@@ -5348,9 +5284,7 @@
     "slime",
     "role"
    ],
-   "fake": [
-    "mounpainside"
-   ]
+   "fake": []
   },
   "vccvce|a_e": {
    "real": [
@@ -5424,7 +5358,6 @@
    "real": [
     "confined",
     "combined",
-    "mountainside",
     "declined",
     "admired"
    ],
@@ -5490,9 +5423,7 @@
     "vine",
     "pike"
    ],
-   "fake": [
-    "mounpainside"
-   ]
+   "fake": []
   },
   "vccvce|o_e": {
    "real": [
