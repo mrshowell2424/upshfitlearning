@@ -2925,7 +2925,7 @@ const ADAPTATIONS: Adaptation[] = [
       if (!out.includes(step13)) return html;
       out = out.replace(
         step13,
-        step13 + "\n          hasTask: !!wrTask, task: wrTask, taskType: wrPick.toUpperCase(),"
+        step13 + "\n          hasTask: !!wrTask, task: wrTask, taskType: (WR_SHORT[wrPick] || wrPick).toUpperCase(),"
       );
       return out;
     },
@@ -3076,7 +3076,7 @@ const ADAPTATIONS: Adaptation[] = [
       );
       out = out.replace(inline, "      wrOpts: wrOptList,");
 
-      const step13 = "          hasTask: !!wrTask, task: wrTask, taskType: wrPick.toUpperCase(),";
+      const step13 = "          hasTask: !!wrTask, task: wrTask, taskType: (WR_SHORT[wrPick] || wrPick).toUpperCase(),";
       if (!out.includes(step13)) return html;
       out = out.replace(step13, step13 + "\n          taskOpts: wrOptList,");
 
@@ -3130,14 +3130,20 @@ const ADAPTATIONS: Adaptation[] = [
       const block =
         "const WT = " + JSON.stringify(WTYPES) + ";\n" +
         "    const WR_TYPES = WT.types.map((t) => t.label);\n" +
-        "    const WR_SHORT = Object.fromEntries(WT.types.map((t) => [t.label, t.short]));\n" +
         "    const wrType = (lbl) => WT.types.find((t) => t.label === lbl) || WT.types[0];\n" +
         "    // The passage's own reading level is the sensible first guess at\n" +
         "    // the writing grade, and only that: the teacher moves it.\n" +
         "    const wrGrade = (this.state && this.state.wrg) ||\n" +
         "      ({ g2: '2', g3: '3', g4: '4' })[pgGrade] || '3';\n" +
         "    const wrBand = Object.keys(WT.bands)\n" +
-        "      .find((b) => WT.bands[b].indexOf(wrGrade) > -1) || 'g35';";
+        "      .find((b) => WT.bands[b].indexOf(wrGrade) > -1) || 'g35';\n" +
+        // What a type is called at the grade being written for. Opinion
+        // becomes Argument at 6th because the standards do, and the
+        // child-facing words — Story, Info, How-to — become the words a
+        // student is expected to use about their own writing. The type is
+        // the same; wrPick still holds its one canonical label.
+        "    const WR_SHORT = Object.fromEntries(WT.types.map((t) =>\n" +
+        "      [t.label, (t.chips && t.chips[wrBand]) || t.short]));";
       let out = html.replace(types, block);
 
       // the task, from the chosen type and grade
@@ -3931,7 +3937,7 @@ const ADAPTATIONS: Adaptation[] = [
     // rule above them. Everything else reads exactly as it did.
     name: "set the two texts apart",
     apply: (html) => {
-      const anchor = "          hasTask: !!wrTask, task: wrTask, taskType: wrPick.toUpperCase(),";
+      const anchor = "          hasTask: !!wrTask, task: wrTask, taskType: (WR_SHORT[wrPick] || wrPick).toUpperCase(),";
       if (!html.includes(anchor)) return html;
       const parts = [
         "",

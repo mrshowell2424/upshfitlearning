@@ -1,5 +1,5 @@
 {
- "_note": "The kinds of writing the lesson builder offers, and what each one asks for at every grade from kindergarten to twelfth. Six types, thirteen grades, five frame steps each. The frame steps change by band because a frame is scaffolding: a second grader needs 'One reason is ______', an eleventh grader needs a counterclaim. {T} is the passage title and {Q} the passage question; both are filled in by the page. Checked by scripts/check-writing-types.mjs.",
+ "_note": "The kinds of writing the lesson builder offers, and what each one asks for at every grade from kindergarten to twelfth. Six types, thirteen grades, five frame steps each. The frame steps change by band because a frame is scaffolding: a second grader needs 'One reason is ______', an eleventh grader needs a counterclaim. {T} is the passage title and {Q} the passage question; both are filled in by the pa Each type is named differently at different grades, because the standards are: a child writes an Opinion through 5th grade and an Argument from 6th, and the child-facing words — Story, Info, How-to — become the words a student is expected to use about their own writing. The type does not change, only what it is called. Checked by scripts/check-writing-types.mjs.",
  "bands": {
   "k2": [
    "K",
@@ -88,6 +88,12 @@
     "10": "{Q} Argue a claim about {T}, anticipate the strongest objection, and answer it.",
     "11": "{Q} Establish the significance of your claim, develop it with the most telling evidence in {T}, and answer the strongest counterclaim.",
     "12": "{Q} Build a sustained argument from {T}, weigh the limits of your own evidence, and answer the strongest counterclaim."
+   },
+   "chips": {
+    "k2": "Opinion",
+    "g35": "Opinion",
+    "g68": "Argument",
+    "g912": "Argument"
    }
   },
   {
@@ -139,6 +145,12 @@
     "10": "Explain {T}, using precise language and varied transitions to make the relationships between ideas clear.",
     "11": "Synthesise what {T} explains, anticipating what a reader is likely to misunderstand.",
     "12": "Synthesise {T} into an explanation that establishes the significance of the idea and its limits."
+   },
+   "chips": {
+    "k2": "Info",
+    "g35": "Informative",
+    "g68": "Informative",
+    "g912": "Informative"
    }
   },
   {
@@ -190,6 +202,12 @@
     "10": "Write {T} as a narrative whose structure creates a particular effect on the reader, and say what that effect is.",
     "11": "Write {T} as a narrative that uses point of view deliberately, and reflect on what the telling reveals.",
     "12": "Write {T} as a narrative with a controlled structure, and end by reflecting on what the events mean."
+   },
+   "chips": {
+    "k2": "Story",
+    "g35": "Narrative",
+    "g68": "Narrative",
+    "g912": "Narrative"
    }
   },
   {
@@ -241,6 +259,12 @@
     "10": "Describe something in {T} so that the figurative language and the literal detail work together.",
     "11": "Describe something in {T} so the description makes an implicit argument about it.",
     "12": "Describe something in {T} with controlled diction and syntax, and account for the effect you chose."
+   },
+   "chips": {
+    "k2": "Describe",
+    "g35": "Descriptive",
+    "g68": "Descriptive",
+    "g912": "Descriptive"
    }
   },
   {
@@ -292,6 +316,12 @@
     "10": "Compare the two texts, accounting for the purpose each was written for.",
     "11": "Compare the two texts, analysing how each selects evidence and what each leaves out.",
     "12": "Compare the two texts and build your own position out of the disagreement between them."
+   },
+   "chips": {
+    "k2": "Compare",
+    "g35": "Compare",
+    "g68": "Compare",
+    "g912": "Compare"
    }
   },
   {
@@ -343,6 +373,12 @@
     "10": "Write the procedure from {T} with failure points and how the result is verified.",
     "11": "Write the procedure from {T} for a reader with different expertise than yours, and say what you adjusted.",
     "12": "Write the procedure from {T}, and account for how you decided what could be left out."
+   },
+   "chips": {
+    "k2": "How-to",
+    "g35": "How-to",
+    "g68": "Procedural",
+    "g912": "Procedural"
    }
   }
  ]

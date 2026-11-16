@@ -44,6 +44,15 @@ for (const t of W.types) {
   shorts.add(t.short);
   if (t.short.length > 10) fail(`${t.key}: chip "${t.short}" is too long for the row`);
 
+  // The name the chip shows at each band. Opinion becomes Argument at 6th
+  // because the standards do, and Story becomes Narrative because by then a
+  // student is expected to name the genre they are writing in.
+  for (const band of Object.keys(W.bands)) {
+    const chip = (t.chips || {})[band];
+    if (!chip) { fail(`${t.key}: no name for ${band}`); continue; }
+    if (chip.length > 12) fail(`${t.key} ${band}: chip "${chip}" is too long for the row`);
+  }
+
   for (const band of Object.keys(W.bands)) {
     const f = t.frame[band];
     if (!Array.isArray(f) || f.length !== 5) {
@@ -64,6 +73,8 @@ for (const t of W.types) {
   }
 }
 
+const named = W.types.filter((t) => new Set(Object.values(t.chips)).size > 1);
+console.log(`${named.length} of them change name by grade: ${named.map((t) => Object.values(t.chips)[0] + ' \u2192 ' + Object.values(t.chips).slice(-1)[0]).join(', ')}.`);
 console.log(`${W.types.length} kinds of writing: ${W.types.map((t) => t.label).join(", ")}.`);
 console.log(`${W.types.length * grades.length} tasks, one per grade from K to 12, and ${W.types.length * Object.keys(W.bands).length} frames of five steps.`);
 console.log(`\nproblems: ${problems.length}`);

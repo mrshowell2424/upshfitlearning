@@ -134,6 +134,10 @@ function corpus() {
     "reading-multisyllabic.json",
     "reading-hub-counts.json",
     "reading-resources-counts.json",
+    // Instructions to a teacher, not text a child reads. Its prose was
+    // seeding a bank meant to hold words children have met, and editing a
+    // writing task was quietly rewriting the word lists.
+    "reading-writing-types.json",
   ]);
   const files = readdirSync("scripts").filter((f) => f.endsWith(".json") && !SKIP.has(f));
   const dirs = ["scripts/articles", "scripts/mysteries"].filter((d) => existsSync(d));
