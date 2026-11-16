@@ -157,7 +157,7 @@ function ReadThinkSheet({ title }: { title: string }) {
       <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: SOFT }}>
         {READ_THINK.title.toUpperCase()}
       </div>
-      <h2 style={{ fontFamily: "Poppins, sans-serif", fontSize: 20, fontWeight: 800, margin: "2px 0 4px" }}>
+      <h2 style={{ fontFamily: "var(--font-poppins), system-ui, sans-serif", fontSize: 20, fontWeight: 800, margin: "2px 0 4px" }}>
         {title}
       </h2>
       <NameLine />
@@ -247,7 +247,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
     padding: "22px 26px 40px",
     background: "#FFFFFF",
     color: INK,
-    fontFamily: "Poppins, system-ui, sans-serif",
+    fontFamily: "var(--font-poppins), system-ui, sans-serif",
   };
 
   return (
@@ -280,7 +280,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
           <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: SOFT }}>
             {`MYSTERY · ${myCase.grade === 0 ? "K" : myCase.grade === 1 ? "1ST" : myCase.grade === 2 ? "2ND" : myCase.grade === 3 ? "3RD" : `${myCase.grade}TH`} · WEEK ${myCase.week}`}
           </div>
-          <h1 style={{ fontFamily: "Poppins, sans-serif", fontSize: 26, fontWeight: 900, margin: "2px 0 6px" }}>
+          <h1 style={{ fontFamily: "var(--font-poppins), system-ui, sans-serif", fontSize: 26, fontWeight: 900, margin: "2px 0 6px" }}>
             {myCase.title}
           </h1>
           <NameLine />
@@ -316,7 +316,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
             <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: SOFT }}>
               THEN WRITE
             </div>
-            <h2 style={{ fontFamily: "Poppins, sans-serif", fontSize: 20, fontWeight: 800, margin: "2px 0 4px" }}>
+            <h2 style={{ fontFamily: "var(--font-poppins), system-ui, sans-serif", fontSize: 20, fontWeight: 800, margin: "2px 0 4px" }}>
               {myCase.title}
             </h2>
             <NameLine />
@@ -331,7 +331,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
           <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: SOFT }}>
             {`${art.standard} · GRADE ${art.grade} · LEXILE ${art[ver].lexile}`}
           </div>
-          <h1 style={{ fontFamily: "Poppins, sans-serif", fontSize: 26, fontWeight: 900, margin: "2px 0 6px" }}>
+          <h1 style={{ fontFamily: "var(--font-poppins), system-ui, sans-serif", fontSize: 26, fontWeight: 900, margin: "2px 0 6px" }}>
             {art.title}
           </h1>
           <NameLine />
@@ -378,7 +378,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
             <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: SOFT }}>
               THEN WRITE
             </div>
-            <h2 style={{ fontFamily: "Poppins, sans-serif", fontSize: 20, fontWeight: 800, margin: "2px 0 4px" }}>
+            <h2 style={{ fontFamily: "var(--font-poppins), system-ui, sans-serif", fontSize: 20, fontWeight: 800, margin: "2px 0 4px" }}>
               {art.title}
             </h2>
             <NameLine />

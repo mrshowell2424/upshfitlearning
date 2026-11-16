@@ -99,7 +99,7 @@ function articlePrompt(a: (typeof AR)[number], ver: "higher" | "lower") {
 }
 
 const label: React.CSSProperties = {
-  fontFamily: "Poppins, system-ui, sans-serif",
+  fontFamily: "var(--font-poppins), system-ui, sans-serif",
   fontSize: 11,
   fontWeight: 700,
   letterSpacing: "0.14em",
@@ -107,7 +107,7 @@ const label: React.CSSProperties = {
   color: BRAND.mid,
 };
 const pill = (on: boolean): React.CSSProperties => ({
-  fontFamily: "Poppins, system-ui, sans-serif",
+  fontFamily: "var(--font-poppins), system-ui, sans-serif",
   fontSize: 13,
   fontWeight: 700,
   borderRadius: 100,
@@ -120,7 +120,7 @@ const pill = (on: boolean): React.CSSProperties => ({
   color: on ? "#FFFFFF" : BRAND.ink,
 });
 const select: React.CSSProperties = {
-  fontFamily: "Poppins, system-ui, sans-serif",
+  fontFamily: "var(--font-poppins), system-ui, sans-serif",
   fontSize: 14,
   padding: "9px 12px",
   borderRadius: 12,
@@ -163,7 +163,7 @@ const bandLabel = (color: string): React.CSSProperties => ({
 
 /** The kind of question an item is, which the prompt has always carried. */
 const kindTag: React.CSSProperties = {
-  fontFamily: "Poppins, system-ui, sans-serif",
+  fontFamily: "var(--font-poppins), system-ui, sans-serif",
   fontSize: 10,
   fontWeight: 800,
   letterSpacing: "0.1em",
@@ -330,6 +330,199 @@ function KeyLabel({ children, color }: { children: React.ReactNode; color: strin
   return <p style={{ ...label, color, margin: "14px 0 7px" }}>{children}</p>;
 }
 
+/* ------------------------------------------------------------------ *
+ * The case file.
+ *
+ * The mystery tab used to be the article tab with different words in it:
+ * one white card, three labelled bands, and the suspects set as a run of
+ * bold-then-grey sentences. That is a readable way to present a text and a
+ * poor way to present a puzzle. Nothing on screen said a case was open,
+ * nothing said what to do first, and the four or five people a child is
+ * meant to rule out -- the actual work -- had less visual weight than the
+ * word "Mystery" above them.
+ *
+ * So the mystery renders as a case file instead: a dark header that looks
+ * like a cover, three numbered steps in the order a class does them, and
+ * the suspects as a line-up of cards a child can point at. The article tab
+ * is untouched and still uses Card and Band.
+ * ------------------------------------------------------------------ */
+
+const POPPINS = "var(--font-poppins), system-ui, sans-serif";
+
+/**
+ * The case text, in Poppins.
+ *
+ * `reading` sets passages in Source Serif on the reasoning that a reading
+ * page should not be in the same face as its own navigation. Stephanie asked
+ * for Poppins on the mysteries, so the mysteries are in Poppins; the article
+ * tab keeps the serif. Poppins runs wider and has a taller x-height than
+ * Source Serif at the same size, so the measure comes down to 60ch and the
+ * leading opens a little to hold the line length where it reads comfortably.
+ */
+const caseText: React.CSSProperties = {
+  maxWidth: "60ch",
+  fontSize: 18,
+  lineHeight: 1.78,
+  fontFamily: POPPINS,
+  fontWeight: 400,
+};
+
+/**
+ * The cover of the file. Ink rather than white, because the one thing the
+ * old layout never did was change colour when you opened a mystery.
+ */
+function CaseCover({ tag, grade, week, title }: { tag: string; grade: string; week: number; title: string }) {
+  return (
+    <div style={{ background: BRAND.ink, color: "#FFFFFF", padding: "22px 26px 24px" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
+        <span aria-hidden="true" style={{ fontSize: 40, lineHeight: 1 }}>
+          {tag.split(" ")[0]}
+        </span>
+        <div>
+          <p style={{ ...label, color: "rgba(255,255,255,0.62)", margin: "0 0 2px" }}>
+            {`Case file ${String(week).padStart(2, "0")} · ${grade} · ${tag.split(" ").slice(1).join(" ")}`}
+          </p>
+          <h2
+            style={{
+              fontFamily: POPPINS,
+              fontSize: 32,
+              fontWeight: 900,
+              letterSpacing: "-0.8px",
+              lineHeight: 1.1,
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            {title}
+          </h2>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * One numbered step. The number is the point: a child reading this page
+ * should be able to say which part they are on without being told.
+ */
+function Step({
+  n,
+  heading,
+  hint,
+  accent,
+  children,
+}: {
+  n: number;
+  heading: string;
+  hint?: string;
+  accent: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section style={{ display: "grid", gridTemplateColumns: "40px 1fr", gap: 16, margin: "0 0 26px" }}>
+      <div>
+        <div
+          aria-hidden="true"
+          style={{
+            width: 36,
+            height: 36,
+            borderRadius: 100,
+            background: accent,
+            color: "#FFFFFF",
+            fontFamily: POPPINS,
+            fontSize: 17,
+            fontWeight: 900,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {n}
+        </div>
+      </div>
+      <div style={{ minWidth: 0 }}>
+        <h3
+          style={{
+            fontFamily: POPPINS,
+            fontSize: 19,
+            fontWeight: 800,
+            letterSpacing: "-0.2px",
+            margin: "6px 0 0",
+          }}
+        >
+          {heading}
+        </h3>
+        {hint && (
+          <p style={{ color: BRAND.mid, fontSize: 14, margin: "2px 0 0", textWrap: "pretty" }}>{hint}</p>
+        )}
+        <div style={{ marginTop: 12 }}>{children}</div>
+      </div>
+    </section>
+  );
+}
+
+/**
+ * One suspect, as a card rather than a line of prose.
+ *
+ * The emoji each suspect already carries was being swallowed inside a
+ * sentence. Pulled out and set large it gives every suspect a face, which
+ * is what makes a line-up scannable and what lets a teacher say "the third
+ * one" and have the room land on the same card.
+ */
+function Suspect({ who, why }: { who: string; why: string }) {
+  const [face, ...rest] = who.split(" ");
+  return (
+    <li
+      style={{
+        listStyle: "none",
+        background: "#FFFFFF",
+        border: `1.5px solid ${BRAND.line}`,
+        borderRadius: 16,
+        padding: "14px 16px",
+        display: "grid",
+        gridTemplateColumns: "28px 1fr",
+        gap: 12,
+        alignItems: "start",
+      }}
+    >
+      <span aria-hidden="true" style={{ fontSize: 22, lineHeight: 1.2 }}>
+        {face}
+      </span>
+      <div style={{ minWidth: 0 }}>
+        <p style={{ fontFamily: POPPINS, fontSize: 15, fontWeight: 800, margin: "0 0 3px", textWrap: "pretty" }}>
+          {rest.join(" ")}
+        </p>
+        <p style={{ color: BRAND.mid, fontSize: 14, lineHeight: 1.5, margin: 0, textWrap: "pretty" }}>
+          {why}
+        </p>
+      </div>
+    </li>
+  );
+}
+
+/** The question, given the weight the thing being asked deserves. */
+function Ask({ children, accent }: { children: React.ReactNode; accent: string }) {
+  return (
+    <p
+      style={{
+        fontFamily: POPPINS,
+        fontSize: 21,
+        fontWeight: 800,
+        lineHeight: 1.3,
+        letterSpacing: "-0.3px",
+        margin: 0,
+        padding: "16px 20px",
+        background: "#FFFFFF",
+        border: `2px solid ${accent}`,
+        borderRadius: 16,
+        textWrap: "pretty",
+      }}
+    >
+      {children}
+    </p>
+  );
+}
+
 function Prompt({ text }: { text: string }) {
   return (
     <details style={{ marginTop: 10 }}>
@@ -383,7 +576,7 @@ function ReadThink() {
       >
         <h3
           style={{
-            fontFamily: "Poppins, sans-serif",
+            fontFamily: "var(--font-poppins), system-ui, sans-serif",
             fontSize: 24,
             fontWeight: 900,
             margin: "0 0 2px",
@@ -491,10 +684,10 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
           {/* The paper is painted on the full-width wrapper and the column is
               centred inside it. Painting it on the column itself left a bare
               white band down the right of any wide screen. */}
-          <div style={{ background: BRAND.paper, color: BRAND.ink, fontFamily: "Poppins, system-ui, sans-serif", lineHeight: 1.6 }}>
+          <div style={{ background: BRAND.paper, color: BRAND.ink, fontFamily: "var(--font-poppins), system-ui, sans-serif", lineHeight: 1.6 }}>
           <div style={{ maxWidth: 880, margin: "0 auto", padding: "32px 5% 80px" }}>
             <p style={{ ...label, margin: "0 0 6px" }}>Upshift Learning</p>
-            <h1 style={{ fontFamily: "Poppins, sans-serif", fontSize: 40, fontWeight: 900, letterSpacing: "-1px", margin: "0 0 4px", lineHeight: 1.1 }}>
+            <h1 style={{ fontFamily: "var(--font-poppins), system-ui, sans-serif", fontSize: 40, fontWeight: 900, letterSpacing: "-1px", margin: "0 0 4px", lineHeight: 1.1 }}>
               Reading Resources
             </h1>
             <p style={{ color: BRAND.mid, margin: "0 0 24px", fontSize: 17, maxWidth: "60ch" }}>
@@ -522,6 +715,11 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                     </a>
                   ))}
                 </div>
+                {/* The dropdown is still how you jump to a known week, but
+                    thirty-six titles behind a Show button is a poor way to
+                    browse. The arrows step through the pool one case at a
+                    time, which is what a teacher working the year in order
+                    actually does. They wrap, so neither end is a dead end. */}
                 <form method="get" style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap", margin: "0 0 16px" }}>
                   <input type="hidden" name="tab" value="my" />
                   <input type="hidden" name="g" value={myGrade} />
@@ -532,40 +730,100 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                     ))}
                   </select>
                   <button type="submit" style={pill(true)}>Show</button>
+                  <span style={{ display: "inline-flex", gap: 6 }}>
+                    <a
+                      href={href({ c: String((ci - 1 + myPool.length) % myPool.length) })}
+                      style={{ ...pill(false), padding: "8px 14px" }}
+                      aria-label="Previous case"
+                    >
+                      ←
+                    </a>
+                    <a
+                      href={href({ c: String((ci + 1) % myPool.length) })}
+                      style={{ ...pill(false), padding: "8px 14px" }}
+                      aria-label="Next case"
+                    >
+                      →
+                    </a>
+                  </span>
                 </form>
 
-                <Card accent={ACCENT.my}>
-                  <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
-                    <p style={{ ...label, margin: 0 }}>{`Mystery · ${gradeName(myCase.grade)} · Week ${myCase.week}`}</p>
-                    <p style={{ ...label, margin: 0 }}>{myCase.tag}</p>
-                  </div>
-                  <h2 style={{ fontFamily: "Poppins, sans-serif", fontSize: 30, fontWeight: 800, margin: "4px 0 2px", letterSpacing: "-0.6px", lineHeight: 1.15 }}>
-                    {myCase.title}
-                  </h2>
+                <div
+                  style={{
+                    background: "#FFFFFF",
+                    border: `1px solid ${BRAND.line}`,
+                    borderRadius: 20,
+                    overflow: "hidden",
+                    margin: "0 0 18px",
+                  }}
+                >
+                  <CaseCover
+                    tag={myCase.tag}
+                    grade={gradeName(myCase.grade)}
+                    week={myCase.week}
+                    title={myCase.title}
+                  />
+                  <div style={{ padding: "26px 24px 24px" }}>
+                    <Step
+                      n={1}
+                      heading="Read the case"
+                      hint="Every clue you need is in these sentences. Nothing is hidden."
+                      accent={ACCENT.my}
+                    >
+                      {/* The one place on the page set in the serif. The
+                          left rule marks where the website stops and the
+                          thing to be read starts. */}
+                      <div
+                        style={{
+                          ...caseText,
+                          textWrap: "pretty",
+                          borderLeft: `3px solid ${ACCENT.my}`,
+                          paddingLeft: 18,
+                        }}
+                      >
+                        {myCase.story}
+                      </div>
+                    </Step>
 
-                  <Band heading="The case" accent={ACCENT.my} first>
-                    <div style={{ ...reading, textWrap: "pretty" }}>{myCase.story}</div>
-                  </Band>
+                    <Step
+                      n={2}
+                      heading="Line up the suspects"
+                      hint={`${myCase.suspects.length} of them. One did it. The case rules out the rest.`}
+                      accent={ACCENT.my}
+                    >
+                      <ul
+                        style={{
+                          display: "grid",
+                          gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
+                          gap: 10,
+                          margin: 0,
+                          padding: 0,
+                        }}
+                      >
+                        {myCase.suspects.map((s) => (
+                          <Suspect key={s.who} who={s.who} why={s.why} />
+                        ))}
+                      </ul>
+                    </Step>
 
-                  <Band heading="The question" accent={ACCENT.my}>
-                    <p style={{ ...reading, fontWeight: 700, margin: "0 0 14px" }}>{myCase.question}</p>
-                    <p style={{ ...label, margin: "0 0 8px" }}>Who could it be?</p>
-                    <div style={{ ...reading, fontSize: 17 }}>
-                      {myCase.suspects.map((s) => (
-                        <div key={s.who} style={{ margin: "0 0 10px", textWrap: "pretty" }}>
-                          <b>{s.who}</b>
-                          <span style={{ color: BRAND.mid }}>{` — ${s.why}`}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </Band>
-
-                  <Band heading="Then write" accent={ACCENT.my}>
-                    <div style={reading}>
-                      Who did it, and how do you know? Quote the words from the case that prove it,
-                      and say what rules each of the others out.
-                    </div>
-                  </Band>
+                    <Step n={3} heading="Make the call" accent={ACCENT.my}>
+                      <Ask accent={ACCENT.my}>{myCase.question}</Ask>
+                      <div
+                        style={{
+                          background: BRAND.paper,
+                          border: `1px solid ${BRAND.line}`,
+                          borderRadius: 16,
+                          padding: "14px 18px",
+                          marginTop: 12,
+                        }}
+                      >
+                        <p style={{ ...label, color: ACCENT.my, margin: "0 0 6px" }}>Then write</p>
+                        <p style={{ fontSize: 16, lineHeight: 1.6, margin: 0, textWrap: "pretty" }}>
+                          Say who did it. Quote the words from the case that prove it, and say what
+                          rules each of the others out.
+                        </p>
+                      </div>
+                    </Step>
                   <Actions>
                     <CopyButton text={mysteryPrompt(myCase)} label="Copy mystery prompt" />
                     <Prompt text={mysteryPrompt(myCase)} />
@@ -613,7 +871,8 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                     )}
                   </Answers>
                   </Actions>
-                </Card>
+                  </div>
+                </div>
               </>
             ) : (
               <>
@@ -654,7 +913,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                       <p style={{ ...label, margin: 0 }}>{`${art.standard} · Grade ${art.grade}`}</p>
                       <p style={{ ...label, margin: 0 }}>{`Lexile ${v.lexile} · ${v.words} words`}</p>
                     </div>
-                    <h2 style={{ fontFamily: "Poppins, sans-serif", fontSize: 30, fontWeight: 800, margin: "4px 0 12px", letterSpacing: "-0.6px", lineHeight: 1.15 }}>
+                    <h2 style={{ fontFamily: "var(--font-poppins), system-ui, sans-serif", fontSize: 30, fontWeight: 800, margin: "4px 0 12px", letterSpacing: "-0.6px", lineHeight: 1.15 }}>
                       {art.title}
                     </h2>
                     <div style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "0 0 4px" }}>
