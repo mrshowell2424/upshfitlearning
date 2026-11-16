@@ -24788,7 +24788,69 @@
     "The clock: “The system clock agrees with the office clock to the second.”",
     "The report: “A report can only be as good as the records it adds up.”"
    ],
-   "explain": "Nothing in the library did anything strange. Two real books are in two real hands. The catalog has only one record between them, so every true fact about both gets written into one line and comes out looking impossible."
+   "explain": "Nothing in the library did anything strange. Two real books are in two real hands. The catalog has only one record between them, so every true fact about both gets written into one line and comes out looking impossible.",
+   "debate": {
+    "story": "The circulation report shows one copy of Hatchet checked out to two students at once. Ms. Vega holds both copies on the desk, and the spines are plainly different ages. The older copy was bought in 2011 and the newer one replaced a lost book in 2019. The 2019 replacement was entered by copying the record of the book it replaced. Copying a record copies its barcode, and two items then answer to one number. One of the two students borrowed a card from a friend in September and never gave it back. The desk scanner has misread two barcodes this term, both of them worn. The older copy's barcode is rubbed pale across its middle three digits. The system clock and the office clock match to the second. The report adds up what the records say and adds nothing of its own.",
+    "question": "How is one book out to two students? Pick one cause and prove it.",
+    "suspects": [
+     {
+      "who": "🏷️ A duplicated barcode",
+      "why": "a 2019 record copied from the book it replaced"
+     },
+     {
+      "who": "💳 A borrowed library card",
+      "why": "a card borrowed in September and never given back"
+     },
+     {
+      "who": "📡 A misreading scanner",
+      "why": "two misreads this term, both on worn barcodes"
+     },
+     {
+      "who": "🕐 The system clock",
+      "why": "a system clock agreeing with the office to the second"
+     },
+     {
+      "who": "📊 The circulation report",
+      "why": "a report that adds nothing of its own"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     2
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“The 2019 replacement was entered by copying the record of the book it replaced.”",
+       "“Copying a record copies its barcode, and two items then answer to one number.”"
+      ],
+      "against": "“One of the two students borrowed a card from a friend in September and never gave it back.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“One of the two students borrowed a card from a friend in September and never gave it back.”",
+       "“Ms. Vega holds both copies on the desk, and the spines are plainly different ages.”"
+      ],
+      "against": "“Copying a record copies its barcode, and two items then answer to one number.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“The desk scanner has misread two barcodes this term, both of them worn.”",
+       "“The older copy's barcode is rubbed pale across its middle three digits.”"
+      ],
+      "against": "“The 2019 replacement was entered by copying the record of the book it replaced.”"
+     }
+    ],
+    "clears": [
+     "The system clock: “The system clock and the office clock match to the second.”",
+     "The circulation report: “The report adds up what the records say and adds nothing of its own.”"
+    ],
+    "note": "Both students have a real book in their hands, and that fact survives every answer. The question is only how two objects came to share one number. A borrowed card explains who did the borrowing and not why the system allowed one item out twice."
+   }
   },
   {
    "id": "g8-w2",
@@ -24830,7 +24892,69 @@
     "The seal: “The compressor runs and the door seal grips a sheet of paper firmly.”",
     "A power cut: “No power interruption was recorded in the building at any point that week.”"
    ],
-   "explain": "The refrigerator really is running warm, and the Friday dial reading of 47 shows it. The log hid that for five days, and it hid it by never being a log. Five identical numbers in one pen is a page somebody filled out, not a week somebody measured."
+   "explain": "The refrigerator really is running warm, and the Friday dial reading of 47 shows it. The log hid that for five days, and it hid it by never being a log. Five identical numbers in one pen is a page somebody filled out, not a week somebody measured.",
+   "debate": {
+    "story": "Food in the staff refrigerator spoiled over a week in which the log read 38 degrees daily. All five lines read exactly 38, with no variation of even a single degree. All five were written in the same blue pen in one continuous hand. A refrigerator opened and closed all day does not hold one reading for five days. The log was filled in on Friday afternoon from memory for the whole week. A dial thermometer left in overnight on Friday read 47 by morning. The door seal has a two-inch split along its lower edge that nobody has reported. A split seal lets warm air in steadily without the compressor ever stopping. The compressor has run without pause since Tuesday, which is not how it should behave. Friday's ice-water test put the inside thermometer at 32, dead right. The building logged no break in its supply at any hour that week.",
+    "question": "Why did the food spoil? Choose one cause and quote the story.",
+    "suspects": [
+     {
+      "who": "📝 A log filled in from memory",
+      "why": "five identical lines in one hand, written Friday from memory"
+     },
+     {
+      "who": "🌡️ A broken thermometer",
+      "why": "a thermometer that read 32 correctly in ice water"
+     },
+     {
+      "who": "🚪 A failing door seal",
+      "why": "a two-inch split along the seal's lower edge"
+     },
+     {
+      "who": "⚡ A power cut",
+      "why": "no power interruption recorded in the building that week"
+     },
+     {
+      "who": "❄️ The refrigerator running warm",
+      "why": "a compressor running without pause since Tuesday"
+     }
+    ],
+    "open": [
+     0,
+     2,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“All five were written in the same blue pen in one continuous hand.”",
+       "“The log was filled in on Friday afternoon from memory for the whole week.”"
+      ],
+      "against": "“A dial thermometer left in overnight on Friday read 47 by morning.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“The door seal has a two-inch split along its lower edge that nobody has reported.”",
+       "“A split seal lets warm air in steadily without the compressor ever stopping.”"
+      ],
+      "against": "“All five lines read exactly 38, with no variation of even a single degree.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The compressor has run without pause since Tuesday, which is not how it should behave.”",
+       "“A dial thermometer left in overnight on Friday read 47 by morning.”"
+      ],
+      "against": "“The log was filled in on Friday afternoon from memory for the whole week.”"
+     }
+    ],
+    "clears": [
+     "A broken thermometer: “Friday's ice-water test put the inside thermometer at 32, dead right.”",
+     "A power cut: “The building logged no break in its supply at any hour that week.”"
+    ],
+    "note": "The log is a bad record and a bad record does not spoil food. That distinction is the whole case. Something made the refrigerator warm and something else hid it, and the honest answer says which suspect is doing which job."
+   }
   },
   {
    "id": "g8-w3",
@@ -24872,7 +24996,69 @@
     "Handing them out: “No pencil has been handed out from that closet since the boxes arrived.”",
     "The shelf count: “The count on the shelf was taken from the labels and not from the pencils.”"
    ],
-   "explain": "The delivery was short and nobody noticed, because everyone who counted was reading labels. The school was charged for two hundred and received one hundred and eighty-six. The remaining gap is the shelf count, which also trusted the print on the box."
+   "explain": "The delivery was short and nobody noticed, because everyone who counted was reading labels. The school was charged for two hundred and received one hundred and eighty-six. The remaining gap is the shelf count, which also trusted the print on the box.",
+   "debate": {
+    "story": "The order was for two hundred pencils and the supply closet holds one hundred and fifty. Eight boxes arrived, and every box label reads twenty-five count in bold print. Eight boxes at twenty-five each is the two hundred the invoice charged for. Mr. Hale opened every box and counted what was inside each one. Six boxes held twenty-five pencils and two held exactly eighteen apiece. The supplier changed its packaging in the autumn and kept printing the old label. Six twenty-fives and two eighteens come to one hundred and eighty-six, not two hundred. The delivery note is signed but nobody opened a box at the door. The shelf count of a hundred and fifty was taken by reading labels, not pencils. That closet has stayed locked since delivery and one key exists. Not a pencil has left that closet since the boxes came in.",
+    "question": "Where are the missing pencils? Make the case for one cause.",
+    "suspects": [
+     {
+      "who": "🏷️ The box labels",
+      "why": "an old label kept in print after the packaging changed"
+     },
+     {
+      "who": "🔐 Somebody taking them",
+      "why": "a closet locked since delivery, with one key"
+     },
+     {
+      "who": "🚚 A short delivery",
+      "why": "a note signed without a box being opened at the door"
+     },
+     {
+      "who": "✍️ Pencils handed out",
+      "why": "no pencil handed out since the boxes arrived"
+     },
+     {
+      "who": "🧮 The shelf count",
+      "why": "a shelf count taken by reading labels, not pencils"
+     }
+    ],
+    "open": [
+     0,
+     2,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“The supplier changed its packaging in the autumn and kept printing the old label.”",
+       "“Six boxes held twenty-five pencils and two held exactly eighteen apiece.”"
+      ],
+      "against": "“The delivery note is signed but nobody opened a box at the door.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“The delivery note is signed but nobody opened a box at the door.”",
+       "“Eight boxes at twenty-five each is the two hundred the invoice charged for.”"
+      ],
+      "against": "“The supplier changed its packaging in the autumn and kept printing the old label.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The shelf count of a hundred and fifty was taken by reading labels, not pencils.”",
+       "“Six twenty-fives and two eighteens come to one hundred and eighty-six, not two hundred.”"
+      ],
+      "against": "“Mr. Hale opened every box and counted what was inside each one.”"
+     }
+    ],
+    "clears": [
+     "Somebody taking them: “That closet has stayed locked since delivery and one key exists.”",
+     "Pencils handed out: “Not a pencil has left that closet since the boxes came in.”"
+    ],
+    "note": "There are three numbers here and the class should write all of them down: two hundred ordered, one hundred and eighty-six actually in the boxes, one hundred and fifty on the shelf. Fourteen went missing between the invoice and the delivery. Thirty-six more went missing between the delivery and the shelf, and only one answer touches that second gap."
+   }
   },
   {
    "id": "g8-w4",
@@ -24914,7 +25100,69 @@
     "The scale: “Each group used an identical digital scale from the same classroom set.”",
     "The crate: “All four groups drew their apples from the same crate on the same morning.”"
    ],
-   "explain": "Nothing is wrong with the scale and nothing is wrong with the apples. The thirty-nine grams of tray is in every one of group C's numbers, which is why the gap is the same size every time instead of varying the way a real difference would."
+   "explain": "Nothing is wrong with the scale and nothing is wrong with the apples. The thirty-nine grams of tray is in every one of group C's numbers, which is why the gap is the same size every time instead of varying the way a real difference would.",
+   "debate": {
+    "story": "Group C's apples each weighed about forty grams more than every other group's. Group C weighed each apple sitting in a small plastic tray for steadiness. The other three groups set each apple directly on the scale plate. A scale zeroed empty counts whatever sits on it, tray included. The trays from that set weigh thirty-nine grams each on a checked balance. Group C zeroed its scale before the tray went on and not after. Group C's scale has not been checked against a known weight this year. The other three were all checked against a hundred-gram mass last week. Group C wrote its numbers from the display an hour after weighing, from notes. Calipers put every group's apples within a millimetre of each other. One crate on one morning supplied all four groups.",
+    "question": "Why are Group C's apples heavier? Pick one cause and back it up.",
+    "suspects": [
+     {
+      "who": "🍽️ The tray on the scale",
+      "why": "a thirty-nine gram tray, with the scale zeroed before it went on"
+     },
+     {
+      "who": "🍏 Bigger apples",
+      "why": "calipers matching every group to within a millimetre"
+     },
+     {
+      "who": "⚖️ A faulty scale",
+      "why": "a scale never checked against a known weight this year"
+     },
+     {
+      "who": "📦 A different crate",
+      "why": "one crate on one morning for all four groups"
+     },
+     {
+      "who": "🔢 The recorded numbers",
+      "why": "numbers written an hour later, from notes"
+     }
+    ],
+    "open": [
+     0,
+     2,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“The trays from that set weigh thirty-nine grams each on a checked balance.”",
+       "“Group C zeroed its scale before the tray went on and not after.”"
+      ],
+      "against": "“Group C's scale has not been checked against a known weight this year.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“Group C's scale has not been checked against a known weight this year.”",
+       "“The other three were all checked against a hundred-gram mass last week.”"
+      ],
+      "against": "“The trays from that set weigh thirty-nine grams each on a checked balance.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“Group C wrote its numbers from the display an hour after weighing, from notes.”",
+       "“Group C's apples each weighed about forty grams more than every other group's.”"
+      ],
+      "against": "“A scale zeroed empty counts whatever sits on it, tray included.”"
+     }
+    ],
+    "clears": [
+     "Bigger apples: “Calipers put every group's apples within a millimetre of each other.”",
+     "A different crate: “One crate on one morning supplied all four groups.”"
+    ],
+    "note": "Thirty-nine grams and about forty grams is as close a match as this kind of evidence gets, and the class should say so out loud. An uncalibrated scale could be out by any amount at all, which makes it a worse explanation for a number that lands so precisely."
+   }
   },
   {
    "id": "g8-w5",
@@ -24956,7 +25204,69 @@
     "A detour: “She did not take a detour, and her riding partner's computer read eleven.”",
     "The magnet: “The magnet is tight and a loose one would undercount, not overcount.”"
    ],
-   "explain": "Priya rode eleven miles. She has ridden eleven miles every time. The only thing that grew is a number on a display, and the last line is the warning: the gap is bigger than the wheel figures alone account for, so the setting is further off than she thinks."
+   "explain": "Priya rode eleven miles. She has ridden eleven miles every time. The only thing that grew is a number on a display, and the last line is the warning: the gap is bigger than the wheel figures alone account for, so the setting is further off than she thinks.",
+   "debate": {
+    "story": "Priya's bike computer says she rode fourteen miles on a route the map measures at eleven. It has said the same thing on four different rides this month. A bike computer counts wheel turns and multiplies by the wheel size it is set to. Her setting reads 2096 millimetres, the figure for a 700c road wheel. Her bike has 26-inch wheels, which roll about 2070 millimetres a turn. The ratio between fourteen and eleven is far larger than those two wheel figures explain. The map was measured along the road centre line and her route runs the verge. A verge route on a winding road can add a tenth to the distance. The computer has shown fourteen even on a ride she cut short at the bridge. No detour was taken, and her partner's computer showed eleven. The magnet sits tight, and a loose magnet undercounts rather than over.",
+    "question": "Why does the computer read fourteen? Choose one cause and prove it.",
+    "suspects": [
+     {
+      "who": "⚙️ The wheel size setting",
+      "why": "a 2096 setting on a wheel that rolls about 2070"
+     },
+     {
+      "who": "🗺️ A wrong map distance",
+      "why": "a map measured along the centre line, not the verge"
+     },
+     {
+      "who": "🔀 A detour",
+      "why": "a partner's computer reading eleven on the same route"
+     },
+     {
+      "who": "🧲 A loose magnet",
+      "why": "a tight magnet, where a loose one would undercount"
+     },
+     {
+      "who": "🔢 The displayed number",
+      "why": "fourteen shown even on a ride cut short at the bridge"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“Her setting reads 2096 millimetres, the figure for a 700c road wheel.”",
+       "“Her bike has 26-inch wheels, which roll about 2070 millimetres a turn.”"
+      ],
+      "against": "“The ratio between fourteen and eleven is far larger than those two wheel figures explain.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“The map was measured along the road centre line and her route runs the verge.”",
+       "“A verge route on a winding road can add a tenth to the distance.”"
+      ],
+      "against": "“It has said the same thing on four different rides this month.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The computer has shown fourteen even on a ride she cut short at the bridge.”",
+       "“A bike computer counts wheel turns and multiplies by the wheel size it is set to.”"
+      ],
+      "against": "“Her setting reads 2096 millimetres, the figure for a 700c road wheel.”"
+     }
+    ],
+    "clears": [
+     "A detour: “No detour was taken, and her partner's computer showed eleven.”",
+     "A loose magnet: “The magnet sits tight, and a loose magnet undercounts rather than over.”"
+    ],
+    "note": "The wheel setting is only one percent out and the reading is twenty-seven percent out, which the case states in its own words. That gap is the heart of it. The ride she cut short is the hardest fact of all, because no wheel setting gives you the same number for two different distances."
+   }
   },
   {
    "id": "g8-w6",
@@ -24998,7 +25308,69 @@
     "A clean tank: “Zero nitrate in a stocked tank that has run since September is not believable.”",
     "The heater: “The tank's filter runs, the heater holds 76, and the water is clear.”"
    ],
-   "explain": "The fish were telling the truth the whole time and the kit was not. The pet shop sample settles it at 80. A result that is too good to be true is worth testing against something outside the instrument that produced it."
+   "explain": "The fish were telling the truth the whole time and the kit was not. The pet shop sample settles it at 80. A result that is too good to be true is worth testing against something outside the instrument that produced it.",
+   "debate": {
+    "story": "The nitrate test reads zero every week while the fish hang near the surface and eat poorly. Something is always breaking down waste, and the end of that process is nitrate. The kit's second bottle must be shaken hard for thirty seconds before use. Its contents settle into a layer that will not mix on its own. The class has been adding drops from a bottle nobody has shaken since October. A sample taken to the pet shop on Saturday tested at 80 parts per million. The kit was bought second hand and its printed date has been worn off the box. A reagent two years old gives a false low whether it is shaken or not. The class reads the colour against the chart under a yellow desk lamp. Yellow light makes a pink card look paler than it is. A stocked tank running since September cannot truly sit at zero nitrate. The filter turns, the heater sits at 76, and the water is clear.",
+    "question": "Why does the test read zero? Make the case for one cause.",
+    "suspects": [
+     {
+      "who": "🧪 The unshaken second bottle",
+      "why": "a second bottle nobody has shaken since October"
+     },
+     {
+      "who": "📅 An expired kit",
+      "why": "bought second hand, with the date worn off the box"
+     },
+     {
+      "who": "🌀 A very clean tank",
+      "why": "zero in a stocked tank since September, which is not believable"
+     },
+     {
+      "who": "🔥 The heater",
+      "why": "a running filter, a heater at 76 and clear water"
+     },
+     {
+      "who": "0️⃣ The reading itself",
+      "why": "a colour read under a yellow desk lamp"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“The class has been adding drops from a bottle nobody has shaken since October.”",
+       "“Its contents settle into a layer that will not mix on its own.”"
+      ],
+      "against": "“The kit was bought second hand and its printed date has been worn off the box.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“The kit was bought second hand and its printed date has been worn off the box.”",
+       "“A reagent two years old gives a false low whether it is shaken or not.”"
+      ],
+      "against": "“Its contents settle into a layer that will not mix on its own.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The class reads the colour against the chart under a yellow desk lamp.”",
+       "“Yellow light makes a pink card look paler than it is.”"
+      ],
+      "against": "“A sample taken to the pet shop on Saturday tested at 80 parts per million.”"
+     }
+    ],
+    "clears": [
+     "A very clean tank: “A stocked tank running since September cannot truly sit at zero nitrate.”",
+     "The heater: “The filter turns, the heater sits at 76, and the water is clear.”"
+    ],
+    "note": "Three ways to get a false low and the pet shop proves the water is at 80, so the tank is not in doubt at all. A pale reading is not the same as a zero reading, and the lamp answer has to explain a test that comes out blank rather than faint."
+   }
   },
   {
    "id": "g8-w7",
@@ -25040,7 +25412,69 @@
     "A quiet room: “A sound meter borrowed from the district read 78 decibels at 1:30 that same week.”",
     "Calibration: “The app's own readings during group work on Thursday reached 74 decibels.”"
    ],
-   "explain": "The app worked. Every number it produced is accurate for the three minutes it covers. The report turned six accurate numbers about silent reading into a claim about a whole school day, and dropped the Thursday figures that would have shown the difference."
+   "explain": "The app worked. Every number it produced is accurate for the three minutes it covers. The report turned six accurate numbers about silent reading into a claim about a whole school day, and dropped the Thursday figures that would have shown the difference.",
+   "debate": {
+    "story": "A phone app recorded Room 4 at 55 decibels, which the report called a quiet classroom. All six readings fall between 10:05 and 10:08 on three different mornings. Room 4 holds silent independent reading from ten o'clock until ten fifteen. A measurement describes the moment it was taken and nothing on either side of it. On Thursday, during group work, the app itself reached 74 decibels. The report quoted only the six morning figures and left the Thursday ones out. The app was last calibrated in August against a meter that has since failed its own check. A phone microphone drifts by several decibels over a term of pocket use. A district meter put the room at 78 decibels at half past one. The phone's microphone was clear and free of dust when it was opened.",
+    "question": "Why does Room 4 read quiet? Pick one cause and quote the story.",
+    "suspects": [
+     {
+      "who": "⏰ Readings taken during silent reading",
+      "why": "six readings between 10:05 and 10:08, inside silent reading"
+     },
+     {
+      "who": "📱 A bad microphone",
+      "why": "a microphone clear and free of dust when it was opened"
+     },
+     {
+      "who": "🤫 A genuinely quiet room",
+      "why": "a district meter reading 78 at half past one"
+     },
+     {
+      "who": "🎚️ A miscalibrated app",
+      "why": "calibrated against a meter that has since failed its own check"
+     },
+     {
+      "who": "📄 The report",
+      "why": "six morning figures quoted and Thursday's left out"
+     }
+    ],
+    "open": [
+     0,
+     3,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“All six readings fall between 10:05 and 10:08 on three different mornings.”",
+       "“Room 4 holds silent independent reading from ten o'clock until ten fifteen.”"
+      ],
+      "against": "“The app was last calibrated in August against a meter that has since failed its own check.”"
+     },
+     {
+      "who": 3,
+      "evidence": [
+       "“The app was last calibrated in August against a meter that has since failed its own check.”",
+       "“A phone microphone drifts by several decibels over a term of pocket use.”"
+      ],
+      "against": "“On Thursday, during group work, the app itself reached 74 decibels.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The report quoted only the six morning figures and left the Thursday ones out.”",
+       "“A measurement describes the moment it was taken and nothing on either side of it.”"
+      ],
+      "against": "“All six readings fall between 10:05 and 10:08 on three different mornings.”"
+     }
+    ],
+    "clears": [
+     "A bad microphone: “The phone's microphone was clear and free of dust when it was opened.”",
+     "A genuinely quiet room: “A district meter put the room at 78 decibels at half past one.”"
+    ],
+    "note": "The app reached 74 on Thursday, which means the app can measure loud when loud is happening. That beats the calibration answer on its own evidence. What is left is whether the fault was in choosing the minute or in choosing which minutes to print, and those are two different kinds of wrong."
+   }
   },
   {
    "id": "g8-w8",
@@ -25082,7 +25516,69 @@
     "Torn pieces: “All five counted whole leaves only, with torn pieces left out by agreement.”",
     "The hour: “All five counted on the same Friday morning within half an hour of each other.”"
    ],
-   "explain": "This is the hardest kind of wrong number to catch, because nobody made a mistake. Group B's 340 is a true count of a real square metre. Where the square was placed is what makes it useless for describing the lawn."
+   "explain": "This is the hardest kind of wrong number to catch, because nobody made a mistake. Group B's 340 is a true count of a real square metre. Where the square was placed is what makes it useless for describing the lawn.",
+   "debate": {
+    "story": "Group B counted 340 fallen leaves in its square where the other groups counted around 90. Group B set its frame directly against the base of the north fence. Wind pushes fallen leaves until something stops them, and a fence stops them. Leaves pile deep along a barrier and thin out across open ground. The other four frames were set at random points across the open lawn. A sample taken where a thing collects will not describe the ground around it. Group B's frame is the wooden one, which measures one metre on the outside. The other four are the wire frames, which measure one metre on the inside. Group B counted every piece larger than a thumbnail as a leaf. The others left out anything torn, by the agreement made that morning. All five counted on the same Friday within half an hour of each other. Group B's tally was checked twice by two different students and matched.",
+    "question": "Why did Group B count 340? Choose one cause and prove it.",
+    "suspects": [
+     {
+      "who": "🚧 The frame against the fence",
+      "why": "a frame set against the base of the north fence"
+     },
+     {
+      "who": "📐 A bigger frame",
+      "why": "a wooden frame measured on the outside, not the inside"
+     },
+     {
+      "who": "🍁 Counting torn pieces",
+      "why": "every piece larger than a thumbnail counted as a leaf"
+     },
+     {
+      "who": "🕘 Counting at a different hour",
+      "why": "all five counting on one Friday within half an hour"
+     },
+     {
+      "who": "🔢 Careless counting",
+      "why": "a tally checked twice by two students and matched"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     2
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“Group B set its frame directly against the base of the north fence.”",
+       "“Leaves pile deep along a barrier and thin out across open ground.”"
+      ],
+      "against": "“Group B's frame is the wooden one, which measures one metre on the outside.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“Group B's frame is the wooden one, which measures one metre on the outside.”",
+       "“The other four are the wire frames, which measure one metre on the inside.”"
+      ],
+      "against": "“Wind pushes fallen leaves until something stops them, and a fence stops them.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“Group B counted every piece larger than a thumbnail as a leaf.”",
+       "“The others left out anything torn, by the agreement made that morning.”"
+      ],
+      "against": "“The other four frames were set at random points across the open lawn.”"
+     }
+    ],
+    "clears": [
+     "Counting at a different hour: “All five counted on the same Friday within half an hour of each other.”",
+     "Careless counting: “Group B's tally was checked twice by two different students and matched.”"
+    ],
+    "note": "340 against 90 is nearly four times, and the class should ask what each answer is worth. A frame measured outside instead of inside is a few percent of area. Counting torn pieces might add a third. Only the fence is the right size, and the arithmetic is how you show it rather than feel it."
+   }
   },
   {
    "id": "g8-w9",
@@ -25124,7 +25620,69 @@
     "A miscopy: “Every reading was photographed, and week four's photograph matches the sheet exactly.”",
     "A real gain: “A cut pumpkin drying on a porch loses water steadily and does not take it back.”"
    ],
-   "explain": "Every check anyone ran was a check on the scale or the record, and both were fine. The thing nobody checked was what was on the pumpkin when it went on the scale. Four of the five weighings had a rule nobody had written down: noon, and dry."
+   "explain": "Every check anyone ran was a check on the scale or the record, and both were fine. The thing nobody checked was what was on the pumpkin when it went on the scale. Four of the five weighings had a rule nobody had written down: noon, and dry.",
+   "debate": {
+    "story": "The pumpkin lost weight for three weeks, gained nine ounces in week four, and lost again after. Weeks one, two, three and five were weighed at noon in dry weather. Week four was weighed at seven in the morning after a night of heavy rain. The porch rail is open on the weather side and the pumpkin sat in the wet. Water on a surface is weighed along with whatever is under it. Nine ounces is about half a cup, which a wet skin can easily hold. The kitchen scale was dropped in week three and has not been checked since. A dropped scale can read high by a fixed amount until it is rezeroed. Week four was the only week the science room scale was used instead. The two scales have never been compared against one known weight. Every reading was photographed, and week four's photograph matches the sheet. A cut pumpkin on a porch loses water steadily and does not take it back.",
+    "question": "Why did week four gain weight? Make the case for one cause.",
+    "suspects": [
+     {
+      "who": "🌧️ Rainwater on the surface",
+      "why": "seven in the morning after a night of heavy rain"
+     },
+     {
+      "who": "⚖️ A faulty scale",
+      "why": "a kitchen scale dropped in week three and never checked"
+     },
+     {
+      "who": "✍️ A miscopied number",
+      "why": "a photograph of week four matching the sheet"
+     },
+     {
+      "who": "🎃 A pumpkin actually gaining",
+      "why": "a cut pumpkin that loses water and does not take it back"
+     },
+     {
+      "who": "🔀 A different scale",
+      "why": "the only week the science room scale was used"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“Week four was weighed at seven in the morning after a night of heavy rain.”",
+       "“Nine ounces is about half a cup, which a wet skin can easily hold.”"
+      ],
+      "against": "“The kitchen scale was dropped in week three and has not been checked since.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“The kitchen scale was dropped in week three and has not been checked since.”",
+       "“A dropped scale can read high by a fixed amount until it is rezeroed.”"
+      ],
+      "against": "“Weeks one, two, three and five were weighed at noon in dry weather.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“Week four was the only week the science room scale was used instead.”",
+       "“The two scales have never been compared against one known weight.”"
+      ],
+      "against": "“Water on a surface is weighed along with whatever is under it.”"
+     }
+    ],
+    "clears": [
+     "A miscopied number: “Every reading was photographed, and week four's photograph matches the sheet.”",
+     "A pumpkin actually gaining: “A cut pumpkin on a porch loses water steadily and does not take it back.”"
+    ],
+    "note": "A dropped kitchen scale would push weeks four and five both high, and week five came back down. That is the test the case hands you for free. The two-scale answer is the quiet one: nobody has ever compared them, so nobody knows what week four's number means."
+   }
   },
   {
    "id": "g8-w10",
@@ -25166,7 +25724,69 @@
     "A ruler: “It was measured from a photograph, using a brick in the frame as the scale.”",
     "The soil: “A print pressed into soft soil also spreads wider than the sole that made it.”"
    ],
-   "explain": "No ruler was wrong and no photograph was faked. One assumption was carried into every number without being checked, and it was off by an inch. The soil spreading the print pushes the real shoe smaller still."
+   "explain": "No ruler was wrong and no photograph was faked. One assumption was carried into every number without being checked, and it was off by an inch. The soil spreading the print pushes the real shoe smaller still.",
+   "debate": {
+    "story": "The print in the flowerbed measured eleven and a half inches, pointing to a very large shoe. The print was never measured in the bed itself before the rain came. It was scaled from a photograph, using a brick in the frame as the reference. The measurer assumed the bricks were eight inches long, as most bricks are. The school's walls are built of a seven-inch brick used only in this county. Every length taken from that photograph is therefore about one part in eight too large. The bed had been watered that morning and the soil was soft and loose. Soft wet soil spreads under a sole and records a print wider than the shoe. The photograph was taken at an angle of about thirty degrees to the ground. A length measured across a tilted photograph comes out longer than it is. Nobody at the school wears a shoe anywhere near eleven inches. The tape used on the photograph was checked against a steel rule and is true.",
+    "question": "Why did the print measure eleven and a half? Pick one cause and prove it.",
+    "suspects": [
+     {
+      "who": "🧱 The assumed brick length",
+      "why": "an eight-inch assumption on a seven-inch brick"
+     },
+     {
+      "who": "👟 A genuinely huge shoe",
+      "why": "nobody at the school wearing near eleven inches"
+     },
+     {
+      "who": "📏 A faulty ruler",
+      "why": "a tape checked against a steel rule and found true"
+     },
+     {
+      "who": "🌱 Soil spreading the print",
+      "why": "soft wet soil that spreads under a sole"
+     },
+     {
+      "who": "📷 The photograph",
+      "why": "a photograph taken at thirty degrees to the ground"
+     }
+    ],
+    "open": [
+     0,
+     3,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“The measurer assumed the bricks were eight inches long, as most bricks are.”",
+       "“The school's walls are built of a seven-inch brick used only in this county.”"
+      ],
+      "against": "“The photograph was taken at an angle of about thirty degrees to the ground.”"
+     },
+     {
+      "who": 3,
+      "evidence": [
+       "“The bed had been watered that morning and the soil was soft and loose.”",
+       "“Soft wet soil spreads under a sole and records a print wider than the shoe.”"
+      ],
+      "against": "“Every length taken from that photograph is therefore about one part in eight too large.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The photograph was taken at an angle of about thirty degrees to the ground.”",
+       "“A length measured across a tilted photograph comes out longer than it is.”"
+      ],
+      "against": "“It was scaled from a photograph, using a brick in the frame as the reference.”"
+     }
+    ],
+    "clears": [
+     "A genuinely huge shoe: “Nobody at the school wears a shoe anywhere near eleven inches.”",
+     "A faulty ruler: “The tape used on the photograph was checked against a steel rule and is true.”"
+    ],
+    "note": "Three different errors all push the number the same way, which is why eleven and a half is so far out. The brick is worth an eighth, the tilt is worth something nobody has calculated, and the soil is worth whatever a soft bed gives. Ask the class to put a number on each before choosing."
+   }
   },
   {
    "id": "g8-w11",
@@ -25208,7 +25828,69 @@
     "A broken counter: “Riders are counted by a hand tally the driver keeps at the front door.”",
     "The fare box: “The fare box counts nothing, since this route has never charged a fare.”"
    ],
-   "explain": "Nothing happened to ridership. Something happened to the counting. The drop is exactly the size of the change in how students get on, and the report has no way of knowing that because its sheet was printed before the rear door opened."
+   "explain": "Nothing happened to ridership. Something happened to the counting. The drop is exactly the size of the change in how students get on, and the report has no way of knowing that because its sheet was printed before the rear door opened.",
+   "debate": {
+    "story": "The October report shows ridership on route 6 down thirty percent from September. The driver says the bus is as full as it has ever been in her years there. The driver keeps a hand tally at the front door and that is the count. In late September the school began letting students board through the rear door. The tally sheet has no line for the rear door and never has had one. Students boarding at the rear are not counted anywhere in the system. The driver's clicker jammed twice in October and was replaced in the second week. A clicker that sticks records one press where two were made. The tally sheet's total is copied into the report by hand each Friday. Three Fridays in October the sheet and the report disagree by more than ten. Four more students now live along that route than did in September. No fare has ever been charged on route 6, so the box counts nothing.",
+    "question": "Why is ridership down thirty percent? Choose one cause and quote the story.",
+    "suspects": [
+     {
+      "who": "🚪 Rear-door boarding",
+      "why": "a rear door opened in September with no line on the sheet"
+     },
+     {
+      "who": "📉 Fewer students riding",
+      "why": "enrollment up four students over the same month"
+     },
+     {
+      "who": "🖐️ A broken counter",
+      "why": "a clicker that jammed twice before being replaced"
+     },
+     {
+      "who": "💰 The fare box",
+      "why": "a fare box on a route that has never charged a fare"
+     },
+     {
+      "who": "📋 The tally sheet",
+      "why": "a sheet copied by hand, disagreeing on three Fridays"
+     }
+    ],
+    "open": [
+     0,
+     2,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“In late September the school began letting students board through the rear door.”",
+       "“Students boarding at the rear are not counted anywhere in the system.”"
+      ],
+      "against": "“The driver's clicker jammed twice in October and was replaced in the second week.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“The driver's clicker jammed twice in October and was replaced in the second week.”",
+       "“A clicker that sticks records one press where two were made.”"
+      ],
+      "against": "“Students boarding at the rear are not counted anywhere in the system.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The tally sheet's total is copied into the report by hand each Friday.”",
+       "“Three Fridays in October the sheet and the report disagree by more than ten.”"
+      ],
+      "against": "“The driver keeps a hand tally at the front door and that is the count.”"
+     }
+    ],
+    "clears": [
+     "Fewer students riding: “Four more students now live along that route than did in September.”",
+     "The fare box: “No fare has ever been charged on route 6, so the box counts nothing.”"
+    ],
+    "note": "Nobody disputes that the bus is full, so the thirty percent is a fact about the paperwork. Three places in that paperwork can lose a rider: the door, the clicker and the copying. Ask which of the three could lose thirty percent and which could only lose a handful."
+   }
   },
   {
    "id": "g8-w12",
@@ -25250,7 +25932,69 @@
     "The record book: “The record book records the year of the season, which is a different thing.”",
     "A replaced plate: “The plate on the 1998 trophy is original and shows no sign of replacement.”"
    ],
-   "explain": "The clue is the pattern. One trophy off by a year is a mistake; twelve off by a year in the same direction is a rule nobody wrote down. Both records are accurate about different events, and the only error was assuming they were about the same one."
+   "explain": "The clue is the pattern. One trophy off by a year is a mistake; twelve off by a year in the same direction is a rule nobody wrote down. Both records are accurate about different events, and the only error was assuming they were about the same one.",
+   "debate": {
+    "story": "The relay trophy is engraved 1998, and the record book says the team won in 1997. The case holds eleven other trophies from eleven other seasons on the same shelf. Every one of them is engraved with a year one later than its season in the book. Trophies in this league are presented at the spring banquet following the autumn season. The engraving records the year of presentation, which the league has always done. The engraver for all twelve was the same firm, which kept one template on file. A template carried forward year to year carries its mistakes forward too. The 1998 plate was unscrewed and refitted in 2004 when the base was repaired. Screw holes on that plate are oval, which is what refitting leaves behind. What the book writes down is the season's year, which is a different thing. The eleven other trophies are not in question and nobody disputes their dates.",
+    "question": "Why does the trophy say 1998? Make the case for one cause.",
+    "suspects": [
+     {
+      "who": "🗓️ Presentation year versus season year",
+      "why": "presentation at the spring banquet after an autumn season"
+     },
+     {
+      "who": "✒️ An engraver's mistake",
+      "why": "one firm, one template, carried forward twelve times"
+     },
+     {
+      "who": "📕 A wrong record book",
+      "why": "a book that records the season year, a different thing"
+     },
+     {
+      "who": "🔩 A replaced plate",
+      "why": "a plate unscrewed in 2004, with oval screw holes"
+     },
+     {
+      "who": "🏅 The other eleven trophies",
+      "why": "eleven others whose dates nobody disputes"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     3
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“Trophies in this league are presented at the spring banquet following the autumn season.”",
+       "“The engraving records the year of presentation, which the league has always done.”"
+      ],
+      "against": "“The engraver for all twelve was the same firm, which kept one template on file.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“The engraver for all twelve was the same firm, which kept one template on file.”",
+       "“A template carried forward year to year carries its mistakes forward too.”"
+      ],
+      "against": "“Every one of them is engraved with a year one later than its season in the book.”"
+     },
+     {
+      "who": 3,
+      "evidence": [
+       "“The 1998 plate was unscrewed and refitted in 2004 when the base was repaired.”",
+       "“Screw holes on that plate are oval, which is what refitting leaves behind.”"
+      ],
+      "against": "“Every one of them is engraved with a year one later than its season in the book.”"
+     }
+    ],
+    "clears": [
+     "A wrong record book: “What the book writes down is the season's year, which is a different thing.”",
+     "The other eleven trophies: “The eleven other trophies are not in question and nobody disputes their dates.”"
+    ],
+    "note": "A template carried forward and a league rule about banquets look identical from the outside, and the class should feel how close those two answers sit. One says the engraving is correct and the other says it is wrong in the same way twelve times. Only one of them makes the trophy worth rebilling."
+   }
   },
   {
    "id": "g8-w13",
@@ -25292,7 +26036,69 @@
     "The oven: “The oven was checked with a second thermometer and held its setting all afternoon.”",
     "The recipe: “The recipe asks for the probe in the thickest part of the thigh, clear of bone.”"
    ],
-   "explain": "The same probe gives two readings thirty degrees apart an inch from each other, which settles that the instrument is fine. Pushing in until something stops you is exactly the instruction the recipe warns against, and it puts the tip on the hottest thing in the bird."
+   "explain": "The same probe gives two readings thirty degrees apart an inch from each other, which settles that the instrument is fine. Pushing in until something stops you is exactly the instruction the recipe warns against, and it puts the tip on the hottest thing in the bird.",
+   "debate": {
+    "story": "The probe read 181 degrees and the thigh ran pink when it was carved. What the recipe asks for is the thickest part of the thigh, well clear of bone. The cook pushed the probe in until it met resistance and stopped. Resistance in a thigh means bone, and bone sits right against the oven's heat. Bone carries heat faster than meat and runs hotter than the flesh around it. Moved an inch back into the muscle, the same probe read 154. The oven's left side ran nine degrees hotter than its right on the day. The bird sat with its left thigh toward that side for the whole roast. The reading was taken once, at three o'clock, and written straight onto the card. A single reading in one spot describes one spot at one moment. That morning the probe was held in boiling water and showed 212 exactly. The recipe has been followed in this kitchen for eleven years without trouble.",
+    "question": "Why did the probe read 181? Pick one cause and back it up.",
+    "suspects": [
+     {
+      "who": "🦴 The probe resting on bone",
+      "why": "a probe pushed to resistance, which in a thigh means bone"
+     },
+     {
+      "who": "🌡️ A faulty thermometer",
+      "why": "a boiling-water test reading 212 exactly"
+     },
+     {
+      "who": "♨️ An uneven oven",
+      "why": "a left side nine degrees hotter, with the left thigh toward it"
+     },
+     {
+      "who": "📖 The recipe",
+      "why": "a recipe followed in this kitchen for eleven years"
+     },
+     {
+      "who": "🔢 The 181 reading",
+      "why": "one reading, taken once at three o'clock"
+     }
+    ],
+    "open": [
+     0,
+     2,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“The cook pushed the probe in until it met resistance and stopped.”",
+       "“Resistance in a thigh means bone, and bone sits right against the oven's heat.”"
+      ],
+      "against": "“The oven's left side ran nine degrees hotter than its right on the day.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“The oven's left side ran nine degrees hotter than its right on the day.”",
+       "“The bird sat with its left thigh toward that side for the whole roast.”"
+      ],
+      "against": "“Moved an inch back into the muscle, the same probe read 154.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The reading was taken once, at three o'clock, and written straight onto the card.”",
+       "“A single reading in one spot describes one spot at one moment.”"
+      ],
+      "against": "“Bone carries heat faster than meat and runs hotter than the flesh around it.”"
+     }
+    ],
+    "clears": [
+     "A faulty thermometer: “That morning the probe was held in boiling water and showed 212 exactly.”",
+     "The recipe: “The recipe has been followed in this kitchen for eleven years without trouble.”"
+    ],
+    "note": "One inch and twenty-seven degrees is the measurement that carries this case. The oven answer has to explain why the same probe in the same bird a minute later read 154, which has nothing to do with which side was hotter."
+   }
   },
   {
    "id": "g8-w14",
@@ -25334,7 +26140,69 @@
     "The flour: “Both drew that flour from the same sack in the same storeroom.”",
     "Overbaking: “Both trays came out when the same timer reached eighteen minutes.”"
    ],
-   "explain": "Both classes followed the recipe exactly, which is the point. A cup measures space, and flour can be loose or packed in the same space. The recipe never said which, so following it precisely still produced two different cakes — and the fifth suspect, that one cup, is as much to blame as the scooping."
+   "explain": "Both classes followed the recipe exactly, which is the point. A cup measures space, and flour can be loose or packed in the same space. The recipe never said which, so following it precisely still produced two different cakes — and the fifth suspect, that one cup, is as much to blame as the scooping.",
+   "debate": {
+    "story": "Period 2's cupcakes came out dry and tough and period 4's came out tender. Period 2 scooped the measuring cup straight down into the sack and levelled it. Period 4 spooned flour loosely into the cup and then levelled it off. Scooping packs flour into a cup and spooning leaves it loose. Weighed afterwards, period 2's cup came to 148 grams and period 4's to 123. That is a fifth more flour in a recipe where a fifth is the difference. Period 2's tray sat in the oven four minutes past the timer while a class was dismissed. Four extra minutes on a small cake dries it through rather than browning it. The recipe says one cup of flour and never says what a cup should weigh. A recipe that names a volume leaves the weight to whoever fills the cup. Both classes baked on the middle rack of the same oven at the same setting. The flour for both came out of one sack in one storeroom.",
+    "question": "Why was one batch dry and tough? Choose one cause and prove it.",
+    "suspects": [
+     {
+      "who": "🥄 Scooping the cup into the sack",
+      "why": "a cup scooped into the sack and levelled, at 148 grams"
+     },
+     {
+      "who": "♨️ The oven",
+      "why": "the middle rack of one oven at one setting for both"
+     },
+     {
+      "who": "🌾 A different flour",
+      "why": "one sack in one storeroom for both classes"
+     },
+     {
+      "who": "⏲️ Overbaking",
+      "why": "four minutes past the timer while a class was dismissed"
+     },
+     {
+      "who": "📝 The one cup in the recipe",
+      "why": "a recipe naming a volume and never a weight"
+     }
+    ],
+    "open": [
+     0,
+     3,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“Period 2 scooped the measuring cup straight down into the sack and levelled it.”",
+       "“Weighed afterwards, period 2's cup came to 148 grams and period 4's to 123.”"
+      ],
+      "against": "“Period 2's tray sat in the oven four minutes past the timer while a class was dismissed.”"
+     },
+     {
+      "who": 3,
+      "evidence": [
+       "“Period 2's tray sat in the oven four minutes past the timer while a class was dismissed.”",
+       "“Four extra minutes on a small cake dries it through rather than browning it.”"
+      ],
+      "against": "“Scooping packs flour into a cup and spooning leaves it loose.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The recipe says one cup of flour and never says what a cup should weigh.”",
+       "“A recipe that names a volume leaves the weight to whoever fills the cup.”"
+      ],
+      "against": "“Weighed afterwards, period 2's cup came to 148 grams and period 4's to 123.”"
+     }
+    ],
+    "clears": [
+     "The oven: “Both classes baked on the middle rack of the same oven at the same setting.”",
+     "A different flour: “The flour for both came out of one sack in one storeroom.”"
+    ],
+    "note": "Dry and tough are two words and they may have two causes. Extra flour makes a cake tough. Extra minutes make it dry. A student who assigns each word to a different suspect has read more carefully than one who picks a single name."
+   }
   },
   {
    "id": "g8-w15",
@@ -25376,7 +26244,69 @@
     "Wrong claims: “Claimed items were logged the same way, which is why the two totals still match.”",
     "A counting error: “Two wrong numbers that are wrong by the same amount will balance perfectly.”"
    ],
-   "explain": "A balanced record feels like proof and is not. Both sides of this one were inflated the same way by the same form, so they agree with each other and disagree with the coat rack. The missing column is doing all the damage."
+   "explain": "A balanced record feels like proof and is not. Both sides of this one were inflated the same way by the same form, so they agree with each other and disagree with the coat rack. The missing column is doing all the damage.",
+   "debate": {
+    "story": "The lost and found log shows fourteen pairs of mittens turned in and fourteen claimed. By that record nothing is missing, and yet three students are still without mittens. Seven of the fourteen entries turned out to be single mittens, not pairs. The log has one column headed pairs and no column for a single at all. Whoever logged a lone mitten wrote it in the only column there was. Seven singles counted as seven pairs inflates the record by seven mittens. Two students took away mittens that were not the ones they had lost. Nobody checks a name against an item when something is claimed at the desk. The log's two totals are copied from each other at the end of each week. A total copied from another total will always agree with it. Two people have been through the bin and it is empty. Every entry was written down as it happened and none was added later.",
+    "question": "Why is nothing missing on paper? Make the case for one cause.",
+    "suspects": [
+     {
+      "who": "📋 Singles logged as pairs",
+      "why": "seven singles written into the only column there was"
+     },
+     {
+      "who": "🗑️ Mittens still in the bin",
+      "why": "an empty bin, checked twice by two people"
+     },
+     {
+      "who": "🙋 Students claiming the wrong pair",
+      "why": "two students who took mittens that were not theirs"
+     },
+     {
+      "who": "➕ A counting error",
+      "why": "entries written as they happened, none added later"
+     },
+     {
+      "who": "📊 The balanced totals",
+      "why": "two totals copied from each other at the end of each week"
+     }
+    ],
+    "open": [
+     0,
+     2,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“Seven of the fourteen entries turned out to be single mittens, not pairs.”",
+       "“Seven singles counted as seven pairs inflates the record by seven mittens.”"
+      ],
+      "against": "“Two students took away mittens that were not the ones they had lost.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“Two students took away mittens that were not the ones they had lost.”",
+       "“Nobody checks a name against an item when something is claimed at the desk.”"
+      ],
+      "against": "“By that record nothing is missing, and yet three students are still without mittens.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The log's two totals are copied from each other at the end of each week.”",
+       "“A total copied from another total will always agree with it.”"
+      ],
+      "against": "“Seven of the fourteen entries turned out to be single mittens, not pairs.”"
+     }
+    ],
+    "clears": [
+     "Mittens still in the bin: “Two people have been through the bin and it is empty.”",
+     "A counting error: “Every entry was written down as it happened and none was added later.”"
+    ],
+    "note": "Three students are short and seven entries are wrong, so the numbers do not quite line up and that is worth sitting with. Two of these answers explain why the log balances. Only one explains why three children went home with cold hands."
+   }
   },
   {
    "id": "g8-w16",
@@ -25418,7 +26348,69 @@
     "The time: “The bake time was held at twelve minutes throughout, exactly as written.”",
     "A bad thermometer: “A second oven thermometer from a different shop reads 324 on the same rack.”"
    ],
-   "explain": "Two thermometers from two shops agreeing within a degree is as close to independent confirmation as a kitchen gets. The dial is the one voice disagreeing, and the test at 375 proves the point by making the problem go away."
+   "explain": "Two thermometers from two shops agreeing within a degree is as close to independent confirmation as a kitchen gets. The dial is the one voice disagreeing, and the test at 375 proves the point by making the problem go away.",
+   "debate": {
+    "story": "Every gingerbread batch comes out pale and soft though the dial is set to 350. An oven thermometer hung from the middle rack reads 325 after a full hour. A second thermometer, bought elsewhere, reads 324 on that same rack. The dial is a request for a temperature and not a report of one. An oven's dial can drift years out of true without anything looking wrong. Set to 375, the dial brings the rack thermometers to 350 and the batches brown properly. Both rack thermometers came from the same wholesaler in the same carton. Two instruments from one batch can be wrong together in the same direction. The dough was mixed with butter straight from the refrigerator rather than softened. Cold butter leaves a dough that spreads less and takes colour slowly. Three other kitchens run this recipe unchanged and it works for them. Twelve minutes was kept to every time, exactly as the card says.",
+    "question": "Why do the batches come out pale? Pick one cause and quote the story.",
+    "suspects": [
+     {
+      "who": "🎚️ A dial reading high",
+      "why": "a dial set to 350 with the rack reading 325"
+     },
+     {
+      "who": "📖 The recipe",
+      "why": "a recipe that works unchanged in three other kitchens"
+     },
+     {
+      "who": "⏲️ The bake time",
+      "why": "twelve minutes throughout, exactly as written"
+     },
+     {
+      "who": "🌡️ A bad oven thermometer",
+      "why": "two thermometers from one carton and one wholesaler"
+     },
+     {
+      "who": "🍪 The dough",
+      "why": "butter straight from the refrigerator, not softened"
+     }
+    ],
+    "open": [
+     0,
+     3,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“An oven thermometer hung from the middle rack reads 325 after a full hour.”",
+       "“Set to 375, the dial brings the rack thermometers to 350 and the batches brown properly.”"
+      ],
+      "against": "“Both rack thermometers came from the same wholesaler in the same carton.”"
+     },
+     {
+      "who": 3,
+      "evidence": [
+       "“Both rack thermometers came from the same wholesaler in the same carton.”",
+       "“Two instruments from one batch can be wrong together in the same direction.”"
+      ],
+      "against": "“Set to 375, the dial brings the rack thermometers to 350 and the batches brown properly.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The dough was mixed with butter straight from the refrigerator rather than softened.”",
+       "“Cold butter leaves a dough that spreads less and takes colour slowly.”"
+      ],
+      "against": "“An oven thermometer hung from the middle rack reads 325 after a full hour.”"
+     }
+    ],
+    "clears": [
+     "The recipe: “Three other kitchens run this recipe unchanged and it works for them.”",
+     "The bake time: “Twelve minutes was kept to every time, exactly as the card says.”"
+    ],
+    "note": "Two instruments agreeing is strong until you learn they came out of one carton, which is the sentence that turns this case around. The strongest evidence is the test: turning the dial up fixed the biscuits. Ask what that proves about the dial and what it proves about the thermometers."
+   }
   },
   {
    "id": "g8-w17",
@@ -25460,7 +26452,69 @@
     "The cords: “The extension cords are rated for fifteen amps and are cool to the touch.”",
     "The circuit: “The circuit is rated for 1800 watts and the plan called for well under that.”"
    ],
-   "explain": "The breaker is doing its job correctly. The plan asked a circuit built for 1800 watts to carry 4800, and it did so because of one number read as the wrong kind of number. The last line is the lesson: a figure without its unit attached is not information."
+   "explain": "The breaker is doing its job correctly. The plan asked a circuit built for 1800 watts to carry 4800, and it did so because of one number read as the wrong kind of number. The last line is the lesson: a figure without its unit attached is not information.",
+   "debate": {
+    "story": "The display breaker trips within a minute every time the last string is plugged in. Each box is labelled twenty-five watts, and the plan multiplied twenty-five by twenty strings. The twenty-five watts on the box is the rating of a replacement bulb, not the string. Each string holds a hundred bulbs and the fine print gives its total as 240 watts. Twenty strings at 240 watts each comes to 4800 watts on one circuit. The display circuit was found to share its breaker with the kitchen's two freezers. Two freezers draw nine hundred watts between them before a single light goes on. The plan was drawn up for sixteen strings and four more were added in November. Nobody redid the arithmetic when the four strings were added. A new breaker went in and it trips in exactly the same way. Every cord carries a fifteen amp rating and all of them stay cool.",
+    "question": "Why does the breaker trip? Choose one cause and back it up.",
+    "suspects": [
+     {
+      "who": "🔢 Misreading the box label",
+      "why": "a bulb rating on the box read as a string rating"
+     },
+     {
+      "who": "🧯 A faulty breaker",
+      "why": "a new breaker that trips in exactly the same way"
+     },
+     {
+      "who": "🪢 The extension cords",
+      "why": "cords rated fifteen amps and cool to the touch"
+     },
+     {
+      "who": "⚡ An undersized circuit",
+      "why": "a breaker shared with the kitchen's two freezers"
+     },
+     {
+      "who": "📐 The plan",
+      "why": "a plan for sixteen strings, with four added in November"
+     }
+    ],
+    "open": [
+     0,
+     3,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“The twenty-five watts on the box is the rating of a replacement bulb, not the string.”",
+       "“Each string holds a hundred bulbs and the fine print gives its total as 240 watts.”"
+      ],
+      "against": "“The display circuit was found to share its breaker with the kitchen's two freezers.”"
+     },
+     {
+      "who": 3,
+      "evidence": [
+       "“The display circuit was found to share its breaker with the kitchen's two freezers.”",
+       "“Two freezers draw nine hundred watts between them before a single light goes on.”"
+      ],
+      "against": "“Twenty strings at 240 watts each comes to 4800 watts on one circuit.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The plan was drawn up for sixteen strings and four more were added in November.”",
+       "“Nobody redid the arithmetic when the four strings were added.”"
+      ],
+      "against": "“Each string holds a hundred bulbs and the fine print gives its total as 240 watts.”"
+     }
+    ],
+    "clears": [
+     "A faulty breaker: “A new breaker went in and it trips in exactly the same way.”",
+     "The extension cords: “Every cord carries a fifteen amp rating and all of them stay cool.”"
+    ],
+    "note": "Sixteen strings at 240 watts is 3840, which is already more than twice the circuit, so the four extra strings are not what broke it. That arithmetic kills one answer outright. The freezers matter and they are nine hundred watts against a four thousand watt overload."
+   }
   },
   {
    "id": "g8-w18",
@@ -25502,7 +26556,69 @@
     "The stopwatch: “The stopwatch itself was checked against a time signal and keeps accurate time.”",
     "The electronic system: “The electronic system starts on the gun's electrical signal and stops at a beam.”"
    ],
-   "explain": "The fifty metre test is the confirmation: half the distance, half the error, which is exactly what a sound delay does and not what a broken watch does. The runner ran the slower time. The watch recorded a shorter race."
+   "explain": "The fifty metre test is the confirmation: half the distance, half the error, which is exactly what a sound delay does and not what a broken watch does. The runner ran the slower time. The watch recorded a shorter race.",
+   "debate": {
+    "story": "The hand-timed hundred metres came out four tenths faster than the electronic system's time. The hand timer stood at the finish line, a hundred metres from the starter. He started his watch when he heard the gun rather than when he saw the smoke. Sound travels a hundred metres in roughly three tenths of a second. A watch started three tenths late records a run three tenths shorter than it was. Human reaction at the finish adds a little more in the same direction. A timer who anticipates the finish stops the watch before the chest crosses. The same watch was used on a fifty metre run and came out two tenths fast. A stopwatch that runs fast loses time in proportion to the time it measures. Both systems were tested against each other over fifty metres and differed by half as much. The electronic timer takes its start from the gun's own signal and stops at a beam. A quicker number on a watch does not have to mean a quicker runner.",
+    "question": "Why is the hand time four tenths faster? Make the case for one cause.",
+    "suspects": [
+     {
+      "who": "🔊 Starting on the sound",
+      "why": "a watch started on the sound, a hundred metres from the gun"
+     },
+     {
+      "who": "🏃 A faster run",
+      "why": "a faster time not always meaning a faster runner"
+     },
+     {
+      "who": "⌚ A fast stopwatch",
+      "why": "a watch two tenths fast over fifty metres"
+     },
+     {
+      "who": "💻 The electronic system",
+      "why": "a system starting on the gun's own electrical signal"
+     },
+     {
+      "who": "🖐️ Reaction at the finish",
+      "why": "a timer stopping before the chest crosses"
+     }
+    ],
+    "open": [
+     0,
+     2,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“He started his watch when he heard the gun rather than when he saw the smoke.”",
+       "“Sound travels a hundred metres in roughly three tenths of a second.”"
+      ],
+      "against": "“The same watch was used on a fifty metre run and came out two tenths fast.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“The same watch was used on a fifty metre run and came out two tenths fast.”",
+       "“A stopwatch that runs fast loses time in proportion to the time it measures.”"
+      ],
+      "against": "“Sound travels a hundred metres in roughly three tenths of a second.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“A timer who anticipates the finish stops the watch before the chest crosses.”",
+       "“Human reaction at the finish adds a little more in the same direction.”"
+      ],
+      "against": "“A watch started three tenths late records a run three tenths shorter than it was.”"
+     }
+    ],
+    "clears": [
+     "A faster run: “A quicker number on a watch does not have to mean a quicker runner.”",
+     "The electronic system: “The electronic timer takes its start from the gun's own signal and stops at a beam.”"
+    ],
+    "note": "The fifty metre test is the measurement that separates these. The two systems differed by half as much over half the distance, which is what a proportional error looks like and is not what a fixed three-tenths head start looks like. Ask what each answer predicts for a two hundred."
+   }
   },
   {
    "id": "g8-w19",
@@ -25544,7 +26660,69 @@
     "The ruler: “The school ruler and the station gauge were compared afterwards and agree exactly.”",
     "Arithmetic: “Both numbers were taken honestly, and neither observer made an arithmetic error.”"
    ],
-   "explain": "Nobody is wrong here, which is the hard part. Nine inches of snow fell and four inches were lying at the end, and both sentences are true at once. The disagreement is between two definitions of how much snow, not between two measurements."
+   "explain": "Nobody is wrong here, which is the hard part. Nine inches of snow fell and four inches were lying at the end, and both sentences are true at once. The disagreement is between two definitions of how much snow, not between two measurements.",
+   "debate": {
+    "story": "The weather station reported four inches and the school's own board recorded nine. The school clears its measuring board and takes a fresh reading every six hours. It took four readings through the storm and added them to reach nine inches. The station takes one reading at the end, measuring the depth that is still lying. Snow settles under its own weight from the moment it lands. Four separate fresh falls summed will always exceed the depth left at the end. The school board sits against the gym wall on the sheltered side. The station gauge stands in the open field where wind strips snow away. Wind can take a third off an open gauge and pile it against a wall. Each answers a question the other does not, which is not the same as being wrong. Afterwards the school ruler and the station gauge were laid together and matched. Both observers worked honestly and neither added anything up wrong.",
+    "question": "Why do the two numbers differ? Pick one cause and prove it.",
+    "suspects": [
+     {
+      "who": "📏 Summing four cleared-board readings",
+      "why": "four cleared-board readings added together"
+     },
+     {
+      "who": "🌬️ Drifting",
+      "why": "a board sheltered by a wall and a gauge in the open"
+     },
+     {
+      "who": "📐 A faulty ruler",
+      "why": "a ruler and a gauge compared afterwards and agreeing"
+     },
+     {
+      "who": "➕ An arithmetic error",
+      "why": "honest numbers with no arithmetic error in either"
+     },
+     {
+      "who": "🤝 Two methods, two questions",
+      "why": "two methods each answering a different question"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“It took four readings through the storm and added them to reach nine inches.”",
+       "“Four separate fresh falls summed will always exceed the depth left at the end.”"
+      ],
+      "against": "“The school board sits against the gym wall on the sheltered side.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“The school board sits against the gym wall on the sheltered side.”",
+       "“Wind can take a third off an open gauge and pile it against a wall.”"
+      ],
+      "against": "“The station takes one reading at the end, measuring the depth that is still lying.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“Each answers a question the other does not, which is not the same as being wrong.”",
+       "“Snow settles under its own weight from the moment it lands.”"
+      ],
+      "against": "“The weather station reported four inches and the school's own board recorded nine.”"
+     }
+    ],
+    "clears": [
+     "A faulty ruler: “Afterwards the school ruler and the station gauge were laid together and matched.”",
+     "An arithmetic error: “Both observers worked honestly and neither added anything up wrong.”"
+    ],
+    "note": "Nine against four is more than double, and wind alone is worth about a third. That leaves a gap the summing explains and the wind does not. The third answer is the grown-up one: total snowfall and depth on the ground are two different measurements with two different right answers."
+   }
   },
   {
    "id": "g8-w20",
@@ -25586,7 +26764,69 @@
     "A miscount: “Three observers watched together and their sheets agree within one mark.”",
     "The view: “The observer marked the sheet every time a chickadee landed on the perch.”"
    ],
-   "explain": "The banded bird is the whole case. It is one bird, and it is on the sheet six times, which proves the sheet counts landings. Forty is a perfectly accurate number and the word after it is wrong."
+   "explain": "The banded bird is the whole case. It is one bird, and it is on the sheet six times, which proves the sheet counts landings. Forty is a perfectly accurate number and the word after it is wrong.",
+   "debate": {
+    "story": "The tally sheet records forty chickadees at the feeder in one hour on Saturday. Every landing on the perch got a mark on the sheet. One bird in the yard carries a numbered band from a ringing project nearby. That banded bird was recorded six separate times within the same hour. A tally of landings counts visits and cannot count individuals at all. At the busiest moment a photograph caught seven birds in frame. Seven birds making six visits each in an hour comes to about forty landings. A flock of thirty was reported two streets away on the same Saturday morning. Chickadees move in loose flocks and a yard can fill and empty in minutes. The sheet's heading says chickadees seen and the class read it as chickadees present. Seen and present are different words and the sheet never said which it meant. Three people watched side by side and their sheets differ by one mark. The feeder holds four perches and never showed more than four birds at once.",
+    "question": "Were there really forty chickadees? Choose one answer and quote the story.",
+    "suspects": [
+     {
+      "who": "🔁 Repeat visits by the same birds",
+      "why": "a banded bird recorded six times within one hour"
+     },
+     {
+      "who": "🐤 A flock of forty",
+      "why": "a flock of thirty two streets away that same morning"
+     },
+     {
+      "who": "✏️ A miscount",
+      "why": "three observers agreeing within one mark"
+     },
+     {
+      "who": "🪟 The observer's view",
+      "why": "four perches, never showing more than four at once"
+     },
+     {
+      "who": "📋 The tally sheet",
+      "why": "a heading saying seen, read as present"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“That banded bird was recorded six separate times within the same hour.”",
+       "“Seven birds making six visits each in an hour comes to about forty landings.”"
+      ],
+      "against": "“A flock of thirty was reported two streets away on the same Saturday morning.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“A flock of thirty was reported two streets away on the same Saturday morning.”",
+       "“Chickadees move in loose flocks and a yard can fill and empty in minutes.”"
+      ],
+      "against": "“At the busiest moment a photograph caught seven birds in frame.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The sheet's heading says chickadees seen and the class read it as chickadees present.”",
+       "“Seen and present are different words and the sheet never said which it meant.”"
+      ],
+      "against": "“A tally of landings counts visits and cannot count individuals at all.”"
+     }
+    ],
+    "clears": [
+     "A miscount: “Three people watched side by side and their sheets differ by one mark.”",
+     "The observer's view: “The feeder holds four perches and never showed more than four birds at once.”"
+    ],
+    "note": "The banded bird is the best evidence anybody has, because it is one known individual counted six times. The flock answer has to explain a photograph with seven birds in it. The third answer says nobody is wrong and the heading is, which is the most useful reading of all."
+   }
   },
   {
    "id": "g8-w21",
@@ -25628,7 +26868,69 @@
     "The question: “The question was worded plainly and offered both options in a neutral order.”",
     "The tally: “Every form was tallied twice by two different students and the totals matched.”"
    ],
-   "explain": "Everything about this survey was done carefully except the one thing nobody thought of as a choice. The homeroom result at fifty-four percent is the same question asked of everybody, and it is thirty-eight points away."
+   "explain": "Everything about this survey was done carefully except the one thing nobody thought of as a choice. The homeroom result at fifty-four percent is the same question asked of everybody, and it is thirty-eight points away.",
+   "debate": {
+    "story": "The report says ninety-two percent of students prefer the school's cocoa to the shop's. The survey was handed out at the cocoa stand to students buying cocoa. Everyone asked had already chosen to spend money on the thing being asked about. A sample drawn from the people who already prefer something will prefer it. Students who dislike the cocoa had no way of entering the survey at all. The same question asked in homerooms the following week came back at fifty-four percent. The form asked whether students preferred our own fresh cocoa or the shop's. Calling one option fresh and the other the shop's is not a neutral pair. The ninety-two is a share of the two hundred who answered, not of the school. The school has nine hundred students and the report does not say so. Two hundred forms came back, a fair number for a school of this size. Two different students tallied every form and their totals matched.",
+    "question": "Why does the report say ninety-two percent? Make the case for one cause.",
+    "suspects": [
+     {
+      "who": "📍 Surveying at the cocoa stand",
+      "why": "handed out at the stand, to students buying cocoa"
+     },
+     {
+      "who": "🔢 Too small a sample",
+      "why": "two hundred answering, a reasonable number for the school"
+     },
+     {
+      "who": "❓ A leading question",
+      "why": "our own fresh cocoa set against the shop's"
+     },
+     {
+      "who": "🧮 A tallying error",
+      "why": "every form tallied twice, with totals that matched"
+     },
+     {
+      "who": "📊 The ninety-two itself",
+      "why": "a share of the two hundred, not of nine hundred"
+     }
+    ],
+    "open": [
+     0,
+     2,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“The survey was handed out at the cocoa stand to students buying cocoa.”",
+       "“Students who dislike the cocoa had no way of entering the survey at all.”"
+      ],
+      "against": "“The form asked whether students preferred our own fresh cocoa or the shop's.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“The form asked whether students preferred our own fresh cocoa or the shop's.”",
+       "“Calling one option fresh and the other the shop's is not a neutral pair.”"
+      ],
+      "against": "“The same question asked in homerooms the following week came back at fifty-four percent.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The ninety-two is a share of the two hundred who answered, not of the school.”",
+       "“The school has nine hundred students and the report does not say so.”"
+      ],
+      "against": "“A sample drawn from the people who already prefer something will prefer it.”"
+     }
+    ],
+    "clears": [
+     "Too small a sample: “Two hundred forms came back, a fair number for a school of this size.”",
+     "A tallying error: “Two different students tallied every form and their totals matched.”"
+    ],
+    "note": "The homeroom result of fifty-four percent is the comparison that makes the case. Ask what was different between the two askings: the wording was the same, so the wording cannot be the whole story. Where you stand when you ask decided thirty-eight points of it."
+   }
   },
   {
    "id": "g8-w22",
@@ -25670,7 +26972,69 @@
     "Missed bags: “Every bag was counted twice and no card was counted in two bags.”",
     "The mean: “A mean can sit far outside the range where almost everybody actually is.”"
    ],
-   "explain": "Fourteen is correct and useless. Not one student in this class received fourteen valentines, and half received five or fewer. The middle student is the number that describes the room, and the report did not ask for it."
+   "explain": "Fourteen is correct and useless. Not one student in this class received fourteen valentines, and half received five or fewer. The middle student is the number that describes the room, and the report did not ask for it.",
+   "debate": {
+    "story": "The report says students received fourteen valentines on average, and most students feel cheated. Twenty-eight students were counted and the total came to three hundred and ninety-two. Three students run the school's social accounts and received eighty-one, seventy-four and sixty-eight. The remaining twenty-five students received between two and nine cards each. Lined up in order, the middle student in the class received five cards. A mean can land well outside the range nearly everybody sits in. Four students were absent on the day the bags were counted and were left out. Those four bags were still hanging on the wall a week later, unopened. The word average appears nowhere on the sheet the class actually filled in. Somebody wrote average on the report when the sheet only gave a total and a count. Divide three hundred and ninety-two by twenty-eight and fourteen comes out exactly. Each bag went through two counts and no card landed in two bags.",
+    "question": "Why does the average say fourteen? Pick one cause and prove it.",
+    "suspects": [
+     {
+      "who": "📈 A mean pulled by three large counts",
+      "why": "three account holders at eighty-one, seventy-four and sixty-eight"
+     },
+     {
+      "who": "➗ A division error",
+      "why": "392 over 28 coming to exactly fourteen"
+     },
+     {
+      "who": "👜 Missed bags",
+      "why": "four absent, their bags unopened a week later"
+     },
+     {
+      "who": "✌️ Double counting",
+      "why": "every bag counted twice, no card counted twice"
+     },
+     {
+      "who": "🔢 The word average",
+      "why": "the word average nowhere on the sheet the class filled in"
+     }
+    ],
+    "open": [
+     0,
+     2,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“Three students run the school's social accounts and received eighty-one, seventy-four and sixty-eight.”",
+       "“Lined up in order, the middle student in the class received five cards.”"
+      ],
+      "against": "“Four students were absent on the day the bags were counted and were left out.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“Four students were absent on the day the bags were counted and were left out.”",
+       "“Those four bags were still hanging on the wall a week later, unopened.”"
+      ],
+      "against": "“A mean can land well outside the range nearly everybody sits in.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The word average appears nowhere on the sheet the class actually filled in.”",
+       "“Somebody wrote average on the report when the sheet only gave a total and a count.”"
+      ],
+      "against": "“The remaining twenty-five students received between two and nine cards each.”"
+     }
+    ],
+    "clears": [
+     "A division error: “Divide three hundred and ninety-two by twenty-eight and fourteen comes out exactly.”",
+     "Double counting: “Each bag went through two counts and no card landed in two bags.”"
+    ],
+    "note": "Three students hold two hundred and twenty-three of the three hundred and ninety-two cards, and the class can work that out. Four missing bags move a mean a little. Three enormous bags move it enormously. The word answer is the deepest: nobody chose a mean, somebody just wrote one."
+   }
   },
   {
    "id": "g8-w23",
@@ -25712,7 +27076,69 @@
     "The vinegar: “Their vinegar came from the same jug that worked for the other five groups.”",
     "The vent: “Their cone was built on the same mold, and its vent is the same width.”"
    ],
-   "explain": "The custodian's wet table is evidence nobody collected on purpose. The model worked. The observation window was built for a warm reaction, and a sheet that says no reaction is only ever a report about the seconds somebody was looking."
+   "explain": "The custodian's wet table is evidence nobody collected on purpose. The model worked. The observation window was built for a warm reaction, and a sheet that says no reaction is only ever a report about the seconds somebody was looking.",
+   "debate": {
+    "story": "Group D's data sheet records no reaction at all, and the class wrote their model off. Their vinegar had been stored on the cold windowsill and was near freezing. A cold reaction runs slower and takes longer to build enough gas to rise. The instructions ask each group to observe for thirty seconds after pouring. The group recorded nothing, packed up and left the room at the thirty-second mark. The custodian found their cone overflowed and the table wet that evening. A sheet that says no reaction is a record of what somebody watched. Group D's cone was the one that sat under the window and took the paste drips. Dried paste narrowed its vent to about half the width of the others. A narrow vent holds foam back until the pressure behind it builds. The same balance weighed their soda to the same two grams. Their vinegar was poured from the jug that worked for five other groups.",
+    "question": "Why did Group D record nothing? Choose one cause and back it up.",
+    "suspects": [
+     {
+      "who": "🥶 Cold vinegar reacting slowly",
+      "why": "vinegar near freezing from the cold windowsill"
+     },
+     {
+      "who": "🧂 Too little baking soda",
+      "why": "the same balance, the same two grams"
+     },
+     {
+      "who": "🧴 Weak vinegar",
+      "why": "the same jug that worked for five other groups"
+     },
+     {
+      "who": "🏔️ A blocked vent",
+      "why": "a vent narrowed to half by dried paste"
+     },
+     {
+      "who": "📄 The thirty-second window",
+      "why": "thirty seconds of watching, then packing up"
+     }
+    ],
+    "open": [
+     0,
+     3,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“Their vinegar had been stored on the cold windowsill and was near freezing.”",
+       "“A cold reaction runs slower and takes longer to build enough gas to rise.”"
+      ],
+      "against": "“Dried paste narrowed its vent to about half the width of the others.”"
+     },
+     {
+      "who": 3,
+      "evidence": [
+       "“Group D's cone was the one that sat under the window and took the paste drips.”",
+       "“Dried paste narrowed its vent to about half the width of the others.”"
+      ],
+      "against": "“A cold reaction runs slower and takes longer to build enough gas to rise.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The group recorded nothing, packed up and left the room at the thirty-second mark.”",
+       "“The custodian found their cone overflowed and the table wet that evening.”"
+      ],
+      "against": "“The instructions ask each group to observe for thirty seconds after pouring.”"
+     }
+    ],
+    "clears": [
+     "Too little baking soda: “The same balance weighed their soda to the same two grams.”",
+     "Weak vinegar: “Their vinegar was poured from the jug that worked for five other groups.”"
+    ],
+    "note": "The cone did erupt, so nobody is arguing about whether the chemistry worked. Two answers explain the delay and one says the delay did not matter because nobody was watching long enough. A student who separates why it was late from why nobody saw it has split the case properly."
+   }
   },
   {
    "id": "g8-w24",
@@ -25754,7 +27180,69 @@
     "The cutting: “The strips were cut to exactly the number each student had written.”",
     "The measurements: “Each student measured their own head with the same cloth tape and wrote the number down.”"
    ],
-   "explain": "All twenty-eight crowns are an inch short. Nineteen of them closed anyway because those heads had an inch to spare. Which nine failed tells you the error is the same size for everybody, which is what a missing allowance looks like."
+   "explain": "All twenty-eight crowns are an inch short. Nineteen of them closed anyway because those heads had an inch to spare. Which nine failed tells you the error is the same size for everybody, which is what a missing allowance looks like.",
+   "debate": {
+    "story": "Nine of the twenty-eight crowns would not close, all by about the same small amount. The assembly step glues one end over the other with a one-inch overlap. An inch of overlap takes an inch out of the circle the strip can make. Nobody added that inch to the length before cutting, because nobody wrote it down. The nine that failed are the nine largest measurements in the class. A missing allowance shows up first wherever the margin was already thinnest. The cloth tape has been washed twice and measures a hundred and two centimetres against a metre rule. A stretched tape reads a head smaller than it is, so the strip comes out short. Nine students measured their own heads alone while the rest worked in pairs. Measuring your own head alone pulls the tape tight and reads low. Each strip was cut to exactly the figure its owner had written down. The instruction sheet gives the overlap in its diagram but never in its text.",
+    "question": "Why would nine crowns not close? Pick one cause and prove it.",
+    "suspects": [
+     {
+      "who": "🔗 The one-inch overlap",
+      "why": "an inch of overlap nobody added before cutting"
+     },
+     {
+      "who": "📏 A stretched tape",
+      "why": "a washed tape reading a hundred and two against a metre rule"
+     },
+     {
+      "who": "✂️ Bad cutting",
+      "why": "strips cut to exactly the number each student wrote"
+     },
+     {
+      "who": "🧒 Wrong measurements",
+      "why": "nine who measured their own heads alone, pulling the tape tight"
+     },
+     {
+      "who": "📋 The instructions",
+      "why": "an overlap shown in the diagram and never in the text"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     3
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“An inch of overlap takes an inch out of the circle the strip can make.”",
+       "“Nobody added that inch to the length before cutting, because nobody wrote it down.”"
+      ],
+      "against": "“The cloth tape has been washed twice and measures a hundred and two centimetres against a metre rule.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“The cloth tape has been washed twice and measures a hundred and two centimetres against a metre rule.”",
+       "“A stretched tape reads a head smaller than it is, so the strip comes out short.”"
+      ],
+      "against": "“The nine that failed are the nine largest measurements in the class.”"
+     },
+     {
+      "who": 3,
+      "evidence": [
+       "“Nine students measured their own heads alone while the rest worked in pairs.”",
+       "“Measuring your own head alone pulls the tape tight and reads low.”"
+      ],
+      "against": "“An inch of overlap takes an inch out of the circle the strip can make.”"
+     }
+    ],
+    "clears": [
+     "Bad cutting: “Each strip was cut to exactly the figure its owner had written down.”",
+     "The instructions: “The instruction sheet gives the overlap in its diagram but never in its text.”"
+    ],
+    "note": "Nine failed and nine measured alone, and nine are the largest heads. Three facts and one number, which is the trap. Ask whether the nine who measured alone are the same nine with the largest heads, because the case never says and everything turns on it."
+   }
   },
   {
    "id": "g8-w25",
@@ -25796,7 +27284,69 @@
     "The microphone: “The app's microphone was tested on the fork and read the fork as flat too.”",
     "The fork: “The piano was also checked against a steel tuning fork, which needs no battery.”"
    ],
-   "explain": "A warm flute really does go sharp, which is why that suspect is here and why it had to be tested rather than argued about. The fork settles everything. A fork cannot be out of tune, and the app called it flat."
+   "explain": "A warm flute really does go sharp, which is why that suspect is here and why it had to be tested rather than argued about. The fork settles everything. A fork cannot be out of tune, and the app called it flat.",
+   "debate": {
+    "story": "The tuning app calls every note on the piano correct and the piano sounds flat beside the flute. An app's reference pitch can be changed in its settings by a single tap. This app's reference is set to 435 hertz rather than the standard 440. Every note it calls correct is therefore a little flat of where it should be. A steel tuning fork, which needs no battery, was tried against the piano. It sounded flat against the fork by the same amount it did against the flute. The hall was eleven degrees warmer than the music room where the flute lives. A warm flute plays sharp by close to the gap being argued over. The piano has not been tuned since the radiators came on in October. A soundboard losing moisture slackens every string by about the same amount. Put to the fork, the app's microphone called the fork flat as well. Straight out of its case, cold, the flute left the same gap.",
+    "question": "Why does the piano sound flat? Choose one cause and quote the story.",
+    "suspects": [
+     {
+      "who": "🎚️ The app's 435 reference setting",
+      "why": "a reference set to 435 rather than the standard 440"
+     },
+     {
+      "who": "🎶 A warm flute running sharp",
+      "why": "a hall eleven degrees warmer than the flute's room"
+     },
+     {
+      "who": "🎹 The piano itself",
+      "why": "untuned since the radiators came on in October"
+     },
+     {
+      "who": "🎤 The app's microphone",
+      "why": "a microphone that read the fork as flat as well"
+     },
+     {
+      "who": "🔔 The tuning fork",
+      "why": "a flute played cold, with the gap just as wide"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     2
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“This app's reference is set to 435 hertz rather than the standard 440.”",
+       "“Every note it calls correct is therefore a little flat of where it should be.”"
+      ],
+      "against": "“It sounded flat against the fork by the same amount it did against the flute.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“The hall was eleven degrees warmer than the music room where the flute lives.”",
+       "“A warm flute plays sharp by close to the gap being argued over.”"
+      ],
+      "against": "“A steel tuning fork, which needs no battery, was tried against the piano.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“The piano has not been tuned since the radiators came on in October.”",
+       "“A soundboard losing moisture slackens every string by about the same amount.”"
+      ],
+      "against": "“This app's reference is set to 435 hertz rather than the standard 440.”"
+     }
+    ],
+    "clears": [
+     "The app's microphone: “Put to the fork, the app's microphone called the fork flat as well.”",
+     "The tuning fork: “Straight out of its case, cold, the flute left the same gap.”"
+    ],
+    "note": "The fork is the only thing here with no battery, no temperature and no settings, and the piano sounded flat against it. That beats the app answer outright. What is left is whether the piano really is flat or only sounds it beside a sharp flute."
+   }
   },
   {
    "id": "g8-w26",
@@ -25838,7 +27388,69 @@
     "A miscount: “Four hundred feet of string did leave the reel, and the count was careful.”",
     "The photograph: “The line angle was photographed that day and measured at about forty-five degrees.”"
    ],
-   "explain": "Every number the club wrote down is correct. Four hundred feet of string went out. What they recorded was the length of the string and what they reported was the height of the kite, and those are two sides of a triangle."
+   "explain": "Every number the club wrote down is correct. Four hundred feet of string went out. What they recorded was the length of the string and what they reported was the height of the kite, and those are two sides of a triangle.",
+   "debate": {
+    "story": "The club recorded a kite altitude of four hundred feet by counting the string let out. A kite's string is never a straight line from the hand to the kite. It hangs in a curve, and it leaves the hand at an angle well below vertical. A photograph of the line that day put its angle near forty-five degrees. At forty-five degrees, four hundred feet of string reaches roughly two hundred and eighty feet up. The curve of the line takes a further bite out of that number. The photograph was taken from the side, forty yards off, with a long lens. A long lens flattens an angle and makes it look shallower than it is. A second club measured the same kite by sighting angles from two points. Their figure came to two hundred and sixty feet, not four hundred. Their two sighting points were paced out rather than measured with a tape. Against a tape, the reel's counter counts true. Four hundred feet certainly came off the reel, and the counting was careful.",
+    "question": "How high was the kite? Make the case for one answer.",
+    "suspects": [
+     {
+      "who": "📐 String length counted as height",
+      "why": "string length counted straight up, at forty-five degrees"
+     },
+     {
+      "who": "🎣 A faulty reel counter",
+      "why": "a counter checked against a tape and counting true"
+     },
+     {
+      "who": "🔢 A miscount of the string",
+      "why": "four hundred feet off the reel, carefully counted"
+     },
+     {
+      "who": "📷 The photographed angle",
+      "why": "an angle shot from the side with a long lens"
+     },
+     {
+      "who": "📊 The second club's figure",
+      "why": "a second figure from sighting points that were paced, not taped"
+     }
+    ],
+    "open": [
+     0,
+     3,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“A kite's string is never a straight line from the hand to the kite.”",
+       "“At forty-five degrees, four hundred feet of string reaches roughly two hundred and eighty feet up.”"
+      ],
+      "against": "“The photograph was taken from the side, forty yards off, with a long lens.”"
+     },
+     {
+      "who": 3,
+      "evidence": [
+       "“The photograph was taken from the side, forty yards off, with a long lens.”",
+       "“A long lens flattens an angle and makes it look shallower than it is.”"
+      ],
+      "against": "“The curve of the line takes a further bite out of that number.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“Their two sighting points were paced out rather than measured with a tape.”",
+       "“Their figure came to two hundred and sixty feet, not four hundred.”"
+      ],
+      "against": "“A second club measured the same kite by sighting angles from two points.”"
+     }
+    ],
+    "clears": [
+     "A faulty reel counter: “Against a tape, the reel's counter counts true.”",
+     "A miscount of the string: “Four hundred feet certainly came off the reel, and the counting was careful.”"
+    ],
+    "note": "Nobody disputes the four hundred feet of string, so the only question is what that number was converted into. Two hundred and eighty, two hundred and sixty, and four hundred are three answers from one kite. Ask which of the three measurements had the fewest assumptions in it."
+   }
   },
   {
    "id": "g8-w27",
@@ -25880,7 +27492,69 @@
     "Conditions: “Nothing about the light, the water or the room changed during that week.”",
     "The chart: “A growth chart records the distance between two points, and one of them moved.”"
    ],
-   "explain": "Week seven is the proof, and it looks at first like the plant shrank. It did not. The jump and the drop are the same four centimetres, which is the distance from the rim to the soil, appearing once and then disappearing again."
+   "explain": "Week seven is the proof, and it looks at first like the plant shrank. It did not. The jump and the drop are the same four centimetres, which is the distance from the rim to the soil, appearing once and then disappearing again.",
+   "debate": {
+    "story": "The chart shows the shamrock growing four centimetres in a week after months of slow growth. Four centimetres in seven days would be remarkable for a plant of this kind. Measurements in weeks one through five were taken from the rim of the pot. Week six's measurement was taken from the surface of the soil instead. The soil sits about four centimetres below the rim of that pot. Measuring from a lower starting point adds the distance between the two points. Two students share the task and each had their own idea of where to start. The pot was topped up with fresh compost on the Friday before week six. Fresh compost settles over a week and the level drops as it does. The week six reading was taken with a wooden metre stick rather than the tape. That stick is missing its first centimetre, which has been snapped off. Measured from the rim again in week seven, the plant is back where week five left it.",
+    "question": "Why does week six show four centimetres? Pick one cause and back it up.",
+    "suspects": [
+     {
+      "who": "📍 A moved starting point",
+      "why": "a starting point moved from the rim to the soil"
+     },
+     {
+      "who": "🌱 Real growth",
+      "why": "a plant back at week five height by week seven"
+     },
+     {
+      "who": "🪴 The compost top-up",
+      "why": "fresh compost added on the Friday before week six"
+     },
+     {
+      "who": "📏 A different ruler",
+      "why": "a metre stick missing its snapped-off first centimetre"
+     },
+     {
+      "who": "📈 The chart",
+      "why": "a chart that records the distance between two points"
+     }
+    ],
+    "open": [
+     0,
+     2,
+     3
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“Week six's measurement was taken from the surface of the soil instead.”",
+       "“The soil sits about four centimetres below the rim of that pot.”"
+      ],
+      "against": "“The pot was topped up with fresh compost on the Friday before week six.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“The pot was topped up with fresh compost on the Friday before week six.”",
+       "“Fresh compost settles over a week and the level drops as it does.”"
+      ],
+      "against": "“Measuring from a lower starting point adds the distance between the two points.”"
+     },
+     {
+      "who": 3,
+      "evidence": [
+       "“The week six reading was taken with a wooden metre stick rather than the tape.”",
+       "“That stick is missing its first centimetre, which has been snapped off.”"
+      ],
+      "against": "“Two students share the task and each had their own idea of where to start.”"
+     }
+    ],
+    "clears": [
+     "Real growth: “Measured from the rim again in week seven, the plant is back where week five left it.”",
+     "The chart: “Measuring from a lower starting point adds the distance between the two points.”"
+    ],
+    "note": "Four centimetres is also the depth from rim to soil, and a snapped stick loses one centimetre, not four. Doing that arithmetic rules out one answer cleanly. Week seven is the fact that proves nothing grew, whichever explanation wins."
+   }
   },
   {
    "id": "g8-w28",
@@ -25922,7 +27596,69 @@
     "The reading time: “It was read at eight the next morning, before any evaporation could matter.”",
     "A light storm: “A second gauge placed in the open lawn that week recorded one and two tenths.”"
    ],
-   "explain": "The gauge is accurate. It accurately reports the rain that reached it, which is the question nobody was asking. Where an instrument stands is part of what it measures, and this one has been measuring a maple tree for years."
+   "explain": "The gauge is accurate. It accurately reports the rain that reached it, which is the question nobody was asking. Where an instrument stands is part of what it measures, and this one has been measuring a maple tree for years.",
+   "debate": {
+    "story": "The school's rain gauge recorded two tenths of an inch from a storm that left standing water everywhere. Two tenths of an inch does not fill a parking lot or float a leaf. The gauge stands beneath the spreading branches of a large maple by the fence. A canopy catches most of the rain that falls on it and sheds it elsewhere. A gauge under a tree measures what gets through the tree, not what falls. The county station four miles away recorded one and three tenths of an inch. Rain gauges are supposed to stand clear of anything overhead for exactly this reason. The gauge's funnel is four inches across where the standard calls for eight. A narrow funnel collects a quarter of the water and reads a quarter as deep. The gauge was emptied and read at four in the afternoon, three hours before the storm ended. Emptied and checked over, the gauge is sound and dry with no crack. Out on the open lawn that week a second gauge caught one and two tenths.",
+    "question": "Why did the gauge read two tenths? Choose one cause and prove it.",
+    "suspects": [
+     {
+      "who": "🌳 The maple canopy overhead",
+      "why": "a maple canopy catching the rain before it lands"
+     },
+     {
+      "who": "💧 A cracked gauge",
+      "why": "a gauge emptied, checked and found sound and dry"
+     },
+     {
+      "who": "🕓 Read three hours early",
+      "why": "emptied and read three hours before the storm ended"
+     },
+     {
+      "who": "☔ A genuinely light storm",
+      "why": "an open-lawn gauge reading one and two tenths that week"
+     },
+     {
+      "who": "📏 A four-inch funnel",
+      "why": "a four-inch funnel where the standard calls for eight"
+     }
+    ],
+    "open": [
+     0,
+     2,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“The gauge stands beneath the spreading branches of a large maple by the fence.”",
+       "“A gauge under a tree measures what gets through the tree, not what falls.”"
+      ],
+      "against": "“The gauge's funnel is four inches across where the standard calls for eight.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“The gauge was emptied and read at four in the afternoon, three hours before the storm ended.”",
+       "“Two tenths of an inch does not fill a parking lot or float a leaf.”"
+      ],
+      "against": "“A canopy catches most of the rain that falls on it and sheds it elsewhere.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The gauge's funnel is four inches across where the standard calls for eight.”",
+       "“A narrow funnel collects a quarter of the water and reads a quarter as deep.”"
+      ],
+      "against": "“The county station four miles away recorded one and three tenths of an inch.”"
+     }
+    ],
+    "clears": [
+     "A cracked gauge: “Emptied and checked over, the gauge is sound and dry with no crack.”",
+     "A genuinely light storm: “Out on the open lawn that week a second gauge caught one and two tenths.”"
+    ],
+    "note": "A narrow funnel does not change the depth a gauge reads, and a student who catches that has caught the one false rule in the case. Depth is depth whatever the mouth is. The tree and the early reading are both real, and only one of them is worth more than a tenth."
+   }
   },
   {
    "id": "g8-w29",
@@ -25964,7 +27700,69 @@
     "Cold soil: “Seed was sown at the depth the packet gives, in soil tested at sixty-eight degrees.”",
     "Watering: “The bed was watered every morning and never allowed to dry out.”"
    ],
-   "explain": "The seed was fine and the bed was fine and the counting was fine. The project sheet asked for a number on a day the species had not finished answering, and forty percent is a true count of an unfinished process."
+   "explain": "The seed was fine and the bed was fine and the counting was fine. The project sheet asked for a number on a day the species had not finished answering, and forty percent is a true count of an unfinished process.",
+   "debate": {
+    "story": "The germination report says forty percent where the seed packet promises eighty-five. The count was taken on day seven, which is when the project sheet asked for it. This species takes fourteen to twenty-one days to come up, as the packet also states. A count taken at day seven catches only the earliest seeds in a slow species. A second count on day twenty-one put the same bed at eighty-three percent. The packet is three years out of date and was found at the back of the cupboard. Old seed comes up more slowly as well as less reliably. The bed was watered every morning from a can filled the night before. Water left standing overnight in a metal can picks up a taste seeds dislike. Sowing went in at the packet's depth, into soil tested at sixty-eight degrees. The class counted every seedling in every row and the count itself was careful.",
+    "question": "Why does the report say forty percent? Make the case for one cause.",
+    "suspects": [
+     {
+      "who": "📅 Counting on day seven",
+      "why": "a count taken on day seven in a fourteen-day species"
+     },
+     {
+      "who": "🌰 Poor seed",
+      "why": "a packet three years out of date from the back of the cupboard"
+     },
+     {
+      "who": "🌡️ Cold soil",
+      "why": "sowing at the packet's depth, in soil at sixty-eight degrees"
+     },
+     {
+      "who": "🪣 The overnight watering can",
+      "why": "a can left standing overnight, picking up a taste"
+     },
+     {
+      "who": "📋 The project sheet",
+      "why": "a project sheet that asked for day seven"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     3
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“The count was taken on day seven, which is when the project sheet asked for it.”",
+       "“A count taken at day seven catches only the earliest seeds in a slow species.”"
+      ],
+      "against": "“The packet is three years out of date and was found at the back of the cupboard.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“The packet is three years out of date and was found at the back of the cupboard.”",
+       "“Old seed comes up more slowly as well as less reliably.”"
+      ],
+      "against": "“A second count on day twenty-one put the same bed at eighty-three percent.”"
+     },
+     {
+      "who": 3,
+      "evidence": [
+       "“The bed was watered every morning from a can filled the night before.”",
+       "“Water left standing overnight in a metal can picks up a taste seeds dislike.”"
+      ],
+      "against": "“A second count on day twenty-one put the same bed at eighty-three percent.”"
+     }
+    ],
+    "clears": [
+     "Cold soil: “Sowing went in at the packet's depth, into soil tested at sixty-eight degrees.”",
+     "The project sheet: “The class counted every seedling in every row and the count itself was careful.”"
+    ],
+    "note": "Eighty-three percent on day twenty-one is the fact that ends two of these arguments at once. Nothing killed those seeds and nothing poisoned them, because they came up. The old packet earns a mention for slowness and not for failure, and the class should say which half of that claim survives."
+   }
   },
   {
    "id": "g8-w30",
@@ -26006,7 +27804,69 @@
     "The label: “A grade printed on a carton describes the carton and not any egg in it.”",
     "The weighing: “Individual eggs within a correctly graded dozen vary and are supposed to.”"
    ],
-   "explain": "Nothing is wrong and nobody is at fault. The complaint comes from reading a word about twelve eggs as though it were a word about one. Twenty-five and a half ounces clears the standard with room to spare."
+   "explain": "Nothing is wrong and nobody is at fault. The complaint comes from reading a word about twelve eggs as though it were a word about one. Twenty-five and a half ounces clears the standard with room to spare.",
+   "debate": {
+    "story": "The carton is marked large and the twelve eggs inside visibly differ in size. Two of them are noticeably smaller than the others and one is clearly bigger. That standard sets a minimum weight for a dozen, not for each individual egg. A dozen graded large must weigh at least twenty-four ounces in total. The twelve in this carton weigh twenty-five and a half ounces together. The two small eggs and the large one are all inside the allowed spread. The farm packed two cartons at once and the grader jammed partway through. A jam can send eggs from one chute into the carton under the next. The kitchen scale used for the weighing has not been zeroed since the spring. A scale reading an ounce and a half high would put a short dozen over the line. A check on the farm's grader found it sorting to the published standard. Eggs inside a correctly graded dozen vary, and the standard expects them to.",
+    "question": "Why do the eggs differ in size? Pick one cause and quote the story.",
+    "suspects": [
+     {
+      "who": "📦 The grade describing the dozen",
+      "why": "a standard that sets a weight for the dozen, not the egg"
+     },
+     {
+      "who": "🥚 Mixed grades in one carton",
+      "why": "a grader checked and sorting to the published standard"
+     },
+     {
+      "who": "🔀 The grader jam",
+      "why": "a jam partway through, with two cartons packed at once"
+     },
+     {
+      "who": "🏷️ A mislabelled carton",
+      "why": "individual eggs varying inside a correctly graded dozen"
+     },
+     {
+      "who": "⚖️ The kitchen scale",
+      "why": "a scale not zeroed since the spring"
+     }
+    ],
+    "open": [
+     0,
+     2,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“That standard sets a minimum weight for a dozen, not for each individual egg.”",
+       "“The two small eggs and the large one are all inside the allowed spread.”"
+      ],
+      "against": "“The farm packed two cartons at once and the grader jammed partway through.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“The farm packed two cartons at once and the grader jammed partway through.”",
+       "“A jam can send eggs from one chute into the carton under the next.”"
+      ],
+      "against": "“The twelve in this carton weigh twenty-five and a half ounces together.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The kitchen scale used for the weighing has not been zeroed since the spring.”",
+       "“A scale reading an ounce and a half high would put a short dozen over the line.”"
+      ],
+      "against": "“That standard sets a minimum weight for a dozen, not for each individual egg.”"
+     }
+    ],
+    "clears": [
+     "A broken grader: “A check on the farm's grader found it sorting to the published standard.”",
+     "A mislabelled carton: “Eggs inside a correctly graded dozen vary, and the standard expects them to.”"
+    ],
+    "note": "Twenty-five and a half against a minimum of twenty-four is a margin of an ounce and a half, and the unzeroed scale could be out by exactly that. Those two numbers meeting is the heart of the case. The first answer says nothing is wrong at all, and it may well be right."
+   }
   },
   {
    "id": "g8-w31",
@@ -26048,7 +27908,69 @@
     "The almanac: “Both times are correct for the horizon each one was measured against.”",
     "The observing: “The observation was made from the playground on four clear mornings running.”"
    ],
-   "explain": "The hilltop test is what turns an argument into an answer. Same sun, same morning, same town, two horizons nine minutes apart. The almanac was never wrong; it was answering for a sea horizon the playground does not have."
+   "explain": "The hilltop test is what turns an argument into an answer. Same sun, same morning, same town, two horizons nine minutes apart. The almanac was never wrong; it was answering for a sea horizon the playground does not have.",
+   "debate": {
+    "story": "The almanac gives sunrise at 6:42 and the class first saw the sun at 6:51. The almanac's figure is calculated for the city centre at a flat sea horizon. The school sits in a valley with a wooded ridge standing to the east. The sun must climb above that ridge before anyone on the playground can see it. An almanac describes a horizon that most places on the ground do not have. From the hilltop above the school the sun appeared at 6:43 on the same morning. The ridge adds the same eight or nine minutes every clear day of the week. The school lies eleven miles west of the city centre the almanac is drawn for. Eleven miles west puts sunrise roughly a minute later than in the centre. The playground sight line crosses the gym roof, which stands higher than the ridge. Against the national time signal the classroom clock is right to the second. Four clear mornings running, the watching was done from the playground.",
+    "question": "Why was sunrise nine minutes late? Choose one cause and back it up.",
+    "suspects": [
+     {
+      "who": "⛰️ The ridge to the east",
+      "why": "a wooded ridge the sun must climb above first"
+     },
+     {
+      "who": "🕰️ A slow clock",
+      "why": "a clock agreeing with the national signal to the second"
+     },
+     {
+      "who": "📕 A wrong almanac",
+      "why": "a horizon the almanac assumes and the valley does not have"
+     },
+     {
+      "who": "📍 The almanac's location",
+      "why": "a school eleven miles west of the city centre"
+     },
+     {
+      "who": "🏫 The gym roof in the sight line",
+      "why": "a sight line crossing the gym roof, higher than the ridge"
+     }
+    ],
+    "open": [
+     0,
+     3,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“The school sits in a valley with a wooded ridge standing to the east.”",
+       "“From the hilltop above the school the sun appeared at 6:43 on the same morning.”"
+      ],
+      "against": "“The playground sight line crosses the gym roof, which stands higher than the ridge.”"
+     },
+     {
+      "who": 3,
+      "evidence": [
+       "“The school lies eleven miles west of the city centre the almanac is drawn for.”",
+       "“Eleven miles west puts sunrise roughly a minute later than in the centre.”"
+      ],
+      "against": "“The ridge adds the same eight or nine minutes every clear day of the week.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The playground sight line crosses the gym roof, which stands higher than the ridge.”",
+       "“An almanac describes a horizon that most places on the ground do not have.”"
+      ],
+      "against": "“From the hilltop above the school the sun appeared at 6:43 on the same morning.”"
+     }
+    ],
+    "clears": [
+     "A slow clock: “Against the national time signal the classroom clock is right to the second.”",
+     "Careless observing: “Four clear mornings running, the watching was done from the playground.”"
+    ],
+    "note": "Eleven miles buys one minute and the gap is nine, so the arithmetic puts that answer in its place without dismissing it. The hilltop reading at 6:43 is the strongest evidence here, and the gym roof is the sentence that complicates it, because the hilltop has no gym roof in the way."
+   }
   },
   {
    "id": "g8-w32",
@@ -26090,7 +28012,69 @@
     "The phone: “One camera's photographs were checked against a phone and match it to the minute.”",
     "Edited files: “Nobody edited a file, and the original recorded times are all intact.”"
    ],
-   "explain": "Exactly sixty minutes, ninety times over, is the signature. Drift is ragged and an hour is a decision. One camera has been honestly recording a time that stopped being the time one Sunday in spring."
+   "explain": "Exactly sixty minutes, ninety times over, is the signature. Drift is ragged and an hour is a decision. One camera has been honestly recording a time that stopped being the time one Sunday in spring.",
+   "debate": {
+    "story": "Sorted by timestamp, the trip photographs show the group arriving before they left. Every photograph from the second camera sits exactly sixty minutes behind the first. A gap of exactly one hour, repeated across ninety files, is not a coincidence. The clocks were last compared in March, before the spring change of hour. The second camera's clock was never moved forward when the clocks changed. A timestamp records what a camera believed the time to be. The second camera's battery was replaced on the trip and its clock reset to default. A camera reset to default starts again at midnight on the first of January. The folder was sorted by file name, not by timestamp, before anyone checked. File names restart at one on each camera and interleave when two sets are merged. All the sorting program does is read each file's recorded time. Checked against a phone, the first camera's pictures match it to the minute.",
+    "question": "Why are the photographs out of order? Make the case for one cause.",
+    "suspects": [
+     {
+      "who": "🕐 A camera clock never changed",
+      "why": "a clock never moved forward at the spring change"
+     },
+     {
+      "who": "💻 The sorting program",
+      "why": "a program that reads the recorded time and nothing else"
+     },
+     {
+      "who": "📱 The phone photographs",
+      "why": "one camera checked against a phone, matching to the minute"
+     },
+     {
+      "who": "🔋 The battery change and reset",
+      "why": "a battery replaced on the trip, resetting the clock to default"
+     },
+     {
+      "who": "🔤 Sorting by file name",
+      "why": "a folder sorted by file name, where both cameras start at one"
+     }
+    ],
+    "open": [
+     0,
+     3,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“The second camera's clock was never moved forward when the clocks changed.”",
+       "“A gap of exactly one hour, repeated across ninety files, is not a coincidence.”"
+      ],
+      "against": "“The second camera's battery was replaced on the trip and its clock reset to default.”"
+     },
+     {
+      "who": 3,
+      "evidence": [
+       "“The second camera's battery was replaced on the trip and its clock reset to default.”",
+       "“A camera reset to default starts again at midnight on the first of January.”"
+      ],
+      "against": "“Every photograph from the second camera sits exactly sixty minutes behind the first.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The folder was sorted by file name, not by timestamp, before anyone checked.”",
+       "“File names restart at one on each camera and interleave when two sets are merged.”"
+      ],
+      "against": "“A timestamp records what a camera believed the time to be.”"
+     }
+    ],
+    "clears": [
+     "The sorting program: “All the sorting program does is read each file's recorded time.”",
+     "The phone photographs: “Checked against a phone, the first camera's pictures match it to the minute.”"
+    ],
+    "note": "Exactly sixty minutes across ninety files is the strongest number in the case and it fits the clock change perfectly. A reset to January the first would be out by months, not an hour. The file name answer is the sly one, because it explains the disorder without touching the clocks at all."
+   }
   },
   {
    "id": "g8-w33",
@@ -26132,7 +28116,69 @@
     "Pot size: “All sixteen pots are the same size and were filled from the same bag of soil.”",
     "The report: “An experiment with two differences cannot tell you which one did the work.”"
    ],
-   "explain": "The swap in week five is the move that rescues the experiment. The height followed the window and not the fertiliser, which is the one thing the first four weeks could never have shown. The fertiliser may still help; this study cannot say so."
+   "explain": "The swap in week five is the move that rescues the experiment. The height followed the window and not the fertiliser, which is the one thing the first four weeks could never have shown. The fertiliser may still help; this study cannot say so.",
+   "debate": {
+    "story": "The fertilised beans grew half again as tall as the unfertilised ones in four weeks. The eight fertilised pots were lined up along the window and the other eight by the door. Light falling on a windowsill is several times what reaches a doorway. Two things changed between the groups, and only one of them was the fertiliser. In week five the two trays were swapped end for end without changing anything else. By week eight the plants at the window were taller whichever tray they came from. The fertiliser was mixed at double strength by mistake in the first week. Double strength feed can burn roots as easily as it can speed growth. The door pots sit over a floor vent that blows warm dry air upward. Dry moving air costs a seedling water it cannot replace fast enough. One schedule and one measured amount watered all sixteen pots. Sixteen pots of one size came out of one bag of soil.",
+    "question": "Why did one group grow taller? Pick one cause and prove it from the text.",
+    "suspects": [
+     {
+      "who": "🪟 The window position",
+      "why": "eight at the window and eight at a doorway"
+     },
+     {
+      "who": "🧪 The fertiliser",
+      "why": "a feed mixed at double strength in the first week"
+     },
+     {
+      "who": "💧 Watering",
+      "why": "one schedule and one measured amount for all sixteen"
+     },
+     {
+      "who": "🪴 Pot size or soil",
+      "why": "one size of pot and one bag of soil for all sixteen"
+     },
+     {
+      "who": "🌬️ The floor vent by the door",
+      "why": "a floor vent blowing warm dry air up at the door pots"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“The eight fertilised pots were lined up along the window and the other eight by the door.”",
+       "“By week eight the plants at the window were taller whichever tray they came from.”"
+      ],
+      "against": "“The fertiliser was mixed at double strength by mistake in the first week.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“The fertiliser was mixed at double strength by mistake in the first week.”",
+       "“Double strength feed can burn roots as easily as it can speed growth.”"
+      ],
+      "against": "“Light falling on a windowsill is several times what reaches a doorway.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The door pots sit over a floor vent that blows warm dry air upward.”",
+       "“Dry moving air costs a seedling water it cannot replace fast enough.”"
+      ],
+      "against": "“In week five the two trays were swapped end for end without changing anything else.”"
+     }
+    ],
+    "clears": [
+     "Watering: “One schedule and one measured amount watered all sixteen pots.”",
+     "Pot size or soil: “Sixteen pots of one size came out of one bag of soil.”"
+    ],
+    "note": "The swap in week five is a real experiment and the class should say exactly what it proved: position beat tray. It does not separate light from the floor vent, because both of those belong to the position. A third tray, at the window with no fertiliser, would have answered everything."
+   }
   },
   {
    "id": "g8-w34",
@@ -26174,7 +28220,69 @@
     "The compressor: “The compressor ran normally all night and the door seal passed a paper test.”",
     "The recipe: “A tub moved from the door rack to the back shelf was firm within three hours.”"
    ],
-   "explain": "The display is telling the truth and the truth is about one spot. Moving the tub is the experiment that settles it: the same ice cream firmed up in three hours without anybody changing a setting."
+   "explain": "The display is telling the truth and the truth is about one spot. Moving the tub is the experiment that settles it: the same ice cream firmed up in three hours without anybody changing a setting.",
+   "debate": {
+    "story": "The ice cream in the door rack is soft while the freezer's display reads zero degrees. The display takes its reading from a sensor mounted at the back wall. Cold air sinks and pools at the bottom and back of a freezer compartment. The door rack sits at the front, at the top, and swings into the room when opened. A thermometer left in the door rack overnight read nineteen degrees by morning. A sensor reports the temperature where the sensor is and nowhere else. The freezer door was found ajar on two mornings last week. A door left ajar warms the front of a compartment long before the back. This ice cream is a low-fat brand the school has not bought before. Low-fat ice cream softens at a higher temperature than the full-fat kind. The compressor ran as it should all night and the seal held a sheet of paper. At the back, on that same night, a thermometer read one degree.",
+    "question": "Why is the ice cream soft? Choose one cause and quote the story.",
+    "suspects": [
+     {
+      "who": "🚪 The door rack being warmer",
+      "why": "a door rack at the front and top, where cold air never pools"
+     },
+     {
+      "who": "🚪 The door left ajar",
+      "why": "a door found ajar on two mornings last week"
+     },
+     {
+      "who": "🔧 A weak compressor",
+      "why": "a compressor running normally and a seal that passed"
+     },
+     {
+      "who": "🍨 The ice cream recipe",
+      "why": "a low-fat brand the school has not bought before"
+     },
+     {
+      "who": "📍 Where the sensor sits",
+      "why": "a sensor at the back wall, reporting only where it sits"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     3
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“Cold air sinks and pools at the bottom and back of a freezer compartment.”",
+       "“A thermometer left in the door rack overnight read nineteen degrees by morning.”"
+      ],
+      "against": "“The freezer door was found ajar on two mornings last week.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“The freezer door was found ajar on two mornings last week.”",
+       "“A door left ajar warms the front of a compartment long before the back.”"
+      ],
+      "against": "“A sensor reports the temperature where the sensor is and nowhere else.”"
+     },
+     {
+      "who": 3,
+      "evidence": [
+       "“This ice cream is a low-fat brand the school has not bought before.”",
+       "“Low-fat ice cream softens at a higher temperature than the full-fat kind.”"
+      ],
+      "against": "“A thermometer left in the door rack overnight read nineteen degrees by morning.”"
+     }
+    ],
+    "clears": [
+     "A weak compressor: “The compressor ran as it should all night and the seal held a sheet of paper.”",
+     "Where the sensor sits: “At the back, on that same night, a thermometer read one degree.”"
+    ],
+    "note": "Nineteen degrees at the front and one at the back is the measurement everything else has to answer to. The door answer and the physics answer predict the same reading, which is why they cannot be separated here. Ask what a night with the door properly shut would show."
+   }
   },
   {
    "id": "g8-w35",
@@ -26216,7 +28324,69 @@
     "The eyes: “Held side by side at the window in daylight, the two ribbons plainly differ.”",
     "The labels: “The rolls came from different dye lots, which the labels on the cores record.”"
    ],
-   "explain": "The dye lots really are different and the labels said so. The test that was run could not detect it, because a match under one lamp is not a match. The ribbons never changed; the light did."
+   "explain": "The dye lots really are different and the labels said so. The test that was run could not detect it, because a match under one lamp is not a match. The ribbons never changed; the light did.",
+   "debate": {
+    "story": "The two rolls of ribbon matched perfectly in the storeroom and clashed badly on stage. Both were checked against each other under the storeroom's fluorescent tube. Two dyes can reflect light identically under one kind of lamp and differently under another. A fluorescent tube and a stage lamp do not give out the same mix of colours. A dye lot difference invisible under one lamp is not invisible under all of them. Different dye lots, says the label on each core. The stage wash was changed this term from white lamps to a warm amber. Amber light pushes reds forward and leaves blues looking grey and dull. The checker who matched them is the only one in the group who sees reds poorly. One roll sat in the storeroom window for a month before it was used. Neither roll has been washed or left to fade, and both were handled with care. Side by side at the window in daylight the two plainly differ.",
+    "question": "Why did the ribbons clash on stage? Make the case for one cause.",
+    "suspects": [
+     {
+      "who": "💡 Matching under one lamp only",
+      "why": "a match made under one fluorescent tube only"
+     },
+     {
+      "who": "🎨 Different dye lots",
+      "why": "two different dye lots, recorded on the cores"
+     },
+     {
+      "who": "🌞 A month in the storeroom window",
+      "why": "one roll a month in the storeroom window"
+     },
+     {
+      "who": "👁️ The checker's eyes",
+      "why": "a checker who sees reds poorly"
+     },
+     {
+      "who": "🎭 The amber stage wash",
+      "why": "a stage wash changed this term to warm amber"
+     }
+    ],
+    "open": [
+     0,
+     2,
+     4
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“Both were checked against each other under the storeroom's fluorescent tube.”",
+       "“Two dyes can reflect light identically under one kind of lamp and differently under another.”"
+      ],
+      "against": "“One roll sat in the storeroom window for a month before it was used.”"
+     },
+     {
+      "who": 2,
+      "evidence": [
+       "“One roll sat in the storeroom window for a month before it was used.”",
+       "“Side by side at the window in daylight the two plainly differ.”"
+      ],
+      "against": "“Two dyes can reflect light identically under one kind of lamp and differently under another.”"
+     },
+     {
+      "who": 4,
+      "evidence": [
+       "“The stage wash was changed this term from white lamps to a warm amber.”",
+       "“Amber light pushes reds forward and leaves blues looking grey and dull.”"
+      ],
+      "against": "“Both were checked against each other under the storeroom's fluorescent tube.”"
+     }
+    ],
+    "clears": [
+     "Different dye lots: “Different dye lots, says the label on each core.”",
+     "The checker's eyes: “The checker who matched them is the only one in the group who sees reds poorly.”"
+    ],
+    "note": "The labels say the dye lots differ, so the dye is not in doubt and never was. What is in doubt is why nobody saw it. Three lamps and a month in a window are four chances to go wrong, and the class should ask which one happened first."
+   }
   },
   {
    "id": "g8-w36",
@@ -26258,7 +28428,69 @@
     "The stock count: “The balloon table counted its stock before the doors opened and again at the end.”",
     "The walk-through: “They counted everybody standing in the hall at that one moment and wrote it down.”"
    ],
-   "explain": "Three hundred is a true count of a crowded room at a quarter to seven. It is the wrong kind of number for the question, because people kept arriving and leaving. The balloons counted each visitor once and never counted anyone twice."
+   "explain": "Three hundred is a true count of a crowded room at a quarter to seven. It is the wrong kind of number for the question, because people kept arriving and leaving. The balloons counted each visitor once and never counted anyone twice.",
+   "debate": {
+    "story": "The attendance figure is three hundred and four hundred and twenty balloons were given out. Four hundred and twenty left the table, and each visitor took exactly one. The attendance count was made by two staff walking the hall at a quarter to seven. People arrived from five thirty and others left before seven to catch buses. A count of who is present at one moment cannot total who came all evening. The balloon figure adds up every visitor across three hours of the event. Balloons were also given to the forty volunteers and to two visiting classes. The two staff started at opposite ends and met in the middle of the hall. Two walkers meeting in the middle will double count whoever moves between them. The hall has three rooms and the walk-through covered only the main one. Second balloons were refused, and the table was watched all evening. Stock at the balloon table was counted before the doors and again at the close.",
+    "question": "How many people came? Pick one answer and prove it.",
+    "suspects": [
+     {
+      "who": "⏱️ A count taken at one moment",
+      "why": "a count taken at one moment across three hours of arrivals"
+     },
+     {
+      "who": "🎈 Balloons to volunteers and classes",
+      "why": "balloons given to forty volunteers and two visiting classes"
+     },
+     {
+      "who": "📦 A miscount of the stock",
+      "why": "a stock counted before the doors and again at the end"
+     },
+     {
+      "who": "🚶 A sloppy walk-through",
+      "why": "two walkers meeting in the middle, and only one room covered"
+     },
+     {
+      "who": "📊 The word attendance",
+      "why": "a word that means present, used for a total"
+     }
+    ],
+    "open": [
+     0,
+     1,
+     3
+    ],
+    "arguments": [
+     {
+      "who": 0,
+      "evidence": [
+       "“People arrived from five thirty and others left before seven to catch buses.”",
+       "“A count of who is present at one moment cannot total who came all evening.”"
+      ],
+      "against": "“Balloons were also given to the forty volunteers and to two visiting classes.”"
+     },
+     {
+      "who": 1,
+      "evidence": [
+       "“Balloons were also given to the forty volunteers and to two visiting classes.”",
+       "“The balloon figure adds up every visitor across three hours of the event.”"
+      ],
+      "against": "“A count of who is present at one moment cannot total who came all evening.”"
+     },
+     {
+      "who": 3,
+      "evidence": [
+       "“The two staff started at opposite ends and met in the middle of the hall.”",
+       "“The hall has three rooms and the walk-through covered only the main one.”"
+      ],
+      "against": "“People arrived from five thirty and others left before seven to catch buses.”"
+     }
+    ],
+    "clears": [
+     "Visitors taking two balloons: “Second balloons were refused, and the table was watched all evening.”",
+     "A miscount of the stock: “Stock at the balloon table was counted before the doors and again at the close.”"
+    ],
+    "note": "Forty volunteers and two classes come off the four hundred and twenty before anybody argues, and the class can do that subtraction. Two rooms missed and a double count in the middle pull the three hundred in opposite directions. The honest answer gives a range, not a number."
+   }
   },
   {
    "id": "g9-w1",

@@ -24,6 +24,7 @@
  *   bun run scripts/check-mysteries.mjs
  */
 import { gradeMysteries } from "./build.mjs";
+import { DEBATES } from "./g8.debate.mjs";
 
 const CASES = [
   {
@@ -1001,4 +1002,5 @@ const CASES = [
   },
 ];
 
-gradeMysteries(8, CASES);
+// Debate versions live in g8.debate.mjs and attach here by week.
+gradeMysteries(8, CASES.map((c, i) => (DEBATES[i + 1] ? { ...c, d: DEBATES[i + 1] } : c)));
