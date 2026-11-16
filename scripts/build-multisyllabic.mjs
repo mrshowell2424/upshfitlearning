@@ -45,15 +45,20 @@ const PARTW = read("reading-part-words.json");
 /**
  * How many words each list aims for.
  *
- * Counted from what one lesson actually spends when every activity has its
- * own: ten on the reading page, ten more on the tracker, five for
- * real-or-made-up, ten for each of the two spelling tests and a word apiece
- * for the fifteen chests. That is sixty, and at forty the 3rd grade
- * spelling test was already running onto words the 2nd grade test had
- * taken. The rarer patterns cannot reach sixty and say so rather than
- * padding.
+ * The lesson spends forty-five when every activity has its own: ten on the
+ * reading page, ten more on the tracker, five for real-or-made-up and ten
+ * for each of the two spelling tests. The word-game packet spends about
+ * seventy across its chests, and draws against its own tally rather than
+ * the lesson's -- a game is practice of the lesson, so repeating the
+ * lesson's words there is right, and only the chests repeating each other
+ * is wrong.
+ *
+ * Eighty is where that stops and the words are still worth printing. At a
+ * hundred and twenty the silent-e list had reached diagnoses, conflate and
+ * undermine, which are on the pattern and no use to the class reading it.
+ * The rarer patterns cannot reach eighty and say so rather than padding.
  */
-const TARGET = 60;
+const TARGET = 80;
 
 /** How many made-up words each list aims for. */
 const FAKES = 8;

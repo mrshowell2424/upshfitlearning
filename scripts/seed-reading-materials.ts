@@ -2426,6 +2426,108 @@ const ADAPTATIONS: Adaptation[] = [
     },
   },
   {
+    // The word games, when the switch is on.
+    //
+    // Every chest drew from `W`, which is real0 — the lesson's
+    // single-syllable ten — whatever the switch said. So a class working in
+    // multisyllabic words got a games packet in one-syllable words, and the
+    // chests repeated each other: the same ten were highlighted, then
+    // unscrambled, then played as tic tac toe, then read for speed.
+    //
+    // The chests draw against a tally of their own rather than the
+    // lesson's. A game is practice of the lesson, so a chest sharing a word
+    // with the reading page is right; a chest sharing one with another
+    // chest is the thing that was wrong.
+    //
+    // Chests 3, 4 and 14 are not touched. They work by finding the
+    // lesson's words inside the lesson's own sentences, so they have to go
+    // on using the words those sentences contain.
+    name: "give the word games multisyllabic words, and one list each",
+    apply: (html) => {
+      const head =
+        "const P = (OGD[id] || {}).p || {}; const W = real0.slice(0, 10); " +
+        "const F = (cur[7] || []).slice(0, 6); const M = (MULTI[id] || []).slice(0, 8);";
+      if (!html.includes(head)) return html;
+      let out = html.replace(
+        head,
+        head +
+          "\n        // Drawn once, here, because the packet is built twice — once\n" +
+          "        // for the child and once as the key — and the two have to be\n" +
+          "        // the same sheet.\n" +
+          "        const gTaken = new Set(); const gTakenF = new Set();\n" +
+          "        const gTake = (n) => (isMulti ? drawFrom(wordPool, gTaken, n) : []);\n" +
+          "        const GB = { hl: gTake(8), unscr: gTake(4), multi: gTake(6),\n" +
+          "          sent: gTake(6), rom: gTake(6), ttt: gTake(9), draw: gTake(4),\n" +
+          "          rhyme: gTake(6), comic: gTake(6) };\n" +
+          "        // Roll and read and Speed read are repeated-reading games: the\n" +
+          "        // point is meeting a word again under time pressure, so they\n" +
+          "        // re-read the chests above rather than asking for fifty-five\n" +
+          "        // more words a pattern like cl does not have.\n" +
+          "        GB.roll = GB.hl.concat(GB.ttt);\n" +
+          "        GB.speed = GB.hl.concat(GB.unscr, GB.rom).slice(0, 10);\n" +
+          "        const GF = isMulti ? drawFrom(fakePool, gTakenF, 6) : F;\n" +
+          "        const HW = isMulti ? GB.hl : W;"
+      );
+
+      const edits: [string, string][] = [
+        // 1 highlight: sort the bank's words by the two patterns, as before
+        ["const a = W.filter(m(pats[0])), b = W.filter((w) => !a.includes(w) && m(pats[1])(w)); return a.length",
+         "const a = HW.filter(m(pats[0])), b = HW.filter((w) => !a.includes(w) && m(pats[1])(w)); return a.length"],
+        ["const a = W.filter(m(pats[0])), b = W.filter((w) => !a.includes(w) && m(pats[1])(w)); const it",
+         "const a = HW.filter(m(pats[0])), b = HW.filter((w) => !a.includes(w) && m(pats[1])(w)); const it"],
+        ["{ items: mix(W.slice(0, 6).concat(F), 'h'), cols: 6, score: '__ / ' + (6 + F.length) }",
+         "{ items: mix((isMulti ? GB.hl.slice(0, 6) : W.slice(0, 6)).concat(GF), 'h'), cols: 6, " +
+         "score: '__ / ' + (6 + GF.length) }"],
+        // 5 unscramble
+        ["{ items: W.slice(0, 4).map((w) => { let o = mix([...w], w).join(' ');",
+         "{ items: (isMulti ? GB.unscr : W.slice(0, 4)).map((w) => { let o = mix([...w], w).join(' ');"],
+        // 6 the multisyllabic chest itself, off the bank rather than the old ten
+        ["else if (M.length) A('Multisyllabic words', 'Read each word. Draw a line between the syllables.', " +
+         "{ items: M.slice(0, 6), cols: 3, score: '__ / ' + Math.min(6, M.length) });",
+         "else if (isMulti ? GB.multi.length : M.length) A('Multisyllabic words', " +
+         "'Read each word. Draw a line between the syllables.', " +
+         "{ items: isMulti ? GB.multi : M.slice(0, 6), cols: 3, " +
+         "score: '__ / ' + (isMulti ? GB.multi.length : Math.min(6, M.length)) });"],
+        // 7 my sentences
+        ["{ items: W.slice(0, 6), cols: 6, lines: ['', ''], w: 1.3 }",
+         "{ items: isMulti ? GB.sent : W.slice(0, 6), cols: 6, lines: ['', ''], w: 1.3 }"],
+        // 8 real or made-up
+        ["if (F.length) A('Real or made-up?', 'Read each word. Circle R (real) or M (made-up).', " +
+         "{ items: mix(W.slice(0, 6).concat(F), 'r').map((w) => [w + '   R / M', F.includes(w) ? 'M' : 'R']), " +
+         "line: key, cols: 4 });",
+         "if (GF.length) A('Real or made-up?', 'Read each word. Circle R (real) or M (made-up).', " +
+         "{ items: mix((isMulti ? GB.rom : W.slice(0, 6)).concat(GF), 'r')" +
+         ".map((w) => [w + '   R / M', GF.includes(w) ? 'M' : 'R']), line: key, cols: 4 });"],
+        // 10 tic tac toe
+        ["const T9 = (P.ttt && P.ttt[0]) || W.concat(M).slice(0, 9);",
+         "const T9 = isMulti ? GB.ttt : ((P.ttt && P.ttt[0]) || W.concat(M).slice(0, 9));"],
+        // 11 roll and read
+        ["const R6 = P.roll ? P.roll.map((r) => r.split(' ')) : [0, 1, 2, 3, 4, 5]" +
+         ".map((r) => W.concat(M, W).slice(r * 3, r * 3 + 4));",
+         "const R6 = isMulti ? [0, 1, 2, 3, 4, 5].map((r) => GB.roll" +
+         ".slice(r * 2, r * 2 + 3)) : (P.roll ? P.roll.map((r) => r.split(' ')) : " +
+         "[0, 1, 2, 3, 4, 5].map((r) => W.concat(M, W).slice(r * 3, r * 3 + 4)));"],
+        // 12 draw it
+        ["{ items: (P.draw || W).slice(0, 4), cols: 4,",
+         "{ items: isMulti ? GB.draw : (P.draw || W).slice(0, 4), cols: 4,"],
+        // 13 rhyme time
+        ["{ items: (P.rhyme || W).slice(0, 6), line: true, cols: 6 }",
+         "{ items: isMulti ? GB.rhyme : (P.rhyme || W).slice(0, 6), line: true, cols: 6 }"],
+        // 15 speed read
+        ["const SP = (P.speed || W).slice(0, 10);",
+         "const SP = isMulti ? GB.speed : (P.speed || W).slice(0, 10);"],
+        // 16 comic strip
+        ["(P.comic || W).slice(0, 6).join(' · ')",
+         "(isMulti ? GB.comic : (P.comic || W).slice(0, 6)).join(' · ')"],
+      ];
+      for (const [from, to] of edits) {
+        if (!out.includes(from)) return html;
+        out = out.replace(from, to);
+      }
+      return out;
+    },
+  },
+  {
     // A word ladder for every lesson, on that lesson's own pattern.
     //
     // The packs carried 58 ladders between 62 lessons, so four of them were
