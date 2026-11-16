@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ORG } from "@/lib/constants/org";
 
 /**
  * A tester asked who was behind the site and found nowhere to look, so the
@@ -12,6 +13,8 @@ import Link from "next/link";
  */
 const links = [
   { label: "About", href: "/about" },
+  { label: "Mission & Vision", href: "/mission" },
+  { label: "What We Offer", href: "/services" },
   { label: "Standard match", href: "/match" },
   { label: "Science of Reading", href: "/science-of-reading" },
   { label: "Fluency", href: "/fluency" },
@@ -43,12 +46,38 @@ export default function Footer() {
               {l.label}
             </Link>
           ))}
-          <a
-            href="mailto:hello@upshiftlearning.org"
+          <Link
+            href="/contact"
             className="text-sm font-semibold text-charcoal hover:text-coral-ink transition-colors"
           >
             Contact
+          </Link>
+        </nav>
+        {/* The nonprofit details a donor, a district finance office or a grant
+            reviewer looks for. They used to live only on a second website. */}
+        <p className="text-sm text-text-muted text-center max-w-2xl">
+          {ORG.name} is a registered 501(c)(3) nonprofit organization incorporated in the State of
+          Ohio. EIN {ORG.ein} &middot; Ohio Charter Number {ORG.charter}.
+        </p>
+        <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+          <a
+            href={`mailto:${ORG.email}`}
+            className="text-sm text-text-muted hover:text-coral-ink transition-colors"
+          >
+            {ORG.email}
           </a>
+          <a
+            href={ORG.phoneHref}
+            className="text-sm text-text-muted hover:text-coral-ink transition-colors"
+          >
+            {ORG.phone}
+          </a>
+          <Link href="/privacy" className="text-sm text-text-muted hover:text-coral-ink transition-colors">
+            Privacy Policy
+          </Link>
+          <Link href="/terms" className="text-sm text-text-muted hover:text-coral-ink transition-colors">
+            Terms of Use
+          </Link>
         </nav>
         <p className="text-sm text-text-muted text-center">
           &copy; {new Date().getFullYear()} Upshift Learning. Built by Stephanie Howell.

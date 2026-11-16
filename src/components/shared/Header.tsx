@@ -19,6 +19,7 @@ const navItems = [
   { label: "Behavior", href: "/behavior" },
   { label: "Courses", href: "/courses" },
   { label: "Teacher's Lounge", href: "/lounge" },
+  { label: "What We Offer", href: "/services" },
   { label: "About", href: "/about" },
 ];
 
