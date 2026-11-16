@@ -11378,6 +11378,1586 @@
     "The walk-through: “They counted everybody standing in the hall at that one moment and wrote it down.”"
    ],
    "explain": "Three hundred is a true count of a crowded room at a quarter to seven. It is the wrong kind of number for the question, because people kept arriving and leaving. The balloons counted each visitor once and never counted anyone twice."
+  },
+  {
+   "id": "g9-w1",
+   "grade": 9,
+   "week": 1,
+   "tag": "📚 library",
+   "title": "The Case of the Damp Bottom Shelf",
+   "story": "Forty books on the bottom shelf of the north wall have swollen covers and wavy pages. The damage is worst at the wall end of the shelf and fades along it. Books on the top shelf, directly under the roof, are dry and flat. A roof leak runs downward, so the top shelf would be the wet one. The room's humidity reads forty-four percent, which is normal for the building. Air that damp would affect every shelf in the room equally, and it has not. A spilled bottle soaks one patch and leaves the books beside it untouched. This damage runs along four metres of shelving in a single gradient. The plaster behind that shelf is blistered from the skirting board upward. A hot water pipe runs inside the north wall at floor level. Water escaping at floor level wets what sits lowest and nearest, which is exactly the pattern on the shelf. The cleaning crew have not mopped that aisle since the damage was reported.",
+   "question": "What is wetting the books?",
+   "suspects": [
+    {
+     "who": "🚰 A pipe inside the north wall",
+     "why": "a hot water pipe runs inside the north wall at floor level"
+    },
+    {
+     "who": "🏠 A roof leak",
+     "why": "a roof leak runs downward, so the top shelf would be the wet one"
+    },
+    {
+     "who": "💧 Room humidity",
+     "why": "air that damp would affect every shelf in the room equally, and it has not"
+    },
+    {
+     "who": "🍶 A spilled bottle",
+     "why": "a spilled bottle soaks one patch and leaves the books beside it untouched"
+    },
+    {
+     "who": "🧹 The cleaning crew",
+     "why": "the cleaning crew have not mopped that aisle since the damage was reported"
+    }
+   ],
+   "answer": "A pipe in the north wall is wetting the shelf from floor level.",
+   "proof": [
+    "“The plaster behind that shelf is blistered from the skirting board upward.”",
+    "“Water escaping at floor level wets what sits lowest and nearest, which is exactly the pattern on the shelf.”",
+    "“The damage is worst at the wall end of the shelf and fades along it.”"
+   ],
+   "clears": [
+    "A roof leak: “Books on the top shelf, directly under the roof, are dry and flat.”",
+    "Humidity: “The room's humidity reads forty-four percent, which is normal for the building.”",
+    "A bottle: “This damage runs along four metres of shelving in a single gradient.”",
+    "The cleaners: “The cleaning crew have not mopped that aisle since the damage was reported.”"
+   ],
+   "explain": "Each suspect predicts a shape. A roof leak predicts damage from the top down, humidity predicts it everywhere at once, a bottle predicts one patch. The shape on the shelf is lowest and nearest a wall, which is the only prediction left standing, and the blistered plaster confirms it."
+  },
+  {
+   "id": "g9-w2",
+   "grade": 9,
+   "week": 2,
+   "tag": "🥪 lunchbox",
+   "title": "The Case of the Friday Sandwich",
+   "story": "Mira's sandwich is slimy on Fridays and fine the other four days of the week. The bread comes from one loaf bought on Sunday and used all week. If the bread were the problem, Thursday's sandwich would be worse than Monday's. The deli meat is sliced fresh on Thursday evening for Friday only. Meat sliced the night before would spoil in the refrigerator too, and it does not. The mayonnaise jar is opened on Monday and used every day from the same spoon. Mayonnaise would affect every sandwich in the week, not one of them. The lunchbox is washed in hot water on Thursday night after school. It is dried with a cloth and the lid is clipped shut while the seams are still wet. A sealed box with water trapped in its seams grows a film overnight. Thursday is the only night the box is both washed and closed. A box left open on the rack on other nights is dry by morning.",
+   "question": "Why is the Friday sandwich slimy?",
+   "suspects": [
+    {
+     "who": "📦 The box clipped shut while wet",
+     "why": "it is dried with a cloth and the lid is clipped shut while the seams are still wet"
+    },
+    {
+     "who": "🍞 The bread",
+     "why": "if the bread were the problem, Thursday's sandwich would be worse than Monday's"
+    },
+    {
+     "who": "🥓 The Thursday meat",
+     "why": "meat sliced the night before would spoil in the refrigerator too, and it does not"
+    },
+    {
+     "who": "🥄 The mayonnaise",
+     "why": "mayonnaise would affect every sandwich in the week, not one of them"
+    },
+    {
+     "who": "🧼 The hot water wash",
+     "why": "a box left open on the rack on other nights is dry by morning"
+    }
+   ],
+   "answer": "The lunchbox is clipped shut on Thursday night with water in its seams.",
+   "proof": [
+    "“A sealed box with water trapped in its seams grows a film overnight.”",
+    "“Thursday is the only night the box is both washed and closed.”",
+    "“A box left open on the rack on other nights is dry by morning.”"
+   ],
+   "clears": [
+    "The bread: “If the bread were the problem, Thursday's sandwich would be worse than Monday's.”",
+    "The meat: “Meat sliced the night before would spoil in the refrigerator too, and it does not.”",
+    "The mayonnaise: “Mayonnaise would affect every sandwich in the week, not one of them.”",
+    "The wash: “A box left open on the rack on other nights is dry by morning.”"
+   ],
+   "explain": "Three of the four food suspects are ruled out by a prediction about other days: each would spoil more than one sandwich a week. Washing is not the fault either, since the box is washed on other nights too. What happens only on Thursday is washing and closing in the same move."
+  },
+  {
+   "id": "g9-w3",
+   "grade": 9,
+   "week": 3,
+   "tag": "✏️ pencil",
+   "title": "The Case of the Breaking Leads",
+   "story": "Pencils from the new box snap their points within a word or two of sharpening. Pencils from the old box sharpen in the same sharpener and write all period. If the sharpener's blade were dull, pencils from both boxes would break. The two boxes are the same brand and the same HB grade, printed on the barrel. A softer grade would smudge as well as snap, and these do not smudge at all. Pressing hard would break points for one student and not for a whole class. Every student using the new box reports the same thing within a day. A pencil's lead is one thin rod running the full length of the barrel. A sharp knock cracks that rod in several places without marking the wood. Each crack becomes a break as soon as the sharpener exposes it. The new box arrived in a carton the delivery driver dropped on the step. The old box has sat on the shelf since September and has not been moved.",
+   "question": "Why do the new pencils keep snapping?",
+   "suspects": [
+    {
+     "who": "📦 The dropped carton",
+     "why": "the new box arrived in a carton the delivery driver dropped on the step"
+    },
+    {
+     "who": "🔪 A dull sharpener blade",
+     "why": "if the sharpener's blade were dull, pencils from both boxes would break"
+    },
+    {
+     "who": "✒️ A softer lead grade",
+     "why": "a softer grade would smudge as well as snap, and these do not smudge at all"
+    },
+    {
+     "who": "💪 Pressing too hard",
+     "why": "pressing hard would break points for one student and not for a whole class"
+    },
+    {
+     "who": "🪵 The wood",
+     "why": "a sharp knock cracks that rod in several places without marking the wood"
+    }
+   ],
+   "answer": "The dropped carton cracked the leads inside the new pencils.",
+   "proof": [
+    "“A sharp knock cracks that rod in several places without marking the wood.”",
+    "“Each crack becomes a break as soon as the sharpener exposes it.”",
+    "“The new box arrived in a carton the delivery driver dropped on the step.”"
+   ],
+   "clears": [
+    "The sharpener: “If the sharpener's blade were dull, pencils from both boxes would break.”",
+    "The grade: “A softer grade would smudge as well as snap, and these do not smudge at all.”",
+    "Pressing: “Every student using the new box reports the same thing within a day.”",
+    "The wood: “A sharp knock cracks that rod in several places without marking the wood.”"
+   ],
+   "explain": "The old box is the control for the sharpener, the printed grade is the control for the lead, and a whole class is the control for pressing. What is left is a box that was dropped, and a lead that can be broken in six places while the pencil still looks perfect."
+  },
+  {
+   "id": "g9-w4",
+   "grade": 9,
+   "week": 4,
+   "tag": "🍎 apple",
+   "title": "The Case of the Bowl That Ripened",
+   "story": "Five apples in the kitchen bowl went soft and brown within four days of being picked. Six apples from the same tree, left in a dish on the counter, are still firm. The two groups were picked on the same morning from the same branch. A bad batch would have gone soft in the dish as well as in the bowl. Bruising shows as a brown patch where the fruit was struck, not as softening throughout. None of the five carries a mark on its skin anywhere. The bowl is wood and the dish is china, and neither reacts with fruit. The bowl also held two bananas that were spotted brown when the apples went in. Ripening fruit gives off ethylene gas, which ripens other fruit near it. Gas pools in a deep bowl and disperses from a shallow dish. Two pears that shared the bowl have gone soft as well, and the pears in the dish are hard.",
+   "question": "What ripened the apples?",
+   "suspects": [
+    {
+     "who": "🍌 Ethylene from the bananas",
+     "why": "the bowl also held two bananas that were spotted brown when the apples went in"
+    },
+    {
+     "who": "🍏 A bad batch",
+     "why": "a bad batch would have gone soft in the dish as well as in the bowl"
+    },
+    {
+     "who": "🤕 Bruising",
+     "why": "none of the five carries a mark on its skin anywhere"
+    },
+    {
+     "who": "🥣 The wooden bowl",
+     "why": "the bowl is wood and the dish is china, and neither reacts with fruit"
+    },
+    {
+     "who": "🌳 The tree",
+     "why": "the two groups were picked on the same morning from the same branch"
+    }
+   ],
+   "answer": "Ethylene from the bananas ripened everything in the bowl.",
+   "proof": [
+    "“Ripening fruit gives off ethylene gas, which ripens other fruit near it.”",
+    "“Gas pools in a deep bowl and disperses from a shallow dish.”",
+    "“Two pears that shared the bowl have gone soft as well, and the pears in the dish are hard.”"
+   ],
+   "clears": [
+    "A bad batch: “A bad batch would have gone soft in the dish as well as in the bowl.”",
+    "Bruising: “None of the five carries a mark on its skin anywhere.”",
+    "The bowl: “The bowl is wood and the dish is china, and neither reacts with fruit.”",
+    "The tree: “The two groups were picked on the same morning from the same branch.”"
+   ],
+   "explain": "The pears are the test that separates the last two explanations. Something about the fruit itself would not touch a pear, and something about the bowl would not have spared the dish. A gas that fills a bowl ripens whatever is in it, pears included."
+  },
+  {
+   "id": "g9-w5",
+   "grade": 9,
+   "week": 5,
+   "tag": "🚲 bike",
+   "title": "The Case of the Wheel That Would Not Stay True",
+   "story": "The rear wheel pulls out of true within a week of every truing, and the front wheel never does. Both wheels run the same roads, the same potholes and the same rider. If potholes were the cause, the front wheel would go out first and harder. The rim was checked for cracks and dents and is straight when the spokes are even. A cracked rim would hold a bend in one place rather than drifting slowly. The hub bearings spin smoothly and have no play when the wheel is rocked. The same two spokes are loose at every truing, and both are on the chain side. A rear wheel is dished, so its chain-side spokes pull at a steeper angle. Spokes at a steeper angle carry more tension and lose it first if they were set low. Tension was measured after the last truing and those two read well under the others. Nothing on the front wheel is dished, which is why nothing on it moves.",
+   "question": "Why does only the rear wheel go out of true?",
+   "suspects": [
+    {
+     "who": "🔧 Two chain-side spokes set at low tension",
+     "why": "tension was measured after the last truing and those two read well under the others"
+    },
+    {
+     "who": "🕳️ Potholes",
+     "why": "if potholes were the cause, the front wheel would go out first and harder"
+    },
+    {
+     "who": "⭕ A cracked rim",
+     "why": "a cracked rim would hold a bend in one place rather than drifting slowly"
+    },
+    {
+     "who": "⚙️ The hub bearings",
+     "why": "the hub bearings spin smoothly and have no play when the wheel is rocked"
+    },
+    {
+     "who": "🚴 The rider",
+     "why": "both wheels run the same roads, the same potholes and the same rider"
+    }
+   ],
+   "answer": "Two chain-side spokes were left at low tension and keep letting go.",
+   "proof": [
+    "“A rear wheel is dished, so its chain-side spokes pull at a steeper angle.”",
+    "“Spokes at a steeper angle carry more tension and lose it first if they were set low.”",
+    "“The same two spokes are loose at every truing, and both are on the chain side.”"
+   ],
+   "clears": [
+    "Potholes: “If potholes were the cause, the front wheel would go out first and harder.”",
+    "The rim: “A cracked rim would hold a bend in one place rather than drifting slowly.”",
+    "The bearings: “The hub bearings spin smoothly and have no play when the wheel is rocked.”",
+    "The rider: “Both wheels run the same roads, the same potholes and the same rider.”"
+   ],
+   "explain": "The front wheel is the control for everything the bike meets: same roads, same rider, same potholes, and it stays true. The difference is inside the rear wheel, where dishing puts the chain-side spokes under more load, and the same two keep failing because they were never brought up to tension."
+  },
+  {
+   "id": "g9-w6",
+   "grade": 9,
+   "week": 6,
+   "tag": "🐠 fishtank",
+   "title": "The Case of the Algae on One Pane",
+   "story": "Green film coats the left pane of the tank and leaves the other three clear. Overfeeding raises nutrients in the water, and water circulates past every pane equally. Nutrients in the water would green all four sides rather than one. The tap water was tested for phosphate and came back at almost nothing. Phosphate would also feed algae everywhere the water touches, which is everywhere. The tank's own lamp sits centred above it and lights all four panes the same. The left pane faces a west window about a metre away. Algae need light, and more light on one surface grows more algae there. The green stops in a sharp horizontal line two thirds of the way up the pane. A shelf above the window casts a shadow across the tank at exactly that height. The film is thickest at the end of weeks with clear afternoons. Scraping the pane clean leaves it green again within nine or ten days.",
+   "question": "Why is only one pane green?",
+   "suspects": [
+    {
+     "who": "🪟 Afternoon light from the west window",
+     "why": "the left pane faces a west window about a metre away"
+    },
+    {
+     "who": "🍽️ Overfeeding",
+     "why": "nutrients in the water would green all four sides rather than one"
+    },
+    {
+     "who": "🧪 Phosphate in the tap water",
+     "why": "the tap water was tested for phosphate and came back at almost nothing"
+    },
+    {
+     "who": "💡 The tank lamp",
+     "why": "the tank's own lamp sits centred above it and lights all four panes the same"
+    },
+    {
+     "who": "🌀 The filter",
+     "why": "overfeeding raises nutrients in the water, and water circulates past every pane equally"
+    }
+   ],
+   "answer": "Window light on the left pane is growing the algae there.",
+   "proof": [
+    "“Algae need light, and more light on one surface grows more algae there.”",
+    "“The green stops in a sharp horizontal line two thirds of the way up the pane.”",
+    "“A shelf above the window casts a shadow across the tank at exactly that height.”"
+   ],
+   "clears": [
+    "Overfeeding: “Nutrients in the water would green all four sides rather than one.”",
+    "Phosphate: “The tap water was tested for phosphate and came back at almost nothing.”",
+    "The lamp: “The tank's own lamp sits centred above it and lights all four panes the same.”",
+    "The filter: “Overfeeding raises nutrients in the water, and water circulates past every pane equally.”"
+   ],
+   "explain": "Anything carried in the water reaches all four panes, so a one-sided problem cannot be a water problem. The shadow line is the proof: the algae stop exactly where the light stops, which no nutrient could arrange."
+  },
+  {
+   "id": "g9-w7",
+   "grade": 9,
+   "week": 7,
+   "tag": "🔊 noise",
+   "title": "The Case of the Cabinet That Buzzed",
+   "story": "A hard buzz comes from the display cabinet whenever the projector runs, and stops the moment it is switched off. The projector itself hums steadily and that hum is a different, softer sound. A loose cabinet screw would buzz when anything shook the room, including footsteps. Walking heavily past the cabinet produces no sound at all. The buzz only happens at the projector's high fan speed and never at the low one. Every object has a frequency at which it vibrates easily, and a push at that rate sets it going. The glass shelf inside the cabinet rests loose in its brackets at both ends. Laying a folded cloth under one end of that shelf silences the buzz completely. Removing the cloth brings the buzz back on the next high-speed run. The radiator was off all week and the buzz happened anyway. The cabinet door latch was tightened on Monday and made no difference.",
+   "question": "What is buzzing?",
+   "suspects": [
+    {
+     "who": "🪟 The loose glass shelf",
+     "why": "the glass shelf inside the cabinet rests loose in its brackets at both ends"
+    },
+    {
+     "who": "🔩 A loose screw",
+     "why": "walking heavily past the cabinet produces no sound at all"
+    },
+    {
+     "who": "📽️ The projector itself",
+     "why": "the projector itself hums steadily and that hum is a different, softer sound"
+    },
+    {
+     "who": "🔥 The radiator",
+     "why": "the radiator was off all week and the buzz happened anyway"
+    },
+    {
+     "who": "🚪 The door latch",
+     "why": "the cabinet door latch was tightened on Monday and made no difference"
+    }
+   ],
+   "answer": "The loose glass shelf vibrates at the projector's high fan speed.",
+   "proof": [
+    "“Every object has a frequency at which it vibrates easily, and a push at that rate sets it going.”",
+    "“Laying a folded cloth under one end of that shelf silences the buzz completely.”",
+    "“Removing the cloth brings the buzz back on the next high-speed run.”"
+   ],
+   "clears": [
+    "A loose screw: “Walking heavily past the cabinet produces no sound at all.”",
+    "The projector: “The projector itself hums steadily and that hum is a different, softer sound.”",
+    "The radiator: “The radiator was off all week and the buzz happened anyway.”",
+    "The latch: “The cabinet door latch was tightened on Monday and made no difference.”"
+   ],
+   "explain": "The cloth is the experiment that settles it, and it is run twice: in and the buzz stops, out and the buzz returns. The high fan speed matters because only one speed pushes at the rate the shelf answers to."
+  },
+  {
+   "id": "g9-w8",
+   "grade": 9,
+   "week": 8,
+   "tag": "🍂 leaves",
+   "title": "The Case of the Sticky Leaves",
+   "story": "The young leaves at the tips of the lime tree are curled, and the path beneath it is sticky. Drought curls leaves from the edges inward and leaves nothing sticky behind. The tree has been watered twice a week and the soil is damp a spade deep. Leaf diseases usually show as spots or patches with a clear edge. The curled leaves have no spots and are an even green underneath the curl. Salt damage browns leaf margins, and these margins are not browned. Aphids feed on new growth and excrete a sugary liquid called honeydew. Honeydew falls on whatever is below, which is why the path is tacky. Ants farm aphids for that honeydew and carry them to fresh shoots. A steady column of ants runs up the trunk and out along the tip branches. Curling is confined to this year's shoots and none of the older leaves are affected.",
+   "question": "What is wrong with the lime tree?",
+   "suspects": [
+    {
+     "who": "🐜 Aphids on the new growth",
+     "why": "aphids feed on new growth and excrete a sugary liquid called honeydew"
+    },
+    {
+     "who": "🏜️ Drought",
+     "why": "the tree has been watered twice a week and the soil is damp a spade deep"
+    },
+    {
+     "who": "🦠 A leaf disease",
+     "why": "the curled leaves have no spots and are an even green underneath the curl"
+    },
+    {
+     "who": "🧂 Salt",
+     "why": "salt damage browns leaf margins, and these margins are not browned"
+    },
+    {
+     "who": "🌿 Old age in the leaves",
+     "why": "curling is confined to this year's shoots and none of the older leaves are affected"
+    }
+   ],
+   "answer": "Aphids are feeding on the new shoots and dripping honeydew.",
+   "proof": [
+    "“Honeydew falls on whatever is below, which is why the path is tacky.”",
+    "“Ants farm aphids for that honeydew and carry them to fresh shoots.”",
+    "“A steady column of ants runs up the trunk and out along the tip branches.”"
+   ],
+   "clears": [
+    "Drought: “The tree has been watered twice a week and the soil is damp a spade deep.”",
+    "Disease: “The curled leaves have no spots and are an even green underneath the curl.”",
+    "Salt: “Salt damage browns leaf margins, and these margins are not browned.”",
+    "Old leaves: “Curling is confined to this year's shoots and none of the older leaves are affected.”"
+   ],
+   "explain": "Only one explanation predicts both symptoms at once. Drought, disease and salt each account for damaged leaves and none of them accounts for a sticky path. The ants are the confirmation: they are there because the honeydew is."
+  },
+  {
+   "id": "g9-w9",
+   "grade": 9,
+   "week": 9,
+   "tag": "🎃 pumpkin",
+   "title": "The Case of the Pumpkin That Rotted Inward",
+   "story": "One of the two carved pumpkins collapsed in five days and the other is firm after two weeks. Both were carved on the same afternoon from the same patch and the same size. Both stood side by side on the same step in the same weather. A crack in the shell lets water and spores in, and shows as a line on the outside. Neither pumpkin carries a crack or a soft patch anywhere on its skin. A bruise from dropping shows as a dark sunken spot within a day or two. The candles in both are electric and give off no heat at all. The collapsed one was hollowed quickly and left with pulp and seeds clinging inside. The firm one was scraped down to clean wall with a metal spoon. Wet pulp holds moisture against the cut wall and feeds the moulds that soften it. The collapse began on the inner wall and worked outward to the skin.",
+   "question": "Why did one pumpkin collapse?",
+   "suspects": [
+    {
+     "who": "🥄 Pulp and seeds left inside",
+     "why": "the collapsed one was hollowed quickly and left with pulp and seeds clinging inside"
+    },
+    {
+     "who": "🪨 A crack in the shell",
+     "why": "neither pumpkin carries a crack or a soft patch anywhere on its skin"
+    },
+    {
+     "who": "🤕 A bruise from dropping",
+     "why": "a bruise from dropping shows as a dark sunken spot within a day or two"
+    },
+    {
+     "who": "🕯️ The candle",
+     "why": "the candles in both are electric and give off no heat at all"
+    },
+    {
+     "who": "🌦️ The weather",
+     "why": "both stood side by side on the same step in the same weather"
+    }
+   ],
+   "answer": "Pulp left inside held moisture against the cut wall.",
+   "proof": [
+    "“Wet pulp holds moisture against the cut wall and feeds the moulds that soften it.”",
+    "“The collapse began on the inner wall and worked outward to the skin.”",
+    "“The firm one was scraped down to clean wall with a metal spoon.”"
+   ],
+   "clears": [
+    "A crack: “Neither pumpkin carries a crack or a soft patch anywhere on its skin.”",
+    "A bruise: “A bruise from dropping shows as a dark sunken spot within a day or two.”",
+    "The candle: “The candles in both are electric and give off no heat at all.”",
+    "The weather: “Both stood side by side on the same step in the same weather.”"
+   ],
+   "explain": "Three suspects predict damage you could see from outside, and the skin is unmarked on both. The rot ran the other way, inside to out, which points at the one thing that differed: what was left clinging to the inner wall."
+  },
+  {
+   "id": "g9-w10",
+   "grade": 9,
+   "week": 10,
+   "tag": "👣 footprints",
+   "title": "The Case of the Prints in the Frost",
+   "story": "A line of prints crosses the frosted lawn from the hedge to the bins and back. Each print shows four toes and a small triangular pad behind them. A human boot leaves a continuous sole mark with no separate toes at all. These prints are forty millimetres across, far smaller than any boot. Claw marks show clearly in front of every toe in the trail. A cat walks with its claws drawn in and leaves no claw marks in soft frost. A dog's trail runs in two loose lines, with the hind feet landing wide of the front. This trail runs almost in a single line, one print nearly in front of the last. A fox places each hind foot into the print its front foot just left. That habit is what produces a near single line of prints. The stride measures thirty centimetres, which is short for a dog of this foot size. Nothing has disturbed the bin lids and nothing has been dragged across the grass.",
+   "question": "What made the prints?",
+   "suspects": [
+    {
+     "who": "🦊 A fox",
+     "why": "a fox places each hind foot into the print its front foot just left"
+    },
+    {
+     "who": "🐕 A dog",
+     "why": "a dog's trail runs in two loose lines, with the hind feet landing wide of the front"
+    },
+    {
+     "who": "🐈 A cat",
+     "why": "a cat walks with its claws drawn in and leaves no claw marks in soft frost"
+    },
+    {
+     "who": "🥾 A person",
+     "why": "a human boot leaves a continuous sole mark with no separate toes at all"
+    },
+    {
+     "who": "🗑️ Something at the bins",
+     "why": "nothing has disturbed the bin lids and nothing has been dragged across the grass"
+    }
+   ],
+   "answer": "A fox crossed the lawn, registering its hind feet in the front prints.",
+   "proof": [
+    "“Claw marks show clearly in front of every toe in the trail.”",
+    "“This trail runs almost in a single line, one print nearly in front of the last.”",
+    "“That habit is what produces a near single line of prints.”"
+   ],
+   "clears": [
+    "A dog: “A dog's trail runs in two loose lines, with the hind feet landing wide of the front.”",
+    "A cat: “A cat walks with its claws drawn in and leaves no claw marks in soft frost.”",
+    "A person: “A human boot leaves a continuous sole mark with no separate toes at all.”",
+    "The bins: “Nothing has disturbed the bin lids and nothing has been dragged across the grass.”"
+   ],
+   "explain": "Two features have to be explained together. Claws rule out the cat and a single line rules out the dog, and only one animal in the list does both at once. Either feature alone would leave two suspects standing."
+  },
+  {
+   "id": "g9-w11",
+   "grade": 9,
+   "week": 11,
+   "tag": "🚌 bus",
+   "title": "The Case of the Bus That Was Late in the Rain",
+   "story": "Route 9 runs five minutes late on wet mornings and on time on dry ones. Routes 4 and 11 cover the same main roads and keep to time in any weather. If rain slowed the traffic, all three routes would run late together. The wheelchair lift is used on Tuesdays only, and the late mornings fall on every weekday. Ridership is logged daily and rises by two or three students when it rains. Three extra students board in about twelve seconds, which is not five minutes. The driver's timing sheet shows the whole delay appearing between stops six and eight. Stop seven has no shelter, and the nearest cover is a shop porch across the road. On wet mornings the students wait in that porch and start crossing when the bus appears. Waiting for a group to cross a road takes far longer than letting them step aboard. On dry mornings those same students stand at the pole and board immediately.",
+   "question": "Why is route 9 late in the rain?",
+   "suspects": [
+    {
+     "who": "🏪 Students sheltering across the road at stop seven",
+     "why": "on wet mornings the students wait in that porch and start crossing when the bus appears"
+    },
+    {
+     "who": "🚗 Rain slowing traffic",
+     "why": "if rain slowed the traffic, all three routes would run late together"
+    },
+    {
+     "who": "♿ The wheelchair lift",
+     "why": "the wheelchair lift is used on Tuesdays only, and the late mornings fall on every weekday"
+    },
+    {
+     "who": "👥 Extra riders",
+     "why": "three extra students board in about twelve seconds, which is not five minutes"
+    },
+    {
+     "who": "🧑‍✈️ A slow driver",
+     "why": "the driver's timing sheet shows the whole delay appearing between stops six and eight"
+    }
+   ],
+   "answer": "At stop seven the students shelter across the road and have to cross.",
+   "proof": [
+    "“Stop seven has no shelter, and the nearest cover is a shop porch across the road.”",
+    "“Waiting for a group to cross a road takes far longer than letting them step aboard.”",
+    "“On dry mornings those same students stand at the pole and board immediately.”"
+   ],
+   "clears": [
+    "Traffic: “If rain slowed the traffic, all three routes would run late together.”",
+    "The lift: “The wheelchair lift is used on Tuesdays only, and the late mornings fall on every weekday.”",
+    "Extra riders: “Three extra students board in about twelve seconds, which is not five minutes.”",
+    "The driver: “The driver's timing sheet shows the whole delay appearing between stops six and eight.”"
+   ],
+   "explain": "The other two routes are the control for weather and traffic. The timing sheet then narrows five minutes to a single stop, and the only thing that changes at that stop when it rains is which side of the road the students are standing on."
+  },
+  {
+   "id": "g9-w12",
+   "grade": 9,
+   "week": 12,
+   "tag": "🏆 trophy",
+   "title": "The Case of the Cracked Trophy Base",
+   "story": "The marble base of the county trophy has split, and the eleven trophies beside it are sound. A fall chips a corner or scuffs an edge before it cracks a base through. There is no chip, scuff or dust mark anywhere on the base or the shelf. Cold and heat craze a stone surface into a web of fine lines across the whole face. These are three clean cracks and there is no crazing anywhere on it. The case is unheated and its temperature log has not moved four degrees all year. The cracks all begin at the bolt hole in the centre and run outward from it. A bolt tightened too far pushes outward on the stone around the hole. Stone takes enormous pressure from above and very little pushing out from inside. The column was refitted in August with a new bolt and a spanner rather than by hand. The eleven sound trophies have never had their columns off.",
+   "question": "What cracked the base?",
+   "suspects": [
+    {
+     "who": "🔩 The bolt tightened too far",
+     "why": "the column was refitted in August with a new bolt and a spanner rather than by hand"
+    },
+    {
+     "who": "📉 A fall",
+     "why": "there is no chip, scuff or dust mark anywhere on the base or the shelf"
+    },
+    {
+     "who": "🌡️ Heat and cold",
+     "why": "the case is unheated and its temperature log has not moved four degrees all year"
+    },
+    {
+     "who": "🪨 A flaw in the marble",
+     "why": "the cracks all begin at the bolt hole in the centre and run outward from it"
+    },
+    {
+     "who": "🏅 The other trophies",
+     "why": "the eleven sound trophies have never had their columns off"
+    }
+   ],
+   "answer": "A bolt driven in with a spanner split the stone from the hole outward.",
+   "proof": [
+    "“A bolt tightened too far pushes outward on the stone around the hole.”",
+    "“Stone takes enormous pressure from above and very little pushing out from inside.”",
+    "“The cracks all begin at the bolt hole in the centre and run outward from it.”"
+   ],
+   "clears": [
+    "A fall: “There is no chip, scuff or dust mark anywhere on the base or the shelf.”",
+    "Heat and cold: “These are three clean cracks and there is no crazing anywhere on it.”",
+    "The marble: “The cracks all begin at the bolt hole in the centre and run outward from it.”",
+    "The shelf: “The eleven sound trophies have never had their columns off.”"
+   ],
+   "explain": "Where cracks start is the evidence. A fall starts them at the point of impact and temperature starts them everywhere at once. These start at a hole that had a bolt driven into it, and the eleven trophies that were never taken apart are all intact."
+  },
+  {
+   "id": "g9-w13",
+   "grade": 9,
+   "week": 13,
+   "tag": "🦃 turkey",
+   "title": "The Case of the Pale Turkey",
+   "story": "The turkey came out of the oven cooked through and the colour of raw pastry. The thigh read 176 degrees, so the oven cannot have been running too cool. An oven too cool would have left the meat underdone as well as the skin pale. The bird was rubbed with oil before it went in, so it is not a dry skin. The meat is juicy and the skin is soft rather than dried out. Browning needs a dry surface and heat reaching it directly, and neither was available. The bird was covered with foil at the start and the foil was never taken off. Foil holds steam against the skin for the whole of the roast. A surface held wet cannot brown however long it stays in the oven. The same oven browned a chicken to a deep gold last Sunday. That chicken was roasted uncovered from the first minute to the last.",
+   "question": "Why is the skin pale?",
+   "suspects": [
+    {
+     "who": "🫙 Foil left on for the whole roast",
+     "why": "the bird was covered with foil at the start and the foil was never taken off"
+    },
+    {
+     "who": "🌡️ An oven running cool",
+     "why": "an oven too cool would have left the meat underdone as well as the skin pale"
+    },
+    {
+     "who": "🫒 No fat on the skin",
+     "why": "the bird was rubbed with oil before it went in, so it is not a dry skin"
+    },
+    {
+     "who": "⏱️ Too short a roast",
+     "why": "the thigh read 176 degrees, so the oven cannot have been running too cool"
+    },
+    {
+     "who": "🍗 The bird itself",
+     "why": "the same oven browned a chicken to a deep gold last Sunday"
+    }
+   ],
+   "answer": "Foil kept steam against the skin for the whole roast.",
+   "proof": [
+    "“Browning needs a dry surface and heat reaching it directly, and neither was available.”",
+    "“Foil holds steam against the skin for the whole of the roast.”",
+    "“A surface held wet cannot brown however long it stays in the oven.”"
+   ],
+   "clears": [
+    "A cool oven: “An oven too cool would have left the meat underdone as well as the skin pale.”",
+    "No fat: “The bird was rubbed with oil before it went in, so it is not a dry skin.”",
+    "Time: “The thigh read 176 degrees, so the oven cannot have been running too cool.”",
+    "The bird: “That chicken was roasted uncovered from the first minute to the last.”"
+   ],
+   "explain": "A cooked thigh and a pale skin cannot both be explained by heat or time, because either would have left the meat underdone too. What separates skin from meat is the surface, and the surface spent the whole roast under foil in its own steam."
+  },
+  {
+   "id": "g9-w14",
+   "grade": 9,
+   "week": 14,
+   "tag": "🧁 cupcake",
+   "title": "The Case of the Tray That Browned on One Side",
+   "story": "Cupcakes at the back left of every tray come out dark and the ones at the front right stay pale. It happens with the light tray and with the dark one, so the tray is not the cause. A dark tray would brown everything resting on it rather than one corner. The batter is poured from one jug and measured to the gram into every cup. Uneven batter would put the dark ones in a different place each time. The dark ones appear in the same corner of the oven on every single bake. Rotating the tray halfway through the bake produces an evenly coloured batch. If the tray carried the fault, turning it would simply move the dark side around. An oven with a hot corner browns whatever happens to be sitting in it. The element behind that corner was replaced last term and sits closer to the shelf. The oven thermometer reads nine degrees higher when moved to that corner.",
+   "question": "Why does one corner always brown?",
+   "suspects": [
+    {
+     "who": "♨️ A hot corner in the oven",
+     "why": "an oven with a hot corner browns whatever happens to be sitting in it"
+    },
+    {
+     "who": "⬛ A dark tray",
+     "why": "a dark tray would brown everything resting on it rather than one corner"
+    },
+    {
+     "who": "🥛 Uneven batter",
+     "why": "uneven batter would put the dark ones in a different place each time"
+    },
+    {
+     "who": "🔄 The tray itself",
+     "why": "if the tray carried the fault, turning it would simply move the dark side around"
+    },
+    {
+     "who": "⏲️ The bake time",
+     "why": "the dark ones appear in the same corner of the oven on every single bake"
+    }
+   ],
+   "answer": "One corner of the oven runs about nine degrees hotter.",
+   "proof": [
+    "“The element behind that corner was replaced last term and sits closer to the shelf.”",
+    "“The oven thermometer reads nine degrees higher when moved to that corner.”",
+    "“Rotating the tray halfway through the bake produces an evenly coloured batch.”"
+   ],
+   "clears": [
+    "A dark tray: “It happens with the light tray and with the dark one, so the tray is not the cause.”",
+    "The batter: “The batter is poured from one jug and measured to the gram into every cup.”",
+    "The tray: “If the tray carried the fault, turning it would simply move the dark side around.”",
+    "Bake time: “The dark ones appear in the same corner of the oven on every single bake.”"
+   ],
+   "explain": "The rotation test is the one that decides it. If the fault travelled with the tray, turning the tray would turn the dark side with it. The dark side stayed where it was in the oven, which means the oven owns it, and the thermometer says by how much."
+  },
+  {
+   "id": "g9-w15",
+   "grade": 9,
+   "week": 15,
+   "tag": "🧤 mitten",
+   "title": "The Case of the Mittens That Shrank",
+   "story": "Two pairs of wool mittens went into the wash the same size and one pair came out child-sized. Both pairs are the same wool from the same maker and the same batch. A fault in the wool would have shrunk both pairs, and one is unchanged. Both were washed in the same machine on the same hot cycle in the same load. Hot water alone swells wool fibres and lets them relax again as they dry. Wool felts when heat and movement act together, because the scales on each fibre lock. Once those scales interlock they cannot be pulled apart and the shrinking is permanent. The shrunken pair went into the tumble dryer on a high heat setting. The unchanged pair was laid flat on a rack and left to dry overnight. A dryer supplies heat and constant tumbling at the same time. Neither pair was stretched, pinned or worn between the wash and the measuring.",
+   "question": "Why did only one pair shrink?",
+   "suspects": [
+    {
+     "who": "🌀 The tumble dryer",
+     "why": "the shrunken pair went into the tumble dryer on a high heat setting"
+    },
+    {
+     "who": "🔥 The hot wash",
+     "why": "both were washed in the same machine on the same hot cycle in the same load"
+    },
+    {
+     "who": "🐑 The wool itself",
+     "why": "a fault in the wool would have shrunk both pairs, and one is unchanged"
+    },
+    {
+     "who": "🧵 Stretching while damp",
+     "why": "neither pair was stretched, pinned or worn between the wash and the measuring"
+    },
+    {
+     "who": "🧺 The drying rack",
+     "why": "the unchanged pair was laid flat on a rack and left to dry overnight"
+    }
+   ],
+   "answer": "The dryer gave heat and tumbling together, which felts wool.",
+   "proof": [
+    "“Wool felts when heat and movement act together, because the scales on each fibre lock.”",
+    "“Once those scales interlock they cannot be pulled apart and the shrinking is permanent.”",
+    "“A dryer supplies heat and constant tumbling at the same time.”"
+   ],
+   "clears": [
+    "The hot wash: “Both were washed in the same machine on the same hot cycle in the same load.”",
+    "The wool: “A fault in the wool would have shrunk both pairs, and one is unchanged.”",
+    "Stretching: “Neither pair was stretched, pinned or worn between the wash and the measuring.”",
+    "The rack: “The unchanged pair was laid flat on a rack and left to dry overnight.”"
+   ],
+   "explain": "Both pairs got the heat, so heat alone cannot be the answer. Felting needs two things at once, and only one pair met the second. That is why the rule in the story names heat and movement together rather than either on its own."
+  },
+  {
+   "id": "g9-w16",
+   "grade": 9,
+   "week": 16,
+   "tag": "🎄 ginger",
+   "title": "The Case of the Gingerbread That Spread",
+   "story": "Half the gingerbread figures baked into flat blobs and half held their shape perfectly. Every figure was cut from one bowl of dough mixed and weighed in one go. A shortage of flour would have spread every figure from that bowl, not half. Too much baking soda leaves a soapy taste, and these taste exactly as they should. All of them went into the same oven on the same shelf at the same setting. Butter in dough must be firm when it meets the oven or it melts before the flour sets. Dough that melts first spreads outward, and dough that sets first holds its edge. The first sheet was cut and baked straight away from dough at room temperature. The second sheet was cut and then chilled for thirty minutes before it went in. The spread figures are all from the first sheet without a single exception. Nobody opened the oven door during either bake.",
+   "question": "Why did half the figures spread?",
+   "suspects": [
+    {
+     "who": "🧈 Room-temperature butter in the first sheet",
+     "why": "the first sheet was cut and baked straight away from dough at room temperature"
+    },
+    {
+     "who": "🌾 Too little flour",
+     "why": "a shortage of flour would have spread every figure from that bowl, not half"
+    },
+    {
+     "who": "🧂 Too much baking soda",
+     "why": "too much baking soda leaves a soapy taste, and these taste exactly as they should"
+    },
+    {
+     "who": "♨️ The oven",
+     "why": "all of them went into the same oven on the same shelf at the same setting"
+    },
+    {
+     "who": "🚪 The oven door",
+     "why": "nobody opened the oven door during either bake"
+    }
+   ],
+   "answer": "The first sheet went in warm, so its butter melted before the flour set.",
+   "proof": [
+    "“Butter in dough must be firm when it meets the oven or it melts before the flour sets.”",
+    "“Dough that melts first spreads outward, and dough that sets first holds its edge.”",
+    "“The spread figures are all from the first sheet without a single exception.”"
+   ],
+   "clears": [
+    "Flour: “A shortage of flour would have spread every figure from that bowl, not half.”",
+    "Soda: “Too much baking soda leaves a soapy taste, and these taste exactly as they should.”",
+    "The oven: “All of them went into the same oven on the same shelf at the same setting.”",
+    "The door: “Nobody opened the oven door during either bake.”"
+   ],
+   "explain": "One bowl of dough and one oven means the recipe and the oven are controls for each other. The only thing that differed between the sheets was thirty minutes in the refrigerator, and the split in the results is exactly the split between the sheets."
+  },
+  {
+   "id": "g9-w17",
+   "grade": 9,
+   "week": 17,
+   "tag": "💡 lights",
+   "title": "The Case of the String That Flickered",
+   "story": "The whole light string flickers together several times a second, all hundred bulbs at once. A loose bulb interrupts its own circuit and flickers that bulb or that half. Every bulb in the string dims and brightens in step, which one loose bulb cannot do. A failing outlet would also affect the lamp plugged into the socket beside it. That lamp has burned steadily in the same socket all evening. These are LED bulbs, which switch on and off far faster than old filament bulbs. The string is plugged into a wall switch fitted with a dimmer last spring. A dimmer chops the current on and off to lower the brightness of a filament lamp. A filament glows through those gaps and an LED follows them exactly. Moving the string to an undimmed socket in the hall stops the flicker completely. Plugging it back into the dimmed switch brings the flicker straight back.",
+   "question": "Why does the whole string flicker?",
+   "suspects": [
+    {
+     "who": "🎚️ The dimmer switch",
+     "why": "the string is plugged into a wall switch fitted with a dimmer last spring"
+    },
+    {
+     "who": "💡 A loose bulb",
+     "why": "every bulb in the string dims and brightens in step, which one loose bulb cannot do"
+    },
+    {
+     "who": "🔌 A failing outlet",
+     "why": "that lamp has burned steadily in the same socket all evening"
+    },
+    {
+     "who": "❄️ Cold",
+     "why": "moving the string to an undimmed socket in the hall stops the flicker completely"
+    },
+    {
+     "who": "🪢 The extension lead",
+     "why": "plugging it back into the dimmed switch brings the flicker straight back"
+    }
+   ],
+   "answer": "A dimmer is chopping the current and the LEDs follow every gap.",
+   "proof": [
+    "“A dimmer chops the current on and off to lower the brightness of a filament lamp.”",
+    "“A filament glows through those gaps and an LED follows them exactly.”",
+    "“Moving the string to an undimmed socket in the hall stops the flicker completely.”"
+   ],
+   "clears": [
+    "A loose bulb: “Every bulb in the string dims and brightens in step, which one loose bulb cannot do.”",
+    "The outlet: “That lamp has burned steadily in the same socket all evening.”",
+    "Cold: “Moving the string to an undimmed socket in the hall stops the flicker completely.”",
+    "The lead: “Plugging it back into the dimmed switch brings the flicker straight back.”"
+   ],
+   "explain": "A hundred bulbs moving in step says the supply is doing it, not any bulb. The dimmer has been there since spring and filament bulbs never showed it, because a filament stays hot through the gaps. The swap test confirms it in both directions."
+  },
+  {
+   "id": "g9-w18",
+   "grade": 9,
+   "week": 18,
+   "tag": "⏰ clock",
+   "title": "The Case of the Clock That Gained",
+   "story": "The hall pendulum clock gains four minutes a day, every day, by the same amount. A clock gaining the same amount daily has a pendulum swinging slightly too fast. A pendulum's speed is set by its length and by nothing else that matters here. Shortening a pendulum makes each swing quicker and makes the clock gain. Winding has nothing to do with rate, because the escapement meters the power out. The clock was wound fully on Sunday and gained four minutes that day as usual. Heat lengthens a steel rod and would make this clock lose rather than gain. The hall has been colder, not warmer, since the gaining started in October. The clock was carried to the hall from the office in late September. The bob rests on a nut that is turned to raise or lower it along the rod. A bob carried by the rod swings loose and seats higher when the clock is set down.",
+   "question": "Why does the clock gain four minutes a day?",
+   "suspects": [
+    {
+     "who": "🔩 The bob seated higher after the move",
+     "why": "a bob carried by the rod swings loose and seats higher when the clock is set down"
+    },
+    {
+     "who": "🌡️ Temperature",
+     "why": "heat lengthens a steel rod and would make this clock lose rather than gain"
+    },
+    {
+     "who": "🔑 Winding",
+     "why": "winding has nothing to do with rate, because the escapement meters the power out"
+    },
+    {
+     "who": "⚙️ The escapement",
+     "why": "a clock gaining the same amount daily has a pendulum swinging slightly too fast"
+    },
+    {
+     "who": "🚪 The hall itself",
+     "why": "the hall has been colder, not warmer, since the gaining started in October"
+    }
+   ],
+   "answer": "The bob sits higher than it did, so the pendulum is effectively shorter.",
+   "proof": [
+    "“A pendulum's speed is set by its length and by nothing else that matters here.”",
+    "“Shortening a pendulum makes each swing quicker and makes the clock gain.”",
+    "“The clock was carried to the hall from the office in late September.”"
+   ],
+   "clears": [
+    "Temperature: “Heat lengthens a steel rod and would make this clock lose rather than gain.”",
+    "Winding: “The clock was wound fully on Sunday and gained four minutes that day as usual.”",
+    "The hall: “The hall has been colder, not warmer, since the gaining started in October.”",
+    "The escapement: “A clock gaining the same amount daily has a pendulum swinging slightly too fast.”"
+   ],
+   "explain": "Temperature is the trap, because it does change a pendulum and the season did change. It runs the wrong way: a colder hall shortens the rod less, not more. What else happened in late September is the move, and carrying a clock is how a bob ends up seated somewhere new."
+  },
+  {
+   "id": "g9-w19",
+   "grade": 9,
+   "week": 19,
+   "tag": "⛄ snow",
+   "title": "The Case of the Roof With No Snow",
+   "story": "Number 14 lost its snow in a day while every other roof in the terrace stayed white for a week. All eight houses face the same way and get the same hours of sun. If the sun were doing it, the south slopes of all eight would clear together. The north slope of number 14 is bare as well, and every other north slope is covered. A chimney warms the tiles around it and melts a ring a metre or so across. Number 14's chimney was capped years ago and the ring around it is no different from the rest. Snow on a roof melts from below when heat escapes through the ceiling beneath it. The loft of number 14 was cleared in August and the insulation taken up for rewiring. It has not been put back, and the other seven lofts are insulated as before. A thermal camera shows the whole roof of 14 running six degrees warmer than its neighbours. Rain ran off all eight roofs equally on the night before the snow.",
+   "question": "Why did one roof clear so fast?",
+   "suspects": [
+    {
+     "who": "🏠 Missing loft insulation",
+     "why": "the loft of number 14 was cleared in August and the insulation taken up for rewiring"
+    },
+    {
+     "who": "☀️ The sun",
+     "why": "if the sun were doing it, the south slopes of all eight would clear together"
+    },
+    {
+     "who": "🧱 The chimney",
+     "why": "number 14's chimney was capped years ago and the ring around it is no different from the rest"
+    },
+    {
+     "who": "🧭 The angle of the roof",
+     "why": "all eight houses face the same way and get the same hours of sun"
+    },
+    {
+     "who": "🌧️ Rain before the snow",
+     "why": "rain ran off all eight roofs equally on the night before the snow"
+    }
+   ],
+   "answer": "Heat escaping through an uninsulated loft melted the snow from below.",
+   "proof": [
+    "“Snow on a roof melts from below when heat escapes through the ceiling beneath it.”",
+    "“It has not been put back, and the other seven lofts are insulated as before.”",
+    "“A thermal camera shows the whole roof of 14 running six degrees warmer than its neighbours.”"
+   ],
+   "clears": [
+    "The sun: “The north slope of number 14 is bare as well, and every other north slope is covered.”",
+    "The chimney: “Number 14's chimney was capped years ago and the ring around it is no different from the rest.”",
+    "The angle: “All eight houses face the same way and get the same hours of sun.”",
+    "The rain: “Rain ran off all eight roofs equally on the night before the snow.”"
+   ],
+   "explain": "The bare north slope is the observation that does the work. Anything arriving from outside, sun most of all, would clear a south slope before a north one. A roof bare on both sides is being warmed from underneath."
+  },
+  {
+   "id": "g9-w20",
+   "grade": 9,
+   "week": 20,
+   "tag": "🐦 feeder",
+   "title": "The Case of the Feeder Emptied Overnight",
+   "story": "The feeder is full at dusk and empty at dawn, four nights running. Birds at this latitude do not feed in darkness and are gone from the garden by sunset. Squirrels work in daylight and tear at a feeder rather than emptying it tidily. A squirrel also wrenches the lid off, and this lid is still clipped down. Spilled seed would lie on the ground beneath, and the ground is bare and clean. Something has been taking the seed out through the ports and eating all of it. The metal pole carries a greasy smear running from the ground to the tray. Small dark droppings sit along the top edge of the tray each morning. The plastic around two ports has been gnawed into a wider opening. Rats climb smooth poles easily, feed after dark, and gnaw to make an opening bigger. A trail camera set on the third night recorded movement at ten past one.",
+   "question": "What is emptying the feeder?",
+   "suspects": [
+    {
+     "who": "🐀 A rat climbing the pole",
+     "why": "rats climb smooth poles easily, feed after dark, and gnaw to make an opening bigger"
+    },
+    {
+     "who": "🐦 Birds",
+     "why": "birds at this latitude do not feed in darkness and are gone from the garden by sunset"
+    },
+    {
+     "who": "🐿️ A squirrel",
+     "why": "a squirrel also wrenches the lid off, and this lid is still clipped down"
+    },
+    {
+     "who": "🌬️ Seed spilling out",
+     "why": "spilled seed would lie on the ground beneath, and the ground is bare and clean"
+    },
+    {
+     "who": "🧍 Somebody taking it",
+     "why": "the plastic around two ports has been gnawed into a wider opening"
+    }
+   ],
+   "answer": "A rat is climbing the pole and feeding through the gnawed ports.",
+   "proof": [
+    "“The metal pole carries a greasy smear running from the ground to the tray.”",
+    "“The plastic around two ports has been gnawed into a wider opening.”",
+    "“Rats climb smooth poles easily, feed after dark, and gnaw to make an opening bigger.”"
+   ],
+   "clears": [
+    "Birds: “Birds at this latitude do not feed in darkness and are gone from the garden by sunset.”",
+    "A squirrel: “A squirrel also wrenches the lid off, and this lid is still clipped down.”",
+    "Spilling: “Spilled seed would lie on the ground beneath, and the ground is bare and clean.”",
+    "A person: “A trail camera set on the third night recorded movement at ten past one.”"
+   ],
+   "explain": "Four facts have to be true together: after dark, up a smooth pole, through the ports rather than the lid, and nothing dropped. Each suspect fails at least one of them, and one animal in the list does all four as a matter of habit."
+  },
+  {
+   "id": "g9-w21",
+   "grade": 9,
+   "week": 21,
+   "tag": "☕ cocoa",
+   "title": "The Case of the Cocoa That Went Cold",
+   "story": "The cocoa in the flask is barely warm by noon, three hours after it was poured in boiling. A failed vacuum lets heat out through the wall, which makes the outside of a flask warm to the touch. This flask is cold on the outside after three hours, as a working vacuum should be. The stopper seals and no steam escapes when the flask is tipped. The flask holds a litre and only a third of a litre of cocoa was poured in. The rest of the space is air, and the liquid loses heat into it until both are the same temperature. A small amount of liquid warming a large volume of air cools a long way doing it. The flask was not rinsed with hot water before the cocoa went in. A cold steel flask takes heat from the drink to warm itself as well. Filled to the brim the next day, the same flask was still hot at noon. Nothing about the cocoa recipe changed between the two days.",
+   "question": "Why did the cocoa go cold?",
+   "suspects": [
+    {
+     "who": "💨 Air filling two thirds of the flask",
+     "why": "the flask holds a litre and only a third of a litre of cocoa was poured in"
+    },
+    {
+     "who": "🫙 A failed vacuum",
+     "why": "this flask is cold on the outside after three hours, as a working vacuum should be"
+    },
+    {
+     "who": "🔒 A leaking stopper",
+     "why": "the stopper seals and no steam escapes when the flask is tipped"
+    },
+    {
+     "who": "🧊 Not preheating the flask",
+     "why": "a cold steel flask takes heat from the drink to warm itself as well"
+    },
+    {
+     "who": "☕ The cocoa",
+     "why": "nothing about the cocoa recipe changed between the two days"
+    }
+   ],
+   "answer": "Two thirds of the flask was air, and the cocoa heated all of it.",
+   "proof": [
+    "“The rest of the space is air, and the liquid loses heat into it until both are the same temperature.”",
+    "“A small amount of liquid warming a large volume of air cools a long way doing it.”",
+    "“Filled to the brim the next day, the same flask was still hot at noon.”"
+   ],
+   "clears": [
+    "A failed vacuum: “This flask is cold on the outside after three hours, as a working vacuum should be.”",
+    "The stopper: “The stopper seals and no steam escapes when the flask is tipped.”",
+    "The cocoa: “Nothing about the cocoa recipe changed between the two days.”",
+    "Preheating: “A cold steel flask takes heat from the drink to warm itself as well.”"
+   ],
+   "explain": "Preheating is a real effect and it is in the story on purpose, because it would cost a few degrees rather than most of them. The full flask the next day is the test: same flask, same stopper, same recipe, and the only change is how much air was shut in with the drink."
+  },
+  {
+   "id": "g9-w22",
+   "grade": 9,
+   "week": 22,
+   "tag": "💌 valentine",
+   "title": "The Case of the Ink That Stayed Wet",
+   "story": "Eleven of the twenty-six valentines came out of the pile with the writing smeared sideways. Every card was written with the same gel pen from the same packet. If the pen were at fault, all twenty-six would have smeared rather than eleven. All twenty-six were written at the same table within the same twenty minutes. All twenty-six were stacked together in one pile as soon as they were finished. Gel ink soaks into an absorbent surface and sits on top of a sealed one. Ink that sits on the surface stays wet far longer and wipes with the lightest touch. The eleven smeared cards are all the glossy ones from the shop packet. The fifteen clean ones are matte card cut from the classroom stock. Rubbing a finger across a fresh line on each kind shows the difference in seconds. The room was dry and the heating had been on since morning.",
+   "question": "Why did eleven cards smear?",
+   "suspects": [
+    {
+     "who": "✨ The glossy card stock",
+     "why": "the eleven smeared cards are all the glossy ones from the shop packet"
+    },
+    {
+     "who": "🖊️ The gel pen",
+     "why": "if the pen were at fault, all twenty-six would have smeared rather than eleven"
+    },
+    {
+     "who": "📚 Stacking them too soon",
+     "why": "all twenty-six were stacked together in one pile as soon as they were finished"
+    },
+    {
+     "who": "💧 Damp air",
+     "why": "the room was dry and the heating had been on since morning"
+    },
+    {
+     "who": "⏱️ Not enough drying time",
+     "why": "all twenty-six were written at the same table within the same twenty minutes"
+    }
+   ],
+   "answer": "Gel ink cannot soak into glossy card, so it was still wet when stacked.",
+   "proof": [
+    "“Gel ink soaks into an absorbent surface and sits on top of a sealed one.”",
+    "“Ink that sits on the surface stays wet far longer and wipes with the lightest touch.”",
+    "“The fifteen clean ones are matte card cut from the classroom stock.”"
+   ],
+   "clears": [
+    "The pen: “If the pen were at fault, all twenty-six would have smeared rather than eleven.”",
+    "Stacking: “All twenty-six were stacked together in one pile as soon as they were finished.”",
+    "Damp air: “The room was dry and the heating had been on since morning.”",
+    "Drying time: “All twenty-six were written at the same table within the same twenty minutes.”"
+   ],
+   "explain": "Stacking and drying time are both real causes of smearing, and both are ruled out the same way: every card got the same treatment. The split in the results matches the split in the paper exactly, and the rub test shows why in a few seconds."
+  },
+  {
+   "id": "g9-w23",
+   "grade": 9,
+   "week": 23,
+   "tag": "🌋 volcano",
+   "title": "The Case of the Foam That Would Not Hold",
+   "story": "The outdoor volcano gushed and flattened in two seconds while the indoor one held a standing foam. Both used the same measured soda and the same bottle of vinegar. A weaker reaction would produce less gas, and the outdoor one fizzed hard and loud. Wind pushes a foam sideways rather than collapsing it where it stands. The air was still enough that a ribbon on the stake barely moved. Carbon dioxide on its own escapes as bubbles that burst the moment they form. A little dish soap gives each bubble a skin that holds it together in a foam. The indoor mixture had a squeeze of dish soap added to the vinegar. The outdoor batch was mixed in a hurry and the soap was left out. Both cones were the same mould and both vents the same width. The outdoor cone shows the same wet ring a strong eruption always leaves.",
+   "question": "Why did the outdoor foam collapse?",
+   "suspects": [
+    {
+     "who": "🧼 No dish soap in the outdoor batch",
+     "why": "the outdoor batch was mixed in a hurry and the soap was left out"
+    },
+    {
+     "who": "🌬️ Wind",
+     "why": "the air was still enough that a ribbon on the stake barely moved"
+    },
+    {
+     "who": "🧪 A weak reaction",
+     "why": "a weaker reaction would produce less gas, and the outdoor one fizzed hard and loud"
+    },
+    {
+     "who": "🏔️ The cone",
+     "why": "both cones were the same mould and both vents the same width"
+    },
+    {
+     "who": "🥶 The cold",
+     "why": "the outdoor cone shows the same wet ring a strong eruption always leaves"
+    }
+   ],
+   "answer": "Without soap the gas escaped as bubbles that burst at once.",
+   "proof": [
+    "“Carbon dioxide on its own escapes as bubbles that burst the moment they form.”",
+    "“A little dish soap gives each bubble a skin that holds it together in a foam.”",
+    "“The indoor mixture had a squeeze of dish soap added to the vinegar.”"
+   ],
+   "clears": [
+    "Wind: “The air was still enough that a ribbon on the stake barely moved.”",
+    "A weak reaction: “A weaker reaction would produce less gas, and the outdoor one fizzed hard and loud.”",
+    "The cone: “Both cones were the same mould and both vents the same width.”",
+    "The cold: “The outdoor cone shows the same wet ring a strong eruption always leaves.”"
+   ],
+   "explain": "The reaction was not the problem and the wet ring proves it: as much gas came out of the outdoor cone as the indoor one. What the outdoor batch had no way of doing was holding that gas, because nothing in it could make a bubble that lasted."
+  },
+  {
+   "id": "g9-w24",
+   "grade": 9,
+   "week": 24,
+   "tag": "👑 crown",
+   "title": "The Case of the Crowns That Rubbed Off",
+   "story": "Gold came off nine crowns onto nine pairs of hands, and the other seventeen are clean. All twenty-six were painted on Monday morning and left on the same rack. All twenty-six had the same two days to dry before they were worn. If drying time were the problem, every crown would mark a hand. None of the twenty-six was sealed with varnish or any other finish. A lack of sealant would leave all of them vulnerable rather than nine. Poster paint binds with a starch that stays soluble and lifts with warm skin. Acrylic paint sets into a plastic film that holds together once it is dry. The nine that rubbed were painted from the gold poster paint pot. The seventeen that did not were painted with the gold acrylic. Both pots were opened the same morning and neither had dried out. Every crown was handled by the same twenty-six students for the same hour.",
+   "question": "Why did nine crowns rub off?",
+   "suspects": [
+    {
+     "who": "🎨 The poster paint",
+     "why": "the nine that rubbed were painted from the gold poster paint pot"
+    },
+    {
+     "who": "⏳ Drying time",
+     "why": "if drying time were the problem, every crown would mark a hand"
+    },
+    {
+     "who": "🛡️ No sealant",
+     "why": "a lack of sealant would leave all of them vulnerable rather than nine"
+    },
+    {
+     "who": "🪣 An old pot of paint",
+     "why": "both pots were opened the same morning and neither had dried out"
+    },
+    {
+     "who": "🧴 The paper",
+     "why": "all twenty-six were painted on Monday morning and left on the same rack"
+    }
+   ],
+   "answer": "Poster paint stays soluble and lifts off onto warm hands.",
+   "proof": [
+    "“Poster paint binds with a starch that stays soluble and lifts with warm skin.”",
+    "“Acrylic paint sets into a plastic film that holds together once it is dry.”",
+    "“The nine that rubbed were painted from the gold poster paint pot.”"
+   ],
+   "clears": [
+    "Drying time: “All twenty-six had the same two days to dry before they were worn.”",
+    "No sealant: “A lack of sealant would leave all of them vulnerable rather than nine.”",
+    "The pot: “Both pots were opened the same morning and neither had dried out.”",
+    "The paper: “All twenty-six were painted on Monday morning and left on the same rack.”"
+   ],
+   "explain": "Three of the suspects would have damaged all twenty-six, which is the test that removes them. The nine and the seventeen split exactly along which pot was used, and the two paints differ in a way that decides whether dry means finished."
+  },
+  {
+   "id": "g9-w25",
+   "grade": 9,
+   "week": 25,
+   "tag": "🎹 piano",
+   "title": "The Case of the Note That Buzzed",
+   "story": "One note on the hall piano buzzes, and the eighty-seven others sound clean. A broken string makes a note thin and quiet rather than adding a buzz to it. The note is as loud as its neighbours and the buzz rides on top of the tone. A tuning pin slipping would drop that note in pitch over a few days. The note has held its pitch exactly against a fork for three weeks. A failed damper lets a note ring on after the key is released. This note stops dead the moment the key comes up, as it should. The buzz also appears faintly when the note an octave below is played. Something lying loose on the soundboard rattles when a note at its own pitch sets the board moving. A nearby note will shake it a little and the octave will shake it less. A two pence coin was found lying flat on the soundboard under the lid.",
+   "question": "What is buzzing?",
+   "suspects": [
+    {
+     "who": "🪙 A coin on the soundboard",
+     "why": "a two pence coin was found lying flat on the soundboard under the lid"
+    },
+    {
+     "who": "🎻 A broken string",
+     "why": "a broken string makes a note thin and quiet rather than adding a buzz to it"
+    },
+    {
+     "who": "📌 A slipping tuning pin",
+     "why": "the note has held its pitch exactly against a fork for three weeks"
+    },
+    {
+     "who": "🔇 A failed damper",
+     "why": "this note stops dead the moment the key comes up, as it should"
+    },
+    {
+     "who": "🎹 The key itself",
+     "why": "the buzz also appears faintly when the note an octave below is played"
+    }
+   ],
+   "answer": "A coin on the soundboard rattles when that note sets the board moving.",
+   "proof": [
+    "“Something lying loose on the soundboard rattles when a note at its own pitch sets the board moving.”",
+    "“A nearby note will shake it a little and the octave will shake it less.”",
+    "“The buzz also appears faintly when the note an octave below is played.”"
+   ],
+   "clears": [
+    "A broken string: “The note is as loud as its neighbours and the buzz rides on top of the tone.”",
+    "A tuning pin: “The note has held its pitch exactly against a fork for three weeks.”",
+    "A damper: “This note stops dead the moment the key comes up, as it should.”",
+    "The key: “The buzz also appears faintly when the note an octave below is played.”"
+   ],
+   "explain": "The octave is the clue that moves this from one note to the whole instrument. A fault in a single string or key cannot be heard from a different key, so whatever buzzes is not part of that note at all. It is sitting on the board all of them share."
+  },
+  {
+   "id": "g9-w26",
+   "grade": 9,
+   "week": 26,
+   "tag": "🪁 kite",
+   "title": "The Case of the Kite That Stalled",
+   "story": "The kite climbs for twenty feet, stops, slides backward and dives into the grass. A kite with too little tail spins on its own axis rather than stalling and sliding back. This kite tracks straight with no spin at all before it stops. Adding two metres of tail changed nothing about the climb or the dive. Wind too strong for a kite pulls hard on the line and then overflies. The line is slack through the whole flight and the meter reads nine miles an hour. The bridle knot sets the angle the kite meets the wind at. A knot too far back tips the nose up until the wind stops flowing over the sail. A sail the wind has stopped flowing over stops lifting and falls backward. The line is new, unkinked and runs freely off the reel. The knot had been slid two centimetres back when the kite was packed away last autumn. Moved forward again to its mark, the kite climbs steadily and stays up.",
+   "question": "Why does the kite stall?",
+   "suspects": [
+    {
+     "who": "🪢 The bridle knot set too far back",
+     "why": "a knot too far back tips the nose up until the wind stops flowing over the sail"
+    },
+    {
+     "who": "🎏 Too little tail",
+     "why": "a kite with too little tail spins on its own axis rather than stalling and sliding back"
+    },
+    {
+     "who": "💨 Wind too strong",
+     "why": "the line is slack through the whole flight and the meter reads nine miles an hour"
+    },
+    {
+     "who": "🦴 A bent spar",
+     "why": "this kite tracks straight with no spin at all before it stops"
+    },
+    {
+     "who": "🧵 The line",
+     "why": "the line is new, unkinked and runs freely off the reel"
+    }
+   ],
+   "answer": "The bridle knot sat two centimetres back, tipping the nose too high.",
+   "proof": [
+    "“The bridle knot sets the angle the kite meets the wind at.”",
+    "“A sail the wind has stopped flowing over stops lifting and falls backward.”",
+    "“Moved forward again to its mark, the kite climbs steadily and stays up.”"
+   ],
+   "clears": [
+    "Tail: “Adding two metres of tail changed nothing about the climb or the dive.”",
+    "Strong wind: “The line is slack through the whole flight and the meter reads nine miles an hour.”",
+    "A spar: “This kite tracks straight with no spin at all before it stops.”",
+    "The line: “The line is new, unkinked and runs freely off the reel.”"
+   ],
+   "explain": "The way it falls is the evidence. A tail problem makes a kite spin and a wind problem makes it pull. Climbing, stopping and sliding backward is what a sail does when its angle is too steep, and moving the knot back to its mark proves it."
+  },
+  {
+   "id": "g9-w27",
+   "grade": 9,
+   "week": 27,
+   "tag": "☘️ shamrock",
+   "title": "The Case of the Yellowing Shamrock",
+   "story": "The shamrock's lower leaves have yellowed one by one while the top growth stays green. A plant short of water wilts first and its leaf edges go dry and crisp. These leaves are soft and yellow, with no crisp edge anywhere on them. The soil is still wet to the knuckle three days after the last watering. Too little light makes new growth pale, thin and stretched toward the window. The new growth is compact and a strong green. Roots take in air from the gaps between soil particles as well as water. Waterlogged soil fills those gaps, the roots cannot work, and the oldest leaves yellow first. The pot is a decorative one with no drainage hole in the bottom. Water poured in has nowhere to leave and sits around the roots until it evaporates. The plant was repotted into it in September and the yellowing began in October.",
+   "question": "Why are the lower leaves yellowing?",
+   "suspects": [
+    {
+     "who": "🪣 A pot with no drainage hole",
+     "why": "the pot is a decorative one with no drainage hole in the bottom"
+    },
+    {
+     "who": "🏜️ Too little water",
+     "why": "the soil is still wet to the knuckle three days after the last watering"
+    },
+    {
+     "who": "🌑 Too little light",
+     "why": "the new growth is compact and a strong green"
+    },
+    {
+     "who": "🍂 Old leaves dying back",
+     "why": "waterlogged soil fills those gaps, the roots cannot work, and the oldest leaves yellow first"
+    },
+    {
+     "who": "🧪 Lack of feeding",
+     "why": "the plant was repotted into it in September and the yellowing began in October"
+    }
+   ],
+   "answer": "The pot cannot drain, so the roots are sitting in water.",
+   "proof": [
+    "“Roots take in air from the gaps between soil particles as well as water.”",
+    "“The pot is a decorative one with no drainage hole in the bottom.”",
+    "“Water poured in has nowhere to leave and sits around the roots until it evaporates.”"
+   ],
+   "clears": [
+    "Too little water: “The soil is still wet to the knuckle three days after the last watering.”",
+    "Too little light: “The new growth is compact and a strong green.”",
+    "Feeding: “The plant was repotted into it in September and the yellowing began in October.”",
+    "Old leaves: “A plant short of water wilts first and its leaf edges go dry and crisp.”"
+   ],
+   "explain": "Soft yellow and crisp brown are different symptoms, and the first one rules out thirst immediately. Healthy new growth rules out light and food. What is left is a root problem, and the pot explains it: there is no way for water to leave."
+  },
+  {
+   "id": "g9-w28",
+   "grade": 9,
+   "week": 28,
+   "tag": "🌧️ puddle",
+   "title": "The Case of the Puddle at the Low End",
+   "story": "Water stands against the back wall of the shed after every rain, and the front stays dry. A leaking roof drips onto whatever is directly below it and wets a patch. The floor beneath the roof joint is dry and the boards there show no stain. Groundwater rising through a floor darkens the boards evenly across the whole slab. These boards are dry a hand's width from the wet edge and stay dry as they dry out. A blocked gutter overflows in a sheet and would wet the ground outside the wall. The ground outside that wall is no wetter than the ground outside the others. Water runs downhill and stops where the fall stops. A spirit level laid across the floor shows the back wall sitting nineteen millimetres low. The door sill at the front sits highest, so water entering anywhere runs back. Rain blows under the door in a south-westerly, and the shed faces south-west.",
+   "question": "Why does water collect at the back wall?",
+   "suspects": [
+    {
+     "who": "📐 A floor that falls to the back",
+     "why": "a spirit level laid across the floor shows the back wall sitting nineteen millimetres low"
+    },
+    {
+     "who": "🏠 A leaking roof",
+     "why": "the floor beneath the roof joint is dry and the boards there show no stain"
+    },
+    {
+     "who": "💧 Groundwater",
+     "why": "these boards are dry a hand's width from the wet edge and stay dry as they dry out"
+    },
+    {
+     "who": "🌊 A blocked gutter",
+     "why": "the ground outside that wall is no wetter than the ground outside the others"
+    },
+    {
+     "who": "🚪 Rain under the door",
+     "why": "rain blows under the door in a south-westerly, and the shed faces south-west"
+    }
+   ],
+   "answer": "The floor falls nineteen millimetres to the back, so water runs there.",
+   "proof": [
+    "“Water runs downhill and stops where the fall stops.”",
+    "“A spirit level laid across the floor shows the back wall sitting nineteen millimetres low.”",
+    "“The door sill at the front sits highest, so water entering anywhere runs back.”"
+   ],
+   "clears": [
+    "The roof: “The floor beneath the roof joint is dry and the boards there show no stain.”",
+    "Groundwater: “These boards are dry a hand's width from the wet edge and stay dry as they dry out.”",
+    "The gutter: “The ground outside that wall is no wetter than the ground outside the others.”"
+   ],
+   "explain": "Rain really does blow under that door, and that is where the water gets in. Where it ends up is a different question, and the level answers it: whatever enters this shed anywhere runs to the back, because the back is the bottom."
+  },
+  {
+   "id": "g9-w29",
+   "grade": 9,
+   "week": 29,
+   "tag": "🌻 garden",
+   "title": "The Case of the Row That Did Not Come Up",
+   "story": "Row three of the seed bed is bare and rows one, two, four and five are thick with seedlings. All five rows were sown from one packet on one afternoon by one person. A dead packet would have left all five rows empty rather than one. All five were watered by the same hose for the same count of seconds. Row three is the one nearest the fence on the south side of the bed. A seed needs its own water, and roots already in the soil take water first. The fence carries a mature privet hedge whose roots run out under the bed. Digging a trench along row three turned up privet roots every few centimetres. A soil moisture meter reads row three at less than half the others two hours after watering. Birds take seed before it germinates and leave scratch marks in the surface. The surface of row three is smooth and shows no scratching at all.",
+   "question": "Why is row three bare?",
+   "suspects": [
+    {
+     "who": "🌳 Privet roots taking the water",
+     "why": "the fence carries a mature privet hedge whose roots run out under the bed"
+    },
+    {
+     "who": "🌰 A dead packet of seed",
+     "why": "a dead packet would have left all five rows empty rather than one"
+    },
+    {
+     "who": "🚿 Uneven watering",
+     "why": "all five were watered by the same hose for the same count of seconds"
+    },
+    {
+     "who": "🐦 Birds",
+     "why": "the surface of row three is smooth and shows no scratching at all"
+    },
+    {
+     "who": "🌑 Shade from the fence",
+     "why": "row three is the one nearest the fence on the south side of the bed"
+    }
+   ],
+   "answer": "Privet roots under row three are drinking the water first.",
+   "proof": [
+    "“A seed needs its own water, and roots already in the soil take water first.”",
+    "“Digging a trench along row three turned up privet roots every few centimetres.”",
+    "“A soil moisture meter reads row three at less than half the others two hours after watering.”"
+   ],
+   "clears": [
+    "The packet: “A dead packet would have left all five rows empty rather than one.”",
+    "Watering: “All five were watered by the same hose for the same count of seconds.”",
+    "Birds: “The surface of row three is smooth and shows no scratching at all.”"
+   ],
+   "explain": "Shade is the obvious guess for a row beside a fence, and a fence on the south side shades very little at midday. The meter is the measurement that matters: the same water went on and half of it was gone two hours later, which is what established roots do to a seedling."
+  },
+  {
+   "id": "g9-w30",
+   "grade": 9,
+   "week": 30,
+   "tag": "🪺 eggs",
+   "title": "The Case of the Egg That Would Not Peel",
+   "story": "Six boiled eggs peeled cleanly and six tore their whites away in ragged lumps. All twelve were boiled together in one pan for the same eleven minutes. All twelve went into the same iced water for the same ten minutes afterward. If the boiling or the cooling were at fault, all twelve would behave alike. The shell of an egg is held to the white by a membrane that loosens as an egg ages. A fresh egg grips that membrane tightly and tears when it is pulled away. The six that peeled cleanly came from a carton dated three weeks ago. The six that tore came from a carton collected from the farm on Saturday. Vinegar in the water is said to help, and no vinegar was used on either batch. Cracking an egg before cooling is said to help, and none of the twelve was cracked. Both cartons were stored side by side in the same refrigerator.",
+   "question": "Why did six eggs refuse to peel?",
+   "suspects": [
+    {
+     "who": "🥚 The eggs being too fresh",
+     "why": "the six that tore came from a carton collected from the farm on Saturday"
+    },
+    {
+     "who": "🔥 The boiling time",
+     "why": "all twelve were boiled together in one pan for the same eleven minutes"
+    },
+    {
+     "who": "🧊 The cooling",
+     "why": "all twelve went into the same iced water for the same ten minutes afterward"
+    },
+    {
+     "who": "🧪 No vinegar in the water",
+     "why": "vinegar in the water is said to help, and no vinegar was used on either batch"
+    },
+    {
+     "who": "🥄 Not cracking them first",
+     "why": "cracking an egg before cooling is said to help, and none of the twelve was cracked"
+    }
+   ],
+   "answer": "The six that tore were laid two days before, and fresh eggs grip the membrane.",
+   "proof": [
+    "“The shell of an egg is held to the white by a membrane that loosens as an egg ages.”",
+    "“A fresh egg grips that membrane tightly and tears when it is pulled away.”",
+    "“The six that peeled cleanly came from a carton dated three weeks ago.”"
+   ],
+   "clears": [
+    "Boiling: “All twelve were boiled together in one pan for the same eleven minutes.”",
+    "Cooling: “All twelve went into the same iced water for the same ten minutes afterward.”",
+    "Vinegar: “Vinegar in the water is said to help, and no vinegar was used on either batch.”",
+    "Cracking: “Cracking an egg before cooling is said to help, and none of the twelve was cracked.”"
+   ],
+   "explain": "Everything done to these eggs was done to all twelve, which removes every step of the method at once. The last two suspects are the kitchen remedies people reach for, and neither was applied to either batch, so neither can explain a difference between them."
+  },
+  {
+   "id": "g9-w31",
+   "grade": 9,
+   "week": 31,
+   "tag": "🌎 earth",
+   "title": "The Case of the Shadow That Was Too Short",
+   "story": "The metre stick casts a shadow forty centimetres shorter at school than the same stick casts at home. Both readings were taken at noon on the same day with the same stick. A clock an hour out would move a shadow, but both readings used the same phone. The stick was held against a spirit level and read vertical in both places. A stick leaning away from the sun casts a longer shadow, not a shorter one. The two sites are eleven kilometres apart, which changes the sun's angle by almost nothing. The school stick stood on the sloping tarmac of the car park. A slope tilts the ground the shadow falls on and changes the length it measures. The home stick stood on a patio checked level with the same spirit level. Measured again on level ground at school, the shadow matched the home reading within a centimetre. Both shadows were measured with the same tape from the base of the stick.",
+   "question": "Why was the school shadow shorter?",
+   "suspects": [
+    {
+     "who": "📐 The sloping car park",
+     "why": "the school stick stood on the sloping tarmac of the car park"
+    },
+    {
+     "who": "🕐 A clock an hour out",
+     "why": "a clock an hour out would move a shadow, but both readings used the same phone"
+    },
+    {
+     "who": "📏 The stick leaning",
+     "why": "a stick leaning away from the sun casts a longer shadow, not a shorter one"
+    },
+    {
+     "who": "🗺️ The distance between the sites",
+     "why": "the two sites are eleven kilometres apart, which changes the sun's angle by almost nothing"
+    },
+    {
+     "who": "🧵 The tape measure",
+     "why": "both shadows were measured with the same tape from the base of the stick"
+    }
+   ],
+   "answer": "The school shadow fell on sloping ground, which shortens it.",
+   "proof": [
+    "“A slope tilts the ground the shadow falls on and changes the length it measures.”",
+    "“The home stick stood on a patio checked level with the same spirit level.”",
+    "“Measured again on level ground at school, the shadow matched the home reading within a centimetre.”"
+   ],
+   "clears": [
+    "The clock: “A clock an hour out would move a shadow, but both readings used the same phone.”",
+    "Leaning: “A stick leaning away from the sun casts a longer shadow, not a shorter one.”",
+    "Distance: “The two sites are eleven kilometres apart, which changes the sun's angle by almost nothing.”",
+    "The tape: “Both shadows were measured with the same tape from the base of the stick.”"
+   ],
+   "explain": "A shadow measurement has three parts: the stick, the sun and the ground. The stick was checked, the sun is the same sun eleven kilometres away, and nobody thought about the ground. Repeating it on level tarmac is the test, and the difference disappears."
+  },
+  {
+   "id": "g9-w32",
+   "grade": 9,
+   "week": 32,
+   "tag": "📷 camera",
+   "title": "The Case of the Photographs That Went Green",
+   "story": "Every photograph taken in the gym has a green cast and the same camera is fine outdoors. A faulty sensor would tint every photograph the camera takes, wherever it is. Three hundred shots taken on the field the same afternoon are perfectly neutral. A dirty lens softens a picture and dulls it rather than colouring it green. The lens was cleaned and the next gym shot came out as green as the last. White balance tells a camera which light it is working under so it can correct for it. The camera was left on its daylight setting for both the field and the gym. Older fluorescent tubes give out a spiky light with far more green in it than daylight. The gym is lit by twenty-eight fluorescent tubes and has no windows. A shot taken in the gym on the fluorescent white balance setting came out neutral. The same tubes were fitted when the gym was built in 1998.",
+   "question": "Why are the gym photographs green?",
+   "suspects": [
+    {
+     "who": "💡 Fluorescent light on a daylight setting",
+     "why": "the camera was left on its daylight setting for both the field and the gym"
+    },
+    {
+     "who": "📷 A faulty sensor",
+     "why": "three hundred shots taken on the field the same afternoon are perfectly neutral"
+    },
+    {
+     "who": "🔍 A dirty lens",
+     "why": "the lens was cleaned and the next gym shot came out as green as the last"
+    },
+    {
+     "who": "🏫 The gym walls",
+     "why": "a shot taken in the gym on the fluorescent white balance setting came out neutral"
+    },
+    {
+     "who": "🗓️ The age of the tubes",
+     "why": "the same tubes were fitted when the gym was built in 1998"
+    }
+   ],
+   "answer": "Fluorescent tubes are green-heavy and the camera was set for daylight.",
+   "proof": [
+    "“White balance tells a camera which light it is working under so it can correct for it.”",
+    "“Older fluorescent tubes give out a spiky light with far more green in it than daylight.”",
+    "“A shot taken in the gym on the fluorescent white balance setting came out neutral.”"
+   ],
+   "clears": [
+    "The sensor: “Three hundred shots taken on the field the same afternoon are perfectly neutral.”",
+    "The lens: “The lens was cleaned and the next gym shot came out as green as the last.”",
+    "The walls: “A shot taken in the gym on the fluorescent white balance setting came out neutral.”"
+   ],
+   "explain": "The field shots clear the camera and the cleaned lens clears the glass, which leaves the room. The green walls answer is tempting and the setting test kills it: the same walls photograph neutral once the camera is told what light it is standing in."
+  },
+  {
+   "id": "g9-w33",
+   "grade": 9,
+   "week": 33,
+   "tag": "🌱 plant",
+   "title": "The Case of the Seedling That Leaned Back",
+   "story": "The bean seedling leans toward the window, and turning the pot does not keep it straight. Within two days of every turn the stem has bent back toward the glass again. A plant leaning because its stem is weak would fall in whatever direction it was pushed. This stem is firm and holds whatever angle it has grown to. Roots crowded on one side of a pot would tip a plant once and not repeatedly. The pot was knocked out and the roots are even all the way round. A plant bends toward light because the cells on the shaded side grow longer than the lit ones. That growth happens at the tip, which is why a turned plant bends back within days. Covering the tip with a small foil cap stopped the bending entirely for a week. Uncovering the tip started it again within three days. The window is the only light source in the room during the day.",
+   "question": "Why does the seedling keep leaning back?",
+   "suspects": [
+    {
+     "who": "🌞 Light reaching the growing tip",
+     "why": "a plant bends toward light because the cells on the shaded side grow longer than the lit ones"
+    },
+    {
+     "who": "🥀 A weak stem",
+     "why": "this stem is firm and holds whatever angle it has grown to"
+    },
+    {
+     "who": "🪴 Crowded roots",
+     "why": "the pot was knocked out and the roots are even all the way round"
+    },
+    {
+     "who": "🔄 The turning",
+     "why": "within two days of every turn the stem has bent back toward the glass again"
+    },
+    {
+     "who": "🧢 The foil cap",
+     "why": "covering the tip with a small foil cap stopped the bending entirely for a week"
+    }
+   ],
+   "answer": "The tip senses the window light and regrows the bend after every turn.",
+   "proof": [
+    "“That growth happens at the tip, which is why a turned plant bends back within days.”",
+    "“Covering the tip with a small foil cap stopped the bending entirely for a week.”",
+    "“Uncovering the tip started it again within three days.”"
+   ],
+   "clears": [
+    "A weak stem: “This stem is firm and holds whatever angle it has grown to.”",
+    "Crowded roots: “The pot was knocked out and the roots are even all the way round.”",
+    "The turning: “Within two days of every turn the stem has bent back toward the glass again.”",
+    "The cap: “Covering the tip with a small foil cap stopped the bending entirely for a week.”"
+   ],
+   "explain": "The cap is the experiment, and it is the tip that is capped rather than the leaves. Light still fell on the whole plant and the bending stopped, which locates the sensing in the tip and nowhere else."
+  },
+  {
+   "id": "g9-w34",
+   "grade": 9,
+   "week": 34,
+   "tag": "🍦 icecream",
+   "title": "The Case of the Ice Cream That Grew Crystals",
+   "story": "The tub in the door of the freezer is gritty with ice crystals and the tub at the back is smooth. Both were bought on the same day from the same shop and opened the same evening. A poor recipe would make both tubs gritty rather than one of them. Both tubs carry the same brand, flavour and batch code on the lid. Ice cream grows crystals when it part-thaws and refreezes, because small crystals melt and regrow as big ones. The freezer's own temperature log reads a steady minus eighteen all week. That sensor sits at the back of the compartment beside the smooth tub. Opening the freezer door swings the door shelf out into room-temperature air. The door is opened perhaps twenty times a day in this house. A thermometer taped to the door shelf recorded minus six at four in the afternoon. Moving the gritty tub to the back shelf stopped any further crystals forming.",
+   "question": "Why is one tub gritty?",
+   "suspects": [
+    {
+     "who": "🚪 Part-thawing in the door shelf",
+     "why": "opening the freezer door swings the door shelf out into room-temperature air"
+    },
+    {
+     "who": "🍨 A poor recipe",
+     "why": "a poor recipe would make both tubs gritty rather than one of them"
+    },
+    {
+     "who": "🏷️ A bad batch",
+     "why": "both tubs carry the same brand, flavour and batch code on the lid"
+    },
+    {
+     "who": "❄️ A warm freezer",
+     "why": "the freezer's own temperature log reads a steady minus eighteen all week"
+    },
+    {
+     "who": "📍 The sensor's position",
+     "why": "that sensor sits at the back of the compartment beside the smooth tub"
+    }
+   ],
+   "answer": "The door tub part-thaws every time the door opens and refreezes coarser.",
+   "proof": [
+    "“Ice cream grows crystals when it part-thaws and refreezes, because small crystals melt and regrow as big ones.”",
+    "“A thermometer taped to the door shelf recorded minus six at four in the afternoon.”",
+    "“Moving the gritty tub to the back shelf stopped any further crystals forming.”"
+   ],
+   "clears": [
+    "The recipe: “A poor recipe would make both tubs gritty rather than one of them.”",
+    "The batch: “Both tubs carry the same brand, flavour and batch code on the lid.”",
+    "The freezer: “The freezer's own temperature log reads a steady minus eighteen all week.”"
+   ],
+   "explain": "The log says the freezer is fine and the log is telling the truth about the one spot it measures. The door shelf is twelve degrees warmer and swings into the kitchen twenty times a day, and moving the tub is the test that closes it."
+  },
+  {
+   "id": "g9-w35",
+   "grade": 9,
+   "week": 35,
+   "tag": "🎗️ ribbon",
+   "title": "The Case of the Ribbon That Frayed",
+   "story": "Half the medal ribbons have frayed into loose threads at both cut ends and half have not. Every ribbon came off the same roll on the same afternoon. A weak weave would fray every ribbon from that roll rather than half of them. All of them have hung on the same board in the same room since the spring. Scissors leave a clean cut that begins to unravel as soon as the ribbon is handled. A heated blade melts the cut edge of a synthetic ribbon and seals the threads together. The frayed half were cut with the craft scissors from the supply drawer. The sound half were cut with the hot knife borrowed from the technology room. Running a finger along a sealed end finds a hard glassy ridge that the cut ends do not have. Nobody has washed, pinned or ironed any of the ribbons since they were cut. The two halves were cut within an hour of each other.",
+   "question": "Why did half the ribbons fray?",
+   "suspects": [
+    {
+     "who": "✂️ Being cut with scissors",
+     "why": "the frayed half were cut with the craft scissors from the supply drawer"
+    },
+    {
+     "who": "🧵 A weak weave",
+     "why": "a weak weave would fray every ribbon from that roll rather than half of them"
+    },
+    {
+     "who": "🪧 The display board",
+     "why": "all of them have hung on the same board in the same room since the spring"
+    },
+    {
+     "who": "🧼 Washing or ironing",
+     "why": "nobody has washed, pinned or ironed any of the ribbons since they were cut"
+    },
+    {
+     "who": "📅 Age",
+     "why": "the two halves were cut within an hour of each other"
+    }
+   ],
+   "answer": "The frayed half were cut with scissors instead of a hot knife.",
+   "proof": [
+    "“A heated blade melts the cut edge of a synthetic ribbon and seals the threads together.”",
+    "“The sound half were cut with the hot knife borrowed from the technology room.”",
+    "“Running a finger along a sealed end finds a hard glassy ridge that the cut ends do not have.”"
+   ],
+   "clears": [
+    "The weave: “A weak weave would fray every ribbon from that roll rather than half of them.”",
+    "The board: “All of them have hung on the same board in the same room since the spring.”",
+    "Washing: “Nobody has washed, pinned or ironed any of the ribbons since they were cut.”",
+    "Age: “The two halves were cut within an hour of each other.”"
+   ],
+   "explain": "One roll, one room, one hour, and still two outcomes, so nothing about the ribbon or its life explains it. The glassy ridge is the physical evidence that the two ends were made differently, and it is only on the half that held."
+  },
+  {
+   "id": "g9-w36",
+   "grade": 9,
+   "week": 36,
+   "tag": "🎈 balloons",
+   "title": "The Case of the Balloon That Burst Alone",
+   "story": "Twelve balloons were tied along the railing and only the one at the south end burst. All twelve came from one bag and were inflated by the same pump to the same mark. A weak balloon from a bad bag would be as likely to be any of the twelve. The pump has a gauge and every balloon was taken to the same reading. Latex weakens where sunlight falls on it, and weakened latex gives way under pressure. The south end of the railing is the only part in direct sun after eleven o'clock. The other eleven sit in the shade of the building all day. The air inside a balloon in sunlight also warms and pushes outward harder. A thermometer held against the south end balloon read nine degrees above the others. Nothing sharp projects from the railing anywhere along its length. The burst happened at twenty past two, in the hottest part of the afternoon.",
+   "question": "Why did one balloon burst?",
+   "suspects": [
+    {
+     "who": "☀️ Direct sun on the south end",
+     "why": "the south end of the railing is the only part in direct sun after eleven o'clock"
+    },
+    {
+     "who": "🎈 A weak balloon",
+     "why": "a weak balloon from a bad bag would be as likely to be any of the twelve"
+    },
+    {
+     "who": "💨 Over-inflation",
+     "why": "the pump has a gauge and every balloon was taken to the same reading"
+    },
+    {
+     "who": "📌 Something sharp on the railing",
+     "why": "nothing sharp projects from the railing anywhere along its length"
+    },
+    {
+     "who": "🌡️ Warm air inside",
+     "why": "a thermometer held against the south end balloon read nine degrees above the others"
+    }
+   ],
+   "answer": "The south end balloon sat in the sun, which weakened it and warmed its air.",
+   "proof": [
+    "“Latex weakens where sunlight falls on it, and weakened latex gives way under pressure.”",
+    "“The air inside a balloon in sunlight also warms and pushes outward harder.”",
+    "“The burst happened at twenty past two, in the hottest part of the afternoon.”"
+   ],
+   "clears": [
+    "A weak balloon: “A weak balloon from a bad bag would be as likely to be any of the twelve.”",
+    "Over-inflation: “The pump has a gauge and every balloon was taken to the same reading.”",
+    "Something sharp: “Nothing sharp projects from the railing anywhere along its length.”",
+    "The others: “The other eleven sit in the shade of the building all day.”"
+   ],
+   "explain": "The sun does two things here at once, and both push the same way: it weakens the latex from outside and it expands the air from inside. That is why the one balloon in the sun is also the one that goes, and why it goes at the hottest hour rather than the moment it was tied."
   }
  ]
 }
