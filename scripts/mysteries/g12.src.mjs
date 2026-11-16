@@ -30,6 +30,7 @@
  *   bun run scripts/check-mysteries.mjs
  */
 import { gradeMysteries } from "./build.mjs";
+import { DEBATES } from "./g12.debate.mjs";
 
 const CASES = [
   {
@@ -1078,4 +1079,7 @@ const CASES = [
   },
 ];
 
-gradeMysteries(12, CASES);
+gradeMysteries(
+  12,
+  CASES.map((c, i) => (DEBATES[i + 1] ? { ...c, d: DEBATES[i + 1] } : c)),
+);
