@@ -16,6 +16,7 @@
  *   bun run scripts/check-mysteries.mjs
  */
 import { gradeMysteries } from "./build.mjs";
+import { DEBATES } from "./g2.debate.mjs";
 
 const CASES = [
   {
@@ -812,5 +813,6 @@ const CASES = [
   },
 ];
 
-gradeMysteries(2, CASES);
+// Debate versions live in g2.debate.mjs and attach here by week.
+gradeMysteries(2, CASES.map((c, i) => (DEBATES[i + 1] ? { ...c, d: DEBATES[i + 1] } : c)));
 console.log(`grade 2: ${CASES.length} cases written`);

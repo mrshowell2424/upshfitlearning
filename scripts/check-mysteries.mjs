@@ -24,12 +24,12 @@
  *
  *   8. The debate story sits in the same grade band as the ordinary one.
  *   9. Exactly three suspects are left open, named by index, and each one has
- *      quotes behind it that are really in the debate story, as many as the
- *      grade's own proof count can carry: two where the plan asks for two or
- *      more, one where it asks for one. A kindergarten case is twenty-six to
- *      forty-eight words long and a grade 3 case sixty-four to ninety-four,
- *      and six distinct quotes do not fit in either. The requirement is that
- *      a child can point at the text, not that they can point at it twice.
+ *      quotes behind it that are really in the debate story: two from grade 4
+ *      up, one below it. Two quotes each for three open suspects is six
+ *      distinct sentences, and a story needs about eight before six of them
+ *      can be spared. Grade 4 is the first band that starts above that, at
+ *      seventy-eight words. Below it the requirement is that a child can
+ *      point at the text, not that they can point at it twice.
  *  10. The three sets of quotes are disjoint. Three arguments built from the
  *      same sentence are one argument with three names on it.
  *  11. None of the ordinary version's clearing quotes survive into the debate
@@ -160,7 +160,7 @@ for (const c of CASES) {
     args.forEach((a, n) => {
       if (!open.includes(a.who)) say(`argument ${n + 1} is for a suspect that is not open`);
       const ev = Array.isArray(a.evidence) ? a.evidence : [];
-      const needEv = plan.proof >= 2 ? 2 : 1;
+      const needEv = plan.words[0] >= 78 ? 2 : 1;
       if (ev.length < needEv)
         say(`argument ${n + 1} has ${ev.length} quotes, grade ${plan.name} needs at least ${needEv}`);
       ev.forEach((q, i) => {
