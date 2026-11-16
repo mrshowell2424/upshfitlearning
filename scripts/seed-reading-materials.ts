@@ -3665,6 +3665,114 @@ const ADAPTATIONS: Adaptation[] = [
     },
   },
   {
+    // Three things a lesson can read, not one.
+    //
+    // The reading row chose a level and never a text: every lesson read the
+    // concept passage written for it. Two other sets already exist and
+    // neither was reachable from here — the decodable story the OG pack
+    // ships, and 650 informational articles on science and social studies,
+    // each written at two Lexile levels with its own questions.
+    //
+    // The row offers all three now. Picking Article matches one to the
+    // reading grade already set and lists the other forty-nine at that
+    // grade by title. The Lexile follows the same up-step that raises the
+    // passage a level, so one control still decides how hard the reading
+    // is.
+    //
+    // The articles go in their own JSON block for the same reason the
+    // mysteries do: 2.3 MB does not belong in a class that is compiled
+    // with new Function on every load.
+    name: "let the reading be a decodable, a passage, or an article",
+    apply: (html) => {
+      const arts = (ARTICLES as { articles: Record<string, unknown>[] }).articles.map((a) => ({
+        i: a.id, g: a.grade, t: a.title, s: a.standard,
+        h: (a.higher as { paras: { text: string }[] }).paras.map((p) => p.text),
+        l: (a.lower as { paras: { text: string }[] }).paras.map((p) => p.text),
+        q: (a.questions as { q: string; a: string }[]).map((x) => [x.q, x.a]),
+      }));
+      const end = "</body>";
+      if (!html.includes(end)) return html;
+      let out = html.replace(
+        end,
+        '<script id="sor-articles" type="application/json">' +
+          JSON.stringify(arts).replace(/</g, "\\u003c") +
+          "</script>\n" + end,
+      );
+
+      const pgv = "const PGV = PGTWO || PGX;";
+      if (!out.includes(pgv)) return html;
+      out = out.replace(
+        pgv,
+        "const srcPick = (this.state && this.state.src) || 'pass';\n" +
+          "    const ART = (() => { try {\n" +
+          "      return JSON.parse(document.getElementById('sor-articles').textContent);\n" +
+          "    } catch (e) { return []; } })();\n" +
+          "    const artGrade = pgRead === 'K' ? 0 : Number(pgRead ||\n" +
+          "      ({ g2: '2', g3: '3', g4: '4' })[pgGrade] || 3);\n" +
+          "    const artPool = ART.filter((a) => a.g === artGrade);\n" +
+          "    const artId = (this.state && this.state.art) ||\n" +
+          "      ((artPool[0] && artPool[0].i) || '');\n" +
+          "    const ARTX = artPool.find((a) => a.i === artId) || artPool[0] || null;\n" +
+          "    // The same step that takes the passage up a level takes the\n" +
+          "    // article to its higher Lexile, so how hard the reading is stays\n" +
+          "    // one decision rather than two.\n" +
+          "    const artParas = ARTX ? (pgUp ? ARTX.h : ARTX.l) : [];\n" +
+          // cur[0], not id: the destructure that declares id runs below this.
+          "    const DECX = (OGD[cur[0]] && OGD[cur[0]].p && OGD[cur[0]].p.dec) || null;\n" +
+          "    const PGSRC =\n" +
+          "      srcPick === 'art' && ARTX\n" +
+          "        ? { title: ARTX.t, paras: artParas,\n" +
+          "            qs: ARTX.q.map((x) => [x[0], x[1]]) }\n" +
+          "      : srcPick === 'dec' && DECX\n" +
+          "        ? { title: DECX.title, paras: DECX.paras,\n" +
+          "            qs: (DECX.qs || []).map((q) => [String(q).replace(/^\\d+\\.\\s*/, ''), '']) }\n" +
+          "      : null;\n" +
+          "    const PGV = PGTWO || PGSRC || PGX;",
+      );
+
+      // the three pills and the article list, in the reading row
+      const grade =
+        '            <select value="{{ pgReadGrade }}" onChange="{{ pgReadPick }}" ' +
+        'aria-label="Reading grade"';
+      if (!out.includes(grade)) return html;
+      out = out.replace(
+        grade,
+        '            <sc-for list="{{ srcOpts }}" as="o" hint-placeholder-count="3">' +
+          '<button type="button" onClick="{{ o.pick }}" style="{{ o.st }}">{{ o.label }}</button>' +
+          "</sc-for>\n" + grade,
+      );
+      const note = '<span style="font-size:11px;font-weight:700;color:#618459;white-space:nowrap">{{ pgLands }}</span>';
+      if (!out.includes(note)) return html;
+      out = out.replace(
+        note,
+        note +
+          '<sc-if value="{{ artOn }}" hint-placeholder-val="{{ false }}">' +
+          '<select value="{{ artId }}" onChange="{{ artPick }}" aria-label="Article" ' +
+          "style=\"font-family:'Poppins',sans-serif;font-size:11.5px;font-weight:700;padding:2px 4px;" +
+          'border:1.5px solid #4B6049;border-radius:7px;background:#fff;color:#4B6049;max-width:260px">' +
+          '<sc-for list="{{ artOpts }}" as="a" hint-placeholder-count="50">' +
+          '<option value="{{ a.id }}">{{ a.label }}</option></sc-for></select></sc-if>',
+      );
+
+      const data = "      pgReadGrade: pgRead ||";
+      if (!out.includes(data)) return html;
+      return out.replace(
+        data,
+        "      artOn: srcPick === 'art', artId,\n" +
+          "      artOpts: artPool.map((a) => ({ id: a.i, label: a.t })),\n" +
+          "      artPick: (e) => this.setState({ art: e.target.value }),\n" +
+          "      srcOpts: [['pass', 'Passage'], ['dec', 'Decodable'], ['art', 'Article']]\n" +
+          "        .filter((o) => o[0] !== 'dec' || DECX)\n" +
+          "        .map((o) => ({ label: o[1], pick: () => this.setState({ src: o[0] }),\n" +
+          "          st: 'font-family:Poppins,system-ui,sans-serif;font-size:12px;font-weight:800;" +
+          "border:1.5px solid #4B6049;border-radius:7px;padding:3px 9px;cursor:pointer;" +
+          "white-space:nowrap;' + (o[0] === srcPick ? 'background:#4B6049;color:#fff'" +
+          " : 'background:#fff;color:#4B6049') })),\n" +
+          data,
+      );
+    },
+  },
+  {
     // Wear the Upshift Learning brand.
     //
     // The colours already arrive on brand: the recolour pass below maps
