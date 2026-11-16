@@ -47,6 +47,7 @@ import MYSTERYCOACH from "./reading-mystery-coach.json" with { type: "json" };
 import ARTICLES from "./reading-articles.json" with { type: "json" };
 import ARTICLECOACH from "./reading-article-coach.json" with { type: "json" };
 import EXTRAW from "./reading-extra-words.json" with { type: "json" };
+import MSB from "./reading-multisyllabic.json" with { type: "json" };
 import PREQ from "./reading-prerequisites.json" with { type: "json" };
 import WSX from "./reading-what-says.json" with { type: "json" };
 import LADD from "./reading-word-ladders.json" with { type: "json" };
@@ -2238,6 +2239,146 @@ const ADAPTATIONS: Adaptation[] = [
         out = out.replace(from, to);
       }
       return out;
+    },
+  },
+  {
+    // One lesson, one pool of words, and nothing drawn twice.
+    //
+    // Every list in a lesson reached into the same ten words, so a child
+    // met sandbox on the reading page, again in real-or-made-up and again
+    // in the maze, and the 2nd and 3rd grade spelling tests set the same
+    // ten in a different order. Ten words cannot fill six activities. The
+    // window the rule above opens — ring(n, off) — was the right idea
+    // against the wrong list: a ring of ten wraps straight back onto
+    // itself, so every window held the same words.
+    //
+    // scripts/reading-multisyllabic.json holds up to forty words per skill
+    // and per part, mined from what this site already puts in front of
+    // children and checked for pattern, syllables and being real. This
+    // points the ring at that, and hands the lists that must not overlap a
+    // slice nobody else has taken.
+    //
+    // The reading page keeps its ten, because that is the list a teacher
+    // has already looked at. When a pattern genuinely has too few
+    // two-syllable words in English — zz, -olt — the pool runs dry and a
+    // word repeats, which is better than printing one off the pattern.
+    name: "hand every activity its own words",
+    apply: (html) => {
+      const decl = "const real = isMulti ? (MULTI[id] || real0) : real0;";
+      if (!html.includes(decl)) return html;
+      const pool =
+        "const MSB = " + JSON.stringify(MSB.words) + ";\n" +
+        "    // A part has its own list, because the skill's list is the whole\n" +
+        "    // split: on the ow page the skill list holds oa words.\n" +
+        "    const msKey = subPat ? id + '|' + subPat : id;\n" +
+        "    const msBank = MSB[msKey] || (subPat ? null : MSB[id]) || { real: [], fake: [] };\n" +
+        "    // On a part only its own bank is safe. On a whole skill the ten a\n" +
+        "    // teacher already knows come first and the bank follows them.\n" +
+        "    const msAll = (subPat ? [] : (MULTI[id] || [])).concat(msBank.real)\n" +
+        "      .filter((w, i, a) => w && a.indexOf(w) === i);\n" +
+        "    const wordPool = (isMulti\n" +
+        "      ? (msAll.length ? msAll : (MULTI[id] || real0))\n" +
+        "      : real0.concat((realAll || []).filter((w) => !subPat || subHits(subPat, w)))\n" +
+        "        .concat(msBank.one || []))\n" +
+        "      .filter((w, i, a) => w && a.indexOf(w) === i);\n" +
+        "    const fakePool = (isMulti && msBank.fake.length ? msBank.fake : [])\n" +
+        "      .concat(nonsense).filter((w, i, a) => w && a.indexOf(w) === i);\n" +
+        "    const real = (isMulti ? wordPool : real0).slice(0, 10);\n" +
+        "    // The reading page's ten are spoken for before anything else asks.\n" +
+        "    const takenWords = new Set(real.map((w) => String(w).toLowerCase()));\n" +
+        "    const takenFakes = new Set();\n" +
+        "    const drawFrom = (bank, taken, n) => {\n" +
+        "      const out = [];\n" +
+        "      for (let i = 0; i < bank.length && out.length < n; i++) {\n" +
+        "        const k = String(bank[i]).toLowerCase();\n" +
+        "        if (taken.has(k)) continue;\n" +
+        "        taken.add(k); out.push(bank[i]);\n" +
+        "      }\n" +
+        "      // Dry. Repeat rather than print a word off the lesson's pattern.\n" +
+        "      for (let i = 0; i < bank.length && out.length < n; i++) {\n" +
+        "        if (out.indexOf(bank[i]) < 0) out.push(bank[i]);\n" +
+        "      }\n" +
+        "      return out;\n" +
+        "    };\n" +
+        "    const takeWords = (n) => drawFrom(wordPool, takenWords, n);\n" +
+        "    const takeFakes = (n) => drawFrom(fakePool, takenFakes, n);\n" +
+        "    // Every list is drawn here, in this order, before anything renders.\n" +
+        "    //\n" +
+        "    // Drawing them where they are used looks tidier and is wrong: the\n" +
+        "    // whole lesson is recomputed on every render, and a print run\n" +
+        "    // renders only the sheets it is printing. So the 3rd grade test\n" +
+        "    // printed on its own was the first to ask, and got the 2nd grade\n" +
+        "    // test's words. Reserving up front makes one sheet printed alone\n" +
+        "    // identical to the same sheet printed in the packet.\n" +
+        "    const RES = {\n" +
+        "      ten: takeWords(10),\n" +
+        "      rm: takeWords(5),\n" +
+        "      rmFake: takeFakes(5),\n" +
+        "      spellG2: takeWords(10),\n" +
+        "      spellG3: takeWords(10),\n" +
+        "      // The sheet and the key are two printings of one test. Drawing\n" +
+        "      // this twice set the child clusper and marked the answer clem.\n" +
+        "      dictFake: takeFakes(1),\n" +
+        "    };\n" +
+        "    const dictFake = RES.dictFake;\n" +
+        "    const spellTen = (g) => (g === 'g2' ? RES.spellG2 : RES.spellG3);\n" +
+        "    // Real means anywhere in the lesson's pool, not just the ten on the\n" +
+        "    // reading page, or the key prints M beside a word the child has\n" +
+        "    // just read correctly as a real one.\n" +
+        "    const realSet = new Set(wordPool.map((w) => String(w).toLowerCase()));";
+      let out = html.replace(decl, pool);
+
+      // the ring, pointed at the whole bank instead of the first ten
+      const ring = "const ring = (n, off) => { const L = real;";
+      if (!out.includes(ring)) return html;
+      return out.replace(ring, "const ring = (n, off) => { const L = wordPool.length ? wordPool : real;");
+    },
+  },
+  {
+    // The lists that repeated, each given its own.
+    //
+    // Ten Words A Day had a pool of its own already, but it was the skill's
+    // ten with the reading page's ten taken out, so on a multisyllabic
+    // lesson there was nothing left and it printed them again.
+    // Real-or-made-up took the first five off the reading page outright.
+    // And the 2nd and 3rd grade spelling tests read the same window of a
+    // ten-word ring, so they set the same test twice.
+    name: "stop the workbook repeating the reading page",
+    apply: (html) => {
+      const ten = "      wbTen: (() => {";
+      const close = "      })(),";
+      const at = html.indexOf(ten);
+      if (at === -1) return html;
+      const to = html.indexOf(close, at);
+      if (to === -1) return html;
+      let out = html.slice(0, at) + "      wbTen: easyFirst(RES.ten),\n" +
+        html.slice(to + close.length + 1);
+
+      const rmHead = "const rmWords = (() => { const R = ring(5, 10); const M = nonsense.slice(0, 5);";
+      if (!out.includes(rmHead)) return html;
+      out = out.replace(rmHead, "const rmWords = (() => { const R = RES.rm; const M = RES.rmFake;");
+      const rmTail = "return out.concat(real.slice(5)).slice(0, 10); })();";
+      if (!out.includes(rmTail)) return html;
+      out = out.replace(rmTail, "return out.concat(takeWords(10 - out.length)).slice(0, 10); })();");
+
+      const edits: [string, string][] = [
+        ["slots: ring(10, g === 'g2' ? 0 : 10).map((w, i) => ({ n: i + 1 }))",
+         "slots: spellTen(g).map((w, i) => ({ n: i + 1 }))"],
+        ["script: ring(10, g === 'g2' ? 0 : 10).map((w, i) => ({ n: i + 1, w,",
+         "script: spellTen(g).map((w, i) => ({ n: i + 1, w,"],
+        ["words: ring(10, g === 'g2' ? 0 : 10),", "words: spellTen(g),"],
+        ["const isReal = (w) => real.includes(w);",
+         "const isReal = (w) => realSet.has(String(w).toLowerCase());"],
+      ];
+      for (const [from, to] of edits) {
+        if (!out.includes(from)) return html;
+        out = out.replace(from, to);
+      }
+      // The dictation's made-up word stayed single-syllable with the switch
+      // on, so a three-syllable test ended on clid.
+      const dictOld = "ring(3, 16).concat(nonsense.slice(0, 1))";
+      if (!out.includes(dictOld)) return html;
+      return out.split(dictOld).join("ring(3, 16).concat(dictFake)");
     },
   },
   {

@@ -11,12 +11,21 @@
  *   bun run scripts/check-multisyllabic.mjs
  */
 import { readFileSync } from "node:fs";
-import { syllables, hits, placeOf, keysAndPatterns } from "./build-multisyllabic.mjs";
+import { syllables, hits, placeOf, keysAndPatterns, TRI } from "./build-multisyllabic.mjs";
 
 const BANK = JSON.parse(readFileSync("scripts/reading-multisyllabic.json", "utf8"));
+const HEART = new Set(
+  JSON.parse(readFileSync("scripts/reading-heart-words.json", "utf8")).words
+    .map((w) => w.word.toLowerCase()),
+);
 const DICT = new Set(
   readFileSync("/usr/share/dict/words", "utf8").split("\n").filter((w) => /^[a-z]+$/.test(w)),
 );
+/** Three-letter runs this site's own writing uses. A made-up word uses no other. */
+const readable = (w) => {
+  for (let i = 0; i + 3 <= w.length; i++) if (!TRI.has(w.slice(i, i + 3))) return false;
+  return true;
+};
 
 const problems = [];
 const fail = (key, msg) => { if (problems.length < 40) problems.push(`${key}: ${msg}`); };
@@ -24,6 +33,7 @@ const fail = (key, msg) => { if (problems.length < 40) problems.push(`${key}: ${
 const KEYS = keysAndPatterns();
 let real = 0;
 let fake = 0;
+let one = 0;
 
 for (const [key, list] of Object.entries(BANK.words)) {
   const patterns = KEYS.get(key);
@@ -45,6 +55,13 @@ for (const [key, list] of Object.entries(BANK.words)) {
     if (!carries(w)) fail(key, `"${w}" does not carry ${patterns.join("/")}`);
     if (!w.includes("'") && !DICT.has(w)) fail(key, `"${w}" is not a word in the dictionary`);
   }
+  for (const w of list.one || []) {
+    one++;
+    if (syllables(w) !== 1) fail(key, `"${w}" is in the single-syllable list with ${syllables(w)}`);
+    if (!carries(w)) fail(key, `"${w}" does not carry ${patterns.join("/")}`);
+    if (!DICT.has(w)) fail(key, `"${w}" is not a word in the dictionary`);
+    if (HEART.has(w)) fail(key, `"${w}" is a heart word, taught as an exception`);
+  }
   for (const w of list.fake) {
     fake++;
     if (syllables(w) < 2) fail(key, `made-up "${w}" is one syllable`);
@@ -53,12 +70,15 @@ for (const [key, list] of Object.entries(BANK.words)) {
     // answer key prints M beside a word the child reads correctly as real.
     if (DICT.has(w)) fail(key, `made-up "${w}" is a real English word`);
     if (list.real.includes(w)) fail(key, `made-up "${w}" is also in the real list`);
+    // A child must have to decode it to know. clazsroom and clitped can be
+    // thrown out on sight, so they test nothing.
+    if (!readable(w)) fail(key, `made-up "${w}" uses a letter run English never writes`);
   }
 }
 
 const lists = Object.keys(BANK.words).length;
 const thin = Object.entries(BANK.words).filter(([, l]) => l.real.length < 10).length;
-console.log(`${lists} lists, ${real} real and ${fake} made-up words, all multisyllabic and on pattern.`);
+console.log(`${lists} lists, ${real} multisyllabic, ${one} single-syllable and ${fake} made-up words, every one on its pattern.`);
 console.log(`${thin} lists hold fewer than ten real words — English has few two-syllable words on those patterns.`);
 console.log(`\nproblems: ${problems.length}`);
 if (problems.length) {

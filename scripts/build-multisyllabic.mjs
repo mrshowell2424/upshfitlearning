@@ -31,18 +31,29 @@ const read = (f) => JSON.parse(readFileSync(`scripts/${f}`, "utf8"));
 const SPLITS = read("reading-skill-splits.json");
 const SEQ = read("reading-sequence.json").sequence;
 const SPELL = read("reading-spelling.json").patterns;
+/**
+ * The words taught as exceptions, kept off every pattern list.
+ *
+ * one, are and have all have a vowel, a consonant and a silent e, and all
+ * three are on the silent-e page precisely because the rule does not hold
+ * for them. Ranking by how common a word is pulls them straight to the top
+ * of a single-syllable list, where they teach the opposite of the lesson.
+ */
+const HEART = new Set(read("reading-heart-words.json").words.map((w) => w.word.toLowerCase()));
 const PARTW = read("reading-part-words.json");
 
 /**
  * How many words each list aims for.
  *
  * Counted from what one lesson actually spends when every activity has its
- * own: ten words a day, ten on the reading page, eight for real-or-made-up,
- * ten for each of the two spelling tests, and a word apiece for the fifteen
- * chests. Forty is the point where the common patterns stop repeating; the
- * rarer ones cannot reach it and say so.
+ * own: ten on the reading page, ten more on the tracker, five for
+ * real-or-made-up, ten for each of the two spelling tests and a word apiece
+ * for the fifteen chests. That is sixty, and at forty the 3rd grade
+ * spelling test was already running onto words the 2nd grade test had
+ * taken. The rarer patterns cannot reach sixty and say so rather than
+ * padding.
  */
-const TARGET = 40;
+const TARGET = 60;
 
 /** How many made-up words each list aims for. */
 const FAKES = 8;
@@ -106,6 +117,22 @@ function corpus() {
     try { walk(JSON.parse(readFileSync(`scripts/${f}`, "utf8")), null); } catch { /* not JSON we can walk */ }
   }
   return { freq, grade };
+}
+
+/**
+ * Every three-letter run English actually writes.
+ *
+ * A made-up word has to be decodable or it is not testing decoding. Swapping
+ * one letter produced clazsroom and clitped -- zs and tp are runs no English
+ * word contains, so a child rejects them on sight without reading them,
+ * which is the failure this is here to prevent. Taking the runs off the
+ * dictionary rather than writing a list of banned pairs means the rule is
+ * whatever English does, not whatever anybody remembered.
+ */
+export function trigrams(words) {
+  const t = new Set();
+  for (const w of words) for (let i = 0; i + 3 <= w.length; i++) t.add(w.slice(i, i + 3));
+  return t;
 }
 
 /** Real English words, lowercase only, so proper nouns stay out. */
@@ -198,7 +225,9 @@ export function hits(q, w, place = "anywhere", key = "") {
       const known = (PARTW[key] || {}).real || [];
       const tails = known.filter((x) => new RegExp(
         a.replace(/_/g, "[bcdfghjklmnpqrstvwxz]") + "$", "i").test(x));
-      if (!tails.length) {
+      // A one-syllable word is the VCe word, so it has nothing to end in.
+      // The compound rule is for the longer ones built on top of it.
+      if (!tails.length || syllables(word) === 1) {
         return new RegExp("(?<![aeiou])" + a.replace(/_/g, "[bcdfghjklmnpqrstvwxz]") +
           SUFFIXED + "$", "i").test(word);
       }
@@ -247,6 +276,14 @@ export function keysAndPatterns() {
 
 const { freq: FREQ, grade: GRADE } = corpus();
 const DICT = dictionary();
+/**
+ * The runs are taken from the words this site uses, not from the whole
+ * dictionary. /usr/share/dict/words is wide enough that almost any run
+ * appears in something: itp passed on the strength of a word no child will
+ * ever meet, so clitped passed with it. The content's own vocabulary is the
+ * right standard, because it is the English these children read.
+ */
+export const TRI = trigrams([...FREQ.keys()].filter((w) => DICT.has(w)));
 const KEYS = keysAndPatterns();
 
 /** Words that are real, multisyllabic, and plain enough to put on a list. */
@@ -278,6 +315,10 @@ const POOL = [...FREQ.entries()]
  */
 const SWAP = { b: "d", c: "p", d: "g", f: "m", g: "b", k: "t", l: "r",
   m: "n", n: "m", p: "t", r: "l", s: "z", t: "p", v: "b", z: "s" };
+const readable = (w) => {
+  for (let i = 0; i + 3 <= w.length; i++) if (!TRI.has(w.slice(i, i + 3))) return false;
+  return true;
+};
 function fakes(words, carries) {
   const out = [];
   for (const w of words) {
@@ -294,6 +335,7 @@ function fakes(words, carries) {
       if (!carries(cand)) continue;
       if (DICT.has(cand) || FREQ.has(cand)) continue;
       if (out.includes(cand) || syllables(cand) !== syllables(w)) continue;
+      if (!readable(cand)) continue;
       out.push(cand);
       break;
     }
@@ -305,6 +347,22 @@ function fakes(words, carries) {
 // imports the rules above to test the committed file against them, and a
 // checker that rewrote the file it was checking would always pass.
 if (import.meta.main) {
+    /**
+   * The same mining, one syllable at a time.
+   *
+   * A lesson with the switch off spends just as many words as one with it
+   * on, and a young skill ships ten. So the 2nd and 3rd grade spelling
+   * tests both set cake, bike, home, cute — the same ten the child had just
+   * read, twice. These are the words that widen that.
+   */
+  const ONES = [...FREQ.entries()]
+    .filter(([w]) => w.length >= 3 && w.length <= 7 && !w.includes("'"))
+    .filter(([w]) => DICT.has(w))
+    .filter(([w]) => syllables(w) === 1)
+    .sort((a, b) =>
+      Math.min(9, GRADE.get(a[0]) ?? 99) - Math.min(9, GRADE.get(b[0]) ?? 99) ||
+      b[1] - a[1] || a[0].length - b[0].length || a[0].localeCompare(b[0]));
+
   const bank = {};
   const thin = [];
   const empty = [];
@@ -319,14 +377,25 @@ if (import.meta.main) {
     );
     const place = Object.fromEntries(patterns.map((q) => [q, placeOf(`${skill}|${q}`, q)]));
     const carries = (w) => patterns.some((q) => hits(q, w, place[q], `${skill}|${q}`));
-    const words = [];
-    for (const [w] of POOL) {
-      if (words.length >= TARGET) break;
-      if (!carries(w)) continue;
-      if (sibs.some((L) => hits(L, w, placeOf(`${skill}|${L}`, L), `${skill}|${L}`))) continue;
-      words.push(w);
-    }
-    bank[key] = { real: words, fake: fakes(words, carries) };
+  // An apostrophe word belongs only to a lesson about apostrophes. Allowing
+  // it everywhere put clinton's on a cl-blend list, and a possessive proper
+  // noun is not a blend word.
+  const apos = patterns.some((q) => q.includes("'"));
+    const offPattern = (w) =>
+      sibs.some((L) => hits(L, w, placeOf(`${skill}|${L}`, L), `${skill}|${L}`));
+    const pick = (from) => {
+      const got = [];
+      for (const [w] of from) {
+        if (got.length >= TARGET) break;
+        if (!carries(w) || offPattern(w)) continue;
+        if (!apos && w.includes("'")) continue;
+        if (HEART.has(w)) continue;
+        got.push(w);
+      }
+      return got;
+    };
+    const words = pick(POOL);
+    bank[key] = { real: words, one: pick(ONES), fake: fakes(words, carries) };
     if (words.length < TARGET) thin.push(`${key} (${words.length})`);
   }
 
@@ -340,7 +409,7 @@ if (import.meta.main) {
     }, null, 1) + "\n",
   );
 
-  console.log(`${Object.keys(bank).length} lists, ${Object.values(bank).reduce((n, b) => n + b.real.length, 0)} real and ${Object.values(bank).reduce((n, b) => n + b.fake.length, 0)} made-up words`);
+  console.log(`${Object.keys(bank).length} lists, ${Object.values(bank).reduce((n, b) => n + b.real.length, 0)} multisyllabic, ${Object.values(bank).reduce((n, b) => n + b.one.length, 0)} single-syllable and ${Object.values(bank).reduce((n, b) => n + b.fake.length, 0)} made-up words`);
   console.log(`pool: ${POOL.length} multisyllabic words, out of ${FREQ.size} in the content`);
   if (thin.length) console.log(`under ${TARGET}: ${thin.length}\n  ${thin.join("\n  ")}`);
   if (empty.length) console.log(`no pattern recorded, left out: ${empty.join(", ")}`);
