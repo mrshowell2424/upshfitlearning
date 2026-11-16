@@ -282,11 +282,18 @@ function Actions({ children }: { children: React.ReactNode }) {
  *
  * It used to be the fourth of four identical pills, so the one control a
  * teacher must not press while projecting looked exactly like the three they
- * press all day. It sits at the far end of the bar, set apart by colour.
+ * press all day. The grey outline is what sets it apart now.
+ *
+ * It used to be held at the far end of the bar by marginLeft:auto. An auto
+ * margin eats the free space on its flex line, which pushed it away from the
+ * three buttons it belongs with and dropped it onto a line of its own as
+ * soon as the bar got the least bit tight. Sitting it in the row with the
+ * others costs the right-hand position and keeps all four together, which is
+ * the thing worth having.
  */
 function Answers({ children }: { children: React.ReactNode }) {
   return (
-    <details style={{ marginLeft: "auto" }}>
+    <details>
       <summary
         style={{
           ...pill(false),
@@ -844,7 +851,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                     <CopyButton text={mysteryPrompt(myCase)} label="Copy mystery prompt" />
                     <Prompt text={mysteryPrompt(myCase)} />
                     <a href={`/science-of-reading/resources/print?tab=my&g=${myGrade}&c=${ci}`} style={pill(false)}>
-                      🖨 Printable workbook
+                      🖨 Workbook
                     </a>
                   <Answers>
                     <p style={{ fontSize: 17, fontWeight: 700, margin: 0, textWrap: "pretty" }}>
@@ -977,7 +984,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                       <CopyButton text={articlePrompt(art, ver)} label="Copy article prompt" />
                       <Prompt text={articlePrompt(art, ver)} />
                       <a href={href({}).replace("/resources?", "/resources/print?")} style={pill(false)}>
-                        🖨 Printable workbook
+                        🖨 Workbook
                       </a>
                     <Answers>
                       {art.questions
