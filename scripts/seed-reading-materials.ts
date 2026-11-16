@@ -3745,20 +3745,28 @@ const ADAPTATIONS: Adaptation[] = [
       if (!out.includes(note)) return html;
       out = out.replace(
         note,
-        note +
+        '<sc-if value="{{ passOn }}" hint-placeholder-val="{{ true }}">' + note + "</sc-if>" +
           '<sc-if value="{{ artOn }}" hint-placeholder-val="{{ false }}">' +
           '<select value="{{ artId }}" onChange="{{ artPick }}" aria-label="Article" ' +
           "style=\"font-family:'Poppins',sans-serif;font-size:11.5px;font-weight:700;padding:2px 4px;" +
           'border:1.5px solid #4B6049;border-radius:7px;background:#fff;color:#4B6049;max-width:260px">' +
           '<sc-for list="{{ artOpts }}" as="a" hint-placeholder-count="50">' +
-          '<option value="{{ a.id }}">{{ a.label }}</option></sc-for></select></sc-if>',
+          '<option value="{{ a.id }}">{{ a.label }}</option></sc-for></select>' +
+          '<span style="font-size:11px;font-weight:700;color:#618459;white-space:nowrap">' +
+          "{{ artNote }}</span></sc-if>",
       );
 
       const data = "      pgReadGrade: pgRead ||";
       if (!out.includes(data)) return html;
       return out.replace(
         data,
-        "      artOn: srcPick === 'art', artId,\n" +
+        "      artOn: srcPick === 'art', passOn: srcPick === 'pass', artId,\n" +
+        // The three-text note means nothing once the reading is an article: an
+        // article is written for one grade at two Lexiles, not as three texts.
+        // So the note follows the source, and sits after the picker it is
+        // describing rather than before it.
+        "      artNote: ARTX ? ((artGrade === 0 ? 'K' : 'grade ' + artGrade) +\n" +
+        "        ' \\u00b7 ' + (pgUp ? 'higher' : 'lower') + ' Lexile') : '',\n" +
           "      artOpts: artPool.map((a) => ({ id: a.i, label: a.t })),\n" +
           "      artPick: (e) => this.setState({ art: e.target.value }),\n" +
           "      srcOpts: [['pass', 'Passage'], ['dec', 'Decodable'], ['art', 'Article']]\n" +
