@@ -13,19 +13,49 @@
   ],
   "question": "What is the price per ounce of the better buy, in dollars?",
   "options": [
-   { "label": "0.27 an ounce, the large box", "value": "0.27" },
-   { "label": "0.30 an ounce, the small box", "value": "0.30" },
-   { "label": "0.225 an ounce", "value": "0.225" },
-   { "label": "1.80 an ounce", "value": "1.80" }
+   {
+    "label": "0.27 an ounce, the large box",
+    "value": "0.27"
+   },
+   {
+    "label": "0.30 an ounce, the small box",
+    "value": "0.30"
+   },
+   {
+    "label": "0.225 an ounce",
+    "value": "0.225"
+   },
+   {
+    "label": "1.80 an ounce",
+    "value": "1.80"
+   }
   ],
   "answer": 0,
   "chk": "5.40/20",
-  "decider": [0, 1],
-  "proof": [0, 1],
+  "decider": [
+   0,
+   1
+  ],
+  "proof": [
+   0,
+   1
+  ],
   "rules_out": [
-   { "option": 1, "because": 0, "why": "0.30 is the small box's rate, and it is the higher of the two." },
-   { "option": 2, "because": 1, "why": "0.225 is the price of the extra ounces only — 1.80 more for 8 more ounces — not the price per ounce of a box." },
-   { "option": 3, "because": 1, "why": "1.80 is how much more the large box costs altogether. It is a difference, not a rate." }
+   {
+    "option": 1,
+    "because": 0,
+    "why": "0.30 is the small box's rate, and it is the higher of the two."
+   },
+   {
+    "option": 2,
+    "because": 1,
+    "why": "0.225 is the price of the extra ounces only — 1.80 more for 8 more ounces — not the price per ounce of a box."
+   },
+   {
+    "option": 3,
+    "because": 1,
+    "why": "1.80 is how much more the large box costs altogether. It is a difference, not a rate."
+   }
   ],
   "explain": "A rate is price divided by amount. 3.60 over 12 ounces is 0.30 an ounce; 5.40 over 20 ounces is 0.27 an ounce. Lower is better, so the large box.",
   "debate": {
@@ -37,18 +67,468 @@
    ],
    "question": "Which box is the better buy for this family? Give the rate you are using.",
    "options": [
-    { "label": "0.27 an ounce, the large box", "value": "0.27" },
-    { "label": "0.3375 an ounce eaten, the large box", "value": "0.3375" },
-    { "label": "0.30 an ounce, the small box", "value": "0.30" }
+    {
+     "label": "0.27 an ounce, the large box",
+     "value": "0.27"
+    },
+    {
+     "label": "0.3375 an ounce eaten, the large box",
+     "value": "0.3375"
+    },
+    {
+     "label": "0.30 an ounce, the small box",
+     "value": "0.30"
+    }
    ],
    "opened_by": 2,
-   "open": [0, 1, 2],
+   "open": [
+    0,
+    1,
+    2
+   ],
    "arguments": [
-    { "option": 0, "evidence": [0, 1], "against": 2, "why": "Per ounce bought, the large box is cheaper: 5.40 over 20 is 0.27." },
-    { "option": 1, "evidence": [1, 2], "against": 0, "why": "Per ounce eaten, the large box is 5.40 over 16, which is 0.3375 — worse than the small box." },
-    { "option": 2, "evidence": [0, 2], "against": 1, "why": "If the waste is real, the small box at 0.30 an ounce with nothing thrown away is the better buy." }
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "Per ounce bought, the large box is cheaper: 5.40 over 20 is 0.27."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      2
+     ],
+     "against": 0,
+     "why": "Per ounce eaten, the large box is 5.40 over 16, which is 0.3375 — worse than the small box."
+    },
+    {
+     "option": 2,
+     "evidence": [
+      0,
+      2
+     ],
+     "against": 1,
+     "why": "If the waste is real, the small box at 0.30 an ounce with nothing thrown away is the better buy."
+    }
    ],
    "note": "Nobody is disputing the arithmetic; they are disputing the denominator. Ask each student what they divided by, and why that is the right amount to divide by."
+  }
+ },
+ {
+  "id": "g6-c2",
+  "grade": 6,
+  "code": "6.NS.1",
+  "tag": "🎀 bows",
+  "title": "The Case of the Ribbon That Comes Out Exact",
+  "given": [
+   "The ribbon is 3/4 of a metre long.",
+   "Each bow uses 1/8 of a metre.",
+   "No ribbon is wasted.",
+   "Only whole bows count."
+  ],
+  "question": "How many bows can be made?",
+  "options": [
+   {
+    "label": "6 bows",
+    "value": "6"
+   },
+   {
+    "label": "8 bows",
+    "value": "8"
+   },
+   {
+    "label": "3/32 of a bow",
+    "value": "3/32"
+   }
+  ],
+  "answer": 0,
+  "chk": "3/4/(1/8)",
+  "decider": [
+   1
+  ],
+  "proof": [
+   0,
+   1
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 0,
+    "why": "8 eighths make a whole metre, and there is only 3/4 of a metre of ribbon on the roll."
+   },
+   {
+    "option": 2,
+    "because": 1,
+    "why": "Multiplying the two fractions makes a smaller piece. Dividing is what asks how many of the small pieces fit inside the big one."
+   }
+  ],
+  "explain": "Dividing by a fraction asks how many of it fit. An eighth fits into a whole metre eight times, and into three quarters of a metre six times, so six bows.",
+  "debate": {
+   "given": [
+    "The ribbon is 3/4 of a metre, which is 75 centimetres.",
+    "Each bow uses 1/8 of a metre, which is 12.5 centimetres.",
+    "Every knot wastes about 1 centimetre of ribbon.",
+    "Only whole bows count."
+   ],
+   "question": "How many bows can actually be made? Defend the number.",
+   "options": [
+    {
+     "label": "6 bows",
+     "value": "6"
+    },
+    {
+     "label": "5 bows",
+     "value": "5"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "Three quarters divided by an eighth is exactly 6. The division is not in question and it comes out whole."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      2,
+      3
+     ],
+     "against": 0,
+     "why": "Six bows need all 75 centimetres with nothing spare, and six knots eat 6 more. There is not enough ribbon for the sixth."
+    }
+   ],
+   "note": "An answer that divides exactly is the one to be most careful with: it has used every millimetre and left no room for the thing the problem did not mention. Ask what would have to be true for 6 to work."
+  }
+ },
+ {
+  "id": "g6-c3",
+  "grade": 6,
+  "code": "6.EE.7",
+  "tag": "🎫 tickets",
+  "title": "The Case of the Ticket Price",
+  "given": [
+   "The school spent 210 dollars in total.",
+   "They bought 14 tickets.",
+   "Every ticket cost the same.",
+   "There was no delivery charge and no fee."
+  ],
+  "question": "What did one ticket cost, in dollars?",
+  "options": [
+   {
+    "label": "15 dollars",
+    "value": "15"
+   },
+   {
+    "label": "196 dollars",
+    "value": "196"
+   },
+   {
+    "label": "224 dollars",
+    "value": "224"
+   },
+   {
+    "label": "2940 dollars",
+    "value": "2940"
+   }
+  ],
+  "answer": 0,
+  "chk": "210/14",
+  "decider": [
+   2
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 1,
+    "why": "196 takes 14 away from 210. The 14 is a count of tickets, not an amount of money to subtract."
+   },
+   {
+    "option": 2,
+    "because": 1,
+    "why": "224 adds them, which would make one ticket cost more than the whole order."
+   },
+   {
+    "option": 3,
+    "because": 0,
+    "why": "2940 multiplies them. The total is already known; the job is to share it out."
+   }
+  ],
+  "explain": "Fourteen equal prices make 210, so one of them is 210 shared into 14 parts: 15 dollars. In symbols that is 14t = 210, and dividing both sides by 14 is the same move.",
+  "debate": {
+   "given": [
+    "The school paid 210 dollars in total.",
+    "They bought 14 tickets.",
+    "The order also included a 14-dollar booking fee.",
+    "Every ticket cost the same as every other."
+   ],
+   "question": "What did one ticket cost? Say what you divided.",
+   "options": [
+    {
+     "label": "15 dollars",
+     "value": "15"
+    },
+    {
+     "label": "14 dollars",
+     "value": "14"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "210 dollars left the school's account for 14 tickets, so each ticket cost the school 15 dollars all in."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      2,
+      3
+     ],
+     "against": 0,
+     "why": "The fee is not part of a ticket's price. Take it off first: 196 for 14 tickets is 14 dollars each."
+    }
+   ],
+   "note": "The equation is the same either way; what changes is whether the fee belongs inside it. Ask which number the school would put on a reimbursement form, and why."
+  }
+ },
+ {
+  "id": "g6-c4",
+  "grade": 6,
+  "code": "6.G.1",
+  "tag": "📐 triangle",
+  "title": "The Case of the Slanted Height",
+  "given": [
+   "The triangle has a base of 12 cm.",
+   "Its height is 5 cm.",
+   "The area of a triangle is the base times the height, divided by 2.",
+   "Both measurements are exact."
+  ],
+  "question": "What is the area, in square centimetres?",
+  "options": [
+   {
+    "label": "30 square cm",
+    "value": "30"
+   },
+   {
+    "label": "60 square cm",
+    "value": "60"
+   },
+   {
+    "label": "17 square cm",
+    "value": "17"
+   },
+   {
+    "label": "120 square cm",
+    "value": "120"
+   }
+  ],
+  "answer": 0,
+  "chk": "12*5/2",
+  "decider": [
+   2
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "60 is base times height and stops there. A triangle is half the rectangle that would box it in."
+   },
+   {
+    "option": 2,
+    "because": 2,
+    "why": "17 adds the base to the height. Area is a product, not a sum."
+   },
+   {
+    "option": 3,
+    "because": 2,
+    "why": "120 doubles instead of halving, which makes a shape four times the size of the triangle."
+   }
+  ],
+  "explain": "Any triangle is exactly half of the rectangle built on its base and height. 12 by 5 is 60, and the triangle is half of that: 30 square centimetres.",
+  "debate": {
+   "given": [
+    "The triangle has a base of 12 cm.",
+    "A side of it was measured as 5 cm.",
+    "Area is base times height, divided by 2.",
+    "The 5 cm was measured along a slanting side, not straight up from the base."
+   ],
+   "question": "What is the area? Say what you used as the height.",
+   "options": [
+    {
+     "label": "30 square cm",
+     "value": "30"
+    },
+    {
+     "label": "about 24 square cm",
+     "value": "24"
+    }
+   ],
+   "opened_by": 3,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "The numbers on the page are 12 and 5, and the formula takes a base and a height: 12 times 5 over 2 is 30."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      3
+     ],
+     "against": 1,
+     "why": "A slanting side is always longer than the straight-up height, so the real height is under 5 and the area is under 30 — nearer 24 if the height is 4."
+    }
+   ],
+   "note": "This is the single most common error in triangle area, and it is not an arithmetic error. The height has to be perpendicular to the base, and a number labelled 5 does not tell you whether it was."
+  }
+ },
+ {
+  "id": "g6-c5",
+  "grade": 6,
+  "code": "6.SP.5",
+  "tag": "📋 the quiz",
+  "title": "The Case of the One High Score",
+  "given": [
+   "5 students scored 4, 6, 7, 8 and 35 on the quiz.",
+   "The quiz was out of 40.",
+   "The mean is the total divided by how many there are.",
+   "The median is the middle score once they are in order."
+  ],
+  "question": "What is the mean score?",
+  "options": [
+   {
+    "label": "12",
+    "value": "12"
+   },
+   {
+    "label": "7",
+    "value": "7"
+   },
+   {
+    "label": "60",
+    "value": "60"
+   },
+   {
+    "label": "35",
+    "value": "35"
+   }
+  ],
+  "answer": 0,
+  "chk": "(4+6+7+8+35)/5",
+  "decider": [
+   2
+  ],
+  "proof": [
+   0,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 3,
+    "why": "7 is the median, the middle score. It is a fair summary but it is not the mean."
+   },
+   {
+    "option": 2,
+    "because": 2,
+    "why": "60 is the total of all five scores, before it is shared among the five students."
+   },
+   {
+    "option": 3,
+    "because": 0,
+    "why": "35 is the highest score one student got, not an average of the class."
+   }
+  ],
+  "explain": "Add the five scores to get 60, then share that total equally among the five students: 12 each. Notice that four of the five actually scored below it.",
+  "debate": {
+   "given": [
+    "5 students scored 4, 6, 7, 8 and 35 on the quiz.",
+    "The quiz was out of 40.",
+    "The mean is 12 and the median is 7.",
+    "The teacher has to report one number for how the class did."
+   ],
+   "question": "Which number should the teacher report? Defend it.",
+   "options": [
+    {
+     "label": "the mean, 12",
+     "value": "12"
+    },
+    {
+     "label": "the median, 7",
+     "value": "7"
+    }
+   ],
+   "opened_by": 3,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      2
+     ],
+     "against": 0,
+     "why": "The mean uses every score, including the 35. Throwing away a real result because it is inconvenient is how reporting goes wrong."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      2,
+      3
+     ],
+     "against": 2,
+     "why": "Four of the five students scored 8 or less. A number that sits above almost everyone describes nobody in the room."
+    }
+   ],
+   "note": "Both numbers are correctly calculated and they tell different stories about the same five children. The useful habit is reporting both and saying what the gap between them means."
   }
  }
 ]

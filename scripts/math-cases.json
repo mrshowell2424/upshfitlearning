@@ -3141,6 +3141,419 @@
    }
   },
   {
+   "id": "g6-c2",
+   "grade": 6,
+   "code": "6.NS.1",
+   "tag": "🎀 bows",
+   "title": "The Case of the Ribbon That Comes Out Exact",
+   "given": [
+    "The ribbon is 3/4 of a metre long.",
+    "Each bow uses 1/8 of a metre.",
+    "No ribbon is wasted.",
+    "Only whole bows count."
+   ],
+   "question": "How many bows can be made?",
+   "options": [
+    {
+     "label": "6 bows",
+     "value": "6"
+    },
+    {
+     "label": "8 bows",
+     "value": "8"
+    },
+    {
+     "label": "3/32 of a bow",
+     "value": "3/32"
+    }
+   ],
+   "answer": 0,
+   "chk": "3/4/(1/8)",
+   "decider": [
+    1
+   ],
+   "proof": [
+    0,
+    1
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 0,
+     "why": "8 eighths make a whole metre, and there is only 3/4 of a metre of ribbon on the roll."
+    },
+    {
+     "option": 2,
+     "because": 1,
+     "why": "Multiplying the two fractions makes a smaller piece. Dividing is what asks how many of the small pieces fit inside the big one."
+    }
+   ],
+   "explain": "Dividing by a fraction asks how many of it fit. An eighth fits into a whole metre eight times, and into three quarters of a metre six times, so six bows.",
+   "debate": {
+    "given": [
+     "The ribbon is 3/4 of a metre, which is 75 centimetres.",
+     "Each bow uses 1/8 of a metre, which is 12.5 centimetres.",
+     "Every knot wastes about 1 centimetre of ribbon.",
+     "Only whole bows count."
+    ],
+    "question": "How many bows can actually be made? Defend the number.",
+    "options": [
+     {
+      "label": "6 bows",
+      "value": "6"
+     },
+     {
+      "label": "5 bows",
+      "value": "5"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 2,
+      "why": "Three quarters divided by an eighth is exactly 6. The division is not in question and it comes out whole."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       1,
+       2,
+       3
+      ],
+      "against": 0,
+      "why": "Six bows need all 75 centimetres with nothing spare, and six knots eat 6 more. There is not enough ribbon for the sixth."
+     }
+    ],
+    "note": "An answer that divides exactly is the one to be most careful with: it has used every millimetre and left no room for the thing the problem did not mention. Ask what would have to be true for 6 to work."
+   }
+  },
+  {
+   "id": "g6-c3",
+   "grade": 6,
+   "code": "6.EE.7",
+   "tag": "🎫 tickets",
+   "title": "The Case of the Ticket Price",
+   "given": [
+    "The school spent 210 dollars in total.",
+    "They bought 14 tickets.",
+    "Every ticket cost the same.",
+    "There was no delivery charge and no fee."
+   ],
+   "question": "What did one ticket cost, in dollars?",
+   "options": [
+    {
+     "label": "15 dollars",
+     "value": "15"
+    },
+    {
+     "label": "196 dollars",
+     "value": "196"
+    },
+    {
+     "label": "224 dollars",
+     "value": "224"
+    },
+    {
+     "label": "2940 dollars",
+     "value": "2940"
+    }
+   ],
+   "answer": 0,
+   "chk": "210/14",
+   "decider": [
+    2
+   ],
+   "proof": [
+    0,
+    1,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 1,
+     "why": "196 takes 14 away from 210. The 14 is a count of tickets, not an amount of money to subtract."
+    },
+    {
+     "option": 2,
+     "because": 1,
+     "why": "224 adds them, which would make one ticket cost more than the whole order."
+    },
+    {
+     "option": 3,
+     "because": 0,
+     "why": "2940 multiplies them. The total is already known; the job is to share it out."
+    }
+   ],
+   "explain": "Fourteen equal prices make 210, so one of them is 210 shared into 14 parts: 15 dollars. In symbols that is 14t = 210, and dividing both sides by 14 is the same move.",
+   "debate": {
+    "given": [
+     "The school paid 210 dollars in total.",
+     "They bought 14 tickets.",
+     "The order also included a 14-dollar booking fee.",
+     "Every ticket cost the same as every other."
+    ],
+    "question": "What did one ticket cost? Say what you divided.",
+    "options": [
+     {
+      "label": "15 dollars",
+      "value": "15"
+     },
+     {
+      "label": "14 dollars",
+      "value": "14"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 2,
+      "why": "210 dollars left the school's account for 14 tickets, so each ticket cost the school 15 dollars all in."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       1,
+       2,
+       3
+      ],
+      "against": 0,
+      "why": "The fee is not part of a ticket's price. Take it off first: 196 for 14 tickets is 14 dollars each."
+     }
+    ],
+    "note": "The equation is the same either way; what changes is whether the fee belongs inside it. Ask which number the school would put on a reimbursement form, and why."
+   }
+  },
+  {
+   "id": "g6-c4",
+   "grade": 6,
+   "code": "6.G.1",
+   "tag": "📐 triangle",
+   "title": "The Case of the Slanted Height",
+   "given": [
+    "The triangle has a base of 12 cm.",
+    "Its height is 5 cm.",
+    "The area of a triangle is the base times the height, divided by 2.",
+    "Both measurements are exact."
+   ],
+   "question": "What is the area, in square centimetres?",
+   "options": [
+    {
+     "label": "30 square cm",
+     "value": "30"
+    },
+    {
+     "label": "60 square cm",
+     "value": "60"
+    },
+    {
+     "label": "17 square cm",
+     "value": "17"
+    },
+    {
+     "label": "120 square cm",
+     "value": "120"
+    }
+   ],
+   "answer": 0,
+   "chk": "12*5/2",
+   "decider": [
+    2
+   ],
+   "proof": [
+    0,
+    1,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 2,
+     "why": "60 is base times height and stops there. A triangle is half the rectangle that would box it in."
+    },
+    {
+     "option": 2,
+     "because": 2,
+     "why": "17 adds the base to the height. Area is a product, not a sum."
+    },
+    {
+     "option": 3,
+     "because": 2,
+     "why": "120 doubles instead of halving, which makes a shape four times the size of the triangle."
+    }
+   ],
+   "explain": "Any triangle is exactly half of the rectangle built on its base and height. 12 by 5 is 60, and the triangle is half of that: 30 square centimetres.",
+   "debate": {
+    "given": [
+     "The triangle has a base of 12 cm.",
+     "A side of it was measured as 5 cm.",
+     "Area is base times height, divided by 2.",
+     "The 5 cm was measured along a slanting side, not straight up from the base."
+    ],
+    "question": "What is the area? Say what you used as the height.",
+    "options": [
+     {
+      "label": "30 square cm",
+      "value": "30"
+     },
+     {
+      "label": "about 24 square cm",
+      "value": "24"
+     }
+    ],
+    "opened_by": 3,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1,
+       2
+      ],
+      "against": 3,
+      "why": "The numbers on the page are 12 and 5, and the formula takes a base and a height: 12 times 5 over 2 is 30."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       0,
+       3
+      ],
+      "against": 1,
+      "why": "A slanting side is always longer than the straight-up height, so the real height is under 5 and the area is under 30 — nearer 24 if the height is 4."
+     }
+    ],
+    "note": "This is the single most common error in triangle area, and it is not an arithmetic error. The height has to be perpendicular to the base, and a number labelled 5 does not tell you whether it was."
+   }
+  },
+  {
+   "id": "g6-c5",
+   "grade": 6,
+   "code": "6.SP.5",
+   "tag": "📋 the quiz",
+   "title": "The Case of the One High Score",
+   "given": [
+    "5 students scored 4, 6, 7, 8 and 35 on the quiz.",
+    "The quiz was out of 40.",
+    "The mean is the total divided by how many there are.",
+    "The median is the middle score once they are in order."
+   ],
+   "question": "What is the mean score?",
+   "options": [
+    {
+     "label": "12",
+     "value": "12"
+    },
+    {
+     "label": "7",
+     "value": "7"
+    },
+    {
+     "label": "60",
+     "value": "60"
+    },
+    {
+     "label": "35",
+     "value": "35"
+    }
+   ],
+   "answer": 0,
+   "chk": "(4+6+7+8+35)/5",
+   "decider": [
+    2
+   ],
+   "proof": [
+    0,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 3,
+     "why": "7 is the median, the middle score. It is a fair summary but it is not the mean."
+    },
+    {
+     "option": 2,
+     "because": 2,
+     "why": "60 is the total of all five scores, before it is shared among the five students."
+    },
+    {
+     "option": 3,
+     "because": 0,
+     "why": "35 is the highest score one student got, not an average of the class."
+    }
+   ],
+   "explain": "Add the five scores to get 60, then share that total equally among the five students: 12 each. Notice that four of the five actually scored below it.",
+   "debate": {
+    "given": [
+     "5 students scored 4, 6, 7, 8 and 35 on the quiz.",
+     "The quiz was out of 40.",
+     "The mean is 12 and the median is 7.",
+     "The teacher has to report one number for how the class did."
+    ],
+    "question": "Which number should the teacher report? Defend it.",
+    "options": [
+     {
+      "label": "the mean, 12",
+      "value": "12"
+     },
+     {
+      "label": "the median, 7",
+      "value": "7"
+     }
+    ],
+    "opened_by": 3,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       2
+      ],
+      "against": 0,
+      "why": "The mean uses every score, including the 35. Throwing away a real result because it is inconvenient is how reporting goes wrong."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       0,
+       2,
+       3
+      ],
+      "against": 2,
+      "why": "Four of the five students scored 8 or less. A number that sits above almost everyone describes nobody in the room."
+     }
+    ],
+    "note": "Both numbers are correctly calculated and they tell different stories about the same five children. The useful habit is reporting both and saying what the gap between them means."
+   }
+  },
+  {
    "id": "g7-c1",
    "grade": 7,
    "code": "7.RP.3",
@@ -3265,6 +3678,426 @@
    }
   },
   {
+   "id": "g7-c2",
+   "grade": 7,
+   "code": "7.NS.1",
+   "tag": "🌡️ temperature",
+   "title": "The Case of the Thermometer in the Sun",
+   "given": [
+    "The temperature at dawn was -6 degrees.",
+    "It rose 14 degrees by noon.",
+    "It fell 9 degrees again by midnight.",
+    "Nothing else changed it."
+   ],
+   "question": "What was the temperature at midnight, in degrees?",
+   "options": [
+    {
+     "label": "-1 degrees",
+     "value": "-1"
+    },
+    {
+     "label": "8 degrees",
+     "value": "8"
+    },
+    {
+     "label": "11 degrees",
+     "value": "11"
+    },
+    {
+     "label": "-29 degrees",
+     "value": "-29"
+    }
+   ],
+   "answer": 0,
+   "chk": "-6+14-9",
+   "decider": [
+    2
+   ],
+   "proof": [
+    0,
+    1,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 2,
+     "why": "8 degrees is noon, before the temperature fell again in the evening."
+    },
+    {
+     "option": 2,
+     "because": 0,
+     "why": "11 comes from starting at 6 instead of -6. Dawn was below zero, and that minus sign changes every step after it."
+    },
+    {
+     "option": 3,
+     "because": 1,
+     "why": "-29 takes the 14 away as well. The temperature rose by 14, so it is added."
+    }
+   ],
+   "explain": "Walk it along a number line: start at -6, go up 14 to reach 8, then down 9 to land on -1. Rising is adding and falling is subtracting, whatever side of zero you are on.",
+   "debate": {
+    "given": [
+     "The dawn reading was -6 degrees.",
+     "It rose 14 degrees by noon.",
+     "It fell 9 degrees again by midnight.",
+     "The thermometer reads 2 degrees too warm in sunlight, and the dawn reading was taken in the sun."
+    ],
+    "question": "What was the temperature at midnight? Defend it.",
+    "options": [
+     {
+      "label": "-1 degrees",
+      "value": "-1"
+     },
+     {
+      "label": "-3 degrees",
+      "value": "-3"
+     }
+    ],
+    "opened_by": 3,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1,
+       2
+      ],
+      "against": 3,
+      "why": "The three readings are the data we have, and working them through gives -1. Correcting a reading means guessing at a number nobody took."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       0,
+       3
+      ],
+      "against": 0,
+      "why": "Dawn was really -8, not -6, because the sun was on the thermometer. Every step after it shifts by the same 2 degrees, so midnight is -3."
+     }
+    ],
+    "note": "A known, consistent instrument error is the one kind of correction you can make with confidence, and it moves every later number by the same amount. Ask what would change if the error were only sometimes there."
+   }
+  },
+  {
+   "id": "g7-c3",
+   "grade": 7,
+   "code": "7.EE.4",
+   "tag": "🚕 taxi",
+   "title": "The Case of the Fare With Something Extra In It",
+   "given": [
+    "The taxi charges a flat fee of 3 dollars.",
+    "It then charges 2 dollars for every mile.",
+    "The ride came to 23 dollars.",
+    "There were no other charges at all."
+   ],
+   "question": "How many miles was the ride?",
+   "options": [
+    {
+     "label": "10 miles",
+     "value": "10"
+    },
+    {
+     "label": "11.5 miles",
+     "value": "11.5"
+    },
+    {
+     "label": "13 miles",
+     "value": "13"
+    },
+    {
+     "label": "20 miles",
+     "value": "20"
+    }
+   ],
+   "answer": 0,
+   "chk": "(23-3)/2",
+   "decider": [
+    0
+   ],
+   "proof": [
+    0,
+    1,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 0,
+     "why": "11.5 divides the whole fare by 2 and forgets the flat fee, which bought no distance at all."
+    },
+    {
+     "option": 2,
+     "because": 0,
+     "why": "13 adds the fee instead of taking it off. The fee is part of the 23 already."
+    },
+    {
+     "option": 3,
+     "because": 1,
+     "why": "20 is the number of dollars spent on mileage, not the number of miles those dollars bought."
+    }
+   ],
+   "explain": "Take the flat fee out of the total first, because it bought no distance: 23 minus 3 is 20 dollars of mileage. At 2 dollars a mile that is 10 miles. In symbols, 3 + 2m = 23.",
+   "debate": {
+    "given": [
+     "The taxi charges 3 dollars flat and 2 dollars a mile.",
+     "The payment came to 23 dollars in total.",
+     "The passenger added a 3-dollar tip, which is inside that 23.",
+     "There were no other charges."
+    ],
+    "question": "How many miles was the ride? Say what you took off first.",
+    "options": [
+     {
+      "label": "10 miles",
+      "value": "10"
+     },
+     {
+      "label": "8.5 miles",
+      "value": "8.5"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 2,
+      "why": "Twenty-three dollars changed hands against a fare of 3 plus 2 a mile, and solving that gives 10 miles."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       0,
+       2
+      ],
+      "against": 1,
+      "why": "A tip is not a fare. Take off the 3-dollar fee and the 3-dollar tip, leaving 17 dollars of mileage: 8.5 miles."
+     }
+    ],
+    "note": "The equation is only as good as what you agreed to put in it. Ask which dollars the taxi company charged and which the passenger chose to add."
+   }
+  },
+  {
+   "id": "g7-c4",
+   "grade": 7,
+   "code": "7.G.6",
+   "tag": "🎁 wrapping",
+   "title": "The Case of the Face Nobody Sees",
+   "given": [
+    "The box is a cube.",
+    "Each edge is 5 inches long.",
+    "A cube has 6 square faces.",
+    "All of the faces are the same size."
+   ],
+   "question": "What is the surface area, in square inches?",
+   "options": [
+    {
+     "label": "150 square inches",
+     "value": "150"
+    },
+    {
+     "label": "125 square inches",
+     "value": "125"
+    },
+    {
+     "label": "30 square inches",
+     "value": "30"
+    },
+    {
+     "label": "25 square inches",
+     "value": "25"
+    }
+   ],
+   "answer": 0,
+   "chk": "6*5*5",
+   "decider": [
+    2
+   ],
+   "proof": [
+    1,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 2,
+     "why": "125 is 5 cubed, which is the space inside the box. Surface area is the skin, not the filling."
+    },
+    {
+     "option": 2,
+     "because": 1,
+     "why": "30 is 6 times 5, which counts one edge per face rather than one square face per face."
+    },
+    {
+     "option": 3,
+     "because": 2,
+     "why": "25 is a single face. There are six of them."
+    }
+   ],
+   "explain": "Each face is a 5 by 5 square, so each is 25 square inches, and a cube has six of them: 150 square inches. Volume would be the inside; this is the wrapping paper.",
+   "debate": {
+    "given": [
+     "The box is a cube with 5-inch edges.",
+     "A cube has 6 square faces, each 25 square inches.",
+     "The bottom face sits flat on a shelf and is never seen.",
+     "The paper is being bought to make the box look good on display."
+    ],
+    "question": "How many square inches of paper should they buy?",
+    "options": [
+     {
+      "label": "150 square inches",
+      "value": "150"
+     },
+     {
+      "label": "125 square inches",
+      "value": "125"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 2,
+      "why": "The surface area of the box is 150 square inches, and wrapping it means covering the box, not covering the parts of it you happen to look at."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       1,
+       2,
+       3
+      ],
+      "against": 0,
+      "why": "The paper is for display and the bottom is never seen, so five faces at 25 each is 125 — and the sixth face is paper in the bin."
+     }
+    ],
+    "note": "Surface area has one value and the amount to buy depends on the job. Both children should be able to state the surface area and then say what they are leaving off and why."
+   }
+  },
+  {
+   "id": "g7-c5",
+   "grade": 7,
+   "code": "7.SP.5",
+   "tag": "🎲 the bag",
+   "title": "The Case of the Counter Nobody Remembers Replacing",
+   "given": [
+    "The bag holds 3 red counters and 5 blue counters.",
+    "There is nothing else in the bag.",
+    "One counter is taken out without looking.",
+    "Every counter is equally likely to be picked."
+   ],
+   "question": "What is the probability it is red?",
+   "options": [
+    {
+     "label": "3/8",
+     "value": "3/8"
+    },
+    {
+     "label": "3/5",
+     "value": "3/5"
+    },
+    {
+     "label": "5/8",
+     "value": "5/8"
+    },
+    {
+     "label": "1/3",
+     "value": "1/3"
+    }
+   ],
+   "answer": 0,
+   "chk": "3/(3+5)",
+   "decider": [
+    0
+   ],
+   "proof": [
+    0,
+    3
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 0,
+     "why": "3/5 compares the reds to the blues. A probability compares the reds to every counter in the bag."
+    },
+    {
+     "option": 2,
+     "because": 0,
+     "why": "5/8 is the chance of drawing blue, which is the other outcome."
+    },
+    {
+     "option": 3,
+     "because": 0,
+     "why": "1/3 would be right if there were three equally likely colours. There are 8 counters in two colours."
+    }
+   ],
+   "explain": "A probability is the outcomes you want over all the outcomes there are. Three counters are red out of 8 in the bag, so 3/8.",
+   "debate": {
+    "given": [
+     "The bag held 3 red counters and 5 blue counters.",
+     "One counter was taken out and it was red.",
+     "Nobody can remember whether it was put back.",
+     "A second counter is about to be taken."
+    ],
+    "question": "What is the probability the second counter is red? Defend it.",
+    "options": [
+     {
+      "label": "2/7",
+      "value": "2/7"
+     },
+     {
+      "label": "3/8",
+      "value": "3/8"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       1,
+       3
+      ],
+      "against": 2,
+      "why": "If the red counter stayed out, 2 reds remain among 7 counters, so the chance has dropped to 2/7."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       0,
+       2
+      ],
+      "against": 1,
+      "why": "If it went back, the bag is exactly as it started and the second draw is the same 3/8 as the first."
+     }
+    ],
+    "note": "Whether a draw is replaced is not a detail, it is the whole model, and the problem has deliberately not said. The answer is that we cannot tell, and the useful work is saying what each assumption gives."
+   }
+  },
+  {
    "id": "g8-c1",
    "grade": 8,
    "code": "8.EE.8",
@@ -3382,6 +4215,321 @@
      }
     ],
     "note": "The algebra is settled: the plans cross at 150 minutes. What is not settled is which month predicts next month, and that is a modelling choice rather than an arithmetic mistake."
+   }
+  },
+  {
+   "id": "g8-c2",
+   "grade": 8,
+   "code": "8.NS.2",
+   "tag": "√ roots",
+   "title": "The Case of the Square That Is Not Quite Six",
+   "given": [
+    "The square has an area of 40 square cm.",
+    "The side length is the number that multiplies by itself to give the area.",
+    "6 times 6 is 36.",
+    "7 times 7 is 49."
+   ],
+   "question": "Which whole number does the side length sit just above?",
+   "options": [
+    {
+     "label": "6",
+     "value": "6"
+    },
+    {
+     "label": "7",
+     "value": "7"
+    },
+    {
+     "label": "20",
+     "value": "20"
+    },
+    {
+     "label": "40",
+     "value": "40"
+    }
+   ],
+   "answer": 0,
+   "chk": "6",
+   "decider": [
+    2
+   ],
+   "proof": [
+    0,
+    2,
+    3
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 3,
+     "why": "7 squared is 49, which is bigger than 40, so 7 is the number the side sits below rather than above."
+    },
+    {
+     "option": 2,
+     "because": 0,
+     "why": "20 is half of 40. Halving and square rooting are different operations and only agree at 0 and 2."
+    },
+    {
+     "option": 3,
+     "because": 0,
+     "why": "40 is the area. The side is the number whose square is 40, not 40 itself."
+    }
+   ],
+   "explain": "40 sits between 36 and 49, so its square root sits between 6 and 7 — closer to 6, because 40 is closer to 36. That is how you pin down an irrational number without a calculator.",
+   "debate": {
+    "given": [
+     "The square has an area of 40 square cm.",
+     "6 squared is 36 and 7 squared is 49.",
+     "6.3 squared is 39.69 and 6.4 squared is 40.96.",
+     "The square is being cut from cloth and must not come out too small."
+    ],
+    "question": "What side length should be used, to one decimal place?",
+    "options": [
+     {
+      "label": "6.3 cm",
+      "value": "6.3"
+     },
+     {
+      "label": "6.4 cm",
+      "value": "6.4"
+     }
+    ],
+    "opened_by": 3,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       1,
+       2
+      ],
+      "against": 3,
+      "why": "39.69 is only 0.31 away from 40 and 40.96 is 0.96 away, so 6.3 is the better approximation of the root."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       2,
+       3
+      ],
+      "against": 0,
+      "why": "Cut at 6.3 and the cloth is too small and cannot be made bigger. When an error only hurts in one direction, round the safe way."
+     }
+    ],
+    "note": "Nearest is the right answer to the arithmetic question and the wrong answer to the cutting question. Ask what happens if you are wrong in each direction — that decides how to round far more often than nearest does."
+   }
+  },
+  {
+   "id": "g8-c3",
+   "grade": 8,
+   "code": "8.F.4",
+   "tag": "🕯️ candle",
+   "title": "The Case of the Candle That Started Slowly",
+   "given": [
+    "The candle was 20 cm tall when it was lit.",
+    "After 3 hours it was 14 cm tall.",
+    "It burns at a steady rate.",
+    "It carries on burning at that same rate."
+   ],
+   "question": "How many centimetres does it burn each hour?",
+   "options": [
+    {
+     "label": "2 cm an hour",
+     "value": "2"
+    },
+    {
+     "label": "6 cm an hour",
+     "value": "6"
+    },
+    {
+     "label": "3 cm an hour",
+     "value": "3"
+    },
+    {
+     "label": "14 cm an hour",
+     "value": "14"
+    }
+   ],
+   "answer": 0,
+   "chk": "(20-14)/3",
+   "decider": [
+    1
+   ],
+   "proof": [
+    0,
+    1,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 1,
+     "why": "6 cm is the whole drop across three hours. A rate is the drop in one of them."
+    },
+    {
+     "option": 2,
+     "because": 1,
+     "why": "3 is the number of hours, not a number of centimetres."
+    },
+    {
+     "option": 3,
+     "because": 1,
+     "why": "14 cm is how tall the candle still is, not how much of it has gone."
+    }
+   ],
+   "explain": "A rate of change is the change divided by the time it took: 6 cm over 3 hours is 2 cm an hour. That 2 is the slope of the line, and the 20 it started at is the intercept.",
+   "debate": {
+    "given": [
+     "The candle was 20 cm when lit and 14 cm after 3 hours.",
+     "It burns at a steady rate once it is properly going.",
+     "The first 20 minutes went on getting the wick established, with almost no wax burnt.",
+     "It carries on at the rate it reached."
+    ],
+    "question": "How fast is it burning now? Say what you divided by.",
+    "options": [
+     {
+      "label": "2 cm an hour",
+      "value": "2"
+     },
+     {
+      "label": "2.25 cm an hour",
+      "value": "2.25"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 2,
+      "why": "Six centimetres went in three hours, and a steady rate is the total change over the total time: 2 cm an hour."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       0,
+       2,
+       3
+      ],
+      "against": 1,
+      "why": "Almost nothing burnt in the first 20 minutes, so 6 cm went in 2 hours 40, which is 2.25 cm an hour from here on."
+     }
+    ],
+    "note": "A straight line through two points is an average, and an average over a period that includes a slow start understates what is happening now. Ask which of the two numbers predicts the next hour better."
+   }
+  },
+  {
+   "id": "g8-c4",
+   "grade": 8,
+   "code": "8.G.7",
+   "tag": "🪜 ladder",
+   "title": "The Case of the Ladder and the Window",
+   "given": [
+    "The ladder is 10 feet long.",
+    "Its foot stands 6 feet out from the wall.",
+    "The wall meets the ground at a right angle, and 10 squared minus 6 squared is 64.",
+    "8 times 8 is 64."
+   ],
+   "question": "How high up the wall does the ladder reach, in feet?",
+   "options": [
+    {
+     "label": "8 feet",
+     "value": "8"
+    },
+    {
+     "label": "64 feet",
+     "value": "64"
+    },
+    {
+     "label": "4 feet",
+     "value": "4"
+    },
+    {
+     "label": "16 feet",
+     "value": "16"
+    }
+   ],
+   "answer": 0,
+   "chk": "8",
+   "decider": [
+    2
+   ],
+   "proof": [
+    2,
+    3
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 3,
+     "why": "64 is the square of the height. The height is the number that multiplies by itself to make 64, which is 8."
+    },
+    {
+     "option": 2,
+     "because": 2,
+     "why": "4 is 10 take away 6. The three sides of a right triangle do not add and subtract like that, which is the whole reason Pythagoras is needed."
+    },
+    {
+     "option": 3,
+     "because": 3,
+     "why": "16 would square to 256. The square of the height is 64."
+    }
+   ],
+   "explain": "The ladder is the longest side, so its square equals the other two squares added: 100 is 36 plus the height squared, leaving 64, and the height is 8 feet. Notice 10 minus 6 would have given 4, and it is not 4.",
+   "debate": {
+    "given": [
+     "The ladder is 10 feet long and its foot is 6 feet out, so it reaches 8 feet up.",
+     "The window sill is 8 feet up the wall.",
+     "The safety rule is that a ladder's foot should stand one quarter of its length out from the wall.",
+     "A ladder that is too upright can tip backwards."
+    ],
+    "question": "How many feet from the wall should the foot be? Defend it.",
+    "options": [
+     {
+      "label": "6 feet out",
+      "value": "6"
+     },
+     {
+      "label": "2.5 feet out",
+      "value": "2.5"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 2,
+      "why": "At 6 feet out the top lands exactly on the sill at 8 feet, which is what the job needs."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       2,
+       3
+      ],
+      "against": 0,
+      "why": "A quarter of 10 feet is 2.5 feet, which is what the safety rule asks for. It still reaches well above the sill."
+     }
+    ],
+    "note": "The geometry is settled and the question is which constraint governs: hitting the sill exactly, or standing the ladder safely. Work out how high it reaches at 2.5 feet before deciding."
    }
   },
   {

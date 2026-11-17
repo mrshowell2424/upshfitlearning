@@ -13,20 +13,53 @@
   ],
   "question": "What does the jacket cost at the till, in dollars?",
   "options": [
-   { "label": "50 dollars", "value": "50" },
-   { "label": "52.50", "value": "52.50" },
-   { "label": "60 dollars", "value": "60" },
-   { "label": "45 dollars", "value": "45" }
+   {
+    "label": "50 dollars",
+    "value": "50"
+   },
+   {
+    "label": "52.50",
+    "value": "52.50"
+   },
+   {
+    "label": "60 dollars",
+    "value": "60"
+   },
+   {
+    "label": "45 dollars",
+    "value": "45"
+   }
   ],
   "answer": 0,
   "chk": "80-(80*25/100)-10",
-  "uses": ["100"],
-  "decider": [3],
-  "proof": [0, 1, 2, 3],
+  "uses": [
+   "100"
+  ],
+  "decider": [
+   3
+  ],
+  "proof": [
+   0,
+   1,
+   2,
+   3
+  ],
   "rules_out": [
-   { "option": 1, "because": 3, "why": "52.50 is the coupon taken off first and the 25 percent off what was left. The store does it the other way round." },
-   { "option": 2, "because": 2, "why": "60 is the sale price before the coupon is handed over." },
-   { "option": 3, "because": 1, "why": "45 treats 25 percent as 25 dollars. A percentage is of something, and 25 percent of 80 is 20." }
+   {
+    "option": 1,
+    "because": 3,
+    "why": "52.50 is the coupon taken off first and the 25 percent off what was left. The store does it the other way round."
+   },
+   {
+    "option": 2,
+    "because": 2,
+    "why": "60 is the sale price before the coupon is handed over."
+   },
+   {
+    "option": 3,
+    "because": 1,
+    "why": "45 treats 25 percent as 25 dollars. A percentage is of something, and 25 percent of 80 is 20."
+   }
   ],
   "explain": "25 percent of 80 is 20, so the sale price is 60. The coupon is a flat 10 off that, giving 50. Order matters here: coupon first would have given 52.50.",
   "debate": {
@@ -38,18 +71,476 @@
    ],
    "question": "What should the customer pay? Defend it.",
    "options": [
-    { "label": "50 dollars", "value": "50" },
-    { "label": "60 dollars", "value": "60" },
-    { "label": "70 dollars", "value": "70" }
+    {
+     "label": "50 dollars",
+     "value": "50"
+    },
+    {
+     "label": "60 dollars",
+     "value": "60"
+    },
+    {
+     "label": "70 dollars",
+     "value": "70"
+    }
    ],
    "opened_by": 3,
-   "open": [0, 1, 2],
+   "open": [
+    0,
+    1,
+    2
+   ],
    "arguments": [
-    { "option": 0, "evidence": [0, 1, 2], "against": 3, "why": "Nothing in the arithmetic stops both: 60, then 10 off, is 50. 'Other offers' may well mean other coupons rather than the store's own sale." },
-    { "option": 1, "evidence": [1, 3], "against": 2, "why": "The coupon cannot be combined, so the customer takes whichever is better. 25 percent off is 60, and that beats the coupon." },
-    { "option": 2, "evidence": [2, 3], "against": 1, "why": "If the customer hands over the coupon, that is the offer they chose: 80 minus 10 is 70. It is the worse deal, but it is what the rule allows." }
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "Nothing in the arithmetic stops both: 60, then 10 off, is 50. 'Other offers' may well mean other coupons rather than the store's own sale."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      3
+     ],
+     "against": 2,
+     "why": "The coupon cannot be combined, so the customer takes whichever is better. 25 percent off is 60, and that beats the coupon."
+    },
+    {
+     "option": 2,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 1,
+     "why": "If the customer hands over the coupon, that is the offer they chose: 80 minus 10 is 70. It is the worse deal, but it is what the rule allows."
+    }
    ],
    "note": "All three are computed correctly. The disagreement is over what one sentence in the problem means, which is exactly the argument a shop has with a customer."
+  }
+ },
+ {
+  "id": "g7-c2",
+  "grade": 7,
+  "code": "7.NS.1",
+  "tag": "🌡️ temperature",
+  "title": "The Case of the Thermometer in the Sun",
+  "given": [
+   "The temperature at dawn was -6 degrees.",
+   "It rose 14 degrees by noon.",
+   "It fell 9 degrees again by midnight.",
+   "Nothing else changed it."
+  ],
+  "question": "What was the temperature at midnight, in degrees?",
+  "options": [
+   {
+    "label": "-1 degrees",
+    "value": "-1"
+   },
+   {
+    "label": "8 degrees",
+    "value": "8"
+   },
+   {
+    "label": "11 degrees",
+    "value": "11"
+   },
+   {
+    "label": "-29 degrees",
+    "value": "-29"
+   }
+  ],
+  "answer": 0,
+  "chk": "-6+14-9",
+  "decider": [
+   2
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "8 degrees is noon, before the temperature fell again in the evening."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "11 comes from starting at 6 instead of -6. Dawn was below zero, and that minus sign changes every step after it."
+   },
+   {
+    "option": 3,
+    "because": 1,
+    "why": "-29 takes the 14 away as well. The temperature rose by 14, so it is added."
+   }
+  ],
+  "explain": "Walk it along a number line: start at -6, go up 14 to reach 8, then down 9 to land on -1. Rising is adding and falling is subtracting, whatever side of zero you are on.",
+  "debate": {
+   "given": [
+    "The dawn reading was -6 degrees.",
+    "It rose 14 degrees by noon.",
+    "It fell 9 degrees again by midnight.",
+    "The thermometer reads 2 degrees too warm in sunlight, and the dawn reading was taken in the sun."
+   ],
+   "question": "What was the temperature at midnight? Defend it.",
+   "options": [
+    {
+     "label": "-1 degrees",
+     "value": "-1"
+    },
+    {
+     "label": "-3 degrees",
+     "value": "-3"
+    }
+   ],
+   "opened_by": 3,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "The three readings are the data we have, and working them through gives -1. Correcting a reading means guessing at a number nobody took."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      3
+     ],
+     "against": 0,
+     "why": "Dawn was really -8, not -6, because the sun was on the thermometer. Every step after it shifts by the same 2 degrees, so midnight is -3."
+    }
+   ],
+   "note": "A known, consistent instrument error is the one kind of correction you can make with confidence, and it moves every later number by the same amount. Ask what would change if the error were only sometimes there."
+  }
+ },
+ {
+  "id": "g7-c3",
+  "grade": 7,
+  "code": "7.EE.4",
+  "tag": "🚕 taxi",
+  "title": "The Case of the Fare With Something Extra In It",
+  "given": [
+   "The taxi charges a flat fee of 3 dollars.",
+   "It then charges 2 dollars for every mile.",
+   "The ride came to 23 dollars.",
+   "There were no other charges at all."
+  ],
+  "question": "How many miles was the ride?",
+  "options": [
+   {
+    "label": "10 miles",
+    "value": "10"
+   },
+   {
+    "label": "11.5 miles",
+    "value": "11.5"
+   },
+   {
+    "label": "13 miles",
+    "value": "13"
+   },
+   {
+    "label": "20 miles",
+    "value": "20"
+   }
+  ],
+  "answer": 0,
+  "chk": "(23-3)/2",
+  "decider": [
+   0
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 0,
+    "why": "11.5 divides the whole fare by 2 and forgets the flat fee, which bought no distance at all."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "13 adds the fee instead of taking it off. The fee is part of the 23 already."
+   },
+   {
+    "option": 3,
+    "because": 1,
+    "why": "20 is the number of dollars spent on mileage, not the number of miles those dollars bought."
+   }
+  ],
+  "explain": "Take the flat fee out of the total first, because it bought no distance: 23 minus 3 is 20 dollars of mileage. At 2 dollars a mile that is 10 miles. In symbols, 3 + 2m = 23.",
+  "debate": {
+   "given": [
+    "The taxi charges 3 dollars flat and 2 dollars a mile.",
+    "The payment came to 23 dollars in total.",
+    "The passenger added a 3-dollar tip, which is inside that 23.",
+    "There were no other charges."
+   ],
+   "question": "How many miles was the ride? Say what you took off first.",
+   "options": [
+    {
+     "label": "10 miles",
+     "value": "10"
+    },
+    {
+     "label": "8.5 miles",
+     "value": "8.5"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "Twenty-three dollars changed hands against a fare of 3 plus 2 a mile, and solving that gives 10 miles."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      2
+     ],
+     "against": 1,
+     "why": "A tip is not a fare. Take off the 3-dollar fee and the 3-dollar tip, leaving 17 dollars of mileage: 8.5 miles."
+    }
+   ],
+   "note": "The equation is only as good as what you agreed to put in it. Ask which dollars the taxi company charged and which the passenger chose to add."
+  }
+ },
+ {
+  "id": "g7-c4",
+  "grade": 7,
+  "code": "7.G.6",
+  "tag": "🎁 wrapping",
+  "title": "The Case of the Face Nobody Sees",
+  "given": [
+   "The box is a cube.",
+   "Each edge is 5 inches long.",
+   "A cube has 6 square faces.",
+   "All of the faces are the same size."
+  ],
+  "question": "What is the surface area, in square inches?",
+  "options": [
+   {
+    "label": "150 square inches",
+    "value": "150"
+   },
+   {
+    "label": "125 square inches",
+    "value": "125"
+   },
+   {
+    "label": "30 square inches",
+    "value": "30"
+   },
+   {
+    "label": "25 square inches",
+    "value": "25"
+   }
+  ],
+  "answer": 0,
+  "chk": "6*5*5",
+  "decider": [
+   2
+  ],
+  "proof": [
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "125 is 5 cubed, which is the space inside the box. Surface area is the skin, not the filling."
+   },
+   {
+    "option": 2,
+    "because": 1,
+    "why": "30 is 6 times 5, which counts one edge per face rather than one square face per face."
+   },
+   {
+    "option": 3,
+    "because": 2,
+    "why": "25 is a single face. There are six of them."
+   }
+  ],
+  "explain": "Each face is a 5 by 5 square, so each is 25 square inches, and a cube has six of them: 150 square inches. Volume would be the inside; this is the wrapping paper.",
+  "debate": {
+   "given": [
+    "The box is a cube with 5-inch edges.",
+    "A cube has 6 square faces, each 25 square inches.",
+    "The bottom face sits flat on a shelf and is never seen.",
+    "The paper is being bought to make the box look good on display."
+   ],
+   "question": "How many square inches of paper should they buy?",
+   "options": [
+    {
+     "label": "150 square inches",
+     "value": "150"
+    },
+    {
+     "label": "125 square inches",
+     "value": "125"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "The surface area of the box is 150 square inches, and wrapping it means covering the box, not covering the parts of it you happen to look at."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      2,
+      3
+     ],
+     "against": 0,
+     "why": "The paper is for display and the bottom is never seen, so five faces at 25 each is 125 — and the sixth face is paper in the bin."
+    }
+   ],
+   "note": "Surface area has one value and the amount to buy depends on the job. Both children should be able to state the surface area and then say what they are leaving off and why."
+  }
+ },
+ {
+  "id": "g7-c5",
+  "grade": 7,
+  "code": "7.SP.5",
+  "tag": "🎲 the bag",
+  "title": "The Case of the Counter Nobody Remembers Replacing",
+  "given": [
+   "The bag holds 3 red counters and 5 blue counters.",
+   "There is nothing else in the bag.",
+   "One counter is taken out without looking.",
+   "Every counter is equally likely to be picked."
+  ],
+  "question": "What is the probability it is red?",
+  "options": [
+   {
+    "label": "3/8",
+    "value": "3/8"
+   },
+   {
+    "label": "3/5",
+    "value": "3/5"
+   },
+   {
+    "label": "5/8",
+    "value": "5/8"
+   },
+   {
+    "label": "1/3",
+    "value": "1/3"
+   }
+  ],
+  "answer": 0,
+  "chk": "3/(3+5)",
+  "decider": [
+   0
+  ],
+  "proof": [
+   0,
+   3
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 0,
+    "why": "3/5 compares the reds to the blues. A probability compares the reds to every counter in the bag."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "5/8 is the chance of drawing blue, which is the other outcome."
+   },
+   {
+    "option": 3,
+    "because": 0,
+    "why": "1/3 would be right if there were three equally likely colours. There are 8 counters in two colours."
+   }
+  ],
+  "explain": "A probability is the outcomes you want over all the outcomes there are. Three counters are red out of 8 in the bag, so 3/8.",
+  "debate": {
+   "given": [
+    "The bag held 3 red counters and 5 blue counters.",
+    "One counter was taken out and it was red.",
+    "Nobody can remember whether it was put back.",
+    "A second counter is about to be taken."
+   ],
+   "question": "What is the probability the second counter is red? Defend it.",
+   "options": [
+    {
+     "label": "2/7",
+     "value": "2/7"
+    },
+    {
+     "label": "3/8",
+     "value": "3/8"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      1,
+      3
+     ],
+     "against": 2,
+     "why": "If the red counter stayed out, 2 reds remain among 7 counters, so the chance has dropped to 2/7."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      2
+     ],
+     "against": 1,
+     "why": "If it went back, the bag is exactly as it started and the second draw is the same 3/8 as the first."
+    }
+   ],
+   "note": "Whether a draw is replaced is not a detail, it is the whole model, and the problem has deliberately not said. The answer is that we cannot tell, and the useful work is saying what each assumption gives."
   }
  }
 ]
