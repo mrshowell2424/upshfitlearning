@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import PreviewTierToggle from "./PreviewTierToggle";
 import UserMenu from "./UserMenu";
@@ -33,10 +33,24 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { user, isLoading } = useAuth();
 
-  // Never leave the panel hanging open over the new page
-  useEffect(() => {
+  /**
+   * Never leave the panel hanging open over the new page.
+   *
+   * This was an effect that called setMenuOpen(false) whenever the path
+   * changed, which is React's documented anti-pattern for adjusting state
+   * on a change: the new page renders once with the menu still open, the
+   * effect runs, and it renders again. On a slow phone that first frame is
+   * visible as the old menu flashing over the new page.
+   *
+   * Adjusting during render instead is the pattern React recommends for
+   * exactly this. React throws the half-finished render away and redoes it
+   * before touching the DOM, so the open menu never reaches the screen.
+   */
+  const [menuPath, setMenuPath] = useState(pathname);
+  if (menuPath !== pathname) {
+    setMenuPath(pathname);
     setMenuOpen(false);
-  }, [pathname]);
+  }
 
   const getActiveNav = () => {
     if (pathname === "/") return "Home";

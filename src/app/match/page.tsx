@@ -21,11 +21,15 @@ const exampleSearches = [
 ];
 
 function MatchPageContent() {
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState<any[]>([]);
-  const [searching, setSearching] = useState(false);
   const router = useRouter();
   const searchParams = useSearchParams();
+  // A link into this page can carry ?q=, and the box should already show it
+  // on the first paint. searchParams is available during render, so the box
+  // is seeded from it rather than being emptied and then refilled by an
+  // effect, which made the search term appear a frame late.
+  const [query, setQuery] = useState(() => searchParams.get("q") ?? "");
+  const [results, setResults] = useState<any[]>([]);
+  const [searching, setSearching] = useState(false);
 
   const handleSearch = useCallback(
     async (searchTerm: string) => {
@@ -60,13 +64,11 @@ function MatchPageContent() {
     [router]
   );
 
-  // Honor ?q= so links into this page (e.g. from the home page) actually search
+  // Running the search is a side effect and belongs here; filling the box is
+  // not, and has moved up to where the state is created.
   useEffect(() => {
     const q = searchParams.get("q");
-    if (q) {
-      setQuery(q);
-      handleSearch(q);
-    }
+    if (q) handleSearch(q);
   }, [searchParams, handleSearch]);
 
   return (

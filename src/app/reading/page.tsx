@@ -1,7 +1,8 @@
 "use client";
 
 // @ts-nocheck
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
+import { useStoredValue, writeStoredValue } from "@/lib/hooks/useStoredValue";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
@@ -57,33 +58,31 @@ const SKILLS_ON_SHOW = LESSONS.filter((l) => shown(l.links).length > 0).length;
 const LEVELS = ["all", 1, 2, 3, 4] as const;
 
 function ReadingFiler() {
-  const [taught, setTaught] = useState<Record<string, boolean>>({});
   const [level, setLevel] = useState<"all" | number>("all");
   const [section, setSection] = useState("all");
   const [query, setQuery] = useState("");
 
-  // Marks live in the browser, so they survive a refresh without an account.
-  // Wrapped because a private window or blocked site data throws on access.
-  useEffect(() => {
+  /**
+   * Marks live in the browser, so they survive a refresh without an account.
+   *
+   * This used to start empty and fill itself in a mount effect, so the page
+   * drew every lesson unticked and then re-drew it with the ticks. The hook
+   * reads the store during render instead; see lib/hooks/useStoredValue.
+   */
+  const stored = useStoredValue(STORAGE_KEY);
+  const taught = useMemo<Record<string, boolean>>(() => {
     try {
-      setTaught(JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}") || {});
+      return JSON.parse(stored || "{}") || {};
     } catch {
-      /* no stored marks, start clean */
+      return {};
     }
-  }, []);
+  }, [stored]);
 
   const toggle = (id: number) => {
-    setTaught((current) => {
-      const next = { ...current };
-      if (next[id]) delete next[id];
-      else next[id] = true;
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-      } catch {
-        /* the mark still works for this session */
-      }
-      return next;
-    });
+    const next = { ...taught };
+    if (next[id]) delete next[id];
+    else next[id] = true;
+    writeStoredValue(STORAGE_KEY, JSON.stringify(next));
   };
 
   const rows = useMemo(() => {

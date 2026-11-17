@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
@@ -48,17 +49,23 @@ const MATERIALS = "/api/materials/design-thinking";
 
 function DesignThinkingRoadMap() {
   const { session } = useAuth();
-  const [grade, setGrade] = useState<DesignGrade>("3");
+  const searchParams = useSearchParams();
+  /**
+   * Grade comes off the URL on arrival so a bookmarked grade opens on it.
+   *
+   * This was an effect that read window.location.search after mount and
+   * called setGrade, so a bookmarked link to grade 7 painted grade 3 first
+   * and corrected itself a frame later. useSearchParams gives the same
+   * value during render, and seeding the state from it means the right
+   * grade is on the screen the first time it is drawn. It also works on
+   * the server, which window.location does not.
+   */
+  const [grade, setGrade] = useState<DesignGrade>(
+    () => DESIGN_GRADES.find((g) => g === searchParams.get("grade")) ?? "3",
+  );
   const [openWeek, setOpenWeek] = useState<number | null>(null);
   const [year, setYear] = useState<GradeYear | null>(null);
   const [failed, setFailed] = useState(false);
-
-  // Grade comes off the URL on arrival so a bookmarked grade opens on it.
-  useEffect(() => {
-    const fromUrl = new URLSearchParams(window.location.search).get("grade");
-    const match = DESIGN_GRADES.find((g) => g === fromUrl);
-    if (match) setGrade(match);
-  }, []);
 
   const pickGrade = (g: DesignGrade) => {
     setGrade(g);
@@ -445,7 +452,11 @@ export default function DesignThinkingPage() {
           title="Design Thinking"
           blurb="A design challenge for every week of the year, K to 12, with teacher slides, a student workbook and an answer key for all 36 weeks. Free — an account is all it takes."
         >
-          <DesignThinkingRoadMap />
+          {/* useSearchParams needs a boundary above it, the same as the
+              standard match page. */}
+          <Suspense fallback={<div style={{ minHeight: "60vh" }} />}>
+            <DesignThinkingRoadMap />
+          </Suspense>
         </SignInGate>
       </main>
       <Footer />

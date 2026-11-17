@@ -1,6 +1,7 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState } from 'react'
+import { useStoredValue, writeStoredValue } from '@/lib/hooks/useStoredValue'
 import { User, Session } from '@supabase/supabase-js'
 import { supabase, getSubscription, hasAllAccess } from '@/lib/auth'
 import { PAYMENTS_ENABLED } from '@/lib/constants/access'
@@ -58,19 +59,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [session, setSession] = useState<Session | null>(null)
   const [subscription, setSubscription] = useState<Subscription | null>(null)
   const [isLoading, setIsLoading] = useState(true)
-  const [previewTier, setPreviewTierState] = useState<PreviewTier>(null)
-
-  // Restore the choice so it survives navigation and reloads
-  useEffect(() => {
-    if (!PREVIEW_ENABLED) return
-    const stored = window.localStorage.getItem(PREVIEW_STORAGE_KEY)
-    if (stored === 'free' || stored === 'pro') setPreviewTierState(stored)
-  }, [])
+  /**
+   * The preview choice, restored so it survives navigation and reloads.
+   *
+   * There is no useState behind this any more. It used to be state that an
+   * effect filled in after mount from localStorage, which meant the first
+   * render of every page showed the real tier and the second showed the
+   * previewed one. Reading the store during render removes that flicker;
+   * see lib/hooks/useStoredValue for why an effect was needed before and
+   * why it is not now.
+   */
+  const storedTier = useStoredValue(PREVIEW_STORAGE_KEY)
+  const previewTier: PreviewTier =
+    PREVIEW_ENABLED && (storedTier === 'free' || storedTier === 'pro') ? storedTier : null
 
   const setPreviewTier = (tier: PreviewTier) => {
-    setPreviewTierState(tier)
-    if (tier) window.localStorage.setItem(PREVIEW_STORAGE_KEY, tier)
-    else window.localStorage.removeItem(PREVIEW_STORAGE_KEY)
+    writeStoredValue(PREVIEW_STORAGE_KEY, tier)
   }
 
   useEffect(() => {
