@@ -84,7 +84,10 @@ const label: React.CSSProperties = {
   textTransform: "uppercase",
   color: BRAND.mid,
 };
-const serif = 'var(--font-serif), Georgia, "Times New Roman", serif';
+// The brand book, in globals.css: Poppins is the whole interface,
+// headings and running text alike. The serif belongs to lines a child
+// reads, and this is a teacher planning a lesson.
+const SANS = "Poppins, system-ui, sans-serif";
 
 function pill(on: boolean, color: string): React.CSSProperties {
   return {
@@ -118,9 +121,9 @@ function Given({ lines, mark }: { lines: string[]; mark?: number | null }) {
             border: `1px solid ${i === mark ? BRAND.amberDark : BRAND.line}`,
             borderRadius: 10,
             padding: "9px 12px",
-            fontSize: 16,
+            fontSize: 15.5,
             lineHeight: 1.5,
-            fontFamily: serif,
+            fontFamily: SANS,
           }}
         >
           <span style={{ ...label, fontSize: 10, color: i === mark ? BRAND.amberDark : BRAND.soft }}>
@@ -183,8 +186,8 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
             </h1>
             <p
               style={{
-                fontFamily: serif,
-                fontSize: 18,
+                fontFamily: SANS,
+                fontSize: 17,
                 lineHeight: 1.65,
                 color: BRAND.mid,
                 maxWidth: "62ch",
@@ -250,7 +253,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                   <p style={{ ...label, margin: "0 0 4px", color: accent }}>
                     {c.tag} · {c.code} · {debate ? "debate" : "solve"}
                   </p>
-                  <h2 style={{ fontFamily: serif, fontSize: 27, fontWeight: 700, margin: "0 0 14px", lineHeight: 1.2 }}>
+                  <h2 style={{ fontFamily: SANS, fontSize: 24, fontWeight: 800, letterSpacing: "-0.5px", margin: "0 0 14px", lineHeight: 1.2 }}>
                     {c.title}
                   </h2>
 
@@ -259,7 +262,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
 
                   <p
                     style={{
-                      fontFamily: serif,
+                      fontFamily: SANS,
                       fontSize: 19,
                       fontWeight: 700,
                       lineHeight: 1.45,
@@ -279,8 +282,8 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                           border: `1px solid ${BRAND.line}`,
                           borderRadius: 10,
                           padding: "10px 13px",
-                          fontSize: 16,
-                          fontFamily: serif,
+                          fontSize: 15.5,
+                          fontFamily: SANS,
                           display: "flex",
                           gap: 10,
                           alignItems: "baseline",
@@ -345,7 +348,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                         The answer, and why each other one is out
                       </summary>
                       <div style={{ paddingTop: 12 }}>
-                        <p style={{ fontSize: 17, fontWeight: 700, margin: "0 0 4px", fontFamily: serif }}>
+                        <p style={{ fontSize: 16, fontWeight: 800, margin: "0 0 4px", fontFamily: SANS }}>
                           {String.fromCharCode(65 + c.answer)} · {c.options[c.answer].label}
                         </p>
                         <p style={{ fontSize: 13.5, color: BRAND.mid, margin: "0 0 10px" }}>

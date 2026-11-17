@@ -62,7 +62,10 @@ const label: React.CSSProperties = {
   textTransform: "uppercase",
   color: BRAND.mid,
 };
-const serif = 'var(--font-serif), Georgia, "Times New Roman", serif';
+// The brand book, in globals.css: Poppins is the whole interface,
+// headings and running text alike. The serif belongs to lines a child
+// reads, and this is a teacher planning a lesson.
+const SANS = "Poppins, system-ui, sans-serif";
 
 function pill(on: boolean, color: string): React.CSSProperties {
   return {
@@ -162,8 +165,8 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
             </h1>
             <p
               style={{
-                fontFamily: serif,
-                fontSize: 18,
+                fontFamily: SANS,
+                fontSize: 17,
                 lineHeight: 1.65,
                 color: BRAND.mid,
                 maxWidth: "62ch",
@@ -225,7 +228,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               <p style={{ ...label, margin: "0 0 4px" }}>
                 Today · {here.level} · standard {at + 1} of {SEQ.length}
               </p>
-              <h2 style={{ fontFamily: serif, fontSize: 26, fontWeight: 700, margin: "0 0 2px", lineHeight: 1.2 }}>
+              <h2 style={{ fontFamily: SANS, fontSize: 23, fontWeight: 800, letterSpacing: "-0.5px", margin: "0 0 2px", lineHeight: 1.2 }}>
                 {here.name}
               </h2>
               <p style={{ fontSize: 13, color: BRAND.mid, margin: 0 }}>
@@ -262,7 +265,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
 
                   {s.key ? (
                     <>
-                      <h3 style={{ fontFamily: serif, fontSize: 21, fontWeight: 700, margin: "4px 0 8px", lineHeight: 1.25 }}>
+                      <h3 style={{ fontFamily: SANS, fontSize: 19, fontWeight: 800, letterSpacing: "-0.3px", margin: "4px 0 8px", lineHeight: 1.25 }}>
                         {s.name}
                       </h3>
 

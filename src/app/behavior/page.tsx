@@ -29,9 +29,14 @@ import { EF_YEAR } from "./ef-weeks";
  *   2. A beige slab. The whole page sat on #F7F6F4 full-bleed, which no
  *      other page does, so it read as a different site the moment you
  *      arrived from anywhere. White, with the brand hairline on top.
- *   3. Poppins for everything. The container forced the UI face onto 2,000
- *      words of reading. Prose is in the reading serif now, as it is
- *      everywhere else; Poppins is for headings, labels and controls.
+ *   3. Type sizes that had drifted. Everything here is Poppins, which is
+ *      the brand book's rule and not a thing to work around: "Poppins is
+ *      the whole interface, headings and running text alike, because it is
+ *      the brand's face". The serif in globals.css is for lines a child
+ *      reads — a passage, a decodable, a word ladder — and nothing on this
+ *      page is one. It is written for the teacher, including the sentences
+ *      they say out loud. An earlier pass set this page's prose in that
+ *      serif, which was the wrong reading of a rule already written down.
  *   4. Five accent colours in one card. Teal, coral, lavender, pink and ink
  *      each headed a section, in five sizes, which is what made it feel
  *      unresolved. Two colours carry meaning now and nothing else is
@@ -51,7 +56,12 @@ const BRAND = {
   tealDark: "#00756C",
 };
 const GRADIENT = "linear-gradient(135deg, #FF6A5B, #FF7DAE, #B87DFF, #00B4A6)";
-const serif = 'var(--font-serif), Georgia, "Times New Roman", serif';
+// The brand book, in globals.css: Poppins is the whole interface,
+// headings and running text alike, because it is the brand's face.
+// The serif is for lines a child reads, and nothing on this page is
+// one -- it is written for the teacher, including the sentences they
+// say out loud.
+const SANS = "Poppins, system-ui, sans-serif";
 
 type Search = Promise<Record<string, string | string[] | undefined>>;
 const all = (v: string | string[] | undefined): string[] =>
@@ -171,9 +181,9 @@ function Block({ note, items }: { note?: string; items: string[] }) {
               gridTemplateColumns: "14px 1fr",
               gap: 10,
               margin: "0 0 10px",
-              fontSize: 16,
-              fontFamily: serif,
-              lineHeight: 1.6,
+              fontSize: 15.5,
+              fontFamily: SANS,
+              lineHeight: 1.65,
             }}
           >
             <span
@@ -235,7 +245,7 @@ function Words({ say, avoid }: { say: string[]; avoid: { words: string; why: str
             Short enough to say across a room.
           </p>
           {say.map((t, i) => (
-            <p key={i} style={{ fontFamily: serif, fontSize: 17.5, lineHeight: 1.45, margin: i ? "13px 0 0" : 0 }}>
+            <p key={i} style={{ fontFamily: SANS, fontSize: 16.5, lineHeight: 1.5, margin: i ? "13px 0 0" : 0 }}>
               {t}
             </p>
           ))}
@@ -248,7 +258,7 @@ function Words({ say, avoid }: { say: string[]; avoid: { words: string; why: str
           </p>
           {avoid.map((a, i) => (
             <div key={i} style={{ margin: i ? "14px 0 0" : 0 }}>
-              <p style={{ fontFamily: serif, fontSize: 17.5, lineHeight: 1.45, margin: 0, color: BRAND.coralDark }}>
+              <p style={{ fontFamily: SANS, fontSize: 16.5, lineHeight: 1.5, margin: 0, color: BRAND.coralDark }}>
                 {a.words}
               </p>
               <p style={{ margin: "3px 0 0", fontSize: 14, lineHeight: 1.55, color: BRAND.mid }}>{a.why}</p>
@@ -291,9 +301,10 @@ function SignalCard({ s, remove }: { s: Signal; remove: string }) {
       </div>
       <h2
         style={{
-          fontFamily: serif,
-          fontSize: 29,
-          fontWeight: 700,
+          fontFamily: SANS,
+          fontSize: 26,
+          fontWeight: 800,
+          letterSpacing: "-0.5px",
           margin: "3px 0 3px",
           lineHeight: 1.15,
         }}
@@ -310,7 +321,7 @@ function SignalCard({ s, remove }: { s: Signal; remove: string }) {
         style={{
           margin: "0 0 20px",
           fontSize: 15,
-          fontFamily: serif,
+          fontFamily: SANS,
           color: BRAND.mid,
           borderLeft: `3px solid ${BRAND.line}`,
           paddingLeft: 12,
@@ -341,9 +352,9 @@ function SignalCard({ s, remove }: { s: Signal; remove: string }) {
                 border: `1px solid ${BRAND.line}`,
                 borderRadius: 12,
                 padding: "11px 13px",
-                fontSize: 16,
-                fontFamily: serif,
-                lineHeight: 1.55,
+                fontSize: 15.5,
+                fontFamily: SANS,
+                lineHeight: 1.6,
               }}
             >
               <span
@@ -403,7 +414,7 @@ function SignalCard({ s, remove }: { s: Signal; remove: string }) {
                 margin: "0 0 10px",
               }}
             >
-              <p style={{ margin: "0 0 8px", fontSize: 15.5, lineHeight: 1.6, fontFamily: serif }}>{r.claim}</p>
+              <p style={{ margin: "0 0 8px", fontSize: 15, lineHeight: 1.65, fontFamily: SANS }}>{r.claim}</p>
               <p style={{ margin: "0 0 8px", fontSize: 12.5, color: BRAND.soft, lineHeight: 1.55 }}>{r.source}</p>
               <p style={{ margin: "0 0 6px", fontSize: 14.5, lineHeight: 1.6 }}>
                 <b style={{ color: BRAND.tealDark }}>What it supports: </b>
@@ -461,10 +472,10 @@ function WhatYouGet() {
   return (
     <Card>
       <p style={{ ...label, margin: "0 0 4px", color: BRAND.coralDark }}>Pick one above</p>
-      <h2 style={{ fontFamily: serif, fontSize: 25, fontWeight: 700, margin: "0 0 8px", lineHeight: 1.2 }}>
+      <h2 style={{ fontFamily: SANS, fontSize: 22, fontWeight: 800, letterSpacing: "-0.4px", margin: "0 0 8px", lineHeight: 1.2 }}>
         What you get for each one
       </h2>
-      <p style={{ fontFamily: serif, fontSize: 16.5, lineHeight: 1.6, color: BRAND.mid, margin: "0 0 16px", maxWidth: "62ch" }}>
+      <p style={{ fontFamily: SANS, fontSize: 15.5, lineHeight: 1.65, color: BRAND.mid, margin: "0 0 16px", maxWidth: "62ch" }}>
         Pick more than one if the morning had more than one. Where several signals load the same
         executive function skill, that skill is the thing to work on — not the behaviors one at a
         time — and the page says so.
@@ -512,7 +523,7 @@ function YearCard() {
       }}
     >
       <p style={{ ...label, margin: "0 0 4px", color: BRAND.tealDark }}>Over the term</p>
-      <h2 style={{ fontFamily: serif, fontSize: 23, fontWeight: 700, margin: "0 0 7px", lineHeight: 1.2 }}>
+      <h2 style={{ fontFamily: SANS, fontSize: 21, fontWeight: 800, letterSpacing: "-0.4px", margin: "0 0 7px", lineHeight: 1.2 }}>
         The executive function year
       </h2>
       <p style={{ margin: "0 0 14px", fontSize: 15, color: BRAND.mid, lineHeight: 1.6, maxWidth: "62ch" }}>
@@ -609,8 +620,8 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
           </h1>
           <p
             style={{
-              fontFamily: serif,
-              fontSize: 18,
+              fontFamily: SANS,
+              fontSize: 17,
               lineHeight: 1.65,
               color: BRAND.mid,
               maxWidth: "62ch",
@@ -646,12 +657,12 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               <p style={{ ...label, margin: "0 0 3px", color: BRAND.lavenderDark }}>
                 {`Across the ${chosen.length} you picked`}
               </p>
-              <h2 style={{ fontFamily: serif, fontSize: 25, fontWeight: 700, margin: "0 0 10px", lineHeight: 1.2 }}>
+              <h2 style={{ fontFamily: SANS, fontSize: 22, fontWeight: 800, letterSpacing: "-0.4px", margin: "0 0 10px", lineHeight: 1.2 }}>
                 Where these overlap
               </h2>
               {shared.length > 0 ? (
                 <>
-                  <p style={{ margin: "0 0 12px", fontSize: 16, fontFamily: serif, lineHeight: 1.6, maxWidth: "62ch" }}>
+                  <p style={{ margin: "0 0 12px", fontSize: 15.5, fontFamily: SANS, lineHeight: 1.65, maxWidth: "62ch" }}>
                     These skills are under load in more than one of the signals you picked. Start
                     here rather than with the behaviors separately.
                   </p>
@@ -670,14 +681,14 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                         <a href={`/behavior/year?s=${k}`} style={{ color: BRAND.lavenderDark, fontWeight: 700, textDecoration: "none" }}>
                           {EF[k]} →
                         </a>
-                        <span style={{ fontFamily: serif }}>{` ${EF_MEANING[k]} `}</span>
+                        <span style={{ fontFamily: SANS }}>{` ${EF_MEANING[k]} `}</span>
                         <span style={{ color: BRAND.soft, fontSize: 14 }}>{`(${names.join(", ")})`}</span>
                       </li>
                     ))}
                   </ul>
                 </>
               ) : (
-                <p style={{ margin: "0 0 16px", fontSize: 16, fontFamily: serif, lineHeight: 1.6, maxWidth: "62ch" }}>
+                <p style={{ margin: "0 0 16px", fontSize: 15.5, fontFamily: SANS, lineHeight: 1.65, maxWidth: "62ch" }}>
                   These signals do not share an executive function skill, which is worth knowing on
                   its own: they are probably separate problems and will need separate work.
                 </p>
