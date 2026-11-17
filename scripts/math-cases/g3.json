@@ -1,0 +1,54 @@
+[
+ {
+  "id": "g3-c1",
+  "grade": 3,
+  "code": "3.OA.3",
+  "tag": "🍪 bake sale",
+  "title": "The Case of the Short Tray",
+  "given": [
+   "The class baked 6 trays of cookies.",
+   "A full tray holds 4 cookies.",
+   "One tray came out of the oven with 1 cookie missing.",
+   "Nobody ate any."
+  ],
+  "question": "How many cookies did the class bake?",
+  "options": [
+   { "label": "23 cookies", "value": "23" },
+   { "label": "24 cookies", "value": "24" },
+   { "label": "10 cookies", "value": "10" },
+   { "label": "25 cookies", "value": "25" }
+  ],
+  "answer": 0,
+  "chk": "6*4-1",
+  "decider": [2],
+  "proof": [0, 1, 2],
+  "rules_out": [
+   { "option": 1, "because": 2, "why": "24 is six full trays, and one of the trays was not full." },
+   { "option": 2, "because": 1, "why": "Adding the trays to the cookies-per-tray counts neither of them. Four cookies on each of six trays is a multiplication." },
+   { "option": 3, "because": 2, "why": "A missing cookie comes off the total, not on." }
+  ],
+  "explain": "Equal groups first: six fours is 24. Then the one line that breaks the pattern: a cookie is missing, so 23.",
+  "debate": {
+   "given": [
+    "The class baked 6 trays of cookies.",
+    "A full tray holds 4 cookies.",
+    "Two trays came out with gaps in them.",
+    "Nobody counted the gaps."
+   ],
+   "question": "How many cookies did the class bake? Give a number you can defend.",
+   "options": [
+    { "label": "24 cookies", "value": "24" },
+    { "label": "22 cookies", "value": "22" },
+    { "label": "16 cookies", "value": "16" }
+   ],
+   "opened_by": 2,
+   "open": [0, 1, 2],
+   "arguments": [
+    { "option": 0, "evidence": [0, 1], "against": 2, "why": "Six trays of four is 24. The gaps were never counted, so there is no number to take away." },
+    { "option": 1, "evidence": [0, 1, 2], "against": 3, "why": "A gap is at least one cookie and two trays have gaps, so 24 take away 2 is the most we can still claim." },
+    { "option": 2, "evidence": [0, 1, 2], "against": 3, "why": "If a tray with gaps cannot be counted at all, only the four full trays count: four fours is 16." }
+   ],
+   "note": "This is the difference between a number and an estimate. 24 is the most there can be, 16 the least, and the honest answer says which of the two it is."
+  }
+ }
+]

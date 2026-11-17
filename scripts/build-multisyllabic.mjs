@@ -140,6 +140,11 @@ function corpus() {
     "reading-writing-types.json",
     "math-prerequisites.json",
     "math-practice.json",
+    // Maths cases are a teacher's situations and arguments -- crate charges,
+    // base rates, lines of best fit. Reasonable prose, and none of it words a
+    // child has met in a phonics lesson, so it has no business seeding the
+    // bank those lessons draw from.
+    "math-cases.json",
   ]);
   const files = readdirSync("scripts").filter((f) => f.endsWith(".json") && !SKIP.has(f));
   const dirs = ["scripts/articles", "scripts/mysteries"].filter((d) => existsSync(d));

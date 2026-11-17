@@ -1,0 +1,54 @@
+[
+ {
+  "id": "g1-c1",
+  "grade": 1,
+  "code": "1.OA.1",
+  "tag": "📚 book box",
+  "title": "The Case of the Book Box",
+  "given": [
+   "On Monday the box held 15 books.",
+   "On Tuesday the class took out 6 books.",
+   "On Wednesday 4 books were put back.",
+   "Nobody else opened the box."
+  ],
+  "question": "How many books are in the box now?",
+  "options": [
+   { "label": "13 books", "value": "13" },
+   { "label": "9 books", "value": "9" },
+   { "label": "25 books", "value": "25" },
+   { "label": "5 books", "value": "5" }
+  ],
+  "answer": 0,
+  "chk": "15-6+4",
+  "decider": [1, 2],
+  "proof": [0, 1, 2],
+  "rules_out": [
+   { "option": 1, "because": 2, "why": "9 is where the box was on Tuesday night. On Wednesday 4 books came back." },
+   { "option": 2, "because": 1, "why": "Adding all three numbers counts the books that left as if they had arrived." },
+   { "option": 3, "because": 2, "why": "The 4 books on Wednesday went in, so they are added, not taken away." }
+  ],
+  "explain": "Walk the days in order: 15, take 6 away to get 9, put 4 back to get 13. The order of the days tells you which way each number goes.",
+  "debate": {
+   "given": [
+    "On Monday the box held 15 books.",
+    "On Tuesday the class took out 6 books.",
+    "On Wednesday 4 books were put back.",
+    "Two of the books put back came from the library, not from this box."
+   ],
+   "question": "How many of the box's own books are in the box now?",
+   "options": [
+    { "label": "13 books", "value": "13" },
+    { "label": "11 books", "value": "11" },
+    { "label": "9 books", "value": "9" }
+   ],
+   "opened_by": 3,
+   "open": [0, 1, 2],
+   "arguments": [
+    { "option": 0, "evidence": [0, 1, 2], "against": 3, "why": "Count what is in the box, whoever owns it. Four books went in: 15 take away 6, add 4, is 13." },
+    { "option": 1, "evidence": [0, 1, 3], "against": 2, "why": "The question asks for the box's own books. Only 2 of the 4 belong here: 15 take away 6, add 2, is 11." },
+    { "option": 2, "evidence": [0, 1], "against": 2, "why": "None of the 6 that left has come back. The books put back are different books, so the box's own count is 15 take away 6, which is 9." }
+   ],
+   "note": "The argument is about what the question is counting: books in the box, or books that belong to the box. Both readings are honest, and saying which one you chose is the mathematics."
+  }
+ }
+]

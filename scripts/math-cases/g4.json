@@ -1,0 +1,55 @@
+[
+ {
+  "id": "g4-c1",
+  "grade": 4,
+  "code": "4.NF.3",
+  "tag": "🎀 ribbon",
+  "title": "The Case of the Shared Ribbon",
+  "given": [
+   "The roll held 3 metres of ribbon.",
+   "Mia used 3/4 of a metre.",
+   "Jo used 1 1/2 metres.",
+   "Nothing else was cut from the roll."
+  ],
+  "question": "How many metres of ribbon are left?",
+  "options": [
+   { "label": "3/4 of a metre", "value": "3/4" },
+   { "label": "2 1/4 metres", "value": "9/4" },
+   { "label": "1 1/2 metres", "value": "3/2" },
+   { "label": "1 1/4 metres", "value": "5/4" }
+  ],
+  "answer": 0,
+  "chk": "3-3/4-3/2",
+  "uses": ["3/2"],
+  "decider": [1, 2],
+  "proof": [0, 1, 2],
+  "rules_out": [
+   { "option": 1, "because": 2, "why": "Only Mia's piece has come off. Jo cut some too." },
+   { "option": 2, "because": 1, "why": "Only Jo's piece has come off. Mia cut 3/4 of a metre as well." },
+   { "option": 3, "because": 2, "why": "1 1/2 is one and a half, not one. The extra half metre is still missing from the subtraction." }
+  ],
+  "explain": "Put everything over the same denominator: 3 metres is 12/4, Mia took 3/4, Jo took 6/4. 12/4 minus 3/4 minus 6/4 leaves 3/4 of a metre.",
+  "debate": {
+   "given": [
+    "The roll held 3 metres of ribbon.",
+    "Mia used 3/4 of a metre.",
+    "Jo used about one and a half metres.",
+    "The scraps under the table come to 1/4 of a metre altogether."
+   ],
+   "question": "How much usable ribbon is left? Defend your number.",
+   "options": [
+    { "label": "3/4 of a metre", "value": "3/4" },
+    { "label": "1/2 a metre", "value": "1/2" },
+    { "label": "about 1 metre", "value": "1" }
+   ],
+   "opened_by": 2,
+   "open": [0, 1, 2],
+   "arguments": [
+    { "option": 0, "evidence": [0, 1, 2], "against": 3, "why": "Take off what was used: 3 minus 3/4 minus 1 1/2 leaves 3/4 of a metre on the roll." },
+    { "option": 1, "evidence": [0, 1, 3], "against": 2, "why": "Scraps are not usable length, so they come off too: 3/4 minus 1/4 is 1/2 a metre." },
+    { "option": 2, "evidence": [2, 3], "against": 1, "why": "'About one and a half' could be a little under, and a 1/4 metre of scraps still cuts short pieces, so close to a metre is defensible." }
+   ],
+   "note": "The word 'about' is doing the work here. Ask which numbers in the problem are exact and which one is a measurement, because only one of them can be argued with."
+  }
+ }
+]

@@ -1,0 +1,54 @@
+[
+ {
+  "id": "g6-c1",
+  "grade": 6,
+  "code": "6.RP.3",
+  "tag": "🥣 cereal",
+  "title": "The Case of the Better Buy",
+  "given": [
+   "The small box holds 12 ounces and costs 3.60.",
+   "The large box holds 20 ounces and costs 5.40.",
+   "Both boxes hold exactly the same cereal.",
+   "Neither box is on special offer."
+  ],
+  "question": "What is the price per ounce of the better buy, in dollars?",
+  "options": [
+   { "label": "0.27 an ounce, the large box", "value": "0.27" },
+   { "label": "0.30 an ounce, the small box", "value": "0.30" },
+   { "label": "0.225 an ounce", "value": "0.225" },
+   { "label": "1.80 an ounce", "value": "1.80" }
+  ],
+  "answer": 0,
+  "chk": "5.40/20",
+  "decider": [0, 1],
+  "proof": [0, 1],
+  "rules_out": [
+   { "option": 1, "because": 0, "why": "0.30 is the small box's rate, and it is the higher of the two." },
+   { "option": 2, "because": 1, "why": "0.225 is the price of the extra ounces only — 1.80 more for 8 more ounces — not the price per ounce of a box." },
+   { "option": 3, "because": 1, "why": "1.80 is how much more the large box costs altogether. It is a difference, not a rate." }
+  ],
+  "explain": "A rate is price divided by amount. 3.60 over 12 ounces is 0.30 an ounce; 5.40 over 20 ounces is 0.27 an ounce. Lower is better, so the large box.",
+  "debate": {
+   "given": [
+    "The small box holds 12 ounces and costs 3.60.",
+    "The large box holds 20 ounces and costs 5.40.",
+    "This family eats a box a week and throws out about 4 ounces of a large box gone stale.",
+    "There is shelf room for one box at a time."
+   ],
+   "question": "Which box is the better buy for this family? Give the rate you are using.",
+   "options": [
+    { "label": "0.27 an ounce, the large box", "value": "0.27" },
+    { "label": "0.3375 an ounce eaten, the large box", "value": "0.3375" },
+    { "label": "0.30 an ounce, the small box", "value": "0.30" }
+   ],
+   "opened_by": 2,
+   "open": [0, 1, 2],
+   "arguments": [
+    { "option": 0, "evidence": [0, 1], "against": 2, "why": "Per ounce bought, the large box is cheaper: 5.40 over 20 is 0.27." },
+    { "option": 1, "evidence": [1, 2], "against": 0, "why": "Per ounce eaten, the large box is 5.40 over 16, which is 0.3375 — worse than the small box." },
+    { "option": 2, "evidence": [0, 2], "against": 1, "why": "If the waste is real, the small box at 0.30 an ounce with nothing thrown away is the better buy." }
+   ],
+   "note": "Nobody is disputing the arithmetic; they are disputing the denominator. Ask each student what they divided by, and why that is the right amount to divide by."
+  }
+ }
+]

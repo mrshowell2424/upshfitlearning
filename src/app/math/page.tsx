@@ -168,6 +168,36 @@ function Hub() {
           </p>
         </Link>
 
+        {/* The mysteries, in maths. Its own door for the same reason: the
+            arguing is the lesson, and nobody goes looking for it inside a
+            lesson step called "word problem". */}
+        <Link
+          href="/math/cases"
+          style={{
+            display: "block",
+            marginTop: 14,
+            background: "#FFFFFF",
+            border: `3px solid ${RULE}`,
+            borderLeft: `10px solid ${LAVENDER}`,
+            borderRadius: 16,
+            padding: "20px 22px",
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: LAVENDER_TEXT }}>
+            TEN MINUTES, OUT LOUD
+          </div>
+          <div style={{ fontSize: 21, fontWeight: 800, lineHeight: 1.2, marginTop: 5 }}>
+            Reasoning cases, solve or debate
+          </div>
+          <p style={{ fontSize: 14, fontWeight: 500, color: MUTED, margin: "7px 0 0", lineHeight: 1.5 }}>
+            A situation, the numbers you are given, and answers to choose between. Solve, where the
+            numbers settle it and every wrong answer is wrong for a reason. Debate, where one fact
+            changes and more than one answer holds up. →
+          </p>
+        </Link>
+
         {/* What the hub runs, named in order. These are not links: there is
             one destination on this page, and eleven fake doors into it would
             be worse than a list. */}

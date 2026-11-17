@@ -1,0 +1,54 @@
+[
+ {
+  "id": "g5-c1",
+  "grade": 5,
+  "code": "5.NBT.7",
+  "tag": "🧾 receipt",
+  "title": "The Case of the Receipt That Rang Twice",
+  "given": [
+   "The receipt lists milk at 3.49, bread at 2.75 and eggs at 4.20.",
+   "The total printed at the bottom is 13.19.",
+   "The shop charges no tax on food.",
+   "Exactly one item was scanned twice."
+  ],
+  "question": "Which item was scanned twice? Give its price in dollars.",
+  "options": [
+   { "label": "the bread, 2.75", "value": "2.75" },
+   { "label": "the milk, 3.49", "value": "3.49" },
+   { "label": "the eggs, 4.20", "value": "4.20" },
+   { "label": "none of them, 10.44", "value": "10.44" }
+  ],
+  "answer": 0,
+  "chk": "13.19-(3.49+2.75+4.20)",
+  "decider": [1],
+  "proof": [0, 1],
+  "rules_out": [
+   { "option": 1, "because": 1, "why": "Milk twice would make the total 13.93, and the receipt says 13.19." },
+   { "option": 2, "because": 1, "why": "Eggs twice would make the total 14.64, and the receipt says 13.19." },
+   { "option": 3, "because": 1, "why": "10.44 is what the three items come to once each, which is what the receipt should have printed, not what it did print." }
+  ],
+  "explain": "Add the three listed prices: 10.44. The receipt took 13.19, so the overcharge is 13.19 minus 10.44, which is 2.75 — and 2.75 is the bread.",
+  "debate": {
+   "given": [
+    "The receipt lists milk at 3.49, bread at 2.75 and eggs at 4.20.",
+    "The total printed is 13.19.",
+    "There are two loaves of bread in the bag.",
+    "The shop adds a 2.75 crate charge to delivery orders, and this was a delivery."
+   ],
+   "question": "How much, if anything, should the shop refund? Defend the number.",
+   "options": [
+    { "label": "refund 2.75", "value": "2.75" },
+    { "label": "refund nothing", "value": "0" },
+    { "label": "the customer owes 2.75", "value": "-2.75" }
+   ],
+   "opened_by": 3,
+   "open": [0, 1, 2],
+   "arguments": [
+    { "option": 0, "evidence": [0, 1], "against": 3, "why": "The three listed prices come to 10.44. The receipt took 2.75 more than it lists, and a charge that is not printed should come back." },
+    { "option": 1, "evidence": [1, 3], "against": 0, "why": "The 2.75 is the crate charge on a delivery. The total is right; the receipt simply does not print that line." },
+    { "option": 2, "evidence": [0, 2, 3], "against": 0, "why": "If the 2.75 is the crate, then the second loaf in the bag has not been paid for at all, and the customer owes 2.75 rather than being owed it." }
+   ],
+   "note": "Every one of these is arithmetic a fifth grader can do. What they are arguing about is which story the numbers are evidence for, which is the whole of modelling."
+  }
+ }
+]

@@ -44,6 +44,10 @@ const BUILDERS = [
   ["scripts/build-hub-counts.mjs", ["scripts/reading-hub-counts.json"]],
   ["scripts/build-math-prerequisites.mjs", ["scripts/math-prerequisites.json"]],
   ["scripts/build-math-practice.mjs", ["scripts/math-practice.json"]],
+  // Not a builder but a merger: the cases are written by hand in
+  // scripts/math-cases/g<N>.json, and this catches a grade file edited
+  // without the merge being run, which is the same staleness.
+  ["scripts/merge-math-cases.mjs", ["scripts/math-cases.json"]],
   [
     "scripts/build-reading-resources.mjs",
     ["scripts/reading-resources-counts.json", "content-reading-materials/science-of-reading/resources.html"],

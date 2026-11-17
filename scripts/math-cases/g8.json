@@ -1,0 +1,54 @@
+[
+ {
+  "id": "g8-c1",
+  "grade": 8,
+  "code": "8.EE.8",
+  "tag": "📱 phone plans",
+  "title": "The Case of the Identical Bills",
+  "given": [
+   "Plan A charges 20 dollars a month plus 0.10 a minute.",
+   "Plan B charges 35 dollars a month and nothing per minute.",
+   "Both plans bill whole months.",
+   "Last month the two bills came to exactly the same amount."
+  ],
+  "question": "How many minutes were used last month?",
+  "options": [
+   { "label": "150 minutes", "value": "150" },
+   { "label": "15 minutes", "value": "15" },
+   { "label": "350 minutes", "value": "350" },
+   { "label": "550 minutes", "value": "550" }
+  ],
+  "answer": 0,
+  "chk": "(35-20)/0.10",
+  "decider": [3],
+  "proof": [0, 1, 3],
+  "rules_out": [
+   { "option": 1, "because": 0, "why": "15 is the gap between the two monthly charges in dollars. It becomes minutes only after it is divided by the per-minute rate." },
+   { "option": 2, "because": 0, "why": "350 is what 35 dollars buys at 10 cents a minute, which ignores Plan A's own 20-dollar monthly charge." },
+   { "option": 3, "because": 3, "why": "550 comes from adding the two monthly charges. The bills were equal, not combined." }
+  ],
+  "explain": "Set the two costs equal: 20 + 0.10m = 35. The fixed charges differ by 15 dollars, and at 10 cents a minute that gap takes 150 minutes to close. Below 150 minutes Plan A is cheaper; above it, Plan B.",
+  "debate": {
+   "given": [
+    "Plan A charges 20 dollars a month plus 0.10 a minute.",
+    "Plan B charges 35 dollars a month and nothing per minute.",
+    "The family used 150 minutes last month and 400 the month before.",
+    "Next month is the school holidays."
+   ],
+   "question": "Which plan should the family choose? Name the number of minutes your answer rests on.",
+   "options": [
+    { "label": "plan for 150 minutes", "value": "150" },
+    { "label": "plan for 275 minutes", "value": "275" },
+    { "label": "plan for 400 minutes", "value": "400" }
+   ],
+   "opened_by": 3,
+   "open": [0, 1, 2],
+   "arguments": [
+    { "option": 0, "evidence": [0, 1, 2], "against": 3, "why": "At 150 minutes the plans cost the same, and the most recent month is the best evidence of the next one. At or below 150, Plan A wins." },
+    { "option": 1, "evidence": [2], "against": 3, "why": "The two months average 275 minutes, which is well past the 150-minute crossing point, so Plan B." },
+    { "option": 2, "evidence": [0, 2, 3], "against": 2, "why": "The holidays are the heavier month, and 400 minutes costs 60 dollars on Plan A against 35 on Plan B. Plan for the heavy month." }
+   ],
+   "note": "The algebra is settled: the plans cross at 150 minutes. What is not settled is which month predicts next month, and that is a modelling choice rather than an arithmetic mistake."
+  }
+ }
+]

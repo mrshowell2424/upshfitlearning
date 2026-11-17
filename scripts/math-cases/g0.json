@@ -1,0 +1,54 @@
+[
+ {
+  "id": "gK-c1",
+  "grade": 0,
+  "code": "K.OA.2",
+  "tag": "🪑 story time",
+  "title": "The Case of the Empty Chair",
+  "given": [
+   "8 children came to story time.",
+   "There are 6 chairs in the circle.",
+   "Every child wants a chair.",
+   "Nobody brings in more chairs."
+  ],
+  "question": "How many children have no chair?",
+  "options": [
+   { "label": "2 children", "value": "2" },
+   { "label": "6 children", "value": "6" },
+   { "label": "8 children", "value": "8" },
+   { "label": "14 children", "value": "14" }
+  ],
+  "answer": 0,
+  "chk": "8-6",
+  "decider": [1],
+  "proof": [0, 1],
+  "rules_out": [
+   { "option": 1, "because": 1, "why": "6 is how many chairs there are, not how many children are left standing." },
+   { "option": 2, "because": 0, "why": "8 is every child who came, and 6 of them do get a chair." },
+   { "option": 3, "because": 0, "why": "Only 8 children came, so 14 of them cannot be left out." }
+  ],
+  "explain": "Match one child to one chair. Six pairs up, and the children left over are the answer: 8 take away 6 is 2.",
+  "debate": {
+   "given": [
+    "8 children came to story time.",
+    "There are 6 chairs in the circle.",
+    "2 children chose to sit on the rug.",
+    "1 chair is broken and wobbles."
+   ],
+   "question": "How many children have no chair? Say which words you used.",
+   "options": [
+    { "label": "2 children", "value": "2" },
+    { "label": "3 children", "value": "3" },
+    { "label": "0 children", "value": "0" }
+   ],
+   "opened_by": 2,
+   "open": [0, 1, 2],
+   "arguments": [
+    { "option": 0, "evidence": [0, 1], "against": 2, "why": "8 children and 6 chairs leaves 2 children standing." },
+    { "option": 1, "evidence": [0, 1, 3], "against": 2, "why": "A broken chair is not a chair to sit on, so only 5 of them work: 8 take away 5 is 3." },
+    { "option": 2, "evidence": [0, 1, 2], "against": 3, "why": "2 children chose the rug, so the other 6 each had one of the 6 chairs and nobody was left out." }
+   ],
+   "note": "All three can be argued. What settles it is what counts as a chair and what counts as wanting one, so make the child say which words they used."
+  }
+ }
+]

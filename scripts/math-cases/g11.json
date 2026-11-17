@@ -1,0 +1,54 @@
+[
+ {
+  "id": "g11-c1",
+  "grade": 11,
+  "code": "S.ID.6",
+  "tag": "📊 line of fit",
+  "title": "The Case of the Line That Went Too Far",
+  "given": [
+   "A bean plant was measured each week: 2, 5, 8, 11 and 14 centimetres.",
+   "Those are weeks 1 to 5, and the prediction wanted is for week 20.",
+   "The line of best fit through the five points is h = 3w - 1.",
+   "Beans of this kind stop growing at about 60 centimetres."
+  ],
+  "question": "What height does the line predict at week 20, in centimetres?",
+  "options": [
+   { "label": "59 cm", "value": "59" },
+   { "label": "60 cm", "value": "60" },
+   { "label": "57 cm", "value": "57" },
+   { "label": "14 cm", "value": "14" }
+  ],
+  "answer": 0,
+  "chk": "3*20-1",
+  "decider": [2],
+  "proof": [1, 2],
+  "rules_out": [
+   { "option": 1, "because": 3, "why": "60 is where this kind of bean stops growing. It is a fact about the plant, not what the line says." },
+   { "option": 2, "because": 2, "why": "57 takes the 1 off the week rather than off the height: that is 3 times 19, not 3 times 20 minus 1." },
+   { "option": 3, "because": 0, "why": "14 cm is the last measurement taken, at week 5." }
+  ],
+  "explain": "Substituting w = 20 into h = 3w - 1 gives 59. That is what the line says. Whether the plant says it is a different question, and it is the one worth asking.",
+  "debate": {
+   "given": [
+    "A bean plant measured 2, 5, 8, 11 and 14 centimetres in weeks 1 to 5.",
+    "The line of best fit is h = 3w - 1, and it passes within 0.2 cm of every point.",
+    "Beans of this kind stop growing at about 60 centimetres.",
+    "Week 20 falls in late August, after the plant has flowered."
+   ],
+   "question": "What should they predict for week 20? Say how far you trust it.",
+   "options": [
+    { "label": "59 cm, from the line", "value": "59" },
+    { "label": "about 60 cm, the ceiling", "value": "60" },
+    { "label": "about 44 cm, growth stopped earlier", "value": "44" }
+   ],
+   "opened_by": 3,
+   "open": [0, 1, 2],
+   "arguments": [
+    { "option": 0, "evidence": [0, 1], "against": 2, "why": "The line fits five points to within 0.2 cm. Inside the data it is excellent, and what it gives at week 20 is 59." },
+    { "option": 1, "evidence": [1, 2], "against": 3, "why": "Growth flattens as a plant nears its limit, so the honest prediction is the limit itself, about 60." },
+    { "option": 2, "evidence": [0, 3], "against": 1, "why": "A plant that has flowered puts its energy into seed rather than height. Growth stops before the ceiling, so a figure well short of 59 is defensible." }
+   ],
+   "note": "A fit of 0.2 cm over five weeks says nothing whatever about week 20. Ask every student to name the range of weeks they would trust their line across, and to say why the range ends where it does."
+  }
+ }
+]

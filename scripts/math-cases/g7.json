@@ -1,0 +1,55 @@
+[
+ {
+  "id": "g7-c1",
+  "grade": 7,
+  "code": "7.RP.3",
+  "tag": "🏷️ sale",
+  "title": "The Case of the Two Discounts",
+  "given": [
+   "The jacket is marked 80 dollars.",
+   "The sign says 25 percent off.",
+   "A coupon takes 10 dollars off at the till.",
+   "The store takes the percentage off first, then the coupon."
+  ],
+  "question": "What does the jacket cost at the till, in dollars?",
+  "options": [
+   { "label": "50 dollars", "value": "50" },
+   { "label": "52.50", "value": "52.50" },
+   { "label": "60 dollars", "value": "60" },
+   { "label": "45 dollars", "value": "45" }
+  ],
+  "answer": 0,
+  "chk": "80-(80*25/100)-10",
+  "uses": ["100"],
+  "decider": [3],
+  "proof": [0, 1, 2, 3],
+  "rules_out": [
+   { "option": 1, "because": 3, "why": "52.50 is the coupon taken off first and the 25 percent off what was left. The store does it the other way round." },
+   { "option": 2, "because": 2, "why": "60 is the sale price before the coupon is handed over." },
+   { "option": 3, "because": 1, "why": "45 treats 25 percent as 25 dollars. A percentage is of something, and 25 percent of 80 is 20." }
+  ],
+  "explain": "25 percent of 80 is 20, so the sale price is 60. The coupon is a flat 10 off that, giving 50. Order matters here: coupon first would have given 52.50.",
+  "debate": {
+   "given": [
+    "The jacket is marked 80 dollars.",
+    "The sign says 25 percent off.",
+    "A coupon takes 10 dollars off.",
+    "The coupon is printed 'cannot be combined with other offers'."
+   ],
+   "question": "What should the customer pay? Defend it.",
+   "options": [
+    { "label": "50 dollars", "value": "50" },
+    { "label": "60 dollars", "value": "60" },
+    { "label": "70 dollars", "value": "70" }
+   ],
+   "opened_by": 3,
+   "open": [0, 1, 2],
+   "arguments": [
+    { "option": 0, "evidence": [0, 1, 2], "against": 3, "why": "Nothing in the arithmetic stops both: 60, then 10 off, is 50. 'Other offers' may well mean other coupons rather than the store's own sale." },
+    { "option": 1, "evidence": [1, 3], "against": 2, "why": "The coupon cannot be combined, so the customer takes whichever is better. 25 percent off is 60, and that beats the coupon." },
+    { "option": 2, "evidence": [2, 3], "against": 1, "why": "If the customer hands over the coupon, that is the offer they chose: 80 minus 10 is 70. It is the worse deal, but it is what the rule allows." }
+   ],
+   "note": "All three are computed correctly. The disagreement is over what one sentence in the problem means, which is exactly the argument a shop has with a customer."
+  }
+ }
+]

@@ -1,0 +1,55 @@
+[
+ {
+  "id": "g9-c1",
+  "grade": 9,
+  "code": "F.LE.1",
+  "tag": "📈 growth",
+  "title": "The Case of the Spreading Rumour",
+  "given": [
+   "On day 1, 4 students had heard the rumour.",
+   "On day 2, 8 students had heard it.",
+   "On day 3, 16 students had heard it.",
+   "The school has 512 students, and the question is day 6."
+  ],
+  "question": "If the pattern holds, how many students have heard it on day 6?",
+  "options": [
+   { "label": "128 students", "value": "128" },
+   { "label": "24 students", "value": "24" },
+   { "label": "64 students", "value": "64" },
+   { "label": "512 students", "value": "512" }
+  ],
+  "answer": 0,
+  "chk": "4*2^5",
+  "uses": ["5"],
+  "decider": [0, 1, 2],
+  "proof": [0, 1, 2],
+  "rules_out": [
+   { "option": 1, "because": 2, "why": "24 comes from adding 4 a day. That would put day 3 at 12, and day 3 is 16." },
+   { "option": 2, "because": 0, "why": "64 is day 5. Day 1 already has 4 students, so the doubling happens five times to reach day 6, not four." },
+   { "option": 3, "because": 3, "why": "512 is the whole school. The pattern does not reach it until day 8." }
+  ],
+  "explain": "Each day the number doubles: 4, 8, 16, 32, 64, 128. Multiplying by the same factor each step is what makes this exponential rather than linear — a linear pattern adds the same amount each step instead.",
+  "debate": {
+   "given": [
+    "On day 1, 4 students had heard the rumour.",
+    "On day 2, 8 students had heard it.",
+    "On day 3, 16 students had heard it.",
+    "The school has 512 students, and 180 of them are away on a trip all week."
+   ],
+   "question": "How many will have heard it on day 6? Say what your model assumes.",
+   "options": [
+    { "label": "128 students", "value": "128" },
+    { "label": "about 100 students", "value": "100" },
+    { "label": "332 students at most", "value": "332" }
+   ],
+   "opened_by": 3,
+   "open": [0, 1, 2],
+   "arguments": [
+    { "option": 0, "evidence": [0, 1, 2], "against": 3, "why": "Doubling from 4 gives 128 on day 6, and nothing in the three days of data breaks the pattern." },
+    { "option": 1, "evidence": [0, 1, 2, 3], "against": 0, "why": "With 180 students away, each student who knows has fewer people left to tell, so growth slows before day 6 and something under 128 is the honest figure." },
+    { "option": 2, "evidence": [3], "against": 0, "why": "Doubling cannot pass the 332 students actually in the building. The curve has to flatten, and 332 is the ceiling it flattens against." }
+   ],
+   "note": "Three days of data fit a doubling and fit the start of an S-curve equally well. Exponential models are always true at the beginning and never true at the end, and naming where yours stops being true is the skill."
+  }
+ }
+]

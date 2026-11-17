@@ -23,6 +23,7 @@ const links = [
   { label: "Sentence Lab", href: "/sentence-lab" },
   { label: "Math", href: "/math" },
   { label: "Maths spiral review", href: "/math/review" },
+  { label: "Maths reasoning cases", href: "/math/cases" },
   { label: "PBL", href: "/pbl" },
   { label: "Design Thinking", href: "/design-thinking" },
   { label: "Behavior Strategies", href: "/behavior" },

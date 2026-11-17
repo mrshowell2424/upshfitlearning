@@ -1,0 +1,52 @@
+[
+ {
+  "id": "g2-c1",
+  "grade": 2,
+  "code": "2.MD.8",
+  "tag": "🪙 coins",
+  "title": "The Case of the Change That Felt Wrong",
+  "given": [
+   "Sam pays with 3 quarters, 2 dimes and 4 pennies.",
+   "The book costs 84 cents.",
+   "A quarter is 25 cents, a dime is 10 cents, a penny is 1 cent.",
+   "Sam gets his change in pennies."
+  ],
+  "question": "How many pennies of change should Sam get?",
+  "options": [
+   { "label": "15 pennies", "value": "15" },
+   { "label": "99 pennies", "value": "99" },
+   { "label": "9 pennies", "value": "9" },
+   { "label": "84 pennies", "value": "84" }
+  ],
+  "answer": 0,
+  "chk": "3*25+2*10+4*1-84",
+  "decider": [1],
+  "proof": [0, 1, 2],
+  "rules_out": [
+   { "option": 1, "because": 1, "why": "99 cents is what Sam handed over. The price of the book still has to come off it." },
+   { "option": 2, "because": 2, "why": "9 counts the coins. The line of values says what each coin is worth, and a quarter is not worth the same as a penny." },
+   { "option": 3, "because": 1, "why": "84 cents is the price of the book, not the change from it." }
+  ],
+  "explain": "Turn the coins into cents first: 75 and 20 and 4 make 99. The change is what is left once the price comes off: 99 take away 84 is 15 pennies.",
+  "debate": {
+   "given": [
+    "Sam pays with 3 quarters, 2 dimes and 4 pennies.",
+    "The sign under the book says 84 cents.",
+    "The till rings it up at 79 cents.",
+    "A quarter is 25 cents, a dime is 10 cents, a penny is 1 cent."
+   ],
+   "question": "How much change should Sam get? Say which number you trusted, and why.",
+   "options": [
+    { "label": "15 cents", "value": "15" },
+    { "label": "20 cents", "value": "20" }
+   ],
+   "opened_by": 2,
+   "open": [0, 1],
+   "arguments": [
+    { "option": 0, "evidence": [0, 1, 3], "against": 2, "why": "The sign is the price the shop put on the book: 99 take away 84 is 15." },
+    { "option": 1, "evidence": [0, 2, 3], "against": 1, "why": "The till is the price the shop is charging now: 99 take away 79 is 20." }
+   ],
+   "note": "Both children can do the subtraction. What they are arguing about is which number is the price, and that is an argument shops have with customers every day."
+  }
+ }
+]
