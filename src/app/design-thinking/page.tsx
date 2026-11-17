@@ -122,7 +122,7 @@ function DesignThinkingRoadMap() {
     `${MATERIALS}/${kind}?week=${week}&grade=${grade}`;
 
   return (
-    <div style={{ background: CREAM, color: INK, minHeight: "100vh", padding: "36px 20px 80px" }}>
+    <div style={{ color: INK, minHeight: "100vh", padding: "36px 20px 80px" }}>
       <div style={{ maxWidth: 1180, margin: "0 auto" }}>
         {/* Masthead */}
         <div style={{ borderBottom: `1px solid ${RULE}`, paddingBottom: 22 }}>

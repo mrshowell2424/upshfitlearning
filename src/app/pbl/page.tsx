@@ -64,7 +64,7 @@ const CYCLE = [
 
 function Hub() {
   return (
-    <div style={{ background: PAGE, color: INK, minHeight: "100vh", padding: "36px 20px 80px" }}>
+    <div style={{ color: INK, minHeight: "100vh", padding: "36px 20px 80px" }}>
       <div style={{ maxWidth: 1180, margin: "0 auto" }}>
         <div style={{ borderBottom: `3px solid ${RULE}`, paddingBottom: 20 }}>
           <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.18em", color: CORAL_TEXT }}>

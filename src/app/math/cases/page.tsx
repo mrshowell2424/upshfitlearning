@@ -332,7 +332,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                             lineHeight: 1.65,
                             margin: 0,
                             padding: "12px 14px",
-                            background: "#FAFAFA",
+                            background: "#F2F2F2",
                             borderRadius: 10,
                             color: BRAND.mid,
                           }}

@@ -50,7 +50,7 @@ const BRAND = {
   mid: "#444444",
   soft: "#6A6A6A",
   line: "#E9E9E9",
-  panel: "#FAFAFA",
+  panel: "#F2F2F2",
   coralDark: "#C0432F",
   lavenderDark: "#6B2FB5",
   tealDark: "#00756C",

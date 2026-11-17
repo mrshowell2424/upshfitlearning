@@ -23,7 +23,6 @@ import { OG_LEVELS, OG_CONCEPTS, ogPackHref } from "@/app/reading/og-packs-data"
  */
 
 /** The road map's own palette. */
-const CREAM = "#F7F6F4";
 const INK = "#111111";
 const MUTED = "#444444";
 const RULE = "#F2F2F2";
@@ -45,7 +44,7 @@ const PACK_TOTAL = OG_CONCEPTS.length;
 
 function Packs() {
   return (
-    <div style={{ background: CREAM, color: INK, minHeight: "100vh", padding: "36px 20px 80px" }}>
+    <div style={{ color: INK, minHeight: "100vh", padding: "36px 20px 80px" }}>
       <div style={{ maxWidth: 1180, margin: "0 auto" }}>
         <div style={{ borderBottom: `3px solid ${RULE}`, paddingBottom: 18 }}>
           <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.18em", color: BRASS }}>

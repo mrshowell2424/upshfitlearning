@@ -59,7 +59,6 @@ export const metadata = {
  * block of colour, and a darker relative of it for the small bold text, where
  * the brand hue alone does not carry enough contrast against white.
  */
-const PAGE = "#FAFAFA";
 const INK = "#111111";
 const MUTED = "#6A6A6A";
 const RULE = "#E9E9E9";
@@ -313,7 +312,7 @@ function Rope() {
 
 function Hub() {
   return (
-    <div style={{ background: PAGE, color: INK, minHeight: "100vh", padding: "36px 20px 80px" }}>
+    <div style={{ color: INK, minHeight: "100vh", padding: "36px 20px 80px" }}>
       <div style={{ maxWidth: 1180, margin: "0 auto" }}>
         <div style={{ borderBottom: `3px solid ${RULE}`, paddingBottom: 20 }}>
           <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.18em", color: CORAL_TEXT }}>

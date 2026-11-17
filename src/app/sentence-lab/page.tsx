@@ -160,7 +160,6 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
           <div style={{ height: 4, background: GRADIENT }} />
           <div
             style={{
-              background: BRAND.paper,
               color: BRAND.ink,
               fontFamily: "Poppins, system-ui, sans-serif",
               lineHeight: 1.6,

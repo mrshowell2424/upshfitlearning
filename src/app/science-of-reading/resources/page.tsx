@@ -829,10 +829,14 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
           blurb="Mysteries and informational articles with questions, a written response, and an AI prompt that carries the whole text. Free — an account is all it takes."
         >
           <div style={{ height: 4, background: GRADIENT }} />
-          {/* The paper is painted on the full-width wrapper and the column is
-              centred inside it. Painting it on the column itself left a bare
-              white band down the right of any wide screen. */}
-          <div style={{ background: BRAND.paper, color: BRAND.ink, fontFamily: "var(--font-poppins), system-ui, sans-serif", lineHeight: 1.6 }}>
+          {/* White, like every other page.
+              This used to paint BRAND.paper across the full width with the
+              column centred on it, which made the page a beige band in a
+              white site — arriving here from anywhere felt like leaving.
+              The paper tone is still used, on the panels inside, where a
+              tint separates one block from another instead of separating
+              this page from the rest of them. */}
+          <div style={{ color: BRAND.ink, fontFamily: "var(--font-poppins), system-ui, sans-serif", lineHeight: 1.6 }}>
           <div style={{ maxWidth: 880, margin: "0 auto", padding: "32px 5% 80px" }}>
             <p style={{ ...label, margin: "0 0 6px" }}>Upshift Learning</p>
             <h1 style={{ fontFamily: "var(--font-poppins), system-ui, sans-serif", fontSize: 40, fontWeight: 900, letterSpacing: "-1px", margin: "0 0 4px", lineHeight: 1.1 }}>
