@@ -4094,6 +4094,16 @@ const MATH_ADAPTATIONS: Adaptation[] = [
           "  });",
       );
 
+      // the printable follows the level, or the button hands out the
+      // on-grade sheet to a teacher who has just asked for below grade
+      const file = '    return "printables/practice_" + key + "_" + side + ".pdf";';
+      if (!out.includes(file)) return html;
+      out = out.replace(
+        file,
+        '    var lvl = mathLevel === "on" ? "" : "_" + mathLevel;\n' +
+          '    return "printables/practice_" + key + lvl + "_" + side + ".pdf";',
+      );
+
       // the note has to be right on first paint too
       const first = "  update();\n})();";
       if (!out.includes(first)) return html;

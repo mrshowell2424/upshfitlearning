@@ -72,6 +72,8 @@ const html = readFileSync(HUB, "utf8");
 const PRAC = table(html, "PRAC");
 const FTE = table(html, "FTE");
 const DATA = table(html, "DATA");
+/** The widened, checked practice. Absent is survivable; wrong is not. */
+const MATHP = JSON.parse(readFileSync(path.join(ROOT, "scripts/math-practice.json"), "utf8"));
 
 const gradeKey = (g) => (g === "Kindergarten" ? "k" : "g" + g.replace("Grade ", ""));
 
@@ -211,11 +213,44 @@ function findTheError(grade, codes, key) {
   return sheets;
 }
 
+/**
+ * The practice a standard has, at one of the three levels.
+ *
+ * The hub's own table holds four computations and two word problems per
+ * standard and nothing else, so every sheet was the same sheet and there
+ * was no such thing as a below-grade one. scripts/math-practice.json holds
+ * twelve and six for the standards that are arithmetic, with every answer
+ * re-derived by its own checker, and says which standard to read for below
+ * and above — the one this stands on, and the next in its strand.
+ *
+ * A standard outside that set keeps the hub's own six at every level,
+ * which is why the below-grade sheet for a geometry standard looks like
+ * the on-grade one. Printing a sheet that claims to be easier and is not
+ * would be worse.
+ */
+function levelled(code, level) {
+  const lv = (MATHP.levels || {})[code];
+  const from = lv ? lv[level] || code : code;
+  const bank = (MATHP.items || {})[from];
+  if (!bank) return { p: PRAC[code], from: code, generated: false };
+  return {
+    p: {
+      c: bank.c.slice(0, 4).map((x) => x.q),
+      ac: bank.c.slice(0, 4).map((x) => x.a),
+      w: bank.w.slice(0, 2).map((x) => x.q),
+      aw: bank.w.slice(0, 2).map((x) => x.a),
+    },
+    from,
+    generated: true,
+  };
+}
+
 /** Daily practice — four computation problems and two word problems. */
-function practice(grade, codes, key) {
+function practice(grade, codes, key, level = "on") {
   const sheets = [];
   for (const code of codes) {
-    const p = PRAC[code];
+    const got = levelled(code, level);
+    const p = got.p;
     if (!p) continue;
     const comp = (p.c || [])
       .map(
@@ -236,11 +271,19 @@ function practice(grade, codes, key) {
     sheets.push(
       page({
         title: `${grade} Practice`,
-        meta: `Standard ${code}`,
+        meta:
+          level === "on"
+            ? `Standard ${code}`
+            // Which standard the work actually comes from, because "below
+            // grade" that does not say what it is is a sheet a teacher
+            // cannot defend to a parent or write into a plan.
+            : `Standard ${code} · ${level === "below" ? "below" : "above"} grade${
+                got.from === code ? "" : ` · from ${got.from}`
+              }`,
         withName: true,
         dir: "",
         bodyHtml: `<div class="head">Computation</div>${comp}<div class="head">Word problems</div>${word}`,
-        foot: `${code}${key ? " · ANSWER KEY" : ""}`,
+        foot: `${code}${level === "on" ? "" : ` · ${level} grade`}${key ? " · ANSWER KEY" : ""}`,
       })
     );
   }
@@ -263,12 +306,17 @@ let shrunk = 0;
 const spills = [];
 for (const [grade, codes] of byGrade) {
   const k = gradeKey(grade);
-  for (const [name, build] of [
-    [`${k}`, findTheError],
-    [`practice_${k}`, practice],
+  // Practice comes in three now. On-grade keeps the name it had, because
+  // the hub links to it and a rename would break every print button; the
+  // other two are new files beside it.
+  for (const [name, build, level] of [
+    [`${k}`, findTheError, "on"],
+    [`practice_${k}`, practice, "on"],
+    [`practice_${k}_below`, practice, "below"],
+    [`practice_${k}_above`, practice, "above"],
   ]) {
     for (const key of [false, true]) {
-      const sheets = build(grade, codes, key);
+      const sheets = build(grade, codes, key, level);
       if (!sheets.length) continue;
       await page1.setContent(doc(sheets), { waitUntil: "load" });
       await page1.evaluate(() => document.fonts.ready);
