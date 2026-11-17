@@ -461,6 +461,11 @@ function SignalCard({ s, remove }: { s: Signal; remove: string }) {
  * — reference material standing in for the thing the page does. A teacher
  * who had not clicked yet saw no reason to. This is four lines that say
  * what arrives when they do, which is the only question at that moment.
+ *
+ * It sits above the signals rather than under them. Someone arriving here
+ * for the first time is not choosing yet; they are deciding whether the
+ * page is worth a click, and a row of twelve buttons does not answer that.
+ * Say what a card holds, then offer the buttons.
  */
 function WhatYouGet() {
   const parts: [string, string][] = [
@@ -471,7 +476,7 @@ function WhatYouGet() {
   ];
   return (
     <Card>
-      <p style={{ ...label, margin: "0 0 4px", color: BRAND.coralDark }}>Pick one above</p>
+      <p style={{ ...label, margin: "0 0 4px", color: BRAND.coralDark }}>Pick one below</p>
       <h2 style={{ fontFamily: SANS, fontSize: 22, fontWeight: 800, letterSpacing: "-0.4px", margin: "0 0 8px", lineHeight: 1.2 }}>
         What you get for each one
       </h2>
@@ -630,11 +635,26 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
           >
             Most behavior resources are filed by strategy, which only helps if you already know
             what you are looking at. This one starts where you actually start: with what you can
-            see from across the room. Click everything you are seeing.
+            see from across the room.
           </p>
 
+          {/* Before anything is picked, what a card holds comes first and the
+              signals come after it. A teacher who has not clicked yet is not
+              yet choosing — they are deciding whether this page is worth a
+              click at all, and twelve buttons do not answer that. Once a
+              signal is picked the explainer has done its job and goes, which
+              puts the signals back at the top where a second pick is made. */}
+          {chosen.length === 0 && <WhatYouGet />}
+
           <p style={{ ...label, margin: "0 0 10px" }}>What are you seeing?</p>
-          <div style={{ display: "flex", gap: 7, flexWrap: "wrap", margin: "0 0 14px" }}>
+          <div
+            style={{
+              display: "flex",
+              gap: 7,
+              flexWrap: "wrap",
+              margin: picked.length > 0 ? "0 0 14px" : "0 0 26px",
+            }}
+          >
             {SIGNALS.map((s) => (
               <a key={s.id} href={toggle(s.id)} style={pill(picked.includes(s.id), BRAND.ink)} title={s.short}>
                 {s.name}
@@ -648,9 +668,6 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               </a>
             </p>
           )}
-          {picked.length === 0 && <div style={{ height: 12 }} />}
-
-          {chosen.length === 0 && <WhatYouGet />}
 
           {chosen.length > 1 && (
             <Card accent={BRAND.lavenderDark}>
