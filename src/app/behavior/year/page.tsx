@@ -33,8 +33,8 @@ const BRAND = {
   ink: "#111111",
   mid: "#444444",
   line: "#E9E9E9",
-  panel: "#F2F2F2",
-  paper: "#F7F6F4",
+  panel: "#FAFAFA",
+  paper: "#FAFAFA",
   white: "#FFFFFF",
   coralDark: "#C0432F",
   pinkDark: "#B3336E",
@@ -55,10 +55,18 @@ const label: React.CSSProperties = {
   color: BRAND.mid,
 };
 
-/** Running text gets the serif; the interface around it stays in Poppins. */
+/**
+ * Running text.
+ *
+ * Poppins, per the brand book in globals.css: it is the whole interface,
+ * headings and running text alike. The serif is for lines a child reads,
+ * and nothing here is one -- this is a teacher planning a term. Poppins
+ * runs larger than the serif at the same size, so this is a point smaller
+ * than the serif it replaced.
+ */
 const reading: React.CSSProperties = {
-  fontFamily: 'var(--font-serif), Georgia, "Times New Roman", serif',
-  fontSize: 17,
+  fontFamily: "Poppins, system-ui, sans-serif",
+  fontSize: 16,
   lineHeight: 1.6,
 };
 
@@ -107,7 +115,6 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
         <div style={{ height: 4, background: GRADIENT }} />
         <div
           style={{
-            background: BRAND.paper,
             color: BRAND.ink,
             fontFamily: "Poppins, system-ui, sans-serif",
             lineHeight: 1.6,
@@ -257,7 +264,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               <h2
                 style={{
                   fontFamily: "Poppins, sans-serif",
-                  fontSize: 30,
+                  fontSize: 28,
                   fontWeight: 800,
                   letterSpacing: "-0.6px",
                   margin: "4px 0 2px",
@@ -285,7 +292,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                 <p
                   style={{
                     ...reading,
-                    fontSize: 21,
+                    fontSize: 20,
                     fontWeight: 700,
                     margin: 0,
                     lineHeight: 1.3,
@@ -345,7 +352,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                   }}
                 >
                   <p style={{ ...label, margin: "0 0 5px", color: ink }}>On the wall</p>
-                  <p style={{ ...reading, fontSize: 16, margin: 0 }}>{block.tool}</p>
+                  <p style={{ ...reading, fontSize: 15.5, margin: 0 }}>{block.tool}</p>
                 </div>
                 <div
                   style={{
@@ -356,7 +363,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                   }}
                 >
                   <p style={{ ...label, margin: "0 0 5px", color: ink }}>Send home</p>
-                  <p style={{ ...reading, fontSize: 16, margin: 0 }}>{block.home}</p>
+                  <p style={{ ...reading, fontSize: 15.5, margin: 0 }}>{block.home}</p>
                 </div>
               </div>
             </section>
