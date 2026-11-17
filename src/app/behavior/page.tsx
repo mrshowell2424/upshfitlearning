@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ogCard, twitterCard } from "@/lib/constants/metadata";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
@@ -9,35 +8,50 @@ import { EF_YEAR } from "./ef-weeks";
  * Behavior Strategies — start from what you can see.
  *
  * The teacher picks the signals in front of them and the page answers in the
- * order a person actually asks: is this the thing I am seeing, what is going
- * on in there, what do I do in the next few minutes, what makes next month
- * easier. Several signals can be selected at once, because a hard morning is
- * rarely one behavior, and the overlap is the useful part — when three
- * signals load the same executive function skill, that skill is the work.
+ * order a person actually asks: is this the thing I am seeing, what do I do
+ * in the next few minutes, what do I say, and then — later, when the room is
+ * calm — why it happens and what builds the skill. Several signals can be
+ * picked at once, because a hard morning is rarely one behavior, and the
+ * overlap is the useful part.
  *
- * Selection is in the URL, so a coach can send a colleague the exact view they
- * were looking at, and so the page stays a server component with no client
+ * Selection is in the URL, so a coach can send a colleague the exact view
+ * they were looking at, and so this stays a server component with no client
  * bundle at all.
+ *
+ * ON THE LOOK OF IT. This page had grown its own layout vocabulary and
+ * looked, correctly, like a page from a different site. Four things did it,
+ * and all four are fixed here rather than softened:
+ *
+ *   1. Two column widths. The column was 1000px, the prose inside it capped
+ *      at 720 and the lists at 660, so headings and cards had different
+ *      right edges and the page looked like it had slipped. One width now,
+ *      880, the same as /math/cases and /math/review.
+ *   2. A beige slab. The whole page sat on #F7F6F4 full-bleed, which no
+ *      other page does, so it read as a different site the moment you
+ *      arrived from anywhere. White, with the brand hairline on top.
+ *   3. Poppins for everything. The container forced the UI face onto 2,000
+ *      words of reading. Prose is in the reading serif now, as it is
+ *      everywhere else; Poppins is for headings, labels and controls.
+ *   4. Five accent colours in one card. Teal, coral, lavender, pink and ink
+ *      each headed a section, in five sizes, which is what made it feel
+ *      unresolved. Two colours carry meaning now and nothing else is
+ *      coloured at all: teal is what to do, coral is what not to. Every
+ *      other section is a neutral fold with the same small caps summary the
+ *      rest of the site uses.
  */
 
 const BRAND = {
-  coral: "#FF6A5B",
-  pink: "#FF7DAE",
-  lavender: "#B87DFF",
-  teal: "#00B4A6",
   ink: "#111111",
   mid: "#444444",
+  soft: "#6A6A6A",
   line: "#E9E9E9",
-  panel: "#F2F2F2",
-  paper: "#F7F6F4",
-  /** The dark end of each ramp: the brand hues fail contrast for text. */
+  panel: "#FAFAFA",
   coralDark: "#C0432F",
-  pinkDark: "#B3336E",
   lavenderDark: "#6B2FB5",
   tealDark: "#00756C",
 };
-const GRADIENT =
-  `linear-gradient(135deg, ${BRAND.coral}, ${BRAND.pink}, ${BRAND.lavender}, ${BRAND.teal})`;
+const GRADIENT = "linear-gradient(135deg, #FF6A5B, #FF7DAE, #B87DFF, #00B4A6)";
+const serif = 'var(--font-serif), Georgia, "Times New Roman", serif';
 
 type Search = Promise<Record<string, string | string[] | undefined>>;
 const all = (v: string | string[] | undefined): string[] =>
@@ -46,75 +60,72 @@ const all = (v: string | string[] | undefined): string[] =>
 const label: React.CSSProperties = {
   fontFamily: "Poppins, system-ui, sans-serif",
   fontSize: 11,
-  fontWeight: 700,
-  letterSpacing: "0.14em",
+  fontWeight: 800,
+  letterSpacing: "0.12em",
   textTransform: "uppercase",
   color: BRAND.mid,
 };
 
-const pill = (on: boolean): React.CSSProperties => ({
-  fontFamily: "Poppins, system-ui, sans-serif",
-  fontSize: 13,
-  fontWeight: 700,
-  borderRadius: 100,
-  padding: "8px 16px",
-  cursor: "pointer",
-  textDecoration: "none",
-  display: "inline-block",
-  border: `1.5px solid ${BRAND.ink}`,
-  background: on ? BRAND.ink : "#FFFFFF",
-  color: on ? "#FFFFFF" : BRAND.ink,
-});
-
 /**
- * The line length everything readable on this page is held to.
+ * The control, in the shape the rest of the site uses.
  *
- * The card is nearly nine hundred pixels wide and the body text was running
- * the whole of it -- around 110 characters a line, where the eye starts
- * losing its place on the way back to the left margin. Every list and every
- * paragraph of prose is capped here instead. The panels keep their full
- * width, so the page does not turn into one narrow column.
+ * Same geometry as the pills on /math/cases, so a teacher moving between
+ * the two is pressing the same button twice rather than learning two.
  */
-const MEASURE = 660;
+function pill(on: boolean, color: string): React.CSSProperties {
+  return {
+    fontFamily: "Poppins, system-ui, sans-serif",
+    fontSize: 13,
+    fontWeight: 800,
+    padding: "8px 15px",
+    minHeight: 40,
+    display: "inline-flex",
+    alignItems: "center",
+    borderRadius: 999,
+    textDecoration: "none",
+    border: `1.5px solid ${on ? color : BRAND.line}`,
+    background: on ? color : "#FFFFFF",
+    color: on ? "#FFFFFF" : BRAND.ink,
+  };
+}
 
-/**
- * Disclosure headings. Pair it with className="disclosure" on the <details>,
- * which draws the chevron -- see globals.css. The default triangle is a
- * different shape, size and colour in every browser.
- */
+/** Small caps, the one summary style on the site. */
 const summaryStyle: React.CSSProperties = {
   cursor: "pointer",
   listStyle: "none",
-  fontFamily: "Poppins, system-ui, sans-serif",
-  fontSize: 12,
-  fontWeight: 800,
-  letterSpacing: "0.08em",
-  textTransform: "uppercase",
+  ...label,
+  fontSize: 11,
   color: BRAND.ink,
 };
 
 const tag = (color: string): React.CSSProperties => ({
   fontFamily: "Poppins, system-ui, sans-serif",
-  fontSize: 11,
-  fontWeight: 800,
-  letterSpacing: "0.04em",
-  borderRadius: 100,
-  padding: "4px 10px",
+  fontSize: 12,
+  fontWeight: 700,
+  borderRadius: 999,
+  padding: "5px 11px",
   background: "#FFFFFF",
   color,
   border: `1.5px solid ${color}`,
   display: "inline-block",
+  textDecoration: "none",
 });
 
+/**
+ * The card every block of this page sits in.
+ *
+ * Ink top edge, rounded at the bottom only — the same card as the cases and
+ * review pages, so the three read as one site.
+ */
 function Card({ children, accent }: { children: React.ReactNode; accent?: string }) {
   return (
     <div
       style={{
         background: "#FFFFFF",
         border: `1px solid ${BRAND.line}`,
-        borderTop: accent ? `4px solid ${accent}` : `1px solid ${BRAND.line}`,
-        borderRadius: 18,
-        padding: "22px 24px",
+        borderTop: `3px solid ${accent || BRAND.ink}`,
+        borderRadius: "3px 3px 18px 18px",
+        padding: "20px 22px 18px",
         margin: "0 0 18px",
       }}
     >
@@ -124,143 +135,34 @@ function Card({ children, accent }: { children: React.ReactNode; accent?: string
 }
 
 /**
- * The way to the year plan.
+ * The first clause of an observation, for the one-line confirmation.
  *
- * Every skill tag on this page already links into /behavior/year, but a tag
- * only exists once a signal has been picked -- so a teacher who opened this
- * page and read it without clicking anything had no route to the term plan
- * at all. This is that route, and it sits at the bottom because that is
- * where the question arrives: the signal cards answer the next few minutes
- * and then the next few weeks, and the obvious next question is what to do
- * with the other thirty-four.
+ * "Head down on the desk, or turned away from the room." is written to be
+ * read on its own; strung together with two others it has to be shorter
+ * than that, and the part before the first comma names what was seen.
  */
-function YearCard() {
-  const weeks = Math.max(
-    ...EF_YEAR.map((b) => Number(b.weeks.match(/(\d+)\D+(\d+)/)?.[2] ?? 0)),
-  );
-  return (
-    <a
-      href="/behavior/year"
-      style={{
-        display: "block",
-        background: "#FFFFFF",
-        border: `1px solid ${BRAND.line}`,
-        borderLeft: `8px solid ${BRAND.tealDark}`,
-        borderRadius: 18,
-        padding: "22px 24px",
-        margin: "0 0 18px",
-        textDecoration: "none",
-        color: BRAND.ink,
-      }}
-    >
-      <p style={{ ...label, margin: "0 0 4px", color: BRAND.tealDark }}>Over the term</p>
-      <h2
-        style={{
-          fontFamily: "Poppins, sans-serif",
-          fontSize: 22,
-          fontWeight: 800,
-          margin: "0 0 8px",
-          letterSpacing: "-0.4px",
-        }}
-      >
-        The executive function year
-      </h2>
-      <p style={{ margin: 0, fontSize: 15, color: BRAND.mid, lineHeight: 1.6 }}>
-        {`All ${EF_YEAR.length} skills named on this page, taught across ${weeks} weeks at two minutes a day — five lessons a week, an I-can statement the class ends up saying, and something to send home.`}
-      </p>
-      {/* The eleven skills, drawn rather than photographed.
-          This was a screenshot of the year page cropped to a 20:7 band, on
-          the principle that a teacher deciding whether to click should see
-          the thing. At the width this card actually renders, the screenshot
-          was a smudge of unreadable interface with its own title inside it,
-          so the card showed the same heading twice and neither legibly.
-          The skills themselves are the useful part, and as text they are
-          readable at any size and cost no image. */}
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 6,
-          padding: "14px 15px",
-          background: BRAND.paper,
-          border: `1px solid ${BRAND.line}`,
-          borderRadius: 12,
-          marginTop: 16,
-        }}
-      >
-        {EF_YEAR.map((bk) => (
-          <span
-            key={bk.key}
-            style={{
-              fontSize: 12.5,
-              fontWeight: 700,
-              color: BRAND.ink,
-              background: "#FFFFFF",
-              border: `1px solid ${BRAND.line}`,
-              borderRadius: 999,
-              padding: "4px 11px",
-              whiteSpace: "nowrap",
-            }}
-          >
-            <span aria-hidden="true" style={{ marginRight: 5 }}>
-              {bk.icon}
-            </span>
-            {bk.name}
-          </span>
-        ))}
-      </div>
-    </a>
-  );
+function firstClause(text: string) {
+  const first = String(text).split(/[,—.]/)[0].trim();
+  return first.charAt(0).toLowerCase() + first.slice(1);
 }
 
 /**
- * One of the questions, with its list.
+ * A list of moves, with a marker the browser is not asked to draw.
  *
- * The markers are drawn here rather than left to the browser. Tailwind's
- * preflight sets list-style: none on every ul and ol in the project, so the
- * <li>s on this page had been rendering as indented paragraphs since the day
- * it was written -- five sections of six sentences each, with nothing to
- * tell the eye where one ended and the next began. A dot in the section's
- * own colour does that, and ties the item to the heading above it.
- *
- * The heading gets a short bar of the same colour. Five headings that differ
- * only in hue are hard to tell apart while scrolling; a bar above each one
- * gives the section a top edge.
+ * Tailwind's preflight sets list-style: none on every ul in the project, so
+ * these had been rendering as indented paragraphs. The dot is neutral now:
+ * colouring each section differently is what made the card look busy, and a
+ * folded section does not need a hue to tell it from its neighbour.
  */
-function Block({
-  heading,
-  note,
-  items,
-  color,
-}: {
-  heading?: string;
-  note?: string;
-  items: string[];
-  color: string;
-}) {
+function Block({ note, items }: { note?: string; items: string[] }) {
   return (
-    <section style={{ margin: "0 0 26px" }}>
-      <div style={{ width: 26, height: 3, borderRadius: 2, background: color, margin: "0 0 9px" }} />
-      {heading && (
-        <h3
-        style={{
-          fontFamily: "Poppins, sans-serif",
-          fontSize: 16,
-          fontWeight: 800,
-          margin: "0 0 2px",
-          color,
-          letterSpacing: "-0.2px",
-        }}
-      >
-        {heading}
-      </h3>
-      )}
+    <section style={{ margin: "0 0 4px" }}>
       {note && (
-        <p style={{ margin: "0 0 10px", fontSize: 13, color: BRAND.mid, fontStyle: "italic" }}>
+        <p style={{ margin: "0 0 10px", fontSize: 13.5, color: BRAND.soft, fontStyle: "italic" }}>
           {note}
         </p>
       )}
-      <ul style={{ margin: "8px 0 0", padding: 0, listStyle: "none", maxWidth: MEASURE }}>
+      <ul style={{ margin: 0, padding: 0, listStyle: "none", maxWidth: "66ch" }}>
         {items.map((t) => (
           <li
             key={t}
@@ -268,8 +170,9 @@ function Block({
               display: "grid",
               gridTemplateColumns: "14px 1fr",
               gap: 10,
-              margin: "0 0 9px",
-              fontSize: 15,
+              margin: "0 0 10px",
+              fontSize: 16,
+              fontFamily: serif,
               lineHeight: 1.6,
             }}
           >
@@ -279,9 +182,9 @@ function Block({
                 width: 6,
                 height: 6,
                 borderRadius: 999,
-                background: color,
+                background: BRAND.soft,
                 // Centred on the first line of text rather than its top.
-                marginTop: 9,
+                marginTop: 10,
               }}
             />
             <span>{t}</span>
@@ -295,31 +198,27 @@ function Block({
 /**
  * The words, set as words.
  *
- * Every other section on this page is a list of moves. This one is a list of
- * sentences, and a teacher reading it has about ten seconds before the
- * moment passes -- so each line is set in the reading face at a size you can
- * take in whole, with nothing in front of it to scan past. No bullets, no
- * numbers.
+ * Every other section is a list of moves. This one is a list of sentences,
+ * and a teacher reading it has about ten seconds before the moment passes —
+ * so each line is set in the reading face at a size you can take in whole,
+ * with nothing in front of it to scan past.
  *
  * The two halves belong in one panel. A page that only lists better
  * sentences does not displace the ones already in a teacher's mouth: in a
  * hard moment you reach for whatever is nearest, and the nearest words are
- * the well-meant ones on the right. Putting them side by side is what makes
- * it a swap rather than a wish.
+ * the well-meant ones on the right. Side by side is what makes it a swap.
  *
- * What to say is written to be said to the student rather than about them,
- * and every line leaves the work standing: none of them excuse the task, and
- * none of them are calm down, you're fine, or I know you can do it.
+ * These are the two colours on the page that mean something — teal for what
+ * to say, coral for what not to. Nothing else is coloured, so these read.
  */
 function Words({ say, avoid }: { say: string[]; avoid: { words: string; why: string }[] }) {
   return (
     <section
       style={{
-        margin: "0 0 26px",
+        margin: "0 0 20px",
         border: `1px solid ${BRAND.line}`,
         borderRadius: 14,
         overflow: "hidden",
-        background: "#FFFFFF",
       }}
     >
       <div
@@ -330,53 +229,29 @@ function Words({ say, avoid }: { say: string[]; avoid: { words: string; why: str
           gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))",
         }}
       >
-        <div style={{ padding: "18px 20px", borderTop: `3px solid ${BRAND.tealDark}` }}>
+        <div style={{ padding: "16px 18px", borderTop: `3px solid ${BRAND.tealDark}` }}>
           <p style={{ ...label, margin: "0 0 2px", color: BRAND.tealDark }}>Say this</p>
-          <p style={{ margin: "0 0 14px", fontSize: 13, color: BRAND.mid, fontStyle: "italic" }}>
+          <p style={{ margin: "0 0 12px", fontSize: 13, color: BRAND.soft, fontStyle: "italic" }}>
             Short enough to say across a room.
           </p>
           {say.map((t, i) => (
-            <p
-              key={i}
-              style={{
-                fontFamily: 'var(--font-serif), Georgia, "Times New Roman", serif',
-                fontSize: 18,
-                lineHeight: 1.45,
-                margin: i ? "13px 0 0" : 0,
-              }}
-            >
+            <p key={i} style={{ fontFamily: serif, fontSize: 17.5, lineHeight: 1.45, margin: i ? "13px 0 0" : 0 }}>
               {t}
             </p>
           ))}
         </div>
 
-        <div
-          style={{
-            padding: "18px 20px",
-            borderTop: `3px solid ${BRAND.coralDark}`,
-            background: BRAND.paper,
-          }}
-        >
+        <div style={{ padding: "16px 18px", borderTop: `3px solid ${BRAND.coralDark}`, background: BRAND.panel }}>
           <p style={{ ...label, margin: "0 0 2px", color: BRAND.coralDark }}>Not this</p>
-          <p style={{ margin: "0 0 14px", fontSize: 13, color: BRAND.mid, fontStyle: "italic" }}>
+          <p style={{ margin: "0 0 12px", fontSize: 13, color: BRAND.soft, fontStyle: "italic" }}>
             All of them kind. All of them in daily use.
           </p>
           {avoid.map((a, i) => (
             <div key={i} style={{ margin: i ? "14px 0 0" : 0 }}>
-              <p
-                style={{
-                  fontFamily: 'var(--font-serif), Georgia, "Times New Roman", serif',
-                  fontSize: 18,
-                  lineHeight: 1.45,
-                  margin: 0,
-                  color: BRAND.coralDark,
-                }}
-              >
+              <p style={{ fontFamily: serif, fontSize: 17.5, lineHeight: 1.45, margin: 0, color: BRAND.coralDark }}>
                 {a.words}
               </p>
-              <p style={{ margin: "3px 0 0", fontSize: 14, lineHeight: 1.55, color: BRAND.mid }}>
-                {a.why}
-              </p>
+              <p style={{ margin: "3px 0 0", fontSize: 14, lineHeight: 1.55, color: BRAND.mid }}>{a.why}</p>
             </div>
           ))}
         </div>
@@ -386,76 +261,40 @@ function Words({ say, avoid }: { say: string[]; avoid: { words: string; why: str
 }
 
 /**
- * The first clause of an observation, for the one-line confirmation.
- *
- * "Head down on the desk, or turned away from the room." is written to be
- * read on its own; strung together with two others it has to be shorter
- * than that, and the part before the first comma is the part that names
- * what was seen.
- */
-function firstClause(text: string) {
-  const first = String(text).split(/[,—.]/)[0].trim();
-  return first.charAt(0).toLowerCase() + first.slice(1);
-}
-
-/**
  * A section folded away until it is wanted.
  *
- * The card had six sections of equal weight and 2,000 words, so the two a
- * teacher needs in the moment were below two they need afterwards. These
- * keep every word and change when it is in front of somebody.
+ * The card holds about two thousand words and a teacher in the moment needs
+ * two hundred of them. These keep every word and change when it is in front
+ * of somebody. The summary is the site's small caps rather than a coloured
+ * heading of its own size — four folds in four colours was the single
+ * busiest thing on the page.
  */
-function Fold({
-  heading,
-  count,
-  color,
-  children,
-}: {
-  heading: string;
-  count: number;
-  color: string;
-  children: React.ReactNode;
-}) {
+function Fold({ heading, count, children }: { heading: string; count: number; children: React.ReactNode }) {
   return (
-    <details className="disclosure" style={{ borderTop: `1px solid ${BRAND.line}`, padding: "12px 0" }}>
-      <summary
-        style={{
-          cursor: "pointer",
-          listStyle: "none",
-          display: "flex",
-          alignItems: "center",
-          gap: 9,
-          fontFamily: "Poppins, sans-serif",
-          fontSize: 15.5,
-          fontWeight: 800,
-          color,
-          letterSpacing: "-0.2px",
-        }}
-      >
-        {heading}
-        <span style={{ ...label, margin: 0, color: BRAND.mid, fontSize: 11 }}>{count}</span>
+    <details className="disclosure" style={{ borderTop: `1px solid ${BRAND.line}`, padding: "13px 0" }}>
+      <summary style={summaryStyle}>
+        {heading} <span style={{ color: BRAND.soft }}>· {count}</span>
       </summary>
-      <div style={{ paddingTop: 12 }}>{children}</div>
+      <div style={{ paddingTop: 13 }}>{children}</div>
     </details>
   );
 }
 
 function SignalCard({ s, remove }: { s: Signal; remove: string }) {
   return (
-    <Card accent={BRAND.coralDark}>
+    <Card>
       <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
-        <p style={{ ...label, margin: 0 }}>What you are seeing</p>
-        <a href={remove} style={{ ...label, margin: 0, color: BRAND.coralDark, textDecoration: "none" }}>
-          Hide
+        <p style={{ ...label, margin: 0, color: BRAND.coralDark }}>What you are seeing</p>
+        <a href={remove} style={{ ...label, margin: 0, color: BRAND.soft, textDecoration: "none" }}>
+          Remove ✕
         </a>
       </div>
       <h2
         style={{
-          fontFamily: "Poppins, sans-serif",
-          fontSize: 28,
-          fontWeight: 900,
-          margin: "2px 0 4px",
-          letterSpacing: "-0.6px",
+          fontFamily: serif,
+          fontSize: 29,
+          fontWeight: 700,
+          margin: "3px 0 3px",
           lineHeight: 1.15,
         }}
       >
@@ -463,59 +302,32 @@ function SignalCard({ s, remove }: { s: Signal; remove: string }) {
       </h2>
       <p style={{ margin: "0 0 14px", fontSize: 16, color: BRAND.mid }}>{s.short}</p>
 
-      {/* The tags are links now. Naming the skill under a behavior is only
-          half an answer -- the other half is the block of the year that
-          teaches it, and the keys match so the tag can go straight there. */}
-      <div style={{ display: "flex", gap: 6, flexWrap: "wrap", margin: "0 0 20px" }}>
-        {s.ef.map((k) => (
-          <a
-            key={k}
-            href={`/behavior/year?s=${k}`}
-            style={{ ...tag(BRAND.lavenderDark), textDecoration: "none" }}
-          >
-            {EF[k]}
-          </a>
-        ))}
-      </div>
-
-      {/* What you saw, as a line rather than a list.
-          It was six bullets at the top of the card, which is a reading task
-          in front of a teacher who has already done the observing — that is
-          how they got here. It confirms the pick and gets out of the way. */}
+      {/* What you saw, as a line rather than a list. It was six bullets at
+          the top of the card, which is a reading task in front of a teacher
+          who has already done the observing — that is how they got here. It
+          confirms the pick and gets out of the way. */}
       <p
         style={{
-          margin: "-8px 0 20px",
-          fontSize: 14.5,
+          margin: "0 0 20px",
+          fontSize: 15,
+          fontFamily: serif,
           color: BRAND.mid,
           borderLeft: `3px solid ${BRAND.line}`,
           paddingLeft: 12,
+          lineHeight: 1.55,
         }}
       >
-        <b style={{ color: BRAND.ink }}>You saw:</b> {s.look.slice(0, 3).map(firstClause).join(" · ")}
+        <b style={{ color: BRAND.ink, fontFamily: "Poppins, sans-serif", fontSize: 13.5 }}>YOU SAW </b>
+        {s.look.slice(0, 3).map(firstClause).join(" · ")}
       </p>
 
-      {/* The next five minutes, first and numbered.
-          This was third of six sections, under two of explanation. A teacher
-          opens this page because something is happening now; the moves and
-          the words belong where the eye lands, and the understanding belongs
-          below them for when the room is calm. */}
+      {/* The next five minutes, first and numbered. A teacher opens this page
+          because something is happening now; the moves and the words belong
+          where the eye lands, and the understanding belongs below them for
+          when the room is calm. */}
       <section style={{ margin: "0 0 20px" }}>
-        <div
-          style={{ width: 26, height: 3, borderRadius: 2, background: BRAND.tealDark, margin: "0 0 9px" }}
-        />
-        <h3
-          style={{
-            fontFamily: "Poppins, sans-serif",
-            fontSize: 19,
-            fontWeight: 800,
-            margin: "0 0 2px",
-            color: BRAND.tealDark,
-            letterSpacing: "-0.3px",
-          }}
-        >
-          Right now
-        </h3>
-        <p style={{ margin: "0 0 12px", fontSize: 13.5, fontStyle: "italic", color: BRAND.mid }}>
+        <p style={{ ...label, margin: "0 0 2px", color: BRAND.tealDark }}>Right now</p>
+        <p style={{ margin: "0 0 12px", fontSize: 13, fontStyle: "italic", color: BRAND.soft }}>
           The next few minutes.
         </p>
         <ol style={{ margin: 0, padding: 0, listStyle: "none", display: "grid", gap: 8 }}>
@@ -526,11 +338,11 @@ function SignalCard({ s, remove }: { s: Signal; remove: string }) {
                 display: "flex",
                 gap: 11,
                 alignItems: "flex-start",
-                background: "#FFFFFF",
                 border: `1px solid ${BRAND.line}`,
                 borderRadius: 12,
-                padding: "10px 13px",
-                fontSize: 15.5,
+                padding: "11px 13px",
+                fontSize: 16,
+                fontFamily: serif,
                 lineHeight: 1.55,
               }}
             >
@@ -545,10 +357,11 @@ function SignalCard({ s, remove }: { s: Signal; remove: string }) {
                   color: "#FFFFFF",
                   fontSize: 12,
                   fontWeight: 800,
+                  fontFamily: "Poppins, sans-serif",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  marginTop: 1,
+                  marginTop: 2,
                 }}
               >
                 {i + 1}
@@ -561,24 +374,62 @@ function SignalCard({ s, remove }: { s: Signal; remove: string }) {
 
       <Words say={s.say} avoid={s.avoid} />
 
-      {/* Everything that is not the next five minutes, folded away.
-          None of it is cut — a shutdown is not understood from a list of
-          moves — but it is read at a different time of day than it was
-          being shown at. */}
-      <Fold heading="Why this happens" count={s.inside.length} color={BRAND.lavenderDark}>
-        <Block note="Why the student feels the way they do." items={s.inside} color={BRAND.lavenderDark} />
+      {/* Everything that is not the next five minutes, folded away. None of
+          it is cut — a shutdown is not understood from a list of moves — but
+          it is read at a different time of day than it was being shown at. */}
+      <Fold heading="Why this happens" count={s.inside.length}>
+        <Block note="Why the student feels the way they do." items={s.inside} />
       </Fold>
-      <Fold heading="What makes it worse" count={s.worse.length} color={BRAND.coralDark}>
-        <Block note="The reasonable-sounding reflex." items={s.worse} color={BRAND.coralDark} />
+      <Fold heading="What makes it worse" count={s.worse.length}>
+        <Block note="The reasonable-sounding reflex." items={s.worse} />
       </Fold>
-      <Fold heading="What builds the skill over time" count={s.build.length} color={BRAND.pinkDark}>
-        <Block note="Once the moment has passed." items={s.build} color={BRAND.pinkDark} />
+      <Fold heading="What builds the skill over time" count={s.build.length}>
+        <Block note="Once the moment has passed." items={s.build} />
       </Fold>
-      <Fold heading="Everything you might see" count={s.look.length} color={BRAND.ink}>
-        <Block note="Observable only — no inference yet." items={s.look} color={BRAND.ink} />
+      <Fold heading="Everything you might see" count={s.look.length}>
+        <Block note="Observable only — no inference yet." items={s.look} />
       </Fold>
 
-      <section style={{ margin: "18px 0 4px" }}>
+      {s.research && s.research.length > 0 && (
+        <Fold heading="Research behind this" count={s.research.length}>
+          {s.research.map((r) => (
+            <div
+              key={r.source}
+              style={{
+                background: BRAND.panel,
+                border: `1px solid ${BRAND.line}`,
+                borderRadius: 14,
+                padding: "14px 16px",
+                margin: "0 0 10px",
+              }}
+            >
+              <p style={{ margin: "0 0 8px", fontSize: 15.5, lineHeight: 1.6, fontFamily: serif }}>{r.claim}</p>
+              <p style={{ margin: "0 0 8px", fontSize: 12.5, color: BRAND.soft, lineHeight: 1.55 }}>{r.source}</p>
+              <p style={{ margin: "0 0 6px", fontSize: 14.5, lineHeight: 1.6 }}>
+                <b style={{ color: BRAND.tealDark }}>What it supports: </b>
+                {r.supports}
+              </p>
+              <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.6 }}>
+                <b style={{ color: BRAND.coralDark }}>What it does not say: </b>
+                {r.limits}
+              </p>
+            </div>
+          ))}
+        </Fold>
+      )}
+
+      {/* The skill tags sit at the bottom now rather than under the title.
+          They are the route to the term plan, which is the question after
+          the moment has passed — not the one a teacher arrived with. */}
+      <section style={{ borderTop: `1px solid ${BRAND.line}`, padding: "16px 0 0", margin: "6px 0 0" }}>
+        <p style={{ ...label, margin: "0 0 8px" }}>The skills under this one</p>
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", margin: "0 0 14px" }}>
+          {s.ef.map((k) => (
+            <a key={k} href={`/behavior/year?s=${k}`} style={tag(BRAND.lavenderDark)}>
+              {EF[k]} →
+            </a>
+          ))}
+        </div>
         <p style={{ ...label, margin: "0 0 8px" }}>Strategies that fit this</p>
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
           {s.strategies.map((name) => (
@@ -588,47 +439,107 @@ function SignalCard({ s, remove }: { s: Signal; remove: string }) {
           ))}
         </div>
       </section>
-
-      {s.research && s.research.length > 0 && (
-        <details
-          className="disclosure"
-          style={{ marginTop: 18, borderTop: `1px solid ${BRAND.line}`, paddingTop: 14 }}
-        >
-          <summary style={summaryStyle}>
-            {`Research behind this (${s.research.length})`}
-          </summary>
-          <div style={{ marginTop: 12 }}>
-            {s.research.map((r) => (
-              <div
-                key={r.source}
-                style={{
-                  background: BRAND.paper,
-                  border: `1px solid ${BRAND.line}`,
-                  borderRadius: 14,
-                  padding: "14px 16px",
-                  margin: "0 0 10px",
-                }}
-              >
-                <p style={{ margin: "0 0 8px", fontSize: 15, lineHeight: 1.6, fontWeight: 600 }}>
-                  {r.claim}
-                </p>
-                <p style={{ margin: "0 0 8px", fontSize: 13, color: BRAND.mid, lineHeight: 1.55 }}>
-                  {r.source}
-                </p>
-                <p style={{ margin: "0 0 6px", fontSize: 14, lineHeight: 1.6 }}>
-                  <b style={{ color: BRAND.tealDark }}>What it supports: </b>
-                  {r.supports}
-                </p>
-                <p style={{ margin: 0, fontSize: 14, lineHeight: 1.6 }}>
-                  <b style={{ color: BRAND.coralDark }}>What it does not say: </b>
-                  {r.limits}
-                </p>
-              </div>
-            ))}
-          </div>
-        </details>
-      )}
     </Card>
+  );
+}
+
+/**
+ * What a card holds, shown before anything is picked.
+ *
+ * The empty state used to be a glossary of eleven executive function skills
+ * — reference material standing in for the thing the page does. A teacher
+ * who had not clicked yet saw no reason to. This is four lines that say
+ * what arrives when they do, which is the only question at that moment.
+ */
+function WhatYouGet() {
+  const parts: [string, string][] = [
+    ["Right now", "Numbered moves for the next few minutes, most important first."],
+    ["Say this, not this", "The words, beside the well-meant ones that make it worse."],
+    ["Why this happens", "What is going on inside, written to the student rather than about them."],
+    ["What builds the skill", "The longer arc, for once the moment has passed."],
+  ];
+  return (
+    <Card>
+      <p style={{ ...label, margin: "0 0 4px", color: BRAND.coralDark }}>Pick one above</p>
+      <h2 style={{ fontFamily: serif, fontSize: 25, fontWeight: 700, margin: "0 0 8px", lineHeight: 1.2 }}>
+        What you get for each one
+      </h2>
+      <p style={{ fontFamily: serif, fontSize: 16.5, lineHeight: 1.6, color: BRAND.mid, margin: "0 0 16px", maxWidth: "62ch" }}>
+        Pick more than one if the morning had more than one. Where several signals load the same
+        executive function skill, that skill is the thing to work on — not the behaviors one at a
+        time — and the page says so.
+      </p>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(255px, 1fr))", gap: 10 }}>
+        {parts.map(([h, t], i) => (
+          <div key={h} style={{ border: `1px solid ${BRAND.line}`, borderRadius: 12, padding: "12px 14px" }}>
+            <p style={{ ...label, margin: "0 0 4px", fontSize: 10, color: BRAND.soft }}>{i + 1}</p>
+            <p style={{ fontFamily: "Poppins, sans-serif", fontSize: 14.5, fontWeight: 800, margin: "0 0 3px" }}>
+              {h}
+            </p>
+            <p style={{ fontSize: 14, lineHeight: 1.55, color: BRAND.mid, margin: 0 }}>{t}</p>
+          </div>
+        ))}
+      </div>
+    </Card>
+  );
+}
+
+/**
+ * The way to the year plan.
+ *
+ * Every skill tag on a signal card links into /behavior/year, but a tag only
+ * exists once a signal has been picked — so a teacher who read this page
+ * without clicking had no route to the term plan at all. This is that
+ * route, and it sits at the bottom because that is where the question
+ * arrives: the cards answer the next few minutes, and the obvious next
+ * question is what to do with the other thirty-four weeks.
+ */
+function YearCard() {
+  const weeks = Math.max(...EF_YEAR.map((b) => Number(b.weeks.match(/(\d+)\D+(\d+)/)?.[2] ?? 0)));
+  return (
+    <a
+      href="/behavior/year"
+      style={{
+        display: "block",
+        background: "#FFFFFF",
+        border: `1px solid ${BRAND.line}`,
+        borderLeft: `3px solid ${BRAND.tealDark}`,
+        borderRadius: "3px 14px 14px 3px",
+        padding: "18px 20px",
+        margin: "0 0 18px",
+        textDecoration: "none",
+        color: BRAND.ink,
+      }}
+    >
+      <p style={{ ...label, margin: "0 0 4px", color: BRAND.tealDark }}>Over the term</p>
+      <h2 style={{ fontFamily: serif, fontSize: 23, fontWeight: 700, margin: "0 0 7px", lineHeight: 1.2 }}>
+        The executive function year
+      </h2>
+      <p style={{ margin: "0 0 14px", fontSize: 15, color: BRAND.mid, lineHeight: 1.6, maxWidth: "62ch" }}>
+        {`All ${EF_YEAR.length} skills named on this page, taught across ${weeks} weeks at two minutes a day — five lessons a week, an I-can statement the class ends up saying, and something to send home. →`}
+      </p>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+        {EF_YEAR.map((bk) => (
+          <span
+            key={bk.key}
+            style={{
+              fontSize: 12,
+              fontWeight: 700,
+              color: BRAND.ink,
+              border: `1px solid ${BRAND.line}`,
+              borderRadius: 999,
+              padding: "4px 10px",
+              whiteSpace: "nowrap",
+            }}
+          >
+            <span aria-hidden="true" style={{ marginRight: 5 }}>
+              {bk.icon}
+            </span>
+            {bk.name}
+          </span>
+        ))}
+      </div>
+    </a>
   );
 }
 
@@ -679,161 +590,96 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
       <Header />
       <main id="main" tabIndex={-1} className="flex-1">
         <div style={{ height: 4, background: GRADIENT }} />
-        {/* The paper runs the full width and the column sits on it. It used
-            to be the other way round -- the background was on the 1000px
-            column, so on any wide screen the page was a beige rectangle with
-            two hard vertical edges standing in a white room. */}
-        <div style={{ background: BRAND.paper }}>
-          <div
-            style={{
-              maxWidth: 1000,
-              margin: "0 auto",
-              padding: "28px 5% 80px",
-              color: BRAND.ink,
-              fontFamily: "Poppins, system-ui, sans-serif",
-              lineHeight: 1.6,
-            }}
-          >
-          <p style={{ ...label, margin: "0 0 6px" }}>Upshift Learning</p>
+
+        <div style={{ maxWidth: 880, margin: "0 auto", padding: "32px 5% 80px", color: BRAND.ink }}>
+          <p style={{ ...label, margin: "0 0 6px", color: BRAND.coralDark }}>
+            Start from what you can see
+          </p>
           <h1
             style={{
               fontFamily: "Poppins, sans-serif",
-              fontSize: 42,
+              fontSize: 40,
               fontWeight: 900,
-              letterSpacing: "-1.2px",
+              letterSpacing: "-1px",
               margin: "0 0 6px",
-              lineHeight: 1.08,
+              lineHeight: 1.1,
             }}
           >
             Behavior Strategies
           </h1>
-          <p style={{ color: BRAND.mid, margin: "0 0 10px", fontSize: 17, maxWidth: 720 }}>
+          <p
+            style={{
+              fontFamily: serif,
+              fontSize: 18,
+              lineHeight: 1.65,
+              color: BRAND.mid,
+              maxWidth: "62ch",
+              margin: "0 0 26px",
+            }}
+          >
             Most behavior resources are filed by strategy, which only helps if you already know
             what you are looking at. This one starts where you actually start: with what you can
-            see from across the room.
-          </p>
-          <p style={{ color: BRAND.mid, margin: "0 0 26px", fontSize: 17, maxWidth: 720 }}>
-            Click everything you are seeing. Each one tells you what it looks like, what is
-            happening inside and why the student feels that way, what might help in the next few
-            minutes, and what builds the skill over the term.
+            see from across the room. Click everything you are seeing.
           </p>
 
           <p style={{ ...label, margin: "0 0 10px" }}>What are you seeing?</p>
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "0 0 10px" }}>
+          <div style={{ display: "flex", gap: 7, flexWrap: "wrap", margin: "0 0 14px" }}>
             {SIGNALS.map((s) => (
-              <a key={s.id} href={toggle(s.id)} style={pill(picked.includes(s.id))}>
+              <a key={s.id} href={toggle(s.id)} style={pill(picked.includes(s.id), BRAND.ink)} title={s.short}>
                 {s.name}
               </a>
             ))}
           </div>
           {picked.length > 0 && (
-            <p style={{ margin: "0 0 26px" }}>
+            <p style={{ margin: "0 0 24px" }}>
               <a href="/behavior" style={{ ...label, color: BRAND.coralDark, textDecoration: "none" }}>
-                Clear all
+                Clear all ✕
               </a>
             </p>
           )}
+          {picked.length === 0 && <div style={{ height: 12 }} />}
 
-          {chosen.length === 0 && (
-            <Card>
-              <h2
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontSize: 22,
-                  fontWeight: 800,
-                  margin: "0 0 8px",
-                  letterSpacing: "-0.4px",
-                }}
-              >
-                The eleven skills behind those signals
-              </h2>
-              <p style={{ margin: "0 0 18px", fontSize: 16, maxWidth: "62ch" }}>
-                Pick more than one above if the morning had more than one. Where several signals
-                load the same executive function skill, that skill is the thing to work on — not
-                the behaviors one at a time.
-              </p>
-              {/* A grid, not a bulleted list. Eleven definitions down a single
-                  column read as a wall of prose and nothing in them could be
-                  found again; two columns of short cards can be scanned, and
-                  each one is the link into its own term plan. */}
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-                  gap: 10,
-                }}
-              >
-                {(Object.keys(EF) as EFKey[]).map((k) => (
-                  <a
-                    key={k}
-                    href={`/behavior/year?s=${k}`}
-                    style={{
-                      display: "block",
-                      background: BRAND.paper,
-                      border: `1px solid ${BRAND.line}`,
-                      borderRadius: 12,
-                      padding: "11px 13px",
-                      textDecoration: "none",
-                      color: BRAND.ink,
-                    }}
-                  >
-                    <span
-                      style={{
-                        display: "block",
-                        fontFamily: "Poppins, sans-serif",
-                        fontSize: 14.5,
-                        fontWeight: 800,
-                        letterSpacing: "-0.2px",
-                        marginBottom: 2,
-                      }}
-                    >
-                      {EF[k]}
-                    </span>
-                    <span style={{ fontSize: 13.5, lineHeight: 1.5, color: BRAND.mid }}>
-                      {EF_MEANING[k]}
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </Card>
-          )}
+          {chosen.length === 0 && <WhatYouGet />}
 
           {chosen.length > 1 && (
             <Card accent={BRAND.lavenderDark}>
-              <p style={{ ...label, margin: "0 0 4px" }}>{`Across the ${chosen.length} you picked`}</p>
-              <h2
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontSize: 22,
-                  fontWeight: 800,
-                  margin: "0 0 12px",
-                  letterSpacing: "-0.4px",
-                }}
-              >
+              <p style={{ ...label, margin: "0 0 3px", color: BRAND.lavenderDark }}>
+                {`Across the ${chosen.length} you picked`}
+              </p>
+              <h2 style={{ fontFamily: serif, fontSize: 25, fontWeight: 700, margin: "0 0 10px", lineHeight: 1.2 }}>
                 Where these overlap
               </h2>
               {shared.length > 0 ? (
                 <>
-                  <p style={{ margin: "0 0 8px", fontSize: 15 }}>
+                  <p style={{ margin: "0 0 12px", fontSize: 16, fontFamily: serif, lineHeight: 1.6, maxWidth: "62ch" }}>
                     These skills are under load in more than one of the signals you picked. Start
                     here rather than with the behaviors separately.
                   </p>
-                  <ul style={{ margin: "0 0 16px", paddingLeft: 20 }}>
+                  <ul style={{ margin: "0 0 16px", padding: 0, listStyle: "none", display: "grid", gap: 8 }}>
                     {shared.map(([k, names]) => (
-                      <li key={k} style={{ margin: "0 0 7px", fontSize: 15, lineHeight: 1.6 }}>
-                        <a href={`/behavior/year?s=${k}`} style={{ color: BRAND.ink }}>
-                          <b>{EF[k]}</b>
+                      <li
+                        key={k}
+                        style={{
+                          border: `1px solid ${BRAND.line}`,
+                          borderRadius: 10,
+                          padding: "10px 13px",
+                          fontSize: 15.5,
+                          lineHeight: 1.6,
+                        }}
+                      >
+                        <a href={`/behavior/year?s=${k}`} style={{ color: BRAND.lavenderDark, fontWeight: 700, textDecoration: "none" }}>
+                          {EF[k]} →
                         </a>
-                        {` — ${EF_MEANING[k]} `}
-                        <span style={{ color: BRAND.mid }}>{`(${names.join(", ")})`}</span>
+                        <span style={{ fontFamily: serif }}>{` ${EF_MEANING[k]} `}</span>
+                        <span style={{ color: BRAND.soft, fontSize: 14 }}>{`(${names.join(", ")})`}</span>
                       </li>
                     ))}
                   </ul>
                 </>
               ) : (
-                <p style={{ margin: "0 0 16px", fontSize: 15 }}>
-                  These signals do not share an executive function skill, which is worth knowing
-                  on its own: they are probably separate problems and will need separate work.
+                <p style={{ margin: "0 0 16px", fontSize: 16, fontFamily: serif, lineHeight: 1.6, maxWidth: "62ch" }}>
+                  These signals do not share an executive function skill, which is worth knowing on
+                  its own: they are probably separate problems and will need separate work.
                 </p>
               )}
               {sharedStrategies.length > 0 && (
@@ -855,22 +701,63 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
             <SignalCard key={s.id} s={s} remove={href(picked.filter((x) => x !== s.id))} />
           ))}
 
-          {/* Closed by default. This is an index of every strategy on the
-              site, not an answer to the signal that was picked, and open it
-              ran to sixty lines -- longer than the signal card above it and
-              the last thing on the screen, which made it look like the point
-              of the page. It is a reference, so it behaves like one. */}
+          {/* Reference, folded. The eleven skills and the strategy index are
+              both indexes of the whole page rather than answers to the signal
+              that was picked, so they behave like references: available,
+              never the loudest thing on the screen. */}
+          <Card>
+            <details className="disclosure">
+              <summary style={summaryStyle}>The eleven skills behind these signals · 11</summary>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+                  gap: 10,
+                  paddingTop: 14,
+                }}
+              >
+                {(Object.keys(EF) as EFKey[]).map((k) => (
+                  <a
+                    key={k}
+                    href={`/behavior/year?s=${k}`}
+                    style={{
+                      display: "block",
+                      border: `1px solid ${BRAND.line}`,
+                      borderRadius: 12,
+                      padding: "11px 13px",
+                      textDecoration: "none",
+                      color: BRAND.ink,
+                    }}
+                  >
+                    <span
+                      style={{
+                        display: "block",
+                        fontFamily: "Poppins, sans-serif",
+                        fontSize: 14,
+                        fontWeight: 800,
+                        marginBottom: 2,
+                      }}
+                    >
+                      {EF[k]}
+                    </span>
+                    <span style={{ fontSize: 13.5, lineHeight: 1.5, color: BRAND.mid }}>{EF_MEANING[k]}</span>
+                  </a>
+                ))}
+              </div>
+            </details>
+          </Card>
+
           {chosen.length > 0 && (
             <Card>
               <details className="disclosure">
                 <summary style={summaryStyle}>
-                  {`Every strategy named on this page (${strategyIndex().length})`}
+                  {`Every strategy named on this page · ${strategyIndex().length}`}
                 </summary>
-                <ul style={{ margin: "14px 0 0", padding: 0, listStyle: "none", maxWidth: MEASURE }}>
+                <ul style={{ margin: "14px 0 0", padding: 0, listStyle: "none", maxWidth: "66ch" }}>
                   {strategyIndex().map(([name, signals]) => (
-                    <li key={name} style={{ margin: "0 0 7px", fontSize: 15, lineHeight: 1.6 }}>
+                    <li key={name} style={{ margin: "0 0 8px", fontSize: 15.5, lineHeight: 1.6 }}>
                       <b>{name}</b>
-                      <span style={{ color: BRAND.mid }}>{` — ${signals.join(", ")}`}</span>
+                      <span style={{ color: BRAND.soft }}>{` — ${signals.join(", ")}`}</span>
                     </li>
                   ))}
                 </ul>
@@ -882,12 +769,13 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
 
           <p
             style={{
-              fontSize: 13,
-              color: BRAND.mid,
-              lineHeight: 1.6,
+              fontSize: 13.5,
+              color: BRAND.soft,
+              lineHeight: 1.65,
               borderTop: `1px solid ${BRAND.line}`,
               paddingTop: 16,
-              margin: "10px 0 0",
+              margin: "14px 0 0",
+              maxWidth: "70ch",
             }}
           >
             This is a teaching aid for classroom decisions, not a clinical or diagnostic tool.
@@ -896,7 +784,6 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
             note says what the finding does not establish as well as what it does, because a
             teacher handed a neuroscience claim deserves both halves.
           </p>
-          </div>
         </div>
       </main>
       <Footer />
