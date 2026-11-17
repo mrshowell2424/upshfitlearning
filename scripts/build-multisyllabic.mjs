@@ -139,6 +139,7 @@ function corpus() {
     // writing task was quietly rewriting the word lists.
     "reading-writing-types.json",
     "math-prerequisites.json",
+    "math-practice.json",
   ]);
   const files = readdirSync("scripts").filter((f) => f.endsWith(".json") && !SKIP.has(f));
   const dirs = ["scripts/articles", "scripts/mysteries"].filter((d) => existsSync(d));
