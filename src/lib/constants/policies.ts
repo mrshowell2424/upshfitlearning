@@ -8,15 +8,50 @@
  *
  * Two repairs, both of them faults in the original. The email address was
  * obfuscated in the markup and came through as a placeholder, so it is
- * written out. And the sentence "Our principal address is." ends without an
- * address on the old site; it is left exactly as published rather than
- * invented, and ADDRESS_GAP below marks it so it can be filled in once.
+ * written out. And the sentence "Our principal address is." ended without
+ * an address on the old site, so it was carried over unfinished rather than
+ * completed with an address nobody had given; it has now been removed at
+ * the organisation's direction. Nothing is lost by it: section 1 still
+ * identifies the organisation by name, EIN and Ohio charter number, and the
+ * policy gives hello@upshiftlearning.org as the way to reach us, which is
+ * the contact route the rest of the document relies on.
  */
 
 export const POLICY_EFFECTIVE = "January 1, 2026"
 
-/** The one sentence on the old site that was published incomplete. */
-export const ADDRESS_GAP = "Our principal address is."
+/**
+ * Put the hard-wrapped transcription back into paragraphs.
+ *
+ * The policies were transcribed line by line from the old site, which wrapped
+ * them at about ninety characters. Every line was then rendered as its own
+ * <p> with a gap under it, so a visitor read a ladder of fragments with
+ * sentences split across the breaks -- "We operate the website
+ * upshiftlearning.org (the" sitting alone above ""Site") to share information
+ * about our mission". On a legal page, which is the one page a reader is
+ * entitled to find exact, that is worse than ugly.
+ *
+ * The rule: a line joins the one above it when that line does not end a
+ * sentence. A wrap can only ever happen mid-sentence, so this repairs the
+ * wrapping and nothing else.
+ *
+ * It is safe for the lists, which is the thing worth checking before
+ * trusting it. Where a section is a list -- privacy 3, terms 3 -- every
+ * item is a finished sentence ending in a full stop, so no item is ever
+ * swallowed by the one above it. A line ending in a colon ends a paragraph
+ * too, which is what keeps "This includes:" above its list rather than
+ * glued to the first item.
+ */
+export function paragraphs(lines: string[]): string[] {
+  const out: string[] = []
+  for (const raw of lines) {
+    const line = raw.trim()
+    if (!line) continue
+    const prev = out[out.length - 1]
+    if (prev !== undefined && !/[.:!?]$/.test(prev)) out[out.length - 1] = `${prev} ${line}`
+    else out.push(line)
+  }
+  return out
+}
 
 export type PolicySection = { n: number; heading: string; body: string[] }
 export type Policy = { title: string; intro: string[]; sections: PolicySection[] }
@@ -33,8 +68,7 @@ export const POLICIES: Record<"privacy" | "terms", Policy> = {
         "heading": "Introduction & Who We Are",
         "body": [
           "Upshift Learning (\"we,\" \"us,\" or \"our\") is a registered 501(c)(3) nonprofit organization",
-          "incorporated in the State of Ohio (EIN: 41-5068183; Ohio Charter Number: 5581812). Our",
-          "principal address is.",
+          "incorporated in the State of Ohio (EIN: 41-5068183; Ohio Charter Number: 5581812).",
           "We operate the website upshiftlearning.org (the",
           "\"Site\") to share information about our mission, programs, and services, and to connect with",
           "educators, learners, and supporters. This Privacy Policy explains how we collect, use,",

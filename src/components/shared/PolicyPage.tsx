@@ -1,4 +1,4 @@
-import { POLICY_EFFECTIVE, type Policy } from "@/lib/constants/policies";
+import { POLICY_EFFECTIVE, paragraphs, type Policy } from "@/lib/constants/policies";
 
 /**
  * One renderer for both policies.
@@ -16,7 +16,7 @@ export default function PolicyPage({ policy }: { policy: Policy }) {
           <h1 className="text-[32px] md:text-4xl font-bold text-charcoal leading-[1.15] mb-4">
             {policy.title}
           </h1>
-          {policy.intro.map((line) => (
+          {paragraphs(policy.intro).map((line) => (
             <p key={line} className="text-lg text-text-body leading-relaxed mb-2">
               {line}
             </p>
@@ -38,7 +38,7 @@ export default function PolicyPage({ policy }: { policy: Policy }) {
                 {s.n}. {s.heading}
               </h2>
               <div className="flex flex-col gap-3">
-                {s.body.map((p, i) => (
+                {paragraphs(s.body).map((p, i) => (
                   <p key={i} className="text-[15.5px] text-text-body leading-relaxed">
                     {p}
                   </p>
