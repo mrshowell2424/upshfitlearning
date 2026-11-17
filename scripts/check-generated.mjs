@@ -50,7 +50,13 @@ const BUILDERS = [
   ["scripts/merge-math-cases.mjs", ["scripts/math-cases.json"]],
   [
     "scripts/build-reading-resources.mjs",
-    ["scripts/reading-resources-counts.json", "content-reading-materials/science-of-reading/resources.html"],
+    [
+      "scripts/reading-resources-counts.json",
+      "content-reading-materials/science-of-reading/resources.html",
+      // One of the twenty-six per-grade files the page now fetches, so a
+      // change to the cases that never reached them is caught here too.
+      "content-reading-materials/science-of-reading/data/my-g0.json",
+    ],
   ],
   ["scripts/build-pbl-hub.mjs", ["content-reading-materials/pbl/pbl-hub.html"]],
   // Every grade that has a source file, found rather than listed, so a new

@@ -18,7 +18,7 @@
  *
  *   bun run scripts/build-reading-resources.mjs
  */
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync } from "node:fs";
 
 const MY = JSON.parse(readFileSync("scripts/reading-mysteries.json", "utf8")).cases;
 const AR = JSON.parse(readFileSync("scripts/reading-articles.json", "utf8")).articles;
@@ -48,8 +48,7 @@ const C = {
   tealDark: "rgb(0,117,108)",
 };
 
-const data = {
-  my: MY.map((c) => ({
+const CASES = MY.map((c) => ({
     id: c.id, g: c.grade, week: c.week, tag: c.tag, title: c.title, story: c.story,
     q: c.question, sus: c.suspects, ans: c.answer, proof: c.proof,
     clears: c.clears, explain: c.explain,
@@ -62,14 +61,34 @@ const data = {
       open: c.debate.open, args: c.debate.arguments,
       clears: c.debate.clears, note: c.debate.note,
     } : null,
-  })),
-  ar: AR.map((a) => ({
+  }));
+
+const ARTICLES = AR.map((a) => ({
     id: a.id, g: a.grade, n: a.n, title: a.title, std: a.standard,
     hi: { lx: a.higher.lexile, w: a.higher.words, p: a.higher.paras.map((x) => [x.label, x.text]) },
     lo: { lx: a.lower.lexile, w: a.lower.words, p: a.lower.paras.map((x) => [x.label, x.text]) },
     qs: a.questions.map((x) => [x.n, x.kind, x.q, x.a]),
     note: a.note,
-  })),
+  }));
+
+/**
+ * What the page is handed up front.
+ *
+ * The two big arrays are no longer in here. They used to be: the whole page
+ * was one 4.3 MB script tag holding every mystery and every article, so a
+ * teacher opening it to read one case downloaded all 918 of them. That is
+ * most of a megabyte per grade of content nobody asked for, over whatever
+ * the school wifi happens to be.
+ *
+ * What stays inline is everything the page needs before anybody picks
+ * anything: the three AI prompt templates and the list of grades each store
+ * covers, which is what fills the two grade dropdowns. The cases and the
+ * articles themselves are written per grade into data/ beside this page and
+ * fetched when a grade is chosen. The materials route serves them from the
+ * same table as the page, and the pass is a cookie, so a same-origin fetch
+ * carries it without anything extra.
+ */
+const data = {
   myTpl: MYC,
   myDbTpl: MYD,
   arTpl: ARC,
@@ -77,8 +96,8 @@ const data = {
   // written down, so a finished grade reaches the pickers on the next build
   // and nobody has to remember to widen a hard-coded list -- which is exactly
   // how grade 2 and grade 5 ended up seeded but unreachable on this page.
-  myG: [...new Set(MY.map((c) => c.grade))].sort((x, y) => x - y),
-  arG: [...new Set(AR.map((a) => a.grade))].sort((x, y) => x - y),
+  myG: [...new Set(CASES.map((c) => c.g))].sort((x, y) => x - y),
+  arG: [...new Set(ARTICLES.map((a) => a.g))].sort((x, y) => x - y),
 };
 
 const html = `<!doctype html>
@@ -247,6 +266,27 @@ pre[hidden]{display:none}
 <script>
 (function () {
   var D = JSON.parse(document.getElementById("data").textContent);
+  /* The cases and the articles arrive per grade.
+     D starts with neither array. A grade dropdown changing asks for that
+     grade's file once, keeps it, and then every filter below works exactly
+     as it did when the whole lot was inline -- they all narrow by the
+     selected grade anyway, so an array holding only the grades that have
+     been opened gives the same answers. */
+  D.my = [];
+  D.ar = [];
+  var got = {};
+  function need(kind, g, done) {
+    var key = kind + ":" + g;
+    if (got[key]) return done();
+    fetch("./data/" + kind + "-g" + g + ".json", { credentials: "same-origin" })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) {
+        got[key] = 1;
+        D[kind] = D[kind].concat(rows);
+        done();
+      })
+      .catch(function () { done(); });
+  }
   var esc = function (s) {
     return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
@@ -380,7 +420,7 @@ pre[hidden]{display:none}
     window.__my = txt;
   }
   selMy.addEventListener("change", drawMy);
-  selMyG.addEventListener("change", function () { fillMy(); drawMy(); });
+  selMyG.addEventListener("change", function () { need("my", selMyG.value, function () { fillMy(); drawMy(); }); });
   bSolve.addEventListener("click", function () { myMode = "solve"; drawMy(); });
   bDebate.addEventListener("click", function () { myMode = "debate"; drawMy(); });
   fillMy();
@@ -460,7 +500,7 @@ pre[hidden]{display:none}
       "</div></div>";
     window.__ar = arPrompt(a);
   }
-  gSel.addEventListener("change", function () { fillStd(); fillArt(); drawAr(); });
+  gSel.addEventListener("change", function () { need("ar", gSel.value, function () { fillStd(); fillArt(); drawAr(); }); });
   sSel.addEventListener("change", function () { fillArt(); drawAr(); });
   aSel.addEventListener("change", drawAr);
   document.getElementById("ver-lo").addEventListener("click", function () {
@@ -503,13 +543,41 @@ pre[hidden]{display:none}
     document.getElementById("t-ar").setAttribute("aria-selected", String(which === "ar"));
   }
 
-  fillStd(); fillArt(); drawMy(); drawAr();
+  need("my", selMyG.value, function () { fillMy(); drawMy(); });
+  need("ar", gSel.value, function () { fillStd(); fillArt(); drawAr(); });
 })();
 </script>
 </body></html>
 `;
 
 writeFileSync("content-reading-materials/science-of-reading/resources.html", html, "utf8");
+
+/**
+ * The cases and the articles, one file per grade, beside the page.
+ *
+ * The folder is emptied first so a grade removed from the source does not
+ * leave a file behind for the seed to carry into the table, where it would
+ * still be served to anyone asking for it by name.
+ */
+const DATA_DIR = "content-reading-materials/science-of-reading/data";
+rmSync(DATA_DIR, { recursive: true, force: true });
+mkdirSync(DATA_DIR, { recursive: true });
+
+let shards = 0;
+let shardBytes = 0;
+for (const [kind, rows] of [["my", CASES], ["ar", ARTICLES]]) {
+  const byGrade = new Map();
+  for (const row of rows) {
+    if (!byGrade.has(row.g)) byGrade.set(row.g, []);
+    byGrade.get(row.g).push(row);
+  }
+  for (const [g, list] of [...byGrade.entries()].sort((a, b) => a[0] - b[0])) {
+    const body = JSON.stringify(list);
+    writeFileSync(DATA_DIR + "/" + kind + "-g" + g + ".json", body, "utf8");
+    shards++;
+    shardBytes += body.length;
+  }
+}
 // A two-number file so the site can quote the counts without pulling the
 // whole article set into the app bundle.
 writeFileSync("scripts/reading-resources-counts.json",
@@ -525,3 +593,4 @@ if (ents) {
 console.log("wrote content-reading-materials/science-of-reading/resources.html");
 console.log("  mysteries: " + MY.length + "   articles: " + AR.length);
 console.log("  page size: " + Math.round(html.length / 1024) + " KB");
+console.log("  " + shards + " per-grade files, " + Math.round(shardBytes / 1024) + " KB in all, one grade fetched at a time");

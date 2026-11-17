@@ -7,7 +7,7 @@
  */
 import { db } from "@/lib/db";
 import { reading_materials } from "@/lib/db/schema";
-import { eq } from "drizzle-orm";
+import { eq, like } from "drizzle-orm";
 
 const PATH = "science-of-reading/resources.html";
 const [row] = await db
@@ -51,9 +51,34 @@ for (const [name, ok, why] of checks) {
   if (!ok) bad++;
 }
 
-// The counts the page itself carries, read back rather than assumed.
+/**
+ * The page no longer carries the cases and the articles; it fetches them a
+ * grade at a time out of data/ beside it. So the thing to read back is not
+ * how many records are embedded -- that should now be none -- but that the
+ * per-grade files reached the table, because the page is useless without
+ * them and nothing else would notice they were missing.
+ */
 console.log("");
-const articleRows = (html.match(/"RI\.\w+\.\d+"/g) || []).length;
-console.log(`  article records embedded:   ${articleRows}`);
+const embedded = (html.match(/"RI\.\w+\.\d+"/g) || []).length;
+if (embedded > 0) {
+  console.log(`  FAIL  ${embedded} article records are still inline; the page should fetch them`);
+  bad++;
+}
+const shards = await db
+  .select({ path: reading_materials.path, bytes: reading_materials.bytes })
+  .from(reading_materials)
+  .where(like(reading_materials.path, "science-of-reading/data/%"));
+const kb = shards.reduce((a, r) => a + Number(r.bytes), 0) / 1024;
+console.log(`  per-grade data files:       ${shards.length} (${kb.toFixed(0)} KB in all)`);
+const grades = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+for (const kind of ["my", "ar"]) {
+  const missing = grades.filter(
+    (g) => !shards.some((r) => r.path === `science-of-reading/data/${kind}-g${g}.json`),
+  );
+  const ok = missing.length === 0;
+  if (!ok) bad++;
+  console.log(`  ${ok ? "ok  " : "FAIL"}  ${kind === "my" ? "mysteries" : "articles"} per grade`.padEnd(32) +
+    (ok ? "all 13 grades present" : `missing ${missing.join(", ")}`));
+}
 
 process.exit(bad ? 1 : 0);
