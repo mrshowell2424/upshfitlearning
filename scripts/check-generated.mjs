@@ -42,6 +42,7 @@ const BUILDERS = [
   ["scripts/build-morphology.mjs", ["scripts/reading-morphology.json"]],
   ["scripts/build-multisyllabic.mjs", ["scripts/reading-multisyllabic.json"]],
   ["scripts/build-hub-counts.mjs", ["scripts/reading-hub-counts.json"]],
+  ["scripts/build-math-prerequisites.mjs", ["scripts/math-prerequisites.json"]],
   [
     "scripts/build-reading-resources.mjs",
     ["scripts/reading-resources-counts.json", "content-reading-materials/science-of-reading/resources.html"],
