@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
@@ -41,6 +42,10 @@ const CORAL = "#FF6A5B";
 const CORAL_TEXT = "#C0432F";
 const LAVENDER = "#B87DFF";
 const LAVENDER_TEXT = "#6B2FB5";
+// Teal is the reading side's colour; the review card borrows it because
+// the page it opens is the reading review page's twin.
+const TEAL = "#00B4A6";
+const TEAL_TEXT = "#00756C";
 
 const HUB = "/api/materials/math/math-hub.html";
 
@@ -132,6 +137,36 @@ function Hub() {
             />
           </div>
         </a>
+
+        {/* The other destination on this page.
+            Deciding what to review is the work, and the prerequisite map
+            now answers it for all 305 standards, so the page that uses it
+            needs a door of its own rather than living in the footer. */}
+        <Link
+          href="/math/review"
+          style={{
+            display: "block",
+            marginTop: 14,
+            background: "#FFFFFF",
+            border: `3px solid ${RULE}`,
+            borderLeft: `10px solid ${TEAL}`,
+            borderRadius: 16,
+            padding: "20px 22px",
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: TEAL_TEXT }}>
+            BEFORE TODAY&rsquo;S LESSON
+          </div>
+          <div style={{ fontSize: 21, fontWeight: 800, lineHeight: 1.2, marginTop: 5 }}>
+            Spiral review, decided for you
+          </div>
+          <p style={{ fontSize: 14, fontWeight: 500, color: MUTED, margin: "7px 0 0", lineHeight: 1.5 }}>
+            Three standards to go over first: what today is built on, what was taught most
+            recently, and what is going cold — with the questions to put on the board. →
+          </p>
+        </Link>
 
         {/* What the hub runs, named in order. These are not links: there is
             one destination on this page, and eleven fake doors into it would

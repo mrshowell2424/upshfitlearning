@@ -37,6 +37,24 @@ function table(html, name) {
 const html = readFileSync(HUB, "utf8");
 const DATA = table(html, "DATA");
 
+/**
+ * What each domain is called, lifted from the hub.
+ *
+ * Carried into the generated file so a page can say "Number and
+ * Operations — Fractions" without parsing half a megabyte of HTML to find
+ * out. The hub stays the source; this is a copy that a checker re-derives.
+ */
+const DOMAIN_NAMES = (() => {
+  const head = "var DOMAIN_NAMES = ";
+  const i = html.indexOf(head);
+  if (i === -1) throw new Error("the hub no longer names its domains");
+  const body = html.slice(i + head.length, html.indexOf("};", i) + 1);
+  const out = {};
+  for (const m of body.matchAll(/([A-Za-z-]+)\s*:\s*"([^"]+)"/g)) out[m[1]] = m[2];
+  if (!Object.keys(out).length) throw new Error("could not read the domain names");
+  return out;
+})();
+
 /** Grades in teaching order, as the hub names them. */
 export const GRADES = [
   "Kindergarten", "Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5",
@@ -219,6 +237,17 @@ writeFileSync(
     _note:
       "What each maths standard is built on, and what is worth revisiting at each grade. Derived from the codes where the codes carry it, and from the LINEAGE table in scripts/build-math-prerequisites.mjs where a domain begins or changes. Generated; do not hand-edit. scripts/check-math-prerequisites.mjs re-derives it and holds it to its rules.",
     grades: GRADES,
+    // The teaching order, and what to call each standard. A review page
+    // needs both and should not have to work either out again.
+    sequence: order.map((code) => {
+      const p = parse(code);
+      const letters = p ? p.domain.split(".").pop() : "";
+      return {
+        key: code,
+        name: `${code} — ${DOMAIN_NAMES[letters] || letters}`,
+        level: gradeOf.get(code),
+      };
+    }),
     prereq,
     spiral,
     roots,

@@ -39,6 +39,17 @@
  *
  * Returns three slots, each { why, key, name, level } with key null when
  * there is genuinely nothing to put there.
+ *
+ * A level is whatever the subject calls one — a number for reading, a
+ * grade name for maths. This only ever uses it to look up a pool, so it
+ * is declared as either rather than inferred from whichever subject
+ * happened to call it first.
+ *
+ * @param {string} key
+ * @param {{ seq: { key: string, name: string, level: string|number }[],
+ *           prereq: Record<string, string>,
+ *           spiral: Record<string, string[]> }} data
+ * @param {{ s1?: string, s2?: string, s3?: string }} [picks]
  */
 export function reviewSlots(key, { seq, prereq, spiral }, picks = {}) {
   const at = seq.findIndex((r) => r.key === key);

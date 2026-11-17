@@ -22,6 +22,7 @@ const links = [
   { label: "Knowledge Threads", href: "/science-of-reading/threads" },
   { label: "Sentence Lab", href: "/sentence-lab" },
   { label: "Math", href: "/math" },
+  { label: "Maths spiral review", href: "/math/review" },
   { label: "PBL", href: "/pbl" },
   { label: "Design Thinking", href: "/design-thinking" },
   { label: "Behavior Strategies", href: "/behavior" },

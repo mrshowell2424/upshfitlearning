@@ -15,6 +15,1533 @@
   "Grade 11",
   "Grade 12"
  ],
+ "sequence": [
+  {
+   "key": "K.CC.1",
+   "name": "K.CC.1 — Counting and Cardinality",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.CC.2",
+   "name": "K.CC.2 — Counting and Cardinality",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.CC.3",
+   "name": "K.CC.3 — Counting and Cardinality",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.CC.4",
+   "name": "K.CC.4 — Counting and Cardinality",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.CC.5",
+   "name": "K.CC.5 — Counting and Cardinality",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.CC.6",
+   "name": "K.CC.6 — Counting and Cardinality",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.CC.7",
+   "name": "K.CC.7 — Counting and Cardinality",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.OA.1",
+   "name": "K.OA.1 — Operations and Algebraic Thinking",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.OA.2",
+   "name": "K.OA.2 — Operations and Algebraic Thinking",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.OA.3",
+   "name": "K.OA.3 — Operations and Algebraic Thinking",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.OA.4",
+   "name": "K.OA.4 — Operations and Algebraic Thinking",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.OA.5",
+   "name": "K.OA.5 — Operations and Algebraic Thinking",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.NBT.1",
+   "name": "K.NBT.1 — Number and Operations in Base Ten",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.MD.1",
+   "name": "K.MD.1 — Measurement and Data",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.MD.2",
+   "name": "K.MD.2 — Measurement and Data",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.MD.3",
+   "name": "K.MD.3 — Measurement and Data",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.G.1",
+   "name": "K.G.1 — Geometry",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.G.2",
+   "name": "K.G.2 — Geometry",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.G.3",
+   "name": "K.G.3 — Geometry",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.G.4",
+   "name": "K.G.4 — Geometry",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.G.5",
+   "name": "K.G.5 — Geometry",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "K.G.6",
+   "name": "K.G.6 — Geometry",
+   "level": "Kindergarten"
+  },
+  {
+   "key": "1.OA.1",
+   "name": "1.OA.1 — Operations and Algebraic Thinking",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.OA.2",
+   "name": "1.OA.2 — Operations and Algebraic Thinking",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.OA.3",
+   "name": "1.OA.3 — Operations and Algebraic Thinking",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.OA.4",
+   "name": "1.OA.4 — Operations and Algebraic Thinking",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.OA.5",
+   "name": "1.OA.5 — Operations and Algebraic Thinking",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.OA.6",
+   "name": "1.OA.6 — Operations and Algebraic Thinking",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.OA.7",
+   "name": "1.OA.7 — Operations and Algebraic Thinking",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.OA.8",
+   "name": "1.OA.8 — Operations and Algebraic Thinking",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.NBT.1",
+   "name": "1.NBT.1 — Number and Operations in Base Ten",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.NBT.2",
+   "name": "1.NBT.2 — Number and Operations in Base Ten",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.NBT.3",
+   "name": "1.NBT.3 — Number and Operations in Base Ten",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.NBT.4",
+   "name": "1.NBT.4 — Number and Operations in Base Ten",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.NBT.5",
+   "name": "1.NBT.5 — Number and Operations in Base Ten",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.NBT.6",
+   "name": "1.NBT.6 — Number and Operations in Base Ten",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.MD.1",
+   "name": "1.MD.1 — Measurement and Data",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.MD.2",
+   "name": "1.MD.2 — Measurement and Data",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.MD.3",
+   "name": "1.MD.3 — Measurement and Data",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.MD.4",
+   "name": "1.MD.4 — Measurement and Data",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.G.1",
+   "name": "1.G.1 — Geometry",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.G.2",
+   "name": "1.G.2 — Geometry",
+   "level": "Grade 1"
+  },
+  {
+   "key": "1.G.3",
+   "name": "1.G.3 — Geometry",
+   "level": "Grade 1"
+  },
+  {
+   "key": "2.OA.1",
+   "name": "2.OA.1 — Operations and Algebraic Thinking",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.OA.2",
+   "name": "2.OA.2 — Operations and Algebraic Thinking",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.OA.3",
+   "name": "2.OA.3 — Operations and Algebraic Thinking",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.OA.4",
+   "name": "2.OA.4 — Operations and Algebraic Thinking",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.NBT.1",
+   "name": "2.NBT.1 — Number and Operations in Base Ten",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.NBT.2",
+   "name": "2.NBT.2 — Number and Operations in Base Ten",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.NBT.3",
+   "name": "2.NBT.3 — Number and Operations in Base Ten",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.NBT.4",
+   "name": "2.NBT.4 — Number and Operations in Base Ten",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.NBT.5",
+   "name": "2.NBT.5 — Number and Operations in Base Ten",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.NBT.6",
+   "name": "2.NBT.6 — Number and Operations in Base Ten",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.NBT.7",
+   "name": "2.NBT.7 — Number and Operations in Base Ten",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.NBT.8",
+   "name": "2.NBT.8 — Number and Operations in Base Ten",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.NBT.9",
+   "name": "2.NBT.9 — Number and Operations in Base Ten",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.MD.1",
+   "name": "2.MD.1 — Measurement and Data",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.MD.2",
+   "name": "2.MD.2 — Measurement and Data",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.MD.3",
+   "name": "2.MD.3 — Measurement and Data",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.MD.4",
+   "name": "2.MD.4 — Measurement and Data",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.MD.5",
+   "name": "2.MD.5 — Measurement and Data",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.MD.6",
+   "name": "2.MD.6 — Measurement and Data",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.MD.7",
+   "name": "2.MD.7 — Measurement and Data",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.MD.8",
+   "name": "2.MD.8 — Measurement and Data",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.MD.9",
+   "name": "2.MD.9 — Measurement and Data",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.MD.10",
+   "name": "2.MD.10 — Measurement and Data",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.G.1",
+   "name": "2.G.1 — Geometry",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.G.2",
+   "name": "2.G.2 — Geometry",
+   "level": "Grade 2"
+  },
+  {
+   "key": "2.G.3",
+   "name": "2.G.3 — Geometry",
+   "level": "Grade 2"
+  },
+  {
+   "key": "3.OA.1",
+   "name": "3.OA.1 — Operations and Algebraic Thinking",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.OA.2",
+   "name": "3.OA.2 — Operations and Algebraic Thinking",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.OA.3",
+   "name": "3.OA.3 — Operations and Algebraic Thinking",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.OA.4",
+   "name": "3.OA.4 — Operations and Algebraic Thinking",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.OA.5",
+   "name": "3.OA.5 — Operations and Algebraic Thinking",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.OA.6",
+   "name": "3.OA.6 — Operations and Algebraic Thinking",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.OA.7",
+   "name": "3.OA.7 — Operations and Algebraic Thinking",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.OA.8",
+   "name": "3.OA.8 — Operations and Algebraic Thinking",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.OA.9",
+   "name": "3.OA.9 — Operations and Algebraic Thinking",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.NBT.1",
+   "name": "3.NBT.1 — Number and Operations in Base Ten",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.NBT.2",
+   "name": "3.NBT.2 — Number and Operations in Base Ten",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.NBT.3",
+   "name": "3.NBT.3 — Number and Operations in Base Ten",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.NF.1",
+   "name": "3.NF.1 — Number and Operations — Fractions",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.NF.2",
+   "name": "3.NF.2 — Number and Operations — Fractions",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.NF.3",
+   "name": "3.NF.3 — Number and Operations — Fractions",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.MD.1",
+   "name": "3.MD.1 — Measurement and Data",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.MD.2",
+   "name": "3.MD.2 — Measurement and Data",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.MD.3",
+   "name": "3.MD.3 — Measurement and Data",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.MD.4",
+   "name": "3.MD.4 — Measurement and Data",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.MD.5",
+   "name": "3.MD.5 — Measurement and Data",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.MD.6",
+   "name": "3.MD.6 — Measurement and Data",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.MD.7",
+   "name": "3.MD.7 — Measurement and Data",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.MD.8",
+   "name": "3.MD.8 — Measurement and Data",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.G.1",
+   "name": "3.G.1 — Geometry",
+   "level": "Grade 3"
+  },
+  {
+   "key": "3.G.2",
+   "name": "3.G.2 — Geometry",
+   "level": "Grade 3"
+  },
+  {
+   "key": "4.OA.1",
+   "name": "4.OA.1 — Operations and Algebraic Thinking",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.OA.2",
+   "name": "4.OA.2 — Operations and Algebraic Thinking",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.OA.3",
+   "name": "4.OA.3 — Operations and Algebraic Thinking",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.OA.4",
+   "name": "4.OA.4 — Operations and Algebraic Thinking",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.OA.5",
+   "name": "4.OA.5 — Operations and Algebraic Thinking",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.NBT.1",
+   "name": "4.NBT.1 — Number and Operations in Base Ten",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.NBT.2",
+   "name": "4.NBT.2 — Number and Operations in Base Ten",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.NBT.3",
+   "name": "4.NBT.3 — Number and Operations in Base Ten",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.NBT.4",
+   "name": "4.NBT.4 — Number and Operations in Base Ten",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.NBT.5",
+   "name": "4.NBT.5 — Number and Operations in Base Ten",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.NBT.6",
+   "name": "4.NBT.6 — Number and Operations in Base Ten",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.NF.1",
+   "name": "4.NF.1 — Number and Operations — Fractions",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.NF.2",
+   "name": "4.NF.2 — Number and Operations — Fractions",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.NF.3",
+   "name": "4.NF.3 — Number and Operations — Fractions",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.NF.4",
+   "name": "4.NF.4 — Number and Operations — Fractions",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.NF.5",
+   "name": "4.NF.5 — Number and Operations — Fractions",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.NF.6",
+   "name": "4.NF.6 — Number and Operations — Fractions",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.NF.7",
+   "name": "4.NF.7 — Number and Operations — Fractions",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.MD.1",
+   "name": "4.MD.1 — Measurement and Data",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.MD.2",
+   "name": "4.MD.2 — Measurement and Data",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.MD.3",
+   "name": "4.MD.3 — Measurement and Data",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.MD.4",
+   "name": "4.MD.4 — Measurement and Data",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.MD.5",
+   "name": "4.MD.5 — Measurement and Data",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.MD.6",
+   "name": "4.MD.6 — Measurement and Data",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.MD.7",
+   "name": "4.MD.7 — Measurement and Data",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.G.1",
+   "name": "4.G.1 — Geometry",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.G.2",
+   "name": "4.G.2 — Geometry",
+   "level": "Grade 4"
+  },
+  {
+   "key": "4.G.3",
+   "name": "4.G.3 — Geometry",
+   "level": "Grade 4"
+  },
+  {
+   "key": "5.OA.1",
+   "name": "5.OA.1 — Operations and Algebraic Thinking",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.OA.2",
+   "name": "5.OA.2 — Operations and Algebraic Thinking",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.OA.3",
+   "name": "5.OA.3 — Operations and Algebraic Thinking",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.NBT.1",
+   "name": "5.NBT.1 — Number and Operations in Base Ten",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.NBT.2",
+   "name": "5.NBT.2 — Number and Operations in Base Ten",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.NBT.3",
+   "name": "5.NBT.3 — Number and Operations in Base Ten",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.NBT.4",
+   "name": "5.NBT.4 — Number and Operations in Base Ten",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.NBT.5",
+   "name": "5.NBT.5 — Number and Operations in Base Ten",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.NBT.6",
+   "name": "5.NBT.6 — Number and Operations in Base Ten",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.NBT.7",
+   "name": "5.NBT.7 — Number and Operations in Base Ten",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.NF.1",
+   "name": "5.NF.1 — Number and Operations — Fractions",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.NF.2",
+   "name": "5.NF.2 — Number and Operations — Fractions",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.NF.3",
+   "name": "5.NF.3 — Number and Operations — Fractions",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.NF.4",
+   "name": "5.NF.4 — Number and Operations — Fractions",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.NF.5",
+   "name": "5.NF.5 — Number and Operations — Fractions",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.NF.6",
+   "name": "5.NF.6 — Number and Operations — Fractions",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.NF.7",
+   "name": "5.NF.7 — Number and Operations — Fractions",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.MD.1",
+   "name": "5.MD.1 — Measurement and Data",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.MD.2",
+   "name": "5.MD.2 — Measurement and Data",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.MD.3",
+   "name": "5.MD.3 — Measurement and Data",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.MD.4",
+   "name": "5.MD.4 — Measurement and Data",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.MD.5",
+   "name": "5.MD.5 — Measurement and Data",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.G.1",
+   "name": "5.G.1 — Geometry",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.G.2",
+   "name": "5.G.2 — Geometry",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.G.3",
+   "name": "5.G.3 — Geometry",
+   "level": "Grade 5"
+  },
+  {
+   "key": "5.G.4",
+   "name": "5.G.4 — Geometry",
+   "level": "Grade 5"
+  },
+  {
+   "key": "6.RP.1",
+   "name": "6.RP.1 — Ratios and Proportional Relationships",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.RP.2",
+   "name": "6.RP.2 — Ratios and Proportional Relationships",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.RP.3",
+   "name": "6.RP.3 — Ratios and Proportional Relationships",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.NS.1",
+   "name": "6.NS.1 — The Number System",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.NS.2",
+   "name": "6.NS.2 — The Number System",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.NS.3",
+   "name": "6.NS.3 — The Number System",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.NS.4",
+   "name": "6.NS.4 — The Number System",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.NS.5",
+   "name": "6.NS.5 — The Number System",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.NS.6",
+   "name": "6.NS.6 — The Number System",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.NS.7",
+   "name": "6.NS.7 — The Number System",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.NS.8",
+   "name": "6.NS.8 — The Number System",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.EE.1",
+   "name": "6.EE.1 — Expressions and Equations",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.EE.2",
+   "name": "6.EE.2 — Expressions and Equations",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.EE.3",
+   "name": "6.EE.3 — Expressions and Equations",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.EE.4",
+   "name": "6.EE.4 — Expressions and Equations",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.EE.5",
+   "name": "6.EE.5 — Expressions and Equations",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.EE.6",
+   "name": "6.EE.6 — Expressions and Equations",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.EE.7",
+   "name": "6.EE.7 — Expressions and Equations",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.EE.8",
+   "name": "6.EE.8 — Expressions and Equations",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.EE.9",
+   "name": "6.EE.9 — Expressions and Equations",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.G.1",
+   "name": "6.G.1 — Geometry",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.G.2",
+   "name": "6.G.2 — Geometry",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.G.3",
+   "name": "6.G.3 — Geometry",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.G.4",
+   "name": "6.G.4 — Geometry",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.SP.1",
+   "name": "6.SP.1 — Statistics and Probability",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.SP.2",
+   "name": "6.SP.2 — Statistics and Probability",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.SP.3",
+   "name": "6.SP.3 — Statistics and Probability",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.SP.4",
+   "name": "6.SP.4 — Statistics and Probability",
+   "level": "Grade 6"
+  },
+  {
+   "key": "6.SP.5",
+   "name": "6.SP.5 — Statistics and Probability",
+   "level": "Grade 6"
+  },
+  {
+   "key": "7.RP.1",
+   "name": "7.RP.1 — Ratios and Proportional Relationships",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.RP.2",
+   "name": "7.RP.2 — Ratios and Proportional Relationships",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.RP.3",
+   "name": "7.RP.3 — Ratios and Proportional Relationships",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.NS.1",
+   "name": "7.NS.1 — The Number System",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.NS.2",
+   "name": "7.NS.2 — The Number System",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.NS.3",
+   "name": "7.NS.3 — The Number System",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.EE.1",
+   "name": "7.EE.1 — Expressions and Equations",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.EE.2",
+   "name": "7.EE.2 — Expressions and Equations",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.EE.3",
+   "name": "7.EE.3 — Expressions and Equations",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.EE.4",
+   "name": "7.EE.4 — Expressions and Equations",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.G.1",
+   "name": "7.G.1 — Geometry",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.G.2",
+   "name": "7.G.2 — Geometry",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.G.3",
+   "name": "7.G.3 — Geometry",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.G.4",
+   "name": "7.G.4 — Geometry",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.G.5",
+   "name": "7.G.5 — Geometry",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.G.6",
+   "name": "7.G.6 — Geometry",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.SP.1",
+   "name": "7.SP.1 — Statistics and Probability",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.SP.2",
+   "name": "7.SP.2 — Statistics and Probability",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.SP.3",
+   "name": "7.SP.3 — Statistics and Probability",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.SP.4",
+   "name": "7.SP.4 — Statistics and Probability",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.SP.5",
+   "name": "7.SP.5 — Statistics and Probability",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.SP.6",
+   "name": "7.SP.6 — Statistics and Probability",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.SP.7",
+   "name": "7.SP.7 — Statistics and Probability",
+   "level": "Grade 7"
+  },
+  {
+   "key": "7.SP.8",
+   "name": "7.SP.8 — Statistics and Probability",
+   "level": "Grade 7"
+  },
+  {
+   "key": "8.NS.1",
+   "name": "8.NS.1 — The Number System",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.NS.2",
+   "name": "8.NS.2 — The Number System",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.EE.1",
+   "name": "8.EE.1 — Expressions and Equations",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.EE.2",
+   "name": "8.EE.2 — Expressions and Equations",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.EE.3",
+   "name": "8.EE.3 — Expressions and Equations",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.EE.4",
+   "name": "8.EE.4 — Expressions and Equations",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.EE.5",
+   "name": "8.EE.5 — Expressions and Equations",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.EE.6",
+   "name": "8.EE.6 — Expressions and Equations",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.EE.7",
+   "name": "8.EE.7 — Expressions and Equations",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.EE.8",
+   "name": "8.EE.8 — Expressions and Equations",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.F.1",
+   "name": "8.F.1 — Functions",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.F.2",
+   "name": "8.F.2 — Functions",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.F.3",
+   "name": "8.F.3 — Functions",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.F.4",
+   "name": "8.F.4 — Functions",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.F.5",
+   "name": "8.F.5 — Functions",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.G.1",
+   "name": "8.G.1 — Geometry",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.G.2",
+   "name": "8.G.2 — Geometry",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.G.3",
+   "name": "8.G.3 — Geometry",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.G.4",
+   "name": "8.G.4 — Geometry",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.G.5",
+   "name": "8.G.5 — Geometry",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.G.6",
+   "name": "8.G.6 — Geometry",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.G.7",
+   "name": "8.G.7 — Geometry",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.G.8",
+   "name": "8.G.8 — Geometry",
+   "level": "Grade 8"
+  },
+  {
+   "key": "8.G.9",
+   "name": "8.G.9 — Geometry",
+   "level": "Grade 8"
+  },
+  {
+   "key": "A.SSE.1",
+   "name": "A.SSE.1 — Seeing Structure in Expressions",
+   "level": "Grade 9"
+  },
+  {
+   "key": "A.SSE.2",
+   "name": "A.SSE.2 — Seeing Structure in Expressions",
+   "level": "Grade 9"
+  },
+  {
+   "key": "A.APR.1",
+   "name": "A.APR.1 — Arithmetic with Polynomials and Rational Expressions",
+   "level": "Grade 9"
+  },
+  {
+   "key": "A.CED.1",
+   "name": "A.CED.1 — Creating Equations",
+   "level": "Grade 9"
+  },
+  {
+   "key": "A.CED.2",
+   "name": "A.CED.2 — Creating Equations",
+   "level": "Grade 9"
+  },
+  {
+   "key": "A.CED.3",
+   "name": "A.CED.3 — Creating Equations",
+   "level": "Grade 9"
+  },
+  {
+   "key": "A.CED.4",
+   "name": "A.CED.4 — Creating Equations",
+   "level": "Grade 9"
+  },
+  {
+   "key": "A.REI.1",
+   "name": "A.REI.1 — Reasoning with Equations and Inequalities",
+   "level": "Grade 9"
+  },
+  {
+   "key": "A.REI.3",
+   "name": "A.REI.3 — Reasoning with Equations and Inequalities",
+   "level": "Grade 9"
+  },
+  {
+   "key": "A.REI.4",
+   "name": "A.REI.4 — Reasoning with Equations and Inequalities",
+   "level": "Grade 9"
+  },
+  {
+   "key": "A.REI.5",
+   "name": "A.REI.5 — Reasoning with Equations and Inequalities",
+   "level": "Grade 9"
+  },
+  {
+   "key": "A.REI.6",
+   "name": "A.REI.6 — Reasoning with Equations and Inequalities",
+   "level": "Grade 9"
+  },
+  {
+   "key": "F.IF.1",
+   "name": "F.IF.1 — Interpreting Functions",
+   "level": "Grade 9"
+  },
+  {
+   "key": "F.IF.2",
+   "name": "F.IF.2 — Interpreting Functions",
+   "level": "Grade 9"
+  },
+  {
+   "key": "F.IF.4",
+   "name": "F.IF.4 — Interpreting Functions",
+   "level": "Grade 9"
+  },
+  {
+   "key": "F.BF.1",
+   "name": "F.BF.1 — Building Functions",
+   "level": "Grade 9"
+  },
+  {
+   "key": "F.LE.1",
+   "name": "F.LE.1 — Linear, Quadratic and Exponential Models",
+   "level": "Grade 9"
+  },
+  {
+   "key": "F.LE.2",
+   "name": "F.LE.2 — Linear, Quadratic and Exponential Models",
+   "level": "Grade 9"
+  },
+  {
+   "key": "S.ID.1",
+   "name": "S.ID.1 — Interpreting Categorical and Quantitative Data",
+   "level": "Grade 9"
+  },
+  {
+   "key": "S.ID.2",
+   "name": "S.ID.2 — Interpreting Categorical and Quantitative Data",
+   "level": "Grade 9"
+  },
+  {
+   "key": "G.CO.1",
+   "name": "G.CO.1 — Congruence",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.CO.6",
+   "name": "G.CO.6 — Congruence",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.CO.7",
+   "name": "G.CO.7 — Congruence",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.CO.8",
+   "name": "G.CO.8 — Congruence",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.CO.9",
+   "name": "G.CO.9 — Congruence",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.CO.10",
+   "name": "G.CO.10 — Congruence",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.CO.11",
+   "name": "G.CO.11 — Congruence",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.SRT.2",
+   "name": "G.SRT.2 — Similarity, Right Triangles and Trigonometry",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.SRT.4",
+   "name": "G.SRT.4 — Similarity, Right Triangles and Trigonometry",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.SRT.5",
+   "name": "G.SRT.5 — Similarity, Right Triangles and Trigonometry",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.SRT.6",
+   "name": "G.SRT.6 — Similarity, Right Triangles and Trigonometry",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.SRT.8",
+   "name": "G.SRT.8 — Similarity, Right Triangles and Trigonometry",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.C.2",
+   "name": "G.C.2 — Circles",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.C.5",
+   "name": "G.C.5 — Circles",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.GPE.4",
+   "name": "G.GPE.4 — Expressing Geometric Properties with Equations",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.GPE.6",
+   "name": "G.GPE.6 — Expressing Geometric Properties with Equations",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.GPE.7",
+   "name": "G.GPE.7 — Expressing Geometric Properties with Equations",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.GMD.1",
+   "name": "G.GMD.1 — Geometric Measurement and Dimension",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.GMD.3",
+   "name": "G.GMD.3 — Geometric Measurement and Dimension",
+   "level": "Grade 10"
+  },
+  {
+   "key": "G.MG.1",
+   "name": "G.MG.1 — Modeling with Geometry",
+   "level": "Grade 10"
+  },
+  {
+   "key": "N.CN.1",
+   "name": "N.CN.1 — The Complex Number System",
+   "level": "Grade 11"
+  },
+  {
+   "key": "N.CN.2",
+   "name": "N.CN.2 — The Complex Number System",
+   "level": "Grade 11"
+  },
+  {
+   "key": "N.CN.7",
+   "name": "N.CN.7 — The Complex Number System",
+   "level": "Grade 11"
+  },
+  {
+   "key": "A.SSE.3",
+   "name": "A.SSE.3 — Seeing Structure in Expressions",
+   "level": "Grade 11"
+  },
+  {
+   "key": "A.APR.2",
+   "name": "A.APR.2 — Arithmetic with Polynomials and Rational Expressions",
+   "level": "Grade 11"
+  },
+  {
+   "key": "A.REI.2",
+   "name": "A.REI.2 — Reasoning with Equations and Inequalities",
+   "level": "Grade 11"
+  },
+  {
+   "key": "A.REI.7",
+   "name": "A.REI.7 — Reasoning with Equations and Inequalities",
+   "level": "Grade 11"
+  },
+  {
+   "key": "A.REI.11",
+   "name": "A.REI.11 — Reasoning with Equations and Inequalities",
+   "level": "Grade 11"
+  },
+  {
+   "key": "F.IF.6",
+   "name": "F.IF.6 — Interpreting Functions",
+   "level": "Grade 11"
+  },
+  {
+   "key": "F.IF.7",
+   "name": "F.IF.7 — Interpreting Functions",
+   "level": "Grade 11"
+  },
+  {
+   "key": "F.IF.8",
+   "name": "F.IF.8 — Interpreting Functions",
+   "level": "Grade 11"
+  },
+  {
+   "key": "F.IF.9",
+   "name": "F.IF.9 — Interpreting Functions",
+   "level": "Grade 11"
+  },
+  {
+   "key": "F.BF.3",
+   "name": "F.BF.3 — Building Functions",
+   "level": "Grade 11"
+  },
+  {
+   "key": "F.BF.4",
+   "name": "F.BF.4 — Building Functions",
+   "level": "Grade 11"
+  },
+  {
+   "key": "F.LE.4",
+   "name": "F.LE.4 — Linear, Quadratic and Exponential Models",
+   "level": "Grade 11"
+  },
+  {
+   "key": "F.TF.1",
+   "name": "F.TF.1 — Trigonometric Functions",
+   "level": "Grade 11"
+  },
+  {
+   "key": "F.TF.2",
+   "name": "F.TF.2 — Trigonometric Functions",
+   "level": "Grade 11"
+  },
+  {
+   "key": "F.TF.5",
+   "name": "F.TF.5 — Trigonometric Functions",
+   "level": "Grade 11"
+  },
+  {
+   "key": "S.ID.6",
+   "name": "S.ID.6 — Interpreting Categorical and Quantitative Data",
+   "level": "Grade 11"
+  },
+  {
+   "key": "S.ID.7",
+   "name": "S.ID.7 — Interpreting Categorical and Quantitative Data",
+   "level": "Grade 11"
+  },
+  {
+   "key": "S.ID.3",
+   "name": "S.ID.3 — Interpreting Categorical and Quantitative Data",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.ID.4",
+   "name": "S.ID.4 — Interpreting Categorical and Quantitative Data",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.IC.1",
+   "name": "S.IC.1 — Making Inferences and Justifying Conclusions",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.IC.2",
+   "name": "S.IC.2 — Making Inferences and Justifying Conclusions",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.IC.3",
+   "name": "S.IC.3 — Making Inferences and Justifying Conclusions",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.IC.4",
+   "name": "S.IC.4 — Making Inferences and Justifying Conclusions",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.IC.5",
+   "name": "S.IC.5 — Making Inferences and Justifying Conclusions",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.IC.6",
+   "name": "S.IC.6 — Making Inferences and Justifying Conclusions",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.CP.1",
+   "name": "S.CP.1 — Conditional Probability and the Rules of Probability",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.CP.2",
+   "name": "S.CP.2 — Conditional Probability and the Rules of Probability",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.CP.3",
+   "name": "S.CP.3 — Conditional Probability and the Rules of Probability",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.CP.4",
+   "name": "S.CP.4 — Conditional Probability and the Rules of Probability",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.CP.5",
+   "name": "S.CP.5 — Conditional Probability and the Rules of Probability",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.CP.6",
+   "name": "S.CP.6 — Conditional Probability and the Rules of Probability",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.CP.7",
+   "name": "S.CP.7 — Conditional Probability and the Rules of Probability",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.MD.1",
+   "name": "S.MD.1 — Measurement and Data",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.MD.2",
+   "name": "S.MD.2 — Measurement and Data",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.MD.3",
+   "name": "S.MD.3 — Measurement and Data",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.MD.4",
+   "name": "S.MD.4 — Measurement and Data",
+   "level": "Grade 12"
+  },
+  {
+   "key": "S.MD.6",
+   "name": "S.MD.6 — Measurement and Data",
+   "level": "Grade 12"
+  }
+ ],
  "prereq": {
   "K.CC.2": "K.CC.1",
   "K.CC.3": "K.CC.2",

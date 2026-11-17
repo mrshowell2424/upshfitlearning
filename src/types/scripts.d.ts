@@ -42,16 +42,23 @@ declare module "@/../scripts/lib/ladder-clue.mjs" {
  * scripts/check-review.mjs choose them the same way.
  */
 declare module "@/../scripts/lib/review-slots.mjs" {
+  /**
+   * A level is whatever the subject calls one: a number for reading, a
+   * grade name for maths. The function only ever uses it to look up a
+   * pool, so both belong here rather than the one the reading page
+   * happened to need first.
+   */
+  export type ReviewLevel = number | string;
   export interface ReviewSlot {
     why: string;
     key: string | null;
     name: string | null;
-    level: number | null;
+    level: ReviewLevel | null;
   }
   export function reviewSlots(
     key: string,
     data: {
-      seq: { key: string; name: string; level: number }[];
+      seq: { key: string; name: string; level: ReviewLevel }[];
       prereq: Record<string, string>;
       spiral: Record<string, string[]>;
     },
