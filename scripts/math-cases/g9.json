@@ -13,20 +13,54 @@
   ],
   "question": "If the pattern holds, how many students have heard it on day 6?",
   "options": [
-   { "label": "128 students", "value": "128" },
-   { "label": "24 students", "value": "24" },
-   { "label": "64 students", "value": "64" },
-   { "label": "512 students", "value": "512" }
+   {
+    "label": "128 students",
+    "value": "128"
+   },
+   {
+    "label": "24 students",
+    "value": "24"
+   },
+   {
+    "label": "64 students",
+    "value": "64"
+   },
+   {
+    "label": "512 students",
+    "value": "512"
+   }
   ],
   "answer": 0,
   "chk": "4*2^5",
-  "uses": ["5"],
-  "decider": [0, 1, 2],
-  "proof": [0, 1, 2],
+  "uses": [
+   "5"
+  ],
+  "decider": [
+   0,
+   1,
+   2
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
   "rules_out": [
-   { "option": 1, "because": 2, "why": "24 comes from adding 4 a day. That would put day 3 at 12, and day 3 is 16." },
-   { "option": 2, "because": 0, "why": "64 is day 5. Day 1 already has 4 students, so the doubling happens five times to reach day 6, not four." },
-   { "option": 3, "because": 3, "why": "512 is the whole school. The pattern does not reach it until day 8." }
+   {
+    "option": 1,
+    "because": 2,
+    "why": "24 comes from adding 4 a day. That would put day 3 at 12, and day 3 is 16."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "64 is day 5. Day 1 already has 4 students, so the doubling happens five times to reach day 6, not four."
+   },
+   {
+    "option": 3,
+    "because": 3,
+    "why": "512 is the whole school. The pattern does not reach it until day 8."
+   }
   ],
   "explain": "Each day the number doubles: 4, 8, 16, 32, 64, 128. Multiplying by the same factor each step is what makes this exponential rather than linear — a linear pattern adds the same amount each step instead.",
   "debate": {
@@ -38,18 +72,792 @@
    ],
    "question": "How many will have heard it on day 6? Say what your model assumes.",
    "options": [
-    { "label": "128 students", "value": "128" },
-    { "label": "about 100 students", "value": "100" },
-    { "label": "332 students at most", "value": "332" }
+    {
+     "label": "128 students",
+     "value": "128"
+    },
+    {
+     "label": "about 100 students",
+     "value": "100"
+    },
+    {
+     "label": "332 students at most",
+     "value": "332"
+    }
    ],
    "opened_by": 3,
-   "open": [0, 1, 2],
+   "open": [
+    0,
+    1,
+    2
+   ],
    "arguments": [
-    { "option": 0, "evidence": [0, 1, 2], "against": 3, "why": "Doubling from 4 gives 128 on day 6, and nothing in the three days of data breaks the pattern." },
-    { "option": 1, "evidence": [0, 1, 2, 3], "against": 0, "why": "With 180 students away, each student who knows has fewer people left to tell, so growth slows before day 6 and something under 128 is the honest figure." },
-    { "option": 2, "evidence": [3], "against": 0, "why": "Doubling cannot pass the 332 students actually in the building. The curve has to flatten, and 332 is the ceiling it flattens against." }
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "Doubling from 4 gives 128 on day 6, and nothing in the three days of data breaks the pattern."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "against": 0,
+     "why": "With 180 students away, each student who knows has fewer people left to tell, so growth slows before day 6 and something under 128 is the honest figure."
+    },
+    {
+     "option": 2,
+     "evidence": [
+      3
+     ],
+     "against": 0,
+     "why": "Doubling cannot pass the 332 students actually in the building. The curve has to flatten, and 332 is the ceiling it flattens against."
+    }
    ],
    "note": "Three days of data fit a doubling and fit the start of an S-curve equally well. Exponential models are always true at the beginning and never true at the end, and naming where yours stops being true is the skill."
+  }
+ },
+ {
+  "id": "g9-c2",
+  "grade": 9,
+  "code": "A.SSE.1",
+  "tag": "🏪 the shop",
+  "title": "The Case of the Break-Even Point",
+  "given": [
+   "A shop's weekly profit is 20n - 500 dollars.",
+   "n is the number of items sold that week.",
+   "The 20 is the profit made on each item.",
+   "The 500 is the weekly rent, paid whatever happens."
+  ],
+  "question": "How many items must be sold to break even?",
+  "options": [
+   {
+    "label": "25 items",
+    "value": "25"
+   },
+   {
+    "label": "500 items",
+    "value": "500"
+   },
+   {
+    "label": "20 items",
+    "value": "20"
+   },
+   {
+    "label": "480 items",
+    "value": "480"
+   }
+  ],
+  "answer": 0,
+  "chk": "500/20",
+  "decider": [
+   3
+  ],
+  "proof": [
+   0,
+   2,
+   3
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 3,
+    "why": "500 is a number of dollars of rent. It only becomes a number of items once it is shared out at 20 dollars each."
+   },
+   {
+    "option": 2,
+    "because": 2,
+    "why": "20 is the profit on one item, which is the rate rather than the count."
+   },
+   {
+    "option": 3,
+    "because": 0,
+    "why": "480 subtracts 20 dollars from 500 dollars. The 20 is per item, so it cannot simply be taken off once."
+   }
+  ],
+  "explain": "Breaking even means profit is zero: 20n - 500 = 0, so 20n = 500 and n = 25. Reading the parts of an expression is the whole skill here — one number is a rate and the other is a fixed cost.",
+  "debate": {
+   "given": [
+    "Weekly profit is 20n - 500 dollars, where n is items sold.",
+    "The 500 rent is charged whether the shop opens or not.",
+    "Each item also costs 2 dollars to ship, which is not inside the 20.",
+    "Only whole items can be sold."
+   ],
+   "question": "How many items must be sold to break even? Defend it.",
+   "options": [
+    {
+     "label": "25 items",
+     "value": "25"
+    },
+    {
+     "label": "28 items",
+     "value": "28"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "The expression the shop uses is 20n - 500, and setting that to zero gives 25. That is the model as written."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 0,
+     "why": "Shipping makes the real profit per item 18, not 20, so break-even is 500 over 18, which is 27.8 — and you cannot sell part of an item, so 28."
+    }
+   ],
+   "note": "The algebra is identical both times; what changed is what counts as profit per item. Ask whether the 20 was ever checked, because the whole answer rests on it."
+  }
+ },
+ {
+  "id": "g9-c3",
+  "grade": 9,
+  "code": "A.APR.1",
+  "tag": "▭ the border",
+  "title": "The Case of the Missing Middle Terms",
+  "given": [
+   "A rectangle's length is x + 5.",
+   "Its width is x + 2.",
+   "Its area is the length multiplied by the width.",
+   "At x = 3 the rectangle measures 8 by 5."
+  ],
+  "question": "What is the area when x = 3?",
+  "options": [
+   {
+    "label": "40 square units",
+    "value": "40"
+   },
+   {
+    "label": "19 square units",
+    "value": "19"
+   },
+   {
+    "label": "13 square units",
+    "value": "13"
+   },
+   {
+    "label": "26 square units",
+    "value": "26"
+   }
+  ],
+  "answer": 0,
+  "chk": "(3+5)*(3+2)",
+  "decider": [
+   3
+  ],
+  "proof": [
+   2,
+   3
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "19 comes from x squared plus 10 — multiplying the first terms and the last terms and forgetting the two middle products."
+   },
+   {
+    "option": 2,
+    "because": 2,
+    "why": "13 adds the length to the width. Area is a product."
+   },
+   {
+    "option": 3,
+    "because": 2,
+    "why": "26 is the perimeter, twice the length plus twice the width."
+   }
+  ],
+  "explain": "Substituting first keeps it honest: 8 times 5 is 40. Expanded, (x+5)(x+2) is x² + 7x + 10, and at x = 3 that is 9 + 21 + 10 — also 40. The 7x is the part that gets dropped.",
+  "debate": {
+   "given": [
+    "The rectangle's length is x + 5 and its width is x + 2.",
+    "A 1-unit border is trimmed off all the way round before use.",
+    "At x = 3 the rectangle measures 8 by 5.",
+    "Area is length times width."
+   ],
+   "question": "What is the usable area at x = 3? Say what you measured.",
+   "options": [
+    {
+     "label": "40 square units",
+     "value": "40"
+    },
+    {
+     "label": "18 square units",
+     "value": "18"
+    }
+   ],
+   "opened_by": 1,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      2,
+      3
+     ],
+     "against": 1,
+     "why": "The rectangle described in the problem is 8 by 5, and the area of that rectangle is 40 square units."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      2
+     ],
+     "against": 0,
+     "why": "A 1-unit border takes 2 off each dimension, leaving 6 by 3. The usable area is 18."
+    }
+   ],
+   "note": "A trim of 1 unit removes 2 units from each dimension, not 1, and that is where this one is usually lost. Draw it before anybody calculates."
+  }
+ },
+ {
+  "id": "g9-c4",
+  "grade": 9,
+  "code": "A.CED.1",
+  "tag": "🔧 the plumber",
+  "title": "The Case of the Hour Already Paid For",
+  "given": [
+   "The plumber charges 50 dollars to come out.",
+   "After that he charges 50 dollars an hour.",
+   "The bill came to 250 dollars.",
+   "There were no parts to pay for."
+  ],
+  "question": "How many hours did he work?",
+  "options": [
+   {
+    "label": "4 hours",
+    "value": "4"
+   },
+   {
+    "label": "5 hours",
+    "value": "5"
+   },
+   {
+    "label": "6 hours",
+    "value": "6"
+   },
+   {
+    "label": "200 hours",
+    "value": "200"
+   }
+  ],
+  "answer": 0,
+  "chk": "(250-50)/50",
+  "decider": [
+   0
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 0,
+    "why": "5 divides the whole bill by the hourly rate and forgets that 50 of those dollars bought no time at all."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "6 adds the call-out charge instead of taking it off. It is already inside the 250."
+   },
+   {
+    "option": 3,
+    "because": 1,
+    "why": "200 is the dollars spent on labour, not the hours those dollars bought."
+   }
+  ],
+  "explain": "Write it before solving it: 50 + 50h = 250. The call-out comes off first because it buys no time, leaving 200 dollars of labour at 50 an hour, which is 4 hours.",
+  "debate": {
+   "given": [
+    "The plumber charges 50 to come out and 50 an hour after that.",
+    "The bill came to 250 dollars.",
+    "His price list says the call-out charge includes the first hour of work.",
+    "There were no parts."
+   ],
+   "question": "How many hours did he work? Say what your equation assumes.",
+   "options": [
+    {
+     "label": "4 hours",
+     "value": "4"
+    },
+    {
+     "label": "5 hours",
+     "value": "5"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "Taking the charges as two separate things, 50 + 50h = 250 gives h = 4 hours of work."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      2
+     ],
+     "against": 0,
+     "why": "If the call-out buys the first hour, the 200 dollars pays for 4 more hours on top of it, so he worked 5."
+    }
+   ],
+   "note": "Creating the equation is the work, and the price list is part of the problem. Both students solve correctly; only one of them read the small print."
+  }
+ },
+ {
+  "id": "g9-c5",
+  "grade": 9,
+  "code": "A.REI.3",
+  "tag": "🛗 the lift",
+  "title": "The Case of the Lift at Ninety Percent",
+  "given": [
+   "The lift can carry 800 pounds.",
+   "The operator riding with the load weighs 200 pounds.",
+   "Each box weighs 75 pounds.",
+   "The lift must not go over its limit."
+  ],
+  "question": "What is the greatest number of boxes that can go in with the operator?",
+  "options": [
+   {
+    "label": "8 boxes",
+    "value": "8"
+   },
+   {
+    "label": "10 boxes",
+    "value": "10"
+   },
+   {
+    "label": "9 boxes",
+    "value": "9"
+   },
+   {
+    "label": "13 boxes",
+    "value": "13"
+   }
+  ],
+  "answer": 0,
+  "chk": "(800-200)/75",
+  "decider": [
+   1
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 1,
+    "why": "10 leaves the operator out. He is in the lift, and his 200 pounds come off the budget before any boxes go in."
+   },
+   {
+    "option": 2,
+    "because": 3,
+    "why": "9 boxes is 675 pounds, and with the operator that is 875 — over the limit."
+   },
+   {
+    "option": 3,
+    "because": 1,
+    "why": "13 adds the operator's weight to the limit instead of taking it away from it."
+   }
+  ],
+  "explain": "An inequality, not an equation: 200 + 75b ≤ 800, so 75b ≤ 600 and b ≤ 8. Eight boxes and the operator come to exactly 800, which is allowed; nine would not be.",
+  "debate": {
+   "given": [
+    "The lift's limit is 800 pounds and the operator weighs 200.",
+    "Each box weighs 75 pounds.",
+    "8 boxes with the operator comes to exactly 800 pounds.",
+    "The safety notice says never load above 90 percent of the limit."
+   ],
+   "question": "How many boxes should go in? Defend the number.",
+   "options": [
+    {
+     "label": "8 boxes",
+     "value": "8"
+    },
+    {
+     "label": "6 boxes",
+     "value": "6"
+    }
+   ],
+   "opened_by": 3,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "The limit is 800 and 8 boxes with the operator is exactly 800. The inequality is satisfied."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      3
+     ],
+     "against": 2,
+     "why": "Ninety percent of 800 is 720, and the operator takes 200 of it. That leaves 520 pounds, which is 6 boxes."
+    }
+   ],
+   "note": "Hitting a safety limit exactly should make anyone uneasy, which is what the 90 percent rule exists to express. Ask what the limit is for, and whether 800 was ever meant to be reached."
+  }
+ },
+ {
+  "id": "g9-c6",
+  "grade": 9,
+  "code": "F.IF.2",
+  "tag": "🪑 chair hire",
+  "title": "The Case of the Chairs That Come in Tens",
+  "given": [
+   "The cost of hiring chairs is C(n) = 25 + 8n dollars.",
+   "n is the number of chairs hired.",
+   "The 25 is the delivery charge.",
+   "The 8 is the price of one chair."
+  ],
+  "question": "What is C(12)?",
+  "options": [
+   {
+    "label": "121 dollars",
+    "value": "121"
+   },
+   {
+    "label": "96 dollars",
+    "value": "96"
+   },
+   {
+    "label": "45 dollars",
+    "value": "45"
+   },
+   {
+    "label": "33 dollars",
+    "value": "33"
+   }
+  ],
+  "answer": 0,
+  "chk": "25+8*12",
+  "decider": [
+   0
+  ],
+  "proof": [
+   0,
+   2,
+   3
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "96 is 8 times 12 and leaves out the delivery charge, which is paid once whatever the order."
+   },
+   {
+    "option": 2,
+    "because": 3,
+    "why": "45 adds the 12 instead of multiplying by it, as though 12 chairs cost 12 dollars between them."
+   },
+   {
+    "option": 3,
+    "because": 3,
+    "why": "33 is the cost of a single chair plus delivery."
+   }
+  ],
+  "explain": "Function notation is an instruction: C(12) means put 12 where the n is. 25 plus 8 times 12 is 25 plus 96, which is 121 dollars.",
+  "debate": {
+   "given": [
+    "The cost of hiring chairs is C(n) = 25 + 8n dollars.",
+    "The 25 is delivery and the 8 is the price of one chair.",
+    "The supplier only hires chairs in packs of 10.",
+    "The event needs seats for 12 people."
+   ],
+   "question": "What will the hire actually cost? Defend the number.",
+   "options": [
+    {
+     "label": "121 dollars",
+     "value": "121"
+    },
+    {
+     "label": "185 dollars",
+     "value": "185"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "The function says the cost of 12 chairs, and evaluating it at 12 gives 121 dollars."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 0,
+     "why": "You cannot hire 12. The smallest order that seats 12 is 20 chairs, and C(20) is 185."
+    }
+   ],
+   "note": "The function has a domain the formula does not mention: it is only defined at multiples of 10. Asking what inputs are actually allowed is the habit worth building here."
+  }
+ },
+ {
+  "id": "g9-c7",
+  "grade": 9,
+  "code": "F.BF.1",
+  "tag": "🪣 the tank",
+  "title": "The Case of the Leak That Slows Down",
+  "given": [
+   "The tank holds 500 litres at the start.",
+   "It leaks 12 litres an hour.",
+   "Nothing is added to it.",
+   "The leak rate never changes."
+  ],
+  "question": "How many litres are left after 15 hours?",
+  "options": [
+   {
+    "label": "320 litres",
+    "value": "320"
+   },
+   {
+    "label": "180 litres",
+    "value": "180"
+   },
+   {
+    "label": "488 litres",
+    "value": "488"
+   },
+   {
+    "label": "680 litres",
+    "value": "680"
+   }
+  ],
+  "answer": 0,
+  "chk": "500-12*15",
+  "decider": [
+   3
+  ],
+  "proof": [
+   0,
+   1,
+   3
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 1,
+    "why": "180 is how much has leaked out, not how much is still in the tank."
+   },
+   {
+    "option": 2,
+    "because": 1,
+    "why": "488 takes off a single hour's leak. Fifteen hours have passed."
+   },
+   {
+    "option": 3,
+    "because": 1,
+    "why": "680 adds the leak on. A leak takes water out of the tank."
+   }
+  ],
+  "explain": "Build the function before you use it: V(t) = 500 - 12t. At t = 15 that is 500 minus 180, which is 320 litres. The 500 is where it starts and the -12 is what each hour does to it.",
+  "debate": {
+   "given": [
+    "The tank starts at 500 litres and is measured leaking 12 litres an hour.",
+    "Nothing is added to it.",
+    "The leak runs slower as the tank empties, because there is less weight of water pushing on it.",
+    "The question is about 15 hours from the start."
+   ],
+   "question": "How many litres are left after 15 hours? Say what your model assumes.",
+   "options": [
+    {
+     "label": "320 litres",
+     "value": "320"
+    },
+    {
+     "label": "about 360 litres",
+     "value": "360"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "A constant rate gives 500 - 12 times 15, which is 320 litres, and 12 an hour is the only rate we were given."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      2
+     ],
+     "against": 0,
+     "why": "If the leak slows as the level drops, less than 180 litres escapes, so more than 320 is left. The straight-line answer is a lower bound."
+    }
+   ],
+   "note": "A linear model is the right first move and it is wrong in a direction you can name. Saying which way your answer is biased is worth more than the answer."
+  }
+ },
+ {
+  "id": "g9-c8",
+  "grade": 9,
+  "code": "S.ID.2",
+  "tag": "📊 two classes",
+  "title": "The Case of the Two Classes With the Same Mean",
+  "given": [
+   "Class A scored 70, 72, 74, 76 and 78.",
+   "Class B scored 40, 60, 74, 90 and 106.",
+   "Both classes have 5 students and both have a mean of 74.",
+   "The range is the highest score take away the lowest."
+  ],
+  "question": "What is the range of Class B?",
+  "options": [
+   {
+    "label": "66",
+    "value": "66"
+   },
+   {
+    "label": "8",
+    "value": "8"
+   },
+   {
+    "label": "74",
+    "value": "74"
+   },
+   {
+    "label": "146",
+    "value": "146"
+   }
+  ],
+  "answer": 0,
+  "chk": "106-40",
+  "decider": [
+   3
+  ],
+  "proof": [
+   1,
+   3
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 0,
+    "why": "8 is Class A's range, from 70 up to 78."
+   },
+   {
+    "option": 2,
+    "because": 2,
+    "why": "74 is the mean, which both classes share. Range exists precisely to say what the mean cannot."
+   },
+   {
+    "option": 3,
+    "because": 3,
+    "why": "146 adds the highest and lowest scores instead of taking one from the other."
+   }
+  ],
+  "explain": "106 take away 40 is 66. The point of the question is that both classes have a mean of 74 and ranges of 8 and 66: the centre is identical and the spread is not remotely.",
+  "debate": {
+   "given": [
+    "Class A scored 70, 72, 74, 76, 78; Class B scored 40, 60, 74, 90, 106.",
+    "Both have a mean of 74. A's range is 8 and B's is 66.",
+    "The pass mark is 65.",
+    "The head has to decide which class needs extra help."
+   ],
+   "question": "Which class needs help? Give the spread you are arguing from.",
+   "options": [
+    {
+     "label": "Class B — range 66",
+     "value": "66"
+    },
+    {
+     "label": "Class A — range 8",
+     "value": "8"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1,
+      2
+     ],
+     "against": 1,
+     "why": "Two of B's students are below the pass mark of 65 and two are far above it. A single lesson cannot serve that spread."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "Every student in A sits in an eight-mark band with nobody pulling away. A class learning nothing new together is also a class that needs something."
+    }
+   ],
+   "note": "Same mean, different stories, and the mean is what a report usually carries. Have them say what a reader of the mean alone would wrongly conclude."
   }
  }
 ]

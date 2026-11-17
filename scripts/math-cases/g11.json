@@ -13,19 +13,48 @@
   ],
   "question": "What height does the line predict at week 20, in centimetres?",
   "options": [
-   { "label": "59 cm", "value": "59" },
-   { "label": "60 cm", "value": "60" },
-   { "label": "57 cm", "value": "57" },
-   { "label": "14 cm", "value": "14" }
+   {
+    "label": "59 cm",
+    "value": "59"
+   },
+   {
+    "label": "60 cm",
+    "value": "60"
+   },
+   {
+    "label": "57 cm",
+    "value": "57"
+   },
+   {
+    "label": "14 cm",
+    "value": "14"
+   }
   ],
   "answer": 0,
   "chk": "3*20-1",
-  "decider": [2],
-  "proof": [1, 2],
+  "decider": [
+   2
+  ],
+  "proof": [
+   1,
+   2
+  ],
   "rules_out": [
-   { "option": 1, "because": 3, "why": "60 is where this kind of bean stops growing. It is a fact about the plant, not what the line says." },
-   { "option": 2, "because": 2, "why": "57 takes the 1 off the week rather than off the height: that is 3 times 19, not 3 times 20 minus 1." },
-   { "option": 3, "because": 0, "why": "14 cm is the last measurement taken, at week 5." }
+   {
+    "option": 1,
+    "because": 3,
+    "why": "60 is where this kind of bean stops growing. It is a fact about the plant, not what the line says."
+   },
+   {
+    "option": 2,
+    "because": 2,
+    "why": "57 takes the 1 off the week rather than off the height: that is 3 times 19, not 3 times 20 minus 1."
+   },
+   {
+    "option": 3,
+    "because": 0,
+    "why": "14 cm is the last measurement taken, at week 5."
+   }
   ],
   "explain": "Substituting w = 20 into h = 3w - 1 gives 59. That is what the line says. Whether the plant says it is a different question, and it is the one worth asking.",
   "debate": {
@@ -37,18 +66,893 @@
    ],
    "question": "What should they predict for week 20? Say how far you trust it.",
    "options": [
-    { "label": "59 cm, from the line", "value": "59" },
-    { "label": "about 60 cm, the ceiling", "value": "60" },
-    { "label": "about 44 cm, growth stopped earlier", "value": "44" }
+    {
+     "label": "59 cm, from the line",
+     "value": "59"
+    },
+    {
+     "label": "about 60 cm, the ceiling",
+     "value": "60"
+    },
+    {
+     "label": "about 44 cm, growth stopped earlier",
+     "value": "44"
+    }
    ],
    "opened_by": 3,
-   "open": [0, 1, 2],
+   "open": [
+    0,
+    1,
+    2
+   ],
    "arguments": [
-    { "option": 0, "evidence": [0, 1], "against": 2, "why": "The line fits five points to within 0.2 cm. Inside the data it is excellent, and what it gives at week 20 is 59." },
-    { "option": 1, "evidence": [1, 2], "against": 3, "why": "Growth flattens as a plant nears its limit, so the honest prediction is the limit itself, about 60." },
-    { "option": 2, "evidence": [0, 3], "against": 1, "why": "A plant that has flowered puts its energy into seed rather than height. Growth stops before the ceiling, so a figure well short of 59 is defensible." }
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "The line fits five points to within 0.2 cm. Inside the data it is excellent, and what it gives at week 20 is 59."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "Growth flattens as a plant nears its limit, so the honest prediction is the limit itself, about 60."
+    },
+    {
+     "option": 2,
+     "evidence": [
+      0,
+      3
+     ],
+     "against": 1,
+     "why": "A plant that has flowered puts its energy into seed rather than height. Growth stops before the ceiling, so a figure well short of 59 is defensible."
+    }
    ],
    "note": "A fit of 0.2 cm over five weeks says nothing whatever about week 20. Ask every student to name the range of weeks they would trust their line across, and to say why the range ends where it does."
+  }
+ },
+ {
+  "id": "g11-c2",
+  "grade": 11,
+  "code": "N.CN.2",
+  "tag": "ℹ️ complex",
+  "title": "The Case of the Equation With No Real Answer",
+  "given": [
+   "The equation is x^2 + 4 = 0.",
+   "No real number multiplied by itself gives a negative.",
+   "i is defined so that i^2 is -1, which was taught last week.",
+   "A quadratic equation has at most 2 solutions."
+  ],
+  "question": "How many solutions does the equation have?",
+  "options": [
+   {
+    "label": "2 solutions",
+    "value": "2"
+   },
+   {
+    "label": "0 solutions",
+    "value": "0"
+   },
+   {
+    "label": "1 solution",
+    "value": "1"
+   },
+   {
+    "label": "4 solutions",
+    "value": "4"
+   }
+  ],
+  "answer": 0,
+  "chk": "2",
+  "decider": [
+   2
+  ],
+  "proof": [
+   2,
+   3
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "0 is the answer only if you refuse to leave the real numbers, and i has already been defined for exactly this situation."
+   },
+   {
+    "option": 2,
+    "because": 3,
+    "why": "1 would mean a repeated root. 2i and -2i are two different numbers, and both square to -4."
+   },
+   {
+    "option": 3,
+    "because": 0,
+    "why": "4 is the constant in the equation, not a count of solutions."
+   }
+  ],
+  "explain": "x^2 = -4 has no real answer, which is why i exists. Both 2i and -2i square to -4, so there are two solutions — and every quadratic has exactly two once complex numbers are allowed.",
+  "debate": {
+   "given": [
+    "The equation is x^2 + 4 = 0.",
+    "i^2 is -1, so 2i and -2i both satisfy it.",
+    "The chapter of the textbook is titled Real Numbers.",
+    "The exam paper says: solve over the real numbers."
+   ],
+   "question": "How many solutions should the student write down?",
+   "options": [
+    {
+     "label": "0 solutions",
+     "value": "0"
+    },
+    {
+     "label": "2 solutions",
+     "value": "2"
+    }
+   ],
+   "opened_by": 3,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 1,
+     "why": "The paper restricts the answer to the reals, and over the reals there is nothing that squares to -4. Zero is the correct answer to the question asked."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 3,
+     "why": "The equation has two solutions and a student who knows them should say so, noting that neither is real."
+    }
+   ],
+   "note": "How many solutions an equation has depends on the number system you are working in, and that is not a technicality. The best answer names both: none over the reals, two over the complex numbers."
+  }
+ },
+ {
+  "id": "g11-c3",
+  "grade": 11,
+  "code": "A.SSE.3",
+  "tag": "⚾ the throw",
+  "title": "The Case of the Ball Thrown From a Platform",
+  "given": [
+   "A ball's height is h = -5t^2 + 20t metres.",
+   "t is the time in seconds since it was thrown.",
+   "The expression factors as -5t(t - 4).",
+   "The ball is on the ground when h is zero."
+  ],
+  "question": "After how many seconds does the ball land?",
+  "options": [
+   {
+    "label": "4 seconds",
+    "value": "4"
+   },
+   {
+    "label": "2 seconds",
+    "value": "2"
+   },
+   {
+    "label": "20 seconds",
+    "value": "20"
+   },
+   {
+    "label": "5 seconds",
+    "value": "5"
+   }
+  ],
+  "answer": 0,
+  "chk": "4",
+  "decider": [
+   2
+  ],
+  "proof": [
+   2,
+   3
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "2 seconds is when the ball is at its highest, halfway between the two times the height is zero."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "20 is a coefficient in the expression, not a time. It sets how hard the ball was thrown."
+   },
+   {
+    "option": 3,
+    "because": 0,
+    "why": "5 is the other coefficient, which carries gravity. Neither coefficient is a number of seconds."
+   }
+  ],
+  "explain": "Factored form hands you the zeros: -5t(t - 4) is zero when t = 0, the throw, and t = 4, the landing. Rewriting an expression is worth doing when the new form answers the question by inspection.",
+  "debate": {
+   "given": [
+    "The height model is h = -5t^2 + 20t, which factors as -5t(t - 4).",
+    "h is measured from the thrower's hand, not from the ground.",
+    "The thrower is standing on a platform 3 metres above the ground.",
+    "Landing means reaching the ground."
+   ],
+   "question": "After how many seconds does the ball land? Defend it.",
+   "options": [
+    {
+     "label": "4 seconds",
+     "value": "4"
+    },
+    {
+     "label": "a little over 4, about 4.1",
+     "value": "4.1"
+    }
+   ],
+   "opened_by": 1,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      2
+     ],
+     "against": 1,
+     "why": "The model says h is zero at t = 4, and that is the only landing time the algebra offers."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      3
+     ],
+     "against": 0,
+     "why": "h = 0 is the hand's height, not the ground. The ball still has 3 metres to fall, so it lands slightly after 4 seconds."
+    }
+   ],
+   "note": "Where zero is measured from is a modelling choice buried in a letter. Ask what h = 0 means physically before anyone solves for it."
+  }
+ },
+ {
+  "id": "g11-c4",
+  "grade": 11,
+  "code": "A.APR.2",
+  "tag": "➗ remainder",
+  "title": "The Case of the Cubic That Keeps Going",
+  "given": [
+   "The polynomial is p(x) = x^3 - 4x + 1.",
+   "The remainder theorem says the remainder on dividing by (x - a) is p(a).",
+   "We are dividing p by (x - 2).",
+   "Every coefficient in p is a whole number."
+  ],
+  "question": "What is the remainder?",
+  "options": [
+   {
+    "label": "1",
+    "value": "1"
+   },
+   {
+    "label": "0",
+    "value": "0"
+   },
+   {
+    "label": "5",
+    "value": "5"
+   },
+   {
+    "label": "13",
+    "value": "13"
+   }
+  ],
+  "answer": 0,
+  "chk": "2^3-4*2+1",
+  "decider": [
+   1
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 1,
+    "why": "0 would mean (x - 2) divides exactly, and p(2) is not zero, so it does not."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "5 comes from treating the -4x term as -4 rather than -4 times 2."
+   },
+   {
+    "option": 3,
+    "because": 0,
+    "why": "13 adds the middle term instead of subtracting it: 8 plus 4 plus 1."
+   }
+  ],
+  "explain": "The theorem turns a division into a substitution: p(2) is 8 minus 8 plus 1, which is 1. No long division is needed, and a remainder of 1 says (x - 2) is not a factor.",
+  "debate": {
+   "given": [
+    "A profit model is p(x) = x^3 - 4x + 1, in thousands of dollars.",
+    "At x = 2 the model gives a profit of 1 thousand.",
+    "The cubic was fitted to only 4 data points, all between x = 0 and x = 3.",
+    "The board wants a forecast at x = 6."
+   ],
+   "question": "What profit should be forecast at x = 6, in thousands?",
+   "options": [
+    {
+     "label": "193 thousand",
+     "value": "193"
+    },
+    {
+     "label": "far less — call it 50",
+     "value": "50"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      3
+     ],
+     "against": 2,
+     "why": "Evaluating the model at 6 gives 216 minus 24 plus 1, which is 193. That is what the agreed model says."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 0,
+     "why": "A cubic fitted to four points between 0 and 3 says nothing at 6. Its cube term explodes, and 193 is an artefact of the shape chosen, not evidence."
+    }
+   ],
+   "note": "Evaluating a polynomial is exact and forecasting with it is not. Ask over what range of x anyone would defend this model, and watch how short the honest answer is."
+  }
+ },
+ {
+  "id": "g11-c5",
+  "grade": 11,
+  "code": "A.REI.2",
+  "tag": "√ extraneous",
+  "title": "The Case of the Root That Does Not Work",
+  "given": [
+   "The equation is the square root of (x + 6) equals x.",
+   "Squaring both sides gives x + 6 = x^2.",
+   "Rearranged, that factors as (x - 3)(x + 2) = 0.",
+   "A square root is never negative."
+  ],
+  "question": "Which value is a genuine solution of the original equation?",
+  "options": [
+   {
+    "label": "3",
+    "value": "3"
+   },
+   {
+    "label": "-2",
+    "value": "-2"
+   },
+   {
+    "label": "6",
+    "value": "6"
+   },
+   {
+    "label": "both 3 and -2",
+    "value": "1"
+   }
+  ],
+  "answer": 0,
+  "chk": "3",
+  "decider": [
+   3
+  ],
+  "proof": [
+   2,
+   3
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 3,
+    "why": "-2 fails the original equation: the square root of 4 is 2, not -2. Squaring created it."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "6 is the constant under the root sign, not a solution of anything."
+   },
+   {
+    "option": 3,
+    "because": 3,
+    "why": "Both cannot be right, because a square root is never negative and -2 is."
+   }
+  ],
+  "explain": "Squaring is not reversible: it turns two different statements into the same one, so it can manufacture roots. Every candidate has to be put back into the original, and only 3 survives.",
+  "debate": {
+   "given": [
+    "Squaring the equation gives roots x = 3 and x = -2.",
+    "Only 3 satisfies the original equation.",
+    "The exam mark scheme gives a mark for showing both roots found by squaring.",
+    "A physics problem using the same equation needs only the valid one."
+   ],
+   "question": "How many values should the student write down?",
+   "options": [
+    {
+     "label": "1 value",
+     "value": "1"
+    },
+    {
+     "label": "2 values",
+     "value": "2"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      1,
+      3
+     ],
+     "against": 2,
+     "why": "The question asked for solutions, and -2 is not one. Writing it down as a solution is writing something false."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      2
+     ],
+     "against": 1,
+     "why": "Showing both and then rejecting one is the method. The working is the part being marked, and hiding the rejected root hides the check."
+    }
+   ],
+   "note": "These are not really in conflict: write both, then cross one out and say why. The answer is one value; the working contains two."
+  }
+ },
+ {
+  "id": "g11-c6",
+  "grade": 11,
+  "code": "F.IF.6",
+  "tag": "📈 rate",
+  "title": "The Case of the Average That Hides the Second Half",
+  "given": [
+   "A function has f(2) = 30 and f(8) = 66.",
+   "The average rate of change is the change in f over the change in x.",
+   "The interval runs from x = 2 to x = 8.",
+   "f is a smooth curve with no gaps."
+  ],
+  "question": "What is the average rate of change over the interval?",
+  "options": [
+   {
+    "label": "6",
+    "value": "6"
+   },
+   {
+    "label": "36",
+    "value": "36"
+   },
+   {
+    "label": "11",
+    "value": "11"
+   },
+   {
+    "label": "96",
+    "value": "96"
+   }
+  ],
+  "answer": 0,
+  "chk": "(66-30)/(8-2)",
+  "decider": [
+   1
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 1,
+    "why": "36 is the change in f alone. It becomes a rate only once it is divided by the 6 units of x it took."
+   },
+   {
+    "option": 2,
+    "because": 1,
+    "why": "11 divides the end value by the width of the interval rather than dividing the change."
+   },
+   {
+    "option": 3,
+    "because": 1,
+    "why": "96 adds the two values of f, which is not a comparison of any kind."
+   }
+  ],
+  "explain": "Average rate of change is the slope of the line joining the two points: 36 of rise over 6 of run, which is 6. It says nothing about what happened in between.",
+  "debate": {
+   "given": [
+    "f(2) = 30 and f(8) = 66, so the average rate of change over the interval is 6.",
+    "Between x = 2 and x = 5 the curve is almost flat.",
+    "The question is how fast f is growing now, at x = 8.",
+    "f is smooth throughout."
+   ],
+   "question": "What rate should be reported for x = 8? Defend it.",
+   "options": [
+    {
+     "label": "6",
+     "value": "6"
+    },
+    {
+     "label": "about 12",
+     "value": "12"
+    }
+   ],
+   "opened_by": 1,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      3
+     ],
+     "against": 1,
+     "why": "6 is the rate we can actually compute from the two values given, and anything else is estimated from a description of the shape."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      1,
+      2
+     ],
+     "against": 0,
+     "why": "If nothing happened in the first three units, all 36 of the change happened in the last three: that is 12 a unit, and it is what is happening now."
+    }
+   ],
+   "note": "An average over an interval is not the rate at the end of it, and the gap between them is the whole reason calculus exists. Sketch a curve that fits both facts."
+  }
+ },
+ {
+  "id": "g11-c7",
+  "grade": 11,
+  "code": "F.BF.3",
+  "tag": "↔️ shifts",
+  "title": "The Case of the Peak That Moved Three Weeks",
+  "given": [
+   "A new function is g(x) = f(x - 3) + 5.",
+   "f has its maximum at the point (2, 7).",
+   "Subtracting inside the bracket shifts the graph sideways.",
+   "Adding outside the bracket shifts it up or down."
+  ],
+  "question": "What is the x-coordinate of g's maximum?",
+  "options": [
+   {
+    "label": "5",
+    "value": "5"
+   },
+   {
+    "label": "-1",
+    "value": "-1"
+   },
+   {
+    "label": "2",
+    "value": "2"
+   },
+   {
+    "label": "12",
+    "value": "12"
+   }
+  ],
+  "answer": 0,
+  "chk": "2+3",
+  "decider": [
+   2
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "-1 shifts the graph left. f(x - 3) needs x to be 3 bigger to reach the same output, so the graph moves right."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "2 is where f peaks, before the shift is applied."
+   },
+   {
+    "option": 3,
+    "because": 3,
+    "why": "12 adds the 5 to the x-coordinate as well, and the 5 moves the graph up, not sideways."
+   }
+  ],
+  "explain": "g reaches its peak when the inside of the bracket equals 2, so x - 3 = 2 and x = 5. The +5 raises the peak's height to 12 but leaves its position alone.",
+  "debate": {
+   "given": [
+    "Last year's sales were modelled by f, peaking at (2, 7) where 7 is thousands of dollars.",
+    "This year's model is g(x) = f(x - 3) + 5, so the peak sits at x = 5.",
+    "The +5 was added to account for a second store.",
+    "The second store does not open until week 6."
+   ],
+   "question": "What is the peak value of this year's sales, in thousands?",
+   "options": [
+    {
+     "label": "12 thousand",
+     "value": "12"
+    },
+    {
+     "label": "7 thousand",
+     "value": "7"
+    }
+   ],
+   "opened_by": 3,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "The model adds 5 everywhere, so the peak at x = 5 is 7 plus 5, which is 12 thousand."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      3
+     ],
+     "against": 2,
+     "why": "The peak falls in week 5 and the second store is not open until week 6. The +5 cannot apply at the peak, so it is still 7."
+    }
+   ],
+   "note": "A vertical shift applied everywhere is a claim that the change was there the whole time. When it was not, the transformation is the wrong tool and a piecewise model is the right one."
+  }
+ },
+ {
+  "id": "g11-c8",
+  "grade": 11,
+  "code": "F.LE.4",
+  "tag": "🐇 population",
+  "title": "The Case of the Population That Runs Out of Room",
+  "given": [
+   "The population doubles every 5 years.",
+   "It starts at 400.",
+   "Doubling 3 times multiplies a number by 8.",
+   "400 times 8 is 3200."
+  ],
+  "question": "How many years until it reaches 3200?",
+  "options": [
+   {
+    "label": "15 years",
+    "value": "15"
+   },
+   {
+    "label": "8 years",
+    "value": "8"
+   },
+   {
+    "label": "3 years",
+    "value": "3"
+   },
+   {
+    "label": "40 years",
+    "value": "40"
+   }
+  ],
+  "answer": 0,
+  "chk": "5*3",
+  "decider": [
+   2
+  ],
+  "proof": [
+   0,
+   2,
+   3
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "8 is how many times bigger the population gets, not how long it takes to get there."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "3 is the number of doublings. Each one of them takes 5 years."
+   },
+   {
+    "option": 3,
+    "because": 2,
+    "why": "40 multiplies the growth factor by the doubling time, which multiplies two things that do not belong together."
+   }
+  ],
+  "explain": "Ask how many doublings, then how long each takes. Going from 400 to 3200 is multiplying by 8, which is three doublings, and three lots of 5 years is 15. That is what a logarithm counts.",
+  "debate": {
+   "given": [
+    "The population doubles every 5 years, starting at 400.",
+    "Three doublings would reach 3200, which the model puts at 15 years.",
+    "The habitat can support at most 2000 of them.",
+    "Food and space run short as numbers rise."
+   ],
+   "question": "When will the population reach 3200? Defend your answer.",
+   "options": [
+    {
+     "label": "in 15 years",
+     "value": "15"
+    },
+    {
+     "label": "never",
+     "value": "never"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "The growth rate given is a doubling every 5 years, and applying it three times reaches 3200 in 15 years."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 1,
+     "why": "The habitat tops out at 2000. A population cannot pass a ceiling set by food and space, so 3200 never arrives."
+    }
+   ],
+   "note": "Exponential growth is the right model near the start and guarantees an absurd answer if you run it far enough. The ceiling is the thing worth finding, not the date."
+  }
+ },
+ {
+  "id": "g11-c9",
+  "grade": 11,
+  "code": "F.TF.2",
+  "tag": "🎡 radians",
+  "title": "The Case of the Angle With No Units",
+  "given": [
+   "A full turn is 360 degrees.",
+   "An angle at the centre measures 90 degrees.",
+   "A fraction of a turn is the angle over a full turn.",
+   "Degrees and radians measure the same thing in different units."
+  ],
+  "question": "What fraction of a full turn is the angle?",
+  "options": [
+   {
+    "label": "1/4 of a turn",
+    "value": "1/4"
+   },
+   {
+    "label": "1/2 of a turn",
+    "value": "1/2"
+   },
+   {
+    "label": "4 turns",
+    "value": "4"
+   },
+   {
+    "label": "90 turns",
+    "value": "90"
+   }
+  ],
+  "answer": 0,
+  "chk": "90/360",
+  "decider": [
+   2
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 0,
+    "why": "A half turn is 180 degrees. 90 is half of that again."
+   },
+   {
+    "option": 2,
+    "because": 2,
+    "why": "4 is how many of these angles make a full turn, which is the fraction turned upside down."
+   },
+   {
+    "option": 3,
+    "because": 2,
+    "why": "90 is the angle in degrees. A fraction of a turn has no units at all."
+   }
+  ],
+  "explain": "Divide the angle by the whole turn: 90 over 360 is a quarter. That quarter is the same number whether the turn is called 360 degrees or 2π radians, which is the point of measuring in turns.",
+  "debate": {
+   "given": [
+    "An angle in a worked example is written simply as 2, with no unit marked.",
+    "Other angles on the same page are written as 45 and 90.",
+    "A full turn is 360 degrees, or about 6.28 radians.",
+    "Two radians is about 114.6 degrees."
+   ],
+   "question": "How big is that angle, in degrees? Say which convention you used.",
+   "options": [
+    {
+     "label": "2 degrees",
+     "value": "2"
+    },
+    {
+     "label": "about 114.6 degrees",
+     "value": "114.6"
+    }
+   ],
+   "opened_by": 1,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      1
+     ],
+     "against": 3,
+     "why": "The other angles on the page are 45 and 90, which are degree-sized numbers. The page is working in degrees, so 2 means 2 degrees."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 1,
+     "why": "An unmarked angle in higher mathematics is a radian measure by convention, and 2 is a perfectly ordinary number of radians while 2 degrees is a very odd angle to write."
+    }
+   ],
+   "note": "This is a real trap in textbooks and on calculators, and the answer is to mark the unit every time. Ask what each reading would do to the rest of the worked example."
   }
  }
 ]

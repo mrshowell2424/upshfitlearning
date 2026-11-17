@@ -13,20 +13,53 @@
   ],
   "question": "How many tins does the job need?",
   "options": [
-   { "label": "3 tins", "value": "3" },
-   { "label": "2 tins", "value": "2" },
-   { "label": "4 tins", "value": "4" },
-   { "label": "6 tins", "value": "6" }
+   {
+    "label": "3 tins",
+    "value": "3"
+   },
+   {
+    "label": "2 tins",
+    "value": "2"
+   },
+   {
+    "label": "4 tins",
+    "value": "4"
+   },
+   {
+    "label": "6 tins",
+    "value": "6"
+   }
   ],
   "answer": 0,
   "chk": "((24*9)-(3*7))*2/130",
-  "uses": ["2"],
-  "decider": [3],
-  "proof": [0, 1, 2, 3],
+  "uses": [
+   "2"
+  ],
+  "decider": [
+   3
+  ],
+  "proof": [
+   0,
+   1,
+   2,
+   3
+  ],
   "rules_out": [
-   { "option": 1, "because": 2, "why": "One coat of 195 square feet is a tin and a half. The wall takes two coats." },
-   { "option": 2, "because": 3, "why": "4 tins comes from painting the whole 216 square feet twice. The door's 21 square feet are not painted at all, let alone twice." },
-   { "option": 3, "because": 2, "why": "The two coats are already inside the 390 square feet. Doubling the tins as well pays for four coats." }
+   {
+    "option": 1,
+    "because": 2,
+    "why": "One coat of 195 square feet is a tin and a half. The wall takes two coats."
+   },
+   {
+    "option": 2,
+    "because": 3,
+    "why": "4 tins comes from painting the whole 216 square feet twice. The door's 21 square feet are not painted at all, let alone twice."
+   },
+   {
+    "option": 3,
+    "because": 2,
+    "why": "The two coats are already inside the 390 square feet. Doubling the tins as well pays for four coats."
+   }
   ],
   "explain": "Paintable area is the wall minus the door: 216 minus 21 is 195 square feet. Two coats make 390. At 130 square feet a tin, that is exactly 3 tins.",
   "debate": {
@@ -38,18 +71,579 @@
    ],
    "question": "How many tins should they buy? Defend the number.",
    "options": [
-    { "label": "3 tins", "value": "3" },
-    { "label": "4 tins", "value": "4" },
-    { "label": "5 tins", "value": "5" }
+    {
+     "label": "3 tins",
+     "value": "3"
+    },
+    {
+     "label": "4 tins",
+     "value": "4"
+    },
+    {
+     "label": "5 tins",
+     "value": "5"
+    }
    ],
    "opened_by": 2,
-   "open": [0, 1, 2],
+   "open": [
+    0,
+    1,
+    2
+   ],
    "arguments": [
-    { "option": 0, "evidence": [0, 1, 3], "against": 2, "why": "390 square feet at 130 a tin is exactly 3 tins, with nothing bought that is not used." },
-    { "option": 1, "evidence": [1, 2], "against": 3, "why": "A first coat that soaks into bare plaster covers less than 130 square feet, so exactly 3 tins will run out somewhere near the end. Buy the spare." },
-    { "option": 2, "evidence": [2, 3], "against": 0, "why": "Bare plaster often wants a third coat in patches and the shop takes no returns, so buy for the job you may find rather than the job on paper." }
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1,
+      3
+     ],
+     "against": 2,
+     "why": "390 square feet at 130 a tin is exactly 3 tins, with nothing bought that is not used."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "A first coat that soaks into bare plaster covers less than 130 square feet, so exactly 3 tins will run out somewhere near the end. Buy the spare."
+    },
+    {
+     "option": 2,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 0,
+     "why": "Bare plaster often wants a third coat in patches and the shop takes no returns, so buy for the job you may find rather than the job on paper."
+    }
    ],
    "note": "The geometry gives exactly 3, which is the most dangerous answer in the room: a model that comes out exact has left itself no room for the thing the model ignored. Ask what each extra tin is buying."
+  }
+ },
+ {
+  "id": "g10-c2",
+  "grade": 10,
+  "code": "G.CO.10",
+  "tag": "📐 angles",
+  "title": "The Case of the Triangle on the Globe",
+  "given": [
+   "Two angles of a triangle measure 47 and 68 degrees.",
+   "The angles of a triangle add to 180 degrees.",
+   "The triangle is drawn on a flat page.",
+   "None of its angles is reflex."
+  ],
+  "question": "What is the third angle, in degrees?",
+  "options": [
+   {
+    "label": "65 degrees",
+    "value": "65"
+   },
+   {
+    "label": "115 degrees",
+    "value": "115"
+   },
+   {
+    "label": "133 degrees",
+    "value": "133"
+   },
+   {
+    "label": "90 degrees",
+    "value": "90"
+   }
+  ],
+  "answer": 0,
+  "chk": "180-47-68",
+  "decider": [
+   1
+  ],
+  "proof": [
+   0,
+   1
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 1,
+    "why": "115 is the two known angles added together. What is left of 180 is the third one."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "133 takes only one of the two known angles off the 180."
+   },
+   {
+    "option": 3,
+    "because": 0,
+    "why": "90 assumes the triangle is right-angled, and nothing in the problem says it is."
+   }
+  ],
+  "explain": "The three angles fill a half turn, so the third is 180 take away 47 take away 68, which is 65 degrees. That the three make 180 is a theorem about flat surfaces, which is why the page is mentioned.",
+  "debate": {
+   "given": [
+    "Two angles of the triangle measure 47 and 68 degrees.",
+    "On a flat surface the three angles of a triangle add to 180.",
+    "This triangle is drawn on the curved surface of a globe.",
+    "On a sphere the angles of a triangle always add to more than 180."
+   ],
+   "question": "What is the third angle? Defend your figure.",
+   "options": [
+    {
+     "label": "65 degrees",
+     "value": "65"
+    },
+    {
+     "label": "more than 65 degrees",
+     "value": "70"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "On any small patch of the globe the curvature barely shows, and the flat rule gives 65 to within less than a degree."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 1,
+     "why": "The surface is a sphere, so the three angles exceed 180 and the third must be above 65. How far above depends on how big the triangle is."
+    }
+   ],
+   "note": "The 180-degree rule is not a fact about triangles, it is a fact about flat surfaces, and most students have never been told that it has a condition attached. This is where to say it."
+  }
+ },
+ {
+  "id": "g10-c3",
+  "grade": 10,
+  "code": "G.SRT.5",
+  "tag": "🌳 shadows",
+  "title": "The Case of the Tree on the Slope",
+  "given": [
+   "A person 6 feet tall casts a shadow 4 feet long.",
+   "At the same moment a tree casts a shadow 30 feet long.",
+   "The sun's rays arrive parallel, so the two triangles are similar.",
+   "Both stand on level ground."
+  ],
+  "question": "How tall is the tree, in feet?",
+  "options": [
+   {
+    "label": "45 feet",
+    "value": "45"
+   },
+   {
+    "label": "20 feet",
+    "value": "20"
+   },
+   {
+    "label": "36 feet",
+    "value": "36"
+   },
+   {
+    "label": "180 feet",
+    "value": "180"
+   }
+  ],
+  "answer": 0,
+  "chk": "6*30/4",
+  "decider": [
+   2
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "20 uses the ratio upside down, as if shadows shrank where heights grew."
+   },
+   {
+    "option": 2,
+    "because": 2,
+    "why": "36 adds the tree's shadow to the person's height, which compares two things that are not alike."
+   },
+   {
+    "option": 3,
+    "because": 2,
+    "why": "180 multiplies the height by the shadow and never divides, so it is not a ratio at all."
+   }
+  ],
+  "explain": "Similar triangles keep the same ratio of height to shadow. The person is 6 to 4, which is 1.5 to 1, and the tree's shadow is 30, so the tree is 45 feet.",
+  "debate": {
+   "given": [
+    "A 6-foot person casts a 4-foot shadow on level ground.",
+    "A tree casts a 30-foot shadow at the same moment.",
+    "The tree stands at the top of a slope that falls away from the sun.",
+    "A shadow cast down a slope runs further than one cast on the level."
+   ],
+   "question": "How tall is the tree? Defend the number.",
+   "options": [
+    {
+     "label": "45 feet",
+     "value": "45"
+    },
+    {
+     "label": "under 45 feet, about 40",
+     "value": "40"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "The ratio of height to shadow is fixed by the sun's angle, and 30 feet of shadow at 1.5 to 1 gives 45 feet."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 0,
+     "why": "The slope stretches the shadow beyond what level ground would give, so a 30-foot shadow belongs to a tree shorter than 45 feet."
+    }
+   ],
+   "note": "Similar triangles need the two triangles to sit the same way up on the same flat ground. Naming the condition that fails is more useful than any number here."
+  }
+ },
+ {
+  "id": "g10-c4",
+  "grade": 10,
+  "code": "G.C.5",
+  "tag": "🥧 the slice",
+  "title": "The Case of the Slice Measured With a Protractor",
+  "given": [
+   "The slice's angle at the centre is 72 degrees.",
+   "A full turn is 360 degrees.",
+   "The whole circle has an area of 50 square cm.",
+   "The slice is a sector of that circle."
+  ],
+  "question": "What is the slice's area, in square cm?",
+  "options": [
+   {
+    "label": "10 square cm",
+    "value": "10"
+   },
+   {
+    "label": "50 square cm",
+    "value": "50"
+   },
+   {
+    "label": "25 square cm",
+    "value": "25"
+   },
+   {
+    "label": "72 square cm",
+    "value": "72"
+   }
+  ],
+  "answer": 0,
+  "chk": "72/360*50",
+  "decider": [
+   1
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "50 is the whole circle, and the slice is only part of it."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "25 is half the circle. 72 degrees is a fifth of a turn, not a half."
+   },
+   {
+    "option": 3,
+    "because": 0,
+    "why": "72 is an angle measured in degrees. It cannot also be an area in square centimetres."
+   }
+  ],
+  "explain": "A sector takes the same share of the area as its angle takes of the turn. 72 out of 360 is one fifth, and a fifth of 50 square cm is 10.",
+  "debate": {
+   "given": [
+    "The slice's angle reads 72 degrees on a protractor, out of a full turn of 360.",
+    "The protractor can be trusted to about 2 degrees either way.",
+    "The whole circle is 50 square cm.",
+    "The number is going onto a plan for cutting the slice out of metal."
+   ],
+   "question": "What area should go on the cutting plan?",
+   "options": [
+    {
+     "label": "10 square cm",
+     "value": "10"
+    },
+    {
+     "label": "10.3 square cm",
+     "value": "10.3"
+    }
+   ],
+   "opened_by": 1,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      2
+     ],
+     "against": 1,
+     "why": "72 degrees is the measurement taken, and a fifth of 50 square cm is exactly 10. Inventing extra is guessing."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      3
+     ],
+     "against": 0,
+     "why": "The angle could be 74, which gives 10.28. Metal cut too small is scrap, so the plan should use the top of the range."
+    }
+   ],
+   "note": "Every measured number has a range around it, and which end of the range to use depends on what goes wrong when you are wrong. Ask what happens to a slice cut too big and one cut too small."
+  }
+ },
+ {
+  "id": "g10-c5",
+  "grade": 10,
+  "code": "G.GPE.7",
+  "tag": "🗺️ the plot",
+  "title": "The Case of the Corner the Surveyor Moved",
+  "given": [
+   "The rectangle's corners are at (1,1), (7,1), (7,5) and (1,5).",
+   "Its sides run parallel to the axes.",
+   "The length is the difference between the x-coordinates.",
+   "The width is the difference between the y-coordinates."
+  ],
+  "question": "What is the area, in square units?",
+  "options": [
+   {
+    "label": "24 square units",
+    "value": "24"
+   },
+   {
+    "label": "20 square units",
+    "value": "20"
+   },
+   {
+    "label": "35 square units",
+    "value": "35"
+   },
+   {
+    "label": "10 square units",
+    "value": "10"
+   }
+  ],
+  "answer": 0,
+  "chk": "(7-1)*(5-1)",
+  "decider": [
+   2
+  ],
+  "proof": [
+   0,
+   2,
+   3
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "20 is the perimeter: 6 and 4 and 6 and 4. It is a distance round, not an area inside."
+   },
+   {
+    "option": 2,
+    "because": 2,
+    "why": "35 multiplies the coordinates 7 and 5 rather than the side lengths 6 and 4. A coordinate is a position, not a length."
+   },
+   {
+    "option": 3,
+    "because": 2,
+    "why": "10 adds the two side lengths instead of multiplying them."
+   }
+  ],
+  "explain": "Side lengths come from differences, not from the coordinates themselves: 7 minus 1 is 6 across and 5 minus 1 is 4 up. The area is 6 times 4, which is 24 square units.",
+  "debate": {
+   "given": [
+    "Three corners are recorded at (1,1), (7,1) and (7,5).",
+    "The fourth corner is recorded at (1,5), making it a rectangle.",
+    "A surveyor went out and measured the fourth corner at (1.4, 5).",
+    "The plot is being sold by the square unit."
+   ],
+   "question": "What area should be used for the sale?",
+   "options": [
+    {
+     "label": "24 square units",
+     "value": "24"
+    },
+    {
+     "label": "23.2 square units",
+     "value": "23.2"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "The registered plan says the fourth corner is (1,5), and a sale goes on the registered plan: 6 by 4 is 24."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 1,
+     "why": "On the ground it is a trapezium with parallel sides 6 and 5.6 and height 4, which is 23.2. The buyer gets the land, not the drawing."
+    }
+   ],
+   "note": "Coordinate geometry gives an exact answer to whichever set of points you feed it. Which points are the real ones is a question it cannot answer, and here it is the only question that matters."
+  }
+ },
+ {
+  "id": "g10-c6",
+  "grade": 10,
+  "code": "G.GMD.3",
+  "tag": "🍦 the cone",
+  "title": "The Case of the Cone Filled Nearly to the Top",
+  "given": [
+   "A cone and a cylinder have the same base and the same height.",
+   "The cylinder holds 54 cubic cm.",
+   "Three cones of the same base and height fill the cylinder, so a cone is the cylinder divided by 3.",
+   "Both are solid shapes with no gaps."
+  ],
+  "question": "What is the cone's volume, in cubic cm?",
+  "options": [
+   {
+    "label": "18 cubic cm",
+    "value": "18"
+   },
+   {
+    "label": "27 cubic cm",
+    "value": "27"
+   },
+   {
+    "label": "162 cubic cm",
+    "value": "162"
+   },
+   {
+    "label": "54 cubic cm",
+    "value": "54"
+   }
+  ],
+  "answer": 0,
+  "chk": "54/3",
+  "decider": [
+   2
+  ],
+  "proof": [
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "27 is half the cylinder. A cone is a third of it, not a half, which is worth pouring water to believe."
+   },
+   {
+    "option": 2,
+    "because": 2,
+    "why": "162 triples the cylinder instead of taking a third of it."
+   },
+   {
+    "option": 3,
+    "because": 1,
+    "why": "54 is the cylinder itself. The cone sits inside it with room to spare."
+   }
+  ],
+  "explain": "Three cones of the same base and height fill one cylinder exactly, so the cone is 54 over 3, which is 18 cubic cm. It is a fact worth demonstrating with rice before it is used as a formula.",
+  "debate": {
+   "given": [
+    "A cone has the same base and height as a cylinder holding 54 cubic cm, so the cone holds 18.",
+    "The cone is being used point-down as a cup.",
+    "It can only be filled to a tenth below the rim without spilling.",
+    "The liquid in a part-filled cone is itself a smaller cone of the same shape."
+   ],
+   "question": "How much does the cup actually hold, in cubic cm?",
+   "options": [
+    {
+     "label": "18 cubic cm",
+     "value": "18"
+    },
+    {
+     "label": "about 13 cubic cm",
+     "value": "13"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0
+     ],
+     "against": 2,
+     "why": "The volume of the cone is 18 cubic cm, and that is what the shape holds when it is full."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 0,
+     "why": "Filled to nine tenths of its height, the liquid is a cone scaled by 0.9, and volume scales by 0.9 cubed — about 0.73, so roughly 13."
+    }
+   ],
+   "note": "Losing a tenth of the height loses more than a quarter of the volume, which almost nobody guesses. Volume scales with the cube of length, and this is the cleanest place to meet that."
   }
  }
 ]
