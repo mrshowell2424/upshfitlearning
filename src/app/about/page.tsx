@@ -4,6 +4,8 @@ import Image from "next/image";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { RESOURCE_TOTAL, STANDARD_TOTAL } from "@/lib/constants/totals";
+import OrgDetails from "@/components/shared/OrgDetails";
+import { BELIEFS, DIFFERENCE, ORG, TEAM, TESTIMONIALS } from "@/lib/constants/org";
 
 /**
  * Who is behind this.
@@ -193,6 +195,122 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* The organisation, carried over from upshiftlearning.org.
+            The page above this line is one person; everything below it is
+            the nonprofit she runs, and it used to live on a separate
+            website — so a teacher who found the hub never learned there
+            was an organisation behind it. */}
+        <section className="px-5 md:px-8 py-12 md:py-16 border-t border-hairline bg-gray-050">
+          <div className="max-w-4xl mx-auto">
+            <p className="text-[13px] font-bold uppercase tracking-[0.16em] mb-3 text-teal-ink">
+              Who We Are
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-charcoal mb-4 leading-snug max-w-3xl">
+              We&rsquo;re a team of educators, coaches, and change-makers committed to transforming
+              how people learn, grow, and lead.
+            </h2>
+            <p className="text-base text-text-body leading-relaxed max-w-2xl mb-8">
+              Our team brings together experience in education, instructional design, leadership
+              coaching, and organizational development.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {TEAM.map((t) => (
+                <div key={t.name} className="bg-white border border-hairline rounded-2xl p-6">
+                  <div
+                    aria-hidden="true"
+                    className="w-10 h-10 rounded-full bg-gray-050 border border-hairline flex items-center justify-center font-bold text-charcoal mb-3"
+                  >
+                    {t.initial}
+                  </div>
+                  <h3 className="text-lg font-bold text-charcoal">{t.name}</h3>
+                  <p className="text-xs font-bold uppercase tracking-wider text-text-faint mb-2">
+                    {t.role}
+                  </p>
+                  <p className="text-sm text-text-body leading-relaxed">{t.blurb}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-5 md:px-8 py-12 md:py-16">
+          <div className="max-w-4xl mx-auto">
+            <p className="text-[13px] font-bold uppercase tracking-[0.16em] mb-3 text-coral-ink">
+              What We Stand For
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-charcoal mb-8">
+              Built on beliefs that drive real change.
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {BELIEFS.map((b) => (
+                <div key={b.name} className="border border-hairline rounded-2xl p-6">
+                  <div className="text-3xl mb-3" aria-hidden="true">
+                    {b.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-charcoal mb-2">{b.name}</h3>
+                  <p className="text-sm text-text-body leading-relaxed">{b.blurb}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-5 md:px-8 pb-12 md:pb-16">
+          <div className="max-w-4xl mx-auto rounded-2xl border border-hairline p-6 md:p-8">
+            <p className="text-[13px] font-bold uppercase tracking-[0.16em] mb-3 text-lavender-ink">
+              The Upshift Difference
+            </p>
+            <h2 className="text-2xl font-bold text-charcoal mb-3">
+              We don&rsquo;t do one-size-fits-all.
+            </h2>
+            <p className="text-base text-text-body leading-relaxed max-w-2xl mb-6">
+              Every plan, workshop, and resource we build starts with your learners in mind —
+              because real impact only happens when learning feels personal.
+            </p>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+              {DIFFERENCE.map((d) => (
+                <li key={d} className="flex gap-3 text-[15px] text-text-body">
+                  <span aria-hidden="true" className="text-teal-ink font-bold">
+                    ✓
+                  </span>
+                  {d}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="px-5 md:px-8 pb-12 md:pb-16">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-[13px] font-bold uppercase tracking-[0.16em] mb-3 text-teal-ink">
+              What People Are Saying
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-charcoal mb-8">
+              Real words from real people.
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {TESTIMONIALS.map((t) => (
+                <figure
+                  key={t.who}
+                  className="bg-white border border-hairline rounded-2xl p-6 flex flex-col gap-4"
+                >
+                  <blockquote className="text-[15.5px] text-charcoal leading-relaxed">
+                    &ldquo;{t.quote}&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-auto">
+                    <p className="text-sm font-bold text-charcoal">{t.who}</p>
+                    <p className="text-xs text-text-muted">{t.where}</p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+            <p className="mt-6 text-sm text-text-muted max-w-2xl">
+              Attributed by role rather than by name, which is how they were given to {ORG.name}.
+            </p>
+          </div>
+        </section>
+
         {/* Why this site exists */}
         <section className="px-5 md:px-8 pb-16">
           <div className="max-w-4xl mx-auto rounded-2xl border border-hairline bg-gray-050 p-6 md:p-8 flex flex-wrap items-center justify-between gap-5">
@@ -214,6 +332,8 @@ export default function AboutPage() {
             </Link>
           </div>
         </section>
+
+        <OrgDetails />
       </main>
 
       <Footer />

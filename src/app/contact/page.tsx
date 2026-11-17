@@ -1,5 +1,6 @@
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
+import OrgDetails from "@/components/shared/OrgDetails";
 import { ORG } from "@/lib/constants/org";
 
 /**
@@ -20,13 +21,6 @@ export const metadata = {
     "Reach Upshift Learning by email or phone, or support the mission. A registered 501(c)(3) nonprofit incorporated in Ohio.",
 };
 
-const DETAILS = [
-  { label: "Legal Organization Name", value: ORG.legalName },
-  { label: "Nonprofit Status", value: ORG.status },
-  { label: "Employer Identification (EIN)", value: ORG.ein },
-  { label: "Charity / Ohio Charter Number", value: ORG.charter },
-  { label: "State of Incorporation", value: ORG.state },
-];
 
 export default function ContactPage() {
   return (
@@ -102,30 +96,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="px-5 md:px-8 py-14 md:py-20 bg-gray-050 border-t border-hairline">
-          <div className="max-w-4xl mx-auto">
-            <p className="text-[13px] font-bold uppercase tracking-[0.16em] mb-3 text-teal-ink">
-              Organization Details
-            </p>
-            <h2 className="text-2xl font-bold text-charcoal mb-3">
-              Official nonprofit information.
-            </h2>
-            <p className="text-base text-text-body mb-8 max-w-2xl">
-              {ORG.name} is fully registered and transparent. All official details are listed below
-              for donors, partners, and verification.
-            </p>
-            <dl className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-hairline border border-hairline rounded-2xl overflow-hidden">
-              {DETAILS.map((d) => (
-                <div key={d.label} className="bg-white p-5">
-                  <dt className="text-xs font-bold uppercase tracking-wider text-text-faint mb-1">
-                    {d.label}
-                  </dt>
-                  <dd className="text-base font-semibold text-charcoal">{d.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </section>
+        <OrgDetails />
       </main>
       <Footer />
     </div>

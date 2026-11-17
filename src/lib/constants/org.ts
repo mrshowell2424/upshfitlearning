@@ -124,3 +124,77 @@ export const BELIEFS = [
     blurb: "Owning your story, building your brand, and pushing past self-doubt.",
   },
 ] as const
+
+/**
+ * The team, as the old site described it.
+ *
+ * Stephanie's own section is the hero of the About page and is not repeated
+ * here; what the old site added was that nobody is working from
+ * off-the-shelf content and that the programmes answer to people outside the
+ * organisation. Both are claims a district will want to see made.
+ */
+export const TEAM = [
+  {
+    initial: "L",
+    name: "Learning Design Team",
+    role: "Instructional Designers",
+    blurb:
+      "A dedicated team of curriculum developers and coaches who build every workshop, course, and resource from the ground up — no off-the-shelf content.",
+  },
+  {
+    initial: "A",
+    name: "Advisory Network",
+    role: "Educators & Leaders",
+    blurb:
+      "We work alongside a growing network of school leaders, district administrators, and workforce development professionals who guide our programs and impact.",
+  },
+] as const
+
+/** What the old site called the Upshift Difference. */
+export const DIFFERENCE = [
+  "Tailored to your context, your team, your goals",
+  "Practical tools you can use the very next day",
+  "Rooted in research, delivered with energy",
+  "Ongoing support — not a one-and-done workshop",
+] as const
+
+/**
+ * The three testimonials, quoted as published.
+ *
+ * Attributed by role rather than name, which is how they were given. They
+ * are somebody else's words about this organisation, so they are carried
+ * across unchanged or not at all.
+ */
+export const TESTIMONIALS = [
+  {
+    quote: "Our team walked away with tools we could use the very next day.",
+    who: "District Leader",
+    where: "K–12 School District",
+  },
+  {
+    quote:
+      "Upshift Learning changed the way I think about teaching. The strategies are real, practical, and they actually work.",
+    who: "K–12 Educator",
+    where: "Public School Teacher",
+  },
+  {
+    quote: "This wasn't just another workshop. It was a shift.",
+    who: "Corporate Learning Manager",
+    where: "Fortune 500 Company",
+  },
+] as const
+
+/**
+ * The registration details, in the order the old site listed them.
+ *
+ * On the page for donors, partners and anyone verifying the organisation.
+ * Written once because the About page and the Contact page both show them
+ * and they must not drift apart.
+ */
+export const ORG_DETAILS = [
+  { label: "Legal Organization Name", value: ORG.legalName },
+  { label: "Nonprofit Status", value: ORG.status },
+  { label: "Employer Identification (EIN)", value: ORG.ein },
+  { label: "Charity / Ohio Charter Number", value: ORG.charter },
+  { label: "State of Incorporation", value: ORG.state },
+] as const

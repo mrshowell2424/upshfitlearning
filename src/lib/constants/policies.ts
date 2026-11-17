@@ -48,8 +48,7 @@ export const POLICIES: Record<"privacy" | "terms", Policy> = {
         "heading": "Information We Collect",
         "body": [
           "We collect a limited amount of personal information, and only when you voluntarily provide it to us. This includes:",
-          "Contact form submissions: When you use the contact form on our Site, we receive your first name, last name, email address, and any message you choose to send.",
-          "Email correspondence: If you contact us directly at hello@upshiftlearning.org , we receive the information contained in your message.",
+          "Email: when you write to us at hello@upshiftlearning.org, we receive your email address and whatever you choose to tell us. This Site has no contact form; there is nothing else to fill in.",
           "Newsletter or update sign-ups: If you opt in to receive communications from us, we collect your email address and, where provided, your name.",
           "We do not directly collect payment information. Donations made through our",
           "Site are processed entirely by PayPal. We do not receive or store your credit card,",
@@ -66,7 +65,7 @@ export const POLICIES: Record<"privacy" | "terms", Policy> = {
         "heading": "How We Use Your Information",
         "body": [
           "We use the information we collect for the following purposes:",
-          "Responding to inquiries: To reply to messages and questions submitted through our contact form or sent to us by email.",
+          "Responding to inquiries: To reply to messages and questions you send us by email.",
           "Sending updates and communications: To send newsletters, program announcements, or other information you have requested or consented to receive.",
           "Improving our services: To understand how visitors use our Site and to enhance our content, programs, and user experience.",
           "Fulfilling our nonprofit mission: To connect with educators, learners, and supporters who share our commitment to bold, accessible learning.",
@@ -80,11 +79,7 @@ export const POLICIES: Record<"privacy" | "terms", Policy> = {
         "body": [
           "We do not sell, rent, or trade your personal information to third parties.",
           "We share information only in the limited circumstances described below:",
-          "Formspree: Our contact form is powered by",
-          "Formspree , a third-party",
           "form processing service. When you submit the contact form, your data is transmitted to",
-          "Formspree in order to deliver your message to us. Please review",
-          "Formspree's Privacy Policy",
           "for more information.",
           "PayPal: Donation transactions are processed by",
           "PayPal . Any information",
@@ -276,7 +271,7 @@ export const POLICIES: Record<"privacy" | "terms", Policy> = {
         "heading": "Third-Party Links",
         "body": [
           "Our Site may contain links to third-party websites, including but not limited to PayPal,",
-          "Formspree, Instagram, LinkedIn, and YouTube. These links are provided for your convenience",
+          "Instagram, LinkedIn, and YouTube. These links are provided for your convenience",
           "and do not constitute an endorsement, sponsorship, or recommendation of those sites or their",
           "content.",
           "Upshift Learning has no control over the content, privacy practices, or policies of",
