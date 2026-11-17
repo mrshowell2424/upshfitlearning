@@ -50,6 +50,7 @@ import ARTICLECOACH from "./reading-article-coach.json" with { type: "json" };
 import EXTRAW from "./reading-extra-words.json" with { type: "json" };
 import MSB from "./reading-multisyllabic.json" with { type: "json" };
 import WTYPES from "./reading-writing-types.json" with { type: "json" };
+import MATHP from "./math-practice.json" with { type: "json" };
 import PREQ from "./reading-prerequisites.json" with { type: "json" };
 import WSX from "./reading-what-says.json" with { type: "json" };
 import LADD from "./reading-word-ladders.json" with { type: "json" };
@@ -3975,6 +3976,130 @@ const ADAPTATIONS: Adaptation[] = [
 const MATH_HUB = "math/math-hub.html";
 
 const MATH_ADAPTATIONS: Adaptation[] = [
+  {
+    // The practice a standard actually has.
+    //
+    // The hub ships four computations and two word problems per standard
+    // and every part of the page indexes straight into them: the warm-up
+    // takes c[0], the drills c[1] and c[2], the review c[3], the exit
+    // ticket c[0] again. So a teacher who runs a lesson twice hands out the
+    // same sheet, and the group below grade and the group ahead get it too.
+    //
+    // scripts/math-practice.json holds twelve and six for the 130 standards
+    // that are arithmetic, with every answer re-derived by its own checker,
+    // and it says which standard to read for below-grade and above-grade
+    // practice -- the one this standard stands on, and the next in its
+    // strand.
+    //
+    // Nothing downstream changes. PRAC[code] becomes pracFor(code), which
+    // returns the same shape from whichever standard and whichever set of
+    // items the two new controls are asking for.
+    name: "widen the practice, and give it a level and a new set",
+    apply: (html) => {
+      const decl = "var PRAC = ";
+      if (!html.includes(decl)) return html;
+      const end = html.indexOf(";\n", html.indexOf(decl));
+      if (end === -1) return html;
+
+      const inject =
+        ";\n  var MATHP = " + JSON.stringify(MATHP) + ";\n" +
+        "  // Which of the three levels, and which set of items within it.\n" +
+        "  var mathLevel = 'on';\n" +
+        "  var mathSet = 0;\n" +
+        "  /**\n" +
+        "   * The practice for a standard, in the shape the page already\n" +
+        "   * expects: four computations and two word problems, with their\n" +
+        "   * answers. Which four and which two is what the controls change.\n" +
+        "   */\n" +
+        "  // Reads the shipped table. Written as its own function because\n" +
+        "  // the rewrite below turns every PRAC[code] into pracFor(code),\n" +
+        "  // and it would have turned this one too -- a function whose\n" +
+        "  // fallback is itself, which is a stack overflow on any standard\n" +
+        "  // that has no generated items.\n" +
+        "  function pracRaw(c) { return PRAC[c]; }\n" +
+        "  function pracFor(code) {\n" +
+        "    var lv = MATHP.levels[code];\n" +
+        "    var from = lv ? (lv[mathLevel] || code) : code;\n" +
+        "    var bank = MATHP.items[from];\n" +
+        "    if (!bank) return pracRaw(code);\n" +
+        "    // Four at a time out of twelve, two out of six, so a third run\n" +
+        "    // of the same lesson is still a sheet nobody has seen.\n" +
+        "    var cAt = (mathSet * 4) % bank.c.length;\n" +
+        "    var wAt = (mathSet * 2) % bank.w.length;\n" +
+        "    var ring = function (list, at, n) {\n" +
+        "      var out = [];\n" +
+        "      for (var i = 0; i < n; i++) out.push(list[(at + i) % list.length]);\n" +
+        "      return out;\n" +
+        "    };\n" +
+        "    var c = ring(bank.c, cAt, 4), w = ring(bank.w, wAt, 2);\n" +
+        "    return {\n" +
+        "      c: c.map(function (x) { return x.q; }),\n" +
+        "      ac: c.map(function (x) { return x.a; }),\n" +
+        "      w: w.map(function (x) { return x.q; }),\n" +
+        "      aw: w.map(function (x) { return x.a; })\n" +
+        "    };\n" +
+        "  }\n" +
+        "  var MATH_SETS = 3";
+
+      let out = html.slice(0, end) + inject + html.slice(end);
+
+      // every read goes through the indirection; the table itself stays
+      out = out.split("PRAC[code]").join("pracFor(code)");
+      out = out.split("PRAC[rc]").join("pracFor(rc)");
+      if (out.indexOf("var PRAC = ") === -1) return html;
+
+      // the controls, beside the standard they act on
+      const row =
+        '      <input id="search" type="search" placeholder="Search standard, e.g. 3.OA" ' +
+        'aria-label="Search standards">\n    </div>';
+      if (!out.includes(row)) return html;
+      out = out.replace(
+        row,
+        row.slice(0, row.length - "\n    </div>".length) +
+          '\n      <label class="label" for="mathlevel">Level</label>' +
+          '\n      <select id="mathlevel">' +
+          '<option value="below">Below grade</option>' +
+          '<option value="on" selected>On grade</option>' +
+          '<option value="above">Above grade</option></select>' +
+          '\n      <button type="button" id="mathset">New set</button>' +
+          '\n      <span class="label" id="mathsetnote"></span>' +
+          "\n    </div>",
+      );
+
+      // and the wiring, on the same update the standard already triggers
+      const hook = '  stdSel.addEventListener("change", update);';
+      if (!out.includes(hook)) return html;
+      out = out.replace(
+        hook,
+        // The note names the standard the practice is coming from, so it
+        // goes stale the moment a different standard is picked.
+        '  stdSel.addEventListener("change", function () { update(); mathNote(); });' +
+          "\n  var levelSel = document.getElementById('mathlevel');\n" +
+          "  var setBtn = document.getElementById('mathset');\n" +
+          "  var setNote = document.getElementById('mathsetnote');\n" +
+          "  function mathNote() {\n" +
+          "    if (!setNote) return;\n" +
+          "    var code = stdSel.value;\n" +
+          "    var lv = MATHP.levels[code];\n" +
+          "    if (!lv) { setNote.textContent = 'one set written for this standard'; return; }\n" +
+          "    var from = lv[mathLevel] || code;\n" +
+          "    setNote.textContent = 'set ' + (mathSet + 1) + ' of ' + MATH_SETS +\n" +
+          "      (from === code ? '' : ' \\u00b7 from ' + from);\n" +
+          "  }\n" +
+          "  if (levelSel) levelSel.addEventListener('change', function () {\n" +
+          "    mathLevel = levelSel.value; mathSet = 0; update(); mathNote();\n" +
+          "  });\n" +
+          "  if (setBtn) setBtn.addEventListener('click', function () {\n" +
+          "    mathSet = (mathSet + 1) % MATH_SETS; update(); mathNote();\n" +
+          "  });",
+      );
+
+      // the note has to be right on first paint too
+      const first = "  update();\n})();";
+      if (!out.includes(first)) return html;
+      return out.replace(first, "  update();\n  mathNote();\n})();");
+    },
+  },
   {
     // Teachers know this one as the Math Hub. Orton-Gillingham is the method
     // behind it, not its name, and the tab it hangs off already says Math.
