@@ -137,6 +137,416 @@
    }
   },
   {
+   "id": "gK-c2",
+   "grade": 0,
+   "code": "K.CC.4",
+   "tag": "🧊 counting",
+   "title": "The Case of the Last Number Said",
+   "given": [
+    "Ana counts the blocks: 1, 2, 3, 4, 5.",
+    "She touches one block for each number she says.",
+    "She does not miss a block.",
+    "She does not touch any block twice."
+   ],
+   "question": "How many blocks are there?",
+   "options": [
+    {
+     "label": "5 blocks",
+     "value": "5"
+    },
+    {
+     "label": "1 block",
+     "value": "1"
+    },
+    {
+     "label": "4 blocks",
+     "value": "4"
+    },
+    {
+     "label": "15 blocks",
+     "value": "15"
+    }
+   ],
+   "answer": 0,
+   "chk": "5",
+   "decider": [
+    0,
+    1
+   ],
+   "proof": [
+    0,
+    1
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 0,
+     "why": "1 is the first number Ana said, and she kept going after it."
+    },
+    {
+     "option": 2,
+     "because": 0,
+     "why": "4 is the number before the last one. She touched a block after she said it."
+    },
+    {
+     "option": 3,
+     "because": 1,
+     "why": "15 adds up all the numbers she said. Counting says each number once, it does not collect them."
+    }
+   ],
+   "explain": "The last number you say when you count is how many there are. Ana said 5 last, and she touched one block for each number, so there are 5 blocks.",
+   "debate": {
+    "given": [
+     "Ana counts the blocks: 1, 2, 3, 4, 5.",
+     "She touched one block two times.",
+     "There is a block under the table.",
+     "Ana says there are 5."
+    ],
+    "question": "How many blocks are there? Say how you know.",
+    "options": [
+     {
+      "label": "4 blocks",
+      "value": "4"
+     },
+     {
+      "label": "5 blocks",
+      "value": "5"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 2,
+      "why": "She said 5, but she touched one block two times, so only 4 blocks were on the table."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       1,
+       2
+      ],
+      "against": 1,
+      "why": "4 on the table and 1 under it makes 5, so Ana's answer is right even though her counting was not."
+     }
+    ],
+    "note": "Ana gets 5 and 5 may well be correct, for a reason that has nothing to do with how she counted. Worth saying out loud: a right answer and good counting are two different things."
+   }
+  },
+  {
+   "id": "gK-c3",
+   "grade": 0,
+   "code": "K.NBT.1",
+   "tag": "🔢 ten and some more",
+   "title": "The Case of the Full Frame",
+   "given": [
+    "There are 13 counters on the mat.",
+    "10 counters fill the ten-frame.",
+    "The rest sit outside the frame.",
+    "Every counter is on the mat somewhere."
+   ],
+   "question": "How many counters are outside the frame?",
+   "options": [
+    {
+     "label": "3 counters",
+     "value": "3"
+    },
+    {
+     "label": "10 counters",
+     "value": "10"
+    },
+    {
+     "label": "13 counters",
+     "value": "13"
+    },
+    {
+     "label": "23 counters",
+     "value": "23"
+    }
+   ],
+   "answer": 0,
+   "chk": "13-10",
+   "decider": [
+    1
+   ],
+   "proof": [
+    0,
+    1
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 1,
+     "why": "10 is how many fit inside the frame, not how many are left over."
+    },
+    {
+     "option": 2,
+     "because": 0,
+     "why": "13 is every counter on the mat, and 10 of them are in the frame."
+    },
+    {
+     "option": 3,
+     "because": 0,
+     "why": "Adding makes more counters than there are. There are only 13 on the mat."
+    }
+   ],
+   "explain": "A teen number is ten and some more. 13 is the 10 that fills the frame and 3 more outside it, which is the whole idea behind every teen number.",
+   "debate": {
+    "given": [
+     "The box says there are 13 counters.",
+     "10 counters fill the ten-frame.",
+     "2 counters rolled under the mat.",
+     "You can see 1 counter outside the frame."
+    ],
+    "question": "How many counters are outside the frame?",
+    "options": [
+     {
+      "label": "3 counters",
+      "value": "3"
+     },
+     {
+      "label": "1 counter",
+      "value": "1"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 3,
+      "why": "The box says 13 and 10 are in the frame, so 3 are outside it — and 2 of those 3 are under the mat."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       2,
+       3
+      ],
+      "against": 0,
+      "why": "Only 1 counter can be seen outside the frame. The ones under the mat are not on the mat at all."
+     }
+    ],
+    "note": "Both children are counting carefully; they disagree about whether a counter you cannot see still counts. Ask what the box tells you that your eyes do not."
+   }
+  },
+  {
+   "id": "gK-c4",
+   "grade": 0,
+   "code": "K.MD.2",
+   "tag": "📏 longer",
+   "title": "The Case of the Two Pencils",
+   "given": [
+    "The red pencil is 8 cubes long.",
+    "The blue pencil is 5 cubes long.",
+    "All the cubes are the same size.",
+    "Both pencils were lined up at the same starting line."
+   ],
+   "question": "How many cubes longer is the red pencil?",
+   "options": [
+    {
+     "label": "3 cubes longer",
+     "value": "3"
+    },
+    {
+     "label": "8 cubes longer",
+     "value": "8"
+    },
+    {
+     "label": "5 cubes longer",
+     "value": "5"
+    },
+    {
+     "label": "13 cubes longer",
+     "value": "13"
+    }
+   ],
+   "answer": 0,
+   "chk": "8-5",
+   "decider": [
+    3
+   ],
+   "proof": [
+    0,
+    1,
+    3
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 0,
+     "why": "8 is how long the red pencil is, not how much longer it is than the blue one."
+    },
+    {
+     "option": 2,
+     "because": 1,
+     "why": "5 is how long the blue pencil is. The question asks for the difference between them."
+    },
+    {
+     "option": 3,
+     "because": 3,
+     "why": "Adding the two lengths makes one long pencil. Comparing takes one away from the other."
+    }
+   ],
+   "explain": "Line them up at the same end and look at the gap. The red pencil runs 8 cubes and the blue one stops at 5, so the gap is 3 cubes.",
+   "debate": {
+    "given": [
+     "The red pencil measures 8 cubes.",
+     "The blue pencil measures 5 cubes.",
+     "The blue pencil was not lined up at the starting line — it began one cube past it.",
+     "All the cubes are the same size."
+    ],
+    "question": "How much longer is the red pencil? Say what you measured.",
+    "options": [
+     {
+      "label": "3 cubes",
+      "value": "3"
+     },
+     {
+      "label": "2 cubes",
+      "value": "2"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 2,
+      "why": "The numbers on the page are 8 and 5, and 8 take away 5 is 3 cubes of difference."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       0,
+       2,
+       3
+      ],
+      "against": 1,
+      "why": "Blue started a cube late, so it is really 6 cubes long and the gap is only 2."
+     }
+    ],
+    "note": "This is the whole of early measurement in one argument: a number only means a length if you started at the end of the thing. Line them up again in front of the class."
+   }
+  },
+  {
+   "id": "gK-c5",
+   "grade": 0,
+   "code": "K.G.2",
+   "tag": "🔺 shapes",
+   "title": "The Case of the Triangle Standing on Its Point",
+   "given": [
+    "There are 5 shapes on the mat.",
+    "3 of them have exactly 3 straight sides and 3 corners.",
+    "1 of those 3 is turned so a corner points down.",
+    "The other 2 shapes are a square and a circle."
+   ],
+   "question": "How many triangles are on the mat?",
+   "options": [
+    {
+     "label": "3 triangles",
+     "value": "3"
+    },
+    {
+     "label": "2 triangles",
+     "value": "2"
+    },
+    {
+     "label": "5 triangles",
+     "value": "5"
+    }
+   ],
+   "answer": 0,
+   "chk": "3",
+   "decider": [
+    1
+   ],
+   "proof": [
+    1,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 2,
+     "why": "A triangle turned on its point is still a triangle. It still has 3 straight sides and 3 corners."
+    },
+    {
+     "option": 2,
+     "because": 3,
+     "why": "5 counts every shape on the mat, and a square and a circle are not triangles."
+    }
+   ],
+   "explain": "A shape is a triangle because of what it has, not how it sits: 3 straight sides and 3 corners. Turning one upside down changes nothing, so all 3 count.",
+   "debate": {
+    "given": [
+     "There are 5 shapes on the mat.",
+     "3 of them have 3 straight sides.",
+     "On 1 of those 3 there is a small gap where two sides should meet.",
+     "The other 2 shapes are a square and a circle."
+    ],
+    "question": "How many triangles are on the mat?",
+    "options": [
+     {
+      "label": "3 triangles",
+      "value": "3"
+     },
+     {
+      "label": "2 triangles",
+      "value": "2"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 2,
+      "why": "It has 3 straight sides and it was drawn to be a triangle. The gap is how the pen slipped, not what the shape is."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       2,
+       3
+      ],
+      "against": 1,
+      "why": "A triangle is closed all the way round. A shape with a gap is a path, and you could walk out of it."
+     }
+    ],
+    "note": "Children sort this one out faster than adults expect. The question underneath it is what a shape is: what somebody meant to draw, or what is actually on the paper."
+   }
+  },
+  {
    "id": "g1-c1",
    "grade": 1,
    "code": "1.OA.1",
@@ -259,6 +669,326 @@
    }
   },
   {
+   "id": "g1-c2",
+   "grade": 1,
+   "code": "1.NBT.2",
+   "tag": "🥤 straws",
+   "title": "The Case of the Bundled Straws",
+   "given": [
+    "Mia has 4 sticks of straws.",
+    "Every stick holds exactly 10 straws.",
+    "She also has 7 loose straws.",
+    "No straws are missing."
+   ],
+   "question": "How many straws does Mia have altogether?",
+   "options": [
+    {
+     "label": "47 straws",
+     "value": "47"
+    },
+    {
+     "label": "11 straws",
+     "value": "11"
+    },
+    {
+     "label": "74 straws",
+     "value": "74"
+    },
+    {
+     "label": "28 straws",
+     "value": "28"
+    }
+   ],
+   "answer": 0,
+   "chk": "4*10+7",
+   "decider": [
+    1
+   ],
+   "proof": [
+    0,
+    1,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 1,
+     "why": "11 adds the sticks to the loose straws as if a stick were one straw. A stick is worth 10."
+    },
+    {
+     "option": 2,
+     "because": 0,
+     "why": "74 is 7 sticks and 4 loose. Mia has it the other way round: 4 sticks and 7 loose."
+    },
+    {
+     "option": 3,
+     "because": 1,
+     "why": "28 multiplies the sticks by the loose straws, which counts neither the sticks nor the loose ones."
+    }
+   ],
+   "explain": "Four sticks of ten is 40 straws, and the 7 loose ones sit in the ones place: 47. The 4 and the 7 in 47 are the sticks and the loose straws, in that order.",
+   "debate": {
+    "given": [
+     "Mia has 4 sticks of straws and 7 loose ones.",
+     "Every full stick holds exactly 10 straws.",
+     "One of the sticks has come undone on the table.",
+     "Mia has not counted the undone one yet."
+    ],
+    "question": "How many straws does Mia have? Say what you counted.",
+    "options": [
+     {
+      "label": "47 straws",
+      "value": "47"
+     },
+     {
+      "label": "37 straws",
+      "value": "37"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 3,
+      "why": "A stick coming undone does not lose any straws. All 4 tens and the 7 ones are still on the table: 47."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       1,
+       2,
+       3
+      ],
+      "against": 0,
+      "why": "Only 3 sticks are still bundled, and she has not counted the loose pile from the fourth. What she can count in tens is 30, plus the 7: 37."
+     }
+    ],
+    "note": "Tens are a way of holding numbers, not a property of the straws. A child who says 37 has noticed something real — the tens got harder to see — and the move is to ask whether anything left the table."
+   }
+  },
+  {
+   "id": "g1-c3",
+   "grade": 1,
+   "code": "1.MD.3",
+   "tag": "🕐 clock",
+   "title": "The Case of the Lesson That Ends Late",
+   "given": [
+    "The lesson starts at 9:00.",
+    "The lesson lasts 30 minutes.",
+    "The minute hand starts pointing straight up.",
+    "Nothing interrupts the lesson."
+   ],
+   "question": "How many minutes past 9 does the lesson end?",
+   "options": [
+    {
+     "label": "30 past — half past 9",
+     "value": "30"
+    },
+    {
+     "label": "60 past — 10 o'clock",
+     "value": "60"
+    },
+    {
+     "label": "3 past — 9:03",
+     "value": "3"
+    }
+   ],
+   "answer": 0,
+   "chk": "30",
+   "decider": [
+    1
+   ],
+   "proof": [
+    0,
+    1
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 1,
+     "why": "60 minutes is a whole hour. The lesson is 30 minutes, which is half of one."
+    },
+    {
+     "option": 2,
+     "because": 1,
+     "why": "30 minutes is thirty, not three. The minute hand goes all the way round to the 6."
+    }
+   ],
+   "explain": "Thirty minutes is half a turn of the minute hand: it starts straight up at the 12 and finishes straight down at the 6. That is half past 9.",
+   "debate": {
+    "given": [
+     "The lesson starts at 9:00.",
+     "The lesson lasts 30 minutes.",
+     "The teacher spent 5 minutes settling the class before starting.",
+     "The clock on the wall runs 2 minutes fast."
+    ],
+    "question": "What will the wall clock say when the lesson ends? Minutes past 9.",
+    "options": [
+     {
+      "label": "30 past",
+      "value": "30"
+     },
+     {
+      "label": "35 past",
+      "value": "35"
+     },
+     {
+      "label": "37 past",
+      "value": "37"
+     }
+    ],
+    "opened_by": 3,
+    "open": [
+     0,
+     1,
+     2
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 3,
+      "why": "The lesson is 30 minutes long and it started at 9:00, so it ends at half past. The settling happened before it started."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       1,
+       2
+      ],
+      "against": 0,
+      "why": "The class was in the room from 9:00 and the settling was part of it, so 5 and 30 make 35 minutes gone."
+     },
+     {
+      "option": 2,
+      "evidence": [
+       2,
+       3
+      ],
+      "against": 1,
+      "why": "The question asks what the wall clock will say, and the wall clock is 2 minutes ahead of the real time of 35 past."
+     }
+    ],
+    "note": "Three right answers to three different questions: how long the lesson was, how long the class was in the room, and what one particular clock will show. Make them say which question they answered."
+   }
+  },
+  {
+   "id": "g1-c4",
+   "grade": 1,
+   "code": "1.G.3",
+   "tag": "🥪 halves",
+   "title": "The Case of the Half Sandwich",
+   "given": [
+    "The sandwich is cut into 4 pieces.",
+    "All 4 pieces are exactly the same size.",
+    "2 halves make up the whole sandwich.",
+    "Sam wants exactly half of it."
+   ],
+   "question": "How many pieces should Sam take?",
+   "options": [
+    {
+     "label": "2 pieces",
+     "value": "2"
+    },
+    {
+     "label": "1 piece",
+     "value": "1"
+    },
+    {
+     "label": "3 pieces",
+     "value": "3"
+    },
+    {
+     "label": "4 pieces",
+     "value": "4"
+    }
+   ],
+   "answer": 0,
+   "chk": "4/2",
+   "decider": [
+    1
+   ],
+   "proof": [
+    0,
+    1,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 0,
+     "why": "One of 4 equal pieces is a quarter of the sandwich, which is less than half."
+    },
+    {
+     "option": 2,
+     "because": 2,
+     "why": "Three pieces is more than half. The other half would only have one piece in it."
+    },
+    {
+     "option": 3,
+     "because": 3,
+     "why": "Four pieces is the whole sandwich, and Sam asked for half of it."
+    }
+   ],
+   "explain": "Half means the sandwich split into 2 equal shares. Four equal pieces share out 2 and 2, so half the sandwich is 2 pieces.",
+   "debate": {
+    "given": [
+     "The sandwich is cut into 4 pieces.",
+     "Two of the pieces are visibly bigger than the other two.",
+     "2 halves make up the whole sandwich.",
+     "Sam wants exactly half."
+    ],
+    "question": "Can Sam take whole pieces and get exactly half? How many?",
+    "options": [
+     {
+      "label": "yes, 2 pieces",
+      "value": "2"
+     },
+     {
+      "label": "no, it cannot be done",
+      "value": "0"
+     }
+    ],
+    "opened_by": 1,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       1,
+       2
+      ],
+      "against": 3,
+      "why": "Take one big piece and one small piece. The other half is the matching big one and small one, so the two shares are the same."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       1,
+       3
+      ],
+      "against": 1,
+      "why": "Nobody said the two big pieces match each other, or that the small ones do. Without that, no two pieces are certainly half."
+     }
+    ],
+    "note": "The first answer is right if the pieces pair up and wrong if they do not, and the problem never says. Ask what they would need to measure to be sure — that question is the lesson."
+   }
+  },
+  {
    "id": "g2-c1",
    "grade": 2,
    "code": "2.MD.8",
@@ -363,6 +1093,327 @@
      }
     ],
     "note": "Both children can do the subtraction. What they are arguing about is which number is the price, and that is an argument shops have with customers every day."
+   }
+  },
+  {
+   "id": "g2-c2",
+   "grade": 2,
+   "code": "2.OA.1",
+   "tag": "📚 shelf",
+   "title": "The Case of the Shelf That Kept Changing",
+   "given": [
+    "There were 24 books on the shelf.",
+    "The class took 9 of them away to read.",
+    "Later, 5 books were put back.",
+    "Then 6 new books arrived from the library."
+   ],
+   "question": "How many books are on the shelf now?",
+   "options": [
+    {
+     "label": "26 books",
+     "value": "26"
+    },
+    {
+     "label": "20 books",
+     "value": "20"
+    },
+    {
+     "label": "15 books",
+     "value": "15"
+    },
+    {
+     "label": "44 books",
+     "value": "44"
+    }
+   ],
+   "answer": 0,
+   "chk": "24-9+5+6",
+   "decider": [
+    3
+   ],
+   "proof": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 3,
+     "why": "20 is the shelf after the books came back but before the new ones arrived. There is one more step."
+    },
+    {
+     "option": 2,
+     "because": 2,
+     "why": "15 stops after the class took books away, and 5 of those came back afterwards."
+    },
+    {
+     "option": 3,
+     "because": 1,
+     "why": "44 adds every number in the problem, which counts the 9 that left as if they had arrived."
+    }
+   ],
+   "explain": "Take the events in the order they happened: 24, take 9 to get 15, put 5 back to get 20, add 6 new to get 26. The order of the sentences tells you which way each number goes.",
+   "debate": {
+    "given": [
+     "There were 24 books on the shelf.",
+     "The class took 9 of them away to read.",
+     "Later, 5 books were put back.",
+     "6 new books arrived but are still in their box by the door."
+    ],
+    "question": "How many books are on the shelf?",
+    "options": [
+     {
+      "label": "26 books",
+      "value": "26"
+     },
+     {
+      "label": "20 books",
+      "value": "20"
+     }
+    ],
+    "opened_by": 3,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1,
+       2
+      ],
+      "against": 3,
+      "why": "The 6 new books belong to this shelf and have arrived in the room. Counting what the class now has gives 26."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       0,
+       1,
+       3
+      ],
+      "against": 0,
+      "why": "The question asks about the shelf, and the new books are in a box by the door. On the shelf there are 20."
+     }
+    ],
+    "note": "Every child here can do the arithmetic. What they are deciding is where the shelf ends, and that is a reading question wearing a maths hat."
+   }
+  },
+  {
+   "id": "g2-c3",
+   "grade": 2,
+   "code": "2.NBT.5",
+   "tag": "🫙 marbles",
+   "title": "The Case of the Marble Jar",
+   "given": [
+    "The jar held 62 marbles this morning.",
+    "Leo took out 28 of them.",
+    "Later he put 15 marbles back in.",
+    "Nobody else went near the jar."
+   ],
+   "question": "How many marbles are in the jar now?",
+   "options": [
+    {
+     "label": "49 marbles",
+     "value": "49"
+    },
+    {
+     "label": "34 marbles",
+     "value": "34"
+    },
+    {
+     "label": "19 marbles",
+     "value": "19"
+    },
+    {
+     "label": "105 marbles",
+     "value": "105"
+    }
+   ],
+   "answer": 0,
+   "chk": "62-28+15",
+   "decider": [
+    2
+   ],
+   "proof": [
+    0,
+    1,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 2,
+     "why": "34 is the jar after Leo took marbles out. He put 15 back in afterwards."
+    },
+    {
+     "option": 2,
+     "because": 2,
+     "why": "19 takes the 15 away as well. They went into the jar, so they are added."
+    },
+    {
+     "option": 3,
+     "because": 1,
+     "why": "105 adds all three numbers, which treats the 28 that left as if they had arrived."
+    }
+   ],
+   "explain": "Work the jar forward in time: 62, take 28 away to get 34, put 15 back to get 49. Each sentence either adds to the jar or takes from it, and the words say which.",
+   "debate": {
+    "given": [
+     "The jar held 62 marbles this morning.",
+     "Leo took out 28 of them.",
+     "Later he put 15 marbles back in.",
+     "4 of the marbles he put back came from a different jar."
+    ],
+    "question": "How many of this jar's own marbles are in it now?",
+    "options": [
+     {
+      "label": "49 marbles",
+      "value": "49"
+     },
+     {
+      "label": "45 marbles",
+      "value": "45"
+     }
+    ],
+    "opened_by": 3,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1,
+       2
+      ],
+      "against": 3,
+      "why": "Count what is in the jar. Forty-nine marbles are in there, and a marble does not change jars by being moved."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       0,
+       1,
+       3
+      ],
+      "against": 2,
+      "why": "The question says this jar's own marbles, and 4 of the 49 belong somewhere else: 49 take away 4 is 45."
+     }
+    ],
+    "note": "Same jar, same arithmetic, two readings of the question. Read the question aloud twice and ask which of the two it is asking."
+   }
+  },
+  {
+   "id": "g2-c4",
+   "grade": 2,
+   "code": "2.G.3",
+   "tag": "🟦 equal parts",
+   "title": "The Case of the Matching Shaded Parts",
+   "given": [
+    "Ana's rectangle is split into 3 equal parts and she shades 2 of them.",
+    "Ben's rectangle is exactly the same size as Ana's.",
+    "Ben's rectangle is split into 6 equal parts.",
+    "They want the same amount of their rectangle shaded."
+   ],
+   "question": "How many of Ben's parts should he shade?",
+   "options": [
+    {
+     "label": "4 parts",
+     "value": "4"
+    },
+    {
+     "label": "2 parts",
+     "value": "2"
+    },
+    {
+     "label": "3 parts",
+     "value": "3"
+    },
+    {
+     "label": "6 parts",
+     "value": "6"
+    }
+   ],
+   "answer": 0,
+   "chk": "6/3*2",
+   "decider": [
+    1
+   ],
+   "proof": [
+    0,
+    1,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 2,
+     "why": "2 of Ben's parts is the same number of parts, but his parts are half the size of Ana's, so it is half as much paper."
+    },
+    {
+     "option": 2,
+     "because": 0,
+     "why": "3 of Ben's 6 parts is half the rectangle, and Ana shaded 2 of 3, which is more than half."
+    },
+    {
+     "option": 3,
+     "because": 2,
+     "why": "6 parts is Ben's whole rectangle, and Ana left one of her three parts unshaded."
+    }
+   ],
+   "explain": "The rectangles are the same size, so each of Ana's thirds covers two of Ben's sixths. Two thirds is therefore four sixths, and Ben shades 4.",
+   "debate": {
+    "given": [
+     "Ana's rectangle is split into 3 equal parts and she shades 2 of them.",
+     "Ben's rectangle is split into 6 equal parts.",
+     "Ben's rectangle is twice as long as Ana's.",
+     "They want the same amount of paper covered."
+    ],
+    "question": "How many of Ben's parts should he shade? Say what you matched.",
+    "options": [
+     {
+      "label": "4 parts",
+      "value": "4"
+     },
+     {
+      "label": "2 parts",
+      "value": "2"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 2,
+      "why": "To shade the same fraction of his own rectangle, Ben needs two thirds of it, and two thirds of six parts is four."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       1,
+       2,
+       3
+      ],
+      "against": 0,
+      "why": "Ben's rectangle is twice as big, so each of his sixths is exactly the size of one of Ana's thirds. Two of them cover the same paper she did."
+     }
+    ],
+    "note": "Two thirds of a bigger rectangle is more paper than two thirds of a smaller one. This is the first time a fraction stops meaning anything until you say what it is a fraction of, and it is worth slowing down on."
    }
   },
   {
@@ -484,6 +1535,416 @@
      }
     ],
     "note": "This is the difference between a number and an estimate. 24 is the most there can be, 16 the least, and the honest answer says which of the two it is."
+   }
+  },
+  {
+   "id": "g3-c2",
+   "grade": 3,
+   "code": "3.NBT.2",
+   "tag": "🥫 food drive",
+   "title": "The Case of the Tins That Kept Moving",
+   "given": [
+    "The school had collected 428 tins by Monday night.",
+    "On Tuesday another 156 tins came in.",
+    "On Wednesday 90 tins were sent to the food bank.",
+    "No other tins moved all week."
+   ],
+   "question": "How many tins does the school have now?",
+   "options": [
+    {
+     "label": "494 tins",
+     "value": "494"
+    },
+    {
+     "label": "584 tins",
+     "value": "584"
+    },
+    {
+     "label": "674 tins",
+     "value": "674"
+    },
+    {
+     "label": "362 tins",
+     "value": "362"
+    }
+   ],
+   "answer": 0,
+   "chk": "428+156-90",
+   "decider": [
+    2
+   ],
+   "proof": [
+    0,
+    1,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 2,
+     "why": "584 is where the collection stood on Tuesday night, before 90 tins left on Wednesday."
+    },
+    {
+     "option": 2,
+     "because": 2,
+     "why": "674 adds all three numbers, which counts the 90 tins that left as though they had arrived."
+    },
+    {
+     "option": 3,
+     "because": 1,
+     "why": "362 takes Tuesday's tins away instead of adding them. More tins coming in makes the pile bigger."
+    }
+   ],
+   "explain": "Take the week in order: 428, add Tuesday's 156 to reach 584, then take away the 90 that left on Wednesday to reach 494. Each sentence says whether the pile grew or shrank.",
+   "debate": {
+    "given": [
+     "The school had collected 428 tins by Monday night.",
+     "On Tuesday another 156 tins came in.",
+     "On Wednesday 90 tins were sent to the food bank.",
+     "12 of the tins are past their date and the food bank will not take them."
+    ],
+    "question": "How many tins does the school have to give? Defend the number.",
+    "options": [
+     {
+      "label": "494 tins",
+      "value": "494"
+     },
+     {
+      "label": "482 tins",
+      "value": "482"
+     }
+    ],
+    "opened_by": 3,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1,
+       2
+      ],
+      "against": 3,
+      "why": "Count the tins in the room: 428 and 156 in, 90 out, leaves 494 tins on the shelves."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       2,
+       3
+      ],
+      "against": 0,
+      "why": "The question is what the school has to give, and 12 of them cannot be given: 494 take away 12 is 482."
+     }
+    ],
+    "note": "The arithmetic is finished before the argument starts. What is in dispute is whether a tin nobody will accept is still a tin you have, which is the sort of thing a food drive actually has to decide."
+   }
+  },
+  {
+   "id": "g3-c3",
+   "grade": 3,
+   "code": "3.NF.1",
+   "tag": "🍫 chocolate",
+   "title": "The Case of the Broken Bar",
+   "given": [
+    "The chocolate bar is broken into 8 equal pieces.",
+    "Jo eats 3 of the pieces.",
+    "All 8 pieces are exactly the same size.",
+    "Nobody else eats any."
+   ],
+   "question": "What fraction of the bar is left?",
+   "options": [
+    {
+     "label": "5/8 of the bar",
+     "value": "5/8"
+    },
+    {
+     "label": "3/8 of the bar",
+     "value": "3/8"
+    },
+    {
+     "label": "5 of the bar",
+     "value": "5"
+    },
+    {
+     "label": "1/8 of the bar",
+     "value": "1/8"
+    }
+   ],
+   "answer": 0,
+   "chk": "(8-3)/8",
+   "decider": [
+    1
+   ],
+   "proof": [
+    0,
+    1,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 1,
+     "why": "3/8 is the part Jo ate. The question asks what is still there."
+    },
+    {
+     "option": 2,
+     "because": 0,
+     "why": "5 is how many pieces are left, but a fraction says how many out of how many: 5 out of 8."
+    },
+    {
+     "option": 3,
+     "because": 1,
+     "why": "1/8 is a single piece. Five pieces are left, not one."
+    }
+   ],
+   "explain": "The bottom number is how many equal pieces the whole was broken into, and the top is how many you have. Eight pieces, three eaten, five left: 5/8.",
+   "debate": {
+    "given": [
+     "The chocolate bar is broken into 8 pieces.",
+     "Jo eats 3 of the pieces.",
+     "Two of the pieces broke badly and are much smaller than the others.",
+     "Nobody else eats any."
+    ],
+    "question": "How much of the bar is left? Defend your fraction.",
+    "options": [
+     {
+      "label": "5/8 of the bar",
+      "value": "5/8"
+     },
+     {
+      "label": "about 3/4 of the bar",
+      "value": "3/4"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 2,
+      "why": "Count the pieces: 8 pieces, 3 gone, 5 left. Five out of eight pieces is 5/8."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       1,
+       2
+      ],
+      "against": 0,
+      "why": "If the two small pieces were among the three Jo ate, far more chocolate is left than 5/8 — nearer three quarters of the bar."
+     }
+    ],
+    "note": "A fraction needs equal parts, and this bar has not got them. The honest answer is that 5/8 counts pieces and nobody has said what fraction of the chocolate that is — which is exactly the thing the word equal is doing in the definition."
+   }
+  },
+  {
+   "id": "g3-c4",
+   "grade": 3,
+   "code": "3.MD.8",
+   "tag": "🌱 garden",
+   "title": "The Case of the Fence and the Wall",
+   "given": [
+    "The garden bed is 7 feet long.",
+    "The garden bed is 4 feet wide.",
+    "A rectangle has 2 long sides and 2 short sides.",
+    "The fence must go all the way round the bed."
+   ],
+   "question": "How many feet of fence are needed?",
+   "options": [
+    {
+     "label": "22 feet",
+     "value": "22"
+    },
+    {
+     "label": "28 feet",
+     "value": "28"
+    },
+    {
+     "label": "11 feet",
+     "value": "11"
+    },
+    {
+     "label": "14 feet",
+     "value": "14"
+    }
+   ],
+   "answer": 0,
+   "chk": "2*7+2*4",
+   "decider": [
+    3
+   ],
+   "proof": [
+    0,
+    1,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 3,
+     "why": "28 is 7 times 4, which is the ground inside the bed. A fence runs along the edge, not across the middle."
+    },
+    {
+     "option": 2,
+     "because": 2,
+     "why": "11 is one long side and one short side. There are two of each."
+    },
+    {
+     "option": 3,
+     "because": 2,
+     "why": "14 is the two long sides only, and the fence has to turn the corners and come back along the short ones."
+    }
+   ],
+   "explain": "Walk the edge and add what you walk: 7 and 4 and 7 and 4 is 22 feet. Perimeter is the walk round the outside; area is the ground inside, and they are not the same question.",
+   "debate": {
+    "given": [
+     "The garden bed is 7 feet by 4 feet.",
+     "A rectangle has 2 long sides and 2 short sides.",
+     "One of the 7-foot sides runs flat against a wall.",
+     "The gardener wants to be able to reach the bed from every side."
+    ],
+    "question": "How many feet of fence should they buy? Defend the number.",
+    "options": [
+     {
+      "label": "15 feet",
+      "value": "15"
+     },
+     {
+      "label": "22 feet",
+      "value": "22"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       1,
+       2
+      ],
+      "against": 3,
+      "why": "The wall is already a fence on that side, so only the other three sides need fencing: 7 and 4 and 4 is 15 feet."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       1,
+       3
+      ],
+      "against": 2,
+      "why": "Reaching the bed from every side means pulling it off the wall, and then all four sides are open: the full 22 feet."
+     }
+    ],
+    "note": "Perimeter is a measurement, but how much fence to buy is a decision. Ask which of the two sentences in the problem the gardener meant to be the important one."
+   }
+  },
+  {
+   "id": "g3-c5",
+   "grade": 3,
+   "code": "3.G.1",
+   "tag": "🔷 shapes",
+   "title": "The Case of the Square That Is Also Something Else",
+   "given": [
+    "There are 6 shapes on the board.",
+    "4 of them have 4 straight sides and are closed all the way round.",
+    "Of those 4, two also have all their sides the same length.",
+    "The other 2 shapes are a triangle and a circle."
+   ],
+   "question": "How many of the shapes are quadrilaterals?",
+   "options": [
+    {
+     "label": "4 shapes",
+     "value": "4"
+    },
+    {
+     "label": "2 shapes",
+     "value": "2"
+    },
+    {
+     "label": "6 shapes",
+     "value": "6"
+    }
+   ],
+   "answer": 0,
+   "chk": "4",
+   "decider": [
+    1
+   ],
+   "proof": [
+    1
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 2,
+     "why": "2 is how many are squares. A square is a kind of quadrilateral, so the other two four-sided shapes count as well."
+    },
+    {
+     "option": 2,
+     "because": 3,
+     "why": "6 counts every shape on the board, and a triangle and a circle do not have four straight sides."
+    }
+   ],
+   "explain": "A quadrilateral is any closed shape with four straight sides, and that is the whole test. The squares pass it too: being a square is a way of being a quadrilateral, not an alternative to it.",
+   "debate": {
+    "given": [
+     "There are 6 shapes on the board.",
+     "4 of them look like they have 4 straight sides.",
+     "On one of those 4, a side bows out very slightly.",
+     "The other 2 shapes are a triangle and a circle."
+    ],
+    "question": "How many quadrilaterals are on the board? Say what your test is.",
+    "options": [
+     {
+      "label": "4 shapes",
+      "value": "4"
+     },
+     {
+      "label": "3 shapes",
+      "value": "3"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 2,
+      "why": "It was drawn to be a four-sided shape and everyone can see which four sides are meant. A wobble in the pen is not a property of the shape."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       2,
+       3
+      ],
+      "against": 1,
+      "why": "A quadrilateral has four straight sides, and a side that bows is not straight. If we let that one in, the word stops meaning anything."
+     }
+    ],
+    "note": "Definitions in geometry are exact, and the drawings in front of children never are. Both answers are defensible; what is not defensible is refusing to say which test you used."
    }
   },
   {
@@ -612,6 +2073,429 @@
    }
   },
   {
+   "id": "g4-c2",
+   "grade": 4,
+   "code": "4.OA.3",
+   "tag": "🪑 the hall",
+   "title": "The Case of the Children Left Standing",
+   "given": [
+    "There are 7 tables in the hall.",
+    "Each table seats 6 children.",
+    "50 children are coming.",
+    "Every child needs a seat."
+   ],
+   "question": "How many children will have nowhere to sit?",
+   "options": [
+    {
+     "label": "8 children",
+     "value": "8"
+    },
+    {
+     "label": "42 children",
+     "value": "42"
+    },
+    {
+     "label": "50 children",
+     "value": "50"
+    },
+    {
+     "label": "2 children",
+     "value": "2"
+    }
+   ],
+   "answer": 0,
+   "chk": "50-7*6",
+   "decider": [
+    2
+   ],
+   "proof": [
+    0,
+    1,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 1,
+     "why": "42 is how many seats there are, not how many children are left over once they are filled."
+    },
+    {
+     "option": 2,
+     "because": 2,
+     "why": "50 is every child coming, and 42 of them do get a seat."
+    },
+    {
+     "option": 3,
+     "because": 0,
+     "why": "2 is how many extra tables would be needed. That is a useful number, but it answers a different question."
+    }
+   ],
+   "explain": "Two steps, in order. Seven tables of six is 42 seats, and 50 children arrive, so 8 children are left standing. The second step is the one the question actually asks about.",
+   "debate": {
+    "given": [
+     "There are 7 tables in the hall.",
+     "Each table seats 6 children.",
+     "2 of the tables have been pushed to the side to hold the food.",
+     "50 children are coming and every child needs a seat."
+    ],
+    "question": "How many children will have nowhere to sit?",
+    "options": [
+     {
+      "label": "8 children",
+      "value": "8"
+     },
+     {
+      "label": "20 children",
+      "value": "20"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1,
+       3
+      ],
+      "against": 2,
+      "why": "There are 7 tables in the hall and they seat 6 each, so there are 42 seats in the room and 8 children over."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       1,
+       2,
+       3
+      ],
+      "against": 0,
+      "why": "Only 5 tables are free to sit at, which is 30 seats, so 20 children have nowhere to go."
+     }
+    ],
+    "note": "Both answers come from the same multiplication done carefully. The disagreement is over what counts as a seat, and the food tables are the whole of it."
+   }
+  },
+  {
+   "id": "g4-c3",
+   "grade": 4,
+   "code": "4.NBT.5",
+   "tag": "🖍️ crayons",
+   "title": "The Case of the Crayon Order",
+   "given": [
+    "A box holds 24 crayons.",
+    "The school orders 36 boxes.",
+    "Every box leaves the factory full.",
+    "None of the crayons are broken."
+   ],
+   "question": "How many crayons did the school order?",
+   "options": [
+    {
+     "label": "864 crayons",
+     "value": "864"
+    },
+    {
+     "label": "624 crayons",
+     "value": "624"
+    },
+    {
+     "label": "144 crayons",
+     "value": "144"
+    },
+    {
+     "label": "60 crayons",
+     "value": "60"
+    }
+   ],
+   "answer": 0,
+   "chk": "24*36",
+   "decider": [
+    1
+   ],
+   "proof": [
+    0,
+    1
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 1,
+     "why": "624 multiplies the tens together and the ones together and stops. It leaves out 20 sixes and 4 thirties."
+    },
+    {
+     "option": 2,
+     "because": 1,
+     "why": "144 is 24 times 6, which is six boxes. The order is for thirty-six."
+    },
+    {
+     "option": 3,
+     "because": 0,
+     "why": "60 adds the two numbers. Thirty-six boxes of twenty-four is a multiplication, not a sum."
+    }
+   ],
+   "explain": "Break 36 into 30 and 6: 24 thirties is 720 and 24 sixes is 144, and together that is 864. Every partial product has to be counted, which is what the 624 answer forgets.",
+   "debate": {
+    "given": [
+     "A box holds 24 crayons.",
+     "The school ordered 36 boxes.",
+     "4 of the boxes arrived already opened and short.",
+     "Nobody counted what was missing from those 4."
+    ],
+    "question": "How many crayons did the school get? Give a number you can defend.",
+    "options": [
+     {
+      "label": "864 crayons",
+      "value": "864"
+     },
+     {
+      "label": "768 crayons",
+      "value": "768"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 2,
+      "why": "Thirty-six boxes of twenty-four is 864, and nobody has said a single crayon is actually missing — only that the boxes were open."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       0,
+       2,
+       3
+      ],
+      "against": 1,
+      "why": "Only 32 boxes can be trusted to be full: 32 times 24 is 768, and that is the most the school can claim."
+     }
+    ],
+    "note": "864 is what was ordered and 768 is what can be proved. When they differ, the useful thing is to say which one you are writing on the form and why."
+   }
+  },
+  {
+   "id": "g4-c4",
+   "grade": 4,
+   "code": "4.MD.3",
+   "tag": "🧵 the rug",
+   "title": "The Case of the Tape Round the Rug",
+   "given": [
+    "The classroom rug is 9 feet long and 6 feet wide.",
+    "A rectangle has 2 long sides and 2 short sides.",
+    "Tape runs all the way round the edge of the rug.",
+    "Tape is sold by the foot."
+   ],
+   "question": "How many feet of tape are needed?",
+   "options": [
+    {
+     "label": "30 feet",
+     "value": "30"
+    },
+    {
+     "label": "54 feet",
+     "value": "54"
+    },
+    {
+     "label": "18 feet",
+     "value": "18"
+    },
+    {
+     "label": "15 feet",
+     "value": "15"
+    }
+   ],
+   "answer": 0,
+   "chk": "2*9+2*6",
+   "decider": [
+    2
+   ],
+   "proof": [
+    0,
+    1,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 2,
+     "why": "54 is 9 times 6, the floor the rug covers. Tape goes round the edge, not across the rug."
+    },
+    {
+     "option": 2,
+     "because": 1,
+     "why": "18 is the two long sides only. The tape has to come back along the two short ones as well."
+    },
+    {
+     "option": 3,
+     "because": 1,
+     "why": "15 is one long side and one short side — half of the way round."
+    }
+   ],
+   "explain": "Trace the edge with a finger and add as you go: 9, 6, 9, 6. That is 30 feet. Area would be the carpet itself; this is the piping round it.",
+   "debate": {
+    "given": [
+     "The rug is 9 feet by 6 feet.",
+     "A rectangle has 2 long sides and 2 short sides.",
+     "The tape has to overlap itself by 1 foot where the two ends meet.",
+     "Tape is sold only in whole feet."
+    ],
+    "question": "How many feet of tape should they buy?",
+    "options": [
+     {
+      "label": "30 feet",
+      "value": "30"
+     },
+     {
+      "label": "31 feet",
+      "value": "31"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 2,
+      "why": "The distance round the rug is 30 feet, and that is what the tape has to cover."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       2,
+       3
+      ],
+      "against": 0,
+      "why": "A foot of it is spent on the overlap and covers nothing new, so 30 feet of tape leaves a foot of rug bare. Buy 31."
+     }
+    ],
+    "note": "The perimeter is 30 and the answer to the shopping question is 31. Worth naming out loud: the measurement and the amount to buy are different numbers, and the overlap is the reason."
+   }
+  },
+  {
+   "id": "g4-c5",
+   "grade": 4,
+   "code": "4.G.3",
+   "tag": "🪞 symmetry",
+   "title": "The Case of the Folded Shapes",
+   "given": [
+    "There are 3 shapes on the table: a square, a rectangle that is not a square, and a triangle.",
+    "A square has 4 lines of symmetry.",
+    "A rectangle that is not a square has 2 lines of symmetry.",
+    "The triangle has 0 lines of symmetry."
+   ],
+   "question": "How many lines of symmetry are there altogether?",
+   "options": [
+    {
+     "label": "6 lines",
+     "value": "6"
+    },
+    {
+     "label": "3 lines",
+     "value": "3"
+    },
+    {
+     "label": "4 lines",
+     "value": "4"
+    },
+    {
+     "label": "2 lines",
+     "value": "2"
+    }
+   ],
+   "answer": 0,
+   "chk": "4+2+0",
+   "decider": [
+    3
+   ],
+   "proof": [
+    1,
+    2,
+    3
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 0,
+     "why": "3 is how many shapes are on the table, not how many fold lines they have between them."
+    },
+    {
+     "option": 2,
+     "because": 1,
+     "why": "4 is the square's lines on their own. The rectangle has some too."
+    },
+    {
+     "option": 3,
+     "because": 2,
+     "why": "2 is the rectangle's lines on their own, and the square has four more."
+    }
+   ],
+   "explain": "A line of symmetry is a fold that lands the shape exactly on itself. Count each shape's folds and add them: 4 and 2 and none at all is 6.",
+   "debate": {
+    "given": [
+     "A square has 4 lines of symmetry.",
+     "A rectangle that is not a square has 2 lines of symmetry.",
+     "The third shape is a triangle whose two longer sides look equal but have not been measured.",
+     "A triangle with two equal sides has 1 line of symmetry."
+    ],
+    "question": "How many lines of symmetry are there altogether? Defend the number.",
+    "options": [
+     {
+      "label": "7 lines",
+      "value": "7"
+     },
+     {
+      "label": "6 lines",
+      "value": "6"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       2,
+       3
+      ],
+      "against": 2,
+      "why": "The two sides look equal, and a triangle with two equal sides folds onto itself once: 4 and 2 and 1 is 7."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       0,
+       1,
+       2
+      ],
+      "against": 3,
+      "why": "Nobody has measured those sides. Until somebody does, the triangle cannot be claimed to fold, so only the 4 and the 2 can be counted."
+     }
+    ],
+    "note": "Fold the triangle and the argument ends in four seconds, which is the point: symmetry is a claim you can test, and looking is not testing. Have the paper ready."
+   }
+  },
+  {
    "id": "g5-c1",
    "grade": 5,
    "code": "5.NBT.7",
@@ -728,6 +2612,413 @@
      }
     ],
     "note": "Every one of these is arithmetic a fifth grader can do. What they are arguing about is which story the numbers are evidence for, which is the whole of modelling."
+   }
+  },
+  {
+   "id": "g5-c2",
+   "grade": 5,
+   "code": "5.OA.1",
+   "tag": "🎟️ the sign",
+   "title": "The Case of the Sign With No Brackets",
+   "given": [
+    "The expression is 4 + 3 × 6.",
+    "There are no brackets anywhere in it.",
+    "Multiplication is done before addition.",
+    "Every number in it is a whole number."
+   ],
+   "question": "What does the expression equal?",
+   "options": [
+    {
+     "label": "22",
+     "value": "22"
+    },
+    {
+     "label": "42",
+     "value": "42"
+    },
+    {
+     "label": "18",
+     "value": "18"
+    },
+    {
+     "label": "13",
+     "value": "13"
+    }
+   ],
+   "answer": 0,
+   "chk": "4+3*6",
+   "decider": [
+    2
+   ],
+   "proof": [
+    0,
+    1,
+    2
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 2,
+     "why": "42 is what you get working strictly left to right, which is (4 + 3) × 6. There are no brackets to make that happen."
+    },
+    {
+     "option": 2,
+     "because": 0,
+     "why": "18 is 3 times 6 on its own, and the 4 is still in the expression."
+    },
+    {
+     "option": 3,
+     "because": 0,
+     "why": "13 adds all three numbers, treating the times sign as a plus."
+    }
+   ],
+   "explain": "Multiplication binds tighter than addition, so 3 × 6 is a single quantity of 18 and the 4 is added to it: 22. Brackets exist precisely to overrule that when you want (4 + 3) × 6.",
+   "debate": {
+    "given": [
+     "A sign at the fair reads: 4 + 3 × 6 free tickets.",
+     "There are no brackets anywhere on the sign.",
+     "The manager says she meant 4 tickets, and then 3 groups of 6 more.",
+     "A customer read it left to right and worked out 42."
+    ],
+    "question": "How many tickets does the sign promise? Defend it.",
+    "options": [
+     {
+      "label": "22 tickets",
+      "value": "22"
+     },
+     {
+      "label": "42 tickets",
+      "value": "42"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       1,
+       2
+      ],
+      "against": 3,
+      "why": "Written without brackets, the expression means 4 + 18. That is the convention every reader of mathematics is entitled to assume, and it is what the manager meant."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       0,
+       3
+      ],
+      "against": 2,
+      "why": "A sign is read by ordinary people left to right. The shop wrote something ambiguous in public, and the customer's reading is a reasonable one."
+     }
+    ],
+    "note": "The mathematics has one answer and the argument is about who carries the cost of an ambiguous sign. Both are worth having: convention is what makes writing maths possible, and it only works when the reader knows it."
+   }
+  },
+  {
+   "id": "g5-c3",
+   "grade": 5,
+   "code": "5.NF.2",
+   "tag": "🥣 baking",
+   "title": "The Case of the Flour That Is Not Enough Yet",
+   "given": [
+    "The recipe needs 3/4 of a cup of flour.",
+    "Sam has already put in 1/3 of a cup.",
+    "The cup is the same size every time.",
+    "Nothing else has gone into the bowl."
+   ],
+   "question": "How much more flour does Sam need, in cups?",
+   "options": [
+    {
+     "label": "5/12 of a cup",
+     "value": "5/12"
+    },
+    {
+     "label": "2 cups",
+     "value": "2"
+    },
+    {
+     "label": "13/12 of a cup",
+     "value": "13/12"
+    },
+    {
+     "label": "1/4 of a cup",
+     "value": "1/4"
+    }
+   ],
+   "answer": 0,
+   "chk": "3/4-1/3",
+   "decider": [
+    1
+   ],
+   "proof": [
+    0,
+    1
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 0,
+     "why": "2 comes from taking the tops and the bottoms away separately. It would mean Sam needs more than the recipe asks for in total."
+    },
+    {
+     "option": 2,
+     "because": 1,
+     "why": "13/12 adds the two amounts instead of comparing them. That is more than a whole cup, and the recipe only wants 3/4."
+    },
+    {
+     "option": 3,
+     "because": 1,
+     "why": "1/4 is what is left of a cup after 3/4. Sam has put in 1/3, not 3/4."
+    }
+   ],
+   "explain": "Twelfths hold both: 3/4 is 9/12 and 1/3 is 4/12. The gap between them is 5/12 of a cup. A common denominator is just a unit both amounts can be counted in.",
+   "debate": {
+    "given": [
+     "The recipe needs 3/4 of a cup of flour.",
+     "Sam has already put in 1/3 of a cup.",
+     "Sam's measuring cup is marked only in quarters.",
+     "Nothing else has gone into the bowl."
+    ],
+    "question": "How much more flour should Sam add? Say what you would do at the counter.",
+    "options": [
+     {
+      "label": "5/12 of a cup",
+      "value": "5/12"
+     },
+     {
+      "label": "1/2 a cup",
+      "value": "1/2"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 2,
+      "why": "The exact shortfall is 9/12 minus 4/12, which is 5/12 of a cup, and that is the honest answer to what is missing."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       2
+      ],
+      "against": 0,
+      "why": "There is no 5/12 mark on the cup. Half is the nearest mark and it is closer to 5/12 than a quarter is, so half is what actually gets added."
+     }
+    ],
+    "note": "5/12 is right and unmeasurable with the equipment in the room. Ask which is the better answer for a person holding the cup, and whether being slightly over matters in bread."
+   }
+  },
+  {
+   "id": "g5-c4",
+   "grade": 5,
+   "code": "5.MD.5",
+   "tag": "📦 the box",
+   "title": "The Case of the Box That Holds Less Than It Measures",
+   "given": [
+    "The box is 6 inches long, 4 inches wide and 3 inches tall.",
+    "The cubes are 1 inch on every side.",
+    "The box is a rectangular box with square corners.",
+    "The cubes are packed in with no gaps."
+   ],
+   "question": "How many cubes fit in the box?",
+   "options": [
+    {
+     "label": "72 cubes",
+     "value": "72"
+    },
+    {
+     "label": "24 cubes",
+     "value": "24"
+    },
+    {
+     "label": "13 cubes",
+     "value": "13"
+    },
+    {
+     "label": "108 cubes",
+     "value": "108"
+    }
+   ],
+   "answer": 0,
+   "chk": "6*4*3",
+   "decider": [
+    0
+   ],
+   "proof": [
+    0,
+    1,
+    3
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 0,
+     "why": "24 is one layer on the bottom, 6 by 4. The box is 3 inches tall, so three layers go in."
+    },
+    {
+     "option": 2,
+     "because": 0,
+     "why": "13 adds the three measurements. Volume is how many cubes fill the space, which is a multiplication."
+    },
+    {
+     "option": 3,
+     "because": 0,
+     "why": "108 is the area of the outside of the box. That is what you would wrap it in, not what goes inside."
+    }
+   ],
+   "explain": "Build it in layers. The bottom holds 6 by 4, which is 24 cubes, and the box is 3 inches tall, so three of those layers stack: 72 cubes.",
+   "debate": {
+    "given": [
+     "The box measures 6 inches by 4 inches by 3 inches on the outside.",
+     "The cubes are 1 inch on every side.",
+     "There is a padded lining 1 inch thick across the bottom of the box.",
+     "The cubes have to sit flat."
+    ],
+    "question": "How many cubes actually fit? Say what you measured.",
+    "options": [
+     {
+      "label": "72 cubes",
+      "value": "72"
+     },
+     {
+      "label": "48 cubes",
+      "value": "48"
+     }
+    ],
+    "opened_by": 2,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       0,
+       1
+      ],
+      "against": 2,
+      "why": "Six by four by three is 72, and those are the measurements the problem gives for the box."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       1,
+       2,
+       3
+      ],
+      "against": 0,
+      "why": "The lining eats an inch of the height, so only two layers of cubes fit above it: 6 by 4 by 2 is 48."
+     }
+    ],
+    "note": "The volume formula is not in dispute; which height to put into it is. Outside measurements and inside space are different numbers for any box with a wall, which is every real box."
+   }
+  },
+  {
+   "id": "g5-c5",
+   "grade": 5,
+   "code": "5.G.4",
+   "tag": "🟪 the family tree",
+   "title": "The Case of the Rectangle in the Textbook",
+   "given": [
+    "There are 5 quadrilaterals on the board.",
+    "3 of them have 4 right angles.",
+    "2 of those 3 also have 4 equal sides.",
+    "The other 2 shapes have no right angles at all."
+   ],
+   "question": "How many of the shapes are rectangles?",
+   "options": [
+    {
+     "label": "3 shapes",
+     "value": "3"
+    },
+    {
+     "label": "1 shape",
+     "value": "1"
+    },
+    {
+     "label": "5 shapes",
+     "value": "5"
+    }
+   ],
+   "answer": 0,
+   "chk": "3",
+   "decider": [
+    1
+   ],
+   "proof": [
+    1
+   ],
+   "rules_out": [
+    {
+     "option": 1,
+     "because": 2,
+     "why": "1 counts only the shape that is a rectangle and not a square. The two squares have 4 right angles too, so they are rectangles as well."
+    },
+    {
+     "option": 2,
+     "because": 3,
+     "why": "5 counts every quadrilateral on the board, and 2 of them have no right angles."
+    }
+   ],
+   "explain": "A rectangle is a quadrilateral with four right angles, and that is the entire definition. A square passes it and adds a condition of its own, so every square is a rectangle — the categories sit inside one another rather than beside one another.",
+   "debate": {
+    "given": [
+     "There are 5 quadrilaterals on the board.",
+     "3 of them have 4 right angles.",
+     "2 of those 3 also have 4 equal sides.",
+     "In the class textbook, the picture labelled 'rectangle' is always a long shape and never a square."
+    ],
+    "question": "How many rectangles are on the board? Say which meaning you used.",
+    "options": [
+     {
+      "label": "3 shapes",
+      "value": "3"
+     },
+     {
+      "label": "1 shape",
+      "value": "1"
+     }
+    ],
+    "opened_by": 3,
+    "open": [
+     0,
+     1
+    ],
+    "arguments": [
+     {
+      "option": 0,
+      "evidence": [
+       1,
+       2
+      ],
+      "against": 3,
+      "why": "By the definition, four right angles makes a rectangle. The squares have four right angles, so all 3 count."
+     },
+     {
+      "option": 1,
+      "evidence": [
+       3
+      ],
+      "against": 1,
+      "why": "Every picture the class has been shown of a rectangle is a long shape. In the way this room has used the word, a square is not one of them."
+     }
+    ],
+    "note": "This is where a lot of children quietly lose geometry: the textbook teaches by picture and the definition says something wider. Say plainly that the definition wins, and that the pictures have been misleading them."
    }
   },
   {

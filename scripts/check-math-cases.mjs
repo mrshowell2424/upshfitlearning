@@ -175,6 +175,36 @@ for (const c of DATA.cases) {
   if (!d.question?.length) bad("the debate has no question");
 }
 
+/**
+ * Coverage, against one case per strand per grade.
+ *
+ * The target is a case for every strand the hub teaches in every grade --
+ * 69 of them -- so that a teacher working in any strand finds one. Printed
+ * on every run because the set is written in batches over several sittings,
+ * and a gap is very easy to miss by eye: three grades were missing their
+ * geometry case and the list of titles looked complete.
+ */
+const strandOf = (code) => {
+  const m = String(code).match(/^(K|\d{1,2}|[A-Z])\.([A-Z]+)\./);
+  if (!m) return null;
+  return /^[A-Z]$/.test(m[1]) && m[1] !== "K" ? `${m[1]}.${m[2]}` : m[2];
+};
+const need = new Map();
+for (const r of PREQ.sequence) {
+  const s = strandOf(r.key);
+  if (!s) continue;
+  if (!need.has(r.level)) need.set(r.level, new Set());
+  need.get(r.level).add(s);
+}
+const got = new Map();
+for (const c of DATA.cases) {
+  const s = strandOf(c.code);
+  const g = GRADES[c.grade];
+  if (!s || !g) continue;
+  if (!got.has(g)) got.set(g, new Set());
+  got.get(g).add(s);
+}
+
 const byGrade = new Map();
 for (const c of DATA.cases) byGrade.set(c.grade, (byGrade.get(c.grade) || 0) + 1);
 
@@ -187,6 +217,25 @@ const used = DATA.cases.filter((c) => (c.uses || []).length);
 if (used.length) {
   console.log("\nNumbers brought in by the standard rather than the problem:");
   for (const c of used) console.log(`  ${c.id}  ${c.uses.join(", ")}`);
+}
+
+let haveN = 0;
+let needN = 0;
+const gaps = [];
+for (const g of GRADES) {
+  const n = need.get(g) ?? new Set();
+  const h = got.get(g) ?? new Set();
+  haveN += h.size;
+  needN += n.size;
+  const missing = [...n].filter((s) => !h.has(s));
+  if (missing.length) gaps.push(`  ${g.padEnd(13)} ${h.size}/${n.size}  missing ${missing.join(" ")}`);
+}
+console.log(`\nStrand coverage: ${haveN} of ${needN} — one case per strand per grade.`);
+if (gaps.length) {
+  console.log(`${needN - haveN} still to write:`);
+  for (const g of gaps) console.log(g);
+} else {
+  console.log("Every strand in every grade has a case.");
 }
 
 if (problems.length) {

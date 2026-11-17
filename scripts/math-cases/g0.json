@@ -13,19 +13,48 @@
   ],
   "question": "How many children have no chair?",
   "options": [
-   { "label": "2 children", "value": "2" },
-   { "label": "6 children", "value": "6" },
-   { "label": "8 children", "value": "8" },
-   { "label": "14 children", "value": "14" }
+   {
+    "label": "2 children",
+    "value": "2"
+   },
+   {
+    "label": "6 children",
+    "value": "6"
+   },
+   {
+    "label": "8 children",
+    "value": "8"
+   },
+   {
+    "label": "14 children",
+    "value": "14"
+   }
   ],
   "answer": 0,
   "chk": "8-6",
-  "decider": [1],
-  "proof": [0, 1],
+  "decider": [
+   1
+  ],
+  "proof": [
+   0,
+   1
+  ],
   "rules_out": [
-   { "option": 1, "because": 1, "why": "6 is how many chairs there are, not how many children are left standing." },
-   { "option": 2, "because": 0, "why": "8 is every child who came, and 6 of them do get a chair." },
-   { "option": 3, "because": 0, "why": "Only 8 children came, so 14 of them cannot be left out." }
+   {
+    "option": 1,
+    "because": 1,
+    "why": "6 is how many chairs there are, not how many children are left standing."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "8 is every child who came, and 6 of them do get a chair."
+   },
+   {
+    "option": 3,
+    "because": 0,
+    "why": "Only 8 children came, so 14 of them cannot be left out."
+   }
   ],
   "explain": "Match one child to one chair. Six pairs up, and the children left over are the answer: 8 take away 6 is 2.",
   "debate": {
@@ -37,18 +66,467 @@
    ],
    "question": "How many children have no chair? Say which words you used.",
    "options": [
-    { "label": "2 children", "value": "2" },
-    { "label": "3 children", "value": "3" },
-    { "label": "0 children", "value": "0" }
+    {
+     "label": "2 children",
+     "value": "2"
+    },
+    {
+     "label": "3 children",
+     "value": "3"
+    },
+    {
+     "label": "0 children",
+     "value": "0"
+    }
    ],
    "opened_by": 2,
-   "open": [0, 1, 2],
+   "open": [
+    0,
+    1,
+    2
+   ],
    "arguments": [
-    { "option": 0, "evidence": [0, 1], "against": 2, "why": "8 children and 6 chairs leaves 2 children standing." },
-    { "option": 1, "evidence": [0, 1, 3], "against": 2, "why": "A broken chair is not a chair to sit on, so only 5 of them work: 8 take away 5 is 3." },
-    { "option": 2, "evidence": [0, 1, 2], "against": 3, "why": "2 children chose the rug, so the other 6 each had one of the 6 chairs and nobody was left out." }
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "8 children and 6 chairs leaves 2 children standing."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      1,
+      3
+     ],
+     "against": 2,
+     "why": "A broken chair is not a chair to sit on, so only 5 of them work: 8 take away 5 is 3."
+    },
+    {
+     "option": 2,
+     "evidence": [
+      0,
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "2 children chose the rug, so the other 6 each had one of the 6 chairs and nobody was left out."
+    }
    ],
    "note": "All three can be argued. What settles it is what counts as a chair and what counts as wanting one, so make the child say which words they used."
+  }
+ },
+ {
+  "id": "gK-c2",
+  "grade": 0,
+  "code": "K.CC.4",
+  "tag": "🧊 counting",
+  "title": "The Case of the Last Number Said",
+  "given": [
+   "Ana counts the blocks: 1, 2, 3, 4, 5.",
+   "She touches one block for each number she says.",
+   "She does not miss a block.",
+   "She does not touch any block twice."
+  ],
+  "question": "How many blocks are there?",
+  "options": [
+   {
+    "label": "5 blocks",
+    "value": "5"
+   },
+   {
+    "label": "1 block",
+    "value": "1"
+   },
+   {
+    "label": "4 blocks",
+    "value": "4"
+   },
+   {
+    "label": "15 blocks",
+    "value": "15"
+   }
+  ],
+  "answer": 0,
+  "chk": "5",
+  "decider": [
+   0,
+   1
+  ],
+  "proof": [
+   0,
+   1
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 0,
+    "why": "1 is the first number Ana said, and she kept going after it."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "4 is the number before the last one. She touched a block after she said it."
+   },
+   {
+    "option": 3,
+    "because": 1,
+    "why": "15 adds up all the numbers she said. Counting says each number once, it does not collect them."
+   }
+  ],
+  "explain": "The last number you say when you count is how many there are. Ana said 5 last, and she touched one block for each number, so there are 5 blocks.",
+  "debate": {
+   "given": [
+    "Ana counts the blocks: 1, 2, 3, 4, 5.",
+    "She touched one block two times.",
+    "There is a block under the table.",
+    "Ana says there are 5."
+   ],
+   "question": "How many blocks are there? Say how you know.",
+   "options": [
+    {
+     "label": "4 blocks",
+     "value": "4"
+    },
+    {
+     "label": "5 blocks",
+     "value": "5"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "She said 5, but she touched one block two times, so only 4 blocks were on the table."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      2
+     ],
+     "against": 1,
+     "why": "4 on the table and 1 under it makes 5, so Ana's answer is right even though her counting was not."
+    }
+   ],
+   "note": "Ana gets 5 and 5 may well be correct, for a reason that has nothing to do with how she counted. Worth saying out loud: a right answer and good counting are two different things."
+  }
+ },
+ {
+  "id": "gK-c3",
+  "grade": 0,
+  "code": "K.NBT.1",
+  "tag": "🔢 ten and some more",
+  "title": "The Case of the Full Frame",
+  "given": [
+   "There are 13 counters on the mat.",
+   "10 counters fill the ten-frame.",
+   "The rest sit outside the frame.",
+   "Every counter is on the mat somewhere."
+  ],
+  "question": "How many counters are outside the frame?",
+  "options": [
+   {
+    "label": "3 counters",
+    "value": "3"
+   },
+   {
+    "label": "10 counters",
+    "value": "10"
+   },
+   {
+    "label": "13 counters",
+    "value": "13"
+   },
+   {
+    "label": "23 counters",
+    "value": "23"
+   }
+  ],
+  "answer": 0,
+  "chk": "13-10",
+  "decider": [
+   1
+  ],
+  "proof": [
+   0,
+   1
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 1,
+    "why": "10 is how many fit inside the frame, not how many are left over."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "13 is every counter on the mat, and 10 of them are in the frame."
+   },
+   {
+    "option": 3,
+    "because": 0,
+    "why": "Adding makes more counters than there are. There are only 13 on the mat."
+   }
+  ],
+  "explain": "A teen number is ten and some more. 13 is the 10 that fills the frame and 3 more outside it, which is the whole idea behind every teen number.",
+  "debate": {
+   "given": [
+    "The box says there are 13 counters.",
+    "10 counters fill the ten-frame.",
+    "2 counters rolled under the mat.",
+    "You can see 1 counter outside the frame."
+   ],
+   "question": "How many counters are outside the frame?",
+   "options": [
+    {
+     "label": "3 counters",
+     "value": "3"
+    },
+    {
+     "label": "1 counter",
+     "value": "1"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 3,
+     "why": "The box says 13 and 10 are in the frame, so 3 are outside it — and 2 of those 3 are under the mat."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 0,
+     "why": "Only 1 counter can be seen outside the frame. The ones under the mat are not on the mat at all."
+    }
+   ],
+   "note": "Both children are counting carefully; they disagree about whether a counter you cannot see still counts. Ask what the box tells you that your eyes do not."
+  }
+ },
+ {
+  "id": "gK-c4",
+  "grade": 0,
+  "code": "K.MD.2",
+  "tag": "📏 longer",
+  "title": "The Case of the Two Pencils",
+  "given": [
+   "The red pencil is 8 cubes long.",
+   "The blue pencil is 5 cubes long.",
+   "All the cubes are the same size.",
+   "Both pencils were lined up at the same starting line."
+  ],
+  "question": "How many cubes longer is the red pencil?",
+  "options": [
+   {
+    "label": "3 cubes longer",
+    "value": "3"
+   },
+   {
+    "label": "8 cubes longer",
+    "value": "8"
+   },
+   {
+    "label": "5 cubes longer",
+    "value": "5"
+   },
+   {
+    "label": "13 cubes longer",
+    "value": "13"
+   }
+  ],
+  "answer": 0,
+  "chk": "8-5",
+  "decider": [
+   3
+  ],
+  "proof": [
+   0,
+   1,
+   3
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 0,
+    "why": "8 is how long the red pencil is, not how much longer it is than the blue one."
+   },
+   {
+    "option": 2,
+    "because": 1,
+    "why": "5 is how long the blue pencil is. The question asks for the difference between them."
+   },
+   {
+    "option": 3,
+    "because": 3,
+    "why": "Adding the two lengths makes one long pencil. Comparing takes one away from the other."
+   }
+  ],
+  "explain": "Line them up at the same end and look at the gap. The red pencil runs 8 cubes and the blue one stops at 5, so the gap is 3 cubes.",
+  "debate": {
+   "given": [
+    "The red pencil measures 8 cubes.",
+    "The blue pencil measures 5 cubes.",
+    "The blue pencil was not lined up at the starting line — it began one cube past it.",
+    "All the cubes are the same size."
+   ],
+   "question": "How much longer is the red pencil? Say what you measured.",
+   "options": [
+    {
+     "label": "3 cubes",
+     "value": "3"
+    },
+    {
+     "label": "2 cubes",
+     "value": "2"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "The numbers on the page are 8 and 5, and 8 take away 5 is 3 cubes of difference."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      2,
+      3
+     ],
+     "against": 1,
+     "why": "Blue started a cube late, so it is really 6 cubes long and the gap is only 2."
+    }
+   ],
+   "note": "This is the whole of early measurement in one argument: a number only means a length if you started at the end of the thing. Line them up again in front of the class."
+  }
+ },
+ {
+  "id": "gK-c5",
+  "grade": 0,
+  "code": "K.G.2",
+  "tag": "🔺 shapes",
+  "title": "The Case of the Triangle Standing on Its Point",
+  "given": [
+   "There are 5 shapes on the mat.",
+   "3 of them have exactly 3 straight sides and 3 corners.",
+   "1 of those 3 is turned so a corner points down.",
+   "The other 2 shapes are a square and a circle."
+  ],
+  "question": "How many triangles are on the mat?",
+  "options": [
+   {
+    "label": "3 triangles",
+    "value": "3"
+   },
+   {
+    "label": "2 triangles",
+    "value": "2"
+   },
+   {
+    "label": "5 triangles",
+    "value": "5"
+   }
+  ],
+  "answer": 0,
+  "chk": "3",
+  "decider": [
+   1
+  ],
+  "proof": [
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "A triangle turned on its point is still a triangle. It still has 3 straight sides and 3 corners."
+   },
+   {
+    "option": 2,
+    "because": 3,
+    "why": "5 counts every shape on the mat, and a square and a circle are not triangles."
+   }
+  ],
+  "explain": "A shape is a triangle because of what it has, not how it sits: 3 straight sides and 3 corners. Turning one upside down changes nothing, so all 3 count.",
+  "debate": {
+   "given": [
+    "There are 5 shapes on the mat.",
+    "3 of them have 3 straight sides.",
+    "On 1 of those 3 there is a small gap where two sides should meet.",
+    "The other 2 shapes are a square and a circle."
+   ],
+   "question": "How many triangles are on the mat?",
+   "options": [
+    {
+     "label": "3 triangles",
+     "value": "3"
+    },
+    {
+     "label": "2 triangles",
+     "value": "2"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "It has 3 straight sides and it was drawn to be a triangle. The gap is how the pen slipped, not what the shape is."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 1,
+     "why": "A triangle is closed all the way round. A shape with a gap is a path, and you could walk out of it."
+    }
+   ],
+   "note": "Children sort this one out faster than adults expect. The question underneath it is what a shape is: what somebody meant to draw, or what is actually on the paper."
   }
  }
 ]

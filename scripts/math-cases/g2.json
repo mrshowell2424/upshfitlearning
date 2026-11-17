@@ -13,19 +13,49 @@
   ],
   "question": "How many pennies of change should Sam get?",
   "options": [
-   { "label": "15 pennies", "value": "15" },
-   { "label": "99 pennies", "value": "99" },
-   { "label": "9 pennies", "value": "9" },
-   { "label": "84 pennies", "value": "84" }
+   {
+    "label": "15 pennies",
+    "value": "15"
+   },
+   {
+    "label": "99 pennies",
+    "value": "99"
+   },
+   {
+    "label": "9 pennies",
+    "value": "9"
+   },
+   {
+    "label": "84 pennies",
+    "value": "84"
+   }
   ],
   "answer": 0,
   "chk": "3*25+2*10+4*1-84",
-  "decider": [1],
-  "proof": [0, 1, 2],
+  "decider": [
+   1
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
   "rules_out": [
-   { "option": 1, "because": 1, "why": "99 cents is what Sam handed over. The price of the book still has to come off it." },
-   { "option": 2, "because": 2, "why": "9 counts the coins. The line of values says what each coin is worth, and a quarter is not worth the same as a penny." },
-   { "option": 3, "because": 1, "why": "84 cents is the price of the book, not the change from it." }
+   {
+    "option": 1,
+    "because": 1,
+    "why": "99 cents is what Sam handed over. The price of the book still has to come off it."
+   },
+   {
+    "option": 2,
+    "because": 2,
+    "why": "9 counts the coins. The line of values says what each coin is worth, and a quarter is not worth the same as a penny."
+   },
+   {
+    "option": 3,
+    "because": 1,
+    "why": "84 cents is the price of the book, not the change from it."
+   }
   ],
   "explain": "Turn the coins into cents first: 75 and 20 and 4 make 99. The change is what is left once the price comes off: 99 take away 84 is 15 pennies.",
   "debate": {
@@ -37,16 +67,364 @@
    ],
    "question": "How much change should Sam get? Say which number you trusted, and why.",
    "options": [
-    { "label": "15 cents", "value": "15" },
-    { "label": "20 cents", "value": "20" }
+    {
+     "label": "15 cents",
+     "value": "15"
+    },
+    {
+     "label": "20 cents",
+     "value": "20"
+    }
    ],
    "opened_by": 2,
-   "open": [0, 1],
+   "open": [
+    0,
+    1
+   ],
    "arguments": [
-    { "option": 0, "evidence": [0, 1, 3], "against": 2, "why": "The sign is the price the shop put on the book: 99 take away 84 is 15." },
-    { "option": 1, "evidence": [0, 2, 3], "against": 1, "why": "The till is the price the shop is charging now: 99 take away 79 is 20." }
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1,
+      3
+     ],
+     "against": 2,
+     "why": "The sign is the price the shop put on the book: 99 take away 84 is 15."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      2,
+      3
+     ],
+     "against": 1,
+     "why": "The till is the price the shop is charging now: 99 take away 79 is 20."
+    }
    ],
    "note": "Both children can do the subtraction. What they are arguing about is which number is the price, and that is an argument shops have with customers every day."
+  }
+ },
+ {
+  "id": "g2-c2",
+  "grade": 2,
+  "code": "2.OA.1",
+  "tag": "📚 shelf",
+  "title": "The Case of the Shelf That Kept Changing",
+  "given": [
+   "There were 24 books on the shelf.",
+   "The class took 9 of them away to read.",
+   "Later, 5 books were put back.",
+   "Then 6 new books arrived from the library."
+  ],
+  "question": "How many books are on the shelf now?",
+  "options": [
+   {
+    "label": "26 books",
+    "value": "26"
+   },
+   {
+    "label": "20 books",
+    "value": "20"
+   },
+   {
+    "label": "15 books",
+    "value": "15"
+   },
+   {
+    "label": "44 books",
+    "value": "44"
+   }
+  ],
+  "answer": 0,
+  "chk": "24-9+5+6",
+  "decider": [
+   3
+  ],
+  "proof": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 3,
+    "why": "20 is the shelf after the books came back but before the new ones arrived. There is one more step."
+   },
+   {
+    "option": 2,
+    "because": 2,
+    "why": "15 stops after the class took books away, and 5 of those came back afterwards."
+   },
+   {
+    "option": 3,
+    "because": 1,
+    "why": "44 adds every number in the problem, which counts the 9 that left as if they had arrived."
+   }
+  ],
+  "explain": "Take the events in the order they happened: 24, take 9 to get 15, put 5 back to get 20, add 6 new to get 26. The order of the sentences tells you which way each number goes.",
+  "debate": {
+   "given": [
+    "There were 24 books on the shelf.",
+    "The class took 9 of them away to read.",
+    "Later, 5 books were put back.",
+    "6 new books arrived but are still in their box by the door."
+   ],
+   "question": "How many books are on the shelf?",
+   "options": [
+    {
+     "label": "26 books",
+     "value": "26"
+    },
+    {
+     "label": "20 books",
+     "value": "20"
+    }
+   ],
+   "opened_by": 3,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "The 6 new books belong to this shelf and have arrived in the room. Counting what the class now has gives 26."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      1,
+      3
+     ],
+     "against": 0,
+     "why": "The question asks about the shelf, and the new books are in a box by the door. On the shelf there are 20."
+    }
+   ],
+   "note": "Every child here can do the arithmetic. What they are deciding is where the shelf ends, and that is a reading question wearing a maths hat."
+  }
+ },
+ {
+  "id": "g2-c3",
+  "grade": 2,
+  "code": "2.NBT.5",
+  "tag": "🫙 marbles",
+  "title": "The Case of the Marble Jar",
+  "given": [
+   "The jar held 62 marbles this morning.",
+   "Leo took out 28 of them.",
+   "Later he put 15 marbles back in.",
+   "Nobody else went near the jar."
+  ],
+  "question": "How many marbles are in the jar now?",
+  "options": [
+   {
+    "label": "49 marbles",
+    "value": "49"
+   },
+   {
+    "label": "34 marbles",
+    "value": "34"
+   },
+   {
+    "label": "19 marbles",
+    "value": "19"
+   },
+   {
+    "label": "105 marbles",
+    "value": "105"
+   }
+  ],
+  "answer": 0,
+  "chk": "62-28+15",
+  "decider": [
+   2
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "34 is the jar after Leo took marbles out. He put 15 back in afterwards."
+   },
+   {
+    "option": 2,
+    "because": 2,
+    "why": "19 takes the 15 away as well. They went into the jar, so they are added."
+   },
+   {
+    "option": 3,
+    "because": 1,
+    "why": "105 adds all three numbers, which treats the 28 that left as if they had arrived."
+   }
+  ],
+  "explain": "Work the jar forward in time: 62, take 28 away to get 34, put 15 back to get 49. Each sentence either adds to the jar or takes from it, and the words say which.",
+  "debate": {
+   "given": [
+    "The jar held 62 marbles this morning.",
+    "Leo took out 28 of them.",
+    "Later he put 15 marbles back in.",
+    "4 of the marbles he put back came from a different jar."
+   ],
+   "question": "How many of this jar's own marbles are in it now?",
+   "options": [
+    {
+     "label": "49 marbles",
+     "value": "49"
+    },
+    {
+     "label": "45 marbles",
+     "value": "45"
+    }
+   ],
+   "opened_by": 3,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "Count what is in the jar. Forty-nine marbles are in there, and a marble does not change jars by being moved."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      1,
+      3
+     ],
+     "against": 2,
+     "why": "The question says this jar's own marbles, and 4 of the 49 belong somewhere else: 49 take away 4 is 45."
+    }
+   ],
+   "note": "Same jar, same arithmetic, two readings of the question. Read the question aloud twice and ask which of the two it is asking."
+  }
+ },
+ {
+  "id": "g2-c4",
+  "grade": 2,
+  "code": "2.G.3",
+  "tag": "🟦 equal parts",
+  "title": "The Case of the Matching Shaded Parts",
+  "given": [
+   "Ana's rectangle is split into 3 equal parts and she shades 2 of them.",
+   "Ben's rectangle is exactly the same size as Ana's.",
+   "Ben's rectangle is split into 6 equal parts.",
+   "They want the same amount of their rectangle shaded."
+  ],
+  "question": "How many of Ben's parts should he shade?",
+  "options": [
+   {
+    "label": "4 parts",
+    "value": "4"
+   },
+   {
+    "label": "2 parts",
+    "value": "2"
+   },
+   {
+    "label": "3 parts",
+    "value": "3"
+   },
+   {
+    "label": "6 parts",
+    "value": "6"
+   }
+  ],
+  "answer": 0,
+  "chk": "6/3*2",
+  "decider": [
+   1
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "2 of Ben's parts is the same number of parts, but his parts are half the size of Ana's, so it is half as much paper."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "3 of Ben's 6 parts is half the rectangle, and Ana shaded 2 of 3, which is more than half."
+   },
+   {
+    "option": 3,
+    "because": 2,
+    "why": "6 parts is Ben's whole rectangle, and Ana left one of her three parts unshaded."
+   }
+  ],
+  "explain": "The rectangles are the same size, so each of Ana's thirds covers two of Ben's sixths. Two thirds is therefore four sixths, and Ben shades 4.",
+  "debate": {
+   "given": [
+    "Ana's rectangle is split into 3 equal parts and she shades 2 of them.",
+    "Ben's rectangle is split into 6 equal parts.",
+    "Ben's rectangle is twice as long as Ana's.",
+    "They want the same amount of paper covered."
+   ],
+   "question": "How many of Ben's parts should he shade? Say what you matched.",
+   "options": [
+    {
+     "label": "4 parts",
+     "value": "4"
+    },
+    {
+     "label": "2 parts",
+     "value": "2"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "To shade the same fraction of his own rectangle, Ben needs two thirds of it, and two thirds of six parts is four."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      2,
+      3
+     ],
+     "against": 0,
+     "why": "Ben's rectangle is twice as big, so each of his sixths is exactly the size of one of Ana's thirds. Two of them cover the same paper she did."
+    }
+   ],
+   "note": "Two thirds of a bigger rectangle is more paper than two thirds of a smaller one. This is the first time a fraction stops meaning anything until you say what it is a fraction of, and it is worth slowing down on."
   }
  }
 ]

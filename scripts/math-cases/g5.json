@@ -13,19 +13,48 @@
   ],
   "question": "Which item was scanned twice? Give its price in dollars.",
   "options": [
-   { "label": "the bread, 2.75", "value": "2.75" },
-   { "label": "the milk, 3.49", "value": "3.49" },
-   { "label": "the eggs, 4.20", "value": "4.20" },
-   { "label": "none of them, 10.44", "value": "10.44" }
+   {
+    "label": "the bread, 2.75",
+    "value": "2.75"
+   },
+   {
+    "label": "the milk, 3.49",
+    "value": "3.49"
+   },
+   {
+    "label": "the eggs, 4.20",
+    "value": "4.20"
+   },
+   {
+    "label": "none of them, 10.44",
+    "value": "10.44"
+   }
   ],
   "answer": 0,
   "chk": "13.19-(3.49+2.75+4.20)",
-  "decider": [1],
-  "proof": [0, 1],
+  "decider": [
+   1
+  ],
+  "proof": [
+   0,
+   1
+  ],
   "rules_out": [
-   { "option": 1, "because": 1, "why": "Milk twice would make the total 13.93, and the receipt says 13.19." },
-   { "option": 2, "because": 1, "why": "Eggs twice would make the total 14.64, and the receipt says 13.19." },
-   { "option": 3, "because": 1, "why": "10.44 is what the three items come to once each, which is what the receipt should have printed, not what it did print." }
+   {
+    "option": 1,
+    "because": 1,
+    "why": "Milk twice would make the total 13.93, and the receipt says 13.19."
+   },
+   {
+    "option": 2,
+    "because": 1,
+    "why": "Eggs twice would make the total 14.64, and the receipt says 13.19."
+   },
+   {
+    "option": 3,
+    "because": 1,
+    "why": "10.44 is what the three items come to once each, which is what the receipt should have printed, not what it did print."
+   }
   ],
   "explain": "Add the three listed prices: 10.44. The receipt took 13.19, so the overcharge is 13.19 minus 10.44, which is 2.75 — and 2.75 is the bread.",
   "debate": {
@@ -37,18 +66,463 @@
    ],
    "question": "How much, if anything, should the shop refund? Defend the number.",
    "options": [
-    { "label": "refund 2.75", "value": "2.75" },
-    { "label": "refund nothing", "value": "0" },
-    { "label": "the customer owes 2.75", "value": "-2.75" }
+    {
+     "label": "refund 2.75",
+     "value": "2.75"
+    },
+    {
+     "label": "refund nothing",
+     "value": "0"
+    },
+    {
+     "label": "the customer owes 2.75",
+     "value": "-2.75"
+    }
    ],
    "opened_by": 3,
-   "open": [0, 1, 2],
+   "open": [
+    0,
+    1,
+    2
+   ],
    "arguments": [
-    { "option": 0, "evidence": [0, 1], "against": 3, "why": "The three listed prices come to 10.44. The receipt took 2.75 more than it lists, and a charge that is not printed should come back." },
-    { "option": 1, "evidence": [1, 3], "against": 0, "why": "The 2.75 is the crate charge on a delivery. The total is right; the receipt simply does not print that line." },
-    { "option": 2, "evidence": [0, 2, 3], "against": 0, "why": "If the 2.75 is the crate, then the second loaf in the bag has not been paid for at all, and the customer owes 2.75 rather than being owed it." }
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 3,
+     "why": "The three listed prices come to 10.44. The receipt took 2.75 more than it lists, and a charge that is not printed should come back."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      3
+     ],
+     "against": 0,
+     "why": "The 2.75 is the crate charge on a delivery. The total is right; the receipt simply does not print that line."
+    },
+    {
+     "option": 2,
+     "evidence": [
+      0,
+      2,
+      3
+     ],
+     "against": 0,
+     "why": "If the 2.75 is the crate, then the second loaf in the bag has not been paid for at all, and the customer owes 2.75 rather than being owed it."
+    }
    ],
    "note": "Every one of these is arithmetic a fifth grader can do. What they are arguing about is which story the numbers are evidence for, which is the whole of modelling."
+  }
+ },
+ {
+  "id": "g5-c2",
+  "grade": 5,
+  "code": "5.OA.1",
+  "tag": "🎟️ the sign",
+  "title": "The Case of the Sign With No Brackets",
+  "given": [
+   "The expression is 4 + 3 × 6.",
+   "There are no brackets anywhere in it.",
+   "Multiplication is done before addition.",
+   "Every number in it is a whole number."
+  ],
+  "question": "What does the expression equal?",
+  "options": [
+   {
+    "label": "22",
+    "value": "22"
+   },
+   {
+    "label": "42",
+    "value": "42"
+   },
+   {
+    "label": "18",
+    "value": "18"
+   },
+   {
+    "label": "13",
+    "value": "13"
+   }
+  ],
+  "answer": 0,
+  "chk": "4+3*6",
+  "decider": [
+   2
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "42 is what you get working strictly left to right, which is (4 + 3) × 6. There are no brackets to make that happen."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "18 is 3 times 6 on its own, and the 4 is still in the expression."
+   },
+   {
+    "option": 3,
+    "because": 0,
+    "why": "13 adds all three numbers, treating the times sign as a plus."
+   }
+  ],
+  "explain": "Multiplication binds tighter than addition, so 3 × 6 is a single quantity of 18 and the 4 is added to it: 22. Brackets exist precisely to overrule that when you want (4 + 3) × 6.",
+  "debate": {
+   "given": [
+    "A sign at the fair reads: 4 + 3 × 6 free tickets.",
+    "There are no brackets anywhere on the sign.",
+    "The manager says she meant 4 tickets, and then 3 groups of 6 more.",
+    "A customer read it left to right and worked out 42."
+   ],
+   "question": "How many tickets does the sign promise? Defend it.",
+   "options": [
+    {
+     "label": "22 tickets",
+     "value": "22"
+    },
+    {
+     "label": "42 tickets",
+     "value": "42"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "Written without brackets, the expression means 4 + 18. That is the convention every reader of mathematics is entitled to assume, and it is what the manager meant."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      3
+     ],
+     "against": 2,
+     "why": "A sign is read by ordinary people left to right. The shop wrote something ambiguous in public, and the customer's reading is a reasonable one."
+    }
+   ],
+   "note": "The mathematics has one answer and the argument is about who carries the cost of an ambiguous sign. Both are worth having: convention is what makes writing maths possible, and it only works when the reader knows it."
+  }
+ },
+ {
+  "id": "g5-c3",
+  "grade": 5,
+  "code": "5.NF.2",
+  "tag": "🥣 baking",
+  "title": "The Case of the Flour That Is Not Enough Yet",
+  "given": [
+   "The recipe needs 3/4 of a cup of flour.",
+   "Sam has already put in 1/3 of a cup.",
+   "The cup is the same size every time.",
+   "Nothing else has gone into the bowl."
+  ],
+  "question": "How much more flour does Sam need, in cups?",
+  "options": [
+   {
+    "label": "5/12 of a cup",
+    "value": "5/12"
+   },
+   {
+    "label": "2 cups",
+    "value": "2"
+   },
+   {
+    "label": "13/12 of a cup",
+    "value": "13/12"
+   },
+   {
+    "label": "1/4 of a cup",
+    "value": "1/4"
+   }
+  ],
+  "answer": 0,
+  "chk": "3/4-1/3",
+  "decider": [
+   1
+  ],
+  "proof": [
+   0,
+   1
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 0,
+    "why": "2 comes from taking the tops and the bottoms away separately. It would mean Sam needs more than the recipe asks for in total."
+   },
+   {
+    "option": 2,
+    "because": 1,
+    "why": "13/12 adds the two amounts instead of comparing them. That is more than a whole cup, and the recipe only wants 3/4."
+   },
+   {
+    "option": 3,
+    "because": 1,
+    "why": "1/4 is what is left of a cup after 3/4. Sam has put in 1/3, not 3/4."
+   }
+  ],
+  "explain": "Twelfths hold both: 3/4 is 9/12 and 1/3 is 4/12. The gap between them is 5/12 of a cup. A common denominator is just a unit both amounts can be counted in.",
+  "debate": {
+   "given": [
+    "The recipe needs 3/4 of a cup of flour.",
+    "Sam has already put in 1/3 of a cup.",
+    "Sam's measuring cup is marked only in quarters.",
+    "Nothing else has gone into the bowl."
+   ],
+   "question": "How much more flour should Sam add? Say what you would do at the counter.",
+   "options": [
+    {
+     "label": "5/12 of a cup",
+     "value": "5/12"
+    },
+    {
+     "label": "1/2 a cup",
+     "value": "1/2"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "The exact shortfall is 9/12 minus 4/12, which is 5/12 of a cup, and that is the honest answer to what is missing."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      2
+     ],
+     "against": 0,
+     "why": "There is no 5/12 mark on the cup. Half is the nearest mark and it is closer to 5/12 than a quarter is, so half is what actually gets added."
+    }
+   ],
+   "note": "5/12 is right and unmeasurable with the equipment in the room. Ask which is the better answer for a person holding the cup, and whether being slightly over matters in bread."
+  }
+ },
+ {
+  "id": "g5-c4",
+  "grade": 5,
+  "code": "5.MD.5",
+  "tag": "📦 the box",
+  "title": "The Case of the Box That Holds Less Than It Measures",
+  "given": [
+   "The box is 6 inches long, 4 inches wide and 3 inches tall.",
+   "The cubes are 1 inch on every side.",
+   "The box is a rectangular box with square corners.",
+   "The cubes are packed in with no gaps."
+  ],
+  "question": "How many cubes fit in the box?",
+  "options": [
+   {
+    "label": "72 cubes",
+    "value": "72"
+   },
+   {
+    "label": "24 cubes",
+    "value": "24"
+   },
+   {
+    "label": "13 cubes",
+    "value": "13"
+   },
+   {
+    "label": "108 cubes",
+    "value": "108"
+   }
+  ],
+  "answer": 0,
+  "chk": "6*4*3",
+  "decider": [
+   0
+  ],
+  "proof": [
+   0,
+   1,
+   3
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 0,
+    "why": "24 is one layer on the bottom, 6 by 4. The box is 3 inches tall, so three layers go in."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "13 adds the three measurements. Volume is how many cubes fill the space, which is a multiplication."
+   },
+   {
+    "option": 3,
+    "because": 0,
+    "why": "108 is the area of the outside of the box. That is what you would wrap it in, not what goes inside."
+   }
+  ],
+  "explain": "Build it in layers. The bottom holds 6 by 4, which is 24 cubes, and the box is 3 inches tall, so three of those layers stack: 72 cubes.",
+  "debate": {
+   "given": [
+    "The box measures 6 inches by 4 inches by 3 inches on the outside.",
+    "The cubes are 1 inch on every side.",
+    "There is a padded lining 1 inch thick across the bottom of the box.",
+    "The cubes have to sit flat."
+   ],
+   "question": "How many cubes actually fit? Say what you measured.",
+   "options": [
+    {
+     "label": "72 cubes",
+     "value": "72"
+    },
+    {
+     "label": "48 cubes",
+     "value": "48"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "Six by four by three is 72, and those are the measurements the problem gives for the box."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      2,
+      3
+     ],
+     "against": 0,
+     "why": "The lining eats an inch of the height, so only two layers of cubes fit above it: 6 by 4 by 2 is 48."
+    }
+   ],
+   "note": "The volume formula is not in dispute; which height to put into it is. Outside measurements and inside space are different numbers for any box with a wall, which is every real box."
+  }
+ },
+ {
+  "id": "g5-c5",
+  "grade": 5,
+  "code": "5.G.4",
+  "tag": "🟪 the family tree",
+  "title": "The Case of the Rectangle in the Textbook",
+  "given": [
+   "There are 5 quadrilaterals on the board.",
+   "3 of them have 4 right angles.",
+   "2 of those 3 also have 4 equal sides.",
+   "The other 2 shapes have no right angles at all."
+  ],
+  "question": "How many of the shapes are rectangles?",
+  "options": [
+   {
+    "label": "3 shapes",
+    "value": "3"
+   },
+   {
+    "label": "1 shape",
+    "value": "1"
+   },
+   {
+    "label": "5 shapes",
+    "value": "5"
+   }
+  ],
+  "answer": 0,
+  "chk": "3",
+  "decider": [
+   1
+  ],
+  "proof": [
+   1
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "1 counts only the shape that is a rectangle and not a square. The two squares have 4 right angles too, so they are rectangles as well."
+   },
+   {
+    "option": 2,
+    "because": 3,
+    "why": "5 counts every quadrilateral on the board, and 2 of them have no right angles."
+   }
+  ],
+  "explain": "A rectangle is a quadrilateral with four right angles, and that is the entire definition. A square passes it and adds a condition of its own, so every square is a rectangle — the categories sit inside one another rather than beside one another.",
+  "debate": {
+   "given": [
+    "There are 5 quadrilaterals on the board.",
+    "3 of them have 4 right angles.",
+    "2 of those 3 also have 4 equal sides.",
+    "In the class textbook, the picture labelled 'rectangle' is always a long shape and never a square."
+   ],
+   "question": "How many rectangles are on the board? Say which meaning you used.",
+   "options": [
+    {
+     "label": "3 shapes",
+     "value": "3"
+    },
+    {
+     "label": "1 shape",
+     "value": "1"
+    }
+   ],
+   "opened_by": 3,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "By the definition, four right angles makes a rectangle. The squares have four right angles, so all 3 count."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      3
+     ],
+     "against": 1,
+     "why": "Every picture the class has been shown of a rectangle is a long shape. In the way this room has used the word, a square is not one of them."
+    }
+   ],
+   "note": "This is where a lot of children quietly lose geometry: the textbook teaches by picture and the definition says something wider. Say plainly that the definition wins, and that the pictures have been misleading them."
   }
  }
 ]

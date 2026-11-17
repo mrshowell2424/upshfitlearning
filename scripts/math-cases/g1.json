@@ -13,19 +13,50 @@
   ],
   "question": "How many books are in the box now?",
   "options": [
-   { "label": "13 books", "value": "13" },
-   { "label": "9 books", "value": "9" },
-   { "label": "25 books", "value": "25" },
-   { "label": "5 books", "value": "5" }
+   {
+    "label": "13 books",
+    "value": "13"
+   },
+   {
+    "label": "9 books",
+    "value": "9"
+   },
+   {
+    "label": "25 books",
+    "value": "25"
+   },
+   {
+    "label": "5 books",
+    "value": "5"
+   }
   ],
   "answer": 0,
   "chk": "15-6+4",
-  "decider": [1, 2],
-  "proof": [0, 1, 2],
+  "decider": [
+   1,
+   2
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
   "rules_out": [
-   { "option": 1, "because": 2, "why": "9 is where the box was on Tuesday night. On Wednesday 4 books came back." },
-   { "option": 2, "because": 1, "why": "Adding all three numbers counts the books that left as if they had arrived." },
-   { "option": 3, "because": 2, "why": "The 4 books on Wednesday went in, so they are added, not taken away." }
+   {
+    "option": 1,
+    "because": 2,
+    "why": "9 is where the box was on Tuesday night. On Wednesday 4 books came back."
+   },
+   {
+    "option": 2,
+    "because": 1,
+    "why": "Adding all three numbers counts the books that left as if they had arrived."
+   },
+   {
+    "option": 3,
+    "because": 2,
+    "why": "The 4 books on Wednesday went in, so they are added, not taken away."
+   }
   ],
   "explain": "Walk the days in order: 15, take 6 away to get 9, put 4 back to get 13. The order of the days tells you which way each number goes.",
   "debate": {
@@ -37,18 +68,377 @@
    ],
    "question": "How many of the box's own books are in the box now?",
    "options": [
-    { "label": "13 books", "value": "13" },
-    { "label": "11 books", "value": "11" },
-    { "label": "9 books", "value": "9" }
+    {
+     "label": "13 books",
+     "value": "13"
+    },
+    {
+     "label": "11 books",
+     "value": "11"
+    },
+    {
+     "label": "9 books",
+     "value": "9"
+    }
    ],
    "opened_by": 3,
-   "open": [0, 1, 2],
+   "open": [
+    0,
+    1,
+    2
+   ],
    "arguments": [
-    { "option": 0, "evidence": [0, 1, 2], "against": 3, "why": "Count what is in the box, whoever owns it. Four books went in: 15 take away 6, add 4, is 13." },
-    { "option": 1, "evidence": [0, 1, 3], "against": 2, "why": "The question asks for the box's own books. Only 2 of the 4 belong here: 15 take away 6, add 2, is 11." },
-    { "option": 2, "evidence": [0, 1], "against": 2, "why": "None of the 6 that left has come back. The books put back are different books, so the box's own count is 15 take away 6, which is 9." }
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "Count what is in the box, whoever owns it. Four books went in: 15 take away 6, add 4, is 13."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      1,
+      3
+     ],
+     "against": 2,
+     "why": "The question asks for the box's own books. Only 2 of the 4 belong here: 15 take away 6, add 2, is 11."
+    },
+    {
+     "option": 2,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "None of the 6 that left has come back. The books put back are different books, so the box's own count is 15 take away 6, which is 9."
+    }
    ],
    "note": "The argument is about what the question is counting: books in the box, or books that belong to the box. Both readings are honest, and saying which one you chose is the mathematics."
+  }
+ },
+ {
+  "id": "g1-c2",
+  "grade": 1,
+  "code": "1.NBT.2",
+  "tag": "🥤 straws",
+  "title": "The Case of the Bundled Straws",
+  "given": [
+   "Mia has 4 sticks of straws.",
+   "Every stick holds exactly 10 straws.",
+   "She also has 7 loose straws.",
+   "No straws are missing."
+  ],
+  "question": "How many straws does Mia have altogether?",
+  "options": [
+   {
+    "label": "47 straws",
+    "value": "47"
+   },
+   {
+    "label": "11 straws",
+    "value": "11"
+   },
+   {
+    "label": "74 straws",
+    "value": "74"
+   },
+   {
+    "label": "28 straws",
+    "value": "28"
+   }
+  ],
+  "answer": 0,
+  "chk": "4*10+7",
+  "decider": [
+   1
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 1,
+    "why": "11 adds the sticks to the loose straws as if a stick were one straw. A stick is worth 10."
+   },
+   {
+    "option": 2,
+    "because": 0,
+    "why": "74 is 7 sticks and 4 loose. Mia has it the other way round: 4 sticks and 7 loose."
+   },
+   {
+    "option": 3,
+    "because": 1,
+    "why": "28 multiplies the sticks by the loose straws, which counts neither the sticks nor the loose ones."
+   }
+  ],
+  "explain": "Four sticks of ten is 40 straws, and the 7 loose ones sit in the ones place: 47. The 4 and the 7 in 47 are the sticks and the loose straws, in that order.",
+  "debate": {
+   "given": [
+    "Mia has 4 sticks of straws and 7 loose ones.",
+    "Every full stick holds exactly 10 straws.",
+    "One of the sticks has come undone on the table.",
+    "Mia has not counted the undone one yet."
+   ],
+   "question": "How many straws does Mia have? Say what you counted.",
+   "options": [
+    {
+     "label": "47 straws",
+     "value": "47"
+    },
+    {
+     "label": "37 straws",
+     "value": "37"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 3,
+     "why": "A stick coming undone does not lose any straws. All 4 tens and the 7 ones are still on the table: 47."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      2,
+      3
+     ],
+     "against": 0,
+     "why": "Only 3 sticks are still bundled, and she has not counted the loose pile from the fourth. What she can count in tens is 30, plus the 7: 37."
+    }
+   ],
+   "note": "Tens are a way of holding numbers, not a property of the straws. A child who says 37 has noticed something real — the tens got harder to see — and the move is to ask whether anything left the table."
+  }
+ },
+ {
+  "id": "g1-c3",
+  "grade": 1,
+  "code": "1.MD.3",
+  "tag": "🕐 clock",
+  "title": "The Case of the Lesson That Ends Late",
+  "given": [
+   "The lesson starts at 9:00.",
+   "The lesson lasts 30 minutes.",
+   "The minute hand starts pointing straight up.",
+   "Nothing interrupts the lesson."
+  ],
+  "question": "How many minutes past 9 does the lesson end?",
+  "options": [
+   {
+    "label": "30 past — half past 9",
+    "value": "30"
+   },
+   {
+    "label": "60 past — 10 o'clock",
+    "value": "60"
+   },
+   {
+    "label": "3 past — 9:03",
+    "value": "3"
+   }
+  ],
+  "answer": 0,
+  "chk": "30",
+  "decider": [
+   1
+  ],
+  "proof": [
+   0,
+   1
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 1,
+    "why": "60 minutes is a whole hour. The lesson is 30 minutes, which is half of one."
+   },
+   {
+    "option": 2,
+    "because": 1,
+    "why": "30 minutes is thirty, not three. The minute hand goes all the way round to the 6."
+   }
+  ],
+  "explain": "Thirty minutes is half a turn of the minute hand: it starts straight up at the 12 and finishes straight down at the 6. That is half past 9.",
+  "debate": {
+   "given": [
+    "The lesson starts at 9:00.",
+    "The lesson lasts 30 minutes.",
+    "The teacher spent 5 minutes settling the class before starting.",
+    "The clock on the wall runs 2 minutes fast."
+   ],
+   "question": "What will the wall clock say when the lesson ends? Minutes past 9.",
+   "options": [
+    {
+     "label": "30 past",
+     "value": "30"
+    },
+    {
+     "label": "35 past",
+     "value": "35"
+    },
+    {
+     "label": "37 past",
+     "value": "37"
+    }
+   ],
+   "opened_by": 3,
+   "open": [
+    0,
+    1,
+    2
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 3,
+     "why": "The lesson is 30 minutes long and it started at 9:00, so it ends at half past. The settling happened before it started."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      2
+     ],
+     "against": 0,
+     "why": "The class was in the room from 9:00 and the settling was part of it, so 5 and 30 make 35 minutes gone."
+    },
+    {
+     "option": 2,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 1,
+     "why": "The question asks what the wall clock will say, and the wall clock is 2 minutes ahead of the real time of 35 past."
+    }
+   ],
+   "note": "Three right answers to three different questions: how long the lesson was, how long the class was in the room, and what one particular clock will show. Make them say which question they answered."
+  }
+ },
+ {
+  "id": "g1-c4",
+  "grade": 1,
+  "code": "1.G.3",
+  "tag": "🥪 halves",
+  "title": "The Case of the Half Sandwich",
+  "given": [
+   "The sandwich is cut into 4 pieces.",
+   "All 4 pieces are exactly the same size.",
+   "2 halves make up the whole sandwich.",
+   "Sam wants exactly half of it."
+  ],
+  "question": "How many pieces should Sam take?",
+  "options": [
+   {
+    "label": "2 pieces",
+    "value": "2"
+   },
+   {
+    "label": "1 piece",
+    "value": "1"
+   },
+   {
+    "label": "3 pieces",
+    "value": "3"
+   },
+   {
+    "label": "4 pieces",
+    "value": "4"
+   }
+  ],
+  "answer": 0,
+  "chk": "4/2",
+  "decider": [
+   1
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 0,
+    "why": "One of 4 equal pieces is a quarter of the sandwich, which is less than half."
+   },
+   {
+    "option": 2,
+    "because": 2,
+    "why": "Three pieces is more than half. The other half would only have one piece in it."
+   },
+   {
+    "option": 3,
+    "because": 3,
+    "why": "Four pieces is the whole sandwich, and Sam asked for half of it."
+   }
+  ],
+  "explain": "Half means the sandwich split into 2 equal shares. Four equal pieces share out 2 and 2, so half the sandwich is 2 pieces.",
+  "debate": {
+   "given": [
+    "The sandwich is cut into 4 pieces.",
+    "Two of the pieces are visibly bigger than the other two.",
+    "2 halves make up the whole sandwich.",
+    "Sam wants exactly half."
+   ],
+   "question": "Can Sam take whole pieces and get exactly half? How many?",
+   "options": [
+    {
+     "label": "yes, 2 pieces",
+     "value": "2"
+    },
+    {
+     "label": "no, it cannot be done",
+     "value": "0"
+    }
+   ],
+   "opened_by": 1,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "Take one big piece and one small piece. The other half is the matching big one and small one, so the two shares are the same."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      3
+     ],
+     "against": 1,
+     "why": "Nobody said the two big pieces match each other, or that the small ones do. Without that, no two pieces are certainly half."
+    }
+   ],
+   "note": "The first answer is right if the pieces pair up and wrong if they do not, and the problem never says. Ask what they would need to measure to be sure — that question is the lesson."
   }
  }
 ]

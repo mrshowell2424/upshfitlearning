@@ -13,20 +13,53 @@
   ],
   "question": "How many metres of ribbon are left?",
   "options": [
-   { "label": "3/4 of a metre", "value": "3/4" },
-   { "label": "2 1/4 metres", "value": "9/4" },
-   { "label": "1 1/2 metres", "value": "3/2" },
-   { "label": "1 1/4 metres", "value": "5/4" }
+   {
+    "label": "3/4 of a metre",
+    "value": "3/4"
+   },
+   {
+    "label": "2 1/4 metres",
+    "value": "9/4"
+   },
+   {
+    "label": "1 1/2 metres",
+    "value": "3/2"
+   },
+   {
+    "label": "1 1/4 metres",
+    "value": "5/4"
+   }
   ],
   "answer": 0,
   "chk": "3-3/4-3/2",
-  "uses": ["3/2"],
-  "decider": [1, 2],
-  "proof": [0, 1, 2],
+  "uses": [
+   "3/2"
+  ],
+  "decider": [
+   1,
+   2
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
   "rules_out": [
-   { "option": 1, "because": 2, "why": "Only Mia's piece has come off. Jo cut some too." },
-   { "option": 2, "because": 1, "why": "Only Jo's piece has come off. Mia cut 3/4 of a metre as well." },
-   { "option": 3, "because": 2, "why": "1 1/2 is one and a half, not one. The extra half metre is still missing from the subtraction." }
+   {
+    "option": 1,
+    "because": 2,
+    "why": "Only Mia's piece has come off. Jo cut some too."
+   },
+   {
+    "option": 2,
+    "because": 1,
+    "why": "Only Jo's piece has come off. Mia cut 3/4 of a metre as well."
+   },
+   {
+    "option": 3,
+    "because": 2,
+    "why": "1 1/2 is one and a half, not one. The extra half metre is still missing from the subtraction."
+   }
   ],
   "explain": "Put everything over the same denominator: 3 metres is 12/4, Mia took 3/4, Jo took 6/4. 12/4 minus 3/4 minus 6/4 leaves 3/4 of a metre.",
   "debate": {
@@ -38,18 +71,480 @@
    ],
    "question": "How much usable ribbon is left? Defend your number.",
    "options": [
-    { "label": "3/4 of a metre", "value": "3/4" },
-    { "label": "1/2 a metre", "value": "1/2" },
-    { "label": "about 1 metre", "value": "1" }
+    {
+     "label": "3/4 of a metre",
+     "value": "3/4"
+    },
+    {
+     "label": "1/2 a metre",
+     "value": "1/2"
+    },
+    {
+     "label": "about 1 metre",
+     "value": "1"
+    }
    ],
    "opened_by": 2,
-   "open": [0, 1, 2],
+   "open": [
+    0,
+    1,
+    2
+   ],
    "arguments": [
-    { "option": 0, "evidence": [0, 1, 2], "against": 3, "why": "Take off what was used: 3 minus 3/4 minus 1 1/2 leaves 3/4 of a metre on the roll." },
-    { "option": 1, "evidence": [0, 1, 3], "against": 2, "why": "Scraps are not usable length, so they come off too: 3/4 minus 1/4 is 1/2 a metre." },
-    { "option": 2, "evidence": [2, 3], "against": 1, "why": "'About one and a half' could be a little under, and a 1/4 metre of scraps still cuts short pieces, so close to a metre is defensible." }
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "Take off what was used: 3 minus 3/4 minus 1 1/2 leaves 3/4 of a metre on the roll."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      1,
+      3
+     ],
+     "against": 2,
+     "why": "Scraps are not usable length, so they come off too: 3/4 minus 1/4 is 1/2 a metre."
+    },
+    {
+     "option": 2,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 1,
+     "why": "'About one and a half' could be a little under, and a 1/4 metre of scraps still cuts short pieces, so close to a metre is defensible."
+    }
    ],
    "note": "The word 'about' is doing the work here. Ask which numbers in the problem are exact and which one is a measurement, because only one of them can be argued with."
+  }
+ },
+ {
+  "id": "g4-c2",
+  "grade": 4,
+  "code": "4.OA.3",
+  "tag": "🪑 the hall",
+  "title": "The Case of the Children Left Standing",
+  "given": [
+   "There are 7 tables in the hall.",
+   "Each table seats 6 children.",
+   "50 children are coming.",
+   "Every child needs a seat."
+  ],
+  "question": "How many children will have nowhere to sit?",
+  "options": [
+   {
+    "label": "8 children",
+    "value": "8"
+   },
+   {
+    "label": "42 children",
+    "value": "42"
+   },
+   {
+    "label": "50 children",
+    "value": "50"
+   },
+   {
+    "label": "2 children",
+    "value": "2"
+   }
+  ],
+  "answer": 0,
+  "chk": "50-7*6",
+  "decider": [
+   2
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 1,
+    "why": "42 is how many seats there are, not how many children are left over once they are filled."
+   },
+   {
+    "option": 2,
+    "because": 2,
+    "why": "50 is every child coming, and 42 of them do get a seat."
+   },
+   {
+    "option": 3,
+    "because": 0,
+    "why": "2 is how many extra tables would be needed. That is a useful number, but it answers a different question."
+   }
+  ],
+  "explain": "Two steps, in order. Seven tables of six is 42 seats, and 50 children arrive, so 8 children are left standing. The second step is the one the question actually asks about.",
+  "debate": {
+   "given": [
+    "There are 7 tables in the hall.",
+    "Each table seats 6 children.",
+    "2 of the tables have been pushed to the side to hold the food.",
+    "50 children are coming and every child needs a seat."
+   ],
+   "question": "How many children will have nowhere to sit?",
+   "options": [
+    {
+     "label": "8 children",
+     "value": "8"
+    },
+    {
+     "label": "20 children",
+     "value": "20"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1,
+      3
+     ],
+     "against": 2,
+     "why": "There are 7 tables in the hall and they seat 6 each, so there are 42 seats in the room and 8 children over."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      1,
+      2,
+      3
+     ],
+     "against": 0,
+     "why": "Only 5 tables are free to sit at, which is 30 seats, so 20 children have nowhere to go."
+    }
+   ],
+   "note": "Both answers come from the same multiplication done carefully. The disagreement is over what counts as a seat, and the food tables are the whole of it."
+  }
+ },
+ {
+  "id": "g4-c3",
+  "grade": 4,
+  "code": "4.NBT.5",
+  "tag": "🖍️ crayons",
+  "title": "The Case of the Crayon Order",
+  "given": [
+   "A box holds 24 crayons.",
+   "The school orders 36 boxes.",
+   "Every box leaves the factory full.",
+   "None of the crayons are broken."
+  ],
+  "question": "How many crayons did the school order?",
+  "options": [
+   {
+    "label": "864 crayons",
+    "value": "864"
+   },
+   {
+    "label": "624 crayons",
+    "value": "624"
+   },
+   {
+    "label": "144 crayons",
+    "value": "144"
+   },
+   {
+    "label": "60 crayons",
+    "value": "60"
+   }
+  ],
+  "answer": 0,
+  "chk": "24*36",
+  "decider": [
+   1
+  ],
+  "proof": [
+   0,
+   1
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 1,
+    "why": "624 multiplies the tens together and the ones together and stops. It leaves out 20 sixes and 4 thirties."
+   },
+   {
+    "option": 2,
+    "because": 1,
+    "why": "144 is 24 times 6, which is six boxes. The order is for thirty-six."
+   },
+   {
+    "option": 3,
+    "because": 0,
+    "why": "60 adds the two numbers. Thirty-six boxes of twenty-four is a multiplication, not a sum."
+   }
+  ],
+  "explain": "Break 36 into 30 and 6: 24 thirties is 720 and 24 sixes is 144, and together that is 864. Every partial product has to be counted, which is what the 624 answer forgets.",
+  "debate": {
+   "given": [
+    "A box holds 24 crayons.",
+    "The school ordered 36 boxes.",
+    "4 of the boxes arrived already opened and short.",
+    "Nobody counted what was missing from those 4."
+   ],
+   "question": "How many crayons did the school get? Give a number you can defend.",
+   "options": [
+    {
+     "label": "864 crayons",
+     "value": "864"
+    },
+    {
+     "label": "768 crayons",
+     "value": "768"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "Thirty-six boxes of twenty-four is 864, and nobody has said a single crayon is actually missing — only that the boxes were open."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      2,
+      3
+     ],
+     "against": 1,
+     "why": "Only 32 boxes can be trusted to be full: 32 times 24 is 768, and that is the most the school can claim."
+    }
+   ],
+   "note": "864 is what was ordered and 768 is what can be proved. When they differ, the useful thing is to say which one you are writing on the form and why."
+  }
+ },
+ {
+  "id": "g4-c4",
+  "grade": 4,
+  "code": "4.MD.3",
+  "tag": "🧵 the rug",
+  "title": "The Case of the Tape Round the Rug",
+  "given": [
+   "The classroom rug is 9 feet long and 6 feet wide.",
+   "A rectangle has 2 long sides and 2 short sides.",
+   "Tape runs all the way round the edge of the rug.",
+   "Tape is sold by the foot."
+  ],
+  "question": "How many feet of tape are needed?",
+  "options": [
+   {
+    "label": "30 feet",
+    "value": "30"
+   },
+   {
+    "label": "54 feet",
+    "value": "54"
+   },
+   {
+    "label": "18 feet",
+    "value": "18"
+   },
+   {
+    "label": "15 feet",
+    "value": "15"
+   }
+  ],
+  "answer": 0,
+  "chk": "2*9+2*6",
+  "decider": [
+   2
+  ],
+  "proof": [
+   0,
+   1,
+   2
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 2,
+    "why": "54 is 9 times 6, the floor the rug covers. Tape goes round the edge, not across the rug."
+   },
+   {
+    "option": 2,
+    "because": 1,
+    "why": "18 is the two long sides only. The tape has to come back along the two short ones as well."
+   },
+   {
+    "option": 3,
+    "because": 1,
+    "why": "15 is one long side and one short side — half of the way round."
+   }
+  ],
+  "explain": "Trace the edge with a finger and add as you go: 9, 6, 9, 6. That is 30 feet. Area would be the carpet itself; this is the piping round it.",
+  "debate": {
+   "given": [
+    "The rug is 9 feet by 6 feet.",
+    "A rectangle has 2 long sides and 2 short sides.",
+    "The tape has to overlap itself by 1 foot where the two ends meet.",
+    "Tape is sold only in whole feet."
+   ],
+   "question": "How many feet of tape should they buy?",
+   "options": [
+    {
+     "label": "30 feet",
+     "value": "30"
+    },
+    {
+     "label": "31 feet",
+     "value": "31"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      0,
+      1
+     ],
+     "against": 2,
+     "why": "The distance round the rug is 30 feet, and that is what the tape has to cover."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 0,
+     "why": "A foot of it is spent on the overlap and covers nothing new, so 30 feet of tape leaves a foot of rug bare. Buy 31."
+    }
+   ],
+   "note": "The perimeter is 30 and the answer to the shopping question is 31. Worth naming out loud: the measurement and the amount to buy are different numbers, and the overlap is the reason."
+  }
+ },
+ {
+  "id": "g4-c5",
+  "grade": 4,
+  "code": "4.G.3",
+  "tag": "🪞 symmetry",
+  "title": "The Case of the Folded Shapes",
+  "given": [
+   "There are 3 shapes on the table: a square, a rectangle that is not a square, and a triangle.",
+   "A square has 4 lines of symmetry.",
+   "A rectangle that is not a square has 2 lines of symmetry.",
+   "The triangle has 0 lines of symmetry."
+  ],
+  "question": "How many lines of symmetry are there altogether?",
+  "options": [
+   {
+    "label": "6 lines",
+    "value": "6"
+   },
+   {
+    "label": "3 lines",
+    "value": "3"
+   },
+   {
+    "label": "4 lines",
+    "value": "4"
+   },
+   {
+    "label": "2 lines",
+    "value": "2"
+   }
+  ],
+  "answer": 0,
+  "chk": "4+2+0",
+  "decider": [
+   3
+  ],
+  "proof": [
+   1,
+   2,
+   3
+  ],
+  "rules_out": [
+   {
+    "option": 1,
+    "because": 0,
+    "why": "3 is how many shapes are on the table, not how many fold lines they have between them."
+   },
+   {
+    "option": 2,
+    "because": 1,
+    "why": "4 is the square's lines on their own. The rectangle has some too."
+   },
+   {
+    "option": 3,
+    "because": 2,
+    "why": "2 is the rectangle's lines on their own, and the square has four more."
+   }
+  ],
+  "explain": "A line of symmetry is a fold that lands the shape exactly on itself. Count each shape's folds and add them: 4 and 2 and none at all is 6.",
+  "debate": {
+   "given": [
+    "A square has 4 lines of symmetry.",
+    "A rectangle that is not a square has 2 lines of symmetry.",
+    "The third shape is a triangle whose two longer sides look equal but have not been measured.",
+    "A triangle with two equal sides has 1 line of symmetry."
+   ],
+   "question": "How many lines of symmetry are there altogether? Defend the number.",
+   "options": [
+    {
+     "label": "7 lines",
+     "value": "7"
+    },
+    {
+     "label": "6 lines",
+     "value": "6"
+    }
+   ],
+   "opened_by": 2,
+   "open": [
+    0,
+    1
+   ],
+   "arguments": [
+    {
+     "option": 0,
+     "evidence": [
+      2,
+      3
+     ],
+     "against": 2,
+     "why": "The two sides look equal, and a triangle with two equal sides folds onto itself once: 4 and 2 and 1 is 7."
+    },
+    {
+     "option": 1,
+     "evidence": [
+      0,
+      1,
+      2
+     ],
+     "against": 3,
+     "why": "Nobody has measured those sides. Until somebody does, the triangle cannot be claimed to fold, so only the 4 and the 2 can be counted."
+    }
+   ],
+   "note": "Fold the triangle and the argument ends in four seconds, which is the point: symmetry is a claim you can test, and looking is not testing. Have the paper ready."
   }
  }
 ]
