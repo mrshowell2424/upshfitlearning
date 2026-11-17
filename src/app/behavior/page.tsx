@@ -476,7 +476,6 @@ function WhatYouGet() {
   ];
   return (
     <Card>
-      <p style={{ ...label, margin: "0 0 4px", color: BRAND.coralDark }}>Pick one below</p>
       <h2 style={{ fontFamily: SANS, fontSize: 22, fontWeight: 800, letterSpacing: "-0.4px", margin: "0 0 8px", lineHeight: 1.2 }}>
         What you get for each one
       </h2>
@@ -496,6 +495,12 @@ function WhatYouGet() {
           </div>
         ))}
       </div>
+      {/* The instruction sits at the foot of the card, under the fourth
+          part, because that is where the eye is when it has finished
+          reading and the buttons are the next thing on the page. At the
+          top it was telling a teacher to act before it had given them a
+          reason to. */}
+      <p style={{ ...label, margin: "16px 0 0", color: BRAND.coralDark }}>Pick one below ↓</p>
     </Card>
   );
 }
