@@ -233,7 +233,7 @@ function Block({
   items,
   color,
 }: {
-  heading: string;
+  heading?: string;
   note?: string;
   items: string[];
   color: string;
@@ -241,7 +241,8 @@ function Block({
   return (
     <section style={{ margin: "0 0 26px" }}>
       <div style={{ width: 26, height: 3, borderRadius: 2, background: color, margin: "0 0 9px" }} />
-      <h3
+      {heading && (
+        <h3
         style={{
           fontFamily: "Poppins, sans-serif",
           fontSize: 16,
@@ -253,6 +254,7 @@ function Block({
       >
         {heading}
       </h3>
+      )}
       {note && (
         <p style={{ margin: "0 0 10px", fontSize: 13, color: BRAND.mid, fontStyle: "italic" }}>
           {note}
@@ -383,6 +385,61 @@ function Words({ say, avoid }: { say: string[]; avoid: { words: string; why: str
   );
 }
 
+/**
+ * The first clause of an observation, for the one-line confirmation.
+ *
+ * "Head down on the desk, or turned away from the room." is written to be
+ * read on its own; strung together with two others it has to be shorter
+ * than that, and the part before the first comma is the part that names
+ * what was seen.
+ */
+function firstClause(text: string) {
+  const first = String(text).split(/[,—.]/)[0].trim();
+  return first.charAt(0).toLowerCase() + first.slice(1);
+}
+
+/**
+ * A section folded away until it is wanted.
+ *
+ * The card had six sections of equal weight and 2,000 words, so the two a
+ * teacher needs in the moment were below two they need afterwards. These
+ * keep every word and change when it is in front of somebody.
+ */
+function Fold({
+  heading,
+  count,
+  color,
+  children,
+}: {
+  heading: string;
+  count: number;
+  color: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <details className="disclosure" style={{ borderTop: `1px solid ${BRAND.line}`, padding: "12px 0" }}>
+      <summary
+        style={{
+          cursor: "pointer",
+          listStyle: "none",
+          display: "flex",
+          alignItems: "center",
+          gap: 9,
+          fontFamily: "Poppins, sans-serif",
+          fontSize: 15.5,
+          fontWeight: 800,
+          color,
+          letterSpacing: "-0.2px",
+        }}
+      >
+        {heading}
+        <span style={{ ...label, margin: 0, color: BRAND.mid, fontSize: 11 }}>{count}</span>
+      </summary>
+      <div style={{ paddingTop: 12 }}>{children}</div>
+    </details>
+  );
+}
+
 function SignalCard({ s, remove }: { s: Signal; remove: string }) {
   return (
     <Card accent={BRAND.coralDark}>
@@ -421,39 +478,107 @@ function SignalCard({ s, remove }: { s: Signal; remove: string }) {
         ))}
       </div>
 
-      <Block
-        heading="What it looks like in the classroom"
-        note="Observable only — no inference yet."
-        items={s.look}
-        color={BRAND.ink}
-      />
-      <Block
-        heading="What's happening inside"
-        note="Why the student feels the way they do."
-        items={s.inside}
-        color={BRAND.lavenderDark}
-      />
-      <Block
-        heading="What might help in the moment"
-        note="The next few minutes."
-        items={s.now}
-        color={BRAND.tealDark}
-      />
-      <Words say={s.say} avoid={s.avoid} />
-      <Block
-        heading="What usually makes it worse"
-        note="The reasonable-sounding reflex."
-        items={s.worse}
-        color={BRAND.coralDark}
-      />
-      <Block
-        heading="What builds the skill over time"
-        note="Once the moment has passed."
-        items={s.build}
-        color={BRAND.pinkDark}
-      />
+      {/* What you saw, as a line rather than a list.
+          It was six bullets at the top of the card, which is a reading task
+          in front of a teacher who has already done the observing — that is
+          how they got here. It confirms the pick and gets out of the way. */}
+      <p
+        style={{
+          margin: "-8px 0 20px",
+          fontSize: 14.5,
+          color: BRAND.mid,
+          borderLeft: `3px solid ${BRAND.line}`,
+          paddingLeft: 12,
+        }}
+      >
+        <b style={{ color: BRAND.ink }}>You saw:</b> {s.look.slice(0, 3).map(firstClause).join(" · ")}
+      </p>
 
-      <section style={{ margin: "0 0 4px" }}>
+      {/* The next five minutes, first and numbered.
+          This was third of six sections, under two of explanation. A teacher
+          opens this page because something is happening now; the moves and
+          the words belong where the eye lands, and the understanding belongs
+          below them for when the room is calm. */}
+      <section style={{ margin: "0 0 20px" }}>
+        <div
+          style={{ width: 26, height: 3, borderRadius: 2, background: BRAND.tealDark, margin: "0 0 9px" }}
+        />
+        <h3
+          style={{
+            fontFamily: "Poppins, sans-serif",
+            fontSize: 19,
+            fontWeight: 800,
+            margin: "0 0 2px",
+            color: BRAND.tealDark,
+            letterSpacing: "-0.3px",
+          }}
+        >
+          Right now
+        </h3>
+        <p style={{ margin: "0 0 12px", fontSize: 13.5, fontStyle: "italic", color: BRAND.mid }}>
+          The next few minutes.
+        </p>
+        <ol style={{ margin: 0, padding: 0, listStyle: "none", display: "grid", gap: 8 }}>
+          {s.now.map((item, i) => (
+            <li
+              key={item}
+              style={{
+                display: "flex",
+                gap: 11,
+                alignItems: "flex-start",
+                background: "#FFFFFF",
+                border: `1px solid ${BRAND.line}`,
+                borderRadius: 12,
+                padding: "10px 13px",
+                fontSize: 15.5,
+                lineHeight: 1.55,
+              }}
+            >
+              <span
+                aria-hidden="true"
+                style={{
+                  flex: "0 0 auto",
+                  width: 22,
+                  height: 22,
+                  borderRadius: 999,
+                  background: BRAND.tealDark,
+                  color: "#FFFFFF",
+                  fontSize: 12,
+                  fontWeight: 800,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginTop: 1,
+                }}
+              >
+                {i + 1}
+              </span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <Words say={s.say} avoid={s.avoid} />
+
+      {/* Everything that is not the next five minutes, folded away.
+          None of it is cut — a shutdown is not understood from a list of
+          moves — but it is read at a different time of day than it was
+          being shown at. */}
+      <Fold heading="Why this happens" count={s.inside.length} color={BRAND.lavenderDark}>
+        <Block note="Why the student feels the way they do." items={s.inside} color={BRAND.lavenderDark} />
+      </Fold>
+      <Fold heading="What makes it worse" count={s.worse.length} color={BRAND.coralDark}>
+        <Block note="The reasonable-sounding reflex." items={s.worse} color={BRAND.coralDark} />
+      </Fold>
+      <Fold heading="What builds the skill over time" count={s.build.length} color={BRAND.pinkDark}>
+        <Block note="Once the moment has passed." items={s.build} color={BRAND.pinkDark} />
+      </Fold>
+      <Fold heading="Everything you might see" count={s.look.length} color={BRAND.ink}>
+        <Block note="Observable only — no inference yet." items={s.look} color={BRAND.ink} />
+      </Fold>
+
+      <section style={{ margin: "18px 0 4px" }}>
         <p style={{ ...label, margin: "0 0 8px" }}>Strategies that fit this</p>
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
           {s.strategies.map((name) => (
