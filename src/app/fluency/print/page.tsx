@@ -1,5 +1,5 @@
 import { SignInGate } from "@/components/shared/SignInGate";
-import ARTICLES from "@/../scripts/reading-articles.json";
+import ARTICLE_INDEX from "@/../scripts/reading-articles-index.json";
 import FLU from "@/../scripts/reading-fluency.json";
 
 /**
@@ -21,8 +21,14 @@ import FLU from "@/../scripts/reading-fluency.json";
  * presses print.
  */
 
-const AR = ARTICLES.articles;
-const GRADES = [...new Set(AR.map((a) => a.grade))].sort((a, b) => a - b);
+/**
+ * Loaded inside the request, not at module scope: these files are megabytes
+ * and Cloudflare Workers parses the whole Worker before serving anything.
+ * See scripts/build-reading-index.mjs for the full account.
+ */
+const loadArticles = () =>
+  import("@/../scripts/reading-articles.json").then((m) => m.default.articles);
+const GRADES = [...new Set(ARTICLE_INDEX.articles.map((a) => a.grade))].sort((a, b) => a - b);
 
 const INK = "#111111";
 const SOFT = "#555555";
@@ -79,6 +85,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
 
   const asked = Number(one(sp.g));
   const grade = GRADES.includes(asked) ? asked : 3;
+  const AR = await loadArticles();
   const pool = AR.filter((a) => a.grade === grade);
   const ai = Math.min(Math.max(Number(one(sp.n) ?? 0) || 0, 0), Math.max(pool.length - 1, 0));
   const art = pool[ai];

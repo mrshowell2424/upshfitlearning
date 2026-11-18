@@ -2,7 +2,7 @@ import Header from "@/components/shared/Header";
 import { ogCard, twitterCard } from "@/lib/constants/metadata";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
-import ARTICLES from "@/../scripts/reading-articles.json";
+import ARTICLE_INDEX from "@/../scripts/reading-articles-index.json";
 import FLU from "@/../scripts/reading-fluency.json";
 import { Scorer } from "./scorer";
 
@@ -20,7 +20,14 @@ import { Scorer } from "./scorer";
  * quietly. The printable record sheet is the stopgap and it says so.
  */
 
-const AR = ARTICLES.articles;
+/**
+ * The slim index: titles, grades, Lexiles and word counts, with the
+ * paragraphs stripped out. Everything that chooses a passage runs off
+ * this; only the one passage being shown needs its text, and that is
+ * loaded inside the request below. See scripts/build-reading-index.mjs
+ * for why this page must not import the full file at module scope.
+ */
+const AR = ARTICLE_INDEX.articles;
 
 const BRAND = {
   coral: "#FF6A5B",
@@ -121,7 +128,21 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   const ai = Math.min(Math.max(Number(one(sp.n) ?? 0) || 0, 0), Math.max(pool.length - 1, 0));
   const art = pool[ai];
   const ver: "higher" | "lower" = one(sp.v) === "lo" ? "lower" : "higher";
-  const v = art ? art[ver] : null;
+
+  /**
+   * The chosen passage's text, fetched inside the request.
+   *
+   * await import() puts the article file in its own chunk, so the Worker
+   * does not parse 2.9 MB of passages before it can serve anything. Only a
+   * request that is actually going to show a passage pays for it.
+   */
+  const meta = art ? (ver === "lower" ? art.lo : art.hi) : null;
+  const full = art
+    ? (await import("@/../scripts/reading-articles.json")).default.articles.find(
+        (x) => x.id === art.id,
+      )
+    : null;
+  const v = full && meta ? { ...meta, paras: full[ver].paras } : null;
   const norm = FLU.norms.grades.find((x) => x.grade === grade) ?? null;
 
   const href = (next: Record<string, string>) => {

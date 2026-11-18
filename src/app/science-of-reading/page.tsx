@@ -9,7 +9,7 @@ import { MaterialsPass } from "@/components/shared/MaterialsPass";
 import { SKILL_TOTAL } from "@/app/reading/lessons-data";
 import { OG_CONCEPTS } from "@/app/reading/og-packs-data";
 import ROPE from "@/../scripts/reading-rope.json";
-import ARTICLES from "@/../scripts/reading-articles.json";
+import ARTICLE_INDEX from "@/../scripts/reading-articles-index.json";
 import SIGHT_WORDS from "@/../scripts/reading-sight-words.json";
 import SKILL_SPLITS from "@/../scripts/reading-skill-splits.json";
 import THREADS from "@/../scripts/reading-threads.json";
@@ -18,9 +18,7 @@ import WRITING_SETS_DATA from "@/../scripts/reading-writing-passages.json";
 import SPELLING from "@/../scripts/reading-spelling.json";
 import WORD_LADDERS from "@/../scripts/reading-word-ladders.json";
 import SEQUENCE from "@/../scripts/reading-sequence.json";
-import PASSAGES from "@/../scripts/reading-passages.json";
 import HEARTWORDS from "@/../scripts/reading-heart-words.json";
-import SENTENCE_LAB from "@/../scripts/reading-sentence-lab.json";
 
 /**
  * The way into the reading programme.
@@ -94,19 +92,18 @@ const LADDERS = WORD_LADDERS.ladders as Record<string, { words: string[] }>;
 const LADDER_COUNT = Object.keys(LADDERS).length;
 const LADDER_RUNGS = Object.values(LADDERS).reduce((n, l) => n + l.words.length - 1, 0);
 const SEQ_LESSONS = (SEQUENCE as { sequence: unknown[] }).sequence.length;
-const PASSAGE_SET = (PASSAGES as { passages: Record<string, Record<string, { paras: string[] }>> })
-  .passages;
-const PASSAGE_COUNT = Object.values(PASSAGE_SET).reduce((n, c) => n + Object.keys(c).length, 0);
+/**
+ * Counted at build time, not here.
+ *
+ * These three numbers used to be worked out by importing the passages and
+ * the sentence lab in full -- 1.5 MB to show two figures on a card, parsed
+ * on every cold start of the Cloudflare Worker. The arithmetic now happens
+ * once in scripts/build-reading-index.mjs, which reproduces it paragraph by
+ * paragraph so the numbers are identical.
+ */
+const PASSAGE_COUNT = ARTICLE_INDEX.counts.passages;
+const PASSAGE_WORDS = ARTICLE_INDEX.counts.passageWords;
 const HEART_COUNT = (HEARTWORDS as { words: unknown[] }).words.length;
-const PASSAGE_WORDS = Object.values(PASSAGE_SET).reduce(
-  (n, c) =>
-    n +
-    Object.values(c).reduce(
-      (m, p) => m + p.paras.reduce((w, x) => w + x.split(/\s+/).filter(Boolean).length, 0),
-      0,
-    ),
-  0,
-);
 // Counted from the data the page is generated from, so the blurb cannot
 // drift away from what is actually on it.
 const MYSTERY_COUNT = RESOURCE_COUNTS.mysteries;
@@ -116,28 +113,23 @@ const ARTICLE_COUNT = RESOURCE_COUNTS.articles;
  * How many of each thing a strand can claim.
  *
  * Counted from the content rather than written into the rope file, so a
- * strand cannot say it has fifty articles when it has none. The feature count
- * is the articles that take a text feature as their subject -- the glossary,
- * the heading, the caption -- which is what literacy knowledge actually means
- * on this site.
+ * strand cannot say it has fifty articles when it has none.
+ *
+ * The two article counts are read off the generated index rather than worked
+ * out here. This page used to import all 2.9 MB of articles to produce two
+ * numbers, and on Cloudflare Workers that parse happened on every cold start
+ * -- see the header of scripts/build-reading-index.mjs. The counts are now
+ * computed once at build time, including which articles take a text feature
+ * as their subject.
  */
-const FEATURE_STANDARDS = [
-  "RI.K.5", "RI.K.6", "RI.K.7",
-  "RI.1.5", "RI.1.6", "RI.1.7",
-  "RI.2.5", "RI.2.7",
-  "RI.6.5", "RI.6.7",
-];
 const STRAND_COUNTS: Record<string, number> = {
   mysteries: MYSTERY_COUNT,
   threads: THREADS.threads.length,
   // Articles that actually yield a pair, not all 350 -- a count a teacher
   // can click through to and find empty is worse than no count.
-  sentence: SENTENCE_LAB.items.filter((i) => i.combine.length || i.expand.length).length,
-  words: ARTICLES.articles.reduce((n, a) => {
-    const v = a.questions.find((q) => q.kind === "vocabulary");
-    return n + (v ? String(v.q).split("\n").filter((x) => x.includes(":")).length : 0);
-  }, 0),
-  feature: ARTICLES.articles.filter((a) => FEATURE_STANDARDS.includes(a.standard)).length,
+  sentence: ARTICLE_INDEX.counts.sentencePairs,
+  words: ARTICLE_INDEX.counts.vocabWords,
+  feature: ARTICLE_INDEX.counts.featureArticles,
   splits: Object.keys(SKILL_SPLITS).length,
   packs: OG_CONCEPTS.length,
   sightLists: (SIGHT_WORDS.lists ?? []).length,

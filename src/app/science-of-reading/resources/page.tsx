@@ -3,8 +3,8 @@ import { ogCard, twitterCard } from "@/lib/constants/metadata";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
 import { CopyButton } from "./copy-button";
-import MYSTERIES from "@/../scripts/reading-mysteries.json";
-import ARTICLES from "@/../scripts/reading-articles.json";
+import ARTICLE_INDEX from "@/../scripts/reading-articles-index.json";
+import MYSTERY_INDEX from "@/../scripts/reading-mysteries-index.json";
 import MY_COACH from "@/../scripts/reading-mystery-coach.json";
 import MY_DEBATE_COACH from "@/../scripts/reading-mystery-debate-coach.json";
 import AR_COACH from "@/../scripts/reading-article-coach.json";
@@ -52,14 +52,34 @@ const BRAND = {
 const GRADIENT =
   `linear-gradient(135deg, ${BRAND.coral}, ${BRAND.pink}, ${BRAND.lavender}, ${BRAND.teal})`;
 
-const MY = MYSTERIES.cases;
-const AR = ARTICLES.articles;
+/**
+ * The cases and the articles are loaded inside the request, not at module
+ * scope.
+ *
+ * Production runs on Cloudflare Workers, which evaluates the whole Worker
+ * before serving anything and allows about 400ms of CPU to do it. These two
+ * files are 5 MB together, and importing them here meant parsing all of it
+ * on every cold start — the live site was returning Cloudflare error 1102,
+ * "exceeded resource limits", intermittently. scripts/build-reading-index.mjs
+ * has the full account.
+ *
+ * A dynamic import is its own chunk: it is fetched when this function runs,
+ * so only a request that is going to show a case or an article pays for it.
+ * The types still come from the real files, through the loaders, so nothing
+ * here is typed loosely to make the change possible.
+ */
+const loadMysteries = () =>
+  import("@/../scripts/reading-mysteries.json").then((m) => m.default.cases);
+const loadArticles = () =>
+  import("@/../scripts/reading-articles.json").then((m) => m.default.articles);
+type Case = Awaited<ReturnType<typeof loadMysteries>>[number];
+type Article = Awaited<ReturnType<typeof loadArticles>>[number];
 
 type Search = Promise<Record<string, string | string[] | undefined>>;
 
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
 
-function mysteryPrompt(c: (typeof MY)[number]) {
+function mysteryPrompt(c: Case) {
   return MY_COACH.lines
     .join("\n")
     .replace(/\{GRADES\}/g, gradeName(c.grade))
@@ -76,7 +96,7 @@ function mysteryPrompt(c: (typeof MY)[number]) {
  * one must not think there is an answer, or it will quietly steer the student
  * towards whichever suspect it has decided on.
  */
-function debatePrompt(c: (typeof MY)[number]) {
+function debatePrompt(c: Case) {
   const d = c.debate;
   if (!d) return mysteryPrompt(c);
   return MY_DEBATE_COACH.lines
@@ -99,8 +119,8 @@ function debatePrompt(c: (typeof MY)[number]) {
  * not been written yet. Rather than drop them back to the first grade, each
  * tab shows the nearest grade it actually has.
  */
-const AR_GRADES = [...new Set(AR.map((a) => a.grade))].sort((x, y) => x - y);
-const MY_GRADES = [...new Set(MY.map((c) => c.grade))].sort((x, y) => x - y);
+const AR_GRADES = [...new Set(ARTICLE_INDEX.articles.map((a) => a.grade))].sort((x, y) => x - y);
+const MY_GRADES = [...new Set(MYSTERY_INDEX.cases.map((c) => c.grade))].sort((x, y) => x - y);
 const gradeName = (g: number) =>
   g === 0 ? "K" : g === 1 ? "1st" : g === 2 ? "2nd" : g === 3 ? "3rd" : `${g}th`;
 const nearestGrade = (want: number, have: number[]) =>
@@ -108,7 +128,7 @@ const nearestGrade = (want: number, have: number[]) =>
     ? want
     : have.reduce((best, g) => (Math.abs(g - want) < Math.abs(best - want) ? g : best), have[0] ?? 3);
 
-function articlePrompt(a: (typeof AR)[number], ver: "higher" | "lower") {
+function articlePrompt(a: Article, ver: "higher" | "lower") {
   const v = a[ver];
   return AR_COACH.lines
     .join("\n")
@@ -789,6 +809,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
 
   // Mysteries: the grade, then the week inside it.
   const myGrade = nearestGrade(wanted, MY_GRADES);
+  const MY = await loadMysteries();
   const myPool = MY.filter((c) => c.grade === myGrade).sort((a, b) => a.week - b.week);
   const ci = Math.min(Math.max(Number(one(sp.c) ?? 0) || 0, 0), Math.max(myPool.length - 1, 0));
   const myCase = myPool[ci];
@@ -807,6 +828,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
 
   // Articles: grade, then standard, then the article inside what is left.
   const grade = nearestGrade(wanted, AR_GRADES);
+  const AR = await loadArticles();
   const stds = [...new Set(AR.filter((a) => a.grade === grade).map((a) => a.standard))].sort();
   const std = stds.includes(one(sp.s) ?? "") ? (one(sp.s) as string) : "*";
   const pool = AR.filter((a) => a.grade === grade && (std === "*" || a.standard === std));

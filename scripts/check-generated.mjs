@@ -42,6 +42,13 @@ const BUILDERS = [
   ["scripts/build-morphology.mjs", ["scripts/reading-morphology.json"]],
   ["scripts/build-multisyllabic.mjs", ["scripts/reading-multisyllabic.json"]],
   ["scripts/build-hub-counts.mjs", ["scripts/reading-hub-counts.json"]],
+  // The slim indexes the pages import instead of the multi-megabyte sources.
+  // If an article or a case changes and these are not rebuilt, the site
+  // shows stale titles and counts, so the drift has to be caught here.
+  [
+    "scripts/build-reading-index.mjs",
+    ["scripts/reading-articles-index.json", "scripts/reading-mysteries-index.json"],
+  ],
   ["scripts/build-math-prerequisites.mjs", ["scripts/math-prerequisites.json"]],
   ["scripts/build-math-practice.mjs", ["scripts/math-practice.json"]],
   // Not a builder but a merger: the cases are written by hand in

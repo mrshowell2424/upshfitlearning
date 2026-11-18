@@ -145,6 +145,11 @@ function corpus() {
     // child has met in a phonics lesson, so it has no business seeding the
     // bank those lessons draw from.
     "math-cases.json",
+    // The slim indexes are the articles and the mysteries with their text
+    // removed. The full files are already harvested a few lines above, so
+    // reading these as well would count the same titles twice.
+    "reading-articles-index.json",
+    "reading-mysteries-index.json",
   ]);
   const files = readdirSync("scripts").filter((f) => f.endsWith(".json") && !SKIP.has(f));
   const dirs = ["scripts/articles", "scripts/mysteries"].filter((d) => existsSync(d));

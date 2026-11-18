@@ -1,6 +1,6 @@
 import { SignInGate } from "@/components/shared/SignInGate";
-import MYSTERIES from "@/../scripts/reading-mysteries.json";
-import ARTICLES from "@/../scripts/reading-articles.json";
+import ARTICLE_INDEX from "@/../scripts/reading-articles-index.json";
+import MYSTERY_INDEX from "@/../scripts/reading-mysteries-index.json";
 import READ_THINK from "@/../scripts/reading-read-think.json";
 
 /**
@@ -20,8 +20,15 @@ import READ_THINK from "@/../scripts/reading-read-think.json";
  * presses print.
  */
 
-const MY = MYSTERIES.cases;
-const AR = ARTICLES.articles;
+/**
+ * Loaded inside the request, not at module scope: these files are megabytes
+ * and Cloudflare Workers parses the whole Worker before serving anything.
+ * See scripts/build-reading-index.mjs for the full account.
+ */
+const loadArticles = () =>
+  import("@/../scripts/reading-articles.json").then((m) => m.default.articles);
+const loadMysteries = () =>
+  import("@/../scripts/reading-mysteries.json").then((m) => m.default.cases);
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
 type Search = Promise<Record<string, string | string[] | undefined>>;
 
@@ -220,8 +227,8 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   // Follow whatever grades each store holds, so a workbook link from the
   // resources page lands on the grade it was asked for. The two stores fill
   // up at different rates, so each falls back to the nearest grade it has.
-  const grades = [...new Set(AR.map((a) => a.grade))].sort((x, y) => x - y);
-  const myGrades = [...new Set(MY.map((c) => c.grade))].sort((x, y) => x - y);
+  const grades = [...new Set(ARTICLE_INDEX.articles.map((a) => a.grade))].sort((x, y) => x - y);
+  const myGrades = [...new Set(MYSTERY_INDEX.cases.map((c) => c.grade))].sort((x, y) => x - y);
   const asked = Number(one(sp.g));
   const wanted = Number.isFinite(asked) ? asked : 3;
   const nearest = (want: number, have: number[]) =>
@@ -230,6 +237,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
       : have.reduce((best, g) => (Math.abs(g - want) < Math.abs(best - want) ? g : best), have[0] ?? 3);
 
   const myGrade = nearest(wanted, myGrades);
+  const MY = await loadMysteries();
   const myPool = MY.filter((c) => c.grade === myGrade).sort((a, b) => a.week - b.week);
   const ci = Math.min(Math.max(Number(one(sp.c) ?? 0) || 0, 0), Math.max(myPool.length - 1, 0));
   const myCase = myPool[ci];
@@ -242,6 +250,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
 
   const grade = nearest(wanted, grades);
   const std = one(sp.s) ?? "*";
+  const AR = await loadArticles();
   const pool = AR.filter((a) => a.grade === grade && (std === "*" || a.standard === std));
   const ai = Math.min(Math.max(Number(one(sp.n) ?? 0) || 0, 0), Math.max(pool.length - 1, 0));
   const art = pool[ai];

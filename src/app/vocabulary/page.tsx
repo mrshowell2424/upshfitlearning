@@ -2,7 +2,7 @@ import Header from "@/components/shared/Header";
 import { ogCard, twitterCard } from "@/lib/constants/metadata";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
-import ARTICLES from "@/../scripts/reading-articles.json";
+import ARTICLE_INDEX from "@/../scripts/reading-articles-index.json";
 import ROUTINE from "@/../scripts/reading-vocabulary-routine.json";
 
 /**
@@ -19,7 +19,7 @@ import ROUTINE from "@/../scripts/reading-vocabulary-routine.json";
  * new grade of articles stocks this page on the same build.
  */
 
-const AR = ARTICLES.articles;
+
 
 const BRAND = {
   coral: "#FF6A5B",
@@ -54,37 +54,15 @@ interface Word {
 }
 
 /**
- * Pull every word out of the articles' vocabulary questions.
+ * Every word out of the articles' vocabulary questions.
  *
- * The question holds two definitions on two lines, each written "word: what
- * it means", which is why the newline mattered enough to fix on the reading
- * page. Here it is what makes the field parseable at all.
+ * The parse — each definition written "word: what it means", one per line —
+ * now happens once at build time in scripts/build-reading-index.mjs rather
+ * than here on every cold start. This page used to import all 2.9 MB of
+ * articles to produce this list, which is the kind of thing that stops a
+ * Cloudflare Worker starting; the header of that script has the detail.
  */
-function allWords(): Word[] {
-  const out: Word[] = [];
-  for (const a of AR) {
-    const v = a.questions.find((q) => q.kind === "vocabulary");
-    if (!v) continue;
-    for (const line of String(v.q).split("\n")) {
-      const at = line.indexOf(":");
-      if (at < 1) continue;
-      const word = line.slice(0, at).trim();
-      const def = line.slice(at + 1).trim();
-      if (!word || !def) continue;
-      out.push({
-        word,
-        def,
-        grade: a.grade,
-        standard: a.standard,
-        from: a.title,
-        id: `${a.id}-${word.toLowerCase().replace(/[^a-z]+/g, "-")}`,
-      });
-    }
-  }
-  return out;
-}
-
-const WORDS = allWords();
+const WORDS: Word[] = ARTICLE_INDEX.vocab;
 const GRADES = [...new Set(WORDS.map((w) => w.grade))].sort((x, y) => x - y);
 
 const label: React.CSSProperties = {

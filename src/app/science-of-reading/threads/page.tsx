@@ -3,7 +3,7 @@ import { ogCard, twitterCard } from "@/lib/constants/metadata";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
-import ARTICLES from "@/../scripts/reading-articles.json";
+import ARTICLE_INDEX from "@/../scripts/reading-articles-index.json";
 import THREADS from "@/../scripts/reading-threads.json";
 
 /**
@@ -28,7 +28,9 @@ import THREADS from "@/../scripts/reading-threads.json";
  * thread cannot claim an article that no longer exists.
  */
 
-const AR = ARTICLES.articles;
+// The slim index, not the 2.9 MB of article text: this page only groups
+// them by grade and subject. See scripts/build-reading-index.mjs.
+const AR = ARTICLE_INDEX.articles;
 // Taken from the articles, the way every other page that shows a grade
 // row does it. This was a written-out list of K to 6, so the day grade 7
 // was added its fifty articles existed, passed every check, and did not
