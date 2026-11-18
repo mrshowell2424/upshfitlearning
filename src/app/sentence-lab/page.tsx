@@ -3,7 +3,7 @@ import { ogCard, twitterCard } from "@/lib/constants/metadata";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
-import LAB from "@/../scripts/reading-sentence-lab.json";
+import LAB_INDEX from "@/../scripts/reading-sentence-lab-index.json";
 
 /**
  * Sentence Lab: the language-structure strand, run on our own sentences.
@@ -20,9 +20,16 @@ import LAB from "@/../scripts/reading-sentence-lab.json";
  * pickers before it was found. One picker, one trip.
  */
 
-const ITEMS = LAB.items;
-const ROUTINE = LAB.routine;
-const GRADES = [...new Set(ITEMS.map((i) => i.grade))].sort((a, b) => a - b);
+/**
+ * The items' sentences are loaded inside the request; the routine, the
+ * source line and the grades come from the generated index. Importing the
+ * whole lab here meant the Cloudflare Worker parsed 700 KB of sentences
+ * before serving anything. See scripts/build-reading-index.mjs.
+ */
+const loadItems = () =>
+  import("@/../scripts/reading-sentence-lab.json").then((m) => m.default.items);
+const ROUTINE = LAB_INDEX.routine;
+const GRADES = [...new Set(LAB_INDEX.items.map((i) => i.grade))].sort((a, b) => a - b);
 
 const BRAND = {
   coral: "#FF6A5B",
@@ -145,6 +152,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
 
   const askedGrade = Number(one(sp.g));
   const grade = GRADES.includes(askedGrade) ? askedGrade : 3;
+  const ITEMS = await loadItems();
   const pool = ITEMS.filter((i) => i.grade === grade && (i.combine.length || i.expand.length));
   const idx = Math.min(Math.max(Number(one(sp.n) ?? 0) || 0, 0), Math.max(pool.length - 1, 0));
   const item = pool[idx];
@@ -414,7 +422,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                   </div>
 
                   <p style={{ fontSize: 12, color: BRAND.mid, margin: "20px 0 0", maxWidth: "72ch" }}>
-                    {LAB.source}
+                    {LAB_INDEX.source}
                   </p>
                 </>
               )}

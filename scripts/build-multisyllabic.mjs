@@ -150,6 +150,8 @@ function corpus() {
     // reading these as well would count the same titles twice.
     "reading-articles-index.json",
     "reading-mysteries-index.json",
+    "reading-passages-index.json",
+    "reading-sentence-lab-index.json",
   ]);
   const files = readdirSync("scripts").filter((f) => f.endsWith(".json") && !SKIP.has(f));
   const dirs = ["scripts/articles", "scripts/mysteries"].filter((d) => existsSync(d));

@@ -3,7 +3,7 @@ import { ogCard, twitterCard } from "@/lib/constants/metadata";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
-import PASSAGES from "@/../scripts/reading-passages.json";
+import PASSAGE_INDEX from "@/../scripts/reading-passages-index.json";
 import SEQUENCE from "@/../scripts/reading-sequence.json";
 import SPELLING from "@/../scripts/reading-spelling.json";
 import { patternInfo } from "@/app/writing/writing-data";
@@ -33,23 +33,28 @@ import { patternInfo } from "@/app/writing/writing-data";
  * second-grade decodability floor could not carry the other one.
  */
 
-const DATA = PASSAGES as unknown as {
-  levels: Record<string, string>;
-  passages: Record<
-    string,
-    Record<
-      string,
-      {
-        title: string;
-        paras: string[];
-        qs: [string, string][];
-        write: { type: string; task: string };
-      }
-    >
-  >;
-};
-
-const P = DATA.passages;
+/**
+ * The passages are loaded inside the request. Importing them here meant the
+ * Cloudflare Worker parsed 800 KB before it could serve anything; see the
+ * header of scripts/build-reading-index.mjs.
+ */
+const loadPassages = () =>
+  import("@/../scripts/reading-passages.json").then(
+    (m) =>
+      (m.default as unknown as {
+        passages: Record<
+          string,
+          Record<
+            string,
+            { title: string; paras: string[]; qs: [string, string][]; write: { type: string; task: string } }
+          >
+        >;
+      }).passages,
+  );
+const P_KEYS = PASSAGE_INDEX.keys;
+// The generated index types every key as a literal; the page looks them
+// up by a string off the URL, so widen it once here.
+const P_WORDS = PASSAGE_INDEX.words as Record<string, Record<string, number>>;
 const LEVELS = ["g2", "g3", "g4"] as const;
 const LEVEL_NAME: Record<string, string> = { g2: "2nd grade", g3: "3rd grade", g4: "4th grade" };
 
@@ -60,7 +65,7 @@ const SPELL_KEYS = new Set(
 
 /** Lesson key -> that lesson's passage keys, whole lesson first. */
 const BY_LESSON = new Map<string, string[]>();
-for (const k of Object.keys(P)) {
+for (const k of P_KEYS) {
   const base = k.split("|")[0];
   const list = BY_LESSON.get(base) ?? [];
   list.push(k);
@@ -127,9 +132,10 @@ function pill(on: boolean, color: string): React.CSSProperties {
 const partOf = (k: string) => (k.includes("|") ? k.split("|")[1] : null);
 const words = (paras: string[]) => paras.reduce((n, p) => n + p.split(/\s+/).filter(Boolean).length, 0);
 
-const TOTAL = Object.values(P).reduce((n, c) => n + Object.keys(c).length, 0);
-const TOTAL_WORDS = Object.values(P).reduce(
-  (n, c) => n + Object.values(c).reduce((m, p) => m + words(p.paras), 0),
+// Counted at build time rather than by walking every passage here.
+const TOTAL = PASSAGE_INDEX.keys.length;
+const TOTAL_WORDS = Object.values(P_WORDS).reduce(
+  (n, byLevel) => n + Object.values(byLevel).reduce((m, w) => m + w, 0),
   0,
 );
 
@@ -154,6 +160,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   const askedLevel = one(sp.g);
   const level = (LEVELS as readonly string[]).includes(askedLevel ?? "") ? askedLevel! : "g2";
 
+  const P = await loadPassages();
   const passage = P[key][level];
   const info = patternInfo(lesson);
   const student = one(sp.view) === "student";
@@ -308,7 +315,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               <span style={{ ...label, marginRight: 4 }}>Reading level</span>
               {LEVELS.map((lv) => (
                 <Link key={lv} href={href({ g: lv })} style={pill(lv === level, BRAND.tealDark)}>
-                  {LEVEL_NAME[lv]} · {words(P[key][lv].paras)} words
+                  {LEVEL_NAME[lv]} · {P_WORDS[key][lv]} words
                 </Link>
               ))}
             </div>
