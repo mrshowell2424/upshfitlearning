@@ -47,12 +47,7 @@ const BUILDERS = [
   // shows stale titles and counts, so the drift has to be caught here.
   [
     "scripts/build-reading-index.mjs",
-    [
-      "scripts/reading-articles-index.json",
-      "scripts/reading-mysteries-index.json",
-      "scripts/reading-passages-index.json",
-      "scripts/reading-sentence-lab-index.json",
-    ],
+    ["scripts/reading-articles-index.json", "scripts/reading-mysteries-index.json"],
   ],
   ["scripts/build-math-prerequisites.mjs", ["scripts/math-prerequisites.json"]],
   ["scripts/build-math-practice.mjs", ["scripts/math-practice.json"]],

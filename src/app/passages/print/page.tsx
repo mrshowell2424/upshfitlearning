@@ -1,5 +1,5 @@
 import { SignInGate } from "@/components/shared/SignInGate";
-import PASSAGE_INDEX from "@/../scripts/reading-passages-index.json";
+import PASSAGES from "@/../scripts/reading-passages.json";
 import { patternInfo } from "@/app/writing/writing-data";
 
 /**
@@ -22,21 +22,21 @@ import { patternInfo } from "@/app/writing/writing-data";
  * No Header or Footer: this route is the sheet.
  */
 
-/** Loaded inside the request; see scripts/build-reading-index.mjs. */
-const loadPassages = () =>
-  import("@/../scripts/reading-passages.json").then(
-    (m) =>
-      (m.default as unknown as {
-        passages: Record<
-          string,
-          Record<
-            string,
-            { title: string; paras: string[]; qs: [string, string][]; write: { type: string; task: string } }
-          >
-        >;
-      }).passages,
-  );
-const P_KEYS = new Set(PASSAGE_INDEX.keys as string[]);
+const DATA = PASSAGES as unknown as {
+  passages: Record<
+    string,
+    Record<
+      string,
+      {
+        title: string;
+        paras: string[];
+        qs: [string, string][];
+        write: { type: string; task: string };
+      }
+    >
+  >;
+};
+const P = DATA.passages;
 const LEVELS = ["g2", "g3", "g4"];
 const LEVEL_NAME: Record<string, string> = { g2: "2nd grade", g3: "3rd grade", g4: "4th grade" };
 
@@ -79,8 +79,7 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   const sp = await searchParams;
 
   const askedKey = one(sp.k);
-  const P = await loadPassages();
-  const key = askedKey && P_KEYS.has(askedKey) ? askedKey : "ai-ay";
+  const key = askedKey && P[askedKey] ? askedKey : "ai-ay";
   const lesson = key.split("|")[0];
 
   const askedLevel = one(sp.g);
