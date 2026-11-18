@@ -1,5 +1,41 @@
 # Production Deployment Guide
 
+> ## Where this actually runs
+>
+> **Cloudflare Workers, through OpenNext, at hub.upshiftlearning.com.** Not
+> Vercel. Much of the detail further down this file describes a Vercel setup
+> that is no longer how the site is deployed; it is kept because the
+> environment variables and the Supabase and Stripe steps are still right.
+>
+> How to tell, from outside: `curl -I https://hub.upshiftlearning.com/`
+> returns `x-opennext: 1` and `server: cloudflare`.
+>
+> ### The Workers plan is not optional
+>
+> **The Worker must be on the Workers Paid plan.** The free plan allows
+> **10 ms of CPU per request**, and a Next.js server render needs 20–200 ms,
+> so on the free plan almost every page returns Cloudflare **error 1102,
+> "Worker exceeded resource limits"**, while static files keep serving
+> normally because they never run the Worker.
+>
+> That failure is easy to misread, because it looks like a code or data
+> problem and it comes and goes: a render that happens to be cheap slips
+> under the limit, so a page fails nine times and works once.
+>
+> If pages are failing, check the plan before anything else:
+>
+> ```bash
+> # Static assets fine, rendered pages failing = the CPU limit, not your code.
+> curl -s -o /dev/null -w "%{http_code}\n" https://hub.upshiftlearning.com/robots.txt
+> curl -s -o /dev/null -w "%{http_code}\n" https://hub.upshiftlearning.com/
+> ```
+>
+> `/api/health` reports the database, auth, resource library and Stripe
+> separately, and is the quickest way to tell a data problem from this one —
+> but it is itself a rendered route, so on the free plan it returns 1102 too.
+
+---
+
 ## Overview
 
 Complete guide to deploying Upshift Learning Hub to production with CI/CD automation, monitoring, and rollback capabilities.

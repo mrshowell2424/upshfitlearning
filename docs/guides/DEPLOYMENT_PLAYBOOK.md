@@ -1,5 +1,12 @@
 # Deployment Playbook
 
+> **Platform note.** This playbook's URLs point at a Vercel staging project
+> that no longer exists. Production is Cloudflare Workers via OpenNext, at
+> hub.upshiftlearning.com, and the Worker must be on the Workers Paid plan —
+> the free plan's 10 ms CPU limit makes almost every rendered page return
+> Cloudflare error 1102. See the top of DEPLOYMENT_GUIDE.md.
+
+
 Complete runbook for deploying Upshift Learning Hub to production with safety checks, monitoring, and rollback procedures.
 
 ---
