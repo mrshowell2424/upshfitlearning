@@ -198,6 +198,24 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
               <i>what</i> to review is the work, and it has to be decided again every day. This
               decides it. Three slots, from the sequence you are already teaching.
             </p>
+            {/*
+              The other review on the site, and the one a teacher looking for
+              "review" may actually want: this page reviews the sequence being
+              taught, the continuum review reviews a skill from the fifteen on
+              the intervention continuum, five days at a time. Neither replaces
+              the other, so each says the other exists.
+            */}
+            <p style={{ fontSize: 15, color: BRAND.mid, margin: "0 0 10px", lineHeight: 1.6 }}>
+              Working from the intervention continuum instead?{" "}
+              <Link
+                href="/review/continuum"
+                style={{ color: BRAND.tealDark, fontWeight: 700, textDecoration: "none" }}
+              >
+                Continuum review
+              </Link>{" "}
+              has five days for each of the fifteen skills, P1 to P15 — the rule, real and made-up
+              words that use it, and earlier skills mixed in.
+            </p>
             <p style={{ fontSize: 13, color: BRAND.mid, margin: "0 0 22px" }}>
               <Link
                 href="/science-of-reading"
