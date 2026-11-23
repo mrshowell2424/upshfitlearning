@@ -1,0 +1,4984 @@
+{
+ "_note": "Five review days for each of the fifteen 95% Group Phonics Intervention Continuum skills (P1-P15). Each day carries the skill's rule, five real and three made-up words that use it, and four interleaved words from skills already taught. Words are hand-authored in scripts/lib/continuum-pools.mjs and verified by scripts/check-continuum-review.mjs; this file is generated, so do not hand-edit.",
+ "perDay": {
+  "real": 5,
+  "madeUp": 3,
+  "review": 4
+ },
+ "skills": [
+  {
+   "id": "P1",
+   "band": "Basic",
+   "name": "Letters and Sounds",
+   "rule": "Every letter has a name and a sound. Say the name, then the sound it makes.",
+   "kind": "letters",
+   "days": [
+    {
+     "day": 1,
+     "rule": "Every letter has a name and a sound. Say the name, then the sound it makes.",
+     "items": [
+      {
+       "w": "j",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/j/ as in jam"
+      },
+      {
+       "w": "h",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/h/ as in hat"
+      },
+      {
+       "w": "n",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/n/ as in net"
+      },
+      {
+       "w": "l",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/l/ as in leaf"
+      },
+      {
+       "w": "k",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/k/ as in kite"
+      },
+      {
+       "w": "a",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/a/ as in apple"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "rule": "Every letter has a name and a sound. Say the name, then the sound it makes.",
+     "items": [
+      {
+       "w": "r",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/r/ as in rug"
+      },
+      {
+       "w": "b",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/b/ as in bat"
+      },
+      {
+       "w": "d",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/d/ as in dog"
+      },
+      {
+       "w": "t",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/t/ as in top"
+      },
+      {
+       "w": "v",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/v/ as in van"
+      }
+     ]
+    },
+    {
+     "day": 3,
+     "rule": "Every letter has a name and a sound. Say the name, then the sound it makes.",
+     "items": [
+      {
+       "w": "o",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/o/ as in octopus"
+      },
+      {
+       "w": "w",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/w/ as in web"
+      },
+      {
+       "w": "x",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/ks/ as in box"
+      },
+      {
+       "w": "y",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/y/ as in yarn"
+      },
+      {
+       "w": "f",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/f/ as in fan"
+      }
+     ]
+    },
+    {
+     "day": 4,
+     "rule": "Every letter has a name and a sound. Say the name, then the sound it makes.",
+     "items": [
+      {
+       "w": "s",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/s/ as in sun"
+      },
+      {
+       "w": "e",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/e/ as in egg"
+      },
+      {
+       "w": "g",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/g/ as in goat"
+      },
+      {
+       "w": "c",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/k/ as in cat"
+      },
+      {
+       "w": "u",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/u/ as in up"
+      }
+     ]
+    },
+    {
+     "day": 5,
+     "rule": "Every letter has a name and a sound. Say the name, then the sound it makes.",
+     "items": [
+      {
+       "w": "m",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/m/ as in map"
+      },
+      {
+       "w": "i",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/i/ as in itch"
+      },
+      {
+       "w": "p",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/p/ as in pig"
+      },
+      {
+       "w": "q",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/kw/ as in queen"
+      },
+      {
+       "w": "z",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/z/ as in zip"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "P2",
+   "band": "Basic",
+   "name": "Short Vowels (VC and CVC)",
+   "rule": "A closed syllable ends in a consonant. The vowel is shut in, so it says its short sound.",
+   "kind": "words",
+   "days": [
+    {
+     "day": 1,
+     "rule": "A closed syllable ends in a consonant. The vowel is shut in, so it says its short sound.",
+     "items": [
+      {
+       "w": "x",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/ks/ as in box"
+      },
+      {
+       "w": "kiv",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "at",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "q",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/kw/ as in queen"
+      },
+      {
+       "w": "yeg",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "wub",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "c",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/k/ as in cat"
+      },
+      {
+       "w": "net",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "on",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "l",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/l/ as in leaf"
+      },
+      {
+       "w": "it",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "mop",
+       "kind": "real",
+       "from": "P2"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "rule": "A closed syllable ends in a consonant. The vowel is shut in, so it says its short sound.",
+     "items": [
+      {
+       "w": "t",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/t/ as in top"
+      },
+      {
+       "w": "r",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/r/ as in rug"
+      },
+      {
+       "w": "cub",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "vop",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "hen",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "fix",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "y",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/y/ as in yarn"
+      },
+      {
+       "w": "mad",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "yud",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "am",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "tev",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "a",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/a/ as in apple"
+      }
+     ]
+    },
+    {
+     "day": 3,
+     "rule": "A closed syllable ends in a consonant. The vowel is shut in, so it says its short sound.",
+     "items": [
+      {
+       "w": "w",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/w/ as in web"
+      },
+      {
+       "w": "zud",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "lap",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "pot",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "in",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "zem",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "u",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/u/ as in up"
+      },
+      {
+       "w": "sun",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "bed",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "n",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/n/ as in net"
+      },
+      {
+       "w": "f",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/f/ as in fan"
+      },
+      {
+       "w": "wuv",
+       "kind": "made-up",
+       "from": "P2"
+      }
+     ]
+    },
+    {
+     "day": 4,
+     "rule": "A closed syllable ends in a consonant. The vowel is shut in, so it says its short sound.",
+     "items": [
+      {
+       "w": "v",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/v/ as in van"
+      },
+      {
+       "w": "h",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/h/ as in hat"
+      },
+      {
+       "w": "cat",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "gax",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "jet",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "pig",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "dig",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "hoz",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "top",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "p",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/p/ as in pig"
+      },
+      {
+       "w": "j",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/j/ as in jam"
+      },
+      {
+       "w": "vun",
+       "kind": "made-up",
+       "from": "P2"
+      }
+     ]
+    },
+    {
+     "day": 5,
+     "rule": "A closed syllable ends in a consonant. The vowel is shut in, so it says its short sound.",
+     "items": [
+      {
+       "w": "e",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/e/ as in egg"
+      },
+      {
+       "w": "k",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/k/ as in kite"
+      },
+      {
+       "w": "dut",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "win",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "up",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "hib",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "z",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/z/ as in zip"
+      },
+      {
+       "w": "bag",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "mof",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "rug",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "m",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/m/ as in map"
+      },
+      {
+       "w": "hop",
+       "kind": "real",
+       "from": "P2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "P3",
+   "band": "Basic",
+   "name": "Consonant Blends",
+   "rule": "In a blend you hear both consonants. Say each sound, then push them together.",
+   "kind": "words",
+   "days": [
+    {
+     "day": 1,
+     "rule": "In a blend you hear both consonants. Say each sound, then push them together.",
+     "items": [
+      {
+       "w": "best",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "nest",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "glup",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "frub",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "m",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/m/ as in map"
+      },
+      {
+       "w": "lamp",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "plan",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "hand",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "i",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/i/ as in itch"
+      },
+      {
+       "w": "jet",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "t",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/t/ as in top"
+      },
+      {
+       "w": "stev",
+       "kind": "made-up",
+       "from": "P3"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "rule": "In a blend you hear both consonants. Say each sound, then push them together.",
+     "items": [
+      {
+       "w": "slom",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "crab",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "drum",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "dreft",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "f",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/f/ as in fan"
+      },
+      {
+       "w": "am",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "flag",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "slip",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "a",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/a/ as in apple"
+      },
+      {
+       "w": "twib",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "grin",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "k",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/k/ as in kite"
+      }
+     ]
+    },
+    {
+     "day": 3,
+     "rule": "In a blend you hear both consonants. Say each sound, then push them together.",
+     "items": [
+      {
+       "w": "it",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "top",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "stop",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "milk",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "z",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/z/ as in zip"
+      },
+      {
+       "w": "plisk",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "o",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/o/ as in octopus"
+      },
+      {
+       "w": "smag",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "brag",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "desk",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "swim",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "prusk",
+       "kind": "made-up",
+       "from": "P3"
+      }
+     ]
+    },
+    {
+     "day": 4,
+     "rule": "In a blend you hear both consonants. Say each sound, then push them together.",
+     "items": [
+      {
+       "w": "dig",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "bend",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "hop",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "lap",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "blen",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "gift",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "clet",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "snap",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "twin",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "clap",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "drask",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "x",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/ks/ as in box"
+      }
+     ]
+    },
+    {
+     "day": 5,
+     "rule": "In a blend you hear both consonants. Say each sound, then push them together.",
+     "items": [
+      {
+       "w": "spin",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "kiv",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "trip",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "belt",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "jump",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "vop",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "flen",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "crelt",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "fist",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "grint",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "h",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/h/ as in hat"
+      },
+      {
+       "w": "hen",
+       "kind": "real",
+       "from": "P2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "P4",
+   "band": "Basic",
+   "name": "Consonant Digraphs",
+   "rule": "Two letters, one sound. ch, sh, th, wh, ck and ng each make a single sound.",
+   "kind": "words",
+   "days": [
+    {
+     "day": 1,
+     "rule": "Two letters, one sound. ch, sh, th, wh, ck and ng each make a single sound.",
+     "items": [
+      {
+       "w": "whiv",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "shop",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "thod",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "u",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/u/ as in up"
+      },
+      {
+       "w": "pick",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "dash",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "shulk",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "chin",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "lamp",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "it",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "vop",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "duck",
+       "kind": "real",
+       "from": "P4"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "rule": "Two letters, one sound. ch, sh, th, wh, ck and ng each make a single sound.",
+     "items": [
+      {
+       "w": "check",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "bath",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "at",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "stev",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "chup",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "shig",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "wish",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "chesk",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "belt",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "ship",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "pig",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "shell",
+       "kind": "real",
+       "from": "P4"
+      }
+     ]
+    },
+    {
+     "day": 3,
+     "rule": "Two letters, one sound. ch, sh, th, wh, ck and ng each make a single sound.",
+     "items": [
+      {
+       "w": "cat",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "wub",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "chest",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "luck",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "lap",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "shom",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "whem",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "thick",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "desk",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "shup",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "path",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "chip",
+       "kind": "real",
+       "from": "P4"
+      }
+     ]
+    },
+    {
+     "day": 4,
+     "rule": "Two letters, one sound. ch, sh, th, wh, ck and ng each make a single sound.",
+     "items": [
+      {
+       "w": "dut",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "thand",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "then",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "cub",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "chulp",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "chev",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "k",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/k/ as in kite"
+      },
+      {
+       "w": "shut",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "much",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "r",
+       "kind": "letter",
+       "from": "P1",
+       "sound": "/r/ as in rug"
+      },
+      {
+       "w": "thin",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "with",
+       "kind": "real",
+       "from": "P4"
+      }
+     ]
+    },
+    {
+     "day": 5,
+     "rule": "Two letters, one sound. ch, sh, th, wh, ck and ng each make a single sound.",
+     "items": [
+      {
+       "w": "thup",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "rich",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "when",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "prusk",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "trip",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "sock",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "chelt",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "whip",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "thass",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "that",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "glup",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "gax",
+       "kind": "made-up",
+       "from": "P2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "P5",
+   "band": "Basic",
+   "name": "Long Vowel Silent-e",
+   "rule": "The e at the end is silent. It reaches back and makes the first vowel say its name.",
+   "kind": "words",
+   "days": [
+    {
+     "day": 1,
+     "rule": "The e at the end is silent. It reaches back and makes the first vowel say its name.",
+     "items": [
+      {
+       "w": "note",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "vope",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "dake",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "pine",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "rose",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "sape",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "fist",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "chest",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "nose",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "at",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "bone",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "pig",
+       "kind": "real",
+       "from": "P2"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "rule": "The e at the end is silent. It reaches back and makes the first vowel say its name.",
+     "items": [
+      {
+       "w": "home",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "cube",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "mipe",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "bend",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "whip",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "fape",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "brag",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "crelt",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "late",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "line",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "dime",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "gome",
+       "kind": "made-up",
+       "from": "P5"
+      }
+     ]
+    },
+    {
+     "day": 3,
+     "rule": "The e at the end is silent. It reaches back and makes the first vowel say its name.",
+     "items": [
+      {
+       "w": "cake",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "yobe",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "joke",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "chev",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "mule",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "frub",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "up",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "cute",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "wave",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "yupe",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "sun",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "tive",
+       "kind": "made-up",
+       "from": "P5"
+      }
+     ]
+    },
+    {
+     "day": 4,
+     "rule": "The e at the end is silent. It reaches back and makes the first vowel say its name.",
+     "items": [
+      {
+       "w": "bake",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "jate",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "shell",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "plame",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "hape",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "stev",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "jump",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "tape",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "vote",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "blen",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "side",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "time",
+       "kind": "real",
+       "from": "P5"
+      }
+     ]
+    },
+    {
+     "day": 5,
+     "rule": "The e at the end is silent. It reaches back and makes the first vowel say its name.",
+     "items": [
+      {
+       "w": "zide",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "five",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "zud",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "nube",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "mune",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "gift",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "game",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "hope",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "race",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "ride",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "am",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "rich",
+       "kind": "real",
+       "from": "P4"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "P6",
+   "band": "Advanced",
+   "name": "Predictable Vowel Teams",
+   "rule": "Two vowels walking: ai, ay, ee, ea, oa, oe, ue and ui say the long sound of the first one.",
+   "kind": "words",
+   "days": [
+    {
+     "day": 1,
+     "rule": "Two vowels walking: ai, ay, ee, ea, oa, oe, ue and ui say the long sound of the first one.",
+     "items": [
+      {
+       "w": "daim",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "bone",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "mof",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "chail",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "nail",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "tape",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "goat",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "green",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "cat",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "float",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "snay",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "fleet",
+       "kind": "real",
+       "from": "P6"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "rule": "Two vowels walking: ai, ay, ee, ea, oa, oe, ue and ui say the long sound of the first one.",
+     "items": [
+      {
+       "w": "meep",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "treep",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "play",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "gax",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "sloam",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "net",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "true",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "then",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "road",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "when",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "toe",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "soap",
+       "kind": "real",
+       "from": "P6"
+      }
+     ]
+    },
+    {
+     "day": 3,
+     "rule": "Two vowels walking: ai, ay, ee, ea, oa, oe, ue and ui say the long sound of the first one.",
+     "items": [
+      {
+       "w": "plisk",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "smag",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "zail",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "shulk",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "keep",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "vait",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "beach",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "rain",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "blue",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "sween",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "frub",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "paint",
+       "kind": "real",
+       "from": "P6"
+      }
+     ]
+    },
+    {
+     "day": 4,
+     "rule": "Two vowels walking: ai, ay, ee, ea, oa, oe, ue and ui say the long sound of the first one.",
+     "items": [
+      {
+       "w": "fist",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "in",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "team",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "tray",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "wub",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "coat",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "feap",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "noab",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "it",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "day",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "fruit",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "goam",
+       "kind": "made-up",
+       "from": "P6"
+      }
+     ]
+    },
+    {
+     "day": 5,
+     "rule": "Two vowels walking: ai, ay, ee, ea, oa, oe, ue and ui say the long sound of the first one.",
+     "items": [
+      {
+       "w": "vope",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "sock",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "feet",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "clean",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "thand",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "jeam",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "seat",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "sweet",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "stay",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "stoap",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "plee",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "stev",
+       "kind": "made-up",
+       "from": "P3"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "P7",
+   "band": "Advanced",
+   "name": "Unpredictable Vowel Teams",
+   "rule": "These teams do not say the first vowel's name. ea can say /e/, ow and ou can say /ow/ or /oa/, oo has two sounds. Try one, then the other.",
+   "kind": "words",
+   "days": [
+    {
+     "day": 1,
+     "rule": "These teams do not say the first vowel's name. ea can say /e/, ow and ou can say /ow/ or /oa/, oo has two sounds. Try one, then the other.",
+     "items": [
+      {
+       "w": "haul",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "check",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "duck",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "vaut",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "touch",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "voit",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "foot",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "chew",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "shauk",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "vun",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "thass",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "book",
+       "kind": "real",
+       "from": "P7"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "rule": "These teams do not say the first vowel's name. ea can say /e/, ow and ou can say /ow/ or /oa/, oo has two sounds. Try one, then the other.",
+     "items": [
+      {
+       "w": "jewt",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "ready",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "sock",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "crab",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "saw",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "mule",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "zaw",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "toy",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "sauce",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "choud",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "top",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "blew",
+       "kind": "real",
+       "from": "P7"
+      }
+     ]
+    },
+    {
+     "day": 3,
+     "rule": "These teams do not say the first vowel's name. ea can say /e/, ow and ou can say /ow/ or /oa/, oo has two sounds. Try one, then the other.",
+     "items": [
+      {
+       "w": "lawn",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "head",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "zead",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "grow",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "day",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "joy",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "blook",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "heab",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "lamp",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "snow",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "daim",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "hoz",
+       "kind": "made-up",
+       "from": "P2"
+      }
+     ]
+    },
+    {
+     "day": 4,
+     "rule": "These teams do not say the first vowel's name. ea can say /e/, ow and ou can say /ow/ or /oa/, oo has two sounds. Try one, then the other.",
+     "items": [
+      {
+       "w": "time",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "treep",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "show",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "bread",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "mook",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "hape",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "new",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "draw",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "coin",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "that",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "fewn",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "floy",
+       "kind": "made-up",
+       "from": "P7"
+      }
+     ]
+    },
+    {
+     "day": 5,
+     "rule": "These teams do not say the first vowel's name. ea can say /e/, ow and ou can say /ow/ or /oa/, oo has two sounds. Try one, then the other.",
+     "items": [
+      {
+       "w": "boil",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "soup",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "snou",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "cloud",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "gead",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "found",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "fist",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "food",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "zoot",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "then",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "desk",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "bake",
+       "kind": "real",
+       "from": "P5"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "P8",
+   "band": "Advanced",
+   "name": "Vowel-r",
+   "rule": "The r bosses the vowel. ar says /ar/, or says /or/, and er, ir and ur all say /er/.",
+   "kind": "words",
+   "days": [
+    {
+     "day": 1,
+     "rule": "The r bosses the vowel. ar says /ar/, or says /or/, and er, ir and ur all say /er/.",
+     "items": [
+      {
+       "w": "arm",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "bird",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "star",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "blurn",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "germ",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "mop",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "pot",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "gern",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "feet",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "hard",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "murn",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "mule",
+       "kind": "real",
+       "from": "P5"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "rule": "The r bosses the vowel. ar says /ar/, or says /or/, and er, ir and ur all say /er/.",
+     "items": [
+      {
+       "w": "vorn",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "thup",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "short",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "girl",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "corn",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "far",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "plort",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "plisk",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "nurn",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "barn",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "true",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "flen",
+       "kind": "made-up",
+       "from": "P3"
+      }
+     ]
+    },
+    {
+     "day": 3,
+     "rule": "The r bosses the vowel. ar says /ar/, or says /or/, and er, ir and ur all say /er/.",
+     "items": [
+      {
+       "w": "chev",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "ferp",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "shirt",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "car",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "herd",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "varn",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "snou",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "team",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "her",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "cloud",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "kirt",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "first",
+       "kind": "real",
+       "from": "P8"
+      }
+     ]
+    },
+    {
+     "day": 4,
+     "rule": "The r bosses the vowel. ar says /ar/, or says /or/, and er, ir and ur all say /er/.",
+     "items": [
+      {
+       "w": "sport",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "note",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "jorn",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "zirt",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "shurt",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "part",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "dirt",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "rich",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "horn",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "north",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "sweet",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "shut",
+       "kind": "real",
+       "from": "P4"
+      }
+     ]
+    },
+    {
+     "day": 5,
+     "rule": "The r bosses the vowel. ar says /ar/, or says /or/, and er, ir and ur all say /er/.",
+     "items": [
+      {
+       "w": "turn",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "stoap",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "smort",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "gead",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "snow",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "third",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "zurn",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "plar",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "tive",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "fort",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "fern",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "term",
+       "kind": "real",
+       "from": "P8"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "P9",
+   "band": "Advanced",
+   "name": "Complex Consonants",
+   "rule": "Some consonants hide or change. kn, wr, mb and gn have a silent letter; c and g go soft before e, i and y.",
+   "kind": "words",
+   "days": [
+    {
+     "day": 1,
+     "rule": "Some consonants hide or change. kn, wr, mb and gn have a silent letter; c and g go soft before e, i and y.",
+     "items": [
+      {
+       "w": "food",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "feap",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "city",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "far",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "gnad",
+       "kind": "made-up",
+       "from": "P9"
+      },
+      {
+       "w": "wrap",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "lamp",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "frotch",
+       "kind": "made-up",
+       "from": "P9"
+      },
+      {
+       "w": "gice",
+       "kind": "made-up",
+       "from": "P9"
+      },
+      {
+       "w": "badge",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "gym",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "sign",
+       "kind": "real",
+       "from": "P9"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "rule": "Some consonants hide or change. kn, wr, mb and gn have a silent letter; c and g go soft before e, i and y.",
+     "items": [
+      {
+       "w": "plitch",
+       "kind": "made-up",
+       "from": "P9"
+      },
+      {
+       "w": "graph",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "toe",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "gem",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "yobe",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "team",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "knee",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "hib",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "knim",
+       "kind": "made-up",
+       "from": "P9"
+      },
+      {
+       "w": "climb",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "know",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "gnip",
+       "kind": "made-up",
+       "from": "P9"
+      }
+     ]
+    },
+    {
+     "day": 3,
+     "rule": "Some consonants hide or change. kn, wr, mb and gn have a silent letter; c and g go soft before e, i and y.",
+     "items": [
+      {
+       "w": "knog",
+       "kind": "made-up",
+       "from": "P9"
+      },
+      {
+       "w": "cite",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "phone",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "knob",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "page",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "ditch",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "coin",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "time",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "nodge",
+       "kind": "made-up",
+       "from": "P9"
+      },
+      {
+       "w": "chest",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "wrim",
+       "kind": "made-up",
+       "from": "P9"
+      },
+      {
+       "w": "hen",
+       "kind": "real",
+       "from": "P2"
+      }
+     ]
+    },
+    {
+     "day": 4,
+     "rule": "Some consonants hide or change. kn, wr, mb and gn have a silent letter; c and g go soft before e, i and y.",
+     "items": [
+      {
+       "w": "knife",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "plort",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "gipe",
+       "kind": "made-up",
+       "from": "P9"
+      },
+      {
+       "w": "shauk",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "write",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "thumb",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "cent",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "jumb",
+       "kind": "made-up",
+       "from": "P9"
+      },
+      {
+       "w": "gnat",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "flen",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "car",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "cend",
+       "kind": "made-up",
+       "from": "P9"
+      }
+     ]
+    },
+    {
+     "day": 5,
+     "rule": "Some consonants hide or change. kn, wr, mb and gn have a silent letter; c and g go soft before e, i and y.",
+     "items": [
+      {
+       "w": "soup",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "wrist",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "bridge",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "catch",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "wrast",
+       "kind": "made-up",
+       "from": "P9"
+      },
+      {
+       "w": "lomb",
+       "kind": "made-up",
+       "from": "P9"
+      },
+      {
+       "w": "comb",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "voit",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "cloud",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "lamb",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "nose",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "phem",
+       "kind": "made-up",
+       "from": "P9"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "P10",
+   "band": "Multisyllabic",
+   "name": "Closed Syllables",
+   "rule": "Split between the two consonants. Each syllable ends in a consonant, so each vowel is short.",
+   "kind": "words",
+   "days": [
+    {
+     "day": 1,
+     "rule": "Split between the two consonants. Each syllable ends in a consonant, so each vowel is short.",
+     "items": [
+      {
+       "w": "time",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "hubnit",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "helmet",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "contest",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "mitten",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "cantid",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "invent",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "it",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "knim",
+       "kind": "made-up",
+       "from": "P9"
+      },
+      {
+       "w": "up",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "cactus",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "jalkin",
+       "kind": "made-up",
+       "from": "P10"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "rule": "Split between the two consonants. Each syllable ends in a consonant, so each vowel is short.",
+     "items": [
+      {
+       "w": "line",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "tablet",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "zigzag",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "dash",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "magnet",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "pumpkin",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "gasnip",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "tray",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "tennub",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "best",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "tildun",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "subject",
+       "kind": "real",
+       "from": "P10"
+      }
+     ]
+    },
+    {
+     "day": 3,
+     "rule": "Split between the two consonants. Each syllable ends in a consonant, so each vowel is short.",
+     "items": [
+      {
+       "w": "fempic",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "game",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "basket",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "sunset",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "admit",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "plar",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "food",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "sundrit",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "tape",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "insect",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "public",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "mupsin",
+       "kind": "made-up",
+       "from": "P10"
+      }
+     ]
+    },
+    {
+     "day": 4,
+     "rule": "Split between the two consonants. Each syllable ends in a consonant, so each vowel is short.",
+     "items": [
+      {
+       "w": "rempot",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "hundred",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "dasnet",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "plastic",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "velvet",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "know",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "volmet",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "badge",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "toy",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "lap",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "index",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "muffin",
+       "kind": "real",
+       "from": "P10"
+      }
+     ]
+    },
+    {
+     "day": 5,
+     "rule": "Split between the two consonants. Each syllable ends in a consonant, so each vowel is short.",
+     "items": [
+      {
+       "w": "nupsel",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "picnic",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "clean",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "dentist",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "meep",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "vatnip",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "pilbat",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "rabbit",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "traffic",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "lomb",
+       "kind": "made-up",
+       "from": "P9"
+      },
+      {
+       "w": "napkin",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "stay",
+       "kind": "real",
+       "from": "P6"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "P11",
+   "band": "Multisyllabic",
+   "name": "Long Vowel Silent-e Syllables",
+   "rule": "Find the silent-e syllable at the end. Read the first part, then let the e make the last vowel say its name.",
+   "kind": "words",
+   "days": [
+    {
+     "day": 1,
+     "rule": "Find the silent-e syllable at the end. Read the first part, then let the e make the last vowel say its name.",
+     "items": [
+      {
+       "w": "zurn",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "index",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "confuse",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "invate",
+       "kind": "made-up",
+       "from": "P11"
+      },
+      {
+       "w": "pancake",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "float",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "mistake",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "explode",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "feap",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "cupcake",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "costune",
+       "kind": "made-up",
+       "from": "P11"
+      },
+      {
+       "w": "athlene",
+       "kind": "made-up",
+       "from": "P11"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "rule": "Find the silent-e syllable at the end. Read the first part, then let the e make the last vowel say its name.",
+     "items": [
+      {
+       "w": "vope",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "invite",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "include",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "sunshine",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "female",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "thass",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "confure",
+       "kind": "made-up",
+       "from": "P11"
+      },
+      {
+       "w": "her",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "cupmake",
+       "kind": "made-up",
+       "from": "P11"
+      },
+      {
+       "w": "compete",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "knob",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "explote",
+       "kind": "made-up",
+       "from": "P11"
+      }
+     ]
+    },
+    {
+     "day": 3,
+     "rule": "Find the silent-e syllable at the end. Read the first part, then let the e make the last vowel say its name.",
+     "items": [
+      {
+       "w": "vaptile",
+       "kind": "made-up",
+       "from": "P11"
+      },
+      {
+       "w": "reptile",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "remote",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "escape",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "stampede",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "corn",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "became",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "comprete",
+       "kind": "made-up",
+       "from": "P11"
+      },
+      {
+       "w": "nodge",
+       "kind": "made-up",
+       "from": "P9"
+      },
+      {
+       "w": "heab",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "inkide",
+       "kind": "made-up",
+       "from": "P11"
+      },
+      {
+       "w": "game",
+       "kind": "real",
+       "from": "P5"
+      }
+     ]
+    },
+    {
+     "day": 4,
+     "rule": "Find the silent-e syllable at the end. Read the first part, then let the e make the last vowel say its name.",
+     "items": [
+      {
+       "w": "decide",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "milestone",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "admire",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "cake",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "bedtime",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "athlete",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "escope",
+       "kind": "made-up",
+       "from": "P11"
+      },
+      {
+       "w": "tive",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "admore",
+       "kind": "made-up",
+       "from": "P11"
+      },
+      {
+       "w": "short",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "ship",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "mistave",
+       "kind": "made-up",
+       "from": "P11"
+      }
+     ]
+    },
+    {
+     "day": 5,
+     "rule": "Find the silent-e syllable at the end. Read the first part, then let the e make the last vowel say its name.",
+     "items": [
+      {
+       "w": "combine",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "pine",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "yeg",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "magnet",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "bedlime",
+       "kind": "made-up",
+       "from": "P11"
+      },
+      {
+       "w": "alone",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "sunvine",
+       "kind": "made-up",
+       "from": "P11"
+      },
+      {
+       "w": "inside",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "star",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "polite",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "stampode",
+       "kind": "made-up",
+       "from": "P11"
+      },
+      {
+       "w": "costume",
+       "kind": "real",
+       "from": "P11"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "P12",
+   "band": "Multisyllabic",
+   "name": "Open Syllables",
+   "rule": "Split after the vowel. An open syllable ends in a vowel, so the vowel says its name.",
+   "kind": "words",
+   "days": [
+    {
+     "day": 1,
+     "rule": "Split after the vowel. An open syllable ends in a vowel, so the vowel says its name.",
+     "items": [
+      {
+       "w": "zemo",
+       "kind": "made-up",
+       "from": "P12"
+      },
+      {
+       "w": "tiger",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "meep",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "city",
+       "kind": "real",
+       "from": "P9"
+      },
+      {
+       "w": "pilod",
+       "kind": "made-up",
+       "from": "P12"
+      },
+      {
+       "w": "feap",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "basic",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "final",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "tilent",
+       "kind": "made-up",
+       "from": "P12"
+      },
+      {
+       "w": "jumbo",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "paper",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "chev",
+       "kind": "made-up",
+       "from": "P4"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "rule": "Split after the vowel. An open syllable ends in a vowel, so the vowel says its name.",
+     "items": [
+      {
+       "w": "barn",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "item",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "invent",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "confuse",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "total",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "baby",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "paint",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "paber",
+       "kind": "made-up",
+       "from": "P12"
+      },
+      {
+       "w": "jundo",
+       "kind": "made-up",
+       "from": "P12"
+      },
+      {
+       "w": "even",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "silent",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "robat",
+       "kind": "made-up",
+       "from": "P12"
+      }
+     ]
+    },
+    {
+     "day": 3,
+     "rule": "Split after the vowel. An open syllable ends in a vowel, so the vowel says its name.",
+     "items": [
+      {
+       "w": "tennub",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "mupic",
+       "kind": "made-up",
+       "from": "P12"
+      },
+      {
+       "w": "late",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "happy",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "moment",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "rotate",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "volmet",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "pancake",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "music",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "oten",
+       "kind": "made-up",
+       "from": "P12"
+      },
+      {
+       "w": "hello",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "basig",
+       "kind": "made-up",
+       "from": "P12"
+      }
+     ]
+    },
+    {
+     "day": 4,
+     "rule": "Split after the vowel. An open syllable ends in a vowel, so the vowel says its name.",
+     "items": [
+      {
+       "w": "hotel",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "zero",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "hodel",
+       "kind": "made-up",
+       "from": "P12"
+      },
+      {
+       "w": "babo",
+       "kind": "made-up",
+       "from": "P12"
+      },
+      {
+       "w": "knog",
+       "kind": "made-up",
+       "from": "P9"
+      },
+      {
+       "w": "robot",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "bedtime",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "motor",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "athlete",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "pilot",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "fruit",
+       "kind": "real",
+       "from": "P6"
+      },
+      {
+       "w": "tiber",
+       "kind": "made-up",
+       "from": "P12"
+      }
+     ]
+    },
+    {
+     "day": 5,
+     "rule": "Split after the vowel. An open syllable ends in a vowel, so the vowel says its name.",
+     "items": [
+      {
+       "w": "student",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "open",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "rotale",
+       "kind": "made-up",
+       "from": "P12"
+      },
+      {
+       "w": "fobo",
+       "kind": "made-up",
+       "from": "P12"
+      },
+      {
+       "w": "super",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "label",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "dig",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "race",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "tildun",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "food",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "hemo",
+       "kind": "made-up",
+       "from": "P12"
+      },
+      {
+       "w": "equal",
+       "kind": "real",
+       "from": "P12"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "P13",
+   "band": "Multisyllabic",
+   "name": "Vowel Team Syllables",
+   "rule": "Keep the vowel team together. Never split a team, so find it first and read it as one sound.",
+   "kind": "words",
+   "days": [
+    {
+     "day": 1,
+     "rule": "Keep the vowel team together. Never split a team, so find it first and read it as one sound.",
+     "items": [
+      {
+       "w": "prusk",
+       "kind": "made-up",
+       "from": "P3"
+      },
+      {
+       "w": "oatmeel",
+       "kind": "made-up",
+       "from": "P13"
+      },
+      {
+       "w": "peanut",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "reason",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "nurn",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "floatbeen",
+       "kind": "made-up",
+       "from": "P13"
+      },
+      {
+       "w": "freedom",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "nube",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "meeting",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "haul",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "windoe",
+       "kind": "made-up",
+       "from": "P13"
+      },
+      {
+       "w": "window",
+       "kind": "real",
+       "from": "P13"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "rule": "Keep the vowel team together. Never split a team, so find it first and read it as one sound.",
+     "items": [
+      {
+       "w": "teachem",
+       "kind": "made-up",
+       "from": "P13"
+      },
+      {
+       "w": "zead",
+       "kind": "made-up",
+       "from": "P7"
+      },
+      {
+       "w": "tiber",
+       "kind": "made-up",
+       "from": "P12"
+      },
+      {
+       "w": "between",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "teacher",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "oatmeal",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "season",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "railroap",
+       "kind": "made-up",
+       "from": "P13"
+      },
+      {
+       "w": "zurn",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "sixteen",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "sailboab",
+       "kind": "made-up",
+       "from": "P13"
+      },
+      {
+       "w": "wrim",
+       "kind": "made-up",
+       "from": "P9"
+      }
+     ]
+    },
+    {
+     "day": 3,
+     "rule": "Keep the vowel team together. Never split a team, so find it first and read it as one sound.",
+     "items": [
+      {
+       "w": "invite",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "maintaip",
+       "kind": "made-up",
+       "from": "P13"
+      },
+      {
+       "w": "hard",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "reasom",
+       "kind": "made-up",
+       "from": "P13"
+      },
+      {
+       "w": "cowboy",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "robat",
+       "kind": "made-up",
+       "from": "P12"
+      },
+      {
+       "w": "seventeen",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "indeed",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "betweep",
+       "kind": "made-up",
+       "from": "P13"
+      },
+      {
+       "w": "eighteen",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "daydream",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "include",
+       "kind": "real",
+       "from": "P11"
+      }
+     ]
+    },
+    {
+     "day": 4,
+     "rule": "Keep the vowel team together. Never split a team, so find it first and read it as one sound.",
+     "items": [
+      {
+       "w": "maintain",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "toadstool",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "peanud",
+       "kind": "made-up",
+       "from": "P13"
+      },
+      {
+       "w": "indeeb",
+       "kind": "made-up",
+       "from": "P13"
+      },
+      {
+       "w": "football",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "sailboat",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "rainbow",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "student",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "sixteep",
+       "kind": "made-up",
+       "from": "P13"
+      },
+      {
+       "w": "subject",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "bed",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "gnat",
+       "kind": "real",
+       "from": "P9"
+      }
+     ]
+    },
+    {
+     "day": 5,
+     "rule": "Keep the vowel team together. Never split a team, so find it first and read it as one sound.",
+     "items": [
+      {
+       "w": "railroad",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "murn",
+       "kind": "made-up",
+       "from": "P8"
+      },
+      {
+       "w": "birthday",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "zigzag",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "seashell",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "explaim",
+       "kind": "made-up",
+       "from": "P13"
+      },
+      {
+       "w": "slip",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "seasom",
+       "kind": "made-up",
+       "from": "P13"
+      },
+      {
+       "w": "pointed",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "rainbo",
+       "kind": "made-up",
+       "from": "P13"
+      },
+      {
+       "w": "explain",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "chest",
+       "kind": "real",
+       "from": "P4"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "P14",
+   "band": "Multisyllabic",
+   "name": "Consonant-le Syllables",
+   "rule": "Count back three letters. The consonant plus le is the last syllable, and the e is silent.",
+   "kind": "words",
+   "days": [
+    {
+     "day": 1,
+     "rule": "Count back three letters. The consonant plus le is the last syllable, and the e is silent.",
+     "items": [
+      {
+       "w": "admore",
+       "kind": "made-up",
+       "from": "P11"
+      },
+      {
+       "w": "alone",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "bottle",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "belt",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "turtle",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "tiger",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "handle",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "tible",
+       "kind": "made-up",
+       "from": "P14"
+      },
+      {
+       "w": "zottle",
+       "kind": "made-up",
+       "from": "P14"
+      },
+      {
+       "w": "wiggle",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "simple",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "vickle",
+       "kind": "made-up",
+       "from": "P14"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "rule": "Count back three letters. The consonant plus le is the last syllable, and the e is silent.",
+     "items": [
+      {
+       "w": "zail",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "shirt",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "zable",
+       "kind": "made-up",
+       "from": "P14"
+      },
+      {
+       "w": "zide",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "marble",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "little",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "jungle",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "vable",
+       "kind": "made-up",
+       "from": "P14"
+      },
+      {
+       "w": "zingle",
+       "kind": "made-up",
+       "from": "P14"
+      },
+      {
+       "w": "joke",
+       "kind": "real",
+       "from": "P5"
+      },
+      {
+       "w": "people",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "giggle",
+       "kind": "real",
+       "from": "P14"
+      }
+     ]
+    },
+    {
+     "day": 3,
+     "rule": "Count back three letters. The consonant plus le is the last syllable, and the e is silent.",
+     "items": [
+      {
+       "w": "sween",
+       "kind": "made-up",
+       "from": "P6"
+      },
+      {
+       "w": "pot",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "vop",
+       "kind": "made-up",
+       "from": "P2"
+      },
+      {
+       "w": "single",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "hible",
+       "kind": "made-up",
+       "from": "P14"
+      },
+      {
+       "w": "pible",
+       "kind": "made-up",
+       "from": "P14"
+      },
+      {
+       "w": "apple",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "dable",
+       "kind": "made-up",
+       "from": "P14"
+      },
+      {
+       "w": "chip",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "rattle",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "bubble",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "needle",
+       "kind": "real",
+       "from": "P14"
+      }
+     ]
+    },
+    {
+     "day": 4,
+     "rule": "Count back three letters. The consonant plus le is the last syllable, and the e is silent.",
+     "items": [
+      {
+       "w": "ankle",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "purple",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "cable",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "table",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "fix",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "inkide",
+       "kind": "made-up",
+       "from": "P11"
+      },
+      {
+       "w": "candle",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "chesk",
+       "kind": "made-up",
+       "from": "P4"
+      },
+      {
+       "w": "gasnip",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "wible",
+       "kind": "made-up",
+       "from": "P14"
+      },
+      {
+       "w": "jable",
+       "kind": "made-up",
+       "from": "P14"
+      },
+      {
+       "w": "fuggle",
+       "kind": "made-up",
+       "from": "P14"
+      }
+     ]
+    },
+    {
+     "day": 5,
+     "rule": "Count back three letters. The consonant plus le is the last syllable, and the e is silent.",
+     "items": [
+      {
+       "w": "mistave",
+       "kind": "made-up",
+       "from": "P11"
+      },
+      {
+       "w": "shut",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "fottle",
+       "kind": "made-up",
+       "from": "P14"
+      },
+      {
+       "w": "lawn",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "mable",
+       "kind": "made-up",
+       "from": "P14"
+      },
+      {
+       "w": "settle",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "pickle",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "dample",
+       "kind": "made-up",
+       "from": "P14"
+      },
+      {
+       "w": "puzzle",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "joy",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "middle",
+       "kind": "real",
+       "from": "P14"
+      },
+      {
+       "w": "saddle",
+       "kind": "real",
+       "from": "P14"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "P15",
+   "band": "Multisyllabic",
+   "name": "Vowel-r Syllables",
+   "rule": "The r stays with its vowel. Keep ar, or, er, ir and ur together in the same syllable.",
+   "kind": "words",
+   "days": [
+    {
+     "day": 1,
+     "rule": "The r stays with its vowel. Keep ar, or, er, ir and ur together in the same syllable.",
+     "items": [
+      {
+       "w": "farnier",
+       "kind": "made-up",
+       "from": "P15"
+      },
+      {
+       "w": "sharper",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "open",
+       "kind": "real",
+       "from": "P12"
+      },
+      {
+       "w": "rainbo",
+       "kind": "made-up",
+       "from": "P13"
+      },
+      {
+       "w": "shell",
+       "kind": "real",
+       "from": "P4"
+      },
+      {
+       "w": "number",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "teachor",
+       "kind": "made-up",
+       "from": "P15"
+      },
+      {
+       "w": "thirty",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "lawn",
+       "kind": "real",
+       "from": "P7"
+      },
+      {
+       "w": "teacher",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "summer",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "burple",
+       "kind": "made-up",
+       "from": "P15"
+      }
+     ]
+    },
+    {
+     "day": 2,
+     "rule": "The r stays with its vowel. Keep ar, or, er, ir and ur together in the same syllable.",
+     "items": [
+      {
+       "w": "perfeck",
+       "kind": "made-up",
+       "from": "P15"
+      },
+      {
+       "w": "hible",
+       "kind": "made-up",
+       "from": "P14"
+      },
+      {
+       "w": "fape",
+       "kind": "made-up",
+       "from": "P5"
+      },
+      {
+       "w": "winler",
+       "kind": "made-up",
+       "from": "P15"
+      },
+      {
+       "w": "zurvest",
+       "kind": "made-up",
+       "from": "P15"
+      },
+      {
+       "w": "circle",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "dirty",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "market",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "winter",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "forest",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "peanut",
+       "kind": "real",
+       "from": "P13"
+      },
+      {
+       "w": "noab",
+       "kind": "made-up",
+       "from": "P6"
+      }
+     ]
+    },
+    {
+     "day": 3,
+     "rule": "The r stays with its vowel. Keep ar, or, er, ir and ur together in the same syllable.",
+     "items": [
+      {
+       "w": "belt",
+       "kind": "real",
+       "from": "P3"
+      },
+      {
+       "w": "sunmer",
+       "kind": "made-up",
+       "from": "P15"
+      },
+      {
+       "w": "mupsin",
+       "kind": "made-up",
+       "from": "P10"
+      },
+      {
+       "w": "corner",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "purple",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "sisper",
+       "kind": "made-up",
+       "from": "P15"
+      },
+      {
+       "w": "star",
+       "kind": "real",
+       "from": "P8"
+      },
+      {
+       "w": "hammer",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "morning",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "cub",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "perfect",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "numbor",
+       "kind": "made-up",
+       "from": "P15"
+      }
+     ]
+    },
+    {
+     "day": 4,
+     "rule": "The r stays with its vowel. Keep ar, or, er, ir and ur together in the same syllable.",
+     "items": [
+      {
+       "w": "nodge",
+       "kind": "made-up",
+       "from": "P9"
+      },
+      {
+       "w": "farmer",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "sister",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "morber",
+       "kind": "made-up",
+       "from": "P15"
+      },
+      {
+       "w": "lettor",
+       "kind": "made-up",
+       "from": "P15"
+      },
+      {
+       "w": "person",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "letter",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "hanmer",
+       "kind": "made-up",
+       "from": "P15"
+      },
+      {
+       "w": "index",
+       "kind": "real",
+       "from": "P10"
+      },
+      {
+       "w": "invate",
+       "kind": "made-up",
+       "from": "P11"
+      },
+      {
+       "w": "turkey",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "apple",
+       "kind": "real",
+       "from": "P14"
+      }
+     ]
+    },
+    {
+     "day": 5,
+     "rule": "The r stays with its vowel. Keep ar, or, er, ir and ur together in the same syllable.",
+     "items": [
+      {
+       "w": "garden",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "dirby",
+       "kind": "made-up",
+       "from": "P15"
+      },
+      {
+       "w": "murmur",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "wible",
+       "kind": "made-up",
+       "from": "P14"
+      },
+      {
+       "w": "further",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "harvest",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "finger",
+       "kind": "real",
+       "from": "P15"
+      },
+      {
+       "w": "gorden",
+       "kind": "made-up",
+       "from": "P15"
+      },
+      {
+       "w": "remote",
+       "kind": "real",
+       "from": "P11"
+      },
+      {
+       "w": "hop",
+       "kind": "real",
+       "from": "P2"
+      },
+      {
+       "w": "finjer",
+       "kind": "made-up",
+       "from": "P15"
+      },
+      {
+       "w": "rain",
+       "kind": "real",
+       "from": "P6"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

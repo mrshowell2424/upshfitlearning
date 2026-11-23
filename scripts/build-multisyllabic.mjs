@@ -150,6 +150,14 @@ function corpus() {
     // reading these as well would count the same titles twice.
     "reading-articles-index.json",
     "reading-mysteries-index.json",
+    // Both of these are MADE-UP words by design -- the timed probe's silly
+    // words and the continuum review's nonsense words. Harvesting them would
+    // teach the real-word bank that vop and dake are words children have met,
+    // and the next sheet built from the bank would hand one to a child as a
+    // real word. The pools they come from are hand-authored and checked; this
+    // bank is not where they belong.
+    "reading-benchmark.json",
+    "continuum-review.json",
   ]);
   const files = readdirSync("scripts").filter((f) => f.endsWith(".json") && !SKIP.has(f));
   const dirs = ["scripts/articles", "scripts/mysteries"].filter((d) => existsSync(d));
