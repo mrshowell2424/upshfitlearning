@@ -3737,19 +3737,23 @@ const ADAPTATIONS: Adaptation[] = [
           "    const PGV = PGTWO || PGSRC || PGX;",
       );
 
-      // the three pills and the article list, in the reading row
-      const grade =
-        '            <select value="{{ pgReadGrade }}" onChange="{{ pgReadPick }}" ' +
-        'aria-label="Reading grade"';
-      if (!out.includes(grade)) return html;
-      out = out.replace(
-        grade,
-        '            <sc-for list="{{ srcOpts }}" as="o" hint-placeholder-count="3">' +
-          '<button type="button" onClick="{{ o.pick }}" style="{{ o.st }}">{{ o.label }}</button>' +
-          "</sc-for>\n" + grade,
-      );
+      // The three pills and the article list, in the reading row.
+      //
+      // ORDERED LIKE THE WRITING ROW: grade first, then what to read. Both
+      // rows ask the same two questions in the same toolbar, and they used to
+      // ask them in opposite orders -- writing put its grade before its genre
+      // pills, reading put its pills before its grade. A teacher reading down
+      // the toolbar had to re-learn the second row. The pills now go after
+      // the grade select rather than before it, which is why this anchors on
+      // the note that follows the select instead of on the select itself.
       const note = '<span style="font-size:11px;font-weight:700;color:#618459;white-space:nowrap">{{ pgLands }}</span>';
       if (!out.includes(note)) return html;
+      out = out.replace(
+        note,
+        '<sc-for list="{{ srcOpts }}" as="o" hint-placeholder-count="3">' +
+          '<button type="button" onClick="{{ o.pick }}" style="{{ o.st }}">{{ o.label }}</button>' +
+          "</sc-for>\n            " + note,
+      );
       out = out.replace(
         note,
         '<sc-if value="{{ passOn }}" hint-placeholder-val="{{ true }}">' + note + "</sc-if>" +
@@ -3965,6 +3969,57 @@ const ADAPTATIONS: Adaptation[] = [
         + '<div style="{{ p.st }}">{{ p.t }}</div></sc-for></div>';
       out = out.split(div).join(lines);
       return out;
+    },
+  },
+  {
+    // Make a short workbook page fill the sheet again.
+    //
+    // THE BUG. Every page box carries its own minimum height — 10in for the
+    // main workbook pages, 9.6in for the differentiation and decodable ones —
+    // and a `justify-content: space-between` that spreads its children down
+    // that height. That is what makes a ten-word tracker print as a full
+    // sheet with room to tick rather than a band of boxes across the top.
+    //
+    // The print fit measures each page before it prints, and to measure the
+    // content rather than the box it first sets min-height to 0. For a page
+    // that turned out to be short it then set min-height back to '' — and
+    // because the box's own 10in is an inline style written by the framework,
+    // clearing the property deleted the 10in with it. The framework does not
+    // write it again until the component re-renders, which printing does not
+    // cause. So every page that fitted on one sheet printed collapsed to the
+    // height of its content: the tracker and the word ladder stopped two
+    // thirds down the page, which is what a teacher saw in the preview.
+    //
+    // THE FIX. Remember the box's own min-height on the element before the
+    // measurement blanks it, and put that value back rather than ''. Each
+    // page keeps its own height — the 9.6in pages are not forced to 10in —
+    // and a re-measure on a later print reads the remembered value, not the
+    // zero left behind by the one before.
+    name: "put a short page's min-height back after the print fit measures it",
+    apply: (html) => {
+      // Before the measurement: stash the value, then blank it.
+      const blank = "e.style.minHeight = '0'; });";
+      if (!html.includes(blank)) return html;
+      let out = html.replace(
+        blank,
+        "if (e.dataset.mh === undefined) e.dataset.mh = e.style.minHeight;" +
+          " e.style.minHeight = '0'; });",
+      );
+
+      // After it: restore the page's own value, not the empty string.
+      const restore = "else e.style.minHeight = '';";
+      if (!out.includes(restore)) return html;
+      out = out.replace(restore, "else e.style.minHeight = e.dataset.mh || '';");
+
+      // And when the print is over, the same value rather than nothing, so
+      // the preview on screen does not stay collapsed after printing once.
+      const unfit = "e.style.zoom = ''; e.style.width = ''; e.style.maxWidth = ''; e.style.minHeight = '';";
+      if (!out.includes(unfit)) return html;
+      return out.replace(
+        unfit,
+        "e.style.zoom = ''; e.style.width = ''; e.style.maxWidth = '';" +
+          " e.style.minHeight = e.dataset.mh || '';",
+      );
     },
   },
 ];
