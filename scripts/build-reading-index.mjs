@@ -28,7 +28,7 @@
  *
  *   bun run scripts/build-reading-index.mjs
  */
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, rmSync } from "node:fs";
 
 const AR = JSON.parse(readFileSync("scripts/reading-articles.json", "utf8")).articles;
 const MY = JSON.parse(readFileSync("scripts/reading-mysteries.json", "utf8")).cases;
@@ -142,6 +142,44 @@ const myFull = readFileSync("scripts/reading-mysteries.json", "utf8").length;
 const mySlim = JSON.stringify(mysteries).length;
 console.log(`${mysteries.cases.length} mysteries`);
 console.log(`  ${(myFull / 1024).toFixed(0)} KB of mysteries -> ${(mySlim / 1024).toFixed(0)} KB of index`);
+
+/**
+ * The article text, one file per grade.
+ *
+ * The pages that actually show an article used to load the whole 2.9 MB file
+ * inside the request to pull one article's paragraphs out of it. That moved
+ * the cost off the Worker's startup and onto every request instead, and on
+ * Cloudflare it was still too much: /fluency, /fluency/play, the print sheet
+ * and the resources browser were all returning 500 about half the time.
+ *
+ * A grade is 24 to 246 KB. A request parses the grade it is showing and
+ * nothing else.
+ */
+const TEXT_DIR = "scripts/articles-text";
+rmSync(TEXT_DIR, { recursive: true, force: true });
+mkdirSync(TEXT_DIR, { recursive: true });
+const byGrade = new Map();
+for (const a of AR) {
+  if (!byGrade.has(a.grade)) byGrade.set(a.grade, {});
+  // Everything an article needs that the slim index leaves out: the two
+  // versions' paragraphs, the questions and the teacher note. With these a
+  // page can rebuild a whole article for one grade without reading the file
+  // that holds all thirteen.
+  byGrade.get(a.grade)[a.id] = {
+    hi: a.higher.paras,
+    lo: a.lower.paras,
+    qs: a.questions,
+    note: a.note,
+    std: a.standard_text,
+  };
+}
+let textKb = 0;
+for (const [g, obj] of [...byGrade.entries()].sort((a, b) => a[0] - b[0])) {
+  const body = JSON.stringify(obj);
+  writeFileSync(`${TEXT_DIR}/ar-g${g}.json`, body + "\n");
+  textKb += body.length / 1024;
+}
+console.log(`  ${byGrade.size} per-grade article text files, ${textKb.toFixed(0)} KB in all`);
 
 const full = readFileSync("scripts/reading-articles.json", "utf8").length;
 const slim = JSON.stringify(out).length;

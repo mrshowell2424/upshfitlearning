@@ -4,6 +4,7 @@ import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
 import { CopyButton } from "./copy-button";
 import ARTICLE_INDEX from "@/../scripts/reading-articles-index.json";
+import { articlesForGrade, type Article } from "@/lib/articles-by-grade";
 import MYSTERY_INDEX from "@/../scripts/reading-mysteries-index.json";
 import MY_COACH from "@/../scripts/reading-mystery-coach.json";
 import MY_DEBATE_COACH from "@/../scripts/reading-mystery-debate-coach.json";
@@ -70,10 +71,8 @@ const GRADIENT =
  */
 const loadMysteries = () =>
   import("@/../scripts/reading-mysteries.json").then((m) => m.default.cases);
-const loadArticles = () =>
-  import("@/../scripts/reading-articles.json").then((m) => m.default.articles);
 type Case = Awaited<ReturnType<typeof loadMysteries>>[number];
-type Article = Awaited<ReturnType<typeof loadArticles>>[number];
+// Article comes from the per-grade helper now.
 
 type Search = Promise<Record<string, string | string[] | undefined>>;
 
@@ -828,10 +827,10 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
 
   // Articles: grade, then standard, then the article inside what is left.
   const grade = nearestGrade(wanted, AR_GRADES);
-  const AR = await loadArticles();
-  const stds = [...new Set(AR.filter((a) => a.grade === grade).map((a) => a.standard))].sort();
+  const AR = await articlesForGrade(grade);
+  const stds = [...new Set(AR.map((a) => a.standard))].sort();
   const std = stds.includes(one(sp.s) ?? "") ? (one(sp.s) as string) : "*";
-  const pool = AR.filter((a) => a.grade === grade && (std === "*" || a.standard === std));
+  const pool = AR.filter((a) => std === "*" || a.standard === std);
   const ai = Math.min(Math.max(Number(one(sp.n) ?? 0) || 0, 0), Math.max(pool.length - 1, 0));
   const art = pool[ai];
   const ver: "higher" | "lower" = one(sp.v) === "lo" ? "lower" : "higher";

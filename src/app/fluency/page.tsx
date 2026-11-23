@@ -27,6 +27,17 @@ import { Scorer } from "./scorer";
  * loaded inside the request below. See scripts/build-reading-index.mjs
  * for why this page must not import the full file at module scope.
  */
+/**
+ * One grade's article text, loaded inside the request.
+ *
+ * The static prefix lets the bundler split this into a chunk per grade, so a
+ * request parses 24 to 246 KB instead of the whole 2.9 MB file. Loading all
+ * of it per request is what made these pages return 500 about half the time
+ * on Cloudflare; see scripts/build-reading-index.mjs.
+ */
+type Paras = { label: string; text: string }[];
+const loadGradeText = (g: number): Promise<Record<string, { hi: Paras; lo: Paras }>> =>
+  import(`@/../scripts/articles-text/ar-g${g}.json`).then((m) => m.default as never);
 const AR = ARTICLE_INDEX.articles;
 
 const BRAND = {
@@ -137,12 +148,9 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
    * request that is actually going to show a passage pays for it.
    */
   const meta = art ? (ver === "lower" ? art.lo : art.hi) : null;
-  const full = art
-    ? (await import("@/../scripts/reading-articles.json")).default.articles.find(
-        (x) => x.id === art.id,
-      )
-    : null;
-  const v = full && meta ? { ...meta, paras: full[ver].paras } : null;
+  const text = art ? (await loadGradeText(grade))[art.id] : null;
+  const paras = text ? (ver === "lower" ? text.lo : text.hi) : null;
+  const v = paras && meta ? { ...meta, paras } : null;
   const norm = FLU.norms.grades.find((x) => x.grade === grade) ?? null;
 
   const href = (next: Record<string, string>) => {

@@ -4,6 +4,7 @@ import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { SignInGate } from "@/components/shared/SignInGate";
 import ARTICLE_INDEX from "@/../scripts/reading-articles-index.json";
+import { articlesForGrade } from "@/lib/articles-by-grade";
 import FLU from "@/../scripts/reading-fluency.json";
 import PLAY from "@/../scripts/reading-fluency-play.json";
 import { SayItLike, BeatYourScore, HearItFirst, PunctuationPower } from "./games";
@@ -32,8 +33,6 @@ import { SayItLike, BeatYourScore, HearItFirst, PunctuationPower } from "./games
  * and Cloudflare Workers parses the whole Worker before serving anything.
  * See scripts/build-reading-index.mjs for the full account.
  */
-const loadArticles = () =>
-  import("@/../scripts/reading-articles.json").then((m) => m.default.articles);
 const GRADES = [...new Set(ARTICLE_INDEX.articles.map((a) => a.grade))].sort((a, b) => a - b);
 
 const GAMES = [
@@ -117,8 +116,8 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
   // the easier of its two Lexiles -- a passage being reread for speed is not
   // the place to also be meeting new vocabulary.
   const nth = Math.max(0, Number(one(sp.p) ?? 0) || 0);
-  const AR = await loadArticles();
-  const pool = AR.filter((a) => a.grade === grade && a.lower?.paras?.length);
+  const AR = await articlesForGrade(grade);
+  const pool = AR.filter((a) => a.lower?.paras?.length);
   const picked = pool[nth % Math.max(pool.length, 1)];
   const passage = picked
     ? {

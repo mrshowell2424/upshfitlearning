@@ -1,5 +1,6 @@
 import { SignInGate } from "@/components/shared/SignInGate";
 import ARTICLE_INDEX from "@/../scripts/reading-articles-index.json";
+import { articlesForGrade } from "@/lib/articles-by-grade";
 import MYSTERY_INDEX from "@/../scripts/reading-mysteries-index.json";
 import READ_THINK from "@/../scripts/reading-read-think.json";
 
@@ -25,8 +26,6 @@ import READ_THINK from "@/../scripts/reading-read-think.json";
  * and Cloudflare Workers parses the whole Worker before serving anything.
  * See scripts/build-reading-index.mjs for the full account.
  */
-const loadArticles = () =>
-  import("@/../scripts/reading-articles.json").then((m) => m.default.articles);
 const loadMysteries = () =>
   import("@/../scripts/reading-mysteries.json").then((m) => m.default.cases);
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
@@ -250,8 +249,8 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
 
   const grade = nearest(wanted, grades);
   const std = one(sp.s) ?? "*";
-  const AR = await loadArticles();
-  const pool = AR.filter((a) => a.grade === grade && (std === "*" || a.standard === std));
+  const AR = await articlesForGrade(grade);
+  const pool = AR.filter((a) => std === "*" || a.standard === std);
   const ai = Math.min(Math.max(Number(one(sp.n) ?? 0) || 0, 0), Math.max(pool.length - 1, 0));
   const art = pool[ai];
   const ver: "higher" | "lower" = one(sp.v) === "lo" ? "lower" : "higher";
