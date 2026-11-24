@@ -4609,7 +4609,19 @@ const ADAPTATIONS: Adaptation[] = [
       return html.replace(
         seat,
         "const LADM = LADMULTI[SEL] || LADMULTI[cur[0]] || null;\n" +
-          "    const LADX = (isMulti && LADM) || LAD[SEL] || LAD[cur[0]] || null;",
+          // The state is read directly rather than through isMulti, because
+          // isMulti is declared about 47,000 characters further down the same
+          // function. Naming it here threw "Cannot access 'isMulti' before
+          // initialization" on every render, which took renderVals() with it:
+          // the skill picker came up empty and the whole lesson blank.
+          //
+          // It was missed because the swap was verified by lifting the
+          // selection line out of the page and evaluating it on its own, where
+          // there is no declaration order to get wrong. The empty picker was
+          // showing in the headless runs and was put down to the page being
+          // large and rendering progressively. It was this.
+          "    const LADX = (!!(this.state && this.state.multi) && LADM)\n" +
+          "      || LAD[SEL] || LAD[cur[0]] || null;",
       );
     },
   },
