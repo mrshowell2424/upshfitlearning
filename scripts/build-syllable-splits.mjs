@@ -24,7 +24,10 @@ import { splitWord } from "./lib/syllable-split.mjs";
 import { CONCEPTS } from "./lib/continuum-pools.mjs";
 
 const MULTI = JSON.parse(readFileSync("scripts/reading-multisyllabic.json", "utf8")).words;
-const VOWEL = JSON.parse(readFileSync("scripts/lib/vowel-length.json", "utf8")).words;
+const PRON = JSON.parse(readFileSync("scripts/lib/vowel-length.json", "utf8"));
+const VOWEL = PRON.words;
+/** The letters "ng" spelling two sounds: finger and danger, not singer. */
+const NG_SPLIT = new Set(PRON.ngSplit ?? []);
 
 const real = new Set();
 for (const list of Object.values(MULTI)) {
@@ -40,6 +43,7 @@ for (const c of CONCEPTS) {
 
 const isWord = (w) => real.has(w);
 const firstVowelLength = (w) => VOWEL[w] ?? null;
+const splitsNg = (w) => NG_SPLIT.has(w);
 
 /** How to say the rule to a child, rather than its shorthand. */
 const RULE_TEXT = {
@@ -63,7 +67,7 @@ const byRule = {};
 
 for (const w of [...real].sort()) {
   if ((w.match(/[aeiouy]+/g) || []).length < 2) continue;
-  const r = splitWord(w, isWord, firstVowelLength);
+  const r = splitWord(w, isWord, firstVowelLength, splitsNg);
   if (!r) continue;
   // Stored tight, because this file is read by a page that is already large.
   // The parts joined by a hyphen, the rule key, the syllable types joined by

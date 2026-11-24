@@ -43,6 +43,20 @@ const CONSONANT_UNITS = [
  * R_CONTROLLED already makes for "arid", which is a-rid rather than ar-id
  * because a vowel follows the r.
  */
+/**
+ * Endings where a silent e sits behind a two-letter consonant sound.
+ *
+ * The silent-e scan below allows exactly ONE consonant between the vowel and
+ * the e, because allowing two would swallow the consonant-le ending and turn
+ * ta-ble into one syllable. That left -nge with no handling at all: change
+ * and fringe came out as two syllables, cha-nge and fring-e, when both are
+ * one, and the e was counted as a vowel of its own.
+ *
+ * Word-final only. In "danger" the same three letters are not an ending --
+ * d-a-n-g-er -- and gluing them there would lose the second syllable.
+ */
+const FINAL_VCE_UNITS = ["nge"];
+
 const SILENT_PAIRS = [
   // The k and the w are silent at the start of a word: knob, knee, wrist.
   ["kn", "initial"],
@@ -151,6 +165,17 @@ export function units(word) {
       continue;
     }
 
+    // A two-letter consonant sound with a silent e behind it, at the end.
+    // Checked BEFORE the consonant units, because "ng" is one of those and
+    // would otherwise take the n and the g and leave the e to be counted as a
+    // syllable of its own: change came out cha-nge.
+    const fv = FINAL_VCE_UNITS.find((u) => rest === u);
+    if (fv) {
+      out.push({ t: "c", s: fv, vce: true });
+      i += fv.length;
+      continue;
+    }
+
     const cu = CONSONANT_UNITS.find((c) => rest.startsWith(c));
     if (cu) {
       out.push({ t: "c", s: cu });
@@ -253,13 +278,40 @@ const SHORT_SUFFIXES = ["ing", "est", "ly", "er", "ed"];
  *
  * @param word the word
  * @param isWord tells whether a string is a real word, for compounds and stems
- * @param firstVowelLength returns "long", "short" or null for a word -- the
+ * @param firstVowelLength returns "open", "closed" or null for a word -- the
  *   only thing that can settle a VCV division, which the spelling cannot
+ * @param splitsNg whether this word's letters "ng" spell two sounds -- /ŋ/+/g/
+ *   as in finger, or /n/+/dʒ/ as in danger -- rather than the single /ŋ/ of
+ *   singer. Also invisible in the spelling.
  */
-export function splitWord(word, isWord = () => false, firstVowelLength = () => null, depth = 0) {
+export function splitWord(
+  word,
+  isWord = () => false,
+  firstVowelLength = () => null,
+  splitsNg = () => false,
+  depth = 0,
+) {
   const w = String(word).toLowerCase().replace(/[^a-z]/g, "");
   if (!w) return null;
-  const us = units(w);
+  let us = units(w);
+  // "ng" is one sound in singer and two in finger and danger, and only the
+  // pronunciation knows which. Where it is two, the unit is broken apart so
+  // the division can fall between them: fin-ger, dan-ger, gin-ger, fun-gus.
+  // Carried into the pieces as well as applied here.
+  //
+  // A piece is re-divided by calling this again on its letters, and the
+  // dictionary has no entry for a piece: "senger" is not a word. So
+  // splitsNg("senger") is false and the ng glues back together, which is how
+  // passenger came out pas-seng-er even though passenger itself is flagged.
+  // Within one word the pronunciation does not change, so the flag travels
+  // with its parts.
+  const ngHere = splitsNg(w);
+  const ngDown = (x) => ngHere || splitsNg(x);
+  if (ngHere) {
+    us = us.flatMap((u) =>
+      u.t === "c" && u.s === "ng" ? [{ t: "c", s: "n" }, { t: "c", s: "g" }] : [u],
+    );
+  }
   const vowelCount = us.filter((u) => u.t === "v").length;
   if (vowelCount < 2) return null;
 
@@ -277,7 +329,7 @@ export function splitWord(word, isWord = () => false, firstVowelLength = () => n
         ? parts
         : parts.flatMap((p) => {
             if (units(p).filter((u) => u.t === "v").length < 2) return [p];
-            const inner = splitWord(p, isWord, firstVowelLength, depth + 1);
+            const inner = splitWord(p, isWord, firstVowelLength, ngDown, depth + 1);
             return inner && inner.parts.length > 1 ? inner.parts : [p];
           });
     return { parts: deep, rule, types: deep.map(syllableType), certain: true };
@@ -299,7 +351,7 @@ export function splitWord(word, isWord = () => false, firstVowelLength = () => n
     if (units(stem).filter((u) => u.t === "v").length < 1) continue;
     // The stem has to be a word, or at least start like one.
     if (!isWord(stem) && !(stem.length >= 5 && legalOnset(stem))) continue;
-    const inner = splitWord(stem, isWord, firstVowelLength, depth + 1);
+    const inner = splitWord(stem, isWord, firstVowelLength, ngDown, depth + 1);
     const tail = inner ? inner.parts : [stem];
     const got = finish([p, ...tail], "prefix");
     if (got) return got;
@@ -309,7 +361,7 @@ export function splitWord(word, isWord = () => false, firstVowelLength = () => n
     const stem = w.slice(0, -s.length);
     if (units(stem).filter((u) => u.t === "v").length < 1) continue;
     if (!isWord(stem) && stem.length < 3) continue;
-    const inner = splitWord(stem, isWord);
+    const inner = splitWord(stem, isWord, firstVowelLength, ngDown, depth + 1);
     const head = inner ? inner.parts : [stem];
     const got = finish([...head, s], "suffix");
     if (got) return got;
@@ -321,7 +373,7 @@ export function splitWord(word, isWord = () => false, firstVowelLength = () => n
     if (!w.endsWith(s)) continue;
     const stem = w.slice(0, -s.length);
     if (!isWord(stem)) continue;
-    const inner = splitWord(stem, isWord, firstVowelLength, depth + 1);
+    const inner = splitWord(stem, isWord, firstVowelLength, ngDown, depth + 1);
     const head = inner ? inner.parts : [stem];
     // Three syllables or more, and no exception for -er.
     //
