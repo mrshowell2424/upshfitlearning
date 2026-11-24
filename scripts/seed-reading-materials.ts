@@ -5049,18 +5049,27 @@ const ADAPTATIONS: Adaptation[] = [
     // in a classroom, and the teacher would have no way to tell that the Hub
     // was fine and the CDN was not.
     //
-    // The three files are vendored under science-of-reading/vendor and seeded
-    // like every other material, so they come from the same origin as the page
-    // and go down with it or not at all. 3.3 MB, nearly all of it Babel.
+    // The two React files are vendored under science-of-reading/vendor and
+    // seeded like every other material, so they come from the same origin as
+    // the page and go down with it or not at all. 140 KB.
     //
-    // Babel compiling in the browser is its own cost and is NOT fixed here --
-    // that needs the JSX precompiled, which is a different job.
+    // React and ReactDOM only. Babel is not vendored: see the note below --
+    // nothing here loads JSX, so it has never been fetched at all.
     name: "serve React and Babel from the Hub rather than unpkg",
     apply: (html) => {
       const SWAP = [
         ["https://unpkg.com/react@18.3.1/umd/react.production.min.js", "./vendor/react.production.min.js"],
         ["https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js", "./vendor/react-dom.production.min.js"],
-        ["https://unpkg.com/@babel/standalone@7.29.0/babel.min.js", "./vendor/babel.min.js"],
+        // Babel is deliberately NOT vendored, and its URL is left pointing at
+        // the CDN. Every x-import across all 860 materials loads
+        // ./deck-stage.js, which is plain JavaScript, so the runtime's jsx
+        // branch never fires and ensureBabel() is never called: Babel has
+        // never been fetched by any page here. Vendoring it put 3.1 MB in the
+        // table to serve nothing.
+        //
+        // The URL stays on unpkg rather than on a local path that is not there,
+        // so a page that one day does import JSX gets a working fetch instead
+        // of a 404. Nothing today reaches it either way.
       ];
       let out = html;
       for (const [from, to] of SWAP) {
