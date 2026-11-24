@@ -4891,6 +4891,107 @@ const ADAPTATIONS: Adaptation[] = [
       return out;
     },
   },
+  {
+    // A print chip for every part of the workbook.
+    //
+    // There were six chips and twenty-two printable sheets, so most of the
+    // packet was all-or-nothing: a teacher who wanted the words but not the
+    // writing page printed the writing page. Each sheet now has its own chip,
+    // lit to print and unlit to leave out.
+    //
+    // HOW, without rewriting twenty-two style bindings. Each sheet is labelled
+    // with data-part at seed time, and the print fit -- which already runs on
+    // beforeprint and already walks every [data-wb] -- hides the ones whose
+    // chip is off and puts them back afterwards. Rewriting each box's display
+    // would have meant touching fifteen separate bindings, several of which
+    // other rules also anchor on.
+    //
+    // Workbook and Answer key stay what they were: which COPY to print. The
+    // new chips are which SHEETS go in it.
+    name: "give every workbook part its own print chip",
+    apply: (html) => {
+      // 1. Label each sheet with the part it belongs to.
+      const MARKS = [
+        ["\u00B7 SYLLABLE DIVISION", "syllable"],
+        [">TEN WORDS A DAY<", "tenwords"],
+        [">WORD LADDER<", "ladder"],
+        ["\u00B7 READ IT", "read"],
+        ["\u00B7 SPELLING", "spell"],
+        ["\u00B7 WRITING", "write"],
+        ["\u00B7 MYSTERY", "mystery"],
+        ["\u00B7 DECODABLE", "decodable"],
+        ["\u00B7 FLUENCY CHECK", "fluency"],
+        ["\u00B7 SENTENCE BUILDING", "sentence"],
+        ["\u00B7 CONTINUUM REVIEW", "continuum"],
+        ["\u00B7 MY SCORES", "scores"],
+      ];
+      let out = html;
+      for (const [mark, key] of MARKS) {
+        const spots = [];
+        for (let at = out.indexOf(mark); at !== -1; at = out.indexOf(mark, at + 1)) {
+          const open = out.lastIndexOf('<div data-wb="true"', at);
+          if (open !== -1) spots.push(open);
+        }
+        if (!spots.length) return html;
+        // Back to front, and each sheet only once.
+        for (const at of [...new Set(spots)].sort((a, b) => b - a)) {
+          const tagEnd = at + '<div data-wb="true"'.length;
+          if (out.slice(at, at + 300).includes("data-part=")) continue;
+          out = out.slice(0, tagEnd) + ' data-part="' + key + '"' + out.slice(tagEnd);
+        }
+      }
+
+      // 2. A chip each, lit by default like the rest.
+      const chips = "['spiral', '\u{1F300} Spiral review']];";
+      if (!out.includes(chips)) return html;
+      out = out.replace(
+        chips,
+        "['spiral', '\u{1F300} Spiral review'],\n" +
+          "          ['syllable', '\u2702\uFE0F Syllable division'], " +
+          "['tenwords', '\u{1F4C5} Ten words a day'],\n" +
+          "          ['ladder', '\u{1FA9C} Word ladder'], ['read', '\u{1F4D6} Read it'],\n" +
+          "          ['spell', '\u270D\uFE0F Spelling'], ['write', '\u270F\uFE0F Writing'],\n" +
+          "          ['mystery', '\u{1F50D} Mystery'], ['decodable', '\u{1F4D8} Decodable'],\n" +
+          "          ['fluency', '\u23F1 Fluency check'], " +
+          "['sentence', '\u{1F9E9} Sentence building'],\n" +
+          "          ['continuum', '\u{1F504} 30 a day'], ['scores', '\u{1F4C8} My scores']];",
+      );
+
+      // 3. The off list, where the print fit can see it.
+      const off = "        const off = POFF;";
+      if (!out.includes(off)) return html;
+      out = out.replace(off, "        const off = POFF;\n        this._partsOff = off;");
+
+      // 4. The fit hides the parts that are off, and puts them back after.
+      const blank = "if (e.dataset.mh === undefined) e.dataset.mh = e.style.minHeight;";
+      if (!out.includes(blank)) return html;
+      out = out.replace(
+        "const pages = [...document.querySelectorAll('[data-wb]:not([data-land])')].filter((e) =>",
+        "const offParts = this._partsOff || [];\n" +
+          "      document.querySelectorAll('[data-part]').forEach((e) => {\n" +
+          "        if (offParts.indexOf(e.dataset.part) === -1) return;\n" +
+          "        if (e.dataset.wasShown === undefined) e.dataset.wasShown = e.style.display;\n" +
+          "        e.style.display = 'none';\n" +
+          "      });\n" +
+          "      const pages = [...document.querySelectorAll('[data-wb]:not([data-land])')].filter((e) =>",
+      );
+      out = out.replace(
+        "this.unfit = () => document.querySelectorAll('[data-wb]:not([data-land])').forEach((e) => {",
+        "this.unfit = () => { document.querySelectorAll('[data-part]').forEach((e) => {\n" +
+          "        if (e.dataset.wasShown === undefined) return;\n" +
+          "        e.style.display = e.dataset.wasShown; delete e.dataset.wasShown;\n" +
+          "      });\n" +
+          "      document.querySelectorAll('[data-wb]:not([data-land])').forEach((e) => {",
+      );
+      // The arrow body now needs its closing brace.
+      out = out.replace(
+        "e.style.breakAfter = ''; e.style.pageBreakAfter = ''; });",
+        "e.style.breakAfter = ''; e.style.pageBreakAfter = ''; }); };",
+      );
+
+      return out;
+    },
+  },
 ];
 
 /**
