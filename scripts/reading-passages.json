@@ -18237,6 +18237,522 @@
      "task": "Write a report on what to check before buying something second hand. Organise it into sections and connect your ideas."
     }
    }
+  },
+  "long-a": {
+   "g2": {
+    "title": "Eight Pails of Grain",
+    "paras": [
+     "Jay keeps eight pails by the gate. Each pail holds grain for the hens.",
+     "On Monday the sky was gray. Rain came, and it did not stay away.",
+     "Jay ran to the hay. He put the pails in a crate so the grain would stay dry.",
+     "They say rain is great for the fields, but Jay had to wait all day.",
+     "At eight the rain went away. Jay made a dry way to the hens and fed them grain."
+    ],
+    "qs": [
+     [
+      "How many pails does Jay keep by the gate?",
+      "He keeps eight pails."
+     ],
+     [
+      "Why did Jay put the pails in a crate?",
+      "So the grain would stay dry in the rain."
+     ],
+     [
+      "What did Jay do when the rain went away?",
+      "He made a dry way to the hens and fed them grain."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what Jay did on the gray day. Use first, next and last."
+    }
+   },
+   "g3": {
+    "title": "Eight Pails of Grain",
+    "paras": [
+     "Jay keeps eight pails by the gate, and each one holds grain for the hens. He fills them every day before school.",
+     "On Monday the sky was gray by eight. Rain came down hard and it did not stay away, not once all day.",
+     "Jay ran to the hay and pulled the pails under a crate. If grain gets wet it will not keep, and the hens would go without.",
+     "They say rain is great for the fields, and it is, but Jay still had to wait. He read by the rain and let the day pass.",
+     "Late in the day the rain went away. Jay raked a dry trail to the hens, set the eight pails down, and fed them their grain."
+    ],
+    "qs": [
+     [
+      "When does Jay fill the pails?",
+      "He fills them every day before school."
+     ],
+     [
+      "Why would wet grain be a problem?",
+      "Wet grain will not keep, so the hens would go without."
+     ],
+     [
+      "What did Jay do while he waited?",
+      "He read by the rain and let the day pass."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Was Jay right to wait before feeding the hens? Give two reasons from the story."
+    }
+   },
+   "g4": {
+    "title": "Eight Pails of Grain",
+    "paras": [
+     "Jay keeps eight pails lined up by the gate, and each one holds grain for the hens. Filling them is the first thing he does every day, before school and before the rest of the farm is awake.",
+     "On Monday the sky was gray by eight, and the rain came down hard. It did not stay away for a single hour, and by noon the lane was a long gray puddle that nobody could cross.",
+     "Jay ran to the hay and pulled every pail under a crate. Grain that gets wet will not keep, and a week of wet grain means hens that go without, so the crate mattered more than staying dry himself.",
+     "They say rain is great for the fields, and they are right, but a field is not a hen. Jay had to wait, so he sat by the window with a book and let the day go past him at its own pace.",
+     "Late in the day the rain finally went away, and the sun came out low and pale. Jay raked a dry trail across the mud, carried the eight pails down it one by one, and fed the hens their grain while the puddles drained away behind him."
+    ],
+    "qs": [
+     [
+      "What is the first thing Jay does each day?",
+      "He fills the eight pails of grain, before school."
+     ],
+     [
+      "Why did the crate matter more than staying dry?",
+      "Wet grain will not keep, and that would leave the hens without food for a week."
+     ],
+     [
+      "What does the story mean by 'a field is not a hen'?",
+      "Rain is good for crops but it does not help the hens, who still need feeding."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how Jay kept the grain dry and why it mattered. Use details from the story."
+    }
+   }
+  },
+  "long-e": {
+   "g2": {
+    "title": "The Key in the Field",
+    "paras": [
+     "Dean lost the key to the shed. He had it at three, and by five it was gone.",
+     "He went back to the field. The green grass came up to his knees.",
+     "His sister Kelsey said she would help. They did not speak. They just looked.",
+     "Dean saw a thin gleam by his feet. It was the key, deep in the weeds.",
+     "They freed the key and went to the shed. Dean keeps it on a string now."
+    ],
+    "qs": [
+     [
+      "What did Dean lose?",
+      "He lost the key to the shed."
+     ],
+     [
+      "Where did he find it?",
+      "He found it deep in the weeds by his feet."
+     ],
+     [
+      "What does Dean do with the key now?",
+      "He keeps it on a string."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell about a time you lost something. What did you do to find it?"
+    }
+   },
+   "g3": {
+    "title": "The Key in the Field",
+    "paras": [
+     "Dean lost the key to the shed. He knows he had it at three, because he locked the door, and by five it was simply gone.",
+     "He went back to the field where he had been that week. The green grass came up to his knees and hid everything under it.",
+     "His sister Kelsey said she would help him sweep the field. Not one of them spoke much. They walked in a line and kept their eyes down.",
+     "Then Dean saw a thin gleam near his feet, half under a leaf. It was the key, sunk deep in the weeds where it had fallen.",
+     "They freed the key from the weeds and went back to the shed together. Dean keeps it on a string around his neck now, and he has not lost it since."
+    ],
+    "qs": [
+     [
+      "How does Dean know he had the key at three?",
+      "He had locked the shed door at three."
+     ],
+     [
+      "Why was the key hard to see?",
+      "The green grass came up to his knees and hid everything under it."
+     ],
+     [
+      "How did Dean and Kelsey search?",
+      "They walked in a line with their eyes down and did not talk much."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is keeping the key on a string a good idea? Give two reasons."
+    }
+   },
+   "g4": {
+    "title": "The Key in the Field",
+    "paras": [
+     "Dean lost the key to the shed, and he could say exactly when he had it last. At three he locked the door and dropped the key in his jeans, and by five, when he went to open it again, the pocket was empty.",
+     "He went back out to the field he had crossed that week, because a key does not travel on its own. The green grass had come up past his knees since the rain, and it hid every small thing lying under it.",
+     "His sister Kelsey said she would help him sweep the field, and she meant sweep. Not one of them spoke much. They walked side by side in a slow line, eyes down, going over each strip of grass before moving on.",
+     "They had nearly reached the far fence when Dean saw a thin gleam near his feet, half under a leaf. It was the key, sunk deep in the weeds where it must have slipped out of his pocket as he climbed through.",
+     "They freed it from the weeds and walked back to the shed together, and the lock turned on the first try. Dean keeps the key on a string around his neck now. It is not the neatest thing to wear, but he has not lost it once since that evening in the field."
+    ],
+    "qs": [
+     [
+      "How did Dean narrow down where to look?",
+      "He knew a key cannot travel on its own, so he searched the field he had crossed that week."
+     ],
+     [
+      "Why had the grass become a problem that week?",
+      "It had grown past his knees since the rain, hiding anything lying under it."
+     ],
+     [
+      "What does 'she meant sweep' tell you about Kelsey?",
+      "She searched carefully and thoroughly rather than just glancing around."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain, step by step, how Dean and Kelsey found the key. Use details from the story."
+    }
+   }
+  },
+  "long-i": {
+   "g2": {
+    "title": "A Kite in the Night Sky",
+    "paras": [
+     "Mike had a bright kite. He went up the high hill to fly it.",
+     "The wind was light at first. The kite sat on the grass and would not lift.",
+     "Then a gust came. The kite rose high and the string went tight in his hand.",
+     "By night the sky was dark. Mike could just see the kite, white and high.",
+     "He wound the string in slow. The kite came down right by his feet."
+    ],
+    "qs": [
+     [
+      "Where did Mike go to fly the kite?",
+      "He went up the high hill."
+     ],
+     [
+      "Why would the kite not lift at first?",
+      "The wind was light."
+     ],
+     [
+      "How did Mike get the kite back down?",
+      "He wound the string in slowly."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what Mike did on the hill. Use first, next and last."
+    }
+   },
+   "g3": {
+    "title": "A Kite in the Night Sky",
+    "paras": [
+     "Mike had a bright kite with a long tail, and he went up the high hill to fly it where nothing could block the wind.",
+     "The wind was light at first. The kite sat flat on the grass and would not lift, no matter how fast he ran with it.",
+     "Then a gust came up the slope. The kite rose high and fast, and the string went tight in his hand and pulled.",
+     "By night the sky was dark and he had to squint. He could still see the kite, white and high, where the last light caught it.",
+     "He wound the string in slowly so it would not snap. The kite came down in a long curve and landed right by his feet."
+    ],
+    "qs": [
+     [
+      "Why did Mike choose the high hill?",
+      "So nothing could block the wind."
+     ],
+     [
+      "What happened when the gust came?",
+      "The kite rose high and fast and the string went tight and pulled."
+     ],
+     [
+      "Why did Mike wind the string in slowly?",
+      "So the string would not snap."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Is a hill the best place to fly a kite? Give two reasons from the story."
+    }
+   },
+   "g4": {
+    "title": "A Kite in the Night Sky",
+    "paras": [
+     "Mike had a bright kite with a long tail, and he took it up the high hill because that is the one place nothing blocks the wind. From the top he could see the whole town laid out below him.",
+     "The wind was light when he arrived. The kite sat flat on the grass and would not lift, no matter how fast he ran along the ridge dragging it behind him on the line.",
+     "Then a gust came straight up the slope and caught it. The kite rose high and fast, the tail snapping, and the string went tight in his hand and pulled hard enough to sting.",
+     "By night the sky had gone dark and he had to squint to find it. The kite was still up there, a small white shape where the last of the light caught it, so high that the string hummed.",
+     "He wound the line in slowly, a little at a time, so that it would not snap under the strain. The kite came down in a long slow curve across the dark and landed right beside his feet, tail first, as if it had meant to."
+    ],
+    "qs": [
+     [
+      "What could Mike see from the top of the hill?",
+      "He could see the whole town laid out below him."
+     ],
+     [
+      "What does 'the string hummed' tell you?",
+      "The kite was very high and the wind was pulling the line hard."
+     ],
+     [
+      "Why did he wind the line in a little at a time?",
+      "So it would not snap under the strain."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how Mike got the kite into the air and back down again. Use details from the story."
+    }
+   }
+  },
+  "long-o": {
+   "g2": {
+    "title": "Snow on the Low Road",
+    "paras": [
+     "Snow fell all night on the low road. By dawn it was deep.",
+     "Joe had to get oats to the goats in the far pen.",
+     "He took a rope and a sled. The sled slid well on the snow.",
+     "The road was slow going. Joe had to go around a toe of rock.",
+     "He got the oats to the pen. The goats came close and ate it all."
+    ],
+    "qs": [
+     [
+      "What fell on the low road all night?",
+      "Snow fell all night."
+     ],
+     [
+      "What did Joe need to take to the goats?",
+      "He had to take oats."
+     ],
+     [
+      "How did Joe carry the oats?",
+      "He took a rope and a sled."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what Joe did in the snow. Use first, next and last."
+    }
+   },
+   "g3": {
+    "title": "Snow on the Low Road",
+    "paras": [
+     "Snow fell all night on the low road, and by dawn it was deep enough to come over the top of a boot.",
+     "Joe had to get oats down to the goats in the far pen. They cannot go a day without feed, and no truck was going to drive that road.",
+     "So he took a rope and the old sled instead. Loaded up, the sled slid well on the fresh snow, better than he had hoped.",
+     "The road was slow going all the same. Joe had to haul the sled around a toe of rock where the drift had piled up above his knees.",
+     "He got the oats to the pen before the light went. The goats came close, crowding the gate, and ate the whole load between them."
+    ],
+    "qs": [
+     [
+      "How deep was the snow by dawn?",
+      "Deep enough to come over the top of a boot."
+     ],
+     [
+      "Why did Joe use a sled instead of a truck?",
+      "No truck was going to drive that road in the snow."
+     ],
+     [
+      "What slowed Joe down on the road?",
+      "A drift piled above his knees at a toe of rock."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Was the sled the right choice? Give two reasons from the story."
+    }
+   },
+   "g4": {
+    "title": "Snow on the Low Road",
+    "paras": [
+     "Snow fell all night on the low road, the quiet kind that comes down straight and does not stop, and by dawn it was deep enough to come over the top of a boot.",
+     "Joe had to get oats down to the goats in the far pen. Goats cannot go a day without feed, and one look at the lane told him no truck was going to drive it, not that morning and probably not the next.",
+     "So he took a rope and the old sled from the back of the barn instead. Loaded with four sacks it slid well on the fresh snow, better than he had hoped, and the rope sat easy across his shoulder.",
+     "The road was slow going all the same. Where it bends past a toe of rock the wind had piled the drift above his knees, and he had to break a path through it a step at a time, hauling the sled behind him.",
+     "He reached the pen with the light still holding. The goats came close and crowded the gate before he had the rope off his shoulder, and they ate the whole load between them while he stood and got his breath back."
+    ],
+    "qs": [
+     [
+      "What kind of snowfall was it?",
+      "The quiet kind that comes down straight and does not stop."
+     ],
+     [
+      "How did Joe know a truck would not manage the lane?",
+      "One look at the lane told him, and he expected it would still be impassable the next day."
+     ],
+     [
+      "Why was the bend past the rock the hardest part?",
+      "The wind had piled the drift above his knees, so he had to break a path a step at a time."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how Joe got the oats to the goats and what made it hard. Use details from the story."
+    }
+   }
+  },
+  "long-u": {
+   "g2": {
+    "title": "A Few Drops of Blue Glue",
+    "paras": [
+     "Sue had a new model to build. She had just a few drops of blue glue left.",
+     "She set the parts out on the desk. Each one had to dry before the next.",
+     "The glue was due to run out. Sue used a drop at a time and blew on each part.",
+     "Her crew of friends came to see it. They knew not to touch the wet parts.",
+     "By Tuesday the model was done. The last drop of blue glue held the mast."
+    ],
+    "qs": [
+     [
+      "How much glue did Sue have left?",
+      "Just a few drops of blue glue."
+     ],
+     [
+      "Why did Sue use a drop at a time?",
+      "The glue was due to run out."
+     ],
+     [
+      "What did the last drop of glue hold?",
+      "It held the mast."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell how Sue built her model. Use first, next and last."
+    }
+   },
+   "g3": {
+    "title": "A Few Drops of Blue Glue",
+    "paras": [
+     "Sue had a model to build and almost nothing left to stick it with. The shop in town would not have more paste in for three days.",
+     "She set every part out on the desk in the order she would reach for them. Each piece had to dry hard before the next could go on top.",
+     "Because so little was left, Sue worked with one small drop at a time. She blew on each joint to dry it and counted slowly before she picked up the next part.",
+     "Her friends came by in the afternoon to see how far she had got. They knew not to touch the wet parts and stood with their hands behind them.",
+     "By the third day the model was done, and she had not needed the shop at all. The last drop went into the joint that holds the mast, and nothing moved when she turned it over."
+    ],
+    "qs": [
+     [
+      "Why could Sue not buy more paste?",
+      "The shop would not have more in for three days."
+     ],
+     [
+      "Why did the order of the parts matter?",
+      "Each piece had to dry hard before the next could go on top."
+     ],
+     [
+      "What did her friends do that helped?",
+      "They did not touch the wet parts and kept their hands behind them."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Was Sue right to keep going instead of waiting for the shop? Give two reasons."
+    }
+   },
+   "g4": {
+    "title": "A Few Drops of Blue Glue",
+    "paras": [
+     "Sue had a new model to build and only a few drops of blue glue left rattling in the tube. The shop in town would not have more in until Tuesday, which gave her three days of nothing if she wasted any.",
+     "So she set every part out on the desk first, in the order she would need to reach for them. Each piece had to dry fully before the next could go on, and getting that order wrong would cost her a joint she could not redo.",
+     "Because the glue was due to run out, Sue worked with a single drop at a time. She blew on each joint to speed the drying, counting slowly before she picked up the next piece.",
+     "Her crew of friends came by in the afternoon to see how far she had got. They knew not to touch the wet parts and stood with their hands behind them, which Sue thought was the most useful thing they could have done.",
+     "By Tuesday the model was finished and she had not needed the shop after all. The very last drop of blue glue went into the joint that held the mast, and when she turned the model over to check it, nothing moved."
+    ],
+    "qs": [
+     [
+      "What would three days without glue have cost Sue?",
+      "She would have had nothing to work with until the shop restocked on Tuesday."
+     ],
+     [
+      "Why did the order of the parts matter so much?",
+      "Getting it wrong would cost her a joint she could not redo with so little glue."
+     ],
+     [
+      "Why did Sue value her friends standing still?",
+      "Because not touching the wet parts was the most useful thing they could do."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how Sue made a few drops of glue last. Use details from the story."
+    }
+   }
+  },
+  "teams-all": {
+   "g2": {
+    "title": "The Team by the Sea",
+    "paras": [
+     "The team met by the sea at dawn. The sky was gray and the air was cold.",
+     "They had to row the boat out past the reef and back before night.",
+     "Jean held the rope. Ray and Joe took an oar each and kept the beat.",
+     "Rain came down hard. They did not stop. They kept the boat on its way.",
+     "By night the team was back. Each one was wet, but they had made it."
+    ],
+    "qs": [
+     [
+      "Where did the team meet?",
+      "They met by the sea at dawn."
+     ],
+     [
+      "What did they have to do before night?",
+      "Row the boat out past the reef and back."
+     ],
+     [
+      "What did the team do when the rain came?",
+      "They did not stop. They kept the boat on its way."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what the team did that day. Use first, next and last."
+    }
+   },
+   "g3": {
+    "title": "The Team by the Sea",
+    "paras": [
+     "The team met by the sea at dawn, when the sky was still gray and the air was cold enough to see your own breath.",
+     "They had to row the boat out past the reef and back again before night fell, and nobody had done the trip in one day before.",
+     "Jean held the rope at the bow. Ray and Joe took an oar each and kept the beat between them so the boat ran straight.",
+     "Halfway out the rain came down hard and flat. They did not stop. They kept the boat on its way and let the rain do what it liked.",
+     "By night the team was back on the beach. Each one of them was soaked through, but they had made the trip, and the boat had not taken on water."
+    ],
+    "qs": [
+     [
+      "How cold was it at dawn?",
+      "Cold enough to see your own breath."
+     ],
+     [
+      "Why was the trip unusual?",
+      "Nobody had done it out past the reef and back in one day before."
+     ],
+     [
+      "What was Jean's job on the boat?",
+      "She held the rope at the bow."
+     ]
+    ],
+    "write": {
+     "type": "Opinion",
+     "task": "Should the team have turned back when the rain came? Give two reasons from the story."
+    }
+   },
+   "g4": {
+    "title": "The Team by the Sea",
+    "paras": [
+     "The team met by the sea at dawn, when the sky was still gray and the air was cold enough that you could see your own breath hanging in front of you.",
+     "They had to row the boat out past the reef and back again before night fell. Nobody had made that trip in a single day before, and most of the town had said plainly that it could not be done.",
+     "Jean held the rope at the bow and called the line they were steering. Ray and Joe took an oar each and kept the beat between them, matching stroke for stroke so that the boat ran straight instead of crabbing sideways.",
+     "Halfway out the rain came down hard and flat, the kind that soaks you to the skin inside a minute. They did not stop. They kept the boat on its way and let the rain do whatever it liked, because stopping in open water would have cost them the light.",
+     "By night the team was back on the beach with the hull scraping sand. Every one of them was soaked through and their hands had stopped closing properly, but they had made the trip, and when they tipped the boat up to check it, not a cup of water came out."
+    ],
+    "qs": [
+     [
+      "What had most of the town said about the trip?",
+      "They said plainly that it could not be done in a single day."
+     ],
+     [
+      "Why did Ray and Joe match stroke for stroke?",
+      "So the boat ran straight instead of crabbing sideways."
+     ],
+     [
+      "Why would stopping have been worse than rowing on?",
+      "Stopping in open water would have cost them the light."
+     ]
+    ],
+    "write": {
+     "type": "Informative",
+     "task": "Explain how the team completed the trip and what nearly stopped them. Use details from the story."
+    }
+   }
   }
  }
 }

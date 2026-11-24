@@ -119,7 +119,20 @@ for (const level of B.levels) {
     realWords++;
     if (!w) continue;
     // mom's is mom with a possessive on it, which web2 does not list.
+    // mom's is mom with a possessive on it, which web2 does not list. A
+    // contraction is two words joined -- i've, he'll, don't -- so it is
+    // checked by its parts rather than by squashing it into one string, which
+    // turned "i've" into "ive" and found nothing.
     const bare = w.replace(/'s$/, "").replace(/'/g, "");
+    const CONTRACTED = {
+      ve: "have", ll: "will", re: "are", d: "would", s: "is", t: "not", m: "am",
+    };
+    if (w.includes("'")) {
+      const [head, tailPart] = w.split("'");
+      const expanded = CONTRACTED[tailPart];
+      const headOk = head === "i" || BANK.has(head) || (FULL && FULL.has(head));
+      if (expanded && headOk) continue;
+    }
     const known =
       BANK.has(w) ||
       BANK.has(bare) ||

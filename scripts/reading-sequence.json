@@ -704,24 +704,6 @@
       "wordSource": "lesson"
     },
     {
-      "key": "long-u",
-      "name": "Long u: ue, ew, eu",
-      "level": 3,
-      "words": [
-        "blue",
-        "true",
-        "clue",
-        "stew",
-        "few",
-        "new",
-        "grew",
-        "chew",
-        "due",
-        "dew"
-      ],
-      "wordSource": "lesson"
-    },
-    {
       "key": "teams-all",
       "name": "All vowel teams together",
       "level": 3,
@@ -1008,6 +990,24 @@
         "suit"
       ],
       "wordSource": "spelling"
+    },
+    {
+      "key": "long-u",
+      "name": "Long u: ue, ew, eu",
+      "level": 4,
+      "words": [
+        "blue",
+        "true",
+        "clue",
+        "stew",
+        "few",
+        "new",
+        "grew",
+        "chew",
+        "due",
+        "dew"
+      ],
+      "wordSource": "lesson"
     },
     {
       "key": "og4-07",
