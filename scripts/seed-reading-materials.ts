@@ -4299,6 +4299,136 @@ const ADAPTATIONS: Adaptation[] = [
       return out;
     },
   },
+  {
+    // The step card: badges under the title, and cards that stop stretching.
+    //
+    // TWO FAULTS, BOTH VISIBLE ON STEP 11. Its title is "11 \u00B7 Oral reading \u00B7
+    // decodable" and it carries two measure badges, ORF and Maze. The header
+    // was one row -- title on the left, badges and the minutes pushed right --
+    // and in a 250px grid column the title pill does not shrink, so the badges
+    // were squeezed to their narrowest and wrapped one per line. ORF above
+    // Maze above "5 min", stacked down the right edge and colliding with the
+    // pill beside them.
+    //
+    // They go under the title instead. A card is narrow by design, so a row
+    // that only works when the title is short is the wrong row.
+    //
+    // The second fault is the empty half of the card. The grid sets equal row
+    // heights, so every card in a row grows to match the tallest one and a
+    // short card prints a field of white. align-items:start lets each card be
+    // the height of what is in it.
+    name: "fix the step card header and let the cards size to their content",
+    apply: (html) => {
+      const row =
+        '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px">\n' +
+        '              <span style="{{ s.pill }}">{{ s.n }} \u00B7 {{ s.t }}</span>';
+      if (!html.includes(row)) return html;
+      let out = html.replace(
+        row,
+        '<div style="display:flex;flex-direction:column;align-items:flex-start;gap:6px">\n' +
+          '              <span style="{{ s.pill }}">{{ s.n }} \u00B7 {{ s.t }}</span>',
+      );
+
+      // The badges no longer need pushing to the right: they are on their own
+      // line now, and reading them from the left matches the title above them.
+      const badges =
+        'display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:flex-end';
+      if (!out.includes(badges)) return html;
+      out = out.replace(badges, "display:flex;gap:6px;align-items:center;flex-wrap:wrap");
+
+      const grid =
+        '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px">';
+      if (!out.includes(grid)) return html;
+      out = out.replace(
+        grid,
+        '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));' +
+          'align-items:start;gap:12px">',
+      );
+
+      return out;
+    },
+  },
+  {
+    // The mystery, scaffolded or not, on a switch.
+    //
+    // The steps are the right default -- a child who has never had to find
+    // the words that prove a thing needs the shape of the task on the paper --
+    // and they are the wrong sheet for a child who can already do it. Steps
+    // become scaffolding to work around rather than through, and the writing
+    // gets shorter rather than better.
+    //
+    // So Steps and Writing prompt sit on the bar beside the workbook. Step 1
+    // is in both, because circling who did it is the question either way; what
+    // the switch changes is whether the quote and the justification come with
+    // their frames printed, or as the task and a page of lines.
+    name: "let the mystery be scaffolded or a plain writing prompt",
+    apply: (html) => {
+      let out = html;
+
+      // Both copies of the page, student and key.
+      for (let guard = 0; guard < 4; guard++) {
+        const at = out.indexOf('>STEP 2</span>');
+        if (at === -1) break;
+        const bandOpen = out.lastIndexOf('<div style="display:flex;align-items:baseline', at);
+        // The scaffold ends where the justification frame ends, which is the
+        // div holding the "That shows" lines.
+        const frameAt = out.indexOf('I know <span', at);
+        if (bandOpen === -1 || frameAt === -1) return html;
+        const frameEnd = out.indexOf("</div>", out.indexOf("</span></div>", frameAt));
+        const taskAt = out.indexOf("{{ myTask }}", frameEnd);
+        if (frameEnd === -1 || taskAt === -1) return html;
+        const taskOpen = out.lastIndexOf("<div ", taskAt);
+        const taskEnd = out.indexOf("</div>", taskAt) + "</div>".length;
+
+        const scaffold = out.slice(bandOpen, frameEnd + "</div>".length);
+        const task = out.slice(taskOpen, taskEnd);
+        const lines =
+          '<div style="position:relative;min-height:300px;background-image:' +
+          "repeating-linear-gradient(to bottom,transparent 0,transparent 34.5px,#333 34.5px,#333 36px);" +
+          'background-size:100% 36px"></div>';
+
+        const replaced =
+          '<sc-if value="{{ myScaf }}" hint-placeholder-val="{{ true }}">' +
+          scaffold.replace(">STEP 2</span>", ">STEP 2x</span>") +
+          "</sc-if>" +
+          '<sc-if value="{{ myPlain }}" hint-placeholder-val="{{ false }}">' +
+          task + lines +
+          "</sc-if>";
+
+        out =
+          out.slice(0, bandOpen) + replaced + out.slice(taskEnd);
+      }
+      // Put the marker back now that every copy has been wrapped.
+      out = out.split(">STEP 2x</span>").join(">STEP 2</span>");
+
+      // The state, and the two buttons beside the workbook's own.
+      const seat = "      wbBtn: (this.state && this.state.wbOpen) ? 'Hide workbook \u25B2' : 'Show workbook \u25BC',";
+      if (!out.includes(seat)) return html;
+      out = out.replace(
+        seat,
+        seat + "\n" +
+          "      // Scaffolded by default: the steps are what a child who cannot\n" +
+          "      // yet do this needs, and the plain prompt is the step up.\n" +
+          "      myScaf: !(this.state && this.state.myPlain),\n" +
+          "      myPlain: !!(this.state && this.state.myPlain),\n" +
+          "      myScafBtn: (this.state && this.state.myPlain)\n" +
+          "        ? '\\u{1F50D} Mystery: writing prompt' : '\\u{1F50D} Mystery: steps',\n" +
+          "      toggleScaf: () => this.setState({ myPlain: !(this.state && this.state.myPlain) }),",
+      );
+
+      const barAnchor = '<button type="button" onClick="{{ toggleWb }}"';
+      if (!out.includes(barAnchor)) return html;
+      const bare =
+        "font-family:Poppins,system-ui,sans-serif;font-size:14px;font-weight:700;" +
+        "border:1.5px solid #4B6049;background:#fff;color:#4B6049;padding:8px 14px;" +
+        "border-radius:8px;cursor:pointer;white-space:nowrap";
+      return out.replace(
+        barAnchor,
+        '<button type="button" onClick="{{ toggleScaf }}" style="' + bare + '">' +
+          "{{ myScafBtn }}</button>" + barAnchor,
+      );
+    },
+  },
 ];
 
 /**
