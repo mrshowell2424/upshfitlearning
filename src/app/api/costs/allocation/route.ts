@@ -6,7 +6,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { calculateCostAllocation, getTotalMonthlySpend } from '@/lib/utils/cost-monitoring';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const allocation = await calculateCostAllocation();
     const totalSpend = await getTotalMonthlySpend(new Date());

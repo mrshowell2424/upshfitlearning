@@ -9,7 +9,6 @@ import {
   date,
   varchar,
 } from "drizzle-orm/pg-core";
-import { sql } from "drizzle-orm";
 
 export const resources = pgTable("resources", {
   id: uuid("id").primaryKey().defaultRandom(),

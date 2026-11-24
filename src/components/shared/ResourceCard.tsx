@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useAuth } from "@/providers/AuthProvider";
 
 interface ResourceCardProps {

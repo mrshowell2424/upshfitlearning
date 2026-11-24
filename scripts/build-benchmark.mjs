@@ -17,7 +17,6 @@
  *   bun run scripts/build-benchmark.mjs
  */
 import { readFileSync, writeFileSync } from "node:fs";
-import { looksReal } from "./lib/not-nonsense.mjs";
 import { EXTRA_CLOSED, LEVEL_SKILLS, LEVEL_EXTRAS } from "./lib/nwf-pools.mjs";
 import { CONCEPTS } from "./lib/continuum-pools.mjs";
 

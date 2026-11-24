@@ -49,7 +49,6 @@ import MYSTERIES from "./reading-mysteries.json" with { type: "json" };
 import MYSTERYCOACH from "./reading-mystery-coach.json" with { type: "json" };
 import MYSTERYDEBATECOACH from "./reading-mystery-debate-coach.json" with { type: "json" };
 import ARTICLES from "./reading-articles.json" with { type: "json" };
-import ARTICLECOACH from "./reading-article-coach.json" with { type: "json" };
 import EXTRAW from "./reading-extra-words.json" with { type: "json" };
 import MSB from "./reading-multisyllabic.json" with { type: "json" };
 import WTYPES from "./reading-writing-types.json" with { type: "json" };
@@ -394,7 +393,7 @@ const ADAPTATIONS: Adaptation[] = [
     apply: (html) => {
       const cut = "return n >= 4 && n <= 12; }).slice(0, 2);";
       if (!html.includes(cut)) return html;
-      let out = html.replace(cut, "return n >= 4 && n <= 12; }).slice(0, 3);");
+      const out = html.replace(cut, "return n >= 4 && n <= 12; }).slice(0, 3);");
 
       const anchor = "    const byId = Object.fromEntries(SK.map((s) => [s[0], s]));";
       if (!out.includes(anchor)) return html;
@@ -1002,7 +1001,7 @@ const ADAPTATIONS: Adaptation[] = [
       html = html
         .replace(fit1, "document.querySelectorAll('[data-wb]:not([data-land])')].filter((e) =>")
         .replace(fit2, "document.querySelectorAll('[data-wb]:not([data-land])').forEach((e) => { e.style.zoom = ''");
-      let out = html.replace(
+      const out = html.replace(
         old,
         "splTests: ['g2', 'g3'].filter((g) => has('spl' + g.slice(1))\n" +
           "        || (!part && (this.state && this.state.wbOpen) && !POFF.includes('spl' + g.slice(1))))\n" +
@@ -1284,7 +1283,7 @@ const ADAPTATIONS: Adaptation[] = [
         "const sents = dict.concat(extra ? [extra[0].trim()] : [])" +
         ".filter((x) => x.split(' ').length >= 4).slice(0, 3);";
       if (!html.includes(from)) return html;
-      let out = html.replace(
+      const out = html.replace(
         from,
         "const fromDec = ((p.dec.paras || []).join(' ').match(/[^.!?]+[.!?]/g) || [])" +
           ".map((x) => x.trim());\n" +
@@ -2332,7 +2331,7 @@ const ADAPTATIONS: Adaptation[] = [
         "    // reading page, or the key prints M beside a word the child has\n" +
         "    // just read correctly as a real one.\n" +
         "    const realSet = new Set(wordPool.map((w) => String(w).toLowerCase()));";
-      let out = html.replace(decl, pool);
+      const out = html.replace(decl, pool);
 
       // the ring, pointed at the whole bank instead of the first ten
       const ring = "const ring = (n, off) => { const L = real;";
@@ -2406,7 +2405,7 @@ const ADAPTATIONS: Adaptation[] = [
     apply: (html) => {
       const step5 = "const reviewWords = review.flatMap((r) => r[6].slice(0, 3));";
       if (!html.includes(step5)) return html;
-      let out = html.replace(
+      const out = html.replace(
         step5,
         "// Each picked concept's own list, in the length the button asks for.\n" +
           "    const revBank = (r) => revMulti\n" +
@@ -4223,7 +4222,7 @@ const ADAPTATIONS: Adaptation[] = [
         "const modes = []; if (has('games') || (!part && open)) modes.push(false); " +
         "if (has('gkey') || (!part && open)) modes.push(true);";
       if (!html.includes(modes)) return html;
-      let out = html.replace(
+      const out = html.replace(
         modes,
         "const wbShown = !!(this.state && this.state.wbOpen); const modes = []; " +
           "if (has('games') || has('wb') || (!part && (open || wbShown))) modes.push(false); " +
@@ -4563,7 +4562,7 @@ const ADAPTATIONS: Adaptation[] = [
         '<button type="button" onClick="{{ myDebatePick }}" style="' + base +
         '{{ myBarDebate }}">\u2696\uFE0F Debate it</button>' +
         "</span></sc-if>";
-      let out = html.replace(anchor, pair + anchor);
+      const out = html.replace(anchor, pair + anchor);
 
       // Lit and unlit, the same way every other pair on this bar reads.
       const seat = "          myDbOn: dbOn, mySolveOn: !dbOn, myHasDb: !!(C && C.d),";

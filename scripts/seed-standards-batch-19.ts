@@ -14,7 +14,6 @@
  *
  *   bun run scripts/seed-standards-batch-19.ts
  */
-import { seedStandardsBatch } from "./lib/seed-standards-batch";
 
 const standardsData = [
   {

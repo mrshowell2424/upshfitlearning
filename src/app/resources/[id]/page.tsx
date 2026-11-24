@@ -1,7 +1,7 @@
 // @ts-nocheck
+import Link from "next/link";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
-import ResourceCard from "@/components/shared/ResourceCard";
 import { getResourceById, getRelatedOwnVideos } from "@/lib/utils/resources";
 import { notFound } from "next/navigation";
 import { ResourceActions } from "./actions";
@@ -66,9 +66,9 @@ export default async function ResourceDetailPage({ params }: PageProps) {
 
       <main id="main" tabIndex={-1} className="flex-1 px-5 md:px-8 py-8 max-w-6xl mx-auto w-full">
         {/* Back link */}
-        <a href="/resources" className="text-link-blue hover:underline text-sm font-semibold mb-6 inline-block">
+        <Link href="/resources" className="text-link-blue hover:underline text-sm font-semibold mb-6 inline-block">
           ← Back to library
-        </a>
+        </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Left column */}

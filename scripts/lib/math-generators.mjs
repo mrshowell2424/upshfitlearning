@@ -210,7 +210,7 @@ export const GEN = {
       const fx = (z) => z.toFixed(places);
       return { q: `${fx(x)} ${op} ${fx(y)} = ___`, a: fx(v), chk: `${fx(x)}${op}${fx(y)}` };
     },
-    w: (r, p) => {
+    w: (r) => {
       const price = (int(r, 150, 950) / 100).toFixed(2);
       const n = int(r, 2, 6);
       const v = (price * n).toFixed(2);
@@ -252,7 +252,7 @@ export const GEN = {
       const k = int(r, 2, 6);
       return { q: `${a} : ${b} = ${a * k} : ___`, a: String(b * k), chk: `${b}*${k}` };
     },
-    w: (r, p) => {
+    w: (r) => {
       const pct = pick(r, [10, 20, 25, 50]);
       const price = pick(r, [20, 40, 60, 80]);
       return { q: `A $${price} ${pick(r, ["jacket", "bag", "game", "book"])} is ${pct}% off. How many dollars do you save?`, a: String((price * pct) / 100), chk: `${price}*${pct}/100` };

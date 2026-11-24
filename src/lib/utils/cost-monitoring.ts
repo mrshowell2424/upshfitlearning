@@ -3,7 +3,6 @@
  * Real-time cost tracking, budgeting, and optimization
  */
 
-import { db } from '@/lib/db';
 
 interface CostEntry {
   serviceName: string;

@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 
 // Mock Stripe API responses and request handling
 interface MockRequest {
@@ -287,7 +287,7 @@ describe("Stripe API Routes", () => {
           if (retries === 0) throw new Error("Temporary failure");
           // Success on retry
           break;
-        } catch (error) {
+        } catch {
           retries++;
         }
       }

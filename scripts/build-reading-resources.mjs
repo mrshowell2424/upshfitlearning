@@ -18,7 +18,7 @@
  *
  *   bun run scripts/build-reading-resources.mjs
  */
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, rmSync } from "node:fs";
 
 const MY = JSON.parse(readFileSync("scripts/reading-mysteries.json", "utf8")).cases;
 const AR = JSON.parse(readFileSync("scripts/reading-articles.json", "utf8")).articles;

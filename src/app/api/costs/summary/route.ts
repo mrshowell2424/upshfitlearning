@@ -11,7 +11,7 @@ import {
   getCostSummary,
 } from '@/lib/utils/cost-monitoring';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const now = new Date();
     const costs = await getMonthlyCosts(now);

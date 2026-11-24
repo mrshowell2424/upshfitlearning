@@ -127,13 +127,13 @@ export default function Home() {
 
             {/* Hero Headline */}
             <h1 className="text-[32px] sm:text-4xl md:text-5xl font-bold text-charcoal mb-4 leading-[1.15] md:leading-tight">
-              Describe what you're teaching.<br className="hidden sm:inline" />{" "}
-              We'll hand you the lesson.
+              Describe what you&apos;re teaching.<br className="hidden sm:inline" />{" "}
+              We&apos;ll hand you the lesson.
             </h1>
 
             {/* Subheadline */}
             <p className="text-base md:text-lg text-text-muted mb-8 max-w-2xl">
-              Search by standard or describe what you're teaching. Get a lesson blueprint, resources, and materials.
+              Search by standard or describe what you&apos;re teaching. Get a lesson blueprint, resources, and materials.
             </p>
 
             {/* Search Bar */}
@@ -207,7 +207,7 @@ export default function Home() {
                 <div className="text-xs font-bold tracking-wider text-coral-ink uppercase mb-2">Find Standards</div>
                 <h3 className="text-xl font-bold text-charcoal mb-3">Standard matcher</h3>
                 <p className="text-sm text-text-body mb-4">
-                  Search by code or describe what you're teaching, and we'll find the exact standard.
+                  Search by code or describe what you&apos;re teaching, and we&apos;ll find the exact standard.
                 </p>
                 <Link href="/match" className="inline-flex items-center gap-2 text-coral-ink font-semibold hover:text-coral-ink-press transition-colors">
                   Get started →
@@ -229,7 +229,7 @@ export default function Home() {
               {/* Card 3 */}
               <div className="border-l-4 border-teal rounded-2xl bg-white p-6 border border-hairline hover:border-charcoal transition-colors">
                 <div className="text-xs font-bold tracking-wider text-teal-ink uppercase mb-2">Learn More</div>
-                <h3 className="text-xl font-bold text-charcoal mb-3">Teacher's lounge</h3>
+                <h3 className="text-xl font-bold text-charcoal mb-3">Teacher&apos;s lounge</h3>
                 <p className="text-sm text-text-body mb-4">
                   Read articles, watch videos, and learn from teaching strategies grounded in learning science.
                 </p>

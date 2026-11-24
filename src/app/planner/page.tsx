@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 
 import Header from '@/components/shared/Header'
 import Footer from '@/components/shared/Footer'
@@ -20,12 +21,12 @@ export default function PlannerPage() {
             <p className="text-text-muted mb-8">
               Start saving resources from the Resource Library to organize them here.
             </p>
-            <a
+            <Link
               href="/resources"
               className="inline-block bg-coral-ink hover:bg-coral-ink-press text-white px-5 md:px-8 py-3 rounded-xl font-semibold transition-colors"
             >
               Browse Resources
-            </a>
+            </Link>
           </div>
         </div>
       </main>

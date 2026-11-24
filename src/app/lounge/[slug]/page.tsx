@@ -20,7 +20,7 @@ export default function ArticlePage() {
           <div className="text-center">
             <h1 className="text-3xl font-bold text-charcoal mb-4">Article not found</h1>
             <Link href="/lounge" className="text-teal-ink font-semibold hover:text-teal-ink">
-              Back to Teacher's Lounge
+              Back to Teacher&apos;s Lounge
             </Link>
           </div>
         </main>
@@ -53,7 +53,7 @@ export default function ArticlePage() {
 
           <div className="mt-12 pt-8 border-t border-hairline">
             <Link href="/lounge" className="inline-flex items-center gap-2 text-teal-ink font-semibold hover:text-teal-ink">
-              ← Back to Teacher's Lounge
+              ← Back to Teacher&apos;s Lounge
             </Link>
           </div>
         </article>

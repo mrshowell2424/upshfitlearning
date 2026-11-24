@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/providers/AuthProvider";
 import { useMatchTab } from "./tab-context";
-import { kidDefinition, DOK_DESCRIPTIONS } from "@/lib/utils/unpack";
+import { kidDefinition } from "@/lib/utils/unpack";
 import { UpgradeModal } from "@/components/shared/UpgradeModal";
 import { scienceLabel, standardHref } from "@/lib/utils/standards";
 
@@ -1268,7 +1268,7 @@ function GenerateTab({ standard_code, blueprint, unpack }) {
             <div className="text-center">
               <p className="text-text-muted mb-2">Generated content will appear here</p>
               <p className="text-xs text-text-faint">
-                Select options and click "Generate for my learners"
+                Select options and click &quot;Generate for my learners&quot;
               </p>
             </div>
           </div>

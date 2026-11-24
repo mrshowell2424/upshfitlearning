@@ -98,7 +98,7 @@ function MatchPageContent() {
 
           {/* Subheading */}
           <p className="text-center text-base md:text-[18px] text-text-muted mb-8">
-            Enter a standard code or describe what you're teaching
+            Enter a standard code or describe what you&apos;re teaching
           </p>
 
           {/* Search bar */}

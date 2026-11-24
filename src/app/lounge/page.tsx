@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import Header from '@/components/shared/Header'
 import Footer from '@/components/shared/Footer'
 
@@ -56,7 +55,7 @@ export default function TeachersLounge() {
             <div className="flex flex-col sm:flex-row items-start sm:justify-between gap-4 mb-8">
               <div>
                 <h1 className="text-[30px] md:text-[48px] font-bold text-charcoal mb-2">
-                  The Teacher's Lounge
+                  The Teacher&apos;s Lounge
                 </h1>
                 <p className="text-lg text-text-muted">
                   Short reads for the ten minutes you actually get. Straight from the newsletter, no lesson prep required.

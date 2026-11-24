@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { supabase, getCurrentUser, getSubscription } from '@/lib/auth'
+import { getCurrentUser, getSubscription } from '@/lib/auth'
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const user = await getCurrentUser()
 

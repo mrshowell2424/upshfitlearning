@@ -115,7 +115,7 @@ for (const route of ROUTES) {
     await page.addScriptTag({ content: AXE });
 
     const result = await page.evaluate(async () => {
-      // eslint-disable-next-line no-undef
+       
       return await axe.run(document, {
         runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"] },
         resultTypes: ["violations"],
