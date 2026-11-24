@@ -110,8 +110,8 @@ export const CONCEPTS = [
     real: ["ready", "snow", "touch", "book", "saw", "new", "boil", "toy",
       "head", "grow", "found", "food", "haul", "draw", "chew", "joy", "bread",
       "show", "cloud", "foot", "sauce", "lawn", "blew", "coin", "soup"],
-    fake: ["zead", "snou", "mook", "zaw", "fewn", "voit", "gead", "choud",
-      "blook", "vaut", "jewt", "floy", "zoot", "heab", "shauk"],
+    fake: ["zead", "snou", "noosh", "zaw", "fewn", "voit", "gead", "choud",
+      "blook", "vaut", "jewt", "floy", "zoob", "heab", "shauk"],
   },
   {
     id: "P8",

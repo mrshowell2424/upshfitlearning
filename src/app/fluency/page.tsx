@@ -216,6 +216,23 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                 </span>
               </p>
 
+              {/* This page is one of six mClass measures. Three of the others
+                  had nothing behind them until /benchmark, and a teacher who
+                  came here looking for "the timed one" could leave without
+                  learning the word lists and the maze exist. */}
+              <p style={{ margin: "-14px 0 24px", fontSize: 15 }}>
+                <a
+                  href={`/benchmark?grade=${grade}`}
+                  style={{ color: BRAND.tealDark, fontWeight: 700, textDecoration: "none" }}
+                >
+                  The other three measures → Benchmark practice
+                </a>
+                <span style={{ color: BRAND.mid }}>
+                  {" "}
+                  — Word Race, Silly Words, and the maze with a switch to turn it off.
+                </span>
+              </p>
+
               {/* A one-minute read is two surfaces: the child reads off one
                   and the teacher marks errors on the other. One monitor
                   cannot be both, which is why every published probe is a

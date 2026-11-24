@@ -17,7 +17,9 @@
  *   bun run scripts/build-benchmark.mjs
  */
 import { readFileSync, writeFileSync } from "node:fs";
-import { unsafeWord, looksReal } from "./lib/not-nonsense.mjs";
+import { looksReal } from "./lib/not-nonsense.mjs";
+import { EXTRA_CLOSED, LEVEL_SKILLS, LEVEL_EXTRAS } from "./lib/nwf-pools.mjs";
+import { CONCEPTS } from "./lib/continuum-pools.mjs";
 
 const HEART = JSON.parse(readFileSync("scripts/reading-heart-words.json", "utf8")).words;
 const SEQ = JSON.parse(readFileSync("scripts/reading-sequence.json", "utf8")).sequence;
@@ -98,36 +100,41 @@ for (const list of Object.values(MULTI)) {
   for (const w of list.real ?? []) REAL.add(w.toLowerCase());
 }
 
-const ONSETS_SIMPLE = ["b", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "r", "s", "t", "v", "w", "y", "z"];
-const ONSETS_BLEND = ["bl", "br", "cl", "cr", "dr", "fl", "fr", "gl", "gr", "pl", "pr", "sl", "sm", "sn", "sp", "st", "sw", "tr", "sh", "ch", "th"];
-const VOWELS = ["a", "e", "i", "o", "u"];
-const CODAS_SIMPLE = ["b", "d", "f", "g", "k", "l", "m", "n", "p", "s", "t", "v", "z"];
-const CODAS_BLEND = ["ck", "ff", "ll", "ss", "mp", "nd", "nt", "st", "sk", "lt", "ng", "sh", "ch", "th"];
-
-
-function makeNonsense(level, count, seed) {
-  // Level 1 and 2 stay CVC with simple letters. From level 3 the onsets and
-  // codas may be blends and digraphs, which is the progression the reading
-  // sequence itself follows.
-  const onsets = level <= 2 ? ONSETS_SIMPLE : [...ONSETS_SIMPLE, ...ONSETS_BLEND];
-  const codas = level <= 2 ? CODAS_SIMPLE : [...CODAS_SIMPLE, ...CODAS_BLEND];
-  const all = [];
-  for (const o of onsets) {
-    for (const v of VOWELS) {
-      for (const c of codas) {
-        const w = o + v + c;
-        if (looksReal(w, REAL) || unsafeWord(w)) continue;
-        // Two of the same letter either side reads oddly: "ded", "sus".
-        if (o === c) continue;
-        all.push(w);
-      }
-    }
-  }
-  return shuffled(all, seed).slice(0, count);
+/**
+ * SILLY WORDS now come from a chosen list, not a generator.
+ *
+ * The generator that used to live here is gone. Four audits of its output each
+ * found a class of bad word the filter before it had missed -- real words the
+ * reading bank did not know, real words a 1934 dictionary does not contain,
+ * respellings that sound exactly like real words, and one string nobody hands
+ * a child -- and the fourth audit of a narrowed, heavily filtered generator
+ * still turned up yup, lib, neg, rez, mol, yod, glob, guck and fock.
+ *
+ * The words are in scripts/lib/nwf-pools.mjs, where the reasoning and the
+ * structural rules that keep them safe are written down. The later levels
+ * reuse the continuum review's own made-up words, which are already signed off
+ * by scripts/check-continuum-review.mjs, rather than inventing a second set
+ * that would need auditing all over again.
+ */
+function sillyWords(level, seed) {
+  const skills = LEVEL_SKILLS[level] || [];
+  const fromSkills = skills.flatMap((id) => {
+    const c = CONCEPTS.find((x) => x.id === id);
+    return c && c.kind === "words" ? c.fake : [];
+  });
+  const extras = shuffled(EXTRA_CLOSED, seed + 500).slice(0, LEVEL_EXTRAS[level] || 0);
+  const seen = new Set();
+  const pool = [...extras, ...fromSkills].filter((w) => {
+    const k = String(w).toLowerCase();
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+  return shuffled(pool, seed);
 }
 
 const nwf = {};
-for (const level of LEVELS) nwf[level] = makeNonsense(level, 60, 2000 + level);
+for (const level of LEVELS) nwf[level] = sillyWords(level, 2000 + level);
 
 writeFileSync(
   "scripts/reading-benchmark.json",

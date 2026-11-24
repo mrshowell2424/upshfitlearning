@@ -81,6 +81,16 @@ const CLIPPED = [
   "keg", "log", "mud", "nut", "pod", "rug", "sob", "tag", "vat", "web",
   "yak", "zip", "clos", "nos", "mos", "gis", "sel", "bok", "det", "pid",
   "pix", "vid", "vids", "sim", "sims", "mech", "mega", "ultra", "turbo",
+  "cyber", "online", "offline", "upload", "stream", "screen", "laptop",
+  // Slang real enough to be read as a word: a mook is a fool, a zoot suit is
+  // a suit. Both came through four filters and were caught by reading.
+  "mook", "zoot", "zoots", "mooks",
+  // Found by reading 300 generated words. Every one of these is a real word
+  // or name and none of them is in the 1934 dictionary.
+  "yup", "lib", "neg", "pel", "pav", "biv", "lun", "yog", "rez", "mol",
+  "yod", "tem", "rav", "zin", "dav", "jil", "heb", "jed", "kez", "vin",
+  "gav", "pag", "zal", "vil", "suf", "fis", "nus", "rov", "bep", "hus",
+  "dez", "jez", "mef", "wef", "gep", "yab", "jod", "zub", "gef", "vaf",
 ];
 
 /**
