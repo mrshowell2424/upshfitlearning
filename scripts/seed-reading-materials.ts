@@ -3647,25 +3647,50 @@ const ADAPTATIONS: Adaptation[] = [
         'font-size:15.5px;line-height:1.7;color:#111;text-wrap:pretty">{{ myStory }}</div>\n' +
         '        <div style="border:2.5px solid #111;border-radius:10px;padding:8px 14px;' +
         'font-size:19px;font-weight:800;color:#111">❓ {{ myQ }}</div>\n' +
+        '        <div style="display:flex;align-items:baseline;gap:9px;margin-top:2px">' +
+        '<span style="' + F + 'font-size:11px;font-weight:800;letter-spacing:.12em;background:#111;color:#fff;border-radius:999px;padding:2px 9px;flex:none">STEP 1</span>' +
+        '<span style="font-size:14.5px;font-weight:700;color:#111;line-height:1.4">Who did it? Circle one.</span>' +
+        '</div>\n' +
         '        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px">\n' +
         '          <sc-for list="{{ mySus }}" as="s" hint-placeholder-count="4">\n' +
-        '            <div style="border:2px solid #111;border-radius:10px;padding:7px 11px;' +
-        'font-size:14px;color:#111"><b>{{ s.w }}</b>' +
-        '<sc-if value="{{ s.open }}" hint-placeholder-val="{{ false }}">' +
-        '<span style="' + F + 'font-size:10px;font-weight:800;letter-spacing:.1em">' +
-        " IN PLAY</span></sc-if> — {{ s.y }}</div>\n" +
+        '            <div style="border:2px solid #111;border-radius:999px;padding:7px 13px;' +
+        'font-size:15px;font-weight:700;color:#111;display:flex;align-items:center;gap:8px">' +
+        '<span style="width:15px;height:15px;border:2px solid #111;border-radius:50%;flex:none">' +
+        "</span><b>{{ s.w }}</b></div>\n" +
         "          </sc-for>\n" +
         "        </div>\n" +
-        '        <div style="font-size:14.5px;font-weight:700;color:#111;border:2px solid #111;' +
-        'border-radius:10px;padding:8px 12px">✍️ {{ myTask }}</div>\n' +
-        '        <div style="position:relative;min-height:290px;background-image:' +
-        "repeating-linear-gradient(to bottom,transparent 0,transparent 34.5px,#333 34.5px,#333 36px);" +
-        'background-size:100% 36px"></div>\n' +
-        '        <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:14px;font-weight:700;' +
+        '        <div style="display:flex;align-items:baseline;gap:9px;margin-top:2px">' +
+        '<span style="' + F + 'font-size:11px;font-weight:800;letter-spacing:.12em;background:#111;color:#fff;border-radius:999px;padding:2px 9px;flex:none">STEP 2</span>' +
+        '<span style="font-size:14.5px;font-weight:700;color:#111;line-height:1.4">What proves it? Find the words in the case, highlight them, then copy them here.</span>' +
+        '</div>\n' +
+        '        <div style="border:2px solid #111;border-radius:10px;padding:9px 13px;' +
+        'display:flex;flex-direction:column;gap:11px">' +
+        '<div style="display:flex;align-items:flex-end;gap:5px;font-size:17px;font-weight:700">' +
+        '<span>\u201c</span><span style="flex:1;border-bottom:2px solid #111;min-height:23px">' +
+        '</span><span>\u201d</span></div>' +
+        '<div style="display:flex;align-items:flex-end;gap:5px;font-size:17px;font-weight:700">' +
+        '<span>\u201c</span><span style="flex:1;border-bottom:2px solid #111;min-height:23px">' +
+        '</span><span>\u201d</span></div></div>\n' +
+        '        <div style="display:flex;align-items:baseline;gap:9px;margin-top:2px">' +
+        '<span style="' + F + 'font-size:11px;font-weight:800;letter-spacing:.12em;background:#111;color:#fff;border-radius:999px;padding:2px 9px;flex:none">STEP 3</span>' +
+        '<span style="font-size:14.5px;font-weight:700;color:#111;line-height:1.4">Why does that prove it? Say what the words show.</span>' +
+        '</div>\n' +
+        '        <div style="font-size:15.5px;line-height:2.5;color:#111">' +
+        'I know <span style="display:inline-block;min-width:150px;border-bottom:2px solid #111">' +
+        '</span> did it because the case says ' +
+        '<span style="display:inline-block;min-width:200px;border-bottom:2px solid #111"></span>.' +
+        '<br>That shows <span style="display:inline-block;min-width:320px;' +
+        'border-bottom:2px solid #111"></span>' +
+        '<br><span style="display:inline-block;width:100%;border-bottom:2px solid #111">' +
+        '</span></div>\n' +
+        '        <div style="font-size:13.5px;font-weight:700;color:#111;border:2px dashed #111;' +
+        'border-radius:10px;padding:7px 12px">\u270D\uFE0F {{ myTask }}</div>\n' +
+        '        <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:13.5px;font-weight:700;' +
         'border:2px solid #111;border-radius:10px;padding:8px 12px;color:#111">' +
-        "<span>I did it right if…</span><span>☐ I named one</span>" +
-        "<span>☐ I quoted the case</span><span>☐ I said what the quote shows</span>" +
-        "<span>☐ I answered the line against me</span></div>\n" +
+        "<span>I did it right if\u2026</span><span>\u2610 I circled one</span>" +
+        "<span>\u2610 I highlighted the words in the case</span>" +
+        "<span>\u2610 I copied the quote</span>" +
+        "<span>\u2610 I said what the quote shows</span></div>\n" +
         "      </div>\n" +
         "    </div>\n" +
         "    </sc-if>";
