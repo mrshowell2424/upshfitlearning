@@ -4209,6 +4209,71 @@ const ADAPTATIONS: Adaptation[] = [
       return out.replace(btn, "");
     },
   },
+  {
+    // The spiral review, in the preview and in the packet, on one page.
+    //
+    // Three faults, all from the same line. The extra pages are built with
+    //
+    //     const box = (k) => ({ display: has(k) ? 'flex' : 'none', ... })
+    //
+    // and the list is then filtered to the ones whose display is 'flex'. When
+    // nothing is printing, has(k) is false for every k, so the array comes back
+    // EMPTY: the spiral review was not hidden in the preview, it was never
+    // built. The same line kept it out of the packet, because the packet
+    // prints the chips and the spiral review was not one.
+    //
+    // So: the sheet is built whenever the workbook is open, and it joins the
+    // print chips so a teacher can take it out of the run rather than having
+    // to remember a separate button for it.
+    //
+    // ONLY THE SPIRAL REVIEW gets the workbook treatment. The progress check
+    // shares this box function and pushes two pages, a student copy and a key,
+    // so opening the workbook would put its answers on the screen beside the
+    // children's copies. The check keeps its own chip.
+    name: "build the spiral review with the workbook and print it in the packet",
+    apply: (html) => {
+      const box =
+        "const box = (k) => ({ display: has(k) ? 'flex' : 'none',";
+      if (!html.includes(box)) return html;
+      let out = html.replace(
+        box,
+        "const wbShownX = !!(this.state && this.state.wbOpen);\n" +
+          "        const box = (k) => ({ display: has(k) " +
+          "|| (!part && k === 'spiral' && wbShownX) ? 'flex' : 'none',",
+      );
+
+      // ONE SHEET, NOT TWO. The spiral review's content is about 640px and the
+      // box forced it to 10in, which is 960px against a 955px printable page --
+      // five pixels over, before Chrome's own header and footer take their cut.
+      // The total is anchored to the bottom with margin-top:auto, so those few
+      // pixels pushed it alone onto a second sheet: a page of words, then a
+      // page holding nothing but "Score: __ / 16".
+      //
+      // 9.2in leaves room for the browser's furniture and still fills the page.
+      // The 10in belongs to several boxes in this file and only this one is
+      // being changed, so it is found by walking forward from the box function
+      // itself rather than replaced by name -- a plain replace hit the main
+      // workbook page's box, which prints correctly and should not move.
+      const fnAt = out.indexOf("const box = (k) => ({ display: has(k)");
+      if (fnAt === -1) return html;
+      const tallAt = out.indexOf("minHeight: '10in'", fnAt);
+      const fnEnd = out.indexOf("});", fnAt);
+      if (tallAt === -1 || fnEnd === -1 || tallAt > fnEnd) return html;
+      out =
+        out.slice(0, tallAt) + "minHeight: '9.2in'" +
+        out.slice(tallAt + "minHeight: '10in'".length);
+
+      // A chip of its own, lit like the rest, so it rides along with Print.
+      const chips = "['games', '\u{1F3B2} Word games']];";
+      if (!out.includes(chips)) return html;
+      out = out.replace(
+        chips,
+        "['games', '\u{1F3B2} Word games'], ['spiral', '\u{1F300} Spiral review']];",
+      );
+
+      return out;
+    },
+  },
 ];
 
 /**
