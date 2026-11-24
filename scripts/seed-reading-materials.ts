@@ -4625,6 +4625,33 @@ const ADAPTATIONS: Adaptation[] = [
       );
     },
   },
+  {
+    // Show workbook goes first on the bar.
+    //
+    // Three rules add a button to this row and each one put its own in front
+    // of the workbook toggle, so the thing a teacher reaches for most ended up
+    // last: Solve it, Debate it, Mystery: steps, then Show workbook. The
+    // toggle is what opens everything else, so it reads first and the switches
+    // that change what is inside follow it.
+    //
+    // Done by moving the button rather than by changing the rules that add the
+    // others, because each of those anchors on the toggle to find the row.
+    name: "put show workbook first on the bar",
+    apply: (html) => {
+      const btn = /<button type="button" onClick="\{\{ toggleWb \}\}"[^>]*>\{\{ wbBtn \}\}<\/button>/;
+      const m = html.match(btn);
+      if (!m) return html;
+      const row = html.indexOf(m[0]);
+      // The row these buttons share opens just before the first of them.
+      const open = html.lastIndexOf('<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">', row);
+      if (open === -1) return html;
+      const after = open + '<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">'.length;
+      // Lift it out, then put it back at the front of the row.
+      const without = html.slice(0, row) + html.slice(row + m[0].length);
+      const shift = row < after ? 0 : 0;
+      return without.slice(0, after + shift) + m[0] + without.slice(after + shift);
+    },
+  },
 ];
 
 /**
