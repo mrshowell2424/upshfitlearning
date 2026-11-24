@@ -792,77 +792,92 @@
   {
    "id": "P1",
    "name": "Letters and Sounds",
-   "band": "Basic"
+   "band": "Basic",
+   "rule": "Every letter has a name and a sound. Say the name, then the sound it makes."
   },
   {
    "id": "P2",
    "name": "Short Vowels (VC and CVC)",
-   "band": "Basic"
+   "band": "Basic",
+   "rule": "A closed syllable ends in a consonant. The vowel is shut in, so it says its short sound."
   },
   {
    "id": "P3",
    "name": "Consonant Blends",
-   "band": "Basic"
+   "band": "Basic",
+   "rule": "In a blend you hear both consonants. Say each sound, then push them together."
   },
   {
    "id": "P4",
    "name": "Consonant Digraphs",
-   "band": "Basic"
+   "band": "Basic",
+   "rule": "Two letters, one sound. ch, sh, th, wh, ck and ng each make a single sound."
   },
   {
    "id": "P5",
    "name": "Long Vowel Silent-e",
-   "band": "Basic"
+   "band": "Basic",
+   "rule": "The e at the end is silent. It reaches back and makes the first vowel say its name."
   },
   {
    "id": "P6",
    "name": "Predictable Vowel Teams",
-   "band": "Advanced"
+   "band": "Advanced",
+   "rule": "Two vowels walking: ai, ay, ee, ea, oa, oe, ue and ui say the long sound of the first one."
   },
   {
    "id": "P7",
    "name": "Unpredictable Vowel Teams",
-   "band": "Advanced"
+   "band": "Advanced",
+   "rule": "These teams do not say the first vowel's name. ea can say /e/, ow and ou can say /ow/ or /oa/, oo has two sounds. Try one, then the other."
   },
   {
    "id": "P8",
    "name": "Vowel-r",
-   "band": "Advanced"
+   "band": "Advanced",
+   "rule": "The r bosses the vowel. ar says /ar/, or says /or/, and er, ir and ur all say /er/."
   },
   {
    "id": "P9",
    "name": "Complex Consonants",
-   "band": "Advanced"
+   "band": "Advanced",
+   "rule": "Some consonants hide or change. kn, wr, mb and gn have a silent letter; c and g go soft before e, i and y."
   },
   {
    "id": "P10",
    "name": "Closed Syllables",
-   "band": "Multisyllabic"
+   "band": "Multisyllabic",
+   "rule": "Split between the two consonants. Each syllable ends in a consonant, so each vowel is short."
   },
   {
    "id": "P11",
    "name": "Long Vowel Silent-e Syllables",
-   "band": "Multisyllabic"
+   "band": "Multisyllabic",
+   "rule": "Find the silent-e syllable at the end. Read the first part, then let the e make the last vowel say its name."
   },
   {
    "id": "P12",
    "name": "Open Syllables",
-   "band": "Multisyllabic"
+   "band": "Multisyllabic",
+   "rule": "Split after the vowel. An open syllable ends in a vowel, so the vowel says its name."
   },
   {
    "id": "P13",
    "name": "Vowel Team Syllables",
-   "band": "Multisyllabic"
+   "band": "Multisyllabic",
+   "rule": "Keep the vowel team together. Never split a team, so find it first and read it as one sound."
   },
   {
    "id": "P14",
    "name": "Consonant-le Syllables",
-   "band": "Multisyllabic"
+   "band": "Multisyllabic",
+   "rule": "Count back three letters. The consonant plus le is the last syllable, and the e is silent."
   },
   {
    "id": "P15",
    "name": "Vowel-r Syllables",
-   "band": "Multisyllabic"
+   "band": "Multisyllabic",
+   "rule": "The r stays with its vowel. Keep ar, or, er, ir and ur together in the same syllable."
   }
  ]
 }

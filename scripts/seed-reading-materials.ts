@@ -4710,7 +4710,7 @@ const ADAPTATIONS: Adaptation[] = [
           "          cdRows: rows,\n" +
           "          cdPerDay: String(CD.perDay),\n" +
           "          cdTrack: CD.track.map((c) => ({\n" +
-          "            id: c.id, name: c.name,\n" +
+          "            id: c.id, name: c.name, rule: c.rule || '',\n" +
           "            days: DN.slice(0, CD.days.length).map((t) => ({ t })) })),\n" +
           "        }; })(),",
       );
@@ -4772,7 +4772,7 @@ const ADAPTATIONS: Adaptation[] = [
         "      </div>\n" +
         '      <div style="font-size:13.5px;line-height:1.45;border:1.5px solid #000;border-radius:8px;' +
         'padding:7px 11px;color:#000">Two words a day for each skill, so each one is out of 2 a day and ' +
-        "out of 10 for the week. Fill in the score. The row with the lowest total is the one to work " +
+        "out of 10 for the week. The rule for each skill is written beside it — read it again before you try that row. The row with the lowest total is the one to work " +
         "on next.</div>\n" +
         '      <div style="display:grid;grid-template-columns:minmax(0,1fr) repeat(5,30px) 42px;' +
         'gap:2px 5px;align-items:center">\n' +
@@ -4783,8 +4783,11 @@ const ADAPTATIONS: Adaptation[] = [
         '        <span style="font-family:Poppins,system-ui,sans-serif;font-size:10px;font-weight:800;' +
         'color:#000;text-align:center">/10</span>\n' +
         '        <sc-for list="{{ cdTrack }}" as="t" hint-placeholder-count="15">\n' +
-        '          <span style="font-size:11.5px;font-weight:700;color:#000;line-height:1.2;' +
-        'white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.id }} \u00B7 {{ t.name }}</span>\n' +
+        '          <span style="display:flex;flex-direction:column;gap:1px;min-width:0;padding:2px 0">' +
+        '<b style="font-size:11.5px;font-weight:700;color:#000;line-height:1.2;' +
+        'white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.id }} \u00B7 {{ t.name }}</b>' +
+        '<span style="font-size:9.5px;font-weight:500;color:#333;line-height:1.25">' +
+        "{{ t.rule }}</span></span>\n" +
         '          <sc-for list="{{ t.days }}" as="d" hint-placeholder-count="5">' +
         '<span style="border:1.5px solid #000;border-radius:4px;height:19px"></span></sc-for>\n' +
         '          <span style="border:2px solid #000;border-radius:4px;height:19px"></span>\n' +

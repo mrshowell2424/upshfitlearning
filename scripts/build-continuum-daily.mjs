@@ -76,8 +76,14 @@ for (let d = 0; d < DAYS; d++) {
   days.push({ day: d + 1, items: shuffled(items, 4300 + d) });
 }
 
-/** The tracker's rows: every concept, in continuum order. */
-const track = CONCEPTS.map((c) => ({ id: c.id, name: c.name, band: c.band }));
+/**
+ * The tracker's rows: every concept, in continuum order, with its rule.
+ *
+ * The rule travels with the row because the sheet a child checks their score
+ * on is the sheet they are looking at when they ask why a word went wrong.
+ * Sending them back to the lesson for the rule is how a reminder gets skipped.
+ */
+const track = CONCEPTS.map((c) => ({ id: c.id, name: c.name, band: c.band, rule: c.rule }));
 
 writeFileSync(
   "scripts/continuum-daily.json",
