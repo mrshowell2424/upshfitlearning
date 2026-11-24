@@ -18,6 +18,7 @@ import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import WRITING from "./reading-writing-passages.json" with { type: "json" };
 import SPLITS from "./reading-skill-splits.json" with { type: "json" };
+import SYLLABLES from "./reading-syllable-splits.json" with { type: "json" };
 import PARTW from "./reading-part-words.json" with { type: "json" };
 
 /**
@@ -4020,6 +4021,156 @@ const ADAPTATIONS: Adaptation[] = [
         "e.style.zoom = ''; e.style.width = ''; e.style.maxWidth = '';" +
           " e.style.minHeight = e.dataset.mh || '';",
       );
+    },
+  },
+  {
+    // Syllable division, in every lesson, with a key that names the rule.
+    //
+    // WHY IT IS IN EVERY LESSON. A child who can read a multisyllabic word
+    // one sound at a time still stalls on a long one, because the work is not
+    // the sounds -- it is seeing where the word comes apart. That is a
+    // separate skill from every other page in the workbook, and it is the one
+    // that decides whether a child can read a chapter book.
+    //
+    // WHAT THE KEY CARRIES. Not just the chop. A teacher marking this needs to
+    // say WHY the line goes there -- one consonant in the middle and a long
+    // first vowel, so it joins the second syllable -- and what kind of
+    // syllable each piece turned out to be, because the six types are what the
+    // child is being taught to notice. So each answer names the division, the
+    // rule in words a child can hear, and the type of every syllable.
+    //
+    // WHERE THE ANSWERS COME FROM. scripts/reading-syllable-splits.json, which
+    // is worked out against a pronouncing dictionary rather than guessed from
+    // the spelling. The spelling cannot tell ti/ger from rob/in, and the
+    // engine used to guess, sending every such word the same way. A division
+    // the dictionary could not settle is marked on the key as unsure rather
+    // than printed as fact.
+    name: "add a syllable division page to every lesson",
+    apply: (html) => {
+      const end = "</body>";
+      if (!html.includes(end)) return html;
+      let out = html.replace(
+        end,
+        '<script id="sor-syllables" type="application/json">' +
+          JSON.stringify(SYLLABLES).replace(/</g, "\\u003c") +
+          "</script>\n" + end,
+      );
+
+      // The rows, per page, answers only on the key.
+      //
+      // This anchors on the word-ladder rule's output rather than on the
+      // export's own ", sbRows }; })", because that rule rewrites the tail of
+      // the wbPages map before this one runs and the original string is gone
+      // by then. This rule is last in the list, so the ladder's version is
+      // what is actually there.
+      const rowAnchor =
+        " ({ n: i + 1, c, ans: isKey ? LADX.words[i + 1] : '' })) }; })";
+      if (!out.includes(rowAnchor)) return html;
+      out = out.replace(
+        rowAnchor,
+        " ({ n: i + 1, c, ans: isKey ? LADX.words[i + 1] : '' })),\n" +
+          "          sylBox: { ...p.box1, display: show(isKey ? 'key' : 'wb') ? 'flex' : 'none' },\n" +
+          "          sylRows: SYLW.map((w, i) => { const got = SYL.words[w];\n" +
+          "            const bits = got ? got.split('|') : null;\n" +
+          "            return { n: i + 1, w,\n" +
+          "              // The child gets the word spaced out, so there is room\n" +
+          "              // between the letters to draw the dividing line.\n" +
+          "              spaced: w.split('').join(' '),\n" +
+          "              ans: isKey && bits ? bits[0].split('-').join(' / ') : '',\n" +
+          "              why: isKey && bits ? (SYL.rules[bits[1]] || bits[1]) : '',\n" +
+          "              types: isKey && bits ? bits[2].split(',').join(' + ') : '',\n" +
+          "              unsure: !!(isKey && bits && bits[3] === '?') }; }) }; })",
+      );
+
+      // The words: the lesson's own multisyllabic list, or its longest words
+      // where a skill has no multisyllabic list of its own.
+      // Anchored on the adapted declaration, not the export's. A later rule
+      // rewrites it to draw from wordPool, which is the multisyllabic pool
+      // this page wants anyway.
+      const preamble = "    const real = (isMulti ? wordPool : real0).slice(0, 10);";
+      if (!out.includes(preamble)) return html;
+      out = out.replace(
+        preamble,
+        preamble +
+          "\n    const SYL = (() => { try {\n" +
+          "      return JSON.parse(document.getElementById('sor-syllables').textContent);\n" +
+          "    } catch (e) { return { words: {}, rules: {} }; } })();\n" +
+          "    // Prefer the skill's own multisyllabic words. A skill that has\n" +
+          "    // none still gets a page, built from its longest words, because a\n" +
+          "    // lesson without this page would be the one lesson where the\n" +
+          "    // child is not asked to look at how a word comes apart.\n" +
+          "    const SYLW = (() => {\n" +
+          // MULTI[id] is the skill's own multisyllabic list -- cupcake,\n" +
+          "      // reptile, invite for silent e -- and it is there whether or not\n" +
+          "      // the multisyllabic toggle is on, which matters because a\n" +
+          "      // single-syllable skill still needs long words to chop.\n" +
+          "      const pick = (MULTI[id] || [])\n" +
+          "        .map((w) => String(w).toLowerCase())\n" +
+          "        .filter((w) => SYL.words[w]);\n" +
+          "      const spare = real0.concat(real)\n" +
+          "        .map((w) => String(w).toLowerCase())\n" +
+          "        .filter((w) => SYL.words[w] && pick.indexOf(w) === -1)\n" +
+          "        .sort((a, b) => b.length - a.length);\n" +
+          "      return [...new Set(pick.concat(spare))].slice(0, 8);\n" +
+          "    })();",
+      );
+
+      // The page itself, in BOTH copies of the workbook block.
+      //
+      // An earlier rule gives the answer key its own section by rendering the
+      // same markup twice over two filtered lists, so every workbook page
+      // exists twice in the template. A plain replace put this page in the
+      // first copy only, and the key never got one.
+      //
+      // The insertion point is found by walking back from the ten-words
+      // kicker to the page div that encloses it, rather than matched as a
+      // string: this rule runs after the recolour, which rewrites the
+      // colours and the font in that markup, so any anchor carrying them
+      // would be matching the export's colours and not the page's.
+      const kicker = ">TEN WORDS A DAY<";
+      const divTag = '<div data-wb="true" style="{{ p.box1 }}">';
+      if (!out.includes(kicker) || !out.includes(divTag)) return html;
+      const page =
+        '<div data-wb="true" style="{{ p.sylBox }}">\n' +
+        '      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;border-bottom:3px solid #4B6049;padding-bottom:8px">\n' +
+        "        <div>\n" +
+        '          <div style="font-family:Outfit,sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;color:#618459">{{ p.kicker }} \u00B7 SYLLABLE DIVISION</div>\n' +
+        '          <div style="font-size:26px;font-weight:800;color:#2F3E2E;line-height:1.1">\u2702\uFE0F Chop the word</div>\n' +
+        "        </div>\n" +
+        '        <div style="font-size:14px;font-weight:600;white-space:nowrap">Name ____________  Date ______</div>\n' +
+        "      </div>\n" +
+        '      <div style="font-size:14px;line-height:1.45;background:#FDF6E7;border:1.5px solid #E4D3A8;border-radius:8px;padding:7px 12px">Draw a line where the word comes apart. Then write the syllables on the line and say how many there are.</div>\n' +
+        '      <sc-for list="{{ p.sylRows }}" as="r" hint-placeholder-count="8">\n' +
+        '        <div style="display:flex;flex-direction:column;gap:3px;border:1.5px solid #C9D3C4;border-radius:9px;padding:7px 11px;break-inside:avoid;page-break-inside:avoid">\n' +
+        '          <div style="display:flex;align-items:center;gap:12px">\n' +
+        '            <span style="font-size:13px;font-weight:800;color:#618459;flex:none;width:16px">{{ r.n }}</span>\n' +
+        '            <span style="font-size:25px;font-weight:700;letter-spacing:.22em;color:#111;white-space:nowrap">{{ r.spaced }}</span>\n' +
+        '            <span style="flex:1;border-bottom:2px solid #111;height:20px"></span>\n' +
+        '            <span style="display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;width:34px;height:26px;flex:none"></span>\n' +
+        "          </div>\n" +
+        '          <sc-if value="{{ r.ans }}" hint-placeholder-val="{{ false }}">\n' +
+        '            <div style="font-size:14px;color:#9B2C3C;font-weight:700;padding-left:28px">{{ r.ans }}<span style="font-weight:600;color:#57534E"> \u00B7 {{ r.types }}</span></div>\n' +
+        '            <div style="font-size:12.5px;color:#57534E;padding-left:28px;line-height:1.4">{{ r.why }}</div>\n' +
+        '            <sc-if value="{{ r.unsure }}" hint-placeholder-val="{{ false }}">\n' +
+        '              <div style="font-size:12px;color:#9B2C3C;padding-left:28px">Not settled \u2014 accept either division from a child who can say why.</div>\n' +
+        "            </sc-if>\n" +
+        "          </sc-if>\n" +
+        "        </div>\n" +
+        "      </sc-for>\n" +
+        '      <div style="font-size:13px;color:#57534E;line-height:1.45;border-top:1.5px solid #C9D3C4;padding-top:7px">The six syllable types: closed, open, silent e, vowel team, vowel-r, consonant-le.</div>\n' +
+        "    </div>\n" +
+        "    ";
+      // Back to front, so an earlier insertion does not move a later index.
+      const spots = [];
+      for (let at = out.indexOf(kicker); at !== -1; at = out.indexOf(kicker, at + 1)) {
+        const open = out.lastIndexOf(divTag, at);
+        if (open !== -1) spots.push(open);
+      }
+      if (spots.length !== 2) return html;
+      for (const at of spots.reverse()) {
+        out = out.slice(0, at) + page + out.slice(at);
+      }
+      return out;
     },
   },
 ];
