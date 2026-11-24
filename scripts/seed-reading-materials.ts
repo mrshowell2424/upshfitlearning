@@ -4699,19 +4699,41 @@ const ADAPTATIONS: Adaptation[] = [
           "        const DN = ['MON', 'TUE', 'WED', 'THU', 'FRI'];\n" +
           "        const cell = 'font-size:12.5px;font-weight:650;color:#000;" +
           "padding:1px 3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis';\n" +
+          // EVERY LESSON DEALS ITS OWN WEEK. The first version shipped one\n" +
+          "        // week and all 62 packets printed it, so a child working lesson 3\n" +
+          "        // and lesson 4 met the same thirty words twice. The pools travel\n" +
+          "        // with the page -- 560 words, about 10 KB -- and each lesson takes\n" +
+          "        // five consecutive words per concept from an offset derived from\n" +
+          "        // its own key. Five out of 25 real and 15 made-up means no repeat\n" +
+          "        // inside a week, and two lessons start in different places.\n" +
+          "        const cdSeed = (() => { const k = String(id || ''); let h = 2166136261;\n" +
+          "          for (let i = 0; i < k.length; i++) { h ^= k.charCodeAt(i); h = Math.imul(h, 16777619); }\n" +
+          "          return h >>> 0; })();\n" +
+          "        const pick = (list, n) => (list && list.length\n" +
+          "          ? list[(cdSeed + n) % list.length] : null);\n" +
+          "        const P = (CD.pools && CD.pools.concepts) || {};\n" +
+          "        const LETT = (CD.pools && CD.pools.letters) || [];\n" +
+          "        const dealt = (CD.rowConcepts || []).map((cid, r) => {\n" +
+          "          const kind = CD.days[0] && CD.days[0].items[r] && CD.days[0].items[r].kind;\n" +
+          "          return { cid, kind, cells: CD.days.map((d, di) => {\n" +
+          "            if (kind === 'letter') {\n" +
+          "              const L = pick(LETT, di * 2 + (r % 2));\n" +
+          "              return { w: L ? L[0] : '', st: cell };\n" +
+          "            }\n" +
+          "            const pool = P[cid] && (kind === 'real' ? P[cid].real : P[cid].fake);\n" +
+          "            return { w: pick(pool, di) || '', st: cell };\n" +
+          "          }) };\n" +
+          "        });\n" +
           "        const rows = [];\n" +
-          "        for (let r = 0; r < CD.perDay; r++) {\n" +
+          "        for (let r = 0; r < dealt.length; r++) {\n" +
           "          // The skill is printed on the row, because the tracker is\n" +
           "          // scored by skill and a child cannot otherwise tell which\n" +
           "          // pair of the thirty belongs to which of its fifteen rows.\n" +
-          "          const cid = (CD.rowConcepts || [])[r] || '';\n" +
-          "          rows.push({ n: r + 1, cid,\n" +
-          "            kindLabel: (() => {\n" +
-          "              const k = CD.days[0] && CD.days[0].items[r] && CD.days[0].items[r].kind;\n" +
-          "              return k === 'real' ? 'real' : k === 'made-up' ? 'nonsense' : 'letters';\n" +
-          "            })(),\n" +
-          "            cells: CD.days.map((d) => ({\n" +
-          "            w: d.items[r] ? d.items[r].w : '', st: cell })) });\n" +
+          "          const D2 = dealt[r];\n" +
+          "          rows.push({ n: r + 1, cid: D2.cid,\n" +
+          "            kindLabel: D2.kind === 'real' ? 'real'\n" +
+          "              : D2.kind === 'made-up' ? 'nonsense' : 'letters',\n" +
+          "            cells: D2.cells });\n" +
           "        }\n" +
           "        return {\n" +
           "          cdHas: CD.days.length > 0,\n" +
