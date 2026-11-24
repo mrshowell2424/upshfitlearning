@@ -5079,6 +5079,39 @@ const ADAPTATIONS: Adaptation[] = [
       return out;
     },
   },
+  {
+    // Stop asking for a file that has never existed.
+    //
+    // componentDidMount opened with
+    //
+    //     import('./sor-extra.js').then(...).catch(() => {});
+    //
+    // and sor-extra.js is not in this repo and never has been. Every page load
+    // fetched it, got a 404, and swallowed the error, which is why it survived
+    // this long: the console showed a failed request and the page looked fine.
+    //
+    // It is safe to drop rather than to supply, because what it fed is
+    // unreachable anyway. XT.DEC sits third in the decodable chain --
+    //
+    //     PGV || D[id] || XT.DEC[id] || OGD[id].p.dec
+    //
+    // -- and PGV, the concept's own passage, now exists for all 68 lessons, so
+    // nothing ever falls through to it. XT.HEART_EXTRA only ever added heart
+    // words on top of the lesson's own.
+    //
+    // The XT references stay as they are: they already read
+    // (this.state.xt) || {}, so with nothing setting that state they are
+    // guarded no-ops rather than errors, and unpicking five fallback chains to
+    // delete a branch nothing reaches would risk more than it removes.
+    name: "drop the import of a file that is not there",
+    apply: (html) => {
+      const dead =
+        "import('./sor-extra.js').then((m) => this.setState({ xt: " +
+        "{ DEC: m.DEC, HEART_EXTRA: m.HEART_EXTRA } })).catch(() => {});";
+      if (!html.includes(dead)) return html;
+      return html.split(dead).join("");
+    },
+  },
 ];
 
 /**
