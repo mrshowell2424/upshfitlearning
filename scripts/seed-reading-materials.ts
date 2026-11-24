@@ -4847,6 +4847,50 @@ const ADAPTATIONS: Adaptation[] = [
       return out;
     },
   },
+  {
+    // The thirty-a-day sheets ride with the spiral chip too, not just the
+    // workbook.
+    //
+    // THE ASK WAS BOTH. "Every lesson, when I click Spiral Review, has this
+    // included in that packet, and it's included in the workbook too." The
+    // sheets were bound to p.box1, which is show(isKey ? 'key' : 'wb'), so
+    // they came with the workbook and were absent from a spiral-only print.
+    // Half the requirement, reported as all of it.
+    //
+    // They get their own box: whatever box1 decided, plus visible when the
+    // spiral chip is in the run. Only the student copy, so a spiral print does
+    // not come out with each sheet twice.
+    name: "print the thirty-a-day sheets with the spiral chip as well",
+    apply: (html) => {
+      const tail = " ({ n: i + 1, c, ans: isKey ? LADX.words[i + 1] : '' })),";
+      if (!html.includes(tail)) return html;
+      let out = html.replace(
+        tail,
+        tail +
+          "\n          cdBox: { ...p.box1, display: (show(isKey ? 'key' : 'wb')" +
+          " || (!isKey && has('spiral'))) ? 'flex' : 'none' },",
+      );
+
+      // Both sheets, in both copies of the markup.
+      const before = '<div data-wb="true" style="{{ p.box1 }}">\n      <div style="display:flex;' +
+        'justify-content:space-between;align-items:flex-end;gap:12px;border-bottom:3px solid #000;' +
+        'padding-bottom:8px">\n        <div>\n          <div style="font-family:Poppins,' +
+        'system-ui,sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;color:#000">' +
+        "{{ p.kicker }} \u00B7 CONTINUUM REVIEW</div>";
+      if (!out.includes(before)) return html;
+      out = out.split(before).join(before.replace("{{ p.box1 }}", "{{ p.cdBox }}"));
+
+      const before2 = '<div data-wb="true" style="{{ p.box1 }}">\n      <div style="display:flex;' +
+        'justify-content:space-between;align-items:flex-end;gap:12px;border-bottom:3px solid #000;' +
+        'padding-bottom:8px">\n        <div>\n          <div style="font-family:Poppins,' +
+        'system-ui,sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;color:#000">' +
+        "{{ p.kicker }} \u00B7 MY SCORES</div>";
+      if (!out.includes(before2)) return html;
+      out = out.split(before2).join(before2.replace("{{ p.box1 }}", "{{ p.cdBox }}"));
+
+      return out;
+    },
+  },
 ];
 
 /**
