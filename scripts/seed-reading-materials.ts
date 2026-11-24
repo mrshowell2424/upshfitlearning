@@ -4173,6 +4173,42 @@ const ADAPTATIONS: Adaptation[] = [
       return out;
     },
   },
+  {
+    // Word games belong inside the workbook, not beside it.
+    //
+    // The bar had two disclosures side by side -- Show workbook and Word games
+    // -- so a teacher opening the workbook got everything in the packet EXCEPT
+    // the games, which needed a second click to find. The games are part of
+    // the week's work, so they open with it and the second button goes.
+    //
+    // The student copies come with the workbook. The key does not: it stays
+    // behind its own chip, because a teacher opening the workbook to see what
+    // the children get should not be handed the answers in the same scroll.
+    //
+    // Anchored on the ADAPTED strings. An earlier rule rewrote the print modes
+    // to read a comma-joined list of chips rather than one part name, so the
+    // export's own "part === 'games'" is long gone by the time this runs. This
+    // rule is last in the list, so the rewritten form is what is there.
+    name: "open the word games with the workbook",
+    apply: (html) => {
+      const modes =
+        "const modes = []; if (has('games') || (!part && open)) modes.push(false); " +
+        "if (has('gkey') || (!part && open)) modes.push(true);";
+      if (!html.includes(modes)) return html;
+      let out = html.replace(
+        modes,
+        "const wbShown = !!(this.state && this.state.wbOpen); const modes = []; " +
+          "if (has('games') || has('wb') || (!part && (open || wbShown))) modes.push(false); " +
+          "if (has('gkey') || has('key') || (!part && open)) modes.push(true);",
+      );
+
+      // The second disclosure now does nothing the first does not.
+      const btn =
+        /<button type="button" onClick="\{\{ toggleGames \}\}"[^>]*>\{\{ gamesBtn \}\}<\/button>/;
+      if (!btn.test(out)) return html;
+      return out.replace(btn, "");
+    },
+  },
 ];
 
 /**
