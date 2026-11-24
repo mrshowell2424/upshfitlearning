@@ -158,6 +158,9 @@ function corpus() {
     // bank is not where they belong.
     "reading-benchmark.json",
     "continuum-review.json",
+    // Built FROM the bank, so harvesting it back in would feed the bank its
+    // own words broken into syllables -- "ti", "ger", "num", "ber".
+    "reading-syllable-splits.json",
   ]);
   const files = readdirSync("scripts").filter((f) => f.endsWith(".json") && !SKIP.has(f));
   const dirs = ["scripts/articles", "scripts/mysteries"].filter((d) => existsSync(d));

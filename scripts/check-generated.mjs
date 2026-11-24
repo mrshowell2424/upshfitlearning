@@ -43,6 +43,9 @@ const BUILDERS = [
   ["scripts/build-multisyllabic.mjs", ["scripts/reading-multisyllabic.json"]],
   ["scripts/build-hub-counts.mjs", ["scripts/reading-hub-counts.json"]],
   ["scripts/build-benchmark.mjs", ["scripts/reading-benchmark.json"]],
+  // Catches a change to the syllable engine or the vowel table that nobody
+  // rebuilt the divisions from.
+  ["scripts/build-syllable-splits.mjs", ["scripts/reading-syllable-splits.json"]],
   // The review's words live in scripts/lib/continuum-pools.mjs, so this
   // catches a pool edited without the days being rebuilt. The words
   // themselves are checked by scripts/check-continuum-review.mjs.

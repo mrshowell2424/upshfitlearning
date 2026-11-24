@@ -202,9 +202,15 @@ export function syllableType(part) {
   if (vs.some((v) => v.r)) return "r-controlled";
   if (vs.some((v) => v.glued)) return "glued";
   if (vs.some((v) => v.team)) return "vowel team";
-  // Silent e: ends in e, the e is not the only vowel, and a consonant sits
-  // between it and the vowel before it.
-  if (p.endsWith("e") && vs.length >= 2 && /[aeiou][^aeiou]e$/.test(p)) return "silent e";
+  // Silent e, read off the unit scan rather than the spelling.
+  //
+  // This used to require two vowel units, and a silent-e syllable has one:
+  // units() carries the final e along with the consonant in front of it as a
+  // single consonant unit flagged vce, precisely so it does not invent a
+  // syllable. So the test counted one vowel, fell through, and called shine,
+  // cake and tile closed -- naming the wrong syllable type for the very
+  // pattern P5 and P11 exist to teach. The flag is the honest signal.
+  if (last && last.t === "c" && last.vce) return "silent e";
   if (last && last.t === "v") return "open";
   return "closed";
 }
