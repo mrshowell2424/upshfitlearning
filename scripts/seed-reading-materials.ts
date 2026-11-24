@@ -5036,6 +5036,40 @@ const ADAPTATIONS: Adaptation[] = [
       );
     },
   },
+  {
+    // Serve React and Babel ourselves instead of from unpkg.
+    //
+    // The builder fetched three files from unpkg at load: React, ReactDOM, and
+    // @babel/standalone, which compiles the page's own JSX in the browser. Any
+    // one of them failing leaves the page blank -- the same blank page a thrown
+    // renderVals() gives, with nothing on screen to say which it was. A test
+    // run hit exactly that when unpkg did not answer.
+    //
+    // A school network that blocks or throttles a CDN would do the same thing
+    // in a classroom, and the teacher would have no way to tell that the Hub
+    // was fine and the CDN was not.
+    //
+    // The three files are vendored under science-of-reading/vendor and seeded
+    // like every other material, so they come from the same origin as the page
+    // and go down with it or not at all. 3.3 MB, nearly all of it Babel.
+    //
+    // Babel compiling in the browser is its own cost and is NOT fixed here --
+    // that needs the JSX precompiled, which is a different job.
+    name: "serve React and Babel from the Hub rather than unpkg",
+    apply: (html) => {
+      const SWAP = [
+        ["https://unpkg.com/react@18.3.1/umd/react.production.min.js", "./vendor/react.production.min.js"],
+        ["https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js", "./vendor/react-dom.production.min.js"],
+        ["https://unpkg.com/@babel/standalone@7.29.0/babel.min.js", "./vendor/babel.min.js"],
+      ];
+      let out = html;
+      for (const [from, to] of SWAP) {
+        if (!out.includes(from)) return html;
+        out = out.split(from).join(to);
+      }
+      return out;
+    },
+  },
 ];
 
 /**
