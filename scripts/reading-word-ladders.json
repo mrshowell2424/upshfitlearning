@@ -1,5 +1,5 @@
 {
- "_note": "Original word ladders, one per lesson and per part of a split lesson. Every rung is a real word that is decodable with what the sequence has taught by that lesson, and every clue has exactly one answer. Checked by scripts/check-word-ladders.mjs. Built, not hand-copied: no ladder here comes from a published book.",
+ "_note": "Original word ladders, one per lesson and per part of a split lesson. Every rung is a real word that is decodable with what the sequence has taught by that lesson, and every clue has exactly one answer. Checked by scripts/check-word-ladders.mjs. Built, not hand-copied: no ladder here comes from a published book. `laddersMulti` holds the harder ladder for each concept, used when the multisyllabic toggle is on: every rung a multisyllabic word, one swap a rung. Checked by scripts/check-word-ladders-multi.mjs.",
  "ladders": {
   "ai-ay": {
    "start": "set",
@@ -3987,6 +3987,228 @@
     "Change the l to d.",
     "Change the ea to oa.",
     "Put an s between the a and the d, and change the d to t."
+   ]
+  }
+ },
+ "laddersMulti": {
+  "cvc-a": {
+   "start": "sandbag",
+   "words": [
+    "sandbag",
+    "handbag",
+    "handstand",
+    "bandstand",
+    "grandstand"
+   ],
+   "clues": [
+    "Change sand to hand.",
+    "Change bag to stand.",
+    "Change hand to band.",
+    "Change band to grand."
+   ]
+  },
+  "cvc-mix": {
+   "start": "sunset",
+   "words": [
+    "sunset",
+    "sunspot",
+    "hotspot",
+    "hotdog",
+    "lapdog"
+   ],
+   "clues": [
+    "Change set to spot.",
+    "Change sun to hot.",
+    "Change spot to dog.",
+    "Change hot to lap."
+   ]
+  },
+  "dig": {
+   "start": "dishpan",
+   "words": [
+    "dishpan",
+    "dishcloth",
+    "washcloth",
+    "washroom",
+    "bathroom"
+   ],
+   "clues": [
+    "Change pan to cloth.",
+    "Change dish to wash.",
+    "Change cloth to room.",
+    "Change wash to bath."
+   ]
+  },
+  "floss": {
+   "start": "windmill",
+   "words": [
+    "windmill",
+    "windfall",
+    "rainfall",
+    "waterfall"
+   ],
+   "clues": [
+    "Change mill to fall.",
+    "Change wind to rain.",
+    "Change rain to water."
+   ]
+  },
+  "blends": {
+   "start": "blacktop",
+   "words": [
+    "blacktop",
+    "blackbird",
+    "bluebird",
+    "bluebell",
+    "doorbell"
+   ],
+   "clues": [
+    "Change top to bird.",
+    "Change black to blue.",
+    "Change bird to bell.",
+    "Change blue to door."
+   ]
+  },
+  "vce": {
+   "start": "inside",
+   "words": [
+    "inside",
+    "beside",
+    "bedside",
+    "bedtime",
+    "daytime"
+   ],
+   "clues": [
+    "Change in to be.",
+    "Change be to bed.",
+    "Change side to time.",
+    "Change bed to day."
+   ]
+  },
+  "vccv": {
+   "start": "insect",
+   "words": [
+    "insect",
+    "inspect",
+    "suspect",
+    "suspects"
+   ],
+   "clues": [
+    "Put a p between the s and the e.",
+    "Change in to su.",
+    "Add an s at the end."
+   ]
+  },
+  "vccvce": {
+   "start": "sunshine",
+   "words": [
+    "sunshine",
+    "sunstroke",
+    "keystroke",
+    "keynote"
+   ],
+   "clues": [
+    "Change shine to stroke.",
+    "Change sun to key.",
+    "Change stroke to note."
+   ]
+  },
+  "ng-nk": {
+   "start": "thinking",
+   "words": [
+    "thinking",
+    "sinking",
+    "singing",
+    "ringing"
+   ],
+   "clues": [
+    "Change th to s.",
+    "Change ink to ing.",
+    "Change s to r."
+   ]
+  },
+  "ck-tch": {
+   "start": "backpack",
+   "words": [
+    "backpack",
+    "backtrack",
+    "sidetrack",
+    "sidekick"
+   ],
+   "clues": [
+    "Change pack to track.",
+    "Change back to side.",
+    "Change track to kick."
+   ]
+  },
+  "y": {
+   "start": "funny",
+   "words": [
+    "funny",
+    "bunny",
+    "sunny",
+    "shiny"
+   ],
+   "clues": [
+    "Change f to b.",
+    "Change b to s.",
+    "Change unn to hin."
+   ]
+  },
+  "ai-ay": {
+   "start": "raincoat",
+   "words": [
+    "raincoat",
+    "rainbow",
+    "rainstorm",
+    "brainstorm"
+   ],
+   "clues": [
+    "Change coat to bow.",
+    "Change bow to storm.",
+    "Put a b at the front."
+   ]
+  },
+  "ee-ea": {
+   "start": "seaweed",
+   "words": [
+    "seaweed",
+    "seashell",
+    "seashore",
+    "seaside"
+   ],
+   "clues": [
+    "Change weed to shell.",
+    "Change shell to shore.",
+    "Change shore to side."
+   ]
+  },
+  "oa-ow": {
+   "start": "rowboat",
+   "words": [
+    "rowboat",
+    "sailboat",
+    "houseboat",
+    "lifeboat"
+   ],
+   "clues": [
+    "Change row to sail.",
+    "Change sail to house.",
+    "Change house to life."
+   ]
+  },
+  "ar-or": {
+   "start": "corner",
+   "words": [
+    "corner",
+    "corners",
+    "cornets",
+    "hornets"
+   ],
+   "clues": [
+    "Add an s at the end.",
+    "Change rs to ts.",
+    "Change c to h."
    ]
   }
  }

@@ -2596,7 +2596,8 @@ const ADAPTATIONS: Adaptation[] = [
       if (!html.includes(seat) || !html.includes(call)) return html;
       let out = html.replace(
         seat,
-        seat + "\n    const LAD = " + JSON.stringify(LADD.ladders) + ";"
+        seat + "\n    const LAD = " + JSON.stringify(LADD.ladders) + ";" +
+          "\n    const LADMULTI = " + JSON.stringify(LADD.laddersMulti ?? {}) + ";"
       );
       // The answer key prints each rung beside its clue, so a teacher is not
       // solving the ladder at the front of the room.
@@ -4573,6 +4574,42 @@ const ADAPTATIONS: Adaptation[] = [
           "            : 'background:#4B6049;color:#fff',\n" +
           "          myBarDebate: dbOn ? 'background:#4B6049;color:#fff'\n" +
           "            : 'background:#fff;color:#4B6049',",
+      );
+    },
+  },
+  {
+    // The harder word ladder, when the multisyllabic toggle is on.
+    //
+    // The toggle already swaps the word lists everywhere else in the lesson,
+    // and the ladder ignored it: a child working the multisyllabic list still
+    // climbed cat to zap. So each concept has a second ladder now, in
+    // laddersMulti, where every rung is a multisyllabic word and the move is a
+    // swap of one PART rather than one letter -- which is the move a long word
+    // actually asks for:
+    //
+    //     windmill -> windfall    "Change mill to fall."
+    //     windfall -> rainfall    "Change wind to rain."
+    //
+    // A ladder only works if each clue has exactly one answer, and that is
+    // invisible while writing one: every rung looks right on its own and the
+    // fault lives in the relation between a clue and the two words it sits
+    // between. scripts/check-word-ladders-multi.mjs reads each clue, applies
+    // it, and fails if it produces no answer, more than one, or the wrong one.
+    // It caught a real error on its first run -- inspect to suspect is in to
+    // su, not in to sus, which gives susspect -- and nine words it wrongly
+    // called unreal, because web2 is the 1934 list and has no hotspot,
+    // backpack, keystroke or brainstorm.
+    //
+    // A concept with no harder ladder keeps its own. Falling back is right
+    // here: the ladder is still on the concept's pattern, just not multisyllabic.
+    name: "use the harder word ladder when multisyllabic is on",
+    apply: (html) => {
+      const seat = "const LADX = LAD[SEL] || LAD[cur[0]] || null;";
+      if (!html.includes(seat)) return html;
+      return html.replace(
+        seat,
+        "const LADM = LADMULTI[SEL] || LADMULTI[cur[0]] || null;\n" +
+          "    const LADX = (isMulti && LADM) || LAD[SEL] || LAD[cur[0]] || null;",
       );
     },
   },
