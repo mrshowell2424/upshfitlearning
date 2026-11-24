@@ -138,7 +138,13 @@ export function units(word) {
     if (glue) {
       const after = rest.slice(glue.length);
       const nk = ["ank", "ink", "onk", "unk"].includes(glue);
-      if (after === "" || !VOWELS.includes(after[0]) || nk) {
+      // A following y counts as a vowel here. VOWELS holds only a, e, i, o, u,
+      // so "windy" glued its "ind" the way "find" does and divided as wind/y,
+      // leaving a lone y as a syllable. It is win/dy, the same shape as
+      // can/dy. "find" and "kind/ly" still glue, because nothing or an l
+      // follows them rather than a vowel.
+      const vowelNext = after !== "" && (VOWELS.includes(after[0]) || after[0] === "y");
+      if (after === "" || !vowelNext || nk) {
         out.push({ t: "v", s: glue, glued: true });
         i += glue.length;
         continue;
@@ -263,6 +269,21 @@ const SUFFIXES = ["ness", "less", "ment", "able", "ible", "tion", "sion", "ful",
 const SHORT_SUFFIXES = ["ing", "est", "ly", "er", "ed"];
 
 /**
+ * Words that end in -er over a stem that is a word by accident.
+ *
+ * A corner is not one who corns and a mother is not one who moths, so these
+ * divide by their pattern rather than at a morpheme that is not there. Every
+ * one was read off the bank's own list of two-syllable -er words whose stem it
+ * also holds; the rest of that list -- teacher, farmer, painter, cleaner, and
+ * the comparatives like colder and taller -- really are derivations.
+ */
+const NOT_A_SUFFIX = new Set([
+  "brother", "career", "corner", "counter", "drawer", "former", "hunger",
+  "mother", "offer", "outer", "porter", "quarter", "solder", "whisker",
+  "lesser", "musher",
+]);
+
+/**
  * Divide a word, and say which rule did it.
  *
  * Returns { parts, rule, types } or null where the rules do not produce a
@@ -375,14 +396,22 @@ export function splitWord(
     if (!isWord(stem)) continue;
     const inner = splitWord(stem, isWord, firstVowelLength, ngDown, depth + 1);
     const head = inner ? inner.parts : [stem];
-    // Three syllables or more, and no exception for -er.
+    // -er, -ed and -ing come off a two-syllable word too, when the stem is a
+    // word -- but only a word the READING BANK knows.
     //
-    // Letting -er off a two-syllable word was tried, gated on the stem being
-    // a real word, and it was worse: a dictionary counts pap, sup, tig, corn,
-    // numb, sist and wint as words, so paper became pap/er, super sup/er,
-    // tiger tig/er and corner corn/er. The length test is cruder but it is
-    // right far more often, which is why it is still here.
-    if (head.length + 1 < 3) continue;
+    // This was tried once against a dictionary and was worse: web2 counts pap,
+    // sup, tig, numb, sist and wint as words, so paper became pap/er, super
+    // sup/er and tiger tig/er. The bank is curated and holds none of those,
+    // while it does hold teach, farm, paint and clean -- so teacher divides at
+    // its morpheme, which is how the continuum itself files it, and paper does
+    // not.
+    //
+    // NOT_A_SUFFIX is the rest of the gap. A dozen words in the bank end in
+    // -er over a stem that is a word by accident rather than by derivation: a
+    // corner is not one who corns, a mother is not one who moths. Those keep
+    // their pattern division.
+    const morpheme = ["er", "ed", "ing"].includes(s) && !NOT_A_SUFFIX.has(w);
+    if (!morpheme && head.length + 1 < 3) continue;
     const got = finish([...head, s], "suffix");
     if (got) return got;
   }
