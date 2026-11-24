@@ -19,6 +19,7 @@ import path from "node:path";
 import WRITING from "./reading-writing-passages.json" with { type: "json" };
 import SPLITS from "./reading-skill-splits.json" with { type: "json" };
 import { EXTRA_LESSONS } from "./lib/extra-lessons.mjs";
+import CONTINUUM_DAILY from "./continuum-daily.json" with { type: "json" };
 import SYLLABLES from "./reading-syllable-splits.json" with { type: "json" };
 import PARTW from "./reading-part-words.json" with { type: "json" };
 
@@ -4650,6 +4651,162 @@ const ADAPTATIONS: Adaptation[] = [
       const without = html.slice(0, row) + html.slice(row + m[0].length);
       const shift = row < after ? 0 : 0;
       return without.slice(0, after + shift) + m[0] + without.slice(after + shift);
+    },
+  },
+  {
+    // Thirty continuum words a day, in every lesson's packet, with a tracker.
+    //
+    // WHY IT IS IN EVERY LESSON. The continuum review gives one skill a week of
+    // its own, which is the right shape for teaching a skill and the wrong
+    // shape for keeping fifteen. A child who learned short vowels in September
+    // met them again only when that sheet came round. This is the other half:
+    // a daily pass across ALL fifteen, so nothing waits months for its turn.
+    //
+    // THE THIRTY. Two letters from P1, then one real and one made-up word from
+    // each of P2 to P15 -- 2 + 14 + 14. One of each kind per concept is the
+    // point: a real word can be recognised rather than decoded and a made-up
+    // word cannot, so a child who is guessing shows it in one column and not
+    // the other. Nothing repeats across the week.
+    //
+    // TWO SHEETS, NOT SIX. A sheet a day would add six pages to every packet.
+    // The week is one grid, five columns, and the tracker is the second sheet.
+    //
+    // THE TRACKER IS PER CONCEPT, not per day, because "how am I doing" is a
+    // question about skills rather than about Tuesday. Each concept scores out
+    // of 2 a day and out of 10 for the week, so a child can see which of the
+    // fifteen is the one still costing them marks.
+    name: "put the thirty-a-day continuum sheet in every packet",
+    apply: (html) => {
+      const end = "</body>";
+      if (!html.includes(end)) return html;
+      let out = html.replace(
+        end,
+        '<script id="sor-continuum-daily" type="application/json">' +
+          JSON.stringify(CONTINUUM_DAILY).replace(/</g, "\\u003c") +
+          "</script>\n" + end,
+      );
+
+      // The rows, built once per render beside the other workbook data.
+      const seat = "      wbBtn: (this.state && this.state.wbOpen) ? 'Hide workbook \u25B2' : 'Show workbook \u25BC',";
+      if (!out.includes(seat)) return html;
+      out = out.replace(
+        seat,
+        seat + "\n" +
+          "      ...(() => {\n" +
+          "        const CD = (() => { try {\n" +
+          "          return JSON.parse(document.getElementById('sor-continuum-daily').textContent);\n" +
+          "        } catch (e) { return { days: [], track: [], perDay: 0 }; } })();\n" +
+          "        const DN = ['MON', 'TUE', 'WED', 'THU', 'FRI'];\n" +
+          "        const cell = 'font-size:12.5px;font-weight:650;color:#000;" +
+          "padding:1px 3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis';\n" +
+          "        const rows = [];\n" +
+          "        for (let r = 0; r < CD.perDay; r++) {\n" +
+          "          rows.push({ n: r + 1, cells: CD.days.map((d) => ({\n" +
+          "            w: d.items[r] ? d.items[r].w : '', st: cell })) });\n" +
+          "        }\n" +
+          "        return {\n" +
+          "          cdHas: CD.days.length > 0,\n" +
+          "          cdHead: DN.slice(0, CD.days.length).map((t) => ({ t })),\n" +
+          "          cdRows: rows,\n" +
+          "          cdPerDay: String(CD.perDay),\n" +
+          "          cdTrack: CD.track.map((c) => ({\n" +
+          "            id: c.id, name: c.name,\n" +
+          "            days: DN.slice(0, CD.days.length).map((t) => ({ t })) })),\n" +
+          "        }; })(),",
+      );
+
+      // Both sheets, in the workbook loop beside the rest.
+      const kicker = ">TEN WORDS A DAY<";
+      const divTag = '<div data-wb="true" style="{{ p.box1 }}">';
+      if (!out.includes(kicker) || !out.includes(divTag)) return html;
+
+      const grid =
+        '<sc-if value="{{ cdHas }}" hint-placeholder-val="{{ true }}">\n' +
+        '    <div data-wb="true" style="{{ p.box1 }}">\n' +
+        '      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;' +
+        'border-bottom:3px solid #000;padding-bottom:8px">\n' +
+        "        <div>\n" +
+        '          <div style="font-family:Poppins,system-ui,sans-serif;font-size:12px;font-weight:700;' +
+        'letter-spacing:.18em;color:#000">{{ p.kicker }} \u00B7 CONTINUUM REVIEW</div>\n' +
+        '          <div style="font-size:26px;font-weight:800;color:#000;line-height:1.1">' +
+        "\u{1F504} {{ cdPerDay }} words a day</div>\n" +
+        "        </div>\n" +
+        '        <div style="font-size:14px;font-weight:600;white-space:nowrap">Name ________ Week ______</div>\n' +
+        "      </div>\n" +
+        '      <div style="font-size:13.5px;line-height:1.45;border:1.5px solid #000;border-radius:8px;' +
+        'padding:7px 11px;color:#000">Read one column a day, top to bottom. Some of these words are ' +
+        "not real words \u2014 read them anyway. Tick the ones you read right and write the score at " +
+        "the foot of the column.</div>\n" +
+        '      <div style="display:grid;grid-template-columns:22px repeat(5,minmax(0,1fr));gap:2px 6px;' +
+        'align-items:center">\n' +
+        '        <span></span>\n' +
+        '        <sc-for list="{{ cdHead }}" as="h" hint-placeholder-count="5">' +
+        '<span style="font-family:Poppins,system-ui,sans-serif;font-size:11px;font-weight:800;' +
+        'letter-spacing:.1em;color:#000;text-align:center;border-bottom:2px solid #000">' +
+        "{{ h.t }}</span></sc-for>\n" +
+        '        <sc-for list="{{ cdRows }}" as="r" hint-placeholder-count="30">\n' +
+        '          <span style="font-size:9.5px;font-weight:700;color:#555;text-align:right">{{ r.n }}</span>\n' +
+        '          <sc-for list="{{ r.cells }}" as="c" hint-placeholder-count="5">' +
+        '<span style="{{ c.st }}">{{ c.w }}</span></sc-for>\n' +
+        "        </sc-for>\n" +
+        '        <span style="font-size:10px;font-weight:800;color:#000">\u2713</span>\n' +
+        '        <sc-for list="{{ cdHead }}" as="h" hint-placeholder-count="5">' +
+        '<span style="border:2px solid #000;border-radius:4px;height:22px;margin-top:4px"></span>' +
+        "</sc-for>\n" +
+        "      </div>\n" +
+        "    </div>\n" +
+        "    </sc-if>\n    ";
+
+      const tracker =
+        '<sc-if value="{{ cdHas }}" hint-placeholder-val="{{ true }}">\n' +
+        '    <div data-wb="true" style="{{ p.box1 }}">\n' +
+        '      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;' +
+        'border-bottom:3px solid #000;padding-bottom:8px">\n' +
+        "        <div>\n" +
+        '          <div style="font-family:Poppins,system-ui,sans-serif;font-size:12px;font-weight:700;' +
+        'letter-spacing:.18em;color:#000">{{ p.kicker }} \u00B7 MY SCORES</div>\n' +
+        '          <div style="font-size:26px;font-weight:800;color:#000;line-height:1.1">' +
+        "\u{1F4C8} How am I doing?</div>\n" +
+        "        </div>\n" +
+        '        <div style="font-size:14px;font-weight:600;white-space:nowrap">Name ________ Week ______</div>\n' +
+        "      </div>\n" +
+        '      <div style="font-size:13.5px;line-height:1.45;border:1.5px solid #000;border-radius:8px;' +
+        'padding:7px 11px;color:#000">Two words a day for each skill, so each one is out of 2 a day and ' +
+        "out of 10 for the week. Fill in the score. The row with the lowest total is the one to work " +
+        "on next.</div>\n" +
+        '      <div style="display:grid;grid-template-columns:minmax(0,1fr) repeat(5,30px) 42px;' +
+        'gap:2px 5px;align-items:center">\n' +
+        '        <span></span>\n' +
+        '        <sc-for list="{{ cdHead }}" as="h" hint-placeholder-count="5">' +
+        '<span style="font-family:Poppins,system-ui,sans-serif;font-size:10px;font-weight:800;' +
+        'color:#000;text-align:center">{{ h.t }}</span></sc-for>\n' +
+        '        <span style="font-family:Poppins,system-ui,sans-serif;font-size:10px;font-weight:800;' +
+        'color:#000;text-align:center">/10</span>\n' +
+        '        <sc-for list="{{ cdTrack }}" as="t" hint-placeholder-count="15">\n' +
+        '          <span style="font-size:11.5px;font-weight:700;color:#000;line-height:1.2;' +
+        'white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.id }} \u00B7 {{ t.name }}</span>\n' +
+        '          <sc-for list="{{ t.days }}" as="d" hint-placeholder-count="5">' +
+        '<span style="border:1.5px solid #000;border-radius:4px;height:19px"></span></sc-for>\n' +
+        '          <span style="border:2px solid #000;border-radius:4px;height:19px"></span>\n' +
+        "        </sc-for>\n" +
+        "      </div>\n" +
+        '      <div style="font-size:13px;font-weight:700;color:#000;border:2px solid #000;' +
+        'border-radius:8px;padding:7px 11px;margin-top:4px">The skill I want to work on next: ' +
+        '<span style="display:inline-block;min-width:210px;border-bottom:2px solid #000"></span></div>\n' +
+        "    </div>\n" +
+        "    </sc-if>\n    ";
+
+      // Back to front, so an earlier insertion does not move a later index.
+      const spots = [];
+      for (let at = out.indexOf(kicker); at !== -1; at = out.indexOf(kicker, at + 1)) {
+        const open = out.lastIndexOf(divTag, at);
+        if (open !== -1) spots.push(open);
+      }
+      if (spots.length !== 2) return html;
+      for (const at of spots.reverse()) {
+        out = out.slice(0, at) + grid + tracker + out.slice(at);
+      }
+      return out;
     },
   },
 ];

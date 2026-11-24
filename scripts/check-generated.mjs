@@ -50,6 +50,7 @@ const BUILDERS = [
   // catches a pool edited without the days being rebuilt. The words
   // themselves are checked by scripts/check-continuum-review.mjs.
   ["scripts/build-continuum-review.mjs", ["scripts/continuum-review.json"]],
+  ["scripts/build-continuum-daily.mjs", ["scripts/continuum-daily.json"]],
   // The slim indexes the pages import instead of the multi-megabyte sources.
   // If an article or a case changes and these are not rebuilt, the site
   // shows stale titles and counts, so the drift has to be caught here.

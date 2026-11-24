@@ -167,6 +167,8 @@ function corpus() {
     // makes the bank depend on itself: the syllable splits drifted on every
     // run until this was added, each rebuild changing the input to the next.
     "reading-daily-practice.json",
+    // Thirty words a day, half of them made up on purpose.
+    "continuum-daily.json",
   ]);
   const files = readdirSync("scripts").filter((f) => f.endsWith(".json") && !SKIP.has(f));
   const dirs = ["scripts/articles", "scripts/mysteries"].filter((d) => existsSync(d));
