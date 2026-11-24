@@ -4528,6 +4528,54 @@ const ADAPTATIONS: Adaptation[] = [
       );
     },
   },
+  {
+    // Solve it and Debate it, on the workbook bar.
+    //
+    // Both modes already existed and both already drove the printed sheet --
+    // the story, the question, the suspects and the key all follow the switch.
+    // The switch itself sat up in the teaching panel, next to the case on
+    // screen, which is the wrong place for it: a teacher printing the packet
+    // never passes it, so the sheet came out solve-it whatever the lesson was
+    // meant to be.
+    //
+    // It goes beside Show workbook and the scaffold switch, so the three
+    // decisions about the mystery sheet -- which mode, how much scaffolding,
+    // and print it -- sit together. The pills stay where they are too; they
+    // are useful while the case is on the board.
+    //
+    // Hidden when the case has no debate version. Some do not have one, and a
+    // button that silently does nothing is worse than no button.
+    name: "put solve it and debate it on the workbook bar",
+    apply: (html) => {
+      const anchor = '<button type="button" onClick="{{ toggleScaf }}"';
+      if (!html.includes(anchor)) return html;
+      const base =
+        "font-family:Poppins,system-ui,sans-serif;font-size:14px;font-weight:700;" +
+        "padding:8px 14px;border-radius:8px;cursor:pointer;white-space:nowrap;" +
+        "border:1.5px solid #4B6049;";
+      const pair =
+        '<sc-if value="{{ myHasDb }}" hint-placeholder-val="{{ true }}">' +
+        '<span style="display:inline-flex;gap:6px">' +
+        '<button type="button" onClick="{{ mySolvePick }}" style="' + base +
+        '{{ myBarSolve }}">\u{1F50D} Solve it</button>' +
+        '<button type="button" onClick="{{ myDebatePick }}" style="' + base +
+        '{{ myBarDebate }}">\u2696\uFE0F Debate it</button>' +
+        "</span></sc-if>";
+      let out = html.replace(anchor, pair + anchor);
+
+      // Lit and unlit, the same way every other pair on this bar reads.
+      const seat = "          myDbOn: dbOn, mySolveOn: !dbOn, myHasDb: !!(C && C.d),";
+      if (!out.includes(seat)) return html;
+      return out.replace(
+        seat,
+        seat + "\n" +
+          "          myBarSolve: dbOn ? 'background:#fff;color:#4B6049'\n" +
+          "            : 'background:#4B6049;color:#fff',\n" +
+          "          myBarDebate: dbOn ? 'background:#4B6049;color:#fff'\n" +
+          "            : 'background:#fff;color:#4B6049',",
+      );
+    },
+  },
 ];
 
 /**

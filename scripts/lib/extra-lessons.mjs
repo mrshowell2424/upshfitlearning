@@ -29,15 +29,21 @@
  *
  * These SIT ALONGSIDE the pairs rather than replacing them, so a child meets ai
  * and ay first as a pair and later as two of the five ways to spell long a.
- * Their scope numbers in sequence.mjs put them at 2-05d through 2-05i, straight
- * after oa-ow at 2-05c.
+ *
+ * LEVEL 3, NOT LEVEL 2, which is where they were first put by matching the
+ * pairs. The pairs teach the two commonest spellings of a sound and sit at
+ * 2-05; everything else these lessons cover -- ea, ey, eigh, ie, ei, igh, ue,
+ * eu, ew -- the sequence does not reach until "Vowel teams 2" at level 3 and
+ * "Vowel teams 3" at level 4. Putting the full set at level 2 asked a child to
+ * choose between five spellings before three of them had been taught. They sit
+ * at 3-04a through 3-04f, straight after Vowel teams 2.
  *
  * Every made-up word here was checked against web2, the clipped-word list and
  * the unsafe-string list before it went in. blay and plew came back real and
  * were replaced with snay and frew.
  */
 export const EXTRA_LESSONS = [
-  ["long-a", "Long a: ai, ay, ea, ey, eigh", "Level 2",
+  ["long-a", "Long a: ai, ay, ea, ey, eigh", "Level 3",
    "Rain Date (p. 64) · May I Play? (p. 65)",
    "Five ways to write long a. ai and ay carry most of it; ea, ey and eigh do the rest in a handful of words.",
    ["rain → may", "break → they", "eight → weigh"],
@@ -46,7 +52,7 @@ export const EXTRA_LESSONS = [
    ["said", "again", "says"],
    ["They wait in the rain.", "Eight pails of grain stay dry."]],
 
-  ["long-e", "Long e: ea, ee, ey, ie, ei", "Level 2",
+  ["long-e", "Long e: ea, ee, ey, ie, ei", "Level 3",
    "The Green Field (p. 70) · Keep the Key (p. 71)",
    "Five ways to write long e. ee and ea carry most of it; ey, ie and ei do the rest.",
    ["seat → seed", "key → valley", "chief → ceiling"],
@@ -55,7 +61,7 @@ export const EXTRA_LESSONS = [
    ["been", "these", "people"],
    ["The green field is by the sea.", "Keep the key in a safe place."]],
 
-  ["long-i", "Long i: igh, ie, y", "Level 2",
+  ["long-i", "Long i: igh, ie, y", "Level 3",
    "Night Light (p. 76) · My Pie (p. 77)",
    "Three ways to write long i. igh sits in the middle; ie and y sit at the end.",
    ["sight → night", "pie → tie", "my → try"],
@@ -64,7 +70,7 @@ export const EXTRA_LESSONS = [
    ["eye", "buy", "height"],
    ["I try to fly my kite at night.", "The pie is high on the shelf."]],
 
-  ["long-o", "Long o: oa, oe, ow", "Level 2",
+  ["long-o", "Long o: oa, oe, ow", "Level 3",
    "The Goat Boat (p. 82) · Snow Road (p. 83)",
    "Three ways to write long o. oa sits in the middle; oe and ow sit at the end.",
    ["boat → coat", "toe → foe", "snow → grow"],
@@ -73,7 +79,7 @@ export const EXTRA_LESSONS = [
    ["once", "gone", "door"],
    ["The goat sat in the snow.", "I know the road by the coast."]],
 
-  ["long-u", "Long u: ue, ew, eu", "Level 2",
+  ["long-u", "Long u: ue, ew, eu", "Level 3",
    "Blue Glue (p. 88) · The New Crew (p. 89)",
    "Three ways to write long u. ue and ew sit at the end; eu turns up in a few words.",
    ["blue → clue", "stew → few", "feud → neutral"],
@@ -82,7 +88,7 @@ export const EXTRA_LESSONS = [
    ["shoe", "sure", "through"],
    ["The new crew grew a few plants.", "I knew the blue glue was due."]],
 
-  ["teams-all", "All vowel teams together", "Level 2",
+  ["teams-all", "All vowel teams together", "Level 3",
    "The Team by the Sea (p. 94)",
    "Every team at once. Find the team first, then say its sound — that order is the whole skill.",
    ["rain · seat · boat", "night · few · snow", "key · pie · blue"],
@@ -94,10 +100,10 @@ export const EXTRA_LESSONS = [
 
 /** Where each one sits in the teaching order. */
 export const EXTRA_SCOPE = {
-  "long-a": "2-05d",
-  "long-e": "2-05e",
-  "long-i": "2-05f",
-  "long-o": "2-05g",
-  "long-u": "2-05h",
-  "teams-all": "2-05i",
+  "long-a": "3-04a",
+  "long-e": "3-04b",
+  "long-i": "3-04c",
+  "long-o": "3-04d",
+  "long-u": "3-04e",
+  "teams-all": "3-04f",
 };
