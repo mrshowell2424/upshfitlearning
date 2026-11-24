@@ -27,7 +27,31 @@
 /** Consonant digraphs and trigraphs, longest first so the scan prefers them. */
 const CONSONANT_UNITS = [
   "tch", "dge", "igh",
-  "ch", "sh", "th", "wh", "ck", "ph", "gh", "ng", "qu", "kn", "wr", "mb", "gn",
+  "ch", "sh", "th", "wh", "ck", "ph", "gh", "ng", "qu",
+];
+
+/**
+ * The silent-letter pairs, which are only one sound in one position.
+ *
+ * kn, wr, mb and gn each hide a letter, but only where the letter is actually
+ * silent. Treating them as units everywhere was wrong in thirteen common
+ * words: number divided as numb/er, jumbo as jumb/o, member as memb/er,
+ * magnet as magn/et and signal as sign/al. The b in number and the g in
+ * magnet are both pronounced, and the division falls between the two letters.
+ *
+ * So each pair names where it is silent. This is the same position test
+ * R_CONTROLLED already makes for "arid", which is a-rid rather than ar-id
+ * because a vowel follows the r.
+ */
+const SILENT_PAIRS = [
+  // The k and the w are silent at the start of a word: knob, knee, wrist.
+  ["kn", "initial"],
+  ["wr", "initial"],
+  // The g is silent at either end: gnat, sign, align.
+  ["gn", "both"],
+  // The b is silent only at the end: lamb, climb, thumb, comb -- never in
+  // the middle, where it is heard: num-ber, jum-bo, am-ber.
+  ["mb", "final"],
 ];
 
 /** Vowel teams, longest first. */
@@ -134,6 +158,21 @@ export function units(word) {
       continue;
     }
 
+    // A silent-letter pair, but only where its letter is silent.
+    const sp = SILENT_PAIRS.find(([p]) => rest.startsWith(p));
+    if (sp) {
+      const [pair, where] = sp;
+      const atStart = i === 0;
+      const atEnd = rest.length === pair.length;
+      const silent =
+        where === "initial" ? atStart : where === "final" ? atEnd : atStart || atEnd;
+      if (silent) {
+        out.push({ t: "c", s: pair, silent: true });
+        i += pair.length;
+        continue;
+      }
+    }
+
     const ch = w[i];
     out.push({ t: VOWELS.includes(ch) || ch === "y" ? "v" : "c", s: ch });
     i += 1;
@@ -203,7 +242,15 @@ const SHORT_SUFFIXES = ["ing", "est", "ly", "er", "ed"];
  * @param {(w: string) => boolean} [isWord] knows whether a string is a word
  *   on its own, used only for spotting compounds.
  */
-export function splitWord(word, isWord = () => false) {
+/**
+ * Divide a word into syllables.
+ *
+ * @param word the word
+ * @param isWord tells whether a string is a real word, for compounds and stems
+ * @param firstVowelLength returns "long", "short" or null for a word -- the
+ *   only thing that can settle a VCV division, which the spelling cannot
+ */
+export function splitWord(word, isWord = () => false, firstVowelLength = () => null, depth = 0) {
   const w = String(word).toLowerCase().replace(/[^a-z]/g, "");
   if (!w) return null;
   const us = units(w);
@@ -215,7 +262,19 @@ export function splitWord(word, isWord = () => false) {
     if (parts.join("") !== w) return null;
     // Every piece needs a vowel to be a syllable at all.
     if (parts.some((p) => !units(p).some((u) => u.t === "v"))) return null;
-    return { parts, rule, types: parts.map(syllableType) };
+    // A part may still hold more than one syllable -- banana divides first
+    // into ba + nana, and the nana has to divide again or the answer key
+    // shows a two-syllable chunk as one syllable. Bounded, so a rule that
+    // keeps handing back the same word cannot loop.
+    const deep =
+      depth >= 4
+        ? parts
+        : parts.flatMap((p) => {
+            if (units(p).filter((u) => u.t === "v").length < 2) return [p];
+            const inner = splitWord(p, isWord, firstVowelLength, depth + 1);
+            return inner && inner.parts.length > 1 ? inner.parts : [p];
+          });
+    return { parts: deep, rule, types: deep.map(syllableType), certain: true };
   };
 
   // 1. Compound words: divide between the two words.
@@ -234,7 +293,7 @@ export function splitWord(word, isWord = () => false) {
     if (units(stem).filter((u) => u.t === "v").length < 1) continue;
     // The stem has to be a word, or at least start like one.
     if (!isWord(stem) && !(stem.length >= 5 && legalOnset(stem))) continue;
-    const inner = splitWord(stem, isWord);
+    const inner = splitWord(stem, isWord, firstVowelLength, depth + 1);
     const tail = inner ? inner.parts : [stem];
     const got = finish([p, ...tail], "prefix");
     if (got) return got;
@@ -256,8 +315,15 @@ export function splitWord(word, isWord = () => false) {
     if (!w.endsWith(s)) continue;
     const stem = w.slice(0, -s.length);
     if (!isWord(stem)) continue;
-    const inner = splitWord(stem, isWord);
+    const inner = splitWord(stem, isWord, firstVowelLength, depth + 1);
     const head = inner ? inner.parts : [stem];
+    // Three syllables or more, and no exception for -er.
+    //
+    // Letting -er off a two-syllable word was tried, gated on the stem being
+    // a real word, and it was worse: a dictionary counts pap, sup, tig, corn,
+    // numb, sist and wint as words, so paper became pap/er, super sup/er,
+    // tiger tig/er and corner corn/er. The length test is cruder but it is
+    // right far more often, which is why it is still here.
     if (head.length + 1 < 3) continue;
     const got = finish([...head, s], "suffix");
     if (got) return got;
@@ -288,8 +354,22 @@ export function splitWord(word, isWord = () => false) {
     if (got) return got;
   }
 
-  // VCCV -- between the two middle consonants.
+  // VCCV -- between the two middle consonants, unless the two make a blend
+  // the second syllable needs whole.
+  //
+  // be/tween and pro/gram both have two consonants in the middle and neither
+  // divides between them: "tw" and "gr" are single onsets, and splitting them
+  // gave bet/ween and prog/ram. So when the pair is a legal way to start a
+  // syllable AND the pronunciation says the first syllable is open, the pair
+  // travels together. Without the open test this would also break num/ber and
+  // mag/net, whose first syllables are closed and which do divide in the
+  // middle even though "br" and "gn" could start a syllable.
   if (between === 2) {
+    const pair = us.slice(firstV + 1, firstV + 3).map((u) => u.s).join("");
+    if (firstVowelLength(w) === "open" && legalOnset(pair + "a")) {
+      const got = finish([upto(firstV + 1), from(firstV + 1)], "V/CCV");
+      if (got) return got;
+    }
     const got = finish([upto(firstV + 2), from(firstV + 2)], "VC/CV");
     if (got) return got;
   }
@@ -298,13 +378,28 @@ export function splitWord(word, isWord = () => false) {
   if (between === 1) {
     const open = finish([upto(firstV + 1), from(firstV + 1)], "V/CV");
     const closed = finish([upto(firstV + 2), from(firstV + 2)], "VC/V");
-    // A long first vowel keeps the consonant with the second syllable. The
-    // honest signal available here is the vowel unit itself: a team, an
-    // r-controlled or a final silent e says long, a lone vowel letter does
-    // not, so a lone vowel letter is read as short and takes the consonant.
+    // NOTHING IN THE SPELLING SETTLES THIS. ti/ger and rob/in are both a
+    // single vowel, a single consonant and a single vowel; the difference is
+    // the sound of the first vowel. So ask the pronunciation first.
+    //
+    // This used to guess from the spelling alone -- a lone vowel letter was
+    // read as short -- and the guess sent every such word the same way:
+    // tiger became tig/er, robot rob/ot, music mus/ic, paper pap/er. The
+    // guess remains, for a word the dictionary does not have, but it is now
+    // the fallback rather than the answer, and `certain` says which it was.
+    // An r-controlled first vowel is already closed by its own r, so the
+    // consonant after it starts the next syllable: far/mer, cor/ner, bar/ber.
+    // The pronunciation lookup cannot see this -- it reports "closed" for
+    // farmer, which is true of the syllable and wrong about where to divide
+    // -- so the r is checked before the dictionary is asked.
+    if (us[firstV].r) return { ...open, certain: true };
+
+    const sound = firstVowelLength(w);
+    if (sound === "open") return { ...open, certain: true };
+    if (sound === "closed") return { ...closed, certain: true };
     const v = us[firstV];
     const longish = v.team || v.r || v.glued || v.s === "y";
-    return longish ? open : closed;
+    return { ...(longish ? open : closed), certain: false };
   }
 
   // VCCCV and VCCCCV -- usually after the first consonant, keeping digraphs
