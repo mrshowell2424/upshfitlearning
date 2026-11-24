@@ -18,6 +18,7 @@ import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import WRITING from "./reading-writing-passages.json" with { type: "json" };
 import SPLITS from "./reading-skill-splits.json" with { type: "json" };
+import { EXTRA_LESSONS } from "./lib/extra-lessons.mjs";
 import SYLLABLES from "./reading-syllable-splits.json" with { type: "json" };
 import PARTW from "./reading-part-words.json" with { type: "json" };
 
@@ -4481,6 +4482,31 @@ const ADAPTATIONS: Adaptation[] = [
           "The cards have no capital letter and no end mark \u2014 you add those " +
           "when you write it. Read it, then write it.",
       );
+    },
+  },
+  {
+    // The Hub's own lessons, spliced into the builder's skill list.
+    //
+    // They live in scripts/lib/extra-lessons.mjs rather than in the export,
+    // because the export is not ours to edit -- a re-export would wipe them,
+    // which is the whole reason this script patches the page instead. And the
+    // sequence is derived from the file on disk rather than from the patched
+    // page, so that same file is read by scripts/lib/sequence.mjs too. One
+    // source, two consumers, and a re-export cannot touch either.
+    name: "splice the Hub's own lessons into the skill list",
+    apply: (html) => {
+      const at = html.indexOf("const SK = [");
+      if (at === -1) return html;
+      const close = html.indexOf("\n    ];", at);
+      if (close === -1) return html;
+      const rows = EXTRA_LESSONS.map((r) => JSON.stringify(r)).join(",\n      ");
+      // The export's list already ends with a trailing comma, so adding one
+      // more left a hole in the array -- [..., , ["long-a", ...]] -- and a hole
+      // maps to undefined, which emptied the skill picker entirely. Only add
+      // the separator when there is not one there already.
+      const head = html.slice(0, close);
+      const sep = /,\s*$/.test(head) ? "\n      " : ",\n      ";
+      return head + sep + rows + html.slice(close);
     },
   },
 ];

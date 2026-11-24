@@ -63,9 +63,9 @@
      "day": 3,
      "wrf": [
       "real",
-      "change",
+      "day",
       "do",
-      "mean",
+      "stay",
       "range",
       "heat"
      ],
@@ -138,7 +138,7 @@
      "day": 1,
      "wrf": [
       "show",
-      "change",
+      "then",
       "she",
       "range",
       "lip",
@@ -198,7 +198,7 @@
       "who",
       "a",
       "being",
-      "down",
+      "change",
       "was"
      ],
      "nwf": [
@@ -255,7 +255,7 @@
       "of",
       "like",
       "main",
-      "change"
+      "then"
      ],
      "nwf": [
       "vub",
@@ -270,7 +270,7 @@
      "day": 2,
      "wrf": [
       "so",
-      "room",
+      "new",
       "use",
       "how",
       "were",
@@ -1045,7 +1045,7 @@
       "flew",
       "flood",
       "claw",
-      "starve",
+      "cleat",
       "stove"
      ],
      "nwf": [
@@ -1062,8 +1062,8 @@
      "wrf": [
       "stone",
       "steer",
-      "staff",
-      "flow",
+      "state",
+      "flight",
       "the",
       "star"
      ],
@@ -1081,7 +1081,7 @@
      "wrf": [
       "store",
       "flip",
-      "steep",
+      "stain",
       "stayed",
       "flash",
       "climb"
@@ -1099,10 +1099,10 @@
      "day": 4,
      "wrf": [
       "are",
-      "clot",
-      "steel",
+      "steep",
+      "stretch",
       "still",
-      "cleat",
+      "clot",
       "to"
      ],
      "nwf": [
@@ -2174,7 +2174,7 @@
       "some",
       "said",
       "praise",
-      "paying",
+      "spray",
       "what",
       "blay"
      ],
@@ -2212,7 +2212,7 @@
       "bait",
       "stays",
       "done",
-      "spray",
+      "paying",
       "chair",
       "gains"
      ],
@@ -2284,7 +2284,7 @@
     {
      "day": 1,
      "wrf": [
-      "grease",
+      "beam",
       "search",
       "neat",
       "leave",
@@ -2324,8 +2324,8 @@
      "wrf": [
       "sea",
       "clear",
-      "beam",
-      "seal",
+      "wheat",
+      "wheel",
       "steam",
       "bread"
      ],
@@ -2510,97 +2510,97 @@
     {
      "day": 1,
      "wrf": [
-      "stroll",
-      "child",
-      "grind",
-      "scold",
-      "what",
-      "done"
+      "does",
+      "said",
+      "troll",
+      "were",
+      "old",
+      "post"
      ],
      "nwf": [
-      "whem",
-      "jezz",
-      "yoss",
-      "vaff"
+      "yull",
+      "vezz",
+      "yut",
+      "wub"
      ],
      "every": 10,
-     "seed": 9782
+     "seed": 9968
     },
     {
      "day": 2,
      "wrf": [
-      "a",
-      "of",
+      "coll",
+      "jolt",
+      "are",
+      "ghost",
       "wild",
-      "wind",
-      "bolt",
-      "you"
+      "most"
      ],
      "nwf": [
-      "shulk",
-      "chelt",
-      "vab",
-      "yuss"
+      "yoss",
+      "chulp",
+      "viss",
+      "gax"
      ],
      "every": 9,
-     "seed": 9783
+     "seed": 9969
     },
     {
      "day": 3,
      "wrf": [
-      "mild",
-      "coll",
-      "the",
-      "once",
       "was",
-      "they"
+      "what",
+      "mind",
+      "poll",
+      "noll",
+      "bind"
      ],
      "nwf": [
-      "zass",
-      "zell",
-      "veff",
-      "vull"
+      "yuzz",
+      "vun",
+      "zeg",
+      "shig"
      ],
      "every": 8,
-     "seed": 9784
+     "seed": 9970
     },
     {
      "day": 4,
      "wrf": [
-      "to",
-      "your",
-      "some",
-      "gold",
-      "come",
-      "colt"
+      "child",
+      "sold",
+      "toll",
+      "bold",
+      "cold",
+      "they"
      ],
      "nwf": [
-      "yass",
-      "jiss",
-      "zot",
-      "jep"
+      "chesk",
+      "jom",
+      "thod",
+      "yazz"
      ],
      "every": 7,
-     "seed": 9785
+     "seed": 9971
     },
     {
      "day": 5,
      "wrf": [
-      "fold",
-      "cold",
-      "hind",
-      "poll",
-      "one",
-      "troll"
+      "stroll",
+      "colt",
+      "scroll",
+      "molt",
+      "told",
+      "blind"
      ],
      "nwf": [
-      "yop",
-      "yuff",
-      "zezz",
-      "yeff"
+      "yuss",
+      "shup",
+      "voss",
+      "vaff"
      ],
      "every": 6,
-     "seed": 9786
+     "seed": 9972
     }
    ]
   },
@@ -2623,97 +2623,97 @@
     {
      "day": 1,
      "wrf": [
-      "one",
-      "eighth",
-      "taught",
+      "nought",
       "wrought",
-      "was",
-      "know"
+      "kneel",
+      "once",
+      "sigh",
+      "dough"
      ],
      "nwf": [
-      "zass",
-      "voff",
-      "voll",
-      "thod"
+      "vazz",
+      "zall",
+      "dut",
+      "yoss"
      ],
      "every": 10,
-     "seed": 9813
+     "seed": 9999
     },
     {
      "day": 2,
      "wrf": [
-      "wrist",
-      "flight",
-      "are",
-      "knop",
-      "you",
-      "knot"
+      "were",
+      "ought",
+      "wreath",
+      "weight",
+      "wright",
+      "fraught"
      ],
      "nwf": [
-      "chulp",
-      "zeff",
-      "vun",
-      "zog"
+      "yud",
+      "vuss",
+      "wub",
+      "chelt"
      ],
      "every": 9,
-     "seed": 9814
+     "seed": 10000
     },
     {
      "day": 3,
      "wrf": [
-      "come",
-      "aught",
-      "your",
-      "wreath",
+      "brought",
+      "done",
+      "wrist",
+      "thigh",
       "wrap",
-      "to"
+      "knot"
      ],
      "nwf": [
-      "thand",
-      "yoss",
-      "vub",
-      "vezz"
+      "yag",
+      "zib",
+      "zob",
+      "zaff"
      ],
      "every": 8,
-     "seed": 9815
+     "seed": 10001
     },
     {
      "day": 4,
      "wrf": [
-      "neigh",
-      "wrote",
-      "sigh",
-      "blight",
-      "sight",
-      "some"
+      "wrench",
+      "knit",
+      "laugh",
+      "knack",
+      "fight",
+      "knight"
      ],
      "nwf": [
-      "vuzz",
-      "vab",
-      "yib",
-      "dut"
+      "vub",
+      "yezz",
+      "juff",
+      "zull"
      ],
      "every": 7,
-     "seed": 9816
+     "seed": 10002
     },
     {
      "day": 5,
      "wrf": [
-      "wright",
-      "wrench",
-      "nought",
       "sleigh",
-      "height",
-      "weigh"
+      "two",
+      "wrong",
+      "drought",
+      "sight",
+      "slight"
      ],
      "nwf": [
-      "zess",
-      "yuff",
-      "yull",
-      "jozz"
+      "juss",
+      "vud",
+      "zell",
+      "zuss"
      ],
      "every": 6,
-     "seed": 9817
+     "seed": 10003
     }
    ]
   },
@@ -2736,97 +2736,97 @@
     {
      "day": 1,
      "wrf": [
-      "school",
-      "book",
-      "out",
-      "touch",
-      "noon",
-      "the"
+      "of",
+      "slow",
+      "known",
+      "know",
+      "shown",
+      "row"
      ],
      "nwf": [
-      "jozz",
+      "gax",
+      "voff",
       "mof",
-      "yem",
-      "zoss"
+      "zuff"
      ],
      "every": 10,
-     "seed": 9844
+     "seed": 10030
     },
     {
      "day": 2,
      "wrf": [
-      "choose",
-      "too",
-      "of",
-      "they",
-      "look",
-      "floor"
+      "some",
+      "our",
+      "count",
+      "ground",
+      "sprout",
+      "too"
      ],
      "nwf": [
-      "vuss",
-      "vun",
-      "vezz",
-      "vass"
+      "viss",
+      "vass",
+      "hib",
+      "yud"
      ],
      "every": 9,
-     "seed": 9845
+     "seed": 10031
     },
     {
      "day": 3,
      "wrf": [
-      "were",
-      "show",
-      "what",
-      "count",
-      "crowd",
-      "known"
+      "south",
+      "hour",
+      "cow",
+      "was",
+      "cloud",
+      "sour"
      ],
      "nwf": [
-      "yeff",
-      "joff",
-      "yass",
-      "tev"
+      "yull",
+      "yizz",
+      "juff",
+      "yeg"
      ],
      "every": 8,
-     "seed": 9846
+     "seed": 10032
     },
     {
      "day": 4,
      "wrf": [
-      "soup",
-      "room",
-      "house",
-      "hour",
-      "slow",
-      "boots"
+      "to",
+      "book",
+      "stood",
+      "now",
+      "cook",
+      "blow"
      ],
      "nwf": [
-      "zot",
-      "thass",
-      "juss",
-      "yig"
+      "yiff",
+      "vazz",
+      "vull",
+      "vep"
      ],
      "every": 7,
-     "seed": 9847
+     "seed": 10033
     },
     {
      "day": 5,
      "wrf": [
-      "bowl",
-      "sound",
-      "sprout",
-      "own",
-      "blow",
-      "brown"
+      "two",
+      "flour",
+      "took",
+      "zoo",
+      "what",
+      "door"
      ],
      "nwf": [
-      "dut",
-      "vess",
-      "zob",
-      "jop"
+      "chup",
+      "yuzz",
+      "zot",
+      "zup"
      ],
      "every": 6,
-     "seed": 9848
+     "seed": 10034
     }
    ]
   },
@@ -2849,97 +2849,97 @@
     {
      "day": 1,
      "wrf": [
-      "done",
+      "fare",
+      "what",
+      "tread",
+      "read",
       "ere",
-      "bare",
-      "was",
-      "thread",
-      "cream"
+      "shore"
      ],
      "nwf": [
-      "zass",
-      "yim",
-      "ziff",
-      "zem"
+      "zid",
+      "yiff",
+      "vess",
+      "jom"
      ],
      "every": 10,
-     "seed": 9875
+     "seed": 10061
     },
     {
      "day": 2,
      "wrf": [
       "rear",
-      "freeze",
-      "trend",
-      "score",
-      "what",
-      "grease"
+      "screw",
+      "once",
+      "grew",
+      "said",
+      "press"
      ],
      "nwf": [
-      "zall",
-      "yeff",
-      "yazz",
-      "yem"
+      "zeff",
+      "jaff",
+      "vup",
+      "zuss"
      ],
      "every": 9,
-     "seed": 9876
+     "seed": 10062
     },
     {
      "day": 3,
      "wrf": [
-      "spread",
-      "sorry",
-      "crew",
-      "sore",
+      "are",
+      "do",
       "here",
-      "spare"
+      "spread",
+      "green",
+      "reel"
      ],
      "nwf": [
-      "viss",
-      "zuff",
-      "thand",
-      "thup"
+      "zem",
+      "zass",
+      "yozz",
+      "zun"
      ],
      "every": 8,
-     "seed": 9877
+     "seed": 10063
     },
     {
      "day": 4,
      "wrf": [
-      "stream",
-      "said",
-      "tire",
-      "berry",
-      "dream",
-      "reef"
+      "dress",
+      "reed",
+      "fresh",
+      "a",
+      "create",
+      "real"
      ],
      "nwf": [
-      "vuzz",
-      "zeg",
-      "chelt",
-      "jop"
+      "jall",
+      "zum",
+      "yuss",
+      "vass"
      ],
      "every": 7,
-     "seed": 9878
+     "seed": 10064
     },
     {
      "day": 5,
      "wrf": [
-      "breathe",
-      "grey",
-      "drew",
-      "rest",
-      "rare",
-      "are"
+      "breath",
+      "wire",
+      "your",
+      "lure",
+      "gone",
+      "reach"
      ],
      "nwf": [
-      "yass",
-      "vob",
-      "zezz",
-      "yozz"
+      "shig",
+      "vezz",
+      "vot",
+      "chesk"
      ],
      "every": 6,
-     "seed": 9879
+     "seed": 10065
     }
    ]
   },
@@ -2962,97 +2962,97 @@
     {
      "day": 1,
      "wrf": [
-      "kingdom",
       "hundred",
-      "monster",
-      "sandwich",
-      "come",
-      "once"
+      "you",
+      "do",
+      "dolphin",
+      "pumpkin",
+      "monster"
      ],
      "nwf": [
-      "zozz",
-      "zop",
-      "jom",
-      "whem"
+      "shulk",
+      "zun",
+      "veff",
+      "zass"
      ],
      "every": 10,
-     "seed": 9906
+     "seed": 10092
     },
     {
      "day": 2,
      "wrf": [
+      "some",
+      "gone",
+      "once",
+      "come",
       "of",
-      "were",
-      "was",
-      "said",
-      "do",
-      "you"
+      "pilgrim"
      ],
      "nwf": [
-      "voll",
-      "wub",
-      "zell",
-      "zaff"
+      "yozz",
+      "jeb",
+      "ziff",
+      "yull"
      ],
      "every": 9,
-     "seed": 9907
+     "seed": 10093
     },
     {
      "day": 3,
      "wrf": [
-      "hamster",
-      "done",
-      "pilgrim",
-      "they",
+      "sandwich",
       "a",
-      "are"
+      "was",
+      "kingdom",
+      "partner",
+      "were"
      ],
      "nwf": [
-      "zom",
-      "yoss",
-      "yud",
-      "jub"
+      "jeg",
+      "joff",
+      "zum",
+      "yazz"
      ],
      "every": 8,
-     "seed": 9908
+     "seed": 10094
     },
     {
      "day": 4,
      "wrf": [
-      "pumpkin",
-      "two",
       "the",
-      "to",
-      "dolphin",
-      "what"
+      "said",
+      "two",
+      "does",
+      "what",
+      "to"
      ],
      "nwf": [
-      "shom",
+      "kiv",
+      "gax",
       "yizz",
-      "yiff",
-      "vut"
+      "chesk"
      ],
      "every": 7,
-     "seed": 9909
+     "seed": 10095
     },
     {
      "day": 5,
      "wrf": [
-      "partner",
+      "children",
       "your",
-      "does",
-      "gone",
       "one",
-      "children"
+      "they",
+      "hamster",
+      "are"
      ],
      "nwf": [
-      "zass",
-      "shup",
-      "vezz",
-      "zoff"
+      "yig",
+      "vuff",
+      "zob",
+      "vizz"
      ],
      "every": 6,
-     "seed": 9910
+     "seed": 10096
     }
    ]
   },
@@ -3075,97 +3075,97 @@
     {
      "day": 1,
      "wrf": [
-      "quickly",
+      "come",
       "some",
-      "do",
-      "lying",
-      "gone",
-      "does"
+      "they",
+      "of",
+      "flying",
+      "helpful"
      ],
      "nwf": [
-      "jaff",
-      "yub",
-      "zull",
-      "voss"
+      "chelt",
+      "yem",
+      "zib",
+      "jep"
      ],
      "every": 10,
-     "seed": 9937
+     "seed": 10123
     },
     {
      "day": 2,
      "wrf": [
+      "a",
+      "said",
       "sadly",
       "sly",
-      "were",
-      "once",
-      "to",
-      "said"
+      "gone",
+      "kindness"
      ],
      "nwf": [
-      "yut",
-      "jezz",
-      "yull",
-      "vem"
+      "zop",
+      "juff",
+      "zun",
+      "zem"
      ],
      "every": 9,
-     "seed": 9938
+     "seed": 10124
     },
     {
      "day": 3,
      "wrf": [
-      "ness",
-      "the",
       "useless",
-      "of",
-      "done",
-      "hopeless"
+      "were",
+      "careful",
+      "darkness",
+      "to",
+      "two"
      ],
      "nwf": [
-      "vup",
-      "yud",
-      "shup",
-      "zud"
+      "yig",
+      "chup",
+      "zuss",
+      "yiss"
      ],
      "every": 8,
-     "seed": 9939
+     "seed": 10125
     },
     {
      "day": 4,
      "wrf": [
-      "careful",
-      "what",
+      "the",
       "one",
       "movement",
-      "was",
-      "two"
+      "your",
+      "do",
+      "fly"
      ],
      "nwf": [
-      "jub",
-      "yib",
-      "voff",
-      "chelt"
+      "zab",
+      "zid",
+      "hib",
+      "dut"
      ],
      "every": 7,
-     "seed": 9940
+     "seed": 10126
     },
     {
      "day": 5,
      "wrf": [
-      "helpful",
-      "darkness",
-      "fly",
-      "they",
-      "your",
-      "less"
+      "lying",
+      "less",
+      "does",
+      "hopeless",
+      "was",
+      "are"
      ],
      "nwf": [
-      "veb",
-      "yiff",
-      "vop",
-      "jeg"
+      "zum",
+      "chulp",
+      "chev",
+      "jozz"
      ],
      "every": 6,
-     "seed": 9941
+     "seed": 10127
     }
    ]
   },
@@ -3188,97 +3188,97 @@
     {
      "day": 1,
      "wrf": [
-      "lay",
-      "are",
-      "needs",
-      "need",
-      "saying",
-      "you"
+      "landed",
+      "mess",
+      "press",
+      "seeing",
+      "they",
+      "ways"
      ],
      "nwf": [
-      "yull",
-      "vezz",
-      "yut",
-      "wub"
+      "vozz",
+      "vuss",
+      "yeff",
+      "yut"
      ],
      "every": 10,
-     "seed": 9968
+     "seed": 10154
     },
     {
      "day": 2,
      "wrf": [
-      "why",
-      "being",
-      "they",
-      "spring",
-      "nest",
+      "going",
+      "ring",
+      "jumped",
+      "end",
+      "when",
       "queen"
      ],
      "nwf": [
-      "yoss",
-      "chulp",
-      "viss",
-      "gax"
+      "jaff",
+      "zup",
+      "zem",
+      "zab"
      ],
      "every": 9,
-     "seed": 9969
+     "seed": 10155
     },
     {
      "day": 3,
      "wrf": [
-      "sly",
-      "say",
-      "biggest",
-      "gray",
-      "two",
-      "hen"
+      "pay",
+      "guess",
+      "tray",
+      "dusty",
+      "drying",
+      "your"
      ],
      "nwf": [
-      "yuzz",
-      "vun",
-      "zeg",
-      "shig"
+      "wuv",
+      "zezz",
+      "jozz",
+      "yezz"
      ],
      "every": 8,
-     "seed": 9970
+     "seed": 10156
     },
     {
      "day": 4,
      "wrf": [
-      "swing",
-      "fly",
-      "said",
-      "seen",
-      "what",
-      "broken"
+      "lens",
+      "cry",
+      "a",
+      "best",
+      "once",
+      "done"
      ],
      "nwf": [
-      "chesk",
-      "jom",
-      "thod",
-      "yazz"
+      "yoss",
+      "zuss",
+      "whem",
+      "zun"
      ],
      "every": 7,
-     "seed": 9971
+     "seed": 10157
     },
     {
      "day": 5,
      "wrf": [
-      "bring",
-      "thing",
-      "way",
-      "seeing",
-      "end",
-      "sing"
+      "then",
+      "fastest",
+      "stay",
+      "bees",
+      "to",
+      "key"
      ],
      "nwf": [
-      "yuss",
-      "shup",
-      "voss",
-      "vaff"
+      "zull",
+      "vess",
+      "yazz",
+      "jiss"
      ],
      "every": 6,
-     "seed": 9972
+     "seed": 10158
     }
    ]
   },
@@ -3301,97 +3301,97 @@
     {
      "day": 1,
      "wrf": [
-      "what",
+      "of",
+      "do",
+      "subway",
+      "said",
       "are",
-      "were",
-      "come",
-      "sub",
-      "two"
+      "postpone"
      ],
      "nwf": [
-      "vazz",
-      "zall",
-      "dut",
-      "yoss"
+      "zull",
+      "jeb",
+      "zut",
+      "jull"
      ],
      "every": 10,
-     "seed": 9999
+     "seed": 10185
     },
     {
      "day": 2,
      "wrf": [
-      "the",
+      "a",
+      "were",
+      "your",
+      "you",
       "misstep",
-      "done",
-      "do",
-      "subway",
-      "postgame"
+      "gone"
      ],
      "nwf": [
-      "yud",
-      "vuss",
-      "wub",
-      "chelt"
+      "thod",
+      "vut",
+      "yug",
+      "zot"
      ],
      "every": 9,
-     "seed": 10000
+     "seed": 10186
     },
     {
      "day": 3,
      "wrf": [
-      "a",
-      "post",
-      "one",
+      "misspell",
+      "come",
       "misplace",
-      "mistake",
-      "to"
+      "done",
+      "once",
+      "the"
      ],
      "nwf": [
-      "yag",
-      "zib",
-      "zob",
-      "zaff"
+      "yoll",
+      "jiss",
+      "zem",
+      "voss"
      ],
      "every": 8,
-     "seed": 10001
+     "seed": 10187
     },
     {
      "day": 4,
      "wrf": [
-      "postcard",
-      "misspell",
-      "miss",
-      "was",
       "they",
-      "postpone"
+      "to",
+      "what",
+      "miss",
+      "post",
+      "postgame"
      ],
      "nwf": [
-      "vub",
-      "yezz",
-      "juff",
-      "zull"
+      "zib",
+      "shulk",
+      "vezz",
+      "mof"
      ],
      "every": 7,
-     "seed": 10002
+     "seed": 10188
     },
     {
      "day": 5,
      "wrf": [
-      "of",
+      "mistake",
+      "two",
       "submit",
-      "gone",
-      "you",
-      "subtract",
-      "once"
+      "does",
+      "some",
+      "one"
      ],
      "nwf": [
-      "juss",
-      "vud",
-      "zell",
-      "zuss"
+      "zun",
+      "whem",
+      "zezz",
+      "yuss"
      ],
      "every": 6,
-     "seed": 10003
+     "seed": 10189
     }
    ]
   },
@@ -3414,97 +3414,97 @@
     {
      "day": 1,
      "wrf": [
-      "odd",
-      "buzz",
-      "chill",
-      "hull",
-      "gall",
-      "kill"
+      "kiss",
+      "smell",
+      "mill",
+      "hopping",
+      "dull",
+      "of"
      ],
      "nwf": [
-      "gax",
-      "voff",
-      "mof",
-      "zuff"
+      "vezz",
+      "yim",
+      "zuss",
+      "mof"
      ],
      "every": 10,
-     "seed": 10030
+     "seed": 10216
     },
     {
      "day": 2,
      "wrf": [
-      "mess",
-      "add",
-      "pull",
-      "cell",
-      "hill",
-      "said"
+      "fell",
+      "they",
+      "hull",
+      "purr",
+      "were",
+      "truss"
      ],
      "nwf": [
-      "viss",
-      "vass",
-      "hib",
-      "yud"
+      "zob",
+      "jup",
+      "yuss",
+      "zop"
      ],
      "every": 9,
-     "seed": 10031
+     "seed": 10217
     },
     {
      "day": 3,
      "wrf": [
-      "purr",
-      "what",
-      "swimming",
-      "grass",
-      "stuff",
-      "spill"
+      "sill",
+      "ann",
+      "kill",
+      "cliff",
+      "bass",
+      "buzz"
      ],
      "nwf": [
-      "yull",
-      "yizz",
-      "juff",
-      "yeg"
+      "vop",
+      "juzz",
+      "vun",
+      "ziss"
      ],
      "every": 8,
-     "seed": 10032
+     "seed": 10218
     },
     {
      "day": 4,
      "wrf": [
-      "fall",
-      "swiss",
-      "well",
-      "dull",
-      "bigger",
-      "brass"
+      "your",
+      "funny",
+      "odds",
+      "poll",
+      "moss",
+      "full"
      ],
      "nwf": [
       "yiff",
-      "vazz",
-      "vull",
-      "vep"
+      "jeb",
+      "tev",
+      "zuzz"
      ],
      "every": 7,
-     "seed": 10033
+     "seed": 10219
     },
     {
      "day": 5,
      "wrf": [
-      "once",
+      "cuff",
       "floss",
-      "your",
-      "sill",
-      "stopped",
-      "toll"
+      "stiff",
+      "the",
+      "do",
+      "well"
      ],
      "nwf": [
-      "chup",
-      "yuzz",
-      "zot",
-      "zup"
+      "yizz",
+      "jezz",
+      "whiv",
+      "chup"
      ],
      "every": 6,
-     "seed": 10034
+     "seed": 10220
     }
    ]
   },
@@ -3527,97 +3527,97 @@
     {
      "day": 1,
      "wrf": [
-      "crack",
-      "sign",
-      "gate",
-      "edge",
-      "cat",
-      "grass"
+      "were",
+      "once",
+      "clock",
+      "been",
+      "going",
+      "change"
      ],
      "nwf": [
-      "thup",
-      "whem",
-      "drask",
-      "dreft"
+      "crelt",
+      "glup",
+      "smag",
+      "shulk"
      ],
      "every": 10,
-     "seed": 10061
+     "seed": 10247
     },
     {
      "day": 2,
      "wrf": [
-      "cold",
-      "space",
-      "they",
-      "get",
-      "spring",
-      "lunch"
+      "string",
+      "done",
+      "big",
+      "come",
+      "a",
+      "car"
      ],
      "nwf": [
-      "shulk",
-      "prusk",
-      "shup",
-      "chesk"
+      "whem",
+      "plisk",
+      "chelt",
+      "blen"
      ],
      "every": 9,
-     "seed": 10062
+     "seed": 10248
     },
     {
      "day": 3,
      "wrf": [
-      "coat",
-      "crown",
-      "got",
-      "grow",
-      "where",
-      "stuck"
+      "gone",
+      "giant",
+      "science",
+      "give",
+      "gentle",
+      "card"
      ],
      "nwf": [
-      "stev",
-      "clet",
-      "flen",
+      "prusk",
+      "chev",
+      "frub",
       "twib"
      ],
      "every": 8,
-     "seed": 10063
+     "seed": 10249
     },
     {
      "day": 4,
      "wrf": [
-      "done",
-      "gave",
-      "gone",
-      "rice",
-      "change",
-      "group"
+      "gate",
+      "rock",
+      "which",
+      "could",
+      "are",
+      "gem"
      ],
      "nwf": [
-      "glup",
-      "grint",
-      "blen",
-      "frub"
+      "shom",
+      "chesk",
+      "thand",
+      "chup"
      ],
      "every": 7,
-     "seed": 10064
+     "seed": 10250
     },
     {
      "day": 5,
      "wrf": [
-      "bag",
+      "spring",
+      "high",
+      "get",
       "the",
-      "many",
-      "giant",
-      "fence",
-      "cool"
+      "came",
+      "you"
      ],
      "nwf": [
-      "shom",
-      "chev",
+      "drask",
       "whiv",
-      "chup"
+      "thod",
+      "shig"
      ],
      "every": 6,
-     "seed": 10065
+     "seed": 10251
     }
    ]
   },
@@ -3640,97 +3640,97 @@
     {
      "day": 1,
      "wrf": [
-      "gone",
-      "gear",
-      "sponge",
-      "of",
-      "the",
-      "smudge"
+      "change",
+      "large",
+      "germ",
+      "are",
+      "what",
+      "they"
      ],
      "nwf": [
-      "twib",
-      "drask",
-      "chup",
-      "frub"
+      "plisk",
+      "whiv",
+      "shig",
+      "flen"
      ],
      "every": 10,
-     "seed": 10092
+     "seed": 10278
     },
     {
      "day": 2,
      "wrf": [
-      "are",
-      "could",
-      "against",
-      "voyage",
-      "gauge",
-      "a"
+      "two",
+      "geese",
+      "trudge",
+      "was",
+      "your",
+      "barge"
      ],
      "nwf": [
+      "chup",
+      "grint",
       "thup",
-      "shom",
-      "thand",
-      "slom"
+      "prusk"
      ],
      "every": 9,
-     "seed": 10093
+     "seed": 10279
     },
     {
      "day": 3,
      "wrf": [
-      "geese",
-      "do",
-      "bridge",
-      "geck",
-      "says",
-      "were"
+      "does",
+      "merge",
+      "judge",
+      "cage",
+      "have",
+      "verge"
      ],
      "nwf": [
       "whem",
-      "stev",
       "glup",
-      "shup"
+      "chev",
+      "chulp"
      ],
      "every": 8,
-     "seed": 10094
+     "seed": 10280
     },
     {
      "day": 4,
      "wrf": [
-      "been",
-      "surge",
-      "pledge",
-      "strange",
-      "huge",
-      "urge"
+      "walk",
+      "rouge",
+      "smudge",
+      "one",
+      "any",
+      "range"
      ],
      "nwf": [
-      "prusk",
-      "thass",
-      "thod",
-      "chesk"
+      "thand",
+      "shup",
+      "smag",
+      "shom"
      ],
      "every": 7,
-     "seed": 10095
+     "seed": 10281
     },
     {
      "day": 5,
      "wrf": [
-      "judge",
-      "done",
-      "what",
-      "some",
-      "they",
-      "cage"
+      "hedge",
+      "fringe",
+      "you",
+      "siege",
+      "urge",
+      "badge"
      ],
      "nwf": [
-      "whiv",
-      "shig",
-      "dreft",
-      "chulp"
+      "blen",
+      "crelt",
+      "thod",
+      "twib"
      ],
      "every": 6,
-     "seed": 10096
+     "seed": 10282
     }
    ]
   },
@@ -3753,97 +3753,97 @@
     {
      "day": 1,
      "wrf": [
-      "two",
+      "your",
+      "was",
       "hotel",
-      "should",
-      "says",
-      "music",
-      "your"
+      "do",
+      "tiger",
+      "any"
      ],
      "nwf": [
-      "thand",
-      "slom",
-      "thass",
-      "whem"
+      "stev",
+      "flen",
+      "chup",
+      "chev"
      ],
      "every": 10,
-     "seed": 10123
+     "seed": 10309
     },
     {
      "day": 2,
      "wrf": [
-      "some",
-      "are",
-      "do",
-      "one",
-      "many",
-      "been"
+      "to",
+      "were",
+      "two",
+      "spider",
+      "music",
+      "many"
      ],
      "nwf": [
-      "chelt",
-      "shulk",
-      "flen",
-      "stev"
+      "clet",
+      "glup",
+      "slom",
+      "chesk"
      ],
      "every": 9,
-     "seed": 10124
+     "seed": 10310
     },
     {
      "day": 3,
      "wrf": [
+      "great",
+      "pilot",
+      "does",
       "baby",
-      "any",
-      "again",
-      "spider",
-      "the",
-      "were"
+      "done",
+      "of"
      ],
      "nwf": [
-      "thup",
-      "whiv",
-      "chev",
-      "blen"
+      "shulk",
+      "prusk",
+      "smag",
+      "whiv"
      ],
      "every": 8,
-     "seed": 10125
+     "seed": 10311
     },
     {
      "day": 4,
      "wrf": [
-      "siren",
-      "have",
-      "great",
-      "pilot",
+      "a",
+      "been",
+      "would",
       "they",
-      "gone"
+      "siren",
+      "robot"
      ],
      "nwf": [
-      "thod",
-      "shig",
       "drask",
-      "chup"
+      "thand",
+      "plisk",
+      "twib"
      ],
      "every": 7,
-     "seed": 10126
+     "seed": 10312
     },
     {
      "day": 5,
      "wrf": [
-      "paper",
+      "gone",
+      "one",
       "once",
-      "done",
-      "a",
-      "would",
-      "there"
+      "paper",
+      "walk",
+      "tulip"
      ],
      "nwf": [
-      "clet",
-      "grint",
-      "frub",
+      "chulp",
+      "shom",
+      "shig",
       "dreft"
      ],
      "every": 6,
-     "seed": 10127
+     "seed": 10313
     }
    ]
   },
@@ -3866,97 +3866,97 @@
     {
      "day": 1,
      "wrf": [
-      "straw",
-      "there",
-      "yawn",
-      "going",
-      "says",
-      "jaw"
+      "spoil",
+      "voice",
+      "were",
+      "moist",
+      "fawn",
+      "joy"
      ],
      "nwf": [
-      "thup",
-      "whiv",
-      "thass",
-      "thod"
+      "chev",
+      "clet",
+      "dreft",
+      "frub"
      ],
      "every": 10,
-     "seed": 10154
+     "seed": 10340
     },
     {
      "day": 2,
      "wrf": [
-      "against",
-      "are",
-      "haul",
-      "joy",
-      "great",
-      "fawn"
+      "walk",
+      "coy",
+      "clause",
+      "foil",
+      "drawn",
+      "loyal"
      ],
      "nwf": [
       "chelt",
-      "whem",
-      "dreft",
-      "shulk"
+      "shup",
+      "glup",
+      "shig"
      ],
      "every": 9,
-     "seed": 10155
+     "seed": 10341
     },
     {
      "day": 3,
      "wrf": [
-      "hawk",
-      "gone",
-      "launch",
-      "aunt",
-      "augh",
-      "clause"
+      "thaw",
+      "lawn",
+      "shaw",
+      "coin",
+      "voyage",
+      "are"
      ],
      "nwf": [
-      "glup",
-      "grint",
-      "twib",
-      "chev"
+      "drask",
+      "whiv",
+      "chulp",
+      "thass"
      ],
      "every": 8,
-     "seed": 10156
+     "seed": 10342
     },
     {
      "day": 4,
      "wrf": [
-      "you",
-      "claw",
-      "walk",
-      "doing",
+      "boy",
       "cause",
-      "have"
+      "some",
+      "soil",
+      "yawn",
+      "said"
      ],
      "nwf": [
-      "prusk",
-      "stev",
-      "clet",
-      "frub"
+      "blen",
+      "thup",
+      "flen",
+      "shulk"
      ],
      "every": 7,
-     "seed": 10157
+     "seed": 10343
     },
     {
      "day": 5,
      "wrf": [
-      "been",
-      "voyage",
-      "join",
-      "loyal",
-      "lawn",
-      "would"
+      "boil",
+      "fraud",
+      "straw",
+      "aunt",
+      "hawk",
+      "noy"
      ],
      "nwf": [
-      "blen",
-      "thand",
-      "plisk",
-      "chesk"
+      "twib",
+      "chup",
+      "grint",
+      "thod"
      ],
      "every": 6,
-     "seed": 10158
+     "seed": 10344
     }
    ]
   },
@@ -3979,97 +3979,97 @@
     {
      "day": 1,
      "wrf": [
-      "you",
-      "making",
-      "what",
-      "there",
-      "could",
-      "shiny"
+      "was",
+      "smiled",
+      "baked",
+      "hoping",
+      "some",
+      "do"
      ],
      "nwf": [
-      "crelt",
-      "slom",
-      "chev",
-      "whiv"
+      "chesk",
+      "shulk",
+      "thod",
+      "thass"
      ],
      "every": 10,
-     "seed": 10185
+     "seed": 10371
     },
     {
      "day": 2,
      "wrf": [
-      "hoping",
-      "walk",
-      "the",
-      "where",
-      "would",
-      "was"
+      "done",
+      "what",
+      "riding",
+      "gone",
+      "joking",
+      "against"
      ],
      "nwf": [
-      "shig",
-      "shulk",
-      "chesk",
-      "stev"
+      "flen",
+      "smag",
+      "dreft",
+      "drask"
      ],
      "every": 9,
-     "seed": 10186
+     "seed": 10372
     },
     {
      "day": 3,
      "wrf": [
-      "once",
-      "says",
-      "they",
-      "come",
-      "of",
-      "cuter"
+      "you",
+      "does",
+      "would",
+      "two",
+      "one",
+      "were"
      ],
      "nwf": [
       "frub",
-      "thass",
-      "thup",
+      "clet",
+      "slom",
       "chup"
      ],
      "every": 8,
-     "seed": 10187
+     "seed": 10373
     },
     {
      "day": 4,
      "wrf": [
-      "some",
-      "should",
-      "have",
-      "does",
-      "two",
-      "baked"
+      "making",
+      "are",
+      "come",
+      "to",
+      "latest",
+      "where"
      ],
      "nwf": [
-      "flen",
-      "chulp",
-      "twib",
-      "smag"
+      "chelt",
+      "shig",
+      "prusk",
+      "blen"
      ],
      "every": 7,
-     "seed": 10188
+     "seed": 10374
     },
     {
      "day": 5,
      "wrf": [
-      "against",
-      "to",
-      "said",
-      "are",
-      "your",
-      "done"
+      "should",
+      "cuter",
+      "skating",
+      "they",
+      "have",
+      "says"
      ],
      "nwf": [
-      "whem",
-      "prusk",
+      "thand",
       "grint",
-      "dreft"
+      "twib",
+      "crelt"
      ],
      "every": 6,
-     "seed": 10189
+     "seed": 10375
     }
    ]
   },
@@ -4092,97 +4092,97 @@
     {
      "day": 1,
      "wrf": [
-      "ring",
-      "fine",
-      "dried",
-      "cried",
-      "where",
-      "its"
+      "being",
+      "does",
+      "flies",
+      "string",
+      "stayed",
+      "the"
      ],
      "nwf": [
-      "flen",
-      "thand",
-      "glup",
+      "grint",
+      "chelt",
+      "shup",
       "thup"
      ],
      "every": 10,
-     "seed": 10216
+     "seed": 10402
     },
     {
      "day": 2,
      "wrf": [
-      "saying",
-      "great",
-      "the",
-      "crying",
-      "a",
-      "why"
+      "fire",
+      "ring",
+      "size",
+      "your",
+      "are",
+      "carried"
      ],
      "nwf": [
-      "smag",
-      "plisk",
-      "thass",
-      "chev"
+      "chup",
+      "stev",
+      "chulp",
+      "chesk"
      ],
      "every": 9,
-     "seed": 10217
+     "seed": 10403
     },
     {
      "day": 3,
      "wrf": [
-      "wide",
-      "tray",
-      "pick",
-      "sky",
-      "six",
-      "science"
+      "fruit",
+      "time",
+      "give",
+      "spring",
+      "were",
+      "child"
      ],
      "nwf": [
-      "thod",
-      "chelt",
-      "dreft",
-      "grint"
+      "clet",
+      "frub",
+      "twib",
+      "dreft"
      ],
      "every": 8,
-     "seed": 10218
+     "seed": 10404
     },
     {
      "day": 4,
      "wrf": [
-      "you",
-      "dry",
-      "bin",
-      "sit",
-      "says",
-      "against"
+      "thing",
+      "there",
+      "kind",
+      "two",
+      "have",
+      "dry"
      ],
      "nwf": [
-      "clet",
-      "prusk",
       "slom",
-      "chulp"
+      "chev",
+      "prusk",
+      "whem"
      ],
      "every": 7,
-     "seed": 10219
+     "seed": 10405
     },
     {
      "day": 5,
      "wrf": [
-      "bird",
-      "stays",
-      "your",
-      "kind",
-      "day",
-      "child"
+      "with",
+      "done",
+      "five",
+      "sign",
+      "this",
+      "puppies"
      ],
      "nwf": [
-      "drask",
-      "shom",
-      "chesk",
-      "twib"
+      "crelt",
+      "thand",
+      "thass",
+      "thod"
      ],
      "every": 6,
-     "seed": 10220
+     "seed": 10406
     }
    ]
   },
@@ -4205,97 +4205,97 @@
     {
      "day": 1,
      "wrf": [
-      "planet",
-      "should",
-      "they",
-      "do",
-      "two",
+      "are",
+      "wagon",
+      "seven",
+      "again",
+      "a",
       "said"
      ],
      "nwf": [
-      "crelt",
-      "glup",
-      "smag",
-      "shulk"
+      "thod",
+      "whiv",
+      "chup",
+      "chelt"
      ],
      "every": 10,
-     "seed": 10247
+     "seed": 10433
     },
     {
      "day": 2,
      "wrf": [
-      "you",
-      "come",
-      "are",
-      "gone",
+      "walk",
       "were",
-      "one"
+      "once",
+      "been",
+      "done",
+      "come"
      ],
      "nwf": [
-      "whem",
-      "plisk",
-      "chelt",
-      "blen"
+      "grint",
+      "thand",
+      "flen",
+      "drask"
      ],
      "every": 9,
-     "seed": 10248
+     "seed": 10434
     },
     {
      "day": 3,
      "wrf": [
-      "done",
-      "would",
+      "two",
+      "lemon",
+      "camel",
       "the",
-      "where",
-      "great",
-      "what"
+      "salad",
+      "against"
      ],
      "nwf": [
-      "prusk",
-      "chev",
-      "frub",
-      "twib"
+      "shig",
+      "smag",
+      "stev",
+      "clet"
      ],
      "every": 8,
-     "seed": 10249
+     "seed": 10435
     },
     {
      "day": 4,
      "wrf": [
-      "seven",
-      "camel",
-      "lemon",
-      "once",
       "have",
-      "again"
+      "could",
+      "many",
+      "great",
+      "where",
+      "do"
      ],
      "nwf": [
-      "shom",
-      "chesk",
-      "thand",
-      "chup"
+      "thup",
+      "slom",
+      "whem",
+      "plisk"
      ],
      "every": 7,
-     "seed": 10250
+     "seed": 10436
     },
     {
      "day": 5,
      "wrf": [
-      "salad",
-      "walk",
-      "been",
       "to",
-      "there",
-      "some"
+      "one",
+      "you",
+      "any",
+      "gone",
+      "would"
      ],
      "nwf": [
-      "drask",
-      "whiv",
-      "thod",
-      "shig"
+      "blen",
+      "shom",
+      "thass",
+      "shulk"
      ],
      "every": 6,
-     "seed": 10251
+     "seed": 10437
     }
    ]
   },
@@ -4318,97 +4318,97 @@
     {
      "day": 1,
      "wrf": [
-      "jungle",
-      "was",
-      "says",
-      "a",
-      "do",
-      "of"
+      "your",
+      "any",
+      "would",
+      "should",
+      "you",
+      "table"
      ],
      "nwf": [
-      "plisk",
-      "whiv",
-      "shig",
-      "flen"
+      "shup",
+      "chev",
+      "dreft",
+      "chelt"
      ],
      "every": 10,
-     "seed": 10278
+     "seed": 10464
     },
     {
      "day": 2,
      "wrf": [
-      "candle",
-      "one",
-      "table",
       "two",
-      "come",
-      "the"
+      "do",
+      "again",
+      "were",
+      "once",
+      "great"
      ],
      "nwf": [
-      "chup",
-      "grint",
-      "thup",
-      "prusk"
+      "shulk",
+      "glup",
+      "whiv",
+      "twib"
      ],
      "every": 9,
-     "seed": 10279
+     "seed": 10465
     },
     {
      "day": 3,
      "wrf": [
-      "against",
-      "there",
-      "your",
-      "many",
-      "walk",
-      "would"
+      "said",
+      "handle",
+      "candle",
+      "gone",
+      "what",
+      "jungle"
      ],
      "nwf": [
-      "whem",
-      "glup",
-      "chev",
-      "chulp"
+      "chulp",
+      "thup",
+      "drask",
+      "chup"
      ],
      "every": 8,
-     "seed": 10280
+     "seed": 10466
     },
     {
      "day": 4,
      "wrf": [
-      "once",
-      "to",
-      "any",
-      "are",
-      "should",
-      "they"
+      "come",
+      "says",
+      "bicycle",
+      "they",
+      "there",
+      "could"
      ],
      "nwf": [
-      "thand",
-      "shup",
-      "smag",
-      "shom"
+      "whem",
+      "thass",
+      "prusk",
+      "plisk"
      ],
      "every": 7,
-     "seed": 10281
+     "seed": 10467
     },
     {
      "day": 5,
      "wrf": [
-      "could",
-      "does",
-      "said",
       "where",
-      "have",
-      "bicycle"
+      "done",
+      "many",
+      "turtle",
+      "was",
+      "a"
      ],
      "nwf": [
-      "blen",
-      "crelt",
-      "thod",
-      "twib"
+      "smag",
+      "shom",
+      "flen",
+      "grint"
      ],
      "every": 6,
-     "seed": 10282
+     "seed": 10468
     }
    ]
   },
@@ -4431,97 +4431,97 @@
     {
      "day": 1,
      "wrf": [
-      "your",
-      "was",
+      "the",
       "away",
-      "do",
-      "lagoon",
-      "any"
+      "been",
+      "says",
+      "panda",
+      "what"
      ],
      "nwf": [
-      "stev",
-      "flen",
-      "chup",
-      "chev"
+      "shig",
+      "smag",
+      "dreft",
+      "chup"
      ],
      "every": 10,
-     "seed": 10309
+     "seed": 10495
     },
     {
      "day": 2,
      "wrf": [
-      "to",
-      "were",
-      "two",
-      "sofa",
-      "banana",
-      "many"
+      "where",
+      "pizza",
+      "a",
+      "many",
+      "does",
+      "again"
      ],
      "nwf": [
-      "clet",
+      "thup",
       "glup",
-      "slom",
-      "chesk"
+      "chulp",
+      "whiv"
      ],
      "every": 9,
-     "seed": 10310
+     "seed": 10496
     },
     {
      "day": 3,
      "wrf": [
-      "great",
-      "zebra",
-      "does",
+      "said",
+      "should",
+      "come",
       "soda",
-      "done",
-      "of"
+      "are",
+      "once"
      ],
      "nwf": [
-      "shulk",
-      "prusk",
-      "smag",
-      "whiv"
+      "plisk",
+      "drask",
+      "chev",
+      "shulk"
      ],
      "every": 8,
-     "seed": 10311
+     "seed": 10497
     },
     {
      "day": 4,
      "wrf": [
-      "a",
-      "been",
       "would",
-      "they",
-      "pizza",
-      "about"
+      "of",
+      "have",
+      "there",
+      "sofa",
+      "gone"
      ],
      "nwf": [
-      "drask",
-      "thand",
-      "plisk",
-      "twib"
+      "slom",
+      "clet",
+      "chesk",
+      "shup"
      ],
      "every": 7,
-     "seed": 10312
+     "seed": 10498
     },
     {
      "day": 5,
      "wrf": [
-      "gone",
-      "one",
-      "once",
-      "panda",
-      "walk",
-      "alarm"
+      "some",
+      "was",
+      "you",
+      "lagoon",
+      "to",
+      "zebra"
      ],
      "nwf": [
-      "chulp",
-      "shom",
-      "shig",
-      "dreft"
+      "flen",
+      "frub",
+      "grint",
+      "blen"
      ],
      "every": 6,
-     "seed": 10313
+     "seed": 10499
     }
    ]
   },
@@ -4544,97 +4544,97 @@
     {
      "day": 1,
      "wrf": [
-      "I'll",
-      "walk",
-      "gone",
-      "been",
+      "she's",
+      "once",
       "any",
-      "should"
+      "are",
+      "could",
+      "were"
      ],
      "nwf": [
+      "chelt",
       "chev",
-      "clet",
-      "dreft",
-      "frub"
+      "stev",
+      "whiv"
      ],
      "every": 10,
-     "seed": 10340
+     "seed": 10526
     },
     {
      "day": 2,
      "wrf": [
-      "are",
-      "they",
-      "you",
+      "been",
       "two",
-      "some",
-      "he'll"
+      "gone",
+      "said",
+      "your",
+      "he's"
      ],
      "nwf": [
-      "chelt",
+      "chup",
       "shup",
-      "glup",
-      "shig"
+      "chesk",
+      "glup"
      ],
      "every": 9,
-     "seed": 10341
+     "seed": 10527
     },
     {
      "day": 3,
      "wrf": [
-      "of",
-      "he's",
-      "we'll",
+      "done",
+      "great",
+      "I'll",
+      "what",
       "can't",
-      "said",
-      "against"
+      "where"
      ],
      "nwf": [
-      "drask",
-      "whiv",
-      "chulp",
-      "thass"
+      "twib",
+      "prusk",
+      "flen",
+      "clet"
      ],
      "every": 8,
-     "seed": 10342
+     "seed": 10528
     },
     {
      "day": 4,
      "wrf": [
-      "she's",
-      "great",
-      "done",
-      "what",
+      "there",
       "you've",
-      "your"
+      "a",
+      "should",
+      "some",
+      "against"
      ],
      "nwf": [
-      "blen",
-      "thup",
-      "flen",
-      "shulk"
+      "whem",
+      "dreft",
+      "slom",
+      "smag"
      ],
      "every": 7,
-     "seed": 10343
+     "seed": 10529
     },
     {
      "day": 5,
      "wrf": [
-      "once",
-      "do",
-      "the",
-      "come",
+      "was",
+      "they",
+      "of",
+      "again",
       "it's",
-      "does"
+      "I've"
      ],
      "nwf": [
-      "twib",
-      "chup",
-      "grint",
-      "thod"
+      "crelt",
+      "plisk",
+      "thand",
+      "shulk"
      ],
      "every": 6,
-     "seed": 10344
+     "seed": 10530
     }
    ]
   },
@@ -4657,97 +4657,97 @@
     {
      "day": 1,
      "wrf": [
-      "great",
       "was",
       "should",
-      "action",
-      "vision",
-      "fiction"
+      "sion",
+      "where",
+      "once",
+      "have"
      ],
      "nwf": [
-      "chesk",
       "shulk",
-      "thod",
-      "thass"
+      "thup",
+      "stev",
+      "chesk"
      ],
      "every": 10,
-     "seed": 10371
+     "seed": 10557
     },
     {
      "day": 2,
      "wrf": [
-      "come",
-      "does",
-      "done",
-      "mansion",
-      "gone",
-      "been"
+      "your",
+      "again",
+      "vision",
+      "would",
+      "nation",
+      "some"
      ],
      "nwf": [
+      "grint",
       "flen",
-      "smag",
-      "dreft",
-      "drask"
+      "thand",
+      "chelt"
      ],
      "every": 9,
-     "seed": 10372
+     "seed": 10558
     },
     {
      "day": 3,
      "wrf": [
-      "what",
-      "you",
-      "one",
-      "motion",
-      "two",
-      "some"
+      "they",
+      "action",
+      "any",
+      "great",
+      "fiction",
+      "walk"
      ],
      "nwf": [
-      "frub",
-      "clet",
       "slom",
-      "chup"
+      "blen",
+      "shup",
+      "crelt"
      ],
      "every": 8,
-     "seed": 10373
+     "seed": 10559
     },
     {
      "day": 4,
      "wrf": [
-      "were",
-      "mission",
       "are",
-      "station",
-      "to",
-      "nation"
+      "motion",
+      "session",
+      "mansion",
+      "were",
+      "tension"
      ],
      "nwf": [
-      "chelt",
-      "shig",
-      "prusk",
-      "blen"
+      "dreft",
+      "chulp",
+      "clet",
+      "shig"
      ],
      "every": 7,
-     "seed": 10374
+     "seed": 10560
     },
     {
      "day": 5,
      "wrf": [
+      "what",
       "against",
-      "says",
-      "would",
-      "session",
-      "they",
-      "have"
+      "mission",
+      "done",
+      "two",
+      "do"
      ],
      "nwf": [
-      "thand",
-      "grint",
+      "thod",
+      "shom",
       "twib",
-      "crelt"
+      "smag"
      ],
      "every": 6,
-     "seed": 10375
+     "seed": 10561
     }
    ]
   },
@@ -4770,97 +4770,97 @@
     {
      "day": 1,
      "wrf": [
-      "are",
-      "artist",
-      "there",
-      "do",
-      "great",
-      "dentist"
+      "dive",
+      "a",
+      "five",
+      "should",
+      "were",
+      "you"
      ],
      "nwf": [
-      "grint",
+      "drask",
+      "frub",
       "chelt",
-      "shup",
-      "thup"
+      "chulp"
      ],
      "every": 10,
-     "seed": 10402
+     "seed": 10588
     },
     {
      "day": 2,
      "wrf": [
-      "list",
-      "twist",
+      "of",
+      "what",
+      "visible",
+      "once",
       "was",
-      "a",
-      "where",
-      "does"
+      "great"
      ],
      "nwf": [
-      "chup",
-      "stev",
-      "chulp",
-      "chesk"
+      "plisk",
+      "shig",
+      "thup",
+      "chev"
      ],
      "every": 9,
-     "seed": 10403
+     "seed": 10589
     },
     {
      "day": 3,
      "wrf": [
-      "waist",
       "done",
-      "walk",
-      "dive",
-      "should",
-      "says"
+      "would",
+      "many",
+      "wrist",
+      "are",
+      "fist"
      ],
      "nwf": [
-      "clet",
-      "frub",
-      "twib",
-      "dreft"
+      "dreft",
+      "shulk",
+      "glup",
+      "stev"
      ],
      "every": 8,
-     "seed": 10404
+     "seed": 10590
     },
     {
      "day": 4,
      "wrf": [
-      "active",
-      "ist",
-      "you",
-      "drive",
-      "live",
-      "of"
+      "moist",
+      "gone",
+      "twist",
+      "against",
+      "two",
+      "hive"
      ],
      "nwf": [
-      "slom",
-      "chev",
-      "prusk",
-      "whem"
+      "whem",
+      "chesk",
+      "thand",
+      "blen"
      ],
      "every": 7,
-     "seed": 10405
+     "seed": 10591
     },
     {
      "day": 5,
      "wrf": [
-      "readable",
-      "possible",
-      "gone",
-      "two",
-      "any",
-      "again"
+      "where",
+      "walk",
+      "ist",
+      "artist",
+      "your",
+      "says"
      ],
      "nwf": [
+      "prusk",
       "crelt",
-      "thand",
-      "thass",
-      "thod"
+      "twib",
+      "flen"
      ],
      "every": 6,
-     "seed": 10406
+     "seed": 10592
     }
    ]
   },
@@ -4883,97 +4883,97 @@
     {
      "day": 1,
      "wrf": [
-      "come",
-      "protect",
-      "said",
-      "deed",
-      "you",
-      "been"
+      "dew",
+      "replay",
+      "dead",
+      "of",
+      "rex",
+      "walk"
      ],
      "nwf": [
-      "thod",
+      "flen",
       "whiv",
-      "chup",
-      "chelt"
+      "frub",
+      "glup"
      ],
      "every": 10,
-     "seed": 10433
+     "seed": 10619
     },
     {
      "day": 2,
      "wrf": [
-      "reach",
-      "dead",
-      "depth",
-      "could",
-      "rest",
-      "preheat"
+      "protect",
+      "are",
+      "dev",
+      "do",
+      "debt",
+      "den"
      ],
      "nwf": [
-      "grint",
-      "thand",
-      "flen",
+      "plisk",
+      "slom",
+      "clet",
       "drask"
      ],
      "every": 9,
-     "seed": 10434
+     "seed": 10620
     },
     {
      "day": 3,
      "wrf": [
-      "dense",
-      "your",
-      "reef",
-      "defrost",
-      "are",
-      "rear"
+      "redo",
+      "prey",
+      "does",
+      "pro",
+      "dean",
+      "prove"
      ],
      "nwf": [
-      "shig",
       "smag",
-      "stev",
-      "clet"
+      "chelt",
+      "chesk",
+      "thand"
      ],
      "every": 8,
-     "seed": 10435
+     "seed": 10621
     },
     {
      "day": 4,
      "wrf": [
-      "debt",
-      "they",
-      "dent",
-      "walk",
-      "does",
-      "replay"
+      "could",
+      "read",
+      "one",
+      "says",
+      "deck",
+      "reef"
      ],
      "nwf": [
-      "thup",
-      "slom",
+      "chulp",
       "whem",
-      "plisk"
+      "thass",
+      "grint"
      ],
      "every": 7,
-     "seed": 10436
+     "seed": 10622
     },
     {
      "day": 5,
      "wrf": [
-      "dev",
-      "prose",
-      "rent",
-      "deal",
-      "deck",
-      "would"
+      "there",
+      "some",
+      "reed",
+      "you",
+      "where",
+      "deb"
      ],
      "nwf": [
       "blen",
-      "shom",
-      "thass",
-      "shulk"
+      "shup",
+      "shulk",
+      "dreft"
      ],
      "every": 6,
-     "seed": 10437
+     "seed": 10623
     }
    ]
   },
@@ -4996,97 +4996,97 @@
     {
      "day": 1,
      "wrf": [
-      "abrupt",
-      "sport",
-      "once",
+      "form",
+      "enough",
+      "buy",
+      "you",
       "friend",
-      "says",
-      "their"
+      "sugar"
      ],
      "nwf": [
-      "zail",
+      "sape",
       "daim",
-      "dake",
-      "vait"
+      "plee",
+      "fape"
      ],
      "every": 10,
-     "seed": 10464
+     "seed": 10650
     },
     {
      "day": 2,
      "wrf": [
-      "what",
-      "to",
-      "sure",
-      "done",
-      "any",
-      "they"
+      "some",
+      "many",
+      "inform",
+      "against",
+      "should",
+      "are"
      ],
      "nwf": [
-      "noab",
-      "mipe",
-      "meep",
-      "fape"
+      "snay",
+      "treep",
+      "feap",
+      "plame"
      ],
      "every": 9,
-     "seed": 10465
+     "seed": 10651
     },
     {
      "day": 3,
      "wrf": [
-      "scribe",
-      "transport",
-      "do",
-      "gone",
       "come",
-      "a"
+      "sure",
+      "a",
+      "what",
+      "report",
+      "two"
      ],
      "nwf": [
-      "treep",
-      "snay",
-      "plame",
-      "feap"
+      "zide",
+      "yobe",
+      "mipe",
+      "jeam"
      ],
      "every": 8,
-     "seed": 10466
+     "seed": 10652
     },
     {
      "day": 4,
      "wrf": [
-      "walk",
-      "form",
-      "does",
-      "though",
-      "people",
+      "have",
+      "were",
+      "transport",
+      "they",
+      "once",
       "was"
      ],
      "nwf": [
+      "tive",
       "sloam",
-      "sween",
-      "mune",
-      "jate"
+      "meep",
+      "stoap"
      ],
      "every": 7,
-     "seed": 10467
+     "seed": 10653
     },
     {
      "day": 5,
      "wrf": [
+      "built",
+      "do",
       "sports",
-      "script",
-      "against",
-      "tractor",
-      "where",
-      "two"
+      "of",
+      "tough",
+      "tractor"
      ],
      "nwf": [
-      "gome",
-      "plee",
-      "sape",
-      "hape"
+      "zail",
+      "vait",
+      "mune",
+      "vope"
      ],
      "every": 6,
-     "seed": 10468
+     "seed": 10654
     }
    ]
   },
@@ -5109,97 +5109,97 @@
     {
      "day": 1,
      "wrf": [
-      "sugar",
-      "are",
-      "people",
-      "been",
-      "instruct",
-      "smith"
+      "were",
+      "to",
+      "have",
+      "mitt",
+      "flex",
+      "would"
      ],
      "nwf": [
-      "chail",
-      "gome",
-      "dake",
-      "feap"
+      "vait",
+      "noab",
+      "vope",
+      "nube"
      ],
      "every": 10,
-     "seed": 10495
+     "seed": 10681
     },
     {
      "day": 2,
      "wrf": [
-      "miss",
-      "once",
-      "sure",
-      "to",
-      "tough",
-      "the"
+      "built",
+      "they",
+      "people",
+      "done",
+      "a",
+      "what"
      ],
      "nwf": [
-      "snay",
-      "mipe",
-      "treep",
-      "meep"
+      "sloam",
+      "jeam",
+      "hape",
+      "yupe"
      ],
      "every": 9,
-     "seed": 10496
+     "seed": 10682
     },
     {
      "day": 3,
      "wrf": [
-      "deflect",
-      "your",
-      "there",
-      "have",
-      "should",
-      "any"
+      "spec",
+      "could",
+      "friend",
+      "says",
+      "great",
+      "was"
      ],
      "nwf": [
-      "jate",
-      "plame",
-      "daim",
-      "noab"
+      "stoap",
+      "sape",
+      "plee",
+      "zail"
      ],
      "every": 8,
-     "seed": 10497
+     "seed": 10683
     },
     {
      "day": 4,
      "wrf": [
-      "where",
-      "respect",
-      "said",
-      "was",
-      "walk",
-      "construct"
+      "against",
+      "sugar",
+      "once",
+      "come",
+      "you",
+      "many"
      ],
      "nwf": [
-      "vope",
-      "nube",
-      "jeam",
-      "zail"
+      "treep",
+      "yobe",
+      "zide",
+      "mune"
      ],
      "every": 7,
-     "seed": 10498
+     "seed": 10684
     },
     {
      "day": 5,
      "wrf": [
-      "reflect",
-      "could",
-      "though",
       "again",
-      "spec",
-      "were"
+      "enough",
+      "buy",
+      "reject",
+      "gone",
+      "the"
      ],
      "nwf": [
-      "sape",
-      "zide",
-      "hape",
-      "yupe"
+      "meep",
+      "fape",
+      "plame",
+      "sween"
      ],
      "every": 6,
-     "seed": 10499
+     "seed": 10685
     }
    ]
   },
@@ -5222,97 +5222,97 @@
     {
      "day": 1,
      "wrf": [
-      "could",
-      "what",
-      "cure",
-      "says",
-      "gone",
-      "buy"
+      "some",
+      "again",
+      "audio",
+      "come",
+      "been",
+      "cur"
      ],
      "nwf": [
-      "vait",
-      "daim",
-      "yobe",
-      "meep"
+      "plee",
+      "goam",
+      "vope",
+      "dake"
      ],
      "every": 10,
-     "seed": 10526
+     "seed": 10712
     },
     {
      "day": 2,
      "wrf": [
-      "they",
-      "does",
-      "cursive",
-      "against",
-      "do",
-      "friend"
+      "invert",
+      "where",
+      "said",
+      "enough",
+      "graduate",
+      "cure"
      ],
      "nwf": [
-      "feap",
-      "zail",
-      "jeam",
-      "mipe"
+      "sloam",
+      "jate",
+      "zide",
+      "stoap"
      ],
      "every": 9,
-     "seed": 10527
+     "seed": 10713
     },
     {
      "day": 3,
      "wrf": [
-      "conduct",
-      "enough",
-      "people",
-      "have",
-      "are",
-      "though"
+      "vert",
+      "progress",
+      "tough",
+      "one",
+      "sugar",
+      "you"
      ],
      "nwf": [
-      "fape",
-      "mune",
-      "sape",
-      "nube"
+      "sween",
+      "mipe",
+      "tive",
+      "meep"
      ],
      "every": 8,
-     "seed": 10528
+     "seed": 10714
     },
     {
      "day": 4,
      "wrf": [
-      "walk",
-      "your",
-      "any",
-      "audience",
-      "would",
-      "their"
+      "people",
+      "have",
+      "buy",
+      "friend",
+      "do",
+      "to"
      ],
      "nwf": [
-      "sloam",
-      "dake",
-      "vope",
-      "gome"
+      "fape",
+      "snay",
+      "vait",
+      "plame"
      ],
      "every": 7,
-     "seed": 10529
+     "seed": 10715
     },
     {
      "day": 5,
      "wrf": [
-      "was",
-      "where",
-      "video",
-      "again",
-      "once",
-      "a"
+      "grad",
+      "vis",
+      "cursive",
+      "built",
+      "says",
+      "once"
      ],
      "nwf": [
-      "tive",
-      "jate",
-      "stoap",
-      "noab"
+      "hape",
+      "sape",
+      "mune",
+      "nube"
      ],
      "every": 6,
-     "seed": 10530
+     "seed": 10716
     }
    ]
   },
@@ -5336,96 +5336,96 @@
      "day": 1,
      "wrf": [
       "tear",
-      "ear",
-      "smear",
-      "to",
-      "do",
-      "built"
+      "pear",
+      "their",
+      "ure",
+      "would",
+      "jar"
      ],
      "nwf": [
-      "noab",
-      "snay",
+      "yupe",
+      "treep",
       "yobe",
-      "jeam"
+      "vope"
      ],
      "every": 10,
-     "seed": 10557
+     "seed": 10743
     },
     {
      "day": 2,
      "wrf": [
-      "hard",
-      "their",
-      "far",
-      "enough",
-      "sugar",
-      "car"
+      "clear",
+      "was",
+      "do",
+      "tar",
+      "people",
+      "there"
      ],
      "nwf": [
-      "hape",
-      "sape",
-      "stoap",
-      "vait"
+      "snay",
+      "dake",
+      "gome",
+      "stoap"
      ],
      "every": 9,
-     "seed": 10558
+     "seed": 10744
     },
     {
      "day": 3,
      "wrf": [
-      "near",
-      "wear",
-      "says",
+      "guard",
+      "should",
+      "gone",
+      "done",
       "does",
-      "there",
-      "magic"
+      "card"
      ],
      "nwf": [
-      "vope",
-      "yupe",
       "zail",
-      "tive"
+      "noab",
+      "tive",
+      "fape"
      ],
      "every": 8,
-     "seed": 10559
+     "seed": 10745
     },
     {
      "day": 4,
      "wrf": [
-      "interstate",
-      "rear",
-      "where",
-      "guard",
-      "tar",
-      "par"
+      "were",
+      "fear",
+      "of",
+      "gear",
+      "could",
+      "tough"
      ],
      "nwf": [
-      "dake",
-      "treep",
-      "nube",
-      "chail"
+      "plee",
+      "mipe",
+      "sween",
+      "zide"
      ],
      "every": 7,
-     "seed": 10560
+     "seed": 10746
     },
     {
      "day": 5,
      "wrf": [
-      "fear",
-      "would",
-      "of",
-      "friend",
-      "famous",
-      "any"
+      "two",
+      "hard",
+      "lure",
+      "sure",
+      "hear",
+      "again"
      ],
      "nwf": [
-      "goam",
-      "plee",
-      "fape",
-      "gome"
+      "plame",
+      "sloam",
+      "jate",
+      "daim"
      ],
      "every": 6,
-     "seed": 10561
+     "seed": 10747
     }
    ]
   },
@@ -5448,97 +5448,97 @@
     {
      "day": 1,
      "wrf": [
-      "their",
+      "though",
+      "radio",
+      "where",
+      "come",
       "should",
-      "does",
-      "to",
-      "people",
-      "once"
+      "to"
      ],
      "nwf": [
-      "plame",
-      "zide",
-      "vait",
-      "treep"
+      "yobe",
+      "mune",
+      "hape",
+      "fape"
      ],
      "every": 10,
-     "seed": 10588
+     "seed": 10774
     },
     {
      "day": 2,
      "wrf": [
-      "some",
-      "of",
       "lion",
-      "any",
-      "buy",
-      "great"
+      "build",
+      "they",
+      "are",
+      "walk",
+      "people"
      ],
      "nwf": [
-      "jate",
-      "chail",
-      "snay",
-      "daim"
+      "tive",
+      "goam",
+      "sween",
+      "jeam"
      ],
      "every": 9,
-     "seed": 10589
+     "seed": 10775
     },
     {
      "day": 3,
      "wrf": [
       "you",
-      "sure",
-      "were",
-      "do",
-      "there",
-      "was"
+      "poem",
+      "what",
+      "once",
+      "have",
+      "would"
      ],
      "nwf": [
-      "dake",
-      "noab",
-      "mipe",
-      "yobe"
+      "zide",
+      "gome",
+      "treep",
+      "zail"
      ],
      "every": 8,
-     "seed": 10590
+     "seed": 10776
     },
     {
      "day": 4,
      "wrf": [
+      "sure",
+      "diet",
+      "buy",
       "enough",
-      "piano",
-      "sugar",
-      "walk",
-      "though",
-      "where"
+      "friend",
+      "great"
      ],
      "nwf": [
+      "chail",
       "sloam",
-      "jeam",
-      "stoap",
-      "yupe"
+      "dake",
+      "meep"
      ],
      "every": 7,
-     "seed": 10591
+     "seed": 10777
     },
     {
      "day": 5,
      "wrf": [
-      "duet",
-      "been",
-      "build",
-      "friend",
-      "would",
-      "done"
+      "built",
+      "were",
+      "gone",
+      "could",
+      "any",
+      "one"
      ],
      "nwf": [
-      "mune",
-      "tive",
-      "fape",
-      "sape"
+      "noab",
+      "stoap",
+      "daim",
+      "feap"
      ],
      "every": 6,
-     "seed": 10592
+     "seed": 10778
     }
    ]
   },
@@ -5561,97 +5561,97 @@
     {
      "day": 1,
      "wrf": [
-      "against",
-      "ruin",
-      "true",
+      "weird",
+      "glued",
+      "quiet",
       "come",
-      "guilt",
-      "sleigh"
+      "glue",
+      "says"
      ],
      "nwf": [
-      "sape",
-      "meep",
-      "zide",
-      "mipe"
+      "gome",
+      "hape",
+      "plame",
+      "daim"
      ],
      "every": 10,
-     "seed": 10619
+     "seed": 10805
     },
     {
      "day": 2,
      "wrf": [
-      "walk",
-      "great",
-      "blues",
       "two",
-      "new",
-      "one"
+      "ceiling",
+      "true",
+      "the",
+      "one",
+      "cruise"
      ],
      "nwf": [
-      "jate",
-      "vope",
-      "nube",
-      "plame"
+      "zide",
+      "snay",
+      "treep",
+      "fape"
      ],
      "every": 9,
-     "seed": 10620
+     "seed": 10806
     },
     {
      "day": 3,
      "wrf": [
-      "people",
-      "are",
-      "weigh",
-      "screw",
-      "quib",
-      "news"
+      "new",
+      "cue",
+      "news",
+      "a",
+      "walk",
+      "neigh"
      ],
      "nwf": [
-      "gome",
-      "vait",
-      "jeam",
-      "stoap"
+      "tive",
+      "stoap",
+      "meep",
+      "noab"
      ],
      "every": 8,
-     "seed": 10621
+     "seed": 10807
     },
     {
      "day": 4,
      "wrf": [
-      "view",
-      "quip",
-      "again",
-      "the",
-      "fruit",
-      "could"
+      "grew",
+      "eighth",
+      "plew",
+      "threw",
+      "quilt",
+      "receive"
      ],
      "nwf": [
-      "treep",
-      "sloam",
-      "sween",
-      "hape"
+      "zail",
+      "vait",
+      "vope",
+      "sween"
      ],
      "every": 7,
-     "seed": 10622
+     "seed": 10808
     },
     {
      "day": 5,
      "wrf": [
-      "quit",
-      "quick",
-      "chew",
-      "crew",
-      "fluid",
-      "bruise"
+      "tough",
+      "knew",
+      "said",
+      "have",
+      "weigh",
+      "juice"
      ],
      "nwf": [
-      "yupe",
-      "zail",
-      "noab",
-      "dake"
+      "goam",
+      "mipe",
+      "jeam",
+      "yupe"
      ],
      "every": 6,
-     "seed": 10623
+     "seed": 10809
     }
    ]
   },
@@ -5674,97 +5674,97 @@
     {
      "day": 1,
      "wrf": [
-      "of",
-      "enough",
-      "many",
-      "buy",
-      "some",
-      "once"
+      "impossible",
+      "to",
+      "walk",
+      "they",
+      "have",
+      "were"
      ],
      "nwf": [
-      "sape",
-      "daim",
-      "plee",
-      "fape"
+      "zide",
+      "jate",
+      "stoap",
+      "feap"
      ],
      "every": 10,
-     "seed": 10650
+     "seed": 10836
     },
     {
      "day": 2,
      "wrf": [
+      "guy",
+      "would",
+      "a",
+      "gone",
       "says",
-      "illegible",
-      "against",
-      "build",
-      "sugar",
-      "you"
+      "the"
      ],
      "nwf": [
-      "snay",
+      "fape",
       "treep",
-      "feap",
-      "plame"
+      "vait",
+      "vope"
      ],
      "every": 9,
-     "seed": 10651
+     "seed": 10837
     },
     {
      "day": 3,
      "wrf": [
-      "were",
-      "have",
-      "sure",
-      "impolite",
-      "built",
-      "the"
+      "build",
+      "irregular",
+      "again",
+      "once",
+      "comb",
+      "come"
      ],
      "nwf": [
-      "zide",
-      "yobe",
-      "mipe",
-      "jeam"
+      "meep",
+      "snay",
+      "chail",
+      "nube"
      ],
      "every": 8,
-     "seed": 10652
+     "seed": 10838
     },
     {
      "day": 4,
      "wrf": [
-      "connect",
-      "illegal",
-      "they",
-      "come",
-      "was",
-      "your"
+      "been",
+      "against",
+      "you",
+      "impolite",
+      "sure",
+      "two"
      ],
      "nwf": [
-      "tive",
-      "sloam",
-      "meep",
-      "stoap"
+      "daim",
+      "sape",
+      "zail",
+      "mune"
      ],
      "every": 7,
-     "seed": 10653
+     "seed": 10839
     },
     {
      "day": 5,
      "wrf": [
-      "do",
-      "comb",
-      "what",
-      "tough",
-      "compare",
-      "any"
+      "though",
+      "illegible",
+      "ill",
+      "illiterate",
+      "could",
+      "compare"
      ],
      "nwf": [
-      "zail",
-      "vait",
-      "mune",
-      "vope"
+      "plee",
+      "goam",
+      "hape",
+      "sloam"
      ],
      "every": 6,
-     "seed": 10654
+     "seed": 10840
     }
    ]
   },
@@ -5787,97 +5787,97 @@
     {
      "day": 1,
      "wrf": [
-      "of",
-      "where",
-      "sugar",
-      "have",
-      "friend",
-      "the"
+      "any",
+      "sure",
+      "would",
+      "delicious",
+      "walk",
+      "once"
      ],
      "nwf": [
-      "vait",
-      "noab",
-      "vope",
-      "nube"
+      "jate",
+      "chail",
+      "mipe",
+      "treep"
      ],
      "every": 10,
-     "seed": 10681
+     "seed": 10867
     },
     {
      "day": 2,
      "wrf": [
-      "a",
-      "their",
+      "ambitious",
+      "have",
+      "come",
       "tough",
-      "walk",
-      "great",
-      "what"
+      "built",
+      "magician"
      ],
      "nwf": [
-      "sloam",
-      "jeam",
-      "hape",
-      "yupe"
+      "dake",
+      "yupe",
+      "plee",
+      "stoap"
      ],
      "every": 9,
-     "seed": 10682
+     "seed": 10868
     },
     {
      "day": 3,
      "wrf": [
-      "though",
-      "once",
-      "built",
-      "does",
-      "people",
-      "guy"
+      "cautious",
+      "musician",
+      "precious",
+      "some",
+      "were",
+      "been"
      ],
      "nwf": [
-      "stoap",
-      "sape",
-      "plee",
-      "zail"
+      "feap",
+      "sween",
+      "sloam",
+      "hape"
      ],
      "every": 8,
-     "seed": 10683
+     "seed": 10869
     },
     {
      "day": 4,
      "wrf": [
-      "again",
-      "was",
-      "partial",
-      "social",
-      "should",
-      "said"
+      "your",
+      "great",
+      "said",
+      "though",
+      "could",
+      "social"
      ],
      "nwf": [
-      "treep",
+      "meep",
       "yobe",
-      "zide",
-      "mune"
+      "plame",
+      "tive"
      ],
      "every": 7,
-     "seed": 10684
+     "seed": 10870
     },
     {
      "day": 5,
      "wrf": [
-      "were",
-      "essential",
-      "delicious",
-      "they",
-      "there",
-      "one"
+      "where",
+      "says",
+      "people",
+      "again",
+      "build",
+      "to"
      ],
      "nwf": [
-      "meep",
-      "fape",
-      "plame",
-      "sween"
+      "goam",
+      "vait",
+      "jeam",
+      "zail"
      ],
      "every": 6,
-     "seed": 10685
+     "seed": 10871
     }
    ]
   },
@@ -5900,97 +5900,97 @@
     {
      "day": 1,
      "wrf": [
-      "omitted",
-      "your",
-      "people",
-      "to",
-      "occurred",
-      "again"
+      "once",
+      "come",
+      "says",
+      "preferred",
+      "should",
+      "occurred"
      ],
      "nwf": [
-      "plee",
-      "goam",
-      "vope",
-      "dake"
+      "zide",
+      "mune",
+      "sween",
+      "vope"
      ],
      "every": 10,
-     "seed": 10712
+     "seed": 10898
     },
     {
      "day": 2,
      "wrf": [
-      "been",
-      "were",
-      "of",
-      "are",
-      "have",
-      "does"
+      "enough",
+      "where",
+      "some",
+      "the",
+      "could",
+      "sugar"
      ],
      "nwf": [
-      "sloam",
-      "jate",
-      "zide",
-      "stoap"
+      "stoap",
+      "gome",
+      "snay",
+      "feap"
      ],
      "every": 9,
-     "seed": 10713
+     "seed": 10899
     },
     {
      "day": 3,
      "wrf": [
-      "was",
+      "any",
       "beginning",
-      "a",
-      "guy",
+      "one",
+      "walk",
       "forgetting",
-      "said"
+      "people"
      ],
      "nwf": [
-      "sween",
-      "mipe",
-      "tive",
-      "meep"
+      "jate",
+      "chail",
+      "goam",
+      "tive"
      ],
      "every": 8,
-     "seed": 10714
+     "seed": 10900
     },
     {
      "day": 4,
      "wrf": [
-      "should",
-      "though",
-      "done",
-      "walk",
-      "happened",
-      "visiting"
+      "two",
+      "said",
+      "many",
+      "great",
+      "does",
+      "a"
      ],
      "nwf": [
-      "fape",
-      "snay",
-      "vait",
-      "plame"
+      "daim",
+      "zail",
+      "sloam",
+      "mipe"
      ],
      "every": 7,
-     "seed": 10715
+     "seed": 10901
     },
     {
      "day": 5,
      "wrf": [
-      "tough",
-      "sugar",
-      "buy",
-      "where",
-      "preferred",
-      "the"
+      "guy",
+      "you",
+      "omitted",
+      "do",
+      "your",
+      "happened"
      ],
      "nwf": [
-      "hape",
+      "plee",
       "sape",
-      "mune",
-      "nube"
+      "treep",
+      "dake"
      ],
      "every": 6,
-     "seed": 10716
+     "seed": 10902
     }
    ]
   },
@@ -6013,97 +6013,97 @@
     {
      "day": 1,
      "wrf": [
-      "schwa",
-      "tech",
-      "launch",
-      "notch",
-      "cheek",
-      "chart"
+      "branch",
+      "match",
+      "check",
+      "caught",
+      "graph",
+      "come"
      ],
      "nwf": [
-      "varn",
-      "zoob",
-      "nurn",
-      "murn"
+      "zaw",
+      "cend",
+      "wrast",
+      "zurn"
      ],
      "every": 10,
-     "seed": 10743
+     "seed": 10929
     },
     {
      "day": 2,
      "wrf": [
-      "pitch",
-      "reach",
-      "lunch",
-      "chef",
-      "once",
-      "wart"
+      "have",
+      "chase",
+      "thorough",
+      "alphabet",
+      "tough",
+      "were"
      ],
      "nwf": [
-      "jumb",
-      "vorn",
-      "knim",
-      "kirt"
+      "blook",
+      "knog",
+      "noosh",
+      "gnad"
      ],
      "every": 9,
-     "seed": 10744
+     "seed": 10930
     },
     {
      "day": 3,
      "wrf": [
-      "done",
-      "chip",
-      "they",
-      "such",
-      "chair",
-      "though"
+      "two",
+      "notch",
+      "any",
+      "ditch",
+      "church",
+      "heart"
      ],
      "nwf": [
-      "zurn",
-      "zaw",
-      "choud",
-      "snou"
+      "varn",
+      "fewn",
+      "zirt",
+      "kirt"
      ],
      "every": 8,
-     "seed": 10745
+     "seed": 10931
     },
     {
      "day": 4,
      "wrf": [
-      "ditch",
-      "chess",
-      "march",
-      "chat",
-      "character",
-      "to"
+      "much",
+      "sugar",
+      "where",
+      "beach",
+      "sure",
+      "bunch"
      ],
      "nwf": [
-      "noosh",
       "gnip",
-      "wrim",
-      "jorn"
+      "plort",
+      "vaut",
+      "choud"
      ],
      "every": 7,
-     "seed": 10746
+     "seed": 10932
     },
     {
      "day": 5,
      "wrf": [
-      "school",
-      "sugar",
-      "could",
-      "should",
-      "ranch",
-      "there"
+      "does",
+      "the",
+      "country",
+      "choice",
+      "chaos",
+      "chill"
      ],
      "nwf": [
-      "nodge",
-      "wrast",
-      "zead",
-      "heab"
+      "gern",
+      "jumb",
+      "phem",
+      "zead"
      ],
      "every": 6,
-     "seed": 10747
+     "seed": 10933
     }
    ]
   },
@@ -6126,97 +6126,97 @@
     {
      "day": 1,
      "wrf": [
-      "again",
-      "were",
-      "come",
-      "boy",
-      "lay",
-      "maya"
+      "thorough",
+      "ways",
+      "year",
+      "maya",
+      "young",
+      "laying"
      ],
      "nwf": [
-      "jorn",
-      "floy",
-      "gnad",
-      "jewt"
+      "gern",
+      "kirt",
+      "zirt",
+      "frotch"
      ],
      "every": 10,
-     "seed": 10774
+     "seed": 10960
     },
     {
      "day": 2,
      "wrf": [
-      "fry",
-      "young",
-      "dying",
-      "yard",
-      "wart",
-      "yell"
+      "where",
+      "flying",
+      "come",
+      "do",
+      "people",
+      "days"
      ],
      "nwf": [
-      "plort",
-      "vorn",
-      "noosh",
-      "plitch"
+      "knog",
+      "gice",
+      "lomb",
+      "shurt"
      ],
      "every": 9,
-     "seed": 10775
+     "seed": 10961
     },
     {
      "day": 3,
      "wrf": [
-      "spray",
-      "nylon",
-      "beyond",
-      "rhythm",
-      "one",
-      "fray"
+      "would",
+      "quay",
+      "dying",
+      "of",
+      "paying",
+      "the"
      ],
      "nwf": [
-      "blurn",
-      "zurn",
-      "kirt",
-      "frotch"
+      "gead",
+      "ferp",
+      "nurn",
+      "cend"
      ],
      "every": 8,
-     "seed": 10776
+     "seed": 10962
     },
     {
      "day": 4,
      "wrf": [
-      "saying",
-      "royal",
-      "was",
-      "does",
-      "stays",
-      "layer"
+      "gone",
+      "hydrant",
+      "cry",
+      "have",
+      "fray",
+      "fought"
      ],
      "nwf": [
-      "gern",
-      "lomb",
-      "nurn",
-      "murn"
+      "plitch",
+      "jorn",
+      "zaw",
+      "jewt"
      ],
      "every": 7,
-     "seed": 10777
+     "seed": 10963
     },
     {
      "day": 5,
      "wrf": [
-      "may",
-      "rhyme",
-      "loyal",
-      "paying",
-      "trying",
-      "would"
+      "was",
+      "saying",
+      "key",
+      "sly",
+      "two",
+      "eye"
      ],
      "nwf": [
-      "varn",
+      "knim",
       "choud",
-      "zoob",
-      "cend"
+      "shauk",
+      "gnad"
      ],
      "every": 6,
-     "seed": 10778
+     "seed": 10964
     }
    ]
   },
@@ -6239,97 +6239,97 @@
     {
      "day": 1,
      "wrf": [
-      "your",
-      "rhino",
-      "again",
-      "what",
-      "could",
-      "rhyme"
+      "would",
+      "though",
+      "once",
+      "psyche",
+      "walk",
+      "again"
      ],
      "nwf": [
-      "blurn",
-      "smort",
-      "gipe",
-      "zead"
+      "murn",
+      "voit",
+      "choud",
+      "gern"
      ],
      "every": 10,
-     "seed": 10805
+     "seed": 10991
     },
     {
      "day": 2,
      "wrf": [
-      "one",
-      "fought",
-      "would",
-      "should",
-      "psalm",
-      "to"
+      "sure",
+      "many",
+      "daughter",
+      "psychic",
+      "some",
+      "column"
      ],
      "nwf": [
-      "shurt",
-      "kirt",
-      "zirt",
-      "frotch"
+      "gnad",
+      "jorn",
+      "fewn",
+      "knog"
      ],
      "every": 9,
-     "seed": 10806
+     "seed": 10992
     },
     {
      "day": 3,
      "wrf": [
+      "any",
+      "through",
+      "come",
       "hymn",
-      "though",
-      "the",
-      "does",
-      "said",
-      "been"
+      "you",
+      "rhythm"
      ],
      "nwf": [
+      "blurn",
+      "lomb",
       "noosh",
-      "varn",
-      "jewt",
-      "gnad"
+      "zead"
      ],
      "every": 8,
-     "seed": 10807
+     "seed": 10993
     },
     {
      "day": 4,
      "wrf": [
-      "their",
-      "have",
-      "of",
-      "walk",
-      "column",
-      "psychology"
+      "were",
+      "where",
+      "wart",
+      "against",
+      "thought",
+      "limn"
      ],
      "nwf": [
-      "gnip",
-      "gice",
+      "jewt",
       "nurn",
-      "jumb"
+      "varn",
+      "heab"
      ],
      "every": 7,
-     "seed": 10808
+     "seed": 10994
     },
     {
      "day": 5,
      "wrf": [
-      "two",
-      "rhythm",
-      "through",
-      "great",
-      "bought",
-      "autumn"
+      "solemn",
+      "warm",
+      "done",
+      "country",
+      "of",
+      "thorough"
      ],
      "nwf": [
-      "gead",
-      "zoob",
-      "nodge",
-      "floy"
+      "snou",
+      "shurt",
+      "cend",
+      "kirt"
      ],
      "every": 6,
-     "seed": 10809
+     "seed": 10995
     }
    ]
   },
@@ -6352,97 +6352,97 @@
     {
      "day": 1,
      "wrf": [
-      "country",
-      "have",
-      "there",
-      "would",
-      "gone",
+      "sugar",
+      "built",
+      "where",
+      "paragraph",
+      "two",
       "the"
      ],
      "nwf": [
-      "kirt",
-      "fewn",
-      "lomb",
-      "plar"
+      "shauk",
+      "ferp",
+      "snou",
+      "smort"
      ],
      "every": 10,
-     "seed": 10836
+     "seed": 11022
     },
     {
      "day": 2,
      "wrf": [
-      "guy",
-      "phon",
-      "does",
-      "their",
-      "were",
-      "was"
+      "do",
+      "biography",
+      "done",
+      "wart",
+      "they",
+      "against"
      ],
      "nwf": [
-      "snou",
       "jorn",
-      "jewt",
-      "choud"
+      "wrim",
+      "gipe",
+      "gnip"
      ],
      "every": 9,
-     "seed": 10837
+     "seed": 11023
     },
     {
      "day": 3,
      "wrf": [
-      "against",
-      "should",
-      "one",
-      "paragraph",
-      "friend",
-      "your"
+      "said",
+      "once",
+      "daughter",
+      "phone",
+      "tough",
+      "bought"
      ],
      "nwf": [
-      "blurn",
-      "phem",
-      "voit",
-      "ferp"
+      "jumb",
+      "choud",
+      "zurn",
+      "nodge"
      ],
      "every": 8,
-     "seed": 10838
+     "seed": 11024
     },
     {
      "day": 4,
      "wrf": [
-      "tele",
-      "tough",
-      "biography",
-      "enough",
+      "biome",
+      "sure",
+      "walk",
       "caught",
-      "great"
+      "fought",
+      "telescope"
      ],
      "nwf": [
-      "cend",
-      "gipe",
-      "plitch",
-      "blook"
+      "noosh",
+      "jewt",
+      "vaut",
+      "lomb"
      ],
      "every": 7,
-     "seed": 10839
+     "seed": 11025
     },
     {
      "day": 5,
      "wrf": [
-      "photo",
-      "daughter",
-      "build",
-      "graph",
-      "heart",
-      "to"
+      "their",
+      "country",
+      "photograph",
+      "enough",
+      "was",
+      "guy"
      ],
      "nwf": [
-      "knog",
       "gern",
-      "vaut",
-      "nurn"
+      "plort",
+      "varn",
+      "knog"
      ],
      "every": 6,
-     "seed": 10840
+     "seed": 11026
     }
    ]
   },
@@ -6465,97 +6465,97 @@
     {
      "day": 1,
      "wrf": [
-      "your",
-      "chin",
-      "sure",
-      "does",
-      "rough",
-      "through"
+      "watch",
+      "have",
+      "guy",
+      "built",
+      "which",
+      "should"
      ],
      "nwf": [
-      "shurt",
-      "gipe",
-      "murn",
-      "zaw"
+      "phem",
+      "gnad",
+      "zurn",
+      "snou"
      ],
      "every": 10,
-     "seed": 10867
+     "seed": 11053
     },
     {
      "day": 2,
      "wrf": [
-      "people",
-      "chandelier",
-      "chop",
-      "sound",
-      "dough",
-      "their"
+      "two",
+      "reach",
+      "patch",
+      "chute",
+      "change",
+      "choose"
      ],
      "nwf": [
-      "knog",
-      "nodge",
-      "choud",
-      "gnad"
+      "smort",
+      "floy",
+      "murn",
+      "plar"
      ],
      "every": 9,
-     "seed": 10868
+     "seed": 11054
     },
     {
      "day": 3,
      "wrf": [
-      "friend",
-      "school",
-      "our",
-      "reach",
-      "once",
-      "hour"
+      "tch",
+      "dough",
+      "where",
+      "to",
+      "loud",
+      "charge"
      ],
      "nwf": [
-      "fewn",
-      "knim",
-      "noosh",
-      "zurn"
+      "shauk",
+      "wrim",
+      "blook",
+      "plitch"
      ],
      "every": 8,
-     "seed": 10869
+     "seed": 11055
     },
     {
      "day": 4,
      "wrf": [
-      "witch",
-      "guy",
-      "much",
-      "brochure",
-      "house",
-      "ground"
+      "thorough",
+      "what",
+      "porch",
+      "was",
+      "once",
+      "sure"
      ],
      "nwf": [
-      "heab",
-      "blurn",
-      "voit",
-      "snou"
+      "cend",
+      "nodge",
+      "nurn",
+      "blurn"
      ],
      "every": 7,
-     "seed": 10870
+     "seed": 11056
     },
     {
      "day": 5,
      "wrf": [
-      "chair",
-      "chance",
-      "branch",
-      "any",
-      "stretch",
-      "one"
+      "round",
+      "touch",
+      "found",
+      "coach",
+      "you",
+      "brought"
      ],
      "nwf": [
-      "vorn",
-      "jumb",
-      "plitch",
-      "gead"
+      "varn",
+      "wrast",
+      "frotch",
+      "jewt"
      ],
      "every": 6,
-     "seed": 10871
+     "seed": 11057
     }
    ]
   },
@@ -6578,97 +6578,97 @@
     {
      "day": 1,
      "wrf": [
-      "short",
-      "noon",
-      "work",
-      "our",
-      "who",
-      "grow"
+      "wrote",
+      "love",
+      "floor",
+      "move",
+      "once",
+      "show"
      ],
      "nwf": [
-      "zirt",
-      "shurt",
-      "plitch",
-      "heab"
+      "knog",
+      "vaut",
+      "choud",
+      "nurn"
      ],
      "every": 10,
-     "seed": 10898
+     "seed": 11084
     },
     {
      "day": 2,
      "wrf": [
-      "group",
-      "where",
-      "whole",
-      "door",
-      "are",
-      "come"
+      "money",
+      "short",
+      "build",
+      "south",
+      "there",
+      "son"
      ],
      "nwf": [
+      "nodge",
+      "jumb",
       "gice",
-      "murn",
-      "blook",
-      "zead"
+      "gern"
      ],
      "every": 9,
-     "seed": 10899
+     "seed": 11085
     },
     {
      "day": 3,
      "wrf": [
-      "of",
-      "lost",
-      "pot",
-      "house",
-      "some",
-      "hold"
+      "both",
+      "fought",
+      "doing",
+      "door",
+      "hot",
+      "told"
      ],
      "nwf": [
-      "frotch",
-      "ferp",
-      "nodge",
-      "blurn"
+      "blook",
+      "fewn",
+      "kirt",
+      "jewt"
      ],
      "every": 8,
-     "seed": 10900
+     "seed": 11086
     },
     {
      "day": 4,
      "wrf": [
-      "ground",
-      "snow",
-      "sound",
-      "four",
-      "have",
-      "do"
+      "down",
+      "long",
+      "tough",
+      "worth",
+      "know",
+      "close"
      ],
      "nwf": [
-      "gnad",
-      "snou",
-      "lomb",
-      "gnip"
+      "varn",
+      "murn",
+      "knim",
+      "vorn"
      ],
      "every": 7,
-     "seed": 10901
+     "seed": 11087
     },
     {
      "day": 5,
      "wrf": [
-      "son",
-      "your",
-      "front",
-      "wart",
-      "food",
-      "tough"
+      "home",
+      "row",
+      "now",
+      "great",
+      "most",
+      "too"
      ],
      "nwf": [
-      "phem",
-      "gead",
-      "zurn",
-      "vorn"
+      "gnad",
+      "zead",
+      "wrast",
+      "cend"
      ],
      "every": 6,
-     "seed": 10902
+     "seed": 11088
     }
    ]
   },
@@ -6691,97 +6691,97 @@
     {
      "day": 1,
      "wrf": [
-      "what",
-      "people",
-      "world",
-      "should",
-      "guy",
-      "warm"
+      "build",
+      "gone",
+      "some",
+      "again",
+      "worm",
+      "worst"
      ],
      "nwf": [
-      "zaw",
-      "cend",
-      "wrast",
-      "zurn"
+      "voit",
+      "gnad",
+      "snou",
+      "jumb"
      ],
      "every": 10,
-     "seed": 10929
+     "seed": 11115
     },
     {
      "day": 2,
      "wrf": [
-      "fought",
-      "two",
-      "done",
-      "are",
-      "country",
-      "double"
+      "have",
+      "to",
+      "of",
+      "should",
+      "caught",
+      "two"
      ],
      "nwf": [
-      "blook",
-      "knog",
-      "noosh",
-      "gnad"
+      "ferp",
+      "blurn",
+      "phem",
+      "knim"
      ],
      "every": 9,
-     "seed": 10930
+     "seed": 11116
     },
     {
      "day": 3,
      "wrf": [
-      "thought",
-      "a",
+      "homework",
+      "you",
+      "been",
+      "guy",
       "swore",
-      "though",
-      "does",
-      "built"
+      "says"
      ],
      "nwf": [
-      "varn",
-      "fewn",
-      "zirt",
+      "jewt",
+      "gice",
+      "jorn",
       "kirt"
      ],
      "every": 8,
-     "seed": 10931
+     "seed": 11117
     },
     {
      "day": 4,
      "wrf": [
-      "build",
+      "works",
+      "worry",
       "worse",
-      "bought",
-      "come",
-      "friend",
-      "the"
+      "buy",
+      "could",
+      "many"
      ],
      "nwf": [
-      "gnip",
-      "plort",
-      "vaut",
-      "choud"
+      "zurn",
+      "gern",
+      "wrim",
+      "wrast"
      ],
      "every": 7,
-     "seed": 10932
+     "seed": 11118
     },
     {
      "day": 5,
      "wrf": [
-      "to",
-      "walk",
-      "thorough",
-      "buy",
-      "through",
-      "many"
+      "was",
+      "people",
+      "the",
+      "country",
+      "come",
+      "heart"
      ],
      "nwf": [
-      "gern",
-      "jumb",
-      "phem",
-      "zead"
+      "vorn",
+      "gipe",
+      "choud",
+      "zirt"
      ],
      "every": 6,
-     "seed": 10933
+     "seed": 11119
     }
    ]
   },
@@ -6804,97 +6804,97 @@
     {
      "day": 1,
      "wrf": [
-      "what",
-      "built",
-      "does",
-      "once",
-      "one",
-      "cage"
+      "there",
+      "sugar",
+      "stage",
+      "distance",
+      "could",
+      "goal"
      ],
      "nwf": [
-      "gern",
-      "kirt",
-      "zirt",
-      "frotch"
+      "jewt",
+      "vorn",
+      "jumb",
+      "wrim"
      ],
      "every": 10,
-     "seed": 10960
+     "seed": 11146
     },
     {
      "day": 2,
      "wrf": [
-      "warm",
-      "many",
-      "fought",
-      "bal",
-      "natural",
-      "there"
+      "garbage",
+      "trial",
+      "they",
+      "against",
+      "final",
+      "glance"
      ],
      "nwf": [
-      "knog",
-      "gice",
-      "lomb",
-      "shurt"
+      "ferp",
+      "murn",
+      "jorn",
+      "shauk"
      ],
      "every": 9,
-     "seed": 10961
+     "seed": 11147
     },
     {
      "day": 3,
      "wrf": [
-      "again",
-      "dance",
-      "where",
-      "country",
-      "fence",
-      "come"
+      "you",
+      "real",
+      "hence",
+      "would",
+      "meal",
+      "a"
      ],
      "nwf": [
-      "gead",
-      "ferp",
-      "nurn",
-      "cend"
+      "zurn",
+      "zead",
+      "zoob",
+      "zirt"
      ],
      "every": 8,
-     "seed": 10962
+     "seed": 11148
     },
     {
      "day": 4,
      "wrf": [
-      "steal",
-      "caught",
-      "any",
-      "chance",
-      "dial",
-      "wage"
+      "cage",
+      "says",
+      "build",
+      "bal",
+      "pal",
+      "was"
      ],
      "nwf": [
-      "plitch",
-      "jorn",
+      "nodge",
+      "gead",
       "zaw",
-      "jewt"
+      "gnip"
      ],
      "every": 7,
-     "seed": 10963
+     "seed": 11149
     },
     {
      "day": 5,
      "wrf": [
-      "wart",
-      "glance",
-      "should",
-      "of",
-      "gone",
-      "you"
+      "normal",
+      "sure",
+      "were",
+      "people",
+      "tough",
+      "thought"
      ],
      "nwf": [
-      "knim",
+      "voit",
       "choud",
-      "shauk",
-      "gnad"
+      "knog",
+      "phem"
      ],
      "every": 6,
-     "seed": 10964
+     "seed": 11150
     }
    ]
   },
@@ -6917,97 +6917,97 @@
     {
      "day": 1,
      "wrf": [
-      "were",
-      "naughty",
-      "friend",
-      "though",
-      "said",
-      "sugar"
+      "drought",
+      "nought",
+      "heart",
+      "brought",
+      "sought",
+      "their"
      ],
      "nwf": [
-      "murn",
-      "voit",
-      "choud",
-      "gern"
+      "nurn",
+      "nodge",
+      "vorn",
+      "gnad"
      ],
      "every": 10,
-     "seed": 10991
+     "seed": 11177
     },
     {
      "day": 2,
      "wrf": [
-      "you",
-      "what",
-      "do",
+      "your",
+      "where",
       "would",
-      "bought",
-      "wrought"
+      "caught",
+      "daughter",
+      "been"
      ],
      "nwf": [
-      "gnad",
-      "jorn",
-      "fewn",
-      "knog"
+      "jewt",
+      "varn",
+      "noosh",
+      "jumb"
      ],
      "every": 9,
-     "seed": 10992
+     "seed": 11178
     },
     {
      "day": 3,
      "wrf": [
-      "double",
+      "aught",
+      "what",
       "ought",
-      "was",
-      "gone",
-      "they",
-      "aught"
+      "thorough",
+      "were",
+      "done"
      ],
      "nwf": [
-      "blurn",
-      "lomb",
-      "noosh",
-      "zead"
+      "heab",
+      "zirt",
+      "gnip",
+      "zoob"
      ],
      "every": 8,
-     "seed": 10993
+     "seed": 11179
     },
     {
      "day": 4,
      "wrf": [
-      "slaughter",
-      "the",
-      "should",
-      "guy",
-      "done",
-      "thorough"
+      "taught",
+      "again",
+      "country",
+      "you",
+      "warm",
+      "gone"
      ],
      "nwf": [
-      "jewt",
-      "nurn",
-      "varn",
-      "heab"
+      "plort",
+      "gipe",
+      "gice",
+      "cend"
      ],
      "every": 7,
-     "seed": 10994
+     "seed": 11180
     },
     {
      "day": 5,
      "wrf": [
-      "your",
-      "drought",
-      "says",
-      "heart",
-      "taught",
-      "through"
+      "one",
+      "enough",
+      "many",
+      "thought",
+      "friend",
+      "there"
      ],
      "nwf": [
-      "snou",
-      "shurt",
-      "cend",
-      "kirt"
+      "fewn",
+      "voit",
+      "knim",
+      "frotch"
      ],
      "every": 6,
-     "seed": 10995
+     "seed": 11181
     }
    ]
   }

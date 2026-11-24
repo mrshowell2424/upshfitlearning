@@ -22,6 +22,7 @@
  */
 
 import { readFileSync } from "node:fs";
+import { EXTRA_LESSONS, EXTRA_SCOPE } from "./extra-lessons.mjs";
 
 /** Basic Reading patterns and the scope numbers that place them. */
 const SCOPE = {
@@ -40,6 +41,10 @@ const SCOPE = {
   "ai-ay": "2-05a",
   "ee-ea": "2-05b",
   "oa-ow": "2-05c",
+  // The Hub's own lessons, grouped by sound. Their numbers and their rows both
+  // live in scripts/lib/extra-lessons.mjs, which explains why they are not
+  // written into the export itself.
+  ...EXTRA_SCOPE,
 };
 
 /** OG ids already covered by a Basic Reading pattern above. */
@@ -66,7 +71,7 @@ export function deriveSequence(root = ".") {
   const literal = s.slice(i + "const SK = ".length, s.indexOf("\n    ];", i) + "\n    ]".length);
   const SKF = eval(literal);
 
-  const rows = SKF.map((r) => ({ key: r[0], name: r[1], band: r[2] }));
+  const rows = SKF.concat(EXTRA_LESSONS).map((r) => ({ key: r[0], name: r[1], band: r[2] }));
   global.OG_CONCEPTS.filter((c) => !COVER[c.id] && global.OG_PACKS[c.id]).forEach((c) =>
     rows.push({ key: "og" + c.id, name: c.name, band: "Level " + c.level }),
   );

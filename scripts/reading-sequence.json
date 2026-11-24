@@ -398,6 +398,114 @@
       "wordSource": "spelling"
     },
     {
+      "key": "long-a",
+      "name": "Long a: ai, ay, ea, ey, eigh",
+      "level": 2,
+      "words": [
+        "rain",
+        "play",
+        "break",
+        "they",
+        "eight",
+        "mail",
+        "stay",
+        "great",
+        "weigh",
+        "obey"
+      ],
+      "wordSource": "lesson"
+    },
+    {
+      "key": "long-e",
+      "name": "Long e: ea, ee, ey, ie, ei",
+      "level": 2,
+      "words": [
+        "seat",
+        "feed",
+        "key",
+        "chief",
+        "field",
+        "green",
+        "dream",
+        "money",
+        "piece",
+        "seize"
+      ],
+      "wordSource": "lesson"
+    },
+    {
+      "key": "long-i",
+      "name": "Long i: igh, ie, y",
+      "level": 2,
+      "words": [
+        "night",
+        "light",
+        "high",
+        "pie",
+        "tie",
+        "my",
+        "try",
+        "sky",
+        "right",
+        "cry"
+      ],
+      "wordSource": "lesson"
+    },
+    {
+      "key": "long-o",
+      "name": "Long o: oa, oe, ow",
+      "level": 2,
+      "words": [
+        "boat",
+        "coat",
+        "road",
+        "toe",
+        "snow",
+        "grow",
+        "slow",
+        "soap",
+        "goat",
+        "know"
+      ],
+      "wordSource": "lesson"
+    },
+    {
+      "key": "long-u",
+      "name": "Long u: ue, ew, eu",
+      "level": 2,
+      "words": [
+        "blue",
+        "true",
+        "clue",
+        "stew",
+        "few",
+        "new",
+        "grew",
+        "chew",
+        "due",
+        "dew"
+      ],
+      "wordSource": "lesson"
+    },
+    {
+      "key": "teams-all",
+      "name": "All vowel teams together",
+      "level": 2,
+      "words": [
+        "rain",
+        "seat",
+        "boat",
+        "night",
+        "snow",
+        "blue",
+        "key",
+        "pie",
+        "few",
+        "green"
+      ],
+      "wordSource": "lesson"
+    },
+    {
       "key": "og2-06",
       "name": "Closed syllable exceptions",
       "level": 2,

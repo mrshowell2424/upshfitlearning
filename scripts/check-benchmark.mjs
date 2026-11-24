@@ -73,7 +73,10 @@ function realBySuffix(w, dict) {
   if (/es$/.test(w)) bases.push(w.slice(0, -2));
   if (/ed$/.test(w)) bases.push(w.slice(0, -2), w.slice(0, -1));
   if (/ing$/.test(w)) bases.push(w.slice(0, -3), w.slice(0, -3) + "e");
-  if (/(.)\1(ed|ing)$/.test(w)) bases.push(w.replace(/(.)\1(ed|ing)$/, "$1"));
+  // A doubled consonant before the ending: hopped, running, hottest, bigger.
+  // web2 lists hot and big, never hottest or bigger.
+  if (/(.)\1(ed|ing|est|er)$/.test(w)) bases.push(w.replace(/(.)\1(ed|ing|est|er)$/, "$1"));
+  if (/est$/.test(w)) bases.push(w.slice(0, -3), w.slice(0, -3) + "e");
   if (/er$/.test(w)) bases.push(w.slice(0, -2), w.slice(0, -1));
   if (/y$/.test(w)) bases.push(w.slice(0, -1));
   // funniest and funnier are funny; web2 has neither ending.

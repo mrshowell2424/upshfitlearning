@@ -62,13 +62,50 @@
   "og5-06": "og3-09",
   "og5-07": "ar-or",
   "og5-08": "og3-12",
-  "og5-09": "og2-07"
+  "og5-09": "og2-07",
+  "long-a": "ai-ay",
+  "long-e": "ee-ea",
+  "long-i": "vce",
+  "long-o": "oa-ow",
+  "long-u": "vce",
+  "teams-all": "long-u"
  },
  "spiral": {
-  "1": ["cvc-a", "cvc-mix", "dig", "vce"],
-  "2": ["cvc-mix", "vce", "dig", "blends"],
-  "3": ["vce", "vccv", "ai-ay", "ee-ea", "oa-ow", "ar-or"],
-  "4": ["vccv", "og2-10", "og3-03", "og3-07", "og3-08", "og3-04"],
-  "5": ["og3-03", "og3-07", "og4-05", "og4-01", "og3-12", "og2-10"]
+  "1": [
+   "cvc-a",
+   "cvc-mix",
+   "dig",
+   "vce"
+  ],
+  "2": [
+   "cvc-mix",
+   "vce",
+   "dig",
+   "blends"
+  ],
+  "3": [
+   "vce",
+   "vccv",
+   "ai-ay",
+   "ee-ea",
+   "oa-ow",
+   "ar-or"
+  ],
+  "4": [
+   "vccv",
+   "og2-10",
+   "og3-03",
+   "og3-07",
+   "og3-08",
+   "og3-04"
+  ],
+  "5": [
+   "og3-03",
+   "og3-07",
+   "og4-05",
+   "og4-01",
+   "og3-12",
+   "og2-10"
+  ]
  }
 }

@@ -35,6 +35,19 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { deriveSequence } from "./lib/sequence.mjs";
 import { LESSON_SPANS, lessonSpan } from "./lib/lesson-span.mjs";
 import { packWords, widePool } from "./lib/pack-words.mjs";
+import { EXTRA_LESSONS } from "./lib/extra-lessons.mjs";
+
+/**
+ * The Hub's own lessons carry their words in the row itself.
+ *
+ * They have no spelling bank and no OG pack -- there is no pack for "every
+ * spelling of long a" -- so without this they came out of the sequence with
+ * wordSource "none" and an empty list, which is the page saying it has nothing
+ * honest to show. It has: the ten words are right there in field 6, chosen for
+ * the lesson when it was written.
+ */
+const OWN = new Map(EXTRA_LESSONS.map((r) => [r[0], r[6]]));
+const fromOwn = (key) => OWN.get(key) ?? null;
 
 
 const SPELL = JSON.parse(readFileSync("scripts/reading-spelling.json", "utf8"));
@@ -158,8 +171,14 @@ function topUp(key, words) {
 let toppedTotal = 0;
 let sieved = 0;
 const seq = deriveSequence().map((r) => {
-  const raw = fromSpelling(r.key) ?? fromPack(r.key) ?? [];
-  const source = fromSpelling(r.key) ? "spelling" : fromPack(r.key) ? "pack" : "none";
+  const raw = fromSpelling(r.key) ?? fromPack(r.key) ?? fromOwn(r.key) ?? [];
+  const source = fromSpelling(r.key)
+    ? "spelling"
+    : fromPack(r.key)
+      ? "pack"
+      : fromOwn(r.key)
+        ? "lesson"
+        : "none";
   // Keep only the words that really are examples of this lesson.
   const base = raw.filter((w) => example(r.key, w) || !SPLITS[r.key]?.length);
   sieved += raw.length - base.length;

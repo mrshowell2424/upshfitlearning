@@ -3874,6 +3874,120 @@
     "Add an n at the end.",
     "Change the t to w."
    ]
+  },
+  "long-a": {
+   "start": "say",
+   "words": [
+    "say",
+    "stay",
+    "stray",
+    "spray",
+    "pray",
+    "play",
+    "clay"
+   ],
+   "clues": [
+    "Put a t between the s and the a.",
+    "Put an r between the t and the a.",
+    "Change the t to p.",
+    "Take off the s.",
+    "Change the r to l.",
+    "Change the p to c."
+   ]
+  },
+  "long-e": {
+   "start": "see",
+   "words": [
+    "see",
+    "seed",
+    "feed",
+    "feet",
+    "fee",
+    "free",
+    "tree"
+   ],
+   "clues": [
+    "Add a d at the end.",
+    "Change the s to f.",
+    "Change the d to t.",
+    "Take off the t.",
+    "Put an r between the f and the ee.",
+    "Change the f to t."
+   ]
+  },
+  "long-i": {
+   "start": "high",
+   "words": [
+    "high",
+    "sigh",
+    "sight",
+    "light",
+    "right",
+    "night",
+    "might"
+   ],
+   "clues": [
+    "Change the h to s.",
+    "Add a t at the end.",
+    "Change the s to l.",
+    "Change the l to r.",
+    "Change the r to n.",
+    "Change the n to m."
+   ]
+  },
+  "long-o": {
+   "start": "low",
+   "words": [
+    "low",
+    "slow",
+    "glow",
+    "grow",
+    "crow",
+    "crows"
+   ],
+   "clues": [
+    "Put an s at the front.",
+    "Change the s to g.",
+    "Change the l to r.",
+    "Change the g to c.",
+    "Add an s at the end."
+   ]
+  },
+  "long-u": {
+   "start": "few",
+   "words": [
+    "few",
+    "flew",
+    "blew",
+    "blue",
+    "clue",
+    "glue"
+   ],
+   "clues": [
+    "Put an l between the f and the e.",
+    "Change the f to b.",
+    "Change the ew to ue. It says the same sound.",
+    "Change the b to c.",
+    "Change the c to g."
+   ]
+  },
+  "teams-all": {
+   "start": "seat",
+   "words": [
+    "seat",
+    "seal",
+    "real",
+    "read",
+    "road",
+    "roast"
+   ],
+   "clues": [
+    "Change the t to l.",
+    "Change the s to r.",
+    "Change the l to d.",
+    "Change the ea to oa.",
+    "Put an s between the a and the d, and change the d to t."
+   ]
   }
  }
 }

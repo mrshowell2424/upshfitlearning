@@ -7,8 +7,8 @@
  "concepts": 212,
  "passages": 636,
  "passageLevels": 3,
- "sequence": 62,
- "ladders": 212,
+ "sequence": 68,
+ "ladders": 218,
  "spelling": 53,
  "heartWords": 59,
  "threads": 13,
@@ -16,5 +16,5 @@
  "morphemes": 18,
  "writingPassages": 62,
  "writingTypes": 6,
- "multisyllabicWords": 19140
+ "multisyllabicWords": 19143
 }

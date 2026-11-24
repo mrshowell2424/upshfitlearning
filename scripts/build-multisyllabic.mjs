@@ -161,6 +161,12 @@ function corpus() {
     // Built FROM the bank, so harvesting it back in would feed the bank its
     // own words broken into syllables -- "ti", "ger", "num", "ber".
     "reading-syllable-splits.json",
+    // The daily practice holds made-up words by design, and harvesting it
+    // would teach the bank that vass and zoss are words a child has met. It is
+    // also built FROM this bank by way of the sequence, so reading it back in
+    // makes the bank depend on itself: the syllable splits drifted on every
+    // run until this was added, each rebuild changing the input to the next.
+    "reading-daily-practice.json",
   ]);
   const files = readdirSync("scripts").filter((f) => f.endsWith(".json") && !SKIP.has(f));
   const dirs = ["scripts/articles", "scripts/mysteries"].filter((d) => existsSync(d));
