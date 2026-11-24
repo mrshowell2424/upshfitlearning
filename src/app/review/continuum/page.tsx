@@ -79,7 +79,10 @@ export default async function ContinuumReviewPage({
       <div className="noprint">
         <Header />
       </div>
-      <SignInGate>
+      <SignInGate
+        title="Continuum review"
+        blurb="Five review days for each of the fifteen intervention continuum skills. Free — an account is all it takes."
+      >
         <style>{`
           @page { size: letter portrait; margin: 0.5in; }
           @media print {
