@@ -4701,7 +4701,16 @@ const ADAPTATIONS: Adaptation[] = [
           "padding:1px 3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis';\n" +
           "        const rows = [];\n" +
           "        for (let r = 0; r < CD.perDay; r++) {\n" +
-          "          rows.push({ n: r + 1, cells: CD.days.map((d) => ({\n" +
+          "          // The skill is printed on the row, because the tracker is\n" +
+          "          // scored by skill and a child cannot otherwise tell which\n" +
+          "          // pair of the thirty belongs to which of its fifteen rows.\n" +
+          "          const cid = (CD.rowConcepts || [])[r] || '';\n" +
+          "          rows.push({ n: r + 1, cid,\n" +
+          "            kindLabel: (() => {\n" +
+          "              const k = CD.days[0] && CD.days[0].items[r] && CD.days[0].items[r].kind;\n" +
+          "              return k === 'real' ? 'real' : k === 'made-up' ? 'nonsense' : 'letters';\n" +
+          "            })(),\n" +
+          "            cells: CD.days.map((d) => ({\n" +
           "            w: d.items[r] ? d.items[r].w : '', st: cell })) });\n" +
           "        }\n" +
           "        return {\n" +
@@ -4736,8 +4745,8 @@ const ADAPTATIONS: Adaptation[] = [
         '      <div style="font-size:13.5px;line-height:1.45;border:1.5px solid #000;border-radius:8px;' +
         'padding:7px 11px;color:#000">Read one column a day, top to bottom. Some of these words are ' +
         "not real words \u2014 read them anyway. Tick the ones you read right and write the score at " +
-        "the foot of the column.</div>\n" +
-        '      <div style="display:grid;grid-template-columns:22px repeat(5,minmax(0,1fr));gap:2px 6px;' +
+        "the foot of the column. Each skill has two rows, marked real and nonsense, and those two rows are the one row for that skill on the score sheet.</div>\n" +
+        '      <div style="display:grid;grid-template-columns:52px repeat(5,minmax(0,1fr));gap:2px 6px;' +
         'align-items:center">\n' +
         '        <span></span>\n' +
         '        <sc-for list="{{ cdHead }}" as="h" hint-placeholder-count="5">' +
@@ -4745,7 +4754,11 @@ const ADAPTATIONS: Adaptation[] = [
         'letter-spacing:.1em;color:#000;text-align:center;border-bottom:2px solid #000">' +
         "{{ h.t }}</span></sc-for>\n" +
         '        <sc-for list="{{ cdRows }}" as="r" hint-placeholder-count="30">\n' +
-        '          <span style="font-size:9.5px;font-weight:700;color:#555;text-align:right">{{ r.n }}</span>\n' +
+        '          <span style="display:flex;flex-direction:column;align-items:flex-end;' +
+        'line-height:1.05;white-space:nowrap">' +
+        '<b style="font-size:9px;font-weight:800;color:#000">{{ r.cid }}</b>' +
+        '<span style="font-size:7.5px;font-weight:600;color:#555">{{ r.kindLabel }}</span>' +
+        "</span>\n" +
         '          <sc-for list="{{ r.cells }}" as="c" hint-placeholder-count="5">' +
         '<span style="{{ c.st }}">{{ c.w }}</span></sc-for>\n' +
         "        </sc-for>\n" +
