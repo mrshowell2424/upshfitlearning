@@ -4986,10 +4986,54 @@ const ADAPTATIONS: Adaptation[] = [
       // The arrow body now needs its closing brace.
       out = out.replace(
         "e.style.breakAfter = ''; e.style.pageBreakAfter = ''; });",
-        "e.style.breakAfter = ''; e.style.pageBreakAfter = ''; }); };",
+        "e.style.breakAfter = ''; e.style.pageBreakAfter = '';" +
+          // Cleared too, or a sheet that split once stays splittable in the
+          // preview after the print is over.
+          " e.style.breakInside = ''; e.style.pageBreakInside = ''; }); };",
       );
 
       return out;
+    },
+  },
+  {
+    // A sheet shrinks a little or it splits. It never squashes.
+    //
+    // Three sheets did not fit one page and the fit scaled them to make them:
+    // Read it to 0.88, Spelling to 0.79, Writing to 0.71. Writing is a passage,
+    // its questions and the lines a child writes the answer on, and at 0.71
+    // those lines are 25mm apart on paper -- too close to write between. The
+    // scale was solving the printer's problem by taking the space the work
+    // needs.
+    //
+    // So there is a floor. Down to 0.85 a sheet is scaled, which is small
+    // enough to be invisible and large enough to still be written on. Below it
+    // the sheet is left at full size and allowed to run onto a second page
+    // instead, which is what a sheet holding more than a page of work should do.
+    // The exercise blocks already carry break-inside: avoid, so a split falls
+    // between exercises rather than through one.
+    //
+    // Read it needs 0.88 and stays one page. Spelling and Writing split.
+    name: "let an over-full sheet split rather than shrink past readable",
+    apply: (html) => {
+      const old =
+        "if (h > max) e.style.zoom = String(Math.max(0.6, max / h - 0.005)); " +
+        "else e.style.minHeight = e.dataset.mh || '';";
+      if (!html.includes(old)) return html;
+      return html.replace(
+        old,
+        "if (h > max) {\n" +
+          "          const z = max / h - 0.005;\n" +
+          "          if (z >= 0.85) { e.style.zoom = String(z); }\n" +
+          "          else {\n" +
+          "            // More than a page of work: let it be two pages at full\n" +
+          "            // size rather than one page nobody can write on.\n" +
+          "            e.style.zoom = '';\n" +
+          "            e.style.minHeight = '0';\n" +
+          "            e.style.breakInside = 'auto';\n" +
+          "            e.style.pageBreakInside = 'auto';\n" +
+          "          }\n" +
+          "        } else { e.style.minHeight = e.dataset.mh || ''; }",
+      );
     },
   },
 ];
