@@ -4509,6 +4509,25 @@ const ADAPTATIONS: Adaptation[] = [
       return head + sep + rows + html.slice(close);
     },
   },
+  {
+    // Number the progress check, so a child knows where it comes.
+    //
+    // The workbook pages say where they sit -- the mystery opens "8. The case"
+    // -- and the progress check did not, so it arrived as a loose sheet with no
+    // place in the order. It is the page after the mystery, so it is 9.
+    //
+    // Only this sheet is numbered. The rest of the packet already carries its
+    // numbers and renumbering them would move pages a teacher has taught from.
+    name: "number the progress check so a child knows the order",
+    apply: (html) => {
+      const title = "'\u2705 ' + (key ? 'Progress Check Key' : 'Show What You Know')";
+      if (!html.includes(title)) return html;
+      return html.replace(
+        title,
+        "'\u2705 9. ' + (key ? 'Progress Check Key' : 'Show What You Know')",
+      );
+    },
+  },
 ];
 
 /**
