@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use client";
 
 import { useState, useEffect, useCallback, Suspense } from "react";
@@ -20,6 +19,20 @@ const exampleSearches = [
   "context clues",
 ];
 
+/**
+ * What /api/search-standards puts in its results array.
+ *
+ * Named here rather than inferred, because the state behind it was an
+ * any[]: the skills list below was mapped over without the compiler
+ * knowing it was a list of strings, or that it was there at all.
+ */
+type SearchResult = {
+  code: string;
+  name: string;
+  skills?: string[] | null;
+  score?: number;
+};
+
 function MatchPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -28,7 +41,7 @@ function MatchPageContent() {
   // is seeded from it rather than being emptied and then refilled by an
   // effect, which made the search term appear a frame late.
   const [query, setQuery] = useState(() => searchParams.get("q") ?? "");
-  const [results, setResults] = useState<any[]>([]);
+  const [results, setResults] = useState<SearchResult[]>([]);
   const [searching, setSearching] = useState(false);
 
   const handleSearch = useCallback(
@@ -48,7 +61,7 @@ function MatchPageContent() {
         const response = await fetch(
           `/api/search-standards?q=${encodeURIComponent(trimmed)}`
         );
-        const data = await response.json();
+        const data = (await response.json()) as { results?: SearchResult[] };
         setResults(data.results || []);
 
         // If exactly one result, go directly to it

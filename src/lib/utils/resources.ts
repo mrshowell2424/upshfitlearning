@@ -13,7 +13,14 @@ const COL = {
   resourceUrl: 5,
   summary: 6,
   access: 7,
-  createdBy: 13,
+  // 14, not 13. Column 13 is headed "Content" and holds a topic -- Universal,
+  // ELA, Blended Learning -- while column 14 is "Created By" and holds the
+  // credit: @mrshowell24 on 634 rows, "Gold Community" on 15. Reading 13 made
+  // isOwnVideo() wrong in both directions, because credit was blank on nearly
+  // every row (so somebody else's video counted as ours, Gold Community
+  // included) and non-blank with a topic on the two dozen that have one (so
+  // her own videos were thrown out).
+  createdBy: 14,
 } as const
 
 /**

@@ -1,18 +1,36 @@
-// @ts-nocheck
+/**
+ * Pull the resource rows out of the Google Sheet and into the table.
+ *
+ * AUTH IS AN API KEY, not a service account. The script was written against
+ * google-spreadsheet v3, where auth was a method you called on the document
+ * -- doc.useServiceAccountAuth({ client_email, private_key }). v4 takes auth
+ * as the second constructor argument and has no such method, so under the
+ * installed version this file could not run at all; the type suppression on
+ * top of it was hiding a script that threw on its first statement.
+ *
+ * An API key is the right credential here because the sheet is public --
+ * it has to be, since the site reads the same sheet through its CSV export
+ * at runtime -- and because a key needs nothing installed, while a service
+ * account needs google-auth-library, which google-spreadsheet lists as a peer
+ * dependency and this project has never had.
+ *
+ *   GOOGLE_SHEETS_ID=...  GOOGLE_SHEETS_API_KEY=...  bun run scripts/sync-google-sheets.ts
+ */
 import { GoogleSpreadsheet } from "google-spreadsheet";
+import { sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { resources } from "@/lib/db/schema";
 
-// Initialize Google Sheets API
-const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEETS_ID || "");
+const SHEET_ID = process.env.GOOGLE_SHEETS_ID || "";
+const API_KEY = process.env.GOOGLE_SHEETS_API_KEY || "";
 
 async function syncGoogleSheets() {
   try {
-    // Authenticate with service account
-    await doc.useServiceAccountAuth({
-      client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || "",
-      private_key: process.env.GOOGLE_SERVICE_ACCOUNT_KEY?.replace(/\\n/g, "\n") || "",
-    });
+    if (!SHEET_ID || !API_KEY) {
+      console.error("❌ GOOGLE_SHEETS_ID and GOOGLE_SHEETS_API_KEY must both be set");
+      process.exit(1);
+    }
+    const doc = new GoogleSpreadsheet(SHEET_ID, { apiKey: API_KEY });
 
     await doc.loadInfo();
     const sheet = doc.sheetsByIndex[0];
@@ -79,19 +97,24 @@ async function syncGoogleSheets() {
           await db
             .insert(resources)
             .values(batch)
+            // excluded, not batch[0]. The set clause runs once per row that
+            // conflicts, and naming the first row of the batch wrote its
+            // summary, skill, grade band, format and date over whichever of
+            // the other nine rows already existed. excluded is the row this
+            // statement was trying to insert, which is the one meant.
             .onConflictDoUpdate({
               target: [resources.title, resources.youtube_id],
               set: {
-                summary: batch[0].summary,
-                skill: batch[0].skill,
-                grade_band: batch[0].grade_band,
-                format: batch[0].format,
-                published_at: batch[0].published_at,
+                summary: sql`excluded.summary`,
+                skill: sql`excluded.skill`,
+                grade_band: sql`excluded.grade_band`,
+                format: sql`excluded.format`,
+                published_at: sql`excluded.published_at`,
               },
             });
           console.log(`  ${Math.min(i + batchSize, toInsert.length)}/${toInsert.length}`);
         } catch (e) {
-          console.error(`Batch ${i}-${i + batchSize} failed:`, (e as any).message?.substring(0, 100));
+          console.error(`Batch ${i}-${i + batchSize} failed:`, (e as Error).message?.substring(0, 100));
         }
       }
     }

@@ -1,13 +1,102 @@
-// @ts-nocheck
 "use client";
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/providers/AuthProvider";
-import { useMatchTab } from "./tab-context";
+import { useMatchTab, type MatchTab } from "./tab-context";
 import { kidDefinition } from "@/lib/utils/unpack";
+import type { DokLevel } from "@/lib/utils/unpack";
 import { UpgradeModal } from "@/components/shared/UpgradeModal";
 import { scienceLabel, standardHref } from "@/lib/utils/standards";
+import type { standards, lesson_blueprints, standard_unpacks } from "@/lib/db/schema";
+import type { Resource } from "@/lib/utils/resources";
+
+/*
+ * What this page is handed.
+ *
+ * Taken from the schema and from the two routes that build these objects,
+ * rather than described again here, so a column that changes type shows up as
+ * an error in the markup that renders it. These are all `import type`, which
+ * is erased before the bundle is built -- no drizzle reaches the browser.
+ */
+type UnpackRow = typeof standard_unpacks.$inferSelect;
+type BlueprintRow = typeof lesson_blueprints.$inferSelect;
+type StandardRow = typeof standards.$inferSelect;
+
+/**
+ * The standard as page.tsx hands it over: not the row. The code and the grade
+ * labels are worked out there, and three of the row's columns are renamed on
+ * the way through.
+ */
+type Standard = {
+  code: string;
+  grade: string | null;
+  gradeLabel: string;
+  name: StandardRow["name"] | null;
+  text: StandardRow["plain_reading"];
+  learningTarget: StandardRow["learning_target"];
+  scienceTags: string[];
+};
+
+/** A step of the route, renamed from the row's own name/science_tag. */
+type BlueprintStep = {
+  title: string;
+  minutes: number;
+  body: string;
+  scienceTag: string;
+};
+
+/** The blueprint as page.tsx hands it over: camelCase, and never null inside. */
+type Blueprint = {
+  title: BlueprintRow["title"];
+  badge: BlueprintRow["badge"];
+  routeName: BlueprintRow["route_name"];
+  routeLine: BlueprintRow["route_line"];
+  successCriteria: NonNullable<BlueprintRow["success_criteria"]>;
+  steps: BlueprintStep[];
+  efSupports: NonNullable<BlueprintRow["ef_supports"]>;
+  tech: BlueprintRow["tech"];
+  techPurpose: BlueprintRow["tech_purpose"];
+  aiPrompts: NonNullable<BlueprintRow["ai_prompts"]>;
+  assessment: NonNullable<BlueprintRow["assessment"]>;
+  whyItWorks: NonNullable<BlueprintRow["why_it_works"]>;
+};
+
+/** The unpack as /api/match/[code]/premium reshapes it: renamed, never null. */
+type Unpack = {
+  verbs: NonNullable<UnpackRow["verbs"]>;
+  concepts: NonNullable<UnpackRow["concepts"]>;
+  vocabulary: NonNullable<UnpackRow["vocabulary"]>;
+  priorSkills: NonNullable<UnpackRow["prior_skills"]>;
+  priorStandards: NonNullable<UnpackRow["prior_standards"]>;
+  futureStandards: NonNullable<UnpackRow["future_standards"]>;
+  challenges: NonNullable<UnpackRow["challenges"]>;
+  masteryStatement: UnpackRow["mastery_statement"];
+  ladder: NonNullable<UnpackRow["ladder"]>;
+  dok: DokLevel | undefined;
+};
+
+/** The whole All-Access payload the client fetches once it has a session. */
+type Premium = { unpack: Unpack | null; resources: Resource[] };
+
+/**
+ * What travels in the HTML for a teacher who has not paid: counts, never
+ * content. Built in page.tsx beside the comment explaining why.
+ */
+type PremiumSummary = {
+  hasUnpack: boolean;
+  verbs: number;
+  concepts: number;
+  vocabulary: number;
+  ladder: number;
+  challenges: number;
+  priorStandards: number;
+  futureStandards: number;
+  resources: number;
+};
+
+type LoadState = "idle" | "loading" | "ready" | "error";
+type OpenTab = (tab: MatchTab) => void;
 
 /**
  * The generator is built and works, but it is switched off here until three
@@ -21,12 +110,12 @@ import { scienceLabel, standardHref } from "@/lib/utils/standards";
 const GENERATOR_ENABLED = false;
 
 // The lesson blueprint is the free taste; the others are All-Access.
-const tabs = [
+const tabs: { id: MatchTab; label: string; premium: boolean }[] = [
   { id: "blueprint", label: "Lesson blueprint", premium: false },
   { id: "unpack", label: "Unpack the standard", premium: true },
   { id: "resources", label: "Resources to remix", premium: true },
   ...(GENERATOR_ENABLED
-    ? [{ id: "generate", label: "Make it for my learners", premium: true }]
+    ? [{ id: "generate" as MatchTab, label: "Make it for my learners", premium: true }]
     : []),
 ];
 
@@ -61,6 +150,12 @@ export function MatchDetailClient({
   blueprint,
   premiumSummary,
   userTier = "free",
+}: {
+  standard: Standard;
+  standard_code: string;
+  blueprint: Blueprint | null;
+  premiumSummary: PremiumSummary;
+  userTier?: string;
 }) {
   const { activeTab, setActiveTab } = useMatchTab();
   const { isPremium, isLoading, session } = useAuth();
@@ -88,12 +183,12 @@ export function MatchDetailClient({
    * standard, and a late response setting state after unmount is harmless in
    * React 18 and later.
    */
-  const [premium, setPremium] = useState(null);
-  const [premiumState, setPremiumState] = useState("idle");
-  const [premiumError, setPremiumError] = useState(null);
+  const [premium, setPremium] = useState<Premium | null>(null);
+  const [premiumState, setPremiumState] = useState<LoadState>("idle");
+  const [premiumError, setPremiumError] = useState<string | null>(null);
 
   /** Which standard we have already asked for, so a re-render cannot re-ask. */
-  const requestedFor = useRef(null);
+  const requestedFor = useRef<string | null>(null);
   const [attempt, setAttempt] = useState(0);
 
   const retryPremium = () => {
@@ -148,10 +243,11 @@ export function MatchDetailClient({
         setPremium(await response.json());
         setPremiumState("ready");
       } catch (error) {
+        const failure = error as { name?: string; message?: string } | null;
         const message =
-          error?.name === "AbortError"
+          failure?.name === "AbortError"
             ? "That took too long to load."
-            : error?.message || "Something went wrong.";
+            : failure?.message || "Something went wrong.";
         console.error("Could not load All-Access content:", error);
         setPremiumError(message);
         setPremiumState("error");
@@ -232,7 +328,15 @@ function LockIcon({ className = "" }) {
 }
 
 /** Small wide-tracked caps label that opens every panel on this page. */
-function SectionLabel({ children, color, className = "" }) {
+function SectionLabel({
+  children,
+  color,
+  className = "",
+}: {
+  children: React.ReactNode;
+  color: string;
+  className?: string;
+}) {
   return (
     <p
       className={`text-[11px] font-bold uppercase tracking-[0.14em] ${className}`}
@@ -243,7 +347,16 @@ function SectionLabel({ children, color, className = "" }) {
   );
 }
 
-function Card({ children, className = "", accent }) {
+function Card({
+  children,
+  className = "",
+  accent,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  /** Optional: a card with no accent gets no coloured left border. */
+  accent?: string;
+}) {
   return (
     <div
       className={`rounded-2xl border border-hairline bg-white p-6 ${
@@ -257,7 +370,15 @@ function Card({ children, className = "", accent }) {
 }
 
 /** Shown to an entitled teacher while the All-Access payload is on its way. */
-function PremiumLoading({ state, detail, onRetry }) {
+function PremiumLoading({
+  state,
+  detail,
+  onRetry,
+}: {
+  state: LoadState;
+  detail: string | null;
+  onRetry: () => void;
+}) {
   if (state === "error") {
     return (
       <div className="rounded-2xl border border-hairline bg-white p-10 text-center">
@@ -295,7 +416,17 @@ function PremiumLoading({ state, detail, onRetry }) {
  * instead the teaser is a count of what the section holds. It still shows a
  * teacher that something substantial is there, without being the thing itself.
  */
-function LockedOverlay({ locked, feature, summary, children }) {
+function LockedOverlay({
+  locked,
+  feature,
+  summary,
+  children,
+}: {
+  locked: boolean;
+  feature: string;
+  summary: PremiumSummary;
+  children: React.ReactNode;
+}) {
   if (!locked) return <div>{children}</div>;
 
   return (
@@ -346,7 +477,7 @@ function LockedOverlay({ locked, feature, summary, children }) {
  * What sits behind the wall, described rather than shown. Counts come from the
  * server, so they are accurate for this standard rather than generic marketing.
  */
-function LockedPreview({ feature, summary }) {
+function LockedPreview({ feature, summary }: { feature: string; summary: PremiumSummary }) {
   const rows = [
     { label: "Vocabulary in kid-friendly language", count: summary?.vocabulary },
     { label: "Rungs on the learning ladder", count: summary?.ladder },
@@ -385,7 +516,7 @@ function LockedPreview({ feature, summary }) {
   );
 }
 
-function NotAuthoredYet({ what }) {
+function NotAuthoredYet({ what }: { what: string }) {
   return (
     <div className="border border-border rounded-2xl p-10 text-center">
       <p className="text-[17px] font-semibold text-charcoal mb-2">
@@ -420,7 +551,7 @@ function directionsFrom(body?: string): string[] {
 }
 
 /** A checked list item — used for success criteria and assessment evidence. */
-function CheckItem({ children, color }) {
+function CheckItem({ children, color }: { children: React.ReactNode; color: string }) {
   return (
     <li className="flex gap-2 text-[15px] text-text-body leading-snug">
       <span className="flex-shrink-0 mt-[3px]" style={{ color }} aria-hidden="true">
@@ -431,7 +562,15 @@ function CheckItem({ children, color }) {
   );
 }
 
-function BlueprintTab({ blueprint, standard, onOpenTab }) {
+function BlueprintTab({
+  blueprint,
+  standard,
+  onOpenTab,
+}: {
+  blueprint: Blueprint | null;
+  standard: Standard;
+  onOpenTab: OpenTab;
+}) {
   if (!blueprint) return <NotAuthoredYet what="lesson blueprint" />;
 
   const steps = blueprint.steps ?? [];
@@ -711,11 +850,18 @@ function BlueprintTab({ blueprint, standard, onOpenTab }) {
  * Vocabulary is authored either as a plain term or as a term with a kid-friendly
  * definition. Accept both, and treat an em-dashed string as term + definition.
  */
-function vocabEntry(item) {
+function vocabEntry(item: Unpack["vocabulary"][number]): {
+  term: string;
+  definition: string | null;
+} {
   if (item && typeof item === "object") {
+    // word and gloss are what older rows were authored with; the column's
+    // type only promises term and definition, so they are read off a widened
+    // view of the same object rather than asserted into existence.
+    const entry = item as { term?: string; word?: string; definition?: string; gloss?: string };
     return {
-      term: item.term ?? item.word ?? "",
-      definition: item.definition ?? item.gloss ?? null,
+      term: entry.term ?? entry.word ?? "",
+      definition: entry.definition ?? entry.gloss ?? null,
     };
   }
 
@@ -725,7 +871,15 @@ function vocabEntry(item) {
   return { term, definition: rest.join(" — ") || kidDefinition(term) || null };
 }
 
-function UnpackTab({ unpack, standard, onOpenTab }) {
+function UnpackTab({
+  unpack,
+  standard,
+  onOpenTab,
+}: {
+  unpack: Unpack | null;
+  standard: Standard;
+  onOpenTab: OpenTab;
+}) {
   if (!unpack) return <NotAuthoredYet what="deconstruction" />;
 
   const ladder = unpack.ladder ?? [];
@@ -1027,7 +1181,13 @@ function UnpackTab({ unpack, standard, onOpenTab }) {
   );
 }
 
-function ResourcesTab({ resources, standard_code }) {
+function ResourcesTab({
+  resources,
+  standard_code,
+}: {
+  resources: Resource[] | null;
+  standard_code: string;
+}) {
   if (!resources || resources.length === 0) {
     return <NotAuthoredYet what="matched resources" />;
   }
@@ -1080,21 +1240,15 @@ function ResourcesTab({ resources, standard_code }) {
                   </div>
                 </div>
 
-                <div className="mb-4">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-text-faint mb-2">
-                    Use it for {standard_code} like this
-                  </p>
-                  <ul className="space-y-2">
-                    {(resource.teaching_moves || []).map((move, idx) => (
-                      <li key={idx} className="flex gap-3">
-                        <span className="w-5 h-5 rounded-sm bg-charcoal text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
-                          {idx + 1}
-                        </span>
-                        <span className="text-sm text-text-body">{move}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {/*
+                  "Use it for {standard_code} like this" listed
+                  resource.teaching_moves here. The sheet these resources come
+                  from has no such column, so the list was always empty and
+                  the heading sat above nothing -- visible, unlike the one on
+                  the resource detail page, which at least hid itself. The
+                  same note applies: if the sheet grows the column, parse it
+                  in lib/utils/resources.ts and this can come back.
+                */}
 
                 <div className="flex gap-3 flex-wrap">
                   <a
@@ -1132,7 +1286,15 @@ function ResourcesTab({ resources, standard_code }) {
   );
 }
 
-function GenerateTab({ standard_code, blueprint, unpack }) {
+function GenerateTab({
+  standard_code,
+  blueprint,
+  unpack,
+}: {
+  standard_code: string;
+  blueprint: Blueprint | null;
+  unpack: Unpack | null;
+}) {
   const [selectedFormat, setSelectedFormat] = useState("presentation");
   const [studentNeeds, setStudentNeeds] = useState<string[]>([]);
   const [generating, setGenerating] = useState(false);

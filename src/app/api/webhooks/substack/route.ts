@@ -1,7 +1,18 @@
-// @ts-nocheck
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { articles } from "@/lib/db/schema";
+
+/**
+ * The day out of whatever Substack sent, or null.
+ *
+ * published_at is a date column: drizzle reads and writes it as a
+ * YYYY-MM-DD string, so a Date is not a value it takes. Anything that is
+ * not a date is stored as nothing rather than as "Invalid Date".
+ */
+const dayOf = (v: unknown): string | null => {
+  const day = String(v ?? "").slice(0, 10);
+  return /^\d{4}-\d{2}-\d{2}$/.test(day) ? day : null;
+};
 
 export async function POST(request: NextRequest) {
   try {
@@ -30,7 +41,10 @@ export async function POST(request: NextRequest) {
           title,
           slug,
           category: "Article",
-          published_at: new Date(publication_date),
+          // A date column, which drizzle reads and writes as YYYY-MM-DD.
+          // Substack sends an ISO timestamp, so take the day off the front
+          // rather than handing over a Date the column cannot take.
+          published_at: dayOf(publication_date),
           cover_image: cover_image || null,
           is_featured: false,
         })

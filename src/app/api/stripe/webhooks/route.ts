@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { withDb } from "@/lib/db";
@@ -49,6 +48,14 @@ function stripeClient() {
   });
 }
 
+/** A Stripe reference is either the id or the expanded object; take the id. */
+const idOf = (v: unknown): string | null =>
+  typeof v === "string"
+    ? v
+    : v && typeof v === "object" && "id" in v
+      ? String((v as { id: unknown }).id)
+      : null;
+
 /** Stripe sends seconds; everything downstream wants a Date. */
 const fromUnix = (seconds?: number | null) =>
   typeof seconds === "number" ? new Date(seconds * 1000) : null;
@@ -58,11 +65,14 @@ const fromUnix = (seconds?: number | null) =>
  * Newer versions moved it onto the subscription items.
  */
 function periodEndOf(subscription: Stripe.Subscription): Date | null {
-  return (
-    fromUnix(subscription.current_period_end) ??
-    fromUnix(subscription.items?.data?.[0]?.current_period_end) ??
-    null
-  );
+  // The installed types only declare it on the subscription. Newer API
+  // versions send it on the items instead and the types have not caught up,
+  // so the second reading says in the type what the comment above says in
+  // English rather than turning the whole expression into an any.
+  const item = subscription.items?.data?.[0] as
+    | (Stripe.SubscriptionItem & { current_period_end?: number })
+    | undefined;
+  return fromUnix(subscription.current_period_end) ?? fromUnix(item?.current_period_end) ?? null;
 }
 
 /**
@@ -191,10 +201,14 @@ export async function POST(request: NextRequest) {
       /* Renewed. Push the date out; grantAccessUntil never shortens it. */
       case "invoice.paid": {
         const invoice = event.data.object as Stripe.Invoice;
+        // Stripe sends either the id or the expanded object, and newer API
+        // versions carry it on the line item rather than the invoice. The
+        // cast this used to make -- invoice.subscription as string -- was a
+        // promise, not a check: an expanded object passed straight into
+        // subscriptions.retrieve, which wants an id.
+        const line = invoice.lines?.data?.[0] as { subscription?: unknown } | undefined;
         const subscriptionId =
-          (invoice.subscription as string) ||
-          invoice.lines?.data?.[0]?.subscription ||
-          null;
+          idOf((invoice as { subscription?: unknown }).subscription) ?? idOf(line?.subscription);
         if (!subscriptionId) break;
 
         const subscription = await stripe.subscriptions.retrieve(subscriptionId);

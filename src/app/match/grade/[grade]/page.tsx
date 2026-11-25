@@ -1,4 +1,3 @@
-// @ts-nocheck
 import Link from "next/link";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
@@ -38,7 +37,10 @@ export default async function GradeStandardsPage({ params }: PageProps) {
   const { grade } = await params;
   const decoded = decodeURIComponent(grade).toUpperCase();
 
-  let rows = [];
+  // The select's own row type, so the grouping below and the cards at the
+  // bottom of this page know what they are holding.
+  type StandardRow = typeof standards.$inferSelect;
+  let rows: StandardRow[] = [];
   let dataError = false;
 
   try {
@@ -53,15 +55,22 @@ export default async function GradeStandardsPage({ params }: PageProps) {
     .sort((a, b) => a.code.localeCompare(b.code, undefined, { numeric: true }));
 
   // Grouped by subject so a teacher scans one column rather than a mixed list
-  const bySubject = new Map();
+  const bySubject = new Map<string, StandardRow[]>();
   for (const row of forGrade) {
     const subject = standardSubject(row.code);
-    if (!bySubject.has(subject)) bySubject.set(subject, []);
-    bySubject.get(subject).push(row);
+    const list = bySubject.get(subject) ?? [];
+    list.push(row);
+    bySubject.set(subject, list);
   }
 
   // Which other grades have anything, so this page can hand off to them
-  const otherGrades = [...new Set(rows.map((r) => standardGrade(r.code)).filter(Boolean))]
+  // filter(Boolean) drops the nulls but does not say so, which left the
+  // uppercasing below reading a value the compiler still thought could be
+  // null -- and it can be: standardGrade returns null for a code it cannot
+  // place.
+  const otherGrades = [...new Set(
+    rows.map((r) => standardGrade(r.code)).filter((g): g is string => Boolean(g)),
+  )]
     .map((g) => g.toUpperCase())
     .sort((a, b) => gradeRank(a) - gradeRank(b));
 

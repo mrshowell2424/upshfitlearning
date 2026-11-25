@@ -1,4 +1,3 @@
-// @ts-nocheck
 import Link from "next/link";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
@@ -99,45 +98,16 @@ export default async function ResourceDetailPage({ params }: PageProps) {
               <VideoPlayer youtubeId={resource.youtube_id} title={resource.title} />
             )}
 
-            {/* Teaching moves */}
-            <div className={`mb-12 ${resource.teaching_moves?.length ? "" : "hidden"}`}>
-              <h2 className="text-[26px] font-bold mb-4">Teaching moves</h2>
-              <div className="space-y-3">
-                {(resource.teaching_moves || []).map((move, idx) => (
-                  <div key={idx} className="flex gap-3">
-                    <div
-                      className="w-6 h-6 rounded-sm flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
-                      style={{ backgroundColor: "var(--color-charcoal)" }}
-                    >
-                      {idx + 1}
-                    </div>
-                    <p className="text-text-body">{move}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Why this works */}
-            {resource.why_this_works && (
-              <div className="mb-12 p-6 bg-gray-050 rounded-lg">
-                <h2 className="text-[26px] font-bold mb-4">Why this works</h2>
-                <p className="text-text-body leading-relaxed mb-4">
-                  {resource.why_this_works}
-                </p>
-                {resource.why_tags && (
-                  <div className="flex flex-wrap gap-2">
-                    {resource.why_tags.map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="text-xs font-semibold px-3 py-1 bg-white border border-border rounded-full text-charcoal"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
+            {/*
+              Teaching moves and "Why this works" used to be rendered here.
+              Neither has ever appeared: the sheet these resources come from
+              has no column for either, so resource.teaching_moves and
+              resource.why_this_works were always undefined and both blocks
+              were always hidden. They were only compiling because the file
+              carried a type suppression. If the sheet grows those columns,
+              parse them in lib/utils/resources.ts and this can come back
+              with something behind it.
+            */}
           </div>
 
           {/* Right column (sticky) */}
@@ -171,18 +141,16 @@ export default async function ResourceDetailPage({ params }: PageProps) {
                   <span className="text-text-muted">Format</span>
                   <span className="font-semibold">{resource.format}</span>
                 </div>
-                {resource.prep_time && (
-                  <div className="flex justify-between">
-                    <span className="text-text-muted">Prep time</span>
-                    <span className="font-semibold">{resource.prep_time}</span>
-                  </div>
-                )}
-                {resource.access && (
-                  <div className="flex justify-between">
-                    <span className="text-text-muted">Access</span>
-                    <span className="font-semibold">{resource.access}</span>
-                  </div>
-                )}
+                {/*
+                  Prep time has no column in the sheet either, so that row is
+                  gone. Access does -- "Free or Paid" -- but it is read into
+                  is_free rather than kept as text, so this says what the
+                  sheet says through the field that actually holds it.
+                */}
+                <div className="flex justify-between">
+                  <span className="text-text-muted">Access</span>
+                  <span className="font-semibold">{resource.is_free ? "Free" : "Paid"}</span>
+                </div>
               </div>
             </div>
 
