@@ -188,6 +188,20 @@ export function unsafeWord(w) {
   return NEVER_WORDS.has(k) || NEVER_RE.test(k);
 }
 
+/**
+ * True when a REAL word must not be shown to a child.
+ *
+ * The whole word, never a piece of it. unsafeWord above sinks anything with
+ * one of those strings inside it, which is right for a made-up word -- a
+ * generator that writes "accurape" has to be stopped whatever it was aiming
+ * at -- and wrong for English, where the same rule throws out scrape, grape
+ * and farther. A checker that objects to "grape" is a checker somebody turns
+ * off, and then it is not there for "sex".
+ */
+export function unsafeRealWord(w) {
+  return NEVER_WORDS.has(String(w).toLowerCase());
+}
+
 /** True when a generated string is actually a real word after all. */
 export function looksReal(w, dictionary) {
   const k = String(w).toLowerCase();

@@ -26,6 +26,7 @@
  *   bun run scripts/build-multisyllabic.mjs
  */
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
+import { unsafeWord, unsafeRealWord } from "./lib/not-nonsense.mjs";
 
 const read = (f) => JSON.parse(readFileSync(`scripts/${f}`, "utf8"));
 const SPLITS = read("reading-skill-splits.json");
@@ -491,7 +492,18 @@ if (import.meta.main) {
       if (standalone.length >= 6) break;
     }
     const sent = standalone.concat(rest).slice(0, 6);
-    bank[key] = { real: words, one: pick(ONES), fake: fakes(words, carries), sent };
+    // Nothing goes in a bank that cannot be printed in front of a class.
+    // The real lists are screened on the whole word and the made-up list on
+    // any part of one, because a generator swapping interior consonants will
+    // walk into a word nobody chose: this bank was shipping whoresome,
+    // accurape and turdulence as made-up words, and sex in the x lesson's
+    // single-syllable list, all four of them on the live lesson page.
+    bank[key] = {
+      real: words.filter((w) => !unsafeRealWord(w)),
+      one: pick(ONES).filter((w) => !unsafeRealWord(w)),
+      fake: fakes(words, carries).filter((w) => !unsafeWord(w)),
+      sent,
+    };
     if (words.length < TARGET) thin.push(`${key} (${words.length})`);
   }
 

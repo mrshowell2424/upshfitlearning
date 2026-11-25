@@ -12,6 +12,7 @@
  */
 import { readFileSync } from "node:fs";
 import { syllables, hits, placeOf, keysAndPatterns, TRI } from "./build-multisyllabic.mjs";
+import { unsafeWord, unsafeRealWord } from "./lib/not-nonsense.mjs";
 
 const BANK = JSON.parse(readFileSync("scripts/reading-multisyllabic.json", "utf8"));
 const HEART = new Set(
@@ -42,6 +43,17 @@ for (const [key, list] of Object.entries(BANK.words)) {
   const skill = key.split("|")[0];
   const place = Object.fromEntries(patterns.map((q) => [q, placeOf(`${skill}|${q}`, q)]));
   const carries = (w) => patterns.some((q) => hits(q, w, place[q], `${skill}|${q}`));
+
+  // 0. nothing here that cannot be printed in front of a class. The real
+  // lists are judged on the whole word, the made-up list on any part of one:
+  // a generator swapping interior consonants walks into words nobody chose,
+  // and this bank shipped whoresome, accurape and turdulence as made-up
+  // words, with sex in the x lesson's single-syllable list, until it was
+  // asked. Nothing was asking.
+  for (const f of ["real", "one"]) {
+    for (const w of list[f] || []) if (unsafeRealWord(w)) fail(key, `${f} word "${w}" cannot be printed for a child`);
+  }
+  for (const w of list.fake || []) if (unsafeWord(w)) fail(key, `made-up word "${w}" cannot be printed for a child`);
 
   // 1. a word may not appear twice in one list, which is the whole point.
   const seen = new Set();

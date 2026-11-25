@@ -1,0 +1,153 @@
+/**
+ * Checks the five mClass practice days before a child works one.
+ *
+ * Each day is a page: the lesson's passage, six real words, four made-up
+ * ones, a three-sentence maze and a twenty-four word race. The questions are
+ * the ones the file cannot answer about itself.
+ *
+ *   1. Is a real word real, and is a made-up word actually made up? A
+ *      made-up word that turns out to be a word asks a child to read a word
+ *      as nonsense, which teaches the opposite of what the measure is for.
+ *   2. Does the maze item still match its sentence? The blank is stored as a
+ *      word index, so a sentence edited by hand and an index left where it
+ *      was would silently ask about the wrong word.
+ *   3. Is the answer one of the three choices, and are the other two absent
+ *      from the passage? A distractor the child read out loud a minute ago
+ *      makes the item about memory rather than sense.
+ *   4. Is the word race the same list every day? It is the one part that
+ *      repeats on purpose -- Monday's count and Friday's count only mean
+ *      something next to each other if the list did not move.
+ *
+ * WHAT IT CANNOT ASK. Whether the answer is the ONLY choice that makes
+ * sense needs a reader, not a script. The distractors are matched on kind
+ * and length, never on meaning, so some items are easier than mClass's.
+ * Easier is the safe direction for practice.
+ *
+ *   bun run scripts/check-daily-practice.mjs
+ */
+import { readFileSync, existsSync } from "node:fs";
+import { CONCEPTS } from "./lib/continuum-pools.mjs";
+import { looksReal, unsafeWord, unsafeRealWord } from "./lib/not-nonsense.mjs";
+
+const D = JSON.parse(readFileSync("scripts/reading-daily-practice.json", "utf8"));
+const SEQ = JSON.parse(readFileSync("scripts/reading-sequence.json", "utf8")).sequence;
+const HEART = JSON.parse(readFileSync("scripts/reading-heart-words.json", "utf8")).words.map((h) =>
+  String(h.word).toLowerCase(),
+);
+
+const SYSTEM_DICT = "/usr/share/dict/words";
+const WORDS = existsSync(SYSTEM_DICT)
+  ? new Set(
+      readFileSync(SYSTEM_DICT, "utf8")
+        .split("\n")
+        .map((w) => w.trim().toLowerCase())
+        .filter(Boolean),
+    )
+  : new Set();
+// web2 lists base forms and leaves out irregular inflections -- no feet, no
+// blew, though foot and blow are both there. The continuum pools are the
+// hand-vetted real-word lists the thirty-a-day sheets draw from, already
+// under check-continuum-daily, so a word that stands on one of those counts.
+const POOL = new Set(CONCEPTS.flatMap((c) => c.real || []).map((w) => String(w).toLowerCase()));
+const SEQ_WORDS = new Set(SEQ.flatMap((l) => l.words || []).map((w) => String(w).toLowerCase()));
+
+/** Real after all? The same four sources the builder drew the word from. */
+const isReal = (w) => {
+  const x = String(w).toLowerCase();
+  if (WORDS.has(x) || POOL.has(x) || HEART.includes(x) || SEQ_WORDS.has(x)) return true;
+  // web2 lists walk, not walked; the builder's pools carry both.
+  const stems = [];
+  if (/ies$/.test(x)) stems.push(x.replace(/ies$/, "y"));
+  if (/e?s$/.test(x)) stems.push(x.replace(/es$/, ""), x.replace(/s$/, ""));
+  if (/(ed|ing|er|est|en|y|ly)$/.test(x)) {
+    const t = x.replace(/(ed|ing|er|est|en|y|ly)$/, "");
+    stems.push(t, t + "e");
+    if (/([bcdfghjklmnpqrstvwxz])\1$/.test(t)) stems.push(t.slice(0, -1));
+  }
+  return stems.some((t) => t.length > 1 && WORDS.has(t));
+};
+
+const problems = [];
+const bare = (w) => String(w).replace(/[^A-Za-z'-]/g, "").toLowerCase();
+
+let dayCount = 0;
+let mazeCount = 0;
+let raceCount = 0;
+
+for (const lesson of D.lessons) {
+  const say = (m) => problems.push(`${lesson.key}: ${m}`);
+  const passageWords = new Set(lesson.passage.paras.join(" ").split(/\s+/).map(bare));
+
+  if (lesson.days.length !== 5) say(`${lesson.days.length} days, expected 5`);
+
+  // The race is one list for the week, so it lives on the lesson.
+  if (!Array.isArray(lesson.race) || lesson.race.length < 20) {
+    say(`word race has ${lesson.race ? lesson.race.length : 0} words, expected at least 20`);
+  } else if (new Set(lesson.race).size !== lesson.race.length) {
+    say("a word appears twice in the race");
+  }
+  for (const w of lesson.race || []) {
+    raceCount++;
+    if (!isReal(w)) say(`race word "${w}" is not a word`);
+    if (unsafeRealWord(w)) say(`race word "${w}" cannot be printed for a child`);
+  }
+
+  for (const d of lesson.days) {
+    dayCount++;
+    const at = (m) => say(`day ${d.day}: ${m}`);
+    if (d.wrf.length !== D.perDay.wrf) at(`${d.wrf.length} real words, expected ${D.perDay.wrf}`);
+    if (d.nwf.length !== D.perDay.nwf) at(`${d.nwf.length} made-up words, expected ${D.perDay.nwf}`);
+    if (d.maze.length !== D.perDay.maze) at(`${d.maze.length} maze items, expected ${D.perDay.maze}`);
+
+    for (const w of d.wrf) {
+      if (!isReal(w)) at(`real word "${w}" is not a word`);
+      if (unsafeRealWord(w)) at(`"${w}" cannot be printed for a child`);
+    }
+    for (const w of d.nwf) {
+      if (looksReal(w, WORDS) || POOL.has(String(w).toLowerCase())) {
+        at(`made-up word "${w}" is a real word`);
+      }
+      if (unsafeWord(w)) at(`"${w}" cannot be printed for a child`);
+    }
+
+    for (const [i, m] of d.maze.entries()) {
+      mazeCount++;
+      const words = String(m.s).split(/\s+/);
+      const item = (msg) => at(`maze ${i + 1} ${msg}`);
+      if (!(m.at >= 0 && m.at < words.length)) { item(`points at word ${m.at}, past the sentence`); continue; }
+      if (words[m.at] !== m.before + m.answer + m.after) {
+        item(`points at "${words[m.at]}" but its answer is "${m.answer}"`);
+      }
+      if (m.at === 0) item("blanks the first word, which has nothing before it to read");
+      if (m.at === words.length - 1) item("blanks the last word, which has nothing after it");
+      if (m.choices.length !== 3) item(`offers ${m.choices.length} choices, expected 3`);
+      if (new Set(m.choices).size !== m.choices.length) item("offers the same word twice");
+      if (!m.choices.includes(m.answer)) item(`does not offer its own answer "${m.answer}"`);
+      if (m.answer[0] !== m.answer[0].toLowerCase()) item(`blanks "${m.answer}", which a capital gives away`);
+      for (const c of m.choices) {
+        if (c !== m.answer && passageWords.has(bare(c))) {
+          item(`offers "${c}", which is in the passage the child just read`);
+        }
+        if (unsafeRealWord(c)) item(`offers "${c}", which cannot be printed for a child`);
+      }
+      // The sentence has to be the passage's, not a paraphrase of it.
+      if (!lesson.passage.paras.join(" ").includes(m.s)) item("is not a sentence from the passage");
+    }
+  }
+
+  // Monday's race and Friday's race have to be the same race.
+  const sheet = JSON.stringify(lesson.race);
+  if (lesson.days.some((d) => d.race && JSON.stringify(d.race) !== sheet)) {
+    say("the word race changes during the week");
+  }
+}
+
+console.log(`${D.lessons.length} lessons × 5 days = ${dayCount} practice pages.`);
+console.log(`${mazeCount} maze items, ${raceCount} race words, ${dayCount * (D.perDay.wrf + D.perDay.nwf)} word slots.`);
+console.log(`problems: ${problems.length}`);
+problems.slice(0, 40).forEach((x) => console.log("  " + x));
+if (problems.length) {
+  console.error("\n✗ fix these before the week ships.");
+  process.exit(1);
+}
+console.log("✅ every day has its words, its maze matches the passage, and the race holds all week");

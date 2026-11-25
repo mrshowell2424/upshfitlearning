@@ -93,7 +93,8 @@ const bare = (w) => w.replace(/[^A-Za-z'-]/g, "");
  * "pond." keeps its full stop outside the brackets.
  *
  * @param {string} text the passage, paragraphs joined by spaces or newlines
- * @param {{ every?: number, seed?: number, max?: number }} [opts]
+ * @param {{ every?: number, seed?: number, max?: number, lead?: number,
+ *           avoid?: string[] }} [opts]
  */
 export function mazeTokens(text, opts = {}) {
   const every = opts.every ?? 7;
@@ -104,10 +105,25 @@ export function mazeTokens(text, opts = {}) {
 
   // Leave the first sentence alone. If the passage has no full stop, leave
   // the first ten words.
-  let start = words.findIndex((w) => /[.!?]$/.test(w));
-  start = start === -1 ? Math.min(10, words.length) : start + 1;
+  //
+  // `lead` overrides both, and a three-sentence maze needs it: an excerpt
+  // that short cannot spend its first sentence on orientation, and it does
+  // not need to -- the child has the whole passage in front of them and read
+  // it out loud a minute ago. It counts words, not sentences.
+  let start;
+  if (opts.lead !== undefined) {
+    start = Math.min(Math.max(0, opts.lead), words.length);
+  } else {
+    start = words.findIndex((w) => /[.!?]$/.test(w));
+    start = start === -1 ? Math.min(10, words.length) : start + 1;
+  }
 
   const used = new Set(words.map((w) => bare(w).toLowerCase()));
+  // Words from the wider text this excerpt was cut out of. A distractor the
+  // child read thirty seconds ago in the passage makes the item about what
+  // they remember rather than what makes sense, which is the one thing a
+  // maze must not be -- and an excerpt cannot see them on its own.
+  for (const w of opts.avoid || []) used.add(bare(String(w)).toLowerCase());
   const tokens = [];
   let blanks = 0;
   let since = 0;

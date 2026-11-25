@@ -4922,33 +4922,77 @@ const ADAPTATIONS: Adaptation[] = [
     // rendered it, but nothing linked to that page and no packet carried it.
     // A sheet nobody can reach is a sheet nobody uses.
     //
-    // ONE SHEET, NOT THREE. /practice prints three -- the passage, the words
-    // and the maze -- because it stands alone. Inside a packet the passage is
-    // already the decodable sheet and the maze is already a toggle on it, so
-    // reprinting either would be the same page twice. What is missing is the
-    // week: which words on which day, and somewhere to write the numbers down.
+    // A DAY IS A PAGE. Monday to Friday, five sheets, and everything on a
+    // sheet is that day's work: the passage, the day's six real words and
+    // four made-up ones, three maze sentences and the word race. The first
+    // version of this was one sheet holding the whole week, which meant a
+    // child hunting for today's row and a teacher explaining where it was.
+    // A sixth sheet carries the answers and says to take it out before
+    // copying -- they were under the child's maze to begin with, about two
+    // inches below the question.
     //
-    // THE PASSAGE IS THE SAME ALL WEEK and the words are not. Repeated reading
-    // of one passage is what moves fluency and accuracy, and the log is where
-    // Monday and Friday sit side by side. Word reading and letter sounds work
-    // the other way -- the same ten words five times measures memory -- so
-    // those are different every day.
+    // THE PASSAGE IS PRINTED ON ALL FIVE, and it is the same passage. The
+    // packet already holds it once as the decodable sheet, so this is the
+    // one duplication in the packet that is on purpose: repeated reading of
+    // ONE text is what moves fluency and accuracy, the log on each page is
+    // where Monday and Friday end up next to each other, and a day page that
+    // says "go and find the other sheet" is not a day page. The word race is
+    // the same list all week for the same reason. The words and the maze
+    // change daily, because the same ten words five times measures memory.
     //
-    // IT RIDES WITH THE SPIRAL CHIP, reusing p.cdBox, because the ask was for
-    // "a spiral review for a quick practice daily". Student copy only: a
-    // spiral print should not come out with the sheet twice.
+    // ITS OWN CHIP, not the spiral one. The single sheet rode with 🌀 Spiral
+    // review because the ask was for "a spiral review for a quick practice
+    // daily". Six sheets is not a quick spiral print, so these sit on
+    // {{ p.box1 }} and come out only when ⏱ mClass daily is lit.
     name: "put the mClass daily review in every packet",
     apply: (html) => {
       const end = "</body>";
       if (!html.includes(end)) return html;
 
       // Every lesson in the sequence, not just the ones the builder offers
-      // today. Six words and four made-up words a day is about 28 KB for all
-      // sixty-eight, and keying it by lesson means a lesson added to the
-      // builder later gets its week without a second edit here.
-      const weeks: Record<string, [string[], string[]][]> = {};
-      for (const L of (DAILY_PRACTICE as { lessons: { key: string; days: { wrf: string[]; nwf: string[] }[] }[] }).lessons) {
-        weeks[L.key] = L.days.map((d) => [d.wrf, d.nwf]);
+      // today, and keyed by lesson so one added later gets its week without a
+      // second edit here. The maze arrives as three strings and the answer --
+      // what is before the gap, the three choices, what is after -- because
+      // the alternative is a token object per word, which was eight times the
+      // bytes for a renderer that can hold a sentence in one string.
+      type Day = {
+        wrf: string[];
+        nwf: string[];
+        maze: { s: string; at: number; before: string; after: string; choices: string[]; answer: string }[];
+      };
+      type Week = {
+        key: string;
+        race: string[];
+        passage: { title: string; paras: string[]; words: number };
+        days: Day[];
+      };
+      const weeks: Record<string, {
+        t: string;
+        n: number;
+        p: string[];
+        r: string[];
+        d: { w: string[]; s: string[]; m: string[][] }[];
+      }> = {};
+      for (const L of (DAILY_PRACTICE as unknown as { lessons: Week[] }).lessons) {
+        weeks[L.key] = {
+          t: L.passage.title,
+          n: L.passage.words,
+          p: L.passage.paras,
+          r: L.race,
+          d: L.days.map((day) => ({
+            w: day.wrf,
+            s: day.nwf,
+            m: day.maze.map((m) => {
+              const words = m.s.split(/\s+/);
+              return [
+                (words.slice(0, m.at).join(" ") + " " + m.before).trim(),
+                m.choices.join("  /  "),
+                (m.after + " " + words.slice(m.at + 1).join(" ")).trim(),
+                m.answer,
+              ];
+            }),
+          })),
+        };
       }
 
       let out = html.replace(
@@ -4973,97 +5017,166 @@ const ADAPTATIONS: Adaptation[] = [
           // and only the 68 have practice data, so a straight MD[id] left 150 of
           // them with no sheet at all. The page already resolves a focus to its
           // lesson this way everywhere else: byId[id.split('|')[0]].
-          "        const week = MD[id] || MD[String(id).split('|')[0]] || [];\n" +
-          "        const DN = ['MON', 'TUE', 'WED', 'THU', 'FRI'];\n" +
+          "        const W = MD[id] || MD[String(id).split('|')[0]] || null;\n" +
+          "        if (!W) return { mcHas: false, mcDays: [], mcKey: [], mcRace: '' };\n" +
+          "        const DN = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'];\n" +
+          "        const paras = (W.p || []).map((t) => ({ t }));\n" +
+          "        const race = (W.r || []).map((w) => ({ w }));\n" +
+          "        const days = W.d || [];\n" +
           "        return {\n" +
-          "          mcHas: week.length > 0,\n" +
-          "          mcLog: DN.slice(0, week.length).map((t) => ({ t })),\n" +
-          "          mcDays: week.map((d, i) => ({\n" +
+          "          mcHas: days.length > 0,\n" +
+          "          mcDays: days.map((d, i) => ({\n" +
           "            t: DN[i] || ('DAY ' + (i + 1)),\n" +
-          "            real: (d[0] || []).map((w) => ({ w })),\n" +
-          "            silly: (d[1] || []).map((w) => ({ w })),\n" +
-          "            nReal: '/ ' + (d[0] || []).length,\n" +
-          "            nSilly: '/ ' + (d[1] || []).length,\n" +
+          "            of: 'DAY ' + (i + 1) + ' OF ' + days.length,\n" +
+          "            title: W.t,\n" +
+          "            nWords: (W.n || 0) + ' words',\n" +
+          "            paras: paras,\n" +
+          "            race: race,\n" +
+          "            real: (d.w || []).map((w) => ({ w })),\n" +
+          "            silly: (d.s || []).map((w) => ({ w })),\n" +
+          "            nReal: '/ ' + (d.w || []).length,\n" +
+          "            nSilly: '/ ' + (d.s || []).length,\n" +
+          "            maze: (d.m || []).map((m, j) => ({ n: (j + 1) + '.', b: m[0], c: m[1], a: m[2] })),\n" +
           "          })),\n" +
+          "          mcKey: days.map((d, i) => ({\n" +
+          "            t: DN[i] || ('DAY ' + (i + 1)),\n" +
+          "            items: (d.m || []).map((m, j) => ({\n" +
+          "              t: (j + 1) + '. ' + m[0] + ' ' + m[3] + ' ' + m[2],\n" +
+          "            })),\n" +
+          "            words: 'Real: ' + (d.w || []).join(', ') + ' · Silly: ' + (d.s || []).join(', '),\n" +
+          "          })),\n" +
+          "          mcRace: 'Word race, the same list all week: ' + (W.r || []).join(', ') + '.',\n" +
           "        }; })(),",
       );
 
+      const H = 'font-family:Poppins,system-ui,sans-serif;font-size:11px;font-weight:800;letter-spacing:.14em;color:#000';
+      const NUM = 'font-size:11px;font-weight:800;color:#fff;background:#000;border-radius:999px;' +
+        'width:17px;height:17px;display:inline-flex;align-items:center;justify-content:center;flex:none';
+      const BOX = 'display:inline-block;width:46px;height:20px;border:2px solid #000;border-radius:4px;vertical-align:middle';
+
+      // One sheet per day, then the answers.
       const sheet =
         '<sc-if value="{{ mcHas }}" hint-placeholder-val="{{ true }}">\n' +
-        '    <div data-wb="true" style="{{ p.cdBox }}">\n' +
+        '    <sc-for list="{{ mcDays }}" as="d" hint-placeholder-count="5">\n' +
+        '    <div data-wb="true" style="{{ p.box1 }}">\n' +
         '      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;' +
-        'border-bottom:3px solid #000;padding-bottom:8px">\n' +
+        'border-bottom:3px solid #000;padding-bottom:7px">\n' +
         "        <div>\n" +
-        '          <div style="font-family:Poppins,system-ui,sans-serif;font-size:12px;font-weight:700;' +
-        'letter-spacing:.18em;color:#000">{{ p.kicker }} · MCLASS DAILY</div>\n' +
-        '          <div style="font-size:26px;font-weight:800;color:#000;line-height:1.1">' +
-        "⏱ 5 minutes a day</div>\n" +
+        '          <div style="' + H + '">{{ p.kicker }} · MCLASS DAILY · {{ d.of }}</div>\n' +
+        '          <div style="font-size:27px;font-weight:800;color:#000;line-height:1.05">{{ d.t }}</div>\n' +
         "        </div>\n" +
-        '        <div style="font-size:14px;font-weight:600;white-space:nowrap">Name ________ Week ______</div>\n' +
+        '        <div style="font-size:12.5px;font-weight:600;white-space:nowrap;text-align:right">' +
+        "Name ______________<br>Date ____________</div>\n" +
         "      </div>\n" +
-        '      <div style="font-size:13.5px;line-height:1.45;border:1.5px solid #000;border-radius:8px;' +
-        'padding:7px 11px;color:#000">Every day: read the decodable page in this packet out loud for ' +
-        "one minute and write the numbers in the log, then read one row of words below. Read the " +
-        "<b>same</b> passage all week — that is what makes it faster. Three maze answers a day " +
-        "gets you through the maze by Friday.</div>\n" +
-        '      <div style="font-family:Poppins,system-ui,sans-serif;font-size:11px;font-weight:800;' +
-        'letter-spacing:.14em;color:#000">READING OUT LOUD · ORF + ACCURACY</div>\n' +
-        '      <div style="display:grid;grid-template-columns:46px repeat(3,minmax(0,1fr)) 86px;' +
-        'gap:3px 6px;align-items:center;border:2px solid #000;border-radius:8px;padding:7px 9px">\n' +
-        '        <span></span>\n' +
-        '        <span style="font-size:10px;font-weight:800;letter-spacing:.08em;color:#000;' +
-        'text-align:center">WORDS READ</span>\n' +
-        '        <span style="font-size:10px;font-weight:800;letter-spacing:.08em;color:#000;' +
-        'text-align:center">WORDS WRONG</span>\n' +
-        '        <span style="font-size:10px;font-weight:800;letter-spacing:.08em;color:#000;' +
-        'text-align:center">RIGHT</span>\n' +
-        '        <span style="font-size:10px;font-weight:800;letter-spacing:.08em;color:#000;' +
-        'text-align:center">HOW IT FELT</span>\n' +
-        '        <sc-for list="{{ mcLog }}" as="d" hint-placeholder-count="5">\n' +
-        '          <span style="font-size:12px;font-weight:800;color:#000">{{ d.t }}</span>\n' +
-        '          <span style="border:1.5px solid #000;border-radius:4px;height:21px"></span>\n' +
-        '          <span style="border:1.5px solid #000;border-radius:4px;height:21px"></span>\n' +
-        '          <span style="border:1.5px solid #000;border-radius:4px;height:21px"></span>\n' +
-        '          <span style="font-size:14px;text-align:center">\u{1F642} \u{1F610} \u{1F641}</span>\n' +
-        "        </sc-for>\n" +
+
+        // 1 — the passage, read out loud, and the numbers written down
+        '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
+        'padding-bottom:3px">\n' +
+        '        <span style="' + NUM + '">1</span>\n' +
+        '        <span style="font-size:14.5px;font-weight:800;color:#000">Read it out loud</span>\n' +
+        '        <span style="' + H + ';font-size:10px">ORF + ACCURACY</span>\n' +
+        '        <span style="flex:1"></span>\n' +
+        '        <span style="font-size:11.5px;font-weight:600;color:#000">⏱ 1 minute</span>\n' +
         "      </div>\n" +
-        '      <div style="font-size:13px;font-weight:700;color:#000">On Friday I read ' +
-        '<span style="display:inline-block;min-width:54px;border-bottom:2px solid #000"></span> more ' +
-        "words than on Monday.</div>\n" +
-        '      <div style="font-family:Poppins,system-ui,sans-serif;font-size:11px;font-weight:800;' +
-        'letter-spacing:.14em;color:#000">WORDS FOR THE WEEK · WRF + LETTER SOUNDS</div>\n' +
-        '      <sc-for list="{{ mcDays }}" as="d" hint-placeholder-count="5">\n' +
-        '        <div style="border:1.5px solid #000;border-radius:8px;padding:5px 9px;' +
-        'display:flex;flex-direction:column;gap:3px;break-inside:avoid;page-break-inside:avoid">\n' +
-        '          <div style="display:flex;align-items:center;gap:9px">\n' +
-        '            <span style="font-size:11px;font-weight:800;letter-spacing:.1em;color:#000;' +
-        'flex:none;width:32px">{{ d.t }}</span>\n' +
-        '            <span style="font-size:9.5px;font-weight:800;letter-spacing:.06em;color:#000;' +
-        'flex:none;width:62px">REAL</span>\n' +
-        '            <span style="display:flex;gap:8px;flex-wrap:wrap;flex:1;min-width:0">' +
+        '      <div style="font-size:13px;font-weight:700;color:#000">📖 {{ d.title }} · {{ d.nWords }}</div>\n' +
+        '      <sc-for list="{{ d.paras }}" as="x" hint-placeholder-count="5">' +
+        '<div style="font-size:15.5px;line-height:1.52;color:#000;margin-bottom:3px">{{ x.t }}</div>' +
+        "</sc-for>\n" +
+        '      <div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;border:2px solid #000;' +
+        'border-radius:8px;padding:6px 10px;font-size:12px;font-weight:700;color:#000">\n' +
+        '        <span>Words read <span style="' + BOX + '"></span></span>\n' +
+        "        <span>−</span>\n" +
+        '        <span>Wrong <span style="' + BOX + ';width:38px"></span></span>\n' +
+        "        <span>=</span>\n" +
+        '        <span>Right <span style="' + BOX + '"></span></span>\n' +
+        '        <span style="flex:1"></span>\n' +
+        '        <span style="font-size:13.5px">How it felt \u{1F642} \u{1F610} \u{1F641}</span>\n' +
+        "      </div>\n" +
+
+        // 2 — the day's words, real and made up
+        '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
+        'padding-bottom:3px">\n' +
+        '        <span style="' + NUM + '">2</span>\n' +
+        '        <span style="font-size:14.5px;font-weight:800;color:#000">Real words and silly words</span>\n' +
+        '        <span style="' + H + ';font-size:10px">WRF + NWF</span>\n' +
+        '        <span style="flex:1"></span>\n' +
+        '        <span style="font-size:11.5px;font-weight:600;color:#000">read each one, tick it</span>\n' +
+        "      </div>\n" +
+        '      <div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap">\n' +
+        '        <span style="' + H + ';font-size:10px;flex:none;width:58px">REAL</span>\n' +
+        '        <span style="display:flex;gap:9px;flex-wrap:wrap;flex:1;min-width:0">' +
         '<sc-for list="{{ d.real }}" as="r" hint-placeholder-count="6">' +
-        '<span style="font-size:16px;font-weight:650;color:#000;white-space:nowrap">' +
-        "☐ {{ r.w }}</span></sc-for></span>\n" +
-        '            <span style="font-size:12px;font-weight:700;color:#000;white-space:nowrap">' +
-        "__ {{ d.nReal }}</span>\n" +
-        "          </div>\n" +
-        '          <div style="display:flex;align-items:center;gap:9px;border-top:1px dashed #000;' +
-        'padding-top:3px">\n' +
-        '            <span style="flex:none;width:32px"></span>\n' +
-        '            <span style="font-size:9.5px;font-weight:800;letter-spacing:.06em;color:#000;' +
-        'flex:none;width:62px">NONSENSE</span>\n' +
-        '            <span style="display:flex;gap:8px;flex-wrap:wrap;flex:1;min-width:0">' +
+        '<span style="font-size:16.5px;font-weight:650;color:#000;white-space:nowrap">☐ {{ r.w }}</span>' +
+        "</sc-for></span>\n" +
+        '        <span style="font-size:12.5px;font-weight:700;color:#000">__ {{ d.nReal }}</span>\n' +
+        "      </div>\n" +
+        '      <div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;border-top:1px dashed #000;' +
+        'padding-top:4px">\n' +
+        '        <span style="' + H + ';font-size:10px;flex:none;width:58px">SILLY</span>\n' +
+        '        <span style="display:flex;gap:9px;flex-wrap:wrap;flex:1;min-width:0">' +
         '<sc-for list="{{ d.silly }}" as="s" hint-placeholder-count="4">' +
-        '<span style="font-size:16px;font-weight:650;color:#000;white-space:nowrap">' +
-        "☐ {{ s.w }}</span></sc-for></span>\n" +
-        '            <span style="font-size:12px;font-weight:700;color:#000;white-space:nowrap">' +
-        "__ {{ d.nSilly }}</span>\n" +
-        "          </div>\n" +
+        '<span style="font-size:16.5px;font-weight:650;color:#000;white-space:nowrap">☐ {{ s.w }}</span>' +
+        "</sc-for></span>\n" +
+        '        <span style="font-size:12.5px;font-weight:700;color:#000">__ {{ d.nSilly }}</span>\n' +
+        "      </div>\n" +
+        '      <div style="font-size:11px;line-height:1.4;color:#000">The silly words are not real. ' +
+        "Sound by sound counts, and all at once counts too.</div>\n" +
+
+        // 3 — three maze sentences
+        '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
+        'padding-bottom:3px">\n' +
+        '        <span style="' + NUM + '">3</span>\n' +
+        '        <span style="font-size:14.5px;font-weight:800;color:#000">Fill in the blank</span>\n' +
+        '        <span style="' + H + ';font-size:10px">MAZE</span>\n' +
+        '        <span style="flex:1"></span>\n' +
+        '        <span style="font-size:11.5px;font-weight:600;color:#000">circle the word that fits</span>\n' +
+        "      </div>\n" +
+        '      <sc-for list="{{ d.maze }}" as="m" hint-placeholder-count="3">\n' +
+        '        <div style="font-size:16px;line-height:1.7;color:#000">{{ m.n }} {{ m.b }} ' +
+        '<span style="border:1.5px solid #000;border-radius:7px;padding:1px 7px;font-weight:650">' +
+        "{{ m.c }}</span> {{ m.a }}</div>\n" +
+        "      </sc-for>\n" +
+
+        // 4 — the word race, the same list all week
+        '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
+        'padding-bottom:3px">\n' +
+        '        <span style="' + NUM + '">4</span>\n' +
+        '        <span style="font-size:14.5px;font-weight:800;color:#000">Word race</span>\n' +
+        '        <span style="' + H + ';font-size:10px">WRF</span>\n' +
+        '        <span style="flex:1"></span>\n' +
+        '        <span style="font-size:11.5px;font-weight:600;color:#000">⏱ 1 minute — how far do you get?</span>\n' +
+        "      </div>\n" +
+        '      <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px 8px">' +
+        '<sc-for list="{{ d.race }}" as="w" hint-placeholder-count="24">' +
+        '<span style="font-size:15.5px;font-weight:650;color:#000">{{ w.w }}</span></sc-for></div>\n' +
+        '      <div style="display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;' +
+        'color:#000;border-top:1px dashed #000;padding-top:5px">' +
+        '<span>Words read in a minute <span style="' + BOX + ';width:50px"></span></span>' +
+        '<span style="font-weight:600">Same list every day. Friday should be further down it than ' +
+        "Monday.</span></div>\n" +
+        "    </div>\n" +
+        "    </sc-for>\n" +
+
+        // and the answers, on their own sheet, to be taken out
+        '    <div data-wb="true" style="{{ p.box1 }}">\n' +
+        '      <div style="border-bottom:3px solid #000;padding-bottom:7px">\n' +
+        '        <div style="' + H + '">{{ p.kicker }} · MCLASS DAILY · TEACHER COPY</div>\n' +
+        '        <div style="font-size:26px;font-weight:800;color:#000;line-height:1.05">' +
+        "Answers for the week</div>\n" +
+        '        <div style="font-size:12.5px;color:#000;margin-top:3px">The last sheet of this print. ' +
+        "Take it out before you copy the week for a child.</div>\n" +
+        "      </div>\n" +
+        '      <sc-for list="{{ mcKey }}" as="k" hint-placeholder-count="5">\n' +
+        '        <div style="display:flex;gap:11px;align-items:flex-start;border-bottom:1px solid #000;' +
+        'padding-bottom:6px">\n' +
+        '          <span style="' + H + ';font-size:10px;flex:none;width:84px">{{ k.t }}</span>\n' +
+        '          <div style="flex:1;min-width:0">' +
+        '<sc-for list="{{ k.items }}" as="i" hint-placeholder-count="3">' +
+        '<div style="font-size:13.5px;line-height:1.5;color:#000">{{ i.t }}</div></sc-for>' +
+        '<div style="font-size:12px;color:#000;margin-top:2px">{{ k.words }}</div></div>\n' +
         "        </div>\n" +
         "      </sc-for>\n" +
-        '      <div style="font-size:12.5px;line-height:1.4;color:#000;border-top:1.5px solid #000;' +
-        'padding-top:5px">A nonsense word read sound by sound counts, and read all at once counts ' +
-        "too. Both ways are right — all at once is the one that comes last.</div>\n" +
+        '      <div style="font-size:12.5px;line-height:1.5;color:#000">{{ mcRace }}</div>\n' +
         "    </div>\n" +
         "    </sc-if>\n    ";
 
