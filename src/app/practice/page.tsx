@@ -48,6 +48,12 @@ type Lesson = {
   name: string;
   level: number;
   passage: { title: string; paras: string[]; words: number };
+  /**
+   * The same five days in multisyllabic words, or null where the lesson's
+   * pattern has no two-syllable words to build them from. Fourteen lessons
+   * carry null, and for those the switch below has nothing to switch to.
+   */
+  msDays: { day: number; wrf: string[]; nwf: string[] }[] | null;
   /** Which telling the maze sentences were cut from: the printed passage, or g3. */
   mazeFrom: "g2" | "g3";
   race: string[];
@@ -109,6 +115,19 @@ const box = (w: number, h = 21) => ({
   verticalAlign: "middle",
 });
 
+/**
+ * Which words a day shows: the ordinary rows, or the multisyllabic ones.
+ *
+ * The lesson builder's packet has a "Use multisyllabic words" switch and this
+ * page now has the same one, as ?multi=1. A lesson with no multisyllabic bank
+ * keeps its ordinary rows whatever the switch says, which is what the switch
+ * does everywhere else.
+ */
+function wordsFor(lesson: Lesson, d: Day, multi: boolean): { wrf: string[]; nwf: string[] } {
+  const ms = multi && lesson.msDays ? lesson.msDays[d.day - 1] : null;
+  return ms ?? { wrf: d.wrf, nwf: d.nwf };
+}
+
 /** One word with a tick box in front of it. */
 function Tick({ w }: { w: string }) {
   return <span style={{ fontSize: 16.5, fontWeight: 650, whiteSpace: "nowrap" }}>☐ {w}</span>;
@@ -138,7 +157,9 @@ function MazeLine({ m, n }: { m: Maze; n: number }) {
 }
 
 /** One day: everything that day asks for, on one page. */
-function DayPage({ lesson, d }: { lesson: Lesson; d: Day }) {
+function DayPage({ lesson, d, multi }: { lesson: Lesson; d: Day; multi: boolean }) {
+  const words = wordsFor(lesson, d, multi);
+  const harder = multi && Boolean(lesson.msDays);
   return (
     <section className="sheet" style={{ display: "flex", flexDirection: "column", gap: 13, paddingTop: 16 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: 12, borderBottom: `3px solid ${TEAL}`, paddingBottom: 7 }}>
@@ -176,21 +197,21 @@ function DayPage({ lesson, d }: { lesson: Lesson; d: Day }) {
       <Part n={2} label="Real words and silly words" measure="WRF + NWF" how="read each one, tick it">
         <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
           <span style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: ".1em", color: TEAL, width: 74, flex: "none" }}>
-            REAL
+            {harder ? "REAL · 2+" : "REAL"}
           </span>
           <span style={{ display: "flex", gap: 9, flexWrap: "wrap", flex: 1 }}>
-            {d.wrf.map((w, i) => <Tick key={`${w}-${i}`} w={w} />)}
+            {words.wrf.map((w, i) => <Tick key={`${w}-${i}`} w={w} />)}
           </span>
-          <span style={{ fontSize: 12.5, fontWeight: 700 }}>__ / {d.wrf.length}</span>
+          <span style={{ fontSize: 12.5, fontWeight: 700 }}>__ / {words.wrf.length}</span>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", borderTop: `1px dashed ${LINE}`, paddingTop: 5 }}>
           <span style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: ".1em", color: CORAL, width: 74, flex: "none" }}>
             SILLY
           </span>
           <span style={{ display: "flex", gap: 9, flexWrap: "wrap", flex: 1 }}>
-            {d.nwf.map((w, i) => <Tick key={`${w}-${i}`} w={w} />)}
+            {words.nwf.map((w, i) => <Tick key={`${w}-${i}`} w={w} />)}
           </span>
-          <span style={{ fontSize: 12.5, fontWeight: 700 }}>__ / {d.nwf.length}</span>
+          <span style={{ fontSize: 12.5, fontWeight: 700 }}>__ / {words.nwf.length}</span>
         </div>
         <div style={{ fontSize: 11, color: MUTED, lineHeight: 1.4 }}>
           The silly words are not real. Sound by sound counts, and all at once counts too.
@@ -288,7 +309,7 @@ function RaceSheet({ lesson }: { lesson: Lesson }) {
  * to every maze item about two inches under the item. The child does not have
  * to cheat to be told; they only have to look down.
  */
-function KeySheet({ lesson }: { lesson: Lesson }) {
+function KeySheet({ lesson, multi }: { lesson: Lesson; multi: boolean }) {
   return (
     <section className="sheet" style={{ display: "flex", flexDirection: "column", gap: 11, paddingTop: 16 }}>
       <div style={{ borderBottom: `3px solid ${CORAL}`, paddingBottom: 7 }}>
@@ -316,7 +337,8 @@ function KeySheet({ lesson }: { lesson: Lesson }) {
               );
             })}
             <div style={{ fontSize: 12, color: MUTED }}>
-              Real words: {d.wrf.join(", ")} · Silly words: {d.nwf.join(", ")}
+              Real words: {wordsFor(lesson, d, multi).wrf.join(", ")} · Silly words:{" "}
+              {wordsFor(lesson, d, multi).nwf.join(", ")}
             </div>
           </div>
         </div>
@@ -333,11 +355,17 @@ function KeySheet({ lesson }: { lesson: Lesson }) {
 export default async function PracticePage({
   searchParams,
 }: {
-  searchParams: Promise<{ lesson?: string }>;
+  searchParams: Promise<{ lesson?: string; multi?: string }>;
 }) {
   const sp = await searchParams;
   const lesson = D.lessons.find((l) => l.key === sp.lesson) ?? D.lessons[8];
   const levels = [...new Set(D.lessons.map((l) => l.level))].sort();
+  // The switch lives in the URL, the way the lesson does, so a teacher can
+  // send somebody the harder week as a link and a print carries what the page
+  // was showing.
+  const multi = sp.multi === "1";
+  const hasMulti = Boolean(lesson.msDays);
+  const href = (key: string, m: boolean) => `/practice?lesson=${key}${m ? "&multi=1" : ""}`;
 
   return (
     <>
@@ -383,7 +411,7 @@ export default async function PracticePage({
                     return (
                       <Link
                         key={l.key}
-                        href={`/practice?lesson=${l.key}`}
+                        href={href(l.key, multi)}
                         style={{
                           fontSize: 12.5,
                           fontWeight: 700,
@@ -403,14 +431,39 @@ export default async function PracticePage({
                 </div>
               </div>
             ))}
+            <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginTop: 12 }}>
+              <Link
+                href={href(lesson.key, !multi)}
+                aria-disabled={!hasMulti}
+                style={{
+                  fontSize: 13,
+                  fontWeight: 700,
+                  textDecoration: "none",
+                  border: `1.5px solid ${multi && hasMulti ? CORAL : LINE}`,
+                  background: multi && hasMulti ? CORAL : "#fff",
+                  color: multi && hasMulti ? "#fff" : hasMulti ? INK : MUTED,
+                  borderRadius: 999,
+                  padding: "6px 14px",
+                  pointerEvents: hasMulti ? undefined : "none",
+                  opacity: hasMulti ? 1 : 0.55,
+                }}
+              >
+                🧗 {multi && hasMulti ? "Multisyllabic words: ON" : "Use multisyllabic words"}
+              </Link>
+              <span style={{ fontSize: 12.5, color: MUTED }}>
+                {hasMulti
+                  ? "Swaps the six real words and four silly words for two-syllable ones. The passage, the maze and the race do not change."
+                  : "This lesson's pattern has no two-syllable words, so there is nothing to switch to."}
+              </span>
+            </div>
             <hr style={{ border: 0, borderTop: `1.5px solid ${LINE}`, margin: "14px 0 0" }} />
           </div>
 
           {lesson.days.map((d) => (
-            <DayPage key={d.day} lesson={lesson} d={d} />
+            <DayPage key={d.day} lesson={lesson} d={d} multi={multi} />
           ))}
           <RaceSheet lesson={lesson} />
-          <KeySheet lesson={lesson} />
+          <KeySheet lesson={lesson} multi={multi} />
         </main>
       </SignInGate>
       <div className="noprint"><Footer /></div>
