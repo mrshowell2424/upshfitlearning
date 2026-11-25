@@ -18,27 +18,55 @@
  * Plain string work, no dependencies, runs anywhere.
  */
 
-/** Would this clue, read literally, turn `a` into `b`? */
+/**
+ * Would this clue, read literally, turn `a` into `b`?
+ *
+ * A clue may close with one sentence of explanation instead of a second
+ * instruction -- "Change the ew to ue. It says the same sound." A vowel
+ * team lesson has to be able to say why a child is swapping one spelling
+ * for another, and the instruction is the part before the note. A
+ * trailing sentence that is itself an instruction is left where it is:
+ * two instructions on one rung is not a ladder, and the checker should go
+ * on failing it.
+ */
 export function describes(a, b, c) {
-  const pickIdx = (a, L, q) => {
-    const idxs = [...a].map((ch, n) => (ch === L ? n : -1)).filter((n) => n >= 0);
+  if (instructs(a, b, c)) return true;
+  const note = /\s+(?!Change |Add |Put |Take |Keep )[A-Z][^.]*\.$/;
+  return note.test(c) && instructs(a, b, c.replace(note, ""));
+}
+
+/**
+ * The instruction itself.
+ *
+ * Every letter a clue names is a grapheme, not a character: "Change the
+ * ea to oa." and "Put an r between the f and the ee." are the natural way
+ * to say what a vowel team lesson is doing, and a child reading them is
+ * being asked to handle the team as one unit. For a one-letter grapheme
+ * this is the same rule it always was.
+ */
+function instructs(a, b, c) {
+  /** Where `g` sits in `a`, narrowed by a first/last/middle qualifier. */
+  const pickIdx = (a, g, q) => {
+    const idxs = [];
+    for (let i = 0; i + g.length <= a.length; i++) if (a.startsWith(g, i)) idxs.push(i);
     if (!q || idxs.length <= 1) return idxs;
     return q === "first " ? [idxs[0]] : q === "last " ? [idxs[idxs.length - 1]] : idxs.slice(1, -1);
   };
   let m;
-  if ((m = c.match(/^Change the (first |last |middle )?(\w) to (\w)\.$/)))
-    return pickIdx(a, m[2], m[1]).some((i) => a.slice(0, i) + m[3] + a.slice(i + 1) === b);
+  if ((m = c.match(/^Change the (first |last |middle )?(\w+) to (\w+)\.$/)))
+    return pickIdx(a, m[2], m[1]).some((i) => a.slice(0, i) + m[3] + a.slice(i + m[2].length) === b);
   if (c === "Add a silent e.") return b === a + "e";
   if (c === "Take off the silent e.") return a.endsWith("e") && b === a.slice(0, -1);
-  if ((m = c.match(/^Add an? (\w) at the (start|end)\.$/)))
+  if ((m = c.match(/^Add an? (\w+) at the (start|end)\.$/)))
     return b === (m[2] === "start" ? m[1] + a : a + m[1]);
-  if ((m = c.match(/^Put an? (\w) between the (\w) and the (\w)\.$/))) {
-    for (let i = 1; i < a.length; i++)
-      if (a[i - 1] === m[2] && a[i] === m[3] && a.slice(0, i) + m[1] + a.slice(i) === b) return true;
+  if ((m = c.match(/^Put an? (\w+) between the (\w+) and the (\w+)\.$/))) {
+    for (let i = m[2].length; i < a.length; i++)
+      if (a.startsWith(m[2], i - m[2].length) && a.startsWith(m[3], i)
+        && a.slice(0, i) + m[1] + a.slice(i) === b) return true;
     return false;
   }
-  if ((m = c.match(/^Take off the (first |last |middle )?(\w)\.$/)))
-    return pickIdx(a, m[2], m[1]).some((i) => a.slice(0, i) + a.slice(i + 1) === b);
+  if ((m = c.match(/^Take off the (first |last |middle )?(\w+)\.$/)))
+    return pickIdx(a, m[2], m[1]).some((i) => a.slice(0, i) + a.slice(i + m[2].length) === b);
   if ((m = c.match(/^Keep .*?\. Change (\S+) to (\S+)\.$/))) return a !== b && b === a.replace(m[1], m[2]);
   if ((m = c.match(/^Change (\S+)- to (\S+)-\.$/))) return a.startsWith(m[1]) && b === m[2] + a.slice(m[1].length);
   if ((m = c.match(/^Change -(\S+) to -(\S+)\.$/))) return a.endsWith(m[1]) && b === a.slice(0, -m[1].length) + m[2];

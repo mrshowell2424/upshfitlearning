@@ -3927,7 +3927,7 @@
     "might"
    ],
    "clues": [
-    "Change the h to s.",
+    "Change the first h to s.",
     "Add a t at the end.",
     "Change the s to l.",
     "Change the l to r.",
@@ -3946,7 +3946,7 @@
     "crows"
    ],
    "clues": [
-    "Put an s at the front.",
+    "Add an s at the start.",
     "Change the s to g.",
     "Change the l to r.",
     "Change the g to c.",
@@ -3979,14 +3979,14 @@
     "real",
     "read",
     "road",
-    "roast"
+    "toad"
    ],
    "clues": [
     "Change the t to l.",
     "Change the s to r.",
     "Change the l to d.",
     "Change the ea to oa.",
-    "Put an s between the a and the d, and change the d to t."
+    "Change the r to t."
    ]
   }
  },

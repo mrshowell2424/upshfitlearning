@@ -21,6 +21,7 @@
 import { readFileSync } from "node:fs";
 import { describes, judgeRung } from "./lib/ladder-clue.mjs";
 import { deriveSequence } from "./lib/sequence.mjs";
+import { CONCEPTS } from "./lib/continuum-pools.mjs";
 
 // The order, the scope numbers that interleave the Basic patterns among
 // the OG concepts, and the reach into the lesson builder for the list
@@ -32,6 +33,13 @@ const PART_WORDS = JSON.parse(readFileSync("scripts/reading-part-words.json", "u
 const LAD = JSON.parse(readFileSync("scripts/reading-word-ladders.json", "utf8")).ladders;
 
 const DICT = readFileSync("/usr/share/dict/words", "utf8").split("\n").map((w) => w.trim());
+// web2 is a dictionary of base forms, and it leaves out irregular
+// inflections a child meets early: no feet, no blew, though foot and blow
+// are both there. The continuum pools are the hand-vetted real-word lists
+// the thirty-a-day sheets are drawn from, already under check-continuum-*,
+// so a word that stands on one of those sheets counts as a word here too.
+// This is the whole reason "feet" was reported as not a word.
+const POOL = new Set(CONCEPTS.flatMap((c) => c.real || []).map((w) => String(w).toLowerCase()));
 const WORDS = new Set(DICT.filter((w) => w && w === w.toLowerCase()));
 const compound = (w, g) => {
   let i = w.indexOf(g);
@@ -109,7 +117,7 @@ const heartTooSoon = (w, sid) => {
 const CONTRACT = /^([a-z]+)('d|'ll|'re|'s|'ve|'m|n't)$/;
 const isWord = (w) => {
   const x = String(w).toLowerCase().replace(/'s$/, "");
-  if (WORDS.has(x) || HEART.has(x)) return true;
+  if (WORDS.has(x) || HEART.has(x) || POOL.has(x)) return true;
   const k = String(w).toLowerCase().match(CONTRACT);
   if (k) {
     const stem = k[2] === "n't" && k[1] === "wo" ? "will"
@@ -262,6 +270,19 @@ for (const [key, v] of Object.entries(LAD)) {
       cand.add(a.slice(0, q) + a.slice(q + 1));
     }
     for (let q = 0; q <= a.length; q++) for (const ch of ALPHA) cand.add(a.slice(0, q) + ch + a.slice(q));
+    // A clue may name a grapheme rather than a single letter -- "Change the
+    // ea to oa.", "Put an r between the f and the ee." -- so one-character
+    // edits no longer span everything a clue can reach. Whatever a grapheme
+    // clue produces is built out of the pieces the clue itself names, so
+    // take every word in the clue as material and lay it over every span of
+    // up to four letters. Without this the proof below would be making a
+    // claim about letters while the clues talk about teams.
+    const parts = c.toLowerCase().match(/[a-z]+/g) || [];
+    for (let q = 0; q <= a.length; q++)
+      for (let g = 0; g <= 4 && q + g <= a.length; g++) {
+        cand.add(a.slice(0, q) + a.slice(q + g));
+        for (const t of parts) cand.add(a.slice(0, q) + t + a.slice(q + g));
+      }
     for (const x of cand) {
       if (x !== want && describes(a, x, c))
         problems.push(`${key}: rung ${i + 1} ("${c}") is satisfied by "${x}" as well as "${want}"`);
