@@ -233,6 +233,24 @@ export default async function Page({ searchParams }: { searchParams: Search }) {
                 </span>
               </p>
 
+              {/* Benchmark practice is one go at all five measures. This is
+                  the week: five days of five minutes tied to one lesson's
+                  concept, which is what a data chat leaves a child without.
+                  It had no link from anywhere on the site until now. */}
+              <p style={{ margin: "-14px 0 24px", fontSize: 15 }}>
+                <a
+                  href="/practice"
+                  style={{ color: BRAND.tealDark, fontWeight: 700, textDecoration: "none" }}
+                >
+                  A week of it → Daily practice
+                </a>
+                <span style={{ color: BRAND.mid }}>
+                  {" "}
+                  — five days on all five measures, built from one lesson&rsquo;s own words. The
+                  same week rides inside every lesson packet as the mClass daily review.
+                </span>
+              </p>
+
               {/* A one-minute read is two surfaces: the child reads off one
                   and the teacher marks errors on the other. One monitor
                   cannot be both, which is why every published probe is a

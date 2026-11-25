@@ -13,12 +13,13 @@
  * Idempotent — rows upsert on path, and anything no longer on disk is removed
  * so a renamed page does not linger as a row nothing links to.
  */
-import { readdir, readFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import WRITING from "./reading-writing-passages.json" with { type: "json" };
 import SPLITS from "./reading-skill-splits.json" with { type: "json" };
 import { EXTRA_LESSONS } from "./lib/extra-lessons.mjs";
 import CONTINUUM_DAILY from "./continuum-daily.json" with { type: "json" };
+import DAILY_PRACTICE from "./reading-daily-practice.json" with { type: "json" };
 import SYLLABLES from "./reading-syllable-splits.json" with { type: "json" };
 import PARTW from "./reading-part-words.json" with { type: "json" };
 
@@ -4860,6 +4861,28 @@ const ADAPTATIONS: Adaptation[] = [
     // not come out with each sheet twice.
     name: "print the thirty-a-day sheets with the spiral chip as well",
     apply: (html) => {
+      // THE CONTAINER, which the first version of this rule forgot.
+      //
+      // Setting cdBox on the sheets was not enough: they sit inside the
+      // student wrap, whose display is `wbOpen || has('wb')`, and a spiral-only
+      // run has neither. The sheets were display:flex inside a display:none
+      // parent, so the rule reported success and the spiral print came out
+      // without them for as long as it has existed. Found by reading the
+      // computed display of the ancestor chain during a spiral run rather
+      // than trusting that the sheet's own binding was the whole story.
+      //
+      // Opening the wrap for a spiral run exposes nothing else: every other
+      // sheet inside it is bound to box1, which is show('wb') and therefore
+      // none, and the wrap holds no chrome of its own.
+      const wrap = "wbWrap: { display: (this.state && this.state.wbOpen) || has('wb') " +
+        "? 'flex' : 'none', flexDirection: 'column', gap: 22 },";
+      if (!html.includes(wrap)) return html;
+      html = html.replace(
+        wrap,
+        "wbWrap: { display: (this.state && this.state.wbOpen) || has('wb') || has('spiral') " +
+          "? 'flex' : 'none', flexDirection: 'column', gap: 22 },",
+      );
+
       const tail = " ({ n: i + 1, c, ans: isKey ? LADX.words[i + 1] : '' })),";
       if (!html.includes(tail)) return html;
       let out = html.replace(
@@ -4886,6 +4909,189 @@ const ADAPTATIONS: Adaptation[] = [
       if (!out.includes(before2)) return html;
       out = out.split(before2).join(before2.replace("{{ p.box1 }}", "{{ p.cdBox }}"));
 
+      return out;
+    },
+  },
+  {
+    // The mClass daily review: five days of five minutes, on the five things
+    // a child is actually scored on.
+    //
+    // WHY IT IS HERE AT ALL. The data chat hands back six numbers and a goal
+    // and nothing to do about it. scripts/build-daily-practice.mjs has built
+    // the week for every lesson since it was asked for, and /practice has
+    // rendered it, but nothing linked to that page and no packet carried it.
+    // A sheet nobody can reach is a sheet nobody uses.
+    //
+    // ONE SHEET, NOT THREE. /practice prints three -- the passage, the words
+    // and the maze -- because it stands alone. Inside a packet the passage is
+    // already the decodable sheet and the maze is already a toggle on it, so
+    // reprinting either would be the same page twice. What is missing is the
+    // week: which words on which day, and somewhere to write the numbers down.
+    //
+    // THE PASSAGE IS THE SAME ALL WEEK and the words are not. Repeated reading
+    // of one passage is what moves fluency and accuracy, and the log is where
+    // Monday and Friday sit side by side. Word reading and letter sounds work
+    // the other way -- the same ten words five times measures memory -- so
+    // those are different every day.
+    //
+    // IT RIDES WITH THE SPIRAL CHIP, reusing p.cdBox, because the ask was for
+    // "a spiral review for a quick practice daily". Student copy only: a
+    // spiral print should not come out with the sheet twice.
+    name: "put the mClass daily review in every packet",
+    apply: (html) => {
+      const end = "</body>";
+      if (!html.includes(end)) return html;
+
+      // Every lesson in the sequence, not just the ones the builder offers
+      // today. Six words and four made-up words a day is about 28 KB for all
+      // sixty-eight, and keying it by lesson means a lesson added to the
+      // builder later gets its week without a second edit here.
+      const weeks: Record<string, [string[], string[]][]> = {};
+      for (const L of (DAILY_PRACTICE as { lessons: { key: string; days: { wrf: string[]; nwf: string[] }[] }[] }).lessons) {
+        weeks[L.key] = L.days.map((d) => [d.wrf, d.nwf]);
+      }
+
+      let out = html.replace(
+        end,
+        '<script id="sor-mclass-daily" type="application/json">' +
+          JSON.stringify(weeks).replace(/</g, "\\u003c") +
+          "</script>\n" + end,
+      );
+
+      // The week, built once per render beside the other workbook data.
+      const seat = "      wbBtn: (this.state && this.state.wbOpen) ? 'Hide workbook ▲' : 'Show workbook ▼',";
+      if (!out.includes(seat)) return html;
+      out = out.replace(
+        seat,
+        seat + "\n" +
+          "      ...(() => {\n" +
+          "        const MD = (() => { try {\n" +
+          "          return JSON.parse(document.getElementById('sor-mclass-daily').textContent);\n" +
+          "        } catch (e) { return {}; } })();\n" +
+          // A sub-focus keeps its lesson's week. The picker offers 218 entries
+          // for 68 lessons -- 'cvc-mix|i' is short vowel review narrowed to i --
+          // and only the 68 have practice data, so a straight MD[id] left 150 of
+          // them with no sheet at all. The page already resolves a focus to its
+          // lesson this way everywhere else: byId[id.split('|')[0]].
+          "        const week = MD[id] || MD[String(id).split('|')[0]] || [];\n" +
+          "        const DN = ['MON', 'TUE', 'WED', 'THU', 'FRI'];\n" +
+          "        return {\n" +
+          "          mcHas: week.length > 0,\n" +
+          "          mcLog: DN.slice(0, week.length).map((t) => ({ t })),\n" +
+          "          mcDays: week.map((d, i) => ({\n" +
+          "            t: DN[i] || ('DAY ' + (i + 1)),\n" +
+          "            real: (d[0] || []).map((w) => ({ w })),\n" +
+          "            silly: (d[1] || []).map((w) => ({ w })),\n" +
+          "            nReal: '/ ' + (d[0] || []).length,\n" +
+          "            nSilly: '/ ' + (d[1] || []).length,\n" +
+          "          })),\n" +
+          "        }; })(),",
+      );
+
+      const sheet =
+        '<sc-if value="{{ mcHas }}" hint-placeholder-val="{{ true }}">\n' +
+        '    <div data-wb="true" style="{{ p.cdBox }}">\n' +
+        '      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;' +
+        'border-bottom:3px solid #000;padding-bottom:8px">\n' +
+        "        <div>\n" +
+        '          <div style="font-family:Poppins,system-ui,sans-serif;font-size:12px;font-weight:700;' +
+        'letter-spacing:.18em;color:#000">{{ p.kicker }} · MCLASS DAILY</div>\n' +
+        '          <div style="font-size:26px;font-weight:800;color:#000;line-height:1.1">' +
+        "⏱ 5 minutes a day</div>\n" +
+        "        </div>\n" +
+        '        <div style="font-size:14px;font-weight:600;white-space:nowrap">Name ________ Week ______</div>\n' +
+        "      </div>\n" +
+        '      <div style="font-size:13.5px;line-height:1.45;border:1.5px solid #000;border-radius:8px;' +
+        'padding:7px 11px;color:#000">Every day: read the decodable page in this packet out loud for ' +
+        "one minute and write the numbers in the log, then read one row of words below. Read the " +
+        "<b>same</b> passage all week — that is what makes it faster. Three maze answers a day " +
+        "gets you through the maze by Friday.</div>\n" +
+        '      <div style="font-family:Poppins,system-ui,sans-serif;font-size:11px;font-weight:800;' +
+        'letter-spacing:.14em;color:#000">READING OUT LOUD · ORF + ACCURACY</div>\n' +
+        '      <div style="display:grid;grid-template-columns:46px repeat(3,minmax(0,1fr)) 86px;' +
+        'gap:3px 6px;align-items:center;border:2px solid #000;border-radius:8px;padding:7px 9px">\n' +
+        '        <span></span>\n' +
+        '        <span style="font-size:10px;font-weight:800;letter-spacing:.08em;color:#000;' +
+        'text-align:center">WORDS READ</span>\n' +
+        '        <span style="font-size:10px;font-weight:800;letter-spacing:.08em;color:#000;' +
+        'text-align:center">WORDS WRONG</span>\n' +
+        '        <span style="font-size:10px;font-weight:800;letter-spacing:.08em;color:#000;' +
+        'text-align:center">RIGHT</span>\n' +
+        '        <span style="font-size:10px;font-weight:800;letter-spacing:.08em;color:#000;' +
+        'text-align:center">HOW IT FELT</span>\n' +
+        '        <sc-for list="{{ mcLog }}" as="d" hint-placeholder-count="5">\n' +
+        '          <span style="font-size:12px;font-weight:800;color:#000">{{ d.t }}</span>\n' +
+        '          <span style="border:1.5px solid #000;border-radius:4px;height:21px"></span>\n' +
+        '          <span style="border:1.5px solid #000;border-radius:4px;height:21px"></span>\n' +
+        '          <span style="border:1.5px solid #000;border-radius:4px;height:21px"></span>\n' +
+        '          <span style="font-size:14px;text-align:center">\u{1F642} \u{1F610} \u{1F641}</span>\n' +
+        "        </sc-for>\n" +
+        "      </div>\n" +
+        '      <div style="font-size:13px;font-weight:700;color:#000">On Friday I read ' +
+        '<span style="display:inline-block;min-width:54px;border-bottom:2px solid #000"></span> more ' +
+        "words than on Monday.</div>\n" +
+        '      <div style="font-family:Poppins,system-ui,sans-serif;font-size:11px;font-weight:800;' +
+        'letter-spacing:.14em;color:#000">WORDS FOR THE WEEK · WRF + LETTER SOUNDS</div>\n' +
+        '      <sc-for list="{{ mcDays }}" as="d" hint-placeholder-count="5">\n' +
+        '        <div style="border:1.5px solid #000;border-radius:8px;padding:5px 9px;' +
+        'display:flex;flex-direction:column;gap:3px;break-inside:avoid;page-break-inside:avoid">\n' +
+        '          <div style="display:flex;align-items:center;gap:9px">\n' +
+        '            <span style="font-size:11px;font-weight:800;letter-spacing:.1em;color:#000;' +
+        'flex:none;width:32px">{{ d.t }}</span>\n' +
+        '            <span style="font-size:9.5px;font-weight:800;letter-spacing:.06em;color:#000;' +
+        'flex:none;width:62px">REAL</span>\n' +
+        '            <span style="display:flex;gap:8px;flex-wrap:wrap;flex:1;min-width:0">' +
+        '<sc-for list="{{ d.real }}" as="r" hint-placeholder-count="6">' +
+        '<span style="font-size:16px;font-weight:650;color:#000;white-space:nowrap">' +
+        "☐ {{ r.w }}</span></sc-for></span>\n" +
+        '            <span style="font-size:12px;font-weight:700;color:#000;white-space:nowrap">' +
+        "__ {{ d.nReal }}</span>\n" +
+        "          </div>\n" +
+        '          <div style="display:flex;align-items:center;gap:9px;border-top:1px dashed #000;' +
+        'padding-top:3px">\n' +
+        '            <span style="flex:none;width:32px"></span>\n' +
+        '            <span style="font-size:9.5px;font-weight:800;letter-spacing:.06em;color:#000;' +
+        'flex:none;width:62px">NONSENSE</span>\n' +
+        '            <span style="display:flex;gap:8px;flex-wrap:wrap;flex:1;min-width:0">' +
+        '<sc-for list="{{ d.silly }}" as="s" hint-placeholder-count="4">' +
+        '<span style="font-size:16px;font-weight:650;color:#000;white-space:nowrap">' +
+        "☐ {{ s.w }}</span></sc-for></span>\n" +
+        '            <span style="font-size:12px;font-weight:700;color:#000;white-space:nowrap">' +
+        "__ {{ d.nSilly }}</span>\n" +
+        "          </div>\n" +
+        "        </div>\n" +
+        "      </sc-for>\n" +
+        '      <div style="font-size:12.5px;line-height:1.4;color:#000;border-top:1.5px solid #000;' +
+        'padding-top:5px">A nonsense word read sound by sound counts, and read all at once counts ' +
+        "too. Both ways are right — all at once is the one that comes last.</div>\n" +
+        "    </div>\n" +
+        "    </sc-if>\n    ";
+
+      // The line under "Student workbook + answer key" still listed the five
+      // pages the packet had when it was written. Say what is in it now.
+      const summary = "writing, decodable + questions, fluency check'";
+      if (out.includes(summary)) {
+        out = out.replace(
+          summary,
+          "writing, decodable + questions, fluency check, sentence building, " +
+            "word ladder, 30 a day + my scores, mClass daily review'",
+        );
+      }
+
+      // Beside the continuum sheets, in both copies of the markup.
+      const kicker = ">TEN WORDS A DAY<";
+      const divTag = '<div data-wb="true" style="{{ p.box1 }}">';
+      if (!out.includes(kicker) || !out.includes(divTag)) return html;
+      const spots = [];
+      for (let at = out.indexOf(kicker); at !== -1; at = out.indexOf(kicker, at + 1)) {
+        const open = out.lastIndexOf(divTag, at);
+        if (open !== -1) spots.push(open);
+      }
+      if (spots.length !== 2) return html;
+      // Back to front, so an earlier insertion does not move a later index.
+      for (const at of spots.reverse()) {
+        out = out.slice(0, at) + sheet + out.slice(at);
+      }
       return out;
     },
   },
@@ -4922,6 +5128,7 @@ const ADAPTATIONS: Adaptation[] = [
         ["\u00B7 SENTENCE BUILDING", "sentence"],
         ["\u00B7 CONTINUUM REVIEW", "continuum"],
         ["\u00B7 MY SCORES", "scores"],
+        ["\u00B7 MCLASS DAILY", "mclass"],
       ];
       let out = html;
       for (const [mark, key] of MARKS) {
@@ -4952,7 +5159,8 @@ const ADAPTATIONS: Adaptation[] = [
           "          ['mystery', '\u{1F50D} Mystery'], ['decodable', '\u{1F4D8} Decodable'],\n" +
           "          ['fluency', '\u23F1 Fluency check'], " +
           "['sentence', '\u{1F9E9} Sentence building'],\n" +
-          "          ['continuum', '\u{1F504} 30 a day'], ['scores', '\u{1F4C8} My scores']];",
+          "          ['continuum', '\u{1F504} 30 a day'], ['scores', '\u{1F4C8} My scores'],\n" +
+          "          ['mclass', '⏱ mClass daily']];",
       );
 
       // 3. The off list, where the print fit can see it.
@@ -5487,6 +5695,34 @@ for (const full of files) {
     content_type: type,
     bytes: Buffer.byteLength(content, "utf8"),
   });
+}
+
+// ADAPT_ONLY=<dir> stops here and writes the adapted pages to disk instead of
+// the table.
+//
+// Every rule has already run by this point, so a rule that no longer matches
+// has already exited above -- but "all 84 rules matched" only says each one
+// changed something, not that what it produced is right. This is how the page
+// gets read back before it is anyone's live page: adapt, dump, open the file
+// in a browser, and only then seed. It needs no DATABASE_URL, because `db` is
+// a lazy proxy and nothing has touched it yet.
+if (process.env.ADAPT_ONLY) {
+  const dir = process.env.ADAPT_ONLY;
+  // The whole tree, not just the HTML, and at the paths the table serves them
+  // from -- a page whose scripts and fonts are missing renders as a blank
+  // white box, which looks exactly like a page whose markup is broken.
+  for (const r of rows) {
+    const to = path.join(dir, r.path);
+    await mkdir(path.dirname(to), { recursive: true });
+    if (BINARY.has(path.extname(r.path).toLowerCase())) {
+      await writeFile(to, Buffer.from(r.content, "base64"));
+    } else {
+      await writeFile(to, r.content, "utf8");
+    }
+  }
+  const html = rows.filter((r) => r.content_type.startsWith("text/html"));
+  console.log(`\n✓ ${rows.length} files written to ${dir} (${html.length} HTML), nothing seeded`);
+  process.exit(0);
 }
 
 // Chunked because a single statement carrying every workbook exceeds what the
