@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Batch 10: grade 2 writing, speaking and language.
  *

@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Batch 13: grade 3 writing, speaking and language.
  *

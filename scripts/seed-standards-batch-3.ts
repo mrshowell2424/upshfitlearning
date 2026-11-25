@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Batch 3: 20 more drafted standards.
  *

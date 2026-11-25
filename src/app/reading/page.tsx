@@ -1,6 +1,5 @@
 "use client";
 
-// @ts-nocheck
 import { useState, useMemo } from "react";
 import { useStoredValue, writeStoredValue } from "@/lib/hooks/useStoredValue";
 import Header from "@/components/shared/Header";

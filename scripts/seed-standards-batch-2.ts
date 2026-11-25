@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Batch 2: 20 more drafted standards, extending the pilot pattern.
  *

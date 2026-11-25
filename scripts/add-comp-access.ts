@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * One-off migration for hand-granted access.
  *

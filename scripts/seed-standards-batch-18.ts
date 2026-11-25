@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Batch 18: grade 5 reading — literature, informational and foundational.
  *

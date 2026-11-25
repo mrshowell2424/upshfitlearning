@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Batch 19: grade 5 writing, speaking and language.
  *

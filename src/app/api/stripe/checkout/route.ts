@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { siteOrigin } from "@/lib/utils/site-origin";

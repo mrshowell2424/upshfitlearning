@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Access paid for before an account existed.
  *

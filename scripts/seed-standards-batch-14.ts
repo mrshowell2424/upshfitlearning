@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Batch 14: grade 3 mathematics.
  *

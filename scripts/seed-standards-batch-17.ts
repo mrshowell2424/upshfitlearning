@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Batch 17: grade 4 mathematics — the last of the three decks.
  *

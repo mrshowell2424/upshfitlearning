@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Batch 6: 20 more drafted standards, taking the library past 120.
  *

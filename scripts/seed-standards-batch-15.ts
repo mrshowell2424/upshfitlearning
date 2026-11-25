@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Batch 15: grade 4 reading — literature, informational and foundational.
  *

@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Pilot batch: 20 drafted standards spanning K-8, ELA and math.
  *

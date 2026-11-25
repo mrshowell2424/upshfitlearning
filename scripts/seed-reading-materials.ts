@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Loads the Basic Reading workbooks into Postgres.
  *

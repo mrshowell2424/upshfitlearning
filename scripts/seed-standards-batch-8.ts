@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Batch 8: high school, grades 9-12.
  *

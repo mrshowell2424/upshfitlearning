@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { NextRequest, NextResponse } from "next/server";
 import { withDb } from "@/lib/db";
 import { standards, standard_unpacks } from "@/lib/db/schema";

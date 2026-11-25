@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Batch 16: grade 4 writing, speaking and language.
  *

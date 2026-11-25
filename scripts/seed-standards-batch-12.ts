@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Batch 12: grade 3 reading — literature, informational and foundational.
  *

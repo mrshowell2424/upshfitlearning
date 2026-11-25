@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { Anthropic } from "@anthropic-ai/sdk";
 import { entitlementFromRequest } from "@/lib/auth/entitlement";
 

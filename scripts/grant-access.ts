@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Give a teacher All-Access by hand, without Stripe.
  *

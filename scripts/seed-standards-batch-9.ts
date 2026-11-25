@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Batch 9: grade 2 reading — literature, informational and foundational.
  *

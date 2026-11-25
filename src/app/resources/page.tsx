@@ -1,6 +1,5 @@
 'use client'
 
-// @ts-nocheck
 import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Header from "@/components/shared/Header";

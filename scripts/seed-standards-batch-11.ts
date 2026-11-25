@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Batch 11: grade 2 mathematics.
  *
