@@ -687,11 +687,18 @@ const ADAPTATIONS: Adaptation[] = [
         html.slice(0, ebp.at) + ebp.text + html.slice(ebp.end, ebt.at) + ebt.text + html.slice(ebt.end);
 
       // Two words that still said there were two sides.
+      //
+      // "pick your side" came from the canvas, where every prompt was an
+      // opinion. It was changed to "pick one", which is no better on a
+      // narrative prompt -- "What did Jane do the next time?" offers nothing
+      // to pick, so the child is told to choose between options that are not
+      // on the sheet. The proof is of the answer they have just written,
+      // whatever kind of prompt it was.
       const hunt = "\u{1F50E} Proof hunt: pick your side, then underline 2 sentences in the passage that prove it.";
       if (!out.includes(hunt)) return html;
       out = out.replace(
         hunt,
-        "\u{1F50E} Proof hunt: pick one, then underline 2 sentences in the passage that prove it."
+        "\u{1F50E} Proof hunt: underline 2 sentences in the passage that prove your answer."
       );
 
       // "For example" invites an opinion; naming the text asks for the quote.
@@ -5503,6 +5510,35 @@ const ADAPTATIONS: Adaptation[] = [
           "          }\n" +
           "        } else { e.style.minHeight = e.dataset.mh || ''; }",
       );
+    },
+  },
+  {
+    /*
+     * Keep a writing frame whole when its sheet turns over.
+     *
+     * The rule above lets a sheet with more than a page of work split, and
+     * says the exercise blocks carry break-inside: avoid so the break falls
+     * between exercises rather than through one. That is true of Spelling,
+     * whose four exercises are four blocks: the break lands before exercise
+     * 4, and Dictation goes over whole.
+     *
+     * It was not true of Writing. That sheet is one block holding the
+     * passage, the question, the word bank and five framed boxes for the
+     * child to write in, and nothing inside it said where a break could
+     * fall -- so on the Silent e packet it fell straight through "3 Last:",
+     * putting the label and the first ruled line on one sheet and the rest
+     * of the box on the next.
+     *
+     * The frames are the only thing on that sheet a break must not cross,
+     * because a half box is a half answer. With this they stay whole and the
+     * break falls between them.
+     */
+    name: "never break a page through a box a child writes in",
+    apply: (html) => {
+      const box = "border:2px solid #111;border-radius:10px;padding:8px 12px;" +
+        "display:flex;flex-direction:column;gap:4px";
+      if (!html.includes(box)) return html;
+      return html.split(box).join(box + ";break-inside:avoid;page-break-inside:avoid");
     },
   },
   {
