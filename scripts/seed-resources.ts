@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { readFileSync } from "fs";
 import { resolve } from "path";
 import Papa from "papaparse";
@@ -227,10 +226,12 @@ async function seedArticles() {
 
     if (!title || !slug) continue;
 
-    let published_at: Date | null = null;
-    if (date_str && date_str.match(/^\d{4}-\d{2}-\d{2}$/)) {
-      published_at = new Date(date_str);
-    }
+    // published_at is a date column, which drizzle reads and writes as a
+    // YYYY-MM-DD string. The test below has already proved this is one, so
+    // hand it over as it stands rather than round-tripping it through Date,
+    // where a timezone can move the day.
+    const published_at =
+      date_str && /^\d{4}-\d{2}-\d{2}$/.test(date_str) ? date_str : null;
 
     toInsert.push({
       title,

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { NextResponse } from "next/server";
 import { withDb } from "@/lib/db";
 import { standards, standard_unpacks, lesson_blueprints } from "@/lib/db/schema";
@@ -159,12 +158,13 @@ async function checkStripe(): Promise<Omit<Check, "name" | "ms">> {
   const key = process.env.STRIPE_SECRET_KEY;
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
-  const missing = [
-    !key && "STRIPE_SECRET_KEY",
-    !webhookSecret && "STRIPE_WEBHOOK_SECRET",
-  ].filter(Boolean);
-
-  if (missing.length) {
+  // Asked of the variables rather than of a count, so that what the rest of
+  // this function knows about them matches what the check established.
+  if (!key || !webhookSecret) {
+    const missing = [
+      !key && "STRIPE_SECRET_KEY",
+      !webhookSecret && "STRIPE_WEBHOOK_SECRET",
+    ].filter(Boolean);
     return {
       status: "failing",
       detail: `${missing.join(" and ")} not readable at request time — payments cannot grant access`,

@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Shared seeding logic for drafted standard batches.
  *
@@ -12,14 +11,34 @@ import { db } from "@/lib/db";
 import { standards, standard_unpacks, lesson_blueprints } from "@/lib/db/schema";
 import { inArray } from "drizzle-orm";
 
-export async function seedStandardsBatch({ label, standardsData, unpacksData, blueprintsData }) {
+// The rows this writes, taken from the schema rather than described again
+// here. A batch script that drifts from the table now fails at its own call
+// site instead of at the insert, which is the whole reason the suppression
+// that used to sit on top of this file was worth removing: twenty-three
+// batch scripts pass data through this one function.
+type StandardRow = typeof standards.$inferInsert;
+type UnpackRow = typeof standard_unpacks.$inferInsert;
+type BlueprintRow = typeof lesson_blueprints.$inferInsert;
+
+export async function seedStandardsBatch({
+  label,
+  standardsData,
+  unpacksData,
+  blueprintsData,
+}: {
+  label: string;
+  standardsData: StandardRow[];
+  unpacksData: UnpackRow[];
+  blueprintsData: BlueprintRow[];
+}) {
   const codes = standardsData.map((s) => s.code);
 
   // A batch with a missing or mismatched unpack/blueprint would seed a standard
   // that renders as "not written up yet" — louder to fail here than in the UI.
   const unpackCodes = unpacksData.map((u) => u.standard_code);
   const blueprintCodes = blueprintsData.map((b) => b.standard_code);
-  for (const [name, list] of [["unpacks", unpackCodes], ["blueprints", blueprintCodes]]) {
+  const groups: [string, string[]][] = [["unpacks", unpackCodes], ["blueprints", blueprintCodes]];
+  for (const [name, list] of groups) {
     const missing = codes.filter((c) => !list.includes(c));
     const orphaned = list.filter((c) => !codes.includes(c));
     if (missing.length || orphaned.length) {
