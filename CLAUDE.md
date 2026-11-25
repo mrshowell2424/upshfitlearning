@@ -369,8 +369,25 @@ Development `.env.local` should never be committed.
 
 ## Deployment
 
+- **Production host: `https://hub.upshiftlearning.com`.** Push to `main` and the
+  deploy follows on its own; it has been live within a couple of minutes.
+- **Served by Cloudflare through OpenNext**, not Vercel — the response carries
+  `x-opennext: 1`, `server: cloudflare`. Nothing in the repo configures any of
+  it: no `wrangler` config, no `open-next` config, no workflow, no deploy
+  script. It is set up outside the tree, so this entry is the only record of it.
+- **`https://upshiftlearning.org` is not the app.** It is the marketing site,
+  and it answers every path — `/word-ladders`, `/practice`, anything at all —
+  with the same 14.6 KB page and a 200. A post-deploy check pointed there cannot
+  do anything but report a false negative, which is exactly what it did once.
+- **Grep a URL that carries content.** Several pages take what they render from
+  the query string: `/word-ladders` is the pattern index and holds no clue text,
+  while `/word-ladders?p=long-i` holds the ladder. A bare route is the wrong
+  thing to assert against.
+- Lesson pages are a separate matter: they come out of the `reading_materials`
+  table, so `bun --env-file=.env.local run scripts/seed-reading-materials.ts`
+  puts them live immediately and no deploy is involved. Only the Next pages wait
+  on the build.
 - **Production Build**: `bun run build && bun run start`
-- **Vercel**: Auto-deploys from git (most common for Next.js)
 - **Environment**: Production `.env` must have real API keys, Supabase credentials
 - See `DEPLOYMENT_GUIDE.md` and `DEPLOYMENT_PLAYBOOK.md` for full runbooks
 
