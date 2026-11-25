@@ -4962,6 +4962,7 @@ const ADAPTATIONS: Adaptation[] = [
       };
       type Week = {
         key: string;
+        mazeFrom: "g2" | "g3";
         race: string[];
         passage: { title: string; paras: string[]; words: number };
         days: Day[];
@@ -4971,6 +4972,7 @@ const ADAPTATIONS: Adaptation[] = [
         n: number;
         p: string[];
         r: string[];
+        g: boolean;
         d: { w: string[]; s: string[]; m: string[][] }[];
       }> = {};
       for (const L of (DAILY_PRACTICE as unknown as { lessons: Week[] }).lessons) {
@@ -4979,6 +4981,7 @@ const ADAPTATIONS: Adaptation[] = [
           n: L.passage.words,
           p: L.passage.paras,
           r: L.race,
+          g: L.mazeFrom === "g3",
           d: L.days.map((day) => ({
             w: day.wrf,
             s: day.nwf,
@@ -5023,6 +5026,11 @@ const ADAPTATIONS: Adaptation[] = [
           "        const paras = (W.p || []).map((t) => ({ t }));\n" +
           "        const race = (W.r || []).map((w) => ({ w }));\n" +
           "        const days = W.d || [];\n" +
+          // Up to Level 2 the maze is cut from the passage printed above it;
+          // from Level 3 it is the same story told for a stronger reader, and
+          // a teacher reading the sheet should not have to work that out.
+          "        const mazeHow = W.g ? 'the same story, told another way — circle the word that fits'\n" +
+          "          : 'circle the word that fits';\n" +
           "        return {\n" +
           "          mcHas: days.length > 0,\n" +
           "          mcDays: days.map((d, i) => ({\n" +
@@ -5037,6 +5045,7 @@ const ADAPTATIONS: Adaptation[] = [
           "            nReal: '/ ' + (d.w || []).length,\n" +
           "            nSilly: '/ ' + (d.s || []).length,\n" +
           "            maze: (d.m || []).map((m, j) => ({ n: (j + 1) + '.', b: m[0], c: m[1], a: m[2] })),\n" +
+          "            mazeHow: mazeHow,\n" +
           "          })),\n" +
           "          mcKey: days.map((d, i) => ({\n" +
           "            t: DN[i] || ('DAY ' + (i + 1)),\n" +
@@ -5129,10 +5138,10 @@ const ADAPTATIONS: Adaptation[] = [
         '        <span style="font-size:14.5px;font-weight:800;color:#000">Fill in the blank</span>\n' +
         '        <span style="' + H + ';font-size:10px">MAZE</span>\n' +
         '        <span style="flex:1"></span>\n' +
-        '        <span style="font-size:11.5px;font-weight:600;color:#000">circle the word that fits</span>\n' +
+        '        <span style="font-size:11.5px;font-weight:600;color:#000">{{ d.mazeHow }}</span>\n' +
         "      </div>\n" +
         '      <sc-for list="{{ d.maze }}" as="m" hint-placeholder-count="3">\n' +
-        '        <div style="font-size:16px;line-height:1.7;color:#000">{{ m.n }} {{ m.b }} ' +
+        '        <div style="font-size:16px;line-height:1.58;color:#000">{{ m.n }} {{ m.b }} ' +
         '<span style="border:1.5px solid #000;border-radius:7px;padding:1px 7px;font-weight:650">' +
         "{{ m.c }}</span> {{ m.a }}</div>\n" +
         "      </sc-for>\n" +

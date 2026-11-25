@@ -14,6 +14,13 @@
  *   3. Is the answer one of the three choices, and are the other two absent
  *      from the passage? A distractor the child read out loud a minute ago
  *      makes the item about memory rather than sense.
+ *   3a. Did the maze sentences come from the telling the file says they came
+ *      from, and is that the right telling for the level? Up to Level 2 the
+ *      maze is cut from the printed passage; from Level 3 it is cut from g3,
+ *      the same story told for a stronger reader, so the answer is not
+ *      sitting on the page above the question. Both halves are checked by
+ *      going and looking, because "mazeFrom" is a claim the data makes about
+ *      itself.
  *   4. Is the word race the same list every day? It is the one part that
  *      repeats on purpose -- Monday's count and Friday's count only mean
  *      something next to each other if the list did not move.
@@ -31,6 +38,7 @@ import { looksReal, unsafeWord, unsafeRealWord } from "./lib/not-nonsense.mjs";
 
 const D = JSON.parse(readFileSync("scripts/reading-daily-practice.json", "utf8"));
 const SEQ = JSON.parse(readFileSync("scripts/reading-sequence.json", "utf8")).sequence;
+const PASS = JSON.parse(readFileSync("scripts/reading-passages.json", "utf8")).passages;
 const HEART = JSON.parse(readFileSync("scripts/reading-heart-words.json", "utf8")).words.map((h) =>
   String(h.word).toLowerCase(),
 );
@@ -77,6 +85,22 @@ let raceCount = 0;
 for (const lesson of D.lessons) {
   const say = (m) => problems.push(`${lesson.key}: ${m}`);
   const passageWords = new Set(lesson.passage.paras.join(" ").split(/\s+/).map(bare));
+
+  // Which telling the maze was cut from, and whether that is the right one.
+  const p = PASS[lesson.key] || {};
+  const printed = lesson.passage.paras.join(" ");
+  const g3 = p.g3 ? p.g3.paras.join(" ") : null;
+  const wantG3 = lesson.level >= 3 && g3 && g3 !== printed;
+  if (lesson.mazeFrom !== "g2" && lesson.mazeFrom !== "g3") {
+    say(`mazeFrom is "${lesson.mazeFrom}", expected g2 or g3`);
+  }
+  if (wantG3 && lesson.mazeFrom !== "g3") {
+    say(`is Level ${lesson.level} but takes its maze from the printed passage, where a child can read the answer off the page above it`);
+  }
+  if (!wantG3 && lesson.mazeFrom === "g3") {
+    say(`is Level ${lesson.level} and takes its maze from g3, which is not decodable this early`);
+  }
+  const mazeSource = lesson.mazeFrom === "g3" && g3 ? g3 : printed;
 
   if (lesson.days.length !== 5) say(`${lesson.days.length} days, expected 5`);
 
@@ -128,10 +152,14 @@ for (const lesson of D.lessons) {
         if (c !== m.answer && passageWords.has(bare(c))) {
           item(`offers "${c}", which is in the passage the child just read`);
         }
+        if (c !== m.answer && new RegExp(`\\b${bare(c)}\\b`, "i").test(mazeSource)) {
+          item(`offers "${c}", which is somewhere in ${lesson.mazeFrom} already`);
+        }
         if (unsafeRealWord(c)) item(`offers "${c}", which cannot be printed for a child`);
       }
-      // The sentence has to be the passage's, not a paraphrase of it.
-      if (!lesson.passage.paras.join(" ").includes(m.s)) item("is not a sentence from the passage");
+      // The sentence has to be one the telling actually contains, not a
+      // paraphrase of it.
+      if (!mazeSource.includes(m.s)) item(`is not a sentence from ${lesson.mazeFrom}`);
     }
   }
 

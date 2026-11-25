@@ -25,8 +25,11 @@
  *   word reading      the lesson's real words, plus heart words up to its level
  *   letter sounds     the lesson's made-up words, topped up from the continuum
  *                     pools for its level -- eight per lesson is not five days
- *   maze              three sentences of that passage, a different three
- *                     and a different blank in them each day
+ *   maze              three sentences a day, a different three and a
+ *                     different blank in them: from the printed passage up
+ *                     to Level 2, and from g3, the same story told for a
+ *                     stronger reader, from Level 3 -- so the answer is not
+ *                     sitting on the page above the question
  *   word race         the lesson's own words again, one list for the whole
  *                     week, so Monday's count and Friday's can be compared
  *
@@ -97,9 +100,20 @@ function sentences(text) {
  * better a short sentence than a day with no maze.
  */
 function mazeable(all) {
-  for (const n of [8, 7, 6]) {
-    const keep = all.filter((x) => x.split(/\s+/).length >= n);
-    if (keep.length >= MAZE_SENTENCES) return keep;
+  // Long enough to decide on, short enough to be an item. g3 writes
+  // thirty-word sentences -- "She built the platform herself over two
+  // summers, and she [photographs / yellow / window] the sky from it on every
+  // clear night she can manage, which in this country is not many" -- which
+  // is a passage with a gap in it, not a quick maze. Both bounds slide,
+  // because some passages have nothing else.
+  for (const most of [22, Infinity]) {
+    for (const least of [8, 7, 6]) {
+      const keep = all.filter((x) => {
+        const n = x.split(/\s+/).length;
+        return n >= least && n <= most;
+      });
+      if (keep.length >= MAZE_SENTENCES) return keep;
+    }
   }
   return all;
 }
@@ -194,8 +208,26 @@ for (const lesson of SEQ) {
   const race = shuffled(realPool, seed + 3).slice(0, RACE_WORDS);
   if (race.length < RACE_WORDS) short.push(`${lesson.key}: ${race.length} race words`);
 
-  const allWords = text.paras.join(" ").split(/\s+/);
-  const sents = mazeable(sentences(text.paras.join(" ")));
+  // WHERE THE MAZE SENTENCES COME FROM, and why it depends on the level.
+  //
+  // The passage is printed at the top of the same page, so a maze built on it
+  // can be answered by looking up rather than by reading for sense. From
+  // Level 3 the maze moves to g3 -- the same story, told for a stronger
+  // reader -- which is not on the page, so the child has to read the sentence.
+  //
+  // Levels 1 and 2 keep the printed passage, because g3 at those levels is
+  // not decodable: the grade 3 telling of the Level 1 cat story reaches for
+  // Saturday and o'clock. A child who cannot read the sentence cannot choose
+  // the word that fits it, and a maze they cannot read teaches nothing at
+  // all, which is worse than one they can shortcut.
+  const harder = level >= 3 && p.g3 && p.g3 !== text ? p.g3 : null;
+  const mazeText = harder || text;
+  // A distractor may not be a word from EITHER text: not from the passage the
+  // child just read out loud, and not from the telling the sentence came out
+  // of.
+  const allWords = text.paras.join(" ").split(/\s+/)
+    .concat(harder ? harder.paras.join(" ").split(/\s+/) : []);
+  const sents = mazeable(sentences(mazeText.paras.join(" ")));
   if (reals.length < WRF_PER_DAY * DAYS || fakes.length < NWF_PER_DAY * DAYS) {
     short.push(`${lesson.key}: ${reals.length} real, ${fakes.length} made-up`);
   }
@@ -245,6 +277,9 @@ for (const lesson of SEQ) {
     name: lesson.name,
     level,
     passage: { title: text.title, paras: text.paras, words },
+    // Which telling the maze sentences were cut from, so the check can go and
+    // look rather than take it on trust.
+    mazeFrom: harder ? "g3" : "g2",
     race,
     days,
   });

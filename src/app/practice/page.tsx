@@ -25,6 +25,13 @@ import DAILY from "@/../scripts/reading-daily-practice.json";
  * word race is the same list all week for the same reason. The six real words,
  * the four made-up ones and the three maze sentences are different every day,
  * because reading the same ten words five times measures memory.
+ *
+ * WHERE THE MAZE SENTENCES COME FROM depends on the level. The passage is at
+ * the top of the same page, so up to Level 2 a child can answer the maze by
+ * looking up instead of reading for sense -- and that is still the right
+ * trade there, because g3, the same story told for a stronger reader, is not
+ * decodable that early. From Level 3 the maze is cut from g3, which is not on
+ * the page, so the sentence has to be read.
  */
 
 type Maze = {
@@ -41,6 +48,8 @@ type Lesson = {
   name: string;
   level: number;
   passage: { title: string; paras: string[]; words: number };
+  /** Which telling the maze sentences were cut from: the printed passage, or g3. */
+  mazeFrom: "g2" | "g3";
   race: string[];
   days: Day[];
 };
@@ -188,7 +197,16 @@ function DayPage({ lesson, d }: { lesson: Lesson; d: Day }) {
         </div>
       </Part>
 
-      <Part n={3} label="Fill in the blank" measure="MAZE" how="circle the word that fits">
+      <Part
+        n={3}
+        label="Fill in the blank"
+        measure="MAZE"
+        how={
+          lesson.mazeFrom === "g3"
+            ? "the same story, told another way — circle the word that fits"
+            : "circle the word that fits"
+        }
+      >
         {d.maze.map((m, i) => <MazeLine key={i} m={m} n={i + 1} />)}
       </Part>
 
