@@ -4076,10 +4076,42 @@ const ADAPTATIONS: Adaptation[] = [
     apply: (html) => {
       const end = "</body>";
       if (!html.includes(end)) return html;
+      /*
+       * The words of each lesson's own story that the dictionary can split.
+       *
+       * Both grade versions, lower-cased first letters only so a name does
+       * not turn up as a word to chop, and only words the split dictionary
+       * knows -- which is what makes them usable on this page at all. Eight
+       * is what the page prints; a dozen are kept so the filter above has
+       * something to work with after it drops the ones already used.
+       */
+      const chop: Record<string, string[]> = {};
+      for (const [key, versions] of Object.entries(
+        PASSAGES.passages as Record<string, Record<string, { paras: string[] }>>,
+      )) {
+        const seen = new Set<string>();
+        // Easiest telling first. All three are vetted for this lesson, but
+        // the page prints the first eight it can use, and a child on short a
+        // should meet "paper" before the grade 4 version offers "usually".
+        for (const g of ["g2", "g3", "g4"]) {
+          const v = versions[g];
+          if (!v || !v.paras) continue;
+          for (const raw of v.paras.join(" ").split(/\s+/)) {
+            if (!/^[a-z]/.test(raw)) continue;
+            const w = raw.toLowerCase().replace(/[^a-z]/g, "");
+            if (w.length > 3 && (SYLLABLES.words as Record<string, unknown>)[w]) seen.add(w);
+          }
+        }
+        if (seen.size) chop[key] = [...seen].slice(0, 12);
+      }
+
       let out = html.replace(
         end,
         '<script id="sor-syllables" type="application/json">' +
           JSON.stringify(SYLLABLES).replace(/</g, "\\u003c") +
+          "</script>\n" +
+          '<script id="sor-chop" type="application/json">' +
+          JSON.stringify(chop).replace(/</g, "\\u003c") +
           "</script>\n" + end,
       );
 
@@ -4122,6 +4154,9 @@ const ADAPTATIONS: Adaptation[] = [
           "\n    const SYL = (() => { try {\n" +
           "      return JSON.parse(document.getElementById('sor-syllables').textContent);\n" +
           "    } catch (e) { return { words: {}, rules: {} }; } })();\n" +
+          "    const CHOP = (() => { try {\n" +
+          "      return JSON.parse(document.getElementById('sor-chop').textContent);\n" +
+          "    } catch (e) { return {}; } })();\n" +
           "    // Prefer the skill's own multisyllabic words. A skill that has\n" +
           "    // none still gets a page, built from its longest words, because a\n" +
           "    // lesson without this page would be the one lesson where the\n" +
@@ -4138,7 +4173,23 @@ const ADAPTATIONS: Adaptation[] = [
           "        .map((w) => String(w).toLowerCase())\n" +
           "        .filter((w) => SYL.words[w] && pick.indexOf(w) === -1)\n" +
           "        .sort((a, b) => b.length - a.length);\n" +
-          "      return [...new Set(pick.concat(spare))].slice(0, 8);\n" +
+          // AND THE LESSON'S OWN STORY, when the first two leave nothing.
+          //
+          // Twelve of the 218 entries in the picker printed this sheet with
+          // its heading, its instruction and no words at all: all five vowel
+          // team lessons, short a, suffix -s, the possessive and the three
+          // contractions. None of them has a multisyllabic list, and none of
+          // their own words has more than one syllable, so both sources
+          // above came back empty and the child got a page headed "Chop the
+          // word" with nothing to chop.
+          //
+          // The passage is the obvious third source. These are words out of
+          // the story the child reads this week -- paper, moment, usually --
+          // already checked for that lesson by check-passages, and a word
+          // comes apart the same way whatever the week's grapheme is.
+          "      const story = (CHOP[id] || CHOP[String(id).split('|')[0]] || [])\n" +
+          "        .filter((w) => SYL.words[w] && pick.indexOf(w) === -1 && spare.indexOf(w) === -1);\n" +
+          "      return [...new Set(pick.concat(spare, story))].slice(0, 8);\n" +
           "    })();",
       );
 
@@ -4668,7 +4719,8 @@ const ADAPTATIONS: Adaptation[] = [
     // the other. Nothing repeats across the week.
     //
     // TWO SHEETS, NOT SIX. A sheet a day would add six pages to every packet.
-    // The week is one grid, five columns, and the tracker is the second sheet.
+    // The week is two grids of five columns, and the tracker is the sheet
+    // after them.
     //
     // THE TRACKER IS PER CONCEPT, not per day, because "how am I doing" is a
     // question about skills rather than about Tuesday. Each concept scores out
@@ -4696,8 +4748,10 @@ const ADAPTATIONS: Adaptation[] = [
           "          return JSON.parse(document.getElementById('sor-continuum-daily').textContent);\n" +
           "        } catch (e) { return { days: [], track: [], perDay: 0 }; } })();\n" +
           "        const DN = ['MON', 'TUE', 'WED', 'THU', 'FRI'];\n" +
-          "        const cell = 'font-size:12.5px;font-weight:650;color:#000;" +
-          "padding:1px 3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis';\n" +
+          // Bigger now that the thirty sit on two sheets. On one they were
+          // 12.5px in a 22px row because that was all the page had left.
+          "        const cell = 'font-size:15px;font-weight:650;color:#000;" +
+          "padding:4px 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis';\n" +
           // EVERY LESSON DEALS ITS OWN WEEK. The first version shipped one\n" +
           "        // week and all 62 packets printed it, so a child working lesson 3\n" +
           "        // and lesson 4 met the same thirty words twice. The pools travel\n" +
@@ -4729,15 +4783,32 @@ const ADAPTATIONS: Adaptation[] = [
           "          // scored by skill and a child cannot otherwise tell which\n" +
           "          // pair of the thirty belongs to which of its fifteen rows.\n" +
           "          const D2 = dealt[r];\n" +
+          // The concept name, not just its number. The sheet printed a bare
+          // P12 against each pair, which says nothing to the child reading
+          // the row or to the teacher marking it -- the name was only on the
+          // score sheet, two pages away.
+          "          const named = (CD.track || []).find((t) => t.id === D2.cid);\n" +
           "          rows.push({ n: r + 1, cid: D2.cid,\n" +
+          "            name: named ? named.name : '',\n" +
           "            kindLabel: D2.kind === 'real' ? 'real'\n" +
           "              : D2.kind === 'made-up' ? 'nonsense' : 'letters',\n" +
           "            cells: D2.cells });\n" +
           "        }\n" +
+          // THIRTY WORDS ON TWO SHEETS. Fifteen concepts, two rows each, in
+          // 913px of a 955px page: the cells were 22px high and the name of
+          // the concept had no room at all. Split at P9, which is a concept
+          // boundary -- a skill's real row and its nonsense row are scored
+          // together and must not land on different sheets.
+          "        const at = rows.findIndex((r) => r.cid === 'P9');\n" +
+          "        const cut = at === -1 ? Math.ceil(rows.length / 2) : at;\n" +
           "        return {\n" +
           "          cdHas: CD.days.length > 0,\n" +
           "          cdHead: DN.slice(0, CD.days.length).map((t) => ({ t })),\n" +
           "          cdRows: rows,\n" +
+          "          cdRowsA: rows.slice(0, cut),\n" +
+          "          cdRowsB: rows.slice(cut),\n" +
+          "          cdFirst: (rows[0] || {}).cid + '–' + ((rows[cut - 1] || {}).cid || ''),\n" +
+          "          cdSecond: (rows[cut] || {}).cid + '–' + ((rows[rows.length - 1] || {}).cid || ''),\n" +
           "          cdPerDay: String(CD.perDay),\n" +
           "          cdTrack: CD.track.map((c) => ({\n" +
           "            id: c.id, name: c.name, rule: c.rule || '',\n" +
@@ -4750,44 +4821,57 @@ const ADAPTATIONS: Adaptation[] = [
       const divTag = '<div data-wb="true" style="{{ p.box1 }}">';
       if (!out.includes(kicker) || !out.includes(divTag)) return html;
 
-      const grid =
+      /**
+       * One sheet of the thirty. Fifteen skills at two rows each did not fit
+       * on one page with anything legible in the margin, so they come in two
+       * halves and each half carries its own day columns and its own tick
+       * row.
+       */
+      const grid = (rows: string, half: string, label: string) =>
         '<sc-if value="{{ cdHas }}" hint-placeholder-val="{{ true }}">\n' +
         '    <div data-wb="true" style="{{ p.box1 }}">\n' +
         '      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;' +
         'border-bottom:3px solid #000;padding-bottom:8px">\n' +
         "        <div>\n" +
         '          <div style="font-family:Poppins,system-ui,sans-serif;font-size:12px;font-weight:700;' +
-        'letter-spacing:.18em;color:#000">{{ p.kicker }} \u00B7 CONTINUUM REVIEW</div>\n' +
+        'letter-spacing:.18em;color:#000">{{ p.kicker }} \u00B7 CONTINUUM REVIEW \u00B7 ' + label + '</div>\n' +
         '          <div style="font-size:26px;font-weight:800;color:#000;line-height:1.1">' +
-        "\u{1F504} {{ cdPerDay }} words a day</div>\n" +
+        "\u{1F504} {{ cdPerDay }} words a day<span style=\"font-size:15px;font-weight:600\">" +
+        ' \u00B7 {{ ' + half + ' }}</span></div>\n' +
         "        </div>\n" +
         '        <div style="font-size:14px;font-weight:600;white-space:nowrap">Name ________ Week ______</div>\n' +
         "      </div>\n" +
         '      <div style="font-size:13.5px;line-height:1.45;border:1.5px solid #000;border-radius:8px;' +
-        'padding:7px 11px;color:#000">Read one column a day, top to bottom. Some of these words are ' +
-        "not real words \u2014 read them anyway. Tick the ones you read right and write the score at " +
-        "the foot of the column. Each skill has two rows, marked real and nonsense, and those two rows are the one row for that skill on the score sheet.</div>\n" +
-        '      <div style="display:grid;grid-template-columns:52px repeat(5,minmax(0,1fr));gap:2px 6px;' +
+        'padding:7px 11px;color:#000">Read one column a day, top to bottom, on this sheet and the ' +
+        "other one. Some of these words are not real words \u2014 read them anyway. Tick the ones you " +
+        "read right and write the score at the foot of the column. Each skill has two rows, marked " +
+        "real and nonsense, and those two rows are the one row for that skill on the score sheet.</div>\n" +
+        '      <div style="display:grid;grid-template-columns:132px repeat(5,minmax(0,1fr));gap:3px 6px;' +
         'align-items:center">\n' +
         '        <span></span>\n' +
         '        <sc-for list="{{ cdHead }}" as="h" hint-placeholder-count="5">' +
         '<span style="font-family:Poppins,system-ui,sans-serif;font-size:11px;font-weight:800;' +
         'letter-spacing:.1em;color:#000;text-align:center;border-bottom:2px solid #000">' +
         "{{ h.t }}</span></sc-for>\n" +
-        '        <sc-for list="{{ cdRows }}" as="r" hint-placeholder-count="30">\n' +
-        '          <span style="display:flex;flex-direction:column;align-items:flex-end;' +
-        'line-height:1.05;white-space:nowrap">' +
-        '<b style="font-size:9px;font-weight:800;color:#000">{{ r.cid }}</b>' +
-        '<span style="font-size:7.5px;font-weight:600;color:#555">{{ r.kindLabel }}</span>' +
+        '        <sc-for list="{{ ' + rows + ' }}" as="r" hint-placeholder-count="16">\n' +
+        '          <span style="display:flex;flex-direction:column;align-items:flex-start;' +
+        'line-height:1.15;min-width:0">' +
+        '<b style="font-size:10px;font-weight:800;color:#000">{{ r.cid }} \u00B7 {{ r.kindLabel }}</b>' +
+        '<span style="font-size:8.5px;font-weight:600;color:#444;line-height:1.1;' +
+        'overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:130px">{{ r.name }}</span>' +
         "</span>\n" +
         '          <sc-for list="{{ r.cells }}" as="c" hint-placeholder-count="5">' +
         '<span style="{{ c.st }}">{{ c.w }}</span></sc-for>\n' +
         "        </sc-for>\n" +
-        '        <span style="font-size:10px;font-weight:800;color:#000">\u2713</span>\n' +
+        '        <span style="font-size:10px;font-weight:800;color:#000">\u2713 this sheet</span>\n' +
         '        <sc-for list="{{ cdHead }}" as="h" hint-placeholder-count="5">' +
-        '<span style="border:2px solid #000;border-radius:4px;height:22px;margin-top:4px"></span>' +
+        '<span style="border:2px solid #000;border-radius:4px;height:24px;margin-top:4px"></span>' +
         "</sc-for>\n" +
         "      </div>\n" +
+        // The sheet box is justify-content:space-between against a 10in
+        // minimum, so a sheet with room to spare puts the slack between its
+        // rows. This takes all of it at the foot instead.
+        '      <div style="flex:1"></div>\n' +
         "    </div>\n" +
         "    </sc-if>\n    ";
 
@@ -4841,7 +4925,11 @@ const ADAPTATIONS: Adaptation[] = [
       }
       if (spots.length !== 2) return html;
       for (const at of spots.reverse()) {
-        out = out.slice(0, at) + grid + tracker + out.slice(at);
+        out = out.slice(0, at)
+          + grid("cdRowsA", "cdFirst", "SHEET 1 OF 2")
+          + grid("cdRowsB", "cdSecond", "SHEET 2 OF 2")
+          + tracker
+          + out.slice(at);
       }
       return out;
     },
@@ -5163,6 +5251,7 @@ const ADAPTATIONS: Adaptation[] = [
         '      <div style="font-size:12px;font-weight:600;color:#000;border-top:1px solid #000;' +
         'padding-top:6px">⏱ Then the word race — the sheet at the back of the week, one minute, ' +
         "every day.</div>\n" +
+        '      <div style="flex:1"></div>\n' +
         "    </div>\n" +
         "    </sc-for>\n" +
 
@@ -5203,6 +5292,7 @@ const ADAPTATIONS: Adaptation[] = [
         '      <div style="font-size:13px;font-weight:700;color:#000">On Friday I read ' +
         '<span style="display:inline-block;min-width:50px;border-bottom:2px solid #000"></span> more ' +
         "words than on Monday.</div>\n" +
+        '      <div style="flex:1"></div>\n' +
         "    </div>\n" +
 
         // and the answers, on their own sheet, to be taken out
