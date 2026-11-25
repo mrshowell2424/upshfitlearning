@@ -4750,8 +4750,8 @@ const ADAPTATIONS: Adaptation[] = [
           "        const DN = ['MON', 'TUE', 'WED', 'THU', 'FRI'];\n" +
           // Bigger now that the thirty sit on two sheets. On one they were
           // 12.5px in a 22px row because that was all the page had left.
-          "        const cell = 'font-size:15px;font-weight:650;color:#000;" +
-          "padding:4px 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis';\n" +
+          "        const cell = 'font-size:19px;font-weight:650;color:#000;" +
+          "padding:9px 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis';\n" +
           // EVERY LESSON DEALS ITS OWN WEEK. The first version shipped one\n" +
           "        // week and all 62 packets printed it, so a child working lesson 3\n" +
           "        // and lesson 4 met the same thirty words twice. The pools travel\n" +
@@ -4846,7 +4846,7 @@ const ADAPTATIONS: Adaptation[] = [
         "other one. Some of these words are not real words \u2014 read them anyway. Tick the ones you " +
         "read right and write the score at the foot of the column. Each skill has two rows, marked " +
         "real and nonsense, and those two rows are the one row for that skill on the score sheet.</div>\n" +
-        '      <div style="display:grid;grid-template-columns:132px repeat(5,minmax(0,1fr));gap:3px 6px;' +
+        '      <div style="display:grid;grid-template-columns:172px repeat(5,minmax(0,1fr));gap:4px 8px;' +
         'align-items:center">\n' +
         '        <span></span>\n' +
         '        <sc-for list="{{ cdHead }}" as="h" hint-placeholder-count="5">' +
@@ -4856,22 +4856,18 @@ const ADAPTATIONS: Adaptation[] = [
         '        <sc-for list="{{ ' + rows + ' }}" as="r" hint-placeholder-count="16">\n' +
         '          <span style="display:flex;flex-direction:column;align-items:flex-start;' +
         'line-height:1.15;min-width:0">' +
-        '<b style="font-size:10px;font-weight:800;color:#000">{{ r.cid }} \u00B7 {{ r.kindLabel }}</b>' +
-        '<span style="font-size:8.5px;font-weight:600;color:#444;line-height:1.1;' +
-        'overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:130px">{{ r.name }}</span>' +
+        '<b style="font-size:11.5px;font-weight:800;color:#000">{{ r.cid }} \u00B7 {{ r.kindLabel }}</b>' +
+        '<span style="font-size:10px;font-weight:600;color:#444;line-height:1.15;' +
+        'overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:168px">{{ r.name }}</span>' +
         "</span>\n" +
         '          <sc-for list="{{ r.cells }}" as="c" hint-placeholder-count="5">' +
         '<span style="{{ c.st }}">{{ c.w }}</span></sc-for>\n' +
         "        </sc-for>\n" +
         '        <span style="font-size:10px;font-weight:800;color:#000">\u2713 this sheet</span>\n' +
         '        <sc-for list="{{ cdHead }}" as="h" hint-placeholder-count="5">' +
-        '<span style="border:2px solid #000;border-radius:4px;height:24px;margin-top:4px"></span>' +
+        '<span style="border:2px solid #000;border-radius:4px;height:30px;margin-top:5px"></span>' +
         "</sc-for>\n" +
         "      </div>\n" +
-        // The sheet box is justify-content:space-between against a 10in
-        // minimum, so a sheet with room to spare puts the slack between its
-        // rows. This takes all of it at the foot instead.
-        '      <div style="flex:1"></div>\n' +
         "    </div>\n" +
         "    </sc-if>\n    ";
 
@@ -5126,11 +5122,12 @@ const ADAPTATIONS: Adaptation[] = [
           // bank at all; those keep the rows they had, which is what the
           // switch does everywhere else on the page.
           "        const rows = (isMulti && W.ms && W.ms.length) ? W.ms : days;\n" +
-          // Up to Level 2 the maze is cut from the passage printed above it;
-          // from Level 3 it is the same story told for a stronger reader, and
-          // a teacher reading the sheet should not have to work that out.
-          "        const mazeHow = W.g ? 'the same story, told another way — circle the word that fits'\n" +
-          "          : 'circle the word that fits';\n" +
+          // The maze is cut from the lesson's grade 2 reading while the page
+          // above prints its grade 3 one, so the sentences are deliberately
+          // not the ones the child just read -- and for some lessons the two
+          // are different stories rather than one told twice. A teacher
+          // comparing the two should not have to work that out.
+          "        const mazeHow = 'from the other reading in this lesson — circle the word that fits';\n" +
           "        return {\n" +
           "          mcHas: days.length > 0,\n" +
           "          mcDays: days.map((d, i) => ({\n" +
@@ -5149,8 +5146,12 @@ const ADAPTATIONS: Adaptation[] = [
           "          })),\n" +
           "          mcKey: days.map((d, i) => ({\n" +
           "            t: DN[i] || ('DAY ' + (i + 1)),\n" +
+          // The answer in brackets. The key printed the sentence with the
+          // answer word sitting in it unmarked, which is the sentence rather
+          // than the answer and leaves a teacher working out which word was
+          // the gap.
           "            items: (d.m || []).map((m, j) => ({\n" +
-          "              t: (j + 1) + '. ' + m[0] + ' ' + m[3] + ' ' + m[2],\n" +
+          "              t: (j + 1) + '. ' + m[0] + ' [' + m[3] + '] ' + m[2],\n" +
           "            })),\n" +
           "            words: 'Real: ' + (((rows[i] || d).w) || []).join(', ')\n" +
           "              + ' · Silly: ' + (((rows[i] || d).s) || []).join(', '),\n" +
@@ -5191,7 +5192,7 @@ const ADAPTATIONS: Adaptation[] = [
         "      </div>\n" +
         '      <div style="font-size:13px;font-weight:700;color:#000">📖 {{ d.title }} · {{ d.nWords }}</div>\n' +
         '      <sc-for list="{{ d.paras }}" as="x" hint-placeholder-count="5">' +
-        '<div style="font-size:15.5px;line-height:1.52;color:#000;margin-bottom:3px">{{ x.t }}</div>' +
+        '<div style="font-size:16px;line-height:1.56;color:#000;margin-bottom:4px">{{ x.t }}</div>' +
         "</sc-for>\n" +
         '      <div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;border:2px solid #000;' +
         'border-radius:8px;padding:6px 10px;font-size:12px;font-weight:700;color:#000">\n' +
@@ -5251,7 +5252,6 @@ const ADAPTATIONS: Adaptation[] = [
         '      <div style="font-size:12px;font-weight:600;color:#000;border-top:1px solid #000;' +
         'padding-top:6px">⏱ Then the word race — the sheet at the back of the week, one minute, ' +
         "every day.</div>\n" +
-        '      <div style="flex:1"></div>\n' +
         "    </div>\n" +
         "    </sc-for>\n" +
 
@@ -5295,14 +5295,20 @@ const ADAPTATIONS: Adaptation[] = [
         '      <div style="flex:1"></div>\n' +
         "    </div>\n" +
 
-        // and the answers, on their own sheet, to be taken out
-        '    <div data-wb="true" style="{{ p.box1 }}">\n' +
+        // and the answers.
+        //
+        // p.dsBox, not p.box1: that is `key && show('key')`, which is how the
+        // dictation script and the other teacher sheets keep themselves out
+        // of the child's copy. On box1 this printed inside the student
+        // workbook, carrying a line that asked the teacher to take it out
+        // again -- a sheet of answers in the packet the child is handed.
+        '    <div data-wb="true" style="{{ p.dsBox }}">\n' +
         '      <div style="border-bottom:3px solid #000;padding-bottom:7px">\n' +
         '        <div style="' + H + '">{{ p.kicker }} · MCLASS DAILY · TEACHER COPY</div>\n' +
         '        <div style="font-size:26px;font-weight:800;color:#000;line-height:1.05">' +
         "Answers for the week</div>\n" +
-        '        <div style="font-size:12.5px;color:#000;margin-top:3px">The last sheet of this print. ' +
-        "Take it out before you copy the week for a child.</div>\n" +
+        '        <div style="font-size:12.5px;color:#000;margin-top:3px">The maze answer is the word ' +
+        "in brackets.</div>\n" +
         "      </div>\n" +
         '      <sc-for list="{{ mcKey }}" as="k" hint-placeholder-count="5">\n' +
         '        <div style="display:flex;gap:11px;align-items:flex-start;border-bottom:1px solid #000;' +
@@ -5314,6 +5320,7 @@ const ADAPTATIONS: Adaptation[] = [
         '<div style="font-size:12px;color:#000;margin-top:2px">{{ k.words }}</div></div>\n' +
         "        </div>\n" +
         "      </sc-for>\n" +
+        '      <div style="flex:1"></div>\n' +
         "    </div>\n" +
         "    </sc-if>\n    ";
 
@@ -5379,6 +5386,12 @@ const ADAPTATIONS: Adaptation[] = [
         ["\u00B7 CONTINUUM REVIEW", "continuum"],
         ["\u00B7 MY SCORES", "scores"],
         ["\u00B7 MCLASS DAILY", "mclass"],
+        // The word race belongs to the mClass daily chip: it is that week's
+        // fifth measure, on its own sheet because the list is too long to
+        // ride on a day page. Without a data-part it answered to no chip at
+        // all and printed on every run, and the print fit -- which walks
+        // [data-part] -- never looked at it.
+        ["\u00B7 WORD RACE", "mclass"],
       ];
       let out = html;
       for (const [mark, key] of MARKS) {

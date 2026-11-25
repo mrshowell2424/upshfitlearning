@@ -21,7 +21,8 @@
  * honest without changing what is being read.
  *
  * WHERE EACH PART COMES FROM
- *   ORF and accuracy  the lesson's own decodable passage
+ *   ORF and accuracy  the lesson's own passage, the grade 3 telling, which
+ *                     is the one still being read when the minute is up
  *   word reading      the lesson's real words, plus heart words up to its level
  *   letter sounds     the lesson's made-up words, topped up from the continuum
  *                     pools for its level -- eight per lesson is not five days
@@ -219,14 +220,27 @@ for (const lesson of SEQ) {
     taughtMulti.push(...(bank.real || []));
   };
   if (!p) { remember(); continue; }
-  // The easiest version written, because this is a daily warm-up rather than
-  // a reach: the point is reading it faster, not decoding it for the first
-  // time. A teacher who wants the harder text has it on the fluency page.
-  const text = p.g2 || p.g3 || p.g4;
+  /*
+   * THE READ-ALOUD IS THE LONGER TELLING, and the maze is cut from the
+   * shorter one.
+   *
+   * A minute of reading needs more than a minute of words on the page. The
+   * grade 2 telling runs 61 to 101 words and only two of the sixty-eight
+   * reach a hundred, so a child who can read gets to the end and stops being
+   * measured; g3 runs 110 to 164 and every one of them clears it.
+   *
+   * That also frees the maze. It used to be cut from whichever telling was
+   * not printed -- g2 up to Level 2, where the sentences sat on the same page
+   * as the passage and the answer could be read off it, and g3 above, which
+   * was harder than the lesson itself. The printed passage is g3 now and the
+   * maze is always g2: never on the page, and never ahead of the reader.
+   */
+  const text = p.g3 || p.g2 || p.g4;
   // remember() before every continue, not just the first: a lesson this
   // builder skips is still a lesson a child has been taught, and a later
   // race reaches back through all of them.
   if (!text) { remember(); continue; }
+  const mazeSource = p.g2 && p.g2 !== text ? p.g2 : text;
 
   const level = lesson.level || 1;
   const seed = 9000 + SEQ.indexOf(lesson) * 31;
@@ -317,26 +331,12 @@ for (const lesson of SEQ) {
   const race = shuffled(mix, seed + 8);
   if (race.length < RACE_WORDS) short.push(`${lesson.key}: ${race.length} race words`);
 
-  // WHERE THE MAZE SENTENCES COME FROM, and why it depends on the level.
-  //
-  // The passage is printed at the top of the same page, so a maze built on it
-  // can be answered by looking up rather than by reading for sense. From
-  // Level 3 the maze moves to g3 -- the same story, told for a stronger
-  // reader -- which is not on the page, so the child has to read the sentence.
-  //
-  // Levels 1 and 2 keep the printed passage, because g3 at those levels is
-  // not decodable: the grade 3 telling of the Level 1 cat story reaches for
-  // Saturday and o'clock. A child who cannot read the sentence cannot choose
-  // the word that fits it, and a maze they cannot read teaches nothing at
-  // all, which is worse than one they can shortcut.
-  const harder = level >= 3 && p.g3 && p.g3 !== text ? p.g3 : null;
-  const mazeText = harder || text;
-  // A distractor may not be a word from EITHER text: not from the passage the
-  // child just read out loud, and not from the telling the sentence came out
+  // A distractor may not be a word from EITHER telling: not from the passage
+  // the child just read out loud, and not from the one the sentence came out
   // of.
   const allWords = text.paras.join(" ").split(/\s+/)
-    .concat(harder ? harder.paras.join(" ").split(/\s+/) : []);
-  const sents = mazeable(sentences(mazeText.paras.join(" ")));
+    .concat(mazeSource === text ? [] : mazeSource.paras.join(" ").split(/\s+/));
+  const sents = mazeable(sentences(mazeSource.paras.join(" ")));
   if (reals.length < WRF_PER_DAY * DAYS || fakes.length < NWF_PER_DAY * DAYS) {
     short.push(`${lesson.key}: ${reals.length} real, ${fakes.length} made-up`);
   }
@@ -432,7 +432,7 @@ for (const lesson of SEQ) {
     passage: { title: text.title, paras: text.paras, words },
     // Which telling the maze sentences were cut from, so the check can go and
     // look rather than take it on trust.
-    mazeFrom: harder ? "g3" : "g2",
+    mazeFrom: mazeSource === text ? "same" : "g2",
     race,
     msDays,
     days,

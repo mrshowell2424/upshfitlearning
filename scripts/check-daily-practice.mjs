@@ -14,13 +14,12 @@
  *   3. Is the answer one of the three choices, and are the other two absent
  *      from the passage? A distractor the child read out loud a minute ago
  *      makes the item about memory rather than sense.
- *   3a. Did the maze sentences come from the telling the file says they came
- *      from, and is that the right telling for the level? Up to Level 2 the
- *      maze is cut from the printed passage; from Level 3 it is cut from g3,
- *      the same story told for a stronger reader, so the answer is not
- *      sitting on the page above the question. Both halves are checked by
- *      going and looking, because "mazeFrom" is a claim the data makes about
- *      itself.
+ *   3a. Is the read-aloud long enough to still be being read when the minute
+ *      is up, and did the maze sentences come from the telling that is NOT
+ *      printed? The passage is the grade 3 telling and the maze is cut from
+ *      grade 2, so the answer is never on the page above the question. Both
+ *      are checked by going and looking, because "mazeFrom" is a claim the
+ *      data makes about itself.
  *   4. Is the word race the same list every day? It is the one part that
  *      repeats on purpose -- Monday's count and Friday's count only mean
  *      something next to each other if the list did not move.
@@ -123,18 +122,23 @@ for (const lesson of D.lessons) {
   // Which telling the maze was cut from, and whether that is the right one.
   const p = PASS[lesson.key] || {};
   const printed = lesson.passage.paras.join(" ");
-  const g3 = p.g3 ? p.g3.paras.join(" ") : null;
-  const wantG3 = lesson.level >= 3 && g3 && g3 !== printed;
-  if (lesson.mazeFrom !== "g2" && lesson.mazeFrom !== "g3") {
-    say(`mazeFrom is "${lesson.mazeFrom}", expected g2 or g3`);
+  const g2 = p.g2 ? p.g2.paras.join(" ") : null;
+
+  // The read-aloud has to outlast the minute. Sixty-one to a hundred and one
+  // words was the grade 2 telling, which a child who can read finishes.
+  if (lesson.passage.words < 100) {
+    say(`the read-aloud passage is ${lesson.passage.words} words, and a minute of reading wants at least 100`);
   }
-  if (wantG3 && lesson.mazeFrom !== "g3") {
-    say(`is Level ${lesson.level} but takes its maze from the printed passage, where a child can read the answer off the page above it`);
+
+  // And the maze has to come from the telling that is NOT printed, so the
+  // answer is not sitting on the page above the question.
+  if (lesson.mazeFrom !== "g2" && lesson.mazeFrom !== "same") {
+    say(`mazeFrom is "${lesson.mazeFrom}", expected g2 or same`);
   }
-  if (!wantG3 && lesson.mazeFrom === "g3") {
-    say(`is Level ${lesson.level} and takes its maze from g3, which is not decodable this early`);
+  if (g2 && g2 !== printed && lesson.mazeFrom !== "g2") {
+    say("takes its maze from the printed passage although a second telling exists");
   }
-  const mazeSource = lesson.mazeFrom === "g3" && g3 ? g3 : printed;
+  const mazeSource = lesson.mazeFrom === "g2" && g2 ? g2 : printed;
 
   if (lesson.days.length !== 5) say(`${lesson.days.length} days, expected 5`);
 
