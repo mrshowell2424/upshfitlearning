@@ -210,20 +210,73 @@ function DayPage({ lesson, d }: { lesson: Lesson; d: Day }) {
         {d.maze.map((m, i) => <MazeLine key={i} m={m} n={i + 1} />)}
       </Part>
 
-      <Part n={4} label="Word race" measure="WRF" how="⏱ 1 minute — how far do you get?">
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(6, minmax(0, 1fr))", gap: "4px 8px" }}>
-          {lesson.race.map((w, i) => (
-            <span key={`${w}-${i}`} style={{ fontSize: 15.5, fontWeight: 650 }}>{w}</span>
-          ))}
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 12.5, fontWeight: 700, borderTop: `1px dashed ${LINE}`, paddingTop: 6 }}>
-          <span>Words read in a minute <span style={box(50)} /></span>
-          <span style={{ color: MUTED, fontWeight: 600 }}>
-            Same list every day. Friday should be further down it than Monday.
-          </span>
-        </div>
-      </Part>
+      <div style={{ fontSize: 12, color: MUTED, fontWeight: 600, borderTop: `1px solid ${LINE}`, paddingTop: 7 }}>
+        ⏱ Then the word race — the sheet at the back of the week, one minute, every day.
+      </div>
+    </section>
+  );
+}
 
+/**
+ * The word race: one sheet for the whole week.
+ *
+ * IT IS THE SAME LIST EVERY DAY, so printing it on all five day pages was
+ * printing it four times for nothing -- and a list long enough to outlast a
+ * minute does not fit there anyway. Seventy-two words adds about 132px to a
+ * day page, and every one of the lessons overflowed the sheet.
+ *
+ * SEVENTY-TWO, because the sheet must not run out before the clock does. At
+ * roughly a word a second a minute is sixty, and a fluent reader passes sixty
+ * on a word list, so there are twelve rows rather than ten.
+ *
+ * THE FIVE COUNTS SIT TOGETHER at the foot of it, for the same reason the
+ * reading log does: Monday and Friday mean something next to each other and
+ * very little apart.
+ */
+function RaceSheet({ lesson }: { lesson: Lesson }) {
+  return (
+    <section className="sheet" style={{ display: "flex", flexDirection: "column", gap: 13, paddingTop: 16 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: 12, borderBottom: `3px solid ${TEAL}`, paddingBottom: 7 }}>
+        <div>
+          <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: ".18em", color: TEAL }}>
+            {lesson.name.toUpperCase()} · WRF
+          </div>
+          <div style={{ fontSize: 29, fontWeight: 800, lineHeight: 1.05 }}>🏁 Word race</div>
+        </div>
+        <div style={{ fontSize: 12.5, fontWeight: 600, textAlign: "right" }}>
+          Name ______________<br />Week ____________
+        </div>
+      </div>
+
+      <div style={{ fontSize: 14, lineHeight: 1.5, background: "#F0FAF8", border: `1.5px solid ${TEAL}`, borderRadius: 10, padding: "8px 13px" }}>
+        <b>How:</b> one minute, every day. Read across the rows. Mark where you stop and write the
+        number in today&apos;s box. Read every word — no skipping. The list is the same all week, so
+        Friday should get further than Monday.
+      </div>
+
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(6, minmax(0, 1fr))", gap: "7px 10px" }}>
+        {lesson.race.map((w, i) => (
+          <span key={`${w}-${i}`} style={{ fontSize: 17, fontWeight: 650, whiteSpace: "nowrap" }}>{w}</span>
+        ))}
+      </div>
+
+      {/* Under the list, not pushed to the foot of the sheet: the box belongs
+          with the thing it is counting. */}
+      <div style={{ display: "grid", gridTemplateColumns: "auto repeat(5, minmax(0, 1fr))", gap: 8, alignItems: "center", border: `2px solid ${INK}`, borderRadius: 10, padding: "11px 13px" }}>
+        <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: ".1em", color: MUTED }}>HOW FAR?</span>
+        {DAY_NAME.map((d) => (
+          <span key={d} style={{ textAlign: "center" }}>
+            <span style={{ fontSize: 11, fontWeight: 800, color: MUTED, display: "block", marginBottom: 3 }}>
+              {d.slice(0, 3)}
+            </span>
+            <span style={box(62, 30)} />
+          </span>
+        ))}
+      </div>
+      <div style={{ fontSize: 13, fontWeight: 700 }}>
+        On Friday I read <span style={{ display: "inline-block", width: 48, borderBottom: `2px solid ${INK}` }} /> more
+        words than on Monday.
+      </div>
     </section>
   );
 }
@@ -268,9 +321,11 @@ function KeySheet({ lesson }: { lesson: Lesson }) {
           </div>
         </div>
       ))}
-      <div style={{ fontSize: 12.5, color: MUTED, lineHeight: 1.5 }}>
-        <b style={{ color: INK }}>Word race, the same list all week:</b> {lesson.race.join(", ")}.
-      </div>
+      {/*
+        The race list used to be reprinted here. At seventy-two words it ran
+        this sheet onto an eighth page, and it is not an answer to anything --
+        the child's own race sheet is the list.
+      */}
     </section>
   );
 }
@@ -312,8 +367,9 @@ export default async function PracticePage({
             <p style={{ fontSize: 15.5, color: MUTED, margin: "0 0 16px", lineHeight: 1.55 }}>
               The data chat reports five numbers and leaves a child with a goal and nothing to do
               about it. This is the something to do — five pages, one a day, on all five measures,
-              built from the concept the lesson is teaching. The passage and the word race stay the
-              same all week; the words and the maze change every day.
+              built from the concept the lesson is teaching. Five day pages, then the word race and
+              the answers. The passage and the race stay the same all week; the words and the maze
+              change every day.
             </p>
 
             {levels.map((lv) => (
@@ -353,6 +409,7 @@ export default async function PracticePage({
           {lesson.days.map((d) => (
             <DayPage key={d.day} lesson={lesson} d={d} />
           ))}
+          <RaceSheet lesson={lesson} />
           <KeySheet lesson={lesson} />
         </main>
       </SignInGate>

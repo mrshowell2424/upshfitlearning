@@ -4964,6 +4964,7 @@ const ADAPTATIONS: Adaptation[] = [
         key: string;
         mazeFrom: "g2" | "g3";
         race: string[];
+        msDays: { wrf: string[]; nwf: string[] }[] | null;
         passage: { title: string; paras: string[]; words: number };
         days: Day[];
       };
@@ -4974,6 +4975,8 @@ const ADAPTATIONS: Adaptation[] = [
         r: string[];
         g: boolean;
         d: { w: string[]; s: string[]; m: string[][] }[];
+        /** The same five days in multisyllabic words, or null if there are none. */
+        ms: { w: string[]; s: string[] }[] | null;
       }> = {};
       for (const L of (DAILY_PRACTICE as unknown as { lessons: Week[] }).lessons) {
         weeks[L.key] = {
@@ -4982,6 +4985,7 @@ const ADAPTATIONS: Adaptation[] = [
           p: L.passage.paras,
           r: L.race,
           g: L.mazeFrom === "g3",
+          ms: L.msDays ? L.msDays.map((d) => ({ w: d.wrf, s: d.nwf })) : null,
           d: L.days.map((day) => ({
             w: day.wrf,
             s: day.nwf,
@@ -5021,11 +5025,19 @@ const ADAPTATIONS: Adaptation[] = [
           // them with no sheet at all. The page already resolves a focus to its
           // lesson this way everywhere else: byId[id.split('|')[0]].
           "        const W = MD[id] || MD[String(id).split('|')[0]] || null;\n" +
-          "        if (!W) return { mcHas: false, mcDays: [], mcKey: [], mcRace: '' };\n" +
+          "        if (!W) return { mcHas: false, mcDays: [], mcKey: [], mcRaceWords: [], mcLog: [] };\n" +
           "        const DN = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'];\n" +
           "        const paras = (W.p || []).map((t) => ({ t }));\n" +
           "        const race = (W.r || []).map((w) => ({ w }));\n" +
           "        const days = W.d || [];\n" +
+          // The page's own "Use multisyllabic words" switch. When it is on,
+          // the other sheets in the packet swap to the harder bank, and the
+          // word rows here swap with them -- a child working above single
+          // syllables should not be handed cat and hop on the one page that
+          // is meant to stretch them. Fourteen lessons have no multisyllabic
+          // bank at all; those keep the rows they had, which is what the
+          // switch does everywhere else on the page.
+          "        const rows = (isMulti && W.ms && W.ms.length) ? W.ms : days;\n" +
           // Up to Level 2 the maze is cut from the passage printed above it;
           // from Level 3 it is the same story told for a stronger reader, and
           // a teacher reading the sheet should not have to work that out.
@@ -5039,11 +5051,11 @@ const ADAPTATIONS: Adaptation[] = [
           "            title: W.t,\n" +
           "            nWords: (W.n || 0) + ' words',\n" +
           "            paras: paras,\n" +
-          "            race: race,\n" +
-          "            real: (d.w || []).map((w) => ({ w })),\n" +
-          "            silly: (d.s || []).map((w) => ({ w })),\n" +
-          "            nReal: '/ ' + (d.w || []).length,\n" +
-          "            nSilly: '/ ' + (d.s || []).length,\n" +
+          "            real: ((rows[i] || d).w || []).map((w) => ({ w })),\n" +
+          "            silly: ((rows[i] || d).s || []).map((w) => ({ w })),\n" +
+          "            nReal: '/ ' + (((rows[i] || d).w) || []).length,\n" +
+          "            nSilly: '/ ' + (((rows[i] || d).s) || []).length,\n" +
+          "            realLbl: (isMulti && W.ms && W.ms.length) ? 'REAL \\u00b7 2+ SYLLABLES' : 'REAL',\n" +
           "            maze: (d.m || []).map((m, j) => ({ n: (j + 1) + '.', b: m[0], c: m[1], a: m[2] })),\n" +
           "            mazeHow: mazeHow,\n" +
           "          })),\n" +
@@ -5052,9 +5064,11 @@ const ADAPTATIONS: Adaptation[] = [
           "            items: (d.m || []).map((m, j) => ({\n" +
           "              t: (j + 1) + '. ' + m[0] + ' ' + m[3] + ' ' + m[2],\n" +
           "            })),\n" +
-          "            words: 'Real: ' + (d.w || []).join(', ') + ' · Silly: ' + (d.s || []).join(', '),\n" +
+          "            words: 'Real: ' + (((rows[i] || d).w) || []).join(', ')\n" +
+          "              + ' · Silly: ' + (((rows[i] || d).s) || []).join(', '),\n" +
           "          })),\n" +
-          "          mcRace: 'Word race, the same list all week: ' + (W.r || []).join(', ') + '.',\n" +
+          "          mcRaceWords: race,\n" +
+          "          mcLog: ['MON', 'TUE', 'WED', 'THU', 'FRI'].map((t) => ({ t })),\n" +
           "        }; })(),",
       );
 
@@ -5112,7 +5126,7 @@ const ADAPTATIONS: Adaptation[] = [
         '        <span style="font-size:11.5px;font-weight:600;color:#000">read each one, tick it</span>\n' +
         "      </div>\n" +
         '      <div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap">\n' +
-        '        <span style="' + H + ';font-size:10px;flex:none;width:58px">REAL</span>\n' +
+        '        <span style="' + H + ';font-size:10px;flex:none;width:58px">{{ d.realLbl }}</span>\n' +
         '        <span style="display:flex;gap:9px;flex-wrap:wrap;flex:1;min-width:0">' +
         '<sc-for list="{{ d.real }}" as="r" hint-placeholder-count="6">' +
         '<span style="font-size:16.5px;font-weight:650;color:#000;white-space:nowrap">☐ {{ r.w }}</span>' +
@@ -5146,25 +5160,50 @@ const ADAPTATIONS: Adaptation[] = [
         "{{ m.c }}</span> {{ m.a }}</div>\n" +
         "      </sc-for>\n" +
 
-        // 4 — the word race, the same list all week
-        '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
-        'padding-bottom:3px">\n' +
-        '        <span style="' + NUM + '">4</span>\n' +
-        '        <span style="font-size:14.5px;font-weight:800;color:#000">Word race</span>\n' +
-        '        <span style="' + H + ';font-size:10px">WRF</span>\n' +
-        '        <span style="flex:1"></span>\n' +
-        '        <span style="font-size:11.5px;font-weight:600;color:#000">⏱ 1 minute — how far do you get?</span>\n' +
-        "      </div>\n" +
-        '      <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px 8px">' +
-        '<sc-for list="{{ d.race }}" as="w" hint-placeholder-count="24">' +
-        '<span style="font-size:15.5px;font-weight:650;color:#000">{{ w.w }}</span></sc-for></div>\n' +
-        '      <div style="display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;' +
-        'color:#000;border-top:1px dashed #000;padding-top:5px">' +
-        '<span>Words read in a minute <span style="' + BOX + ';width:50px"></span></span>' +
-        '<span style="font-weight:600">Same list every day. Friday should be further down it than ' +
-        "Monday.</span></div>\n" +
+        '      <div style="font-size:12px;font-weight:600;color:#000;border-top:1px solid #000;' +
+        'padding-top:6px">⏱ Then the word race — the sheet at the back of the week, one minute, ' +
+        "every day.</div>\n" +
         "    </div>\n" +
         "    </sc-for>\n" +
+
+        // the word race: one sheet for the week, because it is one list for the
+        // week. Seventy-two words so the sheet outlasts the minute -- at a
+        // word a second that is sixty, and a fluent reader passes sixty on a
+        // list. On a day page it added 132px and every lesson overflowed.
+        '    <div data-wb="true" style="{{ p.box1 }}">\n' +
+        '      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;' +
+        'border-bottom:3px solid #000;padding-bottom:7px">\n' +
+        "        <div>\n" +
+        '          <div style="' + H + '">{{ p.kicker }} · WORD RACE · WRF</div>\n' +
+        '          <div style="font-size:27px;font-weight:800;color:#000;line-height:1.05">' +
+        "\u{1F3C1} Word race</div>\n" +
+        "        </div>\n" +
+        '        <div style="font-size:12.5px;font-weight:600;white-space:nowrap;text-align:right">' +
+        "Name ______________<br>Week ____________</div>\n" +
+        "      </div>\n" +
+        '      <div style="font-size:13.5px;line-height:1.45;border:1.5px solid #000;border-radius:8px;' +
+        'padding:7px 11px;color:#000"><b>How:</b> one minute, every day. Read across the rows. Mark ' +
+        "where you stop and write the number in today's box. Read every word — no skipping. The " +
+        "list is the same all week, so Friday should get further than Monday.</div>\n" +
+        '      <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px 10px">' +
+        '<sc-for list="{{ mcRaceWords }}" as="w" hint-placeholder-count="72">' +
+        '<span style="font-size:17px;font-weight:650;color:#000;white-space:nowrap">{{ w.w }}</span>' +
+        "</sc-for></div>\n" +
+        '      <div style="display:grid;grid-template-columns:auto repeat(5,minmax(0,1fr));gap:8px;' +
+        'align-items:center;border:2px solid #000;border-radius:10px;padding:10px 12px">\n' +
+        '        <span style="' + H + ';font-size:10px">HOW FAR?</span>\n' +
+        '        <sc-for list="{{ mcLog }}" as="d" hint-placeholder-count="5">\n' +
+        '          <span style="text-align:center">' +
+        '<span style="font-size:11px;font-weight:800;color:#000;display:block;margin-bottom:3px">' +
+        '{{ d.t }}</span>' +
+        '<span style="display:inline-block;width:62px;height:30px;border:2px solid #000;' +
+        'border-radius:4px"></span></span>\n' +
+        "        </sc-for>\n" +
+        "      </div>\n" +
+        '      <div style="font-size:13px;font-weight:700;color:#000">On Friday I read ' +
+        '<span style="display:inline-block;min-width:50px;border-bottom:2px solid #000"></span> more ' +
+        "words than on Monday.</div>\n" +
+        "    </div>\n" +
 
         // and the answers, on their own sheet, to be taken out
         '    <div data-wb="true" style="{{ p.box1 }}">\n' +
@@ -5185,7 +5224,6 @@ const ADAPTATIONS: Adaptation[] = [
         '<div style="font-size:12px;color:#000;margin-top:2px">{{ k.words }}</div></div>\n' +
         "        </div>\n" +
         "      </sc-for>\n" +
-        '      <div style="font-size:12.5px;line-height:1.5;color:#000">{{ mcRace }}</div>\n' +
         "    </div>\n" +
         "    </sc-if>\n    ";
 

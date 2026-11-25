@@ -58,11 +58,33 @@ const WORDS = existsSync(SYSTEM_DICT)
 // under check-continuum-daily, so a word that stands on one of those counts.
 const POOL = new Set(CONCEPTS.flatMap((c) => c.real || []).map((w) => String(w).toLowerCase()));
 const SEQ_WORDS = new Set(SEQ.flatMap((l) => l.words || []).map((w) => String(w).toLowerCase()));
+/*
+ * Every word of every passage this site serves.
+ *
+ * The race and the word rows draw on the passage a child reads at the top of
+ * the day page, and web2 is silent on plenty of what children's prose uses:
+ * it has hang but not hangs, grand but not gran, and nothing at all with a
+ * possessive on it. Those are already answered for -- check-passages asserts
+ * that every word of every passage is real and decodable at its lesson --
+ * so a word that stands in a passage stands here.
+ */
+const PASSAGE_WORDS = new Set(
+  Object.values(PASS).flatMap((p) =>
+    Object.values(p).flatMap((v) =>
+      v && v.paras
+        ? v.paras.join(" ").split(/\s+/).map((w) => w.toLowerCase().replace(/[^a-z']/g, ""))
+        : [],
+    ),
+  ),
+);
 
 /** Real after all? The same four sources the builder drew the word from. */
 const isReal = (w) => {
   const x = String(w).toLowerCase();
-  if (WORDS.has(x) || POOL.has(x) || HEART.includes(x) || SEQ_WORDS.has(x)) return true;
+  if (WORDS.has(x) || POOL.has(x) || HEART.includes(x) || SEQ_WORDS.has(x) || PASSAGE_WORDS.has(x)) return true;
+  // A possessive is the noun with 's on it, which web2 never lists.
+  const owned = x.replace(/'s$/, "");
+  if (owned !== x && (WORDS.has(owned) || PASSAGE_WORDS.has(owned) || SEQ_WORDS.has(owned))) return true;
   // web2 lists walk, not walked; the builder's pools carry both.
   const stems = [];
   if (/ies$/.test(x)) stems.push(x.replace(/ies$/, "y"));
@@ -77,6 +99,18 @@ const isReal = (w) => {
 
 const problems = [];
 const bare = (w) => String(w).replace(/[^A-Za-z'-]/g, "").toLowerCase();
+/**
+ * Roughly how many syllables, counted as groups of vowel letters.
+ *
+ * Wrong at the edges -- "couldn't" counts as one because the second syllable
+ * has no vowel letter in it -- which is why this only ever has to answer
+ * "two or more?" about a bank that was built to be multisyllabic. An
+ * apostrophe makes it generous by one for exactly that case.
+ */
+const syllableish = (w) => {
+  const groups = (String(w).toLowerCase().match(/[aeiouy]+/g) || []).length;
+  return groups + (String(w).includes("'") ? 1 : 0);
+};
 
 let dayCount = 0;
 let mazeCount = 0;
@@ -104,11 +138,54 @@ for (const lesson of D.lessons) {
 
   if (lesson.days.length !== 5) say(`${lesson.days.length} days, expected 5`);
 
-  // The race is one list for the week, so it lives on the lesson.
-  if (!Array.isArray(lesson.race) || lesson.race.length < 20) {
-    say(`word race has ${lesson.race ? lesson.race.length : 0} words, expected at least 20`);
+  // The race is one list for the week, on its own sheet, so it lives on the
+  // lesson rather than on a day. Sixty is a minute at a word a second and the
+  // sheet holds seventy-two so it outlasts the fastest reader; the first
+  // lesson in the sequence has nothing behind it to review and comes up a
+  // little short, which is a shorter race rather than a worse one.
+  if (!Array.isArray(lesson.race) || lesson.race.length < 60) {
+    say(`word race has ${lesson.race ? lesson.race.length : 0} words, expected at least 60`);
   } else if (new Set(lesson.race).size !== lesson.race.length) {
     say("a word appears twice in the race");
+  }
+  for (const w of lesson.race || []) {
+    // A race word is read off a list with no sentence around it, so a name is
+    // unreadable there and a lower-cased one is wrong as well as unreadable.
+    if (/^[A-Z]/.test(w) && w.includes("'")) say(`race word "${w}" is a name with a possessive on it`);
+  }
+
+  /*
+   * The same week in multisyllabic words, for the lesson builder's "Use
+   * multisyllabic words" switch. Fourteen lessons have no such bank -- their
+   * patterns have no two-syllable words to draw on -- and those carry null,
+   * which is the switch leaving the sheet alone rather than a gap.
+   */
+  if (lesson.msDays !== null) {
+    if (!Array.isArray(lesson.msDays) || lesson.msDays.length !== 5) {
+      say(`msDays has ${lesson.msDays ? lesson.msDays.length : 0} days, expected 5 or null`);
+    } else {
+      const seenReal = new Set();
+      for (const d of lesson.msDays) {
+        const at = (m) => say(`multisyllabic day ${d.day}: ${m}`);
+        if (d.wrf.length !== D.perDay.wrf) at(`${d.wrf.length} real words, expected ${D.perDay.wrf}`);
+        if (d.nwf.length !== D.perDay.nwf) at(`${d.nwf.length} made-up words, expected ${D.perDay.nwf}`);
+        for (const w of d.wrf) {
+          if (!isReal(w)) at(`real word "${w}" is not a word`);
+          if (unsafeRealWord(w)) at(`"${w}" cannot be printed for a child`);
+          // Two vowel groups is the cheap test for two syllables. It is the
+          // reason this list exists, so a single-syllable word in it is the
+          // switch doing nothing.
+          if (syllableish(w) < 2) at(`"${w}" is not a multisyllabic word`);
+          if (seenReal.has(w)) at(`"${w}" already appeared this week`);
+          seenReal.add(w);
+        }
+        for (const w of d.nwf) {
+          if (looksReal(w, WORDS) || POOL.has(String(w).toLowerCase())) at(`made-up word "${w}" is a real word`);
+          if (unsafeWord(w)) at(`"${w}" cannot be printed for a child`);
+          if (syllableish(w) < 2) at(`made-up word "${w}" is not multisyllabic`);
+        }
+      }
+    }
   }
   for (const w of lesson.race || []) {
     raceCount++;

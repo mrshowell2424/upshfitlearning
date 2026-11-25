@@ -39,20 +39,27 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { CONCEPTS } from "./lib/continuum-pools.mjs";
 import { mazeTokens } from "./lib/maze.mjs";
 import { LEVEL_SKILLS, EXTRA_CLOSED } from "./lib/nwf-pools.mjs";
+import { unsafeRealWord } from "./lib/not-nonsense.mjs";
 
 const SEQ = JSON.parse(readFileSync("scripts/reading-sequence.json", "utf8")).sequence;
-const PASS = JSON.parse(readFileSync("scripts/reading-passages.json", "utf8")).passages;
+// Read for the multisyllabic variant of the word rows only. It is NOT a
+// source for the word race: this bank is generated against spelling patterns
+// out of a dictionary, and a race drawn from it asks a child to read limn.
 const MULTI = JSON.parse(readFileSync("scripts/reading-multisyllabic.json", "utf8")).words;
+const PASS = JSON.parse(readFileSync("scripts/reading-passages.json", "utf8")).passages;
 const HEART = JSON.parse(readFileSync("scripts/reading-heart-words.json", "utf8")).words;
 
 const DAYS = 5;
 const WRF_PER_DAY = 6;
 const NWF_PER_DAY = 4;
 const MAZE_SENTENCES = 3;
-// A minute of reading down a list. Twenty-four is more than a child at these
-// levels gets through in sixty seconds, which is the point: the sheet must
-// not run out before the clock does, or the score stops being a speed.
-const RACE_WORDS = 24;
+// A minute of reading down a list, at roughly a word a second, and then some.
+// The sheet must not run out before the clock does or the score stops being a
+// speed, and a fluent Grade 3 reader passes sixty words on a word list, so
+// twelve rows of six rather than the four rows this started with. It is a
+// sheet of its own: at this length it adds 132px to a day page, and every one
+// of the 218 entries in the lesson picker overflows the printed page.
+const RACE_WORDS = 72;
 
 /** Same seed, same week. A sheet printed on Sunday has to match the key on Friday. */
 function rng(seed) {
@@ -73,6 +80,35 @@ function shuffled(list, seed) {
     [out[i], out[j]] = [out[j], out[i]];
   }
   return out;
+}
+
+/**
+ * Every distinct word of a passage that a race could ask for.
+ *
+ * Only the ones written in lower case. A capitalised word is either a name --
+ * Jane, Nat, Mia -- or the first word of a sentence, and a race list is no
+ * place for either: "jane" is not a word a child should be asked to read off
+ * a list, and lower-casing a name to put it there is worse. Sentence-initial
+ * words are lost along with the names, but almost all of them turn up
+ * somewhere else in the passage in lower case anyway.
+ */
+function passageWords(text) {
+  return [...new Set(
+    text.paras
+      .join(" ")
+      .split(/\s+/)
+      .filter((w) => /^[a-z]/.test(w))
+      .map((w) => w.toLowerCase().replace(/[^a-z']/g, "")),
+  )].filter((w) => w.length > 1);
+}
+
+/** The continuum's real words for a reading level, already signed off. */
+function continuumReals(level) {
+  const ids = LEVEL_SKILLS[Math.min(5, Math.max(1, level))] || [];
+  return ids.flatMap((id) => {
+    const c = CONCEPTS.find((x) => x.id === id);
+    return c && c.kind === "words" ? c.real : [];
+  });
 }
 
 /** The continuum's made-up words for a reading level, already signed off. */
@@ -160,17 +196,38 @@ function oneBlank(sentence, seed, avoid, shift) {
 const out = [];
 const short = [];
 const noMaze = [];
+/** Every word taught so far, in sequence order, for the race to reach back into. */
+const taught = [];
+/** Every multisyllabic word so far, real and made-up, for the same reason. */
+const taughtFakes = [];
+const taughtMulti = [];
+const noMulti = [];
 
 for (const lesson of SEQ) {
   const p = PASS[lesson.key];
-  if (!p) continue;
+  const bank = MULTI[lesson.key] || {};
+  const taughtHere = [
+    ...(lesson.words || []),
+    ...(PASS[lesson.key]?.g2 ? passageWords(PASS[lesson.key].g2) : []),
+  ];
+  const fakesHere = bank.fake || [];
+  // Added after this lesson is built, never before: a race may reach back
+  // through what has been taught, and this lesson is not behind itself.
+  const remember = () => {
+    taught.push(...taughtHere);
+    taughtFakes.push(...fakesHere);
+    taughtMulti.push(...(bank.real || []));
+  };
+  if (!p) { remember(); continue; }
   // The easiest version written, because this is a daily warm-up rather than
   // a reach: the point is reading it faster, not decoding it for the first
   // time. A teacher who wants the harder text has it on the fluency page.
   const text = p.g2 || p.g3 || p.g4;
-  if (!text) continue;
+  // remember() before every continue, not just the first: a lesson this
+  // builder skips is still a lesson a child has been taught, and a later
+  // race reaches back through all of them.
+  if (!text) { remember(); continue; }
 
-  const m = MULTI[lesson.key] || {};
   const level = lesson.level || 1;
   const seed = 9000 + SEQ.indexOf(lesson) * 31;
 
@@ -178,8 +235,32 @@ for (const lesson of SEQ) {
   // heart words taught up to this level -- the irregular ones no amount of
   // sounding out will crack, which is exactly why they need the repetition.
   const heart = HEART.filter((h) => h.level <= level).map((h) => h.word);
-  const realPool = [...new Set([...(lesson.words || []), ...(m.one || []), ...heart])]
-    .filter((w) => /^[a-z']+$/i.test(w));
+  // A capitalised word with an apostrophe in it is somebody's name with a
+  // possessive on the end -- Sam's, Ben's, Kim's -- which the possessive
+  // lesson teaches and a speed list has no use for. "I" and "August" are
+  // capitals that are simply words, and they stay.
+  const word = (w) =>
+    /^[a-z']+$/i.test(w) && !unsafeRealWord(w) && !(/^[A-Z]/.test(w) && w.includes("'"));
+
+  // WHERE A RACE WORD MAY COME FROM. Four sources, each of them already
+  // vetted for children: the lesson's own ten words, the heart words taught
+  // by this level, the continuum pools for this level -- the same hand-picked
+  // real words the thirty-a-day sheets draw on -- and the words of the
+  // passage the child reads at the top of every day page.
+  //
+  // NOT the generated single-syllable bank, which the first version of this
+  // used and which put limn, quay and ness on a Silent e race. That bank
+  // exists to be matched against a spelling pattern and is built out of a
+  // dictionary; it is the right source for "does this word have a vce
+  // syllable" and the wrong one for "read this out loud as fast as you can".
+  const ownWords = [...new Set([...(lesson.words || []), ...passageWords(text)])].filter(word);
+  const levelWords = continuumReals(level).filter(word);
+  // What has already been taught, most recent first, so a race backfills with
+  // the lesson before this one rather than with the first week of September.
+  const reviewWords = [...new Set([...taught].reverse())]
+    .filter(word)
+    .filter((w) => !ownWords.includes(w));
+  const realPool = [...new Set([...ownWords, ...heart])].filter(word);
 
   // Made-up words come ONLY from the signed-off pools, never from the
   // multisyllabic bank's own made-up list.
@@ -202,10 +283,38 @@ for (const lesson of SEQ) {
   // THE WORD RACE IS THE SAME LIST ALL WEEK, and deliberately so. The six
   // word-reading words change daily because reading those five times over
   // measures memory; the race is the opposite task. A child races the same
-  // twenty-four words on Monday and on Friday and the two counts can be put
+  // seventy-two words on Monday and on Friday and the two counts can be put
   // next to each other, which is the only way the number means anything.
-  // Drawn from this lesson's own words, so it is this skill being raced.
-  const race = shuffled(realPool, seed + 3).slice(0, RACE_WORDS);
+  //
+  // AND IT IS A MIXED LIST. Word reading is not a pattern drill: what it
+  // measures is whether the words a child is supposed to have by now come off
+  // the page without being worked out. So a third is this lesson's own words,
+  // a third is the heart words taught by this level, and the rest is what
+  // earlier lessons taught, most recent first -- and then the whole thing is
+  // shuffled, so a silent-e word sits next to "because" sits next to a short
+  // vowel word from October, which is what the measure actually looks like.
+  //
+  // Reaching back is also what makes the length possible. Drawing on this
+  // lesson alone, twenty-three of the sixty-eight could not reach sixty words
+  // and the shortest had twenty-one.
+  const mix = [];
+  const fill = (from, upTo) => {
+    for (const w of from) {
+      if (mix.length >= upTo) break;
+      if (!mix.includes(w)) mix.push(w);
+    }
+  };
+  const third = Math.ceil(RACE_WORDS / 3);
+  fill(shuffled(ownWords, seed + 3), third);
+  fill(shuffled(heart, seed + 4), third * 2);
+  fill(reviewWords, RACE_WORDS);
+  // Whatever is left, from whichever source still has words. The first lesson
+  // in the sequence has nothing behind it to review and comes up a few short
+  // of a full sheet, which is a shorter race rather than a worse one.
+  fill(shuffled(levelWords, seed + 5), RACE_WORDS);
+  fill(shuffled(ownWords, seed + 6), RACE_WORDS);
+  fill(shuffled(heart, seed + 7), RACE_WORDS);
+  const race = shuffled(mix, seed + 8);
   if (race.length < RACE_WORDS) short.push(`${lesson.key}: ${race.length} race words`);
 
   // WHERE THE MAZE SENTENCES COME FROM, and why it depends on the level.
@@ -247,6 +356,49 @@ for (const lesson of SEQ) {
 
   const words = text.paras.join(" ").split(/\s+/).filter(Boolean).length;
 
+  /*
+   * THE SAME WEEK IN MULTISYLLABIC WORDS.
+   *
+   * The lesson builder has a "Use multisyllabic words" switch, and when it is
+   * on the packet's other sheets swap to the harder bank. The mClass rows now
+   * do too: six real multisyllabic words and four made-up ones a day, from
+   * the same bank, so a child working above single syllables is not handed
+   * cat and hop on the one page that is meant to stretch them.
+   *
+   * The made-up words reach back through earlier lessons, because a lesson
+   * holds only eight of them and five days wants twenty. Fourteen lessons
+   * have no bank at all -- their patterns have no two-syllable words to make
+   * one from -- and those keep the single-syllable rows, which is what the
+   * switch does everywhere else on the page.
+   */
+  // Two lessons hold almost nothing of their own -- the aught/ought families
+  // have four two-syllable words between them, and vccvce has six -- so a
+  // week drawn from those alone asked for the same four words thirty times.
+  // What is short is topped up from lessons already taught, which are still
+  // multisyllabic words and ones this child has met.
+  // Topped up only where there is something of this lesson's own to top up.
+  // Backfilling an empty bank made the switch change the rows on the fourteen
+  // lessons whose patterns have no two-syllable words at all -- long e came
+  // out as "withdrawn" -- which is a harder word that has nothing to do with
+  // the lesson. Everywhere else on the page an empty bank means the switch
+  // leaves the sheet alone, and so it does here.
+  const msOwn = shuffled((bank.real || []).filter(word), seed + 11);
+  const msReal = msOwn.length
+    ? [...new Set([
+        ...msOwn,
+        ...(msOwn.length < WRF_PER_DAY * DAYS ? [...taughtMulti].reverse().filter(word) : []),
+      ])]
+    : [];
+  const msFake = [...new Set([...(bank.fake || []), ...[...taughtFakes].reverse()])];
+  const msDays = msReal.length
+    ? Array.from({ length: DAYS }, (_, d) => ({
+        day: d + 1,
+        wrf: take(msReal, d, WRF_PER_DAY),
+        nwf: take(msFake, d, NWF_PER_DAY),
+      }))
+    : null;
+  if (!msDays) noMulti.push(lesson.key);
+
   const days = [];
   for (let d = 0; d < DAYS; d++) {
     // Three sentences, walking through the passage across the week, so each
@@ -272,6 +424,7 @@ for (const lesson of SEQ) {
     });
   }
 
+  remember();
   out.push({
     key: lesson.key,
     name: lesson.name,
@@ -281,6 +434,7 @@ for (const lesson of SEQ) {
     // look rather than take it on trust.
     mazeFrom: harder ? "g3" : "g2",
     race,
+    msDays,
     days,
   });
 }
@@ -290,7 +444,7 @@ writeFileSync(
   JSON.stringify(
     {
       _note:
-        "Five days of daily practice for each lesson in the reading sequence, across the five mClass measures. Each day is a page: the lesson's own decodable passage (the same one all week, because repeated reading is what moves fluency and accuracy), six real words and four made-up ones that change daily, a three-sentence maze over a different part of that passage, and a twenty-four word race that stays the same all week so Monday and Friday can be compared. Generated by scripts/build-daily-practice.mjs; do not hand-edit.",
+        "Five days of daily practice for each lesson in the reading sequence, across the five mClass measures. Each day is a page: the lesson's own decodable passage (the same one all week, because repeated reading is what moves fluency and accuracy), six real words and four made-up ones that change daily, a three-sentence maze over a different part of that passage, and a seventy-two word race on a sheet of its own that stays the same all week so Monday and Friday can be compared. msDays carries the same five days in multisyllabic words, for the lesson builder's multisyllabic switch, and is null for the fourteen lessons whose patterns have no two-syllable words. Generated by scripts/build-daily-practice.mjs; do not hand-edit.",
       perDay: { wrf: WRF_PER_DAY, nwf: NWF_PER_DAY, maze: MAZE_SENTENCES },
       raceWords: RACE_WORDS,
       lessons: out,
@@ -302,6 +456,10 @@ writeFileSync(
 
 console.log(`${out.length} lessons × ${DAYS} days`);
 console.log(`  ${out.length * DAYS} practice days, ${out.length * DAYS * (WRF_PER_DAY + NWF_PER_DAY)} word slots`);
+if (noMulti.length) {
+  console.log(`\n${noMulti.length} lessons have no multisyllabic bank, so the switch leaves their rows alone:`);
+  console.log(`   ${noMulti.join(", ")}`);
+}
 if (noMaze.length) {
   console.log(`\n⚠ ${noMaze.length} days could not fill ${MAZE_SENTENCES} maze sentences:`);
   for (const s of noMaze.slice(0, 8)) console.log(`   – ${s}`);
