@@ -26,6 +26,7 @@ import DAILY_PRACTICE from "./reading-daily-practice.json" with { type: "json" }
 import SYLLABLES from "./reading-syllable-splits.json" with { type: "json" };
 import WORD_SORT from "./reading-word-sort.json" with { type: "json" };
 import SOUND_MAP from "./reading-sound-mapping.json" with { type: "json" };
+import PHONEME_INTRO from "./reading-phoneme-intro.json" with { type: "json" };
 import PARTW from "./reading-part-words.json" with { type: "json" };
 
 /**
@@ -6003,6 +6004,109 @@ const ADAPTATIONS: Adaptation[] = [
         "    </div>\n" +
         "    </sc-if>\n    ";
 
+      /*
+       * MEETING THE SOUND: the two items Day 1 opens with.
+       *
+       * 95% Group's weekly timing guide starts Day 1 with Identify Phoneme,
+       * two minutes, and Articulate Phoneme, three, before anything is read
+       * or written. They were the last two components of the routine with
+       * nothing in the packet.
+       *
+       * Identify asks whether the sound is in the word and whereabouts,
+       * because a child who cannot hear /sh/ at the end of "fish" will not
+       * spell it there. Articulate asks what the mouth is doing, which is
+       * what separates the pairs children confuse: /f/ and /v/ are the same
+       * mouth with the voice off and on, and a child who can feel that stops
+       * guessing between them.
+       *
+       * Both are spoken, so this is a teacher's card -- p.dsBox, like the
+       * dictation script. Nothing is shown to the child.
+       */
+      const PI = (PHONEME_INTRO as unknown as {
+        lessons: {
+          key: string;
+          identify: { g: string; w: string; at: string }[];
+          articulate: { g: string; how: string; voice: string; hold: boolean; pair: string | null }[];
+        }[];
+      }).lessons;
+      const intro: Record<string, { i: string[]; a: string[] }> = {};
+      for (const L of PI) {
+        intro[L.key] = {
+          i: L.identify.map((x) =>
+            `Say "${x.w}". Do you hear the sound ${x.g} makes? Where is it?  [${x.at}]`),
+          a: L.articulate.map((x) => {
+            const hold = x.hold ? "You can hold it." : "You cannot hold it — it stops.";
+            const pair = x.pair ? ` Now try ${x.pair}: same mouth, other voice.` : "";
+            return `Say ${x.g} on its own. What is your mouth doing?  [${x.how}]  `
+              + `Fingers on your throat — noisy or quiet?  [${x.voice}]  ${hold}${pair}`;
+          }),
+        };
+      }
+      out = out.replace(
+        end,
+        '<script id="sor-phoneme-intro" type="application/json">' +
+          JSON.stringify(intro).replace(/</g, "\\u003c") +
+          "</script>\n" + end,
+      );
+      const piSeat = "      wbBtn: (this.state && this.state.wbOpen) ? 'Hide workbook \u25b2' : 'Show workbook \u25bc',";
+      if (out.includes(piSeat)) {
+        out = out.replace(
+          piSeat,
+          piSeat + "\n" +
+            "      ...(() => {\n" +
+            "        const PI = (() => { try {\n" +
+            "          return JSON.parse(document.getElementById('sor-phoneme-intro').textContent);\n" +
+            "        } catch (e) { return {}; } })();\n" +
+            "        const C = PI[id] || PI[String(id).split('|')[0]] || null;\n" +
+            "        if (!C) return { piHas: false, piFind: [], piMouth: [], piMouthHas: false };\n" +
+            "        return {\n" +
+            "          piHas: (C.i || []).length > 0 || (C.a || []).length > 0,\n" +
+            "          piFind: (C.i || []).map((t, n) => ({ t: (n + 1) + '. ' + t })),\n" +
+            "          piMouth: (C.a || []).map((t, n) => ({ t: (n + 1) + '. ' + t })),\n" +
+            // A vowel lesson has no articulation, and the heading for it
+            // should not print over an empty space.
+            "          piMouthHas: (C.a || []).length > 0,\n" +
+            "        }; })(),",
+        );
+      }
+
+      const introSheet =
+        '<sc-if value="{{ piHas }}" hint-placeholder-val="{{ true }}">\n' +
+        '    <div data-wb="true" style="{{ p.dsBox }}">\n' +
+        '      <div style="border-bottom:3px solid #000;padding-bottom:7px">\n' +
+        '        <div style="' + H + '">{{ p.kicker }} \u00b7 MEET THE SOUND \u00b7 TEACHER COPY</div>\n' +
+        '        <div style="font-size:26px;font-weight:800;color:#000;line-height:1.05">' +
+        "\u{1F5E3} Day 1, before anything else</div>\n" +
+        '        <div style="font-size:12.5px;color:#000;margin-top:3px">Five minutes, spoken. ' +
+        "Nothing is shown and nothing is written. The child listens, feels, and answers out loud. " +
+        "The answer is in brackets.</div>\n" +
+        "      </div>\n" +
+        '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
+        'padding-bottom:3px">\n' +
+        '        <span style="' + H + ';font-size:10px">1 \u00b7 CAN YOU HEAR IT, AND WHERE?</span>\n' +
+        '        <span style="flex:1"></span>\n' +
+        '        <span style="font-size:11.5px;font-weight:600;color:#000">2 minutes</span>\n' +
+        "      </div>\n" +
+        '      <sc-for list="{{ piFind }}" as="x" hint-placeholder-count="4">' +
+        '<div style="font-size:14px;line-height:1.5;color:#000">{{ x.t }}</div></sc-for>\n' +
+        '      <sc-if value="{{ piMouthHas }}" hint-placeholder-val="{{ true }}">\n' +
+        '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
+        'padding-bottom:3px">\n' +
+        '        <span style="' + H + ';font-size:10px">2 \u00b7 WHAT IS YOUR MOUTH DOING?</span>\n' +
+        '        <span style="flex:1"></span>\n' +
+        '        <span style="font-size:11.5px;font-weight:600;color:#000">3 minutes</span>\n' +
+        "      </div>\n" +
+        '      <sc-for list="{{ piMouth }}" as="x" hint-placeholder-count="4">' +
+        '<div style="font-size:14px;line-height:1.5;color:#000">{{ x.t }}</div></sc-for>\n' +
+        '      <div style="font-size:12px;line-height:1.45;color:#000;border-top:1px solid #000;' +
+        'padding-top:6px">Two sounds made in the same place, one noisy and one quiet, are the pair ' +
+        "a child mixes up. Let them feel their own throat for it rather than telling them which is " +
+        "which.</div>\n" +
+        "      </sc-if>\n" +
+        '      <div style="flex:1"></div>\n' +
+        "    </div>\n" +
+        "    </sc-if>\n    ";
+
       // The line under "Student workbook + answer key" still listed the five
       // pages the packet had when it was written. Say what is in it now.
       const summary = "writing, decodable + questions, fluency check'";
@@ -6029,7 +6133,7 @@ const ADAPTATIONS: Adaptation[] = [
         // The sort before the week's measures: 95% Group teaches the pattern
         // on Day 1 and sorts it the same day, before any of this measures
         // whether it took.
-        out = out.slice(0, at) + mapSheet + sortSheet + sheet + out.slice(at);
+        out = out.slice(0, at) + introSheet + mapSheet + sortSheet + sheet + out.slice(at);
       }
       return out;
     },
@@ -6081,6 +6185,7 @@ const ADAPTATIONS: Adaptation[] = [
         ["\u00B7 SOUND DRILL", "sound"],
         ["\u00B7 WORD SORT", "sort"],
         ["\u00B7 SOUND SPELLING", "map"],
+        ["\u00B7 MEET THE SOUND", "meet"],
       ];
       let out = html;
       for (const [mark, key] of MARKS) {
@@ -6115,7 +6220,8 @@ const ADAPTATIONS: Adaptation[] = [
           "          ['mclass', '⏱ mClass daily'], ['phrase', '\u{1FA9C} Phrase ladder'],\n" +
           "          ['sound', '\u{1F50A} Sound drill'],\n" +
           "          ['sort', '\u{1F5C2} Word sort'],\n" +
-          "          ['map', '\u{1F50D} Sound spelling']];",
+          "          ['map', '\u{1F50D} Sound spelling'],\n" +
+          "          ['meet', '\u{1F5E3} Meet the sound']];",
       );
 
       // 3. The off list, where the print fit can see it.

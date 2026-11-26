@@ -43,6 +43,7 @@ const BUILDERS = [
   ["scripts/build-multisyllabic.mjs", ["scripts/reading-multisyllabic.json"]],
   ["scripts/build-word-sort.mjs", ["scripts/reading-word-sort.json"]],
   ["scripts/build-sound-mapping.mjs", ["scripts/reading-sound-mapping.json"]],
+  ["scripts/build-phoneme-intro.mjs", ["scripts/reading-phoneme-intro.json"]],
   ["scripts/build-hub-counts.mjs", ["scripts/reading-hub-counts.json"]],
   ["scripts/build-benchmark.mjs", ["scripts/reading-benchmark.json"]],
   // Catches a change to the syllable engine or the vowel table that nobody
