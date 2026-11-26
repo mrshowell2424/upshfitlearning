@@ -5861,19 +5861,23 @@ const ADAPTATIONS: Adaptation[] = [
      * as well as short: a teacher filing a child's work by week had no date
      * on two thirds of it, and progress monitoring runs on a fortnight.
      *
-     * Written to match the sheets that already had one -- same line, same
-     * weight, two spaces between -- rather than inventing a second house
-     * style. The underscores are shorter than the name's because a date is
-     * shorter than a name, and the line is nowrap, so the two have to fit
-     * the header together.
+     * ON ITS OWN LINE, under the name, which is what the word race and the
+     * mClass day sheets already do. The first version of this put it beside
+     * the name instead, on one nowrap line, and that line is a flex item in
+     * the header: making it wider squeezed the title column next to it until
+     * the title wrapped. The Level 4 fluency check went from a three-line
+     * header to a six-line one, with "The Inspector and the Bridge" broken
+     * across two lines and the name sitting against the second of them. It
+     * did the same to the mystery, the decodable, sentence building, chop
+     * the word and all four word games pages.
      */
     name: "put a date beside the name on every sheet that asks for one",
     apply: (html) => {
       let out = html;
       let done = 0;
       for (const [bare, dated] of [
-        [">Name ______________</div>", ">Name ______________  Date ________</div>"],
-        [">Name ____________</div>", ">Name ____________  Date ______</div>"],
+        [">Name ______________</div>", ">Name ______________<br>Date ____________</div>"],
+        [">Name ____________</div>", ">Name ____________<br>Date ____________</div>"],
       ]) {
         const n = out.split(bare).length - 1;
         if (!n) continue;
