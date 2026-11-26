@@ -24,8 +24,15 @@
 import { readFileSync } from "node:fs";
 import { EXTRA_LESSONS, EXTRA_SCOPE } from "./extra-lessons.mjs";
 
-/** Basic Reading patterns and the scope numbers that place them. */
-const SCOPE = {
+/**
+ * Basic Reading patterns and the scope numbers that place them.
+ *
+ * Exported because two checkers used to keep their own copies of this, and a
+ * copy is a thing that goes stale: moving Vowel teams 3 up a level here left
+ * check-passages still sorting it by its old number, so it reported the Long
+ * u passage as using ue and ew before they were taught, when they now are.
+ */
+export const SCOPE = {
   "cvc-a": "1-01a",
   "cvc-mix": "1-01b",
   dig: "1-05",
@@ -41,11 +48,30 @@ const SCOPE = {
   "ai-ay": "2-05a",
   "ee-ea": "2-05b",
   "oa-ow": "2-05c",
+  // VOWEL TEAMS 3 MOVED UP A LEVEL, from 4-06 to 3-04e.
+  //
+  // It teaches ue, ew, ei, eigh and ui, which are vowel teams, and it sat
+  // among the Latin roots two levels after every other vowel team lesson.
+  // That also stranded Long u: its words are built from ue and ew, so it
+  // could not come before this one, and it was parked at 4-06a away from
+  // Long a, e, i and o. Both now sit in Level 3 with the rest of the teams,
+  // Vowel teams 3 first so Long u still follows what it depends on, and
+  // "All vowel teams together" last of all.
+  "og4-06": "3-04e",
   // The Hub's own lessons, grouped by sound. Their numbers and their rows both
   // live in scripts/lib/extra-lessons.mjs, which explains why they are not
   // written into the export itself.
   ...EXTRA_SCOPE,
 };
+
+/**
+ * Lessons taught at a different level from the one their OG pack says.
+ *
+ * The pack's own level is right for nearly all of them. Vowel teams 3 is the
+ * exception: it is a vowel team lesson that the pack files at level 4, which
+ * put it after every other vowel team lesson and after the Latin roots.
+ */
+const RELEVEL = { "og4-06": 3 };
 
 /** OG ids already covered by a Basic Reading pattern above. */
 const COVER = {
@@ -83,6 +109,6 @@ export function deriveSequence(root = ".") {
   return rows.map((r) => ({
     key: r.key,
     name: r.name,
-    level: Number(String(r.band).replace("Level ", "")) || 1,
+    level: RELEVEL[r.key] || Number(String(r.band).replace("Level ", "")) || 1,
   }));
 }

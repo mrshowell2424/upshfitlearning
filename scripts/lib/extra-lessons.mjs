@@ -79,7 +79,7 @@ export const EXTRA_LESSONS = [
    ["once", "gone", "door"],
    ["The goat sat in the snow.", "I know the road by the coast."]],
 
-  ["long-u", "Long u: ue, ew, eu", "Level 4",
+  ["long-u", "Long u: ue, ew, eu", "Level 3",
    "Blue Glue (p. 88) · The New Crew (p. 89)",
    "Three ways to write long u. ue and ew sit at the end; eu turns up in a few words.",
    ["blue → clue", "stew → few", "feud → neutral"],
@@ -104,11 +104,13 @@ export const EXTRA_SCOPE = {
   "long-e": "3-04b",
   "long-i": "3-04c",
   "long-o": "3-04d",
-  // LEVEL 4, not 3, unlike its four siblings. The sequence does not teach ue,
-  // ew or ui until "Vowel teams 3" at level 4, so a lesson covering every way
-  // to write long u cannot sit before it -- the passage checker caught this by
-  // refusing words the programme had not reached. It sits at 4-06a, straight
-  // after Vowel teams 3.
-  "long-u": "4-06a",
-  "teams-all": "3-04f",
+  // Long u may not come before "Vowel teams 3", because that is where ue, ew
+  // and ui are taught and this lesson is every way to write the sound. It
+  // used to sit at 4-06a for that reason, a level away from its four
+  // siblings. Vowel teams 3 has moved up to 3-04e instead, so the dependency
+  // holds and the five long vowels are together.
+  "long-u": "3-04f",
+  // Last of the vowel team lessons, which is what "all together" means. It
+  // used to come before both Vowel teams 3 and Long u.
+  "teams-all": "3-04g",
 };

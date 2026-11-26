@@ -25,6 +25,7 @@
  *   bun run scripts/check-passages.mjs
  */
 import { readFileSync } from "node:fs";
+import { SCOPE } from "./lib/sequence.mjs";
 import { EXTRA_LESSONS, EXTRA_SCOPE } from "./lib/extra-lessons.mjs";
 
 const R = "content-reading-materials/og-packs/";
@@ -38,7 +39,10 @@ const SK = SKF.concat(EXTRA_LESSONS).map((r) => [r[0], r[1], r[2], r[6] || []]);
 const COVER = { "1-01":1,"1-05":1,"1-07":1,"1-08":1,"1-09":1,"1-12":1,"2-01":1,"2-02":1,"2-03":1,"2-04":1,"2-05":1 };
 global.OG_CONCEPTS.filter((c) => !COVER[c.id] && global.OG_PACKS[c.id]).forEach((c) =>
   SK.push(["og" + c.id, c.name, "Level " + c.level, []]));
-const SCOPE = { 'cvc-a':'1-01a','cvc-mix':'1-01b',dig:'1-05',floss:'1-07',vce:'1-08',blends:'1-09',vccv:'1-12a',vccvce:'1-12b','ng-nk':'2-01',y:'2-02','ck-tch':'2-03','ar-or':'2-04','ai-ay':'2-05a','ee-ea':'2-05b','oa-ow':'2-05c', ...EXTRA_SCOPE };
+// The scope table lives in lib/sequence.mjs. It used to be copied here,
+// and a copy goes stale: it still placed Vowel teams 3 at level 4 after
+// the sequence had moved it to level 3.
+
 SK.sort((a, b) => (SCOPE[a[0]] || a[0].slice(2)).localeCompare(SCOPE[b[0]] || b[0].slice(2)));
 const pos = Object.fromEntries(SK.map((r, n) => [r[0], n]));
 const SPLITS = JSON.parse(readFileSync("scripts/reading-skill-splits.json", "utf8"));

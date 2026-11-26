@@ -18,6 +18,8 @@ import path from "node:path";
 import WRITING from "./reading-writing-passages.json" with { type: "json" };
 import SPLITS from "./reading-skill-splits.json" with { type: "json" };
 import { EXTRA_LESSONS } from "./lib/extra-lessons.mjs";
+import { LESSON_SKILL } from "./lib/lesson-continuum.mjs";
+import SEQUENCE from "./reading-sequence.json" with { type: "json" };
 import CONTINUUM_DAILY from "./continuum-daily.json" with { type: "json" };
 import DAILY_PRACTICE from "./reading-daily-practice.json" with { type: "json" };
 import SYLLABLES from "./reading-syllable-splits.json" with { type: "json" };
@@ -4597,6 +4599,108 @@ const ADAPTATIONS: Adaptation[] = [
           "The cards have no capital letter and no end mark \u2014 you add those " +
           "when you write it. Read it, then write it.",
       );
+    },
+  },
+  {
+    /*
+     * PUT THE PICKER IN TEACHING ORDER, AND NAME THE CONTINUUM SKILL.
+     *
+     * The picker built its own list and it had drifted from the sequence the
+     * rest of the Hub teaches by. The Hub's own lessons -- Long a, e, i, o, u
+     * and All vowel teams together -- were appended after everything else, so
+     * Long a said "Level 3" while sitting at the bottom of the list under the
+     * Level 5 Greek. Vowel teams 3 was filed at Level 4 among the Latin
+     * roots, two levels after every other vowel team lesson, which in turn
+     * stranded Long u at Level 4 because its words are built from ue and ew.
+     *
+     * So the picker now sorts by scripts/reading-sequence.json, which is the
+     * order every other part of the Hub already uses -- the spiral review,
+     * the race backfill, the review pools. Two lists that have to agree
+     * should not be two lists.
+     *
+     * It also names the continuum skill, because the picker said "Level 3 ·
+     * Vowel teams 2" and nothing else, and there was no way to see from that
+     * which skill a lesson belongs to or that its neighbours belong to
+     * another. Eighteen of the sixty-eight teach morphology, which the
+     * continuum does not index, and those print nothing rather than the
+     * nearest-looking P. The map is in lib/lesson-continuum.mjs.
+     */
+    name: "put the lesson picker in teaching order and name its continuum skills",
+    apply: (html) => {
+      const seat = "    const OGD = {};";
+      if (!html.includes(seat)) return html;
+
+      const order: Record<string, number> = {};
+      const level: Record<string, number> = {};
+      (SEQUENCE as { sequence: { key: string; level: number }[] }).sequence
+        .forEach((l, i) => { order[l.key] = i; level[l.key] = l.level; });
+
+      const codes: Record<string, string> = {};
+      for (const [key, row] of Object.entries(LESSON_SKILL)) {
+        const first = (row as (string | null)[])[0];
+        if (first) codes[key] = first;
+      }
+
+      let out = html.replace(
+        seat,
+        seat +
+          "\n    const SEQ_ORD = " + JSON.stringify(order) + ";" +
+          "\n    const SEQ_LVL = " + JSON.stringify(level) + ";" +
+          "\n    const PCODE = " + JSON.stringify(codes) + ";" +
+          "\n    const baseOf = (id) => String(id).split('|')[0];" +
+          // A lesson the sequence does not carry keeps its own place at the
+          // end rather than jumping to the front on an undefined.
+          "\n    const skOrdered = () => SK.map((s, i) => [s, i]).sort((a, b) => {" +
+          "\n      const x = SEQ_ORD[baseOf(a[0][0])], y = SEQ_ORD[baseOf(b[0][0])];" +
+          "\n      return (x === undefined ? 1e6 : x) - (y === undefined ? 1e6 : y) || a[1] - b[1];" +
+          "\n    }).map((r) => r[0]);" +
+          // The level the sequence gives, so the picker cannot disagree with
+          // it the way it did over Vowel teams 3.
+          // The name is passed in, because the picker writes three of them:
+          // the lesson, one per sub-focus, and "all together".
+          "\n    const skLabel = (s, name) => {" +
+          "\n      const b = baseOf(s[0]);" +
+          "\n      const lv = SEQ_LVL[b] === undefined ? s[2] : 'Level ' + SEQ_LVL[b];" +
+          "\n      return lv + ' \u00b7 ' + name + (PCODE[b] ? ' (' + PCODE[b] + ')' : '');" +
+          "\n    };",
+      );
+
+      // The lesson picker, and the review selectors under it. Not the filter
+      // chips: those are a compact row where the point is the shape of the
+      // word, and a code on each one is noise.
+      /*
+       * The picker's own line has already been rewritten by the rule that
+       * splits a lesson into its sub-focuses, so these anchors are that
+       * rule's output rather than the canvas export's. Four small edits
+       * rather than one big block, so a later change to the code around
+       * them does not silently stop all of this matching.
+       */
+      const sites: [string, string][] = [
+        ["skillOpts: SK.flatMap((s) =>", "skillOpts: skOrdered().flatMap((s) =>"],
+        [
+          "label: s[2] + ' \u00b7 ' + subName(s, q) }))",
+          "label: skLabel(s, subName(s, q)) }))",
+        ],
+        [
+          "label: s[2] + ' \u00b7 ' + s[1] + (subs.length ? ' \u00b7 all together' : '') }])",
+          "label: skLabel(s, s[1] + (subs.length ? ' \u00b7 all together' : '')) }])",
+        ],
+        [
+          "opts: [{ id: '', label: '\u2014 none \u2014' }].concat(SK.filter((s) => s[0] !== id)"
+            + ".map((s) => ({ id: s[0], label: s[2] + ' \u00b7 ' + s[1] }))),",
+          "opts: [{ id: '', label: '\u2014 none \u2014' }].concat(skOrdered().filter((s) => s[0] !== id)"
+            + ".map((s) => ({ id: s[0], label: skLabel(s, s[1]) }))),",
+        ],
+      ];
+      let done = 0;
+      for (const [from, to] of sites) {
+        if (!out.includes(from)) continue;
+        out = out.split(from).join(to);
+        done += 1;
+      }
+      // All of them or none: a picker in teaching order beside a review
+      // selector still in the old one is worse than leaving both alone.
+      return done === sites.length ? out : html;
     },
   },
   {

@@ -704,6 +704,42 @@
       "wordSource": "lesson"
     },
     {
+      "key": "og4-06",
+      "name": "Vowel teams 3",
+      "level": 3,
+      "words": [
+        "ceiling",
+        "eight",
+        "few",
+        "blue",
+        "fruit",
+        "receive",
+        "weigh",
+        "new",
+        "glue",
+        "suit"
+      ],
+      "wordSource": "spelling"
+    },
+    {
+      "key": "long-u",
+      "name": "Long u: ue, ew, eu",
+      "level": 3,
+      "words": [
+        "blue",
+        "true",
+        "clue",
+        "stew",
+        "few",
+        "new",
+        "grew",
+        "chew",
+        "due",
+        "dew"
+      ],
+      "wordSource": "lesson"
+    },
+    {
       "key": "teams-all",
       "name": "All vowel teams together",
       "level": 3,
@@ -972,42 +1008,6 @@
         "piano"
       ],
       "wordSource": "pack"
-    },
-    {
-      "key": "og4-06",
-      "name": "Vowel teams 3",
-      "level": 4,
-      "words": [
-        "ceiling",
-        "eight",
-        "few",
-        "blue",
-        "fruit",
-        "receive",
-        "weigh",
-        "new",
-        "glue",
-        "suit"
-      ],
-      "wordSource": "spelling"
-    },
-    {
-      "key": "long-u",
-      "name": "Long u: ue, ew, eu",
-      "level": 4,
-      "words": [
-        "blue",
-        "true",
-        "clue",
-        "stew",
-        "few",
-        "new",
-        "grew",
-        "chew",
-        "due",
-        "dew"
-      ],
-      "wordSource": "lesson"
     },
     {
       "key": "og4-07",
