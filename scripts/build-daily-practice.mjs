@@ -56,11 +56,14 @@ const NWF_PER_DAY = 4;
 const MAZE_SENTENCES = 3;
 // A minute of reading down a list, at roughly a word a second, and then some.
 // The sheet must not run out before the clock does or the score stops being a
-// speed, and a fluent Grade 3 reader passes sixty words on a word list, so
-// twelve rows of six rather than the four rows this started with. It is a
-// sheet of its own: at this length it adds 132px to a day page, and every one
-// of the 218 entries in the lesson picker overflows the printed page.
-const RACE_WORDS = 72;
+// speed, and a fluent Grade 3 reader passes sixty words on a word list.
+//
+// Nineteen rows of six, which is what fills the sheet: at twelve rows the
+// page stopped two thirds of the way down and the score boxes sat in the
+// middle of it. One lesson -- short a, the first in the sequence, with
+// nothing behind it to review -- has about a hundred words to draw on and
+// prints what it has.
+const RACE_WORDS = 114;
 
 /** Same seed, same week. A sheet printed on Sunday has to match the key on Friday. */
 function rng(seed) {

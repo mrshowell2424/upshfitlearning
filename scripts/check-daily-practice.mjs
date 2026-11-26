@@ -147,8 +147,8 @@ for (const lesson of D.lessons) {
   // sheet holds seventy-two so it outlasts the fastest reader; the first
   // lesson in the sequence has nothing behind it to review and comes up a
   // little short, which is a shorter race rather than a worse one.
-  if (!Array.isArray(lesson.race) || lesson.race.length < 60) {
-    say(`word race has ${lesson.race ? lesson.race.length : 0} words, expected at least 60`);
+  if (!Array.isArray(lesson.race) || lesson.race.length < 96) {
+    say(`word race has ${lesson.race ? lesson.race.length : 0} words, expected at least 96`);
   } else if (new Set(lesson.race).size !== lesson.race.length) {
     say("a word appears twice in the race");
   }

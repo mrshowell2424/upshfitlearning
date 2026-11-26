@@ -1442,21 +1442,21 @@ const ADAPTATIONS: Adaptation[] = [
         "        </div>\n" +
         "        <sc-for list=\"{{ wbReal }}\" as=\"w\" hint-placeholder-count=\"10\">\n" +
         "          <div style=\"display:flex;gap:6px;align-items:center\">\n" +
-        "            <span style=\"flex:0 0 38%;font-size:17px;font-weight:600;color:#111;white-space:nowrap\">{{ w }}</span>\n" +
-        "            <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1\"></span>\n" +
-        "            <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1\"></span>\n" +
-        "            <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1\"></span>\n" +
-        "            <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1\"></span>\n" +
-        "            <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1\"></span>\n" +
+        "            <span style=\"flex:0 0 38%;font-size:23px;font-weight:600;color:#111;white-space:nowrap\">{{ w }}</span>\n" +
+        "            <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:38px;flex:1\"></span>\n" +
+        "            <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:38px;flex:1\"></span>\n" +
+        "            <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:38px;flex:1\"></span>\n" +
+        "            <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:38px;flex:1\"></span>\n" +
+        "            <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:38px;flex:1\"></span>\n" +
         "          </div>\n" +
         "        </sc-for>\n" +
         "        <div style=\"display:flex;gap:6px;align-items:center;border-top:2px solid #111;padding-top:6px\">\n" +
-        "          <span style=\"flex:0 0 38%;font-size:15px;font-weight:800;color:#2F3E2E\">Score out of 10</span>\n" +
-        "          <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1;height:32px\"></span>\n" +
-        "          <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1;height:32px\"></span>\n" +
-        "          <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1;height:32px\"></span>\n" +
-        "          <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1;height:32px\"></span>\n" +
-        "          <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1;height:32px\"></span>\n" +
+        "          <span style=\"flex:0 0 38%;font-size:18px;font-weight:800;color:#2F3E2E\">Score out of 10</span>\n" +
+        "          <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1;height:44px\"></span>\n" +
+        "          <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1;height:44px\"></span>\n" +
+        "          <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1;height:44px\"></span>\n" +
+        "          <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1;height:44px\"></span>\n" +
+        "          <span style=\"display:flex;align-items:center;justify-content:center;border:2px solid #111;border-radius:4px;height:26px;flex:1;height:44px\"></span>\n" +
         "        </div>\n" +
         "      </div>\n" +
         "      <div style=\"display:flex;flex-direction:column;gap:7px;border:2px dashed #111;border-radius:10px;padding:9px 12px;break-inside:avoid;page-break-inside:avoid\">\n" +
@@ -2537,6 +2537,62 @@ const ADAPTATIONS: Adaptation[] = [
         out = out.replace(from, to);
       }
       return out;
+    },
+  },
+  {
+    /*
+     * Two tic tac toe boards on the chest, not one.
+     *
+     * The board is the game a pair plays twice over and then has nothing
+     * left to claim, because nine words is one game. The bank already holds
+     * a second set for every pattern -- ttt[0] is the single-syllable nine
+     * and ttt[1] the multisyllabic nine -- so the second board costs nothing
+     * but the room to print it, and the two never share a word.
+     *
+     * They sit side by side in one grid: three columns, a gap column, three
+     * more. One grid rather than two keeps the boxes the same size as each
+     * other however long the words are, which two grids side by side do not.
+     * The gap cells are empty strings and the cell style gives those no
+     * border, so the grid draws two separate boards.
+     */
+    name: "put two tic tac toe boards on the chest instead of one",
+    apply: (html) => {
+      const call =
+        "A('Tic Tac Toe', 'Play with a partner. Read the word to claim the box. " +
+        "Three in a row wins!', { items: T9.slice(0, 9), grid: 'display:grid;" +
+        "grid-template-columns:repeat(3,minmax(0,1fr));gap:0;max-width:4.4in;" +
+        "align-self:center;width:100%', st: (t) => ({ fontSize: 20, fontWeight: 700, " +
+        "border: '2.5px solid #000', padding: '14px 6px', textAlign: 'center', " +
+        "margin: '-1.25px', overflowWrap: 'anywhere' }), w: 1.6 });";
+      if (!html.includes(call)) return html;
+
+      const twoBoards =
+        "const T9B = (() => {\n" +
+        "            const a = (P.ttt && P.ttt[0]) || [];\n" +
+        "            const b = (P.ttt && P.ttt[1]) || [];\n" +
+        // Whichever list the first board did not take. When the
+        // multisyllabic switch is on the first board is the longer words, so
+        // the second is the single-syllable set, and the other way round.
+        "            const other = (T9 === a ? b : a).filter((w) => T9.indexOf(w) < 0);\n" +
+        "            if (other.length >= 9) return other.slice(0, 9);\n" +
+        "            const spare = W.concat(M, W).filter((w) => T9.indexOf(w) < 0 " +
+        "&& other.indexOf(w) < 0);\n" +
+        "            return other.concat(spare).slice(0, 9);\n" +
+        "          })();\n" +
+        "          const T18 = [];\n" +
+        "          for (let r = 0; r < 3; r++) {\n" +
+        "            T18.push(T9[r * 3] || '', T9[r * 3 + 1] || '', T9[r * 3 + 2] || '', '',\n" +
+        "              T9B[r * 3] || '', T9B[r * 3 + 1] || '', T9B[r * 3 + 2] || '');\n" +
+        "          }\n" +
+        "          A('Tic Tac Toe', 'Two games. Play one, then play the other. " +
+        "Read the word to claim the box; three in a row wins.', { items: T18, " +
+        "grid: 'display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) 22px " +
+        "repeat(3,minmax(0,1fr));gap:0;align-self:center;width:100%', " +
+        "st: (t) => (t ? { fontSize: 16, fontWeight: 700, border: '2.5px solid #000', " +
+        "padding: '13px 4px', textAlign: 'center', margin: '-1.25px', " +
+        "overflowWrap: 'anywhere' } : { border: 'none', padding: 0 }), w: 1.6 });";
+
+      return html.replace(call, twoBoards);
     },
   },
   {
@@ -5001,6 +5057,29 @@ const ADAPTATIONS: Adaptation[] = [
       out = out.split(before2).join(before2.replace("{{ p.box1 }}", "{{ p.cdBox }}"));
 
       return out;
+    },
+  },
+  {
+    /*
+     * A sheet starts at the top of the page.
+     *
+     * Every workbook sheet is a flex column with a ten inch minimum and
+     * justify-content: space-between, so a sheet with less than a page of
+     * work pushed its rows apart to fill the height. On the mystery that put
+     * eighty pixels of white between the title and the case; on ten words a
+     * day it opened a gap above the yellow box; on anything short it read as
+     * a layout fault rather than as room.
+     *
+     * Content at the top, and whatever is left over at the foot where it
+     * belongs. Sheets that were carrying an explicit flex:1 spacer to force
+     * this keep working -- a spacer in a flex-start column simply takes no
+     * space it is not given.
+     */
+    name: "start a sheet at the top of the page, not spread down it",
+    apply: (html) => {
+      const spread = "minHeight: '10in', justifyContent: 'space-between'";
+      if (!html.includes(spread)) return html;
+      return html.split(spread).join("minHeight: '10in', justifyContent: 'flex-start'");
     },
   },
   {
