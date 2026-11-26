@@ -4936,10 +4936,33 @@ const ADAPTATIONS: Adaptation[] = [
           "          return JSON.parse(document.getElementById('sor-continuum-daily').textContent);\n" +
           "        } catch (e) { return { days: [], track: [], perDay: 0 }; } })();\n" +
           "        const DN = ['MON', 'TUE', 'WED', 'THU', 'FRI'];\n" +
-          // Bigger now that the thirty sit on two sheets. On one they were
-          // 12.5px in a 22px row because that was all the page had left.
-          "        const cell = 'font-size:19px;font-weight:650;color:#000;" +
+          /*
+           * THE FONT COMES DOWN FOR A LONG WORD, rather than the word being
+           * cut off.
+           *
+           * Bigger now that the thirty sit on two sheets: on one they were
+           * 12.5px in a 22px row because that was all the page had left. But
+           * 19px in a column about 95px wide fits seven letters, and the
+           * pools hold words of eight and nine -- stampede, compete,
+           * milestone, toadstool. Those were printing as "stampe…", which is
+           * not a word and cannot be read, on a sheet whose whole job is
+           * reading words.
+           *
+           * So the size is set per word. The ellipsis stays as a backstop in
+           * case a pool ever gains something longer still, but nothing in
+           * them reaches it now.
+           */
+          "        const cellFor = (w) => {\n" +
+          "          const n = String(w || '').length;\n" +
+          // Sized against what actually printed, not against a guess at the
+          // column width: at 19px a seven-letter word was coming out as
+          // "pump…", "panca…" and "betwe…", and an eight-letter one as
+          // "daydre…", so the first pass at this was still a step too
+          // generous. A column holds about 77px of text.
+          "          const px = n <= 6 ? 19 : n === 7 ? 17 : n === 8 ? 15 : n === 9 ? 13 : 12;\n" +
+          "          return 'font-size:' + px + 'px;font-weight:650;color:#000;" +
           "padding:9px 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis';\n" +
+          "        };\n" +
           // EVERY LESSON DEALS ITS OWN WEEK. The first version shipped one\n" +
           "        // week and all 62 packets printed it, so a child working lesson 3\n" +
           "        // and lesson 4 met the same thirty words twice. The pools travel\n" +
@@ -4959,10 +4982,11 @@ const ADAPTATIONS: Adaptation[] = [
           "          return { cid, kind, cells: CD.days.map((d, di) => {\n" +
           "            if (kind === 'letter') {\n" +
           "              const L = pick(LETT, di * 2 + (r % 2));\n" +
-          "              return { w: L ? L[0] : '', st: cell };\n" +
+          "              return { w: L ? L[0] : '', st: cellFor(L ? L[0] : '') };\n" +
           "            }\n" +
           "            const pool = P[cid] && (kind === 'real' ? P[cid].real : P[cid].fake);\n" +
-          "            return { w: pick(pool, di) || '', st: cell };\n" +
+          "            const word = pick(pool, di) || '';\n" +
+          "            return { w: word, st: cellFor(word) };\n" +
           "          }) };\n" +
           "        });\n" +
           "        const rows = [];\n" +
@@ -5034,7 +5058,10 @@ const ADAPTATIONS: Adaptation[] = [
         "other one. Some of these words are not real words \u2014 read them anyway. Tick the ones you " +
         "read right and write the score at the foot of the column. Each skill has two rows, marked " +
         "real and nonsense, and those two rows are the one row for that skill on the score sheet.</div>\n" +
-        '      <div style="display:grid;grid-template-columns:172px repeat(5,minmax(0,1fr));gap:4px 8px;' +
+        // The label column gives up sixteen pixels to the words, which is
+        // where the reading happens. "Long Vowel Silent-e Syllables" is the
+        // longest label and still fits.
+        '      <div style="display:grid;grid-template-columns:156px repeat(5,minmax(0,1fr));gap:4px 8px;' +
         'align-items:center">\n' +
         '        <span></span>\n' +
         '        <sc-for list="{{ cdHead }}" as="h" hint-placeholder-count="5">' +
