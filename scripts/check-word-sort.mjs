@@ -69,6 +69,10 @@ for (const L of D.lessons) {
   }
 
   for (const w of L.odd) {
+    // A capitalised name, or a possessive, is not a word to put in a pile a
+    // child reads cold. Kim's and Sam's reached seven sorts this way, out of
+    // the possessive lesson that is allowed them.
+    if (!/^[a-z]+$/.test(w)) say(`odd one out "${w}" is not a plain lowercase word`);
     if (seen.has(fold(w))) say(`odd one out "${w}" is also in column "${seen.get(fold(w))}"`);
     seen.set(fold(w), "odd");
     for (const c of L.columns) {

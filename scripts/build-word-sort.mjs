@@ -176,7 +176,18 @@ for (const lesson of SEQ) {
    * answers and the sheet would mark one of them wrong.
    */
   const wantsOdd = columns.every((c) => c.kind === "pattern");
-  const odd = (wantsOdd ? shuffled([...new Set(taught)], seed + 7) : [])
+  /*
+   * An odd one out is a plain lowercase word.
+   *
+   * The possessive lesson's words are allowed an apostrophe, because that is
+   * its pattern -- but they are drawn from what has been taught, so Kim's and
+   * Sam's leaked out of it into the odd pile of seven later sorts, where a
+   * capitalised name with an apostrophe is not a word to hand a child cold.
+   * Seven sheets had one. A column may still hold whatever its lesson
+   * authored; this is only about the pile that is there to be rejected.
+   */
+  const plain = (w) => /^[a-z]+$/.test(w);
+  const odd = (wantsOdd ? shuffled([...new Set(taught)].filter(plain), seed + 7) : [])
     .filter((w) => usable(w) && !inAny(w)
       && !columns.some((c) => c.words.some((x) => fold(x) === fold(w))))
     .slice(0, ODD_ONES);

@@ -759,10 +759,10 @@
     }
    ],
    "odd": [
-    "mom's",
-    "jog",
-    "log",
-    "fox"
+    "floss",
+    "flop",
+    "dot",
+    "off"
    ],
    "bank": [
     "basket",
@@ -772,13 +772,13 @@
     "tennis",
     "button",
     "pencil",
-    "fox",
+    "off",
     "velvet",
-    "log",
+    "dot",
     "napkin",
     "window",
-    "jog",
-    "mom's",
+    "flop",
+    "floss",
     "ribbon",
     "magnet",
     "picnic",
@@ -825,15 +825,15 @@
     }
    ],
    "odd": [
-    "stand",
-    "when",
-    "mom's",
-    "Sam's"
+    "duck",
+    "dogs",
+    "run",
+    "fix"
    ],
    "bank": [
     "confine",
     "inflate",
-    "stand",
+    "duck",
     "explode",
     "trombone",
     "sunshine",
@@ -841,14 +841,14 @@
     "mistake",
     "escape",
     "implode",
-    "mom's",
+    "run",
     "backbone",
     "cupcake",
     "pancake",
     "postpone",
-    "when",
+    "dogs",
     "invite",
-    "Sam's",
+    "fix",
     "inside"
    ]
   },
@@ -881,21 +881,21 @@
     }
    ],
    "odd": [
-    "picnic",
-    "combine",
-    "flat",
-    "fish"
+    "quit",
+    "whip",
+    "rope",
+    "lid"
    ],
    "bank": [
     "nonfiction",
     "nonstop",
     "unlock",
-    "fish",
+    "lid",
     "unzip",
     "nonsense",
-    "combine",
-    "flat",
-    "picnic",
+    "whip",
+    "rope",
+    "quit",
     "unfit",
     "undo",
     "nonfat",
@@ -932,20 +932,20 @@
     }
    ],
    "odd": [
-    "button",
-    "she",
-    "implode",
-    "window"
+    "fuzz",
+    "leg",
+    "tell",
+    "dot"
    ],
    "bank": [
     "ring",
     "bank",
-    "button",
+    "fuzz",
     "sing",
     "think",
-    "implode",
-    "she",
-    "window",
+    "tell",
+    "leg",
+    "dot",
     "sink",
     "long",
     "king",
@@ -1029,23 +1029,23 @@
     }
    ],
    "odd": [
-    "fox",
-    "think",
-    "candy",
-    "dad's"
+    "stone",
+    "time",
+    "kiss",
+    "drink"
    ],
    "bank": [
     "rock",
-    "candy",
-    "think",
+    "kiss",
+    "time",
     "pitch",
-    "dad's",
+    "drink",
     "watch",
     "catch",
     "back",
     "duck",
     "sock",
-    "fox",
+    "stone",
     "witch",
     "match",
     "neck"
@@ -1080,22 +1080,22 @@
     }
    ],
    "odd": [
-    "note",
-    "nonfiction",
-    "hill",
-    "zip"
+    "white",
+    "mess",
+    "clock",
+    "fell"
    ],
    "bank": [
     "horn",
     "born",
-    "note",
-    "zip",
+    "white",
+    "fell",
     "corn",
     "fork",
     "car",
     "short",
-    "nonfiction",
-    "hill",
+    "mess",
+    "clock",
     "park",
     "star",
     "farm",
@@ -1177,25 +1177,25 @@
     }
    ],
    "odd": [
-    "math",
-    "frizz",
-    "chat",
-    "undo"
+    "fix",
+    "log",
+    "think",
+    "pet"
    ],
    "bank": [
     "tray",
-    "frizz",
+    "log",
     "train",
     "stay",
     "play",
     "day",
     "rain",
-    "math",
+    "fix",
     "paint",
     "gray",
     "mail",
-    "chat",
-    "undo",
+    "think",
+    "pet",
     "wait"
    ]
   },
@@ -1228,25 +1228,25 @@
     }
    ],
    "odd": [
-    "cup",
-    "zip",
-    "Kim's",
-    "fly"
+    "jog",
+    "sniff",
+    "cuff",
+    "stay"
    ],
    "bank": [
     "feet",
     "tree",
     "eat",
     "three",
-    "fly",
+    "stay",
     "sleep",
     "team",
-    "cup",
-    "zip",
+    "jog",
+    "sniff",
     "read",
     "green",
     "beach",
-    "Kim's",
+    "cuff",
     "dream"
    ]
   },
@@ -1279,20 +1279,20 @@
     }
    ],
    "odd": [
-    "try",
-    "dogs",
-    "cub",
-    "will"
+    "drink",
+    "dot",
+    "clock",
+    "game"
    ],
    "bank": [
     "coat",
-    "cub",
-    "try",
+    "clock",
+    "drink",
     "slow",
-    "dogs",
+    "dot",
     "soap",
     "blow",
-    "will",
+    "game",
     "road",
     "show",
     "grow",
@@ -1352,32 +1352,32 @@
     }
    ],
    "odd": [
-    "mom's",
-    "jam",
-    "magnet",
-    "buzz"
+    "car",
+    "witch",
+    "dream",
+    "tree"
    ],
    "bank": [
     "behind",
     "wildcat",
     "kind",
-    "jam",
+    "witch",
     "scroll",
     "old",
     "roll",
     "stroll",
-    "buzz",
+    "tree",
     "childish",
     "blind",
     "toll",
     "mild",
     "told",
     "child",
-    "mom's",
+    "car",
     "poll",
     "cold",
     "hold",
-    "magnet",
+    "dream",
     "gold",
     "find",
     "wild",
@@ -1424,10 +1424,10 @@
     }
    ],
    "odd": [
-    "stroll",
-    "mild",
-    "dot",
-    "chat"
+    "park",
+    "find",
+    "duck",
+    "quit"
    ],
    "bank": [
     "know",
@@ -1438,10 +1438,10 @@
     "right",
     "write",
     "wrong",
-    "mild",
-    "stroll",
-    "chat",
-    "dot",
+    "find",
+    "park",
+    "quit",
+    "duck",
     "wrap",
     "wreck",
     "knot",
@@ -1491,16 +1491,16 @@
     }
    ],
    "odd": [
-    "park",
-    "implode",
-    "sock",
-    "ride"
+    "go",
+    "stuff",
+    "keg",
+    "like"
    ],
    "bank": [
     "book",
     "food",
     "cloud",
-    "ride",
+    "like",
     "cow",
     "how",
     "down",
@@ -1510,9 +1510,9 @@
     "loud",
     "moon",
     "soon",
-    "implode",
-    "sock",
-    "park",
+    "stuff",
+    "keg",
+    "go",
     "now",
     "look",
     "out"
@@ -1547,25 +1547,25 @@
     }
    ],
    "odd": [
-    "play",
-    "happen",
-    "song",
-    "slow"
+    "pencil",
+    "rope",
+    "rule",
+    "pink"
    ],
    "bank": [
-    "slow",
-    "song",
+    "pink",
+    "rule",
     "here",
     "berry",
     "cherry",
     "hurry",
-    "play",
+    "pencil",
     "carry",
     "more",
     "care",
     "fire",
     "store",
-    "happen",
+    "rope",
     "sorry"
    ]
   },
@@ -1666,22 +1666,22 @@
     }
    ],
    "odd": [
-    "short",
-    "ring",
-    "club",
-    "kid"
+    "frizz",
+    "sink",
+    "log",
+    "undo"
    ],
    "bank": [
     "fearless",
     "shipment",
     "kindly",
     "moment",
-    "ring",
+    "sink",
     "softly",
     "careful",
-    "club",
+    "log",
     "movement",
-    "kid",
+    "undo",
     "sadly",
     "payment",
     "helpful",
@@ -1690,7 +1690,7 @@
     "thankful",
     "quickly",
     "slowly",
-    "short",
+    "frizz",
     "hopeless",
     "endless",
     "useful",
@@ -1749,17 +1749,17 @@
     }
    ],
    "odd": [
-    "cherry",
-    "wait",
-    "here",
-    "slowly"
+    "match",
+    "tree",
+    "can",
+    "train"
    ],
    "bank": [
     "jumped",
     "tallest",
     "boxes",
     "smallest",
-    "here",
+    "can",
     "sharpen",
     "played",
     "fastest",
@@ -1767,13 +1767,13 @@
     "landed",
     "longest",
     "foxes",
-    "wait",
-    "cherry",
+    "tree",
+    "match",
     "biggest",
     "frozen",
     "wooden",
     "broken",
-    "slowly",
+    "train",
     "walked",
     "dishes",
     "picked",
@@ -1821,26 +1821,26 @@
     }
    ],
    "odd": [
-    "web",
-    "kept",
-    "park",
-    "told"
+    "clap",
+    "unzip",
+    "loud",
+    "soap"
    ],
    "bank": [
-    "kept",
-    "web",
+    "unzip",
+    "clap",
     "submit",
     "misstep",
     "subset",
     "postcard",
-    "told",
+    "soap",
     "misspell",
     "subtract",
     "misread",
     "postgame",
     "subsoil",
     "mistake",
-    "park",
+    "loud",
     "subway",
     "postwar",
     "postscript",
@@ -1922,22 +1922,22 @@
     }
    ],
    "odd": [
-    "bird",
-    "kind",
-    "van",
-    "pink"
+    "rule",
+    "basket",
+    "make",
+    "six"
    ],
    "bank": [
-    "bird",
+    "rule",
     "gentle",
     "rice",
     "giant",
     "page",
-    "pink",
+    "six",
     "city",
-    "kind",
+    "basket",
     "ice",
-    "van",
+    "make",
     "huge",
     "face",
     "gem"
@@ -1971,24 +1971,24 @@
     }
    ],
    "odd": [
-    "long",
-    "cow",
-    "mat",
-    "rule"
+    "mistake",
+    "can",
+    "pig",
+    "play"
    ],
    "bank": [
     "bridge",
     "badge",
     "stage",
-    "rule",
+    "play",
     "fudge",
-    "cow",
+    "can",
     "huge",
     "judge",
     "page",
     "large",
-    "long",
-    "mat",
+    "mistake",
+    "pig",
     "edge"
    ]
   },
@@ -2089,10 +2089,10 @@
     }
    ],
    "odd": [
-    "found",
-    "subway",
-    "wooden",
-    "when"
+    "net",
+    "stroll",
+    "we",
+    "will"
    ],
    "bank": [
     "because",
@@ -2109,14 +2109,14 @@
     "autumn",
     "August",
     "royal",
-    "subway",
-    "when",
+    "stroll",
+    "will",
     "boil",
     "join",
     "soil",
     "saw",
-    "found",
-    "wooden",
+    "net",
+    "we",
     "enjoy",
     "lawn"
    ]
@@ -2356,22 +2356,22 @@
     }
    ],
    "odd": [
-    "tree",
-    "they",
-    "now",
-    "go"
+    "misstep",
+    "swimming",
+    "fern",
+    "make"
    ],
    "bank": [
     "glue",
     "few",
     "grew",
     "threw",
-    "go",
+    "make",
     "new",
     "rescue",
     "blue",
     "eight",
-    "now",
+    "fern",
     "receive",
     "either",
     "ceiling",
@@ -2381,10 +2381,10 @@
     "blew",
     "protein",
     "neither",
-    "tree",
+    "misstep",
     "clue",
     "weigh",
-    "they",
+    "swimming",
     "sleigh"
    ]
   },
@@ -2657,10 +2657,10 @@
     }
    ],
    "odd": [
-    "true",
-    "grow",
-    "bird",
-    "girl"
+    "what",
+    "joy",
+    "shop",
+    "she"
    ],
    "bank": [
     "single",
@@ -2674,18 +2674,18 @@
     "jungle",
     "handle",
     "article",
-    "bird",
+    "shop",
     "middle",
     "bubble",
     "giggle",
-    "true",
+    "what",
     "saddle",
     "marble",
     "tumble",
     "table",
-    "grow",
+    "joy",
     "circle",
-    "girl",
+    "she",
     "muscle"
    ]
   },
@@ -2786,15 +2786,15 @@
     }
    ],
    "odd": [
-    "night",
-    "helmet",
-    "stew",
-    "magnet"
+    "wooden",
+    "stand",
+    "autumn",
+    "boy"
    ],
    "bank": [
     "he'll",
     "won't",
-    "magnet",
+    "boy",
     "isn't",
     "it's",
     "we've",
@@ -2803,17 +2803,17 @@
     "they've",
     "I've",
     "she'll",
-    "night",
+    "wooden",
     "she's",
     "they'll",
-    "stew",
+    "autumn",
     "what's",
     "we'll",
     "you've",
     "don't",
     "who've",
     "didn't",
-    "helmet",
+    "stand",
     "he's",
     "that's"
    ]
@@ -2847,23 +2847,23 @@
     }
    ],
    "odd": [
-    "useless",
-    "treatment",
-    "riding",
-    "wooden"
+    "velvet",
+    "stand",
+    "when",
+    "cut"
    ],
    "bank": [
-    "wooden",
+    "cut",
     "nation",
-    "riding",
+    "when",
     "vision",
-    "treatment",
+    "stand",
     "mansion",
     "mission",
     "station",
     "motion",
     "fiction",
-    "useless",
+    "velvet",
     "session",
     "tension",
     "action"
@@ -2920,10 +2920,10 @@
     }
    ],
    "odd": [
-    "dot",
-    "useless",
-    "star",
-    "zip"
+    "smallest",
+    "sleigh",
+    "step",
+    "box"
    ],
    "bank": [
     "native",
@@ -2931,20 +2931,20 @@
     "sensible",
     "artist",
     "creative",
-    "star",
+    "step",
     "tourist",
     "possible",
     "usable",
-    "useless",
+    "sleigh",
     "visible",
     "readable",
     "active",
     "washable",
     "massive",
-    "zip",
+    "box",
     "dentist",
     "fixable",
-    "dot",
+    "smallest",
     "lovable",
     "terrible",
     "cyclist",
@@ -3049,14 +3049,14 @@
     }
    ],
    "odd": [
-    "coin",
-    "stew",
-    "fox",
-    "giggle"
+    "spider",
+    "chop",
+    "toll",
+    "hop"
    ],
    "bank": [
     "subscribe",
-    "coin",
+    "spider",
     "describe",
     "support",
     "transform",
@@ -3070,14 +3070,14 @@
     "report",
     "uniform",
     "inscribe",
-    "giggle",
+    "hop",
     "transport",
-    "fox",
+    "toll",
     "inform",
     "corrupt",
     "reform",
     "abrupt",
-    "stew",
+    "chop",
     "import"
    ]
   },
@@ -3132,19 +3132,19 @@
     }
    ],
    "odd": [
-    "rag",
-    "hill",
-    "buzz",
-    "nonstick"
+    "out",
+    "flop",
+    "readable",
+    "cloud"
    ],
    "bank": [
-    "rag",
+    "out",
     "deflect",
     "admit",
-    "hill",
+    "flop",
     "inject",
     "project",
-    "buzz",
+    "readable",
     "reject",
     "permit",
     "respect",
@@ -3160,7 +3160,7 @@
     "inspector",
     "reflection",
     "reflect",
-    "nonstick",
+    "cloud",
     "eject"
    ]
   },
@@ -3215,16 +3215,16 @@
     }
    ],
    "odd": [
-    "babies",
-    "toe",
-    "sofa",
-    "web"
+    "so",
+    "form",
+    "cake",
+    "grow"
    ],
    "bank": [
     "introduce",
     "graduate",
     "regress",
-    "toe",
+    "form",
     "audience",
     "conduct",
     "current",
@@ -3235,14 +3235,14 @@
     "product",
     "cursor",
     "audible",
-    "sofa",
+    "cake",
     "cursive",
-    "babies",
+    "so",
     "progress",
     "occur",
     "gradual",
     "audio",
-    "web",
+    "grow",
     "congress",
     "recur"
    ]
@@ -3298,15 +3298,15 @@
     }
    ],
    "odd": [
-    "backbone",
-    "stew",
-    "point",
-    "royal"
+    "scroll",
+    "either",
+    "loud",
+    "sleigh"
    ],
    "bank": [
     "picture",
-    "backbone",
-    "royal",
+    "scroll",
+    "sleigh",
     "enormous",
     "jealous",
     "dangerous",
@@ -3316,7 +3316,7 @@
     "famous",
     "nervous",
     "solar",
-    "stew",
+    "either",
     "regular",
     "dollar",
     "capture",
@@ -3325,7 +3325,7 @@
     "similar",
     "plastic",
     "nature",
-    "point",
+    "loud",
     "future",
     "electric"
    ]
@@ -3427,10 +3427,10 @@
     }
    ],
    "odd": [
-    "product",
-    "hold",
-    "sleigh",
-    "beds"
+    "fork",
+    "biggest",
+    "project",
+    "vision"
    ],
    "bank": [
     "illiterate",
@@ -3440,7 +3440,7 @@
     "illegible",
     "irresponsible",
     "compare",
-    "beds",
+    "vision",
     "imperfect",
     "impossible",
     "impatient",
@@ -3449,13 +3449,13 @@
     "combine",
     "irregular",
     "immature",
-    "product",
+    "fork",
     "irrelevant",
     "illegal",
-    "sleigh",
+    "project",
     "irrational",
     "complete",
-    "hold",
+    "biggest",
     "illicit"
    ]
   },
@@ -3510,10 +3510,10 @@
     }
    ],
    "odd": [
-    "complete",
-    "capture",
-    "clap",
-    "match"
+    "marble",
+    "beach",
+    "handle",
+    "panda"
    ],
    "bank": [
     "gracious",
@@ -3523,15 +3523,15 @@
     "initial",
     "crucial",
     "precious",
-    "match",
-    "clap",
+    "panda",
+    "handle",
     "essential",
     "magician",
     "electrician",
-    "capture",
+    "beach",
     "musician",
     "potential",
-    "complete",
+    "marble",
     "official",
     "spacious",
     "partial",
@@ -3617,21 +3617,21 @@
     }
    ],
    "odd": [
-    "stopped",
-    "quack",
-    "conduct",
-    "class"
+    "basket",
+    "cot",
+    "muscle",
+    "her"
    ],
    "bank": [
     "character",
     "chorus",
     "graph",
-    "conduct",
-    "class",
+    "muscle",
+    "her",
     "stomach",
-    "quack",
+    "cot",
     "photo",
-    "stopped",
+    "basket",
     "dolphin",
     "school",
     "alphabet",
@@ -3725,21 +3725,21 @@
     }
    ],
    "odd": [
-    "mat",
-    "flexible",
-    "pink",
-    "support"
+    "combine",
+    "nation",
+    "introduce",
+    "pig"
    ],
    "bank": [
     "psyche",
-    "flexible",
+    "nation",
     "condemn",
     "rhetoric",
-    "pink",
+    "introduce",
     "hymn",
     "column",
     "psychic",
-    "support",
+    "pig",
     "rhubarb",
     "pseudonym",
     "rhino",
@@ -3748,7 +3748,7 @@
     "rhyme",
     "solemn",
     "autumn",
-    "mat",
+    "combine",
     "psychology"
    ]
   },
@@ -3803,26 +3803,26 @@
     }
    ],
    "odd": [
-    "goat",
-    "dream",
-    "wagon",
-    "subscribe"
+    "progress",
+    "essential",
+    "read",
+    "make"
    ],
    "bank": [
-    "subscribe",
+    "make",
     "telephone",
     "paragraph",
     "autograph",
-    "dream",
+    "essential",
     "biology",
     "biologist",
     "graph",
-    "goat",
+    "progress",
     "technology",
     "headphone",
     "zoology",
     "biochemistry",
-    "wagon",
+    "read",
     "biopsy",
     "psychology",
     "geology",
@@ -3864,25 +3864,25 @@
     }
    ],
    "odd": [
-    "eight",
-    "think",
-    "girl",
-    "roll"
+    "badge",
+    "crucial",
+    "replay",
+    "biopsy"
    ],
    "bank": [
     "you",
-    "roll",
+    "biopsy",
     "brochure",
     "chandelier",
-    "think",
-    "eight",
+    "crucial",
+    "badge",
     "machine",
     "group",
     "parachute",
     "chef",
     "routine",
     "youth",
-    "girl",
+    "replay",
     "soup"
    ]
   },
@@ -4029,15 +4029,15 @@
     }
    ],
    "odd": [
+    "wrong",
+    "recur",
     "cat",
-    "tree",
-    "kept",
-    "match"
+    "here"
    ],
    "bank": [
     "experience",
     "appearance",
-    "cat",
+    "wrong",
     "total",
     "garbage",
     "importance",
@@ -4046,11 +4046,11 @@
     "entrance",
     "difference",
     "natural",
-    "match",
+    "here",
     "village",
     "distance",
-    "kept",
-    "tree",
+    "cat",
+    "recur",
     "package",
     "science",
     "sentence",
@@ -4090,10 +4090,10 @@
     }
    ],
    "odd": [
-    "machine",
-    "her",
-    "nervous",
-    "cat's"
+    "hopping",
+    "inject",
+    "tell",
+    "long"
    ],
    "bank": [
     "fought",
@@ -4102,12 +4102,12 @@
     "daughter",
     "taught",
     "caught",
-    "machine",
+    "hopping",
     "brought",
-    "her",
-    "cat's",
+    "inject",
+    "long",
     "ought",
-    "nervous",
+    "tell",
     "naughty",
     "bought"
    ]

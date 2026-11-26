@@ -6077,9 +6077,12 @@ const ADAPTATIONS: Adaptation[] = [
         '        <div style="' + H + '">{{ p.kicker }} \u00b7 MEET THE SOUND \u00b7 TEACHER COPY</div>\n' +
         '        <div style="font-size:26px;font-weight:800;color:#000;line-height:1.05">' +
         "\u{1F5E3} Day 1, before anything else</div>\n" +
-        '        <div style="font-size:12.5px;color:#000;margin-top:3px">Five minutes, spoken. ' +
-        "Nothing is shown and nothing is written. The child listens, feels, and answers out loud. " +
-        "The answer is in brackets.</div>\n" +
+        // The time is on each section rather than in the blurb, because a
+        // vowel lesson has only the first of them: it said five minutes on a
+        // card holding two minutes of work.
+        '        <div style="font-size:12.5px;color:#000;margin-top:3px">Spoken, before anything ' +
+        "is read or written. Nothing is shown and nothing is written down \u2014 the child " +
+        "listens, feels, and answers out loud. The answer is in brackets.</div>\n" +
         "      </div>\n" +
         '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
         'padding-bottom:3px">\n' +
