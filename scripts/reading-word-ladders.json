@@ -2286,23 +2286,23 @@
    ]
   },
   "og4-01": {
-   "start": "her",
+   "start": "port",
    "words": [
-    "her",
-    "he",
-    "she",
-    "the",
-    "they",
-    "then",
-    "when"
+    "port",
+    "report",
+    "reports",
+    "exports",
+    "export",
+    "import",
+    "transport"
    ],
    "clues": [
-    "Take off the r.",
-    "Add an s at the start.",
-    "Change the s to t.",
-    "Add a y at the end.",
-    "Change the y to n.",
-    "Change the t to w."
+    "Add the prefix re-.",
+    "Add -s.",
+    "Change re- to ex-.",
+    "Take off -s.",
+    "Change ex- to im-.",
+    "Change im- to trans-."
    ]
   },
   "og4-01|form": {
@@ -2396,23 +2396,23 @@
    ]
   },
   "og4-02": {
-   "start": "we",
+   "start": "eject",
    "words": [
-    "we",
-    "be",
-    "he",
-    "she",
-    "the",
-    "them",
-    "they"
+    "eject",
+    "inject",
+    "object",
+    "project",
+    "projects",
+    "rejects",
+    "reject"
    ],
    "clues": [
-    "Change the w to b.",
-    "Change the b to h.",
-    "Add an s at the start.",
-    "Change the s to t.",
-    "Add an m at the end.",
-    "Change the m to y."
+    "Change e- to in-.",
+    "Change in- to ob-.",
+    "Change ob- to pro-.",
+    "Add -s.",
+    "Change pro- to re-.",
+    "Take off -s."
    ]
   },
   "og4-02|flect/flex": {
@@ -2506,23 +2506,23 @@
    ]
   },
   "og4-03": {
-   "start": "when",
+   "start": "product",
    "words": [
-    "when",
-    "then",
-    "the",
-    "she",
-    "he",
-    "her",
-    "hear"
+    "product",
+    "production",
+    "reduction",
+    "deduction",
+    "deduct",
+    "conduct",
+    "conducts"
    ],
    "clues": [
-    "Change the w to t.",
-    "Take off the n.",
-    "Change the t to s.",
-    "Take off the s.",
-    "Add an r at the end.",
-    "Put an a between the e and the r."
+    "Add -ion.",
+    "Change pro- to re-.",
+    "Change re- to de-.",
+    "Take off -ion.",
+    "Change de- to con-.",
+    "Add -s."
    ]
   },
   "og4-03|aud": {
@@ -2630,37 +2630,39 @@
    ]
   },
   "og4-04": {
-   "start": "they",
+   "start": "danger",
    "words": [
-    "they",
-    "the",
-    "she",
-    "he",
-    "her",
-    "hero"
+    "danger",
+    "dangers",
+    "dangerous",
+    "dangerously",
+    "famously",
+    "famous",
+    "fame"
    ],
    "clues": [
-    "Take off the y.",
-    "Change the t to s.",
-    "Take off the s.",
-    "Add an r at the end.",
-    "Add an o at the end."
+    "Add -s.",
+    "Change -s to -ous.",
+    "Add -ly.",
+    "Change danger- to fam-.",
+    "Take off -ly.",
+    "Change -ous to -e."
    ]
   },
   "og4-04|-ar": {
    "start": "solar",
    "words": [
     "solar",
-    "volar",
     "collar",
     "dollar",
-    "doll"
+    "cellar",
+    "cellars"
    ],
    "clues": [
-    "Keep -ar. Change sol to vol.",
-    "Keep -ar. Change vol to coll.",
+    "Keep -ar. Change sol to coll.",
     "Keep -ar. Change coll to doll.",
-    "Take off -ar."
+    "Keep -ar. Change doll to cell.",
+    "Add -s."
    ]
   },
   "og4-04|-ic": {
@@ -2752,21 +2754,21 @@
    ]
   },
   "og4-05": {
-   "start": "be",
+   "start": "diet",
    "words": [
-    "be",
-    "he",
-    "the",
-    "they",
-    "then",
-    "when"
+    "diet",
+    "duet",
+    "duel",
+    "fuel",
+    "fuels",
+    "fueled"
    ],
    "clues": [
-    "Change the b to h.",
-    "Add a t at the start.",
-    "Add a y at the end.",
-    "Change the y to n.",
-    "Change the t to w."
+    "Change the i to u.",
+    "Change the t to l.",
+    "Change the d to f.",
+    "Add -s.",
+    "Change -s to -ed."
    ]
   },
   "og4-06": {
@@ -2876,23 +2878,21 @@
    ]
   },
   "og4-07": {
-   "start": "and",
+   "start": "regular",
    "words": [
-    "and",
-    "an",
-    "at",
-    "it",
-    "is",
-    "his",
-    "him"
+    "regular",
+    "irregular",
+    "irregularly",
+    "regularly",
+    "regularity",
+    "regularities"
    ],
    "clues": [
-    "Take off the d.",
-    "Change the n to t.",
-    "Change the a to i.",
-    "Change the t to s.",
-    "Add an h at the start.",
-    "Change the s to m."
+    "Add the prefix ir-.",
+    "Add -ly.",
+    "Take off the prefix ir-.",
+    "Change -ly to -ity.",
+    "Change -y to -ies."
    ]
   },
   "og4-07|con-/com-": {
@@ -2968,23 +2968,21 @@
    ]
   },
   "og4-08": {
-   "start": "we",
+   "start": "office",
    "words": [
-    "we",
-    "be",
-    "he",
-    "she",
-    "the",
-    "then",
-    "them"
+    "office",
+    "official",
+    "officially",
+    "financially",
+    "financial",
+    "finance"
    ],
    "clues": [
-    "Change the w to b.",
-    "Change the b to h.",
-    "Add an s at the start.",
-    "Change the s to t.",
-    "Add an n at the end.",
-    "Change the n to m."
+    "Change -e to -ial.",
+    "Add -ly.",
+    "Change offi- to finan-.",
+    "Take off -ly.",
+    "Change -cial to -ce."
    ]
   },
   "og4-08|-cial": {
@@ -3078,39 +3076,41 @@
    ]
   },
   "og4-09": {
-   "start": "his",
+   "start": "refer",
    "words": [
-    "his",
-    "is",
-    "it",
-    "at",
-    "hat",
-    "what",
-    "that"
+    "refer",
+    "referred",
+    "preferred",
+    "preferring",
+    "referring",
+    "referrals",
+    "referral"
    ],
    "clues": [
-    "Take off the h.",
-    "Change the s to t.",
-    "Change the i to a.",
-    "Add an h at the start.",
-    "Add a w at the start.",
-    "Change the w to t."
+    "Add -red.",
+    "Change re- to pre-.",
+    "Change -ed to -ing.",
+    "Change pre- to re-.",
+    "Change -ing to -als.",
+    "Take off -s."
    ]
   },
   "og5-01": {
-   "start": "her",
+   "start": "graph",
    "words": [
-    "her",
-    "he",
-    "the",
-    "then",
-    "when"
+    "graph",
+    "graphs",
+    "graphic",
+    "graphics",
+    "graphical",
+    "graphically"
    ],
    "clues": [
-    "Take off the r.",
-    "Add a t at the start.",
-    "Add an n at the end.",
-    "Change the t to w."
+    "Add -s.",
+    "Change -s to -ic.",
+    "Add -s.",
+    "Change -s to -al.",
+    "Add -ly."
    ]
   },
   "og5-01|ch": {
@@ -3154,41 +3154,39 @@
    ]
   },
   "og5-02": {
-   "start": "and",
+   "start": "ecosystem",
    "words": [
-    "and",
-    "an",
-    "in",
-    "on",
-    "one",
-    "gone"
+    "ecosystem",
+    "system",
+    "systems",
+    "systemic",
+    "systematic",
+    "systematically"
    ],
    "clues": [
-    "Take off the d.",
-    "Change the a to i.",
-    "Change the i to o.",
-    "Add a silent e.",
-    "Add a g at the start."
+    "Take off the prefix eco-.",
+    "Add -s.",
+    "Change -s to -ic.",
+    "Change -ic to -atic.",
+    "Add -ally."
    ]
   },
   "og5-03": {
-   "start": "it",
+   "start": "autumn",
    "words": [
-    "it",
-    "its",
-    "is",
-    "in",
-    "an",
-    "and",
-    "end"
+    "autumn",
+    "autumns",
+    "columns",
+    "column",
+    "columnist",
+    "columnists"
    ],
    "clues": [
-    "Add an s at the end.",
-    "Take off the t.",
-    "Change the s to n.",
-    "Change the i to a.",
-    "Add a d at the end.",
-    "Change the a to e."
+    "Add -s.",
+    "Change autu- to colu-.",
+    "Take off -s.",
+    "Add -ist.",
+    "Add -s."
    ]
   },
   "og5-03|mn": {
@@ -3248,21 +3246,23 @@
    ]
   },
   "og5-04": {
-   "start": "see",
+   "start": "photo",
    "words": [
-    "see",
-    "she",
-    "the",
-    "they",
-    "then",
-    "when"
+    "photo",
+    "photos",
+    "photograph",
+    "photographs",
+    "telegraphs",
+    "telegraph",
+    "telephone"
    ],
    "clues": [
-    "Change the first e to h.",
-    "Change the s to t.",
-    "Add a y at the end.",
-    "Change the y to n.",
-    "Change the t to w."
+    "Add -s.",
+    "Change -s to -graph.",
+    "Add -s.",
+    "Change photo- to tele-.",
+    "Take off -s.",
+    "Change -graph to -phone."
    ]
   },
   "og5-04|bio": {
@@ -3372,23 +3372,21 @@
    ]
   },
   "og5-05": {
-   "start": "one",
+   "start": "route",
    "words": [
-    "one",
-    "on",
-    "an",
-    "at",
-    "hat",
-    "hot",
-    "how"
+    "route",
+    "routine",
+    "routines",
+    "machines",
+    "machine",
+    "machinery"
    ],
    "clues": [
-    "Take off the silent e.",
-    "Change the o to a.",
-    "Change the n to t.",
-    "Add an h at the start.",
-    "Change the a to o.",
-    "Change the t to w."
+    "Change -e to -ine.",
+    "Add -s.",
+    "Change rout- to mach-.",
+    "Take off -s.",
+    "Add -ry."
    ]
   },
   "og5-05|ch": {
@@ -3430,59 +3428,63 @@
    ]
   },
   "og5-06": {
-   "start": "to",
+   "start": "love",
    "words": [
-    "to",
-    "so",
-    "son",
-    "on",
-    "in",
-    "is",
-    "his"
+    "love",
+    "glove",
+    "dove",
+    "done",
+    "none",
+    "nose",
+    "rose"
    ],
    "clues": [
-    "Change the t to s.",
-    "Add an n at the end.",
-    "Take off the s.",
-    "Change the o to i.",
-    "Change the n to s.",
-    "Add an h at the start."
+    "Add a g at the start.",
+    "Change the gl to d.",
+    "Change the v to n.",
+    "Change the d to n.",
+    "Change the last n to s.",
+    "Change the n to r."
    ]
   },
   "og5-07": {
    "start": "word",
    "words": [
     "word",
-    "work",
-    "worm",
-    "worms",
     "words",
-    "wordy",
-    "worry"
+    "worlds",
+    "world",
+    "worth",
+    "worthy",
+    "worthless"
    ],
    "clues": [
-    "Change the d to k.",
-    "Change the k to m.",
-    "Add an s at the end.",
-    "Change the m to d.",
-    "Change the s to y.",
-    "Change the d to r."
+    "Add -s.",
+    "Change wor- to worl-.",
+    "Take off -s.",
+    "Change -ld to -th.",
+    "Add -y.",
+    "Change -y to -less."
    ]
   },
   "og5-08": {
-   "start": "she",
+   "start": "person",
    "words": [
-    "she",
-    "the",
-    "they",
-    "then",
-    "when"
+    "person",
+    "personal",
+    "personally",
+    "normally",
+    "normal",
+    "formal",
+    "formality"
    ],
    "clues": [
-    "Change the s to t.",
-    "Add a y at the end.",
-    "Change the y to n.",
-    "Change the t to w."
+    "Add -al.",
+    "Add -ly.",
+    "Change person- to norm-.",
+    "Take off -ly.",
+    "Change the n to f.",
+    "Change -al to -ality."
    ]
   },
   "og5-08|-age": {
@@ -3552,59 +3554,53 @@
    ]
   },
   "og5-09": {
-   "start": "my",
+   "start": "sought",
    "words": [
-    "my",
-    "me",
-    "he",
-    "the",
-    "they",
-    "then",
-    "when"
+    "sought",
+    "fought",
+    "bought",
+    "brought",
+    "drought",
+    "droughts"
    ],
    "clues": [
-    "Change the y to e.",
-    "Change the m to h.",
-    "Add a t at the start.",
-    "Add a y at the end.",
-    "Change the y to n.",
-    "Change the t to w."
+    "Change the s to f.",
+    "Change the f to b.",
+    "Put an r between the b and the o.",
+    "Change the b to d.",
+    "Add -s."
    ]
   },
   "og5-09|aught": {
    "start": "caught",
    "words": [
     "caught",
-    "aught",
     "taught",
-    "thaught",
-    "thought"
+    "naught",
+    "naughty",
+    "haughty"
    ],
    "clues": [
-    "Take off the c.",
-    "Add a t at the start.",
-    "Put an h between the t and the a.",
-    "Change the a to o."
+    "Change the c to t.",
+    "Change the first t to n.",
+    "Add -y.",
+    "Change the n to h."
    ]
   },
   "og5-09|ought": {
-   "start": "sought",
+   "start": "thought",
    "words": [
-    "sought",
-    "tought",
-    "nought",
-    "ought",
-    "bought",
-    "brought",
-    "drought"
+    "thought",
+    "thoughts",
+    "thoughtless",
+    "thoughtful",
+    "thoughtfully"
    ],
    "clues": [
-    "Change the s to t.",
-    "Change the first t to n.",
-    "Take off the n.",
-    "Add a b at the start.",
-    "Put an r between the b and the o.",
-    "Change the b to d."
+    "Add -s.",
+    "Change -s to -less.",
+    "Change -less to -ful.",
+    "Add -ly."
    ]
   },
   "vccv": {
