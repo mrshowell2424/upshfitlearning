@@ -97,6 +97,8 @@ const isReal = (w) => {
 };
 
 const problems = [];
+/** Days with fewer than three maze items because the rest could be copied. */
+const shortMaze = [];
 const bare = (w) => String(w).replace(/[^A-Za-z'-]/g, "").toLowerCase();
 /**
  * Roughly how many syllables, counted as groups of vowel letters.
@@ -130,15 +132,24 @@ for (const lesson of D.lessons) {
     say(`the read-aloud passage is ${lesson.passage.words} words, and a minute of reading wants at least 100`);
   }
 
-  // And the maze has to come from the telling that is NOT printed, so the
-  // answer is not sitting on the page above the question.
-  if (lesson.mazeFrom !== "g2" && lesson.mazeFrom !== "same") {
-    say(`mazeFrom is "${lesson.mazeFrom}", expected g2 or same`);
+  // And the maze has to come from a telling that is NOT printed, so the
+  // answer is not sitting on the page above the question. Grade 2 for most
+  // lessons; grade 4, or both pooled, for the ones whose grade 2 telling
+  // repeats the printed one too closely to cut a fresh question from.
+  if (!["g2", "g4", "g2+g4"].includes(lesson.mazeFrom)) {
+    say(`mazeFrom is "${lesson.mazeFrom}", expected g2, g4 or g2+g4`);
   }
-  if (g2 && g2 !== printed && lesson.mazeFrom !== "g2") {
-    say("takes its maze from the printed passage although a second telling exists");
-  }
-  const mazeSource = lesson.mazeFrom === "g2" && g2 ? g2 : printed;
+  // Which telling the item says it came from. g4 and the pooled g2+g4 exist
+  // because for some lessons the grade 2 telling repeats the printed one
+  // almost word for word, and a maze whose answer is in the passage above it
+  // is a word search rather than a comprehension measure.
+  const g4 = PASS[lesson.key] && PASS[lesson.key].g4
+    ? PASS[lesson.key].g4.paras.join(" ") : "";
+  const mazeSource =
+    lesson.mazeFrom === "g2" ? (g2 || printed)
+    : lesson.mazeFrom === "g4" ? (g4 || printed)
+    : lesson.mazeFrom === "g2+g4" ? `${g2} ${g4}`
+    : printed;
 
   if (lesson.days.length !== 5) say(`${lesson.days.length} days, expected 5`);
 
@@ -202,7 +213,20 @@ for (const lesson of D.lessons) {
     const at = (m) => say(`day ${d.day}: ${m}`);
     if (d.wrf.length !== D.perDay.wrf) at(`${d.wrf.length} real words, expected ${D.perDay.wrf}`);
     if (d.nwf.length !== D.perDay.nwf) at(`${d.nwf.length} made-up words, expected ${D.perDay.nwf}`);
-    if (d.maze.length !== D.perDay.maze) at(`${d.maze.length} maze items, expected ${D.perDay.maze}`);
+    /*
+     * A day wants three maze items, and two is a shortfall rather than a
+     * fault.
+     *
+     * Every candidate sentence is now checked with its gap filled in, and
+     * thrown away if the answer can be read off the passage printed above
+     * it. One lesson -- all vowel teams together -- tells its story three
+     * times in nearly the same words, so after that check there are days
+     * with only two sentences left to ask about. Two honest questions beat
+     * three a child can copy, so this counts them and says so rather than
+     * failing, and anything below two is still a fault.
+     */
+    if (d.maze.length < 2) at(`${d.maze.length} maze items, which is too few to be a maze`);
+    else if (d.maze.length !== D.perDay.maze) shortMaze.push(`${lesson.key} day ${d.day}: ${d.maze.length} of ${D.perDay.maze}`);
 
     for (const w of d.wrf) {
       if (!isReal(w)) at(`real word "${w}" is not a word`);
@@ -241,6 +265,40 @@ for (const lesson of D.lessons) {
       // The sentence has to be one the telling actually contains, not a
       // paraphrase of it.
       if (!mazeSource.includes(m.s)) item(`is not a sentence from ${lesson.mazeFrom}`);
+
+      /*
+       * AND THE ANSWER MUST NOT BE SITTING ON THE PAGE ABOVE THE QUESTION.
+       *
+       * The maze is cut from a telling the day page does not print, which is
+       * meant to settle this. It does not: for more than half the lessons
+       * the two tellings are the same story told almost the same way, and
+       * printing a Level 5 packet showed every one of Monday's three items
+       * already in the passage above them -- "There is a photograph of [an]
+       * elephant on the wall of our school hall" under "There is a large
+       * photograph of an elephant on the wall of our school hall". A child
+       * can answer that without reading either sentence, and MAZE is the
+       * measure the grade-level plan sets its goal on.
+       *
+       * So this fills the gap in and goes looking for the sentence in the
+       * printed passage. A matching run of six words or more that reaches
+       * past the gap means the answer is up there to be copied.
+       */
+      const filledWords = words.slice();
+      filledWords[m.at] = m.before + m.answer + m.after;
+      const need = (filledWords.join(" ").toLowerCase().match(/[a-z']+/g) || []);
+      const lead = (words.slice(0, m.at).join(" ").toLowerCase().match(/[a-z']+/g) || []).length;
+      const hay = printed.toLowerCase().match(/[a-z']+/g) || [];
+      let run = 0;
+      for (let a2 = 0; a2 < hay.length; a2++) {
+        for (let b2 = 0; b2 < need.length; b2++) {
+          let k = 0;
+          while (a2 + k < hay.length && b2 + k < need.length && hay[a2 + k] === need[b2 + k]) k++;
+          if (k > run) run = k;
+        }
+      }
+      if (run >= lead + 1 && run >= 6) {
+        item(`can be answered off the printed passage (${run} words of it match)`);
+      }
     }
   }
 
@@ -336,6 +394,11 @@ for (const lesson of D.lessons) {
 console.log(`${D.lessons.length} lessons × 5 days = ${dayCount} practice pages.`);
 console.log(`${mazeCount} maze items, ${raceCount} race words, ${dayCount * (D.perDay.wrf + D.perDay.nwf)} word slots.`);
 console.log(`${paCount} phonemic awareness items, every one proved in sounds.`);
+if (shortMaze.length) {
+  console.log(`
+${shortMaze.length} days carry two maze items rather than three, because the third could be read off the printed passage:`);
+  for (const x of shortMaze) console.log(`   – ${x}`);
+}
 console.log(`problems: ${problems.length}`);
 problems.slice(0, 40).forEach((x) => console.log("  " + x));
 if (problems.length) {

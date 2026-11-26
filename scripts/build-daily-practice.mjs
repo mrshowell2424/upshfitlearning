@@ -354,6 +354,51 @@ function mazeable(all) {
 }
 
 /**
+ * The longest run of words a sentence shares with the passage on the page.
+ *
+ * The maze is cut from the lesson's grade 2 telling while the day page
+ * prints the grade 3 one, which is meant to keep the answer off the page. It
+ * only works where the two tellings are actually different, and for more
+ * than half the lessons they are the same story told almost the same way.
+ * Printing a Level 5 packet showed all three of Monday's items sitting in
+ * the passage directly above them: "There is a photograph of [an] elephant
+ * on the wall of our school hall" against "There is a large photograph of an
+ * elephant on the wall of our school hall". A child can answer that without
+ * reading either sentence, which makes the MAZE sheet a word search.
+ */
+function answerIsOnPage(item, printed) {
+  const w = item.s.split(/\s+/);
+  const filled = [...w.slice(0, item.at), item.before + item.answer + item.after, ...w.slice(item.at + 1)];
+  const n = filled.join(" ").toLowerCase().match(/[a-z']+/g) || [];
+  // How many words of this sentence come before the gap. A matching run has
+  // to reach past that to have the answer inside it; one that stops short
+  // gives the child the lead-in and nothing else.
+  const lead = (w.slice(0, item.at).join(" ").toLowerCase().match(/[a-z']+/g) || []).length;
+  let best = 0;
+  for (let i = 0; i < printed.length; i++) {
+    for (let j = 0; j < n.length; j++) {
+      let k = 0;
+      while (i + k < printed.length && j + k < n.length && printed[i + k] === n[j + k]) k++;
+      if (k > best) best = k;
+    }
+  }
+  return best >= lead + 1 && best >= 6;
+}
+
+function sharedRun(sentence, printed) {
+  const n = String(sentence).toLowerCase().match(/[a-z']+/g) || [];
+  let best = 0;
+  for (let i = 0; i < printed.length; i++) {
+    for (let j = 0; j < n.length; j++) {
+      let k = 0;
+      while (i + k < printed.length && j + k < n.length && printed[i + k] === n[j + k]) k++;
+      if (k > best) best = k;
+    }
+  }
+  return best;
+}
+
+/**
  * One blank in one sentence, as a word index rather than a token list.
  *
  * The gap sits about a third of the way in, so there is something before it
@@ -395,6 +440,8 @@ function oneBlank(sentence, seed, avoid, shift) {
 const out = [];
 const short = [];
 const noMaze = [];
+/** Lessons whose two tellings are too alike to cut a fresh maze from. */
+const thinMaze = [];
 /** Every word taught so far, in sequence order, for the race to reach back into. */
 const taught = [];
 /** Every multisyllabic word so far, real and made-up, for the same reason. */
@@ -534,7 +581,58 @@ for (const lesson of SEQ) {
   // of.
   const allWords = text.paras.join(" ").split(/\s+/)
     .concat(mazeSource === text ? [] : mazeSource.paras.join(" ").split(/\s+/));
-  const sents = mazeable(sentences(mazeSource.paras.join(" ")));
+  // WHERE THE MAZE SENTENCES COME FROM, in order of preference.
+  //
+  // Six words of overlap is the threshold for "already on the page": shorter
+  // runs are "the" and "on the wall of", which give nothing away, while six
+  // or more means the sentence is sitting above the question with its answer
+  // in it.
+  //
+  // The grade 2 telling first, because it is the closest in difficulty to
+  // what the child is reading. Where that telling is near enough a copy of
+  // the printed one -- and for seventeen lessons it is -- the grade 4
+  // telling instead, which is the same story again at length and shares far
+  // less wording. Only if neither can fill three sentences does it fall back
+  // to grade 2 unfiltered, and those lessons are named at the end of the run
+  // rather than passing quietly.
+  const printedWords = text.paras.join(" ").toLowerCase().match(/[a-z']+/g) || [];
+  const notOnPage = (list) => list.filter((x) => sharedRun(x, printedWords) < 6);
+  const fromG2 = mazeable(sentences(mazeSource.paras.join(" ")));
+  const freshG2 = notOnPage(fromG2);
+  const freshG4 = p.g4 ? notOnPage(mazeable(sentences(p.g4.paras.join(" ")))) : [];
+  let sents;
+  let cutFrom;
+  if (freshG2.length >= MAZE_SENTENCES) {
+    sents = freshG2;
+    cutFrom = "g2";
+  } else if (freshG4.length >= MAZE_SENTENCES) {
+    sents = freshG4;
+    cutFrom = "g4";
+  } else if (freshG2.length + freshG4.length >= MAZE_SENTENCES) {
+    // Both tellings, pooled. They are the same story, so a week that asks
+    // about one part of it from grade 2 and another from grade 4 is still
+    // asking about the story the child read.
+    sents = [...freshG2, ...freshG4];
+    cutFrom = "g2+g4";
+  } else {
+    // Neither telling has three sentences clear of the printed one. Hand
+    // over everything from both and let the item check below decide: a
+    // sentence that overlaps in its first half can still take a clean gap
+    // in its second, and that is worth finding before giving up an item.
+    sents = [...fromG2, ...(p.g4 ? mazeable(sentences(p.g4.paras.join(" "))) : [])];
+    cutFrom = p.g4 ? "g2+g4" : "g2";
+    thinMaze.push(`${lesson.key}: ${freshG2.length} g2 and ${freshG4.length} g4 sentences are off the page, of ${fromG2.length}`);
+  }
+  // A distractor has to be new to the child BOTH ways: not in the passage
+  // printed above the question, and not anywhere in the telling the question
+  // was cut from. The second half was always asked of this by the checker
+  // and never actually done, which only showed once pooling two tellings
+  // doubled the text there was to collide with.
+  const sourceText = cutFrom === "g4" ? (p.g4 ? p.g4.paras.join(" ") : "")
+    : cutFrom === "g2+g4" ? mazeSource.paras.join(" ") + " " + (p.g4 ? p.g4.paras.join(" ") : "")
+    : mazeSource.paras.join(" ");
+  const avoidWords = [...allWords, ...sourceText.split(/\s+/)];
+
   if (reals.length < WRF_PER_DAY * DAYS || fakes.length < NWF_PER_DAY * DAYS) {
     short.push(`${lesson.key}: ${reals.length} real, ${fakes.length} made-up`);
   }
@@ -609,7 +707,19 @@ for (const lesson of SEQ) {
       const n = d * MAZE_SENTENCES + i;
       const sentence = sents[n % sents.length];
       if (maze.some((x) => x.s === sentence)) continue;
-      const item = oneBlank(sentence, seed + 200 + n, allWords, Math.floor(n / sents.length));
+      // Several gap positions per sentence, not one.
+      //
+      // The finished item is checked rather than the sentence it came from:
+      // with the gap filled in, can this be found in the passage the child
+      // has just read at the top of the page? A sentence that overlaps in
+      // its first half can still take a clean gap in its second, so a
+      // rejected gap is a reason to move the gap before it is a reason to
+      // give up the sentence.
+      let item = null;
+      for (let t = 0; t < 6 && !item; t++) {
+        const tryItem = oneBlank(sentence, seed + 200 + n + t * 97, avoidWords, Math.floor(n / sents.length) + t);
+        if (tryItem && !answerIsOnPage(tryItem, printedWords)) item = tryItem;
+      }
       if (item) maze.push(item);
     }
     if (maze.length < MAZE_SENTENCES) noMaze.push(`${lesson.key} day ${d + 1}: ${maze.length}`);
@@ -660,7 +770,7 @@ for (const lesson of SEQ) {
     pa,
     // Which telling the maze sentences were cut from, so the check can go and
     // look rather than take it on trust.
-    mazeFrom: mazeSource === text ? "same" : "g2",
+    mazeFrom: cutFrom,
     race,
     msDays,
     days,
@@ -687,6 +797,10 @@ console.log(`  ${out.length * DAYS} practice days, ${out.length * DAYS * (WRF_PE
 if (noMulti.length) {
   console.log(`\n${noMulti.length} lessons have no multisyllabic bank, so the switch leaves their rows alone:`);
   console.log(`   ${noMulti.join(", ")}`);
+}
+if (thinMaze.length) {
+  console.log(`\n⚠ ${thinMaze.length} lessons could not fill the maze from sentences the printed passage does not already carry:`);
+  for (const x of thinMaze.slice(0, 10)) console.log(`   – ${x}`);
 }
 if (noMaze.length) {
   console.log(`\n⚠ ${noMaze.length} days could not fill ${MAZE_SENTENCES} maze sentences:`);
