@@ -57,6 +57,11 @@ for (const L of D.lessons) {
     spellings.add(it.g);
     if (words.has(it.w)) say(`asks about "${it.w}" twice`);
     words.add(it.w);
+    // A word that is the pattern is not a question. "Say form. Do you hear
+    // the sound form makes? Where is it?" has no answer a child can give,
+    // and the card prints "at the start", so the one true answer -- the
+    // whole word -- is marked wrong.
+    if (it.g === it.w) say(`asks where "${it.g}" is in "${it.w}", which is the whole word`);
     const real = placeOf(it.w, it.g);
     if (!real) { say(`"${it.g}" is not in "${it.w}" at all`); continue; }
     if (real !== it.at) say(`says "${it.g}" is ${it.at} in "${it.w}", and it is ${real}`);

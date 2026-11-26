@@ -726,13 +726,13 @@
     },
     {
      "g": "old",
-     "w": "old",
-     "at": "at the start"
+     "w": "golden",
+     "at": "in the middle"
     },
     {
      "g": "ost",
-     "w": "postcard",
-     "at": "in the middle"
+     "w": "most",
+     "at": "at the end"
     },
     {
      "g": "ind",
@@ -1245,13 +1245,13 @@
    "identify": [
     {
      "g": "form",
-     "w": "form",
-     "at": "at the start"
+     "w": "inform",
+     "at": "at the end"
     },
     {
      "g": "port",
-     "w": "transport",
-     "at": "at the end"
+     "w": "portable",
+     "at": "at the start"
     },
     {
      "g": "tract",
@@ -1595,13 +1595,13 @@
     },
     {
      "g": "ought",
-     "w": "ought",
-     "at": "at the start"
+     "w": "thoughtful",
+     "at": "in the middle"
     },
     {
      "g": "aught",
-     "w": "daughter",
-     "at": "in the middle"
+     "w": "taught",
+     "at": "at the end"
     },
     {
      "g": "ought",

@@ -111,6 +111,21 @@ const OWN = {
 function placeOf(word, grapheme) {
   let at = -1;
   let len = 0;
+  /*
+   * A WORD THAT IS THE PATTERN GIVES A CHILD NOTHING TO FIND.
+   *
+   * "Say form. Do you hear the sound form makes? Where is it?" is not a
+   * question -- the word and the answer are the same thing. Worse, the place
+   * reader calls it "at the start", so a child who says the whole word, which
+   * is the only true answer, is marked wrong. Three cards said this: form in
+   * Latin roots 1, old in Closed syllable exceptions, and ought in Word
+   * families. The pools are deep enough to ask about a longer word instead.
+   *
+   * Only the literal spelling is refused. A split spelling that spans the
+   * whole word is a different thing -- the /ae/ of "ate" really is at the
+   * start, and a_e really does run to the end -- so that stays.
+   */
+  if (!grapheme.includes("_") && grapheme === word) return null;
   if (grapheme.includes("_")) {
     const m = new RegExp(grapheme.replace(/_/g, "[a-z]")).exec(word);
     if (!m) return null;
