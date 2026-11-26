@@ -13,12 +13,15 @@
  * (32 lessons), Advanced 6 to 9 (25), Multisyllable 10 to 15 (18). Seventy-five
  * in all, which is the figure the implementation guide gives.
  *
- * WHERE A SKILL HAS NO HUB LESSON the entry is null rather than the nearest
- * lesson. Two cases matter:
+ * WHERE A SKILL HAS NO HUB LESSON the entry would be null rather than the
+ * nearest lesson. There are none left: 8.2, er, ir and ur, was the last one,
+ * and writing this map is what found it -- the Hub taught ar and or, taught
+ * wor at Level 5, and skipped the three commonest r-controlled spellings in
+ * English entirely. The lesson now sits straight after ar and or, which is
+ * where PLL puts it.
  *
- *   - 8.2, er/ir/ur, which the Hub does not teach at all. It has ar and or,
- *     and it has wor, and nothing between them. The map saying so is worth
- *     more than the map quietly pointing at ar-or.
+ * What remains is partial cover:
+ *
  *   - the three Advanced phonogram skills, 8.4 to 8.6, which "VrrV and Vre"
  *     only partly covers. They point at it and say partial, because a teacher
  *     should know they are getting some of the skill rather than all of it.
@@ -89,8 +92,7 @@ export const PLL_SKILLS = [
 
   // ADVANCED · vowel-r
   ["8.1", "Vowel-r: ar and or", "ar-or"],
-  // The Hub teaches ar and or, and it teaches wor, and nothing in between.
-  ["8.2", "Vowel-r: er, ir, and ur", null],
+  ["8.2", "Vowel-r: er, ir, and ur", "er-ir-ur"],
   ["8.3", "Words Beginning with w+ar and w+or", "og5-07"],
   ["8.4", "Vowel-r Phonograms air and are", "og2-09", "partial"],
   ["8.5", "Vowel-r Phonograms oar and ore", "og2-09", "partial"],

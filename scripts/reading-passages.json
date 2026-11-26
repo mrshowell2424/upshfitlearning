@@ -7058,6 +7058,92 @@
     }
    }
   },
+  "er-ir-ur": {
+   "g2": {
+    "title": "The Bird on the Perch",
+    "paras": [
+     "Fern has a bird. Its perch sits in the dark part of her den.",
+     "The bird is up first, as the sun starts to lift. It stirs. It chirps. Then it chirps a third time, and Fern gets up as well.",
+     "She puts corn in a dish. Her bird is not shy. It hops on her arm, and then it hops on her shirt.",
+     "Her shirt gets dirt on it. Fern just grins.",
+     "At the end of term she will let it fly in the park. It will turn and turn in the wind, and then it will land on her arm."
+    ],
+    "qs": [
+     [
+      "Who is up first in the den?",
+      "The bird is up first."
+     ],
+     [
+      "What does Fern put in the dish?",
+      "She puts corn in the dish."
+     ],
+     [
+      "How does her shirt get dirt on it?",
+      "The bird hops on her arm and then on her shirt."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell what the bird did, in order. Use first, next, and last."
+    }
+   },
+   "g3": {
+    "title": "The Bird on the Perch",
+    "paras": [
+     "Fern keeps a bird, and its perch stands in the darkest part of her room, well away from the window.",
+     "The bird is always up first. It stirs as the sun starts to lift, it chirps once, it chirps a second time, and by the third chirp Fern has given up on sleeping and is looking for her slippers.",
+     "She puts corn in the dish and stands back. Her bird is not shy about any of this. It hops onto her arm, walks the whole length of it, and settles on the shoulder of her shirt as if the shirt belonged to it.",
+     "The shirt collects dirt every single morning, and Fern has stopped minding. She grins at it instead.",
+     "At the end of term she is going to take the bird to the park and let it go for an hour. It will turn and turn in the wind above the trees, and when it has had enough it will come down and land on her arm, because that is where it lands."
+    ],
+    "qs": [
+     [
+      "Why has Fern stopped minding the dirt?",
+      "Because the bird gets on her shirt every morning and she would rather grin at it."
+     ],
+     [
+      "What does the bird do after it hops onto her arm?",
+      "It walks the length of her arm and settles on the shoulder of her shirt."
+     ],
+     [
+      "What does Fern expect the bird to do in the park?",
+      "Turn in the wind for a while and then come down and land on her arm."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell the story of one morning with Fern's bird, in order."
+    }
+   },
+   "g4": {
+    "title": "The Bird on the Perch",
+    "paras": [
+     "Fern keeps a bird, and its perch stands in the darkest corner of her room, deliberately well away from the window, because a bird that can see the sun come up will tell you about it.",
+     "It is always up first in any case. It stirs as the light changes, it chirps once, it chirps a second time, and somewhere around the third chirp Fern gives up on sleeping and starts feeling about on the floor for her slippers.",
+     "She puts corn in the dish and stands back out of the way. Her bird is not shy about a single part of this arrangement. It hops onto her arm, walks the entire length of it with the unhurried confidence of something that has never been told no, and settles on the shoulder of her shirt as though the shirt had been put there for the purpose.",
+     "The shirt collects dirt every morning without fail. Fern stopped minding about a year ago and now simply grins at it, which her sister regards as evidence of something or other.",
+     "At the end of term she is taking the bird to the park for an hour. It will turn and turn in the wind above the trees, higher than she is comfortable with, and then, when it has had enough of being a wild thing, it will come down and land on her arm. That is the part she is sure about. It always lands on her arm."
+    ],
+    "qs": [
+     [
+      "Why is the perch kept away from the window?",
+      "Because a bird that can see the sun come up will tell you about it."
+     ],
+     [
+      "What does the writer mean by “the unhurried confidence of something that has never been told no”?",
+      "The bird walks along her arm slowly and without worry, because nothing has ever stopped it doing as it likes."
+     ],
+     [
+      "What is Fern sure about, and what is she less sure about?",
+      "She is sure the bird will land on her arm. She is less comfortable about how high it will go."
+     ]
+    ],
+    "write": {
+     "type": "Narrative",
+     "task": "Tell the story of one morning with Fern's bird, and say what her grin at the dirty shirt shows about her."
+    }
+   }
+  },
   "ng-nk|ng": {
    "g2": {
     "title": "The Song in the Spring",

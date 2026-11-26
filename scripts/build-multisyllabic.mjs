@@ -356,7 +356,17 @@ const POOL = [...FREQ.entries()]
   // A contraction is in no dictionary as one word, so it is vouched for by
   // this site's own use of it instead: didn't appears everywhere here and
   // "didnt" appears in nothing.
-  .filter(([w, n]) => (w.includes("'") ? n >= 5 : DICT.has(w)))
+  //
+  // A POSSESSIVE STILL HAS TO HAVE A REAL WORD IN FRONT OF THE APOSTROPHE.
+  // Frequency alone let "nasa's" onto the contractions list, along with
+  // rosa's, omar's and patel's: harvested from passages where they are
+  // somebody's name, and not words to hand a child cold on a timed list.
+  // author's and driver's keep their places, because author and driver are
+  // words.
+  .filter(([w, n]) => {
+    if (w.endsWith("'s")) return n >= 5 && DICT.has(w.slice(0, -2));
+    return w.includes("'") ? n >= 5 : DICT.has(w);
+  })
   .filter(([w]) => syllables(w) >= 2)
   // Youngest reader first. A list fills from the words this site has shown
   // a class of nine-year-olds before it reaches for one it has only ever

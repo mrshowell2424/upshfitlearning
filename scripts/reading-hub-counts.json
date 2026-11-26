@@ -4,11 +4,11 @@
  "mysteryVersions": 936,
  "articles": 650,
  "articleVersions": 1300,
- "concepts": 218,
- "passages": 654,
+ "concepts": 219,
+ "passages": 657,
  "passageLevels": 3,
- "sequence": 68,
- "ladders": 218,
+ "sequence": 69,
+ "ladders": 219,
  "spelling": 53,
  "heartWords": 59,
  "threads": 13,
@@ -16,5 +16,5 @@
  "morphemes": 18,
  "writingPassages": 62,
  "writingTypes": 6,
- "multisyllabicWords": 19169
+ "multisyllabicWords": 19170
 }

@@ -344,6 +344,24 @@
       "wordSource": "spelling"
     },
     {
+      "key": "er-ir-ur",
+      "name": "R-controlled er, ir, ur",
+      "level": 2,
+      "words": [
+        "her",
+        "herd",
+        "fern",
+        "term",
+        "bird",
+        "girl",
+        "dirt",
+        "first",
+        "turn",
+        "burn"
+      ],
+      "wordSource": "lesson"
+    },
+    {
       "key": "ai-ay",
       "name": "Vowel teams ai, ay",
       "level": 2,

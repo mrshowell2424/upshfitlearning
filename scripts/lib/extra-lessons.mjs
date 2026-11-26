@@ -43,6 +43,15 @@
  * were replaced with snay and frew.
  */
 export const EXTRA_LESSONS = [
+  ["er-ir-ur", "R-controlled er, ir, ur", "Level 2",
+   "The Bird on the Perch (p. 48) \u00b7 Turn at the Church (p. 49)",
+   "Three ways to write the same sound. er, ir and ur all say /er/, so the only way to know which one a word uses is to have seen it.",
+   ["her \u2192 herd", "bird \u2192 third", "turn \u2192 burn"],
+   ["her", "herd", "fern", "term", "bird", "girl", "dirt", "first", "turn", "burn"],
+   ["zurn", "ferp", "mirt", "hursh"],
+   ["were", "work", "word"],
+   ["The bird sat on the perch.", "Her shirt has dirt on it."]],
+
   ["long-a", "Long a: ai, ay, ea, ey, eigh", "Level 3",
    "Rain Date (p. 64) · May I Play? (p. 65)",
    "Five ways to write long a. ai and ay carry most of it; ea, ey and eigh do the rest in a handful of words.",
@@ -100,6 +109,11 @@ export const EXTRA_LESSONS = [
 
 /** Where each one sits in the teaching order. */
 export const EXTRA_SCOPE = {
+  // Straight after ar and or, which is where PLL puts it: 8.1 is ar and or,
+  // 8.2 is er, ir and ur. The Hub taught 8.1 and skipped 8.2, so a child went
+  // from ar and or to wor at Level 5 with the three commonest r-controlled
+  // spellings in English never taught at all.
+  "er-ir-ur": "2-04a",
   "long-a": "3-04a",
   "long-e": "3-04b",
   "long-i": "3-04c",

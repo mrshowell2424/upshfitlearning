@@ -45,6 +45,7 @@ export const LESSON_SKILL = {
   y: ["P7"],
   "ck-tch": ["P4"],
   "ar-or": ["P8"],
+  "er-ir-ur": ["P8"],
   "ai-ay": ["P6"],
   "ee-ea": ["P6", "P7"],
   "oa-ow": ["P6", "P7"],
