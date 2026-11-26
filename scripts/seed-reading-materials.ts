@@ -19,6 +19,7 @@ import WRITING from "./reading-writing-passages.json" with { type: "json" };
 import SPLITS from "./reading-skill-splits.json" with { type: "json" };
 import { EXTRA_LESSONS } from "./lib/extra-lessons.mjs";
 import { LESSON_SKILL } from "./lib/lesson-continuum.mjs";
+import { PLL_SKILLS } from "./lib/pll-skills.mjs";
 import SEQUENCE from "./reading-sequence.json" with { type: "json" };
 import CONTINUUM_DAILY from "./continuum-daily.json" with { type: "json" };
 import DAILY_PRACTICE from "./reading-daily-practice.json" with { type: "json" };
@@ -4642,12 +4643,27 @@ const ADAPTATIONS: Adaptation[] = [
         if (first) codes[key] = first;
       }
 
+      /*
+       * The PLL skill numbers each lesson answers to.
+       *
+       * The grouping form a teacher carries into a meeting says "PLL 5.12"
+       * and nothing else, so the picker has to be searchable by that. With
+       * the numbers in the label, the search box above it already finds
+       * them: typing 5.12 brings up Silent e.
+       */
+      const pll: Record<string, string[]> = {};
+      for (const row of PLL_SKILLS as [string, string, string | null, string?][]) {
+        if (!row[2]) continue;
+        (pll[row[2]] ||= []).push(row[0]);
+      }
+
       let out = html.replace(
         seat,
         seat +
           "\n    const SEQ_ORD = " + JSON.stringify(order) + ";" +
           "\n    const SEQ_LVL = " + JSON.stringify(level) + ";" +
           "\n    const PCODE = " + JSON.stringify(codes) + ";" +
+          "\n    const PLLOF = " + JSON.stringify(pll) + ";" +
           "\n    const baseOf = (id) => String(id).split('|')[0];" +
           // A lesson the sequence does not carry keeps its own place at the
           // end rather than jumping to the front on an undefined.
@@ -4662,7 +4678,9 @@ const ADAPTATIONS: Adaptation[] = [
           "\n    const skLabel = (s, name) => {" +
           "\n      const b = baseOf(s[0]);" +
           "\n      const lv = SEQ_LVL[b] === undefined ? s[2] : 'Level ' + SEQ_LVL[b];" +
-          "\n      return lv + ' \u00b7 ' + name + (PCODE[b] ? ' (' + PCODE[b] + ')' : '');" +
+          "\n      const tag = [PCODE[b], (PLLOF[b] || []).length ? 'PLL ' + PLLOF[b].join(', ') : '']" +
+          "\n        .filter(Boolean).join(' \u00b7 ');" +
+          "\n      return lv + ' \u00b7 ' + name + (tag ? ' (' + tag + ')' : '');" +
           "\n    };",
       );
 
