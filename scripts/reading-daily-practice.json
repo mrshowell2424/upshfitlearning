@@ -22,6 +22,134 @@
     ],
     "words": 123
    },
+   "phrases": {
+    "words": [
+     "cat",
+     "map",
+     "bag",
+     "fan",
+     "ham",
+     "jam",
+     "mat",
+     "rag",
+     "tan",
+     "van"
+    ],
+    "short": [
+     "to see Gram",
+     "on the mat",
+     "into a ball",
+     "Nat ran straight",
+     "at the map"
+    ],
+    "long": [
+     "with a big paper map",
+     "Nat is a tan cat",
+     "and Nat could nap",
+     "He has a hat",
+     "in the next town"
+    ],
+    "sentences": [
+     "Nat is a tan cat with one black ear.",
+     "On Saturday, Dad sat on the mat with a big paper map.",
+     "He was planning a trip to see Gram in the next town."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "hat",
+      "h",
+      "at"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "mat",
+      "m",
+      "at"
+     ],
+     [
+      "thought",
+      "th",
+      "ought"
+     ],
+     [
+      "sat",
+      "s",
+      "at"
+     ]
+    ],
+    "chop": [
+     [
+      "climbed",
+      "d",
+      "climb"
+     ],
+     [
+      "pals",
+      "z",
+      "pal"
+     ],
+     [
+      "made",
+      "d",
+      "may"
+     ],
+     [
+      "goes",
+      "z",
+      "go"
+     ],
+     [
+      "wears",
+      "z",
+      "wear"
+     ]
+    ],
+    "swap": [
+     [
+      "said",
+      "s",
+      "b",
+      "bed"
+     ],
+     [
+      "pot",
+      "p",
+      "g",
+      "got"
+     ],
+     [
+      "fan",
+      "f",
+      "t",
+      "tan"
+     ],
+     [
+      "ham",
+      "h",
+      "j",
+      "jam"
+     ],
+     [
+      "rug",
+      "r",
+      "b",
+      "bug"
+     ]
+    ],
+    "syll": [
+     [
+      "anything",
+      "any",
+      "thing"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "is",
@@ -505,6 +633,149 @@
      "For a moment nobody moved. Then Rob began to grin, because he was every bit as muddy as the pig. He let the pig stay until the sun went down."
     ],
     "words": 130
+   },
+   "phrases": {
+    "words": [
+     "bed",
+     "pig",
+     "hop",
+     "bug",
+     "net",
+     "fin",
+     "dot",
+     "cub",
+     "hen",
+     "lip"
+    ],
+    "short": [
+     "with a thud",
+     "into the sunshine",
+     "Rob came running",
+     "and dropped himself",
+     "into the wettest"
+    ],
+    "long": [
+     "because he was every bit",
+     "For a moment nobody moved",
+     "He let the pig stay",
+     "The pig ran too",
+     "and a long log"
+    ],
+    "sentences": [
+     "Rob kept a big pink pig in a pen beside the red barn.",
+     "The pen had a strong gate and a long log across one end.",
+     "The pig had other plans."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "pink",
+      "p",
+      "ink"
+     ],
+     [
+      "there",
+      "th",
+      "air"
+     ],
+     [
+      "farm",
+      "f",
+      "arm"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ]
+    ],
+    "chop": [
+     [
+      "plans",
+      "z",
+      "plan"
+     ],
+     [
+      "looked",
+      "t",
+      "look"
+     ],
+     [
+      "slipped",
+      "t",
+      "slip"
+     ],
+     [
+      "farm",
+      "m",
+      "far"
+     ],
+     [
+      "pushed",
+      "t",
+      "push"
+     ]
+    ],
+    "swap": [
+     [
+      "pink",
+      "p",
+      "th",
+      "think"
+     ],
+     [
+      "mud",
+      "m",
+      "th",
+      "thud"
+     ],
+     [
+      "bug",
+      "b",
+      "r",
+      "rug"
+     ],
+     [
+      "jet",
+      "j",
+      "l",
+      "let"
+     ],
+     [
+      "let",
+      "l",
+      "j",
+      "jet"
+     ]
+    ],
+    "syll": [
+     [
+      "person",
+      "per",
+      "son"
+     ],
+     [
+      "outside",
+      "out",
+      "side"
+     ],
+     [
+      "something",
+      "some",
+      "thing"
+     ],
+     [
+      "anything",
+      "any",
+      "thing"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -1003,6 +1274,149 @@
     ],
     "words": 113
    },
+   "phrases": {
+    "words": [
+     "he",
+     "go",
+     "hi",
+     "me",
+     "no",
+     "I",
+     "we",
+     "so",
+     "be",
+     "she"
+    ],
+    "short": [
+     "on my lap",
+     "on my arm",
+     "to stop running",
+     "He rides home",
+     "We walk him"
+    ],
+    "long": [
+     "with one white foot",
+     "and starts digging beside it",
+     "By the time we get back",
+     "of the empty lot every morning",
+     "Bo is a red pup"
+    ],
+    "sentences": [
+     "“No, Bo,” I tell him.",
+     "He looks up with dirt on his nose and thinks about it.",
+     "He sits down then, properly sad, ears flat."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "there",
+      "th",
+      "air"
+     ],
+     [
+      "four",
+      "f",
+      "oar"
+     ],
+     [
+      "pup",
+      "p",
+      "up"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ]
+    ],
+    "chop": [
+     [
+      "starts",
+      "s",
+      "start"
+     ],
+     [
+      "seconds",
+      "z",
+      "second"
+     ],
+     [
+      "thinks",
+      "s",
+      "think"
+     ],
+     [
+      "time",
+      "m",
+      "tie"
+     ],
+     [
+      "same",
+      "m",
+      "say"
+     ]
+    ],
+    "swap": [
+     [
+      "bag",
+      "b",
+      "r",
+      "rag"
+     ],
+     [
+      "morning",
+      "m",
+      "w",
+      "warning"
+     ],
+     [
+      "dirt",
+      "d",
+      "h",
+      "hurt"
+     ],
+     [
+      "bed",
+      "b",
+      "r",
+      "red"
+     ],
+     [
+      "whole",
+      "h",
+      "t",
+      "toll"
+     ]
+    ],
+    "syll": [
+     [
+      "something",
+      "some",
+      "thing"
+     ],
+     [
+      "anything",
+      "any",
+      "thing"
+     ],
+     [
+      "outside",
+      "out",
+      "side"
+     ],
+     [
+      "person",
+      "per",
+      "son"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "too",
@@ -1500,6 +1914,149 @@
     ],
     "words": 119
    },
+   "phrases": {
+    "words": [
+     "van",
+     "zip",
+     "jog",
+     "yes",
+     "web",
+     "lid",
+     "big",
+     "dip",
+     "fan",
+     "tub"
+    ],
+    "short": [
+     "Peg stood there",
+     "in the mud",
+     "to the knees",
+     "after the bun",
+     "from the mud"
+    ],
+    "long": [
+     "Then it crossed the yard",
+     "and the red hen kept getting",
+     "and Peg closed the gate",
+     "by the water tub",
+     "down just inside the pen gate"
+    ],
+    "sentences": [
+     "Peg kept one red hen, and the red hen kept getting out.",
+     "The pen had been mended three times already that month.",
+     "Peg had learned not to chase it."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "had",
+      "h",
+      "add"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "there",
+      "th",
+      "air"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ],
+     [
+      "wait",
+      "w",
+      "ate"
+     ]
+    ],
+    "chop": [
+     [
+      "fourth",
+      "th",
+      "four"
+     ],
+     [
+      "crossed",
+      "t",
+      "cross"
+     ],
+     [
+      "time",
+      "m",
+      "tie"
+     ],
+     [
+      "times",
+      "z",
+      "time"
+     ],
+     [
+      "made",
+      "d",
+      "may"
+     ]
+    ],
+    "swap": [
+     [
+      "cub",
+      "k",
+      "t",
+      "tub"
+     ],
+     [
+      "red",
+      "r",
+      "b",
+      "bed"
+     ],
+     [
+      "come",
+      "k",
+      "s",
+      "sum"
+     ],
+     [
+      "jet",
+      "j",
+      "s",
+      "set"
+     ],
+     [
+      "went",
+      "w",
+      "b",
+      "bent"
+     ]
+    ],
+    "syll": [
+     [
+      "something",
+      "some",
+      "thing"
+     ],
+     [
+      "anything",
+      "any",
+      "thing"
+     ],
+     [
+      "person",
+      "per",
+      "son"
+     ],
+     [
+      "outside",
+      "out",
+      "side"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "me",
@@ -1910,6 +2467,154 @@
      "Nick patted him on the back while he ate. Jack is not a difficult duck, Nick has decided. He just has conditions."
     ],
     "words": 117
+   },
+   "phrases": {
+    "words": [
+     "cat",
+     "duck",
+     "kit",
+     "cup",
+     "back",
+     "kid",
+     "can",
+     "sock",
+     "kin",
+     "cot"
+    ],
+    "short": [
+     "while he ate",
+     "Nick patted him",
+     "facing the sun",
+     "on the back",
+     "put a scoop"
+    ],
+    "long": [
+     "Jack is not a difficult duck",
+     "for a whole summer",
+     "Nick has tried it",
+     "in the sack within seconds",
+     "Jack was off the rock"
+    ],
+    "sentences": [
+     "Nick's duck is called Jack, and Jack has one favourite rock.",
+     "He sits on it most of the day, facing the sun, ignoring everybody.",
+     "Nick has tried it for a whole summer."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "cup",
+      "k",
+      "up"
+     ],
+     [
+      "tried",
+      "t",
+      "ride"
+     ],
+     [
+      "had",
+      "h",
+      "add"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ]
+    ],
+    "chop": [
+     [
+      "finished",
+      "t",
+      "finish"
+     ],
+     [
+      "tried",
+      "d",
+      "try"
+     ],
+     [
+      "crossed",
+      "t",
+      "cross"
+     ],
+     [
+      "called",
+      "d",
+      "call"
+     ],
+     [
+      "hears",
+      "z",
+      "hear"
+     ]
+    ],
+    "swap": [
+     [
+      "cub",
+      "k",
+      "t",
+      "tub"
+     ],
+     [
+      "cup",
+      "k",
+      "p",
+      "pup"
+     ],
+     [
+      "kit",
+      "k",
+      "h",
+      "hit"
+     ],
+     [
+      "not",
+      "n",
+      "p",
+      "pot"
+     ],
+     [
+      "tried",
+      "t",
+      "d",
+      "dried"
+     ]
+    ],
+    "syll": [
+     [
+      "person",
+      "per",
+      "son"
+     ],
+     [
+      "outside",
+      "out",
+      "side"
+     ],
+     [
+      "anything",
+      "any",
+      "thing"
+     ],
+     [
+      "cupcake",
+      "cup",
+      "cake"
+     ],
+     [
+      "classroom",
+      "class",
+      "room"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -2408,6 +3113,154 @@
     ],
     "words": 159
    },
+   "phrases": {
+    "words": [
+     "chin",
+     "ship",
+     "thin",
+     "when",
+     "chat",
+     "shop",
+     "path",
+     "what",
+     "chop",
+     "fish"
+    ],
+    "short": [
+     "without one pull",
+     "into the pond",
+     "on the hook",
+     "he told it",
+     "in the pond"
+    ],
+    "long": [
+     "Then the rod bent nearly double",
+     "when you are bigger",
+     "for a long moment",
+     "I will catch you",
+     "Then he unhooked it"
+    ],
+    "sentences": [
+     "Everybody in the family had seen it.",
+     "Nobody had ever caught it.",
+     "Three hours went by without one pull on the line."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "rod",
+      "r",
+      "odd"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ],
+     [
+      "had",
+      "h",
+      "add"
+     ],
+     [
+      "chat",
+      "ch",
+      "at"
+     ]
+    ],
+    "chop": [
+     [
+      "line",
+      "n",
+      "lie"
+     ],
+     [
+      "light",
+      "t",
+      "lie"
+     ],
+     [
+      "looked",
+      "t",
+      "look"
+     ],
+     [
+      "seen",
+      "n",
+      "sea"
+     ],
+     [
+      "climbed",
+      "d",
+      "climb"
+     ]
+    ],
+    "swap": [
+     [
+      "line",
+      "l",
+      "p",
+      "pine"
+     ],
+     [
+      "mop",
+      "m",
+      "h",
+      "hop"
+     ],
+     [
+      "hop",
+      "h",
+      "m",
+      "mop"
+     ],
+     [
+      "rod",
+      "r",
+      "n",
+      "nod"
+     ],
+     [
+      "light",
+      "l",
+      "f",
+      "fight"
+     ]
+    ],
+    "syll": [
+     [
+      "anything",
+      "any",
+      "thing"
+     ],
+     [
+      "lighthouse",
+      "light",
+      "house"
+     ],
+     [
+      "outside",
+      "out",
+      "side"
+     ],
+     [
+      "person",
+      "per",
+      "son"
+     ],
+     [
+      "something",
+      "some",
+      "thing"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "did",
@@ -2904,6 +3757,154 @@
      "He sleeps in a feed sack now. It is softer than the box was, and so far nothing has crawled into it."
     ],
     "words": 113
+   },
+   "phrases": {
+    "words": [
+     "quit",
+     "fox",
+     "quiz",
+     "six",
+     "quack",
+     "box",
+     "queen",
+     "mix",
+     "quick",
+     "fix"
+    ],
+    "short": [
+     "to hold apples",
+     "of our shed",
+     "It is softer",
+     "with a crash",
+     "The beetle left"
+    ],
+    "long": [
+     "in the wreckage looking extremely surprised",
+     "Rex does not share",
+     "in a feed sack now",
+     "than the box was",
+     "missed the beetle entirely"
+    ],
+    "sentences": [
+     "On Saturday a quick brown beetle got into the box with him.",
+     "He made that clear at once.",
+     "He sleeps in a feed sack now."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "share",
+      "sh",
+      "air"
+     ],
+     [
+      "hold",
+      "h",
+      "old"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "mother",
+      "m",
+      "other"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ]
+    ],
+    "chop": [
+     [
+      "missed",
+      "t",
+      "miss"
+     ],
+     [
+      "side",
+      "d",
+      "sigh"
+     ],
+     [
+      "once",
+      "s",
+      "one"
+     ],
+     [
+      "pulled",
+      "d",
+      "pull"
+     ],
+     [
+      "knocked",
+      "t",
+      "knock"
+     ]
+    ],
+    "swap": [
+     [
+      "pot",
+      "p",
+      "g",
+      "got"
+     ],
+     [
+      "got",
+      "g",
+      "p",
+      "pot"
+     ],
+     [
+      "thing",
+      "th",
+      "k",
+      "king"
+     ],
+     [
+      "fox",
+      "f",
+      "b",
+      "box"
+     ],
+     [
+      "sack",
+      "s",
+      "b",
+      "back"
+     ]
+    ],
+    "syll": [
+     [
+      "classroom",
+      "class",
+      "room"
+     ],
+     [
+      "mailbox",
+      "mail",
+      "box"
+     ],
+     [
+      "person",
+      "per",
+      "son"
+     ],
+     [
+      "quarterback",
+      "quarter",
+      "back"
+     ],
+     [
+      "cupcake",
+      "cup",
+      "cake"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -3402,6 +4403,154 @@
     ],
     "words": 141
    },
+   "phrases": {
+    "words": [
+     "off",
+     "bell",
+     "miss",
+     "buzz",
+     "puff",
+     "tell",
+     "kiss",
+     "fizz",
+     "cuff",
+     "fell"
+    ],
+    "short": [
+     "and she scrubbed",
+     "in the village",
+     "until nearly six",
+     "of the hill",
+     "and a bucket"
+    ],
+    "long": [
+     "She fetched a rag",
+     "One wet morning the rope slipped",
+     "It rolled all the way",
+     "and the bell went",
+     "the bracket gave way"
+    ],
+    "sentences": [
+     "Nell had the best job in the village.",
+     "It rolled all the way down and stopped in the mud behind the mill.",
+     "Getting it up the hill again was the hard part."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "struck",
+      "s",
+      "truck"
+     ],
+     [
+      "mill",
+      "m",
+      "ill"
+     ],
+     [
+      "rolled",
+      "r",
+      "old"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "hill",
+      "h",
+      "ill"
+     ]
+    ],
+    "chop": [
+     [
+      "rolled",
+      "d",
+      "roll"
+     ],
+     [
+      "rope",
+      "p",
+      "row"
+     ],
+     [
+      "stopped",
+      "t",
+      "stop"
+     ],
+     [
+      "time",
+      "m",
+      "tie"
+     ],
+     [
+      "start",
+      "t",
+      "star"
+     ]
+    ],
+    "swap": [
+     [
+      "cub",
+      "k",
+      "t",
+      "tub"
+     ],
+     [
+      "kiss",
+      "k",
+      "m",
+      "miss"
+     ],
+     [
+      "bed",
+      "b",
+      "r",
+      "red"
+     ],
+     [
+      "dig",
+      "d",
+      "p",
+      "pig"
+     ],
+     [
+      "sun",
+      "s",
+      "d",
+      "done"
+     ]
+    ],
+    "syll": [
+     [
+      "something",
+      "some",
+      "thing"
+     ],
+     [
+      "quarterback",
+      "quarter",
+      "back"
+     ],
+     [
+      "cupcake",
+      "cup",
+      "cake"
+     ],
+     [
+      "snowball",
+      "snow",
+      "ball"
+     ],
+     [
+      "uphill",
+      "up",
+      "hill"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "enough",
@@ -3898,6 +5047,154 @@
      "They sat on the wall afterwards and shared a ripe plum. “Some things are not a one-person job,” Dave said."
     ],
     "words": 131
+   },
+   "phrases": {
+    "words": [
+     "cake",
+     "bike",
+     "home",
+     "cute",
+     "make",
+     "time",
+     "rope",
+     "mule",
+     "late",
+     "like"
+    ],
+    "short": [
+     "up the lane",
+     "in the gravel",
+     "because one person",
+     "in the gap",
+     "at the end"
+    ],
+    "long": [
+     "behind a stone gate",
+     "and shared a ripe plum",
+     "That was the problem",
+     "Jane tried a rope",
+     "that two cars could have driven"
+    ],
+    "sentences": [
+     "Dave came up the lane while she was still leaning.",
+     "They sat on the wall afterwards and shared a ripe plum.",
+     "“Some things are not a one-person job,” Dave said."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "feet",
+      "f",
+      "eat"
+     ],
+     [
+      "sat",
+      "s",
+      "at"
+     ],
+     [
+      "stone",
+      "s",
+      "tone"
+     ],
+     [
+      "still",
+      "s",
+      "till"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ]
+    ],
+    "chop": [
+     [
+      "lane",
+      "n",
+      "lay"
+     ],
+     [
+      "rope",
+      "p",
+      "row"
+     ],
+     [
+      "jammed",
+      "d",
+      "jam"
+     ],
+     [
+      "seconds",
+      "z",
+      "second"
+     ],
+     [
+      "like",
+      "k",
+      "lie"
+     ]
+    ],
+    "swap": [
+     [
+      "wide",
+      "w",
+      "s",
+      "side"
+     ],
+     [
+      "win",
+      "w",
+      "p",
+      "pin"
+     ],
+     [
+      "said",
+      "s",
+      "b",
+      "bed"
+     ],
+     [
+      "one",
+      "w",
+      "s",
+      "sun"
+     ],
+     [
+      "feet",
+      "f",
+      "h",
+      "heat"
+     ]
+    ],
+    "syll": [
+     [
+      "something",
+      "some",
+      "thing"
+     ],
+     [
+      "countryside",
+      "country",
+      "side"
+     ],
+     [
+      "snowball",
+      "snow",
+      "ball"
+     ],
+     [
+      "runoff",
+      "run",
+      "off"
+     ],
+     [
+      "wishbone",
+      "wish",
+      "bone"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -4396,6 +5693,154 @@
     ],
     "words": 127
    },
+   "phrases": {
+    "words": [
+     "clap",
+     "flag",
+     "stop",
+     "club",
+     "flat",
+     "step",
+     "clip",
+     "flip",
+     "stick",
+     "class"
+    ],
+    "short": [
+     "sat perfectly still",
+     "in her hands",
+     "and went fast",
+     "Spot did nothing",
+     "past Stan's mark"
+    ],
+    "long": [
+     "and the class clapped",
+     "Then he folded his back legs",
+     "of his life sitting absolutely still",
+     "Ten frogs were set",
+     "clearing the chalk line"
+    ],
+    "sentences": [
+     "In June the class held a frog jump.",
+     "Everyone agreed that was that.",
+     "Spot did nothing for a long moment."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "still",
+      "s",
+      "till"
+     ],
+     [
+      "clip",
+      "k",
+      "lip"
+     ],
+     [
+      "flip",
+      "f",
+      "lip"
+     ],
+     [
+      "named",
+      "n",
+      "aimed"
+     ],
+     [
+      "clap",
+      "k",
+      "lap"
+     ]
+    ],
+    "chop": [
+     [
+      "frogs",
+      "z",
+      "frog"
+     ],
+     [
+      "named",
+      "d",
+      "name"
+     ],
+     [
+      "agreed",
+      "d",
+      "agree"
+     ],
+     [
+      "clapped",
+      "t",
+      "clap"
+     ],
+     [
+      "line",
+      "n",
+      "lie"
+     ]
+    ],
+    "swap": [
+     [
+      "went",
+      "w",
+      "d",
+      "dent"
+     ],
+     [
+      "clip",
+      "k",
+      "f",
+      "flip"
+     ],
+     [
+      "flip",
+      "f",
+      "k",
+      "clip"
+     ],
+     [
+      "dig",
+      "d",
+      "p",
+      "pig"
+     ],
+     [
+      "fix",
+      "f",
+      "m",
+      "mix"
+     ]
+    ],
+    "syll": [
+     [
+      "underside",
+      "under",
+      "side"
+     ],
+     [
+      "daytime",
+      "day",
+      "time"
+     ],
+     [
+      "undermine",
+      "under",
+      "mine"
+     ],
+     [
+      "overall",
+      "over",
+      "all"
+     ],
+     [
+      "something",
+      "some",
+      "thing"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "less",
@@ -4892,6 +6337,154 @@
      "Mom got it back, brushed it off, and put all six hats in a row on the shelf. Then she took down the pink one with the dots and wore it to the shops."
     ],
     "words": 150
+   },
+   "phrases": {
+    "words": [
+     "cats",
+     "dogs",
+     "pens",
+     "cups",
+     "beds",
+     "hats",
+     "bugs",
+     "maps",
+     "frogs",
+     "desks"
+    ],
+    "short": [
+     "and every one",
+     "brushed it off",
+     "in white dots",
+     "to the shops",
+     "with the dots"
+    ],
+    "long": [
+     "and put all six hats",
+     "That has never stopped anybody",
+     "It fit him perfectly",
+     "It was also pink",
+     "which settled the question"
+    ],
+    "sentences": [
+     "That has never stopped anybody.",
+     "Jen tried the straw one first.",
+     "Dad took the next one off the shelf and put it on without looking."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "wore",
+      "w",
+      "oar"
+     ],
+     [
+      "door",
+      "d",
+      "oar"
+     ],
+     [
+      "never",
+      "n",
+      "ever"
+     ],
+     [
+      "pink",
+      "p",
+      "ink"
+     ]
+    ],
+    "chop": [
+     [
+      "belongs",
+      "z",
+      "belong"
+     ],
+     [
+      "settled",
+      "d",
+      "settle"
+     ],
+     [
+      "dots",
+      "s",
+      "dot"
+     ],
+     [
+      "house",
+      "s",
+      "how"
+     ],
+     [
+      "beds",
+      "z",
+      "bed"
+     ]
+    ],
+    "swap": [
+     [
+      "net",
+      "n",
+      "j",
+      "jet"
+     ],
+     [
+      "hen",
+      "h",
+      "r",
+      "wren"
+     ],
+     [
+      "down",
+      "d",
+      "g",
+      "gown"
+     ],
+     [
+      "win",
+      "w",
+      "th",
+      "thin"
+     ],
+     [
+      "fix",
+      "f",
+      "s",
+      "six"
+     ]
+    ],
+    "syll": [
+     [
+      "downhill",
+      "down",
+      "hill"
+     ],
+     [
+      "outside",
+      "out",
+      "side"
+     ],
+     [
+      "upside",
+      "up",
+      "side"
+     ],
+     [
+      "something",
+      "some",
+      "thing"
+     ],
+     [
+      "snowball",
+      "snow",
+      "ball"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -5390,6 +6983,154 @@
     ],
     "words": 146
    },
+   "phrases": {
+    "words": [
+     "Sam's",
+     "dog's",
+     "mom's",
+     "Kim's",
+     "cat's",
+     "dad's",
+     "Ben's",
+     "hen's",
+     "pig's",
+     "bug's"
+    ],
+    "short": [
+     "to the front",
+     "in a bag",
+     "of them brakes",
+     "and a rack",
+     "on the handlebars"
+    ],
+    "long": [
+     "to do it again",
+     "and Tess knows it",
+     "He does not mention this",
+     "to feel the handlebars properly",
+     "Ben's bike is red"
+    ],
+    "sentences": [
+     "It is a signal, and Tess knows it.",
+     "She comes out of her gate about four seconds later.",
+     "Tess's bike is black and a little bigger than Ben's."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "their",
+      "th",
+      "air"
+     ],
+     [
+      "gate",
+      "g",
+      "eight"
+     ],
+     [
+      "four",
+      "f",
+      "oar"
+     ],
+     [
+      "cold",
+      "k",
+      "old"
+     ],
+     [
+      "coats",
+      "k",
+      "oats"
+     ]
+    ],
+    "chop": [
+     [
+      "comes",
+      "z",
+      "come"
+     ],
+     [
+      "like",
+      "k",
+      "lie"
+     ],
+     [
+      "brakes",
+      "s",
+      "break"
+     ],
+     [
+      "keep",
+      "p",
+      "key"
+     ],
+     [
+      "rings",
+      "z",
+      "ring"
+     ]
+    ],
+    "swap": [
+     [
+      "mention",
+      "m",
+      "t",
+      "tension"
+     ],
+     [
+      "their",
+      "th",
+      "w",
+      "wear"
+     ],
+     [
+      "comes",
+      "k",
+      "h",
+      "hums"
+     ],
+     [
+      "like",
+      "l",
+      "b",
+      "bike"
+     ],
+     [
+      "rack",
+      "r",
+      "b",
+      "back"
+     ]
+    ],
+    "syll": [
+     [
+      "runoff",
+      "run",
+      "off"
+     ],
+     [
+      "countryside",
+      "country",
+      "side"
+     ],
+     [
+      "upside",
+      "up",
+      "side"
+     ],
+     [
+      "pancake",
+      "pan",
+      "cake"
+     ],
+     [
+      "bedtime",
+      "bed",
+      "time"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "picks",
@@ -5886,6 +7627,152 @@
      "We packed up when the sun went down and walked home in the dim with the empty basket swinging between us."
     ],
     "words": 121
+   },
+   "phrases": {
+    "words": [
+     "rabbit",
+     "pencil",
+     "picnic",
+     "muffin",
+     "napkin",
+     "helmet",
+     "mitten",
+     "sunset",
+     "magnet",
+     "velvet"
+    ],
+    "short": [
+     "without complaining once",
+     "in the grass",
+     "when we arrived",
+     "in the jar",
+     "at the top"
+    ],
+    "long": [
+     "decided we were not a problem",
+     "Mom packed the basket herself",
+     "It watched us spread the blanket",
+     "when the sun went",
+     "of pickles nobody had asked"
+    ],
+    "sentences": [
+     "There was a rabbit sitting in the grass when we arrived."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "spot",
+      "s",
+      "pot"
+     ],
+     [
+      "packed",
+      "p",
+      "act"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ],
+     [
+      "had",
+      "h",
+      "add"
+     ],
+     [
+      "hill",
+      "h",
+      "ill"
+     ]
+    ],
+    "chop": [
+     [
+      "pickles",
+      "z",
+      "pickle"
+     ],
+     [
+      "packed",
+      "t",
+      "pack"
+     ],
+     [
+      "once",
+      "s",
+      "one"
+     ],
+     [
+      "arrived",
+      "d",
+      "arrive"
+     ],
+     [
+      "napkins",
+      "z",
+      "napkin"
+     ]
+    ],
+    "swap": [
+     [
+      "run",
+      "r",
+      "s",
+      "sun"
+     ],
+     [
+      "bag",
+      "b",
+      "s",
+      "sag"
+     ],
+     [
+      "fix",
+      "f",
+      "ch",
+      "chicks"
+     ],
+     [
+      "win",
+      "w",
+      "t",
+      "tin"
+     ],
+     [
+      "not",
+      "n",
+      "p",
+      "pot"
+     ]
+    ],
+    "syll": [
+     [
+      "snowball",
+      "snow",
+      "ball"
+     ],
+     [
+      "overall",
+      "over",
+      "all"
+     ],
+     [
+      "uphill",
+      "up",
+      "hill"
+     ],
+     [
+      "roadside",
+      "road",
+      "side"
+     ],
+     [
+      "upstairs",
+      "up",
+      "stairs"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -6384,6 +8271,154 @@
     ],
     "words": 131
    },
+   "phrases": {
+    "words": [
+     "pancake",
+     "inside",
+     "explode",
+     "mistake",
+     "invite",
+     "trombone",
+     "cupcake",
+     "sunshine",
+     "implode",
+     "escape"
+    ],
+    "short": [
+     "of the afternoon",
+     "looked completely astonished",
+     "down one side",
+     "by whoever happened",
+     "and had decided"
+    ],
+    "long": [
+     "of a cupcake tray",
+     "Then she cut it",
+     "because everyone else was entering",
+     "into about fifteen pieces",
+     "who had entered mostly"
+    ],
+    "sentences": [
+     "Our class held a cupcake contest in May.",
+     "Mandy made one with a slice of lime set on top.",
+     "Hudson made one about the size of his own fist."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "had",
+      "h",
+      "add"
+     ],
+     [
+      "size",
+      "s",
+      "eyes"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "slid",
+      "s",
+      "lid"
+     ],
+     [
+      "door",
+      "d",
+      "oar"
+     ]
+    ],
+    "chop": [
+     [
+      "size",
+      "z",
+      "sigh"
+     ],
+     [
+      "agreed",
+      "d",
+      "agree"
+     ],
+     [
+      "made",
+      "d",
+      "may"
+     ],
+     [
+      "picked",
+      "t",
+      "pick"
+     ],
+     [
+      "looked",
+      "t",
+      "look"
+     ]
+    ],
+    "swap": [
+     [
+      "fist",
+      "f",
+      "m",
+      "missed"
+     ],
+     [
+      "pig",
+      "p",
+      "d",
+      "dig"
+     ],
+     [
+      "had",
+      "h",
+      "m",
+      "mad"
+     ],
+     [
+      "size",
+      "s",
+      "r",
+      "rise"
+     ],
+     [
+      "bed",
+      "b",
+      "s",
+      "said"
+     ]
+    ],
+    "syll": [
+     [
+      "runoff",
+      "run",
+      "off"
+     ],
+     [
+      "streetcar",
+      "street",
+      "car"
+     ],
+     [
+      "person",
+      "per",
+      "son"
+     ],
+     [
+      "countryside",
+      "country",
+      "side"
+     ],
+     [
+      "upstairs",
+      "up",
+      "stairs"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "and",
@@ -6880,6 +8915,154 @@
      "It turned out to be a perfectly good tent. It had just been packed in a hurry at the end of last summer and left that way for a year."
     ],
     "words": 140
+   },
+   "phrases": {
+    "words": [
+     "nonstop",
+     "unlock",
+     "nonfat",
+     "unzip",
+     "nonsense",
+     "undo",
+     "nonfiction",
+     "unfit",
+     "nonstick",
+     "unpack"
+    ],
+    "short": [
+     "looked like something",
+     "for a year",
+     "when it came",
+     "and a bag",
+     "in a hurry"
+    ],
+    "long": [
+     "Ross said it was unfit",
+     "and pegged the corners one",
+     "on the roof box",
+     "which is the rule",
+     "to be a perfectly good tent"
+    ],
+    "sentences": [
+     "I undid the straps on the roof box.",
+     "Ross said it was unfit for a dog.",
+     "It turned out to be a perfectly good tent."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "had",
+      "h",
+      "add"
+     ],
+     [
+      "sat",
+      "s",
+      "at"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "told",
+      "t",
+      "old"
+     ]
+    ],
+    "chop": [
+     [
+      "hauled",
+      "d",
+      "haul"
+     ],
+     [
+      "tent",
+      "t",
+      "ten"
+     ],
+     [
+      "straps",
+      "s",
+      "strap"
+     ],
+     [
+      "things",
+      "z",
+      "thing"
+     ],
+     [
+      "told",
+      "d",
+      "toll"
+     ]
+    ],
+    "swap": [
+     [
+      "one",
+      "w",
+      "s",
+      "sun"
+     ],
+     [
+      "came",
+      "k",
+      "sh",
+      "shame"
+     ],
+     [
+      "mop",
+      "m",
+      "h",
+      "hop"
+     ],
+     [
+      "year",
+      "y",
+      "f",
+      "fear"
+     ],
+     [
+      "hop",
+      "h",
+      "m",
+      "mop"
+     ]
+    ],
+    "syll": [
+     [
+      "hillside",
+      "hill",
+      "side"
+     ],
+     [
+      "mailbox",
+      "mail",
+      "box"
+     ],
+     [
+      "bedtime",
+      "bed",
+      "time"
+     ],
+     [
+      "roadside",
+      "road",
+      "side"
+     ],
+     [
+      "pancake",
+      "pan",
+      "cake"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -7378,6 +9561,153 @@
     ],
     "words": 130
    },
+   "phrases": {
+    "words": [
+     "sing",
+     "bank",
+     "ring",
+     "pink",
+     "long",
+     "sink",
+     "king",
+     "think",
+     "song",
+     "drink"
+    ],
+    "short": [
+     "to be worried",
+     "down the back",
+     "in the pockets",
+     "of the chair",
+     "for a moment"
+    ],
+    "long": [
+     "when I ran the tap",
+     "and then she moved the tin",
+     "when they are trying not",
+     "Gran keeps her pink ring",
+     "than I have been alive"
+    ],
+    "sentences": [
+     "On Sunday the tin was empty.",
+     "Gran thanked me about six times."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "sink",
+      "s",
+      "ink"
+     ],
+     [
+      "still",
+      "s",
+      "till"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ],
+     [
+      "coats",
+      "k",
+      "oats"
+     ],
+     [
+      "pink",
+      "p",
+      "ink"
+     ]
+    ],
+    "chop": [
+     [
+      "sink",
+      "k",
+      "sing"
+     ],
+     [
+      "time",
+      "m",
+      "tie"
+     ],
+     [
+      "light",
+      "t",
+      "lie"
+     ],
+     [
+      "coats",
+      "s",
+      "coat"
+     ],
+     [
+      "shelf",
+      "f",
+      "shell"
+     ]
+    ],
+    "swap": [
+     [
+      "ring",
+      "r",
+      "k",
+      "king"
+     ],
+     [
+      "check",
+      "ch",
+      "d",
+      "deck"
+     ],
+     [
+      "sink",
+      "s",
+      "p",
+      "pink"
+     ],
+     [
+      "very",
+      "v",
+      "b",
+      "berry"
+     ],
+     [
+      "heard",
+      "h",
+      "b",
+      "bird"
+     ]
+    ],
+    "syll": [
+     [
+      "cupcake",
+      "cup",
+      "cake"
+     ],
+     [
+      "snowball",
+      "snow",
+      "ball"
+     ],
+     [
+      "countryside",
+      "country",
+      "side"
+     ],
+     [
+      "undermine",
+      "under",
+      "mine"
+     ],
+     [
+      "wartime",
+      "war",
+      "time"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "was",
@@ -7874,6 +10204,154 @@
      "It came out in one go. Sky stopped crying before I had even put it down, and by the afternoon she was tearing around the yard as though Friday had never happened."
     ],
     "words": 132
+   },
+   "phrases": {
+    "words": [
+     "fly",
+     "cry",
+     "my",
+     "try",
+     "sky",
+     "candy",
+     "happy",
+     "baby",
+     "funny",
+     "puppy"
+    ],
+    "short": [
+     "and a spoonful",
+     "She is shy",
+     "than a grain",
+     "of the pad",
+     "and found it"
+    ],
+    "long": [
+     "into the soft part",
+     "by the afternoon she was tearing",
+     "I took her a dry towel",
+     "before I had even put it",
+     "and normally the happiest animal"
+    ],
+    "sentences": [
+     "My puppy is called Sky.",
+     "She would not eat and she would not settle.",
+     "It came out in one go."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "fly",
+      "f",
+      "lie"
+     ],
+     [
+      "had",
+      "h",
+      "add"
+     ],
+     [
+      "grain",
+      "g",
+      "rain"
+     ],
+     [
+      "dash",
+      "d",
+      "ash"
+     ],
+     [
+      "cried",
+      "k",
+      "ride"
+     ]
+    ],
+    "chop": [
+     [
+      "grain",
+      "n",
+      "grey"
+     ],
+     [
+      "cried",
+      "d",
+      "cry"
+     ],
+     [
+      "pushed",
+      "t",
+      "push"
+     ],
+     [
+      "house",
+      "s",
+      "how"
+     ],
+     [
+      "strangers",
+      "z",
+      "stranger"
+     ]
+    ],
+    "swap": [
+     [
+      "took",
+      "t",
+      "k",
+      "cook"
+     ],
+     [
+      "fix",
+      "f",
+      "s",
+      "six"
+     ],
+     [
+      "water",
+      "w",
+      "d",
+      "daughter"
+     ],
+     [
+      "from",
+      "f",
+      "d",
+      "drum"
+     ],
+     [
+      "thin",
+      "th",
+      "w",
+      "win"
+     ]
+    ],
+    "syll": [
+     [
+      "upside",
+      "up",
+      "side"
+     ],
+     [
+      "undermine",
+      "under",
+      "mine"
+     ],
+     [
+      "underside",
+      "under",
+      "side"
+     ],
+     [
+      "something",
+      "some",
+      "thing"
+     ],
+     [
+      "overall",
+      "over",
+      "all"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -8372,6 +10850,154 @@
     ],
     "words": 138
    },
+   "phrases": {
+    "words": [
+     "duck",
+     "catch",
+     "back",
+     "match",
+     "sock",
+     "watch",
+     "neck",
+     "pitch",
+     "rock",
+     "witch"
+    ],
+    "short": [
+     "and knows it",
+     "with the bat",
+     "around the yard",
+     "over the hedge",
+     "from the end"
+    ],
+    "long": [
+     "who is not allowed",
+     "Mitch says it counts",
+     "We chased him twice",
+     "The argument is still going",
+     "He does this every single game"
+    ],
+    "sentences": [
+     "Jack stepped up with the bat on Saturday and missed the first two completely.",
+     "He does this every single game and then acts surprised about it.",
+     "We chased him twice around the yard and gave up."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "block",
+      "b",
+      "lock"
+     ],
+     [
+      "hedge",
+      "h",
+      "edge"
+     ],
+     [
+      "still",
+      "s",
+      "till"
+     ],
+     [
+      "ball",
+      "b",
+      "all"
+     ],
+     [
+      "bat",
+      "b",
+      "at"
+     ]
+    ],
+    "chop": [
+     [
+      "counts",
+      "s",
+      "count"
+     ],
+     [
+      "stepped",
+      "t",
+      "step"
+     ],
+     [
+      "same",
+      "m",
+      "say"
+     ],
+     [
+      "knows",
+      "z",
+      "no"
+     ],
+     [
+      "chased",
+      "t",
+      "chase"
+     ]
+    ],
+    "swap": [
+     [
+      "hop",
+      "h",
+      "m",
+      "mop"
+     ],
+     [
+      "not",
+      "n",
+      "p",
+      "pot"
+     ],
+     [
+      "witch",
+      "w",
+      "p",
+      "pitch"
+     ],
+     [
+      "first",
+      "f",
+      "w",
+      "worst"
+     ],
+     [
+      "hen",
+      "h",
+      "th",
+      "then"
+     ]
+    ],
+    "syll": [
+     [
+      "feedback",
+      "feed",
+      "back"
+     ],
+     [
+      "horseback",
+      "horse",
+      "back"
+     ],
+     [
+      "snowball",
+      "snow",
+      "ball"
+     ],
+     [
+      "person",
+      "per",
+      "son"
+     ],
+     [
+      "understand",
+      "under",
+      "stand"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "bat",
@@ -8868,6 +11494,154 @@
      "They sat together in the barn for an hour while the storm worked itself out. By the time they walked back across the yard, the sky had gone clear."
     ],
     "words": 125
+   },
+   "phrases": {
+    "words": [
+     "car",
+     "corn",
+     "star",
+     "fork",
+     "farm",
+     "horn",
+     "hard",
+     "born",
+     "park",
+     "short"
+    ],
+    "short": [
+     "They sat together",
+     "with the corn",
+     "and entirely unhurt",
+     "in the yard",
+     "from somewhere underneath"
+    ],
+    "long": [
+     "when he heard a short",
+     "of the rain arrived",
+     "The cart was still standing",
+     "to lift the cart far enough",
+     "to get the door shut"
+    ],
+    "sentences": [
+     "Mark ran for the barn to get the door shut.",
+     "The cart was still standing in the yard with the corn on it, uncovered.",
+     "It took both hands and all his strength to lift the cart far enough."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "had",
+      "h",
+      "add"
+     ],
+     [
+      "still",
+      "s",
+      "till"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "dash",
+      "d",
+      "ash"
+     ],
+     [
+      "door",
+      "d",
+      "oar"
+     ]
+    ],
+    "chop": [
+     [
+      "trees",
+      "z",
+      "tree"
+     ],
+     [
+      "bark",
+      "k",
+      "bar"
+     ],
+     [
+      "worked",
+      "t",
+      "work"
+     ],
+     [
+      "hear",
+      "r",
+      "he"
+     ],
+     [
+      "side",
+      "d",
+      "sigh"
+     ]
+    ],
+    "swap": [
+     [
+      "walked",
+      "w",
+      "t",
+      "talked"
+     ],
+     [
+      "sharp",
+      "sh",
+      "t",
+      "tarp"
+     ],
+     [
+      "pot",
+      "p",
+      "sh",
+      "shot"
+     ],
+     [
+      "horn",
+      "h",
+      "k",
+      "corn"
+     ],
+     [
+      "short",
+      "sh",
+      "s",
+      "sort"
+     ]
+    ],
+    "syll": [
+     [
+      "underwater",
+      "under",
+      "water"
+     ],
+     [
+      "upstairs",
+      "up",
+      "stairs"
+     ],
+     [
+      "anything",
+      "any",
+      "thing"
+     ],
+     [
+      "alongside",
+      "along",
+      "side"
+     ],
+     [
+      "wartime",
+      "war",
+      "time"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -9366,6 +12140,154 @@
     ],
     "words": 132
    },
+   "phrases": {
+    "words": [
+     "rain",
+     "play",
+     "train",
+     "stay",
+     "paint",
+     "day",
+     "mail",
+     "tray",
+     "wait",
+     "gray"
+    ],
+    "short": [
+     "with a rake",
+     "The sun came",
+     "of them complained",
+     "and not one",
+     "to their knees"
+    ],
+    "long": [
+     "until there was a dry way",
+     "and did not stop",
+     "so she went home",
+     "They worked along the trail",
+     "to it had turned"
+    ],
+    "sentences": [
+     "By morning the field was a swamp.",
+     "The coach said the game might be called off.",
+     "Ray arrived ten minutes later dragging a bag of sand."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "had",
+      "h",
+      "add"
+     ],
+     [
+      "dash",
+      "d",
+      "ash"
+     ],
+     [
+      "trail",
+      "t",
+      "rail"
+     ],
+     [
+      "rake",
+      "r",
+      "ache"
+     ],
+     [
+      "there",
+      "th",
+      "air"
+     ]
+    ],
+    "chop": [
+     [
+      "trail",
+      "l",
+      "tray"
+     ],
+     [
+      "field",
+      "d",
+      "feel"
+     ],
+     [
+      "called",
+      "d",
+      "call"
+     ],
+     [
+      "shoes",
+      "z",
+      "shoe"
+     ],
+     [
+      "paint",
+      "t",
+      "pane"
+     ]
+    ],
+    "swap": [
+     [
+      "thick",
+      "th",
+      "p",
+      "pick"
+     ],
+     [
+      "had",
+      "h",
+      "m",
+      "mad"
+     ],
+     [
+      "dash",
+      "d",
+      "k",
+      "cash"
+     ],
+     [
+      "game",
+      "g",
+      "k",
+      "came"
+     ],
+     [
+      "whole",
+      "h",
+      "t",
+      "toll"
+     ]
+    ],
+    "syll": [
+     [
+      "halfway",
+      "half",
+      "way"
+     ],
+     [
+      "hillside",
+      "hill",
+      "side"
+     ],
+     [
+      "underworld",
+      "under",
+      "world"
+     ],
+     [
+      "wartime",
+      "war",
+      "time"
+     ],
+     [
+      "underlying",
+      "under",
+      "lying"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "block",
@@ -9862,6 +12784,154 @@
      "They labelled each one with tape and a marker. Dean wanted to call them all Steve. Lee talked him out of it."
     ],
     "words": 132
+   },
+   "phrases": {
+    "words": [
+     "eat",
+     "feet",
+     "read",
+     "tree",
+     "team",
+     "green",
+     "beach",
+     "sleep",
+     "dream",
+     "three"
+    ],
+    "short": [
+     "and then another",
+     "and a bag",
+     "They need heat",
+     "and a marker",
+     "through the dirt"
+    ],
+    "long": [
+     "So they carried the whole tray",
+     "and watered them every day",
+     "They planted one seed",
+     "For two weeks nothing happened",
+     "to call them all Steve"
+    ],
+    "sentences": [
+     "They planted one seed in each pot and watered them every day without fail.",
+     "For two weeks nothing happened at all.",
+     "The dirt just sat there looking like dirt."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "grow",
+      "g",
+      "row"
+     ],
+     [
+      "sat",
+      "s",
+      "at"
+     ],
+     [
+      "had",
+      "h",
+      "add"
+     ],
+     [
+      "heat",
+      "h",
+      "eat"
+     ],
+     [
+      "dash",
+      "d",
+      "ash"
+     ]
+    ],
+    "chop": [
+     [
+      "seeds",
+      "z",
+      "seed"
+     ],
+     [
+      "watered",
+      "d",
+      "water"
+     ],
+     [
+      "seed",
+      "d",
+      "sea"
+     ],
+     [
+      "heat",
+      "t",
+      "he"
+     ],
+     [
+      "bean",
+      "n",
+      "bee"
+     ]
+    ],
+    "swap": [
+     [
+      "shop",
+      "sh",
+      "m",
+      "mop"
+     ],
+     [
+      "grow",
+      "g",
+      "th",
+      "throw"
+     ],
+     [
+      "tray",
+      "t",
+      "g",
+      "gray"
+     ],
+     [
+      "then",
+      "th",
+      "h",
+      "hen"
+     ],
+     [
+      "whole",
+      "h",
+      "b",
+      "bowl"
+     ]
+    ],
+    "syll": [
+     [
+      "roadside",
+      "road",
+      "side"
+     ],
+     [
+      "lighthouse",
+      "light",
+      "house"
+     ],
+     [
+      "something",
+      "some",
+      "thing"
+     ],
+     [
+      "underlying",
+      "under",
+      "lying"
+     ],
+     [
+      "outside",
+      "out",
+      "side"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -10360,6 +13430,154 @@
     ],
     "words": 138
    },
+   "phrases": {
+    "words": [
+     "boat",
+     "snow",
+     "coat",
+     "show",
+     "road",
+     "grow",
+     "soap",
+     "slow",
+     "goat",
+     "blow"
+    ],
+    "short": [
+     "It had taken",
+     "at a time",
+     "to the bank",
+     "The goat bolted",
+     "to it now"
+    ],
+    "long": [
+     "She liked having time",
+     "talking quietly the whole",
+     "and showed no sign",
+     "Joan's boat was the slowest",
+     "so the goat would hold still"
+    ],
+    "sentences": [
+     "She liked having time to look at things.",
+     "She rowed out after breakfast with a crow riding on the bow.",
+     "It had clearly been struggling for a while."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "slow",
+      "s",
+      "low"
+     ],
+     [
+      "dash",
+      "d",
+      "ash"
+     ],
+     [
+      "grow",
+      "g",
+      "row"
+     ],
+     [
+      "slowest",
+      "s",
+      "lowest"
+     ]
+    ],
+    "chop": [
+     [
+      "goat",
+      "t",
+      "go"
+     ],
+     [
+      "moved",
+      "d",
+      "move"
+     ],
+     [
+      "slope",
+      "p",
+      "slow"
+     ],
+     [
+      "plans",
+      "z",
+      "plan"
+     ],
+     [
+      "change",
+      "j",
+      "chain"
+     ]
+    ],
+    "swap": [
+     [
+      "goat",
+      "g",
+      "b",
+      "boat"
+     ],
+     [
+      "cat",
+      "k",
+      "p",
+      "pat"
+     ],
+     [
+      "slow",
+      "s",
+      "b",
+      "blow"
+     ],
+     [
+      "riding",
+      "r",
+      "h",
+      "hiding"
+     ],
+     [
+      "dash",
+      "d",
+      "m",
+      "mash"
+     ]
+    ],
+    "syll": [
+     [
+      "hallway",
+      "hall",
+      "way"
+     ],
+     [
+      "anyway",
+      "any",
+      "way"
+     ],
+     [
+      "lighthouse",
+      "light",
+      "house"
+     ],
+     [
+      "something",
+      "some",
+      "thing"
+     ],
+     [
+      "feedback",
+      "feed",
+      "back"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "crow",
@@ -10856,6 +14074,153 @@
      "Mr Finch did not shout. He folded a blanket over its back, took hold of the rope, and walked it the whole mile home without once letting go."
     ],
     "words": 126
+   },
+   "phrases": {
+    "words": [
+     "child",
+     "find",
+     "old",
+     "roll",
+     "bolt",
+     "most",
+     "wild",
+     "kind",
+     "cold",
+     "toll"
+    ],
+    "short": [
+     "and entirely unbothered",
+     "by the road",
+     "in the ditch",
+     "of the rope",
+     "and was gone"
+    ],
+    "long": [
+     "When the nights started getting cold",
+     "Mr Finch did not shout",
+     "before anybody heard a thing",
+     "without once letting go",
+     "He folded a blanket"
+    ],
+    "sentences": [
+     "Mr Finch agreed, which was the easy part.",
+     "Mr Finch did not shout."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "dash",
+      "d",
+      "ash"
+     ],
+     [
+      "gold",
+      "g",
+      "old"
+     ],
+     [
+      "hold",
+      "h",
+      "old"
+     ],
+     [
+      "told",
+      "t",
+      "old"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ]
+    ],
+    "chop": [
+     [
+      "barn",
+      "n",
+      "bar"
+     ],
+     [
+      "gold",
+      "d",
+      "goal"
+     ],
+     [
+      "hold",
+      "d",
+      "whole"
+     ],
+     [
+      "mile",
+      "l",
+      "my"
+     ],
+     [
+      "told",
+      "d",
+      "toll"
+     ]
+    ],
+    "swap": [
+     [
+      "night",
+      "n",
+      "s",
+      "cite"
+     ],
+     [
+      "dash",
+      "d",
+      "m",
+      "mash"
+     ],
+     [
+      "pig",
+      "p",
+      "d",
+      "dig"
+     ],
+     [
+      "heard",
+      "h",
+      "th",
+      "third"
+     ],
+     [
+      "thing",
+      "th",
+      "r",
+      "ring"
+     ]
+    ],
+    "syll": [
+     [
+      "cardboard",
+      "card",
+      "board"
+     ],
+     [
+      "anything",
+      "any",
+      "thing"
+     ],
+     [
+      "wildcat",
+      "wild",
+      "cat"
+     ],
+     [
+      "cupcake",
+      "cup",
+      "cake"
+     ],
+     [
+      "haircut",
+      "hair",
+      "cut"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -11354,6 +14719,154 @@
     ],
     "words": 142
    },
+   "phrases": {
+    "words": [
+     "night",
+     "knee",
+     "write",
+     "light",
+     "knot",
+     "wrap",
+     "right",
+     "know",
+     "wrist",
+     "sight"
+    ],
+    "short": [
+     "without saying anything",
+     "in the middle",
+     "of an hour",
+     "for his birthday",
+     "It came undone"
+    ],
+    "long": [
+     "and found the one loop",
+     "That night he hung it high",
+     "in about four seconds",
+     "on his bedroom wall",
+     "and could not fly it"
+    ],
+    "sentences": [
+     "Mom has a knack with string.",
+     "It came undone in about four seconds, which Dwight has still not entirely forgiven.",
+     "He wrote his name along the spine of the kite in black marker."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "spine",
+      "s",
+      "pine"
+     ],
+     [
+      "fly",
+      "f",
+      "lie"
+     ],
+     [
+      "there",
+      "th",
+      "air"
+     ],
+     [
+      "still",
+      "s",
+      "till"
+     ],
+     [
+      "turned",
+      "t",
+      "earned"
+     ]
+    ],
+    "chop": [
+     [
+      "worked",
+      "t",
+      "work"
+     ],
+     [
+      "wrote",
+      "t",
+      "row"
+     ],
+     [
+      "turned",
+      "d",
+      "turn"
+     ],
+     [
+      "sight",
+      "t",
+      "sigh"
+     ],
+     [
+      "size",
+      "z",
+      "sigh"
+     ]
+    ],
+    "swap": [
+     [
+      "sock",
+      "s",
+      "r",
+      "rock"
+     ],
+     [
+      "wish",
+      "w",
+      "d",
+      "dish"
+     ],
+     [
+      "went",
+      "w",
+      "b",
+      "bent"
+     ],
+     [
+      "shop",
+      "sh",
+      "h",
+      "hop"
+     ],
+     [
+      "net",
+      "n",
+      "j",
+      "jet"
+     ]
+    ],
+    "syll": [
+     [
+      "fortnight",
+      "fort",
+      "night"
+     ],
+     [
+      "landholding",
+      "land",
+      "holding"
+     ],
+     [
+      "overload",
+      "over",
+      "load"
+     ],
+     [
+      "horseback",
+      "horse",
+      "back"
+     ],
+     [
+      "lifeboat",
+      "life",
+      "boat"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "may",
@@ -11850,6 +15363,154 @@
      "We stood looking at the empty branch for a long moment afterwards. Nobody said anything. There did not seem to be much to say."
     ],
     "words": 130
+   },
+   "phrases": {
+    "words": [
+     "moon",
+     "out",
+     "cow",
+     "book",
+     "cloud",
+     "town",
+     "food",
+     "loud",
+     "now",
+     "look"
+    ],
+    "short": [
+     "out loud instead",
+     "to be much",
+     "in the woods",
+     "and much closer",
+     "over the tops"
+    ],
+    "long": [
+     "and no sound whatsoever",
+     "and did not blink once",
+     "on a low branch",
+     "We found the owl",
+     "An owl can look perfectly sound"
+    ],
+    "sentences": [
+     "Mom made us stand back.",
+     "So we counted out loud instead.",
+     "The owl looked at us the entire time and did not blink once."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "mad",
+      "m",
+      "add"
+     ],
+     [
+      "four",
+      "f",
+      "oar"
+     ],
+     [
+      "feet",
+      "f",
+      "eat"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "ground",
+      "g",
+      "round"
+     ]
+    ],
+    "chop": [
+     [
+      "once",
+      "s",
+      "one"
+     ],
+     [
+      "woods",
+      "z",
+      "wood"
+     ],
+     [
+      "looked",
+      "t",
+      "look"
+     ],
+     [
+      "house",
+      "s",
+      "how"
+     ],
+     [
+      "made",
+      "d",
+      "may"
+     ]
+    ],
+    "swap": [
+     [
+      "thin",
+      "th",
+      "w",
+      "win"
+     ],
+     [
+      "rug",
+      "r",
+      "b",
+      "bug"
+     ],
+     [
+      "should",
+      "sh",
+      "w",
+      "wood"
+     ],
+     [
+      "said",
+      "s",
+      "b",
+      "bed"
+     ],
+     [
+      "dig",
+      "d",
+      "p",
+      "pig"
+     ]
+    ],
+    "syll": [
+     [
+      "underground",
+      "under",
+      "ground"
+     ],
+     [
+      "snowball",
+      "snow",
+      "ball"
+     ],
+     [
+      "cutaway",
+      "cut",
+      "away"
+     ],
+     [
+      "anything",
+      "any",
+      "thing"
+     ],
+     [
+      "cardboard",
+      "card",
+      "board"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -12348,6 +16009,154 @@
     ],
     "words": 121
    },
+   "phrases": {
+    "words": [
+     "carry",
+     "care",
+     "berry",
+     "here",
+     "hurry",
+     "fire",
+     "cherry",
+     "more",
+     "sorry",
+     "store"
+    ],
+    "short": [
+     "with both hands",
+     "on the stove",
+     "and carried it",
+     "from the garden",
+     "of an hour"
+    ],
+    "long": [
+     "They stirred the berries",
+     "of the jar went",
+     "in this house can get",
+     "The bush is still there",
+     "Perry filled a jar"
+    ],
+    "sentences": [
+     "The whole kitchen smelled sweet enough to notice from the garden.",
+     "Perry was really sorry when the last of the jar went.",
+     "He stood looking into it as though more might appear."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "told",
+      "t",
+      "old"
+     ],
+     [
+      "more",
+      "m",
+      "oar"
+     ],
+     [
+      "still",
+      "s",
+      "till"
+     ],
+     [
+      "dash",
+      "d",
+      "ash"
+     ],
+     [
+      "store",
+      "s",
+      "tore"
+     ]
+    ],
+    "chop": [
+     [
+      "here",
+      "r",
+      "he"
+     ],
+     [
+      "told",
+      "d",
+      "toll"
+     ],
+     [
+      "stopped",
+      "t",
+      "stop"
+     ],
+     [
+      "failed",
+      "d",
+      "fail"
+     ],
+     [
+      "smelled",
+      "d",
+      "smell"
+     ]
+    ],
+    "swap": [
+     [
+      "sun",
+      "s",
+      "b",
+      "bun"
+     ],
+     [
+      "lap",
+      "l",
+      "g",
+      "gap"
+     ],
+     [
+      "bush",
+      "b",
+      "p",
+      "push"
+     ],
+     [
+      "bed",
+      "b",
+      "sh",
+      "shed"
+     ],
+     [
+      "much",
+      "m",
+      "t",
+      "touch"
+     ]
+    ],
+    "syll": [
+     [
+      "lifeboat",
+      "life",
+      "boat"
+     ],
+     [
+      "classroom",
+      "class",
+      "room"
+     ],
+     [
+      "landholding",
+      "land",
+      "holding"
+     ],
+     [
+      "somehow",
+      "some",
+      "how"
+     ],
+     [
+      "something",
+      "some",
+      "thing"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "than",
@@ -12845,6 +16654,154 @@
     ],
     "words": 149
    },
+   "phrases": {
+    "words": [
+     "hundred",
+     "monster",
+     "pumpkin",
+     "children",
+     "hamster",
+     "dolphin",
+     "sandwich",
+     "pilgrim",
+     "partner",
+     "kingdom"
+    ],
+    "short": [
+     "and a plank",
+     "by a distance",
+     "of a football",
+     "to get it",
+     "and made soup"
+    ],
+    "long": [
+     "on our street plant pumpkins",
+     "Every year the children",
+     "or soft patch anywhere",
+     "Hamish planted one about the size",
+     "to go round every house"
+    ],
+    "sentences": [
+     "Mine came out an absolute monster.",
+     "Hamish planted one about the size of a football.",
+     "The teachers gave him the prize, and they were right to."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "dash",
+      "d",
+      "ash"
+     ],
+     [
+      "sat",
+      "s",
+      "at"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "there",
+      "th",
+      "air"
+     ]
+    ],
+    "chop": [
+     [
+      "like",
+      "k",
+      "lie"
+     ],
+     [
+      "teachers",
+      "z",
+      "teacher"
+     ],
+     [
+      "road",
+      "d",
+      "row"
+     ],
+     [
+      "made",
+      "d",
+      "may"
+     ],
+     [
+      "house",
+      "s",
+      "how"
+     ]
+    ],
+    "swap": [
+     [
+      "rug",
+      "r",
+      "b",
+      "bug"
+     ],
+     [
+      "but",
+      "b",
+      "sh",
+      "shut"
+     ],
+     [
+      "dash",
+      "d",
+      "k",
+      "cash"
+     ],
+     [
+      "sun",
+      "s",
+      "w",
+      "one"
+     ],
+     [
+      "chin",
+      "ch",
+      "w",
+      "win"
+     ]
+    ],
+    "syll": [
+     [
+      "anyway",
+      "any",
+      "way"
+     ],
+     [
+      "bedside",
+      "bed",
+      "side"
+     ],
+     [
+      "copyright",
+      "copy",
+      "right"
+     ],
+     [
+      "pancake",
+      "pan",
+      "cake"
+     ],
+     [
+      "wildlife",
+      "wild",
+      "life"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "mum",
@@ -13255,6 +17212,154 @@
      "Afterwards he said the list had been the most helpful thing in the shed. I have never been so pleased with an envelope."
     ],
     "words": 135
+   },
+   "phrases": {
+    "words": [
+     "helpful",
+     "hopeless",
+     "sadly",
+     "payment",
+     "kindness",
+     "careful",
+     "useless",
+     "quickly",
+     "movement",
+     "darkness"
+    ],
+    "short": [
+     "He worked slowly",
+     "in the shed",
+     "with an envelope",
+     "The nails turned",
+     "on the wall"
+    ],
+    "long": [
+     "which is how he works",
+     "and every tool had a hook",
+     "It was a mess",
+     "and he could not work",
+     "There were six years"
+    ],
+    "sentences": [
+     "Dad had been restless about the shed for a fortnight.",
+     "So I made him a list.",
+     "Three things, written out plainly on the back of an envelope."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "never",
+      "n",
+      "ever"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "turned",
+      "t",
+      "earned"
+     ],
+     [
+      "had",
+      "h",
+      "add"
+     ],
+     [
+      "wall",
+      "w",
+      "all"
+     ]
+    ],
+    "chop": [
+     [
+      "tool",
+      "l",
+      "two"
+     ],
+     [
+      "things",
+      "z",
+      "thing"
+     ],
+     [
+      "turned",
+      "d",
+      "turn"
+     ],
+     [
+      "works",
+      "s",
+      "work"
+     ],
+     [
+      "worked",
+      "t",
+      "work"
+     ]
+    ],
+    "swap": [
+     [
+      "sadly",
+      "s",
+      "b",
+      "badly"
+     ],
+     [
+      "shut",
+      "sh",
+      "b",
+      "but"
+     ],
+     [
+      "cat",
+      "k",
+      "m",
+      "mat"
+     ],
+     [
+      "tool",
+      "t",
+      "k",
+      "cool"
+     ],
+     [
+      "mess",
+      "m",
+      "l",
+      "less"
+     ]
+    ],
+    "syll": [
+     [
+      "nearby",
+      "near",
+      "by"
+     ],
+     [
+      "bedside",
+      "bed",
+      "side"
+     ],
+     [
+      "uphill",
+      "up",
+      "hill"
+     ],
+     [
+      "feedback",
+      "feed",
+      "back"
+     ],
+     [
+      "keynote",
+      "key",
+      "note"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -13753,6 +17858,154 @@
     ],
     "words": 117
    },
+   "phrases": {
+    "words": [
+     "jumped",
+     "broken",
+     "boxes",
+     "fastest",
+     "resting",
+     "dusty",
+     "landed",
+     "frozen",
+     "dishes",
+     "biggest"
+    ],
+    "short": [
+     "behind the school",
+     "The smallest kid",
+     "than the rest",
+     "Bess clapped harder",
+     "on the grass"
+    ],
+    "long": [
+     "and he looked more surprised",
+     "in our class won",
+     "down the steps the day",
+     "without ever making much",
+     "for Bess is nowhere"
+    ],
+    "sentences": [
+     "On Thursday she was limping.",
+     "The smallest kid in our class won, and he looked more surprised than anybody.",
+     "Bess clapped harder than the rest of us put together."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "told",
+      "t",
+      "old"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "leg",
+      "l",
+      "egg"
+     ],
+     [
+      "school",
+      "s",
+      "cool"
+     ],
+     [
+      "track",
+      "t",
+      "rack"
+     ]
+    ],
+    "chop": [
+     [
+      "told",
+      "d",
+      "toll"
+     ],
+     [
+      "looked",
+      "t",
+      "look"
+     ],
+     [
+      "happens",
+      "z",
+      "happen"
+     ],
+     [
+      "week",
+      "k",
+      "we"
+     ],
+     [
+      "clapped",
+      "t",
+      "clap"
+     ]
+    ],
+    "swap": [
+     [
+      "told",
+      "t",
+      "b",
+      "bold"
+     ],
+     [
+      "coming",
+      "k",
+      "h",
+      "humming"
+     ],
+     [
+      "hop",
+      "h",
+      "sh",
+      "shop"
+     ],
+     [
+      "looked",
+      "l",
+      "h",
+      "hooked"
+     ],
+     [
+      "first",
+      "f",
+      "w",
+      "worst"
+     ]
+    ],
+    "syll": [
+     [
+      "nearby",
+      "near",
+      "by"
+     ],
+     [
+      "alongside",
+      "along",
+      "side"
+     ],
+     [
+      "hillside",
+      "hill",
+      "side"
+     ],
+     [
+      "uphill",
+      "up",
+      "hill"
+     ],
+     [
+      "afternoon",
+      "after",
+      "noon"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "careful",
@@ -14249,6 +18502,154 @@
      "It is on my bedroom wall now, bent corner and all. I would not swap it for one that had arrived on time."
     ],
     "words": 127
+   },
+   "phrases": {
+    "words": [
+     "misspell",
+     "postgame",
+     "subway",
+     "mistake",
+     "postpone",
+     "submit",
+     "misstep",
+     "postcard",
+     "subtract",
+     "misplace"
+    ],
+    "short": [
+     "for how long",
+     "across the back",
+     "that had arrived",
+     "of her holiday",
+     "than I was"
+    ],
+    "long": [
+     "Every word was still readable",
+     "and there was a mark",
+     "I would not swap it",
+     "and posted it the same hour",
+     "Gran sent me a postcard"
+    ],
+    "sentences": [
+     "She was more upset about it than I was.",
+     "It turned up eventually, long after she had come home herself.",
+     "Every word was still readable."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "dash",
+      "d",
+      "ash"
+     ],
+     [
+      "still",
+      "s",
+      "till"
+     ],
+     [
+      "had",
+      "h",
+      "add"
+     ],
+     [
+      "more",
+      "m",
+      "oar"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ]
+    ],
+    "chop": [
+     [
+      "misplaced",
+      "t",
+      "misplace"
+     ],
+     [
+      "arrived",
+      "d",
+      "arrive"
+     ],
+     [
+      "might",
+      "t",
+      "my"
+     ],
+     [
+      "weeks",
+      "s",
+      "weak"
+     ],
+     [
+      "turned",
+      "d",
+      "turn"
+     ]
+    ],
+    "swap": [
+     [
+      "dash",
+      "d",
+      "k",
+      "cash"
+     ],
+     [
+      "pot",
+      "p",
+      "n",
+      "not"
+     ],
+     [
+      "hen",
+      "h",
+      "th",
+      "then"
+     ],
+     [
+      "written",
+      "r",
+      "m",
+      "mitten"
+     ],
+     [
+      "come",
+      "k",
+      "s",
+      "sum"
+     ]
+    ],
+    "syll": [
+     [
+      "overload",
+      "over",
+      "load"
+     ],
+     [
+      "daylight",
+      "day",
+      "light"
+     ],
+     [
+      "halfway",
+      "half",
+      "way"
+     ],
+     [
+      "nearby",
+      "near",
+      "by"
+     ],
+     [
+      "footnote",
+      "foot",
+      "note"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -14747,6 +19148,153 @@
     ],
     "words": 110
    },
+   "phrases": {
+    "words": [
+     "hopping",
+     "running",
+     "sitter",
+     "bigger",
+     "stopped",
+     "swimming",
+     "hottest",
+     "skipped",
+     "funny",
+     "shopping"
+    ],
+    "short": [
+     "into the grass",
+     "to the start",
+     "and strictly enforced",
+     "until about halfway",
+     "the whole way"
+    ],
+    "long": [
+     "when he crossed the line",
+     "and began hopping again",
+     "as the rules demand",
+     "grinning the entire time",
+     "down you go back"
+    ],
+    "sentences": [
+     "The rules are simple and strictly enforced.",
+     "He finished last by a long way."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "school",
+      "s",
+      "cool"
+     ],
+     [
+      "still",
+      "s",
+      "till"
+     ],
+     [
+      "dash",
+      "d",
+      "ash"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ],
+     [
+      "leg",
+      "l",
+      "egg"
+     ]
+    ],
+    "chop": [
+     [
+      "crossed",
+      "t",
+      "cross"
+     ],
+     [
+      "holds",
+      "z",
+      "hold"
+     ],
+     [
+      "stopped",
+      "t",
+      "stop"
+     ],
+     [
+      "rules",
+      "z",
+      "rule"
+     ],
+     [
+      "sports",
+      "s",
+      "sport"
+     ]
+    ],
+    "swap": [
+     [
+      "holds",
+      "h",
+      "f",
+      "folds"
+     ],
+     [
+      "fix",
+      "f",
+      "k",
+      "kicks"
+     ],
+     [
+      "ship",
+      "sh",
+      "ch",
+      "chip"
+     ],
+     [
+      "rules",
+      "r",
+      "t",
+      "tools"
+     ],
+     [
+      "jet",
+      "j",
+      "n",
+      "net"
+     ]
+    ],
+    "syll": [
+     [
+      "halfway",
+      "half",
+      "way"
+     ],
+     [
+      "understory",
+      "under",
+      "story"
+     ],
+     [
+      "setback",
+      "set",
+      "back"
+     ],
+     [
+      "undermine",
+      "under",
+      "mine"
+     ],
+     [
+      "sideways",
+      "side",
+      "ways"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "once",
@@ -15243,6 +19791,154 @@
      "My gran says it is a nice story and nothing more. I have never been able to see why a nice story cannot also be a real one."
     ],
     "words": 129
+   },
+   "phrases": {
+    "words": [
+     "city",
+     "gem",
+     "face",
+     "cage",
+     "rice",
+     "giant",
+     "ice",
+     "page",
+     "huge",
+     "gentle"
+    ],
+    "short": [
+     "around the base",
+     "at a time",
+     "In the centre",
+     "The story goes",
+     "of a giant"
+    ],
+    "long": [
+     "I have never been able",
+     "The city sent a gang",
+     "from the ridge himself",
+     "that he carried every stone",
+     "over a single winter"
+    ],
+    "sentences": [
+     "The city sent a gang of men to help with the work.",
+     "By the time they arrived the bridge was finished and the giant had gone.",
+     "My gran says it is a nice story and nothing more."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "bridge",
+      "b",
+      "ridge"
+     ],
+     [
+      "twin",
+      "t",
+      "win"
+     ],
+     [
+      "gran",
+      "g",
+      "ran"
+     ],
+     [
+      "slip",
+      "s",
+      "lip"
+     ],
+     [
+      "snap",
+      "s",
+      "nap"
+     ]
+    ],
+    "chop": [
+     [
+      "leaves",
+      "z",
+      "leave"
+     ],
+     [
+      "base",
+      "s",
+      "bay"
+     ],
+     [
+      "lamp",
+      "p",
+      "lamb"
+     ],
+     [
+      "time",
+      "m",
+      "tie"
+     ],
+     [
+      "belt",
+      "t",
+      "bell"
+     ]
+    ],
+    "swap": [
+     [
+      "face",
+      "f",
+      "b",
+      "base"
+     ],
+     [
+      "real",
+      "r",
+      "m",
+      "meal"
+     ],
+     [
+      "hop",
+      "h",
+      "m",
+      "mop"
+     ],
+     [
+      "bridge",
+      "b",
+      "f",
+      "fridge"
+     ],
+     [
+      "gift",
+      "g",
+      "l",
+      "lift"
+     ]
+    ],
+    "syll": [
+     [
+      "cutaway",
+      "cut",
+      "away"
+     ],
+     [
+      "lighthouse",
+      "light",
+      "house"
+     ],
+     [
+      "streetcar",
+      "street",
+      "car"
+     ],
+     [
+      "understory",
+      "under",
+      "story"
+     ],
+     [
+      "uphold",
+      "up",
+      "hold"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -15741,6 +20437,154 @@
     ],
     "words": 134
    },
+   "phrases": {
+    "words": [
+     "badge",
+     "huge",
+     "bridge",
+     "page",
+     "judge",
+     "stage",
+     "fudge",
+     "large",
+     "edge",
+     "hedge"
+    ],
+    "short": [
+     "of our garden",
+     "in the slightest",
+     "at the edge",
+     "past the lens",
+     "It is blurred"
+    ],
+    "long": [
+     "of the badger is",
+     "We have never once seen it",
+     "There is a badger living",
+     "in this house cares",
+     "and left it there"
+    ],
+    "sentences": [
+     "We have never once seen it.",
+     "For six nights it recorded absolutely nothing except a very bored-looking fox.",
+     "On the seventh the badger walked straight past the lens without glancing at it."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "never",
+      "n",
+      "ever"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ],
+     [
+      "fridge",
+      "f",
+      "ridge"
+     ],
+     [
+      "slip",
+      "s",
+      "lip"
+     ],
+     [
+      "clap",
+      "k",
+      "lap"
+     ]
+    ],
+    "chop": [
+     [
+      "belt",
+      "t",
+      "bell"
+     ],
+     [
+      "past",
+      "t",
+      "pass"
+     ],
+     [
+      "house",
+      "s",
+      "how"
+     ],
+     [
+      "milk",
+      "k",
+      "mill"
+     ],
+     [
+      "seventh",
+      "th",
+      "seven"
+     ]
+    ],
+    "swap": [
+     [
+      "belt",
+      "b",
+      "f",
+      "felt"
+     ],
+     [
+      "lens",
+      "l",
+      "p",
+      "pens"
+     ],
+     [
+      "shop",
+      "sh",
+      "m",
+      "mop"
+     ],
+     [
+      "gap",
+      "g",
+      "l",
+      "lap"
+     ],
+     [
+      "thick",
+      "th",
+      "p",
+      "pick"
+     ]
+    ],
+    "syll": [
+     [
+      "underside",
+      "under",
+      "side"
+     ],
+     [
+      "countryside",
+      "country",
+      "side"
+     ],
+     [
+      "rainstorm",
+      "rain",
+      "storm"
+     ],
+     [
+      "halfway",
+      "half",
+      "way"
+     ],
+     [
+      "something",
+      "some",
+      "thing"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "lamps",
@@ -16238,6 +21082,154 @@
     ],
     "words": 144
    },
+   "phrases": {
+    "words": [
+     "baby",
+     "robot",
+     "music",
+     "spider",
+     "tiger",
+     "paper",
+     "hotel",
+     "siren",
+     "pilot",
+     "tulip"
+    ],
+    "short": [
+     "by the middle",
+     "to like dancing",
+     "It cannot walk",
+     "of a chair",
+     "that a robot"
+    ],
+    "long": [
+     "It has a motor",
+     "My uncle began house a robot",
+     "a silver body made",
+     "that it is a robot",
+     "of August it was finished"
+    ],
+    "sentences": [
+     "It stands about the size of a chair.",
+     "What it can do is rotate slowly on the spot and hum.",
+     "I think it is the finest object I have ever been shown."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "size",
+      "s",
+      "eyes"
+     ],
+     [
+      "twin",
+      "t",
+      "win"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "never",
+      "n",
+      "ever"
+     ]
+    ],
+    "chop": [
+     [
+      "keeps",
+      "s",
+      "keep"
+     ],
+     [
+      "size",
+      "z",
+      "sigh"
+     ],
+     [
+      "finished",
+      "t",
+      "finish"
+     ],
+     [
+      "like",
+      "k",
+      "lie"
+     ],
+     [
+      "happens",
+      "z",
+      "happen"
+     ]
+    ],
+    "swap": [
+     [
+      "size",
+      "s",
+      "l",
+      "lies"
+     ],
+     [
+      "lap",
+      "l",
+      "g",
+      "gap"
+     ],
+     [
+      "bin",
+      "b",
+      "w",
+      "win"
+     ],
+     [
+      "hen",
+      "h",
+      "th",
+      "then"
+     ],
+     [
+      "sun",
+      "s",
+      "w",
+      "one"
+     ]
+    ],
+    "syll": [
+     [
+      "wildlife",
+      "wild",
+      "life"
+     ],
+     [
+      "backbone",
+      "back",
+      "bone"
+     ],
+     [
+      "cupcake",
+      "cup",
+      "cake"
+     ],
+     [
+      "postwar",
+      "post",
+      "war"
+     ],
+     [
+      "basketball",
+      "basket",
+      "ball"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "said",
@@ -16648,6 +21640,154 @@
      "All five of them live in the kitchen now. Nobody in this house has mentioned the house settling since."
     ],
     "words": 137
+   },
+   "phrases": {
+    "words": [
+     "author",
+     "saw",
+     "coin",
+     "boy",
+     "autumn",
+     "claw",
+     "boil",
+     "toy",
+     "August",
+     "draw"
+    ],
+    "short": [
+     "A scratching sound",
+     "with a torch",
+     "of them live",
+     "that had got",
+     "that the fall"
+    ],
+    "long": [
+     "on the first Saturday",
+     "that was unmistakably a small voice",
+     "and found four kittens",
+     "behind the water tank",
+     "then the scratching again"
+    ],
+    "sentences": [
+     "There was a noise in the attic for most of that the fall.",
+     "A scratching sound, then a long pause, then the scratching again.",
+     "I thought they were both avoiding the obvious."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "late",
+      "l",
+      "ate"
+     ],
+     [
+      "brag",
+      "b",
+      "rag"
+     ],
+     [
+      "snap",
+      "s",
+      "nap"
+     ],
+     [
+      "spin",
+      "s",
+      "pin"
+     ],
+     [
+      "slip",
+      "s",
+      "lip"
+     ]
+    ],
+    "chop": [
+     [
+      "pause",
+      "z",
+      "paw"
+     ],
+     [
+      "late",
+      "t",
+      "lay"
+     ],
+     [
+      "torch",
+      "ch",
+      "tore"
+     ],
+     [
+      "house",
+      "s",
+      "how"
+     ],
+     [
+      "makes",
+      "s",
+      "make"
+     ]
+    ],
+    "swap": [
+     [
+      "gift",
+      "g",
+      "sh",
+      "shift"
+     ],
+     [
+      "water",
+      "w",
+      "d",
+      "daughter"
+     ],
+     [
+      "sound",
+      "s",
+      "f",
+      "found"
+     ],
+     [
+      "went",
+      "w",
+      "s",
+      "cent"
+     ],
+     [
+      "pause",
+      "p",
+      "j",
+      "jaws"
+     ]
+    ],
+    "syll": [
+     [
+      "daytime",
+      "day",
+      "time"
+     ],
+     [
+      "alongside",
+      "along",
+      "side"
+     ],
+     [
+      "outweigh",
+      "out",
+      "weigh"
+     ],
+     [
+      "lifeboat",
+      "life",
+      "boat"
+     ],
+     [
+      "pathway",
+      "path",
+      "way"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -17146,6 +22286,154 @@
     ],
     "words": 123
    },
+   "phrases": {
+    "words": [
+     "rain",
+     "play",
+     "break",
+     "they",
+     "eight",
+     "mail",
+     "stay",
+     "great",
+     "weigh",
+     "obey"
+    ],
+    "short": [
+     "for the fields",
+     "under a crate",
+     "by the rain",
+     "by the gate",
+     "to the hens"
+    ],
+    "long": [
+     "not once all day",
+     "He fills them every day",
+     "and it did not stay away",
+     "and let the day pass",
+     "On Monday the sky was gray"
+    ],
+    "sentences": [
+     "He fills them every day before school.",
+     "On Monday the sky was gray by eight.",
+     "Rain came down hard and it did not stay away, not once all day."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "dash",
+      "d",
+      "ash"
+     ],
+     [
+      "trail",
+      "t",
+      "rail"
+     ],
+     [
+      "grain",
+      "g",
+      "rain"
+     ],
+     [
+      "crate",
+      "k",
+      "rate"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ]
+    ],
+    "chop": [
+     [
+      "mail",
+      "l",
+      "may"
+     ],
+     [
+      "once",
+      "s",
+      "one"
+     ],
+     [
+      "lamp",
+      "p",
+      "lamb"
+     ],
+     [
+      "trail",
+      "l",
+      "tray"
+     ],
+     [
+      "holds",
+      "z",
+      "hold"
+     ]
+    ],
+    "swap": [
+     [
+      "dash",
+      "d",
+      "m",
+      "mash"
+     ],
+     [
+      "cub",
+      "k",
+      "t",
+      "tub"
+     ],
+     [
+      "much",
+      "m",
+      "s",
+      "such"
+     ],
+     [
+      "bag",
+      "b",
+      "s",
+      "sag"
+     ],
+     [
+      "fed",
+      "f",
+      "b",
+      "bed"
+     ]
+    ],
+    "syll": [
+     [
+      "somehow",
+      "some",
+      "how"
+     ],
+     [
+      "landholding",
+      "land",
+      "holding"
+     ],
+     [
+      "railroad",
+      "rail",
+      "road"
+     ],
+     [
+      "wartime",
+      "war",
+      "time"
+     ],
+     [
+      "hallway",
+      "hall",
+      "way"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "under",
@@ -17556,6 +22844,154 @@
      "They freed the key from the weeds and went back to the shed together. Dean keeps it on a string around his neck now, and he has not lost it since."
     ],
     "words": 135
+   },
+   "phrases": {
+    "words": [
+     "seat",
+     "feed",
+     "key",
+     "chief",
+     "field",
+     "green",
+     "dream",
+     "money",
+     "piece",
+     "seize"
+    ],
+    "short": [
+     "near his feet",
+     "under a leaf",
+     "from the weeds",
+     "and hid everything",
+     "on a string"
+    ],
+    "long": [
+     "The green grass came",
+     "Then Dean saw a thin gleam",
+     "because he locked the door",
+     "He knows he had it",
+     "by five it was simply gone"
+    ],
+    "sentences": [
+     "Dean lost the key to the shed.",
+     "He went back to the field where he had been that week.",
+     "The green grass came up to his knees and hid everything under it."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "bend",
+      "b",
+      "end"
+     ],
+     [
+      "dash",
+      "d",
+      "ash"
+     ],
+     [
+      "snap",
+      "s",
+      "nap"
+     ],
+     [
+      "seize",
+      "s",
+      "ease"
+     ],
+     [
+      "had",
+      "h",
+      "add"
+     ]
+    ],
+    "chop": [
+     [
+      "sunk",
+      "k",
+      "sung"
+     ],
+     [
+      "seize",
+      "z",
+      "sea"
+     ],
+     [
+      "week",
+      "k",
+      "we"
+     ],
+     [
+      "milk",
+      "k",
+      "mill"
+     ],
+     [
+      "freed",
+      "d",
+      "free"
+     ]
+    ],
+    "swap": [
+     [
+      "bend",
+      "b",
+      "m",
+      "mend"
+     ],
+     [
+      "dash",
+      "d",
+      "m",
+      "mash"
+     ],
+     [
+      "sock",
+      "s",
+      "d",
+      "dock"
+     ],
+     [
+      "dig",
+      "d",
+      "p",
+      "pig"
+     ],
+     [
+      "drum",
+      "d",
+      "f",
+      "from"
+     ]
+    ],
+    "syll": [
+     [
+      "oversight",
+      "over",
+      "sight"
+     ],
+     [
+      "underwater",
+      "under",
+      "water"
+     ],
+     [
+      "understand",
+      "under",
+      "stand"
+     ],
+     [
+      "cardboard",
+      "card",
+      "board"
+     ],
+     [
+      "sawmill",
+      "saw",
+      "mill"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -17968,6 +23404,154 @@
     ],
     "words": 124
    },
+   "phrases": {
+    "words": [
+     "night",
+     "light",
+     "high",
+     "pie",
+     "tie",
+     "my",
+     "try",
+     "sky",
+     "right",
+     "cry"
+    ],
+    "short": [
+     "and he had",
+     "in his hand",
+     "by his feet",
+     "and landed right",
+     "up the slope"
+    ],
+    "long": [
+     "Then a gust came",
+     "up the high hill",
+     "By night the sky was dark",
+     "where the last light caught it",
+     "in a long curve"
+    ],
+    "sentences": [
+     "The wind was light at first.",
+     "Then a gust came up the slope.",
+     "By night the sky was dark and he had to squint."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "mad",
+      "m",
+      "add"
+     ],
+     [
+      "clap",
+      "k",
+      "lap"
+     ],
+     [
+      "hill",
+      "h",
+      "ill"
+     ],
+     [
+      "sat",
+      "s",
+      "at"
+     ],
+     [
+      "bend",
+      "b",
+      "end"
+     ]
+    ],
+    "chop": [
+     [
+      "belt",
+      "t",
+      "bell"
+     ],
+     [
+      "tight",
+      "t",
+      "tie"
+     ],
+     [
+      "rose",
+      "z",
+      "row"
+     ],
+     [
+      "light",
+      "t",
+      "lie"
+     ],
+     [
+      "slope",
+      "p",
+      "slow"
+     ]
+    ],
+    "swap": [
+     [
+      "mad",
+      "m",
+      "h",
+      "had"
+     ],
+     [
+      "belt",
+      "b",
+      "n",
+      "knelt"
+     ],
+     [
+      "rug",
+      "r",
+      "b",
+      "bug"
+     ],
+     [
+      "dig",
+      "d",
+      "p",
+      "pig"
+     ],
+     [
+      "tight",
+      "t",
+      "k",
+      "kite"
+     ]
+    ],
+    "syll": [
+     [
+      "sawmill",
+      "saw",
+      "mill"
+     ],
+     [
+      "starlight",
+      "star",
+      "light"
+     ],
+     [
+      "footnote",
+      "foot",
+      "note"
+     ],
+     [
+      "railroad",
+      "rail",
+      "road"
+     ],
+     [
+      "gateway",
+      "gate",
+      "way"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "now",
@@ -18378,6 +23962,154 @@
      "He got the oats to the pen before the light went. The goats came close, crowding the gate, and ate the whole load between them."
     ],
     "words": 130
+   },
+   "phrases": {
+    "words": [
+     "boat",
+     "coat",
+     "road",
+     "toe",
+     "snow",
+     "grow",
+     "slow",
+     "soap",
+     "goat",
+     "know"
+    ],
+    "short": [
+     "over the top",
+     "to get oats",
+     "to the pen",
+     "crowding the gate",
+     "to the goats"
+    ],
+    "long": [
+     "than he had hoped",
+     "in the far pen",
+     "by dawn it was deep enough",
+     "He got the oats",
+     "on the fresh snow"
+    ],
+    "sentences": [
+     "Joe had to get oats down to the goats in the far pen.",
+     "So he took a rope and the old sled instead.",
+     "The road was slow going all the same."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "gate",
+      "g",
+      "ate"
+     ],
+     [
+      "clap",
+      "k",
+      "lap"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ],
+     [
+      "spin",
+      "s",
+      "pin"
+     ],
+     [
+      "brag",
+      "b",
+      "rag"
+     ]
+    ],
+    "chop": [
+     [
+      "drive",
+      "v",
+      "dry"
+     ],
+     [
+      "rope",
+      "p",
+      "row"
+     ],
+     [
+      "soap",
+      "p",
+      "so"
+     ],
+     [
+      "light",
+      "t",
+      "lie"
+     ],
+     [
+      "goats",
+      "s",
+      "goat"
+     ]
+    ],
+    "swap": [
+     [
+      "much",
+      "m",
+      "t",
+      "touch"
+     ],
+     [
+      "feed",
+      "f",
+      "s",
+      "seed"
+     ],
+     [
+      "come",
+      "k",
+      "h",
+      "hum"
+     ],
+     [
+      "check",
+      "ch",
+      "d",
+      "deck"
+     ],
+     [
+      "gate",
+      "g",
+      "w",
+      "weight"
+     ]
+    ],
+    "syll": [
+     [
+      "bedrock",
+      "bed",
+      "rock"
+     ],
+     [
+      "outweigh",
+      "out",
+      "weigh"
+     ],
+     [
+      "bedtime",
+      "bed",
+      "time"
+     ],
+     [
+      "highway",
+      "high",
+      "way"
+     ],
+     [
+      "upload",
+      "up",
+      "load"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -18790,6 +24522,154 @@
     ],
     "words": 134
    },
+   "phrases": {
+    "words": [
+     "rain",
+     "seat",
+     "boat",
+     "night",
+     "snow",
+     "blue",
+     "key",
+     "pie",
+     "few",
+     "green"
+    ],
+    "short": [
+     "The team met",
+     "by the sea",
+     "on the beach",
+     "in one day",
+     "and back again"
+    ],
+    "long": [
+     "They did not stop",
+     "out the rain came",
+     "and Joe took an oar each",
+     "and nobody had done the trip",
+     "to row the boat"
+    ],
+    "sentences": [
+     "Jean held the rope at the bow.",
+     "Halfway out the rain came down hard and flat.",
+     "By night the team was back on the beach."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "cold",
+      "k",
+      "old"
+     ],
+     [
+      "bend",
+      "b",
+      "end"
+     ],
+     [
+      "beat",
+      "b",
+      "eat"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "few",
+      "f",
+      "you"
+     ]
+    ],
+    "chop": [
+     [
+      "lamp",
+      "p",
+      "lamb"
+     ],
+     [
+      "beat",
+      "t",
+      "bee"
+     ],
+     [
+      "belt",
+      "t",
+      "bell"
+     ],
+     [
+      "liked",
+      "t",
+      "like"
+     ],
+     [
+      "team",
+      "m",
+      "tea"
+     ]
+    ],
+    "swap": [
+     [
+      "fix",
+      "f",
+      "m",
+      "mix"
+     ],
+     [
+      "nest",
+      "n",
+      "ch",
+      "chest"
+     ],
+     [
+      "cold",
+      "k",
+      "h",
+      "hold"
+     ],
+     [
+      "win",
+      "w",
+      "th",
+      "thin"
+     ],
+     [
+      "lamp",
+      "l",
+      "k",
+      "camp"
+     ]
+    ],
+    "syll": [
+     [
+      "rainstorm",
+      "rain",
+      "storm"
+     ],
+     [
+      "underside",
+      "under",
+      "side"
+     ],
+     [
+      "footnote",
+      "foot",
+      "note"
+     ],
+     [
+      "overload",
+      "over",
+      "load"
+     ],
+     [
+      "sawmill",
+      "saw",
+      "mill"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "do",
@@ -19201,6 +25081,154 @@
     ],
     "words": 133
    },
+   "phrases": {
+    "words": [
+     "hoping",
+     "baked",
+     "riding",
+     "cuter",
+     "shiny",
+     "smiled",
+     "making",
+     "latest",
+     "skating",
+     "joking"
+    ],
+    "short": [
+     "to the hall",
+     "so the rest",
+     "as a tray",
+     "and green paper",
+     "in the room"
+    ],
+    "long": [
+     "We are carrying it",
+     "and it was hiding nothing",
+     "Tam was shaping trees",
+     "until somebody had the sense",
+     "to start using a tin lid"
+    ],
+    "sentences": [
+     "I was sticking roofs on.",
+     "After that we lost nothing.",
+     "Every single house on our road was on it, including the empty one."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "slowest",
+      "s",
+      "lowest"
+     ],
+     [
+      "clap",
+      "k",
+      "lap"
+     ],
+     [
+      "bend",
+      "b",
+      "end"
+     ],
+     [
+      "turned",
+      "t",
+      "earned"
+     ],
+     [
+      "spin",
+      "s",
+      "pin"
+     ]
+    ],
+    "chop": [
+     [
+      "turned",
+      "d",
+      "turn"
+     ],
+     [
+      "pushed",
+      "t",
+      "push"
+     ],
+     [
+      "tables",
+      "z",
+      "table"
+     ],
+     [
+      "house",
+      "s",
+      "how"
+     ],
+     [
+      "finished",
+      "t",
+      "finish"
+     ]
+    ],
+    "swap": [
+     [
+      "bag",
+      "b",
+      "s",
+      "sag"
+     ],
+     [
+      "jump",
+      "j",
+      "l",
+      "lump"
+     ],
+     [
+      "sock",
+      "s",
+      "n",
+      "knock"
+     ],
+     [
+      "tin",
+      "t",
+      "th",
+      "thin"
+     ],
+     [
+      "class",
+      "k",
+      "g",
+      "glass"
+     ]
+    ],
+    "syll": [
+     [
+      "understood",
+      "under",
+      "stood"
+     ],
+     [
+      "uphold",
+      "up",
+      "hold"
+     ],
+     [
+      "railroad",
+      "rail",
+      "road"
+     ],
+     [
+      "pancake",
+      "pan",
+      "cake"
+     ],
+     [
+      "cutaway",
+      "cut",
+      "away"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "get",
@@ -19611,6 +25639,152 @@
      "We went out and stood in it and got completely soaked, all four of us, and it remains the happiest I have ever been in a garden."
     ],
     "words": 131
+   },
+   "phrases": {
+    "words": [
+     "cried",
+     "crying",
+     "happier",
+     "babies",
+     "funniest",
+     "tried",
+     "puppies",
+     "dried",
+     "flies",
+     "carried"
+    ],
+    "short": [
+     "on a Friday",
+     "on much longer",
+     "in a garden",
+     "at the edges",
+     "The grass dried"
+    ],
+    "long": [
+     "and studied the sky afterwards",
+     "and it rained properly",
+     "for a whole hour",
+     "than days normally do",
+     "and the days seemed"
+    ],
+    "sentences": [
+     "My little sister took it the most seriously of any of us."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "four",
+      "f",
+      "oar"
+     ],
+     [
+      "tried",
+      "t",
+      "ride"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "cried",
+      "k",
+      "ride"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ]
+    ],
+    "chop": [
+     [
+      "tried",
+      "d",
+      "try"
+     ],
+     [
+      "seemed",
+      "d",
+      "seem"
+     ],
+     [
+      "days",
+      "z",
+      "day"
+     ],
+     [
+      "cried",
+      "d",
+      "cry"
+     ],
+     [
+      "here",
+      "r",
+      "he"
+     ]
+    ],
+    "swap": [
+     [
+      "fix",
+      "f",
+      "s",
+      "six"
+     ],
+     [
+      "shut",
+      "sh",
+      "k",
+      "cut"
+     ],
+     [
+      "four",
+      "f",
+      "d",
+      "door"
+     ],
+     [
+      "pig",
+      "p",
+      "d",
+      "dig"
+     ],
+     [
+      "jump",
+      "j",
+      "l",
+      "lump"
+     ]
+    ],
+    "syll": [
+     [
+      "fortnight",
+      "fort",
+      "night"
+     ],
+     [
+      "topsoil",
+      "tops",
+      "oil"
+     ],
+     [
+      "landholding",
+      "land",
+      "holding"
+     ],
+     [
+      "hillside",
+      "hill",
+      "side"
+     ],
+     [
+      "wishbone",
+      "wish",
+      "bone"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -20109,6 +26283,153 @@
     ],
     "words": 144
    },
+   "phrases": {
+    "words": [
+     "robin",
+     "lemon",
+     "camel",
+     "visit",
+     "river",
+     "wagon",
+     "cabin",
+     "seven",
+     "salad",
+     "planet"
+    ],
+    "short": [
+     "past our heads",
+     "of our shed",
+     "and we went",
+     "under the door",
+     "It would come"
+    ],
+    "long": [
+     "as though we were part",
+     "We finished the painting",
+     "A robin built its nest",
+     "in the first week",
+     "By the second week"
+    ],
+    "sentences": [
+     "After the first fortnight the robin stopped minding us entirely.",
+     "By the second week of June the young had all gone."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "snap",
+      "s",
+      "nap"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ],
+     [
+      "clap",
+      "k",
+      "lap"
+     ],
+     [
+      "twin",
+      "t",
+      "win"
+     ],
+     [
+      "brag",
+      "b",
+      "rag"
+     ]
+    ],
+    "chop": [
+     [
+      "stopped",
+      "t",
+      "stop"
+     ],
+     [
+      "week",
+      "k",
+      "we"
+     ],
+     [
+      "past",
+      "t",
+      "pass"
+     ],
+     [
+      "milk",
+      "k",
+      "mill"
+     ],
+     [
+      "same",
+      "m",
+      "say"
+     ]
+    ],
+    "swap": [
+     [
+      "would",
+      "w",
+      "sh",
+      "should"
+     ],
+     [
+      "win",
+      "w",
+      "th",
+      "thin"
+     ],
+     [
+      "gone",
+      "g",
+      "l",
+      "lawn"
+     ],
+     [
+      "jet",
+      "j",
+      "n",
+      "net"
+     ],
+     [
+      "first",
+      "f",
+      "w",
+      "worst"
+     ]
+    ],
+    "syll": [
+     [
+      "bedrock",
+      "bed",
+      "rock"
+     ],
+     [
+      "underlying",
+      "under",
+      "lying"
+     ],
+     [
+      "fortnight",
+      "fort",
+      "night"
+     ],
+     [
+      "sawmill",
+      "saw",
+      "mill"
+     ],
+     [
+      "lifeboat",
+      "life",
+      "boat"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "should",
@@ -20519,6 +26840,154 @@
      "Dad had been planning to buy a replacement table for the better part of a year. He has not said much about it since."
     ],
     "words": 134
+   },
+   "phrases": {
+    "words": [
+     "table",
+     "circle",
+     "candle",
+     "jungle",
+     "apple",
+     "turtle",
+     "bubble",
+     "bicycle",
+     "handle",
+     "eagle"
+    ],
+    "short": [
+     "and every bottle",
+     "to reach it",
+     "and cost nothing",
+     "of a year",
+     "and pushed it"
+    ],
+    "long": [
+     "under the short leg",
+     "watched this happen twice",
+     "for the better part",
+     "than the other three",
+     "The wobble stopped immediately"
+    ],
+    "sentences": [
+     "One leg is a little shorter than the other three.",
+     "The wobble stopped immediately and has not come back once.",
+     "The whole repair took her about nine seconds and cost nothing at all."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "twin",
+      "t",
+      "win"
+     ],
+     [
+      "leg",
+      "l",
+      "egg"
+     ],
+     [
+      "brag",
+      "b",
+      "rag"
+     ],
+     [
+      "clap",
+      "k",
+      "lap"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ]
+    ],
+    "chop": [
+     [
+      "pushed",
+      "t",
+      "push"
+     ],
+     [
+      "rests",
+      "s",
+      "rest"
+     ],
+     [
+      "stopped",
+      "t",
+      "stop"
+     ],
+     [
+      "seconds",
+      "z",
+      "second"
+     ],
+     [
+      "lamp",
+      "p",
+      "lamb"
+     ]
+    ],
+    "swap": [
+     [
+      "pick",
+      "p",
+      "th",
+      "thick"
+     ],
+     [
+      "jump",
+      "j",
+      "l",
+      "lump"
+     ],
+     [
+      "leg",
+      "l",
+      "k",
+      "keg"
+     ],
+     [
+      "took",
+      "t",
+      "b",
+      "book"
+     ],
+     [
+      "bubble",
+      "b",
+      "d",
+      "double"
+     ]
+    ],
+    "syll": [
+     [
+      "overall",
+      "over",
+      "all"
+     ],
+     [
+      "sidetrack",
+      "side",
+      "track"
+     ],
+     [
+      "horseback",
+      "horse",
+      "back"
+     ],
+     [
+      "cupcake",
+      "cup",
+      "cake"
+     ],
+     [
+      "rainstorm",
+      "rain",
+      "storm"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -21017,6 +27486,153 @@
     ],
     "words": 142
    },
+   "phrases": {
+    "words": [
+     "soda",
+     "about",
+     "banana",
+     "sofa",
+     "lagoon",
+     "panda",
+     "away",
+     "pizza",
+     "zebra",
+     "alarm"
+    ],
+    "short": [
+     "which was fair",
+     "my brother sat",
+     "and a bottle",
+     "at the gate",
+     "from the start"
+    ],
+    "long": [
+     "and simply kept going",
+     "on a low wall",
+     "and ate his banana",
+     "About an hour along",
+     "I am well aware"
+    ],
+    "sentences": [
+     "Ahead of us the towpath ran away into the trees and simply kept going.",
+     "Mine lasted the entire way."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "mad",
+      "m",
+      "add"
+     ],
+     [
+      "wall",
+      "w",
+      "all"
+     ],
+     [
+      "told",
+      "t",
+      "old"
+     ],
+     [
+      "brag",
+      "b",
+      "rag"
+     ],
+     [
+      "sat",
+      "s",
+      "at"
+     ]
+    ],
+    "chop": [
+     [
+      "told",
+      "d",
+      "toll"
+     ],
+     [
+      "sort",
+      "t",
+      "sore"
+     ],
+     [
+      "lamp",
+      "p",
+      "lamb"
+     ],
+     [
+      "turns",
+      "z",
+      "turn"
+     ],
+     [
+      "canals",
+      "z",
+      "canal"
+     ]
+    ],
+    "swap": [
+     [
+      "set",
+      "s",
+      "n",
+      "net"
+     ],
+     [
+      "best",
+      "b",
+      "n",
+      "nest"
+     ],
+     [
+      "path",
+      "p",
+      "b",
+      "bath"
+     ],
+     [
+      "mad",
+      "m",
+      "l",
+      "lad"
+     ],
+     [
+      "sun",
+      "s",
+      "b",
+      "bun"
+     ]
+    ],
+    "syll": [
+     [
+      "throughout",
+      "through",
+      "out"
+     ],
+     [
+      "cupcake",
+      "cup",
+      "cake"
+     ],
+     [
+      "daylight",
+      "day",
+      "light"
+     ],
+     [
+      "setback",
+      "set",
+      "back"
+     ],
+     [
+      "sideways",
+      "side",
+      "ways"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "falls",
@@ -21427,6 +28043,154 @@
      "She didn't mind being caught. She said, “I'd have told you months ago. You'd have wanted to come, and they don't take anybody under twelve.”"
     ],
     "words": 123
+   },
+   "phrases": {
+    "words": [
+     "we'll",
+     "it's",
+     "I've",
+     "can't",
+     "I'll",
+     "he's",
+     "you've",
+     "don't",
+     "he'll",
+     "she's"
+    ],
+    "short": [
+     "on Mill Street",
+     "on an apron",
+     "You'd have wanted",
+     "She just says",
+     "on Saturday mornings"
+    ],
+    "long": [
+     "which somehow makes it worse",
+     "wouldn't say a word",
+     "and she went straight",
+     "I don't like not knowing things",
+     "She isn't rude about it"
+    ],
+    "sentences": [
+     "She isn't rude about it, which somehow makes it worse.",
+     "I don't like not knowing things.",
+     "I'd asked Mum twice, and Mum, who clearly does know, wouldn't say a word."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "clap",
+      "k",
+      "lap"
+     ],
+     [
+      "snap",
+      "s",
+      "nap"
+     ],
+     [
+      "spin",
+      "s",
+      "pin"
+     ],
+     [
+      "dash",
+      "d",
+      "ash"
+     ],
+     [
+      "take",
+      "t",
+      "ache"
+     ]
+    ],
+    "chop": [
+     [
+      "makes",
+      "s",
+      "make"
+     ],
+     [
+      "start",
+      "t",
+      "star"
+     ],
+     [
+      "lamp",
+      "p",
+      "lamb"
+     ],
+     [
+      "picks",
+      "s",
+      "pick"
+     ],
+     [
+      "mornings",
+      "z",
+      "morning"
+     ]
+    ],
+    "swap": [
+     [
+      "luck",
+      "l",
+      "d",
+      "duck"
+     ],
+     [
+      "jump",
+      "j",
+      "l",
+      "lump"
+     ],
+     [
+      "makes",
+      "m",
+      "t",
+      "takes"
+     ],
+     [
+      "hand",
+      "h",
+      "s",
+      "sand"
+     ],
+     [
+      "tell",
+      "t",
+      "sh",
+      "shell"
+     ]
+    ],
+    "syll": [
+     [
+      "bedtime",
+      "bed",
+      "time"
+     ],
+     [
+      "sideways",
+      "side",
+      "ways"
+     ],
+     [
+      "horseback",
+      "horse",
+      "back"
+     ],
+     [
+      "copyright",
+      "copy",
+      "right"
+     ],
+     [
+      "pancake",
+      "pan",
+      "cake"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -21925,6 +28689,153 @@
     ],
     "words": 135
    },
+   "phrases": {
+    "words": [
+     "vision",
+     "action",
+     "mansion",
+     "station",
+     "tension",
+     "motion",
+     "mission",
+     "nation",
+     "session",
+     "fiction"
+    ],
+    "short": [
+     "of the office",
+     "for this opinion",
+     "on the platform",
+     "up the line",
+     "that has never"
+    ],
+    "long": [
+     "There was no announcement",
+     "and the train was running late",
+     "Our station is tiny",
+     "in a grey coat announced",
+     "He offered no reason"
+    ],
+    "sentences": [
+     "On Thursday the six o'clock train did not arrive.",
+     "A man in a grey coat announced to everybody that it had been cancelled."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "known",
+      "n",
+      "own"
+     ],
+     [
+      "never",
+      "n",
+      "ever"
+     ],
+     [
+      "spin",
+      "s",
+      "pin"
+     ],
+     [
+      "dash",
+      "d",
+      "ash"
+     ],
+     [
+      "told",
+      "t",
+      "old"
+     ]
+    ],
+    "chop": [
+     [
+      "known",
+      "n",
+      "no"
+     ],
+     [
+      "things",
+      "z",
+      "thing"
+     ],
+     [
+      "stations",
+      "z",
+      "station"
+     ],
+     [
+      "offered",
+      "d",
+      "offer"
+     ],
+     [
+      "told",
+      "d",
+      "toll"
+     ]
+    ],
+    "swap": [
+     [
+      "duck",
+      "d",
+      "l",
+      "luck"
+     ],
+     [
+      "known",
+      "n",
+      "t",
+      "tone"
+     ],
+     [
+      "check",
+      "ch",
+      "n",
+      "neck"
+     ],
+     [
+      "grey",
+      "g",
+      "t",
+      "tray"
+     ],
+     [
+      "shop",
+      "sh",
+      "m",
+      "mop"
+     ]
+    ],
+    "syll": [
+     [
+      "gateway",
+      "gate",
+      "way"
+     ],
+     [
+      "weekday",
+      "week",
+      "day"
+     ],
+     [
+      "lighthouse",
+      "light",
+      "house"
+     ],
+     [
+      "landholding",
+      "land",
+      "holding"
+     ],
+     [
+      "underlying",
+      "under",
+      "lying"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "later",
@@ -22421,6 +29332,154 @@
      "I have gone back every Sunday since then with a notebook. I am still extremely slow. I have not given up and I do not intend to."
     ],
     "words": 141
+   },
+   "phrases": {
+    "words": [
+     "washable",
+     "visible",
+     "artist",
+     "active",
+     "fixable",
+     "possible",
+     "dentist",
+     "native",
+     "readable",
+     "terrible"
+    ],
+    "short": [
+     "and watch her",
+     "in all weather",
+     "on her paper",
+     "with a notebook",
+     "across her knees"
+    ],
+    "long": [
+     "by the market every Sunday morning",
+     "She said it was perfectly teachable",
+     "to say a word",
+     "the lot — appears",
+     "There is an artist who sets"
+    ],
+    "sentences": [
+     "People stop and watch her in a loose half circle.",
+     "I asked her once whether drawing was teachable.",
+     "I have gone back every Sunday since then with a notebook."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "dash",
+      "d",
+      "ash"
+     ],
+     [
+      "teach",
+      "t",
+      "each"
+     ],
+     [
+      "street",
+      "s",
+      "treat"
+     ],
+     [
+      "twin",
+      "t",
+      "win"
+     ],
+     [
+      "snap",
+      "s",
+      "nap"
+     ]
+    ],
+    "chop": [
+     [
+      "teach",
+      "ch",
+      "tea"
+     ],
+     [
+      "sets",
+      "s",
+      "set"
+     ],
+     [
+      "knees",
+      "z",
+      "knee"
+     ],
+     [
+      "once",
+      "s",
+      "one"
+     ],
+     [
+      "belt",
+      "t",
+      "bell"
+     ]
+    ],
+    "swap": [
+     [
+      "fist",
+      "f",
+      "h",
+      "hissed"
+     ],
+     [
+      "pot",
+      "p",
+      "n",
+      "not"
+     ],
+     [
+      "word",
+      "w",
+      "h",
+      "herd"
+     ],
+     [
+      "dash",
+      "d",
+      "m",
+      "mash"
+     ],
+     [
+      "teach",
+      "t",
+      "r",
+      "reach"
+     ]
+    ],
+    "syll": [
+     [
+      "upside",
+      "up",
+      "side"
+     ],
+     [
+      "throughout",
+      "through",
+      "out"
+     ],
+     [
+      "upload",
+      "up",
+      "load"
+     ],
+     [
+      "hillside",
+      "hill",
+      "side"
+     ],
+     [
+      "shipbuilding",
+      "ship",
+      "building"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -22919,6 +29978,154 @@
     ],
     "words": 164
    },
+   "phrases": {
+    "words": [
+     "redo",
+     "preview",
+     "protect",
+     "defrost",
+     "replay",
+     "preheat",
+     "decode",
+     "program",
+     "refill",
+     "recycle"
+    ],
+    "short": [
+     "of us had",
+     "The rematch was",
+     "of a drill",
+     "of the term",
+     "and nobody argued"
+    ],
+    "long": [
+     "having been level the whole way",
+     "We did not win it",
+     "We had not prepared",
+     "which was not bad luck",
+     "The coach said afterwards"
+    ],
+    "sentences": [
+     "For three weeks we trained twice a week.",
+     "The rematch was in the second week of May.",
+     "We did not win it."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "more",
+      "m",
+      "oar"
+     ],
+     [
+      "bad",
+      "b",
+      "add"
+     ],
+     [
+      "clap",
+      "k",
+      "lap"
+     ],
+     [
+      "shout",
+      "sh",
+      "out"
+     ],
+     [
+      "had",
+      "h",
+      "add"
+     ]
+    ],
+    "chop": [
+     [
+      "goal",
+      "l",
+      "go"
+     ],
+     [
+      "week",
+      "k",
+      "we"
+     ],
+     [
+      "seen",
+      "n",
+      "see"
+     ],
+     [
+      "same",
+      "m",
+      "say"
+     ],
+     [
+      "belt",
+      "t",
+      "bell"
+     ]
+    ],
+    "swap": [
+     [
+      "more",
+      "m",
+      "f",
+      "four"
+     ],
+     [
+      "said",
+      "s",
+      "b",
+      "bed"
+     ],
+     [
+      "not",
+      "n",
+      "p",
+      "pot"
+     ],
+     [
+      "term",
+      "t",
+      "w",
+      "worm"
+     ],
+     [
+      "goal",
+      "g",
+      "h",
+      "whole"
+     ]
+    ],
+    "syll": [
+     [
+      "person",
+      "per",
+      "son"
+     ],
+     [
+      "undermine",
+      "under",
+      "mine"
+     ],
+     [
+      "overload",
+      "over",
+      "load"
+     ],
+     [
+      "shipbuilding",
+      "ship",
+      "building"
+     ],
+     [
+      "wartime",
+      "war",
+      "time"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "set",
@@ -23415,6 +30622,153 @@
      "My teacher said the drawing had not been required. Then she said she was glad it was there, and she put the report on the wall."
     ],
     "words": 135
+   },
+   "phrases": {
+    "words": [
+     "form",
+     "transport",
+     "erupt",
+     "describe",
+     "tractor",
+     "inform",
+     "report",
+     "abrupt",
+     "script",
+     "attract"
+    ],
+    "short": [
+     "of a week",
+     "at the time",
+     "The ash went",
+     "of northern Europe",
+     "down the margin"
+    ],
+    "long": [
+     "and I picked the volcano",
+     "I wrote four sections about it",
+     "in a library book",
+     "and then sketched the shape",
+     "and she put the report"
+    ],
+    "sentences": [
+     "Thousands of people could not get home.",
+     "My teacher said the drawing had not been required."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "play",
+      "p",
+      "lay"
+     ],
+     [
+      "bone",
+      "b",
+      "own"
+     ],
+     [
+      "flight",
+      "f",
+      "light"
+     ],
+     [
+      "space",
+      "s",
+      "pace"
+     ],
+     [
+      "slip",
+      "s",
+      "lip"
+     ]
+    ],
+    "chop": [
+     [
+      "note",
+      "t",
+      "no"
+     ],
+     [
+      "wave",
+      "v",
+      "weigh"
+     ],
+     [
+      "flight",
+      "t",
+      "fly"
+     ],
+     [
+      "cube",
+      "b",
+      "queue"
+     ],
+     [
+      "cute",
+      "t",
+      "queue"
+     ]
+    ],
+    "swap": [
+     [
+      "bone",
+      "b",
+      "m",
+      "moan"
+     ],
+     [
+      "note",
+      "n",
+      "v",
+      "vote"
+     ],
+     [
+      "trip",
+      "t",
+      "g",
+      "grip"
+     ],
+     [
+      "better",
+      "b",
+      "l",
+      "letter"
+     ],
+     [
+      "wave",
+      "w",
+      "k",
+      "cave"
+     ]
+    ],
+    "syll": [
+     [
+      "hillside",
+      "hill",
+      "side"
+     ],
+     [
+      "pathway",
+      "path",
+      "way"
+     ],
+     [
+      "payroll",
+      "pay",
+      "roll"
+     ],
+     [
+      "sideways",
+      "side",
+      "ways"
+     ],
+     [
+      "backboard",
+      "back",
+      "board"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -23913,6 +31267,154 @@
     ],
     "words": 147
    },
+   "phrases": {
+    "words": [
+     "reflect",
+     "project",
+     "mission",
+     "inspect",
+     "construct",
+     "deflect",
+     "reject",
+     "submit",
+     "respect",
+     "instruct"
+    ],
+    "short": [
+     "of the structure",
+     "for the argument",
+     "in living memory",
+     "at the bridge",
+     "of the supports"
+    ],
+    "long": [
+     "She found a crack",
+     "to inspect every part",
+     "and forty years old",
+     "that nobody has looked",
+     "The bridge should now stand"
+    ],
+    "sentences": [
+     "An inspector came out to look at the bridge over the river last spring.",
+     "She found a crack in one of the supports.",
+     "The council rejected her first repair plan on cost."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "slip",
+      "s",
+      "lip"
+     ],
+     [
+      "feet",
+      "f",
+      "eat"
+     ],
+     [
+      "had",
+      "h",
+      "add"
+     ],
+     [
+      "crack",
+      "k",
+      "rack"
+     ],
+     [
+      "bake",
+      "b",
+      "ache"
+     ]
+    ],
+    "chop": [
+     [
+      "side",
+      "d",
+      "sigh"
+     ],
+     [
+      "soap",
+      "p",
+      "so"
+     ],
+     [
+      "belt",
+      "t",
+      "bell"
+     ],
+     [
+      "cute",
+      "t",
+      "queue"
+     ],
+     [
+      "bake",
+      "k",
+      "bay"
+     ]
+    ],
+    "swap": [
+     [
+      "should",
+      "sh",
+      "k",
+      "could"
+     ],
+     [
+      "mop",
+      "m",
+      "sh",
+      "shop"
+     ],
+     [
+      "slip",
+      "s",
+      "f",
+      "flip"
+     ],
+     [
+      "feet",
+      "f",
+      "s",
+      "seat"
+     ],
+     [
+      "much",
+      "m",
+      "t",
+      "touch"
+     ]
+    ],
+    "syll": [
+     [
+      "roadway",
+      "road",
+      "way"
+     ],
+     [
+      "roadside",
+      "road",
+      "side"
+     ],
+     [
+      "underlying",
+      "under",
+      "lying"
+     ],
+     [
+      "uphold",
+      "up",
+      "hold"
+     ],
+     [
+      "anyway",
+      "any",
+      "way"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "good",
@@ -24409,6 +31911,154 @@
      "I had never once understood what a conductor was actually for. I understand it now, and I have thought about that day a great deal since."
     ],
     "words": 154
+   },
+   "phrases": {
+    "words": [
+     "audio",
+     "cursive",
+     "produce",
+     "progress",
+     "invert",
+     "video",
+     "audience",
+     "current",
+     "conduct",
+     "graduate"
+    ],
+    "short": [
+     "She spoke quietly",
+     "By the end",
+     "and is not",
+     "which is made",
+     "of about thirty"
+    ],
+    "long": [
+     "that bar was not a mess",
+     "of us had expected",
+     "and she watched everything",
+     "She was not what any",
+     "that day a great deal since"
+    ],
+    "sentences": [
+     "She was not what any of us had expected.",
+     "She did not wave her arms about and she barely raised her voice.",
+     "She spoke quietly, and she watched everything."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "dash",
+      "d",
+      "ash"
+     ],
+     [
+      "beach",
+      "b",
+      "each"
+     ],
+     [
+      "seat",
+      "s",
+      "eat"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ],
+     [
+      "had",
+      "h",
+      "add"
+     ]
+    ],
+    "chop": [
+     [
+      "beach",
+      "ch",
+      "bee"
+     ],
+     [
+      "milk",
+      "k",
+      "mill"
+     ],
+     [
+      "seat",
+      "t",
+      "sea"
+     ],
+     [
+      "time",
+      "m",
+      "tie"
+     ],
+     [
+      "lamp",
+      "p",
+      "lamb"
+     ]
+    ],
+    "swap": [
+     [
+      "jet",
+      "j",
+      "n",
+      "net"
+     ],
+     [
+      "barely",
+      "b",
+      "r",
+      "rarely"
+     ],
+     [
+      "dash",
+      "d",
+      "m",
+      "mash"
+     ],
+     [
+      "rain",
+      "r",
+      "p",
+      "pane"
+     ],
+     [
+      "beach",
+      "b",
+      "p",
+      "peach"
+     ]
+    ],
+    "syll": [
+     [
+      "upside",
+      "up",
+      "side"
+     ],
+     [
+      "format",
+      "form",
+      "at"
+     ],
+     [
+      "roadway",
+      "road",
+      "way"
+     ],
+     [
+      "mailbox",
+      "mail",
+      "box"
+     ],
+     [
+      "understory",
+      "under",
+      "story"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -24907,6 +32557,154 @@
     ],
     "words": 146
    },
+   "phrases": {
+    "words": [
+     "solar",
+     "magic",
+     "famous",
+     "picture",
+     "interstate",
+     "transport",
+     "similar",
+     "music",
+     "nervous",
+     "nature"
+    ],
+    "short": [
+     "for the sacks",
+     "each one labelled",
+     "down the middle",
+     "on every wall",
+     "My favourite thing"
+    ],
+    "long": [
+     "The guide was unusually generous",
+     "and it is remarkable",
+     "It is the one school trip",
+     "She let us ask questions",
+     "We are going back"
+    ],
+    "sentences": [
+     "The transport museum is enormous.",
+     "There is a tram from 1902 that you are allowed to sit in.",
+     "My favourite thing in the museum is the mail van."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "beach",
+      "b",
+      "each"
+     ],
+     [
+      "late",
+      "l",
+      "ate"
+     ],
+     [
+      "twin",
+      "t",
+      "win"
+     ],
+     [
+      "think",
+      "th",
+      "ink"
+     ],
+     [
+      "clap",
+      "k",
+      "lap"
+     ]
+    ],
+    "chop": [
+     [
+      "beach",
+      "ch",
+      "bee"
+     ],
+     [
+      "late",
+      "t",
+      "lay"
+     ],
+     [
+      "guide",
+      "d",
+      "guy"
+     ],
+     [
+      "labelled",
+      "d",
+      "label"
+     ],
+     [
+      "allowed",
+      "d",
+      "allow"
+     ]
+    ],
+    "swap": [
+     [
+      "beach",
+      "b",
+      "p",
+      "peach"
+     ],
+     [
+      "late",
+      "l",
+      "w",
+      "weight"
+     ],
+     [
+      "mop",
+      "m",
+      "h",
+      "hop"
+     ],
+     [
+      "guide",
+      "g",
+      "r",
+      "ride"
+     ],
+     [
+      "paint",
+      "p",
+      "f",
+      "faint"
+     ]
+    ],
+    "syll": [
+     [
+      "nearby",
+      "near",
+      "by"
+     ],
+     [
+      "streetcar",
+      "street",
+      "car"
+     ],
+     [
+      "rainstorm",
+      "rain",
+      "storm"
+     ],
+     [
+      "permission",
+      "per",
+      "mission"
+     ],
+     [
+      "overload",
+      "over",
+      "load"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "on",
@@ -25404,6 +33202,154 @@
     ],
     "words": 141
    },
+   "phrases": {
+    "words": [
+     "neon",
+     "duet",
+     "lion",
+     "poem",
+     "radio",
+     "giant",
+     "diet",
+     "quiet",
+     "video",
+     "piano"
+    ],
+    "short": [
+     "and a half",
+     "on our road",
+     "and say nothing",
+     "on one piece",
+     "Once a year"
+    ],
+    "long": [
+     "She has been there longer",
+     "There is a poet living",
+     "and she will nod",
+     "she reads her poems",
+     "in the post office window"
+    ],
+    "sentences": [
+     "There is a poet living in the end house on our road.",
+     "The room is always completely full.",
+     "She has never once explained a poem afterwards."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "clap",
+      "k",
+      "lap"
+     ],
+     [
+      "block",
+      "b",
+      "lock"
+     ],
+     [
+      "bone",
+      "b",
+      "own"
+     ],
+     [
+      "snap",
+      "s",
+      "nap"
+     ],
+     [
+      "spin",
+      "s",
+      "pin"
+     ]
+    ],
+    "chop": [
+     [
+      "team",
+      "m",
+      "tea"
+     ],
+     [
+      "soap",
+      "p",
+      "so"
+     ],
+     [
+      "pine",
+      "n",
+      "pie"
+     ],
+     [
+      "rose",
+      "z",
+      "row"
+     ],
+     [
+      "note",
+      "t",
+      "no"
+     ]
+    ],
+    "swap": [
+     [
+      "pot",
+      "p",
+      "n",
+      "not"
+     ],
+     [
+      "chest",
+      "ch",
+      "b",
+      "best"
+     ],
+     [
+      "year",
+      "y",
+      "n",
+      "near"
+     ],
+     [
+      "team",
+      "t",
+      "s",
+      "seem"
+     ],
+     [
+      "hard",
+      "h",
+      "y",
+      "yard"
+     ]
+    ],
+    "syll": [
+     [
+      "lighthouse",
+      "light",
+      "house"
+     ],
+     [
+      "lifeboat",
+      "life",
+      "boat"
+     ],
+     [
+      "sawdust",
+      "saw",
+      "dust"
+     ],
+     [
+      "downhill",
+      "down",
+      "hill"
+     ],
+     [
+      "throughout",
+      "through",
+      "out"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "friend",
@@ -25814,6 +33760,154 @@
      "We spent the following week clearing the field. The fruit trees had survived, roots and all, which was the thing everybody had been most worried about."
     ],
     "words": 142
+   },
+   "phrases": {
+    "words": [
+     "ceiling",
+     "eight",
+     "few",
+     "blue",
+     "fruit",
+     "receive",
+     "weigh",
+     "new",
+     "glue",
+     "suit"
+    ],
+    "short": [
+     "at an angle",
+     "of the drive",
+     "for eight days",
+     "over the bank",
+     "across the end"
+    ],
+    "long": [
+     "The fruit trees had survived",
+     "who has lived here longest",
+     "on the sixth day",
+     "to move everything upstairs",
+     "and has seen it"
+    ],
+    "sentences": [
+     "It rained for eight days without a break.",
+     "Nobody in the house slept.",
+     "We spent the following week clearing the field."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "beach",
+      "b",
+      "each"
+     ],
+     [
+      "break",
+      "b",
+      "rake"
+     ],
+     [
+      "cake",
+      "k",
+      "ache"
+     ],
+     [
+      "spin",
+      "s",
+      "pin"
+     ]
+    ],
+    "chop": [
+     [
+      "drive",
+      "v",
+      "dry"
+     ],
+     [
+      "keep",
+      "p",
+      "key"
+     ],
+     [
+      "belt",
+      "t",
+      "bell"
+     ],
+     [
+      "nose",
+      "z",
+      "know"
+     ],
+     [
+      "beach",
+      "ch",
+      "bee"
+     ]
+    ],
+    "swap": [
+     [
+      "net",
+      "n",
+      "j",
+      "jet"
+     ],
+     [
+      "water",
+      "w",
+      "d",
+      "daughter"
+     ],
+     [
+      "win",
+      "w",
+      "th",
+      "thin"
+     ],
+     [
+      "bank",
+      "b",
+      "s",
+      "sank"
+     ],
+     [
+      "fist",
+      "f",
+      "r",
+      "wrist"
+     ]
+    ],
+    "syll": [
+     [
+      "setback",
+      "set",
+      "back"
+     ],
+     [
+      "wildlife",
+      "wild",
+      "life"
+     ],
+     [
+      "daylight",
+      "day",
+      "light"
+     ],
+     [
+      "postwar",
+      "post",
+      "war"
+     ],
+     [
+      "quarterback",
+      "quarter",
+      "back"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -26312,6 +34406,154 @@
     ],
     "words": 153
    },
+   "phrases": {
+    "words": [
+     "blue",
+     "true",
+     "clue",
+     "stew",
+     "few",
+     "new",
+     "grew",
+     "chew",
+     "due",
+     "dew"
+    ],
+    "short": [
+     "Each piece had",
+     "to dry hard",
+     "on the desk",
+     "at a time",
+     "with their hands"
+    ],
+    "long": [
+     "The last drop went",
+     "before the next could go",
+     "She set every part",
+     "up the next part",
+     "when she turned it"
+    ],
+    "sentences": [
+     "Sue had a model to build and almost nothing left to stick it with.",
+     "The shop in town would not have more paste in for three days.",
+     "Each piece had to dry hard before the next could go on top."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "spin",
+      "s",
+      "pin"
+     ],
+     [
+      "seat",
+      "s",
+      "eat"
+     ],
+     [
+      "late",
+      "l",
+      "eight"
+     ],
+     [
+      "turned",
+      "t",
+      "earned"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ]
+    ],
+    "chop": [
+     [
+      "cube",
+      "b",
+      "queue"
+     ],
+     [
+      "soap",
+      "p",
+      "so"
+     ],
+     [
+      "holds",
+      "z",
+      "hold"
+     ],
+     [
+      "paint",
+      "t",
+      "pane"
+     ],
+     [
+      "pine",
+      "n",
+      "pie"
+     ]
+    ],
+    "swap": [
+     [
+      "soap",
+      "s",
+      "h",
+      "hope"
+     ],
+     [
+      "third",
+      "th",
+      "b",
+      "bird"
+     ],
+     [
+      "tape",
+      "t",
+      "sh",
+      "shape"
+     ],
+     [
+      "holds",
+      "h",
+      "f",
+      "folds"
+     ],
+     [
+      "hard",
+      "h",
+      "y",
+      "yard"
+     ]
+    ],
+    "syll": [
+     [
+      "afternoon",
+      "after",
+      "noon"
+     ],
+     [
+      "wartime",
+      "war",
+      "time"
+     ],
+     [
+      "sidetrack",
+      "side",
+      "track"
+     ],
+     [
+      "lighthouse",
+      "light",
+      "house"
+     ],
+     [
+      "overstate",
+      "over",
+      "state"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "without",
@@ -26722,6 +34964,154 @@
      "Dad has not commented on the shelf at any point. He has, however, put three books on it, which in this house counts as a review."
     ],
     "words": 139
+   },
+   "phrases": {
+    "words": [
+     "connect",
+     "illegal",
+     "impossible",
+     "irregular",
+     "compare",
+     "illegible",
+     "impolite",
+     "irresponsible",
+     "combine",
+     "illiterate"
+    ],
+    "short": [
+     "on the shelf",
+     "the shelf went",
+     "marked both ends",
+     "that the shelf",
+     "put three books"
+    ],
+    "long": [
+     "The first hole came",
+     "The second was fine",
+     "It was simply slow",
+     "across it the bubble sat exactly",
+     "when I put the spirit level"
+    ],
+    "sentences": [
+     "He was, as it turned out, incorrect about that.",
+     "None of it was complicated.",
+     "Dad has not commented on the shelf at any point."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "slow",
+      "s",
+      "low"
+     ],
+     [
+      "pair",
+      "p",
+      "air"
+     ],
+     [
+      "slip",
+      "s",
+      "lip"
+     ],
+     [
+      "slightly",
+      "s",
+      "lightly"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ]
+    ],
+    "chop": [
+     [
+      "moved",
+      "d",
+      "move"
+     ],
+     [
+      "team",
+      "m",
+      "tea"
+     ],
+     [
+      "keep",
+      "p",
+      "key"
+     ],
+     [
+      "time",
+      "m",
+      "tie"
+     ],
+     [
+      "wave",
+      "v",
+      "way"
+     ]
+    ],
+    "swap": [
+     [
+      "put",
+      "p",
+      "f",
+      "foot"
+     ],
+     [
+      "rug",
+      "r",
+      "b",
+      "bug"
+     ],
+     [
+      "sun",
+      "s",
+      "n",
+      "none"
+     ],
+     [
+      "slow",
+      "s",
+      "b",
+      "blow"
+     ],
+     [
+      "bag",
+      "b",
+      "s",
+      "sag"
+     ]
+    ],
+    "syll": [
+     [
+      "passport",
+      "pass",
+      "port"
+     ],
+     [
+      "perform",
+      "per",
+      "form"
+     ],
+     [
+      "underwater",
+      "under",
+      "water"
+     ],
+     [
+      "uphill",
+      "up",
+      "hill"
+     ],
+     [
+      "understood",
+      "under",
+      "stood"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -27220,6 +35610,154 @@
     ],
     "words": 153
    },
+   "phrases": {
+    "words": [
+     "special",
+     "musician",
+     "delicious",
+     "partial",
+     "cautious",
+     "social",
+     "magician",
+     "precious",
+     "essential",
+     "ambitious"
+    ],
+    "short": [
+     "A musician moved",
+     "in this town",
+     "It is delicious",
+     "in the evening",
+     "in the spring"
+    ],
+    "long": [
+     "that she practises every single day",
+     "however much they like music",
+     "through the wall is not scales",
+     "with a free concert every evening",
+     "and then pretends she opened it"
+    ],
+    "sentences": [
+     "At first the whole street was suspicious about it.",
+     "She turned out to be an exceptional player.",
+     "What comes through the wall is not scales and it is not practice noise."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "spin",
+      "s",
+      "pin"
+     ],
+     [
+      "play",
+      "p",
+      "lay"
+     ],
+     [
+      "cake",
+      "k",
+      "ache"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ],
+     [
+      "had",
+      "h",
+      "add"
+     ]
+    ],
+    "chop": [
+     [
+      "cute",
+      "t",
+      "queue"
+     ],
+     [
+      "scales",
+      "z",
+      "scale"
+     ],
+     [
+      "milk",
+      "k",
+      "mill"
+     ],
+     [
+      "opens",
+      "z",
+      "open"
+     ],
+     [
+      "worked",
+      "t",
+      "work"
+     ]
+    ],
+    "swap": [
+     [
+      "fist",
+      "f",
+      "m",
+      "missed"
+     ],
+     [
+      "wish",
+      "w",
+      "f",
+      "fish"
+     ],
+     [
+      "cake",
+      "k",
+      "b",
+      "bake"
+     ],
+     [
+      "ship",
+      "sh",
+      "ch",
+      "chip"
+     ],
+     [
+      "bath",
+      "b",
+      "p",
+      "path"
+     ]
+    ],
+    "syll": [
+     [
+      "highway",
+      "high",
+      "way"
+     ],
+     [
+      "sidetrack",
+      "side",
+      "track"
+     ],
+     [
+      "throughout",
+      "through",
+      "out"
+     ],
+     [
+      "undermine",
+      "under",
+      "mine"
+     ],
+     [
+      "format",
+      "form",
+      "at"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "scales",
@@ -27717,6 +36255,154 @@
     ],
     "words": 155
    },
+   "phrases": {
+    "words": [
+     "forgetting",
+     "beginning",
+     "admitted",
+     "omitted",
+     "preferred",
+     "visiting",
+     "opened",
+     "happened",
+     "occurred",
+     "controlled"
+    ],
+    "short": [
+     "Then we set",
+     "in the slightest",
+     "I admitted all",
+     "up a system",
+     "to my teacher"
+    ],
+    "long": [
+     "which took about ten minutes",
+     "She was not upset",
+     "that most people never get",
+     "that the notebook was not magic",
+     "in the second week"
+    ],
+    "sentences": [
+     "I had been forgetting things all term.",
+     "Homework, kit, a library book that was eventually found behind a radiator.",
+     "I admitted all of it to my teacher in the second week of November."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "slip",
+      "s",
+      "lip"
+     ],
+     [
+      "brag",
+      "b",
+      "rag"
+     ],
+     [
+      "bone",
+      "b",
+      "own"
+     ],
+     [
+      "twin",
+      "t",
+      "win"
+     ],
+     [
+      "spin",
+      "s",
+      "pin"
+     ]
+    ],
+    "chop": [
+     [
+      "cube",
+      "b",
+      "queue"
+     ],
+     [
+      "note",
+      "t",
+      "know"
+     ],
+     [
+      "time",
+      "m",
+      "tie"
+     ],
+     [
+      "rose",
+      "z",
+      "row"
+     ],
+     [
+      "keep",
+      "p",
+      "key"
+     ]
+    ],
+    "swap": [
+     [
+      "slip",
+      "s",
+      "k",
+      "clip"
+     ],
+     [
+      "book",
+      "b",
+      "t",
+      "took"
+     ],
+     [
+      "hen",
+      "h",
+      "th",
+      "then"
+     ],
+     [
+      "trip",
+      "t",
+      "g",
+      "grip"
+     ],
+     [
+      "pot",
+      "p",
+      "n",
+      "not"
+     ]
+    ],
+    "syll": [
+     [
+      "nearby",
+      "near",
+      "by"
+     ],
+     [
+      "underworld",
+      "under",
+      "world"
+     ],
+     [
+      "highway",
+      "high",
+      "way"
+     ],
+     [
+      "uphold",
+      "up",
+      "hold"
+     ],
+     [
+      "cupcake",
+      "cup",
+      "cake"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "does",
@@ -28127,6 +36813,153 @@
      "I like that a photograph taken twenty years before I was born can still stop a person halfway down a corridor."
     ],
     "words": 147
+   },
+   "phrases": {
+    "words": [
+     "school",
+     "phone",
+     "chorus",
+     "graph",
+     "echo",
+     "photo",
+     "stomach",
+     "dolphin",
+     "character",
+     "alphabet"
+    ],
+    "short": [
+     "in a river",
+     "of an elephant",
+     "Nobody walks straight",
+     "and this was",
+     "in a print"
+    ],
+    "long": [
+     "in a plain black frame",
+     "There is a large photograph",
+     "of our school hall",
+     "that nobody has ever been able",
+     "the only picture he ever took"
+    ],
+    "sentences": [
+     "People stop in front of it every single day.",
+     "I have watched this happen for four years."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "bone",
+      "b",
+      "own"
+     ],
+     [
+      "slip",
+      "s",
+      "lip"
+     ],
+     [
+      "spin",
+      "s",
+      "pin"
+     ],
+     [
+      "mad",
+      "m",
+      "add"
+     ],
+     [
+      "late",
+      "l",
+      "eight"
+     ]
+    ],
+    "chop": [
+     [
+      "team",
+      "m",
+      "tea"
+     ],
+     [
+      "road",
+      "d",
+      "row"
+     ],
+     [
+      "belt",
+      "t",
+      "bell"
+     ],
+     [
+      "late",
+      "t",
+      "lay"
+     ],
+     [
+      "paint",
+      "t",
+      "pane"
+     ]
+    ],
+    "swap": [
+     [
+      "far",
+      "f",
+      "k",
+      "car"
+     ],
+     [
+      "bone",
+      "b",
+      "f",
+      "phone"
+     ],
+     [
+      "bag",
+      "b",
+      "s",
+      "sag"
+     ],
+     [
+      "team",
+      "t",
+      "s",
+      "seem"
+     ],
+     [
+      "net",
+      "n",
+      "j",
+      "jet"
+     ]
+    ],
+    "syll": [
+     [
+      "upside",
+      "up",
+      "side"
+     ],
+     [
+      "landholding",
+      "land",
+      "holding"
+     ],
+     [
+      "mountainside",
+      "mountain",
+      "side"
+     ],
+     [
+      "nearby",
+      "near",
+      "by"
+     ],
+     [
+      "understory",
+      "under",
+      "story"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -28625,6 +37458,154 @@
     ],
     "words": 138
    },
+   "phrases": {
+    "words": [
+     "myth",
+     "gym",
+     "cyber",
+     "type",
+     "system",
+     "symbol",
+     "style",
+     "nylon",
+     "hydrant",
+     "crystal"
+    ],
+    "short": [
+     "with a crowbar",
+     "of the school",
+     "of the floor",
+     "in our school",
+     "in the slightest"
+    ],
+    "long": [
+     "of fine cracks appeared",
+     "The myth has not altered",
+     "People still tell it",
+     "of an old well",
+     "nobody has ever checked it"
+    ],
+    "sentences": [
+     "Every new pupil hears this within about a week of arriving.",
+     "The myth has not altered in the slightest.",
+     "People still tell it, and since the pipe they tell it rather better."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "cloud",
+      "k",
+      "loud"
+     ],
+     [
+      "haul",
+      "h",
+      "all"
+     ],
+     [
+      "slip",
+      "s",
+      "lip"
+     ],
+     [
+      "phone",
+      "f",
+      "own"
+     ],
+     [
+      "spin",
+      "s",
+      "pin"
+     ]
+    ],
+    "chop": [
+     [
+      "lamp",
+      "p",
+      "lamb"
+     ],
+     [
+      "paint",
+      "t",
+      "pane"
+     ],
+     [
+      "nose",
+      "z",
+      "know"
+     ],
+     [
+      "wave",
+      "v",
+      "weigh"
+     ],
+     [
+      "barn",
+      "n",
+      "bar"
+     ]
+    ],
+    "swap": [
+     [
+      "gym",
+      "j",
+      "r",
+      "rim"
+     ],
+     [
+      "lamp",
+      "l",
+      "d",
+      "damp"
+     ],
+     [
+      "book",
+      "b",
+      "l",
+      "look"
+     ],
+     [
+      "win",
+      "w",
+      "th",
+      "thin"
+     ],
+     [
+      "game",
+      "g",
+      "s",
+      "same"
+     ]
+    ],
+    "syll": [
+     [
+      "upstairs",
+      "up",
+      "stairs"
+     ],
+     [
+      "downhill",
+      "down",
+      "hill"
+     ],
+     [
+      "sawmill",
+      "saw",
+      "mill"
+     ],
+     [
+      "upload",
+      "up",
+      "load"
+     ],
+     [
+      "topsoil",
+      "tops",
+      "oil"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "can",
@@ -29121,6 +38102,154 @@
      "I could watch her do that all afternoon. My sister tells me that on one occasion I did."
     ],
     "words": 145
+   },
+   "phrases": {
+    "words": [
+     "autumn",
+     "psychic",
+     "rhyme",
+     "column",
+     "psalm",
+     "rhino",
+     "hymn",
+     "psychology",
+     "rhythm",
+     "solemn"
+    ],
+    "short": [
+     "and are drawn",
+     "by her enclosure",
+     "in October everything",
+     "that all afternoon",
+     "to the ground"
+    ],
+    "long": [
+     "for the next one",
+     "on one occasion I did",
+     "she turns her head",
+     "There is a rhythm",
+     "on the north side"
+    ],
+    "sentences": [
+     "She is simply the rhino.",
+     "The keeper says there is no mystery in it at all.",
+     "There is a rhythm to the way she does it."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "clap",
+      "k",
+      "lap"
+     ],
+     [
+      "bridge",
+      "b",
+      "ridge"
+     ],
+     [
+      "page",
+      "p",
+      "age"
+     ],
+     [
+      "twin",
+      "t",
+      "win"
+     ],
+     [
+      "spin",
+      "s",
+      "pin"
+     ]
+    ],
+    "chop": [
+     [
+      "cube",
+      "b",
+      "queue"
+     ],
+     [
+      "page",
+      "j",
+      "pay"
+     ],
+     [
+      "keep",
+      "p",
+      "key"
+     ],
+     [
+      "lamp",
+      "p",
+      "lamb"
+     ],
+     [
+      "belt",
+      "t",
+      "bell"
+     ]
+    ],
+    "swap": [
+     [
+      "blue",
+      "b",
+      "k",
+      "clue"
+     ],
+     [
+      "thumb",
+      "th",
+      "k",
+      "come"
+     ],
+     [
+      "herd",
+      "h",
+      "b",
+      "bird"
+     ],
+     [
+      "bridge",
+      "b",
+      "f",
+      "fridge"
+     ],
+     [
+      "blew",
+      "b",
+      "k",
+      "clue"
+     ]
+    ],
+    "syll": [
+     [
+      "lifeboat",
+      "life",
+      "boat"
+     ],
+     [
+      "driveway",
+      "drive",
+      "way"
+     ],
+     [
+      "underlying",
+      "under",
+      "lying"
+     ],
+     [
+      "backboard",
+      "back",
+      "board"
+     ],
+     [
+      "underworld",
+      "under",
+      "world"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -29619,6 +38748,154 @@
     ],
     "words": 150
    },
+   "phrases": {
+    "words": [
+     "biology",
+     "graph",
+     "telephone",
+     "photo",
+     "biography",
+     "paragraph",
+     "geology",
+     "phonics",
+     "photograph",
+     "telescope"
+    ],
+    "short": [
+     "in the frame",
+     "by what is",
+     "She said afterwards",
+     "over two summers",
+     "on her roof"
+    ],
+    "long": [
+     "and then she went downstairs",
+     "to a first view",
+     "I remember not saying anything",
+     "for quite a long time",
+     "My aunt is a biologist"
+    ],
+    "sentences": [
+     "Her real passion is the telescope bolted to a platform on her roof.",
+     "She let me look through the telescope once, at Saturn, when I was nine.",
+     "I remember not saying anything at all for quite a long time."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "grow",
+      "g",
+      "row"
+     ],
+     [
+      "gnat",
+      "n",
+      "at"
+     ],
+     [
+      "slip",
+      "s",
+      "lip"
+     ],
+     [
+      "cake",
+      "k",
+      "ache"
+     ],
+     [
+      "climb",
+      "k",
+      "lime"
+     ]
+    ],
+    "chop": [
+     [
+      "barn",
+      "n",
+      "bar"
+     ],
+     [
+      "keeps",
+      "s",
+      "keep"
+     ],
+     [
+      "cite",
+      "t",
+      "sigh"
+     ],
+     [
+      "milk",
+      "k",
+      "mill"
+     ],
+     [
+      "side",
+      "d",
+      "sigh"
+     ]
+    ],
+    "swap": [
+     [
+      "net",
+      "n",
+      "l",
+      "let"
+     ],
+     [
+      "true",
+      "t",
+      "th",
+      "through"
+     ],
+     [
+      "car",
+      "k",
+      "f",
+      "far"
+     ],
+     [
+      "grow",
+      "g",
+      "th",
+      "throw"
+     ],
+     [
+      "saying",
+      "s",
+      "w",
+      "weighing"
+     ]
+    ],
+    "syll": [
+     [
+      "lifeboat",
+      "life",
+      "boat"
+     ],
+     [
+      "person",
+      "per",
+      "son"
+     ],
+     [
+      "sawmill",
+      "saw",
+      "mill"
+     ],
+     [
+      "afternoon",
+      "after",
+      "noon"
+     ],
+     [
+      "postmark",
+      "post",
+      "mark"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "come",
@@ -30115,6 +39392,154 @@
      "I hope that nobody ever establishes the answer. It is a far better object as a question than it would be as a fact."
     ],
     "words": 135
+   },
+   "phrases": {
+    "words": [
+     "chef",
+     "soup",
+     "machine",
+     "group",
+     "parachute",
+     "you",
+     "brochure",
+     "youth",
+     "chandelier",
+     "routine"
+    ],
+    "short": [
+     "on the corner",
+     "with a date",
+     "It is unique",
+     "and a name",
+     "before we moved"
+    ],
+    "long": [
+     "It is a far better object",
+     "It has a brass plaque screwed",
+     "than it would be",
+     "Nobody knows what it was",
+     "and he says it often"
+    ],
+    "sentences": [
+     "Nobody knows what it was for.",
+     "The chef at the restaurant next door is certain it made chocolate.",
+     "The man in the shop thinks it pressed flowers."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "fact",
+      "f",
+      "act"
+     ],
+     [
+      "snow",
+      "s",
+      "know"
+     ],
+     [
+      "date",
+      "d",
+      "ate"
+     ],
+     [
+      "pressed",
+      "p",
+      "rest"
+     ],
+     [
+      "page",
+      "p",
+      "age"
+     ]
+    ],
+    "chop": [
+     [
+      "rose",
+      "z",
+      "row"
+     ],
+     [
+      "nose",
+      "z",
+      "know"
+     ],
+     [
+      "paint",
+      "t",
+      "pane"
+     ],
+     [
+      "date",
+      "t",
+      "day"
+     ],
+     [
+      "pressed",
+      "t",
+      "press"
+     ]
+    ],
+    "swap": [
+     [
+      "town",
+      "t",
+      "g",
+      "gown"
+     ],
+     [
+      "pick",
+      "p",
+      "th",
+      "thick"
+     ],
+     [
+      "cent",
+      "s",
+      "m",
+      "meant"
+     ],
+     [
+      "rose",
+      "r",
+      "n",
+      "nose"
+     ],
+     [
+      "fact",
+      "f",
+      "p",
+      "packed"
+     ]
+    ],
+    "syll": [
+     [
+      "underlying",
+      "under",
+      "lying"
+     ],
+     [
+      "broadcast",
+      "broad",
+      "cast"
+     ],
+     [
+      "household",
+      "house",
+      "hold"
+     ],
+     [
+      "payroll",
+      "pay",
+      "roll"
+     ],
+     [
+      "person",
+      "per",
+      "son"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -30613,6 +40038,154 @@
     ],
     "words": 129
    },
+   "phrases": {
+    "words": [
+     "month",
+     "oven",
+     "love",
+     "some",
+     "son",
+     "glove",
+     "come",
+     "done",
+     "above",
+     "money"
+    ],
+    "short": [
+     "for weeks afterwards",
+     "nobody lost anything",
+     "We came home",
+     "and go straight",
+     "something went wrong"
+    ],
+    "long": [
+     "with every single Monday",
+     "to skip Mondays altogether",
+     "that one quiet Monday",
+     "when absolutely nothing happened",
+     "and lost it again"
+    ],
+    "sentences": [
+     "The oven broke on the first one.",
+     "The front door stuck shut on the second, with all of us inside.",
+     "Then came a Monday when absolutely nothing happened."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "feet",
+      "f",
+      "eat"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ],
+     [
+      "wonder",
+      "w",
+      "under"
+     ],
+     [
+      "beach",
+      "b",
+      "each"
+     ],
+     [
+      "cloud",
+      "k",
+      "loud"
+     ]
+    ],
+    "chop": [
+     [
+      "milk",
+      "k",
+      "mill"
+     ],
+     [
+      "beach",
+      "ch",
+      "bee"
+     ],
+     [
+      "fourth",
+      "th",
+      "four"
+     ],
+     [
+      "phone",
+      "n",
+      "foe"
+     ],
+     [
+      "barn",
+      "n",
+      "bar"
+     ]
+    ],
+    "swap": [
+     [
+      "coin",
+      "k",
+      "j",
+      "join"
+     ],
+     [
+      "bag",
+      "b",
+      "r",
+      "rag"
+     ],
+     [
+      "feet",
+      "f",
+      "s",
+      "seat"
+     ],
+     [
+      "cat",
+      "k",
+      "n",
+      "gnat"
+     ],
+     [
+      "pot",
+      "p",
+      "h",
+      "hot"
+     ]
+    ],
+    "syll": [
+     [
+      "uphill",
+      "up",
+      "hill"
+     ],
+     [
+      "keynote",
+      "key",
+      "note"
+     ],
+     [
+      "sidetrack",
+      "side",
+      "track"
+     ],
+     [
+      "sunlight",
+      "sun",
+      "light"
+     ],
+     [
+      "lighthouse",
+      "light",
+      "house"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "hope",
@@ -31109,6 +40682,154 @@
      "The tree is still standing. Every autumn half the world seems to turn up with a basket, and nobody is ever turned away."
     ],
     "words": 149
+   },
+   "phrases": {
+    "words": [
+     "worm",
+     "word",
+     "work",
+     "world",
+     "worth",
+     "worse",
+     "worst",
+     "worry",
+     "homework",
+     "worker"
+    ],
+    "short": [
+     "by the end",
+     "with a basket",
+     "for forty years",
+     "of the two",
+     "behind her house"
+    ],
+    "long": [
+     "that garden ever arrived quickly",
+     "She never once said",
+     "and the second word is work",
+     "that most people manage one",
+     "of gardening is patience"
+    ],
+    "sentences": [
+     "Nothing in that garden ever arrived quickly.",
+     "She never once said that it had not been worth it.",
+     "The tree is still standing."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "twin",
+      "t",
+      "win"
+     ],
+     [
+      "snow",
+      "s",
+      "know"
+     ],
+     [
+      "snap",
+      "s",
+      "nap"
+     ],
+     [
+      "climb",
+      "k",
+      "lime"
+     ],
+     [
+      "play",
+      "p",
+      "lay"
+     ]
+    ],
+    "chop": [
+     [
+      "milk",
+      "k",
+      "mill"
+     ],
+     [
+      "side",
+      "d",
+      "sigh"
+     ],
+     [
+      "cute",
+      "t",
+      "queue"
+     ],
+     [
+      "seems",
+      "z",
+      "seem"
+     ],
+     [
+      "rose",
+      "z",
+      "row"
+     ]
+    ],
+    "swap": [
+     [
+      "lap",
+      "l",
+      "r",
+      "wrap"
+     ],
+     [
+      "wrist",
+      "r",
+      "f",
+      "fist"
+     ],
+     [
+      "pig",
+      "p",
+      "d",
+      "dig"
+     ],
+     [
+      "wish",
+      "w",
+      "f",
+      "fish"
+     ],
+     [
+      "rain",
+      "r",
+      "m",
+      "main"
+     ]
+    ],
+    "syll": [
+     [
+      "alongside",
+      "along",
+      "side"
+     ],
+     [
+      "workshop",
+      "work",
+      "shop"
+     ],
+     [
+      "payroll",
+      "pay",
+      "roll"
+     ],
+     [
+      "photocopy",
+      "photo",
+      "copy"
+     ],
+     [
+      "underground",
+      "under",
+      "ground"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [
@@ -31607,6 +41328,154 @@
     ],
     "words": 147
    },
+   "phrases": {
+    "words": [
+     "package",
+     "final",
+     "distance",
+     "sentence",
+     "garbage",
+     "natural",
+     "balance",
+     "science",
+     "village",
+     "normal"
+    ],
+    "short": [
+     "at the end",
+     "up almost entirely",
+     "before it began",
+     "of carrying things",
+     "and a bit"
+    ],
+    "long": [
+     "and everybody else decides not",
+     "in the village hall",
+     "at the end went",
+     "and we all knew it",
+     "which I have not fully recovered"
+    ],
+    "sentences": [
+     "The audience was extremely patient about it.",
+     "The applause at the end went on for an embarrassing length of time.",
+     "On the way home nobody mentioned the mistakes."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "dash",
+      "d",
+      "ash"
+     ],
+     [
+      "hall",
+      "h",
+      "all"
+     ],
+     [
+      "grow",
+      "g",
+      "row"
+     ],
+     [
+      "bone",
+      "b",
+      "own"
+     ],
+     [
+      "cat",
+      "k",
+      "at"
+     ]
+    ],
+    "chop": [
+     [
+      "side",
+      "d",
+      "sigh"
+     ],
+     [
+      "north",
+      "th",
+      "nor"
+     ],
+     [
+      "made",
+      "d",
+      "may"
+     ],
+     [
+      "lamp",
+      "p",
+      "lamb"
+     ],
+     [
+      "barn",
+      "n",
+      "bar"
+     ]
+    ],
+    "swap": [
+     [
+      "side",
+      "s",
+      "r",
+      "ride"
+     ],
+     [
+      "dash",
+      "d",
+      "k",
+      "cash"
+     ],
+     [
+      "hall",
+      "h",
+      "t",
+      "tall"
+     ],
+     [
+      "foot",
+      "f",
+      "p",
+      "put"
+     ],
+     [
+      "class",
+      "k",
+      "g",
+      "glass"
+     ]
+    ],
+    "syll": [
+     [
+      "someone",
+      "some",
+      "one"
+     ],
+     [
+      "copyright",
+      "copy",
+      "right"
+     ],
+     [
+      "something",
+      "some",
+      "thing"
+     ],
+     [
+      "wartime",
+      "war",
+      "time"
+     ],
+     [
+      "backbone",
+      "back",
+      "bone"
+     ]
+    ]
+   },
    "mazeFrom": "g2",
    "race": [
     "arrived",
@@ -32103,6 +41972,154 @@
      "I have thought about what he said that evening a great deal more often than I have been fishing, and I am nearly certain that was the point."
     ],
     "words": 151
+   },
+   "phrases": {
+    "words": [
+     "caught",
+     "bought",
+     "taught",
+     "thought",
+     "daughter",
+     "brought",
+     "naughty",
+     "fought",
+     "slaughter",
+     "ought"
+    ],
+    "short": [
+     "to catch fish",
+     "not a nibble",
+     "to go home",
+     "We caught nothing",
+     "Not a bite"
+    ],
+    "long": [
+     "to teach me anything else",
+     "and I am nearly certain",
+     "My uncle taught me",
+     "after we had both looked",
+     "without any particular emphasis"
+    ],
+    "sentences": [
+     "My uncle taught me to fish the summer I was eight.",
+     "We caught nothing for three entire days.",
+     "Not a bite, not a nibble, nothing."
+    ]
+   },
+   "pa": {
+    "drop": [
+     [
+      "cake",
+      "k",
+      "ache"
+     ],
+     [
+      "late",
+      "l",
+      "eight"
+     ],
+     [
+      "fought",
+      "f",
+      "ought"
+     ],
+     [
+      "brag",
+      "b",
+      "rag"
+     ],
+     [
+      "phone",
+      "f",
+      "own"
+     ]
+    ],
+    "chop": [
+     [
+      "days",
+      "z",
+      "day"
+     ],
+     [
+      "paint",
+      "t",
+      "pane"
+     ],
+     [
+      "cube",
+      "b",
+      "queue"
+     ],
+     [
+      "late",
+      "t",
+      "lay"
+     ],
+     [
+      "line",
+      "n",
+      "lie"
+     ]
+    ],
+    "swap": [
+     [
+      "sun",
+      "s",
+      "w",
+      "one"
+     ],
+     [
+      "not",
+      "n",
+      "p",
+      "pot"
+     ],
+     [
+      "lawn",
+      "l",
+      "g",
+      "gone"
+     ],
+     [
+      "cake",
+      "k",
+      "b",
+      "bake"
+     ],
+     [
+      "hen",
+      "h",
+      "th",
+      "then"
+     ]
+    ],
+    "syll": [
+     [
+      "keynote",
+      "key",
+      "note"
+     ],
+     [
+      "starlight",
+      "star",
+      "light"
+     ],
+     [
+      "workshop",
+      "work",
+      "shop"
+     ],
+     [
+      "anything",
+      "any",
+      "thing"
+     ],
+     [
+      "overstate",
+      "over",
+      "state"
+     ]
+    ]
    },
    "mazeFrom": "g2",
    "race": [

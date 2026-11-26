@@ -5137,6 +5137,15 @@ const ADAPTATIONS: Adaptation[] = [
         msDays: { wrf: string[]; nwf: string[] }[] | null;
         passage: { title: string; paras: string[]; words: number };
         days: Day[];
+        /** The rung between a word list and a page of text. */
+        phrases: { words: string[]; short: string[]; long: string[]; sentences: string[] };
+        /** A spoken minute, every item proved against a pronouncing dictionary. */
+        pa: {
+          drop: [string, string, string][];
+          chop: [string, string, string][];
+          swap: [string, string, string, string][];
+          syll: [string, string, string][];
+        };
       };
       const weeks: Record<string, {
         t: string;
@@ -5147,6 +5156,10 @@ const ADAPTATIONS: Adaptation[] = [
         d: { w: string[]; s: string[]; m: string[][] }[];
         /** The same five days in multisyllabic words, or null if there are none. */
         ms: { w: string[]; s: string[] }[] | null;
+        /** words, 3-word phrases, longer phrases, whole sentences. */
+        ph: { w: string[]; s: string[]; l: string[]; t: string[] };
+        /** The spoken drill, as lines ready to read out with the answer. */
+        pa: { d: string[]; c: string[]; w: string[]; y: string[] };
       }> = {};
       for (const L of (DAILY_PRACTICE as unknown as { lessons: Week[] }).lessons) {
         weeks[L.key] = {
@@ -5156,6 +5169,21 @@ const ADAPTATIONS: Adaptation[] = [
           r: L.race,
           g: L.mazeFrom === "g3",
           ms: L.msDays ? L.msDays.map((d) => ({ w: d.wrf, s: d.nwf })) : null,
+          ph: {
+            w: L.phrases.words,
+            s: L.phrases.short,
+            l: L.phrases.long,
+            t: L.phrases.sentences,
+          },
+          // Written out here rather than in the page, because the wording is
+          // what a teacher reads aloud and it should not be assembled twice.
+          // The answer travels in brackets, the same way the maze key does.
+          pa: {
+            d: L.pa.drop.map(([w, g, a2]) => `Say "${w}". Now say it without /${g}/.  [${a2}]`),
+            c: L.pa.chop.map(([w, g, a2]) => `Say "${w}". Now say it without /${g}/.  [${a2}]`),
+            w: L.pa.swap.map(([w, f, t, a2]) => `Say "${w}". Change /${f}/ to /${t}/.  [${a2}]`),
+            y: L.pa.syll.map(([w, part, a2]) => `Say "${w}". Now say it without "${part}".  [${a2}]`),
+          },
           d: L.days.map((day) => ({
             w: day.wrf,
             s: day.nwf,
@@ -5195,7 +5223,9 @@ const ADAPTATIONS: Adaptation[] = [
           // them with no sheet at all. The page already resolves a focus to its
           // lesson this way everywhere else: byId[id.split('|')[0]].
           "        const W = MD[id] || MD[String(id).split('|')[0]] || null;\n" +
-          "        if (!W) return { mcHas: false, mcDays: [], mcKey: [], mcRaceWords: [], mcLog: [] };\n" +
+          "        if (!W) return { mcHas: false, mcDays: [], mcKey: [], mcRaceWords: [], mcLog: [],\n" +
+          "          phHas: false, phWords: [], phShort: [], phLong: [], phSents: [],\n" +
+          "          paHas: false, paDrop: [], paChop: [], paSwap: [], paSyll: [] };\n" +
           "        const DN = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'];\n" +
           "        const paras = (W.p || []).map((t) => ({ t }));\n" +
           "        const race = (W.r || []).map((w) => ({ w }));\n" +
@@ -5243,6 +5273,21 @@ const ADAPTATIONS: Adaptation[] = [
           "              + ' · Silly: ' + (((rows[i] || d).s) || []).join(', '),\n" +
           "          })),\n" +
           "          mcRaceWords: race,\n" +
+          // The phrase ladder, as four lists. Each phrase is printed three
+          // times across its row, because reading it once is not practice:
+          // the rung works by repetition, which is what the PLL fluency
+          // sheet does and what moves a rate rather than an accuracy.
+          "          phHas: !!(W.ph && W.ph.s && W.ph.s.length),\n" +
+          "          phWords: ((W.ph && W.ph.w) || []).map((t) => ({ t })),\n" +
+          "          phShort: ((W.ph && W.ph.s) || []).map((t) => ({ t })),\n" +
+          "          phLong: ((W.ph && W.ph.l) || []).map((t) => ({ t })),\n" +
+          "          phSents: ((W.ph && W.ph.t) || []).map((t, i) => ({ t: (i + 1) + '. ' + t })),\n" +
+          // The spoken minute. Four drills, numbered where they print.
+          "          paHas: !!(W.pa && W.pa.d && W.pa.d.length),\n" +
+          "          paDrop: ((W.pa && W.pa.d) || []).map((t, i) => ({ t: (i + 1) + '. ' + t })),\n" +
+          "          paChop: ((W.pa && W.pa.c) || []).map((t, i) => ({ t: (i + 1) + '. ' + t })),\n" +
+          "          paSwap: ((W.pa && W.pa.w) || []).map((t, i) => ({ t: (i + 1) + '. ' + t })),\n" +
+          "          paSyll: ((W.pa && W.pa.y) || []).map((t, i) => ({ t: (i + 1) + '. ' + t })),\n" +
           "          mcLog: ['MON', 'TUE', 'WED', 'THU', 'FRI'].map((t) => ({ t })),\n" +
           "        }; })(),",
       );
@@ -5291,10 +5336,39 @@ const ADAPTATIONS: Adaptation[] = [
         '        <span style="font-size:13.5px">How it felt \u{1F642} \u{1F610} \u{1F641}</span>\n' +
         "      </div>\n" +
 
-        // 2 — the day's words, real and made up
+        // 2 — the retell, straight after the minute and before anything
+        // else is read. The grade-level plan scores Retell as its own DIBELS
+        // measure, beside ORF and MAZE, and it was the one measure on that
+        // form with no sheet behind it: the packet asked a child to read for
+        // a minute and then moved them straight on to word lists.
+        //
+        // Four prompts rather than an open "tell me about it", because an
+        // open prompt is what a struggling reader answers in one word. The
+        // count box is what the measure scores and the 1-4 is the quality
+        // rubric, so both go down without a second form.
+        //
+        // No header row of its own, unlike the steps around it. The day
+        // sheet had 134px of slack and a headed block costs 115 of it, which
+        // put twenty of the longer-passage days over the page. The step
+        // number and the label sit inside the box instead, for 73px.
+        '      <div style="display:flex;align-items:center;gap:8px 13px;flex-wrap:wrap;' +
+        'border:2px solid #000;border-radius:8px;padding:7px 10px;color:#000">\n' +
+        '        <span style="' + NUM + '">2</span>\n' +
+        '        <span style="font-size:14.5px;font-weight:800">Say it back</span>\n' +
+        '        <span style="' + H + ';font-size:10px">RETELL</span>\n' +
+        '        <span style="font-size:14px;font-weight:650">☐ Who</span>\n' +
+        '        <span style="font-size:14px;font-weight:650">☐ Where</span>\n' +
+        '        <span style="font-size:14px;font-weight:650">☐ What happened first</span>\n' +
+        '        <span style="font-size:14px;font-weight:650">☐ How it ended</span>\n' +
+        '        <span style="font-size:12px;font-weight:700">Ideas told ' +
+        '<span style="' + BOX + ';width:38px"></span></span>\n' +
+        '        <span style="font-size:11.5px;font-weight:700">How well&nbsp; 1&nbsp; 2&nbsp; 3&nbsp; 4</span>\n' +
+        "      </div>\n" +
+
+        // 3 — the day's words, real and made up
         '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
         'padding-bottom:3px">\n' +
-        '        <span style="' + NUM + '">2</span>\n' +
+        '        <span style="' + NUM + '">3</span>\n' +
         '        <span style="font-size:14.5px;font-weight:800;color:#000">Real words and silly words</span>\n' +
         '        <span style="' + H + ';font-size:10px">WRF + NWF</span>\n' +
         '        <span style="flex:1"></span>\n' +
@@ -5323,7 +5397,7 @@ const ADAPTATIONS: Adaptation[] = [
         // 3 — three maze sentences
         '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
         'padding-bottom:3px">\n' +
-        '        <span style="' + NUM + '">3</span>\n' +
+        '        <span style="' + NUM + '">4</span>\n' +
         '        <span style="font-size:14.5px;font-weight:800;color:#000">Fill in the blank</span>\n' +
         '        <span style="' + H + ';font-size:10px">MAZE</span>\n' +
         '        <span style="flex:1"></span>\n' +
@@ -5408,6 +5482,155 @@ const ADAPTATIONS: Adaptation[] = [
         "      </sc-for>\n" +
         '      <div style="flex:1"></div>\n' +
         "    </div>\n" +
+        "    </sc-if>\n    " +
+
+        /*
+         * THE RUNG BETWEEN A WORD LIST AND A PAGE OF TEXT.
+         *
+         * PLL's fluency sheet climbs words, then three-word phrases, then
+         * longer ones, then whole sentences. This packet jumped from the
+         * word race straight to the passage, and phrasing is what moves an
+         * oral reading RATE once the words themselves are already accurate
+         * -- which is the first measure the grade-level plan circles.
+         *
+         * Every phrase is cut from the passage printed on the day pages, so
+         * the practice transfers to the text it came from rather than to a
+         * list of phrases about something else.
+         */
+        '<sc-if value="{{ phHas }}" hint-placeholder-val="{{ true }}">\n' +
+        '    <div data-wb="true" style="{{ p.box1 }}">\n' +
+        '      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;' +
+        'border-bottom:3px solid #000;padding-bottom:7px">\n' +
+        "        <div>\n" +
+        '          <div style="' + H + '">{{ p.kicker }} · PHRASE LADDER · ORF</div>\n' +
+        '          <div style="font-size:27px;font-weight:800;color:#000;line-height:1.05">' +
+        "\u{1FA9C} Climb to the sentence</div>\n" +
+        "        </div>\n" +
+        '        <div style="font-size:12.5px;font-weight:600;white-space:nowrap;text-align:right">' +
+        "Name ______________<br>Date ____________</div>\n" +
+        "      </div>\n" +
+        '      <div style="font-size:13.5px;line-height:1.45;border:1.5px solid #000;border-radius:8px;' +
+        'padding:7px 11px;color:#000"><b>How:</b> read each row across — the same words three times, ' +
+        "smoother each time. Do not stop between the words in a box: a box is one piece of " +
+        "reading, not three. Climb a step a day and read the whole ladder on Friday.</div>\n" +
+
+        // Step 1 — the words on their own.
+        '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
+        'padding-bottom:3px">\n' +
+        '        <span style="' + NUM + '">1</span>\n' +
+        '        <span style="font-size:14.5px;font-weight:800;color:#000">The words</span>\n' +
+        "      </div>\n" +
+        '      <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px 10px">' +
+        '<sc-for list="{{ phWords }}" as="w" hint-placeholder-count="10">' +
+        '<span style="font-size:17px;font-weight:650;color:#000;white-space:nowrap">{{ w.t }}</span>' +
+        "</sc-for></div>\n" +
+
+        // Step 2 — three words read as one piece.
+        '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
+        'padding-bottom:3px">\n' +
+        '        <span style="' + NUM + '">2</span>\n' +
+        '        <span style="font-size:14.5px;font-weight:800;color:#000">Three words together</span>\n' +
+        '        <span style="flex:1"></span>\n' +
+        '        <span style="font-size:11.5px;font-weight:600;color:#000">three times across</span>\n' +
+        "      </div>\n" +
+        '      <sc-for list="{{ phShort }}" as="x" hint-placeholder-count="6">\n' +
+        '        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px">' +
+        '<span style="font-size:16px;font-weight:600;color:#000">{{ x.t }}</span>' +
+        '<span style="font-size:16px;font-weight:600;color:#000">{{ x.t }}</span>' +
+        '<span style="font-size:16px;font-weight:600;color:#000">{{ x.t }}</span></div>\n' +
+        "      </sc-for>\n" +
+
+        // Step 3 — the same, longer.
+        '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
+        'padding-bottom:3px">\n' +
+        '        <span style="' + NUM + '">3</span>\n' +
+        '        <span style="font-size:14.5px;font-weight:800;color:#000">Longer pieces</span>\n' +
+        '        <span style="flex:1"></span>\n' +
+        '        <span style="font-size:11.5px;font-weight:600;color:#000">twice across</span>\n' +
+        "      </div>\n" +
+        '      <sc-for list="{{ phLong }}" as="x" hint-placeholder-count="6">\n' +
+        '        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">' +
+        '<span style="font-size:16px;font-weight:600;color:#000">{{ x.t }}</span>' +
+        '<span style="font-size:16px;font-weight:600;color:#000">{{ x.t }}</span></div>\n' +
+        "      </sc-for>\n" +
+
+        // Step 4 — the whole thing, which is where the ladder was going.
+        '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
+        'padding-bottom:3px">\n' +
+        '        <span style="' + NUM + '">4</span>\n' +
+        '        <span style="font-size:14.5px;font-weight:800;color:#000">The whole sentence</span>\n' +
+        "      </div>\n" +
+        '      <sc-for list="{{ phSents }}" as="x" hint-placeholder-count="3">' +
+        '<div style="font-size:16px;line-height:1.55;color:#000">{{ x.t }}</div></sc-for>\n' +
+        '      <div style="display:grid;grid-template-columns:auto repeat(5,minmax(0,1fr));gap:8px;' +
+        'align-items:center;border:2px solid #000;border-radius:10px;padding:9px 12px">\n' +
+        '        <span style="' + H + ';font-size:10px">WHICH STEP?</span>\n' +
+        '        <sc-for list="{{ mcLog }}" as="d" hint-placeholder-count="5">\n' +
+        '          <span style="text-align:center">' +
+        '<span style="font-size:11px;font-weight:800;color:#000;display:block;margin-bottom:3px">' +
+        '{{ d.t }}</span>' +
+        '<span style="display:inline-block;width:62px;height:28px;border:2px solid #000;' +
+        'border-radius:4px"></span></span>\n' +
+        "        </sc-for>\n" +
+        "      </div>\n" +
+        '      <div style="flex:1"></div>\n' +
+        "    </div>\n" +
+        "    </sc-if>\n    " +
+
+        /*
+         * A MINUTE OF PHONEMIC AWARENESS, WHICH NOTHING IN THE PACKET DID.
+         *
+         * The grade-level plan's own decision chart puts "Kilpatrick, 1
+         * minute" against Well Below and Below for phonemic awareness, and
+         * there was no sheet for it. This is that minute.
+         *
+         * p.dsBox, not p.box1: it is aural. No letters, no text, nothing
+         * shown to the child and nothing written down by them -- so it
+         * belongs with the dictation script and the other teacher sheets,
+         * not in the copy a child is handed.
+         *
+         * Every item was proved against a pronouncing dictionary before it
+         * was written here, because a drill generated from spelling says
+         * that "she" without /s/ is "he" and that "bone" with /n/ is "none".
+         * See scripts/build-daily-practice.mjs.
+         */
+        '<sc-if value="{{ paHas }}" hint-placeholder-val="{{ true }}">\n' +
+        '    <div data-wb="true" style="{{ p.dsBox }}">\n' +
+        '      <div style="border-bottom:3px solid #000;padding-bottom:7px">\n' +
+        '        <div style="' + H + '">{{ p.kicker }} · SOUND DRILL · TEACHER COPY</div>\n' +
+        '        <div style="font-size:26px;font-weight:800;color:#000;line-height:1.05">' +
+        "\u{1F50A} One minute, no letters</div>\n" +
+        '        <div style="font-size:12.5px;color:#000;margin-top:3px">Say the word, ask the ' +
+        "question, the child answers out loud. Nothing is shown and nothing is written — if a " +
+        "child needs help, use counters for the sounds, never letters. The answer is in " +
+        "brackets. Two minutes at most; stop while it is still fast.</div>\n" +
+        "      </div>\n" +
+        '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
+        'padding-bottom:3px">\n' +
+        '        <span style="' + H + ';font-size:10px">TAKE THE FIRST SOUND OFF</span>\n' +
+        "      </div>\n" +
+        '      <sc-for list="{{ paDrop }}" as="x" hint-placeholder-count="5">' +
+        '<div style="font-size:14px;line-height:1.4;color:#000">{{ x.t }}</div></sc-for>\n' +
+        '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
+        'padding-bottom:3px">\n' +
+        '        <span style="' + H + ';font-size:10px">TAKE THE LAST SOUND OFF</span>\n' +
+        "      </div>\n" +
+        '      <sc-for list="{{ paChop }}" as="x" hint-placeholder-count="5">' +
+        '<div style="font-size:14px;line-height:1.4;color:#000">{{ x.t }}</div></sc-for>\n' +
+        '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
+        'padding-bottom:3px">\n' +
+        '        <span style="' + H + ';font-size:10px">CHANGE THE FIRST SOUND</span>\n' +
+        "      </div>\n" +
+        '      <sc-for list="{{ paSwap }}" as="x" hint-placeholder-count="5">' +
+        '<div style="font-size:14px;line-height:1.4;color:#000">{{ x.t }}</div></sc-for>\n' +
+        '      <div style="display:flex;align-items:baseline;gap:8px;border-bottom:2px solid #000;' +
+        'padding-bottom:3px">\n' +
+        '        <span style="' + H + ';font-size:10px">TAKE A WHOLE SYLLABLE OFF</span>\n' +
+        "      </div>\n" +
+        '      <sc-for list="{{ paSyll }}" as="x" hint-placeholder-count="5">' +
+        '<div style="font-size:14px;line-height:1.4;color:#000">{{ x.t }}</div></sc-for>\n' +
+        '      <div style="flex:1"></div>\n' +
+        "    </div>\n" +
         "    </sc-if>\n    ";
 
       // The line under "Student workbook + answer key" still listed the five
@@ -5478,6 +5701,11 @@ const ADAPTATIONS: Adaptation[] = [
         // all and printed on every run, and the print fit -- which walks
         // [data-part] -- never looked at it.
         ["\u00B7 WORD RACE", "mclass"],
+        // Its own chip rather than riding on mClass daily: it is a sheet a
+        // teacher reaches for on its own, on the day a child's rate is the
+        // thing being worked on.
+        ["\u00B7 PHRASE LADDER", "phrase"],
+        ["\u00B7 SOUND DRILL", "sound"],
       ];
       let out = html;
       for (const [mark, key] of MARKS) {
@@ -5509,7 +5737,8 @@ const ADAPTATIONS: Adaptation[] = [
           "          ['fluency', '\u23F1 Fluency check'], " +
           "['sentence', '\u{1F9E9} Sentence building'],\n" +
           "          ['continuum', '\u{1F504} 30 a day'], ['scores', '\u{1F4C8} My scores'],\n" +
-          "          ['mclass', '⏱ mClass daily']];",
+          "          ['mclass', '⏱ mClass daily'], ['phrase', '\u{1FA9C} Phrase ladder'],\n" +
+          "          ['sound', '\u{1F50A} Sound drill']];",
       );
 
       // 3. The off list, where the print fit can see it.
@@ -5612,6 +5841,40 @@ const ADAPTATIONS: Adaptation[] = [
      * because a half box is a half answer. With this they stay whole and the
      * break falls between them.
      */
+    /*
+     * A DATE LINE ON EVERY SHEET THAT ASKS FOR A NAME.
+     *
+     * Nineteen of them asked for a name and nothing else. Five already had a
+     * date and the word race asks for a week, so the packet was inconsistent
+     * as well as short: a teacher filing a child's work by week had no date
+     * on two thirds of it, and progress monitoring runs on a fortnight.
+     *
+     * Written to match the sheets that already had one -- same line, same
+     * weight, two spaces between -- rather than inventing a second house
+     * style. The underscores are shorter than the name's because a date is
+     * shorter than a name, and the line is nowrap, so the two have to fit
+     * the header together.
+     */
+    name: "put a date beside the name on every sheet that asks for one",
+    apply: (html) => {
+      let out = html;
+      let done = 0;
+      for (const [bare, dated] of [
+        [">Name ______________</div>", ">Name ______________  Date ________</div>"],
+        [">Name ____________</div>", ">Name ____________  Date ______</div>"],
+      ]) {
+        const n = out.split(bare).length - 1;
+        if (!n) continue;
+        out = out.split(bare).join(dated);
+        done += n;
+      }
+      // Nothing matched means the headers have been rewritten since, and a
+      // silent no-op here would leave the sheets undated with nothing to say
+      // so. Hand back the original and let the rule count report zero.
+      return done ? out : html;
+    },
+  },
+  {
     name: "never break a page through a box a child writes in",
     apply: (html) => {
       const box = "border:2px solid #111;border-radius:10px;padding:8px 12px;" +

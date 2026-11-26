@@ -125,6 +125,201 @@ function continuumFakes(level) {
 }
 
 /** The passage as sentences, terminal punctuation and closing quote kept. */
+/**
+ * EVERY WORD THIS SEQUENCE EVER PUTS IN FRONT OF A CHILD.
+ *
+ * Built once, and used only to check the answer to a spoken question: take
+ * /s/ off "stop" and the child says "top", so "top" has to be a word the
+ * sequence itself uses. The web2 list would also accept lam, lack and rax,
+ * which are words in a dictionary and not words in a Year 2 classroom.
+ */
+const SAFE = (() => {
+  const all = new Set();
+  const add = (w) => {
+    const x = String(w).toLowerCase();
+    if (/^[a-z]+$/.test(x) && x.length >= 2 && !unsafeRealWord(x)) all.add(x);
+  };
+  for (const l of SEQ) (l.words || []).forEach(add);
+  for (const k of Object.keys(PASS)) {
+    for (const g of ["g2", "g3", "g4"]) {
+      const t = PASS[k] && PASS[k][g];
+      if (t) passageWords(t).forEach(add);
+    }
+  }
+  for (const c of CONCEPTS) (c.real || []).forEach(add);
+  for (const h of HEART) add(h.word);
+  return all;
+})();
+
+/*
+ * EVERY ITEM IS PROVED IN SOUNDS, NOT IN LETTERS.
+ *
+ * This drill is spoken. A teacher says "take /s/ off 'stop'" and a child
+ * answers out loud, so an item is true or false about SOUNDS -- and a
+ * generator working from spelling gets it wrong in ways that are not obvious
+ * until you read the output. Letters say that "she" without /s/ is "he",
+ * that "bone" with /n/ for /b/ is "none", that "find" without /d/ is "fin",
+ * that "love" and "move" rhyme, that "ask" without /k/ is "as", and that
+ * "season" is "sea" plus "son". Every one of those is wrong out loud, and a
+ * teacher reading them off a card has to mark a right answer wrong.
+ *
+ * So the spelling rules below only pick candidates, which is all they are
+ * good for. The proof is the pronouncing dictionary: take the first phoneme
+ * off the word and what is left has to BE the phonemes of the answer, every
+ * sound, in order. Anything that cannot be proved that way is not printed.
+ */
+const SOUNDS = JSON.parse(readFileSync("scripts/lib/pa-sounds.json", "utf8")).words;
+const say = (w) => (SOUNDS[w] ? SOUNDS[w].split(" ") : null);
+const same = (a, b) => a && b && a.length === b.length && a.every((x, i) => x === b[i]);
+
+/**
+ * What to call a sound on a card a teacher reads out.
+ *
+ * Taken from the phoneme rather than from the spelling, so the label and the
+ * thing being proved cannot drift apart: the c in "cake" is named /k/, which
+ * is what it says.
+ */
+const LETTER = {
+  B: "b", D: "d", F: "f", G: "g", HH: "h", JH: "j", K: "k", L: "l", M: "m",
+  N: "n", P: "p", R: "r", S: "s", T: "t", V: "v", Z: "z", W: "w", Y: "y",
+  CH: "ch", SH: "sh", TH: "th", DH: "th", NG: "ng", ZH: "zh",
+};
+/** The consonants a child can hold on its own, at the edge of a word. */
+const NAMEABLE = new Set(Object.keys(LETTER));
+
+/**
+ * A minute of phonemic awareness, scripted, with the answer written down.
+ *
+ * Kilpatrick one-minute drills are named for Well Below and Below on the
+ * grade-level plan's own decision chart, and nothing in the packet did
+ * phonemic awareness at all. It is aural -- no letters, no text, the child
+ * only listens and answers -- so what prints is a teacher's card, not a
+ * child's page.
+ *
+ * The lesson's own words come first and the rest of the sequence tops the
+ * drills up, because the shape each drill needs is rare: a word whose last
+ * sound can come off and leave another word is not something every lesson
+ * has. Where even that cannot fill six, the drill prints short.
+ */
+function paItems(ownWords, levelWords, multiWords, seed) {
+  const pool = [...new Set([...ownWords, ...levelWords])].filter((w) => SAFE.has(w));
+  const rest = [...SAFE].filter((w) => !pool.includes(w));
+  const mix = [...shuffled(pool, seed), ...shuffled(rest, seed + 7)];
+
+  // Five a drill, twenty in all. Twenty-four ran the card 136px past a page,
+  // and a minute does not hold twenty-four questions asked and answered out
+  // loud: at four seconds each, twenty is already brisk.
+  const drop = [];
+  const chop = [];
+  const swap = [];
+  for (const w of mix) {
+    const p = say(w);
+    if (!p || p.length < 3) continue;
+
+    // Take the first sound off. "stop" without /s/ is "top".
+    if (drop.length < 5 && NAMEABLE.has(p[0])) {
+      const tail = p.slice(1);
+      const answer = mix.find((x) => x !== w && SAFE.has(x) && same(say(x), tail));
+      if (answer) drop.push([w, LETTER[p[0]], answer]);
+    }
+
+    // Take the last sound off. "cart" without /t/ is "car".
+    if (chop.length < 5 && NAMEABLE.has(p[p.length - 1])) {
+      const head = p.slice(0, -1);
+      const answer = mix.find((x) => x !== w && SAFE.has(x) && same(say(x), head));
+      if (answer) chop.push([w, LETTER[p[p.length - 1]], answer]);
+    }
+
+    // Change the first sound. "cake" with /l/ for /k/ is "lake".
+    if (swap.length < 5 && NAMEABLE.has(p[0])) {
+      const tail = p.slice(1);
+      const answer = mix.find((x) => {
+        if (x === w || !SAFE.has(x)) return false;
+        const q = say(x);
+        return q && q.length === p.length && q[0] !== p[0] && NAMEABLE.has(q[0]) && same(q.slice(1), tail);
+      });
+      if (answer) swap.push([w, LETTER[p[0]], LETTER[say(answer)[0]], answer]);
+    }
+    if (drop.length >= 5 && chop.length >= 5 && swap.length >= 5) break;
+  }
+
+  // Take a whole syllable off. "sunshine" without "sun" is "shine".
+  //
+  // Proved the same way: the sounds of the two halves, run together, have to
+  // be the sounds of the whole word. That is what rules out "season" as "sea"
+  // plus "son" and "bitten" as "bit" plus "ten" -- both of them split cleanly
+  // on paper and neither of them survives being said.
+  const syll = [];
+  for (const w of shuffled([...new Set(multiWords)], seed + 3)) {
+    if (syll.length >= 5) break;
+    const p = say(w);
+    if (!p) continue;
+    for (let i = 2; i <= w.length - 2; i++) {
+      const a = w.slice(0, i);
+      const b = w.slice(i);
+      if (!SAFE.has(a) || !SAFE.has(b)) continue;
+      const pa = say(a);
+      const pb = say(b);
+      if (!pa || !pb) continue;
+      if (!same([...pa, ...pb], p)) continue;
+      syll.push([w, a, b]);
+      break;
+    }
+  }
+
+  return { drop, chop, swap, syll };
+}
+
+/**
+ * The passage cut into phrases, so there is a rung between a word list and a
+ * whole page of text.
+ *
+ * PLL's fluency sheet climbs words, then three-word phrases, then longer
+ * ones, then sentences. The packet jumped from the word race straight to the
+ * passage, and phrasing is the thing that moves oral reading rate once the
+ * words themselves are accurate -- which is the first measure the grade-level
+ * plan circles.
+ *
+ * Cut from the lesson's own passage rather than written fresh, so every
+ * phrase is made of words the child reads on the page above and the practice
+ * transfers to the text it came from.
+ */
+const CHUNK_AT = new Set([
+  "in", "on", "at", "to", "into", "onto", "from", "with", "without", "by", "for",
+  "of", "over", "under", "behind", "through", "across", "around", "after",
+  "before", "near", "past", "up", "down", "out", "and", "but", "so", "or",
+  "because", "while", "until", "when", "if", "that", "which", "than", "as",
+]);
+
+function phrasesFrom(all) {
+  const short = [];
+  const long = [];
+  for (const sentence of all) {
+    const words = sentence.replace(/[“”"]/g, "").split(/\s+/).filter(Boolean);
+    let run = [];
+    const flush = () => {
+      if (!run.length) return;
+      const text = run.join(" ").replace(/^[,;:]+|[,;:]+$/g, "").trim();
+      const n = run.length;
+      const clean = text.replace(/[.!?]+$/, "").trim();
+      // One word is not a phrase, and seven is a sentence with the end cut
+      // off. Anything with a number or a stray bracket in it is left alone.
+      if (n === 3 && clean.length > 5) short.push(clean);
+      else if (n >= 4 && n <= 6) long.push(clean);
+      run = [];
+    };
+    for (const w of words) {
+      const bare = w.toLowerCase().replace(/[^a-z']/g, "");
+      if ((CHUNK_AT.has(bare) && run.length) || /[,;:]$/.test(run[run.length - 1] || "")) flush();
+      run.push(w);
+    }
+    flush();
+  }
+  const tidy = (list) => [...new Set(list.map((x) => x.replace(/\s+/g, " ").trim()))]
+    .filter((x) => /^[A-Za-z]/.test(x) && !/[0-9()[\]]/.test(x));
+  return { short: tidy(short), long: tidy(long) };
+}
+
 function sentences(text) {
   const m = String(text).match(/[^.!?]+[.!?]+[\u201d"']*/g);
   return (m || [String(text)]).map((x) => x.trim()).filter(Boolean);
@@ -427,12 +622,42 @@ for (const lesson of SEQ) {
     });
   }
 
+  // The phrase rungs, cut from the passage the child actually reads at the
+  // top of every day page -- text, not mazeSource, which is the other
+  // telling and never printed beside this sheet.
+  const allSents = sentences(text.paras.join(" "));
+  const cut = phrasesFrom(allSents);
+  const ladderWords = [...new Set([...(lesson.words || []), ...ownWords])].slice(0, 10);
+  const phrases = {
+    words: ladderWords,
+    // Five rungs a step, not six. Six put the sheet 30px over a page, and
+    // the climb is the point rather than the count.
+    short: shuffled(cut.short, seed + 21).slice(0, 5),
+    long: shuffled(cut.long, seed + 22).slice(0, 5),
+    sentences: [...allSents]
+      .map((x) => x.trim())
+      .filter((x) => x.split(/\s+/).length >= 5 && x.split(/\s+/).length <= 14)
+      // Three, and none of them long. Four put the longest ladders 46px over
+      // a page, and the last step is the one the first three were for.
+      .slice(0, 3),
+  };
+
+  // Every level up to this one, not just this one. The drills need words
+  // with a particular shape -- one whose last sound can come off and still
+  // leave a word -- and a single level's pool held one of them: every lesson
+  // printed the same "and without /d/" and nothing else.
+  const paPool = [];
+  for (let lv = 1; lv <= level; lv++) paPool.push(...continuumReals(lv).filter(word));
+  const pa = paItems(ownWords, paPool, [...(bank.real || []), ...taughtMulti], seed + 31);
+
   remember();
   out.push({
     key: lesson.key,
     name: lesson.name,
     level,
     passage: { title: text.title, paras: text.paras, words },
+    phrases,
+    pa,
     // Which telling the maze sentences were cut from, so the check can go and
     // look rather than take it on trust.
     mazeFrom: mazeSource === text ? "same" : "g2",

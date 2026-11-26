@@ -251,8 +251,91 @@ for (const lesson of D.lessons) {
   }
 }
 
+/*
+ * THE PHONEMIC AWARENESS CARD, CHECKED IN SOUNDS.
+ *
+ * Every item on it is a claim about what a word sounds like with a sound
+ * taken off or swapped, and the generator proved each one against the
+ * pronouncing dictionary before writing it down. This proves it again from
+ * the file, because the thing that went wrong the first time round was a
+ * generator that reasoned about letters: it produced "she" without /s/ is
+ * "he", "bone" with /n/ is "none", "ask" without /k/ is "as" and "season" is
+ * "sea" plus "son" -- all of which read fine on paper and are wrong out loud.
+ * A card a teacher has to mark a right answer wrong on is worse than no card.
+ */
+const SOUNDS = JSON.parse(readFileSync("scripts/lib/pa-sounds.json", "utf8")).words;
+const sayIt = (w) => (SOUNDS[w] ? SOUNDS[w].split(" ") : null);
+const alike = (x, y) => x && y && x.length === y.length && x.every((v, i) => v === y[i]);
+let paCount = 0;
+
+for (const lesson of D.lessons) {
+  const pa = lesson.pa || {};
+  const say = (msg) => problems.push(`${lesson.key}: ${msg}`);
+
+  for (const [word, sound, answer] of pa.drop || []) {
+    paCount += 1;
+    const p = sayIt(word);
+    const q = sayIt(answer);
+    if (!p || !q) { say(`drop ${word}/${answer}: no pronunciation on file`); continue; }
+    if (!alike(p.slice(1), q)) say(`drop: ${word} without the first sound is not ${answer}`);
+    if (!sound) say(`drop ${word}: no sound to name`);
+  }
+
+  for (const [word, sound, answer] of pa.chop || []) {
+    paCount += 1;
+    const p = sayIt(word);
+    const q = sayIt(answer);
+    if (!p || !q) { say(`chop ${word}/${answer}: no pronunciation on file`); continue; }
+    if (!alike(p.slice(0, -1), q)) say(`chop: ${word} without the last sound is not ${answer}`);
+    if (!sound) say(`chop ${word}: no sound to name`);
+  }
+
+  for (const [word, from, to, answer] of pa.swap || []) {
+    paCount += 1;
+    const p = sayIt(word);
+    const q = sayIt(answer);
+    if (!p || !q) { say(`swap ${word}/${answer}: no pronunciation on file`); continue; }
+    if (!alike(p.slice(1), q.slice(1))) say(`swap: ${word} and ${answer} do not share everything after the first sound`);
+    if (p[0] === q[0]) say(`swap: ${word} and ${answer} start with the same sound`);
+    if (!from || !to || from === to) say(`swap ${word}: ${from} to ${to} is not a change`);
+  }
+
+  for (const [word, part, answer] of pa.syll || []) {
+    paCount += 1;
+    const p = sayIt(word);
+    const a2 = sayIt(part);
+    const q = sayIt(answer);
+    if (!p || !a2 || !q) { say(`syllable ${word}: no pronunciation on file`); continue; }
+    if (!alike([...a2, ...q], p)) say(`syllable: ${part} plus ${answer} is not ${word}`);
+    if (part + answer !== word) say(`syllable: ${part} plus ${answer} does not spell ${word}`);
+  }
+
+  // The phrase ladder is cut from the passage printed above it, so every
+  // word in it has to be a word of that passage -- otherwise the rung
+  // between the word list and the text is made of something else.
+  const said = new Set(
+    (lesson.passage.paras || []).join(" ").toLowerCase().match(/[a-z']+/g) || [],
+  );
+  const ph = lesson.phrases || {};
+  for (const [kind, want] of [["short", [3, 3]], ["long", [4, 6]]]) {
+    for (const phrase of ph[kind] || []) {
+      const n = phrase.split(/\s+/).length;
+      if (n < want[0] || n > want[1]) say(`${kind} phrase "${phrase}" is ${n} words, not ${want[0]}-${want[1]}`);
+      for (const w of phrase.toLowerCase().match(/[a-z']+/g) || []) {
+        if (!said.has(w)) say(`phrase "${phrase}" uses ${w}, which is not in the passage`);
+      }
+    }
+  }
+  for (const sentence of ph.sentences || []) {
+    if (!(lesson.passage.paras || []).some((x) => x.includes(sentence))) {
+      say(`phrase sentence is not in the passage: ${sentence.slice(0, 40)}`);
+    }
+  }
+}
+
 console.log(`${D.lessons.length} lessons × 5 days = ${dayCount} practice pages.`);
 console.log(`${mazeCount} maze items, ${raceCount} race words, ${dayCount * (D.perDay.wrf + D.perDay.nwf)} word slots.`);
+console.log(`${paCount} phonemic awareness items, every one proved in sounds.`);
 console.log(`problems: ${problems.length}`);
 problems.slice(0, 40).forEach((x) => console.log("  " + x));
 if (problems.length) {

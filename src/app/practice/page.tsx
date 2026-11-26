@@ -57,6 +57,19 @@ type Lesson = {
   mazeFrom: "g2" | "g3";
   race: string[];
   days: Day[];
+  /** Words, then phrases, then whole sentences: the rung below the passage. */
+  phrases: { words: string[]; short: string[]; long: string[]; sentences: string[] };
+  /**
+   * The spoken minute. Every item was proved against a pronouncing dictionary
+   * when it was generated, because a drill reasoned out of spelling says that
+   * "she" without /s/ is "he". See scripts/build-daily-practice.mjs.
+   */
+  pa: {
+    drop: [string, string, string][];
+    chop: [string, string, string][];
+    swap: [string, string, string, string][];
+    syll: [string, string, string][];
+  };
 };
 
 const D = DAILY as unknown as {
@@ -193,7 +206,26 @@ function DayPage({ lesson, d, multi }: { lesson: Lesson; d: Day; multi: boolean 
         </div>
       </Part>
 
-      <Part n={2} label="Real words and silly words" measure="WRF + NWF" how="read each one, tick it">
+      {/*
+        * The retell, straight after the minute and before anything else is
+        * read. The grade-level plan scores Retell as its own DIBELS measure,
+        * beside ORF and MAZE, and it was the one measure on that form with
+        * no sheet behind it.
+        *
+        * Four prompts rather than an open "tell me about it", because an
+        * open prompt is what a struggling reader answers in one word.
+        */}
+      <Part n={2} label="Say it back" measure="RETELL" how="cover the page first">
+        <div style={{ display: "flex", alignItems: "center", gap: "8px 14px", flexWrap: "wrap", border: `2px solid ${INK}`, borderRadius: 10, padding: "7px 11px" }}>
+          {["Who it was about", "Where it happened", "What happened first", "How it ended"].map((t) => (
+            <span key={t} style={{ fontSize: 14, fontWeight: 650 }}>☐ {t}</span>
+          ))}
+          <span style={{ fontSize: 12, fontWeight: 700 }}>Ideas told <span style={box(38)} /></span>
+          <span style={{ fontSize: 11.5, fontWeight: 700, color: MUTED }}>How well&nbsp; 1&nbsp; 2&nbsp; 3&nbsp; 4</span>
+        </div>
+      </Part>
+
+      <Part n={3} label="Real words and silly words" measure="WRF + NWF" how="read each one, tick it">
         <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
           <span style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: ".1em", color: TEAL, width: 74, flex: "none" }}>
             {harder ? "REAL · 2+" : "REAL"}
@@ -218,7 +250,7 @@ function DayPage({ lesson, d, multi }: { lesson: Lesson; d: Day; multi: boolean 
       </Part>
 
       <Part
-        n={3}
+        n={4}
         label="Fill in the blank"
         measure="MAZE"
         how="from the other reading in this lesson — circle the word that fits"
@@ -347,6 +379,124 @@ function KeySheet({ lesson, multi }: { lesson: Lesson; multi: boolean }) {
   );
 }
 
+/**
+ * THE RUNG BETWEEN A WORD LIST AND A PAGE OF TEXT.
+ *
+ * The week went from the word race straight to the passage, and phrasing is
+ * what moves an oral reading RATE once the words themselves are accurate --
+ * the first measure the grade-level plan circles. Every phrase is cut from
+ * the passage on the day pages, so the practice transfers to the text it
+ * came from.
+ *
+ * Each row prints the same phrase more than once on purpose: the rung works
+ * by repetition, which is what reading it once is not.
+ */
+function PhraseLadder({ lesson }: { lesson: Lesson }) {
+  const ph = lesson.phrases;
+  return (
+    <section className="sheet" style={{ display: "flex", flexDirection: "column", gap: 13, paddingTop: 16 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: 12, borderBottom: `3px solid ${TEAL}`, paddingBottom: 7 }}>
+        <div>
+          <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: ".18em", color: TEAL }}>
+            {lesson.name.toUpperCase()} · PHRASE LADDER · ORF
+          </div>
+          <div style={{ fontSize: 29, fontWeight: 800, lineHeight: 1.05 }}>🪜 Climb to the sentence</div>
+        </div>
+        <div style={{ fontSize: 12.5, fontWeight: 600, textAlign: "right" }}>
+          Name ______________<br />Date ____________
+        </div>
+      </div>
+      <div style={{ fontSize: 13.5, lineHeight: 1.45, border: `1.5px solid ${LINE}`, borderRadius: 10, padding: "8px 12px" }}>
+        <b>How:</b> read each row across — the same words again, smoother each time. Do not stop
+        between the words in a box: a box is one piece of reading, not three. Climb a step a day
+        and read the whole ladder on Friday.
+      </div>
+
+      <Part n={1} label="The words" measure="WRF" how="read down the columns">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(5, minmax(0, 1fr))", gap: "5px 10px" }}>
+          {ph.words.map((w) => (
+            <span key={w} style={{ fontSize: 17, fontWeight: 650, whiteSpace: "nowrap" }}>{w}</span>
+          ))}
+        </div>
+      </Part>
+
+      <Part n={2} label="Three words together" measure="PHRASE" how="three times across">
+        {ph.short.map((x) => (
+          <div key={x} style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 9 }}>
+            {[0, 1, 2].map((i) => <span key={i} style={{ fontSize: 16, fontWeight: 600 }}>{x}</span>)}
+          </div>
+        ))}
+      </Part>
+
+      <Part n={3} label="Longer pieces" measure="PHRASE" how="twice across">
+        {ph.long.map((x) => (
+          <div key={x} style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 12 }}>
+            {[0, 1].map((i) => <span key={i} style={{ fontSize: 16, fontWeight: 600 }}>{x}</span>)}
+          </div>
+        ))}
+      </Part>
+
+      <Part n={4} label="The whole sentence" measure="ORF" how="where the ladder was going">
+        {ph.sentences.map((x, i) => (
+          <div key={i} style={{ fontSize: 16, lineHeight: 1.55 }}>{i + 1}. {x}</div>
+        ))}
+      </Part>
+
+      <div style={{ display: "grid", gridTemplateColumns: "auto repeat(5, minmax(0, 1fr))", gap: 8, alignItems: "center", border: `2px solid ${INK}`, borderRadius: 10, padding: "9px 12px" }}>
+        <span style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: ".12em", color: TEAL }}>WHICH STEP?</span>
+        {DAY_NAME.map((d) => (
+          <span key={d} style={{ textAlign: "center" }}>
+            <span style={{ fontSize: 11, fontWeight: 800, display: "block", marginBottom: 3 }}>{d.slice(0, 3)}</span>
+            <span style={{ display: "inline-block", width: 62, height: 28, border: `2px solid ${INK}`, borderRadius: 4 }} />
+          </span>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/**
+ * A MINUTE OF PHONEMIC AWARENESS, WHICH THE WEEK DID NOT HAVE.
+ *
+ * The grade-level plan's decision chart puts "Kilpatrick, 1 minute" against
+ * Well Below and Below for phonemic awareness, and nothing here did any. It
+ * is aural -- no letters, no text, nothing shown to the child and nothing
+ * written down by them -- so this is a teacher's card, and it says so.
+ */
+function SoundDrill({ lesson }: { lesson: Lesson }) {
+  const drills: [string, string[]][] = [
+    ["TAKE THE FIRST SOUND OFF", lesson.pa.drop.map(([w, g, a]) => `Say "${w}". Now say it without /${g}/.  [${a}]`)],
+    ["TAKE THE LAST SOUND OFF", lesson.pa.chop.map(([w, g, a]) => `Say "${w}". Now say it without /${g}/.  [${a}]`)],
+    ["CHANGE THE FIRST SOUND", lesson.pa.swap.map(([w, f, t, a]) => `Say "${w}". Change /${f}/ to /${t}/.  [${a}]`)],
+    ["TAKE A WHOLE SYLLABLE OFF", lesson.pa.syll.map(([w, part, a]) => `Say "${w}". Now say it without "${part}".  [${a}]`)],
+  ];
+  return (
+    <section className="sheet" style={{ display: "flex", flexDirection: "column", gap: 13, paddingTop: 16 }}>
+      <div style={{ borderBottom: `3px solid ${CORAL}`, paddingBottom: 7 }}>
+        <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: ".18em", color: CORAL }}>
+          {lesson.name.toUpperCase()} · SOUND DRILL · TEACHER COPY
+        </div>
+        <div style={{ fontSize: 28, fontWeight: 800, lineHeight: 1.05 }}>🔊 One minute, no letters</div>
+        <div style={{ fontSize: 12.5, color: MUTED, marginTop: 3 }}>
+          Say the word, ask the question, the child answers out loud. Nothing is shown and nothing
+          is written — if a child needs help, use counters for the sounds, never letters. The
+          answer is in brackets. Two minutes at most; stop while it is still fast.
+        </div>
+      </div>
+      {drills.map(([head, items]) => (
+        <section key={head} style={{ display: "flex", flexDirection: "column", gap: 4, breakInside: "avoid" }}>
+          <div style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: ".12em", color: CORAL, borderBottom: `2px solid ${LINE}`, paddingBottom: 3 }}>
+            {head}
+          </div>
+          {items.map((t, i) => (
+            <div key={i} style={{ fontSize: 14, lineHeight: 1.4 }}>{i + 1}. {t}</div>
+          ))}
+        </section>
+      ))}
+    </section>
+  );
+}
+
 export default async function PracticePage({
   searchParams,
 }: {
@@ -458,6 +608,8 @@ export default async function PracticePage({
             <DayPage key={d.day} lesson={lesson} d={d} multi={multi} />
           ))}
           <RaceSheet lesson={lesson} />
+          <PhraseLadder lesson={lesson} />
+          <SoundDrill lesson={lesson} />
           <KeySheet lesson={lesson} multi={multi} />
         </main>
       </SignInGate>
