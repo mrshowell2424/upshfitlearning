@@ -5789,14 +5789,26 @@ const ADAPTATIONS: Adaptation[] = [
     // scale was solving the printer's problem by taking the space the work
     // needs.
     //
-    // So there is a floor. Down to 0.85 a sheet is scaled, which is small
-    // enough to be invisible and large enough to still be written on. Below it
-    // the sheet is left at full size and allowed to run onto a second page
-    // instead, which is what a sheet holding more than a page of work should do.
-    // The exercise blocks already carry break-inside: avoid, so a split falls
-    // between exercises rather than through one.
+    // So there is a floor. Below it the sheet is left at full size and allowed
+    // to run onto a second page instead, which is what a sheet holding more
+    // than a page of work should do. The exercise blocks already carry
+    // break-inside: avoid, so a split falls between exercises rather than
+    // through one.
     //
-    // Read it needs 0.88 and stays one page. Spelling and Writing split.
+    // THE FLOOR IS 0.78, and it was 0.85. The number is a judgement about
+    // paper, so it was the teacher's to make rather than mine, and she made
+    // it knowing what it costs: at 0.78 a ruled line is about 7mm instead of
+    // 9mm, which is narrow for an infant hand, and roughly 120 sheets in the
+    // .78-.85 band stop splitting and start shrinking.
+    //
+    // What it buys is Spelling. "Say it, then write it" is 1201px against a
+    // 955px page and needs 0.790, so at any floor above that it split -- 23
+    // answer boxes and two dictation sentences arriving as a page and a
+    // stub. It now fits on one.
+    //
+    // Writing still splits, and should: it needs 0.596, and a passage with
+    // its questions and the lines to answer on is genuinely more than a page.
+    // So does the worst Read it, at 0.706.
     name: "let an over-full sheet split rather than shrink past readable",
     apply: (html) => {
       const old =
@@ -5807,7 +5819,7 @@ const ADAPTATIONS: Adaptation[] = [
         old,
         "if (h > max) {\n" +
           "          const z = max / h - 0.005;\n" +
-          "          if (z >= 0.85) { e.style.zoom = String(z); }\n" +
+          "          if (z >= 0.78) { e.style.zoom = String(z); }\n" +
           "          else {\n" +
           "            // More than a page of work: let it be two pages at full\n" +
           "            // size rather than one page nobody can write on.\n" +
