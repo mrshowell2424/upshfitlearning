@@ -315,8 +315,21 @@ function phrasesFrom(all) {
     }
     flush();
   }
-  const tidy = (list) => [...new Set(list.map((x) => x.replace(/\s+/g, " ").trim()))]
-    .filter((x) => /^[A-Za-z]/.test(x) && !/[0-9()[\]]/.test(x));
+  // One of a pair that says the same thing. "into the pond" and "in the pond"
+  // in the same step is a rung a child reads twice and climbs once.
+  const tidy = (list) => {
+    const out = [];
+    for (const x of [...new Set(list.map((y) => y.replace(/\s+/g, " ").trim()))]) {
+      if (!/^[A-Za-z]/.test(x) || /[0-9()[\]]/.test(x)) continue;
+      const bare = x.toLowerCase().replace(/[^a-z ]/g, "");
+      if (out.some((y) => {
+        const z = y.toLowerCase().replace(/[^a-z ]/g, "");
+        return z.includes(bare) || bare.includes(z);
+      })) continue;
+      out.push(x);
+    }
+    return out;
+  };
   return { short: tidy(short), long: tidy(long) };
 }
 
@@ -732,10 +745,24 @@ for (const lesson of SEQ) {
     });
   }
 
-  // The phrase rungs, cut from the passage the child actually reads at the
-  // top of every day page -- text, not mazeSource, which is the other
-  // telling and never printed beside this sheet.
-  const allSents = sentences(text.paras.join(" "));
+  /*
+   * THE PHRASE RUNGS COME FROM THE GRADE 2 TELLING, not the printed one.
+   *
+   * The ladder climbs the lesson's own words, then phrases, then whole
+   * sentences, and every rung has to be readable by a child working at this
+   * lesson. The grade 3 telling is deliberately above that -- it is written
+   * long so a minute of reading does not run out of words -- and cutting the
+   * ladder from it put "Everybody in the family had seen it" and "Nobody had
+   * ever caught it" on a Level 1 digraph sheet, where caught is a Level 5
+   * spelling. Step one was chin, ship, thin; step four was grade 3 prose, and
+   * the rung between them was missing.
+   *
+   * The grade 2 telling is pinned to what the lesson itself has taught, which
+   * is exactly the standard a fluency rung needs. It is the same story, so
+   * the ladder still leads into the text the child reads.
+   */
+  const ladderSource = p.g2 || text;
+  const allSents = sentences(ladderSource.paras.join(" "));
   const cut = phrasesFrom(allSents);
   const ladderWords = [...new Set([...(lesson.words || []), ...ownWords])].slice(0, 10);
   const phrases = {

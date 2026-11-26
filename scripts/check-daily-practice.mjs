@@ -368,12 +368,20 @@ for (const lesson of D.lessons) {
     if (part + answer !== word) say(`syllable: ${part} plus ${answer} does not spell ${word}`);
   }
 
-  // The phrase ladder is cut from the passage printed above it, so every
-  // word in it has to be a word of that passage -- otherwise the rung
-  // between the word list and the text is made of something else.
-  const said = new Set(
-    (lesson.passage.paras || []).join(" ").toLowerCase().match(/[a-z']+/g) || [],
-  );
+  /*
+   * The phrase ladder is cut from the GRADE 2 telling, not the printed one.
+   *
+   * Every rung has to be readable by a child working at this lesson, and the
+   * printed telling is deliberately above that: written long so a minute of
+   * reading does not run out of words. Cutting the ladder from it put
+   * "Nobody had ever caught it" on a Level 1 digraph sheet. The grade 2
+   * telling is pinned to what the lesson has taught, which is the standard a
+   * fluency rung needs, and it is the same story either way.
+   */
+  const ladderText = (PASS[lesson.key] && PASS[lesson.key].g2
+    ? PASS[lesson.key].g2.paras
+    : lesson.passage.paras) || [];
+  const said = new Set(ladderText.join(" ").toLowerCase().match(/[a-z']+/g) || []);
   const ph = lesson.phrases || {};
   for (const [kind, want] of [["short", [3, 3]], ["long", [4, 6]]]) {
     for (const phrase of ph[kind] || []) {
@@ -385,8 +393,8 @@ for (const lesson of D.lessons) {
     }
   }
   for (const sentence of ph.sentences || []) {
-    if (!(lesson.passage.paras || []).some((x) => x.includes(sentence))) {
-      say(`phrase sentence is not in the passage: ${sentence.slice(0, 40)}`);
+    if (!ladderText.some((x) => x.includes(sentence))) {
+      say(`phrase sentence is not in the telling it claims: ${sentence.slice(0, 40)}`);
     }
   }
 }
