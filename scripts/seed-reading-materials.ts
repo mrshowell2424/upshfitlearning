@@ -25,6 +25,7 @@ import CONTINUUM_DAILY from "./continuum-daily.json" with { type: "json" };
 import DAILY_PRACTICE from "./reading-daily-practice.json" with { type: "json" };
 import SYLLABLES from "./reading-syllable-splits.json" with { type: "json" };
 import WORD_SORT from "./reading-word-sort.json" with { type: "json" };
+import SOUND_MAP from "./reading-sound-mapping.json" with { type: "json" };
 import PARTW from "./reading-part-words.json" with { type: "json" };
 
 /**
@@ -5891,6 +5892,117 @@ const ADAPTATIONS: Adaptation[] = [
         "    </div>\n" +
         "    </sc-if>\n    ";
 
+      /*
+       * SOUND-SPELLING MAPPING: one box per sound.
+       *
+       * 95% Group's weekly timing guide gives this five minutes on Day 1 and
+       * a whole OPTION day for a group that needs it, and it is the routine
+       * their chip kits are built around. The packet had nothing for it.
+       *
+       * Every other sheet works in letters or in whole words. This one works
+       * in sounds: the teacher says "ship", the child hears three, and writes
+       * sh in the first box, i in the second, p in the third. The boxes are
+       * given, so the question is not how many sounds there are but which
+       * letters make each one -- which is the moment a child meets the idea
+       * that sh is one sound written with two letters.
+       *
+       * Six lessons have no sheet. x and qu are one letter saying two sounds
+       * and nk is two, and a mat cannot show that in one box, so rather than
+       * print a row no child can fill they go without. The builder and
+       * scripts/check-sound-mapping.mjs both say which.
+       */
+      const SM = (SOUND_MAP as unknown as {
+        lessons: { key: string; rows: { w: string; boxes: string[] }[] }[];
+      }).lessons;
+      const maps: Record<string, { w: string; b: string[] }[]> = {};
+      for (const L of SM) maps[L.key] = L.rows.map((r) => ({ w: r.w, b: r.boxes }));
+      out = out.replace(
+        end,
+        '<script id="sor-sound-map" type="application/json">' +
+          JSON.stringify(maps).replace(/</g, "\\u003c") +
+          "</script>\n" + end,
+      );
+      const smSeat = "      wbBtn: (this.state && this.state.wbOpen) ? 'Hide workbook \u25b2' : 'Show workbook \u25bc',";
+      if (out.includes(smSeat)) {
+        out = out.replace(
+          smSeat,
+          smSeat + "\n" +
+            "      ...(() => {\n" +
+            "        const SM = (() => { try {\n" +
+            "          return JSON.parse(document.getElementById('sor-sound-map').textContent);\n" +
+            "        } catch (e) { return {}; } })();\n" +
+            "        const R = SM[id] || SM[String(id).split('|')[0]] || null;\n" +
+            "        if (!R || !R.length) return { smHas: false, smRows: [], smKey: [] };\n" +
+            "        return {\n" +
+            "          smHas: true,\n" +
+            // The child gets boxes and no word: the word is spoken. The row
+            // carries its own number of them, which is the only clue given.
+            "          smRows: R.map((r, i) => ({ n: (i + 1) + '.', cells: r.b.map(() => ({})) })),\n" +
+            "          smKey: R.map((r, i) => ({ t: (i + 1) + '. ' + r.w, b: r.b.join('  \u00b7  ') })),\n" +
+            "        }; })(),",
+        );
+      }
+
+      const mapSheet =
+        '<sc-if value="{{ smHas }}" hint-placeholder-val="{{ true }}">\n' +
+        '    <div data-wb="true" style="{{ p.box1 }}">\n' +
+        '      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;' +
+        'border-bottom:3px solid #000;padding-bottom:7px">\n' +
+        "        <div>\n" +
+        '          <div style="' + H + '">{{ p.kicker }} \u00b7 SOUND SPELLING</div>\n' +
+        '          <div style="font-size:27px;font-weight:800;color:#000;line-height:1.05">' +
+        "\u{1F50D} One box, one sound</div>\n" +
+        "        </div>\n" +
+        '        <div style="font-size:12.5px;font-weight:600;white-space:nowrap;text-align:right">' +
+        "Name ______________<br>Date ____________</div>\n" +
+        "      </div>\n" +
+        '      <div style="font-size:13.5px;line-height:1.45;border:1.5px solid #000;border-radius:8px;' +
+        'padding:7px 11px;color:#000"><b>How:</b> your teacher says a word. Say it again slowly and ' +
+        "listen for each sound. Write the letters for that sound in its own box \u2014 some sounds " +
+        "take two letters, and that is why a box can hold more than one. The number of boxes tells " +
+        "you how many sounds to listen for. Then write the whole word on the line.</div>\n" +
+        '      <div style="display:flex;flex-direction:column;justify-content:space-evenly;flex:1;' +
+        'min-height:0">\n' +
+        '        <sc-for list="{{ smRows }}" as="r" hint-placeholder-count="8">\n' +
+        '          <div style="display:flex;align-items:center;gap:9px">\n' +
+        '            <span style="font-size:15px;font-weight:800;color:#000;width:22px;flex:none">' +
+        "{{ r.n }}</span>\n" +
+        '            <sc-for list="{{ r.cells }}" as="c" hint-placeholder-count="4">' +
+        '<span style="display:inline-block;width:74px;height:50px;border:2px solid #000;' +
+        'border-radius:6px"></span></sc-for>\n' +
+        // Then the whole word, which is the step the mapping is for: the
+        // sounds go in the boxes and the word is written out of them. It also
+        // uses the right of the page, which three boxes on their own left
+        // empty.
+        '            <span style="flex:1;min-width:90px;border-bottom:2px solid #000;' +
+        'align-self:flex-end;margin-bottom:7px"></span>\n' +
+        "          </div>\n" +
+        "        </sc-for>\n" +
+        "      </div>\n" +
+        "    </div>\n" +
+
+        // the teacher's copy: the words to say, and what goes in the boxes.
+        '    <div data-wb="true" style="{{ p.dsBox }}">\n' +
+        '      <div style="border-bottom:3px solid #000;padding-bottom:7px">\n' +
+        '        <div style="' + H + '">{{ p.kicker }} \u00b7 SOUND SPELLING \u00b7 TEACHER COPY</div>\n' +
+        '        <div style="font-size:26px;font-weight:800;color:#000;line-height:1.05">' +
+        "The words to say</div>\n" +
+        '        <div style="font-size:12.5px;color:#000;margin-top:3px">Say the word, then say it ' +
+        "again sound by sound. The child writes, not you. What belongs in each box is on the " +
+        "right.</div>\n" +
+        "      </div>\n" +
+        '      <sc-for list="{{ smKey }}" as="k" hint-placeholder-count="8">\n' +
+        '        <div style="display:flex;gap:14px;align-items:baseline;border-bottom:1px solid #000;' +
+        'padding-bottom:5px">\n' +
+        '          <span style="font-size:16px;font-weight:800;color:#000;flex:none;width:118px">' +
+        "{{ k.t }}</span>\n" +
+        '          <span style="font-size:15px;font-weight:600;color:#000">{{ k.b }}</span>\n' +
+        "        </div>\n" +
+        "      </sc-for>\n" +
+        '      <div style="flex:1"></div>\n' +
+        "    </div>\n" +
+        "    </sc-if>\n    ";
+
       // The line under "Student workbook + answer key" still listed the five
       // pages the packet had when it was written. Say what is in it now.
       const summary = "writing, decodable + questions, fluency check'";
@@ -5917,7 +6029,7 @@ const ADAPTATIONS: Adaptation[] = [
         // The sort before the week's measures: 95% Group teaches the pattern
         // on Day 1 and sorts it the same day, before any of this measures
         // whether it took.
-        out = out.slice(0, at) + sortSheet + sheet + out.slice(at);
+        out = out.slice(0, at) + mapSheet + sortSheet + sheet + out.slice(at);
       }
       return out;
     },
@@ -5968,6 +6080,7 @@ const ADAPTATIONS: Adaptation[] = [
         ["\u00B7 PHRASE LADDER", "phrase"],
         ["\u00B7 SOUND DRILL", "sound"],
         ["\u00B7 WORD SORT", "sort"],
+        ["\u00B7 SOUND SPELLING", "map"],
       ];
       let out = html;
       for (const [mark, key] of MARKS) {
@@ -6001,7 +6114,8 @@ const ADAPTATIONS: Adaptation[] = [
           "          ['continuum', '\u{1F504} 30 a day'], ['scores', '\u{1F4C8} My scores'],\n" +
           "          ['mclass', '⏱ mClass daily'], ['phrase', '\u{1FA9C} Phrase ladder'],\n" +
           "          ['sound', '\u{1F50A} Sound drill'],\n" +
-          "          ['sort', '\u{1F5C2} Word sort']];",
+          "          ['sort', '\u{1F5C2} Word sort'],\n" +
+          "          ['map', '\u{1F50D} Sound spelling']];",
       );
 
       // 3. The off list, where the print fit can see it.
