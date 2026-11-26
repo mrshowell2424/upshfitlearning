@@ -31,6 +31,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { units } from "./lib/syllable-split.mjs";
 import { unsafeRealWord } from "./lib/not-nonsense.mjs";
+import { badPair } from "./lib/grapheme-sounds.mjs";
 
 const SEQ = JSON.parse(readFileSync("scripts/reading-sequence.json", "utf8")).sequence;
 const SPELL = JSON.parse(readFileSync("scripts/reading-spelling.json", "utf8")).patterns;
@@ -132,6 +133,16 @@ export function boxesFor(word) {
   // And the boxes still have to spell the word, with the split e put back.
   const spelled = boxes.join("").replace(/_e/, "") + (boxes.some((b) => b.includes("_e")) ? "e" : "");
   if (spelled !== w) return null;
+  /*
+   * LAST, AND THE ONE THE COUNT CANNOT SEE: every box has to be a real
+   * spelling of the sound beside it.
+   *
+   * A count and a spelling are both blind to which sound sits in which box,
+   * so two wrongs cancel and the row passes. flexed is six boxes and six
+   * sounds and spells itself, and is still wrong in every box after the x.
+   * See lib/grapheme-sounds.mjs for the table and for what it leaves out.
+   */
+  if (badPair(boxes, sounds)) return null;
   return boxes;
 }
 

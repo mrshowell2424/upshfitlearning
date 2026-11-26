@@ -423,22 +423,6 @@
    ]
   },
   {
-   "key": "og1-06",
-   "name": "x and qu",
-   "level": 1,
-   "rows": [
-    {
-     "w": "square",
-     "boxes": [
-      "s",
-      "qu",
-      "a_e",
-      "r"
-     ]
-    }
-   ]
-  },
-  {
    "key": "floss",
    "name": "FLOSS rule (ff, ll, ss, zz)",
    "level": 1,
@@ -1624,15 +1608,6 @@
      ]
     },
     {
-     "w": "payroll",
-     "boxes": [
-      "p",
-      "ay",
-      "r",
-      "oll"
-     ]
-    },
-    {
      "w": "posted",
      "boxes": [
       "p",
@@ -1887,17 +1862,6 @@
      ]
     },
     {
-     "w": "useful",
-     "boxes": [
-      "u",
-      "s",
-      "e",
-      "f",
-      "u",
-      "l"
-     ]
-    },
-    {
      "w": "joyful",
      "boxes": [
       "j",
@@ -1919,17 +1883,6 @@
      ]
     },
     {
-     "w": "useless",
-     "boxes": [
-      "u",
-      "s",
-      "e",
-      "l",
-      "e",
-      "ss"
-     ]
-    },
-    {
      "w": "careless",
      "boxes": [
       "c",
@@ -1945,6 +1898,27 @@
       "e",
       "n",
       "d",
+      "l",
+      "e",
+      "ss"
+     ]
+    },
+    {
+     "w": "fearless",
+     "boxes": [
+      "f",
+      "ear",
+      "l",
+      "e",
+      "ss"
+     ]
+    },
+    {
+     "w": "painless",
+     "boxes": [
+      "p",
+      "ai",
+      "n",
       "l",
       "e",
       "ss"
@@ -3085,16 +3059,6 @@
      ]
     },
     {
-     "w": "happier",
-     "boxes": [
-      "h",
-      "a",
-      "pp",
-      "ie",
-      "r"
-     ]
-    },
-    {
      "w": "babies",
      "boxes": [
       "b",
@@ -3324,54 +3288,6 @@
    ]
   },
   {
-   "key": "og3-12",
-   "name": "Derivational suffixes",
-   "level": 3,
-   "rows": [
-    {
-     "w": "active",
-     "boxes": [
-      "a",
-      "c",
-      "t",
-      "i_e",
-      "v"
-     ]
-    },
-    {
-     "w": "native",
-     "boxes": [
-      "n",
-      "a",
-      "t",
-      "i_e",
-      "v"
-     ]
-    },
-    {
-     "w": "massive",
-     "boxes": [
-      "m",
-      "a",
-      "ss",
-      "i_e",
-      "v"
-     ]
-    },
-    {
-     "w": "festive",
-     "boxes": [
-      "f",
-      "e",
-      "s",
-      "t",
-      "i_e",
-      "v"
-     ]
-    }
-   ]
-  },
-  {
    "key": "og3-13",
    "name": "Open prefixes",
    "level": 3,
@@ -3383,17 +3299,6 @@
       "e",
       "d",
       "o"
-     ]
-    },
-    {
-     "w": "preview",
-     "boxes": [
-      "p",
-      "r",
-      "e",
-      "v",
-      "ie",
-      "w"
      ]
     },
     {
@@ -3510,17 +3415,6 @@
    "level": 4,
    "rows": [
     {
-     "w": "flexed",
-     "boxes": [
-      "f",
-      "l",
-      "e",
-      "x",
-      "e",
-      "d"
-     ]
-    },
-    {
      "w": "inject",
      "boxes": [
       "i",
@@ -3563,16 +3457,6 @@
      ]
     },
     {
-     "w": "missile",
-     "boxes": [
-      "m",
-      "i",
-      "ss",
-      "i_e",
-      "l"
-     ]
-    },
-    {
      "w": "dismiss",
      "boxes": [
       "d",
@@ -3589,6 +3473,17 @@
       "o",
       "m",
       "i",
+      "t"
+     ]
+    },
+    {
+     "w": "aspect",
+     "boxes": [
+      "a",
+      "s",
+      "p",
+      "e",
+      "c",
       "t"
      ]
     }
@@ -4076,16 +3971,6 @@
       "n",
       "i"
      ]
-    },
-    {
-     "w": "rhythm",
-     "boxes": [
-      "r",
-      "h",
-      "y",
-      "th",
-      "m"
-     ]
     }
    ]
   },
@@ -4376,17 +4261,6 @@
      ]
     },
     {
-     "w": "homework",
-     "boxes": [
-      "h",
-      "o",
-      "m",
-      "ew",
-      "or",
-      "k"
-     ]
-    },
-    {
      "w": "worker",
      "boxes": [
       "w",
@@ -4402,16 +4276,6 @@
    "name": "Suffixes -al, -age, -ance, -ence",
    "level": 5,
    "rows": [
-    {
-     "w": "garbage",
-     "boxes": [
-      "g",
-      "ar",
-      "b",
-      "a_e",
-      "g"
-     ]
-    },
     {
      "w": "final",
      "boxes": [

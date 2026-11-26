@@ -18,6 +18,7 @@
  */
 import { readFileSync } from "node:fs";
 import { unsafeRealWord } from "./lib/not-nonsense.mjs";
+import { badPair } from "./lib/grapheme-sounds.mjs";
 
 const D = JSON.parse(readFileSync("scripts/reading-sound-mapping.json", "utf8"));
 const SEQ = JSON.parse(readFileSync("scripts/reading-sequence.json", "utf8")).sequence;
@@ -73,6 +74,15 @@ for (const L of D.lessons) {
     if (spelled !== r.w) say(`"${r.w}" is spelled "${spelled}" by its boxes`);
     if (r.boxes.filter((b) => b.includes("_e")).length > 1) {
       say(`"${r.w}" has two split spellings, which cannot both take the final e`);
+    }
+
+    // And the claim neither the count nor the spelling can test: that each
+    // box is a real spelling of the sound beside it. flexed passed both of
+    // those as f|l|e|x|e|d against F L EH K S T, with x holding two sounds,
+    // a silent e holding one, and the d saying /t/.
+    const wrong = badPair(r.boxes, s);
+    if (wrong) {
+      say(`"${r.w}" box ${wrong.at + 1} has "${wrong.box}" making /${wrong.sound}/, which it does not spell`);
     }
   }
 }
