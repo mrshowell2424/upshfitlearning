@@ -23,6 +23,7 @@ import SEQUENCE from "./reading-sequence.json" with { type: "json" };
 import CONTINUUM_DAILY from "./continuum-daily.json" with { type: "json" };
 import DAILY_PRACTICE from "./reading-daily-practice.json" with { type: "json" };
 import SYLLABLES from "./reading-syllable-splits.json" with { type: "json" };
+import WORD_SORT from "./reading-word-sort.json" with { type: "json" };
 import PARTW from "./reading-part-words.json" with { type: "json" };
 
 /**
@@ -5737,6 +5738,141 @@ const ADAPTATIONS: Adaptation[] = [
         "    </div>\n" +
         "    </sc-if>\n    ";
 
+      /*
+       * THE WORD SORT, which the packet did not have.
+       *
+       * 95% Group's weekly timing guide gives "Identify Pattern: Sort Words"
+       * twelve minutes on Day 1 and five more on Day 2 -- seventeen minutes,
+       * the largest single block in the week -- and it was the one component
+       * with no sheet. Everything around it was covered: reading the words,
+       * building word chains, writing them, transferring to text.
+       *
+       * It is not another reading sheet. The others ask a child to read a
+       * word that has the pattern; a sort asks whether this word has it, and
+       * which one -- categorising rather than decoding, which is what makes a
+       * pattern visible as a pattern. A child can read "rain" and "play" one
+       * after the other without noticing that long a is spelled two ways.
+       *
+       * The odd ones out are words already taught that belong in no column.
+       * Without them the last column fills itself by elimination and nothing
+       * has been decided.
+       */
+      const WS = (WORD_SORT as unknown as {
+        lessons: { key: string; columns: { label: string; kind: string; words: string[] }[];
+                   odd: string[]; bank: string[] }[];
+      }).lessons;
+      const sorts: Record<string, { cols: { l: string; w: string[] }[]; bank: string[] }> = {};
+      for (const L of WS) {
+        sorts[L.key] = {
+          cols: L.columns.map((c) => ({ l: c.label, k: c.kind, w: c.words })),
+          bank: L.bank,
+        };
+      }
+      out = out.replace(
+        end,
+        '<script id="sor-word-sort" type="application/json">' +
+          JSON.stringify(sorts).replace(/</g, "\\u003c") +
+          "</script>\n" + end,
+      );
+      const wsSeat = "      wbBtn: (this.state && this.state.wbOpen) ? 'Hide workbook \u25b2' : 'Show workbook \u25bc',";
+      if (out.includes(wsSeat)) {
+        out = out.replace(
+          wsSeat,
+          wsSeat + "\n" +
+            "      ...(() => {\n" +
+            "        const WS = (() => { try {\n" +
+            "          return JSON.parse(document.getElementById('sor-word-sort').textContent);\n" +
+            "        } catch (e) { return {}; } })();\n" +
+            "        const S = WS[id] || WS[String(id).split('|')[0]] || null;\n" +
+            "        if (!S) return { wsHas: false, wsCols: [], wsBank: [], wsKey: [] };\n" +
+            "        return {\n" +
+            "          wsHas: true,\n" +
+            // The mat: one column per pattern, each with ruled lines to write
+            // on. Lines rather than loose cards, because a packet that needs
+            // scissors and a flat surface is a packet that does not get used.
+            "          wsCols: S.cols.map((c) => ({ l: c.l, rows: c.w.map(() => ({})) })),\n" +
+            "          wsBank: S.bank.map((w) => ({ w })),\n" +
+            // No box where the sort already has a "not this pattern" column.
+            "          wsOdd: S.cols.every((c) => c.k === 'pattern'),\n" +
+            "          wsKey: S.cols.map((c) => ({ l: c.l, t: c.w.join(', ') })),\n" +
+            "        }; })(),",
+        );
+      }
+
+      const sortSheet =
+        '<sc-if value="{{ wsHas }}" hint-placeholder-val="{{ true }}">\n' +
+        '    <div data-wb="true" style="{{ p.box1 }}">\n' +
+        '      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;' +
+        'border-bottom:3px solid #000;padding-bottom:7px">\n' +
+        "        <div>\n" +
+        '          <div style="' + H + '">{{ p.kicker }} \u00b7 WORD SORT</div>\n' +
+        '          <div style="font-size:27px;font-weight:800;color:#000;line-height:1.05">' +
+        "\u{1F5C2} Which one is it?</div>\n" +
+        "        </div>\n" +
+        '        <div style="font-size:12.5px;font-weight:600;white-space:nowrap;text-align:right">' +
+        "Name ______________<br>Date ____________</div>\n" +
+        "      </div>\n" +
+        '      <div style="font-size:13.5px;line-height:1.45;border:1.5px solid #000;border-radius:8px;' +
+        'padding:7px 11px;color:#000"><b>How:</b> read a word from the box, decide which column it ' +
+        "belongs in, and write it there. Some of them belong in none of the columns \u2014 those go " +
+        "in the last box. Read each word out loud before you write it.</div>\n" +
+        '      <div style="border:2px solid #000;border-radius:8px;padding:8px 11px;display:flex;' +
+        'flex-wrap:wrap;gap:7px 16px">\n' +
+        '        <sc-for list="{{ wsBank }}" as="b" hint-placeholder-count="24">' +
+        '<span style="font-size:17px;font-weight:650;color:#000;white-space:nowrap">{{ b.w }}</span>' +
+        "</sc-for>\n" +
+        "      </div>\n" +
+        // flex:1 so the mat takes the rest of the page. Without it the sheet
+        // printed its columns four centimetres tall at the top of a page and
+        // left the other two thirds blank, with writing lines eight pixels
+        // apart that no child could write between.
+        '      <div style="display:flex;gap:10px;align-items:stretch;flex:1;min-height:0">\n' +
+        '        <sc-for list="{{ wsCols }}" as="c" hint-placeholder-count="4">\n' +
+        '          <div style="flex:1;min-width:0;border:2px solid #000;border-radius:8px;' +
+        'display:flex;flex-direction:column">\n' +
+        '            <div style="font-size:16px;font-weight:800;color:#fff;background:#000;' +
+        'text-align:center;padding:4px 2px">{{ c.l }}</div>\n' +
+        // One ruled line per word that belongs here, spread down the column
+        // rather than stacked at the top of it.
+        '            <div style="flex:1;display:flex;flex-direction:column;' +
+        'justify-content:space-evenly;padding:4px 0">\n' +
+        '              <sc-for list="{{ c.rows }}" as="r" hint-placeholder-count="5">' +
+        '<span style="display:block;border-bottom:1.5px solid #000;margin:0 9px;height:30px"></span>' +
+        "</sc-for>\n" +
+        "            </div>\n" +
+        "          </div>\n" +
+        "        </sc-for>\n" +
+        "      </div>\n" +
+        '      <sc-if value="{{ wsOdd }}" hint-placeholder-val="{{ true }}">\n' +
+        '      <div style="border:2px dashed #000;border-radius:8px;padding:6px 11px">\n' +
+        '        <div style="' + H + ';font-size:10px">NONE OF THESE</div>\n' +
+        '        <span style="display:block;border-bottom:1.5px solid #000;margin:0 4px;height:32px"></span>\n' +
+        '        <span style="display:block;border-bottom:1.5px solid #000;margin:0 4px;height:32px"></span>\n' +
+        "      </div>\n" +
+        "      </sc-if>\n" +
+        "    </div>\n" +
+
+        // and the teacher's copy of where everything goes.
+        '    <div data-wb="true" style="{{ p.dsBox }}">\n' +
+        '      <div style="border-bottom:3px solid #000;padding-bottom:7px">\n' +
+        '        <div style="' + H + '">{{ p.kicker }} \u00b7 WORD SORT \u00b7 TEACHER COPY</div>\n' +
+        '        <div style="font-size:26px;font-weight:800;color:#000;line-height:1.05">' +
+        "Where each word goes</div>\n" +
+        '        <div style="font-size:12.5px;color:#000;margin-top:3px">Anything not listed here ' +
+        "belongs in NONE OF THESE \u2014 that is the point of them being on the sheet.</div>\n" +
+        "      </div>\n" +
+        '      <sc-for list="{{ wsKey }}" as="k" hint-placeholder-count="4">\n' +
+        '        <div style="display:flex;gap:11px;align-items:flex-start;border-bottom:1px solid #000;' +
+        'padding-bottom:6px">\n' +
+        '          <span style="' + H + ';font-size:11px;flex:none;width:84px">{{ k.l }}</span>\n' +
+        '          <div style="flex:1;min-width:0;font-size:14px;line-height:1.5;color:#000">' +
+        "{{ k.t }}</div>\n" +
+        "        </div>\n" +
+        "      </sc-for>\n" +
+        '      <div style="flex:1"></div>\n' +
+        "    </div>\n" +
+        "    </sc-if>\n    ";
+
       // The line under "Student workbook + answer key" still listed the five
       // pages the packet had when it was written. Say what is in it now.
       const summary = "writing, decodable + questions, fluency check'";
@@ -5760,7 +5896,10 @@ const ADAPTATIONS: Adaptation[] = [
       if (spots.length !== 2) return html;
       // Back to front, so an earlier insertion does not move a later index.
       for (const at of spots.reverse()) {
-        out = out.slice(0, at) + sheet + out.slice(at);
+        // The sort before the week's measures: 95% Group teaches the pattern
+        // on Day 1 and sorts it the same day, before any of this measures
+        // whether it took.
+        out = out.slice(0, at) + sortSheet + sheet + out.slice(at);
       }
       return out;
     },
@@ -5810,6 +5949,7 @@ const ADAPTATIONS: Adaptation[] = [
         // thing being worked on.
         ["\u00B7 PHRASE LADDER", "phrase"],
         ["\u00B7 SOUND DRILL", "sound"],
+        ["\u00B7 WORD SORT", "sort"],
       ];
       let out = html;
       for (const [mark, key] of MARKS) {
@@ -5842,7 +5982,8 @@ const ADAPTATIONS: Adaptation[] = [
           "['sentence', '\u{1F9E9} Sentence building'],\n" +
           "          ['continuum', '\u{1F504} 30 a day'], ['scores', '\u{1F4C8} My scores'],\n" +
           "          ['mclass', '⏱ mClass daily'], ['phrase', '\u{1FA9C} Phrase ladder'],\n" +
-          "          ['sound', '\u{1F50A} Sound drill']];",
+          "          ['sound', '\u{1F50A} Sound drill'],\n" +
+          "          ['sort', '\u{1F5C2} Word sort']];",
       );
 
       // 3. The off list, where the print fit can see it.
