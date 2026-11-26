@@ -111,6 +111,21 @@ export function boxesFor(word) {
   if (parts.some((p) => p.vce)) return null;
 
   const boxes = parts.map((p) => p.s);
+  /*
+   * A LONE e ON THE END IS ONLY A SOUND IN he, me, we AND she.
+   *
+   * Anywhere else it is silent, and a box for it tells a child it says
+   * something. The consonant-le words are the trap, because they pass a
+   * count: "table" is T EY B AH L, five sounds, and t-a-b-l-e is five
+   * letters, so one box each looked right. It is not -- the schwa in
+   * consonant-le has no letter at all, so that mapping pairs the schwa with
+   * the l and hands the /l/ to the e. Ten rows across four lessons said that,
+   * including circle as c, ir, c, l, e.
+   *
+   * The test is whether the e is the only vowel in the word, which is what
+   * makes it the vowel of he rather than the silent one of table.
+   */
+  if (boxes[boxes.length - 1] === "e" && /[aeiou]/.test(w.slice(0, -1))) return null;
   // The proof: one box per sound, counted by the dictionary rather than by
   // the spelling.
   if (boxes.length !== sounds.length) return null;

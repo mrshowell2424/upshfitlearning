@@ -3240,96 +3240,6 @@
    ]
   },
   {
-   "key": "og3-08",
-   "name": "Consonant-le",
-   "level": 3,
-   "rows": [
-    {
-     "w": "table",
-     "boxes": [
-      "t",
-      "a",
-      "b",
-      "l",
-      "e"
-     ]
-    },
-    {
-     "w": "bubble",
-     "boxes": [
-      "b",
-      "u",
-      "bb",
-      "l",
-      "e"
-     ]
-    },
-    {
-     "w": "marble",
-     "boxes": [
-      "m",
-      "ar",
-      "b",
-      "l",
-      "e"
-     ]
-    },
-    {
-     "w": "humble",
-     "boxes": [
-      "h",
-      "u",
-      "m",
-      "b",
-      "l",
-      "e"
-     ]
-    },
-    {
-     "w": "tumble",
-     "boxes": [
-      "t",
-      "u",
-      "m",
-      "b",
-      "l",
-      "e"
-     ]
-    },
-    {
-     "w": "stable",
-     "boxes": [
-      "s",
-      "t",
-      "a",
-      "b",
-      "l",
-      "e"
-     ]
-    },
-    {
-     "w": "nibble",
-     "boxes": [
-      "n",
-      "i",
-      "bb",
-      "l",
-      "e"
-     ]
-    },
-    {
-     "w": "circle",
-     "boxes": [
-      "c",
-      "ir",
-      "c",
-      "l",
-      "e"
-     ]
-    }
-   ]
-  },
-  {
    "key": "og3-09",
    "name": "Schwa a",
    "level": 3,
@@ -3418,17 +3328,6 @@
    "name": "Derivational suffixes",
    "level": 3,
    "rows": [
-    {
-     "w": "edible",
-     "boxes": [
-      "e",
-      "d",
-      "i",
-      "b",
-      "l",
-      "e"
-     ]
-    },
     {
      "w": "active",
      "boxes": [
@@ -3720,17 +3619,6 @@
      ]
     },
     {
-     "w": "audible",
-     "boxes": [
-      "au",
-      "d",
-      "i",
-      "b",
-      "l",
-      "e"
-     ]
-    },
-    {
      "w": "auditory",
      "boxes": [
       "au",
@@ -3777,6 +3665,16 @@
       "u",
       "c",
       "t"
+     ]
+    },
+    {
+     "w": "induce",
+     "boxes": [
+      "i",
+      "n",
+      "d",
+      "u_e",
+      "c"
      ]
     }
    ]

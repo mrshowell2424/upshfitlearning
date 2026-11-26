@@ -59,6 +59,12 @@ for (const L of D.lessons) {
       say(`"${r.w}" has ${r.boxes.length} boxes and ${s.length} sounds`);
     }
     if (r.boxes.some((b) => !b)) say(`"${r.w}" has an empty box`);
+    // A box for a silent e says it makes a sound. The consonant-le words
+    // slipped through on a count: table is five sounds and five letters, and
+    // one box each pairs the schwa with the l and gives the /l/ to the e.
+    if (r.boxes[r.boxes.length - 1] === "e" && /[aeiou]/.test(r.w.slice(0, -1))) {
+      say(`"${r.w}" gives a box to a silent e`);
+    }
 
     // The boxes, read across, have to spell the word. A split spelling puts
     // its e back on the end, which is where the word has it.
