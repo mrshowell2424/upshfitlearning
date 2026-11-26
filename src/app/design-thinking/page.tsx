@@ -83,14 +83,23 @@ function DesignThinkingRoadMap() {
    * lib/auth/materials-pass.ts. Unlocking first means the week links work the
    * moment they appear.
    */
+  // Signing out, or switching grade, clears what is on screen. That is a
+  // reset in response to a changed input rather than a side effect, so it
+  // happens during the render that brings the change in. In the effect it
+  // ran a frame later, which left last grade's weeks under the new heading
+  // for one paint.
+  const attempt = `${session?.access_token ?? ""}|${grade}`;
+  const [lastAttempt, setLastAttempt] = useState(attempt);
+  if (attempt !== lastAttempt) {
+    setLastAttempt(attempt);
+    setYear(null);
+    setFailed(false);
+  }
+
   useEffect(() => {
     const token = session?.access_token;
-    if (!token) {
-      setYear(null);
-      return;
-    }
+    if (!token) return;
     let live = true;
-    setFailed(false);
     (async () => {
       await fetch("/api/materials/unlock", {
         method: "POST",

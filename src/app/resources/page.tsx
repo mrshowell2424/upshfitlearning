@@ -24,29 +24,43 @@ interface Resource {
 
 function ResourcesContent() {
   const searchParams = useSearchParams();
-  const [page, setPage] = useState(1);
-  const [search, setSearch] = useState("");
-  const [filterType, setFilterType] = useState("all");
-  const [category, setCategory] = useState("all");
-  
+
+  // The URL seeds these; after that the controls below own them, and nothing
+  // writes back to the address bar. Seeding in an effect meant every visit
+  // rendered the page twice -- once with the defaults, once with the real
+  // values a tick later -- and fetched the default list before discarding it.
+  // Reading them straight out of the params at first render costs one pass.
+  const [page, setPage] = useState(() => parseInt(searchParams.get('page') || "1"));
+  const [search, setSearch] = useState(() => searchParams.get('search') || "");
+  const [filterType, setFilterType] = useState(() => searchParams.get('filter') || "all");
+  const [category, setCategory] = useState(() => searchParams.get('category') || "all");
+
   const [filterDropdownOpen, setFilterDropdownOpen] = useState(false);
   const [sortDropdownOpen, setSortDropdownOpen] = useState(false);
 
   // What is in the box, as against what has been searched for. Kept apart
   // because `search` triggers a fetch, and firing one per keystroke would
   // search the library thirteen times for "multiplication".
-  const [searchInput, setSearchInput] = useState("");
+  const [searchInput, setSearchInput] = useState(() => searchParams.get('search') || "");
 
-  const [sort, setSort] = useState("newest");
+  const [sort, setSort] = useState(() => searchParams.get('sort') || "newest");
 
-  useEffect(() => {
+  // Seeding at first render alone is not enough: the search box in the header
+  // pushes /resources?search=... , and when you are already on this page that
+  // is a soft navigation. The component stays mounted, so new params have to
+  // be picked up without it. Done here during the render that brings them in,
+  // rather than in an effect afterwards, so the stale list is never fetched.
+  const paramsKey = searchParams.toString();
+  const [lastParamsKey, setLastParamsKey] = useState(paramsKey);
+  if (paramsKey !== lastParamsKey) {
+    setLastParamsKey(paramsKey);
     setPage(parseInt(searchParams.get('page') || "1"));
     setSearch(searchParams.get('search') || "");
     setSearchInput(searchParams.get('search') || "");
     setFilterType(searchParams.get('filter') || "all");
     setCategory(searchParams.get('category') || "all");
     setSort(searchParams.get('sort') || "newest");
-  }, [searchParams]);
+  }
 
   // Settle for a moment before searching, so results arrive as you stop typing.
   useEffect(() => {

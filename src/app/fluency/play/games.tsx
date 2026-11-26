@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 
 /**
  * The four fluency games.
@@ -443,14 +443,20 @@ export function HearItFirst({
   const [pick, setPick] = useState(0);
   const [rate, setRate] = useState(0.9);
   const [speaking, setSpeaking] = useState(false);
-  const [supported, setSupported] = useState<boolean | null>(null);
+  // Whether this browser can speak at all is not state this component owns,
+  // it is a fact about the browser. Read as one, so there is no setState in
+  // the effect below forcing a second render on every open. The server
+  // snapshot is null -- a server has no speech synthesis, and null is what
+  // the markup below renders as "not known yet" -- and the real answer
+  // arrives once hydration is done.
+  const supported = useSyncExternalStore<boolean | null>(
+    () => () => {},
+    () => "speechSynthesis" in window,
+    () => null,
+  );
 
   useEffect(() => {
-    if (typeof window === "undefined" || !("speechSynthesis" in window)) {
-      setSupported(false);
-      return;
-    }
-    setSupported(true);
+    if (!supported) return;
 
     // Chrome populates the list asynchronously and returns [] on the first
     // call, so the event matters as much as the call.
@@ -464,7 +470,7 @@ export function HearItFirst({
       window.speechSynthesis.removeEventListener("voiceschanged", load);
       window.speechSynthesis.cancel();
     };
-  }, []);
+  }, [supported]);
 
   if (!line) return <Empty />;
 

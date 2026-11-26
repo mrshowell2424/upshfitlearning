@@ -42,7 +42,13 @@ function MatchPageContent() {
   // effect, which made the search term appear a frame late.
   const [query, setQuery] = useState(() => searchParams.get("q") ?? "");
   const [results, setResults] = useState<SearchResult[]>([]);
-  const [searching, setSearching] = useState(false);
+  // Seeded the same way as the box: arriving on /match?q=text+evidence means
+  // a search is about to run, so the spinner is on from the first paint
+  // rather than appearing a frame later.
+  const [searching, setSearching] = useState(() => {
+    const q = (searchParams.get("q") ?? "").trim();
+    return q !== "" && !isStandardCode(q);
+  });
 
   const handleSearch = useCallback(
     async (searchTerm: string) => {
@@ -55,8 +61,13 @@ function MatchPageContent() {
         return;
       }
 
-      // Otherwise, search by description/skills
-      setSearching(true);
+      // Otherwise, search by description/skills.
+      //
+      // Note that `searching` is turned on by whoever asked for the search,
+      // not here. This function is called from an effect when the address bar
+      // carries ?q=, and a setState run straight from an effect body forces a
+      // second render before the browser has painted the first. The callers
+      // below are click and key handlers, where it costs nothing.
       try {
         const response = await fetch(
           `/api/search-standards?q=${encodeURIComponent(trimmed)}`
@@ -77,10 +88,30 @@ function MatchPageContent() {
     [router]
   );
 
-  // Running the search is a side effect and belongs here; filling the box is
-  // not, and has moved up to where the state is created.
+  // The header's search box pushes /match?q=... , and when you are already on
+  // this page that is a soft navigation: the component stays mounted, so the
+  // box and the spinner have to follow the new term without it. Done during
+  // the render that brings the term in, which is where React wants state
+  // adjusted in response to a changed input.
+  const urlQuery = searchParams.get("q") ?? "";
+  const [lastUrlQuery, setLastUrlQuery] = useState(urlQuery);
+  if (urlQuery !== lastUrlQuery) {
+    setLastUrlQuery(urlQuery);
+    setQuery(urlQuery);
+    const trimmed = urlQuery.trim();
+    setSearching(trimmed !== "" && !isStandardCode(trimmed));
+  }
+
+  // Running the search is the side effect and belongs here; filling the box
+  // and lighting the spinner are not, and happen above.
   useEffect(() => {
     const q = searchParams.get("q");
+    // The rule flags any callee that contains a setState anywhere, without
+    // following the async path. Checked with a control: a function whose only
+    // setState sits after an await is reported just the same. Every setState
+    // left in handleSearch is after the fetch resolves, so nothing here runs
+    // synchronously during the effect, and there is no cascading render.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (q) handleSearch(q);
   }, [searchParams, handleSearch]);
 
@@ -121,14 +152,14 @@ function MatchPageContent() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => {
-                if (e.key === "Enter") handleSearch(query);
+                if (e.key === "Enter") { setSearching(true); handleSearch(query); }
               }}
               placeholder="RL.2.1 — or 'text evidence with 2nd graders'"
               className="flex-1 px-5 py-3 rounded-[14px] border border-border-strong focus:outline-none focus:border-charcoal"
               style={{ backgroundColor: "white" }}
             />
             <button
-              onClick={() => handleSearch(query)}
+              onClick={() => { setSearching(true); handleSearch(query); }}
               className="px-6 min-h-[48px] rounded-[10px] font-semibold text-white transition-colors flex-shrink-0"
               style={{
                 backgroundColor: "var(--color-coral-ink)",
@@ -218,7 +249,7 @@ function MatchPageContent() {
               {exampleSearches.map((example) => (
                 <button
                   key={example}
-                  onClick={() => handleSearch(example)}
+                  onClick={() => { setSearching(true); handleSearch(example); }}
                   className="inline-flex items-center min-h-[44px] px-4 rounded-full text-sm font-medium border border-border-strong hover:bg-gray-050 transition-colors"
                 >
                   {example}
