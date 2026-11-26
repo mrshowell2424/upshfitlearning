@@ -587,16 +587,16 @@
    "start": "mess",
    "words": [
     "mess",
-    "jess",
-    "bess",
     "less",
-    "legs"
+    "loss",
+    "toss",
+    "boss"
    ],
    "clues": [
-    "Change the m to j.",
-    "Change the j to b.",
-    "Change the b to l.",
-    "Change the first s to g."
+    "Change the m to l.",
+    "Change the e to o.",
+    "Change the l to t.",
+    "Change the t to b."
    ]
   },
   "floss|zz": {
@@ -1486,14 +1486,14 @@
    "words": [
     "oldest",
     "fastest",
-    "gastest",
     "hardest",
-    "hard"
+    "softest",
+    "soft"
    ],
    "clues": [
     "Keep -est. Change old to fast.",
-    "Keep -est. Change fast to gast.",
-    "Keep -est. Change gast to hard.",
+    "Keep -est. Change fast to hard.",
+    "Keep -est. Change hard to soft.",
     "Take off -est."
    ]
   },
@@ -1532,23 +1532,19 @@
    ]
   },
   "og2-13": {
-   "start": "his",
+   "start": "misfit",
    "words": [
-    "his",
-    "mis",
-    "is",
-    "it",
-    "in",
-    "on",
-    "won"
+    "misfit",
+    "misread",
+    "mislead",
+    "mistrust",
+    "trust"
    ],
    "clues": [
-    "Change the h to m.",
-    "Take off the m.",
-    "Change the s to t.",
-    "Change the t to n.",
-    "Change the i to o.",
-    "Add a w at the start."
+    "Keep mis-. Change fit to read.",
+    "Keep mis-. Change read to lead.",
+    "Keep mis-. Change lead to trust.",
+    "Take off the prefix mis-."
    ]
   },
   "og2-13|mis-": {
@@ -1573,14 +1569,14 @@
     "postwar",
     "postpone",
     "postdate",
-    "posttest",
-    "test"
+    "date",
+    "dates"
    ],
    "clues": [
     "Keep post-. Change war to pone.",
     "Keep post-. Change pone to date.",
-    "Keep post-. Change date to test.",
-    "Take off the prefix post-."
+    "Take off the prefix post-.",
+    "Add -s."
    ]
   },
   "og2-13|sub-": {
@@ -1754,15 +1750,15 @@
    "words": [
     "boy",
     "joy",
-    "voy",
     "toy",
-    "to"
+    "toys",
+    "boys"
    ],
    "clues": [
     "Change the b to j.",
-    "Change the j to v.",
-    "Change the v to t.",
-    "Take off the y."
+    "Change the j to t.",
+    "Add an s at the end.",
+    "Change the t to b."
    ]
   },
   "og3-05": {
@@ -3572,19 +3568,19 @@
    ]
   },
   "og5-09|aught": {
-   "start": "caught",
+   "start": "granddaughter",
    "words": [
-    "caught",
-    "taught",
-    "naught",
-    "naughty",
-    "haughty"
+    "granddaughter",
+    "granddaughters",
+    "daughters",
+    "daughter",
+    "laughter"
    ],
    "clues": [
-    "Change the c to t.",
-    "Change the first t to n.",
-    "Add -y.",
-    "Change the n to h."
+    "Add -s.",
+    "Take off the prefix grand-.",
+    "Take off -s.",
+    "Keep -aughter. Change d to l."
    ]
   },
   "og5-09|ought": {
@@ -3652,7 +3648,7 @@
     "plate",
     "plane",
     "lane",
-    "jane"
+    "cane"
    ],
    "clues": [
     "Change the c to l.",
@@ -3660,7 +3656,7 @@
     "Add a p at the start.",
     "Change the t to n.",
     "Take off the p.",
-    "Change the l to j."
+    "Change the l to c."
    ]
   },
   "vccvce|i_e": {
@@ -3726,7 +3722,6 @@
     "pen",
     "pens",
     "pets",
-    "pete",
     "pet",
     "vet"
    ],
@@ -3734,8 +3729,7 @@
     "Change the h to p.",
     "Add an s at the end.",
     "Change the n to t.",
-    "Change the s to e.",
-    "Take off the silent e.",
+    "Take off the s.",
     "Change the p to v."
    ]
   },

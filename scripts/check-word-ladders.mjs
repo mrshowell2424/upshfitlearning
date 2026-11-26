@@ -146,6 +146,37 @@ const legalAt = (w, p, sid) => {
 };
 const NOTFORKIDS = /^(fat|fats|fatter|fattest|kill|killed|dead|death|gun|guns|shot|blood|drunk|beer|wine|hell|damn|ass|butt|stupid|dumb|ugly|hate|war|sex|drug|drugs|naked)$/i;
 
+/*
+ * WORDS isWord SAYS YES TO AND A TEACHER WOULD NOT.
+ *
+ * isWord asks two things, and both of them can be true of something no child
+ * should be handed as the right answer:
+ *
+ *   web2 is a very large dictionary. It carries thaught, an archaic word for
+ *   a rower's bench, and tought, and limn, and volar. Two ladders on the
+ *   aught/ought lesson printed thaught and tought as correct rungs, which on
+ *   that lesson of all lessons reads as a misspelling of taught.
+ *
+ *   The stem rule says a regular inflection is a word when its stem is. That
+ *   is right for words and feet, and wrong for gastest, which rode in on
+ *   gast; for voy on voe; for mis on mi; for bess on bes; for posttest on
+ *   post. The stem being a word does not make the inflection one.
+ *
+ * So the ladders are allowed only words someone has decided are words. This
+ * list is the exceptions found by reading the printed sheets, and it is meant
+ * to be added to the same way: when a rung looks wrong on paper, it goes here
+ * and the ladder gets rebuilt.
+ */
+const NOTAWORD = new Set([
+  // not words at all, admitted by the stem rule
+  "gastest", "voy", "mis", "posttest", "thaught", "tought", "boughts",
+  // archaic or specialist, admitted by web2
+  "aught", "nought", "naught", "limn", "volar", "thew", "thole", "colewort",
+  "prelection", "derat", "rescription", "scription",
+  // names, which a lowercase dictionary cannot tell from words
+  "bess", "jess", "jane", "pete", "rex",
+]);
+
 
 // Every word any ladder uses, which is the set a clue could be answered
 // from. Checking against the whole dictionary would fail honest clues over
@@ -190,6 +221,9 @@ for (const [key, v] of Object.entries(LAD)) {
     rungs++;
     if (!isWord(w)) say(`"${w}" is not a word`);
     if (NOTFORKIDS.test(w)) say(`"${w}" is not for children`);
+    if (NOTAWORD.has(String(w).toLowerCase())) {
+      say(`"${w}" is not a word a child should be given as the answer`);
+    }
     if (!legalAt(w, p, sid)) say(`"${w}" uses something taught later`);
     const soon = heartTooSoon(w, sid);
     if (soon !== null) say(`"${w}" is a Level ${soon} heart word, taught after this lesson`);
