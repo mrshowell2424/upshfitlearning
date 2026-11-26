@@ -64,6 +64,15 @@ const spellOf = (key) => SPELL.find((p) => p.key === key);
 // sheet look like a mistake. Matching and de-duplication fold case
 // themselves, through fold() below.
 const clean = (w) => String(w).replace(/[^A-Za-z']/g, "");
+/*
+ * A word fit for a pile drawn from everything taught so far.
+ *
+ * Plain and lowercase. The possessive lesson's words carry a capital and an
+ * apostrophe because that is its pattern, and the piles below reach back
+ * through every lesson, so Kim's and Sam's turned up on nine later sheets --
+ * seven as odd ones out and two in a "not this pattern" column.
+ */
+const plain = (w) => /^[a-z]+$/.test(w);
 const fold = (w) => String(w).toLowerCase();
 // An apostrophe is allowed because the possessive lesson sorts dog's against
 // dogs, and a filter that drops anything with one left that lesson with no
@@ -150,8 +159,13 @@ for (const lesson of SEQ) {
       ...(parts ? parts[0].words.map((w) => w.word) : []),
     ].map(clean).filter(usable);
     const has = [...new Set(own)].slice(0, PER_COLUMN + 1);
+    // Plain lowercase, for the same reason the odd ones are: this column is
+    // drawn from everything taught, and the possessive lesson's Kim's and
+    // Sam's reached the "not this pattern" pile of two later sorts that way.
+    // A lesson's OWN column keeps whatever it authored -- the possessive
+    // sort still sorts Sam's against beds, which is what it is for.
     const hasnt = shuffled(
-      [...new Set(taught)].filter((w) => !own.some((x) => fold(x) === fold(w))), seed + 3)
+      [...new Set(taught)].filter((w) => plain(w) && !own.some((x) => fold(x) === fold(w))), seed + 3)
       .slice(0, PER_COLUMN + 1);
     if (!has.length || !hasnt.length) { noSort.push(lesson.key); taught.push(...own); continue; }
     // Prose headings, not graphemes: "Possessive 's" and "not this pattern"
@@ -186,7 +200,6 @@ for (const lesson of SEQ) {
    * Seven sheets had one. A column may still hold whatever its lesson
    * authored; this is only about the pile that is there to be rejected.
    */
-  const plain = (w) => /^[a-z]+$/.test(w);
   const odd = (wantsOdd ? shuffled([...new Set(taught)].filter(plain), seed + 7) : [])
     .filter((w) => usable(w) && !inAny(w)
       && !columns.some((c) => c.words.some((x) => fold(x) === fold(w))))

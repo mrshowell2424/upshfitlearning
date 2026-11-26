@@ -975,28 +975,28 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "fan",
-      "beds",
-      "nonsense",
-      "bath",
-      "dog's",
-      "yes"
+      "chin",
+      "escape",
+      "postpone",
+      "buzz",
+      "stop",
+      "confine"
      ]
     }
    ],
    "odd": [],
    "bank": [
-    "beds",
-    "bath",
+    "escape",
+    "buzz",
     "candy",
     "my",
     "sky",
     "cry",
     "fly",
-    "nonsense",
-    "yes",
-    "fan",
-    "dog's",
+    "postpone",
+    "confine",
+    "chin",
+    "stop",
     "try"
    ]
   },
@@ -1123,28 +1123,28 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "kid",
-      "stick",
-      "log",
-      "ring",
-      "fly",
-      "invite"
+      "drink",
+      "mop",
+      "what",
+      "explode",
+      "witch",
+      "inflate"
      ]
     }
    ],
    "odd": [],
    "bank": [
-    "kid",
-    "ring",
-    "log",
+    "drink",
+    "explode",
+    "what",
     "fern",
     "her",
-    "invite",
+    "inflate",
     "girl",
-    "fly",
+    "witch",
     "herd",
     "bird",
-    "stick",
+    "mop",
     "term"
    ]
   },
@@ -1590,12 +1590,12 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "fly",
-      "rope",
-      "paint",
-      "match",
-      "quiz",
-      "green"
+      "napkin",
+      "fell",
+      "corn",
+      "inside",
+      "ham",
+      "mop"
      ]
     }
    ],
@@ -1603,15 +1603,15 @@
    "bank": [
     "monster",
     "dolphin",
-    "paint",
+    "corn",
     "hamster",
     "hundred",
     "pumpkin",
-    "quiz",
-    "rope",
-    "match",
-    "fly",
-    "green",
+    "ham",
+    "fell",
+    "inside",
+    "napkin",
+    "mop",
     "children"
    ]
   },
@@ -1869,28 +1869,28 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "unfit",
-      "movement",
-      "be",
-      "jam",
-      "dishes",
-      "buzz"
+      "step",
+      "knee",
+      "eat",
+      "sunshine",
+      "yes",
+      "inflate"
      ]
     }
    ],
    "odd": [],
    "bank": [
-    "movement",
-    "buzz",
+    "knee",
+    "inflate",
     "swimming",
     "hopping",
-    "be",
+    "eat",
     "sitter",
     "stopped",
-    "dishes",
+    "yes",
     "running",
-    "jam",
-    "unfit",
+    "sunshine",
+    "step",
     "bigger"
    ]
   },
@@ -2013,26 +2013,26 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "scroll",
+      "poll",
       "rice",
-      "down",
-      "tallest",
-      "hundred",
-      "know"
+      "carry",
+      "dream",
+      "note",
+      "postpone"
      ]
     }
    ],
    "odd": [],
    "bank": [
-    "scroll",
+    "poll",
     "tiger",
-    "tallest",
-    "know",
+    "dream",
+    "postpone",
     "baby",
     "rice",
-    "down",
+    "carry",
     "paper",
-    "hundred",
+    "note",
     "robot",
     "music",
     "spider"
@@ -2142,28 +2142,28 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "picnic",
-      "mind",
-      "cuff",
-      "nonstick",
-      "Kim's",
-      "cupcake"
+      "thin",
+      "flag",
+      "paint",
+      "fastest",
+      "behind",
+      "drink"
      ]
     }
    ],
    "odd": [],
    "bank": [
     "play",
-    "cuff",
+    "paint",
     "mail",
-    "cupcake",
+    "drink",
     "break",
     "they",
-    "nonstick",
+    "fastest",
     "rain",
-    "picnic",
-    "Kim's",
-    "mind",
+    "thin",
+    "behind",
+    "flag",
     "eight"
    ]
   },
@@ -2188,12 +2188,12 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "wooden",
-      "cups",
-      "buzz",
-      "keg",
-      "dog's",
-      "saw"
+      "fox",
+      "light",
+      "pitch",
+      "cats",
+      "much",
+      "nonstick"
      ]
     }
    ],
@@ -2201,13 +2201,13 @@
    "bank": [
     "feed",
     "green",
-    "buzz",
-    "cups",
-    "wooden",
-    "dog's",
+    "pitch",
+    "light",
+    "fox",
+    "much",
     "chief",
-    "keg",
-    "saw",
+    "cats",
+    "nonstick",
     "key",
     "seat",
     "field"
@@ -2234,28 +2234,28 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
+      "fearless",
+      "hill",
+      "catch",
       "nonsense",
-      "moon",
-      "berry",
-      "show",
-      "landed",
-      "blind"
+      "green",
+      "know"
      ]
     }
    ],
    "odd": [],
    "bank": [
     "my",
-    "berry",
+    "catch",
     "night",
     "tie",
-    "blind",
-    "landed",
-    "show",
-    "light",
-    "moon",
-    "high",
+    "know",
+    "green",
     "nonsense",
+    "light",
+    "hill",
+    "high",
+    "fearless",
     "pie"
    ]
   },
@@ -2280,26 +2280,26 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "duck",
-      "town",
-      "puff",
-      "played",
-      "frozen",
-      "cow"
+      "old",
+      "how",
+      "paint",
+      "sauce",
+      "hundred",
+      "careless"
      ]
     }
    ],
    "odd": [],
    "bank": [
-    "frozen",
+    "hundred",
     "grow",
     "boat",
     "road",
-    "played",
-    "cow",
-    "puff",
-    "duck",
-    "town",
+    "sauce",
+    "careless",
+    "paint",
+    "old",
+    "how",
     "coat",
     "snow",
     "toe"
@@ -2409,27 +2409,27 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "postscript",
-      "jog",
-      "dad's",
-      "bike",
-      "kit",
-      "subtract"
+      "song",
+      "tiger",
+      "judge",
+      "postgame",
+      "stand",
+      "watch"
      ]
     }
    ],
    "odd": [],
    "bank": [
     "clue",
-    "postscript",
-    "subtract",
+    "song",
+    "watch",
     "true",
     "blue",
-    "kit",
-    "dad's",
+    "stand",
+    "judge",
     "new",
-    "bike",
-    "jog",
+    "postgame",
+    "tiger",
     "few",
     "stew"
    ]
@@ -2455,27 +2455,27 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "ship",
-      "keg",
-      "class",
-      "watch",
-      "knot",
-      "pink"
+      "goat",
+      "postgame",
+      "with",
+      "chat",
+      "grow",
+      "slow"
      ]
     }
    ],
    "odd": [],
    "bank": [
     "seat",
-    "class",
-    "ship",
+    "with",
+    "goat",
     "blue",
-    "knot",
-    "pink",
+    "grow",
+    "slow",
     "rain",
-    "watch",
+    "chat",
     "night",
-    "keg",
+    "postgame",
     "boat",
     "snow"
    ]
@@ -2501,28 +2501,28 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "farm",
-      "kin",
-      "stick",
+      "hopping",
       "toll",
-      "cupcake",
-      "chief"
+      "sauce",
+      "beds",
+      "fork",
+      "run"
      ]
     }
    ],
    "odd": [],
    "bank": [
     "cuter",
-    "chief",
-    "cupcake",
+    "run",
+    "fork",
     "smiled",
     "riding",
     "hoping",
-    "farm",
-    "stick",
+    "hopping",
+    "sauce",
     "baked",
+    "beds",
     "toll",
-    "kin",
     "shiny"
    ]
   },
@@ -2581,28 +2581,28 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "feed",
-      "when",
-      "tell",
-      "whale",
-      "rag",
-      "few"
+      "bug",
+      "duck",
+      "postscript",
+      "whip",
+      "postpone",
+      "how"
      ]
     }
    ],
    "odd": [],
    "bank": [
-    "whale",
-    "feed",
+    "whip",
+    "bug",
     "wagon",
-    "when",
-    "tell",
+    "duck",
+    "postscript",
     "camel",
     "visit",
-    "few",
+    "how",
     "lemon",
     "robin",
-    "rag",
+    "postpone",
     "river"
    ]
   },
@@ -2710,28 +2710,28 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "lip",
+      "quickly",
+      "tube",
+      "day",
+      "handle",
       "cat",
-      "nonfiction",
-      "rule",
-      "subtract",
-      "white"
+      "walked"
      ]
     }
    ],
    "odd": [],
    "bank": [
     "soda",
-    "white",
-    "cat",
+    "walked",
+    "tube",
     "banana",
     "sofa",
-    "subtract",
+    "cat",
     "panda",
     "about",
-    "nonfiction",
-    "lip",
-    "rule",
+    "day",
+    "quickly",
+    "handle",
     "lagoon"
    ]
   },
@@ -2973,27 +2973,27 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "mom's",
-      "ceiling",
-      "Kim's",
-      "it's",
-      "candle",
-      "paint"
+      "rag",
+      "bath",
+      "tried",
+      "panda",
+      "sleep",
+      "confine"
      ]
     }
    ],
    "odd": [],
    "bank": [
-    "it's",
-    "mom's",
+    "panda",
+    "rag",
     "preheat",
-    "paint",
+    "confine",
     "defrost",
-    "ceiling",
-    "candle",
+    "bath",
+    "sleep",
     "protect",
     "preview",
-    "Kim's",
+    "tried",
     "redo",
     "replay"
    ]
@@ -3351,28 +3351,28 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "floss",
-      "bird",
-      "lip",
-      "he",
-      "banana",
-      "find"
+      "enjoy",
+      "circle",
+      "chat",
+      "city",
+      "handle",
+      "pancake"
      ]
     }
    ],
    "odd": [],
    "bank": [
     "poem",
-    "lip",
+    "chat",
     "duet",
-    "he",
-    "banana",
+    "city",
+    "handle",
     "neon",
     "lion",
-    "floss",
-    "bird",
+    "enjoy",
+    "circle",
     "giant",
-    "find",
+    "pancake",
     "radio"
    ]
   },
@@ -3563,28 +3563,28 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "hundred",
-      "panda",
-      "cold",
-      "moment",
-      "longest",
-      "name"
+      "massive",
+      "reform",
+      "tried",
+      "spectator",
+      "chat",
+      "sorry"
      ]
     }
    ],
    "odd": [],
    "bank": [
-    "longest",
-    "moment",
+    "chat",
+    "spectator",
     "forgetting",
-    "name",
-    "panda",
+    "sorry",
+    "reform",
     "omitted",
     "beginning",
-    "cold",
+    "tried",
     "visiting",
     "admitted",
-    "hundred",
+    "massive",
     "preferred"
    ]
   },
@@ -3660,12 +3660,12 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "forgetting",
-      "carry",
-      "jazz",
-      "thankful",
-      "motion",
-      "abrupt"
+      "stew",
+      "reflect",
+      "helpful",
+      "sock",
+      "payment",
+      "cold"
      ]
     }
    ],
@@ -3673,14 +3673,14 @@
    "bank": [
     "gym",
     "cyber",
-    "carry",
-    "motion",
-    "abrupt",
-    "forgetting",
+    "reflect",
+    "payment",
+    "cold",
+    "stew",
     "myth",
     "symbol",
-    "thankful",
-    "jazz",
+    "sock",
+    "helpful",
     "type",
     "system"
    ]
@@ -3907,27 +3907,27 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "hamster",
-      "sight",
-      "frizz",
-      "yawn",
-      "cot",
-      "we'll"
+      "her",
+      "late",
+      "match",
+      "much",
+      "wrap",
+      "bubble"
      ]
     }
    ],
    "odd": [],
    "bank": [
     "some",
-    "frizz",
+    "match",
     "glove",
-    "sight",
-    "hamster",
-    "we'll",
+    "late",
+    "her",
+    "bubble",
     "month",
-    "cot",
+    "wrap",
     "love",
-    "yawn",
+    "much",
     "oven",
     "son"
    ]
@@ -3953,28 +3953,28 @@
      "label": "not this pattern",
      "kind": "name",
      "words": [
-      "fixable",
-      "preview",
-      "postcard",
-      "giggle",
-      "running",
-      "don't"
+      "time",
+      "hard",
+      "banana",
+      "leg",
+      "flip",
+      "button"
      ]
     }
    ],
    "odd": [],
    "bank": [
-    "don't",
-    "fixable",
+    "button",
+    "time",
     "work",
     "word",
     "worm",
-    "giggle",
-    "running",
+    "leg",
+    "flip",
     "worse",
-    "postcard",
+    "banana",
     "world",
-    "preview",
+    "hard",
     "worth"
    ]
   },

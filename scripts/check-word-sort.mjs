@@ -65,6 +65,12 @@ for (const L of D.lessons) {
       if (isPattern(c) && !inColumn(c.label, w)) {
         say(`"${w}" is filed under "${c.label}" and is not an example of it`);
       }
+      // The contrast column is drawn from everything taught, so it needs the
+      // same rule as the odd ones. A lesson's own column does not: the
+      // possessive sort is meant to hold Sam's.
+      if (c.label === "not this pattern" && !/^[a-z]+$/.test(w)) {
+        say(`"${w}" is in the contrast column and is not a plain lowercase word`);
+      }
     }
   }
 
