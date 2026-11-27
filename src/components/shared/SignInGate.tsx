@@ -44,8 +44,17 @@ export function SignInGate({
   return (
     <div className="relative">
       {/* Inert as well as unreadable — a blurred control that still responds
-          to clicks is worse than no control at all. */}
+          to clicks is worse than no control at all.
+
+          `inert` is the attribute that actually means it. aria-hidden takes
+          this out of the screen reader and pointer-events-none takes it away
+          from the mouse, but neither touches the tab order: every link in
+          here stayed reachable by keyboard, so tabbing through a gated page
+          walked into blurred content nobody can see. axe reports that as
+          aria-hidden-focus, and it was right. The other two stay as the
+          fallback for a browser without inert. */}
       <div
+        inert
         aria-hidden="true"
         className="blur-[6px] select-none pointer-events-none opacity-70"
       >
