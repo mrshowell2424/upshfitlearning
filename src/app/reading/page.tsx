@@ -28,8 +28,8 @@ const CREAM = "#F7F6F4";
 const INK = "#111111";
 const MUTED = "#444444";
 const RULE = "#F2F2F2";
-const BRASS = "#C83220";
-const GREEN = "#377387";
+const BRASS = "#733A32";
+const GREEN = "#345561";
 
 /** Each material type gets its own colour, so the mix is readable at a glance. */
 const LINK_STYLE: Record<string, [string, string]> = {

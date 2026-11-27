@@ -46,9 +46,9 @@ const BRAND = {
   paper: "#F7F6F4",
   // The dark end of each ramp. The brand hues sit at 2.4-2.8:1 on white and
   // fail for text, so anything carrying meaning uses these instead.
-  coralDark: "#C83220",
-  lavenderDark: "#7758C0",
-  tealDark: "#377387",
+  coralDark: "#733A32",
+  lavenderDark: "#4E4168",
+  tealDark: "#345561",
 };
 const GRADIENT =
   `linear-gradient(135deg, ${BRAND.coral}, ${BRAND.pink}, ${BRAND.lavender}, ${BRAND.teal})`;

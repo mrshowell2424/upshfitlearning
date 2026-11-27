@@ -31,11 +31,11 @@ export default function ResourceCard({
   // Try to get a meaningful thumbnail - use the format type for color coding
   const getThumbnailColor = () => {
     const colors: Record<string, string> = {
-      'Video': '#F2D4E0',
-      'Slides': '#D2E6ED',
+      'Video': '#F3D8E2',
+      'Slides': '#D6E8EE',
       'Doc': '#FFF6E8',
-      'Worksheet': '#F8D6D2',
-      'Guide': '#E1DBF1',
+      'Worksheet': '#F8D9D5',
+      'Guide': '#E4DDF2',
       'Link': '#D9D9D9',
     }
     return colors[format] || '#E0E0E0'

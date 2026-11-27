@@ -26,8 +26,8 @@ import { OG_LEVELS, OG_CONCEPTS, ogPackHref } from "@/app/reading/og-packs-data"
 const INK = "#111111";
 const MUTED = "#444444";
 const RULE = "#F2F2F2";
-const BRASS = "#C83220";
-const OG_TEAL = "#377387";
+const BRASS = "#733A32";
+const OG_TEAL = "#345561";
 
 const SKILL_NAME = new Map(LESSONS.map((l) => [l.id, l.skill]));
 

@@ -43,9 +43,9 @@ const BRAND = {
   ink: "#111111",
   mid: "#444444",
   line: "#E9E9E9",
-  coralDark: "#C83220",
-  lavenderDark: "#7758C0",
-  tealDark: "#377387",
+  coralDark: "#733A32",
+  lavenderDark: "#4E4168",
+  tealDark: "#345561",
   amberDark: "#8A5400",
 };
 const GRADIENT = "linear-gradient(135deg, #EC9388, #DE8FAD, #B19FDB, #89BECF)";

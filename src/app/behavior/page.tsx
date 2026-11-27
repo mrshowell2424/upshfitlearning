@@ -51,9 +51,9 @@ const BRAND = {
   soft: "#5A5A5A",
   line: "#E9E9E9",
   panel: "#F2F2F2",
-  coralDark: "#C83220",
-  lavenderDark: "#7758C0",
-  tealDark: "#377387",
+  coralDark: "#733A32",
+  lavenderDark: "#4E4168",
+  tealDark: "#345561",
 };
 const GRADIENT = "linear-gradient(135deg, #EC9388, #DE8FAD, #B19FDB, #89BECF)";
 // The brand book, in globals.css: Poppins is the whole interface,

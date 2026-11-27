@@ -125,9 +125,9 @@ const tabs: { id: MatchTab; label: string; premium: boolean }[] = [
  * violet is the standard's own machinery, teal is learning science.
  */
 const LABEL = {
-  violet: "#7758C0",
+  violet: "#4E4168",
   indigo: "#4338CA",
-  teal: "#377387",
+  teal: "#345561",
   coral: "var(--color-coral-ink)",
   crimson: "#B4245C",
   blue: "var(--color-link-blue)",

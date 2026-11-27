@@ -82,7 +82,7 @@ const SANS = "'Poppins', system-ui, -apple-system, sans-serif";
 const INK = "#111111";
 const MUTED = "#57534e";
 const TEAL = "#00897B";
-const CORAL = "#C83220";
+const CORAL = "#733A32";
 const LINE = "#E7E5E4";
 const DAY_NAME = ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"];
 

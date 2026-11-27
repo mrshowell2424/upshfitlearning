@@ -105,7 +105,7 @@ export const PRINCIPLES: Principle[] = [
       "Before marking, ask students to predict how many they got right. The gap between prediction and result is the lesson.",
     mistake:
       "Asking students to reflect without giving them anything to check against. Reflection with no feedback just rehearses the original impression.",
-    color: "#7758C0",
-    ink: "#7758C0",
+    color: "#4E4168",
+    ink: "#4E4168",
   },
 ];

@@ -27,34 +27,33 @@
      category and the kit gives four hues. Kept, and labelled. */
   --color-wash-amber: #FFF6E8;
 
-  /* Card tints: the logo colour at 38% over white. The washes are too pale
-     to read as a thumbnail and the logo colours are too strong, so the
-     thumbnails sit between the two. */
-  --color-tint-coral: #F8D6D2;
-  --color-tint-pink: #F2D4E0;
-  --color-tint-lavender: #E1DBF1;
-  --color-tint-teal: #D2E6ED;
+  /* The kit's block colours: the fill a deep ink is read on, and what a
+     card thumbnail wants too -- the washes are too pale to read as one and
+     the soft colours too strong. */
+  --color-tint-coral: #F8D9D5;
+  --color-tint-pink: #F3D8E2;
+  --color-tint-lavender: #E4DDF2;
+  --color-tint-teal: #D6E8EE;
   --color-charcoal: #111111;
   --color-navy: #16213E;
   --color-amber: #FFB13F;
   --color-blue: #4C9AFF;
   --color-link-blue: #2F6FD0;
 
-  /* The ink set: the same hues, dark enough to carry text.
-     The kit's logo colours are soft, and soft means unreadable -- the best
-     of the four is 2.43:1 on white where AA wants 4.5. So the brand keeps
-     its colours for fills, rules, chips and anything decorative, and
-     anything a person has to READ uses the ink.
-     Each ink is its own logo colour darkened: same hue, same dusty
-     saturation, lightness dropped until it clears 5:1. Letting the
-     saturation climb instead is what turns the kit's #B19FDB into an
-     electric #591FE0 -- legible, and nothing to do with the brand.
-     Changing one line here changes every button of that colour. */
-  --color-coral-ink: #C83220;        /* 5.34 on white, 4.83 on its wash */
-  --color-coral-ink-press: #A72A1B;  /* its pressed state: 7.02 */
-  --color-pink-ink: #BC376A;         /* 5.39 / 4.85 */
-  --color-lavender-ink: #7758C0;     /* 5.33 / 4.81 */
-  --color-teal-ink: #377387;         /* 5.30 / 4.86 */
+  /* The deep inks, straight from the brand kit (approved November 2026).
+     I derived these mathematically first; the kit publishes them, so the
+     published values win -- and they are stronger than what I worked out,
+     8.0:1 to 9.3:1 on white against my 5.3:1.
+     The kit's rule is that text is charcoal on white, on a wash or on a
+     soft colour, and never white on a brand colour. The numbers bear it
+     out: charcoal on the soft colours runs 7.8:1 to 9.3:1, white on them
+     2.0:1 to 2.4:1. These inks are the exception it allows, for words that
+     have to carry colour, and each has a block colour it is read on. */
+  --color-coral-ink: #733A32;        /* 8.82 on white, 6.67 on its block */
+  --color-coral-ink-press: #5A2D27;  /* its pressed state: 11.42 */
+  --color-pink-ink: #6A374A;         /* 9.30 / 6.97 */
+  --color-lavender-ink: #4E4168;     /* 9.21 / 6.98 */
+  --color-teal-ink: #345561;         /* 8.02 / 6.35 */
   --color-amber-ink: #8A5400;        /* 6.27 -- amber is not a kit colour */
 
   /* Grays */

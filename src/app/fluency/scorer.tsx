@@ -80,7 +80,7 @@ export function Scorer({
             letterSpacing: "-2px",
             lineHeight: 1,
             minWidth: 110,
-            color: left === 0 ? "#C83220" : "#111111",
+            color: left === 0 ? "#733A32" : "#111111",
             ...mono,
           }}
         >
@@ -126,7 +126,7 @@ export function Scorer({
           Reset
         </button>
         {left === 0 && (
-          <span style={{ fontSize: 14, fontWeight: 700, color: "#C83220" }}>
+          <span style={{ fontSize: 14, fontWeight: 700, color: "#733A32" }}>
             Time. Mark the last word read.
           </span>
         )}
@@ -246,7 +246,7 @@ export function Scorer({
             lineHeight: 1.6,
           }}
         >
-          <b style={{ color: "#C83220" }}>Read the accuracy first. </b>
+          <b style={{ color: "#733A32" }}>Read the accuracy first. </b>
           Under {accuracyFloor} percent the passage is too hard to practice fluency on, whatever
           the rate came out as. Switch to the lower Lexile version of this article and read it
           again before working on speed.
@@ -311,7 +311,7 @@ function Stat({
   big?: boolean;
   tone?: "ok" | "warn";
 }) {
-  const color = tone === "warn" ? "#C83220" : tone === "ok" ? "#377387" : "#111111";
+  const color = tone === "warn" ? "#733A32" : tone === "ok" ? "#345561" : "#111111";
   return (
     <div
       style={{

@@ -61,13 +61,13 @@ const INK = "#111111";
 const MUTED = "#5A5A5A";
 const RULE = "#E9E9E9";
 const CORAL = "#EC9388";
-const CORAL_TEXT = "#C83220";
+const CORAL_TEXT = "#733A32";
 const TEAL = "#89BECF";
-const TEAL_TEXT = "#377387";
+const TEAL_TEXT = "#345561";
 const BLUE = "#4C9AFF";
 const BLUE_TEXT = "#2F6FD0";
 const LAVENDER = "#B19FDB";
-const LAVENDER_TEXT = "#7758C0";
+const LAVENDER_TEXT = "#4E4168";
 
 const BUILDER = "/api/materials/science-of-reading/lesson-builder.html";
 const RESOURCES = "/science-of-reading/resources";

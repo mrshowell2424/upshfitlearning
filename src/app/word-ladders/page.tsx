@@ -67,9 +67,9 @@ const BRAND = {
   mid: "#444444",
   line: "#E9E9E9",
   white: "#FFFFFF",
-  coralDark: "#C83220",
-  lavenderDark: "#7758C0",
-  tealDark: "#377387",
+  coralDark: "#733A32",
+  lavenderDark: "#4E4168",
+  tealDark: "#345561",
 };
 const GRADIENT = `linear-gradient(135deg, ${BRAND.coral}, ${BRAND.pink}, ${BRAND.lavender}, ${BRAND.teal})`;
 

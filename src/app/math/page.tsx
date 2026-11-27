@@ -39,13 +39,13 @@ const INK = "#111111";
 const MUTED = "#5A5A5A";
 const RULE = "#E9E9E9";
 const CORAL = "#EC9388";
-const CORAL_TEXT = "#C83220";
+const CORAL_TEXT = "#733A32";
 const LAVENDER = "#B19FDB";
-const LAVENDER_TEXT = "#7758C0";
+const LAVENDER_TEXT = "#4E4168";
 // Teal is the reading side's colour; the review card borrows it because
 // the page it opens is the reading review page's twin.
 const TEAL = "#89BECF";
-const TEAL_TEXT = "#377387";
+const TEAL_TEXT = "#345561";
 
 const HUB = "/api/materials/math/math-hub.html";
 

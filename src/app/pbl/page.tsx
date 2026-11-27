@@ -45,13 +45,13 @@ const INK = "#111111";
 const MUTED = "#5A5A5A";
 const RULE = "#E9E9E9";
 const CORAL = "#EC9388";
-const CORAL_TEXT = "#C83220";
+const CORAL_TEXT = "#733A32";
 const BLUE = "#4C9AFF";
 const BLUE_TEXT = "#2F6FD0";
 const PINK = "#DE8FAD";
-const PINK_TEXT = "#BC376A";
+const PINK_TEXT = "#6A374A";
 const LAV = "#B19FDB";
-const LAV_TEXT = "#7758C0";
+const LAV_TEXT = "#4E4168";
 
 const HUB = "/api/materials/pbl/pbl-hub.html";
 const CHOICE = "/api/materials/pbl/choice-board.html";
@@ -163,7 +163,7 @@ function Hub() {
             Build a choice board for your project
           </div>
           <p style={{ fontSize: 15, fontWeight: 500, color: MUTED, margin: "8px 0 0", lineHeight: 1.55, maxWidth: "70ch" }}>
-            Twelve products a student can choose from — a podcast, a board game, a comic, an app
+            Twelve products a student can choose from: a podcast, a board game, a comic, an app
             prototype, a letter to someone who can act. Type in your project and standards, pick
             the products, and the board writes itself, with an optional AI literacy step on every
             card. Edit any of it in place, then copy it into a Google Doc or download it as a PNG

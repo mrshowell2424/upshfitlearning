@@ -296,7 +296,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
               <div className="p-7">
                 <p
                   className="text-[11px] font-bold uppercase tracking-[0.14em] mb-3"
-                  style={{ color: "#7758C0" }}
+                  style={{ color: "#4E4168" }}
                 >
                   Learning target
                 </p>
@@ -308,7 +308,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
               <div className="p-7">
                 <p
                   className="text-[11px] font-bold uppercase tracking-[0.14em] mb-3"
-                  style={{ color: "#377387" }}
+                  style={{ color: "#345561" }}
                 >
                   Learning science at work
                 </p>
@@ -320,7 +320,7 @@ export default async function MatchDetailPage({ params }: PageProps) {
                         className="px-3 py-1.5 rounded-lg text-[15px] font-semibold"
                         style={{
                           backgroundColor: "rgba(0, 180, 166, 0.10)",
-                          color: "#377387",
+                          color: "#345561",
                         }}
                       >
                         {tag}

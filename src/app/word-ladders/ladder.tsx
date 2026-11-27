@@ -42,9 +42,9 @@ const BRAND = {
   panel: "#F2F2F2",
   paper: "#F7F6F4",
   white: "#FFFFFF",
-  coralDark: "#C83220",
-  lavenderDark: "#7758C0",
-  tealDark: "#377387",
+  coralDark: "#733A32",
+  lavenderDark: "#4E4168",
+  tealDark: "#345561",
   amberDark: "#8A5400",
 };
 
