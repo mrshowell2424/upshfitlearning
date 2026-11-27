@@ -6883,9 +6883,42 @@ const KIT_MODEL: [string, string][] = [
   ["background:#FFB13F;color:#111111", "background:#EC9388;color:#111111"],
 ];
 
+/**
+ * An inverted masthead, turned the right way up.
+ *
+ * Same reasoning as the rule panel above, one level out: a <header> or
+ * <footer> whose own style sets a dark background is carrying pale text and
+ * a pale border inside it, and the background cannot move without them. A
+ * per-colour map would either leave the text light on a light ground or
+ * turn #111111 into a wash wherever it was being used as text.
+ *
+ * So the element is rewritten as a unit, and only where its own inline
+ * style is the dark one -- which is why this is scoped to the tag rather
+ * than run across the file.
+ *
+ *   charcoal on the teal wash  17.31
+ *   teal ink on the teal wash   7.35
+ */
+function uninvertMastheads(source: string): string {
+  return source.replace(
+    /<(header|footer)(\s+style="[^"]*background:#111111[^"]*")([\s\S]*?)<\/\1>/g,
+    (_whole: string, tag: string, style: string, inner: string) => {
+      const openTag = style
+        .replace(/background:#111111/g, "background:#F0F6F9")
+        .replace(/color:#(?:FAFAFA|F0F6F9|FFFFFF)/g, "color:#111111");
+      const body = inner
+        .replace(/color:#(?:FAFAFA|F0F6F9|FFFFFF)/g, "color:#111111")
+        .replace(/color:#89BECF/g, "color:#345561")
+        .replace(/(border[a-z-]*:[^;"]*?)#(?:FAFAFA|FFFFFF)/g, "$1#345561");
+      return `<${tag}${openTag}${body}</${tag}>`;
+    },
+  );
+}
+
 function kitModel(source: string): string {
   let out = source;
   for (const [from, to] of KIT_MODEL) out = out.split(from).join(to);
+  out = uninvertMastheads(out);
   // Anything gold the pairs above did not account for.
   out = out.split("#FFB13F").join("#EC9388");
   out = out.split("#8A5400").join("#733A32");
