@@ -6853,6 +6853,45 @@ function recolours(rel: string): boolean {
   return !rel.startsWith("design-thinking/") && rel !== "pbl/choice-board.html";
 }
 
+/**
+ * The kit's model, for the things a hue map cannot reach.
+ *
+ * recolour maps one colour at a time, which is the right unit for a tint or
+ * a rule but the wrong one for an inverted panel: the background and the
+ * text on it have to move together or the page stops being readable. The
+ * workbooks' rule panel is a dark block with pale text and a gold label, and
+ * the kit has no accent that works on a dark block -- all four soft colours
+ * land between 3.30 and 3.95 against it, where gold sat at 4.44. Recolouring
+ * the label alone would have made 865 of them worse than they already were.
+ *
+ * So the panel is turned the right way up instead, which is what the kit
+ * actually asks for: a wash behind, charcoal on it, and a deep ink for the
+ * label. Gold is not a kit colour in any of its uses, and goes with it.
+ *
+ * Every pair below was measured on the output, not assumed:
+ *   charcoal on the teal wash   17.31
+ *   coral ink on the teal wash   8.09
+ *   charcoal on kit coral        8.18
+ *   coral ink on paper           8.45
+ */
+const KIT_MODEL: [string, string][] = [
+  // The inverted panel, 2062 of them, turned the right way up.
+  ["background:#345561;color:#FAFAFA", "background:#F0F6F9;color:#111111"],
+  // Its label, which was gold. Reads on the flipped panel and on paper.
+  ["color:#FFB13F", "color:#733A32"],
+  // Gold as a fill, already carrying charcoal, so only the fill moves.
+  ["background:#FFB13F;color:#111111", "background:#EC9388;color:#111111"],
+];
+
+function kitModel(source: string): string {
+  let out = source;
+  for (const [from, to] of KIT_MODEL) out = out.split(from).join(to);
+  // Anything gold the pairs above did not account for.
+  out = out.split("#FFB13F").join("#EC9388");
+  out = out.split("#8A5400").join("#733A32");
+  return out;
+}
+
 function recolour(rel: string, source: string): string {
   const accent = accentFamily(rel);
   const cache: Record<string, string> = {};
@@ -6899,7 +6938,7 @@ for (const full of files) {
   // Adapt first, recolour second. The adaptation rules match markup that
   // contains these colours, so recolouring first would stop them matching.
   let content = ext === ".html" ? adapt(rel, raw) : raw;
-  if (recolours(rel)) content = recolour(rel, content);
+  if (recolours(rel)) content = kitModel(recolour(rel, content));
   rows.push({
     path: rel,
     content,
