@@ -99,10 +99,33 @@ for (const [key, list] of Object.entries(BANK.words)) {
   }
 }
 
+// A list with nothing in it prints a sheet with nothing on it, and every
+// check above this line passes it: each one reads the words that are there,
+// so zero words means zero complaints. A rule change in the builder emptied
+// og4-07|con-/com- and shipped, green the whole way. Two lists are empty on
+// purpose — I'll and we've are one syllable and have no two-syllable form —
+// and they are named here so the exemption has to be argued, not inherited.
+const EMPTY_OK = new Map([
+  ["og3-10|'ll", "every -'ll contraction is one syllable"],
+  ["og3-10|'ve", "every -'ve contraction is one syllable"],
+]);
+for (const [key, list] of Object.entries(BANK.words)) {
+  const n = (list.real || []).length + (list.one || []).length;
+  if (n === 0 && !EMPTY_OK.has(key)) fail(key, "list is empty — this sheet prints no words");
+}
+// And an exemption that stopped being true is a hole, so it has to go.
+for (const [key, why] of EMPTY_OK) {
+  const list = BANK.words[key];
+  if (!list) { fail(key, `exempted as empty but the key is gone — drop it from EMPTY_OK`); continue; }
+  const n = (list.real || []).length + (list.one || []).length;
+  if (n > 0) fail(key, `exempted as empty (${why}) but holds ${n} words — drop it from EMPTY_OK`);
+}
+
 const lists = Object.keys(BANK.words).length;
 const thin = Object.entries(BANK.words).filter(([, l]) => l.real.length < 10).length;
 console.log(`${lists} lists, ${real} multisyllabic, ${one} single-syllable and ${fake} made-up words, every one on its pattern.`);
 console.log(`${sentences} partner-read sentences, each carrying two of its pattern\u2019s words.`);
+console.log(`${EMPTY_OK.size} lists are empty on purpose, named and argued; every other list prints words.`);
 console.log(`${thin} lists hold fewer than ten real words — English has few two-syllable words on those patterns.`);
 console.log(`\nproblems: ${problems.length}`);
 if (problems.length) {
