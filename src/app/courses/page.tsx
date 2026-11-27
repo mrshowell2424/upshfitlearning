@@ -48,7 +48,7 @@ export default async function CoursesPage() {
       <Header />
       <main id="main" tabIndex={-1} className="flex-1">
         {/* Hero */}
-        <section className="py-12 md:py-16 px-5 md:px-8 bg-gradient-to-br from-teal-50 to-white border-b border-hairline">
+        <section className="py-12 md:py-16 px-5 md:px-8 bg-gradient-to-br from-wash-teal to-white border-b border-hairline">
           <div className="max-w-7xl mx-auto">
             <h1 className="text-[30px] md:text-4xl font-bold text-charcoal">Courses</h1>
           </div>
@@ -74,7 +74,7 @@ export default async function CoursesPage() {
                           className="w-full h-full object-cover"
                         />
                       ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-teal-50 to-gray-100" />
+                        <div className="w-full h-full bg-gradient-to-br from-wash-teal to-gray-100" />
                       )}
                     </div>
 

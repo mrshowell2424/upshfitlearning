@@ -48,14 +48,14 @@ import { EF_YEAR } from "./ef-weeks";
 const BRAND = {
   ink: "#111111",
   mid: "#444444",
-  soft: "#6A6A6A",
+  soft: "#5A5A5A",
   line: "#E9E9E9",
   panel: "#F2F2F2",
-  coralDark: "#C0432F",
-  lavenderDark: "#6B2FB5",
-  tealDark: "#00756C",
+  coralDark: "#C83220",
+  lavenderDark: "#7758C0",
+  tealDark: "#377387",
 };
-const GRADIENT = "linear-gradient(135deg, #FF6A5B, #FF7DAE, #B87DFF, #00B4A6)";
+const GRADIENT = "linear-gradient(135deg, #EC9388, #DE8FAD, #B19FDB, #89BECF)";
 // The brand book, in globals.css: Poppins is the whole interface,
 // headings and running text alike, because it is the brand's face.
 // The serif is for lines a child reads, and nothing on this page is

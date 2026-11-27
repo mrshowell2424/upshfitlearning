@@ -43,12 +43,12 @@ const BRAND = {
   ink: "#111111",
   mid: "#444444",
   line: "#E9E9E9",
-  coralDark: "#C0432F",
-  lavenderDark: "#6B2FB5",
-  tealDark: "#00756C",
+  coralDark: "#C83220",
+  lavenderDark: "#7758C0",
+  tealDark: "#377387",
   amberDark: "#8A5400",
 };
-const GRADIENT = "linear-gradient(135deg, #FF6A5B, #FF7DAE, #B87DFF, #00B4A6)";
+const GRADIENT = "linear-gradient(135deg, #EC9388, #DE8FAD, #B19FDB, #89BECF)";
 const SLOT_COLOUR = [BRAND.coralDark, BRAND.tealDark, BRAND.lavenderDark];
 
 type Search = Promise<Record<string, string | string[] | undefined>>;

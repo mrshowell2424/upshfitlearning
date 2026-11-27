@@ -6716,14 +6716,26 @@ function adapt(rel: string, html: string): string {
 type Ramp = string[];
 
 /** Each family, light to dark. Luminance is computed, not written down. */
+// The brand kit's ramps: wash, logo colour, mid tone, ink. Every value here
+// comes from the template gallery, and the inks are the logo colours darkened
+// at their own saturation until they clear 5:1 on white.
+//
+// This is the second copy of the palette -- globals.css holds the site's --
+// because the two colour different things: that one paints the chrome, this
+// one rewrites every hex inside the 859 seeded materials. They have to agree
+// or the site is the new brand and every lesson page is still the old one.
 const FAMILIES: Record<string, Ramp> = {
-  grey: ["FAFAFA", "F2F2F2", "E9E9E9", "8A8A8A", "6A6A6A", "333333", "111111"],
-  warm: ["FFF0EC", "FF6A5B", "E24F41", "C0432F"],
-  amber: ["FFF0EC", "FFB13F", "C0432F"],
-  teal: ["E6F8F6", "00B4A6", "00756C"],
+  grey: ["FAFAFA", "F2F2F2", "E9E9E9", "8A8A8A", "5A5A5A", "333333", "111111"],
+  warm: ["FCF1F0", "EC9388", "E67364", "C83220"],
+  // Amber is not a kit colour. It is kept because the format badges need a
+  // sixth category and the kit gives four hues.
+  amber: ["FFF6E8", "FFB13F", "8A5400"],
+  teal: ["F0F6F9", "89BECF", "67AAC2", "377387"],
+  // Blue is not a kit colour either -- it is the link blue, and the accent
+  // the PBL materials are opened with.
   blue: ["EAF2FF", "4C9AFF", "2F6FD0", "16213E"],
-  lavender: ["F4E9FF", "B87DFF", "6B2FB5"],
-  pink: ["FFF5F9", "FF7DAE", "B3336E"],
+  lavender: ["F5F2FA", "B19FDB", "9B82D0", "7758C0"],
+  pink: ["FBF0F4", "DE8FAD", "D46E94", "BC376A"],
 };
 
 function channel(v: number): number {
@@ -6759,7 +6771,7 @@ function hue(hex: string): number {
 }
 
 /** The one real error red, which should stay a red and not become coral. */
-const EXPLICIT: Record<string, string> = { B42318: "E24F41", B00020: "E24F41", "9B2C3C": "E24F41" };
+const EXPLICIT: Record<string, string> = { B42318: "E67364", B00020: "E67364", "9B2C3C": "E67364" };
 
 const LUMS: Record<string, number[]> = {};
 for (const [k, ramp] of Object.entries(FAMILIES)) LUMS[k] = ramp.map(luminance);
@@ -6823,9 +6835,13 @@ function brandFor(hex: string, accent: string): string {
   return ramp[best];
 }
 
-/** Design Thinking has a canvas palette of its own that nobody asked to change. */
+/**
+ * Design Thinking has a canvas palette of its own that nobody asked to change.
+ * The choice board is already written in the kit's exact values, so running it
+ * through the ramps could only move it off them.
+ */
 function recolours(rel: string): boolean {
-  return !rel.startsWith("design-thinking/");
+  return !rel.startsWith("design-thinking/") && rel !== "pbl/choice-board.html";
 }
 
 function recolour(rel: string, source: string): string {

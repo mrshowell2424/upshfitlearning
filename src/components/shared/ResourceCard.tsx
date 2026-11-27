@@ -31,23 +31,25 @@ export default function ResourceCard({
   // Try to get a meaningful thumbnail - use the format type for color coding
   const getThumbnailColor = () => {
     const colors: Record<string, string> = {
-      'Video': '#FFB3AF',
-      'Slides': '#B3D9FF',
-      'Doc': '#FFE5B3',
-      'Worksheet': '#B3FFB3',
-      'Guide': '#E5B3FF',
+      'Video': '#F2D4E0',
+      'Slides': '#D2E6ED',
+      'Doc': '#FFF6E8',
+      'Worksheet': '#F8D6D2',
+      'Guide': '#E1DBF1',
       'Link': '#D9D9D9',
     }
     return colors[format] || '#E0E0E0'
   }
 
   const thumbnailUrl = thumbnail_url || (youtube_id ? `https://i.ytimg.com/vi/${youtube_id}/mqdefault.jpg` : undefined);
+  // The kit gives four hues, these are six categories, so amber stays on as
+  // the fifth and Link keeps the neutral. Every pair clears AA on its wash.
   const formatColors: Record<string, string> = {
-    Slides: "bg-blue-50 text-blue-700",
-    Doc: "bg-amber-50 text-amber-700",
-    Sheet: "bg-teal-50 text-teal-700",
-    Video: "bg-pink-50 text-pink-700",
-    Guide: "bg-purple-50 text-purple-700",
+    Slides: "bg-wash-teal text-teal-ink",
+    Doc: "bg-wash-amber text-amber-ink",
+    Sheet: "bg-wash-coral text-coral-ink",
+    Video: "bg-wash-pink text-pink-ink",
+    Guide: "bg-wash-lavender text-lavender-ink",
     Link: "bg-gray-100 text-gray-700",
   };
 
@@ -119,10 +121,10 @@ export default function ResourceCard({
         </p>
 
         <div className="flex gap-1 mt-auto flex-wrap">
-          <span className="text-[10.5px] font-semibold px-2 py-1 rounded-full bg-blue-50 text-blue-700">
+          <span className="text-[10.5px] font-semibold px-2 py-1 rounded-full bg-wash-lavender text-lavender-ink">
             {grade_band}
           </span>
-          <span className="text-[10.5px] font-semibold px-2 py-1 rounded-full bg-teal-50 text-teal-700">
+          <span className="text-[10.5px] font-semibold px-2 py-1 rounded-full bg-wash-teal text-teal-ink">
             {skill}
           </span>
         </div>

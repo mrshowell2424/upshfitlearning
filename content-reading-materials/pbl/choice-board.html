@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Choice Board Maker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: warm, calm, teacher to teacher. Upshift Learning clean look.
+   IDEA: a printed classroom choice board on the wall, one card per option.
+   PICTURE: the board itself, soft wash cards in logo color order.
+   COLOUR and TYPE: white ground, charcoal text, Upshift soft and wash colors; Poppins only.
+   LAYOUT: header, two views (example board, maker with form + live board). Stacks on phones. */
+:root{color-scheme:light;--bg:#fff;--ink:#111;--muted:#5b5b5b;--line:#e8e8e8;--gray:#f2f2f2;
+--coral:#EC9388;--rose:#DE8FAD;--lav:#B19FDB;--teal:#89BECF;
+--wc:#FCF1F0;--wr:#FBF0F4;--wl:#F5F2FA;--wt:#F0F6F9;
+--bc:#E67364;--br:#D46E94;--bl:#9B82D0;--bt:#67AAC2}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Poppins,Arial,sans-serif;overflow-x:clip}
+.wrap{max-width:1240px;margin:0 auto;padding:0 max(4vw,16px)}
+header{padding:18px 0 4px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:8px}
+.logo svg{width:38px;height:38px;flex:none}
+.logo .wm{display:flex;flex-direction:column;line-height:1.05}
+.logo .wm b{font-size:17px;font-weight:700;letter-spacing:.01em}
+.logo .wm span{font-size:13px;font-weight:400}
+.bar{display:flex;margin:16px 0 12px}.bar i{width:32px;height:5px}
+h1{font-size:clamp(30px,4.4vw,46px);line-height:1.08;font-weight:800;margin:0 0 10px;text-wrap:balance}
+.lede{font-size:17px;max-width:62ch;margin:0 0 18px;color:#222}
+nav{display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px}
+nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;text-decoration:none;color:var(--ink);font-weight:600;border:1.5px solid var(--line)}
+nav a[aria-current=page]{background:var(--wl);border-color:var(--lav)}
+nav a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,label.chip:focus-within{outline:3px solid var(--bl);outline-offset:2px}
+section.view{padding:26px 0 56px}
+.view[hidden]{display:none}
+h2{font-size:28px;line-height:1.15;margin:0 0 6px;font-weight:700;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 18px;max-width:70ch}
+.board{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.card{border-radius:16px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:8px}
+.card:nth-child(4n+1){background:var(--wc)}.card:nth-child(4n+2){background:var(--wr)}.card:nth-child(4n+3){background:var(--wl)}.card:nth-child(4n+4){background:var(--wt)}
+.num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:700;background:#fff;font-size:15px}
+.card:nth-child(4n+1) .num{border:2px solid var(--coral)}.card:nth-child(4n+2) .num{border:2px solid var(--rose)}.card:nth-child(4n+3) .num{border:2px solid var(--lav)}.card:nth-child(4n+4) .num{border:2px solid var(--teal)}
+.card h3{margin:2px 0 2px;font-size:18px;line-height:1.25}
+.card p{margin:0;font-size:14.5px;line-height:1.5}
+.card b{font-weight:600}
+.ai{margin-top:4px;padding:10px 12px;background:#fff;border-radius:10px;font-size:14px}
+.ai b{display:block;font-size:12px;letter-spacing:.02em}
+.comp{display:flex;gap:7px;align-items:baseline;margin-top:8px;padding-top:8px;border-top:1px solid var(--line);font-size:12.5px;font-weight:600;line-height:1.35;color:#333}.comp i{flex:none;width:9px;height:9px;border-radius:50%;transform:translateY(1px)}
+details{font-size:14px}summary{cursor:pointer;font-weight:600;min-height:32px}
+details ol{padding-left:20px;margin:6px 0}details li{margin-bottom:6px}
+.meta{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px;margin-top:18px}
+.box{background:var(--gray);border-radius:14px;padding:18px 20px}
+.box h3{margin:0 0 8px;font-size:16px}.box ol,.box ul{margin:0;padding-left:20px}.box li{margin-bottom:4px}
+.credit{font-size:13px;color:var(--muted);margin-top:14px}
+.btn{font:inherit;font-weight:600;min-height:44px;padding:0 20px;border-radius:999px;border:1.5px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer}
+.btn.main{background:var(--ink);color:#fff}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;align-items:center}
+.status{font-size:14px;color:var(--muted)}
+.maker{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:28px;align-items:start}
+form{display:flex;flex-direction:column;gap:14px;position:sticky;top:12px}
+label.f{font-weight:600;font-size:14px;display:flex;flex-direction:column;gap:6px}
+label.f span{font-weight:400;color:var(--muted);font-size:13px}
+input[type=text],textarea{font:inherit;font-size:16px;padding:10px 12px;border:1.5px solid #d8d8d8;border-radius:10px;width:100%;background:#fff;color:var(--ink)}
+textarea{min-height:72px;resize:vertical}
+fieldset{border:0;padding:0;margin:0}legend{font-weight:600;font-size:14px;margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+label.chip{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;border-radius:999px;border:1.5px solid #d8d8d8;font-size:14px;cursor:pointer;user-select:none}
+label.chip input{accent-color:var(--bl);width:16px;height:16px}
+label.chip:has(input:checked){background:var(--wl);border-color:var(--lav)}
+.toggle{display:flex;gap:10px;align-items:flex-start;font-size:14px;background:var(--wt);padding:12px;border-radius:12px}
+.toggle input{width:20px;height:20px;accent-color:var(--bt);margin-top:2px}
+.preview h2{font-size:26px}
+[contenteditable]:focus{outline:2px dashed var(--bl);outline-offset:2px;border-radius:4px}
+.hint{font-size:13px;color:var(--muted);margin:0 0 14px}
+.sheet{position:fixed;left:-99999px;top:0;width:1600px;background:#fff;padding:56px 64px;font-family:Poppins,Arial,sans-serif;color:#111}
+.sheet .sh-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+.sheet h1{font-size:44px;max-width:none;margin:18px 0 8px}
+.sheet .sub{font-size:19px;color:#333;max-width:none}
+.sheet .board{grid-template-columns:repeat(4,minmax(0,1fr))}
+.sheet .card p{font-size:15px}.sheet details summary{display:none}
+.sheet .credit{font-size:14px;margin-top:22px}
+.exp{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.exp[hidden]{display:none}
+footer{border-top:1px solid var(--line);padding:20px 0 34px;font-size:13px;color:var(--muted)}
+footer p{margin:0 0 4px}
+@media(max-width:860px){.maker{grid-template-columns:minmax(0,1fr)}form{position:static}.meta{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:no-preference){.card{transition:transform .15s}.card:hover{transform:translateY(-2px)}}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+<header class="wrap">
+  <div class="top"><div class="logo"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Upshift Learning"><g fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10L16 5L25 10" stroke="#EC9388"/><path d="M7 16L16 11L25 16" stroke="#DE8FAD"/><path d="M7 22L16 17L25 22" stroke="#B19FDB"/><path d="M7 28L16 23L25 28" stroke="#89BECF"/></g></svg><span class="wm"><b>UPSHIFT</b><span>Learning</span></span></div></div>
+  <div class="bar" aria-hidden="true"><i style="background:var(--coral)"></i><i style="background:var(--rose)"></i><i style="background:var(--lav)"></i><i style="background:var(--teal)"></i></div>
+  <h1>Build a choice board for your project</h1>
+  <p class="lede">Give students several ways into the same big idea: a podcast, a game, a comic, an app. Fill in your project, pick the products, and download your board.</p>
+  <nav aria-label="Views"><a href="#make" id="t-make">Make your board</a><a href="#example" id="t-example">See an example</a></nav>
+</header>
+
+<main class="wrap">
+<section class="view" id="v-example" hidden>
+  <p class="hint" style="margin-bottom:6px">Example board by Stephanie Howell.</p>
+  <h2 id="exTitle">American Revolution choice board</h2>
+  <p class="sub" id="exIdea">How did this period reshape the relationship between people and government, and what does it reveal about freedom? Students choose one activity.</p>
+  <div class="board" id="exBoard"></div>
+  <div class="meta" id="exMeta">
+    <div class="box"><h3>Instructions for students</h3><ol>
+      <li>Choose one activity from the board.</li>
+      <li>Show a deep understanding of the American Revolution and its impact on the relationship between people and government.</li>
+      <li>Use the materials and resources provided to support your research and creation.</li>
+      <li>Be ready to present your work and explain your process and findings to the class.</li></ol></div>
+    <div class="box"><h3>Standards</h3><ul>
+      <li><b>8.H.7</b> Understanding the outcome of the American Revolution and its impact on national independence and relationships.</li>
+      <li><b>8.H.6</b> Recognizing key events and figures that influenced the Revolution's course and outcome.</li></ul></div>
+  </div>
+    <div class="btns"><button class="btn main" id="useEx" type="button">Use this as a starting point</button><span class="exp" data-exp><button class="btn" type="button" data-png="example">Download graphic (PNG)</button><button class="btn" type="button" data-pdf="example">Download PDF</button></span><span class="status" id="status2" role="status"></span></div>
+</section>
+
+<section class="view" id="v-make">
+  <div class="maker">
+    <form id="f" autocomplete="off">
+      <p class="hint" style="margin:0">The sample project below is just a starting point. Replace it with yours.</p>
+      <label class="f">Project or topic<input type="text" id="topic" value="Climate change in our city"></label>
+      <label class="f">Big idea or driving question<span>What every option helps students understand</span><textarea id="idea">How can our community adapt to a changing climate?</textarea></label>
+      <label class="f">Grade or level <span>Optional</span><input type="text" id="grade" value="Grade 7"></label>
+      <label class="f">Standards or learning goals <span>One per line</span><textarea id="std">Explain causes and effects of climate change on local systems.
+Use evidence to support a claim.</textarea></label>
+      <fieldset><legend>Products to offer</legend><div class="chips" id="chips"></div></fieldset>
+      <label class="toggle"><input type="checkbox" id="aiOn" checked><span><b>Add an AI literacy step</b><br>One short move per option, with the AILit competence it builds.</span></label>
+    </form>
+    <div class="preview">
+      <h2 id="pTitle" contenteditable="true"></h2>
+      <p class="sub" id="pIdea" contenteditable="true"></p>
+      <p class="hint">Click any text on the board to edit it. Changing the form rebuilds the board.</p>
+      <div class="board" id="mkBoard"></div>
+      <div class="meta" id="mkMeta">
+        <div class="box"><h3>Instructions for students</h3><ol id="pInstr" contenteditable="true"></ol></div>
+        <div class="box"><h3 id="pStdH">Standards</h3><ul id="pStd" contenteditable="true"></ul></div>
+      </div>
+      <div class="btns"><button class="btn main" type="button" id="copyRich">Copy for Google Docs</button><button class="btn" type="button" id="copyText">Copy as text</button><span class="exp" data-exp><button class="btn" type="button" data-png="make">Download graphic (PNG)</button><button class="btn" type="button" data-pdf="make">Download PDF</button></span><span class="status" id="status" role="status"></span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <p>Made by Upshift Learning. Stephanie Howell and Greta Sandler.</p>
+  <p>AI literacy competences from the AILit Framework, OECD and European Union (2026).</p>
+</footer>
+
+<script>
+{
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const EX=[
+ ["Revolutionary video diary","Create a video diary from the perspective of a historical figure (e.g., Patriot, Loyalist, or a member of an underrepresented group).","Research their life, motivations, and experiences during the Revolution.","Showcase how the Revolution impacted their beliefs and actions."],
+ ["Battle strategy game design","Design a board game based on a key battle of the American Revolution.","Collaborate with peers to research battle strategies and historical accuracy.","Demonstrate understanding of military tactics and their significance in the Revolution's outcome."],
+ ["Freedom's voices podcast","Record a podcast episode discussing the concept of freedom as defined by different groups during the Revolution.","Reflect on how these definitions varied and their implications for modern values.","Examine diverse perspectives and their contributions to American foundational values."],
+ ["Historical comic strip","Develop a comic strip illustrating a key event from the Revolution from multiple perspectives.","Use creativity to depict different viewpoints (e.g., Patriots vs. Loyalists).","Analyze how these events contributed to the new political landscape."],
+ ["Declaration of Independence rewrite","Rewrite part of the Declaration of Independence in contemporary language, emphasizing its core values.","Reflect on how these values translate to today's society.","Connect historical ideals to current democratic principles."],
+ ["Revolutionary news report","Produce a news segment reporting on a major event of the Revolution.","Research the event and script a report that includes interviews with key figures.","Develop an understanding of historical journalism and its role in shaping public opinion."],
+ ["Social media campaign","Create a series of social media posts that advocate for a cause related to the American Revolution.","Research, design, and share ideas that connect revolutionary ideals to issues that matter today.","Engage deeply with the Revolution, apply its lessons to current events, and practice using your voice to advocate for important causes.",
+  ["Choose a cause with your group (e.g., freedom, representation, protest) and discuss why it still matters today.","Research the cause during the Revolution: quotes, images or stories, and how similar issues appear in current events.","Plan 3 to 5 posts: main message, visuals and a hashtag for each, in a tone that suits your peers.","Design the posts in Canva, Google Slides or on paper, with clear text and accurate facts or quotes.","Connect past and present: explain in each post how the cause relates to a modern issue.","Share in class or a digital gallery, explain your choices, and reflect as a group on what you learned."]],
+ ["Revolutionary art exhibit","Curate a digital or physical art exhibit showcasing art inspired by the Revolution.","Research different artistic interpretations and their historical contexts.","Analyze how art reflects and influences societal change."]
+];
+
+const LIB=[
+ {k:"video",c:"E3",n:"Video",p:"Create a short video about {t}: a documentary, a short film, a video diary or an interview.",r:"Research, write a script or storyboard, then film and edit.",o:"Show how {t} affects people's lives and choices.",a:"Ask AI to review your storyboard for missing perspectives, then check every fact against a real source."},
+ {k:"game",c:"C3",n:"Board game",p:"Design a board game about a key moment or challenge in {t}.",r:"Collaborate with peers to research the facts your game depends on.",o:"Show how key choices and events in {t} connect to the big idea.",a:"Ask AI to find loopholes in your rules, then decide which fixes to keep and why."},
+ {k:"pod",c:"E6",n:"Podcast",p:"Record a podcast episode that explores {t} through different voices.",r:"Interview, research and compare how different groups see it.",o:"Examine diverse perspectives on {t}.",a:"Ask AI to suggest voices for your episode, then notice whose perspectives it leaves out and go find them."},
+ {k:"comic",c:"C1",n:"Comic strip",p:"Develop a comic strip that shows a key event in {t} from more than one perspective.",r:"Plan each panel from your research and sketch different viewpoints.",o:"Analyze how different people experienced {t}.",a:"Ask AI to retell the event from another perspective, then compare it with your sources."},
+ {k:"rewrite",c:"E3",n:"Rewrite a key text",p:"Rewrite an important text about {t} in today's language for a younger audience.",r:"Identify its core ideas and decide what must stay.",o:"Connect the original ideas to today.",a:"Compare your rewrite with an AI rewrite. What did the AI change, lose or get wrong?"},
+ {k:"news",c:"E3",n:"News report",p:"Produce a news segment reporting on {t}.",r:"Research the facts and script a report with interviews.",o:"Explain {t} clearly and accurately to the public.",a:"Fact-check every claim before it goes on air, and note anything AI got wrong."},
+ {k:"social",c:"C4",n:"Social media campaign",p:"Create 3 to 5 posts that advocate for a cause connected to {t}.",r:"Research the cause, plan a message, visual and hashtag for each post, then design and share.",o:"Use your voice to help others understand why {t} matters.",a:"Before posting, check every AI-suggested fact and ask: could this post mislead anyone?"},
+ {k:"art",c:"C4",n:"Art exhibit",p:"Curate a digital or physical exhibit of art inspired by {t}.",r:"Research artistic interpretations and write a label for each piece.",o:"Analyze how art reflects and shapes change.",a:"If you use AI images, label them clearly and explain why you made each choice."},
+ {k:"info",c:"E3",n:"Infographic",p:"Design an infographic that explains {t} at a glance.",r:"Gather data from reliable sources and choose the clearest way to show it.",o:"Communicate the evidence behind {t} clearly.",a:"Verify every number AI gives you against a real, dated source."},
+ {k:"museum",c:"M3",n:"Interactive museum",p:"Build an interactive museum station about {t} for visitors.",r:"Empathize with your visitors, prototype the station, test it and improve it.",o:"Help visitors explore the big idea through {t}.",a:"Decide which parts of your station AI could help with and which need your own research. Explain your choice."},
+ {k:"app",c:"C2",n:"App prototype",p:"Prototype a simple app that helps people with a problem connected to {t}.",r:"Describe what the app should do, build a first version, test it with users and improve it.",o:"Turn your understanding of {t} into something useful for others.",a:"Vibe code it: describe your app to AI in plain words, test it, and note every change you made."},
+ {k:"letter",c:"C1",n:"Letter to a decision maker",p:"Write a letter or proposal to someone who can act on {t}.",r:"Research the issue, build your argument and suggest a clear action.",o:"Make an evidence-based case about {t}.",a:"Ask AI for the strongest counterarguments, then strengthen your letter to answer them."}
+];
+const COMP={
+ E3:["Engage with AI","Evaluate whether to accept, revise or reject AI outputs","var(--coral)"],
+ E6:["Engage with AI","Explain how AI could amplify societal biases","var(--coral)"],
+ C1:["Create with AI","Use AI to explore new perspectives","var(--rose)"],
+ C2:["Create with AI","Visualise and prototype ideas with AI","var(--rose)"],
+ C3:["Create with AI","Direct AI to give feedback and refine results","var(--rose)"],
+ C4:["Create with AI","Analyse how AI can protect or violate authenticity","var(--rose)"],
+ M3:["Manage AI","Decide when and how AI should help with a task","var(--lav)"]};
+const DEF=["video","game","pod","comic","news","social","app","letter"];
+const INSTR=["Choose one activity from the board.","Show what you understand about the big idea, not just facts about the topic.","Use the materials and resources provided to support your research and creation.","Be ready to present your work and explain your process and findings to the class."];
+
+const $=id=>document.getElementById(id);
+const exCard=(c,i)=>`<article class="card"><div class="num">${i+1}</div><h3>${esc(c[0])}</h3><p><b>Product:</b> ${esc(c[1])}</p><p><b>Process:</b> ${esc(c[2])}</p><p><b>Objective:</b> ${esc(c[3])}</p>${c[4]?`<details><summary>Step-by-step guide</summary><ol>${c[4].map(s=>`<li>${esc(s)}</li>`).join('')}</ol></details>`:''}</article>`;
+$('exBoard').innerHTML=EX.map(exCard).join('');
+
+$('chips').innerHTML=LIB.map(x=>`<label class="chip"><input type="checkbox" value="${x.k}" ${DEF.includes(x.k)?'checked':''}>${esc(x.n)}</label>`).join('');
+
+function fill(s,t){return s.replace(/\{t\}/g,t?lc(t):'this project')}
+function lc(s){const w=s.split(/\s+/);if(/^(the|a|an)$/i.test(w[0])||(w[1]&&/^[a-z]/.test(w[1])))return s.charAt(0).toLowerCase()+s.slice(1);return s}
+
+function build(){
+  const t=$('topic').value.trim(),i=$('idea').value.trim(),g=$('grade').value.trim(),ai=$('aiOn').checked;
+  const picks=[...document.querySelectorAll('#chips input:checked')].map(x=>x.value);
+  $('pTitle').textContent=(t||'Your project')+' choice board'+(g?' · '+g:'');
+  $('pIdea').textContent=(i||'Add your big idea or driving question.')+' Students choose one activity.';
+  const cards=LIB.filter(x=>picks.includes(x.k)).map((x,n)=>`<article class="card"><div class="num">${n+1}</div><h3 contenteditable="true">${esc(x.n)}</h3><p contenteditable="true"><b>Product:</b> ${esc(fill(x.p,t,i))}</p><p contenteditable="true"><b>Process:</b> ${esc(fill(x.r,t,i))}</p><p contenteditable="true"><b>Objective:</b> ${esc(fill(x.o,t,i))}</p>${ai?`<div class="ai"><b>AI literacy step</b><span contenteditable="true">${esc(x.a)}</span><span class="comp"><i style="background:${COMP[x.c][2]}"></i><span>${esc(COMP[x.c][0])}: ${esc(COMP[x.c][1])}</span></span></div>`:''}</article>`);
+  $('mkBoard').innerHTML=cards.length?cards.join(''):'<p class="sub">Pick at least one product to start your board.</p>';
+  $('pInstr').innerHTML=INSTR.map(s=>`<li>${esc(s)}</li>`).join('')+(ai?'<li>Complete the AI literacy step for your activity and be ready to explain what you checked.</li>':'');
+  const st=$('std').value.split('\n').map(s=>s.trim()).filter(Boolean);
+  $('pStd').innerHTML=st.length?st.map(s=>`<li>${esc(s)}</li>`).join(''):'<li>Add your standards or learning goals.</li>';
+  try{localStorage.setItem('cbm',JSON.stringify({t,i,g,s:$('std').value,ai,picks}))}catch(e){}
+}
+try{const d=JSON.parse(localStorage.getItem('cbm')||'null');if(d){$('topic').value=d.t;$('idea').value=d.i;$('grade').value=d.g;$('std').value=d.s;$('aiOn').checked=d.ai;document.querySelectorAll('#chips input').forEach(c=>c.checked=d.picks.includes(c.value))}}catch(e){}
+$('f').addEventListener('input',build);$('f').addEventListener('submit',e=>e.preventDefault());
+build();
+
+$('useEx').addEventListener('click',()=>{
+  $('topic').value='The American Revolution';$('idea').value='How did the Revolution reshape the relationship between people and government, and what does it reveal about freedom?';$('grade').value='Grade 8';
+  $('std').value='8.H.7 Understanding the outcome of the American Revolution and its impact on national independence and relationships.\n8.H.6 Recognizing key events and figures that influenced the Revolution\'s course and outcome.';
+  const ex=["video","game","pod","comic","rewrite","news","social","art"];document.querySelectorAll('#chips input').forEach(c=>c.checked=ex.includes(c.value));
+  build();location.hash='make';
+});
+
+function boardText(){
+  const out=[$('pTitle').innerText,$('pIdea').innerText,''];
+  document.querySelectorAll('#mkBoard .card').forEach((c,n)=>{out.push(c.innerText.replace(/^\d+\n/,(n+1)+'. ').trim(),'')});
+  out.push('Instructions for students',...[...$('pInstr').children].map((l,n)=>(n+1)+'. '+l.innerText),'',$('pStdH').innerText,...[...$('pStd').children].map(l=>'- '+l.innerText));
+  return out.join('\n');
+}
+function boardHTML(){
+  const cells=[...document.querySelectorAll('#mkBoard .card')].map(c=>{const q=[...c.querySelectorAll('h3,p,.ai')];return `<td style="vertical-align:top;border:1px solid #ccc;padding:8px;font-family:Poppins,Arial;font-size:11pt">${q.map(e=>e.tagName==='H3'?`<p><b>${esc(e.innerText)}</b></p>`:`<p>${esc(e.innerText).replace(/^(Product:|Process:|Objective:|AI literacy step)/,'<b>$1</b>')}</p>`).join('')}</td>`});
+  let rows='';for(let k=0;k<cells.length;k+=2)rows+=`<tr>${cells[k]}${cells[k+1]||'<td></td>'}</tr>`;
+  return `<h1 style="font-family:Poppins,Arial">${esc($('pTitle').innerText)}</h1><p>${esc($('pIdea').innerText)}</p><table style="border-collapse:collapse;width:100%">${rows}</table><h3>Instructions for students</h3><ol>${[...$('pInstr').children].map(l=>`<li>${esc(l.innerText)}</li>`).join('')}</ol><h3>${esc($('pStdH').innerText)}</h3><ul>${[...$('pStd').children].map(l=>`<li>${esc(l.innerText)}</li>`).join('')}</ul>`;
+}
+const say=m=>{$('status').textContent=m;setTimeout(()=>$('status').textContent='',3000)};
+$('copyText').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(boardText());say('Copied. Paste it anywhere.')}catch(e){say('Copy was blocked. Select the board and copy it by hand.')}});
+$('copyRich').addEventListener('click',async()=>{try{await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([boardHTML()],{type:'text/html'}),'text/plain':new Blob([boardText()],{type:'text/plain'})})]);say('Copied. Paste it into a Google Doc.')}catch(e){try{await navigator.clipboard.writeText(boardText());say('Copied as text.')}catch(e2){say('Copy was blocked. Select the board and copy it by hand.')}}});
+
+
+// ---------- export ----------
+const LOGO=document.querySelector('.logo');
+let dl=null;
+try{if(window.claude&&claude.use)claude.use('downloads').then(x=>{dl=x}).catch(()=>{})}catch(e){}
+function sheet(which){
+  const ex=which==='example';
+  const title=(ex?$('exTitle'):$('pTitle')).innerText, idea=(ex?$('exIdea'):$('pIdea')).innerText;
+  const d=document.createElement('div');d.className='sheet';
+  d.innerHTML=`<div class="sh-top"><div><div class="bar"><i style="background:var(--coral)"></i><i style="background:var(--rose)"></i><i style="background:var(--lav)"></i><i style="background:var(--teal)"></i></div><h1></h1><p class="sub"></p></div><span class="sh-logo"></span></div><div class="board"></div><div class="meta"></div><p class="credit">Made by Upshift Learning. Stephanie Howell and Greta Sandler.${which==='make'&&$('aiOn').checked?' AI literacy competences from the AILit Framework, OECD and European Union (2026).':''}</p>`;
+  d.querySelector('.sh-logo').replaceWith(LOGO.cloneNode(true));
+  d.querySelector('h1').textContent=title;d.querySelector('.sub').textContent=idea;
+  const b=d.querySelector('.board');
+  document.querySelectorAll((ex?'#exBoard':'#mkBoard')+' .card').forEach(c=>{const k=c.cloneNode(true);k.querySelectorAll('[contenteditable]').forEach(e=>e.removeAttribute('contenteditable'));k.querySelectorAll('details').forEach(e=>e.open=true);b.appendChild(k)});
+  const m=(ex?$('exMeta'):$('mkMeta')).cloneNode(true);m.removeAttribute('id');m.querySelectorAll('[contenteditable]').forEach(e=>e.removeAttribute('contenteditable'));m.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id'));
+  d.querySelector('.meta').replaceWith(m);
+  document.body.appendChild(d);return d;
+}
+const fname=which=>((which==='example'?$('exTitle'):$('pTitle')).innerText.replace(/[^\w\s-]/g,'').trim().replace(/\s+/g,'-').toLowerCase()||'choice-board');
+async function render(which){
+  if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+  const d=sheet(which);
+  try{return await html2canvas(d,{scale:2,backgroundColor:'#ffffff',useCORS:true})}finally{d.remove()}
+}
+async function save(filename,blob,st){
+  if(dl){try{await dl.save({filename,data:blob});st('Saved.')}catch(e){st(e&&e.code==='declined'?'Download cancelled.':'Download is not available here. Open the page on claude.ai in a browser.')}}
+  else{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;document.body.appendChild(a);a.click();a.remove();st('Downloading.')}
+}
+const stFor=w=>m=>{const el=w==='example'?$('status2'):$('status');el.textContent=m;setTimeout(()=>el.textContent='',4000)};
+document.querySelectorAll('[data-png]').forEach(btn=>btn.addEventListener('click',async()=>{
+  const w=btn.dataset.png,st=stFor(w);if(!window.html2canvas){st('Export tools are still loading. Try again in a moment.');return}
+  st('Making your graphic...');const c=await render(w);
+  c.toBlob(bl=>save(fname(w)+'.png',bl,st),'image/png');
+}));
+document.querySelectorAll('[data-pdf]').forEach(btn=>btn.addEventListener('click',async()=>{
+  const w=btn.dataset.pdf,st=stFor(w);if(!window.html2canvas||!window.jspdf){st('Export tools are still loading. Try again in a moment.');return}
+  st('Making your PDF...');const c=await render(w);
+  const land=c.width>=c.height,pdf=new jspdf.jsPDF({orientation:land?'landscape':'portrait',unit:'pt',format:'a4'});
+  const pw=pdf.internal.pageSize.getWidth(),ph=pdf.internal.pageSize.getHeight(),mg=22;
+  const k=Math.min((pw-2*mg)/c.width,(ph-2*mg)/c.height),iw=c.width*k,ih=c.height*k;
+  pdf.addImage(c.toDataURL('image/jpeg',0.92),'JPEG',(pw-iw)/2,mg,iw,ih);
+  save(fname(w)+'.pdf',pdf.output('blob'),st);
+}));
+
+function route(){const m=location.hash!=='#example';$('v-example').hidden=m;$('v-make').hidden=!m;$('t-example').toggleAttribute('aria-current',!m);$('t-make').toggleAttribute('aria-current',m);if(m)$('t-make').setAttribute('aria-current','page');else $('t-example').setAttribute('aria-current','page')}
+window.addEventListener('hashchange',route);route();
+}
+</script>
+</body>
+</html>

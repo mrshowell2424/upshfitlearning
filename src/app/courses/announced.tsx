@@ -68,7 +68,7 @@ function HowItWorks() {
         </h3>
         <p className="text-sm text-text-body">
           Courses marked{' '}
-          <span className="inline-flex items-center rounded-full bg-teal-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-teal-ink align-middle">
+          <span className="inline-flex items-center rounded-full bg-wash-teal px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-teal-ink align-middle">
             Grad credit
           </span>{' '}
           carry credit through Malone University — open to anyone, no membership
@@ -158,7 +158,7 @@ export function AnnouncedCourses() {
                     {course.category}
                   </span>
                   {course.gradCredit && (
-                    <span className="inline-flex items-center rounded-full bg-teal-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-teal-ink">
+                    <span className="inline-flex items-center rounded-full bg-wash-teal px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-teal-ink">
                       Grad credit
                     </span>
                   )}

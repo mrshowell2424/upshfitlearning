@@ -1,12 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand colors */
-  --color-coral: #FF6A5B;
+  /* The brand kit's four logo colours, taken from the template gallery
+     exactly as it defines them -- the four chevrons of the wordmark. They
+     are soft on purpose, which also means none of them can carry text:
+     the strongest is 2.43:1 on white and AA wants 4.5. They are for fills,
+     chevrons, rules, chart bars and anything else decorative. Text and
+     buttons use the ink set below. */
+  --color-coral: #EC9388;
+  --color-pink: #DE8FAD;        /* the kit calls this one rose */
+  --color-lavender: #B19FDB;
+  --color-teal: #89BECF;        /* the fourth chevron: a soft sky blue */
+
+  /* Bright coral. The kit keeps it for small details only, so it is a
+     separate token rather than the value of --color-coral, which is what
+     it used to be -- the whole site was painted in the accent. */
+  --color-coral-bright: #FF6A5B;
   --color-coral-press: #E24F41;
-  --color-pink: #FF7DAE;
-  --color-lavender: #B87DFF;
-  --color-teal: #00B4A6;
+
+  /* The kit's washes, for chip and panel backgrounds. */
+  --color-wash-coral: #FCF1F0;
+  --color-wash-pink: #FBF0F4;
+  --color-wash-lavender: #F5F2FA;
+  --color-wash-teal: #F0F6F9;
+  /* Amber is not a kit colour, but the format badges need a sixth
+     category and the kit gives four hues. Kept, and labelled. */
+  --color-wash-amber: #FFF6E8;
+
+  /* Card tints: the logo colour at 38% over white. The washes are too pale
+     to read as a thumbnail and the logo colours are too strong, so the
+     thumbnails sit between the two. */
+  --color-tint-coral: #F8D6D2;
+  --color-tint-pink: #F2D4E0;
+  --color-tint-lavender: #E1DBF1;
+  --color-tint-teal: #D2E6ED;
   --color-charcoal: #111111;
   --color-navy: #16213E;
   --color-amber: #FFB13F;
@@ -14,19 +41,21 @@
   --color-link-blue: #2F6FD0;
 
   /* The ink set: the same hues, dark enough to carry text.
-     The brand colours above are light. White on coral is 2.81:1 and coral
-     on white is the same, both of which fail WCAG AA, and coral is the
-     colour of every button on the site. These are their text-bearing
-     siblings -- same family, 5:1 or better -- so the brand keeps its
-     colours for fills, rules, chips and anything decorative, and anything
-     a person has to READ uses the ink.
+     The kit's logo colours are soft, and soft means unreadable -- the best
+     of the four is 2.43:1 on white where AA wants 4.5. So the brand keeps
+     its colours for fills, rules, chips and anything decorative, and
+     anything a person has to READ uses the ink.
+     Each ink is its own logo colour darkened: same hue, same dusty
+     saturation, lightness dropped until it clears 5:1. Letting the
+     saturation climb instead is what turns the kit's #B19FDB into an
+     electric #591FE0 -- legible, and nothing to do with the brand.
      Changing one line here changes every button of that colour. */
-  --color-coral-ink: #C0432F;        /* white on it: 5.14 */
-  --color-coral-ink-press: #9E3523;  /* its pressed state: 7.03 */
-  --color-pink-ink: #B3336E;         /* 5.81 */
-  --color-lavender-ink: #6B2FB5;     /* 7.78 */
-  --color-teal-ink: #00756C;         /* 5.58 */
-  --color-amber-ink: #8A5400;        /* 6.27 */
+  --color-coral-ink: #C83220;        /* 5.34 on white, 4.83 on its wash */
+  --color-coral-ink-press: #A72A1B;  /* its pressed state: 7.02 */
+  --color-pink-ink: #BC376A;         /* 5.39 / 4.85 */
+  --color-lavender-ink: #7758C0;     /* 5.33 / 4.81 */
+  --color-teal-ink: #377387;         /* 5.30 / 4.86 */
+  --color-amber-ink: #8A5400;        /* 6.27 -- amber is not a kit colour */
 
   /* Grays */
   --color-gray-050: #FAFAFA;
@@ -37,7 +66,7 @@
 
   /* Text colors */
   --color-text-body: #333333;
-  --color-text-muted: #6A6A6A;
+  --color-text-muted: #5A5A5A;   /* the kit's muted; was #6A6A6A */
   /* #8A8A8A was 3.45:1 on white, which fails AA for anything under 24px,
      and these greys are used almost entirely for the small uppercase
      labels. "Faint" now means the lightest grey that is still legible,
@@ -48,6 +77,16 @@
 
 @theme inline {
   --color-coral: var(--color-coral);
+  --color-coral-bright: var(--color-coral-bright);
+  --color-wash-coral: var(--color-wash-coral);
+  --color-wash-pink: var(--color-wash-pink);
+  --color-wash-lavender: var(--color-wash-lavender);
+  --color-wash-teal: var(--color-wash-teal);
+  --color-tint-coral: var(--color-tint-coral);
+  --color-tint-pink: var(--color-tint-pink);
+  --color-tint-lavender: var(--color-tint-lavender);
+  --color-tint-teal: var(--color-tint-teal);
+  --color-wash-amber: var(--color-wash-amber);
   --color-coral-press: var(--color-coral-press);
   --color-pink: var(--color-pink);
   --color-lavender: var(--color-lavender);

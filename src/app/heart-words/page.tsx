@@ -36,18 +36,18 @@ const WORDS = DATA.words;
 const LEVELS = [...new Set(WORDS.map((w) => w.level))].sort((a, b) => a - b);
 
 const BRAND = {
-  coral: "#FF6A5B",
-  pink: "#FF7DAE",
-  lavender: "#B87DFF",
-  teal: "#00B4A6",
+  coral: "#EC9388",
+  pink: "#DE8FAD",
+  lavender: "#B19FDB",
+  teal: "#89BECF",
   ink: "#111111",
   mid: "#444444",
   line: "#E9E9E9",
   paper: "#F7F6F4",
   white: "#FFFFFF",
-  coralDark: "#C0432F",
-  lavenderDark: "#6B2FB5",
-  tealDark: "#00756C",
+  coralDark: "#C83220",
+  lavenderDark: "#7758C0",
+  tealDark: "#377387",
 };
 const GRADIENT = `linear-gradient(135deg, ${BRAND.coral}, ${BRAND.pink}, ${BRAND.lavender}, ${BRAND.teal})`;
 

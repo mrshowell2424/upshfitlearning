@@ -45,7 +45,7 @@ export interface HeartWord {
 export function MarkedWord({
   entry,
   size = 34,
-  colour = "#C0432F",
+  colour = "#C83220",
   ink = "#111111",
 }: {
   entry: HeartWord;

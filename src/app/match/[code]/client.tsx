@@ -125,9 +125,9 @@ const tabs: { id: MatchTab; label: string; premium: boolean }[] = [
  * violet is the standard's own machinery, teal is learning science.
  */
 const LABEL = {
-  violet: "#6B2FB5",
+  violet: "#7758C0",
   indigo: "#4338CA",
-  teal: "#00756C",
+  teal: "#377387",
   coral: "var(--color-coral-ink)",
   crimson: "#B4245C",
   blue: "var(--color-link-blue)",
@@ -1231,7 +1231,7 @@ function ResourcesTab({
                     <span className="text-xs font-bold uppercase px-2 py-1 bg-gray-100 text-text-faint rounded">
                       {resource.purpose}
                     </span>
-                    <span className="text-xs font-bold uppercase px-2 py-1 bg-blue-50 text-blue-700 rounded">
+                    <span className="text-xs font-bold uppercase px-2 py-1 bg-wash-lavender text-lavender-ink rounded">
                       {resource.grade_band}
                     </span>
                     <span className="text-xs font-bold uppercase px-2 py-1 bg-red-50 text-red-700 rounded">

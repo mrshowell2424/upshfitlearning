@@ -22,14 +22,14 @@ const STORAGE_KEY = "basicReading.taught.v1";
 /** The road map's own palette, kept from the design. */
 const NAVY = "#2F6FD0";
 const GOLD = "#FFB13F";
-const BLUE = "#E6F8F6";
-const PINK = "#FFF0EC";
+const BLUE = "#F0F6F9";
+const PINK = "#FCF1F0";
 const CREAM = "#F7F6F4";
 const INK = "#111111";
 const MUTED = "#444444";
 const RULE = "#F2F2F2";
-const BRASS = "#C0432F";
-const GREEN = "#00756C";
+const BRASS = "#C83220";
+const GREEN = "#377387";
 
 /** Each material type gets its own colour, so the mix is readable at a glance. */
 const LINK_STYLE: Record<string, [string, string]> = {
@@ -282,7 +282,7 @@ function ReadingFiler() {
                     key={item.id}
                     style={{
                       background: on ? "#F7F6F4" : "#FFFFFF",
-                      border: `3px solid ${on ? "#E6F8F6" : RULE}`,
+                      border: `3px solid ${on ? "#F0F6F9" : RULE}`,
                       borderRadius: 14,
                       padding: "15px 17px",
                       display: "flex",

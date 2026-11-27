@@ -36,16 +36,16 @@ export const metadata = {
  */
 const PAGE = "#FAFAFA";
 const INK = "#111111";
-const MUTED = "#6A6A6A";
+const MUTED = "#5A5A5A";
 const RULE = "#E9E9E9";
-const CORAL = "#FF6A5B";
-const CORAL_TEXT = "#C0432F";
-const LAVENDER = "#B87DFF";
-const LAVENDER_TEXT = "#6B2FB5";
+const CORAL = "#EC9388";
+const CORAL_TEXT = "#C83220";
+const LAVENDER = "#B19FDB";
+const LAVENDER_TEXT = "#7758C0";
 // Teal is the reading side's colour; the review card borrows it because
 // the page it opens is the reading review page's twin.
-const TEAL = "#00B4A6";
-const TEAL_TEXT = "#00756C";
+const TEAL = "#89BECF";
+const TEAL_TEXT = "#377387";
 
 const HUB = "/api/materials/math/math-hub.html";
 

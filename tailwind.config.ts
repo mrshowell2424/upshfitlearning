@@ -1,3 +1,6 @@
+// NOTE: Tailwind 4 loads this file only via an @config directive, and
+// globals.css has none -- so these values are documentation, not the live
+// theme. src/app/globals.css is authoritative. Keep the two in step.
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -8,12 +11,37 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Brand colors
-        coral: '#FF6A5B',
+        // The brand kit's four logo colours (the wordmark's chevrons).
+        // Decorative only -- none of them can carry text. See globals.css.
+        coral: '#EC9388',
+        pink: '#DE8FAD',
+        lavender: '#B19FDB',
+        teal: '#89BECF',
+
+        // Bright coral: the kit keeps it for small details only.
+        'coral-bright': '#FF6A5B',
         'coral-press': '#E24F41',
-        pink: '#FF7DAE',
-        lavender: '#B87DFF',
-        teal: '#00B4A6',
+
+        // The kit's washes, for chip and panel backgrounds.
+        'wash-coral': '#FCF1F0',
+        'wash-pink': '#FBF0F4',
+        'wash-lavender': '#F5F2FA',
+        'wash-teal': '#F0F6F9',
+        'wash-amber': '#FFF6E8',
+
+        // Card tints: the logo colour at 38% over white.
+        'tint-coral': '#F8D6D2',
+        'tint-pink': '#F2D4E0',
+        'tint-lavender': '#E1DBF1',
+        'tint-teal': '#D2E6ED',
+
+        // The text-bearing siblings. Every one clears 5:1 on white.
+        'coral-ink': '#C83220',
+        'coral-ink-press': '#A72A1B',
+        'pink-ink': '#BC376A',
+        'lavender-ink': '#7758C0',
+        'teal-ink': '#377387',
+        'amber-ink': '#8A5400',
         charcoal: '#111111',
         navy: '#16213E',
         amber: '#FFB13F',
@@ -27,28 +55,28 @@ const config: Config = {
         'border-strong': '#E4E4E4',
         hairline: '#ECECEC',
         'text-body': '#333333',
-        'text-muted': '#6A6A6A',
+        'text-muted': '#5A5A5A',
         'text-faint': '#8A8A8A',
 
         // Chip colors
-        'chip-grade-bg': '#F4E9FF',
-        'chip-grade-fg': '#6B2FB5',
-        'chip-skill-bg': '#E6F8F6',
-        'chip-skill-fg': '#00756C',
-        'chip-fit-bg': '#FFF0EC',
-        'chip-fit-fg': '#C0432F',
+        'chip-grade-bg': '#F5F2FA',
+        'chip-grade-fg': '#7758C0',
+        'chip-skill-bg': '#F0F6F9',
+        'chip-skill-fg': '#377387',
+        'chip-fit-bg': '#FCF1F0',
+        'chip-fit-fg': '#C83220',
         'chip-ef-bg': '#F0FBF4',
         'chip-ef-fg': '#1F6B45',
-        'chip-misconception-bg': '#FFF5F9',
-        'chip-misconception-fg': '#B3336E',
+        'chip-misconception-bg': '#FBF0F4',
+        'chip-misconception-fg': '#BC376A',
         'chip-prior-bg': '#EAF2FF',
         'chip-prior-fg': '#2F6FD0',
 
         // Card thumbnail tints
-        'thumb-1': '#FFE3DD',
-        'thumb-2': '#FFE7F1',
-        'thumb-3': '#F1E5FF',
-        'thumb-4': '#DDF5F2',
+        'thumb-1': '#F8D6D2',
+        'thumb-2': '#F2D4E0',
+        'thumb-3': '#E1DBF1',
+        'thumb-4': '#D2E6ED',
         'thumb-5': '#F3F3F3',
         'thumb-6': '#FFEFE4',
       },

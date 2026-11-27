@@ -41,17 +41,17 @@ const loadGradeText = (g: number): Promise<Record<string, { hi: Paras; lo: Paras
 const AR = ARTICLE_INDEX.articles;
 
 const BRAND = {
-  coral: "#FF6A5B",
-  pink: "#FF7DAE",
-  lavender: "#B87DFF",
-  teal: "#00B4A6",
+  coral: "#EC9388",
+  pink: "#DE8FAD",
+  lavender: "#B19FDB",
+  teal: "#89BECF",
   ink: "#111111",
   mid: "#444444",
   line: "#E9E9E9",
   panel: "#F2F2F2",
   paper: "#F7F6F4",
-  coralDark: "#C0432F",
-  tealDark: "#00756C",
+  coralDark: "#C83220",
+  tealDark: "#377387",
 };
 const GRADIENT =
   `linear-gradient(135deg, ${BRAND.coral}, ${BRAND.pink}, ${BRAND.lavender}, ${BRAND.teal})`;

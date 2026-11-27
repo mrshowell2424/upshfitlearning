@@ -86,10 +86,10 @@ export default function Header() {
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            <path d="M7 10L16 5L25 10" stroke="#FF6A5B" />
-            <path d="M7 16L16 11L25 16" stroke="#E559A8" />
-            <path d="M7 22L16 17L25 22" stroke="#B695D8" />
-            <path d="M7 28L16 23L25 28" stroke="#6BA7D9" />
+            <path d="M7 10L16 5L25 10" stroke="#EC9388" />
+            <path d="M7 16L16 11L25 16" stroke="#DE8FAD" />
+            <path d="M7 22L16 17L25 22" stroke="#B19FDB" />
+            <path d="M7 28L16 23L25 28" stroke="#89BECF" />
           </g>
         </svg>
         <div className="flex flex-col gap-0.5">

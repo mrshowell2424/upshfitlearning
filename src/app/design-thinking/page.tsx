@@ -36,13 +36,13 @@ import {
 /** The canvas's own palette. */
 const CREAM = "#F7F6F4";
 const INK = "#111111";
-const PLUM = "#6B2FB5";
-const CORAL = "#FF6A5B";
+const PLUM = "#7758C0";
+const CORAL = "#EC9388";
 // The same hue dark enough to set 11px bold text in: coral on white is
 // 2.81:1. CORAL stays for the 5px rules down the side of the panels.
-const CORAL_INK = "#C0432F";
+const CORAL_INK = "#C83220";
 const MUTED = "#444444";
-const FAINT = "#6A6A6A";
+const FAINT = "#5A5A5A";
 const RULE = "#F2F2F2";
 
 const MATERIALS = "/api/materials/design-thinking";
@@ -398,7 +398,7 @@ function DesignThinkingRoadMap() {
                         <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 14 }}>
                           {([
                             ["Teacher slides", "Teacher Slides.dc.html", PLUM, CREAM],
-                            ["Student workbook", "Workbook.dc.html", "#00756C", "#FFFFFF"],
+                            ["Student workbook", "Workbook.dc.html", "#377387", "#FFFFFF"],
                             ["Answer key", "Workbook Key.dc.html", "#FFFFFF", INK],
                           ] as const).map(([label, file, bg, fg]) => (
                             <a

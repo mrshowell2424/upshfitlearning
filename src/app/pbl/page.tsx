@@ -42,16 +42,19 @@ export const metadata = {
  */
 const PAGE = "#FAFAFA";
 const INK = "#111111";
-const MUTED = "#6A6A6A";
+const MUTED = "#5A5A5A";
 const RULE = "#E9E9E9";
-const CORAL = "#FF6A5B";
-const CORAL_TEXT = "#C0432F";
+const CORAL = "#EC9388";
+const CORAL_TEXT = "#C83220";
 const BLUE = "#4C9AFF";
 const BLUE_TEXT = "#2F6FD0";
-const PINK = "#FF7DAE";
-const PINK_TEXT = "#B3336E";
+const PINK = "#DE8FAD";
+const PINK_TEXT = "#BC376A";
+const LAV = "#B19FDB";
+const LAV_TEXT = "#7758C0";
 
 const HUB = "/api/materials/pbl/pbl-hub.html";
+const CHOICE = "/api/materials/pbl/choice-board.html";
 
 /** The cycle the hub runs a project through, in order. */
 const CYCLE = [
@@ -133,6 +136,39 @@ function Hub() {
               }}
             />
           </div>
+        </a>
+
+        {/* The choice board is the other half of planning a project: the hub
+            says what the project is, this says how a student may show it. */}
+        <a
+          href={CHOICE}
+          target="_blank"
+          rel="noopener"
+          style={{
+            display: "block",
+            marginTop: 14,
+            background: "#FFFFFF",
+            border: `3px solid ${RULE}`,
+            borderLeft: `10px solid ${LAV}`,
+            borderRadius: 16,
+            padding: "24px 26px",
+            textDecoration: "none",
+            color: INK,
+          }}
+        >
+          <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.12em", color: LAV_TEXT }}>
+            ONE BIG IDEA, SEVERAL WAYS IN
+          </div>
+          <div style={{ fontSize: 27, fontWeight: 800, lineHeight: 1.15, marginTop: 6 }}>
+            Build a choice board for your project
+          </div>
+          <p style={{ fontSize: 15, fontWeight: 500, color: MUTED, margin: "8px 0 0", lineHeight: 1.55, maxWidth: "70ch" }}>
+            Twelve products a student can choose from — a podcast, a board game, a comic, an app
+            prototype, a letter to someone who can act. Type in your project and standards, pick
+            the products, and the board writes itself, with an optional AI literacy step on every
+            card. Edit any of it in place, then copy it into a Google Doc or download it as a PNG
+            or PDF.
+          </p>
         </a>
 
         {/* Design Thinking is a page of this app, not a stored material, so

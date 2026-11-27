@@ -77,10 +77,10 @@ export default async function ResourceDetailPage({ params }: PageProps) {
               <span className="text-xs font-bold uppercase tracking-[0.16em] px-2 py-1 bg-gray-100 text-text-faint rounded-md">
                 {resource.purpose}
               </span>
-              <span className="text-xs font-bold uppercase tracking-[0.16em] px-2 py-1 bg-blue-50 text-blue-700 rounded-md">
+              <span className="text-xs font-bold uppercase tracking-[0.16em] px-2 py-1 bg-wash-lavender text-lavender-ink rounded-md">
                 {resource.grade_band}
               </span>
-              <span className="text-xs font-bold uppercase tracking-[0.16em] px-2 py-1 bg-teal-50 text-teal-700 rounded-md">
+              <span className="text-xs font-bold uppercase tracking-[0.16em] px-2 py-1 bg-wash-teal text-teal-ink rounded-md">
                 {resource.skill}
               </span>
             </div>

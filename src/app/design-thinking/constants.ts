@@ -47,10 +47,10 @@ export type DesignGrade = (typeof DESIGN_GRADES)[number]
  * to 2.8 to 1 on white. The dark ends clear 4.5 to 1 the other way round.
  */
 export const PHASES = [
-  { letter: "M", day: "Monday", phase: "Empathize", color: "#C0432F" },
-  { letter: "T", day: "Tuesday", phase: "Define", color: "#B3336E" },
-  { letter: "W", day: "Wednesday", phase: "Ideate", color: "#6B2FB5" },
-  { letter: "T", day: "Thursday", phase: "Prototype", color: "#00756C" },
+  { letter: "M", day: "Monday", phase: "Empathize", color: "#C83220" },
+  { letter: "T", day: "Tuesday", phase: "Define", color: "#BC376A" },
+  { letter: "W", day: "Wednesday", phase: "Ideate", color: "#7758C0" },
+  { letter: "T", day: "Thursday", phase: "Prototype", color: "#377387" },
   { letter: "F", day: "Friday", phase: "Test", color: "#111111" },
 ] as const
 
