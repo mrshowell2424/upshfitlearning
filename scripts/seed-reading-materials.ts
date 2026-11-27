@@ -6895,11 +6895,23 @@ function kitModel(source: string): string {
 function recolour(rel: string, source: string): string {
   const accent = accentFamily(rel);
   const cache: Record<string, string> = {};
-  return source.replace(/#([0-9a-fA-F]{6})\b/g, (_whole: string, h: string) => {
-    const up = h.toUpperCase();
-    if (!(up in cache)) cache[up] = brandFor(up, accent);
-    return "#" + cache[up];
-  });
+  // Six digits OR three. The pattern used to be {6} alone, so #111, #000 and
+  // #fff went through every material untouched -- 685 files use one, and 750
+  // of those are #000 where the kit says charcoal. Nothing looked wrong
+  // because the short ones here are all neutrals, but a brand colour written
+  // as #f88 would have crossed the whole pipeline unseen.
+  //
+  // Six is tried first so a six-digit value can never be read as a three.
+  // \b after the digits is what keeps #abcd and #RRGGBBAA out of it: the
+  // boundary fails and the value is left exactly as it was.
+  return source.replace(
+    /#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})\b/g,
+    (_whole: string, h: string) => {
+      const up = (h.length === 3 ? h[0] + h[0] + h[1] + h[1] + h[2] + h[2] : h).toUpperCase();
+      if (!(up in cache)) cache[up] = brandFor(up, accent);
+      return "#" + cache[up];
+    },
+  );
 }
 
 async function walk(dir: string): Promise<string[]> {
