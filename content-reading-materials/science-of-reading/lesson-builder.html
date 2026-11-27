@@ -5433,6 +5433,24 @@ class Component extends DCLogic {
       pages.forEach((e, i) => { const h = hs[i];
         if (h > max) e.style.zoom = String(Math.max(0.6, max / h - 0.005)); else e.style.minHeight = '';
         e.style.breakAfter = i === pages.length - 1 ? 'auto' : ''; e.style.pageBreakAfter = i === pages.length - 1 ? 'auto' : ''; });
+      // Shrinking a sheet re-wraps what is on it, and the re-wrap can be TALLER
+      // than the height just measured: the Level 5 Greek y reading sheet went
+      // 1184 to 1271 and put 40px onto a second piece of paper, and Level 2's
+      // VrrV sheet missed by 1px. The half-percent above cannot cover a three
+      // percent reflow, and one measurement cannot see a reflow it causes. So
+      // measure what is actually there now and correct it; two passes settle
+      // every sheet this site has, and the loop stops as soon as nothing moves.
+      for (let pass = 0; pass < 4; pass++) {
+        const now = pages.map((e) => e.scrollHeight * (parseFloat(e.style.zoom) || 1));
+        let again = false;
+        pages.forEach((e, i) => {
+          if (now[i] <= max) return;
+          const z = parseFloat(e.style.zoom) || 1;
+          const next = Math.max(0.6, z * (max / now[i]) - 0.005);
+          if (next < z - 0.0005) { e.style.zoom = String(next); again = true; }
+        });
+        if (!again) break;
+      }
     };
     this.unfit = () => document.querySelectorAll('[data-wb]').forEach((e) => { e.style.zoom = ''; e.style.width = ''; e.style.maxWidth = ''; e.style.minHeight = ''; e.style.breakAfter = ''; e.style.pageBreakAfter = ''; });
     window.addEventListener('beforeprint', this.fit); window.addEventListener('afterprint', this.unfit);

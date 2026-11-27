@@ -174,7 +174,12 @@ const NOTAWORD = new Set([
   "aught", "nought", "naught", "limn", "volar", "thew", "thole", "colewort",
   "prelection", "derat", "rescription", "scription",
   // names, which a lowercase dictionary cannot tell from words
-  "bess", "jess", "jane", "pete", "rex",
+  "bess", "jess", "jane", "pete", "rex", "kim",
+  // dialect, slang and archaic, all of which web2 lists without comment:
+  // mong and dink are slurs in some dialects, jow is Scots for tolling a
+  // bell, blay is a small fish, knop an ornamental knob, and zar is not a
+  // word at all -- the Russian ruler is czar or tsar.
+  "mong", "dink", "jow", "blay", "knop", "zar",
 ]);
 
 

@@ -2,23 +2,21 @@
  "_note": "Original word ladders, one per lesson and per part of a split lesson. Every rung is a real word that is decodable with what the sequence has taught by that lesson, and every clue has exactly one answer. Checked by scripts/check-word-ladders.mjs. Built, not hand-copied: no ladder here comes from a published book. `laddersMulti` holds the harder ladder for each concept, used when the multisyllabic toggle is on: every rung a multisyllabic word, one swap a rung. Checked by scripts/check-word-ladders-multi.mjs.",
  "ladders": {
   "ai-ay": {
-   "start": "set",
+   "start": "mail",
    "words": [
-    "set",
-    "sat",
-    "sad",
-    "said",
-    "sail",
+    "mail",
+    "nail",
+    "nails",
+    "snails",
     "snail",
-    "nail"
+    "trail"
    ],
    "clues": [
-    "Change the e to a.",
-    "Change the t to d.",
-    "Put an i between the a and the d.",
-    "Change the d to l.",
-    "Put an n between the s and the a.",
-    "Take off the s."
+    "Change the m to n.",
+    "Add -s.",
+    "Add an s at the start.",
+    "Take off -s.",
+    "Change the sn to tr."
    ]
   },
   "ai-ay|ai": {
@@ -66,19 +64,19 @@
    "words": [
     "farm",
     "far",
-    "zar",
     "car",
     "cart",
     "card",
-    "hard"
+    "hard",
+    "harm"
    ],
    "clues": [
     "Take off the m.",
-    "Change the f to z.",
-    "Change the z to c.",
+    "Change the f to c.",
     "Add a t at the end.",
     "Change the t to d.",
-    "Change the c to h."
+    "Change the c to h.",
+    "Change the d to m."
    ]
   },
   "er-ir-ur": {
@@ -106,19 +104,19 @@
    "words": [
     "farm",
     "far",
-    "zar",
     "car",
     "card",
     "yard",
-    "yarn"
+    "yarn",
+    "barn"
    ],
    "clues": [
     "Take off the m.",
-    "Change the f to z.",
-    "Change the z to c.",
+    "Change the f to c.",
     "Add a d at the end.",
     "Change the c to y.",
-    "Change the d to n."
+    "Change the d to n.",
+    "Change the y to b."
    ]
   },
   "ar-or|or": {
@@ -210,23 +208,21 @@
    ]
   },
   "ck-tch": {
-   "start": "hid",
+   "start": "back",
    "words": [
-    "hid",
-    "his",
-    "is",
-    "it",
-    "at",
-    "sat",
-    "set"
+    "back",
+    "black",
+    "block",
+    "lock",
+    "lick",
+    "kick"
    ],
    "clues": [
-    "Change the d to s.",
-    "Take off the h.",
-    "Change the s to t.",
-    "Change the i to a.",
-    "Add an s at the start.",
-    "Change the a to e."
+    "Put an l between the b and the a.",
+    "Change the a to o.",
+    "Take off the b.",
+    "Change the o to i.",
+    "Change the l to k."
    ]
   },
   "ck-tch|ck": {
@@ -478,23 +474,21 @@
    ]
   },
   "ee-ea": {
-   "start": "mad",
+   "start": "feet",
    "words": [
-    "mad",
-    "sad",
-    "sat",
-    "seat",
-    "sea",
-    "set",
-    "wet"
+    "feet",
+    "feat",
+    "heat",
+    "heap",
+    "reap",
+    "read"
    ],
    "clues": [
-    "Change the m to s.",
-    "Change the d to t.",
-    "Put an e between the s and the a.",
-    "Take off the t.",
-    "Change the a to t.",
-    "Change the s to w."
+    "Change the ee to ea.",
+    "Change the f to h.",
+    "Change the t to p.",
+    "Change the h to r.",
+    "Change the p to d."
    ]
   },
   "ee-ea|ea": {
@@ -622,17 +616,15 @@
     "wink",
     "wing",
     "swing",
-    "sing",
-    "song",
-    "mong"
+    "sting",
+    "sing"
    ],
    "clues": [
     "Change the p to w.",
-    "Change the k to g.",
+    "Change the nk to ng.",
     "Add an s at the start.",
-    "Take off the w.",
-    "Change the i to o.",
-    "Change the s to m."
+    "Change the w to t.",
+    "Take off the t."
    ]
   },
   "ng-nk|ng": {
@@ -642,55 +634,55 @@
     "ring",
     "wing",
     "swing",
+    "sting",
     "sing",
-    "song",
-    "mong"
+    "song"
    ],
    "clues": [
     "Change the d to r.",
     "Change the r to w.",
     "Add an s at the start.",
-    "Take off the w.",
-    "Change the i to o.",
-    "Change the s to m."
+    "Change the w to t.",
+    "Take off the t.",
+    "Change the i to o."
    ]
   },
   "ng-nk|nk": {
    "start": "drink",
    "words": [
     "drink",
-    "dink",
-    "sink",
-    "sank",
+    "brink",
+    "blink",
+    "blank",
     "bank",
-    "blank"
+    "sank",
+    "sink"
    ],
    "clues": [
-    "Take off the r.",
-    "Change the d to s.",
+    "Change the d to b.",
+    "Change the r to l.",
     "Change the i to a.",
-    "Change the s to b.",
-    "Put an l between the b and the a."
+    "Take off the l.",
+    "Change the b to s.",
+    "Change the a to i."
    ]
   },
   "oa-ow": {
-   "start": "mad",
+   "start": "coat",
    "words": [
-    "mad",
-    "sad",
-    "sat",
-    "seat",
-    "sea",
-    "set",
-    "wet"
+    "coat",
+    "goat",
+    "goats",
+    "coats",
+    "coast",
+    "toast"
    ],
    "clues": [
-    "Change the m to s.",
-    "Change the d to t.",
-    "Put an e between the s and the a.",
-    "Take off the t.",
-    "Change the a to t.",
-    "Change the s to w."
+    "Change the c to g.",
+    "Add -s.",
+    "Change the g to c.",
+    "Change the ts to st.",
+    "Change the c to t."
    ]
   },
   "oa-ow|oa": {
@@ -718,19 +710,19 @@
    "words": [
     "know",
     "snow",
-    "now",
-    "how",
-    "show",
     "slow",
-    "blow"
+    "blow",
+    "glow",
+    "grow",
+    "crow"
    ],
    "clues": [
     "Change the k to s.",
-    "Take off the s.",
-    "Change the n to h.",
-    "Add an s at the start.",
-    "Change the h to l.",
-    "Change the s to b."
+    "Change the n to l.",
+    "Change the s to b.",
+    "Change the b to g.",
+    "Change the l to r.",
+    "Change the g to c."
    ]
   },
   "og1-02": {
@@ -830,19 +822,19 @@
    ]
   },
   "og1-04|k": {
-   "start": "kit",
+   "start": "kin",
    "words": [
-    "kit",
-    "kid",
-    "kind",
     "kin",
-    "kim"
+    "kid",
+    "kids",
+    "kits",
+    "kit"
    ],
    "clues": [
-    "Change the t to d.",
-    "Put an n between the i and the d.",
-    "Take off the d.",
-    "Change the n to m."
+    "Change the n to d.",
+    "Add -s.",
+    "Change the d to t.",
+    "Take off -s."
    ]
   },
   "og1-06": {
@@ -1162,19 +1154,19 @@
    ]
   },
   "og2-07|kn": {
-   "start": "knop",
+   "start": "knit",
    "words": [
-    "knop",
-    "knob",
-    "knot",
     "knit",
-    "kit"
+    "knot",
+    "knob",
+    "know",
+    "knee"
    ],
    "clues": [
-    "Change the p to b.",
-    "Change the b to t.",
-    "Change the o to i.",
-    "Take off the n."
+    "Change the i to o.",
+    "Change the t to b.",
+    "Change the b to w.",
+    "Change the ow to ee."
    ]
   },
   "og2-07|wr": {
@@ -1198,23 +1190,21 @@
    ]
   },
   "og2-08": {
-   "start": "in",
+   "start": "pound",
    "words": [
-    "in",
-    "is",
-    "its",
-    "it",
-    "at",
-    "sat",
-    "eat"
+    "pound",
+    "mound",
+    "mounds",
+    "sounds",
+    "sound",
+    "found"
    ],
    "clues": [
-    "Change the n to s.",
-    "Put a t between the i and the s.",
-    "Take off the s.",
-    "Change the i to a.",
-    "Add an s at the start.",
-    "Change the s to e."
+    "Change the p to m.",
+    "Add -s.",
+    "Change the m to s.",
+    "Take off -s.",
+    "Change the s to f."
    ]
   },
   "og2-08|oo": {
@@ -1254,63 +1244,53 @@
    ]
   },
   "og2-08|ow": {
-   "start": "blow",
+   "start": "clown",
    "words": [
-    "blow",
-    "slow",
-    "show",
-    "how",
-    "jow",
-    "cow",
-    "cows"
+    "clown",
+    "crown",
+    "brown",
+    "browns",
+    "crowns"
    ],
    "clues": [
-    "Change the b to s.",
-    "Change the l to h.",
-    "Take off the s.",
-    "Change the h to j.",
-    "Change the j to c.",
-    "Add an s at the end."
+    "Change the l to r.",
+    "Change the c to b.",
+    "Add -s.",
+    "Change the b to c."
    ]
   },
   "og2-09": {
-   "start": "am",
+   "start": "hurry",
    "words": [
-    "am",
-    "at",
-    "sat",
-    "sit",
-    "it",
-    "in",
-    "on"
+    "hurry",
+    "hurries",
+    "carries",
+    "carried",
+    "hurried",
+    "worried"
    ],
    "clues": [
-    "Change the m to t.",
-    "Add an s at the start.",
-    "Change the a to i.",
-    "Take off the s.",
-    "Change the t to n.",
-    "Change the i to o."
+    "Change -y to -ies.",
+    "Change the hu to ca.",
+    "Change -es to -ed.",
+    "Change the ca to hu.",
+    "Change the hu to wo."
    ]
   },
   "og2-10": {
-   "start": "and",
+   "start": "contrast",
    "words": [
-    "and",
-    "an",
-    "in",
-    "is",
-    "his",
-    "has",
-    "was"
+    "contrast",
+    "contrasts",
+    "contracts",
+    "contract",
+    "contracted"
    ],
    "clues": [
-    "Take off the d.",
-    "Change the a to i.",
-    "Change the n to s.",
-    "Add an h at the start.",
-    "Change the i to a.",
-    "Change the h to w."
+    "Add -s.",
+    "Change the st to ct.",
+    "Take off -s.",
+    "Add -ed."
    ]
   },
   "og2-11": {
@@ -1514,21 +1494,19 @@
    ]
   },
   "og2-12|-y": {
-   "start": "away",
+   "start": "dusty",
    "words": [
-    "away",
-    "way",
-    "lay",
-    "play",
-    "blay",
-    "clay"
+    "dusty",
+    "rusty",
+    "musty",
+    "misty",
+    "mist"
    ],
    "clues": [
-    "Take off the first a.",
-    "Change the w to l.",
-    "Add a p at the start.",
-    "Change the p to b.",
-    "Change the b to c."
+    "Change the d to r.",
+    "Change the r to m.",
+    "Change the u to i.",
+    "Take off -y."
    ]
   },
   "og2-13": {
@@ -1596,23 +1574,21 @@
    ]
   },
   "og2-14": {
-   "start": "kim",
+   "start": "stopped",
    "words": [
-    "kim",
-    "him",
-    "his",
-    "is",
-    "in",
-    "on",
-    "one"
+    "stopped",
+    "stopping",
+    "shopping",
+    "shipping",
+    "skipping",
+    "skipped"
    ],
    "clues": [
-    "Change the k to h.",
-    "Change the m to s.",
-    "Take off the h.",
-    "Change the s to n.",
-    "Change the i to o.",
-    "Add a silent e."
+    "Change -ed to -ing.",
+    "Change the t to h.",
+    "Change the o to i.",
+    "Change the h to k.",
+    "Change -ing to -ed."
    ]
   },
   "og3-01": {
@@ -3846,23 +3822,23 @@
    ]
   },
   "y": {
-   "start": "sky",
+   "start": "try",
    "words": [
-    "sky",
-    "shy",
-    "she",
-    "he",
-    "the",
-    "then",
-    "when"
+    "try",
+    "cry",
+    "dry",
+    "fry",
+    "fly",
+    "sly",
+    "shy"
    ],
    "clues": [
-    "Change the k to h.",
-    "Change the y to e.",
-    "Take off the s.",
-    "Add a t at the start.",
-    "Add an n at the end.",
-    "Change the t to w."
+    "Change the t to c.",
+    "Change the c to d.",
+    "Change the d to f.",
+    "Change the r to l.",
+    "Change the f to s.",
+    "Change the l to h."
    ]
   },
   "long-a": {
