@@ -34,6 +34,29 @@
 import { readFileSync, existsSync } from "node:fs";
 import { CONCEPTS } from "./lib/continuum-pools.mjs";
 import { looksReal, unsafeWord, unsafeRealWord } from "./lib/not-nonsense.mjs";
+import { TRI } from "./build-multisyllabic.mjs";
+
+/*
+ * A made-up word has to be spellable as well as sayable.
+ *
+ * misjugge shipped on these sheets -- gge is a run English never writes, and
+ * a child rejects it on sight instead of decoding it, which is the one thing
+ * a nonsense word must not invite. The multisyllabic sheets are held to this
+ * and these were not.
+ *
+ * TRI is built from this site's own multisyllabic writing, so it is only
+ * calibrated for words of that size. Run it over the short ones and it
+ * refuses zeff, vut and yeg -- half of them -- which are exactly the CVC
+ * nonsense a Level 1 sheet is supposed to carry. Six letters is where the
+ * table starts speaking for the words being judged.
+ */
+const SPELLABLE_FROM = 6;
+const unspellable = (w) => {
+  const s = String(w).toLowerCase();
+  if (!/^[a-z]+$/.test(s) || s.length < SPELLABLE_FROM) return false;
+  for (let i = 0; i + 3 <= s.length; i++) if (!TRI.has(s.slice(i, i + 3))) return true;
+  return false;
+};
 
 const D = JSON.parse(readFileSync("scripts/reading-daily-practice.json", "utf8"));
 const SEQ = JSON.parse(readFileSync("scripts/reading-sequence.json", "utf8")).sequence;
@@ -198,6 +221,7 @@ for (const lesson of D.lessons) {
           if (looksReal(w, WORDS) || POOL.has(String(w).toLowerCase())) at(`made-up word "${w}" is a real word`);
           if (unsafeWord(w)) at(`"${w}" cannot be printed for a child`);
           if (syllableish(w) < 2) at(`made-up word "${w}" is not multisyllabic`);
+          if (unspellable(w)) at(`made-up word "${w}" uses a letter run English never writes`);
         }
       }
     }
@@ -237,6 +261,7 @@ for (const lesson of D.lessons) {
         at(`made-up word "${w}" is a real word`);
       }
       if (unsafeWord(w)) at(`"${w}" cannot be printed for a child`);
+      if (unspellable(w)) at(`made-up word "${w}" uses a letter run English never writes`);
     }
 
     for (const [i, m] of d.maze.entries()) {

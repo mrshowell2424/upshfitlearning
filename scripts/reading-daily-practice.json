@@ -138,8 +138,8 @@
      [
       "rug",
       "r",
-      "b",
-      "bug"
+      "m",
+      "mug"
      ]
     ],
     "syll": [
@@ -726,8 +726,8 @@
      [
       "pink",
       "p",
-      "s",
-      "sink"
+      "l",
+      "link"
      ],
      [
       "mud",
@@ -951,7 +951,7 @@
      "wrf": [
       "very",
       "better",
-      "before",
+      "between",
       "around",
       "another",
       "water"
@@ -1366,8 +1366,8 @@
      [
       "bag",
       "b",
-      "s",
-      "sag"
+      "r",
+      "rag"
      ],
      [
       "morning",
@@ -1390,8 +1390,8 @@
      [
       "whole",
       "h",
-      "b",
-      "bowl"
+      "m",
+      "mole"
      ]
     ],
     "syll": [
@@ -1590,7 +1590,7 @@
      "day": 4,
      "wrf": [
       "under",
-      "figure",
+      "stopped",
       "another",
       "better",
       "open",
@@ -1972,7 +1972,7 @@
      [
       "wait",
       "w",
-      "ate"
+      "eight"
      ]
     ],
     "chop": [
@@ -2030,8 +2030,8 @@
      [
       "went",
       "w",
-      "m",
-      "meant"
+      "s",
+      "sent"
      ]
     ],
     "syll": [
@@ -2572,8 +2572,8 @@
      [
       "kit",
       "k",
-      "n",
-      "knit"
+      "f",
+      "fit"
      ],
      [
       "not",
@@ -2600,19 +2600,19 @@
       "side"
      ],
      [
-      "classroom",
-      "class",
-      "room"
-     ],
-     [
       "anything",
       "any",
       "thing"
      ],
      [
-      "something",
-      "some",
-      "thing"
+      "cupcake",
+      "cup",
+      "cake"
+     ],
+     [
+      "classroom",
+      "class",
+      "room"
      ]
     ]
    },
@@ -2741,7 +2741,7 @@
       "closely",
       "children",
       "checked",
-      "candy",
+      "classroom",
       "backed"
      ],
      "nwf": [
@@ -2773,7 +2773,7 @@
      "wrf": [
       "closed",
       "cupboard",
-      "carrot",
+      "confine",
       "clipped",
       "closet",
       "common"
@@ -2789,11 +2789,11 @@
      "day": 4,
      "wrf": [
       "keeping",
-      "classroom",
+      "candy",
       "cloudy",
       "crossing",
-      "constantly",
-      "clarify"
+      "crushed",
+      "carrot"
      ],
      "nwf": [
       "waper",
@@ -3193,7 +3193,7 @@
      [
       "seen",
       "n",
-      "sea"
+      "see"
      ],
      [
       "climbed",
@@ -3229,8 +3229,8 @@
      [
       "light",
       "l",
-      "r",
-      "write"
+      "t",
+      "tight"
      ]
     ],
     "syll": [
@@ -3238,11 +3238,6 @@
       "anything",
       "any",
       "thing"
-     ],
-     [
-      "cupcake",
-      "cup",
-      "cake"
      ],
      [
       "lighthouse",
@@ -3258,6 +3253,11 @@
       "person",
       "per",
       "son"
+     ],
+     [
+      "something",
+      "some",
+      "thing"
      ]
     ]
    },
@@ -3434,7 +3434,7 @@
      "day": 4,
      "wrf": [
       "further",
-      "thankful",
+      "shopping",
       "washed",
       "shavings",
       "thinner",
@@ -3880,6 +3880,11 @@
     ],
     "syll": [
      [
+      "classroom",
+      "class",
+      "room"
+     ],
+     [
       "mailbox",
       "mail",
       "box"
@@ -3890,14 +3895,9 @@
       "son"
      ],
      [
-      "outside",
-      "out",
-      "side"
-     ],
-     [
-      "anything",
-      "any",
-      "thing"
+      "quarterback",
+      "quarter",
+      "back"
      ],
      [
       "cupcake",
@@ -4027,12 +4027,12 @@
     {
      "day": 1,
      "wrf": [
-      "quaking",
-      "syntax",
-      "fixing",
+      "quotable",
+      "quarantine",
+      "smallpox",
       "quotient",
-      "relax",
-      "quality"
+      "flexed",
+      "quotation"
      ],
      "nwf": [
       "quietry",
@@ -4045,28 +4045,28 @@
      "day": 2,
      "wrf": [
       "index",
-      "reflex",
+      "quarrel",
       "complex",
       "quantity",
       "quickly",
-      "qualified"
+      "fixing"
      ],
      "nwf": [
       "qualters",
-      "frexed",
       "qualterback",
-      "coltex"
+      "coltex",
+      "quarity"
      ]
     },
     {
      "day": 3,
      "wrf": [
-      "smallpox",
+      "parallax",
       "quarters",
-      "axes",
-      "cortex",
+      "appendix",
+      "latex",
       "prefix",
-      "quantitative"
+      "quaking"
      ],
      "nwf": [
       "ungerneath",
@@ -4080,9 +4080,9 @@
      "wrf": [
       "fixed",
       "quarter",
-      "qualifier",
+      "quantitative",
       "mailbox",
-      "quarterback",
+      "cortex",
       "quadruple"
      ],
      "nwf": [
@@ -4096,11 +4096,11 @@
      "day": 5,
      "wrf": [
       "annex",
-      "mixer",
+      "helix",
       "suffix",
       "anticlimax",
-      "qualify",
-      "quarantine"
+      "qualifier",
+      "relax"
      ],
      "nwf": [
       "counping",
@@ -4507,8 +4507,8 @@
      [
       "bed",
       "b",
-      "sh",
-      "shed"
+      "s",
+      "said"
      ],
      [
       "dig",
@@ -4519,25 +4519,20 @@
      [
       "sun",
       "s",
-      "r",
-      "run"
+      "b",
+      "bun"
      ]
     ],
     "syll": [
      [
-      "cupcake",
-      "cup",
-      "cake"
+      "person",
+      "per",
+      "son"
      ],
      [
-      "overall",
-      "over",
-      "all"
-     ],
-     [
-      "something",
-      "some",
-      "thing"
+      "quarterback",
+      "quarter",
+      "back"
      ],
      [
       "uphill",
@@ -4545,9 +4540,14 @@
       "hill"
      ],
      [
-      "snowball",
-      "snow",
-      "ball"
+      "something",
+      "some",
+      "thing"
+     ],
+     [
+      "cupcake",
+      "cup",
+      "cake"
      ]
     ]
    },
@@ -4676,7 +4676,7 @@
       "thickness",
       "process",
       "recall",
-      "payroll",
+      "painless",
       "killer"
      ],
      "nwf": [
@@ -4711,12 +4711,12 @@
       "pizza",
       "weakness",
       "filled",
-      "fearless"
+      "hopeless"
      ],
      "nwf": [
+      "quarity",
       "coltex",
       "qualterback",
-      "frexed",
       "qualters"
      ]
     },
@@ -5146,8 +5146,8 @@
      [
       "win",
       "w",
-      "b",
-      "bin"
+      "t",
+      "tin"
      ],
      [
       "said",
@@ -5164,8 +5164,8 @@
      [
       "feet",
       "f",
-      "s",
-      "seat"
+      "h",
+      "heat"
      ]
     ],
     "syll": [
@@ -5175,24 +5175,24 @@
       "thing"
      ],
      [
-      "quarterback",
-      "quarter",
-      "back"
-     ],
-     [
       "countryside",
       "country",
       "side"
      ],
      [
-      "snowball",
-      "snow",
-      "ball"
+      "quarterback",
+      "quarter",
+      "back"
      ],
      [
-      "daytime",
-      "day",
-      "time"
+      "underside",
+      "under",
+      "side"
+     ],
+     [
+      "mailbox",
+      "mail",
+      "box"
      ]
     ]
    },
@@ -5393,9 +5393,9 @@
       "whites"
      ],
      "nwf": [
+      "quarity",
       "coltex",
       "qualterback",
-      "frexed",
       "qualters"
      ]
     }
@@ -5785,8 +5785,8 @@
      [
       "went",
       "w",
-      "m",
-      "meant"
+      "s",
+      "cent"
      ],
      [
       "clip",
@@ -5815,11 +5815,6 @@
     ],
     "syll": [
      [
-      "backbone",
-      "back",
-      "bone"
-     ],
-     [
       "overall",
       "over",
       "all"
@@ -5835,9 +5830,14 @@
       "car"
      ],
      [
-      "snowball",
-      "snow",
-      "ball"
+      "bedside",
+      "bed",
+      "side"
+     ],
+     [
+      "roadside",
+      "road",
+      "side"
      ]
     ]
    },
@@ -6000,7 +6000,7 @@
       "floating",
       "cluster",
       "classroom",
-      "clearance",
+      "stripped",
       "standing"
      ],
      "nwf": [
@@ -6030,7 +6030,7 @@
     {
      "day": 5,
      "wrf": [
-      "flexed",
+      "closure",
       "closer",
       "static",
       "stalactite",
@@ -6436,8 +6436,8 @@
      [
       "hen",
       "h",
-      "p",
-      "pen"
+      "th",
+      "then"
      ],
      [
       "down",
@@ -6460,14 +6460,14 @@
     ],
     "syll": [
      [
-      "countryside",
-      "country",
+      "roadside",
+      "road",
       "side"
      ],
      [
-      "undermine",
-      "under",
-      "mine"
+      "countryside",
+      "country",
+      "side"
      ],
      [
       "person",
@@ -6480,9 +6480,9 @@
       "thing"
      ],
      [
-      "wishbone",
-      "wish",
-      "bone"
+      "wartime",
+      "war",
+      "time"
      ]
     ]
    },
@@ -6610,7 +6610,7 @@
       "endless",
       "guessing",
       "mornings",
-      "basis",
+      "afternoons",
       "becomes",
       "separates"
      ],
@@ -6625,11 +6625,11 @@
      "day": 2,
      "wrf": [
       "useless",
-      "opposed",
-      "process",
+      "thickness",
       "species",
+      "painless",
       "stickers",
-      "chrysalis"
+      "hopeless"
      ],
      "nwf": [
       "repess",
@@ -6644,7 +6644,7 @@
       "missing",
       "contents",
       "focus",
-      "extraneous",
+      "raised",
       "slipperiness",
       "passing"
      ],
@@ -6676,7 +6676,7 @@
      "day": 5,
      "wrf": [
       "praising",
-      "dryness",
+      "laziness",
       "crossing",
       "darkness",
       "buttons",
@@ -7104,24 +7104,24 @@
     ],
     "syll": [
      [
+      "bedside",
+      "bed",
+      "side"
+     ],
+     [
       "snowball",
       "snow",
       "ball"
      ],
      [
-      "override",
-      "over",
-      "ride"
+      "undermine",
+      "under",
+      "mine"
      ],
      [
-      "footnote",
-      "foot",
-      "note"
-     ],
-     [
-      "uphill",
-      "up",
-      "hill"
+      "wishbone",
+      "wish",
+      "bone"
      ],
      [
       "backbone",
@@ -7749,29 +7749,29 @@
     ],
     "syll": [
      [
+      "undermine",
+      "under",
+      "mine"
+     ],
+     [
       "footnote",
       "foot",
       "note"
      ],
      [
-      "alongside",
-      "along",
+      "mailbox",
+      "mail",
+      "box"
+     ],
+     [
+      "upstairs",
+      "up",
+      "stairs"
+     ],
+     [
+      "underside",
+      "under",
       "side"
-     ],
-     [
-      "downhill",
-      "down",
-      "hill"
-     ],
-     [
-      "overall",
-      "over",
-      "all"
-     ],
-     [
-      "streetcar",
-      "street",
-      "car"
      ]
     ]
    },
@@ -7931,8 +7931,8 @@
      "day": 3,
      "wrf": [
       "idea",
-      "stopped",
       "figure",
+      "stopped",
       "lower",
       "already",
       "standard"
@@ -7951,7 +7951,7 @@
       "nothing",
       "often",
       "spiral",
-      "between",
+      "before",
       "number"
      ],
      "nwf": [
@@ -8364,8 +8364,8 @@
      [
       "fist",
       "f",
-      "m",
-      "missed"
+      "r",
+      "wrist"
      ],
      [
       "pig",
@@ -8394,14 +8394,19 @@
     ],
     "syll": [
      [
-      "underside",
-      "under",
-      "side"
+      "override",
+      "over",
+      "ride"
      ],
      [
       "person",
       "per",
       "son"
+     ],
+     [
+      "bedtime",
+      "bed",
+      "time"
      ],
      [
       "snowball",
@@ -8412,11 +8417,6 @@
       "backbone",
       "back",
       "bone"
-     ],
-     [
-      "roadside",
-      "road",
-      "side"
      ]
     ]
    },
@@ -8558,8 +8558,8 @@
     {
      "day": 2,
      "wrf": [
-      "figure",
       "stopped",
+      "figure",
       "little",
       "support",
       "oven",
@@ -8925,7 +8925,7 @@
      "unzip",
      "nonsense",
      "undo",
-     "nonfiction",
+     "nonslip",
      "unfit",
      "nonstick",
      "unpack"
@@ -9027,8 +9027,8 @@
      [
       "year",
       "y",
-      "f",
-      "fear"
+      "sh",
+      "sheer"
      ],
      [
       "hop",
@@ -9044,24 +9044,24 @@
       "box"
      ],
      [
-      "daytime",
-      "day",
-      "time"
-     ],
-     [
-      "mountainside",
-      "mountain",
-      "side"
-     ],
-     [
-      "snowball",
-      "snow",
-      "ball"
+      "pancake",
+      "pan",
+      "cake"
      ],
      [
       "understory",
       "under",
       "story"
+     ],
+     [
+      "footnote",
+      "foot",
+      "note"
+     ],
+     [
+      "daytime",
+      "day",
+      "time"
      ]
     ]
    },
@@ -9116,7 +9116,7 @@
     "year",
     "turned",
     "one",
-    "nonfiction",
+    "nonslip",
     "sun",
     "top",
     "something",
@@ -9186,12 +9186,12 @@
     {
      "day": 1,
      "wrf": [
-      "uneaten",
-      "untrimmed",
+      "uncovered",
+      "unnoticed",
       "understood",
-      "unalienable",
-      "undissolved",
-      "universal"
+      "unremarkable",
+      "underworld",
+      "unrelated"
      ],
      "nwf": [
       "unger",
@@ -9203,29 +9203,29 @@
     {
      "day": 2,
      "wrf": [
-      "nonsense",
+      "nonstop",
       "under",
-      "unsteady",
-      "unreadable",
-      "unrelated",
-      "unchecked"
+      "underside",
+      "union",
+      "underdone",
+      "unsolved"
      ],
      "nwf": [
       "unpover",
       "ungo",
-      "nonmiction",
-      "unpapk"
+      "unpapk",
+      "nonzense"
      ]
     },
     {
      "day": 3,
      "wrf": [
-      "untouched",
-      "nonstop",
+      "unevenly",
+      "unlock",
       "until",
-      "unusually",
-      "unremarkable",
-      "understand"
+      "unusual",
+      "unemployment",
+      "uncle"
      ],
      "nwf": [
       "comnection",
@@ -9237,12 +9237,12 @@
     {
      "day": 4,
      "wrf": [
-      "untangle",
-      "unfairness",
-      "unbroken",
-      "unreliable",
-      "unhappy",
-      "unbruised"
+      "unloaded",
+      "unfrozen",
+      "unplugged",
+      "untouched",
+      "unsteady",
+      "unturned"
      ],
      "nwf": [
       "waper",
@@ -9254,12 +9254,12 @@
     {
      "day": 5,
      "wrf": [
-      "unarmed",
-      "unemployment",
-      "union",
-      "unable",
-      "uninsulated",
-      "unloaded"
+      "uncut",
+      "unsupported",
+      "unchecked",
+      "uncertainty",
+      "unlocked",
+      "nonfiction"
      ],
      "nwf": [
       "obbious",
@@ -9678,34 +9678,34 @@
      [
       "heard",
       "h",
-      "b",
-      "bird"
+      "th",
+      "third"
      ]
     ],
     "syll": [
      [
-      "keynote",
-      "key",
-      "note"
-     ],
-     [
-      "mountainside",
-      "mountain",
+      "upside",
+      "up",
       "side"
      ],
      [
-      "wishbone",
-      "wish",
-      "bone"
+      "daytime",
+      "day",
+      "time"
      ],
      [
-      "understand",
-      "under",
-      "stand"
+      "roadside",
+      "road",
+      "side"
      ],
      [
-      "underside",
-      "under",
+      "pancake",
+      "pan",
+      "cake"
+     ],
+     [
+      "bedside",
+      "bed",
       "side"
      ]
     ]
@@ -9726,7 +9726,7 @@
     "taste",
     "they",
     "pink",
-    "nonfiction",
+    "nonslip",
     "you",
     "fine",
     "cuts",
@@ -9873,8 +9873,8 @@
       "shrinking"
      ],
      "nwf": [
+      "nonzense",
       "unpapk",
-      "nonmiction",
       "ungo",
       "unpover"
      ]
@@ -10299,14 +10299,14 @@
      [
       "took",
       "t",
-      "sh",
-      "shook"
+      "k",
+      "cook"
      ],
      [
       "fix",
       "f",
-      "p",
-      "picks"
+      "m",
+      "mix"
      ],
      [
       "water",
@@ -10329,9 +10329,19 @@
     ],
     "syll": [
      [
+      "hillside",
+      "hill",
+      "side"
+     ],
+     [
       "underground",
       "under",
       "ground"
+     ],
+     [
+      "bedside",
+      "bed",
+      "side"
      ],
      [
       "snowball",
@@ -10339,19 +10349,9 @@
       "ball"
      ],
      [
-      "pancake",
-      "pan",
-      "cake"
-     ],
-     [
       "something",
       "some",
       "thing"
-     ],
-     [
-      "wartime",
-      "war",
-      "time"
      ]
     ]
    },
@@ -10431,7 +10431,7 @@
     "at",
     "what",
     "sing",
-    "nonfiction",
+    "nonslip",
     "bad",
     "gone",
     "two",
@@ -10537,8 +10537,8 @@
      "nwf": [
       "sonething",
       "nophing",
-      "unpapk",
-      "nonmiction"
+      "nonzense",
+      "unpapk"
      ]
     },
     {
@@ -10962,8 +10962,8 @@
      [
       "first",
       "f",
-      "b",
-      "burst"
+      "w",
+      "worst"
      ],
      [
       "hen",
@@ -10979,14 +10979,9 @@
       "thing"
      ],
      [
-      "overall",
-      "over",
-      "all"
-     ],
-     [
-      "pancake",
-      "pan",
-      "cake"
+      "bedside",
+      "bed",
+      "side"
      ],
      [
       "horseback",
@@ -10994,9 +10989,14 @@
       "back"
      ],
      [
-      "wishbone",
-      "wish",
-      "bone"
+      "countryside",
+      "country",
+      "side"
+     ],
+     [
+      "uphill",
+      "up",
+      "hill"
      ]
     ]
    },
@@ -11613,35 +11613,35 @@
      [
       "short",
       "sh",
-      "s",
-      "sort"
+      "p",
+      "port"
      ]
     ],
     "syll": [
      [
-      "understand",
-      "under",
-      "stand"
+      "streetcar",
+      "street",
+      "car"
      ],
      [
-      "daytime",
-      "day",
-      "time"
-     ],
-     [
-      "upside",
-      "up",
+      "bedside",
+      "bed",
       "side"
      ],
      [
-      "understory",
-      "under",
-      "story"
+      "hillside",
+      "hill",
+      "side"
      ],
      [
-      "pancake",
-      "pan",
-      "cake"
+      "countryside",
+      "country",
+      "side"
+     ],
+     [
+      "underworld",
+      "under",
+      "world"
      ]
     ]
    },
@@ -12274,19 +12274,19 @@
       "stood"
      ],
      [
-      "footnote",
-      "foot",
+      "uphill",
+      "up",
+      "hill"
+     ],
+     [
+      "keynote",
+      "key",
       "note"
      ],
      [
-      "bedside",
-      "bed",
-      "side"
-     ],
-     [
-      "feedback",
-      "feed",
-      "back"
+      "underworld",
+      "under",
+      "world"
      ]
     ]
    },
@@ -12820,9 +12820,19 @@
     ],
     "syll": [
      [
-      "driveway",
-      "drive",
-      "way"
+      "something",
+      "some",
+      "thing"
+     ],
+     [
+      "streetcar",
+      "street",
+      "car"
+     ],
+     [
+      "mailbox",
+      "mail",
+      "box"
      ],
      [
       "haircut",
@@ -12833,16 +12843,6 @@
       "setback",
       "set",
       "back"
-     ],
-     [
-      "upstairs",
-      "up",
-      "stairs"
-     ],
-     [
-      "underside",
-      "under",
-      "side"
      ]
     ]
    },
@@ -12967,11 +12967,11 @@
     {
      "day": 1,
      "wrf": [
-      "rainfall",
-      "highway",
-      "raised",
+      "delay",
+      "training",
+      "certain",
       "painful",
-      "raindrop",
+      "raider",
       "plainly"
      ],
      "nwf": [
@@ -12984,12 +12984,12 @@
     {
      "day": 2,
      "wrf": [
-      "everyday",
-      "repay",
-      "moray",
-      "roadway",
-      "trained",
-      "rainstorm"
+      "campaign",
+      "weekday",
+      "raindrop",
+      "causeway",
+      "domain",
+      "delaying"
      ],
      "nwf": [
       "founpain",
@@ -13002,11 +13002,11 @@
      "day": 3,
      "wrf": [
       "detail",
-      "mailbox",
-      "raider",
-      "birthday",
-      "certain",
-      "aircraft"
+      "tailorbird",
+      "driveway",
+      "trained",
+      "failure",
+      "everyday"
      ],
      "nwf": [
       "cormer",
@@ -13019,11 +13019,11 @@
      "day": 4,
      "wrf": [
       "cutaway",
-      "mainly",
-      "aisle",
-      "gateway",
-      "captain",
-      "failure"
+      "contain",
+      "subway",
+      "mailed",
+      "rainy",
+      "painless"
      ],
      "nwf": [
       "spandard",
@@ -13035,12 +13035,12 @@
     {
      "day": 5,
      "wrf": [
-      "mountainside",
-      "hallway",
-      "rainy",
+      "sustained",
+      "birthday",
+      "sailor",
       "explain",
-      "explaining",
-      "essay"
+      "essay",
+      "daily"
      ],
      "nwf": [
       "clacking",
@@ -13453,8 +13453,8 @@
      [
       "term",
       "t",
-      "j",
-      "germ"
+      "w",
+      "worm"
      ],
      [
       "week",
@@ -13465,9 +13465,14 @@
     ],
     "syll": [
      [
-      "understand",
-      "under",
-      "stand"
+      "horseback",
+      "horse",
+      "back"
+     ],
+     [
+      "pancake",
+      "pan",
+      "cake"
      ],
      [
       "alongside",
@@ -13475,19 +13480,14 @@
       "side"
      ],
      [
-      "backtrack",
-      "back",
-      "track"
+      "classroom",
+      "class",
+      "room"
      ],
      [
-      "setback",
-      "set",
-      "back"
-     ],
-     [
-      "feedback",
-      "feed",
-      "back"
+      "overall",
+      "over",
+      "all"
      ]
     ]
    },
@@ -13615,7 +13615,7 @@
       "hearing",
       "nearby",
       "between",
-      "forehead",
+      "fearless",
       "keeping",
       "eating"
      ],
@@ -14086,8 +14086,8 @@
      [
       "cat",
       "k",
-      "h",
-      "hat"
+      "p",
+      "pat"
      ],
      [
       "free",
@@ -14098,41 +14098,41 @@
      [
       "sun",
       "s",
-      "r",
-      "run"
+      "b",
+      "bun"
      ],
      [
       "chest",
       "ch",
-      "r",
-      "rest"
+      "w",
+      "west"
      ]
     ],
     "syll": [
      [
+      "horseback",
+      "horse",
+      "back"
+     ],
+     [
+      "cutaway",
+      "cut",
+      "away"
+     ],
+     [
+      "underwater",
+      "under",
+      "water"
+     ],
+     [
+      "setback",
+      "set",
+      "back"
+     ],
+     [
       "downhill",
       "down",
       "hill"
-     ],
-     [
-      "anyway",
-      "any",
-      "way"
-     ],
-     [
-      "snowball",
-      "snow",
-      "ball"
-     ],
-     [
-      "highway",
-      "high",
-      "way"
-     ],
-     [
-      "daytime",
-      "day",
-      "time"
      ]
     ]
    },
@@ -14749,20 +14749,20 @@
      [
       "post",
       "p",
-      "k",
-      "coast"
+      "h",
+      "host"
      ]
     ],
     "syll": [
      [
-      "hallway",
-      "hall",
-      "way"
+      "landholding",
+      "land",
+      "holding"
      ],
      [
-      "gateway",
-      "gate",
-      "way"
+      "horseback",
+      "horse",
+      "back"
      ],
      [
       "overload",
@@ -14775,9 +14775,9 @@
       "note"
      ],
      [
-      "feedback",
-      "feed",
-      "back"
+      "underside",
+      "under",
+      "side"
      ]
     ]
    },
@@ -14902,12 +14902,12 @@
     {
      "day": 1,
      "wrf": [
-      "household",
+      "defrost",
       "older",
-      "scaffold",
-      "mankind",
-      "remainder",
-      "rewind"
+      "withhold",
+      "payroll",
+      "booster",
+      "solder"
      ],
      "nwf": [
       "childlen",
@@ -14920,11 +14920,11 @@
      "day": 2,
      "wrf": [
       "children",
-      "solder",
+      "mankind",
+      "retold",
       "minded",
-      "shipbuilding",
-      "permafrost",
-      "defrost"
+      "threshold",
+      "wildfire"
      ],
      "nwf": [
       "reduild",
@@ -14936,12 +14936,12 @@
     {
      "day": 3,
      "wrf": [
-      "enrolled",
+      "enroll",
       "rolling",
       "frosting",
-      "threshold",
+      "controller",
       "remind",
-      "utmost"
+      "scaffold"
      ],
      "nwf": [
       "tonorrow",
@@ -14953,12 +14953,12 @@
     {
      "day": 4,
      "wrf": [
-      "builder",
+      "utmost",
       "posted",
-      "mildly",
+      "enrolled",
       "unfolded",
-      "enroll",
-      "unbolt"
+      "upwind",
+      "uphold"
      ],
      "nwf": [
       "forlow",
@@ -14971,10 +14971,10 @@
      "day": 5,
      "wrf": [
       "rolled",
-      "upwind",
-      "retold",
-      "withhold",
-      "downwind",
+      "polling",
+      "remainder",
+      "milder",
+      "mildly",
       "holding"
      ],
      "nwf": [
@@ -15400,29 +15400,29 @@
     ],
     "syll": [
      [
-      "uphold",
-      "up",
-      "hold"
+      "wishbone",
+      "wish",
+      "bone"
      ],
      [
-      "undermine",
-      "under",
-      "mine"
+      "downhill",
+      "down",
+      "hill"
      ],
      [
-      "wildlife",
-      "wild",
-      "life"
+      "keynote",
+      "key",
+      "note"
      ],
      [
-      "bedside",
-      "bed",
+      "mountainside",
+      "mountain",
       "side"
      ],
      [
-      "backboard",
-      "back",
-      "board"
+      "haircut",
+      "hair",
+      "cut"
      ]
     ]
    },
@@ -15550,7 +15550,7 @@
       "copyright",
       "bighead",
       "eighteen",
-      "twilight",
+      "thoroughly",
       "roughly",
       "neighborhood"
      ],
@@ -15567,9 +15567,9 @@
       "higher",
       "watertight",
       "delighted",
-      "kneeling",
-      "outweigh",
-      "brightly"
+      "onslaught",
+      "roughness",
+      "haughty"
      ],
      "nwf": [
       "wrapted",
@@ -15581,12 +15581,12 @@
     {
      "day": 3,
      "wrf": [
-      "knitted",
-      "hindsight",
-      "knuckle",
+      "outweigh",
+      "sighting",
+      "twilight",
       "lightly",
-      "although",
-      "shipwright"
+      "kneeling",
+      "nightingale"
      ],
      "nwf": [
       "wildfile",
@@ -15598,7 +15598,7 @@
     {
      "day": 4,
      "wrf": [
-      "wreckage",
+      "knitted",
       "slightly",
       "wrapped",
       "knocking",
@@ -15617,8 +15617,8 @@
      "wrf": [
       "rightful",
       "highest",
-      "weighted",
-      "nightingale",
+      "tonight",
+      "frightening",
       "overnight",
       "brightness"
      ],
@@ -16027,8 +16027,8 @@
      [
       "lap",
       "l",
-      "g",
-      "gap"
+      "n",
+      "nap"
      ],
      [
       "house",
@@ -16045,11 +16045,6 @@
     ],
     "syll": [
      [
-      "keynote",
-      "key",
-      "note"
-     ],
-     [
       "lighthouse",
       "light",
       "house"
@@ -16060,14 +16055,19 @@
       "hold"
      ],
      [
-      "backboard",
-      "back",
-      "board"
+      "uphill",
+      "up",
+      "hill"
      ],
      [
-      "streetcar",
-      "street",
-      "car"
+      "undermine",
+      "under",
+      "mine"
+     ],
+     [
+      "bedrock",
+      "bed",
+      "rock"
      ]
     ]
    },
@@ -16690,29 +16690,29 @@
     ],
     "syll": [
      [
-      "override",
-      "over",
-      "ride"
+      "railroad",
+      "rail",
+      "road"
      ],
      [
-      "wishbone",
-      "wish",
-      "bone"
+      "rainstorm",
+      "rain",
+      "storm"
      ],
      [
-      "underlying",
-      "under",
-      "lying"
-     ],
-     [
-      "nearby",
-      "near",
-      "by"
-     ],
-     [
-      "upside",
+      "upstairs",
       "up",
-      "side"
+      "stairs"
+     ],
+     [
+      "uphill",
+      "up",
+      "hill"
+     ],
+     [
+      "landholding",
+      "land",
+      "holding"
      ]
     ]
    },
@@ -16855,7 +16855,7 @@
      "day": 2,
      "wrf": [
       "figure",
-      "resting",
+      "careless",
       "area",
       "spreading",
       "gingerbread",
@@ -16871,7 +16871,7 @@
     {
      "day": 3,
      "wrf": [
-      "repeat",
+      "berry",
       "relevant",
       "hurry",
       "borrow",
@@ -17323,21 +17323,31 @@
      [
       "more",
       "m",
-      "n",
-      "nor"
+      "f",
+      "four"
      ],
      [
       "road",
       "r",
-      "l",
-      "load"
+      "sh",
+      "showed"
      ]
     ],
     "syll": [
      [
-      "upstairs",
-      "up",
-      "stairs"
+      "hillside",
+      "hill",
+      "side"
+     ],
+     [
+      "setback",
+      "set",
+      "back"
+     ],
+     [
+      "something",
+      "some",
+      "thing"
      ],
      [
       "person",
@@ -17345,19 +17355,9 @@
       "son"
      ],
      [
-      "roadway",
-      "road",
-      "way"
-     ],
-     [
-      "outside",
-      "out",
-      "side"
-     ],
-     [
-      "weekday",
-      "week",
-      "day"
+      "snowball",
+      "snow",
+      "ball"
      ]
     ]
    },
@@ -17894,29 +17894,29 @@
     ],
     "syll": [
      [
+      "shipbuilding",
+      "ship",
+      "building"
+     ],
+     [
+      "anyway",
+      "any",
+      "way"
+     ],
+     [
+      "oversight",
+      "over",
+      "sight"
+     ],
+     [
       "alongside",
       "along",
       "side"
      ],
      [
-      "understood",
-      "under",
-      "stood"
-     ],
-     [
-      "wildcat",
-      "wild",
-      "cat"
-     ],
-     [
-      "underwater",
-      "under",
-      "water"
-     ],
-     [
-      "upstairs",
-      "up",
-      "stairs"
+      "mankind",
+      "man",
+      "kind"
      ]
     ]
    },
@@ -18046,7 +18046,7 @@
       "slightly",
       "openly",
       "certainly",
-      "barely"
+      "useless"
      ],
      "nwf": [
       "omly",
@@ -18060,7 +18060,7 @@
      "wrf": [
       "sadly",
       "nearly",
-      "oily",
+      "butterfly",
       "efficiently",
       "entirely",
       "probably"
@@ -18075,9 +18075,9 @@
     {
      "day": 3,
      "wrf": [
-      "constantly",
+      "cement",
       "rarely",
-      "fearless",
+      "painful",
       "partly",
       "quietly",
       "explicitly"
@@ -18110,9 +18110,9 @@
      "day": 5,
      "wrf": [
       "actively",
-      "painful",
-      "thankful",
-      "useless",
+      "oily",
+      "loudly",
+      "proficiently",
       "really",
       "differently"
      ],
@@ -18537,29 +18537,29 @@
     ],
     "syll": [
      [
-      "classroom",
-      "class",
-      "room"
-     ],
-     [
-      "sideways",
-      "side",
-      "ways"
-     ],
-     [
-      "daytime",
-      "day",
-      "time"
-     ],
-     [
       "lifeboat",
       "life",
       "boat"
      ],
      [
-      "starlight",
-      "star",
-      "light"
+      "throughout",
+      "through",
+      "out"
+     ],
+     [
+      "classroom",
+      "class",
+      "room"
+     ],
+     [
+      "setback",
+      "set",
+      "back"
+     ],
+     [
+      "wartime",
+      "war",
+      "time"
      ]
     ]
    },
@@ -18755,7 +18755,7 @@
       "very",
       "cracked",
       "moving",
-      "tiny",
+      "happen",
       "story",
       "filled"
      ],
@@ -19151,8 +19151,8 @@
      [
       "written",
       "r",
-      "m",
-      "mitten"
+      "k",
+      "kitten"
      ],
      [
       "much",
@@ -19175,35 +19175,35 @@
      [
       "rug",
       "r",
-      "m",
-      "mug"
+      "b",
+      "bug"
      ]
     ],
     "syll": [
      [
-      "cardboard",
-      "card",
-      "board"
+      "underlying",
+      "under",
+      "lying"
      ],
      [
-      "feedback",
-      "feed",
+      "countryside",
+      "country",
+      "side"
+     ],
+     [
+      "horseback",
+      "horse",
       "back"
      ],
      [
-      "cupcake",
-      "cup",
-      "cake"
+      "underworld",
+      "under",
+      "world"
      ],
      [
-      "copyright",
-      "copy",
-      "right"
-     ],
-     [
-      "postmark",
-      "post",
-      "mark"
+      "somehow",
+      "some",
+      "how"
      ]
     ]
    },
@@ -19328,12 +19328,12 @@
     {
      "day": 1,
      "wrf": [
-      "miscount",
-      "subscribe",
+      "misplace",
       "subject",
-      "postdate",
-      "submarine",
-      "postage"
+      "postnatal",
+      "misbehavior",
+      "misfit",
+      "subset"
      ],
      "nwf": [
       "mistate",
@@ -19345,29 +19345,29 @@
     {
      "day": 2,
      "wrf": [
-      "poster",
-      "subtext",
-      "subsoil",
-      "subtitle",
-      "postmaster",
-      "misplace"
+      "sublime",
+      "submerged",
+      "subsidence",
+      "misprint",
+      "mission",
+      "substituted"
      ],
      "nwf": [
+      "mismit",
       "misstell",
       "postsclipt",
-      "misprace",
-      "misjugge"
+      "subprot"
      ]
     },
     {
      "day": 3,
      "wrf": [
-      "sublime",
+      "mistaking",
+      "posture",
+      "mistrust",
       "missing",
-      "subtend",
-      "mislead",
-      "subset",
-      "subtract"
+      "postpone",
+      "mislead"
      ],
      "nwf": [
       "vocadulary",
@@ -19379,12 +19379,12 @@
     {
      "day": 4,
      "wrf": [
-      "misleading",
-      "postpone",
-      "posture",
-      "subtle",
-      "postseason",
-      "subside"
+      "subsistence",
+      "substantial",
+      "subsequently",
+      "postbox",
+      "posting",
+      "mislay"
      ],
      "nwf": [
       "nophing",
@@ -19396,12 +19396,12 @@
     {
      "day": 5,
      "wrf": [
-      "subsequently",
-      "misfit",
-      "subfloor",
-      "mistaking",
-      "mistaken",
-      "substance"
+      "poster",
+      "subsequent",
+      "missile",
+      "posted",
+      "substitution",
+      "postmark"
      ],
      "nwf": [
       "awaleness",
@@ -19826,29 +19826,29 @@
     ],
     "syll": [
      [
-      "mailbox",
-      "mail",
-      "box"
+      "person",
+      "per",
+      "son"
      ],
      [
-      "feedback",
-      "feed",
-      "back"
+      "driveway",
+      "drive",
+      "way"
      ],
      [
-      "uphill",
-      "up",
-      "hill"
+      "backtrack",
+      "back",
+      "track"
      ],
      [
-      "anything",
-      "any",
-      "thing"
+      "shipbuilding",
+      "ship",
+      "building"
      ],
      [
-      "uphold",
-      "up",
-      "hold"
+      "understand",
+      "under",
+      "stand"
      ]
     ]
    },
@@ -20012,13 +20012,13 @@
       "attention",
       "messy",
       "arrow",
-      "berry"
+      "filling"
      ],
      "nwf": [
-      "misjugge",
-      "misprace",
+      "subprot",
       "postsclipt",
-      "misstell"
+      "misstell",
+      "mismit"
      ]
     },
     {
@@ -20462,35 +20462,35 @@
      [
       "real",
       "r",
-      "m",
-      "meal"
+      "f",
+      "feel"
      ]
     ],
     "syll": [
      [
-      "shipbuilding",
-      "ship",
-      "building"
-     ],
-     [
-      "uphold",
-      "up",
-      "hold"
-     ],
-     [
-      "railroad",
-      "rail",
-      "road"
-     ],
-     [
-      "underside",
+      "underlying",
       "under",
-      "side"
+      "lying"
      ],
      [
-      "sideways",
-      "side",
-      "ways"
+      "backtrack",
+      "back",
+      "track"
+     ],
+     [
+      "mankind",
+      "man",
+      "kind"
+     ],
+     [
+      "postmark",
+      "post",
+      "mark"
+     ],
+     [
+      "overnight",
+      "over",
+      "night"
      ]
     ]
    },
@@ -20691,10 +20691,10 @@
       "recess"
      ],
      "nwf": [
-      "misjugge",
-      "misprace",
+      "subprot",
       "postsclipt",
-      "misstell"
+      "misstell",
+      "mismit"
      ]
     }
    ],
@@ -21113,29 +21113,29 @@
     ],
     "syll": [
      [
-      "quarterback",
-      "quarter",
-      "back"
-     ],
-     [
-      "upside",
-      "up",
-      "side"
-     ],
-     [
-      "throughout",
-      "through",
-      "out"
-     ],
-     [
       "setback",
       "set",
       "back"
      ],
      [
-      "upstairs",
+      "upload",
       "up",
-      "stairs"
+      "load"
+     ],
+     [
+      "shipbuilding",
+      "ship",
+      "building"
+     ],
+     [
+      "pancake",
+      "pan",
+      "cake"
+     ],
+     [
+      "underwater",
+      "under",
+      "water"
      ]
     ]
    },
@@ -21260,11 +21260,11 @@
     {
      "day": 1,
      "wrf": [
-      "generally",
-      "ranger",
+      "generation",
+      "urgent",
       "ginger",
-      "vegetation",
-      "suggestive",
+      "smudged",
+      "charger",
       "gingerbread"
      ],
      "nwf": [
@@ -21277,12 +21277,12 @@
     {
      "day": 2,
      "wrf": [
-      "average",
-      "tiger",
+      "genuine",
+      "hunger",
       "longer",
-      "package",
-      "voltage",
-      "angelfish"
+      "passenger",
+      "unchanged",
+      "management"
      ],
      "nwf": [
       "energency",
@@ -21294,12 +21294,12 @@
     {
      "day": 3,
      "wrf": [
-      "hunger",
-      "jagged",
-      "largely",
-      "shortage",
-      "unchanged",
-      "budget"
+      "ranger",
+      "forage",
+      "damages",
+      "unplugged",
+      "knowledge",
+      "generally"
      ],
      "nwf": [
       "acloss",
@@ -21312,9 +21312,9 @@
      "day": 4,
      "wrf": [
       "orange",
-      "geologist",
-      "smudged",
-      "surgeonfish",
+      "undamaged",
+      "forgetting",
+      "average",
       "engage",
       "gently"
      ],
@@ -21328,12 +21328,12 @@
     {
      "day": 5,
      "wrf": [
-      "outage",
-      "storage",
+      "forged",
+      "package",
       "together",
-      "dangerous",
-      "unplugged",
-      "refugee"
+      "storage",
+      "pigeon",
+      "largely"
      ],
      "nwf": [
       "offipe",
@@ -21758,29 +21758,29 @@
     ],
     "syll": [
      [
-      "understood",
+      "gateway",
+      "gate",
+      "way"
+     ],
+     [
+      "daytime",
+      "day",
+      "time"
+     ],
+     [
+      "bedrock",
+      "bed",
+      "rock"
+     ],
+     [
+      "feedback",
+      "feed",
+      "back"
+     ],
+     [
+      "underworld",
       "under",
-      "stood"
-     ],
-     [
-      "cardboard",
-      "card",
-      "board"
-     ],
-     [
-      "person",
-      "per",
-      "son"
-     ],
-     [
-      "postdate",
-      "post",
-      "date"
-     ],
-     [
-      "keynote",
-      "key",
-      "note"
+      "world"
      ]
     ]
    },
@@ -22313,29 +22313,29 @@
     ],
     "syll": [
      [
-      "postmark",
-      "post",
-      "mark"
+      "cardboard",
+      "card",
+      "board"
      ],
      [
-      "halfway",
-      "half",
+      "daytime",
+      "day",
+      "time"
+     ],
+     [
+      "outside",
+      "out",
+      "side"
+     ],
+     [
+      "driveway",
+      "drive",
       "way"
      ],
      [
-      "understory",
-      "under",
-      "story"
-     ],
-     [
-      "nearby",
-      "near",
-      "by"
-     ],
-     [
-      "haircut",
-      "hair",
-      "cut"
+      "throughout",
+      "through",
+      "out"
      ]
     ]
    },
@@ -22460,11 +22460,11 @@
     {
      "day": 1,
      "wrf": [
-      "employed",
-      "auditory",
-      "faulty",
-      "withdrawal",
-      "award",
+      "employer",
+      "bureau",
+      "unemployment",
+      "withdraw",
+      "dinosaur",
       "because"
      ],
      "nwf": [
@@ -22478,11 +22478,11 @@
      "day": 2,
      "wrf": [
       "awake",
-      "enjoy",
-      "inaudible",
-      "applaud",
-      "paranoid",
-      "coincidence"
+      "beauty",
+      "causeway",
+      "sawdust",
+      "authorized",
+      "aware"
      ],
      "nwf": [
       "cupaway",
@@ -22494,12 +22494,12 @@
     {
      "day": 3,
      "wrf": [
-      "exhaustion",
-      "plateau",
-      "spoiled",
-      "subsoil",
+      "pointless",
+      "memoir",
+      "autopsy",
+      "oily",
       "poisonous",
-      "hydraulic"
+      "exhaustion"
      ],
      "nwf": [
       "carliage",
@@ -22511,12 +22511,12 @@
     {
      "day": 4,
      "wrf": [
-      "spoiling",
-      "poison",
+      "auditory",
+      "august",
       "author",
-      "pointless",
+      "naughty",
       "away",
-      "sawmill"
+      "haughty"
      ],
      "nwf": [
       "danage",
@@ -22528,11 +22528,11 @@
     {
      "day": 5,
      "wrf": [
-      "asteroid",
+      "reservoir",
       "noisy",
-      "slaughter",
-      "caution",
-      "causeway",
+      "rejoin",
+      "employment",
+      "spoiling",
       "joining"
      ],
      "nwf": [
@@ -22934,8 +22934,8 @@
      [
       "bend",
       "b",
-      "s",
-      "send"
+      "t",
+      "tend"
      ],
      [
       "fills",
@@ -22958,29 +22958,29 @@
     ],
     "syll": [
      [
+      "postwar",
+      "post",
+      "war"
+     ],
+     [
       "overload",
       "over",
       "load"
      ],
      [
-      "shipbuilding",
-      "ship",
-      "building"
+      "lifeboat",
+      "life",
+      "boat"
      ],
      [
-      "daylight",
-      "day",
-      "light"
-     ],
-     [
-      "understory",
+      "understand",
       "under",
-      "story"
+      "stand"
      ],
      [
-      "weekday",
-      "week",
-      "day"
+      "roadway",
+      "road",
+      "way"
      ]
     ]
    },
@@ -23493,8 +23493,8 @@
      [
       "shell",
       "sh",
-      "s",
-      "sell"
+      "t",
+      "tell"
      ],
      [
       "check",
@@ -23505,8 +23505,8 @@
      [
       "fist",
       "f",
-      "h",
-      "hissed"
+      "m",
+      "missed"
      ],
      [
       "fix",
@@ -23517,29 +23517,29 @@
     ],
     "syll": [
      [
-      "alongside",
-      "along",
-      "side"
-     ],
-     [
-      "underlying",
+      "understand",
       "under",
-      "lying"
+      "stand"
      ],
      [
-      "nearby",
-      "near",
-      "by"
+      "upstairs",
+      "up",
+      "stairs"
      ],
      [
-      "streetcar",
-      "street",
-      "car"
+      "haircut",
+      "hair",
+      "cut"
      ],
      [
       "anything",
       "any",
       "thing"
+     ],
+     [
+      "cardboard",
+      "card",
+      "board"
      ]
     ]
    },
@@ -24064,41 +24064,41 @@
      [
       "belt",
       "b",
-      "n",
-      "knelt"
+      "f",
+      "felt"
      ],
      [
       "rose",
       "r",
-      "n",
-      "knows"
+      "th",
+      "those"
      ]
     ],
     "syll": [
      [
-      "sawdust",
-      "saw",
-      "dust"
+      "railroad",
+      "rail",
+      "road"
      ],
      [
-      "bedrock",
-      "bed",
-      "rock"
+      "copyright",
+      "copy",
+      "right"
+     ],
+     [
+      "anyway",
+      "any",
+      "way"
+     ],
+     [
+      "overnight",
+      "over",
+      "night"
      ],
      [
       "uphill",
       "up",
       "hill"
-     ],
-     [
-      "upside",
-      "up",
-      "side"
-     ],
-     [
-      "railroad",
-      "rail",
-      "road"
      ]
     ]
    },
@@ -24605,8 +24605,8 @@
      [
       "sun",
       "s",
-      "r",
-      "run"
+      "b",
+      "bun"
      ],
      [
       "nest",
@@ -24617,8 +24617,8 @@
      [
       "come",
       "k",
-      "h",
-      "hum"
+      "m",
+      "mum"
      ],
      [
       "rug",
@@ -24629,35 +24629,35 @@
      [
       "lamp",
       "l",
-      "k",
-      "camp"
+      "d",
+      "damp"
      ]
     ],
     "syll": [
      [
-      "underground",
+      "daylight",
+      "day",
+      "light"
+     ],
+     [
+      "mountainside",
+      "mountain",
+      "side"
+     ],
+     [
+      "undermine",
       "under",
-      "ground"
+      "mine"
      ],
      [
-      "snowball",
-      "snow",
-      "ball"
+      "sidetrack",
+      "side",
+      "track"
      ],
      [
-      "halfway",
-      "half",
-      "way"
-     ],
-     [
-      "footnote",
-      "foot",
-      "note"
-     ],
-     [
-      "throughout",
-      "through",
-      "out"
+      "mailbox",
+      "mail",
+      "box"
      ]
     ]
    },
@@ -25175,8 +25175,8 @@
      [
       "sun",
       "s",
-      "r",
-      "run"
+      "w",
+      "one"
      ],
      [
       "bed",
@@ -25187,25 +25187,20 @@
      [
       "bent",
       "b",
-      "s",
-      "cent"
+      "m",
+      "meant"
      ]
     ],
     "syll": [
      [
-      "watertight",
-      "water",
-      "tight"
+      "hallway",
+      "hall",
+      "way"
      ],
      [
-      "countryside",
-      "country",
-      "side"
-     ],
-     [
-      "backtrack",
-      "back",
-      "track"
+      "throughout",
+      "through",
+      "out"
      ],
      [
       "roadside",
@@ -25213,9 +25208,14 @@
       "side"
      ],
      [
-      "snowball",
-      "snow",
-      "ball"
+      "pancake",
+      "pan",
+      "cake"
+     ],
+     [
+      "sawdust",
+      "saw",
+      "dust"
      ]
     ]
    },
@@ -25838,9 +25838,14 @@
     ],
     "syll": [
      [
-      "postdate",
-      "post",
-      "date"
+      "cutaway",
+      "cut",
+      "away"
+     ],
+     [
+      "shipbuilding",
+      "ship",
+      "building"
      ],
      [
       "countryside",
@@ -25848,19 +25853,14 @@
       "side"
      ],
      [
-      "sunlight",
-      "sun",
-      "light"
+      "overnight",
+      "over",
+      "night"
      ],
      [
-      "quarterback",
-      "quarter",
-      "back"
-     ],
-     [
-      "something",
-      "some",
-      "thing"
+      "understory",
+      "under",
+      "story"
      ]
     ]
    },
@@ -26384,8 +26384,8 @@
      [
       "rain",
       "r",
-      "ch",
-      "chain"
+      "p",
+      "pane"
      ],
      [
       "let",
@@ -26396,29 +26396,29 @@
     ],
     "syll": [
      [
-      "uphold",
-      "up",
-      "hold"
+      "bedrock",
+      "bed",
+      "rock"
      ],
      [
-      "cutaway",
-      "cut",
-      "away"
+      "shipbuilding",
+      "ship",
+      "building"
      ],
      [
-      "upstairs",
-      "up",
-      "stairs"
+      "anyway",
+      "any",
+      "way"
      ],
      [
-      "lifeboat",
-      "life",
-      "boat"
+      "downhill",
+      "down",
+      "hill"
      ],
      [
-      "footnote",
-      "foot",
-      "note"
+      "setback",
+      "set",
+      "back"
      ]
     ]
    },
@@ -26923,8 +26923,8 @@
      [
       "road",
       "r",
-      "sh",
-      "showed"
+      "l",
+      "load"
      ],
      [
       "mop",
@@ -26953,29 +26953,29 @@
     ],
     "syll": [
      [
-      "postmark",
-      "post",
-      "mark"
+      "somehow",
+      "some",
+      "how"
      ],
      [
-      "quarterback",
-      "quarter",
-      "back"
+      "mountainside",
+      "mountain",
+      "side"
      ],
      [
-      "lifeboat",
-      "life",
-      "boat"
+      "classroom",
+      "class",
+      "room"
+     ],
+     [
+      "undermine",
+      "under",
+      "mine"
      ],
      [
       "wishbone",
       "wish",
       "bone"
-     ],
-     [
-      "throughout",
-      "through",
-      "out"
      ]
     ]
    },
@@ -27504,15 +27504,25 @@
      [
       "sun",
       "s",
-      "n",
-      "none"
+      "f",
+      "fun"
      ]
     ],
     "syll": [
      [
-      "broadcast",
-      "broad",
-      "cast"
+      "afternoon",
+      "after",
+      "noon"
+     ],
+     [
+      "roadside",
+      "road",
+      "side"
+     ],
+     [
+      "underwater",
+      "under",
+      "water"
      ],
      [
       "understory",
@@ -27523,16 +27533,6 @@
       "setback",
       "set",
       "back"
-     ],
-     [
-      "wartime",
-      "war",
-      "time"
-     ],
-     [
-      "uphill",
-      "up",
-      "hill"
      ]
     ]
    },
@@ -27728,7 +27728,7 @@
       "usually",
       "vinegar",
       "reading",
-      "office",
+      "minute",
       "working",
       "without"
      ],
@@ -28125,8 +28125,8 @@
      [
       "same",
       "s",
-      "t",
-      "tame"
+      "sh",
+      "shame"
      ],
      [
       "drum",
@@ -28155,14 +28155,9 @@
     ],
     "syll": [
      [
-      "wishbone",
-      "wish",
-      "bone"
-     ],
-     [
-      "wildcat",
-      "wild",
-      "cat"
+      "daylight",
+      "day",
+      "light"
      ],
      [
       "wartime",
@@ -28170,14 +28165,19 @@
       "time"
      ],
      [
-      "uphold",
-      "up",
-      "hold"
-     ],
-     [
       "anything",
       "any",
       "thing"
+     ],
+     [
+      "wishbone",
+      "wish",
+      "bone"
+     ],
+     [
+      "sideways",
+      "side",
+      "ways"
      ]
     ]
    },
@@ -28689,8 +28689,8 @@
      [
       "lap",
       "l",
-      "t",
-      "tap"
+      "r",
+      "wrap"
      ],
      [
       "nest",
@@ -28713,29 +28713,29 @@
     ],
     "syll": [
      [
-      "overload",
-      "over",
-      "load"
+      "undermine",
+      "under",
+      "mine"
      ],
      [
-      "hallway",
-      "hall",
-      "way"
+      "watertight",
+      "water",
+      "tight"
      ],
      [
-      "somehow",
-      "some",
-      "how"
+      "sunlight",
+      "sun",
+      "light"
      ],
      [
-      "alongside",
-      "along",
-      "side"
+      "sawdust",
+      "saw",
+      "dust"
      ],
      [
-      "household",
-      "house",
-      "hold"
+      "anything",
+      "any",
+      "thing"
      ]
     ]
    },
@@ -28860,12 +28860,12 @@
     {
      "day": 1,
      "wrf": [
-      "rattle",
-      "castle",
+      "flexible",
+      "fixable",
       "simple",
       "possible",
       "syllable",
-      "bridle"
+      "doubled"
      ],
      "nwf": [
       "tadle",
@@ -28879,7 +28879,7 @@
      "wrf": [
       "wiggle",
       "cycle",
-      "washable",
+      "waggle",
       "needle",
       "table",
       "untangle"
@@ -28894,10 +28894,10 @@
     {
      "day": 3,
      "wrf": [
-      "humble",
-      "measurable",
+      "horrible",
+      "bridle",
       "visible",
-      "giggle",
+      "cattle",
       "usable",
       "wobble"
      ],
@@ -28911,12 +28911,12 @@
     {
      "day": 4,
      "wrf": [
-      "lovable",
-      "shingles",
-      "kettle",
+      "recycle",
+      "startle",
+      "responsible",
       "valuable",
       "muscle",
-      "reliable"
+      "defensible"
      ],
      "nwf": [
       "comnection",
@@ -28929,9 +28929,9 @@
      "day": 5,
      "wrf": [
       "puddle",
-      "nibble",
+      "lovable",
       "able",
-      "defensible",
+      "rattle",
       "sample",
       "invisible"
      ],
@@ -29358,29 +29358,29 @@
     ],
     "syll": [
      [
-      "mountainside",
-      "mountain",
+      "outside",
+      "out",
       "side"
      ],
      [
-      "something",
-      "some",
-      "thing"
+      "hillside",
+      "hill",
+      "side"
+     ],
+     [
+      "payroll",
+      "pay",
+      "roll"
+     ],
+     [
+      "nearby",
+      "near",
+      "by"
      ],
      [
       "overall",
       "over",
       "all"
-     ],
-     [
-      "throughout",
-      "through",
-      "out"
-     ],
-     [
-      "halfway",
-      "half",
-      "way"
      ]
     ]
    },
@@ -29893,14 +29893,14 @@
      [
       "goes",
       "g",
-      "n",
-      "nose"
+      "sh",
+      "shows"
      ],
      [
       "town",
       "t",
-      "g",
-      "gown"
+      "d",
+      "down"
      ],
      [
       "said",
@@ -29917,29 +29917,29 @@
     ],
     "syll": [
      [
-      "something",
-      "some",
-      "thing"
-     ],
-     [
-      "driveway",
-      "drive",
-      "way"
-     ],
-     [
-      "cutaway",
-      "cut",
-      "away"
-     ],
-     [
-      "broadcast",
-      "broad",
-      "cast"
-     ],
-     [
       "copyright",
       "copy",
       "right"
+     ],
+     [
+      "afternoon",
+      "after",
+      "noon"
+     ],
+     [
+      "underlying",
+      "under",
+      "lying"
+     ],
+     [
+      "sidetrack",
+      "side",
+      "track"
+     ],
+     [
+      "overnight",
+      "over",
+      "night"
      ]
     ]
    },
@@ -30561,29 +30561,29 @@
     ],
     "syll": [
      [
-      "sunlight",
-      "sun",
-      "light"
+      "driveway",
+      "drive",
+      "way"
      ],
      [
-      "wishbone",
-      "wish",
-      "bone"
+      "sawdust",
+      "saw",
+      "dust"
      ],
      [
-      "rainstorm",
-      "rain",
-      "storm"
+      "broadcast",
+      "broad",
+      "cast"
      ],
      [
-      "haircut",
-      "hair",
-      "cut"
+      "overload",
+      "over",
+      "load"
      ],
      [
-      "anything",
-      "any",
-      "thing"
+      "railroad",
+      "rail",
+      "road"
      ]
     ]
    },
@@ -30712,7 +30712,7 @@
       "migration",
       "action",
       "competition",
-      "discussion",
+      "caption",
       "foundation"
      ],
      "nwf": [
@@ -30736,18 +30736,18 @@
       "plotection",
       "deminition",
       "spation",
-      "nonmiction"
+      "deporation"
      ]
     },
     {
      "day": 3,
      "wrf": [
-      "nation",
+      "tension",
       "construction",
       "navigation",
       "conclusion",
       "evaporation",
-      "friction"
+      "vision"
      ],
      "nwf": [
       "sylladle",
@@ -30761,7 +30761,7 @@
      "wrf": [
       "subscription",
       "connection",
-      "nonfiction",
+      "decoration",
       "invasion",
       "expansion",
       "commission"
@@ -30779,7 +30779,7 @@
       "organization",
       "registration",
       "permission",
-      "vision",
+      "invention",
       "direction",
       "eruption"
      ],
@@ -31181,8 +31181,8 @@
      [
       "lamp",
       "l",
-      "k",
-      "camp"
+      "d",
+      "damp"
      ],
      [
       "teach",
@@ -31205,29 +31205,29 @@
     ],
     "syll": [
      [
-      "roadside",
-      "road",
-      "side"
+      "highway",
+      "high",
+      "way"
      ],
      [
-      "afternoon",
-      "after",
-      "noon"
-     ],
-     [
-      "overall",
+      "overload",
       "over",
-      "all"
+      "load"
      ],
      [
-      "throughout",
-      "through",
-      "out"
+      "outright",
+      "out",
+      "right"
      ],
      [
-      "lifeboat",
-      "life",
-      "boat"
+      "sidetrack",
+      "side",
+      "track"
+     ],
+     [
+      "nearby",
+      "near",
+      "by"
      ]
     ]
    },
@@ -31352,12 +31352,12 @@
     {
      "day": 1,
      "wrf": [
-      "measurable",
-      "vulnerable",
-      "distinctive",
-      "audible",
       "twisting",
-      "massive"
+      "cursive",
+      "disabled",
+      "inaudible",
+      "comfortable",
+      "dentist"
      ],
      "nwf": [
       "aptively",
@@ -31369,12 +31369,12 @@
     {
      "day": 2,
      "wrf": [
-      "dentist",
+      "massive",
       "scientist",
       "washable",
-      "comfortable",
+      "irreversible",
       "horrible",
-      "fashionable"
+      "impossible"
      ],
      "nwf": [
       "rebister",
@@ -31387,14 +31387,14 @@
      "day": 3,
      "wrf": [
       "received",
-      "cursive",
-      "edible",
-      "pianist",
+      "traceable",
+      "fixable",
+      "lovable",
       "active",
       "alive"
      ],
      "nwf": [
-      "nonmiction",
+      "deporation",
       "spation",
       "deminition",
       "plotection"
@@ -31403,12 +31403,12 @@
     {
      "day": 4,
      "wrf": [
-      "available",
-      "conclusive",
-      "impossible",
+      "reliable",
+      "productive",
+      "measurable",
       "lived",
       "valuable",
-      "productive"
+      "suggestive"
      ],
      "nwf": [
       "aptention",
@@ -31421,11 +31421,11 @@
      "day": 5,
      "wrf": [
       "actively",
-      "interactive",
+      "defensive",
       "twisted",
       "relative",
-      "unreliable",
-      "lovable"
+      "motive",
+      "available"
      ],
      "nwf": [
       "sylladle",
@@ -31832,8 +31832,8 @@
      [
       "come",
       "k",
-      "th",
-      "thumb"
+      "s",
+      "sum"
      ],
      [
       "check",
@@ -31850,9 +31850,9 @@
     ],
     "syll": [
      [
-      "person",
-      "per",
-      "son"
+      "postdate",
+      "post",
+      "date"
      ],
      [
       "sideways",
@@ -31860,19 +31860,19 @@
       "ways"
      ],
      [
-      "daylight",
-      "day",
-      "light"
+      "pancake",
+      "pan",
+      "cake"
      ],
      [
-      "permission",
-      "per",
-      "mission"
+      "backboard",
+      "back",
+      "board"
      ],
      [
-      "halfway",
-      "half",
-      "way"
+      "alongside",
+      "along",
+      "side"
      ]
     ]
    },
@@ -32065,7 +32065,7 @@
     {
      "day": 5,
      "wrf": [
-      "project",
+      "register",
       "received",
       "retelling",
       "decline",
@@ -32073,7 +32073,7 @@
       "deliberately"
      ],
      "nwf": [
-      "nonmiction",
+      "deporation",
       "spation",
       "deminition",
       "plotection"
@@ -32477,8 +32477,8 @@
      [
       "sun",
       "s",
-      "b",
-      "bun"
+      "n",
+      "none"
      ],
      [
       "pot",
@@ -32495,19 +32495,9 @@
     ],
     "syll": [
      [
-      "person",
-      "per",
-      "son"
-     ],
-     [
-      "outweigh",
-      "out",
-      "weigh"
-     ],
-     [
-      "household",
-      "house",
-      "hold"
+      "payroll",
+      "pay",
+      "roll"
      ],
      [
       "streetcar",
@@ -32515,9 +32505,19 @@
       "car"
      ],
      [
+      "household",
+      "house",
+      "hold"
+     ],
+     [
       "overall",
       "over",
       "all"
+     ],
+     [
+      "underwater",
+      "under",
+      "water"
      ]
     ]
    },
@@ -32643,11 +32643,11 @@
      "day": 1,
      "wrf": [
       "subtraction",
-      "abrupt",
+      "reform",
       "abstract",
       "export",
-      "subscribe",
-      "rupture"
+      "corrupt",
+      "inscribe"
      ],
      "nwf": [
       "sudscription",
@@ -32668,18 +32668,18 @@
      ],
      "nwf": [
       "tlansformer",
-      "sudscribe",
       "colrupt",
-      "ruptule"
+      "ruptule",
+      "plescribe"
      ]
     },
     {
      "day": 3,
      "wrf": [
-      "interrupt",
+      "formal",
       "description",
       "extracted",
-      "subtract",
+      "forming",
       "support",
       "formation"
      ],
@@ -32714,7 +32714,7 @@
       "descriptive",
       "formed",
       "transcript",
-      "formal",
+      "interrupt",
       "performance"
      ],
      "nwf": [
@@ -33116,8 +33116,8 @@
      [
       "deal",
       "d",
-      "m",
-      "meal"
+      "r",
+      "reel"
      ],
      [
       "seat",
@@ -33134,20 +33134,15 @@
      [
       "part",
       "p",
-      "k",
-      "cart"
+      "ch",
+      "chart"
      ]
     ],
     "syll": [
      [
-      "oversight",
-      "over",
-      "sight"
-     ],
-     [
-      "haircut",
-      "hair",
-      "cut"
+      "downhill",
+      "down",
+      "hill"
      ],
      [
       "afternoon",
@@ -33155,14 +33150,19 @@
       "noon"
      ],
      [
-      "underworld",
-      "under",
-      "world"
+      "halfway",
+      "half",
+      "way"
      ],
      [
-      "mankind",
-      "man",
-      "kind"
+      "streetcar",
+      "street",
+      "car"
+     ],
+     [
+      "payroll",
+      "pay",
+      "roll"
      ]
     ]
    },
@@ -33288,11 +33288,11 @@
      "day": 1,
      "wrf": [
       "summit",
-      "deflect",
+      "inject",
       "reflection",
       "inflect",
       "permission",
-      "specificity"
+      "constructive"
      ],
      "nwf": [
       "specimic",
@@ -33307,8 +33307,8 @@
       "objection",
       "especially",
       "limit",
-      "spectrogram",
-      "respect",
+      "projection",
+      "reject",
       "construction"
      ],
      "nwf": [
@@ -33322,16 +33322,16 @@
      "day": 3,
      "wrf": [
       "commit",
-      "commitment",
-      "instruction",
-      "commission",
-      "specifically",
-      "transmit"
+      "destruction",
+      "specimen",
+      "reflect",
+      "spectrum",
+      "deflect"
      ],
      "nwf": [
+      "plescribe",
       "ruptule",
       "colrupt",
-      "sudscribe",
       "tlansformer"
      ]
     },
@@ -33339,11 +33339,11 @@
      "day": 4,
      "wrf": [
       "dismiss",
-      "permitted",
+      "admission",
       "inspector",
-      "destruction",
-      "omission",
-      "reflective"
+      "spectrogram",
+      "reflex",
+      "emit"
      ],
      "nwf": [
       "tlansform",
@@ -33356,11 +33356,11 @@
      "day": 5,
      "wrf": [
       "trajectory",
-      "reflect",
+      "commission",
       "inspect",
       "injection",
       "special",
-      "suspected"
+      "misspelling"
      ],
      "nwf": [
       "renember",
@@ -33784,29 +33784,29 @@
     ],
     "syll": [
      [
-      "rainstorm",
-      "rain",
-      "storm"
+      "footnote",
+      "foot",
+      "note"
      ],
      [
-      "wishbone",
-      "wish",
+      "underlying",
+      "under",
+      "lying"
+     ],
+     [
+      "understory",
+      "under",
+      "story"
+     ],
+     [
+      "backbone",
+      "back",
       "bone"
      ],
      [
-      "backboard",
-      "back",
-      "board"
-     ],
-     [
-      "setback",
-      "set",
-      "back"
-     ],
-     [
-      "anything",
-      "any",
-      "thing"
+      "hallway",
+      "hall",
+      "way"
      ]
     ]
    },
@@ -33932,9 +33932,9 @@
      "day": 1,
      "wrf": [
       "reduction",
-      "curtain",
+      "vivid",
       "reverse",
-      "audition",
+      "regress",
       "converting",
       "evidence"
      ],
@@ -33949,8 +33949,8 @@
      "day": 2,
      "wrf": [
       "reduce",
-      "auditory",
-      "production",
+      "concur",
+      "provide",
       "currently",
       "invert",
       "curled"
@@ -33966,11 +33966,11 @@
      "day": 3,
      "wrf": [
       "progress",
-      "accuracy",
+      "introduce",
       "occur",
-      "audible",
+      "currency",
       "gradually",
-      "versus"
+      "induce"
      ],
      "nwf": [
       "pelmission",
@@ -33982,9 +33982,9 @@
     {
      "day": 4,
      "wrf": [
-      "reversed",
+      "aggressive",
       "irreversible",
-      "accurately",
+      "visibly",
       "audio",
       "congress",
       "grader"
@@ -33999,17 +33999,17 @@
     {
      "day": 5,
      "wrf": [
-      "cursive",
-      "reversing",
+      "recur",
+      "auditory",
       "provided",
-      "regress",
+      "versus",
       "curling",
-      "universal"
+      "curtain"
      ],
      "nwf": [
+      "plescribe",
       "ruptule",
       "colrupt",
-      "sudscribe",
       "tlansformer"
      ]
     }
@@ -34425,29 +34425,29 @@
     ],
     "syll": [
      [
-      "cutaway",
-      "cut",
-      "away"
+      "classroom",
+      "class",
+      "room"
      ],
      [
-      "underside",
+      "haircut",
+      "hair",
+      "cut"
+     ],
+     [
+      "understood",
       "under",
-      "side"
+      "stood"
      ],
      [
-      "footnote",
-      "foot",
-      "note"
+      "roadway",
+      "road",
+      "way"
      ],
      [
-      "downhill",
-      "down",
-      "hill"
-     ],
-     [
-      "streetcar",
-      "street",
-      "car"
+      "upload",
+      "up",
+      "load"
      ]
     ]
    },
@@ -34607,7 +34607,7 @@
      "day": 3,
      "wrf": [
       "disappear",
-      "regular",
+      "various",
       "forward",
       "failure",
       "officer",
@@ -35070,29 +35070,29 @@
     ],
     "syll": [
      [
-      "keynote",
-      "key",
-      "note"
+      "cardboard",
+      "card",
+      "board"
      ],
      [
-      "understood",
-      "under",
-      "stood"
+      "broadcast",
+      "broad",
+      "cast"
      ],
      [
-      "afternoon",
-      "after",
-      "noon"
+      "payroll",
+      "pay",
+      "roll"
      ],
      [
-      "underground",
-      "under",
-      "ground"
+      "upload",
+      "up",
+      "load"
      ],
      [
-      "feedback",
-      "feed",
-      "back"
+      "mankind",
+      "man",
+      "kind"
      ]
     ]
    },
@@ -35628,19 +35628,9 @@
     ],
     "syll": [
      [
-      "lifeboat",
-      "life",
-      "boat"
-     ],
-     [
-      "wartime",
-      "war",
-      "time"
-     ],
-     [
-      "cardboard",
-      "card",
-      "board"
+      "sawmill",
+      "saw",
+      "mill"
      ],
      [
       "outside",
@@ -35651,6 +35641,16 @@
       "streetcar",
       "street",
       "car"
+     ],
+     [
+      "overnight",
+      "over",
+      "night"
+     ],
+     [
+      "overload",
+      "over",
+      "load"
      ]
     ]
    },
@@ -35778,7 +35778,7 @@
       "coming",
       "common",
       "confirm",
-      "conservation",
+      "irreversible",
       "completely",
       "construction"
      ],
@@ -35803,14 +35803,14 @@
       "conmon",
       "conplex",
       "conputer",
-      "improde"
+      "conmine"
      ]
     },
     {
      "day": 3,
      "wrf": [
       "consistent",
-      "converting",
+      "conservation",
       "competition",
       "conclusion",
       "complete",
@@ -36254,8 +36254,8 @@
      [
       "whole",
       "h",
-      "p",
-      "pole"
+      "s",
+      "soul"
      ],
      [
       "ride",
@@ -36272,16 +36272,6 @@
     ],
     "syll": [
      [
-      "watertight",
-      "water",
-      "tight"
-     ],
-     [
-      "format",
-      "form",
-      "at"
-     ],
-     [
       "understory",
       "under",
       "story"
@@ -36292,9 +36282,19 @@
       "lying"
      ],
      [
-      "upside",
-      "up",
+      "roadside",
+      "road",
       "side"
+     ],
+     [
+      "downhill",
+      "down",
+      "hill"
+     ],
+     [
+      "sidetrack",
+      "side",
+      "track"
      ]
     ]
    },
@@ -36419,12 +36419,12 @@
     {
      "day": 1,
      "wrf": [
-      "consciously",
-      "beneficial",
       "especially",
-      "essential",
-      "musician",
-      "fictitious"
+      "differential",
+      "essentially",
+      "credential",
+      "unconscious",
+      "beautician"
      ],
      "nwf": [
       "imitial",
@@ -36436,12 +36436,12 @@
     {
      "day": 2,
      "wrf": [
-      "beautician",
       "official",
-      "commercially",
-      "statistician",
+      "beneficial",
       "politician",
-      "crucial"
+      "essential",
+      "statistician",
+      "musician"
      ],
      "nwf": [
       "stecial",
@@ -36453,15 +36453,15 @@
     {
      "day": 3,
      "wrf": [
-      "initially",
-      "delicious",
-      "clinician",
-      "facial",
+      "electrician",
+      "spacious",
+      "precious",
       "pretentious",
-      "spatial"
+      "atrocious",
+      "influential"
      ],
      "nwf": [
-      "improde",
+      "conmine",
       "conputer",
       "conplex",
       "conmon"
@@ -36470,12 +36470,12 @@
     {
      "day": 4,
      "wrf": [
-      "contentious",
-      "confidential",
-      "credential",
-      "crucially",
-      "differential",
-      "electrician"
+      "fictitious",
+      "spatial",
+      "delicious",
+      "consciously",
+      "partially",
+      "pernicious"
      ],
      "nwf": [
       "conparison",
@@ -36487,12 +36487,12 @@
     {
      "day": 5,
      "wrf": [
-      "pernicious",
-      "influential",
-      "physician",
+      "optician",
+      "confidential",
       "nutritious",
-      "atrocious",
-      "partially"
+      "residential",
+      "facial",
+      "conscious"
      ],
      "nwf": [
       "poisomous",
@@ -36887,8 +36887,8 @@
      [
       "nail",
       "n",
-      "p",
-      "pail"
+      "f",
+      "fail"
      ],
      [
       "hop",
@@ -36917,29 +36917,29 @@
     ],
     "syll": [
      [
-      "permission",
-      "per",
-      "mission"
+      "footnote",
+      "foot",
+      "note"
      ],
      [
-      "anything",
-      "any",
-      "thing"
+      "watertight",
+      "water",
+      "tight"
+     ],
+     [
+      "passport",
+      "pass",
+      "port"
+     ],
+     [
+      "mountainside",
+      "mountain",
+      "side"
      ],
      [
       "setback",
       "set",
       "back"
-     ],
-     [
-      "hallway",
-      "hall",
-      "way"
-     ],
-     [
-      "alongside",
-      "along",
-      "side"
      ]
     ]
    },
@@ -37476,29 +37476,29 @@
     ],
     "syll": [
      [
+      "postdate",
+      "post",
+      "date"
+     ],
+     [
       "bedside",
       "bed",
       "side"
      ],
      [
-      "upside",
-      "up",
-      "side"
-     ],
-     [
-      "roadside",
-      "road",
-      "side"
-     ],
-     [
-      "sawmill",
-      "saw",
-      "mill"
-     ],
-     [
       "underworld",
       "under",
       "world"
+     ],
+     [
+      "haircut",
+      "hair",
+      "cut"
+     ],
+     [
+      "upside",
+      "up",
+      "side"
      ]
     ]
    },
@@ -37641,7 +37641,7 @@
      "day": 2,
      "wrf": [
       "technician",
-      "cherry",
+      "chrysalis",
       "kitchen",
       "cholera",
       "atmosphere",
@@ -37699,7 +37699,7 @@
       "unchanged"
      ],
      "nwf": [
-      "improde",
+      "conmine",
       "conputer",
       "conplex",
       "conmon"
@@ -38108,8 +38108,8 @@
      [
       "year",
       "y",
-      "d",
-      "deer"
+      "sh",
+      "sheer"
      ],
      [
       "lawn",
@@ -38120,29 +38120,29 @@
     ],
     "syll": [
      [
+      "alongside",
+      "along",
+      "side"
+     ],
+     [
       "sidetrack",
       "side",
       "track"
      ],
      [
-      "nearby",
-      "near",
-      "by"
+      "landholding",
+      "land",
+      "holding"
      ],
      [
-      "outweigh",
-      "out",
-      "weigh"
-     ],
-     [
-      "upside",
+      "uphill",
       "up",
-      "side"
+      "hill"
      ],
      [
-      "sunlight",
-      "sun",
-      "light"
+      "wildlife",
+      "wild",
+      "life"
      ]
     ]
    },
@@ -38735,8 +38735,8 @@
      [
       "lamp",
       "l",
-      "d",
-      "damp"
+      "k",
+      "camp"
      ],
      [
       "one",
@@ -38759,8 +38759,8 @@
      [
       "fix",
       "f",
-      "m",
-      "mix"
+      "ch",
+      "chicks"
      ]
     ],
     "syll": [
@@ -38770,24 +38770,24 @@
       "way"
      ],
      [
-      "mankind",
-      "man",
-      "kind"
+      "payroll",
+      "pay",
+      "roll"
      ],
      [
-      "postwar",
-      "post",
-      "war"
+      "copyright",
+      "copy",
+      "right"
      ],
      [
-      "footnote",
-      "foot",
-      "note"
+      "outright",
+      "out",
+      "right"
      ],
      [
-      "uphold",
-      "up",
-      "hold"
+      "bedside",
+      "bed",
+      "side"
      ]
     ]
    },
@@ -38946,7 +38946,7 @@
     {
      "day": 3,
      "wrf": [
-      "columnist",
+      "solemnly",
       "rhino",
       "mnemonic",
       "psychologist",
@@ -38984,7 +38984,7 @@
       "rhombus",
       "rhinoceros",
       "randomness",
-      "solemnly",
+      "columnist",
       "pseudonym"
      ],
      "nwf": [
@@ -39410,29 +39410,29 @@
     ],
     "syll": [
      [
-      "bedtime",
-      "bed",
-      "time"
+      "lunchroom",
+      "lunch",
+      "room"
      ],
      [
-      "alongside",
-      "along",
-      "side"
+      "driveway",
+      "drive",
+      "way"
      ],
      [
-      "something",
-      "some",
-      "thing"
+      "starlight",
+      "star",
+      "light"
      ],
      [
-      "household",
-      "house",
-      "hold"
-     ],
-     [
-      "overview",
+      "override",
       "over",
-      "view"
+      "ride"
+     ],
+     [
+      "overload",
+      "over",
+      "load"
      ]
     ]
    },
@@ -39557,12 +39557,12 @@
     {
      "day": 1,
      "wrf": [
-      "biosphere",
-      "calligraphy",
-      "telepathy",
-      "etymology",
-      "biological",
-      "phonological"
+      "photocell",
+      "cosmology",
+      "telecast",
+      "stratigraphy",
+      "meteorology",
+      "biometric"
      ],
      "nwf": [
       "palagraph",
@@ -39574,12 +39574,12 @@
     {
      "day": 2,
      "wrf": [
-      "ology",
-      "earphone",
-      "mythology",
-      "sociology",
-      "autograph",
-      "headphone"
+      "polygraph",
+      "graphical",
+      "geology",
+      "graphics",
+      "microbiology",
+      "biochemistry"
      ],
      "nwf": [
       "teregraph",
@@ -39591,12 +39591,12 @@
     {
      "day": 3,
      "wrf": [
-      "phoneme",
-      "trigraph",
-      "cosmology",
-      "photometer",
-      "microphone",
-      "phonics"
+      "chronology",
+      "biosphere",
+      "tautology",
+      "biological",
+      "graphically",
+      "cartographic"
      ],
      "nwf": [
       "rhatsody",
@@ -39608,12 +39608,12 @@
     {
      "day": 4,
      "wrf": [
-      "meteorology",
-      "chronology",
-      "ecology",
-      "demography",
-      "polygraph",
-      "psychology"
+      "etymology",
+      "photon",
+      "biochemist",
+      "archaeology",
+      "homophone",
+      "ology"
      ],
      "nwf": [
       "soremn",
@@ -39625,12 +39625,12 @@
     {
      "day": 5,
      "wrf": [
-      "photon",
-      "pathology",
-      "graphy",
-      "biologically",
+      "trigraph",
+      "photometer",
+      "morphology",
       "telescope",
-      "seismograph"
+      "biographer",
+      "headphone"
      ],
      "nwf": [
       "eberything",
@@ -40054,9 +40054,9 @@
     ],
     "syll": [
      [
-      "undermine",
-      "under",
-      "mine"
+      "broadcast",
+      "broad",
+      "cast"
      ],
      [
       "hallway",
@@ -40064,19 +40064,19 @@
       "way"
      ],
      [
-      "driveway",
-      "drive",
-      "way"
+      "afternoon",
+      "after",
+      "noon"
      ],
      [
-      "outweigh",
+      "outright",
       "out",
-      "weigh"
+      "right"
      ],
      [
-      "passport",
-      "pass",
-      "port"
+      "rainstorm",
+      "rain",
+      "storm"
      ]
     ]
    },
@@ -40699,29 +40699,29 @@
     ],
     "syll": [
      [
-      "daylight",
-      "day",
-      "light"
+      "outright",
+      "out",
+      "right"
      ],
      [
-      "postwar",
+      "fortnight",
+      "fort",
+      "night"
+     ],
+     [
+      "overnight",
+      "over",
+      "night"
+     ],
+     [
+      "perform",
+      "per",
+      "form"
+     ],
+     [
+      "postmark",
       "post",
-      "war"
-     ],
-     [
-      "nearby",
-      "near",
-      "by"
-     ],
-     [
-      "feedback",
-      "feed",
-      "back"
-     ],
-     [
-      "pathway",
-      "path",
-      "way"
+      "mark"
      ]
     ]
    },
@@ -41340,29 +41340,29 @@
     ],
     "syll": [
      [
+      "weekday",
+      "week",
+      "day"
+     ],
+     [
+      "shipbuilding",
+      "ship",
+      "building"
+     ],
+     [
+      "railroad",
+      "rail",
+      "road"
+     ],
+     [
       "understand",
       "under",
       "stand"
      ],
      [
-      "roadway",
-      "road",
-      "way"
-     ],
-     [
-      "mountainside",
-      "mountain",
-      "side"
-     ],
-     [
-      "landholding",
-      "land",
-      "holding"
-     ],
-     [
-      "payroll",
-      "pay",
-      "roll"
+      "streetcar",
+      "street",
+      "car"
      ]
     ]
    },
@@ -41504,7 +41504,7 @@
     {
      "day": 2,
      "wrf": [
-      "wordy",
+      "worthy",
       "worker",
       "steelworks",
       "workable",
@@ -41524,7 +41524,7 @@
       "worsen",
       "worry",
       "worked",
-      "worthy",
+      "wordy",
       "framework",
       "shipworm"
      ],
@@ -41985,29 +41985,29 @@
     ],
     "syll": [
      [
-      "network",
-      "net",
-      "work"
+      "someone",
+      "some",
+      "one"
      ],
      [
-      "watertight",
-      "water",
-      "tight"
-     ],
-     [
-      "workbook",
-      "work",
-      "book"
-     ],
-     [
-      "railroad",
-      "rail",
-      "road"
+      "daytime",
+      "day",
+      "time"
      ],
      [
       "outright",
       "out",
       "right"
+     ],
+     [
+      "overall",
+      "over",
+      "all"
+     ],
+     [
+      "haircut",
+      "hair",
+      "cut"
      ]
     ]
    },
@@ -42627,29 +42627,29 @@
     ],
     "syll": [
      [
-      "weekday",
-      "week",
-      "day"
+      "password",
+      "pass",
+      "word"
      ],
      [
-      "underwater",
-      "under",
-      "water"
+      "mailbox",
+      "mail",
+      "box"
      ],
      [
-      "lifeboat",
-      "life",
-      "boat"
+      "anything",
+      "any",
+      "thing"
      ],
      [
-      "wildcat",
-      "wild",
-      "cat"
+      "anyway",
+      "any",
+      "way"
      ],
      [
-      "household",
-      "house",
-      "hold"
+      "outright",
+      "out",
+      "right"
      ]
     ]
    },
@@ -42774,12 +42774,12 @@
     {
      "day": 1,
      "wrf": [
-      "slaughter",
       "distraught",
+      "slaughter",
+      "laughter",
       "onslaught",
       "afterthought",
-      "natural",
-      "individual"
+      "natural"
      ],
      "nwf": [
       "distlaught",
@@ -42791,12 +42791,12 @@
     {
      "day": 2,
      "wrf": [
+      "individual",
       "advance",
       "physical",
       "unusual",
       "average",
-      "audience",
-      "referral"
+      "audience"
      ],
      "nwf": [
       "imitial",
@@ -42811,9 +42811,9 @@
       "healing",
       "brutal",
       "derivational",
+      "referral",
       "especially",
-      "accidentally",
-      "forage"
+      "accidentally"
      ],
      "nwf": [
       "diffelence",
@@ -42825,12 +42825,12 @@
     {
      "day": 4,
      "wrf": [
+      "forage",
       "denial",
       "luggage",
       "ally",
       "officially",
-      "artificial",
-      "logical"
+      "artificial"
      ],
      "nwf": [
       "fierdwork",
@@ -42842,12 +42842,12 @@
     {
      "day": 5,
      "wrf": [
+      "logical",
       "gradually",
       "shortage",
       "balanced",
       "coincidence",
-      "illegal",
-      "vertical"
+      "illegal"
      ],
      "nwf": [
       "worting",
