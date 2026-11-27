@@ -136,23 +136,21 @@
    ]
   },
   "blends": {
-   "start": "set",
+   "start": "clap",
    "words": [
-    "set",
-    "sat",
-    "at",
-    "it",
-    "bit",
-    "but",
-    "bus"
+    "clap",
+    "clip",
+    "flip",
+    "flop",
+    "stop",
+    "step"
    ],
    "clues": [
-    "Change the e to a.",
-    "Take off the s.",
     "Change the a to i.",
-    "Add a b at the start.",
-    "Change the i to u.",
-    "Change the t to s."
+    "Change the c to f.",
+    "Change the i to o.",
+    "Change the fl to st.",
+    "Change the o to e."
    ]
   },
   "blends|cl": {
@@ -192,19 +190,21 @@
    ]
   },
   "blends|st": {
-   "start": "past",
+   "start": "stop",
    "words": [
-    "past",
-    "cast",
-    "last",
-    "lost",
-    "lot"
+    "stop",
+    "stops",
+    "steps",
+    "step",
+    "stem",
+    "stems"
    ],
    "clues": [
-    "Change the p to c.",
-    "Change the c to l.",
-    "Change the a to o.",
-    "Take off the s."
+    "Add -s.",
+    "Change the o to e.",
+    "Take off -s.",
+    "Change the p to m.",
+    "Add -s."
    ]
   },
   "ck-tch": {
@@ -286,23 +286,23 @@
    ]
   },
   "cvc-mix": {
-   "start": "dot",
+   "start": "pit",
    "words": [
-    "dot",
-    "cot",
-    "cat",
-    "at",
-    "hat",
-    "sat",
-    "sad"
+    "pit",
+    "pot",
+    "pet",
+    "pen",
+    "pin",
+    "pun",
+    "pup"
    ],
    "clues": [
-    "Change the d to c.",
-    "Change the o to a.",
-    "Take off the c.",
-    "Add an h at the start.",
-    "Change the h to s.",
-    "Change the t to d."
+    "Change the i to o.",
+    "Change the o to e.",
+    "Change the t to n.",
+    "Change the e to i.",
+    "Change the i to u.",
+    "Change the n to p."
    ]
   },
   "cvc-mix|e": {
@@ -382,23 +382,23 @@
    ]
   },
   "dig": {
-   "start": "his",
+   "start": "whip",
    "words": [
-    "his",
-    "has",
-    "had",
-    "chad",
+    "whip",
+    "chip",
+    "ship",
+    "shop",
+    "chop",
     "chat",
-    "cat",
-    "sat"
+    "that"
    ],
    "clues": [
-    "Change the i to a.",
-    "Change the s to d.",
-    "Add a c at the start.",
-    "Change the d to t.",
-    "Take off the h.",
-    "Change the c to s."
+    "Change the wh to ch.",
+    "Change the ch to sh.",
+    "Change the i to o.",
+    "Change the sh to ch.",
+    "Change the op to at.",
+    "Change the ch to th."
    ]
   },
   "dig|ch": {
@@ -454,23 +454,21 @@
    ]
   },
   "dig|wh": {
-   "start": "whiz",
+   "start": "whips",
    "words": [
-    "whiz",
+    "whips",
     "whip",
+    "whiz",
     "whim",
-    "him",
-    "hip",
-    "chip",
-    "ship"
+    "when",
+    "what"
    ],
    "clues": [
-    "Change the z to p.",
-    "Change the p to m.",
-    "Take off the w.",
-    "Change the m to p.",
-    "Add a c at the start.",
-    "Change the c to s."
+    "Take off -s.",
+    "Change the p to z.",
+    "Change the z to m.",
+    "Change the im to en.",
+    "Change the en to at."
    ]
   },
   "ee-ea": {
@@ -766,23 +764,23 @@
    ]
   },
   "og1-04": {
-   "start": "cup",
+   "start": "cap",
    "words": [
-    "cup",
     "cap",
+    "cup",
+    "cub",
+    "cab",
     "cat",
-    "at",
-    "sat",
-    "set",
-    "pet"
+    "cot",
+    "cop"
    ],
    "clues": [
+    "Change the a to u.",
+    "Change the p to b.",
     "Change the u to a.",
-    "Change the p to t.",
-    "Take off the c.",
-    "Add an s at the start.",
-    "Change the a to e.",
-    "Change the s to p."
+    "Change the b to t.",
+    "Change the a to o.",
+    "Change the t to p."
    ]
   },
   "og1-04|c": {
@@ -838,41 +836,37 @@
    ]
   },
   "og1-06": {
-   "start": "my",
+   "start": "fox",
    "words": [
-    "my",
-    "me",
-    "he",
-    "the",
-    "them",
-    "then",
-    "when"
+    "fox",
+    "fix",
+    "six",
+    "mix",
+    "mixes",
+    "fixes"
    ],
    "clues": [
-    "Change the y to e.",
-    "Change the m to h.",
-    "Add a t at the start.",
-    "Add an m at the end.",
-    "Change the m to n.",
-    "Change the t to w."
+    "Change the o to i.",
+    "Change the f to s.",
+    "Change the s to m.",
+    "Add -es.",
+    "Change the m to f."
    ]
   },
   "og1-06|qu": {
-   "start": "equip",
+   "start": "quit",
    "words": [
-    "equip",
-    "quip",
-    "quiz",
-    "quib",
     "quit",
-    "quiet"
+    "quiz",
+    "quip",
+    "equip",
+    "equips"
    ],
    "clues": [
-    "Take off the e.",
-    "Change the p to z.",
-    "Change the z to b.",
-    "Change the b to t.",
-    "Put an e between the i and the t."
+    "Change the t to z.",
+    "Change the z to p.",
+    "Add an e at the start.",
+    "Add -s."
    ]
   },
   "og1-06|x": {
@@ -892,43 +886,39 @@
    ]
   },
   "og1-10": {
-   "start": "the",
+   "start": "cup",
    "words": [
-    "the",
-    "they",
-    "then",
-    "hen",
-    "hens",
-    "pens",
-    "pins"
+    "cup",
+    "cups",
+    "caps",
+    "cats",
+    "hats",
+    "hat"
    ],
    "clues": [
-    "Add a y at the end.",
-    "Change the y to n.",
-    "Take off the t.",
-    "Add an s at the end.",
-    "Change the h to p.",
-    "Change the e to i."
+    "Add -s.",
+    "Change the u to a.",
+    "Change the p to t.",
+    "Change the c to h.",
+    "Take off -s."
    ]
   },
   "og1-11": {
-   "start": "has",
+   "start": "dog's",
    "words": [
-    "has",
-    "his",
-    "is",
-    "in",
-    "on",
-    "one",
-    "bone"
+    "dog's",
+    "hog's",
+    "hen's",
+    "pen's",
+    "pig's",
+    "bug's"
    ],
    "clues": [
-    "Change the a to i.",
-    "Take off the h.",
-    "Change the s to n.",
-    "Change the i to o.",
-    "Add a silent e.",
-    "Add a b at the start."
+    "Change the d to h.",
+    "Change the og to en.",
+    "Change the h to p.",
+    "Change the en to ig.",
+    "Change the pi to bu."
    ]
   },
   "og1-13": {
@@ -3556,177 +3546,159 @@
    ]
   },
   "vccv": {
-   "start": "pet",
+   "start": "number",
    "words": [
-    "pet",
-    "set",
-    "sat",
-    "at",
-    "it",
-    "bit",
-    "but"
+    "number",
+    "numbers",
+    "lumbers",
+    "lumber",
+    "slumber",
+    "slumbers"
    ],
    "clues": [
-    "Change the p to s.",
-    "Change the e to a.",
-    "Take off the s.",
-    "Change the a to i.",
-    "Add a b at the start.",
-    "Change the i to u."
+    "Add -s.",
+    "Change the n to l.",
+    "Take off -s.",
+    "Add an s at the start.",
+    "Add -s."
    ]
   },
   "vccvce": {
-   "start": "pet",
+   "start": "pancake",
    "words": [
-    "pet",
-    "set",
-    "sat",
-    "at",
-    "it",
-    "bit",
-    "but"
+    "pancake",
+    "pancakes",
+    "cupcakes",
+    "cupcake",
+    "mistake",
+    "mistakes"
    ],
    "clues": [
-    "Change the p to s.",
-    "Change the e to a.",
-    "Take off the s.",
-    "Change the a to i.",
-    "Add a b at the start.",
-    "Change the i to u."
+    "Add -s.",
+    "Change the pan to cup.",
+    "Take off -s.",
+    "Change the cupc to mist.",
+    "Add -s."
    ]
   },
   "vccvce|a_e": {
-   "start": "cake",
+   "start": "mistake",
    "words": [
-    "cake",
-    "lake",
-    "late",
-    "plate",
-    "plane",
-    "lane",
-    "cane"
+    "mistake",
+    "mistakes",
+    "pancakes",
+    "pancake",
+    "cupcake",
+    "cupcakes"
    ],
    "clues": [
-    "Change the c to l.",
-    "Change the k to t.",
-    "Add a p at the start.",
-    "Change the t to n.",
-    "Take off the p.",
-    "Change the l to c."
+    "Add -s.",
+    "Change the mist to panc.",
+    "Take off -s.",
+    "Change the pan to cup.",
+    "Add -s."
    ]
   },
   "vccvce|i_e": {
-   "start": "fine",
+   "start": "decline",
    "words": [
-    "fine",
-    "line",
-    "like",
-    "likes",
-    "bikes",
-    "bike",
-    "mike"
+    "decline",
+    "declines",
+    "combines",
+    "combine",
+    "confine",
+    "confines"
    ],
    "clues": [
-    "Change the f to l.",
-    "Change the n to k.",
-    "Add an s at the end.",
-    "Change the l to b.",
-    "Take off the s.",
-    "Change the b to m."
+    "Add -s.",
+    "Change the decl to comb.",
+    "Take off -s.",
+    "Change the mb to nf.",
+    "Add -s."
    ]
   },
   "vccvce|o_e": {
-   "start": "home",
+   "start": "wishbones",
    "words": [
-    "home",
-    "hope",
-    "rope",
-    "rode",
-    "rod"
+    "wishbones",
+    "wishbone",
+    "backbone",
+    "backbones",
+    "trombones",
+    "trombone"
    ],
    "clues": [
-    "Change the m to p.",
-    "Change the h to r.",
-    "Change the p to d.",
-    "Take off the silent e."
+    "Take off -s.",
+    "Change the wish to back.",
+    "Add -s.",
+    "Change the back to trom.",
+    "Take off -s."
    ]
   },
   "vccv|a": {
-   "start": "cat",
+   "start": "tablet",
    "words": [
-    "cat",
-    "hat",
-    "hats",
-    "cats",
-    "caps",
-    "cap",
-    "cab"
+    "tablet",
+    "tablets",
+    "baskets",
+    "basket",
+    "magnet",
+    "magnets"
    ],
    "clues": [
-    "Change the c to h.",
-    "Add an s at the end.",
-    "Change the h to c.",
-    "Change the t to p.",
-    "Take off the s.",
-    "Change the p to b."
+    "Add -s.",
+    "Change the tabl to bask.",
+    "Take off -s.",
+    "Change the bask to magn.",
+    "Add -s."
    ]
   },
   "vccv|e": {
-   "start": "hen",
+   "start": "letter",
    "words": [
-    "hen",
-    "pen",
-    "pens",
-    "pets",
-    "pet",
-    "vet"
+    "letter",
+    "letters",
+    "setters",
+    "setter",
+    "better"
    ],
    "clues": [
-    "Change the h to p.",
-    "Add an s at the end.",
-    "Change the n to t.",
-    "Take off the s.",
-    "Change the p to v."
+    "Add -s.",
+    "Change the l to s.",
+    "Take off -s.",
+    "Change the s to b."
    ]
   },
   "vccv|i": {
-   "start": "pig",
+   "start": "mitten",
    "words": [
-    "pig",
-    "pigs",
-    "pins",
-    "pine",
-    "pin",
-    "fin",
-    "win"
+    "mitten",
+    "mittens",
+    "kittens",
+    "kitten",
+    "bitten"
    ],
    "clues": [
-    "Add an s at the end.",
-    "Change the g to n.",
-    "Change the s to e.",
-    "Take off the silent e.",
-    "Change the p to f.",
-    "Change the f to w."
+    "Add -s.",
+    "Change the m to k.",
+    "Take off -s.",
+    "Change the k to b."
    ]
   },
   "vccv|u": {
-   "start": "bug",
+   "start": "button",
    "words": [
-    "bug",
-    "tug",
-    "tub",
-    "tubs",
-    "rubs",
-    "rugs",
-    "rug"
+    "button",
+    "buttons",
+    "muttons",
+    "mutton",
+    "mutter"
    ],
    "clues": [
-    "Change the b to t.",
-    "Change the g to b.",
-    "Add an s at the end.",
-    "Change the t to r.",
-    "Change the b to g.",
-    "Take off the s."
+    "Add -s.",
+    "Change the b to m.",
+    "Take off -s.",
+    "Change the on to er."
    ]
   },
   "vce": {
@@ -3778,15 +3750,15 @@
     "likes",
     "bikes",
     "bike",
-    "mike"
+    "bite"
    ],
    "clues": [
     "Change the f to l.",
     "Change the n to k.",
-    "Add an s at the end.",
+    "Add -s.",
     "Change the l to b.",
-    "Take off the s.",
-    "Change the b to m."
+    "Take off -s.",
+    "Change the k to t."
    ]
   },
   "vce|o_e": {
@@ -3806,16 +3778,18 @@
    ]
   },
   "vce|u_e": {
-   "start": "fute",
+   "start": "mule",
    "words": [
-    "fute",
+    "mule",
+    "mute",
     "cute",
     "cube",
     "tube",
     "tub"
    ],
    "clues": [
-    "Change the f to c.",
+    "Change the l to t.",
+    "Change the m to c.",
     "Change the t to b.",
     "Change the c to t.",
     "Take off the silent e."

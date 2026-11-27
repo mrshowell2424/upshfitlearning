@@ -180,6 +180,10 @@ const NOTAWORD = new Set([
   // bell, blay is a small fish, knop an ornamental knob, and zar is not a
   // word at all -- the Russian ruler is czar or tsar.
   "mong", "dink", "jow", "blay", "knop", "zar",
+  // the same again at Level 1: chad is a name and otherwise the scrap a
+  // hole punch leaves, quib an obsolete form of quip, fute obsolete, and
+  // mike a name, which was the last rung of two ladders.
+  "chad", "quib", "fute", "mike",
 ]);
 
 
