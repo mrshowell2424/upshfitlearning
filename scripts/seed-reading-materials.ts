@@ -4561,10 +4561,22 @@ const ADAPTATIONS: Adaptation[] = [
     // the big letter and the dot, in any language, without reading a word of
     // it. The ordering was the only work and even that was signposted.
     //
-    // So the first card is lowercased and the end mark comes off the last one.
+    // So EVERY card is lowercased and the end mark comes off the last one.
     // Reordering now needs the sense of the sentence, and writing it out needs
     // the capital and the end mark put back -- which is the part a teacher
     // actually marks. The answer key still carries the sentence whole.
+    //
+    // Every card, not just the first. Lowercasing only the first left a name
+    // in the middle of the sentence holding its capital, so the digraphs
+    // sheet printed "chad" next to "Seth" under an instruction promising the
+    // cards have no capital letter -- two names, treated two ways, under a
+    // line that was false. Across the levels it was also Kim, Rosa, Leo,
+    // Theo, Myrtle, Buddy, Sydney, Michelle and I. Putting the name's capital
+    // back is now the child's job too, which is work worth doing and which
+    // the answer key shows them.
+    //
+    // Only the sentence-final mark comes off, so Theo, and Monday, keep their
+    // commas: that is the rule below, and a comma is inside the sentence.
     //
     // Only the sentence-final mark is removed. Commas stay: they are inside
     // the sentence rather than a cue to its edges, and taking them out would
@@ -4580,8 +4592,7 @@ const ADAPTATIONS: Adaptation[] = [
         "const sbRows = sents.map((s, si) => { const ws = s.split(' '); " +
           "const face = ws.map((w, i) => { " +
           "let t = i === ws.length - 1 ? w.replace(/[.!?]+$/, '') : w; " +
-          "if (i === 0) t = t.charAt(0).toLowerCase() + t.slice(1); " +
-          "return t; }); " +
+          "return t.charAt(0).toLowerCase() + t.slice(1); }); " +
           "const ord = face.map((w, i) => [w,",
       );
 
@@ -4597,8 +4608,7 @@ const ADAPTATIONS: Adaptation[] = [
         "Hint: the capital letter goes first, and the end mark goes last. " +
         "Read it, then write it.";
       if (!out.includes(hint)) return html;
-      return out.replace(
-        hint,
+      return out.split(hint).join(
         "Cut out the word cards. Put them in order to make a sentence. " +
           "The cards have no capital letter and no end mark \u2014 you add those " +
           "when you write it. Read it, then write it.",
