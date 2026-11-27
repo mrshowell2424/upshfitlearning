@@ -6726,16 +6726,16 @@ type Ramp = string[];
 // or the site is the new brand and every lesson page is still the old one.
 const FAMILIES: Record<string, Ramp> = {
   grey: ["FAFAFA", "F2F2F2", "E9E9E9", "8A8A8A", "5A5A5A", "333333", "111111"],
-  warm: ["FCF1F0", "EC9388", "E67364", "C83220"],
+  warm: ["FCF1F0", "EC9388", "E67364", "733A32"],
   // Amber is not a kit colour. It is kept because the format badges need a
   // sixth category and the kit gives four hues.
   amber: ["FFF6E8", "FFB13F", "8A5400"],
-  teal: ["F0F6F9", "89BECF", "67AAC2", "377387"],
+  teal: ["F0F6F9", "89BECF", "67AAC2", "345561"],
   // Blue is not a kit colour either -- it is the link blue, and the accent
   // the PBL materials are opened with.
   blue: ["EAF2FF", "4C9AFF", "2F6FD0", "16213E"],
-  lavender: ["F5F2FA", "B19FDB", "9B82D0", "7758C0"],
-  pink: ["FBF0F4", "DE8FAD", "D46E94", "BC376A"],
+  lavender: ["F5F2FA", "B19FDB", "9B82D0", "4E4168"],
+  pink: ["FBF0F4", "DE8FAD", "D46E94", "6A374A"],
 };
 
 function channel(v: number): number {
