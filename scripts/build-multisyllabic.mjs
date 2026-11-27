@@ -376,7 +376,8 @@ const MORPHEME = new Set(
 const stemCache = new Map();
 /** The stems this sheet's own ten words are built on. */
 function bankStems(key, m, where) {
-  if (stemCache.has(key)) return stemCache.get(key);
+  const ck = `${key}|${m}`;
+  if (stemCache.has(ck)) return stemCache.get(ck);
   const out = new Set();
   for (const w of ((PARTW[key] || {}).real || [])) {
     const x = String(w).toLowerCase();
@@ -384,20 +385,33 @@ function bankStems(key, m, where) {
       out.add(where === "prefix" ? x.slice(m.length) : x.slice(0, -m.length));
     }
   }
-  stemCache.set(key, out);
+  stemCache.set(ck, out);
   return out;
 }
 function builtFromMorpheme(word, q, key) {
   if (!MORPHEME.has(key.split("|")[0])) return true;
   const where = /-$/.test(q) ? "prefix" : /^-/.test(q) ? "suffix" : null;
   if (!where) return true;
-  const m = q.replace(/^-|-$/g, "");
+  // A key may name alternatives -- "con-/com-" is one sheet teaching both --
+  // and a word only has to be built from one of them. Splitting that key on
+  // its outer hyphens alone leaves "con-/com", which nothing starts with, so
+  // this rule emptied the whole con- sheet until alts() was asked instead.
+  return alts(q).some((a) => builtFromOne(word, a, where, key));
+}
+function builtFromOne(word, a, where, key) {
+  const m = a.replace(/^-|-$/g, "");
+  if (!m) return true;
   // The ending hits() allowed comes off first: "listing" is list + ing, and
   // testing it whole would read the "ist" in the middle as the suffix.
   const bare = where === "suffix" && !word.endsWith(m) ? word.replace(SUFFIX, "") : word;
   if (where === "prefix" ? !bare.startsWith(m) : !bare.endsWith(m)) return false;
   const rest = where === "prefix" ? bare.slice(m.length) : bare.slice(0, -m.length);
-  if (rest.length < 2) return false;
+  // Three letters, not two. "es" and "on" are both words, so two let iron
+  // onto the ir- sheet, and comes and cones onto the con- one: a two-letter
+  // prefix leaving a two-letter remnant has not found a morpheme, it has
+  // found a coincidence. Nothing real is lost -- immobile still leaves
+  // mobile, illegal leaves legal, import leaves port.
+  if (rest.length < 3) return false;
   // A free word is a stem. So is a bound one the sheet itself is built on:
   // protect, produce, progress, provide and project give tect, duce, gress,
   // vide and ject, none of which stands alone and all of which are real

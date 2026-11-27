@@ -2314,13 +2314,13 @@
     "prescribe",
     "subscribe",
     "inscribe",
-    "insect"
+    "inscribes"
    ],
    "clues": [
-    "Change de- to pre-.",
-    "Change pre- to sub-.",
-    "Change sub- to in-.",
-    "Keep in-. Change scribe to sect."
+    "Change the de to pre.",
+    "Change the pre to sub.",
+    "Change the sub to in.",
+    "Add -s."
    ]
   },
   "og4-01|tract": {
@@ -2490,19 +2490,19 @@
    ]
   },
   "og4-03|cur/curs": {
-   "start": "recur",
+   "start": "occur",
    "words": [
+    "occur",
+    "occurs",
+    "recurs",
     "recur",
-    "reheat",
-    "preheat",
-    "precursor",
-    "cursor"
+    "recurred"
    ],
    "clues": [
-    "Keep re-. Change cur to heat.",
-    "Change re- to pre-.",
-    "Keep pre-. Change heat to cursor.",
-    "Take off the prefix pre-."
+    "Add -s.",
+    "Change the oc to re.",
+    "Take off -s.",
+    "Add -red."
    ]
   },
   "og4-03|duc/duct": {
@@ -2524,19 +2524,19 @@
    ]
   },
   "og4-03|grad/gress": {
-   "start": "grade",
+   "start": "degrades",
    "words": [
-    "grade",
+    "degrades",
     "degrade",
     "upgrade",
-    "uphill",
-    "hill"
+    "upgrades",
+    "upgraded"
    ],
    "clues": [
-    "Add the prefix de-.",
-    "Change de- to up-.",
-    "Keep up-. Change grade to hill.",
-    "Take off the prefix up-."
+    "Take off -s.",
+    "Change the first de to up.",
+    "Add -s.",
+    "Change -s to -d."
    ]
   },
   "og4-03|vert/vers": {
@@ -2975,32 +2975,32 @@
    "start": "spacious",
    "words": [
     "spacious",
-    "conscious",
-    "malicious",
     "gracious",
-    "gray"
+    "precious",
+    "preciously",
+    "graciously"
    ],
    "clues": [
-    "Keep -cious. Change spa to cons.",
-    "Keep -cious. Change cons to mali.",
-    "Keep -cious. Change mali to gra.",
-    "Change -cious to -y."
+    "Change the sp to gr.",
+    "Change the gra to pre.",
+    "Add -ly.",
+    "Change the pre to gra."
    ]
   },
   "og4-08|-tial": {
-   "start": "partial",
+   "start": "partials",
    "words": [
+    "partials",
     "partial",
-    "essential",
-    "potential",
     "martial",
-    "marble"
+    "initial",
+    "initials"
    ],
    "clues": [
-    "Keep -tial. Change par to essen.",
-    "Keep -tial. Change essen to poten.",
-    "Keep -tial. Change poten to mar.",
-    "Change -tial to -ble."
+    "Take off -s.",
+    "Change the p to m.",
+    "Change the mar to ini.",
+    "Add -s."
    ]
   },
   "og4-08|-tious": {
