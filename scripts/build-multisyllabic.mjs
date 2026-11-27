@@ -178,7 +178,53 @@ function corpus() {
     // Thirty words a day, half of them made up on purpose.
     "continuum-daily.json",
   ]);
+  // What the bank is actually built from.
+  //
+  // SKIP above is a deny-list, and every entry on it was added after the
+  // fact: hub-counts changed the bank, the writing tasks were rewriting the
+  // word lists, the PBL files put 64 words in. Each comment there records a
+  // thing that had already shipped. A deny-list cannot do better than that,
+  // because a file nobody thought about is harvested by default.
+  //
+  // So this is the other half, and it fails the other way. A new JSON in
+  // scripts/ is on neither list, and the build stops until someone says
+  // which it is. The question is always the same: has a child met these
+  // words? Lesson content yes, planning data and teacher prose no.
+  const HARVEST = new Set([
+    "reading-ai-writing-coach.json", "reading-article-coach.json",
+    "reading-article-plan.json", "reading-articles.json",
+    "reading-extra-words.json", "reading-fluency-play.json",
+    "reading-fluency.json", "reading-heart-words.json",
+    "reading-morphology.json", "reading-mysteries.json",
+    "reading-mystery-coach.json", "reading-mystery-debate-coach.json",
+    "reading-mystery-plan.json", "reading-part-words.json",
+    "reading-passages.json", "reading-phoneme-intro.json",
+    "reading-prerequisites.json", "reading-read-think.json",
+    "reading-rope.json", "reading-sentence-lab.json",
+    "reading-sequence.json", "reading-sight-words.json",
+    "reading-skill-splits.json", "reading-sound-mapping.json",
+    "reading-spelling.json", "reading-third-sentences.json",
+    "reading-threads.json", "reading-vocabulary-routine.json",
+    "reading-what-says.json", "reading-word-ladders.json",
+    "reading-word-sort.json", "reading-writing-passages.json",
+  ]);
   const files = readdirSync("scripts").filter((f) => f.endsWith(".json") && !SKIP.has(f));
+  const strangers = files.filter((f) => !HARVEST.has(f));
+  const vanished = [...HARVEST].filter((f) => !existsSync(`scripts/${f}`));
+  if (strangers.length || vanished.length) {
+    console.error("\u2717 scripts/build-multisyllabic.mjs does not know what to do with a file.\n");
+    for (const f of strangers) {
+      console.error(`   NEW:  scripts/${f}`);
+      console.error("         Would be harvested into the multisyllabic bank, which is the");
+      console.error("         word list children practise from. Have they met these words?");
+      console.error("         Lesson content a child reads  ->  add it to HARVEST.");
+      console.error("         Planning data or teacher prose ->  add it to SKIP, with why.\n");
+    }
+    for (const f of vanished)
+      console.error(`   GONE: scripts/${f} is in HARVEST but not on disk. Remove it.\n`);
+    console.error("Nothing was written.");
+    process.exit(1);
+  }
   const dirs = ["scripts/articles", "scripts/mysteries"].filter((d) => existsSync(d));
   for (const d of dirs) for (const f of readdirSync(d)) if (f.endsWith(".json")) files.push(`../${d.split("/")[1]}/${f}`);
   for (const f of files) {
