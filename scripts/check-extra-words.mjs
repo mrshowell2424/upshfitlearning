@@ -280,8 +280,32 @@ const PARTS = JSON.parse(readFileSync("scripts/reading-part-words.json", "utf8")
 const partAlts = (q) => String(q).split("/").map((a) => a.replace(/[^a-zA-Z_']/g, "")).filter(Boolean);
 const partHits = (q, w) => partAlts(q).some((a) => new RegExp(a.replace(/_/g, "[a-z]"), "i").test(w));
 
-/** Words that do not belong on a child's worksheet, whatever a dictionary says. */
+/*
+ * Words that do not belong on a child's worksheet, whatever a dictionary says.
+ *
+ * There are two lists because the two columns are not alike.
+ *
+ * A word in the REAL column was chosen to teach the pattern, and the obvious
+ * ones are often the best ones: whip is a wh word, knob is a kn word, and a
+ * list wide enough to be safe on nonsense throws both of those out. So the
+ * real column is held to the narrow list, the one with no second reading.
+ *
+ * A MADE-UP word is built to be decodable and to mean nothing, so when it
+ * lands on a real word it did so by accident and any other nonsense string
+ * will do instead. Swapping one costs nothing; printing a word with an adult
+ * sense on a six-year-old's page costs a great deal. There the wide list is
+ * right, and a false positive is the cheaper mistake.
+ *
+ * Both are enumerations, which is their weakness: they catch what somebody
+ * thought of. cum reached the Level 1 c lesson before the narrow list named
+ * it, and lech reached the Level 1 ch lesson and whup the wh one before the
+ * wide list existed. When a word looks wrong on a printed sheet, it goes in
+ * the list that fits its column.
+ */
 const NOT_FOR_CHILDREN = /^(cum|ass|arse|tit|tits|piss|crap|fag|slut|whore|dick|cock|wank|shag|bugger|turd|fart|sex|sexy|nude|porn|rape|booze|vodka|meth)$/i;
+
+/** Only for the made-up column, where any word can be swapped for free. */
+const CRUDE_SENSE = /^(teat|hoe|pimp|knob|prick|willy|bollock|bollocks|nudie|smut|horny|randy|perv|lech|lecher|molest|grope|incest|harlot|tart|trollop|wench|gin|rum|grog|drunk|sot|stoned|dope|junkie|coke|crack|weed|opium|heroin|kill|slay|stab|gore|maim|slit|gash|lynch|noose|gallows|whup|thrash|flog|whip|lash|spank|vomit|puke|barf|snot|phlegm|pus|pee|poo|poop)$/i;
 
 const partProblems = [];
 const partWarnings = [];
@@ -302,7 +326,8 @@ for (const [key, v] of Object.entries(PARTS)) {
     partFake++;
     if (sub && !partHits(sub, w)) partProblems.push(`${key}: made-up "${w}" is off this part's pattern`);
     if (!sayable(w)) partProblems.push(`${key}: made-up "${w}" is not sayable`);
-    if (NOT_FOR_CHILDREN.test(String(w))) partProblems.push(`${key}: "${w}" does not belong on a child's page`);
+    if (NOT_FOR_CHILDREN.test(String(w)) || CRUDE_SENSE.test(String(w)))
+      partProblems.push(`${key}: made-up "${w}" is a real word that does not belong on a child's page`);
     if (WORDS.has(bare(w))) partWarnings.push(`${key}: made-up "${w}" is in the dictionary`);
   }
 }
