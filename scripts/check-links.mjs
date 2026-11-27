@@ -33,6 +33,8 @@ const BASE = process.env.CHECK_BASE ?? "http://localhost:3000";
 const MAX_PAGES = Number(process.env.CHECK_MAX ?? 250);
 /** How many URLs to follow for any one route. */
 const PER_ROUTE = 4;
+/** A cold dev-server compile of a heavy page outruns a short timeout. */
+const NAV_TIMEOUT = Number(process.env.CHECK_NAV_TIMEOUT ?? 60000);
 
 /**
  * The route a URL belongs to, with its variable parts folded away.
@@ -77,6 +79,8 @@ const seen = new Set();
 const perRoute = new Map();
 const queue = [["/", "(the start)"]];
 const broken = [];
+/** Answered when asked directly, but the browser could not render it in time. */
+const slow = [];
 const reached = [];
 
 /** Images are fetched once each, however many pages show them. */
@@ -88,17 +92,32 @@ while (queue.length && reached.length < MAX_PAGES) {
   seen.add(url);
 
   /*
-   * Twice before giving up. The first request to a route on a dev server
-   * compiles it, which on the heavier pages takes longer than any sensible
-   * timeout -- and a slow first compile is not a broken link. The second
-   * attempt hits a warm route, so a page that fails both times is failing
-   * for a reason worth printing.
+   * Three attempts, with a pause, and then ask without the browser.
+   *
+   * This used to be two attempts back to back, on the reasoning that the
+   * first compiles the route and the second finds it warm. A timeout does
+   * not mean the compile finished, only that Playwright stopped waiting, so
+   * the retry raced the same compile and lost the same way. It also left the
+   * page sitting on chrome-error://, which is where "interrupted by another
+   * navigation" came from: the retry collided with the aborted one.
+   *
+   * So: blank the page between attempts to clear that state, wait for the
+   * compile rather than against it, and if the browser still cannot get
+   * there, fetch the url directly. Three runs of this reported 2, 2 and 3
+   * broken links, all different, every one of them answering 200 when asked
+   * directly. A link check is about whether the url answers. If it does,
+   * this is a page that was too slow to render, which is worth saying and
+   * is not a broken link.
    */
   let status = 0;
   let failure = null;
-  for (let attempt = 0; attempt < 2; attempt++) {
+  for (let attempt = 0; attempt < 3; attempt++) {
+    if (attempt) {
+      await page.goto("about:blank").catch(() => {});
+      await new Promise((r) => setTimeout(r, attempt * 3000));
+    }
     try {
-      const r = await page.goto(BASE + url, { waitUntil: "domcontentloaded", timeout: 45000 });
+      const r = await page.goto(BASE + url, { waitUntil: "domcontentloaded", timeout: NAV_TIMEOUT });
       status = r?.status() ?? 0;
       failure = null;
       break;
@@ -107,7 +126,13 @@ while (queue.length && reached.length < MAX_PAGES) {
     }
   }
   if (failure) {
-    broken.push([url, "no response", from, failure]);
+    // The browser could not get there. Ask plainly before calling it broken.
+    const direct = await ctx.request.get(BASE + url, { timeout: 30000 }).catch(() => null);
+    if (direct && direct.status() < 400) {
+      slow.push([url, direct.status(), from, failure]);
+      continue;
+    }
+    broken.push([url, direct ? direct.status() : "no response", from, failure]);
     continue;
   }
   if (status >= 400 || status === 0) {
@@ -211,6 +236,15 @@ console.log(`images checked: ${assetSeen.size}`);
 if (reached.length >= MAX_PAGES) {
   console.log(`\nStopped at the ${MAX_PAGES}-page limit, so this was not the whole site.`);
   console.log("Raise it with CHECK_MAX if the site has grown past it.");
+}
+
+if (slow.length) {
+  console.log(`\nslow to render, but they answer (${slow.length}):`);
+  for (const [url, status, from, note] of slow) {
+    console.log(`  ${String(status).padStart(11)}  ${url}`);
+    console.log(`               linked from ${from}  (${note})`);
+  }
+  console.log("  These are not broken links. Raise CHECK_NAV_TIMEOUT if they persist.");
 }
 
 if (!broken.length) {
