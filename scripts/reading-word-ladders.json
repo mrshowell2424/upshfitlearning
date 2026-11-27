@@ -1616,83 +1616,77 @@
    ]
   },
   "og3-01": {
-   "start": "one",
+   "start": "ice",
    "words": [
-    "one",
-    "on",
-    "in",
-    "it",
-    "is",
-    "his",
-    "this"
+    "ice",
+    "rice",
+    "race",
+    "rage",
+    "page",
+    "cage"
    ],
    "clues": [
-    "Take off the silent e.",
-    "Change the o to i.",
-    "Change the n to t.",
-    "Change the t to s.",
-    "Add an h at the start.",
-    "Add a t at the start."
+    "Add an r at the start.",
+    "Change the i to a.",
+    "Change the c to g.",
+    "Change the r to p.",
+    "Change the p to c."
    ]
   },
   "og3-02": {
-   "start": "one",
+   "start": "edge",
    "words": [
-    "one",
-    "on",
-    "in",
-    "it",
-    "at",
-    "sat",
-    "saw"
+    "edge",
+    "hedge",
+    "ledge",
+    "wedge",
+    "wedges",
+    "badges",
+    "badge"
    ],
    "clues": [
-    "Take off the silent e.",
-    "Change the o to i.",
-    "Change the n to t.",
-    "Change the i to a.",
-    "Add an s at the start.",
-    "Change the t to w."
+    "Add an h at the start.",
+    "Change the h to l.",
+    "Change the l to w.",
+    "Add -s.",
+    "Change the we to ba.",
+    "Take off -s."
    ]
   },
   "og3-03": {
-   "start": "cat",
+   "start": "paper",
    "words": [
-    "cat",
-    "at",
-    "it",
-    "is",
-    "his",
-    "hid",
-    "hide"
+    "paper",
+    "papers",
+    "tapers",
+    "taper",
+    "caper",
+    "capers"
    ],
    "clues": [
-    "Take off the c.",
-    "Change the a to i.",
-    "Change the t to s.",
-    "Add an h at the start.",
-    "Change the s to d.",
-    "Add a silent e."
+    "Add -s.",
+    "Change the first p to t.",
+    "Take off -s.",
+    "Change the t to c.",
+    "Add -s."
    ]
   },
   "og3-04": {
-   "start": "is",
+   "start": "point",
    "words": [
-    "is",
-    "his",
-    "has",
-    "was",
-    "as",
-    "an",
-    "man"
+    "point",
+    "joint",
+    "join",
+    "coin",
+    "coil",
+    "boil"
    ],
    "clues": [
-    "Add an h at the start.",
-    "Change the i to a.",
-    "Change the h to w.",
-    "Take off the w.",
-    "Change the s to n.",
-    "Add an m at the start."
+    "Change the p to j.",
+    "Take off the t.",
+    "Change the j to c.",
+    "Change the n to l.",
+    "Change the c to b."
    ]
   },
   "og3-04|au": {
@@ -1714,19 +1708,21 @@
    ]
   },
   "og3-04|aw": {
-   "start": "lawn",
+   "start": "law",
    "words": [
+    "law",
     "lawn",
     "yawn",
     "dawn",
-    "down",
-    "own"
+    "drawn",
+    "draw"
    ],
    "clues": [
+    "Add an n at the end.",
     "Change the l to y.",
     "Change the y to d.",
-    "Change the a to o.",
-    "Take off the d."
+    "Put an r between the d and the a.",
+    "Take off the n."
    ]
   },
   "og3-04|oi": {
@@ -1735,14 +1731,14 @@
     "spoil",
     "soil",
     "boil",
-    "bowl",
-    "owl"
+    "broil",
+    "broils"
    ],
    "clues": [
     "Take off the p.",
     "Change the s to b.",
-    "Change the i to w.",
-    "Take off the b."
+    "Put an r between the b and the o.",
+    "Add -s."
    ]
   },
   "og3-04|oy": {
@@ -1762,83 +1758,79 @@
    ]
   },
   "og3-05": {
-   "start": "her",
+   "start": "bake",
    "words": [
-    "her",
-    "he",
-    "she",
-    "the",
-    "then",
-    "them",
-    "they"
+    "bake",
+    "baking",
+    "making",
+    "taking",
+    "waking",
+    "raking"
    ],
    "clues": [
-    "Take off the r.",
-    "Add an s at the start.",
-    "Change the s to t.",
-    "Add an n at the end.",
-    "Change the n to m.",
-    "Change the m to y."
+    "Change -e to -ing.",
+    "Change the b to m.",
+    "Change the m to t.",
+    "Change the t to w.",
+    "Change the w to r."
    ]
   },
   "og3-06": {
-   "start": "her",
+   "start": "cry",
    "words": [
-    "her",
-    "he",
-    "she",
-    "the",
-    "them",
-    "then",
-    "than"
+    "cry",
+    "cried",
+    "tried",
+    "dried",
+    "dries",
+    "fries",
+    "flies"
    ],
    "clues": [
-    "Take off the r.",
-    "Add an s at the start.",
-    "Change the s to t.",
-    "Add an m at the end.",
-    "Change the m to n.",
-    "Change the e to a."
+    "Change -y to -ied.",
+    "Change the c to t.",
+    "Change the t to d.",
+    "Change -ed to -es.",
+    "Change the d to f.",
+    "Change the r to l."
    ]
   },
   "og3-07": {
-   "start": "and",
+   "start": "river",
    "words": [
-    "and",
-    "an",
-    "in",
-    "it",
-    "at",
-    "sat",
-    "saw"
+    "river",
+    "rivers",
+    "livers",
+    "liver",
+    "lever",
+    "levers"
    ],
    "clues": [
-    "Take off the d.",
-    "Change the a to i.",
-    "Change the n to t.",
-    "Change the i to a.",
-    "Add an s at the start.",
-    "Change the t to w."
+    "Add -s.",
+    "Change the first r to l.",
+    "Take off -s.",
+    "Change the i to e.",
+    "Add -s."
    ]
   },
   "og3-08": {
-   "start": "sat",
+   "start": "candle",
    "words": [
-    "sat",
-    "at",
-    "an",
-    "in",
-    "it",
-    "lit",
-    "fit"
+    "candle",
+    "handle",
+    "bundle",
+    "bungle",
+    "jungle",
+    "jingle",
+    "single"
    ],
    "clues": [
-    "Take off the s.",
-    "Change the t to n.",
-    "Change the a to i.",
-    "Change the n to t.",
-    "Add an l at the start.",
-    "Change the l to f."
+    "Change the c to h.",
+    "Change the ha to bu.",
+    "Change the d to g.",
+    "Change the b to j.",
+    "Change the u to i.",
+    "Change the j to s."
    ]
   },
   "og3-08|-ble": {
@@ -1942,41 +1934,39 @@
    ]
   },
   "og3-09": {
-   "start": "one",
+   "start": "soda",
    "words": [
-    "one",
-    "on",
-    "in",
-    "an",
-    "ran",
-    "run"
+    "soda",
+    "sofa",
+    "sofas",
+    "sodas",
+    "sagas",
+    "saga"
    ],
    "clues": [
-    "Take off the silent e.",
-    "Change the o to i.",
-    "Change the i to a.",
-    "Add an r at the start.",
-    "Change the a to u."
+    "Change the d to f.",
+    "Add -s.",
+    "Change the f to d.",
+    "Change the od to ag.",
+    "Take off -s."
    ]
   },
   "og3-10": {
-   "start": "his",
+   "start": "it's",
    "words": [
-    "his",
-    "is",
-    "it",
-    "at",
-    "hat",
-    "what",
-    "that"
+    "it's",
+    "it'll",
+    "he'll",
+    "he's",
+    "she's",
+    "she'll"
    ],
    "clues": [
-    "Take off the h.",
-    "Change the s to t.",
-    "Change the i to a.",
-    "Add an h at the start.",
-    "Add a w at the start.",
-    "Change the w to t."
+    "Change -s to -ll.",
+    "Change the it to he.",
+    "Change -ll to -s.",
+    "Add an s at the start.",
+    "Change -s to -ll."
    ]
   },
   "og3-10|'ll": {
@@ -2060,23 +2050,21 @@
    ]
   },
   "og3-11": {
-   "start": "was",
+   "start": "motion",
    "words": [
-    "was",
-    "as",
-    "is",
-    "in",
-    "an",
-    "and",
-    "end"
+    "motion",
+    "lotion",
+    "notion",
+    "nation",
+    "ration",
+    "rations"
    ],
    "clues": [
-    "Take off the w.",
-    "Change the a to i.",
-    "Change the s to n.",
-    "Change the i to a.",
-    "Add a d at the end.",
-    "Change the a to e."
+    "Change the m to l.",
+    "Change the l to n.",
+    "Change the first o to a.",
+    "Change the first n to r.",
+    "Add -s."
    ]
   },
   "og3-11|-sion": {
@@ -2112,23 +2100,19 @@
    ]
   },
   "og3-12": {
-   "start": "an",
+   "start": "acts",
    "words": [
-    "an",
-    "in",
-    "is",
-    "ist",
-    "it",
-    "at",
-    "art"
+    "acts",
+    "act",
+    "active",
+    "activist",
+    "activists"
    ],
    "clues": [
-    "Change the a to i.",
-    "Change the n to s.",
-    "Add a t at the end.",
-    "Take off the s.",
-    "Change the i to a.",
-    "Put an r between the a and the t."
+    "Take off -s.",
+    "Add -ive.",
+    "Change -e to -ist.",
+    "Add -s."
    ]
   },
   "og3-12|-able": {
@@ -2266,19 +2250,21 @@
    ]
   },
   "og3-13|re-": {
-   "start": "relax",
+   "start": "reheat",
    "words": [
-    "relax",
-    "rex's",
+    "reheat",
     "repeat",
-    "remind",
-    "mind"
+    "replay",
+    "relay",
+    "relax",
+    "relaxed"
    ],
    "clues": [
-    "Keep re-. Change lax to x's.",
-    "Keep re-. Change x's to peat.",
-    "Keep re-. Change peat to mind.",
-    "Take off the prefix re-."
+    "Change the h to p.",
+    "Change the eat to lay.",
+    "Take off the p.",
+    "Change the y to x.",
+    "Add -ed."
    ]
   },
   "og4-01": {
@@ -2768,39 +2754,39 @@
    ]
   },
   "og4-06": {
-   "start": "we",
+   "start": "glue",
    "words": [
-    "we",
-    "he",
-    "the",
-    "then",
-    "them",
-    "they"
+    "glue",
+    "blue",
+    "blew",
+    "brew",
+    "crew",
+    "grew"
    ],
    "clues": [
-    "Change the w to h.",
-    "Add a t at the start.",
-    "Add an n at the end.",
-    "Change the n to m.",
-    "Change the m to y."
+    "Change the g to b.",
+    "Change the ue to ew.",
+    "Change the l to r.",
+    "Change the b to c.",
+    "Change the c to g."
    ]
   },
   "og4-06|ei": {
-   "start": "eight",
+   "start": "receive",
    "words": [
-    "eight",
-    "weight",
-    "weigh",
-    "neigh",
-    "neighbor",
-    "neighbors"
+    "receive",
+    "receives",
+    "deceives",
+    "deceive",
+    "deceived",
+    "received"
    ],
    "clues": [
-    "Add a w at the start.",
-    "Take off the t.",
-    "Change the w to n.",
-    "Add bor to the end.",
-    "Add an s at the end."
+    "Add -s.",
+    "Change the r to d.",
+    "Take off -s.",
+    "Add -d.",
+    "Change the first d to r."
    ]
   },
   "og4-06|eigh": {
@@ -2808,17 +2794,17 @@
    "words": [
     "neigh",
     "weigh",
+    "weighs",
     "weight",
-    "height",
     "eight",
     "eighty"
    ],
    "clues": [
     "Change the n to w.",
-    "Add a t at the end.",
-    "Change the w to h.",
-    "Take off the first h.",
-    "Add a y at the end."
+    "Add -s.",
+    "Change -s to -t.",
+    "Take off the w.",
+    "Add -y."
    ]
   },
   "og4-06|ew": {
@@ -2828,49 +2814,47 @@
     "few",
     "new",
     "knew",
-    "knee"
+    "stew"
    ],
    "clues": [
     "Take off the l.",
     "Change the f to n.",
     "Add a k at the start.",
-    "Change the w to e."
+    "Change the kn to st."
    ]
   },
   "og4-06|ue": {
    "start": "blue",
    "words": [
     "blue",
-    "glue",
     "clue",
-    "club",
-    "cub"
+    "clues",
+    "glues",
+    "glue"
    ],
    "clues": [
-    "Change the b to g.",
-    "Change the g to c.",
-    "Change the e to b.",
-    "Take off the l."
+    "Change the b to c.",
+    "Add -s.",
+    "Change the c to g.",
+    "Take off -s."
    ]
   },
   "og4-06|ui": {
-   "start": "equip",
+   "start": "cruise",
    "words": [
-    "equip",
-    "quip",
-    "quiz",
-    "quit",
-    "quiet",
-    "quilt",
-    "guilt"
+    "cruise",
+    "bruise",
+    "bruised",
+    "cruised",
+    "cruising",
+    "bruising"
    ],
    "clues": [
-    "Take off the e.",
-    "Change the p to z.",
-    "Change the z to t.",
-    "Put an e between the i and the t.",
-    "Change the e to l.",
-    "Change the q to g."
+    "Change the c to b.",
+    "Add -d.",
+    "Change the b to c.",
+    "Change -ed to -ing.",
+    "Change the c to b."
    ]
   },
   "og4-07": {

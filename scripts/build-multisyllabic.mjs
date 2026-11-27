@@ -352,11 +352,65 @@ const ONLY = {
 /** The endings hits() already lets a pattern carry, so a listed base covers them. */
 const SUFFIX = /(s|es|ed|d|ing|ly|er|est)$/;
 
+/**
+ * Lessons where the pattern is a morpheme and not a run of letters.
+ *
+ * Taken from the sequence by name rather than listed here, so a prefix or
+ * suffix lesson added later is covered without anybody remembering to come
+ * back. The distinction matters because two Level 3 lessons look like
+ * morphology and are not: Consonant-le and Final stable syllables are
+ * SYLLABLE types, which is why circle, uncle, station and version belong on
+ * them -- and why "-cle" and "-tion" must not be tested this way.
+ *
+ * The bar is deliberately low, because English keeps bound stems: predict is
+ * pre + dict and protect is pro + tect, and neither "dict" nor "tect" stands
+ * alone. A word is only refused when taking the morpheme off leaves three
+ * letters or fewer AND that remnant is not a word -- "list" minus "ist" is
+ * "l", "five" minus "ive" is "f", "red" minus "re" is "d". Those had put
+ * wrist, twist, drive, thrive, desk, debt and dew on sheets about suffixes
+ * and prefixes.
+ */
+const MORPHEME = new Set(
+  SEQ.filter((l) => /prefix|suffix/i.test(l.name || "")).map((l) => l.key),
+);
+const stemCache = new Map();
+/** The stems this sheet's own ten words are built on. */
+function bankStems(key, m, where) {
+  if (stemCache.has(key)) return stemCache.get(key);
+  const out = new Set();
+  for (const w of ((PARTW[key] || {}).real || [])) {
+    const x = String(w).toLowerCase();
+    if (where === "prefix" ? x.startsWith(m) : x.endsWith(m)) {
+      out.add(where === "prefix" ? x.slice(m.length) : x.slice(0, -m.length));
+    }
+  }
+  stemCache.set(key, out);
+  return out;
+}
+function builtFromMorpheme(word, q, key) {
+  if (!MORPHEME.has(key.split("|")[0])) return true;
+  const where = /-$/.test(q) ? "prefix" : /^-/.test(q) ? "suffix" : null;
+  if (!where) return true;
+  const m = q.replace(/^-|-$/g, "");
+  // The ending hits() allowed comes off first: "listing" is list + ing, and
+  // testing it whole would read the "ist" in the middle as the suffix.
+  const bare = where === "suffix" && !word.endsWith(m) ? word.replace(SUFFIX, "") : word;
+  if (where === "prefix" ? !bare.startsWith(m) : !bare.endsWith(m)) return false;
+  const rest = where === "prefix" ? bare.slice(m.length) : bare.slice(0, -m.length);
+  if (rest.length < 2) return false;
+  // A free word is a stem. So is a bound one the sheet itself is built on:
+  // protect, produce, progress, provide and project give tect, duce, gress,
+  // vide and ject, none of which stands alone and all of which are real
+  // morphology. What that leaves out is "blem", "ader" and "ble".
+  return DICT.has(rest) || DICT.has(`${rest}e`) || bankStems(key, m, where).has(rest);
+}
+
 export function hits(q, w, place = "anywhere", key = "") {
   const word = String(w).toLowerCase();
   const stem = word.replace(SUFFIX, "");
   if (NOT[key] && (NOT[key].has(word) || NOT[key].has(stem))) return false;
   if (ONLY[key] && !(ONLY[key].has(word) || ONLY[key].has(stem))) return false;
+  if (!builtFromMorpheme(word, q, key)) return false;
   return alts(q).some((a0) => {
     const a = a0.toLowerCase();
     if (place === "vce") {
