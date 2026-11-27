@@ -272,36 +272,91 @@ export function placeOf(key, q) {
  * The e has to be the silent one, which means it ends the word or is
  * carrying only an ending behind it -- pancake, mistakes, invited.
  *
- * DEAF is the same problem on a word family. A family is a promise that the
- * spelling keeps the sound, so one word that breaks it teaches the opposite
- * of the lesson -- and the letters cannot tell you which word that is.
- * Checked against the pronouncing dictionary, every other aught and ought
- * word says /AO t/; these three do not, and nothing here was asking:
+ * The same problem shows up on a word family and on an overloaded spelling,
+ * and the two need opposite answers.
+ *
+ * NOT is a family with a few traitors. Checked against the pronouncing
+ * dictionary, every aught and ought word says /AO t/ except these, and no
+ * letter test can tell you which:
  *
  *   drought   D R AW T     the vowel of "out", not of "ought"
- *   draught   D R AE F T   says "draft"; the gh is /f/, not silent
- *   laughter  L AE F T ER  likewise, and "augh" is not the family's /AO/
+ *   draught   D R AE F T   says "draft"; its gh is /f/ and its au is /AE/
+ *   laughter  L AE F T ER  likewise, and it was the top rung of a ladder
  *
- * Listed rather than derived because the pronouncing dictionary this repo
- * vendors is a subset and does not hold these words. A fuller sound test
- * belongs here eventually; see the note in docs. Until then a word named
- * below never counts as carrying the pattern it is listed under.
+ * ONLY is for a spelling so overloaded that the letters are not a weak test
+ * but no test at all, so the sheet names its words instead.
+ *
+ *   "ou" says /AW/ 1440 times across the dictionary (out), /AH/ 561
+ *   (touch), /UW/ 523 (soup), /AO/ 175 (four), /ER/ 135 (journey), /OW/ 108
+ *   (soul), /UH/ 103 (tour). The French sheet wants /UW/, and had been given
+ *   about, touch, house, four, journey and drought.
+ *
+ *   "ch" says three things and this site teaches all three, on three
+ *   different sheets: /k/ in school, /SH/ in chef, /tS/ in chip. Each sheet
+ *   held the other two's words -- parachute and machine on the Level 1 /tS/
+ *   sheet, children and lunch on the Greek and the French ones. The two rare
+ *   sets are listed, so the common one can stay open: it is everything else.
+ *
+ * Both tables are keyed by the part key the sheet is built under, because
+ * the same letters mean different sounds on different sheets. "ou" is /AW/
+ * on og2-08 and /UW/ on og5-05, and neither sheet is wrong.
+ *
+ * Derived from the pronouncing dictionary, then read by hand: pa-sounds.json
+ * covers 71% of these words, which is not enough to settle it at build time.
+ * Until it is, the answer is written down.
  */
-const DEAF = {
-  aught: new Set(["draught", "laughter", "laughters"]),
-  ought: new Set(["drought", "droughts"]),
-  // The same word, caught on two more sheets while the aught fix was being
-  // verified. Every word on the gh sheet is night, light, sigh: a gh that
-  // says nothing. Every word on the au sheet is autumn, sauce, because: an
-  // au that says /AO/. In draught the gh says /f/ and the au says /AE/, so
-  // it is the one word on each sheet that contradicts it.
-  gh: new Set(["draught", "draughts"]),
-  au: new Set(["draught", "draughts"]),
+const CH_K = [
+  "ache", "anchor", "archaeology", "archive", "biochemist", "biochemistry",
+  "chameleon", "chaos", "character", "chemical", "chemically", "chemist",
+  "chemistry", "chlorine", "chlorophyll", "choir", "cholera", "chorus",
+  "chronology", "chrysalis", "echo", "headache", "leprechaun", "mechanic",
+  "mechanical", "mechanism", "orchestra", "orchid", "preschool", "psych",
+  "psyche", "psychedelic", "psychiatrist", "psychiatry", "psychic",
+  "psychologist", "psychology", "psychotic", "schedule", "school",
+  "schoolbook", "schooling", "stomach", "tech", "technical", "technician",
+  "technique", "technology",
+];
+const CH_SH = [
+  "brochure", "cache", "chalet", "chandelier", "chaperone", "charade",
+  "chateau", "chauffeur", "chef", "chic", "chiffon", "chute", "crochet",
+  "machine", "machinery", "moustache", "mustache", "parachute",
+  "parachuting", "parachutist", "pistachio", "quiche", "ricochet", "sachet",
+];
+
+const NOT = {
+  "og5-09|aught": new Set(["draught", "laughter", "laughters"]),
+  "og5-09|ought": new Set(["drought", "droughts"]),
+  "og2-07|gh": new Set(["draught", "draughts"]),
+  "og3-04|au": new Set(["draught", "draughts"]),
+  // The /tS/ sheet is named by exclusion so it stays open to words added
+  // later. Beyond the two sets above: more /k/ words the corpus turned up
+  // once the lists were rebuilt, and two proper nouns.
+  "dig|ch": new Set([...CH_K, ...CH_SH,
+    "schwa", "monarch", "chloride", "chromosome", "scheme", "technicality",
+    "michigan", "bosch",
+  ]),
 };
+const ONLY = {
+  "og5-01|ch": new Set(CH_K),
+  "og5-05|ch": new Set(CH_SH),
+  "og5-05|ou": new Set([
+    "you", "youth", "youthful", "soup", "soupy", "souffle", "souvenir",
+    "group", "grouped", "grouping", "grouper", "regroup", "subgroup",
+    "route", "router", "routine", "routinely", "reroute",
+    "through", "throughout", "breakthrough",
+    "acoustic", "acoustics", "bouquet", "boutique", "caribou", "cougar",
+    "coupon", "crouton", "goulash", "mousse", "pirouette", "recoup",
+    "rendezvous", "toupee", "troupe", "wounds", "wounded", "wounding",
+  ]),
+};
+/** The endings hits() already lets a pattern carry, so a listed base covers them. */
+const SUFFIX = /(s|es|ed|d|ing|ly|er|est)$/;
 
 export function hits(q, w, place = "anywhere", key = "") {
   const word = String(w).toLowerCase();
-  if (DEAF[q] && DEAF[q].has(word)) return false;
+  const stem = word.replace(SUFFIX, "");
+  if (NOT[key] && (NOT[key].has(word) || NOT[key].has(stem))) return false;
+  if (ONLY[key] && !(ONLY[key].has(word) || ONLY[key].has(stem))) return false;
   return alts(q).some((a0) => {
     const a = a0.toLowerCase();
     if (place === "vce") {

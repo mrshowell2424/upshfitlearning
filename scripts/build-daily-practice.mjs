@@ -100,7 +100,12 @@ function passageWords(text) {
   return [...new Set(
     text.paras
       .join(" ")
-      .split(/\s+/)
+      // Split on the hyphen as well as the space. A whitespace token is not
+      // a word: "chest-deep" is two, and stripping the punctuation out of it
+      // instead of splitting on it yields "chestdeep", which is neither. One
+      // reached a Word Race sheet, and the checker passed it because it
+      // built its own passage vocabulary the same way and so agreed.
+      .split(/[\s\u2010-\u2015-]+/)
       .filter((w) => /^[a-z]/.test(w))
       .map((w) => w.toLowerCase().replace(/[^a-z']/g, "")),
   )].filter((w) => w.length > 1);
@@ -692,10 +697,27 @@ for (const lesson of SEQ) {
   // the lesson. Everywhere else on the page an empty bank means the switch
   // leaves the sheet alone, and so it does here.
   const msOwn = shuffled((bank.real || []).filter(word), seed + 11);
+  // A top-up word may not wear this lesson's spelling while saying something
+  // else. The French ch sheet ran short and was topped up with biochemist,
+  // whose ch says /k/: a child looking for the pattern finds it there and
+  // learns the wrong sound from a word that was only ever filler. Words with
+  // none of the lesson's letters in them -- morphology, earphone -- teach
+  // nothing about the pattern either way and are what topping up is for.
+  const spellings = Object.keys(MULTI)
+    .filter((k) => k.startsWith(`${lesson.key}|`))
+    .map((k) => k.slice(lesson.key.length + 1).replace(/^-|-$/g, ""))
+    .filter((q) => q && !q.includes("_"));
+  const own = new Set((bank.real || []).map((w) => String(w).toLowerCase()));
+  const wearsThePattern = (w) => {
+    const x = String(w).toLowerCase();
+    return !own.has(x) && spellings.some((q) => x.includes(q));
+  };
   const msReal = msOwn.length
     ? [...new Set([
         ...msOwn,
-        ...(msOwn.length < WRF_PER_DAY * DAYS ? [...taughtMulti].reverse().filter(word) : []),
+        ...(msOwn.length < WRF_PER_DAY * DAYS
+          ? [...taughtMulti].reverse().filter(word).filter((w) => !wearsThePattern(w))
+          : []),
       ])]
     : [];
   const msFake = [...new Set([...(bank.fake || []), ...[...taughtFakes].reverse()])];
