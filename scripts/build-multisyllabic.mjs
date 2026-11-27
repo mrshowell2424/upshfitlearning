@@ -290,6 +290,13 @@ export function placeOf(key, q) {
 const DEAF = {
   aught: new Set(["draught", "laughter", "laughters"]),
   ought: new Set(["drought", "droughts"]),
+  // The same word, caught on two more sheets while the aught fix was being
+  // verified. Every word on the gh sheet is night, light, sigh: a gh that
+  // says nothing. Every word on the au sheet is autumn, sauce, because: an
+  // au that says /AO/. In draught the gh says /f/ and the au says /AE/, so
+  // it is the one word on each sheet that contradicts it.
+  gh: new Set(["draught", "draughts"]),
+  au: new Set(["draught", "draughts"]),
 };
 
 export function hits(q, w, place = "anywhere", key = "") {
