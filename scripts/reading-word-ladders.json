@@ -3110,23 +3110,23 @@
    ]
   },
   "og5-01|ch": {
-   "start": "patch",
+   "start": "mechanic",
    "words": [
-    "patch",
-    "watch",
-    "witch",
-    "itch",
-    "ditch",
-    "pitch",
-    "pinch"
+    "mechanic",
+    "mechanics",
+    "mechanical",
+    "mechanically",
+    "technically",
+    "technical",
+    "technician"
    ],
    "clues": [
-    "Change the p to w.",
-    "Change the a to i.",
-    "Take off the w.",
-    "Add a d at the start.",
-    "Change the d to p.",
-    "Change the t to n."
+    "Add -s.",
+    "Change -s to -al.",
+    "Add -ly.",
+    "Change mechani- to techni-.",
+    "Take off -ly.",
+    "Change -al to -ian."
    ]
   },
   "og5-01|ph": {
@@ -3168,20 +3168,20 @@
    ]
   },
   "og5-03": {
-   "start": "autumn",
+   "start": "hymn",
    "words": [
-    "autumn",
+    "hymn",
+    "hymns",
     "autumns",
-    "columns",
+    "autumn",
     "column",
-    "columnist",
-    "columnists"
+    "columns"
    ],
    "clues": [
     "Add -s.",
-    "Change autu- to colu-.",
+    "Change hy- to autu-.",
     "Take off -s.",
-    "Add -ist.",
+    "Change the aut to col.",
     "Add -s."
    ]
   },
@@ -3202,23 +3202,21 @@
    ]
   },
   "og5-03|ps": {
-   "start": "hops",
+   "start": "psychology",
    "words": [
-    "hops",
-    "pops",
-    "mops",
-    "maps",
-    "taps",
-    "caps",
-    "claps"
+    "psychology",
+    "psychologist",
+    "psychologists",
+    "psychiatrists",
+    "psychiatrist",
+    "psychiatry"
    ],
    "clues": [
-    "Change the h to p.",
-    "Change the first p to m.",
-    "Change the o to a.",
-    "Change the m to t.",
-    "Change the t to c.",
-    "Put an l between the c and the a."
+    "Change -y to -ist.",
+    "Add -s.",
+    "Change psycholog- to psychiatr-.",
+    "Take off -s.",
+    "Change -ist to -y."
    ]
   },
   "og5-03|rh": {
@@ -3386,23 +3384,21 @@
    ]
   },
   "og5-05|ch": {
-   "start": "patch",
+   "start": "chute",
    "words": [
-    "patch",
-    "watch",
-    "witch",
-    "itch",
-    "ditch",
-    "pitch",
-    "pinch"
+    "chute",
+    "chutes",
+    "parachutes",
+    "parachute",
+    "parachuting",
+    "parachutist"
    ],
    "clues": [
-    "Change the p to w.",
-    "Change the a to i.",
-    "Take off the w.",
-    "Add a d at the start.",
-    "Change the d to p.",
-    "Change the t to n."
+    "Add -s.",
+    "Add the prefix para-.",
+    "Take off -s.",
+    "Change -e to -ing.",
+    "Change -ing to -ist."
    ]
   },
   "og5-05|ou": {
@@ -3556,31 +3552,31 @@
     "fought",
     "bought",
     "brought",
-    "drought",
-    "droughts"
+    "thought",
+    "thoughtful"
    ],
    "clues": [
     "Change the s to f.",
     "Change the f to b.",
     "Put an r between the b and the o.",
-    "Change the b to d.",
-    "Add -s."
+    "Change the br to th.",
+    "Add -ful."
    ]
   },
   "og5-09|aught": {
-   "start": "granddaughter",
+   "start": "stepdaughter",
    "words": [
-    "granddaughter",
-    "granddaughters",
-    "daughters",
+    "stepdaughter",
     "daughter",
-    "laughter"
+    "daughters",
+    "granddaughters",
+    "granddaughter"
    ],
    "clues": [
+    "Take off the prefix step-.",
     "Add -s.",
-    "Take off the prefix grand-.",
-    "Take off -s.",
-    "Keep -aughter. Change d to l."
+    "Add the prefix grand-.",
+    "Take off -s."
    ]
   },
   "og5-09|ought": {

@@ -9877,24 +9877,24 @@
        ]
       },
       {
-       "word": "alumni",
+       "word": "hymns",
        "span": [
-        3,
-        5
+        2,
+        4
        ]
       },
       {
-       "word": "mnemonic",
-       "span": [
-        0,
-        2
-       ]
-      },
-      {
-       "word": "columnist",
+       "word": "columns",
        "span": [
         4,
         6
+       ]
+      },
+      {
+       "word": "condemned",
+       "span": [
+        5,
+        7
        ]
       }
      ]
@@ -11170,7 +11170,7 @@
        ]
       },
       {
-       "word": "drought",
+       "word": "thoughtless",
        "span": [
         2,
         7

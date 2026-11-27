@@ -2577,9 +2577,9 @@
    "condemn",
    "solemnly",
    "limn",
-   "alumni",
-   "mnemonic",
-   "columnist"
+   "hymns",
+   "columns",
+   "condemned"
   ]
  },
  "og5-03|ps": {
@@ -2752,11 +2752,11 @@
  },
  "og5-05|ch": {
   "fake": [
-   "chast",
-   "chorb",
-   "chule",
-   "chisk",
-   "chemp"
+   "chamet",
+   "chulet",
+   "chavine",
+   "chorette",
+   "chaloup"
   ],
   "real": [
    "chef",
@@ -2913,7 +2913,7 @@
    "ought",
    "sought",
    "nought",
-   "drought",
+   "thoughtless",
    "wrought",
    "thoughtful"
   ]

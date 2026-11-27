@@ -89,12 +89,19 @@ const SEQ_WORDS = new Set(SEQ.flatMap((l) => l.words || []).map((w) => String(w)
  * possessive on it. Those are already answered for -- check-passages asserts
  * that every word of every passage is real and decodable at its lesson --
  * so a word that stands in a passage stands here.
+ *
+ * Split on the hyphen as well as on the space. "chest-deep" is one
+ * whitespace token, so stripping punctuation out of it leaves "chestdeep",
+ * and this set is what isReal() consults: a builder that dropped the same
+ * hyphen would be vouched for by the checker, because both made the mistake
+ * and so the two agree. A hyphenated word is two words standing in the
+ * passage, and neither of them is the two run together.
  */
 const PASSAGE_WORDS = new Set(
   Object.values(PASS).flatMap((p) =>
     Object.values(p).flatMap((v) =>
       v && v.paras
-        ? v.paras.join(" ").split(/\s+/).map((w) => w.toLowerCase().replace(/[^a-z']/g, ""))
+        ? v.paras.join(" ").split(/[\s\u2010-\u2015-]+/).map((w) => w.toLowerCase().replace(/[^a-z']/g, ""))
         : [],
     ),
   ),

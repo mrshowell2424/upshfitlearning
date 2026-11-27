@@ -1595,7 +1595,7 @@
     },
     {
      "g": "ought",
-     "w": "thoughtful",
+     "w": "thoughtless",
      "at": "in the middle"
     },
     {
@@ -1605,8 +1605,8 @@
     },
     {
      "g": "ought",
-     "w": "bought",
-     "at": "at the end"
+     "w": "thoughtful",
+     "at": "in the middle"
     }
    ],
    "articulate": []

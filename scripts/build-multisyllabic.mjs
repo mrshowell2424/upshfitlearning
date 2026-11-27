@@ -271,9 +271,30 @@ export function placeOf(key, q) {
  * it: label has a, b and e in that order and teaches nothing about a_e.
  * The e has to be the silent one, which means it ends the word or is
  * carrying only an ending behind it -- pancake, mistakes, invited.
+ *
+ * DEAF is the same problem on a word family. A family is a promise that the
+ * spelling keeps the sound, so one word that breaks it teaches the opposite
+ * of the lesson -- and the letters cannot tell you which word that is.
+ * Checked against the pronouncing dictionary, every other aught and ought
+ * word says /AO t/; these three do not, and nothing here was asking:
+ *
+ *   drought   D R AW T     the vowel of "out", not of "ought"
+ *   draught   D R AE F T   says "draft"; the gh is /f/, not silent
+ *   laughter  L AE F T ER  likewise, and "augh" is not the family's /AO/
+ *
+ * Listed rather than derived because the pronouncing dictionary this repo
+ * vendors is a subset and does not hold these words. A fuller sound test
+ * belongs here eventually; see the note in docs. Until then a word named
+ * below never counts as carrying the pattern it is listed under.
  */
+const DEAF = {
+  aught: new Set(["draught", "laughter", "laughters"]),
+  ought: new Set(["drought", "droughts"]),
+};
+
 export function hits(q, w, place = "anywhere", key = "") {
   const word = String(w).toLowerCase();
+  if (DEAF[q] && DEAF[q].has(word)) return false;
   return alts(q).some((a0) => {
     const a = a0.toLowerCase();
     if (place === "vce") {

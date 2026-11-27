@@ -146,8 +146,8 @@
     "leaf",
     "gap",
     "tank",
-    "fall",
     "add",
+    "fall",
     "fact",
     "leave",
     "reach",
@@ -330,8 +330,8 @@
     "leaf",
     "gap",
     "tank",
-    "fall",
     "add",
+    "fall",
     "fact",
     "leave",
     "reach",
@@ -531,8 +531,8 @@
     "while",
     "wrong",
     "right",
-    "put",
     "cut",
+    "put",
     "show"
    ],
    "fake": [
@@ -1012,8 +1012,8 @@
     "found",
     "but",
     "sun",
-    "put",
     "cut",
+    "put",
     "group",
     "much",
     "run",
@@ -2366,8 +2366,8 @@
     "crop",
     "cheap",
     "charge",
-    "coast",
     "chute",
+    "coast",
     "curve",
     "cow",
     "church",
@@ -3046,7 +3046,7 @@
     "character",
     "chicken",
     "childhood",
-    "chewy"
+    "psychology"
    ],
    "one": [
     "which",
@@ -4024,6 +4024,7 @@
     "express",
     "pointless",
     "loudness",
+    "thoughtless",
     "jobless",
     "wingless",
     "cleverness",
@@ -4051,8 +4052,7 @@
     "smallness",
     "assessed",
     "stiffness",
-    "fitness",
-    "awkwardness"
+    "fitness"
    ],
    "one": [
     "class",
@@ -5950,8 +5950,8 @@
     "while",
     "right",
     "wall",
-    "put",
     "cut",
+    "put",
     "far",
     "name",
     "group",
@@ -6121,8 +6121,8 @@
     "leaf",
     "gap",
     "tank",
-    "fall",
     "add",
+    "fall",
     "fact",
     "leave",
     "reach",
@@ -6619,8 +6619,8 @@
     "found",
     "but",
     "sun",
-    "put",
     "cut",
+    "put",
     "group",
     "much",
     "run",
@@ -7445,9 +7445,9 @@
     "drank",
     "rank",
     "laying",
+    "ing",
     "sunk",
     "hank",
-    "ing",
     "frank",
     "junk",
     "blink",
@@ -8221,13 +8221,13 @@
     "latch",
     "shock",
     "knack",
-    "itch",
     "specks",
     "flick",
     "clutch",
     "pricks",
     "stocks",
     "geck",
+    "itch",
     "click",
     "hitch",
     "pleck"
@@ -8421,8 +8421,8 @@
     "scratch",
     "sketch",
     "latch",
-    "itch",
     "clutch",
+    "itch",
     "hitch",
     "snatch"
    ],
@@ -8528,8 +8528,8 @@
     "door",
     "far",
     "hard",
-    "start",
     "worth",
+    "start",
     "short",
     "floor",
     "near",
@@ -10714,8 +10714,9 @@
     "weighing",
     "naughty",
     "slaughter",
-    "nightly",
     "thoughtful",
+    "nightly",
+    "thoughtless",
     "haughty",
     "brightly",
     "onslaught",
@@ -10745,8 +10746,7 @@
     "almighty",
     "rightful",
     "blighted",
-    "distraught",
-    "thoroughfare"
+    "distraught"
    ],
    "one": [
     "light",
@@ -10945,8 +10945,9 @@
     "weighing",
     "naughty",
     "slaughter",
-    "nightly",
     "thoughtful",
+    "nightly",
+    "thoughtless",
     "haughty",
     "brightly",
     "onslaught",
@@ -10975,13 +10976,13 @@
     "thoroughfare",
     "brighten",
     "eyesight",
-    "thoughtless",
+    "stepdaughter",
     "relight",
-    "laughter",
     "eightfold",
     "eightieth",
     "brightener",
     "fortnightly",
+    "overwrought",
     "afterthought",
     "downweighted",
     "thoughtfully"
@@ -12365,6 +12366,7 @@
     "headless",
     "relentless",
     "pointless",
+    "thoughtless",
     "jobless",
     "wingless",
     "unless",
@@ -12384,8 +12386,7 @@
     "airless",
     "timeless",
     "powerless",
-    "patternless",
-    "thoughtless"
+    "patternless"
    ],
    "one": [
     "less"
@@ -13582,6 +13583,7 @@
     "turbines",
     "clothes",
     "loudness",
+    "thoughtless",
     "jobless",
     "wingless",
     "forties",
@@ -13590,8 +13592,7 @@
     "unless",
     "brushes",
     "happiness",
-    "rattles",
-    "vagueness"
+    "rattles"
    ],
    "one": [
     "less",
@@ -13949,8 +13950,8 @@
     "full",
     "less",
     "fell",
-    "fall",
     "add",
+    "fall",
     "grass",
     "glass",
     "shell",
@@ -14133,8 +14134,8 @@
     "full",
     "less",
     "fell",
-    "fall",
     "add",
+    "fall",
     "grass",
     "glass",
     "shell",
@@ -15457,11 +15458,10 @@
     "authenticity",
     "ungauged",
     "authentic",
+    "stepdaughter",
     "beauti",
     "saucer",
     "vaulted",
-    "autumnal",
-    "laughter",
     "vaulting",
     "beautifully"
    ],
@@ -17601,18 +17601,18 @@
     "shirtwaist",
     "persist",
     "resisting",
-    "administer",
     "psychologist",
+    "administer",
     "federalist",
     "specialist",
     "florist",
     "minister",
     "communist",
-    "columnist",
     "assist",
     "enlist",
     "consist",
     "canister",
+    "psychiatrist",
     "coexist",
     "diarist",
     "novelist",
@@ -17620,8 +17620,8 @@
     "violinist",
     "biochemist",
     "pathologist",
-    "psychiatrist",
-    "persisting"
+    "persisting",
+    "parachutist"
    ],
    "one": [
     "list",
@@ -20020,10 +20020,10 @@
     "atmospheric",
     "ceramic",
     "elastic",
-    "mnemonic",
     "economics",
     "mnemonics",
     "diagnostic",
+    "mnemonic",
     "sulphuric",
     "cosmic",
     "systematic",
@@ -21177,7 +21177,7 @@
     "character",
     "chicken",
     "childhood",
-    "chewy"
+    "psychology"
    ],
    "one": [
     "which",
@@ -21655,40 +21655,33 @@
     "rhetoric",
     "rhubarb",
     "rhino",
-    "solemn",
     "psychology",
+    "solemn",
     "pseudonym",
     "condemn",
     "psychic",
     "rhapsody",
-    "alumni",
-    "gymnasium",
-    "mnemonic",
-    "mnemonics",
     "psychologist",
     "rhetorical",
-    "chimney",
-    "randomness",
     "rhetorically",
     "psalter",
     "rhombus",
-    "columnist",
     "solemnly",
+    "condemned",
+    "psychiatrist",
     "pseudo",
     "damning",
-    "gymnast",
     "psoriasis",
     "psychotic",
     "rheumatic",
     "rhinoceros",
-    "psychiatrist",
     "rhododendron",
-    "autumnal"
+    "psychiatry"
    ],
    "one": [
     "rhythm",
-    "psalm",
     "hymn",
+    "psalm",
     "rhyme",
     "psyche",
     "limn",
@@ -21698,8 +21691,8 @@
     "corumn",
     "rhetolic",
     "rhimo",
-    "soremn",
     "psyphology",
+    "soremn",
     "congemn",
     "psyphic",
     "rhatsody"
@@ -21753,17 +21746,9 @@
     "autumn",
     "solemn",
     "condemn",
-    "alumni",
-    "gymnasium",
-    "mnemonic",
-    "mnemonics",
-    "chimney",
-    "randomness",
-    "columnist",
     "solemnly",
-    "damning",
-    "gymnast",
-    "autumnal"
+    "condemned",
+    "damning"
    ],
    "one": [
     "hymn",
@@ -21773,10 +21758,8 @@
     "corumn",
     "soremn",
     "congemn",
-    "mnenonic",
-    "mnenonics",
-    "corumnist",
-    "soremnly"
+    "soremnly",
+    "congemned"
    ],
    "sent": [
     "An autumn hymn in a cold hall is a solemn way to start."
@@ -21789,10 +21772,11 @@
     "psychic",
     "psychologist",
     "psalter",
+    "psychiatrist",
     "pseudo",
     "psoriasis",
     "psychotic",
-    "psychiatrist"
+    "psychiatry"
    ],
    "one": [
     "psalm",
@@ -21804,9 +21788,10 @@
     "psyphic",
     "psyphologist",
     "psarter",
+    "psyphiatrist",
     "psoliasis",
     "psyphotic",
-    "psyphiatrist"
+    "psyphiatry"
    ],
    "sent": []
   },
@@ -21832,8 +21817,8 @@
     "telephone",
     "biologist",
     "ology",
-    "zoology",
     "psychology",
+    "zoology",
     "biopsy",
     "symphony",
     "autograph",
@@ -22098,8 +22083,8 @@
     "archaeology",
     "geology",
     "ology",
-    "zoology",
     "psychology",
+    "zoology",
     "technology",
     "volcanology",
     "microbiology",
@@ -22164,8 +22149,8 @@
     "grounded",
     "thousand",
     "machine",
-    "fourteen",
     "technical",
+    "fourteen",
     "chosen",
     "attached",
     "watched",
@@ -22399,7 +22384,7 @@
     "character",
     "chicken",
     "childhood",
-    "chewy"
+    "psychology"
    ],
    "one": [
     "which",
@@ -23651,16 +23636,15 @@
     "slaughter",
     "onslaught",
     "distraught",
-    "laughter",
+    "stepdaughter",
+    "overwrought",
     "afterthought"
    ],
    "one": [
     "taught",
     "brought",
-    "drought",
     "ought",
     "aught",
-    "draught",
     "sought",
     "nought",
     "fraught",
@@ -23668,6 +23652,8 @@
    ],
    "fake": [
     "distlaught",
+    "spepdaughter",
+    "oberwrought",
     "aftelthought"
    ],
    "sent": []
@@ -23677,32 +23663,33 @@
     "slaughter",
     "onslaught",
     "distraught",
-    "laughter"
+    "stepdaughter"
    ],
    "one": [
     "taught",
     "aught",
-    "draught",
     "fraught"
    ],
    "fake": [
-    "distlaught"
+    "distlaught",
+    "spepdaughter"
    ],
    "sent": []
   },
   "og5-09|ought": {
    "real": [
+    "overwrought",
     "afterthought"
    ],
    "one": [
     "brought",
-    "drought",
     "ought",
     "sought",
     "nought",
     "wrought"
    ],
    "fake": [
+    "oberwrought",
     "aftelthought"
    ],
    "sent": []
