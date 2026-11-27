@@ -6730,10 +6730,14 @@ const FAMILIES: Record<string, Ramp> = {
   // Amber is not a kit colour. It is kept because the format badges need a
   // sixth category and the kit gives four hues.
   amber: ["FFF6E8", "FFB13F", "8A5400"],
+  // The kit's fourth chevron, 89BECF, sits at hue 195, which is inside the
+  // blue band and not the accent band -- so "teal" and "blue" are the same
+  // ramp here on purpose. The kit has one blue, and both bands have to reach
+  // it. Leaving blue on 4C9AFF is what kept the PBL hub off the brand: its
+  // greens land on the accent and its navy on blue, and neither was a kit
+  // colour, so a page that recoloured cleanly still came out wrong.
   teal: ["F0F6F9", "89BECF", "67AAC2", "345561"],
-  // Blue is not a kit colour either -- it is the link blue, and the accent
-  // the PBL materials are opened with.
-  blue: ["EAF2FF", "4C9AFF", "2F6FD0", "16213E"],
+  blue: ["F0F6F9", "89BECF", "67AAC2", "345561"],
   lavender: ["F5F2FA", "B19FDB", "9B82D0", "4E4168"],
   pink: ["FBF0F4", "DE8FAD", "D46E94", "6A374A"],
 };
@@ -6798,7 +6802,12 @@ function familyFor(hex: string, accent: string): string {
   // lighter and the gold button it sits on stopped being readable.
   if (luminance(hex) < 0.06) return "grey";
   const h = hue(hex);
-  if (h < 40 || h >= 330) return "warm";
+  // The warm band used to start at 330, which swallowed the kit's whole rose
+  // family: DE8FAD, D46E94 and 6A374A all sit at hue 337 to 338, and the warm
+  // ramp holds no rose, so every one of them came back as coral. One of the
+  // brand's four colours could not reach a page at all. 345 gives rose the
+  // band it needs and leaves coral, at hue 7, where it was.
+  if (h < 40 || h >= 345) return "warm";
   // Gold sits at about 43 degrees. On the other side of the line it was a
   // coral, which is both wrong and darker than the gold it replaced.
   if (h < 70) return "amber";

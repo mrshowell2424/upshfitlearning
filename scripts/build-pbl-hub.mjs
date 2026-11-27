@@ -807,7 +807,35 @@ let built = src.slice(0, pickStart) + BUILDER + src.slice(listEnd).replace("</bo
 // section id, because that is all it held. Each of these is required: if a
 // later export rewords one, this fails rather than shipping a K-12 hub that
 // still says Grade 2 at the top.
+// The card accents, in the kit's order.
+//
+// The kit is explicit that the four colours always run coral, rose,
+// lavender, teal, the same order as the logo. The export runs sky, gold,
+// coral, navy across the grade bands and seven more colours across the Gold
+// Standard elements, two of which (gold and navy) are not brand colours at
+// all and survive recolouring because nothing in the ramps is close.
+//
+// Rewritten by position rather than by value, because each colour is used
+// twice and the two uses belong to different lists.
+const KIT_CYCLE = ["#EC9388", "#DE8FAD", "#B19FDB", "#89BECF"];
+{
+  const re = /border-top:8px solid #[0-9A-Fa-f]{6}/g;
+  const found = built.match(re) || [];
+  if (found.length !== 11) {
+    console.error(`\u2717 expected 11 card accents in the export, found ${found.length}.`);
+    console.error("   4 grade bands and 7 Gold Standard elements. Fix this script, or the export.");
+    process.exit(1);
+  }
+  let i = 0;
+  built = built.replace(re, () => `border-top:8px solid ${KIT_CYCLE[i++ % 4]}`);
+}
+
 const RECOPY = [
+  // Gold is not a kit colour. It carries the primary button and the step
+  // numbers, which is the loudest thing on the page and the one a teacher
+  // clicks. Kit coral with charcoal on it: 8.18:1, and charcoal on a soft
+  // colour is exactly what the kit asks for.
+  ["background:#F4C95D;color:#1B2A4A", "background:#EC9388;color:#111111"],
   ["Project-based learning \u00b7 Grade 2 \u00b7 Ohio Learning Standards",
    "Project-based learning \u00b7 K to 12 \u00b7 Ohio Learning Standards"],
   ['<a href="#grade2" style="color:#fff">Grade 2 builder</a>',
