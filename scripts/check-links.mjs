@@ -157,6 +157,55 @@ for (const [src, from] of assetSeen) {
 
 await browser.close();
 
+/*
+ * The sitemap, which a crawl from the home page cannot reach.
+ *
+ * This walks outward from "/", so it only ever sees what something links
+ * to. /pricing was published in the sitemap and linked from nowhere -- the
+ * Plans page came down and everything went free -- so it sat there as a 307
+ * to the home page, told to search engines, and no crawl could find it.
+ *
+ * A sitemap is a list of pages asserted to be worth indexing. A redirect is
+ * not one, and neither is a 404, so both are reported here.
+ */
+const sitemapProblems = [];
+{
+  const res = await fetch(`${BASE}/sitemap.xml`).catch(() => null);
+  if (!res || !res.ok) {
+    sitemapProblems.push(["/sitemap.xml", res ? res.status : "no response", "could not be read"]);
+  } else {
+    const xml = await res.text();
+    const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+    // Every hand-written route, and one of each generated shape.
+    //
+    // The first version of this collapsed a path to its shape by replacing
+    // the last segment with *, which turns /pricing into /* -- and so does
+    // /about, /math and every other top-level route. It checked one of the
+    // 29 and skipped the rest, then reported the sitemap clean while the
+    // route this was written to catch sat in it. A single-segment path is
+    // its own shape; only a deeper one is a template worth sampling.
+    const seenShape = new Set();
+    const sample = urls.filter((u) => {
+      const path = new URL(u).pathname;
+      const shape = path.split("/").filter(Boolean).length > 1
+        ? path.replace(/\/[^/]+$/, "/*")
+        : path;
+      if (seenShape.has(shape)) return false;
+      seenShape.add(shape);
+      return true;
+    });
+    for (const u of sample) {
+      const r = await fetch(u, { redirect: "manual" }).catch(() => null);
+      if (!r) sitemapProblems.push([u, "no response", "in the sitemap"]);
+      else if (r.status >= 300 && r.status < 400)
+        sitemapProblems.push([u, r.status, `in the sitemap but redirects to ${r.headers.get("location")}`]);
+      else if (r.status >= 400) sitemapProblems.push([u, r.status, "in the sitemap"]);
+    }
+    console.log(`sitemap urls:   ${urls.length} (${sample.length} distinct shapes checked)`);
+  }
+}
+for (const [url, status, note] of sitemapProblems) broken.push([url, status, "sitemap.xml", note]);
+
 console.log(`pages reached:  ${reached.length}`);
 console.log(`images checked: ${assetSeen.size}`);
 if (reached.length >= MAX_PAGES) {

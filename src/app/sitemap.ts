@@ -49,7 +49,9 @@ const STATIC_ROUTES: [path: string, priority: number][] = [
   ["/courses", 0.7],
   ["/learning-science", 0.7],
   ["/lounge", 0.6],
-  ["/pricing", 0.6],
+  // No /pricing. Everything is free and the Plans page came down in
+  // e3dea9c, so the route is a 307 to the home page. A sitemap is a list of
+  // pages worth indexing, and a redirect is not one of them.
   ["/about", 0.5],
 ];
 
