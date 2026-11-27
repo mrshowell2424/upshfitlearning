@@ -1,5 +1,5 @@
 import { describe, it, expect, afterEach } from "vitest";
-import { siteOrigin } from "@/lib/utils/site-origin";
+import { siteOrigin, siteUrl } from "@/lib/utils/site-origin";
 
 /**
  * The origin Stripe is told to send a paying customer back to.
@@ -9,7 +9,7 @@ import { siteOrigin } from "@/lib/utils/site-origin";
  * has to throw now, because a wrong return URL is not something to recover
  * from silently -- Stripe rejects it and the only trace is a 500.
  */
-const KEYS = ["NEXT_PUBLIC_APP_URL", "VERCEL_PROJECT_PRODUCTION_URL", "VERCEL_URL"] as const;
+const KEYS = ["NEXT_PUBLIC_APP_URL", "VERCEL_PROJECT_PRODUCTION_URL", "VERCEL_URL", "NODE_ENV"] as const;
 const saved = Object.fromEntries(KEYS.map((k) => [k, process.env[k]]));
 
 afterEach(() => {
@@ -81,5 +81,48 @@ describe("siteOrigin", () => {
   it("throws rather than returning undefined when nothing is set", () => {
     clear();
     expect(() => siteOrigin(req())).toThrow(/Cannot work out this site's address/);
+  });
+});
+
+/**
+ * siteUrl builds the sitemap, robots.txt, canonical URLs and every og:image.
+ *
+ * The case that shipped: this site is on Cloudflare, not Vercel, so the
+ * Vercel branch never fires, nothing was configured, and production fell
+ * through to localhost. 396 sitemap URLs pointed at http://localhost:3000,
+ * robots.txt sent search engines there, and no social card could render its
+ * image. Every one of these is a real value that was live.
+ */
+describe("siteUrl", () => {
+  const setEnv = (v?: string) => {
+    if (v === undefined) delete (process.env as Record<string, string | undefined>).NODE_ENV;
+    else (process.env as Record<string, string>).NODE_ENV = v;
+  };
+
+  it("uses NEXT_PUBLIC_APP_URL above everything else", () => {
+    clear();
+    process.env.NEXT_PUBLIC_APP_URL = "https://hub.upshiftlearning.com";
+    setEnv("production");
+    expect(siteUrl()).toBe("https://hub.upshiftlearning.com");
+  });
+
+  it("never hands localhost to a production build", () => {
+    clear();
+    setEnv("production");
+    expect(siteUrl()).not.toMatch(/localhost/);
+    expect(siteUrl()).toMatch(/^https:\/\//);
+  });
+
+  it("still uses localhost in development", () => {
+    clear();
+    setEnv("development");
+    expect(siteUrl()).toMatch(/^http:\/\/localhost/);
+  });
+
+  it("takes the Vercel domain when one is set", () => {
+    clear();
+    setEnv("production");
+    process.env.VERCEL_PROJECT_PRODUCTION_URL = "example.vercel.app";
+    expect(siteUrl()).toBe("https://example.vercel.app");
   });
 });

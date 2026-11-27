@@ -23,6 +23,8 @@
  */
 
 const BASE = process.env.BASE || "http://localhost:3000";
+/** Checking localhost, so a localhost URL in the answer is correct there. */
+const LOCAL = /^https?:\/\/localhost\b/i.test(BASE);
 const BRAND = "Upshift Learning";
 
 /** Redirects -- they never render a document of their own. */
@@ -87,6 +89,13 @@ for (const route of ROUTES) {
   if (!image) problems.push([route, "no og:image"]);
   else if (!/^https?:\/\//i.test(image)) {
     problems.push([route, `og:image is relative, so no card will render: "${image}"`]);
+  } else if (!LOCAL && /^https?:\/\/localhost\b/i.test(image)) {
+    // Absolute was the only thing asked of it, and
+    // http://localhost:3000/og/default.png is absolute -- so this passed on
+    // a site whose every social card pointed at a machine the scraper
+    // cannot reach. Checking a remote BASE and finding localhost in the
+    // answer means the build could not work out its own address.
+    problems.push([route, `og:image points at localhost: "${image}" -- NEXT_PUBLIC_APP_URL is not set on the deploy`]);
   }
 
   const ogTitle = tag(html, /<meta property="og:title" content="([^"]*)"/i);

@@ -69,10 +69,22 @@ export function siteOrigin(request: OriginRequest): string {
  * worse bug than a link preview with a localhost URL in it, so the last
  * resort here is a fallback rather than an error.
  *
- * On Vercel the platform always sets VERCEL_PROJECT_PRODUCTION_URL, so
- * production is correct with nothing configured. Set NEXT_PUBLIC_APP_URL to
- * the custom domain and cards will use that instead of the vercel.app host.
+ * This site is NOT on Vercel. It is served by Cloudflare through OpenNext,
+ * so VERCEL_PROJECT_PRODUCTION_URL is never set and that branch can never
+ * fire -- which left localhost as the production answer. The warning below
+ * described the result exactly and nobody saw it: the live sitemap carried
+ * 396 localhost URLs, robots.txt pointed search engines at
+ * http://localhost:3000/sitemap.xml, and every og:image on the site was a
+ * localhost address, so no social card could ever render an image.
+ *
+ * So production falls back to the real host rather than to localhost. The
+ * proper fix is still NEXT_PUBLIC_APP_URL, which wins over this and is the
+ * only thing that makes a second domain or a preview deployment correct;
+ * this is the floor under it, not a replacement for it.
  */
+/** Where this site actually lives. See the Deployment section of CLAUDE.md. */
+const PRODUCTION_HOST = "https://hub.upshiftlearning.com";
+
 export function siteUrl(): string {
   const configured = process.env.NEXT_PUBLIC_APP_URL?.trim();
   if (configured && /^https?:\/\//i.test(configured)) {
@@ -83,20 +95,19 @@ export function siteUrl(): string {
     process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
   if (vercel) return `https://${vercel.replace(/^https?:\/\//i, "").replace(/\/+$/, "")}`;
 
-  const local = `http://localhost:${process.env.PORT || 3000}`;
-
-  // Reaching this in a production build means neither the explicit variable
-  // nor Vercel's own was set, and the sitemap is about to go out telling
-  // search engines to crawl localhost. That is worse than having no sitemap,
-  // and it is silent, so say so where a deploy log will show it.
+  // A production build reaching here has neither the explicit variable nor
+  // Vercel's, which on Cloudflare is every production build. Returning
+  // localhost here is what put localhost in the sitemap, in robots.txt and
+  // in every og:image, so production gets the real host instead.
   if (process.env.NODE_ENV === "production") {
     console.warn(
-      "[site-origin] NEXT_PUBLIC_APP_URL is not set and this is not a Vercel " +
-        `build, so absolute URLs fall back to ${local}. Set NEXT_PUBLIC_APP_URL ` +
-        "to the real site address before deploying -- the sitemap, robots.txt " +
-        "and every link preview are built from it.",
+      "[site-origin] NEXT_PUBLIC_APP_URL is not set, so absolute URLs fall " +
+        `back to ${PRODUCTION_HOST}. Set it to the real site address -- the ` +
+        "sitemap, robots.txt and every link preview are built from it, and " +
+        "this fallback cannot know about a second domain or a preview build.",
     );
+    return PRODUCTION_HOST;
   }
 
-  return local;
+  return `http://localhost:${process.env.PORT || 3000}`;
 }
