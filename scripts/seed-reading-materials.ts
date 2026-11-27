@@ -4592,6 +4592,12 @@ const ADAPTATIONS: Adaptation[] = [
         "const sbRows = sents.map((s, si) => { const ws = s.split(' '); " +
           "const face = ws.map((w, i) => { " +
           "let t = i === ws.length - 1 ? w.replace(/[.!?]+$/, '') : w; " +
+          // The pronoun I is the one word English never writes small, so a
+          // card reading i would be wrong rather than waiting to be fixed.
+          // Keep it, and its contractions, exactly as written: a capital I
+          // followed by nothing or by an apostrophe. It and Its have a
+          // lower-case letter next and are lowercased like any other word.
+          "if (t.charAt(0) === 'I' && !/[a-z]/.test(t.charAt(1))) return t; " +
           "return t.charAt(0).toLowerCase() + t.slice(1); }); " +
           "const ord = face.map((w, i) => [w,",
       );
