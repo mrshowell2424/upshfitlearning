@@ -2417,9 +2417,9 @@
     "kindergarten",
     "knitted",
     "kilogram",
-    "knuckle",
     "knowable",
     "kernel",
+    "knuckle",
     "koala",
     "keynote"
    ],
@@ -4773,14 +4773,14 @@
     "strongly",
     "flexible",
     "steeper",
+    "clinician",
     "stripped",
     "clearance",
     "steaming",
     "stepping",
     "closure",
     "static",
-    "clouded",
-    "flashlight"
+    "clouded"
    ],
    "one": [
     "still",
@@ -4903,6 +4903,7 @@
     "clearly",
     "classes",
     "climbing",
+    "clinician",
     "clearance",
     "closure",
     "clouded",
@@ -4917,7 +4918,6 @@
     "clustered",
     "clinically",
     "cloudiness",
-    "clinician",
     "clerking",
     "cleanliness",
     "clicker",
@@ -7075,7 +7075,6 @@
     "undone",
     "uncover",
     "undo",
-    "nonfiction",
     "unpack",
     "nonsense",
     "nonstop",
@@ -7083,9 +7082,11 @@
     "unsafe",
     "unfit",
     "nonfat",
+    "nonslip",
     "untie",
     "understood",
     "underground",
+    "nonfiction",
     "unloaded",
     "untangle",
     "unit",
@@ -7146,8 +7147,7 @@
     "unremarkable",
     "unalienable",
     "undisturbed",
-    "untrue",
-    "unfair"
+    "untrue"
    ],
    "one": [
     "none",
@@ -7160,8 +7160,8 @@
     "undome",
     "unpover",
     "ungo",
-    "nonmiction",
-    "unpapk"
+    "unpapk",
+    "nonzense"
    ],
    "sent": [
     "The top shelf is directly under an uninsulated roof and runs hot all summer.",
@@ -7277,11 +7277,11 @@
   },
   "og1-13|non-": {
    "real": [
-    "nonfiction",
     "nonsense",
     "nonstop",
     "nonfat",
     "nonslip",
+    "nonfiction",
     "nonzero",
     "nonmetal",
     "nonverbal",
@@ -7293,10 +7293,10 @@
     "non"
    ],
    "fake": [
-    "nonmiction",
     "nonzense",
     "nonspop",
     "nonmat",
+    "nonmiction",
     "nonsero",
     "nonnetal",
     "nonvelbal",
@@ -10738,15 +10738,15 @@
     "wreckage",
     "thoroughly",
     "twilight",
-    "knuckle",
     "delighted",
     "knowable",
     "unploughed",
-    "wrinkle",
+    "knuckle",
     "almighty",
     "rightful",
     "blighted",
-    "distraught"
+    "distraught",
+    "thoroughfare"
    ],
    "one": [
     "light",
@@ -10802,10 +10802,10 @@
     "trough",
     "sigh",
     "wren",
+    "knack",
     "laugh",
     "neigh",
     "knight",
-    "knack",
     "wrench",
     "knob",
     "kneel",
@@ -10841,8 +10841,8 @@
     "knowledge",
     "kneeling",
     "knitted",
-    "knuckle",
-    "knowable"
+    "knowable",
+    "knuckle"
    ],
    "one": [
     "know",
@@ -10854,8 +10854,8 @@
     "knee",
     "knit",
     "knelt",
-    "knight",
     "knack",
+    "knight",
     "knob",
     "kneel",
     "knop"
@@ -12246,7 +12246,6 @@
     "butterfly",
     "oily",
     "painful",
-    "joyful",
     "lovely",
     "painless",
     "document",
@@ -12262,7 +12261,8 @@
     "explicitly",
     "slightly",
     "deliberately",
-    "immediately"
+    "immediately",
+    "carefully"
    ],
    "one": [
     "less",
@@ -12300,7 +12300,6 @@
     "thankful",
     "playful",
     "painful",
-    "joyful",
     "carefully",
     "fully",
     "handful",
@@ -12321,9 +12320,9 @@
     "truthfully",
     "meaningful",
     "hopeful",
+    "restful",
     "rightful",
     "awful",
-    "restful",
     "cheerfully",
     "cheerful",
     "colorful",
@@ -13643,12 +13642,12 @@
     "subtract",
     "postwar",
     "misstep",
+    "misfit",
     "misspell",
     "subset",
     "postscript",
-    "subsoil",
+    "subplot",
     "misplace",
-    "misjudge",
     "mission",
     "submarine",
     "subscription",
@@ -13684,25 +13683,22 @@
     "posting",
     "postmaster",
     "submission",
-    "misfit",
     "mishap",
     "postdate",
     "submerged",
     "sublime",
+    "subtext",
     "mistaken",
     "mistaking",
     "mislay",
     "missile",
     "subtend",
     "subfloor",
-    "subtitle",
     "postnatal",
     "postseason",
     "subsidence",
     "submersible",
     "subsequently",
-    "subplot",
-    "subtext",
     "misbehave"
    ],
    "one": [
@@ -13715,10 +13711,10 @@
     "postpome",
     "subtlact",
     "misspep",
+    "mismit",
     "misstell",
     "postsclipt",
-    "misprace",
-    "misjugge"
+    "subprot"
    ],
    "sent": [
     "Do not misspell the word on the subway.",
@@ -13735,9 +13731,9 @@
     "misread",
     "mislead",
     "misstep",
+    "misfit",
     "misspell",
     "misplace",
-    "misjudge",
     "mission",
     "mismatch",
     "misbehavior",
@@ -13749,7 +13745,6 @@
     "misprint",
     "misspelling",
     "mistrust",
-    "misfit",
     "mishap",
     "mistaken",
     "mistaking",
@@ -13763,9 +13758,9 @@
    "fake": [
     "mistate",
     "misspep",
+    "mismit",
     "misstell",
     "misprace",
-    "misjugge",
     "misdehavior",
     "mispook",
     "misleaging"
@@ -13782,7 +13777,7 @@
     "submit",
     "subtract",
     "subset",
-    "subsoil",
+    "subplot",
     "submarine",
     "subscription",
     "substantial",
@@ -13801,27 +13796,25 @@
     "submission",
     "submerged",
     "sublime",
+    "subtext",
     "subtend",
     "subfloor",
-    "subtitle",
     "subsidence",
     "submersible",
-    "subsequently",
-    "subplot",
-    "subtext"
+    "subsequently"
    ],
    "one": [
     "sub"
    ],
    "fake": [
     "subtlact",
+    "subprot",
     "submaline",
     "subscliption",
     "substipution",
     "substipute",
     "subsclibe",
-    "subtlaction",
-    "subsispence"
+    "subtlaction"
    ],
    "sent": []
   },
@@ -14493,7 +14486,7 @@
     "sandwich",
     "cutting",
     "watching",
-    "nonfiction"
+    "closet"
    ],
    "one": [
     "which",
@@ -14804,7 +14797,6 @@
     "gently",
     "carriage",
     "digest",
-    "misjudge",
     "general",
     "passage",
     "message",
@@ -14861,7 +14853,8 @@
     "charger",
     "exaggerate",
     "genuinely",
-    "village"
+    "village",
+    "image"
    ],
    "one": [
     "change",
@@ -14938,7 +14931,6 @@
   },
   "og3-02|dge": {
    "real": [
-    "misjudge",
     "budget",
     "knowledge",
     "smudged",
@@ -15133,9 +15125,7 @@
     "drawing",
     "awake",
     "cutaway",
-    "subsoil",
     "oily",
-    "joyful",
     "poison",
     "crawling",
     "august",
@@ -15201,7 +15191,9 @@
     "employed",
     "jawbone",
     "employer",
-    "unspoiled"
+    "unspoiled",
+    "toilet",
+    "aurelian"
    ],
    "one": [
     "point",
@@ -15295,7 +15287,6 @@
     "poisonous",
     "noisy",
     "joining",
-    "subsoil",
     "oily",
     "poison",
     "moisture",
@@ -15367,7 +15358,6 @@
   },
   "og3-04|oy": {
    "real": [
-    "joyful",
     "enjoy",
     "employment",
     "convoy",
@@ -16961,7 +16951,6 @@
     "unsettled",
     "thistle",
     "battle",
-    "subtitle",
     "trestle"
    ],
    "one": [],
@@ -17194,12 +17183,12 @@
     "definition",
     "direction",
     "station",
-    "nonfiction",
     "decoration",
     "version",
     "observation",
     "discussion",
     "caption",
+    "nonfiction",
     "division",
     "evaporation",
     "conclusion",
@@ -17277,7 +17266,7 @@
     "plotection",
     "deminition",
     "spation",
-    "nonmiction"
+    "deporation"
    ],
    "sent": [
     "I had a vision at the station.",
@@ -17299,10 +17288,10 @@
     "definition",
     "direction",
     "station",
-    "nonfiction",
     "decoration",
     "observation",
     "caption",
+    "nonfiction",
     "evaporation",
     "position",
     "section",
@@ -17380,7 +17369,7 @@
     "plotection",
     "deminition",
     "spation",
-    "nonmiction"
+    "deporation"
    ],
    "sent": [
     "Keepers observe feeding, social interaction, and locomotion that daytime visitors never see.",
@@ -20576,6 +20565,7 @@
     "electrician",
     "delicious",
     "suspicious",
+    "clinician",
     "ambitious",
     "magician",
     "potential",
@@ -20585,14 +20575,12 @@
     "precious",
     "confidential",
     "facial",
-    "physician",
     "partially",
     "pediatrician",
     "commercial",
     "presidential",
     "conscious",
     "unconscious",
-    "clinician",
     "financial",
     "financially",
     "commercially",
@@ -20719,10 +20707,9 @@
     "technician",
     "musician",
     "electrician",
-    "magician",
-    "physician",
-    "pediatrician",
     "clinician",
+    "magician",
+    "pediatrician",
     "politician",
     "optician",
     "statistician",
@@ -20732,8 +20719,8 @@
    "fake": [
     "techmician",
     "erectrician",
-    "pegiatrician",
     "crinician",
+    "pegiatrician",
     "poritician",
     "ottician",
     "spatistician"
@@ -21021,7 +21008,6 @@
     "physics",
     "alphabetical",
     "graphic",
-    "physician",
     "hemisphere",
     "biography",
     "microphone",
@@ -21029,8 +21015,8 @@
     "telephone",
     "symphony",
     "autograph",
-    "headphone",
     "phonics",
+    "headphone",
     "biosphere",
     "cipher",
     "photon",
@@ -21079,7 +21065,8 @@
     "prophecy",
     "sulphide",
     "homophone",
-    "megaphone"
+    "megaphone",
+    "photogenic"
    ],
    "one": [
     "phrase",
@@ -21851,8 +21838,8 @@
     "symphony",
     "autograph",
     "technology",
-    "headphone",
     "phonics",
+    "headphone",
     "biosphere",
     "biochemistry",
     "photon",
@@ -21938,8 +21925,8 @@
     "microphone",
     "telephone",
     "symphony",
-    "headphone",
     "phonics",
+    "headphone",
     "phoneme",
     "homophone",
     "megaphone",

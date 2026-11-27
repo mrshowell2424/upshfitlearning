@@ -864,7 +864,7 @@
       "nonstop",
       "nonfat",
       "nonsense",
-      "nonfiction",
+      "nonslip",
       "nonstick"
      ]
     },
@@ -887,7 +887,7 @@
     "lid"
    ],
    "bank": [
-    "nonfiction",
+    "nonslip",
     "nonstop",
     "unlock",
     "lid",
@@ -1816,7 +1816,7 @@
       "submit",
       "subtract",
       "subset",
-      "subsoil"
+      "subplot"
      ]
     }
    ],
@@ -1838,7 +1838,7 @@
     "subtract",
     "misread",
     "postgame",
-    "subsoil",
+    "subplot",
     "mistake",
     "loud",
     "subway",
@@ -3481,7 +3481,7 @@
      "words": [
       "musician",
       "magician",
-      "physician",
+      "clinician",
       "electrician",
       "technician"
      ]
@@ -3518,7 +3518,7 @@
    "bank": [
     "gracious",
     "confidential",
-    "physician",
+    "clinician",
     "delicious",
     "initial",
     "crucial",
