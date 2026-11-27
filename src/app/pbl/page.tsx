@@ -119,8 +119,10 @@ function Hub() {
               <p style={{ fontSize: 15, fontWeight: 500, color: MUTED, margin: "8px 0 0", lineHeight: 1.55 }}>
                 Four grade bands, the five-part project cycle, six starter projects you can run this
                 week, the seven Gold Standard elements, and a planning checklist that carries a
-                project from launch to reflection. Its builder turns any of 87 Grade 2 Ohio
-                standards into a project with a driving question and a student product.
+                project from launch to reflection. Its builder turns any of 403 Ohio standards
+                into a project with a driving question and a student product: English Language
+                Arts and Maths from Kindergarten to Grade 12, plus Science and Social Studies
+                at Grade 2.
               </p>
             </div>
             <Image

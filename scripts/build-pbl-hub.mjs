@@ -93,6 +93,88 @@ if (problems.length) {
   process.exit(1);
 }
 
+// ---- the rest of K-12 ----------------------------------------------------
+//
+// The export is Grade 2 and nothing else. The standards this project already
+// holds run K to 12, but they carry no project, so each one is routed to the
+// project in its band whose keys its own skills and text match. The project
+// carries the driving question and the student product, which is how the
+// export works too: 87 standards sharing 19 projects.
+//
+// ELA and Math only. There is no Science or Social Studies standard anywhere
+// in this repo or in the standards table, and writing one here would put a
+// made-up code in front of a teacher, so the only ones on the hub are the
+// Grade 2 ones the export itself shipped.
+const LIB = JSON.parse(readFileSync(path.join(ROOT, "scripts/pbl-projects.json"), "utf8")).projects;
+const CORPUS = JSON.parse(readFileSync(path.join(ROOT, "scripts/pbl-standards.json"), "utf8")).standards;
+
+for (const r of records) r.grade = "2";
+
+const unmatched = [];
+const generated = [];
+const haveCode = new Set(records.map((r) => r.code));
+for (const s of CORPUS) {
+  if (haveCode.has(s.code)) continue; // the export's own wording wins
+  const pool = LIB[`${s.band}|${s.subject}`];
+  if (!pool) { unmatched.push(`${s.code}: no project library for ${s.band}|${s.subject}`); continue; }
+  const hay = [s.name, s.text, s.target, ...(s.skills || [])].join(" ").toLowerCase();
+  let best = null;
+  pool.forEach((pr, i) => {
+    let score = 0;
+    for (const k of pr.keys) if (hay.includes(k.toLowerCase())) score += k.includes(" ") ? 3 : 2;
+    for (const sk of s.skills || []) if (pr.keys.some((k) => k.toLowerCase() === sk.toLowerCase())) score += 5;
+    if (!best || score > best.score || (score === best.score && i < best.i)) best = { pr, score, i };
+  });
+  // Scoring zero means the best project in the band shares not one word with
+  // the standard. Handing that to a teacher as their project is worse than
+  // not offering the standard at all, so it stops the build instead.
+  if (!best || best.score === 0) {
+    unmatched.push(`${s.code} (${s.band} ${s.subject}) matches no project key`);
+    continue;
+  }
+  generated.push({
+    code: s.code, grade: s.grade, subject: s.subject, text: s.text,
+    dq: best.pr.dq, project: best.pr.name, product: best.pr.product, matches: [],
+  });
+}
+
+// Partners come from the same grade: the ones already running this project
+// first, then anything in another subject, then the rest of the grade.
+const everything = records.concat(generated);
+const perGrade = new Map();
+for (const r of everything) {
+  if (!perGrade.has(r.grade)) perGrade.set(r.grade, []);
+  perGrade.get(r.grade).push(r);
+}
+for (const r of generated) {
+  const peers = perGrade.get(r.grade).filter((x) => x.code !== r.code);
+  const pick = [];
+  for (const list of [peers.filter((x) => x.project === r.project),
+                      peers.filter((x) => x.subject !== r.subject), peers])
+    for (const x of list) if (pick.length < 3 && pick.indexOf(x.code) === -1) pick.push(x.code);
+  r.matches = pick;
+}
+
+const genProblems = [...unmatched];
+// A project nothing lands on prints a sheet with no standard to plan from --
+// the same hole an empty word list is, and nothing above would notice it.
+const usedProjects = new Set(everything.map((r) => r.project));
+for (const [band, pool] of Object.entries(LIB))
+  for (const pr of pool)
+    if (!usedProjects.has(pr.name)) genProblems.push(`project "${pr.name}" (${band}) has no standard`);
+for (const r of generated)
+  if (r.matches.length !== 3) genProblems.push(`${r.code}: ${r.matches.length} partners, expected 3`);
+if (genProblems.length) {
+  console.error("✗ the K-12 build does not hold:");
+  genProblems.slice(0, 12).forEach((x) => console.error("   " + x));
+  console.error(`\n${genProblems.length} problem(s). Nothing was written.`);
+  process.exit(1);
+}
+records.push(...generated);
+
+const GRADE_ORDER = ["K", "1", "2", "3", "4", "5", "6", "7", "8", "9-12"];
+const GRADES = GRADE_ORDER.filter((g) => records.some((r) => r.grade === g));
+
 const SUBJECTS = [...new Set(records.map((r) => r.subject))];
 
 /**
@@ -117,13 +199,17 @@ if (CYCLE.length !== 5) {
 /** The builder that replaces the list, styled in the export's own palette. */
 const BUILDER = `
   <div style="background:#E9F0E0;border-radius:16px;padding:20px;display:grid;gap:14px">
-    <p style="margin:0;font-size:14px;font-weight:700;color:#2F4A2A">Jump to a subject &middot; ${records.length} standards</p>
+    <p style="margin:0;font-size:14px;font-weight:700;color:#2F4A2A">Jump to a subject &middot; ${records.length} standards, ${GRADES.length === 1 ? "Grade " + GRADES[0] : "K to 12"}</p>
     <div style="display:flex;flex-wrap:wrap;gap:10px">
 ${SUBJECTS.map((s) => `      <button type="button" data-pbl-subject="${s}" style="font:inherit;cursor:pointer;padding:8px 16px;border-radius:999px;border:1px solid #4E7A3A;background:#fff;color:#2F4A2A;font-weight:700;font-size:14px">${s}</button>`).join("\n")}
     </div>
   </div>
   <div id="pbl-bar" style="background:#fff;border:1px solid #D5DCCB;border-radius:14px;padding:16px 18px;display:grid;gap:14px;margin-top:18px">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px">
+      <div style="display:grid;gap:6px">
+        <label for="pbl-grade" style="font-size:13px;font-weight:700;color:#2F4A2A">Grade</label>
+        <select id="pbl-grade" style="font-family:inherit;font-size:16px;padding:11px 13px;border-radius:12px;border:1px solid #4E7A3A;background:#fff;color:#243322;width:100%;box-sizing:border-box"></select>
+      </div>
       <div style="display:grid;gap:6px">
         <label for="pbl-subject" style="font-size:13px;font-weight:700;color:#2F4A2A">Subject</label>
         <select id="pbl-subject" style="font-family:inherit;font-size:16px;padding:11px 13px;border-radius:12px;border:1px solid #4E7A3A;background:#fff;color:#243322;width:100%;box-sizing:border-box"></select>
@@ -171,6 +257,7 @@ const SCRIPT = `
 (function () {
   var PBL = ${JSON.stringify(records)};
   var SUBJECTS = ${JSON.stringify(SUBJECTS)};
+  var GRADES = ${JSON.stringify(GRADES)};
   var CYCLE = ${JSON.stringify(CYCLE)};
   var view = "project";
 
@@ -210,6 +297,7 @@ const SCRIPT = `
     return out;
   }
 
+  var gradeSel = document.getElementById("pbl-grade");
   var subjectSel = document.getElementById("pbl-subject");
   var stdSel = document.getElementById("pbl-standard");
   var search = document.getElementById("pbl-search");
@@ -224,12 +312,16 @@ const SCRIPT = `
   };
   opt(subjectSel, "", "All subjects");
   SUBJECTS.forEach(function (s) { opt(subjectSel, s, s); });
+  opt(gradeSel, "", "All grades");
+  GRADES.forEach(function (g) { opt(gradeSel, g, g === "9-12" ? "Grades 9 to 12" : "Grade " + g); });
 
   function visible() {
     var sub = subjectSel.value;
+    var gr = gradeSel.value;
     var q = search.value.trim().toLowerCase();
     return PBL.filter(function (r) {
       if (sub && r.subject !== sub) return false;
+      if (gr && r.grade !== gr) return false;
       if (!q) return true;
       return (r.code + " " + r.text + " " + r.project + " " + r.dq + " " + r.product)
         .toLowerCase().indexOf(q) !== -1;
@@ -651,6 +743,7 @@ const SCRIPT = `
     });
   });
 
+  gradeSel.addEventListener("change", function () { fillStandards(stdSel.value); });
   subjectSel.addEventListener("change", function () { fillStandards(stdSel.value); });
   search.addEventListener("input", function () { fillStandards(stdSel.value); });
   stdSel.addEventListener("change", render);
@@ -710,6 +803,26 @@ const listEnd = src.indexOf("</section>", lastDetails) + "</section>".length;
 
 let built = src.slice(0, pickStart) + BUILDER + src.slice(listEnd).replace("</body>", SCRIPT + "</body>");
 
+// The export calls itself Grade 2 in its eyebrow, its nav link and its
+// section id, because that is all it held. Each of these is required: if a
+// later export rewords one, this fails rather than shipping a K-12 hub that
+// still says Grade 2 at the top.
+const RECOPY = [
+  ["Project-based learning \u00b7 Grade 2 \u00b7 Ohio Learning Standards",
+   "Project-based learning \u00b7 K to 12 \u00b7 Ohio Learning Standards"],
+  ['<a href="#grade2" style="color:#fff">Grade 2 builder</a>',
+   '<a href="#builder" style="color:#fff">Build a project</a>'],
+  ['<section id="grade2"', '<section id="builder"'],
+];
+for (const [from, to] of RECOPY) {
+  if (built.indexOf(from) === -1) {
+    console.error(`\u2717 expected to find this in the export, to replace it:\n   ${from}`);
+    console.error("Nothing was written. Fix this script, or the export.");
+    process.exit(1);
+  }
+  built = built.split(from).join(to);
+}
+
 // "Have a project to share?" invites teachers to add a starter project, and
 // its button goes to #library, where there is nothing to add one with. The
 // section is removed rather than left promising something the page cannot do.
@@ -726,5 +839,7 @@ if (shareAt !== -1) {
 
 writeFileSync(OUT, built);
 const kb = (n) => (n / 1024).toFixed(0) + "KB";
-console.log(`✅ ${records.length} standards, ${records.reduce((n, r) => n + r.matches.length, 0)} matches`);
+console.log(`✅ ${records.length} standards across ${GRADES.length} grades, ` +
+  `${records.reduce((n, r) => n + r.matches.length, 0)} matches, ` +
+  `${new Set(records.map((r) => r.project)).size} projects, every one of them used`);
 console.log(`   ${path.relative(ROOT, SRC)} ${kb(src.length)}  →  ${path.relative(ROOT, OUT)} ${kb(built.length)}`);

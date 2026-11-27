@@ -135,6 +135,13 @@ function corpus() {
     "reading-multisyllabic.json",
     "reading-hub-counts.json",
     "reading-resources-counts.json",
+    // Project planning, for a teacher. Driving questions, student products
+    // and the text of 355 standards -- "proportional", "rhetoric",
+    // "rational exponents". Adding these two files put 64 words into the
+    // bank a child practises from, which is how I found out this walks every
+    // JSON in scripts/ rather than a named list.
+    "pbl-projects.json",
+    "pbl-standards.json",
     // Instructions to a teacher, not text a child reads. Its prose was
     // seeding a bank meant to hold words children have met, and editing a
     // writing task was quietly rewriting the word lists.

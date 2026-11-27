@@ -1,0 +1,977 @@
+{
+ "_about": "The project library the K-12 builder assigns standards to. A project carries the driving question and the student product; a standard is routed to the project whose keys best match its own skills and text. This is the same shape the Grade 2 export already had -- 87 standards sharing 19 projects -- so a project is written once and many standards land on it. Bands are K-2, 3-5, 6-8, 9-12.",
+ "bands": [
+  "K-2",
+  "3-5",
+  "6-8",
+  "9-12"
+ ],
+ "projects": {
+  "K-2|English Language Arts": [
+   {
+    "name": "Books That Teach",
+    "dq": "How can we teach someone something with a book we make ourselves?",
+    "product": "A how-to book the class reads aloud to younger students",
+    "keys": [
+     "informative writing",
+     "text features",
+     "main topic",
+     "how-to",
+     "sequence",
+     "procedure",
+     "captions",
+     "headings",
+     "glossary",
+     "explain"
+    ]
+   },
+   {
+    "name": "Ask Better Questions",
+    "dq": "What questions help us learn the most from a story or a topic?",
+    "product": "A question board and a short report answering the best one",
+    "keys": [
+     "ask and answer",
+     "clarify",
+     "comprehension",
+     "gather",
+     "inquiry",
+     "key details",
+     "note-taking",
+     "questions",
+     "recall",
+     "research",
+     "using sources",
+     "who what where"
+    ]
+   },
+   {
+    "name": "Podcast Stories",
+    "dq": "How do we tell a story so a listener can picture it?",
+    "product": "A recorded story episode with sound",
+    "keys": [
+     "adjusting to situation",
+     "audience",
+     "complete sentences",
+     "describe",
+     "detail",
+     "expression",
+     "fluency",
+     "listening",
+     "oral",
+     "recount",
+     "register",
+     "retell",
+     "speaking",
+     "storytelling"
+    ]
+   },
+   {
+    "name": "Our Writing Publishing House",
+    "dq": "What makes a piece of writing worth publishing?",
+    "product": "A published piece with an author's note and an illustration",
+    "keys": [
+     "writing",
+     "revising",
+     "editing",
+     "narrative writing",
+     "opinion writing",
+     "drafting",
+     "publishing",
+     "keyboarding",
+     "conventions"
+    ]
+   },
+   {
+    "name": "Word Work Lab",
+    "dq": "What clues inside a word tell us what it means?",
+    "product": "A word wall where every word carries its evidence card",
+    "keys": [
+     "morphology",
+     "phonics",
+     "decoding",
+     "prefix",
+     "suffix",
+     "root",
+     "spelling",
+     "word choice",
+     "vocabulary",
+     "context",
+     "syllable",
+     "phoneme",
+     "letter"
+    ]
+   },
+   {
+    "name": "Stories in Motion",
+    "dq": "How do characters change from the beginning of a story to the end?",
+    "product": "A retelling performed with props and a character map",
+    "keys": [
+     "character",
+     "setting",
+     "plot",
+     "story elements",
+     "literature",
+     "theme",
+     "lesson",
+     "central message",
+     "illustrations"
+    ]
+   },
+   {
+    "name": "Folktales Around the World",
+    "dq": "What do stories from different places teach the people who tell them?",
+    "product": "A folktale retelling and a chart comparing two versions",
+    "keys": [
+     "folktale",
+     "fable",
+     "culture",
+     "compare",
+     "diverse",
+     "point of view",
+     "moral",
+     "tradition"
+    ]
+   },
+   {
+    "name": "Read It Like You Mean It",
+    "dq": "How does the way we read a line change what a listener hears?",
+    "product": "A recorded reading performance with a before and after",
+    "keys": [
+     "accuracy",
+     "automaticity",
+     "directionality",
+     "fluency",
+     "high-frequency words",
+     "monitoring",
+     "print concepts",
+     "prosody",
+     "rate",
+     "rereading",
+     "self-correct",
+     "sight words",
+     "stamina"
+    ]
+   }
+  ],
+  "K-2|Math": [
+   {
+    "name": "Class Store",
+    "dq": "How do numbers help us trade fairly?",
+    "product": "A working class store with price tags, coins and receipts",
+    "keys": [
+     "money",
+     "addition",
+     "subtraction",
+     "word problems",
+     "counting",
+     "coins",
+     "operations",
+     "sums",
+     "differences"
+    ]
+   },
+   {
+    "name": "Measure Our Classroom",
+    "dq": "What can we learn about our room by measuring it?",
+    "product": "A measured floor plan with units named on every edge",
+    "keys": [
+     "measurement",
+     "length",
+     "units",
+     "ruler",
+     "estimation",
+     "compare",
+     "measurement tools",
+     "inches",
+     "centimeters"
+    ]
+   },
+   {
+    "name": "Odd or Even Party",
+    "dq": "How do we share things so that everyone gets a fair amount?",
+    "product": "A party plan built on equal groups, with the leftovers explained",
+    "keys": [
+     "odd",
+     "even",
+     "equal groups",
+     "arrays",
+     "repeated addition",
+     "sharing",
+     "partitioning",
+     "doubles"
+    ]
+   },
+   {
+    "name": "Shape Builders",
+    "dq": "What shapes are hiding inside the things around us?",
+    "product": "A built structure and a key naming every shape in it",
+    "keys": [
+     "geometry",
+     "shapes",
+     "attributes",
+     "two-dimensional",
+     "three-dimensional",
+     "composing",
+     "faces",
+     "vertices",
+     "sides",
+     "angles"
+    ]
+   },
+   {
+    "name": "Math Fluency Challenge",
+    "dq": "How do we get fast and accurate at the facts we use most?",
+    "product": "A fluency game the class plays and a progress chart",
+    "keys": [
+     "fluency",
+     "fact",
+     "mental math",
+     "automaticity",
+     "within 20",
+     "within 100",
+     "strategies",
+     "practice"
+    ]
+   },
+   {
+    "name": "Data About Us",
+    "dq": "What does our class look like when we turn it into numbers?",
+    "product": "A survey, a picture graph and three things it shows",
+    "keys": [
+     "data",
+     "graph",
+     "survey",
+     "picture graph",
+     "bar graph",
+     "represent",
+     "interpret",
+     "categories",
+     "tally"
+    ]
+   },
+   {
+    "name": "Number Line Road Trip",
+    "dq": "Where do numbers live in relation to each other?",
+    "product": "A giant number line with landmarks the class argues for",
+    "keys": [
+     "number line",
+     "compare",
+     "order",
+     "greater",
+     "less",
+     "skip counting",
+     "sequence",
+     "benchmark"
+    ]
+   },
+   {
+    "name": "Place Value City",
+    "dq": "How does the place a digit sits in change what it is worth?",
+    "product": "A built city where every building shows its place value",
+    "keys": [
+     "place value",
+     "tens",
+     "ones",
+     "hundreds",
+     "base ten",
+     "bundling",
+     "expanded form",
+     "regrouping",
+     "digit"
+    ]
+   }
+  ],
+  "3-5|English Language Arts": [
+   {
+    "name": "Investigative Report",
+    "dq": "What does the evidence actually say about this?",
+    "product": "A researched report that names and judges its sources",
+    "keys": [
+     "causal chains",
+     "cite",
+     "evidence",
+     "gather",
+     "informative writing",
+     "investigate",
+     "key words",
+     "multiple sources",
+     "notes",
+     "procedures",
+     "research",
+     "search tools",
+     "sequence language",
+     "sources",
+     "text features"
+    ]
+   },
+   {
+    "name": "Book Trailer Studio",
+    "dq": "How do you make someone want to read this?",
+    "product": "A sixty-second book trailer and the pitch behind it",
+    "keys": [
+     "summarize",
+     "theme",
+     "audience",
+     "persuade",
+     "media",
+     "digital",
+     "presentation",
+     "visual"
+    ]
+   },
+   {
+    "name": "Opinion That Moves People",
+    "dq": "How do you change someone's mind using evidence?",
+    "product": "A persuasive letter or opinion piece sent to a real reader",
+    "keys": [
+     "opinion writing",
+     "argument writing",
+     "reasons",
+     "persuasive",
+     "claim",
+     "support",
+     "linking words",
+     "audience"
+    ]
+   },
+   {
+    "name": "Many Sides of One Story",
+    "dq": "How does who tells the story change the story?",
+    "product": "One scene retold from two points of view, side by side",
+    "keys": [
+     "point of view",
+     "narrator",
+     "perspective",
+     "character",
+     "first person",
+     "third person",
+     "compare",
+     "contrast"
+    ]
+   },
+   {
+    "name": "Word Detectives",
+    "dq": "How do the parts of a word unlock what it means?",
+    "product": "A field guide to roots and affixes, built from real reading",
+    "keys": [
+     "affix",
+     "concision",
+     "context",
+     "decoding",
+     "figurative",
+     "literal and nonliteral",
+     "morphology",
+     "nonliteral",
+     "precision",
+     "prefix",
+     "punctuation for effect",
+     "root",
+     "shades of meaning",
+     "spelling",
+     "suffix",
+     "vocabulary",
+     "word choice",
+     "word relationships"
+    ]
+   },
+   {
+    "name": "Documentary Shorts",
+    "dq": "How do we explain something true so that other people care?",
+    "product": "A short documentary with narration and sources on screen",
+    "keys": [
+     "informative writing",
+     "explain",
+     "organization",
+     "development",
+     "media",
+     "narration",
+     "structure",
+     "transitions"
+    ]
+   },
+   {
+    "name": "Poetry That Sounds Like Something",
+    "dq": "How do sound and shape carry meaning in a poem?",
+    "product": "A performed collection with a note on every choice",
+    "keys": [
+     "poetry",
+     "structure",
+     "stanza",
+     "rhythm",
+     "figurative",
+     "imagery",
+     "sound",
+     "drama",
+     "verse",
+     "fluency",
+     "prosody"
+    ]
+   },
+   {
+    "name": "The Research Desk",
+    "dq": "How do we put several sources together without simply copying them?",
+    "product": "A synthesis brief that answers one question from many sources",
+    "keys": [
+     "multiple sources",
+     "synthesis",
+     "integrate",
+     "summarize",
+     "paraphrase",
+     "compare",
+     "analysis",
+     "inference",
+     "textual evidence",
+     "comprehension"
+    ]
+   },
+   {
+    "name": "Storyteller's Workshop",
+    "dq": "What makes a reader feel like they were there?",
+    "product": "A narrative with one big moment given the room it needs",
+    "keys": [
+     "narrative writing",
+     "sequencing",
+     "descriptive detail",
+     "sensory detail",
+     "dialogue",
+     "pacing",
+     "dialogue and description",
+     "event sequence",
+     "characters"
+    ]
+   },
+   {
+    "name": "The Discussion Table",
+    "dq": "What kind of question makes a conversation go somewhere?",
+    "product": "A run discussion, with the questions that opened it written up",
+    "keys": [
+     "discussion",
+     "speaking",
+     "listening",
+     "open questions",
+     "elaboration",
+     "clarification",
+     "complete sentences",
+     "register",
+     "requested detail",
+     "preparation",
+     "discussion roles",
+     "building on ideas",
+     "reporting",
+     "pace",
+     "relevant detail",
+     "collaboration"
+    ]
+   },
+   {
+    "name": "Reading Lives",
+    "dq": "How does the reason we are reading change the way we read?",
+    "product": "A reading log that tracks purpose, stamina and every fix-up used",
+    "keys": [
+     "independent reading",
+     "stamina",
+     "fix-up strategies",
+     "purpose",
+     "purpose setting",
+     "adjusting approach",
+     "monitoring",
+     "nonfiction stamina",
+     "self-correct",
+     "rereading"
+    ]
+   }
+  ],
+  "3-5|Math": [
+   {
+    "name": "Design a Fair Game",
+    "dq": "What makes a game fair, and how would we prove it?",
+    "product": "A playable game and the maths that shows it is fair",
+    "keys": [
+     "fractions",
+     "probability",
+     "equal",
+     "compare",
+     "fair",
+     "chance",
+     "reasoning",
+     "justification"
+    ]
+   },
+   {
+    "name": "Fraction Kitchen",
+    "dq": "How do we share a recipe out, or scale it up?",
+    "product": "A scaled recipe with a cost sheet and the working shown",
+    "keys": [
+     "fractions",
+     "equivalence",
+     "numerator",
+     "denominator",
+     "partitioning",
+     "mixed numbers",
+     "scaling",
+     "unit fraction",
+     "decimals"
+    ]
+   },
+   {
+    "name": "Build to Scale",
+    "dq": "How much space do we actually need for this?",
+    "product": "A scale model with its area and perimeter defended",
+    "keys": [
+     "area",
+     "dimensions",
+     "geometry",
+     "lines of symmetry",
+     "measurement",
+     "model",
+     "perimeter",
+     "rectangles",
+     "scale",
+     "symmetry",
+     "testing by folding",
+     "volume"
+    ]
+   },
+   {
+    "name": "The Class Budget",
+    "dq": "How far can a budget actually stretch?",
+    "product": "A budget plan and one decision the numbers forced",
+    "keys": [
+     "money",
+     "decimals",
+     "addition",
+     "subtraction",
+     "multiplication",
+     "division",
+     "word problems",
+     "estimation",
+     "operations",
+     "rounding"
+    ]
+   },
+   {
+    "name": "Data That Settles an Argument",
+    "dq": "What does the data really show, and what does it not?",
+    "product": "A data display and the claim it supports",
+    "keys": [
+     "data",
+     "graph",
+     "line plot",
+     "represent",
+     "interpret",
+     "measurement data",
+     "analysis",
+     "survey"
+    ]
+   },
+   {
+    "name": "Pattern Hunters",
+    "dq": "What rule is this pattern following, and what comes next?",
+    "product": "A pattern rule book with predictions that were tested",
+    "keys": [
+     "patterns",
+     "rule",
+     "sequence",
+     "generate",
+     "relationships",
+     "algebra",
+     "input",
+     "output",
+     "function"
+    ]
+   },
+   {
+    "name": "Measure the Playground",
+    "dq": "How do we measure something too big to pick up?",
+    "product": "A measured map with every unit chosen and defended",
+    "keys": [
+     "measurement",
+     "units",
+     "conversion",
+     "length",
+     "mass",
+     "volume",
+     "time",
+     "estimation",
+     "tools",
+     "accuracy"
+    ]
+   },
+   {
+    "name": "Multiplication Machine",
+    "dq": "What actually happens to a number when we scale it?",
+    "product": "A model that shows why the algorithm works, not just that it does",
+    "keys": [
+     "algorithm",
+     "anchors",
+     "area model",
+     "arrays",
+     "base ten",
+     "derived facts",
+     "division",
+     "factors",
+     "facts",
+     "memory",
+     "modeling",
+     "multiples",
+     "multiplication",
+     "place value",
+     "recall",
+     "verification"
+    ]
+   }
+  ],
+  "6-8|English Language Arts": [
+   {
+    "name": "Podcast Investigation",
+    "dq": "Whose story has not been told here, and why not?",
+    "product": "An investigative podcast episode with interviews",
+    "keys": [
+     "accuracy",
+     "audience",
+     "bias",
+     "citation",
+     "credibility",
+     "evaluate",
+     "interview",
+     "listening",
+     "media",
+     "multiple sources",
+     "perspective",
+     "point of view",
+     "research",
+     "sources",
+     "speaking",
+     "verification"
+    ]
+   },
+   {
+    "name": "Argument That Holds Up",
+    "dq": "How do we build an argument that survives its strongest counterargument?",
+    "product": "An argumentative essay and a live rebuttal",
+    "keys": [
+     "argument writing",
+     "claim",
+     "counterclaim",
+     "evidence",
+     "reasoning",
+     "persuasive",
+     "rebuttal",
+     "support"
+    ]
+   },
+   {
+    "name": "Theme Across Texts",
+    "dq": "What do two different texts say about the same idea?",
+    "product": "A comparative analysis with evidence from both",
+    "keys": [
+     "theme",
+     "central idea",
+     "compare",
+     "contrast",
+     "analysis",
+     "literature",
+     "development",
+     "summarize"
+    ]
+   },
+   {
+    "name": "The Editorial Desk",
+    "dq": "What should change here, and how do we say so persuasively?",
+    "product": "An editorial published for a real audience",
+    "keys": [
+     "argument",
+     "audience",
+     "collaboration",
+     "conventions",
+     "discussion",
+     "editing",
+     "editorial",
+     "elaboration",
+     "listening",
+     "opinion",
+     "presentation",
+     "questioning",
+     "revising",
+     "speaking",
+     "style",
+     "tone",
+     "word choice"
+    ]
+   },
+   {
+    "name": "Literary Analysis Studio",
+    "dq": "How does the writer make us feel what we feel?",
+    "product": "A craft analysis with annotated evidence",
+    "keys": [
+     "analysis",
+     "close reading",
+     "comprehension",
+     "context",
+     "craft",
+     "development",
+     "diction",
+     "figurative",
+     "inference",
+     "morphology",
+     "organization",
+     "structure",
+     "summarize",
+     "textual evidence",
+     "transitions",
+     "vocabulary"
+    ]
+   }
+  ],
+  "6-8|Math": [
+   {
+    "name": "Proportional Reasoning Consultancy",
+    "dq": "When does scaling something up stay fair, and when does it break?",
+    "product": "A proportional model and a recommendation built on it",
+    "keys": [
+     "comparison",
+     "cost",
+     "equivalent",
+     "estimation",
+     "percent",
+     "proportion",
+     "proportional",
+     "rate",
+     "ratio",
+     "scaling",
+     "speed",
+     "unit rate"
+    ]
+   },
+   {
+    "name": "The Data Investigation",
+    "dq": "What does this data set let us claim, and what does it not?",
+    "product": "A statistical report with its own limits named",
+    "keys": [
+     "statistics",
+     "data",
+     "distribution",
+     "mean",
+     "median",
+     "variability",
+     "sample",
+     "population",
+     "analysis",
+     "graph"
+    ]
+   },
+   {
+    "name": "Model a Real System",
+    "dq": "Can an equation predict what happens next?",
+    "product": "A working model with the equation that drives it",
+    "keys": [
+     "equations",
+     "expressions",
+     "variables",
+     "modeling",
+     "solve",
+     "linear",
+     "system",
+     "algebra",
+     "verification"
+    ]
+   },
+   {
+    "name": "Design Under Constraint",
+    "dq": "What is the best design we can make inside these limits?",
+    "product": "A geometric design with its reasoning written out",
+    "keys": [
+     "angles",
+     "area",
+     "congruence",
+     "constraints",
+     "dilation",
+     "geometry",
+     "justification",
+     "modeling",
+     "scale",
+     "similarity",
+     "surface area",
+     "transformations",
+     "triangles",
+     "volume"
+    ]
+   },
+   {
+    "name": "Negative Space",
+    "dq": "What do numbers below zero actually describe in the world?",
+    "product": "A model of a real situation that needs negative numbers",
+    "keys": [
+     "rational numbers",
+     "integers",
+     "negative",
+     "number line",
+     "absolute value",
+     "opposites",
+     "operations",
+     "coordinate"
+    ]
+   },
+   {
+    "name": "Probability and Risk",
+    "dq": "How should we decide when we cannot be certain?",
+    "product": "A probability analysis with a recommendation",
+    "keys": [
+     "probability",
+     "chance",
+     "outcomes",
+     "simulation",
+     "likelihood",
+     "random",
+     "events",
+     "prediction"
+    ]
+   }
+  ],
+  "9-12|English Language Arts": [
+   {
+    "name": "The Case for Change",
+    "dq": "What is the strongest case here, and what is the strongest case against it?",
+    "product": "A researched argument that answers its own best objection",
+    "keys": [
+     "argument writing",
+     "claim",
+     "counterclaim",
+     "evidence",
+     "reasoning",
+     "rhetoric",
+     "persuasive",
+     "rebuttal"
+    ]
+   },
+   {
+    "name": "Close Reading Studio",
+    "dq": "How does the smallest choice in a text change its meaning?",
+    "product": "A close-reading analysis of a passage the student chose",
+    "keys": [
+     "adaptation",
+     "analysis",
+     "author's purpose",
+     "close reading",
+     "comprehension",
+     "context",
+     "craft",
+     "diction",
+     "figurative",
+     "inference",
+     "interpretation",
+     "medium",
+     "morphology",
+     "rhetoric",
+     "structure",
+     "style",
+     "textual evidence",
+     "theme",
+     "tone",
+     "vocabulary",
+     "word choice",
+     "word meaning"
+    ]
+   },
+   {
+    "name": "Seminar and Synthesis",
+    "dq": "What do these sources, taken together, let us conclude?",
+    "product": "A synthesis essay and the seminar that tested it",
+    "keys": [
+     "citation",
+     "collaboration",
+     "discussion",
+     "evidence",
+     "integrate",
+     "interview",
+     "investigate",
+     "listening",
+     "multiple sources",
+     "research",
+     "seminar",
+     "sources",
+     "speaking",
+     "synthesis"
+    ]
+   },
+   {
+    "name": "Research Thesis",
+    "dq": "What can I claim here that is genuinely my own?",
+    "product": "An original research paper with a defended thesis",
+    "keys": [
+     "analysis",
+     "audience",
+     "citation",
+     "conventions",
+     "development",
+     "editing",
+     "evidence",
+     "formal",
+     "informative writing",
+     "morphology",
+     "organization",
+     "research",
+     "revising",
+     "sources",
+     "thesis",
+     "vocabulary"
+    ]
+   }
+  ],
+  "9-12|Math": [
+   {
+    "name": "Model the Problem",
+    "dq": "What function describes this, and where does it stop working?",
+    "product": "A mathematical model with its limits stated",
+    "keys": [
+     "decay",
+     "equations",
+     "exponent properties",
+     "exponential",
+     "expressions",
+     "function",
+     "graph",
+     "growth",
+     "inequalities",
+     "interest",
+     "linear",
+     "modeling",
+     "number",
+     "optimization",
+     "percent",
+     "predict",
+     "quadratic",
+     "quantity",
+     "radicals",
+     "rational exponents",
+     "solve",
+     "systems",
+     "units",
+     "variables"
+    ]
+   },
+   {
+    "name": "Geometry in Construction",
+    "dq": "How do we guarantee this will fit, and hold?",
+    "product": "A construction plan with its geometry proven",
+    "keys": [
+     "algorithm",
+     "angles",
+     "congruence",
+     "coordinate",
+     "geometry",
+     "pattern",
+     "proof",
+     "recursive",
+     "rule",
+     "sequence",
+     "series",
+     "similarity",
+     "transformations",
+     "trigonometry",
+     "volume"
+    ]
+   }
+  ]
+ }
+}

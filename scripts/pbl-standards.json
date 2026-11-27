@@ -1,0 +1,4976 @@
+{
+ "_about": "Standards the K-12 PBL builder plans projects from. Snapshotted from the standards table, which is itself seeded from scripts/seed-standards-*.ts, so the builder stays reproducible without a database. ELA and Math only: the project holds no Science or Social Studies standards, and those are not invented here.",
+ "count": 355,
+ "standards": [
+  {
+   "code": "1.G.A.3",
+   "grade": "1",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Partition shapes into halves and quarters",
+   "text": "Partition circles and rectangles into two and four equal shares, describe the shares using the words halves, fourths, and quarters, and understand that decomposing into more equal shares creates smaller shares.",
+   "target": "I can split a shape into equal parts and name them halves or quarters.",
+   "skills": [
+    "Partitioning",
+    "Equal Shares",
+    "Early Fractions"
+   ]
+  },
+  {
+   "code": "1.MD.A.1",
+   "grade": "1",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Order objects by length",
+   "text": "Order three objects by length, and compare the lengths of two objects indirectly by using a third object.",
+   "target": "I can put things in order by length, even when I cannot move them.",
+   "skills": [
+    "Measurement",
+    "Ordering",
+    "Transitivity"
+   ]
+  },
+  {
+   "code": "1.NBT.B.2",
+   "grade": "1",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Understand two-digit place value",
+   "text": "Understand that the two digits of a two-digit number represent amounts of tens and ones, including that 10 can be thought of as a bundle of ten ones called a ten.",
+   "target": "I can say how many tens and how many ones are in a number.",
+   "skills": [
+    "Place Value",
+    "Bundling",
+    "Number Sense"
+   ]
+  },
+  {
+   "code": "1.NBT.C.4",
+   "grade": "1",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Add within 100 using place value",
+   "text": "Add within 100, including a two-digit number and a one-digit number and a two-digit number and a multiple of ten, using concrete models, drawings and strategies based on place value.",
+   "target": "I can add a small number or a whole ten to a two-digit number.",
+   "skills": [
+    "Two-Digit Addition",
+    "Place Value",
+    "Composing a Ten"
+   ]
+  },
+  {
+   "code": "1.OA.A.1",
+   "grade": "1",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Solve addition and subtraction word problems within 20",
+   "text": "Use addition and subtraction within 20 to solve word problems involving situations of adding to, taking from, putting together, taking apart, and comparing.",
+   "target": "I can work out a word problem by deciding whether to join amounts or take them apart.",
+   "skills": [
+    "Word Problems",
+    "Addition",
+    "Subtraction"
+   ]
+  },
+  {
+   "code": "1.OA.B.3",
+   "grade": "1",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Use properties of operations to add",
+   "text": "Apply properties of operations as strategies to add and subtract, including that addition can be done in any order and that three numbers can be grouped in any way.",
+   "target": "I can add numbers in whatever order makes it easiest.",
+   "skills": [
+    "Commutative Property",
+    "Associative Property",
+    "Mental Strategies"
+   ]
+  },
+  {
+   "code": "1.OA.D.7",
+   "grade": "1",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Understand what the equal sign means",
+   "text": "Understand the meaning of the equal sign, and determine if equations involving addition and subtraction are true or false.",
+   "target": "I know the equal sign means both sides are worth the same.",
+   "skills": [
+    "Equality",
+    "Equations",
+    "Number Sense"
+   ]
+  },
+  {
+   "code": "2.G.A.1",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Shapes by attribute, any way up",
+   "text": "Recognize and draw shapes having specified attributes, such as a given number of angles or a given number of equal faces.",
+   "target": "I can still name a triangle when it is balanced on a point.",
+   "skills": [
+    "Shape Attributes",
+    "Sides and Angles",
+    "Drawing Shapes"
+   ]
+  },
+  {
+   "code": "2.G.A.2",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Partition a rectangle into equal squares",
+   "text": "Partition a rectangle into rows and columns of same-size squares and count to find the total number of them.",
+   "target": "I can split a rectangle into squares that are all the same size.",
+   "skills": [
+    "Partitioning",
+    "Rows and Columns",
+    "Same-Size Squares"
+   ]
+  },
+  {
+   "code": "2.G.A.3",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Split shapes into halves, thirds and fourths",
+   "text": "Partition circles and rectangles into two, three, or four equal shares, describe the shares using the words halves, thirds, half of, a third of, and recognize that equal shares of identical wholes need not have the same shape.",
+   "target": "I can split a shape into equal parts and name them, even if they look different.",
+   "skills": [
+    "Partitioning",
+    "Equal Shares",
+    "Fraction Language"
+   ]
+  },
+  {
+   "code": "2.MD.A.1",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Measure length with the right tool",
+   "text": "Measure the length of an object by selecting and using appropriate tools such as rulers, yardsticks, meter sticks, and measuring tapes.",
+   "target": "I can pick the right tool and measure how long something is.",
+   "skills": [
+    "Measurement",
+    "Tool Selection",
+    "Length"
+   ]
+  },
+  {
+   "code": "2.MD.A.2",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Smaller unit, bigger number",
+   "text": "Measure the length of an object twice, using different length units; describe how the two measurements relate to the size of the unit.",
+   "target": "I can explain why the same desk is 30 inches and only 2 feet.",
+   "skills": [
+    "Measuring in Two Units",
+    "Unit Size",
+    "Inverse Relationship"
+   ]
+  },
+  {
+   "code": "2.MD.A.3",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Estimate against something you know",
+   "text": "Estimate lengths using units of inches, feet, centimeters, and meters.",
+   "target": "I can compare to a paper clip or a door instead of guessing.",
+   "skills": [
+    "Estimation",
+    "Benchmarks",
+    "Checking by Measuring"
+   ]
+  },
+  {
+   "code": "2.MD.A.4",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "How much longer is a difference",
+   "text": "Measure to determine how much longer one object is than another, expressing the difference in a standard length unit.",
+   "target": "I can hear that how much longer means subtract.",
+   "skills": [
+    "Measuring Difference",
+    "Subtraction",
+    "Standard Units"
+   ]
+  },
+  {
+   "code": "2.MD.B.5",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Length word problems, with the unit",
+   "text": "Use addition and subtraction within 100 to solve word problems involving lengths given in the same units.",
+   "target": "I can solve a length problem and label my answer with the unit.",
+   "skills": [
+    "Length Word Problems",
+    "Equations",
+    "Units in Answers"
+   ]
+  },
+  {
+   "code": "2.MD.B.6",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Jumps on a number line",
+   "text": "Represent whole numbers as lengths on a number line diagram and represent whole-number sums and differences within 100.",
+   "target": "I can count the spaces, not the tick marks.",
+   "skills": [
+    "Number Line",
+    "Sums and Differences",
+    "Equal Intervals"
+   ]
+  },
+  {
+   "code": "2.MD.C.7",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Time to the nearest five minutes",
+   "text": "Tell and write time from analog and digital clocks to the nearest five minutes, using a.m. and p.m.",
+   "target": "I can read the hour hand first, then the minutes.",
+   "skills": [
+    "Telling Time",
+    "Analog and Digital",
+    "a.m. and p.m."
+   ]
+  },
+  {
+   "code": "2.MD.C.8",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Solve money problems",
+   "text": "Solve word problems involving dollar bills, quarters, dimes, nickels and pennies, using dollar and cent symbols appropriately.",
+   "target": "I can work out how much money I have and how much change I get.",
+   "skills": [
+    "Money",
+    "Coin Values",
+    "Word Problems"
+   ]
+  },
+  {
+   "code": "2.MD.D.10",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Bar graphs, and reading the scale",
+   "text": "Draw a picture graph and a bar graph to represent a data set with up to four categories; solve problems using information in the graphs.",
+   "target": "I can check the scale before I read a bar.",
+   "skills": [
+    "Bar Graphs",
+    "Picture Graphs",
+    "Interpreting Data"
+   ]
+  },
+  {
+   "code": "2.MD.D.9",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Measure, then make a line plot",
+   "text": "Generate measurement data by measuring lengths of several objects; show the measurements by making a line plot.",
+   "target": "I can make a line plot where the spacing tells the truth about my data.",
+   "skills": [
+    "Measurement Data",
+    "Line Plots",
+    "Scale"
+   ]
+  },
+  {
+   "code": "2.NBT.A.1",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Understand three-digit place value",
+   "text": "Understand that the three digits of a three-digit number represent amounts of hundreds, tens, and ones.",
+   "target": "I can say what each digit in a three-digit number is worth.",
+   "skills": [
+    "Place Value",
+    "Number Sense",
+    "Composing Numbers"
+   ]
+  },
+  {
+   "code": "2.NBT.A.2",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Skip count from anywhere",
+   "text": "Count within 1000; skip-count by 5s, 10s, and 100s.",
+   "target": "I can skip count by tens starting at 250, not just at zero.",
+   "skills": [
+    "Skip Counting",
+    "Counting to 1000",
+    "Number Patterns"
+   ]
+  },
+  {
+   "code": "2.NBT.A.3",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "One number, three ways",
+   "text": "Read and write numbers to 1000 using base-ten numerals, number names, and expanded form.",
+   "target": "I can write a number as a numeral, in words, and in expanded form.",
+   "skills": [
+    "Expanded Form",
+    "Number Names",
+    "Base-Ten Numerals"
+   ]
+  },
+  {
+   "code": "2.NBT.A.4",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Compare by place, not by digit",
+   "text": "Compare two three-digit numbers based on meanings of the hundreds, tens, and ones digits, using >, =, and < symbols.",
+   "target": "I can compare the hundreds first and say why that comes first.",
+   "skills": [
+    "Comparing Numbers",
+    "Place Value",
+    "Greater and Less Than"
+   ]
+  },
+  {
+   "code": "2.NBT.B.5",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Add and subtract fluently within 100",
+   "text": "Fluently add and subtract within 100 using strategies based on place value, properties of operations, and the relationship between addition and subtraction.",
+   "target": "I can add and subtract two-digit numbers using a strategy that fits.",
+   "skills": [
+    "Two-Digit Computation",
+    "Place Value Strategies",
+    "Fluency"
+   ]
+  },
+  {
+   "code": "2.NBT.B.6",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Add four numbers the easy way round",
+   "text": "Add up to four two-digit numbers using strategies based on place value and properties of operations.",
+   "target": "I can look for pairs that make ten before I start adding.",
+   "skills": [
+    "Adding Multiple Addends",
+    "Making Ten",
+    "Properties of Operations"
+   ]
+  },
+  {
+   "code": "2.NBT.B.7",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Add and subtract within 1000",
+   "text": "Add and subtract within 1000, using concrete models or drawings and strategies based on place value.",
+   "target": "I can tell when I need to regroup and when I do not.",
+   "skills": [
+    "Regrouping",
+    "Models and Drawings",
+    "Place Value Strategies"
+   ]
+  },
+  {
+   "code": "2.NBT.B.8",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Ten or a hundred more, in your head",
+   "text": "Mentally add 10 or 100 to, or subtract 10 or 100 from, a given number 100-900.",
+   "target": "I can say which digit changes and do it without writing anything.",
+   "skills": [
+    "Mental Math",
+    "Place Value Patterns",
+    "Adding Ten and Hundred"
+   ]
+  },
+  {
+   "code": "2.NBT.B.9",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Explain why the strategy works",
+   "text": "Explain why addition and subtraction strategies work, using place value and the properties of operations.",
+   "target": "I can say why my way works, not just what I did.",
+   "skills": [
+    "Mathematical Reasoning",
+    "Justification",
+    "Critiquing Methods"
+   ]
+  },
+  {
+   "code": "2.OA.A.1",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Solve one- and two-step problems within 100",
+   "text": "Use addition and subtraction within 100 to solve one- and two-step word problems involving situations of adding to, taking from, putting together, taking apart and comparing.",
+   "target": "I can solve a word problem that needs one step or two.",
+   "skills": [
+    "Word Problems",
+    "Two-Step Problems",
+    "Addition and Subtraction"
+   ]
+  },
+  {
+   "code": "2.OA.B.2",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Add and subtract fluently within 20",
+   "text": "Fluently add and subtract within 20 using mental strategies. By end of Grade 2, know from memory all sums of two one-digit numbers.",
+   "target": "I can add and subtract small numbers quickly using a strategy that fits.",
+   "skills": [
+    "Fact Fluency",
+    "Mental Strategies",
+    "Number Sense"
+   ]
+  },
+  {
+   "code": "2.OA.C.3",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Odd and even by pairing",
+   "text": "Determine whether a group of objects (up to 20) has an odd or even number of members; write an equation to express an even number as a sum of two equal addends.",
+   "target": "I can pair things up to find out if a group is odd or even, and say why.",
+   "skills": [
+    "Odd and Even",
+    "Pairing",
+    "Equal Addends"
+   ]
+  },
+  {
+   "code": "2.OA.C.4",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Arrays and repeated addition",
+   "text": "Use addition to find the total number of objects arranged in rectangular arrays with up to 5 rows and 5 columns; write an equation as a sum of equal addends.",
+   "target": "I can say three rows of four and write 4 + 4 + 4 instead of counting every square.",
+   "skills": [
+    "Arrays",
+    "Repeated Addition",
+    "Rows and Columns"
+   ]
+  },
+  {
+   "code": "3.G.A.1",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Sort shapes by what they have in common",
+   "text": "Understand that shapes in different categories may share attributes, that shared attributes can define a larger category, and recognize rhombuses, rectangles and squares as examples of quadrilaterals.",
+   "target": "I can group shapes by what they share, not just what they look like.",
+   "skills": [
+    "Classification",
+    "Attributes",
+    "Quadrilaterals"
+   ]
+  },
+  {
+   "code": "3.G.A.2",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Equal areas, different shapes",
+   "text": "Partition shapes into parts with equal areas; express the area of each part as a unit fraction of the whole.",
+   "target": "I can split a shape into equal areas that do not have to look the same.",
+   "skills": [
+    "Partitioning",
+    "Unit Fractions",
+    "Equal Area"
+   ]
+  },
+  {
+   "code": "3.MD.A.1",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Tell time to the minute",
+   "text": "Tell and write time to the nearest minute and measure time intervals in minutes, solving word problems involving addition and subtraction of time intervals.",
+   "target": "I can read a clock to the minute and work out how long something took.",
+   "skills": [
+    "Telling Time",
+    "Time Intervals",
+    "Elapsed Time"
+   ]
+  },
+  {
+   "code": "3.MD.A.2",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Mass is not size",
+   "text": "Measure and estimate liquid volumes and masses of objects using grams, kilograms, and liters; solve one-step problems involving these units.",
+   "target": "I can choose the right unit and know a big thing can be light.",
+   "skills": [
+    "Mass and Volume",
+    "Metric Units",
+    "Estimation"
+   ]
+  },
+  {
+   "code": "3.MD.B.3",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Scaled graphs, where a square is not one",
+   "text": "Draw a scaled picture graph and a scaled bar graph to represent a data set with several categories; solve problems using the graphs.",
+   "target": "I can read the key before I read a bar.",
+   "skills": [
+    "Scaled Graphs",
+    "Keys",
+    "Two-Step Problems"
+   ]
+  },
+  {
+   "code": "3.MD.B.4",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Measure to the quarter inch",
+   "text": "Generate measurement data by measuring lengths using rulers marked with halves and fourths of an inch; show the data on a line plot.",
+   "target": "I can measure to the nearest quarter inch instead of rounding to whole ones.",
+   "skills": [
+    "Fractional Measurement",
+    "Line Plots",
+    "Precision"
+   ]
+  },
+  {
+   "code": "3.MD.C.5",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Area is covering",
+   "text": "Recognize area as an attribute of plane figures and understand concepts of area measurement.",
+   "target": "I can say whether a question is about covering or about going around.",
+   "skills": [
+    "Concept of Area",
+    "Unit Square",
+    "Covering Without Gaps"
+   ]
+  },
+  {
+   "code": "3.MD.C.6",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Count the squares, all of them",
+   "text": "Measure areas by counting unit squares.",
+   "target": "I can count area without skipping or double-counting.",
+   "skills": [
+    "Counting Unit Squares",
+    "Square Units",
+    "Irregular Shapes"
+   ]
+  },
+  {
+   "code": "3.MD.C.7",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Relate area to multiplication",
+   "text": "Relate area to the operations of multiplication and addition, including finding area by tiling and by multiplying side lengths.",
+   "target": "I can find area by covering a shape with squares or by multiplying its sides.",
+   "skills": [
+    "Area",
+    "Multiplication",
+    "Tiling"
+   ]
+  },
+  {
+   "code": "3.MD.D.8",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Perimeter goes around",
+   "text": "Solve real world and mathematical problems involving perimeters of polygons, including finding an unknown side length.",
+   "target": "I can find a missing side when I know the perimeter.",
+   "skills": [
+    "Perimeter",
+    "Unknown Side Length",
+    "Area Versus Perimeter"
+   ]
+  },
+  {
+   "code": "3.NBT.A.1",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Round by asking which is closer",
+   "text": "Use place value understanding to round whole numbers to the nearest 10 or 100.",
+   "target": "I can put the number on a line and see which benchmark is nearer.",
+   "skills": [
+    "Rounding",
+    "Number Line",
+    "Place Value"
+   ]
+  },
+  {
+   "code": "3.NBT.A.2",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Add and subtract within 1000",
+   "text": "Fluently add and subtract within 1000 using strategies and algorithms based on place value, properties of operations, and the relationship between addition and subtraction.",
+   "target": "I can add and subtract three-digit numbers and know when to regroup.",
+   "skills": [
+    "Three-Digit Computation",
+    "Regrouping",
+    "Fluency"
+   ]
+  },
+  {
+   "code": "3.NBT.A.3",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Why the zero appears",
+   "text": "Multiply one-digit whole numbers by multiples of 10 in the range 10-90 using strategies based on place value.",
+   "target": "I can explain why 4 × 30 is 120 instead of just adding a zero.",
+   "skills": [
+    "Multiples of Ten",
+    "Place Value Reasoning",
+    "Pattern Explanation"
+   ]
+  },
+  {
+   "code": "3.NF.A.1",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Understand a fraction as parts of a whole",
+   "text": "Understand a fraction 1/b as the quantity formed by 1 part when a whole is partitioned into b equal parts; understand a fraction a/b as the quantity formed by a parts of size 1/b.",
+   "target": "I can explain what the top and bottom numbers of a fraction each tell me.",
+   "skills": [
+    "Fractions",
+    "Partitioning",
+    "Unit Fractions"
+   ]
+  },
+  {
+   "code": "3.NF.A.2",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "A fraction is a number on the line",
+   "text": "Understand a fraction as a number on the number line; represent fractions on a number line diagram.",
+   "target": "I can find where three quarters lives between zero and one.",
+   "skills": [
+    "Fractions on a Number Line",
+    "Partitioning Intervals",
+    "Unit Fractions"
+   ]
+  },
+  {
+   "code": "3.NF.A.3",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Compare fractions and explain equivalence",
+   "text": "Explain equivalence of fractions in special cases, and compare fractions by reasoning about their size, recognising that comparisons are valid only when the two fractions refer to the same whole.",
+   "target": "I can tell which fraction is bigger and show why two fractions are the same.",
+   "skills": [
+    "Equivalent Fractions",
+    "Comparing Fractions",
+    "Fraction Reasoning"
+   ]
+  },
+  {
+   "code": "3.OA.A.1",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Interpret products of whole numbers",
+   "text": "Interpret products of whole numbers, e.g., interpret 5 × 7 as the total number of objects in 5 groups of 7 objects each.",
+   "target": "I can explain what a multiplication expression means using equal groups.",
+   "skills": [
+    "Multiplication",
+    "Equal Groups",
+    "Mathematical Reasoning"
+   ]
+  },
+  {
+   "code": "3.OA.A.2",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Division has two meanings",
+   "text": "Interpret whole-number quotients of whole numbers as the number of objects in each share or the number of shares.",
+   "target": "I can tell whether a problem is asking how many groups or how many in each group.",
+   "skills": [
+    "Partitive Division",
+    "Measurement Division",
+    "Representing Division"
+   ]
+  },
+  {
+   "code": "3.OA.A.3",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Model the situation, not the keywords",
+   "text": "Use multiplication and division within 100 to solve word problems in situations involving equal groups, arrays, and measurement quantities.",
+   "target": "I can draw what is happening instead of hunting for a keyword.",
+   "skills": [
+    "Word Problems",
+    "Modeling",
+    "Equations with Unknowns"
+   ]
+  },
+  {
+   "code": "3.OA.A.4",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "The equal sign means balance",
+   "text": "Determine the unknown whole number in a multiplication or division equation relating three whole numbers.",
+   "target": "I can solve 8 × ? = 48 because the equal sign means the two sides match.",
+   "skills": [
+    "Missing Factor",
+    "Inverse Operations",
+    "Equation Balance"
+   ]
+  },
+  {
+   "code": "3.OA.B.5",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Break a factor apart",
+   "text": "Apply properties of operations as strategies to multiply and divide.",
+   "target": "I can turn 7 × 8 into 7 × 5 plus 7 × 3.",
+   "skills": [
+    "Distributive Property",
+    "Commutative Property",
+    "Decomposing Factors"
+   ]
+  },
+  {
+   "code": "3.OA.B.6",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Division is a missing factor",
+   "text": "Understand division as an unknown-factor problem.",
+   "target": "I can use a multiplication fact I already know to divide.",
+   "skills": [
+    "Unknown Factor",
+    "Fact Families",
+    "Inverse Relationship"
+   ]
+  },
+  {
+   "code": "3.OA.C.7",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Facts from anchors, then from memory",
+   "text": "Fluently multiply and divide within 100. By the end of grade 3, know from memory all products of two one-digit numbers.",
+   "target": "I can build the hard facts from the ones I already know.",
+   "skills": [
+    "Fluency",
+    "Derived Facts",
+    "Recall"
+   ]
+  },
+  {
+   "code": "3.OA.D.8",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Solve two-step word problems",
+   "text": "Solve two-step word problems using the four operations. Represent these problems using equations with a letter standing for the unknown quantity, and assess the reasonableness of answers.",
+   "target": "I can solve a problem that needs two steps and check my answer makes sense.",
+   "skills": [
+    "Multi-Step Problems",
+    "Equations",
+    "Reasonableness"
+   ]
+  },
+  {
+   "code": "3.OA.D.9",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Explain the pattern, not just spot it",
+   "text": "Identify arithmetic patterns, including patterns in the addition table or multiplication table, and explain them using properties of operations.",
+   "target": "I can say why the pattern happens, not just that it does.",
+   "skills": [
+    "Arithmetic Patterns",
+    "Explanation",
+    "Properties"
+   ]
+  },
+  {
+   "code": "4.G.A.1",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Draw and identify lines and angles",
+   "text": "Draw points, lines, line segments, rays, angles (right, acute, obtuse), and perpendicular and parallel lines. Identify these in two-dimensional figures.",
+   "target": "I can draw and name the different kinds of lines and angles.",
+   "skills": [
+    "Geometry Vocabulary",
+    "Angles",
+    "Lines"
+   ]
+  },
+  {
+   "code": "4.G.A.2",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Check the attributes one at a time",
+   "text": "Classify two-dimensional figures based on the presence or absence of parallel or perpendicular lines, or the presence or absence of angles of a specified size.",
+   "target": "I can classify by testing attributes rather than by how it looks.",
+   "skills": [
+    "Classification",
+    "Parallel and Perpendicular",
+    "Angle Size"
+   ]
+  },
+  {
+   "code": "4.G.A.3",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Fold it to test the symmetry",
+   "text": "Recognize a line of symmetry for a two-dimensional figure; identify line-symmetric figures and draw lines of symmetry.",
+   "target": "I can test a line of symmetry by folding instead of guessing.",
+   "skills": [
+    "Lines of Symmetry",
+    "Testing by Folding",
+    "Multiple Lines"
+   ]
+  },
+  {
+   "code": "4.MD.A.1",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Smaller unit, more of them",
+   "text": "Know relative sizes of measurement units within one system of units; express measurements in a larger unit in terms of a smaller unit.",
+   "target": "I can work out whether to multiply or divide by thinking about the unit.",
+   "skills": [
+    "Unit Conversion",
+    "Relative Sizes",
+    "Two-Column Tables"
+   ]
+  },
+  {
+   "code": "4.MD.A.2",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Convert before you combine",
+   "text": "Use the four operations to solve word problems involving distances, intervals of time, liquid volumes, masses of objects, and money.",
+   "target": "I can put everything in one unit before I add it.",
+   "skills": [
+    "Measurement Problems",
+    "Mixed Units",
+    "Diagrams with Scale"
+   ]
+  },
+  {
+   "code": "4.MD.A.3",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Use area and perimeter formulas",
+   "text": "Apply the area and perimeter formulas for rectangles in real world and mathematical problems, including finding an unknown side length from a known area or perimeter.",
+   "target": "I can find area or perimeter, and work backwards to a missing side.",
+   "skills": [
+    "Area",
+    "Perimeter",
+    "Inverse Reasoning"
+   ]
+  },
+  {
+   "code": "4.MD.B.4",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Line plots in halves, quarters and eighths",
+   "text": "Make a line plot to display a data set of measurements in fractions of a unit; solve problems involving addition and subtraction of fractions.",
+   "target": "I can space fractional intervals evenly so the data tells the truth.",
+   "skills": [
+    "Fractional Line Plots",
+    "Even Intervals",
+    "Adding and Subtracting Fractions"
+   ]
+  },
+  {
+   "code": "4.MD.C.5",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "The opening, not the arms",
+   "text": "Recognize angles as geometric shapes formed wherever two rays share a common endpoint, and understand concepts of angle measurement.",
+   "target": "I know a longer ray does not make a bigger angle.",
+   "skills": [
+    "Concept of Angle",
+    "Degrees as Circle Fractions",
+    "Rays and Vertex"
+   ]
+  },
+  {
+   "code": "4.MD.C.6",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Which scale on the protractor",
+   "text": "Measure angles in whole-number degrees using a protractor; sketch angles of specified measure.",
+   "target": "I can estimate acute or obtuse first so I pick the right scale.",
+   "skills": [
+    "Using a Protractor",
+    "Sketching Angles",
+    "Estimating First"
+   ]
+  },
+  {
+   "code": "4.MD.C.7",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Angles add, when they are adjacent",
+   "text": "Recognize angle measure as additive; solve addition and subtraction problems to find unknown angles on a diagram.",
+   "target": "I can find a missing angle and check the parts actually touch.",
+   "skills": [
+    "Additive Angle Measure",
+    "Decomposing Angles",
+    "Unknown Angles"
+   ]
+  },
+  {
+   "code": "4.NBT.A.1",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Ten times the place to its right",
+   "text": "Recognize that in a multi-digit whole number, a digit in one place represents ten times what it represents in the place to its right.",
+   "target": "I can explain why 700 is ten times 70, not just say the rule.",
+   "skills": [
+    "Place Value Relationships",
+    "Explanation",
+    "Multi-Digit Numbers"
+   ]
+  },
+  {
+   "code": "4.NBT.A.2",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Large numbers, three ways, no and",
+   "text": "Read and write multi-digit whole numbers using base-ten numerals, number names, and expanded form; compare two numbers using >, =, and <.",
+   "target": "I can write a big number in words without putting and in it.",
+   "skills": [
+    "Expanded Form",
+    "Number Names",
+    "Comparing"
+   ]
+  },
+  {
+   "code": "4.NBT.A.3",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Round the target place only",
+   "text": "Use place value understanding to round multi-digit whole numbers to any place.",
+   "target": "I can round once, to the place asked for, and stop.",
+   "skills": [
+    "Rounding to Any Place",
+    "Place Value",
+    "Estimation"
+   ]
+  },
+  {
+   "code": "4.NBT.B.4",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Estimate first, then subtract across zeros",
+   "text": "Fluently add and subtract multi-digit whole numbers using the standard algorithm.",
+   "target": "I can estimate first so I notice when my answer is wrong.",
+   "skills": [
+    "Standard Algorithm",
+    "Regrouping Across Zeros",
+    "Reasonableness"
+   ]
+  },
+  {
+   "code": "4.NBT.B.5",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Multiply multi-digit whole numbers",
+   "text": "Multiply a whole number of up to four digits by a one-digit whole number, and multiply two two-digit numbers, using strategies based on place value and the properties of operations.",
+   "target": "I can multiply bigger numbers by breaking them apart by place value.",
+   "skills": [
+    "Multiplication",
+    "Place Value Strategies",
+    "Area Model"
+   ]
+  },
+  {
+   "code": "4.NBT.B.6",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Divide with remainders",
+   "text": "Find whole-number quotients and remainders with up to four-digit dividends and one-digit divisors, using strategies based on place value and the properties of operations.",
+   "target": "I can divide a big number by a small one and explain each step.",
+   "skills": [
+    "Division",
+    "Place Value Strategies",
+    "Remainders"
+   ]
+  },
+  {
+   "code": "4.NF.A.1",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "More pieces, same amount",
+   "text": "Explain why a fraction a/b is equivalent to a fraction (n x a)/(n x b) using visual fraction models.",
+   "target": "I can show why cutting into more pieces does not make more.",
+   "skills": [
+    "Equivalent Fractions",
+    "Visual Models",
+    "Justification"
+   ]
+  },
+  {
+   "code": "4.NF.A.2",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Compare fractions, not their digits",
+   "text": "Compare two fractions with different numerators and different denominators; record the results with the symbols >, =, or <.",
+   "target": "I can use a half as a benchmark instead of comparing the numbers separately.",
+   "skills": [
+    "Comparing Fractions",
+    "Common Denominators",
+    "Benchmarks"
+   ]
+  },
+  {
+   "code": "4.NF.B.3",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Add and subtract fractions with like denominators",
+   "text": "Understand a fraction a/b with a > 1 as a sum of fractions 1/b, and add and subtract fractions with like denominators, including mixed numbers.",
+   "target": "I can add and subtract fractions that share a denominator by counting the parts.",
+   "skills": [
+    "Fractions",
+    "Decomposing",
+    "Mixed Numbers"
+   ]
+  },
+  {
+   "code": "4.NF.B.4",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "A fraction times a whole number",
+   "text": "Apply and extend previous understandings of multiplication to multiply a fraction by a whole number.",
+   "target": "I can see three lots of one quarter as three quarters.",
+   "skills": [
+    "Multiples of Unit Fractions",
+    "Multiplying by a Whole Number",
+    "Word Problems"
+   ]
+  },
+  {
+   "code": "4.NF.C.5",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Tenths into hundredths first",
+   "text": "Express a fraction with denominator 10 as an equivalent fraction with denominator 100, and use this to add two fractions with these denominators.",
+   "target": "I can rewrite tenths as hundredths before adding.",
+   "skills": [
+    "Tenths and Hundredths",
+    "Equivalence",
+    "Adding Fractions"
+   ]
+  },
+  {
+   "code": "4.NF.C.6",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Write fractions as decimals",
+   "text": "Use decimal notation for fractions with denominators 10 or 100, and locate these decimals on a number line.",
+   "target": "I can write tenths and hundredths as decimals and find them on a number line.",
+   "skills": [
+    "Decimals",
+    "Fractions",
+    "Number Line"
+   ]
+  },
+  {
+   "code": "4.NF.C.7",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "0.5 is bigger than 0.45",
+   "text": "Compare two decimals to hundredths by reasoning about their size; record the results with the symbols >, =, or <.",
+   "target": "I can compare decimals by place value, not by how many digits there are.",
+   "skills": [
+    "Comparing Decimals",
+    "Place Value Reasoning",
+    "Justification"
+   ]
+  },
+  {
+   "code": "4.OA.A.1",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Times as many is not more than",
+   "text": "Interpret a multiplication equation as a comparison; represent verbal statements of multiplicative comparisons as multiplication equations.",
+   "target": "I can tell four times as many from four more than.",
+   "skills": [
+    "Multiplicative Comparison",
+    "Writing Equations",
+    "Comparison Language"
+   ]
+  },
+  {
+   "code": "4.OA.A.2",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Is it adding or multiplying",
+   "text": "Multiply or divide to solve word problems involving multiplicative comparison, distinguishing multiplicative from additive comparison.",
+   "target": "I can work out the relationship before picking an operation.",
+   "skills": [
+    "Comparison Problems",
+    "Additive Versus Multiplicative",
+    "Unknowns"
+   ]
+  },
+  {
+   "code": "4.OA.A.3",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Solve multistep problems and read the remainder",
+   "text": "Solve multistep word problems posed with whole numbers using the four operations, including problems in which remainders must be interpreted, and assess the reasonableness of answers.",
+   "target": "I can solve a several-step problem and know what to do with a remainder.",
+   "skills": [
+    "Multistep Problems",
+    "Remainders",
+    "Reasonableness"
+   ]
+  },
+  {
+   "code": "4.OA.B.4",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Every factor pair, and prime or not",
+   "text": "Find all factor pairs for a whole number in the range 1-100; determine whether a given whole number is prime or composite.",
+   "target": "I can know when I have found every factor, and I know one is neither.",
+   "skills": [
+    "Factor Pairs",
+    "Multiples",
+    "Prime and Composite"
+   ]
+  },
+  {
+   "code": "4.OA.C.5",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Say the rule, not just the next term",
+   "text": "Generate a number or shape pattern that follows a given rule; identify apparent features of the pattern that were not explicit in the rule.",
+   "target": "I can state the rule so I could run the pattern backwards.",
+   "skills": [
+    "Generating Patterns",
+    "Stating Rules",
+    "Emergent Features"
+   ]
+  },
+  {
+   "code": "5.G.A.1",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Plot points on the coordinate plane",
+   "text": "Use a pair of perpendicular number lines, called axes, to define a coordinate system, and understand that the first number indicates how far to travel from the origin along the first axis and the second number how far along the second.",
+   "target": "I can plot a point using its two numbers, in the right order.",
+   "skills": [
+    "Coordinate Plane",
+    "Ordered Pairs",
+    "Graphing"
+   ]
+  },
+  {
+   "code": "5.MD.C.5",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Find the volume of a rectangular prism",
+   "text": "Relate volume to the operations of multiplication and addition and solve real world and mathematical problems involving volume of right rectangular prisms.",
+   "target": "I can find how much space a box holds and explain why the formula works.",
+   "skills": [
+    "Volume",
+    "Multiplication",
+    "Three-Dimensional Reasoning"
+   ]
+  },
+  {
+   "code": "5.NBT.A.1",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Understand place value across the decimal point",
+   "text": "Recognize that in a multi-digit number, a digit in one place represents 10 times as much as it represents in the place to its right and 1/10 of what it represents in the place to its left.",
+   "target": "I can explain how each place is ten times the one beside it, both ways.",
+   "skills": [
+    "Place Value",
+    "Decimals",
+    "Powers of Ten"
+   ]
+  },
+  {
+   "code": "5.NBT.B.7",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Compute with decimals to hundredths",
+   "text": "Add, subtract, multiply and divide decimals to hundredths, using concrete models or drawings and strategies based on place value, and relate the strategy to a written method.",
+   "target": "I can add, subtract, multiply and divide decimals and explain why it works.",
+   "skills": [
+    "Decimal Operations",
+    "Place Value",
+    "Estimation"
+   ]
+  },
+  {
+   "code": "5.NF.A.1",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Add and subtract fractions with unlike denominators",
+   "text": "Add and subtract fractions with unlike denominators (including mixed numbers) by replacing given fractions with equivalent fractions to produce a like denominator.",
+   "target": "I can rename fractions so they share a denominator, then add or subtract them.",
+   "skills": [
+    "Fractions",
+    "Equivalent Fractions",
+    "Common Denominators"
+   ]
+  },
+  {
+   "code": "5.NF.B.4",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Multiply a fraction by a fraction",
+   "text": "Apply and extend previous understandings of multiplication to multiply a fraction or whole number by a fraction, including finding the area of a rectangle with fractional side lengths.",
+   "target": "I can multiply fractions and explain why the answer gets smaller.",
+   "skills": [
+    "Fraction Multiplication",
+    "Area Model",
+    "Scaling"
+   ]
+  },
+  {
+   "code": "5.OA.A.1",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "Math",
+   "name": "Use brackets and evaluate in order",
+   "text": "Use parentheses, brackets or braces in numerical expressions, and evaluate expressions with these symbols.",
+   "target": "I can work out an expression in the right order, brackets first.",
+   "skills": [
+    "Order of Operations",
+    "Grouping Symbols",
+    "Numerical Expressions"
+   ]
+  },
+  {
+   "code": "6.EE.A.2",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Write, read and evaluate expressions with variables",
+   "text": "Write, read, and evaluate expressions in which letters stand for numbers, including translating between words and algebraic expressions and evaluating at specific values.",
+   "target": "I can turn words into an expression with a letter and work out its value.",
+   "skills": [
+    "Expressions",
+    "Variables",
+    "Evaluating"
+   ]
+  },
+  {
+   "code": "6.EE.B.7",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Solve one-step equations",
+   "text": "Solve real-world and mathematical problems by writing and solving equations of the form x + p = q and px = q for cases in which p, q and x are all non-negative rational numbers.",
+   "target": "I can write an equation for a problem and solve it.",
+   "skills": [
+    "Equations",
+    "Inverse Operations",
+    "Modelling"
+   ]
+  },
+  {
+   "code": "6.G.A.1",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Find area by composing and decomposing",
+   "text": "Find the area of right triangles, other triangles, special quadrilaterals, and polygons by composing into rectangles or decomposing into triangles, and apply these techniques to real-world problems.",
+   "target": "I can find the area of an awkward shape by cutting it into easy ones.",
+   "skills": [
+    "Area",
+    "Decomposition",
+    "Polygons"
+   ]
+  },
+  {
+   "code": "6.NS.A.1",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Divide a fraction by a fraction",
+   "text": "Interpret and compute quotients of fractions, and solve word problems involving division of fractions by fractions, using visual fraction models and equations.",
+   "target": "I can work out how many of one fraction fit inside another, and say why.",
+   "skills": [
+    "Fraction Division",
+    "Modelling",
+    "Reciprocal Reasoning"
+   ]
+  },
+  {
+   "code": "6.NS.C.6",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Place rational numbers on a number line",
+   "text": "Understand a rational number as a point on the number line, extending number line diagrams and coordinate axes to represent points with negative coordinates.",
+   "target": "I can put positive and negative numbers in the right place on a number line.",
+   "skills": [
+    "Rational Numbers",
+    "Number Line",
+    "Opposites"
+   ]
+  },
+  {
+   "code": "6.RP.A.1",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Understand what a ratio is",
+   "text": "Understand the concept of a ratio and use ratio language to describe a ratio relationship between two quantities.",
+   "target": "I can describe a relationship between two amounts using ratio language.",
+   "skills": [
+    "Ratios",
+    "Ratio Language",
+    "Part-to-Part and Part-to-Whole"
+   ]
+  },
+  {
+   "code": "6.RP.A.3",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Use ratio reasoning to solve problems",
+   "text": "Use ratio and rate reasoning to solve real-world and mathematical problems, e.g., by reasoning about tables of equivalent ratios, tape diagrams, double number line diagrams, or equations.",
+   "target": "I can solve ratio problems using a table, a diagram, or an equation.",
+   "skills": [
+    "Ratios",
+    "Unit Rate",
+    "Proportional Reasoning"
+   ]
+  },
+  {
+   "code": "6.SP.B.5",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Summarize a data set",
+   "text": "Summarize numerical data sets in relation to their context, reporting the number of observations, describing the attribute measured, and giving measures of center and variability.",
+   "target": "I can describe a set of data with a typical value and how spread out it is.",
+   "skills": [
+    "Statistics",
+    "Measures of Center",
+    "Variability"
+   ]
+  },
+  {
+   "code": "7.EE.A.1",
+   "grade": "7",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Add, factor and expand linear expressions",
+   "text": "Apply properties of operations as strategies to add, subtract, factor, and expand linear expressions with rational coefficients.",
+   "target": "I can rewrite an expression in a different but equal form.",
+   "skills": [
+    "Expressions",
+    "Distributive Property",
+    "Factoring"
+   ]
+  },
+  {
+   "code": "7.EE.B.4",
+   "grade": "7",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Solve equations and inequalities from real problems",
+   "text": "Use variables to represent quantities in a real-world or mathematical problem, and construct simple equations and inequalities to solve problems by reasoning about the quantities.",
+   "target": "I can turn a word problem into an equation and solve it.",
+   "skills": [
+    "Equations",
+    "Inequalities",
+    "Algebraic Modelling"
+   ]
+  },
+  {
+   "code": "7.G.B.6",
+   "grade": "7",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Solve area, volume and surface area problems",
+   "text": "Solve real-world and mathematical problems involving area, volume and surface area of two- and three-dimensional objects composed of triangles, quadrilaterals, polygons, cubes, and right prisms.",
+   "target": "I can work out area, surface area or volume and know which one the question wants.",
+   "skills": [
+    "Area",
+    "Surface Area",
+    "Volume"
+   ]
+  },
+  {
+   "code": "7.NS.A.1",
+   "grade": "7",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Add and subtract rational numbers",
+   "text": "Apply and extend previous understandings of addition and subtraction to add and subtract rational numbers, representing addition and subtraction on a horizontal or vertical number line diagram.",
+   "target": "I can add and subtract positive and negative numbers and show it on a number line.",
+   "skills": [
+    "Integers",
+    "Rational Numbers",
+    "Number Line Reasoning"
+   ]
+  },
+  {
+   "code": "7.NS.A.2",
+   "grade": "7",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Multiply and divide rational numbers",
+   "text": "Apply and extend previous understandings of multiplication and division and of fractions to multiply and divide rational numbers, including understanding the rules for signs.",
+   "target": "I can multiply and divide positive and negative numbers and explain the sign.",
+   "skills": [
+    "Rational Numbers",
+    "Sign Rules",
+    "Fraction Operations"
+   ]
+  },
+  {
+   "code": "7.RP.A.2",
+   "grade": "7",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Recognize and represent proportional relationships",
+   "text": "Recognize and represent proportional relationships between quantities, identifying the constant of proportionality in tables, graphs, equations, diagrams, and verbal descriptions.",
+   "target": "I can tell whether a relationship is proportional and find its constant.",
+   "skills": [
+    "Proportional Reasoning",
+    "Constant of Proportionality",
+    "Graphing"
+   ]
+  },
+  {
+   "code": "7.RP.A.3",
+   "grade": "7",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Solve percent and ratio problems",
+   "text": "Use proportional relationships to solve multistep ratio and percent problems, including simple interest, tax, markups, discounts, tips, and percent increase and decrease.",
+   "target": "I can work out discounts, tips and percent changes.",
+   "skills": [
+    "Percent",
+    "Proportional Reasoning",
+    "Multistep Problems"
+   ]
+  },
+  {
+   "code": "7.SP.A.1",
+   "grade": "7",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Use a sample to learn about a population",
+   "text": "Understand that statistics can be used to gain information about a population by examining a sample, and that generalizations are valid only if the sample is representative.",
+   "target": "I can tell whether a sample is fair enough to say something about everyone.",
+   "skills": [
+    "Sampling",
+    "Representativeness",
+    "Statistical Inference"
+   ]
+  },
+  {
+   "code": "7.SP.C.5",
+   "grade": "7",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Understand the probability of a chance event",
+   "text": "Understand that the probability of a chance event is a number between 0 and 1 that expresses the likelihood of the event occurring, with larger numbers indicating greater likelihood.",
+   "target": "I can put the chance of something happening on a scale from 0 to 1.",
+   "skills": [
+    "Probability",
+    "Likelihood",
+    "Proportional Reasoning"
+   ]
+  },
+  {
+   "code": "8.EE.A.1",
+   "grade": "8",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Apply the laws of exponents",
+   "text": "Know and apply the properties of integer exponents to generate equivalent numerical expressions, including products, quotients, powers of powers, and negative exponents.",
+   "target": "I can simplify expressions with exponents and explain the rule I used.",
+   "skills": [
+    "Exponents",
+    "Equivalent Expressions",
+    "Negative Exponents"
+   ]
+  },
+  {
+   "code": "8.EE.B.5",
+   "grade": "8",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Graph proportional relationships and read slope",
+   "text": "Graph proportional relationships, interpreting the unit rate as the slope of the graph, and compare two different proportional relationships represented in different ways.",
+   "target": "I can graph a proportional relationship and say what its steepness means.",
+   "skills": [
+    "Slope",
+    "Proportional Relationships",
+    "Graph Interpretation"
+   ]
+  },
+  {
+   "code": "8.EE.C.7",
+   "grade": "8",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Solve linear equations in one variable",
+   "text": "Solve linear equations in one variable, including equations with rational number coefficients and equations whose solutions require expanding expressions using the distributive property and collecting like terms.",
+   "target": "I can solve a linear equation and say whether it has one, none, or infinite solutions.",
+   "skills": [
+    "Linear Equations",
+    "Distributive Property",
+    "Like Terms"
+   ]
+  },
+  {
+   "code": "8.F.A.1",
+   "grade": "8",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Understand what makes a relationship a function",
+   "text": "Understand that a function is a rule that assigns to each input exactly one output; the graph of a function is the set of ordered pairs consisting of an input and the corresponding output.",
+   "target": "I can tell whether a relationship is a function and say why.",
+   "skills": [
+    "Functions",
+    "Input and Output",
+    "Graph Interpretation"
+   ]
+  },
+  {
+   "code": "8.F.B.4",
+   "grade": "8",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Build a function from a situation",
+   "text": "Construct a function to model a linear relationship between two quantities, determining the rate of change and initial value from a description, a table, or two points.",
+   "target": "I can write the rule for a situation and say what the numbers mean.",
+   "skills": [
+    "Linear Functions",
+    "Rate of Change",
+    "Initial Value"
+   ]
+  },
+  {
+   "code": "8.G.A.1",
+   "grade": "8",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Discover what transformations preserve",
+   "text": "Verify experimentally the properties of rotations, reflections and translations, including that lines are taken to lines, and that lengths and angle measures are preserved.",
+   "target": "I can slide, flip and turn a shape and say what stays the same.",
+   "skills": [
+    "Transformations",
+    "Congruence",
+    "Geometric Properties"
+   ]
+  },
+  {
+   "code": "8.G.B.7",
+   "grade": "8",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Apply the Pythagorean Theorem",
+   "text": "Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.",
+   "target": "I can find a missing side of a right triangle and know when the theorem applies.",
+   "skills": [
+    "Pythagorean Theorem",
+    "Right Triangles",
+    "Problem Solving"
+   ]
+  },
+  {
+   "code": "8.G.C.9",
+   "grade": "8",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Find the volume of curved solids",
+   "text": "Know the formulas for the volumes of cones, cylinders and spheres and use them to solve real-world and mathematical problems.",
+   "target": "I can find the volume of a cylinder, cone or sphere and know which formula fits.",
+   "skills": [
+    "Volume",
+    "Cylinders and Cones",
+    "Formula Selection"
+   ]
+  },
+  {
+   "code": "8.NS.A.1",
+   "grade": "8",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Tell rational numbers from irrational ones",
+   "text": "Know that numbers that are not rational are called irrational, and understand informally that every number has a decimal expansion — repeating or terminating for rational numbers.",
+   "target": "I can tell whether a number can be written as a fraction, and say how I know.",
+   "skills": [
+    "Rational Numbers",
+    "Irrational Numbers",
+    "Decimal Expansion"
+   ]
+  },
+  {
+   "code": "8.SP.A.1",
+   "grade": "8",
+   "band": "6-8",
+   "subject": "Math",
+   "name": "Read a scatter plot for association",
+   "text": "Construct and interpret scatter plots for bivariate measurement data to investigate patterns of association between two quantities, describing clustering, outliers, and the form and direction of any association.",
+   "target": "I can plot two measurements together and describe how they relate.",
+   "skills": [
+    "Scatter Plots",
+    "Bivariate Data",
+    "Association"
+   ]
+  },
+  {
+   "code": "A-CED.1",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "Math",
+   "name": "Create equations from a situation",
+   "text": "Create equations and inequalities in one variable and use them to solve problems, including equations arising from linear and quadratic functions and simple rational and exponential functions.",
+   "target": "I can turn a real situation into an equation and solve it.",
+   "skills": [
+    "Modeling",
+    "Equations",
+    "Inequalities"
+   ]
+  },
+  {
+   "code": "A-REI.4",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "Math",
+   "name": "Solve quadratic equations",
+   "text": "Solve quadratic equations in one variable by inspection, taking square roots, completing the square, factoring and the quadratic formula, recognizing when a solution is not real.",
+   "target": "I can pick the quickest way to solve a quadratic rather than always using the formula.",
+   "skills": [
+    "Quadratics",
+    "Factoring",
+    "Completing the Square"
+   ]
+  },
+  {
+   "code": "A-SSE.1",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "Math",
+   "name": "Read the structure of an expression",
+   "text": "Interpret expressions that represent a quantity in terms of its context, identifying the parts of an expression and interpreting complicated expressions by viewing one or more of their parts as a single entity.",
+   "target": "I can look at an expression and say what each part is doing.",
+   "skills": [
+    "Expression Structure",
+    "Interpretation",
+    "Modeling"
+   ]
+  },
+  {
+   "code": "F-BF.1",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "Math",
+   "name": "Build a function to model a situation",
+   "text": "Write a function that describes a relationship between two quantities, determining an explicit expression or a recursive process from a context.",
+   "target": "I can build the rule for a situation, not just use one I was given.",
+   "skills": [
+    "Function Building",
+    "Modeling",
+    "Recursion"
+   ]
+  },
+  {
+   "code": "F-IF.4",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "Math",
+   "name": "Read the key features of a graph",
+   "text": "For a function that models a relationship between two quantities, interpret key features of graphs and tables in terms of the quantities, including intercepts, intervals of increase and decrease, maxima and minima, and end behavior.",
+   "target": "I can describe what a graph is telling me about the real situation behind it.",
+   "skills": [
+    "Graph Interpretation",
+    "Key Features",
+    "Modeling"
+   ]
+  },
+  {
+   "code": "F-LE.2",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "Math",
+   "name": "Tell linear growth from exponential",
+   "text": "Construct linear and exponential functions, including arithmetic and geometric sequences, given a graph, a description of a relationship, or two input-output pairs.",
+   "target": "I can tell whether something grows by adding or by multiplying, and write the rule.",
+   "skills": [
+    "Linear Functions",
+    "Exponential Functions",
+    "Sequences"
+   ]
+  },
+  {
+   "code": "G-SRT.8",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "Math",
+   "name": "Solve right triangles with trigonometry",
+   "text": "Use trigonometric ratios and the Pythagorean Theorem to solve right triangles in applied problems.",
+   "target": "I can find a missing side or angle in a right triangle and know which ratio to use.",
+   "skills": [
+    "Trigonometry",
+    "Right Triangles",
+    "Applied Problems"
+   ]
+  },
+  {
+   "code": "K.CC.A.1",
+   "grade": "K",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Count to 100 by ones and by tens",
+   "text": "Count to 100 by ones and by tens.",
+   "target": "I can count all the way to 100, one at a time and ten at a time.",
+   "skills": [
+    "Rote Counting",
+    "Number Sequence",
+    "Skip Counting"
+   ]
+  },
+  {
+   "code": "K.CC.B.4",
+   "grade": "K",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Connect counting to how many",
+   "text": "Understand the relationship between numbers and quantities; connect counting to cardinality, including that the last number said tells the number of objects counted.",
+   "target": "I know the last number I say is how many there are.",
+   "skills": [
+    "Cardinality",
+    "One-to-One Correspondence",
+    "Counting"
+   ]
+  },
+  {
+   "code": "K.G.A.2",
+   "grade": "K",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Name shapes however they are turned",
+   "text": "Correctly name shapes regardless of their orientations or overall size.",
+   "target": "I know a triangle is still a triangle even when it is turned or tiny.",
+   "skills": [
+    "Shape Recognition",
+    "Geometric Vocabulary",
+    "Orientation"
+   ]
+  },
+  {
+   "code": "K.MD.A.2",
+   "grade": "K",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Compare two things directly",
+   "text": "Directly compare two objects with a measurable attribute in common, to see which object has more of or less of the attribute, and describe the difference.",
+   "target": "I can line two things up and say which is longer or heavier.",
+   "skills": [
+    "Comparison",
+    "Measurable Attributes",
+    "Measurement Language"
+   ]
+  },
+  {
+   "code": "K.NBT.A.1",
+   "grade": "K",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "See teen numbers as ten and some more",
+   "text": "Compose and decompose numbers from 11 to 19 into ten ones and some further ones, and record each composition or decomposition by a drawing or equation.",
+   "target": "I know 14 is one ten and four more.",
+   "skills": [
+    "Place Value",
+    "Composing Numbers",
+    "Teen Numbers"
+   ]
+  },
+  {
+   "code": "K.OA.A.1",
+   "grade": "K",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Represent addition and subtraction",
+   "text": "Represent addition and subtraction with objects, fingers, mental images, drawings, sounds, acting out situations, verbal explanations, expressions, or equations.",
+   "target": "I can show adding and taking away with objects, drawings, or numbers.",
+   "skills": [
+    "Addition",
+    "Subtraction",
+    "Representation"
+   ]
+  },
+  {
+   "code": "K.OA.A.3",
+   "grade": "K",
+   "band": "K-2",
+   "subject": "Math",
+   "name": "Break a number into two parts",
+   "text": "Decompose numbers less than or equal to 10 into pairs in more than one way, and record each decomposition by a drawing or equation.",
+   "target": "I can split a number into two parts in more than one way.",
+   "skills": [
+    "Decomposition",
+    "Number Bonds",
+    "Equations"
+   ]
+  },
+  {
+   "code": "L.1.4",
+   "grade": "1",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Work out what a new word means",
+   "text": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 1 reading and content, choosing flexibly from an array of strategies including sentence-level context and common affixes.",
+   "target": "I can use the rest of the sentence to work out a word I do not know.",
+   "skills": [
+    "Vocabulary",
+    "Context Clues",
+    "Word Parts"
+   ]
+  },
+  {
+   "code": "L.2.1",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Use standard English grammar when writing and speaking",
+   "text": "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking, including collective nouns, irregular plurals, and past tense of irregular verbs.",
+   "target": "I can use the right words and word endings when I write and talk.",
+   "skills": [
+    "Grammar",
+    "Conventions",
+    "Usage"
+   ]
+  },
+  {
+   "code": "L.2.2",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Capitals, commas and apostrophes",
+   "text": "Demonstrate command of the conventions of standard English capitalization, punctuation, and spelling when writing, including apostrophes for contractions and possessives.",
+   "target": "I can use an apostrophe only when something is missing or owned.",
+   "skills": [
+    "Capitalization",
+    "Commas",
+    "Apostrophes"
+   ]
+  },
+  {
+   "code": "L.2.3",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Talk one way to a friend, another to a principal",
+   "text": "Use knowledge of language and its conventions when writing, speaking, reading, or listening, comparing formal and informal uses of English.",
+   "target": "I can choose my words to suit who I am talking to.",
+   "skills": [
+    "Formal and Informal",
+    "Audience",
+    "Word Choice"
+   ]
+  },
+  {
+   "code": "L.2.4",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Work out new words in grade 2 texts",
+   "text": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 2 reading and content, using sentence context, known prefixes, compound words and glossaries.",
+   "target": "I can use clues in the sentence and the parts of a word to work out what it means.",
+   "skills": [
+    "Vocabulary",
+    "Context Clues",
+    "Compound Words"
+   ]
+  },
+  {
+   "code": "L.2.5",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Words that nearly mean the same thing",
+   "text": "Demonstrate understanding of word relationships and nuances in word meanings, including shades of meaning among closely related verbs and adjectives.",
+   "target": "I can put words in order from gentle to strong.",
+   "skills": [
+    "Shades of Meaning",
+    "Word Relationships",
+    "Categories"
+   ]
+  },
+  {
+   "code": "L.2.6",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Use the new word, do not just know it",
+   "text": "Use words and phrases acquired through conversations, reading and being read to, and responding to texts, including adjectives and adverbs to describe.",
+   "target": "I can put a new word into my own writing and talking.",
+   "skills": [
+    "Vocabulary Use",
+    "Adjectives and Adverbs",
+    "Word Acquisition"
+   ]
+  },
+  {
+   "code": "L.3.1",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Explain what each kind of word does",
+   "text": "Demonstrate command of the conventions of standard English grammar and usage, including explaining the function of nouns, pronouns, verbs, adjectives and adverbs in particular sentences.",
+   "target": "I can name the job a word is doing in a sentence.",
+   "skills": [
+    "Grammar",
+    "Parts of Speech",
+    "Sentence Analysis"
+   ]
+  },
+  {
+   "code": "L.3.2",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Punctuating what someone said",
+   "text": "Demonstrate command of the conventions of standard English capitalization, punctuation, and spelling when writing, including commas in dialogue and possessives.",
+   "target": "I can punctuate dialogue with the comma and the marks in the right places.",
+   "skills": [
+    "Dialogue Punctuation",
+    "Commas",
+    "Possessives"
+   ]
+  },
+  {
+   "code": "L.3.3",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Choosing words for effect",
+   "text": "Use knowledge of language and its conventions when writing, speaking, reading, or listening, choosing words and phrases for effect.",
+   "target": "I can tell when writing needs to sound different from talking.",
+   "skills": [
+    "Word Choice",
+    "Register",
+    "Spoken Versus Written"
+   ]
+  },
+  {
+   "code": "L.3.4",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Work out what unfamiliar words mean",
+   "text": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 3 reading and content, choosing flexibly from a range of strategies.",
+   "target": "I can figure out a new word using the sentence around it and its word parts.",
+   "skills": [
+    "Vocabulary",
+    "Context Clues",
+    "Morphology"
+   ]
+  },
+  {
+   "code": "L.3.5",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Knew, believed, suspected",
+   "text": "Demonstrate understanding of word relationships and nuances in word meanings, including shades of meaning among related words.",
+   "target": "I can order words by how certain they are.",
+   "skills": [
+    "Shades of Meaning",
+    "Literal and Nonliteral",
+    "Word Relationships"
+   ]
+  },
+  {
+   "code": "L.3.6",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Academic words in your own mouth",
+   "text": "Acquire and use accurately grade-appropriate conversational, general academic, and domain-specific words and phrases.",
+   "target": "I can use an academic word outside the lesson it came from.",
+   "skills": [
+    "Academic Vocabulary",
+    "Domain-Specific Words",
+    "Spatial and Temporal Signals"
+   ]
+  },
+  {
+   "code": "L.4.1",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Use grade 4 grammar correctly",
+   "text": "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking, including relative pronouns, progressive verb tenses, modal auxiliaries, and prepositional phrases.",
+   "target": "I can use tenses, pronouns and phrases correctly in my own writing.",
+   "skills": [
+    "Grammar",
+    "Verb Tense",
+    "Sentence Structure"
+   ]
+  },
+  {
+   "code": "L.4.2",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "The comma before and, when it earns it",
+   "text": "Demonstrate command of the conventions of standard English capitalization, punctuation, and spelling when writing, including commas in compound sentences and quotations.",
+   "target": "I can tell when the comma before and is needed and when it is not.",
+   "skills": [
+    "Compound Sentences",
+    "Quotation Punctuation",
+    "Capitalization"
+   ]
+  },
+  {
+   "code": "L.4.3",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Precise beats impressive",
+   "text": "Use knowledge of language and its conventions when writing, speaking, reading, or listening, choosing words and phrases to convey ideas precisely.",
+   "target": "I can pick the exact word rather than the longest one.",
+   "skills": [
+    "Precision",
+    "Concision",
+    "Punctuation for Effect"
+   ]
+  },
+  {
+   "code": "L.4.4",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Greek and Latin roots, then verify",
+   "text": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 4 reading and content.",
+   "target": "I can use roots to get a meaning, then check it fits.",
+   "skills": [
+    "Greek and Latin Roots",
+    "Context Clues",
+    "Verification"
+   ]
+  },
+  {
+   "code": "L.4.5",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Similes, metaphors and idioms",
+   "text": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings.",
+   "target": "I can explain what a figure of speech actually means.",
+   "skills": [
+    "Figurative Language",
+    "Idioms and Adages",
+    "Antonyms and Synonyms"
+   ]
+  },
+  {
+   "code": "L.4.6",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Words that survive the test",
+   "text": "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases.",
+   "target": "I can use an academic word in my own writing weeks later.",
+   "skills": [
+    "Academic Vocabulary",
+    "Domain-Specific Words",
+    "Precise Signalling"
+   ]
+  },
+  {
+   "code": "L.5.4",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Determine word meanings and use context clues",
+   "text": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 5 reading and content, choosing flexibly from a range of strategies.",
+   "target": "I can use context clues and strategies to figure out what unfamiliar words mean.",
+   "skills": [
+    "Vocabulary",
+    "Context Clues",
+    "Word Relationships"
+   ]
+  },
+  {
+   "code": "L.5.5",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Understand figurative language and word nuance",
+   "text": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings, including similes, metaphors, and idioms.",
+   "target": "I can tell when words mean something other than exactly what they say.",
+   "skills": [
+    "Figurative Language",
+    "Word Relationships",
+    "Nuance"
+   ]
+  },
+  {
+   "code": "L.6.4",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Work out unfamiliar words in grade 6 texts",
+   "text": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 6 reading and content, choosing flexibly from a range of strategies including context, Greek and Latin affixes, and reference materials.",
+   "target": "I can use context, word parts and a dictionary to pin down a word's meaning.",
+   "skills": [
+    "Vocabulary",
+    "Morphology",
+    "Reference Skills"
+   ]
+  },
+  {
+   "code": "L.7.4",
+   "grade": "7",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Work out unfamiliar words in grade 7 texts",
+   "text": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 7 reading and content, using context, word parts and reference materials, and verifying the inferred meaning.",
+   "target": "I can work out a word from clues and then check whether I was right.",
+   "skills": [
+    "Vocabulary",
+    "Morphology",
+    "Verification"
+   ]
+  },
+  {
+   "code": "L.9-10.4",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "English Language Arts",
+   "name": "Work out demanding vocabulary",
+   "text": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grades 9-10 reading and content, choosing flexibly from a range of strategies and verifying the inferred meaning.",
+   "target": "I can work out a difficult word from context and word parts, then check I was right.",
+   "skills": [
+    "Vocabulary",
+    "Morphology",
+    "Verification"
+   ]
+  },
+  {
+   "code": "N-RN.2",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "Math",
+   "name": "Rewrite expressions with rational exponents",
+   "text": "Rewrite expressions involving radicals and rational exponents using the properties of exponents.",
+   "target": "I can move between a root and a fractional exponent, whichever is easier to work with.",
+   "skills": [
+    "Rational Exponents",
+    "Radicals",
+    "Exponent Properties"
+   ]
+  },
+  {
+   "code": "RF.1.2",
+   "grade": "1",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Blend and segment the sounds in spoken words",
+   "text": "Demonstrate understanding of spoken words, syllables, and sounds (phonemes), including blending and segmenting single-syllable words.",
+   "target": "I can break words into sounds and push the sounds back together.",
+   "skills": [
+    "Phonemic Awareness",
+    "Blending",
+    "Segmenting"
+   ]
+  },
+  {
+   "code": "RF.1.3",
+   "grade": "1",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Use grade 1 phonics to read words",
+   "text": "Know and apply grade-level phonics and word analysis skills in decoding words, including consonant digraphs, final -e and common vowel teams, and counting syllables to decode longer words.",
+   "target": "I can use letter patterns to read longer words on my own.",
+   "skills": [
+    "Phonics",
+    "Decoding",
+    "Syllables"
+   ]
+  },
+  {
+   "code": "RF.2.3",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Use phonics to decode words",
+   "text": "Know and apply grade-level phonics and word analysis skills in decoding words, including long and short vowels, vowel teams, and common prefixes and suffixes.",
+   "target": "I can use what I know about letters and sounds to read new words.",
+   "skills": [
+    "Phonics",
+    "Decoding",
+    "Word Analysis"
+   ]
+  },
+  {
+   "code": "RF.2.3.A",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Long and short vowels in one-syllable words",
+   "text": "Distinguish long and short vowels when reading regularly spelled one-syllable words.",
+   "target": "I can tell if a vowel is long or short by looking at the whole word.",
+   "skills": [
+    "Long and Short Vowels",
+    "CVC and CVCe",
+    "Decoding"
+   ]
+  },
+  {
+   "code": "RF.2.3.B",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Vowel teams make one sound",
+   "text": "Know spelling-sound correspondences for additional common vowel teams.",
+   "target": "I can read two vowels together as one sound.",
+   "skills": [
+    "Vowel Teams",
+    "Spelling Patterns",
+    "Decoding"
+   ]
+  },
+  {
+   "code": "RF.2.3.C",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Split a two-syllable word and read it",
+   "text": "Decode regularly spelled two-syllable words with long vowels.",
+   "target": "I can break a long word into syllables and try again if my first split is wrong.",
+   "skills": [
+    "Syllable Division",
+    "Blending",
+    "Two-Syllable Words"
+   ]
+  },
+  {
+   "code": "RF.2.3.D",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Prefixes and suffixes on a base word",
+   "text": "Decode words with common prefixes and suffixes.",
+   "target": "I can find the base word underneath and use the word part to help me.",
+   "skills": [
+    "Prefixes and Suffixes",
+    "Base Word",
+    "Morphology"
+   ]
+  },
+  {
+   "code": "RF.2.3.E",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Words that break the rules",
+   "text": "Identify words with inconsistent but common spelling-sound correspondences.",
+   "target": "I can spot the tricky part of a word that does not follow the rule.",
+   "skills": [
+    "Irregular Words",
+    "Exceptions",
+    "Flexible Decoding"
+   ]
+  },
+  {
+   "code": "RF.2.3.F",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Sight words, instantly and in sentences",
+   "text": "Recognize and read grade-appropriate irregularly spelled words.",
+   "target": "I know my sight words in a real book, not just on a card.",
+   "skills": [
+    "Sight Words",
+    "Automaticity",
+    "High-Frequency Words"
+   ]
+  },
+  {
+   "code": "RF.2.4",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Read grade 2 text smoothly",
+   "text": "Read with sufficient accuracy and fluency to support comprehension, reading on-level text with purpose and understanding and with appropriate rate and expression.",
+   "target": "I can read smoothly enough to still know what the story means.",
+   "skills": [
+    "Fluency",
+    "Accuracy",
+    "Expression"
+   ]
+  },
+  {
+   "code": "RF.2.4.A",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Know why you are reading before you start",
+   "text": "Read grade-level text with purpose and understanding.",
+   "target": "I can say what I am reading for before I begin.",
+   "skills": [
+    "Purpose Setting",
+    "Comprehension",
+    "Prediction"
+   ]
+  },
+  {
+   "code": "RF.2.4.B",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Read aloud smoothly, with expression",
+   "text": "Read grade-level text orally with accuracy, appropriate rate, and expression on successive readings.",
+   "target": "I can read out loud so it sounds like talking, not racing.",
+   "skills": [
+    "Accuracy",
+    "Rate",
+    "Expression"
+   ]
+  },
+  {
+   "code": "RF.2.4.C",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Notice a mistake and fix it yourself",
+   "text": "Use context to confirm or self-correct word recognition and understanding, rereading as necessary.",
+   "target": "I can hear when it stopped making sense and go back.",
+   "skills": [
+    "Self-Correction",
+    "Monitoring",
+    "Rereading"
+   ]
+  },
+  {
+   "code": "RF.3.3.A",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "What the prefix actually means",
+   "text": "Identify and know the meaning of the most common prefixes and derivational suffixes.",
+   "target": "I can use the word part to work out what the word means.",
+   "skills": [
+    "Prefixes",
+    "Derivational Suffixes",
+    "Morphology"
+   ]
+  },
+  {
+   "code": "RF.3.3.B",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Latin suffixes as one chunk",
+   "text": "Decode words with common Latin suffixes.",
+   "target": "I can read -tion as one piece instead of sounding out every letter.",
+   "skills": [
+    "Latin Suffixes",
+    "Chunking",
+    "Parts of Speech"
+   ]
+  },
+  {
+   "code": "RF.3.3.C",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Read the whole long word",
+   "text": "Decode multisyllable words.",
+   "target": "I can decode all the way through instead of guessing from the start.",
+   "skills": [
+    "Multisyllable Decoding",
+    "Syllable Division",
+    "Blending"
+   ]
+  },
+  {
+   "code": "RF.3.3.D",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Irregular words, read quickly",
+   "text": "Read grade-appropriate irregularly spelled words.",
+   "target": "I can read island and answer without sounding out the silent bit.",
+   "skills": [
+    "Irregular Words",
+    "Automaticity",
+    "Recognizing Exceptions"
+   ]
+  },
+  {
+   "code": "RF.3.4",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Read accurately and fluently to understand",
+   "text": "Read with sufficient accuracy and fluency to support comprehension, including reading on-level text with purpose, appropriate rate, expression, and self-correction.",
+   "target": "I can read smoothly enough that I still understand what I read.",
+   "skills": [
+    "Fluency",
+    "Accuracy",
+    "Expression"
+   ]
+  },
+  {
+   "code": "RF.3.4.A",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Read differently depending on why",
+   "text": "Read grade-level text with purpose and understanding.",
+   "target": "I can skim for a fact or read closely, depending on what I need.",
+   "skills": [
+    "Purpose Setting",
+    "Adjusting Approach",
+    "Monitoring"
+   ]
+  },
+  {
+   "code": "RF.3.4.B",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Accuracy and expression, not just speed",
+   "text": "Read grade-level prose and poetry orally with accuracy, appropriate rate, and expression on successive readings.",
+   "target": "I can read so a listener hears the meaning, not just the words.",
+   "skills": [
+    "Accuracy",
+    "Prosody",
+    "Successive Readings"
+   ]
+  },
+  {
+   "code": "RF.3.4.C",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Fix it when the meaning breaks, not just the word",
+   "text": "Use context to confirm or self-correct word recognition and understanding, rereading as necessary.",
+   "target": "I can notice when a sentence I read correctly still made no sense.",
+   "skills": [
+    "Self-Correction",
+    "Meaning Monitoring",
+    "Rereading"
+   ]
+  },
+  {
+   "code": "RF.4.3.A",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Decode it and know what it means",
+   "text": "Use combined knowledge of all letter-sound correspondences, syllabication patterns, and morphology to read accurately unfamiliar multisyllabic words.",
+   "target": "I can read a long word and then say what it means.",
+   "skills": [
+    "Syllabication",
+    "Morphology",
+    "Meaning from Parts"
+   ]
+  },
+  {
+   "code": "RF.4.4",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Read grade 4 text smoothly and accurately",
+   "text": "Read with sufficient accuracy and fluency to support comprehension, reading grade-level prose and poetry orally with accuracy, appropriate rate, and expression on successive readings.",
+   "target": "I can read longer texts smoothly enough that the meaning still comes through.",
+   "skills": [
+    "Fluency",
+    "Accuracy",
+    "Expression"
+   ]
+  },
+  {
+   "code": "RF.4.4.A",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Purpose changes the reading",
+   "text": "Read grade-level text with purpose and understanding.",
+   "target": "I can read the same page differently depending on why.",
+   "skills": [
+    "Purpose",
+    "Adjusting Approach",
+    "Monitoring"
+   ]
+  },
+  {
+   "code": "RF.4.4.B",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Phrases, not words one at a time",
+   "text": "Read grade-level prose and poetry orally with accuracy, appropriate rate, and expression on successive readings.",
+   "target": "I can group words into phrases so long sentences hold together.",
+   "skills": [
+    "Phrasing",
+    "Prosody",
+    "Successive Readings"
+   ]
+  },
+  {
+   "code": "RF.4.4.C",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Did the whole passage make sense",
+   "text": "Use context to confirm or self-correct word recognition and understanding, rereading as necessary.",
+   "target": "I can check the paragraph made sense, not just the words in it.",
+   "skills": [
+    "Self-Correction",
+    "Passage-Level Monitoring",
+    "Rereading"
+   ]
+  },
+  {
+   "code": "RF.5.3.A",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Long words, in and out of context",
+   "text": "Use combined knowledge of all letter-sound correspondences, syllabication patterns, and morphology to read accurately unfamiliar multisyllabic words in context and out of context.",
+   "target": "I can read an unfamiliar long word and say what its parts mean.",
+   "skills": [
+    "Morphology",
+    "Syllabication",
+    "Meaning from Parts"
+   ]
+  },
+  {
+   "code": "RF.5.4.A",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Read for the reason you are reading",
+   "text": "Read grade-level text with purpose and understanding.",
+   "target": "I can match how I read to why I am reading.",
+   "skills": [
+    "Purpose",
+    "Adjusting Approach",
+    "Monitoring"
+   ]
+  },
+  {
+   "code": "RF.5.4.B",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Read aloud so the meaning carries",
+   "text": "Read grade-level prose and poetry orally with accuracy, appropriate rate, and expression on successive readings.",
+   "target": "I can read a long sentence in phrases so a listener follows it.",
+   "skills": [
+    "Accuracy",
+    "Prosody",
+    "Successive Readings"
+   ]
+  },
+  {
+   "code": "RF.5.4.C",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Catch the breakdown, repair it",
+   "text": "Use context to confirm or self-correct word recognition and understanding, rereading as necessary.",
+   "target": "I can notice a paragraph that made no sense and go back far enough.",
+   "skills": [
+    "Self-Correction",
+    "Monitoring",
+    "Rereading"
+   ]
+  },
+  {
+   "code": "RF.K.1",
+   "grade": "K",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Understand how print works",
+   "text": "Demonstrate understanding of the organization and basic features of print, including directionality, word boundaries, and letter recognition.",
+   "target": "I can show which way the words go and where one word stops and the next begins.",
+   "skills": [
+    "Print Concepts",
+    "Directionality",
+    "Letter Recognition"
+   ]
+  },
+  {
+   "code": "RF.K.2",
+   "grade": "K",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Hear the sounds inside spoken words",
+   "text": "Demonstrate understanding of spoken words, syllables, and sounds, including recognising rhyme, counting syllables, and isolating the initial sound in a word.",
+   "target": "I can hear rhymes, clap the beats in a word, and say its first sound.",
+   "skills": [
+    "Phonological Awareness",
+    "Rhyme",
+    "Syllables"
+   ]
+  },
+  {
+   "code": "RF.K.3",
+   "grade": "K",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Match letters to the sounds they make",
+   "text": "Know and apply grade-level phonics and word analysis skills in decoding words, including letter-sound correspondences for consonants and the five major vowels, and reading common high-frequency words by sight.",
+   "target": "I know the sound each letter makes, and I can read some words straight away.",
+   "skills": [
+    "Letter-Sound Correspondence",
+    "Decoding",
+    "Sight Words"
+   ]
+  },
+  {
+   "code": "RI.1.1",
+   "grade": "1",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Ask and answer questions about a true text",
+   "text": "Ask and answer questions about key details in a text.",
+   "target": "I can ask and answer questions about a book that tells me true things.",
+   "skills": [
+    "Comprehension",
+    "Questioning",
+    "Nonfiction"
+   ]
+  },
+  {
+   "code": "RI.1.5",
+   "grade": "1",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Use headings and contents to find things",
+   "text": "Know and use various text features, including headings, tables of contents, glossaries, electronic menus and icons, to locate key facts or information in a text.",
+   "target": "I can use the contents page and headings to find what I need.",
+   "skills": [
+    "Text Features",
+    "Locating Information",
+    "Nonfiction Navigation"
+   ]
+  },
+  {
+   "code": "RI.11-12.6",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "English Language Arts",
+   "name": "Analyze rhetoric and point of view",
+   "text": "Determine an author's point of view or purpose in a text in which the rhetoric is particularly effective, analyzing how style and content contribute to the power, persuasiveness or beauty of the text.",
+   "target": "I can explain how a piece of writing persuades, not just what it says.",
+   "skills": [
+    "Rhetoric",
+    "Point of View",
+    "Style"
+   ]
+  },
+  {
+   "code": "RI.2.1",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Ask and answer questions about a nonfiction text",
+   "text": "Ask and answer such questions as who, what, where, when, why, and how to demonstrate understanding of key details in a text.",
+   "target": "I can ask and answer all six kinds of question about a true text.",
+   "skills": [
+    "Comprehension",
+    "Questioning",
+    "Key Details"
+   ]
+  },
+  {
+   "code": "RI.2.10",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Read grade-level nonfiction without giving up",
+   "text": "By the end of year, read and comprehend informational texts in the grades 2-3 text complexity band proficiently, with scaffolding as needed.",
+   "target": "I can read nonfiction at my level and keep going when the words are hard.",
+   "skills": [
+    "Comprehension",
+    "Nonfiction Stamina",
+    "Monitoring"
+   ]
+  },
+  {
+   "code": "RI.2.2",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Main topic of the text, focus of each paragraph",
+   "text": "Identify the main topic of a multiparagraph text as well as the focus of specific paragraphs within the text.",
+   "target": "I can say what the whole text is about and what one paragraph is about.",
+   "skills": [
+    "Main Topic",
+    "Paragraph Focus",
+    "Supporting Detail"
+   ]
+  },
+  {
+   "code": "RI.2.3",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Connect the events, ideas or steps",
+   "text": "Describe the connection between a series of historical events, scientific ideas or concepts, or steps in technical procedures in a text.",
+   "target": "I can show how one step or event leads to the next.",
+   "skills": [
+    "Sequence",
+    "Cause and Effect",
+    "Procedures"
+   ]
+  },
+  {
+   "code": "RI.2.4",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Work out what a topic word means",
+   "text": "Determine the meaning of words and phrases in a text relevant to a grade 2 topic or subject area.",
+   "target": "I can figure out a new word using the sentence, the bold print or the glossary.",
+   "skills": [
+    "Context Clues",
+    "Glossary",
+    "Topic Vocabulary"
+   ]
+  },
+  {
+   "code": "RI.2.5",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Use text features to find information",
+   "text": "Know and use various text features (captions, bold print, subheadings, glossaries, indexes, electronic menus, icons) to locate key facts or information in a text efficiently.",
+   "target": "I can use headings, bold words, and captions to find what I need fast.",
+   "skills": [
+    "Text Features",
+    "Locating Information",
+    "Nonfiction Navigation"
+   ]
+  },
+  {
+   "code": "RI.2.6",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Say why the author wrote it",
+   "text": "Identify the main purpose of a text, including what the author wants to answer, explain, or describe.",
+   "target": "I can tell why the author wrote this, not just what it is about.",
+   "skills": [
+    "Author's Purpose",
+    "Explain and Describe",
+    "Topic Versus Purpose"
+   ]
+  },
+  {
+   "code": "RI.2.7",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Explain what the diagram adds",
+   "text": "Explain how specific images contribute to and clarify a text.",
+   "target": "I can say what a picture or diagram explains that the words do not.",
+   "skills": [
+    "Diagrams",
+    "Labels and Captions",
+    "Text Features"
+   ]
+  },
+  {
+   "code": "RI.2.8",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Find the reason behind the point",
+   "text": "Describe how reasons support specific points the author makes in a text.",
+   "target": "I can find what the author wants me to believe and the reason they gave.",
+   "skills": [
+    "Point and Reason",
+    "Author's Argument",
+    "Support"
+   ]
+  },
+  {
+   "code": "RI.2.9",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Compare two texts on one topic",
+   "text": "Compare and contrast the most important points presented by two texts on the same topic.",
+   "target": "I can say what two books on the same topic each told me.",
+   "skills": [
+    "Compare and Contrast",
+    "Important Points",
+    "Multiple Sources"
+   ]
+  },
+  {
+   "code": "RI.3.1",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Answer from the text, not from what you knew",
+   "text": "Ask and answer questions to demonstrate understanding of a text, referring explicitly to the text as the basis for the answers.",
+   "target": "I can separate what the text said from what I already thought.",
+   "skills": [
+    "Text Evidence",
+    "Inference",
+    "Explicit Reference"
+   ]
+  },
+  {
+   "code": "RI.3.10",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Nonfiction, independently, at the top of the band",
+   "text": "By the end of the year, read and comprehend informational texts at the high end of the grades 2-3 text complexity band independently and proficiently.",
+   "target": "I can choose nonfiction in independent reading and stay with it.",
+   "skills": [
+    "Nonfiction Stamina",
+    "Independent Reading",
+    "Fix-Up Strategies"
+   ]
+  },
+  {
+   "code": "RI.3.2",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Find the main idea and the details that support it",
+   "text": "Determine the main idea of a text; recount the key details and explain how they support the main idea.",
+   "target": "I can name the big idea of a text and show which details hold it up.",
+   "skills": [
+    "Main Idea",
+    "Supporting Details",
+    "Nonfiction"
+   ]
+  },
+  {
+   "code": "RI.3.3",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "The chain, not the list",
+   "text": "Describe the relationship between a series of historical events, scientific ideas, or steps in technical procedures, using time and cause language.",
+   "target": "I can show how each step caused the next, not just what order they came in.",
+   "skills": [
+    "Causal Chains",
+    "Sequence Language",
+    "Procedures"
+   ]
+  },
+  {
+   "code": "RI.3.4",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Subject words that already meant something else",
+   "text": "Determine the meaning of general academic and domain-specific words and phrases in a text relevant to a grade 3 topic or subject area.",
+   "target": "I can spot when a familiar word is being used in a subject way.",
+   "skills": [
+    "Domain Vocabulary",
+    "Academic Language",
+    "Context and References"
+   ]
+  },
+  {
+   "code": "RI.3.5",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Find it fast with the right tool",
+   "text": "Use text features and search tools to locate information relevant to a given topic efficiently.",
+   "target": "I can search with key words instead of a whole sentence.",
+   "skills": [
+    "Text Features",
+    "Search Tools",
+    "Key Words"
+   ]
+  },
+  {
+   "code": "RI.3.6",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "The author has a view too",
+   "text": "Distinguish their own point of view from that of the author of a text.",
+   "target": "I can find what the author thinks, even when it looks like plain fact.",
+   "skills": [
+    "Author's Point of View",
+    "Stance",
+    "Text Evidence"
+   ]
+  },
+  {
+   "code": "RI.3.7",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "A diagram is information, not decoration",
+   "text": "Use information gained from illustrations and the words in a text to demonstrate understanding of the text.",
+   "target": "I can read a diagram the way I read a paragraph.",
+   "skills": [
+    "Diagrams and Maps",
+    "Combining Sources",
+    "Where and Why"
+   ]
+  },
+  {
+   "code": "RI.3.8",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "How one paragraph leads to the next",
+   "text": "Describe the logical connection between particular sentences and paragraphs in a text.",
+   "target": "I can name what joins two paragraphs — comparison, cause, or order.",
+   "skills": [
+    "Logical Connections",
+    "Text Organization",
+    "Comparison and Cause"
+   ]
+  },
+  {
+   "code": "RI.3.9",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Put the two texts side by side",
+   "text": "Compare and contrast the most important points and key details presented in two texts on the same topic.",
+   "target": "I can say where two texts agree and where they part company.",
+   "skills": [
+    "Comparing Sources",
+    "Key Details",
+    "Synthesis"
+   ]
+  },
+  {
+   "code": "RI.4.1",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "The sentence, not the paragraph",
+   "text": "Refer to details and examples in a text when explaining what the text says explicitly and when drawing inferences from the text.",
+   "target": "I can point to the exact sentence that supports my point.",
+   "skills": [
+    "Citing Evidence",
+    "Inference",
+    "Precision"
+   ]
+  },
+  {
+   "code": "RI.4.10",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Chunk it rather than skim it",
+   "text": "By the end of year, read and comprehend informational texts in the grades 4-5 text complexity band proficiently, with scaffolding as needed at the high end.",
+   "target": "I can break a dense text into sections and summarize as I go.",
+   "skills": [
+    "Nonfiction Comprehension",
+    "Chunking",
+    "Sustained Attention"
+   ]
+  },
+  {
+   "code": "RI.4.2",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Determine main idea and supporting details",
+   "text": "Determine the main idea of a text and explain how it is supported by key details; summarize the text.",
+   "target": "I can find the main idea of an informational text and explain how details support it.",
+   "skills": [
+    "Main Idea",
+    "Supporting Details",
+    "Summarizing"
+   ]
+  },
+  {
+   "code": "RI.4.3",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Explain what happened and why",
+   "text": "Explain events, procedures, ideas, or concepts in a historical, scientific, or technical text, including what happened and why, based on specific information in the text.",
+   "target": "I can explain not just what happened but why, using the text.",
+   "skills": [
+    "Causation",
+    "Nonfiction Analysis",
+    "Textual Evidence"
+   ]
+  },
+  {
+   "code": "RI.4.4",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Current, solution, contract",
+   "text": "Determine the meaning of general academic and domain-specific words or phrases in a text relevant to a grade 4 topic or subject area.",
+   "target": "I can spot when a word I know is being used technically.",
+   "skills": [
+    "Domain Vocabulary",
+    "Academic Language",
+    "Reference Materials"
+   ]
+  },
+  {
+   "code": "RI.4.5",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Describe the structure of a text",
+   "text": "Describe the overall structure (chronology, comparison, cause/effect, problem/solution) of events, ideas, concepts, or information in a text or part of a text.",
+   "target": "I can name how a text is organized and show what gave it away.",
+   "skills": [
+    "Text Structure",
+    "Organizational Patterns",
+    "Nonfiction Analysis"
+   ]
+  },
+  {
+   "code": "RI.4.6",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Firsthand is not automatically right",
+   "text": "Compare and contrast a firsthand and secondhand account of the same event or topic; describe the differences in focus and information provided.",
+   "target": "I can say what each kind of account is good at and what it misses.",
+   "skills": [
+    "Firsthand and Secondhand",
+    "Focus",
+    "Source Limits"
+   ]
+  },
+  {
+   "code": "RI.4.7",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "What the graph does for the argument",
+   "text": "Interpret information presented visually, orally, or quantitatively and explain how the information contributes to an understanding of the text.",
+   "target": "I can say what a chart means for the point the author is making.",
+   "skills": [
+    "Interpreting Data",
+    "Charts and Timelines",
+    "Contribution to Meaning"
+   ]
+  },
+  {
+   "code": "RI.4.8",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Saying it is not proving it",
+   "text": "Explain how an author uses reasons and evidence to support particular points in a text.",
+   "target": "I can tell the difference between a claim and the evidence for it.",
+   "skills": [
+    "Claim and Evidence",
+    "Evaluating Support",
+    "Author's Reasoning"
+   ]
+  },
+  {
+   "code": "RI.4.9",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Weave the sources, do not stack them",
+   "text": "Integrate information from two texts on the same topic in order to write or speak about the subject knowledgeably.",
+   "target": "I can write one account from two sources rather than two summaries.",
+   "skills": [
+    "Integration",
+    "Synthesis",
+    "Handling Conflict"
+   ]
+  },
+  {
+   "code": "RI.5.1",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Quote accurately, and mark the inference",
+   "text": "Quote accurately from a text when explaining what the text says explicitly and when drawing inferences from the text.",
+   "target": "I can quote the exact words and say which part was my own inference.",
+   "skills": [
+    "Accurate Quotation",
+    "Inference",
+    "Explicit Meaning"
+   ]
+  },
+  {
+   "code": "RI.5.10",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Grade-level nonfiction, on your own",
+   "text": "By the end of the year, read and comprehend informational texts at the high end of the grades 4-5 text complexity band independently and proficiently.",
+   "target": "I can work through dense nonfiction without giving up on it.",
+   "skills": [
+    "Nonfiction Comprehension",
+    "Independence",
+    "Stamina"
+   ]
+  },
+  {
+   "code": "RI.5.2",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Determine two or more main ideas and summarize",
+   "text": "Determine two or more main ideas of a text and explain how they are supported by key details; summarize the text.",
+   "target": "I can find more than one big idea in a text and sum it up without retelling everything.",
+   "skills": [
+    "Main Idea",
+    "Summarising",
+    "Supporting Details"
+   ]
+  },
+  {
+   "code": "RI.5.3",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "How two ideas act on each other",
+   "text": "Explain the relationships or interactions between two or more individuals, events, ideas, or concepts in a historical, scientific, or technical text based on specific information in the text.",
+   "target": "I can explain how two things in the text affected each other.",
+   "skills": [
+    "Relationships",
+    "Interactions",
+    "Technical Text"
+   ]
+  },
+  {
+   "code": "RI.5.4",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Subject vocabulary in grade 5 texts",
+   "text": "Determine the meaning of general academic and domain-specific words and phrases in a text relevant to a grade 5 topic or subject area.",
+   "target": "I can work out a subject word and check the meaning fits.",
+   "skills": [
+    "Domain Vocabulary",
+    "Academic Language",
+    "Verification"
+   ]
+  },
+  {
+   "code": "RI.5.5",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Compare how two texts are organized",
+   "text": "Compare and contrast the overall structure of events, ideas, concepts or information in two or more texts.",
+   "target": "I can say how two texts on the same topic are put together differently.",
+   "skills": [
+    "Text Structure",
+    "Comparison",
+    "Nonfiction Analysis"
+   ]
+  },
+  {
+   "code": "RI.5.6",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Several accounts of one event",
+   "text": "Analyze multiple accounts of the same event or topic, noting important similarities and differences in the point of view they represent.",
+   "target": "I can say what each account emphasizes and why that differs.",
+   "skills": [
+    "Multiple Accounts",
+    "Point of View",
+    "Comparison"
+   ]
+  },
+  {
+   "code": "RI.5.7",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Find the answer fast, across sources",
+   "text": "Draw on information from multiple print or digital sources, demonstrating the ability to locate an answer to a question quickly or to solve a problem efficiently.",
+   "target": "I can search several sources and find the answer without reading everything.",
+   "skills": [
+    "Multiple Sources",
+    "Efficient Search",
+    "Locating Information"
+   ]
+  },
+  {
+   "code": "RI.5.8",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Which reason supports which point",
+   "text": "Explain how an author uses reasons and evidence to support particular points in a text, identifying which reasons and evidence support which point(s).",
+   "target": "I can match each piece of evidence to the point it actually supports.",
+   "skills": [
+    "Reasons and Evidence",
+    "Matching Support",
+    "Author's Argument"
+   ]
+  },
+  {
+   "code": "RI.5.9",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Several texts, one account",
+   "text": "Integrate information from several texts on the same topic in order to write or speak about the subject knowledgeably.",
+   "target": "I can write one account from three sources rather than three summaries.",
+   "skills": [
+    "Integration",
+    "Synthesis",
+    "Multiple Sources"
+   ]
+  },
+  {
+   "code": "RI.6.1",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Cite evidence in informational text",
+   "text": "Cite textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text.",
+   "target": "I can back up my analysis of a nonfiction text with the author's own words.",
+   "skills": [
+    "Textual Evidence",
+    "Analysis",
+    "Inference"
+   ]
+  },
+  {
+   "code": "RI.6.5",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Analyze how a part fits the whole text",
+   "text": "Analyze how a particular sentence, paragraph, chapter, or section fits into the overall structure of a text and contributes to the development of the ideas.",
+   "target": "I can explain what a paragraph is doing for the text as a whole.",
+   "skills": [
+    "Text Structure",
+    "Analysis",
+    "Authorial Craft"
+   ]
+  },
+  {
+   "code": "RI.6.8",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Trace and evaluate an argument",
+   "text": "Trace and evaluate the argument and specific claims in a text, distinguishing claims that are supported by reasons and evidence from claims that are not.",
+   "target": "I can follow an author's argument and tell which claims are actually backed up.",
+   "skills": [
+    "Argument Analysis",
+    "Evaluating Evidence",
+    "Critical Reading"
+   ]
+  },
+  {
+   "code": "RI.7.2",
+   "grade": "7",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Determine central ideas and how they develop",
+   "text": "Determine two or more central ideas in a text and analyze their development over the course of the text; provide an objective summary of the text.",
+   "target": "I can find more than one central idea and trace how each is built up.",
+   "skills": [
+    "Central Idea",
+    "Development",
+    "Objective Summary"
+   ]
+  },
+  {
+   "code": "RI.7.6",
+   "grade": "7",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Determine an author's point of view",
+   "text": "Determine an author's point of view or purpose in a text and analyze how the author distinguishes his or her position from that of others.",
+   "target": "I can work out what the author thinks and how they set it apart from other views.",
+   "skills": [
+    "Author's Purpose",
+    "Point of View",
+    "Critical Reading"
+   ]
+  },
+  {
+   "code": "RI.8.1",
+   "grade": "8",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Cite evidence that most strongly supports an analysis",
+   "text": "Cite the textual evidence that most strongly supports an analysis of what the text says explicitly as well as inferences drawn from the text.",
+   "target": "I can pick the strongest evidence for my point, not just any evidence that fits.",
+   "skills": [
+    "Textual Evidence",
+    "Analysis",
+    "Inference"
+   ]
+  },
+  {
+   "code": "RI.8.2",
+   "grade": "8",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Trace a central idea and its supporting ideas",
+   "text": "Determine a central idea of a text and analyze its development over the course of the text, including its relationship to supporting ideas, and provide an objective summary.",
+   "target": "I can follow a central idea through a text and show what holds it up.",
+   "skills": [
+    "Central Idea",
+    "Development",
+    "Objective Summary"
+   ]
+  },
+  {
+   "code": "RI.8.5",
+   "grade": "8",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Analyze the structure of a paragraph",
+   "text": "Analyze in detail the structure of a specific paragraph in a text, including the role of particular sentences in developing and refining a key concept.",
+   "target": "I can explain what each sentence in a paragraph is doing for the idea.",
+   "skills": [
+    "Text Structure",
+    "Analysis",
+    "Authorial Craft"
+   ]
+  },
+  {
+   "code": "RI.9-10.5",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "English Language Arts",
+   "name": "Analyze how ideas are built across a text",
+   "text": "Analyze in detail how an author's ideas or claims are developed and refined by particular sentences, paragraphs, or larger portions of a text.",
+   "target": "I can explain what a particular passage does for the argument around it.",
+   "skills": [
+    "Text Structure",
+    "Analysis",
+    "Authorial Craft"
+   ]
+  },
+  {
+   "code": "RI.K.1",
+   "grade": "K",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Ask and answer questions about a true book",
+   "text": "With prompting and support, ask and answer questions about key details in a text.",
+   "target": "I can ask and answer questions about a book that tells me real things.",
+   "skills": [
+    "Comprehension",
+    "Questioning",
+    "Nonfiction"
+   ]
+  },
+  {
+   "code": "RL.1.3",
+   "grade": "1",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Describe characters, settings, and major events",
+   "text": "Describe characters, settings, and major events in a story, using key details.",
+   "target": "I can tell who is in the story, where it happens, and what happens, using details.",
+   "skills": [
+    "Story Elements",
+    "Key Details",
+    "Retelling"
+   ]
+  },
+  {
+   "code": "RL.11-12.3",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "English Language Arts",
+   "name": "Analyze an author's choices about structure",
+   "text": "Analyze the impact of an author's choices regarding how to develop and relate elements of a story or drama, including where a story is set, how the action is ordered, and how the characters are introduced and developed.",
+   "target": "I can explain why the author told it in this order rather than another.",
+   "skills": [
+    "Authorial Craft",
+    "Structure",
+    "Characterization"
+   ]
+  },
+  {
+   "code": "RL.2.1",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Ask and answer questions about key details",
+   "text": "Ask and answer such questions as who, what, where, when, why, and how to demonstrate understanding of key details in a text.",
+   "target": "I can ask and answer questions about who, what, where, when, why, and how in stories.",
+   "skills": [
+    "Textual Evidence",
+    "Comprehension",
+    "Close Reading"
+   ]
+  },
+  {
+   "code": "RL.2.10",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Read grade-level stories and notice when you are lost",
+   "text": "By the end of the year, read and comprehend literature in the grades 2-3 text complexity band proficiently, with scaffolding as needed at the high end of the range.",
+   "target": "I can read stories at my level and stop when they stop making sense.",
+   "skills": [
+    "Comprehension",
+    "Self-Monitoring",
+    "Stamina"
+   ]
+  },
+  {
+   "code": "RL.2.2",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Recount a story and name its lesson",
+   "text": "Recount stories, including fables and folktales from diverse cultures, and determine their central message, lesson, or moral.",
+   "target": "I can retell a story in order and then say what it was teaching me.",
+   "skills": [
+    "Recounting",
+    "Central Message",
+    "Sequence"
+   ]
+  },
+  {
+   "code": "RL.2.3",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Describe how characters respond",
+   "text": "Describe how characters in a story respond to major events and challenges.",
+   "target": "I can name a character's problem and describe how they answered it.",
+   "skills": [
+    "Character Response",
+    "Problem and Solution",
+    "Cause and Effect"
+   ]
+  },
+  {
+   "code": "RL.2.4",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Hear how words make rhythm and meaning",
+   "text": "Describe how words and phrases supply rhythm and meaning in a story, poem, or song.",
+   "target": "I can find the words that make a poem sound good and say what they add.",
+   "skills": [
+    "Rhythm and Rhyme",
+    "Word Choice",
+    "Alliteration"
+   ]
+  },
+  {
+   "code": "RL.2.5",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Describe how a story is put together",
+   "text": "Describe the overall structure of a story, including describing how the beginning introduces the story and the ending concludes the action.",
+   "target": "I can explain what the beginning sets up and how the ending finishes it.",
+   "skills": [
+    "Story Structure",
+    "Beginning and Ending",
+    "Narrative Analysis"
+   ]
+  },
+  {
+   "code": "RL.2.6",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Tell who is speaking, and sound like them",
+   "text": "Acknowledge differences in the points of view of characters, including by speaking in a different voice for each character when reading dialogue aloud.",
+   "target": "I can tell who is talking and read them in their own voice.",
+   "skills": [
+    "Point of View",
+    "Dialogue",
+    "Expressive Reading"
+   ]
+  },
+  {
+   "code": "RL.2.7",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Read the pictures as well as the words",
+   "text": "Use information gained from the illustrations and words in a print or digital text to demonstrate understanding of its characters, setting, or plot.",
+   "target": "I can find things in the picture that the words never told me.",
+   "skills": [
+    "Illustrations",
+    "Setting and Plot",
+    "Integrating Sources"
+   ]
+  },
+  {
+   "code": "RL.2.9",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Compare two versions of one story",
+   "text": "Compare and contrast two or more versions of the same story by different authors or from different cultures.",
+   "target": "I can say what stayed the same and what changed between two tellings.",
+   "skills": [
+    "Compare and Contrast",
+    "Versions",
+    "Culture"
+   ]
+  },
+  {
+   "code": "RL.3.1",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Ask and answer questions, referring explicitly to the text",
+   "text": "Ask and answer questions to demonstrate understanding of a text, referring explicitly to the text as the basis for the answers.",
+   "target": "I can answer questions about a story and point to the words that prove it.",
+   "skills": [
+    "Textual Evidence",
+    "Comprehension",
+    "Close Reading"
+   ]
+  },
+  {
+   "code": "RL.3.10",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Read at the top of the band, on your own",
+   "text": "By the end of the year, read and comprehend literature at the high end of the grades 2-3 text complexity band independently and proficiently.",
+   "target": "I can choose a book that stretches me and finish it.",
+   "skills": [
+    "Independent Reading",
+    "Stamina",
+    "Fix-Up Strategies"
+   ]
+  },
+  {
+   "code": "RL.3.2",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Find the lesson in a story",
+   "text": "Recount stories, including fables, folktales and myths from diverse cultures, determine the central message, lesson or moral, and explain how it is conveyed through key details in the text.",
+   "target": "I can retell a story and say what it teaches, using details that show it.",
+   "skills": [
+    "Central Message",
+    "Retelling",
+    "Folktales"
+   ]
+  },
+  {
+   "code": "RL.3.3",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "How a character's actions drive the plot",
+   "text": "Describe characters in a story and explain how their actions contribute to the sequence of events.",
+   "target": "I can describe what a character is like and show how that changed the story.",
+   "skills": [
+    "Character Traits",
+    "Motivation",
+    "Cause and Effect"
+   ]
+  },
+  {
+   "code": "RL.3.4",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "When words are not meant literally",
+   "text": "Determine the meaning of words and phrases as they are used in a text, distinguishing literal from nonliteral language.",
+   "target": "I can tell when a phrase means something other than what it says.",
+   "skills": [
+    "Literal and Nonliteral",
+    "Figurative Language",
+    "Context"
+   ]
+  },
+  {
+   "code": "RL.3.5",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Chapter, scene, stanza",
+   "text": "Refer to parts of stories, dramas, and poems when writing or speaking about a text, using terms such as chapter, scene, and stanza.",
+   "target": "I can use the right word for the part of the text I am talking about.",
+   "skills": [
+    "Text Structure",
+    "Structural Vocabulary",
+    "Successive Parts"
+   ]
+  },
+  {
+   "code": "RL.3.6",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Whose eyes are we seeing through",
+   "text": "Distinguish their own point of view from that of the narrator or those of the characters.",
+   "target": "I can say what the narrator thinks and how that differs from what I think.",
+   "skills": [
+    "Point of View",
+    "Narrator",
+    "Perspective"
+   ]
+  },
+  {
+   "code": "RL.3.7",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "What the illustration adds",
+   "text": "Explain how specific aspects of a text's illustrations contribute to what is conveyed by the words in a story.",
+   "target": "I can say what a picture adds beyond showing what happened.",
+   "skills": [
+    "Illustrations",
+    "Mood",
+    "Emphasis"
+   ]
+  },
+  {
+   "code": "RL.3.9",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Two books, one author, one character",
+   "text": "Compare and contrast the themes, settings, and plots of stories written by the same author about the same or similar characters.",
+   "target": "I can compare two books on one thing at a time instead of retelling both.",
+   "skills": [
+    "Compare and Contrast",
+    "Theme and Setting",
+    "Series Patterns"
+   ]
+  },
+  {
+   "code": "RL.4.1",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Refer to details and examples when explaining a text",
+   "text": "Refer to details and examples in a text when explaining what the text says explicitly and when drawing inferences from the text.",
+   "target": "I can explain what a text says and back it up with details, including things it only hints at.",
+   "skills": [
+    "Inference",
+    "Textual Evidence",
+    "Close Reading"
+   ]
+  },
+  {
+   "code": "RL.4.10",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Finishing is not understanding",
+   "text": "By the end of the year, read and comprehend literature in the grades 4-5 text complexity band proficiently, with scaffolding as needed at the high end.",
+   "target": "I can check I understood rather than just reaching the last page.",
+   "skills": [
+    "Comprehension",
+    "Stamina",
+    "Self-Checking"
+   ]
+  },
+  {
+   "code": "RL.4.2",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Determine a theme from details in the text",
+   "text": "Determine a theme of a story, drama, or poem from details in the text; summarize the text.",
+   "target": "I can work out the message of a story using details, and sum the story up.",
+   "skills": [
+    "Theme",
+    "Summarising",
+    "Inference"
+   ]
+  },
+  {
+   "code": "RL.4.3",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Describe a character in depth",
+   "text": "Describe in depth a character, setting, or event in a story or drama, drawing on specific details in the text such as a character's thoughts, words, or actions.",
+   "target": "I can describe a character properly using what they think, say and do.",
+   "skills": [
+    "Characterisation",
+    "Textual Evidence",
+    "Inference"
+   ]
+  },
+  {
+   "code": "RL.4.4",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Words that point at a myth",
+   "text": "Determine the meaning of words and phrases as they are used in a text, including those that allude to significant characters found in mythology.",
+   "target": "I can notice a reference to a story I might not know and find out what it means.",
+   "skills": [
+    "Allusion",
+    "Figurative Meaning",
+    "Context"
+   ]
+  },
+  {
+   "code": "RL.4.5",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Poems, plays and prose are built differently",
+   "text": "Explain major differences between poems, drama, and prose, and refer to the structural elements of each when writing or speaking about a text.",
+   "target": "I can use the right structural words for each form.",
+   "skills": [
+    "Genre Structure",
+    "Structural Elements",
+    "Genre Vocabulary"
+   ]
+  },
+  {
+   "code": "RL.4.6",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "What the narrator can and cannot know",
+   "text": "Compare and contrast the point of view from which different stories are narrated, including the difference between first- and third-person narrations.",
+   "target": "I can explain what the choice of narrator does to what I get to know.",
+   "skills": [
+    "First and Third Person",
+    "Narrative Effect",
+    "Comparing Point of View"
+   ]
+  },
+  {
+   "code": "RL.4.7",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "The book against the film",
+   "text": "Make connections between the text of a story or drama and a visual or oral presentation of the text.",
+   "target": "I can say what a film version gained and what it lost, and why it matters.",
+   "skills": [
+    "Text and Presentation",
+    "Comparing Versions",
+    "Analyzing Choices"
+   ]
+  },
+  {
+   "code": "RL.4.9",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "The same theme in two traditions",
+   "text": "Compare and contrast the treatment of similar themes and topics and patterns of events in stories, myths, and traditional literature from different cultures.",
+   "target": "I can compare the underlying pattern rather than the surface details.",
+   "skills": [
+    "Theme Across Cultures",
+    "Patterns of Events",
+    "Traditional Literature"
+   ]
+  },
+  {
+   "code": "RL.5.1",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Quote accurately to explain and infer",
+   "text": "Quote accurately from a text when explaining what the text says explicitly and when drawing inferences from the text.",
+   "target": "I can use the author's exact words to back up what I say about a story.",
+   "skills": [
+    "Textual Evidence",
+    "Quoting",
+    "Inference"
+   ]
+  },
+  {
+   "code": "RL.5.10",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Grade-level literature, on your own",
+   "text": "By the end of the year, read and comprehend literature at the high end of the grades 4-5 text complexity band independently and proficiently.",
+   "target": "I can read a demanding book alone and show that I understood it.",
+   "skills": [
+    "Independent Reading",
+    "Comprehension",
+    "Stamina"
+   ]
+  },
+  {
+   "code": "RL.5.2",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Theme from how characters respond",
+   "text": "Determine a theme of a story, drama, or poem from details in the text, including how characters respond to challenges or how the speaker reflects upon a topic; summarize the text.",
+   "target": "I can find the theme in how a character responded, not just in what happened.",
+   "skills": [
+    "Theme",
+    "Character Response",
+    "Summary"
+   ]
+  },
+  {
+   "code": "RL.5.3",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Compare characters on one dimension",
+   "text": "Compare and contrast two or more characters, settings, or events in a story or drama, drawing on specific details in the text.",
+   "target": "I can compare two characters on one thing at a time, with evidence for both.",
+   "skills": [
+    "Compare and Contrast",
+    "Specific Detail",
+    "Character Analysis"
+   ]
+  },
+  {
+   "code": "RL.5.4",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Metaphors and similes in context",
+   "text": "Determine the meaning of words and phrases as they are used in a text, including figurative language such as metaphors and similes.",
+   "target": "I can say what a metaphor claims, not just that it is a metaphor.",
+   "skills": [
+    "Figurative Language",
+    "Metaphor and Simile",
+    "Context"
+   ]
+  },
+  {
+   "code": "RL.5.5",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "How the chapters fit together",
+   "text": "Explain how a series of chapters, scenes, or stanzas fits together to provide the overall structure of a particular story, drama, or poem.",
+   "target": "I can say what each chapter does for the shape of the whole book.",
+   "skills": [
+    "Overall Structure",
+    "Successive Parts",
+    "Genre Structure"
+   ]
+  },
+  {
+   "code": "RL.5.6",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "What the narrator's position does",
+   "text": "Describe how a narrator's or speaker's point of view influences how events are described.",
+   "target": "I can show how the telling would change with a different narrator.",
+   "skills": [
+    "Point of View",
+    "Narrative Influence",
+    "Perspective"
+   ]
+  },
+  {
+   "code": "RL.5.7",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "What the visuals add to tone",
+   "text": "Analyze how visual and multimedia elements contribute to the meaning, tone, or beauty of a text, such as a graphic novel or multimedia presentation.",
+   "target": "I can explain what the pictures do to the mood, not just what they show.",
+   "skills": [
+    "Visual Elements",
+    "Tone",
+    "Multimedia"
+   ]
+  },
+  {
+   "code": "RL.5.9",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Same genre, different approach",
+   "text": "Compare and contrast stories in the same genre on their approaches to similar themes and topics.",
+   "target": "I can compare how two books in one genre handle the same idea differently.",
+   "skills": [
+    "Genre Comparison",
+    "Theme",
+    "Approach"
+   ]
+  },
+  {
+   "code": "RL.6.1",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Cite evidence for what a text says and implies",
+   "text": "Cite textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text.",
+   "target": "I can point to the words that support both what the text says and what it hints at.",
+   "skills": [
+    "Textual Evidence",
+    "Analysis",
+    "Inference"
+   ]
+  },
+  {
+   "code": "RL.6.3",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Describe how characters change and respond",
+   "text": "Describe how a particular story's or drama's plot unfolds in a series of episodes and describe the characters as the plot moves forward.",
+   "target": "I can explain how characters change throughout a story.",
+   "skills": [
+    "Character Analysis",
+    "Plot Development",
+    "Inference"
+   ]
+  },
+  {
+   "code": "RL.6.4",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Analyze word choice and tone",
+   "text": "Determine the meaning of words and phrases as they are used in a text, including figurative and connotative meanings, and analyze the impact of a specific word choice on meaning and tone.",
+   "target": "I can explain why a writer chose one word rather than a similar one.",
+   "skills": [
+    "Word Choice",
+    "Tone",
+    "Connotation"
+   ]
+  },
+  {
+   "code": "RL.7.2",
+   "grade": "7",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Determine a theme and track its development",
+   "text": "Determine a theme or central idea of a text and analyze its development over the course of the text; provide an objective summary of the text.",
+   "target": "I can name a theme and trace how the author builds it across a whole text.",
+   "skills": [
+    "Theme",
+    "Textual Analysis",
+    "Objective Summary"
+   ]
+  },
+  {
+   "code": "RL.7.3",
+   "grade": "7",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Analyze how story elements shape each other",
+   "text": "Analyze how particular elements of a story or drama interact, including how setting shapes the characters or plot.",
+   "target": "I can explain how the setting changes who the characters become.",
+   "skills": [
+    "Story Elements",
+    "Interaction",
+    "Literary Analysis"
+   ]
+  },
+  {
+   "code": "RL.8.3",
+   "grade": "8",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Analyze how dialogue and incidents drive a story",
+   "text": "Analyze how particular lines of dialogue or incidents in a story or drama propel the action, reveal aspects of a character, or provoke a decision.",
+   "target": "I can explain what a single moment does to the story or the character.",
+   "skills": [
+    "Character Analysis",
+    "Plot Development",
+    "Textual Analysis"
+   ]
+  },
+  {
+   "code": "RL.9-10.1",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "English Language Arts",
+   "name": "Cite strong and thorough evidence",
+   "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text.",
+   "target": "I can choose evidence that carries the weight of my whole argument, not just some of it.",
+   "skills": [
+    "Textual Evidence",
+    "Analysis",
+    "Inference"
+   ]
+  },
+  {
+   "code": "RL.9-10.2",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "English Language Arts",
+   "name": "Trace a theme and summarize objectively",
+   "text": "Determine a theme or central idea of a text and analyze in detail its development over the course of the text, including how it emerges and is shaped and refined by specific details.",
+   "target": "I can show where a theme first appears and how the text keeps reshaping it.",
+   "skills": [
+    "Theme",
+    "Development",
+    "Objective Summary"
+   ]
+  },
+  {
+   "code": "RL.K.1",
+   "grade": "K",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Ask and answer questions about a story",
+   "text": "With prompting and support, ask and answer questions about key details in a text.",
+   "target": "I can ask and answer questions about the story we read.",
+   "skills": [
+    "Comprehension",
+    "Questioning",
+    "Key Details"
+   ]
+  },
+  {
+   "code": "RL.K.3",
+   "grade": "K",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Name who is in the story and what happens",
+   "text": "With prompting and support, identify characters, settings, and major events in a story.",
+   "target": "I can say who is in the story, where it happens, and what happens.",
+   "skills": [
+    "Story Elements",
+    "Listening Comprehension",
+    "Retelling"
+   ]
+  },
+  {
+   "code": "S-ID.6",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "Math",
+   "name": "Fit a function to data",
+   "text": "Represent data on two quantitative variables on a scatter plot, and describe how the variables are related, fitting a function to the data and using it to solve problems.",
+   "target": "I can fit a line to real data and use it to make a prediction, knowing what it cannot tell me.",
+   "skills": [
+    "Scatter Plots",
+    "Line of Best Fit",
+    "Residuals"
+   ]
+  },
+  {
+   "code": "SL.2.1",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Answer the person, not just the topic",
+   "text": "Participate in collaborative conversations with diverse partners about grade 2 topics and texts with peers and adults.",
+   "target": "I can add to what my partner just said instead of waiting to say my own thing.",
+   "skills": [
+    "Collaborative Conversation",
+    "Building on Ideas",
+    "Asking for Clarification"
+   ]
+  },
+  {
+   "code": "SL.2.2",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Hold on to what you heard",
+   "text": "Recount or describe key ideas or details from a text read aloud or information presented orally or through other media.",
+   "target": "I can tell the key ideas from something I listened to, including the middle.",
+   "skills": [
+    "Active Listening",
+    "Recounting",
+    "Key Ideas"
+   ]
+  },
+  {
+   "code": "SL.2.3",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Ask the question that would help",
+   "text": "Ask and answer questions about what a speaker says in order to clarify comprehension, gather information, or deepen understanding.",
+   "target": "I can ask about the part I did not follow, not the part already answered.",
+   "skills": [
+    "Clarifying Questions",
+    "Listening",
+    "Gathering Information"
+   ]
+  },
+  {
+   "code": "SL.2.4",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Tell it clearly and loudly enough",
+   "text": "Tell a story or recount an experience with appropriate facts and relevant, descriptive details, speaking audibly in coherent sentences.",
+   "target": "I can tell a story so the person at the back can hear and follow it.",
+   "skills": [
+    "Oral Storytelling",
+    "Audibility",
+    "Descriptive Detail"
+   ]
+  },
+  {
+   "code": "SL.2.5",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Add a picture that explains something",
+   "text": "Create audio recordings of stories or poems; add drawings or other visual displays to clarify ideas, thoughts, and feelings.",
+   "target": "I can make a picture that shows something my words did not.",
+   "skills": [
+    "Audio Recording",
+    "Visual Displays",
+    "Clarifying"
+   ]
+  },
+  {
+   "code": "SL.2.6",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Answer in a whole sentence when it matters",
+   "text": "Produce complete sentences when appropriate to task and situation in order to provide requested detail or clarification.",
+   "target": "I can give a full answer when one word is not enough.",
+   "skills": [
+    "Complete Sentences",
+    "Detail",
+    "Adjusting to Situation"
+   ]
+  },
+  {
+   "code": "SL.3.1",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Take part in a discussion and build on others",
+   "text": "Engage effectively in a range of collaborative discussions with diverse partners on grade 3 topics and texts, building on others' ideas and expressing their own clearly, following agreed-upon rules for discussions.",
+   "target": "I can listen, follow our talking rules, and add to what someone else said.",
+   "skills": [
+    "Discussion",
+    "Active Listening",
+    "Turn Taking"
+   ]
+  },
+  {
+   "code": "SL.3.2",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Main ideas from something you heard",
+   "text": "Determine the main ideas and supporting details of a text read aloud or information presented in diverse media and formats.",
+   "target": "I can sort what I heard into main ideas and the details under them.",
+   "skills": [
+    "Listening Comprehension",
+    "Main Idea",
+    "Note-Taking"
+   ]
+  },
+  {
+   "code": "SL.3.3",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Questions that open rather than close",
+   "text": "Ask and answer questions about information from a speaker, offering appropriate elaboration and detail.",
+   "target": "I can ask something that gets more than a yes.",
+   "skills": [
+    "Open Questions",
+    "Elaboration",
+    "Clarification"
+   ]
+  },
+  {
+   "code": "SL.3.4",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Clearly, and at a pace people can follow",
+   "text": "Report on a topic or text, tell a story, or recount an experience with appropriate facts and relevant, descriptive details, speaking clearly at an understandable pace.",
+   "target": "I can slow down enough for people to follow me.",
+   "skills": [
+    "Reporting",
+    "Pace",
+    "Relevant Detail"
+   ]
+  },
+  {
+   "code": "SL.3.5",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Visuals that support, not duplicate",
+   "text": "Create engaging audio recordings of stories or poems; add visual displays when appropriate to emphasize or enhance certain facts or details.",
+   "target": "I can make a slide that helps rather than one I read aloud.",
+   "skills": [
+    "Audio Recording",
+    "Visual Displays",
+    "Emphasis"
+   ]
+  },
+  {
+   "code": "SL.3.6",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Full sentences where they are expected",
+   "text": "Speak in complete sentences when appropriate to task and situation in order to provide requested detail or clarification.",
+   "target": "I can give a full answer in an academic conversation.",
+   "skills": [
+    "Complete Sentences",
+    "Register",
+    "Requested Detail"
+   ]
+  },
+  {
+   "code": "SL.4.1",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Come having actually read it",
+   "text": "Engage effectively in a range of collaborative discussions on grade 4 topics and texts, building on others' ideas and expressing their own clearly.",
+   "target": "I can bring something from the reading rather than a general reaction.",
+   "skills": [
+    "Preparation",
+    "Discussion Roles",
+    "Building on Ideas"
+   ]
+  },
+  {
+   "code": "SL.4.2",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Paraphrase, not parrot",
+   "text": "Paraphrase portions of a text read aloud or information presented in diverse media and formats.",
+   "target": "I can restate it in my own words without changing what it meant.",
+   "skills": [
+    "Paraphrasing",
+    "Accurate Restating",
+    "Diverse Media"
+   ]
+  },
+  {
+   "code": "SL.4.3",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Judge the reasoning, not the confidence",
+   "text": "Identify the reasons and evidence a speaker provides to support particular points.",
+   "target": "I can separate how sure someone sounds from how good their reasons are.",
+   "skills": [
+    "Identifying Reasons",
+    "Evaluating Support",
+    "Critical Listening"
+   ]
+  },
+  {
+   "code": "SL.4.4",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Talk to people, not from notes",
+   "text": "Report on a topic or text, tell a story, or recount an experience in an organized manner, using appropriate facts and relevant, descriptive details.",
+   "target": "I can present from notes without reading them word for word.",
+   "skills": [
+    "Organized Presentation",
+    "Supporting Main Ideas",
+    "Pace"
+   ]
+  },
+  {
+   "code": "SL.4.5",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Media that develops the idea",
+   "text": "Add audio recordings and visual displays to presentations when appropriate to enhance the development of main ideas or themes.",
+   "target": "I can add something that develops my point rather than decorating it.",
+   "skills": [
+    "Audio and Visual Media",
+    "Enhancing Main Ideas",
+    "Purposeful Selection"
+   ]
+  },
+  {
+   "code": "SL.4.6",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Formal without being stilted",
+   "text": "Differentiate between contexts that call for formal English and situations where informal discourse is appropriate.",
+   "target": "I can switch register without sounding like a robot.",
+   "skills": [
+    "Formal and Informal",
+    "Register",
+    "Context"
+   ]
+  },
+  {
+   "code": "SL.5.1",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Take part in collaborative discussions",
+   "text": "Engage effectively in a range of collaborative discussions with diverse partners on grade 5 topics and texts, building on others' ideas and expressing their own clearly.",
+   "target": "I can build on what other people say and add my own idea clearly.",
+   "skills": [
+    "Discussion",
+    "Active Listening",
+    "Academic Talk"
+   ]
+  },
+  {
+   "code": "SL.5.4",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Present a topic clearly and in order",
+   "text": "Report on a topic or text or present an opinion, sequencing ideas logically and using appropriate facts and relevant, descriptive details to support main ideas or themes, speaking clearly at an understandable pace.",
+   "target": "I can present ideas in an order that makes sense, with details that back them up.",
+   "skills": [
+    "Presenting",
+    "Sequencing",
+    "Supporting Detail"
+   ]
+  },
+  {
+   "code": "SL.6.1",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Come prepared and discuss with evidence",
+   "text": "Engage effectively in a range of collaborative discussions on grade 6 topics, texts and issues, coming to discussions prepared and drawing on evidence to explore ideas under discussion.",
+   "target": "I can arrive ready with evidence and use it while we talk.",
+   "skills": [
+    "Discussion",
+    "Preparation",
+    "Evidence-Based Talk"
+   ]
+  },
+  {
+   "code": "SL.7.1",
+   "grade": "7",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Discuss with questions that go deeper",
+   "text": "Engage effectively in a range of collaborative discussions on grade 7 topics, texts and issues, posing questions that elicit elaboration and responding with relevant observations and ideas.",
+   "target": "I can ask a question that makes someone say more, not just answer.",
+   "skills": [
+    "Discussion",
+    "Questioning",
+    "Elaboration"
+   ]
+  },
+  {
+   "code": "SL.8.1",
+   "grade": "8",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Lead and sustain a collaborative discussion",
+   "text": "Engage effectively in a range of collaborative discussions on grade 8 topics, texts, and issues, building on others' ideas, posing questions that connect ideas, and qualifying or justifying their own views.",
+   "target": "I can push a discussion forward and change my mind when the evidence earns it.",
+   "skills": [
+    "Discussion",
+    "Questioning",
+    "Justifying Views"
+   ]
+  },
+  {
+   "code": "SL.9-10.1",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "English Language Arts",
+   "name": "Take part in a rigorous discussion",
+   "text": "Initiate and participate effectively in a range of collaborative discussions with diverse partners on grades 9-10 topics, texts and issues, building on others' ideas and expressing their own clearly and persuasively.",
+   "target": "I can start a discussion, not just answer in one, and take it somewhere.",
+   "skills": [
+    "Discussion",
+    "Initiating",
+    "Persuasion"
+   ]
+  },
+  {
+   "code": "W.1.1",
+   "grade": "1",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Write what you think about a book",
+   "text": "Write opinion pieces in which they introduce the topic or name the book they are writing about, state an opinion, supply a reason for the opinion, and provide some sense of closure.",
+   "target": "I can name a book, say what I think of it, and give one reason.",
+   "skills": [
+    "Opinion Writing",
+    "Reasons",
+    "Closure"
+   ]
+  },
+  {
+   "code": "W.11-12.1",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "English Language Arts",
+   "name": "Write an argument that anticipates objections",
+   "text": "Write arguments to support claims using valid reasoning and relevant, sufficient evidence, establishing the significance of the claim and anticipating the audience's knowledge level, concerns and possible biases.",
+   "target": "I can argue to a particular audience and answer what they will object to.",
+   "skills": [
+    "Argument Writing",
+    "Audience Awareness",
+    "Counterclaim"
+   ]
+  },
+  {
+   "code": "W.2.1",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Write an opinion with reasons",
+   "text": "Write opinion pieces in which they introduce the topic or book, state an opinion, supply reasons that support the opinion, use linking words to connect opinion and reasons, and provide a concluding statement.",
+   "target": "I can say what I think about a book and give reasons why.",
+   "skills": [
+    "Opinion Writing",
+    "Reasons",
+    "Linking Words"
+   ]
+  },
+  {
+   "code": "W.2.2",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Teach a topic with facts and definitions",
+   "text": "Write informative/explanatory texts in which they introduce a topic, use facts and definitions to develop points, and provide a concluding statement.",
+   "target": "I can write to teach someone, using facts rather than what I think.",
+   "skills": [
+    "Informative Writing",
+    "Facts and Definitions",
+    "Conclusion"
+   ]
+  },
+  {
+   "code": "W.2.3",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Write a story someone can picture",
+   "text": "Write narratives in which they recount a well-elaborated event, include details, use temporal words, and provide a sense of closure.",
+   "target": "I can write a story with feelings in it, in order, that ends properly.",
+   "skills": [
+    "Narrative Writing",
+    "Descriptive Detail",
+    "Temporal Words"
+   ]
+  },
+  {
+   "code": "W.2.5",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Change the writing, not just the handwriting",
+   "text": "With guidance and support from adults and peers, focus on a topic and strengthen writing as needed by revising and editing.",
+   "target": "I can make my writing better, not just neater.",
+   "skills": [
+    "Revising",
+    "Editing",
+    "Focus"
+   ]
+  },
+  {
+   "code": "W.2.6",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Write and publish with a computer",
+   "text": "With guidance and support from adults, use a variety of digital tools to produce and publish writing.",
+   "target": "I can type my writing and share it with a reader.",
+   "skills": [
+    "Digital Tools",
+    "Publishing",
+    "Keyboarding"
+   ]
+  },
+  {
+   "code": "W.2.7",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Research something together",
+   "text": "Participate in shared research and writing projects.",
+   "target": "I can do my own part of a project the whole class is building.",
+   "skills": [
+    "Shared Research",
+    "Multiple Sources",
+    "Collaboration"
+   ]
+  },
+  {
+   "code": "W.2.8",
+   "grade": "2",
+   "band": "K-2",
+   "subject": "English Language Arts",
+   "name": "Gather what you need to answer a question",
+   "text": "Recall information from experiences or gather information from provided sources to answer a question.",
+   "target": "I can take notes in my own words instead of copying sentences.",
+   "skills": [
+    "Note-Taking",
+    "Recall",
+    "Using Sources"
+   ]
+  },
+  {
+   "code": "W.3.1",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Write an opinion piece with organized reasons",
+   "text": "Write opinion pieces on topics or texts, supporting a point of view with reasons, introducing the topic, stating an opinion, and creating an organizational structure that lists reasons.",
+   "target": "I can state what I think and organize my reasons so they build.",
+   "skills": [
+    "Opinion Writing",
+    "Organization",
+    "Reasons"
+   ]
+  },
+  {
+   "code": "W.3.10",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Long projects and short assignments are different",
+   "text": "Write routinely over extended and shorter time frames for a range of discipline-specific tasks, purposes, and audiences.",
+   "target": "I can plan differently when I have forty minutes rather than three weeks.",
+   "skills": [
+    "Writing Routinely",
+    "Time Frames",
+    "Adjusting Process"
+   ]
+  },
+  {
+   "code": "W.3.2",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Group the facts into paragraphs",
+   "text": "Write informative/explanatory texts to examine a topic and convey ideas and information clearly.",
+   "target": "I can put related facts together instead of listing them as they come to me.",
+   "skills": [
+    "Informative Writing",
+    "Grouping Information",
+    "Linking Words"
+   ]
+  },
+  {
+   "code": "W.3.3",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Write a narrative with a clear sequence",
+   "text": "Write narratives to develop real or imagined experiences or events using effective technique, descriptive details, and clear event sequences.",
+   "target": "I can tell a story in order with details that put the reader there.",
+   "skills": [
+    "Narrative Writing",
+    "Sequencing",
+    "Descriptive Detail"
+   ]
+  },
+  {
+   "code": "W.3.4",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Write for the reader you actually have",
+   "text": "With guidance and support, produce writing in which the development and organization are appropriate to task and purpose.",
+   "target": "I can change how I write depending on who is reading it.",
+   "skills": [
+    "Task and Purpose",
+    "Audience",
+    "Organization"
+   ]
+  },
+  {
+   "code": "W.3.5",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Judge the feedback, then use it",
+   "text": "With guidance and support from peers and adults, develop and strengthen writing by planning, revising, and editing.",
+   "target": "I can decide which suggestions to take and say why I left the others.",
+   "skills": [
+    "Planning",
+    "Revising",
+    "Using Feedback"
+   ]
+  },
+  {
+   "code": "W.3.6",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Technology for writing and working together",
+   "text": "With guidance and support from adults, use technology to produce and publish writing and to interact and collaborate with others.",
+   "target": "I can type up and share my writing without the typing shrinking it.",
+   "skills": [
+    "Digital Publishing",
+    "Online Collaboration",
+    "Keyboarding"
+   ]
+  },
+  {
+   "code": "W.3.7",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "A question small enough to answer",
+   "text": "Conduct short research projects that build knowledge about a topic.",
+   "target": "I can narrow my topic to something I can actually finish.",
+   "skills": [
+    "Research Projects",
+    "Narrowing a Question",
+    "Multiple Sources"
+   ]
+  },
+  {
+   "code": "W.3.8",
+   "grade": "3",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Notes in key words, sorted",
+   "text": "Recall information from experiences or gather information from print and digital sources; take brief notes and sort evidence into categories.",
+   "target": "I can note key words rather than sentences, and group them.",
+   "skills": [
+    "Note-Taking",
+    "Sorting Evidence",
+    "Print and Digital Sources"
+   ]
+  },
+  {
+   "code": "W.4.1",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Write an opinion piece with reasons and evidence",
+   "text": "Write opinion pieces on topics or texts, supporting a point of view with reasons and information.",
+   "target": "I can state what I think and give organized reasons that support it.",
+   "skills": [
+    "Opinion Writing",
+    "Argumentation",
+    "Organization"
+   ]
+  },
+  {
+   "code": "W.4.10",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Plan in proportion to the clock",
+   "text": "Write routinely over extended and shorter time frames for a range of discipline-specific tasks, purposes, and audiences.",
+   "target": "I can plan briefly when the time is short and properly when it is not.",
+   "skills": [
+    "Writing Routinely",
+    "Time Frames",
+    "Discipline-Specific Tasks"
+   ]
+  },
+  {
+   "code": "W.4.2",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Write to explain a topic clearly",
+   "text": "Write informative or explanatory texts to examine a topic and convey ideas and information clearly, grouping related information and using facts, definitions and concrete details.",
+   "target": "I can explain a topic by grouping facts that belong together.",
+   "skills": [
+    "Informative Writing",
+    "Grouping Information",
+    "Concrete Detail"
+   ]
+  },
+  {
+   "code": "W.4.3",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Give the big moment more room",
+   "text": "Write narratives to develop real or imagined experiences or events using effective technique, descriptive details, and clear event sequences.",
+   "target": "I can slow down for the moment that matters and hurry past the walk to school.",
+   "skills": [
+    "Pacing",
+    "Dialogue and Description",
+    "Sensory Detail"
+   ]
+  },
+  {
+   "code": "W.4.4",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Longer is not better",
+   "text": "Produce clear and coherent writing in which the development and organization are appropriate to task, purpose, and audience.",
+   "target": "I can develop an idea instead of padding it.",
+   "skills": [
+    "Coherence",
+    "Development",
+    "Task and Audience"
+   ]
+  },
+  {
+   "code": "W.4.5",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Revision that moves things",
+   "text": "With guidance and support from peers and adults, develop and strengthen writing by planning, revising, editing, and rewriting.",
+   "target": "I can cut, add and reorganize, not just fix spelling.",
+   "skills": [
+    "Revising",
+    "Rewriting",
+    "Using Feedback"
+   ]
+  },
+  {
+   "code": "W.4.6",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Type a page in one sitting",
+   "text": "With some guidance and support from adults, use technology to produce and publish writing and to interact and collaborate with others.",
+   "target": "I can type fast enough that it stops getting in the way.",
+   "skills": [
+    "Keyboarding",
+    "Digital Publishing",
+    "Collaboration"
+   ]
+  },
+  {
+   "code": "W.4.7",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "A question a fact cannot answer",
+   "text": "Conduct short research projects that build knowledge through investigation of different aspects of a topic.",
+   "target": "I can ask something big enough to research and small enough to finish.",
+   "skills": [
+    "Research Questions",
+    "Investigating Aspects",
+    "Narrowing"
+   ]
+  },
+  {
+   "code": "W.4.8",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Paraphrase means change the sentence",
+   "text": "Recall relevant information from experiences or gather relevant information from print and digital sources; take notes and provide a list of sources.",
+   "target": "I can say it my own way, not swap a few words.",
+   "skills": [
+    "Paraphrasing",
+    "Categorizing Notes",
+    "Citing Sources"
+   ]
+  },
+  {
+   "code": "W.4.9",
+   "grade": "4",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Introduce the quotation, then explain it",
+   "text": "Draw evidence from literary or informational texts to support analysis, reflection, and research.",
+   "target": "I can set a quotation up and say what it shows.",
+   "skills": [
+    "Drawing Evidence",
+    "Using Quotations",
+    "Analysis"
+   ]
+  },
+  {
+   "code": "W.5.1",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Write an opinion with logically ordered reasons",
+   "text": "Write opinion pieces on topics or texts, supporting a point of view with reasons and information, with logically ordered reasons supported by facts and details.",
+   "target": "I can order my reasons so each one builds on the last.",
+   "skills": [
+    "Opinion Writing",
+    "Logical Order",
+    "Supporting Facts"
+   ]
+  },
+  {
+   "code": "W.5.3",
+   "grade": "5",
+   "band": "3-5",
+   "subject": "English Language Arts",
+   "name": "Write a narrative with technique and detail",
+   "text": "Write narratives to develop real or imagined experiences or events using effective technique, descriptive details, and clear event sequences, including dialogue, pacing, and description.",
+   "target": "I can tell a story that uses dialogue and pacing to pull a reader along.",
+   "skills": [
+    "Narrative Writing",
+    "Dialogue",
+    "Pacing"
+   ]
+  },
+  {
+   "code": "W.6.1",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Write an argument with organized reasons",
+   "text": "Write arguments to support claims with clear reasons and relevant evidence, introducing claims and organising the reasons and evidence clearly.",
+   "target": "I can introduce a claim and organize my evidence so it holds together.",
+   "skills": [
+    "Argument Writing",
+    "Claim",
+    "Organization"
+   ]
+  },
+  {
+   "code": "W.6.2",
+   "grade": "6",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Write an informative or explanatory text",
+   "text": "Write informative/explanatory texts to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content.",
+   "target": "I can explain a topic clearly by choosing and organising the right information.",
+   "skills": [
+    "Informative Writing",
+    "Organization",
+    "Source Selection"
+   ]
+  },
+  {
+   "code": "W.7.1",
+   "grade": "7",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Write an argument that answers the other side",
+   "text": "Write arguments to support claims with clear reasons and relevant evidence, acknowledging alternate or opposing claims and organising the reasons and evidence logically.",
+   "target": "I can argue a claim with evidence and deal with the opposing view.",
+   "skills": [
+    "Argument Writing",
+    "Counterclaim",
+    "Logical Organization"
+   ]
+  },
+  {
+   "code": "W.8.1",
+   "grade": "8",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Write an argument with claims and evidence",
+   "text": "Write arguments to support claims with clear reasons and relevant evidence, acknowledging and distinguishing the claim from alternate or opposing claims.",
+   "target": "I can argue a claim with evidence and deal fairly with the other side.",
+   "skills": [
+    "Argument Writing",
+    "Counterclaim",
+    "Evidence"
+   ]
+  },
+  {
+   "code": "W.8.2",
+   "grade": "8",
+   "band": "6-8",
+   "subject": "English Language Arts",
+   "name": "Write an explanation that analyzes",
+   "text": "Write informative or explanatory texts to examine a topic and convey ideas, concepts and information through the selection, organization and analysis of relevant content.",
+   "target": "I can explain a topic by choosing what matters and showing how it connects.",
+   "skills": [
+    "Informative Writing",
+    "Analysis",
+    "Organization"
+   ]
+  },
+  {
+   "code": "W.9-10.1",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "English Language Arts",
+   "name": "Write an argument with valid reasoning",
+   "text": "Write arguments to support claims in an analysis of substantive topics, using valid reasoning and relevant and sufficient evidence, and developing claim and counterclaims fairly.",
+   "target": "I can argue a position and give the other side a fair hearing.",
+   "skills": [
+    "Argument Writing",
+    "Counterclaim",
+    "Valid Reasoning"
+   ]
+  },
+  {
+   "code": "W.9-10.2",
+   "grade": "9-12",
+   "band": "9-12",
+   "subject": "English Language Arts",
+   "name": "Write to explain a complex idea",
+   "text": "Write informative or explanatory texts to examine and convey complex ideas, concepts and information clearly and accurately through the effective selection, organization and analysis of content.",
+   "target": "I can explain something complicated without either oversimplifying or losing the reader.",
+   "skills": [
+    "Informative Writing",
+    "Organization",
+    "Analysis"
+   ]
+  }
+ ]
+}
